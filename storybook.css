@@ -706,6 +706,16 @@
   font-size: 0.82rem;
 }
 
+.story-step-sticky {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
 .storybook-controls .btn {
   min-width: 160px;
   border-radius: 14px;

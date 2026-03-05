@@ -1103,6 +1103,7 @@ const startAutoCountdown = currentStageIndex => {
       return;
     }
 
+    autoTimerToggle.textContent = `Auto: ${autoRemainingSeconds}s`;
     soundStatus.textContent = `Prayer time: ${autoRemainingSeconds}s before next step.`;
     updateLivePrayerPanel();
   }, 1000);
