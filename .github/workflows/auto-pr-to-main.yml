@@ -12,19 +12,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: stage
           fetch-depth: 0
 
-      - name: Create PR from stage to main
+      - name: Create promote branch and PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          existing=$(gh pr list --base main --head stage --state open --json number --jq '.[0].number')
-          if [ -n "$existing" ]; then
-            echo "PR #$existing already open for stage → main. Skipping."
-          else
-            gh pr create \
-              --base main \
-              --head stage \
-              --title "Promote stage → main" \
-              --body "Automated PR to sync stage into main after deployment."
-          fi
+          BRANCH="promote/stage-to-main-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH"
+          git push origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Promote stage → main" \
+            --body "Automated PR to sync stage into main after deployment."

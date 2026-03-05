@@ -14,6 +14,7 @@
       pageConnector: 'of',
       read: 'Read Aloud',
       stop: 'Stop Reading',
+      paused: 'Resume',
       prev: 'Previous Page',
       next: 'Next Page',
       fallbackMessage: 'Please wait while we open the storybook.',
@@ -25,6 +26,7 @@
       pageConnector: 'من',
       read: 'استمع',
       stop: 'إيقاف القراءة',
+      paused: 'استئناف',
       prev: 'الصفحة السابقة',
       next: 'الصفحة التالية',
       fallbackMessage: 'يرجى الانتظار بينما نفتح كتاب القصة.',
@@ -36,6 +38,7 @@
       pageConnector: 'sur',
       read: 'Lire à voix haute',
       stop: 'Arrêter la lecture',
+      paused: 'Reprendre',
       prev: 'Page précédente',
       next: 'Page suivante',
       fallbackMessage: "Veuillez patienter pendant l'ouverture du livre.",
@@ -551,7 +554,12 @@
     pack: document.getElementById('story-voice-pack'),
     prev: document.getElementById('story-prev'),
     next: document.getElementById('story-next'),
-    read: document.getElementById('story-read')
+    read: document.getElementById('story-read'),
+    autoContinue: document.getElementById('story-auto-continue'),
+    readingIndicator: document.getElementById('story-reading-indicator'),
+    readingLabel: document.getElementById('story-reading-label'),
+    elapsed: document.getElementById('story-elapsed'),
+    rateBtns: document.querySelectorAll('.story-rate-btn')
   };
 
   if (!el.step || !el.title || !el.body || !el.prayer || !el.heart || !el.art || !el.evidenceTitle || !el.evidenceList || !el.pack || !el.prev || !el.next || !el.read || !el.panel || !el.frame) {
@@ -613,11 +621,63 @@
 
   let index = 0;
   let reading = false;
+  let paused = false;
   let activeUtterance = null;
   let activeClip = null;
   let availableVoicePacks = [];
   let activeVoicePack = null;
   const clipAvailability = new Map();
+  let playbackRate = 1;
+  let readingStartTime = 0;
+  let elapsedTimer = null;
+
+  const AUTO_CONTINUE_KEY = 'storybook_auto_continue';
+  const readAutoContinuePref = () => {
+    try { return localStorage.getItem(AUTO_CONTINUE_KEY) === 'true'; } catch (_) { return false; }
+  };
+  const writeAutoContinuePref = val => {
+    try { localStorage.setItem(AUTO_CONTINUE_KEY, String(val)); } catch (_) { /* no-op */ }
+  };
+  if (el.autoContinue) {
+    el.autoContinue.checked = readAutoContinuePref();
+    el.autoContinue.addEventListener('change', () => writeAutoContinuePref(el.autoContinue.checked));
+  }
+
+  const formatElapsed = ms => {
+    const s = Math.floor(ms / 1000);
+    const m = Math.floor(s / 60);
+    return `${m}:${String(s % 60).padStart(2, '0')}`;
+  };
+
+  const startElapsedTimer = () => {
+    readingStartTime = Date.now();
+    clearInterval(elapsedTimer);
+    if (el.elapsed) {
+      el.elapsed.textContent = '0:00';
+      elapsedTimer = setInterval(() => {
+        el.elapsed.textContent = formatElapsed(Date.now() - readingStartTime);
+      }, 500);
+    }
+  };
+
+  const stopElapsedTimer = () => {
+    clearInterval(elapsedTimer);
+    elapsedTimer = null;
+  };
+
+  const setReadingVisual = (active, isPaused) => {
+    const textEl = el.body.closest('.storybook-text');
+    if (el.readingIndicator) {
+      el.readingIndicator.classList.toggle('is-active', active && !isPaused);
+      el.readingIndicator.classList.toggle('is-paused', active && isPaused);
+      if (el.readingLabel) {
+        el.readingLabel.textContent = isPaused ? 'Paused' : 'Reading…';
+      }
+    }
+    if (textEl) {
+      textEl.classList.toggle('is-reading', active && !isPaused);
+    }
+  };
   const pageIndicator = idx => `${UI.pagePrefix} ${idx + 1} ${UI.pageConnector} ${pages.length}`;
   const storyUiFlags = {
     showBack: true,
@@ -779,9 +839,31 @@
       window.speechSynthesis.cancel();
     }
     reading = false;
+    paused = false;
     activeUtterance = null;
     el.read.textContent = UI.read;
+    setReadingVisual(false, false);
+    stopElapsedTimer();
     syncAudioContext({ playing: false, paused: false, completed: false });
+  };
+
+  const onPageReadingFinished = () => {
+    reading = false;
+    paused = false;
+    activeClip = null;
+    activeUtterance = null;
+    el.read.textContent = UI.read;
+    setReadingVisual(false, false);
+    stopElapsedTimer();
+    syncAudioContext({ playing: false, paused: false, completed: false });
+
+    if (el.autoContinue?.checked && index < pages.length - 1) {
+      setTimeout(() => {
+        index++;
+        render();
+        setTimeout(() => readCurrentPage(), 400);
+      }, 600);
+    }
   };
 
   const animatePageTurn = () => {
@@ -835,7 +917,47 @@
   };
 
   const readCurrentPage = async () => {
-    if (reading) {
+    // Pause if currently playing
+    if (reading && !paused) {
+      if (activeClip) {
+        activeClip.pause();
+        paused = true;
+        el.read.textContent = UI.paused;
+        setReadingVisual(true, true);
+        syncAudioContext({ playing: false, paused: true });
+        return;
+      }
+      if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+        window.speechSynthesis.pause();
+        paused = true;
+        el.read.textContent = UI.paused;
+        setReadingVisual(true, true);
+        syncAudioContext({ playing: false, paused: true });
+        return;
+      }
+      stopReading();
+      return;
+    }
+
+    // Resume from pause
+    if (reading && paused) {
+      if (activeClip) {
+        activeClip.play();
+        paused = false;
+        el.read.textContent = UI.stop;
+        setReadingVisual(true, false);
+        syncAudioContext({ playing: true, paused: false });
+        return;
+      }
+      if ('speechSynthesis' in window && window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        paused = false;
+        el.read.textContent = UI.stop;
+        setReadingVisual(true, false);
+        syncAudioContext({ playing: true, paused: false });
+        return;
+      }
+      // Can't resume, just stop
       stopReading();
       return;
     }
@@ -849,21 +971,15 @@
     if (hasClip && clipUrl) {
       try {
         const clip = new Audio(clipUrl);
-        clip.onended = () => {
-          reading = false;
-          activeClip = null;
-          el.read.textContent = UI.read;
-          syncAudioContext({ mode: 'prerendered', playing: false, paused: false, completed: false });
-        };
-        clip.onerror = () => {
-          reading = false;
-          activeClip = null;
-          el.read.textContent = UI.read;
-          syncAudioContext({ mode: 'prerendered', playing: false, paused: false, completed: false });
-        };
+        clip.playbackRate = playbackRate;
+        clip.onended = () => onPageReadingFinished();
+        clip.onerror = () => onPageReadingFinished();
         activeClip = clip;
         reading = true;
+        paused = false;
         el.read.textContent = UI.stop;
+        setReadingVisual(true, false);
+        startElapsedTimer();
         syncAudioContext({ mode: 'prerendered', playing: true, paused: false, completed: false, startedAt: Date.now() });
         await clip.play();
         return;
@@ -877,27 +993,20 @@
     }
 
     const utterance = new SpeechSynthesisUtterance(`${page.title}. ${page.body} ${page.prayer} ${page.heart || ''}`.trim());
-    utterance.rate = 0.92;
+    utterance.rate = 0.92 * playbackRate;
     utterance.pitch = 1.02;
     utterance.volume = 0.98;
     utterance.lang = contentLang === 'ar' ? 'ar-LB' : contentLang === 'fr' ? 'fr-FR' : 'en-US';
     utterance.voice = selectPreferredBrowserVoice();
-    utterance.onend = () => {
-      reading = false;
-      activeUtterance = null;
-      el.read.textContent = UI.read;
-      syncAudioContext({ mode: 'speech', playing: false, paused: false, completed: false });
-    };
-    utterance.onerror = () => {
-      reading = false;
-      activeUtterance = null;
-      el.read.textContent = UI.read;
-      syncAudioContext({ mode: 'speech', playing: false, paused: false, completed: false });
-    };
+    utterance.onend = () => onPageReadingFinished();
+    utterance.onerror = () => onPageReadingFinished();
 
     reading = true;
+    paused = false;
     activeUtterance = utterance;
     el.read.textContent = UI.stop;
+    setReadingVisual(true, false);
+    startElapsedTimer();
     syncAudioContext({ mode: 'speech', playing: true, paused: false, completed: false, startedAt: Date.now() });
     window.speechSynthesis.speak(utterance);
   };
@@ -917,6 +1026,19 @@
     setActiveVoicePack(el.pack.value);
     stopReading();
     syncAudioContext({ voicePack: activeVoicePack?.id || null });
+  });
+
+  // Rate controls
+  el.rateBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const rate = parseFloat(btn.dataset.rate);
+      if (isNaN(rate)) return;
+      playbackRate = rate;
+      el.rateBtns.forEach(b => b.classList.toggle('is-active', b === btn));
+      if (activeClip) {
+        activeClip.playbackRate = playbackRate;
+      }
+    });
   });
 
   document.addEventListener('keydown', event => {
