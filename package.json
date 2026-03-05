@@ -14,7 +14,8 @@
     "test:rosary-intro-cta": "scripts/tests/run_rosary_intro_cta_behavior.sh",
     "qa": "scripts/qa/run_full_qa.sh",
     "qa:ci": "scripts/qa/run_full_qa.sh --ci",
-    "qa:agentic:smoke": "scripts/qa/agentic_smoke.sh"
+    "qa:agentic:smoke": "scripts/qa/agentic_smoke.sh",
+    "qa:dead-code": "scripts/qa/dead_code_check.sh"
   },
   "keywords": [],
   "author": "",
