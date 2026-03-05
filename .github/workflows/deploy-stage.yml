@@ -29,22 +29,9 @@ jobs:
       - name: Run QA suite
         run: npm run qa:ci
 
-  deploy:
+  notify-deploy:
     needs: qa
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Deploy to Hostinger via SSH
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.HOSTINGER_HOST }}
-          username: ${{ secrets.HOSTINGER_USER }}
-          key: ${{ secrets.HOSTINGER_SSH_KEY }}
-          port: ${{ secrets.HOSTINGER_PORT }}
-          script: |
-            cd /home/u174996069/domains/marsharbel.com/public_html
-            git pull origin stage
+      - name: Hostinger auto-deploys via webhook
+        run: echo "QA passed. Hostinger webhook triggers auto-deploy from stage branch."
