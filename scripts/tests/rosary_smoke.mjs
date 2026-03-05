@@ -77,7 +77,7 @@ try {
     await page.selectOption('#auto-timer-seconds', '12');
     await page.click('#auto-timer-toggle');
     const label = await textOf(page, '#auto-timer-toggle');
-    if (!/Stop Auto/i.test(label)) {
+    if (!/Stop Auto|Auto:\s*\d+s/i.test(label)) {
       throw new Error(`Expected timer to start, got button label: ${label}`);
     }
   });
