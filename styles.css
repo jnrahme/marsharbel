@@ -643,6 +643,63 @@ h3 {
   letter-spacing: 0.02em;
 }
 
+.meditation-step-nav {
+  position: sticky;
+  top: 52px;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0.8rem;
+  margin-bottom: 0.6rem;
+  border-radius: 12px;
+  background: rgba(8, 14, 18, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(211, 178, 110, 0.18);
+}
+
+.step-nav-label {
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.step-nav-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.step-nav-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #dfc182, #c79b53);
+  transition: width 0.35s ease;
+}
+
+.auto-timer-countdown {
+  color: var(--gold);
+  font-size: 0.84rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.start-guided-audio-btn.is-playing {
+  background: linear-gradient(180deg, #b89658, #a17e3f);
+  animation: pulse-playing 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-playing {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
 .bead-progress {
   margin-top: 0.9rem;
   display: grid;
