@@ -4,6 +4,8 @@
   const DOCK_POS_KEY = 'rosary_audio_dock_position';
   const VOICE_PREF_KEY = 'rosary_audio_voice_pref';
   const STORY_PAGE = /\/story(\.html)?$/.test(window.location.pathname || '');
+  const ROSARY_PAGE = /\/(mysteries\/|rosary-|mystery-meditation|saint-charbel-prayers)/.test(window.location.pathname || '');
+  const VOICE_TESTIMONY_PAGE = /\/voice-testimony(\.html)?$/.test(window.location.pathname || '');
 
   const readJSON = key => {
     try {
@@ -59,10 +61,16 @@
       <p class="floating-audio-label">Audio In Progress</p>
       <button id="floating-audio-minimize" type="button" class="floating-audio-minimize" aria-label="Minimize player">Minimize</button>
     </div>
-    <p id="floating-audio-mode" class="floating-audio-mode">Voice</p>
+    <p id="floating-audio-mode" class="floating-audio-mode">Guided Audio</p>
+    <p id="floating-audio-mystery-progress" class="floating-audio-mystery-progress" hidden></p>
+    <p id="floating-audio-prayer-name" class="floating-audio-prayer-name"></p>
     <p id="floating-audio-title" class="floating-audio-title">Rosary narration</p>
     <p id="floating-audio-subtitle" class="floating-audio-subtitle">Active step</p>
     <p id="floating-audio-status" class="floating-audio-status">Playing</p>
+    <div class="floating-audio-step-progress" aria-hidden="true">
+      <span id="floating-audio-step-fill" class="floating-audio-step-fill"></span>
+    </div>
+    <p id="floating-audio-step-label" class="floating-audio-step-label" hidden></p>
     <p id="floating-audio-countdown" class="floating-audio-countdown" hidden></p>
     <div class="floating-audio-progress" aria-hidden="true">
       <span id="floating-audio-progress-fill" class="floating-audio-progress-fill"></span>
@@ -88,6 +96,11 @@
   const subtitleEl = document.getElementById('floating-audio-subtitle');
   const modeEl = document.getElementById('floating-audio-mode');
   const statusEl = document.getElementById('floating-audio-status');
+  const mysteryProgressEl = document.getElementById('floating-audio-mystery-progress');
+  const prayerNameEl = document.getElementById('floating-audio-prayer-name');
+  const stepFillEl = document.getElementById('floating-audio-step-fill');
+  const stepBarEl = root.querySelector('.floating-audio-step-progress');
+  const stepLabelEl = document.getElementById('floating-audio-step-label');
   const countdownEl = document.getElementById('floating-audio-countdown');
   const progressFillEl = document.getElementById('floating-audio-progress-fill');
   const progressBarEl = document.querySelector('.floating-audio-progress');
@@ -268,6 +281,7 @@
   const renderContext = context => {
     const ui = { ...(context?.ui || {}), ...getPageUiProfile(context) };
     const enabled = (value, fallback = true) => value === undefined ? fallback : Boolean(value);
+    const isRosary = context.source === 'rosary';
 
     titleEl.textContent = context.title || 'Rosary narration';
     subtitleEl.textContent = context.stage || context.subtitle || 'Active step';
@@ -275,6 +289,37 @@
     openEl.textContent = ui.openLabel || 'Open Mystery';
     setAutoPrayerButton(Boolean(context.autoPrayerVoiceEnabled));
     renderCountdown(context);
+
+    if (isRosary && context.mysteryNum && context.totalMysteries) {
+      mysteryProgressEl.textContent = `Mystery ${context.mysteryNum} of ${context.totalMysteries} — ${context.mysterySetLabel || ''}`;
+      mysteryProgressEl.hidden = false;
+    } else {
+      mysteryProgressEl.hidden = true;
+    }
+
+    if (isRosary && context.prayerLabel) {
+      prayerNameEl.textContent = context.prayerLabel;
+      prayerNameEl.hidden = false;
+      titleEl.hidden = true;
+      subtitleEl.hidden = true;
+    } else {
+      prayerNameEl.hidden = true;
+      titleEl.hidden = false;
+      subtitleEl.hidden = !enabled(ui.showSubtitle, true);
+    }
+
+    if (isRosary && typeof context.stepIndex === 'number' && context.totalSteps) {
+      const step = context.stepIndex + 1;
+      const total = context.totalSteps;
+      const ratio = Math.round((step / total) * 100);
+      stepFillEl.style.width = `${ratio}%`;
+      stepLabelEl.textContent = `Step ${step} of ${total}`;
+      stepLabelEl.hidden = false;
+      stepBarEl.hidden = false;
+    } else {
+      stepBarEl.hidden = true;
+      stepLabelEl.hidden = true;
+    }
 
     backEl.hidden = !enabled(ui.showBack, true);
     toggleEl.hidden = !enabled(ui.showToggle, true);
@@ -285,7 +330,6 @@
     if (voiceRowEl) {
       voiceRowEl.hidden = true;
     }
-    subtitleEl.hidden = !enabled(ui.showSubtitle, true);
     countdownEl.hidden = countdownEl.hidden || !enabled(ui.showCountdown, true);
     progressBarEl.hidden = !enabled(ui.showProgress, true);
 
@@ -494,7 +538,9 @@
     const ratio = Math.min(1, elapsed / Math.max(1, estimatedDuration));
     progressFillEl.style.width = `${Math.round(ratio * 100)}%`;
     if (elapsedEl) {
-      elapsedEl.textContent = formatElapsed(elapsed);
+      elapsedEl.textContent = estimatedDuration > 0
+        ? `${formatElapsed(elapsed)} / ${formatElapsed(estimatedDuration)}`
+        : formatElapsed(elapsed);
       elapsedEl.hidden = false;
     }
   };
@@ -551,8 +597,25 @@
     }
   };
 
+  const isRosarySourceContext = ctx => ctx?.source === 'rosary' || (ctx?.mode === 'prerendered' && !ctx?.source);
+  const isStorySourceContext = ctx => ctx?.source === 'storybook';
+  const isContextPageRelevant = ctx => {
+    if (isRosarySourceContext(ctx)) return ROSARY_PAGE;
+    if (isStorySourceContext(ctx)) return STORY_PAGE;
+    return true;
+  };
+
   const renderSpeechState = () => {
     const context = readContext();
+
+    if (!isContextPageRelevant(context) && !isSpeakingActive()) {
+      if (context.playing || context.paused) {
+        writeContext({ playing: false, paused: false, completed: false });
+      }
+      setHidden(true);
+      return;
+    }
+
     if (!isSpeakingActive()) {
       restoreSpeechFromContext(context);
     }

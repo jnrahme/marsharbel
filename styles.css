@@ -606,6 +606,7 @@ h3 {
 
 .meditation-content {
   padding: 1.1rem 1.15rem;
+  align-self: start;
 }
 
 .stage-badge {
@@ -1595,6 +1596,49 @@ h3 {
   font-size: 0.84rem;
 }
 
+.floating-audio-mystery-progress {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.floating-audio-prayer-name {
+  margin: 0;
+  color: #f0ece3;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.floating-audio-step-progress {
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(211, 178, 110, 0.15);
+  overflow: hidden;
+  margin: 0.3rem 0 0;
+}
+
+.floating-audio-step-fill {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: var(--gold);
+  transition: width 300ms ease;
+}
+
+.floating-audio-step-label {
+  margin: 0.1rem 0 0;
+  font-size: 0.68rem;
+  color: rgba(211, 178, 110, 0.6);
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
 .floating-audio-status {
   margin: 0;
   color: #d2cfbf;
@@ -1770,7 +1814,10 @@ h3 {
 .floating-audio.is-minimized .floating-audio-countdown,
 .floating-audio.is-minimized .floating-audio-progress,
 .floating-audio.is-minimized .floating-audio-voice-row,
-.floating-audio.is-minimized .floating-audio-auto-prayer-btn {
+.floating-audio.is-minimized .floating-audio-auto-prayer-btn,
+.floating-audio.is-minimized .floating-audio-step-progress,
+.floating-audio.is-minimized .floating-audio-step-label,
+.floating-audio.is-minimized .floating-audio-mystery-progress {
   display: none;
 }
 
@@ -1825,7 +1872,11 @@ h3 {
   .floating-audio.is-mobile-pill .floating-audio-voice-row,
   .floating-audio.is-mobile-pill .floating-audio-actions,
   .floating-audio.is-mobile-pill .floating-audio-auto-prayer-btn,
-  .floating-audio.is-mobile-pill .floating-audio-next {
+  .floating-audio.is-mobile-pill .floating-audio-next,
+  .floating-audio.is-mobile-pill .floating-audio-step-progress,
+  .floating-audio.is-mobile-pill .floating-audio-step-label,
+  .floating-audio.is-mobile-pill .floating-audio-mystery-progress,
+  .floating-audio.is-mobile-pill .floating-audio-prayer-name {
     display: none;
   }
 
