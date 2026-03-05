@@ -161,8 +161,12 @@ const soundStatus = document.getElementById('sound-status');
 const studioAudio = document.getElementById('studio-audio');
 const autoTimerSeconds = document.getElementById('auto-timer-seconds');
 const autoTimerToggle = document.getElementById('auto-timer-toggle');
+const autoTimerCountdownEl = document.getElementById('auto-timer-countdown');
 const meditationContent = document.querySelector('.meditation-content');
 const meditationActions = document.querySelector('.meditation-actions');
+const stepNavLabel = document.getElementById('step-nav-label');
+const stepNavBar = document.getElementById('step-nav-bar');
+const stepNavFill = document.getElementById('step-nav-fill');
 
 const contextPanel = document.createElement('section');
 contextPanel.className = 'mystery-source-panel';
@@ -588,43 +592,46 @@ const updateVoiceButtonLabel = () => {
     return;
   }
   if (playbackPending) {
-    pauseButton.textContent = 'Starting...';
+    pauseButton.textContent = 'Starting\u2026';
     return;
   }
-  if (prayerClipAudio && !prayerClipAudio.ended) {
-    if (!prayerClipAudio.paused) {
-      pauseButton.textContent = 'Pause Voice';
-      return;
-    }
-    pauseButton.textContent = 'Resume Voice';
+  const isPlaying = (prayerClipAudio && !prayerClipAudio.ended && !prayerClipAudio.paused)
+    || (activeNarrationMode === 'prerendered' && clipAudio && !clipAudio.paused && !clipAudio.ended);
+  const isPaused = (prayerClipAudio && !prayerClipAudio.ended && prayerClipAudio.paused)
+    || (activeNarrationMode === 'prerendered' && clipAudio && clipAudio.paused && clipAudio.currentTime > 0);
+
+  if (isPlaying) {
+    pauseButton.textContent = '\u23F8 Pause';
+    pauseButton.setAttribute('aria-label', 'Pause voice narration');
     return;
   }
-  if (activeNarrationMode === 'prerendered' && clipAudio) {
-    if (!clipAudio.paused && !clipAudio.ended) {
-      pauseButton.textContent = 'Pause Voice';
-      return;
-    }
-    if (clipAudio.paused && clipAudio.currentTime > 0) {
-      pauseButton.textContent = 'Resume Voice';
-      return;
-    }
-    pauseButton.textContent = 'Play Voice';
+  if (isPaused) {
+    pauseButton.textContent = '\u25B6 Play';
+    pauseButton.setAttribute('aria-label', 'Resume voice narration');
     return;
   }
-  pauseButton.textContent = 'Play Voice';
+  if (hasUserStartedPlayback) {
+    pauseButton.textContent = '\u21BB Replay';
+    pauseButton.setAttribute('aria-label', 'Replay voice narration');
+    return;
+  }
+  pauseButton.textContent = '\u25B6 Play';
+  pauseButton.setAttribute('aria-label', 'Play voice narration');
 };
 
 const updateStartGuidedAudioButton = () => {
   if (!startGuidedAudioButton) return;
   if (playbackPending) {
-    startGuidedAudioButton.textContent = 'Starting...';
+    startGuidedAudioButton.textContent = 'Starting\u2026';
     return;
   }
   if (hasActiveNarration()) {
-    startGuidedAudioButton.textContent = 'Playing Guided Audio';
+    startGuidedAudioButton.textContent = '\u25B6 Playing\u2026';
+    startGuidedAudioButton.classList.add('is-playing');
     return;
   }
-  startGuidedAudioButton.textContent = hasUserStartedPlayback ? 'Replay Guided Audio' : 'Play Guided Audio';
+  startGuidedAudioButton.classList.remove('is-playing');
+  startGuidedAudioButton.textContent = hasUserStartedPlayback ? '\u21BB Replay Guided Audio' : '\u25B6 Play Guided Audio';
 };
 
 const speakPrayer = (prayerKey, onComplete = null, requestId = playbackRequestId) => {
@@ -1001,6 +1008,17 @@ const render = () => {
   stageText.textContent = current.text;
   stepCounter.textContent = `Step ${stageIndex + 1} of ${stages.length}`;
 
+  if (stepNavLabel) {
+    stepNavLabel.textContent = `Step ${stageIndex + 1} of ${stages.length}`;
+  }
+  if (stepNavBar) {
+    stepNavBar.setAttribute('aria-valuenow', String(stageIndex + 1));
+    stepNavBar.setAttribute('aria-valuemax', String(stages.length));
+  }
+  if (stepNavFill) {
+    stepNavFill.style.width = `${Math.round(((stageIndex + 1) / stages.length) * 100)}%`;
+  }
+
   dots.forEach((dot, idx) => {
     dot.classList.toggle('on', idx <= stageIndex);
   });
@@ -1010,8 +1028,14 @@ const render = () => {
   updateLivePrayerPanel();
   updateVoiceButtonLabel();
   updateStartGuidedAudioButton();
+  updateAutoTimerToggleState();
   syncGlobalAudioContext();
   preloadNextClip(stageIndex);
+
+  if (meditationContent) {
+    meditationContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   window.dispatchEvent(new CustomEvent('sc:content-updated'));
 };
 
@@ -1064,6 +1088,7 @@ const startAutoCountdown = currentStageIndex => {
   autoTimerId = setInterval(() => {
     if (!autoRunning || autoCountdownStageIndex !== stageIndex) {
       clearAutoCountdown();
+      updateAutoTimerToggleState();
       updateLivePrayerPanel();
       return;
     }
@@ -1071,12 +1096,14 @@ const startAutoCountdown = currentStageIndex => {
     autoRemainingSeconds -= 1;
     if (autoRemainingSeconds <= 0) {
       clearAutoCountdown();
+      updateAutoTimerToggleState();
       updateLivePrayerPanel();
       nextStage();
       return;
     }
 
     soundStatus.textContent = `Prayer time: ${autoRemainingSeconds}s before next step.`;
+    updateAutoTimerToggleState();
     updateLivePrayerPanel();
   }, 1000);
 };
@@ -1333,11 +1360,6 @@ const toggleAmbient = async () => {
   });
 
   soundButton.textContent = `Church Music: ${ambientOn ? 'On' : 'Off'}`;
-  if (ambientOn) {
-    soundStatus.textContent = 'Church background music is on.';
-  } else {
-    soundStatus.textContent = 'Church background music is off.';
-  }
 };
 
 soundButton.addEventListener('click', toggleAmbient);
@@ -1368,45 +1390,66 @@ if (churchMusicToggle) {
 }
 
 const studioPath = `${basePath}audio/${key}.mp3`;
+studioPlayButton.hidden = true;
+studioAudio.preload = 'metadata';
 studioAudio.src = studioPath;
 
 studioPlayButton.addEventListener('click', async () => {
   if (studioAudio.paused) {
     try {
       await studioAudio.play();
-      studioPlayButton.textContent = 'Pause Studio Track';
+      studioPlayButton.textContent = '\u23F8 Pause Studio Track';
     } catch (_) {
       soundStatus.textContent = 'Could not play studio track.';
     }
     return;
   }
   studioAudio.pause();
-  studioPlayButton.textContent = 'Play Studio Track';
+  studioPlayButton.textContent = '\u25B6 Play Studio Track';
 });
 studioAudio.addEventListener('ended', () => {
-  studioPlayButton.textContent = 'Play Studio Track';
+  studioPlayButton.textContent = '\u25B6 Play Studio Track';
+});
+studioAudio.addEventListener('loadedmetadata', () => {
+  studioPlayButton.hidden = false;
+  studioPlayButton.textContent = '\u25B6 Play Studio Track';
 });
 studioAudio.addEventListener('error', () => {
-  studioPlayButton.disabled = true;
-  studioPlayButton.textContent = 'Studio Track Unavailable';
-  soundStatus.textContent = 'Studio track not found yet. Upload audio/{mystery}.mp3 to enable it.';
+  studioPlayButton.hidden = true;
 });
+
+const updateAutoTimerToggleState = () => {
+  const seconds = Number(autoTimerSeconds.value || 0);
+  if (autoRunning) {
+    autoTimerToggle.textContent = `Stop Auto (${autoTimerDuration}s)`;
+    autoTimerToggle.disabled = false;
+  } else {
+    autoTimerToggle.textContent = seconds ? 'Start Auto' : 'Start Auto';
+    autoTimerToggle.disabled = !seconds;
+  }
+  if (autoTimerCountdownEl) {
+    if (autoRunning && autoRemainingSeconds > 0) {
+      autoTimerCountdownEl.hidden = false;
+      autoTimerCountdownEl.textContent = `Auto running \u2014 next in ${autoRemainingSeconds}s`;
+    } else if (autoRunning) {
+      autoTimerCountdownEl.hidden = false;
+      autoTimerCountdownEl.textContent = `Auto running (${autoTimerDuration}s)`;
+    } else {
+      autoTimerCountdownEl.hidden = true;
+      autoTimerCountdownEl.textContent = '';
+    }
+  }
+};
 
 const stopAutoTimer = () => {
   clearAutoCountdown();
   autoRunning = false;
-  autoTimerToggle.textContent = 'Start Auto';
   stopDotsAnimation();
+  updateAutoTimerToggleState();
   updateLivePrayerPanel();
 };
 
 autoTimerToggle.addEventListener('click', () => {
-  if (autoPrayerVoiceEnabled && autoPrayerToggle) {
-    autoPrayerToggle.checked = false;
-    autoPrayerToggle.dispatchEvent(new Event('change', { bubbles: true }));
-    soundStatus.textContent = 'Auto Prayer turned off. Hands-free timer is now active.';
-  }
-
   const seconds = Number(autoTimerSeconds.value || 0);
 
   if (autoRunning) {
@@ -1416,17 +1459,22 @@ autoTimerToggle.addEventListener('click', () => {
   }
 
   if (!seconds) {
-    soundStatus.textContent = 'Auto timer is off.';
+    soundStatus.textContent = 'Select a timer duration first.';
     return;
   }
 
   autoRunning = true;
   autoTimerDuration = seconds;
   autoRemainingSeconds = 0;
-  autoTimerToggle.textContent = 'Stop Auto';
   soundStatus.textContent = `Auto timer enabled (${seconds}s). Countdown starts after narration ends.`;
   startDotsAnimation();
+  updateAutoTimerToggleState();
   updateLivePrayerPanel();
+});
+
+autoTimerSeconds.addEventListener('change', () => {
+  const seconds = Number(autoTimerSeconds.value || 0);
+  autoTimerToggle.disabled = !seconds && !autoRunning;
 });
 
 render();
@@ -1435,7 +1483,7 @@ window.dispatchEvent(new CustomEvent('sc:content-updated'));
 soundButton.textContent = 'Church Music: Off';
 updateVoiceButtonLabel();
 updateStartGuidedAudioButton();
-studioPlayButton.textContent = 'Play Studio Track';
+updateAutoTimerToggleState();
 ensureClipPlayers();
 loadClipManifest()
   .finally(() => {

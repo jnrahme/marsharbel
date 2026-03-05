@@ -90,22 +90,30 @@
 
       <div class="meditation-top-controls">
         <a class="btn subtle" href="../rosary-visual-guide.html">Back to Mystery List</a>
-        <button id="prev-mystery" type="button" class="btn subtle">Previous Mystery</button>
-        <button id="next-mystery" type="button" class="btn subtle">Next Mystery</button>
-        <select id="mystery-picker" class="btn subtle meditation-select"></select>
+        <button id="prev-mystery" type="button" class="btn subtle" aria-label="Go to previous mystery">Previous Mystery</button>
+        <button id="next-mystery" type="button" class="btn subtle" aria-label="Go to next mystery">Next Mystery</button>
+        <select id="mystery-picker" class="btn subtle meditation-select" aria-label="Select a mystery"></select>
       </div>
 
       <div class="meditation-top-controls">
         <label class="btn subtle" for="auto-timer-seconds">Hands-Free Timer</label>
-        <select id="auto-timer-seconds" class="btn subtle">
+        <select id="auto-timer-seconds" class="btn subtle" aria-label="Select hands-free timer duration">
           <option value="0">Off</option>
-          <option value="12">12s</option>
+          <option value="12" selected>12s</option>
           <option value="18">18s</option>
           <option value="25">25s</option>
         </select>
         <button id="auto-timer-toggle" type="button" class="btn subtle">Start Auto</button>
+        <span id="auto-timer-countdown" class="auto-timer-countdown" hidden aria-live="polite"></span>
       </div>
     </section>
+
+    <nav class="meditation-step-nav" aria-label="Meditation step progress">
+      <span id="step-nav-label" class="step-nav-label">Step 1 of 14</span>
+      <div class="step-nav-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="14" id="step-nav-bar">
+        <span id="step-nav-fill" class="step-nav-fill"></span>
+      </div>
+    </nav>
 
     <section class="meditation-layout">
       <article class="card meditation-image-card">
@@ -121,15 +129,15 @@
         <div id="bead-progress" class="bead-progress" aria-label="Prayer progress"></div>
 
         <div class="meditation-actions">
-          <button id="prev-step" type="button" class="btn subtle">Previous</button>
-          <button id="next-step" type="button" class="btn primary">Next</button>
-          <button id="pause-audio" type="button" class="btn subtle">Play Voice</button>
-          <button id="toggle-sound" type="button" class="btn subtle">Church Music: Off</button>
-          <button id="play-studio" type="button" class="btn subtle">Play Studio Track</button>
+          <button id="prev-step" type="button" class="btn subtle" aria-label="Previous meditation step">Previous</button>
+          <button id="next-step" type="button" class="btn primary" aria-label="Next meditation step">Next</button>
+          <button id="pause-audio" type="button" class="btn subtle" aria-label="Play voice narration">Play Voice</button>
+          <button id="toggle-sound" type="button" class="btn subtle" aria-label="Toggle church background music">Church Music: Off</button>
+          <button id="play-studio" type="button" class="btn subtle" aria-label="Play studio track">Play Studio Track</button>
         </div>
         <audio id="studio-audio" preload="none"></audio>
 
-        <p id="sound-status" class="sound-status">Voice starts automatically. Use Play Voice to restart or Pause Voice at any time.</p>
+        <p id="sound-status" class="sound-status" aria-live="polite">Voice starts automatically. Use Play Voice to restart or Pause Voice at any time.</p>
       </article>
     </section>
 
