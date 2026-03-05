@@ -267,6 +267,133 @@ try {
     }
   });
 
+  // ============================================================
+  // Rosary audio context source and merge-based writes
+  // ============================================================
+
+  await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(500);
+
+  await expect('Rosary audio context source is set to rosary', async () => {
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(1000);
+    const ctx = await page.evaluate(() =>
+      JSON.parse(localStorage.getItem('rosary_audio_context') || '{}')
+    );
+    if (ctx.source !== 'rosary') {
+      throw new Error(`Expected source='rosary', got: '${ctx.source}'`);
+    }
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(300);
+  });
+
+  await expect('Merge-based context writes preserve existing keys', async () => {
+    // Set a custom key in context
+    await page.evaluate(() => {
+      const ctx = JSON.parse(localStorage.getItem('rosary_audio_context') || '{}');
+      ctx._testMarker = 'preserved';
+      localStorage.setItem('rosary_audio_context', JSON.stringify(ctx));
+    });
+    // Trigger a context sync by clicking guided audio
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(1000);
+    const ctx = await page.evaluate(() =>
+      JSON.parse(localStorage.getItem('rosary_audio_context') || '{}')
+    );
+    if (ctx._testMarker !== 'preserved') {
+      throw new Error(`Merge-based write destroyed existing key: _testMarker=${ctx._testMarker}`);
+    }
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(300);
+  });
+
+  // ============================================================
+  // Floating player UI profile for rosary pages
+  // ============================================================
+
+  await expect('Floating player shows rosary-specific buttons (Auto Prayer, Open Mystery)', async () => {
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(1000);
+    const autoPrayerVisible = await page.evaluate(() => {
+      const el = document.getElementById('floating-audio-auto-prayer');
+      return el && !el.hidden && window.getComputedStyle(el).display !== 'none';
+    });
+    const openVisible = await page.evaluate(() => {
+      const el = document.getElementById('floating-audio-open');
+      return el && !el.hidden && window.getComputedStyle(el).display !== 'none';
+    });
+    if (!autoPrayerVisible) {
+      throw new Error('Auto Prayer button should be visible on rosary page floating player');
+    }
+    if (!openVisible) {
+      throw new Error('Open Mystery link should be visible on rosary page floating player');
+    }
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(300);
+  });
+
+  // ============================================================
+  // Studio track button visibility
+  // ============================================================
+
+  await expect('Studio track button is visible after audio metadata loads', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    // Wait for loadedmetadata to fire (or timeout)
+    await page.waitForTimeout(3000);
+    const studioHidden = await page.evaluate(() => {
+      const btn = document.querySelector('[data-testid="studio-play"]') || document.getElementById('studio-play');
+      return btn ? btn.hidden : true;
+    });
+    // It's acceptable for studio to be hidden if no audio file exists
+    // But if the audio loads, it should be visible
+    const hasAudio = await page.evaluate(() => {
+      const audio = document.querySelector('audio[src*="joyful-1.mp3"]');
+      return audio && audio.readyState >= 1;
+    });
+    if (hasAudio && studioHidden) {
+      throw new Error('Studio track button should be visible after audio metadata loaded');
+    }
+  });
+
+  // ============================================================
+  // Auto timer label when active
+  // ============================================================
+
+  await expect('Auto timer toggle shows "Auto: Xs" format when running', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    await page.selectOption('#auto-timer-seconds', '12');
+    await page.click('#auto-timer-toggle');
+    await page.waitForTimeout(200);
+    const label = await page.evaluate(() =>
+      document.getElementById('auto-timer-toggle')?.textContent || ''
+    );
+    if (!/Auto:\s*12s|Stop Auto/i.test(label)) {
+      throw new Error(`Expected "Auto: 12s" or "Stop Auto" when running, got: "${label}"`);
+    }
+    // Stop the timer
+    await page.click('#auto-timer-toggle');
+    await page.waitForTimeout(100);
+  });
+
+  await expect('Auto timer toggle reverts to "Start Auto" when stopped', async () => {
+    const label = await page.evaluate(() =>
+      document.getElementById('auto-timer-toggle')?.textContent || ''
+    );
+    if (!/Start Auto/i.test(label)) {
+      throw new Error(`Expected "Start Auto" after stopping, got: "${label}"`);
+    }
+  });
+
 } finally {
   await context.close();
   await browser.close();

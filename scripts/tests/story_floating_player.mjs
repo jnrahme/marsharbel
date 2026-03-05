@@ -559,6 +559,108 @@ try {
   });
 
   // ============================================================
+  // STORY PAGE: Floating player Back/Skip buttons navigate pages
+  // ============================================================
+
+  await expect('Floating player Back button navigates to previous page', async () => {
+    // Go to page 2 first
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    await page.click('#story-next');
+    await page.waitForTimeout(300);
+    const pageBefore = await page.locator('#story-step').textContent();
+    // Start reading to show floating player
+    await page.click('#story-read');
+    await page.waitForTimeout(500);
+    // Click Back button in floating player
+    await page.evaluate(() => document.getElementById('floating-audio-back').click());
+    await page.waitForTimeout(500);
+    const pageAfter = await page.locator('#story-step').textContent();
+    if (pageBefore === pageAfter) {
+      throw new Error(`Back button did not navigate: before=${pageBefore}, after=${pageAfter}`);
+    }
+    // Clean up
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(200);
+  });
+
+  await expect('Floating player Skip button navigates to next page', async () => {
+    // Start at page 1
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(500);
+    const pageBefore = await page.locator('#story-step').textContent();
+    await page.click('#story-read');
+    await page.waitForTimeout(500);
+    // Click Skip button in floating player
+    await page.evaluate(() => document.getElementById('floating-audio-skip').click());
+    await page.waitForTimeout(500);
+    const pageAfter = await page.locator('#story-step').textContent();
+    if (pageBefore === pageAfter) {
+      throw new Error(`Skip button did not navigate: before=${pageBefore}, after=${pageAfter}`);
+    }
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(200);
+  });
+
+  await expect('Story audio context source is storybook after reading', async () => {
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    await page.click('#story-read');
+    await page.waitForTimeout(500);
+    const ctx = await page.evaluate(() =>
+      JSON.parse(localStorage.getItem('rosary_audio_context') || '{}')
+    );
+    if (ctx.source !== 'storybook') {
+      throw new Error(`Expected source='storybook', got: '${ctx.source}'`);
+    }
+    // source is 'storybook', mode may be 'prerendered' or 'storybook' depending on speech engine
+    if (!ctx.playing && !ctx.paused) {
+      throw new Error(`Expected playing or paused state, got: playing=${ctx.playing}, paused=${ctx.paused}`);
+    }
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(200);
+  });
+
+  await expect('Close button stops reading and hides floating player', async () => {
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    await page.click('#story-read');
+    await page.waitForTimeout(500);
+    // Verify player is visible
+    const visibleBefore = await page.evaluate(() =>
+      document.querySelector('.floating-audio')?.classList.contains('on') || false
+    );
+    if (!visibleBefore) {
+      throw new Error('Floating player should be visible before close');
+    }
+    // Close
+    await page.evaluate(() => document.getElementById('floating-audio-close').click());
+    await page.waitForTimeout(500);
+    const visibleAfter = await page.evaluate(() =>
+      document.querySelector('.floating-audio')?.classList.contains('on') || false
+    );
+    if (visibleAfter) {
+      throw new Error('Floating player should be hidden after close');
+    }
+    // Read Aloud indicator should reset
+    const readLabel = await page.evaluate(() =>
+      document.getElementById('story-read')?.textContent || ''
+    );
+    if (/Reading|Pause/i.test(readLabel)) {
+      throw new Error(`Read Aloud button should reset after close, got: "${readLabel}"`);
+    }
+  });
+
+  // ============================================================
   // STORY PAGE: Evidence section
   // ============================================================
 

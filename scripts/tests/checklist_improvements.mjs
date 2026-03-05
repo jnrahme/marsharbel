@@ -626,6 +626,207 @@ try {
     }
   });
 
+  // ============================================================
+  // 14. GUIDED AUDIO RESUME STATE
+  // ============================================================
+
+  await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(500);
+
+  await expect('Guided audio button shows "Resume" after pause', async () => {
+    // Start playback
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(1500);
+    // Verify it says Pause first
+    const playingLabel = await page.evaluate(() =>
+      document.getElementById('start-guided-audio')?.textContent || ''
+    );
+    if (!/Pause|Starting/i.test(playingLabel)) {
+      throw new Error(`Expected Pause/Starting state, got: "${playingLabel}"`);
+    }
+    // Now pause it via the button itself
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(500);
+    const pausedLabel = await page.evaluate(() =>
+      document.getElementById('start-guided-audio')?.textContent || ''
+    );
+    if (!/Resume Guided Audio/i.test(pausedLabel)) {
+      throw new Error(`Expected "Resume Guided Audio" after pause, got: "${pausedLabel}"`);
+    }
+    // Clean up
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(300);
+  });
+
+  await expect('Resume click restarts from paused state', async () => {
+    // Start and pause
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(1500);
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(500);
+    // Verify Resume label
+    const resumeLabel = await page.evaluate(() =>
+      document.getElementById('start-guided-audio')?.textContent || ''
+    );
+    if (!/Resume/i.test(resumeLabel)) {
+      throw new Error(`Expected Resume state, got: "${resumeLabel}"`);
+    }
+    // Click Resume
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(500);
+    const afterResumeLabel = await page.evaluate(() =>
+      document.getElementById('start-guided-audio')?.textContent || ''
+    );
+    if (!/Pause Guided Audio|Playing/i.test(afterResumeLabel)) {
+      throw new Error(`Expected active state after resume, got: "${afterResumeLabel}"`);
+    }
+    // Clean up
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(300);
+  });
+
+  // ============================================================
+  // 15. STEP COUNTER BADGE TEXT ON INTRO/END STAGES
+  // ============================================================
+
+  await expect('Step counter shows badge text on intro stage (not "Step X of Y")', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html?stage=intro`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const text = await page.locator('#step-counter').textContent();
+    if (/Step \d+ of \d+/i.test(text)) {
+      throw new Error(`Intro stage should show badge text, not step counter, got: "${text}"`);
+    }
+    if (!/Intro Prayers/i.test(text)) {
+      throw new Error(`Expected "Intro Prayers" badge on intro stage, got: "${text}"`);
+    }
+  });
+
+  await expect('Step counter shows badge text on end stage (not "Step X of Y")', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-5.html?stage=end`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const text = await page.locator('#step-counter').textContent();
+    if (/Step \d+ of \d+/i.test(text)) {
+      throw new Error(`End stage should show badge text, not step counter, got: "${text}"`);
+    }
+    if (!/End Prayers/i.test(text)) {
+      throw new Error(`Expected "End Prayers" badge on end stage, got: "${text}"`);
+    }
+  });
+
+  await expect('Step counter reverts to "Step X of Y" on normal mystery', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-3.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const text = await page.locator('#step-counter').textContent();
+    if (!/Step \d+ of \d+/i.test(text)) {
+      throw new Error(`Normal mystery should show "Step X of Y", got: "${text}"`);
+    }
+  });
+
+  // ============================================================
+  // 16. AUTO-SCROLL ON STEP CHANGE
+  // ============================================================
+
+  await expect('scrollIntoView is called on step navigation', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    // Patch scrollIntoView on the exact element the code uses (getElementById('stage-title'))
+    const scrollCalled = await page.evaluate(() => {
+      return new Promise(resolve => {
+        const el = document.getElementById('stage-title');
+        if (!el) { resolve(false); return; }
+        const orig = Element.prototype.scrollIntoView;
+        Element.prototype.scrollIntoView = function(...args) {
+          if (this === el) {
+            Element.prototype.scrollIntoView = orig;
+            resolve(true);
+          }
+          return orig.apply(this, args);
+        };
+        document.getElementById('next-step').click();
+        // Timeout fallback
+        setTimeout(() => {
+          Element.prototype.scrollIntoView = orig;
+          resolve(false);
+        }, 2000);
+      });
+    });
+    if (!scrollCalled) {
+      throw new Error('scrollIntoView should be called on step navigation');
+    }
+  });
+
+  // ============================================================
+  // 17. PLAY VOICE VS PLAY GUIDED AUDIO INDEPENDENCE
+  // ============================================================
+
+  await expect('Play Voice button stays "Play Voice" when guided audio starts', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(500);
+    const voiceBefore = await page.evaluate(() =>
+      document.querySelector('[data-testid="pause-audio"]')?.textContent || ''
+    );
+    if (voiceBefore !== 'Play Voice') {
+      throw new Error(`Expected "Play Voice" initially, got: "${voiceBefore}"`);
+    }
+    // Start guided audio (not Play Voice)
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(1500);
+    const voiceAfter = await page.evaluate(() =>
+      document.querySelector('[data-testid="pause-audio"]')?.textContent || ''
+    );
+    if (voiceAfter !== 'Play Voice') {
+      throw new Error(`Play Voice changed to "${voiceAfter}" after guided audio started`);
+    }
+    // Clean up
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(300);
+  });
+
+  await expect('Play Voice button shows voice-specific labels when activated', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(500);
+    // Click Play Voice
+    await page.evaluate(() => document.querySelector('[data-testid="pause-audio"]').click());
+    await page.waitForTimeout(1000);
+    const voiceLabel = await page.evaluate(() =>
+      document.querySelector('[data-testid="pause-audio"]')?.textContent || ''
+    );
+    // Should now show Pause Voice or Starting...
+    if (!/Pause Voice|Starting|Stop Voice/i.test(voiceLabel)) {
+      throw new Error(`Expected active voice state, got: "${voiceLabel}"`);
+    }
+    // Clean up
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(300);
+  });
+
+  await expect('After stopping, Play Voice resets and guided audio shows correct state', async () => {
+    const voiceLabel = await page.evaluate(() =>
+      document.querySelector('[data-testid="pause-audio"]')?.textContent || ''
+    );
+    if (!/Play Voice/i.test(voiceLabel)) {
+      throw new Error(`Expected "Play Voice" after stop, got: "${voiceLabel}"`);
+    }
+    const guidedLabel = await page.evaluate(() =>
+      document.getElementById('start-guided-audio')?.textContent || ''
+    );
+    if (!/Play Guided Audio|Replay Guided Audio/i.test(guidedLabel)) {
+      throw new Error(`Expected Play/Replay state after stop, got: "${guidedLabel}"`);
+    }
+  });
+
 } finally {
   await context.close();
   await browser.close();
