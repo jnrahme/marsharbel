@@ -1056,6 +1056,13 @@
   window.addEventListener('beforeunload', stopReading);
   window.addEventListener('rosary-audio-close', stopReading);
 
+  window.RosaryNarrationController = {
+    togglePause: () => readCurrentPage(),
+    stop: () => stopReading(),
+    next: () => movePage(isRtl ? -1 : 1),
+    previous: () => movePage(isRtl ? 1 : -1)
+  };
+
   if (isRtl) {
     el.frame.classList.add('is-rtl');
     el.frame.setAttribute('dir', 'rtl');

@@ -443,7 +443,7 @@
     }
 
     progressBarEl?.classList.remove('is-countdown');
-    if (!context?.mode || (context.mode !== 'speech' && context.mode !== 'prerendered')) {
+    if (!context?.mode || (context.mode !== 'speech' && context.mode !== 'prerendered' && context.mode !== 'storybook')) {
       progressFillEl.style.width = '0%';
       return;
     }
@@ -533,7 +533,7 @@
         samePage = true;
       }
     }
-    const contextActive = (context.mode === 'speech' || context.mode === 'prerendered')
+    const contextActive = (context.mode === 'speech' || context.mode === 'prerendered' || context.mode === 'storybook')
       && (context.playing || context.paused || context.completed)
       && (samePage || active || Boolean(context.persistentAcrossPages));
 
@@ -688,7 +688,7 @@
   toggleEl.addEventListener('click', () => {
     const context = readContext();
     const controller = getNarrationController();
-    if (controller?.togglePause && context.mode === 'prerendered') {
+    if (controller?.togglePause && (context.mode === 'prerendered' || context.source === 'storybook')) {
       controller.togglePause();
       setTimeout(renderSpeechState, 40);
       return;
@@ -729,9 +729,9 @@
   closeEl.addEventListener('click', () => {
     const context = readContext();
     const controller = getNarrationController();
-    if (controller?.stop && context.mode === 'prerendered') {
+    if (controller?.stop && (context.mode === 'prerendered' || context.source === 'storybook')) {
       controller.stop();
-      writeContext({ mode: 'prerendered', playing: false, paused: false, completed: false });
+      writeContext({ mode: context.mode || 'prerendered', playing: false, paused: false, completed: false });
       setTimeout(renderSpeechState, 40);
       return;
     }

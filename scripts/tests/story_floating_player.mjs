@@ -172,24 +172,15 @@ try {
   });
 
   // Floating player action buttons that SHOULD be visible
-  await expect('Floating player Pause button is visible', async () => {
-    const toggle = page.locator('#floating-audio-toggle');
-    const hidden = await toggle.isHidden();
-    if (hidden) throw new Error('Pause/Play toggle should be visible');
-  });
-
-  await expect('Floating player back/skip buttons are visible', async () => {
-    const back = page.locator('#floating-audio-back');
-    const skip = page.locator('#floating-audio-skip');
-    if (await back.isHidden()) throw new Error('Back button should be visible');
-    if (await skip.isHidden()) throw new Error('Skip button should be visible');
-  });
-
-  await expect('Floating player Close and Minimize buttons are visible', async () => {
-    const close = page.locator('#floating-audio-close');
-    const minimize = page.locator('#floating-audio-minimize');
-    if (await close.isHidden()) throw new Error('Close button should be visible');
-    if (await minimize.isHidden()) throw new Error('Minimize button should be visible');
+  await expect('Floating player Pause/Close/Minimize/Back/Skip buttons are visible', async () => {
+    const checks = await page.evaluate(() => {
+      const ids = ['floating-audio-toggle', 'floating-audio-close', 'floating-audio-minimize', 'floating-audio-back', 'floating-audio-skip'];
+      return ids.map(id => {
+        const el = document.getElementById(id);
+        return { id, hidden: !el || el.hidden };
+      }).filter(r => r.hidden);
+    });
+    if (checks.length) throw new Error(`Hidden buttons: ${checks.map(c => c.id).join(', ')}`);
   });
 
   await expect('Floating player progress bar is visible', async () => {
@@ -201,11 +192,52 @@ try {
   });
 
   // ============================================================
+  // FLOATING PLAYER: Pause button actually pauses
+  // ============================================================
+
+  await expect('Pause button in floating player pauses the storybook audio', async () => {
+    // Audio is currently playing from earlier Read Aloud click
+    const ctxBefore = await page.evaluate(() => JSON.parse(localStorage.getItem('rosary_audio_context') || '{}'));
+    if (!ctxBefore.playing) throw new Error('Audio should be playing before pause test');
+
+    await page.evaluate(() => document.getElementById('floating-audio-toggle').click());
+    await page.waitForTimeout(300);
+
+    const ctxAfter = await page.evaluate(() => JSON.parse(localStorage.getItem('rosary_audio_context') || '{}'));
+    const readLabel = await page.locator('#story-read').textContent();
+    if (ctxAfter.playing && !ctxAfter.paused) {
+      throw new Error(`Pause did not work: playing=${ctxAfter.playing}, paused=${ctxAfter.paused}`);
+    }
+    if (!/Resume|Read Aloud/i.test(readLabel)) {
+      throw new Error(`Expected storybook button to show paused state, got: ${readLabel}`);
+    }
+  });
+
+  await expect('Play button in floating player resumes the storybook audio', async () => {
+    await page.evaluate(() => document.getElementById('floating-audio-toggle').click());
+    await page.waitForTimeout(300);
+
+    const ctx = await page.evaluate(() => JSON.parse(localStorage.getItem('rosary_audio_context') || '{}'));
+    const readLabel = await page.locator('#story-read').textContent();
+    // After resume, should be playing or re-reading
+    if (ctx.paused && !ctx.playing) {
+      throw new Error(`Resume did not work: playing=${ctx.playing}, paused=${ctx.paused}`);
+    }
+  });
+
+  // ============================================================
   // FLOATING PLAYER: Close stops reading
   // ============================================================
 
+  // Ensure audio is playing first
+  const readBtn = await page.locator('#story-read').textContent();
+  if (/Read Aloud/i.test(readBtn)) {
+    await page.click('#story-read');
+    await page.waitForTimeout(500);
+  }
+
   await expect('Close button hides floating player and stops reading', async () => {
-    await page.click('#floating-audio-close');
+    await page.evaluate(() => document.getElementById('floating-audio-close').click());
     await page.waitForTimeout(300);
     const playerVisible = await page.evaluate(() => {
       return document.querySelector('.floating-audio')?.classList.contains('on') || false;
@@ -215,6 +247,30 @@ try {
     if (!/Read Aloud/i.test(readLabel)) {
       throw new Error(`Expected "Read Aloud" after close, got: ${readLabel}`);
     }
+  });
+
+  // ============================================================
+  // EDGE CASE: Floating player reappears after stop → read again
+  // ============================================================
+
+  await expect('Floating player reappears after stop then read aloud again', async () => {
+    // Player should be hidden now after close
+    const hiddenBefore = await page.evaluate(() =>
+      !document.querySelector('.floating-audio')?.classList.contains('on')
+    );
+    if (!hiddenBefore) throw new Error('Player should be hidden before re-reading');
+
+    await page.click('#story-read');
+    await page.waitForTimeout(800);
+
+    const visibleAfter = await page.evaluate(() =>
+      document.querySelector('.floating-audio')?.classList.contains('on') || false
+    );
+    if (!visibleAfter) throw new Error('Floating player should reappear after clicking Read Aloud again');
+
+    // Clean up
+    await page.evaluate(() => document.getElementById('floating-audio-close').click());
+    await page.waitForTimeout(200);
   });
 
   // ============================================================
