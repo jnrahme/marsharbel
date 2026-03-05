@@ -390,6 +390,7 @@ const startGuidedAudioButton = document.createElement('button');
 startGuidedAudioButton.id = 'start-guided-audio';
 startGuidedAudioButton.type = 'button';
 startGuidedAudioButton.className = 'btn primary start-guided-audio-btn';
+startGuidedAudioButton.setAttribute('data-testid', 'start-guided-audio');
 startGuidedAudioButton.textContent = 'Play Guided Audio';
 if (meditationActions) {
   meditationActions.prepend(startGuidedAudioButton);
