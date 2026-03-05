@@ -35,6 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./storybook.css" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/voice-testimony" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/voice-testimony" />
@@ -126,7 +127,7 @@
       <div class="grid-2">
         <article class="card transcript-card">
           <h3>Arabic (Publishing Draft - Conservative)</h3>
-          <pre>الله يبارككم ويقدّسكم.
+          <pre id="transcript-ar">الله يبارككم ويقدّسكم.
 نعمة الله... نعمة الله... حياة لكم.
 
 [غير واضح: عبارة غير مكتملة عن القلوب/الرب]
@@ -169,10 +170,13 @@
 وبدّي إيّاكم تكونوا حدّنا.
 تسكنوا بقلبنا.
 قلوبنا مليانة من نعمة الله.</pre>
+          <div class="transcript-read-aloud-row">
+            <button class="transcript-read-btn" type="button" data-target="transcript-ar" data-lang="ar-LB">Read Aloud (Arabic)</button>
+          </div>
         </article>
         <article class="card transcript-card">
           <h3>English (Faithful Draft - Conservative)</h3>
-          <pre>May God bless you and sanctify you.
+          <pre id="transcript-en">May God bless you and sanctify you.
 God's grace... God's grace... life for you.
 
 [unclear: incomplete phrase about hearts/the Lord]
@@ -215,6 +219,9 @@ Where my Mother is, I am with her.
 I want you to be with us.
 To dwell in our heart.
 Our hearts are filled with God's grace.</pre>
+          <div class="transcript-read-aloud-row">
+            <button class="transcript-read-btn" type="button" data-target="transcript-en" data-lang="en-US">Read Aloud (English)</button>
+          </div>
         </article>
       </div>
     </section>
@@ -243,6 +250,60 @@ Our hearts are filled with God's grace.</pre>
         const el = document.getElementById('voice-full');
         el.textContent = 'Full capture transcript unavailable.';
       });
+  </script>
+  <script>
+    (() => {
+      if (!('speechSynthesis' in window)) return;
+      let activeUtterance = null;
+      let activeBtn = null;
+
+      const stopTranscriptReading = () => {
+        window.speechSynthesis.cancel();
+        if (activeBtn) {
+          activeBtn.textContent = activeBtn.getAttribute('data-label-default');
+          activeBtn.classList.remove('is-reading');
+        }
+        activeUtterance = null;
+        activeBtn = null;
+      };
+
+      document.querySelectorAll('.transcript-read-btn').forEach(btn => {
+        const defaultLabel = btn.textContent;
+        btn.setAttribute('data-label-default', defaultLabel);
+
+        btn.addEventListener('click', () => {
+          if (activeBtn === btn && window.speechSynthesis.speaking) {
+            stopTranscriptReading();
+            return;
+          }
+          stopTranscriptReading();
+
+          const targetId = btn.getAttribute('data-target');
+          const lang = btn.getAttribute('data-lang') || 'en-US';
+          const pre = document.getElementById(targetId);
+          if (!pre) return;
+
+          const text = pre.textContent.replace(/\[.*?\]/g, '').trim();
+          if (!text) return;
+
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.rate = 0.88;
+          utterance.pitch = 1.0;
+          utterance.volume = 0.95;
+          utterance.lang = lang;
+          utterance.onend = () => stopTranscriptReading();
+          utterance.onerror = () => stopTranscriptReading();
+
+          activeUtterance = utterance;
+          activeBtn = btn;
+          btn.textContent = 'Stop Reading';
+          btn.classList.add('is-reading');
+          window.speechSynthesis.speak(utterance);
+        });
+      });
+
+      window.addEventListener('beforeunload', stopTranscriptReading);
+    })();
   </script>
   <script src="./global-audio-player.js"></script>
   <script src="./translate.js"></script>
