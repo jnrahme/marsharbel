@@ -932,6 +932,7 @@
   });
 
   window.addEventListener('beforeunload', stopReading);
+  window.addEventListener('rosary-audio-close', stopReading);
 
   if (isRtl) {
     el.frame.classList.add('is-rtl');

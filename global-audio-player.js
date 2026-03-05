@@ -729,18 +729,22 @@
   closeEl.addEventListener('click', () => {
     const context = readContext();
     const controller = getNarrationController();
-    if (controller?.stop && context.mode === 'prerendered') {
+
+    // Stop any prerendered narration controller
+    if (controller?.stop && (context.mode === 'prerendered' || context.mode === 'storybook')) {
       controller.stop();
-      writeContext({ mode: 'prerendered', playing: false, paused: false, completed: false });
-      setTimeout(renderSpeechState, 40);
-      return;
     }
 
-    if (!supportsSpeech) {
-      return;
+    // Cancel browser speech synthesis if active
+    if (supportsSpeech) {
+      window.speechSynthesis.cancel();
     }
-    window.speechSynthesis.cancel();
-    writeContext({ mode: 'speech', playing: false, paused: false, completed: false });
+
+    // Notify storybook (or any page) to reset its own reading state
+    window.dispatchEvent(new CustomEvent('rosary-audio-close'));
+
+    // Clear context and hide the dock
+    writeContext({ mode: context.mode || 'prerendered', playing: false, paused: false, completed: false });
     lastRestoreText = '';
     setHidden(true);
   });
