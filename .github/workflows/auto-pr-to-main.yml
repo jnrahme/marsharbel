@@ -1,0 +1,30 @@
+name: Auto PR stage → main
+
+on:
+  push:
+    branches:
+      - stage
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create PR from stage to main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          existing=$(gh pr list --base main --head stage --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            echo "PR #$existing already open for stage → main. Skipping."
+          else
+            gh pr create \
+              --base main \
+              --head stage \
+              --title "Promote stage → main" \
+              --body "Automated PR to sync stage into main after deployment."
+          fi
