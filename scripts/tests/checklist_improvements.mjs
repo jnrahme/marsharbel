@@ -1001,6 +1001,508 @@ try {
     if (disabledOn) throw new Error('Start Auto should be enabled when 25s selected');
   });
 
+  // ============================================================
+  // READER MODE TOGGLE
+  // ============================================================
+
+  await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(400);
+
+  await expect('Reader mode toggle button exists', async () => {
+    const btn = page.locator('#story-reader-toggle');
+    const visible = await btn.isVisible();
+    if (!visible) throw new Error('Reader mode toggle button not found');
+  });
+
+  await expect('Reader mode toggle applies is-reader-mode class', async () => {
+    await page.click('#story-reader-toggle');
+    await page.waitForTimeout(100);
+    const has = await page.locator('.storybook').evaluate(el => el.classList.contains('is-reader-mode'));
+    if (!has) throw new Error('is-reader-mode class not applied after toggle');
+  });
+
+  await expect('Reader mode toggle removes class on second click', async () => {
+    await page.click('#story-reader-toggle');
+    await page.waitForTimeout(100);
+    const has = await page.locator('.storybook').evaluate(el => el.classList.contains('is-reader-mode'));
+    if (has) throw new Error('is-reader-mode class should be removed after second toggle');
+  });
+
+  await expect('Reader mode persists in localStorage', async () => {
+    await page.click('#story-reader-toggle');
+    await page.waitForTimeout(100);
+    const stored = await page.evaluate(() => localStorage.getItem('storybook_reader_mode'));
+    if (stored !== 'true') throw new Error(`Expected localStorage 'true', got: "${stored}"`);
+    // Clean up
+    await page.click('#story-reader-toggle');
+    await page.waitForTimeout(50);
+  });
+
+  await expect('Reader mode restores from localStorage on page load', async () => {
+    await page.evaluate(() => localStorage.setItem('storybook_reader_mode', 'true'));
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(400);
+    const has = await page.locator('.storybook').evaluate(el => el.classList.contains('is-reader-mode'));
+    if (!has) throw new Error('Reader mode should restore from localStorage');
+    const btnText = await page.locator('#story-reader-toggle').textContent();
+    if (!btnText.includes('On')) throw new Error(`Button should show "On" state, got: "${btnText}"`);
+    // Clean up
+    await page.evaluate(() => localStorage.removeItem('storybook_reader_mode'));
+  });
+
+  await expect('Reader mode increases font size of storybook text', async () => {
+    await page.evaluate(() => localStorage.setItem('storybook_reader_mode', 'true'));
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(400);
+    const fontSize = await page.locator('#story-body').evaluate(el => parseFloat(getComputedStyle(el).fontSize));
+    if (fontSize < 17) throw new Error(`Expected larger font in reader mode, got ${fontSize}px`);
+    await page.evaluate(() => localStorage.removeItem('storybook_reader_mode'));
+  });
+
+  // ============================================================
+  // RESUME READING BANNER
+  // ============================================================
+
+  await expect('Resume banner is hidden when no last page saved', async () => {
+    await page.evaluate(() => localStorage.removeItem('storybook_last_page'));
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(400);
+    const hidden = await page.locator('#story-resume-banner').evaluate(el => el.hidden);
+    if (!hidden) throw new Error('Resume banner should be hidden with no saved page');
+  });
+
+  await expect('Resume banner appears when last page is saved', async () => {
+    await page.evaluate(() => localStorage.setItem('storybook_last_page', '3'));
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(400);
+    const hidden = await page.locator('#story-resume-banner').evaluate(el => el.hidden);
+    if (hidden) throw new Error('Resume banner should be visible when last page is saved');
+    const text = await page.locator('#story-resume-text').textContent();
+    if (!text.includes('4')) throw new Error(`Banner should mention page 4, got: "${text}"`);
+  });
+
+  await expect('Resume button navigates to saved page', async () => {
+    await page.click('#story-resume-btn');
+    await page.waitForTimeout(300);
+    const stepText = await page.locator('#story-step').textContent();
+    if (!stepText.includes('4')) throw new Error(`Should navigate to page 4, step shows: "${stepText}"`);
+    const bannerHidden = await page.locator('#story-resume-banner').evaluate(el => el.hidden);
+    if (!bannerHidden) throw new Error('Banner should hide after resume click');
+  });
+
+  await expect('Resume banner dismiss button hides it', async () => {
+    await page.evaluate(() => localStorage.setItem('storybook_last_page', '5'));
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(400);
+    await page.click('#story-resume-dismiss');
+    await page.waitForTimeout(100);
+    const hidden = await page.locator('#story-resume-banner').evaluate(el => el.hidden);
+    if (!hidden) throw new Error('Banner should hide after dismiss');
+  });
+
+  await expect('Resume banner not shown for page 0', async () => {
+    await page.evaluate(() => localStorage.setItem('storybook_last_page', '0'));
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(400);
+    const hidden = await page.locator('#story-resume-banner').evaluate(el => el.hidden);
+    if (!hidden) throw new Error('Resume banner should not show for page 0 (already on page 1)');
+  });
+
+  // ============================================================
+  // AUTO-SCROLL ON NAVIGATION
+  // ============================================================
+
+  await expect('movePage triggers scrollIntoView on story panel', async () => {
+    await page.evaluate(() => localStorage.removeItem('storybook_last_page'));
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(400);
+    // Monkey-patch scrollIntoView to track calls
+    const scrolled = await page.evaluate(() => {
+      let called = false;
+      const panel = document.querySelector('.storybook-panel');
+      if (!panel) return false;
+      panel.scrollIntoView = () => { called = true; };
+      // Trigger next page
+      document.getElementById('story-next').click();
+      return called;
+    });
+    if (!scrolled) throw new Error('scrollIntoView should be called on page navigation');
+  });
+
+  // ============================================================
+  // LAST PAGE TRACKING
+  // ============================================================
+
+  await expect('Navigating pages updates storybook_last_page in localStorage', async () => {
+    await page.evaluate(() => localStorage.removeItem('storybook_last_page'));
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(400);
+    // Navigate to page 2
+    await page.evaluate(() => document.getElementById('story-next').click());
+    await page.waitForTimeout(200);
+    const stored = await page.evaluate(() => localStorage.getItem('storybook_last_page'));
+    if (stored !== '1') throw new Error(`Expected last page '1', got: "${stored}"`);
+    // Navigate to page 3
+    await page.evaluate(() => document.getElementById('story-next').click());
+    await page.waitForTimeout(200);
+    const stored2 = await page.evaluate(() => localStorage.getItem('storybook_last_page'));
+    if (stored2 !== '2') throw new Error(`Expected last page '2', got: "${stored2}"`);
+  });
+
+  // ============================================================
+  // COPY TRANSCRIPT BUTTONS
+  // ============================================================
+
+  await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(400);
+
+  await expect('Copy transcript buttons exist for all transcript blocks', async () => {
+    const count = await page.locator('.transcript-copy-btn').count();
+    if (count < 3) throw new Error(`Expected at least 3 copy buttons, found ${count}`);
+  });
+
+  await expect('Copy transcript button has correct data-target', async () => {
+    const targets = await page.locator('.transcript-copy-btn').evaluateAll(btns =>
+      btns.map(b => b.getAttribute('data-target'))
+    );
+    if (!targets.includes('transcript-ar')) throw new Error('Missing copy button for Arabic transcript');
+    if (!targets.includes('transcript-en')) throw new Error('Missing copy button for English transcript');
+    if (!targets.includes('voice-full')) throw new Error('Missing copy button for full capture');
+  });
+
+  await expect('Copy button shows "Copied!" feedback on click', async () => {
+    // Grant clipboard permission for the test
+    await context.grantPermissions(['clipboard-write'], { origin: baseUrl });
+    await page.click('.transcript-copy-btn[data-target="transcript-en"]');
+    await page.waitForTimeout(200);
+    const text = await page.locator('.transcript-copy-btn[data-target="transcript-en"]').textContent();
+    if (text !== 'Copied!') throw new Error(`Expected "Copied!" feedback, got: "${text}"`);
+  });
+
+  await expect('Copy button reverts to "Copy Transcript" after delay', async () => {
+    await page.waitForTimeout(2200);
+    const text = await page.locator('.transcript-copy-btn[data-target="transcript-en"]').textContent();
+    if (text !== 'Copy Transcript') throw new Error(`Expected "Copy Transcript" after delay, got: "${text}"`);
+  });
+
+  // ============================================================
+  // JUMP-TO-TIMESTAMP (Full Capture)
+  // ============================================================
+
+  await expect('Full capture transcript has clickable timestamp links', async () => {
+    await page.waitForTimeout(500); // wait for fetch
+    const count = await page.locator('#voice-full .timestamp-link').count();
+    if (count === 0) throw new Error('No timestamp links found in full capture transcript');
+  });
+
+  await expect('Timestamp links have data-seek attributes', async () => {
+    const seeks = await page.locator('#voice-full .timestamp-link').evaluateAll(links =>
+      links.map(l => l.dataset.seek)
+    );
+    if (seeks.length === 0) throw new Error('No data-seek attributes on timestamp links');
+    const firstSeek = parseFloat(seeks[0]);
+    if (isNaN(firstSeek)) throw new Error(`First seek value is NaN: "${seeks[0]}"`);
+  });
+
+  await expect('Clicking timestamp seeks video to correct time', async () => {
+    const firstLink = page.locator('#voice-full .timestamp-link').first();
+    const seekVal = await firstLink.getAttribute('data-seek');
+    await firstLink.click();
+    await page.waitForTimeout(300);
+    const videoTime = await page.locator('video').evaluate(v => v.currentTime);
+    const expected = parseFloat(seekVal);
+    if (Math.abs(videoTime - expected) > 1) {
+      throw new Error(`Video should seek to ${expected}s, but is at ${videoTime}s`);
+    }
+  });
+
+  await expect('Clicking timestamp adds highlight class briefly', async () => {
+    const firstLink = page.locator('#voice-full .timestamp-link').first();
+    await firstLink.click();
+    await page.waitForTimeout(100);
+    // Check parent or self has highlight
+    const hasHighlight = await firstLink.evaluate(el => {
+      const target = el.parentElement || el;
+      return target.classList.contains('timestamp-highlight');
+    });
+    if (!hasHighlight) throw new Error('Timestamp click should add highlight class');
+  });
+
+  await expect('Timestamp highlight is removed after delay', async () => {
+    await page.waitForTimeout(1600);
+    const highlightCount = await page.locator('#voice-full .timestamp-highlight').count();
+    if (highlightCount > 0) throw new Error('Highlight should be removed after 1.5s');
+  });
+
+  // ============================================================
+  // CANONICAL ROSARY URL (consistent .html links, server 301-redirects to clean URLs)
+  // ============================================================
+
+  await expect('Rosary nav links use consistent .html URLs on homepage', async () => {
+    await page.goto(`${baseUrl}/index.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const rosaryLinks = await page.locator('a[href*="rosary-visual-guide"]').evaluateAll(links =>
+      links.map(a => a.getAttribute('href'))
+    );
+    if (!rosaryLinks.length) throw new Error('No rosary-visual-guide links found on homepage');
+    const badLinks = rosaryLinks.filter(h => !h.includes('.html'));
+    if (badLinks.length) throw new Error(`Found non-.html rosary links: ${badLinks.join(', ')}`);
+  });
+
+  await expect('Mystery page rosary links use consistent .html URLs', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const rosaryLinks = await page.locator('a[href*="rosary-visual-guide"]').evaluateAll(links =>
+      links.map(a => a.getAttribute('href'))
+    );
+    if (!rosaryLinks.length) throw new Error('No rosary-visual-guide links found on mystery page');
+    const badLinks = rosaryLinks.filter(h => !h.includes('.html'));
+    if (badLinks.length) throw new Error(`Found non-.html rosary links on mystery page: ${badLinks.join(', ')}`);
+  });
+
+  await expect('Floating player Open Mystery link uses .html URL', async () => {
+    await page.goto(`${baseUrl}/mysteries/luminous-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const href = await page.locator('#floating-audio-open').getAttribute('href');
+    if (!href.includes('.html')) throw new Error(`Floating player link missing .html: ${href}`);
+  });
+
+  await expect('Voice testimony rosary CTA uses .html URL', async () => {
+    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const rosaryLinks = await page.locator('a[href*="rosary-visual-guide"]').evaluateAll(links =>
+      links.map(a => a.getAttribute('href'))
+    );
+    const badLinks = rosaryLinks.filter(h => !h.includes('.html'));
+    if (badLinks.length) throw new Error(`Found non-.html rosary links on voice testimony: ${badLinks.join(', ')}`);
+  });
+
+  // ============================================================
+  // READ ALOUD ENABLED STATE (headless Chromium has 180+ voices)
+  // ============================================================
+
+  await expect('Read Aloud buttons are enabled when voices available', async () => {
+    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+    // headless Chromium has 180 speechSynthesis voices — buttons should stay enabled
+    await page.waitForTimeout(3500);
+    const btns = page.locator('.transcript-read-btn');
+    const count = await btns.count();
+    if (count === 0) throw new Error('No Read Aloud buttons found');
+    for (let i = 0; i < count; i++) {
+      const disabled = await btns.nth(i).evaluate(b => b.disabled);
+      if (disabled) throw new Error(`Read Aloud button ${i} is disabled despite voices being available`);
+    }
+  });
+
+  await expect('Read Aloud buttons do not show unavailable styling when voices exist', async () => {
+    const btns = page.locator('.transcript-read-btn');
+    const count = await btns.count();
+    for (let i = 0; i < count; i++) {
+      const hasClass = await btns.nth(i).evaluate(b => b.classList.contains('is-unavailable'));
+      if (hasClass) throw new Error(`Read Aloud button ${i} has is-unavailable class despite voices being available`);
+    }
+  });
+
+  await expect('No voice unavailable warnings when voices exist', async () => {
+    const warnings = await page.locator('.read-aloud-warning').count();
+    if (warnings > 0) throw new Error(`Found ${warnings} voice unavailable warning(s) but voices are available`);
+  });
+
+  // ============================================================
+  // MINI-PLAYER CONTEXT SEPARATION
+  // ============================================================
+
+  await expect('Floating player is hidden on voice-testimony with stale rosary context', async () => {
+    // Simulate stale rosary context from a previous rosary session
+    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    await page.evaluate(() => {
+      localStorage.setItem('rosary_audio_context', JSON.stringify({
+        source: 'rosary',
+        mode: 'prerendered',
+        playing: true,
+        paused: false,
+        completed: false,
+        title: 'First Joyful Mystery',
+        url: '/mysteries/joyful-1.html'
+      }));
+    });
+    // Wait for renderSpeechState polling interval
+    await page.waitForTimeout(600);
+    const visible = await page.locator('.floating-audio').evaluate(el => el.classList.contains('on'));
+    if (visible) throw new Error('Floating player should be hidden on voice-testimony with rosary context');
+  });
+
+  await expect('Stale rosary context is cleared on non-rosary page', async () => {
+    await page.evaluate(() => {
+      localStorage.setItem('rosary_audio_context', JSON.stringify({
+        source: 'rosary',
+        mode: 'prerendered',
+        playing: true,
+        paused: false,
+        completed: false,
+        title: 'First Joyful Mystery',
+        url: '/mysteries/joyful-1.html'
+      }));
+    });
+    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(600);
+    const ctx = await page.evaluate(() => JSON.parse(localStorage.getItem('rosary_audio_context') || '{}'));
+    if (ctx.playing) throw new Error('Stale rosary context should have playing=false after visiting non-rosary page');
+  });
+
+  await expect('Floating player still works on rosary pages', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    await page.evaluate(() => {
+      localStorage.setItem('rosary_audio_context', JSON.stringify({
+        source: 'rosary',
+        mode: 'prerendered',
+        playing: true,
+        paused: false,
+        completed: false,
+        title: 'First Joyful Mystery',
+        url: window.location.href
+      }));
+      window.dispatchEvent(new CustomEvent('rosary-audio-context-updated'));
+    });
+    await page.waitForTimeout(600);
+    const visible = await page.locator('.floating-audio').evaluate(el => el.classList.contains('on'));
+    if (!visible) throw new Error('Floating player should be visible on rosary page with active context');
+  });
+
+  // ============================================================
+  // VOICE TESTIMONY TOC + LISTEN FALLBACK
+  // ============================================================
+
+  await expect('Voice testimony TOC exists with section links', async () => {
+    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const toc = page.locator('.transcript-toc');
+    const visible = await toc.isVisible();
+    if (!visible) throw new Error('TOC not found or not visible');
+    const links = await toc.locator('a').evaluateAll(as => as.map(a => a.getAttribute('href')));
+    if (links.length < 4) throw new Error(`Expected at least 4 TOC links, got ${links.length}`);
+    const expected = ['#listen', '#how-to-receive', '#transcript-publishing', '#transcript-raw'];
+    for (const href of expected) {
+      if (!links.includes(href)) throw new Error(`Missing TOC link: ${href}`);
+    }
+  });
+
+  await expect('TOC anchor targets exist on page', async () => {
+    const ids = ['listen', 'how-to-receive', 'transcript-publishing', 'transcript-raw'];
+    for (const id of ids) {
+      const exists = await page.locator(`#${id}`).count();
+      if (!exists) throw new Error(`TOC target #${id} not found on page`);
+    }
+  });
+
+  await expect('Listen fallback is hidden when video can play', async () => {
+    const fallback = page.locator('#listen-fallback');
+    const hasVisible = await fallback.evaluate(el => el.classList.contains('is-visible'));
+    if (hasVisible) throw new Error('Listen fallback should be hidden when video is playable');
+  });
+
+  await expect('Listen fallback has download link', async () => {
+    const link = page.locator('#listen-fallback a[download]');
+    const count = await link.count();
+    if (count === 0) throw new Error('Listen fallback should contain a download link');
+  });
+
+  // ============================================================
+  // STICKY MEDITATION-ACTIONS FIX
+  // ============================================================
+
+  await expect('Meditation content has align-self:start to prevent sticky overlap', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(400);
+    const alignSelf = await page.locator('.meditation-content').evaluate(el =>
+      window.getComputedStyle(el).alignSelf
+    );
+    if (alignSelf !== 'start') {
+      throw new Error(`Expected align-self:start on .meditation-content, got: "${alignSelf}"`);
+    }
+  });
+
+  // ============================================================
+  // FLOATING PLAYER PRAYER PROGRESS ELEMENTS
+  // ============================================================
+
+  await expect('Floating player contains prayer progress HTML elements', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(400);
+    const ids = [
+      'floating-audio-mystery-progress',
+      'floating-audio-prayer-name',
+      'floating-audio-step-fill',
+      'floating-audio-step-label'
+    ];
+    for (const id of ids) {
+      const count = await page.locator(`#${id}`).count();
+      if (count === 0) throw new Error(`Missing floating player element: #${id}`);
+    }
+    const stepBar = await page.locator('.floating-audio-step-progress').count();
+    if (stepBar === 0) throw new Error('Missing .floating-audio-step-progress element');
+  });
+
+  await expect('Floating player renders prayer progress from rosary context', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(400);
+    // Inject a simulated rosary context with prayer progress data
+    await page.evaluate(() => {
+      const ctx = {
+        source: 'rosary',
+        mode: 'prerendered',
+        playing: true,
+        paused: false,
+        completed: false,
+        title: 'First Joyful Mystery',
+        stage: 'Hail Mary',
+        url: '/mysteries/joyful-1.html',
+        mysteryNum: 2,
+        totalMysteries: 5,
+        mysterySetLabel: 'Joyful',
+        prayerLabel: 'Hail Mary 4 of 10',
+        stageKind: 'hail_mary',
+        stepIndex: 5,
+        totalSteps: 14,
+        startedAt: Date.now(),
+        estimatedDurationMs: 30000
+      };
+      localStorage.setItem('rosary_audio_context', JSON.stringify(ctx));
+      window.dispatchEvent(new CustomEvent('rosary-audio-context-updated'));
+    });
+    await page.waitForTimeout(600);
+
+    const mysteryProgress = await page.locator('#floating-audio-mystery-progress').textContent();
+    if (!mysteryProgress.includes('Mystery 2 of 5')) {
+      throw new Error(`Expected mystery progress to contain "Mystery 2 of 5", got: "${mysteryProgress}"`);
+    }
+
+    const prayerName = await page.locator('#floating-audio-prayer-name').textContent();
+    if (prayerName !== 'Hail Mary 4 of 10') {
+      throw new Error(`Expected prayer name "Hail Mary 4 of 10", got: "${prayerName}"`);
+    }
+
+    const stepLabel = await page.locator('#floating-audio-step-label').textContent();
+    if (!stepLabel.includes('Step 6 of 14')) {
+      throw new Error(`Expected step label "Step 6 of 14", got: "${stepLabel}"`);
+    }
+
+    const fillWidth = await page.locator('#floating-audio-step-fill').evaluate(el => el.style.width);
+    if (!fillWidth || fillWidth === '0%') {
+      throw new Error(`Expected step fill bar width > 0%, got: "${fillWidth}"`);
+    }
+  });
+
+  await expect('Floating player elapsed shows time / total format', async () => {
+    // Context was set by previous test — just check the elapsed element
+    const elapsedText = await page.locator('#floating-audio-elapsed').textContent();
+    if (!elapsedText.includes('/')) {
+      throw new Error(`Expected elapsed to contain "/" separator (elapsed / total), got: "${elapsedText}"`);
+    }
+  });
+
 } finally {
   await context.close();
   await browser.close();

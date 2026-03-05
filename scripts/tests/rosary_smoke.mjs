@@ -180,8 +180,8 @@ try {
       throw new Error(`Expected lang=es on Story, got: ${page.url()}`);
     }
 
-    await page.click('.topbar .links a[href*="rosary-visual-guide.html"]');
-    await page.waitForURL(/rosary-visual-guide\.html/i, { timeout: 10000 });
+    await page.click('.topbar .links a[href*="rosary-visual-guide"]');
+    await page.waitForURL(/rosary-visual-guide/i, { timeout: 10000 });
     lang = new URL(page.url()).searchParams.get('lang');
     if (lang !== 'es') {
       throw new Error(`Expected lang=es on Rosary, got: ${page.url()}`);
