@@ -1012,11 +1012,16 @@
   };
 
   const movePage = direction => {
+    const wasReading = reading;
     stopReading();
     const nextIndex = Math.max(0, Math.min(pages.length - 1, index + direction));
     if (nextIndex === index) return;
     index = nextIndex;
     render();
+    if (wasReading) {
+      syncAudioContext({ playing: true, paused: false, completed: false });
+      readCurrentPage();
+    }
   };
 
   el.prev.addEventListener('click', () => movePage(-1));

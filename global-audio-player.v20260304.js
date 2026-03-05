@@ -182,7 +182,18 @@
         showVoiceSelect: false
       };
     }
-    return {};
+    return {
+      showBack: true,
+      showToggle: true,
+      showSkip: true,
+      showOpen: true,
+      showAutoPrayer: true,
+      showNext: true,
+      showCountdown: true,
+      showSubtitle: true,
+      showProgress: true,
+      showVoiceSelect: true
+    };
   };
 
   const setHidden = hidden => {

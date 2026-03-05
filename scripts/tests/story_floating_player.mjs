@@ -310,6 +310,71 @@ try {
   await page.waitForTimeout(300);
 
   // ============================================================
+  // EDGE CASE: Next/Previous Page while playing keeps floating player
+  // ============================================================
+
+  // Go back to page 1 for clean start
+  await page.click('#story-prev');
+  await page.waitForTimeout(300);
+
+  await expect('Next Page while playing keeps floating player visible and restarts audio', async () => {
+    await page.click('#story-read');
+    await page.waitForTimeout(800);
+
+    const ctxBefore = await page.evaluate(() => JSON.parse(localStorage.getItem('rosary_audio_context') || '{}'));
+    if (!ctxBefore.playing) throw new Error('Audio should be playing before Next Page test');
+
+    const titleBefore = await page.locator('#story-title').textContent();
+
+    await page.click('#story-next');
+    await page.waitForTimeout(800);
+
+    const titleAfter = await page.locator('#story-title').textContent();
+    if (titleBefore === titleAfter) throw new Error('Page title should change after Next Page');
+
+    const playerVisible = await page.evaluate(() =>
+      document.querySelector('.floating-audio')?.classList.contains('on') || false
+    );
+    if (!playerVisible) throw new Error('Floating player should stay visible when navigating while playing');
+
+    const ctxAfter = await page.evaluate(() => JSON.parse(localStorage.getItem('rosary_audio_context') || '{}'));
+    if (!ctxAfter.playing) throw new Error(`Audio should be playing on new page: playing=${ctxAfter.playing}`);
+  });
+
+  await expect('Floating player title updates after Next Page while playing', async () => {
+    const pageTitle = await page.locator('#story-title').textContent();
+    const floatingTitle = await page.locator('#floating-audio-title').textContent();
+    if (pageTitle !== floatingTitle) {
+      throw new Error(`Floating title "${floatingTitle}" doesn't match page title "${pageTitle}" after navigation`);
+    }
+  });
+
+  await expect('Previous Page while playing keeps floating player visible and restarts audio', async () => {
+    // Audio should still be playing from previous test
+    const ctxBefore = await page.evaluate(() => JSON.parse(localStorage.getItem('rosary_audio_context') || '{}'));
+    if (!ctxBefore.playing) {
+      // Start reading if not already playing
+      await page.click('#story-read');
+      await page.waitForTimeout(800);
+    }
+
+    await page.click('#story-prev');
+    await page.waitForTimeout(800);
+
+    const playerVisible = await page.evaluate(() =>
+      document.querySelector('.floating-audio')?.classList.contains('on') || false
+    );
+    if (!playerVisible) throw new Error('Floating player should stay visible when going to previous page while playing');
+
+    const ctxAfter = await page.evaluate(() => JSON.parse(localStorage.getItem('rosary_audio_context') || '{}'));
+    if (!ctxAfter.playing) throw new Error(`Audio should be playing after Previous Page: playing=${ctxAfter.playing}`);
+  });
+
+  // Clean up
+  await page.click('#floating-audio-close');
+  await page.waitForTimeout(300);
+
+  // ============================================================
   // ISOLATION: Story audio does NOT set rosary auto-prayer state
   // ============================================================
 

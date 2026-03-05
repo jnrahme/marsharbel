@@ -419,6 +419,7 @@ const renderMysteryTextCompanion = () => {
 
 const syncGlobalAudioContext = extra => {
   const payload = {
+    source: 'rosary',
     title: stages[stageIndex]?.title || 'Meditation',
     subtitle: stages[stageIndex]?.badge || 'Meditation',
     stage: stages[stageIndex]?.badge || 'Meditation',
@@ -430,15 +431,15 @@ const syncGlobalAudioContext = extra => {
     ...extra
   };
 
-  try {
-    localStorage.setItem('rosary_audio_context', JSON.stringify(payload));
-  } catch (_) {
-    // no-op
-  }
-
   if (window.RosaryAudioContext?.set) {
     window.RosaryAudioContext.set(payload);
   } else {
+    try {
+      const prev = JSON.parse(localStorage.getItem('rosary_audio_context') || '{}');
+      localStorage.setItem('rosary_audio_context', JSON.stringify({ ...prev, ...payload }));
+    } catch (_) {
+      // no-op
+    }
     window.dispatchEvent(new CustomEvent('rosary-audio-context-updated'));
   }
 };

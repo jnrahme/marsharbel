@@ -197,6 +197,75 @@ try {
     }
   });
 
+  // --- Bug 7: Auto Prayer toggle must not hide floating player ---
+  await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+
+  await expect('Auto Prayer toggle from floating player does not hide player', async () => {
+    await page.click('#start-guided-audio');
+    await page.waitForTimeout(1500);
+
+    const playerBefore = await page.evaluate(() =>
+      document.querySelector('.floating-audio')?.classList.contains('on') || false
+    );
+    if (!playerBefore) throw new Error('Floating player should be visible after starting guided audio');
+
+    const ctxBefore = await page.evaluate(() => JSON.parse(localStorage.getItem('rosary_audio_context') || '{}'));
+    if (!ctxBefore.playing && !ctxBefore.paused) throw new Error('Audio should be active before toggle test');
+
+    await page.evaluate(() => document.getElementById('floating-audio-auto-prayer').click());
+    await page.waitForTimeout(500);
+
+    const playerAfter = await page.evaluate(() =>
+      document.querySelector('.floating-audio')?.classList.contains('on') || false
+    );
+    if (!playerAfter) throw new Error('Floating player disappeared after toggling Auto Prayer');
+
+    const ctxAfter = await page.evaluate(() => JSON.parse(localStorage.getItem('rosary_audio_context') || '{}'));
+    if (!ctxAfter.playing && !ctxAfter.paused) {
+      throw new Error(`Audio state lost after Auto Prayer toggle: playing=${ctxAfter.playing}, paused=${ctxAfter.paused}`);
+    }
+  });
+
+  await expect('Auto Prayer toggle from floating player updates button label', async () => {
+    const label = await page.evaluate(() =>
+      document.getElementById('floating-audio-auto-prayer')?.textContent || ''
+    );
+    if (!/Auto Prayer: (Enabled|Disabled)/i.test(label)) {
+      throw new Error(`Expected "Auto Prayer: Enabled" or "Auto Prayer: Disabled", got: "${label}"`);
+    }
+  });
+
+  await expect('Auto Prayer toggle from floating player syncs with page checkbox', async () => {
+    const floatingEnabled = await page.evaluate(() =>
+      document.getElementById('floating-audio-auto-prayer')?.classList.contains('is-enabled') || false
+    );
+    const pageChecked = await page.evaluate(() =>
+      document.getElementById('auto-prayer-toggle')?.checked || false
+    );
+    if (floatingEnabled !== pageChecked) {
+      throw new Error(`Floating button enabled=${floatingEnabled} but page checkbox checked=${pageChecked}`);
+    }
+  });
+
+  await expect('Toggling Auto Prayer twice keeps floating player visible', async () => {
+    // Toggle on
+    await page.evaluate(() => document.getElementById('floating-audio-auto-prayer').click());
+    await page.waitForTimeout(300);
+    // Toggle off
+    await page.evaluate(() => document.getElementById('floating-audio-auto-prayer').click());
+    await page.waitForTimeout(300);
+
+    const visible = await page.evaluate(() =>
+      document.querySelector('.floating-audio')?.classList.contains('on') || false
+    );
+    if (!visible) throw new Error('Floating player disappeared after double-toggling Auto Prayer');
+
+    const ctx = await page.evaluate(() => JSON.parse(localStorage.getItem('rosary_audio_context') || '{}'));
+    if (!ctx.playing && !ctx.paused) {
+      throw new Error(`Audio state lost after double toggle: playing=${ctx.playing}, paused=${ctx.paused}`);
+    }
+  });
+
 } finally {
   await context.close();
   await browser.close();
