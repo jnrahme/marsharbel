@@ -67,6 +67,7 @@
     <div class="floating-audio-progress" aria-hidden="true">
       <span id="floating-audio-progress-fill" class="floating-audio-progress-fill"></span>
     </div>
+    <p id="floating-audio-elapsed" class="floating-audio-elapsed" hidden></p>
     <div class="floating-audio-voice-row">
       <label for="floating-audio-voice">Voice</label>
       <select id="floating-audio-voice" class="floating-audio-voice" aria-label="Select narration voice"></select>
@@ -90,6 +91,7 @@
   const countdownEl = document.getElementById('floating-audio-countdown');
   const progressFillEl = document.getElementById('floating-audio-progress-fill');
   const progressBarEl = document.querySelector('.floating-audio-progress');
+  const elapsedEl = document.getElementById('floating-audio-elapsed');
   const voiceEl = document.getElementById('floating-audio-voice');
   const voiceRowEl = document.querySelector('.floating-audio-voice-row');
   const closeEl = document.getElementById('floating-audio-close');
@@ -443,6 +445,13 @@
     return Math.max(3500, Math.round((words / 130) * 60 * 1000));
   };
 
+  const formatElapsed = ms => {
+    const totalSec = Math.floor(ms / 1000);
+    const m = Math.floor(totalSec / 60);
+    const s = totalSec % 60;
+    return `${m}:${String(s).padStart(2, '0')}`;
+  };
+
   const updateProgress = context => {
     const countdown = Number(context.autoTimerCountdown || 0);
     const duration = Number(context.autoTimerDuration || 0);
@@ -450,20 +459,30 @@
       progressBarEl?.classList.add('is-countdown');
       const ratio = Math.max(0, Math.min(1, countdown / duration));
       progressFillEl.style.width = `${Math.round(ratio * 100)}%`;
+      if (elapsedEl) {
+        elapsedEl.textContent = `Next step in ${countdown}s`;
+        elapsedEl.hidden = false;
+      }
       return;
     }
 
     progressBarEl?.classList.remove('is-countdown');
     if (!context?.mode || (context.mode !== 'speech' && context.mode !== 'prerendered' && context.mode !== 'storybook')) {
       progressFillEl.style.width = '0%';
+      if (elapsedEl) elapsedEl.hidden = true;
       return;
     }
     if (context.completed) {
       progressFillEl.style.width = '100%';
+      if (elapsedEl) {
+        elapsedEl.textContent = 'Completed';
+        elapsedEl.hidden = false;
+      }
       return;
     }
     if (!context.playing) {
       progressFillEl.style.width = '0%';
+      if (elapsedEl) elapsedEl.hidden = true;
       return;
     }
 
@@ -474,6 +493,10 @@
     const elapsed = Math.max(0, pauseAnchor - startedAt - totalPausedMs);
     const ratio = Math.min(1, elapsed / Math.max(1, estimatedDuration));
     progressFillEl.style.width = `${Math.round(ratio * 100)}%`;
+    if (elapsedEl) {
+      elapsedEl.textContent = formatElapsed(elapsed);
+      elapsedEl.hidden = false;
+    }
   };
 
   const restoreSpeechFromContext = context => {

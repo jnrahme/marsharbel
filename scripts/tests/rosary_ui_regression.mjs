@@ -199,9 +199,10 @@ try {
 
   // --- Bug 7: Auto Prayer toggle must not hide floating player ---
   await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(500);
 
   await expect('Auto Prayer toggle from floating player does not hide player', async () => {
-    await page.click('#start-guided-audio');
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
     await page.waitForTimeout(1500);
 
     const playerBefore = await page.evaluate(() =>

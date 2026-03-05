@@ -1028,6 +1028,7 @@ const render = () => {
   updateStartGuidedAudioButton();
   syncGlobalAudioContext();
   preloadNextClip(stageIndex);
+  stageTitle.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   window.dispatchEvent(new CustomEvent('sc:content-updated'));
 };
 
@@ -1422,6 +1423,17 @@ const stopAutoTimer = () => {
   stopDotsAnimation();
   updateLivePrayerPanel();
 };
+
+const updateAutoTimerButton = () => {
+  const seconds = Number(autoTimerSeconds.value || 0);
+  if (!autoRunning) {
+    autoTimerToggle.disabled = !seconds;
+    autoTimerToggle.textContent = 'Start Auto';
+  }
+};
+
+autoTimerSeconds.addEventListener('change', updateAutoTimerButton);
+updateAutoTimerButton();
 
 autoTimerToggle.addEventListener('click', () => {
   if (autoPrayerVoiceEnabled && autoPrayerToggle) {

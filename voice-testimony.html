@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submit a Voice Testimony | Saint Charbel</title>
+  <title>Saint Charbel's Recorded Voice | Sacred Testimony</title>
   <meta name="description" content="Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/voice-testimony" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Submit a Voice Testimony | Saint Charbel" />
+  <meta property="og:title" content="Saint Charbel's Recorded Voice | Sacred Testimony" />
   <meta property="og:description" content="Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation." />
   <meta property="og:url" content="https://marsharbel.com/voice-testimony" />
   <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Submit a Voice Testimony | Saint Charbel" />
+  <meta name="twitter:title" content="Saint Charbel's Recorded Voice | Sacred Testimony" />
   <meta name="twitter:description" content="Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation." />
   <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Submit a Voice Testimony | Saint Charbel",
+  "name": "Saint Charbel's Recorded Voice | Sacred Testimony",
   "description": "Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation.",
   "url": "https://marsharbel.com/voice-testimony",
   "isPartOf": {
@@ -127,7 +127,7 @@
       <div class="grid-2">
         <article class="card transcript-card">
           <h3>Arabic (Publishing Draft - Conservative)</h3>
-          <pre id="transcript-ar">الله يبارككم ويقدّسكم.
+          <div id="transcript-ar" class="transcript-body" role="region" aria-label="Arabic transcript" tabindex="0">الله يبارككم ويقدّسكم.
 نعمة الله... نعمة الله... حياة لكم.
 
 [غير واضح: عبارة غير مكتملة عن القلوب/الرب]
@@ -169,14 +169,14 @@
 وين بتكون أمّي أنا بكون معها.
 وبدّي إيّاكم تكونوا حدّنا.
 تسكنوا بقلبنا.
-قلوبنا مليانة من نعمة الله.</pre>
+قلوبنا مليانة من نعمة الله.</div>
           <div class="transcript-read-aloud-row">
             <button class="transcript-read-btn" type="button" data-target="transcript-ar" data-lang="ar-LB">Read Aloud (Arabic)</button>
           </div>
         </article>
         <article class="card transcript-card">
           <h3>English (Faithful Draft - Conservative)</h3>
-          <pre id="transcript-en">May God bless you and sanctify you.
+          <div id="transcript-en" class="transcript-body" role="region" aria-label="English transcript" tabindex="0">May God bless you and sanctify you.
 God's grace... God's grace... life for you.
 
 [unclear: incomplete phrase about hearts/the Lord]
@@ -218,7 +218,7 @@ Do not be afraid.
 Where my Mother is, I am with her.
 I want you to be with us.
 To dwell in our heart.
-Our hearts are filled with God's grace.</pre>
+Our hearts are filled with God's grace.</div>
           <div class="transcript-read-aloud-row">
             <button class="transcript-read-btn" type="button" data-target="transcript-en" data-lang="en-US">Read Aloud (English)</button>
           </div>
@@ -231,7 +231,7 @@ Our hearts are filled with God's grace.</pre>
       <p class="section-sub">This section shows the complete automatic capture timeline from the recording without editorial trimming. It is intentionally raw.</p>
       <article class="card transcript-card">
         <h3>Arabic Full Capture - All Recognized Segments</h3>
-        <pre id="voice-full">Loading full capture transcript...</pre>
+        <div id="voice-full" class="transcript-body" role="region" aria-label="Full capture transcript" tabindex="0">Loading full capture transcript...</div>
       </article>
     </section>
   </main>
@@ -280,10 +280,10 @@ Our hearts are filled with God's grace.</pre>
 
           const targetId = btn.getAttribute('data-target');
           const lang = btn.getAttribute('data-lang') || 'en-US';
-          const pre = document.getElementById(targetId);
-          if (!pre) return;
+          const transcriptEl = document.getElementById(targetId);
+          if (!transcriptEl) return;
 
-          const text = pre.textContent.replace(/\[.*?\]/g, '').trim();
+          const text = transcriptEl.textContent.replace(/\[.*?\]/g, '').trim();
           if (!text) return;
 
           const utterance = new SpeechSynthesisUtterance(text);

@@ -943,7 +943,8 @@ h3 {
   margin-bottom: 0.6rem;
 }
 
-.transcript-card pre {
+.transcript-card pre,
+.transcript-body {
   margin: 0;
   white-space: pre-wrap;
   word-break: break-word;
@@ -955,6 +956,8 @@ h3 {
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.2);
   padding: 0.7rem;
+  max-height: 28rem;
+  overflow-y: auto;
   max-height: 520px;
   overflow: auto;
 }
@@ -1635,6 +1638,13 @@ h3 {
   height: 100%;
   background: linear-gradient(90deg, #c99543, #e2c484);
   transition: width 240ms linear;
+}
+
+.floating-audio-elapsed {
+  margin: 0.15rem 0 0;
+  font-size: 0.72rem;
+  color: rgba(211, 178, 110, 0.7);
+  text-align: center;
 }
 
 .floating-audio-voice-row {

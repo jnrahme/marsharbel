@@ -41,5 +41,6 @@ case "$(basename "$0")" in
   run_rosary_intro_cta_behavior.sh) node scripts/tests/rosary_intro_cta_behavior.mjs "--base-url=${BASE_URL}" ;;
   run_rosary_ui_regression.sh) node scripts/tests/rosary_ui_regression.mjs "--base-url=${BASE_URL}" ;;
   run_story_floating_player.sh) node scripts/tests/story_floating_player.mjs "--base-url=${BASE_URL}" ;;
+  run_checklist_improvements.sh) node scripts/tests/checklist_improvements.mjs "--base-url=${BASE_URL}" ;;
   *) echo "Unknown runner: $0"; exit 1 ;;
 esac
