@@ -411,6 +411,7 @@
     var allGroup = document.createElement('optgroup');
     allGroup.label = 'All Languages (A-Z)';
     allSorted.forEach(function (lang) {
+      if (POPULAR_SET[lang.code]) return;
       var opt = document.createElement('option');
       opt.value = lang.code;
       opt.textContent = lang.label;
