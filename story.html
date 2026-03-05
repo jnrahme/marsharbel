@@ -85,6 +85,12 @@
       </div>
     </section>
 
+    <div id="story-resume-banner" class="story-resume-banner" hidden aria-live="polite">
+      <span id="story-resume-text">Continue from Page 2?</span>
+      <button id="story-resume-btn" class="btn subtle" type="button">Resume</button>
+      <button id="story-resume-dismiss" class="story-resume-dismiss" type="button" aria-label="Dismiss">✕</button>
+    </div>
+
     <section class="storybook reveal" aria-label="Illustrated storybook">
       <article class="storybook-panel">
         <div class="storybook-illustration" id="story-illustration" aria-hidden="true"></div>
@@ -98,6 +104,7 @@
       </article>
 
       <div class="storybook-extras">
+        <button id="story-reader-toggle" class="story-reader-toggle" type="button" title="Toggle reader mode for easier reading">Reader Mode</button>
         <label class="story-auto-continue" title="Automatically read next page when current page finishes">
           <input type="checkbox" id="story-auto-continue" />
           Auto Continue

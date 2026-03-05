@@ -633,15 +633,44 @@
   let elapsedTimer = null;
 
   const AUTO_CONTINUE_KEY = 'storybook_auto_continue';
+  const READER_MODE_KEY = 'storybook_reader_mode';
+  const LAST_PAGE_KEY = 'storybook_last_page';
   const readAutoContinuePref = () => {
     try { return localStorage.getItem(AUTO_CONTINUE_KEY) === 'true'; } catch (_) { return false; }
   };
   const writeAutoContinuePref = val => {
     try { localStorage.setItem(AUTO_CONTINUE_KEY, String(val)); } catch (_) { /* no-op */ }
   };
+  const readReaderModePref = () => {
+    try { return localStorage.getItem(READER_MODE_KEY) === 'true'; } catch (_) { return false; }
+  };
+  const writeReaderModePref = val => {
+    try { localStorage.setItem(READER_MODE_KEY, String(val)); } catch (_) { /* no-op */ }
+  };
+  const readLastPage = () => {
+    try { return parseInt(localStorage.getItem(LAST_PAGE_KEY), 10) || 0; } catch (_) { return 0; }
+  };
+  const writeLastPage = idx => {
+    try { localStorage.setItem(LAST_PAGE_KEY, String(idx)); } catch (_) { /* no-op */ }
+  };
   if (el.autoContinue) {
     el.autoContinue.checked = readAutoContinuePref();
     el.autoContinue.addEventListener('change', () => writeAutoContinuePref(el.autoContinue.checked));
+  }
+
+  // Reader mode toggle
+  const readerToggle = document.getElementById('story-reader-toggle');
+  const applyReaderMode = on => {
+    if (el.frame) el.frame.classList.toggle('is-reader-mode', on);
+    if (readerToggle) readerToggle.textContent = on ? 'Reader Mode: On' : 'Reader Mode';
+    writeReaderModePref(on);
+  };
+  if (readerToggle) {
+    applyReaderMode(readReaderModePref());
+    readerToggle.addEventListener('click', () => {
+      const next = !el.frame?.classList.contains('is-reader-mode');
+      applyReaderMode(next);
+    });
   }
 
   const formatElapsed = ms => {
@@ -890,6 +919,7 @@
     el.art.setAttribute('data-scene', page.scene);
     el.prev.disabled = index === 0;
     el.next.disabled = index === pages.length - 1;
+    writeLastPage(index);
     syncAudioContext({ playing: false, paused: false, completed: false });
     animatePageTurn();
   };
@@ -1021,6 +1051,7 @@
     if (nextIndex === index) return;
     index = nextIndex;
     render();
+    el.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (wasReading) {
       syncAudioContext({ playing: true, paused: false, completed: false });
       readCurrentPage();
@@ -1084,11 +1115,36 @@
   }
 
   const init = async () => {
+    // Read last page BEFORE first render (which overwrites it with 0)
+    const savedLastPage = readLastPage();
+
     await resolveVoicePacks();
     setActiveVoicePack(getPreferredInitialVoicePack());
     renderVoicePackSelect();
     updateUiLabels();
     render();
+
+    // Resume reading banner
+    const lastPage = savedLastPage;
+    if (lastPage > 0 && lastPage < pages.length) {
+      const banner = document.getElementById('story-resume-banner');
+      const bannerText = document.getElementById('story-resume-text');
+      const bannerBtn = document.getElementById('story-resume-btn');
+      const bannerDismiss = document.getElementById('story-resume-dismiss');
+      if (banner && bannerText && bannerBtn) {
+        bannerText.textContent = `Continue from ${UI.pagePrefix} ${lastPage + 1}?`;
+        banner.hidden = false;
+        bannerBtn.addEventListener('click', () => {
+          index = lastPage;
+          render();
+          el.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          banner.hidden = true;
+        });
+        if (bannerDismiss) {
+          bannerDismiss.addEventListener('click', () => { banner.hidden = true; });
+        }
+      }
+    }
   };
 
   init();
