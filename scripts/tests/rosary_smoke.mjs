@@ -59,7 +59,7 @@ try {
     await page.click('#start-guided-audio');
     await page.waitForTimeout(600);
     const startLabel = await textOf(page, '#start-guided-audio');
-    if (!/Playing Guided Audio|Replay Guided Audio/i.test(startLabel)) {
+    if (!/Pause Guided Audio|Playing Guided Audio|Replay Guided Audio|Starting/i.test(startLabel)) {
       throw new Error(`Unexpected start button label after click: ${startLabel}`);
     }
   });

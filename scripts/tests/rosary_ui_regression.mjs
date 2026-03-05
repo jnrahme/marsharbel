@@ -61,7 +61,7 @@ try {
       throw new Error(`Voice button changed to "${voiceAfter}" after guided audio start`);
     }
     const guidedLabel = (await page.locator('#start-guided-audio').textContent())?.trim();
-    if (!/Playing Guided Audio|Replay Guided Audio/i.test(guidedLabel)) {
+    if (!/Pause Guided Audio|Playing Guided Audio|Replay Guided Audio/i.test(guidedLabel)) {
       throw new Error(`Guided audio button should show playing state, got: ${guidedLabel}`);
     }
   });

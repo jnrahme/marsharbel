@@ -670,8 +670,15 @@
   gap: 0.6rem;
   justify-content: flex-end;
   flex-wrap: wrap;
-  padding: 0.1rem 0.1rem 0;
+  padding: 0.5rem 0.6rem;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: rgba(28, 25, 20, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(211, 178, 110, 0.15);
+  margin: 0 -0.6rem;
 }
 
 .story-voice-pack {

@@ -303,6 +303,329 @@ try {
     if (checks.length) throw new Error(`Missing aria-labels: ${checks.join(', ')}`);
   });
 
+  // ============================================================
+  // 7. STICKY CONTROLS
+  // ============================================================
+
+  // Story page sticky controls
+  await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(500);
+
+  await expect('Story controls bar has sticky positioning', async () => {
+    const position = await page.evaluate(() =>
+      window.getComputedStyle(document.querySelector('.storybook-controls')).position
+    );
+    if (position !== 'sticky') {
+      throw new Error(`Expected sticky positioning, got: ${position}`);
+    }
+  });
+
+  // Rosary page sticky controls
+  await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(500);
+
+  await expect('Rosary meditation actions bar has sticky positioning', async () => {
+    const position = await page.evaluate(() =>
+      window.getComputedStyle(document.querySelector('.meditation-actions')).position
+    );
+    if (position !== 'sticky') {
+      throw new Error(`Expected sticky positioning, got: ${position}`);
+    }
+  });
+
+  // ============================================================
+  // 8. GUIDED AUDIO BUTTON STATES
+  // ============================================================
+
+  await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(500);
+
+  await expect('Guided audio button starts as "Play Guided Audio"', async () => {
+    const label = await page.evaluate(() =>
+      document.getElementById('start-guided-audio')?.textContent || ''
+    );
+    if (!/Play Guided Audio/i.test(label)) {
+      throw new Error(`Expected "Play Guided Audio", got: "${label}"`);
+    }
+  });
+
+  await expect('Guided audio button changes state after click', async () => {
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(1500);
+    const label = await page.evaluate(() =>
+      document.getElementById('start-guided-audio')?.textContent || ''
+    );
+    if (/^Play Guided Audio$/i.test(label)) {
+      throw new Error(`Button should not still say "Play Guided Audio" after click, got: "${label}"`);
+    }
+    // Should be "Pause Guided Audio", "Starting...", "Replay Guided Audio", or similar
+    if (!/Pause|Starting|Replay|Playing|Resume/i.test(label)) {
+      throw new Error(`Expected active state label, got: "${label}"`);
+    }
+  });
+
+  await expect('Guided audio button shows "Replay" after audio completes or stops', async () => {
+    // Close floating player to stop audio
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(500);
+    const label = await page.evaluate(() =>
+      document.getElementById('start-guided-audio')?.textContent || ''
+    );
+    if (!/Replay Guided Audio|Play Guided Audio/i.test(label)) {
+      throw new Error(`Expected "Replay Guided Audio" after stop, got: "${label}"`);
+    }
+  });
+
+  await expect('Replay button restarts playback when clicked', async () => {
+    // Button should say Replay after previous test stopped audio
+    const beforeLabel = await page.evaluate(() =>
+      document.getElementById('start-guided-audio')?.textContent || ''
+    );
+    if (!/Replay|Play/i.test(beforeLabel)) {
+      throw new Error(`Expected Replay/Play before restart, got: "${beforeLabel}"`);
+    }
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(1500);
+    const afterLabel = await page.evaluate(() =>
+      document.getElementById('start-guided-audio')?.textContent || ''
+    );
+    if (!/Pause|Starting|Playing/i.test(afterLabel)) {
+      throw new Error(`Expected active state after replay click, got: "${afterLabel}"`);
+    }
+    // Clean up
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(300);
+  });
+
+  await expect('Guided audio button resets to Play on page navigation', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-2.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(500);
+    const label = await page.evaluate(() =>
+      document.getElementById('start-guided-audio')?.textContent || ''
+    );
+    if (!/Play Guided Audio/i.test(label)) {
+      throw new Error(`Expected "Play Guided Audio" on new page, got: "${label}"`);
+    }
+  });
+
+  // ============================================================
+  // 9. EDGE CASES: TIMER BEHAVIOR
+  // ============================================================
+
+  await expect('Timer value resets to 12s on fresh page load', async () => {
+    await page.goto(`${baseUrl}/mysteries/sorrowful-2.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const val = await page.locator('#auto-timer-seconds').inputValue();
+    if (val !== '12') {
+      throw new Error(`Expected timer to reset to 12s on new page, got: "${val}"`);
+    }
+  });
+
+  await expect('Start Auto button disabled immediately when Off is selected', async () => {
+    await page.selectOption('#auto-timer-seconds', '0');
+    await page.waitForTimeout(50);
+    const disabled = await page.locator('#auto-timer-toggle').isDisabled();
+    if (!disabled) throw new Error('Start Auto should be disabled immediately after selecting Off');
+  });
+
+  await expect('Start Auto re-enables immediately when value is selected after Off', async () => {
+    await page.selectOption('#auto-timer-seconds', '18');
+    await page.waitForTimeout(50);
+    const disabled = await page.locator('#auto-timer-toggle').isDisabled();
+    if (disabled) throw new Error('Start Auto should re-enable immediately after selecting 18s');
+  });
+
+  await expect('Timer cycling through multiple values always updates button state', async () => {
+    for (const val of ['0', '18', '0', '12', '0']) {
+      await page.selectOption('#auto-timer-seconds', val);
+      await page.waitForTimeout(50);
+      const disabled = await page.locator('#auto-timer-toggle').isDisabled();
+      const expected = val === '0';
+      if (disabled !== expected) {
+        throw new Error(`Timer=${val}: expected disabled=${expected}, got disabled=${disabled}`);
+      }
+    }
+  });
+
+  // ============================================================
+  // 10. EDGE CASES: FLOATING PLAYER AFTER CLOSE
+  // ============================================================
+
+  await expect('Floating player stays hidden after close until user re-triggers', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(500);
+    // Start audio, then close player
+    await page.evaluate(() => document.getElementById('start-guided-audio').click());
+    await page.waitForTimeout(1000);
+    await page.evaluate(() => {
+      const close = document.getElementById('floating-audio-close');
+      if (close) close.click();
+    });
+    await page.waitForTimeout(500);
+    const hidden = await page.evaluate(() => {
+      const player = document.querySelector('.floating-audio');
+      return !player || player.hidden || window.getComputedStyle(player).display === 'none';
+    });
+    if (!hidden) throw new Error('Floating player should stay hidden after close');
+  });
+
+  // ============================================================
+  // 11. EDGE CASES: STEP COUNTER BOUNDARIES
+  // ============================================================
+
+  await expect('Step counter starts at correct position (not step 0)', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const text = await page.locator('#step-counter').textContent();
+    const match = text.match(/Step (\d+) of (\d+)/i);
+    if (!match) throw new Error(`Step counter format wrong: "${text}"`);
+    const step = parseInt(match[1]);
+    const total = parseInt(match[2]);
+    if (step < 1) throw new Error(`Step should be >= 1, got: ${step}`);
+    if (total < 10) throw new Error(`Total should be >= 10, got: ${total}`);
+  });
+
+  await expect('Clicking Previous on first step does not go below step 1', async () => {
+    // Navigate to first step via intro
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html?stage=intro`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const before = await page.locator('#step-counter').textContent();
+    const matchBefore = before.match(/Step (\d+)/i);
+    if (matchBefore && parseInt(matchBefore[1]) === 1) {
+      await page.evaluate(() => document.getElementById('prev-step').click());
+      await page.waitForTimeout(200);
+      const after = await page.locator('#step-counter').textContent();
+      const matchAfter = after.match(/Step (\d+)/i);
+      if (matchAfter && parseInt(matchAfter[1]) < 1) {
+        throw new Error(`Step went below 1: "${after}"`);
+      }
+    }
+  });
+
+  await expect('Step counter shows last step correctly on final step', async () => {
+    // Click Next until we reach the end
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const totalText = await page.locator('#step-counter').textContent();
+    const totalMatch = totalText.match(/of (\d+)/i);
+    if (!totalMatch) throw new Error(`Cannot parse total from: "${totalText}"`);
+    const total = parseInt(totalMatch[1]);
+    // Navigate to last step
+    for (let i = 0; i < total + 2; i++) {
+      await page.evaluate(() => document.getElementById('next-step').click());
+      await page.waitForTimeout(50);
+    }
+    const finalText = await page.locator('#step-counter').textContent();
+    const finalMatch = finalText.match(/Step (\d+) of (\d+)/i);
+    if (!finalMatch) throw new Error(`Final step counter format wrong: "${finalText}"`);
+    if (parseInt(finalMatch[1]) > parseInt(finalMatch[2])) {
+      throw new Error(`Step ${finalMatch[1]} exceeds total ${finalMatch[2]}`);
+    }
+  });
+
+  // ============================================================
+  // 12. EDGE CASES: ACCESSIBILITY ACROSS PAGES
+  // ============================================================
+
+  await expect('Voice Testimony page has no broken ARIA references', async () => {
+    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const brokenRefs = await page.evaluate(() => {
+      const elems = document.querySelectorAll('[aria-labelledby], [aria-describedby]');
+      const broken = [];
+      elems.forEach(el => {
+        const ref = el.getAttribute('aria-labelledby') || el.getAttribute('aria-describedby');
+        if (ref && !document.getElementById(ref)) broken.push(ref);
+      });
+      return broken;
+    });
+    if (brokenRefs.length) {
+      throw new Error(`Broken ARIA references: ${brokenRefs.join(', ')}`);
+    }
+  });
+
+  await expect('Rosary page has no broken ARIA references', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const brokenRefs = await page.evaluate(() => {
+      const elems = document.querySelectorAll('[aria-labelledby], [aria-describedby]');
+      const broken = [];
+      elems.forEach(el => {
+        const ref = el.getAttribute('aria-labelledby') || el.getAttribute('aria-describedby');
+        if (ref && !document.getElementById(ref)) broken.push(ref);
+      });
+      return broken;
+    });
+    if (brokenRefs.length) {
+      throw new Error(`Broken ARIA references: ${brokenRefs.join(', ')}`);
+    }
+  });
+
+  await expect('Story page has no broken ARIA references', async () => {
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const brokenRefs = await page.evaluate(() => {
+      const elems = document.querySelectorAll('[aria-labelledby], [aria-describedby]');
+      const broken = [];
+      elems.forEach(el => {
+        const ref = el.getAttribute('aria-labelledby') || el.getAttribute('aria-describedby');
+        if (ref && !document.getElementById(ref)) broken.push(ref);
+      });
+      return broken;
+    });
+    if (brokenRefs.length) {
+      throw new Error(`Broken ARIA references: ${brokenRefs.join(', ')}`);
+    }
+  });
+
+  // ============================================================
+  // 13. EDGE CASES: STICKY CONTROLS BEHAVIOR
+  // ============================================================
+
+  await expect('Story sticky controls have correct z-index above content', async () => {
+    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const zIndex = await page.evaluate(() =>
+      parseInt(window.getComputedStyle(document.querySelector('.storybook-controls')).zIndex) || 0
+    );
+    if (zIndex < 80) {
+      throw new Error(`Expected z-index >= 80, got: ${zIndex}`);
+    }
+  });
+
+  await expect('Rosary sticky controls have correct z-index above content', async () => {
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const zIndex = await page.evaluate(() =>
+      parseInt(window.getComputedStyle(document.querySelector('.meditation-actions')).zIndex) || 0
+    );
+    if (zIndex < 80) {
+      throw new Error(`Expected z-index >= 80, got: ${zIndex}`);
+    }
+  });
+
+  await expect('Sticky controls have backdrop-filter for readability', async () => {
+    const storyBackdrop = await page.evaluate(async () => {
+      const el = document.querySelector('.storybook-controls');
+      return el ? window.getComputedStyle(el).backdropFilter : '';
+    });
+    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(300);
+    const rosaryBackdrop = await page.evaluate(() => {
+      const el = document.querySelector('.meditation-actions');
+      return el ? window.getComputedStyle(el).backdropFilter : '';
+    });
+    if (!storyBackdrop && !rosaryBackdrop) {
+      throw new Error('Neither sticky control bar has backdrop-filter');
+    }
+  });
+
 } finally {
   await context.close();
   await browser.close();

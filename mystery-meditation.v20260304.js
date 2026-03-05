@@ -625,14 +625,24 @@ const updateVoiceButtonLabel = () => {
   pauseButton.textContent = 'Play Voice';
 };
 
+const isNarrationPaused = () => {
+  if (prayerClipAudio && !prayerClipAudio.ended && prayerClipAudio.paused && prayerClipAudio.currentTime > 0) return true;
+  if (activeNarrationMode === 'prerendered' && clipAudio && clipAudio.paused && clipAudio.currentTime > 0) return true;
+  return false;
+};
+
 const updateStartGuidedAudioButton = () => {
   if (!startGuidedAudioButton) return;
   if (playbackPending) {
     startGuidedAudioButton.textContent = 'Starting...';
     return;
   }
+  if (isNarrationPaused()) {
+    startGuidedAudioButton.textContent = 'Resume Guided Audio';
+    return;
+  }
   if (hasActiveNarration()) {
-    startGuidedAudioButton.textContent = 'Playing Guided Audio';
+    startGuidedAudioButton.textContent = 'Pause Guided Audio';
     return;
   }
   startGuidedAudioButton.textContent = hasUserStartedPlayback ? 'Replay Guided Audio' : 'Play Guided Audio';
@@ -1288,6 +1298,7 @@ window.RosaryNarrationController = {
   stop: () => {
     stopVoice();
     updateVoiceButtonLabel();
+    updateStartGuidedAudioButton();
     syncGlobalAudioContext({ mode: activeNarrationMode, playing: false, paused: false, completed: false });
   },
   next: nextStage,
@@ -1306,7 +1317,11 @@ window.RosaryNarrationController = {
 if (startGuidedAudioButton) {
   startGuidedAudioButton.addEventListener('click', () => {
     playbackStartedViaVoiceButton = false;
-    playVoice({ userInitiated: true });
+    if (hasActiveNarration() || isNarrationPaused()) {
+      togglePauseVoice();
+    } else {
+      playVoice({ userInitiated: true });
+    }
   });
 }
 
