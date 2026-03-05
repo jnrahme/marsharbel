@@ -1503,6 +1503,99 @@ try {
     }
   });
 
+  // ============================================================
+  // READ ALOUD TEXT SANITIZATION (Arabic ellipsis / bracket cleanup)
+  // ============================================================
+
+  await expect('Read Aloud sanitizes ellipsis from Arabic transcript before speaking', async () => {
+    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(3500);
+
+    // Intercept SpeechSynthesisUtterance to capture the text passed to speak()
+    const spokenText = await page.evaluate(() => {
+      return new Promise((resolve, reject) => {
+        const origSpeak = window.speechSynthesis.speak.bind(window.speechSynthesis);
+        window.speechSynthesis.speak = (utterance) => {
+          resolve(utterance.text);
+          window.speechSynthesis.cancel();
+        };
+
+        const arBtn = document.querySelector('.transcript-read-btn[data-target="transcript-ar"]');
+        if (!arBtn || arBtn.disabled) {
+          reject(new Error('Arabic Read Aloud button not found or disabled'));
+          return;
+        }
+        arBtn.click();
+
+        // Timeout fallback
+        setTimeout(() => reject(new Error('speechSynthesis.speak was never called')), 3000);
+      });
+    });
+
+    // Verify no triple-dot sequences remain
+    if (/\.{3,}/.test(spokenText)) {
+      throw new Error(`Ellipsis ("...") found in spoken text — TTS will say "dot dot dot": "${spokenText.substring(0, 200)}..."`);
+    }
+  });
+
+  await expect('Read Aloud sanitizes bracket markers from transcript before speaking', async () => {
+    // Re-intercept on a fresh load to be safe
+    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(3500);
+
+    const spokenText = await page.evaluate(() => {
+      return new Promise((resolve, reject) => {
+        const origSpeak = window.speechSynthesis.speak.bind(window.speechSynthesis);
+        window.speechSynthesis.speak = (utterance) => {
+          resolve(utterance.text);
+          window.speechSynthesis.cancel();
+        };
+
+        const arBtn = document.querySelector('.transcript-read-btn[data-target="transcript-ar"]');
+        if (!arBtn || arBtn.disabled) {
+          reject(new Error('Arabic Read Aloud button not found or disabled'));
+          return;
+        }
+        arBtn.click();
+
+        setTimeout(() => reject(new Error('speechSynthesis.speak was never called')), 3000);
+      });
+    });
+
+    // Verify no bracket markers remain
+    if (/\[.*?\]/.test(spokenText)) {
+      throw new Error(`Bracket markers found in spoken text — TTS will read editorial notes: "${spokenText.substring(0, 200)}..."`);
+    }
+  });
+
+  await expect('Read Aloud sanitized text has no excessive whitespace', async () => {
+    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(3500);
+
+    const spokenText = await page.evaluate(() => {
+      return new Promise((resolve, reject) => {
+        window.speechSynthesis.speak = (utterance) => {
+          resolve(utterance.text);
+          window.speechSynthesis.cancel();
+        };
+
+        const arBtn = document.querySelector('.transcript-read-btn[data-target="transcript-ar"]');
+        if (!arBtn || arBtn.disabled) {
+          reject(new Error('Arabic Read Aloud button not found or disabled'));
+          return;
+        }
+        arBtn.click();
+
+        setTimeout(() => reject(new Error('speechSynthesis.speak was never called')), 3000);
+      });
+    });
+
+    // Verify no runs of 2+ spaces (whitespace normalization)
+    if (/  /.test(spokenText)) {
+      throw new Error(`Double spaces found in spoken text — whitespace not normalized`);
+    }
+  });
+
 } finally {
   await context.close();
   await browser.close();

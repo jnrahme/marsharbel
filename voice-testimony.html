@@ -384,7 +384,12 @@ Our hearts are filled with God's grace.</div>
           const transcriptEl = document.getElementById(targetId);
           if (!transcriptEl) return;
 
-          const text = transcriptEl.textContent.replace(/\[.*?\]/g, '').trim();
+          const text = transcriptEl.textContent
+            .replace(/\[.*?\]/g, '')        // Remove [unclear] / [غير واضح] markers
+            .replace(/\.{2,}/g, '،')        // Replace ellipsis (dot runs) with Arabic comma pause
+            .replace(/•/g, '')              // Remove bullet characters if present
+            .replace(/\s+/g, ' ')           // Normalize whitespace
+            .trim();
           if (!text) return;
 
           const utterance = new SpeechSynthesisUtterance(text);
