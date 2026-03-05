@@ -199,10 +199,10 @@ if (!mystery) {
   imageEl.alt = mystery.title;
 }
 
+const setKeys = mysterySets[currentSet] || [];
+const mysteryNumInSet = setKeys.indexOf(key) + 1;
+const setLabel = mysterySetLabel[currentSet] || currentSet;
 if (mysteryHeroProgressEl) {
-  const setKeys = mysterySets[currentSet] || [];
-  const mysteryNumInSet = setKeys.indexOf(key) + 1;
-  const setLabel = mysterySetLabel[currentSet] || currentSet;
   mysteryHeroProgressEl.textContent = `Mystery ${mysteryNumInSet} of ${setKeys.length} — ${setLabel}`;
 }
 if (mysteryHeroRefEl) {
@@ -417,6 +417,23 @@ const renderMysteryTextCompanion = () => {
   if (mysteryReflectionEl) mysteryReflectionEl.textContent = mysteryText.reflection;
 };
 
+const getPrayerLabel = () => {
+  const s = stages[stageIndex];
+  if (!s) return '';
+  switch (s.kind) {
+    case 'intro_prayers': return 'Intro Prayers';
+    case 'lecture': return 'Mystery Reflection';
+    case 'our_father': return 'Our Father';
+    case 'hail_mary': {
+      const n = parseInt((s.badge || '').replace('Meditation ', ''), 10) || 0;
+      return `Hail Mary ${n} of 10`;
+    }
+    case 'decade_closing': return 'Glory Be & Fatima Prayer';
+    case 'end_prayers': return 'Closing Prayers';
+    default: return s.badge || 'Prayer';
+  }
+};
+
 const syncGlobalAudioContext = extra => {
   const payload = {
     source: 'rosary',
@@ -428,6 +445,14 @@ const syncGlobalAudioContext = extra => {
     autoTimerEnabled: autoRunning,
     autoTimerCountdown: autoRemainingSeconds,
     autoTimerDuration,
+    stageKind: stages[stageIndex]?.kind || '',
+    stepIndex: stageIndex,
+    totalSteps: stages.length,
+    mysteryKey: key,
+    mysteryNum: mysteryNumInSet,
+    totalMysteries: setKeys.length,
+    mysterySetLabel: setLabel,
+    prayerLabel: getPrayerLabel(),
     ...extra
   };
 
