@@ -40,8 +40,11 @@ try {
 
   await expect('Explicit end-stage URL includes end-prayers stage', async () => {
     await page.goto(`${baseUrl}/mysteries/joyful-1.html?stage=end`, { waitUntil: 'domcontentloaded' });
-    const counter = await getCounter();
-    const endTotal = totalStepsFromCounter(counter);
+    // End-stage initial render shows badge text, so read total from JS instead of counter
+    const endTotal = await page.evaluate(() => {
+      const dots = document.querySelectorAll('#bead-progress .bead-dot');
+      return dots.length;
+    });
     if (endTotal !== defaultTotal + 1) {
       throw new Error(`Expected end-stage total to be default+1 (${defaultTotal + 1}), got: ${endTotal}`);
     }
