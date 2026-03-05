@@ -97,12 +97,28 @@
         </div>
       </article>
 
+      <div class="storybook-extras">
+        <label class="story-auto-continue" title="Automatically read next page when current page finishes">
+          <input type="checkbox" id="story-auto-continue" />
+          Auto Continue
+        </label>
+        <div class="story-rate-group" role="group" aria-label="Playback speed">
+          <button class="story-rate-btn" type="button" data-rate="0.7">Slow</button>
+          <button class="story-rate-btn is-active" type="button" data-rate="1">Normal</button>
+          <button class="story-rate-btn" type="button" data-rate="1.3">Fast</button>
+        </div>
+        <span class="story-reading-indicator" id="story-reading-indicator">
+          <span class="story-reading-dot"></span>
+          <span id="story-reading-label">Reading…</span>
+          <span class="story-elapsed" id="story-elapsed">0:00</span>
+        </span>
+      </div>
       <div class="storybook-controls">
         <label class="story-voice-pack" for="story-voice-pack">
           Voice Pack
           <select id="story-voice-pack" aria-label="Select story voice pack"></select>
         </label>
-        <button id="story-prev" class="btn subtle" type="button">Previous Page</button>
+        <button id="story-prev" class="btn subtle" type="button" disabled>Previous Page</button>
         <button id="story-read" class="btn subtle" type="button">Read Aloud</button>
         <button id="story-next" class="btn primary" type="button">Next Page</button>
       </div>
