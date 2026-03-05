@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosary for Beginners | Saint Charbel Intro Guide</title>
+  <meta name="description" content="Start the Rosary with a clear beginner introduction: structure, prayers, mysteries, and practical guidance for daily Catholic devotion." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://marsharbel.com/rosary-intro" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Saint Charbel" />
+  <meta property="og:title" content="Rosary for Beginners | Saint Charbel Intro Guide" />
+  <meta property="og:description" content="Start the Rosary with a clear beginner introduction: structure, prayers, mysteries, and practical guidance for daily Catholic devotion." />
+  <meta property="og:url" content="https://marsharbel.com/rosary-intro" />
+  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rosary for Beginners | Saint Charbel Intro Guide" />
+  <meta name="twitter:description" content="Start the Rosary with a clear beginner introduction: structure, prayers, mysteries, and practical guidance for daily Catholic devotion." />
+  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Rosary for Beginners | Saint Charbel Intro Guide",
+  "description": "Start the Rosary with a clear beginner introduction: structure, prayers, mysteries, and practical guidance for daily Catholic devotion.",
+  "url": "https://marsharbel.com/rosary-intro",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Saint Charbel",
+    "url": "https://marsharbel.com/"
+  }
+}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="site-shell nav">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">✦</span>
+        <span>Saint Charbel</span>
+      </a>
+      <nav class="links">
+        <a href="./index.html">Home</a>
+        <a href="./history.html">History</a>
+        <a href="./story.html">Story</a>
+        <a href="./miracles.html">Miracles</a>
+        <a href="./testimonies.html">Testimonies</a>
+        <a href="./gallery.html">Gallery</a>
+        <a class="active" href="./rosary-visual-guide.html">Rosary</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-shell">
+    <section class="hero">
+      <span class="kicker">Full Rosary Start</span>
+      <h1>Rosary Intro and Opening Prayers</h1>
+      <p>
+        Start with Apostles' Creed, Our Father, 3 Hail Marys (faith, hope, charity), and Glory Be.
+        Then continue through all 5 mysteries in your selected set with auto-prayer enabled.
+      </p>
+      <div class="cta-row">
+        <a class="btn subtle" href="./rosary-visual-guide.html">Back To Rosary Guide</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Choose How To Begin</h2>
+      <div class="grid-2">
+        <article class="card update">
+          <span class="tag ok">Recommended</span>
+          <h3>Pray Today's Set</h3>
+          <p>Automatically picks today’s mystery set based on weekday tradition.</p>
+          <button class="btn primary" data-action="today">Start Today's Rosary (Audio Guided)</button>
+        </article>
+
+        <article class="card update">
+          <span class="tag">Manual</span>
+          <h3>Choose A Set</h3>
+          <p>Select one full 5-mystery set and begin from its first mystery.</p>
+          <div class="cta-row" style="gap:.6rem; flex-wrap:wrap;">
+            <button class="btn subtle" data-set="joyful">Joyful</button>
+            <button class="btn subtle" data-set="luminous">Luminous</button>
+            <button class="btn subtle" data-set="sorrowful">Sorrowful</button>
+            <button class="btn subtle" data-set="glorious">Glorious</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Opening and Ending Prayers In This Flow</h2>
+      <article class="card story">
+        <ol class="step-list">
+          <li>Intro stage: Apostles' Creed, Our Father, 3 Hail Marys, Glory Be</li>
+          <li>Each decade: Our Father, Hail Mary beads, Glory Be</li>
+          <li>Fatima prayer after each decade (with the decade closing prayers)</li>
+          <li>End stage: Hail Holy Queen + Concluding Rosary Prayer</li>
+        </ol>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'rosary_full_session';
+    const sets = {
+      joyful: ['joyful_1','joyful_2','joyful_3','joyful_4','joyful_5'],
+      luminous: ['luminous_1','luminous_2','luminous_3','luminous_4','luminous_5'],
+      sorrowful: ['sorrowful_1','sorrowful_2','sorrowful_3','sorrowful_4','sorrowful_5'],
+      glorious: ['glorious_1','glorious_2','glorious_3','glorious_4','glorious_5']
+    };
+
+    const detectTodaySet = () => {
+      const day = new Date().getDay();
+      if (day === 1 || day === 6) return 'joyful';
+      if (day === 2 || day === 5) return 'sorrowful';
+      if (day === 4) return 'luminous';
+      return 'glorious';
+    };
+
+    const startSet = setName => {
+      const sequence = sets[setName] || [];
+      if (!sequence.length) return;
+      const first = sequence[0];
+      const payload = {
+        active: true,
+        set: setName,
+        sequence,
+        currentKey: first,
+        autoPrayer: true,
+        startedAt: Date.now()
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      const target = `./mysteries/${first.replace('_','-')}.html?auto=1&stage=intro`;
+      window.location.href = target;
+    };
+
+    document.querySelector('[data-action="today"]')?.addEventListener('click', () => startSet(detectTodaySet()));
+    document.querySelectorAll('[data-set]').forEach(btn => {
+      btn.addEventListener('click', () => startSet(btn.getAttribute('data-set')));
+    });
+  </script>
+  <script src="./app.js"></script>
+  <script src="./global-audio-player.js"></script>
+  <script src="./translate.js"></script>
+</body>
+</html>

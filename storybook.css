@@ -1,0 +1,910 @@
+.storybook-page {
+  padding-bottom: 2rem;
+}
+
+.story-hero {
+  padding: 3.2rem 0 1.4rem;
+  display: grid;
+  gap: 1rem;
+  position: relative;
+}
+
+.story-hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  max-width: 14ch;
+}
+
+.story-hero p {
+  margin: 0;
+  color: #d9d3c7;
+  max-width: 70ch;
+  line-height: 1.7;
+}
+
+.story-tabs {
+  display: inline-flex;
+  width: fit-content;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(211, 178, 110, 0.08);
+  padding: 0.22rem;
+}
+
+.story-tab {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.38rem 0.95rem;
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--text);
+  background: rgba(211, 178, 110, 0.22);
+}
+
+.storybook {
+  padding: 1rem 0 0.8rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.story-evidence {
+  border: 1px solid rgba(225, 196, 136, 0.28);
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(10, 19, 28, 0.9), rgba(8, 14, 21, 0.92));
+  padding: 0.9rem 1rem 1rem;
+}
+
+.story-evidence h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.06rem;
+  color: #f3e8ce;
+}
+
+.story-evidence ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.story-evidence li {
+  color: #d7d2c7;
+  line-height: 1.45;
+}
+
+.story-evidence-type {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0.08rem 0.42rem;
+  border-radius: 999px;
+  border: 1px solid rgba(225, 196, 136, 0.36);
+  background: rgba(225, 196, 136, 0.12);
+  color: #f4e5bf;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.story-evidence-links {
+  margin-left: 0.3rem;
+  font-size: 0.9rem;
+  opacity: 0.96;
+}
+
+.story-evidence-links a {
+  color: #e5c98e;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.storybook-panel {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 1rem;
+  border: 1px solid rgba(225, 196, 136, 0.46);
+  border-radius: 26px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(226, 196, 132, 0.2), transparent 34%),
+    linear-gradient(160deg, rgba(14, 24, 31, 0.95), rgba(7, 13, 20, 0.98));
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.34);
+}
+
+.storybook-panel.is-turning .storybook-text {
+  animation: page-copy-shift 460ms ease;
+}
+
+.storybook-panel.is-turning .scene-art {
+  animation: page-illustration-shift 600ms ease;
+}
+
+.storybook-illustration {
+  min-height: 380px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #102130, #0a131c);
+}
+
+.storybook-illustration::before,
+.storybook-illustration::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.7;
+}
+
+.storybook-illustration::before {
+  width: 190px;
+  height: 190px;
+  left: -20px;
+  top: -20px;
+  background: radial-gradient(circle, rgba(226, 196, 132, 0.35), transparent 70%);
+  animation: drift 8s ease-in-out infinite;
+}
+
+.storybook-illustration::after {
+  width: 120px;
+  height: 120px;
+  right: 16px;
+  bottom: 20px;
+  background: radial-gradient(circle, rgba(113, 171, 218, 0.28), transparent 70%);
+  animation: drift 9s ease-in-out infinite reverse;
+}
+
+.scene-art {
+  position: absolute;
+  inset: 0;
+}
+
+.scene-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.08) contrast(1.04) brightness(0.9);
+  animation: kenburns 14s ease-in-out infinite alternate;
+}
+
+.scene-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(226, 196, 132, 0.2), transparent 34%),
+    linear-gradient(180deg, rgba(8, 14, 20, 0.06), rgba(7, 13, 20, 0.34));
+  pointer-events: none;
+}
+
+.scene-stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 24%, rgba(255, 243, 211, 0.68) 0 2px, transparent 2px),
+    radial-gradient(circle at 68% 20%, rgba(230, 208, 164, 0.54) 0 1px, transparent 1px),
+    radial-gradient(circle at 82% 40%, rgba(255, 247, 221, 0.62) 0 2px, transparent 2px),
+    radial-gradient(circle at 34% 68%, rgba(232, 210, 168, 0.36) 0 1px, transparent 1px);
+  animation: twinkle 5s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+.scene-ground,
+.scene-mountain,
+.scene-moon,
+.scene-cloud,
+.scene-house,
+.scene-cross,
+.scene-path,
+.scene-heart,
+.scene-halo,
+.scene-rays,
+.scene-candle,
+.scene-book,
+.scene-saint,
+.scene-child {
+  position: absolute;
+}
+
+.scene-cloud {
+  width: 96px;
+  height: 34px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(219, 234, 247, 0.42), rgba(175, 199, 217, 0.18));
+}
+
+.scene-cloud::before,
+.scene-cloud::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.scene-cloud::before {
+  width: 42px;
+  height: 42px;
+  left: 12px;
+  top: -16px;
+}
+
+.scene-cloud::after {
+  width: 36px;
+  height: 36px;
+  right: 12px;
+  top: -12px;
+}
+
+.scene-cloud-a {
+  left: 16%;
+  top: 14%;
+  animation: cloud-walk 24s linear infinite;
+}
+
+.scene-cloud-b {
+  left: 54%;
+  top: 20%;
+  transform: scale(0.8);
+  animation: cloud-walk 29s linear infinite reverse;
+}
+
+.scene-ground {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34%;
+  background: linear-gradient(180deg, rgba(17, 31, 41, 0.05), rgba(9, 16, 23, 0.92));
+}
+
+.scene-mountain {
+  width: 0;
+  height: 0;
+  border-left: 130px solid transparent;
+  border-right: 130px solid transparent;
+  border-bottom: 190px solid rgba(32, 52, 67, 0.9);
+  bottom: 28%;
+  left: 16%;
+}
+
+.scene-moon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  top: 12%;
+  right: 14%;
+  background: radial-gradient(circle at 30% 30%, #fff1cd, #d0a963);
+  box-shadow: 0 0 24px rgba(230, 198, 136, 0.4);
+  animation: moon-sway 8s ease-in-out infinite;
+}
+
+.scene-house {
+  width: 84px;
+  height: 56px;
+  bottom: 29%;
+  right: 20%;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #8b6b3f, #5f482a);
+}
+
+.scene-house::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: -24px;
+  border-left: 32px solid transparent;
+  border-right: 32px solid transparent;
+  border-bottom: 26px solid #5c4123;
+}
+
+.scene-cross {
+  width: 14px;
+  height: 90px;
+  right: 28%;
+  bottom: 32%;
+  background: linear-gradient(180deg, #d5b374, #b18748);
+  border-radius: 8px;
+}
+
+.scene-cross::before {
+  content: '';
+  position: absolute;
+  width: 48px;
+  height: 10px;
+  left: -17px;
+  top: 24px;
+  background: inherit;
+  border-radius: 8px;
+}
+
+.scene-path {
+  width: 220px;
+  height: 18px;
+  left: 34%;
+  bottom: 20%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(190, 160, 99, 0.05), rgba(190, 160, 99, 0.45), rgba(190, 160, 99, 0.05));
+}
+
+.scene-heart {
+  width: 16px;
+  height: 16px;
+  left: 16%;
+  top: 22%;
+  transform: rotate(-45deg);
+  background: #f2c985;
+  animation: pulse 2.1s ease-in-out infinite;
+}
+
+.scene-heart::before,
+.scene-heart::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.scene-heart::before {
+  top: -8px;
+  left: 0;
+}
+
+.scene-heart::after {
+  top: 0;
+  left: 8px;
+}
+
+.scene-halo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  left: 12%;
+  top: 18%;
+  background: radial-gradient(circle, rgba(236, 214, 167, 0.32), transparent 70%);
+  opacity: 0.6;
+}
+
+.scene-rays {
+  width: 140px;
+  height: 140px;
+  left: 62%;
+  top: 10%;
+  border-radius: 50%;
+  border: 1px solid rgba(238, 214, 168, 0.34);
+  box-shadow: 0 0 0 18px rgba(226, 196, 132, 0.08), 0 0 0 38px rgba(226, 196, 132, 0.04);
+  animation: spin-soft 18s linear infinite;
+}
+
+.scene-candle {
+  width: 18px;
+  height: 76px;
+  bottom: 22%;
+  left: 48%;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #f5ead0, #d7c39e);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.scene-candle::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 24px;
+  top: -18px;
+  left: 2px;
+  border-radius: 60% 60% 58% 58%;
+  background: radial-gradient(circle at 50% 38%, #fff4cf 0 36%, #f9b955 36% 62%, #e07f2b 63% 100%);
+  animation: flicker 1.4s ease-in-out infinite;
+}
+
+.scene-book {
+  width: 58px;
+  height: 42px;
+  right: 15%;
+  bottom: 23%;
+  border-radius: 8px;
+  background: linear-gradient(160deg, #a37e4b, #7d5f39);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.scene-book::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 8px;
+  bottom: 8px;
+  border: 1px solid rgba(255, 239, 206, 0.42);
+  border-radius: 5px;
+}
+
+.scene-saint,
+.scene-child {
+  bottom: 23%;
+  width: 60px;
+  height: 120px;
+  display: block;
+}
+
+.scene-saint .scene-head,
+.scene-child .scene-head {
+  position: absolute;
+  top: 0;
+  left: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.scene-saint .scene-body,
+.scene-child .scene-body {
+  position: absolute;
+  top: 22px;
+  left: 12px;
+  width: 36px;
+  height: 84px;
+  border-radius: 18px 18px 12px 12px;
+}
+
+.scene-saint {
+  left: 24%;
+  animation: bob 3s ease-in-out infinite;
+}
+
+.scene-saint .scene-head {
+  background: #f3d7b0;
+}
+
+.scene-saint .scene-body {
+  background: linear-gradient(180deg, #d9d8d5, #9b9a97 72%, #7d6d5a);
+}
+
+.scene-child {
+  right: 18%;
+  scale: 0.82;
+  animation: bob 2.2s ease-in-out infinite;
+}
+
+.scene-child .scene-head {
+  background: #efc79b;
+}
+
+.scene-child .scene-body {
+  background: linear-gradient(180deg, #95b6d6, #698db2);
+}
+
+.scene-art.scene-birth .scene-ground {
+  background: linear-gradient(180deg, rgba(29, 54, 73, 0.35), rgba(12, 22, 33, 0.95));
+}
+
+.scene-art.scene-birth .scene-halo {
+  opacity: 0.85;
+}
+
+.scene-art.scene-birth .scene-child {
+  scale: 0.74;
+}
+
+.scene-art.scene-vocation .scene-house {
+  width: 110px;
+  height: 72px;
+  right: 17%;
+}
+
+.scene-art.scene-vocation .scene-cross {
+  right: 22%;
+}
+
+.scene-art.scene-vocation .scene-saint {
+  left: 58%;
+}
+
+.scene-art.scene-vocation .scene-child {
+  right: 46%;
+}
+
+.scene-art.scene-priest .scene-candle {
+  left: 41%;
+}
+
+.scene-art.scene-priest .scene-book {
+  width: 76px;
+}
+
+.scene-art.scene-priest .scene-saint {
+  left: 42%;
+}
+
+.scene-art.scene-priest .scene-child {
+  right: 10%;
+}
+
+.scene-art.scene-hermit .scene-moon {
+  width: 82px;
+  height: 82px;
+}
+
+.scene-art.scene-hermit .scene-stars {
+  opacity: 1;
+}
+
+.scene-art.scene-hermit .scene-child {
+  display: none;
+}
+
+.scene-art.scene-passing .scene-halo {
+  left: 46%;
+  top: 12%;
+  opacity: 0.9;
+}
+
+.scene-art.scene-passing .scene-rays {
+  left: 48%;
+  top: 16%;
+}
+
+.scene-art.scene-passing .scene-saint {
+  left: 43%;
+  scale: 1.08;
+}
+
+.scene-art.scene-passing .scene-child {
+  display: none;
+}
+
+.scene-art.scene-healing .scene-path {
+  width: 270px;
+}
+
+.scene-art.scene-healing .scene-heart {
+  left: 46%;
+  top: 30%;
+  animation-duration: 1.2s;
+}
+
+.scene-art.scene-healing .scene-photo {
+  filter: saturate(1.12) contrast(1.05) brightness(0.7);
+}
+
+.scene-art.scene-healing .scene-saint {
+  left: 36%;
+}
+
+.scene-art.scene-healing .scene-child {
+  right: 26%;
+}
+
+.scene-art.scene-unity .scene-heart {
+  left: 36%;
+  top: 30%;
+}
+
+.scene-art.scene-unity .scene-heart::after,
+.scene-art.scene-unity .scene-heart::before {
+  background: #f7d8a1;
+}
+
+.scene-art.scene-unity .scene-book {
+  right: 32%;
+}
+
+.scene-art.scene-unity .scene-saint {
+  left: 30%;
+}
+
+.scene-art.scene-unity .scene-child {
+  right: 34%;
+}
+
+.scene-art.scene-legacy .scene-halo {
+  width: 240px;
+  height: 240px;
+  left: 32%;
+  top: 6%;
+  opacity: 0.95;
+}
+
+.scene-art.scene-legacy .scene-rays {
+  left: 39%;
+  top: 12%;
+}
+
+.scene-art.scene-legacy .scene-saint {
+  left: 44%;
+  scale: 1.1;
+}
+
+.scene-art.scene-legacy .scene-child {
+  right: 16%;
+}
+
+.scene-art.scene-legacy .scene-photo {
+  filter: saturate(1.03) contrast(1.08) brightness(0.58);
+}
+
+.storybook-text {
+  padding: 1.2rem 1.2rem 1.35rem;
+  display: grid;
+  gap: 0.76rem;
+  align-content: center;
+}
+
+.storybook-step {
+  margin: 0;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.storybook-text h2 {
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+}
+
+.storybook-text p {
+  margin: 0;
+  color: #e7e1d6;
+  line-height: 1.65;
+}
+
+.storybook-prayer {
+  margin-top: 0.3rem;
+  border-left: 3px solid rgba(232, 201, 141, 0.56);
+  padding-left: 0.7rem;
+  color: #fff1cf;
+  font-style: italic;
+}
+
+.storybook-heart {
+  margin-top: 0.2rem;
+  border-left: 3px solid rgba(128, 171, 211, 0.52);
+  padding-left: 0.7rem;
+  color: #cfe4ff;
+  font-weight: 700;
+}
+
+.storybook-controls {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 0.1rem 0.1rem 0;
+  align-items: center;
+}
+
+.story-voice-pack {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: auto;
+  border: 1px solid rgba(225, 196, 136, 0.28);
+  border-radius: 12px;
+  padding: 0.36rem 0.56rem;
+  background: rgba(11, 19, 28, 0.84);
+  color: #ece5d8;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.story-voice-pack select {
+  min-height: 34px;
+  min-width: 228px;
+  border-radius: 9px;
+  border: 1px solid rgba(225, 196, 136, 0.28);
+  background: rgba(7, 14, 20, 0.9);
+  color: #ece6da;
+  padding: 0.28rem 0.45rem;
+  font-size: 0.82rem;
+}
+
+.storybook-controls .btn {
+  min-width: 160px;
+  border-radius: 14px;
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.storybook-page .section h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.storybook-page .card.story {
+  border-radius: 18px;
+  border: 1px solid rgba(225, 196, 136, 0.28);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(128, 171, 211, 0.11), transparent 40%),
+    linear-gradient(160deg, rgba(18, 30, 42, 0.88), rgba(13, 22, 32, 0.95));
+}
+
+.storybook-page .card.story h3 {
+  color: #f4ead6;
+}
+
+.storybook-page .card.story p,
+.storybook-page .card.story li {
+  color: #ddd8cd;
+}
+
+.storybook.is-rtl .storybook-text {
+  text-align: right;
+}
+
+.storybook.is-rtl .storybook-prayer {
+  border-left: 0;
+  border-right: 3px solid rgba(211, 178, 110, 0.45);
+  padding-left: 0;
+  padding-right: 0.7rem;
+}
+
+.storybook.is-rtl .storybook-controls {
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: rotate(-45deg) scale(1);
+    opacity: 0.78;
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.18);
+    opacity: 1;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1.04) translateX(-1.5%);
+  }
+  100% {
+    transform: scale(1.12) translateX(1.5%);
+  }
+}
+
+@keyframes cloud-walk {
+  0% {
+    transform: translateX(-22px);
+  }
+  50% {
+    transform: translateX(18px);
+  }
+  100% {
+    transform: translateX(-22px);
+  }
+}
+
+@keyframes moon-sway {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    transform: scaleY(1) rotate(0);
+    opacity: 0.88;
+  }
+  40% {
+    transform: scaleY(1.06) rotate(-3deg);
+    opacity: 1;
+  }
+  70% {
+    transform: scaleY(0.94) rotate(2deg);
+    opacity: 0.82;
+  }
+}
+
+@keyframes spin-soft {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes page-copy-shift {
+  0% {
+    opacity: 0.2;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-illustration-shift {
+  0% {
+    opacity: 0.36;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 980px) {
+  .storybook-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .storybook-illustration {
+    min-height: 260px;
+  }
+
+  .scene-mountain {
+    left: 5%;
+    border-left-width: 105px;
+    border-right-width: 105px;
+    border-bottom-width: 150px;
+  }
+
+  .scene-path {
+    left: 20%;
+    width: 190px;
+  }
+
+  .scene-house {
+    right: 12%;
+  }
+
+  .storybook-controls {
+    justify-content: flex-start;
+  }
+
+  .story-voice-pack {
+    width: 100%;
+    margin-right: 0;
+    justify-content: space-between;
+  }
+
+  .story-voice-pack select {
+    min-width: 0;
+    width: 66%;
+  }
+}
+
+/* Hide story voice-pack selector from UI while preserving JS defaults. */
+.story-voice-pack {
+  display: none !important;
+}

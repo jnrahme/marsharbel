@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102126"/>
+      <stop offset="1" stop-color="#20361f"/>
+    </linearGradient>
+    <radialGradient id="g" cx="50%" cy="34%" r="31%">
+      <stop offset="0" stop-color="#f7f0c8" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#f7f0c8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <circle cx="600" cy="390" r="280" fill="url(#g)"/>
+  <ellipse cx="600" cy="980" rx="250" ry="50" fill="#000" opacity="0.3"/>
+  <rect x="430" y="330" width="340" height="580" rx="34" fill="#e4e8ed"/>
+  <rect x="448" y="350" width="304" height="540" rx="24" fill="#ffffff" opacity="0.28"/>
+  <rect x="470" y="545" width="260" height="200" rx="14" fill="#ece7dc"/>
+  <text x="600" y="620" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#2d2d2d">Healing</text>
+  <text x="600" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" fill="#4e4e4e">Intention Candle</text>
+  <path d="M600 264 C624 294 624 325 600 346 C576 325 576 294 600 264 Z" fill="#ffbc52"/>
+  <path d="M600 287 C611 304 611 321 600 333 C589 321 589 304 600 287 Z" fill="#fff2bf"/>
+  <text x="600" y="1130" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#d3b26e">AI CONCEPT RENDER</text>
+</svg>

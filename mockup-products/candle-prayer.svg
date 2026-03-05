@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#121924"/>
+      <stop offset="1" stop-color="#2d2216"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.08"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="28%" r="30%">
+      <stop offset="0" stop-color="#ffd98a" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <circle cx="600" cy="340" r="260" fill="url(#glow)"/>
+  <ellipse cx="600" cy="980" rx="270" ry="56" fill="#000" opacity="0.35"/>
+  <rect x="410" y="300" width="380" height="620" rx="36" fill="#1a2230"/>
+  <rect x="425" y="315" width="350" height="590" rx="30" fill="url(#glass)"/>
+  <rect x="460" y="520" width="280" height="210" rx="16" fill="#efe6d2"/>
+  <text x="600" y="600" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#2e2115">Saint Charbel</text>
+  <text x="600" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#6d5b45">Prayer Candle</text>
+  <path d="M600 225 C625 255 625 292 600 312 C575 292 575 255 600 225 Z" fill="#ffc15f"/>
+  <path d="M600 246 C612 264 612 286 600 298 C588 286 588 264 600 246 Z" fill="#fff4c7"/>
+  <text x="600" y="1128" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#d3b26e">AI CONCEPT RENDER</text>
+</svg>
