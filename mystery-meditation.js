@@ -200,7 +200,10 @@ if (!mystery) {
 }
 
 if (mysteryHeroProgressEl) {
-  mysteryHeroProgressEl.textContent = `Mystery ${activeIndex + 1} of ${orderedKeys.length}`;
+  const setKeys = mysterySets[currentSet] || [];
+  const mysteryNumInSet = setKeys.indexOf(key) + 1;
+  const setLabel = mysterySetLabel[currentSet] || currentSet;
+  mysteryHeroProgressEl.textContent = `Mystery ${mysteryNumInSet} of ${setKeys.length} — ${setLabel}`;
 }
 if (mysteryHeroRefEl) {
   const scriptureRef = mysteryText?.readingTitle || '';
@@ -298,6 +301,7 @@ let clipPreload = null;
 let prayerClipAudio = null;
 let activeNarrationMode = 'prerendered';
 let hasUserStartedPlayback = false;
+let playbackStartedViaVoiceButton = false;
 let playbackRequestId = 0;
 let playbackPending = false;
 
@@ -543,6 +547,7 @@ const ensureClipPlayers = () => {
 const stopVoice = () => {
   nextPlaybackRequest();
   playbackPending = false;
+  playbackStartedViaVoiceButton = false;
   clearAutoCountdown();
   if (clipAudio) {
     clipAudio.onended = null;
@@ -587,8 +592,12 @@ const updateVoiceButtonLabel = () => {
   if (!pauseButton) {
     return;
   }
-  if (playbackPending) {
+  if (playbackPending && playbackStartedViaVoiceButton) {
     pauseButton.textContent = 'Starting...';
+    return;
+  }
+  if (!playbackStartedViaVoiceButton) {
+    pauseButton.textContent = 'Play Voice';
     return;
   }
   if (prayerClipAudio && !prayerClipAudio.ended) {
@@ -999,7 +1008,12 @@ const render = () => {
   stageBadge.textContent = current.badge;
   stageTitle.textContent = current.title;
   stageText.textContent = current.text;
-  stepCounter.textContent = `Step ${stageIndex + 1} of ${stages.length}`;
+  const currentKind = current.kind;
+  if (currentKind === 'intro_prayers' || currentKind === 'end_prayers') {
+    stepCounter.textContent = current.badge;
+  } else {
+    stepCounter.textContent = `Step ${stageIndex + 1} of ${stages.length}`;
+  }
 
   dots.forEach((dot, idx) => {
     dot.classList.toggle('on', idx <= stageIndex);
@@ -1162,7 +1176,10 @@ prevButton.addEventListener('click', () => {
 });
 
 nextButton.addEventListener('click', nextStage);
-pauseButton.addEventListener('click', togglePauseVoice);
+pauseButton.addEventListener('click', () => {
+  playbackStartedViaVoiceButton = true;
+  togglePauseVoice();
+});
 
 if (prevMysteryButton) {
   prevMysteryButton.addEventListener('click', () => navigateMystery(activeIndex - 1));
@@ -1285,6 +1302,7 @@ window.RosaryNarrationController = {
 
 if (startGuidedAudioButton) {
   startGuidedAudioButton.addEventListener('click', () => {
+    playbackStartedViaVoiceButton = false;
     playVoice({ userInitiated: true });
   });
 }
@@ -1369,6 +1387,7 @@ if (churchMusicToggle) {
 
 const studioPath = `${basePath}audio/${key}.mp3`;
 studioAudio.src = studioPath;
+studioPlayButton.hidden = true;
 
 studioPlayButton.addEventListener('click', async () => {
   if (studioAudio.paused) {
@@ -1376,7 +1395,7 @@ studioPlayButton.addEventListener('click', async () => {
       await studioAudio.play();
       studioPlayButton.textContent = 'Pause Studio Track';
     } catch (_) {
-      soundStatus.textContent = 'Could not play studio track.';
+      studioPlayButton.hidden = true;
     }
     return;
   }
@@ -1387,15 +1406,17 @@ studioAudio.addEventListener('ended', () => {
   studioPlayButton.textContent = 'Play Studio Track';
 });
 studioAudio.addEventListener('error', () => {
-  studioPlayButton.disabled = true;
-  studioPlayButton.textContent = 'Studio Track Unavailable';
-  soundStatus.textContent = 'Studio track not found yet. Upload audio/{mystery}.mp3 to enable it.';
+  studioPlayButton.hidden = true;
+});
+studioAudio.addEventListener('loadedmetadata', () => {
+  studioPlayButton.hidden = false;
 });
 
 const stopAutoTimer = () => {
   clearAutoCountdown();
   autoRunning = false;
   autoTimerToggle.textContent = 'Start Auto';
+  autoTimerToggle.classList.remove('is-active');
   stopDotsAnimation();
   updateLivePrayerPanel();
 };
@@ -1423,7 +1444,8 @@ autoTimerToggle.addEventListener('click', () => {
   autoRunning = true;
   autoTimerDuration = seconds;
   autoRemainingSeconds = 0;
-  autoTimerToggle.textContent = 'Stop Auto';
+  autoTimerToggle.textContent = `Auto: ${seconds}s`;
+  autoTimerToggle.classList.add('is-active');
   soundStatus.textContent = `Auto timer enabled (${seconds}s). Countdown starts after narration ends.`;
   startDotsAnimation();
   updateLivePrayerPanel();
@@ -1435,7 +1457,6 @@ window.dispatchEvent(new CustomEvent('sc:content-updated'));
 soundButton.textContent = 'Church Music: Off';
 updateVoiceButtonLabel();
 updateStartGuidedAudioButton();
-studioPlayButton.textContent = 'Play Studio Track';
 ensureClipPlayers();
 loadClipManifest()
   .finally(() => {

@@ -564,6 +564,16 @@ h3 {
   color: #33240b;
   border-color: transparent;
 }
+#auto-timer-toggle.is-active {
+  background: linear-gradient(180deg, #80dda0, #57c870);
+  color: #0b3312;
+  border-color: transparent;
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px rgba(87, 200, 112, 0.3); }
+  50% { box-shadow: 0 0 12px rgba(87, 200, 112, 0.6); }
+}
 
 .meditation-top-controls label.btn {
   cursor: default;

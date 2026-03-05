@@ -95,7 +95,7 @@
         <select id="mystery-picker" class="btn subtle meditation-select"></select>
       </div>
 
-      <div class="meditation-top-controls">
+      <div class="meditation-top-controls notranslate">
         <label class="btn subtle" for="auto-timer-seconds">Hands-Free Timer</label>
         <select id="auto-timer-seconds" class="btn subtle">
           <option value="0">Off</option>
@@ -103,7 +103,7 @@
           <option value="18">18s</option>
           <option value="25">25s</option>
         </select>
-        <button id="auto-timer-toggle" type="button" class="btn subtle">Start Auto</button>
+        <button id="auto-timer-toggle" type="button" class="btn subtle" data-testid="auto-timer-toggle">Start Auto</button>
       </div>
     </section>
 
@@ -120,12 +120,12 @@
 
         <div id="bead-progress" class="bead-progress" aria-label="Prayer progress"></div>
 
-        <div class="meditation-actions">
-          <button id="prev-step" type="button" class="btn subtle">Previous</button>
-          <button id="next-step" type="button" class="btn primary">Next</button>
-          <button id="pause-audio" type="button" class="btn subtle">Play Voice</button>
-          <button id="toggle-sound" type="button" class="btn subtle">Church Music: Off</button>
-          <button id="play-studio" type="button" class="btn subtle">Play Studio Track</button>
+        <div class="meditation-actions notranslate">
+          <button id="prev-step" type="button" class="btn subtle" data-testid="prev-step">Previous</button>
+          <button id="next-step" type="button" class="btn primary" data-testid="next-step">Next</button>
+          <button id="pause-audio" type="button" class="btn subtle" data-testid="pause-audio">Play Voice</button>
+          <button id="toggle-sound" type="button" class="btn subtle" data-testid="toggle-sound">Church Music: Off</button>
+          <button id="play-studio" type="button" class="btn subtle" data-testid="play-studio">Play Studio Track</button>
         </div>
         <audio id="studio-audio" preload="none"></audio>
 
