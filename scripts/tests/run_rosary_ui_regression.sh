@@ -33,4 +33,12 @@ cleanup() {
 trap cleanup EXIT
 
 cd "${ROOT}"
-node scripts/tests/e2e_full_clickthrough.cjs "--base-url=${BASE_URL}"
+case "$(basename "$0")" in
+  run_rosary_smoke.sh) node scripts/tests/rosary_smoke.mjs "--base-url=${BASE_URL}" ;;
+  run_rosary_menu_behaviors.sh) node scripts/tests/rosary_menu_behaviors.mjs "--base-url=${BASE_URL}" ;;
+  run_rosary_end_stage_rules.sh) node scripts/tests/rosary_end_stage_rules.mjs "--base-url=${BASE_URL}" ;;
+  run_rosary_prayer_behavior.sh) node scripts/tests/rosary_prayer_behavior.mjs "--base-url=${BASE_URL}" ;;
+  run_rosary_intro_cta_behavior.sh) node scripts/tests/rosary_intro_cta_behavior.mjs "--base-url=${BASE_URL}" ;;
+  run_rosary_ui_regression.sh) node scripts/tests/rosary_ui_regression.mjs "--base-url=${BASE_URL}" ;;
+  *) echo "Unknown runner: $0"; exit 1 ;;
+esac

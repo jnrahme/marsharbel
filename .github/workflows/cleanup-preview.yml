@@ -1,0 +1,35 @@
+name: Cleanup Netlify Preview
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Netlify preview deploy
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          ALIAS="pr-${{ github.event.pull_request.number }}"
+          echo "Looking for deploy with alias: ${ALIAS}"
+
+          DEPLOY_ID=$(curl -sf \
+            -H "Authorization: Bearer ${NETLIFY_AUTH_TOKEN}" \
+            "https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/deploys?per_page=100" \
+            | jq -r ".[] | select(.deploy_ssl_url | test(\"${ALIAS}\")) | .id" \
+            | head -1)
+
+          if [ -z "$DEPLOY_ID" ] || [ "$DEPLOY_ID" = "null" ]; then
+            echo "No preview deploy found for ${ALIAS}, skipping."
+            exit 0
+          fi
+
+          echo "Deleting deploy ${DEPLOY_ID} (alias: ${ALIAS})"
+          curl -sf -X DELETE \
+            -H "Authorization: Bearer ${NETLIFY_AUTH_TOKEN}" \
+            "https://api.netlify.com/api/v1/deploys/${DEPLOY_ID}"
+
+          echo "Preview deploy cleaned up."

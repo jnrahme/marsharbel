@@ -1,0 +1,20 @@
+name: Dead Code Check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - stage
+
+jobs:
+  dead-code:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run dead code check
+        run: bash scripts/qa/dead_code_check.sh
