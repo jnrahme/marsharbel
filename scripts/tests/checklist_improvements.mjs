@@ -1278,42 +1278,81 @@ try {
   });
 
   // ============================================================
-  // READ ALOUD ENABLED STATE
-  // CI headless Chromium may have 0 voices — tests adapt to environment
+  // READ ALOUD PER-LANGUAGE VOICE AVAILABILITY
+  // Buttons are enabled/disabled per language — Arabic needs an Arabic voice
   // ============================================================
 
   await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(3500);
 
-  const hasVoices = await page.evaluate(() => {
-    return 'speechSynthesis' in window && (window.speechSynthesis.getVoices() || []).length > 0;
+  // Detect which language voices the browser actually has
+  const voiceInfo = await page.evaluate(() => {
+    if (!('speechSynthesis' in window)) return { hasAny: false, hasEn: false, hasAr: false };
+    const voices = window.speechSynthesis.getVoices() || [];
+    return {
+      hasAny: voices.length > 0,
+      hasEn: voices.some(v => (v.lang || '').toLowerCase().startsWith('en')),
+      hasAr: voices.some(v => (v.lang || '').toLowerCase().startsWith('ar'))
+    };
   });
 
-  await expect('Read Aloud buttons reflect voice availability correctly', async () => {
+  const hasVoices = voiceInfo.hasAny;
+
+  await expect('Read Aloud buttons reflect per-language voice availability', async () => {
     const btns = page.locator('.transcript-read-btn');
     const count = await btns.count();
     if (count === 0) throw new Error('No Read Aloud buttons found');
     for (let i = 0; i < count; i++) {
-      const disabled = await btns.nth(i).evaluate(b => b.disabled);
-      if (hasVoices && disabled) throw new Error(`Read Aloud button ${i} is disabled despite voices being available`);
-      if (!hasVoices && !disabled) throw new Error(`Read Aloud button ${i} should be disabled when no voices available`);
+      const { disabled, lang } = await btns.nth(i).evaluate(b => ({
+        disabled: b.disabled,
+        lang: b.getAttribute('data-lang') || 'en-US'
+      }));
+      const langPrefix = lang.split('-')[0].toLowerCase();
+      const hasVoiceForLang = langPrefix === 'ar' ? voiceInfo.hasAr : langPrefix === 'en' ? voiceInfo.hasEn : voiceInfo.hasAny;
+      if (hasVoiceForLang && disabled) {
+        throw new Error(`Read Aloud button ${i} (${lang}) is disabled despite ${langPrefix} voices being available`);
+      }
+      if (!hasVoiceForLang && !disabled) {
+        throw new Error(`Read Aloud button ${i} (${lang}) should be disabled — no ${langPrefix} voice available`);
+      }
     }
   });
 
-  await expect('Read Aloud unavailable styling matches voice availability', async () => {
+  await expect('Read Aloud unavailable styling matches per-language availability', async () => {
     const btns = page.locator('.transcript-read-btn');
     const count = await btns.count();
     for (let i = 0; i < count; i++) {
-      const hasClass = await btns.nth(i).evaluate(b => b.classList.contains('is-unavailable'));
-      if (hasVoices && hasClass) throw new Error(`Read Aloud button ${i} has is-unavailable class despite voices being available`);
-      if (!hasVoices && !hasClass) throw new Error(`Read Aloud button ${i} should have is-unavailable class when no voices`);
+      const { hasClass, lang } = await btns.nth(i).evaluate(b => ({
+        hasClass: b.classList.contains('is-unavailable'),
+        lang: b.getAttribute('data-lang') || 'en-US'
+      }));
+      const langPrefix = lang.split('-')[0].toLowerCase();
+      const hasVoiceForLang = langPrefix === 'ar' ? voiceInfo.hasAr : langPrefix === 'en' ? voiceInfo.hasEn : voiceInfo.hasAny;
+      if (hasVoiceForLang && hasClass) {
+        throw new Error(`Read Aloud button ${i} (${lang}) has is-unavailable despite ${langPrefix} voice existing`);
+      }
+      if (!hasVoiceForLang && !hasClass) {
+        throw new Error(`Read Aloud button ${i} (${lang}) missing is-unavailable — no ${langPrefix} voice`);
+      }
     }
   });
 
-  await expect('Voice unavailable warnings match voice availability', async () => {
+  await expect('Voice unavailable warnings shown only for missing language voices', async () => {
     const warnings = await page.locator('.read-aloud-warning').count();
-    if (hasVoices && warnings > 0) throw new Error(`Found ${warnings} warning(s) but voices are available`);
-    if (!hasVoices && warnings === 0) throw new Error('Expected voice unavailable warnings when no voices available');
+    // Count how many buttons lack a voice for their language
+    const missingCount = await page.evaluate((vi) => {
+      const btns = document.querySelectorAll('.transcript-read-btn');
+      let missing = 0;
+      btns.forEach(b => {
+        const prefix = (b.getAttribute('data-lang') || 'en-US').split('-')[0].toLowerCase();
+        const has = prefix === 'ar' ? vi.hasAr : prefix === 'en' ? vi.hasEn : vi.hasAny;
+        if (!has) missing++;
+      });
+      return missing;
+    }, voiceInfo);
+    if (warnings !== missingCount) {
+      throw new Error(`Expected ${missingCount} warning(s) for missing voices, found ${warnings}`);
+    }
   });
 
   // ============================================================
@@ -1512,42 +1551,49 @@ try {
   });
 
   // ============================================================
-  // READ ALOUD TEXT SANITIZATION (Arabic ellipsis / bracket cleanup)
-  // Skipped when no speechSynthesis voices available (CI headless)
+  // READ ALOUD TEXT SANITIZATION (dot/bracket cleanup)
+  // Uses whichever transcript button is enabled (English if no Arabic voice)
   // ============================================================
 
-  const interceptSpokenText = async () => {
-    return page.evaluate(() => {
+  const interceptSpokenText = async (targetSelector) => {
+    return page.evaluate((sel) => {
       return new Promise((resolve, reject) => {
         window.speechSynthesis.speak = (utterance) => {
           resolve(utterance.text);
           window.speechSynthesis.cancel();
         };
-        const arBtn = document.querySelector('.transcript-read-btn[data-target="transcript-ar"]');
-        if (!arBtn || arBtn.disabled) {
-          reject(new Error('Arabic Read Aloud button not found or disabled'));
+        const btn = document.querySelector(sel);
+        if (!btn || btn.disabled) {
+          reject(new Error(`Read Aloud button ${sel} not found or disabled`));
           return;
         }
-        arBtn.click();
+        btn.click();
         setTimeout(() => reject(new Error('speechSynthesis.speak was never called')), 3000);
       });
-    });
+    }, targetSelector);
   };
 
-  if (hasVoices) {
-    await expect('Read Aloud strips all dots from Arabic transcript before speaking', async () => {
+  // Pick a transcript button that's actually enabled for sanitization tests
+  const sanitizationBtnSelector = voiceInfo.hasEn
+    ? '.transcript-read-btn[data-target="transcript-en"]'
+    : voiceInfo.hasAr
+      ? '.transcript-read-btn[data-target="transcript-ar"]'
+      : null;
+
+  if (sanitizationBtnSelector) {
+    await expect('Read Aloud strips all dots from transcript before speaking', async () => {
       await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(3500);
-      const spokenText = await interceptSpokenText();
+      const spokenText = await interceptSpokenText(sanitizationBtnSelector);
       if (/\./.test(spokenText)) {
-        throw new Error(`Dot character found in spoken text — Arabic TTS reads "." as "dot": "${spokenText.substring(0, 200)}..."`);
+        throw new Error(`Dot character found in spoken text — TTS may read "." as "dot": "${spokenText.substring(0, 200)}..."`);
       }
     });
 
     await expect('Read Aloud sanitizes bracket markers from transcript before speaking', async () => {
       await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(3500);
-      const spokenText = await interceptSpokenText();
+      const spokenText = await interceptSpokenText(sanitizationBtnSelector);
       if (/\[.*?\]/.test(spokenText)) {
         throw new Error(`Bracket markers found in spoken text — TTS will read editorial notes: "${spokenText.substring(0, 200)}..."`);
       }
@@ -1556,7 +1602,7 @@ try {
     await expect('Read Aloud sanitized text has no excessive whitespace', async () => {
       await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(3500);
-      const spokenText = await interceptSpokenText();
+      const spokenText = await interceptSpokenText(sanitizationBtnSelector);
       if (/  /.test(spokenText)) {
         throw new Error(`Double spaces found in spoken text — whitespace not normalized`);
       }

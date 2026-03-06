@@ -308,52 +308,71 @@ Our hearts are filled with God's grace.</div>
       const readBtns = document.querySelectorAll('.transcript-read-btn');
       if (!readBtns.length) return;
 
-      const disableAllReadBtns = reason => {
-        readBtns.forEach(btn => {
-          btn.disabled = true;
-          btn.title = reason;
-          btn.classList.add('is-unavailable');
-        });
-        readBtns.forEach(btn => {
-          const row = btn.closest('.transcript-read-aloud-row');
-          if (row && !row.querySelector('.read-aloud-warning')) {
-            const warn = document.createElement('span');
-            warn.className = 'read-aloud-warning';
-            warn.textContent = 'Voice unavailable in this browser';
-            row.appendChild(warn);
-          }
-        });
+      const disableBtn = (btn, reason) => {
+        btn.disabled = true;
+        btn.title = reason;
+        btn.classList.add('is-unavailable');
+        const row = btn.closest('.transcript-read-aloud-row');
+        if (row && !row.querySelector('.read-aloud-warning')) {
+          const warn = document.createElement('span');
+          warn.className = 'read-aloud-warning';
+          warn.textContent = reason;
+          row.appendChild(warn);
+        }
+      };
+
+      const enableBtn = (btn) => {
+        btn.disabled = false;
+        btn.title = '';
+        btn.classList.remove('is-unavailable');
+        const row = btn.closest('.transcript-read-aloud-row');
+        if (row) {
+          row.querySelectorAll('.read-aloud-warning').forEach(w => w.remove());
+        }
       };
 
       if (!('speechSynthesis' in window)) {
-        disableAllReadBtns('Your browser does not support text-to-speech');
+        readBtns.forEach(btn => disableBtn(btn, 'Your browser does not support text-to-speech'));
         return;
       }
 
       let activeUtterance = null;
       let activeBtn = null;
-      let voicesReady = false;
+      let voicesChecked = false;
+
+      // Check if a voice exists for a given language prefix (e.g. "ar" or "en")
+      const hasVoiceForLang = (voices, langPrefix) => {
+        const prefix = langPrefix.split('-')[0].toLowerCase();
+        return voices.some(v => (v.lang || '').toLowerCase().startsWith(prefix));
+      };
 
       const checkVoices = () => {
         const voices = window.speechSynthesis.getVoices() || [];
-        if (voices.length > 0) {
-          voicesReady = true;
-          readBtns.forEach(btn => {
-            btn.disabled = false;
-            btn.title = '';
-            btn.classList.remove('is-unavailable');
-          });
-          document.querySelectorAll('.read-aloud-warning').forEach(w => w.remove());
-        }
+        if (!voices.length) return;
+        voicesChecked = true;
+
+        readBtns.forEach(btn => {
+          const lang = btn.getAttribute('data-lang') || 'en-US';
+          if (hasVoiceForLang(voices, lang)) {
+            enableBtn(btn);
+          } else {
+            const langName = lang.startsWith('ar') ? 'Arabic' : lang.startsWith('en') ? 'English' : lang;
+            disableBtn(btn, `No ${langName} voice available in this browser`);
+          }
+        });
       };
 
       checkVoices();
       window.speechSynthesis.onvoiceschanged = checkVoices;
 
-      // If no voices after 3s, disable buttons with warning
+      // If no voices after 3s, disable all remaining unchecked buttons
       setTimeout(() => {
-        if (!voicesReady) {
-          disableAllReadBtns('No text-to-speech voices available in this browser');
+        if (!voicesChecked) {
+          readBtns.forEach(btn => {
+            if (!btn.disabled) {
+              disableBtn(btn, 'No text-to-speech voices available in this browser');
+            }
+          });
         }
       }, 3000);
 
@@ -372,7 +391,7 @@ Our hearts are filled with God's grace.</div>
         btn.setAttribute('data-label-default', defaultLabel);
 
         btn.addEventListener('click', () => {
-          if (!voicesReady) return;
+          if (btn.disabled) return;
           if (activeBtn === btn && window.speechSynthesis.speaking) {
             stopTranscriptReading();
             return;
@@ -386,7 +405,7 @@ Our hearts are filled with God's grace.</div>
 
           const text = transcriptEl.textContent
             .replace(/\[.*?\]/g, '')        // Remove [unclear] / [غير واضح] markers
-            .replace(/\.+/g, ' ')           // Remove all dots — Arabic TTS reads "." as "dot"
+            .replace(/\.+/g, ' ')           // Remove dots — some TTS reads "." as "dot"
             .replace(/•/g, '')              // Remove bullet characters if present
             .replace(/\s+/g, ' ')           // Normalize whitespace
             .trim();
