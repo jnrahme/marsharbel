@@ -1278,34 +1278,42 @@ try {
   });
 
   // ============================================================
-  // READ ALOUD ENABLED STATE (headless Chromium has 180+ voices)
+  // READ ALOUD ENABLED STATE
+  // CI headless Chromium may have 0 voices — tests adapt to environment
   // ============================================================
 
-  await expect('Read Aloud buttons are enabled when voices available', async () => {
-    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
-    // headless Chromium has 180 speechSynthesis voices — buttons should stay enabled
-    await page.waitForTimeout(3500);
+  await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(3500);
+
+  const hasVoices = await page.evaluate(() => {
+    return 'speechSynthesis' in window && (window.speechSynthesis.getVoices() || []).length > 0;
+  });
+
+  await expect('Read Aloud buttons reflect voice availability correctly', async () => {
     const btns = page.locator('.transcript-read-btn');
     const count = await btns.count();
     if (count === 0) throw new Error('No Read Aloud buttons found');
     for (let i = 0; i < count; i++) {
       const disabled = await btns.nth(i).evaluate(b => b.disabled);
-      if (disabled) throw new Error(`Read Aloud button ${i} is disabled despite voices being available`);
+      if (hasVoices && disabled) throw new Error(`Read Aloud button ${i} is disabled despite voices being available`);
+      if (!hasVoices && !disabled) throw new Error(`Read Aloud button ${i} should be disabled when no voices available`);
     }
   });
 
-  await expect('Read Aloud buttons do not show unavailable styling when voices exist', async () => {
+  await expect('Read Aloud unavailable styling matches voice availability', async () => {
     const btns = page.locator('.transcript-read-btn');
     const count = await btns.count();
     for (let i = 0; i < count; i++) {
       const hasClass = await btns.nth(i).evaluate(b => b.classList.contains('is-unavailable'));
-      if (hasClass) throw new Error(`Read Aloud button ${i} has is-unavailable class despite voices being available`);
+      if (hasVoices && hasClass) throw new Error(`Read Aloud button ${i} has is-unavailable class despite voices being available`);
+      if (!hasVoices && !hasClass) throw new Error(`Read Aloud button ${i} should have is-unavailable class when no voices`);
     }
   });
 
-  await expect('No voice unavailable warnings when voices exist', async () => {
+  await expect('Voice unavailable warnings match voice availability', async () => {
     const warnings = await page.locator('.read-aloud-warning').count();
-    if (warnings > 0) throw new Error(`Found ${warnings} voice unavailable warning(s) but voices are available`);
+    if (hasVoices && warnings > 0) throw new Error(`Found ${warnings} warning(s) but voices are available`);
+    if (!hasVoices && warnings === 0) throw new Error('Expected voice unavailable warnings when no voices available');
   });
 
   // ============================================================
@@ -1505,96 +1513,57 @@ try {
 
   // ============================================================
   // READ ALOUD TEXT SANITIZATION (Arabic ellipsis / bracket cleanup)
+  // Skipped when no speechSynthesis voices available (CI headless)
   // ============================================================
 
-  await expect('Read Aloud sanitizes ellipsis from Arabic transcript before speaking', async () => {
-    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(3500);
-
-    // Intercept SpeechSynthesisUtterance to capture the text passed to speak()
-    const spokenText = await page.evaluate(() => {
+  const interceptSpokenText = async () => {
+    return page.evaluate(() => {
       return new Promise((resolve, reject) => {
-        const origSpeak = window.speechSynthesis.speak.bind(window.speechSynthesis);
         window.speechSynthesis.speak = (utterance) => {
           resolve(utterance.text);
           window.speechSynthesis.cancel();
         };
-
         const arBtn = document.querySelector('.transcript-read-btn[data-target="transcript-ar"]');
         if (!arBtn || arBtn.disabled) {
           reject(new Error('Arabic Read Aloud button not found or disabled'));
           return;
         }
         arBtn.click();
-
-        // Timeout fallback
         setTimeout(() => reject(new Error('speechSynthesis.speak was never called')), 3000);
       });
     });
+  };
 
-    // Verify no triple-dot sequences remain
-    if (/\.{3,}/.test(spokenText)) {
-      throw new Error(`Ellipsis ("...") found in spoken text — TTS will say "dot dot dot": "${spokenText.substring(0, 200)}..."`);
-    }
-  });
-
-  await expect('Read Aloud sanitizes bracket markers from transcript before speaking', async () => {
-    // Re-intercept on a fresh load to be safe
-    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(3500);
-
-    const spokenText = await page.evaluate(() => {
-      return new Promise((resolve, reject) => {
-        const origSpeak = window.speechSynthesis.speak.bind(window.speechSynthesis);
-        window.speechSynthesis.speak = (utterance) => {
-          resolve(utterance.text);
-          window.speechSynthesis.cancel();
-        };
-
-        const arBtn = document.querySelector('.transcript-read-btn[data-target="transcript-ar"]');
-        if (!arBtn || arBtn.disabled) {
-          reject(new Error('Arabic Read Aloud button not found or disabled'));
-          return;
-        }
-        arBtn.click();
-
-        setTimeout(() => reject(new Error('speechSynthesis.speak was never called')), 3000);
-      });
+  if (hasVoices) {
+    await expect('Read Aloud strips all dots from Arabic transcript before speaking', async () => {
+      await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+      await page.waitForTimeout(3500);
+      const spokenText = await interceptSpokenText();
+      if (/\./.test(spokenText)) {
+        throw new Error(`Dot character found in spoken text — Arabic TTS reads "." as "dot": "${spokenText.substring(0, 200)}..."`);
+      }
     });
 
-    // Verify no bracket markers remain
-    if (/\[.*?\]/.test(spokenText)) {
-      throw new Error(`Bracket markers found in spoken text — TTS will read editorial notes: "${spokenText.substring(0, 200)}..."`);
-    }
-  });
-
-  await expect('Read Aloud sanitized text has no excessive whitespace', async () => {
-    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(3500);
-
-    const spokenText = await page.evaluate(() => {
-      return new Promise((resolve, reject) => {
-        window.speechSynthesis.speak = (utterance) => {
-          resolve(utterance.text);
-          window.speechSynthesis.cancel();
-        };
-
-        const arBtn = document.querySelector('.transcript-read-btn[data-target="transcript-ar"]');
-        if (!arBtn || arBtn.disabled) {
-          reject(new Error('Arabic Read Aloud button not found or disabled'));
-          return;
-        }
-        arBtn.click();
-
-        setTimeout(() => reject(new Error('speechSynthesis.speak was never called')), 3000);
-      });
+    await expect('Read Aloud sanitizes bracket markers from transcript before speaking', async () => {
+      await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+      await page.waitForTimeout(3500);
+      const spokenText = await interceptSpokenText();
+      if (/\[.*?\]/.test(spokenText)) {
+        throw new Error(`Bracket markers found in spoken text — TTS will read editorial notes: "${spokenText.substring(0, 200)}..."`);
+      }
     });
 
-    // Verify no runs of 2+ spaces (whitespace normalization)
-    if (/  /.test(spokenText)) {
-      throw new Error(`Double spaces found in spoken text — whitespace not normalized`);
-    }
-  });
+    await expect('Read Aloud sanitized text has no excessive whitespace', async () => {
+      await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
+      await page.waitForTimeout(3500);
+      const spokenText = await interceptSpokenText();
+      if (/  /.test(spokenText)) {
+        throw new Error(`Double spaces found in spoken text — whitespace not normalized`);
+      }
+    });
+  } else {
+    console.log('SKIP: Read Aloud sanitization tests (no speechSynthesis voices in this environment)');
+  }
 
 } finally {
   await context.close();

@@ -386,7 +386,7 @@ Our hearts are filled with God's grace.</div>
 
           const text = transcriptEl.textContent
             .replace(/\[.*?\]/g, '')        // Remove [unclear] / [غير واضح] markers
-            .replace(/\.{2,}/g, '،')        // Replace ellipsis (dot runs) with Arabic comma pause
+            .replace(/\.+/g, ' ')           // Remove all dots — Arabic TTS reads "." as "dot"
             .replace(/•/g, '')              // Remove bullet characters if present
             .replace(/\s+/g, ' ')           // Normalize whitespace
             .trim();
