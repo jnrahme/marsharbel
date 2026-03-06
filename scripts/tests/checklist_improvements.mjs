@@ -1573,12 +1573,14 @@ try {
     }, targetSelector);
   };
 
-  // Pick a transcript button that's actually enabled for sanitization tests
-  const sanitizationBtnSelector = voiceInfo.hasEn
-    ? '.transcript-read-btn[data-target="transcript-en"]'
-    : voiceInfo.hasAr
-      ? '.transcript-read-btn[data-target="transcript-ar"]'
-      : null;
+  // Pick an enabled Read Aloud button for sanitization tests
+  const sanitizationBtnSelector = await page.evaluate(() => {
+    const btns = Array.from(document.querySelectorAll('.transcript-read-btn'));
+    const enabled = btns.find(b => !b.disabled);
+    if (!enabled) return null;
+    const target = enabled.getAttribute('data-target');
+    return target ? `.transcript-read-btn[data-target="${target}"]` : null;
+  });
 
   if (sanitizationBtnSelector) {
     await expect('Read Aloud strips all dots from transcript before speaking', async () => {
