@@ -88,22 +88,22 @@
       <h1 id="mystery-main-title">Fifth Glorious Mystery - The Coronation of Mary</h1>
       <p id="mystery-main-sub" class="section-sub">Wednesday / Sunday | Fruit: Perseverance and trust in Mary's intercession.</p>
 
-      <div class="meditation-top-controls">
+      <div class="meditation-top-controls notranslate">
         <a class="btn subtle" href="../rosary-visual-guide.html">Back to Mystery List</a>
-        <button id="prev-mystery" type="button" class="btn subtle">Previous Mystery</button>
-        <button id="next-mystery" type="button" class="btn subtle">Next Mystery</button>
+        <button id="prev-mystery" type="button" class="btn subtle" aria-label="Previous mystery">Previous Mystery</button>
+        <button id="next-mystery" type="button" class="btn subtle" aria-label="Next mystery">Next Mystery</button>
         <select id="mystery-picker" class="btn subtle meditation-select"></select>
       </div>
 
-      <div class="meditation-top-controls">
+      <div class="meditation-top-controls notranslate">
         <label class="btn subtle" for="auto-timer-seconds">Hands-Free Timer</label>
         <select id="auto-timer-seconds" class="btn subtle">
           <option value="0">Off</option>
-          <option value="12">12s</option>
+          <option value="12" selected>12s</option>
           <option value="18">18s</option>
           <option value="25">25s</option>
         </select>
-        <button id="auto-timer-toggle" type="button" class="btn subtle">Start Auto</button>
+        <button id="auto-timer-toggle" type="button" class="btn subtle" data-testid="auto-timer-toggle">Start Auto</button>
       </div>
     </section>
 
@@ -120,12 +120,12 @@
 
         <div id="bead-progress" class="bead-progress" aria-label="Prayer progress"></div>
 
-        <div class="meditation-actions">
-          <button id="prev-step" type="button" class="btn subtle">Previous</button>
-          <button id="next-step" type="button" class="btn primary">Next</button>
-          <button id="pause-audio" type="button" class="btn subtle">Play Voice</button>
-          <button id="toggle-sound" type="button" class="btn subtle">Church Music: Off</button>
-          <button id="play-studio" type="button" class="btn subtle">Play Studio Track</button>
+        <div class="meditation-actions notranslate">
+          <button id="prev-step" type="button" class="btn subtle" data-testid="prev-step" aria-label="Previous step">Previous</button>
+          <button id="next-step" type="button" class="btn primary" data-testid="next-step" aria-label="Next step">Next</button>
+          <button id="pause-audio" type="button" class="btn subtle" data-testid="pause-audio">Play Voice</button>
+          <button id="toggle-sound" type="button" class="btn subtle" data-testid="toggle-sound">Church Music: Off</button>
+          <button id="play-studio" type="button" class="btn subtle" data-testid="play-studio">Play Studio Track</button>
         </div>
         <audio id="studio-audio" preload="none"></audio>
 

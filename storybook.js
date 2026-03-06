@@ -559,7 +559,8 @@
     readingIndicator: document.getElementById('story-reading-indicator'),
     readingLabel: document.getElementById('story-reading-label'),
     elapsed: document.getElementById('story-elapsed'),
-    rateBtns: document.querySelectorAll('.story-rate-btn')
+    rateBtns: document.querySelectorAll('.story-rate-btn'),
+    stepSticky: document.getElementById('story-step-sticky')
   };
 
   if (!el.step || !el.title || !el.body || !el.prayer || !el.heart || !el.art || !el.evidenceTitle || !el.evidenceList || !el.pack || !el.prev || !el.next || !el.read || !el.panel || !el.frame) {
@@ -632,15 +633,44 @@
   let elapsedTimer = null;
 
   const AUTO_CONTINUE_KEY = 'storybook_auto_continue';
+  const READER_MODE_KEY = 'storybook_reader_mode';
+  const LAST_PAGE_KEY = 'storybook_last_page';
   const readAutoContinuePref = () => {
     try { return localStorage.getItem(AUTO_CONTINUE_KEY) === 'true'; } catch (_) { return false; }
   };
   const writeAutoContinuePref = val => {
     try { localStorage.setItem(AUTO_CONTINUE_KEY, String(val)); } catch (_) { /* no-op */ }
   };
+  const readReaderModePref = () => {
+    try { return localStorage.getItem(READER_MODE_KEY) === 'true'; } catch (_) { return false; }
+  };
+  const writeReaderModePref = val => {
+    try { localStorage.setItem(READER_MODE_KEY, String(val)); } catch (_) { /* no-op */ }
+  };
+  const readLastPage = () => {
+    try { return parseInt(localStorage.getItem(LAST_PAGE_KEY), 10) || 0; } catch (_) { return 0; }
+  };
+  const writeLastPage = idx => {
+    try { localStorage.setItem(LAST_PAGE_KEY, String(idx)); } catch (_) { /* no-op */ }
+  };
   if (el.autoContinue) {
     el.autoContinue.checked = readAutoContinuePref();
     el.autoContinue.addEventListener('change', () => writeAutoContinuePref(el.autoContinue.checked));
+  }
+
+  // Reader mode toggle
+  const readerToggle = document.getElementById('story-reader-toggle');
+  const applyReaderMode = on => {
+    if (el.frame) el.frame.classList.toggle('is-reader-mode', on);
+    if (readerToggle) readerToggle.textContent = on ? 'Reader Mode: On' : 'Reader Mode';
+    writeReaderModePref(on);
+  };
+  if (readerToggle) {
+    applyReaderMode(readReaderModePref());
+    readerToggle.addEventListener('click', () => {
+      const next = !el.frame?.classList.contains('is-reader-mode');
+      applyReaderMode(next);
+    });
   }
 
   const formatElapsed = ms => {
@@ -876,7 +906,9 @@
   const render = () => {
     const page = pages[index];
     const illustration = page.illustration || SCENE_IMAGES[page.scene] || './gallery/charbel-portrait.jpg';
-    el.step.textContent = `${UI.pagePrefix} ${index + 1} ${UI.pageConnector} ${pages.length}`;
+    const stepText = `${UI.pagePrefix} ${index + 1} ${UI.pageConnector} ${pages.length}`;
+    el.step.textContent = stepText;
+    if (el.stepSticky) el.stepSticky.textContent = stepText;
     el.title.textContent = page.title;
     el.body.textContent = page.body;
     el.prayer.textContent = page.prayer;
@@ -887,6 +919,7 @@
     el.art.setAttribute('data-scene', page.scene);
     el.prev.disabled = index === 0;
     el.next.disabled = index === pages.length - 1;
+    writeLastPage(index);
     syncAudioContext({ playing: false, paused: false, completed: false });
     animatePageTurn();
   };
@@ -1012,11 +1045,17 @@
   };
 
   const movePage = direction => {
+    const wasReading = reading;
     stopReading();
     const nextIndex = Math.max(0, Math.min(pages.length - 1, index + direction));
     if (nextIndex === index) return;
     index = nextIndex;
     render();
+    el.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (wasReading) {
+      syncAudioContext({ playing: true, paused: false, completed: false });
+      readCurrentPage();
+    }
   };
 
   el.prev.addEventListener('click', () => movePage(-1));
@@ -1056,6 +1095,13 @@
   window.addEventListener('beforeunload', stopReading);
   window.addEventListener('rosary-audio-close', stopReading);
 
+  window.RosaryNarrationController = {
+    togglePause: () => readCurrentPage(),
+    stop: () => stopReading(),
+    next: () => movePage(isRtl ? -1 : 1),
+    previous: () => movePage(isRtl ? 1 : -1)
+  };
+
   if (isRtl) {
     el.frame.classList.add('is-rtl');
     el.frame.setAttribute('dir', 'rtl');
@@ -1069,11 +1115,36 @@
   }
 
   const init = async () => {
+    // Read last page BEFORE first render (which overwrites it with 0)
+    const savedLastPage = readLastPage();
+
     await resolveVoicePacks();
     setActiveVoicePack(getPreferredInitialVoicePack());
     renderVoicePackSelect();
     updateUiLabels();
     render();
+
+    // Resume reading banner
+    const lastPage = savedLastPage;
+    if (lastPage > 0 && lastPage < pages.length) {
+      const banner = document.getElementById('story-resume-banner');
+      const bannerText = document.getElementById('story-resume-text');
+      const bannerBtn = document.getElementById('story-resume-btn');
+      const bannerDismiss = document.getElementById('story-resume-dismiss');
+      if (banner && bannerText && bannerBtn) {
+        bannerText.textContent = `Continue from ${UI.pagePrefix} ${lastPage + 1}?`;
+        banner.hidden = false;
+        bannerBtn.addEventListener('click', () => {
+          index = lastPage;
+          render();
+          el.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          banner.hidden = true;
+        });
+        if (bannerDismiss) {
+          bannerDismiss.addEventListener('click', () => { banner.hidden = true; });
+        }
+      }
+    }
   };
 
   init();

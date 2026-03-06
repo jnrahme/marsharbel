@@ -85,6 +85,12 @@
       </div>
     </section>
 
+    <div id="story-resume-banner" class="story-resume-banner" hidden aria-live="polite">
+      <span id="story-resume-text">Continue from Page 2?</span>
+      <button id="story-resume-btn" class="btn subtle" type="button">Resume</button>
+      <button id="story-resume-dismiss" class="story-resume-dismiss" type="button" aria-label="Dismiss">✕</button>
+    </div>
+
     <section class="storybook reveal" aria-label="Illustrated storybook">
       <article class="storybook-panel">
         <div class="storybook-illustration" id="story-illustration" aria-hidden="true"></div>
@@ -98,6 +104,7 @@
       </article>
 
       <div class="storybook-extras">
+        <button id="story-reader-toggle" class="story-reader-toggle" type="button" title="Toggle reader mode for easier reading">Reader Mode</button>
         <label class="story-auto-continue" title="Automatically read next page when current page finishes">
           <input type="checkbox" id="story-auto-continue" />
           Auto Continue
@@ -114,13 +121,14 @@
         </span>
       </div>
       <div class="storybook-controls">
+        <span id="story-step-sticky" class="story-step-sticky" aria-hidden="true">Page 1 of 8</span>
         <label class="story-voice-pack" for="story-voice-pack">
           Voice Pack
           <select id="story-voice-pack" aria-label="Select story voice pack"></select>
         </label>
-        <button id="story-prev" class="btn subtle" type="button" disabled>Previous Page</button>
+        <button id="story-prev" class="btn subtle" type="button" disabled aria-label="Previous page">Previous Page</button>
         <button id="story-read" class="btn subtle" type="button">Read Aloud</button>
-        <button id="story-next" class="btn primary" type="button">Next Page</button>
+        <button id="story-next" class="btn primary" type="button" aria-label="Next page">Next Page</button>
       </div>
 
       <article class="story-evidence" aria-live="polite">

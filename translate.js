@@ -394,7 +394,9 @@
     var popular = SUPPORTED_LANGUAGES.filter(function (lang) {
       return POPULAR_SET[lang.code];
     });
-    var allSorted = SUPPORTED_LANGUAGES.slice().sort(function (a, b) {
+    var allSorted = SUPPORTED_LANGUAGES.filter(function (lang) {
+      return !POPULAR_SET[lang.code];
+    }).sort(function (a, b) {
       return a.label.localeCompare(b.label);
     });
 

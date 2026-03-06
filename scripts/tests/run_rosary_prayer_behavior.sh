@@ -13,7 +13,7 @@ SERVER_STARTED_BY_SCRIPT=0
 if ! lsof -iTCP:"${PORT}" -sTCP:LISTEN >/dev/null 2>&1; then
   (
     cd "${ROOT}"
-    python3 -m http.server "${PORT}" >"${LOG_FILE}" 2>&1 &
+    node "${ROOT}/scripts/dev-server.mjs" --port="${PORT}" >"${LOG_FILE}" 2>&1 &
     echo $! > "${PID_FILE}"
   )
   SERVER_STARTED_BY_SCRIPT=1
