@@ -196,6 +196,110 @@
     });
   }
 
+  function isPrivacyPolicyPath(pathname) {
+    return /\/privacy-policy(?:\.html)?$/.test(pathname || '');
+  }
+
+  function isTermsOfServicePath(pathname) {
+    return /\/terms-of-service(?:\.html)?$/.test(pathname || '');
+  }
+
+  function isPrivacyPolicyHref(href) {
+    if (!href) return false;
+    try {
+      return isPrivacyPolicyPath(new URL(href, window.location.href).pathname);
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function isTermsOfServiceHref(href) {
+    if (!href) return false;
+    try {
+      return isTermsOfServicePath(new URL(href, window.location.href).pathname);
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function ensureLegalFooterLinks() {
+    var footer = document.querySelector('footer.footer');
+    if (!footer) {
+      footer = document.createElement('footer');
+      footer.className = 'footer';
+      document.body.appendChild(footer);
+    }
+
+    var footerShell = footer.querySelector('.site-shell');
+    if (!footerShell) {
+      footerShell = document.createElement('div');
+      footerShell.className = 'site-shell';
+      while (footer.firstChild) {
+        footerShell.appendChild(footer.firstChild);
+      }
+      footer.appendChild(footerShell);
+    }
+
+    if (!footerShell.textContent.trim()) {
+      footerShell.textContent = 'Author: Please pray for the person who made this website.';
+    }
+
+    var hasPrivacyLink = Array.prototype.some.call(
+      footerShell.querySelectorAll('a[href]'),
+      function (anchor) {
+        return isPrivacyPolicyHref(anchor.getAttribute('href'));
+      }
+    );
+
+    var hasTermsLink = Array.prototype.some.call(
+      footerShell.querySelectorAll('a[href]'),
+      function (anchor) {
+        return isTermsOfServiceHref(anchor.getAttribute('href'));
+      }
+    );
+
+    var linksToAdd = [];
+
+    if (!hasPrivacyLink) {
+      linksToAdd.push({
+        href: '/privacy-policy.html',
+        text: 'Privacy Policy',
+        isCurrent: isPrivacyPolicyPath(window.location.pathname || ''),
+      });
+    }
+
+    if (!hasTermsLink) {
+      linksToAdd.push({
+        href: '/terms-of-service.html',
+        text: 'Terms of Service',
+        isCurrent: isTermsOfServicePath(window.location.pathname || ''),
+      });
+    }
+
+    if (!linksToAdd.length) return;
+
+    if (footerShell.childNodes.length) {
+      footerShell.appendChild(document.createTextNode(' '));
+    }
+
+    linksToAdd.forEach(function (link, index) {
+      if (index > 0) {
+        footerShell.appendChild(document.createTextNode(' · '));
+      }
+
+      var legalLink = document.createElement('a');
+      legalLink.href = link.href;
+      legalLink.textContent = link.text;
+      if (link.isCurrent) {
+        legalLink.setAttribute('aria-current', 'page');
+      }
+
+      footerShell.appendChild(legalLink);
+    });
+
+    footerShell.appendChild(document.createTextNode('.'));
+  }
+
   function ensureHeadTag(tagName, attrs) {
     var selector = tagName;
     if (attrs.name) selector += '[name="' + attrs.name + '"]';
@@ -573,6 +677,7 @@
   ensureSeoHeadAssets();
   ensurePwaHeadAssets();
   registerServiceWorker();
+  ensureLegalFooterLinks();
   setupInstallAppPrompt();
   writeStoredLang(requestedLang);
   createSwitcher(requestedLang);

@@ -1458,6 +1458,17 @@ h3 {
   font-size: 0.86rem;
 }
 
+.footer a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+  color: var(--text);
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);
