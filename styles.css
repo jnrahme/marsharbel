@@ -2127,3 +2127,5 @@ body{background:radial-gradient(circle at 8% 0%,#3a332d 0,transparent 34%),radia
 
 
 html:has(body.layout-open){overflow-x:clip}
+
+@media(min-width:821px){.layout-open .home-cinematic-hero,.layout-open .open-photo{width:calc(100vw - 16px);margin-left:calc(50% - 50vw + 8px)}}
