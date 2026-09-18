@@ -16,7 +16,7 @@
 
 .story-hero p {
   margin: 0;
-  color: #d9d3c7;
+  color: var(--theme-ink-soft);
   max-width: 70ch;
   line-height: 1.7;
 }
@@ -26,7 +26,7 @@
   width: fit-content;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(211, 178, 110, 0.08);
+  background: var(--theme-wash);
   padding: 0.22rem;
 }
 
@@ -47,16 +47,16 @@
 }
 
 .story-evidence {
-  border: 1px solid rgba(225, 196, 136, 0.28);
+  border: 1px solid var(--theme-line);
   border-radius: 16px;
-  background: linear-gradient(160deg, rgba(10, 19, 28, 0.9), rgba(8, 14, 21, 0.92));
+  background: linear-gradient(160deg, rgba(40,35,31,.9), rgba(29,26,23,.94));
   padding: 0.9rem 1rem 1rem;
 }
 
 .story-evidence h3 {
   margin: 0 0 0.6rem;
   font-size: 1.06rem;
-  color: #f3e8ce;
+  color: var(--theme-ink);
 }
 
 .story-evidence ul {
@@ -67,7 +67,7 @@
 }
 
 .story-evidence li {
-  color: #d7d2c7;
+  color: var(--theme-ink-soft);
   line-height: 1.45;
 }
 
@@ -76,9 +76,9 @@
   margin-right: 0.4rem;
   padding: 0.08rem 0.42rem;
   border-radius: 999px;
-  border: 1px solid rgba(225, 196, 136, 0.36);
+  border: 1px solid var(--theme-line);
   background: rgba(225, 196, 136, 0.12);
-  color: #f4e5bf;
+  color: var(--theme-ink);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.03em;
@@ -92,7 +92,7 @@
 }
 
 .story-evidence-links a {
-  color: #e5c98e;
+  color: var(--theme-accent);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -101,12 +101,12 @@
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   gap: 1rem;
-  border: 1px solid rgba(225, 196, 136, 0.46);
+  border: 1px solid var(--theme-line);
   border-radius: 26px;
   overflow: hidden;
   background:
     radial-gradient(circle at 18% 12%, rgba(226, 196, 132, 0.2), transparent 34%),
-    linear-gradient(160deg, rgba(14, 24, 31, 0.95), rgba(7, 13, 20, 0.98));
+    linear-gradient(160deg, rgba(40,35,31,.95), rgba(23,20,17,.98));
   box-shadow: 0 20px 46px rgba(0, 0, 0, 0.34);
 }
 
@@ -122,7 +122,7 @@
   min-height: 380px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, #102130, #0a131c);
+  background: linear-gradient(180deg, var(--theme-surface-raised), var(--theme-page-deep));
 }
 
 .storybook-illustration::before,
@@ -172,7 +172,7 @@
   inset: 0;
   background:
     radial-gradient(circle at 12% 12%, rgba(226, 196, 132, 0.2), transparent 34%),
-    linear-gradient(180deg, rgba(8, 14, 20, 0.06), rgba(7, 13, 20, 0.34));
+    linear-gradient(180deg, rgba(40, 35, 31, 0.06), rgba(23, 20, 17, 0.34));
   pointer-events: none;
 }
 
@@ -645,7 +645,7 @@
 
 .storybook-text p {
   margin: 0;
-  color: #e7e1d6;
+  color: var(--theme-ink-soft);
   line-height: 1.65;
 }
 
@@ -653,7 +653,7 @@
   margin-top: 0.3rem;
   border-left: 3px solid rgba(232, 201, 141, 0.56);
   padding-left: 0.7rem;
-  color: #fff1cf;
+  color: var(--theme-ink);
   font-style: italic;
 }
 
@@ -661,7 +661,7 @@
   margin-top: 0.2rem;
   border-left: 3px solid rgba(128, 171, 211, 0.52);
   padding-left: 0.7rem;
-  color: #cfe4ff;
+  color: var(--theme-ink-soft);
   font-weight: 700;
 }
 
@@ -677,7 +677,7 @@
   z-index: 90;
   background: rgba(28, 25, 20, 0.95);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(211, 178, 110, 0.15);
+  border-bottom: 1px solid var(--theme-line-soft);
   margin: 0 -0.6rem;
 }
 
@@ -686,11 +686,11 @@
   align-items: center;
   gap: 0.5rem;
   margin-right: auto;
-  border: 1px solid rgba(225, 196, 136, 0.28);
+  border: 1px solid var(--theme-line);
   border-radius: 12px;
   padding: 0.36rem 0.56rem;
-  background: rgba(11, 19, 28, 0.84);
-  color: #ece5d8;
+  background: rgba(40,35,31,.88);
+  color: var(--theme-ink);
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -699,9 +699,9 @@
   min-height: 34px;
   min-width: 228px;
   border-radius: 9px;
-  border: 1px solid rgba(225, 196, 136, 0.28);
-  background: rgba(7, 14, 20, 0.9);
-  color: #ece6da;
+  border: 1px solid var(--theme-line);
+  background: rgba(23,20,17,.92);
+  color: var(--theme-ink);
   padding: 0.28rem 0.45rem;
   font-size: 0.82rem;
 }
@@ -729,19 +729,19 @@
 
 .storybook-page .card.story {
   border-radius: 18px;
-  border: 1px solid rgba(225, 196, 136, 0.28);
+  border: 1px solid var(--theme-line);
   background:
     radial-gradient(circle at 12% 8%, rgba(128, 171, 211, 0.11), transparent 40%),
-    linear-gradient(160deg, rgba(18, 30, 42, 0.88), rgba(13, 22, 32, 0.95));
+    linear-gradient(160deg, rgba(52,46,41,.9), rgba(29,26,23,.96));
 }
 
 .storybook-page .card.story h3 {
-  color: #f4ead6;
+  color: var(--theme-ink);
 }
 
 .storybook-page .card.story p,
 .storybook-page .card.story li {
-  color: #ddd8cd;
+  color: var(--theme-ink-soft);
 }
 
 .storybook.is-rtl .storybook-text {
@@ -750,7 +750,7 @@
 
 .storybook.is-rtl .storybook-prayer {
   border-left: 0;
-  border-right: 3px solid rgba(211, 178, 110, 0.45);
+  border-right: 3px solid var(--theme-line);
   padding-left: 0;
   padding-right: 0.7rem;
 }
@@ -933,10 +933,10 @@
   gap: 0.45rem;
   margin-right: auto;
   padding: 0.3rem 0.6rem;
-  border: 1px solid rgba(225, 196, 136, 0.22);
+  border: 1px solid var(--theme-line-soft);
   border-radius: 12px;
-  background: rgba(11, 19, 28, 0.7);
-  color: #ece5d8;
+  background: rgba(40,35,31,.78);
+  color: var(--theme-ink);
   font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
@@ -945,7 +945,7 @@
 }
 
 .story-auto-continue:hover {
-  border-color: rgba(225, 196, 136, 0.4);
+  border-color: var(--theme-line);
 }
 
 .story-auto-continue input[type="checkbox"] {
@@ -970,8 +970,8 @@
   gap: 0.5rem;
   padding: 0.35rem 0.7rem;
   border-radius: 10px;
-  background: rgba(211, 178, 110, 0.12);
-  border: 1px solid rgba(211, 178, 110, 0.25);
+  background: var(--theme-wash);
+  border: 1px solid var(--theme-line);
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--gold);
@@ -985,7 +985,7 @@
 .story-reading-indicator.is-paused {
   display: inline-flex;
   animation: none;
-  color: #b8b5ac;
+  color: var(--theme-ink-soft);
   border-color: rgba(184, 181, 172, 0.25);
   background: rgba(184, 181, 172, 0.08);
 }
@@ -999,7 +999,7 @@
 }
 
 .story-reading-indicator.is-paused .story-reading-dot {
-  background: #b8b5ac;
+  background: var(--theme-ink-soft);
   animation: none;
 }
 
@@ -1020,7 +1020,7 @@
 
 /* ── Highlight text while reading ── */
 .storybook-text.is-reading #story-body {
-  background: linear-gradient(90deg, rgba(211, 178, 110, 0.1), rgba(211, 178, 110, 0.06));
+  background: linear-gradient(90deg, var(--theme-wash), rgba(211, 178, 110, 0.06));
   border-radius: 6px;
   padding: 0.3rem 0.5rem;
   margin: -0.3rem -0.5rem;
@@ -1032,16 +1032,16 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  border: 1px solid rgba(225, 196, 136, 0.22);
+  border: 1px solid var(--theme-line-soft);
   border-radius: 10px;
   padding: 0.2rem 0.1rem;
-  background: rgba(11, 19, 28, 0.7);
+  background: rgba(40,35,31,.78);
 }
 
 .story-rate-btn {
   border: 0;
   background: transparent;
-  color: #b8b5ac;
+  color: var(--theme-ink-soft);
   font-size: 0.72rem;
   font-weight: 800;
   padding: 0.22rem 0.42rem;
@@ -1055,7 +1055,7 @@
 }
 
 .story-rate-btn.is-active {
-  background: rgba(211, 178, 110, 0.18);
+  background: var(--theme-line-soft);
   color: var(--gold);
 }
 
@@ -1072,10 +1072,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  border: 1px solid rgba(211, 178, 110, 0.32);
+  border: 1px solid var(--theme-line);
   border-radius: 10px;
   padding: 0.4rem 0.8rem;
-  background: rgba(211, 178, 110, 0.1);
+  background: var(--theme-wash);
   color: var(--gold);
   font-size: 0.85rem;
   font-weight: 700;
@@ -1084,8 +1084,8 @@
 }
 
 .transcript-read-btn:hover {
-  background: rgba(211, 178, 110, 0.18);
-  border-color: rgba(211, 178, 110, 0.5);
+  background: var(--theme-line-soft);
+  border-color: var(--theme-line);
 }
 
 .transcript-read-btn:disabled {
@@ -1094,8 +1094,8 @@
 }
 
 .transcript-read-btn.is-reading {
-  background: rgba(211, 178, 110, 0.2);
-  border-color: rgba(211, 178, 110, 0.5);
+  background: var(--theme-line-soft);
+  border-color: var(--theme-line);
 }
 
 /* ── Storybook extra controls row ── */
@@ -1113,10 +1113,10 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.3rem 0.6rem;
-  border: 1px solid rgba(225, 196, 136, 0.22);
+  border: 1px solid var(--theme-line-soft);
   border-radius: 12px;
-  background: rgba(11, 19, 28, 0.7);
-  color: #ece5d8;
+  background: rgba(40,35,31,.78);
+  color: var(--theme-ink);
   font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
@@ -1124,7 +1124,7 @@
 }
 
 .story-reader-toggle:hover {
-  border-color: rgba(225, 196, 136, 0.4);
+  border-color: var(--theme-line);
 }
 
 /* ── Reader Mode Styles ── */
@@ -1154,10 +1154,10 @@
   align-items: center;
   gap: 0.7rem;
   padding: 0.65rem 1rem;
-  border: 1px solid rgba(225, 196, 136, 0.36);
+  border: 1px solid var(--theme-line);
   border-radius: 14px;
-  background: linear-gradient(160deg, rgba(211, 178, 110, 0.12), rgba(11, 19, 28, 0.85));
-  color: #f3e8ce;
+  background: linear-gradient(160deg, var(--theme-wash), rgba(29, 26, 23, 0.88));
+  color: var(--theme-ink);
   font-size: 0.92rem;
   font-weight: 600;
   margin-bottom: 0.6rem;
@@ -1177,7 +1177,7 @@
   margin-left: auto;
   border: 0;
   background: transparent;
-  color: #b8b5ac;
+  color: var(--theme-ink-soft);
   font-size: 1rem;
   cursor: pointer;
   padding: 0.2rem 0.4rem;
@@ -1185,7 +1185,7 @@
 }
 
 .story-resume-dismiss:hover {
-  color: #ece5d8;
+  color: var(--theme-ink);
 }
 
 /* ── Copy Transcript Button ── */
@@ -1193,10 +1193,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  border: 1px solid rgba(211, 178, 110, 0.32);
+  border: 1px solid var(--theme-line);
   border-radius: 10px;
   padding: 0.4rem 0.8rem;
-  background: rgba(211, 178, 110, 0.1);
+  background: var(--theme-wash);
   color: var(--gold);
   font-size: 0.85rem;
   font-weight: 700;
@@ -1205,8 +1205,8 @@
 }
 
 .transcript-copy-btn:hover {
-  background: rgba(211, 178, 110, 0.18);
-  border-color: rgba(211, 178, 110, 0.5);
+  background: var(--theme-line-soft);
+  border-color: var(--theme-line);
 }
 
 .transcript-copy-btn.is-copied {
@@ -1227,11 +1227,11 @@
 }
 
 .timestamp-link:hover {
-  background: rgba(211, 178, 110, 0.15);
+  background: var(--theme-line-soft);
 }
 
 .timestamp-highlight {
-  background: rgba(211, 178, 110, 0.18);
+  background: var(--theme-line-soft);
   border-radius: 4px;
   transition: background 0.4s;
 }
@@ -1264,7 +1264,7 @@
 .transcript-toc a {
   color: var(--gold);
   text-decoration: none;
-  border-bottom: 1px solid rgba(211, 178, 110, 0.25);
+  border-bottom: 1px solid var(--theme-line);
   padding-bottom: 1px;
   transition: border-color 0.15s;
 }
@@ -1288,3 +1288,9 @@
 .listen-fallback.is-visible {
   display: block;
 }
+
+
+/* Shared global theme for story UI; scene art retains its narrative colors. */
+.storybook-page,.storybook-shell,.story-reader,.story-panel,.storybook-card{color:var(--theme-ink)}
+.story-toolbar,.storybook-controls,.storybook-nav,.story-panel,.storybook-card{border-color:var(--theme-line);background-color:var(--theme-surface)}
+.storybook-muted,.story-meta{color:var(--theme-ink-soft)}
