@@ -2124,3 +2124,6 @@ body{background:radial-gradient(circle at 8% 0%,#3a332d 0,transparent 34%),radia
 
 
 .layout-open{overflow-x:hidden}
+
+
+html:has(body.layout-open){overflow-x:clip}
