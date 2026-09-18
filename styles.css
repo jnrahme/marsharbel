@@ -2054,3 +2054,24 @@ body.is-story-page .floating-audio-actions {
 .explore-card{position:relative;overflow:hidden;min-height:240px;padding:1.5rem;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .25s ease,border-color .25s ease}.explore-card:hover{transform:translateY(-4px);border-color:rgba(211,178,110,.56)}.explore-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 88% 0%,rgba(211,178,110,.13),transparent 40%);pointer-events:none}.explore-icon{margin-bottom:auto;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:2rem;letter-spacing:.16em}.explore-card h3{font-size:2rem}.explore-card p{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important}.explore-card{transition:none}}
 @media(max-width:820px){.home-cinematic-hero{min-height:730px;grid-template-columns:1fr;padding:2rem 1.25rem;border-radius:24px;margin-top:.8rem}.cinematic-backdrop{background-image:linear-gradient(0deg,rgba(4,9,12,.98) 0%,rgba(4,9,12,.74) 58%,rgba(4,9,12,.18) 100%),url('./saint-charbel.jpg');background-position:57% 20%}.home-cinematic-hero h1{font-size:clamp(3rem,15vw,4.8rem)}.cinematic-devotion{display:none}.cinematic-facts{gap:.85rem}.cinematic-facts div{padding:0 .85rem}.cinematic-facts span{font-size:.62rem}.cinematic-intro{grid-template-columns:1fr;gap:.75rem;padding-top:3rem}.section-number{width:60px}}
+
+
+/* Joey review revision: warm cream, stone, and muted bronze */
+:root{--bg:#1d1a17;--panel:#28231f;--panel-soft:#342e29;--text:#f3ede3;--muted:#c7bdb0;--gold:#a98a66;--gold-soft:#8f7254;--line:rgba(169,138,102,.28)}
+body{background:radial-gradient(circle at 8% 0%,#3a332d 0,transparent 34%),radial-gradient(circle at 100% 15%,#2b2621 0,transparent 32%),linear-gradient(160deg,#171411 0%,#211d19 56%,#181512 100%)}
+.topbar{background:rgba(25,22,19,.9);border-bottom-color:rgba(205,190,171,.16)}
+.links a.active,.links a:hover{background:rgba(205,190,171,.12)}
+.brand-mark{color:#b39a7c;border-color:rgba(205,190,171,.24)}
+.home-cinematic-hero{border-color:rgba(205,190,171,.26);box-shadow:0 34px 80px rgba(12,10,8,.46)}
+.cinematic-backdrop{filter:sepia(.16) saturate(.72) contrast(1.04);background-image:linear-gradient(90deg,rgba(22,19,16,.97) 0%,rgba(28,24,20,.84) 43%,rgba(25,21,18,.16) 76%),linear-gradient(0deg,rgba(20,17,14,.94) 0%,transparent 54%),url('./saint-charbel.jpg')}
+.home-cinematic-hero::before{background:radial-gradient(circle at 72% 42%,rgba(188,164,135,.12),transparent 35%)}
+.kicker{color:#b8a184;border-color:rgba(205,190,171,.26)}
+.cinematic-eyebrow{color:#d8ccbc}.cinematic-lede{color:#ddd5cb}
+.btn.primary{background:linear-gradient(180deg,#ddd0bd,#bda98f);color:#2c251e;box-shadow:none}
+.btn.glass{background:rgba(29,25,21,.5);border-color:rgba(238,229,216,.34);color:#f3ede3}
+.cinematic-facts{border-top-color:rgba(205,190,171,.25)}.cinematic-facts div{border-right-color:rgba(205,190,171,.22)}.cinematic-facts strong{color:#bca181}.cinematic-facts span{color:#cfc5b8}
+.cinematic-devotion{border-color:rgba(205,190,171,.28);background:rgba(31,27,23,.7)}.devotion-label,.cinematic-devotion a,.section-number,.explore-icon{color:#b69a78}
+.card{border-color:rgba(205,190,171,.22);background:linear-gradient(180deg,rgba(50,44,38,.82),rgba(32,28,24,.9));box-shadow:0 16px 40px rgba(10,8,6,.25)}
+.metric{border-color:rgba(205,190,171,.2);background:rgba(10,8,6,.15)}.metric .num{color:#b69a78}
+.explore-card:hover{border-color:rgba(205,190,171,.48)}.explore-card::before{background:radial-gradient(circle at 88% 0%,rgba(205,190,171,.11),transparent 40%)}
+@media(max-width:820px){.cinematic-backdrop{background-image:linear-gradient(0deg,rgba(22,19,16,.98) 0%,rgba(26,22,18,.73) 58%,rgba(24,20,17,.16) 100%),url('./saint-charbel.jpg')}}
