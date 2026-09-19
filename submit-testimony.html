@@ -84,11 +84,12 @@
     <section class="hero">
       <span class="kicker">Submission</span>
       <h1>Share Your Testimony</h1>
-      <p>All submissions are reviewed by a human moderator before publication. Please be honest, specific, and respectful.</p>
+      <div class="cta-row"><a class="btn subtle" href="./account.html">Your account</a></div><p>Stories can come from anywhere in the world. Every submission stays private until a human moderator approves it. Please do not include medical records, government IDs, addresses, or other sensitive information.</p>
     </section>
 
     <section class="section">
       <article class="card form-card">
+        <div class="security-note" role="note"><strong>Private by default.</strong><span>Bot checks, server-side limits, validation, and human review protect this intake. No public system is perfectly attack-proof, so submissions can be paused instantly if abuse is detected.</span></div>
         <form id="testimony-form" class="testimony-form" novalidate>
           <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
@@ -124,6 +125,11 @@
             <input name="healing_type" maxlength="160" placeholder="Healing, conversion, prayer grace, etc." />
           </label>
 
+          <label>Photos (optional, up to 5 after secure storage is connected)
+            <input type="file" name="photos" accept="image/jpeg,image/png,image/webp" multiple disabled />
+            <span class="source-meta">Image uploads are safely paused in QA. Before activation, files will be scanned, re-encoded, stripped of metadata, size-limited, stored privately, and approved separately.</span>
+          </label>
+
           <label>Testimony details
             <textarea name="testimony_text" required minlength="60" maxlength="7000" rows="10" placeholder="What happened? When? How did prayer/devotion to Saint Charbel relate to this?"></textarea>
           </label>
@@ -135,7 +141,7 @@
 
           <label class="inline-check">
             <input type="checkbox" name="consent_publish" required />
-            I confirm this testimony is truthful and I consent to moderation/publication.
+            I confirm this testimony is truthful and I consent to private moderation. Publication requires moderator approval.
           </label>
 
           <div id="turnstile-slot"></div>
