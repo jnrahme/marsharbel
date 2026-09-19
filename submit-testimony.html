@@ -84,12 +84,12 @@
     <section class="hero">
       <span class="kicker">Submission</span>
       <h1>Share Your Testimony</h1>
-      <div class="cta-row"><a class="btn subtle" href="./account.html">Your account</a></div><p>Stories can come from anywhere in the world. Every submission stays private until a human moderator approves it. Please do not include medical records, government IDs, addresses, or other sensitive information.</p>
+      <div class="cta-row"><a class="btn subtle" href="./account.html">Your account</a></div><p>Stories can come from anywhere in the world. A free account is required to submit a story, and you must be 18 or older. Every submission stays private until a human moderator approves it; rejected stories and photos are deleted after 30 days. Please do not include medical records, government IDs, addresses, or other sensitive information.</p>
     </section>
 
     <section class="section">
       <article class="card form-card">
-        <div class="security-note" role="note"><strong>Private by default.</strong><span>Bot checks, server-side limits, validation, and human review protect this intake. No public system is perfectly attack-proof, so submissions can be paused instantly if abuse is detected.</span></div>
+        <div class="security-note" role="note"><strong>Private by default.</strong><span>Sign-in, bot checks, server-side limits, validation, and human review protect this intake. Accounts are required to submit; reading approved stories stays open to everyone. No public system is perfectly attack-proof, so submissions can be paused instantly if abuse is detected.</span></div>
         <form id="testimony-form" class="testimony-form" novalidate>
           <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
@@ -137,6 +137,11 @@
           <label class="inline-check">
             <input type="checkbox" name="contact_permission" />
             You may contact me for clarification.
+          </label>
+
+          <label class="inline-check">
+            <input type="checkbox" name="age_confirmed" required />
+            I am 18 years of age or older.
           </label>
 
           <label class="inline-check">
