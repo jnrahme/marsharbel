@@ -20,9 +20,9 @@ module.exports = defineConfig({
     reuseExistingServer: !process.env.CI
   },
   projects: [
-    { name: 'small-phone', use: { ...devices['iPhone SE'] } },
-    { name: 'phone', use: { ...devices['iPhone 13'] } },
-    { name: 'tablet', use: { ...devices['iPad (gen 7)'] } },
+    { name: 'small-phone', use: { ...devices['iPhone SE'], browserName: 'chromium' } },
+    { name: 'phone', use: { ...devices['iPhone 13'], browserName: 'chromium' } },
+    { name: 'tablet', use: { ...devices['iPad (gen 7)'], browserName: 'chromium' } },
     { name: 'laptop', use: { viewport: { width: 1366, height: 768 } } },
     { name: 'wide-desktop', use: { viewport: { width: 1920, height: 1080 } } }
   ]
