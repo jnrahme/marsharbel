@@ -19,7 +19,7 @@
     "qa:ci": "scripts/qa/run_full_qa.sh --ci",
     "qa:agentic:smoke": "scripts/qa/agentic_smoke.sh",
     "qa:dead-code": "scripts/qa/dead_code_check.sh",
-    "quality:e2e": "playwright test",
+    "quality:e2e": "playwright test --config playwright.config.cjs",
     "quality": "npm run quality:e2e"
   },
   "keywords": [],
