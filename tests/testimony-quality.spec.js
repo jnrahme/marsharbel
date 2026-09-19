@@ -27,3 +27,16 @@ test('account creation and image uploads are disabled in QA', async ({ page }) =
   await page.goto('/submit-testimony.html');
   await expect(page.locator('input[type=file]')).toBeDisabled();
 });
+test('submit page states account-required and adults-only launch policy', async ({ page }) => {
+  await page.goto('/submit-testimony.html');
+  await expect(page.locator('input[name=age_confirmed]')).toBeVisible();
+  await expect(page.locator('main')).toContainText(/account is required/i);
+  await expect(page.locator('main')).toContainText(/18 or older/i);
+});
+test('account page records the decided launch policy', async ({ page }) => {
+  await page.goto('/account.html');
+  await expect(page.locator('main')).toContainText(/required to submit/i);
+  await expect(page.locator('main')).toContainText(/18 or older/i);
+  await expect(page.locator('main')).toContainText(/30 days/i);
+  await expect(page.locator('main')).toContainText(/MFA/i);
+});
