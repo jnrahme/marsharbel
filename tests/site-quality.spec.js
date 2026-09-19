@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const AxeBuilder = require('@axe-core/playwright').default;
 
-const pages = ['/homepage-open.html', '/story.html', '/rosary.html', '/gallery.html'];
+const pages = ['/homepage-open.html', '/story.html', '/rosary-visual-guide.html', '/gallery.html'];
 
 for (const path of pages) {
   test.describe(path, () => {
