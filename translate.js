@@ -396,8 +396,10 @@
     hint.id = 'sc-install-hint';
     hint.className = 'notranslate';
     hint.style.position = 'fixed';
-    hint.style.right = '14px';
-    hint.style.bottom = '14px';
+    hint.style.left = '50%';
+    hint.style.right = 'auto';
+    hint.style.bottom = 'calc(14px + env(safe-area-inset-bottom))';
+    hint.style.transform = 'translateX(-50%)';
     hint.style.zIndex = '9999';
     hint.style.display = 'none';
     hint.style.maxWidth = 'min(92vw, 380px)';
@@ -416,6 +418,8 @@
       if (!message) return;
       hint.textContent = message;
       hint.style.display = 'block';
+      hint.setAttribute('role', 'status');
+      hint.setAttribute('aria-live', 'polite');
       if (hintTimer) clearTimeout(hintTimer);
       hintTimer = setTimeout(function () {
         hint.style.display = 'none';
@@ -475,9 +479,6 @@
       }
     });
 
-    if (isIOS) {
-      showHint("Tap 'Install App' in the header for iPhone install steps.");
-    }
   }
 
   function createSwitcher(currentCode) {
