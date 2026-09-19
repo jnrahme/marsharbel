@@ -18,13 +18,17 @@
     "qa": "scripts/qa/run_full_qa.sh",
     "qa:ci": "scripts/qa/run_full_qa.sh --ci",
     "qa:agentic:smoke": "scripts/qa/agentic_smoke.sh",
-    "qa:dead-code": "scripts/qa/dead_code_check.sh"
+    "qa:dead-code": "scripts/qa/dead_code_check.sh",
+    "quality:e2e": "playwright test",
+    "quality": "npm run quality:e2e"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.58.2",
     "playwright": "^1.58.2"
   }
 }
