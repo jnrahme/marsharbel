@@ -4,6 +4,12 @@ to = "https://YOUR_PROJECT.supabase.co/functions/v1/submit-testimony"
 status = 200
 force = true
 [[headers]]
+for = "/*"
+[headers.values]
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+X-Frame-Options = "SAMEORIGIN"
+[[headers]]
 for = "/submit-testimony.html"
 [headers.values]
 Cache-Control = "no-store"
@@ -19,10 +25,3 @@ X-Robots-Tag = "noindex, nofollow, noarchive"
 X-Frame-Options = "DENY"
 X-Content-Type-Options = "nosniff"
 Referrer-Policy = "no-referrer"
-
-[[headers]]
-for = "/*"
-[headers.values]
-X-Content-Type-Options = "nosniff"
-Referrer-Policy = "strict-origin-when-cross-origin"
-X-Frame-Options = "SAMEORIGIN"
