@@ -40,3 +40,25 @@ test('account page records the decided launch policy', async ({ page }) => {
   await expect(page.locator('main')).toContainText(/30 days/i);
   await expect(page.locator('main')).toContainText(/MFA/i);
 });
+
+test('moderation page shows only a sign-in form until a moderator with MFA signs in', async ({ page }) => {
+  await page.goto('/testimony-review.html');
+  await expect(page.locator('#admin-panel')).toBeHidden();
+  await expect(page.getByRole('button', { name: 'Approve' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Reject' })).toHaveCount(0);
+  await expect(page.locator('main')).toContainText(/moderator/i);
+  await expect(page.locator('main')).toContainText(/multi-factor authentication/i);
+  await expect(page.locator('main')).toContainText(/loads no submission data/i);
+});
+test('public navigation never links to the moderation page', async ({ page }) => {
+  for (const path of ['/', '/submit-testimony.html', '/testimonies.html', '/account.html']) {
+    await page.goto(path);
+    await expect(page.locator('a[href*="testimony-review"]')).toHaveCount(0);
+  }
+});
+test('admin client script gates the panel on the moderator role and MFA', async ({ request }) => {
+  const js = await (await request.get('/testimony-admin.js')).text();
+  expect(js).toContain("'moderator'");
+  expect(js).toContain('aal2');
+  expect(js.indexOf('isModerator')).toBeGreaterThan(-1);
+});
