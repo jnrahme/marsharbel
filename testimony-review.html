@@ -80,7 +80,7 @@
     </section>
 
     <section class="section">
-      <div class="security-note" role="note"><strong>Moderator access only.</strong><span>At launch the site owner is the sole moderator. Multi-factor authentication is mandatory and enforced by the database (aal2); approval, rejection, unpublishing, and access attempts are logged by the backend.</span></div>
+      <div class="security-note" role="note"><strong>Moderator access only.</strong><span>At launch the site owner is the sole moderator. This page loads no submission data until the moderator account is authenticated with multi-factor authentication, which the database enforces (aal2). Signed-out visitors and regular accounts see only this sign-in form; regular accounts can submit stories and follow their own status, but cannot approve, reject, edit, or publish. Approval, rejection, unpublishing, and access attempts are logged by the backend.</span></div>
       <article class="card form-card">
         <form id="admin-login-form" class="testimony-form" novalidate>
           <label>Admin email
