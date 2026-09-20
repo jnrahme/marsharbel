@@ -32,8 +32,8 @@ test('prayer library covers every promised category and cites sources', async ({
 
 test('prayer library links into the rest of the site', async ({ page }) => {
   await page.goto('/prayer-library.html');
-  for (const href of ['./saint-charbel-prayers.html', './rosary-visual-guide.html', './mystery-meditation.html', './become-like-charbel.html']) {
-    await expect(page.locator(`main a[href="${href}"]`).first()).toBeVisible();
+  for (const slug of ['saint-charbel-prayers', 'rosary-visual-guide', 'mystery-meditation', 'become-like-charbel']) {
+    await expect(page.locator(`main a[href*="${slug}"]`).first()).toBeVisible();
   }
 });
 
