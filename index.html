@@ -68,35 +68,47 @@
   <link rel="alternate" hreflang="zh-tw" href="https://marsharbel.com/?lang=zh-tw" />
   <!-- hreflang:end -->
 </head>
-<body>
+<body class="layout-open">
   <header class="topbar">
     <div class="site-shell nav">
       <a class="brand" href="./index.html">
         <span class="brand-mark">✦</span>
         <span>Saint Charbel</span>
       </a>
-      <nav class="links">
-        <a class="active" href="./index.html">Home</a>
-        <a href="./history.html">History</a>
-        <a href="./story.html">Story</a>
-        <a href="./miracles.html">Miracles</a>
-        <a href="./news.html">News</a>
-        <a href="./prayer-library.html">Prayer Library</a>
+      <nav class="links" aria-label="Primary">
+        <a class="active" href="./index.html" aria-current="page">Home</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./story.html" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./story.html">Story for Children</a>
+        <a href="./history.html">Full History</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./miracles.html" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./miracles.html">Miracles & Reports</a>
+        <a href="./news.html">Latest News</a>
         <a href="./testimonies.html">Testimonies</a>
-        <a href="./gallery.html">Gallery</a>
-        <a href="./become-like-charbel.html">Become Like Him</a>
-        <a href="./rosary-visual-guide.html">Rosary</a>
         <a href="./voice-testimony.html">Voice Testimony</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./prayer-library.html" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./prayer-library.html">Prayer Library</a>
+        <a href="./saint-charbel-prayers.html">Saint Charbel Prayers</a>
+        <a href="./saint-charbel-novena.html">Saint Charbel Novena</a>
+        <a href="./saint-charbel-feast-day.html">Feast Day</a>
+        <a href="./rosary-visual-guide.html">Rosary Guide</a>
+        <a href="./rosary-minibook.html">Rosary Minibook</a>
+        <a href="./mystery-meditation.html">Mystery Meditation</a>
+        <a href="./become-like-charbel.html">Become Like Him</a>
+        </div></div>
+        <a href="./gallery.html">Gallery</a>
         <a href="./souvenirs.html">Souvenirs</a>
-      </nav>
+        </nav>
     </div>
   </header>
 
-  <div class="concept-switcher" aria-label="Homepage concept switcher">
-    <span>Homepage view</span>
-    <a class="active" href="./index.html" aria-current="page">Card layout</a>
-    <a href="./homepage-open.html">Open layout</a>
-  </div>
   <main class="site-shell">
     <section class="home-cinematic-hero">
       <div class="cinematic-backdrop" aria-hidden="true"></div>
@@ -111,13 +123,36 @@
       <aside class="cinematic-devotion reveal"><span class="devotion-label">Begin in prayer</span><p>“The person who prays lives out the mystery of existence.”</p><a href="./rosary-visual-guide.html">Open the visual prayer guide <span aria-hidden="true">→</span></a></aside>
     </section>
 
-    <section class="cinematic-intro section reveal"><span class="section-number">01</span><div><span class="kicker">Saint of silence and healing</span><h2>A doorway into a life of faith</h2><p>Explore the milestones, miracles, prayer, and practical disciplines that continue to draw people to Saint Charbel.</p></div></section>
+    <section class="section">
+      <h2 class="reveal">Made For Your Home</h2>
+      <p class="section-sub reveal">Two ways in, whether you are gathering children or keeping a daily rosary.</p>
+      <div class="grid-2 promo-grid">
+        <article class="promo-card reveal">
+          <img src="./media/storybook/images/event-01.jpg" alt="Illustration from the children's storybook: a child praying outside a mountain chapel at sunrise" loading="lazy" decoding="async" />
+          <div class="promo-body">
+            <span class="promo-kicker">For Children &amp; Families</span>
+            <h3>Listen to Saint Charbel's story for children</h3>
+            <p>A 27-page illustrated storybook for ages 5-12, with read-aloud narration on every page - a gentle first doorway into the hermit of Annaya's life of prayer.</p>
+            <a class="promo-link" href="./story.html">Open the Storybook <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="promo-card reveal">
+          <img src="./media/promo/luminous-baptism.jpg" alt="The Baptism of the Lord, artwork for the first Luminous Mystery of the Rosary" loading="lazy" decoding="async" />
+          <div class="promo-body">
+            <span class="promo-kicker">Daily Rosary</span>
+            <h3>Pray the Rosary with a daily mystery meditation</h3>
+            <p>A guided mystery-by-mystery meditation with scripture, sacred artwork, and hands-free audio - today's mystery, ready when you are.</p>
+            <a class="promo-link" href="./mystery-meditation.html">Start Today's Meditation <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <section class="hero-grid section">
-      <article class="card photo-card reveal">
+      <article class="photo-card open-photo reveal">
         <img src="./saint-charbel.jpg" alt="Saint Charbel portrait" width="906" height="667" decoding="async" fetchpriority="high" />
       </article>
-      <article class="card info-card reveal">
+      <article class="info-card open-info reveal">
         <h3>At a Glance</h3>
         <div class="metric-grid">
           <div class="metric">
@@ -146,11 +181,12 @@
       </article>
     </section>
 
+
     <section class="section">
       <h2 class="reveal">What You Can Explore</h2>
       <p class="section-sub reveal">Built as a complete resource with depth, beauty, and clear sourcing.</p>
       <div class="grid-2">
-        <article class="card story explore-card explore-history reveal">
+        <article class="story explore-card explore-history reveal">
           <span class="explore-icon" aria-hidden="true">✦</span>
           <h3>Complete Biography</h3>
           <p>
@@ -158,7 +194,7 @@
             priesthood, eremitical life, and eventual canonization.
           </p>
         </article>
-        <article class="card story explore-card explore-miracles reveal">
+        <article class="story explore-card explore-miracles reveal">
           <span class="explore-icon" aria-hidden="true">✧</span>
           <h3>Miracles & Discernment</h3>
           <p>
@@ -166,7 +202,7 @@
             Includes current counts and a realistic interpretation of what is formally verified.
           </p>
         </article>
-        <article class="card story explore-card explore-reports reveal">
+        <article class="story explore-card explore-reports reveal">
           <span class="explore-icon" aria-hidden="true">◌</span>
           <h3>Recent Miracle Reports</h3>
           <p>
@@ -174,7 +210,7 @@
             and what remains devotional testimony.
           </p>
         </article>
-        <article class="card story explore-card explore-practice reveal">
+        <article class="story explore-card explore-practice reveal">
           <span class="explore-icon" aria-hidden="true">✢</span>
           <h3>Become Like Saint Charbel</h3>
           <p>
@@ -182,7 +218,7 @@
             and concrete daily/weekly practices.
           </p>
         </article>
-        <article class="card story explore-card explore-rosary reveal">
+        <article class="story explore-card explore-rosary reveal">
           <span class="explore-icon" aria-hidden="true">•••</span>
           <h3>Visual Rosary Guide</h3>
           <p>
@@ -201,6 +237,7 @@
   <script src="./app.js"></script>
   <script src="./global-audio-player.js"></script>
   <script src="./translate.js"></script>
+  <script src="./nav.js" defer></script>
 </body>
 </html>
 
