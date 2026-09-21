@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saint Charbel | Testimony Admin</title>
   <meta name="description" content="Discover Testimony Admin on marsharbel.com with trusted Saint Charbel resources for prayer, history, testimonies, and Catholic devotion." />
-  <meta name="robots" content="noindex,follow,max-image-preview:large" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
   <link rel="canonical" href="https://marsharbel.com/testimony-review" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Saint Charbel" />
@@ -76,10 +76,11 @@
     <section class="hero">
       <span class="kicker">Admin</span>
       <h1>Testimony Moderation Panel</h1>
-      <p>Private page for reviewing pending submissions and publishing approved testimonies.</p>
+      <p>Private moderation queue. Authentication and server policies decide access; the page is never linked from public navigation.</p>
     </section>
 
     <section class="section">
+      <div class="security-note" role="note"><strong>Moderator access only.</strong><span>At launch the site owner is the sole moderator. This page loads no submission data until the moderator account is authenticated with multi-factor authentication, which the database enforces (aal2). Signed-out visitors and regular accounts see only this sign-in form; regular accounts can submit stories and follow their own status, but cannot approve, reject, edit, or publish. Approval, rejection, unpublishing, and access attempts are logged by the backend.</span></div>
       <article class="card form-card">
         <form id="admin-login-form" class="testimony-form" novalidate>
           <label>Admin email

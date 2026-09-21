@@ -27,6 +27,7 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "Saint Charbel",
+    "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf", "St Charbel", "مار شربل"],
     "url": "https://marsharbel.com/"
   }
 }
@@ -79,60 +80,42 @@
         <a href="./history.html">History</a>
         <a href="./story.html">Story</a>
         <a href="./miracles.html">Miracles</a>
+        <a href="./news.html">News</a>
+        <a href="./prayer-library.html">Prayer Library</a>
         <a href="./testimonies.html">Testimonies</a>
         <a href="./gallery.html">Gallery</a>
         <a href="./become-like-charbel.html">Become Like Him</a>
         <a href="./rosary-visual-guide.html">Rosary</a>
         <a href="./voice-testimony.html">Voice Testimony</a>
+        <a href="./souvenirs.html">Souvenirs</a>
       </nav>
     </div>
   </header>
 
+  <div class="concept-switcher" aria-label="Homepage concept switcher">
+    <span>Homepage view</span>
+    <a class="active" href="./index.html" aria-current="page">Card layout</a>
+    <a href="./homepage-open.html">Open layout</a>
+  </div>
   <main class="site-shell">
-    <section class="hero hero-with-lent">
-      <div class="hero-main">
+    <section class="home-cinematic-hero">
+      <div class="cinematic-backdrop" aria-hidden="true"></div>
+      <div class="cinematic-content">
         <span class="kicker reveal">Lebanon | Maronite Saint</span>
-        <h1 class="reveal">The Life, Witness, and Legacy of Saint Charbel</h1>
-        <p class="reveal">
-          A high-end tribute experience dedicated to one of the most beloved saints in the Catholic world.
-          Explore his full history, documented miracle legacy, and practical spiritual disciplines inspired by his life of silence and prayer.
-        </p>
+        <p class="cinematic-eyebrow reveal">A life hidden in prayer. A light seen around the world.</p>
+        <h1 class="reveal">Encounter the silence, witness, and living legacy of Saint Charbel.</h1>
+        <p class="cinematic-lede reveal">Walk through his life in the mountains of Lebanon, discover the stories of faith linked to his intercession, and enter a quieter rhythm of prayer inspired by the hermit of Annaya.</p>
+        <div class="cinematic-actions reveal"><a class="btn primary" href="./history.html">Discover His Story</a><a class="btn glass" href="./rosary-visual-guide.html">Pray the Rosary</a></div>
+        <div class="cinematic-facts reveal" aria-label="Saint Charbel at a glance"><div><strong>1828</strong><span>Born in Bkaakafra</span></div><div><strong>1898</strong><span>Entered eternal life</span></div><div><strong>1977</strong><span>Canonized a saint</span></div></div>
       </div>
-      <aside class="lent-rail reveal">
-        <article class="lent-countdown-card lent-countdown-card-square">
-          <div class="lent-countdown-head">
-            <span class="kicker">Maronite Lent Countdown</span>
-            <p id="lent-countdown-date" class="lent-countdown-date">Calculating next Ash Monday...</p>
-          </div>
-          <div id="lent-countdown-grid" class="lent-countdown-grid">
-            <div class="lent-countdown-unit">
-              <span id="lent-days" class="num">--</span>
-              <span>Days</span>
-            </div>
-            <div class="lent-countdown-unit">
-              <span id="lent-hours" class="num">--</span>
-              <span>Hours</span>
-            </div>
-            <div class="lent-countdown-unit">
-              <span id="lent-minutes" class="num">--</span>
-              <span>Minutes</span>
-            </div>
-            <div class="lent-countdown-unit">
-              <span id="lent-seconds" class="num">--</span>
-              <span>Seconds</span>
-            </div>
-          </div>
-          <div class="lent-countdown-cta">
-            <a class="btn primary" href="./rosary-visual-guide.html">Pray The Rosary Daily</a>
-          </div>
-          <p class="lent-countdown-note">Shows remaining time in Lent (40-day cycle).</p>
-        </article>
-      </aside>
+      <aside class="cinematic-devotion reveal"><span class="devotion-label">Begin in prayer</span><p>“The person who prays lives out the mystery of existence.”</p><a href="./rosary-visual-guide.html">Open the visual prayer guide <span aria-hidden="true">→</span></a></aside>
     </section>
+
+    <section class="cinematic-intro section reveal"><span class="section-number">01</span><div><span class="kicker">Saint of silence and healing</span><h2>A doorway into a life of faith</h2><p>Explore the milestones, miracles, prayer, and practical disciplines that continue to draw people to Saint Charbel.</p></div></section>
 
     <section class="hero-grid section">
       <article class="card photo-card reveal">
-        <img src="./saint-charbel.jpg" alt="Saint Charbel portrait" />
+        <img src="./saint-charbel.jpg" alt="Saint Charbel portrait" width="906" height="667" decoding="async" fetchpriority="high" />
       </article>
       <article class="card info-card reveal">
         <h3>At a Glance</h3>
@@ -167,35 +150,40 @@
       <h2 class="reveal">What You Can Explore</h2>
       <p class="section-sub reveal">Built as a complete resource with depth, beauty, and clear sourcing.</p>
       <div class="grid-2">
-        <article class="card story reveal">
+        <article class="card story explore-card explore-history reveal">
+          <span class="explore-icon" aria-hidden="true">✦</span>
           <h3>Complete Biography</h3>
           <p>
             From his early years in the mountains of Lebanon to his monastic calling,
             priesthood, eremitical life, and eventual canonization.
           </p>
         </article>
-        <article class="card story reveal">
+        <article class="card story explore-card explore-miracles reveal">
+          <span class="explore-icon" aria-hidden="true">✧</span>
           <h3>Miracles & Discernment</h3>
           <p>
             Distinguishes between Church-recognized miracles in the canonization process and broader reported healings.
             Includes current counts and a realistic interpretation of what is formally verified.
           </p>
         </article>
-        <article class="card story reveal">
+        <article class="card story explore-card explore-reports reveal">
+          <span class="explore-icon" aria-hidden="true">◌</span>
           <h3>Recent Miracle Reports</h3>
           <p>
             Tracks recent public reports and shrine updates while clearly labeling what has official Vatican confirmation
             and what remains devotional testimony.
           </p>
         </article>
-        <article class="card story reveal">
+        <article class="card story explore-card explore-practice reveal">
+          <span class="explore-icon" aria-hidden="true">✢</span>
           <h3>Become Like Saint Charbel</h3>
           <p>
             A practical life-rule page with prayer rhythm, silence habits, fasting framework,
             and concrete daily/weekly practices.
           </p>
         </article>
-        <article class="card story reveal">
+        <article class="card story explore-card explore-rosary reveal">
+          <span class="explore-icon" aria-hidden="true">•••</span>
           <h3>Visual Rosary Guide</h3>
           <p>
             A complete step-by-step Rosary walkthrough with meditative visualization for each
@@ -215,3 +203,4 @@
   <script src="./translate.js"></script>
 </body>
 </html>
+

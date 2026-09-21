@@ -1,150 +1,46 @@
 (function () {
+  'use strict';
   const cfg = window.TESTIMONY_CONFIG || {};
-  const statusEl = document.getElementById('submit-status');
   const form = document.getElementById('testimony-form');
+  const statusEl = document.getElementById('submit-status');
   const submitButton = document.getElementById('submit-testimony-btn');
   const turnstileSlot = document.getElementById('turnstile-slot');
-
-  const show = (msg, type) => {
-    if (!statusEl) return;
-    statusEl.textContent = msg;
-    statusEl.className = `submit-status ${type || ''}`.trim();
-  };
-
-  const hasSupabaseConfig = Boolean(
-    cfg.supabaseUrl &&
-    cfg.supabaseAnonKey &&
-    !cfg.supabaseUrl.includes('YOUR_PROJECT') &&
-    !cfg.supabaseAnonKey.includes('YOUR_SUPABASE')
-  );
-  const hasTurnstileKey = Boolean(cfg.turnstileSiteKey && !cfg.turnstileSiteKey.includes('YOUR_'));
-  const hasTurnstileVerifyEndpoint = Boolean(cfg.turnstileVerifyEndpoint);
-
-  if (!hasSupabaseConfig) {
-    show('Configuration missing: set Supabase URL/Anon key in testimony-config.js.', 'warn');
-  }
-
-  const supabase = window.supabase?.createClient(cfg.supabaseUrl || '', cfg.supabaseAnonKey || '');
-
-  if (hasTurnstileKey) {
-    turnstileSlot.innerHTML = `<div class="cf-turnstile" data-sitekey="${cfg.turnstileSiteKey}"></div>`;
-  } else {
-    turnstileSlot.innerHTML = '<p class="source-meta">Human verification is required. Configure Turnstile in testimony-config.js.</p>';
-  }
-
-  const getRemainingCooldown = () => {
-    const key = 'testimony_last_submit_at';
-    const last = Number(localStorage.getItem(key) || 0);
-    const now = Date.now();
-    const minGap = 60 * 1000;
-    if (now - last < minGap) {
-      return Math.ceil((minGap - (now - last)) / 1000);
-    }
-    return 0;
-  };
-
-  const stampCooldown = () => {
-    localStorage.setItem('testimony_last_submit_at', String(Date.now()));
-  };
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    show('Submitting...', '');
-    if (!hasSupabaseConfig || !supabase) {
-      show('Supabase client not configured.', 'warn');
-      return;
-    }
-
-    const wait = getRemainingCooldown();
-    if (wait > 0) {
-      show(`Please wait ${wait}s before submitting again.`, 'warn');
-      return;
-    }
-
-    const data = new FormData(form);
-    const honeypot = (data.get('website') || '').toString().trim();
-    if (honeypot) {
-      show('Spam protection triggered.', 'error');
-      return;
-    }
-
-    const payload = {
-      full_name: (data.get('full_name') || '').toString().trim(),
-      email: (data.get('email') || '').toString().trim() || null,
-      country: (data.get('country') || '').toString().trim() || null,
-      parish: (data.get('parish') || '').toString().trim() || null,
-      event_date: (data.get('event_date') || '').toString().trim() || null,
-      healing_type: (data.get('healing_type') || '').toString().trim() || null,
-      testimony_text: (data.get('testimony_text') || '').toString().trim(),
-      contact_permission: Boolean(data.get('contact_permission')),
-      consent_publish: Boolean(data.get('consent_publish')),
-      language: (data.get('language') || 'en').toString(),
-      status: 'pending',
-      verification_note: 'Pending human review',
-      meta: {
-        user_agent: navigator.userAgent,
-        submitted_from: window.location.hostname,
-        turnstile_present: !!document.querySelector('input[name="cf-turnstile-response"]')
-      }
-    };
-
-    if (!payload.full_name || payload.full_name.length < 2) {
-      show('Please provide your full name.', 'warn');
-      return;
-    }
-    if (!payload.testimony_text || payload.testimony_text.length < 60) {
-      show('Please provide more detail (at least 60 characters).', 'warn');
-      return;
-    }
-    if (!payload.consent_publish) {
-      show('Please confirm consent for review/publication.', 'warn');
-      return;
-    }
-
-    const turnstileToken = (data.get('cf-turnstile-response') || '').toString();
-    if ((cfg.requireTurnstile !== false) && (!hasTurnstileKey || !hasTurnstileVerifyEndpoint)) {
-      show('Submission is locked until Turnstile is fully configured.', 'warn');
-      return;
-    }
-
-    if (hasTurnstileKey && !turnstileToken) {
-      show('Please complete the human verification.', 'warn');
-      return;
-    }
-
-    if (hasTurnstileVerifyEndpoint && turnstileToken) {
-      try {
-        const verifyRes = await fetch(cfg.turnstileVerifyEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token: turnstileToken })
-        });
-        const verifyJson = await verifyRes.json().catch(() => ({ success: false }));
-        if (!verifyRes.ok) {
-          show('Human verification endpoint error. Please try again.', 'error');
-          return;
-        }
-        if (!verifyJson.success) {
-          show('Human verification failed. Please try again.', 'error');
-          return;
-        }
-      } catch (_) {
-        show('Could not verify human check right now. Try again.', 'error');
-        return;
-      }
-    }
-
-    submitButton.disabled = true;
-    const { error } = await supabase.from('testimonies').insert([payload]);
-    submitButton.disabled = false;
-
-    if (error) {
-      show(`Submission failed: ${error.message}`, 'error');
-      return;
-    }
-
-    stampCooldown();
-    form.reset();
-    show('Thank you. Your testimony was received and is pending human review.', 'ok');
+  const startedAt = Date.now();
+  let submitting = false;
+  const show = (message, type) => { statusEl.textContent = message; statusEl.className = `submit-status ${type || ''}`.trim(); };
+  const turnstileReady = Boolean(cfg.turnstileSiteKey && !cfg.turnstileSiteKey.includes('YOUR_'));
+  const endpointReady = Boolean(cfg.submissionEndpoint);
+  const supabaseConfigured = Boolean(cfg.supabaseUrl && !cfg.supabaseUrl.includes('YOUR_') && cfg.supabaseAnonKey && !cfg.supabaseAnonKey.includes('YOUR_'));
+  let supabaseClient = null;
+  if (supabaseConfigured && window.supabase) supabaseClient = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
+  // Accounts are required to submit: intake stays closed until Supabase Auth is configured.
+  const intakeOpen = cfg.submissionsEnabled === true && turnstileReady && endpointReady && supabaseClient !== null;
+  if (turnstileReady) turnstileSlot.innerHTML = `<div class="cf-turnstile" data-sitekey="${cfg.turnstileSiteKey}" data-action="submit_testimony"></div>`;
+  else turnstileSlot.innerHTML = '<p class="source-meta">Human verification is not configured yet.</p>';
+  if (!intakeOpen) { submitButton.disabled = true; show('Submissions are safely paused while the protected intake service is configured.', 'warn'); }
+  const clean = (fd, name, max) => (fd.get(name) || '').toString().trim().slice(0, max);
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!intakeOpen || submitting) return;
+    const fd = new FormData(form);
+    if (clean(fd, 'website', 200)) return show('Submission blocked.', 'error');
+    if (Date.now() - startedAt < 3500) return show('Please take a moment to review your testimony.', 'warn');
+    const payload = {full_name:clean(fd,'full_name',120),email:clean(fd,'email',160)||null,language:clean(fd,'language',12)||'en',country:clean(fd,'country',120)||null,parish:clean(fd,'parish',180)||null,event_date:clean(fd,'event_date',10)||null,healing_type:clean(fd,'healing_type',160)||null,testimony_text:clean(fd,'testimony_text',7000),age_confirmed:fd.has('age_confirmed'),contact_permission:fd.has('contact_permission'),consent_publish:fd.has('consent_publish'),turnstile_token:clean(fd,'cf-turnstile-response',4096),website:'',elapsed_ms:Date.now()-startedAt};
+    if (payload.full_name.length < 2) return show('Please provide your full name.', 'warn');
+    if (payload.testimony_text.length < 60) return show('Please provide at least 60 characters.', 'warn');
+    if (!payload.age_confirmed) return show('You must confirm that you are 18 or older.', 'warn');
+    if (!payload.consent_publish) return show('Please confirm the consent statement.', 'warn');
+    if (!payload.turnstile_token) return show('Please complete the human verification.', 'warn');
+    const { data: sessionData } = await supabaseClient.auth.getSession();
+    const accessToken = sessionData && sessionData.session ? sessionData.session.access_token : '';
+    if (!accessToken) return show('Please sign in to your account before submitting.', 'warn');
+    submitting = true; submitButton.disabled = true; show('Sending for private review...', '');
+    try {
+      const response = await fetch(cfg.submissionEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json','Authorization':`Bearer ${accessToken}`},credentials:'omit',cache:'no-store',body:JSON.stringify(payload)});
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.message || 'The protected intake could not accept this submission.');
+      form.reset(); if (window.turnstile) window.turnstile.reset(); show('Thank you. Your testimony is private and pending human review.', 'ok');
+    } catch (error) { show(error.message || 'Submission failed. Please try again later.', 'error'); if (window.turnstile) window.turnstile.reset(); }
+    finally { submitting = false; submitButton.disabled = !intakeOpen; }
   });
 })();

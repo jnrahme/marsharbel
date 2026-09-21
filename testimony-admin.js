@@ -30,6 +30,40 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
 
+  // Moderation is restricted to the site-owner admin account. The database
+  // enforces this with row-level security (role='moderator' AND aal2); this
+  // client-side gate keeps the moderation UI itself hidden from every other
+  // signed-in account so regular users never see approve/reject controls.
+  const getClaims = (session) => {
+    try {
+      const part = session.access_token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+      return JSON.parse(atob(part)) || {};
+    } catch (e) {
+      return {};
+    }
+  };
+
+  const isModerator = (session) => {
+    if (!session || !session.access_token) return false;
+    const claims = getClaims(session);
+    const role = claims.app_metadata && claims.app_metadata.role;
+    return role === 'moderator' && claims.aal === 'aal2';
+  };
+
+  const denyNonModerator = async () => {
+    adminPanel.hidden = true;
+    loginForm.style.display = '';
+    await supabase.auth.signOut();
+    show('This panel is for the site moderator account only. Regular accounts can submit stories and follow their own status, but cannot approve, reject, edit, or publish testimonies.', 'warn');
+  };
+
+  const openPanel = () => {
+    loginForm.style.display = 'none';
+    adminPanel.hidden = false;
+    show('Authenticated as moderator.', 'ok');
+    refresh();
+  };
+
   const card = (row, actions) => {
     const el = document.createElement('article');
     el.className = 'card testimony-card admin-card';
@@ -82,7 +116,7 @@
           label: 'Approve',
           cls: 'primary',
           fn: async () => {
-            const { error: e } = await supabase.from('testimonies').update({ status: 'approved', published_at: new Date().toISOString() }).eq('id', row.id);
+            const { error: e } = await supabase.from('testimonies').update({ status: 'approved', published_at: new Date().toISOString(), moderated_at: new Date().toISOString() }).eq('id', row.id);
             if (e) return show(e.message, 'error');
             show('Approved.', 'ok');
             refresh();
@@ -91,7 +125,7 @@
         {
           label: 'Reject',
           fn: async () => {
-            const { error: e } = await supabase.from('testimonies').update({ status: 'rejected' }).eq('id', row.id);
+            const { error: e } = await supabase.from('testimonies').update({ status: 'rejected', moderated_at: new Date().toISOString() }).eq('id', row.id);
             if (e) return show(e.message, 'error');
             show('Rejected.', 'warn');
             refresh();
@@ -105,7 +139,7 @@
         {
           label: 'Move To Pending',
           fn: async () => {
-            const { error: e } = await supabase.from('testimonies').update({ status: 'pending' }).eq('id', row.id);
+            const { error: e } = await supabase.from('testimonies').update({ status: 'pending', published_at: null }).eq('id', row.id);
             if (e) return show(e.message, 'error');
             show('Moved back to pending.', 'warn');
             refresh();
@@ -122,11 +156,11 @@
 
   (async () => {
     const { data } = await supabase.auth.getSession();
-    if (data?.session) {
-      loginForm.style.display = 'none';
-      adminPanel.hidden = false;
-      show('Authenticated session found.', 'ok');
-      refresh();
+    if (!data?.session) return;
+    if (isModerator(data.session)) {
+      openPanel();
+    } else {
+      denyNonModerator();
     }
   })();
 
@@ -140,10 +174,12 @@
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) return show(`Login failed: ${error.message}`, 'error');
 
-    show('Admin login successful.', 'ok');
-    loginForm.style.display = 'none';
-    adminPanel.hidden = false;
-    refresh();
+    const { data } = await supabase.auth.getSession();
+    if (data?.session && isModerator(data.session)) {
+      openPanel();
+    } else {
+      denyNonModerator();
+    }
   });
 
   logoutBtn?.addEventListener('click', async () => {
