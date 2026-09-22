@@ -64,21 +64,40 @@
 <body>
   <header class="topbar">
     <div class="site-shell nav">
-      <a class="brand" href="../index.html">
-        <span class="brand-mark">✦</span>
+      <a class='brand' href='../index.html'>
+        <span class="brand-mark">â¦</span>
         <span>Saint Charbel</span>
       </a>
-      <nav class="links">
+      <nav class="links" aria-label="Primary">
         <a href="../index.html">Home</a>
-        <a href="../history.html">History</a>
-        <a href="../story.html">Story</a>
-        <a href="../miracles.html">Miracles</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="../story.html" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="../story.html">Story for Children</a>
+        <a href="../history.html">Full History</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="../miracles.html" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="../miracles.html">Miracles & Reports</a>
+        <a href="../news.html">Latest News</a>
         <a href="../testimonies.html">Testimonies</a>
-        <a href="../gallery.html">Gallery</a>
-        <a href="../become-like-charbel.html">Become Like Him</a>
-        <a class="active" href="../rosary-visual-guide.html">Rosary</a>
         <a href="../voice-testimony.html">Voice Testimony</a>
-      </nav>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent active" href="../prayer-library.html" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="../prayer-library.html">Prayer Library</a>
+        <a href="../saint-charbel-prayers.html">Saint Charbel Prayers</a>
+        <a href="../saint-charbel-novena.html">Saint Charbel Novena</a>
+        <a class="active" href="../rosary-visual-guide.html" aria-current="page">Rosary Guide</a>
+        <a href="../rosary-minibook.html">Rosary Minibook</a>
+        <a href="../mystery-meditation.html">Mystery Meditation</a>
+        <a href="../become-like-charbel.html">Become Like Him</a>
+        </div></div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../souvenirs.html">Souvenirs</a>
+        </nav>
     </div>
   </header>
 
@@ -89,7 +108,7 @@
       <p id="mystery-main-sub" class="section-sub">Wednesday / Sunday | Fruit: Faith and new life.</p>
 
       <div class="meditation-top-controls notranslate">
-        <a class="btn subtle" href="../rosary-visual-guide.html">Back to Mystery List</a>
+        <a class='btn subtle' href='../rosary-visual-guide.html'>Back to Mystery List</a>
         <button id="prev-mystery" type="button" class="btn subtle" aria-label="Previous mystery">Previous Mystery</button>
         <button id="next-mystery" type="button" class="btn subtle" aria-label="Next mystery">Next Mystery</button>
         <select id="mystery-picker" class="btn subtle meditation-select"></select>
@@ -109,7 +128,7 @@
 
     <section class="meditation-layout">
       <article class="card meditation-image-card">
-        <img id="mystery-hero-image" src="" alt="Mystery artwork" />
+        <img id="mystery-hero-image" src="glorious-1.html" alt="Mystery artwork" />
       </article>
 
       <article class="card meditation-content">
@@ -179,5 +198,6 @@
   <script src="../mystery-meditation.v20260304.js"></script>
   <script src="../global-audio-player.v20260304.js"></script>
   <script src="../translate.js"></script>
+  <script src="../nav.js" defer></script>
 </body>
 </html>
