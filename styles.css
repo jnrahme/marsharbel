@@ -2290,6 +2290,21 @@ body{background:radial-gradient(circle at 8% 0%,#3a332d 0,transparent 34%),radia
 @media(max-width:820px){.layout-open .hero-grid{grid-template-columns:1fr;gap:1.6rem;padding-top:3rem;padding-bottom:3rem}.layout-open .open-photo,.layout-open .open-photo img{min-height:360px}.layout-open .metric{grid-template-columns:82px 1fr}.layout-open .explore-card{grid-template-columns:42px 1fr;gap:.8rem}.layout-open .explore-card p{grid-column:2}}
 
 
+/* Keep the three milestones aligned; labels wrap inside equal columns. */
+@media (min-width: 821px) {
+  .cinematic-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .cinematic-facts > div {
+    min-width: 0;
+    align-content: start;
+    padding-inline: clamp(.65rem, 1.5vw, 1.5rem);
+  }
+  .cinematic-facts > div:last-child { padding-right: 0; }
+  .cinematic-facts span { overflow-wrap: anywhere; }
+}
+
 /* Open homepage v2: fully edge-to-edge editorial, no rounded containers */
 .layout-open .site-shell{width:min(1320px,100% - 2.4rem)}
 .layout-open .home-cinematic-hero{width:100vw;max-width:none;margin:0 calc(50% - 50vw);min-height:calc(100vh - 78px);border:0;border-radius:0;box-shadow:none;padding-left:max(clamp(2rem,8vw,8rem),calc((100vw - 1320px)/2));padding-right:max(clamp(2rem,8vw,8rem),calc((100vw - 1320px)/2))}
