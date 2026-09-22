@@ -25,6 +25,14 @@ try {
   }
   await page.goto(base + '/history?utm_source=test#timeline', { waitUntil: 'load' });
   assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://marsharbel.com/history');
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(base + '/', { waitUntil: 'load' });
+  for (const dimensions of await page.locator('.promo-card img').evaluateAll(images => images.map(image => {
+    const rect = image.getBoundingClientRect();
+    return { width: rect.width, height: rect.height };
+  }))) {
+    assert.ok(Math.abs(dimensions.width / dimensions.height - 16 / 9) < 0.02, 'Promo previews retain their responsive aspect ratio');
+  }
   const noJs = await browser.newContext({ javaScriptEnabled: false });
   const staticPage = await noJs.newPage();
   await staticPage.goto(base + '/', { waitUntil: 'load' });
