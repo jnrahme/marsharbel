@@ -582,7 +582,7 @@ Add it to `test:rosary-all` (or create a new aggregate) if it should run in full
 | `dead-code-check.yml` | PRs + push to main/stage | Detect unreferenced files |
 | `pr-preview.yml` | PR opened/synced | Deploy Netlify preview, comment PR with URL |
 | `cleanup-preview.yml` | PR closed | Delete Netlify preview deploy |
-| `deploy-stage.yml` | Push to `stage` | Run QA, then Hostinger auto-deploys |
+| `deploy-stage.yml` | Push to `stage` | Run QA, then verify live frontend files match the checkout; Hostinger deploys independently via webhook |
 | `auto-pr-to-main.yml` | Push to `stage` | Create PR from stage to main |
 
 ### Deployment Flow
@@ -596,6 +596,18 @@ Feature Branch → PR (triggers: QA + dead-code + preview deploy)
 ```
 
 ### What Blocks a Merge
+
+Hostinger's webhook receipt is not a deployment result. The deployment workflow
+compares live HTML, JavaScript, CSS and web manifest contents with the pushed
+checkout and fails if they remain different after retries. It does not verify
+every media file or server-side PHP behavior. Run it locally with
+`python3 scripts/qa/verify_deployment.py --attempts 1`.
+
+If Hostinger reports `Project directory is not a git repository`, preserve the
+hosted files outside `public_html` before recreating the Git checkout. Keep
+`.git` intact for future pushes; archive-based replacement of the live folder
+can break this integration. Check hPanel's latest Git build output, then verify
+the website itself.
 
 - QA test failure (any of 190+ tests)
 - Dead code detected (unreferenced JS, images, or orphan HTML)

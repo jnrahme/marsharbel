@@ -5,6 +5,10 @@ on:
     branches:
       - stage
 
+concurrency:
+  group: hostinger-stage
+  cancel-in-progress: true
+
 jobs:
   qa:
     runs-on: ubuntu-latest
@@ -13,6 +17,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Test deployment verification
+        run: python3 -m unittest discover -s scripts/qa -p 'test_verify_deployment.py'
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -29,9 +36,13 @@ jobs:
       - name: Run QA suite
         run: npm run qa:ci
 
-  notify-deploy:
+  verify-deployment:
     needs: qa
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - name: Hostinger auto-deploys via webhook
-        run: echo "QA passed. Hostinger webhook triggers auto-deploy from stage branch."
+      - name: Checkout pushed version
+        uses: actions/checkout@v4
+
+      - name: Verify Hostinger serves this frontend
+        run: python3 scripts/qa/verify_deployment.py
