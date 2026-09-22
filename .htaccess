@@ -12,6 +12,10 @@ RewriteRule ^ https://marsharbel.com%{REQUEST_URI} [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+index(?:\.html)?(?:[\s?]|$) [NC]
 RewriteRule ^index(?:\.html)?$ / [R=301,L]
 
+# Recover the old misplaced Rosary links reported by Search Console. Keep the
+# language query parameter so visitors retain their selected translation.
+RewriteRule ^mysteries/rosary-visual-guide(?:\.html)?/?$ /rosary-visual-guide [R=301,L]
+
 # Redirect direct ".html" requests to clean URLs.
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]|$) [NC]
 RewriteRule ^ /%1 [R=301,L]
