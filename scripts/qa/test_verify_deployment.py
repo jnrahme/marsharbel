@@ -8,6 +8,22 @@ import sys
 from tempfile import TemporaryDirectory
 from threading import Thread
 import unittest
+import struct
+import zlib
+
+from verify_deployment import contents_match
+
+
+def icon_png(indices=(1, 0), filter_type=0, metadata=False):
+    def chunk(kind, payload):
+        return struct.pack('>I', len(payload)) + kind + payload + struct.pack('>I', zlib.crc32(kind + payload))
+    row = bytes(indices) if filter_type == 0 else bytes((indices[0], (indices[1] - indices[0]) % 256))
+    return (b'\x89PNG\r\n\x1a\n'
+            + chunk(b'IHDR', struct.pack('>IIBBBBB', 2, 1, 8, 3, 0, 0, 0))
+            + chunk(b'PLTE', b'\x00\x00\x00\xff\xff\xff')
+            + (chunk(b'tEXt', b'Comment\x00CDN metadata') if metadata else b'')
+            + chunk(b'IDAT', zlib.compress(bytes((filter_type,)) + row, 1 if metadata else 9))
+            + chunk(b'IEND', b''))
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -67,6 +83,13 @@ class DeploymentVerificationTest(unittest.TestCase):
         result = self.run_check()
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("root must contain the website", result.stderr)
+
+    def test_lossless_png_reencoding_matches(self):
+        self.assertTrue(contents_match(Path('icon.png'), icon_png(), icon_png(filter_type=1, metadata=True)))
+
+    def test_changed_or_corrupt_png_cannot_match(self):
+        self.assertFalse(contents_match(Path('icon.png'), icon_png(), icon_png(indices=(1, 1))))
+        self.assertFalse(contents_match(Path('icon.png'), icon_png(), b'not a PNG'))
 
 
 if __name__ == "__main__":
