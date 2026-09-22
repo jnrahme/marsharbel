@@ -379,7 +379,7 @@
   function registerServiceWorker() {
     if (!('serviceWorker' in navigator)) return;
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/service-worker.js').catch(function () {
+      navigator.serviceWorker.register('/service-worker.js', { updateViaCache: 'none' }).catch(function () {
         // no-op
       });
     }, { once: true });
