@@ -15,6 +15,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Test deployment verification
+        run: python3 -m unittest discover -s scripts/qa -p 'test_verify_deployment.py'
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
