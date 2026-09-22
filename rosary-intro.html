@@ -34,24 +34,46 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="site-shell nav">
-      <a class="brand" href="./index.html">
+      <a class='brand' href='index.html'>
         <span class="brand-mark">✦</span>
         <span>Saint Charbel</span>
       </a>
-      <nav class="links">
+      <nav class="links" aria-label="Primary">
         <a href="./index.html">Home</a>
-        <a href="./history.html">History</a>
-        <a href="./story.html">Story</a>
-        <a href="./miracles.html">Miracles</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./story.html" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./story.html">Story for Children</a>
+        <a href="./history.html">Full History</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./miracles.html" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./miracles.html">Miracles & Reports</a>
+        <a href="./news.html">Latest News</a>
         <a href="./testimonies.html">Testimonies</a>
+        <a href="./voice-testimony.html">Voice Testimony</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./prayer-library.html" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./prayer-library.html">Prayer Library</a>
+        <a href="./saint-charbel-prayers.html">Saint Charbel Prayers</a>
+        <a href="./saint-charbel-novena.html">Saint Charbel Novena</a>
+        <a href="./saint-charbel-feast-day.html">Feast Day</a>
+        <a href="./rosary-visual-guide.html">Rosary Guide</a>
+        <a href="./rosary-minibook.html">Rosary Minibook</a>
+        <a href="./mystery-meditation.html">Mystery Meditation</a>
+        <a href="./become-like-charbel.html">Become Like Him</a>
+        </div></div>
         <a href="./gallery.html">Gallery</a>
-        <a class="active" href="./rosary-visual-guide.html">Rosary</a>
-      </nav>
+        <a href="./souvenirs.html">Souvenirs</a>
+        </nav>
     </div>
   </header>
 
@@ -64,8 +86,8 @@
         Then continue through all 5 mysteries in your selected set with auto-prayer enabled.
       </p>
       <div class="cta-row">
-        <a class="btn subtle" href="./rosary-visual-guide.html">Back To Rosary Guide</a>
-        <a class="btn subtle" href="./prayer-library.html">Prayer Library</a>
+        <a class='btn subtle' href='rosary-visual-guide.html'>Back To Rosary Guide</a>
+        <a class='btn subtle' href='prayer-library.html'>Prayer Library</a>
       </div>
     </section>
 
@@ -145,8 +167,9 @@
       btn.addEventListener('click', () => startSet(btn.getAttribute('data-set')));
     });
   </script>
-  <script src="./app.js"></script>
-  <script src="./global-audio-player.js"></script>
-  <script src="./translate.js"></script>
+  <script src="app.js"></script>
+  <script src="global-audio-player.js"></script>
+  <script src="translate.js"></script>
+  <script src="./nav.js" defer></script>
 </body>
 </html>
