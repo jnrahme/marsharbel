@@ -1,0 +1,67 @@
+/* Homepage-only component: scoped styles preserve the shared site theme. */
+.monthly-prayer {
+  --prayer-paper: #eee7db;
+  --prayer-ink: #352b22;
+  --prayer-muted: #665746;
+  --prayer-rule: #cfc1ad;
+  margin-block: 2.5rem 3.5rem;
+  color: var(--prayer-ink);
+  background: var(--prayer-paper);
+  border: 1px solid var(--prayer-rule);
+  border-radius: 24px;
+  overflow: hidden;
+  scroll-margin-top: 150px;
+}
+.monthly-prayer-intro { display: grid; grid-template-columns: 200px 1fr 200px; gap: 2rem; align-items: center; padding: 2.5rem; }
+.monthly-prayer-date { display: grid; gap: 1rem; text-align: center; padding-block: 1rem; }
+.monthly-prayer-date > span { font-size: .58rem; font-weight: 800; letter-spacing: .16em; }
+.monthly-prayer-date strong { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 4.8rem; font-weight: 500; line-height: 1; white-space: nowrap; }
+.monthly-prayer-date i { font-size: 3rem; font-weight: 400; color: var(--prayer-muted); }
+.monthly-prayer .monthly-prayer-eyebrow { margin: 0 0 .85rem; font-size: .64rem; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; }
+.monthly-prayer h2 { margin: 0 0 1rem; color: inherit; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.02; }
+.monthly-prayer-invitation > p:not(.monthly-prayer-eyebrow) { font-size: .86rem; line-height: 1.8; margin: 0; max-width: 51ch; }
+.monthly-prayer-invitation .monthly-prayer-timing { margin-top: .8rem !important; color: var(--prayer-muted); font-size: .74rem !important; font-weight: 600; }
+.monthly-prayer-rosary { display: block; padding: 1rem; border: 1px solid var(--prayer-muted); border-radius: 12px; font-size: .85rem; font-weight: 800; }
+.monthly-prayer-rosary > span { float: right; }
+.monthly-prayer-rosary small { display: block; margin-top: .55rem; font-size: .63rem; font-weight: 500; color: var(--prayer-muted); }
+.monthly-prayer-rosary:hover { background: var(--prayer-rule); }
+.monthly-prayer-guide > summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.1rem 2.5rem; border-top: 1px solid var(--prayer-rule); font-size: .78rem; font-weight: 800; cursor: pointer; list-style: none; }
+.monthly-prayer-guide > summary::-webkit-details-marker { display: none; }
+.monthly-prayer-toggle { font-size: 1.4rem; font-weight: 400; }
+.monthly-prayer-guide[open] .monthly-prayer-toggle { transform: rotate(45deg); }
+.monthly-prayer-content { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; padding: 1rem 2.5rem 2rem; }
+.monthly-prayer-steps { padding-top: 1rem; }
+.monthly-prayer-steps ol { list-style: none; counter-reset: prayer-step; margin: 1.5rem 0 0; padding: 0; }
+.monthly-prayer-steps li { counter-increment: prayer-step; position: relative; padding-left: 2.7rem; margin-bottom: 1.7rem; }
+.monthly-prayer-steps li::before { content: '0' counter(prayer-step); position: absolute; left: 0; top: .1rem; font-size: .7rem; font-weight: 800; color: var(--prayer-muted); }
+.monthly-prayer-steps strong { font-size: .95rem; }
+.monthly-prayer-steps li p { font-size: .81rem; line-height: 1.9; margin: .55rem 0 0; color: var(--prayer-muted); }
+.monthly-prayer-text { position: relative; border-radius: 16px; background: var(--theme-surface); color: var(--theme-ink); padding: 2rem; }
+.monthly-prayer-cross { position: absolute; right: 1.8rem; top: 1.4rem; font-size: 1.4rem; color: var(--theme-button); }
+.monthly-prayer-text h3 { margin: 0 0 1.3rem; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; font-weight: 500; }
+.monthly-prayer-text > p:not(.monthly-prayer-eyebrow) { font-size: .85rem; line-height: 1.95; }
+.monthly-prayer-text .monthly-prayer-pause { padding-left: 1rem; border-left: 2px solid var(--theme-accent); font-style: italic; color: var(--theme-ink-soft); }
+.monthly-prayer-text .monthly-prayer-note { font-size: .65rem !important; color: var(--theme-ink-soft); margin-top: 1.5rem; }
+.monthly-prayer-text > a { font-size: .72rem; }
+.monthly-prayer-content a { text-decoration: underline; text-underline-offset: 3px; }
+.monthly-prayer-context { grid-column: 1 / -1; border-top: 1px solid var(--prayer-rule); padding-top: 1.25rem; margin: 0; font-size: .7rem; line-height: 1.8; color: var(--prayer-muted); }
+.monthly-prayer :is(a, summary):focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+.monthly-prayer.is-prayer-day .monthly-prayer-invitation > .monthly-prayer-eyebrow::before { content: ''; display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: #476046; }
+@media (max-width: 1000px) {
+  .monthly-prayer-intro { grid-template-columns: 160px 1fr; }
+  .monthly-prayer-rosary { grid-column: 2; width: fit-content; min-width: 210px; }
+  .monthly-prayer-content { gap: 1.5rem; }
+}
+@media (max-width: 650px) {
+  .monthly-prayer { border-radius: 18px; margin-block: 1.5rem 2.5rem; }
+  .monthly-prayer-intro { grid-template-columns: 1fr; padding: 1.5rem; gap: 1.5rem; }
+  .monthly-prayer-date { display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: 0 0 1.3rem; border-bottom: 1px solid var(--prayer-rule); }
+  .monthly-prayer-date strong { font-size: 3rem; order: 1; }
+  .monthly-prayer-date i { font-size: 2rem; }
+  .monthly-prayer-date > span { font-size: .6rem; max-width: 80px; text-align: left; line-height: 1.8; }
+  .monthly-prayer-date > span:last-child { display: none; }
+  .monthly-prayer-rosary { grid-column: auto; width: 100%; }
+  .monthly-prayer-guide > summary { padding-inline: 1.5rem; min-height: 60px; }
+  .monthly-prayer-content { grid-template-columns: 1fr; padding: .5rem 1.5rem 1.5rem; }
+  .monthly-prayer-text { padding: 1.5rem; }
+}
