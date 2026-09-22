@@ -26,11 +26,29 @@
     var parent = g.querySelector('.nav-parent');
     if (!parent) return;
 
+    g.addEventListener('mouseenter', function () {
+      if (!coarse()) {
+        document.documentElement.classList.remove('nav-suppress');
+        parent.setAttribute('aria-expanded', 'true');
+      }
+    });
+    g.addEventListener('mouseleave', function () {
+      if (!g.contains(document.activeElement) && !g.classList.contains('open')) {
+        parent.setAttribute('aria-expanded', 'false');
+      }
+    });
+    g.addEventListener('focusin', function () {
+      if (!document.documentElement.classList.contains('nav-suppress')) {
+        parent.setAttribute('aria-expanded', 'true');
+      }
+    });
+
     parent.addEventListener('click', function (e) {
       if (!coarse()) return; // desktop: link navigates normally
       if (!g.classList.contains('open')) {
         e.preventDefault();
         closeAll(g);
+        document.documentElement.classList.remove('nav-suppress');
         g.classList.add('open');
         parent.setAttribute('aria-expanded', 'true');
       } else {
@@ -43,13 +61,22 @@
 
     g.addEventListener('focusout', function () {
       window.setTimeout(function () {
-        if (!g.contains(document.activeElement)) closeAll();
+        if (!g.contains(document.activeElement)) {
+          g.classList.remove('open');
+          parent.setAttribute('aria-expanded', String(!coarse() && g.matches(':hover') && !document.documentElement.classList.contains('nav-suppress')));
+        }
       }, 0);
     });
   });
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeAll();
+    if (e.key === 'Tab') document.documentElement.classList.remove('nav-suppress');
+    if (e.key === 'Escape') {
+      var focusedGroup = document.activeElement.closest('.nav-group');
+      document.documentElement.classList.add('nav-suppress');
+      closeAll();
+      if (focusedGroup) focusedGroup.querySelector('.nav-parent').focus();
+    }
   });
   // Conventional behavior: an open dropdown closes when the page scrolls
   // (the pinned bar stays). Scrolls inside the mobile panel do not reach this.
@@ -70,6 +97,10 @@
   }, { passive: true });
   document.addEventListener('mousemove', function () {
     document.documentElement.classList.remove('nav-suppress');
+    if (!coarse()) groups.forEach(function (g) {
+      var parent = g.querySelector('.nav-parent');
+      if (parent) parent.setAttribute('aria-expanded', String(g.matches(':hover') || g.contains(document.activeElement) || g.classList.contains('open')));
+    });
   }, { passive: true });
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.nav-group')) closeAll();

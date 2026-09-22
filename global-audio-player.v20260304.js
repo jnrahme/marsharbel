@@ -84,7 +84,7 @@
       <button id="floating-audio-back" type="button" class="btn subtle" aria-label="Previous step" title="Previous step">&lt;&lt;</button>
       <button id="floating-audio-toggle" type="button" class="btn subtle">Pause</button>
       <button id="floating-audio-skip" type="button" class="btn subtle" aria-label="Next step" title="Next step">&gt;&gt;</button>
-      <a id="floating-audio-open" class="btn primary" href="./rosary-visual-guide.html">Open Mystery</a>
+      <a id="floating-audio-open" class="btn primary" href="/rosary-visual-guide.html">Open Mystery</a>
     </div>
     <button id="floating-audio-auto-prayer" type="button" class="btn subtle floating-audio-auto-prayer-btn">Auto Prayer: Disabled</button>
     <button id="floating-audio-next" type="button" class="btn primary floating-audio-next">Next</button>
