@@ -5,6 +5,10 @@ on:
     branches:
       - stage
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   create-pr:
     runs-on: ubuntu-latest
@@ -19,6 +23,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          if git diff --quiet origin/main...HEAD; then
+            echo "Stage already matches main; no promotion PR is needed."
+            exit 0
+          fi
+
           BRANCH="promote/stage-to-main-$(date +%Y%m%d-%H%M%S)"
           git checkout -b "$BRANCH"
           git push origin "$BRANCH"
