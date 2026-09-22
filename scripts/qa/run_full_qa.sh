@@ -9,6 +9,8 @@ fi
 
 cd "${ROOT}"
 
+node scripts/build-home-css.mjs --check
+
 echo "[qa] Checking SEO metadata and sitemap coverage"
 python3 scripts/qa/check_seo.py
 python3 -m unittest discover -s scripts/qa -p 'test_seo.py'

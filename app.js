@@ -9,10 +9,12 @@ const observer = new IntersectionObserver(
   { threshold: 0.15 }
 );
 
-document.querySelectorAll('.reveal').forEach(el => {
-  // Keep initial content visible, including when JavaScript is unavailable.
-  // Only animate content that starts below the viewport.
-  if (el.getBoundingClientRect().top >= window.innerHeight) el.classList.add('reveal-pending');
+const revealElements = [...document.querySelectorAll('.reveal')];
+// Measure before adding classes to avoid repeated layout recalculations.
+// Keep initial content visible; animate only content below the viewport.
+const belowFoldReveals = revealElements.filter(el => el.getBoundingClientRect().top >= window.innerHeight);
+belowFoldReveals.forEach(el => el.classList.add('reveal-pending'));
+revealElements.forEach(el => {
   observer.observe(el);
 });
 

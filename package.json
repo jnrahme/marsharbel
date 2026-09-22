@@ -20,7 +20,8 @@
     "qa:agentic:smoke": "scripts/qa/agentic_smoke.sh",
     "qa:dead-code": "scripts/qa/dead_code_check.sh",
     "quality:e2e": "playwright test --config playwright.config.cjs",
-    "quality": "npm run quality:e2e"
+    "quality": "npm run quality:e2e",
+    "build:home-css": "node scripts/build-home-css.mjs"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +30,8 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
     "@playwright/test": "^1.58.2",
-    "playwright": "^1.58.2"
+    "esbuild": "0.25.12",
+    "playwright": "^1.58.2",
+    "purgecss": "7.0.2"
   }
 }

@@ -1,15 +1,16 @@
-const CACHE_NAME = 'st-charbel-pwa-v3';
+const CACHE_NAME = 'st-charbel-pwa-v4';
 const OFFLINE_URL = '/index.html';
 const PRECACHE_URLS = [
   '/',
   '/index.html',
   '/styles.css?v=20260922-1',
+  '/home.css?v=20260922-1',
   '/app.js',
   '/global-audio-player.js',
   '/translate.js?v=20260922-1',
   '/manifest.webmanifest',
-  '/pwa/icon-192.png',
-  '/pwa/icon-512.png',
+  '/pwa/icon-192-v2.png',
+  '/pwa/icon-512-v2.png',
   '/pwa/apple-touch-icon.png'
 ];
 

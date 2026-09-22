@@ -165,6 +165,12 @@
 
   function buildUrlForLang(langCode) {
     var url = new URL(window.location.href);
+    if (['/', '/index', '/index.html'].indexOf(url.pathname) !== -1 && (langCode === 'ar' || langCode === 'fr')) {
+      url.pathname = '/' + langCode;
+      url.searchParams.delete('lang');
+      url.hash = '';
+      return url.toString();
+    }
     if (!langCode || langCode === 'en') {
       url.searchParams.delete('lang');
     } else {
@@ -553,7 +559,9 @@
 
     var nav = document.querySelector('.topbar .nav');
     if (nav) {
-      nav.appendChild(container);
+      var slot = nav.querySelector('.lang-switcher-slot');
+      if (slot) slot.replaceWith(container);
+      else nav.appendChild(container);
     } else {
       container.classList.add('lang-switcher-floating');
       document.body.appendChild(container);
