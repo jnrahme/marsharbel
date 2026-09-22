@@ -286,6 +286,7 @@ h3 {
 .hero h1 {
   font-size: clamp(2.5rem, 8vw, 5.5rem);
   max-width: 13ch;
+  overflow-wrap: anywhere;
 }
 
 .hero p {
@@ -1543,8 +1544,25 @@ h3 {
   }
 
   .gallery-lightbox {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr) auto;
     gap: 0.5rem;
+    padding-top: 4.5rem;
+  }
+
+  .gallery-lightbox img {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-height: 0;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .gallery-lightbox #lightbox-prev,
+  .gallery-lightbox #lightbox-next {
+    grid-row: 2;
   }
 
   .mockup-grid {
@@ -2298,7 +2316,10 @@ main .card:not(.photo-card):not(.meditation-image-card),
 main .story,main .practice,main .update,main .policy-card,main .source-card,main .mini-section,main .mini-item,main .testimony-card{
   border-left:0;border-right:0;border-top:1px solid var(--theme-line-soft);border-bottom:1px solid var(--theme-line-soft);border-radius:0;background:transparent;box-shadow:none;
 }
-main .grid-2{gap:0}main .grid-2>.card,main .grid-2>.story,main .grid-2>.practice,main .grid-2>.update{padding:1.7rem 0}
+/* Keep neighboring text columns separated even when cards have no side padding. */
+main .grid-2{row-gap:0;column-gap:clamp(1.5rem,3vw,3rem)}
+main .grid-2 > *{min-width:0;overflow-wrap:anywhere}
+main .grid-2>.card,main .grid-2>.story,main .grid-2>.practice,main .grid-2>.update{padding:1.7rem 0}
 .hero .kicker,.section>.kicker,.meditation-hero>.kicker{border:0;border-radius:0;padding:.25rem 0;border-bottom:1px solid var(--theme-line)}
 .gallery-card{border:0;border-radius:0;background:transparent}.gallery-card img{border-radius:0}.gallery-card figcaption{padding-left:0;padding-right:0}
 .gallery-toolbar .btn,.cta-row .btn{border-radius:0}

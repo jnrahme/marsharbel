@@ -151,8 +151,8 @@
     </section>
   </main>
 
-  <div id="gallery-lightbox" class="gallery-lightbox" hidden>
-    <button id="lightbox-close" class="btn subtle" type="button" onclick="window.__closeGallery && window.__closeGallery()">Close</button>
+  <div id="gallery-lightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" hidden>
+    <button id="lightbox-close" class="btn subtle" type="button">Close</button>
     <button id="lightbox-prev" class="btn subtle" type="button">Previous</button>
     <img id="lightbox-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" />
     <button id="lightbox-next" class="btn subtle" type="button">Next</button>
