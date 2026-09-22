@@ -1,0 +1,9 @@
+project_id = "marsharbel-testimonies"
+
+[functions.submit-testimony]
+# Auth is verified against Supabase Auth inside the handler; allow CORS preflight.
+verify_jwt = false
+
+[functions.screen-testimonies]
+# Protected with a separate scheduler secret, then restricted worker sign-in.
+verify_jwt = false

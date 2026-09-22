@@ -63,23 +63,16 @@
     <section class="hero">
       <span class="kicker">Submission</span>
       <h1>Share Your Testimony</h1>
-      <div class="cta-row"><a class='btn subtle' href='account.html'>Your account</a></div><p>Stories can come from anywhere in the world. A free account is required to submit a story, and you must be 18 or older. Every submission stays private until a human moderator approves it; rejected stories and photos are deleted after 30 days. Please do not include medical records, government IDs, addresses, or other sensitive information.</p>
+      <div class="cta-row"><a class='btn subtle' href='account.html'>Your account</a></div><p>Stories can come from anywhere in the world. A free account is required to submit a story, and you must be 18 or older. Every submission stays private until a human moderator approves it; rejected and withdrawn stories are deleted after 30 days. Please do not include medical records, government IDs, addresses, or other sensitive information.</p>
     </section>
 
     <section class="section">
       <article class="card form-card">
         <div class="security-note" role="note"><strong>Private by default.</strong><span>Sign-in, bot checks, server-side limits, validation, and human review protect this intake. Accounts are required to submit; reading approved stories stays open to everyone. No public system is perfectly attack-proof, so submissions can be paused instantly if abuse is detected.</span></div>
-        <form id="testimony-form" class="testimony-form" novalidate>
+        <form id="testimony-form" class="testimony-form">
           <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
-          <label>Full name
-            <input name="full_name" required minlength="2" maxlength="120" />
-          </label>
-
-          <label>Email (optional)
-            <input type="email" name="email" maxlength="160" />
-          </label>
-
+          <label>Public display name<input name="display_name" required minlength="2" maxlength="80" autocomplete="nickname" /><span class="source-meta">Choose what readers will see. Your account email stays private.</span></label>
           <label>Language
             <select name="language">
               <option value="en">English</option>
@@ -89,33 +82,16 @@
           </label>
 
           <label>Country (optional)
-            <input name="country" maxlength="120" />
-          </label>
-
-          <label>Parish / church (optional)
-            <input name="parish" maxlength="180" />
+            <input name="country" maxlength="100" />
           </label>
 
           <label>Date of event (optional)
             <input type="date" name="event_date" />
           </label>
 
-          <label>Type of testimony (optional)
-            <input name="healing_type" maxlength="160" placeholder="Healing, conversion, prayer grace, etc." />
-          </label>
-
-          <label>Photos (optional, up to 5 after secure storage is connected)
-            <input type="file" name="photos" accept="image/jpeg,image/png,image/webp" multiple disabled />
-            <span class="source-meta">Image uploads are safely paused in QA. Before activation, files will be scanned, re-encoded, stripped of metadata, size-limited, stored privately, and approved separately.</span>
-          </label>
-
+          <p>Text only for now. Please do not include medical records, private contact details, or information about other people without their permission.</p>
           <label>Testimony details
-            <textarea name="testimony_text" required minlength="60" maxlength="7000" rows="10" placeholder="What happened? When? How did prayer/devotion to Saint Charbel relate to this?"></textarea>
-          </label>
-
-          <label class="inline-check">
-            <input type="checkbox" name="contact_permission" />
-            You may contact me for clarification.
+            <textarea name="story" required minlength="60" maxlength="7000" rows="10" placeholder="What happened? When? How did prayer/devotion to Saint Charbel relate to this?"></textarea>
           </label>
 
           <label class="inline-check">
@@ -125,25 +101,29 @@
 
           <label class="inline-check">
             <input type="checkbox" name="consent_publish" required />
-            I confirm this testimony is truthful and I consent to private moderation. Publication requires moderator approval.
+            I have permission to share this account, believe it is truthful, and consent to publication of the previewed text and display name after human review.
           </label>
 
+          <label class="inline-check"><input type="checkbox" name="ai_consent" required />I understand that automated screening will process my story to assist a human moderator. It does not verify that the story is true.</label>
           <div id="turnstile-slot"></div>
 
           <div class="cta-row">
-            <button id="submit-testimony-btn" class="btn primary" type="submit">Submit For Review</button>
+            <button id="submit-testimony-btn" class="btn primary" type="submit">Preview testimony</button>
             <a class='btn subtle' href='testimonies.html'>View Published Testimonies</a>
           </div>
-          <p id="submit-status" class="submit-status"></p>
+
         </form>
+        <section id="testimony-preview" hidden aria-label="Publication preview"><h2>Review what readers would see</h2><div id="preview-content"></div><p>This stays private until screening and human review are complete.</p><div class="cta-row"><button id="confirm-testimony" class="btn primary" type="button">Submit For Review</button><button id="edit-preview" class="btn subtle" type="button">Back to editing</button></div></section>
+        <p id="submit-status" class="submit-status" role="status" aria-live="polite" tabindex="-1"></p>
       </article>
     </section>
   </main>
 
   <footer class="footer"><div class="site-shell">Human-reviewed testimony intake. Author: Please pray for the person who made this website.</div></footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
   <script src="testimony-config.js"></script>
+  <script src="testimony-client.js"></script>
   <script src="submit-testimony.js"></script>
   <script src="global-audio-player.js"></script>
   <script src="translate.js?v=20260922-1"></script>

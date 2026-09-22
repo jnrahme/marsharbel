@@ -59,20 +59,21 @@
     </section>
 
     <section class="section">
-      <div class="security-note" role="note"><strong>Moderator access only.</strong><span>At launch the site owner is the sole moderator. This page loads no submission data until the moderator account is authenticated with multi-factor authentication, which the database enforces (aal2). Signed-out visitors and regular accounts see only this sign-in form; regular accounts can submit stories and follow their own status, but cannot approve, reject, edit, or publish. Approval, rejection, unpublishing, and access attempts are logged by the backend.</span></div>
+      <div class="security-note" role="note"><strong>Moderator access only.</strong><span>At launch the site owner is the sole moderator. This page loads no submission data until the moderator account is authenticated with multi-factor authentication, which the database enforces (aal2). Signed-out visitors and regular accounts see only this sign-in form; regular accounts can submit stories and follow their own status, but cannot approve, reject, edit, or publish. Approval, rejection, and unpublishing are recorded in the moderation audit history.</span></div>
       <article class="card form-card">
-        <form id="admin-login-form" class="testimony-form" novalidate>
+        <form id="admin-login-form" class="testimony-form">
           <label>Admin email
             <input type="email" name="email" required />
           </label>
           <label>Password
             <input type="password" name="password" required />
           </label>
+          <div id="admin-captcha"></div>
           <div class="cta-row">
             <button type="submit" class="btn primary">Login</button>
           </div>
         </form>
-        <p id="admin-status" class="submit-status"></p>
+        <form id="admin-mfa-form" class="testimony-form" hidden><div id="mfa-enrollment" hidden><p>Scan this QR code in your authenticator app. Keep its secret private.</p><img id="mfa-qr" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Authenticator enrollment QR code" /><p id="mfa-secret" class="testimony-text"></p></div><label>Authenticator code<input name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" required maxlength="6" /></label><button type="submit" class="btn primary">Verify authenticator</button></form><p id="admin-status" class="submit-status" role="status" aria-live="polite"></p>
       </article>
     </section>
 
@@ -81,18 +82,20 @@
         <button id="admin-logout-btn" class="btn subtle" type="button">Logout</button>
       </div>
 
-      <h2>Pending Review</h2>
+      <article class="card testimony-card"><h2>Publishing controls</h2><p>Daily defaults: 2 submissions per person, 3 pending stories per person, 5 publications, and 50 AI reviews. AI notes never verify a story or publish it.</p><div class="testimony-form"><label class="inline-check"><input id="control-intake" type="checkbox" />Accept submissions and edits</label><label class="inline-check"><input id="control-publishing" type="checkbox" />Allow human-approved publication</label><label class="inline-check"><input id="control-screening" type="checkbox" />Process queued AI reviews</label></div><div class="cta-row"><button id="save-controls" class="btn primary" type="button">Save controls</button><button id="pause-all" class="btn subtle" type="button">Pause intake, AI, and publishing</button><button id="refresh-reviews" class="btn subtle" type="button">Refresh reviews</button></div></article>
+      <h2>Pending Review</h2><div class="cta-row"><button id="queue-previous" class="btn subtle" type="button">Previous queue page</button><span id="queue-position" role="status"></span><button id="queue-next" class="btn subtle" type="button">Next queue page</button></div>
       <div id="pending-list" class="testimony-grid"></div>
 
       <h2 style="margin-top:1.2rem;">Approved</h2>
-      <div id="approved-list" class="testimony-grid"></div>
+      <div class="cta-row"><button id="approved-previous" class="btn subtle" type="button">Previous published page</button><span id="approved-position" role="status"></span><button id="approved-next" class="btn subtle" type="button">Next published page</button></div><div id="approved-list" class="testimony-grid"></div><h2>Reports</h2><div id="report-list" class="testimony-grid"></div><details><summary>Recent audit history</summary><ul id="audit-list"></ul></details>
     </section>
   </main>
 
   <footer class="footer"><div class="site-shell">Admin moderation only. Author: Please pray for the person who made this website.</div></footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
   <script src="./testimony-config.js"></script>
+  <script src="./testimony-client.js"></script>
   <script src="./testimony-admin.js"></script>
   <script src="./global-audio-player.js"></script>
   <script src="./translate.js?v=20260922-1"></script>

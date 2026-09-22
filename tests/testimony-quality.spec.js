@@ -18,14 +18,15 @@ for (const path of pages) {
 }
 test('public intake cannot submit in QA', async ({ page }) => {
   await page.goto('/submit-testimony.html');
-  await expect(page.getByRole('button', { name: 'Submit For Review' })).toBeDisabled();
+  await expect(page.locator('#submit-testimony-btn')).toBeDisabled();
   await expect(page.locator('#submit-status')).toContainText(/safely paused/i);
 });
-test('account creation and image uploads are disabled in QA', async ({ page }) => {
+test('account creation is paused and intake is text-only', async ({ page }) => {
   await page.goto('/account.html');
   await expect(page.getByRole('button', { name: 'Continue securely' })).toBeDisabled();
   await page.goto('/submit-testimony.html');
-  await expect(page.locator('input[type=file]')).toBeDisabled();
+  await expect(page.locator('input[type=file]')).toHaveCount(0);
+  await expect(page.locator('main')).toContainText(/Text only/i);
 });
 test('submit page states account-required and adults-only launch policy', async ({ page }) => {
   await page.goto('/submit-testimony.html');
@@ -60,5 +61,6 @@ test('admin client script gates the panel on the moderator role and MFA', async 
   const js = await (await request.get('/testimony-admin.js')).text();
   expect(js).toContain("'moderator'");
   expect(js).toContain('aal2');
-  expect(js.indexOf('isModerator')).toBeGreaterThan(-1);
+  expect(js).toContain('getAuthenticatorAssuranceLevel');
+  expect(js).toContain('client.auth.getUser()');
 });

@@ -2634,3 +2634,17 @@ html.nav-suppress .nav-group:focus-within .nav-sub {
 @media (max-width: 820px) {
   .layout-open .promo-grid { grid-template-columns: 1fr; }
 }
+
+/* Testimony content is plain text; preserve paragraphs without interpreting HTML. */
+.testimony-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.testimony-grid { margin-block: 1.5rem; }
+.testimony-card { padding-block: 1.5rem; }
+.testimony-card details { margin-block: 1rem; }
+.testimony-card summary { cursor: pointer; font-weight: 700; }
+.testimony-card .testimony-form { margin-block: 1rem; }
+.testimony-card button { margin-top: .5rem; }
+#testimony-preview { scroll-margin-top: 12rem; }
+#mfa-qr { display: block; max-width: 220px; background: white; padding: .5rem; }
+
+/* Preserve native hidden behavior when grid styling is applied to forms. */
+.testimony-form[hidden] { display: none; }

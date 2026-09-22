@@ -1,7 +1,51 @@
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-const allowedOrigins=(Deno.env.get('TESTIMONY_ALLOWED_ORIGINS')||'').split(',').map(v=>v.trim()).filter(Boolean); const headers={'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'}; const reply=(status:number,body:Record<string,unknown>)=>new Response(JSON.stringify(body),{status,headers}); const text=(value:unknown,max:number)=>typeof value==='string'?value.trim().slice(0,max):'';
-Deno.serve(async(req)=>{if(req.method!=='POST')return reply(405,{message:'Method not allowed.'}); const origin=req.headers.get('origin')||''; if(!allowedOrigins.includes(origin))return reply(403,{message:'Origin not allowed.'}); if(Number(req.headers.get('content-length')||0)>24000)return reply(413,{message:'Submission is too large.'}); let body:Record<string,unknown>; try{body=await req.json()}catch{return reply(400,{message:'Invalid request.'})} if(text(body.website,200))return reply(400,{message:'Submission blocked.'}); const fullName=text(body.full_name,120),story=text(body.testimony_text,7000),token=text(body.turnstile_token,4096); if(fullName.length<2||story.length<60||body.consent_publish!==true||!token)return reply(400,{message:'Please complete all required fields.'}); if(body.age_confirmed!==true)return reply(400,{message:'Submissions are limited to adults 18 or older.'}); if(Number(body.elapsed_ms||0)<3500)return reply(429,{message:'Please take a moment before submitting.'});
-const authHeader=req.headers.get('authorization')||''; const userJwt=authHeader.startsWith('Bearer ')?authHeader.slice(7).trim():''; if(!userJwt)return reply(401,{message:'Please sign in to your account before submitting.'});
-const supabaseUrl=Deno.env.get('SUPABASE_URL')||''; const anonKey=Deno.env.get('SUPABASE_ANON_KEY')||''; if(!supabaseUrl||!anonKey)return reply(503,{message:'Intake is not configured.'}); const authClient=createClient(supabaseUrl,anonKey,{auth:{persistSession:false}}); const {data:userData,error:userError}=await authClient.auth.getUser(userJwt); if(userError||!userData?.user?.id)return reply(401,{message:'Please sign in to your account before submitting.'}); const submitterId=userData.user.id;
-const ip=(req.headers.get('cf-connecting-ip')||req.headers.get('x-nf-client-connection-ip')||'').split(',')[0].trim(); const secret=Deno.env.get('TESTIMONY_IP_HMAC_SECRET')||''; if(secret.length<32)return reply(503,{message:'Intake is not configured.'}); const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']); const ipHash=Array.from(new Uint8Array(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode(ip)))).map(b=>b.toString(16).padStart(2,'0')).join(''); const verify=await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({secret:Deno.env.get('TURNSTILE_SECRET_KEY')||'',response:token,remoteip:ip})}); const verdict=await verify.json(); if(!verdict.success||verdict.action!=='submit_testimony')return reply(403,{message:'Human verification failed.'});
-const db=createClient(supabaseUrl,Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')||'',{auth:{persistSession:false}}); const {data,error}=await db.rpc('accept_testimony',{p_ip_hash:ipHash,p_submitter_id:submitterId,p_payload:{full_name:fullName,email:text(body.email,160)||null,language:text(body.language,12)||'en',country:text(body.country,120)||null,parish:text(body.parish,180)||null,event_date:text(body.event_date,10)||null,healing_type:text(body.healing_type,160)||null,testimony_text:story,contact_permission:body.contact_permission===true,consent_publish:true}}); if(error)return reply(error.message.includes('rate_limited')?429:503,{message:error.message.includes('rate_limited')?'Too many submissions. Please try again later.':'Intake is temporarily unavailable.'}); return reply(202,{accepted:true,reference:data});});
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.57.4';
+import { IntakeError, readJsonLimited, validateSubmission } from '../_shared/validation.ts';
+
+Deno.serve(async request => {
+  const origins = (Deno.env.get('TESTIMONY_ALLOWED_ORIGINS') || '').split(',').map(s => s.trim()).filter(Boolean);
+  const origin = request.headers.get('origin') || '';
+  const allowed = origins.includes(origin);
+  const headers: Record<string, string> = { 'content-type': 'application/json', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff', 'vary': 'Origin' };
+  if (allowed) Object.assign(headers, { 'access-control-allow-origin': origin, 'access-control-allow-headers': 'authorization, apikey, content-type, x-client-info', 'access-control-allow-methods': 'POST, OPTIONS' });
+  const reply = (status: number, body: unknown) => new Response(JSON.stringify(body), { status, headers });
+  if (!allowed) return reply(403, { message: 'Origin not allowed.' });
+  if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
+  if (request.method !== 'POST') return reply(405, { message: 'Method not allowed.' });
+  try {
+    const url = Deno.env.get('SUPABASE_URL'); const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY'); const turnstile = Deno.env.get('TURNSTILE_SECRET_KEY');
+    if (!url || !key || !turnstile) return reply(503, { message: 'Submissions are temporarily paused.' });
+    const jwt = request.headers.get('authorization')?.match(/^Bearer (.+)$/i)?.[1];
+    if (!jwt) return reply(401, { message: 'Please sign in.' });
+    const db = createClient(url, key, { auth: { persistSession: false } });
+    const { data: user, error: authError } = await db.auth.getUser(jwt);
+    if (authError || !user.user?.email_confirmed_at) return reply(401, { message: 'Sign in with a verified email address.' });
+    const body = await readJsonLimited(request); const payload = validateSubmission(body);
+    const token = typeof body.turnstile_token === 'string' ? body.turnstile_token : '';
+    if (!token || token.length > 2048) return reply(400, { message: 'Complete the human verification.' });
+    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST', body: new URLSearchParams({ secret: turnstile, response: token }), signal: AbortSignal.timeout(8000)
+    });
+    if (!response.ok) throw new Error('verification unavailable');
+    const verdict = await response.json();
+    if (!verdict.success || verdict.action !== 'submit_testimony' || verdict.hostname !== new URL(origin).hostname) return reply(403, { message: 'Human verification expired or failed. Please try again.' });
+    // Only enable an IP header when a trusted gateway overwrites it and blocks
+    // direct access. Never trust an arbitrary client-supplied forwarding header.
+    let ipHash: string | null = null;
+    const trustedHeader = Deno.env.get('TESTIMONY_TRUSTED_IP_HEADER');
+    if (trustedHeader) {
+      const ip = request.headers.get(trustedHeader); const secret = Deno.env.get('TESTIMONY_IP_HMAC_SECRET') || '';
+      if (!ip || secret.length < 32) throw new Error('IP protection unavailable');
+      const signingKey = await crypto.subtle.importKey('raw', new TextEncoder().encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+      ipHash = [...new Uint8Array(await crypto.subtle.sign('HMAC', signingKey, new TextEncoder().encode(ip)))].map(x => x.toString(16).padStart(2, '0')).join('');
+    }
+    const { data, error } = await db.rpc('testimony_submit', { p_author: user.user.id, p_payload: payload, p_ip_hash: ipHash });
+    if (error) throw error;
+    if (data?.error) {
+      const messages: Record<string,string> = { rate_limited: 'Submission limit reached. Please try another day.', pending_limit: 'You already have three stories awaiting review.', duplicate: 'This story is already in your account.', intake_paused: 'Submissions are temporarily paused.', verified_account_required: 'Verify your email before submitting.' };
+      return reply(data.error === 'intake_paused' ? 503 : 429, { message: messages[data.error] || 'Submission unavailable.' });
+    }
+    return reply(202, { accepted: true, reference: data.id });
+  } catch (error) {
+    return reply(error instanceof IntakeError ? error.status : 503, { message: error instanceof IntakeError ? error.message : 'Submission service is unavailable. Your story has not been confirmed; check your account before retrying.' });
+  }
+});

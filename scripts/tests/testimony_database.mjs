@@ -1,0 +1,66 @@
+import { PGlite } from '@electric-sql/pglite';
+import { readFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const db=new PGlite();
+await db.exec(`create role anon; create role authenticated; create role service_role bypassrls; create schema auth;
+create table auth.users(id uuid primary key,email_confirmed_at timestamptz);
+create function auth.jwt() returns jsonb language sql stable as $$select coalesce(nullif(current_setting('request.jwt.claims',true),''),'{}')::jsonb$$;
+create function auth.uid() returns uuid language sql stable as $$select (auth.jwt()->>'sub')::uuid$$;
+grant usage on schema auth to public;`);
+await db.exec(await readFile('supabase/migrations/202609220001_protected_testimonies.sql','utf8'));
+// Exercise idempotent reruns too.
+await db.exec(await readFile('supabase/migrations/202609220001_protected_testimonies.sql','utf8'));
+const ids=Array.from({length:12},(_,i)=>`00000000-0000-0000-0000-${String(i+1).padStart(12,'0')}`);
+for(const id of ids)await db.query('insert into auth.users values($1,now())',[id]);
+const claims=(id,role='member',aal='aal1')=>({sub:id,app_metadata:{role},aal});
+async function as(role,jwt,sql,params=[]){await db.exec('reset role');await db.query("select set_config('request.jwt.claims',$1,false)",[JSON.stringify(jwt)]);await db.exec(`set role ${role}`);try{return await db.query(sql,params);}finally{await db.exec('reset role');}}
+const mod=claims(ids[10],'moderator','aal2'),member=claims(ids[0]),worker=claims(ids[11],'testimony_worker');
+const payload=n=>({display_name:'Reader '+n,story:`Story ${n}: `+'This is my own account of prayer and hope during a difficult season. '.repeat(2),language:'en',country:'',event_date:'',age_attested:true,consent_publish:true,ai_consent:true});
+const submit=async(id,n)=> (await as('service_role',{},'select testimony_submit($1,$2,null) result',[id,payload(n)])).rows[0].result;
+await assert.rejects(()=>as('authenticated',member,"select testimony_submit($1,$2,null)",[ids[0],payload(1)]),/permission denied/);
+assert.equal((await submit(ids[0],1)).error,'intake_paused');
+await assert.rejects(()=>as('authenticated',claims(ids[10],'moderator'),"select testimony_set_controls(true,true,true)"),/moderator_mfa_required/);
+await as('authenticated',mod,'select testimony_set_controls(true,true,true)');
+await db.query('update auth.users set email_confirmed_at=null where id=$1',[ids[9]]);
+assert.equal((await submit(ids[9],99)).error,'verified_account_required');
+await db.query('update auth.users set email_confirmed_at=now() where id=$1',[ids[9]]);
+const first=(await submit(ids[0],1)).id;assert.ok(first);
+assert.equal((await submit(ids[0],1)).error,'duplicate');
+assert.equal((await submit(ids[0],2)).error,'rate_limited'); // duplicate attempts consume quota
+await assert.rejects(()=>as('anon',{},'select * from testimony_submissions'),/permission denied/);
+assert.equal((await as('authenticated',claims(ids[1]),'select * from testimony_submissions')).rows.length,0);
+assert.equal((await as('authenticated',member,'select * from testimony_submissions')).rows.length,1);
+await assert.rejects(()=>as('authenticated',member,"update testimony_submissions set status='approved'"),/permission denied/);
+await assert.rejects(()=>as('authenticated',member,'select testimony_set_controls(true,true,true)'),/moderator_mfa_required/);
+await assert.rejects(()=>as('authenticated',worker,"select testimony_moderate($1,1,'approve')",[first]),/moderator_mfa_required/);
+await assert.rejects(()=>as('authenticated',mod,"select testimony_moderate($1,1,'approve')",[first]),/screening_required/);
+await assert.rejects(()=>as('authenticated',member,'select testimony_claim_review()'),/worker_required/);
+async function review(){const row=(await as('authenticated',worker,'select testimony_claim_review() job')).rows[0].job;assert.ok(row);await as('authenticated',worker,'select testimony_complete_review($1,$2,$3,$4,false)',[row.id,row.claim,row.revision,{summary:'Needs human review',recommendation:'review',flags:[],questions:[]}]);return row;}
+await assert.rejects(()=>as('authenticated',member,"select testimony_author_action($1,'withdraw',null)",[first]),/stale_revision/);
+await review();await as('authenticated',mod,"select testimony_moderate($1,1,'approve')",[first]);
+const publicRows=(await as('anon',{},'select * from testimony_publications')).rows;assert.equal(publicRows.length,1);assert.ok(!('author_id' in publicRows[0])&&!('email' in publicRows[0])&&!('review_notes' in publicRows[0]));
+await as('authenticated',member,"select testimony_author_action($1,'edit',2,$2)",[first,{display_name:'Reader',story:payload('edited').story}]);
+assert.equal((await as('anon',{},'select * from testimony_publications')).rows.length,0);
+await assert.rejects(()=>as('authenticated',mod,"select testimony_moderate($1,2,'approve')",[first]),/stale_revision/);
+const stale=(await as('authenticated',worker,'select testimony_claim_review() job')).rows[0].job;
+await as('authenticated',member,"select testimony_author_action($1,'withdraw',3)",[first]);
+await as('authenticated',worker,'select testimony_complete_review($1,$2,$3,$4,false)',[stale.id,stale.claim,stale.revision,{summary:'ignored'}]);
+assert.equal((await db.query('select status from testimony_submissions where id=$1',[first])).rows[0].status,'withdrawn');
+// Four further publications reach five total publications today (including withdrawn).
+for(let i=1;i<=5;i++){const id=(await submit(ids[i],i+10)).id;await review();if(i<5)await as('authenticated',mod,"select testimony_moderate($1,1,'approve')",[id]);else{
+ await assert.rejects(()=>as('authenticated',mod,"select testimony_moderate($1,1,'approve')",[id]),/publication_limit/);
+ await assert.rejects(()=>as('authenticated',mod,"select testimony_moderate($1,1,'approve','',true)",[id]),/override_reason_required|publication_limit/);
+ await as('authenticated',mod,"select testimony_moderate($1,1,'approve','Owner reviewed this special publication',true)",[id]);
+ assert.equal((await as('authenticated',member,"select testimony_report($1,'Please check this account carefully') result",[id])).rows[0].result.ok,true);
+}}
+assert.equal((await db.query("select count(*)::int n from testimony_audit where reason like '[CAP OVERRIDE]%'")).rows[0].n,1);
+// Raw worker data access is filtered by RLS, and publication writes are forbidden.
+assert.equal((await as('authenticated',worker,'select * from testimony_submissions')).rows.length,0);
+await assert.rejects(()=>as('authenticated',worker,'delete from testimony_publications'),/permission denied/);
+await db.exec("update testimony_controls set daily_ai_limit=1; delete from testimony_budgets where bucket='ai'");
+await submit(ids[6],70);await submit(ids[7],80);await review();assert.equal((await as('authenticated',worker,'select testimony_claim_review() job')).rows[0].job,null);
+await as('authenticated',mod,'select testimony_set_controls(false,false,false)');assert.equal((await submit(ids[8],90)).error,'intake_paused');
+await assert.rejects(()=>as('authenticated',member,'select testimony_purge()'),/permission denied/);
+await db.query("update testimony_submissions set moderated_at=now()-interval '31 days' where id=$1",[first]);
+assert.equal((await as('service_role',{},'select testimony_purge() n')).rows[0].n,1);
+await db.close();console.log('Testimony SQL: authorization, private/public separation, quotas, human approval, stale edits, withdrawal, reports, worker isolation, retention, and pause checks passed.');
