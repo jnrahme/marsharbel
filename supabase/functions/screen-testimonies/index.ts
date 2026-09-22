@@ -5,14 +5,19 @@ Deno.serve(async request => {
   const secret = Deno.env.get('TESTIMONY_SCHEDULER_SECRET') || '';
   if (request.method !== 'POST' || secret.length < 32 || request.headers.get('authorization') !== `Bearer ${secret}`) return new Response('Unauthorized', { status: 401 });
   const url = Deno.env.get('SUPABASE_URL'); const anon = Deno.env.get('SUPABASE_ANON_KEY');
+  const bootstrapKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
   const email = Deno.env.get('TESTIMONY_WORKER_EMAIL'); const password = Deno.env.get('TESTIMONY_WORKER_PASSWORD');
   const apiKey = Deno.env.get('OPENAI_API_KEY'); const model = Deno.env.get('TESTIMONY_REVIEW_MODEL');
-  if (!url || !anon || !email || !password || !apiKey || !model) return new Response('Screening not configured', { status: 503 });
-  // No service-role key: this dedicated user can only claim and complete reviews.
-  const db = createClient(url, anon, { auth: { persistSession: false, autoRefreshToken: false } });
+  if (!url || !anon || !bootstrapKey || !email || !password || !apiKey || !model) return new Response('Screening not configured', { status: 503 });
+  // Supabase's trusted server Auth path avoids asking a machine to solve CAPTCHA.
+  // This client is used ONLY for Auth, never for database calls or AI tools.
+  const bootstrap = createClient(url, bootstrapKey, { auth: { persistSession: false, autoRefreshToken: false } });
+  let db: ReturnType<typeof createClient> | null = null;
   let job: {id:string;claim:string;revision:number;story:string;language:string;duplicate:boolean} | null = null;
   try {
-    const login = await db.auth.signInWithPassword({ email, password }); if (login.error) throw login.error;
+    const login = await bootstrap.auth.signInWithPassword({ email, password });
+    if (login.error || !login.data.session?.access_token || login.data.user?.app_metadata?.role !== 'testimony_worker' || login.data.user?.email?.toLowerCase() !== email.toLowerCase()) throw new Error('Restricted worker authentication failed');
+    db = createClient(url, anon, { auth: { persistSession: false, autoRefreshToken: false }, global: { headers: { Authorization: `Bearer ${login.data.session.access_token}` } } });
     const claimed = await db.rpc('testimony_claim_review'); if (claimed.error) throw claimed.error;
     job = claimed.data; if (!job) return new Response('No queued job or budget available', { status: 200 });
     const response = await fetch('https://api.openai.com/v1/responses', {
@@ -32,7 +37,7 @@ Deno.serve(async request => {
     if (saved.error) throw saved.error;
     return new Response('Screened one submission', { status: 200 });
   } catch {
-    if (job) await db.rpc('testimony_complete_review', { p_id: job.id, p_claim: job.claim, p_revision: job.revision, p_notes: null, p_failed: true });
+    if (job && db) await db.rpc('testimony_complete_review', { p_id: job.id, p_claim: job.claim, p_revision: job.revision, p_notes: null, p_failed: true });
     return new Response('Screening unavailable; submission remains private', { status: 503 });
-  } finally { await db.auth.signOut(); }
+  } finally { await bootstrap.auth.signOut({ scope: 'local' }); }
 });

@@ -23,7 +23,7 @@ Set these in Supabase Function secrets, not in source control or chat:
 - `OPENAI_API_KEY`: a dedicated project key with usage alerts and the smallest needed access
 - `TESTIMONY_REVIEW_MODEL`: an explicitly selected model supporting Responses API structured outputs; validate it with representative English, Arabic and French samples
 
-Supabase provides `SUPABASE_URL`, `SUPABASE_ANON_KEY`, and `SUPABASE_SERVICE_ROLE_KEY`. Intake alone uses the service role; the screening worker deliberately uses the public key plus its restricted user account.
+Supabase provides `SUPABASE_URL`, `SUPABASE_ANON_KEY`, and `SUPABASE_SERVICE_ROLE_KEY`. Intake uses the service role for the intake RPC. Screening uses the service role only to bootstrap its dedicated worker Auth session through the trusted server login path (ordinary sign-in requires CAPTCHA). It checks the returned worker role and email, then uses a separate public-key client with that restricted worker JWT for all database calls. Server code remains trusted: Supabase injects privileged secrets into Edge Functions; AI output has no tools or credential access.
 
 Optionally set `TESTIMONY_TRUSTED_IP_HEADER` and a random `TESTIMONY_IP_HMAC_SECRET` (32+ characters) **only** behind a gateway that overwrites that header and rejects requests bypassing the gateway. Arbitrary forwarding headers are spoofable. Without this configuration, database account and global limits still apply; the application does not claim IP enforcement.
 
