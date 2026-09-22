@@ -16,6 +16,11 @@ def frontend_files(root):
     files.update((root / "mysteries").glob("*.html"))
     files.update(root / name for name in ("robots.txt", "sitemap.xml"))
     files.update((root / "media/promo/optimized").glob("*.webp"))
+    files.update((root / "media/fonts").glob("*.woff2"))
+    files.update((root / "media/optimized").glob("*.webp"))
+    files.update((root / "media/optimized").glob("*.avif"))
+    files.update((root / "media/promo/optimized").glob("*.avif"))
+    files.update((root / "pwa").glob("*-v2.png"))
     return sorted(path for path in files if path.is_file())
 
 
