@@ -180,7 +180,11 @@ try {
       throw new Error(`Expected lang=es on Story, got: ${page.url()}`);
     }
 
-    await page.click('.topbar .links a[href*="rosary-visual-guide"]');
+    const prayerMenu = page.locator('.topbar .nav-group').filter({
+      has: page.locator('a[href*="rosary-visual-guide"]')
+    });
+    await prayerMenu.locator('.nav-parent').hover();
+    await prayerMenu.locator('a[href*="rosary-visual-guide"]').click();
     await page.waitForURL(/rosary-visual-guide/i, { timeout: 10000 });
     lang = new URL(page.url()).searchParams.get('lang');
     if (lang !== 'es') {
