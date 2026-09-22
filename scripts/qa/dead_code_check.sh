@@ -74,6 +74,38 @@ done
 
 echo "[dead-code] Checking for orphan HTML pages..."
 
+has_clean_inbound_link() {
+  python3 - "$1" <<'PY'
+from html.parser import HTMLParser
+from pathlib import Path
+from urllib.parse import urljoin, urlsplit
+import sys
+
+target = '/' + Path(sys.argv[1]).stem
+
+class Links(HTMLParser):
+    found = False
+
+    def handle_starttag(self, tag, attrs):
+        if tag != 'a':
+            return
+        href = dict(attrs).get('href', '')
+        url = urlsplit(urljoin(self.base, href))
+        if url.netloc == 'marsharbel.com' and url.path.rstrip('/') == target:
+            self.found = True
+
+for path in [*Path('.').glob('*.html'), *Path('mysteries').glob('*.html')]:
+    if path.name == sys.argv[1]:
+        continue
+    parser = Links()
+    parser.base = 'https://marsharbel.com/' + path.as_posix()
+    parser.feed(path.read_text())
+    if parser.found:
+        sys.exit(0)
+sys.exit(1)
+PY
+}
+
 # Check each root HTML page has at least one inbound link from another HTML page
 for htmlfile in *.html; do
   [ -f "$htmlfile" ] || continue
@@ -90,6 +122,9 @@ for htmlfile in *.html; do
   if ! grep -rql "$htmlfile" --include="*.html" . --exclude-dir=node_modules --exclude-dir=tmp --exclude-dir=.venv --exclude-dir=.git --exclude="$htmlfile" >/dev/null 2>&1; then
     # Also check JS files (some pages are navigated to via JS)
     if ! grep -rql "$htmlfile" --include="*.js" . --exclude-dir=node_modules --exclude-dir=tmp --exclude-dir=.venv --exclude-dir=.git >/dev/null 2>&1; then
+      if has_clean_inbound_link "$htmlfile"; then
+        continue
+      fi
       echo "  ORPHAN HTML: $htmlfile (no inbound links from other pages)"
       FAILURES=$((FAILURES + 1))
     fi
