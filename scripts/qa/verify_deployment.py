@@ -14,6 +14,8 @@ def frontend_files(root):
     files = {path for pattern in ("*.html", "*.js", "*.css", "*.webmanifest")
              for path in root.glob(pattern)}
     files.update((root / "mysteries").glob("*.html"))
+    files.update(root / name for name in ("robots.txt", "sitemap.xml"))
+    files.update((root / "media/promo/optimized").glob("*.webp"))
     return sorted(path for path in files if path.is_file())
 
 

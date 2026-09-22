@@ -1541,14 +1541,23 @@ h3 {
 }
 
 .reveal {
+  opacity: 1;
+  transform: none;
+  transition: opacity 550ms ease, transform 550ms ease;
+}
+
+.reveal.reveal-pending:not(.on) {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 550ms ease, transform 550ms ease;
 }
 
 .reveal.on {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; }
 }
 
 @media (max-width: 960px) {

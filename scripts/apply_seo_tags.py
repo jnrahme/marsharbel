@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import glob
+from html import escape, unescape
 import json
 import re
 from pathlib import Path
@@ -11,6 +12,9 @@ SITE = "https://marsharbel.com"
 DEFAULT_IMAGE = f"{SITE}/saint-charbel.jpg"
 
 NOINDEX = {
+    "account.html",
+    "souvenirs.html",
+    "shop.html",
     "submit-testimony.html",
     "testimony-review.html",
     "voice-lab.html",
@@ -37,7 +41,7 @@ DESCRIPTIONS = {
     "shop.html": "Explore Saint Charbel shop offerings and devotional product concepts inspired by prayer, faith, and Catholic spiritual life.",
     "shop-mockup.html": "Preview Saint Charbel shop mockup layouts and design concepts for devotional product presentation.",
     "voice-lab.html": "Test and review Saint Charbel voice and narration tools used for guided prayer and testimony experiences.",
-    "index.html": "Explore the life, history, miracles, testimonies, and Rosary devotion of Saint Charbel on an official tribute site with guided prayer resources.",
+    "index.html": "Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources.",
 }
 
 CANONICAL_OVERRIDE = {
@@ -132,21 +136,20 @@ def strip_old_seo(html: str) -> str:
     for p in patterns:
         html = re.sub(p, "", html, flags=re.I)
 
-    # Always clear previously generated WebPage schema to avoid duplicates.
-    html = re.sub(
-        r"\n\s*<script type=\"application/ld\+json\">[\s\S]*?\"@type\"\s*:\s*\"WebPage\"[\s\S]*?</script>",
-        "",
-        html,
-        flags=re.I,
-    )
+    # Remove only standalone generated WebPage blocks. Preserve authored graphs,
+    # WebSite, BreadcrumbList, and other structured data.
+    def remove_webpage(match):
+        try:
+            data = json.loads(match.group(1))
+        except ValueError:
+            return match.group(0)
+        return "" if isinstance(data, dict) and data.get("@type") == "WebPage" else match.group(0)
 
-    # Keep homepage WebSite schema; replace page-level ld+json elsewhere.
-    if "<title>Saint Charbel | Official Tribute</title>" not in html:
-        html = re.sub(r"\n\s*<script type=\"application/ld\+json\">[\s\S]*?</script>", "", html, flags=re.I)
+    html = re.sub(r'\n\s*<script type="application/ld\+json">([\s\S]*?)</script>', remove_webpage, html, flags=re.I)
     return html
 
 
-def build_meta_block(url: str, title: str, description: str, robots: str, image: str) -> str:
+def build_meta_block(url: str, title: str, description: str, robots: str, image: str, include_schema: bool = True) -> str:
     webpage_schema = {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -156,6 +159,7 @@ def build_meta_block(url: str, title: str, description: str, robots: str, image:
         "isPartOf": {"@type": "WebSite", "name": "Saint Charbel", "url": f"{SITE}/"},
     }
     schema = json.dumps(webpage_schema, ensure_ascii=True, indent=2)
+    url, title, description, robots, image = (escape(value, quote=True) for value in (url, title, description, robots, image))
     return (
         f"\n  <meta name=\"description\" content=\"{description}\" />"
         f"\n  <meta name=\"robots\" content=\"{robots}\" />"
@@ -170,7 +174,7 @@ def build_meta_block(url: str, title: str, description: str, robots: str, image:
         f"\n  <meta name=\"twitter:title\" content=\"{title}\" />"
         f"\n  <meta name=\"twitter:description\" content=\"{description}\" />"
         f"\n  <meta name=\"twitter:image\" content=\"{image}\" />"
-        f"\n  <script type=\"application/ld+json\">\n{schema}\n  </script>"
+        + (f"\n  <script type=\"application/ld+json\">\n{schema}\n  </script>" if include_schema else "")
     )
 
 
@@ -179,17 +183,20 @@ def update_file(path: Path) -> bool:
     if "<head>" not in html:
         return False
 
-    title = TITLE_OVERRIDE.get(path.name, page_title(html, "Saint Charbel"))
-    html = re.sub(r"<title>.*?</title>", f"<title>{title}</title>", html, count=1, flags=re.I | re.S)
-    description = description_for(path, title)
+    title = TITLE_OVERRIDE.get(path.name, unescape(page_title(html, "Saint Charbel")))
+    html = re.sub(r"<title>.*?</title>", lambda _: f"<title>{escape(title)}</title>", html, count=1, flags=re.I | re.S)
+    existing_description = re.search(r'<meta name="description" content="([^"]*)"', html)
+    description = unescape(existing_description[1]) if existing_description else description_for(path, title)
     url = path_to_url(path)
-    robots = robots_for(path)
+    existing_robots = re.search(r'<meta name="robots" content="([^"]*)"', html)
+    robots = existing_robots[1] if existing_robots and "noindex" in existing_robots[1] else robots_for(path)
     image = og_image_for(path)
 
     html2 = strip_old_seo(html)
-    meta_block = build_meta_block(url=url, title=title, description=description, robots=robots, image=image)
+    has_graph_page = bool(re.search(r'"@graph"[\s\S]*?"@type"\s*:\s*"WebPage"', html2))
+    meta_block = build_meta_block(url=url, title=title, description=description, robots=robots, image=image, include_schema=not has_graph_page)
 
-    html3, count = re.subn(r"(<title>.*?</title>)", r"\1" + meta_block, html2, count=1, flags=re.I | re.S)
+    html3, count = re.subn(r"(<title>.*?</title>)", lambda match: match[1] + meta_block, html2, count=1, flags=re.I | re.S)
     if count == 0:
         return False
 
@@ -205,8 +212,6 @@ def main() -> None:
 
     changed = 0
     for path in sorted(files):
-        if path.parts and "tmp" in path.parts:
-            continue
         if update_file(path):
             changed += 1
 
