@@ -396,6 +396,20 @@ if (meditationActions) {
   meditationActions.prepend(startGuidedAudioButton);
 }
 
+const startPrayerButton = document.createElement('button');
+startPrayerButton.id = 'start-prayer';
+startPrayerButton.type = 'button';
+startPrayerButton.className = 'btn primary';
+startPrayerButton.textContent = 'Start Prayer';
+startPrayerButton.setAttribute('data-testid', 'start-prayer');
+const startPrayerAction = document.createElement('p');
+startPrayerAction.className = 'notranslate';
+startPrayerAction.appendChild(startPrayerButton);
+if (heroSection && topMysteryControls) {
+  heroSection.insertBefore(startPrayerAction, topMysteryControls);
+}
+startPrayerButton.addEventListener('click', () => startGuidedAudioButton.click());
+
 const nextPlaybackRequest = () => {
   playbackRequestId += 1;
   return playbackRequestId;
@@ -660,17 +674,21 @@ const updateStartGuidedAudioButton = () => {
   if (!startGuidedAudioButton) return;
   if (playbackPending) {
     startGuidedAudioButton.textContent = 'Starting...';
+    startPrayerButton.textContent = 'Starting...';
     return;
   }
   if (isNarrationPaused()) {
     startGuidedAudioButton.textContent = 'Resume Guided Audio';
+    startPrayerButton.textContent = 'Resume Prayer';
     return;
   }
   if (hasActiveNarration()) {
     startGuidedAudioButton.textContent = 'Pause Guided Audio';
+    startPrayerButton.textContent = 'Pause Prayer';
     return;
   }
   startGuidedAudioButton.textContent = hasUserStartedPlayback ? 'Replay Guided Audio' : 'Play Guided Audio';
+  startPrayerButton.textContent = hasUserStartedPlayback ? 'Replay Prayer' : 'Start Prayer';
 };
 
 const speakPrayer = (prayerKey, onComplete = null, requestId = playbackRequestId) => {
