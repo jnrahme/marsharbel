@@ -138,7 +138,7 @@
         heart: 'Heart Moment: God begins great stories in humble places.',
         scene: 'birth',
         evidencePreset: 'earlyLife',
-        illustration: './media/storybook/images/event-01.png',
+        illustration: './media/storybook/images/event-01.jpg',
         audio: 'page-01.mp3'
       },
       {
@@ -148,7 +148,7 @@
         heart: 'Heart Moment: Pain can become a doorway to deeper faith.',
         scene: 'birth',
         evidencePreset: 'earlyLife',
-        illustration: './media/storybook/images/event-02.png',
+        illustration: './media/storybook/images/event-02.jpg',
         audio: 'page-02.mp3'
       },
       {
@@ -158,7 +158,7 @@
         heart: 'Heart Moment: A quiet heart can hear God clearly.',
         scene: 'birth',
         evidencePreset: 'earlyLife',
-        illustration: './media/storybook/images/event-03.png',
+        illustration: './media/storybook/images/event-03.jpg',
         audio: 'page-03.mp3'
       },
       {
@@ -178,7 +178,7 @@
         heart: 'Heart Moment: Holiness begins with a brave yes.',
         scene: 'vocation',
         evidencePreset: 'vocationFormation',
-        illustration: './media/storybook/images/event-04.png',
+        illustration: './media/storybook/images/event-04.jpg',
         audio: 'page-05.mp3'
       },
       {
@@ -198,7 +198,7 @@
         heart: 'Heart Moment: Truth studied with humility becomes wisdom.',
         scene: 'priest',
         evidencePreset: 'vocationFormation',
-        illustration: './media/storybook/images/event-06.png',
+        illustration: './media/storybook/images/event-06.jpg',
         audio: 'page-07.mp3'
       },
       {
@@ -218,7 +218,7 @@
         heart: 'Heart Moment: Ordinary work can become extraordinary love.',
         scene: 'priest',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-07.png',
+        illustration: './media/storybook/images/event-07.jpg',
         audio: 'page-09.mp3'
       },
       {
@@ -228,7 +228,7 @@
         heart: 'Heart Moment: Steady faithfulness makes a strong heart.',
         scene: 'priest',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-09.png',
+        illustration: './media/storybook/images/event-09.jpg',
         audio: 'page-10.mp3'
       },
       {
@@ -248,7 +248,7 @@
         heart: 'Heart Moment: Hidden faithfulness shines in God’s eyes.',
         scene: 'hermit',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-08.png',
+        illustration: './media/storybook/images/event-08.jpg',
         audio: 'page-12.mp3'
       },
       {
@@ -258,7 +258,7 @@
         heart: 'Heart Moment: Holiness can grow in fields, kitchens, and classrooms.',
         scene: 'hermit',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-20.png',
+        illustration: './media/storybook/images/event-20.jpg',
         audio: 'page-13.mp3'
       },
       {
@@ -268,7 +268,7 @@
         heart: 'Heart Moment: Holiness grows when we say no to sin and yes to love.',
         scene: 'hermit',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-09.png',
+        illustration: './media/storybook/images/event-09.jpg',
         audio: 'page-14.mp3'
       },
       {
@@ -278,7 +278,7 @@
         heart: 'Heart Moment: Purity is love that protects what is holy.',
         scene: 'hermit',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-09.png',
+        illustration: './media/storybook/images/event-09.jpg',
         audio: 'page-15.mp3'
       },
       {
@@ -288,7 +288,7 @@
         heart: 'Heart Moment: True love for God perseveres to the end.',
         scene: 'passing',
         evidencePreset: 'deathAndAfter',
-        illustration: './media/storybook/images/event-10.png',
+        illustration: './media/storybook/images/event-10.jpg',
         audio: 'page-16.mp3'
       },
       {
@@ -298,7 +298,7 @@
         heart: 'Heart Moment: One hidden life can touch the whole world.',
         scene: 'healing',
         evidencePreset: 'deathAndAfter',
-        illustration: './media/storybook/images/event-13.png',
+        illustration: './media/storybook/images/event-13.jpg',
         audio: 'page-17.mp3'
       },
       {
@@ -308,7 +308,7 @@
         heart: 'Heart Moment: God can use small signs to wake up sleeping hearts.',
         scene: 'healing',
         evidencePreset: 'deathAndAfter',
-        illustration: './media/storybook/images/event-14.png',
+        illustration: './media/storybook/images/event-14.jpg',
         audio: 'page-18.mp3'
       },
       {
@@ -318,7 +318,7 @@
         heart: 'Heart Moment: Signs are invitations to return to God.',
         scene: 'healing',
         evidencePreset: 'deathAndAfter',
-        illustration: './media/storybook/images/event-15.png',
+        illustration: './media/storybook/images/event-15.jpg',
         audio: 'page-19.mp3'
       },
       {
@@ -338,7 +338,7 @@
         heart: 'Heart Moment: The Lord hears cries from hospital rooms and homes.',
         scene: 'healing',
         evidencePreset: 'beatificationCanonization',
-        illustration: './media/storybook/images/event-16.png',
+        illustration: './media/storybook/images/event-16.jpg',
         audio: 'page-21.mp3'
       },
       {
@@ -348,7 +348,7 @@
         heart: 'Heart Moment: Miracles point us to God, not to ourselves.',
         scene: 'legacy',
         evidencePreset: 'beatificationCanonization',
-        illustration: './media/storybook/images/event-17.png',
+        illustration: './media/storybook/images/event-17.jpg',
         audio: 'page-22.mp3'
       },
       {
@@ -358,7 +358,7 @@
         heart: 'Heart Moment: The biggest miracle is returning to God with a changed heart.',
         scene: 'healing',
         evidencePreset: 'nohadTestimony',
-        illustration: './media/storybook/images/event-18.png',
+        illustration: './media/storybook/images/event-18.jpg',
         audio: 'page-23.mp3'
       },
       {
@@ -368,7 +368,7 @@
         heart: 'Heart Moment: Holiness gathers people who would never meet otherwise.',
         scene: 'unity',
         evidencePreset: 'deathAndAfter',
-        illustration: './media/storybook/images/event-19.png',
+        illustration: './media/storybook/images/event-19.jpg',
         audio: 'page-24.mp3'
       },
       {
@@ -378,7 +378,7 @@
         heart: 'Heart Moment: Repeated small yeses become a holy life.',
         scene: 'unity',
         evidencePreset: 'pastoralApplication',
-        illustration: './media/storybook/images/event-20.png',
+        illustration: './media/storybook/images/event-20.jpg',
         audio: 'page-25.mp3'
       },
       {
@@ -388,7 +388,7 @@
         heart: 'Heart Moment: Saints are made by faithful love, one day at a time.',
         scene: 'legacy',
         evidencePreset: 'beatificationCanonization',
-        illustration: './media/storybook/images/event-21.png',
+        illustration: './media/storybook/images/event-21.jpg',
         audio: 'page-26.mp3'
       },
       {
@@ -398,7 +398,7 @@
         heart: 'Heart Moment: Your everyday choices can become a path to sainthood.',
         scene: 'legacy',
         evidencePreset: 'pastoralApplication',
-        illustration: './media/storybook/images/event-22.png',
+        illustration: './media/storybook/images/event-22.jpg',
         audio: 'page-27.mp3'
       }
     ],
