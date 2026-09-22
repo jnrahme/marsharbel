@@ -329,9 +329,9 @@
 
   function cleanCanonicalPath(pathname) {
     if (!pathname) return '/';
-    if (pathname === '/index.html') return '/';
+    if (pathname === '/index.html' || pathname === '/index') return '/';
     if (pathname.endsWith('.html')) return pathname.slice(0, -5);
-    return pathname;
+    return pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname;
   }
 
   function inferDescription() {
@@ -356,13 +356,18 @@
     url.hash = '';
     url.search = '';
     url.pathname = cleanCanonicalPath(url.pathname);
-    var canonical = url.toString();
+    // Published HTML owns canonicalization, including aliases and the preferred
+    // production hostname. Do not replace it with a preview or www origin.
+    var canonicalTag = document.head.querySelector('link[rel="canonical"]');
+    var canonical = canonicalTag && canonicalTag.getAttribute('href') || url.toString();
     var title = document.title || 'Saint Charbel';
     var description = inferDescription();
     var imageUrl = new URL('/saint-charbel.jpg', window.location.origin).toString();
 
     ensureHeadTag('meta', { name: 'description', content: description });
-    ensureHeadTag('meta', { name: 'robots', content: 'index,follow,max-image-preview:large' });
+    if (!document.head.querySelector('meta[name="robots"]')) {
+      ensureHeadTag('meta', { name: 'robots', content: 'index,follow,max-image-preview:large' });
+    }
     ensureHeadTag('link', { rel: 'canonical', href: canonical });
     ensureHeadTag('meta', { property: 'og:type', content: 'website' });
     ensureHeadTag('meta', { property: 'og:site_name', content: 'Saint Charbel' });

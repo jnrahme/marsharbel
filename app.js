@@ -9,7 +9,12 @@ const observer = new IntersectionObserver(
   { threshold: 0.15 }
 );
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => {
+  // Keep initial content visible, including when JavaScript is unavailable.
+  // Only animate content that starts below the viewport.
+  if (el.getBoundingClientRect().top >= window.innerHeight) el.classList.add('reveal-pending');
+  observer.observe(el);
+});
 
 const counters = document.querySelectorAll('[data-count]');
 const animateCounter = el => {

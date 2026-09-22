@@ -4,9 +4,17 @@ AddType application/manifest+json .webmanifest
 
 RewriteEngine On
 
+# Consolidate the known public alias; leave staging/local hosts untouched.
+RewriteCond %{HTTP_HOST} ^www\.marsharbel\.com$ [NC]
+RewriteRule ^ https://marsharbel.com%{REQUEST_URI} [R=301,L]
+
+# Consolidate explicit homepage requests without redirecting internal rewrites.
+RewriteCond %{THE_REQUEST} \s/+index(?:\.html)?(?:[\s?]|$) [NC]
+RewriteRule ^index(?:\.html)?$ / [R=301,L]
+
 # Redirect direct ".html" requests to clean URLs.
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]|$) [NC]
-RewriteRule ^ %1 [R=301,L]
+RewriteRule ^ /%1 [R=301,L]
 
 # Resolve /gallery to gallery.html even though /gallery is a real assets directory.
 RewriteRule ^gallery/?$ gallery.html [L]
