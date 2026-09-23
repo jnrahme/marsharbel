@@ -26,9 +26,13 @@ try{
   assert.equal(await page.getByRole('button',{name:'Submit testimony',exact:true}).count(),1);
   assert.equal(await page.locator('#testimony-preview').count(),0);
   await page.evaluate(()=>cap['expired-callback']());
+  assert.equal(await page.locator('.human-verification.field-missing').count(),1);
+
   assert.equal(await page.getByRole('button',{name:'Submit testimony',exact:true}).isDisabled(),true);await page.locator('#testimony-form').evaluate(form=>form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true})));assert.equal(sent,undefined);
   assert.ok((await page.locator('#submit-status').innerText()).includes('human verification'));
   await page.evaluate(()=>cap.callback('valid'));
+  assert.equal(await page.locator('.human-verification.field-missing').count(),0);
+
   assert.equal(await page.locator('#submit-testimony-btn').isEnabled(),true);
   await page.locator('[name=consent_publish]').uncheck();assert.equal(await page.locator('#submit-testimony-btn').isDisabled(),true);
   await page.locator('[name=consent_publish]').check();
@@ -55,6 +59,11 @@ try{
  await feedback.route('https://test.supabase.co/functions/v1/submit-testimony', async route => { feedbackRequests++; await route.fulfill({status:502,contentType:'text/html',body:'<html>Bad gateway</html>'}); });
  await feedback.goto(base+'/submit-testimony.html');
  assert.match(await feedback.locator('#submit-readiness').innerText(), /at least 2/);
+ assert.equal(await feedback.locator('[name=display_name]').getAttribute('aria-invalid'),'true');
+ assert.equal(await feedback.locator('[name=display_name]').evaluate(el=>getComputedStyle(el).borderTopColor),'rgb(237, 139, 133)');
+ assert.equal(await feedback.locator('.inline-check.field-missing').count(),3);
+ assert.equal(new URL(await feedback.getByRole('link',{name:'Admin',exact:true}).getAttribute('href'),base).pathname,'/testimony-review.html');
+
  await feedback.locator('[name=display_name]').fill(' A ');
  await feedback.locator('[name=story]').fill('A complete test story with more than sixty characters to exercise customer feedback.');
  for(const name of ['age_confirmed','consent_publish','ai_consent']) await feedback.locator(`[name=${name}]`).check();
@@ -63,6 +72,10 @@ try{
  await feedback.locator('#testimony-form').evaluate(form=>form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true})));
  assert.equal(feedbackRequests,0); assert.match(await feedback.locator('#name-error').innerText(), /at least 2/);
  await feedback.locator('[name=display_name]').fill('Jo');
+ assert.equal(await feedback.locator('[name=display_name]').getAttribute('aria-invalid'),'false');
+ assert.notEqual(await feedback.locator('[name=display_name]').evaluate(el=>getComputedStyle(el).borderTopColor),'rgb(237, 139, 133)');
+ assert.equal(await feedback.locator('.inline-check.field-missing').count(),0);
+
  assert.equal(await feedback.locator('#submit-testimony-btn').isEnabled(),true);
  assert.match(await feedback.locator('#submit-readiness').innerText(), /Everything is complete/);
  await feedback.locator('[name=story]').fill('Too short');

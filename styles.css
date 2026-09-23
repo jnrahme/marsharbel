@@ -2712,3 +2712,18 @@ html.nav-suppress .nav-group:focus-within .nav-sub {
 
 /* Keep retry controls hidden until the verification provider reports failure. */
 .captcha-retry[hidden] { display: none !important; }
+
+/* Testimony intake: pair the missing-requirement checklist with visible borders. */
+#testimony-form { --form-error: #ed8b85; }
+#testimony-form input[aria-invalid="true"]:not([type="checkbox"]),
+#testimony-form textarea[aria-invalid="true"] {
+  border-color: var(--form-error);
+  box-shadow: 0 0 0 1px var(--form-error);
+}
+#testimony-form .inline-check,
+#testimony-form .human-verification {
+  border: 2px solid transparent;
+  padding: .65rem;
+}
+#testimony-form .field-missing { border-color: var(--form-error); }
+.footer .testimony-admin-link { font-size: .85em; margin-inline-start: .75rem; }
