@@ -92,7 +92,9 @@
         <form id="testimony-form" class="testimony-form">
           <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
-          <label>Public display name<input name="display_name" required minlength="2" maxlength="80" autocomplete="nickname" /><span class="source-meta">Choose what readers will see. Use a first name or nickname; do not include private contact details.</span></label>
+          <label>Public display name<input name="display_name" required minlength="2" maxlength="80" autocomplete="nickname" aria-describedby="name-help name-error" /><span class="source-meta">Choose what readers will see. Use a first name or nickname; do not include private contact details.</span></label>
+          <p id="name-help" class="source-meta">Your display name must contain 2–80 characters, excluding spaces at the beginning and end.</p>
+          <p id="name-error" class="submit-status warn" hidden></p>
           <label>Language
             <select name="language">
               <option value="en">English</option>
@@ -111,8 +113,11 @@
 
           <p>Text only for now. Please do not include medical records, private contact details, or information about other people without their permission.</p>
           <label>Testimony details
-            <textarea name="story" required minlength="60" maxlength="7000" rows="10" placeholder="What happened? When? How did prayer/devotion to Saint Charbel relate to this?"></textarea>
+            <textarea name="story" aria-describedby="story-help story-error" required minlength="60" maxlength="7000" rows="10" placeholder="What happened? When? How did prayer/devotion to Saint Charbel relate to this?"></textarea>
           </label>
+
+          <p id="story-help" class="source-meta">Your story must contain 60–7,000 characters.</p>
+          <p id="story-error" class="submit-status warn" hidden></p>
 
           <label class="inline-check">
             <input type="checkbox" name="age_confirmed" required />
@@ -127,8 +132,9 @@
           <label class="inline-check"><input type="checkbox" name="ai_consent" required />I understand that automated screening may process my story to assist a human moderator. It does not verify that the story is true.</label>
           <div class="human-verification"><h2>Human verification</h2><p>Complete the security check, then submit your testimony for review.</p><div id="turnstile-slot"></div></div>
 
+          <div id="submit-readiness" role="status" aria-live="polite" aria-atomic="true"></div>
           <div class="cta-row">
-            <button id="submit-testimony-btn" class="btn primary" type="submit" disabled>Submit testimony</button>
+            <button id="submit-testimony-btn" aria-describedby="submit-readiness" class="btn primary" type="submit" disabled>Submit testimony</button>
           </div>
 
         </form>
@@ -142,7 +148,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
   <script src="testimony-config.js?v=20260923-1"></script>
   <script src="testimony-client.js?v=20260923-1"></script>
-  <script src="submit-testimony.js?v=20260923-1"></script>
+  <script src="submit-testimony.js?v=20260923-2"></script>
   <script src="global-audio-player.js"></script>
   <script src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
