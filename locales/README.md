@@ -36,7 +36,7 @@ The build updates the HTML, language links, canonical URLs, hreflang, sitemap an
 4. Inspect mobile navigation, long text, direction, source labels and topic-preserving language switching. Test route redirects under Apache/LiteSpeed.
 5. Have Joey test locally before requesting publication approval. Do not change published URL slugs casually; a route change needs permanent redirects.
 
-The renderer needs no per-language conditionals. The English homepage remains the existing `/`; English reading guides live under `/en/`. The seven other homepages are `/ar`, `/fr`, `/es`, `/pt`, `/it`, `/de` and `/pl`.
+The renderer needs no per-language conditionals. The English homepage remains the existing `/`; English reading guides live under `/en/`. The seven other homepages are `/ar/`, `/fr/`, `/es/`, `/pt/`, `/it/`, `/de/` and `/pl/`.
 
 ## Hard rule and existing pages
 
@@ -47,3 +47,25 @@ The legacy JavaScript detector is heuristic and does not prove that every dynami
 ## Existing language control
 
 The app already provides `#sc-language-select` at the top. Reuse it; do not add footer or in-content language menus. Existing pages' managed `i18n-navigation` blocks intentionally remain empty, and the generator keeps them empty. Standalone guides have one header language control because they do not load the app selector. The duplicate-control regression test protects the affected app pages. See `AGENTS.md` for the mandatory rule.
+
+## International SEO plan
+
+The indexable language set is the eight languages with complete, human-authored
+static guide catalogs: English (`/`), Arabic (`/ar/`), French (`/fr/`), Spanish
+(`/es/`), Portuguese (`/pt/`), Italian (`/it/`), German (`/de/`) and Polish
+(`/pl/`). Each has its own canonical URL, sitemap entry, reciprocal `hreflang`
+links, translated metadata and five crawlable guides. This is the set we submit
+to search engines and maintain as SEO content.
+
+The top application selector also offers many additional languages through
+runtime translation. Those choices intentionally remain on the current page URL;
+they do not create separate crawlable documents, canonical URLs or sitemap
+entries. Do not submit duplicate query-string variants or add `hreflang` entries
+for runtime-only translations. A language becomes part of the SEO set only when
+we add a complete catalog, static routes, translated metadata, source links and
+route/SEO tests for it.
+
+After changing a catalog or route, run `npm run i18n:build`, `npm run i18n:check`,
+`python3 scripts/qa/check_language_routes.py`, the full QA suite and the browser
+quality suite. Verify the live sitemap in Google Search Console and IndexNow
+after publication. Keep the sitemap limited to canonical 200-serving URLs.
