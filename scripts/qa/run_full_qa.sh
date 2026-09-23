@@ -10,6 +10,8 @@ fi
 cd "${ROOT}"
 
 node scripts/build-home-css.mjs --check
+npm run i18n:check
+npm run i18n:test
 
 echo "[qa] Checking SEO metadata and sitemap coverage"
 python3 scripts/qa/check_seo.py

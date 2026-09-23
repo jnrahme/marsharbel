@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "defaultLocale": "en",
+  "site": "https://marsharbel.com",
+  "locales": {
+    "en": {
+      "nativeName": "English",
+      "direction": "ltr",
+      "home": "/",
+      "slugs": {
+        "biography": "biography",
+        "prayers": "prayers",
+        "novena": "novena",
+        "rosary": "rosary",
+        "annaya": "annaya"
+      }
+    },
+    "ar": {
+      "nativeName": "العربية",
+      "direction": "rtl",
+      "home": "/ar",
+      "slugs": {
+        "biography": "biography",
+        "prayers": "prayers",
+        "novena": "novena",
+        "rosary": "rosary",
+        "annaya": "annaya"
+      }
+    },
+    "fr": {
+      "nativeName": "Français",
+      "direction": "ltr",
+      "home": "/fr",
+      "slugs": {
+        "biography": "biographie",
+        "prayers": "prieres",
+        "novena": "neuvaine",
+        "rosary": "chapelet",
+        "annaya": "annaya"
+      }
+    },
+    "es": {
+      "nativeName": "Español",
+      "direction": "ltr",
+      "home": "/es",
+      "slugs": {
+        "biography": "biografia",
+        "prayers": "oraciones",
+        "novena": "novena",
+        "rosary": "rosario",
+        "annaya": "annaya"
+      }
+    },
+    "pt": {
+      "nativeName": "Português",
+      "direction": "ltr",
+      "home": "/pt",
+      "slugs": {
+        "biography": "biografia",
+        "prayers": "oracoes",
+        "novena": "novena",
+        "rosary": "rosario",
+        "annaya": "annaya"
+      }
+    },
+    "it": {
+      "nativeName": "Italiano",
+      "direction": "ltr",
+      "home": "/it",
+      "slugs": {
+        "biography": "biografia",
+        "prayers": "preghiere",
+        "novena": "novena",
+        "rosary": "rosario",
+        "annaya": "annaya"
+      }
+    },
+    "de": {
+      "nativeName": "Deutsch",
+      "direction": "ltr",
+      "home": "/de",
+      "slugs": {
+        "biography": "biografie",
+        "prayers": "gebete",
+        "novena": "novene",
+        "rosary": "rosenkranz",
+        "annaya": "annaya"
+      }
+    },
+    "pl": {
+      "nativeName": "Polski",
+      "direction": "ltr",
+      "home": "/pl",
+      "slugs": {
+        "biography": "biografia",
+        "prayers": "modlitwy",
+        "novena": "nowenna",
+        "rosary": "rozaniec",
+        "annaya": "annaya"
+      }
+    }
+  },
+  "topics": {
+    "biography": {
+      "sections": [
+        "origins",
+        "vocation",
+        "hermitage",
+        "recognition",
+        "dailyLife",
+        "family"
+      ],
+      "relatedEnglish": "/history",
+      "sources": [
+        "biography",
+        "canonization",
+        "hermitage"
+      ]
+    },
+    "prayers": {
+      "sections": [
+        "begin",
+        "daily",
+        "illness",
+        "familyPeace",
+        "thanks",
+        "after"
+      ],
+      "relatedEnglish": "/saint-charbel-prayers",
+      "sources": [
+        "canonization"
+      ]
+    },
+    "novena": {
+      "sections": [
+        "rhythm",
+        "commonPrayer",
+        "day1",
+        "day2",
+        "day3",
+        "day4",
+        "day5",
+        "day6",
+        "day7",
+        "day8",
+        "day9"
+      ],
+      "relatedEnglish": "/saint-charbel-novena",
+      "sources": [
+        "novena",
+        "monastery"
+      ]
+    },
+    "rosary": {
+      "sections": [
+        "opening",
+        "decade",
+        "joyful",
+        "luminous",
+        "sorrowful",
+        "glorious",
+        "finish"
+      ],
+      "relatedEnglish": "/rosary-intro",
+      "sources": [
+        "rosary",
+        "rosaryPrayers"
+      ]
+    },
+    "annaya": {
+      "sections": [
+        "places",
+        "beforeTravel",
+        "prepare",
+        "respect",
+        "atHome",
+        "celebrations"
+      ],
+      "relatedEnglish": "/visit-annaya",
+      "sources": [
+        "monastery",
+        "hermitage"
+      ]
+    }
+  },
+  "sources": {
+    "biography": "https://saintcharbel.com/saint-charbel-biography/",
+    "canonization": "https://www.vatican.va/content/paul-vi/fr/homilies/1977/documents/hf_p-vi_hom_19771009.html",
+    "hermitage": "https://saintcharbel.com/the-hermitage/",
+    "monastery": "https://saintcharbel.com/",
+    "novena": "https://saintcharbel.com/novena-of-saint-charbel-en/",
+    "rosary": "https://www.vatican.va/special/rosary/documents/misteri_fr.html",
+    "rosaryPrayers": "https://www.vaticannews.va/fr/priere/rosaire.html"
+  }
+}

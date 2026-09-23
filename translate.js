@@ -165,9 +165,14 @@
 
   function buildUrlForLang(langCode) {
     var url = new URL(window.location.href);
-    if (['/', '/index', '/index.html'].indexOf(url.pathname) !== -1 && (langCode === 'ar' || langCode === 'fr')) {
-      url.pathname = '/' + langCode;
+    var routes = window.SC_LOCALE_ROUTES;
+    var cleanPath = url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+    var isHome = ['/', '/index'].indexOf(cleanPath) !== -1;
+    var targets = routes && (isHome ? routes.homes : routes.topics[cleanPath]);
+    if (targets && targets[langCode]) {
+      url.pathname = targets[langCode];
       url.searchParams.delete('lang');
+      if (langCode === 'en' && url.pathname === '/') url.searchParams.set('lang', 'en');
       url.hash = '';
       return url.toString();
     }

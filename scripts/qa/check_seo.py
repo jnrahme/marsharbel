@@ -9,6 +9,8 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[2]
 SITE = "https://marsharbel.com"
+sys.path.insert(0, str(ROOT / "scripts"))
+from i18n.catalog import public_html_files
 
 
 class Page(HTMLParser):
@@ -16,6 +18,7 @@ class Page(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.meta = {}
         self.canonicals = []
+        self.alternates = {}
         self.title = ""
         self.in_title = False
         self.in_schema = False
@@ -43,6 +46,8 @@ class Page(HTMLParser):
             self.meta[attrs.get("name", attrs.get("property", ""))] = attrs.get("content", "")
         if tag == "link" and attrs.get("rel") == "canonical":
             self.canonicals.append(attrs.get("href", ""))
+        if tag == "link" and attrs.get("rel") == "alternate" and attrs.get("hreflang"):
+            self.alternates[attrs["hreflang"]] = attrs.get("href", "")
         if tag == "title":
             self.in_title = True
         if tag == "script" and attrs.get("type") == "application/ld+json":
@@ -70,8 +75,9 @@ def check(root):
     if len(urls) != len(set(urls)):
         errors.append("sitemap.xml: duplicate URLs")
     expected = set()
+    pages = {}
     titles = {}
-    for path in sorted([*root.glob("*.html"), *root.glob("mysteries/*.html")]):
+    for path in public_html_files(root):
         page = Page(path.read_text(encoding="utf-8"))
         # Search Console verification files are tokens, not public HTML pages.
         if not page.has_head:
@@ -83,6 +89,7 @@ def check(root):
         relative = path.relative_to(root).with_suffix("").as_posix()
         canonical = SITE + ("/" if relative == "index" else "/" + relative)
         expected.add(canonical)
+        pages[canonical] = page
         if page.h1_count != 1:
             errors.append(f"{path.name}: expected one main heading, found {page.h1_count}")
         for image in page.missing_alt:
@@ -109,6 +116,12 @@ def check(root):
                 json.loads(schema)
             except ValueError:
                 errors.append(f"{path.name}: invalid JSON-LD")
+    for url, page in pages.items():
+        for language, alternate in page.alternates.items():
+            if alternate not in pages:
+                errors.append(f"{url}: language alternate {language} is not an indexable page: {alternate}")
+            elif pages[alternate].alternates != page.alternates:
+                errors.append(f"{url}: non-reciprocal language alternates with {alternate}")
     for url in sorted(expected - set(urls)):
         errors.append(f"sitemap.xml: missing indexable page {url}")
     for url in sorted(set(urls) - expected):

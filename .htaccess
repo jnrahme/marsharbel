@@ -27,6 +27,13 @@ RewriteRule ^mysteries/rosary-visual-guide(?:\.html)?/?$ /rosary-visual-guide [R
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]|$) [NC]
 RewriteRule ^ /%1 [R=301,L]
 
+# Language hubs also have resource directories; avoid DirectorySlash redirects.
+# i18n-routes:start
+RewriteRule ^en/?$ / [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl)/$ /$1 [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl)$ $1.html [L]
+# i18n-routes:end
+
 # Resolve /gallery to gallery.html even though /gallery is a real assets directory.
 RewriteRule ^gallery/?$ gallery.html [L]
 
