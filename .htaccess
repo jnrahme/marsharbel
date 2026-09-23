@@ -1,5 +1,9 @@
 DirectoryIndex index.html
 
+# Locale hubs such as /ar intentionally coexist with /ar/ resource folders.
+# Let the explicit rewrite rules below own their canonical slash behavior.
+DirectorySlash Off
+
 AddType application/manifest+json .webmanifest
 AddType image/avif .avif
 
