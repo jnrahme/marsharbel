@@ -1,0 +1,9 @@
+project_id = "marsharbel-testimonies"
+
+[functions.submit-testimony]
+# Guest intake verifies CAPTCHA server-side before its service-only RPC; allow CORS preflight.
+verify_jwt = false
+
+[functions.screen-testimonies]
+# Protected with a separate scheduler secret, then restricted worker sign-in.
+verify_jwt = false

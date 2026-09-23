@@ -5,6 +5,12 @@ AddType image/avif .avif
 
 RewriteEngine On
 
+# Deployment contains source and test files; these are never public endpoints.
+RewriteRule ^(?:\.git|\.github|supabase|scripts|tests|personal-docs|docs|node_modules|output|tmp|test-results)(?:/|$) - [F,L]
+<FilesMatch "(?i)(^\.env(?:\..*)?$|\.(?:sql|toml)$|^turnstile-secret\.php(?:\..*)?$)">
+  Require all denied
+</FilesMatch>
+
 # Consolidate the known public alias; leave staging/local hosts untouched.
 RewriteCond %{HTTP_HOST} ^www\.marsharbel\.com$ [NC]
 RewriteRule ^ https://marsharbel.com%{REQUEST_URI} [R=301,L]

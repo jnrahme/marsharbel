@@ -15,6 +15,9 @@ echo "[qa] Checking SEO metadata and sitemap coverage"
 python3 scripts/qa/check_seo.py
 python3 -m unittest discover -s scripts/qa -p 'test_seo.py'
 
+echo "[qa] Running testimony security tests"
+npm run test:testimony-security
+
 echo "[qa] Running site smoke tests"
 npm run test:site-smoke
 

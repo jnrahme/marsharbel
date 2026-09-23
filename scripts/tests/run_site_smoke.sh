@@ -35,3 +35,5 @@ trap cleanup EXIT
 cd "${ROOT}"
 node scripts/tests/site_smoke.mjs "--base-url=${BASE_URL}"
 BASE_URL="${BASE_URL}" node scripts/tests/seo_runtime.mjs
+
+BASE_URL="${BASE_URL}" node scripts/tests/testimony_ui.mjs

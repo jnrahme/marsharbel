@@ -1,0 +1,27 @@
+const { test, expect } = require('@playwright/test');
+const fs = require('node:fs');
+const paths = [...fs.readdirSync('.').filter(p => p.endsWith('.html')), ...fs.readdirSync('mysteries').filter(p => p.endsWith('.html')).map(p => `mysteries/${p}`)]
+  .filter(p => !['ar.html', 'fr.html'].includes(p) && /<header\b/.test(fs.readFileSync(p, 'utf8')));
+for (const file of paths) {
+  test(`${file}: shared menu fits and opens/closes`, async ({ page }) => {
+    await page.goto('/' + file, { waitUntil: 'domcontentloaded' });
+    const nav = page.locator('.topbar nav.links');
+    await expect(nav).toHaveAttribute('aria-label', 'Primary');
+    await expect(nav.locator(':scope > a, :scope > .nav-group > .nav-parent')).toHaveText(['Home', 'Story', 'Miracles', 'Prayer', 'Gallery', 'Souvenirs']);
+    const outside = await nav.evaluate(el => [...el.querySelectorAll(':scope > a, :scope > .nav-group > .nav-parent')].filter(a => { const r=a.getBoundingClientRect(); return r.left < -1 || r.right > innerWidth+1; }).map(a=>a.textContent));
+    expect(outside).toEqual([]);
+    for (const label of ['Story', 'Miracles', 'Prayer']) {
+      const parent = nav.locator('.nav-parent').filter({hasText:label});
+      const group = nav.locator('.nav-group').filter({has:page.locator('.nav-parent').filter({hasText:label})});
+      if (await page.evaluate(() => matchMedia('(hover: none)').matches || innerWidth<=820)) await parent.click();
+      else await parent.hover();
+      await expect(group.locator('.nav-sub')).toBeVisible();
+      await expect(parent).toHaveAttribute('aria-expanded', 'true');
+      const clipped = await group.locator('.nav-sub').evaluate(el=> {const r=el.getBoundingClientRect();return r.left < -1 || r.right > innerWidth+1;});
+      expect(clipped).toBe(false);
+      await page.keyboard.press('Escape');
+      await expect(group.locator('.nav-sub')).toBeHidden();
+      await expect(parent).toHaveAttribute('aria-expanded','false');
+    }
+  });
+}

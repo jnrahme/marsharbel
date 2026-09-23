@@ -1,1 +1,37 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Your Account | Saint Charbel</title><link rel="stylesheet" href="./styles.css?v=20260922-1"></head><body><header class="topbar"><div class="site-shell nav"><a class="brand" href="./index.html"><span class="brand-mark">✦</span><span>Saint Charbel</span></a><nav class="links"><a href="./testimonies.html">Testimonies</a><a href="./submit-testimony.html">Share a Story</a></nav></div></header><main class="site-shell"><section class="hero"><span class="kicker">Private account</span><h1>Your stories, kept in your hands.</h1><p>A free account is required to share a story. With it you can save a draft, add photos, follow moderation status, and manage what may be published. Anyone can keep reading approved testimonies without an account.</p></section><section class="section"><div class="security-note"><strong>QA preview</strong><span>Account creation is intentionally paused in QA. Launch policy is set: accounts are required to submit, submitters must be 18 or older, rejected stories and photos are deleted after 30 days, and moderation is handled by the site owner with mandatory MFA. Accounts activate once the Supabase project (identity, database, and private photo storage) is connected.</span></div><article class="form-card"><form class="testimony-form"><label>Email<input type="email" autocomplete="email" disabled></label><button class="btn primary" disabled>Continue securely</button><p class="submit-status warn">Accounts are safely paused in QA.</p></form></article></section></main></body></html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Your Account | Saint Charbel</title><link rel="stylesheet" href="./styles.css?v=20260922-1"></head><body><header class="topbar"><div class="site-shell nav"><a class="brand" href="./index.html"><span class="brand-mark">✦</span><span>Saint Charbel</span></a><nav class="links" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./story.html" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./story.html">Story for Children</a>
+        <a href="./history.html">Full History</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="active nav-parent" href="./miracles.html" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./miracles.html">Miracles & Reports</a>
+        <a href="./news.html">Latest News</a>
+        <a class="active" href="./testimonies.html">Testimonies</a>
+        <a href="./voice-testimony.html">Voice Testimony</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./prayer-library.html" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./prayer-library.html">Prayer Library</a>
+        <a href="./saint-charbel-prayers.html">Saint Charbel Prayers</a>
+        <a href="./saint-charbel-novena.html">Saint Charbel Novena</a>
+        <a href="./saint-charbel-feast-day.html">Feast Day</a>
+        <a href="./rosary-visual-guide.html">Rosary Guide</a>
+        <a href="./rosary-minibook.html">Rosary Minibook</a>
+        <a href="./mystery-meditation.html">Mystery Meditation</a>
+        <a href="./become-like-charbel.html">Become Like Him</a>
+        </div></div>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./souvenirs.html">Souvenirs</a>
+        </nav></div></header><main class="site-shell">
+<section class="hero"><span class="kicker">Private account</span><h1>Your stories, kept in your hands.</h1><p>No account is needed to submit a testimony. You must be 18 or older. This page is for existing account-linked stories; guest submissions are reviewed privately by the moderator. Everyone can read published testimonies without signing in.</p></section>
+<section class="section"><p>Publication requires the site owner's authenticated review and approval. Rejected and withdrawn stories have a 30-day retention policy. This first release accepts text only.</p>
+<article class="form-card"><form id="account-login" class="testimony-form"><label>Email<input name="email" type="email" autocomplete="email" required disabled></label><div id="account-captcha"></div><button class="btn primary" type="submit" disabled>Continue securely</button></form><p id="account-status" class="submit-status" role="status" aria-live="polite"></p></article>
+<div id="account-panel" hidden><div class="cta-row"><a class="btn primary" href="submit-testimony.html">Share a story</a><button class="btn subtle" id="account-logout" type="button">Sign out</button></div><h2>Your submissions</h2><div id="my-testimonies" class="testimony-grid"></div></div></section></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script><script src="testimony-config.js"></script><script src="testimony-client.js"></script><script src="account.js"></script>  <script src="./nav.js?v=20260922-1" defer></script>
+</body></html>

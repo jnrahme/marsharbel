@@ -23,7 +23,11 @@
     "qa:dead-code": "scripts/qa/dead_code_check.sh",
     "quality:e2e": "playwright test --config playwright.config.cjs",
     "quality": "npm run quality:e2e",
-    "build:home-css": "node scripts/build-home-css.mjs"
+    "build:home-css": "node scripts/build-home-css.mjs",
+    "test:testimony-security": "node scripts/tests/testimony_database.mjs && node --import tsx scripts/tests/testimony_validation.mts && node scripts/tests/testimony_edge.mjs",
+    "test:testimony-ui": "node scripts/tests/testimony_ui.mjs",
+    "build:navigation": "node scripts/sync-navigation.mjs",
+    "test:navigation-sync": "node scripts/sync-navigation.mjs --check"
   },
   "keywords": [],
   "author": "",
@@ -31,9 +35,11 @@
   "description": "",
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
+    "@electric-sql/pglite": "^0.5.8",
     "@playwright/test": "^1.58.2",
     "esbuild": "0.25.12",
     "playwright": "^1.58.2",
-    "purgecss": "7.0.2"
+    "purgecss": "7.0.2",
+    "tsx": "^4.23.15"
   }
 }
