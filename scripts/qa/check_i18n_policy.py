@@ -49,11 +49,13 @@ def extract_html(text):
 
 def snapshot(root=ROOT):
     registry = read_json(root / 'locales/registry.json')
-    generated = {f'{code}.html' for code in registry['locales'] if code != registry['defaultLocale']}
+    generated = {f'{code}/index.html' for code in registry['locales'] if code != registry['defaultLocale']}
     generated.update(page_url(registry, code, topic).lstrip('/') + '.html'
                      for code in registry['locales'] for topic in registry['topics'])
     result = {}
-    for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html')]):
+    for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'),
+                        *(root / code / 'index.html' for code in registry['locales']
+                          if code != registry['defaultLocale'])]):
         relative = path.relative_to(root).as_posix()
         if relative not in generated:
             result[relative] = dict(extract_html(path.read_text()))

@@ -1,9 +1,5 @@
 DirectoryIndex index.html
 
-# Locale hubs such as /ar intentionally coexist with /ar/ resource folders.
-# Let the explicit rewrite rules below own their canonical slash behavior.
-DirectorySlash Off
-
 AddType application/manifest+json .webmanifest
 AddType image/avif .avif
 
@@ -27,16 +23,17 @@ RewriteRule ^index(?:\.html)?$ / [R=301,L]
 # language query parameter so visitors retain their selected translation.
 RewriteRule ^mysteries/rosary-visual-guide(?:\.html)?/?$ /rosary-visual-guide [R=301,L]
 
+# Language hubs are directory indexes with canonical trailing slashes.
+# i18n-routes:start
+RewriteRule ^en/?$ / [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl)/index(?:\.html)?$ /$1/ [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl)\.html$ /$1/ [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl)$ /$1/ [R=301,L]
+# i18n-routes:end
+
 # Redirect direct ".html" requests to clean URLs.
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]|$) [NC]
 RewriteRule ^ /%1 [R=301,L]
-
-# Language hubs also have resource directories; avoid DirectorySlash redirects.
-# i18n-routes:start
-RewriteRule ^en/?$ / [R=301,L]
-RewriteRule ^(ar|fr|es|pt|it|de|pl)/$ /$1 [R=301,L]
-RewriteRule ^(ar|fr|es|pt|it|de|pl)$ $1.html [L]
-# i18n-routes:end
 
 # Resolve /gallery to gallery.html even though /gallery is a real assets directory.
 RewriteRule ^gallery/?$ gallery.html [L]

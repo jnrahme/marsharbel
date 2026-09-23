@@ -86,8 +86,12 @@ def check(root):
             continue
         if "noindex" in page.meta.get("robots", "").lower():
             continue
-        relative = path.relative_to(root).with_suffix("").as_posix()
-        canonical = SITE + ("/" if relative == "index" else "/" + relative)
+        relative_path = path.relative_to(root)
+        if relative_path.name == "index.html":
+            directory = relative_path.parent.as_posix()
+            canonical = SITE + ("/" if directory == "." else f"/{directory}/")
+        else:
+            canonical = SITE + "/" + relative_path.with_suffix("").as_posix()
         expected.add(canonical)
         pages[canonical] = page
         if page.h1_count != 1:

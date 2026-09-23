@@ -70,7 +70,7 @@ def load_catalog(root=ROOT):
         leaves(config['nativeName'], f'{code}.nativeName')
         if config['direction'] not in ('ltr', 'rtl'):
             raise ValueError(f'{code}: invalid text direction')
-        expected_home = '/' if code == default else '/' + code
+        expected_home = '/' if code == default else f'/{code}/'
         if config['home'] != expected_home:
             raise ValueError(f'{code}: invalid homepage route')
         if set(config['slugs']) != set(registry['topics']):
