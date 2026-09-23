@@ -78,7 +78,7 @@ try {
 
   await expect('Selecting a mystery navigates to that mystery page', async () => {
     await page.selectOption('#mystery-picker', 'joyful_4');
-    await page.waitForURL(/\/mysteries\/joyful-4\.html(?:\?.*)?$/);
+    await page.waitForURL(/\/mysteries\/joyful-4(?:\.html)?(?:\?.*)?$/);
     const url = new URL(page.url());
     if (url.searchParams.get('stage')) {
       throw new Error(`Expected no stage param on normal mystery select, got ${url.search}`);
@@ -92,7 +92,7 @@ try {
   await expect('Selecting Intro (Joyful) opens first Joyful with stage=intro', async () => {
     await page.selectOption('#mystery-picker', 'intro:joyful');
     await page.waitForURL(url =>
-      /\/mysteries\/joyful-1\.html$/.test(url.pathname) && url.searchParams.get('stage') === 'intro'
+      /\/mysteries\/joyful-1(?:\.html)?$/.test(url.pathname) && url.searchParams.get('stage') === 'intro'
     );
     const value = await optionValue();
     if (value !== 'intro:joyful') {
@@ -103,7 +103,7 @@ try {
   await expect('Selecting End (Joyful) opens fifth Joyful with stage=end', async () => {
     await page.selectOption('#mystery-picker', 'end:joyful');
     await page.waitForURL(url =>
-      /\/mysteries\/joyful-5\.html$/.test(url.pathname) && url.searchParams.get('stage') === 'end'
+      /\/mysteries\/joyful-5(?:\.html)?$/.test(url.pathname) && url.searchParams.get('stage') === 'end'
     );
     const value = await optionValue();
     if (value !== 'end:joyful') {
@@ -113,7 +113,7 @@ try {
 
   await expect('Cross-set mystery selection works from end-stage page', async () => {
     await page.selectOption('#mystery-picker', 'sorrowful_3');
-    await page.waitForURL(/\/mysteries\/sorrowful-3\.html(?:\?.*)?$/);
+    await page.waitForURL(/\/mysteries\/sorrowful-3(?:\.html)?(?:\?.*)?$/);
     const url = new URL(page.url());
     if (url.searchParams.get('stage')) {
       throw new Error(`Expected stage param cleared on normal mystery select, got ${url.search}`);
@@ -127,7 +127,7 @@ try {
   await expect('Selecting Intro (Luminous) opens first Luminous with stage=intro', async () => {
     await page.selectOption('#mystery-picker', 'intro:luminous');
     await page.waitForURL(url =>
-      /\/mysteries\/luminous-1\.html$/.test(url.pathname) && url.searchParams.get('stage') === 'intro'
+      /\/mysteries\/luminous-1(?:\.html)?$/.test(url.pathname) && url.searchParams.get('stage') === 'intro'
     );
     const value = await optionValue();
     if (value !== 'intro:luminous') {
@@ -138,7 +138,7 @@ try {
   await expect('Selecting End (Glorious) opens fifth Glorious with stage=end', async () => {
     await page.selectOption('#mystery-picker', 'end:glorious');
     await page.waitForURL(url =>
-      /\/mysteries\/glorious-5\.html$/.test(url.pathname) && url.searchParams.get('stage') === 'end'
+      /\/mysteries\/glorious-5(?:\.html)?$/.test(url.pathname) && url.searchParams.get('stage') === 'end'
     );
     const value = await optionValue();
     if (value !== 'end:glorious') {

@@ -1428,7 +1428,11 @@ try {
     const toc = page.locator('.transcript-toc');
     const visible = await toc.isVisible();
     if (!visible) throw new Error('TOC not found or not visible');
-    const links = await toc.locator('a').evaluateAll(as => as.map(a => new URL(a.href).hash));
+    const links = await toc.locator('a').evaluateAll(as => as.map(a => {
+      const url = new URL(a.href);
+      if (url.pathname !== window.location.pathname) throw new Error('TOC link leaves the current page');
+      return url.hash;
+    }));
     if (links.length < 4) throw new Error(`Expected at least 4 TOC links, got ${links.length}`);
     const expected = ['#listen', '#how-to-receive', '#transcript-publishing', '#transcript-raw'];
     for (const href of expected) {
