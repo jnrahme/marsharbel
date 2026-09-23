@@ -2648,3 +2648,52 @@ html.nav-suppress .nav-group:focus-within .nav-sub {
 
 /* Preserve native hidden behavior when grid styling is applied to forms. */
 .testimony-form[hidden] { display: none; }
+
+/* Admin dashboard: keep public editorial styles out of the control panel. */
+.testimony-admin-page main.site-shell { width: min(1080px, calc(100% - 2rem)); padding-bottom: 2rem; }
+.testimony-admin-page .hero { padding-block: 2rem 1rem; min-height: 0; }
+.testimony-admin-page .hero h1 { max-width: none; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; overflow-wrap: anywhere; }
+.testimony-admin-page .section { padding-block: 1rem; margin-block: 0; }
+.testimony-admin-page .security-note { max-width: none; grid-template-columns: 1fr; gap: .35rem; margin-bottom: 1rem; font-size: .95rem; }
+.testimony-admin-page main.site-shell .card { width: 100%; max-width: none; min-width: 0; padding: 1.25rem; border: 1px solid var(--theme-line); border-radius: 12px; background: rgba(50,44,38,.45); box-shadow: none; }
+.testimony-admin-page .inline-check { display: flex; align-items: flex-start; gap: .7rem; line-height: 1.5; font-weight: 500; }
+.testimony-admin-page .inline-check input { flex: 0 0 20px; width: 20px; height: 20px; padding: 0; margin: .1rem 0 0; accent-color: var(--theme-accent); }
+.testimony-admin-page #admin-remember-help { margin: .5rem 0 1rem; font-size: .9rem; color: var(--theme-ink-soft); }
+.testimony-admin-page .submit-status { margin-bottom: 0; }
+.testimony-admin-page #admin-panel > h2 { margin: 1.75rem 0 .75rem; font-size: 1.7rem; }
+.testimony-admin-page .testimony-card h2 { margin-top: 0; font-size: 1.7rem; }
+.testimony-admin-page .testimony-card p { max-width: 75ch; overflow-wrap: anywhere; }
+.testimony-admin-page .cta-row { align-items: center; gap: .65rem; }
+.testimony-admin-page .btn { min-height: 44px; max-width: 100%; white-space: normal; text-align: center; border-radius: 6px; }
+.testimony-admin-page .btn:disabled { opacity: .5; cursor: not-allowed; }
+.testimony-admin-page #pending-list, .testimony-admin-page #approved-list, .testimony-admin-page #report-list { margin-block: .75rem 1.5rem; padding: 1rem; border: 1px solid var(--theme-line); border-radius: 8px; min-width: 0; }
+.testimony-admin-page .testimony-grid > p { margin: 0; color: var(--theme-ink-soft); }
+.testimony-admin-page #admin-panel > details { padding: 1rem; border: 1px solid var(--theme-line); border-radius: 8px; overflow-wrap: anywhere; }
+.testimony-admin-page #mfa-qr { display: block; width: min(240px, 100%); height: auto; }
+@media (max-width: 540px) {
+  .testimony-admin-page .topbar { position: static; }
+  .testimony-admin-page main.site-shell .card { padding: 1rem; }
+  .testimony-admin-page .cta-row { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; }
+  .testimony-admin-page .cta-row .btn { width: 100%; margin: 0; }
+  .testimony-admin-page .cta-row [role=status] { text-align: center; }
+  .testimony-admin-page #admin-panel > .cta-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .testimony-admin-page #admin-panel > .cta-row [role=status] { grid-column: 1 / -1; grid-row: 1; }
+  .testimony-admin-page #admin-logout-btn { grid-column: 1 / -1; }
+}
+.testimony-admin-page .admin-feedback { padding: 1rem; border: 2px solid var(--theme-accent); border-radius: 8px; background: var(--theme-bg, #211e19); scroll-margin-top: 10rem; }
+.testimony-admin-page .admin-feedback[hidden] { display: none; }
+.testimony-admin-page #demo-notice { padding: 1rem; border: 1px solid var(--theme-accent); border-radius: 8px; }
+.testimony-admin-page #demo-notice p { margin: 0; }
+.testimony-admin-page #demo-notice button { justify-self: start; }
+.testimony-admin-page .testimony-card .testimony-form textarea { min-height: 100px; }
+.testimony-admin-page .testimony-card .submit-status[hidden] { display: none; }
+/* Shared button/grid display rules must never reveal hidden admin controls. */
+.testimony-admin-page [hidden] { display: none !important; }
+
+#submit-testimony-btn:disabled {
+  background: #403c36; color: #bcb6ac; border: 1px solid #625b51;
+  box-shadow: none; opacity: .65; cursor: not-allowed; transform: none;
+}
+
+/* Keep retry controls hidden until the verification provider reports failure. */
+.captcha-retry[hidden] { display: none !important; }

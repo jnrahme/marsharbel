@@ -39,14 +39,41 @@
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/testimony-review" />
   <!-- hreflang:end -->
 </head>
-<body>
+<body class="testimony-admin-page">
   <header class="topbar">
     <div class="site-shell nav">
       <a class='brand' href='/'><span class="brand-mark">✦</span><span>Saint Charbel</span></a>
-      <nav class="links">
-        <a href='/'>Home</a>
-        <a href='./testimonies.html'>Testimonies</a>
-      </nav>
+      <nav class="links" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./story.html" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./story.html">Story for Children</a>
+        <a href="./history.html">Full History</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="active nav-parent" href="./miracles.html" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./miracles.html">Miracles & Reports</a>
+        <a href="./news.html">Latest News</a>
+        <a class="active" href="./testimonies.html">Testimonies</a>
+        <a href="./voice-testimony.html">Voice Testimony</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./prayer-library.html" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./prayer-library.html">Prayer Library</a>
+        <a href="./saint-charbel-prayers.html">Saint Charbel Prayers</a>
+        <a href="./saint-charbel-novena.html">Saint Charbel Novena</a>
+        <a href="./saint-charbel-feast-day.html">Feast Day</a>
+        <a href="./rosary-visual-guide.html">Rosary Guide</a>
+        <a href="./rosary-minibook.html">Rosary Minibook</a>
+        <a href="./mystery-meditation.html">Mystery Meditation</a>
+        <a href="./become-like-charbel.html">Become Like Him</a>
+        </div></div>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./souvenirs.html">Souvenirs</a>
+        </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
@@ -55,12 +82,14 @@
     <section class="hero">
       <span class="kicker">Admin</span>
       <h1>Testimony Moderation Panel</h1>
-      <p>Private moderation queue. Authentication and server policies decide access; the page is never linked from public navigation.</p>
+      <p>Review reader stories, manage published testimonies, and handle reports.</p>
     </section>
 
     <section class="section">
-      <div class="security-note" role="note"><strong>Moderator access only.</strong><span>At launch the site owner is the sole moderator. This page loads no submission data until the moderator account is authenticated with multi-factor authentication, which the database enforces (aal2). Signed-out visitors and regular accounts see only this sign-in form; regular accounts can submit stories and follow their own status, but cannot approve, reject, edit, or publish. Approval, rejection, and unpublishing are recorded in the moderation audit history.</span></div>
+      <div class="security-note" role="note"><strong>Moderator access only.</strong><span>Only the site moderator can review private submissions or publish stories. Sign in with your email, password, and human verification. Review and publication decisions are recorded in the moderation audit history.</span></div>
       <article class="card form-card">
+        <label class="inline-check"><input id="admin-remember-browser" type="checkbox" aria-describedby="admin-remember-help" />Remember this browser</label>
+        <p id="admin-remember-help">Keep your verified admin session on this browser until you sign out or the session ends. Use only on your own device. Your password is not saved.</p>
         <form id="admin-login-form" class="testimony-form">
           <label>Admin email
             <input type="email" name="email" required />
@@ -79,10 +108,10 @@
 
     <section id="admin-panel" class="section" hidden>
       <div class="cta-row" style="margin-bottom:1rem;">
-        <button id="admin-logout-btn" class="btn subtle" type="button">Logout</button>
+        <button id="admin-logout-btn" class="btn subtle" type="button">Forget this browser and sign out</button>
       </div>
 
-      <article class="card testimony-card"><h2>Publishing controls</h2><p>Daily defaults: 2 submissions per person, 3 pending stories per person, 5 publications, and 50 AI reviews. AI notes never verify a story or publish it.</p><div class="testimony-form"><label class="inline-check"><input id="control-intake" type="checkbox" />Accept submissions and edits</label><label class="inline-check"><input id="control-publishing" type="checkbox" />Allow human-approved publication</label><label class="inline-check"><input id="control-screening" type="checkbox" />Process queued AI reviews</label></div><div class="cta-row"><button id="save-controls" class="btn primary" type="button">Save controls</button><button id="pause-all" class="btn subtle" type="button">Pause intake, AI, and publishing</button><button id="refresh-reviews" class="btn subtle" type="button">Refresh reviews</button></div></article>
+      <article class="card testimony-card"><h2>Publishing controls</h2><p>Guest intake is limited to 10 submissions per minute and 200 total submissions per day. Publication is limited to 5 stories per day unless you record an override reason. Review stories personally, or use AI screening when configured; a separate human approval is always required.</p><div class="testimony-form"><label class="inline-check"><input id="control-intake" type="checkbox" />Accept submissions and edits</label><label class="inline-check"><input id="control-publishing" type="checkbox" />Allow human-approved publication</label><label class="inline-check"><input id="control-screening" type="checkbox" />Process queued AI reviews</label></div><div class="cta-row"><button id="save-controls" class="btn primary" type="button">Save controls</button><button id="pause-all" class="btn subtle" type="button">Pause intake, AI, and publishing</button><button id="refresh-reviews" class="btn subtle" type="button">Refresh reviews</button></div></article>
       <h2>Pending Review</h2><div class="cta-row"><button id="queue-previous" class="btn subtle" type="button">Previous queue page</button><span id="queue-position" role="status"></span><button id="queue-next" class="btn subtle" type="button">Next queue page</button></div>
       <div id="pending-list" class="testimony-grid"></div>
 
@@ -99,5 +128,6 @@
   <script src="./testimony-admin.js"></script>
   <script src="./global-audio-player.js"></script>
   <script src="./translate.js?v=20260922-1"></script>
+  <script src="./nav.js?v=20260922-1" defer></script>
 </body>
 </html>

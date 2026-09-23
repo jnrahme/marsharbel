@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - run: node scripts/sync-navigation.mjs --check
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run quality

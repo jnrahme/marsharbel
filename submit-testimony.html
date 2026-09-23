@@ -34,7 +34,6 @@
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/submit-testimony" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/submit-testimony" />
@@ -44,17 +43,37 @@
   <header class="topbar">
     <div class="site-shell nav">
       <a class='brand' href='index.html'><span class="brand-mark">✦</span><span>Saint Charbel</span></a>
-      <nav class="links">
-        <a href='index.html'>Home</a>
-        <a href='history.html'>History</a>
-        <a href='story.html'>Story</a>
-        <a href='miracles.html'>Miracles</a>
-        <a class='active' href='testimonies.html'>Testimonies</a>
-        <a href='gallery.html'>Gallery</a>
-        <a href='become-like-charbel.html'>Become Like Him</a>
-        <a href='rosary-visual-guide.html'>Rosary</a>
-        <a href='voice-testimony.html'>Voice Testimony</a>
-      </nav>
+      <nav class="links" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./story.html" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./story.html">Story for Children</a>
+        <a href="./history.html">Full History</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="active nav-parent" href="./miracles.html" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./miracles.html">Miracles & Reports</a>
+        <a href="./news.html">Latest News</a>
+        <a class="active" href="./testimonies.html">Testimonies</a>
+        <a href="./voice-testimony.html">Voice Testimony</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./prayer-library.html" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./prayer-library.html">Prayer Library</a>
+        <a href="./saint-charbel-prayers.html">Saint Charbel Prayers</a>
+        <a href="./saint-charbel-novena.html">Saint Charbel Novena</a>
+        <a href="./saint-charbel-feast-day.html">Feast Day</a>
+        <a href="./rosary-visual-guide.html">Rosary Guide</a>
+        <a href="./rosary-minibook.html">Rosary Minibook</a>
+        <a href="./mystery-meditation.html">Mystery Meditation</a>
+        <a href="./become-like-charbel.html">Become Like Him</a>
+        </div></div>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./souvenirs.html">Souvenirs</a>
+        </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
@@ -63,16 +82,17 @@
     <section class="hero">
       <span class="kicker">Submission</span>
       <h1>Share Your Testimony</h1>
-      <div class="cta-row"><a class='btn subtle' href='account.html'>Your account</a></div><p>Stories can come from anywhere in the world. A free account is required to submit a story, and you must be 18 or older. Every submission stays private until a human moderator approves it; rejected and withdrawn stories are deleted after 30 days. Please do not include medical records, government IDs, addresses, or other sensitive information.</p>
+      <p>Stories can come from anywhere in the world. No account is needed. You must be 18 or older. Every submission stays private until a human moderator approves it. Please do not include medical records, government IDs, addresses, or other sensitive information.</p>
     </section>
 
     <section class="section">
       <article class="card form-card">
-        <div class="security-note" role="note"><strong>Private by default.</strong><span>Sign-in, bot checks, server-side limits, validation, and human review protect this intake. Accounts are required to submit; reading approved stories stays open to everyone. No public system is perfectly attack-proof, so submissions can be paused instantly if abuse is detected.</span></div>
+        <div class="security-note" role="note"><strong>Private by default.</strong><span>Write your story, complete human verification, and click Submit testimony. Your story stays private until a moderator approves it.</span></div>
+        <p id="submission-availability" class="submit-status warn" role="status" hidden></p>
         <form id="testimony-form" class="testimony-form">
           <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
-          <label>Public display name<input name="display_name" required minlength="2" maxlength="80" autocomplete="nickname" /><span class="source-meta">Choose what readers will see. Your account email stays private.</span></label>
+          <label>Public display name<input name="display_name" required minlength="2" maxlength="80" autocomplete="nickname" /><span class="source-meta">Choose what readers will see. Use a first name or nickname; do not include private contact details.</span></label>
           <label>Language
             <select name="language">
               <option value="en">English</option>
@@ -101,19 +121,17 @@
 
           <label class="inline-check">
             <input type="checkbox" name="consent_publish" required />
-            I have permission to share this account, believe it is truthful, and consent to publication of the previewed text and display name after human review.
+            I have permission to share this account, believe it is truthful, and consent to publication of this text and display name after human review.
           </label>
 
-          <label class="inline-check"><input type="checkbox" name="ai_consent" required />I understand that automated screening will process my story to assist a human moderator. It does not verify that the story is true.</label>
-          <div id="turnstile-slot"></div>
+          <label class="inline-check"><input type="checkbox" name="ai_consent" required />I understand that automated screening may process my story to assist a human moderator. It does not verify that the story is true.</label>
+          <div class="human-verification"><h2>Human verification</h2><p>Complete the security check, then submit your testimony for review.</p><div id="turnstile-slot"></div></div>
 
           <div class="cta-row">
-            <button id="submit-testimony-btn" class="btn primary" type="submit">Preview testimony</button>
-            <a class='btn subtle' href='testimonies.html'>View Published Testimonies</a>
+            <button id="submit-testimony-btn" class="btn primary" type="submit" disabled>Submit testimony</button>
           </div>
 
         </form>
-        <section id="testimony-preview" hidden aria-label="Publication preview"><h2>Review what readers would see</h2><div id="preview-content"></div><p>This stays private until screening and human review are complete.</p><div class="cta-row"><button id="confirm-testimony" class="btn primary" type="button">Submit For Review</button><button id="edit-preview" class="btn subtle" type="button">Back to editing</button></div></section>
         <p id="submit-status" class="submit-status" role="status" aria-live="polite" tabindex="-1"></p>
       </article>
     </section>
@@ -127,5 +145,6 @@
   <script src="submit-testimony.js"></script>
   <script src="global-audio-player.js"></script>
   <script src="translate.js?v=20260922-1"></script>
+  <script src="./nav.js?v=20260922-1" defer></script>
 </body>
 </html>

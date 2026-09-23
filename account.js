@@ -4,6 +4,7 @@
   const form = document.getElementById('account-login'); const message = document.getElementById('account-status');
   const panel = document.getElementById('account-panel'); const list = document.getElementById('my-testimonies');
   const button = form.querySelector('button'); let challenge;
+  form.addEventListener('submit', e => e.preventDefault());
   if (!configured || !config.accountsEnabled) { status(message, 'Accounts are safely paused while the protected service is connected.'); return; }
   form.querySelector('input').disabled = false;
   async function refresh() {

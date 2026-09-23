@@ -46,17 +46,37 @@
         <span class="brand-mark">✦</span>
         <span>Saint Charbel</span>
       </a>
-      <nav class="links">
+      <nav class="links" aria-label="Primary">
         <a href="./index.html">Home</a>
-        <a href="./history.html">History</a>
-        <a href="./story.html">Story</a>
-        <a href="./miracles.html">Miracles</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./story.html" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./story.html">Story for Children</a>
+        <a href="./history.html">Full History</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./miracles.html" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./miracles.html">Miracles & Reports</a>
+        <a href="./news.html">Latest News</a>
         <a href="./testimonies.html">Testimonies</a>
-        <a href="./gallery.html">Gallery</a>
-        <a href="./become-like-charbel.html">Become Like Him</a>
-        <a href="./rosary-visual-guide.html">Rosary</a>
         <a href="./voice-testimony.html">Voice Testimony</a>
-      </nav>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./prayer-library.html" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./prayer-library.html">Prayer Library</a>
+        <a href="./saint-charbel-prayers.html">Saint Charbel Prayers</a>
+        <a href="./saint-charbel-novena.html">Saint Charbel Novena</a>
+        <a href="./saint-charbel-feast-day.html">Feast Day</a>
+        <a href="./rosary-visual-guide.html">Rosary Guide</a>
+        <a href="./rosary-minibook.html">Rosary Minibook</a>
+        <a href="./mystery-meditation.html">Mystery Meditation</a>
+        <a href="./become-like-charbel.html">Become Like Him</a>
+        </div></div>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./souvenirs.html">Souvenirs</a>
+        </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
@@ -82,7 +102,7 @@
           <li>The Saint Charbel Mobile iPhone app does not require an account, does not include advertising, and does not collect personal data for tracking or analytics.</li>
           <li>The website may process standard server request data such as IP address, browser information, and request timestamps through hosting and security infrastructure.</li>
           <li>The website stores limited device-side preferences such as language selection and a short testimony submission cooldown in your browser.</li>
-          <li>Testimony submission requires a free account and is limited to adults 18 or older. Submissions and photos stay private unless a human moderator approves them, and rejected content is deleted 30 days after the decision. Anyone can read approved testimonies without an account.</li>
+          <li>Guest testimony submission does not require an account and is limited to adults 18 or older. Text submissions stay private unless a human moderator approves them; photos are not accepted. Anyone can read approved testimonies without an account.</li>
         </ul>
       </article>
       <article class="card story policy-card">
@@ -137,7 +157,7 @@
           </p>
           <ul class="policy-list">
             <li>a language preference in <code>localStorage</code></li>
-            <li>a short cooldown timestamp to slow repeated testimony submissions</li>
+            <li>an optional remembered moderator session when the moderator selects that option</li>
             <li>cached files through the site service worker for faster repeat visits</li>
           </ul>
           <p>
@@ -151,36 +171,18 @@
       <article class="card story policy-card">
         <h2>Testimony submission and moderation</h2>
         <p>
-          Testimony submission requires a free account and is limited to adults 18 or older. When these features are
+          Guest testimony submission does not require an account and is limited to adults 18 or older. When these features are
           enabled and you choose to submit a testimony, the site may collect information such as:
         </p>
         <ul class="policy-list">
-          <li>the email address used for your account and sign-in</li>
-          <li>your confirmation that you are 18 or older</li>
-          <li>full name</li>
-          <li>optional contact email address</li>
-          <li>language</li>
-          <li>optional country or parish</li>
-          <li>optional event date or testimony type</li>
-          <li>your testimony text</li>
-          <li>optional photos you choose to attach</li>
-          <li>whether you gave contact permission</li>
-          <li>whether you consented to moderation and publication</li>
-          <li>limited technical metadata such as user agent, submission host, and bot-check status</li>
+          <li>your public display name or nickname, language, and testimony text</li>
+          <li>optional country and event date</li>
+          <li>your age confirmation and consent to publication and automated screening</li>
+          <li>submission time and security-check results</li>
         </ul>
-        <p>
-          Every submission is private by default. Stories and photos are visible only to you and the moderator until a human
-          moderator approves them. Moderation is handled personally by the site owner using an account protected with mandatory
-          multi-factor authentication. If a testimony is approved, only the intentionally selected parts are published, and
-          anyone can read published testimonies without an account. If a submission is rejected, the story and any attached
-          photos are deleted 30 days after the decision.
-        </p>
-        <p>
-          Photos are stored in private storage, never in a public location. Before photo uploads are activated, files are
-          scanned, re-encoded, stripped of hidden metadata, and size-limited, and they are approved separately from the story
-          text. If you include contact information, it may be used for clarification, moderation follow-up, or administration
-          of the testimony workflow.
-        </p>
+        <p>Submissions stay private until the authenticated moderator approves publication. Guest submissions do not create an account or collect a contact email. Photos and attachments are not accepted. Do not include private contact details, medical records, or information about other people without permission.</p>
+        <p>The moderator may review stories personally. Where automated screening is enabled, story text may also be processed to assist that review; it does not establish truth or automatically publish a story. Published fields are the display name, story, language, optional country and event date. Save your submission reference for any privacy request using the contact address below.</p>
+        <p>Rejected and withdrawn submissions remain private pending administrative removal. Administrative audit records retain decision metadata. See the contact details below to request removal.</p>
       </article>
     </section>
 
@@ -191,8 +193,9 @@
           <p>The project may rely on third-party services to deliver specific functions, including:</p>
           <ul class="policy-list">
             <li>Hostinger for hosting and server delivery</li>
-            <li>Cloudflare Turnstile for human verification on testimony forms, when enabled</li>
-            <li>Supabase for accounts, testimony storage, private photo storage, and moderation workflows, when configured</li>
+            <li>hCaptcha for testimony human verification; Cloudflare Turnstile for account sign-in verification</li>
+            <li>Supabase for authentication, testimony storage, and moderation workflows</li>
+            <li>OpenAI for automated story screening when enabled</li>
             <li>Google Fonts and jsDelivr for certain front-end assets</li>
           </ul>
           <p>
@@ -257,5 +260,6 @@
   <script src="./app.js"></script>
   <script src="./global-audio-player.js"></script>
   <script src="./translate.js?v=20260922-1"></script>
+  <script src="./nav.js?v=20260922-1" defer></script>
 </body>
 </html>

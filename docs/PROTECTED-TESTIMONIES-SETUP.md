@@ -2,13 +2,27 @@
 
 The feature is implemented but remains off until services are configured. Static pages are served by Hostinger. Supabase Auth, PostgreSQL and Edge Functions handle private data and intake; no Netlify function route is used. Text only: uploads are not accepted.
 
+## Current guest submission mode
+
+Visitors submit without creating an account. Apply all three migrations, including `202609230001_guest_testimonies.sql`. Only the Edge Function service role can insert guest stories, after real server-side CAPTCHA verification. Private stories never appear publicly until an authenticated moderator records a review and separately approves them.
+
+Submission uses hCaptcha (`TESTIMONY_CAPTCHA_PROVIDER=hcaptcha`, `HCAPTCHA_SITE_KEY`, `HCAPTCHA_SECRET_KEY` in Function secrets). The matching public site key is configured in `testimony-config.js`. Moderator login continues to use Supabase Auth with Turnstile; website MFA is not required. Never put private keys in frontend files.
+
+For this guest endpoint, disable its legacy JWT gateway: no contributor JWT exists. The handler enforces exact origins, verified CAPTCHA site key and hostname, payload validation, duplicate rejection, and database limits of 10 guest attempts/minute and 200 total/day. These are application limits, not IP-based protection or a complete DDoS defense.
+
+Manual review supports launch without an AI worker, SMTP, or contributor accounts. Keep screening and accounts disabled until those optional services are configured. In the admin queue, write at least 30 characters of review notes, choose **Record my manual review**, then separately approve or reject. Guest submissions have no account status page or clarification channel. Save the returned submission reference.
+
+Enable both database intake/publication controls and the frontend submission flag only as part of the controlled live acceptance test. Verify a real CAPTCHA-protected guest submission reaches the private queue, review it, verify publication and unpublish the labeled test entry. Mocked tests do not establish live readiness. See `TESTIMONY-LIVE-SETUP-STATUS.md` for the actual deployment state.
+
+The sections below also document optional account and AI workflows. Their email, worker, and per-account limits do not apply to guest intake. Retention scheduling and backup recovery require separate operational setup; the presence of SQL functions alone does not enable them.
+
 ## 1. Provision an isolated backend
 
 Create a Supabase project in an appropriate region. Configure production site URL and an exact redirect allowlist for `https://marsharbel.com/account` and `/account.html`. Enable verified email, production SMTP, email rate limits, and Turnstile protection in Supabase Auth. Keep development redirect URLs out of production. Test delivery and sign-in before enabling accounts.
 
 Apply `supabase/migrations/202609220001_protected_testimonies.sql`. It creates private submissions, a safe public publication table, reports, daily budgets and audit history. It revokes old browser access without deleting legacy records. Do not run the old root SQL file. Review any existing custom grants and policies separately: local tests cannot inspect an already-configured production database.
 
-Create the owner Auth account and set its **app_metadata** role to `moderator` through the trusted dashboard/Admin API. Never use editable user metadata. Do not assign this role to ordinary users. The moderator page supports password login and TOTP enrollment/verification. Protect the Supabase and hosting accounts themselves with MFA as well.
+Create the owner Auth account and set its **app_metadata** role to `moderator` through the trusted dashboard/Admin API. Never use editable user metadata. Do not assign this role to ordinary users. Apply `202609220002_moderator_password_access.sql` as well. The owner selected password login plus CAPTCHA, with no website MFA requirement. Protect the Supabase and hosting accounts themselves with MFA as well.
 
 Create a separate confirmed Auth user with app_metadata role `testimony_worker`. Its login credentials are server-side secrets. It must never have the moderator role. It cannot read other users' submissions through tables or call the publishing function; it can only claim one review and record notes for that claim.
 
@@ -36,7 +50,7 @@ supabase functions deploy submit-testimony
 supabase functions deploy screen-testimonies
 ```
 
-The function configuration disables the platform JWT gate to support preflight/scheduler calls. Intake explicitly verifies the user JWT with Auth; the worker requires the scheduler secret, then signs in as the restricted worker. Origin checking is an additional browser control, not authentication.
+The function configuration disables the platform JWT gate to support preflight/scheduler calls. Guest intake explicitly verifies CAPTCHA server-side; the worker requires the scheduler secret, then signs in as the restricted worker. Origin checking is an additional browser control, not authentication.
 
 ## 3. Scheduling and recovery
 
@@ -64,7 +78,7 @@ Starting application limits, enforced transactionally:
 - 200 database intake attempts globally per UTC day.
 - Ten per IP/day when trusted IP configuration is enabled.
 - Five author edits/day; edits immediately remove the publication and reset screening.
-- Five publications/day; only a moderator with MFA can override, with a recorded reason.
+- Five publications/day; only an authenticated moderator can override, with a recorded reason.
 - Fifty AI job reservations/day. Fixed 7,000-character story and 1,800-output-token bounds. This is a request/token cap, not an exact dollar cap; model pricing and provider costs remain external.
 - Three reports per account/day and 200 globally/day.
 
@@ -72,7 +86,7 @@ The existing public pages remain readable if the testimony backend fails. Failed
 
 ## 5. Connect the frontend without opening intake
 
-Set public values in `testimony-config.js`: project HTTPS URL, public anon/publishable key and Turnstile site key. Do not put service-role, scheduler, worker or AI secrets there. Set `accountsEnabled` and `moderationEnabled` only after testing Auth and the owner MFA flow. Leave `submissionsEnabled` false until the end-to-end checks below pass.
+Set public values in `testimony-config.js`: project HTTPS URL, public anon/publishable key and Turnstile site key. Do not put service-role, scheduler, worker or AI secrets there. Set `accountsEnabled` and `moderationEnabled` only after testing Auth and the owner password/CAPTCHA flow. Leave `submissionsEnabled` false until the end-to-end checks below pass.
 
 Sign in at `/testimony-review`. The database switches start off. Test them with controlled accounts in a separate test project. At launch, enable the database switches for intake, screening and publication, then set `submissionsEnabled:true` in the frontend through the normal reviewed release process. The frontend flag alone cannot open the backend.
 
@@ -88,7 +102,7 @@ where id=true;
 
 Run `npm run test:testimony-security`, `BASE_URL=http://127.0.0.1:4321 npm run test:testimony-ui` with the dev server running, and normal browser-quality/QA checks. SQL tests use embedded PostgreSQL (PGlite) with representative Auth claims; browser service interactions and provider requests are mocked. These do not replace live service validation.
 
-In the test project verify: email delivery; expired/reused/wrong-host CAPTCHA rejection; unauthorized REST writes; one author's inability to read another's private story; MFA enrollment/recovery; real structured AI responses; wrong worker role denial; concurrent cap enforcement; stale approve after edit; author withdrawal; public fields only; report/unpublish flow; scheduler outages and retries; paused intake; backup restore; and the 30-day purge schedule. Verify direct database grants as well as the UI.
+In the test project verify: email delivery; expired/reused/wrong-host CAPTCHA rejection; unauthorized REST writes; one author's inability to read another's private story; moderator password/CAPTCHA and recovery; real structured AI responses; wrong worker role denial; concurrent cap enforcement; stale approve after edit; author withdrawal; public fields only; report/unpublish flow; scheduler outages and retries; paused intake; backup restore; and the 30-day purge schedule. Verify direct database grants as well as the UI.
 
 Publish only after these checks succeed. Do not mark the integration live merely because the static deployment passes.
 
@@ -99,3 +113,11 @@ Publish only after these checks succeed. Do not mark the integration live merely
 - https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
 - https://developers.openai.com/api/docs/guides/structured-outputs
 - https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
+
+## Optional hCaptcha checkbox for testimony submission
+
+hCaptcha integration is configured with real keys for this project; real end-to-end verification remains a launch requirement. Create the site's widget in the owner's hCaptcha dashboard. Keep `HCAPTCHA_SECRET_KEY` in Supabase Function secrets; set `HCAPTCHA_SITE_KEY` there to the widget's public key, and set `TESTIMONY_CAPTCHA_PROVIDER=hcaptcha`. Deploy the updated intake function. Set the same public key in `testimony-config.js` as `hcaptchaSiteKey`, and then set `submissionCaptchaProvider:'hcaptcha'`. Never insert example/test keys into the shipped config. Supabase Auth continues using its separately configured Turnstile provider; this option changes testimony submission only.
+
+The server chooses the provider from its own environment, binds verification to the configured hCaptcha site key, checks the origin hostname, and rejects failures before database intake. Client-side success alone is insufficient. Widget failure, expiry and timeout clear the token; retry preserves the form text. Use a provider-supported development hostname for local hCaptcha testing, then validate the real production hostname. See https://docs.hcaptcha.com/ for domain and key configuration.
+
+The public-intake pause is separate from provider configuration. Consult the live setup status before claiming submission-to-publication readiness.

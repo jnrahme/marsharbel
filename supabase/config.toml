@@ -1,7 +1,7 @@
 project_id = "marsharbel-testimonies"
 
 [functions.submit-testimony]
-# Auth is verified against Supabase Auth inside the handler; allow CORS preflight.
+# Guest intake verifies CAPTCHA server-side before its service-only RPC; allow CORS preflight.
 verify_jwt = false
 
 [functions.screen-testimonies]

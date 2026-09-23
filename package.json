@@ -25,7 +25,9 @@
     "quality": "npm run quality:e2e",
     "build:home-css": "node scripts/build-home-css.mjs",
     "test:testimony-security": "node scripts/tests/testimony_database.mjs && node --import tsx scripts/tests/testimony_validation.mts && node scripts/tests/testimony_edge.mjs",
-    "test:testimony-ui": "node scripts/tests/testimony_ui.mjs"
+    "test:testimony-ui": "node scripts/tests/testimony_ui.mjs",
+    "build:navigation": "node scripts/sync-navigation.mjs",
+    "test:navigation-sync": "node scripts/sync-navigation.mjs --check"
   },
   "keywords": [],
   "author": "",
