@@ -58,12 +58,12 @@ test('moderation page shows only a sign-in form until the authorized moderator s
   await expect(page.locator('main')).toContainText(/email, password, and human verification/i);
   await expect(page.locator('main')).toContainText(/Only the site moderator can review private submissions/i);
 });
-test('submission footer provides a discreet admin link outside primary navigation', async ({ page }) => {
+test('testimony footers provide discreet admin links outside primary navigation', async ({ page }) => {
   for (const path of ['/', '/submit-testimony.html', '/testimonies.html', '/account.html']) {
     await page.goto(path);
     await expect(page.locator('header a[href*="testimony-review"]')).toHaveCount(0);
-    await expect(page.locator('footer a[href*="testimony-review"]')).toHaveCount(path === '/submit-testimony.html' ? 1 : 0);
-    if (path === '/submit-testimony.html') {
+    await expect(page.locator('footer a[href*="testimony-review"]')).toHaveCount(['/submit-testimony.html', '/testimonies.html'].includes(path) ? 1 : 0);
+    if (['/submit-testimony.html', '/testimonies.html'].includes(path)) {
       await page.getByRole('link', { name: 'Admin', exact: true }).click();
       await expect(page).toHaveURL(/testimony-review/);
       await expect(page.locator('#admin-login-form')).toBeVisible();
