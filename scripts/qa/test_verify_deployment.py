@@ -41,6 +41,10 @@ class DeploymentVerificationTest(unittest.TestCase):
             folder.mkdir()
             (folder / "index.html").write_text("<h1>Current</h1>")
             (folder / "app.js").write_text("// current app")
+            (folder / "locales").mkdir()
+            (folder / "locales/registry.json").write_text('{"locales":{"pt":{}}}')
+            (folder / "pt").mkdir()
+            (folder / "pt/oracoes.html").write_text("<h1>Orações</h1>")
             (folder / "mysteries").mkdir()
             (folder / "mysteries/joyful-1.html").write_text("<h1>Joyful</h1>")
         self.server = ThreadingHTTPServer(
@@ -64,7 +68,7 @@ class DeploymentVerificationTest(unittest.TestCase):
     def test_matching_frontend(self):
         result = self.run_check()
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn("Verified 3 live frontend files", result.stdout)
+        self.assertIn("Verified 4 live frontend files", result.stdout)
 
     def test_stale_asset_is_failure_even_with_http_200(self):
         (self.live / "app.js").write_text("// stale app")
@@ -77,6 +81,18 @@ class DeploymentVerificationTest(unittest.TestCase):
         result = self.run_check()
         self.assertEqual(result.returncode, 1)
         self.assertIn("joyful-1.html: HTTP Error 404", result.stdout)
+
+    def test_missing_localized_page_is_failure(self):
+        (self.live / "pt/oracoes.html").unlink()
+        result = self.run_check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("pt/oracoes.html: HTTP Error 404", result.stdout)
+
+    def test_missing_registry_is_actionable_failure(self):
+        (self.root / "locales/registry.json").unlink()
+        result = self.run_check()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("valid locales/registry.json", result.stderr)
 
     def test_empty_checkout_cannot_pass(self):
         (self.root / "index.html").unlink()

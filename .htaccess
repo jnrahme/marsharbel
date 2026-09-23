@@ -5,6 +5,12 @@ AddType image/avif .avif
 
 RewriteEngine On
 
+# Deployment contains source and test files; these are never public endpoints.
+RewriteRule ^(?:\.git|\.github|supabase|scripts|tests|personal-docs|docs|node_modules|output|tmp|test-results)(?:/|$) - [F,L]
+<FilesMatch "(?i)(^\.env(?:\..*)?$|\.(?:sql|toml)$|^turnstile-secret\.php(?:\..*)?$)">
+  Require all denied
+</FilesMatch>
+
 # Consolidate the known public alias; leave staging/local hosts untouched.
 RewriteCond %{HTTP_HOST} ^www\.marsharbel\.com$ [NC]
 RewriteRule ^ https://marsharbel.com%{REQUEST_URI} [R=301,L]
@@ -16,6 +22,14 @@ RewriteRule ^index(?:\.html)?$ / [R=301,L]
 # Recover the old misplaced Rosary links reported by Search Console. Keep the
 # language query parameter so visitors retain their selected translation.
 RewriteRule ^mysteries/rosary-visual-guide(?:\.html)?/?$ /rosary-visual-guide [R=301,L]
+
+# Language hubs are directory indexes with canonical trailing slashes.
+# i18n-routes:start
+RewriteRule ^en/?$ / [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl)/index(?:\.html)?$ /$1/ [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl)\.html$ /$1/ [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl)$ /$1/ [R=301,L]
+# i18n-routes:end
 
 # Redirect direct ".html" requests to clean URLs.
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]|$) [NC]

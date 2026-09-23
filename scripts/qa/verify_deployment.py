@@ -2,6 +2,7 @@
 """Verify public frontend files against this checkout, not just HTTP success."""
 
 import argparse
+import json
 import struct
 import zlib
 from concurrent.futures import ThreadPoolExecutor
@@ -78,7 +79,9 @@ def frontend_files(root):
     files = {path for pattern in ("*.html", "*.js", "*.css", "*.webmanifest")
              for path in root.glob(pattern)}
     files.update((root / "mysteries").glob("*.html"))
-    files.update(root / name for name in ("robots.txt", "sitemap.xml"))
+    for language in json.loads((root / "locales/registry.json").read_text())["locales"]:
+        files.update((root / language).glob("*.html"))
+    files.update(root / name for name in ("robots.txt", "sitemap.xml", "indexnow-key.txt"))
     files.update((root / "media/promo/optimized").glob("*.webp"))
     files.update((root / "media/fonts").glob("*.woff2"))
     files.update((root / "media/optimized").glob("*.webp"))
@@ -113,9 +116,12 @@ def main():
     if args.attempts < 1 or args.interval < 0:
         parser.error("attempts must be positive and interval must be nonnegative")
     root = args.root.resolve()
-    files = frontend_files(root)
-    if not files or not (root / "index.html").is_file():
+    if not (root / "index.html").is_file():
         parser.error("root must contain the website, including index.html")
+    try:
+        files = frontend_files(root)
+    except (OSError, ValueError, KeyError) as error:
+        parser.error(f"root must contain a valid locales/registry.json: {error}")
     for attempt in range(1, args.attempts + 1):
         nonce = time.time_ns()
         with ThreadPoolExecutor(max_workers=6) as pool:

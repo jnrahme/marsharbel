@@ -1,0 +1,43 @@
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import { readFile } from 'node:fs/promises';
+const source = await readFile(new URL('../../testimony-client.js', import.meta.url), 'utf8');
+const makeStorage = () => { const values = new Map(); return { getItem: k => values.get(k) ?? null, setItem: (k,v) => values.set(k,String(v)), removeItem: k => values.delete(k) }; };
+const localStorage = makeStorage();
+function open(sessionStorage = makeStorage()) {
+  const control = { checked: false, addEventListener: (_,fn) => { control.change = fn; } };
+  let options;
+  const window = { TESTIMONY_CONFIG: { supabaseUrl: 'https://test.supabase.co', supabaseAnonKey: 'public' }, supabase: { createClient: (_,__,opts) => { options = opts; return {}; } } };
+  vm.runInNewContext(source, { URL, window, localStorage, sessionStorage, document: { getElementById: () => control } });
+  return { control, options, sessionStorage, session: window.Testimony.adminSession };
+}
+const first = open();
+assert.equal(first.control.checked, false);
+assert.equal(first.options.auth.detectSessionInUrl, false);
+first.session.storage.setItem(first.session.storageKey, 'verified-test-session');
+assert.equal(localStorage.getItem(first.session.storageKey), null);
+assert.equal(open(first.sessionStorage).session.storage.getItem(first.session.storageKey), 'verified-test-session');
+assert.equal(open().session.storage.getItem(first.session.storageKey), null);
+first.control.checked = true; first.control.change();
+assert.equal(first.sessionStorage.getItem(first.session.storageKey), null);
+const returning = open();
+assert.equal(returning.control.checked, true);
+assert.equal(returning.session.storage.getItem(first.session.storageKey), 'verified-test-session');
+returning.control.checked = false; returning.control.change();
+assert.equal(localStorage.getItem(first.session.storageKey), null);
+assert.equal(returning.session.storage.getItem(first.session.storageKey), 'verified-test-session');
+returning.session.forget();
+assert.equal(returning.session.storage.getItem(first.session.storageKey), null);
+assert.equal(open().control.checked, false);
+console.log('Browser session checks passed: tab-only default, remembered return, opt-out migration and forget.');
+
+const legacyKey = 'sb-test-auth-token';
+localStorage.setItem(legacyKey, JSON.stringify({user:{app_metadata:{role:'moderator'}}}));
+const migrated = open();
+assert.equal(localStorage.getItem(legacyKey), null);
+assert.ok(migrated.session.storage.getItem(migrated.session.storageKey));
+assert.equal(localStorage.getItem(migrated.session.storageKey), null);
+localStorage.setItem(legacyKey, JSON.stringify({user:{app_metadata:{role:'member'}}}));
+open();
+assert.ok(localStorage.getItem(legacyKey));
+console.log('Legacy moderator session moves to tab storage; reader sessions are preserved.');

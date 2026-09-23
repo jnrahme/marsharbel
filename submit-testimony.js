@@ -1,46 +1,114 @@
-(function () {
+(async function () {
   'use strict';
-  const cfg = window.TESTIMONY_CONFIG || {};
+  const { config, configured, status, captcha } = window.Testimony;
   const form = document.getElementById('testimony-form');
-  const statusEl = document.getElementById('submit-status');
-  const submitButton = document.getElementById('submit-testimony-btn');
-  const turnstileSlot = document.getElementById('turnstile-slot');
-  const startedAt = Date.now();
-  let submitting = false;
-  const show = (message, type) => { statusEl.textContent = message; statusEl.className = `submit-status ${type || ''}`.trim(); };
-  const turnstileReady = Boolean(cfg.turnstileSiteKey && !cfg.turnstileSiteKey.includes('YOUR_'));
-  const endpointReady = Boolean(cfg.submissionEndpoint);
-  const supabaseConfigured = Boolean(cfg.supabaseUrl && !cfg.supabaseUrl.includes('YOUR_') && cfg.supabaseAnonKey && !cfg.supabaseAnonKey.includes('YOUR_'));
-  let supabaseClient = null;
-  if (supabaseConfigured && window.supabase) supabaseClient = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
-  // Accounts are required to submit: intake stays closed until Supabase Auth is configured.
-  const intakeOpen = cfg.submissionsEnabled === true && turnstileReady && endpointReady && supabaseClient !== null;
-  if (turnstileReady) turnstileSlot.innerHTML = `<div class="cf-turnstile" data-sitekey="${cfg.turnstileSiteKey}" data-action="submit_testimony"></div>`;
-  else turnstileSlot.innerHTML = '<p class="source-meta">Human verification is not configured yet.</p>';
-  if (!intakeOpen) { submitButton.disabled = true; show('Submissions are safely paused while the protected intake service is configured.', 'warn'); }
-  const clean = (fd, name, max) => (fd.get(name) || '').toString().trim().slice(0, max);
-  form?.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    if (!intakeOpen || submitting) return;
+  const message = document.getElementById('submit-status');
+  const submit = document.getElementById('submit-testimony-btn');
+  const availability = document.getElementById('submission-availability');
+  const verification = document.getElementById('turnstile-slot');
+  const readiness = document.getElementById('submit-readiness');
+  const touched = new Set();
+  const field = name => form.elements.namedItem(name);
+  let challenge; let sending = false; let submitted = false;
+  const issues = () => {
+    const problems = [];
+    const nameLength = field('display_name').value.trim().length;
+    const storyLength = field('story').value.trim().length;
+    if (nameLength < 2 || nameLength > 80) problems.push(['display_name', 'Enter a display name with 2–80 characters (at least 2).']);
+    if (storyLength < 60 || storyLength > 7000) problems.push(['story', `Write 60–7,000 characters for your story (${storyLength} entered).`]);
+    const date = field('event_date');
+    if (date.validity.badInput || (date.value && date.value > new Date().toISOString().slice(0, 10))) problems.push(['event_date', 'Choose an event date that is today or earlier.']);
+    if (!field('country').checkValidity()) problems.push(['country', 'Keep the country name to 100 characters or fewer.']);
+    if (!field('age_confirmed').checked) problems.push(['age_confirmed', 'Confirm that you are 18 or older.']);
+    if (!field('consent_publish').checked) problems.push(['consent_publish', 'Confirm your permission and consent to publication.']);
+    if (!field('ai_consent').checked) problems.push(['ai_consent', 'Confirm that you understand the screening notice.']);
+    if (!challenge?.token()) problems.push(['captcha', 'Complete human verification: check “I am human”.']);
+    return problems;
+  };
+  const updateSubmit = () => {
+    const problems = issues();
+    submit.disabled = !configured || !config.submissionsEnabled || sending || problems.length > 0 || !form.checkValidity();
+    for (const [name, errorId] of [['display_name', 'name-error'], ['story', 'story-error']]) {
+      const error = document.getElementById(errorId);
+      const problem = problems.find(([key]) => key === name);
+      const show = touched.has(name) && Boolean(problem);
+      error.hidden = !show;
+      error.textContent = show ? problem[1] : '';
+
+    }
+    // Match the visible checklist, including untouched required fields.
+    for (const name of ['display_name', 'story', 'event_date', 'country', 'age_confirmed', 'consent_publish', 'ai_consent']) {
+      const control = field(name);
+      const invalid = !submitted && problems.some(([key]) => key === name);
+      control.setAttribute('aria-invalid', String(invalid));
+      if (control.type === 'checkbox') control.closest('label').classList.toggle('field-missing', invalid);
+    }
+    verification.closest('.human-verification').classList.toggle('field-missing', !submitted && problems.some(([key]) => key === 'captcha'));
+    readiness.replaceChildren();
+    if (!configured || !config.submissionsEnabled || submitted) return;
+    if (sending) { readiness.textContent = 'Sending your testimony. Please wait…'; return; }
+    if (!problems.length) { readiness.textContent = 'Everything is complete. You can submit your testimony.'; return; }
+    const title = document.createElement('p'); title.textContent = 'Before you can submit:';
+    const list = document.createElement('ul');
+    for (const [, text] of problems) { const item = document.createElement('li'); item.textContent = text; list.append(item); }
+    readiness.append(title, list);
+  };
+  form.addEventListener('input', event => { touched.add(event.target.name); submitted = false; updateSubmit(); });
+  form.addEventListener('change', event => { touched.add(event.target.name); submitted = false; updateSubmit(); });
+  form.addEventListener('focusout', event => { touched.add(event.target.name); updateSubmit(); });
+  verification.addEventListener('verificationchange', updateSubmit);
+  updateSubmit();
+  form.addEventListener('submit', e => e.preventDefault());
+  message.tabIndex = -1;
+  submit.disabled = true;
+  if (!configured || !config.submissionsEnabled) {
+    availability.hidden = false;
+    availability.textContent = 'Submissions are temporarily closed. This form cannot send your story yet.';
+    status(message, 'Submissions are safely paused. Your story has not been sent.');
+    if (config.submissionCaptchaProvider === 'hcaptcha' ? config.hcaptchaSiteKey : config.turnstileSiteKey) {
+      try { await captcha(verification, 'submit_testimony'); }
+      catch { verification.textContent = 'Human verification could not load. Reload this page or open it in Chrome.'; }
+    } else verification.textContent = 'Human verification is not configured yet.';
+    return;
+  }
+  try {
+    challenge = await captcha(verification, 'submit_testimony');
+    updateSubmit();
+  } catch {
+    status(message, 'Human verification could not load. Reload this page and try again.', true);
+    return;
+  }
+  form.addEventListener('submit', async () => {
+    if (sending) return;
+    const problems = issues();
+    if (problems.length || !form.checkValidity()) {
+      touched.add('display_name'); touched.add('story'); updateSubmit();
+      status(message, problems.map(([, text]) => text).join(' ') || 'Check the highlighted fields before submitting.', true);
+      const first = problems.find(([key]) => key !== 'captcha');
+      if (first) field(first[0]).focus(); else message.focus();
+      return;
+    }
     const fd = new FormData(form);
-    if (clean(fd, 'website', 200)) return show('Submission blocked.', 'error');
-    if (Date.now() - startedAt < 3500) return show('Please take a moment to review your testimony.', 'warn');
-    const payload = {full_name:clean(fd,'full_name',120),email:clean(fd,'email',160)||null,language:clean(fd,'language',12)||'en',country:clean(fd,'country',120)||null,parish:clean(fd,'parish',180)||null,event_date:clean(fd,'event_date',10)||null,healing_type:clean(fd,'healing_type',160)||null,testimony_text:clean(fd,'testimony_text',7000),age_confirmed:fd.has('age_confirmed'),contact_permission:fd.has('contact_permission'),consent_publish:fd.has('consent_publish'),turnstile_token:clean(fd,'cf-turnstile-response',4096),website:'',elapsed_ms:Date.now()-startedAt};
-    if (payload.full_name.length < 2) return show('Please provide your full name.', 'warn');
-    if (payload.testimony_text.length < 60) return show('Please provide at least 60 characters.', 'warn');
-    if (!payload.age_confirmed) return show('You must confirm that you are 18 or older.', 'warn');
-    if (!payload.consent_publish) return show('Please confirm the consent statement.', 'warn');
-    if (!payload.turnstile_token) return show('Please complete the human verification.', 'warn');
-    const { data: sessionData } = await supabaseClient.auth.getSession();
-    const accessToken = sessionData && sessionData.session ? sessionData.session.access_token : '';
-    if (!accessToken) return show('Please sign in to your account before submitting.', 'warn');
-    submitting = true; submitButton.disabled = true; show('Sending for private review...', '');
+    const payload = { display_name: fd.get('display_name').trim(), story: fd.get('story').trim(), country: fd.get('country').trim(), language: fd.get('language'), event_date: fd.get('event_date'), age_attested: fd.has('age_confirmed'), consent_publish: fd.has('consent_publish'), ai_consent: fd.has('ai_consent'), website: fd.get('website') };
+    sending = true; updateSubmit(); submit.textContent = 'Submitting…';
+    status(message, 'Sending your testimony. Please wait…');
     try {
-      const response = await fetch(cfg.submissionEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json','Authorization':`Bearer ${accessToken}`},credentials:'omit',cache:'no-store',body:JSON.stringify(payload)});
-      const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.message || 'The protected intake could not accept this submission.');
-      form.reset(); if (window.turnstile) window.turnstile.reset(); show('Thank you. Your testimony is private and pending human review.', 'ok');
-    } catch (error) { show(error.message || 'Submission failed. Please try again later.', 'error'); if (window.turnstile) window.turnstile.reset(); }
-    finally { submitting = false; submitButton.disabled = !intakeOpen; }
+      const response = await fetch(`${config.supabaseUrl}/functions/v1/submit-testimony`, {
+        method: 'POST', headers: { 'Content-Type':'application/json', apikey:config.supabaseAnonKey },
+        body: JSON.stringify({ ...payload, turnstile_token:challenge.token() }), signal:AbortSignal.timeout(20000)
+      });
+      const result = await response.json().catch(() => null);
+      if (!response.ok) {
+        const fallback = response.status === 429 ? 'Submission limit reached. Please wait and try again later.' : response.status === 403 ? 'Human verification failed or expired. Please complete it again.' : 'The submission service is temporarily unavailable. Your text is still here. Please try again later.';
+        throw new Error(response.status >= 500 ? fallback : result?.message || fallback);
+      }
+      if (result?.accepted !== true || !result.reference) throw new Error('Submission could not be confirmed. Keep your text and try again later.');
+      submitted = true; touched.clear(); form.reset();
+      status(message, `Testimony submitted. Your story is private and pending review. Save this reference: ${result.reference}`);
+    } catch (error) {
+      status(message, error.name === 'TimeoutError' ? 'The request timed out. Your text is still here. Please wait before retrying to avoid duplicate submissions.' : error instanceof TypeError ? 'We could not connect to the submission service. Your text is still here. Check your connection and try again.' : error.message, true);
+    } finally {
+      challenge.reset(); sending = false; updateSubmit(); submit.textContent = 'Submit testimony'; message.focus();
+    }
   });
 })();

@@ -38,18 +38,18 @@ try {
   await staticPage.goto(base + '/', { waitUntil: 'load' });
   assert.equal(await staticPage.locator('h1').evaluate(el => getComputedStyle(el).opacity), '1');
   assert.ok(await staticPage.locator('h1').isVisible());
-  for (const [path, lang, dir] of [['/', 'en', null], ['/fr', 'fr', 'ltr'], ['/ar', 'ar', 'rtl']]) {
+  for (const [path, lang, dir] of [['/', 'en', null], ['/fr/', 'fr', 'ltr'], ['/ar/', 'ar', 'rtl']]) {
     await staticPage.goto(base + path, { waitUntil: 'load' });
     assert.equal(await staticPage.locator('html').getAttribute('lang'), lang);
     if (dir) assert.equal(await staticPage.locator('html').getAttribute('dir'), dir);
-    for (const [alternate, target] of [['en', '/'], ['fr', '/fr'], ['ar', '/ar'], ['x-default', '/']]) {
+    for (const [alternate, target] of [['en', '/'], ['fr', '/fr/'], ['ar', '/ar/'], ['x-default', '/']]) {
       assert.equal(await staticPage.locator(`link[hreflang="${alternate}"]`).getAttribute('href'), `https://marsharbel.com${target}`);
     }
     assert.ok((await staticPage.locator('main').innerText()).length > 700, 'Localized content is available without JavaScript');
   }
   await page.goto(base + '/', { waitUntil: 'load' });
   await page.locator('#sc-language-select').selectOption('fr');
-  await page.waitForURL(base + '/fr');
+  await page.waitForURL(base + '/fr/');
   await page.getByRole('link', { name: 'English', exact: true }).click();
   await page.waitForURL(base + '/?lang=en');
   assert.equal(await page.locator('#sc-language-select').inputValue(), 'en');
