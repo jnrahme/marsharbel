@@ -34,8 +34,16 @@
       const show = touched.has(name) && Boolean(problem);
       error.hidden = !show;
       error.textContent = show ? problem[1] : '';
-      field(name).setAttribute('aria-invalid', String(show));
+
     }
+    // Match the visible checklist, including untouched required fields.
+    for (const name of ['display_name', 'story', 'event_date', 'country', 'age_confirmed', 'consent_publish', 'ai_consent']) {
+      const control = field(name);
+      const invalid = !submitted && problems.some(([key]) => key === name);
+      control.setAttribute('aria-invalid', String(invalid));
+      if (control.type === 'checkbox') control.closest('label').classList.toggle('field-missing', invalid);
+    }
+    verification.closest('.human-verification').classList.toggle('field-missing', !submitted && problems.some(([key]) => key === 'captcha'));
     readiness.replaceChildren();
     if (!configured || !config.submissionsEnabled || submitted) return;
     if (sending) { readiness.textContent = 'Sending your testimony. Please wait…'; return; }
