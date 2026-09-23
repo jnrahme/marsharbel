@@ -4,7 +4,7 @@ const AxeBuilder = require('@axe-core/playwright').default;
 const pages = ['/submit-testimony.html', '/testimony-review.html', '/account.html'];
 // These checks exercise the paused setup state regardless of live rollout flags.
 test.beforeEach(async ({ page }) => {
-  await page.route('**/testimony-config.js', route => route.fulfill({
+  await page.route('**/testimony-config.js*', route => route.fulfill({
     contentType: 'application/javascript',
     body: 'window.TESTIMONY_CONFIG = Object.freeze({accountsEnabled:false, submissionsEnabled:false, moderationEnabled:false});'
   }));
