@@ -88,7 +88,7 @@ priority = (impact * confidence) / max(1, effort + risk), 0-5 scale.
 
 ### Cluster: worldwide devotion
 
-8. **san charbel mexico / saint charbel around the world** - candidate (batch 3)
+8. **san charbel mexico / saint charbel around the world** - DRAFTED 2026-09-24 (batch 3)
    Intent: learn. Large Spanish-language devotion (Catedral San Charbel,
    listones tradition). English explainer first; any Spanish-language page is a
    new-language decision reserved for Joey.
@@ -111,8 +111,9 @@ priority = (impact * confidence) / max(1, effort + risk), 0-5 scale.
 - Batch 2 (drafted 2026-09-24, stacked on batch 1): /pope-leo-xiv-annaya-visit,
   /saint-charbel-quotes, /saint-charbel-places-lebanon. Miracles 2025/2026 only
   after Joey's review.
-- Batch 3: worldwide devotion explainer; reassess with Search Console data
-  when access lands.
+- Batch 3 (drafted 2026-09-24, stacked on batches 1-2):
+  /saint-charbel-around-the-world. Next: reassess with Search Console data
+  when access lands; miracles 2025/2026 still parked for Joey's review.
 
 ## Measurement
 
