@@ -1,4 +1,5 @@
 import importlib.util
+import re
 from pathlib import Path
 import shutil
 import tempfile
@@ -32,8 +33,8 @@ class SeoRegressionTests(unittest.TestCase):
 
     def test_missing_sitemap_entry_fails(self):
         path = self.root / "sitemap.xml"
-        path.write_text(path.read_text().replace(
-            "  <url><loc>https://marsharbel.com/saint-charbel-novena</loc></url>\n", ""))
+        path.write_text(re.sub(r"  <url><loc>https://marsharbel.com/saint-charbel-novena</loc>.*?</url>\n",
+                               "", path.read_text()))
         self.assertTrue(any("missing indexable page https://marsharbel.com/saint-charbel-novena" in error for error in check(self.root)[0]))
 
     def test_accidentally_indexable_shop_fails(self):
@@ -65,6 +66,20 @@ class SeoRegressionTests(unittest.TestCase):
         self.assertEqual(homepage.count('"@type": "WebPage"'), 1)
         self.assertIn("noindex", (self.root / "shop.html").read_text())
         self.assertIn("Pray the complete nine-day novena", (self.root / "saint-charbel-novena.html").read_text())
+
+    def test_sitemap_lastmod_is_required_and_well_formed(self):
+        path = self.root / "sitemap.xml"
+        original = path.read_text()
+        url = "https://marsharbel.com/saint-charbel-novena"
+        entry = next(line for line in original.splitlines() if f"<loc>{url}</loc>" in line)
+        cases = {
+            "missing lastmod": re.sub(r"<lastmod>[^<]*</lastmod>", "", entry),
+            "must be YYYY-MM-DD": re.sub(r"<lastmod>[^<]*</lastmod>", "<lastmod>09/20/2026</lastmod>", entry),
+            "in the future": re.sub(r"<lastmod>[^<]*</lastmod>", "<lastmod>2999-01-01</lastmod>", entry),
+        }
+        for message, replacement in cases.items():
+            path.write_text(original.replace(entry, replacement))
+            self.assertTrue(any(message in error and url in error for error in check(self.root)[0]), message)
 
 
 if __name__ == "__main__":
