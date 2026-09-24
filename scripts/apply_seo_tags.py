@@ -10,6 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://marsharbel.com"
 DEFAULT_IMAGE = f"{SITE}/saint-charbel.jpg"
+# The site publishes under its own name; no personal or organizational credentials are claimed.
+PUBLISHER = {"@type": "Organization", "name": "marsharbel.com", "url": f"{SITE}/"}
 
 NOINDEX = {
     "account.html",
@@ -241,6 +243,8 @@ def build_meta_block(url: str, title: str, description: str, robots: str, image:
         "url": url,
         "isPartOf": {"@type": "WebSite", "name": "Saint Charbel", "url": f"{SITE}/"},
     }
+    if "noindex" not in robots:
+        webpage_schema["isPartOf"]["publisher"] = PUBLISHER
     webpage_schema.update(extra or {})
     if breadcrumb:
         webpage_schema["breadcrumb"] = breadcrumb

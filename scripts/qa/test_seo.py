@@ -120,6 +120,13 @@ class SeoRegressionTests(unittest.TestCase):
         generator.update_file(voice)
         self.assertIn(f"<title>{title}</title>", voice.read_text())
 
+    def test_indexable_generated_pages_name_the_site_as_publisher(self):
+        for name in ["history.html", "saint-charbel-novena.html", "mysteries/joyful-1.html"]:
+            html = (self.root / name).read_text()
+            blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html)]
+            pages = [b for b in blocks if isinstance(b, dict) and b.get("@type") == "WebPage"]
+            self.assertEqual(pages[0]["isPartOf"]["publisher"], generator.PUBLISHER, name)
+
 
 if __name__ == "__main__":
     unittest.main()
