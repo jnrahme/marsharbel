@@ -2727,3 +2727,12 @@ html.nav-suppress .nav-group:focus-within .nav-sub {
 }
 #testimony-form .field-missing { border-color: var(--form-error); }
 .footer .testimony-admin-link { font-size: .85em; margin-inline-start: .75rem; }
+.news-rotator{position:relative;min-height:5.2rem;margin:.65rem 0 1rem}
+.news-rotator-item{position:absolute;inset:0;margin:0;font-size:1.22rem;line-height:1.22;opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease;pointer-events:none}
+.news-rotator-item.is-active{opacity:1;transform:none;pointer-events:auto}
+.news-rotator-date{display:block;color:var(--gold);font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem}
+@media (prefers-reduced-motion:reduce){.news-rotator-item{transition:none}}
+@media (max-width:820px){.cinematic-devotion.news-rotator-card{display:block;margin-top:1.25rem}}
+.news-rotator-item{display:flex;gap:.75rem;align-items:flex-start}
+.news-rotator-item img{width:64px;height:64px;object-fit:cover;border-radius:10px;flex:none;border:1px solid rgba(211,178,110,.3)}
+.news-rotator-text{display:block}
