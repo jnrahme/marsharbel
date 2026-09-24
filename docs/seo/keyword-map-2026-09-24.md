@@ -36,7 +36,7 @@ priority = (impact * confidence) / max(1, effort + risk), 0-5 scale.
    https://www.lebanontraveler.com/en/magazine/darb-mar-charbel-trail/
    impact 4, confidence 5, effort 2, risk 1 -> priority 10.0
 
-2. **saint charbel places in lebanon / bekaa kafra** - candidate (batch 2)
+2. **saint charbel places in lebanon / bekaa kafra** - DRAFTED 2026-09-24 (batch 2)
    Intent: learn + visit. Birthplace village, Saint's Cave, route Bekaa Kafra
    to Annaya. Overlaps trail page; may merge into it or become its own guide
    once trail page performance is visible.
@@ -52,7 +52,7 @@ priority = (impact * confidence) / max(1, effort + risk), 0-5 scale.
    https://charbel.app/saints/saint-charbel-patron-saint
    impact 4, confidence 5, effort 1, risk 1 -> priority 10.0
 
-4. **saint charbel quotes** - candidate (batch 2, needs care)
+4. **saint charbel quotes** - DRAFTED 2026-09-24 (batch 2)
    Intent: learn. High misattribution risk across the web; authentic material
    exists (homilies/proverbs tradition, "Love Is a Radiant Light", Skandar).
    Only publish with traceable sourcing and labeled devotional reports.
@@ -97,7 +97,7 @@ priority = (impact * confidence) / max(1, effort + risk), 0-5 scale.
 
 ### Cluster: papal visit (event demand)
 
-9. **pope leo xiv saint charbel annaya december 2025** - candidate (batch 2)
+9. **pope leo xiv saint charbel annaya december 2025** - DRAFTED 2026-09-24 (batch 2)
    Intent: learn. Primary source available (Vatican transcript of the
    2025-12-01 visit and prayer at the tomb). Evergreen recap page; check
    overlap with /news first.
@@ -108,8 +108,9 @@ priority = (impact * confidence) / max(1, effort + risk), 0-5 scale.
 - Batch 1 (this PR): saint-charbel-trail, saint-charbel-patron-saint,
   saint-charbel-movie, saint-charbel-prayer-for-healing. All factual or
   devotional-tradition content; no miracle claims; normal QA gate applies.
-- Batch 2 (after review or evidence): quotes (sourcing care), Bekaa Kafra /
-  places, papal-visit recap. Miracles 2025/2026 only after Joey's review.
+- Batch 2 (drafted 2026-09-24, stacked on batch 1): /pope-leo-xiv-annaya-visit,
+  /saint-charbel-quotes, /saint-charbel-places-lebanon. Miracles 2025/2026 only
+  after Joey's review.
 - Batch 3: worldwide devotion explainer; reassess with Search Console data
   when access lands.
 
