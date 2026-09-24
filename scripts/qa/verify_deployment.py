@@ -8,9 +8,9 @@ import zlib
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import time
-from urllib.error import URLError
+from urllib.error import HTTPError, URLError
 from urllib.parse import quote
-from urllib.request import Request, urlopen
+from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 
 def palette_png_pixels(data):
@@ -91,16 +91,39 @@ def frontend_files(root):
     return sorted(path for path in files if path.is_file())
 
 
+class NoRedirect(HTTPRedirectHandler):
+    """Surface redirects so a moved or misrouted page cannot pass silently."""
+
+    def redirect_request(self, *args):
+        return None
+
+
+OPENER = build_opener(NoRedirect)
+
+
+def public_path(relative):
+    """URL path visitors load for a checkout file (Apache serves pages without .html)."""
+    if relative == "index.html" or relative.endswith("/index.html"):
+        return relative[: -len("index.html")]
+    if relative.endswith(".html"):
+        return relative[: -len(".html")]
+    return relative
+
+
 def verify_file(root, path, base_url, nonce):
     relative = path.relative_to(root).as_posix()
-    url = f"{base_url.rstrip('/')}/{quote(relative)}?deployment-check={nonce}"
+    url = f"{base_url.rstrip('/')}/{quote(public_path(relative))}?deployment-check={nonce}"
     request = Request(url, headers={"Cache-Control": "no-cache",
                                    "User-Agent": "Marsharbel-Deployment-Check/1.0"})
     try:
-        with urlopen(request, timeout=15) as response:
+        with OPENER.open(request, timeout=15) as response:
             actual = response.read()
         if not contents_match(path, path.read_bytes(), actual):
             return f"{relative}: deployed contents differ from checkout"
+    except HTTPError as error:
+        if 300 <= error.code < 400:
+            return f"{relative}: {public_path(relative) or '/'} redirects ({error.code}) to {error.headers.get('Location')}"
+        return f"{relative}: {error}"
     except (URLError, TimeoutError, OSError) as error:
         return f"{relative}: {error}"
     return None
