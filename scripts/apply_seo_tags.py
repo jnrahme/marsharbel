@@ -103,11 +103,18 @@ BREADCRUMBS = {
 }
 
 
+def mystery_name(title: str) -> str:
+    """Mystery name from a page title, e.g. "Third Glorious Mystery - The Descent of the Holy Spirit".
+    Titles put the mystery first and the brand last so search results
+    truncate the brand, not the mystery."""
+    return title.removeprefix("Saint Charbel | ").removesuffix(" | Saint Charbel").strip()
+
+
 def breadcrumb_for(path: Path, title: str) -> dict | None:
     """BreadcrumbList for an indexable English page, or None when not mapped."""
     rel = path.relative_to(ROOT).as_posix()
     if rel.startswith("mysteries/"):
-        section, label = "rosary", title.replace("Saint Charbel | ", "").split(" - ")[0]
+        section, label = "rosary", mystery_name(title).split(" - ")[0]
     elif rel in BREADCRUMBS:
         section, label = BREADCRUMBS[rel]
     else:
@@ -160,7 +167,7 @@ def description_for(path: Path, title: str) -> str:
     rel = path.relative_to(ROOT).as_posix()
     name = path.name
     if rel.startswith("mysteries/"):
-        pretty = title.replace("Saint Charbel | ", "")
+        pretty = mystery_name(title)
         return trim_description(
             f"Pray the {pretty} with guided Saint Charbel Rosary meditation, Scripture reflection, and step-by-step devotion."
         )
