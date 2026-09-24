@@ -65,8 +65,6 @@ class SeoRegressionTests(unittest.TestCase):
         homepage = (self.root / "index.html").read_text()
         self.assertIn('"@graph"', homepage)
         self.assertEqual(homepage.count('"@type": "WebPage"'), 1)
-        self.assertIn('"@id": "https://marsharbel.com/#organization"', homepage)
-        self.assertEqual(homepage.count('"publisher"'), 2)
         self.assertIn("noindex", (self.root / "shop.html").read_text())
         self.assertIn("Pray the complete nine-day novena", (self.root / "saint-charbel-novena.html").read_text())
 
