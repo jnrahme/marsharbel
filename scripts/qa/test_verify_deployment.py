@@ -27,8 +27,32 @@ def icon_png(indices=(1, 0), filter_type=0, metadata=False):
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
+    """Serve like the production .htaccess: clean URLs map to .html files."""
+
+    redirects = {}
+
     def log_message(self, *args):
         pass
+
+    def do_GET(self):
+        path = self.path.split("?", 1)[0]
+        if path in self.redirects:
+            self.send_response(301)
+            self.send_header("Location", self.redirects[path])
+            self.end_headers()
+            return
+        if path.endswith(".html"):
+            self.send_response(301)
+            self.send_header("Location", path[:-len(".html")])
+            self.end_headers()
+            return
+        super().do_GET()
+
+    def translate_path(self, path):
+        local = super().translate_path(path)
+        if not Path(local).exists() and Path(local + ".html").is_file():
+            return local + ".html"
+        return local
 
 
 class DeploymentVerificationTest(unittest.TestCase):
@@ -52,6 +76,8 @@ class DeploymentVerificationTest(unittest.TestCase):
         self.thread = Thread(target=self.server.serve_forever, daemon=True)
         self.thread.start()
         self.addCleanup(self.stop_server)
+
+        QuietHandler.redirects = {}
 
     def stop_server(self):
         self.server.shutdown()
@@ -106,6 +132,19 @@ class DeploymentVerificationTest(unittest.TestCase):
     def test_changed_or_corrupt_png_cannot_match(self):
         self.assertFalse(contents_match(Path('icon.png'), icon_png(), icon_png(indices=(1, 1))))
         self.assertFalse(contents_match(Path('icon.png'), icon_png(), b'not a PNG'))
+
+    def test_redirected_page_is_failure_naming_the_target(self):
+        QuietHandler.redirects = {"/mysteries/joyful-1": "/old-preview/joyful-1"}
+        result = self.run_check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("mysteries/joyful-1.html: mysteries/joyful-1 redirects (301) to /old-preview/joyful-1", result.stdout)
+
+    def test_pages_are_checked_at_their_clean_urls(self):
+        from verify_deployment import public_path
+        self.assertEqual(public_path("index.html"), "")
+        self.assertEqual(public_path("pt/index.html"), "pt/")
+        self.assertEqual(public_path("testimonies.html"), "testimonies")
+        self.assertEqual(public_path("app.js"), "app.js")
 
 
 if __name__ == "__main__":
