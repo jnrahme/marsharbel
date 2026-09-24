@@ -10,7 +10,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from i18n.catalog import read_json, page_url
+from i18n.catalog import locale_topics, read_json, page_url
 
 
 class VisibleText(HTMLParser):
@@ -51,7 +51,7 @@ def snapshot(root=ROOT):
     registry = read_json(root / 'locales/registry.json')
     generated = {f'{code}/index.html' for code in registry['locales'] if code != registry['defaultLocale']}
     generated.update(page_url(registry, code, topic).lstrip('/') + '.html'
-                     for code in registry['locales'] for topic in registry['topics'])
+                     for code in registry['locales'] for topic in locale_topics(registry, code))
     result = {}
     for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'),
                         *(root / code / 'index.html' for code in registry['locales']

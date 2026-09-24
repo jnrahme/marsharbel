@@ -53,6 +53,19 @@ def validate_registry(registry):
             raise ValueError(f'{topic}: invalid related English route')
         if not config['sources'] or not set(config['sources']) <= registry['sources'].keys():
             raise ValueError(f'{topic}: unknown or missing source reference')
+        if 'locales' in config:
+            subset = config['locales']
+            if not subset or len(subset) != len(set(subset)) or not set(subset) <= registry['locales'].keys():
+                raise ValueError(f'{topic}: locales must be a nonempty list of registered languages')
+
+
+def topic_locales(registry, topic):
+    """Languages that publish a topic. Topics without a list exist in every language."""
+    return [code for code in registry['locales'] if code in registry['topics'][topic].get('locales', registry['locales'])]
+
+
+def locale_topics(registry, code):
+    return [topic for topic in registry['topics'] if code in topic_locales(registry, topic)]
 
 
 def load_catalog(root=ROOT):
@@ -73,7 +86,7 @@ def load_catalog(root=ROOT):
         expected_home = '/' if code == default else f'/{code}/'
         if config['home'] != expected_home:
             raise ValueError(f'{code}: invalid homepage route')
-        if set(config['slugs']) != set(registry['topics']):
+        if set(config['slugs']) != set(locale_topics(registry, code)):
             raise ValueError(f'{code}: missing or extra topic routes')
         for slug in config['slugs'].values():
             if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug):
@@ -83,7 +96,7 @@ def load_catalog(root=ROOT):
                 raise ValueError(f'Duplicate route: {route}')
             paths.add(route)
         catalogs[code] = {name: read_json(root / f'locales/{code}/{name}.json') for name in ('common', 'pages')}
-        if set(catalogs[code]['pages']) != set(registry['topics']):
+        if set(catalogs[code]['pages']) != set(locale_topics(registry, code)):
             raise ValueError(f'{code}: missing or extra page topics')
         for topic, page in catalogs[code]['pages'].items():
             if set(page) != {'title', 'description', 'intro', 'sections'}:
@@ -93,9 +106,13 @@ def load_catalog(root=ROOT):
             for section in page['sections'].values():
                 if set(section) != {'title', 'body'}:
                     raise ValueError(f'{code}/{topic}: invalid section fields')
-    reference = leaves(catalogs[default])
+    # Each message is compared with the default language when the default publishes it.
+    # Topics outside the default language are held to the registry structure checked above.
     for code, catalog in catalogs.items():
-        current = leaves(catalog)
+        pages = {topic: page for topic, page in catalog['pages'].items() if topic in catalogs[default]['pages']}
+        base_pages = {topic: catalogs[default]['pages'][topic] for topic in pages}
+        current = leaves({'common': catalog['common'], **({'pages': pages} if pages else {})})
+        reference = leaves({'common': catalogs[default]['common'], **({'pages': base_pages} if base_pages else {})})
         if current.keys() != reference.keys():
             missing = sorted(reference.keys() - current.keys())
             extra = sorted(current.keys() - reference.keys())

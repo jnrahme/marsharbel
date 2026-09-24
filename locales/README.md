@@ -28,6 +28,12 @@ npm run i18n:test
 
 The build updates the HTML, language links, canonical URLs, hreflang, sitemap and route map together. Never edit generated HTML or `locale-routes.js` directly. The build does not call a translation service: supply meaningful text in each language when adding or changing a message's meaning. It rejects missing/empty messages instead of silently showing English.
 
+## Publishing a topic in only some languages
+
+A topic may list `"locales": ["ar"]` in `registry.json` to publish it only in those languages, for example an Arabic page that is ready and reviewed before the other translations exist. Only the listed languages need that topic's slug and `pages.json` entry; any other language that has one is rejected. Shared messages and topics that English publishes still require exact parity.
+
+When English is not listed, the topic's `relatedEnglish` page is its English alternate and `x-default`. The build writes the same hreflang cluster into that page's `<!-- hreflang:begin -->` block, so every member of the cluster is reciprocal. Languages without the topic are not declared as alternates; their header link goes to that language's homepage. The sitemap and `locale-routes.js` list only published pages. Remove the `locales` list once every language has a reviewed translation.
+
 ## Adding a language
 
 1. Add one entry to `registry.json` with the language code, native name, `ltr`/`rtl`, homepage route and all five topic slugs. Use language-wide codes unless a real regional content difference calls for a separate locale.
