@@ -62,7 +62,7 @@ try{
  assert.equal(await feedback.locator('[name=display_name]').getAttribute('aria-invalid'),'true');
  assert.equal(await feedback.locator('[name=display_name]').evaluate(el=>getComputedStyle(el).borderTopColor),'rgb(237, 139, 133)');
  assert.equal(await feedback.locator('.inline-check.field-missing').count(),3);
- assert.equal(new URL(await feedback.getByRole('link',{name:'Admin',exact:true}).getAttribute('href'),base).pathname,'/testimony-review.html');
+ assert.equal(new URL(await feedback.getByRole('link',{name:'Admin',exact:true}).getAttribute('href'),base).pathname,'/testimony-review');
 
  await feedback.locator('[name=display_name]').fill(' A ');
  await feedback.locator('[name=story]').fill('A complete test story with more than sixty characters to exercise customer feedback.');

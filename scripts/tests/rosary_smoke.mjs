@@ -113,7 +113,7 @@ try {
 
   await expect('Normal mystery selection exits intro/end staging', async () => {
     await page.selectOption('#mystery-picker', 'joyful_2');
-    await page.waitForURL(/joyful-2\.html/);
+    await page.waitForURL(/joyful-2(\.html)?/);
     const badge = await textOf(page, '#stage-badge');
     if (/Intro Prayers|End Prayers/i.test(badge)) {
       throw new Error(`Expected non-intro/end stage on joyful_2, got: ${badge}`);
@@ -123,7 +123,7 @@ try {
   await expect('Language selection persists across mystery navigation', async () => {
     await page.goto(`${baseUrl}/mysteries/joyful-1.html?lang=es`, { waitUntil: 'domcontentloaded' });
     await page.selectOption('#mystery-picker', 'joyful_2');
-    await page.waitForURL(url => /joyful-2\.html$/i.test(url.pathname), { timeout: 10000 });
+    await page.waitForURL(url => /joyful-2(\.html)?$/i.test(url.pathname), { timeout: 10000 });
     const lang = new URL(page.url()).searchParams.get('lang');
     if (lang !== 'es') {
       throw new Error(`Expected lang=es to persist, got: ${page.url()}`);
@@ -155,7 +155,7 @@ try {
       const home = document.querySelector('.topbar .links a[href]');
       return home && /lang=es/i.test(home.getAttribute('href') || '');
     }, null, { timeout: 10000 });
-    await page.click('.topbar .links a[href*="index.html"]');
+    await page.click('.topbar .links > a:first-child');
     await page.waitForURL(url => url.pathname.endsWith('/index.html') || url.pathname === '/', { timeout: 10000 });
     const lang = new URL(page.url()).searchParams.get('lang');
     if (lang !== 'es') {
@@ -166,15 +166,15 @@ try {
   await expect('Language persists across Home, Story, and Rosary nav links', async () => {
     await page.goto(`${baseUrl}/mysteries/joyful-1.html?lang=es`, { waitUntil: 'domcontentloaded' });
 
-    await page.click('.topbar .links a[href*="index.html"]');
+    await page.click('.topbar .links > a:first-child');
     await page.waitForURL(url => url.pathname.endsWith('/index.html') || url.pathname === '/', { timeout: 10000 });
     let lang = new URL(page.url()).searchParams.get('lang');
     if (lang !== 'es') {
       throw new Error(`Expected lang=es on Home, got: ${page.url()}`);
     }
 
-    await page.click('.topbar .links a[href*="story.html"]');
-    await page.waitForURL(/story\.html/i, { timeout: 10000 });
+    await page.click('.topbar .links a[href*="/story"]');
+    await page.waitForURL(/\/story(\.html)?(\?|$)/i, { timeout: 10000 });
     lang = new URL(page.url()).searchParams.get('lang');
     if (lang !== 'es') {
       throw new Error(`Expected lang=es on Story, got: ${page.url()}`);
