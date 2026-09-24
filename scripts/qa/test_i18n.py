@@ -102,6 +102,49 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('\\u003cscript\\u003e',html)
         self.assertNotIn('Prayer <script>',html)
 
+    def add_partial_topic(self, locales=('ar',)):
+        def registry(d):
+            d['topics']['feastDay']={'sections':['date'],'relatedEnglish':'/saint-charbel-feast-day','sources':['monastery'],'locales':list(locales)}
+            for code in locales:
+                d['locales'][code]['slugs']['feastDay']='feast-day'
+        self.edit('registry.json',registry)
+        for code in locales:
+            self.edit(f'{code}/pages.json',lambda d:d.update({'feastDay':{'title':'Feast','description':'Feast day guide','intro':'Intro text','sections':{'date':{'title':'Date','body':'Body text'}}}}))
+
+    def test_partial_topic_is_published_only_in_its_languages(self):
+        self.add_partial_topic()
+        registry,catalogs=load_catalog(self.root)
+        self.assertIn('feastDay',catalogs['ar']['pages'])
+        self.assertNotIn('feastDay',catalogs['fr']['pages'])
+        links=builder.alternate_links(registry,'feastDay')
+        self.assertIn('hreflang="ar" href="https://marsharbel.com/ar/feast-day"',links)
+        self.assertIn('hreflang="en" href="https://marsharbel.com/saint-charbel-feast-day"',links)
+        self.assertIn('hreflang="x-default" href="https://marsharbel.com/saint-charbel-feast-day"',links)
+        self.assertNotIn('hreflang="fr"',links)
+        navigation=builder.navigation(registry,'ar','feastDay')
+        self.assertIn('href="/fr/"',navigation)
+        self.assertIn('href="/saint-charbel-feast-day?lang=en"',navigation)
+        template=Template((ROOT/'templates/international/page.html').read_text())
+        self.assertNotIn('/ar/feast-day',builder.render(registry,catalogs['fr'],'fr',template))
+        self.assertIn('/ar/feast-day',builder.render(registry,catalogs['ar'],'ar',template))
+
+    def test_partial_topic_rejects_missing_page(self):
+        self.add_partial_topic()
+        self.edit('ar/pages.json',lambda d:d.pop('feastDay'))
+        with self.assertRaisesRegex(ValueError,'missing or extra page topics'):
+            load_catalog(self.root)
+
+    def test_partial_topic_rejects_page_in_other_language(self):
+        self.add_partial_topic()
+        self.edit('fr/pages.json',lambda d:d.update({'feastDay':{'title':'F','description':'D','intro':'I','sections':{'date':{'title':'T','body':'B'}}}}))
+        with self.assertRaisesRegex(ValueError,'missing or extra page topics'):
+            load_catalog(self.root)
+
+    def test_partial_topic_rejects_unknown_language(self):
+        self.edit('registry.json',lambda d:d['topics']['prayers'].update({'locales':['xx']}))
+        with self.assertRaisesRegex(ValueError,'locales must be'):
+            load_catalog(self.root)
+
     def test_legacy_guard_detects_new_visible_text(self):
         old=extract_html('<button>Old button</button>')
         new=extract_html('<button>Old button</button><p>New hardcoded wording</p>')
