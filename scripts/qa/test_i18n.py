@@ -10,7 +10,7 @@ from string import Template
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT/'scripts'))
-from i18n.catalog import load_catalog, read_json, page_url
+from i18n.catalog import load_catalog, locale_topics, read_json, page_url
 from check_i18n_policy import check, extract_html
 
 spec = importlib.util.spec_from_file_location('international_builder', ROOT/'scripts/build-international.py')
@@ -34,7 +34,9 @@ class CatalogTests(unittest.TestCase):
     def test_all_registered_languages_have_all_topics(self):
         registry, catalogs = load_catalog(self.root)
         self.assertEqual(set(catalogs), {'en','ar','fr','es','pt','it','de','pl'})
-        self.assertEqual(sum(len(c['pages']) for c in catalogs.values()),40)
+        for code,catalog in catalogs.items():
+            self.assertEqual(set(catalog['pages']),set(locale_topics(registry,code)))
+        self.assertTrue({'biography','prayers','novena','rosary','annaya'} <= set(catalogs['pl']['pages']))
 
     def test_missing_key_is_rejected(self):
         self.edit('pl/common.json', lambda d:d.pop('navigation.skip'))

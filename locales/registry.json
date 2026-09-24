@@ -24,7 +24,8 @@
         "prayers": "prayers",
         "novena": "novena",
         "rosary": "rosary",
-        "annaya": "annaya"
+        "annaya": "annaya",
+        "feastDay": "feast-day"
       }
     },
     "fr": {
@@ -181,6 +182,24 @@
         "monastery",
         "hermitage"
       ]
+    },
+    "feastDay": {
+      "sections": [
+        "twoDates",
+        "upcoming",
+        "december",
+        "annaya",
+        "atHome",
+        "dayTwentyTwo"
+      ],
+      "relatedEnglish": "/saint-charbel-feast-day",
+      "sources": [
+        "generalCalendar",
+        "monastery"
+      ],
+      "locales": [
+        "ar"
+      ]
     }
   },
   "sources": {
@@ -190,6 +209,7 @@
     "monastery": "https://saintcharbel.com/",
     "novena": "https://saintcharbel.com/novena-of-saint-charbel-en/",
     "rosary": "https://www.vatican.va/special/rosary/documents/misteri_fr.html",
-    "rosaryPrayers": "https://www.vaticannews.va/fr/priere/rosaire.html"
+    "rosaryPrayers": "https://www.vaticannews.va/fr/priere/rosaire.html",
+    "generalCalendar": "https://www.usccb.org/resources/2024cal.pdf"
   }
 }
