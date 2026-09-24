@@ -273,7 +273,7 @@
 
     if (!hasPrivacyLink) {
       linksToAdd.push({
-        href: '/privacy-policy.html',
+        href: '/privacy-policy',
         text: 'Privacy Policy',
         isCurrent: isPrivacyPolicyPath(window.location.pathname || ''),
       });
@@ -281,7 +281,7 @@
 
     if (!hasTermsLink) {
       linksToAdd.push({
-        href: '/terms-of-service.html',
+        href: '/terms-of-service',
         text: 'Terms of Service',
         isCurrent: isTermsOfServicePath(window.location.pathname || ''),
       });

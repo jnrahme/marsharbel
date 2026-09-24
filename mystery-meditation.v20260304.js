@@ -64,7 +64,7 @@ const clearRosarySession = () => {
 let rosarySession = readRosarySession();
 
 const keyToSlug = mysteryKey => mysteryKey.replace('_', '-');
-const mysteryUrl = mysteryKey => `${basePath}mysteries/${keyToSlug(mysteryKey)}.html`;
+const mysteryUrl = mysteryKey => `${basePath}mysteries/${keyToSlug(mysteryKey)}`;
 const activeIndex = Math.max(0, orderedKeys.indexOf(key));
 const getActiveLang = () => {
   const lang = (new URLSearchParams(window.location.search).get('lang') || '').toLowerCase();
@@ -181,7 +181,7 @@ contextPanel.innerHTML = `
     <h4>Reflection</h4>
     <p id="mystery-reflection"></p>
   </article>
-  <a class="btn subtle mystery-source-link" href="${basePath}rosary-minibook.html">Open Rosary Minibook</a>
+  <a class="btn subtle mystery-source-link" href="${basePath}rosary-minibook">Open Rosary Minibook</a>
 `;
 meditationContent?.appendChild(contextPanel);
 const mysteryExplanationEl = document.getElementById('mystery-explanation');
@@ -1217,7 +1217,7 @@ const nextStage = () => {
     }
     clearRosarySession();
     rosarySession = null;
-    window.location.href = `${basePath}rosary-visual-guide.html`;
+    window.location.href = `${basePath}rosary-visual-guide`;
     return;
   }
   navigateMystery((activeIndex + 1) % orderedKeys.length);

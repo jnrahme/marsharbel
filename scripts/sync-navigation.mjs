@@ -4,6 +4,9 @@ const check = process.argv.includes('--check');
 const template = (await readFile('partials/primary-navigation.html', 'utf8')).trim();
 const pages = [...(await readdir('.')).filter(p => p.endsWith('.html')), ...(await readdir('mysteries')).filter(p => p.endsWith('.html')).map(p => `mysteries/${p}`)];
 const aliases = { 'submit-testimony.html':'testimonies.html', 'testimony-review.html':'testimonies.html', 'account.html':'testimonies.html', 'voice-lab.html':'voice-testimony.html', 'shop-mockup.html':'souvenirs.html' };
+// Links are written as clean URLs (./story, ./ for home); compare pages by
+// their clean name so highlighting works for both forms.
+const cleanName = value => { const base = path.posix.basename(value.replace(/\/$/, '/index')).replace(/\.html$/, ''); return base === '.' || base === '..' || base === '' ? 'index' : base; };
 let count = 0; const stale = [];
 for (const file of pages) {
   const source = await readFile(file, 'utf8');
@@ -16,12 +19,12 @@ for (const file of pages) {
   const current = file.startsWith('mysteries/') ? 'rosary-visual-guide.html' : (aliases[file] || file);
   let nav = template.replaceAll('href="./', `href="${prefix}`);
   nav = nav.replace(/<a([^>]*?)href="([^"]+)"([^>]*)>/g, (tag, before, href, after) => {
-    if (path.posix.basename(href) !== current) return tag;
+    if (cleanName(href) !== cleanName(current)) return tag;
     const isParent = before.includes('nav-parent');
     // A group parent and its matching child may both be highlighted, but only
     // an exact destination receives aria-current="page".
     const active = before.includes('class="') ? before.replace('class="', 'class="active ') : `${before}class="active" `;
-    const exact = path.posix.basename(href) === path.posix.basename(file);
+    const exact = cleanName(href) === cleanName(file);
     return `<a${active}href="${href}"${after}${exact && !isParent ? ' aria-current="page"' : ''}>`;
   });
   nav = nav.replace(/<div class="nav-group">([\s\S]*?)<\/div><\/div>/g, (group, contents) => contents.includes('class="active"') ? group.replace('class="nav-parent"', 'class="active nav-parent"') : group);

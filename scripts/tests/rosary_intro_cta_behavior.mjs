@@ -29,10 +29,10 @@ try {
   await page.click('[data-action="today"]');
 
   const expectedSet = setForToday();
-  const expectedPath = `/mysteries/${firstForSet[expectedSet]}.html`;
+  const expectedPath = `/mysteries/${firstForSet[expectedSet]}`;
 
   await page.waitForURL(url =>
-    url.pathname === expectedPath
+    url.pathname.replace(/\.html$/, "") === expectedPath
     && url.searchParams.get('auto') === '1'
     && url.searchParams.get('stage') === 'intro'
   );

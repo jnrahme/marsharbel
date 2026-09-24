@@ -25,3 +25,12 @@ source articles, downloaded and served from the repo (`media/news/`, webp,
 compressed, lazy-loaded) with attribution in alt text/caption where the
 source requires it. Never hotlink. Never take rights-restricted stock
 (e.g. Shutterstock) - use a site asset and flag instead.
+
+## Internal links
+
+Internal links use clean URLs that match the canonical tags: `./story`,
+`../rosary-visual-guide`, `./news#item-id`, and `./` (or `../`) for home.
+Never link to `*.html`; the host 301s those, and each redirect costs crawl
+budget and splits link signals. The shared nav lives in
+`partials/primary-navigation.html` and is applied with
+`node scripts/sync-navigation.mjs`.

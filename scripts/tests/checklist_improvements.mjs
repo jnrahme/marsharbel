@@ -1235,46 +1235,46 @@ try {
   });
 
   // ============================================================
-  // CANONICAL ROSARY URL (consistent .html links, server 301-redirects to clean URLs)
+  // CANONICAL ROSARY URL (internal links use clean URLs, matching canonicals; .html 301s)
   // ============================================================
 
-  await expect('Rosary nav links use consistent .html URLs on homepage', async () => {
+  await expect('Rosary nav links use clean URLs on homepage', async () => {
     await page.goto(`${baseUrl}/index.html`, { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(300);
     const rosaryLinks = await page.locator('a[href*="rosary-visual-guide"]').evaluateAll(links =>
       links.map(a => a.getAttribute('href'))
     );
     if (!rosaryLinks.length) throw new Error('No rosary-visual-guide links found on homepage');
-    const badLinks = rosaryLinks.filter(h => !h.includes('.html'));
-    if (badLinks.length) throw new Error(`Found non-.html rosary links: ${badLinks.join(', ')}`);
+    const badLinks = rosaryLinks.filter(h => h.includes('.html'));
+    if (badLinks.length) throw new Error(`Found .html rosary links: ${badLinks.join(', ')}`);
   });
 
-  await expect('Mystery page rosary links use consistent .html URLs', async () => {
+  await expect('Mystery page rosary links use clean URLs', async () => {
     await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(300);
     const rosaryLinks = await page.locator('a[href*="rosary-visual-guide"]').evaluateAll(links =>
       links.map(a => a.getAttribute('href'))
     );
     if (!rosaryLinks.length) throw new Error('No rosary-visual-guide links found on mystery page');
-    const badLinks = rosaryLinks.filter(h => !h.includes('.html'));
-    if (badLinks.length) throw new Error(`Found non-.html rosary links on mystery page: ${badLinks.join(', ')}`);
+    const badLinks = rosaryLinks.filter(h => h.includes('.html'));
+    if (badLinks.length) throw new Error(`Found .html rosary links on mystery page: ${badLinks.join(', ')}`);
   });
 
-  await expect('Floating player Open Mystery link uses .html URL', async () => {
+  await expect('Floating player Open Mystery link uses clean URL', async () => {
     await page.goto(`${baseUrl}/mysteries/luminous-1.html`, { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(300);
     const href = await page.locator('#floating-audio-open').getAttribute('href');
-    if (!href.includes('.html')) throw new Error(`Floating player link missing .html: ${href}`);
+    if (href.includes('.html')) throw new Error(`Floating player link uses .html: ${href}`);
   });
 
-  await expect('Voice testimony rosary CTA uses .html URL', async () => {
+  await expect('Voice testimony rosary CTA uses clean URL', async () => {
     await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(300);
     const rosaryLinks = await page.locator('a[href*="rosary-visual-guide"]').evaluateAll(links =>
       links.map(a => a.getAttribute('href'))
     );
-    const badLinks = rosaryLinks.filter(h => !h.includes('.html'));
-    if (badLinks.length) throw new Error(`Found non-.html rosary links on voice testimony: ${badLinks.join(', ')}`);
+    const badLinks = rosaryLinks.filter(h => h.includes('.html'));
+    if (badLinks.length) throw new Error(`Found .html rosary links on voice testimony: ${badLinks.join(', ')}`);
   });
 
   // ============================================================
@@ -1430,7 +1430,7 @@ try {
     if (!visible) throw new Error('TOC not found or not visible');
     const links = await toc.locator('a').evaluateAll(as => as.map(a => {
       const url = new URL(a.href);
-      if (url.pathname !== window.location.pathname) throw new Error('TOC link leaves the current page');
+      if (url.pathname.replace(/\.html$/, '') !== window.location.pathname.replace(/\.html$/, '')) throw new Error('TOC link leaves the current page');
       return url.hash;
     }));
     if (links.length < 4) throw new Error(`Expected at least 4 TOC links, got ${links.length}`);

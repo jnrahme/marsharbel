@@ -121,8 +121,11 @@ for htmlfile in *.html; do
   esac
   # Check if any OTHER html file links to this page
   if ! grep -rql "$htmlfile" --include="*.html" . --exclude-dir=node_modules --exclude-dir=tmp --exclude-dir=.venv --exclude-dir=.git --exclude="$htmlfile" >/dev/null 2>&1; then
-    # Also check JS files (some pages are navigated to via JS)
-    if ! grep -rql "$htmlfile" --include="*.js" . --exclude-dir=node_modules --exclude-dir=tmp --exclude-dir=.venv --exclude-dir=.git >/dev/null 2>&1; then
+    # Also check JS files (some pages are navigated to via JS); match both the
+    # .html filename and the clean-URL stem (links migrated to extensionless URLs)
+    stem="${htmlfile%.html}"
+    if ! grep -rql "$htmlfile" --include="*.js" . --exclude-dir=node_modules --exclude-dir=tmp --exclude-dir=.venv --exclude-dir=.git >/dev/null 2>&1 \
+      && ! grep -rql "/$stem[\"'/?#]" --include="*.js" . --exclude-dir=node_modules --exclude-dir=tmp --exclude-dir=.venv --exclude-dir=.git >/dev/null 2>&1; then
       if has_clean_inbound_link "$htmlfile"; then
         continue
       fi
