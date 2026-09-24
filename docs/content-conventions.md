@@ -31,6 +31,8 @@ source requires it. Never hotlink. Never take rights-restricted stock
 Internal links use clean URLs that match the canonical tags: `./story`,
 `../rosary-visual-guide`, `./news#item-id`, and `./` (or `../`) for home.
 Never link to `*.html`; the host 301s those, and each redirect costs crawl
-budget and splits link signals. The shared nav lives in
+budget and splits link signals. The brand link and
+breadcrumbs follow the same rule (`./`, not `index`). `check_seo.py` fails
+the build on any internal link to `*.html` or `index`. The shared nav lives in
 `partials/primary-navigation.html` and is applied with
 `node scripts/sync-navigation.mjs`.

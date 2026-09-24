@@ -29,6 +29,7 @@ class Page(HTMLParser):
         self.h1_count = 0
         self.missing_alt = []
         self.references = []
+        self.anchors = []
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
@@ -37,6 +38,8 @@ class Page(HTMLParser):
             self.h1_count += 1
         if tag == "img" and "alt" not in attrs:
             self.missing_alt.append(attrs.get("src", "unknown image"))
+        if tag == "a" and attrs.get("href"):
+            self.anchors.append(attrs["href"])
         if tag in ("a", "link", "img", "script", "source"):
             reference = attrs.get("href" if tag in ("a", "link") else "src")
             if reference:
@@ -107,6 +110,14 @@ def check(root):
             target = root / relative_path.lstrip("/") if relative_path.startswith("/") else path.parent / relative_path
             if not target.exists() and not target.with_suffix(".html").exists():
                 errors.append(f"{path.name}: missing local link or asset {reference}")
+        # Internal links use clean URLs (docs/content-conventions.md): a link to
+        # *.html or to "index" is a 301 on every crawl.
+        for href in page.anchors:
+            parsed = urlsplit(href)
+            if parsed.scheme or parsed.netloc:
+                continue
+            if parsed.path.endswith(".html") or parsed.path.rsplit("/", 1)[-1] == "index":
+                errors.append(f"{path.name}: internal link to a redirecting URL, use the clean URL: {href}")
         if page.canonicals != [canonical]:
             errors.append(f"{path.name}: expected exactly one canonical {canonical}")
         if not page.title.strip() or page.title in titles:

@@ -127,6 +127,13 @@ class SeoRegressionTests(unittest.TestCase):
             pages = [b for b in blocks if isinstance(b, dict) and b.get("@type") == "WebPage"]
             self.assertEqual(pages[0]["isPartOf"]["publisher"], generator.PUBLISHER, name)
 
+    def test_internal_link_to_redirecting_url_fails(self):
+        page = self.root / "history.html"
+        page.write_text(page.read_text().replace("</main>", '<a href="./story.html">x</a><a href="index">y</a></main>', 1))
+        errors, _ = check(self.root)
+        self.assertTrue(any("redirecting URL" in e and "story.html" in e for e in errors))
+        self.assertTrue(any("redirecting URL" in e and e.endswith(" index") for e in errors))
+
 
 if __name__ == "__main__":
     unittest.main()
