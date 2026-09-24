@@ -1,3 +1,4 @@
+// Rotates the four latest headlines inside the homepage hero card.
 (function () {
   var items = document.querySelectorAll('.news-rotator-item');
   if (items.length < 2) return;
