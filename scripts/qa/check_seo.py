@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SITE = "https://marsharbel.com"
 sys.path.insert(0, str(ROOT / "scripts"))
 from i18n.catalog import public_html_files
+from sitemap_lastmod import validate as validate_lastmod
 
 
 class Page(HTMLParser):
@@ -130,6 +131,7 @@ def check(root):
         errors.append(f"sitemap.xml: missing indexable page {url}")
     for url in sorted(set(urls) - expected):
         errors.append(f"sitemap.xml: URL is not an indexable canonical page: {url}")
+    errors.extend(validate_lastmod(root))
     if f"Sitemap: {SITE}/sitemap.xml" not in (root / "robots.txt").read_text():
         errors.append("robots.txt: missing sitemap declaration")
     return errors, len(expected)

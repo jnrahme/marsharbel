@@ -89,10 +89,16 @@ def outputs(root=ROOT):
     sitemap = root / 'sitemap.xml'
     text = sitemap.read_text()
     pattern = '|'.join(re.escape(code) for code in registry['locales'])
-    text = re.sub(r'\s*<url>\s*<loc>https://marsharbel.com/(?:' + pattern + r')(?:/[^<]*)?</loc>\s*</url>', '', text)
+    localized = re.compile(r'\s*<url>\s*<loc>(https://marsharbel.com/(?:' + pattern + r')(?:/[^<]*)?)</loc>(?:\s*<lastmod>([^<]*)</lastmod>)?\s*</url>')
+    # lastmod is owned by scripts/sitemap_lastmod.py (git history); keep it stable here.
+    lastmods = {match.group(1): match.group(2) for match in localized.finditer(text) if match.group(2)}
+    text = localized.sub('', text)
     generated = [registry['site'] + page_url(registry, code) for code in registry['locales'] if code != registry['defaultLocale']]
     generated += [registry['site'] + page_url(registry, code, topic) for code in registry['locales'] for topic in registry['topics']]
-    text = text.replace('</urlset>', '\n' + '\n'.join(f'  <url><loc>{url}</loc></url>' for url in generated) + '\n</urlset>')
+    def entry(url):
+        lastmod = f'<lastmod>{lastmods[url]}</lastmod>' if url in lastmods else ''
+        return f'  <url><loc>{url}</loc>{lastmod}</url>'
+    text = text.replace('</urlset>', '\n' + '\n'.join(entry(url) for url in generated) + '\n</urlset>')
     result[sitemap] = text
     routing = {'homes':{code: cfg['home'] for code,cfg in registry['locales'].items()},
                'topics':{cfg['relatedEnglish']:{code:page_url(registry,code,topic) for code in registry['locales']} for topic,cfg in registry['topics'].items()}}

@@ -23,6 +23,12 @@ RewriteRule ^index(?:\.html)?$ / [R=301,L]
 # language query parameter so visitors retain their selected translation.
 RewriteRule ^mysteries/rosary-visual-guide(?:\.html)?/?$ /rosary-visual-guide [R=301,L]
 
+# Recover the legacy Rosary and 22nd-of-the-month URLs that Google still
+# reports. The generic ".html" redirect below would otherwise send them
+# to clean URLs that do not exist.
+RewriteRule ^rosary(?:\.html)?/?$ /rosary-visual-guide [R=301,L]
+RewriteRule ^the-22nd-of-the-month(?:\.html)?/?$ /22nd-of-the-month [R=301,L]
+
 # Language hubs are directory indexes with canonical trailing slashes.
 # i18n-routes:start
 RewriteRule ^en/?$ / [R=301,L]

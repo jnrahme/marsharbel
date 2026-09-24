@@ -24,14 +24,43 @@
   "name": "Saint Charbel News | Latest Miracles, Movie & Events",
   "description": "The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources.",
   "url": "https://marsharbel.com/news",
-  "dateModified": "2026-09-20",
   "isPartOf": {
     "@type": "WebSite",
     "name": "Saint Charbel",
-    "url": "https://marsharbel.com/"
+    "url": "https://marsharbel.com/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "marsharbel.com",
+      "url": "https://marsharbel.com/"
+    }
+  },
+  "dateModified": "2026-09-20",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://marsharbel.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Miracles",
+        "item": "https://marsharbel.com/miracles"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Latest News",
+        "item": "https://marsharbel.com/news"
+      }
+    ]
   }
 }
   </script>
+  <link rel="alternate" type="application/rss+xml" href="https://marsharbel.com/feed.xml" />
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
@@ -113,7 +142,8 @@
             This is a new production, distinct from the 2009 film "Charbel" by Nabil Lebbos.
           </p>
           <p>
-            <a href="https://blogbaladi.com/charbel-the-movie-coming-soon/" target="_blank" rel="noopener">Announcement coverage (Blog Baladi, December 21, 2025)</a>
+            <a href="https://blogbaladi.com/charbel-the-movie-coming-soon/" target="_blank" rel="noopener">Announcement coverage (Blog Baladi, December 21, 2025)</a><br />
+            Background, cast, and both films: <a href="saint-charbel-movie.html">the Saint Charbel Movie page</a>.
           </p>
         </article>
 
@@ -134,7 +164,7 @@
       <h2 class="reveal">Recent News, Newest First</h2>
       <p class="section-sub reveal">Reported events and newly recorded cases are not the same as formal Vatican recognition. Labels on each card say which is which.</p>
       <div class="grid-2">
-        <article class="card update reveal">
+        <article class="card update reveal" id="doctor-borik-interview-2026-09">
           <span class="tag ok">September 10, 2026 &middot; Interview</span>
           <h3>The Doctor Who Investigated a St. Charbel Healing Speaks</h3>
           <p>
@@ -146,7 +176,7 @@
           <p><a href="https://zeale.co/news/articles/exclusive-there-was-no-explanation-catholic-doctor-recounts-st-charbel-healing-and-its-lasting-impact" target="_blank" rel="noopener">Zeale News interview (September 10, 2026)</a></p>
         </article>
 
-        <article class="card update reveal">
+        <article class="card update reveal" id="st-charbel-trail-pilgrimage-2026-08">
           <span class="tag ok">August 23, 2026 &middot; Pilgrimage</span>
           <h3>American Priest Walks the St. Charbel Trail</h3>
           <p>
@@ -157,7 +187,7 @@
           <p><a href="https://www.catholicworldreport.com/2026/08/23/american-priest-walks-lebanons-st-charbel-trail-encourages-more-pilgrims-to-follow/" target="_blank" rel="noopener">Catholic World Report / EWTN News (August 23, 2026)</a></p>
         </article>
 
-        <article class="card update reveal">
+        <article class="card update reveal" id="revesby-feast-2026-07">
           <span class="tag ok">July 20, 2026 &middot; Feast day</span>
           <h3>Hundreds Honor St. Charbel at Revesby Feast</h3>
           <p>
@@ -168,7 +198,7 @@
           <p><a href="https://catholicweekly.com.au/hundreds-honour-st-charbel-at-revesby-feast/" target="_blank" rel="noopener">The Catholic Weekly (July 20, 2026)</a></p>
         </article>
 
-        <article class="card update reveal">
+        <article class="card update reveal" id="cebu-relic-visit-2026-06">
           <span class="tag ok">June 29 - July 1, 2026 &middot; Relic pilgrimage</span>
           <h3>St. Charbel's Pilgrim Relic Visits Cebu</h3>
           <p>
@@ -179,7 +209,7 @@
           <p><a href="https://thearchdioceseofcebu.com/st-charbels-relic-visits-cebu-archdiocese/" target="_blank" rel="noopener">Archdiocese of Cebu (June 29, 2026)</a></p>
         </article>
 
-        <article class="card update reveal">
+        <article class="card update reveal" id="new-miracles-reported-2026-01">
           <span class="tag warn">January 28, 2026 &middot; Reported, recorded at Annaya</span>
           <h3>Two New Miracles Reported in Early 2026</h3>
           <p>
@@ -190,7 +220,7 @@
           <p><a href="https://www.catholicworldreport.com/2026/01/28/2-new-miracles-reported-through-intercession-of-st-charbel-in-2026/" target="_blank" rel="noopener">Catholic World Report / EWTN News (January 28, 2026)</a></p>
         </article>
 
-        <article class="card update reveal">
+        <article class="card update reveal" id="papal-visit-annaya-2025-12">
           <span class="tag ok">December 1, 2025 &middot; Milestone</span>
           <h3>First Papal Visit to Saint Charbel's Tomb</h3>
           <p>
@@ -198,7 +228,8 @@
             Lebanon - the first pope ever to visit - and entrusted Lebanon, the Church, and the
             world to Saint Charbel's intercession.
           </p>
-          <p><a href="https://www.vatican.va/content/leo-xiv/en/speeches/2025/december/documents/20251201-libano-san-charbel.html" target="_blank" rel="noopener">Official Vatican text (December 1, 2025)</a></p>
+          <p><a href="https://www.vatican.va/content/leo-xiv/en/speeches/2025/december/documents/20251201-libano-san-charbel.html" target="_blank" rel="noopener">Official Vatican text (December 1, 2025)</a><br />
+          Full recap: <a href="pope-leo-xiv-annaya-visit.html">Pope Leo XIV at the tomb of Saint Charbel</a>.</p>
         </article>
       </div>
     </section>
