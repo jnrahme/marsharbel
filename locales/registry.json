@@ -25,7 +25,8 @@
         "novena": "novena",
         "rosary": "rosary",
         "annaya": "annaya",
-        "feastDay": "feast-day"
+        "feastDay": "feast-day",
+        "twentySecond": "22nd-of-the-month"
       }
     },
     "fr": {
@@ -200,6 +201,23 @@
       "locales": [
         "ar"
       ]
+    },
+    "twentySecond": {
+      "sections": [
+        "origin",
+        "annaya",
+        "atHome",
+        "notFeast",
+        "healing"
+      ],
+      "relatedEnglish": "/22nd-of-the-month",
+      "sources": [
+        "cnewaMonthly",
+        "monastery"
+      ],
+      "locales": [
+        "ar"
+      ]
     }
   },
   "sources": {
@@ -210,6 +228,7 @@
     "novena": "https://saintcharbel.com/novena-of-saint-charbel-en/",
     "rosary": "https://www.vatican.va/special/rosary/documents/misteri_fr.html",
     "rosaryPrayers": "https://www.vaticannews.va/fr/priere/rosaire.html",
-    "generalCalendar": "https://www.usccb.org/resources/2024cal.pdf"
+    "generalCalendar": "https://www.usccb.org/resources/2024cal.pdf",
+    "cnewaMonthly": "https://cnewa.org/magazine/lebanons-beloved-saint/"
   }
 }
