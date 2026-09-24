@@ -31,50 +31,44 @@
   }
 }
   </script>
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="./styles.css?v=20260922-1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/testimony-review" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/testimony-review" />
+  <link rel="alternate" hreflang="zh-cn" href="https://marsharbel.com/testimony-review?lang=zh-cn" />
+  <link rel="alternate" hreflang="es" href="https://marsharbel.com/testimony-review?lang=es" />
+  <link rel="alternate" hreflang="hi" href="https://marsharbel.com/testimony-review?lang=hi" />
+  <link rel="alternate" hreflang="ar" href="https://marsharbel.com/testimony-review?lang=ar" />
+  <link rel="alternate" hreflang="bn" href="https://marsharbel.com/testimony-review?lang=bn" />
+  <link rel="alternate" hreflang="pt" href="https://marsharbel.com/testimony-review?lang=pt" />
+  <link rel="alternate" hreflang="ru" href="https://marsharbel.com/testimony-review?lang=ru" />
+  <link rel="alternate" hreflang="ja" href="https://marsharbel.com/testimony-review?lang=ja" />
+  <link rel="alternate" hreflang="de" href="https://marsharbel.com/testimony-review?lang=de" />
+  <link rel="alternate" hreflang="fr" href="https://marsharbel.com/testimony-review?lang=fr" />
+  <link rel="alternate" hreflang="ur" href="https://marsharbel.com/testimony-review?lang=ur" />
+  <link rel="alternate" hreflang="id" href="https://marsharbel.com/testimony-review?lang=id" />
+  <link rel="alternate" hreflang="tr" href="https://marsharbel.com/testimony-review?lang=tr" />
+  <link rel="alternate" hreflang="ko" href="https://marsharbel.com/testimony-review?lang=ko" />
+  <link rel="alternate" hreflang="vi" href="https://marsharbel.com/testimony-review?lang=vi" />
+  <link rel="alternate" hreflang="it" href="https://marsharbel.com/testimony-review?lang=it" />
+  <link rel="alternate" hreflang="th" href="https://marsharbel.com/testimony-review?lang=th" />
+  <link rel="alternate" hreflang="pl" href="https://marsharbel.com/testimony-review?lang=pl" />
+  <link rel="alternate" hreflang="nl" href="https://marsharbel.com/testimony-review?lang=nl" />
+  <link rel="alternate" hreflang="fa" href="https://marsharbel.com/testimony-review?lang=fa" />
+  <link rel="alternate" hreflang="zh-tw" href="https://marsharbel.com/testimony-review?lang=zh-tw" />
   <!-- hreflang:end -->
 </head>
-<body class="testimony-admin-page">
+<body>
   <header class="topbar">
     <div class="site-shell nav">
       <a class='brand' href='/'><span class="brand-mark">✦</span><span>Saint Charbel</span></a>
-      <nav class="links" aria-label="Primary">
-        <a href="./index.html">Home</a>
-        <div class="nav-group">
-        <a class="nav-parent" href="./story.html" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
-        <div class="nav-sub">
-        <a href="./story.html">Story for Children</a>
-        <a href="./history.html">Full History</a>
-        </div></div>
-        <div class="nav-group">
-        <a class="active nav-parent" href="./miracles.html" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
-        <div class="nav-sub">
-        <a href="./miracles.html">Miracles & Reports</a>
-        <a href="./news.html">Latest News</a>
-        <a class="active" href="./testimonies.html">Testimonies</a>
-        <a href="./voice-testimony.html">Voice Testimony</a>
-        </div></div>
-        <div class="nav-group">
-        <a class="nav-parent" href="./prayer-library.html" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
-        <div class="nav-sub">
-        <a href="./prayer-library.html">Prayer Library</a>
-        <a href="./saint-charbel-prayers.html">Saint Charbel Prayers</a>
-        <a href="./saint-charbel-novena.html">Saint Charbel Novena</a>
-        <a href="./saint-charbel-feast-day.html">Feast Day</a>
-        <a href="./rosary-visual-guide.html">Rosary Guide</a>
-        <a href="./rosary-minibook.html">Rosary Minibook</a>
-        <a href="./mystery-meditation.html">Mystery Meditation</a>
-        <a href="./become-like-charbel.html">Become Like Him</a>
-        </div></div>
-        <a href="./gallery.html">Gallery</a>
-        <a href="./souvenirs.html">Souvenirs</a>
-        </nav>
-      <div class="lang-switcher-slot" aria-hidden="true"></div>
+      <nav class="links">
+        <a href='/'>Home</a>
+        <a href='./testimonies.html'>Testimonies</a>
+      </nav>
     </div>
   </header>
 
@@ -82,53 +76,46 @@
     <section class="hero">
       <span class="kicker">Admin</span>
       <h1>Testimony Moderation Panel</h1>
-      <p>Review reader stories, manage published testimonies, and handle reports.</p>
+      <p>Private moderation queue. Authentication and server policies decide access; the page is never linked from public navigation.</p>
     </section>
 
     <section class="section">
-      <div class="security-note" role="note"><strong>Moderator access only.</strong><span>Only the site moderator can review private submissions or publish stories. Sign in with your email, password, and human verification. Review and publication decisions are recorded in the moderation audit history.</span></div>
+      <div class="security-note" role="note"><strong>Moderator access only.</strong><span>At launch the site owner is the sole moderator. This page loads no submission data until the moderator account is authenticated with multi-factor authentication, which the database enforces (aal2). Signed-out visitors and regular accounts see only this sign-in form; regular accounts can submit stories and follow their own status, but cannot approve, reject, edit, or publish. Approval, rejection, unpublishing, and access attempts are logged by the backend.</span></div>
       <article class="card form-card">
-        <label class="inline-check"><input id="admin-remember-browser" type="checkbox" aria-describedby="admin-remember-help" />Remember this browser</label>
-        <p id="admin-remember-help">Keep your verified admin session on this browser until you sign out or the session ends. Use only on your own device. Your password is not saved.</p>
-        <form id="admin-login-form" class="testimony-form">
+        <form id="admin-login-form" class="testimony-form" novalidate>
           <label>Admin email
             <input type="email" name="email" required />
           </label>
           <label>Password
             <input type="password" name="password" required />
           </label>
-          <div id="admin-captcha"></div>
           <div class="cta-row">
             <button type="submit" class="btn primary">Login</button>
           </div>
         </form>
-        <form id="admin-mfa-form" class="testimony-form" hidden><div id="mfa-enrollment" hidden><p>Scan this QR code in your authenticator app. Keep its secret private.</p><img id="mfa-qr" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Authenticator enrollment QR code" /><p id="mfa-secret" class="testimony-text"></p></div><label>Authenticator code<input name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" required maxlength="6" /></label><button type="submit" class="btn primary">Verify authenticator</button></form><p id="admin-status" class="submit-status" role="status" aria-live="polite"></p>
+        <p id="admin-status" class="submit-status"></p>
       </article>
     </section>
 
     <section id="admin-panel" class="section" hidden>
       <div class="cta-row" style="margin-bottom:1rem;">
-        <button id="admin-logout-btn" class="btn subtle" type="button">Forget this browser and sign out</button>
+        <button id="admin-logout-btn" class="btn subtle" type="button">Logout</button>
       </div>
 
-      <article class="card testimony-card"><h2>Publishing controls</h2><p>Guest intake is limited to 10 submissions per minute and 200 total submissions per day. Publication is limited to 5 stories per day unless you record an override reason. Review stories personally, or use AI screening when configured; a separate human approval is always required.</p><div class="testimony-form"><label class="inline-check"><input id="control-intake" type="checkbox" />Accept submissions and edits</label><label class="inline-check"><input id="control-publishing" type="checkbox" />Allow human-approved publication</label><label class="inline-check"><input id="control-screening" type="checkbox" />Process queued AI reviews</label></div><div class="cta-row"><button id="save-controls" class="btn primary" type="button">Save controls</button><button id="pause-all" class="btn subtle" type="button">Pause intake, AI, and publishing</button><button id="refresh-reviews" class="btn subtle" type="button">Refresh reviews</button></div></article>
-      <h2>Pending Review</h2><div class="cta-row"><button id="queue-previous" class="btn subtle" type="button">Previous queue page</button><span id="queue-position" role="status"></span><button id="queue-next" class="btn subtle" type="button">Next queue page</button></div>
+      <h2>Pending Review</h2>
       <div id="pending-list" class="testimony-grid"></div>
 
       <h2 style="margin-top:1.2rem;">Approved</h2>
-      <div class="cta-row"><button id="approved-previous" class="btn subtle" type="button">Previous published page</button><span id="approved-position" role="status"></span><button id="approved-next" class="btn subtle" type="button">Next published page</button></div><div id="approved-list" class="testimony-grid"></div><h2>Reports</h2><div id="report-list" class="testimony-grid"></div><details><summary>Recent audit history</summary><ul id="audit-list"></ul></details>
+      <div id="approved-list" class="testimony-grid"></div>
     </section>
   </main>
 
   <footer class="footer"><div class="site-shell">Admin moderation only. Author: Please pray for the person who made this website.</div></footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4"></script>
-  <script src="./testimony-config.js?v=20260923-1"></script>
-  <script src="./testimony-client.js?v=20260923-1"></script>
-  <script src="./testimony-admin.js?v=20260923-1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./testimony-config.js"></script>
+  <script src="./testimony-admin.js"></script>
   <script src="./global-audio-player.js"></script>
-  <script src="/locale-routes.js"></script>
-  <script src="./translate.js?v=20260922-1"></script>
-  <script src="./nav.js?v=20260922-1" defer></script>
+  <script src="./translate.js"></script>
 </body>
 </html>

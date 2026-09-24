@@ -1,7 +1,7 @@
 # Marsharbel deployment playbook
 
-Owner: Joey Rahme
-Updated: 2026-09-22
+Owner: Joey Rahme  
+Updated: 2026-09-22  
 Review: monthly and after any deployment incident
 
 Pushes to `stage` publish to **https://marsharbel.com**, the public website. Follow this playbook for every release. The hardening items below are a plan, not protections already enabled.
