@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import glob
-from html import escape, unescape
+from html import unescape
 import json
 import re
 from pathlib import Path
@@ -65,6 +65,75 @@ TITLE_OVERRIDE = {
     "submit-testimony.html": "Submit Testimony | Saint Charbel Intercession Stories",
     "mystery-meditation.html": "Rosary Mystery Meditation | Guided Saint Charbel Prayer",
 }
+
+
+# Breadcrumb trails mirror the primary navigation (partials/primary-navigation.html):
+# Home > section > page. Each entry is (label, file) for the section and page.
+SECTIONS = {
+    "story": ("Story", "story.html"),
+    "miracles": ("Miracles", "miracles.html"),
+    "prayer": ("Prayer", "prayer-library.html"),
+    "rosary": ("Rosary Guide", "rosary-visual-guide.html"),
+}
+
+BREADCRUMBS = {
+    "story.html": (None, "Story for Children"),
+    "history.html": ("story", "Full History"),
+    "miracles.html": (None, "Miracles"),
+    "news.html": ("miracles", "Latest News"),
+    "testimonies.html": ("miracles", "Testimonies"),
+    "voice-testimony.html": ("miracles", "Voice Testimony"),
+    "prayer-library.html": (None, "Prayer Library"),
+    "saint-charbel-prayers.html": ("prayer", "Saint Charbel Prayers"),
+    "saint-charbel-novena.html": ("prayer", "Saint Charbel Novena"),
+    "saint-charbel-feast-day.html": ("prayer", "Feast Day"),
+    "rosary-visual-guide.html": ("prayer", "Rosary Guide"),
+    "rosary-minibook.html": ("prayer", "Rosary Minibook"),
+    "mystery-meditation.html": ("prayer", "Mystery Meditation"),
+    "become-like-charbel.html": ("prayer", "Become Like Him"),
+    "rosary-intro.html": ("rosary", "Rosary for Beginners"),
+    "rosary-prayer-coach.html": ("rosary", "Rosary Prayer Coach"),
+    "gallery.html": (None, "Gallery"),
+    "visit-annaya.html": (None, "Visiting Annaya"),
+    "22nd-of-the-month.html": (None, "The 22nd of the Month"),
+    "privacy-policy.html": (None, "Privacy Policy"),
+    "terms-of-service.html": (None, "Terms of Service"),
+}
+
+
+def breadcrumb_for(path: Path, title: str) -> dict | None:
+    """BreadcrumbList for an indexable English page, or None when not mapped."""
+    rel = path.relative_to(ROOT).as_posix()
+    if rel.startswith("mysteries/"):
+        section, label = "rosary", title.replace("Saint Charbel | ", "").split(" - ")[0]
+    elif rel in BREADCRUMBS:
+        section, label = BREADCRUMBS[rel]
+    else:
+        return None
+    trail = [("Home", f"{SITE}/")]
+    if section:
+        name, file = SECTIONS[section]
+        trail.append((name, path_to_url(ROOT / file)))
+    trail.append((label, path_to_url(path)))
+    return {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": index, "name": name, "item": url}
+            for index, (name, url) in enumerate(trail, start=1)
+        ],
+    }
+
+
+def escape(value: str, quote: bool = True) -> str:
+    """Minimal HTML escaping that keeps authored text stable across runs.
+
+    A bare "&" followed by a space and a straight apostrophe inside a
+    double-quoted attribute are valid HTML, so only ambiguous ampersands,
+    angle brackets and double quotes are encoded.
+    """
+    value = re.sub(r"&(?=[A-Za-z#])", "&amp;", value)
+    value = value.replace("<", "&lt;").replace(">", "&gt;")
+    return value.replace('"', "&quot;") if quote else value
 
 
 def path_to_url(path: Path) -> str:
@@ -149,7 +218,21 @@ def strip_old_seo(html: str) -> str:
     return html
 
 
-def build_meta_block(url: str, title: str, description: str, robots: str, image: str, include_schema: bool = True) -> str:
+def authored_webpage_fields(html: str) -> dict:
+    """Keys an author added to the standalone WebPage block (e.g. dateModified)."""
+    for block in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html, flags=re.I):
+        try:
+            data = json.loads(block)
+        except ValueError:
+            continue
+        if isinstance(data, dict) and data.get("@type") == "WebPage":
+            generated = {"@context", "@type", "name", "description", "url", "isPartOf", "breadcrumb"}
+            return {key: value for key, value in data.items() if key not in generated}
+    return {}
+
+
+def build_meta_block(url: str, title: str, description: str, robots: str, image: str, include_schema: bool = True,
+                     breadcrumb: dict | None = None, extra: dict | None = None) -> str:
     webpage_schema = {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -158,6 +241,9 @@ def build_meta_block(url: str, title: str, description: str, robots: str, image:
         "url": url,
         "isPartOf": {"@type": "WebSite", "name": "Saint Charbel", "url": f"{SITE}/"},
     }
+    webpage_schema.update(extra or {})
+    if breadcrumb:
+        webpage_schema["breadcrumb"] = breadcrumb
     schema = json.dumps(webpage_schema, ensure_ascii=True, indent=2)
     url, title, description, robots, image = (escape(value, quote=True) for value in (url, title, description, robots, image))
     return (
@@ -185,8 +271,15 @@ def update_file(path: Path) -> bool:
         return False
     if "<head>" not in html:
         return False
+    # Pages without a canonical link (account, prelaunch souvenirs, verification
+    # tokens) own their head; the generator never managed them.
+    if 'rel="canonical"' not in html:
+        return False
 
-    title = TITLE_OVERRIDE.get(path.name, unescape(page_title(html, "Saint Charbel")))
+    # Authored titles win; overrides only fill pages that have no title yet.
+    existing_title = re.search(r"<title>(.*?)</title>", html, re.I | re.S)
+    title = unescape(page_title(html, "Saint Charbel")) if existing_title and existing_title[1].strip() \
+        else TITLE_OVERRIDE.get(path.name, "Saint Charbel")
     html = re.sub(r"<title>.*?</title>", lambda _: f"<title>{escape(title)}</title>", html, count=1, flags=re.I | re.S)
     existing_description = re.search(r'<meta name="description" content="([^"]*)"', html)
     description = unescape(existing_description[1]) if existing_description else description_for(path, title)
@@ -197,7 +290,10 @@ def update_file(path: Path) -> bool:
 
     html2 = strip_old_seo(html)
     has_graph_page = bool(re.search(r'"@graph"[\s\S]*?"@type"\s*:\s*"WebPage"', html2))
-    meta_block = build_meta_block(url=url, title=title, description=description, robots=robots, image=image, include_schema=not has_graph_page)
+    breadcrumb = breadcrumb_for(path, title) if "noindex" not in robots else None
+    meta_block = build_meta_block(url=url, title=title, description=description, robots=robots, image=image,
+                                  include_schema=not has_graph_page, breadcrumb=breadcrumb,
+                                  extra=authored_webpage_fields(html))
 
     html3, count = re.subn(r"(<title>.*?</title>)", lambda match: match[1] + meta_block, html2, count=1, flags=re.I | re.S)
     if count == 0:

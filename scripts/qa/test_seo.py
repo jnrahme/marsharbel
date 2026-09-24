@@ -1,4 +1,5 @@
 import importlib.util
+import json
 import re
 from pathlib import Path
 import shutil
@@ -80,6 +81,44 @@ class SeoRegressionTests(unittest.TestCase):
         for message, replacement in cases.items():
             path.write_text(original.replace(entry, replacement))
             self.assertTrue(any(message in error and url in error for error in check(self.root)[0]), message)
+    def test_generator_is_repeatable_across_every_managed_page(self):
+        original_root = generator.ROOT
+        generator.ROOT = self.root
+        self.addCleanup(setattr, generator, "ROOT", original_root)
+        for path in [*self.root.glob("*.html"), *self.root.glob("mysteries/*.html")]:
+            if path.is_symlink():
+                continue
+            before = path.read_text()
+            self.assertFalse(generator.update_file(path), f"{path.name} drifts from generator output")
+            self.assertEqual(path.read_text(), before)
+
+    def test_breadcrumbs_follow_navigation_and_point_at_sitemap_urls(self):
+        sitemap = (self.root / "sitemap.xml").read_text()
+        pages = [*generator.BREADCRUMBS, *(p.relative_to(ROOT).as_posix() for p in ROOT.glob("mysteries/*.html"))]
+        for name in pages:
+            html = (self.root / name).read_text()
+            blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html)]
+            crumbs = [b["breadcrumb"] for b in blocks if isinstance(b, dict) and "breadcrumb" in b]
+            self.assertEqual(len(crumbs), 1, name)
+            items = crumbs[0]["itemListElement"]
+            self.assertEqual([i["position"] for i in items], list(range(1, len(items) + 1)), name)
+            self.assertEqual(items[0]["item"], "https://marsharbel.com/", name)
+            self.assertEqual(items[-1]["item"], generator.path_to_url(ROOT / name), name)
+            for item in items:
+                self.assertIn(f"<loc>{item['item']}</loc>", sitemap, name)
+
+    def test_generator_leaves_unmanaged_and_authored_heads_alone(self):
+        original_root = generator.ROOT
+        generator.ROOT = self.root
+        self.addCleanup(setattr, generator, "ROOT", original_root)
+        account = self.root / "account.html"
+        before = account.read_text()
+        self.assertFalse(generator.update_file(account))
+        self.assertEqual(account.read_text(), before)
+        voice = self.root / "voice-testimony.html"
+        title = re.search(r"<title>(.*?)</title>", voice.read_text())[1]
+        generator.update_file(voice)
+        self.assertIn(f"<title>{title}</title>", voice.read_text())
 
 
 if __name__ == "__main__":
