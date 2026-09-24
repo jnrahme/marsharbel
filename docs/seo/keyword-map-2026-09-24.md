@@ -111,6 +111,12 @@ priority = (impact * confidence) / max(1, effort + risk), 0-5 scale.
 - Batch 2 (drafted 2026-09-24, stacked on batch 1): /pope-leo-xiv-annaya-visit,
   /saint-charbel-quotes, /saint-charbel-places-lebanon. Miracles 2025/2026 only
   after Joey's review.
+- Seasonal: the 22nd-of-the-month pilgrimage drives a monthly traffic
+  spike (next: October 22, 2026). Batch 7 refreshed /22nd-of-the-month with
+  an FAQ section + FAQPage schema and linked the novena page into the
+  monthly rhythm. July brings the feast novena window (July 15-23) and the
+  feast itself (July 24 / third Sunday of July) - plan a June refresh of
+  /saint-charbel-novena and /saint-charbel-feast-day ahead of it.
 - Batch 3 (drafted 2026-09-24, stacked on batches 1-2):
   /saint-charbel-around-the-world. Next: reassess with Search Console data
   when access lands; miracles 2025/2026 still parked for Joey's review.
