@@ -112,13 +112,36 @@ def mystery_name(title: str) -> str:
     return title.removeprefix("Saint Charbel | ").removesuffix(" | Saint Charbel").strip()
 
 
+def heading_label(path: Path, title: str) -> str:
+    """Use the visible H1 as a new page's breadcrumb label, not a guessed slug."""
+    html = path.read_text(encoding="utf-8")
+    heading = re.search(r"<h1\b[^>]*>(.*?)</h1>", html, re.I | re.S)
+    if heading:
+        text = " ".join(unescape(re.sub(r"<[^>]+>", "", heading[1])).split())
+        if text:
+            return text[:110]
+    return title.split(" | ")[0][:110]
+
+
 def breadcrumb_for(path: Path, title: str) -> dict | None:
-    """BreadcrumbList for an indexable English page, or None when not mapped."""
+    """BreadcrumbList for a managed indexable English page.
+
+    The explicit map follows primary navigation; new editorial pages get a
+    safe Home > Page trail instead of requiring hand-authored JSON-LD.
+    """
     rel = path.relative_to(ROOT).as_posix()
     if rel.startswith("mysteries/"):
         section, label = "rosary", mystery_name(title).split(" - ")[0]
     elif rel in BREADCRUMBS:
         section, label = BREADCRUMBS[rel]
+    elif rel == "index.html":
+        return None
+    elif rel.startswith("saint-charbel-prayer-for-"):
+        section = "prayer"
+        label = heading_label(path, title)
+    elif rel.endswith(".html") and "/" not in rel:
+        section = None
+        label = heading_label(path, title)
     else:
         return None
     trail = [("Home", f"{SITE}/")]
@@ -280,6 +303,13 @@ def strip_old_seo(html: str) -> str:
     return html
 
 
+def parse_jsonld(block: str) -> dict | None:
+    try:
+        return json.loads(block)
+    except ValueError:
+        return None
+
+
 def authored_webpage_fields(html: str) -> dict:
     """Keys an author added to the standalone WebPage block (e.g. dateModified)."""
     for block in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html, flags=re.I):
@@ -356,7 +386,14 @@ def update_file(path: Path) -> bool:
 
     html2 = strip_old_seo(html)
     has_graph_page = bool(re.search(r'"@graph"[\s\S]*?"@type"\s*:\s*"WebPage"', html2))
-    breadcrumb = breadcrumb_for(path, title) if "noindex" not in robots else None
+    # A hand-authored Article (e.g. a miracle report) may already own its
+    # breadcrumb; never add a competing trail to the generated WebPage.
+    authored_breadcrumb = any(
+        isinstance(data, dict) and "breadcrumb" in data
+        for block in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html2, flags=re.I)
+        for data in [parse_jsonld(block)]
+    )
+    breadcrumb = breadcrumb_for(path, title) if "noindex" not in robots and not authored_breadcrumb else None
     meta_block = build_meta_block(url=url, title=title, description=description, robots=robots, image=image,
                                   include_schema=not has_graph_page, breadcrumb=breadcrumb,
                                   extra=authored_webpage_fields(html), article=article_schema(path, html))
