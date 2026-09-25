@@ -29,6 +29,25 @@ const expect = async (name, fn) => {
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext();
 const page = await context.newPage();
+// These checks need the page scripts/styles to settle. A fixed sleep after
+// DOMContentLoaded can inspect the prior route or a document still loading CSS.
+async function openReady(path, selector) {
+  const response = await page.goto(`${baseUrl}${path}`, { waitUntil: 'load' });
+  if (!response?.ok()) throw new Error(`${path} returned ${response?.status() ?? 'no response'}`);
+  await page.locator(selector).waitFor({ state: 'attached' });
+  await page.waitForFunction(selector => {
+    const element = document.querySelector(selector);
+    return element && [...document.styleSheets].some(sheet => sheet.href?.includes('styles.css'));
+  }, selector);
+}
+
+function brokenAriaReferences() {
+  return page.evaluate(() => [...document.querySelectorAll('[aria-labelledby], [aria-describedby]')]
+    .flatMap(element => ['aria-labelledby', 'aria-describedby'].flatMap(attribute =>
+      (element.getAttribute(attribute) || '').trim().split(/\s+/).filter(Boolean)
+        .filter(id => !document.getElementById(id)).map(id => `${attribute}:${id}`))));
+}
+
 
 try {
   // ============================================================
@@ -533,82 +552,33 @@ try {
   // 12. EDGE CASES: ACCESSIBILITY ACROSS PAGES
   // ============================================================
 
-  await expect('Voice Testimony page has no broken ARIA references', async () => {
-    await page.goto(`${baseUrl}/voice-testimony.html`, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(300);
-    const brokenRefs = await page.evaluate(() => {
-      const elems = document.querySelectorAll('[aria-labelledby], [aria-describedby]');
-      const broken = [];
-      elems.forEach(el => {
-        const ref = el.getAttribute('aria-labelledby') || el.getAttribute('aria-describedby');
-        if (ref && !document.getElementById(ref)) broken.push(ref);
-      });
-      return broken;
+  for (const [name, path, selector] of [
+    ['Voice Testimony', '/voice-testimony.html', 'main'],
+    ['Rosary', '/mysteries/joyful-1.html', '.meditation-actions'],
+    ['Story', '/story.html', '.storybook-controls']
+  ]) {
+    await expect(`${name} page has no broken ARIA references`, async () => {
+      await openReady(path, selector);
+      const broken = await brokenAriaReferences();
+      if (broken.length) throw new Error(`Broken ARIA references: ${broken.join(', ')}`);
     });
-    if (brokenRefs.length) {
-      throw new Error(`Broken ARIA references: ${brokenRefs.join(', ')}`);
-    }
-  });
-
-  await expect('Rosary page has no broken ARIA references', async () => {
-    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(300);
-    const brokenRefs = await page.evaluate(() => {
-      const elems = document.querySelectorAll('[aria-labelledby], [aria-describedby]');
-      const broken = [];
-      elems.forEach(el => {
-        const ref = el.getAttribute('aria-labelledby') || el.getAttribute('aria-describedby');
-        if (ref && !document.getElementById(ref)) broken.push(ref);
-      });
-      return broken;
-    });
-    if (brokenRefs.length) {
-      throw new Error(`Broken ARIA references: ${brokenRefs.join(', ')}`);
-    }
-  });
-
-  await expect('Story page has no broken ARIA references', async () => {
-    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(300);
-    const brokenRefs = await page.evaluate(() => {
-      const elems = document.querySelectorAll('[aria-labelledby], [aria-describedby]');
-      const broken = [];
-      elems.forEach(el => {
-        const ref = el.getAttribute('aria-labelledby') || el.getAttribute('aria-describedby');
-        if (ref && !document.getElementById(ref)) broken.push(ref);
-      });
-      return broken;
-    });
-    if (brokenRefs.length) {
-      throw new Error(`Broken ARIA references: ${brokenRefs.join(', ')}`);
-    }
-  });
+  }
 
   // ============================================================
   // 13. EDGE CASES: STICKY CONTROLS BEHAVIOR
   // ============================================================
 
-  await expect('Story sticky controls have correct z-index above content', async () => {
-    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(300);
-    const zIndex = await page.evaluate(() =>
-      parseInt(window.getComputedStyle(document.querySelector('.storybook-controls')).zIndex) || 0
-    );
-    if (zIndex < 80) {
-      throw new Error(`Expected z-index >= 80, got: ${zIndex}`);
-    }
-  });
-
-  await expect('Rosary sticky controls have correct z-index above content', async () => {
-    await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(300);
-    const zIndex = await page.evaluate(() =>
-      parseInt(window.getComputedStyle(document.querySelector('.meditation-actions')).zIndex) || 0
-    );
-    if (zIndex < 80) {
-      throw new Error(`Expected z-index >= 80, got: ${zIndex}`);
-    }
-  });
+  for (const [name, path, selector] of [
+    ['Story', '/story.html', '.storybook-controls'],
+    ['Rosary', '/mysteries/joyful-1.html', '.meditation-actions']
+  ]) {
+    await expect(`${name} sticky controls have correct z-index above content`, async () => {
+      await openReady(path, selector);
+      const zIndex = await page.locator(selector).evaluate(element =>
+        parseInt(window.getComputedStyle(element).zIndex, 10) || 0);
+      if (zIndex < 80) throw new Error(`Expected z-index >= 80, got: ${zIndex}`);
+    });
+  }
 
   await expect('Sticky controls have backdrop-filter for readability', async () => {
     const storyBackdrop = await page.evaluate(async () => {
