@@ -42,6 +42,9 @@ class VisibleText(HTMLParser):
 def extract_html(text):
     # These generated blocks are separately verified by the reproducible build.
     text = re.sub(r'<!-- i18n-[\w-]+:start -->.*?<!-- i18n-[\w-]+:end -->', '', text, flags=re.S)
+    # This block is generated from the reviewed English testimony catalog and
+    # checked byte-for-byte by build-testimony-baseline.mjs --check in QA.
+    text = re.sub(r'<!-- baseline-testimonies:start -->.*?<!-- baseline-testimonies:end -->', '', text, flags=re.S)
     parser = VisibleText()
     parser.feed(text)
     return Counter(parser.values)
@@ -60,7 +63,7 @@ def snapshot(root=ROOT):
         if relative not in generated:
             result[relative] = dict(extract_html(path.read_text()))
     for path in sorted(root.glob('*.js')):
-        if path.name == 'locale-routes.js':
+        if path.name == 'locale-routes.js' or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()):
             continue
         values = json.loads(subprocess.check_output(['node', str(root/'scripts/i18n/extract-js-text.mjs'), str(path)],text=True))
         result[path.name] = dict(Counter(values))
@@ -70,8 +73,21 @@ def snapshot(root=ROOT):
 def check(root=ROOT):
     baseline = read_json(root/'locales/legacy-text-baseline.json')
     errors = []
+    testimony_path = root / 'locales/en/testimonies.json'
+    testimony_catalog = read_json(testimony_path) if testimony_path.exists() else None
+    # Generated English copy has exact freshness verification in full QA.
+    if testimony_catalog and (root / 'testimonies-copy.js').exists():
+        generated_copy = (root / 'testimonies-copy.js').read_text()
+        for key in ('readerUnavailable', 'readerSuccess', 'readerError'):
+            if json.dumps(testimony_catalog[key], ensure_ascii=False) not in generated_copy:
+                errors.append(f'testimonies-copy.js: {key} differs from English catalog')
     for file, values in snapshot(root).items():
         additions = Counter(values) - Counter(baseline.get(file, {}))
+        if file == 'testimonies.html' and testimony_catalog:
+            # Existing interactive page; cataloged English strings are static
+            # and the archive block is verified by the reproducible build.
+            for key in ('title', 'description', 'introduction', 'readerInitial'):
+                additions.pop(testimony_catalog[key], None)
         if additions:
             errors.append(f'{file}: new hardcoded wording; move it to locales/: {list(additions)[:3]}')
     for path in (root/'templates/international').glob('*.html'):

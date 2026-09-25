@@ -22,6 +22,10 @@ python3 scripts/build_feeds.py --check
 python3 scripts/build_news_thumbs.py --check
 python3 -m unittest discover -s scripts/qa -p 'test_feeds.py'
 
+echo "[qa] Checking indexable testimony baseline"
+node scripts/build-testimony-baseline.mjs --check
+node scripts/tests/testimony_static.mjs
+
 echo "[qa] Running testimony security tests"
 npm run test:testimony-security
 
