@@ -4,7 +4,9 @@ from __future__ import annotations
 import glob
 from html import unescape
 import json
+import posixpath
 import re
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -187,8 +189,55 @@ def trim_description(text: str, max_len: int = 160) -> str:
     return clipped + "…"
 
 
-def og_image_for(path: Path) -> str:
-    return DEFAULT_IMAGE
+HERO_IMAGE = re.compile(r'<figure class="hero-figure">\s*<img\b[^>]*\bsrc="([^"]+)"', re.I)
+
+
+def hero_image(path: Path, html: str) -> str | None:
+    """Absolute URL of an article page's featured (hero) image, if it has one."""
+    match = HERO_IMAGE.search(html)
+    if not match or match[1].startswith(("http:", "https:", "data:")):
+        return None
+    page_dir = path.parent.relative_to(ROOT).as_posix()
+    target = posixpath.normpath(posixpath.join(page_dir, match[1]))  # no symlink resolution
+    return f"{SITE}/{target}"
+
+
+def og_image_for(path: Path, html: str = "") -> str:
+    return hero_image(path, html) or DEFAULT_IMAGE
+
+
+def first_published(path: Path, html: str) -> str | None:
+    """Date the page first appeared in the repo (stable once set).
+
+    Needs full git history; without it, keep the value already in the page so
+    shallow checkouts do not rewrite the schema."""
+    try:
+        shallow = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "--is-shallow-repository"],
+                                 capture_output=True, text=True, check=True).stdout.strip()
+        if shallow == "false":
+            dates = subprocess.run(["git", "-C", str(ROOT), "log", "--diff-filter=A", "--follow", "--format=%as", "--",
+                                    path.relative_to(ROOT).as_posix()], capture_output=True, text=True, check=True).stdout.split()
+            if dates:
+                return dates[-1]
+    except (OSError, subprocess.CalledProcessError, ValueError):
+        pass
+    existing = re.search(r'"datePublished":\s*"([0-9-]+)"', html)
+    return existing[1] if existing else None
+
+
+def article_schema(path: Path, html: str) -> dict | None:
+    """Article entity for pages with a featured hero image (news/feature pages)."""
+    image = hero_image(path, html)
+    heading = re.search(r"<h1\b[^>]*>(.*?)</h1>", html, re.I | re.S)
+    if not image or not heading:
+        return None
+    headline = " ".join(unescape(re.sub(r"<[^>]+>", "", heading[1])).split())
+    article = {"@type": "Article", "headline": headline[:110], "image": [image],
+               "author": PUBLISHER, "publisher": PUBLISHER}
+    published = first_published(path, html)
+    if published:
+        article["datePublished"] = published
+    return article
 
 
 def robots_for(path: Path) -> str:
@@ -235,13 +284,13 @@ def authored_webpage_fields(html: str) -> dict:
         except ValueError:
             continue
         if isinstance(data, dict) and data.get("@type") == "WebPage":
-            generated = {"@context", "@type", "name", "description", "url", "isPartOf", "breadcrumb"}
+            generated = {"@context", "@type", "name", "description", "url", "isPartOf", "breadcrumb", "mainEntity"}
             return {key: value for key, value in data.items() if key not in generated}
     return {}
 
 
 def build_meta_block(url: str, title: str, description: str, robots: str, image: str, include_schema: bool = True,
-                     breadcrumb: dict | None = None, extra: dict | None = None) -> str:
+                     breadcrumb: dict | None = None, extra: dict | None = None, article: dict | None = None) -> str:
     webpage_schema = {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -255,13 +304,15 @@ def build_meta_block(url: str, title: str, description: str, robots: str, image:
     webpage_schema.update(extra or {})
     if breadcrumb:
         webpage_schema["breadcrumb"] = breadcrumb
+    if article and "noindex" not in robots:
+        webpage_schema["mainEntity"] = article
     schema = json.dumps(webpage_schema, ensure_ascii=True, indent=2)
     url, title, description, robots, image = (escape(value, quote=True) for value in (url, title, description, robots, image))
     return (
         f"\n  <meta name=\"description\" content=\"{description}\" />"
         f"\n  <meta name=\"robots\" content=\"{robots}\" />"
         f"\n  <link rel=\"canonical\" href=\"{url}\" />"
-        f"\n  <meta property=\"og:type\" content=\"website\" />"
+        f"\n  <meta property=\"og:type\" content=\"{'article' if article else 'website'}\" />"
         f"\n  <meta property=\"og:site_name\" content=\"Saint Charbel\" />"
         f"\n  <meta property=\"og:title\" content=\"{title}\" />"
         f"\n  <meta property=\"og:description\" content=\"{description}\" />"
@@ -297,14 +348,14 @@ def update_file(path: Path) -> bool:
     url = path_to_url(path)
     existing_robots = re.search(r'<meta name="robots" content="([^"]*)"', html)
     robots = existing_robots[1] if existing_robots and "noindex" in existing_robots[1] else robots_for(path)
-    image = og_image_for(path)
+    image = og_image_for(path, html)
 
     html2 = strip_old_seo(html)
     has_graph_page = bool(re.search(r'"@graph"[\s\S]*?"@type"\s*:\s*"WebPage"', html2))
     breadcrumb = breadcrumb_for(path, title) if "noindex" not in robots else None
     meta_block = build_meta_block(url=url, title=title, description=description, robots=robots, image=image,
                                   include_schema=not has_graph_page, breadcrumb=breadcrumb,
-                                  extra=authored_webpage_fields(html))
+                                  extra=authored_webpage_fields(html), article=article_schema(path, html))
 
     html3, count = re.subn(r"(<title>.*?</title>)", lambda match: match[1] + meta_block, html2, count=1, flags=re.I | re.S)
     if count == 0:
