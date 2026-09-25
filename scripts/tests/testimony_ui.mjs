@@ -23,12 +23,12 @@ try{
   await page.route('https://test.supabase.co/functions/v1/submit-testimony',async r=>{sent=r.request().postDataJSON();await r.fulfill({status:202,contentType:'application/json',body:'{"accepted":true,"reference":"one"}'});});
   await page.goto(base+'/submit-testimony.html');await page.locator('[name=display_name]').fill('<img src=x onerror=alert(1)>');await page.locator('[name=story]').fill('My own experience of prayer and hope. '.repeat(4));
   for(const name of ['age_confirmed','consent_publish','ai_consent'])await page.locator(`[name=${name}]`).check();
-  assert.equal(await page.getByRole('button',{name:'Submit testimony',exact:true}).count(),1);
+  assert.equal(await page.getByRole('button',{name:'Send letter for review',exact:true}).count(),1);
   assert.equal(await page.locator('#testimony-preview').count(),0);
   await page.evaluate(()=>cap['expired-callback']());
   assert.equal(await page.locator('.human-verification.field-missing').count(),1);
 
-  assert.equal(await page.getByRole('button',{name:'Submit testimony',exact:true}).isDisabled(),true);await page.locator('#testimony-form').evaluate(form=>form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true})));assert.equal(sent,undefined);
+  assert.equal(await page.getByRole('button',{name:'Send letter for review',exact:true}).isDisabled(),true);await page.locator('#testimony-form').evaluate(form=>form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true})));assert.equal(sent,undefined);
   assert.ok((await page.locator('#submit-status').innerText()).includes('human verification'));
   await page.evaluate(()=>cap.callback('valid'));
   assert.equal(await page.locator('.human-verification.field-missing').count(),0);
@@ -38,7 +38,7 @@ try{
   await page.locator('[name=consent_publish]').check();
   await page.evaluate(()=>cap['error-callback']());assert.equal(await page.locator('#submit-testimony-btn').isDisabled(),true);
   await page.evaluate(()=>cap.callback('valid'));
-  await page.getByRole('button',{name:'Submit testimony',exact:true}).click();
+  await page.getByRole('button',{name:'Send letter for review',exact:true}).click();
   await page.waitForFunction(()=>document.getElementById('submit-status').textContent.includes('pending review'));
   assert.equal(sent.display_name,'<img src=x onerror=alert(1)>');assert.equal(sent.status,undefined);
   assert.equal(await page.locator('[name=story]').inputValue(),'');assert.equal(await page.locator('#submit-testimony-btn').isDisabled(),true);
@@ -54,7 +54,7 @@ try{
  for(const name of ['age_confirmed','consent_publish','ai_consent'])await retrySubmission.locator(`[name=${name}]`).check();
  await retrySubmission.locator('#testimony-form').evaluate(form=>{form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));});
  await retrySubmission.waitForFunction(()=>document.getElementById('submit-status').textContent.includes('temporarily unavailable'));
- assert.equal(submissionCalls,1);assert.ok((await retrySubmission.locator('[name=story]').inputValue()).includes('remain in the form'));assert.equal(await retrySubmission.getByRole('button',{name:'Submit testimony',exact:true}).isEnabled(),true);await retrySubmission.close();
+ assert.equal(submissionCalls,1);assert.ok((await retrySubmission.locator('[name=story]').inputValue()).includes('remain in the form'));assert.equal(await retrySubmission.getByRole('button',{name:'Send letter for review',exact:true}).isEnabled(),true);await retrySubmission.close();
  const feedback = await pageFor('guest'); let feedbackRequests=0;
  await feedback.route('https://test.supabase.co/functions/v1/submit-testimony', async route => { feedbackRequests++; await route.fulfill({status:502,contentType:'text/html',body:'<html>Bad gateway</html>'}); });
  await feedback.goto(base+'/submit-testimony.html');
@@ -89,7 +89,7 @@ try{
  await feedback.locator('#submit-testimony-btn').click();
  await feedback.getByText('We could not connect to the submission service. Your text is still here. Check your connection and try again.',{exact:true}).waitFor();
  await feedback.close(); console.log('Customer feedback checks passed: trimmed two-character name, short story, disabled reasons, guarded submission, non-JSON outage, network failure and preserved draft.');
- const pausedCaptcha=await pageFor('guest');await pausedCaptcha.route('**/testimony-config.js*',r=>r.fulfill({contentType:'application/javascript',body:"window.TESTIMONY_CONFIG={supabaseUrl:'https://test.supabase.co',supabaseAnonKey:'public-key',turnstileSiteKey:'test',submissionsEnabled:false};"}));await pausedCaptcha.goto(base+'/submit-testimony.html');await pausedCaptcha.getByText('Human verification complete.',{exact:true}).waitFor();assert.equal(await pausedCaptcha.getByRole('button',{name:'Submit testimony',exact:true}).isDisabled(),true);await pausedCaptcha.close();
+ const pausedCaptcha=await pageFor('guest');await pausedCaptcha.route('**/testimony-config.js*',r=>r.fulfill({contentType:'application/javascript',body:"window.TESTIMONY_CONFIG={supabaseUrl:'https://test.supabase.co',supabaseAnonKey:'public-key',turnstileSiteKey:'test',submissionsEnabled:false};"}));await pausedCaptcha.goto(base+'/submit-testimony.html');await pausedCaptcha.getByText('Human verification complete.',{exact:true}).waitFor();assert.equal(await pausedCaptcha.getByRole('button',{name:'Send letter for review',exact:true}).isDisabled(),true);await pausedCaptcha.close();
  const hcap=await pageFor('submit');
  await hcap.route('**/testimony-config.js*',r=>r.fulfill({contentType:'application/javascript',body:"window.TESTIMONY_CONFIG={supabaseUrl:'https://test.supabase.co',supabaseAnonKey:'public-key',submissionCaptchaProvider:'hcaptcha',hcaptchaSiteKey:'test-site',submissionsEnabled:false};"}));
  await hcap.route('**/js.hcaptcha.com/**',r=>r.fulfill({contentType:'application/javascript',body:"window.hcaptcha={render(host,opts){window.cap=opts;window.hcapRenders=(window.hcapRenders||0)+1;host.textContent='TEST ONLY hCaptcha widget';return 'id'},remove(){},reset(){}};window.testimonyCaptchaLoaded_hcaptcha();"}));
@@ -103,7 +103,7 @@ try{
  await hcap.evaluate(()=>window.cap.callback('valid-test-token'));
  await hcap.getByText('Human verification complete.',{exact:true}).waitFor();
  await hcap.evaluate(()=>window.cap['expired-callback']());
- assert.equal(await hcap.getByRole('button',{name:'Submit testimony',exact:true}).isDisabled(),true);
+ assert.equal(await hcap.getByRole('button',{name:'Send letter for review',exact:true}).isDisabled(),true);
  await hcap.close();
  console.log('hCaptcha widget lifecycle passed: visible instruction, failure, retry, preserved story, success and expiry. Provider responses are mocked.');
  const guestIntake=await pageFor('guest');let guestPost;
@@ -111,7 +111,7 @@ try{
  await guestIntake.goto(base+'/submit-testimony.html');
  await guestIntake.locator('[name=display_name]').fill('Guest example');await guestIntake.locator('[name=story]').fill('This is a synthetic guest example used only to test the private moderation flow.');
  for(const name of ['age_confirmed','consent_publish','ai_consent'])await guestIntake.locator(`[name=${name}]`).check();
- await guestIntake.getByRole('button',{name:'Submit testimony',exact:true}).click();
+ await guestIntake.getByRole('button',{name:'Send letter for review',exact:true}).click();
  await guestIntake.getByText(/Save this reference: guest-reference/).waitFor();assert.equal(guestPost.headers().authorization,undefined);await guestIntake.close();
  const humanReview=await pageFor('admin-password');await humanReview.goto(base+'/testimony-review.html');await humanReview.locator('#pending-list article').first().waitFor();
  await humanReview.evaluate(()=>{window.row.review_state='queued';window.row.review_notes=null;});await humanReview.getByRole('button',{name:'Refresh reviews',exact:true}).click();

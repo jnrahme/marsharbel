@@ -4,18 +4,18 @@
   <meta name="msvalidate.01" content="6A67D2C9F51532AA962A2489F63AC3C8" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Saint Charbel | History, Miracles, Testimonies & Rosary</title>
+  <title>Saint Charbel | History, Miracles, Letters & Rosary</title>
   <meta name="description" content="Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Saint Charbel | History, Miracles, Testimonies & Rosary" />
+  <meta property="og:title" content="Saint Charbel | History, Miracles, Letters & Rosary" />
   <meta property="og:description" content="Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources." />
   <meta property="og:url" content="https://marsharbel.com/" />
   <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saint Charbel | History, Miracles, Testimonies & Rosary" />
+  <meta name="twitter:title" content="Saint Charbel | History, Miracles, Letters & Rosary" />
   <meta name="twitter:description" content="Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources." />
   <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
   <script type="application/ld+json">
@@ -31,7 +31,7 @@
     },
     {
       "@type": "WebPage",
-      "name": "Saint Charbel | History, Miracles, Testimonies & Rosary",
+      "name": "Saint Charbel | History, Miracles, Letters & Rosary",
       "description": "Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources.",
       "url": "https://marsharbel.com/",
       "isPartOf": {
@@ -50,7 +50,7 @@
   <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png" />
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="./home.css?v=20260922-1" />
+  <link rel="stylesheet" href="./home.css?v=20260925-1" />
   <link rel="stylesheet" href="./monthly-prayer.css" />
   <!-- i18n-alternates:start -->
 <link rel="alternate" hreflang="en" href="https://marsharbel.com/" />
@@ -84,7 +84,7 @@
         <div class="nav-sub">
         <a href="./miracles">Miracles & Reports</a>
         <a href="./news">Latest News</a>
-        <a href="./testimonies">Testimonies</a>
+        <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
         <div class="nav-group">
@@ -157,6 +157,22 @@
           <p class="monthly-prayer-context">Why the 22nd? This monthly devotion recalls Nouhad El Shami’s healing through Saint Sharbel’s intercession. We gather in hope, entrusting every outcome to God; miracles are not limited to a date. <a href="https://maronite.org.au/news/pilgrimage-and-mass-in-annaya-lebanon/">Read about the tradition <span aria-hidden="true">↗</span></a></p>
         </div>
       </details>
+    </section>
+
+    <section class="home-letter section" aria-labelledby="home-letter-heading">
+      <div class="home-letter-intro">
+        <span class="kicker">A place for your story</span>
+        <h2 id="home-letter-heading">Write a Letter to Saint Charbel</h2>
+        <p>Tell your story in your own words. Continue to add your name and details before you send it. Letters stay private until a person reviews them for publication.</p>
+        <a href="./testimonies">Read the Letters <span aria-hidden="true">→</span></a>
+      </div>
+      <form id="home-letter-form" class="home-letter-form" action="./submit-testimony" method="get">
+        <label for="home-letter-draft">Your letter</label>
+        <textarea id="home-letter-draft" rows="4" maxlength="7000" placeholder="Dear Saint Charbel, ..." aria-describedby="home-letter-note" required></textarea>
+        <p id="home-letter-note">Your draft stays in this tab until you send the form. Nothing appears on the site before review.</p>
+        <p id="home-letter-error" role="alert" hidden></p>
+        <button class="btn primary" type="submit" disabled>Continue to add your name</button>
+      </form>
     </section>
 
     <section class="section">
@@ -273,6 +289,7 @@
   </footer>
 
   <script src="./monthly-prayer.js" defer></script>
+  <script src="./home-letter.js?v=20260925-1" defer></script>
   <script src="./app.js" defer></script>
   <script src="./global-audio-player.js" defer></script>
   <script src="/locale-routes.js" defer></script>

@@ -85,7 +85,7 @@ BREADCRUMBS = {
     "history.html": ("story", "Full History"),
     "miracles/index.html": (None, "Miracles"),
     "news.html": ("miracles", "Latest News"),
-    "testimonies.html": ("miracles", "Testimonies"),
+    "testimonies.html": ("miracles", "Letters"),
     "voice-testimony.html": ("miracles", "Voice Testimony"),
     "prayer-library.html": (None, "Prayer Library"),
     "saint-charbel-prayers.html": ("prayer", "Saint Charbel Prayers"),

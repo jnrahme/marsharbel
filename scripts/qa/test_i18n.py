@@ -31,6 +31,13 @@ class CatalogTests(unittest.TestCase):
         update(data)
         path.write_text(json.dumps(data))
 
+    def test_letters_catalog_does_not_hide_new_copy(self):
+        catalog=read_json(ROOT/'locales/en/letters-display.json')['values']
+        self.assertEqual(catalog['index.html']['Write a Letter to Saint Charbel'],1)
+        self.assertEqual(catalog['home-letter.js']['This browser could not carry your letter to the next page. Keep a copy before continuing.'],1)
+        self.assertEqual(catalog['submit-testimony.html']['Send letter for review'],1)
+        self.assertNotIn('testimony-admin.js',catalog)
+
     def test_all_registered_languages_have_all_topics(self):
         registry, catalogs = load_catalog(self.root)
         self.assertEqual(set(catalogs), {'en','ar','fr','es','pt','it','de','pl'})

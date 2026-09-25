@@ -4,7 +4,7 @@
   const publishedRoot=document.getElementById('reader-testimony-list'); const message=document.getElementById('testimony-empty');
   if(!publishedRoot)return;
   if(!client){message.textContent=window.TESTIMONY_COPY.readerUnavailable;return;}
-  let offset=0;const more=node('button','Load more reader testimonies','btn subtle');more.type='button';more.hidden=true;publishedRoot.after(more);
+  let offset=0;const more=node('button','Load more reader letters','btn subtle');more.type='button';more.hidden=true;publishedRoot.after(more);
   async function load(){
     more.disabled=true;
     try{

@@ -2750,3 +2750,9 @@ html.nav-suppress .nav-group:focus-within .nav-sub {
 .hero-figure{margin:1.1rem 0 0}
 .hero-figure img{width:100%;max-width:640px;height:auto;border-radius:14px;border:1px solid rgba(211,178,110,.3);display:block}
 .hero-figure figcaption{font-family:'Manrope',sans-serif;font-size:.72rem;color:rgba(205,190,171,.7);margin-top:.45rem;letter-spacing:.03em}
+
+/* A quiet doorway from the homepage to the private, moderated letter form. */
+.home-letter{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(1.5rem,5vw,5rem);align-items:center;padding:clamp(2rem,5vw,4rem);border:1px solid var(--theme-line-soft);border-radius:22px;background:linear-gradient(145deg,rgba(194,153,89,.10),rgba(28,24,21,.92) 55%,rgba(15,15,15,.97));box-shadow:0 18px 55px var(--theme-shadow)}
+.home-letter h2{font-size:clamp(2.25rem,4vw,4.6rem);line-height:1.04;margin:.7rem 0 1rem}.home-letter-intro p{max-width:43ch;color:var(--theme-ink-soft);line-height:1.65}.home-letter-intro a{color:var(--theme-accent);text-decoration:underline;text-underline-offset:4px}
+.home-letter-form{display:grid;gap:.8rem;min-width:0}.home-letter-form label{font-weight:700;color:var(--theme-ink)}.home-letter-form textarea{box-sizing:border-box;width:100%;min-height:160px;max-height:70vh;overflow:auto;resize:vertical;border:1px solid var(--theme-line);border-radius:15px;background:rgba(9,8,7,.6);padding:1rem 1.1rem;color:var(--theme-ink);font:inherit;line-height:1.6}.home-letter-form textarea:focus{outline:2px solid var(--theme-accent);outline-offset:3px}.home-letter-form p{margin:0;color:var(--theme-ink-soft);font-size:.9rem;line-height:1.5}.home-letter-form #home-letter-error{color:var(--theme-warning)}.home-letter-form button{justify-self:start}
+@media(max-width:760px){.home-letter{grid-template-columns:1fr;padding:1.5rem}.home-letter h2{font-size:clamp(2.4rem,10vw,3.5rem)}}
