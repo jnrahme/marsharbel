@@ -27,7 +27,10 @@
         "annaya": "annaya",
         "feastDay": "feast-day",
         "twentySecond": "22nd-of-the-month",
-        "miracles": "miracles"
+        "miracles": "miracles/",
+        "nohadStory": "miracles/nohad-el-shami",
+        "dafneStory": "miracles/dafne-gutierrez",
+        "raymondStory": "miracles/raymond-nader"
       }
     },
     "fr": {
@@ -242,6 +245,58 @@
       "locales": [
         "ar"
       ]
+    },
+    "nohadStory": {
+      "sections": [
+        "before",
+        "account",
+        "evidence",
+        "status",
+        "pilgrimage",
+        "questions"
+      ],
+      "relatedEnglish": "/miracles/nohad-el-shami",
+      "sources": [
+        "cnewaMonthly",
+        "monastery"
+      ],
+      "locales": [
+        "ar"
+      ]
+    },
+    "dafneStory": {
+      "sections": [
+        "before",
+        "event",
+        "medical",
+        "church",
+        "pilgrims",
+        "questions"
+      ],
+      "relatedEnglish": "/miracles/dafne-gutierrez",
+      "sources": [
+        "registerDafne"
+      ],
+      "locales": [
+        "ar"
+      ]
+    },
+    "raymondStory": {
+      "sections": [
+        "background",
+        "account",
+        "medical",
+        "status",
+        "today",
+        "questions"
+      ],
+      "relatedEnglish": "/miracles/raymond-nader",
+      "sources": [
+        "raymondAccount"
+      ],
+      "locales": [
+        "ar"
+      ]
     }
   },
   "sources": {
@@ -255,6 +310,8 @@
     "generalCalendar": "https://www.usccb.org/resources/2024cal.pdf",
     "cnewaMonthly": "https://cnewa.org/magazine/lebanons-beloved-saint/",
     "monasteryArabicBio": "https://saintcharbel.com/ar/saint-charbel-biography-arabic/",
-    "canonizationHomily": "https://www.vatican.va/content/paul-vi/fr/homilies/1977/documents/hf_p-vi_hom_19771009.html"
+    "canonizationHomily": "https://www.vatican.va/content/paul-vi/fr/homilies/1977/documents/hf_p-vi_hom_19771009.html",
+    "registerDafne": "https://www.ncregister.com/news/phoenix-mother-st-charbel-cured-my-blindness",
+    "raymondAccount": "https://www.familyofsaintsharbel.org/experiences-blog/raymond-naders-experience-with-saint-sharbel"
   }
 }

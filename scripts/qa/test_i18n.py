@@ -73,6 +73,30 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'section IDs'):
             load_catalog(self.root)
 
+    def test_nested_locale_route_and_directory_hub(self):
+        registry, catalogs = load_catalog(ROOT)
+        self.assertEqual(page_url(registry, 'ar', 'miracles'), '/ar/miracles/')
+        self.assertEqual(page_url(registry, 'ar', 'nohadStory'), '/ar/miracles/nohad-el-shami')
+        generated = builder.outputs(ROOT)
+        self.assertIn(ROOT/'ar/miracles/index.html', generated)
+        self.assertIn(ROOT/'ar/miracles/.htaccess', generated)
+        self.assertIn('DirectoryIndex index.html', generated[ROOT/'ar/miracles/.htaccess'])
+        self.assertIn(ROOT/'ar/miracles/nohad-el-shami.html', generated)
+        self.assertNotIn(ROOT/'ar/miracles.html', generated)
+        self.assertIn('https://marsharbel.com/ar/miracles/', builder.alternate_links(registry, 'miracles'))
+        self.edit('registry.json',lambda d:d['locales']['ar']['slugs'].update({'nohadStory':'miracles/../private'}))
+        with self.assertRaisesRegex(ValueError, 'unsafe'):
+            load_catalog(self.root)
+
+    def test_miracle_story_related_links_start_with_hub(self):
+        registry, catalogs = load_catalog(ROOT)
+        template = Template((ROOT/'templates/international/page.html').read_text())
+        html = builder.render(registry, catalogs['ar'], 'ar', template, 'raymondStory')
+        related = html.split('<aside class="related">', 1)[1]
+        self.assertIn('<li><a href="/ar/miracles/">', related)
+        self.assertLess(related.index('href="/ar/miracles/"'),
+                        related.index('href="/ar/biography"'))
+
     def test_unsafe_route_is_rejected(self):
         self.edit('registry.json',lambda d:d['locales']['es']['slugs'].update({'prayers':'../../account'}))
         with self.assertRaisesRegex(ValueError,'unsafe'):

@@ -47,7 +47,13 @@ def render(registry, catalog, code, template, topic=None):
         contents = ''.join(f'<li><a href="#section-{key}">{escape(page["sections"][key]["title"])}</a></li>' for key in section_ids)
         sections = ''.join(f'<section id="section-{key}" class="section"><h2>{escape(page["sections"][key]["title"])}</h2><p>{escape(page["sections"][key]["body"])}</p></section>' for key in section_ids)
         sources = ''.join(f'<li><a href="{escape(registry["sources"][key])}">{t("sources." + key)}</a></li>' for key in registry['topics'][topic]['sources'])
-        related = ''.join(f'<li><a href="{page_url(registry, code, key)}">{escape(pages[key]["title"])}</a></li>' for key in locale_topics(registry, code) if key != topic)
+        related_topics = [key for key in locale_topics(registry, code) if key != topic]
+        # Readers of story leaves should get back to the hub before the broader
+        # catalog; homepage cards still expose every topic for discovery.
+        if topic.endswith('Story') and 'miracles' in related_topics:
+            related_topics.remove('miracles')
+            related_topics.insert(0, 'miracles')
+        related = ''.join(f'<li><a href="{page_url(registry, code, key)}">{escape(pages[key]["title"])}</a></li>' for key in related_topics)
         content = f'''<article><h1>{escape(page['title'])}</h1><p class="intro">{escape(page['intro'])}</p>
 <nav class="contents" aria-label="{t('navigation.contents')}"><h2>{t('navigation.contents')}</h2><ol>{contents}</ol></nav>
 {sections}<section class="section"><h2>{t('navigation.sources')}</h2><ul>{sources}</ul></section></article>
@@ -86,8 +92,17 @@ def outputs(root=ROOT):
         if code != registry['defaultLocale']:
             result[root / code / 'index.html'] = render(registry, catalogs[code], code, template)
         for topic in locale_topics(registry, code):
-            result[root / (page_url(registry, code, topic).lstrip('/') + '.html')] = render(registry, catalogs[code], code, template, topic)
+            route = page_url(registry, code, topic)
+            output_path = root / (route.lstrip('/') + 'index.html' if route.endswith('/') else route.lstrip('/') + '.html')
+            result[output_path] = render(registry, catalogs[code], code, template, topic)
         result[root / code / '.htaccess'] = '# Preserve language routes; never expose directory listings.\nOptions -Indexes\n'
+        # A nested localized hub is a real directory with its own index; the
+        # parent locale's Options -Indexes must not hide that index.
+        for topic in locale_topics(registry, code):
+            route = page_url(registry, code, topic)
+            if route.endswith('/'):
+                result[root / route.lstrip('/') / '.htaccess'] = (
+                    '# Canonical localized directory hub.\nOptions -Indexes\nDirectoryIndex index.html\n')
     home = root / 'index.html'
     text = replace_block(home.read_text(), 'i18n-alternates', alternate_links(registry))
     # Existing pages already have the top selector; never generate a duplicate menu.
