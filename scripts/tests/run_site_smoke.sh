@@ -37,4 +37,5 @@ node scripts/tests/site_smoke.mjs "--base-url=${BASE_URL}"
 BASE_URL="${BASE_URL}" node scripts/tests/seo_runtime.mjs
 
 BASE_URL="${BASE_URL}" node scripts/tests/home_letter_flow.mjs
+BASE_URL="${BASE_URL}" node scripts/tests/news_card_layout.mjs
 BASE_URL="${BASE_URL}" node scripts/tests/testimony_ui.mjs
