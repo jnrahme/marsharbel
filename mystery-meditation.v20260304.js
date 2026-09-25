@@ -132,13 +132,18 @@ if (backToListButton) {
   backToListButton.remove();
 }
 
-const heroMeta = document.createElement('article');
+// Pages ship the meta card in their HTML so it has its place before this
+// script runs (no layout shift); build it only for pages that lack it.
+const existingHeroMeta = heroSection?.querySelector('.mystery-hero-meta') || null;
+const heroMeta = existingHeroMeta || document.createElement('article');
+if (!existingHeroMeta) {
 heroMeta.className = 'card mystery-hero-meta';
 heroMeta.innerHTML = `
   <p class="mystery-hero-progress" id="mystery-hero-progress">Mystery 1 of ${orderedKeys.length}</p>
   <p class="mystery-hero-ref" id="mystery-hero-ref">Scripture focus</p>
 `;
-if (heroSection) {
+}
+if (heroSection && !existingHeroMeta) {
   const controlsStart = heroSection.querySelector('.meditation-top-controls');
   if (controlsStart) {
     heroSection.insertBefore(heroMeta, controlsStart);
@@ -402,11 +407,18 @@ startPrayerButton.type = 'button';
 startPrayerButton.className = 'btn primary';
 startPrayerButton.textContent = 'Start Prayer';
 startPrayerButton.setAttribute('data-testid', 'start-prayer');
-const startPrayerAction = document.createElement('p');
-startPrayerAction.className = 'notranslate';
-startPrayerAction.appendChild(startPrayerButton);
-if (heroSection && topMysteryControls) {
-  heroSection.insertBefore(startPrayerAction, topMysteryControls);
+// Pages reserve the button's slot in HTML (an invisible same-size
+// placeholder) so inserting it causes no layout shift.
+const startPrayerSlot = heroSection?.querySelector('.start-prayer-slot') || null;
+if (startPrayerSlot) {
+  startPrayerSlot.replaceChildren(startPrayerButton);
+} else {
+  const startPrayerAction = document.createElement('p');
+  startPrayerAction.className = 'notranslate';
+  startPrayerAction.appendChild(startPrayerButton);
+  if (heroSection && topMysteryControls) {
+    heroSection.insertBefore(startPrayerAction, topMysteryControls);
+  }
 }
 startPrayerButton.addEventListener('click', () => startGuidedAudioButton.click());
 
