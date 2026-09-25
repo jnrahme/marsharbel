@@ -2,8 +2,8 @@ import { readFile, writeFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 const check = process.argv.includes('--check');
 const template = (await readFile('partials/primary-navigation.html', 'utf8')).trim();
-const pages = [...(await readdir('.')).filter(p => p.endsWith('.html')), ...(await readdir('mysteries')).filter(p => p.endsWith('.html')).map(p => `mysteries/${p}`)];
-const aliases = { 'submit-testimony.html':'testimonies.html', 'testimony-review.html':'testimonies.html', 'account.html':'testimonies.html', 'voice-lab.html':'voice-testimony.html', 'shop-mockup.html':'souvenirs.html' };
+const pages = [...(await readdir('.')).filter(p => p.endsWith('.html')), ...(await readdir('mysteries')).filter(p => p.endsWith('.html')).map(p => `mysteries/${p}`), ...(await readdir('miracles').catch(() => [])).filter(p => p.endsWith('.html')).map(p => `miracles/${p}`)];
+const aliases = { 'submit-testimony.html':'testimonies.html', 'testimony-review.html':'testimonies.html', 'account.html':'testimonies.html', 'voice-lab.html':'voice-testimony.html', 'shop-mockup.html':'souvenirs.html', 'miracles/nohad-el-shami.html':'miracles.html', 'miracles/dafne-gutierrez.html':'miracles.html', 'miracles/canonization.html':'miracles.html', 'miracles/raymond-nader.html':'miracles.html', 'miracles/latest-register-entries.html':'miracles.html' };
 // Links are written as clean URLs (./story, ./ for home); compare pages by
 // their clean name so highlighting works for both forms.
 const cleanName = value => { const base = path.posix.basename(value.replace(/\/$/, '/index')).replace(/\.html$/, ''); return base === '.' || base === '..' || base === '' ? 'index' : base; };
