@@ -1,0 +1,9 @@
+# Durable directory route for /miracles/, September 25, 2026
+
+Adding the /miracles/ child pages created a file/directory collision: Hostinger preferred the directory to the old miracles.html file, redirected /miracles to /miracles/, then returned 403 because the directory had no index. An emergency deploy added miracles/index.html and changed the live canonical and sitemap to /miracles/, but those changes were absent from Git. This branch makes the site build match the working live route.
+
+Moved the hub to miracles/index.html, rebased relative links, deleted the root file, and adopted /miracles/ as canonical in registry, hreflang, metadata and sitemap. The English/Arabic language cluster now points to the directory URL. Route/build/nav/SEO tests cover the directory index; the sitemap lastmod tool reads its source from miracles/index.html. The shared navigation still points at /miracles and follows the server's 301 to /miracles/; this keeps all existing links working, though an eventual clean-URL sweep can remove that extra redirect site-wide.
+
+No theological or testimony claims were changed. Expected SEO impact: restores a crawlable 200 hub and eliminates a noncanonical sitemap entry and nonreciprocal language links. Verify production /miracles -> /miracles/ 200, the five child pages 200, sitemap and reciprocal hreflang after the integrator deploys this branch.
+
+Validation on stage `7e332b7`: SEO unit suite (14 tests), i18n build/check and policy tests, navigation sync check, local link resolution, generator idempotence, and full site smoke (119 sitemap URLs) passed. Playwright rendered the hub at 390px and 1366px: stylesheet loaded, no horizontal overflow or console errors, and internal CTA/child links resolved to the intended routes. Full-page screenshots were inspected after scrolling to reveal motion-animated content. The static 200 hub was tested locally, not a production deployment test.

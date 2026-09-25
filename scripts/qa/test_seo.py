@@ -32,6 +32,15 @@ class SeoRegressionTests(unittest.TestCase):
     def test_repository_metadata(self):
         self.assertEqual(check(self.root)[0], [])
 
+    def test_miracles_directory_hub_is_canonical(self):
+        hub = self.root / "miracles/index.html"
+        self.assertTrue(hub.is_file())
+        self.assertFalse((self.root / "miracles.html").exists())
+        text = hub.read_text()
+        self.assertIn('<link rel="canonical" href="https://marsharbel.com/miracles/"', text)
+        self.assertIn('<loc>https://marsharbel.com/miracles/</loc>', (self.root / "sitemap.xml").read_text())
+        self.assertEqual(check(self.root)[0], [])
+
     def test_missing_sitemap_entry_fails(self):
         path = self.root / "sitemap.xml"
         path.write_text(re.sub(r"  <url><loc>https://marsharbel.com/saint-charbel-novena</loc>.*?</url>\n",
@@ -85,7 +94,7 @@ class SeoRegressionTests(unittest.TestCase):
         original_root = generator.ROOT
         generator.ROOT = self.root
         self.addCleanup(setattr, generator, "ROOT", original_root)
-        for path in [*self.root.glob("*.html"), *self.root.glob("mysteries/*.html")]:
+        for path in [*self.root.glob("*.html"), *self.root.glob("mysteries/*.html"), self.root / "miracles/index.html"]:
             if path.is_symlink():
                 continue
             before = path.read_text()

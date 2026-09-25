@@ -75,7 +75,7 @@ TITLE_OVERRIDE = {
 # Home > section > page. Each entry is (label, file) for the section and page.
 SECTIONS = {
     "story": ("Story", "story.html"),
-    "miracles": ("Miracles", "miracles.html"),
+    "miracles": ("Miracles", "miracles/index.html"),
     "prayer": ("Prayer", "prayer-library.html"),
     "rosary": ("Rosary Guide", "rosary-visual-guide.html"),
 }
@@ -83,7 +83,7 @@ SECTIONS = {
 BREADCRUMBS = {
     "story.html": (None, "Story for Children"),
     "history.html": ("story", "Full History"),
-    "miracles.html": (None, "Miracles"),
+    "miracles/index.html": (None, "Miracles"),
     "news.html": ("miracles", "Latest News"),
     "testimonies.html": ("miracles", "Testimonies"),
     "voice-testimony.html": ("miracles", "Voice Testimony"),
@@ -153,6 +153,8 @@ def path_to_url(path: Path) -> str:
     rel = path.relative_to(ROOT).as_posix()
     if rel == "index.html":
         return f"{SITE}/"
+    if rel == "miracles/index.html":
+        return f"{SITE}/miracles/"
     if rel.endswith(".html"):
         rel = rel[:-5]
     return f"{SITE}/{rel}"
@@ -168,6 +170,8 @@ def page_title(html: str, fallback: str) -> str:
 def description_for(path: Path, title: str) -> str:
     rel = path.relative_to(ROOT).as_posix()
     name = path.name
+    if rel == 'miracles/index.html':
+        return DESCRIPTIONS['miracles.html']
     if rel.startswith("mysteries/"):
         pretty = mystery_name(title)
         return trim_description(
@@ -370,6 +374,7 @@ def update_file(path: Path) -> bool:
 def main() -> None:
     files = [Path(p) for p in glob.glob(str(ROOT / "*.html"))]
     files += [Path(p) for p in glob.glob(str(ROOT / "mysteries" / "*.html"))]
+    files += [ROOT / "miracles" / "index.html"]
 
     changed = 0
     for path in sorted(files):

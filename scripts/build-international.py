@@ -94,7 +94,8 @@ def outputs(root=ROOT):
     text = replace_block(text, 'i18n-navigation', '')
     result[home] = text
     for topic, config in registry['topics'].items():
-        path = root / (config['relatedEnglish'].lstrip('/') + '.html')
+        related = config['relatedEnglish'].lstrip('/')
+        path = root / (related + 'index.html' if related.endswith('/') else related + '.html')
         text = replace_block(path.read_text(), 'i18n-navigation', '')
         if registry['defaultLocale'] not in topic_locales(registry, topic):
             # The English page is this topic's English alternate, so it carries the same cluster.
