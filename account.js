@@ -16,24 +16,26 @@
       button.disabled = false; return;
     }
     status(message, 'Signed in. Only you and the moderator can see these submissions.');
-    const { data, error } = await client.from('testimony_submissions').select('id,display_name,story,status,revision,author_message,created_at').eq('author_id', session.user.id).order('created_at', { ascending: false }).limit(50);
+    const { data, error } = await client.from('testimony_submissions').select('id,display_name,story,youtube_video_id,status,revision,author_message,created_at').eq('author_id', session.user.id).order('created_at', { ascending: false }).limit(50);
     if (error) throw new Error('Your stories could not be loaded. Please try again.');
     list.replaceChildren();
     if (!data.length) list.append(node('p', 'You have not submitted a story yet.'));
     for (const row of data) {
       const card = node('article', null, 'card testimony-card');
       card.append(node('h3', row.display_name), node('p', row.status.replaceAll('_',' '), 'tag'), node('p', row.story, 'testimony-text'));
+      if (row.youtube_video_id && window.TestimonyVideo.embedUrl(row.youtube_video_id)) { const link=node('a',window.TESTIMONY_COPY.videoAccountLink); link.href=`https://www.youtube.com/watch?v=${row.youtube_video_id}`; link.target='_blank'; link.rel='noopener'; card.append(link); }
       if (row.author_message) card.append(node('p', `Moderator: ${row.author_message}`));
       if (!['withdrawn','rejected'].includes(row.status)) {
         const edit = node('details'); edit.append(node('summary', 'Edit this story'));
         const editForm = node('form', null, 'testimony-form');
         const nameLabel = node('label', 'Public display name'); const name = node('input'); name.value = row.display_name; name.required = true; name.minLength = 2; name.maxLength = 80; nameLabel.append(name);
         const storyLabel = node('label', 'Revised testimony'); const story = node('textarea'); story.value = row.story; story.required = true; story.minLength = 60; story.maxLength = 7000; storyLabel.append(story);
+        const videoLabel = node('label',window.TESTIMONY_COPY.videoAccountLabel); const video=node('input'); video.type='url'; video.maxLength=500; video.value=row.youtube_video_id ? `https://www.youtube.com/watch?v=${row.youtube_video_id}` : ''; videoLabel.append(video);
         const save = node('button', 'Save and send for review', 'btn primary'); save.type = 'submit';
-        editForm.append(nameLabel, storyLabel, node('p', 'Saving removes any published version immediately. The revised story will receive new screening and human review.'), save);
+        editForm.append(nameLabel, storyLabel, videoLabel, node('p', 'Saving removes any published version immediately. The revised story will receive new screening and human review.'), save);
         editForm.addEventListener('submit', async e => {
           e.preventDefault(); save.disabled = true;
-          try { await rpc('testimony_author_action', { p_id: row.id, p_action: 'edit', p_revision: row.revision, p_payload: { display_name: name.value.trim(), story: story.value.trim() } }); await refresh(); }
+          try { if (video.value.trim() && !window.TestimonyVideo.idFromUrl(video.value.trim())) throw new Error(window.TESTIMONY_COPY.videoInvalid); await rpc('testimony_author_action', { p_id: row.id, p_action: 'edit', p_revision: row.revision, p_payload: { display_name: name.value.trim(), story: story.value.trim(), youtube_video_id:window.TestimonyVideo.idFromUrl(video.value.trim()) } }); await refresh(); }
           catch (error) { status(message, error.message, true); } finally { save.disabled = false; }
         });
         edit.append(editForm); card.append(edit);

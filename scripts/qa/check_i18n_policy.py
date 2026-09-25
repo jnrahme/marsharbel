@@ -80,7 +80,7 @@ def check(root=ROOT):
     # Generated English copy has exact freshness verification in full QA.
     if testimony_catalog and (root / 'testimonies-copy.js').exists():
         generated_copy = (root / 'testimonies-copy.js').read_text()
-        for key in ('readerUnavailable', 'readerSuccess', 'readerError'):
+        for key in ('readerUnavailable', 'readerSuccess', 'readerError', 'videoTitle', 'videoReviewLink', 'videoReviewNotice', 'videoAccountLink', 'videoAccountLabel', 'videoInvalid'):
             if json.dumps(testimony_catalog[key], ensure_ascii=False) not in generated_copy:
                 errors.append(f'testimonies-copy.js: {key} differs from English catalog')
     for file, values in snapshot(root).items():

@@ -17,6 +17,8 @@ try{
  verdict={...verdict,hostname:'evil.test'};assert.equal((await handler(request())).status,403);assert.equal(calls.length,0);
  verdict={...verdict,hostname:'marsharbel.com'};assert.equal((await handler(request())).status,202);assert.equal(calls[0].name,'testimony_submit_guest');assert.equal(calls[0].args.p_author,undefined);
  assert.equal((await handler(request({...body,author_id:'attacker',status:'approved'}))).status,202);assert.equal(calls[1].args.p_payload.status,undefined);
+ assert.equal((await handler(request({...body,youtube_url:'https://youtu.be/dQw4w9WgXcQ'}))).status,202);assert.equal(calls.at(-1).args.p_payload.youtube_video_id,'dQw4w9WgXcQ');
+ assert.equal((await handler(request({...body,youtube_url:'https://youtube.com.evil.test/watch?v=dQw4w9WgXcQ'}))).status,400);
  assert.equal((await handler(request({...body,story:'x'.repeat(31000)}))).status,413);
  globalThis.fetch=async()=>{throw new Error('offline');};assert.equal((await handler(request())).status,503);
  // hCaptcha is selected by server configuration, never by an untrusted request.

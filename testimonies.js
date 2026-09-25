@@ -8,10 +8,17 @@
   async function load(){
     more.disabled=true;
     try{
-      const {data,error}=await client.from('testimony_publications').select('id,display_name,story,country,event_date,published_at,label').order('published_at',{ascending:false}).order('id',{ascending:false}).range(offset,offset+19);
+      const {data,error}=await client.from('testimony_publications').select('id,display_name,story,country,event_date,published_at,label,youtube_video_id').order('published_at',{ascending:false}).order('id',{ascending:false}).range(offset,offset+19);
       if(error)throw new Error();
       for(const row of data){
         const article=node('article',null,'card testimony-card');article.append(node('p',row.label,'kicker'),node('h3',row.display_name),node('p',[row.country,row.event_date].filter(Boolean).join(' · '),'source-meta'),node('p',row.story,'testimony-text'));
+        const embed = window.TestimonyVideo.embedUrl(row.youtube_video_id);
+        if (embed) {
+          const wrap=node('div',null,'video-wrap'); const frame=node('iframe');
+          frame.src=embed; frame.title=`${window.TESTIMONY_COPY.videoTitle} ${row.display_name}`; frame.loading='lazy'; frame.referrerPolicy='strict-origin-when-cross-origin';
+          frame.allowFullscreen=true;
+          wrap.append(frame); article.append(wrap);
+        }
         const report=node('details');report.append(node('summary','Report this testimony'));
         const form=node('form',null,'testimony-form');const label=node('label','What should the moderator review?');const reason=node('textarea');reason.required=true;reason.minLength=10;reason.maxLength=1000;label.append(reason);
         const send=node('button','Send report','btn subtle');send.type='submit';const result=node('p');result.setAttribute('role','status');form.append(label,send,result);
