@@ -36,3 +36,10 @@ breadcrumbs follow the same rule (`./`, not `index`). `check_seo.py` fails
 the build on any internal link to `*.html` or `index`. The shared nav lives in
 `partials/primary-navigation.html` and is applied with
 `node scripts/sync-navigation.mjs`.
+
+## Homepage news rotator thumbnails
+
+Rotator images display at 64x64. After adding or changing a rotator item,
+run `python3 scripts/build_news_thumbs.py`: it makes a 128px square WebP in
+`media/news/thumb/` and points the item at it. QA fails if an item still
+uses a full-size image.

@@ -19,6 +19,7 @@ python3 -m unittest discover -s scripts/qa -p 'test_seo.py'
 
 echo "[qa] Checking RSS feeds against their source pages"
 python3 scripts/build_feeds.py --check
+python3 scripts/build_news_thumbs.py --check
 python3 -m unittest discover -s scripts/qa -p 'test_feeds.py'
 
 echo "[qa] Running testimony security tests"
