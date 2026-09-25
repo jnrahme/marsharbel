@@ -26,7 +26,7 @@ const metadata=[
   ['twitter-description',/<meta name="twitter:description" content="[^"]*" \/>/g,`<meta name="twitter:description" content="${escape(catalog.description)}" />`],
   ['og-title',/<meta property="og:title" content="[^"]*" \/>/g,`<meta property="og:title" content="${catalog.title}" />`],
   ['twitter-title',/<meta name="twitter:title" content="[^"]*" \/>/g,`<meta name="twitter:title" content="${catalog.title}" />`],
-  ['introduction',/(<h1>Testimonies<\/h1>\s*<p>)[^<]*(<\/p>)/,(_m,open,close)=>open+escape(catalog.introduction)+close],
+  ['introduction',/(<h1>Letters<\/h1>\s*<p>)[^<]*(<\/p>)/,(_m,open,close)=>open+escape(catalog.introduction)+close],
   ['initial',/(<p id="testimony-empty" class="section-sub">)[^<]*(<\/p>)/,(_m,open,close)=>open+escape(catalog.readerInitial)+close],
 ];
 for(const [key,pattern,replacement] of metadata){if(!pattern.test(html))throw new Error(`Missing ${key} in testimonies.html`);html=html.replace(pattern,replacement);}

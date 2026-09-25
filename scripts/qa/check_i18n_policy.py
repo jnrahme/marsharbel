@@ -75,6 +75,7 @@ def snapshot(root=ROOT):
 def check(root=ROOT):
     baseline = read_json(root/'locales/legacy-text-baseline.json')
     errors = []
+    display_catalog = read_json(root/'locales/en/letters-display.json')['values']
     testimony_path = root / 'locales/en/testimonies.json'
     testimony_catalog = read_json(testimony_path) if testimony_path.exists() else None
     # Generated English copy has exact freshness verification in full QA.
@@ -90,6 +91,10 @@ def check(root=ROOT):
             # and the archive block is verified by the reproducible build.
             for key in ('title', 'description', 'introduction', 'readerInitial'):
                 additions.pop(testimony_catalog[key], None)
+        # Newly edited English legacy pages are catalog-backed, not added to
+        # the frozen legacy baseline. The per-file counts prevent a second
+        # unreviewed occurrence from being silently accepted.
+        additions -= Counter(display_catalog.get(file, {}))
         if additions:
             errors.append(f'{file}: new hardcoded wording; move it to locales/: {list(additions)[:3]}')
     for path in (root/'templates/international').glob('*.html'):

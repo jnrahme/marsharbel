@@ -9,6 +9,12 @@
   const readiness = document.getElementById('submit-readiness');
   const touched = new Set();
   const field = name => form.elements.namedItem(name);
+  // A home-page draft is private to this tab and never placed in a URL.
+  try {
+    const draft = sessionStorage.getItem('saint_charbel_letter_draft');
+    if (draft && !field('story').value) field('story').value = draft.slice(0, 7000);
+  } catch { /* The form still works when browser storage is unavailable. */ }
+
   let challenge; let sending = false; let submitted = false;
   const issues = () => {
     const problems = [];
@@ -53,7 +59,15 @@
     for (const [, text] of problems) { const item = document.createElement('li'); item.textContent = text; list.append(item); }
     readiness.append(title, list);
   };
-  form.addEventListener('input', event => { touched.add(event.target.name); submitted = false; updateSubmit(); });
+  form.addEventListener('input', event => {
+    if (event.target === field('story')) {
+      try {
+        if (sessionStorage.getItem('saint_charbel_letter_draft') !== null)
+          sessionStorage.setItem('saint_charbel_letter_draft', event.target.value);
+      } catch { /* Form remains usable if storage is unavailable. */ }
+    }
+    touched.add(event.target.name); submitted = false; updateSubmit();
+  });
   form.addEventListener('change', event => { touched.add(event.target.name); submitted = false; updateSubmit(); });
   form.addEventListener('focusout', event => { touched.add(event.target.name); updateSubmit(); });
   verification.addEventListener('verificationchange', updateSubmit);
@@ -90,7 +104,7 @@
     }
     const fd = new FormData(form);
     const payload = { display_name: fd.get('display_name').trim(), story: fd.get('story').trim(), country: fd.get('country').trim(), language: fd.get('language'), event_date: fd.get('event_date'), age_attested: fd.has('age_confirmed'), consent_publish: fd.has('consent_publish'), ai_consent: fd.has('ai_consent'), website: fd.get('website') };
-    sending = true; updateSubmit(); submit.textContent = 'Submitting…';
+    sending = true; updateSubmit(); submit.textContent = 'Sending…';
     status(message, 'Sending your testimony. Please wait…');
     try {
       const response = await fetch(`${config.supabaseUrl}/functions/v1/submit-testimony`, {
@@ -104,11 +118,12 @@
       }
       if (result?.accepted !== true || !result.reference) throw new Error('Submission could not be confirmed. Keep your text and try again later.');
       submitted = true; touched.clear(); form.reset();
-      status(message, `Testimony submitted. Your story is private and pending review. Save this reference: ${result.reference}`);
+      try { sessionStorage.removeItem('saint_charbel_letter_draft'); } catch { /* no stored draft */ }
+      status(message, `Letter sent. Your story is private and pending review. Save this reference: ${result.reference}`);
     } catch (error) {
       status(message, error.name === 'TimeoutError' ? 'The request timed out. Your text is still here. Please wait before retrying to avoid duplicate submissions.' : error instanceof TypeError ? 'We could not connect to the submission service. Your text is still here. Check your connection and try again.' : error.message, true);
     } finally {
-      challenge.reset(); sending = false; updateSubmit(); submit.textContent = 'Submit testimony'; message.focus();
+      challenge.reset(); sending = false; updateSubmit(); submit.textContent = 'Send letter for review'; message.focus();
     }
   });
 })();
