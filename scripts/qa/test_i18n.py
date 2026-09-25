@@ -38,6 +38,15 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual(set(catalog['pages']),set(locale_topics(registry,code)))
         self.assertTrue({'biography','prayers','novena','rosary','annaya'} <= set(catalogs['pl']['pages']))
 
+    def test_directory_english_related_page_is_generated_in_index(self):
+        registry, _ = load_catalog(self.root)
+        self.assertEqual(registry['topics']['miracles']['relatedEnglish'], '/miracles/')
+        self.assertEqual(builder.alternate_links(registry, 'miracles').count('https://marsharbel.com/miracles/'), 2)
+        # The real project's output maps the directory route to index.html,
+        # never to a hidden ".html" file inside the directory.
+        self.assertIn(ROOT/'miracles/index.html', builder.outputs())
+        self.assertNotIn(ROOT/'miracles/.html', builder.outputs())
+
     def test_missing_key_is_rejected(self):
         self.edit('pl/common.json', lambda d:d.pop('navigation.skip'))
         with self.assertRaisesRegex(ValueError,'missing keys'):

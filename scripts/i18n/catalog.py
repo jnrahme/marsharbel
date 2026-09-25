@@ -49,7 +49,7 @@ def validate_registry(registry):
             raise ValueError(f'{topic}: section IDs must be nonempty and unique')
         if any(not re.fullmatch(r'[a-z][A-Za-z0-9]*', key) for key in [topic, *sections]):
             raise ValueError(f'{topic}: unsafe topic or section ID')
-        if not re.fullmatch(r'/[a-z0-9]+(?:-[a-z0-9]+)*', config['relatedEnglish']):
+        if not re.fullmatch(r'/[a-z0-9]+(?:-[a-z0-9]+)*/?', config['relatedEnglish']):
             raise ValueError(f'{topic}: invalid related English route')
         if not config['sources'] or not set(config['sources']) <= registry['sources'].keys():
             raise ValueError(f'{topic}: unknown or missing source reference')

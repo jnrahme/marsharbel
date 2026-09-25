@@ -11,7 +11,7 @@ const baseUrl = parseBaseUrl(process.argv.slice(2));
 const paths = [
   '/',
   '/history.html',
-  '/miracles.html',
+  '/miracles/',
   '/testimonies.html',
   '/rosary-intro.html',
   '/rosary-prayer-coach.html',
