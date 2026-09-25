@@ -134,6 +134,16 @@ class SeoRegressionTests(unittest.TestCase):
         self.assertTrue(any("redirecting URL" in e and "story.html" in e for e in errors))
         self.assertTrue(any("redirecting URL" in e and e.endswith(" index") for e in errors))
 
+    def test_featured_image_pages_carry_article_schema_and_share_image(self):
+        html = (self.root / "saint-charbel-trail.html").read_text()
+        blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html)]
+        article = [b for b in blocks if b.get("@type") == "WebPage"][0]["mainEntity"]
+        self.assertEqual(article["@type"], "Article")
+        self.assertEqual(article["headline"], "Darb Mar Charbel: The Saint Charbel Trail")
+        self.assertRegex(article["datePublished"], r"^\d{4}-\d{2}-\d{2}$")
+        self.assertIn('og:image" content="https://marsharbel.com/media/news/trail-pilgrimage-hero.webp"', html)
+        self.assertNotIn("mainEntity", (self.root / "history.html").read_text())
+
 
 if __name__ == "__main__":
     unittest.main()
