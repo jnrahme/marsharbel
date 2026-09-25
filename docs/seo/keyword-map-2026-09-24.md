@@ -81,10 +81,13 @@ priority = (impact * confidence) / max(1, effort + risk), 0-5 scale.
    competitor: https://charbel.app/prayers/saint-charbel-prayer-for-the-sick
    impact 4, confidence 4, effort 1, risk 2 -> priority 5.3
 
-7. **saint charbel miracles 2025 / 2026** - BLOCKED: needs Joey review
-   Known gap since 2026-09-21. Doctrinally sensitive (recent miracle claims);
-   per standing rules this content is flagged for Joey review before merge.
-   Draft only after his direction on sourcing standard.
+7. **saint charbel miracles 2025 / 2026** - DRAFTED 2026-09-24 (batch 11)
+   Unparked 2026-09-24 5:41 PM when Joey lifted the owner-review gate
+   ("auto approve is always on"). Page: /saint-charbel-miracles-2026 -
+   two healings registered at Annaya Jan 17 2026 (CNA/EWTN), Naples oil
+   vessel 2025 recap, registered-vs-Church-recognized distinction, no
+   outcome promises. Discipline per parent's unpark instruction:
+   Church-attested vs testimonies kept apart, attributed claims.
 
 ### Cluster: worldwide devotion
 
