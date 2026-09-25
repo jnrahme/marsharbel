@@ -3,6 +3,7 @@
 from html.parser import HTMLParser
 from pathlib import Path
 import json
+import re
 import sys
 import xml.etree.ElementTree as ET
 from urllib.parse import unquote, urlsplit
@@ -72,6 +73,11 @@ class Page(HTMLParser):
             self.in_schema = False
 
 
+# 22nd/minibook run inline scripts after their includes; testimonies.html
+# loads the Supabase auth client and is left to the testimony lane.
+SYNC_SCRIPT_PAGES = {"22nd-of-the-month.html", "rosary-minibook.html", "testimonies.html"}
+
+
 def check(root):
     errors = []
     urls = [node.text for node in ET.parse(root / "sitemap.xml").iter(
@@ -98,6 +104,13 @@ def check(root):
             canonical = SITE + "/" + relative_path.with_suffix("").as_posix()
         expected.add(canonical)
         pages[canonical] = page
+        # Local scripts load deferred so they never block first paint. Pages
+        # with inline scripts that depend on execution order are exempt.
+        if relative_path.as_posix() not in SYNC_SCRIPT_PAGES:
+            source = path.read_text(encoding="utf-8").split("<body", 1)[-1]
+            for tag in re.findall(r"<script\b[^>]*\bsrc=[\"'](?!https?:)[^>]*>", source):
+                if not re.search(r"\b(defer|async)\b|type=[\"']module", tag):
+                    errors.append(f"{path.name}: render-blocking script, add defer: {tag}")
         if page.h1_count != 1:
             errors.append(f"{path.name}: expected one main heading, found {page.h1_count}")
         for image in page.missing_alt:
