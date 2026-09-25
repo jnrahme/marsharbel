@@ -49,7 +49,7 @@ def validate_registry(registry):
             raise ValueError(f'{topic}: section IDs must be nonempty and unique')
         if any(not re.fullmatch(r'[a-z][A-Za-z0-9]*', key) for key in [topic, *sections]):
             raise ValueError(f'{topic}: unsafe topic or section ID')
-        if not re.fullmatch(r'/[a-z0-9]+(?:-[a-z0-9]+)*/?', config['relatedEnglish']):
+        if not re.fullmatch(r'/[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*)*/?', config['relatedEnglish']):
             raise ValueError(f'{topic}: invalid related English route')
         if not config['sources'] or not set(config['sources']) <= registry['sources'].keys():
             raise ValueError(f'{topic}: unknown or missing source reference')
@@ -89,12 +89,12 @@ def load_catalog(root=ROOT):
         if set(config['slugs']) != set(locale_topics(registry, code)):
             raise ValueError(f'{code}: missing or extra topic routes')
         for slug in config['slugs'].values():
-            if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug):
+            if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*)*/?', slug):
                 raise ValueError(f'{code}: unsafe or invalid slug {slug}')
             route = f'/{code}/{slug}'
-            if route in paths:
+            if route.rstrip('/') in paths:
                 raise ValueError(f'Duplicate route: {route}')
-            paths.add(route)
+            paths.add(route.rstrip('/'))
         catalogs[code] = {name: read_json(root / f'locales/{code}/{name}.json') for name in ('common', 'pages')}
         if set(catalogs[code]['pages']) != set(locale_topics(registry, code)):
             raise ValueError(f'{code}: missing or extra page topics')
@@ -131,4 +131,4 @@ def page_url(registry, code, topic=None):
 def public_html_files(root=ROOT):
     registry = read_json(root / 'locales/registry.json')
     return sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'), *root.glob('miracles/*.html'),
-                   *(p for code in registry['locales'] for p in root.glob(f'{code}/*.html'))])
+                   *(p for code in registry['locales'] for p in root.glob(f'{code}/**/*.html'))])
