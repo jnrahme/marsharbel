@@ -138,7 +138,7 @@
         heart: 'Heart Moment: God begins great stories in humble places.',
         scene: 'birth',
         evidencePreset: 'earlyLife',
-        illustration: './media/storybook/images/event-01.jpg',
+        illustration: './media/storybook/images/event-01.webp',
         audio: 'page-01.mp3'
       },
       {
@@ -148,7 +148,7 @@
         heart: 'Heart Moment: Pain can become a doorway to deeper faith.',
         scene: 'birth',
         evidencePreset: 'earlyLife',
-        illustration: './media/storybook/images/event-02.jpg',
+        illustration: './media/storybook/images/event-02.webp',
         audio: 'page-02.mp3'
       },
       {
@@ -158,7 +158,7 @@
         heart: 'Heart Moment: A quiet heart can hear God clearly.',
         scene: 'birth',
         evidencePreset: 'earlyLife',
-        illustration: './media/storybook/images/event-03.jpg',
+        illustration: './media/storybook/images/event-03.webp',
         audio: 'page-03.mp3'
       },
       {
@@ -168,7 +168,7 @@
         heart: 'Heart Moment: Holy examples can change a child forever.',
         scene: 'birth',
         evidencePreset: 'earlyLife',
-        illustration: './media/storybook/images/birth.png',
+        illustration: './media/storybook/images/birth.webp',
         audio: 'page-04.mp3'
       },
       {
@@ -178,7 +178,7 @@
         heart: 'Heart Moment: Holiness begins with a brave yes.',
         scene: 'vocation',
         evidencePreset: 'vocationFormation',
-        illustration: './media/storybook/images/event-04.jpg',
+        illustration: './media/storybook/images/event-04.webp',
         audio: 'page-05.mp3'
       },
       {
@@ -188,7 +188,7 @@
         heart: 'Heart Moment: True love sometimes asks for tears and sacrifice.',
         scene: 'vocation',
         evidencePreset: 'vocationFormation',
-        illustration: './media/storybook/images/vocation.png',
+        illustration: './media/storybook/images/vocation.webp',
         audio: 'page-06.mp3'
       },
       {
@@ -198,7 +198,7 @@
         heart: 'Heart Moment: Truth studied with humility becomes wisdom.',
         scene: 'priest',
         evidencePreset: 'vocationFormation',
-        illustration: './media/storybook/images/event-06.jpg',
+        illustration: './media/storybook/images/event-06.webp',
         audio: 'page-07.mp3'
       },
       {
@@ -208,7 +208,7 @@
         heart: 'Heart Moment: At the altar, his whole heart belonged to God.',
         scene: 'priest',
         evidencePreset: 'vocationFormation',
-        illustration: './media/storybook/images/priest.png',
+        illustration: './media/storybook/images/priest.webp',
         audio: 'page-08.mp3'
       },
       {
@@ -218,7 +218,7 @@
         heart: 'Heart Moment: Ordinary work can become extraordinary love.',
         scene: 'priest',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-07.jpg',
+        illustration: './media/storybook/images/event-07.webp',
         audio: 'page-09.mp3'
       },
       {
@@ -228,7 +228,7 @@
         heart: 'Heart Moment: Steady faithfulness makes a strong heart.',
         scene: 'priest',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-09.jpg',
+        illustration: './media/storybook/images/event-09.webp',
         audio: 'page-10.mp3'
       },
       {
@@ -238,7 +238,7 @@
         heart: 'Heart Moment: God honors humble faith, even when others mock it.',
         scene: 'hermit',
         evidencePreset: 'waterLampTradition',
-        illustration: './media/storybook/images/hermit.png',
+        illustration: './media/storybook/images/hermit.webp',
         audio: 'page-11.mp3'
       },
       {
@@ -248,7 +248,7 @@
         heart: 'Heart Moment: Hidden faithfulness shines in God’s eyes.',
         scene: 'hermit',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-08.jpg',
+        illustration: './media/storybook/images/event-08.webp',
         audio: 'page-12.mp3'
       },
       {
@@ -258,7 +258,7 @@
         heart: 'Heart Moment: Holiness can grow in fields, kitchens, and classrooms.',
         scene: 'hermit',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-20.jpg',
+        illustration: './media/storybook/images/event-20.webp',
         audio: 'page-13.mp3'
       },
       {
@@ -268,7 +268,7 @@
         heart: 'Heart Moment: Holiness grows when we say no to sin and yes to love.',
         scene: 'hermit',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-09.jpg',
+        illustration: './media/storybook/images/event-09.webp',
         audio: 'page-14.mp3'
       },
       {
@@ -278,7 +278,7 @@
         heart: 'Heart Moment: Purity is love that protects what is holy.',
         scene: 'hermit',
         evidencePreset: 'monasticYears',
-        illustration: './media/storybook/images/event-09.jpg',
+        illustration: './media/storybook/images/event-09.webp',
         audio: 'page-15.mp3'
       },
       {
@@ -288,7 +288,7 @@
         heart: 'Heart Moment: True love for God perseveres to the end.',
         scene: 'passing',
         evidencePreset: 'deathAndAfter',
-        illustration: './media/storybook/images/event-10.jpg',
+        illustration: './media/storybook/images/event-10.webp',
         audio: 'page-16.mp3'
       },
       {
@@ -298,7 +298,7 @@
         heart: 'Heart Moment: One hidden life can touch the whole world.',
         scene: 'healing',
         evidencePreset: 'deathAndAfter',
-        illustration: './media/storybook/images/event-13.jpg',
+        illustration: './media/storybook/images/event-13.webp',
         audio: 'page-17.mp3'
       },
       {
@@ -308,7 +308,7 @@
         heart: 'Heart Moment: God can use small signs to wake up sleeping hearts.',
         scene: 'healing',
         evidencePreset: 'deathAndAfter',
-        illustration: './media/storybook/images/event-14.jpg',
+        illustration: './media/storybook/images/event-14.webp',
         audio: 'page-18.mp3'
       },
       {
@@ -318,7 +318,7 @@
         heart: 'Heart Moment: Signs are invitations to return to God.',
         scene: 'healing',
         evidencePreset: 'deathAndAfter',
-        illustration: './media/storybook/images/event-15.jpg',
+        illustration: './media/storybook/images/event-15.webp',
         audio: 'page-19.mp3'
       },
       {
@@ -328,7 +328,7 @@
         heart: 'Heart Moment: Truth and faith walk together.',
         scene: 'healing',
         evidencePreset: 'deathAndAfter',
-        illustration: './media/storybook/images/healing.png',
+        illustration: './media/storybook/images/healing.webp',
         audio: 'page-20.mp3'
       },
       {
@@ -338,7 +338,7 @@
         heart: 'Heart Moment: The Lord hears cries from hospital rooms and homes.',
         scene: 'healing',
         evidencePreset: 'beatificationCanonization',
-        illustration: './media/storybook/images/event-16.jpg',
+        illustration: './media/storybook/images/event-16.webp',
         audio: 'page-21.mp3'
       },
       {
@@ -348,7 +348,7 @@
         heart: 'Heart Moment: Miracles point us to God, not to ourselves.',
         scene: 'legacy',
         evidencePreset: 'beatificationCanonization',
-        illustration: './media/storybook/images/event-17.jpg',
+        illustration: './media/storybook/images/event-17.webp',
         audio: 'page-22.mp3'
       },
       {
@@ -358,7 +358,7 @@
         heart: 'Heart Moment: The biggest miracle is returning to God with a changed heart.',
         scene: 'healing',
         evidencePreset: 'nohadTestimony',
-        illustration: './media/storybook/images/event-18.jpg',
+        illustration: './media/storybook/images/event-18.webp',
         audio: 'page-23.mp3'
       },
       {
@@ -368,7 +368,7 @@
         heart: 'Heart Moment: Holiness gathers people who would never meet otherwise.',
         scene: 'unity',
         evidencePreset: 'deathAndAfter',
-        illustration: './media/storybook/images/event-19.jpg',
+        illustration: './media/storybook/images/event-19.webp',
         audio: 'page-24.mp3'
       },
       {
@@ -378,7 +378,7 @@
         heart: 'Heart Moment: Repeated small yeses become a holy life.',
         scene: 'unity',
         evidencePreset: 'pastoralApplication',
-        illustration: './media/storybook/images/event-20.jpg',
+        illustration: './media/storybook/images/event-20.webp',
         audio: 'page-25.mp3'
       },
       {
@@ -388,7 +388,7 @@
         heart: 'Heart Moment: Saints are made by faithful love, one day at a time.',
         scene: 'legacy',
         evidencePreset: 'beatificationCanonization',
-        illustration: './media/storybook/images/event-21.jpg',
+        illustration: './media/storybook/images/event-21.webp',
         audio: 'page-26.mp3'
       },
       {
@@ -398,7 +398,7 @@
         heart: 'Heart Moment: Your everyday choices can become a path to sainthood.',
         scene: 'legacy',
         evidencePreset: 'pastoralApplication',
-        illustration: './media/storybook/images/event-22.jpg',
+        illustration: './media/storybook/images/event-22.webp',
         audio: 'page-27.mp3'
       }
     ],
@@ -615,7 +615,7 @@
 
   const sceneMarkup = (scene, illustration) => `
     <div class="scene-art scene-${scene}">
-      <img class="scene-photo" src="${illustration || './gallery/charbel-portrait.jpg'}" alt="" loading="lazy" />
+      <img class="scene-photo" src="${illustration || './gallery/charbel-portrait.jpg'}" alt="" fetchpriority="high" decoding="async" />
       <div class="scene-photo-overlay" aria-hidden="true"></div>
     </div>
   `;
@@ -914,7 +914,12 @@
     el.prayer.textContent = page.prayer;
     el.heart.textContent = page.heart || '';
     el.heart.hidden = !page.heart;
-    el.art.innerHTML = sceneMarkup(page.scene, illustration);
+    // Keep the server-rendered first scene when it already shows this page's
+    // art; replacing it would repaint the LCP image for no visual change.
+    const currentPhoto = el.art.querySelector('.scene-photo');
+    const sameScene = currentPhoto && currentPhoto.getAttribute('src') === illustration
+      && el.art.querySelector(`.scene-art.scene-${page.scene}`);
+    if (!sameScene) el.art.innerHTML = sceneMarkup(page.scene, illustration);
     renderEvidence(index, page);
     el.art.setAttribute('data-scene', page.scene);
     el.prev.disabled = index === 0;
