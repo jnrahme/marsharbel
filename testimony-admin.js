@@ -55,6 +55,11 @@
   function card(row) {
     const article = node('article', null, 'card testimony-card');
     article.append(node('h3', row.display_name), node('p', `${row.status.replaceAll('_', ' ')} · screening: ${row.review_state} · revision ${row.revision}`), node('p', row.story, 'testimony-text'));
+    if (row.youtube_video_id && window.TestimonyVideo.embedUrl(row.youtube_video_id)) {
+      const video = node('a', window.TESTIMONY_COPY.videoReviewLink);
+      video.href = `https://www.youtube.com/watch?v=${row.youtube_video_id}`; video.target = '_blank'; video.rel = 'noopener';
+      article.append(node('p', window.TESTIMONY_COPY.videoReviewNotice), video);
+    }
     if (row.review_notes) {
       const review = node('details'); review.open = true; review.append(node('summary', demo ? 'Practice review notes' : row.review_notes.source === 'human' ? 'Moderator review notes' : 'AI screening notes — not verification'));
       review.append(node('p', row.review_notes.summary || 'No summary'), node('p', `Suggested handling: ${row.review_notes.recommendation || 'human review'}`));

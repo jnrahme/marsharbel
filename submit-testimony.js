@@ -16,6 +16,8 @@
     const storyLength = field('story').value.trim().length;
     if (nameLength < 2 || nameLength > 80) problems.push(['display_name', 'Enter a display name with 2–80 characters (at least 2).']);
     if (storyLength < 60 || storyLength > 7000) problems.push(['story', `Write 60–7,000 characters for your story (${storyLength} entered).`]);
+    const video = field('youtube_url').value.trim();
+    if (video && !window.TestimonyVideo.idFromUrl(video)) problems.push(['youtube_url', 'Enter a valid YouTube video link, such as youtube.com/watch?v= or youtu.be/.']);
     const date = field('event_date');
     if (date.validity.badInput || (date.value && date.value > new Date().toISOString().slice(0, 10))) problems.push(['event_date', 'Choose an event date that is today or earlier.']);
     if (!field('country').checkValidity()) problems.push(['country', 'Keep the country name to 100 characters or fewer.']);
@@ -28,7 +30,7 @@
   const updateSubmit = () => {
     const problems = issues();
     submit.disabled = !configured || !config.submissionsEnabled || sending || problems.length > 0 || !form.checkValidity();
-    for (const [name, errorId] of [['display_name', 'name-error'], ['story', 'story-error']]) {
+    for (const [name, errorId] of [['display_name', 'name-error'], ['story', 'story-error'], ['youtube_url', 'youtube-error']]) {
       const error = document.getElementById(errorId);
       const problem = problems.find(([key]) => key === name);
       const show = touched.has(name) && Boolean(problem);
@@ -37,7 +39,7 @@
 
     }
     // Match the visible checklist, including untouched required fields.
-    for (const name of ['display_name', 'story', 'event_date', 'country', 'age_confirmed', 'consent_publish', 'ai_consent']) {
+    for (const name of ['display_name', 'story', 'youtube_url', 'event_date', 'country', 'age_confirmed', 'consent_publish', 'ai_consent']) {
       const control = field(name);
       const invalid = !submitted && problems.some(([key]) => key === name);
       control.setAttribute('aria-invalid', String(invalid));
@@ -82,14 +84,14 @@
     if (sending) return;
     const problems = issues();
     if (problems.length || !form.checkValidity()) {
-      touched.add('display_name'); touched.add('story'); updateSubmit();
+      touched.add('display_name'); touched.add('story'); touched.add('youtube_url'); updateSubmit();
       status(message, problems.map(([, text]) => text).join(' ') || 'Check the highlighted fields before submitting.', true);
       const first = problems.find(([key]) => key !== 'captcha');
       if (first) field(first[0]).focus(); else message.focus();
       return;
     }
     const fd = new FormData(form);
-    const payload = { display_name: fd.get('display_name').trim(), story: fd.get('story').trim(), country: fd.get('country').trim(), language: fd.get('language'), event_date: fd.get('event_date'), age_attested: fd.has('age_confirmed'), consent_publish: fd.has('consent_publish'), ai_consent: fd.has('ai_consent'), website: fd.get('website') };
+    const payload = { display_name: fd.get('display_name').trim(), story: fd.get('story').trim(), youtube_url: fd.get('youtube_url').trim(), country: fd.get('country').trim(), language: fd.get('language'), event_date: fd.get('event_date'), age_attested: fd.has('age_confirmed'), consent_publish: fd.has('consent_publish'), ai_consent: fd.has('ai_consent'), website: fd.get('website') };
     sending = true; updateSubmit(); submit.textContent = 'Submitting…';
     status(message, 'Sending your testimony. Please wait…');
     try {

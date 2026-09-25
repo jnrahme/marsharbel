@@ -94,5 +94,28 @@ await as('authenticated',passwordModerator,"select testimony_moderate($1,3,'unpu
 assert.equal((await as('anon',{},'select * from testimony_publications where id=$1',[guestId])).rows.length,0);
 for(let i=0;i<8;i++)assert.ok((await guestSubmit('guest '+i)).id);
 assert.equal((await guestSubmit('guest capped')).error,'rate_limited');
+// Apply the video migration twice; a guest's video is private until explicit approval.
+await db.exec(await readFile('supabase/migrations/202609250001_testimony_youtube.sql','utf8'));
+await db.exec(await readFile('supabase/migrations/202609250001_testimony_youtube.sql','utf8'));
+await db.exec("delete from testimony_budgets where bucket like 'intake:%'");
+const videoPayload={...payload('video'),youtube_video_id:'dQw4w9WgXcQ'};
+const videoId=(await as('service_role',{},'select testimony_submit_guest($1) result',[videoPayload])).rows[0].result.id;
+assert.ok(videoId);
+assert.equal((await as('anon',{},'select * from testimony_publications where id=$1',[videoId])).rows.length,0);
+assert.equal((await as('authenticated',passwordModerator,'select youtube_video_id from testimony_submissions where id=$1',[videoId])).rows[0].youtube_video_id,'dQw4w9WgXcQ');
+await as('authenticated',passwordModerator,'select testimony_manual_review($1,1,$2)',[videoId,'I watched the synthetic video and checked it for privacy and suitability.']);
+await as('authenticated',passwordModerator,"select testimony_moderate($1,2,'approve','Video reviewed before release',true)",[videoId]);
+assert.equal((await as('anon',{},'select youtube_video_id from testimony_publications where id=$1',[videoId])).rows[0].youtube_video_id,'dQw4w9WgXcQ');
+await as('authenticated',passwordModerator,"select testimony_moderate($1,3,'unpublish','Remove the synthetic video story')",[videoId]);
+assert.equal((await as('anon',{},'select * from testimony_publications where id=$1',[videoId])).rows.length,0);
+const legacyId=(await submit(ids[8],'account-video')).id;
+assert.ok(legacyId);
+await as('authenticated',passwordModerator,'select testimony_manual_review($1,1,$2)',[legacyId,'I checked the original account story for privacy and suitability.']);
+await as('authenticated',passwordModerator,"select testimony_moderate($1,2,'approve','Account story reviewed before publication',true)",[legacyId]);
+await as('authenticated',claims(ids[8]),"select testimony_author_action($1,'edit',3,$2)",[legacyId,{display_name:'Reader edited',story:payload('new account-video').story,youtube_video_id:'A1B2C3D4E5F'}]);
+assert.equal((await as('anon',{},'select * from testimony_publications where id=$1',[legacyId])).rows.length,0);
+assert.equal((await as('authenticated',passwordModerator,'select youtube_video_id from testimony_submissions where id=$1',[legacyId])).rows[0].youtube_video_id,'A1B2C3D4E5F');
+const invalidPayload={...payload('invalid-video'),youtube_video_id:'https://evil.example/watch'};
+await assert.rejects(()=>as('service_role',{},'select testimony_submit_guest($1)',[invalidPayload]),/check constraint/);
 console.log('Guest SQL checks passed: private server-only intake, duplicate/burst limits, audited moderator review, stale-decision rejection, publication and unpublish.');
 await db.close();console.log('Testimony SQL: authorization, private/public separation, quotas, human approval, stale edits, withdrawal, reports, worker isolation, retention, and pause checks passed.');
