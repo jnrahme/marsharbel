@@ -1,16 +1,10 @@
 (async function () {
   'use strict';
   const {client,node,rpc}=window.Testimony;
-  const root=document.getElementById('testimony-list'); const message=document.getElementById('testimony-empty');
-  if(!root)return;
-  for(const entry of window.TESTIMONY_BASELINE || []) {
-    const article=node('article',null,'card testimony-card');article.append(node('p','Recorded testimony','kicker'),node('h3',entry.name),node('p',entry.meta,'source-meta'),node('p',entry.text,'testimony-text'));
-    try{const url=new URL(entry.url);if(['http:','https:'].includes(url.protocol)){const a=node('a',entry.source);a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';article.append(a);}}catch{/* An invalid source URL is not made clickable. */}
-    root.append(article);
-  }
-  if(!client){message.textContent='Recorded accounts are shown below. Reader submissions will appear here after human review.';return;}
-  const publishedRoot=node('div',null,'testimony-grid');root.before(publishedRoot);
-  let offset=0;const more=node('button','Load more reader testimonies','btn subtle');more.type='button';publishedRoot.after(more);
+  const publishedRoot=document.getElementById('reader-testimony-list'); const message=document.getElementById('testimony-empty');
+  if(!publishedRoot)return;
+  if(!client){message.textContent=window.TESTIMONY_COPY.readerUnavailable;return;}
+  let offset=0;const more=node('button','Load more reader testimonies','btn subtle');more.type='button';more.hidden=true;publishedRoot.after(more);
   async function load(){
     more.disabled=true;
     try{
@@ -24,8 +18,8 @@
         form.addEventListener('submit',async event=>{event.preventDefault();send.disabled=true;try{const {data:{session}}=await client.auth.getSession();if(!session){result.replaceChildren(document.createTextNode('Please sign in to report abuse. '));const a=node('a','Your account');a.href='account.html';result.append(a);return;}await rpc('testimony_report',{p_id:row.id,p_reason:reason.value.trim()});result.textContent='Your private report has been sent to the moderator.';form.reset();}catch(error){result.textContent=error.message;}finally{send.disabled=false;}});
         report.append(form);article.append(report);publishedRoot.append(article);
       }
-      offset+=data.length;more.hidden=data.length<20;message.textContent='Reader-submitted accounts receive editorial review, not medical verification or official Church recognition. Recorded historical accounts are also listed below.';
-    }catch{message.textContent='Reader submissions could not be loaded. Recorded accounts remain available below.';}
+      offset+=data.length;more.hidden=data.length<20;message.textContent=window.TESTIMONY_COPY.readerSuccess;
+    }catch{message.textContent=window.TESTIMONY_COPY.readerError;}
     finally{more.disabled=false;}
   }
   more.addEventListener('click',load);await load();
