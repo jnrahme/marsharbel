@@ -663,6 +663,7 @@ h3 {
 }
 
 .mystery-hero-progress {
+  min-height: 1lh; /* reserve the line before JS fills it */
   margin: 0;
   color: var(--gold);
   font-weight: 800;
@@ -671,7 +672,12 @@ h3 {
   text-transform: uppercase;
 }
 
+.start-prayer-placeholder {
+  visibility: hidden;
+}
+
 .mystery-hero-ref {
+  min-height: 1lh;
   margin: 0.3rem 0 0;
   color: var(--theme-ink-soft);
   font-size: 0.95rem;
