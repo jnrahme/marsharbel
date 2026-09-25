@@ -94,7 +94,7 @@ class Links(HTMLParser):
         if url.netloc == 'marsharbel.com' and url.path.rstrip('/') == target:
             self.found = True
 
-for path in [*Path('.').glob('*.html'), *Path('mysteries').glob('*.html')]:
+for path in [*Path('.').glob('*.html'), *Path('mysteries').glob('*.html'), *Path('miracles').glob('*.html')]:
     if path.name == sys.argv[1]:
         continue
     parser = Links()
