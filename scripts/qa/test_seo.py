@@ -116,6 +116,36 @@ class SeoRegressionTests(unittest.TestCase):
             for item in items:
                 self.assertIn(f"<loc>{item['item']}</loc>", sitemap, name)
 
+    def test_new_editorial_pages_get_generated_breadcrumbs_without_duplication(self):
+        original_root = generator.ROOT
+        generator.ROOT = self.root
+        self.addCleanup(setattr, generator, "ROOT", original_root)
+        examples = {
+            "saint-charbel-prayer-for-anxiety.html": ["Home", "Prayer", "A Prayer to Saint Charbel for Anxiety"],
+            "videos.html": ["Home", "Saint Charbel on Film"],
+        }
+        for name, expected_labels in examples.items():
+            path = self.root / name
+            generator.update_file(path)
+            self.assertFalse(generator.update_file(path), name)
+            blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', path.read_text())]
+            crumbs = [b["breadcrumb"] for b in blocks if isinstance(b, dict) and "breadcrumb" in b]
+            self.assertEqual(len(crumbs), 1, name)
+            items = crumbs[0]["itemListElement"]
+            self.assertEqual([i["name"] for i in items], expected_labels, name)
+            self.assertEqual(items[-1]["item"], generator.path_to_url(path), name)
+            for item in items:
+                self.assertIn(f"<loc>{item['item']}</loc>", (self.root / "sitemap.xml").read_text())
+        # Hand-authored Article trails are retained; a generated WebPage must
+        # not add a second, conflicting BreadcrumbList on the same page.
+        authored = self.root / "miracles/nohad-el-shami.html"
+        generator.update_file(authored)
+        self.assertFalse(generator.update_file(authored))
+        blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', authored.read_text())]
+        self.assertEqual(sum("breadcrumb" in b for b in blocks if isinstance(b, dict)), 1)
+        self.assertIsNone(generator.breadcrumb_for(self.root / "index.html", "Home"))
+        self.assertNotIn('"breadcrumb"', (self.root / "shop.html").read_text())
+
     def test_generator_leaves_unmanaged_and_authored_heads_alone(self):
         original_root = generator.ROOT
         generator.ROOT = self.root
