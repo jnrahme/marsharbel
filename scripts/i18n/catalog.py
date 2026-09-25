@@ -130,5 +130,5 @@ def page_url(registry, code, topic=None):
 
 def public_html_files(root=ROOT):
     registry = read_json(root / 'locales/registry.json')
-    return sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'),
+    return sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'), *root.glob('miracles/*.html'),
                    *(p for code in registry['locales'] for p in root.glob(f'{code}/*.html'))])

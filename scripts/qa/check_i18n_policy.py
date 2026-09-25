@@ -53,7 +53,7 @@ def snapshot(root=ROOT):
     generated.update(page_url(registry, code, topic).lstrip('/') + '.html'
                      for code in registry['locales'] for topic in locale_topics(registry, code))
     result = {}
-    for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'),
+    for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'), *root.glob('miracles/*.html'),
                         *(root / code / 'index.html' for code in registry['locales']
                           if code != registry['defaultLocale'])]):
         relative = path.relative_to(root).as_posix()
