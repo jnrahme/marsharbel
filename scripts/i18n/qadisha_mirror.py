@@ -16,7 +16,8 @@ def render_qadisha(root=ROOT, registry=None):
     registry = registry or read_json(root / 'locales/registry.json')
     mirror = registry['authoredMirrors']['qadisha']
     routes = mirror['routes']
-    assert routes['en'] == mirror['english']
+    if routes.get('en') != mirror['english']:
+        raise ValueError('Qadisha mirror: English route differs from master')
     template = (root / 'templates/mirrors/qadisha.html').read_text(encoding='utf-8')
     found = SLOT.findall(template)
     if template.count('{{') != len(found) or template.count('}}') != len(found):
@@ -57,6 +58,7 @@ def render_qadisha(root=ROOT, registry=None):
             targets = {config['relatedEnglish'].rstrip('/') or '/': page_url(registry, code, topic)
                        for topic, config in registry['topics'].items()
                        if code in topic_locales(registry, topic)}
+            targets[mirror['english']] = route
             text = re.sub(r'(<a\b[^>]*\bhref=["\'])(/[^"\']*)(["\'])',
                           lambda m: m[1] + targets.get(m[2].rstrip('/') or '/', m[2]) + m[3], text)
         if code == 'en':

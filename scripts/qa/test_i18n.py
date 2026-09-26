@@ -63,6 +63,19 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('href="/ar/annaya"', ar)
         self.assertNotIn('href="/ar/saint-charbel-trail"', ar)
         self.assertEqual(pages[ROOT / 'qadisha-valley.html'], (ROOT / 'qadisha-valley.html').read_text())
+        fr = pages[ROOT / 'fr/vallee-qadisha.html']
+        self.assertEqual(Shape(fr).sections, Shape(en).sections)
+        self.assertEqual(Shape(fr).images, Shape(en).images)
+        self.assertEqual(Shape(fr).headings, Shape(en).headings)
+        self.assertIn('lang="fr" dir="ltr"', fr)
+        self.assertIn('hreflang="fr" href="https://marsharbel.com/fr/vallee-qadisha"', fr)
+        self.assertIn('ne constitue pas un troisième bien inscrit', fr)
+        self.assertIn('href="/fr/biographie"', fr)
+        self.assertIn('href="/fr/annaya"', fr)
+        self.assertIn('href="/fr/vallee-qadisha"', fr)
+        self.assertNotIn('href="/fr/saint-charbel-trail"', fr)
+        self.assertIn('"@type": "TouristAttraction"', fr)
+        self.assertEqual(fr, (ROOT / 'fr/vallee-qadisha.html').read_text())
 
     def test_qadisha_mirror_rejects_missing_keys_and_escapes_text(self):
         from i18n.qadisha_mirror import render_qadisha
