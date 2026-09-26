@@ -31,6 +31,19 @@ class CatalogTests(unittest.TestCase):
         update(data)
         path.write_text(json.dumps(data))
 
+    def test_arabic_dafne_story_anchors_eparchy_statement_without_roman_approval(self):
+        registry, catalogs = load_catalog(ROOT)
+        sources = registry['topics']['dafneStory']['sources']
+        self.assertEqual(sources, ['maroniteVoiceDafne', 'registerDafne'])
+        self.assertEqual(registry['sources']['maroniteVoiceDafne'],
+                         'https://www.catholicsun.org/2018/01/29/she-came-and-prayed-asking-st-sharbel-to-cure-her/')
+        html = builder.outputs(ROOT)[ROOT/'ar/miracles/dafne-gutierrez.html']
+        self.assertIn('لم تجد تفسيرًا طبيًا', html)
+        self.assertIn('تحديد الشفاء الجسدي ليس من اختصاصه', html)
+        self.assertIn('لا إعلان صادر عن روما', html)
+        self.assertIn('href="https://www.catholicsun.org/2018/01/29/she-came-and-prayed-asking-st-sharbel-to-cure-her/"', html)
+        self.assertIn('href="https://www.ncregister.com/news/phoenix-mother-st-charbel-cured-my-blindness"', html)
+
     def test_qadisha_correction_tracks_visible_copy_and_faq_schema(self):
         from i18n.qadisha_copy import validate as validate_qadisha
         page = validate_qadisha(ROOT)
