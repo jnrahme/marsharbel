@@ -24,18 +24,21 @@ def render_mirrors(root=ROOT, registry=None):
     english_guide_path = root / 'en' / (registry['locales']['en']['slugs']['prayers'] + '.html')
     arabic_path = root / 'ar' / (registry['locales']['ar']['slugs']['prayers'] + '.html')
     french_path = root / 'fr' / (registry['locales']['fr']['slugs']['prayers'] + '.html')
+    spanish_path = root / 'es' / (registry['locales']['es']['slugs']['prayers'] + '.html')
     en = read_json(root / 'locales/en/mirrors/prayers.json')
     ar = read_json(root / 'locales/ar/mirrors/prayers.json')
     fr = read_json(root / 'locales/fr/mirrors/prayers.json')
+    es = read_json(root / 'locales/es/mirrors/prayers.json')
     guide_meta = read_json(root / 'locales/en/mirrors/prayers-guide.json')
     if set(guide_meta) != {'title', 'description'}:
         raise ValueError('English prayer guide metadata needs title and description')
     leaves(guide_meta)
-    for code, catalog in (('en', en), ('ar', ar), ('fr', fr)):
+    for code, catalog in (('en', en), ('ar', ar), ('fr', fr), ('es', es)):
         if set(catalog) != expected:
             raise ValueError(f'Prayer mirror {code} slot mismatch: missing {sorted(expected - set(catalog))}; extra {sorted(set(catalog) - expected)}')
     for code, catalog, path in (('en', en, english_path), ('en', en, english_guide_path),
-                                ('ar', ar, arabic_path), ('fr', fr, french_path)):
+                                ('ar', ar, arabic_path), ('fr', fr, french_path),
+                                ('es', es, spanish_path)):
         # The mirror catalogs are separate from the legacy short-guide catalogs.
         leaves(catalog)
         is_english_master = path == english_path
