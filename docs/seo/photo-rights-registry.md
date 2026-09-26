@@ -110,4 +110,19 @@ figcaption. New images: add a record here in the same batch.
 ### st-padre-pio-tomb.webp (1280x960, 87KB) - Pilgrimage section
 - Subject: the tomb of Padre Pio in the crypt at San Giovanni Rotondo.
 - Source: Wikimedia Commons, File:PadrePio-theTomb.jpg. Author: Quodvultdeus.
+## media/saints/ (added 2026-09-25, saint build PR 1)
+
+### st-john-paul-ii.webp (1280x845, 143KB) - hero, page + hub card + og:image
+- Subject: Pope John Paul II in a stadium crowd during his 1979 US visit.
+- Source: Wikimedia Commons, File:Pope John Paul II (1979).jpg. Photographer: Thomas J. O'Halloran, U.S. News & World Report (Library of Congress).
+- License: public domain. Verified via Commons API extmetadata 2026-09-25.
+
+### st-teresa-of-calcutta.webp (1280x1764, 81KB) - hero, page + hub card + og:image
+- Subject: Mother Teresa of Calcutta, portrait.
+- Source: Wikimedia Commons, File:Mother Teresa 1.jpg. Author: Kingkongphoto / celebrity-photos.com.
+- License: CC BY-SA 2.0. Verified via Commons API extmetadata 2026-09-25. Attribution in figcaption.
+
+### st-teresa-of-calcutta-rosalynn-carter.webp (1280x903, 68KB) - Nobel section
+- Subject: Mother Teresa with First Lady Rosalynn Carter at the White House.
+- Source: Wikimedia Commons, File:Mother Teresa and Rosalynn Carter.jpg. Source: The White House / Executive Office of the President.
 - License: public domain. Verified via Commons API extmetadata 2026-09-25.
