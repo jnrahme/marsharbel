@@ -155,3 +155,22 @@ figcaption. New images: add a record here in the same batch.
 
 ### media/news/saint-charbel-portrait.webp (906x667) - doctor-borik-interview card
 - Existing site asset, see entry above (Existing site assets reused on /saints).
+### st-augustine-of-hippo.webp (1080x1660, 141KB) - St. Augustine of Hippo hero
+- Subject: Saint Augustine in his study - Sandro Botticelli, fresco, 1480, Ognissanti, Florence.
+- Source: Wikimedia Commons, File:Sandro Botticelli 050.jpg.
+- License: public domain (PD-Art). Verified via Commons API extmetadata 2026-09-26. Attribution in figcaption.
+
+### st-augustine-of-hippo-seghers.webp (1000x803, 51KB) - Augustine writings section
+- Subject: Saint Augustine as a writing bishop, from a series on the Four Doctors of the Western Church, attributed to Gerard Seghers.
+- Source: Wikimedia Commons, File:Gerard Seghers (attr) - The Four Doctors of the Western Church, Saint Augustine of Hippo (354-430).jpg.
+- License: public domain (PD-Art). Verified via Commons API extmetadata 2026-09-26. Attribution in figcaption.
+
+### st-john-chrysostom.webp (700x831, 168KB) - St. John Chrysostom hero
+- Subject: gold mosaic of Saint John Chrysostom with Greek inscription, Hagia Sophia, Istanbul.
+- Source: Wikimedia Commons, File:Johnchrysostom.jpg.
+- License: public domain. Verified via Commons API extmetadata 2026-09-26. Attribution in figcaption.
+
+### st-john-chrysostom-ogier.webp (640x996, 117KB) - Golden Mouth section
+- Subject: engraved portrait of Saint John Chrysostom.
+- Source: Wikimedia Commons, File:Joannes Chrysostomus, PA02573.jpg.
+- License: public domain. Verified via Commons API extmetadata 2026-09-26. Attribution in figcaption.
