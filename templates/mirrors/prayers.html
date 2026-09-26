@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="{{locale.code}}" dir="{{locale.direction}}" data-authored-mirror="prayers">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{meta.title}}</title>
+  <meta name="description" content="{{meta.description}}" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="{{locale.canonical}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="{{header.siteBrand}}" />
+  <meta property="og:title" content="{{meta.title}}" />
+  <meta property="og:description" content="{{meta.description}}" />
+  <meta property="og:url" content="{{locale.canonical}}" />
+  <meta property="og:image" content="https://marsharbel.com/media/annaya/charbel-historic-photo.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{meta.title}}" />
+  <meta name="twitter:description" content="{{meta.description}}" />
+  <meta name="twitter:image" content="https://marsharbel.com/media/annaya/charbel-historic-photo.webp" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{meta.title}}",
+  "description": "{{meta.description}}",
+  "url": "{{locale.canonical}}",
+  "inLanguage": "{{locale.code}}",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "{{header.siteBrand}}",
+    "url": "{{locale.homeUrl}}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "marsharbel.com",
+      "url": "https://marsharbel.com/"
+    }
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{header.home}}",
+        "item": "{{locale.homeUrl}}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{header.prayer}}",
+        "item": "{{locale.prayerLibraryUrl}}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{header.currentPrayers}}",
+        "item": "{{locale.canonical}}"
+      }
+    ]
+  },
+  "mainEntity": {
+    "@type": "Article",
+    "headline": "{{hero.heading}}",
+    "image": [
+      "https://marsharbel.com/media/annaya/charbel-historic-photo.webp"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "marsharbel.com",
+      "url": "https://marsharbel.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "marsharbel.com",
+      "url": "https://marsharbel.com/"
+    },
+    "datePublished": "2026-03-05"
+  }
+}
+  </script>
+  <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/styles.css?v=20260922-1" />
+  <!-- hreflang:begin -->
+{{locale.alternates}}
+  <!-- hreflang:end -->
+</head>
+<body>
+  <header class="topbar">
+    <div class="site-shell nav">
+      <a class='brand' href='/'><span class="brand-mark">✦</span><span>{{header.siteBrand}}</span></a>
+      <nav class="links" aria-label="{{header.primaryLabel}}">
+        <a href="./">{{header.home}}</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./story" aria-haspopup="true" aria-expanded="false">{{header.story}}<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./story">{{header.storyForChildren}}</a>
+        <a href="./history">{{header.fullHistory}}</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./miracles" aria-haspopup="true" aria-expanded="false">{{header.miracles}}<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./miracles">{{header.miraclesAndReports}}</a>
+        <a href="./news">{{header.latestNews}}</a>
+        <a href="./testimonies">{{header.letters}}</a>
+        <a href="./voice-testimony">{{header.voiceTestimony}}</a>
+        </div></div>
+        <a href="./saints">{{header.saints}}</a>
+        <div class="nav-group">
+        <a class="active nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">{{header.prayer}}<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./prayer-library">{{header.prayerLibrary}}</a>
+        <a href="./prayer-library#find-a-prayer">{{header.findAPrayer}}</a>
+        <a href="./saint-charbel-prayer-for-the-sick">{{header.prayerForTheSick}}</a>
+        <a href="./saint-charbel-prayer-for-healing">{{header.prayerForHealing}}</a>
+        <a href="./saint-charbel-prayer-for-anxiety">{{header.prayerForAnxiety}}</a>
+        <a href="./saint-charbel-prayer-for-depression">{{header.prayerForDepression}}</a>
+        <a href="./saint-charbel-prayer-for-students">{{header.prayerForStudents}}</a>
+        <a href="./saint-charbel-prayer-for-addiction">{{header.prayerForAddiction}}</a>
+        <a href="./saint-charbel-prayer-for-family">{{header.prayerForFamily}}</a>
+        <a href="./saint-charbel-prayer-for-pregnancy">{{header.prayerForPregnancy}}</a>
+        <a href="./saint-charbel-prayer-for-a-miracle">{{header.prayerForAMiracle}}</a>
+        <a class="active" href="{{locale.currentRoute}}" aria-current="page">{{header.currentPrayers}}</a>
+        <a href="./saint-charbel-novena">{{header.novena}}</a>
+        <a href="./saint-charbel-feast-day">{{header.feastDay}}</a>
+        <a href="./rosary-visual-guide">{{header.rosaryGuide}}</a>
+        <a href="./rosary-minibook">{{header.rosaryMinibook}}</a>
+        <a href="./mystery-meditation">{{header.mysteryMeditation}}</a>
+        <a href="./become-like-charbel">{{header.becomeLikeHim}}</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">{{header.places}}<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./visit-annaya">{{header.visitingAnnaya}}</a>
+        <a href="./bekaa-kafra">{{header.bekaaKafra}}</a>
+        <a href="./saint-charbel-places-lebanon">{{header.placesLebanon}}</a>
+        <a href="./saint-charbel-hermitage">{{header.hermitage}}</a>
+        <a href="./saint-charbel-trail">{{header.trail}}</a>
+        </div></div>
+        <a href="./gallery">{{header.gallery}}</a>
+        </nav>
+      <div class="lang-switcher-slot" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main class="site-shell">
+    <section class="hero">
+      <span class="kicker">{{hero.eyebrow}}</span>
+      <h1>{{hero.heading}}</h1>
+      <p>{{hero.introductionBeforeQuotes}} <a href="/saint-charbel-quotes">{{hero.quotesLink}}</a>{{hero.introductionAfterQuotes}}
+        <a href="/saint-charbel-prayer-for-healing">{{hero.healingLink}}</a>{{hero.separator1}}
+        <a href="/saint-charbel-prayer-for-a-miracle">{{hero.miracleLink}}</a>{{hero.separator2}}
+        <a href="/saint-charbel-prayer-for-the-sick">{{hero.sickLink}}</a>{{hero.introductionAnd}}
+        <a href="/saint-charbel-prayer-for-pregnancy">{{hero.pregnancyLink}}</a>{{hero.endPunctuation}}</p>
+      <figure class="hero-figure"><img src="/media/annaya/charbel-historic-photo.webp" alt="{{hero.photoAlt}}" width="419" height="595" loading="lazy" /><figcaption>{{hero.photoCaption}} <a href="https://commons.wikimedia.org/wiki/File:Charbel.jpg" target="_blank" rel="noopener">{{hero.photoCredit}}</a>{{hero.photoEndPunctuation}}</figcaption></figure>
+      <div class="cta-row">
+        <a class='btn subtle' href='/prayer-library'>{{hero.libraryButton}}</a>
+        <a class='btn subtle' href='/rosary-visual-guide'>{{hero.rosaryButton}}</a>
+        <a class='btn subtle' href='/rosary-prayer-coach'>{{hero.coachButton}}</a>
+        <a class='btn subtle' href='/rosary-minibook'>{{hero.minibookButton}}</a>
+      </div>
+    </section>
+    <section class="section">
+      <h2>{{labeling.heading}}</h2>
+      <div class="card story">
+        <p>{{labeling.introduction}}</p>
+        <ul>
+          <li><strong>{{labeling.traditionalLabel}}</strong> {{labeling.traditionalExplanation}}</li>
+          <li><strong>{{labeling.originalLabel}}</strong> {{labeling.originalExplanation}} <a href="/saint-charbel-novena">{{labeling.novenaLink}}</a>{{labeling.endPunctuation}}</li>
+        </ul>
+        <p>{{labeling.outcomeNote}}</p>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <h2>{{intercessions.heading}}</h2>
+      <div class="prayer-grid">
+        <article class="card prayer-card">
+          <h3>{{intercessions.generalHeading}}</h3>
+          <p>{{intercessions.generalBeforeIntention}} <em>{{intercessions.intention}}</em>{{intercessions.generalAfterIntention}}</p>
+        </article>
+        <article class="card prayer-card">
+          <h3>{{intercessions.healingHeading}}</h3>
+          <p>{{intercessions.healingBeforeIntention}} <em>{{intercessions.healingIntention}}</em>{{intercessions.healingAfterIntention}}</p>
+        </article>
+        <article class="card prayer-card">
+          <h3>{{intercessions.sickHeading}}</h3>
+          <p>{{intercessions.sickPrayer}}</p>
+        </article>
+        <article class="card prayer-card">
+          <h3>{{intercessions.familyHeading}}</h3>
+          <p>{{intercessions.familyPrayer}}</p>
+        </article>
+      </div>
+      <p class="section-sub">{{intercessions.healingGuideBefore}} <a href="/saint-charbel-prayer-for-healing">{{intercessions.healingGuideLink}}</a> {{intercessions.healingGuideAfter}}</p>
+    </section>
+
+    <section class="section">
+      <h2>{{novena.heading}}</h2>
+      <p class="section-sub">{{novena.instructions}}</p>
+      <div class="prayer-grid">
+        <article class="card prayer-card">
+          <h3>{{novena.openingHeading}}</h3>
+          <p>{{novena.openingBeforeIntention}} <em>{{novena.intention}}</em>{{novena.openingAfterIntention}}</p>
+        </article>
+        <article class="card prayer-card">
+          <h3>{{novena.intentionsHeading}}</h3>
+          <p>{{novena.intentions}}</p>
+        </article>
+        <article class="card prayer-card">
+          <h3>{{novena.closingHeading}}</h3>
+          <p>{{novena.closingPrayer}}</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>{{invocations.heading}}</h2>
+      <div class="grid-2">
+        <article class="card practice">
+          <h3>{{invocations.sufferingHeading}}</h3>
+          <p>{{invocations.sufferingPrayer}}</p>
+        </article>
+        <article class="card practice">
+          <h3>{{invocations.anxietyHeading}}</h3>
+          <p>{{invocations.anxietyPrayer}}</p>
+        </article>
+        <article class="card practice">
+          <h3>{{invocations.discernmentHeading}}</h3>
+          <p>{{invocations.discernmentPrayer}}</p>
+        </article>
+        <article class="card practice">
+          <h3>{{invocations.othersHeading}}</h3>
+          <p>{{invocations.othersPrayer}}</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>{{rosary.heading}}</h2>
+      <p>{{rosary.introductionBeforeLink}} <a href="/rosary-intro">{{rosary.introductionLink}}</a>{{rosary.introductionAfterLink}}</p>
+      <p class="section-sub">{{rosary.fullSetNote}}</p>
+      <div class="prayer-grid">
+        <article class="card prayer-card">
+          <h3>{{rosary.creedHeading}}</h3>
+          <p>{{rosary.creedPrayer}}</p>
+        </article>
+        <article class="card prayer-card">
+          <h3>{{rosary.ourFatherHeading}}</h3>
+          <p>{{rosary.ourFatherPrayer}}</p>
+        </article>
+        <article class="card prayer-card">
+          <h3>{{rosary.hailMaryHeading}}</h3>
+          <p>{{rosary.hailMaryPrayer}}</p>
+        </article>
+        <article class="card prayer-card">
+          <h3>{{rosary.gloryHeading}}</h3>
+          <p>{{rosary.gloryPrayer}}</p>
+        </article>
+        <article class="card prayer-card">
+          <h3>{{rosary.fatimaHeading}}</h3>
+          <p>{{rosary.fatimaPrayer}}</p>
+        </article>
+        <article class="card prayer-card">
+          <h3>{{rosary.queenHeading}}</h3>
+          <p>{{rosary.queenPrayer}}</p>
+        </article>
+        <article class="card prayer-card">
+          <h3>{{rosary.closingHeading}}</h3>
+          <p>{{rosary.closingPrayer}}</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>{{sources.heading}}</h2>
+      <div class="card story">
+        <ul>
+          <li><a href="https://saintcharbel.com/novena-of-saint-charbel-en/" target="_blank" rel="noopener">{{sources.monasteryLink}}</a></li>
+          <li><a href="https://vaticanstate.va/en/state-and-government/general-informations/saint-of-the-day/2303-july-24-saint-charbel-makhlouf.html" target="_blank" rel="noopener">{{sources.vaticanLink}}</a></li>
+          <li>{{sources.sourcingBeforeLink}} <a href="/prayer-library">{{sources.sourcingLink}}</a></li>
+        </ul>
+      </div>
+    </section>
+  <!-- i18n-navigation:start -->
+
+<!-- i18n-navigation:end -->
+</main>
+
+  <footer class="footer">
+    <div class="site-shell">{{footer.credit}}</div>
+  </footer>
+
+  <script defer src="/app.js"></script>
+  <script defer src="/locale-routes.js"></script>
+  <script defer src="/translate.js?v=20260922-1"></script>
+  <script src="/nav.js?v=20260922-1" defer></script>
+</body>
+</html>
