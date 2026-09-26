@@ -96,6 +96,18 @@ class PrayerMirrorTests(unittest.TestCase):
             text = read_json(ROOT / 'locales/it/mirrors/prayers.json')[f'rosary.{prayer}Prayer']
             self.assertIn(text, italian)
 
+    def test_german_mirror_uses_same_shape_and_complete_rosary(self):
+        pages = render_mirrors(ROOT)
+        master = pages[ROOT / 'saint-charbel-prayers.html']
+        german = pages[ROOT / 'de/gebete.html']
+        self.assertEqual(Shape(german).nodes, Shape(master).nodes)
+        self.assertEqual(Shape(german).images, Shape(master).images)
+        self.assertIn('lang="de" dir="ltr"', german)
+        self.assertIn('href="https://marsharbel.com/de/gebete"', german)
+        for prayer in ('creed', 'ourFather', 'hailMary', 'glory', 'fatima', 'queen', 'closing'):
+            text = read_json(ROOT / 'locales/de/mirrors/prayers.json')[f'rosary.{prayer}Prayer']
+            self.assertIn(text, german)
+
     def test_french_mirror_uses_same_sections_cards_photo_and_canonical(self):
         pages=render_mirrors(ROOT)
         master=pages[ROOT/'saint-charbel-prayers.html']
@@ -123,7 +135,7 @@ class PrayerMirrorTests(unittest.TestCase):
         spec=spec_from_file_location('intl_builder',ROOT/'scripts/build-international.py')
         builder=module_from_spec(spec);spec.loader.exec_module(builder)
         expected=builder.outputs(ROOT)
-        for page in (ROOT/'ar/prayers.html', ROOT/'en/prayers.html', ROOT/'fr/prieres.html', ROOT/'es/oraciones.html', ROOT/'pt/oracoes.html', ROOT/'it/preghiere.html', ROOT/'saint-charbel-prayers.html'):
+        for page in (ROOT/'ar/prayers.html', ROOT/'en/prayers.html', ROOT/'fr/prieres.html', ROOT/'es/oraciones.html', ROOT/'pt/oracoes.html', ROOT/'it/preghiere.html', ROOT/'de/gebete.html', ROOT/'saint-charbel-prayers.html'):
             self.assertEqual(page.read_text(),expected[page])
         self.assertEqual(expected[ROOT/'ar/prayers.html'].count('hreflang="ar"'),1)
 
