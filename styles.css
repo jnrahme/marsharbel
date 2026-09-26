@@ -2773,3 +2773,9 @@ html.nav-suppress .nav-group:focus-within .nav-sub {
   .news-rotator-card .news-rotator-item{gap:1rem;font-size:1.03rem}
   .news-rotator-card .news-rotator-item img{width:88px;height:88px}
 }
+
+.video-wrap .watch-card{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.55rem;text-decoration:none;color:var(--theme-ink);text-align:center;padding:1rem}
+.video-wrap .watch-card:hover{background:var(--theme-wash)}
+.watch-card-play{font-size:1.7rem;line-height:1;color:var(--theme-accent)}
+.watch-card-text{font-weight:600}
+.watch-card-note{font-size:.85rem;color:var(--theme-ink-soft);max-width:26rem}
