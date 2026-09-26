@@ -275,6 +275,72 @@ def article_schema(path: Path, html: str) -> dict | None:
     return article
 
 
+def clean_text(fragment: str) -> str:
+    """Visible text of an HTML fragment, entities resolved, whitespace collapsed."""
+    return " ".join(unescape(re.sub(r"<[^>]+>", "", fragment)).split())
+
+
+def faq_pairs(html: str) -> list[tuple[str, str]]:
+    """Question/answer pairs from a page's Frequently Asked Questions section."""
+    section = re.search(
+        r'<section class="section">\s*<h2>\s*Frequently Asked Questions\s*</h2>([\s\S]*?)</section>',
+        html, re.I)
+    if not section:
+        return []
+    pairs = []
+    for match in re.finditer(r"<h3>([\s\S]*?)</h3>\s*<p>([\s\S]*?)</p>", section[1], re.I):
+        question, answer = clean_text(match[1]), clean_text(match[2])
+        if question and answer:
+            pairs.append((question, answer))
+    # Second authored format: bold-led paragraphs ("<strong>Question?</strong> answer").
+    if not pairs:
+        for match in re.finditer(r"<p><strong>([^<]*\?)</strong>\s*([\s\S]*?)</p>", section[1], re.I):
+            question, answer = clean_text(match[1]), clean_text(match[2])
+            if question and answer:
+                pairs.append((question, answer))
+    return pairs
+
+
+def faq_schema(html: str) -> dict | None:
+    """FAQPage entity for pages with an FAQ section and no FAQPage block yet.
+
+    An existing FAQPage block (authored or previously generated) always wins:
+    the generator never duplicates or rewrites it."""
+    if re.search(r'"@type"\s*:\s*"FAQPage"', html):
+        return None
+    pairs = faq_pairs(html)
+    if not pairs:
+        return None
+    return {"@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": question,
+         "acceptedAnswer": {"@type": "Answer", "text": answer}}
+        for question, answer in pairs]}
+
+
+def places_stems() -> set[str]:
+    """Pages in the nav's Places dropdown - the places cluster, owned by the partial."""
+    partial = (ROOT / "partials" / "primary-navigation.html").read_text(encoding="utf-8")
+    group = re.search(r'href="\./visit-annaya"[^>]*>Places<[\s\S]*?<div class="nav-sub">([\s\S]*?)</div>', partial)
+    if not group:
+        return set()
+    return set(re.findall(r'href="\./([^"]+)"', group[1]))
+
+
+def tourist_schema(path: Path, html: str, url: str, title: str, description: str, image: str) -> dict | None:
+    """TouristAttraction entity for pages in the Places dropdown (the places cluster).
+
+    Skips pages that already carry a TouristAttraction block."""
+    if path.parent != ROOT or path.stem not in places_stems():
+        return None
+    if re.search(r'"@type"\s*:\s*"TouristAttraction"', html):
+        return None
+    attraction = {"@type": "TouristAttraction", "name": title, "description": description,
+                  "url": url, "containedInPlace": {"@type": "Country", "name": "Lebanon"}}
+    if image:
+        attraction["image"] = image
+    return attraction
+
+
 def robots_for(path: Path) -> str:
     return "noindex,follow,max-image-preview:large" if path.name in NOINDEX else "index,follow,max-image-preview:large"
 
@@ -332,7 +398,8 @@ def authored_webpage_fields(html: str) -> dict:
 
 
 def build_meta_block(url: str, title: str, description: str, robots: str, image: str, include_schema: bool = True,
-                     breadcrumb: dict | None = None, extra: dict | None = None, article: dict | None = None) -> str:
+                     breadcrumb: dict | None = None, extra: dict | None = None, article: dict | None = None,
+                     standalone: list[dict] | None = None) -> str:
     webpage_schema = {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -365,6 +432,9 @@ def build_meta_block(url: str, title: str, description: str, robots: str, image:
         f"\n  <meta name=\"twitter:description\" content=\"{description}\" />"
         f"\n  <meta name=\"twitter:image\" content=\"{image}\" />"
         + (f"\n  <script type=\"application/ld+json\">\n{schema}\n  </script>" if include_schema else "")
+        + "".join(
+            f"\n  <script type=\"application/ld+json\">\n{json.dumps({'@context': 'https://schema.org', **block}, ensure_ascii=True, indent=2)}\n  </script>"
+            for block in (standalone or []))
     )
 
 
@@ -402,9 +472,15 @@ def update_file(path: Path) -> bool:
         for data in [parse_jsonld(block)]
     )
     breadcrumb = breadcrumb_for(path, title) if "noindex" not in robots and not authored_breadcrumb else None
+    standalone = []
+    if not has_graph_page and "noindex" not in robots:
+        for block in (faq_schema(html), tourist_schema(path, html, url, title, description, image)):
+            if block:
+                standalone.append(block)
     meta_block = build_meta_block(url=url, title=title, description=description, robots=robots, image=image,
                                   include_schema=not has_graph_page, breadcrumb=breadcrumb,
-                                  extra=authored_webpage_fields(html), article=article_schema(path, html))
+                                  extra=authored_webpage_fields(html), article=article_schema(path, html),
+                                  standalone=standalone)
 
     html3, count = re.subn(r"(<title>.*?</title>)", lambda match: match[1] + meta_block, html2, count=1, flags=re.I | re.S)
     if count == 0:
