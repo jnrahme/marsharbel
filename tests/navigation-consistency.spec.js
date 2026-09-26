@@ -10,10 +10,10 @@ for (const file of paths) {
     await page.goto('/' + file, { waitUntil: 'domcontentloaded' });
     const nav = page.locator('.topbar nav.links');
     await expect(nav).toHaveAttribute('aria-label', 'Primary');
-    await expect(nav.locator(':scope > a, :scope > .nav-group > .nav-parent')).toHaveText(['Home', 'Story', 'Miracles', 'Saints', 'Prayer', 'Gallery']);
+    await expect(nav.locator(':scope > a, :scope > .nav-group > .nav-parent')).toHaveText(['Home', 'Story', 'Miracles', 'Saints', 'Prayer', 'Places', 'Gallery']);
     const outside = await nav.evaluate(el => [...el.querySelectorAll(':scope > a, :scope > .nav-group > .nav-parent')].filter(a => { const r=a.getBoundingClientRect(); return r.left < -1 || r.right > innerWidth+1; }).map(a=>a.textContent));
     expect(outside).toEqual([]);
-    for (const label of ['Story', 'Miracles', 'Prayer']) {
+    for (const label of ['Story', 'Miracles', 'Prayer', 'Places']) {
       const parent = nav.locator('.nav-parent').filter({hasText:label});
       const group = nav.locator('.nav-group').filter({has:page.locator('.nav-parent').filter({hasText:label})});
       if (await page.evaluate(() => matchMedia('(hover: none)').matches || innerWidth<=820)) await parent.click();
