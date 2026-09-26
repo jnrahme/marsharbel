@@ -174,3 +174,6 @@ figcaption. New images: add a record here in the same batch.
 - Subject: engraved portrait of Saint John Chrysostom.
 - Source: Wikimedia Commons, File:Joannes Chrysostomus, PA02573.jpg.
 - License: public domain. Verified via Commons API extmetadata 2026-09-26. Attribution in figcaption.
+
+### media/news/monte-sole-sacrario.webp (1200x800) - monte-sole-beatification card
+- Gianni Careddu, "Marzabotto, sacrario ai caduti (21)", Wikimedia Commons, CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:Marzabotto,_sacrario_ai_caduti_(21).jpg
