@@ -22,23 +22,21 @@ def render_mirrors(root=ROOT, registry=None):
     result = {}
     english_path = (root / registry['topics']['prayers']['relatedEnglish'].lstrip('/')).with_suffix('.html')
     english_guide_path = root / 'en' / (registry['locales']['en']['slugs']['prayers'] + '.html')
-    arabic_path = root / 'ar' / (registry['locales']['ar']['slugs']['prayers'] + '.html')
-    french_path = root / 'fr' / (registry['locales']['fr']['slugs']['prayers'] + '.html')
-    spanish_path = root / 'es' / (registry['locales']['es']['slugs']['prayers'] + '.html')
-    en = read_json(root / 'locales/en/mirrors/prayers.json')
-    ar = read_json(root / 'locales/ar/mirrors/prayers.json')
-    fr = read_json(root / 'locales/fr/mirrors/prayers.json')
-    es = read_json(root / 'locales/es/mirrors/prayers.json')
+    # Add a locale only when its full catalog and page have passed parity review.
+    mirror_locales = ('en', 'ar', 'fr', 'es', 'pt')
+    catalogs = {code: read_json(root / f'locales/{code}/mirrors/prayers.json')
+                for code in mirror_locales}
+    routes = [(code, catalogs[code], root / code /
+               (registry['locales'][code]['slugs']['prayers'] + '.html'))
+              for code in mirror_locales]
     guide_meta = read_json(root / 'locales/en/mirrors/prayers-guide.json')
     if set(guide_meta) != {'title', 'description'}:
         raise ValueError('English prayer guide metadata needs title and description')
     leaves(guide_meta)
-    for code, catalog in (('en', en), ('ar', ar), ('fr', fr), ('es', es)):
+    for code, catalog in catalogs.items():
         if set(catalog) != expected:
             raise ValueError(f'Prayer mirror {code} slot mismatch: missing {sorted(expected - set(catalog))}; extra {sorted(set(catalog) - expected)}')
-    for code, catalog, path in (('en', en, english_path), ('en', en, english_guide_path),
-                                ('ar', ar, arabic_path), ('fr', fr, french_path),
-                                ('es', es, spanish_path)):
+    for code, catalog, path in [('en', catalogs['en'], english_path), *routes]:
         # The mirror catalogs are separate from the legacy short-guide catalogs.
         leaves(catalog)
         is_english_master = path == english_path
