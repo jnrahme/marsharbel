@@ -58,7 +58,9 @@ def render_qadisha(root=ROOT, registry=None):
             targets = {config['relatedEnglish'].rstrip('/') or '/': page_url(registry, code, topic)
                        for topic, config in registry['topics'].items()
                        if code in topic_locales(registry, topic)}
-            targets[mirror['english']] = route
+            targets.update({published['english']: published['routes'][code]
+                            for published in registry['authoredMirrors'].values()
+                            if code in published['routes']})
             text = re.sub(r'(<a\b[^>]*\bhref=["\'])(/[^"\']*)(["\'])',
                           lambda m: m[1] + targets.get(m[2].rstrip('/') or '/', m[2]) + m[3], text)
         if code == 'en':

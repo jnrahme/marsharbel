@@ -115,6 +115,26 @@ class CatalogTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'catalog mismatch'):
                 render_qadisha(root)
 
+    def test_monastery_mirrors_have_matched_shape_and_faq_schema(self):
+        from bs4 import BeautifulSoup
+        from i18n.monastery_mirror import render_monasteries
+        pages = render_monasteries(ROOT)
+        for name in ('qannoubine', 'qozhaya'):
+            en = BeautifulSoup(pages[ROOT/f'{name}-monastery.html'], 'html.parser')
+            ar = BeautifulSoup(pages[ROOT/f'ar/{name}-monastery.html'], 'html.parser')
+            for tag in ('section', 'h1', 'h2', 'h3', 'img', 'figure'):
+                self.assertEqual(len(en.select('main '+tag)), len(ar.select('main '+tag)))
+            self.assertEqual([tag.get('src').lstrip('.') for tag in en.select('main img')],
+                             [tag.get('src') for tag in ar.select('main img')])
+            self.assertEqual([s['@type'] for s in [json.loads(tag.string) for tag in ar.select('script[type="application/ld+json"]')]],
+                             ['WebPage', 'FAQPage', 'TouristAttraction'])
+            faq = json.loads(ar.select('script[type="application/ld+json"]')[1].string)['mainEntity']
+            catalog = read_json(ROOT/f'locales/ar/mirrors/{name}-monastery.json')
+            self.assertEqual([(q['name'], q['acceptedAnswer']['text']) for q in faq],
+                             [(catalog[f'faq.question{i}'], catalog[f'faq.text{i}']) for i in range(1,7)])
+            self.assertIn(f'href="/ar/{"qozhaya" if name == "qannoubine" else "qannoubine"}-monastery"', str(ar))
+            self.assertEqual(pages[ROOT/f'{name}-monastery.html'], (ROOT/f'{name}-monastery.html').read_text())
+
     def test_letters_catalog_does_not_hide_new_copy(self):
         catalog=read_json(ROOT/'locales/en/letters-display.json')['values']
         self.assertEqual(catalog['index.html']['Write a Letter to Saint Charbel'],1)
