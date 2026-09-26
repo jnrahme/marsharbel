@@ -23,7 +23,7 @@ def render_mirrors(root=ROOT, registry=None):
     english_path = (root / registry['topics']['prayers']['relatedEnglish'].lstrip('/')).with_suffix('.html')
     english_guide_path = root / 'en' / (registry['locales']['en']['slugs']['prayers'] + '.html')
     # Add a locale only when its full catalog and page have passed parity review.
-    mirror_locales = ('en', 'ar', 'fr', 'es', 'pt', 'it', 'de')
+    mirror_locales = ('en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl')
     catalogs = {code: read_json(root / f'locales/{code}/mirrors/prayers.json')
                 for code in mirror_locales}
     routes = [(code, catalogs[code], root / code /

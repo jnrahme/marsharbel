@@ -9,8 +9,9 @@ const prayerMirrorSpanish = require('../locales/es/mirrors/prayers.json');
 const prayerMirrorPortuguese = require('../locales/pt/mirrors/prayers.json');
 const prayerMirrorItalian = require('../locales/it/mirrors/prayers.json');
 const prayerMirrorGerman = require('../locales/de/mirrors/prayers.json');
-const topicHeading = (code, topic) => topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de'].includes(code) ?
-  ({ar: prayerMirror, fr: prayerMirrorFrench, es: prayerMirrorSpanish, pt: prayerMirrorPortuguese, it: prayerMirrorItalian, de: prayerMirrorGerman, en: require('../locales/en/mirrors/prayers.json')})[code]['hero.heading'] :
+const prayerMirrorPolish = require('../locales/pl/mirrors/prayers.json');
+const topicHeading = (code, topic) => topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(code) ?
+  ({ar: prayerMirror, fr: prayerMirrorFrench, es: prayerMirrorSpanish, pt: prayerMirrorPortuguese, it: prayerMirrorItalian, de: prayerMirrorGerman, pl: prayerMirrorPolish, en: require('../locales/en/mirrors/prayers.json')})[code]['hero.heading'] :
   catalogs[code][topic].title;
 const routeFor = (code, topic) => topic ? `/${code}/${registry.locales[code].slugs[topic]}` : registry.locales[code].home;
 const topicLanguages = topic => topic ? languages.filter(code => (registry.topics[topic].locales || languages).includes(code)) : languages;
@@ -41,7 +42,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
         const anchors = await page.locator('a[href^="#"]').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
         for (const anchor of anchors) await expect(page.locator(anchor)).toHaveCount(1);
         const published = topicLanguages(topic);
-        if (topic && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de'].includes(language) && topic === 'prayers')) {
+        if (topic && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers')) {
           const next = published[(published.indexOf(language) + 1) % published.length];
           await page.locator('header nav').getByRole('link',{name:registry.locales[next].nativeName,exact:true}).click();
           await expect(page.locator('html')).toHaveAttribute('lang',next);
