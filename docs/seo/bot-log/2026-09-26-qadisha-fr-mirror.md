@@ -1,0 +1,7 @@
+# French Qadisha mirror
+
+Based on stage 6cc374a after the English-Arabic Qadisha mirror and Places dropdown landed. The existing shared template, nav and all three structured-data blocks (WebPage, FAQPage, TouristAttraction) remain unchanged. Added a complete keyed French catalog, `/fr/vallee-qadisha`, reciprocal hreflang, sitemap and selector routing. The French page mirrors the nine English sections, four licensed images, ten subheadings, FAQ answers, sources and layout. The Qadisha nav link now resolves to the current locale when its authored page exists; unpublished routes remain on actual English pages rather than guessed paths.
+
+Editorial distinction preserved: the UNESCO inscription includes the valley and Cedars of God, not nearby Bekaa Kafra as a third listed property. The Annaya hermitage remains distinct from the Qadisha Valley. Sources: https://whc.unesco.org/en/list/850/ and https://saintcharbel.com/the-hermitage/.
+
+After the final build, `npm run i18n:check`, `npm run i18n:test` (29), `python3 scripts/qa/check_seo.py` (146 pages), SEO regression tests (15), `npm run test:navigation-sync` (95 pages) and 25 focused Playwright tests across five viewports passed. Reviewed full-page French desktop/mobile captures: sections, four photos, captions, sources and footer remain legible without horizontal overflow. Full QA and whole-site browser suites not run in this branch. Integrator still needs Apache/LiteSpeed and deployed-route checks. No stage push or deployment.
