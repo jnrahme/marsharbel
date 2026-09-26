@@ -126,3 +126,32 @@ figcaption. New images: add a record here in the same batch.
 - Subject: Mother Teresa with First Lady Rosalynn Carter at the White House.
 - Source: Wikimedia Commons, File:Mother Teresa and Rosalynn Carter.jpg. Source: The White House / Executive Office of the President.
 - License: public domain. Verified via Commons API extmetadata 2026-09-25.
+
+## Reused as /news card headers (2026-09-25 news restructure)
+
+### media/annaya/annaya-entrance-pilgrims.webp (1100x733) - byblos-annaya-prayer-walk card
+- Source: Wikimedia Commons, File:St Charbel Makhlouf Annaya.jpg, author LLEW, CC BY-SA 4.0 (verified 2026-09-25 via Commons API, see bot-log 2026-09-25-photo-p1-b1).
+
+### media/annaya/annaya-monastery.webp (1100x618) - new-miracles-reported card
+- Source: Wikimedia Commons, File:Pan Annaya Church And Monastry.jpg, author Paul Saad, CC BY-SA 4.0 (verified 2026-09-25, bot-log photo-p1-b1).
+
+### media/annaya/charbel-historic-photo.webp (419x595) - revesby-feast card
+- Source: Wikimedia Commons, File:Charbel.jpg, author unknown (old photo), public domain (verified 2026-09-25, bot-log photo-p1-b2). Small source - only known historic photo of the saint.
+
+### media/annaya/charbel-tomb-vigil-lamp.webp (589x468) - cebu-relic-visit card
+- Source: crop of Wikimedia Commons File:Charbel Makhlouf grave.JPG, author LLEW, CC BY-SA 4.0 (verified 2026-09-25, bot-log photo-p1-b2).
+
+### media/news/trail-pilgrimage-hero.webp (1200x675) - st-charbel-trail-pilgrimage card
+- Photo courtesy of Father Michael Sliney, LC (site-credited; in use on saint-charbel-trail).
+
+### media/news/pope-annaya-hero.webp (1200x791) - papal-visit-annaya card
+- Photo: Vatican Media / Vatican News (site-credited; in use on pope-leo-xiv-annaya-visit).
+
+### media/news/movie-poster-hero.webp (686x386) - Charbel The Movie card
+- Official poster, "Charbel The Movie" (MTV/NMPRO) - production-company promotional poster, credited.
+
+### media/saints/blessed-fulton-sheen.webp (873x693) - fulton-sheen-beatification card
+- PD (US no notice), see entry above (added 2026-09-25).
+
+### media/news/saint-charbel-portrait.webp (906x667) - doctor-borik-interview card
+- Existing site asset, see entry above (Existing site assets reused on /saints).

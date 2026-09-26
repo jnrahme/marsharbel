@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build /feed.xml (RSS 2.0) from the dated cards on news.html.
 
-news.html is the single source: each <article> in the "Recent News" section
+news.html is the single source: each <article> in the two news sections
+(Charbel and Lebanon saints; world saints and the wider Catholic family)
 must carry an id, a date tag and a heading. The feed repeats the card text
 verbatim and links to the card's anchor on /news.
 
@@ -23,7 +24,10 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://marsharbel.com"
 NEWS_URL = f"{SITE}/news"
 FEED_URL = f"{SITE}/feed.xml"
-SECTION = "Recent News, Newest First"
+SECTIONS = (
+    "News of Saint Charbel and the Lebanon Saints",
+    "World Saints and the Wider Catholic Family",
+)
 MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
 DATE = re.compile(rf"({MONTHS}) (\d{{1,2}})(?:\s*-\s*(?:(?:{MONTHS}) )?\d{{1,2}})?, (\d{{4}})")
 
@@ -59,7 +63,7 @@ class NewsCards(HTMLParser):
 
     def handle_endtag(self, tag):
         if tag == "h2" and self.h2 is not None:
-            self.in_section = self.h2.strip() == SECTION
+            self.in_section = self.h2.strip() in SECTIONS
             self.h2 = None
         elif tag == "section":
             self.in_section = False
@@ -109,7 +113,7 @@ def cards(root=ROOT):
         result.append({"id": card["id"], "title": title, "published": published, "body": body, "label": label,
                        "source": card["source"] and {"url": card["source"]["url"], "label": clean(card["source"]["label"])}})
     if not result:
-        raise ValueError(f"news.html: no cards found under '{SECTION}'")
+        raise ValueError(f"news.html: no cards found under {SECTIONS}")
     ids = [card["id"] for card in result]
     if len(ids) != len(set(ids)):
         raise ValueError("news.html: duplicate card ids")
