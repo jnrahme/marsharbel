@@ -320,7 +320,7 @@ def faq_schema(html: str) -> dict | None:
 def places_stems() -> set[str]:
     """Pages in the nav's Places dropdown - the places cluster, owned by the partial."""
     partial = (ROOT / "partials" / "primary-navigation.html").read_text(encoding="utf-8")
-    group = re.search(r'href="\./visit-annaya"[^>]*>Places<[\s\S]*?<div class="nav-sub">([\s\S]*?)</div>', partial)
+    group = re.search(r'href="\./visit-annaya"[^>]*>Travel<[\s\S]*?<div class="nav-sub">([\s\S]*?)</div>', partial)
     if not group:
         return set()
     return set(re.findall(r'href="\./([^"]+)"', group[1]))
