@@ -8,7 +8,8 @@
     const params = new URLSearchParams(window.location.search);
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
-    return (fromQuery || fromBody) === 'pio' ? 'pio' : 'charbel';
+    const raw = fromQuery || fromBody;
+    return raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -63,6 +64,22 @@
     vaticanPioCanonization: {
       label: 'Vatican (John Paul II, canonization homily, June 16, 2002)',
       url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2002/documents/hf_jp-ii_hom_20020616_padre-pio.html'
+    },
+    vaticanJPIIBiography: {
+      label: 'Vatican (Holy See, canonization biographical profile of John Paul II, 2014)',
+      url: 'https://www.vatican.va/special/canonizzazione-27042014/documents/biografia_gpii_canonizzazione_en.html'
+    },
+    vaticanJPIIInaugural: {
+      label: 'Vatican (John Paul II, inaugural homily, October 22, 1978)',
+      url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/1978/documents/hf_jp-ii_hom_19781022_inizio-pontificato.html'
+    },
+    vaticanJPIIWYD: {
+      label: 'Vatican (Holy See, World Youth Day chronology)',
+      url: 'https://www.vatican.va/gmg/documents/gmg_chronicle-wyd_20020325_en.html'
+    },
+    domjp2Family: {
+      label: 'Wadowice Family Home Museum (the Wojtyla family)',
+      url: 'https://domjp2.pl/en/the-wojtyla-family'
     },
     vaticanBeatification1965: {
       label: 'Vatican (Paul VI, Beatification, Dec 5, 1965)',
@@ -684,9 +701,124 @@
       }
   ];
 
+
+  const JPII_STORY_EN = [
+      {
+        title: 'A Boy in Wadowice',
+        body: 'In a Polish town called Wadowice, a boy named Karol grew up among ordinary streets, neighbors, and church bells. At home, his family and friends called him Lolek. Long before the world would call him Pope John Paul the Second, he was a child learning that love matters most when life is hard.',
+        prayer: 'Little prayer: Jesus, bless my family and everyone on my street.',
+        heart: 'Heart Moment: God knows our name long before the world does.',
+        scene: 'birth',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography', 'domjp2Family'] }],
+        illustration: './media/storybook-jpii/images/page-01.webp',
+        audio: 'page-01.mp3'
+      },
+      {
+        title: 'A Family That Prayed',
+        body: 'His mother died when he was only eight. He went on growing up with his father and his older brother Edmund. Then Edmund, who had become a doctor, died too. When someone you love is gone, even a familiar street can seem changed. Karol\'s father stayed close. Karol saw him kneel to pray, and he too learned to keep praying. The sorrow did not tell him what his whole life would become. It was one part of the road he had to walk.',
+        prayer: 'Little prayer: Jesus, hold close everyone who is missing someone they love.',
+        heart: 'Heart Moment: Sadness is part of the road, not the end of it.',
+        scene: 'birth',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography', 'domjp2Family'] }],
+        illustration: './media/storybook-jpii/images/page-02.webp',
+        audio: 'page-02.mp3'
+      },
+      {
+        title: 'A City in War',
+        body: 'As a young man, he loved learning and the theater. He began university in Krakow. Then, in 1939, Nazi forces invaded Poland and closed the university. Imagine a classroom whose doors suddenly close, and a city where speaking freely can become dangerous. Karol worked in a stone quarry and later in a chemical factory. Hard work helped him earn a living. It also kept him from being deported to Germany.',
+        prayer: 'Little prayer: Jesus, protect every child whose home is touched by war.',
+        heart: 'Heart Moment: Closed doors cannot close a person\'s heart.',
+        scene: 'vocation',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-03.webp',
+        audio: 'page-03.mp3'
+      },
+      {
+        title: 'Stories Kept Alive',
+        body: 'In those fearful years, he and friends helped organize a theater that had to remain hidden. Why tell stories when the world feels so dark? Because people are more than the fear surrounding them. Karol learned that human words, courage, and faith could be protected even when many other things were taken away.',
+        prayer: 'Little prayer: Jesus, give me courage when the world feels dark.',
+        heart: 'Heart Moment: People are bigger than the fear around them.',
+        scene: 'vocation',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-04.webp',
+        audio: 'page-04.mp3'
+      },
+      {
+        title: 'A Hidden Calling',
+        body: 'His father died in 1941. Karol knew what it was to lose his family one person at a time. The next year, feeling called to serve God as a priest, he began studying in a secret seminary in Krakow. A seminary is a school for future priests. This one had to meet quietly because the occupying forces had closed so much of public life. Choosing that path was not a promise that nothing frightening would happen. It was a choice to follow Christ amid uncertainty.',
+        prayer: 'Little prayer: Jesus, help me hear what You are calling me to be.',
+        heart: 'Heart Moment: Following Christ is a brave choice, not an easy one.',
+        scene: 'vocation',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-05.webp',
+        audio: 'page-05.mp3'
+      },
+      {
+        title: 'A Priest for Others',
+        body: 'After the war, Karol was ordained a priest in 1946. He listened to people, studied theology, and taught. He spent time helping students and families. His path led from priest to bishop, and then to archbishop of Krakow. In the Church\'s Second Vatican Council, he helped with work on how the Church should speak about human dignity and the life of the world.',
+        prayer: 'Little prayer: Jesus, bless our priests and teachers.',
+        heart: 'Heart Moment: Listening and helping is real work for God.',
+        scene: 'priest',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-06.webp',
+        audio: 'page-06.mp3'
+      },
+      {
+        title: 'Do Not Be Afraid',
+        body: 'In 1978, the cardinals chose him to be Pope. He took the name John Paul the Second. Think of how far the road had gone: from a boy in Wadowice, through grief and war, to the great square in Rome. At the beginning of his ministry, he asked people not to be afraid and to open their lives to Christ. This was not a man saying he had never felt fear. He had known enough of it to speak about courage with weight.',
+        prayer: 'Little prayer: Jesus, when I am afraid, help me open the door to You.',
+        heart: 'Heart Moment: Courage is not having no fear - it is walking through it.',
+        scene: 'priest',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography', 'vaticanJPIIInaugural'] }],
+        illustration: './media/storybook-jpii/images/page-07.webp',
+        audio: 'page-07.mp3'
+      },
+      {
+        title: 'Young Hearts Together',
+        body: 'As pope, he traveled from country to country. He spoke to many people who had never seen a pope before, and he asked young people to take their faith seriously. He began World Youth Day, where young people from many places could pray and discover that the Church was much larger than one neighborhood or one country. His own life had taught him to look at every person as someone worthy of respect.',
+        prayer: 'Little prayer: Jesus, help me make friends who love You too.',
+        heart: 'Heart Moment: The Church is bigger than our neighborhood.',
+        scene: 'unity',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography', 'vaticanJPIIWYD'] }],
+        illustration: './media/storybook-jpii/images/page-08.webp',
+        audio: 'page-08.mp3'
+      },
+      {
+        title: 'The Choice to Forgive',
+        body: 'Then came a terrible day in Saint Peter\'s Square in 1981. A man shot and seriously wounded the pope. Doctors cared for him, and he spent a long time recovering. There was nothing holy about the attack. The remarkable part of the story came afterward: John Paul forgave the man who had hurt him. Forgiveness did not mean pretending the harm had not happened. It meant refusing to let hatred have the final word.',
+        prayer: 'Little prayer: Jesus, help me forgive someone who has hurt me.',
+        heart: 'Heart Moment: Forgiving does not say the hurt was fine - it says hatred does not win.',
+        scene: 'healing',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-09.webp',
+        audio: 'page-09.mp3'
+      },
+      {
+        title: 'The Long Road Home',
+        body: 'In later years, the pope\'s body grew weaker. The man who had traveled so widely and spoken to enormous crowds could not do everything he once did. People saw that even a leader who encourages others needs care, patience, and prayer. He died in 2005. In 2014, the Church proclaimed him a saint.',
+        prayer: 'Little prayer: Saint John Paul, pray for us.',
+        heart: 'Heart Moment: Saints are people who kept saying yes to God.',
+        scene: 'legacy',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-10.webp',
+        audio: 'page-10.mp3'
+      },
+      {
+        title: 'One Brave Step',
+        body: 'What does his story leave with you? You do not have to be fearless before you do good. You do not have to be strong every day. When life changes suddenly, you can ask God for courage, reach for someone who needs help, and choose not to answer hurt with more hurt. The boy from Wadowice kept walking through grief and danger, and kept opening his heart to Christ. What is one brave and loving step you can take today?',
+        prayer: 'Little prayer: Jesus, show me one brave and loving step I can take today.',
+        heart: 'Heart Moment: You do not have to be fearless to do good.',
+        scene: 'legacy',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-11.webp',
+        audio: 'page-11.mp3'
+      }
+  ];
+
   const STORY_PAGES = {
     charbel: STORIES,
-    pio: { en: PIO_STORY_EN }
+    pio: { en: PIO_STORY_EN },
+    jpii: { en: JPII_STORY_EN }
   };
   const UI = COPY[contentLang];
   const storyPages = STORY_PAGES[storyId] || STORY_PAGES.charbel;
@@ -728,6 +860,12 @@
   pio: {
     en: [
       { id: 'kokoro-pio', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-pio/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ]
+  },
+  jpii: {
+    en: [
+      { id: 'kokoro-jpii', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-jpii/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ]
   }
@@ -1029,7 +1167,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'pio' ? 'kokoro-pio' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
