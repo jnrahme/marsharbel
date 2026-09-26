@@ -73,3 +73,19 @@ test('existing pages keep one top language selector without duplicate menus', as
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   }
 });
+
+
+test('English directory hub selector reaches the authored Arabic hub', async ({page}) => {
+  await page.goto('/miracles/?lang=en');
+  await page.locator('#sc-language-select').selectOption('ar');
+  await expect(page).toHaveURL(/\/ar\/miracles\/$/);
+  await expect(page.locator('h1')).toHaveText(catalogs.ar.miracles.title);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', registry.site + '/ar/miracles/');
+});
+
+test('unpublished locale on a miracle story stays as a runtime fallback', async ({page}) => {
+  await page.goto('/miracles/nohad-el-shami?lang=en');
+  await page.locator('#sc-language-select').selectOption('fr');
+  await expect(page).toHaveURL(/\/miracles\/nohad-el-shami\?lang=fr$/);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', registry.site + '/miracles/nohad-el-shami');
+});
