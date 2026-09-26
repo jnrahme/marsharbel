@@ -66,9 +66,9 @@ Work is evidence-backed, lands through the PR flow above, and is logged in
 | Lane | Focus | Output |
 | --- | --- | --- |
 | Integrator | QA gates, merges, post-deploy live verification, regression watch | Merge and verification reports |
-| Technical SEO | Crawl health, indexing, redirects, structured data, sitemaps | Merged PRs, bot-log entries |
+| Technical SEO | Crawl health, indexing, redirects, structured data (FAQPage and TouristAttraction emitted by the SEO generator), sitemaps | Merged PRs, bot-log entries |
 | Content pipeline | Evidence-backed content improvements | PRs for review |
-| International | Arabic-first localization, expanding to ranked world languages | Localized pages, hreflang and sitemap updates |
+| International | Arabic-first localization, expanding to ranked world languages | Localized pages, hreflang and sitemap updates; shared prayers mirror live in 8 locales (ar, en, fr, es, pt, it, de, pl) |
 | Authority / backlinks | Partnership and backlink preparation | Drafts only - nothing is sent to third parties without explicit approval |
 
 This section is kept current with the fleet: when a lane changes or work
