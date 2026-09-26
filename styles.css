@@ -2779,3 +2779,11 @@ html.nav-suppress .nav-group:focus-within .nav-sub {
 .watch-card-play{font-size:1.7rem;line-height:1;color:var(--theme-accent)}
 .watch-card-text{font-weight:600}
 .watch-card-note{font-size:.85rem;color:var(--theme-ink-soft);max-width:26rem}
+
+/* George Elhage UX review (2026-09-26): current section clearly highlighted, Install App separated from the language pill, content links read as links */
+.links a.active{color:var(--gold);background:rgba(205,190,171,.14);box-shadow:inset 0 0 0 1px rgba(211,178,110,.5)}
+.links a.active:hover{color:var(--gold)}
+.nav{grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"brand install lang" "links links links"}
+.sc-install-app-btn{grid-area:install;justify-self:end;align-self:center}
+.card.story p a:not(.btn):not(.promo-link),.card.story li a{color:var(--gold);text-decoration:underline;text-underline-offset:.16em}
+.card.story p a:not(.btn):not(.promo-link):hover,.card.story li a:hover{color:var(--text)}
