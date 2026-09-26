@@ -16,3 +16,4 @@ run under `docs/SEO-BOT-24-7-OPERATING-PLAN.md`.
 - `2026-09-24.md` — week-one baseline, legacy redirect recovery PR, production
   homepage divergence flag.
 - `2026-09-25-letters-home-entry.md` — English Letters display and private homepage draft flow.
+- `2026-09-25-news-card-presence.md` — larger Latest News feature on the homepage.
