@@ -168,7 +168,11 @@
     var routes = window.SC_LOCALE_ROUTES;
     var cleanPath = url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
     var isHome = ['/', '/index'].indexOf(cleanPath) !== -1;
-    var targets = routes && (isHome ? routes.homes : routes.topics[cleanPath]);
+    // Directory hubs are canonical with a trailing slash. Look up both
+    // spellings instead of letting the selector fall back to machine
+    // translation of the English page when a localized route exists.
+    var targets = routes && (isHome ? routes.homes :
+      routes.topics[cleanPath] || routes.topics[cleanPath + '/']);
     if (targets && targets[langCode]) {
       url.pathname = targets[langCode];
       url.searchParams.delete('lang');
