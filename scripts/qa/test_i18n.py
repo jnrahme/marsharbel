@@ -38,6 +38,57 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn('hermitage above Bsharri', page)
         self.assertNotIn('monastery of Annaya on the ridge above', page)
 
+    def test_qadisha_mirror_parity_and_unesco_distinction(self):
+        from html.parser import HTMLParser
+        from i18n.qadisha_mirror import render_qadisha
+        class Shape(HTMLParser):
+            def __init__(self, source):
+                super().__init__(); self.sections = []; self.images = []; self.headings = []
+                self.feed(source)
+            def handle_starttag(self, tag, attrs):
+                attrs = dict(attrs)
+                if tag == 'section': self.sections.append(attrs.get('class'))
+                if tag == 'img': self.images.append(attrs.get('src'))
+                if tag in ('h1', 'h2', 'h3'): self.headings.append(tag)
+        pages = render_qadisha(ROOT)
+        en, ar = (pages[ROOT / path] for path in ('qadisha-valley.html', 'ar/qadisha-valley.html'))
+        self.assertEqual(Shape(en).sections, Shape(ar).sections)
+        self.assertEqual(Shape(en).images, Shape(ar).images)
+        self.assertEqual(Shape(en).headings, Shape(ar).headings)
+        self.assertIn('not a third property in the UNESCO inscription', en)
+        self.assertNotIn('three World Heritage neighbors', en)
+        self.assertIn('ليس موقعًا ثالثًا', ar)
+        self.assertIn('hreflang="ar" href="https://marsharbel.com/ar/qadisha-valley"', en)
+        self.assertIn('href="/ar/biography"', ar)
+        self.assertIn('href="/ar/annaya"', ar)
+        self.assertNotIn('href="/ar/saint-charbel-trail"', ar)
+        self.assertEqual(pages[ROOT / 'qadisha-valley.html'], (ROOT / 'qadisha-valley.html').read_text())
+
+    def test_qadisha_mirror_rejects_missing_keys_and_escapes_text(self):
+        from i18n.qadisha_mirror import render_qadisha
+        import tempfile
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            shutil.copytree(ROOT / 'locales', root / 'locales')
+            (root / 'templates/mirrors').mkdir(parents=True)
+            shutil.copyfile(ROOT / 'templates/mirrors/qadisha.html', root / 'templates/mirrors/qadisha.html')
+            ar = root / 'locales/ar/mirrors/qadisha.json'
+            data = read_json(ar)
+            data['meta.title'] = 'عنوان خطير &'
+            ar.write_text(json.dumps(data, ensure_ascii=False))
+            text = render_qadisha(root)[root / 'ar/qadisha-valley.html']
+            self.assertIn('عنوان خطير &amp;', text)
+            data['meta.title'] = 'عنوان <script>'
+            ar.write_text(json.dumps(data, ensure_ascii=False))
+            with self.assertRaisesRegex(ValueError, 'HTML belongs'):
+                render_qadisha(root)
+            data['meta.title'] = 'عنوان'
+            ar.write_text(json.dumps(data, ensure_ascii=False))
+            del data['faq.question6']
+            ar.write_text(json.dumps(data, ensure_ascii=False))
+            with self.assertRaisesRegex(ValueError, 'catalog mismatch'):
+                render_qadisha(root)
+
     def test_letters_catalog_does_not_hide_new_copy(self):
         catalog=read_json(ROOT/'locales/en/letters-display.json')['values']
         self.assertEqual(catalog['index.html']['Write a Letter to Saint Charbel'],1)

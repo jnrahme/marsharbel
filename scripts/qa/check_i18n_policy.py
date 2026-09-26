@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from i18n.catalog import locale_topics, read_json, page_url
 from i18n.mirror import render_pair
+from i18n.qadisha_mirror import render_qadisha
 from i18n.qadisha_copy import validate as validate_qadisha, paragraphs as qadisha_paragraphs
 
 
@@ -81,7 +82,7 @@ def check(root=ROOT):
     testimony_path = root / 'locales/en/testimonies.json'
     testimony_catalog = read_json(testimony_path) if testimony_path.exists() else None
     prayer_mirror = render_pair(root) if (root/'templates/mirrors/prayers.html').exists() else {}
-    qadisha_copy = read_json(root/'locales/en/qadisha-corrections.json')
+    qadisha_pages = render_qadisha(root) if (root / "templates/mirrors/qadisha.html").exists() else {}
     if (root/'qadisha-valley.html').exists():
         validate_qadisha(root)
     # Generated English copy has exact freshness verification in full QA.
@@ -92,7 +93,7 @@ def check(root=ROOT):
                 errors.append(f'testimonies-copy.js: {key} differs from English catalog')
     for file, values in snapshot(root).items():
         additions = Counter(values) - Counter(baseline.get(file, {}))
-        if root/file in prayer_mirror:
+        if root/file in prayer_mirror or root/file in qadisha_pages:
             # This English legacy URL now renders entirely from its own keyed
             # English catalog; freshness is checked byte-for-byte by the build.
             continue
@@ -105,11 +106,6 @@ def check(root=ROOT):
         # the frozen legacy baseline. The per-file counts prevent a second
         # unreviewed occurrence from being silently accepted.
         additions -= Counter(display_catalog.get(file, {}))
-        if file == 'qadisha-valley.html':
-            # Both corrected paragraphs must first match the keyed source
-            # exactly; only their catalog-backed visible fragments are exempt.
-            for keyed in qadisha_copy.values():
-                additions.pop(' '.join(keyed.split()), None)
         if additions:
             errors.append(f'{file}: new hardcoded wording; move it to locales/: {list(additions)[:3]}')
     for path in (root/'templates/international').glob('*.html'):
