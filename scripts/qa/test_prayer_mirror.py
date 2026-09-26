@@ -9,7 +9,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from i18n.catalog import read_json
-from i18n.mirror import render_pair
+from i18n.mirror import render_pair, render_mirrors
 
 
 class Shape(HTMLParser):
@@ -60,12 +60,23 @@ class PrayerMirrorTests(unittest.TestCase):
             self.assertEqual(page.count('class="lang-switcher-slot"'), 1)
             self.assertEqual(page.count('src="/translate.js'), 1)
 
+    def test_english_static_guide_uses_master_structure_and_own_canonical(self):
+        pages = render_mirrors(ROOT)
+        guide = pages[ROOT/'en/prayers.html']
+        master = pages[ROOT/'saint-charbel-prayers.html']
+        self.assertEqual(Shape(guide).nodes, Shape(master).nodes)
+        self.assertEqual(Shape(guide).images, Shape(master).images)
+        self.assertIn('href="https://marsharbel.com/en/prayers"', guide)
+        self.assertIn('"url": "https://marsharbel.com/en/prayers"', guide)
+        self.assertNotEqual(read_json(ROOT/'locales/en/mirrors/prayers-guide.json')['title'],
+                            read_json(ROOT/'locales/en/mirrors/prayers.json')['meta.title'])
+
     def test_generated_outputs_and_authored_arabic_are_current(self):
         from importlib.util import spec_from_file_location, module_from_spec
         spec=spec_from_file_location('intl_builder',ROOT/'scripts/build-international.py')
         builder=module_from_spec(spec);spec.loader.exec_module(builder)
         expected=builder.outputs(ROOT)
-        for page in (ROOT/'ar/prayers.html', ROOT/'saint-charbel-prayers.html'):
+        for page in (ROOT/'ar/prayers.html', ROOT/'en/prayers.html', ROOT/'saint-charbel-prayers.html'):
             self.assertEqual(page.read_text(),expected[page])
         self.assertEqual(expected[ROOT/'ar/prayers.html'].count('hreflang="ar"'),1)
 

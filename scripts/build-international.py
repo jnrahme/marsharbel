@@ -8,7 +8,7 @@ import re
 from string import Template
 
 from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_locales
-from i18n.mirror import render_pair
+from i18n.mirror import render_mirrors
 
 
 def alternate_links(registry, topic=None):
@@ -105,7 +105,7 @@ def outputs(root=ROOT):
                 result[root / route.lstrip('/') / '.htaccess'] = (
                     '# Canonical localized directory hub.\nOptions -Indexes\nDirectoryIndex index.html\n')
     # The reviewed pair shares one skeleton; other guide locales remain unchanged.
-    mirrors = render_pair(root, registry)
+    mirrors = render_mirrors(root, registry)
     # The English master receives its existing managed hreflang from the loop
     # below; only the Arabic mirror is handed to the generated-page set here.
     english_mirror = mirrors.pop(root / 'saint-charbel-prayers.html')
