@@ -207,3 +207,25 @@ figcaption. New images: add a record here in the same batch.
 
 ### Reused on the guide (already registered above)
 - annaya-monastery.webp (hero, Paul Saad CC BY-SA 4.0), charbel-tomb.webp (Annaya section, LLEW CC BY-SA 4.0).
+
+## 2026-09-26 - qadisha-valley.html (places-cluster hub)
+
+### qadisha-valley-aerial.webp (1200x899, 181KB) - hero
+- Source: Wikimedia Commons, File:Qadisha Valley, Aerial View From Qannoubine Monastery.jpg
+  (https://commons.wikimedia.org/wiki/File:Qadisha_Valley,_Aerial_View_From_Qannoubine_Monastery.jpg).
+- Author: Evan Williams. License: CC BY-SA 4.0. Verified via Commons API extmetadata 2026-09-26. Visually inspected: aerial gorge view with monastery lower-left; caption matches visible content. Slightly over the ~170KB target at q48 - texture-dense source, accepted.
+
+### qannoubine-church.webp (1100x733, 165KB) - Deir Qannoubine teaser
+- Source: Wikimedia Commons, File:Qannoubine church.jpg
+  (https://commons.wikimedia.org/wiki/File:Qannoubine_church.jpg).
+- Author: Hussein Sabboury. License: CC0. Verified via Commons API extmetadata 2026-09-26. Visually inspected: stone church facade with valley cliffs behind; caption matches visible content.
+
+### qozhaya-monastery.webp (1026x567, 123KB) - Deir Mar Antonios Qozhaya teaser
+- Source: Wikimedia Commons, File:Qozhaya01072003.jpg
+  (https://commons.wikimedia.org/wiki/File:Qozhaya01072003.jpg).
+- Author: Yellaban. License: public domain. Verified via Commons API extmetadata 2026-09-26. Visually inspected: monastery complex with red-tiled roofs against the cliff; caption matches visible content. NOTE: the alternate Commons file "The Monastery of Qozhaya, Kadisha Valley, Lebanon.jpg" (Argenberg) was REJECTED after visual inspection - no monastery visible in frame, file title misdescribes content.
+
+### mar-lichaa-monastery.webp (640x960, 177KB) - Deir Mar Lichaa teaser
+- Source: Wikimedia Commons, File:Saint Lichaa 2.jpg
+  (https://commons.wikimedia.org/wiki/File:Saint_Lichaa_2.jpg).
+- Author: Eusebius. License: CC BY 3.0. Verified via Commons API extmetadata 2026-09-26. Visually inspected: monastery buildings tucked under overhanging cliff above olive terraces; caption matches visible content. Slightly over the ~170KB target at 640w q46 - texture-dense cliff source, accepted.
