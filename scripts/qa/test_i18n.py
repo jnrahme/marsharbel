@@ -31,6 +31,13 @@ class CatalogTests(unittest.TestCase):
         update(data)
         path.write_text(json.dumps(data))
 
+    def test_qadisha_correction_tracks_visible_copy_and_faq_schema(self):
+        from i18n.qadisha_copy import validate as validate_qadisha
+        page = validate_qadisha(ROOT)
+        self.assertIn('Annaya monastery, not in the Qadisha Valley', page)
+        self.assertNotIn('hermitage above Bsharri', page)
+        self.assertNotIn('monastery of Annaya on the ridge above', page)
+
     def test_letters_catalog_does_not_hide_new_copy(self):
         catalog=read_json(ROOT/'locales/en/letters-display.json')['values']
         self.assertEqual(catalog['index.html']['Write a Letter to Saint Charbel'],1)
