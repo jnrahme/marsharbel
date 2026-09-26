@@ -1,0 +1,33 @@
+name: Padre Pio brief narration test
+
+on:
+  push:
+    branches:
+      - seo/pio-story-proof
+    paths:
+      - .github/workflows/pio-narration-test.yml
+      - scripts/story-video/pio-narration-test.py
+
+permissions:
+  contents: read
+
+jobs:
+  narrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Synthesize one brief test line
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: python3 scripts/story-video/pio-narration-test.py
+      - name: Return audio for voice review
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pio-voice-test
+          path: pio-voice-test.mp3
+          retention-days: 3
