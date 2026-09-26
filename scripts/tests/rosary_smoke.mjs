@@ -173,8 +173,8 @@ try {
       throw new Error(`Expected lang=es on Home, got: ${page.url()}`);
     }
 
-    await page.click('.topbar .links a[href*="/story"]');
-    await page.waitForURL(/\/story(\.html)?(\?|$)/i, { timeout: 10000 });
+    await page.click('.topbar .links a[href*="/stories"]');
+    await page.waitForURL(/\/stories(\.html)?(\?|$)/i, { timeout: 10000 });
     lang = new URL(page.url()).searchParams.get('lang');
     if (lang !== 'es') {
       throw new Error(`Expected lang=es on Story, got: ${page.url()}`);
