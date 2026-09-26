@@ -116,23 +116,64 @@ class CatalogTests(unittest.TestCase):
                 render_qadisha(root)
 
     def test_monastery_mirrors_have_matched_shape_and_faq_schema(self):
-        from bs4 import BeautifulSoup
+        from html.parser import HTMLParser
         from i18n.monastery_mirror import render_monasteries
+
+        class Probe(HTMLParser):
+            def __init__(self):
+                super().__init__(convert_charrefs=True)
+                self.main_depth = 0
+                self.main_tags = []
+                self.ldjson = []
+                self._in_ld = False
+                self._buf = []
+                self.raw = []
+
+            def handle_starttag(self, tag, attrs):
+                a = dict(attrs)
+                self.raw.append((tag, a))
+                if tag == 'main':
+                    self.main_depth += 1
+                elif self.main_depth:
+                    self.main_tags.append((tag, a))
+                if tag == 'script' and a.get('type') == 'application/ld+json':
+                    self._in_ld = True
+                    self._buf = []
+
+            def handle_startendtag(self, tag, attrs):
+                a = dict(attrs)
+                self.raw.append((tag, a))
+                if self.main_depth and tag != 'main':
+                    self.main_tags.append((tag, a))
+
+            def handle_endtag(self, tag):
+                if tag == 'main' and self.main_depth:
+                    self.main_depth -= 1
+                if tag == 'script' and self._in_ld:
+                    self._in_ld = False
+                    self.ldjson.append(''.join(self._buf))
+
+            def handle_data(self, data):
+                if self._in_ld:
+                    self._buf.append(data)
+
         pages = render_monasteries(ROOT)
         for name in ('qannoubine', 'qozhaya'):
-            en = BeautifulSoup(pages[ROOT/f'{name}-monastery.html'], 'html.parser')
-            ar = BeautifulSoup(pages[ROOT/f'ar/{name}-monastery.html'], 'html.parser')
+            en = Probe(); en.feed(pages[ROOT/f'{name}-monastery.html'])
+            ar = Probe(); ar.feed(pages[ROOT/f'ar/{name}-monastery.html'])
             for tag in ('section', 'h1', 'h2', 'h3', 'img', 'figure'):
-                self.assertEqual(len(en.select('main '+tag)), len(ar.select('main '+tag)))
-            self.assertEqual([tag.get('src').lstrip('.') for tag in en.select('main img')],
-                             [tag.get('src') for tag in ar.select('main img')])
-            self.assertEqual([s['@type'] for s in [json.loads(tag.string) for tag in ar.select('script[type="application/ld+json"]')]],
+                self.assertEqual(len([t for t, a in en.main_tags if t == tag]),
+                                 len([t for t, a in ar.main_tags if t == tag]))
+            self.assertEqual([a['src'].lstrip('.') for t, a in en.main_tags if t == 'img'],
+                             [a['src'] for t, a in ar.main_tags if t == 'img'])
+            self.assertEqual([s['@type'] for s in [json.loads(body) for body in ar.ldjson]],
                              ['WebPage', 'FAQPage', 'TouristAttraction'])
-            faq = json.loads(ar.select('script[type="application/ld+json"]')[1].string)['mainEntity']
+            faq = json.loads(ar.ldjson[1])['mainEntity']
             catalog = read_json(ROOT/f'locales/ar/mirrors/{name}-monastery.json')
             self.assertEqual([(q['name'], q['acceptedAnswer']['text']) for q in faq],
                              [(catalog[f'faq.question{i}'], catalog[f'faq.text{i}']) for i in range(1,7)])
-            self.assertIn(f'href="/ar/{"qozhaya" if name == "qannoubine" else "qannoubine"}-monastery"', str(ar))
+            self.assertIn(f'href="/ar/{"qozhaya" if name == "qannoubine" else "qannoubine"}-monastery"',
+                          pages[ROOT/f'ar/{name}-monastery.html'])
             self.assertEqual(pages[ROOT/f'{name}-monastery.html'], (ROOT/f'{name}-monastery.html').read_text())
 
     def test_letters_catalog_does_not_hide_new_copy(self):
