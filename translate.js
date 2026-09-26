@@ -588,8 +588,9 @@
     container.appendChild(label);
     container.appendChild(select);
 
+    var installBtn = null;
     if (!document.getElementById('sc-install-app-btn') && typeof window.__scInstallApp === 'function') {
-      var installBtn = document.createElement('button');
+      installBtn = document.createElement('button');
       installBtn.id = 'sc-install-app-btn';
       installBtn.type = 'button';
       installBtn.className = 'sc-install-app-btn';
@@ -597,7 +598,6 @@
       installBtn.addEventListener('click', function () {
         window.__scInstallApp();
       });
-      container.appendChild(installBtn);
     }
 
     var nav = document.querySelector('.topbar .nav');
@@ -605,7 +605,10 @@
       var slot = nav.querySelector('.lang-switcher-slot');
       if (slot) slot.replaceWith(container);
       else nav.appendChild(container);
+      // Install App is its own control beside the language pill, not inside it.
+      if (installBtn) nav.appendChild(installBtn);
     } else {
+      if (installBtn) container.appendChild(installBtn);
       container.classList.add('lang-switcher-floating');
       document.body.appendChild(container);
     }
