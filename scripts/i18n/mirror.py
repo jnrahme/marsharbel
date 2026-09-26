@@ -1,4 +1,4 @@
-"""Render a reviewed static locale pair from one DOM skeleton and strict text slots."""
+"""Render reviewed prayer locale pages from one DOM skeleton and strict text slots."""
 from html import escape
 import json
 from pathlib import Path
@@ -11,8 +11,8 @@ SITE = 'https://marsharbel.com'
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def render_pair(root=ROOT, registry=None):
-    """Return rendered prayer pages; no writes. Missing or extra text aborts the build."""
+def render_mirrors(root=ROOT, registry=None):
+    """Return rendered prayer pages without writes; fail on missing or extra text."""
     if registry is None:
         registry = read_json(root / 'locales/registry.json')
     template = (root / 'templates/mirrors/prayers.html').read_text(encoding='utf-8')
@@ -21,19 +21,25 @@ def render_pair(root=ROOT, registry=None):
         raise ValueError('Prayer mirror: invalid slot syntax')
     result = {}
     english_path = (root / registry['topics']['prayers']['relatedEnglish'].lstrip('/')).with_suffix('.html')
+    english_guide_path = root / 'en' / (registry['locales']['en']['slugs']['prayers'] + '.html')
     arabic_path = root / 'ar' / (registry['locales']['ar']['slugs']['prayers'] + '.html')
     en = read_json(root / 'locales/en/mirrors/prayers.json')
     ar = read_json(root / 'locales/ar/mirrors/prayers.json')
+    guide_meta = read_json(root / 'locales/en/mirrors/prayers-guide.json')
+    if set(guide_meta) != {'title', 'description'}:
+        raise ValueError('English prayer guide metadata needs title and description')
+    leaves(guide_meta)
     for code, catalog in (('en', en), ('ar', ar)):
         if set(catalog) != expected:
             raise ValueError(f'Prayer mirror {code} slot mismatch: missing {sorted(expected - set(catalog))}; extra {sorted(set(catalog) - expected)}')
-    for code, catalog, path in (('en', en, english_path), ('ar', ar, arabic_path)):
+    for code, catalog, path in (('en', en, english_path), ('en', en, english_guide_path), ('ar', ar, arabic_path)):
         # The mirror catalogs are separate from the legacy short-guide catalogs.
         leaves(catalog)
-        canonical = SITE + (registry['topics']['prayers']['relatedEnglish'] if code == 'en' else page_url(registry, code, 'prayers'))
+        is_english_master = path == english_path
+        canonical = SITE + (registry['topics']['prayers']['relatedEnglish'] if is_english_master else page_url(registry, code, 'prayers'))
         # Keep the original cluster and ordering byte-for-byte. The builder owns
         # managed hreflang on English and all other guides.
-        if code == 'en':
+        if is_english_master:
             alternates = '\n'.join(f'  <link rel="alternate" hreflang="{lang}" href="{canonical}" />'
                                    for lang in ('x-default', 'en'))
         else:
@@ -42,9 +48,11 @@ def render_pair(root=ROOT, registry=None):
             language_urls['x-default'] = language_urls['en']
             alternates = '\n'.join(f'<link rel="alternate" hreflang="{lang}" href="{url}" />'
                                    for lang, url in language_urls.items())
-        tokens = {**catalog, 'locale.code': code, 'locale.direction': registry['locales'][code]['direction'],
+        page_text = {**catalog, **({'meta.title': guide_meta['title'], 'meta.description': guide_meta['description']}
+                                    if path == english_guide_path else {})}
+        tokens = {**page_text, 'locale.code': code, 'locale.direction': registry['locales'][code]['direction'],
                   'locale.canonical': canonical, 'locale.alternates': alternates,
-                  'locale.currentRoute': page_url(registry, code, 'prayers') if code != 'en' else registry['topics']['prayers']['relatedEnglish'],
+                  'locale.currentRoute': registry['topics']['prayers']['relatedEnglish'] if is_english_master else page_url(registry, code, 'prayers'),
                   'locale.prayerLibraryUrl': SITE + '/prayer-library', 'locale.homeUrl': SITE + '/'}
         def replace(match):
             key = match.group(1)
@@ -81,10 +89,25 @@ def render_pair(root=ROOT, registry=None):
             # relative ./ hrefs only exist in the English master's managed nav.
             text = re.sub(r'(<a\b[^>]*\bhref=["\'])\.?(/[^"\']*)(["\'])',
                           lambda match: match.group(1) + related.get(match.group(2), match.group(2)) + match.group(3), text)
-        else:
+        elif is_english_master:
             nav_match = re.search(r'<nav class="links".*?</nav>', text, flags=re.S)
             if nav_match:
                 block = nav_match.group(0)
                 text = text.replace(block, re.sub(r'(<a\b[^>]*\bhref=["\'])/(?!/)([^"\']*)(["\'])', r'\1./\2\3', block))
+        else:
+            # Locale-prefixed English guide (/en/...): the managed relative
+            # nav links only resolve from the root master, so absolutize them.
+            nav_match = re.search(r'<nav class="links".*?</nav>', text, flags=re.S)
+            if nav_match:
+                block = nav_match.group(0)
+                text = text.replace(block, re.sub(r'(<a\b[^>]*\bhref=["\'])\./([^"\']*)(["\'])', r'\1/\2\3', block))
         result[path] = text
     return result
+
+
+def render_pair(root=ROOT, registry=None):
+    """Compatibility wrapper for the first English-master/Arabic pilot tests."""
+    rendered = render_mirrors(root, registry)
+    english_master = (root / 'saint-charbel-prayers.html')
+    arabic_mirror = root / 'ar/prayers.html'
+    return {path: rendered[path] for path in (english_master, arabic_mirror)}

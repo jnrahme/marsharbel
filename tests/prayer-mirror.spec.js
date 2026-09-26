@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test');
 
-for (const [route, code] of [['/saint-charbel-prayers','en'], ['/ar/prayers','ar']]) {
-  test(`${code} prayers mirror stays readable and complete`, async ({page}) => {
+for (const [route, code] of [['/saint-charbel-prayers','en'], ['/en/prayers','en'], ['/ar/prayers','ar']]) {
+  test(`${route} prayers mirror stays readable and complete`, async ({page}) => {
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
     await page.goto(route);
@@ -31,4 +31,12 @@ test('Arabic mirror resists stale English preference and preserves authored copy
   await page.goto('/ar/prayers?lang=en');
   await expect(page.locator('h1')).toHaveText('مكتبة صلوات مار شربل');
   await expect(page.locator('html')).toHaveAttribute('lang','ar');
+});
+
+test('English guide mirror switches to Arabic authored mirror', async ({page}) => {
+  await page.goto('/en/prayers');
+  await expect(page.locator('h1')).toHaveText('Saint Charbel Prayer Library');
+  await page.locator('#sc-language-select').selectOption('ar');
+  await expect(page).toHaveURL(/\/ar\/prayers$/);
+  await expect(page.locator('h1')).toHaveText('مكتبة صلوات مار شربل');
 });
