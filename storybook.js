@@ -4,6 +4,14 @@
     return (params.get('lang') || 'en').toLowerCase();
   };
 
+  const getStoryId = () => {
+    const params = new URLSearchParams(window.location.search);
+    const fromQuery = (params.get('story') || '').toLowerCase();
+    const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
+    return (fromQuery || fromBody) === 'pio' ? 'pio' : 'charbel';
+  };
+  const storyId = getStoryId();
+
   const selectedLang = getLangCode();
   const contentLang = selectedLang === 'ar' ? 'ar' : selectedLang === 'fr' ? 'fr' : 'en';
   const isRtl = contentLang === 'ar';
@@ -48,6 +56,14 @@
   };
 
   const EVIDENCE_SOURCES = {
+    vaticanPioBiography: {
+      label: 'Vatican (Holy See, biography of St. Pio of Pietrelcina, 2002)',
+      url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20020616_padre-pio_en.html'
+    },
+    vaticanPioCanonization: {
+      label: 'Vatican (John Paul II, canonization homily, June 16, 2002)',
+      url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2002/documents/hf_jp-ii_hom_20020616_padre-pio.html'
+    },
     vaticanBeatification1965: {
       label: 'Vatican (Paul VI, Beatification, Dec 5, 1965)',
       url: 'https://www.vatican.va/content/paul-vi/fr/speeches/1965/documents/hf_p-vi_spe_19651205_charbel-makhlouf.html'
@@ -504,8 +520,177 @@
     ]
   };
 
+
+  const PIO_STORY_EN = [
+      {
+        title: 'In Pietrelcina',
+        body: 'In a small Italian town called Pietrelcina, a child named Francesco grew up with his family. His parents gave him the name Francesco. Long before crowds knew his name, he learned to pray. Prayer was not a trick for getting everything he wanted. It was a way to bring his whole life before God.',
+        prayer: 'Little prayer: Jesus, teach me to pray like Francesco did.',
+        heart: 'Heart Moment: God loves us long before anyone knows our name.',
+        scene: 'birth',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-01.webp',
+        audio: 'page-01.mp3'
+      },
+      {
+        title: 'A New Name',
+        body: 'Imagine the road out of his village on a winter morning. At sixteen, Francesco left home and entered the Capuchin friars. He received a new name: Brother Pio. The brothers followed Saint Francis, seeking a simple life of prayer, poverty, and service.',
+        prayer: 'Little prayer: Jesus, help me follow You bravely, like Brother Pio.',
+        heart: 'Heart Moment: Following Jesus can mean leaving what is familiar.',
+        scene: 'vocation',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-02.webp',
+        audio: 'page-02.mp3'
+      },
+      {
+        title: 'A Quiet Promise',
+        body: 'A new name did not make his path easy. Picture a young friar in a plain brown habit, rising to pray while the village outside was still dark. There were no crowds to cheer him on. There was work to learn and a promise to keep, day after ordinary day. His new name marked the beginning of years of learning to give his life to God.',
+        prayer: 'Little prayer: Jesus, help me keep my promises, even on hard days.',
+        heart: 'Heart Moment: Small faithful steps matter more than easy ones.',
+        scene: 'vocation',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-03.webp',
+        audio: 'page-03.mp3'
+      },
+      {
+        title: 'When the Body Is Weak',
+        body: 'He became a priest in 1910. But poor health interrupted his plans. For years, he stayed near his family while he recovered. When you are sick, even an ordinary day can feel long. It would be easy to think a life of service has to wait until you are strong. Brother Pio kept praying through those years.',
+        prayer: 'Little prayer: Jesus, be close to everyone who is sick today.',
+        heart: 'Heart Moment: God works in us even when our bodies are weak.',
+        scene: 'priest',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-04.webp',
+        audio: 'page-04.mp3'
+      },
+      {
+        title: 'Road to San Giovanni',
+        body: 'In 1916, he went to the friary at San Giovanni Rotondo. He would live there until his death. On the road to the friary, no one could have guessed how many footsteps would later follow his. Behind each pair of footsteps would be a person with a story. Some would come hoping for comfort. Others would come carrying regret.',
+        prayer: 'Little prayer: Jesus, lead me where You want me to be.',
+        heart: 'Heart Moment: Sometimes God\'s plan is one long, quiet stay.',
+        scene: 'hermit',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-05.webp',
+        audio: 'page-05.mp3'
+      },
+      {
+        title: 'A Priest Who Listened',
+        body: 'The people came slowly at first, then in great numbers. Some were searching for a word of hope. Some wanted to turn away from things they had done wrong. Padre Pio spent long hours celebrating the Eucharist and hearing confessions. Imagine waiting in a line with a secret you are afraid to say aloud. What that person needed was not a spectacle.',
+        prayer: 'Little prayer: Jesus, teach me to listen with love.',
+        heart: 'Heart Moment: Listening well is a way of loving.',
+        scene: 'priest',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-06.webp',
+        audio: 'page-06.mp3'
+      },
+      {
+        title: 'A Place for Mercy',
+        body: 'They needed the mercy of Jesus, and a priest willing to listen. Padre Pio could be direct with people. The Church remembered the crowds who returned seeking forgiveness, even when facing the truth was hard. In the confessional, he did not offer a magic escape from consequences. He helped people repent, begin again, and trust God\'s mercy.',
+        prayer: 'Little prayer: Jesus, thank You for Your mercy that never runs out.',
+        heart: 'Heart Moment: Mercy welcomes everyone, again and again.',
+        scene: 'priest',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-07.webp',
+        audio: 'page-07.mp3'
+      },
+      {
+        title: 'One Person at a Time',
+        body: 'This was a daily work, repeated for years, one person at a time. Think of someone at the back of the line, afraid everyone will see their face. They wait, take a step, wait again. We cannot know what a particular visitor said. We do know why so many came: they hoped God had not stopped loving them. That hope is at the heart of the sacrament of forgiveness.',
+        prayer: 'Little prayer: Jesus, help me love the person in front of me.',
+        heart: 'Heart Moment: Big love is built one small act at a time.',
+        scene: 'priest',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-08.webp',
+        audio: 'page-08.mp3'
+      },
+      {
+        title: 'The Wounds and Questions',
+        body: 'He knew suffering from the inside too. He had lived with fragile health since he was young. In 1918, wounds appeared on his hands, feet, and side. They reminded people of the wounds of Jesus on the Cross. Padre Pio carried them for many years. The wounds drew attention, and they also brought questions.',
+        prayer: 'Little prayer: Jesus, when I hurt, help me remember You understand.',
+        heart: 'Heart Moment: Jesus knows our pain from the inside.',
+        scene: 'hermit',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-09.webp',
+        audio: 'page-09.mp3'
+      },
+      {
+        title: 'The Closed Door',
+        body: 'Church authorities investigated, and for periods they restricted parts of his public ministry. He accepted the restrictions and obeyed his superiors. We do not need to pretend that the waiting or pain was easy. A closed door can feel especially heavy when you want to help. What can a person do when the work they love is taken away for a time? Padre Pio did what he still could. He prayed and waited, trusting God without pretending to understand every trial.',
+        prayer: 'Little prayer: Jesus, give me patience when life feels unfair.',
+        heart: 'Heart Moment: Obedience and patience can be a quiet kind of courage.',
+        scene: 'hermit',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-10.webp',
+        audio: 'page-10.mp3'
+      },
+      {
+        title: 'Faith and the Cross',
+        body: 'When Christians speak about the Cross, they do not mean that pain is good by itself, or that someone who is sick should be left without help. Jesus met people in their suffering. Padre Pio\'s response to his own trials was to keep praying and to care for others. He saw Christ in poor and sick neighbors. His faith could not stay inside the walls of the chapel.',
+        prayer: 'Little prayer: Jesus, help me carry my small crosses with love.',
+        heart: 'Heart Moment: Love can make hard things lighter.',
+        scene: 'hermit',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-11.webp',
+        audio: 'page-11.mp3'
+      },
+      {
+        title: 'A Hospital for the Sick',
+        body: 'So the friar whose own body hurt took part in building a place where other hurting people could be treated. Many people helped him. Together they founded the Home for the Relief of Suffering, a hospital in San Giovanni Rotondo. It opened in 1956. Think of the difference between telling a sick person, "I hope you get well," and helping make a bed, a doctor, and care available. The hospital was not a claim that prayer replaces medicine. It was a way to put love into action.',
+        prayer: 'Little prayer: Jesus, bless everyone who cares for the sick.',
+        heart: 'Heart Moment: Our own hurts can teach us to heal others.',
+        scene: 'healing',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-12.webp',
+        audio: 'page-12.mp3'
+      },
+      {
+        title: 'Prayer Together',
+        body: 'Padre Pio also encouraged prayer groups. People could pray together rather than carry every burden alone. Prayer and care belonged together in his life. At the hospital, someone could receive treatment. In a prayer group, someone could know they had not been forgotten. Neither act made suffering disappear on command. Both could tell a person, "You matter."',
+        prayer: 'Little prayer: Jesus, teach my family to pray together.',
+        heart: 'Heart Moment: Praying with someone is sharing strength.',
+        scene: 'unity',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-13.webp',
+        audio: 'page-13.mp3'
+      },
+      {
+        title: 'A Kindness a Child Can Do',
+        body: 'A child can understand this. When someone is alone, sitting beside them is a real gift. When someone is ill, bringing water or asking an adult for help can be a real act of love. Big kindness often begins with something small.',
+        prayer: 'Little prayer: Jesus, show me someone who needs a friend today.',
+        heart: 'Heart Moment: Sitting beside someone is a real gift.',
+        scene: 'unity',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-14.webp',
+        audio: 'page-14.mp3'
+      },
+      {
+        title: 'The Church Calls Him a Saint',
+        body: 'He died in 1968. Years later, the Church carefully examined his life and proclaimed him a saint in 2002. Pope John Paul the Second spoke of his long hours in the confessional, his prayer groups, and the hospital. He held prayer and charity together as the heart of Padre Pio\'s lesson.',
+        prayer: 'Little prayer: Saint Pio, pray for us.',
+        heart: 'Heart Moment: Saints are ordinary people who kept saying yes to God.',
+        scene: 'legacy',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-15.webp',
+        audio: 'page-15.mp3'
+      },
+      {
+        title: 'Who Can You Help Today?',
+        body: 'You may never build a hospital. You may not know what to say when someone is hurting. Start smaller. Listen without rushing away. Ask if they need help. Pray for them, and do one useful, kind thing. If you have made a mistake, ask forgiveness and begin again. Padre Pio\'s life says that love for God grows when it becomes love for a neighbor. Today, who is one person you can notice and help?',
+        prayer: 'Little prayer: Jesus, help me help someone today.',
+        heart: 'Heart Moment: Your kindness, however small, is part of God\'s story.',
+        scene: 'legacy',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-16.webp',
+        audio: 'page-16.mp3'
+      }
+  ];
+
+  const STORY_PAGES = {
+    charbel: STORIES,
+    pio: { en: PIO_STORY_EN }
+  };
   const UI = COPY[contentLang];
-  const pages = STORIES[contentLang];
+  const storyPages = STORY_PAGES[storyId] || STORY_PAGES.charbel;
+  const pages = storyPages[contentLang] || storyPages.en;
   const AUDIO_BASE = {
     en: './media/storybook/en',
     ar: './media/storybook/ar',
@@ -522,9 +707,10 @@
     unity: `${SCENE_IMAGE_BASE}/unity.png`,
     legacy: `${SCENE_IMAGE_BASE}/legacy.png`
   };
-  const VOICE_PACK_STORAGE_KEY = `storybook_voice_pack_${contentLang}`;
+  const VOICE_PACK_STORAGE_KEY = storyId === 'charbel' ? `storybook_voice_pack_${contentLang}` : `storybook_voice_pack_${storyId}_${contentLang}`;
   const BROWSER_VOICE_PREF_KEY = 'rosary_audio_voice_pref';
   const VOICE_PACKS = {
+  charbel: {
     en: [
       { id: 'elevenlabs-charbel', label: 'ElevenLabs Story Voice (Recommended)', type: 'clips', base: './media/storybook/en-elevenlabs' },
       { id: 'studio-british', label: 'Studio British', type: 'clips', base: './media/storybook/en' },
@@ -538,7 +724,14 @@
       { id: 'studio-fr', label: 'Studio French (Recommended)', type: 'clips', base: './media/storybook/fr' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ]
-  };
+  },
+  pio: {
+    en: [
+      { id: 'kokoro-pio', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-pio/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ]
+  }
+};
 
   const el = {
     panel: document.querySelector('.storybook-panel'),
@@ -634,7 +827,7 @@
 
   const AUTO_CONTINUE_KEY = 'storybook_auto_continue';
   const READER_MODE_KEY = 'storybook_reader_mode';
-  const LAST_PAGE_KEY = 'storybook_last_page';
+  const LAST_PAGE_KEY = storyId === 'charbel' ? 'storybook_last_page' : `storybook_last_page_${storyId}`;
   const readAutoContinuePref = () => {
     try { return localStorage.getItem(AUTO_CONTINUE_KEY) === 'true'; } catch (_) { return false; }
   };
@@ -806,7 +999,7 @@
     }
   };
 
-  const getBaseVoicePacks = () => VOICE_PACKS[contentLang] || VOICE_PACKS.en;
+  const getBaseVoicePacks = () => (VOICE_PACKS[storyId] || VOICE_PACKS.charbel)[contentLang] || (VOICE_PACKS[storyId] || VOICE_PACKS.charbel).en;
   const isLocalFilePreview = () => window.location.protocol === 'file:';
 
   const resolveVoicePacks = async () => {
@@ -836,9 +1029,10 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const elevenLabsPack = availableVoicePacks.find(pack => pack.id === 'elevenlabs-charbel');
-    if (contentLang === 'en' && elevenLabsPack) {
-      return elevenLabsPack.id;
+    const recommendedId = storyId === 'pio' ? 'kokoro-pio' : 'elevenlabs-charbel';
+    const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
+    if (contentLang === 'en' && recommended) {
+      return recommended.id;
     }
     return readVoicePackPref();
   };
