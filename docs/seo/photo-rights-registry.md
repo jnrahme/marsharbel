@@ -80,3 +80,34 @@ figcaption. New images: add a record here in the same batch.
 - Subject: Monastery of Our Lady of Hamatoura, north Lebanon (Marian shrine; small source file, kept at native size).
 - Source: Wikimedia Commons, File:Our Lady of Hamatoura Monastery.jpg. Author: mharfouche.
 - License: CC BY 4.0. Verified via Commons API extmetadata 2026-09-25. Attribution in figcaption.
+## media/saints/ (added 2026-09-25, Padre Pio flagship - PR 0)
+
+### st-padre-pio.webp (1280x1959, 36KB) - hero, page + hub card + og:image
+- Subject: Padre Pio of Pietrelcina, portrait in Capuchin habit.
+- Source: Wikimedia Commons, File:Padre Pio da Pietrelcina.jpg. Presumed photographer: Federico Abresch (d. 1969).
+- License: public domain. Verified via Commons API extmetadata 2026-09-25.
+
+### st-padre-pio-young.webp (948x1315, 70KB) - His Life section
+- Subject: Fra Pio as a young friar.
+- Source: Wikimedia Commons, File:Padre-Pio-young.jpg. Photographer: Placido Bux.
+- License: public domain. Verified via Commons API extmetadata 2026-09-25.
+
+### st-padre-pio-stigmata.webp (1188x1600, 123KB) - The Stigmata section
+- Subject: Padre Pio with the wounds on his hands visible.
+- Source: Wikimedia Commons, File:Padre Pio Stigmata.jpg (via Jornal O Bom Catolico).
+- License: public domain. Verified via Commons API extmetadata 2026-09-25.
+
+### st-padre-pio-beatification-1999.webp (751x1024, 154KB) - Investigated and Vindicated section
+- Subject: Saint Peter's Square at the May 2, 1999 beatification.
+- Source: Wikimedia Commons, File:Padre pio beatificazione in vaticano.jpg. Author: Santuario di Santa Maria delle Grazie.
+- License: CC BY-SA 4.0. Verified via Commons API extmetadata 2026-09-25. Attribution in figcaption.
+
+### st-padre-pio-santa-maria-delle-grazie.webp (1280x960, 159KB) - Pilgrimage section
+- Subject: interior of the church of Santa Maria delle Grazie, San Giovanni Rotondo.
+- Source: Wikimedia Commons, File:Chiesa di Santa Maria delle Grazie, interno (San Giovanni Rotondo).JPG. Author: Lino M.
+- License: CC BY-SA 2.0. Verified via Commons API extmetadata 2026-09-25. Attribution in figcaption.
+
+### st-padre-pio-tomb.webp (1280x960, 87KB) - Pilgrimage section
+- Subject: the tomb of Padre Pio in the crypt at San Giovanni Rotondo.
+- Source: Wikimedia Commons, File:PadrePio-theTomb.jpg. Author: Quodvultdeus.
+- License: public domain. Verified via Commons API extmetadata 2026-09-25.
