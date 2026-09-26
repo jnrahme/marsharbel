@@ -230,6 +230,10 @@ def hero_image(path: Path, html: str) -> str | None:
 
 
 def og_image_for(path: Path, html: str = "") -> str:
+    # pio-story.html renders its cover via storybook.js (no static hero <img>),
+    # so pin the storybook cover instead of falling back to the default.
+    if path.name == "pio-story.html":
+        return f"{SITE}/media/storybook-pio/images/page-01.webp"
     return hero_image(path, html) or DEFAULT_IMAGE
 
 

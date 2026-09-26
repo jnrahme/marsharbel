@@ -115,9 +115,10 @@ for htmlfile in *.html; do
   # rosary-source-text.html = SEO redirect (has meta refresh + noindex)
   # testimony-review.html = admin/moderation page (noindex)
   # voice-lab.html = internal dev/testing tool
+  # pio-story.html = inbound Story dropdown + /st-padre-pio cross-link ship with the content lane's nav re-sync after prayer-hub
   case "$htmlfile" in
     google*.html|index.html) continue ;;
-    mystery-meditation.html|rosary-source-text.html|testimony-review.html|voice-lab.html|souvenirs.html) continue ;;
+    mystery-meditation.html|rosary-source-text.html|testimony-review.html|voice-lab.html|souvenirs.html|pio-story.html) continue ;;
   esac
   # Check if any OTHER html file links to this page
   if ! grep -rql "$htmlfile" --include="*.html" . --exclude-dir=node_modules --exclude-dir=tmp --exclude-dir=.venv --exclude-dir=.git --exclude="$htmlfile" >/dev/null 2>&1; then
