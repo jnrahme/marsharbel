@@ -10,3 +10,5 @@ Font filenames are versioned. If font bytes change, use new filenames to avoid s
 
 | Noto Naskh Arabic | 400-700 (variable) | arabic | noto-naskh-arabic-arabic-v2.woff2 | Google Fonts (notonaskharabic v44) | OFL 1.1 (noto-naskh-arabic-OFL.txt) |
 | Noto Sans Arabic | 100-900 (variable) | arabic | noto-sans-arabic-arabic-v2.woff2 | Google Fonts (notosansarabic v33) | OFL 1.1 (noto-sans-arabic-OFL.txt) |
+
+Note: the Arabic webfonts are SERVED from untracked -v3 filenames (media/fonts/*-v3.woff2, deployed via TUS only) because the Hostinger git-integration snapshot layer shadows tracked woff2 paths with 0-byte/404 entries in some regions (v1/v2 incident, 2026-09-26). Canonical bytes remain tracked at the -v2 paths.
