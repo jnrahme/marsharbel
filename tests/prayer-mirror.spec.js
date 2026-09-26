@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 
-for (const [route, code] of [['/saint-charbel-prayers','en'], ['/en/prayers','en'], ['/ar/prayers','ar'], ['/fr/prieres','fr']]) {
+for (const [route, code] of [['/saint-charbel-prayers','en'], ['/en/prayers','en'], ['/ar/prayers','ar'], ['/fr/prieres','fr'], ['/es/oraciones','es']]) {
   test(`${route} prayers mirror stays readable and complete`, async ({page}) => {
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
@@ -59,4 +59,18 @@ test('French prayer mirror keeps its native text with an English preference', as
   await page.goto('/fr/prieres?lang=en');
   await expect(page.locator('h1')).toHaveText('Bibliothèque de prières de saint Charbel');
   await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
+});
+
+test('Spanish mirror stays authored through reload and returns to English master', async ({page}) => {
+  await page.goto('/saint-charbel-prayers?lang=en');
+  await page.locator('#sc-language-select').selectOption('es');
+  await expect(page).toHaveURL(/\/es\/oraciones$/);
+  await expect(page.locator('h1')).toHaveText('Biblioteca de oraciones a san Chárbel');
+  await page.reload();
+  await expect(page.locator('h1')).toHaveText('Biblioteca de oraciones a san Chárbel');
+  await page.locator('#sc-language-select').selectOption('en');
+  await expect(page).toHaveURL(/\/saint-charbel-prayers$/);
+  await page.goto('/es/oraciones?lang=en');
+  await expect(page.locator('html')).toHaveAttribute('lang','es');
+  await expect(page.locator('h1')).toHaveText('Biblioteca de oraciones a san Chárbel');
 });
