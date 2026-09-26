@@ -177,3 +177,33 @@ figcaption. New images: add a record here in the same batch.
 
 ### media/news/monte-sole-sacrario.webp (1200x800) - monte-sole-beatification card
 - Gianni Careddu, "Marzabotto, sacrario ai caduti (21)", Wikimedia Commons, CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:Marzabotto,_sacrario_ai_caduti_(21).jpg
+
+## media/annaya/ (added 2026-09-25, Charbel pilgrimage guide)
+
+### lebanon-qozhaya-monastery.webp (1026x567, 102KB) - Qadisha section
+- Source: Wikimedia Commons, File:Qozhaya01072003.jpg
+  (https://commons.wikimedia.org/wiki/File:Qozhaya01072003.jpg).
+- Author: Yellaban. License: public domain. Verified via Commons API extmetadata 2026-09-25.
+- NOTE: first pick (File:The Monastery of Qozhaya, Kadisha Valley, Lebanon.jpg) turned out on visual
+  inspection to be a misty valley view with no monastery visible - replaced with this PD shot that
+  actually shows the monastery. Caught in pixel review.
+
+### lebanon-qozhaya.webp (1100x825, 128KB) - Qadisha section (valley view, honest caption)
+- Source: Wikimedia Commons, File:The Monastery of Qozhaya, Kadisha Valley, Lebanon.jpg
+  (https://commons.wikimedia.org/wiki/File:The_Monastery_of_Qozhaya,_Kadisha_Valley,_Lebanon.jpg).
+- Author: Vyacheslav Argenberg. License: CC BY 4.0. Verified via Commons API extmetadata 2026-09-25.
+- Visually a valley/mist view, no monastery in frame - captioned as "The Qadisha Valley in the mist,
+  near Deir Qozhaya", not as the monastery.
+
+### lebanon-harissa.webp (1280x855, 165KB) - While You Are in Lebanon section
+- Source: Wikimedia Commons, File:Our Lady Of Lebanon Harissa.jpg
+  (https://commons.wikimedia.org/wiki/File:Our_Lady_Of_Lebanon_Harissa.jpg).
+- Author: Paul Saad. License: CC BY-SA 4.0. Verified via Commons API extmetadata 2026-09-25.
+
+### lebanon-cedars.webp (1100x825, 176KB) - While You Are in Lebanon section
+- Source: Wikimedia Commons, File:Cedars of God (Lebanon cedar forest), Lebanon.jpg
+  (https://commons.wikimedia.org/wiki/File:Cedars_of_God_(Lebanon_cedar_forest),_Lebanon.jpg).
+- Author: Vyacheslav Argenberg. License: CC BY 4.0. Verified via Commons API extmetadata 2026-09-25. 176KB - texture-dense source, accepted slightly over the ~170KB target at q56.
+
+### Reused on the guide (already registered above)
+- annaya-monastery.webp (hero, Paul Saad CC BY-SA 4.0), charbel-tomb.webp (Annaya section, LLEW CC BY-SA 4.0).
