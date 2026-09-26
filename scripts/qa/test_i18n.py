@@ -104,6 +104,15 @@ class CatalogTests(unittest.TestCase):
         self.assertLess(related.index('href="/ar/miracles/"'),
                         related.index('href="/ar/biography"'))
 
+    def test_arabic_miracle_hub_anchors_approval_and_separates_testimony(self):
+        registry, catalogs = load_catalog(ROOT)
+        html = builder.outputs(ROOT)[ROOT/'ar/miracles/index.html']
+        self.assertIn('href="https://www.sharbel.org/st-sharbel"', html)
+        self.assertIn('٥ كانون الأول ١٩٦٥', html)
+        self.assertIn('٩ تشرين الأول ١٩٧٧', html)
+        self.assertIn('ليست ضمن الحالات الثلاث', html)
+        self.assertEqual(builder.alternate_links(registry, 'miracles').count('hreflang="ar"'), 1)
+
     def test_unsafe_route_is_rejected(self):
         self.edit('registry.json',lambda d:d['locales']['es']['slugs'].update({'prayers':'../../account'}))
         with self.assertRaisesRegex(ValueError,'unsafe'):
