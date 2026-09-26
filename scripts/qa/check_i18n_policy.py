@@ -11,6 +11,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from i18n.catalog import locale_topics, read_json, page_url
+from i18n.mirror import render_pair
 
 
 class VisibleText(HTMLParser):
@@ -78,6 +79,7 @@ def check(root=ROOT):
     display_catalog = read_json(root/'locales/en/letters-display.json')['values']
     testimony_path = root / 'locales/en/testimonies.json'
     testimony_catalog = read_json(testimony_path) if testimony_path.exists() else None
+    prayer_mirror = render_pair(root) if (root/'templates/mirrors/prayers.html').exists() else {}
     # Generated English copy has exact freshness verification in full QA.
     if testimony_catalog and (root / 'testimonies-copy.js').exists():
         generated_copy = (root / 'testimonies-copy.js').read_text()
@@ -86,6 +88,10 @@ def check(root=ROOT):
                 errors.append(f'testimonies-copy.js: {key} differs from English catalog')
     for file, values in snapshot(root).items():
         additions = Counter(values) - Counter(baseline.get(file, {}))
+        if root/file in prayer_mirror:
+            # This English legacy URL now renders entirely from its own keyed
+            # English catalog; freshness is checked byte-for-byte by the build.
+            continue
         if file == 'testimonies.html' and testimony_catalog:
             # Existing interactive page; cataloged English strings are static
             # and the archive block is verified by the reproducible build.

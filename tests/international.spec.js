@@ -3,6 +3,8 @@ const AxeBuilder = require('@axe-core/playwright').default;
 const registry = require('../locales/registry.json');
 const languages = Object.keys(registry.locales);
 const catalogs = Object.fromEntries(languages.map(code => [code, require(`../locales/${code}/pages.json`)]));
+const prayerMirror = require('../locales/ar/mirrors/prayers.json');
+const topicHeading = (code, topic) => code === 'ar' && topic === 'prayers' ? prayerMirror['hero.heading'] : catalogs[code][topic].title;
 const routeFor = (code, topic) => topic ? `/${code}/${registry.locales[code].slugs[topic]}` : registry.locales[code].home;
 const topicLanguages = topic => topic ? languages.filter(code => (registry.topics[topic].locales || languages).includes(code)) : languages;
 const alternateFor = (code, topic) => topicLanguages(topic).includes(code) ? routeFor(code, topic) : registry.topics[topic].relatedEnglish;
@@ -19,7 +21,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
         const response = await page.goto(route);
         expect(response.status()).toBe(200);
         await expect(page.locator('h1')).toBeVisible();
-        if (topic) await expect(page.locator('h1')).toHaveText(catalogs[language][topic].title);
+        if (topic) await expect(page.locator('h1')).toHaveText(topicHeading(language, topic));
         await expect(page.locator('html')).toHaveAttribute('dir', config.direction);
         await expect(page.locator('html')).toHaveAttribute('lang', language);
         expect((await page.locator('main').innerText()).length).toBeGreaterThan(700);
@@ -32,11 +34,11 @@ for (const [language, config] of Object.entries(registry.locales)) {
         const anchors = await page.locator('a[href^="#"]').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
         for (const anchor of anchors) await expect(page.locator(anchor)).toHaveCount(1);
         const published = topicLanguages(topic);
-        if (topic && published.length > 1) {
+        if (topic && published.length > 1 && !(language === 'ar' && topic === 'prayers')) {
           const next = published[(published.indexOf(language) + 1) % published.length];
           await page.locator('header nav').getByRole('link',{name:registry.locales[next].nativeName,exact:true}).click();
           await expect(page.locator('html')).toHaveAttribute('lang',next);
-          await expect(page.locator('h1')).toHaveText(catalogs[next][topic].title);
+          await expect(page.locator('h1')).toHaveText(topicHeading(next, topic));
         }
       } finally {
         await context.close();
@@ -53,7 +55,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
       await page.goto('/saint-charbel-prayers?lang=en');
       await page.locator('#sc-language-select').selectOption(language);
       await expect(page).toHaveURL(new RegExp(routeFor(language,'prayers')+'$'));
-      await expect(page.locator('h1')).toHaveText(catalogs[language].prayers.title);
+      await expect(page.locator('h1')).toHaveText(topicHeading(language, 'prayers'));
     });
   }
 }
@@ -74,6 +76,21 @@ test('existing pages keep one top language selector without duplicate menus', as
   }
 });
 
+test('Arabic prayer mirror keeps authored copy and round-trips to English', async ({page}) => {
+  await page.goto('/ar/prayers');
+  await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
+  await expect(page.locator('main > section')).toHaveCount(7);
+  await expect(page.locator('.prayer-card')).toHaveCount(14);
+  await expect(page.locator('main img[src="/media/annaya/charbel-historic-photo.webp"]')).toHaveCount(1);
+  await page.reload();
+  await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
+  await page.locator('#sc-language-select').selectOption('en');
+  await expect(page).toHaveURL(/\/saint-charbel-prayers$/);
+  await page.locator('#sc-language-select').selectOption('ar');
+  await expect(page).toHaveURL(/\/ar\/prayers$/);
+  await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
+});
 
 test('English directory hub selector reaches the authored Arabic hub', async ({page}) => {
   await page.goto('/miracles/?lang=en');

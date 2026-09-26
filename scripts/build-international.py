@@ -8,6 +8,7 @@ import re
 from string import Template
 
 from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_locales
+from i18n.mirror import render_pair
 
 
 def alternate_links(registry, topic=None):
@@ -103,6 +104,12 @@ def outputs(root=ROOT):
             if route.endswith('/'):
                 result[root / route.lstrip('/') / '.htaccess'] = (
                     '# Canonical localized directory hub.\nOptions -Indexes\nDirectoryIndex index.html\n')
+    # The reviewed pair shares one skeleton; other guide locales remain unchanged.
+    mirrors = render_pair(root, registry)
+    # The English master receives its existing managed hreflang from the loop
+    # below; only the Arabic mirror is handed to the generated-page set here.
+    english_mirror = mirrors.pop(root / 'saint-charbel-prayers.html')
+    result.update(mirrors)
     home = root / 'index.html'
     text = replace_block(home.read_text(), 'i18n-alternates', alternate_links(registry))
     # Existing pages already have the top selector; never generate a duplicate menu.
@@ -111,7 +118,8 @@ def outputs(root=ROOT):
     for topic, config in registry['topics'].items():
         related = config['relatedEnglish'].lstrip('/')
         path = root / (related + 'index.html' if related.endswith('/') else related + '.html')
-        text = replace_block(path.read_text(), 'i18n-navigation', '')
+        text = english_mirror if path == root / 'saint-charbel-prayers.html' else result.get(path, path.read_text())
+        text = replace_block(text, 'i18n-navigation', '')
         if registry['defaultLocale'] not in topic_locales(registry, topic):
             # The English page is this topic's English alternate, so it carries the same cluster.
             links = '\n'.join('  ' + line for line in alternate_links(registry, topic).split('\n'))

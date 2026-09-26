@@ -156,25 +156,52 @@
     }
   }
 
+  function publishedRouteForPath(routes, pathname) {
+    if (!routes) return null;
+    var clean = pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+    if (clean === '/' || clean === '/index') return { targets: routes.homes, current: 'en' };
+    var topics = routes.topics || {};
+    var direct = topics[clean] || topics[clean + '/'];
+    if (direct) return { targets: direct, current: 'en' };
+    for (var topic in topics) {
+      if (!Object.prototype.hasOwnProperty.call(topics, topic)) continue;
+      var targets = topics[topic];
+      for (var code in targets) {
+        if (!Object.prototype.hasOwnProperty.call(targets, code)) continue;
+        if ((targets[code].replace(/\/$/, '') || '/') === clean) {
+          return { targets: targets, current: code };
+        }
+      }
+    }
+    for (var homeCode in routes.homes) {
+      if ((routes.homes[homeCode].replace(/\/$/, '') || '/') === clean) {
+        return { targets: routes.homes, current: homeCode };
+      }
+    }
+    return null;
+  }
+
   function getRequestedLang() {
     var params = new URLSearchParams(window.location.search);
     var fromQuery = (params.get('lang') || '').toLowerCase();
+    var published = publishedRouteForPath(window.SC_LOCALE_ROUTES, window.location.pathname);
+    // Authored mirrors remain in their authored language even if a previous
+    // page left a conflicting localStorage preference behind.
+    if (document.documentElement.hasAttribute('data-authored-mirror') && published && published.current !== 'en') return published.current;
     var lang = fromQuery || readStoredLang() || 'en';
     return LANG_BY_CODE[lang] ? lang : 'en';
   }
 
   function buildUrlForLang(langCode) {
     var url = new URL(window.location.href);
-    var routes = window.SC_LOCALE_ROUTES;
-    var cleanPath = url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
-    var isHome = ['/', '/index'].indexOf(cleanPath) !== -1;
-    // Directory hubs are canonical with a trailing slash. Look up both
-    // spellings instead of letting the selector fall back to machine
-    // translation of the English page when a localized route exists.
-    var targets = routes && (isHome ? routes.homes :
-      routes.topics[cleanPath] || routes.topics[cleanPath + '/']);
+    var published = publishedRouteForPath(window.SC_LOCALE_ROUTES, url.pathname);
+    var targets = published && published.targets;
     if (targets && targets[langCode]) {
-      url.pathname = targets[langCode];
+      // The authored mirror pairs with the full English master, while the
+      // independent /en/prayers reading guide remains indexable for now.
+      var mirrorEnglish = document.documentElement.getAttribute('data-authored-mirror') === 'prayers' &&
+        langCode === 'en' && url.pathname.replace(/\.html$/, '') === '/ar/prayers';
+      url.pathname = mirrorEnglish ? '/saint-charbel-prayers' : targets[langCode];
       url.searchParams.delete('lang');
       if (langCode === 'en' && url.pathname === '/') url.searchParams.set('lang', 'en');
       url.hash = '';
@@ -202,7 +229,14 @@
         return;
       }
       if (url.origin !== window.location.origin) return;
-      if (langCode && langCode !== 'en') {
+      var route = publishedRouteForPath(window.SC_LOCALE_ROUTES, url.pathname);
+      if (route && route.targets[langCode] &&
+          document.documentElement.hasAttribute('data-authored-mirror')) {
+        var mirrorEnglishLink = document.documentElement.getAttribute('data-authored-mirror') === 'prayers' &&
+          langCode === 'en' && url.pathname.replace(/\.html$/, '') === '/ar/prayers';
+        url.pathname = mirrorEnglishLink ? '/saint-charbel-prayers' : route.targets[langCode];
+        url.searchParams.delete('lang');
+      } else if (langCode && langCode !== 'en') {
         url.searchParams.set('lang', langCode);
       } else {
         url.searchParams.delete('lang');
@@ -649,6 +683,8 @@
     if (!target) return;
 
     var html = document.documentElement;
+    var published = publishedRouteForPath(window.SC_LOCALE_ROUTES, window.location.pathname);
+    if (document.documentElement.hasAttribute('data-authored-mirror') && published && published.current === langCode && langCode !== 'en') return;
     if (langCode === 'en') {
       setEnglishDocumentDefaults();
       var englishNodes = collectTextNodes();
