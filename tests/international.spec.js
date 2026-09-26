@@ -4,8 +4,9 @@ const registry = require('../locales/registry.json');
 const languages = Object.keys(registry.locales);
 const catalogs = Object.fromEntries(languages.map(code => [code, require(`../locales/${code}/pages.json`)]));
 const prayerMirror = require('../locales/ar/mirrors/prayers.json');
-const topicHeading = (code, topic) => (code === 'ar' || code === 'en') && topic === 'prayers' ?
-  (code === 'ar' ? prayerMirror['hero.heading'] : require('../locales/en/mirrors/prayers.json')['hero.heading']) :
+const prayerMirrorFrench = require('../locales/fr/mirrors/prayers.json');
+const topicHeading = (code, topic) => topic === 'prayers' && ['ar','en','fr'].includes(code) ?
+  ({ar:prayerMirror,fr:prayerMirrorFrench,en:require('../locales/en/mirrors/prayers.json')})[code]['hero.heading'] :
   catalogs[code][topic].title;
 const routeFor = (code, topic) => topic ? `/${code}/${registry.locales[code].slugs[topic]}` : registry.locales[code].home;
 const topicLanguages = topic => topic ? languages.filter(code => (registry.topics[topic].locales || languages).includes(code)) : languages;
@@ -36,7 +37,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
         const anchors = await page.locator('a[href^="#"]').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
         for (const anchor of anchors) await expect(page.locator(anchor)).toHaveCount(1);
         const published = topicLanguages(topic);
-        if (topic && published.length > 1 && !(['en','ar'].includes(language) && topic === 'prayers')) {
+        if (topic && published.length > 1 && !(['en','ar','fr'].includes(language) && topic === 'prayers')) {
           const next = published[(published.indexOf(language) + 1) % published.length];
           await page.locator('header nav').getByRole('link',{name:registry.locales[next].nativeName,exact:true}).click();
           await expect(page.locator('html')).toHaveAttribute('lang',next);
