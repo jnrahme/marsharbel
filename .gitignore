@@ -9,3 +9,7 @@ output/
 
 # Local Netlify folder
 .netlify
+
+# Served via TUS only - git-tracked woff2 paths get shadowed (0-byte/404) by the Hostinger git-integration snapshot layer in some regions
+media/fonts/noto-naskh-arabic-arabic-v3.woff2
+media/fonts/noto-sans-arabic-arabic-v3.woff2
