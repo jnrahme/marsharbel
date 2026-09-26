@@ -35,7 +35,10 @@ test('Arabic Qadisha persists in Arabic, switches to English master, and returns
 
 test('Arabic Qadisha has functioning nav and local authored links', async ({page}) => {
   await page.goto('/ar/qadisha-valley');
-  await expect(page.locator('header .nav-group').last().locator('.nav-sub a')).toHaveCount(8);
+  const travel = page.locator('header .nav-group').last().locator('.nav-sub');
+  for (const destination of ['/ar/qannoubine-monastery', '/ar/qozhaya-monastery', '/ar/qadisha-valley']) {
+    await expect(travel.locator(`a[href="${destination}"]`)).toHaveCount(1);
+  }
   await expect(page.locator('main a[href="/ar/annaya"]')).toHaveCount(2);
   await page.locator('main .btn[href="/ar/annaya"]').click();
   await expect(page).toHaveURL(/\/ar\/annaya$/);

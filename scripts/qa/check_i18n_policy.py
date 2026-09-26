@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 from i18n.catalog import locale_topics, read_json, page_url
 from i18n.mirror import render_pair
 from i18n.qadisha_mirror import render_qadisha
+from i18n.monastery_mirror import render_monasteries
 from i18n.qadisha_copy import validate as validate_qadisha, paragraphs as qadisha_paragraphs
 
 
@@ -83,6 +84,7 @@ def check(root=ROOT):
     testimony_catalog = read_json(testimony_path) if testimony_path.exists() else None
     prayer_mirror = render_pair(root) if (root/'templates/mirrors/prayers.html').exists() else {}
     qadisha_pages = render_qadisha(root) if (root / "templates/mirrors/qadisha.html").exists() else {}
+    monastery_pages = render_monasteries(root) if (root / "templates/mirrors/qannoubine-monastery.html").exists() else {}
     if (root/'qadisha-valley.html').exists():
         validate_qadisha(root)
     # Generated English copy has exact freshness verification in full QA.
@@ -93,7 +95,7 @@ def check(root=ROOT):
                 errors.append(f'testimonies-copy.js: {key} differs from English catalog')
     for file, values in snapshot(root).items():
         additions = Counter(values) - Counter(baseline.get(file, {}))
-        if root/file in prayer_mirror or root/file in qadisha_pages:
+        if root/file in prayer_mirror or root/file in qadisha_pages or root/file in monastery_pages:
             # This English legacy URL now renders entirely from its own keyed
             # English catalog; freshness is checked byte-for-byte by the build.
             continue
