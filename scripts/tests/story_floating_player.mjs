@@ -48,13 +48,13 @@ try {
     }
   });
 
-  await expect('Story page has Read Aloud button', async () => {
+  await expect('Story page has Listen to the story button', async () => {
     const readBtn = page.locator('#story-read');
     const visible = await readBtn.isVisible();
     if (!visible) throw new Error('Read Aloud button not visible');
     const text = await readBtn.textContent();
-    if (!/Read Aloud/i.test(text)) {
-      throw new Error(`Expected "Read Aloud", got: ${text}`);
+    if (!/Listen to the story/i.test(text)) {
+      throw new Error(`Expected "Listen to the story", got: ${text}`);
     }
   });
 
@@ -68,6 +68,7 @@ try {
 
   await expect('Auto Continue checkbox exists and is toggleable', async () => {
     const checkbox = page.locator('#story-auto-continue');
+    await page.locator('.story-settings summary').click();
     if (!await checkbox.isVisible()) throw new Error('Auto Continue checkbox not visible');
     const before = await checkbox.isChecked();
     await checkbox.click();
@@ -231,7 +232,7 @@ try {
 
   // Ensure audio is playing first
   const readBtn = await page.locator('#story-read').textContent();
-  if (/Read Aloud/i.test(readBtn)) {
+  if (/Listen to the story/i.test(readBtn)) {
     await page.click('#story-read');
     await page.waitForTimeout(500);
   }
@@ -244,8 +245,8 @@ try {
     });
     if (playerVisible) throw new Error('Floating player should be hidden after close');
     const readLabel = await page.locator('#story-read').textContent();
-    if (!/Read Aloud/i.test(readLabel)) {
-      throw new Error(`Expected "Read Aloud" after close, got: ${readLabel}`);
+    if (!/Listen to the story/i.test(readLabel)) {
+      throw new Error(`Expected "Listen to the story" after close, got: ${readLabel}`);
     }
   });
 

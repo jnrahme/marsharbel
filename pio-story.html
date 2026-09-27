@@ -135,12 +135,6 @@
         became a Capuchin friar, listened to people's sorrows for fifty years, and taught the world
         to "pray, hope, and don't worry."
       </p>
-      <p style="margin-top:0.6rem; opacity:0.85; font-size:0.92em;">
-        Read-aloud narration by an openly licensed voice model. Illustrations are original composite scenes, not historical footage.
-      </p>
-      <div class="story-tabs" role="tablist" aria-label="Story tabs">
-        <button class="story-tab active" role="tab" aria-selected="true" type="button">Story</button>
-      </div>
     </section>
 
     <div id="story-resume-banner" class="story-resume-banner" hidden aria-live="polite">
@@ -150,6 +144,36 @@
     </div>
 
     <section class="storybook reveal" aria-label="Illustrated storybook">
+      <div class="storybook-controls">
+        <span class="story-reading-indicator" id="story-reading-indicator">
+          <span class="story-reading-dot"></span>
+          <span id="story-reading-label">Reading…</span>
+          <span class="story-elapsed" id="story-elapsed">0:00</span>
+        </span>
+        <label class="story-voice-pack" for="story-voice-pack">
+          Voice Pack
+          <select id="story-voice-pack" aria-label="Select story voice pack"></select>
+        </label>
+        <button id="story-prev" class="btn subtle" type="button" disabled aria-label="Previous page">Previous Page</button>
+        <button id="story-read" class="btn subtle" type="button">Read Aloud</button>
+        <button id="story-next" class="btn primary" type="button" aria-label="Next page">Next Page</button>
+      </div>
+
+      <details class="story-settings">
+        <summary aria-label="Story settings" title="Story settings"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></summary>
+        <div class="storybook-extras">
+        <button id="story-reader-toggle" class="story-reader-toggle" type="button" title="Toggle reader mode for easier reading">Reader Mode</button>
+        <label class="story-auto-continue" title="Automatically read next page when current page finishes">
+          <input type="checkbox" id="story-auto-continue" />
+          Auto Continue
+        </label>
+        <div class="story-rate-group" role="group" aria-label="Playback speed">
+          <button class="story-rate-btn" type="button" data-rate="0.7">Slow</button>
+          <button class="story-rate-btn is-active" type="button" data-rate="1">Normal</button>
+          <button class="story-rate-btn" type="button" data-rate="1.3">Fast</button>
+        </div>
+        </div>
+      </details>
       <article class="storybook-panel">
         <div class="storybook-illustration" id="story-illustration" aria-hidden="true"><div class="scene-art scene-birth"><img class="scene-photo" src="./media/storybook-pio/images/page-01.webp" alt="" fetchpriority="high" decoding="async" /><div class="scene-photo-overlay" aria-hidden="true"></div></div></div>
         <div class="storybook-text">
@@ -161,39 +185,13 @@
         </div>
       </article>
 
-      <div class="storybook-extras">
-        <button id="story-reader-toggle" class="story-reader-toggle" type="button" title="Toggle reader mode for easier reading">Reader Mode</button>
-        <label class="story-auto-continue" title="Automatically read next page when current page finishes">
-          <input type="checkbox" id="story-auto-continue" />
-          Auto Continue
-        </label>
-        <div class="story-rate-group" role="group" aria-label="Playback speed">
-          <button class="story-rate-btn" type="button" data-rate="0.7">Slow</button>
-          <button class="story-rate-btn is-active" type="button" data-rate="1">Normal</button>
-          <button class="story-rate-btn" type="button" data-rate="1.3">Fast</button>
-        </div>
-        <span class="story-reading-indicator" id="story-reading-indicator">
-          <span class="story-reading-dot"></span>
-          <span id="story-reading-label">Reading…</span>
-          <span class="story-elapsed" id="story-elapsed">0:00</span>
-        </span>
-      </div>
-      <div class="storybook-controls">
-        <span id="story-step-sticky" class="story-step-sticky" aria-hidden="true">Page 1 of 16</span>
-        <label class="story-voice-pack" for="story-voice-pack">
-          Voice Pack
-          <select id="story-voice-pack" aria-label="Select story voice pack"></select>
-        </label>
-        <button id="story-prev" class="btn subtle" type="button" disabled aria-label="Previous page">Previous Page</button>
-        <button id="story-read" class="btn subtle" type="button">Read Aloud</button>
-        <button id="story-next" class="btn primary" type="button" aria-label="Next page">Next Page</button>
-      </div>
-
-      <article class="story-evidence" aria-live="polite">
-        <h3 id="story-evidence-title">Evidence for This Page</h3>
+      <details class="story-evidence">
+        <summary id="story-evidence-title">Evidence for This Page</summary>
         <ul id="story-evidence-list"></ul>
-      </article>
+      </details>
     </section>
+
+    <p class="story-production-note">Read-aloud narration by an openly licensed voice model. Illustrations are original composite scenes, not historical footage.</p>
 
     <section class="section reveal">
       <h2>What Young Hearts Can Learn</h2>

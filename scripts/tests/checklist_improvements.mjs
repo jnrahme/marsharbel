@@ -330,12 +330,12 @@ try {
   await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(500);
 
-  await expect('Story controls bar has sticky positioning', async () => {
+  await expect('Story controls bar appears before the art', async () => {
     const position = await page.evaluate(() =>
-      window.getComputedStyle(document.querySelector('.storybook-controls')).position
+      document.querySelector('.storybook-controls').compareDocumentPosition(document.querySelector('.storybook-panel')) & Node.DOCUMENT_POSITION_FOLLOWING ? 'before' : 'after'
     );
-    if (position !== 'sticky') {
-      throw new Error(`Expected sticky positioning, got: ${position}`);
+    if (position !== 'before') {
+      throw new Error(`Expected controls before art, got: ${position}`);
     }
   });
 
@@ -569,7 +569,6 @@ try {
   // ============================================================
 
   for (const [name, path, selector] of [
-    ['Story', '/story.html', '.storybook-controls'],
     ['Rosary', '/mysteries/joyful-1.html', '.meditation-actions']
   ]) {
     await expect(`${name} sticky controls have correct z-index above content`, async () => {
@@ -580,7 +579,7 @@ try {
     });
   }
 
-  await expect('Sticky controls have backdrop-filter for readability', async () => {
+  await expect('Rosary sticky controls have backdrop-filter for readability', async () => {
     const storyBackdrop = await page.evaluate(async () => {
       const el = document.querySelector('.storybook-controls');
       return el ? window.getComputedStyle(el).backdropFilter : '';
@@ -591,8 +590,8 @@ try {
       const el = document.querySelector('.meditation-actions');
       return el ? window.getComputedStyle(el).backdropFilter : '';
     });
-    if (!storyBackdrop && !rosaryBackdrop) {
-      throw new Error('Neither sticky control bar has backdrop-filter');
+    if (!rosaryBackdrop) {
+      throw new Error('Rosary sticky controls lack backdrop-filter');
     }
   });
 
@@ -797,68 +796,14 @@ try {
     }
   });
 
-  // ============================================================
-  // 18. STORY PROGRESS INDICATOR STICKY
-  // ============================================================
-
-  await expect('Sticky story progress indicator exists in controls bar', async () => {
+  // The reading panel contains the only page counter; it updates on page turns.
+  await expect('Story page has one progress indicator that updates', async () => {
     await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(500);
-    const stickyStep = await page.evaluate(() => {
-      const el = document.getElementById('story-step-sticky');
-      return el ? el.textContent : null;
-    });
-    if (!stickyStep) {
-      throw new Error('Sticky step indicator #story-step-sticky not found in controls bar');
-    }
-    if (!/Page\s+\d+\s+of\s+\d+/i.test(stickyStep)) {
-      throw new Error(`Sticky step should show "Page X of Y", got: "${stickyStep}"`);
-    }
-  });
-
-  await expect('Sticky progress indicator syncs with page navigation', async () => {
+    await page.waitForTimeout(300);
+    if (await page.locator('.storybook-step').count() !== 1) throw new Error('Expected one page indicator');
     await page.click('#story-next');
-    await page.waitForTimeout(300);
-    const stickyText = await page.evaluate(() =>
-      document.getElementById('story-step-sticky')?.textContent || ''
-    );
-    const stepText = await page.evaluate(() =>
-      document.getElementById('story-step')?.textContent || ''
-    );
-    if (stickyText !== stepText) {
-      throw new Error(`Sticky "${stickyText}" does not match step "${stepText}"`);
-    }
-    if (!/Page\s+2\s+of/i.test(stickyText)) {
-      throw new Error(`Expected Page 2 after navigation, got: "${stickyText}"`);
-    }
-  });
-
-  await expect('Sticky progress indicator is visible after scrolling past story panel', async () => {
-    await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(500);
-    // Scroll down past the story panel
-    await page.evaluate(() => window.scrollTo(0, 800));
-    await page.waitForTimeout(300);
-    const inViewport = await page.evaluate(() => {
-      const el = document.getElementById('story-step-sticky');
-      if (!el) return false;
-      const rect = el.getBoundingClientRect();
-      return rect.top >= 0 && rect.bottom <= window.innerHeight;
-    });
-    if (!inViewport) {
-      throw new Error('Sticky progress indicator should remain visible after scrolling');
-    }
-  });
-
-  await expect('Sticky progress indicator is inside a sticky-positioned parent', async () => {
-    const position = await page.evaluate(() => {
-      const el = document.getElementById('story-step-sticky');
-      if (!el) return 'not found';
-      return window.getComputedStyle(el.closest('.storybook-controls')).position;
-    });
-    if (position !== 'sticky') {
-      throw new Error(`Expected sticky-positioned parent, got: ${position}`);
-    }
+    const text = await page.locator('#story-step').textContent();
+    if (!/Page\s+2\s+of/i.test(text)) throw new Error(`Expected Page 2, got: ${text}`);
   });
 
   // ============================================================
@@ -977,6 +922,8 @@ try {
 
   await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(400);
+
+  await page.locator('.story-settings summary').click();
 
   await expect('Reader mode toggle button exists', async () => {
     const btn = page.locator('#story-reader-toggle');
