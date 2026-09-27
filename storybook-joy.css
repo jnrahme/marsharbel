@@ -1,0 +1,200 @@
+/* Children's reading room: scoped to the story shelf and storybook pages. */
+body.is-story-shelf,
+body.is-story-page {
+  background: radial-gradient(circle at 12% 10%, #fff6dc 0, transparent 28%),
+    radial-gradient(circle at 92% 18%, #fce6d2 0, transparent 36%),
+    #f7efd9;
+}
+body.is-story-shelf main,
+body.is-story-page main { color: #35291f; }
+body.is-story-shelf .hero,
+body.is-story-page .story-hero { border-bottom: 2px solid #e8cf9d; }
+body.is-story-shelf .hero p,
+body.is-story-shelf .section-sub,
+body.is-story-page .story-hero p { color: #57463a; }
+body.is-story-shelf .hero .kicker,
+body.is-story-page .story-hero .kicker {
+  color: #704524;
+  border-color: #cfaa70;
+}
+body.is-story-shelf .promo-grid {
+  gap: clamp(1rem, 2.8vw, 2rem);
+  border: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+body.is-story-shelf .promo-card {
+  position: relative;
+  background: #fffaf0;
+  border: 2px solid #e5cfa5;
+  border-radius: 24px;
+  box-shadow: 0 10px 24px rgba(84, 54, 26, .14);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+body.is-story-shelf .promo-card:hover,
+body.is-story-shelf .promo-card:focus-within {
+  transform: translateY(-3px);
+  border-color: #a9743e;
+  box-shadow: 0 16px 34px rgba(84, 54, 26, .22);
+}
+body.is-story-shelf .promo-card img { aspect-ratio: 16/9; object-fit: cover; }
+body.is-story-shelf .promo-body { padding: 1.35rem 1.5rem 1.6rem; gap: .65rem; }
+body.is-story-shelf .promo-kicker { color: #7b4e24; }
+body.is-story-shelf .promo-body h3 {
+  color: #30241c;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  line-height: 1.1;
+}
+body.is-story-shelf .promo-body p { color: #554436; }
+body.is-story-shelf .promo-link {
+  color: #56340f;
+  background: #f8deaa;
+  border: 2px solid #a67b42;
+  border-radius: 999px;
+  padding: .7rem 1.1rem;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: .5rem;
+  font-size: 1rem;
+  width: fit-content;
+}
+/* The existing named link is the sole focus target; its hit area covers the card. */
+body.is-story-shelf .promo-link::after { content: ''; position: absolute; inset: 0; }
+body.is-story-shelf .promo-link:focus-visible { outline: 3px solid #74451a; outline-offset: 4px; }
+body.is-story-shelf .promo-link:hover { color: #3b260f; background: #f2ca83; }
+body.is-story-shelf .card.story {
+  background: #fffaf0;
+  border: 2px solid #e5cfa5;
+  border-radius: 22px;
+  box-shadow: none;
+  padding: 1.3rem 1.5rem;
+}
+body.is-story-shelf .card.story p { color: #554436; }
+body.is-story-shelf .card.story a { color: #744418; }
+body.is-story-page .story-hero { padding-top: 1.25rem; padding-bottom: .7rem; }
+body.is-story-page .story-hero h1 { color: #36261c; }
+body.is-story-page .storybook { gap: .75rem; }
+body.is-story-page .storybook-controls {
+  padding: .55rem 0 .65rem;
+  gap: .6rem;
+  background: transparent;
+}
+body.is-story-page .storybook-controls .btn {
+  min-width: 0;
+  min-height: 48px;
+  border: 2px solid #98764b;
+  border-radius: 999px;
+  background: #fffaf0;
+  color: #3e2b1b;
+  font-size: .92rem;
+  padding: .65rem 1rem;
+}
+body.is-story-page .storybook-controls #story-read {
+  background: #f9d989;
+  color: #3c280f;
+  border-color: #947045;
+}
+body.is-story-page .storybook-controls .btn:hover:not(:disabled) { background: #f9e6b8; }
+body.is-story-page .storybook-controls .btn:focus-visible,
+body.is-story-page .story-settings summary:focus-visible {
+  outline: 3px solid #74451a;
+  outline-offset: 3px;
+}
+body.is-story-page .storybook-controls .btn:disabled { opacity: .55; }
+body.is-story-page .story-settings { color: #473325; }
+body.is-story-page .story-settings summary {
+  background: #fffaf0;
+  border: 1px solid #b39467;
+  border-radius: 12px;
+  padding: .45rem .65rem;
+  min-height: 42px;
+}
+body.is-story-page .storybook-extras {
+  border-radius: 16px;
+  background: #fffaf0;
+  color: #36261c;
+  padding: .8rem;
+}
+body.is-story-page .storybook-panel {
+  background: #fffcf4;
+  border: 2px solid #e1c596;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(84, 54, 26, .13);
+  gap: 0;
+}
+body.is-story-page .storybook-illustration { background: #efe0c4; }
+body.is-story-page .storybook-text { padding: clamp(1.25rem, 2.5vw, 2rem); gap: .75rem; }
+body.is-story-page .storybook-step { color: #724621; font-size: .82rem; }
+body.is-story-page .storybook-text h2 { color: #38291d; line-height: 1.07; }
+body.is-story-page .storybook-text #story-body { color: #443328; font-size: clamp(1rem, 1.35vw, 1.1rem); line-height: 1.72; }
+body.is-story-page .storybook-prayer,
+body.is-story-page .storybook-heart { color: #543e2c; opacity: 1; }
+body.is-story-page .story-evidence { border-color: #d5b98a; color: #45352a; }
+body.is-story-page .story-evidence summary,
+body.is-story-page .story-evidence li { color: #49382a; }
+body.is-story-page .story-evidence-type { color: #69421e; border-color: #b89462; }
+body.is-story-page .story-evidence-links a,
+body.is-story-page .storybook-page .card.story a { color: #754719; }
+body.is-story-page .story-production-note { color: #604e3e; }
+body.is-story-page .storybook-page .card.story {
+  background: #fffaf0;
+  border: 1px solid #e1c596;
+  border-radius: 18px;
+  padding: 1.4rem;
+  box-shadow: none;
+}
+body.is-story-page .storybook-page .card.story p,
+body.is-story-page .storybook-page .card.story li { color: #4d3b2b; }
+body.is-story-page .storybook-page .section h2 { color: #3a291e; }
+body.is-story-page .story-resume-banner { background: #fffaf0; color: #3d2b1d; }
+body.is-story-page .story-resume-dismiss { color: #634a36; }
+body.is-story-page .footer,
+body.is-story-shelf .footer { color: #4e4034; border-color: #d9c29e; }
+body.is-story-page .footer a,
+body.is-story-shelf .footer a { color: #754719; }
+@media (max-width: 740px) {
+  body.is-story-shelf .hero { padding: 1.9rem 0 .8rem; }
+  body.is-story-shelf .hero h1 { font-size: 3.2rem; }
+  body.is-story-shelf .promo-grid { grid-template-columns: minmax(0, 1fr); }
+  body.is-story-shelf .promo-body { padding: 1.1rem 1.2rem 1.35rem; }
+  body.is-story-shelf .promo-body h3 { font-size: 2rem; }
+  body.is-story-page .story-hero { padding-top: .7rem; }
+  body.is-story-page .storybook-controls { gap: .45rem; }
+  body.is-story-page .storybook-controls .btn { min-height: 44px; padding: .55rem .7rem; font-size: .8rem; }
+  body.is-story-page .storybook-text { padding: 1.1rem; }
+  body.is-story-page .storybook-panel { border-radius: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.is-story-shelf .promo-card { transition: none; }
+}
+/* Beat the shared legacy ID rule that otherwise leaves Next Page pale on cream. */
+body.is-story-page .storybook-controls #story-next {
+  background: #fffaf0;
+  color: #3e2b1b;
+  border: 2px solid #98764b;
+  box-shadow: none;
+}
+body.is-story-page .storybook-controls #story-next:hover:not(:disabled) { background: #f9e6b8; }
+body.is-story-page .storybook-page .card.story h3 { color: #3d2b1f; }
+@media (max-width: 740px) {
+  body.is-story-page .storybook-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.is-story-page .storybook-controls #story-read { grid-column: 1 / -1; width: 100%; }
+  body.is-story-page .storybook-controls #story-prev,
+  body.is-story-page .storybook-controls #story-next { width: 100%; }
+  body.is-story-page .storybook-controls .story-reading-indicator { grid-column: 1 / -1; }
+}
+body.is-story-page .story-hero .story-shelf-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 44px;
+  padding: .55rem .9rem;
+  border: 2px solid #ad8654;
+  border-radius: 999px;
+  background: #fffaf0;
+  color: #493019;
+  font-size: .88rem;
+  font-weight: 800;
+}
+body.is-story-page .story-hero .story-shelf-link:hover { background: #f9e6b8; }
+body.is-story-page .story-hero .story-shelf-link:focus-visible { outline: 3px solid #74451a; outline-offset: 3px; }
