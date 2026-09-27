@@ -1,3 +1,22 @@
 User-agent: *
 
 Sitemap: https://marsharbel.com/sitemap.xml
+
+# AI crawlers: answer engines and assistants are explicitly welcome.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /

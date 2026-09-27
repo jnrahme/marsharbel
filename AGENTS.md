@@ -63,6 +63,7 @@ Re-derive factual claims from primary sources before shipping (Holy See, whc.une
 - Scripts sourced from primary sources. No miracle promises; reported experiences framed as reported; composite scenes flagged as composite.
 - Consistent painterly illustration with correct age and clothing progression for the period.
 - Narration: Kokoro `am_michael` at 0.94 speed with sentence-end rests.
+- Every storybook ends with a "Points of reflection" outro: 3-5 concrete points tying the saint's choices to God's teaching plus an invitation for the listener's own life. Required for every new book; being retrofitted to the three live ones (Joey, 2026-09-27).
 - Checkpoint production work to an origin branch at every milestone. Work must never exist only in scratch - a full book's WIP was lost to a workspace wipe on 2026-09-27.
 
 ## Localization and mirrors
