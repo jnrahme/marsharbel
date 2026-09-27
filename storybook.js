@@ -1481,6 +1481,15 @@
       if (response.ok) {
         const messages = await response.json();
         UI.read = messages.listen;
+        // One direct route back to the shelf; keep the existing site nav and reader controls.
+        const hero = document.querySelector('.story-hero');
+        if (hero && !hero.querySelector('.story-shelf-link')) {
+          const shelfLink = document.createElement('a');
+          shelfLink.className = 'story-shelf-link';
+          shelfLink.href = './stories';
+          shelfLink.textContent = messages.allStories;
+          hero.appendChild(shelfLink);
+        }
         const summary = document.querySelector(['.story-settings', 'summary'].join(' '));
         if (summary) { summary.setAttribute('aria-label', messages.settings); summary.title = messages.settings; const label = document.createElement('span'); label.textContent = messages.settingsShort; summary.appendChild(label); }
         const note = document.querySelector('.story-production-note');

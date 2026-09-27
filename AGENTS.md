@@ -66,6 +66,10 @@ Re-derive factual claims from primary sources before shipping (Holy See, whc.une
 - Every storybook ends with a "Points of reflection" outro: 3-5 concrete points tying the saint's choices to God's teaching plus an invitation for the listener's own life. Required for every new book; being retrofitted to the three live ones (Joey, 2026-09-27).
 - Checkpoint production work to an origin branch at every milestone. Work must never exist only in scratch - a full book's WIP was lost to a workspace wipe on 2026-09-27.
 
+## Storybook visual and navigation standard (Joey, 2026-09-27)
+
+The `/stories` shelf and every storybook reader should be easy for a child to navigate and feel warm and happy to look at. Keep large illustrated shelf cards, clear whole-card click targets, a direct return route to the shelf, visible next/previous controls and generous readable story text. Use the shared `storybook-joy.css` on each new book, with `is-story-page` on its body. Keep one shared player; do not add a parallel control. After changes, inspect desktop and phone pixels and exercise card, page-turn and return interactions.
+
 ## Localization and mirrors
 
 All user-facing wording lives under `locales/<language>/` with stable message IDs (see the mandatory localization rule below). For mirrored pages (locale versions of English pages):
