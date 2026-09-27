@@ -472,3 +472,27 @@ do not count as SEO success.
 The bot should optimize for a growing library of trustworthy, useful, technically
 clean pages that people choose to read and return to. That is the durable path to
 search visibility across countries and languages.
+
+## AEO: answer-engine optimization (added 2026-09-27)
+
+Answer engines (ChatGPT, Perplexity, Copilot, Google AI Overviews) ride normal
+search indexing - there is no special markup that forces citation. The site's
+AEO posture:
+
+- `llms.txt` at the site root (v2 format: H1 name, blockquote summary, H2
+  sections with core pages and one-line notes). Keep it in sync when core
+  pages are added or retired.
+- `robots.txt` explicitly Allows GPTBot, OAI-SearchBot, PerplexityBot,
+  Perplexity-User, ClaudeBot and Googlebot. Do not block AI crawlers.
+- FAQPage schema wherever a visible FAQ/Common Questions section exists;
+  schema text must match the visible text (the generator enforces this).
+- Entity graph: WebSite/Organization sitewide with alternateName "Mar
+  Charbel"/"Saint Charbel Makhlouf"; Person schema on saint profile pages.
+- No speakable schema; no .md page alternates (deferred).
+
+Monthly AEO metric (fold into the 8AM SEO loop on the 1st): count AI-referrer
+sessions. Segment definition: utm_source in (chatgpt.com, perplexity.ai,
+copilot.microsoft.com) OR referrer containing chatgpt.com / perplexity /
+copilot. NOTE: the site currently has no analytics property (no GA/gtag), so
+this metric is pending an analytics decision; record the definition here so
+any future property implements it from day one.

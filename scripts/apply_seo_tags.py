@@ -283,7 +283,7 @@ def clean_text(fragment: str) -> str:
 def faq_pairs(html: str) -> list[tuple[str, str]]:
     """Question/answer pairs from a page's Frequently Asked Questions section."""
     section = re.search(
-        r'<section class="section">\s*<h2>\s*Frequently Asked Questions\s*</h2>([\s\S]*?)</section>',
+        r'<section class="section">\s*<h2[^>]*>\s*(?:Frequently Asked Questions|Common Questions)[^<]*</h2>([\s\S]*?)</section>',
         html, re.I)
     if not section:
         return []
@@ -339,6 +339,40 @@ def tourist_schema(path: Path, html: str, url: str, title: str, description: str
     if image:
         attraction["image"] = image
     return attraction
+
+
+SAINT_STEMS = {
+    "st-anthony-of-padua",
+    "st-augustine-of-hippo",
+    "st-francis-of-assisi",
+    "st-john-chrysostom",
+    "st-john-paul-ii",
+    "st-maroun",
+    "st-nimatullah",
+    "st-padre-pio",
+    "st-rafqa",
+    "st-teresa-of-calcutta",
+    "history",
+}
+
+
+def person_schema(path: Path, html: str, url: str, title: str, description: str) -> dict | None:
+    """Person entity for the saint profile pages and the Charbel biography.
+
+    Name comes from the page's visible H1 so schema always matches on-page
+    text. Skips pages that already carry a Person block."""
+    if path.parent != ROOT or path.stem not in SAINT_STEMS:
+        return None
+    if re.search(r'"@type"\s*:\s*"Person"', html):
+        return None
+    heading = re.search(r"<h1\b[^>]*>(.*?)</h1>", html, re.I | re.S)
+    name = clean_text(heading[1]) if heading else title
+    if not name:
+        return None
+    person = {"@type": "Person", "name": name, "description": description, "url": url}
+    if path.stem == "history":
+        person["alternateName"] = ["Mar Charbel", "Saint Charbel Makhlouf"]
+    return person
 
 
 def robots_for(path: Path) -> str:
@@ -406,7 +440,9 @@ def build_meta_block(url: str, title: str, description: str, robots: str, image:
         "name": title,
         "description": description,
         "url": url,
-        "isPartOf": {"@type": "WebSite", "name": "Saint Charbel", "url": f"{SITE}/"},
+        "isPartOf": {"@type": "WebSite", "name": "Saint Charbel",
+                     "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf"],
+                     "url": f"{SITE}/"},
     }
     if "noindex" not in robots:
         webpage_schema["isPartOf"]["publisher"] = PUBLISHER
@@ -477,7 +513,8 @@ def update_file(path: Path) -> bool:
     breadcrumb = breadcrumb_for(path, title) if "noindex" not in robots and not authored_breadcrumb else None
     standalone = []
     if not has_graph_page and "noindex" not in robots:
-        for block in (faq_schema(html), tourist_schema(path, html, url, title, description, image)):
+        for block in (faq_schema(html), tourist_schema(path, html, url, title, description, image),
+                      person_schema(path, html, url, title, description)):
             if block:
                 standalone.append(block)
     meta_block = build_meta_block(url=url, title=title, description=description, robots=robots, image=image,
