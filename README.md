@@ -93,13 +93,18 @@ ships, the README is updated in the same PR or a small follow-up docs PR.
 ## Current state (2026-09-27)
 
 **Live now:** 154 indexable pages in the sitemap across eight locales;
-four saint storybooks in the shared player; Arabic and French monastery
+four saint storybooks in the shared player under the warm cream
+child-friendly design standard (storybook-joy.css); Arabic and French monastery
 mirrors; shared prayers mirrored in all 8 locales; FAQPage/Person/Organization
 structured data sitewide on managed pages; `/llms.txt` and AI-crawler-friendly
 `robots.txt`.
 
 **Recent ships:**
 
+- 2026-09-27 - Child-friendly stories design standard: warm cream storybook
+  treatment (storybook-joy.css) is the permanent design language for the
+  stories section - landing cards with pill CTAs, cream reader surfaces,
+  unified header/controls across all four storybooks (#303)
 - 2026-09-27 - Mother Teresa storybook: 10 narrated pages (7:20 audio),
   Points-of-reflection outro, stories library card, sitemap entry (#300)
 - 2026-09-27 - AEO technical pass: llms.txt, AI-crawler robots rules,
