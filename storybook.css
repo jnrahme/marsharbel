@@ -1302,3 +1302,67 @@
 .storybook-panel{border-left:0;border-right:0;border-radius:0;background:transparent;box-shadow:none}
 .storybook-text{padding-left:clamp(1.2rem,4vw,3.25rem);padding-right:0}.story-evidence{border-left:0;border-right:0;border-radius:0;background:transparent}
 .storybook-page .card.story{border-left:0;border-right:0;border-radius:0;background:transparent;box-shadow:none}
+
+/* Story-first reading layout. Keep controls visible before the art and prose. */
+.is-story-page .story-hero{padding:1rem 0 .35rem;gap:.35rem}
+.is-story-page .story-hero h1{font-size:clamp(2rem,4.4vw,3.4rem);max-width:none;line-height:1.05}
+.is-story-page .story-hero p{font-size:.88rem;line-height:1.4;max-width:65ch}
+.is-story-page .storybook{padding-top:.25rem;gap:.55rem}
+.is-story-page .storybook-panel{gap:.65rem}
+.is-story-page .storybook-illustration{min-height:0;aspect-ratio:16/9}
+.is-story-page .scene-photo{object-fit:contain;animation:none}
+.is-story-page .storybook-controls{position:relative;top:auto;z-index:1;margin:0;padding:.25rem 0 .45rem;background:transparent;backdrop-filter:none;border:0;justify-content:flex-start}
+.is-story-page .storybook-controls #story-read{order:-1;background:var(--theme-accent);color:var(--theme-page-deep);border-color:var(--theme-accent);font-size:.9rem}
+.is-story-page .story-step-sticky{margin-right:auto}
+.is-story-page .storybook-text{gap:.5rem;padding:1rem 1.1rem}
+.is-story-page .storybook-prayer,.is-story-page .storybook-heart{font-size:.86rem;line-height:1.45!important;opacity:.8;border-left-width:2px}
+.is-story-page .story-settings{width:fit-content;color:var(--theme-ink-soft)}
+.is-story-page .story-settings summary{cursor:pointer;list-style:none;padding:.25rem .5rem;border:1px solid var(--theme-line-soft);border-radius:8px;font-size:1rem;line-height:1.2}
+.is-story-page .story-settings summary::-webkit-details-marker{display:none}
+.is-story-page .story-settings[open]{width:100%}
+.is-story-page .storybook-extras{padding:.55rem 0;align-items:center}
+.is-story-page .story-evidence{padding:.4rem 0;border:0;border-top:1px solid var(--theme-line-soft);background:transparent}
+.is-story-page .story-evidence summary{cursor:pointer;color:var(--theme-ink-soft);font-size:.86rem}
+.is-story-page .story-evidence ul{padding-top:.75rem}
+.is-story-page .story-production-note{font-size:.76rem;line-height:1.45;color:var(--theme-ink-soft);margin:.4rem 0 1.4rem}
+.storybook-panel.is-turning .storybook-text{animation:page-copy-gentle 180ms ease-out}
+.storybook-panel.is-turning .scene-art{animation:page-illustration-gentle 220ms ease-out}
+@keyframes page-copy-gentle{from{opacity:.85;transform:translateY(3px)}to{opacity:1;transform:none}}
+@keyframes page-illustration-gentle{from{opacity:.85}to{opacity:1}}
+@media(max-width:740px){
+ .is-story-page .topbar .nav{display:grid;grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"brand install lang" "links links links";min-height:0;gap:.15rem .35rem;padding:.25rem 0}
+ .is-story-page .topbar .brand{font-size:1.15rem;gap:.35rem;white-space:nowrap}
+ .is-story-page .topbar .brand-mark{width:24px;height:24px}
+ .is-story-page .topbar .links{width:100%;padding:.05rem 0;min-height:0}
+ .is-story-page .topbar .links a{padding:.25rem .45rem;font-size:.76rem}
+ .is-story-page .topbar .sc-install-app-btn{font-size:.65rem;padding:.25rem .4rem;white-space:nowrap}
+ .is-story-page .topbar .lang-switcher{max-width:116px}
+ .is-story-page .topbar .lang-switcher label{display:none}
+ .is-story-page .topbar .lang-switcher select{max-width:110px;min-width:0}
+ .is-story-page .story-hero{padding:.6rem 0 .1rem;gap:.2rem}
+ .is-story-page .story-hero .kicker{font-size:.6rem;padding:.1rem 0}
+ .is-story-page .story-hero h1{font-size:1.75rem}
+ .is-story-page .story-hero p{display:none}
+ .is-story-page .storybook-illustration{min-height:0;aspect-ratio:16/9}
+ .is-story-page .storybook-panel{display:flex;flex-direction:column}
+ .is-story-page .storybook-controls{gap:.3rem;align-items:center}
+ .is-story-page .storybook-controls .btn{min-width:0;padding:.45rem .6rem;font-size:.75rem}
+ .is-story-page .storybook-controls #story-read{font-size:.78rem}
+ .is-story-page .story-step-sticky{font-size:.58rem;margin-right:0;order:-2;width:100%}
+ .is-story-page .storybook-text h2{font-size:1.9rem}
+ .is-story-page .storybook-text{padding:.75rem .4rem 1rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .storybook-panel.is-turning .storybook-text,.storybook-panel.is-turning .scene-art,.scene-photo,.storybook-illustration::before,.storybook-illustration::after{animation:none!important;transition:none!important}
+}
+
+/* Charbel's original 3:2 plates should not sit in wide black gutters. */
+.is-story-page:not([data-story]) .storybook-illustration{aspect-ratio:3/2}
+@media(max-width:740px){.is-story-page:not([data-story]) .storybook-illustration{aspect-ratio:3/2}}
+/* Page navigation clears the sticky site header instead of hiding the title. */
+.is-story-page .storybook-panel{scroll-margin-top:7rem}
+/* The narration is the only gold action; page navigation remains available but quiet. */
+.is-story-page .storybook-controls #story-next{background:transparent;color:var(--theme-ink);border-color:var(--theme-line);box-shadow:none}
+.is-story-page .storybook-controls #story-next:hover{background:var(--theme-wash)}
+.is-story-page .story-settings summary{display:inline-flex;align-items:center;gap:.35rem}
+.is-story-page .story-settings summary span{font-size:.75rem}

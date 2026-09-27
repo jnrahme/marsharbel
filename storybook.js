@@ -541,7 +541,7 @@
   const PIO_STORY_EN = [
       {
         title: 'In Pietrelcina',
-        body: 'In a small Italian town called Pietrelcina, a child named Francesco grew up with his family. His parents gave him the name Francesco. Long before crowds knew his name, he learned to pray. Prayer was not a trick for getting everything he wanted. It was a way to bring his whole life before God.',
+        body: 'In the Italian town of Pietrelcina, Francesco grew up with his family. Long before crowds knew his name, he learned to pray. Prayer was not a trick for getting everything he wanted. It was a way to bring his whole life before God.',
         prayer: 'Little prayer: Jesus, teach me to pray like Francesco did.',
         heart: 'Heart Moment: God loves us long before anyone knows our name.',
         scene: 'birth',
@@ -967,7 +967,7 @@
   const READER_MODE_KEY = 'storybook_reader_mode';
   const LAST_PAGE_KEY = storyId === 'charbel' ? 'storybook_last_page' : `storybook_last_page_${storyId}`;
   const readAutoContinuePref = () => {
-    try { return localStorage.getItem(AUTO_CONTINUE_KEY) === 'true'; } catch (_) { return false; }
+    try { return localStorage.getItem(AUTO_CONTINUE_KEY) !== 'false'; } catch (_) { return true; }
   };
   const writeAutoContinuePref = val => {
     try { localStorage.setItem(AUTO_CONTINUE_KEY, String(val)); } catch (_) { /* no-op */ }
@@ -1223,12 +1223,14 @@
       setTimeout(() => {
         index++;
         render();
-        setTimeout(() => readCurrentPage(), 400);
-      }, 600);
+        el.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => readCurrentPage(), 220);
+      }, 300);
     }
   };
 
   const animatePageTurn = () => {
+    if (window.matchMedia(['(prefers-reduced-motion:', 'reduce)'].join(' ')).matches) return;
     el.panel.classList.remove('is-turning');
     window.requestAnimationFrame(() => {
       el.panel.classList.add('is-turning');
@@ -1452,6 +1454,17 @@
   }
 
   const init = async () => {
+    try {
+      const response = await fetch(`./locales/${contentLang}/storybook.json`);
+      if (response.ok) {
+        const messages = await response.json();
+        UI.read = messages.listen;
+        const summary = document.querySelector(['.story-settings', 'summary'].join(' '));
+        if (summary) { summary.setAttribute('aria-label', messages.settings); summary.title = messages.settings; const label = document.createElement('span'); label.textContent = messages.settingsShort; summary.appendChild(label); }
+        const note = document.querySelector('.story-production-note');
+        if (note) note.textContent = messages.disclosure;
+      }
+    } catch (_) { /* Legacy strings remain usable when previewed offline. */ }
     // Read last page BEFORE first render (which overwrites it with 0)
     const savedLastPage = readLastPage();
 

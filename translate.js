@@ -501,7 +501,7 @@
       }
     };
     window.__scInstallApp = handleInstallClick;
-    window.__scInstallLabel = isIOS ? 'Add App' : 'Install App';
+    window.__scInstallLabel = 'Install App';
 
     var footerHost = document.querySelector('.footer .site-shell') || document.querySelector('.footer') || document.querySelector('main');
     if (footerHost) {

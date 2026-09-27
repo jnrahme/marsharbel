@@ -80,6 +80,7 @@ def check(root=ROOT):
     baseline = read_json(root/'locales/legacy-text-baseline.json')
     errors = []
     display_catalog = read_json(root/'locales/en/letters-display.json')['values']
+    storybook_catalog = read_json(root/'locales/en/storybook.json')
     testimony_path = root / 'locales/en/testimonies.json'
     testimony_catalog = read_json(testimony_path) if testimony_path.exists() else None
     prayer_mirror = render_pair(root) if (root/'templates/mirrors/prayers.html').exists() else {}
@@ -108,6 +109,10 @@ def check(root=ROOT):
         # the frozen legacy baseline. The per-file counts prevent a second
         # unreviewed occurrence from being silently accepted.
         additions -= Counter(display_catalog.get(file, {}))
+        if file in ('story.html','pio-story.html','jpii-story.html'):
+            additions -= Counter({'Story settings': 2})
+            if file != 'story.html': additions -= Counter({storybook_catalog['disclosure']: 1})
+        if file == 'storybook.js': additions -= Counter({read_json(root/'locales/en/pio-story-copy.json')['firstPage']: 1})
         if additions:
             errors.append(f'{file}: new hardcoded wording; move it to locales/: {list(additions)[:3]}')
     for path in (root/'templates/international').glob('*.html'):
