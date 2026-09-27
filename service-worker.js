@@ -1,4 +1,4 @@
-const CACHE_NAME = 'st-charbel-pwa-v4';
+const CACHE_NAME = 'st-charbel-pwa-v5';
 const OFFLINE_URL = '/index.html';
 const PRECACHE_URLS = [
   '/',

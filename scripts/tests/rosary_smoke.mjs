@@ -156,10 +156,19 @@ try {
       return home && /lang=es/i.test(home.getAttribute('href') || '');
     }, null, { timeout: 10000 });
     await page.click('.topbar .links > a:first-child');
-    await page.waitForURL(url => url.pathname.endsWith('/index.html') || url.pathname === '/', { timeout: 10000 });
-    const lang = new URL(page.url()).searchParams.get('lang');
-    if (lang !== 'es') {
-      throw new Error(`Expected lang=es on next page, got: ${page.url()}`);
+    // A published locale twin wins over the runtime-translation query: the
+    // homepage resolves to its authored /es/ hub, which still proves the
+    // chosen language persisted across navigation.
+    await page.waitForURL(url => /^\/es(\/|\/index\.html)?$/.test(url.pathname) || url.pathname.endsWith('/index.html') || url.pathname === '/', { timeout: 10000 });
+    const url = new URL(page.url());
+    const onTwin = /^\/es\//.test(url.pathname) || url.pathname === '/es';
+    const lang = url.searchParams.get('lang');
+    if (!onTwin && lang !== 'es') {
+      throw new Error(`Expected es twin or lang=es on next page, got: ${page.url()}`);
+    }
+    const docLang = await page.evaluate(() => document.documentElement.lang);
+    if (docLang !== 'es') {
+      throw new Error(`Expected document lang=es on next page, got: ${docLang} (${page.url()})`);
     }
   });
 
@@ -167,25 +176,24 @@ try {
     await page.goto(`${baseUrl}/mysteries/joyful-1.html?lang=es`, { waitUntil: 'domcontentloaded' });
 
     await page.click('.topbar .links > a:first-child');
-    await page.waitForURL(url => url.pathname.endsWith('/index.html') || url.pathname === '/', { timeout: 10000 });
-    let lang = new URL(page.url()).searchParams.get('lang');
-    if (lang !== 'es') {
-      throw new Error(`Expected lang=es on Home, got: ${page.url()}`);
+    // Published twin redirect: Home lands on the authored Spanish hub.
+    await page.waitForURL(url => /^\/es(\/|\/index\.html)?$/.test(url.pathname), { timeout: 10000 });
+    if ((await page.evaluate(() => document.documentElement.lang)) !== 'es') {
+      throw new Error(`Expected document lang=es on Home, got: ${page.url()}`);
     }
 
-    await page.click('.topbar .links a[href*="/stories"]');
-    await page.waitForURL(/\/stories(\.html)?(\?|$)/i, { timeout: 10000 });
-    lang = new URL(page.url()).searchParams.get('lang');
-    if (lang !== 'es') {
-      throw new Error(`Expected lang=es on Story, got: ${page.url()}`);
+    // The Spanish tree is authored, so navigation stays in Spanish without a
+    // query param: follow the hub's own Story and Rosary links.
+    await page.click('a[href="/es/biografia"]');
+    await page.waitForURL(/\/es\/biografia/i, { timeout: 10000 });
+    if ((await page.evaluate(() => document.documentElement.lang)) !== 'es') {
+      throw new Error(`Expected document lang=es on Story, got: ${page.url()}`);
     }
 
-    await page.locator('.nav-parent[href*="prayer-library"]').hover();
-    await page.click('.topbar .links a[href*="rosary-visual-guide"]');
-    await page.waitForURL(/rosary-visual-guide/i, { timeout: 10000 });
-    lang = new URL(page.url()).searchParams.get('lang');
-    if (lang !== 'es') {
-      throw new Error(`Expected lang=es on Rosary, got: ${page.url()}`);
+    await page.click('a[href="/es/rosario"]');
+    await page.waitForURL(/\/es\/rosario/i, { timeout: 10000 });
+    if ((await page.evaluate(() => document.documentElement.lang)) !== 'es') {
+      throw new Error(`Expected document lang=es on Rosario, got: ${page.url()}`);
     }
   });
 

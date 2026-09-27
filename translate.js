@@ -185,10 +185,15 @@
     var params = new URLSearchParams(window.location.search);
     var fromQuery = (params.get('lang') || '').toLowerCase();
     var published = publishedRouteForPath(window.SC_LOCALE_ROUTES, window.location.pathname);
-    // Authored mirrors remain in their authored language even if a previous
-    // page left a conflicting localStorage preference behind.
-    if (document.documentElement.hasAttribute('data-authored-mirror') && published && published.current !== 'en') return published.current;
-    var lang = fromQuery || readStoredLang() || 'en';
+    // A published URL owns its authored language, including the English
+    // master. A preference or stray ?lang= cannot turn English copy into RTL
+    // or overwrite a translated page's authored language. An explicit query
+    // for an *unpublished* locale is still the runtime-translation fallback.
+    if (published && published.current !== 'en') return published.current;
+    if (published && (!fromQuery || published.targets[fromQuery])) return published.current;
+    // On an English URL without a published twin, only an explicit language
+    // query may invoke runtime translation. A stored choice never flips chrome.
+    var lang = fromQuery || 'en';
     return LANG_BY_CODE[lang] ? lang : 'en';
   }
 
@@ -743,13 +748,29 @@
     html.setAttribute('dir', 'ltr');
   }
 
+  // A saved choice can move an English URL only when a real, published twin
+  // exists. Never apply its direction to the English document itself. Explicit
+  // ?lang=en pins the requested English URL, and localized URLs own their copy.
+  // An explicit ?lang=<published locale> on English also resolves to its twin.
+  var initialRoute = publishedRouteForPath(window.SC_LOCALE_ROUTES, window.location.pathname);
+  var requestedQuery = (new URLSearchParams(window.location.search).get('lang') || '').toLowerCase();
+  var preferred = requestedQuery || readStoredLang();
+  if (initialRoute && initialRoute.current === 'en' && preferred !== 'en' &&
+      initialRoute.targets[preferred]) {
+    var destination = new URL(window.location.href);
+    destination.pathname = initialRoute.targets[preferred];
+    destination.searchParams.delete('lang');
+    window.location.replace(destination.toString());
+    return;
+  }
+
   var requestedLang = getRequestedLang();
   ensureSeoHeadAssets();
   ensurePwaHeadAssets();
   registerServiceWorker();
   ensureLegalFooterLinks();
   setupInstallAppPrompt();
-  writeStoredLang(requestedLang);
+  // Persist only an explicit selector change, never a passive page visit.
   createSwitcher(requestedLang);
   rewriteInternalLinks(requestedLang);
 
