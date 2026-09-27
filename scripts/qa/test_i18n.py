@@ -31,6 +31,17 @@ class CatalogTests(unittest.TestCase):
         update(data)
         path.write_text(json.dumps(data))
 
+    def test_arabic_raymond_story_distinguishes_reporter_from_medical_record(self):
+        registry, _ = load_catalog(ROOT)
+        self.assertEqual(registry['topics']['raymondStory']['sources'],
+                         ['raymondAccount', 'catholicWorldRaymond'])
+        html = builder.outputs(ROOT)[ROOT/'ar/miracles/raymond-nader.html']
+        self.assertIn('https://www.catholicworldreport.com/2019/01/28/lebanese-man-finds-hand-of-providence-in-mystical-experience/', html)
+        self.assertIn('لا ملف طبي منشور ولا حكم من لجنة كنسية', html)
+        self.assertIn('الاعتراف بالجماعة لا يعني المصادقة', html)
+        self.assertIn('ثلاث مرات', html)
+        self.assertNotIn('أعلنت العلامة عجيبة.', html.split('id="section-medical"')[1].split('id="section-status"')[0])
+
     def test_arabic_dafne_story_anchors_eparchy_statement_without_roman_approval(self):
         registry, catalogs = load_catalog(ROOT)
         sources = registry['topics']['dafneStory']['sources']
