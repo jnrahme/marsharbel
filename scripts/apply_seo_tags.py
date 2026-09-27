@@ -234,6 +234,8 @@ def og_image_for(path: Path, html: str = "") -> str:
     # so pin the storybook cover instead of falling back to the default.
     if path.name == "mother-teresa-story.html":
         return f"{SITE}/media/storybook-teresa/images/page-01.webp"
+    if path.name == "rafqa-story.html":
+        return f"{SITE}/media/storybook-rafqa/images/page-01.webp"
     if path.name == "pio-story.html":
         return f"{SITE}/media/storybook-pio/images/page-01.webp"
     if path.name == "jpii-story.html":
