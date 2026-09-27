@@ -890,8 +890,7 @@
     readingIndicator: document.getElementById('story-reading-indicator'),
     readingLabel: document.getElementById('story-reading-label'),
     elapsed: document.getElementById('story-elapsed'),
-    rateBtns: document.querySelectorAll('.story-rate-btn'),
-    stepSticky: document.getElementById('story-step-sticky')
+    rateBtns: document.querySelectorAll('.story-rate-btn')
   };
 
   if (!el.step || !el.title || !el.body || !el.prayer || !el.heart || !el.art || !el.evidenceTitle || !el.evidenceList || !el.pack || !el.prev || !el.next || !el.read || !el.panel || !el.frame) {
@@ -1242,7 +1241,6 @@
     const illustration = page.illustration || SCENE_IMAGES[page.scene] || './gallery/charbel-portrait.jpg';
     const stepText = `${UI.pagePrefix} ${index + 1} ${UI.pageConnector} ${pages.length}`;
     el.step.textContent = stepText;
-    if (el.stepSticky) el.stepSticky.textContent = stepText;
     el.title.textContent = page.title;
     el.body.textContent = page.body;
     el.prayer.textContent = page.prayer;
