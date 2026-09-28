@@ -52,7 +52,7 @@ test('promises carry Church-status labels and no guaranteed-outcome language', a
 
 test('prayer library links into the rest of the site', async ({ page }) => {
   await page.goto('/prayer-library.html');
-  for (const slug of ['saint-charbel-prayers', 'rosary-visual-guide', 'mystery-meditation', 'become-like-charbel']) {
+  for (const slug of ['en/prayers', 'rosary-visual-guide', 'mystery-meditation', 'become-like-charbel']) {
     await expect(page.locator(`main a[href*="${slug}"]`).first()).toBeVisible();
   }
 });

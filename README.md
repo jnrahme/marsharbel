@@ -92,7 +92,7 @@ ships, the README is updated in the same PR or a small follow-up docs PR.
 
 ## Current state (2026-09-27)
 
-**Live now:** 154 indexable pages in the sitemap across eight locales;
+**Live now:** 153 indexable pages in the sitemap across eight locales;
 five saint storybooks in the shared player under the warm cream
 child-friendly design standard (storybook-joy.css); Arabic and French monastery
 mirrors; shared prayers mirrored in all 8 locales; FAQPage/Person/Organization
@@ -101,6 +101,15 @@ structured data sitewide on managed pages; `/llms.txt` and AI-crawler-friendly
 
 **Recent ships:**
 
+- 2026-09-27 - Prayer library canonical consolidation: the legacy English
+  prayer master `/saint-charbel-prayers` duplicated the `/en/prayers` guide
+  body byte-for-byte and competed with it as canonical - it now 301s to
+  `/en/prayers` (.htaccess, same pattern as the miracles.html/news.html
+  consolidations), left the sitemap, and carries noindex as a build-only
+  source for the prayer mirror generator; nav, body CTAs, locale switcher
+  targets and monastery/qadisha dropdowns repointed (locale pages point at
+  their own authored prayer mirrors); `/saint-charbel-novena` full
+  traditional text added to `/llms.txt` (#316)
 - 2026-09-27 - News outcomes: Monte Sole beatification confirmed in Bologna
   (the three martyr priests are now Blessed) and the Byblos-Annaya prayer
   walk completed (including Anthony Jarjour's five-day walk from Tyre) -

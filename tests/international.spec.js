@@ -94,7 +94,7 @@ test('Arabic prayer mirror keeps authored copy and round-trips to English', asyn
   await page.reload();
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
   await page.locator('#sc-language-select').selectOption('en');
-  await expect(page).toHaveURL(/\/saint-charbel-prayers$/);
+  await expect(page).toHaveURL(/\/en\/prayers$/);
   await page.locator('#sc-language-select').selectOption('ar');
   await expect(page).toHaveURL(/\/ar\/prayers$/);
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);

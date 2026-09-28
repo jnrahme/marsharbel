@@ -49,7 +49,7 @@ test('French mirror uses the authored locale and switches to English', async ({p
   await page.reload();
   await expect(page.locator('h1')).toHaveText('Bibliothèque de prières de saint Charbel');
   await page.locator('#sc-language-select').selectOption('en');
-  await expect(page).toHaveURL(/\/saint-charbel-prayers$/);
+  await expect(page).toHaveURL(/\/en\/prayers$/);
 });
 
 test('French prayer mirror keeps its native text with an English preference', async ({page}) => {
@@ -61,7 +61,7 @@ test('French prayer mirror keeps its native text with an English preference', as
   await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
 });
 
-test('Spanish mirror stays authored through reload and returns to English master', async ({page}) => {
+test('Spanish mirror stays authored through reload and returns to the English guide', async ({page}) => {
   await page.goto('/saint-charbel-prayers?lang=en');
   await page.locator('#sc-language-select').selectOption('es');
   await expect(page).toHaveURL(/\/es\/oraciones$/);
@@ -69,13 +69,13 @@ test('Spanish mirror stays authored through reload and returns to English master
   await page.reload();
   await expect(page.locator('h1')).toHaveText('Biblioteca de oraciones a san Chárbel');
   await page.locator('#sc-language-select').selectOption('en');
-  await expect(page).toHaveURL(/\/saint-charbel-prayers$/);
+  await expect(page).toHaveURL(/\/en\/prayers$/);
   await page.goto('/es/oraciones?lang=en');
   await expect(page.locator('html')).toHaveAttribute('lang','es');
   await expect(page.locator('h1')).toHaveText('Biblioteca de oraciones a san Chárbel');
 });
 
-test('Portuguese mirror stays authored through reload and returns to English master', async ({page}) => {
+test('Portuguese mirror stays authored through reload and returns to the English guide', async ({page}) => {
   await page.goto('/saint-charbel-prayers?lang=en');
   await page.locator('#sc-language-select').selectOption('pt');
   await expect(page).toHaveURL(/\/pt\/oracoes$/);
@@ -83,13 +83,13 @@ test('Portuguese mirror stays authored through reload and returns to English mas
   await page.reload();
   await expect(page.locator('h1')).toHaveText('Biblioteca de orações a São Charbel');
   await page.locator('#sc-language-select').selectOption('en');
-  await expect(page).toHaveURL(/\/saint-charbel-prayers$/);
+  await expect(page).toHaveURL(/\/en\/prayers$/);
   await page.goto('/pt/oracoes?lang=en');
   await expect(page.locator('html')).toHaveAttribute('lang','pt');
   await expect(page.locator('h1')).toHaveText('Biblioteca de orações a São Charbel');
 });
 
-test('Italian mirror stays authored through reload and returns to English master', async ({page}) => {
+test('Italian mirror stays authored through reload and returns to the English guide', async ({page}) => {
   await page.goto('/saint-charbel-prayers?lang=en');
   await page.locator('#sc-language-select').selectOption('it');
   await expect(page).toHaveURL(/\/it\/preghiere$/);
@@ -97,13 +97,13 @@ test('Italian mirror stays authored through reload and returns to English master
   await page.reload();
   await expect(page.locator('h1')).toHaveText('Raccolta di preghiere a san Charbel');
   await page.locator('#sc-language-select').selectOption('en');
-  await expect(page).toHaveURL(/\/saint-charbel-prayers$/);
+  await expect(page).toHaveURL(/\/en\/prayers$/);
   await page.goto('/it/preghiere?lang=en');
   await expect(page.locator('html')).toHaveAttribute('lang','it');
   await expect(page.locator('h1')).toHaveText('Raccolta di preghiere a san Charbel');
 });
 
-test('German mirror stays authored through reload and returns to English master', async ({page}) => {
+test('German mirror stays authored through reload and returns to the English guide', async ({page}) => {
   await page.goto('/saint-charbel-prayers?lang=en');
   await page.locator('#sc-language-select').selectOption('de');
   await expect(page).toHaveURL(/\/de\/gebete$/);
@@ -111,13 +111,13 @@ test('German mirror stays authored through reload and returns to English master'
   await page.reload();
   await expect(page.locator('h1')).toHaveText('Gebete zum heiligen Charbel');
   await page.locator('#sc-language-select').selectOption('en');
-  await expect(page).toHaveURL(/\/saint-charbel-prayers$/);
+  await expect(page).toHaveURL(/\/en\/prayers$/);
   await page.goto('/de/gebete?lang=en');
   await expect(page.locator('html')).toHaveAttribute('lang','de');
   await expect(page.locator('h1')).toHaveText('Gebete zum heiligen Charbel');
 });
 
-test('Polish mirror stays authored through reload and returns to English master', async ({page}) => {
+test('Polish mirror stays authored through reload and returns to the English guide', async ({page}) => {
   await page.goto('/saint-charbel-prayers?lang=en');
   await page.locator('#sc-language-select').selectOption('pl');
   await expect(page).toHaveURL(/\/pl\/modlitwy$/);
@@ -125,7 +125,7 @@ test('Polish mirror stays authored through reload and returns to English master'
   await page.reload();
   await expect(page.locator('h1')).toHaveText('Modlitwy do świętego Szarbela');
   await page.locator('#sc-language-select').selectOption('en');
-  await expect(page).toHaveURL(/\/saint-charbel-prayers$/);
+  await expect(page).toHaveURL(/\/en\/prayers$/);
   await page.goto('/pl/modlitwy?lang=en');
   await expect(page.locator('html')).toHaveAttribute('lang','pl');
   await expect(page.locator('h1')).toHaveText('Modlitwy do świętego Szarbela');
