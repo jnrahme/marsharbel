@@ -38,4 +38,8 @@ PORT=4189 bash scripts/tests/run_eucharistic_collection.sh
 echo "[qa] Running rosary regression tests"
 npm run test:rosary-all
 
+echo "[qa] Eucharistic authored locale mirrors"
+python3 -m unittest discover -s scripts/qa -p 'test_eucharistic_locale.py'
+PORT=4197 bash scripts/tests/run_eucharistic_locales.sh
+
 echo "[qa] QA suite finished"

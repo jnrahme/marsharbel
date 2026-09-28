@@ -61,6 +61,9 @@ def snapshot(root=ROOT):
                       if page_url(registry, code, topic).endswith('/')
                       else page_url(registry, code, topic).lstrip('/') + '.html')
                      for code in registry['locales'] for topic in locale_topics(registry, code))
+    generated.update(f'{code}/miracles/eucharistic/'+('index.html' if slug=='index' else slug+'.html')
+                     for code in registry['locales'] if code != registry['defaultLocale']
+                     for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka'))
     result = {}
     for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'), *root.glob('miracles/*.html'), *root.glob('miracles/eucharistic/*.html'),
                         *(p for code in registry['locales'] if code != registry['defaultLocale']

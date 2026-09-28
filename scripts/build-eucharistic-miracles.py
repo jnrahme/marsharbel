@@ -32,11 +32,13 @@ def head(title, desc, url, image, bread):
                   {'@type':'ListItem','position':i+1,'name':name,'item':link}
                   for i,(name,link) in enumerate(bread)]}}
     data=json.dumps(schema,ensure_ascii=False).replace('<','\\u003c')
+    alternates = ''.join(f'<link rel="alternate" hreflang="{lang}" href="https://marsharbel.com{("/"+lang) if lang != "en" else ""}/miracles/eucharistic/{url.split("/miracles/eucharistic/",1)[1]}">' for lang in ('en','ar','fr','es','pt','it','de','pl'))
+    alternates += f'<link rel="alternate" hreflang="x-default" href="{url}">'
     return f'''<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)} | Saint Charbel</title><meta name="description" content="{e(desc,quote=True)}">
-<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url,quote=True)}">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url,quote=True)}">{alternates}
 <meta property="og:type" content="article"><meta property="og:site_name" content="Saint Charbel"><meta property="og:title" content="{e(title,quote=True)}"><meta property="og:description" content="{e(desc,quote=True)}"><meta property="og:url" content="{e(url,quote=True)}"><meta property="og:image" content="{e(image,quote=True)}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(title,quote=True)}"><meta name="twitter:description" content="{e(desc,quote=True)}"><meta name="twitter:image" content="{e(image,quote=True)}">
 <script type="application/ld+json">{data}</script>
