@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : 'charbel';
+    return raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -57,6 +57,9 @@
   };
 
   const EVIDENCE_SOURCES = {
+    hardiniVatican: { label: 'Holy See (Nimatullah biography, 2004)', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20040516_al-hardini_en.html' },
+    hardiniSchool: { label: 'Holy See (Nimatullah beatification profile, 1998, Portuguese)', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19980510_kassab_po.html' },
+    hardiniHomily: { label: 'Holy See (John Paul II canonization homily, 2004)', url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2004/documents/hf_jp-ii_hom_20040516_canonizations.html' },
     rafqaVatican: { label: 'Holy See (Saint Rafqa biography, 2001)', url: 'https://www.vatican.va/news_services/liturgy/documents/ns_lit_doc_20010610_rafqa-choboq_en.html' },
     rafqaConvent: { label: 'Saint Rafqa Monastery (history of Jrabta)', url: 'https://www.rafqa.com/Convent-Saint-Rafqa' },
     rafqaCanonization: { label: 'Holy See (canonization homily, 2001)', url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2001/documents/hf_jp-ii_hom_20010610_canonizzazione.html' },
@@ -839,7 +842,8 @@
     pio: { en: PIO_STORY_EN },
     jpii: { en: JPII_STORY_EN },
     teresa: { en: window.MOTHER_TERESA_STORY_EN || [] },
-    rafqa: { en: window.RAFQA_STORY_EN || [] }
+    rafqa: { en: window.RAFQA_STORY_EN || [] },
+    hardini: { en: window.HARDINI_STORY_EN || [] }
   };
   const UI = COPY[contentLang];
   const storyPages = STORY_PAGES[storyId] || STORY_PAGES.charbel;
@@ -890,6 +894,10 @@
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ]
   },
+  hardini: { en: [
+      { id: 'kokoro-hardini', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-hardini/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ] },
   rafqa: { en: [
       { id: 'kokoro-rafqa', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-rafqa/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
@@ -1197,7 +1205,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;

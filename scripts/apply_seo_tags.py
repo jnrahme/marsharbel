@@ -245,6 +245,8 @@ def og_image_for(path: Path, html: str = "") -> str:
         return f"{SITE}/media/storybook-teresa/images/page-01.webp"
     if path.name == "rafqa-story.html":
         return f"{SITE}/media/storybook-rafqa/images/page-01.webp"
+    if path.name == "hardini-story.html":
+        return f"{SITE}/media/storybook-hardini/images/page-01.webp"
     if path.name == "pio-story.html":
         return f"{SITE}/media/storybook-pio/images/page-01.webp"
     if path.name == "jpii-story.html":
