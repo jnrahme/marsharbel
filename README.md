@@ -109,7 +109,7 @@ structured data sitewide on managed pages; `/llms.txt` and AI-crawler-friendly
   source for the prayer mirror generator; nav, body CTAs, locale switcher
   targets and monastery/qadisha dropdowns repointed (locale pages point at
   their own authored prayer mirrors); `/saint-charbel-novena` full
-  traditional text added to `/llms.txt` (#TBD)
+  traditional text added to `/llms.txt` (#316)
 - 2026-09-27 - News outcomes: Monte Sole beatification confirmed in Bologna
   (the three martyr priests are now Blessed) and the Byblos-Annaya prayer
   walk completed (including Anthony Jarjour's five-day walk from Tyre) -
