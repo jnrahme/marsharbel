@@ -41,6 +41,10 @@ RewriteRule ^(ar|fr|es|pt|it|de|pl)\.html$ /$1/ [R=301,L]
 RewriteRule ^(ar|fr|es|pt|it|de|pl)$ /$1/ [R=301,L]
 # i18n-routes:end
 
+# Search Console HTML-file verification files must serve directly (a redirect
+# breaks verification).
+RewriteRule ^google[^/]*\.html$ - [L]
+
 # Redirect direct ".html" requests to clean URLs.
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]|$) [NC]
 RewriteRule ^ /%1 [R=301,L]

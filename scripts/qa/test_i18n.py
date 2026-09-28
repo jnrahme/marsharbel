@@ -362,7 +362,10 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn('hreflang="fr"',links)
         navigation=builder.navigation(registry,'ar','sampleTopic')
         self.assertIn('href="/fr/"',navigation)
-        self.assertIn('href="/sample-topic?lang=en"',navigation)
+        # Canonical English URL carries no language parameter (P0: parameter URLs
+        # are crawlable duplicates).
+        self.assertIn('href="/sample-topic"',navigation)
+        self.assertNotIn('?lang=',navigation)
         template=Template((ROOT/'templates/international/page.html').read_text())
         self.assertNotIn('/ar/sample-topic',builder.render(registry,catalogs['fr'],'fr',template))
         self.assertIn('/ar/sample-topic',builder.render(registry,catalogs['ar'],'ar',template))

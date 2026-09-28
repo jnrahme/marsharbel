@@ -25,6 +25,22 @@ def alternate_links(registry, topic=None):
     return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{url}" />' for code, url in links.items())
 
 
+OG_LOCALE = {'en':'en_US','ar':'ar_AR','es':'es_ES','fr':'fr_FR','pt':'pt_PT','it':'it_IT','de':'de_DE','pl':'pl_PL'}
+
+def footer_locale_bar(registry):
+    links = []
+    for language, config in registry['locales'].items():
+        path = page_url(registry, language)
+        links.append(f'<a href="{path}" hreflang="{language}" lang="{language}" dir="{config["direction"]}">{escape(config["nativeName"])}</a>')
+    return '<nav class="footer-locales" aria-label="Languages">' + ' <span aria-hidden="true">-</span> '.join(links) + '</nav>'
+
+def og_locale_tags(registry, code):
+    tags = [f'<meta property="og:locale" content="{OG_LOCALE[code]}" />']
+    for other in registry['locales']:
+        if other != code:
+            tags.append(f'<meta property="og:locale:alternate" content="{OG_LOCALE[other]}" />')
+    return '\n'.join(tags)
+
 def navigation(registry, code, topic=None, mark_current=True):
     links = []
     available = topic_locales(registry, topic) if topic else list(registry['locales'])
@@ -35,10 +51,21 @@ def navigation(registry, code, topic=None, mark_current=True):
             path = registry['topics'][topic]['relatedEnglish']
         else:
             path = page_url(registry, language)
-        if path == '/' or (topic and language not in available and language == registry['defaultLocale']):
-            path += '?lang=' + language
         current = ' aria-current="page"' if mark_current and language == code else ''
-        links.append(f'<a href="{path}" lang="{language}" dir="{config["direction"]}"{current}>{escape(config["nativeName"])}</a>')
+        links.append(f'<a href="{path}" hreflang="{language}" lang="{language}" dir="{config["direction"]}"{current}>{escape(config["nativeName"])}</a>')
+    # Locale pages load no site JavaScript, but translate.js on an English
+    # destination honors the stored sc_lang_pref and would bounce a visitor
+    # back to their previous locale. A click on a language link is an explicit
+    # choice, so persist it before navigation (the same key translate.js uses).
+    links.append(
+        '<script>document.addEventListener("click",function(e){'
+        'var a=e.target&&e.target.closest?e.target.closest("a[hreflang]"):null;'
+        'if(!a)return;'
+        'var l=(a.getAttribute("hreflang")||"").toLowerCase();'
+        'if(l==="x-default")l="en";'
+        'try{localStorage.setItem("sc_lang_pref",l)}catch(_){}'
+        '});</script>'
+    )
     return '\n'.join(links)
 
 
@@ -74,8 +101,9 @@ def render(registry, catalog, code, template, topic=None):
     schema_text = json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
     return template.substitute(language=code, direction=registry['locales'][code]['direction'], title=escape(title),
         description=escape(description), canonical=url, alternates=alternate_links(registry, topic),
+        oglocale=og_locale_tags(registry, code),
         brand=t('site.brand'), site=registry['site'], schema=schema_text, skip=t('navigation.skip'),
-        home=page_url(registry, code) + ('?lang=en' if code == 'en' else ''),
+        home=page_url(registry, code),
         chooseLanguage=t('navigation.chooseLanguage'), navigation=navigation(registry, code, topic),
         homeLabel=t('navigation.home'), content=content, footer=t('site.footer'))
 
@@ -129,8 +157,9 @@ def outputs(root=ROOT):
                 '# Canonical localized Eucharistic directory hub.\nOptions -Indexes\nDirectoryIndex index.html\n')
     home = root / 'index.html'
     text = replace_block(home.read_text(), 'i18n-alternates', alternate_links(registry))
-    # Existing pages already have the top selector; never generate a duplicate menu.
-    text = replace_block(text, 'i18n-navigation', '')
+    # Crawlable cross-locale links for English pages live in the footer block; the
+    # top selector stays JS-only.
+    text = replace_block(text, 'i18n-navigation', footer_locale_bar(registry))
     result[home] = text
     for topic, config in registry['topics'].items():
         related = config['relatedEnglish'].lstrip('/')
@@ -139,7 +168,7 @@ def outputs(root=ROOT):
                 english_qadisha if path == root / 'qadisha-valley.html' else
                 english_monasteries[path] if path in english_monasteries else
                 result.get(path, path.read_text()))
-        text = replace_block(text, 'i18n-navigation', '')
+        text = replace_block(text, 'i18n-navigation', footer_locale_bar(registry))
         if registry['defaultLocale'] not in topic_locales(registry, topic):
             # The English page is this topic's English alternate, so it carries the same cluster.
             links = '\n'.join('  ' + line for line in alternate_links(registry, topic).split('\n'))
