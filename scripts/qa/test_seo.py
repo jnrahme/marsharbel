@@ -185,7 +185,11 @@ class SeoRegressionTests(unittest.TestCase):
         self.assertEqual(article["headline"], "Darb Mar Charbel: The Saint Charbel Trail")
         self.assertRegex(article["datePublished"], r"^\d{4}-\d{2}-\d{2}$")
         self.assertIn('og:image" content="https://marsharbel.com/media/news/trail-pilgrimage-hero.webp"', html)
-        self.assertNotIn("mainEntity", (self.root / "history.html").read_text())
+        history_blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', (self.root / "history.html").read_text())]
+        history_webpages = [b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "WebPage"]
+        self.assertTrue(history_webpages)
+        self.assertNotIn("mainEntity", history_webpages[0])
+        self.assertFalse([b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "Article"])
 
 
 if __name__ == "__main__":
