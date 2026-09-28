@@ -33,8 +33,8 @@ test('Spanish Qadisha switches from English and back without runtime translation
 test('Spanish Qadisha links to real Spanish guides and English-only places', async ({page}) => {
   await page.goto('/es/valle-qadisha');
   await expect(page.locator('main a[href="/es/annaya"]')).toHaveCount(2);
-  await expect(page.locator('header .nav-sub a[href^="/qannoubine-monastery"]')).toHaveCount(1);
-  await expect(page.locator('header .nav-sub a[href^="/qozhaya-monastery"]')).toHaveCount(1);
+  await expect(page.locator('header .nav-sub a[href^="/es/monasterio-qannoubine"]')).toHaveCount(1);
+  await expect(page.locator('header .nav-sub a[href^="/es/monasterio-qozhaya"]')).toHaveCount(1);
   await expect(page.locator('main a[href^="/saint-charbel-trail"]')).toHaveCount(3);
   await page.locator('main .btn[href="/es/annaya"]').click();
   await expect(page).toHaveURL(/\/es\/annaya$/);
