@@ -1,0 +1,13 @@
+# Saint Charbel storybook v2 - research and editorial notes
+
+Original child-suitable retelling, not a copied transcript or eyewitness dialogue. Script checkpoint for review; no art or narration is published from this folder. The grotto, the lamp, and the mother's blessing are labeled as handed-down tradition, not documented public events. No character speech, miracle promise, or medical claim is invented. The illness and death scene is written gently and non-graphically; nothing frames suffering as desirable. Child-safety line: none needed beyond the reflection page's "who can you talk to" guidance.
+
+All five source keys below are already wired into the production player (`storybook.js` EVIDENCE_SOURCES) and were verified when the classic Charbel book shipped; the v2 data reuses the same keys.
+
+- Vatican (Paul VI, canonization homily, Oct 9, 1977): https://www.vatican.va/content/paul-vi/fr/homilies/1977/documents/hf_p-vi_hom_19771009.html . Supports the structured formation path: Mayfouk, Annaya, Kfifan, ordination 1859, 16 years of community life, 23 years of hermitage life.
+- Vatican (Paul VI, beatification address, Dec 5, 1965): https://www.vatican.va/content/paul-vi/fr/speeches/1965/documents/hf_p-vi_spe_19651205_charbel-makhlouf.html . Supports early loss of his father and the beatification act and date.
+- Monastery of Saint Maron, Annaya archive (Wayback capture): https://web.archive.org/web/20160304235515/http://www.saintcharbel-annaya.com/home.php?lgid=0 . Monastic tradition source: grotto devotion, water-lamp story, hermitage years, tomb lights, devotion after death.
+- Biography cross-check: https://en.wikipedia.org/wiki/Charbel_Makhlouf . Cross-check for dates: born May 8, 1828 Bekaa Kafra; entered Mayfouk 1851; name Charbel; solemn vows Nov 1, 1853; Kfifan studies under St Nimatullah al-Hardini; ordained July 23, 1859; hermitage of Saints Peter and Paul from Feb 15, 1875; illness during Mass Dec 16, 1898; died Dec 24, 1898; snowy burial; Nohad El Shami testimony 1993 (not retold in this book).
+- Devotional tradition source: https://catholicsaints.info/saint-charbel-makhlouf/ . Corroborates the lamp tradition and devotional details; used only for items labeled tradition.
+
+Reflection page is an authored pastoral application (silence, trust, faithfulness in small things, closeness to Jesus in the Mass), not a quotation from Charbel. Nine narrative pages plus one narrated reflection page should run roughly six minutes with Kokoro am_michael at speed .94 and sentence-end rests; actual duration measured after rendering and recorded in the page manifest review.

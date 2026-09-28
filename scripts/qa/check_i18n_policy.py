@@ -83,6 +83,7 @@ def check(root=ROOT):
     storybook_catalog = read_json(root/'locales/en/storybook.json')
     teresa_catalog = read_json(root/'locales/en/mother-teresa-story-copy.json')
     rafqa_catalog = read_json(root/'locales/en/rafqa-story-copy.json')
+    charbel_v2_catalog = read_json(root/'locales/en/charbel-v2-story-copy.json')
     testimony_path = root / 'locales/en/testimonies.json'
     testimony_catalog = read_json(testimony_path) if testimony_path.exists() else None
     prayer_mirror = render_pair(root) if (root/'templates/mirrors/prayers.html').exists() else {}
@@ -115,10 +116,11 @@ def check(root=ROOT):
             additions -= Counter({'Story settings': 2})
             if file != 'story.html': additions -= Counter({storybook_catalog['disclosure']: 1})
         if file == 'storybook.js': additions -= Counter({read_json(root/'locales/en/pio-story-copy.json')['firstPage']: 1})
-        if file in ('mother-teresa-story.html','rafqa-story.html'):
+        if file in ('mother-teresa-story.html','rafqa-story.html','charbel-story-v2.html'):
             additions -= Counter({'Story settings': 2, storybook_catalog['disclosure']: 1})
         additions -= Counter(teresa_catalog.get(file, {}))
         additions -= Counter(rafqa_catalog.get(file, {}))
+        additions -= Counter(charbel_v2_catalog.get(file, {}))
         if additions:
             errors.append(f'{file}: new hardcoded wording; move it to locales/: {list(additions)[:3]}')
     for path in (root/'templates/international').glob('*.html'):

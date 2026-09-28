@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : 'charbel';
+    return raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -839,7 +839,8 @@
     pio: { en: PIO_STORY_EN },
     jpii: { en: JPII_STORY_EN },
     teresa: { en: window.MOTHER_TERESA_STORY_EN || [] },
-    rafqa: { en: window.RAFQA_STORY_EN || [] }
+    rafqa: { en: window.RAFQA_STORY_EN || [] },
+    'charbel-v2': { en: window.CHARBEL_V2_STORY_EN || [] }
   };
   const UI = COPY[contentLang];
   const storyPages = STORY_PAGES[storyId] || STORY_PAGES.charbel;
@@ -892,6 +893,10 @@
   },
   rafqa: { en: [
       { id: 'kokoro-rafqa', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-rafqa/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ] },
+  'charbel-v2': { en: [
+      { id: 'kokoro-charbel-v2', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-charbel-v2/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ] },
   teresa: {
@@ -1197,7 +1202,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'charbel-v2' ? 'kokoro-charbel-v2' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
