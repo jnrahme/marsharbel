@@ -32,6 +32,7 @@ npm run test:testimony-security
 
 echo "[qa] Running site smoke tests"
 npm run test:site-smoke
+BASE_URL="${BASE_URL:-http://127.0.0.1:4173}" node scripts/tests/eucharistic_collection.mjs
 
 echo "[qa] Running rosary regression tests"
 npm run test:rosary-all
