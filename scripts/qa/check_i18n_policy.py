@@ -61,15 +61,18 @@ def snapshot(root=ROOT):
                       if page_url(registry, code, topic).endswith('/')
                       else page_url(registry, code, topic).lstrip('/') + '.html')
                      for code in registry['locales'] for topic in locale_topics(registry, code))
+    generated.update(f'{code}/miracles/eucharistic/'+('index.html' if slug=='index' else slug+'.html')
+                     for code in registry['locales'] if code != registry['defaultLocale']
+                     for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka'))
     result = {}
-    for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'), *root.glob('miracles/*.html'),
+    for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'), *root.glob('miracles/*.html'), *root.glob('miracles/eucharistic/*.html'),
                         *(p for code in registry['locales'] if code != registry['defaultLocale']
                           for p in root.glob(f'{code}/**/*.html'))]):
         relative = path.relative_to(root).as_posix()
         if relative not in generated:
             result[relative] = dict(extract_html(path.read_text()))
     for path in sorted(root.glob('*.js')):
-        if path.name == 'locale-routes.js' or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()):
+        if path.name in ('locale-routes.js', 'eucharistic.js') or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()):
             continue
         values = json.loads(subprocess.check_output(['node', str(root/'scripts/i18n/extract-js-text.mjs'), str(path)],text=True))
         result[path.name] = dict(Counter(values))
@@ -98,6 +101,10 @@ def check(root=ROOT):
                 errors.append(f'testimonies-copy.js: {key} differs from English catalog')
     for file, values in snapshot(root).items():
         additions = Counter(values) - Counter(baseline.get(file, {}))
+        if file.startswith('miracles/eucharistic/'):
+            # Built from the keyed English collection catalog; separate build check covers freshness.
+            # The dedicated builder is checked byte-for-byte in QA.
+            continue
         if root/file in prayer_mirror or root/file in qadisha_pages or root/file in monastery_pages:
             # This English legacy URL now renders entirely from its own keyed
             # English catalog; freshness is checked byte-for-byte by the build.
@@ -111,6 +118,10 @@ def check(root=ROOT):
         # the frozen legacy baseline. The per-file counts prevent a second
         # unreviewed occurrence from being silently accepted.
         additions -= Counter(display_catalog.get(file, {}))
+        if file == 'miracles/index.html':
+            euch_entry = read_json(root/'locales/en/eucharistic-miracles.json')['hub']
+            additions -= Counter({euch_entry[key]: 1 for key in ('charbelEntryTitle','charbelEntryIntro','charbelEntryAction','charbelEntryCredit','charbelEntryAlt','charbelEntryPhotoSource','charbelEntryLicense','charbelEntryLicenseText','eyebrow')})
+            additions -= Counter({',': 1, '.': 1})
         if file in ('story.html','pio-story.html','jpii-story.html'):
             additions -= Counter({'Story settings': 2})
             if file != 'story.html': additions -= Counter({storybook_catalog['disclosure']: 1})
