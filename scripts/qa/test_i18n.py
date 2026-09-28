@@ -31,6 +31,17 @@ class CatalogTests(unittest.TestCase):
         update(data)
         path.write_text(json.dumps(data))
 
+    def test_arabic_22nd_attribution_and_home_devotion_limits(self):
+        registry, _ = load_catalog(ROOT)
+        self.assertEqual(registry['topics']['twentySecond']['sources'], ['cnewaMonthly', 'monastery'])
+        html = builder.outputs(ROOT)[ROOT/'ar/22nd-of-the-month.html']
+        self.assertIn('href="https://cnewa.org/magazine/lebanons-beloved-saint/"', html)
+        self.assertIn('أعداد وردت في مقابلة، وليست عددًا ثابتًا', html)
+        self.assertIn('عندما يسمح الطقس', html)
+        self.assertIn('ليس تاريخًا أقرتْه الكنيسة عيدًا ليتورجيًا عامًا', html)
+        self.assertIn('لا يحلّ الزيت المبارك أو الحجّ أو الصلاة محلّ الرعاية الطبية', html)
+        self.assertNotIn('تضمن الشفاء', html)
+
     def test_arabic_raymond_story_distinguishes_reporter_from_medical_record(self):
         registry, _ = load_catalog(ROOT)
         self.assertEqual(registry['topics']['raymondStory']['sources'],
