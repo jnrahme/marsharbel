@@ -117,7 +117,8 @@ def check(root=ROOT):
         additions -= Counter(display_catalog.get(file, {}))
         if file == 'miracles/index.html':
             euch_entry = read_json(root/'locales/en/eucharistic-miracles.json')['hub']
-            additions -= Counter({euch_entry[key]: 1 for key in ('charbelEntryTitle','charbelEntryIntro','charbelEntryAction','charbelEntryCredit','charbelEntryAlt','charbelEntryPhotoSource','charbelEntryLicense','eyebrow')})
+            additions -= Counter({euch_entry[key]: 1 for key in ('charbelEntryTitle','charbelEntryIntro','charbelEntryAction','charbelEntryCredit','charbelEntryAlt','charbelEntryPhotoSource','charbelEntryLicense','charbelEntryLicenseText','eyebrow')})
+            additions -= Counter({',': 1, '.': 1})
         if file in ('story.html','pio-story.html','jpii-story.html'):
             additions -= Counter({'Story settings': 2})
             if file != 'story.html': additions -= Counter({storybook_catalog['disclosure']: 1})
