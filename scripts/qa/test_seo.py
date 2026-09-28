@@ -189,6 +189,7 @@ class SeoRegressionTests(unittest.TestCase):
         history_webpages = [b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "WebPage"]
         self.assertTrue(history_webpages)
         self.assertNotIn("mainEntity", history_webpages[0])
+        self.assertFalse([b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "Article"])
 
 
 if __name__ == "__main__":
