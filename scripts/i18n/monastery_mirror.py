@@ -57,6 +57,11 @@ def render_monasteries(root=ROOT, registry=None):
                            if code in topic_locales(registry, topic)}
                 targets.update({mirror['english']: mirror['routes'][code] for mirror in registry['authoredMirrors'].values()
                                 if code in mirror['routes']})
+                # The retired prayer master 301s to the English guide; locale
+                # pages point prayer links at their own authored mirror.
+                targets.update({page_url(registry, 'en', topic).rstrip('/') or '/': page_url(registry, code, topic)
+                                for topic in registry['topics']
+                                if 'en' in topic_locales(registry, topic) and code in topic_locales(registry, topic)})
                 text = re.sub(r'((?:href|src)=["\'])\./(?!/)([^"\']*)(["\'])', r'\1/\2\3', text)
                 text = text.replace('href="styles.css', 'href="/styles.css')
                 text = re.sub(r'(<a\b[^>]*\bhref=["\'])(/[^"\']*)(["\'])',

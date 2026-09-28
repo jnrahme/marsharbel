@@ -202,11 +202,9 @@
     var published = publishedRouteForPath(window.SC_LOCALE_ROUTES, url.pathname);
     var targets = published && published.targets;
     if (targets && targets[langCode]) {
-      // Authored translations pair with the full English master. The
-      // independent /en/prayers guide remains indexable.
-      var mirrorEnglish = document.documentElement.getAttribute('data-authored-mirror') === 'prayers' &&
-        langCode === 'en' && published && published.current !== 'en';
-      url.pathname = mirrorEnglish ? '/saint-charbel-prayers' : targets[langCode];
+      // The legacy English prayer master 301s to /en/prayers; the guide is
+      // the cluster's canonical English page.
+      url.pathname = targets[langCode];
       url.searchParams.delete('lang');
       if (langCode === 'en' && url.pathname === '/') url.searchParams.set('lang', 'en');
       url.hash = '';
@@ -237,9 +235,7 @@
       var route = publishedRouteForPath(window.SC_LOCALE_ROUTES, url.pathname);
       if (route && route.targets[langCode] &&
           document.documentElement.hasAttribute('data-authored-mirror')) {
-        var mirrorEnglishLink = document.documentElement.getAttribute('data-authored-mirror') === 'prayers' &&
-          langCode === 'en' && route.current !== 'en';
-        url.pathname = mirrorEnglishLink ? '/saint-charbel-prayers' : route.targets[langCode];
+        url.pathname = route.targets[langCode];
         url.searchParams.delete('lang');
       } else if (langCode && langCode !== 'en') {
         url.searchParams.set('lang', langCode);

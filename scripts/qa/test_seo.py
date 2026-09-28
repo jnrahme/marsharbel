@@ -106,6 +106,10 @@ class SeoRegressionTests(unittest.TestCase):
         pages = [*generator.BREADCRUMBS, *(p.relative_to(ROOT).as_posix() for p in ROOT.glob("mysteries/*.html"))]
         for name in pages:
             html = (self.root / name).read_text()
+            # Retired pages (noindex, 301'd) leave the sitemap; their stale
+            # breadcrumb is unreachable and need not resolve to sitemap URLs.
+            if re.search(r'<meta name="robots" content="[^"]*noindex', html):
+                continue
             blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html)]
             crumbs = [b["breadcrumb"] for b in blocks if isinstance(b, dict) and "breadcrumb" in b]
             self.assertEqual(len(crumbs), 1, name)
