@@ -16,3 +16,5 @@ Ten original painterly 16:9 scenes in warm Levantine stone, olive and amber, cle
 | 10 | Modern children sharing study and listening, adult nearby | Separate present-day application; leave reflection prose to HTML. |
 
 Generate variants only after parent green-lights script, select and pixel-inspect each before bundle. Maintain continuity in habit, face and monastery setting. Use shared warm child-friendly reader stage CSS after rebase.
+
+Selected image review September 28: ten source illustrations (1672x941, one 1672x940) were inspected as a contact sheet, then pages 4, 5 and 9 at full resolution. Painted children/monks are continuous enough by age and habit, bookbinding and student scene stay clearly composite, chapel avoids impossible miracle effects, and page 9 is a gentle memorial rather than a deathbed. No readable names or captions appear. Cropped all to 1280x720 WebP and rechecked dimensions. These are imaginative composites, not historic portraits or literal site photography.
