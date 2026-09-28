@@ -57,6 +57,20 @@
   }
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "The Story of Padre Pio - Storybook Film",
+  "description": "AI-animated 7-minute film of the free Padre Pio storybook for children at marsharbel.com/pio-story.",
+  "thumbnailUrl": "https://marsharbel.com/media/storybook-pio/images/page-01.webp",
+  "contentUrl": "https://marsharbel.com/media/storybook-pio/pio-film-endcard.mp4",
+  "uploadDate": "2026-09-28",
+  "duration": "PT7M33S",
+  "inLanguage": "en",
+  "isFamilyFriendly": true
+}
+  </script>
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
@@ -148,7 +162,7 @@
       <button id="story-resume-dismiss" class="story-resume-dismiss" type="button" aria-label="Dismiss">✕</button>
     </div>
 
-    <section class="storybook reveal" aria-label="Illustrated storybook">
+    <section class="storybook reveal" id="storybook" aria-label="Illustrated storybook">
       <div class="storybook-controls">
         <span class="story-reading-indicator" id="story-reading-indicator">
           <span class="story-reading-dot"></span>
@@ -194,6 +208,28 @@
         <summary id="story-evidence-title">Evidence for This Page</summary>
         <ul id="story-evidence-list"></ul>
       </details>
+    </section>
+
+    <section class="section reveal" id="storybook-film" aria-label="Storybook film">
+      <h2 class="section-title">Watch the Storybook Film</h2>
+      <p class="section-sub">
+        The whole story as a 7-minute animated film - then
+        <a href="#storybook">read the free storybook</a> page by page with read-aloud narration.
+      </p>
+      <div class="film-frame" style="position:relative;">
+        <video id="pio-film" controls playsinline preload="none"
+               poster="./media/storybook-pio/images/page-01.webp"
+               style="width:100%; border-radius:14px; border:1px solid rgba(211,178,110,.28); background:#000;">
+          <source src="./media/storybook-pio/pio-film-endcard.mp4" type="video/mp4" />
+          Your browser does not support video playback.
+        </video>
+        <span class="film-ai-badge" aria-label="AI-animated disclosure"
+              style="position:absolute; top:10px; left:10px; padding:3px 10px; border-radius:999px; font-size:0.72rem; letter-spacing:0.04em; background:rgba(20,16,10,.72); color:#e9d9ae; border:1px solid rgba(211,178,110,.45); pointer-events:none;">AI-animated film</span>
+      </div>
+      <p class="story-production-note" style="margin-top:0.9rem;">
+        This film is an AI-animated telling of the storybook: original composite scenes, not historical footage.
+        Narration by an openly licensed voice model.
+      </p>
     </section>
 
     <p class="story-production-note">Read-aloud narration by an openly licensed voice model. Illustrations are original composite scenes, not historical footage.</p>
