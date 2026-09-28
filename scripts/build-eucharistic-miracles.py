@@ -14,11 +14,11 @@ DEST.mkdir(parents=True, exist_ok=True)
 SOURCE = (ROOT/'miracles/index.html').read_text()
 HEADER = SOURCE[SOURCE.index('  <header class="topbar">'):SOURCE.index('  </header>') + len('  </header>')].replace('href="../', 'href="../../')
 # The nav sync tool owns the nav markup after render. Preserve other shared controls.
-FOOTER = SOURCE[SOURCE.index('  <footer class="footer">'):SOURCE.index('  </footer>') + len('  </footer>')].replace('href="../', 'href="../../')
+FOOTER = '<footer class="footer"><div class="site-shell">'+e(H['note'])+'</div></footer>'
 
 
 def head(title, desc, url, image, bread):
-    schema = {'@context':'https://schema.org','@type':'Article' if len(bread)>2 else 'CollectionPage',
+    schema = {'@context':'https://schema.org','@type':'Article' if len(bread)>3 else 'CollectionPage',
               'headline': title,'description':desc,'url':url,'image':image,
               'author':{'@type':'Organization','name':'marsharbel.com','url':'https://marsharbel.com/'},
               'datePublished':'2026-09-28','dateModified':'2026-09-28',
