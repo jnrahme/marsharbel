@@ -77,6 +77,10 @@ class Page(HTMLParser):
 # loads the Supabase auth client and is left to the testimony lane.
 SYNC_SCRIPT_PAGES = {"22nd-of-the-month.html", "rosary-minibook.html", "testimonies.html"}
 
+# Large media served via direct TUS upload to the webroot, never git-tracked
+# (see .gitignore). Referenced from pages but absent from the repo by design.
+TUS_ONLY_ASSETS = {"media/storybook-pio/pio-film-endcard.mp4"}
+
 
 def check(root):
     errors = []
@@ -121,6 +125,9 @@ def check(root):
                 continue
             relative_path = unquote(parsed.path)
             target = root / relative_path.lstrip("/") if relative_path.startswith("/") else path.parent / relative_path
+            repo_relative = relative_path.lstrip("/") if relative_path.startswith("/") else (path.parent / relative_path).relative_to(root).as_posix()
+            if repo_relative in TUS_ONLY_ASSETS:
+                continue
             if not target.exists() and not target.with_suffix(".html").exists():
                 errors.append(f"{path.name}: missing local link or asset {reference}")
         # Internal links use clean URLs (docs/content-conventions.md): a link to

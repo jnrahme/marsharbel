@@ -87,6 +87,7 @@ def check(root=ROOT):
     teresa_catalog = read_json(root/'locales/en/mother-teresa-story-copy.json')
     rafqa_catalog = read_json(root/'locales/en/rafqa-story-copy.json')
     hardini_catalog = read_json(root/'locales/en/hardini-story-copy.json')
+    pio_film_catalog = read_json(root/'locales/en/pio-film-copy.json')
     testimony_path = root / 'locales/en/testimonies.json'
     testimony_catalog = read_json(testimony_path) if testimony_path.exists() else None
     prayer_mirror = render_pair(root) if (root/'templates/mirrors/prayers.html').exists() else {}
@@ -132,6 +133,7 @@ def check(root=ROOT):
         additions -= Counter(teresa_catalog.get(file, {}))
         additions -= Counter(rafqa_catalog.get(file, {}))
         additions -= Counter(hardini_catalog.get(file, {}))
+        additions -= Counter(pio_film_catalog.get(file, {}))
         if additions:
             errors.append(f'{file}: new hardcoded wording; move it to locales/: {list(additions)[:3]}')
     for path in (root/'templates/international').glob('*.html'):
