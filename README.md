@@ -101,13 +101,18 @@ structured data sitewide on managed pages; `/llms.txt` and AI-crawler-friendly
 
 **Recent ships:**
 
+- 2026-09-27 - News outcomes: Monte Sole beatification confirmed in Bologna
+  (the three martyr priests are now Blessed) and the Byblos-Annaya prayer
+  walk completed (including Anthony Jarjour's five-day walk from Tyre) -
+  both news cards flipped to past tense with outcome sources; feed.xml
+  regenerated (#312)
 - 2026-09-27 - Saint Rafqa storybook: 10 narrated pages (7:44 Kokoro audio),
   four-point Points-of-reflection outro, fifth stories shelf card, sitemap
   entry, Holy See source evidence (#307)
 - 2026-09-27 - Child-friendly stories design standard: warm cream storybook
   treatment (storybook-joy.css) is the permanent design language for the
   stories section - landing cards with pill CTAs, cream reader surfaces,
-  unified header/controls across all four storybooks (#303)
+  unified header/controls across all five storybooks (#303)
 - 2026-09-27 - Mother Teresa storybook: 10 narrated pages (7:20 audio),
   Points-of-reflection outro, stories library card, sitemap entry (#300)
 - 2026-09-27 - AEO technical pass: llms.txt, AI-crawler robots rules,
