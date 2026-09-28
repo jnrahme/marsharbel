@@ -158,6 +158,11 @@ def render_eucharistic(root=ROOT, registry=None):
                 href=link.get('href','')
                 if href.startswith('../../'):
                     target='/'+href[6:]
+                    # The collection hub links to its own locale mirror.
+                    if target.rstrip('/')=='/miracles/eucharistic':
+                        target=f'/{lang}/miracles/eucharistic/'
+                        link['href']=target
+                        continue
                     # Redirect only published paths; never invent a translated route.
                     for topic, config in registry['topics'].items():
                         english_route=config['relatedEnglish']
