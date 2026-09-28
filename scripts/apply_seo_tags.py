@@ -84,6 +84,13 @@ BREADCRUMBS = {
     "story.html": (None, "Story for Children"),
     "history.html": ("story", "Full History"),
     "miracles/index.html": (None, "Miracles"),
+    "miracles/eucharistic/index.html": ("miracles", "Eucharistic Miracles"),
+    "miracles/eucharistic/lanciano.html": ("miracles", "Eucharistic Miracle of Lanciano"),
+    "miracles/eucharistic/bolsena-orvieto.html": ("miracles", "Eucharistic Miracle of Bolsena and Orvieto"),
+    "miracles/eucharistic/siena.html": ("miracles", "Eucharistic Miracle of Siena"),
+    "miracles/eucharistic/santarem.html": ("miracles", "Eucharistic Miracle of Santarem"),
+    "miracles/eucharistic/sokolka.html": ("miracles", "Eucharistic Miracle of Sokolka"),
+
     "news.html": ("miracles", "Latest News"),
     "testimonies.html": ("miracles", "Letters"),
     "voice-testimony.html": ("miracles", "Voice Testimony"),
@@ -178,6 +185,8 @@ def path_to_url(path: Path) -> str:
         return f"{SITE}/"
     if rel == "miracles/index.html":
         return f"{SITE}/miracles/"
+    if rel == "miracles/eucharistic/index.html":
+        return f"{SITE}/miracles/eucharistic/"
     if rel.endswith(".html"):
         rel = rel[:-5]
     return f"{SITE}/{rel}"

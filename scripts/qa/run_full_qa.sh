@@ -11,6 +11,7 @@ cd "${ROOT}"
 
 node scripts/build-home-css.mjs --check
 npm run i18n:check
+python3 scripts/build-eucharistic-miracles.py --check
 npm run i18n:test
 
 echo "[qa] Checking SEO metadata and sitemap coverage"

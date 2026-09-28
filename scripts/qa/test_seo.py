@@ -41,6 +41,17 @@ class SeoRegressionTests(unittest.TestCase):
         self.assertIn('<loc>https://marsharbel.com/miracles/</loc>', (self.root / "sitemap.xml").read_text())
         self.assertEqual(check(self.root)[0], [])
 
+    def test_eucharistic_collection_has_six_distinct_canonicals(self):
+        pages = sorted((self.root / "miracles/eucharistic").glob("*.html"))
+        self.assertEqual(len(pages), 6)
+        for path in pages:
+            text = path.read_text()
+            url = "https://marsharbel.com/miracles/eucharistic/" + ("" if path.name == "index.html" else path.stem)
+            self.assertIn(f'<link rel="canonical" href="{url}"', text)
+            self.assertIn(url, (self.root / "sitemap.xml").read_text())
+            self.assertIn('media/eucharistic-miracles/', text)
+        self.assertEqual(check(self.root)[0], [])
+
     def test_missing_sitemap_entry_fails(self):
         path = self.root / "sitemap.xml"
         path.write_text(re.sub(r"  <url><loc>https://marsharbel.com/saint-charbel-novena</loc>.*?</url>\n",

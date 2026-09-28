@@ -25,10 +25,11 @@ for (const file of pages) {
   let nav = template.replaceAll('href="./', `href="${prefix}`);
   if (file === 'miracles/index.html') nav = nav.replaceAll('href="../miracles"', 'href="../miracles/"');
   nav = nav.replace(/<a([^>]*?)href="([^"]+)"([^>]*)>/g, (tag, before, href, after) => {
-    if ((href === '../' || href === './') && file !== 'index.html') return tag;
+    if ((href === '../' || href === './' || href === '../../') && file !== 'index.html') return tag;
     if (file.startsWith('miracles/') && cleanName(href) === 'miracles') {
       const active=before.includes('class="') ? before.replace('class="', 'class="active ') : `${before}class="active" `;
       const exact=file === 'miracles/index.html' && !before.includes('nav-parent');
+      if (file.startsWith('miracles/eucharistic/') && !before.includes('nav-parent')) return tag;
       return `<a${active}href="${href}"${after}${exact ? ' aria-current="page"' : ''}>`;
     }
     if (cleanName(href) !== cleanName(current)) return tag;
