@@ -1,4 +1,11 @@
 """Render reviewed prayer locale pages from one DOM skeleton and strict text slots."""
+
+OG_LOCALE = {'en':'en_US','ar':'ar_AR','es':'es_ES','fr':'fr_FR','pt':'pt_PT','it':'it_IT','de':'de_DE','pl':'pl_PL'}
+
+
+def og_alternates(code):
+    return '\n'.join(f'<meta property="og:locale:alternate" content="{v}" />' for k, v in OG_LOCALE.items() if k != code)
+
 from html import escape
 import json
 from pathlib import Path
@@ -16,7 +23,7 @@ def render_mirrors(root=ROOT, registry=None):
     if registry is None:
         registry = read_json(root / 'locales/registry.json')
     template = (root / 'templates/mirrors/prayers.html').read_text(encoding='utf-8')
-    expected = set(SLOT.findall(template)) - {'locale.code', 'locale.direction', 'locale.canonical', 'locale.alternates', 'locale.currentRoute', 'locale.prayerLibraryUrl', 'locale.homeUrl', 'locale.robotsContent'}
+    expected = set(SLOT.findall(template)) - {'locale.code', 'locale.direction', 'locale.canonical', 'locale.alternates', 'locale.currentRoute', 'locale.prayerLibraryUrl', 'locale.homeUrl', 'locale.robotsContent', 'locale.ogLocale', 'locale.ogLocaleAlternates'}
     if template.count('{{') != len(SLOT.findall(template)) or template.count('}}') != len(SLOT.findall(template)):
         raise ValueError('Prayer mirror: invalid slot syntax')
     result = {}
@@ -58,7 +65,8 @@ def render_mirrors(root=ROOT, registry=None):
                   'locale.robotsContent': 'noindex' if is_english_master else 'index,follow,max-image-preview:large',
                   'locale.canonical': canonical, 'locale.alternates': alternates,
                   'locale.currentRoute': registry['topics']['prayers']['relatedEnglish'] if is_english_master else page_url(registry, code, 'prayers'),
-                  'locale.prayerLibraryUrl': SITE + '/prayer-library', 'locale.homeUrl': SITE + '/'}
+                  'locale.prayerLibraryUrl': SITE + '/prayer-library', 'locale.homeUrl': SITE + '/',
+                  'locale.ogLocale': OG_LOCALE[code], 'locale.ogLocaleAlternates': og_alternates(code)}
         def replace(match):
             key = match.group(1)
             if key not in tokens:

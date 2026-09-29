@@ -206,7 +206,6 @@
       // the cluster's canonical English page.
       url.pathname = targets[langCode];
       url.searchParams.delete('lang');
-      if (langCode === 'en' && url.pathname === '/') url.searchParams.set('lang', 'en');
       url.hash = '';
       return url.toString();
     }
@@ -759,6 +758,19 @@
     window.location.replace(destination.toString());
     return;
   }
+
+  // A click on a cross-language link is an explicit language choice. Persist
+  // it before navigation so the stored-preference redirect on the destination
+  // honors the click instead of bouncing back to the previous locale. Without
+  // this, canonical locale links (no ?lang= parameter) cannot switch a visitor
+  // back to English once another locale was stored.
+  document.addEventListener('click', function (event) {
+    var anchorEl = event.target && event.target.closest ? event.target.closest('a[hreflang]') : null;
+    if (!anchorEl) return;
+    var chosen = (anchorEl.getAttribute('hreflang') || '').toLowerCase();
+    if (chosen === 'x-default') chosen = 'en';
+    if (LANG_BY_CODE[chosen]) writeStoredLang(chosen);
+  });
 
   var requestedLang = getRequestedLang();
   ensureSeoHeadAssets();

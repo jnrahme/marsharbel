@@ -1,3 +1,12 @@
+GTAG_BLOCK = '''<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CJX1M0VFKP');
+</script>'''
+
 """Render complete localized Eucharistic mirrors from the reviewed English pages.
 
 The English catalog owns structure, photo provenance and sources. Each locale catalog
@@ -73,6 +82,20 @@ def render_eucharistic(root=ROOT, registry=None):
             soup = BeautifulSoup(english,'html.parser')
             soup.html['lang'] = lang
             soup.html['dir'] = registry['locales'][lang]['direction']
+            OG_MAP = {'en':'en_US','ar':'ar_AR','es':'es_ES','fr':'fr_FR','pt':'pt_PT','it':'it_IT','de':'de_DE','pl':'pl_PL'}
+            for stale in list(soup.select('meta[property="og:locale"],meta[property="og:locale:alternate"]')):
+                stale.extract()
+            anchor = soup.find('meta', property='og:url') or soup.find('link', rel='canonical')
+            for code in [lang] + [k for k in OG_MAP if k != lang]:
+                t = soup.new_tag('meta'); t['property'] = 'og:locale' if code == lang else 'og:locale:alternate'; t['content'] = OG_MAP[code]
+                anchor.insert_after(t); anchor = t
+            if 'G-CJX1M0VFKP' not in str(soup.head):
+                head_tag = soup.find('meta', attrs={'charset': True})
+                if head_tag:
+                    from bs4 import BeautifulSoup as _BS
+                    frag = _BS(GTAG_BLOCK, 'html.parser')
+                    for node in list(frag.contents):
+                        head_tag.insert_after(node); head_tag = node
             soup.html['data-authored-mirror'] = ''
             catalog = local['hub'] if slug=='index' else local['stories'][slug]
             original = en['hub'] if slug=='index' else en['stories'][slug]

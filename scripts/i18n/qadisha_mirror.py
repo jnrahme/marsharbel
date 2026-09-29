@@ -1,4 +1,11 @@
 """Render the corrected Qadisha master and published locale mirrors from one template."""
+
+OG_LOCALE = {'en':'en_US','ar':'ar_AR','es':'es_ES','fr':'fr_FR','pt':'pt_PT','it':'it_IT','de':'de_DE','pl':'pl_PL'}
+
+
+def og_alternates(code):
+    return '\n'.join(f'<meta property="og:locale:alternate" content="{v}" />' for k, v in OG_LOCALE.items() if k != code)
+
 from html import escape
 import json
 from pathlib import Path
@@ -8,7 +15,7 @@ from i18n.catalog import ROOT, leaves, page_url, read_json, topic_locales
 
 SLOT = re.compile(r'\{\{([a-z][A-Za-z0-9]*(?:\.[a-z][A-Za-z0-9]*)+)\}\}')
 SITE = 'https://marsharbel.com'
-RESERVED = {'locale.code', 'locale.direction', 'locale.canonical', 'locale.alternates'}
+RESERVED = {'locale.code', 'locale.direction', 'locale.canonical', 'locale.alternates', 'locale.ogLocale', 'locale.ogLocaleAlternates'}
 
 
 def render_qadisha(root=ROOT, registry=None):
@@ -32,7 +39,8 @@ def render_qadisha(root=ROOT, registry=None):
             raise ValueError(f'Qadisha {code} catalog mismatch: missing {sorted(expected-set(catalog))}, extra {sorted(set(catalog)-expected)}')
         leaves(catalog)
         tokens = {**catalog, 'locale.code': code, 'locale.direction': registry['locales'][code]['direction'],
-                  'locale.canonical': SITE + route, 'locale.alternates': alternates}
+                  'locale.canonical': SITE + route, 'locale.alternates': alternates,
+                  'locale.ogLocale': OG_LOCALE[code], 'locale.ogLocaleAlternates': og_alternates(code)}
         def substitute(match):
             key = match.group(1)
             if key == 'locale.alternates':

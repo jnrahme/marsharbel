@@ -51,7 +51,9 @@ try {
   await page.locator('#sc-language-select').selectOption('fr');
   await page.waitForURL(base + '/fr/');
   await page.getByRole('link', { name: 'English', exact: true }).click();
-  await page.waitForURL(base + '/?lang=en');
+  // Canonical English URL carries no language parameter (P0: parameter URLs are
+  // crawlable duplicates).
+  await page.waitForURL(base + '/');
   assert.equal(await page.locator('#sc-language-select').inputValue(), 'en');
   await noJs.close();
   console.log(`SEO runtime passed: ${urls.length} public pages, 7 noindex pages, and tracking parameters.`);
