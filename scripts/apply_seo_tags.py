@@ -14,6 +14,7 @@ SITE = "https://marsharbel.com"
 DEFAULT_IMAGE = f"{SITE}/saint-charbel.jpg"
 # The site publishes under its own name; no personal or organizational credentials are claimed.
 PUBLISHER = {"@type": "Organization", "name": "marsharbel.com", "url": f"{SITE}/"}
+CHARBEL_ALIASES = ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"]
 
 NOINDEX = {
     "account.html",
@@ -386,7 +387,7 @@ def person_schema(path: Path, html: str, url: str, title: str, description: str)
         return None
     person = {"@type": "Person", "name": name, "description": description, "url": url}
     if path.stem == "history":
-        person["alternateName"] = ["Mar Charbel", "Saint Charbel Makhlouf"]
+        person["alternateName"] = CHARBEL_ALIASES
     return person
 
 
@@ -456,7 +457,7 @@ def build_meta_block(url: str, title: str, description: str, robots: str, image:
         "description": description,
         "url": url,
         "isPartOf": {"@type": "WebSite", "name": "Saint Charbel",
-                     "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf"],
+                     "alternateName": CHARBEL_ALIASES,
                      "url": f"{SITE}/"},
     }
     if "noindex" not in robots:
