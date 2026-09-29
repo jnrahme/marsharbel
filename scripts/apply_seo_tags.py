@@ -366,6 +366,7 @@ def tourist_schema(path: Path, html: str, url: str, title: str, description: str
 
 
 SAINT_STEMS = {
+    "st-estephan-nehme",
     "st-anthony-of-padua",
     "st-augustine-of-hippo",
     "st-francis-of-assisi",
