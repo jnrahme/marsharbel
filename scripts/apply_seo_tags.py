@@ -98,6 +98,7 @@ BREADCRUMBS = {
     "prayer-library.html": (None, "Prayer Library"),
     "saint-charbel-prayers.html": ("prayer", "Saint Charbel Prayers"),
     "saint-charbel-novena.html": ("prayer", "Saint Charbel Novena"),
+    "saint-charbel-chaplet.html": ("prayer", "Saint Charbel Chaplet"),
     "saint-charbel-feast-day.html": ("prayer", "Feast Day"),
     "rosary-visual-guide.html": ("prayer", "Rosary Guide"),
     "rosary-minibook.html": ("prayer", "Rosary Minibook"),
