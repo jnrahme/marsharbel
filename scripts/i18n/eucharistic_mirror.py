@@ -18,10 +18,10 @@ import re
 from bs4 import BeautifulSoup, NavigableString
 from i18n.catalog import ROOT, read_json
 
-SLUGS = ('lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka')
-PROVENANCE = ('image', 'credit', 'licenseurl', 'photo', 'source')
-COUNTRIES = {'lanciano':'Italy', 'bolsena-orvieto':'Italy', 'siena':'Italy', 'santarem':'Portugal', 'sokolka':'Poland'}
-TEXT_ONLY = ('title', 'place', 'era', 'label', 'alt', 'license', 'sourceLabel', 'lead', 'reflection')
+SLUGS = ('lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica')
+PROVENANCE = ('image', 'credit', 'licenseurl', 'photo', 'source', 'source2')
+COUNTRIES = {'lanciano':'Italy', 'bolsena-orvieto':'Italy', 'siena':'Italy', 'santarem':'Portugal', 'sokolka':'Poland', 'legnica':'Poland'}
+TEXT_ONLY = ('title', 'place', 'era', 'label', 'alt', 'license', 'sourceLabel', 'source2Label', 'lead', 'reflection')
 HTML_TAG = re.compile(r'<\s*/?\s*[a-zA-Z!]')
 
 
@@ -35,6 +35,7 @@ def validate(en, local, lang):
         if any(len(pair) != 2 for pair in translated['sections']):
             raise ValueError(f'{lang}/{slug}: section title/body missing')
         for field in PROVENANCE:
+            if field not in source: continue
             if translated[field] != source[field]:
                 raise ValueError(f'{lang}/{slug}: changed provenance {field}')
     def walk(value):
@@ -136,7 +137,7 @@ def render_eucharistic(root=ROOT, registry=None):
                     card.select_one('em').append(local['hub']['browse']+' →')
                     sole(row,'img')['alt']=translated_story['alt']
                     sole(soup,f'.euch-places a[href="#story-{story_slug}"]').string=translated_story['place']
-                sole(soup,'.euch-heading .euch-eyebrow').string='01 / 05'
+                sole(soup,'.euch-heading .euch-eyebrow').string=f'01 / {len(SLUGS):02d}'
             else:
                 for section, pair in zip(soup.select('.euch-chapter'), catalog['sections']):
                     sole(section,'h2').string=pair[0]
@@ -147,7 +148,11 @@ def render_eucharistic(root=ROOT, registry=None):
                 sole(soup,'.euch-reflection h2').string=local['hub']['reflection']
                 sole(soup,'.euch-reflection p').string=catalog['reflection']
                 sole(soup,'.euch-sources h2').string=local['hub']['sources']
-                sole(soup,'.euch-sources p a').string=catalog['sourceLabel']
+                sole(soup,'.euch-sources p:first-of-type a').string=catalog['sourceLabel']
+                if 'source2' in catalog:
+                    links=soup.select('.euch-sources p a')
+                    if len(links)!=2: raise ValueError(f'{lang}/{slug}: missing second source')
+                    links[1].string=catalog['source2Label']
                 # v3 image credits include an English production note not present in the catalog.
                 caption=sole(soup,'.euch-feature-photo figcaption')
                 replace_text(caption,'; resized to WebP for this site. ', '; '+{

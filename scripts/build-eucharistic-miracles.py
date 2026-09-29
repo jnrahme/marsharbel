@@ -27,7 +27,7 @@ def head(title, desc, url, image, bread):
     schema = {'@context':'https://schema.org','@type':'Article' if len(bread)>3 else 'CollectionPage',
               'headline': title,'description':desc,'url':url,'image':image,
               'author':{'@type':'Organization','name':'marsharbel.com','url':'https://marsharbel.com/'},
-              'datePublished':'2026-09-28','dateModified':'2026-09-28',
+              'datePublished':'2026-09-29' if url.endswith('/legnica') else '2026-09-28','dateModified':'2026-09-29',
               'breadcrumb':{'@type':'BreadcrumbList','itemListElement':[
                   {'@type':'ListItem','position':i+1,'name':name,'item':link}
                   for i,(name,link) in enumerate(bread)]}}
@@ -63,23 +63,24 @@ hub=f'''{head(H['title'],H['intro'],BASE,'https://marsharbel.com/media/eucharist
 <main id="main-content" class="euch-shell">
 <section class="euch-hero"><div class="euch-hero-art" aria-hidden="true"></div><div class="euch-hero-content"><p class="euch-eyebrow">{e(H['eyebrow'])}</p><h1>{e(H['title'])}</h1><p class="euch-lead">{e(H['intro'])}</p><a class="euch-action" href="#journey">{e(H['atlasTitle'])} <span aria-hidden="true">↓</span></a></div><span class="euch-hero-caption">{e(STORIES['lanciano']['alt'])} · <a href="{e(STORIES['lanciano']['photo'],quote=True)}">{e(STORIES['lanciano']['credit'])}</a>, <a href="{e(STORIES['lanciano']['licenseurl'],quote=True)}">{e(STORIES['lanciano']['license'])}</a></span></section>
 <section class="euch-intro"><div><p class="euch-eyebrow">{e(H['eyebrow'])}</p><h2>{e(H['carloTitle'])}</h2></div><p>{e(H['carloText'])} <a href="https://www.carloacutis.com/en/association/mostra-miracoli-eucaristici">{e(H['carloSource'])}</a> · <a href="https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/09/07/250907a.html">{e(H['canonizationSource'])}</a></p></section>
-<section id="journey" class="euch-journey"><div class="euch-heading"><p class="euch-eyebrow">01 / 05</p><h2>{e(H['atlasTitle'])}</h2></div><div class="euch-filter" role="group" aria-label="{e(H['filterLabel'],quote=True)}"><button type="button" data-filter="all" aria-pressed="true">{e(H['filterAll'])}</button><button type="button" data-filter="Italy" aria-pressed="false">{e(H['filterItaly'])}</button><button type="button" data-filter="Portugal" aria-pressed="false">{e(H['filterPortugal'])}</button><button type="button" data-filter="Poland" aria-pressed="false">{e(H['filterPoland'])}</button></div><nav class="euch-places" aria-label="{e(H['atlasTitle'],quote=True)}">{filters}</nav><p class="euch-empty" hidden>{e(H['noFilterResults'])}</p><div class="euch-grid">{card_rows}</div></section>
+<section id="journey" class="euch-journey"><div class="euch-heading"><p class="euch-eyebrow">01 / {len(STORIES):02d}</p><h2>{e(H['atlasTitle'])}</h2></div><div class="euch-filter" role="group" aria-label="{e(H['filterLabel'],quote=True)}"><button type="button" data-filter="all" aria-pressed="true">{e(H['filterAll'])}</button><button type="button" data-filter="Italy" aria-pressed="false">{e(H['filterItaly'])}</button><button type="button" data-filter="Portugal" aria-pressed="false">{e(H['filterPortugal'])}</button><button type="button" data-filter="Poland" aria-pressed="false">{e(H['filterPoland'])}</button></div><nav class="euch-places" aria-label="{e(H['atlasTitle'],quote=True)}">{filters}</nav><p class="euch-empty" hidden>{e(H['noFilterResults'])}</p><div class="euch-grid">{card_rows}</div></section>
 <section class="euch-method"><p class="euch-eyebrow">{e(H['updated'])}</p><h2>{e(H['methodTitle'])}</h2><p>{e(H['methodText'])}</p><p class="euch-fine">{e(H['note'])}</p></section>
 </main>{FOOTER}{scripts()}</body></html>'''
 outputs = {DEST/'index.html': hub}
 
 for key,s in STORIES.items():
     title=s['title'];url=BASE+key;image='https://marsharbel.com/media/eucharistic-miracles/'+s['image']
+    further_source = f'<p><a href="{e(s["source2"],quote=True)}">{e(s["source2Label"])}</a></p>' if s.get('source2') else ''
     sections=''.join(f'<section class="euch-chapter"><p class="euch-eyebrow">0{i}</p><h2>{e(t)}</h2><p>{e(text)}</p></section>' for i,(t,text) in enumerate(s['sections'],1))
     story=f'''{head(title,s['lead'],url,image,BREAD+[(H['title'],BASE),(title,url)])}{HEADER}
 <main id="main-content" class="euch-shell euch-story"><a href="./" class="euch-back">← {e(H['back'])}</a><header class="euch-story-head"><p class="euch-eyebrow">{e(s['label'])} · {e(s['place'])} · {e(s['era'])}</p><h1>{e(title)}</h1><p class="euch-lead">{e(s['lead'])}</p></header>
 <figure class="euch-feature-photo">{img(s,True)}<figcaption>{e(s['alt'])}. {e(H['photo'])}: {e(s['credit'])}, <a href="{e(s['licenseurl'],quote=True)}">{e(s['license'])}</a>; resized to WebP for this site. <a href="{e(s['photo'],quote=True)}">{e(H['originalPhoto'])}</a>.</figcaption></figure>
-<div class="euch-story-body">{sections}<aside class="euch-reflection"><h2>{e(H['reflection'])}</h2><p>{e(s['reflection'])}</p></aside><section class="euch-sources"><h2>{e(H['sources'])}</h2><p><a href="{e(s['source'],quote=True)}">{e(s['sourceLabel'])}</a></p><p>{e(H['updated'])}. {e(H['note'])}</p></section><a href="./" class="euch-back">← {e(H['back'])}</a></div></main>{FOOTER}{scripts()}</body></html>'''
+<div class="euch-story-body">{sections}<aside class="euch-reflection"><h2>{e(H['reflection'])}</h2><p>{e(s['reflection'])}</p></aside><section class="euch-sources"><h2>{e(H['sources'])}</h2><p><a href="{e(s['source'],quote=True)}">{e(s['sourceLabel'])}</a></p>{further_source}<p>{e(H['updated'])}. {e(H['note'])}</p></section><a href="./" class="euch-back">← {e(H['back'])}</a></div></main>{FOOTER}{scripts()}</body></html>'''
     outputs[DEST/(key+'.html')] = story
 if '--check' in sys.argv:
     stale=[str(path.relative_to(ROOT)) for path, rendered in outputs.items() if not path.exists() or path.read_text()!=rendered]
     if stale: raise SystemExit('Stale Eucharistic pages: '+', '.join(stale))
-    print('Eucharistic English collection current: six pages match catalog.')
+    print('Eucharistic English collection current: all pages match catalog.')
 else:
     for path, rendered in outputs.items(): path.write_text(rendered)
-    print('Rendered English Eucharistic hub and five stories')
+    print(f'Rendered English Eucharistic hub and {len(STORIES)} stories')
