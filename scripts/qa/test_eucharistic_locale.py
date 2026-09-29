@@ -25,7 +25,7 @@ class Shape(HTMLParser):
 class EucharisticLocaleTests(unittest.TestCase):
     def test_catalog_shape_and_exact_rendering(self):
         outputs=render_eucharistic(ROOT)
-        self.assertEqual(len(outputs),42)
+        self.assertEqual(len(outputs),49)
         english=read_json(ROOT/'locales/en/eucharistic-miracles.json')
         for lang in ('ar','fr','es','pt','it','de','pl'):
             catalog=read_json(ROOT/f'locales/{lang}/eucharistic-miracles.json')
@@ -47,8 +47,9 @@ class EucharisticLocaleTests(unittest.TestCase):
                 self.assertEqual(translated.count('hreflang='),9)
                 if slug!='index':
                     self.assertEqual(len(catalog['stories'][slug]['sections']),3)
-                    for field in ('image','credit','licenseurl','photo','source'):
-                        self.assertEqual(catalog['stories'][slug][field],english['stories'][slug][field])
+                    for field in ('image','credit','licenseurl','photo','source','source2'):
+                        if field in english['stories'][slug]:
+                            self.assertEqual(catalog['stories'][slug][field],english['stories'][slug][field])
     def test_corrected_bolsena_photo_in_every_language(self):
         for lang in ('ar','fr','es','pt','it','de','pl'):
             c=read_json(ROOT/f'locales/{lang}/eucharistic-miracles.json')['stories']['bolsena-orvieto']

@@ -41,9 +41,9 @@ class SeoRegressionTests(unittest.TestCase):
         self.assertIn('<loc>https://marsharbel.com/miracles/</loc>', (self.root / "sitemap.xml").read_text())
         self.assertEqual(check(self.root)[0], [])
 
-    def test_eucharistic_collection_has_six_distinct_canonicals(self):
+    def test_eucharistic_collection_has_seven_distinct_canonicals(self):
         pages = sorted((self.root / "miracles/eucharistic").glob("*.html"))
-        self.assertEqual(len(pages), 6)
+        self.assertEqual(len(pages), 7)
         for path in pages:
             text = path.read_text()
             url = "https://marsharbel.com/miracles/eucharistic/" + ("" if path.name == "index.html" else path.stem)
