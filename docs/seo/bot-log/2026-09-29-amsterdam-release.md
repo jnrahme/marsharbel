@@ -1,0 +1,7 @@
+# Amsterdam Eucharistic collection batch, September 29, 2026
+
+An English story and seven exact-structure locale mirrors bring the collection to eight story pages, with all eight hubs updated. The new Netherlands filter has locale-backed wording; sitemap, locale routing and SEO registry include the new story.
+
+The Society of the Silent Walk recounts the traditional 1345 episode and the later procession (https://www.stille-omgang.nl/the-miracle/). Bishop Johannes Hendriks placed the tradition in Eucharistic devotional history in a 2025 lecture (https://www.arsacal.nl/index.php?id=3691&p=contentitem). The story explicitly avoids claims of modern scientific proof or Vatican certification. The image is the later Begijnhof Catholic Chapel interior, not the vanished medieval site, by Jorge Royan: https://commons.wikimedia.org/wiki/File:Amsterdam_-_Begijnhof_Catholic_Chapel_-_0740.jpg , CC BY-SA 3.0; caption and media ledger carry attribution and source.
+
+Local checks: English/international builder freshness; SEO (231 indexable pages); i18n policy; 65 focused unit tests; dead-code; shared navigation; English 9-route and international 63-route browser regressions at phone/desktop. The Amsterdam English, Arabic, Polish and French pages were rendered and pixel-inspected at 390 and 1440px; Arabic and English eight-card hubs likewise inspected after all images decoded. Images loaded, links present, no clipping/overflow or JS page errors. Full long QA/global five-device suite and deployed pixel review remain integrator release gates.
