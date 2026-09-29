@@ -76,7 +76,16 @@ test('existing pages keep one top language selector without duplicate menus', as
     await expect(page.locator('#sc-language-select')).toBeVisible();
     await expect(page.locator('.lang-switcher')).toHaveCount(1);
     await expect(page.locator('.locale-navigation, .locale-nav')).toHaveCount(0);
-    await expect(page.locator('footer a[lang], main nav a[lang]')).toHaveCount(0);
+    // P0: a crawlable locale bar may exist - at most one per page, one
+    // canonical link per locale, and never parameter (?lang=) URLs. English
+    // pages used to forbid footer locale links entirely; the bar is the
+    // crawlable path that replaced runtime-only switching.
+    const localeBarCount = await page.locator('nav.footer-locales').count();
+    expect(localeBarCount).toBeLessThanOrEqual(1);
+    for (const code of languages) {
+      await expect(page.locator(`nav.footer-locales a[hreflang="${code}"]`)).toHaveCount(localeBarCount);
+    }
+    expect(await page.locator('nav.footer-locales a[href*="?lang="]').count()).toBe(0);
     for (const code of languages) {
       await expect(page.locator(`#sc-language-select option[value="${code}"]`)).toHaveCount(1);
     }
