@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
 const base=process.env.BASE_URL || 'http://127.0.0.1:4173';
 const languages=['ar','fr','es','pt','it','de','pl'];
-const slugs=['lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam'];
+const slugs=['lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra'];
 const browser=await chromium.launch();
 try {
  for (const width of [390,1440]) {
@@ -14,15 +14,15 @@ try {
    assert.equal(await page.locator('html').getAttribute('lang'),lang);
    assert.equal(await page.locator('html').getAttribute('dir'),lang==='ar'?'rtl':'ltr');
    assert.equal(await page.locator('h1').count(),1);
-   assert.equal(await page.locator('.euch-card').count(),8);
-   assert.equal(await page.locator('.euch-card img').count(),8);
+   assert.equal(await page.locator('.euch-card').count(),9);
+   assert.equal(await page.locator('.euch-card img').count(),9);
    assert.equal(await page.locator('link[hreflang]').count(),9);
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,`${lang} hub overflows at ${width}`);
    await page.locator('[data-filter="Portugal"]').click();
    assert.equal(await page.locator('.euch-card:visible').count(),1,`${lang} Portugal filter`);
    assert.match(await page.locator('.euch-card:visible').innerText(),/Santarém|سانتاريم/);
    await page.locator('[data-filter="all"]').click();
-   assert.equal(await page.locator('.euch-card:visible').count(),8);
+   assert.equal(await page.locator('.euch-card:visible').count(),9);
    for (const slug of slugs) {
     const item=await page.goto(url+slug);
     assert.equal(item.status(),200,`${lang}/${slug}`);
@@ -36,5 +36,5 @@ try {
   }
   await page.close();
  }
- console.log('Eucharistic locale mirrors: 63 routes, filters, images, source links and 390/1440 viewport checks passed.');
+ console.log('Eucharistic locale mirrors: 70 routes, filters, images, source links and 390/1440 viewport checks passed.');
 } finally {await browser.close()}

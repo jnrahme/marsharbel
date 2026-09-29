@@ -6,14 +6,14 @@ try {
   for (const width of [390, 1440]) {
     const page = await browser.newPage({viewport:{width,height:850}});
     await page.goto(base+'/miracles/eucharistic/');
-    assert.equal(await page.locator('.euch-card').count(),8);
+    assert.equal(await page.locator('.euch-card').count(),9);
     assert.equal(await page.locator('h1').count(),1);
     await page.locator('[data-filter="Portugal"]').click();
     assert.equal(await page.locator('.euch-card:visible').count(),1);
     assert.match(await page.locator('.euch-card:visible').innerText(),/Santarém/);
     await page.locator('[data-filter="all"]').click();
-    assert.equal(await page.locator('.euch-card:visible').count(),8);
-    for (const slug of ['lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam']) {
+    assert.equal(await page.locator('.euch-card:visible').count(),9);
+    for (const slug of ['lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra']) {
       const response=await page.goto(base+'/miracles/eucharistic/'+slug);
       assert.equal(response.status(),200);
       assert.equal(await page.locator('h1').count(),1);
@@ -24,5 +24,5 @@ try {
     }
     await page.close();
   }
-  console.log('Eucharistic collection: nine routes, eight images, country filter, source links, responsive widths passed.');
+  console.log('Eucharistic collection: ten routes, nine images, country filter, source links, responsive widths passed.');
 } finally {await browser.close()}

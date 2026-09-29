@@ -186,7 +186,7 @@ def outputs(root=ROOT):
     generated += [registry['site'] + page_url(registry, code, topic) for code in registry['locales'] for topic in locale_topics(registry, code)]
     generated += [registry['site'] + '/' + code + '/miracles/eucharistic/' + ('' if slug=='index' else slug)
                   for code in registry['locales'] if code != registry['defaultLocale']
-                  for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam')]
+                  for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra')]
     generated += [registry['site'] + route for mirror in registry.get('authoredMirrors', {}).values()
                   for route in mirror['routes'].values() if route != mirror['english']]
     def entry(url):
@@ -198,7 +198,7 @@ def outputs(root=ROOT):
                'topics':{cfg['relatedEnglish']:{code:page_url(registry,code,topic) for code in topic_locales(registry,topic)} for topic,cfg in registry['topics'].items()}}
     for mirror in registry.get('authoredMirrors', {}).values():
         routing['topics'][mirror['english']] = mirror['routes']
-    for slug in ('', 'lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica','ludbreg','amsterdam'):
+    for slug in ('', 'lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica','ludbreg','amsterdam','ivorra'):
         english = '/miracles/eucharistic/' + slug
         routing['topics'][english] = {code:('/' + code if code != 'en' else '') + english
                                        for code in registry['locales']}
