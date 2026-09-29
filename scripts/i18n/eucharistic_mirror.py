@@ -18,9 +18,9 @@ import re
 from bs4 import BeautifulSoup, NavigableString
 from i18n.catalog import ROOT, read_json
 
-SLUGS = ('lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica', 'ludbreg')
+SLUGS = ('lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica', 'ludbreg', 'amsterdam')
 PROVENANCE = ('image', 'credit', 'licenseurl', 'photo', 'source', 'source2')
-COUNTRIES = {'lanciano':'Italy', 'bolsena-orvieto':'Italy', 'siena':'Italy', 'santarem':'Portugal', 'sokolka':'Poland', 'legnica':'Poland', 'ludbreg':'Croatia'}
+COUNTRIES = {'lanciano':'Italy', 'bolsena-orvieto':'Italy', 'siena':'Italy', 'santarem':'Portugal', 'sokolka':'Poland', 'legnica':'Poland', 'ludbreg':'Croatia', 'amsterdam':'Netherlands'}
 TEXT_ONLY = ('title', 'place', 'era', 'label', 'alt', 'license', 'sourceLabel', 'source2Label', 'lead', 'reflection')
 HTML_TAG = re.compile(r'<\s*/?\s*[a-zA-Z!]')
 
@@ -120,7 +120,7 @@ def render_eucharistic(root=ROOT, registry=None):
                         for before,after in sorted(pairs,key=lambda pair:len(pair[0]),reverse=True):value=value.replace(before,after)
                         tag[attribute]=value
             if slug=='index':
-                for country,key in [('Italy','filterItaly'),('Portugal','filterPortugal'),('Poland','filterPoland'),('Croatia','filterCroatia')]:
+                for country,key in [('Italy','filterItaly'),('Portugal','filterPortugal'),('Poland','filterPoland'),('Croatia','filterCroatia'),('Netherlands','filterNetherlands')]:
                     button=sole(soup,f'button[data-filter="{country}"]')
                     button.string=local['hub'][key]
                 for story_slug in SLUGS:
