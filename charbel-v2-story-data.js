@@ -183,10 +183,10 @@ window.CHARBEL_V2_STORY_EN = [
   {
     "illustration": "./media/storybook-charbel-v2/images/page-10.webp",
     "title": "Points of reflection",
-    "body": "First, Charbel listened. He made room for God in silence, and we can do the same with a few quiet minutes each day. When could you be still and listen this week? Second, he trusted. He lost his father when he was small, but he did not give up on God. When something makes you sad, who can you talk to, and what prayer can you pray? Third, he was faithful in small things. Watching a cow, working in a field, and washing dishes can all become ways to love God. What small job of yours could become a prayer? Fourth, he stayed close to Jesus in the holy Mass, and everything he did began there. Choose one small step this week, and ask Saint Charbel to pray for you as you take it.",
+    "body": "First, Charbel listened. He made room for God in silence, and we can do the same with a few quiet minutes each day. When could you be still and listen this week?\n\nSecond, he trusted. He lost his father when he was small, but he did not give up on God. When something makes you sad, who can you talk to, and what prayer can you pray?\n\nThird, he was faithful in small things. Watching a cow, working in a field, and washing dishes can all become ways to love God. What small job of yours could become a prayer?\n\nFourth, he stayed close to Jesus in the holy Mass, and everything he did began there. Choose one small step this week, and ask Saint Charbel to pray for you as you take it.",
     "prayer": "",
     "heart": "",
-    "scene": "legacy",
+    "scene": "birth",
     "audio": "page-10.mp3",
     "reflection": true,
     "evidence": [
