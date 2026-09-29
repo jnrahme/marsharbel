@@ -493,6 +493,7 @@ AEO posture:
 Monthly AEO metric (fold into the 8AM SEO loop on the 1st): count AI-referrer
 sessions. Segment definition: utm_source in (chatgpt.com, perplexity.ai,
 copilot.microsoft.com) OR referrer containing chatgpt.com / perplexity /
-copilot. NOTE: the site currently has no analytics property (no GA/gtag), so
-this metric is pending an analytics decision; record the definition here so
-any future property implements it from day one.
+copilot. The GA4 tag was placed in live HTML on September 29, 2026, but
+Realtime receipt and collector data are not yet verified. Keep this metric
+pending until the property and segment can be read and validated; do not
+report a count from tag presence alone.
