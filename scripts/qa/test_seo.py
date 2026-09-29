@@ -181,6 +181,40 @@ class SeoRegressionTests(unittest.TestCase):
             pages = [b for b in blocks if isinstance(b, dict) and b.get("@type") == "WebPage"]
             self.assertEqual(pages[0]["isPartOf"]["publisher"], generator.PUBLISHER, name)
 
+    def test_homepage_web_site_aliases(self):
+        html = (self.root / "index.html").read_text()
+        blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html)]
+        sites = [node for b in blocks if isinstance(b, dict) for node in b.get("@graph", []) if node.get("@type") == "WebSite"]
+        self.assertEqual(len(sites), 1)
+        self.assertEqual(sites[0]["alternateName"], generator.CHARBEL_ALIASES)
+
+    def test_charbel_aliases_in_generated_site_and_biography_schema(self):
+        for name in ["history.html", "st-padre-pio.html", "mysteries/joyful-1.html", "miracles/index.html"]:
+            html = (self.root / name).read_text()
+            blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html)]
+            pages = [b for b in blocks if isinstance(b, dict) and b.get("@type") == "WebPage"]
+            self.assertEqual(pages[0]["isPartOf"]["alternateName"], generator.CHARBEL_ALIASES, name)
+            if name == "history.html":
+                people = [b for b in blocks if isinstance(b, dict) and b.get("@type") == "Person"]
+                self.assertEqual(people[0]["alternateName"], generator.CHARBEL_ALIASES)
+        # New pages inherit the same list rather than a shorter hard-coded variant.
+        rendered = generator.build_meta_block("https://marsharbel.com/new", "New", "Example", "index,follow", generator.DEFAULT_IMAGE)
+        self.assertIn('"Saint Sharbel"', rendered)
+
+    def test_every_published_website_entity_has_charbel_aliases(self):
+        for path in public_html_files(self.root):
+            html = path.read_text()
+            for raw in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html):
+                data = json.loads(raw)
+                def walk(value):
+                    if isinstance(value, dict):
+                        if value.get("@type") == "WebSite":
+                            self.assertEqual(value.get("alternateName"), generator.CHARBEL_ALIASES, path.name)
+                        for child in value.values(): walk(child)
+                    elif isinstance(value, list):
+                        for child in value: walk(child)
+                walk(data)
+
     def test_internal_link_to_redirecting_url_fails(self):
         page = self.root / "history.html"
         page.write_text(page.read_text().replace("</main>", '<a href="./story.html">x</a><a href="index">y</a></main>', 1))
