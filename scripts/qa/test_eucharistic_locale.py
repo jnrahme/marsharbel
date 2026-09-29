@@ -25,7 +25,7 @@ class Shape(HTMLParser):
 class EucharisticLocaleTests(unittest.TestCase):
     def test_catalog_shape_and_exact_rendering(self):
         outputs=render_eucharistic(ROOT)
-        self.assertEqual(len(outputs),49)
+        self.assertEqual(len(outputs),56)
         english=read_json(ROOT/'locales/en/eucharistic-miracles.json')
         for lang in ('ar','fr','es','pt','it','de','pl'):
             catalog=read_json(ROOT/f'locales/{lang}/eucharistic-miracles.json')

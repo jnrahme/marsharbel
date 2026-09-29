@@ -92,6 +92,7 @@ BREADCRUMBS = {
     "miracles/eucharistic/santarem.html": ("miracles", "Eucharistic Miracle of Santarem"),
     "miracles/eucharistic/sokolka.html": ("miracles", "Eucharistic Miracle of Sokolka"),
     "miracles/eucharistic/legnica.html": ("miracles", "Eucharistic Event of Legnica"),
+    "miracles/eucharistic/ludbreg.html": ("miracles", "Eucharistic Tradition of Ludbreg"),
 
     "news.html": ("miracles", "Latest News"),
     "testimonies.html": ("miracles", "Letters"),
