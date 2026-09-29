@@ -44,7 +44,7 @@ def render_monasteries(root=ROOT, registry=None):
                   'locale.ogLocale': OG_LOCALE[code], 'locale.ogLocaleAlternates': og_alternates(code)}
             def substitute(match):
                 key = match.group(1)
-                if key == 'locale.alternates':
+                if key in ('locale.alternates', 'locale.ogLocaleAlternates'):
                     return tokens[key]
                 before = template[:match.start()]
                 if before.rfind('<script type="application/ld+json">') > before.rfind('</script>'):
