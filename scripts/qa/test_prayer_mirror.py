@@ -1,5 +1,6 @@
 """Guard the Arabic prayers pilot against a shortened or stale translation."""
 import json
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 import sys
@@ -45,7 +46,11 @@ class PrayerMirrorTests(unittest.TestCase):
         self.assertEqual(Shape(en).images, Shape(ar).images)
         # The English master should not drift outside its keyed source.
         original = (ROOT / 'saint-charbel-prayers.html').read_text()
-        self.assertEqual(Shape(original).nodes, Shape(ar).nodes)
+        # The published English master alone has P0's managed crawlable
+        # footer-locale bar. The shared prayer body must still match Arabic.
+        self.assertEqual(original.count('<nav class="footer-locales"'), 1)
+        original_body = re.sub(r'<nav class="footer-locales"[^>]*>.*?</nav>', '', original, count=1, flags=re.S)
+        self.assertEqual(Shape(original_body).nodes, Shape(ar).nodes)
         self.assertEqual(len(Shape(ar).images), 1)
         self.assertEqual(ar.count('card prayer-card'), 14)
         self.assertEqual(ar.count('<section class="section">'), 6)
@@ -156,7 +161,7 @@ class PrayerMirrorTests(unittest.TestCase):
         english = read_json(ROOT / 'locales/en/mirrors/prayers.json')
         arabic = read_json(ROOT / 'locales/ar/mirrors/prayers.json')
         self.assertEqual(english.keys(), arabic.keys())
-        self.assertEqual(len(english), 133)
+        self.assertEqual(len(english), 134)
         self.assertIn('href="/ar/prayers" aria-current="page"', render_pair(ROOT)[ROOT/'ar/prayers.html'])
         self.assertEqual(Shape(render_pair(ROOT)[ROOT/'ar/prayers.html']).links.count('/ar/novena'), 1)
         self.assertIn('data-authored-mirror="prayers"', template)
