@@ -71,7 +71,7 @@ def render_mirrors(root=ROOT, registry=None):
             key = match.group(1)
             if key not in tokens:
                 raise ValueError(f'Prayer mirror: missing {key}')
-            if key == 'locale.alternates':
+            if key in ('locale.alternates', 'locale.ogLocaleAlternates'):
                 return tokens[key]
             if key.startswith('locale.'):
                 return escape(tokens[key], quote=True)

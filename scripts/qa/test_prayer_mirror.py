@@ -65,6 +65,43 @@ class PrayerMirrorTests(unittest.TestCase):
             self.assertEqual(page.count('class="lang-switcher-slot"'), 1)
             self.assertEqual(page.count('src="/translate.js'), 1)
 
+    def test_generated_mirrors_have_real_og_locale_meta_elements(self):
+        from i18n.qadisha_mirror import render_qadisha
+        from i18n.monastery_mirror import render_monasteries
+        from i18n.mirror import OG_LOCALE
+        class HeadMeta(HTMLParser):
+            def __init__(self, text):
+                super().__init__(convert_charrefs=True)
+                self.alternates = []
+                self.primary = []
+                self.feed(text)
+            def handle_starttag(self, tag, attrs):
+                if tag == 'meta':
+                    values = dict(attrs)
+                    if values.get('property') == 'og:locale:alternate':
+                        self.alternates.append(values.get('content'))
+                    if values.get('property') == 'og:locale':
+                        self.primary.append(values.get('content'))
+        pages = {**render_mirrors(ROOT), **render_qadisha(ROOT), **render_monasteries(ROOT)}
+        self.assertEqual(len(pages), 21)
+        for path, html in pages.items():
+            code = path.relative_to(ROOT).parts[0]
+            if code not in OG_LOCALE:
+                code = 'en'
+            expected = [value for lang, value in OG_LOCALE.items() if lang != code]
+            tags = HeadMeta(html)
+            self.assertEqual(tags.primary, [OG_LOCALE[code]], str(path))
+            self.assertEqual(tags.alternates, expected, str(path))
+            self.assertNotIn('&lt;meta', html, str(path))
+            stored = HeadMeta(path.read_text())
+            self.assertEqual(stored.primary, tags.primary, str(path))
+            self.assertEqual(stored.alternates, tags.alternates, str(path))
+        # An escaped line is text, not a parsed meta element: the assertion
+        # above catches this defect even if a raw substring seems present.
+        broken = pages[ROOT/'en/prayers.html'].replace('<meta property="og:locale:alternate"',
+                                                   '&lt;meta property="og:locale:alternate"', 1)
+        self.assertEqual(len(HeadMeta(broken).alternates), 6)
+
     def test_spanish_mirror_uses_same_shape_and_complete_rosary(self):
         pages = render_mirrors(ROOT)
         master = pages[ROOT / 'saint-charbel-prayers.html']
