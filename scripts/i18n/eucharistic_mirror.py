@@ -245,4 +245,7 @@ def render_eucharistic(root=ROOT, registry=None):
             if slug=='index':path=root/lang/'miracles/eucharistic/index.html'
             else:path=root/lang/'miracles/eucharistic'/f'{slug}.html'
             result[path]='<!doctype html>\n'+str(soup).lstrip().removeprefix('<!DOCTYPE html>\n').lstrip()
-    return result
+    from importlib.util import spec_from_file_location, module_from_spec
+    spec=spec_from_file_location("qa_bootstrap", root/"scripts/sync-analytics-qa.py")
+    qa=module_from_spec(spec);spec.loader.exec_module(qa)
+    return {path:qa.bootstrap(content) for path,content in result.items()}
