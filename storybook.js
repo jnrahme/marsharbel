@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
+    return raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -57,6 +57,9 @@
   };
 
   const EVIDENCE_SOURCES = {
+    thereseLife: {label: 'Holy See: The Life of Saint Therese of Lisieux', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19101997_stherese_en.html'},
+    thereseTrust: {label: 'Pope Francis: C est la confiance', url: 'https://www.vatican.va/content/francesco/en/apost_exhortations/documents/20231015-santateresa-delbambinogesu.html'},
+    thereseBible: {label: 'John 15:12', url: 'https://bible.usccb.org/bible/john/15'},
     peterJerome: { label: 'Jerome, On Illustrious Men, chapter 1 (ancient tradition)', url: 'https://www.newadvent.org/fathers/2708.htm' },
     peterBenedict2006a: { label: 'Holy See (Benedict XVI audience, 17 May 2006)', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060517.html' },
     peterBenedict2006b: { label: 'Holy See (Benedict XVI audience, 24 May 2006)', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060524.html' },
@@ -848,6 +851,7 @@
   ];
 
   const STORY_PAGES = {
+    therese: { en: window.THERESE_STORY_EN || [] },
     charbel: STORIES,
     massabki: { en: window.MASSABKI_STORY_EN || [] },
     pio: { en: PIO_STORY_EN },
@@ -879,6 +883,7 @@
   const VOICE_PACK_STORAGE_KEY = storyId === 'charbel' ? `storybook_voice_pack_${contentLang}` : `storybook_voice_pack_${storyId}_${contentLang}`;
   const BROWSER_VOICE_PREF_KEY = 'rosary_audio_voice_pref';
   const VOICE_PACKS = {
+  therese: { en: [{ id: 'directed-therese-v2', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-therese/en-directed-v2' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   massabki: { en: [{ id: 'kokoro-massabki', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-massabki/en' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   charbel: {
     en: [
@@ -1219,7 +1224,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
