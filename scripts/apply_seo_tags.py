@@ -95,6 +95,7 @@ BREADCRUMBS = {
     "miracles/eucharistic/ludbreg.html": ("miracles", "Eucharistic Tradition of Ludbreg"),
     "miracles/eucharistic/amsterdam.html": ("miracles", "Eucharistic Tradition of Amsterdam"),
     "miracles/eucharistic/ivorra.html": ("miracles", "Eucharistic Tradition of Ivorra"),
+    "miracles/eucharistic/faverney.html": ("miracles", "Eucharistic Event of Faverney"),
 
     "news.html": ("miracles", "Latest News"),
     "testimonies.html": ("miracles", "Letters"),
