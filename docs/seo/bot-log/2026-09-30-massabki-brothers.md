@@ -17,3 +17,9 @@ Feature: /massabki-brothers - Lebanon's first Maronite lay saints (canonized Oct
 
 ## QA
 check_seo 240 pages; nav-sync 112 pages 0 out of sync; test_seo+prayer_mirror+i18n; i18n:check/test; dead-code; diff --check; testimony-security; rosary suites (smoke, end-rules, intro-cta, menu, prayer-behavior, ui-regression, story-floating-player, site-smoke, rosary-all); rendered review desktop+phone + hub card (pixel-inspected).
+
+## Integrator corrections (September 30)
+- Independent live-source check corrected hero: only Francis is identified as a silk merchant; Abdel Moati is a teacher, Raphael a helper.
+- Removed the optional Commons image: its PD-US notice explicitly warns that non-US rights may differ. Text-led treatment until suitable reuse rights are established.
+- Frozen legacy baseline restored; new wording counted in locales/en/saint-pillars-copy.json and enforced by policy.
+- Removed unsupported literal blood-mingling phrasing and decorative Tuesday reference.

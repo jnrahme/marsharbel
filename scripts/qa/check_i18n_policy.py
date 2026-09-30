@@ -85,6 +85,8 @@ def check(root=ROOT):
     display_catalog = read_json(root/'locales/en/letters-display.json')['values']
     aeo_catalog_path = root/'locales/en/aeo-p2-copy.json'
     aeo_catalog = read_json(aeo_catalog_path)['values'] if aeo_catalog_path.exists() else {}
+    pillar_path = root/'locales/en/saint-pillars-copy.json'
+    pillar_catalog = read_json(pillar_path)['values'] if pillar_path.exists() else {}
     storybook_catalog = read_json(root/'locales/en/storybook.json')
     teresa_catalog = read_json(root/'locales/en/mother-teresa-story-copy.json')
     rafqa_catalog = read_json(root/'locales/en/rafqa-story-copy.json')
@@ -123,6 +125,7 @@ def check(root=ROOT):
         # unreviewed occurrence from being silently accepted.
         additions -= Counter(display_catalog.get(file, {}))
         additions -= Counter(aeo_catalog.get(file, {}))
+        additions -= Counter(pillar_catalog.get(file, {}))
         if file == 'miracles/index.html':
             euch_entry = read_json(root/'locales/en/eucharistic-miracles.json')['hub']
             additions -= Counter({euch_entry[key]: 1 for key in ('charbelEntryTitle','charbelEntryIntro','charbelEntryAction','charbelEntryCredit','charbelEntryAlt','charbelEntryPhotoSource','charbelEntryLicense','charbelEntryLicenseText','eyebrow')})
