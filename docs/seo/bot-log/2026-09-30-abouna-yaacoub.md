@@ -30,3 +30,7 @@ New page /abouna-yaacoub (Blessed Abouna Yaacoub Haddad, 1875-1954, Capuchin, "A
 - QA: build-home-css, check_i18n_policy, i18n:test, check_seo, git diff --check, test_seo, test_prayer_mirror, test_i18n, nav-sync, dead-code, testimony-security, site-smoke - all PASS.
 - Rendered review: desktop 1280 + phone 390 full-page captures of /abouna-yaacoub and saints hub - hero, sections, FAQ, Sources, footer, hub card all render correctly (captures in ship report).
 - i18n baseline updated (per-file max-merge) after page commit.
+
+## Integrator corrections
+- Independent Holy See + Capuchin + Commons reads verified dates, works and image rights. Removed soup-kitchen meal total, sermon-volume total, funeral-crowd implication, tomb/painting details and unsupported canonization-status condition rather than rely on uncited secondary claims.
+- Restored frozen legacy baseline. Counted new page/hub wording in saint-pillars-copy.json. Combined hub/sitemap changes with Massabki; actual hub insertion conflict resolved by keeping both whole-card articles.
