@@ -1261,6 +1261,33 @@
     syncAudioContext({ playing: false, paused: false, completed: false });
   };
 
+  // Shared reader geometry: header and control heights vary with viewport and text size.
+  const book = el.panel.closest('.storybook');
+  const controls = book.querySelector('.storybook-controls');
+  const updateReaderInsets = () => {
+    const headerHeight = document.querySelector('.topbar')?.getBoundingClientRect().height || 0;
+    document.documentElement.style.setProperty('--story-header-height', `${headerHeight}px`);
+    document.documentElement.style.setProperty('--story-controls-height', `${controls.getBoundingClientRect().height}px`);
+  };
+  const readerResize = new ResizeObserver(updateReaderInsets);
+  readerResize.observe(controls);
+  const readerHeader = document.querySelector('.topbar');
+  if (readerHeader) readerResize.observe(readerHeader);
+  updateReaderInsets();
+  // Reference summaries must not displace the actual illustrated book on entry.
+  const precedingSections = [];
+  for (let node = book.previousElementSibling; node && !node.classList.contains('story-hero'); node = node.previousElementSibling) {
+    if (node.matches('section.section')) precedingSections.unshift(node);
+  }
+  let afterBook = book;
+  for (const section of precedingSections) { afterBook.after(section); afterBook = section; }
+  const scrollToReader = () => {
+    updateReaderInsets();
+    const inset = readerHeader?.getBoundingClientRect().height || 0;
+    const target = window.scrollY + el.panel.getBoundingClientRect().top - inset - controls.getBoundingClientRect().height - 12;
+    window.scrollTo({top:Math.max(0,target), behavior:window.matchMedia(['(prefers-reduced-motion:', ' reduce)'].join('')).matches ? 'instant' : 'smooth'});
+  };
+
   const onPageReadingFinished = () => {
     reading = false;
     paused = false;
@@ -1275,7 +1302,7 @@
       setTimeout(() => {
         index++;
         render();
-        el.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        scrollToReader();
         setTimeout(() => readCurrentPage(), 220);
       }, 300);
     }
@@ -1297,6 +1324,7 @@
     el.title.textContent = page.title;
     el.body.textContent = page.body;
     el.body.classList.toggle('is-reflection', Boolean(page.reflection));
+    el.panel.classList.toggle('is-reflection-page', Boolean(page.reflection));
     el.prayer.textContent = page.prayer;
     el.heart.textContent = page.heart || '';
     el.heart.hidden = !page.heart;
@@ -1442,7 +1470,7 @@
     if (nextIndex === index) return;
     index = nextIndex;
     render();
-    el.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    scrollToReader();
     if (wasReading) {
       syncAudioContext({ playing: true, paused: false, completed: false });
       readCurrentPage();
@@ -1548,7 +1576,7 @@
         bannerBtn.addEventListener('click', () => {
           index = lastPage;
           render();
-          el.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          scrollToReader();
           banner.hidden = true;
         });
         if (bannerDismiss) {

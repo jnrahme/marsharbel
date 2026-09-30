@@ -2,7 +2,7 @@ window.PETER_STORY_EN = [
   {
     "illustration": "./media/storybook-peter/images/page-01.webp",
     "title": "Simon the Fisherman",
-    "body": "On the shore of the great lake of Galilee, in a little town called Bethsaida, there lived a fisherman named Simon. He and his brother Andrew ran a small fishing business together with the family of their friend Zebedee. Simon was married, and when he was in the town of Capernaum he stayed in the house where his mother-in-law lived. He worked hard, he mended nets, and he knew the lake in every kind of weather. He was also a man who longed for God, and he hoped to see God do great things for his people.",
+    "body": "In the first century, on the shore of the great lake of Galilee, in a little town called Bethsaida, there lived a fisherman named Simon. He and his brother Andrew ran a small fishing business together with the family of their friend Zebedee. Simon was married, and when he was in the town of Capernaum he stayed in the house where his mother-in-law lived. He worked hard, he mended nets, and he knew the lake in every kind of weather. He was also a man who longed for God, and he hoped to see God do great things for his people.",
     "prayer": "",
     "heart": "",
     "scene": "birth",
