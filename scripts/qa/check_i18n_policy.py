@@ -95,6 +95,8 @@ def check(root=ROOT):
     rafqa_catalog = read_json(root/'locales/en/rafqa-story-copy.json')
     peter_path = root/'locales/en/peter-story-copy.json'
     peter_catalog = read_json(peter_path)['values'] if peter_path.exists() else {}
+    massabki_path = root/'locales/en/massabki-story-copy.json'
+    massabki_catalog = read_json(massabki_path)['values'] if massabki_path.exists() else {}
     hardini_catalog = read_json(root/'locales/en/hardini-story-copy.json')
     pio_film_catalog = read_json(root/'locales/en/pio-film-copy.json')
     testimony_path = root / 'locales/en/testimonies.json'
@@ -129,6 +131,7 @@ def check(root=ROOT):
         # the frozen legacy baseline. The per-file counts prevent a second
         # unreviewed occurrence from being silently accepted.
         additions -= Counter(peter_catalog.get(file, {}))
+        additions -= Counter(massabki_catalog.get(file, {}))
         additions -= Counter(display_catalog.get(file, {}))
         additions -= Counter(aeo_catalog.get(file, {}))
         additions -= Counter(pillar_catalog.get(file, {}))

@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
+    return raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -64,6 +64,9 @@
     bibleActs12: { label: 'NABRE, Acts 12 (USCCB)', url: 'https://bible.usccb.org/bible/acts/12' },
     eusebiusHE3: { label: 'Eusebius, Church History 3 (via New Advent)', url: 'https://www.newadvent.org/fathers/250103.htm' },
     stPeterNecropolis: { label: 'Fabbrica di San Pietro (Holy See), The Necropolis', url: 'https://www.basilicasanpietro.va/en/san-pietro/the-necropolis' },
+    massabkiDecree: {label: 'Holy See decree, 23 May 2024', url: 'https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/05/23/240523b.html'},
+    massabkiOFM: {label: 'Order of Friars Minor: The Holy Martyrs of Damascus', url: 'https://ofm.org/en/the-holy-martyrs-of-damascus.html'},
+    massabkiHomily: {label: 'Pope Francis canonization homily, 20 October 2024', url: 'https://www.vatican.va/content/francesco/en/homilies/2024/documents/20241020-omelia-canonizzazione.html'},
     hardiniVatican: { label: 'Holy See (Nimatullah biography, 2004)', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20040516_al-hardini_en.html' },
     hardiniSchool: { label: 'Holy See (Nimatullah beatification profile, 1998, Portuguese)', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19980510_kassab_po.html' },
     hardiniHomily: { label: 'Holy See (John Paul II canonization homily, 2004)', url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2004/documents/hf_jp-ii_hom_20040516_canonizations.html' },
@@ -846,6 +849,7 @@
 
   const STORY_PAGES = {
     charbel: STORIES,
+    massabki: { en: window.MASSABKI_STORY_EN || [] },
     pio: { en: PIO_STORY_EN },
     jpii: { en: JPII_STORY_EN },
     teresa: { en: window.MOTHER_TERESA_STORY_EN || [] },
@@ -875,6 +879,7 @@
   const VOICE_PACK_STORAGE_KEY = storyId === 'charbel' ? `storybook_voice_pack_${contentLang}` : `storybook_voice_pack_${storyId}_${contentLang}`;
   const BROWSER_VOICE_PREF_KEY = 'rosary_audio_voice_pref';
   const VOICE_PACKS = {
+  massabki: { en: [{ id: 'kokoro-massabki', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-massabki/en' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   charbel: {
     en: [
       { id: 'elevenlabs-charbel', label: 'ElevenLabs Story Voice (Recommended)', type: 'clips', base: './media/storybook/en-elevenlabs' },
@@ -1214,7 +1219,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
