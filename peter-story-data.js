@@ -18,7 +18,8 @@ window.PETER_STORY_EN = [
           "bibleActs2",
           "bibleActs12",
           "eusebiusHE3",
-          "stPeterNecropolis"
+          "stPeterNecropolis",
+          "peterJerome"
         ]
       }
     ]
@@ -42,7 +43,8 @@ window.PETER_STORY_EN = [
           "bibleActs2",
           "bibleActs12",
           "eusebiusHE3",
-          "stPeterNecropolis"
+          "stPeterNecropolis",
+          "peterJerome"
         ]
       }
     ]
@@ -66,7 +68,8 @@ window.PETER_STORY_EN = [
           "bibleActs2",
           "bibleActs12",
           "eusebiusHE3",
-          "stPeterNecropolis"
+          "stPeterNecropolis",
+          "peterJerome"
         ]
       }
     ]
@@ -90,7 +93,8 @@ window.PETER_STORY_EN = [
           "bibleActs2",
           "bibleActs12",
           "eusebiusHE3",
-          "stPeterNecropolis"
+          "stPeterNecropolis",
+          "peterJerome"
         ]
       }
     ]
@@ -114,7 +118,8 @@ window.PETER_STORY_EN = [
           "bibleActs2",
           "bibleActs12",
           "eusebiusHE3",
-          "stPeterNecropolis"
+          "stPeterNecropolis",
+          "peterJerome"
         ]
       }
     ]
@@ -138,7 +143,8 @@ window.PETER_STORY_EN = [
           "bibleActs2",
           "bibleActs12",
           "eusebiusHE3",
-          "stPeterNecropolis"
+          "stPeterNecropolis",
+          "peterJerome"
         ]
       }
     ]
@@ -162,7 +168,8 @@ window.PETER_STORY_EN = [
           "bibleActs2",
           "bibleActs12",
           "eusebiusHE3",
-          "stPeterNecropolis"
+          "stPeterNecropolis",
+          "peterJerome"
         ]
       }
     ]
@@ -186,7 +193,8 @@ window.PETER_STORY_EN = [
           "bibleActs2",
           "bibleActs12",
           "eusebiusHE3",
-          "stPeterNecropolis"
+          "stPeterNecropolis",
+          "peterJerome"
         ]
       }
     ]
@@ -210,7 +218,8 @@ window.PETER_STORY_EN = [
           "bibleActs2",
           "bibleActs12",
           "eusebiusHE3",
-          "stPeterNecropolis"
+          "stPeterNecropolis",
+          "peterJerome"
         ]
       }
     ]
@@ -234,7 +243,8 @@ window.PETER_STORY_EN = [
           "bibleActs2",
           "bibleActs12",
           "eusebiusHE3",
-          "stPeterNecropolis"
+          "stPeterNecropolis",
+          "peterJerome"
         ]
       }
     ]

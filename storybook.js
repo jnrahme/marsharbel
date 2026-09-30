@@ -57,6 +57,7 @@
   };
 
   const EVIDENCE_SOURCES = {
+    peterJerome: { label: 'Jerome, On Illustrious Men, chapter 1 (ancient tradition)', url: 'https://www.newadvent.org/fathers/2708.htm' },
     peterBenedict2006a: { label: 'Holy See (Benedict XVI audience, 17 May 2006)', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060517.html' },
     peterBenedict2006b: { label: 'Holy See (Benedict XVI audience, 24 May 2006)', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060524.html' },
     bibleActs2: { label: 'NABRE, Acts 2 (USCCB)', url: 'https://bible.usccb.org/bible/acts/2' },
