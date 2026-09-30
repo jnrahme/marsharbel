@@ -11,6 +11,7 @@ from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_loca
 from i18n.mirror import render_mirrors
 from i18n.qadisha_mirror import render_qadisha
 from i18n.monastery_mirror import render_monasteries
+from i18n.litany_mirror import render_litany
 from i18n.eucharistic_mirror import render_eucharistic
 
 
@@ -147,6 +148,7 @@ def outputs(root=ROOT):
     monasteries = render_monasteries(root, registry)
     english_monasteries = {path: monasteries.pop(path) for path in (root / 'qannoubine-monastery.html', root / 'qozhaya-monastery.html')}
     result.update(monasteries)
+    result.update(render_litany(root))
     eucharistic = render_eucharistic(root, registry)
     result.update(eucharistic)
     # Nested localized directory indexes must be explicit; Options -Indexes
