@@ -61,9 +61,12 @@ def snapshot(root=ROOT):
                       if page_url(registry, code, topic).endswith('/')
                       else page_url(registry, code, topic).lstrip('/') + '.html')
                      for code in registry['locales'] for topic in locale_topics(registry, code))
+    if 'chaplet' in registry.get('authoredMirrors', {}):
+        generated.update(route.lstrip('/')+'.html' for code,route in registry['authoredMirrors']['chaplet']['routes'].items() if code != 'en')
     generated.update(f'{code}/miracles/eucharistic/'+('index.html' if slug=='index' else slug+'.html')
                      for code in registry['locales'] if code != registry['defaultLocale']
                      for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney'))
+    generated.add("ar/litany-of-saint-charbel.html")
     result = {}
     for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'), *root.glob('miracles/*.html'), *root.glob('miracles/eucharistic/*.html'),
                         *(p for code in registry['locales'] if code != registry['defaultLocale']
@@ -85,6 +88,8 @@ def check(root=ROOT):
     display_catalog = read_json(root/'locales/en/letters-display.json')['values']
     aeo_catalog_path = root/'locales/en/aeo-p2-copy.json'
     aeo_catalog = read_json(aeo_catalog_path)['values'] if aeo_catalog_path.exists() else {}
+    pillar_path = root/'locales/en/saint-pillars-copy.json'
+    pillar_catalog = read_json(pillar_path)['values'] if pillar_path.exists() else {}
     storybook_catalog = read_json(root/'locales/en/storybook.json')
     teresa_catalog = read_json(root/'locales/en/mother-teresa-story-copy.json')
     rafqa_catalog = read_json(root/'locales/en/rafqa-story-copy.json')
@@ -126,6 +131,7 @@ def check(root=ROOT):
         additions -= Counter(peter_catalog.get(file, {}))
         additions -= Counter(display_catalog.get(file, {}))
         additions -= Counter(aeo_catalog.get(file, {}))
+        additions -= Counter(pillar_catalog.get(file, {}))
         if file == 'miracles/index.html':
             euch_entry = read_json(root/'locales/en/eucharistic-miracles.json')['hub']
             additions -= Counter({euch_entry[key]: 1 for key in ('charbelEntryTitle','charbelEntryIntro','charbelEntryAction','charbelEntryCredit','charbelEntryAlt','charbelEntryPhotoSource','charbelEntryLicense','charbelEntryLicenseText','eyebrow')})
