@@ -1,3 +1,4 @@
+const {installQaMarker}=require('../analytics/qa-browser.cjs');
 /**
  * Comprehensive E2E click-through test for marsharbel.com (v4 — final)
  *
@@ -159,7 +160,7 @@ async function testPage(browser, pagePath) {
   console.log(`Base: ${BASE}`);
   console.log(`Time: ${new Date().toISOString()}\n`);
 
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: true });installQaMarker(browser,'scripts/tests/e2e_full_clickthrough.cjs');
 
   // ── Phase 1: Recursive crawl ──────────────────────────────
   console.log('[Phase 1] Crawling...');

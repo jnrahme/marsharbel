@@ -9,6 +9,9 @@ fi
 
 cd "${ROOT}"
 
+python3 scripts/sync-analytics-qa.py --check
+node scripts/tests/analytics_qa_unit.cjs
+node scripts/tests/analytics_qa.mjs
 node scripts/build-home-css.mjs --check
 npm run i18n:check
 python3 scripts/build-eucharistic-miracles.py --check

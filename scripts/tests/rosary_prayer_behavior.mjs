@@ -1,11 +1,12 @@
 #!/usr/bin/env node
+import qaBrowser from '../analytics/qa-browser.cjs';const {installQaMarker}=qaBrowser;
 
 import { chromium } from 'playwright';
 
 const baseUrlArg = process.argv.find(arg => arg.startsWith('--base-url='));
 const baseUrl = (baseUrlArg ? baseUrlArg.split('=')[1] : 'http://127.0.0.1:4173').replace(/\/$/, '');
 
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({ headless: true });installQaMarker(browser,'scripts/tests/rosary_prayer_behavior.mjs');
 const context = await browser.newContext();
 const page = await context.newPage();
 

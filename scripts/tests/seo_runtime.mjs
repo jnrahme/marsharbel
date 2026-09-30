@@ -1,3 +1,4 @@
+import qaBrowser from '../analytics/qa-browser.cjs';const {installQaMarker}=qaBrowser;
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { chromium } from 'playwright';
@@ -5,7 +6,7 @@ import { chromium } from 'playwright';
 const base = process.env.BASE_URL || 'http://127.0.0.1:4188';
 const sitemap = await readFile(new URL('../../sitemap.xml', import.meta.url), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({ headless: true });installQaMarker(browser,'scripts/tests/seo_runtime.mjs');
 try {
   const context = await browser.newContext({ serviceWorkers: 'block' });
   // These tests assert our metadata, independently of third-party availability.

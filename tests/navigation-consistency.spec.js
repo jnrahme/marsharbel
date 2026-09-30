@@ -1,4 +1,4 @@
-const { test, expect } = require('@playwright/test');
+const { test, expect } = require('./qa-test.cjs');
 const fs = require('node:fs');
 const paths = [...fs.readdirSync('.').filter(p => p.endsWith('.html')), ...fs.readdirSync('mysteries').filter(p => p.endsWith('.html')).map(p => `mysteries/${p}`), ...fs.readdirSync('miracles/eucharistic').filter(p => p.endsWith('.html')).map(p => `miracles/eucharistic/${p}`)]
   .filter(p => {

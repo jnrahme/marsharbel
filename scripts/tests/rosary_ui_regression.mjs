@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import qaBrowser from '../analytics/qa-browser.cjs';const {installQaMarker}=qaBrowser;
 
 /**
  * UI Regression Tests for the 6 bugs fixed in PR #10.
@@ -41,7 +42,7 @@ const requiredTestIds = [
   'play-studio', 'auto-timer-toggle', 'start-guided-audio'
 ];
 
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({ headless: true });installQaMarker(browser,'scripts/tests/rosary_ui_regression.mjs');
 const context = await browser.newContext();
 const page = await context.newPage();
 

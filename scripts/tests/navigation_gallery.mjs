@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+import qaBrowser from '../analytics/qa-browser.cjs';const {installQaMarker}=qaBrowser;
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 
 const baseArg = process.argv.find(arg => arg.startsWith('--base-url='));
 const baseUrl = baseArg ? baseArg.slice('--base-url='.length) : 'http://127.0.0.1:4173';
-const browser = await chromium.launch();
+const browser = await chromium.launch();installQaMarker(browser,'scripts/tests/navigation_gallery.mjs');
 try {
   for (const [width, height] of [[375, 667], [667, 375], [1366, 900]]) {
     const page = await browser.newPage({ serviceWorkers: 'block', viewport: { width, height } });

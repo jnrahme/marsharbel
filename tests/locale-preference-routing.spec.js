@@ -1,4 +1,4 @@
-const {test, expect} = require('@playwright/test');
+const {test, expect} = require('./qa-test.cjs');
 const registry = require('../locales/registry.json');
 
 for (const [route, lang, heading] of [

@@ -1,9 +1,10 @@
+import qaBrowser from '../analytics/qa-browser.cjs';const {installQaMarker}=qaBrowser;
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 import { mkdir } from 'node:fs/promises';
 await mkdir('output/playwright/testimonies',{recursive:true});
 const base=process.env.BASE_URL||'http://127.0.0.1:4321';
-const browser=await chromium.launch();
+const browser=await chromium.launch();installQaMarker(browser,'scripts/tests/testimony_ui.mjs');
 async function pageFor(mode,width=375){
  const page=await browser.newPage({viewport:{width,height:900},serviceWorkers:'block'});
  await page.route('**/testimony-config.js*',r=>r.fulfill({contentType:'application/javascript',body:`window.TESTIMONY_CONFIG={supabaseUrl:'https://test.supabase.co',supabaseAnonKey:'public-key',turnstileSiteKey:'test',accountsEnabled:true,submissionsEnabled:true,moderationEnabled:true,moderatorMfaRequired:${!mode.startsWith('admin-password')} };`}));

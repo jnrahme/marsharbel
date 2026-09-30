@@ -1,4 +1,4 @@
-const { test, expect } = require('@playwright/test');
+const { test, expect } = require('./qa-test.cjs');
 const AxeBuilder = require('@axe-core/playwright').default;
 
 const pages = ['/submit-testimony.html', '/testimony-review.html', '/account.html'];

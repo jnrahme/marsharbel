@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import qaBrowser from '../analytics/qa-browser.cjs';const {installQaMarker}=qaBrowser;
 // Start scripts/dev-server.mjs first, then run npm run test:layout.
 import { chromium } from 'playwright';
 import { readdir } from 'node:fs/promises';
@@ -11,7 +12,7 @@ const paths = [
 ];
 const widths = [375, 768, 1024, 1366, 1920];
 const failures = [];
-const browser = await chromium.launch();
+const browser = await chromium.launch();installQaMarker(browser,'scripts/tests/layout_audit.mjs');
 
 try {
   for (const width of widths) {

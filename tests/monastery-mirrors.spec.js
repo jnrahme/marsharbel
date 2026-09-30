@@ -1,4 +1,4 @@
-const {test, expect} = require('@playwright/test');
+const {test, expect} = require('./qa-test.cjs');
 const catalogs = {
   qannoubine: require('../locales/ar/mirrors/qannoubine-monastery.json'),
   qozhaya: require('../locales/ar/mirrors/qozhaya-monastery.json')

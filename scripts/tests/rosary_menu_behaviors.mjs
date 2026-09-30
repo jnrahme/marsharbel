@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import qaBrowser from '../analytics/qa-browser.cjs';const {installQaMarker}=qaBrowser;
 
 import { chromium } from 'playwright';
 
@@ -21,7 +22,7 @@ const expect = async (name, fn) => {
   }
 };
 
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({ headless: true });installQaMarker(browser,'scripts/tests/rosary_menu_behaviors.mjs');
 const context = await browser.newContext();
 const page = await context.newPage();
 

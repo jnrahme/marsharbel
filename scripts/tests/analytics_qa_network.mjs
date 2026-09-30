@@ -1,0 +1,10 @@
+import{chromium}from'playwright';import{installQaMarker}from'../analytics/qa-browser.cjs';import{spawn}from'node:child_process';import assert from'node:assert/strict';import fs from'node:fs';
+const server=spawn('node',['scripts/dev-server.mjs','--port=4371'],{stdio:'ignore'});let browser;let proof=[];
+try{await new Promise(r=>setTimeout(r,500));browser=await chromium.launch();for(const kind of['normal','monitoring','analytics_debug']){
+ const b=await chromium.launch();if(kind!=='normal')installQaMarker(b,`proof.${kind}`,kind);const page=await b.newPage();let requests=[];
+ await page.route(/https:\/\/(?:[a-z0-9.-]+\.)?google-analytics\.com\/g\/collect/,r=>{const u=new URL(r.request().url());const bodies=r.request().postData()?.split('\n')||[''];for(const body of bodies){const q=new URLSearchParams(u.search);for(const[k,v]of new URLSearchParams(body))q.set(k,v);requests.push(Object.fromEntries(q));}return r.fulfill({status:204})});
+ for(const route of['/','/ar/','/massabki-story']){await page.goto(`http://localhost:4371${route}`);await page.waitForFunction(()=>typeof window.google_tag_manager==='object',{},{timeout:15000});await page.waitForTimeout(800);await page.evaluate(()=>gtag('event','qa_custom_probe',{transport_type:'beacon'}));await page.waitForTimeout(6500);}
+ console.log(kind,requests.length);fs.writeFileSync('/tmp/ga-network-'+kind+'.json',JSON.stringify(requests,null,2));assert.ok(requests.filter(r=>r.en==='page_view').length>=3);assert.ok(requests.filter(r=>r.en==='qa_custom_probe').length>=3);for(const event of requests){if(kind==='normal')assert.equal(event.tt,undefined);else{assert.equal(event.tt,'qa_monitoring');assert.equal(event['ep.qa_kind'],kind);assert.equal(event['ep.qa_runner'],`proof.${kind}`);if(kind==='analytics_debug')assert.ok(event._dbg==='1'||event['ep.debug_mode']?.trim()==='true');else assert.notEqual(event._dbg,'1');}}
+ proof.push({kind,requests});await b.close();
+ }fs.writeFileSync('/tmp/ga-network-real.json',JSON.stringify(proof,null,2));console.log('QA marker transport proof: normal/monitoring/debug,3 navigations,auto+custom events PASS');
+}finally{await browser?.close();server.kill()}

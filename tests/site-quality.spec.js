@@ -1,4 +1,4 @@
-const { test, expect } = require('@playwright/test');
+const { test, expect } = require('./qa-test.cjs');
 const AxeBuilder = require('@axe-core/playwright').default;
 
 const pages = ['/index.html', '/story.html', '/rosary-visual-guide.html', '/gallery.html', '/saint-charbel-novena.html', '/saint-charbel-feast-day.html', '/visit-annaya.html', '/22nd-of-the-month.html', '/miracles/', '/miracles/eucharistic/', '/miracles/eucharistic/lanciano', '/miracles/eucharistic/bolsena-orvieto', '/miracles/eucharistic/siena', '/miracles/eucharistic/santarem', '/miracles/eucharistic/sokolka'];

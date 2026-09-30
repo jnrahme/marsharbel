@@ -1,7 +1,8 @@
+import qaBrowser from '../analytics/qa-browser.cjs';const {installQaMarker}=qaBrowser;
 import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
 const base = process.env.BASE_URL || 'http://127.0.0.1:4173';
-const browser = await chromium.launch();
+const browser = await chromium.launch();installQaMarker(browser,'scripts/tests/eucharistic_collection.mjs');
 try {
   for (const width of [390, 1440]) {
     const page = await browser.newPage({viewport:{width,height:850}});

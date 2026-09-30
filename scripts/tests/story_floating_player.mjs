@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import qaBrowser from '../analytics/qa-browser.cjs';const {installQaMarker}=qaBrowser;
 
 /**
  * Comprehensive tests for the Story page floating audio player.
@@ -29,7 +30,7 @@ const expect = async (name, fn) => {
   }
 };
 
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({ headless: true });installQaMarker(browser,'scripts/tests/story_floating_player.mjs');
 const context = await browser.newContext();
 const page = await context.newPage();
 

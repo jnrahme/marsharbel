@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import qaBrowser from '../analytics/qa-browser.cjs';const {installQaMarker}=qaBrowser;
 
 import { chromium } from 'playwright';
 
@@ -20,7 +21,7 @@ const firstForSet = {
   glorious: 'glorious-1'
 };
 
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({ headless: true });installQaMarker(browser,'scripts/tests/rosary_intro_cta_behavior.mjs');
 const context = await browser.newContext();
 const page = await context.newPage();
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import qaBrowser from '../analytics/qa-browser.cjs';const {installQaMarker}=qaBrowser;
 import { chromium } from 'playwright';
 
 function parseBaseUrl(argv) {
@@ -22,7 +23,7 @@ const paths = [
 ];
 
 const failures = [];
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({ headless: true });installQaMarker(browser,'scripts/tests/site_smoke.mjs');
 
 try {
   for (const path of paths) {

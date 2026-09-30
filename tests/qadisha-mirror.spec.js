@@ -1,4 +1,4 @@
-const {test, expect} = require('@playwright/test');
+const {test, expect} = require('./qa-test.cjs');
 const catalog = require('../locales/ar/mirrors/qadisha.json');
 
 for (const route of ['/qadisha-valley', '/ar/qadisha-valley']) {

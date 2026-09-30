@@ -233,6 +233,13 @@ def outputs(root=ROOT):
     if count != 1:
         raise ValueError('Expected exactly one managed i18n-routes block in .htaccess')
     result[htaccess] = updated
+    from importlib.util import spec_from_file_location, module_from_spec
+    spec = spec_from_file_location("qa_bootstrap", root / "scripts/sync-analytics-qa.py")
+    qa_bootstrap = module_from_spec(spec)
+    spec.loader.exec_module(qa_bootstrap)
+    for path, content in result.items():
+        if path.suffix == ".html" and "gtag(" in content:
+            result[path] = qa_bootstrap.bootstrap(content)
     return result
 
 
