@@ -1,0 +1,252 @@
+window.PETER_STORY_EN = [
+  {
+    "illustration": "./media/storybook-peter/images/page-01.webp",
+    "title": "Simon the Fisherman",
+    "body": "On the shore of the great lake of Galilee, in a little town called Bethsaida, there lived a fisherman named Simon. He and his brother Andrew ran a small fishing business together with the family of their friend Zebedee. Simon was married, and when he was in the town of Capernaum he stayed in the house where his mother-in-law lived. He worked hard, he mended nets, and he knew the lake in every kind of weather. He was also a man who longed for God, and he hoped to see God do great things for his people.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-01.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of documented events; imaginative composites and reported interior experiences are named in the story.",
+        "sources": [
+          "peterBenedict2006a",
+          "peterBenedict2006b",
+          "bibleActs2",
+          "bibleActs12",
+          "eusebiusHE3",
+          "stPeterNecropolis",
+          "peterJerome"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-peter/images/page-02.webp",
+    "title": "Put Out into the Deep",
+    "body": "One morning, after a whole night of catching nothing, Simon was washing his nets when Jesus came to the shore. A crowd was pressing in to listen, so Jesus stepped into Simon's boat and taught the people from there. When he finished, he told Simon to push out into deep water and lower the nets again. Simon was a tired fisherman and Jesus was a carpenter, but Simon answered, \"Master, we toiled all night and took nothing! But at your word I will let down the nets.\" The nets filled with more fish than he had ever seen. Simon fell to his knees, amazed and a little afraid, but Jesus told him not to be afraid: from now on he would catch people. Simon left his nets and followed.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-02.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of documented events; imaginative composites and reported interior experiences are named in the story.",
+        "sources": [
+          "peterBenedict2006a",
+          "peterBenedict2006b",
+          "bibleActs2",
+          "bibleActs12",
+          "eusebiusHE3",
+          "stPeterNecropolis",
+          "peterJerome"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-peter/images/page-03.webp",
+    "title": "A Name Like a Rock",
+    "body": "Jesus saw something in Simon that Simon could not yet see in himself. He gave him a new name: Cephas, which means rock, and in Greek, Peter. A name like that is a promise about who a person can become. Much later, near a town called Caesarea Philippi, Jesus asked his friends the biggest question of all: Who do you say that I am? It was Peter who answered for them all: \"You are the Christ.\" It was the beginning of a faith that would grow and be tested for the rest of his life.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-03.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of documented events; imaginative composites and reported interior experiences are named in the story.",
+        "sources": [
+          "peterBenedict2006a",
+          "peterBenedict2006b",
+          "bibleActs2",
+          "bibleActs12",
+          "eusebiusHE3",
+          "stPeterNecropolis",
+          "peterJerome"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-peter/images/page-04.webp",
+    "title": "To Whom Shall We Go?",
+    "body": "Once, after Jesus fed a huge crowd with five loaves and two fish, he taught something very hard: that he would give himself as the true bread from heaven. Many listeners found that too hard, and they walked away. Jesus turned to the twelve friends who remained and asked if they wanted to leave too. Peter answered with words the Church has never forgotten: \"Lord, to whom shall we go? You have the words of eternal life.\" Peter did not understand everything. But he knew whom he trusted, and sometimes that is where faith begins.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-04.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of documented events; imaginative composites and reported interior experiences are named in the story.",
+        "sources": [
+          "peterBenedict2006a",
+          "peterBenedict2006b",
+          "bibleActs2",
+          "bibleActs12",
+          "eusebiusHE3",
+          "stPeterNecropolis",
+          "peterJerome"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-peter/images/page-05.webp",
+    "title": "The Night Fear Won",
+    "body": "Peter was brave, but he was not brave all the time. On the night Jesus was arrested, Peter had promised to stay loyal no matter what. Yet in the courtyard, when people asked if he was one of Jesus' friends, fear won. Three times that night, Peter said he did not know Jesus. Then a rooster crowed, and Peter remembered what Jesus had said. He went out and wept with a broken and sorry heart. Even the rock could crack. What matters is what he did next.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-05.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of documented events; imaginative composites and reported interior experiences are named in the story.",
+        "sources": [
+          "peterBenedict2006a",
+          "peterBenedict2006b",
+          "bibleActs2",
+          "bibleActs12",
+          "eusebiusHE3",
+          "stPeterNecropolis",
+          "peterJerome"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-peter/images/page-06.webp",
+    "title": "Breakfast by the Lake",
+    "body": "After Jesus rose from the dead, he met his friends again by the same lake, over a breakfast of bread and fish. Three times he asked Peter, \"Do you love me?\" Three times Peter said yes, and each time Jesus gave him a job: \"Feed my sheep.\" Jesus was not pretending the denial had never happened. He was healing it, gently, one question at a time, and giving Peter his trust back. That is what real forgiveness looks like: it hands you something loving to do.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-06.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of documented events; imaginative composites and reported interior experiences are named in the story.",
+        "sources": [
+          "peterBenedict2006a",
+          "peterBenedict2006b",
+          "bibleActs2",
+          "bibleActs12",
+          "eusebiusHE3",
+          "stPeterNecropolis",
+          "peterJerome"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-peter/images/page-07.webp",
+    "title": "The Rock Stands Up",
+    "body": "Fifty days after Easter, the Holy Spirit came upon the apostles with a noise like a strong driving wind. The man who had once been too afraid to speak in a courtyard now stood up in the middle of Jerusalem and told the crowds the good news about Jesus. That day, about three thousand people believed and were baptized. The frightened fisherman was becoming the rock Jesus had seen in him. Courage, it turns out, is not something you are born with. It grows every time love wins over fear.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-07.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of documented events; imaginative composites and reported interior experiences are named in the story.",
+        "sources": [
+          "peterBenedict2006a",
+          "peterBenedict2006b",
+          "bibleActs2",
+          "bibleActs12",
+          "eusebiusHE3",
+          "stPeterNecropolis",
+          "peterJerome"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-peter/images/page-08.webp",
+    "title": "Chains and an Angel",
+    "body": "Years later, King Herod had Peter arrested during the Passover festival, chained between soldiers, with more guards at the door. The Church prayed for him all through the night. And in the night an angel woke Peter, the chains fell from his wrists, and the iron gate opened by itself before them. When Peter knocked at the house where his friends were praying, a girl named Rhoda was so overjoyed to hear his voice that she ran to tell the others and forgot to open the gate. God had not forgotten Peter, and neither had his friends.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-08.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of documented events; imaginative composites and reported interior experiences are named in the story.",
+        "sources": [
+          "peterBenedict2006a",
+          "peterBenedict2006b",
+          "bibleActs2",
+          "bibleActs12",
+          "eusebiusHE3",
+          "stPeterNecropolis",
+          "peterJerome"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-peter/images/page-09.webp",
+    "title": "All the Way to Rome",
+    "body": "Many years later, Peter's journey brought him to Rome, the heart of the empire. There, under the cruel emperor Nero, Peter was killed for his faith; an ancient history tells us he did not consider himself worthy to die in exactly the same way as Jesus. The first Christians buried him on the Vatican hill, and today the great basilica of Saint Peter stands over the place where his tomb was found. What can you carry from Peter's life? That a person who once said he did not know Jesus can still become a rock of love. Everyone falls. What matters is getting up and saying yes again.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-09.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of documented events; imaginative composites and reported interior experiences are named in the story.",
+        "sources": [
+          "peterBenedict2006a",
+          "peterBenedict2006b",
+          "bibleActs2",
+          "bibleActs12",
+          "eusebiusHE3",
+          "stPeterNecropolis",
+          "peterJerome"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-peter/images/page-10.webp",
+    "title": "Points of reflection",
+    "body": "First, Jesus met Peter at his work, right in his fishing boat. God is interested in our ordinary days, not only in church moments. What ordinary thing that you do could you offer to God this week? Second, when many people walked away, Peter answered Jesus with trust: \"To whom shall we go?\" Faith does not mean understanding everything. It means staying close to someone you trust. When something is hard to understand, who helps you stay steady? Third, Peter failed badly and wept, but he turned back, and Jesus forgave him and gave him loving work to do. Hiding a mistake makes it heavier; telling the truth makes it lighter. If you have fallen, which trusted person could you tell today? Fourth, Peter's courage grew little by little, from a frightened courtyard to a city square full of people. Courage grows by practice, one small brave choice at a time. What is one small brave thing you could try this week? This week, choose one: offer an ordinary task to God, tell the truth about a mistake, or do one small brave thing. Ask Peter's friend Jesus to help you, and remember that you can always ask a trusted person to help you, too.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-10.mp3",
+    "reflection": true,
+    "evidence": [
+      {
+        "type": "pastoral",
+        "claim": "This page offers pastoral guidance for children, drawn from the documented life and teaching of the saint.",
+        "sources": [
+          "peterBenedict2006a",
+          "peterBenedict2006b",
+          "bibleActs2",
+          "bibleActs12",
+          "eusebiusHE3",
+          "stPeterNecropolis",
+          "peterJerome"
+        ]
+      }
+    ]
+  }
+]

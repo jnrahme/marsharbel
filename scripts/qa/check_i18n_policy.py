@@ -93,6 +93,8 @@ def check(root=ROOT):
     storybook_catalog = read_json(root/'locales/en/storybook.json')
     teresa_catalog = read_json(root/'locales/en/mother-teresa-story-copy.json')
     rafqa_catalog = read_json(root/'locales/en/rafqa-story-copy.json')
+    peter_path = root/'locales/en/peter-story-copy.json'
+    peter_catalog = read_json(peter_path)['values'] if peter_path.exists() else {}
     massabki_path = root/'locales/en/massabki-story-copy.json'
     massabki_catalog = read_json(massabki_path)['values'] if massabki_path.exists() else {}
     hardini_catalog = read_json(root/'locales/en/hardini-story-copy.json')
@@ -128,6 +130,7 @@ def check(root=ROOT):
         # Newly edited English legacy pages are catalog-backed, not added to
         # the frozen legacy baseline. The per-file counts prevent a second
         # unreviewed occurrence from being silently accepted.
+        additions -= Counter(peter_catalog.get(file, {}))
         additions -= Counter(massabki_catalog.get(file, {}))
         additions -= Counter(display_catalog.get(file, {}))
         additions -= Counter(aeo_catalog.get(file, {}))
