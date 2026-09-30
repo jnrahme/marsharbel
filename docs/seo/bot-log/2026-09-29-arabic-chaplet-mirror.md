@@ -1,0 +1,9 @@
+# Arabic Chaplet mirror, September 29, 2026
+
+Feature: mirror the English `/saint-charbel-chaplet` at `/ar/saint-charbel-chaplet` from a keyed Arabic catalog and the same English page skeleton. Stage base `c2c9965` (#356). English chaplet shipped in #348. Main confirmed this lane owns the mirror.
+
+The generator keeps the eight main sections, six bead steps, both full prayers, five FAQs and matching FAQPage schema, portrait and four source URLs. Arabic source text is keyed in `locales/ar/chaplet.json`; `scripts/i18n/chaplet_mirror.py` rejects missing or extra slots. The reciprocal en/ar/x-default cluster, Arabic self-canonical, locale route and sitemap entry are generated. Within the page, only published Arabic destinations point to authored mirrors; other routes remain at their English destinations, avoiding invented Arabic pages. The shared English page gets only the reciprocal alternate.
+
+Checks on this branch: `build-international.py --check`, `check_i18n_policy.py`, `check_seo.py` (224 indexable pages), `sitemap_lastmod.py --check`, and 81 Python tests including two new chaplet tests pass. The local final rendered Arabic page was opened via HTTP at 390px and 1440px; both actual viewport sizes and document widths matched, the image loaded at natural width 906, and screenshots were pixel-inspected. The main content, image, eight sections, six steps, both prayers, FAQ and source list were visible without clipping. A local preview is not deployment proof; independent final artifact review and live desktop/phone verification remain for the integrator after merge.
+
+Editorial boundary: the two full traditional prayers are Arabic renderings of the English master, not claimed as a liturgical edition or a verified authorized Arabic prayerbook. The English page itself describes a devotion surrounding Annaya rather than asserting official monastery authorship. The Arabic page maintains that distinction and makes no guaranteed-grace claim.
