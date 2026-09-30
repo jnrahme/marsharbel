@@ -911,7 +911,7 @@
       { id: 'kokoro-hardini', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-hardini/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ] },
-  peter: { en: [{ id: 'kokoro-peter', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-peter/en' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  peter: { en: [{ id: 'kokoro-peter', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-peter/en-directed-r1' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   rafqa: { en: [
       { id: 'kokoro-rafqa', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-rafqa/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
