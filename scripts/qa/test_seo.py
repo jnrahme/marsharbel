@@ -29,6 +29,41 @@ class SeoRegressionTests(unittest.TestCase):
             if not target.exists() and path.name != ".git":
                 target.symlink_to(path, target_is_directory=path.is_dir())
 
+    def test_generated_faq_survives_a_second_generator_pass(self):
+        path = self.root / "story.html"
+        original_root = generator.ROOT
+        generator.ROOT = self.root
+        try:
+            generator.update_file(path)
+            first = path.read_text()
+            generator.update_file(path)
+            second = path.read_text()
+            self.assertEqual(first, second)
+            self.assertEqual(len(re.findall(r'"@type"\s*:\s*"FAQPage"', second)), 1)
+            generated = [json.loads(block) for block in re.findall(
+                r'<script type="application/ld\+json">([\s\S]*?)</script>', second)]
+            entities = [block for graph in generated for block in graph.get("@graph", [graph])]
+            faq = next(block for block in entities if block.get("@type") == "FAQPage")
+            self.assertEqual(len(faq["mainEntity"]), 4)
+        finally:
+            generator.ROOT = original_root
+
+    def test_aeo_catalog_matches_visible_copy_and_faq_schema(self):
+        from collections import Counter
+        from check_i18n_policy import extract_html
+        catalog = json.loads((ROOT / "locales/en/aeo-p2-copy.json").read_text())["values"]
+        self.assertEqual(len(catalog), 12)
+        for filename, values in catalog.items():
+            html = (self.root / filename).read_text()
+            self.assertFalse(Counter(values) - extract_html(html), filename)
+            blocks = [json.loads(raw) for raw in re.findall(
+                r'<script type="application/ld\+json">([\s\S]*?)</script>', html)]
+            entities = [entity for block in blocks for entity in block.get("@graph", [block])]
+            faqs = [entity for entity in entities if entity.get("@type") == "FAQPage"]
+            self.assertEqual(len(faqs), 1, filename)
+            actual = [(q["name"], q["acceptedAnswer"]["text"]) for q in faqs[0]["mainEntity"]]
+            self.assertEqual(actual, generator.faq_pairs(html), filename)
+
     def test_repository_metadata(self):
         self.assertEqual(check(self.root)[0], [])
 
