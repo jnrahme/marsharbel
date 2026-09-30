@@ -28,6 +28,7 @@ NOINDEX = {
 }
 
 DESCRIPTIONS = {
+    "massabki-story.html": "Read the Massabki brothers’ story for ages 6-12 with a trusted adult: narrated pages about service, faith, remembrance, and choosing safety and peace.",
     "history.html": "Discover Saint Charbel's life timeline from 1828 to canonization in 1977, including his Maronite monastic vocation and enduring spiritual legacy.",
     "story.html": "Read a child-friendly Saint Charbel storybook for ages 5-12 with simple language, faith lessons, and an engaging guided experience.",
     "miracles.html": "Explore Saint Charbel miracle records with clear distinction between formally recognized Church miracles and reported testimonies from Annaya.",
