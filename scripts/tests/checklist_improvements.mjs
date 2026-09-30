@@ -1029,21 +1029,31 @@ try {
   // AUTO-SCROLL ON NAVIGATION
   // ============================================================
 
-  await expect('movePage triggers scrollIntoView on story panel', async () => {
+  await expect('movePage scrolls the reader into view under the fixed header', async () => {
     await page.evaluate(() => localStorage.removeItem('storybook_last_page'));
     await page.goto(`${baseUrl}/story.html`, { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(400);
-    // Monkey-patch scrollIntoView to track calls
-    const scrolled = await page.evaluate(() => {
-      let called = false;
-      const panel = document.querySelector('.storybook-panel');
-      if (!panel) return false;
-      panel.scrollIntoView = () => { called = true; };
-      // Trigger next page
+    // Shared reader scrolls via window.scrollTo with a measured inset so the
+    // panel lands below the sticky header + controls instead of beneath them.
+    const result = await page.evaluate(async () => {
+      const calls = [];
+      const origScrollTo = window.scrollTo;
+      window.scrollTo = (opts) => { calls.push(typeof opts === 'object' ? opts : { top: opts }); };
       document.getElementById('story-next').click();
-      return called;
+      await new Promise(r => setTimeout(r, 150));
+      window.scrollTo = origScrollTo;
+      if (!calls.length) return { scrolled: false };
+      const header = document.querySelector('.topbar');
+      const controls = document.querySelector('.storybook-controls');
+      const panel = document.querySelector('.storybook-panel');
+      const inset = (header ? header.getBoundingClientRect().height : 0)
+        + (controls ? controls.getBoundingClientRect().height : 0) + 12;
+      const expected = Math.max(0, window.scrollY + panel.getBoundingClientRect().top - inset);
+      const last = calls[calls.length - 1];
+      return { scrolled: true, target: last.top, expected, close: Math.abs((last.top || 0) - expected) < 2 };
     });
-    if (!scrolled) throw new Error('scrollIntoView should be called on page navigation');
+    if (!result.scrolled) throw new Error('window.scrollTo should be called on page navigation');
+    if (!result.close) throw new Error(`scroll target ${result.target} should clear header+controls inset (expected ~${result.expected})`);
   });
 
   // ============================================================
