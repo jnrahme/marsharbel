@@ -536,7 +536,7 @@ def update_file(path: Path) -> bool:
     breadcrumb = breadcrumb_for(path, title) if "noindex" not in robots and not authored_breadcrumb else None
     standalone = []
     if not has_graph_page and "noindex" not in robots:
-        for block in (faq_schema(html), tourist_schema(path, html, url, title, description, image),
+        for block in (faq_schema(html2), tourist_schema(path, html, url, title, description, image),
                       person_schema(path, html, url, title, description)):
             if block:
                 standalone.append(block)
