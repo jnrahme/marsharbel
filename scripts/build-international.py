@@ -193,6 +193,7 @@ def outputs(root=ROOT):
         lastmod = f'<lastmod>{lastmods[url]}</lastmod>' if url in lastmods else ''
         return f'  <url><loc>{url}</loc>{lastmod}</url>'
     text = text.replace('</urlset>', '\n' + '\n'.join(entry(url) for url in generated) + '\n</urlset>')
+    text = re.sub(r'\n[ \t]*\n(?:[ \t]*\n)+', '\n\n', text)
     result[sitemap] = text
     routing = {'homes':{code: cfg['home'] for code,cfg in registry['locales'].items()},
                'topics':{cfg['relatedEnglish']:{code:page_url(registry,code,topic) for code in topic_locales(registry,topic)} for topic,cfg in registry['topics'].items()}}
