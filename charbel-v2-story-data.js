@@ -199,7 +199,7 @@ window.CHARBEL_V2_STORY_EN = [
     "evidence": [
       {
         "type": "pastoral",
-        "claim": "An original reflection on Charbel's silence and prayer, not a recorded speech. The quoted verse is Psalm 46:11 in the New American Bible, Revised Edition (USCCB, bible.usccb.org/bible/psalms/46): "Be still and know that I am God!"",
+        "claim": "An original reflection on Charbel's silence and prayer, not a recorded speech. The quoted verse is Psalm 46:11 in the New American Bible, Revised Edition (USCCB, bible.usccb.org/bible/psalms/46): \"Be still and know that I am God!\"",
         "sources": [
           "vaticanBeatification1965",
           "vaticanCanonization1977"
