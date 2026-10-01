@@ -1574,8 +1574,12 @@
         }
         const summary = document.querySelector(['.story-settings', 'summary'].join(' '));
         if (summary) { summary.setAttribute('aria-label', messages.settings); summary.title = messages.settings; const label = document.createElement('span'); label.textContent = messages.settingsShort; summary.appendChild(label); }
-        const note = document.querySelector('.story-production-note');
-        if (note && !note.hasAttribute('data-story-specific-disclosure')) note.textContent = messages.disclosure;
+        const notes = document.querySelectorAll('.story-production-note');
+        notes.forEach(note => {
+          if (!note.closest('#storybook-film') && !note.hasAttribute('data-story-specific-disclosure')) {
+            note.textContent = messages.disclosure;
+          }
+        });
       }
     } catch (_) { /* Legacy strings remain usable when previewed offline. */ }
     // Read last page BEFORE first render (which overwrites it with 0)
