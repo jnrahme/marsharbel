@@ -93,7 +93,7 @@
       "name": "What is in the gallery?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Three images used in Saint Charbel devotion: a crowd scene, a sepia devotional portrait, and an image shared with an apparition testimony. Each image has a credited source link on the page."
+        "text": "Four images used in Saint Charbel devotion: a crowd scene, a sepia devotional portrait, an image shared with an apparition testimony, and the historic photograph of Saint Charbel. Each image has a credited source link on the page."
       }
     },
     {
@@ -126,6 +126,18 @@
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
+  <style>
+    /* Reserve a separate row for source captions in the image viewer. */
+    #gallery-lightbox { grid-template-rows: minmax(0, 1fr) auto; padding-top: 4.5rem; }
+    #gallery-lightbox img { grid-column: 2; grid-row: 1; min-height: 0; max-height: 100%; height: 100%; object-fit: contain; }
+    #gallery-lightbox #lightbox-caption { display: block; grid-column: 1 / -1; grid-row: 2; margin: 0; max-width: 80ch; color: #f3eee6; font-size: .875rem; line-height: 1.45; text-align: center; }
+    #gallery-lightbox #lightbox-prev, #gallery-lightbox #lightbox-next { grid-row: 1; }
+    @media (max-width: 760px) {
+      #gallery-lightbox { grid-template-rows: minmax(0, 1fr) auto auto; }
+      #gallery-lightbox img { grid-column: 1 / -1; }
+      #gallery-lightbox #lightbox-prev, #gallery-lightbox #lightbox-next { grid-row: 3; }
+    }
+  </style>
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/gallery" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/gallery" />
@@ -204,7 +216,7 @@
       <span class="kicker reveal">Saint Charbel Gallery</span>
       <h1 class="reveal">Real Images & Devotional Archive</h1>
       <p class="reveal">
-        The gallery gathers images used in Saint Charbel devotion: a crowd scene, a sepia portrait, and an image shared with a testimony account. Click any image to open it full-screen and move through the collection with the arrow keys.
+        The gallery gathers images used in Saint Charbel devotion: a crowd scene, a sepia portrait, an image shared with a testimony account, and the historic photograph of Saint Charbel. Click any image to open it full-screen and move through the collection with the arrow keys.
       </p>
     </section>
 
@@ -233,6 +245,13 @@
           </a>
         </figure>
 
+        <figure class="gallery-card">
+          <a class="gallery-item" data-index="3" href="media/annaya/charbel-historic-photo.webp">
+            <img src="media/annaya/charbel-historic-photo.webp" alt="Historic photograph of Saint Charbel with lowered eyes, wearing his monastic hood" width="419" height="595" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>Saint Charbel Makhlouf (1828-1898) - the historic photograph kept of the saint. Photographer unknown. Wikimedia Commons identifies this photograph as public domain.</figcaption>
+        </figure>
+
       </div>
 
       <article class="card story reveal" style="margin-top:1rem;">
@@ -241,6 +260,7 @@
           <li>Image 1 (<code>user-link-1.jpg</code>): <a href="https://share.google/rd2D8S2wgj2zqiEAM" target="_blank" rel="noopener">Google Photos (Source 1)</a></li>
           <li>Image 2 (<code>user-link-3.jpg</code>): <a href="https://share.google/JE7qLrVJ5oNODjo4s" target="_blank" rel="noopener">Google Photos (Source 2)</a></li>
           <li>Image 3 (<code>user-link-4-lady.jpg</code>): <a href="https://share.google/t0NnZo05I5Qr9CU5A" target="_blank" rel="noopener">Google Photos (Source 3)</a></li>
+          <li>Image 4 (<code>charbel-historic-photo.webp</code>): <a href="https://commons.wikimedia.org/wiki/File:Charbel.jpg" target="_blank" rel="noopener">Wikimedia Commons: Charbel.jpg</a> - photographer unknown; listed as public domain by Wikimedia Commons.</li>
         </ul>
       </article>
     </section>
@@ -248,9 +268,9 @@
     <section class="section">
       <h2>About This Archive</h2>
       <div class="card story">
-        <p>This gallery brings together three images used on the site: a black-and-white scene of a crowd gathered around a monk, the familiar sepia devotional portrait, and an image shared with an apparition testimony. The links below each image show the credited source. The testimony image is presented as part of that account, not independent proof of an apparition.</p>
+        <p>This gallery brings together four images used on the site: a black-and-white scene of a crowd gathered around a monk, the familiar sepia devotional portrait, an image shared with an apparition testimony, and the historic photograph of Saint Charbel. The links below each image show the credited source. The testimony image is presented as part of that account, not independent proof of an apparition.</p>
         <ul>
-          <li>Three photographs, each with its source linked in the Image Sources section above.</li>
+          <li>Four photographs, each with its source linked in the Image Sources section above.</li>
           <li>Devotional and testimony images, with source links.</li>
           <li>Full-screen viewing with keyboard navigation: click an image, then use the arrow keys.</li>
         </ul>
@@ -260,7 +280,7 @@
       <h2>Frequently Asked Questions</h2>
       <div class="card story">
         <h3>What is in the gallery?</h3>
-        <p>Three images used in Saint Charbel devotion: a crowd scene, a sepia devotional portrait, and an image shared with an apparition testimony. Each image has a credited source link on the page.</p>
+        <p>Four images used in Saint Charbel devotion: a crowd scene, a sepia devotional portrait, an image shared with an apparition testimony, and the historic photograph of Saint Charbel. Each image has a credited source link on the page.</p>
         <h3>Where do the images come from?</h3>
         <p>Every image has its source listed in the Image Sources section on this page, with a link, so you can see where each photograph was found.</p>
         <h3>How do I view an image full-screen?</h3>

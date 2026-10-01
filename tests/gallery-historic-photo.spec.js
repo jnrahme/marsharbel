@@ -1,0 +1,23 @@
+const { test, expect } = require('@playwright/test');
+test('gallery historic photograph is credited, opens, and wraps to the first image', async ({ page }) => {
+  await page.goto('/gallery');
+  await expect(page.locator('.gallery-item')).toHaveCount(4);
+  const fourth = page.locator('.gallery-item').nth(3);
+  await expect(fourth).toHaveAttribute('href', /\/?media\/annaya\/charbel-historic-photo\.webp$/);
+  await fourth.scrollIntoViewIfNeeded();
+  await expect(fourth.locator('img')).toHaveJSProperty('naturalWidth', 419);
+  await fourth.click();
+  await expect(page.locator('#lightbox-caption')).toContainText('Wikimedia Commons');
+  await expect(page.locator('#lightbox-caption')).toBeVisible();
+  const captionBox = await page.locator('#lightbox-caption').boundingBox();
+  const imageBox = await page.locator('#lightbox-image').boundingBox();
+  expect(captionBox.y).toBeGreaterThanOrEqual(imageBox.y + imageBox.height);
+  expect(captionBox.y + captionBox.height).toBeLessThanOrEqual(page.viewportSize().height);
+  await expect(page.locator('#lightbox-image')).toHaveAttribute('src', /\/?media\/annaya\/charbel-historic-photo\.webp$/);
+  await page.locator('#lightbox-next').click();
+  await expect(page.locator('#lightbox-image')).toHaveAttribute('src', /\/?gallery\/user-link-1\.jpg$/);
+  await page.locator('#lightbox-prev').click();
+  await expect(page.locator('#lightbox-image')).toHaveAttribute('src', /\/?media\/annaya\/charbel-historic-photo\.webp$/);
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#gallery-lightbox')).toBeHidden();
+});
