@@ -44,3 +44,6 @@
 - zenit.org 2010-06-10 (fetched).
 - maronite-heritage.com/June27-2010.php (Daily Star, ceremony).
 - saint-charbel.com/blessed-brother-estephan (chronology corroboration).
+
+## Integrator refresh (2026-10-01)
+Fresh Vatican decree PDF confirms a miracle through intercession, not the submitted scientific-characterization wording; removed that overstatement and distinguished the named patient in contemporary reporting. Fresh Zenit/Angelus/Daily Star mirror checked. Commons146760961 confirms Duneir own work/CC BY-SA4.0; source and license links plus WebP conversion/no-crop notice added on page/hub. Frozen baseline unchanged; English copy tracked in scoped saint-pillars catalog. Hero figure moved outside CTA row.
