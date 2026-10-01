@@ -9,6 +9,8 @@ fi
 
 cd "${ROOT}"
 
+node scripts/qa/test_analytics_hostname.cjs
+
 node scripts/build-home-css.mjs --check
 npm run i18n:check
 python3 scripts/build-eucharistic-miracles.py --check
@@ -20,6 +22,8 @@ python3 -m unittest discover -s scripts/qa -p 'test_seo.py'
 python3 -m unittest discover -s scripts/qa -p 'test_answer_faq_parity.py'
 
 echo "[qa] Checking RSS feeds against their source pages"
+python3 scripts/build_news_desk.py --check
+python3 -m unittest discover -s scripts/qa -p test_news_desk.py
 python3 scripts/build_feeds.py --check
 python3 scripts/build_news_thumbs.py --check
 python3 -m unittest discover -s scripts/qa -p 'test_feeds.py'
