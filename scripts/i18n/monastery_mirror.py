@@ -54,6 +54,13 @@ def render_monasteries(root=ROOT, registry=None):
             if '{{' in text or '}}' in text:
                 raise ValueError(f'{name}/{code}: unresolved slot')
             if code == 'en':
+                # English places are not translated mirrors yet. Keep their
+                # links in the English header only until locale catalogs exist.
+                text = text.replace('<a href="/bekaa-kafra">Bekaa Kafra</a>',
+                    '<a href="/bekaa-kafra">Bekaa Kafra</a>\n'
+                    '        <a href="/our-lady-of-lebanon-harissa">Our Lady of Lebanon at Harissa</a>\n'
+                    '        <a href="/cedars-of-god-lebanon">the Cedars of God</a>\n'
+                    '        <a href="/bkerke-maronite-patriarchate">Bkerke and the Maronite Patriarchate</a>')
                 # Managed English nav spells its existing ampersand literally.
                 text = text.replace('>Miracles &amp; Reports</a>', '>Miracles & Reports</a>')
                 text = text.replace('src="/app.js"', 'src="app.js"').replace('src="/translate.js?', 'src="translate.js?')
