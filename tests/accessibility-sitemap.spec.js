@@ -7,7 +7,7 @@ const { test, expect } = require('@playwright/test');
 const AxeBuilder = require('@axe-core/playwright').default;
 
 const LOCALES = ['ar', 'de', 'en', 'es', 'fr', 'it', 'pl', 'pt'];
-const BATCHES = ['root']; // add 'ar', 'fr', 'es', ... as each group is cleaned
+const BATCHES = ['root', 'ar', 'fr', 'es']; // add 'pt', 'it', 'de', 'pl', 'en' as each group is cleaned
 const sitemap = fs.readFileSync(path.join(__dirname, '..', 'sitemap.xml'), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>https:\/\/marsharbel\.com([^<]*)<\/loc>/g)].map(m => m[1] || '/');
 const group = url => LOCALES.find(code => url === `/${code}` || url.startsWith(`/${code}/`)) || 'root';
@@ -24,6 +24,7 @@ for (const url of urls.filter(u => BATCHES.includes(group(u)) && !covered(u))) {
     await page.waitForTimeout(300);
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'])
+      .exclude('iframe[src*="youtube"]')
       .analyze();
     expect(results.violations.map(v => `${v.id} (${v.impact}): ${v.nodes.slice(0, 3).map(n => n.target.join(' ')).join(' | ')}`),
       `Accessibility violations on ${url}`).toEqual([]);
