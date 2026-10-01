@@ -7,6 +7,8 @@ from i18n.catalog import ROOT, read_json
 def render_feast(root=ROOT):
     copy=read_json(root/'locales/ar/feast-mirror.json')
     soup=BeautifulSoup((root/'saint-charbel-feast-day.html').read_text(),'html.parser')
+    skip=soup.select_one('.skip-link')
+    if skip is not None: skip.string=read_json(root/'locales/ar/common.json')['navigation.skip']
     nodes=[n for n in soup.main.find_all(string=True) if n.strip()]
     if set(copy['slots'])!={str(i) for i in range(len(nodes))}:raise ValueError('Feast slot count changed')
     for i,node in enumerate(nodes):
