@@ -199,6 +199,10 @@ class CatalogTests(unittest.TestCase):
             other = 'qozhaya' if name == 'qannoubine' else 'qannoubine'
             other_routes = registry['authoredMirrors'][other]['routes']
             en = Probe(); en.feed(pages[ROOT/f'{name}-monastery.html'])
+            # Navigation-only English places must never enter article prose.
+            for slug in ('our-lady-of-lebanon-harissa', 'cedars-of-god-lebanon', 'bkerke-maronite-patriarchate'):
+                self.assertEqual(pages[ROOT/f'{name}-monastery.html'].count(f'href="./{slug}"'), 1)
+                self.assertFalse(any(a.get('href') == f'./{slug}' for t, a in en.main_tags))
             for code, route in routes.items():
                 if code == 'en':
                     continue
