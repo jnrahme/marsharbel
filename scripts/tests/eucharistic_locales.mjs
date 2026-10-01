@@ -6,9 +6,10 @@ const slugs=['lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica'
 const browser=await chromium.launch();
 try {
  for (const width of [390,1440]) {
-  const page=await browser.newPage({viewport:{width,height:850}});
+  let page=await browser.newPage({viewport:{width,height:850}});
   for (const lang of languages) {
    const url=`${base}/${lang}/miracles/eucharistic/`;
+   await page.close(); page=await browser.newPage({viewport:{width,height:850}});
    const response=await page.goto(url);
    assert.equal(response.status(),200,`${lang} hub`);
    assert.equal(await page.locator('html').getAttribute('lang'),lang);
@@ -24,10 +25,12 @@ try {
    await page.locator('[data-filter="all"]').click();
    assert.equal(await page.locator('.euch-card:visible').count(),10);
    for (const slug of slugs) {
+    await page.close(); page=await browser.newPage({viewport:{width,height:850}});
     const item=await page.goto(url+slug);
     assert.equal(item.status(),200,`${lang}/${slug}`);
     assert.equal(await page.locator('h1').count(),1);
     assert.equal(await page.locator('.euch-chapter').count(),3);
+    await page.locator('.euch-feature-photo img').evaluate(i=>i.decode());
     assert.equal(await page.locator('.euch-feature-photo img').evaluate(img=>img.naturalWidth>0),true,`${lang}/${slug} image`);
     assert.equal(await page.locator('.euch-feature-photo figcaption a').count(),2,`${lang}/${slug} credits`);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,`${lang}/${slug} overflows at ${width}`);

@@ -11,6 +11,7 @@ from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_loca
 from i18n.mirror import render_mirrors
 from i18n.qadisha_mirror import render_qadisha
 from i18n.monastery_mirror import render_monasteries
+from i18n.feast_mirror import render_feast
 from i18n.litany_mirror import render_litany
 from i18n.eucharistic_mirror import render_eucharistic
 from i18n.chaplet_mirror import render_chaplet
@@ -153,6 +154,7 @@ def outputs(root=ROOT):
     eucharistic = render_eucharistic(root, registry)
     result.update(eucharistic)
     result.update(render_chaplet(root))
+    result.update(render_feast(root))
     # Nested localized directory indexes must be explicit; Options -Indexes
     # otherwise hides hubs on some hosts.
     for code in registry['locales']:
@@ -172,7 +174,8 @@ def outputs(root=ROOT):
                 english_qadisha if path == root / 'qadisha-valley.html' else
                 english_monasteries[path] if path in english_monasteries else
                 result.get(path, path.read_text()))
-        text = replace_block(text, 'i18n-navigation', footer_locale_bar(registry))
+        if related != 'saint-charbel-feast-day':
+            text = replace_block(text, 'i18n-navigation', footer_locale_bar(registry))
         if registry['defaultLocale'] not in topic_locales(registry, topic):
             # The English page is this topic's English alternate, so it carries the same cluster.
             links = '\n'.join('  ' + line for line in alternate_links(registry, topic).split('\n'))
@@ -203,6 +206,7 @@ def outputs(root=ROOT):
                'topics':{cfg['relatedEnglish']:{code:page_url(registry,code,topic) for code in topic_locales(registry,topic)} for topic,cfg in registry['topics'].items()}}
     for mirror in registry.get('authoredMirrors', {}).values():
         routing['topics'][mirror['english']] = mirror['routes']
+    routing['topics']['/saint-charbel-feast-day']['en']='/saint-charbel-feast-day'
     for slug in ('', 'lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica','ludbreg','amsterdam','ivorra','faverney'):
         english = '/miracles/eucharistic/' + slug
         routing['topics'][english] = {code:('/' + code if code != 'en' else '') + english
