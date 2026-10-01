@@ -690,6 +690,21 @@ try {
     }
   });
 
+  await expect('English books keep current credits without overwriting the Pio film', async () => {
+    for (const route of ['francis-story', 'therese-story', 'joseph-story', 'anthony-story', 'peter-story', 'massabki-story', 'pio-story', 'jpii-story', 'mother-teresa-story', 'rafqa-story', 'hardini-story']) {
+      const response = await page.goto(`${baseUrl}/${route}`, { waitUntil: 'domcontentloaded' });
+      const html = await response.text();
+      if (!html.includes('AI-generated read-aloud narration.')) throw new Error(`${route}: stale HTML credit`);
+      await page.waitForTimeout(300);
+      const text = await page.locator('.story-production-note').last().textContent();
+      if (!text.startsWith('AI-generated read-aloud narration.')) throw new Error(`${route}: stale rendered credit`);
+      if (route === 'pio-story') {
+        const film = await page.locator('#storybook-film .story-production-note').textContent();
+        if (!film.includes('This film') || !film.includes('openly licensed voice model')) throw new Error('Pio film credit overwritten');
+      }
+    }
+  });
+
 } finally {
   await context.close();
   await browser.close();
