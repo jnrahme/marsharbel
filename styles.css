@@ -2513,11 +2513,11 @@ main .grid-2>.card,main .grid-2>.story,main .grid-2>.practice,main .grid-2>.upda
 }
 
 /* Keep anchor/scroll targets clear of the sticky top bar (site-wide) */
-main [id], main section, main h1, main h2, main h3 {
+main[id], main [id], main section, main h1, main h2, main h3 {
   scroll-margin-top: 112px;
 }
 @media (max-width: 820px) {
-  main [id], main section, main h1, main h2, main h3 {
+  main[id], main [id], main section, main h1, main h2, main h3 {
     scroll-margin-top: 190px;
   }
 }
