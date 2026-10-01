@@ -17,6 +17,7 @@ npm run i18n:test
 echo "[qa] Checking SEO metadata and sitemap coverage"
 python3 scripts/qa/check_seo.py
 python3 -m unittest discover -s scripts/qa -p 'test_seo.py'
+python3 -m unittest discover -s scripts/qa -p 'test_answer_faq_parity.py'
 
 echo "[qa] Checking RSS feeds against their source pages"
 python3 scripts/build_feeds.py --check
