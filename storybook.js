@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
+    return raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -57,6 +57,9 @@
   };
 
   const EVIDENCE_SOURCES = {
+    judeBenedict2006: {label: "Benedict XVI: Simon and Jude", url: "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20061011.html"},
+    judeJohn14: {label: "USCCB: John 14 and identity note", url: "https://bible.usccb.org/bible/john/14"},
+    judeLetter: {label: "USCCB: Letter of Jude", url: "https://bible.usccb.org/bible/jude/1"},
     francisMatthew: {label: 'Matthew 5:9', url: 'https://bible.usccb.org/bible/matthew/5'},
     francisBirds: {label: 'Franciscan Media: St. Francis and the Birds', url: 'https://www.franciscanmedia.org/st-anthony-messenger/st-francis-and-the-birds/'},
     josephLetter: {label: 'Pope Francis: Patris Corde', url: 'https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20201208_patris-corde.html'},
@@ -869,6 +872,7 @@
     jpii: { en: JPII_STORY_EN },
     teresa: { en: window.MOTHER_TERESA_STORY_EN || [] },
     rafqa: { en: window.RAFQA_STORY_EN || [] },
+    jude: { en: window.JUDE_STORY_EN || [] },
     peter: { en: window.PETER_STORY_EN || [] },
     hardini: { en: window.HARDINI_STORY_EN || [] }
   };
@@ -930,6 +934,7 @@
       { id: 'kokoro-hardini', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-hardini/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ] },
+  jude: { en: [{ id: "directed-jude", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-jude/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   peter: { en: [{ id: 'kokoro-peter', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-peter/en-directed-r1' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   rafqa: { en: [
       { id: 'kokoro-rafqa', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-rafqa/en' },
@@ -1238,7 +1243,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
