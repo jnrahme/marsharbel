@@ -28,6 +28,7 @@ NOINDEX = {
 }
 
 DESCRIPTIONS = {
+    "magdalene-story.html": "Mary Magdalene storybook for ages 6-12: nine illustrated narrative pages from Galilee to the Easter garden, with flowing narration and a family reflection.",
     "jude-story.html": "Saint Jude storybook for ages 6-12: nine illustrated pages about a question at the Last Supper, with flowing narration and a family reflection.",
     "massabki-story.html": "Read the Massabki brothers’ story for ages 6-12 with a trusted adult: narrated pages about service, faith, remembrance, and choosing safety and peace.",
     "history.html": "Discover Saint Charbel's life timeline from 1828 to canonization in 1977, including his Maronite monastic vocation and enduring spiritual legacy.",
@@ -251,6 +252,8 @@ def hero_image(path: Path, html: str) -> str | None:
 def og_image_for(path: Path, html: str = "") -> str:
     # pio-story.html renders its cover via storybook.js (no static hero <img>),
     # so pin the storybook cover instead of falling back to the default.
+    if path.name == "magdalene-story.html":
+        return f"{SITE}/media/storybook-magdalene/images/page-01.webp"
     if path.name == "jude-story.html":
         return f"{SITE}/media/storybook-jude/images/page-01.jpg"
     if path.name == "mother-teresa-story.html":

@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
+    return raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -57,6 +57,12 @@
   };
 
   const EVIDENCE_SOURCES = {
+    magdaleneJohn19: {"label": "USCCB: John 19, Mary beside the cross", "url": "https://bible.usccb.org/bible/john/19"},
+    magdaleneMatthew27: {"label": "USCCB: Matthew 27, burial and stone", "url": "https://bible.usccb.org/bible/matthew/27"},
+    magdaleneVaticanNews: {"label": "Vatican News: Mary Magdalene, disciple of the Lord", "url": "https://www.vaticannews.va/en/saints/07/22/st--mary-magdalene--disciple-of-the-lord-.html"},
+    magdaleneLuke8: {"label": "USCCB: Luke 8, women accompanying Jesus", "url": "https://bible.usccb.org/bible/luke/8"},
+    magdaleneJohn20: {"label": "USCCB: John 20, Mary and the risen Jesus", "url": "https://bible.usccb.org/bible/john/20"},
+    magdaleneChurch2016: {"label": "Holy See: Mary Magdalene, apostle of the apostles", "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2016/06/10/160610c.html"},
     judeBenedict2006: {label: "Benedict XVI: Simon and Jude", url: "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20061011.html"},
     judeJohn14: {label: "USCCB: John 14 and identity note", url: "https://bible.usccb.org/bible/john/14"},
     judeLetter: {label: "USCCB: Letter of Jude", url: "https://bible.usccb.org/bible/jude/1"},
@@ -872,6 +878,7 @@
     jpii: { en: JPII_STORY_EN },
     teresa: { en: window.MOTHER_TERESA_STORY_EN || [] },
     rafqa: { en: window.RAFQA_STORY_EN || [] },
+    magdalene: { en: window.MAGDALENE_STORY_EN || [] },
     jude: { en: window.JUDE_STORY_EN || [] },
     peter: { en: window.PETER_STORY_EN || [] },
     hardini: { en: window.HARDINI_STORY_EN || [] }
@@ -934,6 +941,7 @@
       { id: 'kokoro-hardini', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-hardini/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ] },
+  magdalene: { en: [{ id: "directed-magdalene", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-magdalene/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   jude: { en: [{ id: "directed-jude", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-jude/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   peter: { en: [{ id: 'kokoro-peter', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-peter/en-directed-r1' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   rafqa: { en: [
@@ -1243,7 +1251,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'magdalene' ? 'directed-magdalene' : storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
