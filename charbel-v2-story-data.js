@@ -3,7 +3,7 @@ window.CHARBEL_V2_STORY_EN = [
     "illustration": "./media/storybook-charbel-v2/images/page-01.webp",
     "title": "A Boy in the High Mountains",
     "body": "In a small village called Bekaa Kafra, high in the mountains of Lebanon, a boy named Youssef Antoun Makhlouf was born on May 8, 1828. His home was a quiet place of snow, cedar trees, and little stone houses, where families prayed together morning and night. When Youssef was only three years old, his father died. His mother Brigitta raised him with deep faith, and monks in his own family showed him what a life given to God could look like. Even as a small boy, Youssef learned that God stays close in happy days and in sad ones.",
-    "prayer": "",
+    "prayer": "Dear God, help me to be still and to listen to You. Stay close to me, and teach me to love You in small things. Amen.",
     "heart": "",
     "scene": "birth",
     "audio": "page-01.mp3",
@@ -43,7 +43,7 @@ window.CHARBEL_V2_STORY_EN = [
   {
     "illustration": "./media/storybook-charbel-v2/images/page-03.webp",
     "title": "A Brave Yes",
-    "body": "When Youssef was twenty-three years old, he made a brave choice. In 1851 he said goodbye to his mother and his village, and he walked to the monastery of Our Lady of Mayfouk to become a monk. Before long he moved to the monastery of Saint Maron in Annaya, where he received a new name: Charbel. In 1853 he made his solemn vows, promising a life of prayer, poverty, and obedience. Maronite biographies tell us his mother visited him and blessed him, praying that God would make her son a saint.",
+    "body": "When Youssef was twenty-three years old, he made a brave choice. In 1851 he said goodbye to his mother and his village, and he walked to the monastery of Our Lady of Mayfouk to become a monk. Before long he moved to the monastery of Saint Maron in Annaya, where he received a new name: Charbel. In 1853 he made his solemn vows, promising a life of prayer, poverty, and obedience.",
     "prayer": "",
     "heart": "",
     "scene": "birth",
@@ -142,7 +142,7 @@ window.CHARBEL_V2_STORY_EN = [
   {
     "illustration": "./media/storybook-charbel-v2/images/page-08.webp",
     "title": "His Last Mass",
-    "body": "On December 16, 1898, Father Charbel was celebrating the holy Mass when he was struck by a sudden illness. His brother monks carried him to his cell, and for eight days he lay quietly, still whispering the prayers he loved. On Christmas Eve, December 24, he gave his soul to God, on the very night the world waits for Jesus to be born. He was seventy years old, and he had spent his whole life getting ready for that holy night. The next day, through the falling snow, the monks carried him to his rest.",
+    "body": "On December 16, 1898, Father Charbel was celebrating the holy Mass when he was struck by a sudden illness. His brother monks carried him to his cell, and for eight days he lay quietly, still whispering the prayers he loved. On Christmas Eve, December 24, he gave his soul to God, on the very night the world waits for Jesus to be born. He was seventy years old, and he had spent his whole life getting ready for that holy night. The next day, in the deep snow of that Christmas, the monks carried him to his rest.",
     "prayer": "",
     "heart": "",
     "scene": "birth",
@@ -155,6 +155,13 @@ window.CHARBEL_V2_STORY_EN = [
         "sources": [
           "wikiBio",
           "annayaArchive"
+        ]
+      },
+      {
+        "type": "documented",
+        "claim": "Heavy snow at his death and burial: Wikipedia's Charbel Makhlouf article quotes a pallbearer, \"Father Charbel died on the eve of Christmas; the snow was heavy. We transferred him to the monastery on Christmas Day.\" The book says only \"the deep snow of that Christmas\".",
+        "sources": [
+          "wikiBio"
         ]
       }
     ]
@@ -183,8 +190,8 @@ window.CHARBEL_V2_STORY_EN = [
   {
     "illustration": "./media/storybook-charbel-v2/images/page-10.webp",
     "title": "Points of reflection",
-    "body": "First, Charbel listened. He made room for God in silence, and we can do the same with a few quiet minutes each day. When could you be still and listen this week?\n\nSecond, he trusted. He lost his father when he was small, but he did not give up on God. When something makes you sad, who can you talk to, and what prayer can you pray?\n\nThird, he was faithful in small things. Watching a cow, working in a field, and washing dishes can all become ways to love God. What small job of yours could become a prayer?\n\nFourth, he stayed close to Jesus in the holy Mass, and everything he did began there. Choose one small step this week, and ask Saint Charbel to pray for you as you take it.",
-    "prayer": "",
+    "body": "First, Charbel listened. He made room for God in silence, and we can do the same with a few quiet minutes each day.\n\nThe Bible says: \"Be still and know that I am God!\" That is Psalm 46, verse 11 (NABRE).\n\nWhen could you be still and listen this week?\n\nThis week, take five quiet minutes with no screens, and just be with God.",
+    "prayer": "Dear God, help me to be still and to listen to You. Stay close to me, and teach me to love You in small things. Amen.",
     "heart": "",
     "scene": "birth",
     "audio": "page-10.mp3",
@@ -192,7 +199,7 @@ window.CHARBEL_V2_STORY_EN = [
     "evidence": [
       {
         "type": "pastoral",
-        "claim": "An original reflection applying the Gospel's call to listen, trust, and serve to Saint Charbel's documented life; not a recorded speech.",
+        "claim": "An original reflection on Charbel's silence and prayer, not a recorded speech. The quoted verse is Psalm 46:11 in the New American Bible, Revised Edition (USCCB, bible.usccb.org/bible/psalms/46): "Be still and know that I am God!"",
         "sources": [
           "vaticanBeatification1965",
           "vaticanCanonization1977"

@@ -23,6 +23,7 @@ for piece,fragment in enumerate(chunks):
  if dest.exists() and dest.stat().st_size>15000:continue
  from kokoro import KPipeline
  pipeline=KPipeline(lang_code='a',repo_id='hexgrad/Kokoro-82M',device='cpu')
+ import re as _re;fragment=_re.sub(r'\bBekaa\b','[Bekaa](/bɛkˈɑː/)',fragment);fragment=_re.sub(r'\bKafra\b','[Kafra](/kˈɑːfɹə/)',fragment)
  audio=list(pipeline(fragment,voice='am_michael',speed=.94));assert audio
  waves=[x[2] for x in audio];sf.write(dest,np.concatenate(waves),24000)
  print('PART',page,idx,piece,round(sum(len(w) for w in waves)/24000,2),flush=True)

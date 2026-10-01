@@ -24,7 +24,6 @@ PAGES = [
   "In 1851 he said goodbye to his mother and his village, and he walked to the monastery of Our Lady of Mayfouk to become a monk.",
   "Before long he moved to the monastery of Saint Maron in Annaya, where he received a new name: Charbel.",
   "In 1853 he made his solemn vows, promising a life of prayer, poverty, and obedience.",
-  "Maronite biographies tell us his mother visited him and blessed him, praying that God would make her son a saint.",
  ]),
  ("Learning with a Holy Teacher", [
   "After his vows, Charbel was sent to study at the monastery of Saints Cyprian and Justina in Kfifan.",
@@ -59,7 +58,7 @@ PAGES = [
   "His brother monks carried him to his cell, and for eight days he lay quietly, still whispering the prayers he loved.",
   "On Christmas Eve, December 24, he gave his soul to God, on the very night the world waits for Jesus to be born.",
   "He was seventy years old, and he had spent his whole life getting ready for that holy night.",
-  "The next day, through the falling snow, the monks carried him to his rest.",
+  "The next day, in the deep snow of that Christmas, the monks carried him to his rest.",
  ]),
  ("A Light for the Whole World", [
   "After his death, wonderful things began to be reported.",
@@ -72,15 +71,11 @@ PAGES = [
  ("Points of reflection", [
   "First, Charbel listened.",
   "He made room for God in silence, and we can do the same with a few quiet minutes each day.",
+  "The Bible says: \"Be still and know that I am God!\" That is Psalm 46, verse 11.",
   "When could you be still and listen this week?",
-  "Second, he trusted.",
-  "He lost his father when he was small, but he did not give up on God.",
-  "When something makes you sad, who can you talk to, and what prayer can you pray?",
-  "Third, he was faithful in small things.",
-  "Watching a cow, working in a field, and washing dishes can all become ways to love God.",
-  "What small job of yours could become a prayer?",
-  "Fourth, he stayed close to Jesus in the holy Mass, and everything he did began there.",
-  "Choose one small step this week, and ask Saint Charbel to pray for you as you take it.",
+  "This week, take five quiet minutes with no screens, and just be with God.",
+  "Here is a short prayer.",
+  "Dear God, help me to be still and to listen to You. Stay close to me, and teach me to love You in small things. Amen.",
  ]),
 ]
 
