@@ -237,3 +237,10 @@ figcaption. New images: add a record here in the same batch.
 - Visually inspected: the basilica's ribbed concrete face and glass front, clear sky, no watermark.
 - Rejected: File:Harissa Cathedral From Front.jpg (photographer watermark "Paul Saad Photography" under a different Commons uploader name, provenance unclear); File:Our Lady of Lebanon church, Harissa, Jounieh, Lebanon.jpg (top-down drone view, not recognisable to a visitor); Panoramio-origin file (archived third-party source).
 - Reused: lebanon-harissa.webp (hero, Paul Saad CC BY-SA 4.0, already registered above).
+
+## October 1 news preview image correction
+
+- media/news/emmitsburg-grotto-context.webp: Bohemian Baltimore, National Shrine Grotto of Our Lady of Lourdes, Emmitsburg, April 3, 2015. Source: https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_153.JPG . Observed source file: https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/National_Shrine_Grotto_of_Our_Lady_of_Lourdes_153.JPG/960px-National_Shrine_Grotto_of_Our_Lady_of_Lourdes_153.JPG . CC BY-SA 4.0. Converted to WebP, no content edits. Derivative under same license. Caption explicitly says venue context, not 2026 event.
+- media/news/lebanese-food-context.webp: El Mono Español, Lebanese food at L'Autentic, Barcelona, December 4, 2021. Source: https://commons.wikimedia.org/wiki/File:Lebanese_food_in_Barcelona%2C_Spain.jpg . Observed source file: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Lebanese_food_in_Barcelona%2C_Spain.jpg/960px-Lebanese_food_in_Barcelona%2C_Spain.jpg . CC BY-SA 4.0. Converted to WebP; display crop, no content edits. Derivative under same license. Caption explicitly says illustrative, not El Paso festival footage.
+
+Exact organizer anniversary image and parish/KTSM images were not reused: no verified license or owner permission found on their source pages. These context photos replace duplicate portraits without misrepresenting actual event photography.

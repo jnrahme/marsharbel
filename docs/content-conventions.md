@@ -11,8 +11,8 @@ area navigates to that story's dedicated page. Applies to:
   pattern: wrap the card's `<h3>` in `<a class="card-cover" href="...">`;
   the CSS overlay makes the whole card clickable while inner source links
   stay clickable (z-index);
-- the homepage rotating news feed (`.news-rotator-item` elements are full
-  anchors);
+- the homepage Latest News section (`.home-news-lead` and `.home-news-row`
+  elements are full anchors);
 - all content built going forward.
 
 Target is always our own article page where one exists; otherwise the
@@ -37,9 +37,11 @@ the build on any internal link to `*.html` or `index`. The shared nav lives in
 `partials/primary-navigation.html` and is applied with
 `node scripts/sync-navigation.mjs`.
 
-## Homepage news rotator thumbnails
+## Homepage news rotator thumbnails (legacy)
 
-Rotator images display at 64x64. After adding or changing a rotator item,
+The homepage no longer has a rotator; the Latest News section uses full-size
+images (320px squares for rows, the hero image for the lead). The rotator
+rules below apply only if a rotator returns. Rotator images displayed at 64x64. After adding or changing a rotator item,
 run `python3 scripts/build_news_thumbs.py`: it makes a 128px square WebP in
 `media/news/thumb/` and points the item at it. QA fails if an item still
 uses a full-size image.
