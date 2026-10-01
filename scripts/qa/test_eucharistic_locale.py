@@ -5,6 +5,7 @@ import sys
 import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from i18n.catalog import read_json
+from i18n.metadata import published_locales
 from i18n.eucharistic_mirror import render_eucharistic,SLUGS
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -25,9 +26,10 @@ class Shape(HTMLParser):
 class EucharisticLocaleTests(unittest.TestCase):
     def test_catalog_shape_and_exact_rendering(self):
         outputs=render_eucharistic(ROOT)
-        self.assertEqual(len(outputs),77)
+        languages = [code for code in published_locales(read_json(ROOT/'locales/registry.json'), 'eucharistic') if code != 'en']
+        self.assertEqual(len(outputs), len(languages) * (len(SLUGS) + 1))
         english=read_json(ROOT/'locales/en/eucharistic-miracles.json')
-        for lang in ('ar','fr','es','pt','it','de','pl'):
+        for lang in [code for code in published_locales(read_json(ROOT/'locales/registry.json'), 'eucharistic') if code != 'en']:
             catalog=read_json(ROOT/f'locales/{lang}/eucharistic-miracles.json')
             self.assertEqual(set(catalog['hub']),set(english['hub']))
             for slug in ('index',*SLUGS):
@@ -44,14 +46,14 @@ class EucharisticLocaleTests(unittest.TestCase):
                     self.assertEqual(x['image'],y['image'])
                     self.assertEqual(y['inLanguage'],lang)
                     self.assertEqual(y['url'],'https://marsharbel.com/'+lang+'/miracles/eucharistic/'+('' if slug=='index' else slug))
-                self.assertEqual(translated.count('hreflang='),9)
+                self.assertEqual(translated.count('hreflang='),len(languages)+2)
                 if slug!='index':
                     self.assertEqual(len(catalog['stories'][slug]['sections']),3)
                     for field in ('image','credit','licenseurl','photo','source','source2'):
                         if field in english['stories'][slug]:
                             self.assertEqual(catalog['stories'][slug][field],english['stories'][slug][field])
     def test_corrected_bolsena_photo_in_every_language(self):
-        for lang in ('ar','fr','es','pt','it','de','pl'):
+        for lang in [code for code in published_locales(read_json(ROOT/'locales/registry.json'), 'eucharistic') if code != 'en']:
             c=read_json(ROOT/f'locales/{lang}/eucharistic-miracles.json')['stories']['bolsena-orvieto']
             self.assertEqual(c['credit'],'Abxbay')
             self.assertEqual(c['license'],'CC0 1.0')

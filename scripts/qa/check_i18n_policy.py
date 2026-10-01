@@ -10,6 +10,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
+from i18n.metadata import published_locales
 from i18n.catalog import locale_topics, read_json, page_url
 from i18n.mirror import render_pair
 from i18n.qadisha_mirror import render_qadisha
@@ -64,7 +65,7 @@ def snapshot(root=ROOT):
     if 'chaplet' in registry.get('authoredMirrors', {}):
         generated.update(route.lstrip('/')+'.html' for code,route in registry['authoredMirrors']['chaplet']['routes'].items() if code != 'en')
     generated.update(f'{code}/miracles/eucharistic/'+('index.html' if slug=='index' else slug+'.html')
-                     for code in registry['locales'] if code != registry['defaultLocale']
+                     for code in published_locales(registry, 'eucharistic') if code != registry['defaultLocale']
                      for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney'))
     generated.add("ar/litany-of-saint-charbel.html")
     result = {}

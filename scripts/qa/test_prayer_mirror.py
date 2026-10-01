@@ -68,7 +68,8 @@ class PrayerMirrorTests(unittest.TestCase):
     def test_generated_mirrors_have_real_og_locale_meta_elements(self):
         from i18n.qadisha_mirror import render_qadisha
         from i18n.monastery_mirror import render_monasteries
-        from i18n.mirror import OG_LOCALE
+        from i18n.metadata import og_locales
+        OG_LOCALE = og_locales()
         class HeadMeta(HTMLParser):
             def __init__(self, text):
                 super().__init__(convert_charrefs=True)

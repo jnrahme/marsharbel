@@ -1,10 +1,8 @@
 """Render reviewed prayer locale pages from one DOM skeleton and strict text slots."""
+from i18n.metadata import og_locales, published_locales
 
-OG_LOCALE = {'en':'en_US','ar':'ar_AR','es':'es_ES','fr':'fr_FR','pt':'pt_PT','it':'it_IT','de':'de_DE','pl':'pl_PL'}
-
-
-def og_alternates(code):
-    return '\n'.join(f'<meta property="og:locale:alternate" content="{v}" />' for k, v in OG_LOCALE.items() if k != code)
+def og_alternates(code, registry=None):
+    return '\n'.join(f'<meta property="og:locale:alternate" content="{v}" />' for k, v in og_locales(registry).items() if k != code and k in published_locales(registry, "prayers"))
 
 from html import escape
 import json
@@ -30,7 +28,7 @@ def render_mirrors(root=ROOT, registry=None):
     english_path = (root / registry['topics']['prayers']['relatedEnglish'].lstrip('/')).with_suffix('.html')
     english_guide_path = root / 'en' / (registry['locales']['en']['slugs']['prayers'] + '.html')
     # Add a locale only when its full catalog and page have passed parity review.
-    mirror_locales = ('en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl')
+    mirror_locales = published_locales(registry, 'prayers')
     catalogs = {code: read_json(root / f'locales/{code}/mirrors/prayers.json')
                 for code in mirror_locales}
     routes = [(code, catalogs[code], root / code /
@@ -66,7 +64,7 @@ def render_mirrors(root=ROOT, registry=None):
                   'locale.canonical': canonical, 'locale.alternates': alternates,
                   'locale.currentRoute': registry['topics']['prayers']['relatedEnglish'] if is_english_master else page_url(registry, code, 'prayers'),
                   'locale.prayerLibraryUrl': SITE + '/prayer-library', 'locale.homeUrl': SITE + '/',
-                  'locale.ogLocale': OG_LOCALE[code], 'locale.ogLocaleAlternates': og_alternates(code)}
+                  'locale.ogLocale': og_locales(registry)[code], 'locale.ogLocaleAlternates': og_alternates(code, registry)}
         def replace(match):
             key = match.group(1)
             if key not in tokens:

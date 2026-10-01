@@ -43,6 +43,50 @@ def validate_registry(registry):
             raise ValueError(f'{label}: expected a safe HTTPS source URL')
     if registry['site'] != 'https://marsharbel.com':
         raise ValueError('Site origin must match the published canonical origin')
+    order = registry.get('ogLocaleOrder', [])
+    if len(order) != len(set(order)) or set(order) != set(registry['locales']):
+        raise ValueError('OG locale order must list each registered language once')
+    aliases = {}
+    for code, config in registry['locales'].items():
+        if not re.fullmatch(r'[a-z]{2,3}(?:-[A-Za-z]{2,4})?', code):
+            raise ValueError(f'Invalid locale code: {code}')
+        if not re.fullmatch(r'[a-z]{2,3}_[A-Z]{2}', config.get('ogLocale', '')):
+            raise ValueError(f'{code}: invalid or missing OG locale')
+        values = config.get('selectorAliases')
+        if not isinstance(values, list):
+            raise ValueError(f'{code}: selectorAliases must be a list')
+        for alias in [code, *values]:
+            if not isinstance(alias, str) or not re.fullmatch(r'[a-zA-Z]{2,3}(?:-[a-zA-Z]{2,4})?', alias):
+                raise ValueError(f'{code}: invalid selector alias')
+            key = alias.lower()
+            if key in aliases:
+                raise ValueError(f'Duplicate selector alias: {alias}')
+            aliases[key] = code
+    sets = registry.get('publicationSets', {})
+    if set(sets) != {'prayers', 'eucharistic'}:
+        raise ValueError('Missing or unknown publication sets')
+    for name, subset in sets.items():
+        if (not isinstance(subset, list) or not subset or len(subset) != len(set(subset))
+                or not set(subset) <= registry['locales'].keys()
+                or registry['defaultLocale'] not in subset):
+            raise ValueError(f'{name}: invalid publication set')
+    for name, config in registry.get('domMirrors', {}).items():
+        if not re.fullmatch(r'[a-z][A-Za-z0-9]*', name):
+            raise ValueError('Unsafe DOM mirror name')
+        if not re.fullmatch(r'[a-z0-9-]+\.json', config.get('catalog', '')):
+            raise ValueError(f'{name}: unsafe DOM mirror catalog')
+        routes = config.get('routes', {})
+        if not routes or not set(routes) <= registry['locales'].keys():
+            raise ValueError(f'{name}: invalid DOM mirror publication')
+        matching = [topic for topic, value in registry['topics'].items() if value['relatedEnglish'] == config['english']]
+        if len(matching) != 1:
+            raise ValueError(f'{name}: DOM mirror needs one registered topic')
+        for code, route in routes.items():
+            if code not in topic_locales(registry, matching[0]) or page_url(registry, code, matching[0]) != route:
+                raise ValueError(f'{name}: DOM mirror route is not published by its topic')
+        for route in [config['english'], *routes.values()]:
+            if not re.fullmatch(r'/[a-zA-Z0-9-]+(?:/[a-z0-9-]+)*/?', route):
+                raise ValueError(f'{name}: unsafe DOM mirror route')
     for topic, config in registry['topics'].items():
         sections = config['sections']
         if not sections or len(sections) != len(set(sections)):
@@ -53,6 +97,8 @@ def validate_registry(registry):
             raise ValueError(f'{topic}: invalid related English route')
         if not config['sources'] or not set(config['sources']) <= registry['sources'].keys():
             raise ValueError(f'{topic}: unknown or missing source reference')
+        if 'locales' not in config:
+            raise ValueError(f'{topic}: explicit publication locales required')
         if 'locales' in config:
             subset = config['locales']
             if not subset or len(subset) != len(set(subset)) or not set(subset) <= registry['locales'].keys():

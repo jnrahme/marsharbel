@@ -115,6 +115,18 @@
     'en', 'ar', 'zh-cn', 'es', 'fr', 'de', 'pt', 'ru', 'hi', 'ja', 'ko', 'it', 'tr', 'el', 'he'
   ];
 
+  // Canonical identities for published locales. Runtime-only choices retain
+  // their old API codes; e.g. zh-cn aliases to zh-Hans only after publication.
+  var LOCALE_ALIASES = (window.SC_LOCALE_ROUTES || {}).aliases || {};
+  function canonicalLang(code) {
+    var lower = (code || '').toLowerCase();
+    return LOCALE_ALIASES[lower] || lower;
+  }
+  SUPPORTED_LANGUAGES.forEach(function (lang) {
+    lang.code = canonicalLang(lang.code);
+  });
+  POPULAR_LANGUAGE_CODES = POPULAR_LANGUAGE_CODES.map(canonicalLang);
+
   var LANG_BY_CODE = {};
   SUPPORTED_LANGUAGES.forEach(function (lang) {
     LANG_BY_CODE[lang.code] = lang;
@@ -141,7 +153,7 @@
 
   function readStoredLang() {
     try {
-      var stored = (localStorage.getItem(STORAGE_KEY) || '').toLowerCase();
+      var stored = canonicalLang(localStorage.getItem(STORAGE_KEY));
       return LANG_BY_CODE[stored] ? stored : '';
     } catch (_) {
       return '';
@@ -183,7 +195,7 @@
 
   function getRequestedLang() {
     var params = new URLSearchParams(window.location.search);
-    var fromQuery = (params.get('lang') || '').toLowerCase();
+    var fromQuery = canonicalLang(params.get('lang'));
     var published = publishedRouteForPath(window.SC_LOCALE_ROUTES, window.location.pathname);
     // A published URL owns its authored language, including the English
     // master. A preference or stray ?lang= cannot turn English copy into RTL
@@ -764,7 +776,7 @@
   // ?lang=en pins the requested English URL, and localized URLs own their copy.
   // An explicit ?lang=<published locale> on English also resolves to its twin.
   var initialRoute = publishedRouteForPath(window.SC_LOCALE_ROUTES, window.location.pathname);
-  var requestedQuery = (new URLSearchParams(window.location.search).get('lang') || '').toLowerCase();
+  var requestedQuery = canonicalLang(new URLSearchParams(window.location.search).get('lang'));
   var preferred = requestedQuery || readStoredLang();
   if (initialRoute && initialRoute.current === 'en' && preferred !== 'en' &&
       initialRoute.targets[preferred]) {
@@ -783,7 +795,7 @@
   document.addEventListener('click', function (event) {
     var anchorEl = event.target && event.target.closest ? event.target.closest('a[hreflang]') : null;
     if (!anchorEl) return;
-    var chosen = (anchorEl.getAttribute('hreflang') || '').toLowerCase();
+    var chosen = canonicalLang(anchorEl.getAttribute('hreflang'));
     if (chosen === 'x-default') chosen = 'en';
     if (LANG_BY_CODE[chosen]) writeStoredLang(chosen);
   });
