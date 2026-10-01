@@ -224,3 +224,6 @@ body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration {
 @media (min-width: 741px) and (max-width: 980px) {
   body.is-story-page .storybook-illustration { width: min(100%, 560px); margin-inline: auto; background: transparent; }
 }
+
+/* Contrast: storybook shelf body links (WCAG 1.4.3) */
+body.is-story-shelf .card.story p a:not(.btn):not(.promo-link){color:#744418}

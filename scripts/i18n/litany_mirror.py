@@ -7,6 +7,8 @@ from i18n.catalog import ROOT, read_json
 def render_litany(root=ROOT):
     copy=read_json(root/'locales/ar/litany.json')
     soup=BeautifulSoup((root/'litany-of-saint-charbel.html').read_text(),'html.parser')
+    skip=soup.select_one('.skip-link')
+    if skip is not None: skip.string=read_json(root/'locales/ar/common.json')['navigation.skip']
     nodes=[n for n in soup.main.find_all(string=True) if n.strip()]
     if set(copy['slots'])!={str(i) for i in range(len(nodes))}:raise ValueError('Litany slot count changed')
     for i,node in enumerate(nodes):

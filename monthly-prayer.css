@@ -65,3 +65,5 @@
   .monthly-prayer-content { grid-template-columns: 1fr; padding: .5rem 1.5rem 1.5rem; }
   .monthly-prayer-text { padding: 1.5rem; }
 }
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

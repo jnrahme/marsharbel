@@ -24,6 +24,8 @@ def render_chaplet(root=ROOT):
     if set(catalog) != required or any(not isinstance(v,str) or not v.strip() or '<' in v for v in catalog.values()):
         raise ValueError('Arabic chaplet catalog missing/extra/unsafe values')
     soup = BeautifulSoup((root/'saint-charbel-chaplet.html').read_text(), 'html.parser')
+    skip=soup.select_one('.skip-link')
+    if skip is not None: skip.string=read_json(root/'locales/ar/common.json')['navigation.skip']
     soup.html['lang']='ar';soup.html['dir']='rtl';soup.html['data-authored-mirror']='chaplet'
     def one(selector):
         matches=soup.select(selector)

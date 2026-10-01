@@ -89,6 +89,8 @@ def render_eucharistic(root=ROOT, registry=None):
             soup = BeautifulSoup(english,'html.parser')
             soup.html['lang'] = lang
             soup.html['dir'] = registry['locales'][lang]['direction']
+            skip = soup.select_one('.skip-link')
+            if skip is not None: skip.string = common['navigation.skip']
             OG_MAP = {'en':'en_US','ar':'ar_AR','es':'es_ES','fr':'fr_FR','pt':'pt_PT','it':'it_IT','de':'de_DE','pl':'pl_PL'}
             for stale in list(soup.select('meta[property="og:locale"],meta[property="og:locale:alternate"]')):
                 stale.extract()
