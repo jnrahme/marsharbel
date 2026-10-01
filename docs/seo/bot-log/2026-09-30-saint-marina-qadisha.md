@@ -30,3 +30,6 @@ Hagiographic tradition throughout: "the Church remembers", "the tradition says",
 - QA: build-home-css, check_i18n_policy, i18n:test, check_seo, git diff --check, test_seo, test_prayer_mirror, test_i18n, nav-sync, dead-code, testimony-security, site-smoke, rosary-all - results in ship report.
 - Rendered review: desktop 1280 + phone 390 full-page captures of page + hub card (attached to ship report).
 - UNVERIFIED: live production (needs integrator merge/deploy). Completion proof owed once live.
+
+## Integrator sourcing refresh (2026-10-01)
+Fresh Commons page confirms CC0. OCA church account (https://www.oca.org/saints/lives/2026/02/12/100508-venerable-mary-who-was-called-marinus-and-her-father-venerable-e) places Mary/Marinus in sixth-century Bithynia/Alexandria, while Lebanese reporting places Marina at Qannoubine and differs on her era. Per parent clarification, preserved the hagiography and sharpened four blanket attribution phrases to the Lebanese tradition. FAQ schema regenerated from visible copy, not edited independently.
