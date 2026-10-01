@@ -245,3 +245,10 @@ figcaption. New images: add a record here in the same batch.
 - Creator: unknown. Commons describes the date as before 1898 and identifies the file as public domain in the United States (published before 1931). Its origin-country notice explains the author death date is unknown and expiration is an age-based assumption; it warns longer-term jurisdictions may differ. The gallery attributes the classification to Commons rather than promising universal reuse rights.
 - Caption: Saint Charbel Makhlouf (1828-1898) - the historic photograph kept of the saint. Photographer unknown. Wikimedia Commons identifies this photograph as public domain.
 - Added as fourth gallery image with full-screen navigation, without editing or regenerating the image.
+
+## October 1 news preview image correction
+
+- media/news/emmitsburg-grotto-context.webp: Bohemian Baltimore, National Shrine Grotto of Our Lady of Lourdes, Emmitsburg, April 3, 2015. Source: https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_153.JPG . Observed source file: https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/National_Shrine_Grotto_of_Our_Lady_of_Lourdes_153.JPG/960px-National_Shrine_Grotto_of_Our_Lady_of_Lourdes_153.JPG . CC BY-SA 4.0. Converted to WebP, no content edits. Derivative under same license. Caption explicitly says venue context, not 2026 event.
+- media/news/lebanese-food-context.webp: El Mono Español, Lebanese food at L'Autentic, Barcelona, December 4, 2021. Source: https://commons.wikimedia.org/wiki/File:Lebanese_food_in_Barcelona%2C_Spain.jpg . Observed source file: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Lebanese_food_in_Barcelona%2C_Spain.jpg/960px-Lebanese_food_in_Barcelona%2C_Spain.jpg . CC BY-SA 4.0. Converted to WebP; display crop, no content edits. Derivative under same license. Caption explicitly says illustrative, not El Paso festival footage.
+
+Exact organizer anniversary image and parish/KTSM images were not reused: no verified license or owner permission found on their source pages. These context photos replace duplicate portraits without misrepresenting actual event photography.
