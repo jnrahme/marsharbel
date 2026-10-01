@@ -1,0 +1,17 @@
+# Monastery + Qadisha answer-first retrofit
+
+## Scope
+Answer-first hero paragraph on Qannoubine, Qozhaya and Qadisha in English, Arabic, French and Spanish. Existing deeper page bodies retained except targeted Qozhaya factual consistency corrections. No media, JavaScript, shared reader, navigation or frozen baseline changes.
+
+## Integration source check - 2026-10-01
+Rebased onto stage e774657. The original proposed lead repeated the overbroad “Middle East’s first printing press” claim. USEK records earlier printing in Constantinople in1493; Qozhaya’s documented bilingual Syriac/Garshuni Psalter dates to1610. Corrected Qozhaya's lead, titles, existing standfirst and section heading in en/ar/es/fr. Mother-house wording is historical:1708-1723, supported by https://www.kobayat.org/data/documents/qozhaya/qozhaya.htm, now added as a direct source. Qannoubine’s lead uses fifteenth-nineteenth centuries, matching LebanonUntravelled, rather than hardening divergent exact end-year chronologies in sources. UNESCO inscription supports Qadisha. No images/media changed; frozen legacy baseline unchanged.
+Sources consulted: https://www.usek.edu.lb/exhibitions/maronite-cultural-heritage/qozhaya-psaulter ; https://lebanonuntravelled.com/saint-kannoubine-monastery/ ; https://whc.unesco.org/en/list/850/ ; https://www.kobayat.org/data/documents/qozhaya/qozhaya.htm .
+
+## Integration QA status - October1,07:18 EDT
+Not committed or published. Static suite passed.105 mirror tests passed across five projects;24 phone/desktop renders passed resources/overflow. All12 leads and Qozhaya source sections inspected. Lower FAQ review found stale current-motherhouse wording: reconciled English/French/Spanish FAQ and English meta to historical tenure, regenerated JSON-LD/pages; Arabic already used monastery/seat language. This final revision needs repeat pixel/mirror/static checks. Clean-port rosary UI and story player passed. Full site-smoke follow-ons and checklist not green yet; CI not started. No production-completion claim.
+
+## Final local candidate verification - October1,08:04EDT
+Static suite passed (CSS, i18n/build/policy/33tests, Eucharistic generation, SEO265pages/21tests, feeds/builds, testimony baseline/static/security). Navigation128pages synchronized. Site-smoke primary, SEO runtime, home letter, news layout passed; testimony UI separately completed exit0. Rosary component gates all passed in chunks, including checklist exit0 (voice-synthesis tests explicitly skipped without browser voices), and story floating-player exit0. Eucharistic77routes at390/1440 passed; collection and2locale Python tests passed. Mirror105tests rerun in project batches:42phone,42desktop,21tablet. Final24page renders zero overflow/errors/resource failures; all12leads and Qozhaya FAQ/source sections inspected phone/desktop, RTL included. Long combined wrapper timeouts are not claimed as full-suite exits; CI remains required. Separate editorial/visual review requested before merge. Not live yet.
+
+## Independent review correction
+Reviewer caught Qannoubine meta/generated schema descriptions still hardening1440-1823. All four locale descriptions now match the lead's fifteenth-nineteenth-century span; rebuilt pages/schema and checked parity. Deeper historical body chronology remains unchanged, as scoped. Repeat CI required on this revision.
