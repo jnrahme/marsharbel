@@ -676,6 +676,20 @@ try {
     }
   });
 
+  // Story-specific disclosures must survive the shared localization pass.
+  await expect('Jude HTML and rendered narration disclosure agree', async () => {
+    const response = await page.goto(`${baseUrl}/jude-story`, { waitUntil: 'domcontentloaded' });
+    const html = await response.text();
+    if (!html.includes('data-story-specific-disclosure>AI-generated read-aloud narration.')) {
+      throw new Error('Jude HTML disclosure is missing or stale');
+    }
+    await page.waitForTimeout(700);
+    const text = await page.locator('.story-production-note').textContent();
+    if (!text.startsWith('AI-generated read-aloud narration.') || text.includes('openly licensed')) {
+      throw new Error(`Jude rendered disclosure is stale: ${text}`);
+    }
+  });
+
 } finally {
   await context.close();
   await browser.close();
