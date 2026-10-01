@@ -22,6 +22,7 @@
     "qa:agentic:smoke": "scripts/qa/agentic_smoke.sh",
     "qa:dead-code": "scripts/qa/dead_code_check.sh",
     "quality:e2e": "playwright test --config playwright.config.cjs",
+    "test:a11y": "playwright test --config playwright.config.cjs tests/accessibility-gate.spec.js --project=phone --project=laptop",
     "quality": "npm run quality:e2e",
     "build:home-css": "node scripts/build-home-css.mjs",
     "test:testimony-security": "node scripts/tests/testimony_database.mjs && node --import tsx scripts/tests/testimony_validation.mts && node scripts/tests/testimony_edge.mjs",

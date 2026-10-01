@@ -54,11 +54,11 @@
 
   const root = document.createElement('aside');
   root.className = 'floating-audio';
-  root.setAttribute('aria-live', 'polite');
+  root.setAttribute('aria-labelledby', 'floating-audio-label');
   root.innerHTML = `
     <div class="floating-audio-head">
       <button id="floating-audio-close" type="button" class="floating-audio-close" aria-label="Close player">Close</button>
-      <p class="floating-audio-label">Audio In Progress</p>
+      <p id="floating-audio-label" class="floating-audio-label">Audio In Progress</p>
       <button id="floating-audio-minimize" type="button" class="floating-audio-minimize" aria-label="Minimize player">Minimize</button>
     </div>
     <p id="floating-audio-mode" class="floating-audio-mode">Guided Audio</p>
@@ -66,7 +66,7 @@
     <p id="floating-audio-prayer-name" class="floating-audio-prayer-name"></p>
     <p id="floating-audio-title" class="floating-audio-title">Rosary narration</p>
     <p id="floating-audio-subtitle" class="floating-audio-subtitle">Active step</p>
-    <p id="floating-audio-status" class="floating-audio-status">Playing</p>
+    <p id="floating-audio-status" class="floating-audio-status" role="status">Playing</p>
     <div class="floating-audio-step-progress" aria-hidden="true">
       <span id="floating-audio-step-fill" class="floating-audio-step-fill"></span>
     </div>
