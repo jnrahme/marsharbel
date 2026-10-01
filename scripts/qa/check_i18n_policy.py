@@ -85,6 +85,8 @@ def snapshot(root=ROOT):
 def check(root=ROOT):
     baseline = read_json(root/'locales/legacy-text-baseline.json')
     errors = []
+    accessibility_path = root/'locales/en/accessibility-copy.json'
+    accessibility_catalog = read_json(accessibility_path)['values'] if accessibility_path.exists() else {}
     display_catalog = read_json(root/'locales/en/letters-display.json')['values']
     aeo_catalog_path = root/'locales/en/aeo-p2-copy.json'
     aeo_catalog = read_json(aeo_catalog_path)['values'] if aeo_catalog_path.exists() else {}
@@ -155,6 +157,7 @@ def check(root=ROOT):
         additions -= Counter(francis_catalog.get(file, {}))
         additions -= Counter(massabki_catalog.get(file, {}))
         additions -= Counter(display_catalog.get(file, {}))
+        additions -= Counter(accessibility_catalog.get(file, {}))
         additions -= Counter(aeo_catalog.get(file, {}))
         additions -= Counter(pillar_catalog.get(file, {}))
         if file == 'miracles/index.html':
