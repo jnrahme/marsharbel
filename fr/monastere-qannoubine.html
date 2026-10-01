@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP"></script>
   <script>
+  (function () {
+    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
+    document.head.appendChild(tag);
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CJX1M0VFKP');
-  </script>
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-CJX1M0VFKP');
+  })();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monastère de Qannoubine : le couvent-forteresse des patriarches maronites</title>
   <meta name="description" content="Qannoubine, à flanc de falaise dans la vallée sainte, fut le siège des patriarches maronites du XVe au XIXe siècle - sa grande fresque du Couronnement, la grotte de sainte Marina, les moniales qui le gardent, et comment y descendre à pied." />
