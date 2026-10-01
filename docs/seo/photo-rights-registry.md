@@ -237,3 +237,11 @@ figcaption. New images: add a record here in the same batch.
 - Visually inspected: the basilica's ribbed concrete face and glass front, clear sky, no watermark.
 - Rejected: File:Harissa Cathedral From Front.jpg (photographer watermark "Paul Saad Photography" under a different Commons uploader name, provenance unclear); File:Our Lady of Lebanon church, Harissa, Jounieh, Lebanon.jpg (top-down drone view, not recognisable to a visitor); Panoramio-origin file (archived third-party source).
 - Reused: lebanon-harissa.webp (hero, Paul Saad CC BY-SA 4.0, already registered above).
+
+## Gallery historic photograph reuse (2026-10-01)
+
+- Existing asset: media/annaya/charbel-historic-photo.webp (419x595), reused unchanged from the news page.
+- Source checked live: https://commons.wikimedia.org/wiki/File:Charbel.jpg
+- Creator: unknown. Commons describes the date as before 1898 and identifies the file as public domain in the United States (published before 1931). Its origin-country notice explains the author death date is unknown and expiration is an age-based assumption; it warns longer-term jurisdictions may differ. The gallery attributes the classification to Commons rather than promising universal reuse rights.
+- Caption: Saint Charbel Makhlouf (1828-1898) - the historic photograph kept of the saint. Photographer unknown. Wikimedia Commons identifies this photograph as public domain.
+- Added as fourth gallery image with full-screen navigation, without editing or regenerating the image.
