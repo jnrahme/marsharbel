@@ -196,7 +196,7 @@
       <p class="section-sub">Type a word - sick, exams, anxiety, family, forgiveness - and the matching prayers stay. Every prayer page on this site is listed here.</p>
       <div class="coach-grid">
         <label for="prayer-finder-q">Search every prayer page</label>
-        <input id="prayer-finder-q" type="text" placeholder="sick, anxiety, students, family, miracle, rosary..." autocomplete="off" />
+        <input id="prayer-finder-q" type="text" aria-controls="prayer-finder-grid" placeholder="sick, anxiety, students, family, miracle, rosary..." autocomplete="off" />
       </div>
       <div class="grid-2" id="prayer-finder-grid">
         <article class="card update prayer-finder-card" data-keywords="sick illness hospital surgery pain disease bedside">
@@ -295,7 +295,7 @@
           <p>Prayer that turns into a way of life - his habits, made yours.</p>
         </article>
       </div>
-      <p id="prayer-finder-empty" hidden>No prayer page matches that yet - try "healing", "anxiety", or "family".</p>
+      <p id="prayer-finder-empty" role="status" hidden>No prayer page matches that yet - try "healing", "anxiety", or "family".</p>
     </section>
 
     <section class="section">

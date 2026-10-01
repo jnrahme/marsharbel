@@ -104,6 +104,7 @@
   <!-- hreflang:end -->
 </head>
 <body>
+  <a class="skip-link" href="#main-content">{{header.skipLink}}</a>
   <header class="topbar">
     <div class="site-shell nav">
       <a class='brand' href='/'><span class="brand-mark">✦</span><span>{{header.siteBrand}}</span></a>
@@ -165,7 +166,7 @@
     </div>
   </header>
 
-  <main class="site-shell">
+  <main id="main-content" class="site-shell" tabindex="-1">
     <section class="hero">
       <span class="kicker">{{hero.eyebrow}}</span>
       <h1>{{hero.heading}}</h1>
