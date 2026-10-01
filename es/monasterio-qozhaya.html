@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP"></script>
   <script>
+  (function () {
+    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
+    document.head.appendChild(tag);
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CJX1M0VFKP');
-  </script>
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-CJX1M0VFKP');
+  })();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monasterio de Qozhaya: la casa de san Antonio y el salterio de 1610</title>
   <meta name="description" content="Qozhaya, el monasterio de san Antonio en el Valle Santo: ermitaños desde el siglo IV, antigua casa madre de la Orden Maronita Libanesa y la imprenta del Salterio de 1610, primer libro impreso del Imperio otomano de Oriente." />

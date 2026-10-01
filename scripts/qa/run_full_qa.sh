@@ -9,6 +9,8 @@ fi
 
 cd "${ROOT}"
 
+node scripts/qa/test_analytics_hostname.cjs
+
 node scripts/build-home-css.mjs --check
 npm run i18n:check
 python3 scripts/build-eucharistic-miracles.py --check
