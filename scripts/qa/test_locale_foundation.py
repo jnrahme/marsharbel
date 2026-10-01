@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from i18n.catalog import ROOT, read_json, validate_registry, topic_locales, load_catalog
 from i18n.metadata import og_locales, published_locales, selector_aliases
-from i18n.guarded_dom import translate_slots
+from i18n.guarded_dom import translate_slots, translatable_nodes
 from i18n.eucharistic_mirror import render_eucharistic
 
 class FoundationTests(unittest.TestCase):
@@ -83,6 +83,13 @@ class FoundationTests(unittest.TestCase):
         for text in pages.values():
             soup = BeautifulSoup(text, 'html.parser')
             self.assertEqual({a['hreflang'] for a in soup.select('link[hreflang]')}, {'en','ar','x-default'})
+
+    def test_noncontent_and_explicit_hidden_nodes_preserved(self):
+        soup = BeautifulSoup('<main><script>private()</script><style>.x{}</style><template>Template</template><noscript>Fallback</noscript><span hidden>Hidden</span><span inert>Inert</span><span aria-hidden="true">Decoration</span><p>Visible</p></main>', 'html.parser')
+        self.assertEqual([str(n) for n in translatable_nodes(soup.main)], ['Visible'])
+        translate_slots(soup.main, {'0': {'source': 'Visible', 'text': 'Sichtbar'}})
+        for text in ['private()', '.x{}', 'Template', 'Fallback', 'Hidden', 'Inert', 'Decoration']:
+            self.assertIn(text, str(soup))
 
     def test_guarded_dom_transaction_and_shape(self):
         soup = BeautifulSoup('<main><!-- keep:marker --><p> Hello <b>world</b> </p></main>', 'html.parser')

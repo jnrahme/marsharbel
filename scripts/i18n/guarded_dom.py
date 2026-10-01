@@ -3,9 +3,28 @@ import re
 from bs4 import Comment
 
 
+def translatable_nodes(container):
+    """Visible-copy candidates only; CSS visibility is not inferred server-side.
+
+    Callers must audit their container for CSS-only hidden content. Explicitly
+    hidden/inert and non-content descendants remain untouched, as do comments.
+    """
+    result = []
+    for node in container.find_all(string=True):
+        if isinstance(node, Comment) or not node.strip():
+            continue
+        if any(parent.name in {'script', 'style', 'template', 'noscript'}
+               or parent.has_attr('hidden') or parent.has_attr('inert')
+               or parent.get('aria-hidden', '').lower() == 'true'
+               for parent in node.parents if getattr(parent, 'name', None)):
+            continue
+        result.append(node)
+    return result
+
+
 def translate_slots(container, slots, label='Mirror'):
     """Replace every visible source string, preserving tags and edge whitespace."""
-    nodes = [n for n in container.find_all(string=True) if n.strip() and not isinstance(n, Comment)]
+    nodes = translatable_nodes(container)
     if set(slots) != {str(i) for i in range(len(nodes))}:
         raise ValueError(f'{label} slot count changed')
     replacements = []
