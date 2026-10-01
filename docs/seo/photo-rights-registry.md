@@ -229,3 +229,11 @@ figcaption. New images: add a record here in the same batch.
 - Source: Wikimedia Commons, File:Saint Lichaa 2.jpg
   (https://commons.wikimedia.org/wiki/File:Saint_Lichaa_2.jpg).
 - Author: Eusebius. License: CC BY 3.0. Verified via Commons API extmetadata 2026-09-26. Visually inspected: monastery buildings tucked under overhanging cliff above olive terraces; caption matches visible content. Slightly over the ~170KB target at 640w q46 - texture-dense cliff source, accepted.
+
+### harissa-basilica.webp (1100x982, 115KB) - /our-lady-of-lebanon-harissa, The Basilica section
+- Source: Wikimedia Commons, File:Our Lady of Lebanon2019.jpg
+  (https://commons.wikimedia.org/wiki/File:Our_Lady_of_Lebanon2019.jpg).
+- Author: Choinowski (own work, 2018-04-28). License: CC BY-SA 4.0. Verified via Commons API extmetadata 2026-10-01.
+- Visually inspected: the basilica's ribbed concrete face and glass front, clear sky, no watermark.
+- Rejected: File:Harissa Cathedral From Front.jpg (photographer watermark "Paul Saad Photography" under a different Commons uploader name, provenance unclear); File:Our Lady of Lebanon church, Harissa, Jounieh, Lebanon.jpg (top-down drone view, not recognisable to a visitor); Panoramio-origin file (archived third-party source).
+- Reused: lebanon-harissa.webp (hero, Paul Saad CC BY-SA 4.0, already registered above).
