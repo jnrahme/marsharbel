@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
+    return raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -878,6 +878,7 @@
     jpii: { en: JPII_STORY_EN },
     teresa: { en: window.MOTHER_TERESA_STORY_EN || [] },
     rafqa: { en: window.RAFQA_STORY_EN || [] },
+    'charbel-v2': { en: window.CHARBEL_V2_STORY_EN || [] },
     magdalene: { en: window.MAGDALENE_STORY_EN || [] },
     jude: { en: window.JUDE_STORY_EN || [] },
     peter: { en: window.PETER_STORY_EN || [] },
@@ -946,6 +947,10 @@
   peter: { en: [{ id: 'kokoro-peter', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-peter/en-directed-r1' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   rafqa: { en: [
       { id: 'kokoro-rafqa', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-rafqa/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ] },
+  'charbel-v2': { en: [
+      { id: 'kokoro-charbel-v2', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-charbel-v2/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ] },
   teresa: {
@@ -1251,7 +1256,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'magdalene' ? 'directed-magdalene' : storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'magdalene' ? 'directed-magdalene' : storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : storyId === 'charbel-v2' ? 'kokoro-charbel-v2' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
