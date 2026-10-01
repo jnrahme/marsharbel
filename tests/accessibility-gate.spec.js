@@ -6,7 +6,7 @@ const AxeBuilder = require('@axe-core/playwright').default;
 const pages = ['/', '/story', '/history', '/stories', '/saints', '/prayer-library', '/saint-charbel-prayers',
   '/saint-charbel-novena', '/litany-of-saint-charbel', '/saint-charbel-prayer-for-healing', '/saint-charbel-feast-day',
   '/rosary-intro', '/mystery-meditation', '/gallery', '/news', '/videos', '/miracles/', '/testimonies', '/submit-testimony',
-  '/visit-annaya', '/st-rafqa', '/pio-story', '/privacy-policy', '/terms-of-service',
+  '/visit-annaya', '/st-rafqa', '/pio-story', '/privacy-policy', '/terms-of-service', '/accessibility',
   '/ar/', '/ar/prayers', '/ar/novena', '/fr/', '/es/'];
 const rtl = path => path.startsWith('/ar/');
 

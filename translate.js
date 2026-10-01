@@ -307,6 +307,13 @@
       }
     );
 
+    var hasAccessibilityLink = Array.prototype.some.call(
+      footerShell.querySelectorAll('a[href]'),
+      function (anchor) {
+        return /\/accessibility(?:\.html)?$/.test(anchor.getAttribute('href') || '');
+      }
+    );
+
     var linksToAdd = [];
 
     if (!hasPrivacyLink) {
@@ -322,6 +329,14 @@
         href: '/terms-of-service',
         text: 'Terms of Service',
         isCurrent: isTermsOfServicePath(window.location.pathname || ''),
+      });
+    }
+
+    if (!hasAccessibilityLink) {
+      linksToAdd.push({
+        href: '/accessibility',
+        text: 'Accessibility',
+        isCurrent: /\/accessibility(?:\.html)?$/.test(window.location.pathname || ''),
       });
     }
 
