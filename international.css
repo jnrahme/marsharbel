@@ -4,3 +4,7 @@
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 
 main p+a,.card p+a{display:inline-block;min-height:24px;line-height:24px}
+
+/* Main is a non-interactive skip destination. Keep control focus rings intact. */
+main:focus,main:focus-visible,[id="main"]:focus,[id="main"]:focus-visible{outline:none}
+main:target,#main:target{outline:none}
