@@ -120,6 +120,7 @@ BREADCRUMBS = {
     "22nd-of-the-month.html": (None, "The 22nd of the Month"),
     "privacy-policy.html": (None, "Privacy Policy"),
     "terms-of-service.html": (None, "Terms of Service"),
+    "accessibility.html": (None, "Accessibility Statement"),
 }
 
 
