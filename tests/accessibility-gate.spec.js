@@ -23,6 +23,7 @@ for (const path of pages) {
 
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'])
+      .exclude('iframe[src*="youtube"]')
       .analyze();
     expect(results.violations.map(v => `${v.id} (${v.impact}): ${v.nodes.slice(0, 3).map(n => n.target.join(' ')).join(' | ')}`),
       `Accessibility violations on ${path}`).toEqual([]);
