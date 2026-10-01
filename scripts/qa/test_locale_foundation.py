@@ -85,12 +85,13 @@ class FoundationTests(unittest.TestCase):
             self.assertEqual({a['hreflang'] for a in soup.select('link[hreflang]')}, {'en','ar','x-default'})
 
     def test_guarded_dom_transaction_and_shape(self):
-        soup = BeautifulSoup('<main><p> Hello <b>world</b> </p></main>', 'html.parser')
+        soup = BeautifulSoup('<main><!-- keep:marker --><p> Hello <b>world</b> </p></main>', 'html.parser')
         slots = {'0': {'source':'Hello','text':'Hallo'}, '1': {'source':'world','text':'Welt'}}
         shape = [n.name for n in soup.select('main *')]
         translate_slots(soup.main, slots)
         self.assertEqual(shape, [n.name for n in soup.select('main *')])
         self.assertEqual(soup.main.p.contents[0], ' Hallo ')
+        self.assertIn('<!-- keep:marker -->', str(soup))
         soup = BeautifulSoup('<main><p>Hello</p><p>world</p></main>', 'html.parser')
         original = str(soup)
         slots['1']['source'] = 'changed'

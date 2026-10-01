@@ -1,10 +1,11 @@
 """Side-effect-free exact-master text replacement. Never translate a moving DOM."""
 import re
+from bs4 import Comment
 
 
 def translate_slots(container, slots, label='Mirror'):
     """Replace every visible source string, preserving tags and edge whitespace."""
-    nodes = [n for n in container.find_all(string=True) if n.strip()]
+    nodes = [n for n in container.find_all(string=True) if n.strip() and not isinstance(n, Comment)]
     if set(slots) != {str(i) for i in range(len(nodes))}:
         raise ValueError(f'{label} slot count changed')
     replacements = []
