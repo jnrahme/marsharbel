@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
+    return raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -57,6 +57,8 @@
   };
 
   const EVIDENCE_SOURCES = {
+    francisMatthew: {label: 'Matthew 5:9', url: 'https://bible.usccb.org/bible/matthew/5'},
+    francisBirds: {label: 'Franciscan Media: St. Francis and the Birds', url: 'https://www.franciscanmedia.org/st-anthony-messenger/st-francis-and-the-birds/'},
     josephLetter: {label: 'Pope Francis: Patris Corde', url: 'https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20201208_patris-corde.html'},
     josephMatthew: {label: 'Matthew 1-2', url: 'https://bible.usccb.org/bible/matthew/1'},
     josephLuke: {label: 'Luke 2', url: 'https://bible.usccb.org/bible/luke/2'},
@@ -857,6 +859,7 @@
   ];
 
   const STORY_PAGES = {
+    francis: { en: window.FRANCIS_STORY_EN || [] },
     joseph: { en: window.JOSEPH_STORY_EN || [] },
     anthony: { en: window.ANTHONY_STORY_EN || [] },
     therese: { en: window.THERESE_STORY_EN || [] },
@@ -891,6 +894,7 @@
   const VOICE_PACK_STORAGE_KEY = storyId === 'charbel' ? `storybook_voice_pack_${contentLang}` : `storybook_voice_pack_${storyId}_${contentLang}`;
   const BROWSER_VOICE_PREF_KEY = 'rosary_audio_voice_pref';
   const VOICE_PACKS = {
+  francis: { en: [{ id: 'directed-francis', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-francis/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   joseph: { en: [{ id: 'directed-joseph', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-joseph/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   anthony: { en: [{ id: 'directed-anthony', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-anthony/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   therese: { en: [{ id: 'directed-therese-v2', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-therese/en-directed-v2' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
@@ -1234,7 +1238,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
