@@ -14,6 +14,7 @@ SITE = "https://marsharbel.com"
 DEFAULT_IMAGE = f"{SITE}/saint-charbel.jpg"
 # The site publishes under its own name; no personal or organizational credentials are claimed.
 PUBLISHER = {"@type": "Organization", "name": "marsharbel.com", "url": f"{SITE}/"}
+CHARBEL_ALIASES = ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"]
 
 NOINDEX = {
     "account.html",
@@ -27,6 +28,9 @@ NOINDEX = {
 }
 
 DESCRIPTIONS = {
+    "magdalene-story.html": "Mary Magdalene storybook for ages 6-12: nine illustrated narrative pages from Galilee to the Easter garden, with flowing narration and a family reflection.",
+    "jude-story.html": "Saint Jude storybook for ages 6-12: nine illustrated pages about a question at the Last Supper, with flowing narration and a family reflection.",
+    "massabki-story.html": "Read the Massabki brothers’ story for ages 6-12 with a trusted adult: narrated pages about service, faith, remembrance, and choosing safety and peace.",
     "history.html": "Discover Saint Charbel's life timeline from 1828 to canonization in 1977, including his Maronite monastic vocation and enduring spiritual legacy.",
     "story.html": "Read a child-friendly Saint Charbel storybook for ages 5-12 with simple language, faith lessons, and an engaging guided experience.",
     "miracles.html": "Explore Saint Charbel miracle records with clear distinction between formally recognized Church miracles and reported testimonies from Annaya.",
@@ -84,12 +88,26 @@ BREADCRUMBS = {
     "story.html": (None, "Story for Children"),
     "history.html": ("story", "Full History"),
     "miracles/index.html": (None, "Miracles"),
+    "miracles/eucharistic/index.html": ("miracles", "Eucharistic Miracles"),
+    "miracles/eucharistic/lanciano.html": ("miracles", "Eucharistic Miracle of Lanciano"),
+    "miracles/eucharistic/bolsena-orvieto.html": ("miracles", "Eucharistic Miracle of Bolsena and Orvieto"),
+    "miracles/eucharistic/siena.html": ("miracles", "Eucharistic Miracle of Siena"),
+    "miracles/eucharistic/santarem.html": ("miracles", "Eucharistic Miracle of Santarem"),
+    "miracles/eucharistic/sokolka.html": ("miracles", "Eucharistic Miracle of Sokolka"),
+    "miracles/eucharistic/legnica.html": ("miracles", "Eucharistic Event of Legnica"),
+    "miracles/eucharistic/ludbreg.html": ("miracles", "Eucharistic Tradition of Ludbreg"),
+    "miracles/eucharistic/amsterdam.html": ("miracles", "Eucharistic Tradition of Amsterdam"),
+    "miracles/eucharistic/ivorra.html": ("miracles", "Eucharistic Tradition of Ivorra"),
+    "miracles/eucharistic/faverney.html": ("miracles", "Eucharistic Event of Faverney"),
+
     "news.html": ("miracles", "Latest News"),
     "testimonies.html": ("miracles", "Letters"),
     "voice-testimony.html": ("miracles", "Voice Testimony"),
     "prayer-library.html": (None, "Prayer Library"),
     "saint-charbel-prayers.html": ("prayer", "Saint Charbel Prayers"),
     "saint-charbel-novena.html": ("prayer", "Saint Charbel Novena"),
+    "saint-charbel-chaplet.html": ("prayer", "Saint Charbel Chaplet"),
+    "litany-of-saint-charbel.html": ("prayer", "Litany of Saint Charbel"),
     "saint-charbel-feast-day.html": ("prayer", "Feast Day"),
     "rosary-visual-guide.html": ("prayer", "Rosary Guide"),
     "rosary-minibook.html": ("prayer", "Rosary Minibook"),
@@ -178,6 +196,8 @@ def path_to_url(path: Path) -> str:
         return f"{SITE}/"
     if rel == "miracles/index.html":
         return f"{SITE}/miracles/"
+    if rel == "miracles/eucharistic/index.html":
+        return f"{SITE}/miracles/eucharistic/"
     if rel.endswith(".html"):
         rel = rel[:-5]
     return f"{SITE}/{rel}"
@@ -232,12 +252,18 @@ def hero_image(path: Path, html: str) -> str | None:
 def og_image_for(path: Path, html: str = "") -> str:
     # pio-story.html renders its cover via storybook.js (no static hero <img>),
     # so pin the storybook cover instead of falling back to the default.
+    if path.name == "magdalene-story.html":
+        return f"{SITE}/media/storybook-magdalene/images/page-01.webp"
+    if path.name == "jude-story.html":
+        return f"{SITE}/media/storybook-jude/images/page-01.jpg"
     if path.name == "mother-teresa-story.html":
         return f"{SITE}/media/storybook-teresa/images/page-01.webp"
     if path.name == "rafqa-story.html":
         return f"{SITE}/media/storybook-rafqa/images/page-01.webp"
     if path.name == "charbel-story-v2.html":
         return f"{SITE}/media/storybook-charbel-v2/images/page-01.webp"
+    if path.name == "hardini-story.html":
+        return f"{SITE}/media/storybook-hardini/images/page-01.webp"
     if path.name == "pio-story.html":
         return f"{SITE}/media/storybook-pio/images/page-01.webp"
     if path.name == "jpii-story.html":
@@ -348,6 +374,7 @@ def tourist_schema(path: Path, html: str, url: str, title: str, description: str
 
 
 SAINT_STEMS = {
+    "st-estephan-nehme",
     "st-anthony-of-padua",
     "st-augustine-of-hippo",
     "st-francis-of-assisi",
@@ -377,7 +404,7 @@ def person_schema(path: Path, html: str, url: str, title: str, description: str)
         return None
     person = {"@type": "Person", "name": name, "description": description, "url": url}
     if path.stem == "history":
-        person["alternateName"] = ["Mar Charbel", "Saint Charbel Makhlouf"]
+        person["alternateName"] = CHARBEL_ALIASES
     return person
 
 
@@ -447,7 +474,7 @@ def build_meta_block(url: str, title: str, description: str, robots: str, image:
         "description": description,
         "url": url,
         "isPartOf": {"@type": "WebSite", "name": "Saint Charbel",
-                     "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf"],
+                     "alternateName": CHARBEL_ALIASES,
                      "url": f"{SITE}/"},
     }
     if "noindex" not in robots:
@@ -519,7 +546,7 @@ def update_file(path: Path) -> bool:
     breadcrumb = breadcrumb_for(path, title) if "noindex" not in robots and not authored_breadcrumb else None
     standalone = []
     if not has_graph_page and "noindex" not in robots:
-        for block in (faq_schema(html), tourist_schema(path, html, url, title, description, image),
+        for block in (faq_schema(html2), tourist_schema(path, html, url, title, description, image),
                       person_schema(path, html, url, title, description)):
             if block:
                 standalone.append(block)

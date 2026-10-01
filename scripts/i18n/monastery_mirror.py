@@ -1,4 +1,11 @@
 """Render Qannoubine and Qozhaya from their keyed English masters and locale catalogs."""
+
+OG_LOCALE = {'en':'en_US','ar':'ar_AR','es':'es_ES','fr':'fr_FR','pt':'pt_PT','it':'it_IT','de':'de_DE','pl':'pl_PL'}
+
+
+def og_alternates(code):
+    return '\n'.join(f'<meta property="og:locale:alternate" content="{v}" />' for k, v in OG_LOCALE.items() if k != code)
+
 from html import escape
 import json
 from pathlib import Path
@@ -8,7 +15,7 @@ from i18n.catalog import ROOT, leaves, page_url, read_json, topic_locales
 
 SITE = 'https://marsharbel.com'
 SLOT = re.compile(r'\{\{([a-z][A-Za-z0-9]*(?:\.[a-z][A-Za-z0-9]*)+)\}\}')
-RESERVED = {'locale.code', 'locale.direction', 'locale.canonical', 'locale.alternates'}
+RESERVED = {'locale.code', 'locale.direction', 'locale.canonical', 'locale.alternates', 'locale.ogLocale', 'locale.ogLocaleAlternates'}
 
 
 def render_monasteries(root=ROOT, registry=None):
@@ -33,10 +40,11 @@ def render_monasteries(root=ROOT, registry=None):
                 raise ValueError(f'{name}/{code}: catalog mismatch, missing {sorted(expected-set(catalog))}; extra {sorted(set(catalog)-expected)}')
             leaves(catalog)
             tokens = {**catalog, 'locale.code': code, 'locale.direction': registry['locales'][code]['direction'],
-                      'locale.canonical': SITE + route, 'locale.alternates': alternates}
+                      'locale.canonical': SITE + route, 'locale.alternates': alternates,
+                  'locale.ogLocale': OG_LOCALE[code], 'locale.ogLocaleAlternates': og_alternates(code)}
             def substitute(match):
                 key = match.group(1)
-                if key == 'locale.alternates':
+                if key in ('locale.alternates', 'locale.ogLocaleAlternates'):
                     return tokens[key]
                 before = template[:match.start()]
                 if before.rfind('<script type="application/ld+json">') > before.rfind('</script>'):
@@ -46,6 +54,13 @@ def render_monasteries(root=ROOT, registry=None):
             if '{{' in text or '}}' in text:
                 raise ValueError(f'{name}/{code}: unresolved slot')
             if code == 'en':
+                # English places are not translated mirrors yet. Keep their
+                # links in the English header only until locale catalogs exist.
+                text = re.sub(r'<header\b[\s\S]*?</header>', lambda header: header[0].replace('<a href="/bekaa-kafra">Bekaa Kafra</a>',
+                    '<a href="/bekaa-kafra">Bekaa Kafra</a>\n'
+                    '        <a href="/our-lady-of-lebanon-harissa">Our Lady of Lebanon at Harissa</a>\n'
+                    '        <a href="/cedars-of-god-lebanon">the Cedars of God</a>\n'
+                    '        <a href="/bkerke-maronite-patriarchate">Bkerke and the Maronite Patriarchate</a>'), text, count=1)
                 # Managed English nav spells its existing ampersand literally.
                 text = text.replace('>Miracles &amp; Reports</a>', '>Miracles & Reports</a>')
                 text = text.replace('src="/app.js"', 'src="app.js"').replace('src="/translate.js?', 'src="translate.js?')

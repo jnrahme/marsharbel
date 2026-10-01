@@ -6,8 +6,10 @@ visitor information for Annaya.
 
 **Live site:** https://marsharbel.com
 
-The site is plain HTML, CSS and JavaScript with no build step and no framework.
-Every file in the repository root is served as-is.
+The published site is plain HTML, CSS and JavaScript with no frontend framework.
+Python and Node scripts generate localized pages, feeds and CSS, which are
+committed before deployment. Some repository files are build inputs or docs,
+not public web files.
 
 ## Features
 
@@ -83,24 +85,38 @@ Work is evidence-backed, lands through the PR flow above, and is logged in
 | Integrator | QA gates, merges, post-deploy live verification, regression watch | Merge and verification reports |
 | Technical SEO | Crawl health, indexing, redirects, structured data (FAQPage and TouristAttraction emitted by the SEO generator), sitemaps | Merged PRs, bot-log entries |
 | Content pipeline | Evidence-backed content improvements | PRs for review |
-| International | Arabic-first localization, expanding to ranked world languages | Localized pages, hreflang and sitemap updates; shared prayers mirror live in 8 locales (ar, en, fr, es, pt, it, de, pl); Arabic and French monastery mirrors (Arabic with self-hosted Noto Naskh/Sans webfonts); saved-locale routing to published twins |
+| International | Arabic-first localization, expanding to ranked world languages | Localized pages, hreflang and sitemap updates; shared prayers mirror live in 8 locales (ar, en, fr, es, pt, it, de, pl); Arabic, French, and Spanish monastery mirrors (Arabic with self-hosted Noto Naskh/Sans webfonts); saved-locale routing to published twins |
 | Storybook | Saint storybooks: narrative art, Kokoro narration, shared player, page-by-page and audio QA before merge | New books in the shared player, library cards |
 | Authority / backlinks | Partnership and backlink preparation | Drafts only - nothing is sent to third parties without explicit approval |
 
 This section is kept current with the fleet: when a lane changes or work
 ships, the README is updated in the same PR or a small follow-up docs PR.
 
-## Current state (2026-09-27)
+## Current state (2026-09-29)
 
-**Live now:** 153 indexable pages in the sitemap across eight locales;
-five saint storybooks in the shared player under the warm cream
-child-friendly design standard (storybook-joy.css); Arabic and French monastery
-mirrors; shared prayers mirrored in all 8 locales; FAQPage/Person/Organization
+**Live now:** 205 indexable URLs in the public sitemap across eight locales;
+six saint storybooks in the shared player under the warm cream
+child-friendly design standard (storybook-joy.css); Arabic, French, and Spanish
+monastery mirrors; shared prayers mirrored in all 8 locales; FAQPage/Person/Organization
 structured data sitewide on managed pages; `/llms.txt` and AI-crawler-friendly
 `robots.txt`.
 
-**Recent ships:**
+**Recent work:**
 
+- 2026-09-29 - The international plumbing merge added crawlable locale links,
+  canonicals, hreflang, `og:locale`, Google Search Console verification files,
+  and a GA4 tag (#340). Those files were byte-checked and visually reviewed
+  live; GA4 Realtime receipt has not been verified. The prayer-mirror QA and
+  sitemap lastmod correction (#342) merged into `stage`, but its sitemap
+  remains undeployed while Hostinger access is blocked.
+- 2026-09-28 - Eucharistic Miracles locale mirrors, Hardini storybook,
+  Padre Pio film player, Arabic pilgrimage source limits, and Miracles nav
+  entry (#330, #332, #334, #338, #336).
+
+- 2026-09-28 - Spanish monastery mirrors: keyed Spanish mirrors for the
+  Qannoubine and Qozhaya monasteries (`/es/monasterio-qannoubine`,
+  `/es/monasterio-qozhaya`), `es/valle-qadisha` Travel nav repointed to
+  them, full hreflang wiring, 156 indexable pages at that release (#318)
 - 2026-09-27 - Prayer library canonical consolidation: the legacy English
   prayer master `/saint-charbel-prayers` duplicated the `/en/prayers` guide
   body byte-for-byte and competed with it as canonical - it now 301s to
@@ -131,9 +147,11 @@ structured data sitewide on managed pages; `/llms.txt` and AI-crawler-friendly
   storybook reading-UX pass
 - 2026-09-26 - Shared prayers mirror live in 8 locales; saved-locale routing
 
-**In flight:** testimony-youtube lane is paused pending backend access;
-retroactive rendered review sweep of pre-2026-09-27 pages is running under
-the golden rule.
+**In flight:** Hostinger deploy access needs repair: the `stage` sitemap
+from #342 has not reached the public site. News and Arabic feast-day updates
+are prepared locally, not merged. Testimony backend work remains gated on
+access; the John Paul II film and the design-revamp merge are held for
+separate review/approval.
 
 ## Repository layout
 
@@ -148,7 +166,9 @@ the golden rule.
 
 1. Branch from `stage`.
 2. Open a pull request into `stage`.
-3. All required checks must pass; merges deploy straight to production.
+3. All required checks must pass. A merge updates `stage`; it is not a
+   verified production deployment. Wait for Hostinger upload, cache purge
+   and live byte/rendered checks before calling the change shipped.
 
 Engineering rules for contributors and coding agents live in
 [`AGENTS.md`](AGENTS.md). Deployment details are in

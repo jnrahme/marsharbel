@@ -31,6 +31,17 @@ class CatalogTests(unittest.TestCase):
         update(data)
         path.write_text(json.dumps(data))
 
+    def test_arabic_22nd_attribution_and_home_devotion_limits(self):
+        registry, _ = load_catalog(ROOT)
+        self.assertEqual(registry['topics']['twentySecond']['sources'], ['cnewaMonthly', 'monastery'])
+        html = builder.outputs(ROOT)[ROOT/'ar/22nd-of-the-month.html']
+        self.assertIn('href="https://cnewa.org/magazine/lebanons-beloved-saint/"', html)
+        self.assertIn('أعداد وردت في مقابلة، وليست عددًا ثابتًا', html)
+        self.assertIn('عندما يسمح الطقس', html)
+        self.assertIn('ليس تاريخًا أقرتْه الكنيسة عيدًا ليتورجيًا عامًا', html)
+        self.assertIn('لا يحلّ الزيت المبارك أو الحجّ أو الصلاة محلّ الرعاية الطبية', html)
+        self.assertNotIn('تضمن الشفاء', html)
+
     def test_arabic_raymond_story_distinguishes_reporter_from_medical_record(self):
         registry, _ = load_catalog(ROOT)
         self.assertEqual(registry['topics']['raymondStory']['sources'],
@@ -188,6 +199,10 @@ class CatalogTests(unittest.TestCase):
             other = 'qozhaya' if name == 'qannoubine' else 'qannoubine'
             other_routes = registry['authoredMirrors'][other]['routes']
             en = Probe(); en.feed(pages[ROOT/f'{name}-monastery.html'])
+            # Navigation-only English places must never enter article prose.
+            for slug in ('our-lady-of-lebanon-harissa', 'cedars-of-god-lebanon', 'bkerke-maronite-patriarchate'):
+                self.assertEqual(pages[ROOT/f'{name}-monastery.html'].count(f'href="./{slug}"'), 1)
+                self.assertFalse(any(a.get('href') == f'./{slug}' for t, a in en.main_tags))
             for code, route in routes.items():
                 if code == 'en':
                     continue
@@ -351,7 +366,10 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn('hreflang="fr"',links)
         navigation=builder.navigation(registry,'ar','sampleTopic')
         self.assertIn('href="/fr/"',navigation)
-        self.assertIn('href="/sample-topic?lang=en"',navigation)
+        # Canonical English URL carries no language parameter (P0: parameter URLs
+        # are crawlable duplicates).
+        self.assertIn('href="/sample-topic"',navigation)
+        self.assertNotIn('?lang=',navigation)
         template=Template((ROOT/'templates/international/page.html').read_text())
         self.assertNotIn('/ar/sample-topic',builder.render(registry,catalogs['fr'],'fr',template))
         self.assertIn('/ar/sample-topic',builder.render(registry,catalogs['ar'],'ar',template))

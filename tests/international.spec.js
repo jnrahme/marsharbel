@@ -10,7 +10,7 @@ const prayerMirrorPortuguese = require('../locales/pt/mirrors/prayers.json');
 const prayerMirrorItalian = require('../locales/it/mirrors/prayers.json');
 const prayerMirrorGerman = require('../locales/de/mirrors/prayers.json');
 const prayerMirrorPolish = require('../locales/pl/mirrors/prayers.json');
-const topicHeading = (code, topic) => topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(code) ?
+const topicHeading = (code, topic) => code === 'ar' && topic === 'feastDay' ? require('../locales/ar/feast-mirror.json').slots['1'].text : topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(code) ?
   ({ar: prayerMirror, fr: prayerMirrorFrench, es: prayerMirrorSpanish, pt: prayerMirrorPortuguese, it: prayerMirrorItalian, de: prayerMirrorGerman, pl: prayerMirrorPolish, en: require('../locales/en/mirrors/prayers.json')})[code]['hero.heading'] :
   catalogs[code][topic].title;
 const routeFor = (code, topic) => topic ? `/${code}/${registry.locales[code].slugs[topic]}` : registry.locales[code].home;
@@ -42,7 +42,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
         const anchors = await page.locator('a[href^="#"]').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
         for (const anchor of anchors) await expect(page.locator(anchor)).toHaveCount(1);
         const published = topicLanguages(topic);
-        if (topic && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers')) {
+        if (topic && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers') && !(language === 'ar' && topic === 'feastDay')) {
           const next = published[(published.indexOf(language) + 1) % published.length];
           await page.locator('header nav').getByRole('link',{name:registry.locales[next].nativeName,exact:true}).click();
           await expect(page.locator('html')).toHaveAttribute('lang',next);
@@ -76,7 +76,16 @@ test('existing pages keep one top language selector without duplicate menus', as
     await expect(page.locator('#sc-language-select')).toBeVisible();
     await expect(page.locator('.lang-switcher')).toHaveCount(1);
     await expect(page.locator('.locale-navigation, .locale-nav')).toHaveCount(0);
-    await expect(page.locator('footer a[lang], main nav a[lang]')).toHaveCount(0);
+    // P0: a crawlable locale bar may exist - at most one per page, one
+    // canonical link per locale, and never parameter (?lang=) URLs. English
+    // pages used to forbid footer locale links entirely; the bar is the
+    // crawlable path that replaced runtime-only switching.
+    const localeBarCount = await page.locator('nav.footer-locales').count();
+    expect(localeBarCount).toBeLessThanOrEqual(1);
+    for (const code of languages) {
+      await expect(page.locator(`nav.footer-locales a[hreflang="${code}"]`)).toHaveCount(localeBarCount);
+    }
+    expect(await page.locator('nav.footer-locales a[href*="?lang="]').count()).toBe(0);
     for (const code of languages) {
       await expect(page.locator(`#sc-language-select option[value="${code}"]`)).toHaveCount(1);
     }

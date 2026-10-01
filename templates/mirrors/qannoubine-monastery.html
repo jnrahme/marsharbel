@@ -2,6 +2,14 @@
 <html lang="{{locale.code}}" dir="{{locale.direction}}" data-authored-mirror="qannoubine-monastery">
 <head>
   <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CJX1M0VFKP');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{meta.title}}</title>
   <meta name="description" content="{{meta.description}}" />
@@ -12,6 +20,8 @@
   <meta property="og:title" content="{{meta.title}}" />
   <meta property="og:description" content="{{meta.description}}" />
   <meta property="og:url" content="{{locale.canonical}}" />
+  <meta property="og:locale" content="{{locale.ogLocale}}" />
+  {{locale.ogLocaleAlternates}}
   <meta property="og:image" content="https://marsharbel.com/media/annaya/qannoubine-church.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{meta.title}}" />
@@ -28,6 +38,7 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "{{header.siteBrand}}",
+    "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"],
     "url": "https://marsharbel.com/",
     "publisher": {
       "@type": "Organization",
@@ -164,6 +175,7 @@
         <a class="nav-parent" href="/miracles" aria-haspopup="true" aria-expanded="false">{{header.miracles}}<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="/miracles">{{header.miraclesAndReports}}</a>
+        <a href="/miracles/eucharistic/">{{header.eucharisticMiracles}}</a>
         <a href="/news">{{header.latestNews}}</a>
         <a href="/testimonies">{{header.letters}}</a>
         <a href="/voice-testimony">{{header.voiceTestimony}}</a>
@@ -213,6 +225,7 @@
     <section class="hero">
       <span class="kicker">{{hero.text1}}</span>
       <h1>{{hero.heading1}}</h1>
+      <p>{{hero.answer1}}</p>
       <p>{{hero.text2}}</p>
       <div class="cta-row">
         <a class='btn primary' href='/qadisha-valley'>{{hero.link1}}</a>

@@ -1,5 +1,6 @@
 """Guard the Arabic prayers pilot against a shortened or stale translation."""
 import json
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 import sys
@@ -45,7 +46,11 @@ class PrayerMirrorTests(unittest.TestCase):
         self.assertEqual(Shape(en).images, Shape(ar).images)
         # The English master should not drift outside its keyed source.
         original = (ROOT / 'saint-charbel-prayers.html').read_text()
-        self.assertEqual(Shape(original).nodes, Shape(ar).nodes)
+        # The published English master alone has P0's managed crawlable
+        # footer-locale bar. The shared prayer body must still match Arabic.
+        self.assertEqual(original.count('<nav class="footer-locales"'), 1)
+        original_body = re.sub(r'<nav class="footer-locales"[^>]*>.*?</nav>', '', original, count=1, flags=re.S)
+        self.assertEqual(Shape(original_body).nodes, Shape(ar).nodes)
         self.assertEqual(len(Shape(ar).images), 1)
         self.assertEqual(ar.count('card prayer-card'), 14)
         self.assertEqual(ar.count('<section class="section">'), 6)
@@ -59,6 +64,43 @@ class PrayerMirrorTests(unittest.TestCase):
             self.assertEqual(page.count('id="sc-language-select"'), 0)  # existing control is mounted by translate.js
             self.assertEqual(page.count('class="lang-switcher-slot"'), 1)
             self.assertEqual(page.count('src="/translate.js'), 1)
+
+    def test_generated_mirrors_have_real_og_locale_meta_elements(self):
+        from i18n.qadisha_mirror import render_qadisha
+        from i18n.monastery_mirror import render_monasteries
+        from i18n.mirror import OG_LOCALE
+        class HeadMeta(HTMLParser):
+            def __init__(self, text):
+                super().__init__(convert_charrefs=True)
+                self.alternates = []
+                self.primary = []
+                self.feed(text)
+            def handle_starttag(self, tag, attrs):
+                if tag == 'meta':
+                    values = dict(attrs)
+                    if values.get('property') == 'og:locale:alternate':
+                        self.alternates.append(values.get('content'))
+                    if values.get('property') == 'og:locale':
+                        self.primary.append(values.get('content'))
+        pages = {**render_mirrors(ROOT), **render_qadisha(ROOT), **render_monasteries(ROOT)}
+        self.assertEqual(len(pages), 21)
+        for path, html in pages.items():
+            code = path.relative_to(ROOT).parts[0]
+            if code not in OG_LOCALE:
+                code = 'en'
+            expected = [value for lang, value in OG_LOCALE.items() if lang != code]
+            tags = HeadMeta(html)
+            self.assertEqual(tags.primary, [OG_LOCALE[code]], str(path))
+            self.assertEqual(tags.alternates, expected, str(path))
+            self.assertNotIn('&lt;meta', html, str(path))
+            stored = HeadMeta(path.read_text())
+            self.assertEqual(stored.primary, tags.primary, str(path))
+            self.assertEqual(stored.alternates, tags.alternates, str(path))
+        # An escaped line is text, not a parsed meta element: the assertion
+        # above catches this defect even if a raw substring seems present.
+        broken = pages[ROOT/'en/prayers.html'].replace('<meta property="og:locale:alternate"',
+                                                   '&lt;meta property="og:locale:alternate"', 1)
+        self.assertEqual(len(HeadMeta(broken).alternates), 6)
 
     def test_spanish_mirror_uses_same_shape_and_complete_rosary(self):
         pages = render_mirrors(ROOT)
@@ -156,7 +198,7 @@ class PrayerMirrorTests(unittest.TestCase):
         english = read_json(ROOT / 'locales/en/mirrors/prayers.json')
         arabic = read_json(ROOT / 'locales/ar/mirrors/prayers.json')
         self.assertEqual(english.keys(), arabic.keys())
-        self.assertEqual(len(english), 133)
+        self.assertEqual(len(english), 134)
         self.assertIn('href="/ar/prayers" aria-current="page"', render_pair(ROOT)[ROOT/'ar/prayers.html'])
         self.assertEqual(Shape(render_pair(ROOT)[ROOT/'ar/prayers.html']).links.count('/ar/novena'), 1)
         self.assertIn('data-authored-mirror="prayers"', template)

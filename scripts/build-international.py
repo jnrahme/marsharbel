@@ -11,6 +11,10 @@ from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_loca
 from i18n.mirror import render_mirrors
 from i18n.qadisha_mirror import render_qadisha
 from i18n.monastery_mirror import render_monasteries
+from i18n.feast_mirror import render_feast
+from i18n.litany_mirror import render_litany
+from i18n.eucharistic_mirror import render_eucharistic
+from i18n.chaplet_mirror import render_chaplet
 
 
 def alternate_links(registry, topic=None):
@@ -24,6 +28,22 @@ def alternate_links(registry, topic=None):
     return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{url}" />' for code, url in links.items())
 
 
+OG_LOCALE = {'en':'en_US','ar':'ar_AR','es':'es_ES','fr':'fr_FR','pt':'pt_PT','it':'it_IT','de':'de_DE','pl':'pl_PL'}
+
+def footer_locale_bar(registry):
+    links = []
+    for language, config in registry['locales'].items():
+        path = page_url(registry, language)
+        links.append(f'<a href="{path}" hreflang="{language}" lang="{language}" dir="{config["direction"]}">{escape(config["nativeName"])}</a>')
+    return '<nav class="footer-locales" aria-label="Languages">' + ' <span aria-hidden="true">-</span> '.join(links) + '</nav>'
+
+def og_locale_tags(registry, code):
+    tags = [f'<meta property="og:locale" content="{OG_LOCALE[code]}" />']
+    for other in registry['locales']:
+        if other != code:
+            tags.append(f'<meta property="og:locale:alternate" content="{OG_LOCALE[other]}" />')
+    return '\n'.join(tags)
+
 def navigation(registry, code, topic=None, mark_current=True):
     links = []
     available = topic_locales(registry, topic) if topic else list(registry['locales'])
@@ -34,10 +54,21 @@ def navigation(registry, code, topic=None, mark_current=True):
             path = registry['topics'][topic]['relatedEnglish']
         else:
             path = page_url(registry, language)
-        if path == '/' or (topic and language not in available and language == registry['defaultLocale']):
-            path += '?lang=' + language
         current = ' aria-current="page"' if mark_current and language == code else ''
-        links.append(f'<a href="{path}" lang="{language}" dir="{config["direction"]}"{current}>{escape(config["nativeName"])}</a>')
+        links.append(f'<a href="{path}" hreflang="{language}" lang="{language}" dir="{config["direction"]}"{current}>{escape(config["nativeName"])}</a>')
+    # Locale pages load no site JavaScript, but translate.js on an English
+    # destination honors the stored sc_lang_pref and would bounce a visitor
+    # back to their previous locale. A click on a language link is an explicit
+    # choice, so persist it before navigation (the same key translate.js uses).
+    links.append(
+        '<script>document.addEventListener("click",function(e){'
+        'var a=e.target&&e.target.closest?e.target.closest("a[hreflang]"):null;'
+        'if(!a)return;'
+        'var l=(a.getAttribute("hreflang")||"").toLowerCase();'
+        'if(l==="x-default")l="en";'
+        'try{localStorage.setItem("sc_lang_pref",l)}catch(_){}'
+        '});</script>'
+    )
     return '\n'.join(links)
 
 
@@ -73,8 +104,9 @@ def render(registry, catalog, code, template, topic=None):
     schema_text = json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
     return template.substitute(language=code, direction=registry['locales'][code]['direction'], title=escape(title),
         description=escape(description), canonical=url, alternates=alternate_links(registry, topic),
+        oglocale=og_locale_tags(registry, code),
         brand=t('site.brand'), site=registry['site'], schema=schema_text, skip=t('navigation.skip'),
-        home=page_url(registry, code) + ('?lang=en' if code == 'en' else ''),
+        home=page_url(registry, code),
         chooseLanguage=t('navigation.chooseLanguage'), navigation=navigation(registry, code, topic),
         homeLabel=t('navigation.home'), content=content, footer=t('site.footer'))
 
@@ -118,10 +150,22 @@ def outputs(root=ROOT):
     monasteries = render_monasteries(root, registry)
     english_monasteries = {path: monasteries.pop(path) for path in (root / 'qannoubine-monastery.html', root / 'qozhaya-monastery.html')}
     result.update(monasteries)
+    result.update(render_litany(root))
+    eucharistic = render_eucharistic(root, registry)
+    result.update(eucharistic)
+    result.update(render_chaplet(root))
+    result.update(render_feast(root))
+    # Nested localized directory indexes must be explicit; Options -Indexes
+    # otherwise hides hubs on some hosts.
+    for code in registry['locales']:
+        if code != registry['defaultLocale']:
+            result[root/code/'miracles/eucharistic/.htaccess'] = (
+                '# Canonical localized Eucharistic directory hub.\nOptions -Indexes\nDirectoryIndex index.html\n')
     home = root / 'index.html'
     text = replace_block(home.read_text(), 'i18n-alternates', alternate_links(registry))
-    # Existing pages already have the top selector; never generate a duplicate menu.
-    text = replace_block(text, 'i18n-navigation', '')
+    # Crawlable cross-locale links for English pages live in the footer block; the
+    # top selector stays JS-only.
+    text = replace_block(text, 'i18n-navigation', footer_locale_bar(registry))
     result[home] = text
     for topic, config in registry['topics'].items():
         related = config['relatedEnglish'].lstrip('/')
@@ -130,7 +174,8 @@ def outputs(root=ROOT):
                 english_qadisha if path == root / 'qadisha-valley.html' else
                 english_monasteries[path] if path in english_monasteries else
                 result.get(path, path.read_text()))
-        text = replace_block(text, 'i18n-navigation', '')
+        if related != 'saint-charbel-feast-day':
+            text = replace_block(text, 'i18n-navigation', footer_locale_bar(registry))
         if registry['defaultLocale'] not in topic_locales(registry, topic):
             # The English page is this topic's English alternate, so it carries the same cluster.
             links = '\n'.join('  ' + line for line in alternate_links(registry, topic).split('\n'))
@@ -146,17 +191,34 @@ def outputs(root=ROOT):
     text = localized.sub('', text)
     generated = [registry['site'] + page_url(registry, code) for code in registry['locales'] if code != registry['defaultLocale']]
     generated += [registry['site'] + page_url(registry, code, topic) for code in registry['locales'] for topic in locale_topics(registry, code)]
+    generated += [registry['site'] + '/' + code + '/miracles/eucharistic/' + ('' if slug=='index' else slug)
+                  for code in registry['locales'] if code != registry['defaultLocale']
+                  for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney')]
     generated += [registry['site'] + route for mirror in registry.get('authoredMirrors', {}).values()
                   for route in mirror['routes'].values() if route != mirror['english']]
     def entry(url):
         lastmod = f'<lastmod>{lastmods[url]}</lastmod>' if url in lastmods else ''
         return f'  <url><loc>{url}</loc>{lastmod}</url>'
     text = text.replace('</urlset>', '\n' + '\n'.join(entry(url) for url in generated) + '\n</urlset>')
+    text = re.sub(r'\n[ \t]*\n(?:[ \t]*\n)+', '\n\n', text)
     result[sitemap] = text
     routing = {'homes':{code: cfg['home'] for code,cfg in registry['locales'].items()},
                'topics':{cfg['relatedEnglish']:{code:page_url(registry,code,topic) for code in topic_locales(registry,topic)} for topic,cfg in registry['topics'].items()}}
     for mirror in registry.get('authoredMirrors', {}).values():
         routing['topics'][mirror['english']] = mirror['routes']
+    routing['topics']['/saint-charbel-feast-day']['en']='/saint-charbel-feast-day'
+    for slug in ('', 'lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica','ludbreg','amsterdam','ivorra','faverney'):
+        english = '/miracles/eucharistic/' + slug
+        routing['topics'][english] = {code:('/' + code if code != 'en' else '') + english
+                                       for code in registry['locales']}
+    # The English Chaplet remains the master; add only the authored Arabic alternate.
+    chaplet = root / 'saint-charbel-chaplet.html'
+    chaplet_text = chaplet.read_text()
+    chaplet_alt = '  <link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/saint-charbel-chaplet" />'
+    chaplet_text = re.sub(r'(<!-- hreflang:begin -->).*?(<!-- hreflang:end -->)',
+                          lambda m: m[1] + '\n  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/saint-charbel-chaplet" />\n  <link rel="alternate" hreflang="en" href="https://marsharbel.com/saint-charbel-chaplet" />\n' + chaplet_alt + '\n  ' + m[2],
+                          chaplet_text, count=1, flags=re.S)
+    result[chaplet] = chaplet_text
     result[root / 'qadisha-valley.html'] = english_qadisha
     result.update(english_monasteries)
     result[root / 'locale-routes.js'] = '// Generated by npm run i18n:build. Edit locales/registry.json.\nwindow.SC_LOCALE_ROUTES = ' + json.dumps(routing, ensure_ascii=False, separators=(',', ':')) + ';\n'

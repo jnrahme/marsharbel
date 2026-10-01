@@ -29,6 +29,41 @@ class SeoRegressionTests(unittest.TestCase):
             if not target.exists() and path.name != ".git":
                 target.symlink_to(path, target_is_directory=path.is_dir())
 
+    def test_generated_faq_survives_a_second_generator_pass(self):
+        path = self.root / "story.html"
+        original_root = generator.ROOT
+        generator.ROOT = self.root
+        try:
+            generator.update_file(path)
+            first = path.read_text()
+            generator.update_file(path)
+            second = path.read_text()
+            self.assertEqual(first, second)
+            self.assertEqual(len(re.findall(r'"@type"\s*:\s*"FAQPage"', second)), 1)
+            generated = [json.loads(block) for block in re.findall(
+                r'<script type="application/ld\+json">([\s\S]*?)</script>', second)]
+            entities = [block for graph in generated for block in graph.get("@graph", [graph])]
+            faq = next(block for block in entities if block.get("@type") == "FAQPage")
+            self.assertEqual(len(faq["mainEntity"]), 4)
+        finally:
+            generator.ROOT = original_root
+
+    def test_aeo_catalog_matches_visible_copy_and_faq_schema(self):
+        from collections import Counter
+        from check_i18n_policy import extract_html
+        catalog = json.loads((ROOT / "locales/en/aeo-p2-copy.json").read_text())["values"]
+        self.assertEqual(len(catalog), 12)
+        for filename, values in catalog.items():
+            html = (self.root / filename).read_text()
+            self.assertFalse(Counter(values) - extract_html(html), filename)
+            blocks = [json.loads(raw) for raw in re.findall(
+                r'<script type="application/ld\+json">([\s\S]*?)</script>', html)]
+            entities = [entity for block in blocks for entity in block.get("@graph", [block])]
+            faqs = [entity for entity in entities if entity.get("@type") == "FAQPage"]
+            self.assertEqual(len(faqs), 1, filename)
+            actual = [(q["name"], q["acceptedAnswer"]["text"]) for q in faqs[0]["mainEntity"]]
+            self.assertEqual(actual, generator.faq_pairs(html), filename)
+
     def test_repository_metadata(self):
         self.assertEqual(check(self.root)[0], [])
 
@@ -39,6 +74,17 @@ class SeoRegressionTests(unittest.TestCase):
         text = hub.read_text()
         self.assertIn('<link rel="canonical" href="https://marsharbel.com/miracles/"', text)
         self.assertIn('<loc>https://marsharbel.com/miracles/</loc>', (self.root / "sitemap.xml").read_text())
+        self.assertEqual(check(self.root)[0], [])
+
+    def test_eucharistic_collection_has_eleven_distinct_canonicals(self):
+        pages = sorted((self.root / "miracles/eucharistic").glob("*.html"))
+        self.assertEqual(len(pages), 11)
+        for path in pages:
+            text = path.read_text()
+            url = "https://marsharbel.com/miracles/eucharistic/" + ("" if path.name == "index.html" else path.stem)
+            self.assertIn(f'<link rel="canonical" href="{url}"', text)
+            self.assertIn(url, (self.root / "sitemap.xml").read_text())
+            self.assertIn('media/eucharistic-miracles/', text)
         self.assertEqual(check(self.root)[0], [])
 
     def test_missing_sitemap_entry_fails(self):
@@ -170,6 +216,40 @@ class SeoRegressionTests(unittest.TestCase):
             pages = [b for b in blocks if isinstance(b, dict) and b.get("@type") == "WebPage"]
             self.assertEqual(pages[0]["isPartOf"]["publisher"], generator.PUBLISHER, name)
 
+    def test_homepage_web_site_aliases(self):
+        html = (self.root / "index.html").read_text()
+        blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html)]
+        sites = [node for b in blocks if isinstance(b, dict) for node in b.get("@graph", []) if node.get("@type") == "WebSite"]
+        self.assertEqual(len(sites), 1)
+        self.assertEqual(sites[0]["alternateName"], generator.CHARBEL_ALIASES)
+
+    def test_charbel_aliases_in_generated_site_and_biography_schema(self):
+        for name in ["history.html", "st-padre-pio.html", "mysteries/joyful-1.html", "miracles/index.html"]:
+            html = (self.root / name).read_text()
+            blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html)]
+            pages = [b for b in blocks if isinstance(b, dict) and b.get("@type") == "WebPage"]
+            self.assertEqual(pages[0]["isPartOf"]["alternateName"], generator.CHARBEL_ALIASES, name)
+            if name == "history.html":
+                people = [b for b in blocks if isinstance(b, dict) and b.get("@type") == "Person"]
+                self.assertEqual(people[0]["alternateName"], generator.CHARBEL_ALIASES)
+        # New pages inherit the same list rather than a shorter hard-coded variant.
+        rendered = generator.build_meta_block("https://marsharbel.com/new", "New", "Example", "index,follow", generator.DEFAULT_IMAGE)
+        self.assertIn('"Saint Sharbel"', rendered)
+
+    def test_every_published_website_entity_has_charbel_aliases(self):
+        for path in public_html_files(self.root):
+            html = path.read_text()
+            for raw in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', html):
+                data = json.loads(raw)
+                def walk(value):
+                    if isinstance(value, dict):
+                        if value.get("@type") == "WebSite":
+                            self.assertEqual(value.get("alternateName"), generator.CHARBEL_ALIASES, path.name)
+                        for child in value.values(): walk(child)
+                    elif isinstance(value, list):
+                        for child in value: walk(child)
+                walk(data)
+
     def test_internal_link_to_redirecting_url_fails(self):
         page = self.root / "history.html"
         page.write_text(page.read_text().replace("</main>", '<a href="./story.html">x</a><a href="index">y</a></main>', 1))
@@ -185,7 +265,11 @@ class SeoRegressionTests(unittest.TestCase):
         self.assertEqual(article["headline"], "Darb Mar Charbel: The Saint Charbel Trail")
         self.assertRegex(article["datePublished"], r"^\d{4}-\d{2}-\d{2}$")
         self.assertIn('og:image" content="https://marsharbel.com/media/news/trail-pilgrimage-hero.webp"', html)
-        self.assertNotIn("mainEntity", (self.root / "history.html").read_text())
+        history_blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', (self.root / "history.html").read_text())]
+        history_webpages = [b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "WebPage"]
+        self.assertTrue(history_webpages)
+        self.assertNotIn("mainEntity", history_webpages[0])
+        self.assertFalse([b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "Article"])
 
 
 if __name__ == "__main__":

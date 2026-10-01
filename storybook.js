@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
+    return raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -57,6 +57,39 @@
   };
 
   const EVIDENCE_SOURCES = {
+    magdaleneJohn19: {"label": "USCCB: John 19, Mary beside the cross", "url": "https://bible.usccb.org/bible/john/19"},
+    magdaleneMatthew27: {"label": "USCCB: Matthew 27, burial and stone", "url": "https://bible.usccb.org/bible/matthew/27"},
+    magdaleneVaticanNews: {"label": "Vatican News: Mary Magdalene, disciple of the Lord", "url": "https://www.vaticannews.va/en/saints/07/22/st--mary-magdalene--disciple-of-the-lord-.html"},
+    magdaleneLuke8: {"label": "USCCB: Luke 8, women accompanying Jesus", "url": "https://bible.usccb.org/bible/luke/8"},
+    magdaleneJohn20: {"label": "USCCB: John 20, Mary and the risen Jesus", "url": "https://bible.usccb.org/bible/john/20"},
+    magdaleneChurch2016: {"label": "Holy See: Mary Magdalene, apostle of the apostles", "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2016/06/10/160610c.html"},
+    judeBenedict2006: {label: "Benedict XVI: Simon and Jude", url: "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20061011.html"},
+    judeJohn14: {label: "USCCB: John 14 and identity note", url: "https://bible.usccb.org/bible/john/14"},
+    judeLetter: {label: "USCCB: Letter of Jude", url: "https://bible.usccb.org/bible/jude/1"},
+    francisMatthew: {label: 'Matthew 5:9', url: 'https://bible.usccb.org/bible/matthew/5'},
+    francisBirds: {label: 'Franciscan Media: St. Francis and the Birds', url: 'https://www.franciscanmedia.org/st-anthony-messenger/st-francis-and-the-birds/'},
+    josephLetter: {label: 'Pope Francis: Patris Corde', url: 'https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20201208_patris-corde.html'},
+    josephMatthew: {label: 'Matthew 1-2', url: 'https://bible.usccb.org/bible/matthew/1'},
+    josephLuke: {label: 'Luke 2', url: 'https://bible.usccb.org/bible/luke/2'},
+    anthonyLife: {label: 'Benedict XVI: Saint Anthony of Padua', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100210.html'},
+    anthonyFrancis: {label: 'Benedict XVI: Saint Francis of Assisi', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100127.html'},
+    anthonyBible: {label: 'James 1:22', url: 'https://bible.usccb.org/bible/james/1?13='},
+    thereseLife: {label: 'Holy See: The Life of Saint Therese of Lisieux', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19101997_stherese_en.html'},
+    thereseTrust: {label: 'Pope Francis: C est la confiance', url: 'https://www.vatican.va/content/francesco/en/apost_exhortations/documents/20231015-santateresa-delbambinogesu.html'},
+    thereseBible: {label: 'John 15:12', url: 'https://bible.usccb.org/bible/john/15'},
+    peterJerome: { label: 'Jerome, On Illustrious Men, chapter 1 (ancient tradition)', url: 'https://www.newadvent.org/fathers/2708.htm' },
+    peterBenedict2006a: { label: 'Holy See (Benedict XVI audience, 17 May 2006)', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060517.html' },
+    peterBenedict2006b: { label: 'Holy See (Benedict XVI audience, 24 May 2006)', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060524.html' },
+    bibleActs2: { label: 'NABRE, Acts 2 (USCCB)', url: 'https://bible.usccb.org/bible/acts/2' },
+    bibleActs12: { label: 'NABRE, Acts 12 (USCCB)', url: 'https://bible.usccb.org/bible/acts/12' },
+    eusebiusHE3: { label: 'Eusebius, Church History 3 (via New Advent)', url: 'https://www.newadvent.org/fathers/250103.htm' },
+    stPeterNecropolis: { label: 'Fabbrica di San Pietro (Holy See), The Necropolis', url: 'https://www.basilicasanpietro.va/en/san-pietro/the-necropolis' },
+    massabkiDecree: {label: 'Holy See decree, 23 May 2024', url: 'https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/05/23/240523b.html'},
+    massabkiOFM: {label: 'Order of Friars Minor: The Holy Martyrs of Damascus', url: 'https://ofm.org/en/the-holy-martyrs-of-damascus.html'},
+    massabkiHomily: {label: 'Pope Francis canonization homily, 20 October 2024', url: 'https://www.vatican.va/content/francesco/en/homilies/2024/documents/20241020-omelia-canonizzazione.html'},
+    hardiniVatican: { label: 'Holy See (Nimatullah biography, 2004)', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20040516_al-hardini_en.html' },
+    hardiniSchool: { label: 'Holy See (Nimatullah beatification profile, 1998, Portuguese)', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19980510_kassab_po.html' },
+    hardiniHomily: { label: 'Holy See (John Paul II canonization homily, 2004)', url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2004/documents/hf_jp-ii_hom_20040516_canonizations.html' },
     rafqaVatican: { label: 'Holy See (Saint Rafqa biography, 2001)', url: 'https://www.vatican.va/news_services/liturgy/documents/ns_lit_doc_20010610_rafqa-choboq_en.html' },
     rafqaConvent: { label: 'Saint Rafqa Monastery (history of Jrabta)', url: 'https://www.rafqa.com/Convent-Saint-Rafqa' },
     rafqaCanonization: { label: 'Holy See (canonization homily, 2001)', url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2001/documents/hf_jp-ii_hom_20010610_canonizzazione.html' },
@@ -835,12 +868,21 @@
   ];
 
   const STORY_PAGES = {
+    francis: { en: window.FRANCIS_STORY_EN || [] },
+    joseph: { en: window.JOSEPH_STORY_EN || [] },
+    anthony: { en: window.ANTHONY_STORY_EN || [] },
+    therese: { en: window.THERESE_STORY_EN || [] },
     charbel: STORIES,
+    massabki: { en: window.MASSABKI_STORY_EN || [] },
     pio: { en: PIO_STORY_EN },
     jpii: { en: JPII_STORY_EN },
     teresa: { en: window.MOTHER_TERESA_STORY_EN || [] },
     rafqa: { en: window.RAFQA_STORY_EN || [] },
-    'charbel-v2': { en: window.CHARBEL_V2_STORY_EN || [] }
+    'charbel-v2': { en: window.CHARBEL_V2_STORY_EN || [] },
+    magdalene: { en: window.MAGDALENE_STORY_EN || [] },
+    jude: { en: window.JUDE_STORY_EN || [] },
+    peter: { en: window.PETER_STORY_EN || [] },
+    hardini: { en: window.HARDINI_STORY_EN || [] }
   };
   const UI = COPY[contentLang];
   const storyPages = STORY_PAGES[storyId] || STORY_PAGES.charbel;
@@ -864,6 +906,11 @@
   const VOICE_PACK_STORAGE_KEY = storyId === 'charbel' ? `storybook_voice_pack_${contentLang}` : `storybook_voice_pack_${storyId}_${contentLang}`;
   const BROWSER_VOICE_PREF_KEY = 'rosary_audio_voice_pref';
   const VOICE_PACKS = {
+  francis: { en: [{ id: 'directed-francis', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-francis/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  joseph: { en: [{ id: 'directed-joseph', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-joseph/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  anthony: { en: [{ id: 'directed-anthony', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-anthony/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  therese: { en: [{ id: 'directed-therese-v2', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-therese/en-directed-v2' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  massabki: { en: [{ id: 'kokoro-massabki', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-massabki/en' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   charbel: {
     en: [
       { id: 'elevenlabs-charbel', label: 'ElevenLabs Story Voice (Recommended)', type: 'clips', base: './media/storybook/en-elevenlabs' },
@@ -891,6 +938,13 @@
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ]
   },
+  hardini: { en: [
+      { id: 'kokoro-hardini', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-hardini/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ] },
+  magdalene: { en: [{ id: "directed-magdalene", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-magdalene/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  jude: { en: [{ id: "directed-jude", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-jude/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  peter: { en: [{ id: 'kokoro-peter', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-peter/en-directed-r1' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   rafqa: { en: [
       { id: 'kokoro-rafqa', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-rafqa/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
@@ -1202,7 +1256,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'charbel-v2' ? 'kokoro-charbel-v2' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'magdalene' ? 'directed-magdalene' : storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : storyId === 'charbel-v2' ? 'kokoro-charbel-v2' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
@@ -1244,6 +1298,33 @@
     syncAudioContext({ playing: false, paused: false, completed: false });
   };
 
+  // Shared reader geometry: header and control heights vary with viewport and text size.
+  const book = el.panel.closest('.storybook');
+  const controls = book.querySelector('.storybook-controls');
+  const updateReaderInsets = () => {
+    const headerHeight = document.querySelector('.topbar')?.getBoundingClientRect().height || 0;
+    document.documentElement.style.setProperty('--story-header-height', `${headerHeight}px`);
+    document.documentElement.style.setProperty('--story-controls-height', `${controls.getBoundingClientRect().height}px`);
+  };
+  const readerResize = new ResizeObserver(updateReaderInsets);
+  readerResize.observe(controls);
+  const readerHeader = document.querySelector('.topbar');
+  if (readerHeader) readerResize.observe(readerHeader);
+  updateReaderInsets();
+  // Reference summaries must not displace the actual illustrated book on entry.
+  const precedingSections = [];
+  for (let node = book.previousElementSibling; node && !node.classList.contains('story-hero'); node = node.previousElementSibling) {
+    if (node.matches('section.section')) precedingSections.unshift(node);
+  }
+  let afterBook = book;
+  for (const section of precedingSections) { afterBook.after(section); afterBook = section; }
+  const scrollToReader = () => {
+    updateReaderInsets();
+    const inset = readerHeader?.getBoundingClientRect().height || 0;
+    const target = window.scrollY + el.panel.getBoundingClientRect().top - inset - controls.getBoundingClientRect().height - 12;
+    window.scrollTo({top:Math.max(0,target), behavior:window.matchMedia(['(prefers-reduced-motion:', ' reduce)'].join('')).matches ? 'instant' : 'smooth'});
+  };
+
   const onPageReadingFinished = () => {
     reading = false;
     paused = false;
@@ -1258,7 +1339,7 @@
       setTimeout(() => {
         index++;
         render();
-        el.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        scrollToReader();
         setTimeout(() => readCurrentPage(), 220);
       }, 300);
     }
@@ -1280,6 +1361,7 @@
     el.title.textContent = page.title;
     el.body.textContent = page.body;
     el.body.classList.toggle('is-reflection', Boolean(page.reflection));
+    el.panel.classList.toggle('is-reflection-page', Boolean(page.reflection));
     el.prayer.textContent = page.prayer;
     el.heart.textContent = page.heart || '';
     el.heart.hidden = !page.heart;
@@ -1425,7 +1507,7 @@
     if (nextIndex === index) return;
     index = nextIndex;
     render();
-    el.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    scrollToReader();
     if (wasReading) {
       syncAudioContext({ playing: true, paused: false, completed: false });
       readCurrentPage();
@@ -1505,8 +1587,12 @@
         }
         const summary = document.querySelector(['.story-settings', 'summary'].join(' '));
         if (summary) { summary.setAttribute('aria-label', messages.settings); summary.title = messages.settings; const label = document.createElement('span'); label.textContent = messages.settingsShort; summary.appendChild(label); }
-        const note = document.querySelector('.story-production-note');
-        if (note) note.textContent = messages.disclosure;
+        const notes = document.querySelectorAll('.story-production-note');
+        notes.forEach(note => {
+          if (!note.closest('#storybook-film') && !note.hasAttribute('data-story-specific-disclosure')) {
+            note.textContent = messages.disclosure;
+          }
+        });
       }
     } catch (_) { /* Legacy strings remain usable when previewed offline. */ }
     // Read last page BEFORE first render (which overwrites it with 0)
@@ -1531,7 +1617,7 @@
         bannerBtn.addEventListener('click', () => {
           index = lastPage;
           render();
-          el.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          scrollToReader();
           banner.hidden = true;
         });
         if (bannerDismiss) {

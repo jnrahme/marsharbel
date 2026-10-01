@@ -11,8 +11,9 @@ try {
   // These tests assert our metadata, independently of third-party availability.
   await context.route('**/*', route => new URL(route.request().url()).origin === new URL(base).origin
     ? route.continue() : route.abort());
-  const page = await context.newPage();
+  let page = await context.newPage();
   for (const canonical of urls) {
+    await page.close(); page = await context.newPage();
     const response = await page.goto(base + new URL(canonical).pathname, { waitUntil: 'load' });
     assert.equal(response.status(), 200, canonical);
     assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), canonical);
@@ -51,7 +52,9 @@ try {
   await page.locator('#sc-language-select').selectOption('fr');
   await page.waitForURL(base + '/fr/');
   await page.getByRole('link', { name: 'English', exact: true }).click();
-  await page.waitForURL(base + '/?lang=en');
+  // Canonical English URL carries no language parameter (P0: parameter URLs are
+  // crawlable duplicates).
+  await page.waitForURL(base + '/');
   assert.equal(await page.locator('#sc-language-select').inputValue(), 'en');
   await noJs.close();
   console.log(`SEO runtime passed: ${urls.length} public pages, 7 noindex pages, and tracking parameters.`);

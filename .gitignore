@@ -13,3 +13,6 @@ output/
 # Served via TUS only - git-tracked woff2 paths get shadowed (0-byte/404) by the Hostinger git-integration snapshot layer in some regions
 media/fonts/noto-naskh-arabic-arabic-v3.woff2
 media/fonts/noto-sans-arabic-arabic-v3.woff2
+
+# Pio storybook film (124MB) - TUS-only upload, never git-tracked
+media/storybook-pio/pio-film-endcard.mp4
