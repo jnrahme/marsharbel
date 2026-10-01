@@ -95,6 +95,8 @@ def check(root=ROOT):
     rafqa_catalog = read_json(root/'locales/en/rafqa-story-copy.json')
     peter_path = root/'locales/en/peter-story-copy.json'
     peter_catalog = read_json(peter_path)['values'] if peter_path.exists() else {}
+    anthony_path = root/'locales/en/anthony-story-copy.json'
+    anthony_catalog = read_json(anthony_path)['values'] if anthony_path.exists() else {}
     therese_path = root/'locales/en/therese-story-copy.json'
     therese_catalog = read_json(therese_path)['values'] if therese_path.exists() else {}
     massabki_path = root/'locales/en/massabki-story-copy.json'
@@ -134,6 +136,7 @@ def check(root=ROOT):
         # unreviewed occurrence from being silently accepted.
         additions -= Counter(peter_catalog.get(file, {}))
         additions -= Counter(therese_catalog.get(file, {}))
+        additions -= Counter(anthony_catalog.get(file, {}))
         additions -= Counter(massabki_catalog.get(file, {}))
         additions -= Counter(display_catalog.get(file, {}))
         additions -= Counter(aeo_catalog.get(file, {}))
