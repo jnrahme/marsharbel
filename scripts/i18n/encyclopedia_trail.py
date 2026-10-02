@@ -8,6 +8,7 @@ def render_trail(copy, history_url='/history', history_variant=False):
     expected=STANDARD if history_variant else STANDARD-{'historyAfter'}
     if set(copy) not in (expected, STANDARD):raise ValueError('Encyclopedia trail key mismatch')
     leaves(copy)
+    if history_url != '/history':raise ValueError('Full history destination remains English until exact mirror approval')
     if not history_url.startswith('/') or any(x in history_url for x in '<>"\'?#'):
         raise ValueError('Unsafe trail history route')
     title=copy['encyclopedia'];qualifier=copy['englishQualifier']
@@ -15,7 +16,7 @@ def render_trail(copy, history_url='/history', history_variant=False):
     # Only the destination is English; lang=en would mispronounce the label.
     anchor='<a href="/saint-charbel-encyclopedia" hreflang="en" aria-label="'+escape(title+' '+qualifier,quote=True)+'">'+escape(title)+'</a>'
     hint=' <span class="enc-language">'+escape(qualifier)+'</span>'
-    suffix=escape(copy['historyAfter']) if history_variant else escape(copy['middle'])+'<a href="'+escape(history_url,quote=True)+'">'+escape(copy['history'])+'</a>'+escape(copy['after'])
+    suffix=escape(copy['historyAfter']) if history_variant else escape(copy['middle'])+'<a href="'+escape(history_url,quote=True)+'" hreflang="en" aria-label="'+escape(copy['history']+' '+qualifier,quote=True)+'">'+escape(copy['history'])+'</a>'+hint+escape(copy['after'])
     return '<p class="enc-trail">'+escape(copy['before'])+anchor+hint+suffix+'</p>'
 
 

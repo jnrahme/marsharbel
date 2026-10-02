@@ -13,3 +13,7 @@ Tour helper reused from the reviewed tour package: EN/AR only, second under Trav
 Producer evidence: 18 mirror tests, 3 trail/nav tests, build freshness, policy, 133 English nav-sync, 270-page SEO pass. Browser checks at 390/1440: exact Arabic trail DOM text, English destination disclosure, no page horizontal overflow; real menu click reaches English Encyclopedia. Inspected actual phone and desktop screenshots for trails and open menus. Initial qualifier layout was visually detached; fixed wrapper/CSS and rechecked actual pixels. Final Arabic menus readable, qualifier alongside/under its own child title, no duplicate top-level visible hint.
 
 Not a publication claim. Pending independent rendered copy/visual gate, final current-stage rebase/full QA, German exact-candidate MAIN slot and chrome reconciliation, production proof by merge lane. No translated hub pages added.
+
+## Full History ruling applied
+
+All existing abbreviated biography guides remain distinct from /history. Both trail links and nav Full History keep /history, with hreflang=en, localized accessible title/qualifier and visible sibling qualifier. German exact substitution is a separate future review, not implicit permission. Full suite attempt hit its bounded execution timeout during site-smoke runtime; site smoke printed PASS, but runtime browser was interrupted. This is not a full QA PASS and must be rerun by the merge lane on the final aligned head.
