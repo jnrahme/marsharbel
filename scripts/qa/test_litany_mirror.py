@@ -4,11 +4,12 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.litany_mirror import render_litany
+from i18n.tour_nav import tour_nav
 class LitanyMirrorTests(unittest.TestCase):
     def test_structure_prayer_and_schema(self):
         en=BeautifulSoup((ROOT/'litany-of-saint-charbel.html').read_text(),'html.parser')
         ar=BeautifulSoup(render_litany(ROOT)[ROOT/'ar/litany-of-saint-charbel.html'],'html.parser')
-        self.assertEqual(render_litany(ROOT)[ROOT/'ar/litany-of-saint-charbel.html'],(ROOT/'ar/litany-of-saint-charbel.html').read_text())
+        self.assertEqual(tour_nav(render_litany(ROOT)[ROOT/'ar/litany-of-saint-charbel.html'],ROOT,'ar'),(ROOT/'ar/litany-of-saint-charbel.html').read_text())
         self.assertEqual([n.name for n in en.select('main *')],[n.name for n in ar.select('main *')])
         self.assertEqual(len(ar.select('main > section')),8)
         invocations=ar.select('#the-litany .story p')[1]

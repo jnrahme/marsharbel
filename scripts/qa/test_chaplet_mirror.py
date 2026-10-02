@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.chaplet_mirror import render_chaplet
+from i18n.tour_nav import tour_nav
 from i18n.catalog import read_json
 
 
@@ -15,7 +16,7 @@ class ChapletMirrorTests(unittest.TestCase):
     def test_final_render_matches_master_shape(self):
         en=BeautifulSoup((ROOT/'saint-charbel-chaplet.html').read_text(),'html.parser')
         ar=BeautifulSoup(render_chaplet(ROOT)[ROOT/'ar/saint-charbel-chaplet.html'],'html.parser')
-        self.assertEqual(str(ar),(ROOT/'ar/saint-charbel-chaplet.html').read_text())
+        self.assertEqual(tour_nav(str(ar),ROOT,'ar'),(ROOT/'ar/saint-charbel-chaplet.html').read_text())
         self.assertEqual(len(en.select('main > section')),8)
         self.assertEqual([tag.name for tag in en.select('main *')],[tag.name for tag in ar.select('main *')])
         self.assertEqual(len(ar.select('main .grid-2 article')),6)
