@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  {{> analytics}}
+  <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_AR" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="pt_PT" />
+    <meta property="og:locale:alternate" content="it_IT" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="pl_PL" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saint Charbel Gallery | Devotional Images</title>
+  <meta name="description" content="Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://marsharbel.com/gallery" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Saint Charbel" />
+  <meta property="og:title" content="Saint Charbel Gallery | Devotional Images" />
+  <meta property="og:description" content="Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection." />
+  <meta property="og:url" content="https://marsharbel.com/gallery" />
+  <meta property="og:image" content="https://marsharbel.com/gallery/charbel-window-og-1200x630.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Saint Charbel Gallery | Devotional Images" />
+  <meta name="twitter:description" content="Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection." />
+  <meta name="twitter:image" content="https://marsharbel.com/gallery/charbel-window-og-1200x630.jpg" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Saint Charbel Gallery | Devotional Images",
+  "description": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+  "url": "https://marsharbel.com/gallery",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Saint Charbel",
+    "alternateName": [
+      "Mar Charbel",
+      "Saint Charbel Makhlouf",
+      "Sharbel",
+      "St Charbel",
+      "Saint Sharbel",
+      "Charbel Makhlouf"
+    ],
+    "url": "https://marsharbel.com/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "marsharbel.com",
+      "url": "https://marsharbel.com/"
+    }
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://marsharbel.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Gallery",
+        "item": "https://marsharbel.com/gallery"
+      }
+    ]
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is in the gallery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Images used in Saint Charbel devotion: a crowd scene, a sepia devotional portrait, an image shared with an apparition testimony, the historic photograph of Saint Charbel, and a series of AI-assisted devotional portraits and comparison images, each labeled as an illustration and not a photograph. Each image has its source or origin noted on the page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do the images come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every image has its source listed in the Image Sources section on this page, with a link, so you can see where each photograph was found."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I view an image full-screen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Click any image to open the full view, then move through the collection with the Previous and Next buttons or the arrow keys on your keyboard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I reuse these photographs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A source credit is not permission to reuse an image. Check the rights with the source before copying or sharing it."
+      }
+    }
+  ]
+}
+  </script>
+  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=20261002-share-2" />
+  <style>
+    /* Reserve a separate row for source captions in the image viewer. */
+    #gallery-lightbox { grid-template-rows: minmax(0, 1fr) auto; padding-top: 4.5rem; background: rgb(4, 8, 12); }
+    #gallery-lightbox img { grid-column: 2; grid-row: 1; min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; height: 100%; object-fit: contain; }
+    #gallery-lightbox #lightbox-caption { display: block; grid-column: 1 / -1; grid-row: 2; margin: 0; max-width: 80ch; color: #f3eee6; font-size: .875rem; line-height: 1.45; text-align: center; }
+    #gallery-lightbox #lightbox-prev, #gallery-lightbox #lightbox-next { grid-row: 1; }
+    @media (max-width: 820px) {
+      #gallery-lightbox { grid-template-rows: minmax(0, 1fr) auto auto; }
+      #gallery-lightbox img { grid-column: 1 / -1; }
+      #gallery-lightbox #lightbox-prev, #gallery-lightbox #lightbox-next { grid-row: 3; }
+    }
+  </style>
+  <!-- hreflang:begin -->
+  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/gallery" />
+  <link rel="alternate" hreflang="en" href="https://marsharbel.com/gallery" />
+  <!-- hreflang:end -->
+</head>
+<body>
+  {{> skip-link}}
+  {{> header-open-4}}{{> primary-nav}}{{> header-close-1}}
+
+  <main id="main-content" class="site-shell" tabindex="-1">
+    <section class="hero">
+      <span class="kicker reveal">Saint Charbel Gallery</span>
+      <h1 class="reveal">Real Images & Devotional Archive</h1>
+      <p class="reveal">
+        The gallery gathers images used in Saint Charbel devotion: a crowd scene, a sepia portrait, an image shared with a testimony account, the historic photograph of Saint Charbel, and a series of AI-assisted devotional portraits and comparison images, each clearly labeled. Click any image to open it full-screen and move through the collection with the arrow keys.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="gallery-toolbar reveal">
+        <button id="gallery-prev" class="btn subtle" type="button">Previous Image</button>
+        <button id="gallery-next" class="btn subtle" type="button">Next Image</button>
+        <span class="gallery-hint">Tip: click any image to open full view. Use arrow keys to navigate.</span>
+      </div>
+      <div class="gallery-grid reveal">
+        <figure class="gallery-card">
+          <a class="gallery-item" data-index="0" href="gallery/user-link-1.jpg">
+            <img src="gallery/user-link-1.jpg" alt="Grainy archival black-and-white photograph of a crowd gathered around a monk, from the Saint Charbel devotion archive" width="456" height="323" loading="lazy" decoding="async" />
+          </a>
+        </figure>
+
+        <figure class="gallery-card">
+          <a class="gallery-item" data-index="1" href="gallery/8-saint-charbel-sepia-portrait.jpg">
+            <img src="gallery/8-saint-charbel-sepia-portrait.jpg" alt="Sepia archival close-up photograph of Saint Charbel's face" width="800" height="1084" loading="lazy" decoding="async" />
+          </a>
+        </figure>
+
+        <figure class="gallery-card">
+          <a class="gallery-item" data-index="2" href="gallery/user-link-4-lady.jpg">
+            <img src="gallery/user-link-4-lady.jpg" alt="Black-and-white testimony photograph showing two figures, shared with a Saint Charbel apparition account" width="238" height="300" loading="lazy" decoding="async" />
+          </a>
+        </figure>
+
+        <figure class="gallery-card">
+          <a class="gallery-item" data-index="3" href="media/annaya/charbel-historic-photo.webp">
+            <img src="media/annaya/charbel-historic-photo.webp" alt="Historic photograph of Saint Charbel with lowered eyes, wearing his monastic hood" width="419" height="595" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>Saint Charbel Makhlouf (1828-1898) - the historic photograph kept of the saint. Photographer unknown. Wikimedia Commons identifies this photograph as public domain.</figcaption>
+        </figure>
+
+
+        <figure class="gallery-card">
+          <a class="gallery-item" data-index="4" href="gallery/charbel-rendition-01-faithful.webp?v=20261002-dark-beard-3">
+            <img src="gallery/charbel-rendition-01-faithful.webp?v=20261002-dark-beard-3" alt="AI transformation, not a photograph: Saint Charbel in a black cap and heavy black robe, eyes lowered, dark beard with a grey center streak, against a plain stone-colored wall" width="1122" height="1402" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>This is how the creator of this website saw Saint Charbel when he appeared to him on December 22. An artistic rendition of that moment - not a photograph. AI transformation, series candidate 1: an AI-assisted imagined portrait.</figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <a class="gallery-item" data-index="5" href="gallery/charbel-rendition-02-hermitage.webp?v=20261002-wm-grid-1">
+            <img src="gallery/charbel-rendition-02-hermitage.webp?v=20261002-wm-grid-1" alt="AI transformation, not a photograph: Saint Charbel in a black hood and robe, eyes lowered, seated in a stone hermitage room beside a window and a clay jug" width="1122" height="1400" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>AI transformation, not a photograph. Series, candidate 2: an AI-assisted imagined portrait in a stone hermitage.</figcaption>
+        </figure>
+
+        <figure class="gallery-card gallery-card--wide">
+          <a class="gallery-item" data-index="6" href="gallery/charbel-transformation-strip.webp?v=20261002-wm-grid-1">
+            <img src="gallery/charbel-transformation-strip.webp?v=20261002-wm-grid-1" alt="AI transformation comparison strip, not a photograph: the historic image of Saint Charbel on the left beside two AI transformations with a window behind him" width="1600" height="690" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>AI transformation, not a photograph. Series, before and after: the historic image (left) beside the final rendition (center) and an alternate take (right).</figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <a class="gallery-item" data-index="7" href="gallery/charbel-rendition-final-alt.webp?v=20261002-wm-grid-1">
+            <img src="gallery/charbel-rendition-final-alt.webp?v=20261002-wm-grid-1" alt="AI transformation, not a photograph: close portrait of Saint Charbel in a black hood, eyes lowered, white beard, a window blurred behind him, alternate take" width="1122" height="1402" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>AI transformation, not a photograph. Series, alternate take: an AI-assisted close portrait based on the historic photograph.</figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <a class="gallery-item" data-index="8" href="gallery/charbel-window-rendition.webp?v=20261002-dark-beard-3">
+            <img src="gallery/charbel-window-rendition.webp?v=20261002-dark-beard-3" alt="AI transformation, not a photograph: close portrait of Saint Charbel in a black monastic hood, eyes lowered, with a full dark beard, a lit window blurred behind him" width="2244" height="2804" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>AI transformation, not a photograph. Series, final: an AI-assisted close portrait of Saint Charbel in an imagined hermitage, based on the historic photograph above. It shows how he might have looked and is not a record of any real scene.</figcaption>
+        </figure>
+
+      </div>
+
+      <article class="card story reveal" style="margin-top:1rem;">
+        <h3 role="heading" aria-level="2">Image Sources</h3>
+        <ul>
+          <li>Image 1 (<code>user-link-1.jpg</code>): <a href="https://share.google/rd2D8S2wgj2zqiEAM" target="_blank" rel="noopener">Google Photos (Source 1)</a></li>
+          <li>Image 2 (<code>user-link-3.jpg</code>): <a href="https://share.google/JE7qLrVJ5oNODjo4s" target="_blank" rel="noopener">Google Photos (Source 2)</a></li>
+          <li>Image 3 (<code>user-link-4-lady.jpg</code>): <a href="https://share.google/t0NnZo05I5Qr9CU5A" target="_blank" rel="noopener">Google Photos (Source 3)</a></li>
+          <li>Image 4 (<code>charbel-historic-photo.webp</code>): <a href="https://commons.wikimedia.org/wiki/File:Charbel.jpg" target="_blank" rel="noopener">Wikimedia Commons: Charbel.jpg</a> - photographer unknown; listed as public domain by Wikimedia Commons.</li>
+          <li>Images 5 to 9 (<code>charbel-rendition-01-faithful.webp</code>, <code>charbel-rendition-02-hermitage.webp</code>, <code>charbel-transformation-strip.webp</code>, <code>charbel-rendition-final-alt.webp</code>, <code>charbel-window-rendition.webp</code>): the AI transformation series made for this site. The final, alternate final and final comparison strip use the historic photograph in Image 4 as their reference. The earlier candidates are imagined portraits with no verified historic-source claim. These are illustrations, not photographs or a historical record, shown for devotional illustration only.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>About This Archive</h2>
+      <div class="card story">
+        <p>This gallery brings together the images used on the site: a black-and-white scene of a crowd gathered around a monk, the familiar sepia devotional portrait, an image shared with an apparition testimony, the historic photograph of Saint Charbel, and a series of AI-assisted devotional portraits and comparison images, each labeled as an illustration. The links below each image show the credited source. The testimony image is presented as part of that account, not independent proof of an apparition.</p>
+        <ul>
+          <li>Four photographs, each with its source linked in the Image Sources section above, plus a series of labeled AI transformations.</li>
+          <li>Devotional and testimony images, with source links.</li>
+          <li>Full-screen viewing with keyboard navigation: click an image, then use the arrow keys.</li>
+        </ul>
+      </div>
+    </section>
+      <section class="section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="card story">
+        <h3>What is in the gallery?</h3>
+        <p>Images used in Saint Charbel devotion: a crowd scene, a sepia devotional portrait, an image shared with an apparition testimony, the historic photograph of Saint Charbel, and a series of AI-assisted devotional portraits and comparison images, each labeled as an illustration and not a photograph. Each image has its source or origin noted on the page.</p>
+        <h3>Where do the images come from?</h3>
+        <p>Every image has its source listed in the Image Sources section on this page, with a link, so you can see where each photograph was found.</p>
+        <h3>How do I view an image full-screen?</h3>
+        <p>Click any image to open the full view, then move through the collection with the Previous and Next buttons or the arrow keys on your keyboard.</p>
+        <h3>Can I reuse these photographs?</h3>
+        <p>A source credit is not permission to reuse an image. Check the rights with the source before copying or sharing it.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="gallery-lightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" hidden>
+    <button id="lightbox-close" class="btn subtle" type="button">Close</button>
+    <button id="lightbox-prev" class="btn subtle" type="button">Previous</button>
+    <img id="lightbox-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" />
+    <button id="lightbox-next" class="btn subtle" type="button">Next</button>
+    <p id="lightbox-caption"></p>
+  </div>
+
+  {{> footer-credit-a "Gallery updated March 2, 2026."}}
+
+  <script defer src="app.js"></script>
+  <script defer src="gallery.js"></script>
+  <script defer src="global-audio-player.js"></script>
+  <script defer src="/locale-routes.js"></script>
+  <script defer src="translate.js?v=20260922-1"></script>
+  <script src="./nav.js?v=20260922-1" defer></script>
+  <script defer src="share.js?v=20261002-share-2" data-share-mode="gallery"></script>
+</body>
+</html>

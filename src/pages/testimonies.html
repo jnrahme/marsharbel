@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  {{> analytics}}
+  <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_AR" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="pt_PT" />
+    <meta property="og:locale:alternate" content="it_IT" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="pl_PL" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Letters - Saint Charbel | Historical and Personal Accounts</title>
+  <meta name="description" content="Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://marsharbel.com/testimonies" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Saint Charbel" />
+  <meta property="og:title" content="Letters - Saint Charbel | Historical and Personal Accounts" />
+  <meta property="og:description" content="Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review." />
+  <meta property="og:url" content="https://marsharbel.com/testimonies" />
+  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Letters - Saint Charbel | Historical and Personal Accounts" />
+  <meta name="twitter:description" content="Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review." />
+  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Letters - Saint Charbel | Historical and Personal Accounts",
+  "description": "Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review.",
+  "url": "https://marsharbel.com/testimonies",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Saint Charbel",
+    "alternateName": [
+      "Mar Charbel",
+      "Saint Charbel Makhlouf",
+      "Sharbel",
+      "St Charbel",
+      "Saint Sharbel",
+      "Charbel Makhlouf"
+    ],
+    "url": "https://marsharbel.com/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "marsharbel.com",
+      "url": "https://marsharbel.com/"
+    }
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://marsharbel.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Miracles",
+        "item": "https://marsharbel.com/miracles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Letters",
+        "item": "https://marsharbel.com/testimonies"
+      }
+    ]
+  }
+}
+  </script>
+  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=20260925-1" />
+  <!-- hreflang:begin -->
+  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/testimonies" />
+  <link rel="alternate" hreflang="en" href="https://marsharbel.com/testimonies" />
+  <!-- hreflang:end -->
+  <link rel="stylesheet" href="./letters-globe.css?v=1" />
+<style>
+.letters-flags{list-style:none;margin:1rem 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem .8rem}
+.letters-flags li{display:flex;align-items:center;gap:.5rem;font-size:.92rem}
+.letters-flags img,.letters-flags .flag-none{flex:none;width:32px;height:24px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.18);object-fit:cover}
+.letters-flags .flag-none{background:rgba(120,100,80,.15)}
+@media(min-width:560px){.letters-flags{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.letters-flags{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+  {{> skip-link}}
+  {{> header-open-1}}{{> primary-nav}}{{> header-close-1}}
+
+  <main id="main-content" class="site-shell" tabindex="-1">
+    <section class="hero">
+      <span class="kicker">Published</span>
+      <h1>Letters</h1>
+      <p>Read source-attributed summaries of historical cases and ministry-published personal accounts. We distinguish Church-recognized healings from personal reports. Letters sent by readers appear separately after human editorial review.</p>
+      <div class="cta-row">
+        <a class='btn primary' href='submit-testimony'>Write a Letter</a>
+      </div>
+    </section>
+
+    <section class="section letters-globe" data-letters-globe aria-labelledby="letters-globe-title">
+      <h2 id="letters-globe-title">Letters from around the world</h2>
+      <p class="globe-sub">Saint Charbel is prayed to on every continent. Turn the globe and tap a flag to see whose letters come from there.</p>
+      <div class="globe-stage"><canvas role="img" aria-label="Interactive globe with flags marking the countries letters come from"></canvas></div>
+      <p class="globe-hint">Drag to turn the globe. Tap a flag.</p>
+      <div class="globe-panel" data-globe-panel hidden aria-live="polite"></div>
+      <details class="globe-all"><summary>All 100 countries</summary><div class="globe-chips" data-globe-chips></div><p class="globe-note">Yugoslavia and Zaire are former countries, and the list does not say which Congo it means, so those three show without a flag.</p></details>
+      <p class="globe-source">The 99 countries named in the letters published by saintcharbel.net.au, plus Canada and the letters on this page.</p>
+    </section>
+
+        <section class="section">
+      <h2>What are the Letters?</h2>
+      <p>People have long written to Saint Charbel. They write to the monastery at Annaya, where he is buried, in many languages. Some send thanks for a prayer they believe was answered. Some ask him to pray for a sick child, a marriage, or a country at war. Some ask for a little blessed oil to carry to someone who cannot travel.</p>
+      <p>We call these Letters because that is what they are: one person speaking plainly to a saint. They are not reviews, and they are not medical records.</p>
+      <h2>What a Letter does and does not say</h2>
+      <p>A Letter is one person's account in their own words. It tells you what happened and what they believe about it. It cannot prove a healing. The Church studies cases separately, and only a few are formally recognized. Here we keep the two apart. Source-published accounts carry their source, and letters from readers appear only after a person has read them.</p>
+      <h2>Countries named in the published list</h2>
+      <p>The ministry at <a href="https://saintcharbel.net.au/letters/" target="_blank" rel="noopener">saintcharbel.net.au</a> publishes a list of the countries that letters to the monastery have come from, from Lebanon to Argentina, Japan, Nigeria and Norway. We show the 99 names on that list below, plus Canada, which we added because letters come from there too. It is their list, not our count, and we have not checked it ourselves.</p>
+      <ul class="letters-flags" aria-label="Countries named in the published list">
+<li><img src="./media/flags/lb.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Lebanon</span></li>
+<li><img src="./media/flags/dz.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Algeria</span></li>
+<li><img src="./media/flags/ar.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Argentina</span></li>
+<li><img src="./media/flags/au.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Australia</span></li>
+<li><img src="./media/flags/at.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Austria</span></li>
+<li><img src="./media/flags/by.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Belarus</span></li>
+<li><img src="./media/flags/be.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Belgium</span></li>
+<li><img src="./media/flags/bj.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Benin</span></li>
+<li><img src="./media/flags/bo.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Bolivia</span></li>
+<li><img src="./media/flags/br.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Brazil</span></li>
+<li><img src="./media/flags/bg.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Bulgaria</span></li>
+<li><img src="./media/flags/bf.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Burkina Faso</span></li>
+<li><img src="./media/flags/cm.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Cameroon</span></li>
+<li><img src="./media/flags/ca.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Canada</span></li>
+<li><img src="./media/flags/cl.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Chile</span></li>
+<li><img src="./media/flags/co.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Colombia</span></li>
+<li><img src="./media/flags/cr.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Costa Rica</span></li>
+<li><img src="./media/flags/hr.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Croatia</span></li>
+<li><img src="./media/flags/cu.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Cuba</span></li>
+<li><img src="./media/flags/cy.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Cyprus</span></li>
+<li><img src="./media/flags/cz.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Czech Republic</span></li>
+<li><img src="./media/flags/ci.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Côte d’Ivoire</span></li>
+<li><img src="./media/flags/dk.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Denmark</span></li>
+<li><img src="./media/flags/dj.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Djibouti</span></li>
+<li><img src="./media/flags/do.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Dominican Republic</span></li>
+<li><img src="./media/flags/ec.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Ecuador</span></li>
+<li><img src="./media/flags/eg.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Egypt</span></li>
+<li><img src="./media/flags/ee.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Estonia</span></li>
+<li><img src="./media/flags/et.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Ethiopia</span></li>
+<li><img src="./media/flags/fj.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Fiji</span></li>
+<li><img src="./media/flags/fr.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>France</span></li>
+<li><img src="./media/flags/ga.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Gabon</span></li>
+<li><img src="./media/flags/gm.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Gambia</span></li>
+<li><img src="./media/flags/de.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Germany</span></li>
+<li><img src="./media/flags/gh.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Ghana</span></li>
+<li><img src="./media/flags/gr.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Greece</span></li>
+<li><img src="./media/flags/gt.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Guatemala</span></li>
+<li><img src="./media/flags/gn.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Guinea</span></li>
+<li><img src="./media/flags/gy.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Guyana</span></li>
+<li><img src="./media/flags/ht.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Haiti</span></li>
+<li><img src="./media/flags/hu.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Hungary</span></li>
+<li><img src="./media/flags/in.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>India</span></li>
+<li><img src="./media/flags/ir.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Iran</span></li>
+<li><img src="./media/flags/iq.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Iraq</span></li>
+<li><img src="./media/flags/ie.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Ireland</span></li>
+<li><img src="./media/flags/it.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Italy</span></li>
+<li><img src="./media/flags/jp.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Japan</span></li>
+<li><img src="./media/flags/jo.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Jordan</span></li>
+<li><img src="./media/flags/kz.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Kazakhstan</span></li>
+<li><img src="./media/flags/ke.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Kenya</span></li>
+<li><img src="./media/flags/kw.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Kuwait</span></li>
+<li><img src="./media/flags/lv.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Latvia</span></li>
+<li><img src="./media/flags/lt.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Lithuania</span></li>
+<li><img src="./media/flags/lu.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Luxembourg</span></li>
+<li><img src="./media/flags/mg.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Madagascar</span></li>
+<li><img src="./media/flags/my.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Malaysia</span></li>
+<li><img src="./media/flags/ml.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Mali</span></li>
+<li><img src="./media/flags/mt.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Malta</span></li>
+<li><img src="./media/flags/mr.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Mauritania</span></li>
+<li><img src="./media/flags/mx.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Mexico</span></li>
+<li><img src="./media/flags/mc.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Monaco</span></li>
+<li><img src="./media/flags/ma.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Morocco</span></li>
+<li><img src="./media/flags/mz.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Mozambique</span></li>
+<li><img src="./media/flags/nz.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>New Zealand</span></li>
+<li><img src="./media/flags/ng.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Nigeria</span></li>
+<li><img src="./media/flags/no.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Norway</span></li>
+<li><img src="./media/flags/om.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Oman</span></li>
+<li><img src="./media/flags/pk.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Pakistan</span></li>
+<li><img src="./media/flags/pa.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Panama</span></li>
+<li><img src="./media/flags/py.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Paraguay</span></li>
+<li><img src="./media/flags/pe.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Peru</span></li>
+<li><img src="./media/flags/ph.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Philippines</span></li>
+<li><img src="./media/flags/pl.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Poland</span></li>
+<li><img src="./media/flags/pt.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Portugal</span></li>
+<li><img src="./media/flags/ro.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Romania</span></li>
+<li><img src="./media/flags/ru.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Russia</span></li>
+<li><img src="./media/flags/lc.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Saint Lucia</span></li>
+<li><img src="./media/flags/sa.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Saudi Arabia</span></li>
+<li><img src="./media/flags/sn.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Senegal</span></li>
+<li><img src="./media/flags/sc.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Seychelles</span></li>
+<li><img src="./media/flags/sl.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Sierra Leone</span></li>
+<li><img src="./media/flags/sg.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Singapore</span></li>
+<li><img src="./media/flags/sk.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Slovakia</span></li>
+<li><img src="./media/flags/za.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>South Africa</span></li>
+<li><img src="./media/flags/es.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Spain</span></li>
+<li><img src="./media/flags/lk.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Sri Lanka</span></li>
+<li><img src="./media/flags/sd.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Sudan</span></li>
+<li><img src="./media/flags/se.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Sweden</span></li>
+<li><img src="./media/flags/ae.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>United Arab Emirates</span></li>
+<li><img src="./media/flags/gb-eng.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>England</span></li>
+<li><img src="./media/flags/us.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>United States</span></li>
+<li><img src="./media/flags/uy.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Uruguay</span></li>
+<li><img src="./media/flags/va.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Vatican City</span></li>
+<li><img src="./media/flags/ve.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Venezuela</span></li>
+<li><img src="./media/flags/vn.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Vietnam</span></li>
+<li><img src="./media/flags/zm.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Zambia</span></li>
+<li><img src="./media/flags/zw.svg" alt="" width="32" height="24" loading="lazy" decoding="async" /><span>Zimbabwe</span></li>
+<li><span class="flag-none" aria-hidden="true"></span><span>Congo</span></li>
+<li><span class="flag-none" aria-hidden="true"></span><span>Yugoslavia (former country)</span></li>
+<li><span class="flag-none" aria-hidden="true"></span><span>Zaire (former country)</span></li>
+      </ul>
+      <p class="section-sub">Flags: flag-icons project, MIT license. Yugoslavia and Zaire are former countries, and the list does not say which Congo it means, so those three show without a flag.</p>
+    </section>
+
+<section class="section">
+      <div id="reader-testimony-list" class="testimony-grid" aria-live="polite"></div>
+      <p id="testimony-empty" class="section-sub">Reader letters appear here after editorial review. They are not medical verification or official Church recognition.</p>
+      <div id="testimony-list">
+      <!-- baseline-testimonies:start -->
+        <h2>Source-published accounts</h2>
+        <p class="section-sub">These are summaries of linked historical and ministry sources, not letters sent to this site. Church-recognized healings are distinguished from personal reports.</p>
+        <div class="testimony-grid">
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Nohad El Shami</h3><p class="source-meta">Annaya, Lebanon - January 22, 1993</p><p class="testimony-text">CNEWA reports that Nohad El Shami was partially paralyzed after a stroke in January 1993. Her son Saad prayed at Saint Charbel’s hermitage and brought back blessed oil and soil. According to her family, she dreamed of surgery by Saint Charbel and another monk on January 22; when she awoke, she had two neck scars. She then made a monthly pilgrimage to Annaya for the rest of her life.</p><a href="https://cnewa.org/magazine/lebanons-beloved-saint/" target="_blank" rel="noopener noreferrer">Reported account - CNEWA, &quot;Lebanon’s Beloved Saint&quot; (interviews with the Shami family)</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Antonio Ishaac</h3><p class="source-meta">Lebanon - recorded at the monastery, October 2025</p><p class="testimony-text">In an interview with CNEWA, Antonio Ishaac said he had stopped treatment for Crohn’s disease in December 2024. He visited the monastery in May 2025 and prayed; he reported that his pain vanished after an intense night. He said later tests showed the disease had disappeared. CNEWA reports that the monastery recorded his account in October 2025.</p><a href="https://cnewa.org/magazine/lebanons-beloved-saint/" target="_blank" rel="noopener noreferrer">Reported account - CNEWA, &quot;Lebanon’s Beloved Saint&quot;</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Mariam Assaf Awad</h3><p class="source-meta">Lebanon - 1967 - the canonization miracle</p><p class="testimony-text">Charbel App’s account says Mariam Assaf Awad underwent several cancer operations between 1963 and 1965. She prayed for healing through Saint Charbel’s intercession in 1967 and reported that her symptoms were gone the next morning. The Church accepted her healing as the miracle for his canonization in 1977.</p><a href="https://charbel.app/saints/saint-charbel-canonization" target="_blank" rel="noopener noreferrer">Historical summary - Charbel App, Saint Charbel canonization account</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Sister Maria Abel Kamari</h3><p class="source-meta">Sisters of the Sacred Hearts - July 1950 - a beatification miracle</p><p class="testimony-text">Charbel App’s account says Sister Maria Abel Kamari, bedridden with severe illness and paralysis, recovered after visiting Saint Charbel’s tomb at Annaya in July 1950. The Church approved her healing among the miracles for his beatification in 1965.</p><a href="https://charbel.app/saints/saint-charbel-canonization" target="_blank" rel="noopener noreferrer">Historical summary - Charbel App, Saint Charbel canonization account</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Iskandar Naim Obeid</h3><p class="source-meta">Baabdat, Lebanon - 1950 - a beatification miracle</p><p class="testimony-text">Charbel App’s account says Iskandar Naim Obeid, a blacksmith from Baabdat, lost sight in one eye after a metal fragment struck it. On pilgrimage to Annaya in 1950, he reported a dream of a monk touching his eye and said his sight returned. The Church approved his healing among the miracles for Saint Charbel’s beatification.</p><a href="https://charbel.app/saints/saint-charbel-canonization" target="_blank" rel="noopener noreferrer">Historical summary - Charbel App, Saint Charbel canonization account</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Brian K. Kravec</h3><p class="source-meta">United States - ministry-published healing testimony</p><p class="testimony-text">Brian reports that severe femur pain disappeared after he prayed for Saint Sharbel’s intercession and used relic oil. He says follow-up X-rays showed a healthy femur. This is a personal ministry account, not a Vatican-recognized miracle.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-of-brian-k-kravec.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony of Brian K. Kravec</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Renny Palmisano</h3><p class="source-meta">United States - 2026 ministry-published account</p><p class="testimony-text">Renny reports that a scan first appeared to show a cancer recurrence. After praying a novena and asking for Saint Sharbel’s intercession, a later review by her oncology team identified inflammation and scar tissue instead. She describes the outcome as an answered prayer.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-of-renny-palmisano.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony of Renny Palmisano</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Victor G. Akroush</h3><p class="source-meta">United States - ministry-published healing testimony</p><p class="testimony-text">Victor’s family describes severe stomach pain and a difficult medical diagnosis. They asked Saint Sharbel to intercede before treatment and report that Victor later recovered. The account is presented by the Family of Saint Sharbel USA as a personal testimony.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-of-victor-g-akroush.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony of Victor G. Akroush</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Vanessa El Fghali</h3><p class="source-meta">Bdadoun, Lebanon - ministry-published account</p><p class="testimony-text">Vanessa’s mother reports praying to Saint Sharbel for her daughter’s spinal condition and asking for his intercession. The ministry account says Vanessa’s recovery was later confirmed by medical follow-up.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-for-vanessa-el-fghali.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony for Vanessa El Fghali</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Nader Ahmad Al-Sawwaf Zantout</h3><p class="source-meta">Lebanon - accident recovery testimony</p><p class="testimony-text">After a serious accident left Nader in a coma with fractures and paralysis, his family and monks at Annaya prayed for Saint Sharbel’s intercession. The published account says he regained consciousness and recovered.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-of-nader-ahmad-al-sawwaf-zantout.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony of Nader Ahmad Al-Sawwaf Zantout</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Tani Youssef Wehbeh</h3><p class="source-meta">Lebanon - ministry-published healing testimony</p><p class="testimony-text">Tani’s testimony describes a serious leg condition during surgery and a reported intervention attributed to Saint Sharbel. The account says his leg was saved from major amputation.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-of-tani-youssef-wehbeh.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony of Tani Youssef Wehbeh</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Sharbel Said Nassif</h3><p class="source-meta">Australia - recorded ministry testimony</p><p class="testimony-text">Sharbel’s family reports praying with blessed water and soil from Saint Charbel’s tomb after he was diagnosed with a serious heart condition. The published testimony says later medical results showed recovery.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-of-sharbel-said-nassif.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony of Sharbel Said Nassif</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Georgiane Walker</h3><p class="source-meta">United States - post-surgery recovery testimony</p><p class="testimony-text">Georgiane reports that a post-surgery wound that had not healed closed after she prayed to Saint Sharbel and used his oil. The testimony was later featured by EWTN News; it remains a personal account rather than a Church-certified miracle.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-of-georgiane-walker.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony of Georgiane Walker</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Rita Antoine Kirakos</h3><p class="source-meta">Lebanon - hearing recovery recorded July 25, 2024</p><p class="testimony-text">The ministry account says Rita regained hearing in her right ear after prayer for Saint Sharbel’s intercession. The testimony was recorded by the ministry in July 2024.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-for-rita-antoine-kirakos.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony for Rita Antoine Kirakos</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Hoda Antoine Chalhoub</h3><p class="source-meta">Lebanon - healing testimony recorded December 5, 2023</p><p class="testimony-text">Hoda’s testimony says she was diagnosed with lung cancer and later received clear test results after prayers to Saint Sharbel. The published account identifies this as a ministry-recorded testimony, not a Vatican ruling.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-of-hoda-antoine-chalhoub.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony of Hoda Antoine Chalhoub</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Thérèse Youssef Khoury Fahd</h3><p class="source-meta">Lebanon - ministry-published healing testimony</p><p class="testimony-text">Thérèse’s account describes a brain tumor and a planned operation. The published testimony says the tumor disappeared after prayers to Saint Sharbel and that doctors confirmed the change.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-of-therese-fahd.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony of Thérèse Youssef Khoury Fahd</a></article>
+        <article class="card testimony-card"><p class="kicker">Source-published account</p><h3>Elias Youssef Rahmeh</h3><p class="source-meta">Sin El Fil, Lebanon - healing testimony recorded 2024</p><p class="testimony-text">Elias’s ministry-published testimony says he was diagnosed with rectal cancer and later received tests showing recovery after prayer to Saint Charbel. The source presents this as a recorded personal testimony.</p><a href="https://www.familyofsaintsharbel.org/healing-testimony-of-elias-youssef-rahmeh.html" target="_blank" rel="noopener noreferrer">Family of Saint Sharbel USA - Healing Testimony of Elias Youssef Rahmeh</a></article>
+        </div>
+      <!-- baseline-testimonies:end -->
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Stories on Video</h2>
+      <p class="section-sub">People telling their own stories, in their own words - hosted on YouTube by the channels that made them. These are personal testimonies, not medical verification or official Church recognition. Embeds use youtube-nocookie, so nothing is tracked until you press play.</p>
+      <article class="card update">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/8j8dLS5xHeU" title="Deacon Michael Chirichella shares his 2026 cancer testimony (2:47)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        <p><strong>Featured:</strong> Deacon Michael Chirichella of the United States shares his 2026 cancer testimony - two and a half minutes, in his own words (2:47).</p>
+      </article>
+      <div class="grid-2">
+        <article class="card update">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/OqJJY_ksEzc" title="Yassine Jaber tells his healing story (31:15)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <p>Yassine Jaber, a Sunni Muslim, tells his healing story after prayer to Saint Charbel - a witness across religious lines (31:15).</p>
+        </article>
+        <article class="card update">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/yBhj70vlANQ" title="Dafne Gutierrez speaks at her Phoenix parish (7:18)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <p>Dafne Gutierrez speaking at St Joseph Maronite Church in Phoenix, where her 2016 healing took place (7:18) - <a href="./miracles/dafne-gutierrez">read the account</a>.</p>
+        </article>
+      </div>
+      <h3>Watch their stories</h3>
+      <div class="grid-2">
+        <article class="card update">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/3s8CAFBi7eo" title="Stephanie Serrano shares her cancer testimony (10:08)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <p>Stephanie Serrano of the United States shares her cancer testimony (10:08).</p>
+        </article>
+        <article class="card update">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/c7JtKB0h8g8" title="Christiane Eid on faith, the diaspora, and Saint Charbel (33:08)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <p>Christiane Eid on faith, the diaspora, and Saint Charbel - a podcast conversation (33:08).</p>
+        </article>
+        <article class="card update">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/SPcpSHCn78I" title="Raymond Nader recounts the 1994 night at the hermitage (7:01)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <p>Raymond Nader recounts the night at the hermitage in 1994 (7:01) - <a href="./miracles/raymond-nader">read his story</a>.</p>
+        </article>
+        <article class="card update">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/X8kNn6qVMEc" title="Nohad El Shami full account, Arabic (OTV, 39:54)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <p>Nohad El Shami's full account, in Arabic (OTV, 39:54) - <a href="./miracles/nohad-el-shami">read her story in English</a>.</p>
+        </article>
+        <article class="card update">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/LPlbb3pCXUo" title="Nohad El Shami and her son Saad, Arabic (MTV, 31:38)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <p>Nohad El Shami and her son Saad, interviewed together, in Arabic (MTV, 31:38).</p>
+        </article>
+        <article class="card update">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/0e3uvqJYwP4" title="Dafne Gutierrez in Spanish (Telemundo, 4:20)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <p>Dafne Gutierrez's story, in Spanish (Telemundo, 4:20).</p>
+        </article>
+      </div>
+      <!-- intl-lane note: on /ar lead with the Arabic items (OTV, MTV, Raymond AR version m9jEoRCK2jw); on /es feature the Telemundo item. -->
+    </section>
+  </main>
+
+  <footer class="footer"><div class="site-shell">Moderated testimony archive. Author: Please pray for the person who made this website. <a class="testimony-admin-link" href="./testimony-review">Admin</a></div></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4" integrity="sha384-AkNSQdptcXlJ0/NBZc4qGk86cDVXcCevwoWgEKIpHOEfbvlXGLlIkimQtONt8KNf" crossorigin="anonymous"></script>
+  <script src="testimony-config.js?v=20260923-1"></script>
+  <script src="testimony-client.js?v=20260923-1"></script>
+  <script src="testimonies-copy.js"></script>
+  <script src="testimonies.js?v=20260925-1"></script>
+  <script src="letters-globe.js?v=1" defer></script>
+  <script src="global-audio-player.js"></script>
+  <script src="/locale-routes.js"></script>
+  <script src="translate.js?v=20260922-1"></script>
+  <script src="./nav.js?v=20260922-1" defer></script>
+</body>
+</html>
