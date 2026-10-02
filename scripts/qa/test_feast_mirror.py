@@ -3,10 +3,11 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.feast_mirror import render_feast
+from i18n.tour_nav import tour_nav
 class FeastMirrorTests(unittest.TestCase):
  def test_shape_and_provenance(self):
   en=BeautifulSoup((ROOT/'saint-charbel-feast-day.html').read_text(),'html.parser');text=render_feast(ROOT)[ROOT/'ar/feast-day.html'];ar=BeautifulSoup(text,'html.parser')
-  self.assertEqual(text,(ROOT/'ar/feast-day.html').read_text())
+  self.assertEqual(tour_nav(text,ROOT,'ar'),(ROOT/'ar/feast-day.html').read_text())
   self.assertEqual([n.name for n in en.select('main *')],[n.name for n in ar.select('main *')])
   self.assertEqual(len(ar.select('main > section')),14)
   self.assertEqual(ar.html['dir'],'rtl');self.assertEqual(ar.html['lang'],'ar')
@@ -21,7 +22,7 @@ class FeastMirrorTests(unittest.TestCase):
   self.assertIn('اختيار الموعد لرعيتك',ar.get_text());self.assertIn('العيد حول العالم',ar.get_text());self.assertIn('الطريق إلى العيد',ar.get_text())
  def test_drift_rejected(self):
   with tempfile.TemporaryDirectory() as tmp:
-   root=Path(tmp);(root/'locales/ar').mkdir(parents=True);shutil.copy(ROOT/'locales/ar/feast-mirror.json',root/'locales/ar/feast-mirror.json');shutil.copy(ROOT/'locales/registry.json',root/'locales/registry.json')
+   root=Path(tmp);(root/'locales/ar').mkdir(parents=True);shutil.copy(ROOT/'locales/ar/feast-mirror.json',root/'locales/ar/feast-mirror.json');shutil.copy(ROOT/'locales/registry.json',root/'locales/registry.json');shutil.copy(ROOT/'locales/ar/common.json',root/'locales/ar/common.json')
    (root/'saint-charbel-feast-day.html').write_text((ROOT/'saint-charbel-feast-day.html').read_text().replace('Two Dates, One Feast','Changed heading'))
    with self.assertRaisesRegex(ValueError,'master changed'):render_feast(root)
 if __name__=='__main__':unittest.main()
