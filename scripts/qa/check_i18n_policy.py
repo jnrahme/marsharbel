@@ -134,6 +134,15 @@ def check(root=ROOT):
                 errors.append(f'testimonies-copy.js: {key} differs from English catalog')
     for file, values in snapshot(root).items():
         additions = Counter(values) - Counter(baseline.get(file, {}))
+        if file.endswith('.html'):
+            from bs4 import BeautifulSoup
+            page = BeautifulSoup((root/file).read_text(),'html.parser')
+            code = page.html.get('lang','en') if page.html else 'en'
+            tour_copy = root/f'locales/{code}/nav-tour.json'
+            if tour_copy.exists():
+                label = read_json(tour_copy)['header.annayaTour']
+                matching = [a for a in page.select('header a[href]') if a.get('href','').removeprefix('../').removeprefix('./').removeprefix('/') == 'annaya-tour' and a.get_text(strip=True) == label]
+                if len(matching) == 1: additions -= Counter({label:1})
         if file.startswith('miracles/eucharistic/'):
             # Built from the keyed English collection catalog; separate build check covers freshness.
             # The dedicated builder is checked byte-for-byte in QA.

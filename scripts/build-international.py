@@ -17,6 +17,7 @@ from i18n.litany_mirror import render_litany
 from i18n.eucharistic_mirror import render_eucharistic
 from i18n.chaplet_mirror import render_chaplet
 from i18n.exact_master import render_exact_set
+from i18n.tour_nav import tour_nav
 
 
 def alternate_links(registry, topic=None):
@@ -240,6 +241,11 @@ def outputs(root=ROOT):
     if count != 1:
         raise ValueError('Expected exactly one managed i18n-routes block in .htaccess')
     result[htaccess] = updated
+    for path,text in list(result.items()):
+        if path.suffix == '.html' and '<header' in text:
+            import re as _re
+            match = _re.search(r'<html[^>]*lang=["\']([^"\']+)',text)
+            if match: result[path] = tour_nav(text,root,match[1])
     return result
 
 
