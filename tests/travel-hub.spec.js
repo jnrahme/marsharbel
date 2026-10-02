@@ -11,7 +11,7 @@ for(const language of ['en','ar','fr','es','pt','it','de','pl']) {
     await expect(page.locator('.travel-destination-list .travel-place')).toHaveCount(3);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
     expect(errors).toEqual([]);
-    const axe=await new AxeBuilder({page}).include('main').analyze();
+    const axe=await new AxeBuilder({page}).analyze();
     expect(axe.violations).toEqual([]);
     await page.locator('.travel-hero .btn.primary').click();
     await expect(page).toHaveURL(/\/annaya-tour(?:\?lang=[a-z]+)?$/);
@@ -32,3 +32,13 @@ test('Photo destination opens the Qadisha guide',async({page})=>{
   await expect(page).toHaveURL(/#visiting$/);
   await expect(page.locator('#visiting')).toBeInViewport();
 });
+
+for (const route of ['/qadisha-valley','/ar/qadisha-valley']) {
+  test(`${route} has whole-page accessible contrast including footer`, async({page})=>{
+    await page.goto(route);
+    await page.evaluate(async()=>{for(const image of document.images){image.loading='eager';await image.decode();}});
+    const axe=await new AxeBuilder({page}).analyze();
+    expect(axe.violations).toEqual([]);
+    await expect(page.locator('#sc-language-select')).toHaveCount(1);
+  });
+}

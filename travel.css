@@ -56,3 +56,8 @@
 .travel-page main .travel-chapters a{scroll-margin-top:9rem}
 .travel-page main [id]{scroll-margin-top:9rem}
 .travel-page .travel-section .hero-figure img[src$="mar-lichaa-monastery.webp"]{max-height:none;height:auto;object-fit:contain}
+/* The shared footer sits on the Travel paper surface, not the dark app body. */
+.travel-page .footer,.travel-page .footer p,.travel-page .footer .site-shell{color:var(--travel-muted)}
+.travel-page .footer a,.travel-page .footer .install-app-link,.travel-page .footer .sc-install-app-link{color:var(--travel-accent);text-decoration:underline;text-underline-offset:.22em}
+/* Install link receives an inline color from the shared installer. */
+.travel-page .footer a[href="#install-app"]{color:var(--travel-accent)!important}
