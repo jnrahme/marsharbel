@@ -6,6 +6,8 @@ const base=process.env.BASE_URL||'http://127.0.0.1:4321';
 const browser=await chromium.launch();
 async function pageFor(mode,width=375){
  const page=await browser.newPage({viewport:{width,height:900},serviceWorkers:'block'});
+ // The jsdelivr script is mocked below, so its SRI digest cannot match; strip integrity from documents only in this mocked run.
+ await page.route(u=>true,async r=>{if(r.request().resourceType()!=='document')return r.fallback();const resp=await r.fetch();const body=(await resp.text()).replace(/\sintegrity="sha384-[^"]+"/g,'');await r.fulfill({response:resp,body});});
  await page.route('**/testimony-config.js*',r=>r.fulfill({contentType:'application/javascript',body:`window.TESTIMONY_CONFIG={supabaseUrl:'https://test.supabase.co',supabaseAnonKey:'public-key',turnstileSiteKey:'test',accountsEnabled:true,submissionsEnabled:true,moderationEnabled:true,moderatorMfaRequired:${!mode.startsWith('admin-password')} };`}));
  await page.route('**/cdn.jsdelivr.net/**',r=>r.fulfill({contentType:'application/javascript',body:`
  window.calls=[];window.level='aal1';window.role=${JSON.stringify(mode.startsWith('admin')?'moderator':'member')};window.signedIn=${!mode.endsWith('-login')};if(sessionStorage.getItem('mock-signed-out'))window.signedIn=false;

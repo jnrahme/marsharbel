@@ -42,6 +42,11 @@ class SecurityHeaderTests(unittest.TestCase):
         self.assertIn('Header always set Cache-Control "no-store, max-age=0"', self.config)
         self.assertIn('Header always set X-Robots-Tag "noindex, nofollow, noarchive"', self.config)
 
+    def test_supabase_cdn_integrity(self):
+        for filename in ('account.html', 'submit-testimony.html', 'testimonies.html', 'testimony-review.html'):
+            text = (ROOT / filename).read_text()
+            self.assertRegex(text, r'src="https://cdn\.jsdelivr\.net/npm/@supabase/supabase-js@2\.57\.4" integrity="sha384-AkNSQdptcXlJ0/NBZc4qGk86cDVXcCevwoWgEKIpHOEfbvlXGLlIkimQtONt8KNf" crossorigin="anonymous"')
+
     def test_no_inline_objects_or_external_base_in_pages(self):
         # These must stay absent while the lightweight policy is enforced.
         for path in ROOT.rglob('*.html'):
