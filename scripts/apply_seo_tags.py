@@ -29,6 +29,7 @@ NOINDEX = {
 
 DESCRIPTIONS = {
     "travel.html": json.loads((ROOT / "locales/en/travel.json").read_text())["intro"],
+    "saint-charbel-encyclopedia.html": "A guided index to everything about Saint Charbel: the story of his life, the Church's verdict, the healings and devotions, and the places in Lebanon, each with its own sourced page.",
     "magdalene-story.html": "Mary Magdalene storybook for ages 6-12: nine illustrated narrative pages from Galilee to the Easter garden, with flowing narration and a family reflection.",
     "jude-story.html": "Saint Jude storybook for ages 6-12: nine illustrated pages about a question at the Last Supper, with flowing narration and a family reflection.",
     "massabki-story.html": "Read the Massabki brothers’ story for ages 6-12 with a trusted adult: narrated pages about service, faith, remembrance, and choosing safety and peace.",
@@ -59,6 +60,7 @@ CANONICAL_OVERRIDE = {
 
 TITLE_OVERRIDE = {
     "travel.html": json.loads((ROOT / "locales/en/travel.json").read_text())["title"],
+    "saint-charbel-encyclopedia.html": 'Saint Charbel Encyclopedia: Life, Miracles, Places and Devotion',
     "index.html": "Saint Charbel | History, Miracles, Testimonies & Rosary",
     "history.html": "Saint Charbel History | Biography, Timeline & Canonization",
     "story.html": "Saint Charbel Story for Kids | Catholic Storybook",
@@ -81,6 +83,7 @@ TITLE_OVERRIDE = {
 # Home > section > page. Each entry is (label, file) for the section and page.
 SECTIONS = {
     "story": ("Story", "story.html"),
+    "legacy": ("Legacy", "saint-charbel-encyclopedia.html"),
     "miracles": ("Miracles", "miracles/index.html"),
     "prayer": ("Prayer", "prayer-library.html"),
     "rosary": ("Rosary Guide", "rosary-visual-guide.html"),
@@ -88,7 +91,8 @@ SECTIONS = {
 
 BREADCRUMBS = {
     "story.html": (None, "Story for Children"),
-    "history.html": ("story", "Full History"),
+    "history.html": ("legacy", "Full History"),
+    "saint-charbel-encyclopedia.html": (None, "Saint Charbel Encyclopedia"),
     "miracles/index.html": (None, "Miracles"),
     "miracles/eucharistic/index.html": ("miracles", "Eucharistic Miracles"),
     "miracles/eucharistic/lanciano.html": ("miracles", "Eucharistic Miracle of Lanciano"),
@@ -102,7 +106,7 @@ BREADCRUMBS = {
     "miracles/eucharistic/ivorra.html": ("miracles", "Eucharistic Tradition of Ivorra"),
     "miracles/eucharistic/faverney.html": ("miracles", "Eucharistic Event of Faverney"),
 
-    "news.html": ("miracles", "Latest News"),
+    "news.html": (None, "News"),
     "testimonies.html": ("miracles", "Letters"),
     "voice-testimony.html": ("miracles", "Voice Testimony"),
     "prayer-library.html": (None, "Prayer Library"),
@@ -117,7 +121,7 @@ BREADCRUMBS = {
     "become-like-charbel.html": ("prayer", "Become Like Him"),
     "rosary-intro.html": ("rosary", "Rosary for Beginners"),
     "rosary-prayer-coach.html": ("rosary", "Rosary Prayer Coach"),
-    "gallery.html": (None, "Gallery"),
+    "gallery.html": ("legacy", "Gallery"),
     "visit-annaya.html": (None, "Visiting Annaya"),
     "22nd-of-the-month.html": (None, "The 22nd of the Month"),
     "privacy-policy.html": (None, "Privacy Policy"),

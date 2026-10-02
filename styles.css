@@ -2957,3 +2957,9 @@ a.card:active{transform:scale(.99);transition-duration:140ms}
 @media (prefers-reduced-motion:reduce){.footer-locales a{transition:none}}
 /* Large system text sizes: keep the whole brand name visible beside the install and language controls. */
 @media (max-width:430px){.brand-mark{display:none}.brand{font-size:.92rem;letter-spacing:0;white-space:normal;line-height:1.1}.sc-install-app-btn{padding:.3rem .55rem;font-size:.7rem}.lang-switcher select{max-width:96px}}
+.scripture-quote{margin:1.4rem 0 1.4rem;padding:.2rem 0 .2rem 1.1rem;border-left:3px solid var(--theme-accent);max-width:46ch}
+.scripture-quote blockquote{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:1.2rem;line-height:1.5;color:var(--theme-ink)}
+.scripture-quote cite{display:block;margin-top:.45rem;font-style:normal;font-size:.9rem;letter-spacing:.04em;color:var(--theme-accent)}
+.scripture-quote p.scripture-note{margin:.8rem 0 0;font-size:1rem;line-height:1.6;color:var(--theme-ink-soft)}
+.enc-trail{margin:1rem 0 0;font-size:.95rem;color:var(--theme-ink-soft)}
+.enc-trail a{color:var(--theme-accent);text-decoration:underline}
