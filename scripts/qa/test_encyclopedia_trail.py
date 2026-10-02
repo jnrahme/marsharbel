@@ -17,3 +17,15 @@ class TrailRendering(unittest.TestCase):
     self.assertEqual(s.p.get_text(),expected)
  def test_missing_reviewed_qualifier_fails(self):
   with self.assertRaisesRegex(ValueError,'key mismatch'):render_trail({})
+
+class NavDisclosure(unittest.TestCase):
+ def test_header_only_and_nominative(self):
+  from i18n.encyclopedia_nav import disclose_nav
+  from i18n.catalog import ROOT
+  original='<header><a class="nav-parent" href="/saint-charbel-encyclopedia">Dziedzictwo duchowe<span class="nav-chev" aria-hidden="true"></span></a><a href="/saint-charbel-encyclopedia">Encyklopedia świętego Szarbela</a></header><main><p>Unchanged &amp; exact.</p></main>'
+  output=disclose_nav(original,ROOT,'pl')
+  self.assertEqual(output.split('<main>')[1],original.split('<main>')[1])
+  soup=BeautifulSoup(output,'html.parser');a=soup.header.select('a')[1]
+  self.assertEqual(a['aria-label'],'Encyklopedia świętego Szarbela (po angielsku)')
+  self.assertFalse(a.has_attr('lang'));self.assertEqual(a['hreflang'],'en')
+  self.assertEqual(a.span.get_text(),'(po angielsku)')
