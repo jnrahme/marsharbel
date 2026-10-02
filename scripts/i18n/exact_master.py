@@ -67,7 +67,7 @@ def render_exact(root, registry, lang, name, route, catalog=None):
     for topic, cfg in registry['topics'].items():
         if lang in topic_locales(registry, topic):
             twins[cfg['relatedEnglish'].rstrip('/')] = page_url(registry, lang, topic)
-    for cfg in registry.get('authoredMirrors', {}).values():
+    for cfg in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values():
         if lang in cfg['routes']: twins[cfg['english'].rstrip('/')] = cfg['routes'][lang]
     twins[urlsplit(english_url).path.rstrip('/')] = route
     for node in soup.select('a[href],link[href],script[src],img[src]'):
