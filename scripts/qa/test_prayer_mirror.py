@@ -198,7 +198,10 @@ class PrayerMirrorTests(unittest.TestCase):
         english = read_json(ROOT / 'locales/en/mirrors/prayers.json')
         arabic = read_json(ROOT / 'locales/ar/mirrors/prayers.json')
         self.assertEqual(english.keys(), arabic.keys())
-        self.assertEqual(len(english), 134)
+        # The localized skip-link slot was added by accessibility PR #427.
+        self.assertEqual(len(english), 135)
+        self.assertEqual(english['header.skipLink'], 'Skip to content')
+        self.assertIn('{{header.skipLink}}', template)
         self.assertIn('href="/ar/prayers" aria-current="page"', render_pair(ROOT)[ROOT/'ar/prayers.html'])
         self.assertEqual(Shape(render_pair(ROOT)[ROOT/'ar/prayers.html']).links.count('/ar/novena'), 1)
         self.assertIn('data-authored-mirror="prayers"', template)
