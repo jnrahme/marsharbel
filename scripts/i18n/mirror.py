@@ -1,3 +1,4 @@
+from i18n.encyclopedia_nav import finish_nav
 """Render reviewed prayer locale pages from one DOM skeleton and strict text slots."""
 from i18n.metadata import og_locales, published_locales
 
@@ -112,7 +113,7 @@ def render_mirrors(root=ROOT, registry=None):
             if nav_match:
                 block = nav_match.group(0)
                 text = text.replace(block, re.sub(r'(<a\b[^>]*\bhref=["\'])\./([^"\']*)(["\'])', r'\1/\2\3', block))
-        result[path] = text
+        result[path] = finish_nav(text,root,code)
     return result
 
 

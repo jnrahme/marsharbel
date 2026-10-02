@@ -19,7 +19,13 @@ def disclose_nav(text, root, lang):
         from html import unescape
         label=unescape(visible)+' '+catalog['englishQualifier']
         attrs+=' hreflang="en" aria-label="'+escape(label,quote=True)+'"'
-        body+=' <span class="enc-language">'+escape(catalog['englishQualifier'])+'</span>'
-        return '<a'+attrs+'>'+body+'</a>'
+        anchor='<a'+attrs+'>'+body+'</a>'
+        if 'nav-parent' in attrs:return anchor
+        return '<div class="enc-nav-item">'+anchor+' <span class="enc-language">'+escape(catalog['englishQualifier'])+'</span></div>'
     result=re.sub(pattern,replace,header[0])
     return text[:header.start()]+result+text[header.end():]
+
+
+def finish_nav(text, root, lang):
+    from i18n.tour_nav import tour_nav
+    return disclose_nav(tour_nav(text, root, lang), root, lang)

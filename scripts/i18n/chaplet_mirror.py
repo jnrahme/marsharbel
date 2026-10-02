@@ -1,3 +1,4 @@
+from i18n.encyclopedia_nav import finish_nav
 """Generate the Arabic Chaplet from the current English master and keyed copy."""
 from bs4 import BeautifulSoup
 from pathlib import Path
@@ -131,4 +132,4 @@ def render_chaplet(root=ROOT):
     article['breadcrumb']['itemListElement'][1]['name']='الصلاة'
     schemas[0].string=json.dumps(article,ensure_ascii=False,indent=2).replace('<','\\u003c')
     footer=one('footer .site-shell');footer.string=catalog['hero.title']+'. الكاتب: صلّ من أجل من أنشأ هذا الموقع.'
-    return {root/'ar/saint-charbel-chaplet.html':str(soup)}
+    return {root/'ar/saint-charbel-chaplet.html':finish_nav(str(soup),root,'ar')}

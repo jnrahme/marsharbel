@@ -2974,3 +2974,8 @@ a.card:active{transform:scale(.99);transition-duration:140ms}
 .home-travel-credit{margin:.5rem .4rem 0;font-size:.8rem;color:var(--theme-ink-soft)}
 .home-travel-credit a{color:var(--theme-accent)}
 @media (max-width:760px){.home-travel-card{grid-template-columns:1fr}}
+
+/* Keep the English destination qualifier beside its own translated menu item. */
+.enc-nav-item { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25em; padding: .45rem .7rem; }
+.nav-sub .enc-nav-item > a { display: inline; padding: 0; }
+.enc-nav-item > .enc-language { font-size: .85em; opacity: .8; }

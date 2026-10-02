@@ -28,4 +28,4 @@ class NavDisclosure(unittest.TestCase):
   soup=BeautifulSoup(output,'html.parser');a=soup.header.select('a')[1]
   self.assertEqual(a['aria-label'],'Encyklopedia świętego Szarbela (po angielsku)')
   self.assertFalse(a.has_attr('lang'));self.assertEqual(a['hreflang'],'en')
-  self.assertEqual(a.span.get_text(),'(po angielsku)')
+  self.assertEqual(a.find_next_sibling('span').get_text(),'(po angielsku)')

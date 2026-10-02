@@ -5,7 +5,8 @@ from i18n.catalog import leaves
 STANDARD={'before','encyclopedia','middle','history','after','historyAfter','englishQualifier'}
 
 def render_trail(copy, history_url='/history', history_variant=False):
-    if set(copy)!=STANDARD:raise ValueError('Encyclopedia trail key mismatch')
+    expected=STANDARD if history_variant else STANDARD-{'historyAfter'}
+    if set(copy) not in (expected, STANDARD):raise ValueError('Encyclopedia trail key mismatch')
     leaves(copy)
     if not history_url.startswith('/') or any(x in history_url for x in '<>"\'?#'):
         raise ValueError('Unsafe trail history route')

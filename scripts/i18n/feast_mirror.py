@@ -1,3 +1,4 @@
+from i18n.encyclopedia_nav import finish_nav
 """Locale-agnostic feast mirror: preserve the English DOM and fail on untranslated master edits."""
 from i18n.metadata import og_locales
 from i18n.catalog import page_url, topic_locales
@@ -75,7 +76,7 @@ def render_feast_locale(root=ROOT, lang='ar', registry=None):
         if key in chrome:node.replace_with(old.replace(key,chrome[key]))
     soup.select_one('header nav')['aria-label']=copy['primaryLabel'];soup.select_one('header a.brand')['href']=registry['locales'][lang]['home']
     soup.select_one('footer .site-shell').string=copy['footer']
-    return {root/(config['routes'][lang].lstrip('/')+'.html'):str(soup)}
+    return {root/(config['routes'][lang].lstrip('/')+'.html'):finish_nav(str(soup),root,lang)}
 
 
 def render_feast(root=ROOT):
