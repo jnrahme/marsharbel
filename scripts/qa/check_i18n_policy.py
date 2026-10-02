@@ -68,6 +68,7 @@ def snapshot(root=ROOT):
                      for code in published_locales(registry, 'eucharistic') if code != registry['defaultLocale']
                      for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney'))
     generated.add("ar/litany-of-saint-charbel.html")
+    generated.update(route.lstrip("/")+".html" for route in registry.get("authoredMirrors", {}).get("travel", {}).get("routes", {}).values())
     result = {}
     for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'), *root.glob('miracles/*.html'), *root.glob('miracles/eucharistic/*.html'),
                         *(p for code in registry['locales'] if code != registry['defaultLocale']

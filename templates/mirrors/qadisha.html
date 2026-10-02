@@ -164,12 +164,13 @@
   <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles.css?v=20260922-1" />
+  <link rel="stylesheet" href="/travel.css?v=20261002-1" />
   <style>html[lang="ar"][data-authored-mirror="qadisha"] body{line-height:1.8}html[lang="ar"][data-authored-mirror="qadisha"] h1,html[lang="ar"][data-authored-mirror="qadisha"] h2,html[lang="ar"][data-authored-mirror="qadisha"] h3{line-height:1.35}html[lang="ar"][data-authored-mirror="qadisha"] .hero h1{max-width:16ch}</style>
   <!-- hreflang:begin -->
 {{locale.alternates}}
   <!-- hreflang:end -->
 </head>
-<body>
+<body class="travel-page travel-destination">
   <header class="topbar">
     <div class="site-shell nav">
       <a class='brand' href='/'><span class="brand-mark">{{brand.mark}}</span><span>{{header.siteBrand}}</span></a>
@@ -231,21 +232,15 @@
     </div>
   </header>
 
-  <main class="site-shell">
-    <section class="hero">
-      <span class="kicker">{{hero.eyebrow1}}</span>
-      <h1>{{hero.heading1}}</h1>
-      <p>{{hero.answer1}}</p>
-      <p>{{hero.text1}}</p>
-      <div class="cta-row">
-        <a class='btn primary' href='/saint-charbel-trail'>{{hero.link1}}</a>
-        <a class='btn subtle' href='/bekaa-kafra'>{{hero.link2}}</a>
-        <a class='btn subtle' href='/visit-annaya'>{{hero.link3}}</a>
-      </div>
-      <figure class="hero-figure"><img src="/media/annaya/qadisha-valley-aerial.webp" alt="{{images.alt1}}" width="1200" height="899" loading="lazy" /><figcaption>{{hero.caption1}}</figcaption></figure>
+  <main id="main-content" class="site-shell" tabindex="-1">
+    <section class="travel-hero">
+      <figure class="travel-hero-image"><img src="/media/annaya/qadisha-valley-aerial.webp" alt="{{images.alt1}}" width="1200" height="899" fetchpriority="high" decoding="async" /><figcaption>{{hero.caption1}}</figcaption></figure>
+      <div class="travel-hero-copy"><h1>{{hero.heading1}}</h1><p>{{hero.answer1}}</p>
+      <div class="cta-row"><a class="btn primary" href="#visiting">{{visiting.heading1}}</a><a class="btn subtle" href="/travel">{{header.places}}</a></div></div>
     </section>
-
-    <section class="section">
+    <div class="travel-intro"><p>{{hero.text1}}</p><div class="cta-row"><a class="btn subtle" href="/saint-charbel-trail">{{hero.link1}}</a><a class="btn subtle" href="/bekaa-kafra">{{hero.link2}}</a><a class="btn subtle" href="/visit-annaya">{{hero.link3}}</a></div></div>
+    <nav class="travel-chapters" aria-label="{{hero.eyebrow1}}"><a href="#meaning">{{meaning.heading1}}</a><a href="#monasteries">{{monasteries.heading1}}</a><a href="#visiting">{{visiting.heading1}}</a><a href="#faq">{{faq.heading1}}</a></nav>
+    <section class="section travel-section" id="meaning">
       <h2>{{meaning.heading1}}</h2>
       <div class="card story">
         <p><em>{{meaning.emphasis1}}</em>{{meaning.text1}}<em>{{meaning.emphasis2}}</em>{{meaning.text2}}</p>
@@ -253,7 +248,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="refuge">
       <h2>{{refuge.heading1}}</h2>
       <div class="card story">
         <p>{{refuge.text1}}</p>
@@ -261,7 +256,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="monasteries">
       <h2>{{monasteries.heading1}}</h2>
       <div class="card story">
         <p>{{monasteries.text1}}</p>
@@ -280,7 +275,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="charbel">
       <h2>{{charbel.heading1}}</h2>
       <div class="card story">
         <p>{{charbel.text1}}<a href="/bekaa-kafra">{{charbel.link1}}</a>{{charbel.text2}}<a href="/saint-charbel-hermitage">{{charbel.link2}}</a>{{charbel.text3}}</p>
@@ -288,7 +283,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="unesco">
       <h2>{{unesco.heading1}}</h2>
       <div class="card story">
         <p>{{unesco.text1}}</p>
@@ -296,7 +291,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="visiting">
       <h2>{{visiting.heading1}}</h2>
       <div class="card story">
         <p>{{visiting.text1}}<strong>{{visiting.emphasis1}}</strong>{{visiting.text2}}<strong>{{visiting.emphasis2}}</strong>{{visiting.text3}}</p>
@@ -304,7 +299,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="faq">
       <h2>{{faq.heading1}}</h2>
       <div class="card story">
         <h3>{{faq.question1}}</h3>
@@ -322,7 +317,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="sources">
       <h2>{{sources.heading1}}</h2>
       <div class="card story">
         <ul>

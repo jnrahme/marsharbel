@@ -28,6 +28,7 @@ NOINDEX = {
 }
 
 DESCRIPTIONS = {
+    "travel.html": json.loads((ROOT / "locales/en/travel.json").read_text())["intro"],
     "magdalene-story.html": "Mary Magdalene storybook for ages 6-12: nine illustrated narrative pages from Galilee to the Easter garden, with flowing narration and a family reflection.",
     "jude-story.html": "Saint Jude storybook for ages 6-12: nine illustrated pages about a question at the Last Supper, with flowing narration and a family reflection.",
     "massabki-story.html": "Read the Massabki brothers’ story for ages 6-12 with a trusted adult: narrated pages about service, faith, remembrance, and choosing safety and peace.",
@@ -57,6 +58,7 @@ CANONICAL_OVERRIDE = {
 }
 
 TITLE_OVERRIDE = {
+    "travel.html": json.loads((ROOT / "locales/en/travel.json").read_text())["title"],
     "index.html": "Saint Charbel | History, Miracles, Testimonies & Rosary",
     "history.html": "Saint Charbel History | Biography, Timeline & Canonization",
     "story.html": "Saint Charbel Story for Kids | Catholic Storybook",

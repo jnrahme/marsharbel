@@ -170,6 +170,7 @@
   <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles.css?v=20260922-1" />
+  <link rel="stylesheet" href="/travel.css?v=20261002-1" />
   <style>html[lang="ar"][data-authored-mirror="qadisha"] body{line-height:1.8}html[lang="ar"][data-authored-mirror="qadisha"] h1,html[lang="ar"][data-authored-mirror="qadisha"] h2,html[lang="ar"][data-authored-mirror="qadisha"] h3{line-height:1.35}html[lang="ar"][data-authored-mirror="qadisha"] .hero h1{max-width:16ch}</style>
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qadisha-valley" />
@@ -179,7 +180,7 @@
   <link rel="alternate" hreflang="es" href="https://marsharbel.com/es/valle-qadisha" />
   <!-- hreflang:end -->
 </head>
-<body>
+<body class="travel-page travel-destination">
   <header class="topbar">
     <div class="site-shell nav">
       <a class='brand' href='/'><span class="brand-mark">✦</span><span>San Chárbel</span></a>
@@ -241,21 +242,15 @@
     </div>
   </header>
 
-  <main class="site-shell">
-    <section class="hero">
-      <span class="kicker">Lugares de san Chárbel</span>
-      <h1>El valle de Qadisha, el Valle Santo del Líbano</h1>
-      <p>El Valle de Qadisha - el Valle Santo - es la profunda garganta del norte del Líbano donde echó raíces el monacato maronita: mil años de cuevas de ermitaños y monasterios colgados de la roca, hoy Patrimonio de la Humanidad de la UNESCO junto con los Cedros de Dios sobre su nacimiento.</p>
-      <p>En las montañas del norte del Líbano, bajo las cumbres más altas del país, un profundo desfiladero verde lleva un nombre que explica su historia: Qadisha, el Valle Santo. Durante más de mil años sus cuevas y monasterios adosados a los riscos dieron refugio a monjes, ermitaños y patriarcas maronitas. Hoy el valle forma parte del Patrimonio Mundial de la UNESCO junto con el Bosque de los Cedros de Dios, situado sobre su cabecera.</p>
-      <div class="cta-row">
-        <a class='btn primary' href='/saint-charbel-trail'>Recorre el sendero de san Chárbel</a>
-        <a class='btn subtle' href='/bekaa-kafra'>Bekaa Kafra</a>
-        <a class='btn subtle' href='/es/annaya'>Visita Annaya</a>
-      </div>
-      <figure class="hero-figure"><img src="/media/annaya/qadisha-valley-aerial.webp" alt="Vista aérea del valle de Qadisha cerca de Qannoubine: acantilados verdes y un monasterio enclavado en la roca. Foto de Evan Williams, Wikimedia Commons" width="1200" height="899" loading="lazy" /><figcaption>El valle de Qadisha visto desde encima de Qannoubine; los monasterios aún se aferran a sus riscos. Foto: Evan Williams, Wikimedia Commons (CC BY-SA 4.0).</figcaption></figure>
+  <main id="main-content" class="site-shell" tabindex="-1">
+    <section class="travel-hero">
+      <figure class="travel-hero-image"><img src="/media/annaya/qadisha-valley-aerial.webp" alt="Vista aérea del valle de Qadisha cerca de Qannoubine: acantilados verdes y un monasterio enclavado en la roca. Foto de Evan Williams, Wikimedia Commons" width="1200" height="899" fetchpriority="high" decoding="async" /><figcaption>El valle de Qadisha visto desde encima de Qannoubine; los monasterios aún se aferran a sus riscos. Foto: Evan Williams, Wikimedia Commons (CC BY-SA 4.0).</figcaption></figure>
+      <div class="travel-hero-copy"><h1>El valle de Qadisha, el Valle Santo del Líbano</h1><p>El Valle de Qadisha - el Valle Santo - es la profunda garganta del norte del Líbano donde echó raíces el monacato maronita: mil años de cuevas de ermitaños y monasterios colgados de la roca, hoy Patrimonio de la Humanidad de la UNESCO junto con los Cedros de Dios sobre su nacimiento.</p>
+      <div class="cta-row"><a class="btn primary" href="#visiting">Visitar el valle</a><a class="btn subtle" href="/es/travel">Viajes</a></div></div>
     </section>
-
-    <section class="section">
+    <div class="travel-intro"><p>En las montañas del norte del Líbano, bajo las cumbres más altas del país, un profundo desfiladero verde lleva un nombre que explica su historia: Qadisha, el Valle Santo. Durante más de mil años sus cuevas y monasterios adosados a los riscos dieron refugio a monjes, ermitaños y patriarcas maronitas. Hoy el valle forma parte del Patrimonio Mundial de la UNESCO junto con el Bosque de los Cedros de Dios, situado sobre su cabecera.</p><div class="cta-row"><a class="btn subtle" href="/saint-charbel-trail">Recorre el sendero de san Chárbel</a><a class="btn subtle" href="/bekaa-kafra">Bekaa Kafra</a><a class="btn subtle" href="/es/annaya">Visita Annaya</a></div></div>
+    <nav class="travel-chapters" aria-label="Lugares de san Chárbel"><a href="#meaning">Por qué se llama Valle Santo</a><a href="#monasteries">Los monasterios del valle</a><a href="#visiting">Visitar el valle</a><a href="#faq">Preguntas frecuentes</a></nav>
+    <section class="section travel-section" id="meaning">
       <h2>Por qué se llama Valle Santo</h2>
       <div class="card story">
         <p><em>Qadisha</em> significa «santo» en arameo y comparte raíz semítica con la palabra hebrea <em>kadosh</em>. También se escribe Kadisha y, en francés, Ouadi Qadisha: todas estas formas aluden al Valle Santo. El desfiladero se abre en la ladera del Monte Líbano bajo Qornet es-Sawda, la cima más alta del país. El río Nahr Qadisha nace en una gruta justo debajo de los Cedros de Dios y recorre unos 35 kilómetros hacia el mar. Cerca de Bsharri, el valle se bifurca en sus dos grandes ramales: Qannoubine y Qozhaya.</p>
@@ -263,7 +258,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="refuge">
       <h2>Refugio de los maronitas</h2>
       <div class="card story">
         <p>Para la Iglesia maronita, Qadisha no es solo paisaje: fue un refugio. Cuando la persecución y la guerra afectaron a la costa y las llanuras, la comunidad se retiró a un desfiladero difícil de penetrar para los ejércitos. Las campañas mamelucas de 1268 y 1283 arrasaron aldeas de la montaña; algunos habitantes se ocultaron en cuevas fortificadas en lo alto de los riscos. En una de ellas, Asi al-Hadath, los arqueólogos encontraron restos momificados de aldeanos de esa época.</p>
@@ -271,7 +266,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="monasteries">
       <h2>Los monasterios del valle</h2>
       <div class="card story">
         <p>En las paredes de Qadisha hay decenas de monasterios, ermitas y capillas en cuevas. Algunos siguen habitados por monjes y monjas; otros permanecen como vestigios. Cuatro lugares muestran su diversidad:</p>
@@ -290,7 +285,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="charbel">
       <h2>San Chárbel y Qadisha</h2>
       <div class="card story">
         <p>San Chárbel nació en 1828 en <a href="/bekaa-kafra">Bekaa Kafra</a>, una aldea en la cabecera del Valle Santo, y creció contemplando el desfiladero de Qannoubine, que había formado a su Iglesia. Después hizo el noviciado en Nuestra Señora de Mayfouq y vivió en el monasterio de San Marón de Annaya, más al sur, en el distrito de Jbeil. La <a href="/saint-charbel-hermitage">ermita de los santos Pedro y Pablo</a>, donde pasó sus últimos años, está en una colina sobre aquel monasterio de Annaya, no en el valle de Qadisha.</p>
@@ -298,7 +293,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="unesco">
       <h2>Patrimonio Mundial de la UNESCO</h2>
       <div class="card story">
         <p>En 1998 la UNESCO inscribió el sitio «Ouadi Qadisha (el Valle Santo) y el Bosque de los Cedros de Dios (Horsh Arz el-Rab)» en la Lista del Patrimonio Mundial, con el número 850 y los criterios culturales (iii) y (iv). Lo describe como uno de los asentamientos monásticos cristianos tempranos más importantes del mundo: cuevas, monasterios y bancales conservan huellas de una forma de vida mantenida desde los primeros siglos del cristianismo.</p>
@@ -306,7 +301,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="visiting">
       <h2>Visitar el valle</h2>
       <div class="card story">
         <p>Dos pueblos sirven como bases de visita: <strong>Bsharri</strong> para el lado de Qannoubine y <strong>Ehden</strong> para el de Qozhaya, cada uno a unas dos horas por carretera desde Beirut, según las condiciones. A Qozhaya se puede bajar en coche; a Qannoubine se llega a pie por senderos empinados desde el borde o por la pista del valle. En primavera hay flores y el río lleva más agua; el otoño suele ser tranquilo y, en invierno, la nieve puede cerrar los caminos altos.</p>
@@ -314,7 +309,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="faq">
       <h2>Preguntas frecuentes</h2>
       <div class="card story">
         <h3>¿Qué significa «Qadisha»?</h3>
@@ -332,7 +327,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="sources">
       <h2>Fuentes</h2>
       <div class="card story">
         <ul>

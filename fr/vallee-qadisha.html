@@ -170,6 +170,7 @@
   <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles.css?v=20260922-1" />
+  <link rel="stylesheet" href="/travel.css?v=20261002-1" />
   <style>html[lang="ar"][data-authored-mirror="qadisha"] body{line-height:1.8}html[lang="ar"][data-authored-mirror="qadisha"] h1,html[lang="ar"][data-authored-mirror="qadisha"] h2,html[lang="ar"][data-authored-mirror="qadisha"] h3{line-height:1.35}html[lang="ar"][data-authored-mirror="qadisha"] .hero h1{max-width:16ch}</style>
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qadisha-valley" />
@@ -179,7 +180,7 @@
   <link rel="alternate" hreflang="es" href="https://marsharbel.com/es/valle-qadisha" />
   <!-- hreflang:end -->
 </head>
-<body>
+<body class="travel-page travel-destination">
   <header class="topbar">
     <div class="site-shell nav">
       <a class='brand' href='/'><span class="brand-mark">✦</span><span>Saint Charbel</span></a>
@@ -241,21 +242,15 @@
     </div>
   </header>
 
-  <main class="site-shell">
-    <section class="hero">
-      <span class="kicker">Lieux de saint Charbel</span>
-      <h1>La vallée de la Qadisha, vallée sainte du Liban</h1>
-      <p>La vallée de Qadisha - la Vallée Sainte - est la gorge profonde du Nord-Liban où le monachisme maronite a pris racine : mille ans de grottes d'ermites et de monastères accrochés à la falaise, aujourd'hui site du patrimoine mondial de l'UNESCO avec les Cèdres de Dieu à sa source.</p>
-      <p>Dans les montagnes du nord du Liban, sous les plus hauts sommets du pays, une gorge verdoyante porte un nom qui dit sa vocation : Qadisha, la vallée sainte. Depuis plus de mille ans, ses grottes et ses monastères adossés aux falaises ont abrité moines, ermites et patriarches maronites. La vallée et la forêt des Cèdres de Dieu qui domine sa source forment ensemble un bien inscrit au patrimoine mondial de l’UNESCO.</p>
-      <div class="cta-row">
-        <a class='btn primary' href='/saint-charbel-trail'>Parcourir le chemin de saint Charbel</a>
-        <a class='btn subtle' href='/bekaa-kafra'>Bekaa Kafra</a>
-        <a class='btn subtle' href='/fr/annaya'>Visiter Annaya</a>
-      </div>
-      <figure class="hero-figure"><img src="/media/annaya/qadisha-valley-aerial.webp" alt="Vue aérienne de la vallée de la Qadisha près de Qannoubine : falaises verdoyantes et monastère adossé au rocher. Photo d’Evan Williams, Wikimedia Commons" width="1200" height="899" loading="lazy" /><figcaption>La vallée de la Qadisha vue depuis les hauteurs de Qannoubine : des monastères s’accrochent encore à ses falaises. Photo : Evan Williams, Wikimedia Commons (CC BY-SA 4.0).</figcaption></figure>
+  <main id="main-content" class="site-shell" tabindex="-1">
+    <section class="travel-hero">
+      <figure class="travel-hero-image"><img src="/media/annaya/qadisha-valley-aerial.webp" alt="Vue aérienne de la vallée de la Qadisha près de Qannoubine : falaises verdoyantes et monastère adossé au rocher. Photo d’Evan Williams, Wikimedia Commons" width="1200" height="899" fetchpriority="high" decoding="async" /><figcaption>La vallée de la Qadisha vue depuis les hauteurs de Qannoubine : des monastères s’accrochent encore à ses falaises. Photo : Evan Williams, Wikimedia Commons (CC BY-SA 4.0).</figcaption></figure>
+      <div class="travel-hero-copy"><h1>La vallée de la Qadisha, vallée sainte du Liban</h1><p>La vallée de Qadisha - la Vallée Sainte - est la gorge profonde du Nord-Liban où le monachisme maronite a pris racine : mille ans de grottes d'ermites et de monastères accrochés à la falaise, aujourd'hui site du patrimoine mondial de l'UNESCO avec les Cèdres de Dieu à sa source.</p>
+      <div class="cta-row"><a class="btn primary" href="#visiting">Visiter la vallée</a><a class="btn subtle" href="/fr/travel">Voyages</a></div></div>
     </section>
-
-    <section class="section">
+    <div class="travel-intro"><p>Dans les montagnes du nord du Liban, sous les plus hauts sommets du pays, une gorge verdoyante porte un nom qui dit sa vocation : Qadisha, la vallée sainte. Depuis plus de mille ans, ses grottes et ses monastères adossés aux falaises ont abrité moines, ermites et patriarches maronites. La vallée et la forêt des Cèdres de Dieu qui domine sa source forment ensemble un bien inscrit au patrimoine mondial de l’UNESCO.</p><div class="cta-row"><a class="btn subtle" href="/saint-charbel-trail">Parcourir le chemin de saint Charbel</a><a class="btn subtle" href="/bekaa-kafra">Bekaa Kafra</a><a class="btn subtle" href="/fr/annaya">Visiter Annaya</a></div></div>
+    <nav class="travel-chapters" aria-label="Lieux de saint Charbel"><a href="#meaning">Pourquoi l’appelle-t-on la vallée sainte ?</a><a href="#monasteries">Les monastères de la vallée</a><a href="#visiting">Visiter la vallée</a><a href="#faq">Questions fréquentes</a></nav>
+    <section class="section travel-section" id="meaning">
       <h2>Pourquoi l’appelle-t-on la vallée sainte ?</h2>
       <div class="card story">
         <p><em>Qadisha</em> signifie « sainte » en araméen, avec la même racine sémitique que le mot hébreu <em>kadosh</em>. On trouve aussi Kadisha ou, dans les sources françaises, Ouadi Qadisha : ces noms désignent la vallée sainte. La gorge entaille le mont Liban sous le Qornet es-Sawda, le plus haut sommet du pays. Le fleuve qui l’a creusée, le Nahr Qadisha, prend sa source dans une grotte juste sous les Cèdres de Dieu et parcourt environ 35 kilomètres vers la mer. En aval de Bcharré, la vallée se divise en deux grands bras, Qannoubine et Qozhaya.</p>
@@ -263,7 +258,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="refuge">
       <h2>Un refuge pour les maronites</h2>
       <div class="card story">
         <p>Pour l’Église maronite, la Qadisha n’est pas seulement un paysage : elle a été un refuge. Quand persécutions et guerres touchaient la côte et les plaines, la communauté se repliait dans une gorge difficile d’accès pour les armées. Les campagnes mameloukes de 1268 et de 1283 ravagèrent les villages de la montagne. Des habitants se cachèrent dans des grottes fortifiées hautes dans les falaises. À Asi al-Hadath, des chercheurs ont découvert les restes momifiés de villageois de cette époque.</p>
@@ -271,7 +266,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="monasteries">
       <h2>Les monastères de la vallée</h2>
       <div class="card story">
         <p>Des dizaines de monastères, d’ermitages et de chapelles rupestres occupent les parois de la Qadisha. Certains abritent encore des religieux, d’autres ne sont plus habités. Quatre lieux donnent une idée de cet héritage :</p>
@@ -290,7 +285,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="charbel">
       <h2>Saint Charbel et la Qadisha</h2>
       <div class="card story">
         <p>Saint Charbel est né en 1828 à <a href="/bekaa-kafra">Bekaa Kafra</a>, village situé à la tête de la vallée sainte. Il a grandi face aux gorges de Qannoubine qui avaient façonné son Église. Son chemin le mena ensuite au noviciat de Notre-Dame de Mayfouq puis au monastère Saint-Maron d’Annaya, plus au sud, dans le district de Jbeil. L’<a href="/saint-charbel-hermitage">ermitage des saints Pierre et Paul</a>, où il vécut plus tard, se trouve sur une colline au-dessus du monastère d’Annaya, et non dans la vallée de la Qadisha.</p>
@@ -298,7 +293,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="unesco">
       <h2>La Qadisha au patrimoine mondial de l’UNESCO</h2>
       <div class="card story">
         <p>En 1998, l’UNESCO a inscrit « Ouadi Qadisha (la vallée sainte) et la forêt des Cèdres de Dieu (Horsh Arz el-Rab) » sur la Liste du patrimoine mondial, sous le numéro 850 et les critères culturels (iii) et (iv). Elle décrit la Qadisha comme l’un des grands sites des premiers établissements monastiques chrétiens : grottes, monastères et terrasses agricoles y témoignent d’un mode de vie poursuivi depuis les premiers siècles du christianisme.</p>
@@ -306,7 +301,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="visiting">
       <h2>Visiter la vallée</h2>
       <div class="card story">
         <p>Deux villes sur les hauteurs servent de point de départ : <strong>Bcharré</strong> pour Qannoubine et <strong>Ehden</strong> pour Qozhaya. Chacune se trouve à environ deux heures de route de Beyrouth, selon les conditions. Une route descend jusqu’à Qozhaya. Qannoubine se rejoint à pied par des sentiers raides depuis les hauteurs ou par la piste étroite de la vallée. Au printemps, les fleurs et le fleuve animent la gorge ; l’automne est plus calme, tandis qu’en hiver la neige peut fermer les routes d’altitude.</p>
@@ -314,7 +309,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="faq">
       <h2>Questions fréquentes</h2>
       <div class="card story">
         <h3>Que signifie « Qadisha » ?</h3>
@@ -332,7 +327,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section travel-section" id="sources">
       <h2>Sources</h2>
       <div class="card story">
         <ul>

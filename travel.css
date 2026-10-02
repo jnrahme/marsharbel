@@ -1,0 +1,58 @@
+/* Travel surfaces extend the site's shared typography and warm-stone palette. */
+.travel-page{--travel-paper:#f5eee3;--travel-ink:#231d16;--travel-muted:#625749;--travel-line:#d2c4ae;--travel-accent:#705427;background:var(--travel-paper);color:var(--travel-ink)}
+.travel-page main.site-shell{max-width:none;width:100%;padding:0}
+.travel-page h1,.travel-page h2,.travel-page h3{color:var(--travel-ink);text-wrap:balance}
+.travel-page p,.travel-page li{color:var(--travel-muted);line-height:1.8}
+.travel-page main a{color:var(--travel-accent);text-underline-offset:.22em}
+.travel-page a:focus-visible{outline:3px solid #876128;outline-offset:5px}
+.travel-page ::selection{background:#d7c49e;color:#231d16}
+.travel-page .travel-hero{position:relative;min-height:680px;display:flex;align-items:flex-end;background:#231d16;isolation:isolate}
+.travel-hero-image{position:absolute;inset:0;margin:0;z-index:-2}
+.travel-hero-image img{width:100%;height:100%;object-fit:cover;border-radius:0}
+.travel-hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,18,13,.88),rgba(14,18,13,.46) 58%,rgba(14,18,13,.14)),linear-gradient(0deg,rgba(14,18,13,.9),transparent 45%)}
+.travel-hero-image figcaption{position:absolute;bottom:1rem;inset-inline-end:2rem;max-width:35rem;color:#f5eee3;font-size:.72rem;line-height:1.5;text-align:end;z-index:1}
+.travel-hero-copy{width:min(100% - 4rem,1180px);margin-inline:auto;padding-block:5rem 6rem}
+.travel-page .travel-hero h1{font-size:clamp(2.8rem,5.8vw,5.6rem);line-height:1.02;max-width:12ch;color:#fff8eb;margin:0 0 1.4rem;letter-spacing:-.025em}
+.travel-page .travel-hero p{max-width:55ch;color:#fff8eb;font-size:1.12rem;line-height:1.65}
+.travel-page .btn{min-height:48px;border-radius:0;font-size:.94rem}
+.travel-page .btn.primary{color:#231d16;background:#f0dfbd;border-color:#f0dfbd}
+.travel-page .travel-hero .btn.subtle{color:#fff8eb;background:rgba(19,22,15,.55);border-color:#f0dfbd}
+.travel-intro,.travel-chapters,.travel-section,.travel-directory,.travel-planning{width:min(100% - 4rem,1180px);margin-inline:auto}
+.travel-intro{padding-block:3rem;max-width:760px;font-size:1.13rem}
+.travel-chapters{display:flex;flex-wrap:wrap;border-block:1px solid var(--travel-line);padding-block:.7rem;gap:.25rem 1.5rem}
+.travel-chapters a{padding:.65rem 0;font-size:.9rem;font-weight:650}
+.travel-section{display:grid;grid-template-columns:minmax(180px,1fr) minmax(0,2.2fr);gap:3rem;padding-block:4rem;border-bottom:1px solid var(--travel-line);margin-block:0}
+.travel-page .travel-section h2{font-size:clamp(1.9rem,2.8vw,2.7rem);line-height:1.15;margin:0}
+.travel-page .travel-section .card.story{padding:0;border:0;border-radius:0;background:none;box-shadow:none;max-width:72ch}
+.travel-section p:first-child{margin-top:0}
+.travel-section h3{font-size:1.7rem;line-height:1.2;margin-top:2.7rem}
+.travel-section .hero-figure{padding:0;border:0;margin:1.8rem 0 2.5rem;background:none;border-radius:0}
+.travel-section .hero-figure img{display:block;width:100%;max-height:580px;object-fit:cover;border-radius:0}
+.travel-section .hero-figure figcaption{font-size:.78rem;line-height:1.6;color:var(--travel-muted);padding-top:.7rem}
+.travel-section li{margin-bottom:.7rem}
+.travel-directory{padding-block:4rem}
+.travel-page .travel-directory h2,.travel-page .travel-planning h2{font-size:clamp(2rem,3.5vw,3.3rem);margin:0 0 2rem}
+.travel-destination-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem 2rem}
+.travel-place{display:block;text-decoration:none;border-bottom:1px solid var(--travel-line);padding-bottom:1.4rem}
+.travel-place figure{margin:0;aspect-ratio:16/10;overflow:hidden;background:#d2c4ae}
+.travel-place img{width:100%;height:100%;object-fit:cover}
+.travel-place h3{font-size:2rem;margin:1rem 0 .5rem;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+.travel-place p{margin:0;max-width:60ch}
+.travel-place:hover h3{color:#705427}
+.travel-credit{font-size:.75rem;margin-top:.55rem!important}
+.travel-planning{padding-block:3rem 5rem;border-top:1px solid var(--travel-line)}
+.travel-link-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 3rem}
+.travel-link-list a{display:block;padding:1.2rem 0;border-bottom:1px solid var(--travel-line);font-size:1.1rem}
+.travel-page footer{margin-top:0}
+@media(max-width:700px){.travel-page .travel-hero{min-height:660px}.travel-hero-copy{width:calc(100% - 2.5rem);padding-block:3.5rem 7rem}.travel-page .travel-hero h1{font-size:3rem;max-width:14ch}.travel-page .travel-hero p{font-size:1rem}.travel-hero-image:after{background:linear-gradient(0deg,rgba(14,18,13,.96),rgba(14,18,13,.65) 65%,rgba(14,18,13,.18))}.travel-hero-image figcaption{inset-inline:1.25rem;text-align:start;max-width:none;font-size:.68rem}.travel-intro,.travel-chapters,.travel-section,.travel-directory,.travel-planning{width:calc(100% - 2.5rem)}.travel-intro{padding-block:2rem}.travel-section{grid-template-columns:1fr;gap:1.3rem;padding-block:2.5rem}.travel-destination-list,.travel-link-list{grid-template-columns:1fr}.travel-directory{padding-block:2.5rem}.travel-page .travel-section h2{font-size:2rem}}
+@media(prefers-reduced-motion:reduce){.travel-page *, .travel-page *:before,.travel-page *:after{scroll-behavior:auto;transition:none;animation:none}}
+
+.travel-page main .travel-hero-image figcaption a{color:#fff8eb;text-decoration:underline}
+.travel-page .topbar .brand,.travel-page .topbar .links a{color:#e8dfd0}
+.travel-page .topbar .links .nav-sub a{color:inherit}
+/* Shared legacy link styles are more specific on the English master. */
+.travel-page main .travel-intro .btn.subtle{color:var(--travel-ink);background:transparent;border-color:var(--travel-accent)}
+.travel-page main .travel-section .card.story a{color:var(--travel-accent);text-decoration:underline}
+.travel-page main .travel-chapters a{scroll-margin-top:9rem}
+.travel-page main [id]{scroll-margin-top:9rem}
+.travel-page .travel-section .hero-figure img[src$="mar-lichaa-monastery.webp"]{max-height:none;height:auto;object-fit:contain}

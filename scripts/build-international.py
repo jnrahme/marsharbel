@@ -11,6 +11,7 @@ from i18n.metadata import og_locales, published_locales, selector_aliases
 from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_locales
 from i18n.mirror import render_mirrors
 from i18n.qadisha_mirror import render_qadisha
+from i18n.travel_mirror import render_travel
 from i18n.monastery_mirror import render_monasteries
 from i18n.feast_mirror import render_feast
 from i18n.litany_mirror import render_litany
@@ -150,6 +151,7 @@ def outputs(root=ROOT):
     qadisha = render_qadisha(root, registry)
     english_qadisha = qadisha.pop(root / 'qadisha-valley.html')
     result.update(qadisha)
+    result.update(render_travel(root, registry))
     monasteries = render_monasteries(root, registry)
     english_monasteries = {path: monasteries.pop(path) for path in (root / 'qannoubine-monastery.html', root / 'qozhaya-monastery.html')}
     result.update(monasteries)
