@@ -45,3 +45,13 @@ rules below apply only if a rotator returns. Rotator images displayed at 64x64. 
 run `python3 scripts/build_news_thumbs.py`: it makes a 128px square WebP in
 `media/news/thumb/` and points the item at it. QA fails if an item still
 uses a full-size image.
+
+## AI-generated images: watermark step (standard)
+
+Every AI-generated image is watermarked "marsharbel.com" in the file itself, not by CSS, so the name travels with pins and shares (Joey directive, 2026-10-02 9:56 AM, relayed by the main agent). Never watermark historic photographs.
+
+1. Save the clean original under `assets/originals/<folder>/NAME.ext` (see `assets/originals/README.md`).
+2. Run `python3 scripts/watermark_ai_image.py assets/originals/<folder>/NAME.ext <folder>/NAME.ext`. It adds small semi-transparent serif text in the bottom corner, about 2.7% of image width, and keeps dimensions and format.
+3. Look at the result before shipping; the mark must not cover a face. Use `--corner left` if the right corner is busy.
+4. Keep the "AI transformation, not a photograph" label on the page as well.
+
