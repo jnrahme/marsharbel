@@ -5,25 +5,38 @@ Reviewed manifest and UI copy must be supplied by the integration gate.
 """
 from bs4 import BeautifulSoup
 from html import escape
-import re
+import re,json,subprocess
 from i18n.catalog import read_json
 
 def inject_control(text, root, manifest, copy):
     soup=BeautifulSoup(text,'html.parser')
     lang=soup.html.get('lang','en') if soup.html else 'en'
     if lang not in copy:raise ValueError('Missing reviewed selector copy '+lang)
+    canonical=soup.select_one('link[rel=canonical]')
+    if not canonical:raise ValueError('Language control requires canonical identity')
+    href=canonical['href']
+    # Use the JS resolver itself: no second, weaker availability predicate.
+    driver="const fs=require('fs');const api=require(process.argv[1]);const d=JSON.parse(fs.readFileSync(0,'utf8'));let out={};for(const lang of d.manifest.languages)out[lang]=api.resolve(d.manifest,d.href,lang,d.actual);process.stdout.write(JSON.stringify(out));"
+    choices=json.loads(subprocess.check_output(['node','-e',driver,str(root/'same-page-resolver.js')],input=json.dumps({'manifest':manifest,'href':href,'actual':lang}),text=True))
     # No-JS static choices must not retain guide/home substitutions.
     # Mutate only language nav blocks, never MAIN or ordinary editorial anchors.
     def static_nav(match):
         nav=BeautifulSoup(match[0],'html.parser').nav
+        unavailable=False
         for a in nav.select('a[hreflang]'):
-            code=a['hreflang']
-            if code==lang:continue
-            a.attrs.pop('href',None);a.attrs.pop('lang',None)
-            a['aria-disabled']='true';a['tabindex']='-1'
-            a.string=copy[lang]['names'].get(code,code)+' ('+copy[lang]['suffix']+')'
-        helper=BeautifulSoup('<span class="sc-language-helper"></span>','html.parser').span
-        helper.string=copy[lang]['helper'];nav.append(helper)
+            code=a['hreflang'];choice=choices.get(code,{})
+            a.attrs.pop('lang',None)
+            a.string=copy[lang]['names'].get(code,code)
+            if choice.get('available'):
+                a['href']=choice['href']
+                for attr in ('aria-disabled','tabindex','aria-label'):a.attrs.pop(attr,None)
+            else:
+                unavailable=True
+                a.attrs.pop('href',None);a['aria-disabled']='true';a['tabindex']='-1'
+                a.string=copy[lang]['names'].get(code,code)+' ('+copy[lang]['suffix']+')'
+        if unavailable:
+            helper=BeautifulSoup('<span class="sc-language-helper"></span>','html.parser').span
+            helper.string=copy[lang]['helper'];nav.append(helper)
         return str(nav)
     text=re.sub(r'<nav\b[^>]*class=["\'](?:locale-nav|footer-locales)["\'][\s\S]*?</nav>',static_nav,text)
     text=text.replace('</head>','<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />\n</head>')
