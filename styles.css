@@ -2838,3 +2838,5 @@ main[id="main-content"]:focus{outline:none}
 [data-internal-links] a { text-decoration: underline; text-underline-offset: 3px; }
 [data-internal-links] a[aria-current="page"] { text-decoration: none; font-weight: 600; }
 [data-internal-links] ul { padding-left: 1.2rem; }
+
+[data-internal-links] li a { display: inline-block; min-height: 24px; line-height: 1.5; padding-block: 2px; }
