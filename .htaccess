@@ -73,3 +73,25 @@ RewriteRule ^(.+?)/?$ $1.html [L]
     Header set Cache-Control "no-cache, no-store, must-revalidate"
   </Files>
 </IfModule>
+
+# Production security baseline (Hostinger/LiteSpeed honors mod_headers).
+# Keep the dependency-heavy CSP in report-only until browser review is complete.
+# Report-only violations are visible in DevTools; no telemetry endpoint is set.
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
+  Header always set Content-Security-Policy "upgrade-insecure-requests; frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://cdn.jsdelivr.net https://challenges.cloudflare.com https://js.hcaptcha.com https://*.hcaptcha.com https://cdn.shopify.com; style-src 'self' 'unsafe-inline' https://*.hcaptcha.com; img-src 'self' data: blob: https:; font-src 'self' data: https://*.hcaptcha.com; connect-src 'self' https://alxccoizzksyitxvqhpv.supabase.co wss://alxccoizzksyitxvqhpv.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://translate.googleapis.com https://challenges.cloudflare.com https://*.hcaptcha.com https://*.myshopify.com https://*.shopify.com; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com https://*.hcaptcha.com; media-src 'self' blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'"
+  # One-day initial rollout. No includeSubDomains/preload without a TLS audit.
+  Header always set Strict-Transport-Security "max-age=86400" "expr=%{HTTPS} == 'on'"
+  <FilesMatch "^(?:account|submit-testimony|testimony-review)\.html$">
+    Header unset Cache-Control
+    Header always set Cache-Control "no-store, max-age=0"
+  </FilesMatch>
+  <Files "testimony-review.html">
+    Header always set X-Robots-Tag "noindex, nofollow, noarchive"
+    Header always set Referrer-Policy "no-referrer"
+  </Files>
+</IfModule>

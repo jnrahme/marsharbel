@@ -10,6 +10,7 @@ fi
 cd "${ROOT}"
 
 node scripts/qa/test_analytics_hostname.cjs
+python3 -m unittest discover -s scripts/qa -p 'test_security_headers.py'
 
 node scripts/build-home-css.mjs --check
 npm run i18n:check
