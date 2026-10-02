@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url('/media/fonts/cormorant-garamond-latin-v1.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/media/fonts/manrope-latin-v1.woff2') format('woff2');
+}
+* { box-sizing: border-box; }
+html { color-scheme: dark; background: #0a1622; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  padding: max(32px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(32px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+  color: #f4eee4;
+  font: 400 1rem/1.7 'Manrope', sans-serif;
+}
+main { width: min(100%, 40rem); margin-inline: auto; }
+a { color: #dfc18d; text-underline-offset: .25em; }
+a:hover { color: #fff0cd; }
+a:focus-visible { outline: 2px solid #dfc18d; outline-offset: 6px; }
+.site-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; text-decoration: none; }
+h1 { margin: 2.5rem 0 .75rem; font: 600 clamp(2.5rem, 8vw, 4rem)/1.1 'Cormorant Garamond', serif; }
+p { margin: 0 0 2rem; color: #c9d1d7; max-width: 38rem; }
+.home-link { display: inline-block; padding-block: 10px; font-weight: 600; }
+::selection { background: #dfc18d; color: #0a1622; }
