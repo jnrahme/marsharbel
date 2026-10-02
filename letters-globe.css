@@ -1,0 +1,19 @@
+.letters-globe{position:relative;margin:2rem auto;padding:1.5rem 1rem 1.25rem;border-radius:28px;background:radial-gradient(120% 90% at 50% 0%,#26323b 0%,#12181d 62%,#0b0f12 100%);border:1px solid rgba(239,230,214,.14);box-shadow:0 30px 80px rgba(0,0,0,.45);overflow:hidden;text-align:center;color:#efe6d6}
+.letters-globe h2{margin:.2rem 0 .3rem;font-size:clamp(1.5rem,3.4vw,2.1rem)}
+.letters-globe .globe-sub{margin:0 auto 1rem;max-width:44ch;color:#d9cfbd}
+.letters-globe canvas{display:none;margin:0 auto;touch-action:pan-y;cursor:grab;max-width:100%}
+.letters-globe.is-live canvas{display:block}
+.letters-globe .globe-stage{min-height:0}
+.letters-globe.is-live .globe-stage{min-height:min(100vw,720px)}
+.globe-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:1rem 0 0;padding:0}
+.globe-chip{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:.4rem .9rem;border-radius:999px;border:1px solid rgba(239,230,214,.3);background:rgba(239,230,214,.07);color:#efe6d6;font:inherit;font-size:.92rem;cursor:pointer}
+.globe-flag{width:24px;height:18px;border-radius:3px;background:url('./media/letters/flags-sprite.webp') 0 0/288px auto no-repeat;box-shadow:0 0 0 1px rgba(0,0,0,.4);flex:none}
+.globe-all{max-width:760px;margin:1rem auto 0;text-align:left}.globe-all summary{cursor:pointer;text-align:center;color:#d9cfbd;min-height:44px;line-height:44px}
+.globe-source{margin:.8rem 0 0;font-size:.78rem;color:#b9ae9a}
+.globe-chip[aria-pressed="true"],.globe-chip:hover,.globe-chip:focus-visible{border-color:#ffd98a;background:rgba(214,170,98,.2)}
+.globe-panel{max-width:520px;margin:1rem auto 0;padding:1rem 1.25rem;text-align:left;border-radius:18px;background:rgba(239,230,214,.08);border:1px solid rgba(239,230,214,.18)}
+.globe-panel h3{margin:0 0 .5rem;font-size:1.1rem}
+.globe-panel ul{margin:0;padding-left:1.1rem;line-height:1.55;font-size:.95rem}
+.globe-hint{margin:.6rem 0 0;font-size:.8rem;color:#b9ae9a}
+.letters-globe:not(.is-live) .globe-hint{display:none}
+.globe-note{margin:.8rem auto 0;max-width:60ch;font-size:.8rem;color:#b9ae9a;text-align:center}
