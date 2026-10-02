@@ -161,7 +161,9 @@
       }
     }
     if (location.hash.length > 1) {
-      const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      let id = location.hash.slice(1);
+      try { id = decodeURIComponent(id); } catch (_) { /* Ignore malformed external fragment encoding. */ }
+      const target = document.getElementById(id);
       if (target) setTimeout(() => target.scrollIntoView({ block: 'start' }), 150);
     }
   };
