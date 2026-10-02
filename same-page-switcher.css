@@ -1,0 +1,10 @@
+/* Shared availability layout for both article headers and static guide mastheads. */
+.sc-language-feedback{max-width:28rem;margin-block:.5rem;color:inherit;font-size:.875rem;line-height:1.45;overflow-wrap:anywhere}
+.sc-language-helper,.sc-language-status{display:block}
+.sc-language-helper:empty,.sc-language-status:empty{display:none}
+.sc-language-status:not(:empty){margin-block-start:.35rem}
+.masthead .lang-switcher{display:flex;align-items:center;gap:.65rem;margin-block:1rem}
+.masthead .lang-switcher select{font:inherit;font-size:1rem;min-height:2.75rem;max-width:100%;background:#221e1a;color:inherit;border:1px solid #746a58;padding:.4rem .6rem}
+nav.locale-nav a[aria-disabled="true"],nav.footer-locales a[aria-disabled="true"]{opacity:.75;cursor:default}
+.sc-unavailable-suffix{font-size:.875em;white-space:normal}
+nav.locale-nav a[aria-disabled="true"]{display:inline-block;max-width:100%;white-space:normal}
