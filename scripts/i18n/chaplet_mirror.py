@@ -42,8 +42,11 @@ def render_chaplet(root=ROOT):
             node.string=catalog[keys[2*i+1]]
             tag.append(node)
         tag.append(catalog[keys[-1]])
+    # The complete, reviewed shared trail catalog is mandatory. No English fallback.
+    from i18n.encyclopedia_trail import apply_trail
+    apply_trail(soup, root, 'ar', '/history')
     # Keep the English layout, DOM structure, all media and links. Only replace text nodes.
-    for selector,key in [('main .hero .kicker','hero.kicker'),('main h1','hero.title'),('main .hero > p','hero.intro'),
+    for selector,key in [('main .hero .kicker','hero.kicker'),('main h1','hero.title'),('main .hero > p:not(.enc-trail)','hero.intro'),
                          ('main .hero figcaption','hero.caption'),('main .section:nth-of-type(2) h2','what.title'),
                          ('main .section:nth-of-type(3) h2','steps.title'),('main .section:nth-of-type(3) .section-sub','steps.intro'),
                          ('main .section:nth-of-type(4) h2','prayers.title'),('main .section:nth-of-type(5) h2','when.title'),
