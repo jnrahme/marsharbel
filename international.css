@@ -8,3 +8,27 @@ main p+a,.card p+a{display:inline-block;min-height:24px;line-height:24px}
 /* Main is a non-interactive skip destination. Keep control focus rings intact. */
 main:focus,main:focus-visible,[id="main"]:focus,[id="main"]:focus-visible{outline:none}
 main:target,#main:target{outline:none}
+
+/* International pages v2: calmer header, two-column contents, prayer callout, rhythm */
+header nav{gap:.4rem}
+header nav a{min-height:36px;padding:.2rem .8rem;border-radius:999px;font-size:.92rem;text-decoration:none;border:1px solid transparent;transition:background-color .15s ease,border-color .15s ease}
+header nav a:hover{border-color:var(--line);background:rgba(255,255,255,.04)}
+header nav a[aria-current]{border-color:rgba(219,196,154,.4)}
+.back{font-size:.95rem;text-decoration:none;opacity:.85}
+.back:hover{opacity:1;text-decoration:underline}
+main article>h1{margin-block:.6rem 1rem;max-width:20ch}
+html[dir=rtl] main article>h1{max-width:none}
+.intro{max-width:62ch;text-wrap:pretty}
+.contents{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01)),var(--panel);box-shadow:0 14px 34px rgba(0,0,0,.22)}
+.contents ol{margin:0;padding-inline-start:1.4rem}
+.contents li{padding-block:.2rem}
+.contents li a{text-decoration:none}
+.contents li a:hover{text-decoration:underline}
+@media (min-width:720px){.contents ol{columns:2;column-gap:2.5rem}.contents li{break-inside:avoid}}
+.section{padding-block:1.7rem}
+.section h2{font-family:Georgia,'Times New Roman',serif;font-weight:600;font-size:clamp(1.35rem,3vw,1.7rem)}
+html[dir=rtl] .section h2{font-family:inherit}
+.section p{text-wrap:pretty}
+#section-commonPrayer p{max-width:none;padding:1.1rem 1.3rem;background:rgba(219,196,154,.07);border-inline-start:3px solid var(--gold);border-radius:6px 14px 14px 6px;font-size:1.12rem}
+html[dir=rtl] #section-commonPrayer p{border-radius:14px 6px 6px 14px}
+@media (prefers-reduced-motion:reduce){header nav a{transition:none}}

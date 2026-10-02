@@ -2896,3 +2896,63 @@ a.card:hover{transform:translateY(-2px);transition-duration:var(--pol-fast);box-
 a.card:active{transform:scale(.99);transition-duration:140ms}
 :where(.btn,.links a,.footer a,a.card):focus-visible{outline:2px solid var(--gold,#d8c6a6);outline-offset:3px;border-radius:6px}
 @media (prefers-reduced-motion:reduce){.btn,.links a,.footer a,a.card{transition:none}.btn:active,a.card:active,a.card:hover{transform:none}}
+
+/* Shell v2: compact phone header (brand, install and language share one row) */
+@media (max-width:640px){
+.nav{display:grid;flex-direction:row;align-items:center;gap:0;min-height:0;grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"brand install lang" "links links links";column-gap:.5rem;row-gap:.15rem;padding:.4rem 0 .3rem}
+.brand{gap:.5rem;font-size:1.05rem;min-width:0}
+.brand-mark{width:30px;height:30px;font-size:.8rem;flex:none}
+.lang-switcher-slot{width:auto;height:2rem}
+.lang-switcher{min-height:2rem;padding:.12rem .25rem}
+.lang-switcher select{max-width:104px;font-size:.78rem;padding:.2rem .4rem;text-overflow:ellipsis}
+.sc-install-app-btn{padding:.34rem .65rem;font-size:.74rem}
+.links{gap:.05rem .1rem}
+.links a,.nav-group .nav-parent{padding:.4rem .5rem;font-size:.82rem}
+}
+@media (max-width:360px){.brand-mark{display:none}.sc-install-app-btn{padding:.3rem .5rem}.lang-switcher select{max-width:84px}}
+.brand{white-space:nowrap}@media (max-width:360px){.brand{font-size:.95rem}.lang-switcher select{max-width:76px}}
+
+/* Prayer pages v2: split hero on desktop, uniform action row, single-column prayers */
+.prayer-page .hero h1{font-size:clamp(2.5rem,6.5vw,4rem);line-height:1.02;max-width:16ch}
+.prayer-page .hero-figure{margin:0}
+.prayer-page .hero-figure img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:14px;box-shadow:0 18px 44px rgba(0,0,0,.32)}
+.prayer-page .hero-figure figcaption{margin-top:.6rem}
+.prayer-page .hero>.cta-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.prayer-page .hero>.cta-row .btn{min-height:46px;text-align:center;margin:0;padding:.6rem .8rem}
+@media (min-width:980px){
+.prayer-page .hero:has(>.hero-figure){grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);column-gap:clamp(2rem,4vw,4rem);row-gap:1.1rem;align-items:start;padding-top:3rem}
+.prayer-page .hero:has(>.hero-figure)>*{grid-column:1}
+.prayer-page .hero:has(>.hero-figure)>.hero-figure{grid-column:2;grid-row:1 / span 5;position:sticky;top:120px}
+.prayer-page .hero>.cta-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.prayer-page .prayer-grid:not(:has(>:nth-child(5))){grid-template-columns:minmax(0,1fr);max-width:46rem;gap:0}
+.prayer-page .prayer-grid:not(:has(>:nth-child(5)))>.prayer-card{padding:1.6rem 0 1.7rem 1.4rem;border:0;border-bottom:1px solid var(--theme-line-soft);border-left:2px solid rgba(211,178,110,.45);border-radius:0;background:none;box-shadow:none}
+.prayer-page .prayer-grid:not(:has(>:nth-child(5))) .prayer-card p{font-size:1.06rem;line-height:1.75;text-wrap:pretty}
+.prayer-page .hero>.cta-row .btn{font:inherit;font-weight:700;font-size:.95rem}
+@media (max-width:640px){.prayer-page .prayer-grid:not(:has(>:nth-child(5)))>.prayer-card{padding-left:1rem}}
+.prayer-page .hero>.cta-row .btn:last-child:nth-child(odd){grid-column:1/-1}
+
+/* Saint/news cards v2: uniform image frame, equal heights, visible click affordance */
+.grid-2>.card:has(>h3>.card-cover):has(>.hero-figure){display:flex;flex-direction:column;position:relative;transition:transform 250ms var(--pol-out)}
+.grid-2>.card:has(>h3>.card-cover)>.hero-figure{margin:.4rem 0 .8rem}
+.grid-2>.card:has(>h3>.card-cover)>.hero-figure img{display:block;width:100%;height:auto;border-radius:12px}
+.portrait-cards .grid-2>.card:has(>h3>.card-cover)>.hero-figure img{aspect-ratio:4/3;object-fit:cover;object-position:50% 22%}
+.grid-2>.card:has(>h3>.card-cover)>p{margin-top:auto;padding-top:.2rem;text-wrap:pretty}
+.grid-2>.card:has(>h3>.card-cover)>h3{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem}
+.grid-2>.card:has(>h3>.card-cover)>h3::after{content:"\2192";flex:none;color:var(--gold);opacity:.6;transition:transform 250ms var(--pol-out),opacity 150ms ease}
+[dir=rtl] .grid-2>.card:has(>h3>.card-cover)>h3::after{content:"\2190"}
+@media (hover:hover) and (pointer:fine){
+.grid-2>.card:has(>h3>.card-cover):hover>h3::after{opacity:1;transform:translateX(4px)}
+[dir=rtl] .grid-2>.card:has(>h3>.card-cover):hover>h3::after{transform:translateX(-4px)}
+.grid-2>.card:has(>h3>.card-cover):hover>h3 .card-cover{color:var(--gold)}}
+.grid-2>.card:has(>h3>.card-cover) .card-cover:focus-visible{outline-offset:6px}
+@media (prefers-reduced-motion:reduce){.grid-2>.card:has(>h3>.card-cover)>h3::after{transition:none}.grid-2>.card:has(>h3>.card-cover):hover>h3::after{transform:none}}
+.grid-2>.card:has(>h3>.card-cover)>.tag{align-self:flex-start}
+
+/* Footer v2: language pills, calmer spacing (site-wide) */
+.footer{margin-top:3.5rem;padding:1.8rem 0 2.2rem;line-height:1.7}
+.footer-locales{display:flex;flex-wrap:wrap;gap:.3rem;margin:0 0 1rem}
+.footer-locales>span{display:none}
+.footer-locales a{display:inline-flex;align-items:center;min-height:32px;line-height:1.2;padding:.2rem .7rem;border:1px solid var(--theme-line-soft);border-radius:999px;text-decoration:none;font-size:.86rem;transition:background-color 150ms var(--pol-out),border-color 150ms var(--pol-out)}
+@media (hover:hover) and (pointer:fine){.footer-locales a:hover{background:rgba(205,190,171,.1);border-color:rgba(205,190,171,.4)}}
+@media (prefers-reduced-motion:reduce){.footer-locales a{transition:none}}
