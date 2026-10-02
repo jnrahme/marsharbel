@@ -1,7 +1,7 @@
 // Composes src/pages/**/*.html + partials/fragments/*.html into the served HTML
 // files. Output is committed (Hostinger serves the repo as-is), so the build is
 // deterministic and `--check` fails if any served page drifts from its source.
-// Include syntax: {{> name}} anywhere; {{> primary-nav}} is computed per page (active state, link prefix); indentation of the marker is
+// Include syntax: {{> name}} anywhere; {{> name "text"}} fills {{text}} in the fragment (\\" escapes a quote); {{> primary-nav}} is computed per page (active state, link prefix); indentation of the marker is
 // prefixes the first line only; fragments are verbatim blocks.
 import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
 import path from 'node:path';
@@ -23,10 +23,12 @@ const used = new Set(); let stale = [], n = 0;
 for (const file of await walk(SRC).catch(() => [])) {
   const rel = path.relative(SRC, file);
   const source = await readFile(file, 'utf8');
-  const built = source.replace(/([ \t]*)\{\{> ([a-z0-9-]+)\}\}/g, (_, indent, name) => {
+  const built = source.replace(/([ \t]*)\{\{> ([a-z0-9-]+)(?: "((?:[^"\\]|\\.)*)")?\}\}/g, (_, indent, name, arg) => {
     if (name === 'primary-nav') return indent + renderPrimaryNav(navTemplate, rel);
     if (!(name in frags)) throw new Error(`${rel}: unknown fragment ${name}`);
     used.add(name);
+    if (arg !== undefined) { if (!frags[name].includes('{{text}}')) throw new Error(`${rel}: fragment ${name} takes no argument`); return indent + frags[name].replace('{{text}}', () => arg.replace(/\\(.)/g, '$1')); }
+    if (frags[name].includes('{{text}}')) throw new Error(`${rel}: fragment ${name} needs an argument`);
     return indent + frags[name];
   });
   let current = null; try { current = await readFile(rel, 'utf8'); } catch {}
