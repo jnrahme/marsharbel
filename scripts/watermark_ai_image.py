@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Bake the "marsharbel.com" watermark into an AI-generated image file.
 
-Usage: python3 scripts/watermark_ai_image.py SRC DEST [--corner right|left]
+Usage: python3 scripts/watermark_ai_image.py SRC DEST [--corner right|left] [--bottom-frac F] [--size-frac F]
 
 SRC is the clean original (keep it under assets/originals/). DEST is the
 watermarked file the site serves. Dimensions and format are preserved.
@@ -30,19 +30,19 @@ def load_font(size):
         pass
     return pil
 
-def watermark(src, dest, corner='right'):
+def watermark(src, dest, corner='right', bottom_frac=None, size_frac=0.027):
     im = Image.open(src)
     fmt = im.format
     base = im.convert('RGBA')
     w, h = base.size
-    size = max(14, round(w * 0.027))
+    size = max(14, round(w * size_frac))
     font = load_font(size)
     margin = round(w * 0.025)
     probe = ImageDraw.Draw(base)
     l, t, r, b = probe.textbbox((0, 0), TEXT, font=font)
     tw, th = r - l, b - t
     x = w - margin - tw - l if corner == 'right' else margin - l
-    y = h - margin - th - t
+    y = (h - margin - th - t) if bottom_frac is None else (round(h * bottom_frac) - th - t)
     halo = Image.new('RGBA', base.size, (0, 0, 0, 0))
     ImageDraw.Draw(halo).text((x, y), TEXT, font=font, fill=(0, 0, 0, 200))
     halo = halo.filter(ImageFilter.GaussianBlur(max(1.5, size * 0.12)))
@@ -61,7 +61,9 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('src'); ap.add_argument('dest')
     ap.add_argument('--corner', choices=['right', 'left'], default='right')
+    ap.add_argument('--bottom-frac', type=float, default=None, help='bottom edge of the mark as a fraction of image height; use ~0.72 for portrait images shown in object-fit:cover grid cards so the mark is not cropped')
+    ap.add_argument('--size-frac', type=float, default=0.027, help='mark text height as a fraction of image width')
     a = ap.parse_args()
     if os.path.abspath(a.src) == os.path.abspath(a.dest):
         sys.exit('SRC and DEST must differ; keep the clean original.')
-    print(watermark(a.src, a.dest, a.corner))
+    print(watermark(a.src, a.dest, a.corner, a.bottom_frac, a.size_frac))

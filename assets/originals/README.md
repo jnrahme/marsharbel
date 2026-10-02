@@ -10,3 +10,5 @@ Rules:
 - Never watermark historic photographs.
 - Never serve a file from this folder on a page.
 - New AI images: save the clean file here first, then watermark into place. Keep the same dimensions and format.
+
+Portrait images that appear in the gallery grid (object-fit:cover, 360px tall) must be watermarked with `--bottom-frac 0.72 --size-frac 0.034`, so the mark sits inside the part of the image the grid crop keeps (checked at 390, 600 and 1280px wide). Wide strips and the og image keep the default bottom-corner placement.
