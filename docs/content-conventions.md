@@ -48,10 +48,10 @@ uses a full-size image.
 
 ## AI-generated images: watermark step (standard)
 
-Every AI-generated image is watermarked "marsharbel.com" in the file itself, not by CSS, so the name travels with pins and shares (Joey directive, 2026-10-02 9:56 AM, relayed by the main agent). Never watermark historic photographs.
+Every gallery or social-facing AI image is watermarked "marsharbel.com" in the file itself, not by CSS, so the name travels with pins and shares (Joey directive, 2026-10-02 9:56 AM, relayed by the main agent). Never watermark historic photographs.
 
 1. Save the clean original under `assets/originals/<folder>/NAME.ext` (see `assets/originals/README.md`).
 2. Run `python3 scripts/watermark_ai_image.py assets/originals/<folder>/NAME.ext <folder>/NAME.ext`. It adds small semi-transparent serif text in the bottom corner, about 2.7% of image width, and keeps dimensions and format.
 3. Look at the result before shipping; the mark must not cover a face. Use `--corner left` if the right corner is busy.
 4. Keep the "AI transformation, not a photograph" label on the page as well.
-
+5. Scope: gallery and social-facing AI images only. The saint storybook illustrations (media/storybook*/, story-production/*/art) stay unwatermarked per owner decision 10/2: they are site content, not share artifacts, and a mark would hurt the storybook look.
