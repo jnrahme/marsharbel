@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import { intakeRateAllowed, normalizedGatewayIp } from '../../supabase/functions/_shared/intake-rate-limit.ts';
+const config={enabled:true,secret:'s'.repeat(40)};
+const headers=(ip:string)=>new Headers({'cf-connecting-ip':ip});
+assert.equal(normalizedGatewayIp(headers('203.0.113.8')),'203.0.113.8');
+assert.equal(normalizedGatewayIp(headers('2001:0DB8:0:0:0:0:0:1')),'2001:db8::1');
+for(const ip of ['garbage','999.1.1.1','01.2.3.4','203.0.113.1, 203.0.113.2','fe80::1%eth0']) assert.equal(normalizedGatewayIp(headers(ip)),null);
+let calls=0;const hashes:string[]=[];
+const count=async(hash:string)=>{calls++;hashes.push(hash);return calls<=30;};
+for(let i=0;i<30;i++)assert.equal(await intakeRateAllowed(headers('203.0.113.8'),config,count),true);
+assert.equal(await intakeRateAllowed(headers('203.0.113.8'),config,count),false);
+assert.match(hashes[0],/^[0-9a-f]{64}$/);assert.ok(!hashes[0].includes('203.0.113'));assert.equal(new Set(hashes).size,1);
+let other='';await intakeRateAllowed(headers('203.0.113.9'),config,async h=>{other=h;return true;});assert.notEqual(other,hashes[0]);
+assert.equal(await intakeRateAllowed(headers('203.0.113.8'),config,async()=>{throw new Error('database outage')}),true);
+for(const c of [{enabled:false,secret:config.secret},{enabled:true,secret:undefined},{enabled:true,secret:'short'}]) assert.equal(await intakeRateAllowed(headers('203.0.113.8'),c,async()=>{throw new Error('must not call')}),true);
+assert.equal(await intakeRateAllowed(new Headers({'x-forwarded-for':'spoofed'}),config,async()=>{throw new Error('must not call')}),true);
+console.log('Limiter: normal 30 requests pass, burst throttles, HMAC privacy/canonical IPs, unknown header/no secret/disabled/store errors fail open.');

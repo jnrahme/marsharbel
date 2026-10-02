@@ -1,4 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.57.4';
+import { intakeRateAllowed } from '../_shared/intake-rate-limit.ts';
 import { IntakeError, readJsonLimited, validateSubmission } from '../_shared/validation.ts';
 
 Deno.serve(async request => {
@@ -17,6 +18,16 @@ Deno.serve(async request => {
     const hcaptchaSitekey = Deno.env.get('HCAPTCHA_SITE_KEY');
     if (!url || !key || !captchaSecret || !['turnstile', 'hcaptcha'].includes(provider) || (provider === 'hcaptcha' && !hcaptchaSitekey)) return reply(503, { message: 'Submissions are temporarily paused.' });
     const db = createClient(url, key, { auth: { persistSession: false } });
+    const rateAllowed = await intakeRateAllowed(request.headers, {
+      enabled: Deno.env.get('TESTIMONY_TRUST_CF_CONNECTING_IP') === 'true',
+      secret: Deno.env.get('TESTIMONY_RATE_HMAC_KEY')
+    }, async hash => {
+      const result = await db.rpc('testimony_check_intake_rate', { p_ip_hash: hash }).abortSignal(AbortSignal.timeout(1500));
+      if (result.error || typeof result.data !== 'boolean') throw new Error('Rate counter unavailable');
+      return result.data;
+    });
+    if (!rateAllowed) return new Response(JSON.stringify({ message: 'Too many attempts. Please wait a few minutes and try again.' }), { status: 429, headers: { ...headers, 'retry-after': '300' } });
+
     const body = await readJsonLimited(request); const payload = validateSubmission(body);
     const token = typeof body.turnstile_token === 'string' ? body.turnstile_token : '';
     if (!token || token.length > 8192) return reply(400, { message: 'Complete the human verification.' });
