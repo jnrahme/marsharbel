@@ -2,7 +2,8 @@
 .sc-language-feedback{max-width:28rem;margin-block:.5rem;color:inherit;font-size:.875rem;line-height:1.45;overflow-wrap:anywhere}
 .sc-language-helper,.sc-language-status{display:block}
 .sc-language-helper:empty,.sc-language-status:empty{display:none}
-.sc-language-status:not(:empty){margin-block-start:.35rem}
+/* Refusal stays available to screen readers without a second visible helper. */
+.sc-language-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0}
 .masthead .lang-switcher{display:flex;align-items:center;gap:.65rem;margin-block:1rem}
 .masthead .lang-switcher select{font:inherit;font-size:1rem;min-height:2.75rem;max-width:100%;background:#221e1a;color:inherit;border:1px solid #746a58;padding:.4rem .6rem}
 nav.locale-nav a[aria-disabled="true"],nav.footer-locales a[aria-disabled="true"]{opacity:.75;cursor:default}
