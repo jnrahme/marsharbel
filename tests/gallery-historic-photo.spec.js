@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 test('gallery historic photograph is credited, opens, and wraps to the first image', async ({ page }) => {
   await page.goto('/gallery');
-  await expect(page.locator('.gallery-item')).toHaveCount(4);
+  await expect(page.locator('.gallery-item')).toHaveCount(9);
   const fourth = page.locator('.gallery-item').nth(3);
   await expect(fourth).toHaveAttribute('href', /\/?media\/annaya\/charbel-historic-photo\.webp$/);
   await fourth.scrollIntoViewIfNeeded();
@@ -15,9 +15,18 @@ test('gallery historic photograph is credited, opens, and wraps to the first ima
   expect(captionBox.y + captionBox.height).toBeLessThanOrEqual(page.viewportSize().height);
   await expect(page.locator('#lightbox-image')).toHaveAttribute('src', /\/?media\/annaya\/charbel-historic-photo\.webp$/);
   await page.locator('#lightbox-next').click();
+  await expect(page.locator('#lightbox-caption')).toContainText('AI transformation, not a photograph');
+  await expect(page.locator('#lightbox-image')).toHaveAttribute('src', /gallery\/charbel-rendition-01-faithful\.webp$/);
+  await expect(page.locator('#gallery-lightbox')).toHaveCSS('background-color', 'rgb(4, 8, 12)');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.share-bar')).toHaveCount(9);
+  await page.locator('.gallery-item').last().click();
+  await expect(page.locator('#lightbox-caption')).toContainText('AI transformation, not a photograph');
+  await expect(page.locator('#lightbox-image')).toHaveAttribute('src', /gallery\/charbel-window-rendition\.webp$/);
+  await page.locator('#lightbox-next').click();
   await expect(page.locator('#lightbox-image')).toHaveAttribute('src', /\/?gallery\/user-link-1\.jpg$/);
   await page.locator('#lightbox-prev').click();
-  await expect(page.locator('#lightbox-image')).toHaveAttribute('src', /\/?media\/annaya\/charbel-historic-photo\.webp$/);
+  await expect(page.locator('#lightbox-image')).toHaveAttribute('src', /gallery\/charbel-window-rendition\.webp$/);
   await page.keyboard.press('Escape');
   await expect(page.locator('#gallery-lightbox')).toBeHidden();
 });
