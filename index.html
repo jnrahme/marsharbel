@@ -63,7 +63,8 @@
   ]
 }
   </script>
-  <link rel="preload" href="/media/optimized/saint-charbel-v1.avif" type="image/avif" as="image" fetchpriority="high" />
+  <link rel="preload" href="./media/hero/annaya-home-hero-800.webp" as="image" type="image/webp" media="(max-width:700px)" fetchpriority="high" />
+  <link rel="preload" href="./media/hero/annaya-home-hero-1280.webp" as="image" type="image/webp" media="(min-width:701px)" fetchpriority="high" />
   <meta name="theme-color" content="#0a1622" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -156,16 +157,21 @@
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
-    <section class="home-cinematic-hero">
+    <section class="home-cinematic-hero home-hero-v2 home-hero-video" data-hero-video>
       <div class="cinematic-backdrop" aria-hidden="true"></div>
+      <video class="home-hero-media" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src-mp4="./media/hero/home-hero-full.mp4?v=1"></video>
+      <div class="home-hero-shade" aria-hidden="true"></div>
       <div class="cinematic-content">
-        <span class="kicker reveal">Lebanon | Maronite Saint</span>
-        <p class="cinematic-eyebrow reveal">A life hidden in prayer. A light seen around the world.</p>
-        <h1 class="reveal">Encounter the silence, witness, and living legacy of Saint Charbel.</h1>
-        <p class="cinematic-lede reveal">Saint Charbel (1828-1898) was a Maronite monk and hermit of Annaya, Lebanon, canonized in 1977. Walk through his life in the mountains of Lebanon, discover the stories of faith linked to his intercession, and enter a quieter rhythm of prayer inspired by the hermit of Annaya.</p>
-        <div class="cinematic-actions reveal"><a class="btn primary" href="./history">Discover His Story</a><a class="btn glass" href="./rosary-visual-guide">Pray the Rosary</a></div>
-        <div class="cinematic-facts reveal" aria-label="Saint Charbel at a glance"><div><strong>1828</strong><span>Born in Bkaakafra</span></div><div><strong>1898</strong><span>Entered eternal life</span></div><div><strong>1977</strong><span>Canonized a saint</span></div></div>
+        <span class="kicker reveal">Everything about Saint Charbel, in one place</span>
+        <h1 class="reveal">Saint Charbel. The hermit of Annaya.</h1>
+        <p class="home-hero-sub reveal">Prayers, miracles, his story and Annaya, free and in one place. Start with nine days.</p>
+        <div class="cinematic-actions home-hero-actions reveal"><a class="btn primary home-hero-cta" href="./saint-charbel-novena">Begin the 9-day Novena <span aria-hidden="true">&rarr;</span></a><a class="btn glass home-hero-cta2" href="./mystery-meditation">Pray today&#x27;s Rosary</a><a class="home-hero-link" href="./prayer-library">or browse all prayers</a></div>
+        <nav class="home-hero-quick reveal" aria-label="Explore Saint Charbel"><a href="./prayer-library">Prayers</a><a href="./miracles/">Miracles</a><a href="./history">Story</a><a href="./stories">Children&#x27;s Books</a><a href="./visit-annaya">Tours</a></nav>
       </div>
+    </section>
+    <section class="home-intro-band" aria-label="About Saint Charbel">
+      <p class="cinematic-lede">Saint Charbel (1828-1898) was a Maronite monk and hermit of Annaya, Lebanon, canonized in 1977. Walk through his life in the mountains of Lebanon, discover the stories of faith linked to his intercession, and enter a quieter rhythm of prayer inspired by the hermit of Annaya.</p>
+      <div class="cinematic-facts" aria-label="Saint Charbel at a glance"><div><strong>1828</strong><span>Born in Bkaakafra</span></div><div><strong>1898</strong><span>Entered eternal life</span></div><div><strong>1977</strong><span>Canonized a saint</span></div></div>
     </section>
 
 <!-- i18n-news-home:start -->
@@ -344,7 +350,7 @@
   <footer class="footer">
     <div class="site-shell"><!-- i18n-navigation:start -->
 <nav class="footer-locales" aria-label="Languages"><a href="/" hreflang="en" lang="en" dir="ltr">English</a> <span aria-hidden="true">-</span> <a href="/ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a> <span aria-hidden="true">-</span> <a href="/fr/" hreflang="fr" lang="fr" dir="ltr">Français</a> <span aria-hidden="true">-</span> <a href="/es/" hreflang="es" lang="es" dir="ltr">Español</a> <span aria-hidden="true">-</span> <a href="/pt/" hreflang="pt" lang="pt" dir="ltr">Português</a> <span aria-hidden="true">-</span> <a href="/it/" hreflang="it" lang="it" dir="ltr">Italiano</a> <span aria-hidden="true">-</span> <a href="/de/" hreflang="de" lang="de" dir="ltr">Deutsch</a> <span aria-hidden="true">-</span> <a href="/pl/" hreflang="pl" lang="pl" dir="ltr">Polski</a></nav>
-<!-- i18n-navigation:end -->Last updated: March 2, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website.</div>
+<!-- i18n-navigation:end -->Last updated: March 2, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website. <span class="home-photo-credit">Annaya photo: LLEW, CC BY-SA 4.0</span></div>
   </footer>
 
   <script src="./monthly-prayer.js" defer></script>
@@ -354,5 +360,6 @@
   <script src="/locale-routes.js" defer></script>
   <script src="./translate.js?v=20260922-1" defer></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script src="./home-hero.js?v=2" defer></script>
 </body>
 </html>
