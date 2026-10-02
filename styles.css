@@ -2834,3 +2834,7 @@ main[id="main-content"]:focus{outline:none}
 .share-bar{position:relative;z-index:3}
 
 .gallery-card--wide{grid-column:1/-1}.gallery-card--wide img{height:auto !important;object-fit:contain}
+/* Static internal-link blocks (SEO internal linking): make links visibly links. */
+[data-internal-links] a { text-decoration: underline; text-underline-offset: 3px; }
+[data-internal-links] a[aria-current="page"] { text-decoration: none; font-weight: 600; }
+[data-internal-links] ul { padding-left: 1.2rem; }
