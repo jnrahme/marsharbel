@@ -252,3 +252,8 @@ figcaption. New images: add a record here in the same batch.
 - media/news/lebanese-food-context.webp: El Mono Español, Lebanese food at L'Autentic, Barcelona, December 4, 2021. Source: https://commons.wikimedia.org/wiki/File:Lebanese_food_in_Barcelona%2C_Spain.jpg . Observed source file: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Lebanese_food_in_Barcelona%2C_Spain.jpg/960px-Lebanese_food_in_Barcelona%2C_Spain.jpg . CC BY-SA 4.0. Converted to WebP; display crop, no content edits. Derivative under same license. Caption explicitly says illustrative, not El Paso festival footage.
 
 Exact organizer anniversary image and parish/KTSM images were not reused: no verified license or owner permission found on their source pages. These context photos replace duplicate portraits without misrepresenting actual event photography.
+
+### Hoayek portrait - NOT USED (news card hoayek-beatification-2026-07 ships without an image)
+- Rejected: Commons File:Elias Peter Hoayek.jpg. The file page establishes Lebanese public domain only (no US tag), gives publication 1948, author unknown. Not usable on that evidence.
+- Candidates for a later pass, neither verified enough yet: File:Elie Hoyek 1899.jpg (265x357, credited "Les Missions catholiques, vol 31, 1899, p. 112", tag PD-Art/PD-old-auto-1923; the printed page has not been opened to confirm) and File:Elias Peter Hoayek 1919.jpg (394x544, BnF Gallica, Agence Meurisse press photo, ark:/12148/btv1b9032709w, dated 1919; whether this print was published before 1931 is not shown). Both are small.
+
