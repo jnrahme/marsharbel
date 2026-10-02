@@ -1,0 +1,2 @@
+# 2026-10-02 - places cross-links (follow-up to the 10-01 places batch)
+Harissa, Cedars, Bkerke and the /saint-charbel hub are all live (HTTP 200) and on origin/stage, so the deferred links could ship. Nav, pilgrimage and places-lebanon already linked all three (integrator). Added in prose: Bkerke -> Harissa (2), Bkerke -> /saint-charbel (1), Harissa -> Bkerke (1, was bold text). Cedars already linked Harissa, Bkerke, hub-adjacent pages; no change. Not done: locale mirrors, Bkerke photo.
