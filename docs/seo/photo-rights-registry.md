@@ -273,7 +273,7 @@ media/news/kfifan-context.webp: Kfifane Convent, Lebanon, June 23, 2012, Evilsca
 ## Gallery watermark and enhancement takes (2026-10-02)
 
 - All five AI series files in gallery/ are watermarked "marsharbel.com" in the file; clean originals in assets/originals/gallery/. Regenerate with scripts/watermark_ai_image.py.
-- gallery/charbel-window-og-1200x630.jpg: /gallery og and twitter image, built from the 2244x2804 window final on a blurred fill, watermarked.
+- gallery/charbel-window-og-1200x630.jpg: /gallery og and twitter image. Since 2026-10-02 it is a 1200x630 face crop (top offset 10% of height, full width, Lanczos resize) of the served rev7-A gallery/charbel-rendition-01-faithful.webp (1122x1402). The crop excludes the watermark band, so no watermark is in frame. No separate clean original exists; do not regenerate it from the window image.
 - Held back: enhanced versions of the supplied scan (light +4%, 4x export; moderate pass unrecorded) are NOT published. Clean files are kept out of the repo until the owner confirms he is the source and may publish it (see the OPEN PROVENANCE GAP entry above).
 
 ## 2026-10-02 - photo pass on six text-only topic pages (reuse of registered assets, no new files)
@@ -281,3 +281,9 @@ media/news/kfifan-context.webp: Kfifane Convent, Lebanon, June 23, 2012, Evilsca
 - saint-charbel-relics, how-did-saint-charbel-die: charbel-tomb.webp (LLEW, CC BY-SA 4.0).
 - saint-charbel-quotes: charbel-historic-photo.webp (public domain per Commons), shown at 320px max to avoid upscaling a 419px source.
 - saint-charbel-patron-saint: lebanon-cedars.webp (Vyacheslav Argenberg, CC BY 4.0).
+
+## 2026-10-02 - dark-beard replacements in the AI gallery series
+- gallery/charbel-window-rendition.webp (2244x2804) replaced by the dark-beard version and gallery/charbel-rendition-01-faithful.webp (1122x1402) replaced by the dark-beard "rev7-A" image, per Joey's WhatsApp requests of 2:01 PM ("add this image to the glallery please!!!") and his 2:08 PM correction naming rev7-A. Cache version 20261002-dark-beard-3.
+- Window image: clean original in assets/originals/gallery/charbel-window-rendition.webp; served file watermarked with --bottom-frac 0.72 --size-frac 0.034. The gallery og image is no longer built from this image (see the og entry above).
+- Rev7-A: NO clean original exists. The served file is the supplied watermarked preview (watermark baked at the grid parameters) converted to WebP q92. Regenerate only if a clean original is supplied.
+- Candidate 01 caption text dictated by Joey (relayed 2:04 PM). AI-rendition labels kept in captions and alt text. Generation details of the new images are not recorded in this repo; no claim about their copyright.
