@@ -1,0 +1,39 @@
+/* Authored same-page language control. Unavailable choices never change the page. */
+(function () {
+ 'use strict';
+ var api=window.SC_SAME_PAGE,manifest=window.SC_SAME_PAGE_MANIFEST;
+ if(!api||!manifest)return;
+ var current=api.locate(manifest,location.pathname);
+ var actual=current?current.language:document.documentElement.lang;
+ var copy=(window.SC_SAME_PAGE_COPY||{})[actual];
+ if(!copy)return; // Never show unreviewed English UI as a translated catalog fallback.
+ var host=document.getElementById('sc-language-switcher');
+ if(!host){host=document.createElement('div');host.id='sc-language-switcher';host.className='lang-switcher notranslate';
+  var slot=document.querySelector('.lang-switcher-slot'),nav=document.querySelector('.topbar .nav,header .masthead');
+  if(slot)slot.replaceWith(host);else if(nav)nav.appendChild(host);else document.body.appendChild(host);
+ }
+ host.replaceChildren();
+ var label=document.createElement('label');label.htmlFor='sc-language-select';label.textContent=copy.language;
+ var select=document.createElement('select');select.id='sc-language-select';select.setAttribute('aria-label',copy.choose);select.setAttribute('aria-describedby','sc-language-helper');
+ var names={en:'English',ar:'العربية',fr:'Français',es:'Español',pt:'Português',it:'Italiano',de:'Deutsch',pl:'Polski'};
+ var blocked=false;
+ manifest.languages.forEach(function(lang){var option=document.createElement('option');option.value=lang;option.lang=lang;option.dir=lang==='ar'?'rtl':'ltr';var r=api.resolve(manifest,location.href,lang,actual);option.disabled=!r.available;option.textContent=names[lang]+(!r.available?' ('+copy.suffix+')':'');if(!r.available)blocked=true;select.appendChild(option)});
+ select.value=actual;
+ var helper=document.createElement('span');helper.id='sc-language-helper';helper.className='sc-language-helper';helper.textContent=blocked?copy.helper:'';
+ var status=document.createElement('span');status.id='sc-language-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');status.className='sc-language-status';
+ function refuse(){select.value=actual;status.textContent=copy.unavailable;}
+ function request(lang){var r=api.resolve(manifest,location.href,lang,actual);if(!r.available){refuse();return false;}if(r.reason==='same-language'){select.value=actual;return true;}try{localStorage.setItem('sc_last_explicit_language',lang)}catch(_){}location.assign(r.href);return true;}
+ select.addEventListener('change',function(){request(select.value)});
+ host.append(label,select,helper,status);
+ // Old stored preferences are observed only to explain an unavailable request.
+ // They never redirect, rewrite ordinary links, or relabel document content.
+ var query=new URLSearchParams(location.search).get('lang'),stored='';try{stored=localStorage.getItem('sc_lang_pref')||''}catch(_){}
+ var requested=query||stored;if(requested&&requested!==actual&&!api.resolve(manifest,location.href,requested,actual).available)refuse();
+ document.querySelectorAll('nav.locale-nav,nav.footer-locales').forEach(function(nav){
+  nav.querySelectorAll('a[hreflang]').forEach(function(a){var lang=a.getAttribute('hreflang');var r=api.resolve(manifest,location.href,lang,actual);a.setAttribute('data-language-switch','');if(r.available){a.href=r.href;a.setAttribute('hreflang',lang);a.removeAttribute('aria-disabled')}else{a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.setAttribute('tabindex','-1');a.setAttribute('aria-label',(a.textContent||'')+' ('+copy.suffix+')')}});
+ });
+ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-language-switch]');if(!a)return;e.preventDefault();request(a.getAttribute('hreflang'))});
+ window.SC_LANGUAGE_SWITCH={request:request,actualLanguage:actual};
+ // Back/forward restores the page's own language; no preference redirect runs.
+ window.addEventListener('pageshow',function(){select.value=actual});
+})();
