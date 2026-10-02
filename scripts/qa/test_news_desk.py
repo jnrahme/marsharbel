@@ -12,9 +12,9 @@ class NewsDeskTests(unittest.TestCase):
             self.assertEqual(path.read_text(), text, str(path))
     def test_news_has_sourced_cards(self):
         text = (ROOT/'news.html').read_text()
-        for ident in ['el-paso-lebanese-festival-2026-10','emmitsburg-shrine-anniversary-2026-09']:
+        for ident in ['el-paso-lebanese-festival-2026-10','emmitsburg-shrine-anniversary-2026-09','kfifan-patron-relics-2026-10']:
             self.assertEqual(text.count('id="'+ident+'"'), 1)
-            if ident.startswith('emmitsburg'):
+            if ident.startswith(('emmitsburg', 'kfifan')):
                 self.assertIn('./news#'+ident, (ROOT/'index.html').read_text())
         self.assertIn('https://stsharbelelpaso.org/',text)
         self.assertIn('https://www.familyofsaintsharbel.org/our-news',text)
