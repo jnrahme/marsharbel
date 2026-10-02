@@ -79,6 +79,8 @@ for key,s in STORIES.items():
 <figure class="euch-feature-photo">{img(s,True)}<figcaption>{e(s['alt'])}. {e(H['photo'])}: {e(s['credit'])}, <a href="{e(s['licenseurl'],quote=True)}">{e(s['license'])}</a>; resized to WebP for this site. <a href="{e(s['photo'],quote=True)}">{e(H['originalPhoto'])}</a>.</figcaption></figure>
 <div class="euch-story-body">{sections}<aside class="euch-reflection"><h2>{e(H['reflection'])}</h2><p>{e(s['reflection'])}</p></aside><section class="euch-sources"><h2>{e(H['sources'])}</h2><p><a href="{e(s['source'],quote=True)}">{e(s['sourceLabel'])}</a></p>{further_source}<p>{e(H['updated'])}. {e(H['note'])}</p></section><a href="./" class="euch-back">← {e(H['back'])}</a></div></main>{FOOTER}{scripts()}</body></html>'''
     outputs[DEST/(key+'.html')] = story
+from i18n.same_page_injection import control_outputs
+outputs.update(control_outputs(ROOT,outputs,json.loads((ROOT/'locales/same-page-manifest.pending.json').read_text()),json.loads((ROOT/'locales/same-page-copy.json').read_text())))
 if '--check' in sys.argv:
     stale=[str(path.relative_to(ROOT)) for path, rendered in outputs.items() if not path.exists() or path.read_text()!=rendered]
     if stale: raise SystemExit('Stale Eucharistic pages: '+', '.join(stale))

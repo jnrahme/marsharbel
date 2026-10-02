@@ -7,7 +7,7 @@ def pending_manifest(root):
     revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()
     pages={};seen={}
     for file in sorted(root.rglob('*.html')):
-        if any(part in {'node_modules','.git','templates','docs','test-results','playwright-report'} for part in file.relative_to(root).parts):continue
+        if any(part in {'node_modules','.git','src','templates','docs','test-results','playwright-report'} for part in file.relative_to(root).parts):continue
         soup=BeautifulSoup(file.read_text(),'html.parser')
         canonical=soup.select_one('link[rel=canonical]');robots=soup.select_one('meta[name=robots]')
         if not canonical or not soup.main or (robots and 'noindex' in robots.get('content','')):continue

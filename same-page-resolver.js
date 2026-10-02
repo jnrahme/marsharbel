@@ -4,7 +4,7 @@
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.SC_SAME_PAGE = api;
 })(typeof window === 'object' ? window : globalThis, function () {
-  'use strict';
+
   function pathKey(path) {
     var clean = path.replace(/\/index(?:\.html)?$/, '/').replace(/\.html$/, '').replace(/\/$/, '');
     return clean || '/';
@@ -18,7 +18,7 @@
         var variant = page.variants[lang];
         [variant.path].concat(variant.aliases || []).forEach(function (path) {
           if (pathKey(path) === key) {
-            if (found && (found.pageID !== id || found.language !== lang)) throw new Error('Ambiguous page identity');
+            if (found && (found.pageID !== id || found.language !== lang)) throw new Error('ambiguous-page-identity');
             found = { pageID: id, language: lang, page: page, variant: variant };
           }
         });

@@ -4,7 +4,7 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from i18n.same_page_injection import control_outputs
 root=Path(__file__).resolve().parents[1];target=Path(os.environ.get('SAME_PAGE_PREVIEW_DIR','/tmp/marsharbel-same-page-preview'))
-manifest=json.loads((root/'locales/same-page-manifest.pending.json').read_text());copy=json.loads((root/'locales/same-page-copy.draft.json').read_text())
+manifest=json.loads((root/'locales/same-page-manifest.pending.json').read_text());copy=json.loads((root/'locales/same-page-copy.json').read_text())
 if target.exists():shutil.rmtree(target)
 target.mkdir(parents=True)
 # Link untouched assets and scripts. Never copy the media-heavy source tree.

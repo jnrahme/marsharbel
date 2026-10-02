@@ -9,6 +9,9 @@ import re,json,subprocess
 from i18n.catalog import read_json
 
 def inject_control(text, root, manifest, copy):
+    # Deterministic rebuilding: remove only our generated control resources.
+    text=re.sub(r'<script\b[^>]*src=["\']/same-page-(?:manifest|copy|resolver|switcher)\.js["\'][^>]*></script>\s*','',text)
+    text=re.sub(r'<link\b[^>]*id=["\']sc-language-css["\'][^>]*>\s*','',text)
     soup=BeautifulSoup(text,'html.parser')
     lang=soup.html.get('lang','en') if soup.html else 'en'
     if lang not in copy:raise ValueError('Missing reviewed selector copy '+lang)
@@ -22,6 +25,7 @@ def inject_control(text, root, manifest, copy):
     # Mutate only language nav blocks, never MAIN or ordinary editorial anchors.
     def static_nav(match):
         nav=BeautifulSoup(match[0],'html.parser').nav
+        for helper in nav.select('.sc-language-helper'):helper.decompose()
         unavailable=False
         for a in nav.select('a[hreflang]'):
             code=a['hreflang'];choice=choices.get(code,{})
@@ -41,7 +45,6 @@ def inject_control(text, root, manifest, copy):
     text=re.sub(r'<nav\b[^>]*class=["\'](?:locale-nav|footer-locales)["\'][\s\S]*?</nav>',static_nav,text)
     text=text.replace('</head>','<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />\n</head>')
     scripts='\n'.join('<script defer src="/'+name+'"></script>' for name in ['same-page-manifest.js','same-page-copy.js','same-page-resolver.js','same-page-switcher.js'])
-    if 'src="/same-page-resolver.js"' in text:raise ValueError('Duplicate control injection')
     if text.count('</body>')!=1:raise ValueError('Missing unique body end')
     return text.replace('</body>',scripts+'\n</body>')
 
