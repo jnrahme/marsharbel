@@ -287,3 +287,14 @@ media/news/kfifan-context.webp: Kfifane Convent, Lebanon, June 23, 2012, Evilsca
 - Window image: clean original in assets/originals/gallery/charbel-window-rendition.webp; served file watermarked with --bottom-frac 0.72 --size-frac 0.034. The gallery og image is no longer built from this image (see the og entry above).
 - Rev7-A: NO clean original exists. The served file is the supplied watermarked preview (watermark baked at the grid parameters) converted to WebP q92. Regenerate only if a clean original is supplied.
 - Candidate 01 caption text dictated by Joey (relayed 2:04 PM). AI-rendition labels kept in captions and alt text. Generation details of the new images are not recorded in this repo; no claim about their copyright.
+
+## 2026-10-02 - Annaya online tour (annaya-tour.html), media/tour/
+Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-10-02 (WhatsApp, verbatim: "We dont need any permission to build anything for the saint..."). The source site's footer says "All Rights Reserved" and gives no photographer credit; no written license from the site exists. Real photographs only, each viewed before use.
+- media/tour/annaya-winter-panorama.webp (2400x917): Wikimedia Commons File:Pan Annaya in Winter.JPG, Paul Saad, CC BY-SA 4.0 (verified from Commons API metadata 2026-10-02). Cropped and resized. The oversaturated "Winter, Lebanon" variant and "Housea" (unidentified building) were not used.
+- media/tour/annaya-night-aerial.webp (1060x596): saintcharbel.com monastery page, annaya-monastery-top-view-01. Credit: saintcharbel.com (Saint Charbel Oasis), used with owner permission.
+- media/tour/annaya-courtyard-night.webp (1000x600): saintcharbel.com, annaya-monastery-court-02. Same credit.
+- media/tour/annaya-tomb-icon.webp (956x603): saintcharbel.com, annaya-mazar-09. Same credit.
+- media/tour/annaya-hermitage-view.webp (1600x1066): saintcharbel.com/the-hermitage, hermitage-outside-004. Same credit. Shows a view toward the coast from the hermitage area (terrace/roof), not an identifiable hermitage building; captioned that way.
+- media/tour/annaya-tomb-detail.webp (1600x900): Commons File:Charbel Makhlouf grave.JPG, LLEW, CC BY-SA 4.0. Converted but not used on the page yet.
+- NOT used: saintcharbel.com "-silhouette" and "saint-charbel-house-01" images (painterly renderings, not photographs), and the Pope Leo image (Vatican-sourced).
+- Tour photo rights basis (2026-10-02): Joey's authenticated WhatsApp messages, ids supplied by the main agent for the reviewer to verify: 3:12 PM "I have full permission we can just scrape it from the web" (wamid.HBgLMTQwNDQzNzUzNzMVAgASGBQzQkFFMEQzRDlFMjA4MTQ1MjhGMwA=), replying to the tours-photo sourcing plan; and the standing rule at 3:13 PM (wamid.HBgLMTQwNDQzNzUzNzMVAgASGBQzQjExQTEyNUI3Qzk4NDQyMTNDMwA=). The hermitage-outside-004 label comes from the source page and is not independently confirmed.
