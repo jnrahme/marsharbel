@@ -28,6 +28,7 @@ class LitanyMirrorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);(root/'locales/ar').mkdir(parents=True)
             shutil.copy(ROOT/'locales/ar/litany.json',root/'locales/ar/litany.json')
+            shutil.copy(ROOT/'locales/ar/common.json',root/'locales/ar/common.json')
             (root/'litany-of-saint-charbel.html').write_text((ROOT/'litany-of-saint-charbel.html').read_text().replace('A Litany to the Hermit','Changed intro'))
             with self.assertRaisesRegex(ValueError,'master changed'):render_litany(root)
 if __name__=='__main__':unittest.main()

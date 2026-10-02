@@ -22,7 +22,7 @@ class FeastMirrorTests(unittest.TestCase):
   self.assertIn('اختيار الموعد لرعيتك',ar.get_text());self.assertIn('العيد حول العالم',ar.get_text());self.assertIn('الطريق إلى العيد',ar.get_text())
  def test_drift_rejected(self):
   with tempfile.TemporaryDirectory() as tmp:
-   root=Path(tmp);(root/'locales/ar').mkdir(parents=True);shutil.copy(ROOT/'locales/ar/feast-mirror.json',root/'locales/ar/feast-mirror.json');shutil.copy(ROOT/'locales/registry.json',root/'locales/registry.json')
+   root=Path(tmp);(root/'locales/ar').mkdir(parents=True);shutil.copy(ROOT/'locales/ar/feast-mirror.json',root/'locales/ar/feast-mirror.json');shutil.copy(ROOT/'locales/registry.json',root/'locales/registry.json');shutil.copy(ROOT/'locales/ar/common.json',root/'locales/ar/common.json')
    (root/'saint-charbel-feast-day.html').write_text((ROOT/'saint-charbel-feast-day.html').read_text().replace('Two Dates, One Feast','Changed heading'))
    with self.assertRaisesRegex(ValueError,'master changed'):render_feast(root)
 if __name__=='__main__':unittest.main()
