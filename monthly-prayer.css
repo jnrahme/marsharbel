@@ -150,3 +150,12 @@
 .home-intro-band .home-intro-text .cinematic-facts{justify-content:flex-start}
 @media(max-width:820px){.home-intro-band{grid-template-columns:1fr}.home-portrait{max-width:320px;margin-inline:auto}}
 .home-portrait a{display:block}
+
+/* Home UI v2: one shared content edge and even vertical rhythm */
+.home-letter,main.site-shell>.section{box-sizing:border-box;width:min(1180px,calc(100% - 2.5rem));margin-inline:auto}
+.home-letter{margin-block:clamp(1.5rem,3vw,2.5rem) clamp(2rem,4vw,3.5rem)}
+main.site-shell>.section:not(.home-letter){padding-inline:0}
+@media(max-width:760px){.home-letter,main.site-shell>.section{width:calc(100% - 2.5rem)}}
+@media(max-width:760px){.home-letter{padding:1.2rem}}
+.footer .site-shell{width:min(1180px,calc(100% - 2.5rem))}
+@media (max-width:760px){.footer .site-shell{width:calc(100% - 72px)}}
