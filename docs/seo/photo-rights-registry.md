@@ -275,3 +275,9 @@ media/news/kfifan-context.webp: Kfifane Convent, Lebanon, June 23, 2012, Evilsca
 - All five AI series files in gallery/ are watermarked "marsharbel.com" in the file; clean originals in assets/originals/gallery/. Regenerate with scripts/watermark_ai_image.py.
 - gallery/charbel-window-og-1200x630.jpg: /gallery og and twitter image, built from the 2244x2804 window final on a blurred fill, watermarked.
 - Held back: enhanced versions of the supplied scan (light +4%, 4x export; moderate pass unrecorded) are NOT published. Clean files are kept out of the repo until the owner confirms he is the source and may publish it (see the OPEN PROVENANCE GAP entry above).
+
+## 2026-10-02 - photo pass on six text-only topic pages (reuse of registered assets, no new files)
+- saint-charbel-hermitage: annaya-monastery.webp (Paul Saad, CC BY-SA 4.0), caption says it is the monastery below the hermitage.
+- saint-charbel-relics, how-did-saint-charbel-die: charbel-tomb.webp (LLEW, CC BY-SA 4.0).
+- saint-charbel-quotes: charbel-historic-photo.webp (public domain per Commons), shown at 320px max to avoid upscaling a 419px source.
+- saint-charbel-patron-saint: lebanon-cedars.webp (Vyacheslav Argenberg, CC BY 4.0).
