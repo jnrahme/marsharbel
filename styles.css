@@ -2963,3 +2963,14 @@ a.card:active{transform:scale(.99);transition-duration:140ms}
 .scripture-quote p.scripture-note{margin:.8rem 0 0;font-size:1rem;line-height:1.6;color:var(--theme-ink-soft)}
 .enc-trail{margin:1rem 0 0;font-size:.95rem;color:var(--theme-ink-soft)}
 .enc-trail a{color:var(--theme-accent);text-decoration:underline}
+.home-travel{width:min(1180px,calc(100% - 2.5rem));margin:0 auto;padding:0 0 clamp(2.5rem,5vw,4.5rem)}
+.home-travel-card{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(1.25rem,3vw,2.5rem);align-items:center;color:inherit;text-decoration:none;border:1px solid var(--theme-line);border-radius:24px;background:var(--theme-surface);padding:1rem}
+.home-travel-card:hover{border-color:var(--theme-accent)}
+.home-travel-card:focus-visible{outline:2px solid var(--theme-accent);outline-offset:3px}
+.home-travel-photo{display:block;border-radius:16px;overflow:hidden;aspect-ratio:16/9}
+.home-travel-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.home-travel-copy{display:flex;flex-direction:column;gap:.6rem;padding:.5rem .6rem}
+.home-travel-copy h2{margin:0;font-size:clamp(1.45rem,2.2vw,1.9rem)}
+.home-travel-credit{margin:.5rem .4rem 0;font-size:.8rem;color:var(--theme-ink-soft)}
+.home-travel-credit a{color:var(--theme-accent)}
+@media (max-width:760px){.home-travel-card{grid-template-columns:1fr}}
