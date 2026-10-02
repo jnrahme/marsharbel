@@ -8,6 +8,8 @@ import sys
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
+from i18n.metadata import published_locales
+REGISTRY = json.loads((ROOT / 'locales/registry.json').read_text())
 C = json.loads((ROOT / 'locales/en/eucharistic-miracles.json').read_text())
 H, STORIES = C['hub'], C['stories']
 DEST = ROOT / 'miracles/eucharistic'
@@ -32,7 +34,7 @@ def head(title, desc, url, image, bread):
                   {'@type':'ListItem','position':i+1,'name':name,'item':link}
                   for i,(name,link) in enumerate(bread)]}}
     data=json.dumps(schema,ensure_ascii=False).replace('<','\\u003c')
-    alternates = ''.join(f'<link rel="alternate" hreflang="{lang}" href="https://marsharbel.com{("/"+lang) if lang != "en" else ""}/miracles/eucharistic/{url.split("/miracles/eucharistic/",1)[1]}">' for lang in ('en','ar','fr','es','pt','it','de','pl'))
+    alternates = ''.join(f'<link rel="alternate" hreflang="{lang}" href="https://marsharbel.com{("/"+lang) if lang != "en" else ""}/miracles/eucharistic/{url.split("/miracles/eucharistic/",1)[1]}">' for lang in published_locales(REGISTRY, 'eucharistic'))
     alternates += f'<link rel="alternate" hreflang="x-default" href="{url}">'
     return f'''<!doctype html>
 <html lang="en"><head>

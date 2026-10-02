@@ -1,3 +1,4 @@
+from i18n.metadata import og_locales, published_locales
 GTAG_BLOCK = '''<!-- Google tag (gtag.js) -->
 <script>
   (function () {
@@ -70,14 +71,14 @@ def render_eucharistic(root=ROOT, registry=None):
     registry = registry or read_json(root/'locales/registry.json')
     en = read_json(root/'locales/en/eucharistic-miracles.json')
     domain = registry['site']
-    routes = {slug:{lang:f'/{lang}/miracles/eucharistic/{slug}' for lang in registry['locales'] if lang != 'en'} for slug in SLUGS}
-    routes['index'] = {lang:f'/{lang}/miracles/eucharistic/' for lang in registry['locales'] if lang != 'en'}
+    routes = {slug:{lang:f'/{lang}/miracles/eucharistic/{slug}' for lang in published_locales(registry, 'eucharistic') if lang != 'en'} for slug in SLUGS}
+    routes['index'] = {lang:f'/{lang}/miracles/eucharistic/' for lang in published_locales(registry, 'eucharistic') if lang != 'en'}
     for slug in routes: routes[slug]['en'] = '/miracles/eucharistic/' + ('' if slug=='index' else slug)
     source = {slug:(root/'miracles/eucharistic'/('index.html' if slug=='index' else slug+'.html')).read_text() for slug in routes}
     result = {}
     english_header = read_json(root/'locales/en/mirrors/prayers.json')
     chrome_lookup = {v:k for k,v in english_header.items() if k.startswith('header.')}
-    for lang in registry['locales']:
+    for lang in published_locales(registry, 'eucharistic'):
         if lang == 'en': continue
         local = read_json(root/f'locales/{lang}/eucharistic-miracles.json')
         validate(en, local, lang)
@@ -91,11 +92,11 @@ def render_eucharistic(root=ROOT, registry=None):
             soup.html['dir'] = registry['locales'][lang]['direction']
             skip = soup.select_one('.skip-link')
             if skip is not None: skip.string = common['navigation.skip']
-            OG_MAP = {'en':'en_US','ar':'ar_AR','es':'es_ES','fr':'fr_FR','pt':'pt_PT','it':'it_IT','de':'de_DE','pl':'pl_PL'}
+            OG_MAP = og_locales(registry)
             for stale in list(soup.select('meta[property="og:locale"],meta[property="og:locale:alternate"]')):
                 stale.extract()
             anchor = soup.find('meta', property='og:url') or soup.find('link', rel='canonical')
-            for code in [lang] + [k for k in OG_MAP if k != lang]:
+            for code in [lang] + [k for k in OG_MAP if k != lang and k in published_locales(registry, 'eucharistic')]:
                 t = soup.new_tag('meta'); t['property'] = 'og:locale' if code == lang else 'og:locale:alternate'; t['content'] = OG_MAP[code]
                 anchor.insert_after(t); anchor = t
             if 'G-CJX1M0VFKP' not in str(soup.head):
@@ -233,7 +234,7 @@ def render_eucharistic(root=ROOT, registry=None):
             sole(soup,'link[rel="canonical"]')['href']=current
             for selector in ('meta[property="og:url"]',):sole(soup,selector)['content']=current
             for tag in soup.select('link[rel=alternate]'): tag.decompose()
-            for code in reversed((*registry['locales'],'x-default')):
+            for code in reversed((*published_locales(registry, 'eucharistic'),'x-default')):
                 actual='en' if code=='x-default' else code
                 node=soup.new_tag('link',rel='alternate',hreflang=code,href=domain+routes[slug][actual])
                 sole(soup,'link[rel="canonical"]').insert_after(node)

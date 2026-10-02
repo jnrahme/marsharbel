@@ -1,10 +1,8 @@
 """Render the corrected Qadisha master and published locale mirrors from one template."""
+from i18n.metadata import og_locales, published_locales
 
-OG_LOCALE = {'en':'en_US','ar':'ar_AR','es':'es_ES','fr':'fr_FR','pt':'pt_PT','it':'it_IT','de':'de_DE','pl':'pl_PL'}
-
-
-def og_alternates(code):
-    return '\n'.join(f'<meta property="og:locale:alternate" content="{v}" />' for k, v in OG_LOCALE.items() if k != code)
+def og_alternates(code, registry=None):
+    return '\n'.join(f'<meta property="og:locale:alternate" content="{v}" />' for k, v in og_locales(registry).items() if k != code)
 
 from html import escape
 import json
@@ -40,7 +38,7 @@ def render_qadisha(root=ROOT, registry=None):
         leaves(catalog)
         tokens = {**catalog, 'locale.code': code, 'locale.direction': registry['locales'][code]['direction'],
                   'locale.canonical': SITE + route, 'locale.alternates': alternates,
-                  'locale.ogLocale': OG_LOCALE[code], 'locale.ogLocaleAlternates': og_alternates(code)}
+                  'locale.ogLocale': og_locales(registry)[code], 'locale.ogLocaleAlternates': og_alternates(code, registry)}
         def substitute(match):
             key = match.group(1)
             if key in ('locale.alternates', 'locale.ogLocaleAlternates'):

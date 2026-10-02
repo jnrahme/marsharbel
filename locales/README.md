@@ -75,3 +75,17 @@ After changing a catalog or route, run `npm run i18n:build`, `npm run i18n:check
 `python3 scripts/qa/check_language_routes.py`, the full QA suite and the browser
 quality suite. Verify the live sitemap in Google Search Console and IndexNow
 after publication. Keep the sitemap limited to canonical 200-serving URLs.
+
+### Script locale route identity
+
+This rollout deliberately preserves code-folder identity: a published locale's
+home is `/{code}/` and topic URLs use that same code prefix. If approved,
+Simplified Chinese uses `zh-Hans` with `/zh-Hans/`, not an unannounced lowercase
+route alias. `zh-cn` and `zh-hans` may be selector/preference/query aliases through
+registry metadata. They are not separate indexable URLs. A route-prefix change
+requires a separate canonical/redirect plan and explicit regression tests.
+
+The guarded DOM utility excludes comments, script/style/template/noscript and
+explicit hidden/inert/aria-hidden descendant text. It does not infer CSS-only
+visibility. Audit each selected container before producing slots; preserve
+excluded strings and managed comments untouched.

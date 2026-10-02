@@ -232,7 +232,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_all_registered_languages_have_all_topics(self):
         registry, catalogs = load_catalog(self.root)
-        self.assertEqual(set(catalogs), {'en','ar','fr','es','pt','it','de','pl'})
+        self.assertEqual(set(catalogs), set(registry['locales']))
         for code,catalog in catalogs.items():
             self.assertEqual(set(catalog['pages']),set(locale_topics(registry,code)))
         self.assertTrue({'biography','prayers','novena','rosary','annaya'} <= set(catalogs['pl']['pages']))

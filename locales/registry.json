@@ -13,7 +13,9 @@
         "novena": "novena",
         "rosary": "rosary",
         "annaya": "annaya"
-      }
+      },
+      "ogLocale": "en_US",
+      "selectorAliases": []
     },
     "ar": {
       "nativeName": "العربية",
@@ -31,7 +33,9 @@
         "nohadStory": "miracles/nohad-el-shami",
         "dafneStory": "miracles/dafne-gutierrez",
         "raymondStory": "miracles/raymond-nader"
-      }
+      },
+      "ogLocale": "ar_AR",
+      "selectorAliases": []
     },
     "fr": {
       "nativeName": "Français",
@@ -43,7 +47,9 @@
         "novena": "neuvaine",
         "rosary": "chapelet",
         "annaya": "annaya"
-      }
+      },
+      "ogLocale": "fr_FR",
+      "selectorAliases": []
     },
     "es": {
       "nativeName": "Español",
@@ -56,7 +62,9 @@
         "rosary": "rosario",
         "annaya": "annaya",
         "feastDay": "fiesta"
-      }
+      },
+      "ogLocale": "es_ES",
+      "selectorAliases": []
     },
     "pt": {
       "nativeName": "Português",
@@ -69,7 +77,9 @@
         "rosary": "rosario",
         "annaya": "annaya",
         "feastDay": "festa"
-      }
+      },
+      "ogLocale": "pt_PT",
+      "selectorAliases": []
     },
     "it": {
       "nativeName": "Italiano",
@@ -81,7 +91,9 @@
         "novena": "novena",
         "rosary": "rosario",
         "annaya": "annaya"
-      }
+      },
+      "ogLocale": "it_IT",
+      "selectorAliases": []
     },
     "de": {
       "nativeName": "Deutsch",
@@ -93,7 +105,9 @@
         "novena": "novene",
         "rosary": "rosenkranz",
         "annaya": "annaya"
-      }
+      },
+      "ogLocale": "de_DE",
+      "selectorAliases": []
     },
     "pl": {
       "nativeName": "Polski",
@@ -105,7 +119,9 @@
         "novena": "nowenna",
         "rosary": "rozaniec",
         "annaya": "annaya"
-      }
+      },
+      "ogLocale": "pl_PL",
+      "selectorAliases": []
     }
   },
   "authoredMirrors": {
@@ -166,6 +182,16 @@
         "biography",
         "canonization",
         "hermitage"
+      ],
+      "locales": [
+        "en",
+        "ar",
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "pl"
       ]
     },
     "prayers": {
@@ -180,6 +206,16 @@
       "relatedEnglish": "/saint-charbel-prayers",
       "sources": [
         "canonization"
+      ],
+      "locales": [
+        "en",
+        "ar",
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "pl"
       ]
     },
     "novena": {
@@ -200,6 +236,16 @@
       "sources": [
         "novena",
         "monastery"
+      ],
+      "locales": [
+        "en",
+        "ar",
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "pl"
       ]
     },
     "rosary": {
@@ -216,6 +262,16 @@
       "sources": [
         "rosary",
         "rosaryPrayers"
+      ],
+      "locales": [
+        "en",
+        "ar",
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "pl"
       ]
     },
     "annaya": {
@@ -231,6 +287,16 @@
       "sources": [
         "monastery",
         "hermitage"
+      ],
+      "locales": [
+        "en",
+        "ar",
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "pl"
       ]
     },
     "feastDay": {
@@ -362,5 +428,46 @@
     "maroniteParishMiracles": "https://www.sharbel.org/st-sharbel",
     "maroniteVoiceDafne": "https://www.catholicsun.org/2018/01/29/she-came-and-prayed-asking-st-sharbel-to-cure-her/",
     "catholicWorldRaymond": "https://www.catholicworldreport.com/2019/01/28/lebanese-man-finds-hand-of-providence-in-mystical-experience/"
+  },
+  "publicationSets": {
+    "prayers": [
+      "en",
+      "ar",
+      "fr",
+      "es",
+      "pt",
+      "it",
+      "de",
+      "pl"
+    ],
+    "eucharistic": [
+      "en",
+      "ar",
+      "fr",
+      "es",
+      "pt",
+      "it",
+      "de",
+      "pl"
+    ]
+  },
+  "ogLocaleOrder": [
+    "en",
+    "ar",
+    "es",
+    "fr",
+    "pt",
+    "it",
+    "de",
+    "pl"
+  ],
+  "domMirrors": {
+    "feast": {
+      "english": "/saint-charbel-feast-day",
+      "routes": {
+        "ar": "/ar/feast-day"
+      },
+      "catalog": "feast-mirror.json"
+    }
   }
 }

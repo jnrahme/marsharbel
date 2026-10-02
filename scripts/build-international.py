@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 from string import Template
 
+from i18n.metadata import og_locales, published_locales, selector_aliases
 from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_locales
 from i18n.mirror import render_mirrors
 from i18n.qadisha_mirror import render_qadisha
@@ -15,6 +16,7 @@ from i18n.feast_mirror import render_feast
 from i18n.litany_mirror import render_litany
 from i18n.eucharistic_mirror import render_eucharistic
 from i18n.chaplet_mirror import render_chaplet
+from i18n.exact_master import render_exact_set
 
 
 def alternate_links(registry, topic=None):
@@ -28,7 +30,6 @@ def alternate_links(registry, topic=None):
     return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{url}" />' for code, url in links.items())
 
 
-OG_LOCALE = {'en':'en_US','ar':'ar_AR','es':'es_ES','fr':'fr_FR','pt':'pt_PT','it':'it_IT','de':'de_DE','pl':'pl_PL'}
 
 def footer_locale_bar(registry):
     links = []
@@ -38,6 +39,7 @@ def footer_locale_bar(registry):
     return '<nav class="footer-locales" aria-label="Languages">' + ' <span aria-hidden="true">-</span> '.join(links) + '</nav>'
 
 def og_locale_tags(registry, code):
+    OG_LOCALE = og_locales(registry)
     tags = [f'<meta property="og:locale" content="{OG_LOCALE[code]}" />']
     for other in registry['locales']:
         if other != code:
@@ -155,9 +157,10 @@ def outputs(root=ROOT):
     result.update(eucharistic)
     result.update(render_chaplet(root))
     result.update(render_feast(root))
+    result.update(render_exact_set(root, registry))
     # Nested localized directory indexes must be explicit; Options -Indexes
     # otherwise hides hubs on some hosts.
-    for code in registry['locales']:
+    for code in published_locales(registry, 'eucharistic'):
         if code != registry['defaultLocale']:
             result[root/code/'miracles/eucharistic/.htaccess'] = (
                 '# Canonical localized Eucharistic directory hub.\nOptions -Indexes\nDirectoryIndex index.html\n')
@@ -192,9 +195,9 @@ def outputs(root=ROOT):
     generated = [registry['site'] + page_url(registry, code) for code in registry['locales'] if code != registry['defaultLocale']]
     generated += [registry['site'] + page_url(registry, code, topic) for code in registry['locales'] for topic in locale_topics(registry, code)]
     generated += [registry['site'] + '/' + code + '/miracles/eucharistic/' + ('' if slug=='index' else slug)
-                  for code in registry['locales'] if code != registry['defaultLocale']
+                  for code in published_locales(registry, 'eucharistic') if code != registry['defaultLocale']
                   for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney')]
-    generated += [registry['site'] + route for mirror in registry.get('authoredMirrors', {}).values()
+    generated += [registry['site'] + route for mirror in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values()
                   for route in mirror['routes'].values() if route != mirror['english']]
     def entry(url):
         lastmod = f'<lastmod>{lastmods[url]}</lastmod>' if url in lastmods else ''
@@ -202,15 +205,15 @@ def outputs(root=ROOT):
     text = text.replace('</urlset>', '\n' + '\n'.join(entry(url) for url in generated) + '\n</urlset>')
     text = re.sub(r'\n[ \t]*\n(?:[ \t]*\n)+', '\n\n', text)
     result[sitemap] = text
-    routing = {'homes':{code: cfg['home'] for code,cfg in registry['locales'].items()},
+    routing = {'aliases':selector_aliases(registry), 'homes':{code: cfg['home'] for code,cfg in registry['locales'].items()},
                'topics':{cfg['relatedEnglish']:{code:page_url(registry,code,topic) for code in topic_locales(registry,topic)} for topic,cfg in registry['topics'].items()}}
-    for mirror in registry.get('authoredMirrors', {}).values():
+    for mirror in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values():
         routing['topics'][mirror['english']] = mirror['routes']
     routing['topics']['/saint-charbel-feast-day']['en']='/saint-charbel-feast-day'
     for slug in ('', 'lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica','ludbreg','amsterdam','ivorra','faverney'):
         english = '/miracles/eucharistic/' + slug
         routing['topics'][english] = {code:('/' + code if code != 'en' else '') + english
-                                       for code in registry['locales']}
+                                       for code in published_locales(registry, 'eucharistic')}
     # The English Chaplet remains the master; add only the authored Arabic alternate.
     chaplet = root / 'saint-charbel-chaplet.html'
     chaplet_text = chaplet.read_text()
