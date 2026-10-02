@@ -67,37 +67,98 @@
     { id: 'email', label: 'Email', href: (u, t) => 'mailto:?subject=' + encodeURIComponent(t) + '&body=' + encodeURIComponent(t + '\n\n' + u) }
   ];
 
+  let menuCount = 0;
+  let openMenu = null;
+  const closeMenu = (restoreFocus) => {
+    if (!openMenu) return;
+    const { trigger, panel, backdrop } = openMenu;
+    panel.hidden = true;
+    backdrop.hidden = true;
+    trigger.setAttribute('aria-expanded', 'false');
+    document.documentElement.classList.remove('share-sheet-open');
+    if (restoreFocus) trigger.focus();
+    openMenu = null;
+  };
+  const placePanel = (trigger, panel) => {
+    panel.style.left = '';
+    panel.style.top = '';
+    if (window.matchMedia('(max-width: 820px)').matches) return;
+    const r = trigger.getBoundingClientRect();
+    const w = panel.offsetWidth;
+    const h = panel.offsetHeight;
+    const left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8));
+    const below = r.bottom + 8;
+    const top = below + h > window.innerHeight - 8 && r.top - h - 8 > 8 ? r.top - h - 8 : below;
+    panel.style.left = left + 'px';
+    panel.style.top = top + 'px';
+  };
+  document.addEventListener('click', event => {
+    if (openMenu && !openMenu.panel.contains(event.target) && !openMenu.trigger.contains(event.target)) closeMenu(false);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && openMenu) { event.preventDefault(); closeMenu(true); }
+  });
+  window.addEventListener('resize', () => closeMenu(false));
+
   const makeBar = ({ title, hash, image }) => {
     const bar = document.createElement('div');
     bar.className = 'share-bar';
     bar.setAttribute('role', 'group');
     bar.setAttribute('aria-label', 'Share: ' + title);
-    const label = document.createElement('span');
-    label.className = 'share-label';
-    label.textContent = 'Share';
-    bar.appendChild(label);
+
+    const panelId = 'share-menu-' + (++menuCount);
+    const trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'btn subtle share-trigger';
+    setIcon(trigger, 'native', 'Share');
+    trigger.setAttribute('aria-label', 'Share ' + title);
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-controls', panelId);
+    bar.appendChild(trigger);
+
+    const backdrop = document.createElement('div');
+    backdrop.className = 'share-backdrop';
+    backdrop.hidden = true;
+    const panel = document.createElement('div');
+    panel.className = 'share-menu';
+    panel.id = panelId;
+    panel.hidden = true;
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-label', 'Share: ' + title);
+    const grip = document.createElement('span');
+    grip.className = 'share-grip';
+    grip.setAttribute('aria-hidden', 'true');
+    panel.appendChild(grip);
+
+    const status = document.createElement('span');
+    status.className = 'share-status';
+    status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', 'polite');
 
     if (navigator.share) {
       const native = document.createElement('button');
       native.type = 'button';
-      native.className = 'btn subtle share-btn share-native';
+      native.className = 'share-native-row';
       setIcon(native, 'native', 'Share');
       native.setAttribute('aria-label', 'Share ' + title + ' with another app');
       native.addEventListener('click', async () => {
+        closeMenu(false);
         try {
           await navigator.share({ title, text: title, url: urlFor(hash, 'native') });
         } catch (error) {
           if (error && error.name !== 'AbortError') status.textContent = 'Sharing was not available. Use a link below.';
         }
       });
-      bar.appendChild(native);
+      panel.appendChild(native);
     }
 
+    const grid = document.createElement('div');
+    grid.className = 'share-grid';
     const media = image || ogImage;
-    const list = targets;
-    list.forEach(target => {
+    targets.forEach(target => {
       const a = document.createElement('a');
-      a.className = 'btn subtle share-btn share-' + target.id;
+      a.className = 'share-btn share-' + target.id;
       setIcon(a, target.id, target.label);
       a.href = target.href(urlFor(hash, target.id), title, media);
       if (target.id !== 'viber' && target.id !== 'email') {
@@ -105,16 +166,18 @@
         a.rel = 'noopener noreferrer';
       }
       a.setAttribute('aria-label', 'Share ' + title + ' on ' + target.label);
-      bar.appendChild(a);
+      a.addEventListener('click', () => setTimeout(() => closeMenu(false), 0));
+      grid.appendChild(a);
     });
 
     const copy = document.createElement('button');
     copy.type = 'button';
-    copy.className = 'btn subtle share-btn share-copy';
+    copy.className = 'share-btn share-copy';
     setIcon(copy, 'copy', 'Copy link');
     copy.setAttribute('aria-label', 'Copy link to ' + title);
     copy.addEventListener('click', async () => {
       const link = urlFor(hash, 'copy');
+      closeMenu(true);
       try {
         await navigator.clipboard.writeText(link);
         status.textContent = 'Link copied. Paste it into Instagram or any app.';
@@ -122,15 +185,39 @@
         window.prompt('Copy this link:', link);
       }
     });
-    bar.appendChild(copy);
+    grid.appendChild(copy);
+    panel.appendChild(grid);
 
-    const status = document.createElement('span');
-    status.className = 'share-status';
-    status.setAttribute('role', 'status');
-    status.setAttribute('aria-live', 'polite');
+    trigger.addEventListener('click', () => {
+      if (openMenu && openMenu.trigger === trigger) { closeMenu(false); return; }
+      closeMenu(false);
+      status.textContent = '';
+      panel.hidden = false;
+      backdrop.hidden = false;
+      trigger.setAttribute('aria-expanded', 'true');
+      document.documentElement.classList.add('share-sheet-open');
+      placePanel(trigger, panel);
+      openMenu = { trigger, panel, backdrop, scrollY: window.scrollY };
+      const first = panel.querySelector('button, a');
+      if (first) first.focus({ preventScroll: true });
+    });
+    panel.addEventListener('keydown', event => {
+      if (event.key !== 'Tab') return;
+      const items = [...panel.querySelectorAll('button, a')];
+      if (!items.length) return;
+      const last = items[items.length - 1];
+      if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); items[0].focus(); }
+      else if (event.shiftKey && document.activeElement === items[0]) { event.preventDefault(); last.focus(); }
+    });
+
+    document.body.appendChild(backdrop);
+    document.body.appendChild(panel);
     bar.appendChild(status);
     return bar;
   };
+  window.addEventListener('scroll', () => {
+    if (openMenu && Math.abs(window.scrollY - openMenu.scrollY) > 24) closeMenu(false);
+  }, { passive: true });
 
   const slug = text => clean(text).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
 
