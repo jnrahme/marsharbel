@@ -260,3 +260,12 @@ Exact organizer anniversary image and parish/KTSM images were not reused: no ver
 
 ## October 2 Kfifan news
 media/news/kfifan-context.webp: Kfifane Convent, Lebanon, June 23, 2012, Evilscaught. Source https://commons.wikimedia.org/wiki/File:Kfifane_Convent_-_panoramio.jpg . Image https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Kfifane_Convent_-_panoramio.jpg/960px-Kfifane_Convent_-_panoramio.jpg . CC BY 3.0, verified on source page. Converted to WebP; venue-context caption, not reception photo. News publisher's event photo not reused without permission.
+
+## Gallery AI transformation series (2026-10-02)
+
+- Assets (gallery/): charbel-rendition-01-faithful.webp, charbel-rendition-02-hermitage.webp, charbel-transformation-strip.webp, charbel-rendition-final-alt.webp, charbel-window-rendition.webp (final; 1600x2000, resized from 2244x2804, itself upscaled from native 1122x1402). Created for Joey's gallery commission, verified in his October 2 WhatsApp requests at 07:57, 07:59, 08:00 and 08:02; chosen direction "window".
+- Candidates 01 and 02 had a baked-in caption bar; it was cropped off.
+- OPEN PROVENANCE GAP: the left panel of the reference sheet is a grainy "supplied original scan" whose source is undocumented and does not clearly match the Commons Charbel.jpg; the strip left panel looks like a close crop of the historic image (visual match only). The reference sheet is NOT USED and its asset is excluded from this release. The Commons-sourced historic photo remains gallery Image 4. Needs Joey to confirm where the supplied scan came from.
+- Labeling: every caption and alt text says "AI transformation, not a photograph", per Joey's instruction to show the transformation openly. Image Sources lists them as AI-assisted renditions made for this site.
+- Final, alternate final and final comparison strip: rendition handoff recovered from October 2 07:59 parent history describes the source as the existing Commons-backed site photograph, reference-image editing, two native 1122x1402 outputs and a Lanczos 2x upscale. Candidates 01/02 have no verified historic source attribution.
+- Rights: underlying final-reference photograph PD per Commons (entry above). No claim about the renditions' own copyright. The supplied reference scan has unresolved source/reuse grounds; do not infer its rights from the historic photograph.
