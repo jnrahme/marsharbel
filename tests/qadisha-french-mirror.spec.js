@@ -13,7 +13,7 @@ for (const route of ['/qadisha-valley', '/ar/qadisha-valley', '/fr/vallee-qadish
     await expect(page.locator('header .nav-sub a[href*="qadisha"]')).toHaveCount(1);
     for (const image of await page.locator('main img').all()) {
       await image.scrollIntoViewIfNeeded();
-      expect(await image.evaluate(el => el.complete && el.naturalWidth > 0)).toBe(true);
+      await expect.poll(() => image.evaluate(el => el.complete && el.naturalWidth > 0)).toBe(true);
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
     expect(errors).toEqual([]);
