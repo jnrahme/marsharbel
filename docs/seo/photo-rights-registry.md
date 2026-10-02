@@ -257,3 +257,6 @@ Exact organizer anniversary image and parish/KTSM images were not reused: no ver
 - Rejected: Commons File:Elias Peter Hoayek.jpg. The file page establishes Lebanese public domain only (no US tag), gives publication 1948, author unknown. Not usable on that evidence.
 - Candidates for a later pass, neither verified enough yet: File:Elie Hoyek 1899.jpg (265x357, credited "Les Missions catholiques, vol 31, 1899, p. 112", tag PD-Art/PD-old-auto-1923; the printed page has not been opened to confirm) and File:Elias Peter Hoayek 1919.jpg (394x544, BnF Gallica, Agence Meurisse press photo, ark:/12148/btv1b9032709w, dated 1919; whether this print was published before 1931 is not shown). Both are small.
 
+
+## October 2 Kfifan news
+media/news/kfifan-context.webp: Kfifane Convent, Lebanon, June 23, 2012, Evilscaught. Source https://commons.wikimedia.org/wiki/File:Kfifane_Convent_-_panoramio.jpg . Image https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Kfifane_Convent_-_panoramio.jpg/960px-Kfifane_Convent_-_panoramio.jpg . CC BY 3.0, verified on source page. Converted to WebP; venue-context caption, not reception photo. News publisher's event photo not reused without permission.
