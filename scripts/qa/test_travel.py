@@ -6,13 +6,14 @@ ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.catalog import read_json
 from i18n.travel_mirror import render_travel
+from i18n.tour_nav import tour_nav
 class TravelTests(unittest.TestCase):
  def test_catalog_and_render_parity(self):
   registry=read_json(ROOT/'locales/registry.json')
   pages=render_travel(ROOT,registry)
   self.assertEqual(len(pages),8)
   for path,text in pages.items():
-   self.assertEqual(path.read_text(),text)
+   self.assertEqual(path.read_text(),tour_nav(text,ROOT,'en' if path.parent==ROOT else path.parent.name))
    soup=BeautifulSoup(text,'html.parser')
    self.assertEqual(len(soup.select('main')),1)
    self.assertEqual(len(soup.select('a.skip-link')),1)
