@@ -11,6 +11,16 @@ try{
  const body={display_name:'Reader',story:'My own experience of prayer and hope. '.repeat(3),country:'',language:'en',event_date:'',age_attested:true,consent_publish:true,ai_consent:true,turnstile_token:'valid',website:''};
  const request=(payload=body,origin='https://marsharbel.com',auth='Bearer valid')=>new Request('https://example.supabase.co/functions/v1/submit-testimony',{method:'POST',headers:{origin,authorization:auth,'content-type':'application/json'},body:JSON.stringify(payload)});
  assert.equal((await handler(new Request('https://example.test',{method:'OPTIONS',headers:{origin:'https://marsharbel.com'}}))).status,204);
+ assert.equal((await handler(new Request('https://example.test',{method:'GET',headers:{origin:'https://marsharbel.com'}}))).status,405);
+ assert.equal((await handler(new Request('https://example.test',{method:'POST',headers:{origin:'https://marsharbel.com','content-type':'text/plain'},body:'not-json'}))).status,415);
+ assert.equal((await handler(new Request('https://example.test',{method:'POST',headers:{origin:'https://marsharbel.com','content-type':'application/json'},body:'{bad'}))).status,400);
+ assert.equal((await handler(new Request('https://example.test',{method:'POST',headers:{origin:'https://marsharbel.com','content-type':'application/json'},body:'[]'}))).status,400);
+ const noToken={...body,turnstile_token:''}; assert.equal((await handler(request(noToken))).status,400);
+ assert.equal((await handler(request({...body,turnstile_token:'x'.repeat(8193)}))).status,400);
+ assert.equal((await handler(request({...body,website:'bot-honeypot'}))).status,400);
+ assert.equal((await handler(request({...body,age_attested:false}))).status,400);
+ assert.equal(calls.length,0,'Invalid requests must not reach intake RPC');
+
  assert.equal((await handler(request(body,'https://evil.test'))).status,403);
  assert.equal((await handler(request(body,undefined,''))).status,202); calls=[];
  verified=false;assert.equal((await handler(request())).status,202);verified=true;calls=[];
