@@ -426,7 +426,8 @@
     var canonical = canonicalTag && canonicalTag.getAttribute('href') || url.toString();
     var title = document.title || 'Saint Charbel';
     var description = inferDescription();
-    var imageUrl = new URL('/saint-charbel.jpg', window.location.origin).toString();
+    var existingImage = document.head.querySelector('meta[property="og:image"]');
+    var imageUrl = existingImage && existingImage.getAttribute('content') || new URL('/saint-charbel.jpg', window.location.origin).toString();
 
     ensureHeadTag('meta', { name: 'description', content: description });
     if (!document.head.querySelector('meta[name="robots"]')) {
