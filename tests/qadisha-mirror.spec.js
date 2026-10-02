@@ -12,7 +12,7 @@ for (const route of ['/qadisha-valley', '/ar/qadisha-valley']) {
     await expect(page.locator('main h3')).toHaveCount(10);
     for (const image of await page.locator('main img').all()) {
       await image.scrollIntoViewIfNeeded();
-      expect(await image.evaluate(el => el.complete && el.naturalWidth > 0)).toBe(true);
+      await expect.poll(() => image.evaluate(el => el.complete && el.naturalWidth > 0)).toBe(true);
     }
     const sizes = await page.evaluate(() => ({scroll: document.documentElement.scrollWidth, viewport: document.documentElement.clientWidth}));
     expect(sizes.scroll).toBeLessThanOrEqual(sizes.viewport + 1);
