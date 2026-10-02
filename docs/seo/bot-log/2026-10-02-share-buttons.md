@@ -1,0 +1,3 @@
+# 2026-10-02 share buttons
+
+Joey's voice-note commission (Oct 2). share.js (no external requests, inline SVG icons from Simple Icons, CC0) adds a share row to /gallery (per image), /news (per card) and 19 English prayer/rosary pages. Targets: native Web Share sheet (when the browser has it), Facebook, X, WhatsApp, Pinterest, Telegram, LINE, VK, Viber, Email, Copy link. No Instagram/TikTok/WeChat deep links; the native sheet covers them. Shared URLs are the canonical page (+ #card id) with utm_source=<target>&utm_medium=share so GA4 can attribute shares. Locale mirrors (ar/es/fr/...) are not included yet.
