@@ -1,6 +1,6 @@
 # Clean originals of AI-generated images
 
-Every gallery or social-facing AI image carries a baked-in "marsharbel.com" watermark so it keeps the name when pinned or shared. The served file lives where the page expects it (for example `gallery/`). The clean, un-watermarked original lives here under the same filename so the mark can be regenerated.
+The new AI gallery images and social derivative in this release carry a baked-in "marsharbel.com" watermark so it keeps the name when pinned or shared. The served file lives where the page expects it (for example `gallery/`). The clean, un-watermarked original lives here under the same filename so the mark can be regenerated.
 
 Regenerate one:
 
