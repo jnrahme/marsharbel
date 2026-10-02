@@ -96,6 +96,7 @@
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/testimonies" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/testimonies" />
   <!-- hreflang:end -->
+  <link rel="stylesheet" href="./letters-globe.css?v=1" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -171,6 +172,16 @@
       <div class="cta-row">
         <a class='btn primary' href='submit-testimony'>Write a Letter</a>
       </div>
+    </section>
+
+    <section class="section letters-globe" data-letters-globe aria-labelledby="letters-globe-title">
+      <h2 id="letters-globe-title">Letters from around the world</h2>
+      <p class="globe-sub">Saint Charbel is prayed to on every continent. Turn the globe and tap a flag to see whose letters come from there.</p>
+      <div class="globe-stage"><canvas role="img" aria-label="Interactive globe with flags marking the countries letters come from"></canvas></div>
+      <p class="globe-hint">Drag to turn the globe. Tap a flag.</p>
+      <div class="globe-panel" data-globe-panel hidden aria-live="polite"></div>
+      <details class="globe-all"><summary>All 100 countries</summary><div class="globe-chips" data-globe-chips></div><p class="globe-note">Yugoslavia and Zaire are former countries, and the list does not say which Congo it means, so those three show without a flag.</p></details>
+      <p class="globe-source">The 99 countries named in the letters published by saintcharbel.net.au, plus Canada and the letters on this page.</p>
     </section>
 
     <section class="section">
@@ -276,6 +287,7 @@
   <script src="testimony-client.js?v=20260923-1"></script>
   <script src="testimonies-copy.js"></script>
   <script src="testimonies.js?v=20260925-1"></script>
+  <script src="letters-globe.js?v=1" defer></script>
   <script src="global-audio-player.js"></script>
   <script src="/locale-routes.js"></script>
   <script src="translate.js?v=20260922-1"></script>
