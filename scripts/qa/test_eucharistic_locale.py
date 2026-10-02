@@ -6,6 +6,7 @@ import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from i18n.catalog import read_json
 from i18n.tour_nav import tour_nav
+from i18n.travel_components import travel_frame
 from i18n.metadata import published_locales
 from i18n.eucharistic_mirror import render_eucharistic,SLUGS
 
@@ -36,7 +37,7 @@ class EucharisticLocaleTests(unittest.TestCase):
             for slug in ('index',*SLUGS):
                 route=ROOT/lang/'miracles/eucharistic'/f'{slug}.html'
                 translated=outputs[route]
-                self.assertEqual(route.read_text(),tour_nav(translated,ROOT,lang),route)
+                self.assertEqual(route.read_text(),travel_frame(tour_nav(translated,ROOT,lang),ROOT,lang,'/'+lang+'/miracles/eucharistic/'+('' if slug=='index' else slug),read_json(ROOT/"locales/registry.json")),route)
                 source=(ROOT/'miracles/eucharistic'/f'{slug}.html').read_text()
                 a,b=Shape(source),Shape(translated)
                 self.assertEqual(a.tags,b.tags,(lang,slug))

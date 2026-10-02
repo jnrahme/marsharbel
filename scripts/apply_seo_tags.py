@@ -151,6 +151,15 @@ def breadcrumb_for(path: Path, title: str) -> dict | None:
     safe Home > Page trail instead of requiring hand-authored JSON-LD.
     """
     rel = path.relative_to(ROOT).as_posix()
+    travel_config=ROOT/'locales/travel-routes.json'
+    if travel_config.exists():
+        travel=json.loads(travel_config.read_text())
+        route='/'+rel.removesuffix('.html')
+        if route in travel['destinations']:
+            return {'@type':'BreadcrumbList','itemListElement':[
+                {'@type':'ListItem','position':1,'name':'Home','item':SITE+'/'},
+                {'@type':'ListItem','position':2,'name':'Travel','item':SITE+travel['hub']},
+                {'@type':'ListItem','position':3,'name':heading_label(path,title),'item':path_to_url(path)}]}
     if rel.startswith("mysteries/"):
         section, label = "rosary", mystery_name(title).split(" - ")[0]
     elif rel in BREADCRUMBS:

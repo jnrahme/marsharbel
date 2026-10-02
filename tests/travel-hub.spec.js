@@ -8,7 +8,7 @@ for(const language of ['en','ar','fr','es','pt','it','de','pl']) {
     await page.evaluate(async()=>{for(const image of document.images){image.loading='eager';await image.decode();}});
     await expect(page.locator('html')).toHaveAttribute('lang',language);
     await expect(page.locator('#sc-language-select')).toHaveCount(1);
-    await expect(page.locator('.travel-destination-list .travel-place')).toHaveCount(3);
+    await expect(page.locator('.travel-place')).toHaveCount(12);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
     expect(errors).toEqual([]);
     const axe=await new AxeBuilder({page}).analyze();
@@ -26,7 +26,7 @@ test('Travel selector switches to the same hub and back',async({page})=>{
   await expect(page).toHaveURL(/\/travel$/);
 });
 test('Photo destination opens the Qadisha guide',async({page})=>{
-  await page.goto('/travel');await page.locator('.travel-place').first().click();
+  await page.goto('/travel');await page.locator('.travel-place[href="/qadisha-valley"]').click();
   await expect(page).toHaveURL(/\/qadisha-valley$/);
   await page.locator('.travel-hero .btn.primary').click();
   await expect(page).toHaveURL(/#visiting$/);
