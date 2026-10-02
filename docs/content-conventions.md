@@ -45,3 +45,14 @@ rules below apply only if a rotator returns. Rotator images displayed at 64x64. 
 run `python3 scripts/build_news_thumbs.py`: it makes a 128px square WebP in
 `media/news/thumb/` and points the item at it. QA fails if an item still
 uses a full-size image.
+
+## New generated images: watermark step
+
+Joey's October 2, 2026 instruction: "i want you to have a water mark on the new images generated saying marsharbel.com". Bake the mark into new generated images, not CSS, so it travels with pins and shares. This release applies it to the five new AI gallery images and their social derivative. It does not alter historic photographs or existing storybook illustrations.
+
+1. Save the clean original under `assets/originals/<folder>/NAME.ext`.
+2. Run `python3 scripts/watermark_ai_image.py assets/originals/<folder>/NAME.ext <folder>/NAME.ext`. It adds small semi-transparent serif text in the bottom corner, about 2.7% of image width, and keeps dimensions and format.
+3. Look at the result before shipping; the mark must not cover a face. Use `--corner left` if the right corner is busy.
+4. Keep the page's AI-art label as well. A watermark does not establish historical accuracy or reuse rights.
+
+The current release scope was set during coordination: new gallery and social images first. No existing storybook illustrations are changed in this release.

@@ -269,3 +269,9 @@ media/news/kfifan-context.webp: Kfifane Convent, Lebanon, June 23, 2012, Evilsca
 - Labeling: every caption and alt text says "AI transformation, not a photograph", per Joey's instruction to show the transformation openly. Image Sources lists them as AI-assisted renditions made for this site.
 - Final, alternate final and final comparison strip: rendition handoff recovered from October 2 07:59 parent history describes the source as the existing Commons-backed site photograph, reference-image editing, two native 1122x1402 outputs and a Lanczos 2x upscale. Candidates 01/02 have no verified historic source attribution.
 - Rights: underlying final-reference photograph PD per Commons (entry above). No claim about the renditions' own copyright. The supplied reference scan has unresolved source/reuse grounds; do not infer its rights from the historic photograph.
+
+## Gallery watermark and enhancement takes (2026-10-02)
+
+- All five AI series files in gallery/ are watermarked "marsharbel.com" in the file; clean originals in assets/originals/gallery/. Regenerate with scripts/watermark_ai_image.py.
+- gallery/charbel-window-og-1200x630.jpg: /gallery og and twitter image, built from the 2244x2804 window final on a blurred fill, watermarked.
+- Held back: enhanced versions of the supplied scan (light +4%, 4x export; moderate pass unrecorded) are NOT published. Clean files are kept out of the repo until the owner confirms he is the source and may publish it (see the OPEN PROVENANCE GAP entry above).

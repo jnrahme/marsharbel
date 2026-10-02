@@ -269,6 +269,8 @@ def og_image_for(path: Path, html: str = "") -> str:
         return f"{SITE}/media/storybook-pio/images/page-01.webp"
     if path.name == "jpii-story.html":
         return f"{SITE}/media/storybook-jpii/images/page-01.webp"
+    if path.name == "gallery.html":
+        return f"{SITE}/gallery/charbel-window-og-1200x630.jpg"
     if path.name == "stories.html":
         return f"{SITE}/media/storybook/images/event-01.webp"
     return hero_image(path, html) or DEFAULT_IMAGE
