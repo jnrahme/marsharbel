@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  {{> analytics}}
+  <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_AR" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="pt_PT" />
+    <meta property="og:locale:alternate" content="it_IT" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="pl_PL" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Lab | Saint Charbel</title>
+  <meta name="description" content="Test and review Saint Charbel voice and narration tools used for guided prayer and testimony experiences." />
+  <meta name="robots" content="noindex,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://marsharbel.com/voice-lab" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Saint Charbel" />
+  <meta property="og:title" content="Voice Lab | Saint Charbel" />
+  <meta property="og:description" content="Test and review Saint Charbel voice and narration tools used for guided prayer and testimony experiences." />
+  <meta property="og:url" content="https://marsharbel.com/voice-lab" />
+  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Voice Lab | Saint Charbel" />
+  <meta name="twitter:description" content="Test and review Saint Charbel voice and narration tools used for guided prayer and testimony experiences." />
+  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Voice Lab | Saint Charbel",
+  "description": "Test and review Saint Charbel voice and narration tools used for guided prayer and testimony experiences.",
+  "url": "https://marsharbel.com/voice-lab",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Saint Charbel",
+    "alternateName": [
+      "Mar Charbel",
+      "Saint Charbel Makhlouf",
+      "Sharbel",
+      "St Charbel",
+      "Saint Sharbel",
+      "Charbel Makhlouf"
+    ],
+    "url": "https://marsharbel.com/"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="./styles.css?v=20260922-1" />
+  <style>
+    .voice-lab-wrap { max-width: 1080px; margin: 2rem auto 4rem; }
+    .voice-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .voice-card { padding: 1rem; border-radius: 16px; border: 1px solid rgba(195,166,95,.28); background: rgba(8,14,24,.6); }
+    .voice-actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .8rem; }
+    .voice-tag { font-size: .82rem; opacity: .85; }
+    .voice-score { width: 100%; margin-top: .7rem; }
+    .lab-panel { margin-top: 1.5rem; padding: 1rem; border-radius: 16px; border: 1px solid rgba(195,166,95,.28); background: rgba(8,14,24,.55); }
+    .lab-panel textarea { width: 100%; min-height: 130px; background: rgba(255,255,255,.03); color: #efe8dd; border: 1px solid rgba(195,166,95,.2); border-radius: 10px; padding: .7rem; }
+    .lab-panel input, .lab-panel select { width: 100%; background: rgba(255,255,255,.03); color: #efe8dd; border: 1px solid rgba(195,166,95,.2); border-radius: 10px; padding: .6rem; }
+    .lab-row { display: grid; gap: .8rem; grid-template-columns: 1fr 1fr; }
+    .lab-actions { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.8rem; }
+    @media (max-width: 700px) { .lab-row { grid-template-columns: 1fr; } }
+  </style>
+  <!-- hreflang:begin -->
+  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/voice-lab" />
+  <link rel="alternate" hreflang="en" href="https://marsharbel.com/voice-lab" />
+  <!-- hreflang:end -->
+</head>
+<body>
+  {{> skip-link}}
+  <header class="topbar">
+    <div class="site-shell nav">
+      <a class="brand" href="./"><span class="brand-mark">✦</span><span>Saint Charbel</span></a>
+      <nav class="links" aria-label="Primary">
+        <a href="./">Home</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./stories">Saint Storybooks</a>
+        <a href="./history">Full History</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="active nav-parent" href="./miracles/" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./miracles/">Miracles & Reports</a>
+        <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
+        <a href="./news">Latest News</a>
+        <a href="./testimonies">Letters</a>
+        <a class="active" href="./voice-testimony">Voice Testimony</a>
+        </div></div>
+        <a href="./saints">Saints</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./prayer-library">Prayer Library</a>
+        <a href="./prayer-library#find-a-prayer">Find a Prayer by Intention</a>
+        <a href="./saint-charbel-prayer-for-the-sick">Prayer for the Sick</a>
+        <a href="./saint-charbel-prayer-for-healing">Prayer for Healing</a>
+        <a href="./saint-charbel-prayer-for-anxiety">Prayer for Anxiety</a>
+        <a href="./saint-charbel-prayer-for-depression">Prayer for Depression</a>
+        <a href="./saint-charbel-prayer-for-students">Prayer for Students</a>
+        <a href="./saint-charbel-prayer-for-addiction">Prayer for Addiction</a>
+        <a href="./saint-charbel-prayer-for-family">Prayer for Family</a>
+        <a href="./saint-charbel-prayer-for-pregnancy">Prayer for Pregnancy</a>
+        <a href="./saint-charbel-prayer-for-a-miracle">Prayer for a Miracle</a>
+        <a href="./en/prayers">Saint Charbel Prayers</a>
+        <a href="./saint-charbel-novena">Saint Charbel Novena</a>
+        <a href="./saint-charbel-feast-day">Feast Day</a>
+        <a href="./rosary-visual-guide">Rosary Guide</a>
+        <a href="./rosary-minibook">Rosary Minibook</a>
+        <a href="./mystery-meditation">Mystery Meditation</a>
+        <a href="./become-like-charbel">Become Like Him</a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./visit-annaya">Visiting Annaya</a>
+        <a href="./annaya-tour">Annaya Online Tour</a>
+        <a href="./bekaa-kafra">Bekaa Kafra</a>
+        <a href="./our-lady-of-lebanon-harissa">Our Lady of Lebanon at Harissa</a>
+        <a href="./cedars-of-god-lebanon">the Cedars of God</a>
+        <a href="./bkerke-maronite-patriarchate">Bkerke and the Maronite Patriarchate</a>
+        <a href="./qadisha-valley">Qadisha Valley</a>
+        <a href="./qannoubine-monastery">Qannoubine Monastery</a>
+        <a href="./qozhaya-monastery">Qozhaya Monastery</a>
+        <a href="./saint-charbel-places-lebanon">Saint Charbel's Lebanon</a>
+        <a href="./saint-charbel-hermitage">The Hermitage</a>
+        <a href="./saint-charbel-trail">Saint Charbel Trail</a>
+        </div></div>
+        <a href="./gallery">Gallery</a>
+        </nav>
+      <div class="lang-switcher-slot" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main id="main-content" class="site-shell voice-lab-wrap" tabindex="-1">
+    <section class="section">
+      <span class="kicker">Temporary Listening Page</span>
+      <h1>Rosary Voice Lab</h1>
+      <p class="section-sub">Compare 10 new voice options and share exactly what should improve. Audio is AI/synthetic generated for production review.</p>
+    </section>
+
+    <section class="voice-grid" id="voice-grid"></section>
+
+    <section class="lab-panel">
+      <h2 style="margin-top:0">Browser Voice Preview</h2>
+      <div class="lab-row">
+        <label>
+          <span class="voice-tag">Installed Browser Voice</span>
+          <select id="browser-voice"></select>
+        </label>
+        <label>
+          <span class="voice-tag">Preview Text</span>
+          <input id="browser-text" value="Remain peaceful and attentive before God in this mystery." />
+        </label>
+      </div>
+      <div class="lab-actions">
+        <button id="play-browser" class="btn subtle" type="button">Play Browser Voice</button>
+        <button id="stop-browser" class="btn subtle" type="button">Stop Browser Voice</button>
+      </div>
+    </section>
+
+    <section class="lab-panel">
+      <h2 style="margin-top:0">Your Feedback</h2>
+      <p class="voice-tag">Include notes like: slower pacing, warmer tone, less brightness, longer pauses, softer consonants, more reverent delivery.</p>
+      <textarea id="feedback" placeholder="Example: Samantha is closest. Make it 8% slower, warmer, and less smiley on scripture lines."></textarea>
+      <div class="lab-actions">
+        <button id="copy-feedback" class="btn primary" type="button">Copy Feedback + Scores</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="site-shell">Author: Please pray for the person who made this website.</div>
+  </footer>
+
+  <script defer src="./voice-lab.js"></script>
+  <script defer src="/locale-routes.js"></script>
+  <script defer src="./translate.js?v=20260922-1"></script>
+  <script src="./nav.js?v=20260922-1" defer></script>
+</body>
+</html>

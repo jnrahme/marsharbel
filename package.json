@@ -31,7 +31,10 @@
     "test:navigation-sync": "node scripts/sync-navigation.mjs --check",
     "i18n:build": "python3 scripts/build-international.py",
     "i18n:check": "python3 scripts/build-international.py --check && python3 scripts/qa/check_i18n_policy.py",
-    "i18n:test": "python3 -m unittest discover -s scripts/qa -p \"test_i18n.py\""
+    "i18n:test": "python3 -m unittest discover -s scripts/qa -p \"test_i18n.py\"",
+    "build:pages": "node scripts/build-pages.mjs",
+    "test:pages-sync": "node scripts/build-pages.mjs --check",
+    "qa:compare-served": "scripts/qa/compare-served.sh"
   },
   "keywords": [],
   "author": "",
