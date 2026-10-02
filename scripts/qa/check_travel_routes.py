@@ -13,7 +13,7 @@ def check(root=ROOT):
  def resolve(path):
   p=root/path.lstrip('/');return next((x for x in [p,p.with_suffix('.html'),p/'index.html'] if x.is_file()),None)
  sources={p:BeautifulSoup(p.read_text(),'html.parser') for p in root.rglob('*.html') if not any(x in p.relative_to(root).parts for x in ('node_modules','.git','src','templates','partials','tmp','test-results','playwright-report'))}
- sitemap={x.get_text() for x in BeautifulSoup((root/'sitemap.xml').read_text(),'xml').select('loc')}
+ sitemap={x.get_text() for x in BeautifulSoup((root/'sitemap.xml').read_text(),'html.parser').select('loc')}
  travel_routes=set([cfg['hub'],*cfg['destinations']])
  for name in ('travel','qadisha','qannoubine','qozhaya'):
   travel_routes.update(registry['authoredMirrors'][name]['routes'].values())
