@@ -2896,3 +2896,18 @@ a.card:hover{transform:translateY(-2px);transition-duration:var(--pol-fast);box-
 a.card:active{transform:scale(.99);transition-duration:140ms}
 :where(.btn,.links a,.footer a,a.card):focus-visible{outline:2px solid var(--gold,#d8c6a6);outline-offset:3px;border-radius:6px}
 @media (prefers-reduced-motion:reduce){.btn,.links a,.footer a,a.card{transition:none}.btn:active,a.card:active,a.card:hover{transform:none}}
+
+/* Shell v2: compact phone header (brand, install and language share one row) */
+@media (max-width:640px){
+.nav{display:grid;flex-direction:row;align-items:center;gap:0;min-height:0;grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"brand install lang" "links links links";column-gap:.5rem;row-gap:.15rem;padding:.4rem 0 .3rem}
+.brand{gap:.5rem;font-size:1.05rem;min-width:0}
+.brand-mark{width:30px;height:30px;font-size:.8rem;flex:none}
+.lang-switcher-slot{width:auto;height:2rem}
+.lang-switcher{min-height:2rem;padding:.12rem .25rem}
+.lang-switcher select{max-width:104px;font-size:.78rem;padding:.2rem .4rem;text-overflow:ellipsis}
+.sc-install-app-btn{padding:.34rem .65rem;font-size:.74rem}
+.links{gap:.05rem .1rem}
+.links a,.nav-group .nav-parent{padding:.4rem .5rem;font-size:.82rem}
+}
+@media (max-width:360px){.brand-mark{display:none}.sc-install-app-btn{padding:.3rem .5rem}.lang-switcher select{max-width:84px}}
+.brand{white-space:nowrap}@media (max-width:360px){.brand{font-size:.95rem}.lang-switcher select{max-width:76px}}
