@@ -10,6 +10,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
+from i18n.build_error_404 import render as render_error_404
 from i18n.metadata import published_locales
 from i18n.catalog import locale_topics, read_json, page_url
 from i18n.mirror import render_pair
@@ -87,6 +88,10 @@ def snapshot(root=ROOT):
 def check(root=ROOT):
     baseline = read_json(root/'locales/legacy-text-baseline.json')
     errors = []
+    error_404_path = root / "404.html"
+    error_404_rendered = render_error_404(root) if error_404_path.exists() else None
+    if error_404_rendered is not None and error_404_path.read_text() != error_404_rendered:
+        errors.append("404.html differs from keyed English error catalog/template")
     accessibility_path = root/'locales/en/accessibility-copy.json'
     accessibility_catalog = read_json(accessibility_path)['values'] if accessibility_path.exists() else {}
     display_catalog = read_json(root/'locales/en/letters-display.json')['values']
@@ -144,6 +149,8 @@ def check(root=ROOT):
                 label = read_json(tour_copy)['header.annayaTour']
                 matching = [a for a in page.select('header a[href]') if a.get('href','').removeprefix('../').removeprefix('./').removeprefix('/') == 'annaya-tour' and a.get_text(strip=True) == label]
                 if len(matching) == 1: additions -= Counter({label:1})
+        if file == "404.html" and error_404_rendered is not None:
+            additions -= extract_html(error_404_rendered)
         if file.startswith('miracles/eucharistic/'):
             # Built from the keyed English collection catalog; separate build check covers freshness.
             # The dedicated builder is checked byte-for-byte in QA.

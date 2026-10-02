@@ -1,5 +1,9 @@
 DirectoryIndex index.html
 
+# Local error document preserves the 404 status and applies app headers.
+# Absolute site-relative path also works beneath missing locale/deep URLs.
+ErrorDocument 404 /404.html
+
 AddType application/manifest+json .webmanifest
 AddType image/avif .avif
 
@@ -90,6 +94,11 @@ RewriteRule ^(.+?)/?$ $1.html [L]
     Header unset Cache-Control
     Header always set Cache-Control "no-store, max-age=0"
   </FilesMatch>
+  <Files "404.html">
+    Header unset Cache-Control
+    Header always set Cache-Control "no-store, max-age=0"
+    Header always set X-Robots-Tag "noindex, nofollow, noarchive"
+  </Files>
   <Files "testimony-review.html">
     Header always set X-Robots-Tag "noindex, nofollow, noarchive"
     Header always set Referrer-Policy "no-referrer"
