@@ -11,6 +11,7 @@ from string import Template
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT/'scripts'))
 from i18n.catalog import load_catalog, locale_topics, read_json, page_url
+from i18n.tour_nav import tour_nav
 from check_i18n_policy import check, extract_html
 
 spec = importlib.util.spec_from_file_location('international_builder', ROOT/'scripts/build-international.py')
@@ -97,7 +98,7 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('href="/ar/biography"', ar)
         self.assertIn('href="/ar/annaya"', ar)
         self.assertNotIn('href="/ar/saint-charbel-trail"', ar)
-        self.assertEqual(pages[ROOT / 'qadisha-valley.html'], (ROOT / 'qadisha-valley.html').read_text())
+        self.assertEqual(tour_nav(pages[ROOT / 'qadisha-valley.html'], ROOT, 'en'), (ROOT / 'qadisha-valley.html').read_text())
         fr = pages[ROOT / 'fr/vallee-qadisha.html']
         self.assertEqual(Shape(fr).sections, Shape(en).sections)
         self.assertEqual(Shape(fr).images, Shape(en).images)
@@ -221,7 +222,7 @@ class CatalogTests(unittest.TestCase):
                 self.assertEqual([(q['name'], q['acceptedAnswer']['text']) for q in faq],
                                  [(catalog[f'faq.question{i}'], catalog[f'faq.text{i}']) for i in range(1,7)])
                 self.assertIn(f'href="{other_routes[code]}"', page)
-            self.assertEqual(pages[ROOT/f'{name}-monastery.html'], (ROOT/f'{name}-monastery.html').read_text())
+            self.assertEqual(tour_nav(pages[ROOT/f'{name}-monastery.html'], ROOT, 'en'), (ROOT/f'{name}-monastery.html').read_text())
 
     def test_letters_catalog_does_not_hide_new_copy(self):
         catalog=read_json(ROOT/'locales/en/letters-display.json')['values']
