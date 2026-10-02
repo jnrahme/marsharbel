@@ -2880,3 +2880,19 @@ main[id="main-content"]:focus{outline:none}
 .home-gallery-cta{display:inline-block;margin-top:1rem;color:var(--theme-accent);font:800 .9rem 'Manrope',sans-serif}
 .home-gallery-card:hover .home-gallery-cta{color:var(--theme-ink)}
 @media(max-width:760px){.home-gallery-card{grid-template-columns:1fr}}
+/* UI polish v1: interaction details (transitions-polish tokens, make-interfaces-feel-better) */
+:root{--pol-out:cubic-bezier(.22,1,.36,1);--pol-fast:250ms;--pol-quick:150ms}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3{text-wrap:balance}
+.card p,.card li,.lead{text-wrap:pretty}
+.btn{transition-property:border-color,color,transform;transition-duration:100ms;transition-timing-function:var(--pol-out)}
+.btn:active{transform:scale(.96);transition-duration:140ms}
+.links a{transition:background-color var(--pol-quick) var(--pol-out),color var(--pol-quick) var(--pol-out)}
+.footer a{transition:color var(--pol-quick) ease}
+a.card{transition:transform 100ms var(--pol-out)}
+@media (hover:hover) and (pointer:fine){
+.btn.subtle:hover,.btn.glass:hover{border-color:rgba(238,229,216,.5)}
+a.card:hover{transform:translateY(-2px);transition-duration:var(--pol-fast);box-shadow:0 20px 44px rgba(10,8,6,.34)}}
+a.card:active{transform:scale(.99);transition-duration:140ms}
+:where(.btn,.links a,.footer a,a.card):focus-visible{outline:2px solid var(--gold,#d8c6a6);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){.btn,.links a,.footer a,a.card{transition:none}.btn:active,a.card:active,a.card:hover{transform:none}}
