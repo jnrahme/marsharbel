@@ -23,7 +23,7 @@
  select.value=actual;
  var helper=document.createElement('span');helper.id='sc-language-helper';helper.className='sc-language-helper';helper.textContent=blocked?copy.helper:'';
  var status=document.createElement('span');status.id='sc-language-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');status.className='sc-language-status';
- function refuse(){select.value=actual;status.textContent=copy.unavailable;}
+ function refuse(){var x=scrollX,y=scrollY;select.value=actual;status.textContent=copy.unavailable;window.scrollTo(x,y);}
  function request(lang){var r=api.resolve(manifest,location.href,lang,actual);if(!r.available){refuse();return false;}if(r.reason==='same-language'){select.value=actual;return true;}try{localStorage.setItem('sc_last_explicit_language',lang)}catch(_){}location.assign(r.href);return true;}
  select.addEventListener('change',function(){request(select.value)});
  host.append(label,select);
