@@ -16,6 +16,7 @@ from i18n.feast_mirror import render_feast
 from i18n.litany_mirror import render_litany
 from i18n.eucharistic_mirror import render_eucharistic
 from i18n.chaplet_mirror import render_chaplet
+from i18n.exact_master import render_exact_set
 
 
 def alternate_links(registry, topic=None):
@@ -156,6 +157,7 @@ def outputs(root=ROOT):
     result.update(eucharistic)
     result.update(render_chaplet(root))
     result.update(render_feast(root))
+    result.update(render_exact_set(root, registry))
     # Nested localized directory indexes must be explicit; Options -Indexes
     # otherwise hides hubs on some hosts.
     for code in published_locales(registry, 'eucharistic'):
@@ -195,7 +197,7 @@ def outputs(root=ROOT):
     generated += [registry['site'] + '/' + code + '/miracles/eucharistic/' + ('' if slug=='index' else slug)
                   for code in published_locales(registry, 'eucharistic') if code != registry['defaultLocale']
                   for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney')]
-    generated += [registry['site'] + route for mirror in registry.get('authoredMirrors', {}).values()
+    generated += [registry['site'] + route for mirror in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values()
                   for route in mirror['routes'].values() if route != mirror['english']]
     def entry(url):
         lastmod = f'<lastmod>{lastmods[url]}</lastmod>' if url in lastmods else ''
@@ -205,7 +207,7 @@ def outputs(root=ROOT):
     result[sitemap] = text
     routing = {'aliases':selector_aliases(registry), 'homes':{code: cfg['home'] for code,cfg in registry['locales'].items()},
                'topics':{cfg['relatedEnglish']:{code:page_url(registry,code,topic) for code in topic_locales(registry,topic)} for topic,cfg in registry['topics'].items()}}
-    for mirror in registry.get('authoredMirrors', {}).values():
+    for mirror in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values():
         routing['topics'][mirror['english']] = mirror['routes']
     routing['topics']['/saint-charbel-feast-day']['en']='/saint-charbel-feast-day'
     for slug in ('', 'lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica','ludbreg','amsterdam','ivorra','faverney'):
