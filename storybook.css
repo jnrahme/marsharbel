@@ -1197,7 +1197,7 @@
   border-radius: 10px;
   padding: 0.4rem 0.8rem;
   background: var(--theme-wash);
-  color: var(--gold);
+  color: #d9c7a6; /* the gold token measured 4.3:1 here; this is above 7:1 */
   font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
@@ -1262,7 +1262,7 @@
 }
 
 .transcript-toc a {
-  color: var(--gold);
+  color: #d9c7a6; /* gold token measured 4.2:1 */
   text-decoration: none;
   border-bottom: 1px solid var(--theme-line);
   padding-bottom: 1px;

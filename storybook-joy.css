@@ -227,3 +227,7 @@ body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration {
 
 /* Contrast: storybook shelf body links (WCAG 1.4.3) */
 body.is-story-shelf .card.story p a:not(.btn):not(.promo-link){color:#744418}
+
+/* Intro and transcript lines under story headings inherit the pale dark-theme muted color; on the cream story
+   background that is about 1.6:1. #57463a on cream is above 7:1. */
+body.is-story-page .section-sub { color: #57463a; }

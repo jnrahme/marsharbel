@@ -7,7 +7,9 @@ const pages = ['/', '/story', '/history', '/stories', '/saints', '/prayer-librar
   '/saint-charbel-novena', '/litany-of-saint-charbel', '/saint-charbel-prayer-for-healing', '/saint-charbel-feast-day',
   '/rosary-intro', '/mystery-meditation', '/gallery', '/news', '/videos', '/miracles/', '/testimonies', '/submit-testimony',
   '/visit-annaya', '/st-rafqa', '/pio-story', '/privacy-policy', '/terms-of-service', '/accessibility',
-  '/ar/', '/ar/prayers', '/ar/novena', '/fr/', '/es/'];
+  '/ar/', '/ar/prayers', '/ar/novena', '/fr/', '/es/',
+  '/it/', '/it/preghiere', '/it/novena', '/de/', '/de/gebete', '/de/novene', '/pl/', '/pl/modlitwy', '/pl/nowenna',
+  '/en/prayers', '/en/novena', '/en/biography'];
 const rtl = path => path.startsWith('/ar/');
 
 for (const path of pages) {
@@ -98,4 +100,16 @@ test('reduced motion stops running animations', async ({ browser }, info) => {
     await page.close();
   }
   await context.close();
+});
+
+test('prayer finder announces result count politely', async ({ page }, info) => {
+  test.skip(info.project.name !== 'laptop', 'one project is enough');
+  await page.route(url => !['127.0.0.1', 'localhost'].includes(new URL(url).hostname), route => route.abort());
+  await page.goto('/prayer-library', { waitUntil: 'load' });
+  const live = page.locator('#prayer-finder-count');
+  await expect(live).toHaveAttribute('aria-live', 'polite');
+  await page.fill('#prayer-finder-q', 'anxiety');
+  await expect(live).toContainText(/prayer page/i);
+  await page.fill('#prayer-finder-q', 'zzzzqqq');
+  await expect(live).toHaveText('No prayer pages match.');
 });
