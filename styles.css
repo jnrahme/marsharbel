@@ -2931,3 +2931,20 @@ a.card:active{transform:scale(.99);transition-duration:140ms}
 .prayer-page .hero>.cta-row .btn{font:inherit;font-weight:700;font-size:.95rem}
 @media (max-width:640px){.prayer-page .prayer-grid:not(:has(>:nth-child(5)))>.prayer-card{padding-left:1rem}}
 .prayer-page .hero>.cta-row .btn:last-child:nth-child(odd){grid-column:1/-1}
+
+/* Saint/news cards v2: uniform image frame, equal heights, visible click affordance */
+.grid-2>.card:has(>h3>.card-cover):has(>.hero-figure){display:flex;flex-direction:column;position:relative;transition:transform 250ms var(--pol-out)}
+.grid-2>.card:has(>h3>.card-cover)>.hero-figure{margin:.4rem 0 .8rem}
+.grid-2>.card:has(>h3>.card-cover)>.hero-figure img{display:block;width:100%;height:auto;border-radius:12px}
+.portrait-cards .grid-2>.card:has(>h3>.card-cover)>.hero-figure img{aspect-ratio:4/3;object-fit:cover;object-position:50% 22%}
+.grid-2>.card:has(>h3>.card-cover)>p{margin-top:auto;padding-top:.2rem;text-wrap:pretty}
+.grid-2>.card:has(>h3>.card-cover)>h3{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem}
+.grid-2>.card:has(>h3>.card-cover)>h3::after{content:"\2192";flex:none;color:var(--gold);opacity:.6;transition:transform 250ms var(--pol-out),opacity 150ms ease}
+[dir=rtl] .grid-2>.card:has(>h3>.card-cover)>h3::after{content:"\2190"}
+@media (hover:hover) and (pointer:fine){
+.grid-2>.card:has(>h3>.card-cover):hover>h3::after{opacity:1;transform:translateX(4px)}
+[dir=rtl] .grid-2>.card:has(>h3>.card-cover):hover>h3::after{transform:translateX(-4px)}
+.grid-2>.card:has(>h3>.card-cover):hover>h3 .card-cover{color:var(--gold)}}
+.grid-2>.card:has(>h3>.card-cover) .card-cover:focus-visible{outline-offset:6px}
+@media (prefers-reduced-motion:reduce){.grid-2>.card:has(>h3>.card-cover)>h3::after{transition:none}.grid-2>.card:has(>h3>.card-cover):hover>h3::after{transform:none}}
+.grid-2>.card:has(>h3>.card-cover)>.tag{align-self:flex-start}
