@@ -1,11 +1,11 @@
 # German history rewrite preparation
 
 Exact English source: 8dd7185405185139b3fb13853c3343ea9cc3347e.
-Draft TSV maps 216 of 221 MAIN slots. It is NOT an installed catalog or approved
-translation. Existing German page is unchanged. This material needs native/faith
-review before combined publication.
+Draft TSV maps all 221 original MAIN slots; the installed exact catalog has 220
+after removal of the obsolete footer helper. Private rendered output exists and
+needs independent native/faith review before combined publication.
 
-Remaining original-source quotation slots: 50 (mother, quoted by Paul VI 1977),
+Editorial supplied reviewed renderings for original-source quotation slots: 50 (mother, quoted by Paul VI 1977),
 94 (liturgical prayer), 100 (monastery death entry), 128 (Paul VI 1965),
 129 (Paul VI 1977). No guessed devotional quotation substituted.
 
@@ -22,3 +22,8 @@ Review distinctions: oral/monastic memory versus ecclesial recognition; uncertai
 birth/ordination dates; discrepancy in age and community years; conflicting tomb
 examination reports; Awad identification deliberately incomplete; 22nd-of-month
 account remains private report. Scripture/liturgy requires sourced German text.
+
+Producer rendered 8/8 German routes, new history focused tests 2/2, exact parity/schema
+5/5, phone tables inspected at actual scale. Whole independent QA/faith/native and
+production proof remain open. Leo official German quote preserved; all other quote
+frames distinguish translated source text from official German wording.
