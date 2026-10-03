@@ -1,11 +1,12 @@
 // Composes src/pages/**/*.html + partials/fragments/*.html into the served HTML
 // files. Output is committed (Hostinger serves the repo as-is), so the build is
 // deterministic and `--check` fails if any served page drifts from its source.
-// Include syntax: {{> name}} anywhere; {{> name "text"}} fills {{text}} in the fragment (\\" escapes a quote); {{> primary-nav}} is computed per page (active state, link prefix); indentation of the marker is
+// Include syntax: {{> name}} anywhere; {{> name "a" "b"}} fills {{1}} {{2}} (alias {{text}} = {{1}}) verbatim, no unescaping; {{> primary-nav}} is computed per page (active state, link prefix); indentation of the marker is
 // prefixes the first line only; fragments are verbatim blocks.
 import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { renderWebPage } from './lib/jsonld.mjs';
 import { renderPrimaryNav } from './lib/primary-nav.mjs';
 const check = process.argv.includes('--check');
 const SRC = 'src/pages', FRAG = 'partials/fragments';
@@ -24,13 +25,16 @@ const used = new Set(); let stale = [], n = 0;
 for (const file of await walk(SRC).catch(() => [])) {
   const rel = path.relative(SRC, file);
   const source = await readFile(file, 'utf8');
-  let built = source.replace(/([ \t]*)\{\{> ([a-z0-9-]+)(?: "((?:[^"\\]|\\.)*)")?\}\}/g, (_, indent, name, arg) => {
+  let built = source.replace(/([ \t]*)\{\{> ([a-z0-9-]+)((?: "(?:[^"\\]|\\.)*")*)\}\}/g, (_, indent, name, rawArgs) => {
     if (name === 'primary-nav') return indent + renderPrimaryNav(navTemplate, rel);
+    if (name === 'ld-webpage') return indent + renderWebPage([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
     if (!(name in frags)) throw new Error(`${rel}: unknown fragment ${name}`);
     used.add(name);
-    if (arg !== undefined) { if (!frags[name].includes('{{text}}')) throw new Error(`${rel}: fragment ${name} takes no argument`); return indent + frags[name].replace('{{text}}', () => arg.replace(/\\(.)/g, '$1')); }
-    if (frags[name].includes('{{text}}')) throw new Error(`${rel}: fragment ${name} needs an argument`);
-    return indent + frags[name];
+    const args = [...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]);
+    const slots = new Set([...frags[name].matchAll(/\{\{(\d+|text)\}\}/g)].map(m => (m[1] === 'text' ? 1 : Number(m[1]))));
+    if (slots.size !== args.length || [...slots].some(k => k > args.length)) throw new Error(`${rel}: fragment ${name} takes ${slots.size} argument(s), got ${args.length}`);
+    // Arguments are inserted verbatim (no unescaping) so JSON/HTML escapes survive byte for byte.
+    return indent + frags[name].replace(/\{\{(\d+|text)\}\}/g, (_m, k) => args[(k === 'text' ? 1 : Number(k)) - 1]);
   });
   if (built.includes('rel="canonical"') && !/name=["']robots["'][^>]*content=["'][^"']*noindex/.test(built)) {
     const composed = spawnSync('python3', ['scripts/inject-same-page-stdin.py'], {input: built, encoding:'utf8',maxBuffer:20*1024*1024});
