@@ -167,6 +167,14 @@ def render_exact(root, registry, lang, name, route, catalog=None):
     sources=[section for section in soup.select('main section') if section.h2 and section.h2.get_text()==catalog['sourcesHeading']]
     if len(sources)!=1: raise ValueError(f'{name}: source section differs')
     note=soup.new_tag('p',attrs={'class':'translation-note'});note.string=catalog['translationNote'];sources[0].append(note)
+    for reference in catalog.get('translationSources', []):
+        if set(reference) != {'url', 'label'} or not reference['url'].startswith('https://'):
+            raise ValueError(f'{name}: invalid translation source')
+        leaves(reference['label'])
+        link=soup.new_tag('a',href=reference['url'],rel='noopener',attrs={'class':'translation-note'})
+        link.string=reference['label']
+        sources[0].append(link)
+
     return finish_nav(str(soup),root,lang)
 
 
