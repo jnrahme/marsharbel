@@ -20,6 +20,10 @@ npm run i18n:check
 python3 scripts/build-eucharistic-miracles.py --check
 npm run i18n:test
 
+echo "[qa] Checking specs for absolute machine paths"
+python3 scripts/qa/check_spec_paths.py
+python3 -m unittest discover -s scripts/qa -p 'test_spec_paths.py'
+
 echo "[qa] Checking SEO metadata and sitemap coverage"
 python3 scripts/qa/check_seo.py
 python3 -m unittest discover -s scripts/qa -p 'test_seo.py'
