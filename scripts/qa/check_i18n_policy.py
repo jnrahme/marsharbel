@@ -145,6 +145,9 @@ def check(root=ROOT):
                 errors.append(f'testimonies-copy.js: {key} differs from English catalog')
     for file, values in snapshot(root).items():
         additions = Counter(values) - Counter(baseline.get(file, {}))
+        # One generated Travel hub entry, backed by the shared locale catalog.
+        if '<nav class="links"' in (root/file).read_text() and file.endswith('.html'):
+            additions -= Counter({read_json(root/'locales/en/travel.json')['hubLabel']:1})
         if file.endswith('.html'):
             from bs4 import BeautifulSoup
             page = BeautifulSoup((root/file).read_text(),'html.parser')

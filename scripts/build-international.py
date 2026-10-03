@@ -19,6 +19,7 @@ from i18n.eucharistic_mirror import render_eucharistic
 from i18n.chaplet_mirror import render_chaplet
 from i18n.exact_master import render_exact_set
 from i18n.tour_nav import tour_nav
+from i18n.travel_components import travel_frame
 
 
 def alternate_links(registry, topic=None):
@@ -243,11 +244,18 @@ def outputs(root=ROOT):
     if count != 1:
         raise ValueError('Expected exactly one managed i18n-routes block in .htaccess')
     result[htaccess] = updated
+    for route in json.loads((root/'locales/travel-routes.json').read_text())['destinations']:
+        path=root/(route.lstrip('/')+'.html')
+        result.setdefault(path,path.read_text())
     for path,text in list(result.items()):
         if path.suffix == '.html' and '<header' in text:
             import re as _re
             match = _re.search(r'<html[^>]*lang=["\']([^"\']+)',text)
-            if match: result[path] = tour_nav(text,root,match[1])
+            if match:
+                code=match[1]
+                route='/' + str(path.relative_to(root)).removesuffix('.html')
+                route=route.removesuffix('index') if route.endswith('/index') else route
+                result[path] = travel_frame(tour_nav(text,root,code),root,code,route,registry)
     from i18n.same_page_injection import control_outputs
     manifest=read_json(root/'locales/same-page-manifest.pending.json')
     control_copy=read_json(root/'locales/same-page-copy.json')

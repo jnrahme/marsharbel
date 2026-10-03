@@ -12,10 +12,10 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT/'scripts'))
 from i18n.catalog import load_catalog, locale_topics, read_json, page_url
 from i18n.tour_nav import tour_nav
+from i18n.travel_components import travel_frame
 from i18n.same_page_injection import inject_control
-
-def final_control(html, path):
-    return inject_control(html, ROOT, read_json(ROOT/"locales/same-page-manifest.pending.json"), read_json(ROOT/"locales/same-page-copy.json"))
+from i18n.catalog import read_json as _read_json_fc
+def fc(t):return inject_control(t,ROOT,_read_json_fc(ROOT/'locales/same-page-manifest.pending.json'),_read_json_fc(ROOT/'locales/same-page-copy.json'))
 from check_i18n_policy import check, extract_html
 
 spec = importlib.util.spec_from_file_location('international_builder', ROOT/'scripts/build-international.py')
@@ -103,7 +103,7 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('href="/ar/biography"', ar)
         self.assertIn('href="/ar/annaya"', ar)
         self.assertNotIn('href="/ar/saint-charbel-trail"', ar)
-        self.assertEqual(final_control(tour_nav(pages[ROOT / 'qadisha-valley.html'], ROOT, 'en'), ROOT/'qadisha-valley.html'), (ROOT / 'qadisha-valley.html').read_text())
+        self.assertEqual(fc(travel_frame(tour_nav(pages[ROOT / 'qadisha-valley.html'], ROOT, 'en'),ROOT,'en','/qadisha-valley',read_json(ROOT/'locales/registry.json'))), (ROOT / 'qadisha-valley.html').read_text())
         fr = pages[ROOT / 'fr/vallee-qadisha.html']
         self.assertEqual(Shape(fr).sections, Shape(en).sections)
         self.assertEqual(Shape(fr).images, Shape(en).images)
@@ -116,7 +116,7 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('href="/fr/vallee-qadisha"', fr)
         self.assertNotIn('href="/fr/saint-charbel-trail"', fr)
         self.assertIn('"@type": "TouristAttraction"', fr)
-        self.assertEqual(final_control(fr, ROOT/'fr/vallee-qadisha.html'), (ROOT / 'fr/vallee-qadisha.html').read_text())
+        self.assertEqual(fc(travel_frame(tour_nav(fr,ROOT,'fr'),ROOT,'fr','/fr/vallee-qadisha',read_json(ROOT/'locales/registry.json'))), (ROOT / 'fr/vallee-qadisha.html').read_text())
         es = pages[ROOT / 'es/valle-qadisha.html']
         self.assertEqual(Shape(es).sections, Shape(en).sections)
         self.assertEqual(Shape(es).images, Shape(en).images)
@@ -128,7 +128,7 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('href="/es/annaya"', es)
         self.assertIn('href="/es/valle-qadisha"', es)
         self.assertNotIn('href="/es/saint-charbel-trail"', es)
-        self.assertEqual(final_control(es, ROOT/'es/valle-qadisha.html'), (ROOT / 'es/valle-qadisha.html').read_text())
+        self.assertEqual(fc(travel_frame(tour_nav(es,ROOT,'es'),ROOT,'es','/es/valle-qadisha',read_json(ROOT/'locales/registry.json'))), (ROOT / 'es/valle-qadisha.html').read_text())
 
 
     def test_qadisha_mirror_rejects_missing_keys_and_escapes_text(self):
@@ -227,7 +227,7 @@ class CatalogTests(unittest.TestCase):
                 self.assertEqual([(q['name'], q['acceptedAnswer']['text']) for q in faq],
                                  [(catalog[f'faq.question{i}'], catalog[f'faq.text{i}']) for i in range(1,7)])
                 self.assertIn(f'href="{other_routes[code]}"', page)
-            self.assertEqual(final_control(tour_nav(pages[ROOT/f'{name}-monastery.html'], ROOT, 'en'), ROOT/f'{name}-monastery.html'), (ROOT/f'{name}-monastery.html').read_text())
+            self.assertEqual(fc(travel_frame(tour_nav(pages[ROOT/f'{name}-monastery.html'], ROOT, 'en'),ROOT,'en',f'/{name}-monastery',read_json(ROOT/'locales/registry.json'))), (ROOT/f'{name}-monastery.html').read_text())
 
     def test_letters_catalog_does_not_hide_new_copy(self):
         catalog=read_json(ROOT/'locales/en/letters-display.json')['values']
