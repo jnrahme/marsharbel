@@ -1,3 +1,4 @@
+from i18n.encyclopedia_nav import finish_nav
 """Render Qannoubine and Qozhaya from their keyed English masters and locale catalogs."""
 from i18n.metadata import og_locales, published_locales
 
@@ -79,5 +80,5 @@ def render_monasteries(root=ROOT, registry=None):
                 text = text.replace('href="styles.css', 'href="/styles.css')
                 text = re.sub(r'(<a\b[^>]*\bhref=["\'])(/[^"\']*)(["\'])',
                               lambda m: m[1] + targets.get(m[2].rstrip('/') or '/', m[2]) + m[3], text)
-            result[root / (route.lstrip('/') + '.html')] = text
+            result[root / (route.lstrip('/') + '.html')] = finish_nav(text,root,code)
     return result

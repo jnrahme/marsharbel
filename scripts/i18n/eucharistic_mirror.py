@@ -1,3 +1,4 @@
+from i18n.encyclopedia_nav import finish_nav
 from i18n.metadata import og_locales, published_locales
 GTAG_BLOCK = '''<!-- Google tag (gtag.js) -->
 <script>
@@ -253,5 +254,5 @@ def render_eucharistic(root=ROOT, registry=None):
                 script.string=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
             if slug=='index':path=root/lang/'miracles/eucharistic/index.html'
             else:path=root/lang/'miracles/eucharistic'/f'{slug}.html'
-            result[path]='<!doctype html>\n'+str(soup).lstrip().removeprefix('<!DOCTYPE html>\n').lstrip()
+            result[path]=finish_nav('<!doctype html>\n'+str(soup).lstrip().removeprefix('<!DOCTYPE html>\n').lstrip(),root,lang)
     return result

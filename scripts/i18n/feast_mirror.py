@@ -1,3 +1,4 @@
+from i18n.encyclopedia_nav import finish_nav
 """Locale-agnostic feast mirror: preserve the English DOM and fail on untranslated master edits."""
 from i18n.metadata import og_locales
 from i18n.catalog import page_url, topic_locales
@@ -15,8 +16,10 @@ def render_feast_locale(root=ROOT, lang='ar', registry=None):
     skip=soup.select_one('.skip-link')
     if skip is not None: skip.string=read_json(root/f'locales/{lang}/common.json')['navigation.skip']
     translate_slots(soup.main, copy['slots'], 'Feast')
+    from i18n.encyclopedia_trail import apply_trail
+    apply_trail(soup, root, lang, '/history')
     soup.html['lang']=lang;soup.html['dir']=registry['locales'][lang]['direction'];soup.html['data-authored-mirror']='feast'
-    title=copy['title'];description=soup.select_one('main .hero > p').get_text(' ',strip=True);url=registry['site']+config['routes'][lang]
+    title=copy['title'];description=soup.select_one('main .hero > p:not(.enc-trail)').get_text(' ',strip=True);url=registry['site']+config['routes'][lang]
     soup.title.string=title
     for selector,value in [('meta[name=description]',description),('meta[property="og:title"]',title),('meta[property="og:description"]',description),('meta[name="twitter:title"]',title),('meta[name="twitter:description"]',description),('meta[property="og:url"]',url)]:soup.select_one(selector)['content']=value
     soup.select_one('link[rel=canonical]')['href']=url
@@ -73,7 +76,7 @@ def render_feast_locale(root=ROOT, lang='ar', registry=None):
         if key in chrome:node.replace_with(old.replace(key,chrome[key]))
     soup.select_one('header nav')['aria-label']=copy['primaryLabel'];soup.select_one('header a.brand')['href']=registry['locales'][lang]['home']
     soup.select_one('footer .site-shell').string=copy['footer']
-    return {root/(config['routes'][lang].lstrip('/')+'.html'):str(soup)}
+    return {root/(config['routes'][lang].lstrip('/')+'.html'):finish_nav(str(soup),root,lang)}
 
 
 def render_feast(root=ROOT):

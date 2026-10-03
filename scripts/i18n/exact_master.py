@@ -1,3 +1,4 @@
+from i18n.encyclopedia_nav import finish_nav
 """Prepare exact-master locale renders without publishing or editing source files."""
 import hashlib
 import json
@@ -129,7 +130,7 @@ def render_exact(root, registry, lang, name, route, catalog=None):
     sources=[section for section in soup.select('main section') if section.h2 and section.h2.get_text()==catalog['sourcesHeading']]
     if len(sources)!=1: raise ValueError(f'{name}: source section differs')
     note=soup.new_tag('p',attrs={'class':'translation-note'});note.string=catalog['translationNote'];sources[0].append(note)
-    return str(soup)
+    return finish_nav(str(soup),root,lang)
 
 
 def render_exact_set(root, registry):

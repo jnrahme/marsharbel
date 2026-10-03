@@ -13,7 +13,7 @@ class FeastMirrorTests(unittest.TestCase):
  def test_shape_and_provenance(self):
   en=BeautifulSoup((ROOT/'saint-charbel-feast-day.html').read_text(),'html.parser');text=render_feast(ROOT)[ROOT/'ar/feast-day.html'];ar=BeautifulSoup(text,'html.parser')
   self.assertEqual(fc(travel_frame(tour_nav(text,ROOT,'ar'),ROOT,'ar','/ar/feast-day',read_json(ROOT/'locales/registry.json'))),(ROOT/'ar/feast-day.html').read_text())
-  self.assertEqual([n.name for n in en.select('main *')],[n.name for n in ar.select('main *')])
+  self.assertEqual([n.name for n in en.select('main *')],[n.name for n in ar.select('main *:not(.enc-language)')])
   self.assertEqual(len(ar.select('main > section')),14)
   self.assertEqual(ar.html['dir'],'rtl');self.assertEqual(ar.html['lang'],'ar')
   self.assertEqual(ar.select_one('main img')['src'],en.select_one('main img')['src'].removeprefix('.'))

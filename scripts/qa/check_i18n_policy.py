@@ -106,6 +106,12 @@ def check(root=ROOT):
     pillar_catalog = read_json(pillar_path)['values'] if pillar_path.exists() else {}
     a11y_path = root/'locales/en/a11y-statement-copy.json'
     a11y_catalog = read_json(a11y_path)['values'] if a11y_path.exists() else {}
+    scripture_catalog = {}
+    for name in ('scripture-copy', 'nav-legacy-copy', 'encyclopedia-copy', 'home-travel-copy'):
+        extra_path = root/f'locales/en/{name}.json'
+        if extra_path.exists():
+            for page, values in read_json(extra_path)['values'].items():
+                scripture_catalog.setdefault(page, Counter()).update(values)
     storybook_catalog = read_json(root/'locales/en/storybook.json')
     teresa_catalog = read_json(root/'locales/en/mother-teresa-story-copy.json')
     rafqa_catalog = read_json(root/'locales/en/rafqa-story-copy.json')
@@ -195,6 +201,10 @@ def check(root=ROOT):
         additions -= Counter(aeo_catalog.get(file, {}))
         additions -= Counter(pillar_catalog.get(file, {}))
         additions -= Counter(a11y_catalog.get(file, {}))
+        additions -= Counter(scripture_catalog.get(file, {}))
+        stale_scripture = Counter(scripture_catalog.get(file, {})) - Counter(values)
+        if stale_scripture:
+            errors.append(f'{file}: scripture-copy catalog entries missing from the page: {sorted(stale_scripture)[:3]}')
         if file == 'miracles/index.html':
             euch_entry = read_json(root/'locales/en/eucharistic-miracles.json')['hub']
             additions -= Counter({euch_entry[key]: 1 for key in ('charbelEntryTitle','charbelEntryIntro','charbelEntryAction','charbelEntryCredit','charbelEntryAlt','charbelEntryPhotoSource','charbelEntryLicense','charbelEntryLicenseText','eyebrow')})
