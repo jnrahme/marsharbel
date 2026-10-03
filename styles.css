@@ -1681,19 +1681,18 @@ h3 {
   color: var(--text);
 }
 
+/* Reveal is transform-only: text stays fully opaque so contrast is always the final value
+   (an opacity fade is sampled mid-transition by axe and fails color-contrast). */
 .reveal {
-  opacity: 1;
   transform: none;
-  transition: opacity 550ms ease, transform 550ms ease;
+  transition: transform 550ms ease;
 }
 
 .reveal.reveal-pending:not(.on) {
-  opacity: 0;
   transform: translateY(18px);
 }
 
 .reveal.on {
-  opacity: 1;
   transform: translateY(0);
 }
 
