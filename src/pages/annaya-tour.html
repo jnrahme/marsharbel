@@ -27,7 +27,56 @@
   <meta name="twitter:title" content="Annaya Online Tour: Walk Saint Charbel's Monastery" />
   <meta name="twitter:description" content="A guided online walk through Annaya in five stops: the monastery on the mountain, the courtyard, the tomb, and the hermitage where Saint Charbel prayed, with real photographs." />
   <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
-  {{> ld-webpage "Annaya Online Tour: Walk Saint Charbel's Monastery" "A guided online walk through Annaya in five stops: the monastery on the mountain, the courtyard, the tomb, and the hermitage where Saint Charbel prayed, with real photographs." "https://marsharbel.com/annaya-tour" "Home" "https://marsharbel.com/" "Travel" "https://marsharbel.com/travel" "Walk Through Annaya, Online" "https://marsharbel.com/annaya-tour"}}
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Annaya Online Tour: Walk Saint Charbel's Monastery",
+  "description": "A guided online walk through Annaya in five stops: the monastery on the mountain, the courtyard, the tomb, and the hermitage where Saint Charbel prayed, with real photographs.",
+  "url": "https://marsharbel.com/annaya-tour",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Saint Charbel",
+    "alternateName": [
+      "Mar Charbel",
+      "Saint Charbel Makhlouf",
+      "Sharbel",
+      "St Charbel",
+      "Saint Sharbel",
+      "Charbel Makhlouf"
+    ],
+    "url": "https://marsharbel.com/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "marsharbel.com",
+      "url": "https://marsharbel.com/"
+    }
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://marsharbel.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Travel",
+        "item": "https://marsharbel.com/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Walk Through Annaya, Online",
+        "item": "https://marsharbel.com/annaya-tour"
+      }
+    ]
+  }
+}
+  </script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -65,6 +114,7 @@
 .tour-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
 </style>
 <script>document.addEventListener('DOMContentLoaded',function(){var s=document.querySelectorAll('.tour-stop');if(!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('seen')});return}var o=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('seen')}})},{threshold:.25});s.forEach(function(e){o.observe(e)})});</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   {{> skip-link}}
@@ -100,7 +150,7 @@
 <h2 id="stop2">The Church Built for the Pilgrims</h2>
 <p>Once Charbel was beatified in 1965, visitors came in far greater numbers than the old buildings could take. The Lebanese Maronite Order answered with a new, larger church, consecrated in 1974. His tomb lies inside it.</p>
 <p class="tour-why"><strong>Why it matters:</strong> Its size tells you how many people still make the climb, especially on the 22nd of the month and at the July feast.</p></div>
-<p class="tour-credit">saintcharbel.com (Saint Charbel Oasis), used with owner permission</p>
+<p class="tour-credit">Photo: saintcharbel.com.</p>
 </section>
 <section class="tour-stop" aria-labelledby="stop3">
 <img src="./media/tour/annaya-courtyard-night.webp" alt="The stone monastery courtyard at Annaya at night, with arched windows and a round stone fountain" width="1600" height="900" loading="lazy" decoding="async" />
@@ -108,7 +158,7 @@
 <h2 id="stop3">The Courtyard</h2>
 <p>Every pilgrim passes through this courtyard on the way in. The walls are bare stone, the windows are arched, and a fountain murmurs in the middle. Nobody pays to enter, and nobody is asked what they believe.</p>
 <p class="tour-why"><strong>Why it matters:</strong> People arrive talking and leave quiet. The place works on you before you have decided to pray.</p></div>
-<p class="tour-credit">saintcharbel.com (Saint Charbel Oasis), used with owner permission</p>
+<p class="tour-credit">Photo: saintcharbel.com.</p>
 </section>
 <section class="tour-stop" aria-labelledby="stop4">
 <img src="./media/tour/annaya-tomb-icon.webp" alt="Arched tomb chamber at Annaya with a candle-lit icon of Saint Charbel above the reliquary" width="1600" height="900" loading="lazy" decoding="async" />
@@ -116,7 +166,7 @@
 <h2 id="stop4">The Tomb</h2>
 <p>Here is what the climb is for. A line forms, and the people in it pray while they wait. Many hold a folded note with a name on it. When your turn comes there is nothing to perform: you kneel, you touch the stone if you wish, and you stay as long as you need.</p>
 <p class="tour-why"><strong>Why it matters:</strong> For most visitors, this is the whole reason for the journey. More on <a href="./saint-charbel-tomb">the tomb page</a>.</p></div>
-<p class="tour-credit">saintcharbel.com (Saint Charbel Oasis), used with owner permission</p>
+<p class="tour-credit">Photo: saintcharbel.com.</p>
 </section>
 <section class="tour-stop" aria-labelledby="stop5">
 <img src="./media/tour/annaya-hermitage-view.webp" alt="View toward the coast and the sea from the hermitage area of Annaya, over a stone terrace and flat roof" width="1600" height="900" loading="lazy" decoding="async" />
@@ -124,7 +174,7 @@
 <h2 id="stop5">The Hermitage of Saints Peter and Paul</h2>
 <p>A path leads up from the monastery to the hermitage of Saints Peter and Paul. This photograph, taken from the hermitage area and published on the monastery's own hermitage page, looks out over a terrace toward the sea. Charbel moved up here in 1875. He remained for twenty-three years, until he died on Christmas Eve 1898.</p>
 <p class="tour-why"><strong>Why it matters:</strong> The tomb is where people go to ask him for help. The hermitage is where he did his own praying, alone. More on <a href="./saint-charbel-hermitage">the hermitage page</a>.</p></div>
-<p class="tour-credit">saintcharbel.com (Saint Charbel Oasis), used with owner permission</p>
+<p class="tour-credit">Photo: saintcharbel.com.</p>
 </section>
 
 <section class="section">
@@ -137,7 +187,7 @@
 <section class="section">
 <h2>Photo Credits</h2>
 <div class="card story">
-<p>Stop 1: Paul Saad, Wikimedia Commons, CC BY-SA 4.0. Stops 2 to 5: saintcharbel.com (Saint Charbel Oasis), used with owner permission. The tour uses real photographs only.</p>
+<p>Stop 1: Paul Saad, Wikimedia Commons, CC BY-SA 4.0. Stops 2 to 5: Photo: saintcharbel.com. The tour uses real photographs only.</p>
 </div>
 </section>
 <section class="section">
@@ -152,11 +202,17 @@
 </section>
 </main>
 
-  {{> footer-credit-a "Annaya online tour."}}
+  <footer class="footer">
+    <div class="site-shell">Annaya online tour. Author: Please pray for the person who made this website.</div>
+  </footer>
 
   <script defer src="app.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>
