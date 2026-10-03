@@ -10,7 +10,7 @@ for(const file of files){
   const html=fs.readFileSync(file,'utf8');
   assert(!/<script[^>]+src=["']https:\/\/www\.googletagmanager\.com\/gtag\//.test(html),`${file}: ungated loader`);
   assert(!/<script>[^<]*G-CJX1M0VFKP/.test(html),`${file}: inline GA snippet`);
-  const refs=(html.match(/<script defer src="\/analytics-init\.js"><\/script>/g)||[]).length;
+  const refs=(html.match(/<script defer(?:="")? src="\/analytics-init\.js"><\/script>/g)||[]).length;
   assert(refs<=1,`${file}: duplicate analytics-init reference`);
   const snippets=refs?[fs.readFileSync('analytics-init.js','utf8')]:[];
   for(const snippet of snippets){checked++;for(const host of ['marsharbel.com','www.marsharbel.com','localhost','127.0.0.1','pr-410--marsharbel-preview.netlify.app','marsharbel-preview.surge.sh','evil.marsharbel.com','marsharbel.com.evil.test','']){
