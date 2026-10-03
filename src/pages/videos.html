@@ -4,33 +4,16 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saint Charbel Videos: Documentaries, Film and Miracle Reports</title>
   <meta name="description" content="Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/videos" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Saint Charbel Videos: Documentaries, Film and Miracle Reports" />
-  <meta property="og:description" content="Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place." />
-  <meta property="og:url" content="https://marsharbel.com/videos" />
-  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saint Charbel Videos: Documentaries, Film and Miracle Reports" />
-  <meta name="twitter:description" content="Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place." />
-  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  {{> head-social "website" "Saint Charbel Videos: Documentaries, Film and Miracle Reports" "Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place." "https://marsharbel.com/videos" "https://marsharbel.com/saint-charbel.jpg" "Saint Charbel Videos: Documentaries, Film and Miracle Reports" "Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place." "https://marsharbel.com/saint-charbel.jpg"}}
   {{> ld-webpage "Saint Charbel Videos: Documentaries, Film and Miracle Reports" "Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place." "https://marsharbel.com/videos" "Home" "https://marsharbel.com/" "Saint Charbel on Film" "https://marsharbel.com/videos"}}
   {{> ld-faq "What videos are on this page?" "Documentaries on Saint Charbel's life, from a short ten-minute film to a full eighty-minute documentary, the complete feature film with English subtitles, the older six-part film, miracle reports, and footage from Annaya and the relic tours." "Are the videos hosted on this site?" "No. They are embedded from YouTube through the youtube-nocookie player, using YouTube's privacy-enhanced embed mode." "Can I watch the full Saint Charbel movie here?" "Yes. The full feature film about Saint Charbel's life, with English subtitles, is embedded on this page - about one hour and forty-four minutes." "Where can I read the story behind a video?" "The site also has written context on the Miracles pages, the pilgrimage guide, and the relics page."}}
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
+  {{> head-font-preloads-legacy}}
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/videos" />

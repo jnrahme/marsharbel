@@ -4,34 +4,17 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Padre Pio Story for Kids | Catholic Storybook</title>
   <meta name="description" content="Read a child-friendly Padre Pio storybook for ages 5-12 with read-aloud narration, simple language, faith lessons, and an engaging guided experience." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/pio-story" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Padre Pio Story for Kids | Catholic Storybook" />
-  <meta property="og:description" content="Read a child-friendly Padre Pio storybook for ages 5-12 with read-aloud narration, simple language, faith lessons, and an engaging guided experience." />
-  <meta property="og:url" content="https://marsharbel.com/pio-story" />
-  <meta property="og:image" content="https://marsharbel.com/media/storybook-pio/images/page-01.webp" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Padre Pio Story for Kids | Catholic Storybook" />
-  <meta name="twitter:description" content="Read a child-friendly Padre Pio storybook for ages 5-12 with read-aloud narration, simple language, faith lessons, and an engaging guided experience." />
-  <meta name="twitter:image" content="https://marsharbel.com/media/storybook-pio/images/page-01.webp" />
+  {{> head-social "website" "Padre Pio Story for Kids | Catholic Storybook" "Read a child-friendly Padre Pio storybook for ages 5-12 with read-aloud narration, simple language, faith lessons, and an engaging guided experience." "https://marsharbel.com/pio-story" "https://marsharbel.com/media/storybook-pio/images/page-01.webp" "Padre Pio Story for Kids | Catholic Storybook" "Read a child-friendly Padre Pio storybook for ages 5-12 with read-aloud narration, simple language, faith lessons, and an engaging guided experience." "https://marsharbel.com/media/storybook-pio/images/page-01.webp"}}
   {{> ld-webpage-audience "en" "Children and families" "5" "12" "Padre Pio Story for Kids | Catholic Storybook" "Read a child-friendly Padre Pio storybook for ages 5-12 with read-aloud narration, simple language, faith lessons, and an engaging guided experience." "https://marsharbel.com/pio-story" "Home" "https://marsharbel.com/" "The Story of Padre Pio" "https://marsharbel.com/pio-story"}}
   {{> ld-faq "Who is this storybook for?" "Children ages 5 to 12, reading on their own or listening with family. Every page has a Read Aloud button with gentle narration, so the book can be heard as well as read." "Who was Padre Pio?" "A Capuchin friar from southern Italy (1887-1968) who heard confessions for up to sixteen hours a day, bore wounds like those of Christ for fifty years, and founded a hospital at San Giovanni Rotondo. The Church canonized him on June 16, 2002." "Is the story true?" "Yes. It retells documented events of his life. The harder chapters, like the wounds he bore, are told honestly and gently, and the adult page separates what is documented from what is reported." "What does \"pray, hope, and don't worry\" mean?" "It was Padre Pio's short counsel for anxious people: bring everything to God in prayer, trust Him with the outcome, and refuse to carry tomorrow's fear today."}}
   {{> ld-video "The Story of Padre Pio - Storybook Film" "AI-animated 7-minute film of the free Padre Pio storybook for children at marsharbel.com/pio-story." "https://marsharbel.com/media/storybook-pio/images/page-01.webp" "https://marsharbel.com/media/storybook-pio/pio-film-endcard.mp4" "2026-09-28" "PT7M33S" "en"}}
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  {{> head-font-preloads}}
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
   <link rel="stylesheet" href="storybook.css" />
   <link rel="stylesheet" href="storybook-joy.css" />

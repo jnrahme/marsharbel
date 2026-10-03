@@ -4,33 +4,16 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rosary Mini Book | Quick Prayer Companion</title>
   <meta name="description" content="Open the Rosary minibook for a compact, easy-to-follow prayer companion covering mysteries, prayers, and daily devotion tips." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/rosary-minibook" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Rosary Mini Book | Quick Prayer Companion" />
-  <meta property="og:description" content="Open the Rosary minibook for a compact, easy-to-follow prayer companion covering mysteries, prayers, and daily devotion tips." />
-  <meta property="og:url" content="https://marsharbel.com/rosary-minibook" />
-  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rosary Mini Book | Quick Prayer Companion" />
-  <meta name="twitter:description" content="Open the Rosary minibook for a compact, easy-to-follow prayer companion covering mysteries, prayers, and daily devotion tips." />
-  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  {{> head-social "website" "Rosary Mini Book | Quick Prayer Companion" "Open the Rosary minibook for a compact, easy-to-follow prayer companion covering mysteries, prayers, and daily devotion tips." "https://marsharbel.com/rosary-minibook" "https://marsharbel.com/saint-charbel.jpg" "Rosary Mini Book | Quick Prayer Companion" "Open the Rosary minibook for a compact, easy-to-follow prayer companion covering mysteries, prayers, and daily devotion tips." "https://marsharbel.com/saint-charbel.jpg"}}
   {{> ld-webpage "Rosary Mini Book | Quick Prayer Companion" "Open the Rosary minibook for a compact, easy-to-follow prayer companion covering mysteries, prayers, and daily devotion tips." "https://marsharbel.com/rosary-minibook" "Home" "https://marsharbel.com/" "Prayer" "https://marsharbel.com/prayer-library" "Rosary Minibook" "https://marsharbel.com/rosary-minibook"}}
   {{> ld-faq "What is the Rosary Minibook?" "A text companion for praying the Rosary: every mystery with an explanation, a Scripture reading summary, and a reflection, organized for direct prayer use, plus the Fifteen Promises of the Rosary in one place." "What are the Fifteen Promises of the Rosary?" "Promises passed down through the Dominican tradition, attributed to the Virgin Mary in private revelations to Saint Dominic and Blessed Alan de Rupe. They are devotional tradition, not a formal decree of the Church, and not a mechanical guarantee - an encouragement to perseverance, never a bargain." "How do I use the minibook while praying?" "Tap a mystery link in the Mystery Text Library to open its guided page, where the written text and the voice stay in sync, so you can read and listen together." "Can I read one specific mystery?" "Yes. The Mystery Text Library lists every one of the twenty mysteries - four sets of five - and each link opens that mystery's own guided page."}}
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  {{> head-font-preloads}}
   <link rel="stylesheet" href="styles.css?v=20261002-share-2" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/rosary-minibook" />

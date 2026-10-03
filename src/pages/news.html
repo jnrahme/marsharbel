@@ -4,33 +4,16 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saint Charbel News | Latest Miracles, Movie & Events</title>
   <meta name="description" content="The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/news" />
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Saint Charbel News | Latest Miracles, Movie & Events" />
-  <meta property="og:description" content="The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources." />
-  <meta property="og:url" content="https://marsharbel.com/news" />
-  <meta property="og:image" content="https://marsharbel.com/media/news/movie-poster-hero.webp" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saint Charbel News | Latest Miracles, Movie & Events" />
-  <meta name="twitter:description" content="The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources." />
-  <meta name="twitter:image" content="https://marsharbel.com/media/news/movie-poster-hero.webp" />
+  {{> head-social "article" "Saint Charbel News | Latest Miracles, Movie & Events" "The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources." "https://marsharbel.com/news" "https://marsharbel.com/media/news/movie-poster-hero.webp" "Saint Charbel News | Latest Miracles, Movie & Events" "The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources." "https://marsharbel.com/media/news/movie-poster-hero.webp"}}
   {{> ld-webpage-article-modified "2026-09-20" "Saint Charbel in the News" "https://marsharbel.com/media/news/movie-poster-hero.webp" "2026-09-20" "Saint Charbel News | Latest Miracles, Movie & Events" "The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources." "https://marsharbel.com/news" "Home" "https://marsharbel.com/" "News" "https://marsharbel.com/news"}}
   <link rel="alternate" type="application/rss+xml" href="https://marsharbel.com/feed.xml" />
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  {{> head-font-preloads}}
   <link rel="stylesheet" href="styles.css?v=20261002-share-2" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/news" />

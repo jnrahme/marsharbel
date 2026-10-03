@@ -4,29 +4,13 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saint Charbel Makhlouf: Full Life, Timeline and Canonization (1828-1977)</title>
   <meta name="description" content="The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/history" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Saint Charbel Makhlouf: Full Life, Timeline and Canonization (1828-1977)" />
-  <meta property="og:description" content="The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced." />
-  <meta property="og:url" content="https://marsharbel.com/history" />
-  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saint Charbel Makhlouf: Full Life, Timeline and Canonization (1828-1977)" />
-  <meta name="twitter:description" content="The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced." />
-  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  {{> head-social "website" "Saint Charbel Makhlouf: Full Life, Timeline and Canonization (1828-1977)" "The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced." "https://marsharbel.com/history" "https://marsharbel.com/saint-charbel.jpg" "Saint Charbel Makhlouf: Full Life, Timeline and Canonization (1828-1977)" "The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced." "https://marsharbel.com/saint-charbel.jpg"}}
   {{> ld-webpage "Saint Charbel Makhlouf: Full Life, Timeline and Canonization (1828-1977)" "The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced." "https://marsharbel.com/history" "Home" "https://marsharbel.com/" "Legacy" "https://marsharbel.com/saint-charbel-encyclopedia" "Full History" "https://marsharbel.com/history"}}
   <script type="application/ld+json">
 {
@@ -52,8 +36,7 @@
 }
   </script>
   {{> ld-faq "Who was Saint Charbel?" "A Lebanese Maronite monk and priest (1828-1898) who lived 23 years as a hermit at Annaya. He was canonized by Paul VI in 1977." "When was Saint Charbel born?" "Traditionally on May 8, 1828, in Bekaa Kafra. No authenticated birth record gives the exact day." "Where did Saint Charbel live?" "He lived at the Monastery of Our Lady of Mayfouq (novitiate), the Monastery of Saint Maron at Annaya (vows, then community life), the Monastery of Saints Cyprian and Justina at Kfifan (studies), and from 1875 to 1898 at the Hermitage of Saints Peter and Paul above Annaya." "How did Saint Charbel die?" "He suffered a stroke on December 16, 1898, while celebrating the Divine Liturgy, and died eight days later, on December 24." "When was Saint Charbel canonized?" "October 9, 1977, by Paul VI, after his beatification on December 5, 1965." "Did Saint Charbel write anything?" "Pope Leo XIV called him a man who wrote nothing, in his prayer at the tomb on December 1, 2025." "Is the body of Saint Charbel really incorrupt?" "Accounts from the Order and from witnesses say the body was found intact for decades and that a blood-like moisture flowed from it. Reports differ on what later examinations found. The Church canonized him for his life and an approved healing, not for the condition of the tomb." "Why did Saint Charbel become a hermit?" "After ordination he lived 16 years in community at Annaya. In 1875 his superiors permitted him to live in the hermitage of Saints Peter and Paul, where he lived under written rules until his death." "Why are there two feast days?" "July 24 is the date in the Roman calendar, an optional memorial. The Maronite calendar keeps the third Sunday of July. December 24 is the anniversary of his death."}}
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  {{> head-font-preloads}}
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/history" />

@@ -4,32 +4,15 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saints & Blesseds | Holy Lives Around the Charbel Tradition</title>
   <meta name="description" content="The saints and blesseds whose stories this site tells: Saint Charbel, St Maroun, St Nimatullah, St Rafqa, and Blessed Fulton Sheen - their lives, their shrines, and what the Church has formally recognized." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/saints" />
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Saints & Blesseds | Holy Lives Around the Charbel Tradition" />
-  <meta property="og:description" content="The saints and blesseds whose stories this site tells: Saint Charbel, St Maroun, St Nimatullah, St Rafqa, and Blessed Fulton Sheen - their lives, their shrines, and what the Church has formally recognized." />
-  <meta property="og:url" content="https://marsharbel.com/saints" />
-  <meta property="og:image" content="https://marsharbel.com/media/news/saint-charbel-portrait.webp" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saints & Blesseds | Holy Lives Around the Charbel Tradition" />
-  <meta name="twitter:description" content="The saints and blesseds whose stories this site tells: Saint Charbel, St Maroun, St Nimatullah, St Rafqa, and Blessed Fulton Sheen - their lives, their shrines, and what the Church has formally recognized." />
-  <meta name="twitter:image" content="https://marsharbel.com/media/news/saint-charbel-portrait.webp" />
+  {{> head-social "article" "Saints & Blesseds | Holy Lives Around the Charbel Tradition" "The saints and blesseds whose stories this site tells: Saint Charbel, St Maroun, St Nimatullah, St Rafqa, and Blessed Fulton Sheen - their lives, their shrines, and what the Church has formally recognized." "https://marsharbel.com/saints" "https://marsharbel.com/media/news/saint-charbel-portrait.webp" "Saints & Blesseds | Holy Lives Around the Charbel Tradition" "The saints and blesseds whose stories this site tells: Saint Charbel, St Maroun, St Nimatullah, St Rafqa, and Blessed Fulton Sheen - their lives, their shrines, and what the Church has formally recognized." "https://marsharbel.com/media/news/saint-charbel-portrait.webp"}}
   {{> ld-webpage-article "Saints & Blesseds" "https://marsharbel.com/media/news/saint-charbel-portrait.webp" "2026-09-25" "Saints & Blesseds | Holy Lives Around the Charbel Tradition" "The saints and blesseds whose stories this site tells: Saint Charbel, St Maroun, St Nimatullah, St Rafqa, and Blessed Fulton Sheen - their lives, their shrines, and what the Church has formally recognized." "https://marsharbel.com/saints" "Home" "https://marsharbel.com/" "Saints & Blesseds" "https://marsharbel.com/saints"}}
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  {{> head-font-preloads}}
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/saints" />

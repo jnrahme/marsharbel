@@ -4,33 +4,16 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saint Storybooks for Children | Read-Aloud Saint Stories</title>
   <meta name="description" content="Choose a saint and open their read-aloud storybook: Saint Charbel in a classic and a new illustrated edition, Padre Pio, John Paul II, Mother Teresa, Saint Rafqa, and Saint Nimatullah. Illustrated Catholic stories for children and families, with narration on every page." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/stories" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Saint Storybooks for Children | Read-Aloud Saint Stories" />
-  <meta property="og:description" content="Choose a saint and open their read-aloud storybook: Saint Charbel in a classic and a new illustrated edition, Padre Pio, John Paul II, Mother Teresa, Saint Rafqa, and Saint Nimatullah. Illustrated Catholic stories for children and families, with narration on every page." />
-  <meta property="og:url" content="https://marsharbel.com/stories" />
-  <meta property="og:image" content="https://marsharbel.com/media/storybook/images/event-01.webp" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saint Storybooks for Children | Read-Aloud Saint Stories" />
-  <meta name="twitter:description" content="Choose a saint and open their read-aloud storybook: Saint Charbel in a classic and a new illustrated edition, Padre Pio, John Paul II, Mother Teresa, Saint Rafqa, and Saint Nimatullah. Illustrated Catholic stories for children and families, with narration on every page." />
-  <meta name="twitter:image" content="https://marsharbel.com/media/storybook/images/event-01.webp" />
+  {{> head-social "website" "Saint Storybooks for Children | Read-Aloud Saint Stories" "Choose a saint and open their read-aloud storybook: Saint Charbel in a classic and a new illustrated edition, Padre Pio, John Paul II, Mother Teresa, Saint Rafqa, and Saint Nimatullah. Illustrated Catholic stories for children and families, with narration on every page." "https://marsharbel.com/stories" "https://marsharbel.com/media/storybook/images/event-01.webp" "Saint Storybooks for Children | Read-Aloud Saint Stories" "Choose a saint and open their read-aloud storybook: Saint Charbel in a classic and a new illustrated edition, Padre Pio, John Paul II, Mother Teresa, Saint Rafqa, and Saint Nimatullah. Illustrated Catholic stories for children and families, with narration on every page." "https://marsharbel.com/media/storybook/images/event-01.webp"}}
   {{> ld-webpage-audience "en" "Children and families" "6" "12" "Saint Storybooks for Children | Read-Aloud Saint Stories" "Choose a saint and open their read-aloud storybook: Saint Charbel in a classic and a new illustrated edition, Padre Pio, John Paul II, Mother Teresa, Saint Rafqa, and Saint Nimatullah. Illustrated Catholic stories for children and families, with narration on every page." "https://marsharbel.com/stories" "Home" "https://marsharbel.com/" "Saint Storybooks" "https://marsharbel.com/stories"}}
   {{> ld-faq "What are the Saint Storybooks?" "Read-aloud storybooks for children ages 6 to 12, covering saints including Saint Charbel, Padre Pio, John Paul II, Saint Rafqa, and Mother Teresa. Each book opens at the first page and reads to the end, page by page." "What ages are the storybooks for?" "Ages 6 to 12 - young enough to listen with family, old enough to read alone. The words are simple, and every page can be listened to as well as read." "Do the storybooks read aloud?" "Yes. Every page has gentle narration: press Read Aloud, or start at the first page and let the book read itself to the end." "Are the stories true?" "Each book retells the documented events of its saint's life. Where a story includes a reported inner experience or a traditional account, the book's own notes say so plainly."}}
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  {{> head-font-preloads}}
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
   <link rel="stylesheet" href="storybook-joy.css" />
   <!-- hreflang:begin -->
