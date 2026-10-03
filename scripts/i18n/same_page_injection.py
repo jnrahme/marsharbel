@@ -42,7 +42,23 @@ def inject_control(text, root, manifest, copy):
             helper=BeautifulSoup('<span class="sc-language-helper"></span>','html.parser').span
             helper.string=copy[lang]['helper'];nav.append(helper)
         return str(nav)
-    text=re.sub(r'<nav\b[^>]*class=["\'](?:locale-nav|footer-locales)["\'][\s\S]*?</nav>',static_nav,text)
+    # Footer language links are locale-section navigation, never exact-page choices.
+    def footer_nav(match):
+        nav=BeautifulSoup(match[0],'html.parser').nav
+        homes=read_json(root/'locales/registry.json')['locales']
+        nav.attrs.pop('aria-describedby',None)
+        for helper in nav.select('.sc-language-helper,.sc-unavailable-suffix'):helper.decompose()
+        for a in nav.select('a[hreflang]'):
+            code=a['hreflang']
+            if code not in homes:raise ValueError('Unregistered footer locale '+code)
+            a['href']=homes[code]['home']
+            a.string=homes[code]['nativeName']
+            a['lang']=code
+            a['dir']=homes[code]['direction']
+            for attr in ('aria-disabled','tabindex','aria-label','data-language-switch','style'):a.attrs.pop(attr,None)
+        return str(nav)
+    text=re.sub(r'<nav\b[^>]*class=["\']footer-locales["\'][\s\S]*?</nav>',footer_nav,text)
+    text=re.sub(r'<nav\b[^>]*class=["\']locale-nav["\'][\s\S]*?</nav>',static_nav,text)
     text=text.replace('</head>','<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />\n</head>')
     scripts='\n'.join('<script defer src="/'+name+'"></script>' for name in ['same-page-manifest.js','same-page-copy.js','same-page-resolver.js','same-page-switcher.js'])
     if text.count('</body>')!=1:raise ValueError('Missing unique body end')
