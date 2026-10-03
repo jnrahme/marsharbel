@@ -111,3 +111,5 @@
 /* Scripture citations sit on Travel paper, not the shared dark reading surface. */
 .travel-page .scripture-quote cite,
 .travel-page .scripture-quote p.scripture-note{color:var(--travel-muted)}
+/* English-only destination disclosure uses the dark menu's light text token. */
+.travel-page .topbar .links .nav-sub .enc-language{color:#f3ede3}
