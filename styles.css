@@ -2467,6 +2467,12 @@ main .grid-2>.card,main .grid-2>.story,main .grid-2>.practice,main .grid-2>.upda
   border-top: 1px solid var(--theme-line-soft);
 }
 
+/* Current page inside the dark dropdown: paper-theme gold is only 3.8:1 here. */
+.links .nav-sub a.active,
+.links .nav-sub a[aria-current="page"] {
+  color: #ecd8ae;
+}
+
 .nav-group:hover .nav-sub,
 .nav-group:focus-within .nav-sub,
 .nav-group.open .nav-sub {
