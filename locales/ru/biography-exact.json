@@ -939,6 +939,15 @@
     },
     "main img[src='./media/annaya/charbel-tomb.webp']": {
       "alt": "Резная деревянная гробница в часовне с каменным сводом в Аннайе; позади висят лампада и портрет святого Шарбеля"
+    },
+    "main #cause .history-table-wrap": {
+      "aria-label": "Канонизация: таблица, можно прокручивать по горизонтали"
+    },
+    "main #status .history-table-wrap": {
+      "aria-label": "Документы и предания: таблица, можно прокручивать по горизонтали"
+    },
+    "main .history-table-wrap:not(#cause .history-table-wrap):not(#status .history-table-wrap)": {
+      "aria-label": "Основные сведения: таблица, можно прокручивать по горизонтали"
     }
   },
   "alternates": {
