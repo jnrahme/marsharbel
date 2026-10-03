@@ -4,6 +4,7 @@ import re
 from i18n.catalog import read_json
 from i18n.metadata import og_locales
 from i18n.travel_components import directory, travel_frame
+from i18n.encyclopedia_nav import finish_nav
 SLOT = re.compile(r'\{\{([a-z][A-Za-z0-9]*(?:\.[a-z][A-Za-z0-9]*)+)\}\}')
 def render_travel(root, registry):
     template = (root / 'templates/mirrors/travel.html').read_text()
@@ -36,5 +37,5 @@ def render_travel(root, registry):
             nav=(root/'partials/primary-navigation.html').read_text().strip()
             nav=nav.replace('class="nav-parent" href="./travel"','class="active nav-parent" href="./travel"').replace('<a href="./travel">','<a class="active" href="./travel" aria-current="page">')
             text=re.sub(r'<nav class="links".*?</nav>',lambda m:nav,text,flags=re.S)
-        result[root/(route.lstrip('/')+'.html')]=travel_frame(text,root,lang,route,registry)
+        result[root/(route.lstrip('/')+'.html')]=travel_frame(finish_nav(text,root,lang),root,lang,route,registry)
     return result

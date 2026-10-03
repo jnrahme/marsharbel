@@ -51,7 +51,9 @@ class EucharisticLocaleTests(unittest.TestCase):
                     self.assertEqual(x['image'],y['image'])
                     self.assertEqual(y['inLanguage'],lang)
                     self.assertEqual(y['url'],'https://marsharbel.com/'+lang+'/miracles/eucharistic/'+('' if slug=='index' else slug))
-                self.assertEqual(translated.count('hreflang='),len(languages)+2)
+                from bs4 import BeautifulSoup
+                alternates=BeautifulSoup(translated,'html.parser').select('link[rel=alternate][hreflang]')
+                self.assertEqual(len(alternates),len(languages)+2)
                 if slug!='index':
                     self.assertEqual(len(catalog['stories'][slug]['sections']),3)
                     for field in ('image','credit','licenseurl','photo','source','source2'):
