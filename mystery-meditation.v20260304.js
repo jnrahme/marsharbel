@@ -1,8 +1,10 @@
 const mysteries = window.ROSARY_MYSTERIES || {};
 const params = new URLSearchParams(window.location.search);
-const key = window.MYSTERY_KEY || params.get('m') || 'luminous_1';
-const basePath = window.MYSTERY_BASE || './';
-const audioVersion = window.ROSARY_AUDIO_VERSION || '20260302-intro-audio-fix';
+// Per-page settings come from data attributes on this script tag (no inline script, CSP-safe).
+const scriptConfig = (document.currentScript && document.currentScript.dataset) || {};
+const key = window.MYSTERY_KEY || scriptConfig.mysteryKey || params.get('m') || 'luminous_1';
+const basePath = window.MYSTERY_BASE || scriptConfig.mysteryBase || './';
+const audioVersion = window.ROSARY_AUDIO_VERSION || scriptConfig.audioVersion || '20260302-intro-audio-fix';
 const mystery = mysteries[key] || mysteries.luminous_1;
 const textLibrary = window.ROSARY_MYSTERY_LIBRARY || {};
 const mysteryText = textLibrary[key] || null;

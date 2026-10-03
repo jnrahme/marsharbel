@@ -4,20 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <!-- Google tag (gtag.js) -->
-<script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    if (window.__MARSHARBEL_QA__) window.gtag('set', { traffic_type: 'internal' });
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+<script defer src="/analytics-init.js"></script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Saint Maroun Storybook for Children | The Hermit on the Hill</title>
   <meta name="description" content="Saint Maroun storybook for ages 6-12: ten illustrated pages about a hermit on a Syrian hilltop, the people who climbed up to meet him, and the Maronite family that took his name, with a family reflection." />
