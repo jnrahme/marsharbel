@@ -10,12 +10,21 @@ const prayerMirrorPortuguese = require('../locales/pt/mirrors/prayers.json');
 const prayerMirrorItalian = require('../locales/it/mirrors/prayers.json');
 const prayerMirrorGerman = require('../locales/de/mirrors/prayers.json');
 const prayerMirrorPolish = require('../locales/pl/mirrors/prayers.json');
-const topicHeading = (code, topic) => code === 'ar' && topic === 'feastDay' ? require('../locales/ar/feast-mirror.json').slots['1'].text : topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(code) ?
+const exactFor = topic => registry.exactMirrors?.[topic === 'feastDay' ? 'feast' : topic];
+const topicHeading = (code, topic) => (exactFor(topic)?.renderLocales || []).includes(code) ? require(`../locales/${code}/${topic === 'feastDay' ? 'feast' : topic}-exact.json`).slots['1'].text : code === 'ar' && topic === 'feastDay' ? require('../locales/ar/feast-mirror.json').slots['1'].text : topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(code) ?
   ({ar: prayerMirror, fr: prayerMirrorFrench, es: prayerMirrorSpanish, pt: prayerMirrorPortuguese, it: prayerMirrorItalian, de: prayerMirrorGerman, pl: prayerMirrorPolish, en: require('../locales/en/mirrors/prayers.json')})[code]['hero.heading'] :
   catalogs[code][topic].title;
-const routeFor = (code, topic) => topic ? `/${code}/${registry.locales[code].slugs[topic]}` : registry.locales[code].home;
+const routeFor = (code, topic) => (exactFor(topic)?.renderLocales || []).includes(code) ? exactFor(topic).routes[code] : topic ? `/${code}/${registry.locales[code].slugs[topic]}` : registry.locales[code].home;
 const topicLanguages = topic => topic ? languages.filter(code => (registry.topics[topic].locales || languages).includes(code)) : languages;
-const alternateFor = (code, topic) => topicLanguages(topic).includes(code) ? routeFor(code, topic) : registry.topics[topic].relatedEnglish;
+// Discovery clusters depend on this page's identity, not merely its topic.
+const clusterFor = (language, topic) => {
+  const exact = exactFor(topic), route = routeFor(language, topic);
+  if (exact && Object.values(exact.routes).includes(route)) return exact.routes;
+  const codes = topicLanguages(topic).filter(code => !(exact?.renderLocales || []).includes(code));
+  const cluster = Object.fromEntries(codes.map(code => [code, routeFor(code, topic)]));
+  if (!exact) cluster[registry.defaultLocale] ||= registry.topics[topic]?.relatedEnglish || registry.locales[registry.defaultLocale].home;
+  return cluster;
+};
 
 for (const [language, config] of Object.entries(registry.locales)) {
   const topics = Object.keys(registry.topics).filter(topic => topicLanguages(topic).includes(language));
@@ -26,6 +35,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
       const context = await browser.newContext({...testInfo.project.use, javaScriptEnabled:false, baseURL});
       try {
         const page = await context.newPage();
+        await page.route('**/*', r => new URL(r.request().url()).origin === new URL(baseURL).origin ? r.continue() : r.abort());
         const response = await page.goto(route);
         expect(response.status()).toBe(200);
         await expect(page.locator('h1')).toBeVisible();
@@ -34,15 +44,16 @@ for (const [language, config] of Object.entries(registry.locales)) {
         await expect(page.locator('html')).toHaveAttribute('lang', language);
         expect((await page.locator('main').innerText()).length).toBeGreaterThan(700);
         expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-        const cluster = [...new Set([registry.defaultLocale, ...topicLanguages(topic)])];
-        await expect(page.locator('link[hreflang]')).toHaveCount(cluster.length + 1);
-        for (const code of cluster) {
-          await expect(page.locator(`link[hreflang="${code}"]`)).toHaveAttribute('href', registry.site + alternateFor(code, topic));
+        const cluster = clusterFor(language, topic);
+        await expect(page.locator('link[hreflang]')).toHaveCount(Object.keys(cluster).length + 1);
+        await expect(page.locator('link[hreflang="x-default"]')).toHaveAttribute('href', registry.site + (cluster[registry.defaultLocale] || Object.values(cluster)[0]));
+        for (const [code, path] of Object.entries(cluster)) {
+          await expect(page.locator(`link[hreflang="${code}"]`)).toHaveAttribute('href', registry.site + path);
         }
         const anchors = await page.locator('a[href^="#"]').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
         for (const anchor of anchors) await expect(page.locator(anchor)).toHaveCount(1);
         const published = topicLanguages(topic);
-        if (topic && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers') && !(language === 'ar' && topic === 'feastDay')) {
+        if (topic && !(exactFor(topic)?.renderLocales || []).includes(language) && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers') && !(language === 'ar' && topic === 'feastDay')) {
           const next = published[(published.indexOf(language) + 1) % published.length];
           // Same-page switching is fail-closed: every unpublished twin stays an unavailable, non-navigating link.
           const target = page.locator(`header nav a[hreflang="${next}"]`).first();
