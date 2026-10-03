@@ -45,6 +45,17 @@ def inject_control(text, root, manifest, copy):
     # Mutate only language nav blocks, never MAIN or ordinary editorial anchors.
     def static_nav(match):
         nav=BeautifulSoup(match[0],'html.parser').nav
+        registry=read_json(root/'locales/registry.json')
+        home=registry['locales'][lang]['home']
+        if href.rstrip('/') == (registry['site']+home).rstrip('/'):
+            nav['data-locale-section-navigation']=''
+            for helper in nav.select('.sc-language-helper,.sc-unavailable-suffix'):helper.decompose()
+            for a in nav.select('a[hreflang]'):
+                code=a['hreflang'];cfg=registry['locales'][code]
+                a['href']=cfg['home'];a['lang']=code;a['dir']=cfg['direction'];a.string=cfg['nativeName']
+                for attr in ('aria-disabled','tabindex','aria-label','data-language-switch'):a.attrs.pop(attr,None)
+            nav.attrs.pop('aria-describedby',None)
+            return str(nav)
         for helper in nav.select('.sc-language-helper'):helper.decompose()
         unavailable=False
         for a in nav.select('a[hreflang]'):
