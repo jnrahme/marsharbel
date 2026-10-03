@@ -108,3 +108,6 @@
 .travel-page .tag{border-color:var(--travel-line)}
 .travel-page .tag.ok{color:#2f5d2b;border-color:#8fb58a}
 .travel-page .tag.warn{color:#7a4f0c;border-color:#c9a25a}
+/* Scripture citations sit on Travel paper, not the shared dark reading surface. */
+.travel-page .scripture-quote cite,
+.travel-page .scripture-quote p.scripture-note{color:var(--travel-muted)}
