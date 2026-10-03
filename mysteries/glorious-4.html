@@ -3,20 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    if (window.__MARSHARBEL_QA__) window.gtag('set', { traffic_type: 'internal' });
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -280,10 +267,9 @@
     <div class="site-shell">Dedicated mystery meditation page: Fourth Glorious Mystery - The Assumption of Mary. Author: Please pray for the person who made this website.</div>
   </footer>
 
-  <script>window.MYSTERY_KEY = 'glorious_4'; window.MYSTERY_BASE = '../';</script>
   <script defer src="../mystery-data.js"></script>
   <script defer src="../mystery-library.js"></script>
-  <script defer src="../mystery-meditation.v20260304.js"></script>
+  <script defer src="../mystery-meditation.v20260304.js?v=20261003" data-mystery-key="glorious_4" data-mystery-base="../"></script>
   <script defer src="../global-audio-player.v20260304.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="../translate.js?v=20260922-1"></script>

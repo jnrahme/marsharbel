@@ -3,20 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    if (window.__MARSHARBEL_QA__) window.gtag('set', { traffic_type: 'internal' });
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Qozhaya Monastery: Saint Anthony&#x27;s House and the 1610 Psalter</title>
   <meta name="description" content="Qozhaya, the Monastery of Saint Anthony in the Holy Valley - hermits since the fourth century, historic mother house of the Lebanese Maronite Order, and the press behind the 1610 Psalter, the first book printed in the eastern Ottoman Empire." />

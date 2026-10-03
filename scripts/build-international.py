@@ -67,15 +67,7 @@ def navigation(registry, code, topic=None, mark_current=True):
     # destination honors the stored sc_lang_pref and would bounce a visitor
     # back to their previous locale. A click on a language link is an explicit
     # choice, so persist it before navigation (the same key translate.js uses).
-    links.append(
-        '<script>document.addEventListener("click",function(e){'
-        'var a=e.target&&e.target.closest?e.target.closest("a[hreflang]"):null;'
-        'if(!a)return;'
-        'var l=(a.getAttribute("hreflang")||"").toLowerCase();'
-        'if(l==="x-default")l="en";'
-        'try{localStorage.setItem("sc_lang_pref",l)}catch(_){}'
-        '});</script>'
-    )
+    links.append('<script defer src="/locale-pref.js"></script>')
     return '\n'.join(links)
 
 

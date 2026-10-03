@@ -1,4 +1,5 @@
-// Execute every checked-in GA snippet in a VM: non-production hosts do nothing.
+// Execute the shared GA init file in a VM (non-production hosts do nothing) and verify every page loads it
+// instead of carrying an inline snippet (inline script is blocked once CSP script-src is enforced).
 const {execFileSync}=require('node:child_process');
 const fs=require('node:fs');
 const vm=require('node:vm');
@@ -8,7 +9,10 @@ let checked=0;
 for(const file of files){
   const html=fs.readFileSync(file,'utf8');
   assert(!/<script[^>]+src=["']https:\/\/www\.googletagmanager\.com\/gtag\//.test(html),`${file}: ungated loader`);
-  const snippets=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]).filter(s=>s.includes('G-CJX1M0VFKP'));
+  assert(!/<script>[^<]*G-CJX1M0VFKP/.test(html),`${file}: inline GA snippet`);
+  const refs=(html.match(/<script defer(?:="")? src="\/analytics-init\.js"><\/script>/g)||[]).length;
+  assert(refs<=1,`${file}: duplicate analytics-init reference`);
+  const snippets=refs?[fs.readFileSync('analytics-init.js','utf8')]:[];
   for(const snippet of snippets){checked++;for(const host of ['marsharbel.com','www.marsharbel.com','localhost','127.0.0.1','pr-410--marsharbel-preview.netlify.app','marsharbel-preview.surge.sh','evil.marsharbel.com','marsharbel.com.evil.test','']){
     const loaded=[];const window={};
     vm.runInNewContext(snippet,{window,location:{hostname:host},document:{createElement:()=>({}),head:{appendChild:t=>loaded.push(t)}}});
