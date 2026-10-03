@@ -44,3 +44,28 @@ ${items.join(',\n')}
 }
   </script>`;
 }
+
+// args: pairs of (question, answer). FAQPage block.
+export function renderFaq(pairs) {
+  if (pairs.length === 0 || pairs.length % 2) throw new Error('ld-faq needs question/answer pairs');
+  const items = [];
+  for (let i = 0; i < pairs.length; i += 2) {
+    items.push(`    {
+      "@type": "Question",
+      "name": "${pairs[i]}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "${pairs[i + 1]}"
+      }
+    }`);
+  }
+  return `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+${items.join(',\n')}
+  ]
+}
+  </script>`;
+}
