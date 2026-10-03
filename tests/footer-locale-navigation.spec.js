@@ -1,10 +1,10 @@
 const{test,expect}=require('@playwright/test');
 const{default:AxeBuilder}=require('@axe-core/playwright');
-for(const route of ['/','/history','/saint-charbel-novena','/miracles/'])for(const js of [true,false])test(`${route} footer section navigation, JS=${js}`,async({browser,baseURL},info)=>{
+for(const route of ['/','/history','/saint-charbel-novena','/miracles/','/de/biografie','/de/novene','/de/miracles/','/saint-charbel-prayers','/visit-annaya','/22nd-of-the-month','/rosary-intro'])for(const js of [true,false])test(`${route} footer section navigation, JS=${js}`,async({browser,baseURL},info)=>{
  const context=await browser.newContext({javaScriptEnabled:js,viewport:{width:info.project.name==='phone'?390:1440,height:900}});
  const page=await context.newPage();await page.route('**/*',r=>new URL(r.request().url()).origin===new URL(baseURL).origin?r.continue():r.abort());
  await page.goto(baseURL+route,{waitUntil:'domcontentloaded'});
- const nav=page.locator('nav.footer-locales');await expect(nav).toHaveCount(1);
+ const nav=page.locator('footer nav.footer-locales');await expect(nav).toHaveCount(1);await expect(page.locator('main nav.footer-locales')).toHaveCount(0);
  const names={en:'English',ar:'العربية',fr:'Français',es:'Español',pt:'Português',it:'Italiano',de:'Deutsch',pl:'Polski'};
  const homes={en:'/',ar:'/ar/',fr:'/fr/',es:'/es/',pt:'/pt/',it:'/it/',de:'/de/',pl:'/pl/'};
  for(const [lang,home]of Object.entries(homes)){

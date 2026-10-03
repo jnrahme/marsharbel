@@ -12,6 +12,8 @@ class FooterNavigation(unittest.TestCase):
    soup=BeautifulSoup(file.read_text(),'html.parser')
    for nav in soup.select('nav.footer-locales'):
     count+=1
+    self.assertIsNotNone(nav.find_parent("footer"),str(file))
+    self.assertIsNone(nav.find_parent("main"),str(file))
     self.assertFalse(nav.select('.sc-language-helper,.sc-unavailable-suffix'))
     for code,cfg in registry['locales'].items():
      a=nav.select_one('a[hreflang="'+code+'"]');self.assertIsNotNone(a,str(file))

@@ -8,7 +8,27 @@ from html import escape
 import re,json,subprocess
 from i18n.catalog import read_json
 
+def place_footer_navigation(text):
+    """Move existing managed locale navigation to the semantic page-end footer."""
+    soup=BeautifulSoup(text,'html.parser')
+    bars=soup.select('nav.footer-locales')
+    if not bars:return text
+    if len(bars)!=1:raise ValueError('Expected one footer language bar')
+    if bars[0].find_parent('footer'):return text
+    pattern=r'<!-- i18n-navigation:start -->[\s\S]*?<!-- i18n-navigation:end -->'
+    match=re.search(pattern,text)
+    if not match:
+        match=re.search(r'<nav\b[^>]*class=["\']footer-locales["\'][\s\S]*?</nav>',text)
+    if not match:raise ValueError('Cannot locate misplaced footer language bar')
+    block=match[0];text=text[:match.start()].rstrip(' \t')+text[match.end():]
+    container='<div class="site-shell">\n'+block+'\n</div>\n'
+    if '</footer>' in text:
+        return text.replace('</footer>',container+'</footer>',1)
+    if text.count('</main>')!=1:raise ValueError('Missing unique page end for locale footer')
+    return text.replace('</main>','</main>\n<footer class="footer">\n'+container+'</footer>',1)
+
 def inject_control(text, root, manifest, copy):
+    text=place_footer_navigation(text)
     # Deterministic rebuilding: remove only our generated control resources.
     text=re.sub(r'<script\b[^>]*src=["\']/same-page-(?:manifest|copy|resolver|switcher)\.js["\'][^>]*></script>\s*','',text)
     text=re.sub(r'<link\b[^>]*id=["\']sc-language-css["\'][^>]*>\s*','',text)
