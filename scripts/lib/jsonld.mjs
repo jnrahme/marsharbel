@@ -4,7 +4,7 @@
 const SITE_NAMES = ['Mar Charbel', 'Saint Charbel Makhlouf', 'Sharbel', 'St Charbel', 'Saint Sharbel', 'Charbel Makhlouf'];
 
 // args: name, description, url, then pairs of (crumb name, crumb url).
-export function renderWebPage([name, description, url, ...crumbs], article = null) {
+export function renderWebPage([name, description, url, ...crumbs], article = null, audience = null) {
   if (crumbs.length === 0 || crumbs.length % 2) throw new Error('ld-webpage needs breadcrumb name/url pairs');
   const items = [];
   for (let i = 0; i < crumbs.length; i += 2) {
@@ -35,7 +35,7 @@ ${SITE_NAMES.map(n => `      "${n}"`).join(',\n')}
       "url": "https://marsharbel.com/"
     }
   },
-  "breadcrumb": {
+${audience === null ? '' : audience}  "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
 ${items.join(',\n')}
@@ -94,4 +94,24 @@ export function renderWebPageArticle([headline, image, datePublished, ...page]) 
     },
     "datePublished": "${datePublished}"
   }`);
+}
+
+// args: language, audience label, min/max age, then renderWebPage args.
+// Values remain JSON-escaped strings; ages are validated before numeric emission.
+export function renderWebPageAudience([language, audienceType, minAge, maxAge, ...page]) {
+  if (typeof language !== 'string' || typeof audienceType !== 'string' || page.length < 5) {
+    throw new Error('ld-webpage-audience needs language, audience, ages and webpage arguments');
+  }
+  if (!/^(0|[1-9]\d*)$/.test(minAge) || !/^(0|[1-9]\d*)$/.test(maxAge) || Number(minAge) > Number(maxAge)) {
+    throw new Error('ld-webpage-audience needs ordered non-negative integer ages');
+  }
+  return renderWebPage(page, null, `  "inLanguage": "${language}",
+  "isAccessibleForFree": true,
+  "audience": {
+    "@type": "PeopleAudience",
+    "audienceType": "${audienceType}",
+    "suggestedMinAge": ${minAge},
+    "suggestedMaxAge": ${maxAge}
+  },
+`);
 }
