@@ -112,6 +112,10 @@ def check(root=ROOT):
     charbel_v2_catalog = read_json(root/'locales/en/charbel-v2-story-copy.json')
     magdalene_path = root/'locales/en/magdalene-story-copy.json'
     magdalene_catalog = read_json(magdalene_path)['values'] if magdalene_path.exists() else {}
+    maroun_path = root/'locales/en/maroun-story-copy.json'
+    maroun_catalog = read_json(maroun_path)['values'] if maroun_path.exists() else {}
+    sergius_path = root/'locales/en/sergius-bacchus-story-copy.json'
+    sergius_catalog = read_json(sergius_path)['values'] if sergius_path.exists() else {}
     jude_path = root/'locales/en/jude-story-copy.json'
     jude_catalog = read_json(jude_path)['values'] if jude_path.exists() else {}
     peter_path = root/'locales/en/peter-story-copy.json'
@@ -175,6 +179,8 @@ def check(root=ROOT):
         # Newly edited English legacy pages are catalog-backed, not added to
         # the frozen legacy baseline. The per-file counts prevent a second
         # unreviewed occurrence from being silently accepted.
+        additions -= Counter(maroun_catalog.get(file, {}))
+        additions -= Counter(sergius_catalog.get(file, {}))
         additions -= Counter(magdalene_catalog.get(file, {}))
         additions -= Counter(jude_catalog.get(file, {}))
         additions -= Counter(peter_catalog.get(file, {}))
