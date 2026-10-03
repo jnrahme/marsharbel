@@ -22,7 +22,7 @@ def render_mirrors(root=ROOT, registry=None):
     if registry is None:
         registry = read_json(root / 'locales/registry.json')
     template = (root / 'templates/mirrors/prayers.html').read_text(encoding='utf-8')
-    expected = set(SLOT.findall(template)) - {'locale.code', 'locale.direction', 'locale.canonical', 'locale.alternates', 'locale.currentRoute', 'locale.prayerLibraryUrl', 'locale.homeUrl', 'locale.robotsContent', 'locale.ogLocale', 'locale.ogLocaleAlternates'}
+    expected = set(SLOT.findall(template)) - {'locale.code', 'locale.direction', 'locale.canonical', 'locale.alternates', 'locale.currentRoute', 'locale.prayerLibraryUrl', 'locale.homeUrl', 'locale.robotsContent', 'locale.ogLocale', 'locale.ogLocaleAlternates', 'locale.prayerLinks'}
     if template.count('{{') != len(SLOT.findall(template)) or template.count('}}') != len(SLOT.findall(template)):
         raise ValueError('Prayer mirror: invalid slot syntax')
     result = {}
@@ -60,7 +60,10 @@ def render_mirrors(root=ROOT, registry=None):
                                    for lang, url in language_urls.items())
         page_text = {**catalog, **({'meta.title': guide_meta['title'], 'meta.description': guide_meta['description']}
                                     if path == english_guide_path else {})}
-        tokens = {**page_text, 'locale.code': code, 'locale.direction': registry['locales'][code]['direction'],
+        prayer_links = '\n'.join(
+            f'          <li><a class="locale-prayer-link" href="{page_url(registry, lang, "prayers")}" hreflang="{lang}" lang="{lang}" dir="{registry["locales"][lang]["direction"]}">{escape(catalogs[lang]["meta.title"].split(" | ")[0])}</a></li>'
+            for lang in mirror_locales if lang != code)
+        tokens = {**page_text, 'locale.prayerLinks': prayer_links, 'locale.code': code, 'locale.direction': registry['locales'][code]['direction'],
                   'locale.robotsContent': 'noindex' if is_english_master else 'index,follow,max-image-preview:large',
                   'locale.canonical': canonical, 'locale.alternates': alternates,
                   'locale.currentRoute': registry['topics']['prayers']['relatedEnglish'] if is_english_master else page_url(registry, code, 'prayers'),
@@ -70,7 +73,7 @@ def render_mirrors(root=ROOT, registry=None):
             key = match.group(1)
             if key not in tokens:
                 raise ValueError(f'Prayer mirror: missing {key}')
-            if key in ('locale.alternates', 'locale.ogLocaleAlternates'):
+            if key in ('locale.alternates', 'locale.ogLocaleAlternates', 'locale.prayerLinks'):
                 return tokens[key]
             if key.startswith('locale.'):
                 return escape(tokens[key], quote=True)

@@ -6,7 +6,7 @@ for (const [route, code] of [['/saint-charbel-prayers','en'], ['/en/prayers','en
     page.on('pageerror', error => errors.push(error.message));
     await page.goto(route);
     await expect(page.locator('html')).toHaveAttribute('lang', code);
-    await expect(page.locator('main > section')).toHaveCount(7);
+    await expect(page.locator('main > section')).toHaveCount(8);
     await expect(page.locator('.prayer-card')).toHaveCount(14);
     await expect(page.locator('#sc-language-select')).toHaveCount(1);
     const layout = await page.evaluate(() => ({
