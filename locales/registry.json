@@ -482,5 +482,50 @@
       },
       "catalog": "feast-mirror.json"
     }
+  },
+  "exactMirrors": {
+    "biography": {
+      "english": "/history",
+      "routes": {
+        "en": "/history",
+        "de": "/de/biografie"
+      },
+      "renderLocales": [
+        "de"
+      ]
+    },
+    "novena": {
+      "english": "/saint-charbel-novena",
+      "routes": {
+        "en": "/saint-charbel-novena",
+        "de": "/de/novene"
+      },
+      "renderLocales": [
+        "de"
+      ]
+    },
+    "feast": {
+      "english": "/saint-charbel-feast-day",
+      "routes": {
+        "en": "/saint-charbel-feast-day",
+        "ar": "/ar/feast-day",
+        "es": "/es/fiesta",
+        "pt": "/pt/festa",
+        "de": "/de/gedenktag"
+      },
+      "renderLocales": [
+        "de"
+      ]
+    },
+    "miracles": {
+      "english": "/miracles/",
+      "routes": {
+        "en": "/miracles/",
+        "de": "/de/miracles/"
+      },
+      "renderLocales": [
+        "de"
+      ]
+    }
   }
 }

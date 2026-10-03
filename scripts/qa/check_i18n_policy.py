@@ -68,6 +68,9 @@ def snapshot(root=ROOT):
     generated.update(f'{code}/miracles/eucharistic/'+('index.html' if slug=='index' else slug+'.html')
                      for code in published_locales(registry, 'eucharistic') if code != registry['defaultLocale']
                      for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney'))
+    # Exact outputs retain strict guarded-source and byte-freshness checks.
+    generated.update((route.lstrip('/')+'index.html' if route.endswith('/') else route.lstrip('/')+'.html')
+                     for cfg in registry.get('exactMirrors',{}).values() for code,route in cfg['routes'].items() if code in cfg.get('renderLocales',[]))
     generated.add("ar/litany-of-saint-charbel.html")
     generated.update(route.lstrip("/")+".html" for route in registry.get("authoredMirrors", {}).get("travel", {}).get("routes", {}).values())
     result = {}
@@ -153,8 +156,18 @@ def check(root=ROOT):
         for key in ('readerUnavailable', 'readerSuccess', 'readerError'):
             if json.dumps(testimony_catalog[key], ensure_ascii=False) not in generated_copy:
                 errors.append(f'testimonies-copy.js: {key} differs from English catalog')
+    from i18n.exact_master import render_exact_set
+    for path, expected in render_exact_set(root,read_json(root/'locales/registry.json')).items():
+        from i18n.same_page_injection import inject_control
+        from i18n.travel_components import travel_frame
+        from i18n.tour_nav import tour_nav
+        expected=travel_frame(tour_nav(expected,root,'de'),root,'de','/'+str(path.relative_to(root)).removesuffix('.html'),read_json(root/'locales/registry.json'))
+        expected=inject_control(expected,root,read_json(root/'locales/same-page-manifest.pending.json'),read_json(root/'locales/same-page-copy.json'))
+        if path.read_text()!=expected: errors.append(str(path.relative_to(root))+': exact output differs from guarded catalog')
     for file, values in snapshot(root).items():
         additions = Counter(values) - Counter(baseline.get(file, {}))
+        if file=='share.js':
+            additions-=Counter(v for k,v in read_json(root/'locales/en/share.json').items() if k.startswith('share.'))
         # One generated Travel hub entry, backed by the shared locale catalog.
         if '<nav class="links"' in (root/file).read_text() and file.endswith('.html'):
             additions -= Counter({read_json(root/'locales/en/travel.json')['hubLabel']:1})

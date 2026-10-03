@@ -2,6 +2,10 @@
   if (window.__scTranslateInitialized) return;
   window.__scTranslateInitialized = true;
 
+  var runtimeLabelNode = document.getElementById('sc-runtime-labels');
+  var runtimeLabels = runtimeLabelNode ? JSON.parse(runtimeLabelNode.textContent) : null;
+  function runtimeText(key, fallback) { return runtimeLabels && runtimeLabels[key] || fallback; }
+
   function isPrivacyPolicyPath(pathname) {
     return /\/privacy-policy(?:\.html)?$/.test(pathname || '');
   }
@@ -76,7 +80,7 @@
     if (!hasPrivacyLink) {
       linksToAdd.push({
         href: '/privacy-policy',
-        text: 'Privacy Policy',
+        text: runtimeText('footer.privacy', 'Privacy Policy'),
         isCurrent: isPrivacyPolicyPath(window.location.pathname || ''),
       });
     }
@@ -84,7 +88,7 @@
     if (!hasTermsLink) {
       linksToAdd.push({
         href: '/terms-of-service',
-        text: 'Terms of Service',
+        text: runtimeText('footer.terms', 'Terms of Service'),
         isCurrent: isTermsOfServicePath(window.location.pathname || ''),
       });
     }
@@ -92,7 +96,7 @@
     if (!hasAccessibilityLink) {
       linksToAdd.push({
         href: '/accessibility',
-        text: 'Accessibility',
+        text: runtimeText('footer.accessibility', 'Accessibility'),
         isCurrent: /\/accessibility(?:\.html)?$/.test(window.location.pathname || ''),
       });
     }
@@ -263,13 +267,13 @@
       }
 
       if (isIOS) {
-        showHint("On iPhone: tap Share, then 'Add to Home Screen'.");
+        showHint(runtimeText('install.ios', "On iPhone: tap Share, then 'Add to Home Screen'."));
       } else {
-        showHint("If no popup appears, open browser menu and choose 'Install app' or 'Add to Home screen'.");
+        showHint(runtimeText('install.browser', "If no popup appears, open browser menu and choose 'Install app' or 'Add to Home screen'."));
       }
     };
     window.__scInstallApp = handleInstallClick;
-    window.__scInstallLabel = 'Install App';
+    window.__scInstallLabel = runtimeText('install.label', 'Install App');
 
     var footerHost = document.querySelector('.footer .site-shell') || document.querySelector('.footer') || document.querySelector('main');
     if (footerHost) {
@@ -281,7 +285,7 @@
 
       var installLink = document.createElement('a');
       installLink.href = '#install-app';
-      installLink.textContent = 'Click here to install this app';
+      installLink.textContent = runtimeText('install.link', 'Click here to install this app');
       installLink.style.color = '#ddbf80';
       installLink.style.textDecoration = 'underline';
       installLink.addEventListener('click', function (event) {

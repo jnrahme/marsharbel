@@ -29,6 +29,10 @@ class CatalogTests(unittest.TestCase):
         self.addCleanup(temp.cleanup)
         self.root = Path(temp.name)
         shutil.copytree(ROOT/'locales', self.root/'locales')
+        # Minimal policy fixture tests unrelated hardcoded strings, not full mirror rendering.
+        registry=json.loads((self.root/'locales/registry.json').read_text())
+        registry['exactMirrors']={}
+        (self.root/'locales/registry.json').write_text(json.dumps(registry))
         shutil.copyfile(ROOT/'same-page-copy.js', self.root/'same-page-copy.js')
 
     def edit(self, file, update):
