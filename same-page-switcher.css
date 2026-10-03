@@ -1,6 +1,7 @@
 /* Shared availability layout for both article headers and static guide mastheads. */
-.sc-language-feedback{max-width:28rem;margin-block:.5rem;color:inherit;font-size:.875rem;line-height:1.45;overflow-wrap:anywhere}
-.travel-page header .sc-language-feedback{color:#f3ede3}
+/* Persistent accessible description; contextual visible note never enlarges header. */
+.sc-language-feedback{position:fixed;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap}
+.sc-language-feedback.is-open{z-index:10000;width:min(320px,calc(100vw - 16px));height:auto;overflow:visible;clip:auto;clip-path:none;white-space:normal;padding:.65rem .8rem;border:1px solid #746a58;border-radius:8px;background:#221e1a;color:#f3ede3;font-size:.875rem;line-height:1.45;overflow-wrap:anywhere;box-shadow:0 4px 18px #0006}
 .sc-language-helper,.sc-language-status{display:block}
 .sc-language-helper:empty,.sc-language-status:empty{display:none}
 /* Refusal stays available to screen readers without a second visible helper. */
@@ -10,3 +11,5 @@
 nav.locale-nav a[aria-disabled="true"],nav.footer-locales a[aria-disabled="true"]{opacity:.75;cursor:default}
 .sc-unavailable-suffix{font-size:.875em;white-space:normal}
 nav.locale-nav a[aria-disabled="true"]{display:inline-block;max-width:100%;white-space:normal}
+/* Keep the shared compact phone chrome within its two navigation rows. */
+@media(max-width:640px){.topbar:has(#sc-language-switcher) .links{padding-block:0}.topbar:has(#sc-language-switcher) .links a,.topbar:has(#sc-language-switcher) .nav-group .nav-parent{padding-block:.25rem;line-height:1.2;min-height:24px;box-sizing:border-box}}

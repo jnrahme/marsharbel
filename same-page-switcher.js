@@ -27,8 +27,11 @@
  function request(lang){var r=api.resolve(manifest,location.href,lang,actual);if(!r.available){refuse();return false;}if(r.reason==='same-language'){select.value=actual;return true;}try{localStorage.setItem('sc_last_explicit_language',lang)}catch(_){}location.assign(r.href);return true;}
  select.addEventListener('change',function(){request(select.value)});
  host.append(label,select);
- var feedback=document.createElement('div');feedback.className='sc-language-feedback';feedback.append(helper,status);host.after(feedback);
- if(typeof window.__scInstallApp==='function'&&!document.getElementById('sc-install-app-btn')){var install=document.createElement('button');install.id='sc-install-app-btn';install.type='button';install.className='sc-install-app-btn';install.textContent=window.__scInstallLabel;install.addEventListener('click',window.__scInstallApp);feedback.after(install)}
+ var feedback=document.createElement('div');feedback.className='sc-language-feedback';feedback.append(helper,status);(host.closest('header')||document.querySelector('main')||host).appendChild(feedback);
+ function showFeedback(){if(!blocked)return;var box=select.getBoundingClientRect();feedback.classList.add('is-open');var header=host.closest('header');feedback.style.top=(Math.max(box.bottom,header?header.getBoundingClientRect().bottom:box.bottom)+8)+'px';feedback.style.left=Math.max(8,Math.min(box.left,innerWidth-Math.min(320,innerWidth-16)-8))+'px';}
+ function hideFeedback(){feedback.classList.remove('is-open');}
+ select.addEventListener('focus',showFeedback);select.addEventListener('pointerdown',showFeedback);select.addEventListener('blur',hideFeedback);select.addEventListener('keydown',function(e){if(e.keyCode===27)hideFeedback()});window.addEventListener('scroll',hideFeedback,{passive:true});window.addEventListener('resize',hideFeedback);
+ if(typeof window.__scInstallApp==='function'&&!document.getElementById('sc-install-app-btn')){var install=document.createElement('button');install.id='sc-install-app-btn';install.type='button';install.className='sc-install-app-btn';install.textContent=window.__scInstallLabel;install.addEventListener('click',window.__scInstallApp);host.after(install)}
  // Old stored preferences are observed only to explain an unavailable request.
  // They never redirect, rewrite ordinary links, or relabel document content.
  var query=new URLSearchParams(location.search).get('lang'),stored='';try{stored=localStorage.getItem('sc_lang_pref')||''}catch(_){}
