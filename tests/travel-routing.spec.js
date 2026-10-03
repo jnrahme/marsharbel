@@ -4,6 +4,7 @@ const fs=require('node:fs');const config=JSON.parse(fs.readFileSync('locales/tra
 const routes=new Set(['/travel',...config.destinations]);for(const name of ['travel','qadisha','qannoubine','qozhaya'])for(const route of Object.values(registry.authoredMirrors[name].routes))routes.add(route);
 for(const route of routes)test(`${route} has a real body, working resources, full-page accessibility and route landmarks`,async({page,request})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.emulateMedia({reducedMotion:'reduce'});
  const response=await page.goto(route);expect(response.status()).toBe(200);
  await page.evaluate(async()=>{for(const image of document.images){image.loading='eager';await image.decode()}});
  await expect(page.locator('main')).toHaveCount(1);await expect(page.locator('h1')).not.toBeEmpty();

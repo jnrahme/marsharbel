@@ -102,3 +102,9 @@
 .travel-page .travel-link-list .travel-place{min-height:0;border-bottom:1px solid var(--travel-line)}
 @media(max-width:700px){.travel-page .travel-split-hero{display:flex;flex-direction:column;gap:1.5rem}.travel-page .hero.travel-split-hero .hero-figure{position:static;order:-1;width:100%}.travel-page .travel-split-hero .travel-summary{width:100%}}
 .travel-page main .section .card.story a{color:var(--travel-accent);text-decoration:underline}
+.travel-page .card{background:#fbf6ec;border-color:var(--travel-line);box-shadow:none;color:var(--travel-ink)}
+.travel-page .card h3{color:var(--travel-ink)}
+.travel-page .card p{color:var(--travel-muted)}
+.travel-page .tag{border-color:var(--travel-line)}
+.travel-page .tag.ok{color:#2f5d2b;border-color:#8fb58a}
+.travel-page .tag.warn{color:#7a4f0c;border-color:#c9a25a}

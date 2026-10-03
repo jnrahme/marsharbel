@@ -68,7 +68,7 @@ def travel_frame(text,root,code,route,registry):
         return text
     if standalone:return text
     if route==hub or route.endswith('/travel') or '/annaya-tour' not in route:
-        if '/travel.css?' not in text:text=text.replace('</head>','<link rel="stylesheet" href="/travel.css?v=20261002-2" />\n</head>',1)
+        if '/travel.css?' not in text:text=text.replace('</head>','<link rel="stylesheet" href="/travel.css?v=20261002-3" />\n</head>',1)
         text=re.sub(r'(href=["\']/travel.css\?)[^"\']+',r'\g<1>v=20261002-2',text)
         def body_class(m):
             attrs=m[1]
