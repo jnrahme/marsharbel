@@ -1,5 +1,5 @@
 const {test,expect}=require('@playwright/test');
-const books=['magdalene-story','story','pio-story','jpii-story','mother-teresa-story','rafqa-story','hardini-story','peter-story','massabki-story'];
+const books=['maroun-story','magdalene-story','story','pio-story','jpii-story','mother-teresa-story','rafqa-story','hardini-story','peter-story','massabki-story'];
 const sizes=[[390,844],[768,1024],[1280,800],[1920,1080]];
 async function geometry(page){return page.evaluate(()=>{const r=s=>document.querySelector(s).getBoundingClientRect().toJSON();return{overflow:document.documentElement.scrollWidth>innerWidth,header:r('.topbar'),controls:r('.storybook-controls'),panel:r('.storybook-panel'),text:r('.storybook-text'),art:r('.storybook-illustration')};});}
 for(const book of books)for(const[w,h]of sizes)test(`${book}: usable reader at ${w}`,async({page},info)=>{

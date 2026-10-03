@@ -28,6 +28,8 @@ NOINDEX = {
 }
 
 DESCRIPTIONS = {
+    "sergius-bacchus-story.html": "Saints Sergius and Bacchus storybook for ages 6-12: nine illustrated pages about two Roman officers, a friendship, a hard choice, and the city that took a saint's name, with a family reflection.",
+    "maroun-story.html": "Saint Maroun storybook for ages 6-12: nine illustrated pages about a hermit on a Syrian hilltop, the people who climbed up to meet him, and the Maronite family that took his name, with a family reflection.",
     "travel.html": json.loads((ROOT / "locales/en/travel.json").read_text())["intro"],
     "saint-charbel-encyclopedia.html": "A guided index to everything about Saint Charbel: the story of his life, the Church's verdict, the healings and devotions, and the places in Lebanon, each with its own sourced page.",
     "magdalene-story.html": "Mary Magdalene storybook for ages 6-12: nine illustrated narrative pages from Galilee to the Easter garden, with flowing narration and a family reflection.",
@@ -268,6 +270,10 @@ def hero_image(path: Path, html: str) -> str | None:
 def og_image_for(path: Path, html: str = "") -> str:
     # pio-story.html renders its cover via storybook.js (no static hero <img>),
     # so pin the storybook cover instead of falling back to the default.
+    if path.name == "maroun-story.html":
+        return f"{SITE}/media/storybook-maroun/images/page-01.webp"
+    if path.name == "sergius-bacchus-story.html":
+        return f"{SITE}/media/storybook-sergius-bacchus/images/page-01.webp"
     if path.name == "magdalene-story.html":
         return f"{SITE}/media/storybook-magdalene/images/page-01.webp"
     if path.name == "jude-story.html":
