@@ -98,7 +98,7 @@
   </script>
   <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/styles.css?v=20260922-1" />
+  <link rel="stylesheet" href="/styles.css?v=20261003-1" />
   <!-- hreflang:begin -->
 {{locale.alternates}}
   <!-- hreflang:end -->
@@ -301,6 +301,15 @@
       </div>
     </section>
 
+    <section class="section locale-prayers" id="prayers-in-your-language">
+      <h2>{{localeLinks.heading}}</h2>
+      <p class="section-sub">{{localeLinks.intro}}</p>
+      <nav aria-label="{{localeLinks.navLabel}}">
+        <ul class="locale-prayer-list">
+{{locale.prayerLinks}}
+        </ul>
+      </nav>
+    </section>
     <section class="section">
       <h2>{{sources.heading}}</h2>
       <div class="card story">
