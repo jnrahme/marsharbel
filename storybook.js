@@ -1356,15 +1356,21 @@
     }
   };
 
-  const animatePageTurn = () => {
-    if (window.matchMedia(['(prefers-reduced-motion:', 'reduce)'].join(' ')).matches) return;
-    el.panel.classList.remove('is-turning');
-    window.requestAnimationFrame(() => {
-      el.panel.classList.add('is-turning');
-    });
+  let pageTurnAnimation = null;
+  let lastRenderedIndex = 0;
+  const animatePageTurn = direction => {
+    pageTurnAnimation?.cancel();
+    const art = el.art.querySelector('.scene-art');
+    if (!art || !direction || window.matchMedia(['(prefers-reduced-motion:', 'reduce)'].join(' ')).matches) return;
+    // One bounded hinge explains the new page. Never move the art during reading.
+    art.style.transformOrigin = [direction > 0 ? 'left' : 'right', 'center'].join(' ');
+    pageTurnAnimation = art.animate([
+      { transform: `rotateY(${direction > 0 ? -4 : 4}deg)`, opacity: .86 },
+      { transform: 'rotateY(0deg)', opacity: 1 }
+    ], { duration: 240, easing: 'cubic-bezier(.23, 1, .32, 1)' });
   };
 
-  const render = () => {
+  const render = (withMotion = true) => {
     const page = pages[index];
     const illustration = page.illustration || SCENE_IMAGES[page.scene] || './gallery/charbel-portrait.jpg';
     const stepText = `${UI.pagePrefix} ${index + 1} ${UI.pageConnector} ${pages.length}`;
@@ -1388,7 +1394,8 @@
     el.next.disabled = index === pages.length - 1;
     writeLastPage(index);
     syncAudioContext({ playing: false, paused: false, completed: false });
-    animatePageTurn();
+    animatePageTurn(withMotion ? Math.sign(index - lastRenderedIndex) : 0);
+    lastRenderedIndex = index;
   };
 
   const getClipUrl = page => {
@@ -1511,13 +1518,13 @@
     window.speechSynthesis.speak(utterance);
   };
 
-  const movePage = direction => {
+  const movePage = (direction, withMotion = true) => {
     const wasReading = reading;
     stopReading();
     const nextIndex = Math.max(0, Math.min(pages.length - 1, index + direction));
     if (nextIndex === index) return;
     index = nextIndex;
-    render();
+    render(withMotion);
     scrollToReader();
     if (wasReading) {
       syncAudioContext({ playing: true, paused: false, completed: false });
@@ -1552,10 +1559,10 @@
       return;
     }
     if (event.key === 'ArrowRight') {
-      movePage(isRtl ? -1 : 1);
+      movePage(isRtl ? -1 : 1, false);
     }
     if (event.key === 'ArrowLeft') {
-      movePage(isRtl ? 1 : -1);
+      movePage(isRtl ? 1 : -1, false);
     }
   });
 
