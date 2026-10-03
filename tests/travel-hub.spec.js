@@ -42,3 +42,14 @@ for (const route of ['/qadisha-valley','/ar/qadisha-valley']) {
     await expect(page.locator('#sc-language-select')).toHaveCount(1);
   });
 }
+
+test('Travel page navigation dropdown links stay readable on the dark panel',async({page})=>{
+  await page.goto('/travel');
+  await page.locator('.nav-group:has(.nav-parent[href$="travel"]) .nav-parent').first().focus();
+  await page.keyboard.press('Enter').catch(()=>{});
+  await page.locator('.nav-group:has(.nav-parent[href$="travel"])').first().hover();
+  const links=page.locator('.nav-group:has(.nav-parent[href$="travel"]) .nav-sub a');
+  await expect(links.first()).toBeVisible();
+  const colors=await links.evaluateAll(es=>es.map(e=>getComputedStyle(e).color));
+  for(const color of colors){const [r,g,b]=color.match(/\d+/g).map(Number);expect(r+g+b,`link color ${color} is too dark for the dark panel`).toBeGreaterThan(450)}
+});
