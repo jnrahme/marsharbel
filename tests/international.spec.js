@@ -70,8 +70,8 @@ for (const [language, config] of Object.entries(registry.locales)) {
 }
 
 
-test('existing pages keep one top language selector without duplicate menus', async ({page}) => {
-  for (const route of ['/', ...Object.values(registry.topics).map(topic => topic.relatedEnglish)]) {
+for (const route of ['/', ...new Set(Object.values(registry.topics).map(topic => topic.relatedEnglish))]) {
+  test(`${route} keeps one top language selector without duplicate menus`, async ({page}) => {
     await page.goto(route + '?lang=en');
     await expect(page.locator('#sc-language-select')).toHaveCount(1);
     await expect(page.locator('#sc-language-select')).toBeVisible();
@@ -92,8 +92,8 @@ test('existing pages keep one top language selector without duplicate menus', as
       await expect(page.locator(`#sc-language-select option[value="${code}"]`)).toHaveCount(1);
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  }
-});
+  });
+}
 
 test('Arabic prayer mirror keeps authored copy and keeps English unavailable until published', async ({page}) => {
   await page.goto('/ar/prayers');

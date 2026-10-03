@@ -21,7 +21,7 @@ for (const name of Object.keys(catalogs)) {
       const sibling = name === 'qannoubine' ? 'qozhaya' : 'qannoubine';
       const localizedPrefix = code === 'ar' ? '/ar' : '';
       for (const destination of [`${localizedPrefix}/qadisha-valley`, `${localizedPrefix}/${sibling}-monastery`]) {
-        await expect(page.locator(`header .nav-sub a[href="${destination}"]`)).toHaveCount(1);
+        await expect(page.locator(`header .nav-sub a[href="${code==='en'?'.'+destination:destination}"]`)).toHaveCount(1);
       }
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://marsharbel.com${route}`);
       for (const language of ['en', 'ar', 'x-default']) {
@@ -49,12 +49,15 @@ for (const name of Object.keys(catalogs)) {
       expect(errors).toEqual([]);
     });
   }
-  test(`${slug} switches between English and Arabic while preserving route`, async ({page}) => {
-    await page.goto(`/${slug}?lang=en`);
-    await page.locator('#sc-language-select').selectOption('ar');
-    await expect(page).toHaveURL(new RegExp(`/ar/${slug}$`));
-    await expect(page.locator('h1')).toHaveText(catalogs[name]['hero.heading1']);
-    await page.locator('#sc-language-select').selectOption('en');
-    await expect(page).toHaveURL(new RegExp(`/${slug}$`));
+  test(`${slug} refuses unreviewed English/Arabic switches without changing the page`, async ({page}) => {
+    for(const code of ['en','ar']) {
+      const route=code==='en'?`/${slug}`:`/ar/${slug}`;
+      await page.goto(route);
+      const other=code==='en'?'ar':'en';
+      await expect(page.locator(`#sc-language-select option[value="${other}"]`)).toBeDisabled();
+      const before=await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
+      expect(await page.evaluate(lang=>SC_LANGUAGE_SWITCH.request(lang),other)).toBe(false);
+      expect(await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}))).toEqual(before);
+    }
   });
 }
