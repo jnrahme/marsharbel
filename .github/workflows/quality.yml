@@ -43,7 +43,7 @@ jobs:
 
   # Required status check. Keeps the exact name "browser-quality" and fails unless every shard passed.
   browser-quality:
-    if: ${{ always() }}
+    if: ${{ always() && !cancelled() }}
     needs: browser-quality-shard
     runs-on: ubuntu-latest
     steps:
