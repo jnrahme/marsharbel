@@ -6,7 +6,7 @@
 import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { renderWebPage, renderFaq } from './lib/jsonld.mjs';
+import { renderWebPage, renderWebPageArticle, renderFaq } from './lib/jsonld.mjs';
 import { renderPrimaryNav } from './lib/primary-nav.mjs';
 const check = process.argv.includes('--check');
 const SRC = 'src/pages', FRAG = 'partials/fragments';
@@ -28,6 +28,7 @@ for (const file of await walk(SRC).catch(() => [])) {
   let built = source.replace(/([ \t]*)\{\{> ([a-z0-9-]+)((?: "(?:[^"\\]|\\.)*")*)\}\}/g, (_, indent, name, rawArgs) => {
     if (name === 'primary-nav') return indent + renderPrimaryNav(navTemplate, rel);
     if (name === 'ld-faq') return indent + renderFaq([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
+    if (name === 'ld-webpage-article') return indent + renderWebPageArticle([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
     if (name === 'ld-webpage') return indent + renderWebPage([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
     if (!(name in frags)) throw new Error(`${rel}: unknown fragment ${name}`);
     used.add(name);
