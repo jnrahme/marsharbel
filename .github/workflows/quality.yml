@@ -15,9 +15,13 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  browser-quality:
+  browser-quality-shard:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4, 5, 6, 7, 8]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -27,12 +31,22 @@ jobs:
       - run: node scripts/sync-navigation.mjs --check
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - run: npm run quality
+      - run: npx playwright test --config playwright.config.cjs --shard=${{ matrix.shard }}/8
       - if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: browser-quality-artifacts
+          name: browser-quality-artifacts-${{ matrix.shard }}
           path: |
             playwright-report/
             test-results/
           if-no-files-found: ignore
+
+  # Required status check. Keeps the exact name "browser-quality" and fails unless every shard passed.
+  browser-quality:
+    if: ${{ always() && !cancelled() }}
+    needs: browser-quality-shard
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "shards: ${{ needs.browser-quality-shard.result }}"
+          test "${{ needs.browser-quality-shard.result }}" = "success"
