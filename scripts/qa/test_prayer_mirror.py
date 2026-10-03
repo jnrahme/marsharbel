@@ -84,13 +84,16 @@ class PrayerMirrorTests(unittest.TestCase):
                         self.alternates.append(values.get('content'))
                     if values.get('property') == 'og:locale':
                         self.primary.append(values.get('content'))
-        pages = {**render_mirrors(ROOT), **render_qadisha(ROOT), **render_monasteries(ROOT)}
+        from i18n.metadata import published_locales
+        prayer_pages = render_mirrors(ROOT)
+        prayer_set = published_locales(None, 'prayers')
+        pages = {**prayer_pages, **render_qadisha(ROOT), **render_monasteries(ROOT)}
         self.assertEqual(len(pages), 21)
         for path, html in pages.items():
             code = path.relative_to(ROOT).parts[0]
             if code not in OG_LOCALE:
                 code = 'en'
-            expected = [value for lang, value in OG_LOCALE.items() if lang != code]
+            expected = [value for lang, value in OG_LOCALE.items() if lang != code and (path not in prayer_pages or lang in prayer_set)]
             tags = HeadMeta(html)
             self.assertEqual(tags.primary, [OG_LOCALE[code]], str(path))
             self.assertEqual(tags.alternates, expected, str(path))
