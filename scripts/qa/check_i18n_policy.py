@@ -77,8 +77,13 @@ def snapshot(root=ROOT):
         relative = path.relative_to(root).as_posix()
         if relative not in generated:
             result[relative] = dict(extract_html(path.read_text()))
+    # Catalog-generated control copy is exact-checked, not a blanket JS exemption.
+    copy_path=root/'locales/same-page-copy.json'
+    if copy_path.exists():
+        expected='window.SC_SAME_PAGE_COPY = '+json.dumps(read_json(copy_path),ensure_ascii=False,separators=(',',':'))+';\n'
+        if (root/'same-page-copy.js').read_text()!=expected:raise ValueError('same-page-copy.js differs from UI catalog')
     for path in sorted(root.glob('*.js')):
-        if path.name in ('locale-routes.js', 'eucharistic.js') or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()):
+        if (path.name == 'same-page-copy.js' and copy_path.exists()) or path.name in ('locale-routes.js', 'eucharistic.js') or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()):
             continue
         values = json.loads(subprocess.check_output(['node', str(root/'scripts/i18n/extract-js-text.mjs'), str(path)],text=True))
         result[path.name] = dict(Counter(values))

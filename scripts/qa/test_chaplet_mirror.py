@@ -11,6 +11,9 @@ from i18n.chaplet_mirror import render_chaplet
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
 from i18n.catalog import read_json
+from i18n.same_page_injection import inject_control
+from i18n.catalog import read_json as _read_json_fc
+def fc(t):return inject_control(t,ROOT,_read_json_fc(ROOT/'locales/same-page-manifest.pending.json'),_read_json_fc(ROOT/'locales/same-page-copy.json'))
 from i18n.catalog import read_json
 
 
@@ -18,7 +21,7 @@ class ChapletMirrorTests(unittest.TestCase):
     def test_final_render_matches_master_shape(self):
         en=BeautifulSoup((ROOT/'saint-charbel-chaplet.html').read_text(),'html.parser')
         ar=BeautifulSoup(render_chaplet(ROOT)[ROOT/'ar/saint-charbel-chaplet.html'],'html.parser')
-        self.assertEqual(travel_frame(tour_nav(str(ar),ROOT,'ar'),ROOT,'ar','/ar/saint-charbel-chaplet',read_json(ROOT/'locales/registry.json')),(ROOT/'ar/saint-charbel-chaplet.html').read_text())
+        self.assertEqual(fc(travel_frame(tour_nav(str(ar),ROOT,'ar'),ROOT,'ar','/ar/saint-charbel-chaplet',read_json(ROOT/'locales/registry.json'))),(ROOT/'ar/saint-charbel-chaplet.html').read_text())
         self.assertEqual(len(en.select('main > section')),8)
         self.assertEqual([tag.name for tag in en.select('main *')],[tag.name for tag in ar.select('main *')])
         self.assertEqual(len(ar.select('main .grid-2 article')),6)

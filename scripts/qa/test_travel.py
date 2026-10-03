@@ -8,13 +8,15 @@ from i18n.catalog import read_json
 from i18n.travel_mirror import render_travel
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
+from i18n.same_page_injection import inject_control
+def fc(t):return inject_control(t,ROOT,read_json(ROOT/'locales/same-page-manifest.pending.json'),read_json(ROOT/'locales/same-page-copy.json'))
 class TravelTests(unittest.TestCase):
  def test_catalog_and_render_parity(self):
   registry=read_json(ROOT/'locales/registry.json')
   pages=render_travel(ROOT,registry)
   self.assertEqual(len(pages),8)
   for path,text in pages.items():
-   self.assertEqual(path.read_text(),travel_frame(tour_nav(text,ROOT,'en' if path.parent==ROOT else path.parent.name),ROOT,'en' if path.parent==ROOT else path.parent.name,'/'+str(path.relative_to(ROOT)).removesuffix('.html'),registry))
+   self.assertEqual(path.read_text(),fc(travel_frame(tour_nav(text,ROOT,'en' if path.parent==ROOT else path.parent.name),ROOT,'en' if path.parent==ROOT else path.parent.name,'/'+str(path.relative_to(ROOT)).removesuffix('.html'),registry)))
    soup=BeautifulSoup(text,'html.parser')
    self.assertEqual(len(soup.select('main')),1)
    self.assertEqual(len(soup.select('a.skip-link')),1)

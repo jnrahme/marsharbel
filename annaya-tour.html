@@ -126,6 +126,7 @@
 .tour-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
 </style>
 <script>document.addEventListener('DOMContentLoaded',function(){var s=document.querySelectorAll('.tour-stop');if(!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('seen')});return}var o=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('seen')}})},{threshold:.25});s.forEach(function(e){o.observe(e)})});</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -283,5 +284,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

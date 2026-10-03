@@ -41,7 +41,9 @@ class FoundationTests(unittest.TestCase):
         spec = importlib.util.spec_from_file_location('foundation_builder', ROOT/'scripts/build-international.py')
         builder = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(builder)
-        with patch.object(builder, 'load_catalog', return_value=(registry, catalogs)):
+        import i18n.same_page_injection as same_page
+        # The synthetic locale has no reviewed selector copy; same-page controls are tested elsewhere.
+        with patch.object(builder, 'load_catalog', return_value=(registry, catalogs)), patch.object(same_page, 'control_outputs', return_value={}):
             outputs = builder.outputs(ROOT)
         self.assertIn(ROOT/'zh-Hans/index.html', outputs)
         self.assertFalse(any('zh-Hans/miracles/eucharistic' in str(path) for path in outputs))

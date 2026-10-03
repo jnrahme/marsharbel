@@ -8,7 +8,7 @@ import re
 from string import Template
 
 from i18n.metadata import og_locales, published_locales, selector_aliases
-from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_locales
+from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_locales, read_json
 from i18n.mirror import render_mirrors
 from i18n.qadisha_mirror import render_qadisha
 from i18n.travel_mirror import render_travel
@@ -256,6 +256,10 @@ def outputs(root=ROOT):
                 route='/' + str(path.relative_to(root)).removesuffix('.html')
                 route=route.removesuffix('index') if route.endswith('/index') else route
                 result[path] = travel_frame(tour_nav(text,root,code),root,code,route,registry)
+    from i18n.same_page_injection import control_outputs
+    manifest=read_json(root/'locales/same-page-manifest.pending.json')
+    control_copy=read_json(root/'locales/same-page-copy.json')
+    result.update(control_outputs(root,{path:text for path,text in result.items() if path.suffix=='.html'},manifest,control_copy))
     return result
 
 

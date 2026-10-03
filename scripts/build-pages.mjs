@@ -5,6 +5,7 @@
 // prefixes the first line only; fragments are verbatim blocks.
 import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { renderPrimaryNav } from './lib/primary-nav.mjs';
 const check = process.argv.includes('--check');
 const SRC = 'src/pages', FRAG = 'partials/fragments';
@@ -23,7 +24,7 @@ const used = new Set(); let stale = [], n = 0;
 for (const file of await walk(SRC).catch(() => [])) {
   const rel = path.relative(SRC, file);
   const source = await readFile(file, 'utf8');
-  const built = source.replace(/([ \t]*)\{\{> ([a-z0-9-]+)(?: "((?:[^"\\]|\\.)*)")?\}\}/g, (_, indent, name, arg) => {
+  let built = source.replace(/([ \t]*)\{\{> ([a-z0-9-]+)(?: "((?:[^"\\]|\\.)*)")?\}\}/g, (_, indent, name, arg) => {
     if (name === 'primary-nav') return indent + renderPrimaryNav(navTemplate, rel);
     if (!(name in frags)) throw new Error(`${rel}: unknown fragment ${name}`);
     used.add(name);
@@ -31,6 +32,11 @@ for (const file of await walk(SRC).catch(() => [])) {
     if (frags[name].includes('{{text}}')) throw new Error(`${rel}: fragment ${name} needs an argument`);
     return indent + frags[name];
   });
+  if (built.includes('rel="canonical"') && !/name=["']robots["'][^>]*content=["'][^"']*noindex/.test(built)) {
+    const composed = spawnSync('python3', ['scripts/inject-same-page-stdin.py'], {input: built, encoding:'utf8',maxBuffer:20*1024*1024});
+    if(composed.status!==0)throw new Error(`${rel}: language-control composition failed: ${composed.stderr}`);
+    built=composed.stdout;
+  }
   let current = null; try { current = await readFile(rel, 'utf8'); } catch {}
   n++;
   if (current !== built) { stale.push(rel); if (!check) { await mkdir(path.dirname(rel) || '.', { recursive: true }); await writeFile(rel, built); } }

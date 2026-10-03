@@ -17,12 +17,11 @@ for(const language of ['en','ar','fr','es','pt','it','de','pl']) {
     await expect(page).toHaveURL(/\/annaya-tour(?:\?lang=[a-z]+)?$/);
   });
 }
-test('Travel selector switches to the same hub and back',async({page})=>{
+test('Travel selector keeps pending translations unavailable instead of switching pages',async({page})=>{
   await page.goto('/travel');
-  await page.locator('#sc-language-select').selectOption('ar');
-  await expect(page).toHaveURL(/\/ar\/travel$/);
-  await expect(page.locator('html')).toHaveAttribute('dir','rtl');
-  await page.locator('#sc-language-select').selectOption('en');
+  const select=page.locator('#sc-language-select');
+  await expect(select.locator('option[value="ar"]')).toBeDisabled();
+  await expect(select).toHaveValue('en');
   await expect(page).toHaveURL(/\/travel$/);
 });
 test('Photo destination opens the Qadisha guide',async({page})=>{

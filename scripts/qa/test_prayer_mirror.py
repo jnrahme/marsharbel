@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 """Guard the Arabic prayers pilot against a shortened or stale translation."""
 import json
 import re
@@ -48,8 +49,8 @@ class PrayerMirrorTests(unittest.TestCase):
         original = (ROOT / 'saint-charbel-prayers.html').read_text()
         # The published English master alone has P0's managed crawlable
         # footer-locale bar. The shared prayer body must still match Arabic.
-        self.assertEqual(original.count('<nav class="footer-locales"'), 1)
-        original_body = re.sub(r'<nav class="footer-locales"[^>]*>.*?</nav>', '', original, count=1, flags=re.S)
+        self.assertEqual(len(BeautifulSoup(original,'html.parser').select('nav.footer-locales')),1)
+        original_body = re.sub(r'<nav[^>]*class="footer-locales"[^>]*>.*?</nav>', '', original, count=1, flags=re.S)
         self.assertEqual(Shape(original_body).nodes, Shape(ar).nodes)
         self.assertEqual(len(Shape(ar).images), 1)
         self.assertEqual(ar.count('card prayer-card'), 14)
