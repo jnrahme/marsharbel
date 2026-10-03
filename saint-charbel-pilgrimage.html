@@ -76,6 +76,12 @@
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Travel",
+        "item": "https://marsharbel.com/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "A Pilgrimage to Saint Charbel",
         "item": "https://marsharbel.com/saint-charbel-pilgrimage"
       }
@@ -154,8 +160,9 @@
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
+<link rel="stylesheet" href="/travel.css?v=20261002-3" />
 </head>
-<body>
+<body class="travel-page travel-destination">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="topbar">
     <div class="site-shell nav">
@@ -201,8 +208,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -223,16 +231,19 @@
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
-    <section class="hero">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="In this guide"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/travel">Travel</a><span aria-hidden="true">/</span><span aria-current="page">A Pilgrimage to Saint Charbel</span></nav>
+<!-- i18n-travel-frame:end -->
+<section class="hero travel-split-hero"><figure class="hero-figure"><img src="./media/annaya/annaya-monastery.webp" alt="The Monastery of Saint Maron in Annaya seen across the valley, with the church and forested mountainside" width="1100" height="618" loading="eager" fetchpriority="high" /><figcaption>The Monastery of Saint Maron in Annaya - the heart of every pilgrimage to Saint Charbel. Photograph: Paul Saad, <a href="https://commons.wikimedia.org/wiki/File:Pan_Annaya_Church_And_Monastry.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption></figure><div class="travel-summary">
       <span class="kicker">Pilgrim's Guide &middot; Lebanon</span>
       <h1>A Pilgrimage to Saint Charbel</h1>
       <p>Everything you need to plan the journey: praying at his tomb and hermitage at Annaya, standing in the mountain village where he was born, walking the valley that formed him, and the other holy places of Lebanon worth adding to the trip. Every stop below carries a Google Maps location, and the detailed pages for each place are linked along the way.</p>
-      <figure class="hero-figure"><img src="./media/annaya/annaya-monastery.webp" alt="The Monastery of Saint Maron in Annaya seen across the valley, with the church and forested mountainside" width="1100" height="618" loading="lazy" /><figcaption>The Monastery of Saint Maron in Annaya - the heart of every pilgrimage to Saint Charbel. Photograph: Paul Saad, <a href="https://commons.wikimedia.org/wiki/File:Pan_Annaya_Church_And_Monastry.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption></figure>
+
       <div class="cta-row">
         <a class='btn primary' href='visit-annaya'>Visiting Annaya: Full Guide</a>
         <a class='btn subtle' href='saint-charbel-novena'>Pray the Novena</a>
       </div>
-    </section>
+</div></section>
 
     <section class="section">
       <h2>The Heart of It: Annaya</h2>

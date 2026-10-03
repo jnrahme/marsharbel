@@ -4,10 +4,12 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.feast_mirror import render_feast
 from i18n.tour_nav import tour_nav
+from i18n.travel_components import travel_frame
+from i18n.catalog import read_json
 class FeastMirrorTests(unittest.TestCase):
  def test_shape_and_provenance(self):
   en=BeautifulSoup((ROOT/'saint-charbel-feast-day.html').read_text(),'html.parser');text=render_feast(ROOT)[ROOT/'ar/feast-day.html'];ar=BeautifulSoup(text,'html.parser')
-  self.assertEqual(tour_nav(text,ROOT,'ar'),(ROOT/'ar/feast-day.html').read_text())
+  self.assertEqual(travel_frame(tour_nav(text,ROOT,'ar'),ROOT,'ar','/ar/feast-day',read_json(ROOT/'locales/registry.json')),(ROOT/'ar/feast-day.html').read_text())
   self.assertEqual([n.name for n in en.select('main *')],[n.name for n in ar.select('main *')])
   self.assertEqual(len(ar.select('main > section')),14)
   self.assertEqual(ar.html['dir'],'rtl');self.assertEqual(ar.html['lang'],'ar')

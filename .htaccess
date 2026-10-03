@@ -45,6 +45,11 @@ RewriteRule ^(ar|fr|es|pt|it|de|pl)\.html$ /$1/ [R=301,L]
 RewriteRule ^(ar|fr|es|pt|it|de|pl)$ /$1/ [R=301,L]
 # i18n-routes:end
 
+# English-prefix aliases: existing authored /en guides stay in place.
+RewriteCond %{DOCUMENT_ROOT}/en/$1.html !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^en/([a-z0-9-]+)(?:\.html)?/?$ /$1 [R=301,L]
+
 # Search Console HTML-file verification files must serve directly (a redirect
 # breaks verification).
 RewriteRule ^google[^/]*\.html$ - [L]
