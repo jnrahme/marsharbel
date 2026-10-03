@@ -29,6 +29,10 @@ for (const file of await walk(SRC).catch(() => [])) {
     if (name === 'primary-nav') return indent + renderPrimaryNav(navTemplate, rel);
     if (name === 'ld-faq') return indent + renderFaq([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
     if (name === 'ld-webpage-audience') return indent + renderWebPageAudience([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
+    if (name === 'ld-webpage-article-modified') {
+      const [dateModified, ...args] = [...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]);
+      return indent + renderWebPageArticle(args, dateModified);
+    }
     if (name === 'ld-webpage-article') return indent + renderWebPageArticle([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
     if (name === 'ld-webpage') return indent + renderWebPage([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
     if (!(name in frags)) throw new Error(`${rel}: unknown fragment ${name}`);
