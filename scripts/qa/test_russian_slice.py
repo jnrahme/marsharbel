@@ -17,7 +17,7 @@ class RussianSliceTests(unittest.TestCase):
   self.assertEqual(x['master'],'history.html');self.assertEqual(len(x['slots']),len(translatable_nodes(source.main)));self.assertGreater(len(x['slots']),200)
   self.assertEqual([n.name for n in source.select('main *')],[n.name for n in s.select('main *')if 'translation-note'not in n.get('class',[])])
   self.assertEqual([n.get('id')for n in source.select('main [id]')],[n.get('id')for n in s.select('main [id]')]);self.assertEqual([n['src'].removeprefix('./')for n in source.select('main img')],[n['src'].removeprefix('/')for n in s.select('main img')])
-  self.assertIn('не православный',s.main.get_text());self.assertIn('в общении с Римом',s.main.get_text());self.assertIn('Father of truth',s.main.get_text());self.assertNotIn('Отец истины',s.main.get_text())
+  self.assertIn('а не православный',s.main.get_text());self.assertIn('в общении с Римом',s.main.get_text());self.assertIn('Father of truth',s.main.get_text());self.assertNotIn('Отец истины',s.main.get_text())
  def test_reciprocal_biography_cluster_and_home(self):
   expected={'en':'https://marsharbel.com/history','de':'https://marsharbel.com/de/biografie','ru':'https://marsharbel.com/ru/biography','x-default':'https://marsharbel.com/history'}
   for p in ('history.html','de/biografie.html','ru/biography.html'):

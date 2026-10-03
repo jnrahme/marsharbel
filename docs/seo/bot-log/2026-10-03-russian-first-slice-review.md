@@ -15,7 +15,7 @@ Reader promise: learn who Saint Charbel was, including his Maronite Catholic ide
 
 | English | Russian draft | Note |
 |---|---|---|
-| Saint Charbel Makhlouf | святой Шарбель Маклуф | Vatican News uses Шарбель Махлуф; review surname choice and consistency |
+| Saint Charbel Makhlouf | святой Шарбель Махлуф | Vatican News uses Шарбель Махлуф; title, body and meta now follow this spelling, with Маклуф listed as a variant |
 | Maronite Church | Маронитская церковь | Eastern Catholic Church in communion with Rome, not Orthodox |
 | Lebanese Maronite Order | Ливанский маронитский орден | Review official Russian usage |
 | monastery / hermitage / hermit | монастырь / скит / отшельник | Do not imply Orthodox jurisdiction |
@@ -66,3 +66,13 @@ The remaining English master source links are retained verbatim. Their underlyin
 3. Full CI/QA and page/source freshness green, including new focused Russian test in CI.
 4. Live `/ru` -> `/ru/`, `/ru/` 200 and `/ru/biography` 200; canonical and reciprocal cluster checks. Re-test native footer/home route, exact-page selector refusal and desktop/phone pixels after deploy.
 5. Do not certify article twins or expand prayers/scripture until separately authorized and reviewed.
+
+## Independent-review corrections applied
+
+First review: faith accuracy and rendering passed; text corrections requested. The candidate now uses Махлуф consistently (Маклуф only as an explicitly named variant), Ниматтулла and lower-case аль-Хардини, Государство-город Ватикан, заупокойная служба, a natural opening bridge, revised prose about the Church honoring his life, softened Catholic-not-Orthodox wording, and plural approved healings consistent with two plus one. Year ranges use en dashes. Sentence dashes remain hyphens: typography exception reported to main.
+
+The small section homepage intentionally keeps the existing locale-home template. The full biography keeps the English master's full site navigation and interactions. This is the same home/article distinction used by the existing locales, not a stripped-down biography. All 47 biography header link targets exist. Non-Russian header destinations are visibly marked EN; no nonexistent Russian paths are introduced.
+
+Final isolated i18n unit run: all 33 tests passed. Revised Russian browser plus Axe gate: all 4 passed. Static Travel audit: zero broken internal links, 4 tests passed. Full multi-topic browser/production gate remains open.
+
+Russian spelling corroboration: current search returned https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%8C-%D0%A5%D0%B0%D1%80%D0%B4%D0%B8%D0%BD%D0%B8,_%D0%9D%D0%B8%D0%BC%D0%B0%D1%82%D1%82%D1%83%D0%BB%D0%BB%D0%B0_%D0%9A%D0%B0%D1%81%D1%81%D0%B0%D0%B1 with the form Ниматтулла Кассаб. This is secondary corroboration, not a native Catholic editorial verdict.
