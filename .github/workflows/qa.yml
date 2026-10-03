@@ -49,6 +49,9 @@ jobs:
           python3 -m unittest discover -s scripts/qa -p 'test_russian_slice.py'
           npx playwright test tests/russian-first-slice.spec.js --project=small-phone --project=phone --project=laptop --workers=2
 
+      - name: Clean-checkout page build is in sync
+        run: node scripts/build-pages.mjs --check
+
       - name: Run QA suite
         run: npm run qa:ci
 
