@@ -76,3 +76,5 @@ The small section homepage intentionally keeps the existing locale-home template
 Final isolated i18n unit run: all 33 tests passed. Revised Russian browser plus Axe gate: all 4 passed. Static Travel audit: zero broken internal links, 4 tests passed. Full multi-topic browser/production gate remains open.
 
 Russian spelling corroboration: current search returned https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%8C-%D0%A5%D0%B0%D1%80%D0%B4%D0%B8%D0%BD%D0%B8,_%D0%9D%D0%B8%D0%BC%D0%B0%D1%82%D1%82%D1%83%D0%BB%D0%BB%D0%B0_%D0%9A%D0%B0%D1%81%D1%81%D0%B0%D0%B1 with the form Ниматтулла Кассаб. This is secondary corroboration, not a native Catholic editorial verdict.
+
+Final reviewer relay: native/faith review PASS for release preparation, with two cosmetic name corrections requested. Applied Макариос аль-Мишмешани and Нухад аш-Шами. Sentence hyphen exception remains explicitly reported. Latest full i18n run had 32 pass and one manifest freshness failure while regenerated manifest changed during the run; fast isolated freshness rechecked against settled bytes. Merge lane still owns rebase/full CI/deploy/live proof.
