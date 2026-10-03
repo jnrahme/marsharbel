@@ -35,7 +35,7 @@ DESCRIPTIONS = {
     "magdalene-story.html": "Mary Magdalene storybook for ages 6-12: nine illustrated narrative pages from Galilee to the Easter garden, with flowing narration and a family reflection.",
     "jude-story.html": "Saint Jude storybook for ages 6-12: nine illustrated pages about a question at the Last Supper, with flowing narration and a family reflection.",
     "massabki-story.html": "Read the Massabki brothers’ story for ages 6-12 with a trusted adult: narrated pages about service, faith, remembrance, and choosing safety and peace.",
-    "history.html": "The full story of Saint Charbel: his childhood in Bekaa Kafra, 16 years in community and 23 as a hermit at Annaya, the tomb, and the road to sainthood. Dated and sourced.",
+    "history.html": "The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced.",
     "story.html": "Read a child-friendly Saint Charbel storybook for ages 5-12 with simple language, faith lessons, and an engaging guided experience.",
     "miracles.html": "Explore Saint Charbel miracle records with clear distinction between formally recognized Church miracles and reported testimonies from Annaya.",
     "testimonies.html": json.loads((ROOT / "locales/en/testimonies.json").read_text())["description"],
