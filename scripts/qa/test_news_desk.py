@@ -7,6 +7,13 @@ news_desk = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(news_desk)
 
 class NewsDeskTests(unittest.TestCase):
+    def test_gallery_series_news(self):
+        text = (ROOT/'news.html').read_text()
+        self.assertEqual(text.count('id="gallery-ai-transformation-series-2026-10"'), 1)
+        self.assertIn('dark beard with a grey center streak', text)
+        self.assertIn('not independent verification', text)
+        self.assertIn('href="./gallery"', text)
+
     def test_generated_output_fresh(self):
         for path, text in news_desk.outputs().items():
             self.assertEqual(path.read_text(), text, str(path))
