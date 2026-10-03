@@ -40,9 +40,9 @@ RewriteRule ^saint-charbel-prayers(?:\.html)?/?$ /en/prayers [R=301,L]
 # Language hubs are directory indexes with canonical trailing slashes.
 # i18n-routes:start
 RewriteRule ^en/?$ / [R=301,L]
-RewriteRule ^(ar|fr|es|pt|it|de|pl)/index(?:\.html)?$ /$1/ [R=301,L]
-RewriteRule ^(ar|fr|es|pt|it|de|pl)\.html$ /$1/ [R=301,L]
-RewriteRule ^(ar|fr|es|pt|it|de|pl)$ /$1/ [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl|ru)/index(?:\.html)?$ /$1/ [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl|ru)\.html$ /$1/ [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl|ru)$ /$1/ [R=301,L]
 # i18n-routes:end
 
 # English-prefix aliases: existing authored /en guides stay in place.

@@ -65,7 +65,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
       }
     });
   }
-  test(`${language} prayer guide accessibility`,async({page}) => {
+  if (topicLanguages("prayers").includes(language)) test(`${language} prayer guide accessibility`,async({page}) => {
     await page.goto(routeFor(language,'prayers'));
     const results = await new AxeBuilder({page}).analyze();
     expect(results.violations.filter(v => ['serious','critical'].includes(v.impact))).toEqual([]);

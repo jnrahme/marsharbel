@@ -60,6 +60,11 @@ def render_exact(root, registry, lang, name, route, catalog=None):
                 raise ValueError(f'{name}: disallowed translated attribute {attr}')
             leaves(value)
             found[0][attr] = value
+        # Localized history tables may overflow at narrow widths. A keyed
+        # accessible name also opts their scroll container into keyboard access.
+        if 'history-table-wrap' in found[0].get('class', []) and attrs.get('aria-label'):
+            found[0]['tabindex'] = '0'
+            found[0]['role'] = 'region'
     for node in soup.select('main [aria-label], main [title], main img[alt]'):
         for attr in ('aria-label', 'title', 'alt'):
             if not node.get(attr): continue

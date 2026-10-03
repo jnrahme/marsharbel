@@ -44,6 +44,11 @@ jobs:
       - name: Install Python dependencies
         run: pip install beautifulsoup4
 
+      - name: Russian first-slice publication and browser guards
+        run: |
+          python3 -m unittest discover -s scripts/qa -p 'test_russian_slice.py'
+          npx playwright test tests/russian-first-slice.spec.js --project=small-phone --project=phone --project=laptop --workers=2
+
       - name: Run QA suite
         run: npm run qa:ci
 

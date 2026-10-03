@@ -122,6 +122,16 @@
       },
       "ogLocale": "pl_PL",
       "selectorAliases": []
+    },
+    "ru": {
+      "nativeName": "Русский",
+      "direction": "ltr",
+      "home": "/ru/",
+      "slugs": {
+        "biography": "biography"
+      },
+      "ogLocale": "ru_RU",
+      "selectorAliases": []
     }
   },
   "authoredMirrors": {
@@ -204,7 +214,8 @@
         "pt",
         "it",
         "de",
-        "pl"
+        "pl",
+        "ru"
       ]
     },
     "prayers": {
@@ -472,7 +483,8 @@
     "pt",
     "it",
     "de",
-    "pl"
+    "pl",
+    "ru"
   ],
   "domMirrors": {
     "feast": {
@@ -488,10 +500,12 @@
       "english": "/history",
       "routes": {
         "en": "/history",
-        "de": "/de/biografie"
+        "de": "/de/biografie",
+        "ru": "/ru/biography"
       },
       "renderLocales": [
-        "de"
+        "de",
+        "ru"
       ]
     },
     "novena": {

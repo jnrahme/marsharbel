@@ -161,7 +161,8 @@ def check(root=ROOT):
         from i18n.same_page_injection import inject_control
         from i18n.travel_components import travel_frame
         from i18n.tour_nav import tour_nav
-        expected=travel_frame(tour_nav(expected,root,'de'),root,'de','/'+str(path.relative_to(root)).removesuffix('.html'),read_json(root/'locales/registry.json'))
+        lang=path.relative_to(root).parts[0]
+        expected=travel_frame(tour_nav(expected,root,lang),root,lang,'/'+str(path.relative_to(root)).removesuffix('.html'),read_json(root/'locales/registry.json'))
         expected=inject_control(expected,root,read_json(root/'locales/same-page-manifest.pending.json'),read_json(root/'locales/same-page-copy.json'))
         if path.read_text()!=expected: errors.append(str(path.relative_to(root))+': exact output differs from guarded catalog')
     for file, values in snapshot(root).items():
