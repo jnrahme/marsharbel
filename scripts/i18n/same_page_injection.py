@@ -28,6 +28,16 @@ def place_footer_navigation(text):
     return text.replace('</main>','</main>\n<footer class="footer">\n'+container+'</footer>',1)
 
 def inject_control(text, root, manifest, copy):
+    # English guide routes are live destinations, including the legacy prayer redirect.
+    page=BeautifulSoup(text,'html.parser')
+    canonical=page.select_one('link[rel=canonical]')
+    registry=read_json(root/'locales/registry.json')
+    english_guides={registry['site']+'/en/'+slug for slug in registry['locales']['en']['slugs'].values()}
+    if canonical and canonical.get('href') in english_guides and not page.select_one('nav.footer-locales'):
+        if '</footer>' not in text:raise ValueError('English guide missing semantic footer')
+        links=' '.join('<a href="'+escape(cfg['home'])+'" hreflang="'+code+'" lang="'+code+'" dir="'+cfg['direction']+'">'+escape(cfg['nativeName'])+'</a>' for code,cfg in registry['locales'].items())
+        block='<nav class="footer-locales" aria-label="Languages">'+links+'</nav>'
+        text=text.replace('</footer>',block+'\n</footer>',1)
     text=place_footer_navigation(text)
     # Deterministic rebuilding: remove only our generated control resources.
     text=re.sub(r'<script\b[^>]*src=["\']/same-page-(?:manifest|copy|resolver|switcher)\.js["\'][^>]*></script>\s*','',text)
