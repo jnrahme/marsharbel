@@ -28,8 +28,26 @@ for (const file of readdirSync('src/pages').filter(f => f.endsWith('.html'))) {
   assert.equal((marker ? renderWebPageArticle : renderWebPageAudience)(args), block[0], `${file}: serialized bytes changed`);
   if (marker) count++; else audienceCount++;
 }
-assert.ok(count >= 48, `expected at least 48 characterized articles; got ${count}`);
+assert.ok(count >= 47, `expected at least 47 characterized articles; got ${count}`);
 assert.ok(audienceCount >= 18, `expected at least 18 characterized audiences; got ${audienceCount}`);
+
+// Characterize every new long-tail include against the exact served block.
+const fragments = Object.fromEntries(['ld-person', 'ld-place', 'ld-video', 'ld-webpage-plain'].map(name =>
+  [name, readFileSync(`partials/fragments/${name}.html`, 'utf8').replace(/\n$/, '')]));
+let longTail = 0;
+for (const file of readdirSync('src/pages').filter(f => f.endsWith('.html'))) {
+  const source = readFileSync(`src/pages/${file}`, 'utf8');
+  const served = readFileSync(file, 'utf8');
+  for (const marker of source.matchAll(/\{\{> (ld-person|ld-place|ld-video|ld-webpage-plain|ld-webpage-article-modified)((?: "(?:[^"\\]|\\.)*")*)\}\}/g)) {
+    const args = [...marker[2].matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]);
+    const rendered = marker[1] === 'ld-webpage-article-modified'
+      ? renderWebPageArticle(args.slice(1), args[0])
+      : fragments[marker[1]].replace(/\{\{(\d+)\}\}/g, (_, i) => args[Number(i) - 1]);
+    assert.ok(served.includes(rendered), `${file}: ${marker[1]} changed bytes`);
+    longTail++;
+  }
+}
+assert.equal(longTail, 29);
 assert.throws(() => renderWebPageAudience([]), /needs language/);
 const audienceArgs = ['en', 'Children', '6', '12', 'n', 'd', 'u', 'Home', '/'];
 for (const ages of [['12', '6'], ['-1', '12'], ['6.5', '12'], ['6', 'NaN'], ['06', '12']]) {

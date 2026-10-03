@@ -4,7 +4,7 @@
 const SITE_NAMES = ['Mar Charbel', 'Saint Charbel Makhlouf', 'Sharbel', 'St Charbel', 'Saint Sharbel', 'Charbel Makhlouf'];
 
 // args: name, description, url, then pairs of (crumb name, crumb url).
-export function renderWebPage([name, description, url, ...crumbs], article = null, audience = null) {
+export function renderWebPage([name, description, url, ...crumbs], article = null, beforeBreadcrumb = null) {
   if (crumbs.length === 0 || crumbs.length % 2) throw new Error('ld-webpage needs breadcrumb name/url pairs');
   const items = [];
   for (let i = 0; i < crumbs.length; i += 2) {
@@ -35,7 +35,7 @@ ${SITE_NAMES.map(n => `      "${n}"`).join(',\n')}
       "url": "https://marsharbel.com/"
     }
   },
-${audience === null ? '' : audience}  "breadcrumb": {
+${beforeBreadcrumb === null ? '' : beforeBreadcrumb}  "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
 ${items.join(',\n')}
@@ -72,7 +72,7 @@ ${items.join(',\n')}
 }
 
 // args: article headline, image URL, publication date, then renderWebPage args.
-export function renderWebPageArticle([headline, image, datePublished, ...page]) {
+export function renderWebPageArticle([headline, image, datePublished, ...page], dateModified = null) {
   if (typeof headline !== 'string' || typeof image !== 'string' || typeof datePublished !== 'string' || page.length < 5) {
     throw new Error('ld-webpage-article needs headline, image, date and webpage arguments');
   }
@@ -93,7 +93,7 @@ export function renderWebPageArticle([headline, image, datePublished, ...page]) 
       "url": "https://marsharbel.com/"
     },
     "datePublished": "${datePublished}"
-  }`);
+  }`, dateModified === null ? null : `  "dateModified": "${dateModified}",\n`);
 }
 
 // args: language, audience label, min/max age, then renderWebPage args.
