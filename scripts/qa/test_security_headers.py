@@ -33,8 +33,8 @@ class SecurityHeaderTests(unittest.TestCase):
         self.assertNotIn("'unsafe-inline'", report.split('script-src ')[1].split(';')[0])
         self.assertNotIn('YOUR_PROJECT', report)
 
-    def test_hsts_no_premature_subdomain_commitment(self):
-        self.assertEqual(self.header('Strict-Transport-Security'), 'max-age=86400')
+    def test_hsts_one_year_without_subdomain_commitment(self):
+        self.assertEqual(self.header('Strict-Transport-Security'), 'max-age=31536000')
         self.assertIn('"expr=%{HTTPS} == \'on\'"', self.config)
 
     def test_private_pages(self):
