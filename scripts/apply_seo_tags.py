@@ -35,7 +35,7 @@ DESCRIPTIONS = {
     "magdalene-story.html": "Mary Magdalene storybook for ages 6-12: nine illustrated narrative pages from Galilee to the Easter garden, with flowing narration and a family reflection.",
     "jude-story.html": "Saint Jude storybook for ages 6-12: nine illustrated pages about a question at the Last Supper, with flowing narration and a family reflection.",
     "massabki-story.html": "Read the Massabki brothers’ story for ages 6-12 with a trusted adult: narrated pages about service, faith, remembrance, and choosing safety and peace.",
-    "history.html": "Discover Saint Charbel's life timeline from 1828 to canonization in 1977, including his Maronite monastic vocation and enduring spiritual legacy.",
+    "history.html": "The full story of Saint Charbel: his childhood in Bekaa Kafra, 16 years in community and 23 as a hermit at Annaya, the tomb, and the road to sainthood. Dated and sourced.",
     "story.html": "Read a child-friendly Saint Charbel storybook for ages 5-12 with simple language, faith lessons, and an engaging guided experience.",
     "miracles.html": "Explore Saint Charbel miracle records with clear distinction between formally recognized Church miracles and reported testimonies from Annaya.",
     "testimonies.html": json.loads((ROOT / "locales/en/testimonies.json").read_text())["description"],
@@ -64,7 +64,7 @@ TITLE_OVERRIDE = {
     "travel.html": json.loads((ROOT / "locales/en/travel.json").read_text())["title"],
     "saint-charbel-encyclopedia.html": 'Saint Charbel Encyclopedia: Life, Miracles, Places and Devotion',
     "index.html": "Saint Charbel | History, Miracles, Testimonies & Rosary",
-    "history.html": "Saint Charbel History | Biography, Timeline & Canonization",
+    "history.html": "Saint Charbel Makhlouf: Full Life, Timeline and Canonization (1828-1977)",
     "story.html": "Saint Charbel Story for Kids | Catholic Storybook",
     "miracles.html": "Saint Charbel Miracles | Verified Reports & Testimonies",
     "testimonies.html": json.loads((ROOT / "locales/en/testimonies.json").read_text())["title"],
@@ -428,7 +428,12 @@ def person_schema(path: Path, html: str, url: str, title: str, description: str)
         return None
     person = {"@type": "Person", "name": name, "description": description, "url": url}
     if path.stem == "history":
+        # Day of birth is not documented in an authenticated record: year only.
+        person["name"] = "Saint Charbel Makhlouf"
         person["alternateName"] = CHARBEL_ALIASES
+        person["birthDate"] = "1828"
+        person["deathDate"] = "1898-12-24"
+        person["sameAs"] = ["https://en.wikipedia.org/wiki/Charbel_Makhlouf", "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1977/10/09.html"]
     return person
 
 

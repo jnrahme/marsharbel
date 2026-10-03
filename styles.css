@@ -2987,3 +2987,20 @@ a.card:active{transform:scale(.99);transition-duration:140ms}
 .enc-nav-item > .enc-language { font-size: .85em; opacity: .8; }
 /* German compound nouns stay intact within the exact miracle master heading. */
 html[lang="de"][data-authored-mirror="miracles"] .hero h1{max-width:20ch;overflow-wrap:normal;word-break:normal}
+.history-figure{margin:1.4rem 0;max-width:100%}
+.history-figure img{display:block;width:100%;height:auto;border-radius:12px}
+.history-figure-small{max-width:500px}
+.history-figure figcaption{margin-top:.5rem;font-size:.9rem;line-height:1.5;color:var(--theme-ink-soft)}
+.history-credit{display:block;margin-top:.2rem;font-size:.8rem}
+.history-credit a,.history-figure figcaption a{color:var(--theme-accent)}
+.history-with-portrait{display:grid;grid-template-columns:minmax(0,16rem) minmax(0,1fr);gap:1.4rem;align-items:start}
+.history-with-portrait .history-figure{margin:0}
+.history-with-portrait .history-figure img{max-width:320px}
+.history-table-wrap{overflow-x:auto;margin:.4rem 0 1rem}
+.history-table{width:100%;border-collapse:collapse;font-size:1rem;line-height:1.5}
+.history-table th,.history-table td{padding:.65rem .8rem;border-bottom:1px solid var(--theme-line);text-align:left;vertical-align:top}
+.history-table th{width:34%;font-weight:600;color:var(--theme-ink)}
+.history-next{columns:2;column-gap:2rem;padding-left:1.1rem}
+.history-next li{break-inside:avoid;margin:.3rem 0}
+.history-copy h3{margin-top:1.4rem}
+@media (max-width:760px){.history-with-portrait{grid-template-columns:1fr}.history-table th{width:40%}.history-next{columns:1}}

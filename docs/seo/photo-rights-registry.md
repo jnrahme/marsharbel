@@ -306,3 +306,24 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 
 ## 2026-10-02 - Letters page country flags (media/flags/*.svg)
 - 97 SVG flags (96 from the published list plus Canada, added at Joey request 2026-10-02) from the flag-icons project (github.com/lipis/flag-icons, 4x3 set), MIT License, Copyright (c) 2013 Panayiotis Lipiridis. Downloaded 2026-10-02 from raw.githubusercontent.com. England uses the gb-eng flag (matches the source list; gb.svg removed). The MIT LICENSE text ships as media/flags/LICENSE. Credit shown under the flag list on testimonies.html. Country list: the names published at saintcharbel.net.au/letters (99 distinct names); Yugoslavia, Zaire and Congo shown without a flag.
+
+## 2026-10-03 - /history rewrite (held, not integrated), media/history/
+
+### media/history/annaya-hermitage-exterior.webp (1280x852)
+- Subject: front of the Hermitage of Saints Peter and Paul above Annaya (stone facade with cross between two cedars). Real photograph.
+- Source: saintcharbel.com/wp-content/uploads/2025/12/hermitage-outside-003.jpg (page /the-hermitage, file name "hermitage-outside-003"). The small logo overlay at the bottom was left in, not cropped.
+- Credit on page: saintcharbel.com (Saint Charbel Oasis), used with owner permission.
+- Basis: standing owner grant 2026-10-02 (Joey, relayed by the main agent: scrape-and-credit, no permission letters). Reviewer caveat stands: owner attestation, not an independent licence finding. Checked 2026-10-03: not a filtered image (the sibling hermitage-outside-silhouette-01 is a painterly filter and was rejected).
+
+### media/history/bekaa-kafra-winter.webp (500x375)
+- Subject: snow on the houses of Bekaa Kafra.
+- Source: Wikimedia Commons, File:Bekaa Kafra winter.jpg (https://commons.wikimedia.org/wiki/File:Bekaa_Kafra_winter.jpg). Author: Potatoes8895, 2012-02-20.
+- License: CC BY-SA 3.0. Verified via Commons API 2026-10-03. Shown at 500px (source resolution); do not upscale.
+
+### Reused on /history (already registered above)
+- media/annaya/annaya-monastery.webp (Paul Saad, CC BY-SA 4.0), media/annaya/charbel-tomb.webp (LLEW, CC BY-SA 4.0), media/annaya/charbel-historic-photo.webp (Commons File:Charbel.jpg, public domain tags PD-old-assumed and PD-1923, author unknown, source st-charbel.fr; Commons notes some countries may differ).
+- Grotto of Saint Charbel at Bekaa Kafra: no freely licensed photo found (Commons, Wikipedia en/fr image lists). Only Getty (paid), saintcharbel.net.au and commercial pages. Standing need.
+
+### Gap closed 2026-10-03: media/news/bekaa-kafra-winter.webp and bekaa-kafra-spring.webp (/bekaa-kafra)
+- Previously unregistered. Source: LebanonUntravelled.com (batch 18 bot-log docs/seo/bot-log/2026-09-25-batch-18-bekaa-guide-expansion.md: "2 real shots from LebanonUntravelled (cited source)"). Credit on page: "Photo courtesy of LebanonUntravelled.com".
+- Licence: NOT found. No Creative Commons or reuse statement was located for these two images, so there is no independent licence finding. They stand only on the standing owner rule of 2026-10-02 (source real material, show credit, no rights outreach), which post-dates their use. Risk: unlicensed third-party photos. Replace with a clean photo when one exists (the Commons Bekaa Kafra winter image is only 500px, too small for the hero).
