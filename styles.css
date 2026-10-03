@@ -3004,3 +3004,5 @@ html[lang="de"][data-authored-mirror="miracles"] .hero h1{max-width:20ch;overflo
 .history-next li{break-inside:avoid;margin:.3rem 0}
 .history-copy h3{margin-top:1.4rem}
 @media (max-width:760px){.history-with-portrait{grid-template-columns:1fr}.history-table th{width:40%}.history-next{columns:1}}
+
+.locale-prayer-list{list-style:none;margin:1rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem .75rem}.locale-prayer-link{display:inline-block;min-height:44px;line-height:44px;padding:0 1rem;border:1px solid var(--theme-line-soft,rgba(211,178,110,.28));border-radius:999px;text-decoration:none}.locale-prayer-link:hover,.locale-prayer-link:focus-visible{border-color:currentColor}
