@@ -146,6 +146,17 @@ class DeploymentVerificationTest(unittest.TestCase):
         self.assertEqual(public_path("testimonies.html"), "testimonies")
         self.assertEqual(public_path("app.js"), "app.js")
 
+    def test_pages_that_htaccess_301s_are_not_expected_to_serve_themselves(self):
+        import tempfile
+        from verify_deployment import redirected_pages
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / ".htaccess").write_text(
+                "RewriteRule ^saint-charbel-prayers(?:\\.html)?/?$ /en/prayers [R=301,L]\n"
+                "RewriteRule ^mysteries/rosary-visual-guide(?:\\.html)?/?$ /rosary-visual-guide [R=301,L]\n"
+                "RewriteRule ^plain(?:\\.html)?/?$ /plain.html [L]\n")
+            self.assertEqual(redirected_pages(root), {root / "saint-charbel-prayers.html"})
+
 
 if __name__ == "__main__":
     unittest.main()
