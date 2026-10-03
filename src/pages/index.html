@@ -5,29 +5,13 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Saint Charbel | History, Miracles, Letters & Rosary</title>
   <meta name="description" content="Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Saint Charbel | History, Miracles, Letters & Rosary" />
-  <meta property="og:description" content="Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources." />
-  <meta property="og:url" content="https://marsharbel.com/" />
-  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saint Charbel | History, Miracles, Letters & Rosary" />
-  <meta name="twitter:description" content="Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources." />
-  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  {{> head-social "website" "Saint Charbel | History, Miracles, Letters & Rosary" "Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources." "https://marsharbel.com/" "https://marsharbel.com/saint-charbel.jpg" "Saint Charbel | History, Miracles, Letters & Rosary" "Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources." "https://marsharbel.com/saint-charbel.jpg"}}
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,8 +43,7 @@
   <meta name="apple-mobile-web-app-title" content="Saint Charbel" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png" />
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  {{> head-font-preloads}}
   <link rel="stylesheet" href="./home.css?v=20261003-1" />
   <link rel="stylesheet" href="./monthly-prayer.css" />
   <!-- i18n-alternates:start -->

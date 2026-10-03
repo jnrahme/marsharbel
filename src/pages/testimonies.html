@@ -4,32 +4,15 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Letters - Saint Charbel | Historical and Personal Accounts</title>
   <meta name="description" content="Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/testimonies" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Letters - Saint Charbel | Historical and Personal Accounts" />
-  <meta property="og:description" content="Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review." />
-  <meta property="og:url" content="https://marsharbel.com/testimonies" />
-  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Letters - Saint Charbel | Historical and Personal Accounts" />
-  <meta name="twitter:description" content="Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review." />
-  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  {{> head-social "website" "Letters - Saint Charbel | Historical and Personal Accounts" "Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review." "https://marsharbel.com/testimonies" "https://marsharbel.com/saint-charbel.jpg" "Letters - Saint Charbel | Historical and Personal Accounts" "Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review." "https://marsharbel.com/saint-charbel.jpg"}}
   {{> ld-webpage "Letters - Saint Charbel | Historical and Personal Accounts" "Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review." "https://marsharbel.com/testimonies" "Home" "https://marsharbel.com/" "Miracles" "https://marsharbel.com/miracles/" "Letters" "https://marsharbel.com/testimonies"}}
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  {{> head-font-preloads}}
   <link rel="stylesheet" href="styles.css?v=20260925-1" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/testimonies" />

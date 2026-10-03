@@ -4,32 +4,15 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Service | Saint Charbel</title>
   <meta name="description" content="Read the terms of service for marsharbel.com and the Saint Charbel Mobile iPhone app, including acceptable use, devotional content guidance, and testimony submission rules." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/terms-of-service" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Terms of Service | Saint Charbel" />
-  <meta property="og:description" content="Read the terms of service for marsharbel.com and the Saint Charbel Mobile iPhone app, including acceptable use, devotional content guidance, and testimony submission rules." />
-  <meta property="og:url" content="https://marsharbel.com/terms-of-service" />
-  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Terms of Service | Saint Charbel" />
-  <meta name="twitter:description" content="Read the terms of service for marsharbel.com and the Saint Charbel Mobile iPhone app, including acceptable use, devotional content guidance, and testimony submission rules." />
-  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  {{> head-social "website" "Terms of Service | Saint Charbel" "Read the terms of service for marsharbel.com and the Saint Charbel Mobile iPhone app, including acceptable use, devotional content guidance, and testimony submission rules." "https://marsharbel.com/terms-of-service" "https://marsharbel.com/saint-charbel.jpg" "Terms of Service | Saint Charbel" "Read the terms of service for marsharbel.com and the Saint Charbel Mobile iPhone app, including acceptable use, devotional content guidance, and testimony submission rules." "https://marsharbel.com/saint-charbel.jpg"}}
   {{> ld-webpage "Terms of Service | Saint Charbel" "Read the terms of service for marsharbel.com and the Saint Charbel Mobile iPhone app, including acceptable use, devotional content guidance, and testimony submission rules." "https://marsharbel.com/terms-of-service" "Home" "https://marsharbel.com/" "Terms of Service" "https://marsharbel.com/terms-of-service"}}
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  {{> head-font-preloads}}
   <link rel="stylesheet" href="./styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/terms-of-service" />

@@ -4,33 +4,16 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bekaa Kafra Online Tour: Walk Saint Charbel's Birthplace</title>
   <meta name="description" content="A guided online walk through Bekaa Kafra in five stops: the map, the winter village, the family home, the grotto and the road he left by. Real photos only." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/bekaa-tour" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Bekaa Kafra Online Tour: Walk Saint Charbel's Birthplace" />
-  <meta property="og:description" content="A guided online walk through Bekaa Kafra in five stops: the map, the winter village, the family home, the grotto and the road he left by. Real photos only." />
-  <meta property="og:url" content="https://marsharbel.com/bekaa-tour" />
-  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bekaa Kafra Online Tour: Walk Saint Charbel's Birthplace" />
-  <meta name="twitter:description" content="A guided online walk through Bekaa Kafra in five stops: the map, the winter village, the family home, the grotto and the road he left by. Real photos only." />
-  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  {{> head-social "website" "Bekaa Kafra Online Tour: Walk Saint Charbel's Birthplace" "A guided online walk through Bekaa Kafra in five stops: the map, the winter village, the family home, the grotto and the road he left by. Real photos only." "https://marsharbel.com/bekaa-tour" "https://marsharbel.com/saint-charbel.jpg" "Bekaa Kafra Online Tour: Walk Saint Charbel's Birthplace" "A guided online walk through Bekaa Kafra in five stops: the map, the winter village, the family home, the grotto and the road he left by. Real photos only." "https://marsharbel.com/saint-charbel.jpg"}}
   {{> ld-webpage "Bekaa Kafra Online Tour: Walk Saint Charbel's Birthplace" "A guided online walk through Bekaa Kafra in five stops: the map, the winter village, the family home, the grotto and the road he left by. Real photos only." "https://marsharbel.com/bekaa-tour" "Home" "https://marsharbel.com/" "Walk Through Bekaa Kafra, Online" "https://marsharbel.com/bekaa-tour"}}
   {{> ld-place "Bekaa Kafra Online Tour: Walk Saint Charbel's Birthplace" "A guided online walk through Bekaa Kafra in five stops: the map, the winter village, the family home, the grotto and the road he left by. Real photos only." "https://marsharbel.com/bekaa-tour" "https://marsharbel.com/saint-charbel.jpg"}}
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
+  {{> head-font-preloads-legacy}}
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/bekaa-tour" />

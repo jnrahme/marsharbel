@@ -4,32 +4,15 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saint Charbel's Recorded Voice | Sacred Testimony</title>
   <meta name="description" content="Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/voice-testimony" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Saint Charbel's Recorded Voice | Sacred Testimony" />
-  <meta property="og:description" content="Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation." />
-  <meta property="og:url" content="https://marsharbel.com/voice-testimony" />
-  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saint Charbel's Recorded Voice | Sacred Testimony" />
-  <meta name="twitter:description" content="Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation." />
-  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  {{> head-social "website" "Saint Charbel's Recorded Voice | Sacred Testimony" "Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation." "https://marsharbel.com/voice-testimony" "https://marsharbel.com/saint-charbel.jpg" "Saint Charbel's Recorded Voice | Sacred Testimony" "Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation." "https://marsharbel.com/saint-charbel.jpg"}}
   {{> ld-webpage "Saint Charbel's Recorded Voice | Sacred Testimony" "Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation." "https://marsharbel.com/voice-testimony" "Home" "https://marsharbel.com/" "Miracles" "https://marsharbel.com/miracles/" "Voice Testimony" "https://marsharbel.com/voice-testimony"}}
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  {{> head-font-preloads}}
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
   <link rel="stylesheet" href="storybook.css" />
   <!-- hreflang:begin -->

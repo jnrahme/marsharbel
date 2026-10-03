@@ -4,32 +4,15 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   {{> analytics}}
-  <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_AR" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta property="og:locale:alternate" content="pt_PT" />
-    <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="de_DE" />
-    <meta property="og:locale:alternate" content="pl_PL" />
+  {{> head-og-locales}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Accessibility Statement | Saint Charbel</title>
   <meta name="description" content="How marsharbel.com supports people with disabilities: the standard we test against, what we have done, known limits, and how to report a barrier." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/accessibility" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Accessibility Statement | Saint Charbel" />
-  <meta property="og:description" content="How marsharbel.com supports people with disabilities: the standard we test against, what we have done, known limits, and how to report a barrier." />
-  <meta property="og:url" content="https://marsharbel.com/accessibility" />
-  <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Accessibility Statement | Saint Charbel" />
-  <meta name="twitter:description" content="How marsharbel.com supports people with disabilities: the standard we test against, what we have done, known limits, and how to report a barrier." />
-  <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
+  {{> head-social "website" "Accessibility Statement | Saint Charbel" "How marsharbel.com supports people with disabilities: the standard we test against, what we have done, known limits, and how to report a barrier." "https://marsharbel.com/accessibility" "https://marsharbel.com/saint-charbel.jpg" "Accessibility Statement | Saint Charbel" "How marsharbel.com supports people with disabilities: the standard we test against, what we have done, known limits, and how to report a barrier." "https://marsharbel.com/saint-charbel.jpg"}}
   {{> ld-webpage "Accessibility Statement | Saint Charbel" "How marsharbel.com supports people with disabilities: the standard we test against, what we have done, known limits, and how to report a barrier." "https://marsharbel.com/accessibility" "Home" "https://marsharbel.com/" "Accessibility Statement" "https://marsharbel.com/accessibility"}}
-  <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+  {{> head-font-preloads}}
   <link rel="stylesheet" href="./styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/accessibility" />
