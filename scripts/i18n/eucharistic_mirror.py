@@ -11,6 +11,7 @@ GTAG_BLOCK = '''<!-- Google tag (gtag.js) -->
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
+    if (window.__MARSHARBEL_QA__) window.gtag('set', { traffic_type: 'internal' });
     window.gtag('config', 'G-CJX1M0VFKP');
   })();
 </script>'''
