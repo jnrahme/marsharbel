@@ -10,7 +10,6 @@ for(const width of [390,1440])for(const route of ['/','/story','/history','/trav
  await page.locator('#sc-language-select').focus();await expect(page.locator('.sc-language-feedback')).toHaveClass(/is-open/);
  expect(await height()).toBe(before);
  const box=await page.locator('.sc-language-feedback').boundingBox();expect(box.width).toBeGreaterThan(100);expect(box.x).toBeGreaterThanOrEqual(0);expect(box.x+box.width).toBeLessThanOrEqual(width);
- if(width===390)await page.screenshot({animations:'disabled',timeout:5000,path:`/downloads/compact-helper-${route==='/'?'home':route.slice(1)}-${width}.png`});
  await page.keyboard.press('Tab');await expect(page.locator('.sc-language-feedback')).not.toHaveClass(/is-open/);
  expect(await height()).toBe(before);
 });
