@@ -312,7 +312,7 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 ### media/history/annaya-hermitage-exterior.webp (1280x852)
 - Subject: front of the Hermitage of Saints Peter and Paul above Annaya (stone facade with cross between two cedars). Real photograph.
 - Source: saintcharbel.com/wp-content/uploads/2025/12/hermitage-outside-003.jpg (page /the-hermitage, file name "hermitage-outside-003"). The small logo overlay at the bottom was left in, not cropped.
-- Credit on page: saintcharbel.com (Saint Charbel Oasis), used with owner permission.
+- Credit on page: Photo: saintcharbel.com. (No permission from the rights holder is claimed.)
 - Basis: standing owner grant 2026-10-02 (Joey, relayed by the main agent: scrape-and-credit, no permission letters). Reviewer caveat stands: owner attestation, not an independent licence finding. Checked 2026-10-03: not a filtered image (the sibling hermitage-outside-silhouette-01 is a painterly filter and was rejected).
 
 ### media/history/bekaa-kafra-winter.webp (500x375)
