@@ -3029,3 +3029,14 @@ main:has(#eucharistic-miracles) .section>p:last-child{margin-top:1.4rem}
 .gallery-page .gallery-grid{align-items:stretch}
 .gallery-page .gallery-card .share-bar{margin-top:auto}
 main:has(#eucharistic-miracles) .grid-2~p,main:has(#eucharistic-miracles) .grid-2~*>p:first-child{margin-top:1.6rem}
+/* Bekaa Kafra online tour */
+.tour-map{margin:1.2rem auto;max-width:44rem}
+.tour-map svg{width:100%;height:auto;background:#17120e;border-radius:.6rem;border:1px solid rgba(241,217,166,.35)}
+.tour-map text{fill:#f6efe4;font:24px/1.2 sans-serif}
+.tour-map figcaption{font-size:.85rem;margin-top:.4rem;opacity:.85}
+.tour-map .pin{fill:#f1d9a6}
+.tour-map .main{fill:#e8b64a}
+.tour-card{max-width:44rem;margin:1.6rem auto;padding:1.2rem 1.25rem;border-left:3px solid #c9a24d}
+.tour-card .tour-step{color:#e0bd6a}
+.tour-gap{margin:.8rem 0;padding:1rem;border:1px dashed #c9a24d;border-radius:.5rem;font-style:italic}
+.tour-small{max-width:500px;width:100%;height:auto;border-radius:.4rem}
