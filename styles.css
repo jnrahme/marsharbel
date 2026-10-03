@@ -2985,3 +2985,5 @@ a.card:active{transform:scale(.99);transition-duration:140ms}
 .enc-nav-item { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25em; padding: .45rem .7rem; }
 .nav-sub .enc-nav-item > a { display: inline; padding: 0; }
 .enc-nav-item > .enc-language { font-size: .85em; opacity: .8; }
+/* German compound nouns stay intact within the exact miracle master heading. */
+html[lang="de"][data-authored-mirror="miracles"] .hero h1{max-width:20ch;overflow-wrap:normal;word-break:normal}

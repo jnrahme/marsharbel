@@ -1,3 +1,4 @@
+import json
 import unittest,sys,json,shutil,tempfile
 from pathlib import Path
 from bs4 import BeautifulSoup
@@ -19,7 +20,7 @@ class FeastMirrorTests(unittest.TestCase):
   self.assertEqual(ar.select_one('main img')['src'],en.select_one('main img')['src'].removeprefix('.'))
   self.assertEqual([n['href'] for n in en.select('main a[href^="https:"]')],[n['href'] for n in ar.select('main a[href^="https:"]')])
   self.assertEqual({n['hreflang']:n['href'] for n in en.select('link[hreflang]')},{n['hreflang']:n['href'] for n in ar.select('link[hreflang]')})
-  route=(ROOT/'locale-routes.js').read_text();self.assertIn('"/saint-charbel-feast-day":{"ar":"/ar/feast-day","es":"/es/fiesta","pt":"/pt/festa","en":"/saint-charbel-feast-day"}',route)
+  route=(ROOT/'locale-routes.js').read_text();routes=json.loads(route.split(' = ',1)[1].rstrip(';\n'))['topics'];self.assertEqual(routes['/saint-charbel-feast-day'],read_json(ROOT/'locales/registry.json')['exactMirrors']['feast']['routes'])
   self.assertNotIn('footer-locales',text);self.assertEqual(len(ar.select('script[type="application/ld+json"]')),2)
   faq=json.loads(ar.select('script[type="application/ld+json"]')[1].string)
   section=next(sec for sec in ar.select('main section') if sec.h2 and sec.h2.get_text()=='أسئلة شائعة')

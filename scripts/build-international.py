@@ -24,12 +24,14 @@ from i18n.travel_components import travel_frame
 
 def alternate_links(registry, topic=None):
     languages = topic_locales(registry, topic) if topic else list(registry['locales'])
+    if topic in registry.get('exactMirrors', {}):
+        languages=[c for c in languages if c not in registry['exactMirrors'][topic].get('renderLocales',[])]
     links = {code: registry['site'] + page_url(registry, code, topic) for code in languages}
     default = registry['defaultLocale']
-    if default not in links:
+    if default not in links and topic not in registry.get('exactMirrors', {}):
         # A topic authored only in some languages pairs with its existing English page.
         links = {default: registry['site'] + registry['topics'][topic]['relatedEnglish'], **links}
-    links['x-default'] = links[default]
+    links['x-default'] = links.get(default, next(iter(links.values())))
     return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{url}" />' for code, url in links.items())
 
 
@@ -161,7 +163,7 @@ def outputs(root=ROOT):
     result.update(eucharistic)
     result.update(render_chaplet(root))
     result.update(render_feast(root))
-    result.update(render_exact_set(root, registry))
+    # Master cluster composition happens below before exact-source rendering.
     # Nested localized directory indexes must be explicit; Options -Indexes
     # otherwise hides hubs on some hosts.
     for code in published_locales(registry, 'eucharistic'):
@@ -188,6 +190,31 @@ def outputs(root=ROOT):
             links = '\n'.join('  ' + line for line in alternate_links(registry, topic).split('\n'))
             text = replace_block(text, 'hreflang', links, begin='begin')
         result[path] = text
+    # Declared discovery clusters are composed reciprocally; they do not enable
+    # the same-page selector or certify independent content/native review.
+    for cfg in registry.get('exactMirrors', {}).values():
+        master=root/(cfg['english'].lstrip('/')+'index.html' if cfg['english'].endswith('/') else cfg['english'].lstrip('/')+'.html')
+        master_text=master.read_text()
+        block=re.search(r'<!-- hreflang:begin -->[\s\S]*?<!-- hreflang:end -->',master_text)
+        for route in cfg['routes'].values():
+            path=root/(route.lstrip('/')+'index.html' if route.endswith('/') else route.lstrip('/')+'.html')
+            text=result.get(path,path.read_text())
+            if route==cfg['english'] and block:
+                text=re.sub(r'<!-- hreflang:begin -->[\s\S]*?<!-- hreflang:end -->',lambda _:block[0],text,count=1)
+            elif route!=cfg['english'] and route not in [cfg['routes'].get(c) for c in cfg.get('renderLocales',[])]:
+                if block and '<!-- hreflang:begin -->' in text:
+                    from bs4 import BeautifulSoup
+                    existing={(n.get('hreflang'),n.get('href')) for n in BeautifulSoup(text,'html.parser').select('head link[hreflang]')}
+                    target={(code,registry['site']+url) for code,url in {**cfg['routes'],'x-default':cfg['english']}.items()}
+                    if existing==target:continue
+                    text=re.sub(r'<!-- hreflang:begin -->[\s\S]*?<!-- hreflang:end -->',lambda _:block[0],text,count=1)
+                else:
+                    head_end=text.index('</head>')
+                    head=re.sub(r'<link\b[^>]*\bhreflang=["\'][^>]*>\s*','',text[:head_end])
+                    links='\n'.join(f'<link rel="alternate" hreflang="{code}" href="{registry["site"]+url}" />' for code,url in {**cfg['routes'],'x-default':cfg['english']}.items())
+                    text=head+links+'\n'+text[head_end:]
+            result[path]=text
+    result.update(render_exact_set(root, registry))
     # Keep the English homepage and legacy canonical URLs stable.
     sitemap = root / 'sitemap.xml'
     text = sitemap.read_text()
@@ -206,7 +233,7 @@ def outputs(root=ROOT):
     def entry(url):
         lastmod = f'<lastmod>{lastmods[url]}</lastmod>' if url in lastmods else ''
         return f'  <url><loc>{url}</loc>{lastmod}</url>'
-    text = text.replace('</urlset>', '\n' + '\n'.join(entry(url) for url in generated) + '\n</urlset>')
+    text = text.replace('</urlset>', '\n' + '\n'.join(entry(url) for url in dict.fromkeys(generated)) + '\n</urlset>')
     text = re.sub(r'\n[ \t]*\n(?:[ \t]*\n)+', '\n\n', text)
     result[sitemap] = text
     routing = {'aliases':selector_aliases(registry), 'homes':{code: cfg['home'] for code,cfg in registry['locales'].items()},
