@@ -327,3 +327,15 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 ### Gap closed 2026-10-03: media/news/bekaa-kafra-winter.webp and bekaa-kafra-spring.webp (/bekaa-kafra)
 - Previously unregistered. Source: LebanonUntravelled.com (batch 18 bot-log docs/seo/bot-log/2026-09-25-batch-18-bekaa-guide-expansion.md: "2 real shots from LebanonUntravelled (cited source)"). Credit on page: "Photo courtesy of LebanonUntravelled.com".
 - Licence: NOT found. No Creative Commons or reuse statement was located for these two images, so there is no independent licence finding. They stand only on the standing owner rule of 2026-10-02 (source real material, show credit, no rights outreach), which post-dates their use. Risk: unlicensed third-party photos. Replace with a clean photo when one exists (the Commons Bekaa Kafra winter image is only 500px, too small for the hero).
+
+## 2026-10-03 - /bekaa-tour (Bekaa Kafra online tour), media/tour/
+
+### media/tour/bekaa-kafra-winter.webp (500x375)
+- Subject: snow on the houses of Bekaa Kafra. Real photograph. Same file as media/history/bekaa-kafra-winter.webp.
+- Source: Wikimedia Commons, File:Bekaa_Kafra_winter.jpg. Author: Potatoes8895, 2012-02-20. Licence CC BY-SA 3.0 (Commons API check 2026-10-03).
+- Credit on page: Photo: Potatoes8895, Wikimedia Commons, CC BY-SA 3.0 (resized).
+
+### Standing photo needs (shown on the page as visible "Photo needed" notes)
+- Stop 3: family home and baptism church of Bekaa Kafra. No freely usable real photo located yet.
+- Stop 4: the grotto. No freely usable real photo located yet.
+- The two LebanonUntravelled photos on /bekaa-kafra (see the gap entry above) are NOT reused on the tour.
