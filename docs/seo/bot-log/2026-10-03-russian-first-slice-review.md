@@ -53,9 +53,10 @@ The remaining English master source links are retained verbatim. Their underlyin
 - SEO checker passed: 284 canonical pages and sitemap entries.
 - `test_russian_slice.py`: 4 passed. Complete tags/IDs/media, reciprocal home/full biography clusters, bounded publication sets, no placeholder internal destinations, zero invented twin proof.
 - Existing `test_exact*.py`: 8 passed.
-- `russian-first-slice.spec.js`: 4 passed at phone/laptop. Loaded local images, no console errors/HTTP asset failures/sideways scroll; actual home link, refusal feedback, footer route exercised.
+- Existing international no-JS Russian checks: 6 passed (phone/laptop home, complete biography, prayer-page refusal). Prayer accessibility registration now checks only locales where a prayer page is truly published.
+- `russian-first-slice.spec.js`: 4 passed at phone/laptop. Loaded local images, no console errors/HTTP asset failures/sideways scroll; actual home link, refusal feedback, footer route exercised. Axe accessibility checks included.
 - Rendered at 390 and 1440 px; inspected Cyrillic hero/chrome, homepage, tables, photos, prose, FAQ, sources and footer screenshots. Cyrillic is legible with existing fonts. Desktop hero keeps the source's narrow large heading.
-- Full QA did not pass: the first attempt hit an occupied default port; a separate-port attempt repeatedly timed out decoding unrelated Travel photos and was stopped. Full i18n suite is still being collected separately. These are open gates, not waived.
+- Full QA did not pass: the first attempt hit an occupied default port; a separate-port attempt repeatedly timed out decoding unrelated Travel photos and was stopped. Full i18n suite is still being collected separately. The earlier concurrent run passed 32/33 but saw the changing manifest JS as stale; the final isolated freshness test passed. These are open gates, not waived.
 - No production validation yet. No native Russian or independent faith sign-off yet. No merge or deployment yet.
 
 ## Integration/release gates
