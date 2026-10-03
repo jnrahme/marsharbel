@@ -36,7 +36,7 @@
  // They never redirect, rewrite ordinary links, or relabel document content.
  var query=new URLSearchParams(location.search).get('lang'),stored='';try{stored=localStorage.getItem('sc_lang_pref')||''}catch(_){}
  var requested=query||stored;if(requested&&requested!==actual&&!api.resolve(manifest,location.href,requested,actual).available)refuse();
- document.querySelectorAll('nav.locale-nav,nav.footer-locales').forEach(function(nav){
+ document.querySelectorAll('nav.locale-nav').forEach(function(nav){
   nav.querySelectorAll('.sc-language-helper,.sc-unavailable-suffix').forEach(function(n){n.remove()});
   nav.querySelectorAll('a[hreflang]').forEach(function(a){var lang=a.getAttribute('hreflang');var r=api.resolve(manifest,location.href,lang,actual);a.setAttribute('data-language-switch','');if(r.available){a.href=r.href;a.setAttribute('hreflang',lang);a.removeAttribute('aria-disabled');a.removeAttribute('tabindex');a.removeAttribute('aria-label');a.textContent=copy.names[lang]||a.textContent;a.removeAttribute('lang')}else{a.textContent=copy.names[lang]||a.textContent;a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.setAttribute('tabindex','-1');a.setAttribute('aria-label',(a.textContent||'')+' ('+copy.suffix+')');a.removeAttribute('lang');var hint=document.createElement('span');hint.className='sc-unavailable-suffix';hint.lang=actual;hint.textContent=' ('+copy.suffix+')';a.appendChild(hint)}});
   nav.setAttribute('aria-describedby','sc-language-helper');

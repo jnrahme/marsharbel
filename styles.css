@@ -2954,11 +2954,11 @@ a.card:active{transform:scale(.99);transition-duration:140ms}
 @media (prefers-reduced-motion:reduce){.grid-2>.card:has(>h3>.card-cover)>h3::after{transition:none}.grid-2>.card:has(>h3>.card-cover):hover>h3::after{transform:none}}
 .grid-2>.card:has(>h3>.card-cover)>.tag{align-self:flex-start}
 
-/* Footer v2: language pills, calmer spacing (site-wide) */
+/* Footer locale sections: compact native-name links, independent of page twins. */
 .footer{margin-top:3.5rem;padding:1.8rem 0 2.2rem;line-height:1.7}
-.footer-locales{display:flex;flex-wrap:wrap;gap:.3rem;margin:0 0 1rem}
+.footer-locales{display:flex;flex-wrap:wrap;column-gap:.75rem;row-gap:.15rem;margin:0 0 1rem}
 .footer-locales>span{display:none}
-.footer-locales a{display:inline-flex;align-items:center;min-height:32px;line-height:1.2;padding:.2rem .7rem;border:1px solid var(--theme-line-soft);border-radius:999px;text-decoration:none;font-size:.86rem;transition:background-color 150ms var(--pol-out),border-color 150ms var(--pol-out)}
+.footer-locales a{display:inline-flex;align-items:center;min-height:24px;line-height:1.5;padding:0;border:0;border-radius:0;text-decoration:underline;text-underline-offset:.18em;unicode-bidi:isolate;font-size:.86rem;transition:background-color 150ms var(--pol-out),border-color 150ms var(--pol-out)}
 @media (hover:hover) and (pointer:fine){.footer-locales a:hover{background:rgba(205,190,171,.1);border-color:rgba(205,190,171,.4)}}
 @media (prefers-reduced-motion:reduce){.footer-locales a{transition:none}}
 /* Large system text sizes: keep the whole brand name visible beside the install and language controls. */
