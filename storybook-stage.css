@@ -207,3 +207,6 @@ body.is-story-page .storybook-controls{position:sticky;top:auto;bottom:.6rem;z-i
 
 body.is-story-page .storybook-panel.is-reflection-page{background:linear-gradient(180deg,var(--st-paper-2),var(--st-paper) 40%);border-radius:6px 14px 14px 6px}
 body.is-story-page .storybook-panel.is-reflection-page .storybook-text{background:transparent}
+body.is-story-page .storybook-panel.is-reflection-page{background:none}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration{background:linear-gradient(180deg,var(--st-paper-2),var(--st-paper))}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-text{background:var(--st-paper)}
