@@ -22,16 +22,18 @@ class SecurityHeaderTests(unittest.TestCase):
         for feature in ('camera', 'microphone', 'geolocation', 'payment', 'usb'):
             self.assertIn(feature + '=()', self.header('Permissions-Policy'))
 
-    def test_csp_safe_rollout(self):
-        enforcing = self.header('Content-Security-Policy')
-        for directive in ("frame-ancestors 'none'", "object-src 'none'", "base-uri 'self'", 'upgrade-insecure-requests'):
-            self.assertIn(directive, enforcing)
-        self.assertNotIn('script-src', enforcing)
-        report = self.header('Content-Security-Policy-Report-Only')
+    def test_csp_enforced(self):
+        csp = self.header('Content-Security-Policy')
+        for directive in ("frame-ancestors 'none'", "object-src 'none'", "base-uri 'self'", 'upgrade-insecure-requests', "default-src 'self'", "form-action 'self'"):
+            self.assertIn(directive, csp)
+        script = csp.split('script-src ')[1].split(';')[0]
+        self.assertNotIn("'unsafe-inline'", script)
+        self.assertNotIn("'unsafe-eval'", script)
+        self.assertEqual(script.count("'sha256-"), 10)
         for host in ('alxccoizzksyitxvqhpv.supabase.co', 'www.googletagmanager.com', 'cdn.jsdelivr.net', 'js.hcaptcha.com', 'challenges.cloudflare.com', 'www.youtube-nocookie.com', 'translate.googleapis.com'):
-            self.assertIn(host, report)
-        self.assertNotIn("'unsafe-inline'", report.split('script-src ')[1].split(';')[0])
-        self.assertNotIn('YOUR_PROJECT', report)
+            self.assertIn(host, csp)
+        self.assertNotIn('YOUR_PROJECT', csp)
+        self.assertEqual(self.config.count('Content-Security-Policy-Report-Only'), 0)
 
     def test_hsts_one_year_without_subdomain_commitment(self):
         self.assertEqual(self.header('Strict-Transport-Security'), 'max-age=31536000')

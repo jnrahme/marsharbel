@@ -33,7 +33,7 @@ if args.base_url:
                 assert response.headers.get(header) == value, (path, header)
             assert "frame-ancestors 'none'" in response.headers.get('Content-Security-Policy', '')
             assert response.headers.get('Permissions-Policy')
-            assert response.headers.get('Content-Security-Policy-Report-Only')
+            assert "default-src 'self'" in response.headers.get('Content-Security-Policy', '')
             if args.base_url.startswith('https:'):
                 assert response.headers.get('Strict-Transport-Security') == 'max-age=31536000'
             print('PASS', path, response.code, 'custom body + security/cache/index headers')
