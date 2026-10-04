@@ -65,4 +65,7 @@ echo "[qa] Eucharistic authored locale mirrors"
 python3 -m unittest discover -s scripts/qa -p 'test_eucharistic_locale.py'
 PORT=4197 bash scripts/tests/run_eucharistic_locales.sh
 
+echo "[qa] Books content API: feed, shelf parity and round trip"
+npm run books:check
+
 echo "[qa] QA suite finished"
