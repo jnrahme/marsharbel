@@ -1,4 +1,4 @@
-/* Storybook shelf: live search over the cards. The page works without this script. */
+/* Shelf live search over the cards (storybook shelf and saints page). The page works without this script. */
 (function () {
   var tools = document.querySelector('[data-shelf-tools]');
   var input = document.getElementById('shelf-q');
@@ -13,6 +13,9 @@
     Array.prototype.forEach.call(section.querySelectorAll('.promo-card'), function (card) {
       var text = (card.getAttribute('data-keywords') || '') + ' ' + card.textContent;
       cards.push({ card: card, section: section, text: fold(text) });
+    });
+    Array.prototype.forEach.call(section.querySelectorAll('.shelf-card'), function (card) {
+      cards.push({ card: card, section: section, text: fold((card.getAttribute('data-keywords') || '') + ' ' + card.textContent) });
     });
   });
 
