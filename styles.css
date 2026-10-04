@@ -3064,3 +3064,36 @@ main:has(#letters-globe-title) .testimony-card:hover,main:has(> .section > .grid
 
 /* News grid: a short card beside a tall one keeps its own height (no stretched dead space). */
 main:has(> .section > .grid-2 > .card.update[id]) .grid-2{align-items:start}
+
+/* Saints page: sections and live search, same pattern as the children's book shelf (dark theme). */
+body.is-saints-shelf .shelf-tools{display:flex;flex-wrap:wrap;align-items:end;gap:.6rem 1.2rem;margin:1.4rem 0 .4rem}
+body.is-saints-shelf .shelf-tools[hidden]{display:none}
+body.is-saints-shelf .shelf-search{display:grid;gap:.4rem;flex:1 1 20rem;max-width:34rem}
+body.is-saints-shelf .shelf-search-label{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#e3bd7a}
+body.is-saints-shelf .shelf-search input{width:100%;min-height:52px;padding:.7rem 1.1rem;font:inherit;font-size:1.05rem;color:#f4e9d8;background:rgba(255,255,255,.06);border:2px solid rgba(214,170,98,.45);border-radius:16px;transition:border-color .15s ease,box-shadow .15s ease}
+body.is-saints-shelf .shelf-search input::placeholder{color:#cdbfab;opacity:1}
+body.is-saints-shelf .shelf-search input:focus-visible{outline:3px solid #f4e9d8;outline-offset:2px;border-color:#e3bd7a}
+body.is-saints-shelf .shelf-count{margin:0;color:#e0d3c0;font-size:.98rem;min-height:52px;display:flex;align-items:center}
+body.is-saints-shelf .shelf-jump{display:flex;flex-wrap:wrap;gap:.55rem;margin:1rem 0 .2rem}
+body.is-saints-shelf .shelf-jump a{display:inline-flex;align-items:center;gap:.55rem;min-height:44px;padding:.35rem 1rem;border:2px solid rgba(214,170,98,.4);border-radius:999px;background:rgba(255,255,255,.04);font-size:.95rem;font-weight:700;text-decoration:none;color:#f0e2c8;transition:border-color .15s ease,background-color .15s ease}
+body.is-saints-shelf .shelf-jump a:focus-visible{outline:3px solid #f4e9d8;outline-offset:3px}
+body.is-saints-shelf .shelf-jump a.is-empty{opacity:.55}
+body.is-saints-shelf .shelf-n{font-size:.8rem;color:#e0d3c0;border-inline-start:1px solid rgba(214,170,98,.4);padding-inline-start:.55rem}
+@media (hover:hover) and (pointer:fine){body.is-saints-shelf .shelf-jump a:hover{border-color:#e3bd7a;background:rgba(214,170,98,.16)}}
+body.is-saints-shelf .shelf-section{margin-top:clamp(2.4rem,5vw,3.6rem);scroll-margin-top:6.5rem}
+body.is-saints-shelf .shelf-section[hidden],body.is-saints-shelf .shelf-section .shelf-card[hidden],body.is-saints-shelf .shelf-empty[hidden]{display:none}
+body.is-saints-shelf .shelf-head{display:grid;gap:.3rem;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid rgba(214,170,98,.4)}
+body.is-saints-shelf .shelf-head h2{margin:0;font-size:clamp(1.6rem,3vw,2.2rem)}
+body.is-saints-shelf .shelf-head p{margin:0;color:#e0d3c0}
+body.is-saints-shelf .shelf-empty{margin-top:1.5rem;padding:1.4rem;border:1px dashed rgba(214,170,98,.5);border-radius:16px}
+body.is-saints-shelf .shelf-book{margin:.9rem 0 0}
+body.is-saints-shelf .shelf-book a{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:.35rem 1rem;border-radius:999px;border:1px solid rgba(214,170,98,.55);color:#f0cf93;font-weight:700;text-decoration:none;transition:background-color .15s ease,border-color .15s ease}
+@media (hover:hover) and (pointer:fine){body.is-saints-shelf .shelf-book a:hover{background:rgba(214,170,98,.16);border-color:#e3bd7a}}
+body.is-saints-shelf .shelf-book a:focus-visible{outline:3px solid #f4e9d8;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){body.is-saints-shelf .shelf-search input,body.is-saints-shelf .shelf-jump a,body.is-saints-shelf .shelf-book a{transition:none}}
+body.is-saints-shelf .shelf-soon{list-style:none;margin:1rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:.35rem .9rem}
+body.is-saints-shelf .shelf-soon-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15rem .6rem;padding:.55rem .8rem;border-left:2px solid rgba(214,170,98,.3);font-size:.9rem;color:rgba(244,233,216,.72)}
+body.is-saints-shelf .shelf-soon-row[hidden]{display:none}
+body.is-saints-shelf .shelf-soon-row strong{color:#f4e9d8;font-weight:700}
+body.is-saints-shelf .shelf-soon-row span{flex:1 1 100%;font-size:.8rem}
+body.is-saints-shelf .shelf-soon-row em{font-style:normal;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#e3bd7a;opacity:.8}

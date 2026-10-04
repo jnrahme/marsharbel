@@ -398,3 +398,23 @@ body.is-story-shelf .shelf-section .promo-card:active { transform: scale(.985); 
   body.is-story-shelf .shelf-jump a { flex: 0 0 auto; white-space: nowrap; scroll-snap-align: start; }
 }
 
+
+/* About the saint: a short sourced biography under the reader on every book page (dark story theme). */
+body.is-story-page .saint-bio { margin-top: clamp(2rem, 4vw, 3rem); }
+body.is-story-page .saint-bio-grid { display: flex; flex-wrap: wrap; gap: clamp(1.2rem, 3vw, 2.4rem); align-items: start; padding: clamp(1.2rem, 3vw, 2rem); background: linear-gradient(160deg, rgba(40, 28, 20, .92), rgba(22, 15, 11, .96)); border: 1px solid rgba(214, 170, 98, .38); border-radius: 24px; box-shadow: 0 22px 50px -30px rgba(0, 0, 0, .9), 0 0 0 1px rgba(255, 220, 160, .05) inset; }
+body.is-story-page .saint-bio-grid > .saint-facts, body.is-story-page .saint-bio-grid > :first-child:not(.saint-bio-text) { flex: 1 1 15rem; max-width: 100%; min-width: 0; }
+body.is-story-page .saint-bio-grid > .saint-bio-text { flex: 999 1 24rem; min-width: 0; }
+body.is-story-page .saint-facts { margin: 0; display: grid; gap: .95rem; padding: 1.15rem 1.25rem; background: rgba(214, 170, 98, .08); border: 1px solid rgba(214, 170, 98, .3); border-inline-start: 4px solid #d6aa62; border-radius: 16px; }
+body.is-story-page .saint-facts div { display: grid; gap: .12rem; }
+body.is-story-page .saint-facts dt { font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #e3bd7a; }
+body.is-story-page .saint-facts dd { margin: 0; font-size: 1rem; line-height: 1.45; color: #f4e9d8; }
+body.is-story-page .saint-bio-text p { margin: 0 0 1rem; max-width: 62ch; font-size: 1.08rem; line-height: 1.72; color: #eadfce; }
+body.is-story-page .saint-bio-text .saint-bio-more { margin: 1.2rem 0 1rem; }
+body.is-story-page .saint-bio .saint-bio-text p.saint-bio-more a { display: inline-flex; align-items: center; gap: .45rem; min-height: 44px; padding: .45rem 1.2rem; border-radius: 999px; background: #e3bd7a; color: #24160b; font-weight: 800; text-decoration: none; transition: background-color .15s ease, transform .15s ease; }
+body.is-story-page .saint-bio .saint-bio-text p.saint-bio-more a:hover { background: #f0cf93; transform: translateY(-1px); }
+body.is-story-page .saint-bio .saint-bio-text p.saint-bio-more a:focus-visible { outline: 3px solid #f4e9d8; outline-offset: 3px; }
+body.is-story-page .saint-bio-text .saint-bio-sources { margin: 0; max-width: 62ch; font-size: .93rem; line-height: 1.65; color: #cdbfab; }
+body.is-story-page .saint-bio .saint-bio-text p.saint-bio-sources a { color: #f0cf93; text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 760px) { body.is-story-page .saint-bio-grid { border-radius: 20px; } }
+@media (prefers-reduced-motion: reduce) { body.is-story-page .saint-bio .saint-bio-text p.saint-bio-more a { transition: none; } body.is-story-page .saint-bio .saint-bio-text p.saint-bio-more a:hover { transform: none; } }
+body.is-story-page .saint-bio-text, body.is-story-page .saint-facts { overflow-wrap: anywhere; }
