@@ -21,11 +21,24 @@ async function walk(dir) {
   }
   return out;
 }
+const escapeText = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+const catalogs = new Map();
+async function catalog(name) {
+  if (!catalogs.has(name)) catalogs.set(name, JSON.parse(await readFile(`locales/en/${name}-copy.json`, 'utf8')).copy);
+  return catalogs.get(name);
+}
 const used = new Set(); let stale = [], n = 0;
 for (const file of await walk(SRC).catch(() => [])) {
   const rel = path.relative(SRC, file);
   const source = await readFile(file, 'utf8');
-  let built = source.replace(/([ \t]*)\{\{> ([a-z0-9-]+)((?: "(?:[^"\\]|\\.)*")*)\}\}/g, (_, indent, name, rawArgs) => {
+  const copyPattern = /\{\{copy ([a-z0-9-]+) ([a-zA-Z0-9.]+)\}\}/g;
+  for (const match of source.matchAll(copyPattern)) await catalog(match[1]);
+  const catalogued = source.replace(copyPattern, (_, name, key) => {
+    const copy = catalogs.get(name);
+    if (!copy || !(key in copy)) throw new Error(`${rel}: missing ${name} copy key: ${key}`);
+    return escapeText(copy[key]);
+  });
+  let built = catalogued.replace(/([ \t]*)\{\{> ([a-z0-9-]+)((?: "(?:[^"\\]|\\.)*")*)\}\}/g, (_, indent, name, rawArgs) => {
     if (name === 'primary-nav') return indent + renderPrimaryNav(navTemplate, rel);
     if (name === 'ld-faq') return indent + renderFaq([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
     if (name === 'ld-webpage-audience') return indent + renderWebPageAudience([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
