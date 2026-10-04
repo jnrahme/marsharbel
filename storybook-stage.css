@@ -165,3 +165,22 @@ body.is-story-page .storybook-page .storybook-controls #story-next:disabled{opac
 body.is-story-page .story-hero .story-shelf-link{background:transparent;color:#f3dfb3;border:1px solid rgba(227,191,122,.4);box-shadow:none;min-height:40px;font-size:.85rem}
 body.is-story-page .story-hero .story-shelf-link:hover{background:rgba(255,236,190,.1);border-color:#f3d79c}
 body.is-story-page .story-hero .story-shelf-link:focus-visible{outline:3px solid #f3d79c}
+@media (max-width:820px){
+  body.is-story-page .storybook-controls{background:linear-gradient(180deg,rgba(14,9,6,0),rgba(14,9,6,.96) 28%,#0e0906)}
+  body.is-story-page section.storybook{padding-bottom:1.2rem}
+}
+body.is-story-page .storybook.is-rtl .storybook-text .storybook-step::after{background:linear-gradient(270deg,#b98a45,transparent)}
+body.is-story-page .storybook.is-rtl #story-body:not(.is-reflection)::first-letter{float:right;padding:.06em 0 0 .1em}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-text{padding-inline:max(1.4rem,calc((100% - 44rem)/2))}
+body.is-story-page .storybook-panel.is-reflection-page #story-body{font-size:clamp(1.05rem,1.3vw,1.2rem)}
+/* touch devices: keep hover rules from sticking after a tap */
+body.is-story-page .storybook-page .storybook-controls .btn:hover:not(:disabled){color:#f3dfb3;background:linear-gradient(180deg,rgba(255,236,190,.10),rgba(255,236,190,.03))}
+body.is-story-page .storybook-page .storybook-controls .btn#story-read:hover:not(:disabled){color:#2a1a0a;background:linear-gradient(180deg,#f0cd8a,#c99650)}
+@media (hover:hover){
+ body.is-story-page .storybook-page .storybook-controls .btn:hover:not(:disabled){background:linear-gradient(180deg,rgba(255,236,190,.2),rgba(255,236,190,.07));border-color:#f3d79c}
+ body.is-story-page .storybook-page .storybook-controls .btn#story-read:hover:not(:disabled){background:linear-gradient(180deg,#f6d899,#d4a05a)}}
+body.is-story-page .storybook-page .storybook-controls #story-next:hover:not(:disabled),
+body.is-story-page .storybook-page .storybook-controls #story-prev:hover:not(:disabled){color:#f3dfb3;background:linear-gradient(180deg,rgba(255,236,190,.10),rgba(255,236,190,.03))}
+@media (hover:hover){
+ body.is-story-page .storybook-page .storybook-controls #story-next:hover:not(:disabled),
+ body.is-story-page .storybook-page .storybook-controls #story-prev:hover:not(:disabled){background:linear-gradient(180deg,rgba(255,236,190,.2),rgba(255,236,190,.07));border-color:#f3d79c}}
