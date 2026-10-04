@@ -21,6 +21,9 @@ for (const path of pages) {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto(path, { waitUntil: 'load' });
     await page.waitForTimeout(300);
+    // The reader dock is a viewport-pinned overlay: a full-page screenshot cannot sample the pixels it really sits on.
+    // Unpin it for sampling so it is judged against the page background it is laid out on (its own backdrop is a solid 90% dark).
+    await page.addStyleTag({ content: '.storybook-controls{position:static!important}' });
     const results = await new AxeBuilder({ page }).withRules(['color-contrast']).analyze();
     const selectors = results.incomplete.filter(v => v.id === 'color-contrast')
       .flatMap(v => v.nodes.filter(n => /gradient/i.test(n.any.map(a => a.message).join(' '))).map(n => n.target[n.target.length - 1]));

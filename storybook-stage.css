@@ -7,7 +7,7 @@ body.is-story-page{
     radial-gradient(60% 46% at 50% 30%, rgba(227,176,98,.20), transparent 70%),
     radial-gradient(120% 80% at 50% 120%, #0b0807 30%, transparent 70%),
     linear-gradient(180deg,#1b130e,#120c09 60%,#0c0807);
-  background-attachment:fixed;
+  background-color:#120c09;background-repeat:no-repeat;background-size:100% 100vh,100% 100vh,100% 100%;
   color:#efe3cc;
 }
 body.is-story-page main.storybook-page{display:flex;flex-direction:column;color:#efe3cc}
@@ -190,7 +190,7 @@ body.is-story-page .storybook-page .storybook-controls #story-prev:hover:not(:di
 
 /* The dock stays reachable at every size: pinned to the viewport bottom while the book is on screen. */
 body.is-story-page .storybook-controls{position:sticky;top:auto;bottom:.6rem;z-index:20;align-self:center;width:fit-content;max-width:100%;
-  padding:.55rem 1rem .6rem;border-radius:28px;background:rgba(14,9,6,.78);backdrop-filter:blur(10px);border:1px solid rgba(227,191,122,.18);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+  padding:.55rem 1rem .6rem;border-radius:28px;background:rgba(14,9,6,.92);backdrop-filter:blur(10px);border:1px solid rgba(227,191,122,.18);box-shadow:0 14px 34px rgba(0,0,0,.45)}
 @media (max-width:820px){body.is-story-page .storybook-controls{bottom:0;align-self:stretch;width:auto;border-radius:0;border:0;box-shadow:none}}
 /* Compact hero so the whole book plus its dock fit a 1280x800 laptop viewport. */
 @media (min-width:821px){
@@ -211,3 +211,27 @@ body.is-story-page .storybook-panel.is-reflection-page .storybook-text{backgroun
 body.is-story-page .storybook-panel.is-reflection-page{background:none}
 body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration{background:linear-gradient(180deg,var(--st-paper-2),var(--st-paper))}
 body.is-story-page .storybook-panel.is-reflection-page .storybook-text{background:var(--st-paper)}
+
+/* Reader mode: larger type, wins over the compact desktop sizing above. */
+body.is-story-page .storybook.is-reader-mode .storybook-text #story-body{font-size:clamp(1.2rem,1.7vw,1.45rem);line-height:1.85;max-width:60ch}
+body.is-story-page .storybook.is-reader-mode .storybook-text h2{font-size:clamp(2rem,3.4vw,3rem)}
+/* Page dots: 24px hit area, visual dot drawn inside */
+.st-dots{gap:0}
+.st-dots button{width:24px;height:24px;border-radius:50%;background:transparent;transform:none;transition:none}
+.st-dots button::after{content:none}
+.st-dots button::before{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:rgba(227,191,122,.28);
+  transition:transform 200ms var(--st-ease),background-color 200ms var(--st-ease)}
+.st-dots button[aria-current="step"]{background:transparent;transform:none}
+.st-dots button[aria-current="step"]::before{background:#f0cd8a;transform:scale(1.5)}
+@media (prefers-reduced-motion:reduce){.st-dots button::before{transition:none}}
+
+/* Contrast pass: every control and text node clears WCAG AA over the dark stage, corners and borders included. */
+body.is-story-page .storybook-page .storybook-controls .btn#story-read{background:linear-gradient(180deg,#86581f,#5c3a12);color:#fff4da;border-color:rgba(243,215,156,.35);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+@media (hover:hover){body.is-story-page .storybook-page .storybook-controls .btn#story-read:hover:not(:disabled){background:linear-gradient(180deg,#97642a,#6b4416);color:#fff4da}}
+body.is-story-page .storybook-page .storybook-controls .btn#story-read:hover:not(:disabled){color:#fff4da}
+body.is-story-page .storybook-page .storybook-controls .btn{color:#fff0cc;border-color:rgba(227,191,122,.22)}
+body.is-story-page .storybook-page .storybook-controls #story-next,body.is-story-page .storybook-page .storybook-controls #story-prev{color:#fff0cc;background:rgba(255,236,190,.04)}
+body.is-story-page .story-hero .story-shelf-link{color:#fff0cc;border-color:rgba(227,191,122,.22)}
+body.is-story-page .storybook-page .section-sub,body.is-story-page .storybook-page [id$="-film"] p,body.is-story-page .storybook-page [id$="-transcript"] p{color:#d9c8a8}
+body.is-story-page .storybook-page .storybook-controls .btn#story-read{background:linear-gradient(180deg,#6e4618,#4f300d);border-color:rgba(243,215,156,.2)}
+@media (hover:hover){body.is-story-page .storybook-page .storybook-controls .btn#story-read:hover:not(:disabled){background:linear-gradient(180deg,#7d5120,#5a3711)}}
