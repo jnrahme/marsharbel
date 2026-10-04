@@ -4,19 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{meta.title}}</title>
   <meta name="description" content="{{meta.description}}" />
@@ -98,7 +86,7 @@
   </script>
   <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/styles.css?v=20260922-1" />
+  <link rel="stylesheet" href="/styles.css?v=20261003-1" />
   <!-- hreflang:begin -->
 {{locale.alternates}}
   <!-- hreflang:end -->
@@ -111,21 +99,26 @@
       <nav class="links" aria-label="{{header.primaryLabel}}">
         <a href="./">{{header.home}}</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">{{header.story}}<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">{{header.legacy}}<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">{{header.storyForChildren}}</a>
+        <a href="./saint-charbel-encyclopedia">{{header.encyclopedia}}</a>
         <a href="./history">{{header.fullHistory}}</a>
+        <a href="./gallery">{{header.gallery}}</a>
         </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./miracles/" aria-haspopup="true" aria-expanded="false">{{header.miracles}}<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="./miracles/">{{header.miraclesAndReports}}</a>
         <a href="./miracles/eucharistic/">{{header.eucharisticMiracles}}</a>
-        <a href="./news">{{header.latestNews}}</a>
         <a href="./testimonies">{{header.letters}}</a>
         <a href="./voice-testimony">{{header.voiceTestimony}}</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">{{header.saints}}<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">{{header.saints}}</a>
+        <a href="./stories">{{header.childrenBooks}}</a>
+        </div></div>
         <div class="nav-group">
         <a class="active nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">{{header.prayer}}<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -149,7 +142,7 @@
         <a href="./become-like-charbel">{{header.becomeLikeHim}}</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">{{header.places}}<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">{{header.places}}<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="./visit-annaya">{{header.visitingAnnaya}}</a>
         <a href="./bekaa-kafra">{{header.bekaaKafra}}</a>
@@ -160,13 +153,13 @@
         <a href="./saint-charbel-hermitage">{{header.hermitage}}</a>
         <a href="./saint-charbel-trail">{{header.trail}}</a>
         </div></div>
-        <a href="./gallery">{{header.gallery}}</a>
+        <a href="./news">{{header.news}}</a>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
-  <main id="main-content" class="site-shell" tabindex="-1">
+  <main id="main-content" class="site-shell prayer-page" tabindex="-1">
     <section class="hero">
       <span class="kicker">{{hero.eyebrow}}</span>
       <h1>{{hero.heading}}</h1>
@@ -296,6 +289,15 @@
       </div>
     </section>
 
+    <section class="section locale-prayers" id="prayers-in-your-language">
+      <h2>{{localeLinks.heading}}</h2>
+      <p class="section-sub">{{localeLinks.intro}}</p>
+      <nav aria-label="{{localeLinks.navLabel}}">
+        <ul class="locale-prayer-list">
+{{locale.prayerLinks}}
+        </ul>
+      </nav>
+    </section>
     <section class="section">
       <h2>{{sources.heading}}</h2>
       <div class="card story">

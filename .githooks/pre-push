@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Opt in once with: npm run hooks:install
+# Skip for a single push with: SKIP_PREPUSH=1 git push
+[[ "${SKIP_PREPUSH:-}" == "1" ]] && exit 0
+exec "$(git rev-parse --show-toplevel)/scripts/qa/prepush.sh"

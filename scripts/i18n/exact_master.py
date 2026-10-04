@@ -1,3 +1,4 @@
+from i18n.encyclopedia_nav import finish_nav
 """Prepare exact-master locale renders without publishing or editing source files."""
 import hashlib
 import json
@@ -59,6 +60,16 @@ def render_exact(root, registry, lang, name, route, catalog=None):
                 raise ValueError(f'{name}: disallowed translated attribute {attr}')
             leaves(value)
             found[0][attr] = value
+        # Localized history tables may overflow at narrow widths. A keyed
+        # accessible name also opts their scroll container into keyboard access.
+        if 'history-table-wrap' in found[0].get('class', []) and attrs.get('aria-label'):
+            found[0]['tabindex'] = '0'
+            found[0]['role'] = 'region'
+    for node in soup.select('main [aria-label], main [title], main img[alt]'):
+        for attr in ('aria-label', 'title', 'alt'):
+            if not node.get(attr): continue
+            covered = any(node in soup.select(selector) and attr in attrs for selector,attrs in catalog['attributes'].items())
+            if not covered: raise ValueError(f'{name}: untranslated accessible attribute {attr} on {node.name}')
     soup.select_one('footer .site-shell').string = catalog['footer']
     site = registry['site']
     english_url = soup.select_one('link[rel=canonical]')['href']
@@ -69,6 +80,10 @@ def render_exact(root, registry, lang, name, route, catalog=None):
             twins[cfg['relatedEnglish'].rstrip('/')] = page_url(registry, lang, topic)
     for cfg in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values():
         if lang in cfg['routes']: twins[cfg['english'].rstrip('/')] = cfg['routes'][lang]
+    if lang in topic_locales(registry, 'prayers'):
+        twins['/en/prayers'] = page_url(registry, lang, 'prayers')
+    if lang in registry['publicationSets']['eucharistic']:
+        twins['/miracles/eucharistic'] = f'/{lang}/miracles/eucharistic/'
     twins[urlsplit(english_url).path.rstrip('/')] = route
     for node in soup.select('a[href],link[href],script[src],img[src]'):
         attr = 'src' if node.has_attr('src') else 'href'
@@ -78,6 +93,34 @@ def render_exact(root, registry, lang, name, route, catalog=None):
             if parts.path.rstrip('/') in twins:
                 value = twins[parts.path.rstrip('/')] + ('?' + parts.query if parts.query else '') + ('#' + parts.fragment if parts.fragment else '')
         node[attr] = value
+    runtime_path = root/f'locales/{lang}/runtime.json'
+    if not runtime_path.exists(): raise ValueError(f'{name}: missing runtime chrome catalog')
+    if runtime_path.exists():
+        runtime = read_json(runtime_path)
+        leaves(runtime)
+        required_runtime = {'language.label','language.popular','language.all','install.label','install.link','install.ios','install.browser','footer.privacy','footer.terms','footer.accessibility'}
+        if set(runtime) != required_runtime: raise ValueError(f'{name}: runtime chrome key mismatch')
+        runtime['language.choose'] = read_json(root/f'locales/{lang}/common.json')['navigation.chooseLanguage']
+        runtime['nativeNames'] = {code:cfg['nativeName'] for code,cfg in registry['locales'].items()}
+        config = soup.new_tag('script', type='application/json', id='sc-runtime-labels')
+        config.string = json.dumps(runtime,ensure_ascii=False).replace('<','\\u003c')
+        soup.head.append(config)
+    if soup.select('script[src*="share.js"]'):
+        common = read_json(root/f'locales/{lang}/share.json')
+        labels = {key:value for key,value in common.items() if key.startswith('share.')}
+        leaves(labels)
+        required_share = {'share.label','share.group.aria','share.trigger.aria','share.native.aria','share.target.aria','share.target.email.aria','share.target.email.label','share.copy.label','share.copy.aria','share.status.copied','share.status.failed','share.prompt.copy','share.fallbackTitle.gallery'}
+        if set(labels) != required_share: raise ValueError(f'{name}: share label key mismatch')
+        english_labels = read_json(root/'locales/en/share.json')
+        import re
+        for key,value in labels.items():
+            if set(re.findall(r'\{([a-z]+)\}',value)) != set(re.findall(r'\{([a-z]+)\}',english_labels[key])):
+                raise ValueError(f'{name}: share placeholders differ for {key}')
+        config = soup.new_tag('script', type='application/json', id='sc-share-labels')
+        config.string = json.dumps(labels,ensure_ascii=False).replace('<','\\u003c')
+        soup.head.append(config)
+    for stylesheet in soup.select('link[rel=stylesheet]'):
+        if stylesheet.get('href','').split('?')[0] == '/styles.css': stylesheet['href'] = '/styles.css?v=20261002-locale-exact-1'
     soup.html['lang'] = lang
     soup.html['dir'] = registry['locales'][lang]['direction']
     soup.html['data-authored-mirror'] = name
@@ -129,7 +172,15 @@ def render_exact(root, registry, lang, name, route, catalog=None):
     sources=[section for section in soup.select('main section') if section.h2 and section.h2.get_text()==catalog['sourcesHeading']]
     if len(sources)!=1: raise ValueError(f'{name}: source section differs')
     note=soup.new_tag('p',attrs={'class':'translation-note'});note.string=catalog['translationNote'];sources[0].append(note)
-    return str(soup)
+    for reference in catalog.get('translationSources', []):
+        if set(reference) != {'url', 'label'} or not reference['url'].startswith('https://'):
+            raise ValueError(f'{name}: invalid translation source')
+        leaves(reference['label'])
+        link=soup.new_tag('a',href=reference['url'],rel='noopener',attrs={'class':'translation-note'})
+        link.string=reference['label']
+        sources[0].append(link)
+
+    return finish_nav(str(soup),root,lang)
 
 
 def render_exact_set(root, registry):
@@ -141,7 +192,7 @@ def render_exact_set(root, registry):
         if routes.get('en') != english:
             raise ValueError(f'{name}: exact mirror English route differs')
         for lang, route in routes.items():
-            if lang == 'en':
+            if lang == 'en' or lang not in config.get('renderLocales', routes):
                 continue
             if lang not in registry['locales']:
                 raise ValueError(f'{name}: locale not registered')

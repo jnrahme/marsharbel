@@ -9,6 +9,9 @@ fi
 
 cd "${ROOT}"
 
+python3 scripts/qa/check_travel_routes.py
+python3 scripts/qa/test_travel.py
+npx playwright test tests/travel-routing.spec.js tests/travel-hub.spec.js --project=phone --project=laptop --workers=4
 node scripts/qa/test_analytics_hostname.cjs
 python3 -m unittest discover -s scripts/qa -p 'test_security_headers.py'
 
@@ -16,6 +19,10 @@ node scripts/build-home-css.mjs --check
 npm run i18n:check
 python3 scripts/build-eucharistic-miracles.py --check
 npm run i18n:test
+
+echo "[qa] Checking specs for absolute machine paths"
+python3 scripts/qa/check_spec_paths.py
+python3 -m unittest discover -s scripts/qa -p 'test_spec_paths.py'
 
 echo "[qa] Checking SEO metadata and sitemap coverage"
 python3 scripts/qa/check_seo.py

@@ -5,19 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Viajar pelo Líbano de São Charbel</title>
   <meta name="description" content="Conheça Annaya online e explore os guias das montanhas, mosteiros e lugares ligados à sua vida." />
@@ -36,19 +24,20 @@
 <meta property="og:locale:alternate" content="it_IT" />
 <meta property="og:locale:alternate" content="de_DE" />
 <meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="ru_RU" />
   <meta property="og:image" content="https://marsharbel.com/media/tour/annaya-winter-panorama.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Viajar pelo Líbano de São Charbel" />
   <meta name="twitter:description" content="Conheça Annaya online e explore os guias das montanhas, mosteiros e lugares ligados à sua vida." />
   <meta name="twitter:image" content="https://marsharbel.com/media/tour/annaya-winter-panorama.webp" />
-  
-  
-  
+
+
+
   <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles.css?v=20260922-1" />
-  <link rel="stylesheet" href="/travel.css?v=20261002-1" />
-  
+  <link rel="stylesheet" href="/travel.css?v=20261002-3" />
+
   <!-- hreflang:begin -->
 <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/travel" />
 <link rel="alternate" hreflang="en" href="https://marsharbel.com/travel" />
@@ -60,6 +49,8 @@
 <link rel="alternate" hreflang="de" href="https://marsharbel.com/de/travel" />
 <link rel="alternate" hreflang="pl" href="https://marsharbel.com/pl/travel" />
   <!-- hreflang:end -->
+<!-- i18n-travel-schema:start --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://marsharbel.com/pt/"}, {"@type": "ListItem", "position": 2, "name": "Viagens", "item": "https://marsharbel.com/pt/travel"}]}</script><!-- i18n-travel-schema:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body class="travel-page travel-hub">
 <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
@@ -69,21 +60,26 @@
       <nav class="links" aria-label="Navegação principal">
         <a href="/">Início</a>
         <div class="nav-group">
-        <a class="nav-parent" href="/stories" aria-haspopup="true" aria-expanded="false">História<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="/saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false" hreflang="en" aria-label="Legado espiritual (em inglês)">Legado espiritual<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="/stories">Historinhas de santos</a>
-        <a href="/history">História completa</a>
+        <div class="enc-nav-item"><a href="/saint-charbel-encyclopedia" hreflang="en" aria-label="Enciclopédia de São Charbel (em inglês)">Enciclopédia de São Charbel</a> <span class="enc-language">(em inglês)</span></div>
+        <div class="enc-nav-item"><a href="/history" hreflang="en" aria-label="História completa (em inglês)">História completa</a> <span class="enc-language">(em inglês)</span></div>
+        <a href="/gallery">Galeria</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="/miracles" aria-haspopup="true" aria-expanded="false">Milagres<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="/miracles/" aria-haspopup="true" aria-expanded="false">Milagres<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="/miracles">Milagres e testemunhos</a>
+        <a href="/miracles/">Milagres e testemunhos</a>
         <a href="/miracles/eucharistic/">Milagres eucarísticos</a>
-        <a href="/news">Últimas notícias</a>
         <a href="/testimonies">Cartas</a>
         <a href="/voice-testimony">Testemunhos em áudio</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="/saints" aria-haspopup="true" aria-expanded="false">Santos<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="/saints">Santos</a>
+        <a href="/stories">Livros infantis</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="/prayer-library" aria-haspopup="true" aria-expanded="false">Oração<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -107,43 +103,35 @@
         <a href="/become-like-charbel">Seguir o seu exemplo</a>
         </div></div>
         <div class="nav-group">
-        <a class="active nav-parent" href="/visit-annaya" aria-haspopup="true" aria-expanded="false">Viagens<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="active nav-parent" href="/pt/travel" aria-haspopup="true" aria-expanded="false">Viagens<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a class="active" aria-current="page" href="/pt/travel">Viagens</a>
         <a href="/visit-annaya">Visitar Annaya</a>
         <a href="/bekaa-kafra">Bekaa Kafra</a>
-        <a class="active" href="/qadisha-valley" aria-current="page">Vale de Qadisha</a>
+        <a href="/qadisha-valley">Vale de Qadisha</a>
         <a href="/qannoubine-monastery">Mosteiro de Qannoubine</a>
         <a href="/qozhaya-monastery">Mosteiro de Qozhaya</a>
         <a href="/saint-charbel-places-lebanon">O Líbano de São Charbel</a>
         <a href="/saint-charbel-hermitage">O eremitério</a>
         <a href="/saint-charbel-trail">Trilha de São Charbel</a>
         </div></div>
-        <a href="/gallery">Galeria</a>
+        <a href="/news">Notícias</a>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="Neste guia"><a href="/pt/">Início</a><span aria-hidden="true">/</span><span aria-current="page">Viagens</span></nav>
+<!-- i18n-travel-frame:end -->
 <section class="travel-hero">
 <figure class="travel-hero-image"><img src="/media/tour/annaya-winter-panorama.webp" alt="" width="2400" height="917" fetchpriority="high" decoding="async" /><figcaption>Paul Saad / <a href="https://commons.wikimedia.org/wiki/File:Pan_Annaya_in_Winter.JPG">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></figcaption></figure>
 <div class="travel-hero-copy"><h1>Viajar pelo Líbano de São Charbel</h1><p>Conheça Annaya online e explore os guias das montanhas, mosteiros e lugares ligados à sua vida.</p><div class="cta-row"><a class="btn primary" href="/annaya-tour">Começar o passeio</a><a class="btn subtle" href="/visit-annaya">Planejar uma visita</a></div></div>
 </section>
 <nav class="travel-chapters" aria-label="Viajar pelo Líbano de São Charbel"><a href="/annaya-tour">Percorrer Annaya online</a><a href="#destinations">Explorar os destinos</a><a href="#planning">Preparar sua peregrinação</a></nav>
-<section class="travel-directory" id="destinations"><h2>Explorar os destinos</h2><div class="travel-destination-list">
-<div><a class="travel-place" href="/qadisha-valley"><figure><img src="/media/annaya/qadisha-valley-aerial.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" /></figure><h3>Vale de Qadisha</h3></a><p class="travel-credit">Evan Williams / <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p></div>
-<div><a class="travel-place" href="/qannoubine-monastery"><figure><img src="/media/annaya/qannoubine-church.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" /></figure><h3>Mosteiro de Qannoubine</h3></a><p class="travel-credit">Hussein Sabboury / <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></p></div>
-<div><a class="travel-place" href="/qozhaya-monastery"><figure><img src="/media/annaya/qozhaya-monastery.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" /></figure><h3>Mosteiro de Qozhaya</h3></a><p class="travel-credit">Yellaban / Wikimedia Commons</p></div>
-</div></section><section class="travel-planning" id="planning"><h2>Preparar sua peregrinação</h2><div class="travel-link-list"><a href="/visit-annaya">Guia de visita a Annaya</a>
-<a href="/bekaa-kafra">Bekaa Kafra</a>
-<a href="/saint-charbel-pilgrimage">Peregrinação de São Charbel</a>
-<a href="/saint-charbel-trail">Trilha de São Charbel</a>
-<a href="/saint-charbel-hermitage">A Ermida</a>
-<a href="/our-lady-of-lebanon-harissa">Nossa Senhora do Líbano em Harissa</a>
-<a href="/cedars-of-god-lebanon">Os Cedros de Deus</a>
-<a href="/bkerke-maronite-patriarchate">Bkerke e o Patriarcado Maronita</a>
-<a href="/saint-charbel-places-lebanon">O Líbano de São Charbel</a>
-</div></section></main>
+<div id="destinations"><section class="travel-directory" id="destinations-annaya"><h2>Annaya e a ermida</h2><div class="travel-link-list"><div><a class="travel-place travel-place-text" href="/visit-annaya"><h3>Guia de visita a Annaya</h3></a></div><div><a class="travel-place travel-place-text" href="/saint-charbel-hermitage"><h3>A Ermida</h3></a></div><div><a class="travel-place travel-place-text" href="/saint-charbel-places-lebanon"><h3>O Líbano de São Charbel</h3></a></div></div></section><section class="travel-directory" id="destinations-north"><h2>As montanhas do norte</h2><div class="travel-destination-list"><div><a class="travel-place" href="/qadisha-valley"><figure><img src="/media/annaya/qadisha-valley-aerial.webp" alt="" loading="lazy" decoding="async" width="1200" height="750" /></figure><h3>Vale de Qadisha</h3></a><p class="travel-credit">Evan Williams / CC BY-SA 4.0</p></div><div><a class="travel-place" href="/qannoubine-monastery"><figure><img src="/media/annaya/qannoubine-church.webp" alt="" loading="lazy" decoding="async" width="1200" height="750" /></figure><h3>Mosteiro de Qannoubine</h3></a><p class="travel-credit">Hussein Sabboury / CC0</p></div><div><a class="travel-place" href="/qozhaya-monastery"><figure><img src="/media/annaya/qozhaya-monastery.webp" alt="" loading="lazy" decoding="async" width="1200" height="750" /></figure><h3>Mosteiro de Qozhaya</h3></a><p class="travel-credit">Yellaban / Wikimedia Commons</p></div></div><div class="travel-link-list"><div><a class="travel-place travel-place-text" href="/bekaa-kafra"><h3>Bekaa Kafra</h3></a></div><div><a class="travel-place travel-place-text" href="/cedars-of-god-lebanon"><h3>Os Cedros de Deus</h3></a></div></div></section><section class="travel-directory" id="destinations-coast"><h2>A costa e as etapas de peregrinação</h2><div class="travel-link-list"><div><a class="travel-place travel-place-text" href="/our-lady-of-lebanon-harissa"><h3>Nossa Senhora do Líbano em Harissa</h3></a></div><div><a class="travel-place travel-place-text" href="/bkerke-maronite-patriarchate"><h3>Bkerke e o Patriarcado Maronita</h3></a></div></div></section><section class="travel-directory" id="planning"><h2>Guias de viagem</h2><div class="travel-link-list"><div><a class="travel-place travel-place-text" href="/saint-charbel-pilgrimage"><h3>Peregrinação de São Charbel</h3></a></div><div><a class="travel-place travel-place-text" href="/saint-charbel-trail"><h3>Trilha de São Charbel</h3></a></div></div></section></div>
+</main>
 
   <footer class="footer">
     <div class="site-shell">Site devocional independente dedicado a São Charbel, sem ligação oficial ao santuário de Annaya.</div>
@@ -153,5 +141,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="/translate.js?v=20260922-1"></script>
   <script src="/nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

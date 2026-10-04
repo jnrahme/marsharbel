@@ -122,6 +122,16 @@
       },
       "ogLocale": "pl_PL",
       "selectorAliases": []
+    },
+    "ru": {
+      "nativeName": "Русский",
+      "direction": "ltr",
+      "home": "/ru/",
+      "slugs": {
+        "biography": "biography"
+      },
+      "ogLocale": "ru_RU",
+      "selectorAliases": []
     }
   },
   "authoredMirrors": {
@@ -204,7 +214,8 @@
         "pt",
         "it",
         "de",
-        "pl"
+        "pl",
+        "ru"
       ]
     },
     "prayers": {
@@ -472,7 +483,8 @@
     "pt",
     "it",
     "de",
-    "pl"
+    "pl",
+    "ru"
   ],
   "domMirrors": {
     "feast": {
@@ -481,6 +493,53 @@
         "ar": "/ar/feast-day"
       },
       "catalog": "feast-mirror.json"
+    }
+  },
+  "exactMirrors": {
+    "biography": {
+      "english": "/history",
+      "routes": {
+        "en": "/history",
+        "de": "/de/biografie",
+        "ru": "/ru/biography"
+      },
+      "renderLocales": [
+        "de",
+        "ru"
+      ]
+    },
+    "novena": {
+      "english": "/saint-charbel-novena",
+      "routes": {
+        "en": "/saint-charbel-novena",
+        "de": "/de/novene"
+      },
+      "renderLocales": [
+        "de"
+      ]
+    },
+    "feast": {
+      "english": "/saint-charbel-feast-day",
+      "routes": {
+        "en": "/saint-charbel-feast-day",
+        "ar": "/ar/feast-day",
+        "es": "/es/fiesta",
+        "pt": "/pt/festa",
+        "de": "/de/gedenktag"
+      },
+      "renderLocales": [
+        "de"
+      ]
+    },
+    "miracles": {
+      "english": "/miracles/",
+      "routes": {
+        "en": "/miracles/",
+        "de": "/de/miracles/"
+      },
+      "renderLocales": [
+        "de"
+      ]
     }
   }
 }

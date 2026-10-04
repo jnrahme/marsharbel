@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -139,6 +127,7 @@
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/stories" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/stories" />
   <!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body class="is-story-shelf">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -148,21 +137,26 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="active nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a class="active" href="./stories" aria-current="page">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
+        <a href="./gallery">Gallery</a>
         </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./miracles/" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="active nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a class="active" href="./stories" aria-current="page">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -186,8 +180,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -201,7 +196,7 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
-        <a href="./gallery">Gallery</a>
+        <a href="./news">News</a>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
@@ -212,7 +207,7 @@
       <span class="kicker">For Children &amp; Families</span>
       <h1>Saint Storybooks</h1>
       <p>Every saint here has their own storybook - their own story, their own pictures, their own voice reading aloud. Choose a story below, gather the children, and press play. Each book opens with the first page and reads to the end, page by page.</p>
-    <p><strong>Short answer:</strong> Saint Storybooks are illustrated, read-aloud stories about the saints for children ages 6 to 12, to enjoy with a trusted adult. Choose from fifteen storybooks, including Saint Charbel, Saint Therese, Saint Francis, Padre Pio and Mother Teresa. Each has narration, so families can read together or listen together.</p>
+    <p><strong>Short answer:</strong> Saint Storybooks are illustrated, read-aloud stories about the saints for children ages 6 to 12, to enjoy with a trusted adult. Choose from seventeen storybooks, including Saint Charbel, Saint Therese, Saint Francis, Padre Pio and Mother Teresa. Each has narration, so families can read together or listen together.</p>
 </section>
 
 
@@ -220,6 +215,8 @@
       <h2>Which Saint Storybook Would You Like to Read?</h2>
       <p class="section-sub">Read-aloud storybooks for ages 6-12, with gentle narration on every page.</p>
       <div class="grid-2 promo-grid">
+<article class="promo-card reveal"><a class="promo-card-link" href="./maroun-story"><picture><img alt="Imaginative painterly scene of Maroun praying on a limestone hilltop at dawn beside a small tent" decoding="async" height="720" loading="lazy" src="./media/storybook-maroun/images/page-01.webp" width="1280"/></picture><div class="promo-body"><span class="promo-kicker">Read-Aloud Storybook</span><h3>Saint Maroun: The Hermit on the Hill</h3><p>A hermit lives under the open sky, and a whole family of faith grows from his prayer. Read and listen together.</p><span class="promo-link">Open Saint Maroun's Storybook <span aria-hidden="true">&rarr;</span></span></div></a></article>
+<article class="promo-card reveal"><a class="promo-card-link" href="./sergius-bacchus-story"><picture><img alt="Imaginative painterly scene of two Roman officers, Sergius and Bacchus, standing side by side in a palace colonnade" decoding="async" height="720" loading="lazy" src="./media/storybook-sergius-bacchus/images/page-01.webp" width="1280"/></picture><div class="promo-body"><span class="promo-kicker">Read-Aloud Storybook</span><h3>Sergius and Bacchus: Two Friends Who Stood Together</h3><p>Two friends in the emperor's guard make one hard choice together. Read and listen together.</p><span class="promo-link">Open Saints Sergius and Bacchus's Storybook <span aria-hidden="true">&rarr;</span></span></div></a></article>
 <article class="promo-card reveal"><a class="promo-card-link" href="./magdalene-story"><picture><img alt="Imaginative illustration of Mary Magdalene beside the lake in Galilee" decoding="async" height="720" loading="lazy" src="./media/storybook-magdalene/images/page-01.webp" width="1280"/></picture><div class="promo-body"><span class="promo-kicker">Read-Aloud Storybook</span><h3>Mary Magdalene: Called by Name</h3><p>A disciple stays close to Jesus and carries the news of his resurrection. Read and listen together.</p><span class="promo-link">Open Mary Magdalene's Storybook <span aria-hidden="true">→</span></span></div></a></article>
 <article class="promo-card reveal">
 <picture><img alt="Imaginative illustration of young Francis at a cloth shop in Assisi" decoding="async" height="720" loading="lazy" src="./media/storybook-francis/images/page-01.webp" width="1280"/></picture>
@@ -353,5 +350,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

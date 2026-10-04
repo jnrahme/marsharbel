@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -96,6 +84,7 @@
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/mysteries/sorrowful-1" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/mysteries/sorrowful-1" />
   <!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -108,21 +97,26 @@
       <nav class="links" aria-label="Primary">
         <a href="../">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="../stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="../saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="../stories">Saint Storybooks</a>
+        <a href="../saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="../history">Full History</a>
+        <a href="../gallery">Gallery</a>
         </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="../miracles/" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="../miracles/">Miracles & Reports</a>
         <a href="../miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="../news">Latest News</a>
         <a href="../testimonies">Letters</a>
         <a href="../voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="../saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="../saints">Saints</a>
+        <a href="../stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="active nav-parent" href="../prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -146,8 +140,9 @@
         <a href="../become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="../visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="../travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="../travel">Travel</a>
         <a href="../visit-annaya">Visiting Annaya</a>
         <a href="../annaya-tour">Annaya Online Tour</a>
         <a href="../bekaa-kafra">Bekaa Kafra</a>
@@ -161,7 +156,7 @@
         <a href="../saint-charbel-hermitage">The Hermitage</a>
         <a href="../saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
-        <a href="../gallery">Gallery</a>
+        <a href="../news">News</a>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
@@ -272,14 +267,17 @@
     <div class="site-shell">Dedicated mystery meditation page: First Sorrowful Mystery - The Agony in the Garden. Author: Please pray for the person who made this website.</div>
   </footer>
 
-  <script>window.MYSTERY_KEY = 'sorrowful_1'; window.MYSTERY_BASE = '../';</script>
   <script defer src="../mystery-data.js"></script>
   <script defer src="../mystery-library.js"></script>
-  <script defer src="../mystery-meditation.v20260304.js"></script>
+  <script defer src="../mystery-meditation.v20260304.js?v=20261003" data-mystery-key="sorrowful_1" data-mystery-base="../"></script>
   <script defer src="../global-audio-player.v20260304.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="../translate.js?v=20260922-1"></script>
   <script defer src="../share.js?v=20261002-share-2" data-share-mode="page"></script>
   <script src="../nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

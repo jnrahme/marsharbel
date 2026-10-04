@@ -4,19 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>صلوات مار شربل | مجموعة صلوات كاثوليكية</title>
   <meta name="description" content="صلِّ مع مجموعة من صلوات مار شربل، منها صلوات الشفاعة والتساعية والتأمل اليومي والنصوص الأساسية للمسبحة الوردية." />
@@ -104,7 +92,7 @@
   </script>
   <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/styles.css?v=20260922-1" />
+  <link rel="stylesheet" href="/styles.css?v=20261003-1" />
   <!-- hreflang:begin -->
 <link rel="alternate" hreflang="en" href="https://marsharbel.com/en/prayers" />
 <link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/prayers" />
@@ -116,6 +104,7 @@
 <link rel="alternate" hreflang="pl" href="https://marsharbel.com/pl/modlitwy" />
 <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/en/prayers" />
   <!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
@@ -125,21 +114,26 @@
       <nav class="links" aria-label="القائمة الرئيسية">
         <a href="/">الرئيسية</a>
         <div class="nav-group">
-        <a class="nav-parent" href="/stories" aria-haspopup="true" aria-expanded="false">القصة<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="/saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false" hreflang="en" aria-label="الإرث الروحي (بالإنجليزية)">الإرث الروحي<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="/stories">قصص القديسين</a>
-        <a href="/ar/biography">السيرة الكاملة</a>
+        <div class="enc-nav-item"><a href="/saint-charbel-encyclopedia" hreflang="en" aria-label="موسوعة مار شربل (بالإنجليزية)">موسوعة مار شربل</a> <span class="enc-language">(بالإنجليزية)</span></div>
+        <div class="enc-nav-item"><a href="/history" hreflang="en" aria-label="السيرة الكاملة (بالإنجليزية)">السيرة الكاملة</a> <span class="enc-language">(بالإنجليزية)</span></div>
+        <a href="/gallery">معرض الصور</a>
         </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="/miracles/" aria-haspopup="true" aria-expanded="false">العجائب<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="/miracles/">العجائب والشهادات</a>
         <a href="/miracles/eucharistic/">عجائب القربان المقدس</a>
-        <a href="/news">آخر الأخبار</a>
         <a href="/testimonies">الرسائل</a>
         <a href="/voice-testimony">شهادات صوتية</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="/saints" aria-haspopup="true" aria-expanded="false">القديسون<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="/saints">القديسون</a>
+        <a href="/stories">كتب للأطفال</a>
+        </div></div>
         <div class="nav-group">
         <a class="active nav-parent" href="/prayer-library" aria-haspopup="true" aria-expanded="false">الصلاة<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -163,8 +157,9 @@
         <a href="/become-like-charbel">الاقتداء به</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="/ar/annaya" aria-haspopup="true" aria-expanded="false">السفر<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="/ar/travel" aria-haspopup="true" aria-expanded="false">السفر<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="/ar/travel">السفر</a>
         <a href="/ar/annaya">زيارة عنايا</a>
         <a href="/annaya-tour">جولة افتراضية في عنايا</a>
         <a href="/bekaa-kafra">بقاع كفرا</a>
@@ -175,13 +170,13 @@
         <a href="/saint-charbel-hermitage">المحبسة</a>
         <a href="/saint-charbel-trail">درب مار شربل</a>
         </div></div>
-        <a href="/gallery">معرض الصور</a>
+        <a href="/news">الأخبار</a>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
-  <main id="main-content" class="site-shell" tabindex="-1">
+  <main id="main-content" class="site-shell prayer-page" tabindex="-1">
     <section class="hero">
       <span class="kicker">مجموعة صلوات</span>
       <h1>مكتبة صلوات مار شربل</h1>
@@ -311,6 +306,21 @@
       </div>
     </section>
 
+    <section class="section locale-prayers" id="prayers-in-your-language">
+      <h2>صلوات مار شربل بلغتك</h2>
+      <p class="section-sub">مجموعة الصلوات متوفرة أيضًا بسبع لغات أخرى.</p>
+      <nav aria-label="صلوات مار شربل بلغات أخرى">
+        <ul class="locale-prayer-list">
+          <li><a class="locale-prayer-link" href="/en/prayers" hreflang="en" lang="en" dir="ltr">Saint Charbel Prayers</a></li>
+          <li><a class="locale-prayer-link" href="/fr/prieres" hreflang="fr" lang="fr" dir="ltr">Prières à saint Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/es/oraciones" hreflang="es" lang="es" dir="ltr">Oraciones a san Chárbel</a></li>
+          <li><a class="locale-prayer-link" href="/pt/oracoes" hreflang="pt" lang="pt" dir="ltr">Orações a São Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/it/preghiere" hreflang="it" lang="it" dir="ltr">Preghiere a san Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/de/gebete" hreflang="de" lang="de" dir="ltr">Gebete zum heiligen Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/pl/modlitwy" hreflang="pl" lang="pl" dir="ltr">Modlitwy do świętego Szarbela</a></li>
+        </ul>
+      </nav>
+    </section>
     <section class="section">
       <h2>المصادر</h2>
       <div class="card story">
@@ -334,5 +344,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="/translate.js?v=20260922-1"></script>
   <script src="/nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

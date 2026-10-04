@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -76,6 +64,12 @@
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Travel",
+        "item": "https://marsharbel.com/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "Walk Through Annaya, Online",
         "item": "https://marsharbel.com/annaya-tour"
       }
@@ -120,6 +114,7 @@
 .tour-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
 </style>
 <script>document.addEventListener('DOMContentLoaded',function(){var s=document.querySelectorAll('.tour-stop');if(!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('seen')});return}var o=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('seen')}})},{threshold:.25});s.forEach(function(e){o.observe(e)})});</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -129,21 +124,26 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
+        <a href="./gallery">Gallery</a>
         </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./miracles/" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -167,8 +167,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="active nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="active nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a class="active" href="./annaya-tour" aria-current="page">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -182,13 +183,16 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
-        <a href="./gallery">Gallery</a>
+        <a href="./news">News</a>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="In this guide"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/travel">Travel</a><span aria-hidden="true">/</span><span aria-current="page">Walk Through Annaya, Online</span></nav>
+<!-- i18n-travel-frame:end -->
 <section class="hero">
 <span class="kicker">Online tour &middot; Annaya, Lebanon</span>
 <h1>Walk Through Annaya, Online</h1>
@@ -197,8 +201,10 @@
 <a class='btn primary' href='#stop1'>Begin the Tour</a>
 <a class='btn subtle' href='./visit-annaya'>Plan a Real Visit</a>
 <a class='btn subtle' href='./bekaa-kafra'>Next: His Birthplace</a>
+<a class='btn subtle' href='./bekaa-tour'>Also: Bekaa Tour</a>
 </div>
-</section>
+<p class="enc-trail">Part of the <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>. Read <a href="./history">the full story of his life</a> or browse all topics.</p>
+    </section>
 <section class="tour-stop" aria-labelledby="stop1">
 <img src="./media/tour/annaya-winter-panorama.webp" alt="The church and monastery of Saint Maron at Annaya on a terraced mountainside in winter, with a bell tower and a red-tiled roof" width="2400" height="917" loading="eager" decoding="async" />
 <div class="tour-copy"><span class="tour-step">Stop 1 of 5</span>
@@ -213,7 +219,7 @@
 <h2 id="stop2">The Church Built for the Pilgrims</h2>
 <p>Once Charbel was beatified in 1965, visitors came in far greater numbers than the old buildings could take. The Lebanese Maronite Order answered with a new, larger church, consecrated in 1974. His tomb lies inside it.</p>
 <p class="tour-why"><strong>Why it matters:</strong> Its size tells you how many people still make the climb, especially on the 22nd of the month and at the July feast.</p></div>
-<p class="tour-credit">saintcharbel.com (Saint Charbel Oasis), used with owner permission</p>
+<p class="tour-credit">Photo: saintcharbel.com.</p>
 </section>
 <section class="tour-stop" aria-labelledby="stop3">
 <img src="./media/tour/annaya-courtyard-night.webp" alt="The stone monastery courtyard at Annaya at night, with arched windows and a round stone fountain" width="1600" height="900" loading="lazy" decoding="async" />
@@ -221,7 +227,7 @@
 <h2 id="stop3">The Courtyard</h2>
 <p>Every pilgrim passes through this courtyard on the way in. The walls are bare stone, the windows are arched, and a fountain murmurs in the middle. Nobody pays to enter, and nobody is asked what they believe.</p>
 <p class="tour-why"><strong>Why it matters:</strong> People arrive talking and leave quiet. The place works on you before you have decided to pray.</p></div>
-<p class="tour-credit">saintcharbel.com (Saint Charbel Oasis), used with owner permission</p>
+<p class="tour-credit">Photo: saintcharbel.com.</p>
 </section>
 <section class="tour-stop" aria-labelledby="stop4">
 <img src="./media/tour/annaya-tomb-icon.webp" alt="Arched tomb chamber at Annaya with a candle-lit icon of Saint Charbel above the reliquary" width="1600" height="900" loading="lazy" decoding="async" />
@@ -229,7 +235,7 @@
 <h2 id="stop4">The Tomb</h2>
 <p>Here is what the climb is for. A line forms, and the people in it pray while they wait. Many hold a folded note with a name on it. When your turn comes there is nothing to perform: you kneel, you touch the stone if you wish, and you stay as long as you need.</p>
 <p class="tour-why"><strong>Why it matters:</strong> For most visitors, this is the whole reason for the journey. More on <a href="./saint-charbel-tomb">the tomb page</a>.</p></div>
-<p class="tour-credit">saintcharbel.com (Saint Charbel Oasis), used with owner permission</p>
+<p class="tour-credit">Photo: saintcharbel.com.</p>
 </section>
 <section class="tour-stop" aria-labelledby="stop5">
 <img src="./media/tour/annaya-hermitage-view.webp" alt="View toward the coast and the sea from the hermitage area of Annaya, over a stone terrace and flat roof" width="1600" height="900" loading="lazy" decoding="async" />
@@ -237,7 +243,7 @@
 <h2 id="stop5">The Hermitage of Saints Peter and Paul</h2>
 <p>A path leads up from the monastery to the hermitage of Saints Peter and Paul. This photograph, taken from the hermitage area and published on the monastery's own hermitage page, looks out over a terrace toward the sea. Charbel moved up here in 1875. He remained for twenty-three years, until he died on Christmas Eve 1898.</p>
 <p class="tour-why"><strong>Why it matters:</strong> The tomb is where people go to ask him for help. The hermitage is where he did his own praying, alone. More on <a href="./saint-charbel-hermitage">the hermitage page</a>.</p></div>
-<p class="tour-credit">saintcharbel.com (Saint Charbel Oasis), used with owner permission</p>
+<p class="tour-credit">Photo: saintcharbel.com.</p>
 </section>
 
 <section class="section">
@@ -250,7 +256,7 @@
 <section class="section">
 <h2>Photo Credits</h2>
 <div class="card story">
-<p>Stop 1: Paul Saad, Wikimedia Commons, CC BY-SA 4.0. Stops 2 to 5: saintcharbel.com (Saint Charbel Oasis), used with owner permission. The tour uses real photographs only.</p>
+<p>Stop 1: Paul Saad, Wikimedia Commons, CC BY-SA 4.0. Stops 2 to 5: Photo: saintcharbel.com. The tour uses real photographs only.</p>
 </div>
 </section>
 <section class="section">
@@ -273,5 +279,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

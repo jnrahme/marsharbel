@@ -3,8 +3,16 @@ name: QA
 on:
   push:
     branches:
-      - "**"
+      - stage
+      - main
   pull_request:
+
+# Branch pushes with an open PR were running everything twice (push and pull_request).
+# PR branches are covered by pull_request; stage and main by push. A new push to a PR
+# cancels that PR's stale run; runs on stage and main are never cancelled.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   qa:
@@ -35,6 +43,14 @@ jobs:
 
       - name: Install Python dependencies
         run: pip install beautifulsoup4
+
+      - name: Russian first-slice publication and browser guards
+        run: |
+          python3 -m unittest discover -s scripts/qa -p 'test_russian_slice.py'
+          npx playwright test tests/russian-first-slice.spec.js --project=small-phone --project=phone --project=laptop --workers=2
+
+      - name: Clean-checkout page build is in sync
+        run: node scripts/build-pages.mjs --check
 
       - name: Run QA suite
         run: npm run qa:ci

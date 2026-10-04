@@ -10,12 +10,21 @@ const prayerMirrorPortuguese = require('../locales/pt/mirrors/prayers.json');
 const prayerMirrorItalian = require('../locales/it/mirrors/prayers.json');
 const prayerMirrorGerman = require('../locales/de/mirrors/prayers.json');
 const prayerMirrorPolish = require('../locales/pl/mirrors/prayers.json');
-const topicHeading = (code, topic) => code === 'ar' && topic === 'feastDay' ? require('../locales/ar/feast-mirror.json').slots['1'].text : topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(code) ?
+const exactFor = topic => registry.exactMirrors?.[topic === 'feastDay' ? 'feast' : topic];
+const topicHeading = (code, topic) => (exactFor(topic)?.renderLocales || []).includes(code) ? require(`../locales/${code}/${topic === 'feastDay' ? 'feast' : topic}-exact.json`).slots['1'].text : code === 'ar' && topic === 'feastDay' ? require('../locales/ar/feast-mirror.json').slots['1'].text : topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(code) ?
   ({ar: prayerMirror, fr: prayerMirrorFrench, es: prayerMirrorSpanish, pt: prayerMirrorPortuguese, it: prayerMirrorItalian, de: prayerMirrorGerman, pl: prayerMirrorPolish, en: require('../locales/en/mirrors/prayers.json')})[code]['hero.heading'] :
   catalogs[code][topic].title;
-const routeFor = (code, topic) => topic ? `/${code}/${registry.locales[code].slugs[topic]}` : registry.locales[code].home;
+const routeFor = (code, topic) => (exactFor(topic)?.renderLocales || []).includes(code) ? exactFor(topic).routes[code] : topic ? `/${code}/${registry.locales[code].slugs[topic]}` : registry.locales[code].home;
 const topicLanguages = topic => topic ? languages.filter(code => (registry.topics[topic].locales || languages).includes(code)) : languages;
-const alternateFor = (code, topic) => topicLanguages(topic).includes(code) ? routeFor(code, topic) : registry.topics[topic].relatedEnglish;
+// Discovery clusters depend on this page's identity, not merely its topic.
+const clusterFor = (language, topic) => {
+  const exact = exactFor(topic), route = routeFor(language, topic);
+  if (exact && Object.values(exact.routes).includes(route)) return exact.routes;
+  const codes = topicLanguages(topic).filter(code => !(exact?.renderLocales || []).includes(code));
+  const cluster = Object.fromEntries(codes.map(code => [code, routeFor(code, topic)]));
+  if (!exact) cluster[registry.defaultLocale] ||= registry.topics[topic]?.relatedEnglish || registry.locales[registry.defaultLocale].home;
+  return cluster;
+};
 
 for (const [language, config] of Object.entries(registry.locales)) {
   const topics = Object.keys(registry.topics).filter(topic => topicLanguages(topic).includes(language));
@@ -26,6 +35,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
       const context = await browser.newContext({...testInfo.project.use, javaScriptEnabled:false, baseURL});
       try {
         const page = await context.newPage();
+        await page.route('**/*', r => new URL(r.request().url()).origin === new URL(baseURL).origin ? r.continue() : r.abort());
         const response = await page.goto(route);
         expect(response.status()).toBe(200);
         await expect(page.locator('h1')).toBeVisible();
@@ -34,43 +44,45 @@ for (const [language, config] of Object.entries(registry.locales)) {
         await expect(page.locator('html')).toHaveAttribute('lang', language);
         expect((await page.locator('main').innerText()).length).toBeGreaterThan(700);
         expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-        const cluster = [...new Set([registry.defaultLocale, ...topicLanguages(topic)])];
-        await expect(page.locator('link[hreflang]')).toHaveCount(cluster.length + 1);
-        for (const code of cluster) {
-          await expect(page.locator(`link[hreflang="${code}"]`)).toHaveAttribute('href', registry.site + alternateFor(code, topic));
+        const cluster = clusterFor(language, topic);
+        await expect(page.locator('link[hreflang]')).toHaveCount(Object.keys(cluster).length + 1);
+        await expect(page.locator('link[hreflang="x-default"]')).toHaveAttribute('href', registry.site + (cluster[registry.defaultLocale] || Object.values(cluster)[0]));
+        for (const [code, path] of Object.entries(cluster)) {
+          await expect(page.locator(`link[hreflang="${code}"]`)).toHaveAttribute('href', registry.site + path);
         }
         const anchors = await page.locator('a[href^="#"]').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
         for (const anchor of anchors) await expect(page.locator(anchor)).toHaveCount(1);
         const published = topicLanguages(topic);
-        if (topic && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers') && !(language === 'ar' && topic === 'feastDay')) {
+        if (topic && !(exactFor(topic)?.renderLocales || []).includes(language) && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers') && !(language === 'ar' && topic === 'feastDay')) {
           const next = published[(published.indexOf(language) + 1) % published.length];
-          await page.locator('header nav').getByRole('link',{name:registry.locales[next].nativeName,exact:true}).click();
-          await expect(page.locator('html')).toHaveAttribute('lang',next);
-          await expect(page.locator('h1')).toHaveText(topicHeading(next, topic));
+          // Same-page switching is fail-closed: every unpublished twin stays an unavailable, non-navigating link.
+          const target = page.locator(`header nav a[hreflang="${next}"]`).first();
+          await expect(target).toHaveAttribute('aria-disabled', 'true');
+          await expect(target).not.toHaveAttribute('href', /.+/);
         }
       } finally {
         await context.close();
       }
     });
   }
-  test(`${language} prayer guide accessibility`,async({page}) => {
+  if (topicLanguages("prayers").includes(language)) test(`${language} prayer guide accessibility`,async({page}) => {
     await page.goto(routeFor(language,'prayers'));
     const results = await new AxeBuilder({page}).analyze();
     expect(results.violations.filter(v => ['serious','critical'].includes(v.impact))).toEqual([]);
   });
   if (language !== registry.defaultLocale) {
-    test(`legacy language selector opens ${language} reading guide`,async({page}) => {
+    test(`language selector keeps ${language} reading guide unavailable until published`,async({page}) => {
+      // Same-page switching is fail-closed: an unpublished twin is a disabled option, never a navigation.
       await page.goto('/saint-charbel-prayers?lang=en');
-      await page.locator('#sc-language-select').selectOption(language);
-      await expect(page).toHaveURL(new RegExp(routeFor(language,'prayers')+'$'));
-      await expect(page.locator('h1')).toHaveText(topicHeading(language, 'prayers'));
+      await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeDisabled();
+      await expect(page).toHaveURL(/\/saint-charbel-prayers\?lang=en$/);
     });
   }
 }
 
 
-test('existing pages keep one top language selector without duplicate menus', async ({page}) => {
-  for (const route of ['/', ...Object.values(registry.topics).map(topic => topic.relatedEnglish)]) {
+for (const route of ['/', ...new Set(Object.values(registry.topics).map(topic => topic.relatedEnglish))]) {
+  test(`${route} keeps one top language selector without duplicate menus`, async ({page}) => {
     await page.goto(route + '?lang=en');
     await expect(page.locator('#sc-language-select')).toHaveCount(1);
     await expect(page.locator('#sc-language-select')).toBeVisible();
@@ -85,41 +97,39 @@ test('existing pages keep one top language selector without duplicate menus', as
     for (const code of languages) {
       await expect(page.locator(`nav.footer-locales a[hreflang="${code}"]`)).toHaveCount(localeBarCount);
     }
-    expect(await page.locator('nav.footer-locales a[href*="?lang="]').count()).toBe(0);
+    const footerHtml = ((await (await page.request.get(route)).text()).match(/<nav[^>]*footer-locales[\s\S]*?<\/nav>/) || [''])[0];
+    expect(footerHtml).not.toContain('?lang=');
     for (const code of languages) {
       await expect(page.locator(`#sc-language-select option[value="${code}"]`)).toHaveCount(1);
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  }
-});
+  });
+}
 
-test('Arabic prayer mirror keeps authored copy and round-trips to English', async ({page}) => {
+test('Arabic prayer mirror keeps authored copy and keeps English unavailable until published', async ({page}) => {
   await page.goto('/ar/prayers');
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
   await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
-  await expect(page.locator('main > section')).toHaveCount(7);
+  await expect(page.locator('main > section')).toHaveCount(8);
   await expect(page.locator('.prayer-card')).toHaveCount(14);
   await expect(page.locator('main img[src="/media/annaya/charbel-historic-photo.webp"]')).toHaveCount(1);
   await page.reload();
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
-  await page.locator('#sc-language-select').selectOption('en');
-  await expect(page).toHaveURL(/\/en\/prayers$/);
-  await page.locator('#sc-language-select').selectOption('ar');
+  await expect(page.locator('#sc-language-select option[value="en"]')).toBeDisabled();
   await expect(page).toHaveURL(/\/ar\/prayers$/);
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
 });
 
-test('English directory hub selector reaches the authored Arabic hub', async ({page}) => {
+test('English directory hub selector keeps the Arabic hub unavailable until published', async ({page}) => {
   await page.goto('/miracles/?lang=en');
-  await page.locator('#sc-language-select').selectOption('ar');
-  await expect(page).toHaveURL(/\/ar\/miracles\/$/);
-  await expect(page.locator('h1')).toHaveText(catalogs.ar.miracles.title);
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', registry.site + '/ar/miracles/');
+  await expect(page.locator('#sc-language-select option[value="ar"]')).toBeDisabled();
+  await expect(page).toHaveURL(/\/miracles\/\?lang=en$/);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', registry.site + '/miracles/');
 });
 
-test('unpublished locale on a miracle story stays as a runtime fallback', async ({page}) => {
+test('unpublished locale on a miracle story stays unavailable with no machine fallback', async ({page}) => {
   await page.goto('/miracles/nohad-el-shami?lang=en');
-  await page.locator('#sc-language-select').selectOption('fr');
-  await expect(page).toHaveURL(/\/miracles\/nohad-el-shami\?lang=fr$/);
+  await expect(page.locator('#sc-language-select option[value="fr"]')).toBeDisabled();
+  await expect(page).toHaveURL(/\/miracles\/nohad-el-shami\?lang=en$/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', registry.site + '/miracles/nohad-el-shami');
 });

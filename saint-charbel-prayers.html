@@ -4,19 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saint Charbel Prayers | Catholic Prayer Collection</title>
   <meta name="description" content="Pray with a curated collection of Saint Charbel prayers, including intercession prayers, daily devotion formulas, and Catholic prayer texts." />
@@ -104,11 +92,12 @@
   </script>
   <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/styles.css?v=20260922-1" />
+  <link rel="stylesheet" href="/styles.css?v=20261003-1" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/saint-charbel-prayers" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/saint-charbel-prayers" />
   <!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -118,21 +107,26 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
+        <a href="./gallery">Gallery</a>
         </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./miracles/" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="active nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -156,7 +150,7 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
@@ -168,13 +162,13 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
-        <a href="./gallery">Gallery</a>
+        <a href="./news">News</a>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
-  <main id="main-content" class="site-shell" tabindex="-1">
+  <main id="main-content" class="site-shell prayer-page" tabindex="-1">
     <section class="hero">
       <span class="kicker">Prayer Collection</span>
       <h1>Saint Charbel Prayer Library</h1>
@@ -305,6 +299,21 @@
       </div>
     </section>
 
+    <section class="section locale-prayers" id="prayers-in-your-language">
+      <h2>Saint Charbel Prayers in Your Language</h2>
+      <p class="section-sub">The prayer collection is also available in seven other languages.</p>
+      <nav aria-label="Saint Charbel prayers in other languages">
+        <ul class="locale-prayer-list">
+          <li><a class="locale-prayer-link" href="/ar/prayers" hreflang="ar" lang="ar" dir="rtl">صلوات مار شربل</a></li>
+          <li><a class="locale-prayer-link" href="/fr/prieres" hreflang="fr" lang="fr" dir="ltr">Prières à saint Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/es/oraciones" hreflang="es" lang="es" dir="ltr">Oraciones a san Chárbel</a></li>
+          <li><a class="locale-prayer-link" href="/pt/oracoes" hreflang="pt" lang="pt" dir="ltr">Orações a São Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/it/preghiere" hreflang="it" lang="it" dir="ltr">Preghiere a san Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/de/gebete" hreflang="de" lang="de" dir="ltr">Gebete zum heiligen Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/pl/modlitwy" hreflang="pl" lang="pl" dir="ltr">Modlitwy do świętego Szarbela</a></li>
+        </ul>
+      </nav>
+    </section>
     <section class="section">
       <h2>Sources</h2>
       <div class="card story">
@@ -315,18 +324,25 @@
         </ul>
       </div>
     </section>
-  <!-- i18n-navigation:start -->
-<nav class="footer-locales" aria-label="Languages"><a href="/" hreflang="en" lang="en" dir="ltr">English</a> <span aria-hidden="true">-</span> <a href="/ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a> <span aria-hidden="true">-</span> <a href="/fr/" hreflang="fr" lang="fr" dir="ltr">Français</a> <span aria-hidden="true">-</span> <a href="/es/" hreflang="es" lang="es" dir="ltr">Español</a> <span aria-hidden="true">-</span> <a href="/pt/" hreflang="pt" lang="pt" dir="ltr">Português</a> <span aria-hidden="true">-</span> <a href="/it/" hreflang="it" lang="it" dir="ltr">Italiano</a> <span aria-hidden="true">-</span> <a href="/de/" hreflang="de" lang="de" dir="ltr">Deutsch</a> <span aria-hidden="true">-</span> <a href="/pl/" hreflang="pl" lang="pl" dir="ltr">Polski</a></nav>
-<!-- i18n-navigation:end -->
+
 </main>
 
   <footer class="footer">
     <div class="site-shell">Saint Charbel prayer collection. Author: Please pray for the person who made this website.</div>
-  </footer>
+  <div class="site-shell">
+<!-- i18n-navigation:start -->
+<nav aria-label="Languages" class="footer-locales"><a dir="ltr" href="/" hreflang="en" lang="en">English</a> <span aria-hidden="true">-</span> <a dir="rtl" href="/ar/" hreflang="ar" lang="ar">العربية</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/fr/" hreflang="fr" lang="fr">Français</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/es/" hreflang="es" lang="es">Español</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/pt/" hreflang="pt" lang="pt">Português</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/it/" hreflang="it" lang="it">Italiano</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/de/" hreflang="de" lang="de">Deutsch</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/pl/" hreflang="pl" lang="pl">Polski</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/ru/" hreflang="ru" lang="ru">Русский</a></nav>
+<!-- i18n-navigation:end -->
+</div>
+</footer>
 
   <script defer src="/app.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="/translate.js?v=20260922-1"></script>
   <script src="/nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

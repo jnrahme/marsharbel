@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 """Guard the Arabic prayers pilot against a shortened or stale translation."""
 import json
 import re
@@ -48,8 +49,8 @@ class PrayerMirrorTests(unittest.TestCase):
         original = (ROOT / 'saint-charbel-prayers.html').read_text()
         # The published English master alone has P0's managed crawlable
         # footer-locale bar. The shared prayer body must still match Arabic.
-        self.assertEqual(original.count('<nav class="footer-locales"'), 1)
-        original_body = re.sub(r'<nav class="footer-locales"[^>]*>.*?</nav>', '', original, count=1, flags=re.S)
+        self.assertEqual(len(BeautifulSoup(original,'html.parser').select('nav.footer-locales')),1)
+        original_body = re.sub(r'<nav[^>]*class="footer-locales"[^>]*>.*?</nav>', '', original, count=1, flags=re.S)
         self.assertEqual(Shape(original_body).nodes, Shape(ar).nodes)
         self.assertEqual(len(Shape(ar).images), 1)
         self.assertEqual(ar.count('card prayer-card'), 14)
@@ -83,13 +84,16 @@ class PrayerMirrorTests(unittest.TestCase):
                         self.alternates.append(values.get('content'))
                     if values.get('property') == 'og:locale':
                         self.primary.append(values.get('content'))
-        pages = {**render_mirrors(ROOT), **render_qadisha(ROOT), **render_monasteries(ROOT)}
+        from i18n.metadata import published_locales
+        prayer_pages = render_mirrors(ROOT)
+        prayer_set = published_locales(None, 'prayers')
+        pages = {**prayer_pages, **render_qadisha(ROOT), **render_monasteries(ROOT)}
         self.assertEqual(len(pages), 21)
         for path, html in pages.items():
             code = path.relative_to(ROOT).parts[0]
             if code not in OG_LOCALE:
                 code = 'en'
-            expected = [value for lang, value in OG_LOCALE.items() if lang != code]
+            expected = [value for lang, value in OG_LOCALE.items() if lang != code and (path not in prayer_pages or lang in prayer_set)]
             tags = HeadMeta(html)
             self.assertEqual(tags.primary, [OG_LOCALE[code]], str(path))
             self.assertEqual(tags.alternates, expected, str(path))
@@ -200,7 +204,7 @@ class PrayerMirrorTests(unittest.TestCase):
         arabic = read_json(ROOT / 'locales/ar/mirrors/prayers.json')
         self.assertEqual(english.keys(), arabic.keys())
         # The localized skip-link slot was added by accessibility PR #427.
-        self.assertEqual(len(english), 135)
+        self.assertEqual(len(english), 139)
         self.assertEqual(english['header.skipLink'], 'Skip to content')
         self.assertIn('{{header.skipLink}}', template)
         self.assertIn('href="/ar/prayers" aria-current="page"', render_pair(ROOT)[ROOT/'ar/prayers.html'])

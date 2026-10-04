@@ -1,0 +1,16 @@
+import sys,unittest
+from pathlib import Path
+from bs4 import BeautifulSoup
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from i18n.catalog import ROOT,read_json
+class LocaleHomeNavigation(unittest.TestCase):
+ def test_home_section_navigation(self):
+  r=read_json(ROOT/'locales/registry.json')
+  for code,cfg in r['locales'].items():
+   if code=='en':continue
+   s=BeautifulSoup((ROOT/code/'index.html').read_text(),'html.parser');nav=s.select_one('header nav[data-locale-section-navigation]');self.assertIsNotNone(nav)
+   for lang,other in r['locales'].items():
+    a=nav.select_one('a[hreflang="'+lang+'"]');self.assertEqual(a['href'],other['home']);self.assertEqual(a.get_text(),other['nativeName']);self.assertNotIn('aria-disabled',a.attrs)
+ def test_article_identity_is_not_home_navigation(self):
+  s=BeautifulSoup((ROOT/'fr/biographie.html').read_text(),'html.parser');nav=s.select_one('nav.locale-nav');self.assertNotIn('data-locale-section-navigation',nav.attrs);self.assertEqual(len(nav.select('a[aria-disabled=true]')),len(read_json(ROOT/'locales/registry.json')['locales'])-1)
+if __name__=='__main__':unittest.main()

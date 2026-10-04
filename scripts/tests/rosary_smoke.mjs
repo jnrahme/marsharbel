@@ -130,71 +130,28 @@ try {
     }
   });
 
-  await expect('Requested language translates page content', async () => {
+  await expect('Unavailable language preserves the actual page', async () => {
     await page.goto(`${baseUrl}/mysteries/joyful-1.html?lang=es`, { waitUntil: 'domcontentloaded' });
-    // Verify translate.js picks up lang param and configures the page
-    const langParam = new URL(page.url()).searchParams.get('lang');
-    if (langParam !== 'es') throw new Error(`Expected lang=es in URL, got: ${langParam}`);
-    // Wait for translate.js to initialize (sets lang selector value)
-    await page.waitForFunction(() => {
-      const sel = document.getElementById('sc-language-select');
-      return sel && sel.value === 'es';
-    }, null, { timeout: 10000 });
-    // Google Translate may not run in headless CI, so just verify the selector is set
-    const selectedLang = await page.evaluate(() =>
-      document.getElementById('sc-language-select')?.value || ''
-    );
-    if (selectedLang !== 'es') {
-      throw new Error(`Language selector should be "es", got: "${selectedLang}"`);
-    }
+    await page.waitForFunction(() => window.SC_LANGUAGE_SWITCH);
+    const before = await page.evaluate(() => ({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
+    if (await page.locator('#sc-language-select').inputValue() !== 'en') throw new Error('Selector must show actual English content');
+    if (!await page.locator('#sc-language-select option[value="es"]').isDisabled()) throw new Error('Unreviewed Spanish twin must be unavailable');
+    await page.evaluate(() => SC_LANGUAGE_SWITCH.request('es'));
+    const after = await page.evaluate(() => ({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
+    if (JSON.stringify(before) !== JSON.stringify(after)) throw new Error('Refusal changed page');
   });
 
-  await expect('Language persists when navigating to another page', async () => {
+  await expect('Language requests never rewrite ordinary navigation', async () => {
     await page.goto(`${baseUrl}/mysteries/joyful-1.html?lang=es`, { waitUntil: 'domcontentloaded' });
-    await page.waitForFunction(() => {
-      const home = document.querySelector('.topbar .links a[href]');
-      return home && /lang=es/i.test(home.getAttribute('href') || '');
-    }, null, { timeout: 10000 });
+    await page.waitForFunction(() => window.SC_LANGUAGE_SWITCH);
+    const links = await page.locator('.topbar .links a[href]').evaluateAll(nodes => nodes.map(a => a.getAttribute('href')));
+    await page.evaluate(() => {localStorage.setItem('sc_lang_pref','es');SC_LANGUAGE_SWITCH.request('es')});
+    const after = await page.locator('.topbar .links a[href]').evaluateAll(nodes => nodes.map(a => a.getAttribute('href')));
+    if (JSON.stringify(links) !== JSON.stringify(after)) throw new Error('Ordinary links were rewritten');
     await page.click('.topbar .links > a:first-child');
-    // A published locale twin wins over the runtime-translation query: the
-    // homepage resolves to its authored /es/ hub, which still proves the
-    // chosen language persisted across navigation.
-    await page.waitForURL(url => /^\/es(\/|\/index\.html)?$/.test(url.pathname) || url.pathname.endsWith('/index.html') || url.pathname === '/', { timeout: 10000 });
-    const url = new URL(page.url());
-    const onTwin = /^\/es\//.test(url.pathname) || url.pathname === '/es';
-    const lang = url.searchParams.get('lang');
-    if (!onTwin && lang !== 'es') {
-      throw new Error(`Expected es twin or lang=es on next page, got: ${page.url()}`);
-    }
-    const docLang = await page.evaluate(() => document.documentElement.lang);
-    if (docLang !== 'es') {
-      throw new Error(`Expected document lang=es on next page, got: ${docLang} (${page.url()})`);
-    }
-  });
-
-  await expect('Language persists across Home, Story, and Rosary nav links', async () => {
-    await page.goto(`${baseUrl}/mysteries/joyful-1.html?lang=es`, { waitUntil: 'domcontentloaded' });
-
-    await page.click('.topbar .links > a:first-child');
-    // Published twin redirect: Home lands on the authored Spanish hub.
-    await page.waitForURL(url => /^\/es(\/|\/index\.html)?$/.test(url.pathname), { timeout: 10000 });
-    if ((await page.evaluate(() => document.documentElement.lang)) !== 'es') {
-      throw new Error(`Expected document lang=es on Home, got: ${page.url()}`);
-    }
-
-    // The Spanish tree is authored, so navigation stays in Spanish without a
-    // query param: follow the hub's own Story and Rosary links.
-    await page.click('a[href="/es/biografia"]');
-    await page.waitForURL(/\/es\/biografia/i, { timeout: 10000 });
-    if ((await page.evaluate(() => document.documentElement.lang)) !== 'es') {
-      throw new Error(`Expected document lang=es on Story, got: ${page.url()}`);
-    }
-
-    await page.click('a[href="/es/rosario"]');
-    await page.waitForURL(/\/es\/rosario/i, { timeout: 10000 });
-    if ((await page.evaluate(() => document.documentElement.lang)) !== 'es') {
-      throw new Error(`Expected document lang=es on Rosario, got: ${page.url()}`);
-    }
+    await page.waitForURL(url => url.pathname === '/' || url.pathname === '/index.html');
+    if (await page.locator('html').getAttribute('lang') !== 'en') throw new Error('Home content falsely relabeled');
+    if (await page.locator('#sc-language-select').inputValue() !== 'en') throw new Error('Saved preference redirected Home');
   });
 
   await page.goto(`${baseUrl}/mysteries/joyful-1.html`, { waitUntil: 'domcontentloaded' });
