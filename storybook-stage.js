@@ -122,23 +122,23 @@
     if (flipEnd) endFlip();
     var phone = mqPhone.matches, now = pageEls();
     if (!old || !now.art || !now.text) return false;
-    var stage = div('st-flip'), ms;
+    var stage = div('st-flip'), ms, rtl = getComputedStyle(panel).direction === 'rtl', geo = (fwd !== rtl) ? 'is-f' : 'is-b';
     if (phone) {
       var leaf = div(['st-leaf', 'st-leaf-phone', fwd ? 'is-up' : 'is-down'], old.all.map(function (n) { return n; }));
       leaf.appendChild(div('st-sh'));
       stage.appendChild(div('st-cast'));
       stage.appendChild(leaf);
-      ms = 640;
+      ms = 760;
     } else {
       if (old.refl || panel.classList.contains('is-reflection-page')) return false;
       var under = fwd ? old.art : old.text, front = fwd ? old.text : old.art, back = ghost(fwd ? now.art : now.text);
-      under.classList.add('st-under'); under.classList.add(fwd ? 'is-l' : 'is-r');
-      var leaf2 = div(['st-leaf', fwd ? 'is-f' : 'is-b'], [
+      under.classList.add('st-under'); under.classList.add(geo === 'is-f' ? 'is-l' : 'is-r');
+      var leaf2 = div(['st-leaf', geo], [div('st-turn', [
         div(['st-face', 'st-front'], [front, div('st-sh')]),
         div(['st-face', 'st-back'], [back, div('st-sh')])
-      ]);
-      stage.appendChild(under); stage.appendChild(div(['st-cast', fwd ? 'is-r' : 'is-l'])); stage.appendChild(leaf2);
-      ms = 860;
+      ])]);
+      stage.appendChild(under); stage.appendChild(div(['st-cast', geo === 'is-f' ? 'is-r' : 'is-l'])); stage.appendChild(leaf2);
+      ms = 1040;
     }
     panel.appendChild(stage);
     panel.classList.remove('st-fwd', 'st-back');
