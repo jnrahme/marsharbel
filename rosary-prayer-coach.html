@@ -124,6 +124,35 @@
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/rosary-prayer-coach" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/rosary-prayer-coach" />
   <!-- hreflang:end -->
+  <style>
+    .bead-teacher { margin: 1.5rem 0 2rem; padding: 1.5rem 0; border-block: 1px solid var(--line); }
+    .bead-intro { max-width: 65ch; }
+    .bead-intro h3 { font-size: clamp(1.7rem, 4vw, 2.3rem); margin: 0 0 .6rem; }
+    .bead-figure { margin: 0; max-width: 48rem; }
+    .bead-diagram-scroll { overflow-x: auto; margin-bottom: 1rem; }
+    .bead-diagram { min-width: 22rem; }
+    .bead-diagram-scroll:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .bead-numbers, .bead-labels { display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); margin-inline: 3.25%; text-align: center; color: var(--text); font-size: .875rem; line-height: 1.4; }
+    .bead-labels { margin-block: .5rem 1rem; }
+    .bead-labels span:first-child { grid-column: 1; overflow-wrap: normal; justify-self: center; max-width: 3rem; }
+    .bead-labels span:last-child { grid-column: 2 / 12; align-self: center; }
+    .bead-figure figcaption { margin-top: 1rem; }
+    .bead-poster { color: var(--text); display: block; width: 100%; max-width: 48rem; height: auto; margin: 0 auto; }
+    .bead-figure figcaption { font-size: .875rem; color: var(--muted); margin: 0 0 1.2rem; }
+    .bead-marker { visibility: hidden; }
+    .bead-poster [data-current] .bead-marker { visibility: visible; }
+    .bead-teacher summary { cursor: pointer; min-height: 44px; padding: .6rem 0; color: var(--text); font-weight: 600; }
+    .bead-teacher summary:focus-visible, .bead-teacher button:focus-visible, .bead-start:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+    .bead-practice-body { max-width: 65ch; padding-bottom: 1rem; }
+    .bead-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .bead-actions button { min-height: 44px; touch-action: manipulation; user-select: none; }
+    .bead-actions button:disabled { opacity: .55; cursor: default; }
+    #bead-current { font-weight: 600; margin: 1rem 0; }
+    .bead-start { display: inline-block; min-height: 44px; padding-block: .6rem; text-underline-offset: .25em; }
+    .bead-teacher [hidden] { display: none; }
+    @media (max-width: 480px) { .bead-actions button { flex: 1 1 8rem; } }
+    @media (prefers-reduced-motion: reduce) { .bead-teacher *, .bead-teacher *::before, .bead-teacher *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+  </style>
 <link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
@@ -247,6 +276,37 @@
     <section class="section">
       <h2>Start Session</h2>
       <p class="section-sub">Please choose, or leave blank and we'll use the gentle default.</p>
+      <div class="bead-teacher" aria-labelledby="bead-heading">
+        <div class="bead-intro"><h3 id="bead-heading">Follow one decade</h3><p>Announce the mystery, then pray the Our Father on the larger bead. Pray a Hail Mary on each of the ten smaller beads while meditating on the mystery. Finish with the Glory Be; the Fatima prayer is optional.</p></div>
+        <figure class="bead-figure"><div class="bead-diagram-scroll" tabindex="0" role="group" aria-label="Bead order illustration. Scroll horizontally if text is enlarged."><div class="bead-diagram"><svg class="bead-poster" viewBox="0 0 640 120" role="img" aria-labelledby="bead-poster-title bead-poster-desc">
+<title id="bead-poster-title">One decade: one Our Father bead followed by ten Hail Mary beads</title>
+<desc id="bead-poster-desc">An original teaching illustration of bronze and cream beads, shown left to right. This is a single decade, not a complete Rosary.</desc>
+<defs><radialGradient id="bead-cream" cx="32%" cy="26%" r="74%"><stop stop-color="#fff7df"/><stop offset=".35" stop-color="#e9d7b8"/><stop offset=".76" stop-color="#ad9576"/><stop offset="1" stop-color="#65503a"/></radialGradient><radialGradient id="bead-bronze" cx="32%" cy="26%" r="74%"><stop stop-color="#f7ddb0"/><stop offset=".35" stop-color="#cba776"/><stop offset=".76" stop-color="#826044"/><stop offset="1" stop-color="#433023"/></radialGradient></defs>
+<path d="M48 65H592" stroke="#ab9270" stroke-width="2"/>
+<g data-bead="0"><ellipse cx="48.0" cy="93.0" rx="20.900000000000002" ry="4" fill="#0e0b08" opacity=".4"/><circle cx="48.0" cy="65" r="19" fill="url(#bead-bronze)"/><circle class="bead-marker" cx="48.0" cy="65" r="26" fill="none" stroke="currentColor" stroke-width="2"/></g>
+<g data-bead="1"><ellipse cx="102.4" cy="88.0" rx="15.400000000000002" ry="4" fill="#0e0b08" opacity=".4"/><circle cx="102.4" cy="65" r="14" fill="url(#bead-cream)"/><circle class="bead-marker" cx="102.4" cy="65" r="21" fill="none" stroke="currentColor" stroke-width="2"/></g>
+<g data-bead="2"><ellipse cx="156.8" cy="88.0" rx="15.400000000000002" ry="4" fill="#0e0b08" opacity=".4"/><circle cx="156.8" cy="65" r="14" fill="url(#bead-cream)"/><circle class="bead-marker" cx="156.8" cy="65" r="21" fill="none" stroke="currentColor" stroke-width="2"/></g>
+<g data-bead="3"><ellipse cx="211.2" cy="88.0" rx="15.400000000000002" ry="4" fill="#0e0b08" opacity=".4"/><circle cx="211.2" cy="65" r="14" fill="url(#bead-cream)"/><circle class="bead-marker" cx="211.2" cy="65" r="21" fill="none" stroke="currentColor" stroke-width="2"/></g>
+<g data-bead="4"><ellipse cx="265.6" cy="88.0" rx="15.400000000000002" ry="4" fill="#0e0b08" opacity=".4"/><circle cx="265.6" cy="65" r="14" fill="url(#bead-cream)"/><circle class="bead-marker" cx="265.6" cy="65" r="21" fill="none" stroke="currentColor" stroke-width="2"/></g>
+<g data-bead="5"><ellipse cx="320.0" cy="88.0" rx="15.400000000000002" ry="4" fill="#0e0b08" opacity=".4"/><circle cx="320.0" cy="65" r="14" fill="url(#bead-cream)"/><circle class="bead-marker" cx="320.0" cy="65" r="21" fill="none" stroke="currentColor" stroke-width="2"/></g>
+<g data-bead="6"><ellipse cx="374.4" cy="88.0" rx="15.400000000000002" ry="4" fill="#0e0b08" opacity=".4"/><circle cx="374.4" cy="65" r="14" fill="url(#bead-cream)"/><circle class="bead-marker" cx="374.4" cy="65" r="21" fill="none" stroke="currentColor" stroke-width="2"/></g>
+<g data-bead="7"><ellipse cx="428.8" cy="88.0" rx="15.400000000000002" ry="4" fill="#0e0b08" opacity=".4"/><circle cx="428.8" cy="65" r="14" fill="url(#bead-cream)"/><circle class="bead-marker" cx="428.8" cy="65" r="21" fill="none" stroke="currentColor" stroke-width="2"/></g>
+<g data-bead="8"><ellipse cx="483.2" cy="88.0" rx="15.400000000000002" ry="4" fill="#0e0b08" opacity=".4"/><circle cx="483.2" cy="65" r="14" fill="url(#bead-cream)"/><circle class="bead-marker" cx="483.2" cy="65" r="21" fill="none" stroke="currentColor" stroke-width="2"/></g>
+<g data-bead="9"><ellipse cx="537.5999999999999" cy="88.0" rx="15.400000000000002" ry="4" fill="#0e0b08" opacity=".4"/><circle cx="537.5999999999999" cy="65" r="14" fill="url(#bead-cream)"/><circle class="bead-marker" cx="537.5999999999999" cy="65" r="21" fill="none" stroke="currentColor" stroke-width="2"/></g>
+<g data-bead="10"><ellipse cx="592.0" cy="88.0" rx="15.400000000000002" ry="4" fill="#0e0b08" opacity=".4"/><circle cx="592.0" cy="65" r="14" fill="url(#bead-cream)"/><circle class="bead-marker" cx="592.0" cy="65" r="21" fill="none" stroke="currentColor" stroke-width="2"/></g>
+</svg><div class="bead-numbers" aria-hidden="true"><span>Start</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div><div class="bead-labels" aria-hidden="true"><span>Our Father</span><span>Ten Hail Marys</span></div></div></div><figcaption>This shows one decade, not the full five-decade Rosary.</figcaption></figure>
+        <details id="bead-practice">
+          <summary>Practice bead by bead</summary>
+          <div class="bead-practice-body">
+            <p>Use Next bead as you pray. Previous bead goes back; Start again returns to the larger bead.</p>
+            <div id="bead-controls" data-our-father="Our Father. Begin on the larger bead." data-hail-mary="Hail Mary {n} of 10. Pray a Hail Mary on the highlighted bead." data-complete="Decade complete. Pray the Glory Be, then the Fatima prayer if you wish." data-next="Next bead" data-finish="Finish decade" hidden>
+              <p id="bead-current" role="status" aria-live="polite" aria-atomic="true">Our Father. Begin on the larger bead.</p>
+              <div class="bead-actions"><button class="btn subtle" id="bead-previous" type="button" disabled>Previous bead</button><button class="btn primary" id="bead-next" type="button">Next bead</button><button class="btn subtle" id="bead-reset" type="button">Start again</button></div>
+            </div>
+          </div>
+        </details>
+        <a class="bead-start" href="#coach-time">Choose a short session</a>
+      </div>
       <article class="card story coach-form-card">
         <div class="coach-grid">
           <label>1) How much time do you have?
@@ -376,6 +436,34 @@
     };
 
     const el = id => document.getElementById(id);
+
+    // Static illustration and native disclosure remain useful without JavaScript.
+    // No WebGL, animation loop, third-party asset, or renderer is loaded.
+    (() => {
+      const practice = document.getElementById('bead-practice');
+      const copy = el('bead-controls').dataset;
+      let bead = 0;
+      const renderBead = () => {
+        document.querySelectorAll('[data-bead]').forEach(node => {
+          node.toggleAttribute('data-current', Number(node.dataset.bead) === bead);
+        });
+        el('bead-current').textContent = bead === 0
+          ? copy.ourFather
+          : bead <= 10 ? copy.hailMary.replace('{n}', bead)
+          : copy.complete;
+        el('bead-previous').disabled = bead === 0;
+        el('bead-next').disabled = bead === 11;
+        el('bead-next').textContent = bead === 10 ? copy.finish : copy.next;
+      };
+      practice.addEventListener('toggle', () => {
+        el('bead-controls').hidden = !practice.open;
+        if (practice.open) renderBead();
+        else document.querySelectorAll('[data-current]').forEach(node => node.removeAttribute('data-current'));
+      });
+      el('bead-next').addEventListener('click', () => { bead = Math.min(11, bead + 1); renderBead(); });
+      el('bead-previous').addEventListener('click', () => { bead = Math.max(0, bead - 1); renderBead(); });
+      el('bead-reset').addEventListener('click', () => { bead = 0; renderBead(); });
+    })();
 
     el('coach-build').addEventListener('click', () => {
       const time = Number(el('coach-time').value || '10');
