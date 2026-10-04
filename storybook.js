@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'marina' ? 'marina' : raw === 'maroun' ? 'maroun' : raw === 'sergius' ? 'sergius' : raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
+    return raw === 'augustine' ? 'augustine' : raw === 'marina' ? 'marina' : raw === 'maroun' ? 'maroun' : raw === 'sergius' ? 'sergius' : raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -62,6 +62,9 @@
     sergiusCE: {label: "Catholic Encyclopedia: Sergius and Bacchus", url: "https://www.newadvent.org/cathen/13728a.htm"},
     marounTheodoret: {label: "Theodoret of Cyrrhus, Religious History 16 (translation by Fr Yuhanna Azize)", url: "https://www.fryuhanna.com/2026/01/28/maronite-history-st-theodoret-on-st-maroun/"},
     marounChrysostom: {label: "John Chrysostom, Letter 36 to Maron (Roman Letters)", url: "https://romanletters.org/letters/chrysostom/36/"},
+    augBenedict: {label: "Benedict XVI, general audience on Saint Augustine, 9 January 2008", url: "http://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html"},
+    augConfessions: {label: "Augustine, Confessions, books 2 and 8 (translation at New Advent)", url: "https://www.newadvent.org/fathers/110108.htm"},
+    augJeremiah: {label: "Douay-Rheims: Jeremias (Jeremiah) 29:13", url: "https://drbo.org/drl/chapter/28029.htm"},
     marinaMari: {label: "Marina the Monk (Maronite Research Institute, Journal of Maronite Studies, July 2000)", url: "http://www.maronite-institute.org/MARI/JMS/july00/Saint_Marina_The_Monk.htm"},
     marinaWikipedia: {label: "Marina the Monk (Wikipedia)", url: "https://en.wikipedia.org/wiki/Marina_the_Monk"},
     marinaSamuel: {label: "Douay-Rheims: 1 Kings (1 Samuel) 16:7", url: "https://www.drbo.org/chapter/09016.htm"},
@@ -893,6 +896,7 @@
     sergius: { en: window.SERGIUS_STORY_EN || [] },
     maroun: { en: window.MAROUN_STORY_EN || [] },
     marina: { en: window.MARINA_STORY_EN || [] },
+    augustine: { en: window.AUGUSTINE_STORY_EN || [] },
     jude: { en: window.JUDE_STORY_EN || [] },
     peter: { en: window.PETER_STORY_EN || [] },
     hardini: { en: window.HARDINI_STORY_EN || [] }
@@ -955,6 +959,7 @@
       { id: 'kokoro-hardini', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-hardini/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ] },
+  augustine: { en: [{ id: "directed-augustine", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-augustine/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   marina: { en: [{ id: "directed-marina", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-marina/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   maroun: { en: [{ id: "directed-maroun", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-maroun/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   sergius: { en: [{ id: "directed-sergius", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-sergius-bacchus/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
@@ -1272,7 +1277,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'marina' ? 'directed-marina' : storyId === 'maroun' ? 'directed-maroun' : storyId === 'sergius' ? 'directed-sergius' : storyId === 'magdalene' ? 'directed-magdalene' : storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : storyId === 'charbel-v2' ? 'kokoro-charbel-v2' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'augustine' ? 'directed-augustine' : storyId === 'marina' ? 'directed-marina' : storyId === 'maroun' ? 'directed-maroun' : storyId === 'sergius' ? 'directed-sergius' : storyId === 'magdalene' ? 'directed-magdalene' : storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : storyId === 'charbel-v2' ? 'kokoro-charbel-v2' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
