@@ -24,10 +24,12 @@ function derive(f) {
     url, storyId: f.storyId, title: f.seoTitle, desc: f.seoDescription, descLd: f.descLd ?? f.seoDescription,
     ogImage: f.ogImage ?? `${SITE}/${f.firstImage}`, firstImage: './' + f.firstImage, firstScene: f.firstScene,
     ages: `${f.ageMin}-${f.ageMax}`, ageMin: String(f.ageMin), ageMax: String(f.ageMax), h1: f.h1, intro: f.intro, short: f.shortAnswer,
-    ogLocale: f.ogLocales === 'all' ? '{{> head-og-locales}}' : (f.ogLocales || []).map((l, i) => i === 0 ? `<meta property="og:locale" content="${l}" />` : `<meta property="og:locale:alternate" content="${l}" />`).join('\n'),
+    ogLocale: f.ogLocales === 'all' ? '  {{> head-og-locales}}' : (f.ogLocales || []).map((l, i) => i === 0 ? `<meta property="og:locale" content="${l}" />` : `<meta property="og:locale:alternate" content="${l}" />`).join('\n'),
     pageCount: String(f.pageCount), disclosureAttr: f.specificDisclosure ? ' data-story-specific-disclosure=""' : '', footerFragment: f.footerFragment || 'footer-credit-b',
     summary: f.summaryHtml ?? '', family: f.familyReadingHtml ?? '', about: f.aboutHtml, faqArgs: hasFaq ? faqArgs(f.faq) : '',
     faqCard: hasFaq ? faqCard(f.faq) : '', related: f.related ? relList(f.related) : '', footer: f.footerCredit, dataFile: f.dataFile ?? '',
+    fontPreloads: f.fontPreloadsFragment ? '  {{> head-font-preloads}}' : `<link as="font" crossorigin="" href="./media/fonts/cormorant-garamond-latin-v1.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="./media/fonts/manrope-latin-v1.woff2" rel="preload" type="font/woff2"/>`,
     productionNote: f.productionNote ?? 'AI-generated read-aloud narration. Illustrations are original composite scenes, not historical footage.',
     bioHeading: f.saintBio?.heading ?? '', bioFacts: f.saintBio?.facts ?? '', bioBody: f.saintBio?.body ?? '', bioTail: f.saintBio?.tail ?? ''
   };
@@ -73,6 +75,7 @@ function extract(html) {
     aboutHtml: sec(/<h2>About this story<\/h2><(?:article|div) class="card story">(.*?)<\/(?:article|div)><\/section>/),
     faq, related: rel == null ? null : [...rel.matchAll(/<li><a href="([^"]+)">(.*?)<\/a><\/li>/g)].map(m => ({ href: m[1], label: m[2] })),
     ...((pn => pn && pn !== 'AI-generated read-aloud narration. Illustrations are original composite scenes, not historical footage.' ? { productionNote: pn } : {})((/<p class="story-production-note"[^>]*>(.*?)<\/p>/.exec(c) || [])[1])),
+    ...(/\{\{> head-font-preloads\}\}/.test(c) ? { fontPreloadsFragment: true } : {}),
     ...(bio ? { saintBio: { heading: bio[1], facts: bio[2], body: bio[3], tail: bio[4] } } : {}),
     footerFragment: footer[1], footerCredit: footer[2],
     ...(/\{\{> head-og-locales\}\}/.test(c) ? { ogLocales: 'all' } : og.length ? { ogLocales: og } : {}), ...(/<style>#story-body\.is-reflection \{ white-space: pre-line; \}<\/style>/.test(c) ? { reflectionPreLine: true } : {}),
