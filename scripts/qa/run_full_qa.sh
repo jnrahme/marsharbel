@@ -20,6 +20,11 @@ npm run i18n:check
 python3 scripts/build-eucharistic-miracles.py --check
 npm run i18n:test
 
+echo "[qa] Refactor, mirror and locale contract tests"
+for t in chaplet_mirror de_exact_catalogs encyclopedia_trail error_document exact_master exact_wiring feast_mirror footer_navigation head_fragments jsonld_serializer litany_mirror locale_foundation locale_home_navigation prayer_mirror saint_pillars tour_nav; do
+  python3 "scripts/qa/test_${t}.py"
+done
+
 echo "[qa] Checking specs for absolute machine paths"
 python3 scripts/qa/check_spec_paths.py
 python3 -m unittest discover -s scripts/qa -p 'test_spec_paths.py'
