@@ -123,6 +123,8 @@ def check(root=ROOT):
     magdalene_catalog = read_json(magdalene_path)['values'] if magdalene_path.exists() else {}
     maroun_path = root/'locales/en/maroun-story-copy.json'
     maroun_catalog = read_json(maroun_path)['values'] if maroun_path.exists() else {}
+    marina_path = root/'locales/en/marina-story-copy.json'
+    marina_catalog = read_json(marina_path)['values'] if marina_path.exists() else {}
     sergius_path = root/'locales/en/sergius-bacchus-story-copy.json'
     sergius_catalog = read_json(sergius_path)['values'] if sergius_path.exists() else {}
     shelf_path = root/'locales/en/stories-shelf-copy.json'
@@ -205,6 +207,7 @@ def check(root=ROOT):
         # the frozen legacy baseline. The per-file counts prevent a second
         # unreviewed occurrence from being silently accepted.
         additions -= Counter(maroun_catalog.get(file, {}))
+        additions -= Counter(marina_catalog.get(file, {}))
         additions -= Counter(sergius_catalog.get(file, {}))
         additions -= Counter(magdalene_catalog.get(file, {}))
         additions -= Counter(jude_catalog.get(file, {}))
