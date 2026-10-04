@@ -28,7 +28,7 @@
     "test:a11y": "playwright test --config playwright.config.cjs tests/accessibility-gate.spec.js --project=phone --project=laptop",
     "quality": "npm run quality:e2e",
     "build:home-css": "node scripts/build-home-css.mjs",
-    "test:testimony-security": "node scripts/tests/testimony_database.mjs && node --import tsx scripts/tests/testimony_validation.mts && node scripts/tests/testimony_edge.mjs && node --import tsx scripts/tests/intake_rate_limit.mts && node scripts/tests/intake_rate_database.mjs",
+    "test:testimony-security": "node scripts/tests/testimony_database.mjs && node --import tsx scripts/tests/testimony_validation.mts && node scripts/tests/testimony_edge.mjs && node --import tsx scripts/tests/intake_rate_limit.mts && node scripts/tests/intake_rate_database.mjs && node scripts/tests/testimony_xss.mjs",
     "test:testimony-ui": "node scripts/tests/testimony_ui.mjs",
     "build:navigation": "node scripts/sync-navigation.mjs",
     "test:navigation-sync": "node scripts/sync-navigation.mjs --check",
