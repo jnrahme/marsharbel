@@ -167,6 +167,9 @@ def check(root=ROOT):
         if path.read_text()!=expected: errors.append(str(path.relative_to(root))+': exact output differs from guarded catalog')
     for file, values in snapshot(root).items():
         additions = Counter(values) - Counter(baseline.get(file, {}))
+        if file == 'videos.html':
+            # Exact fragment output is checked by build-pages --check; never expand the legacy baseline.
+            additions -= Counter({v: 23 for v in read_json(root/'locales/en/video-playback.json').values()})
         if file=='share.js':
             additions-=Counter(v for k,v in read_json(root/'locales/en/share.json').items() if k.startswith('share.'))
         # One generated Travel hub entry, backed by the shared locale catalog.

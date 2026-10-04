@@ -1,0 +1,8 @@
+/* Reuse the hub's palette and text flow; do not overlay provider controls. */
+.video-fallback { margin-block-start: 1rem; }
+.video-fallback .video-status { font-size: .9rem; }
+.video-fallback .video-links { display: flex; flex-wrap: wrap; gap: .5rem; }
+.video-fallback a { text-underline-offset: .2em; }
+.video-fallback a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.video-wrap iframe[hidden] { display: none; }
+.video-wrap:has(iframe[hidden]) { display: none; }
