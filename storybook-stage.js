@@ -16,6 +16,7 @@
     return m ? { n: +m[1], total: +m[2] } : null;
   }
   function buildDots(total) {
+    if (total > 16) return;
     if (dots && dots.children.length === total) return;
     if (dots) dots.remove();
     dots = document.createElement('div');
@@ -45,7 +46,7 @@
   function sync() {
     var p = parse(); if (!p) return;
     buildDots(p.total);
-    Array.prototype.forEach.call(dots.children, function (b, i) {
+    if (dots) Array.prototype.forEach.call(dots.children, function (b, i) {
       if (i + 1 === p.n) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
     });
     if (last && p.n !== last) {
