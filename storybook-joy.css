@@ -39,7 +39,8 @@ body.is-story-shelf .promo-card:focus-within {
 body.is-story-shelf .promo-card img { aspect-ratio: 16/9; object-fit: cover; }
 body.is-story-shelf .promo-body { padding: 1.35rem 1.5rem 1.6rem; gap: .65rem; }
 body.is-story-shelf .promo-kicker { color: #7b4e24; }
-body.is-story-shelf .promo-body h3 {
+body.is-story-shelf .promo-body h3,
+body.is-story-shelf .promo-body h4 {
   color: #30241c;
   font-size: clamp(2rem, 3vw, 2.7rem);
   line-height: 1.1;
@@ -157,7 +158,8 @@ body.is-story-shelf .footer a { color: #754719; }
   body.is-story-shelf .hero h1 { font-size: 3.2rem; }
   body.is-story-shelf .promo-grid { grid-template-columns: minmax(0, 1fr); }
   body.is-story-shelf .promo-body { padding: 1.1rem 1.2rem 1.35rem; }
-  body.is-story-shelf .promo-body h3 { font-size: 2rem; }
+  body.is-story-shelf .promo-body h3,
+body.is-story-shelf .promo-body h4 { font-size: 2rem; }
   body.is-story-page .story-hero { padding-top: .7rem; }
   body.is-story-page .storybook-controls { gap: .45rem; }
   body.is-story-page .storybook-controls .btn { min-height: 44px; padding: .55rem .7rem; font-size: .8rem; }
@@ -303,3 +305,96 @@ body.is-story-shelf .card.story p a:not(.btn):not(.promo-link){color:#744418}
 /* Intro and transcript lines under story headings inherit the pale dark-theme muted color; on the cream story
    background that is about 1.6:1. #57463a on cream is above 7:1. */
 body.is-story-page .section-sub { color: #57463a; }
+
+/* Shelf sections and live search. The search row stays hidden until the script runs. */
+body.is-story-shelf .shelf-tools { display: flex; flex-wrap: wrap; align-items: end; gap: .6rem 1.2rem; margin: 1.4rem 0 .4rem; }
+body.is-story-shelf .shelf-tools[hidden] { display: none; }
+body.is-story-shelf .shelf-search { display: grid; gap: .4rem; flex: 1 1 20rem; max-width: 34rem; }
+body.is-story-shelf .shelf-search-label { font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #7b4e24; }
+body.is-story-shelf .shelf-search input { width: 100%; min-height: 52px; padding: .7rem 1.1rem; font: inherit; font-size: 1.05rem; color: #30241c; background: #fffaf0; border: 2px solid #d9c29e; border-radius: 16px; transition: border-color .15s ease, box-shadow .15s ease; }
+body.is-story-shelf .shelf-search input::placeholder { color: #6d5a49; opacity: 1; }
+body.is-story-shelf .shelf-search input:focus-visible { outline: 3px solid #74451a; outline-offset: 2px; border-color: #a9743e; }
+body.is-story-shelf .shelf-count { margin: 0; color: #554436; font-size: .98rem; min-height: 52px; display: flex; align-items: center; }
+body.is-story-shelf .shelf-jump { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1rem 0 .2rem; }
+body.is-story-shelf .shelf-jump a { display: inline-flex; align-items: center; gap: .55rem; min-height: 44px; padding: .35rem 1rem; border: 2px solid #e5cfa5; border-radius: 999px; background: #fffaf0; font-size: .95rem; font-weight: 700; text-decoration: none; color: #56340f; transition: border-color .15s ease, background-color .15s ease; }
+body.is-story-shelf .shelf-jump a:focus-visible { outline: 3px solid #74451a; outline-offset: 3px; }
+body.is-story-shelf .shelf-jump a.is-empty { opacity: .55; }
+body.is-story-shelf .shelf-n { font-size: .8rem; color: #6d5a49; border-inline-start: 1px solid #d9c29e; padding-inline-start: .55rem; }
+@media (hover: hover) and (pointer: fine) { body.is-story-shelf .shelf-jump a:hover { border-color: #a9743e; background: #f8deaa; } }
+body.is-story-shelf .shelf-section { margin-top: clamp(2.4rem, 5vw, 3.6rem); scroll-margin-top: 6.5rem; }
+body.is-story-shelf .shelf-section[hidden],
+body.is-story-shelf .promo-card[hidden],
+body.is-story-shelf .shelf-empty[hidden] { display: none; }
+body.is-story-shelf .shelf-head { display: grid; gap: .3rem; margin-bottom: 1.2rem; padding-bottom: .8rem; border-bottom: 2px solid #e8cf9d; }
+body.is-story-shelf .shelf-head h3 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.2rem); color: #30241c; }
+body.is-story-shelf .shelf-head p { margin: 0; color: #554436; }
+body.is-story-shelf .shelf-empty { margin-top: 1.6rem; padding: 1.4rem; border: 2px dashed #d9c29e; border-radius: 18px; display: grid; gap: .8rem; justify-items: start; }
+body.is-story-shelf .shelf-empty p { margin: 0; color: #35291f; }
+@media (prefers-reduced-motion: reduce) { body.is-story-shelf .shelf-search input, body.is-story-shelf .shelf-jump a { transition: none; } }
+
+/* Shelf redesign: books standing on a ledge. Featured pair, then a row of covers. */
+body.is-story-shelf .shelf-section { position: relative; padding-bottom: 1.6rem; }
+body.is-story-shelf .shelf-section::after {
+  content: ''; position: absolute; inset-inline: -.5rem; bottom: 0; height: 14px; border-radius: 4px 4px 10px 10px;
+  background: linear-gradient(#e2bf8a, #b98a52);
+  box-shadow: 0 10px 18px rgba(84, 54, 26, .22), inset 0 1px 0 rgba(255, 255, 255, .45);
+  pointer-events: none;
+}
+body.is-story-shelf .shelf-head { border-bottom: 0; padding-bottom: 0; margin-bottom: 1.5rem; }
+body.is-story-shelf .shelf-head h3 { font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.05; letter-spacing: -.01em; text-wrap: balance; }
+body.is-story-shelf .shelf-head p { max-width: 52ch; font-size: 1.05rem; }
+body.is-story-shelf .shelf-section .promo-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.6rem); align-items: stretch; }
+body.is-story-shelf .shelf-section .promo-card { grid-column: span 3; display: flex; flex-direction: column; overflow: hidden; border-radius: 22px; }
+body.is-story-shelf #shelf-centuries .promo-card { grid-column: span 4; }
+body.is-story-shelf #shelf-lebanon .promo-card:nth-child(-n+2) { grid-column: span 6; }
+body.is-story-shelf .shelf-section .promo-card picture { display: block; overflow: hidden; }
+body.is-story-shelf .shelf-section .promo-card img { aspect-ratio: 4 / 3; width: 100%; transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
+body.is-story-shelf #shelf-lebanon .promo-card:nth-child(-n+2) img { aspect-ratio: 16 / 10; }
+body.is-story-shelf .shelf-section .promo-body { padding: 1.1rem 1.3rem 1.3rem; gap: .5rem; flex: 1; }
+body.is-story-shelf .shelf-section .promo-body h4 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: clamp(1.55rem, 2.1vw, 1.95rem); line-height: 1.08; text-wrap: balance; margin: 0; }
+body.is-story-shelf #shelf-lebanon .promo-card:nth-child(-n+2) h4 { font-size: clamp(1.9rem, 2.8vw, 2.5rem); }
+body.is-story-shelf .shelf-section .promo-body p { margin: 0; font-size: .98rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+body.is-story-shelf #shelf-lebanon .promo-card:nth-child(-n+2) p { -webkit-line-clamp: 4; font-size: 1.05rem; }
+body.is-story-shelf .shelf-section .promo-kicker {
+  position: absolute; top: .8rem; inset-inline-start: .8rem; z-index: 1; padding: .3rem .7rem; border-radius: 999px;
+  background: rgba(255, 250, 240, .94); color: #5e3a14; font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(54, 34, 12, .2);
+}
+body.is-story-shelf .shelf-section .promo-link {
+  background: none; border: 0; padding: .55rem 0 0; min-height: 44px; margin-top: auto; font-weight: 800; font-size: .98rem; color: #5e3a14; gap: .45rem;
+}
+body.is-story-shelf .shelf-section .promo-link span[aria-hidden] { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f2ca83; color: #3b260f; transition: transform .25s cubic-bezier(.22, 1, .36, 1); }
+body.is-story-shelf .shelf-section .promo-link:hover { background: none; color: #3b260f; }
+body.is-story-shelf .shelf-section .promo-link:focus-visible { outline: 3px solid #74451a; outline-offset: 2px; border-radius: 10px; }
+body.is-story-shelf .shelf-section .promo-card:has(.promo-link:focus-visible) { outline: 3px solid #74451a; outline-offset: 3px; }
+body.is-story-shelf .shelf-section .promo-link:focus-visible { outline: 0; }
+body.is-story-shelf .shelf-section .promo-card:active { transform: scale(.985); transition-duration: .08s; }
+@media (hover: hover) and (pointer: fine) {
+  body.is-story-shelf .shelf-section .promo-card:hover { transform: translateY(-6px); }
+  body.is-story-shelf .shelf-section .promo-card:hover img { transform: scale(1.045); }
+  body.is-story-shelf .shelf-section .promo-card:hover .promo-link span[aria-hidden] { transform: translateX(4px); }
+}
+@media (max-width: 1000px) {
+  body.is-story-shelf .shelf-section .promo-card, body.is-story-shelf #shelf-centuries .promo-card { grid-column: span 6; }
+}
+@media (max-width: 700px) {
+  body.is-story-shelf .shelf-section .promo-grid {
+    display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 1.1rem;
+    margin-inline: calc(var(--gutter, 1.1rem) * -1); padding: .4rem var(--gutter, 1.1rem) 1.1rem; scrollbar-width: none; overscroll-behavior-x: contain;
+  }
+  body.is-story-shelf .shelf-section .promo-grid::-webkit-scrollbar { display: none; }
+  body.is-story-shelf .shelf-section .promo-card, body.is-story-shelf #shelf-lebanon .promo-card:nth-child(-n+2) { flex: 0 0 78%; scroll-snap-align: start; }
+  body.is-story-shelf .shelf-section .promo-card img, body.is-story-shelf #shelf-lebanon .promo-card:nth-child(-n+2) img { aspect-ratio: 4 / 3; }
+  body.is-story-shelf .shelf-section .promo-body h4, body.is-story-shelf #shelf-lebanon .promo-card:nth-child(-n+2) h4 { font-size: 1.65rem; }
+  body.is-story-shelf .shelf-section::after { inset-inline: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.is-story-shelf .shelf-section .promo-card img, body.is-story-shelf .shelf-section .promo-link span[aria-hidden] { transition: none; }
+  body.is-story-shelf .shelf-section .promo-card:hover, body.is-story-shelf .shelf-section .promo-card:hover img, body.is-story-shelf .shelf-section .promo-card:active { transform: none; }
+}
+@media (max-width: 700px) {
+  body.is-story-shelf .shelf-jump { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -1.1rem; padding: .2rem 1.1rem; scroll-snap-type: x proximity; }
+  body.is-story-shelf .shelf-jump::-webkit-scrollbar { display: none; }
+  body.is-story-shelf .shelf-jump a { flex: 0 0 auto; white-space: nowrap; scroll-snap-align: start; }
+}
+
