@@ -323,7 +323,7 @@ body.is-story-shelf .shelf-n { font-size: .8rem; color: #6d5a49; border-inline-s
 @media (hover: hover) and (pointer: fine) { body.is-story-shelf .shelf-jump a:hover { border-color: #a9743e; background: #f8deaa; } }
 body.is-story-shelf .shelf-section { margin-top: clamp(2.4rem, 5vw, 3.6rem); scroll-margin-top: 6.5rem; }
 body.is-story-shelf .shelf-section[hidden],
-body.is-story-shelf .promo-card[hidden],
+body.is-story-shelf .shelf-section .promo-card[hidden],
 body.is-story-shelf .shelf-empty[hidden] { display: none; }
 body.is-story-shelf .shelf-head { display: grid; gap: .3rem; margin-bottom: 1.2rem; padding-bottom: .8rem; border-bottom: 2px solid #e8cf9d; }
 body.is-story-shelf .shelf-head h3 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.2rem); color: #30241c; }
