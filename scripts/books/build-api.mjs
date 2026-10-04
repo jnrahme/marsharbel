@@ -92,6 +92,17 @@ for (const b of books) {
 for (const s of shelvesSrc.shelves) for (const id of s.books) if (!books.find(b => b.id === id)) err(`shelf ${s.id}: unknown book ${id}`);
 for (const b of books) if (!shelvesSrc.shelves.some(s => s.books.includes(b.id))) err(`${b.slug}: not on any shelf`);
 
+// Gate: the /stories shelf and the feed must list exactly the same books.
+{
+  const shelfHtml = fs.readFileSync(R('src/pages/stories.html'), 'utf8');
+  const onShelf = [...shelfHtml.matchAll(/<article class="promo-card[^"]*"[^>]*>[\s\S]*?<\/article>/g)]
+    .map(m => (/href="\.\/([^"]+)"/.exec(m[0]) || [])[1]).filter(Boolean);
+  const inFeed = books.map(b => b.slug);
+  for (const s of onShelf) if (!inFeed.includes(s)) err(`stories.html lists "${s}" but it is not in content/ (add it to the converter list, run extract-legacy.mjs, then books:api)`);
+  for (const s of inFeed) if (!onShelf.includes(s)) err(`content/ has "${s}" but stories.html does not list it`);
+  if (new Set(onShelf).size !== onShelf.length) err('stories.html lists a book twice');
+}
+
 for (const loc of Object.keys(summaries)) emit(`books.${loc}.json`, { schema: 1, locale: loc, books: summaries[loc] });
 emit('shelves.json', { schema: 1, shelves: shelvesSrc.shelves.map(s => ({ id: s.id, access: s.access, title: { en: s.title }, description: { en: s.description }, books: s.books })) });
 for (const loc of uiLocales) { const u = jread(`content/ui/${loc}.json`); emit(`ui/${loc}.json`, u); }
