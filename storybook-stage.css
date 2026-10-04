@@ -101,7 +101,7 @@ body.is-story-page .storybook-controls .btn:disabled{opacity:.35}
  body.is-story-page .storybook-controls .btn.primary:hover:not(:disabled){background:linear-gradient(180deg,#f6d899,#d4a05a)}}
 body.is-story-page .storybook-controls .btn:focus-visible{outline:3px solid #f3d79c;outline-offset:3px}
 /* progress dots */
-.st-dots{order:4;flex-basis:100%;display:flex;justify-content:center;gap:.5rem;margin-top:.2rem}
+.st-dots{order:4;flex-basis:100%;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:.2rem;max-width:100%}
 .st-dots button{width:10px;height:10px;padding:0;border-radius:50%;border:0;background:rgba(227,191,122,.28);cursor:pointer;
   transition:transform 200ms var(--st-ease),background-color 200ms var(--st-ease);position:relative}
 .st-dots button::after{content:"";position:absolute;inset:-14px}
