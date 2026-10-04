@@ -3040,3 +3040,18 @@ main:has(#eucharistic-miracles) .grid-2~p,main:has(#eucharistic-miracles) .grid-
 .tour-card .tour-step{color:#e0bd6a}
 .tour-gap{margin:.8rem 0;padding:1rem;border:1px dashed #c9a24d;border-radius:.5rem;font-style:italic}
 .tour-small{max-width:500px;width:100%;height:auto;border-radius:.4rem}
+
+/* UI batch 5b: testimonies (letters), news and novena cards. Scoped by page-unique hooks, no HTML edits. */
+main:has(#letters-globe-title) .section>h2{margin-top:clamp(2.2rem,5vw,3.4rem)}
+main:has(#letters-globe-title) .section>h2+p{margin-top:.6rem}
+main:has(#letters-globe-title) .testimony-grid{gap:clamp(.9rem,2vw,1.3rem)}
+main:has(#letters-globe-title) .testimony-card{background:rgba(255,255,255,.03);border:1px solid var(--theme-line-soft);border-radius:14px;padding:1.3rem 1.5rem;transition:border-color 200ms var(--pol-out),background-color 200ms var(--pol-out)}
+main:has(> .section > .grid-2 > .card.update[id]) .card.update{background:rgba(255,255,255,.03);border:1px solid var(--theme-line-soft);border-radius:14px;padding:1.3rem 1.4rem;transition:border-color 200ms var(--pol-out),background-color 200ms var(--pol-out)}
+main:has(> .section > .grid-2 > .card.update[id]) .grid-2{gap:clamp(1rem,2vw,1.5rem)}
+main.prayer-page:has(#nine-days) .grid-2>.card{background:rgba(255,255,255,.03);border:1px solid var(--theme-line-soft);border-radius:14px;padding:1.2rem 1.35rem}
+main.prayer-page:has(#nine-days) .grid-2{gap:clamp(.9rem,2vw,1.3rem)}
+main.prayer-page:has(#nine-days) .prayer-card{background:rgba(255,255,255,.03);border:1px solid var(--theme-line-soft);border-radius:14px;padding:1.3rem 1.5rem;scroll-margin-top:7rem}
+@media (hover:hover) and (pointer:fine){
+main:has(#letters-globe-title) .testimony-card:hover,main:has(> .section > .grid-2 > .card.update[id]) .card.update:hover{border-color:rgba(211,178,110,.45);background:rgba(255,255,255,.05)}}
+@media(max-width:820px){main:has(#letters-globe-title) .testimony-card,main:has(> .section > .grid-2 > .card.update[id]) .card.update,main.prayer-page:has(#nine-days) .prayer-card{padding:1.1rem 1.1rem}}
+@media (prefers-reduced-motion:reduce){main:has(#letters-globe-title) .testimony-card,main:has(> .section > .grid-2 > .card.update[id]) .card.update{transition:none}}
