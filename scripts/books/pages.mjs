@@ -34,11 +34,14 @@ function derive(f) {
     bioHeading: f.saintBio?.heading ?? '', bioFacts: f.saintBio?.facts ?? '', bioBody: f.saintBio?.body ?? '', bioTail: f.saintBio?.tail ?? ''
   };
 }
+const BOOL = ['defer', 'disabled', 'hidden', 'crossorigin', 'data-story-specific-disclosure'];
 function render(f) {
   const d = derive(f);
   const on = { ogLocale: !!(f.ogLocales && f.ogLocales.length), preLine: !!f.reflectionPreLine, summary: f.summaryHtml != null, family: f.familyReadingHtml != null, dataFile: !!f.dataFile, saintBio: !!f.saintBio, faq: !!(f.faq && f.faq.length), faqSection: !!(f.faq && f.faq.length), related: !!f.related };
   let t = TEMPLATE.replace(/<!--opt:(\w+)-->([\s\S]*?)<!--\/opt:\1-->/g, (_, k, body) => on[k] ? body : '');
-  return t.replace(/@@(\w+)@@/g, (_, k) => { if (!(k in d)) throw new Error('template slot ' + k); return d[k]; });
+  t = t.replace(/@@(\w+)@@/g, (_, k) => { if (!(k in d)) throw new Error('template slot ' + k); return d[k]; });
+  for (const a of f.bareAttrs || []) t = t.split(` ${a}=""`).join(` ${a}`); // legacy pages write boolean attributes bare
+  return t;
 }
 
 // ---- tolerant extraction (whitespace-insensitive) -------------------------------------------
@@ -76,6 +79,7 @@ function extract(html) {
     faq, related: rel == null ? null : [...rel.matchAll(/<li><a href="([^"]+)">(.*?)<\/a><\/li>/g)].map(m => ({ href: m[1], label: m[2] })),
     ...((pn => pn && pn !== 'AI-generated read-aloud narration. Illustrations are original composite scenes, not historical footage.' ? { productionNote: pn } : {})((/<p class="story-production-note"[^>]*>(.*?)<\/p>/.exec(c) || [])[1])),
     ...(/\{\{> head-font-preloads\}\}/.test(c) ? { fontPreloadsFragment: true } : {}),
+    ...((b => b.length ? { bareAttrs: b } : {})(BOOL.filter(a => new RegExp(`\\s${a}(?=[\\s>/])`).test(c)))),
     ...(bio ? { saintBio: { heading: bio[1], facts: bio[2], body: bio[3], tail: bio[4] } } : {}),
     footerFragment: footer[1], footerCredit: footer[2],
     ...(/\{\{> head-og-locales\}\}/.test(c) ? { ogLocales: 'all' } : og.length ? { ogLocales: og } : {}), ...(/<style>#story-body\.is-reflection \{ white-space: pre-line; \}<\/style>/.test(c) ? { reflectionPreLine: true } : {}),
