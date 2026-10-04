@@ -3061,3 +3061,6 @@ main:has(#letters-globe-title) .testimony-card:hover,main:has(> .section > .grid
 @media(max-height:520px){.topbar{position:static}}
 @media(min-width:821px){.topbar{overflow-x:clip}}
 @media(min-width:821px){.topbar .nav-sub{max-height:70vh;overflow-y:auto;overscroll-behavior:contain}}
+
+/* News grid: a short card beside a tall one keeps its own height (no stretched dead space). */
+main:has(> .section > .grid-2 > .card.update[id]) .grid-2{align-items:start}
