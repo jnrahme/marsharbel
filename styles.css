@@ -3091,3 +3091,9 @@ body.is-saints-shelf .shelf-book a{display:inline-flex;align-items:center;gap:.4
 @media (hover:hover) and (pointer:fine){body.is-saints-shelf .shelf-book a:hover{background:rgba(214,170,98,.16);border-color:#e3bd7a}}
 body.is-saints-shelf .shelf-book a:focus-visible{outline:3px solid #f4e9d8;outline-offset:3px}
 @media (prefers-reduced-motion:reduce){body.is-saints-shelf .shelf-search input,body.is-saints-shelf .shelf-jump a,body.is-saints-shelf .shelf-book a{transition:none}}
+body.is-saints-shelf .shelf-soon{list-style:none;margin:1rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:.35rem .9rem}
+body.is-saints-shelf .shelf-soon-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15rem .6rem;padding:.55rem .8rem;border-left:2px solid rgba(214,170,98,.3);font-size:.9rem;color:rgba(244,233,216,.72)}
+body.is-saints-shelf .shelf-soon-row[hidden]{display:none}
+body.is-saints-shelf .shelf-soon-row strong{color:#f4e9d8;font-weight:700}
+body.is-saints-shelf .shelf-soon-row span{flex:1 1 100%;font-size:.8rem}
+body.is-saints-shelf .shelf-soon-row em{font-style:normal;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#e3bd7a;opacity:.8}
