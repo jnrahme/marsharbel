@@ -108,6 +108,8 @@ emit('manifest.json', {
   books: manifestBooks
 });
 
+out.set(`${API}/.htaccess`, fs.readFileSync(R('scripts/books/api.htaccess'), 'utf8'));
+
 if (errors.length) { console.error('Books API validation failed:\n- ' + errors.slice(0, 50).join('\n- ') + (errors.length > 50 ? `\n(+${errors.length - 50} more)` : '')); process.exit(1); }
 
 if (CHECK) {
