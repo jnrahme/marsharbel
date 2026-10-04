@@ -1,0 +1,237 @@
+/* Reader stage: a candlelit reading room with an open book.
+   Layered over storybook.css + storybook-joy.css. Motion tokens follow the site's --pol-out curve. */
+body.is-story-page{
+  --st-ease:cubic-bezier(.23,1,.32,1);
+  --st-paper:#fbf3e1; --st-paper-2:#f3e6c8; --st-ink:#2f2218; --st-gold:#e3bf7a; --st-gold-d:#b98a45;
+  background:
+    radial-gradient(60% 46% at 50% 30%, rgba(227,176,98,.20), transparent 70%),
+    radial-gradient(120% 80% at 50% 120%, #0b0807 30%, transparent 70%),
+    linear-gradient(180deg,#1b130e,#120c09 60%,#0c0807);
+  background-color:#120c09;background-repeat:no-repeat;background-size:100% 100vh,100% 100vh,100% 100%;
+  color:#efe3cc;
+}
+body.is-story-page main.storybook-page{display:flex;flex-direction:column;color:#efe3cc}
+body.is-story-page main.storybook-page>.story-hero{order:0}
+body.is-story-page main.storybook-page>.story-resume-banner{order:1}
+body.is-story-page main.storybook-page>section.storybook{order:2}
+body.is-story-page main.storybook-page>*:not(.story-hero):not(.story-resume-banner):not(.storybook){order:5}
+body.is-story-page .story-hero{border:0;text-align:center;padding:clamp(1.4rem,4vw,2.6rem) 1rem .4rem;max-width:880px;margin-inline:auto}
+body.is-story-page .story-hero h1{color:#f6e7c6;font-size:clamp(2rem,4.6vw,3.4rem);letter-spacing:.005em;text-shadow:0 2px 24px rgba(227,176,98,.28)}
+body.is-story-page .story-hero .kicker{color:var(--st-gold);border:0;letter-spacing:.2em;font-size:.72rem}
+body.is-story-page .story-hero p{color:#cdbb9c;max-width:60ch;margin-inline:auto}
+body.is-story-page .story-hero p.short-answer{display:none}
+body.is-story-page .story-hero .btn{display:none}
+body.is-story-page .story-hero .btn:focus-visible{display:inline-flex}
+
+/* the book */
+body.is-story-page section.storybook{width:min(1120px,100%);margin-inline:auto;padding:1rem 1rem 0;display:flex;flex-direction:column;gap:1.1rem;perspective:2200px}
+body.is-story-page .storybook-panel{
+  position:relative;display:grid;grid-template-columns:1fr 1fr;gap:0;border:0;border-radius:6px 14px 14px 6px;overflow:visible;
+  background:transparent;box-shadow:none;transform-style:preserve-3d;
+  transform:rotateX(4deg);transform-origin:50% 100%;
+  filter:drop-shadow(0 40px 38px rgba(0,0,0,.55)) drop-shadow(0 6px 10px rgba(0,0,0,.4));
+}
+body.is-story-page .storybook-panel::before{ /* page-block edges */
+  content:"";position:absolute;inset:10px -9px -9px -9px;border-radius:8px 16px 16px 8px;z-index:-1;
+  background:repeating-linear-gradient(90deg,#d9c79d 0 2px,#efe1bb 2px 4px);
+  box-shadow:inset 0 -3px 6px rgba(0,0,0,.25);
+}
+body.is-story-page .storybook-panel::after{ /* spine shadow */
+  content:"";position:absolute;top:0;bottom:0;left:calc(50% - 34px);width:68px;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(60,35,12,.16) 38%,rgba(40,22,6,.34) 50%,rgba(60,35,12,.16) 62%,transparent);
+}
+body.is-story-page .storybook-illustration{
+  min-height:0;aspect-ratio:auto;padding:clamp(.8rem,2vw,1.6rem);display:flex;align-items:center;
+  background:
+    radial-gradient(120% 90% at 100% 50%, rgba(120,80,30,.16), transparent 60%),
+    linear-gradient(90deg,var(--st-paper-2),var(--st-paper));
+  border-radius:6px 0 0 6px;transform-origin:100% 50%;
+}
+body.is-story-page .storybook-illustration::before,body.is-story-page .storybook-illustration::after{display:none}
+body.is-story-page .scene-art{width:100%}
+body.is-story-page .storybook-illustration .scene-photo{
+  display:block;width:100%;height:auto;object-fit:contain;border-radius:3px;
+  box-shadow:0 0 0 1px rgba(80,50,20,.35),0 0 0 7px var(--st-paper),0 0 0 8px rgba(160,120,60,.45),0 14px 24px rgba(60,35,10,.28);
+}
+body.is-story-page .storybook-text{
+  position:relative;min-width:0;padding:clamp(1.4rem,3.6vw,3.2rem) clamp(1.2rem,3.4vw,3rem);gap:.7rem;align-content:center;
+  background:
+    radial-gradient(120% 90% at 0% 50%, rgba(120,80,30,.16), transparent 55%),
+    linear-gradient(270deg,var(--st-paper-2),var(--st-paper));
+  color:var(--st-ink);border-radius:0 14px 14px 0;transform-origin:0 50%;
+}
+body.is-story-page .storybook-text h2{color:#2a1b10;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.1}
+body.is-story-page .storybook-text .storybook-step{color:#8a5f2b;letter-spacing:.2em;font-size:.72rem;text-transform:uppercase;display:flex;align-items:center;gap:.7rem}
+body.is-story-page .storybook-text .storybook-step::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,#b98a45,transparent)}
+body.is-story-page .storybook-text #story-body{color:#3a2b1e;font-size:clamp(1.05rem,1.45vw,1.28rem);line-height:1.75;text-wrap:pretty}
+body.is-story-page .storybook-text #story-body:not(.is-reflection)::first-letter{
+  font-family:"Cormorant Garamond",Georgia,serif;float:left;font-size:3.6em;line-height:.8;padding:.06em .1em 0 0;color:#9a6a2c;font-weight:600}
+body.is-story-page .storybook-prayer,body.is-story-page .storybook-heart{color:#6a4a26}
+body.is-story-page .storybook-text.is-reading #story-body{background:linear-gradient(transparent 60%,rgba(227,191,122,.35) 60%)}
+body.is-story-page .storybook-panel.is-reflection-page{grid-template-columns:1fr}
+body.is-story-page .storybook-panel.is-reflection-page::after{display:none}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration{border-radius:6px 14px 0 0;justify-content:center;padding:1.2rem 1rem .9rem;background:transparent}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration .scene-art{width:auto;max-width:100%}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration .scene-photo{max-height:220px;width:auto;max-width:100%;margin-inline:auto}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-text{border-radius:6px 14px 14px 6px;max-width:none}
+
+/* page turn: forward unfolds the right page from the spine, back unfolds the left page */
+@keyframes st-fwd{from{transform:rotateY(-96deg);filter:brightness(.55)}to{transform:rotateY(0);filter:none}}
+@keyframes st-back{from{transform:rotateY(96deg);filter:brightness(.55)}to{transform:rotateY(0);filter:none}}
+@keyframes st-fade{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+body.is-story-page .storybook-panel.st-fwd .storybook-text{animation:st-fwd 520ms var(--st-ease) both}
+body.is-story-page .storybook-panel.st-back .storybook-illustration{animation:st-back 520ms var(--st-ease) both}
+body.is-story-page .storybook-panel.st-fwd .storybook-illustration,
+body.is-story-page .storybook-panel.st-back .storybook-text{animation:st-fade 420ms var(--st-ease) both}
+body.is-story-page .storybook-panel.is-turning .storybook-text,body.is-story-page .storybook-panel.is-turning .scene-art{animation:none}
+
+/* dock */
+body.is-story-page .storybook-controls{
+  order:3;position:relative;top:auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.7rem;padding:.5rem 0 0;background:transparent;border:0}
+body.is-story-page .storybook-controls .story-reading-indicator,
+body.is-story-page .storybook-controls .story-voice-pack{color:#cdbb9c}
+body.is-story-page .storybook-controls .story-voice-pack select{background:#2a1d14;color:#efe3cc;border:1px solid rgba(227,191,122,.35);border-radius:999px;padding:.35rem .7rem}
+body.is-story-page .storybook-controls .btn{
+  min-height:52px;border-radius:999px;border:1px solid rgba(227,191,122,.45);color:#f3dfb3;font-weight:600;padding:0 1.4rem;
+  background:linear-gradient(180deg,rgba(255,236,190,.10),rgba(255,236,190,.03));backdrop-filter:blur(6px)}
+body.is-story-page .storybook-controls .btn.primary{background:linear-gradient(180deg,#f0cd8a,#c99650);color:#2a1a0a;border-color:#f3d79c;box-shadow:0 8px 24px rgba(227,176,98,.28)}
+body.is-story-page .storybook-controls .btn#story-read{order:2}
+body.is-story-page .storybook-controls .btn#story-prev{order:1}
+body.is-story-page .storybook-controls .btn#story-next{order:3}
+body.is-story-page .storybook-controls .btn:disabled{opacity:.35}
+@media (hover:hover){body.is-story-page .storybook-controls .btn:hover:not(:disabled){border-color:#f3d79c;background:linear-gradient(180deg,rgba(255,236,190,.2),rgba(255,236,190,.07))}
+ body.is-story-page .storybook-controls .btn.primary:hover:not(:disabled){background:linear-gradient(180deg,#f6d899,#d4a05a)}}
+body.is-story-page .storybook-controls .btn:focus-visible{outline:3px solid #f3d79c;outline-offset:3px}
+/* progress dots */
+.st-dots{order:4;flex-basis:100%;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:.2rem;max-width:100%}
+.st-dots button{width:10px;height:10px;padding:0;border-radius:50%;border:0;background:rgba(227,191,122,.28);cursor:pointer;
+  transition:transform 200ms var(--st-ease),background-color 200ms var(--st-ease);position:relative}
+.st-dots button::after{content:"";position:absolute;inset:-14px}
+.st-dots button[aria-current="step"]{background:#f0cd8a;transform:scale(1.5)}
+.st-dots button:focus-visible{outline:2px solid #f3d79c;outline-offset:3px}
+body.is-story-page details.story-settings{align-self:center;color:#cdbb9c}
+body.is-story-page details.story-settings summary{color:#f3dfb3;border:1px solid rgba(227,191,122,.35);background:transparent;border-radius:999px}
+body.is-story-page details.story-settings .storybook-extras{background:#24180f;border:1px solid rgba(227,191,122,.3);color:#efe3cc}
+body.is-story-page details.story-settings .btn,body.is-story-page .story-rate-btn{color:#f3dfb3}
+body.is-story-page .story-evidence{background:rgba(255,236,190,.05);border:1px solid rgba(227,191,122,.22);color:#cdbb9c;border-radius:12px}
+body.is-story-page .story-evidence a{color:#f0cd8a}
+body.is-story-page .story-resume-banner{margin:.6rem auto;background:#2a1d14;color:#efe3cc;border:1px solid rgba(227,191,122,.35)}
+/* below the fold: keep content readable on the dark stage */
+body.is-story-page main.storybook-page>.section{width:min(880px,100%);margin-inline:auto;padding-inline:1rem}
+body.is-story-page .section h2,body.is-story-page .section h3{color:#f6e7c6}
+body.is-story-page .storybook-page .card.story{background:rgba(255,236,190,.06);border:1px solid rgba(227,191,122,.22);color:#e4d5b8;box-shadow:none}
+body.is-story-page .storybook-page .card.story p,body.is-story-page .storybook-page .card.story li,body.is-story-page .storybook-page .card.story h3{color:#e4d5b8}
+body.is-story-page .storybook-page .card.story a,body.is-story-page .storybook-page .section a{color:#f0cd8a}
+body.is-story-page .story-production-note{color:#a8967a;text-align:center;padding:1rem}
+
+@media (max-width:820px){
+  body.is-story-page .storybook-panel{display:flex;flex-direction:column;transform:none;border-radius:14px;filter:drop-shadow(0 24px 24px rgba(0,0,0,.5))}
+  body.is-story-page .storybook-panel::before{inset:8px -4px -6px -4px}
+  body.is-story-page .storybook-panel::after{display:none}
+  body.is-story-page .storybook-illustration{border-radius:14px 14px 0 0;padding:.9rem .9rem .3rem;background:linear-gradient(180deg,var(--st-paper-2),var(--st-paper))}
+  body.is-story-page .storybook-illustration .scene-photo{max-height:none;width:100%}
+  body.is-story-page .storybook-text{border-radius:0 0 14px 14px;background:var(--st-paper)}
+  body.is-story-page .storybook-panel.st-fwd .storybook-text{transform-origin:50% 0;animation-name:st-fade}
+  body.is-story-page .storybook-panel.st-back .storybook-illustration{transform-origin:50% 100%;animation-name:st-fade}
+  body.is-story-page .storybook-controls{position:sticky;bottom:0;z-index:20;padding:.7rem .5rem calc(.7rem + env(safe-area-inset-bottom));margin:0 -1rem;
+    background:linear-gradient(180deg,transparent,rgba(14,9,6,.92) 38%)}
+  body.is-story-page .storybook-controls .btn{flex:1 1 0;min-width:0;padding:0 .6rem}
+  body.is-story-page .storybook-controls .story-voice-pack,body.is-story-page .storybook-controls .story-reading-indicator{flex-basis:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  body.is-story-page .storybook-panel{transform:none}
+  body.is-story-page .storybook-panel.st-fwd .storybook-text,body.is-story-page .storybook-panel.st-back .storybook-illustration,
+  body.is-story-page .storybook-panel.st-fwd .storybook-illustration,body.is-story-page .storybook-panel.st-back .storybook-text{animation:st-fade 160ms linear both}
+  .st-dots button{transition:none}
+}
+
+body.is-story-page .storybook>details.story-settings{order:0}
+body.is-story-page .storybook>.storybook-panel{order:1}
+body.is-story-page .storybook>.storybook-controls{order:2}
+body.is-story-page .storybook>.story-evidence{order:3}
+body.is-story-page .story-hero .btn{display:inline-flex;margin-top:.6rem;min-height:40px;background:transparent;color:#f3dfb3;border:1px solid rgba(227,191,122,.4);font-size:.85rem}
+body.is-story-page .story-hero .btn:hover{border-color:#f3d79c}
+body.is-story-page .story-hero p{margin-bottom:.4rem}
+body.is-story-page .storybook>details.story-settings{position:absolute;right:1.2rem;top:-.4rem;z-index:5}
+body.is-story-page section.storybook{position:relative}
+
+body.is-story-page .storybook-page .section h2,body.is-story-page .storybook-page .section h3{color:#f6e7c6}
+body.is-story-page .storybook-page .storybook-controls .btn#story-read{order:2;background:linear-gradient(180deg,#f0cd8a,#c99650);color:#2a1a0a;border-color:#f3d79c}
+body.is-story-page .storybook-page .storybook-controls #story-next{background:linear-gradient(180deg,rgba(255,236,190,.10),rgba(255,236,190,.03));color:#f3dfb3;border-color:rgba(227,191,122,.45)}
+@media (max-width:820px){body.is-story-page .storybook>details.story-settings{position:static}}
+body.is-story-page .story-hero a.btn,body.is-story-page .story-hero .btn.subtle,body.is-story-page .storybook-page .story-hero .btn{background:transparent!important;color:#f3dfb3!important;border:1px solid rgba(227,191,122,.4)!important;box-shadow:none}
+body.is-story-page .storybook>.story-evidence summary,body.is-story-page .story-evidence summary{color:#e4d5b8}
+body.is-story-page .storybook>details.story-settings{top:-3rem}
+body.is-story-page .storybook-page .storybook-controls #story-next,body.is-story-page .storybook-page .storybook-controls #story-prev{color:#f3dfb3}
+body.is-story-page .storybook-page .storybook-controls #story-next:disabled{opacity:.35}
+body.is-story-page .story-hero .story-shelf-link{background:transparent;color:#f3dfb3;border:1px solid rgba(227,191,122,.4);box-shadow:none;min-height:40px;font-size:.85rem}
+body.is-story-page .story-hero .story-shelf-link:hover{background:rgba(255,236,190,.1);border-color:#f3d79c}
+body.is-story-page .story-hero .story-shelf-link:focus-visible{outline:3px solid #f3d79c}
+@media (max-width:820px){
+  body.is-story-page .storybook-controls{background:linear-gradient(180deg,rgba(14,9,6,0),rgba(14,9,6,.96) 28%,#0e0906)}
+  body.is-story-page section.storybook{padding-bottom:1.2rem}
+}
+body.is-story-page .storybook.is-rtl .storybook-text .storybook-step::after{background:linear-gradient(270deg,#b98a45,transparent)}
+/* RTL pages: no decorative drop cap. Arabic script does not take one, and English text on an RTL page must stay intact. */
+body.is-story-page .storybook.is-rtl #story-body:not(.is-reflection)::first-letter{float:none;font:inherit;line-height:inherit;padding:0;color:inherit}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-text{padding-inline:max(1.4rem,calc((100% - 44rem)/2))}
+body.is-story-page .storybook-panel.is-reflection-page #story-body{font-size:clamp(1.05rem,1.3vw,1.2rem)}
+/* touch devices: keep hover rules from sticking after a tap */
+body.is-story-page .storybook-page .storybook-controls .btn:hover:not(:disabled){color:#f3dfb3;background:linear-gradient(180deg,rgba(255,236,190,.10),rgba(255,236,190,.03))}
+body.is-story-page .storybook-page .storybook-controls .btn#story-read:hover:not(:disabled){color:#2a1a0a;background:linear-gradient(180deg,#f0cd8a,#c99650)}
+@media (hover:hover){
+ body.is-story-page .storybook-page .storybook-controls .btn:hover:not(:disabled){background:linear-gradient(180deg,rgba(255,236,190,.2),rgba(255,236,190,.07));border-color:#f3d79c}
+ body.is-story-page .storybook-page .storybook-controls .btn#story-read:hover:not(:disabled){background:linear-gradient(180deg,#f6d899,#d4a05a)}}
+body.is-story-page .storybook-page .storybook-controls #story-next:hover:not(:disabled),
+body.is-story-page .storybook-page .storybook-controls #story-prev:hover:not(:disabled){color:#f3dfb3;background:linear-gradient(180deg,rgba(255,236,190,.10),rgba(255,236,190,.03))}
+@media (hover:hover){
+ body.is-story-page .storybook-page .storybook-controls #story-next:hover:not(:disabled),
+ body.is-story-page .storybook-page .storybook-controls #story-prev:hover:not(:disabled){background:linear-gradient(180deg,rgba(255,236,190,.2),rgba(255,236,190,.07));border-color:#f3d79c}}
+
+/* The dock stays reachable at every size: pinned to the viewport bottom while the book is on screen. */
+body.is-story-page .storybook-controls{position:sticky;top:auto;bottom:.6rem;z-index:20;align-self:center;width:fit-content;max-width:100%;
+  padding:.55rem 1rem .6rem;border-radius:28px;background:rgba(14,9,6,.92);backdrop-filter:blur(10px);border:1px solid rgba(227,191,122,.18);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+@media (max-width:820px){body.is-story-page .storybook-controls{bottom:0;align-self:stretch;width:auto;border-radius:0;border:0;box-shadow:none}}
+/* Compact hero so the whole book plus its dock fit a 1280x800 laptop viewport. */
+@media (min-width:821px){
+  body.is-story-page .story-hero{max-width:1120px;position:relative;padding:.9rem 1rem .2rem}
+  body.is-story-page .story-hero h1{font-size:clamp(1.9rem,3.2vw,2.5rem);margin:.1rem 0 .2rem}
+  body.is-story-page .story-hero p{font-size:.92rem;margin:0 auto}
+  body.is-story-page .story-hero .story-shelf-link{position:absolute;left:1rem;top:.9rem;margin:0}
+  body.is-story-page section.storybook{padding-top:.4rem;gap:.7rem}
+  body.is-story-page .storybook>details.story-settings{top:-2.4rem;right:1rem}
+  body.is-story-page .storybook-text{padding:1.6rem 2.4rem;gap:.5rem}
+  body.is-story-page .storybook-text #story-body{font-size:clamp(1rem,1.2vw,1.12rem);line-height:1.65}
+  body.is-story-page .storybook-text h2{font-size:clamp(1.6rem,2.4vw,2.1rem)}
+  body.is-story-page .storybook-illustration{padding:1.2rem}
+}
+
+body.is-story-page .storybook-panel.is-reflection-page{background:linear-gradient(180deg,var(--st-paper-2),var(--st-paper) 40%);border-radius:6px 14px 14px 6px}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-text{background:transparent}
+body.is-story-page .storybook-panel.is-reflection-page{background:none}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration{background:linear-gradient(180deg,var(--st-paper-2),var(--st-paper))}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-text{background:var(--st-paper)}
+
+/* Reader mode: larger type, wins over the compact desktop sizing above. */
+body.is-story-page .storybook.is-reader-mode .storybook-text #story-body{font-size:clamp(1.2rem,1.7vw,1.45rem);line-height:1.85;max-width:60ch}
+body.is-story-page .storybook.is-reader-mode .storybook-text h2{font-size:clamp(2rem,3.4vw,3rem)}
+/* Page dots: 24px hit area, visual dot drawn inside */
+.st-dots{gap:0}
+.st-dots button{width:24px;height:24px;border-radius:50%;background:transparent;transform:none;transition:none}
+.st-dots button::after{content:none}
+.st-dots button::before{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:rgba(227,191,122,.28);
+  transition:transform 200ms var(--st-ease),background-color 200ms var(--st-ease)}
+.st-dots button[aria-current="step"]{background:transparent;transform:none}
+.st-dots button[aria-current="step"]::before{background:#f0cd8a;transform:scale(1.5)}
+@media (prefers-reduced-motion:reduce){.st-dots button::before{transition:none}}
+
+/* Contrast pass: every control and text node clears WCAG AA over the dark stage, corners and borders included. */
+body.is-story-page .storybook-page .storybook-controls .btn#story-read{background:linear-gradient(180deg,#86581f,#5c3a12);color:#fff4da;border-color:rgba(243,215,156,.35);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+@media (hover:hover){body.is-story-page .storybook-page .storybook-controls .btn#story-read:hover:not(:disabled){background:linear-gradient(180deg,#97642a,#6b4416);color:#fff4da}}
+body.is-story-page .storybook-page .storybook-controls .btn#story-read:hover:not(:disabled){color:#fff4da}
+body.is-story-page .storybook-page .storybook-controls .btn{color:#fff0cc;border-color:rgba(227,191,122,.22)}
+body.is-story-page .storybook-page .storybook-controls #story-next,body.is-story-page .storybook-page .storybook-controls #story-prev{color:#fff0cc;background:rgba(255,236,190,.04)}
+body.is-story-page .story-hero .story-shelf-link{color:#fff0cc;border-color:rgba(227,191,122,.22)}
+body.is-story-page .storybook-page .section-sub,body.is-story-page .storybook-page [id$="-film"] p,body.is-story-page .storybook-page [id$="-transcript"] p{color:#d9c8a8}
+body.is-story-page .storybook-page .storybook-controls .btn#story-read{background:linear-gradient(180deg,#6e4618,#4f300d);border-color:rgba(243,215,156,.2)}
+@media (hover:hover){body.is-story-page .storybook-page .storybook-controls .btn#story-read:hover:not(:disabled){background:linear-gradient(180deg,#7d5120,#5a3711)}}

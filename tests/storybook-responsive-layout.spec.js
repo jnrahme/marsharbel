@@ -1,7 +1,7 @@
 const {test,expect}=require('@playwright/test');
 const books=['marina-story','maroun-story','magdalene-story','story','pio-story','jpii-story','mother-teresa-story','rafqa-story','hardini-story','peter-story','massabki-story'];
 const sizes=[[390,844],[768,1024],[1280,800],[1920,1080]];
-async function geometry(page){return page.evaluate(()=>{const r=s=>document.querySelector(s).getBoundingClientRect().toJSON();return{overflow:document.documentElement.scrollWidth>innerWidth,header:r('.topbar'),controls:r('.storybook-controls'),panel:r('.storybook-panel'),text:r('.storybook-text'),art:r('.storybook-illustration')};});}
+async function geometry(page){return page.evaluate(()=>{const r=s=>document.querySelector(s).getBoundingClientRect().toJSON();return{overflow:document.documentElement.scrollWidth>innerWidth,header:r('.topbar'),controls:r('.storybook-controls'),panel:r('.storybook-panel'),text:r('.storybook-text'),art:r('.storybook-illustration'),vh:innerHeight};});}
 for(const book of books)for(const[w,h]of sizes)test(`${book}: usable reader at ${w}`,async({page},info)=>{
  test.skip(info.project.name!=='laptop','Explicit four-breakpoint matrix runs once, not once per project');test.setTimeout(90000);
  await page.setViewportSize({width:w,height:h});await page.emulateMedia({reducedMotion:'reduce'});
@@ -14,7 +14,7 @@ for(const book of books)for(const[w,h]of sizes)test(`${book}: usable reader at $
  for(let n=1;n<=count;n++){
   if(n>1)await page.locator('#story-next').click();await expect(page.locator('#story-step')).toHaveText(`Page ${n} of ${count}`);
   await expect.poll(async()=>{const g=await geometry(page);return g.controls.top>=g.header.bottom-2;}).toBe(true);
-  const g=await geometry(page);expect(g.overflow).toBe(false);expect(g.controls.bottom).toBeLessThan(h);expect(g.art.width).toBeGreaterThan(100);expect(g.text.width).toBeGreaterThan(200);
+  const g=await geometry(page);expect(g.overflow).toBe(false);expect(g.controls.bottom).toBeLessThanOrEqual(h);expect(g.art.width).toBeGreaterThan(100);expect(g.text.width).toBeGreaterThan(200);
   if(n>1&&w<=980)expect(g.text.top).toBeLessThan(h-120);
   if(await page.locator('.storybook-panel').evaluate(e=>e.classList.contains('is-reflection-page'))){expect(g.text.top).toBeGreaterThanOrEqual(g.art.bottom-1);expect(g.art.height).toBeLessThanOrEqual(281);}
  }
@@ -26,7 +26,7 @@ for(const w of[390,768,1280,1920])test(`resume and AutoContinue keep controls vi
  test.skip(info.project.name!=='laptop');await page.setViewportSize({width:w,height:w===768?1024:w===1920?1080:844});await page.emulateMedia({reducedMotion:'reduce'});
  await page.addInitScript(()=>{window.__MARSHARBEL_QA__={kind:'monitoring',runner:'ci-storybook-resume'};localStorage.setItem('storybook_last_page_peter','3');window._testClips=[];window.Audio=function(src){const a={src,paused:true,playbackRate:1,play(){this.paused=false;return Promise.resolve();},pause(){this.paused=true;}};window._testClips.push(a);return a;};});
  await page.route(/google-analytics\.com/,r=>r.fulfill({status:204}));await page.goto('/peter-story');await page.locator('#story-resume-btn').click();await expect(page.locator('#story-step')).toHaveText('Page 4 of 10');
- let g=await geometry(page);expect(g.controls.top).toBeGreaterThanOrEqual(g.header.bottom-2);expect(g.panel.top).toBeGreaterThanOrEqual(g.controls.bottom-1);
+ let g=await geometry(page);expect(g.controls.top).toBeGreaterThanOrEqual(g.header.bottom-2);expect(g.controls.bottom).toBeLessThanOrEqual(g.vh);
  await page.locator('#story-read').click();await page.waitForFunction(()=>window._testClips.some(a=>!a.paused));await page.evaluate(()=>{const a=window._testClips.find(a=>!a.paused);a.pause();a.onerror=null;const ended=a.onended;a.onended=null;ended();});
- await expect(page.locator('#story-step')).toHaveText('Page 5 of 10');await expect.poll(async()=>{const g=await geometry(page);return g.controls.top>=g.header.bottom-2&&g.panel.top>=g.controls.bottom-1;}).toBe(true);
+ await expect(page.locator('#story-step')).toHaveText('Page 5 of 10');await expect.poll(async()=>{const g=await geometry(page);return g.controls.top>=g.header.bottom-2&&g.controls.bottom<=g.vh;}).toBe(true);
 });
