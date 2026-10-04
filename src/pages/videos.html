@@ -19,6 +19,7 @@
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/videos" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/videos" />
   <!-- hreflang:end -->
+  <link rel="stylesheet" href="video-playback.css" />
 </head>
 <body>
   {{> skip-link}}
@@ -44,21 +45,24 @@
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/tF8SYCuYKBE" title="Saint Charbel documentary - Ascension Presents (9:57)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/tF8SYCuYKBE" title="Saint Charbel documentary - Ascension Presents (9:57)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Ascension Presents' short documentary on the saint's life (9:57).</p>
+          {{> video-fallback "tF8SYCuYKBE" "./saint-charbel-encyclopedia"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/aprfrtO8YuE" title="Saint Charbel documentary (24:54)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/aprfrtO8YuE" title="Saint Charbel documentary (24:54)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>A half-hour documentary on Saint Charbel's life and miracles (24:54).</p>
+          {{> video-fallback "aprfrtO8YuE" "./saint-charbel-encyclopedia"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/bI1wftAyhbk" title="Saint Charbel full-length documentary (1:20:16)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/bI1wftAyhbk" title="Saint Charbel full-length documentary (1:20:16)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>A full-length documentary for a slow evening (1:20:16).</p>
+          {{> video-fallback "bI1wftAyhbk" "./saint-charbel-encyclopedia"}}
         </article>
       </div>
     </section>
@@ -68,9 +72,10 @@
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/IE8f4VTRuzc" title="Saint Charbel - the movie, English subtitles (1:43:46)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/IE8f4VTRuzc" title="Saint Charbel - the movie, English subtitles (1:43:46)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The full feature film, with English subtitles (1:43:46).</p>
+          {{> video-fallback "IE8f4VTRuzc" "./saint-charbel-encyclopedia"}}
         </article>
       </div>
     </section>
@@ -80,39 +85,45 @@
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/anSLIzK-g0Q" title="Saint Charbel film - part 1 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/anSLIzK-g0Q" title="Saint Charbel film - part 1 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 1 of 6.</p>
+          {{> video-fallback "anSLIzK-g0Q" "./saint-charbel-encyclopedia"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/eyEOV33l-6s" title="Saint Charbel film - part 2 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/eyEOV33l-6s" title="Saint Charbel film - part 2 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 2 of 6.</p>
+          {{> video-fallback "eyEOV33l-6s" "./saint-charbel-encyclopedia"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/Yp3suNf3nE0" title="Saint Charbel film - part 3 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/Yp3suNf3nE0" title="Saint Charbel film - part 3 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 3 of 6.</p>
+          {{> video-fallback "Yp3suNf3nE0" "./saint-charbel-encyclopedia"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/sFxz15Q25cM" title="Saint Charbel film - part 4 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/sFxz15Q25cM" title="Saint Charbel film - part 4 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 4 of 6.</p>
+          {{> video-fallback "sFxz15Q25cM" "./saint-charbel-encyclopedia"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/YMk_ZwM89Hk" title="Saint Charbel film - part 5 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/YMk_ZwM89Hk" title="Saint Charbel film - part 5 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 5 of 6.</p>
+          {{> video-fallback "YMk_ZwM89Hk" "./saint-charbel-encyclopedia"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/-vm2LgAOxKY" title="Saint Charbel film - part 6 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/-vm2LgAOxKY" title="Saint Charbel film - part 6 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 6 of 6.</p>
+          {{> video-fallback "-vm2LgAOxKY" "./saint-charbel-encyclopedia"}}
         </article>
       </div>
     </section>
@@ -122,33 +133,38 @@
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/aJ7BQw3Jb7w" title="Nohad El Shami recounts her healing (15:54)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/aJ7BQw3Jb7w" title="Nohad El Shami recounts her healing (15:54)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Nohad El Shami telling her own story (15:54) - <a href="./miracles/nohad-el-shami">read her story</a>.</p>
+          {{> video-fallback "aJ7BQw3Jb7w" "./miracles/nohad-el-shami"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/PtO7UYdg8ac" title="Dafne Gutierrez tells the story of her healing (19:01)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/PtO7UYdg8ac" title="Dafne Gutierrez tells the story of her healing (19:01)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Dafne Gutierrez on the Phoenix healing (19:01) - <a href="./miracles/dafne-gutierrez">read the account</a>.</p>
+          {{> video-fallback "PtO7UYdg8ac" "./miracles/dafne-gutierrez"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/_AYx8EKBt1w" title="Archival footage of the 1965 beatification (6:00)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/_AYx8EKBt1w" title="Archival footage of the 1965 beatification (6:00)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The 1965 beatification in archival footage (6:00) - <a href="./miracles/canonization">the three Church-approved miracles</a>.</p>
+          {{> video-fallback "_AYx8EKBt1w" "./miracles/canonization"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/SPcpSHCn78I" title="Raymond Nader recounts the night at the hermitage (7:01)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/SPcpSHCn78I" title="Raymond Nader recounts the night at the hermitage (7:01)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Raymond Nader in his own words (7:01) - <a href="./miracles/raymond-nader">read his story</a>.</p>
+          {{> video-fallback "SPcpSHCn78I" "./miracles/raymond-nader"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/3RrAr39PE8I" title="The Tablet reports on the January 2026 healings (2:20)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/3RrAr39PE8I" title="The Tablet reports on the January 2026 healings (2:20)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The Tablet on the two healings recorded in January 2026 (2:20) - <a href="./miracles/latest-register-entries">the latest register entries</a>.</p>
+          {{> video-fallback "3RrAr39PE8I" "./miracles/latest-register-entries"}}
         </article>
       </div>
     </section>
@@ -158,33 +174,38 @@
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/QY5i1o36hK4" title="Annaya and the monastery (10:46)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/QY5i1o36hK4" title="Annaya and the monastery (10:46)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The monastery of Saint Maron at Annaya (10:46).</p>
+          {{> video-fallback "QY5i1o36hK4" "./visit-annaya"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/n6nHifPR1IU" title="The hermitage at Annaya (5:47)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/n6nHifPR1IU" title="The hermitage at Annaya (5:47)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The hermitage where he spent twenty-three years (5:47).</p>
+          {{> video-fallback "n6nHifPR1IU" "./visit-annaya"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/fhPk5QRA6Bk" title="Annaya pilgrimage footage (2:27)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/fhPk5QRA6Bk" title="Annaya pilgrimage footage (2:27)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Pilgrimage footage from Annaya (2:27).</p>
+          {{> video-fallback "fhPk5QRA6Bk" "./visit-annaya"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/jAtXdt-JiqY" title="Annaya and the hermitage (7:00)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/jAtXdt-JiqY" title="Annaya and the hermitage (7:00)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The monastery and the mountain above it (7:00).</p>
+          {{> video-fallback "jAtXdt-JiqY" "./visit-annaya"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/U6LM2nIU19k" title="Annaya short clip (0:35)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/U6LM2nIU19k" title="Annaya short clip (0:35)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>A short glimpse of Annaya (0:35).</p>
+          {{> video-fallback "U6LM2nIU19k" "./visit-annaya"}}
         </article>
       </div>
     </section>
@@ -194,21 +215,24 @@
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/5nSgs7VI1go" title="Saint Charbel relic tour report" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/5nSgs7VI1go" title="Saint Charbel relic tour report" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>A relic tour report.</p>
+          {{> video-fallback "5nSgs7VI1go" "./saint-charbel-relics"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/USXxBmIdILg" title="Saint Charbel relic tour report" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/USXxBmIdILg" title="Saint Charbel relic tour report" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>A relic tour report.</p>
+          {{> video-fallback "USXxBmIdILg" "./saint-charbel-relics"}}
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/uLs6r2XCFHY" title="Saint Charbel relics in Bethlehem" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/uLs6r2XCFHY" title="Saint Charbel relics in Bethlehem" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The relics welcomed in Bethlehem.</p>
+          {{> video-fallback "uLs6r2XCFHY" "./saint-charbel-relics"}}
         </article>
       </div>
     </section>
@@ -236,6 +260,7 @@
 
   {{> footer-credit-a "Saint Charbel videos."}}
 
+  <script defer src="video-playback.js"></script>
   <script defer src="app.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>

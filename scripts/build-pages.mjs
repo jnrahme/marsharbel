@@ -8,6 +8,8 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { renderWebPage, renderWebPageArticle, renderWebPageAudience, renderFaq } from './lib/jsonld.mjs';
 import { renderPrimaryNav } from './lib/primary-nav.mjs';
+import { renderVideoFallback } from './lib/video-fallback.mjs';
+const videoCopy = JSON.parse(await readFile('locales/en/video-playback.json', 'utf8'));
 const check = process.argv.includes('--check');
 const SRC = 'src/pages', FRAG = 'partials/fragments';
 const navTemplate = (await readFile('partials/primary-navigation.html', 'utf8')).trim();
@@ -39,6 +41,7 @@ for (const file of await walk(SRC).catch(() => [])) {
     return escapeText(copy[key]);
   });
   let built = catalogued.replace(/([ \t]*)\{\{> ([a-z0-9-]+)((?: "(?:[^"\\]|\\.)*")*)\}\}/g, (_, indent, name, rawArgs) => {
+    if (name === 'video-fallback') return indent + renderVideoFallback(videoCopy, ...[...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
     if (name === 'primary-nav') return indent + renderPrimaryNav(navTemplate, rel);
     if (name === 'ld-faq') return indent + renderFaq([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
     if (name === 'ld-webpage-audience') return indent + renderWebPageAudience([...rawArgs.matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]));
