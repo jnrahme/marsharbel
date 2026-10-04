@@ -41,7 +41,7 @@ const dataFiles = {
   francis: 'francis-story-data.js', joseph: 'joseph-story-data.js', anthony: 'anthony-story-data.js', therese: 'therese-story-data.js',
   massabki: 'massabki-story-data.js', teresa: 'mother-teresa-story-data.js', rafqa: 'rafqa-story-data.js', 'charbel-v2': 'charbel-v2-story-data.js',
   magdalene: 'magdalene-story-data.js', sergius: 'sergius-bacchus-story-data.js', maroun: 'maroun-story-data.js', jude: 'jude-story-data.js',
-  peter: 'peter-story-data.js', hardini: 'hardini-story-data.js'
+  marina: 'marina-story-data.js', peter: 'peter-story-data.js', hardini: 'hardini-story-data.js'
 };
 const storyPages = { ...inline };
 for (const [id, f] of Object.entries(dataFiles)) {

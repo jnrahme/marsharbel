@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "contentVersion": "3b46aa8772416360",
+ "contentVersion": "5e23ade058289418",
  "apiBase": "/api/v1",
  "media": {
   "base": "https://marsharbel.com/",
@@ -111,11 +111,29 @@
    }
   },
   {
+   "id": "bk-marina",
+   "slug": "marina-story",
+   "access": "public",
+   "status": "published",
+   "order": 5,
+   "shelf": "lebanon",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/marina-story/en.json",
+     "sha256": "3f80954913c26833b250d6accf90688111ce5f07c7f233d2c11f8287af74d899",
+     "bytes": 17419
+    }
+   }
+  },
+  {
    "id": "bk-maroun",
    "slug": "maroun-story",
    "access": "public",
    "status": "published",
-   "order": 5,
+   "order": 6,
    "shelf": "lebanon",
    "locales": [
     "en"
@@ -133,7 +151,7 @@
    "slug": "massabki-story",
    "access": "public",
    "status": "published",
-   "order": 6,
+   "order": 7,
    "shelf": "lebanon",
    "locales": [
     "en"
@@ -151,7 +169,7 @@
    "slug": "joseph-story",
    "access": "public",
    "status": "published",
-   "order": 7,
+   "order": 8,
    "shelf": "jesus",
    "locales": [
     "en"
@@ -169,7 +187,7 @@
    "slug": "peter-story",
    "access": "public",
    "status": "published",
-   "order": 8,
+   "order": 9,
    "shelf": "jesus",
    "locales": [
     "en"
@@ -187,7 +205,7 @@
    "slug": "magdalene-story",
    "access": "public",
    "status": "published",
-   "order": 9,
+   "order": 10,
    "shelf": "jesus",
    "locales": [
     "en"
@@ -205,7 +223,7 @@
    "slug": "jude-story",
    "access": "public",
    "status": "published",
-   "order": 10,
+   "order": 11,
    "shelf": "jesus",
    "locales": [
     "en"
@@ -223,7 +241,7 @@
    "slug": "sergius-bacchus-story",
    "access": "public",
    "status": "published",
-   "order": 11,
+   "order": 12,
    "shelf": "centuries",
    "locales": [
     "en"
@@ -241,7 +259,7 @@
    "slug": "francis-story",
    "access": "public",
    "status": "published",
-   "order": 12,
+   "order": 13,
    "shelf": "centuries",
    "locales": [
     "en"
@@ -259,7 +277,7 @@
    "slug": "anthony-story",
    "access": "public",
    "status": "published",
-   "order": 13,
+   "order": 14,
    "shelf": "centuries",
    "locales": [
     "en"
@@ -277,7 +295,7 @@
    "slug": "therese-story",
    "access": "public",
    "status": "published",
-   "order": 14,
+   "order": 15,
    "shelf": "modern",
    "locales": [
     "en"
@@ -295,7 +313,7 @@
    "slug": "pio-story",
    "access": "public",
    "status": "published",
-   "order": 15,
+   "order": 16,
    "shelf": "modern",
    "locales": [
     "en"
@@ -313,7 +331,7 @@
    "slug": "jpii-story",
    "access": "public",
    "status": "published",
-   "order": 16,
+   "order": 17,
    "shelf": "modern",
    "locales": [
     "en"
@@ -331,7 +349,7 @@
    "slug": "mother-teresa-story",
    "access": "public",
    "status": "published",
-   "order": 17,
+   "order": 18,
    "shelf": "modern",
    "locales": [
     "en"
