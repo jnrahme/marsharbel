@@ -7,6 +7,11 @@ news_desk = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(news_desk)
 
 class NewsDeskTests(unittest.TestCase):
+    def test_ministers_visit_card(self):
+        text = (ROOT/'news.html').read_text()
+        self.assertEqual(text.count('id="religious-trails-minister-visit-2026-10"'), 1)
+        self.assertIn('not a new agreement or a trail opening', text)
+
     def test_gallery_series_news(self):
         text = (ROOT/'news.html').read_text()
         self.assertEqual(text.count('id="gallery-ai-transformation-series-2026-10"'), 1)
