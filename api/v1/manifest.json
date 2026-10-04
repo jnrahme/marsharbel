@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "contentVersion": "5e23ade058289418",
+ "contentVersion": "50bd2ee5c918f8cf",
  "apiBase": "/api/v1",
  "media": {
   "base": "https://marsharbel.com/",
@@ -237,11 +237,29 @@
    }
   },
   {
+   "id": "bk-augustine",
+   "slug": "augustine-story",
+   "access": "public",
+   "status": "published",
+   "order": 12,
+   "shelf": "centuries",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/augustine-story/en.json",
+     "sha256": "5dc6522e42f0bd24e0ee1b50ad1b8f76778db84365f80cf7c1cb6c45d2331525",
+     "bytes": 17293
+    }
+   }
+  },
+  {
    "id": "bk-sergius-bacchus",
    "slug": "sergius-bacchus-story",
    "access": "public",
    "status": "published",
-   "order": 12,
+   "order": 13,
    "shelf": "centuries",
    "locales": [
     "en"
@@ -259,7 +277,7 @@
    "slug": "francis-story",
    "access": "public",
    "status": "published",
-   "order": 13,
+   "order": 14,
    "shelf": "centuries",
    "locales": [
     "en"
@@ -277,7 +295,7 @@
    "slug": "anthony-story",
    "access": "public",
    "status": "published",
-   "order": 14,
+   "order": 15,
    "shelf": "centuries",
    "locales": [
     "en"
@@ -295,7 +313,7 @@
    "slug": "therese-story",
    "access": "public",
    "status": "published",
-   "order": 15,
+   "order": 16,
    "shelf": "modern",
    "locales": [
     "en"
@@ -313,7 +331,7 @@
    "slug": "pio-story",
    "access": "public",
    "status": "published",
-   "order": 16,
+   "order": 17,
    "shelf": "modern",
    "locales": [
     "en"
@@ -331,7 +349,7 @@
    "slug": "jpii-story",
    "access": "public",
    "status": "published",
-   "order": 17,
+   "order": 18,
    "shelf": "modern",
    "locales": [
     "en"
@@ -349,7 +367,7 @@
    "slug": "mother-teresa-story",
    "access": "public",
    "status": "published",
-   "order": 18,
+   "order": 19,
    "shelf": "modern",
    "locales": [
     "en"
