@@ -15,7 +15,7 @@ function block(name) {
 }
 const VOICE = block('VOICE_PACKS');
 const legacy = { charbel: block('STORIES').en, pio: block('PIO_STORY_EN'), jpii: block('JPII_STORY_EN') };
-const files = { francis: 'francis-story-data.js', joseph: 'joseph-story-data.js', anthony: 'anthony-story-data.js', therese: 'therese-story-data.js', massabki: 'massabki-story-data.js', teresa: 'mother-teresa-story-data.js', rafqa: 'rafqa-story-data.js', 'charbel-v2': 'charbel-v2-story-data.js', magdalene: 'magdalene-story-data.js', sergius: 'sergius-bacchus-story-data.js', maroun: 'maroun-story-data.js', jude: 'jude-story-data.js', marina: 'marina-story-data.js', peter: 'peter-story-data.js', hardini: 'hardini-story-data.js' };
+const files = { francis: 'francis-story-data.js', joseph: 'joseph-story-data.js', anthony: 'anthony-story-data.js', therese: 'therese-story-data.js', massabki: 'massabki-story-data.js', teresa: 'mother-teresa-story-data.js', rafqa: 'rafqa-story-data.js', 'charbel-v2': 'charbel-v2-story-data.js', magdalene: 'magdalene-story-data.js', sergius: 'sergius-bacchus-story-data.js', maroun: 'maroun-story-data.js', jude: 'jude-story-data.js', marina: 'marina-story-data.js', peter: 'peter-story-data.js', hardini: 'hardini-story-data.js', augustine: 'augustine-story-data.js' };
 for (const [id, f] of Object.entries(files)) { const w = {}; vm.runInNewContext(read(f), { window: w }); legacy[id] = Object.values(w)[0]; }
 const manifest = JSON.parse(read('api/v1/manifest.json'));
 let pages = 0, bad = 0;
