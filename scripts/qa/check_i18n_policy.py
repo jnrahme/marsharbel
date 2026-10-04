@@ -125,6 +125,8 @@ def check(root=ROOT):
     maroun_catalog = read_json(maroun_path)['values'] if maroun_path.exists() else {}
     marina_path = root/'locales/en/marina-story-copy.json'
     marina_catalog = read_json(marina_path)['values'] if marina_path.exists() else {}
+    annaya_path = root/'locales/en/annaya-practical-copy.json'
+    annaya_catalog = read_json(annaya_path)['values'] if annaya_path.exists() else {}
     sergius_path = root/'locales/en/sergius-bacchus-story-copy.json'
     sergius_catalog = read_json(sergius_path)['values'] if sergius_path.exists() else {}
     shelf_path = root/'locales/en/stories-shelf-copy.json'
@@ -208,6 +210,7 @@ def check(root=ROOT):
         # unreviewed occurrence from being silently accepted.
         additions -= Counter(maroun_catalog.get(file, {}))
         additions -= Counter(marina_catalog.get(file, {}))
+        additions -= Counter(annaya_catalog.get(file, {}))
         additions -= Counter(sergius_catalog.get(file, {}))
         additions -= Counter(magdalene_catalog.get(file, {}))
         additions -= Counter(jude_catalog.get(file, {}))
