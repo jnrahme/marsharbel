@@ -34,13 +34,13 @@ test('page hinge is bounded, interruptible, and skipped for keyboard / reduced m
   await page.addInitScript(() => { window.__MARSHARBEL_QA__ = { kind: 'monitoring' }; });
   await page.goto('/peter-story');
   await page.locator('#story-next').click();
-  const animation = await page.locator('.scene-art').evaluate(e => e.getAnimations().map(a => ({ duration: a.effect.getTiming().duration, frames: a.effect.getKeyframes() })));
+  const animation = await page.locator('.storybook-panel>.storybook-illustration .scene-art').evaluate(e => e.getAnimations().map(a => ({ duration: a.effect.getTiming().duration, frames: a.effect.getKeyframes() })));
   expect(animation[0].duration).toBe(240); expect(animation[0].frames[0].transform).toContain('rotateY');
   await page.locator('#story-next').click();
   await expect(page.locator('#story-step')).toHaveText('Page 3 of 10');
   await page.keyboard.press('ArrowRight');
-  expect(await page.locator('.scene-art').evaluate(e => e.getAnimations().length)).toBe(0);
+  expect(await page.locator('.storybook-panel>.storybook-illustration .scene-art').evaluate(e => e.getAnimations().length)).toBe(0);
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.locator('#story-next').click();
-  expect(await page.locator('.scene-art').evaluate(e => e.getAnimations().length)).toBe(0);
+  expect(await page.locator('.storybook-panel>.storybook-illustration .scene-art').evaluate(e => e.getAnimations().length)).toBe(0);
 });

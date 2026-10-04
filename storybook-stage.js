@@ -93,13 +93,69 @@
       nextCard.classList.remove('is-in'); void nextCard.offsetWidth; nextCard.classList.add('is-in');
     });
   }
+
+  // True page flip: a leaf with a front and a back face turns about the spine (desktop) or lifts away (phone).
+  var mqPhone = window.matchMedia('(max-width:740px)'), mqCalm = window.matchMedia('(prefers-reduced-motion:reduce)');
+  var keyAt = 0; document.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') keyAt = Date.now(); }, true);
+  var snap = null, flipEnd = null, flipTimer = 0;
+  function pageEls() { return { art: panel.querySelector('.storybook-illustration'), text: panel.querySelector('.storybook-text') }; }
+  function ghost(el) {
+    var c = el.cloneNode(true);
+    c.removeAttribute('id'); c.setAttribute('aria-hidden', 'true'); c.setAttribute('inert', '');
+    Array.prototype.forEach.call(c.querySelectorAll('[id]'), function (n) { n.removeAttribute('id'); });
+    Array.prototype.forEach.call(c.querySelectorAll('a,button,input,select,textarea,details'), function (n) { n.setAttribute('tabindex', '-1'); });
+    return c;
+  }
+  function take() {
+    var e = pageEls(); if (!e.art || !e.text) { snap = null; return; }
+    snap = { art: ghost(e.art), text: ghost(e.text), all: null, refl: panel.classList.contains('is-reflection-page') };
+    snap.all = Array.prototype.map.call(panel.children, function (n) { return n.matches('.storybook-illustration,.storybook-text') ? ghost(n) : null; }).filter(Boolean);
+  }
+  function div(cls, kids) { var d = document.createElement('div'); [].concat(cls).forEach(function (c) { d.classList.add(c); }); (kids || []).forEach(function (k) { d.appendChild(k); }); return d; }
+  function endFlip() {
+    clearTimeout(flipTimer);
+    var st = panel.querySelector('.st-flip'); if (st) st.remove();
+    panel.classList.remove('st-flipping', 'st-flip-f', 'st-flip-b', 'st-flip-phone');
+    flipEnd = null;
+  }
+  function startFlip(fwd, old) {
+    if (flipEnd) endFlip();
+    var phone = mqPhone.matches, now = pageEls();
+    if (!old || !now.art || !now.text) return false;
+    var stage = div('st-flip'), ms;
+    if (phone) {
+      var leaf = div(['st-leaf', 'st-leaf-phone', fwd ? 'is-up' : 'is-down'], old.all.map(function (n) { return n; }));
+      leaf.appendChild(div('st-sh'));
+      stage.appendChild(div('st-cast'));
+      stage.appendChild(leaf);
+      ms = 640;
+    } else {
+      if (old.refl || panel.classList.contains('is-reflection-page')) return false;
+      var under = fwd ? old.art : old.text, front = fwd ? old.text : old.art, back = ghost(fwd ? now.art : now.text);
+      under.classList.add('st-under'); under.classList.add(fwd ? 'is-l' : 'is-r');
+      var leaf2 = div(['st-leaf', fwd ? 'is-f' : 'is-b'], [
+        div(['st-face', 'st-front'], [front, div('st-sh')]),
+        div(['st-face', 'st-back'], [back, div('st-sh')])
+      ]);
+      stage.appendChild(under); stage.appendChild(div(['st-cast', fwd ? 'is-r' : 'is-l'])); stage.appendChild(leaf2);
+      ms = 860;
+    }
+    panel.appendChild(stage);
+    panel.classList.remove('st-fwd', 'st-back');
+    panel.classList.add('st-flipping'); panel.classList.add(phone ? 'st-flip-phone' : (fwd ? 'st-flip-f' : 'st-flip-b'));
+    flipTimer = setTimeout(endFlip, ms + 80);
+    flipEnd = true;
+    return true;
+  }
   function sync() {
     var p = parse(); if (!p) return;
     buildDots(p.total);
     if (dots) Array.prototype.forEach.call(dots.children, function (b, i) {
       if (i + 1 === p.n) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
     });
-    if (last && p.n !== last) {
+    var flipped = false;
+    if (last && p.n !== last && !mqCalm.matches && Date.now() - keyAt > 400) flipped = startFlip(p.n > last, snap);
+    if (!flipped && last && p.n !== last) {
       var cls = p.n > last ? 'st-fwd' : 'st-back';
       panel.classList.remove('st-fwd', 'st-back');
       void panel.offsetWidth;
@@ -108,9 +164,11 @@
       timer = setTimeout(function () { panel.classList.remove('st-fwd', 'st-back'); }, 620);
     }
     last = p.n;
+    if (!flipped) take(); else take();
     showNext(p.n === p.total);
   }
   new MutationObserver(sync).observe(step, { childList: true, characterData: true, subtree: true });
+  take();
   sync();
 
   // swipe (touch) - horizontal intent only, never fights vertical scroll
