@@ -418,3 +418,6 @@ body.is-story-page .saint-bio .saint-bio-text p.saint-bio-sources a { color: #f0
 @media (max-width: 760px) { body.is-story-page .saint-bio-grid { border-radius: 20px; } }
 @media (prefers-reduced-motion: reduce) { body.is-story-page .saint-bio .saint-bio-text p.saint-bio-more a { transition: none; } body.is-story-page .saint-bio .saint-bio-text p.saint-bio-more a:hover { transform: none; } }
 body.is-story-page .saint-bio-text, body.is-story-page .saint-facts { overflow-wrap: anywhere; }
+body.is-story-page .saint-bio .saint-key { margin: 0 0 1.2rem; padding: 1rem 1.2rem; max-width: 62ch; background: rgba(214, 170, 98, .1); border: 1px solid rgba(214, 170, 98, .35); border-inline-start: 4px solid #e3bd7a; border-radius: 14px; }
+body.is-story-page .saint-bio .saint-key h3 { margin: 0 0 .35rem; font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #e3bd7a; }
+body.is-story-page .saint-bio .saint-key p { margin: 0; font-size: 1.05rem; line-height: 1.65; color: #f4e9d8; }
