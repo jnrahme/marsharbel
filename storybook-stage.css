@@ -124,7 +124,7 @@ body.is-story-page .storybook-page .card.story p,body.is-story-page .storybook-p
 body.is-story-page .storybook-page .card.story a,body.is-story-page .storybook-page .section a{color:#f0cd8a}
 body.is-story-page .story-production-note{color:#a8967a;text-align:center;padding:1rem}
 
-@media (max-width:820px){
+@media (max-width:740px){
   body.is-story-page .storybook-panel{display:flex;flex-direction:column;transform:none;border-radius:14px;filter:drop-shadow(0 24px 24px rgba(0,0,0,.5))}
   body.is-story-page .storybook-panel::before{inset:8px -4px -6px -4px}
   body.is-story-page .storybook-panel::after{display:none}
@@ -258,3 +258,43 @@ body.is-story-page .storybook-page .storybook-controls .btn#story-read{backgroun
 @media (max-width:820px){.st-next{grid-template-columns:1fr}.st-next-art{min-height:0;aspect-ratio:16/9}
   .st-next-art::after{background:linear-gradient(0deg,#1b110a 0%,transparent 55%)}}
 @media (prefers-reduced-motion:reduce){.st-next.is-in{animation:none}.st-next-art img,.st-next-go{transition:none}}
+
+/* ---- true page flip: a leaf with a front and a back turns about the spine; on phones the page lifts away ---- */
+body.is-story-page .st-flip{position:absolute;inset:0;z-index:6;pointer-events:none;perspective:1900px;perspective-origin:50% 40%}
+body.is-story-page .st-flip>*{position:absolute;top:0;bottom:0;width:50%;margin:0}
+body.is-story-page .st-flip .st-under.is-l{left:0}
+body.is-story-page .st-flip .st-under.is-r{left:50%}
+body.is-story-page .st-flip .st-under{max-width:none;height:100%}
+body.is-story-page .storybook-panel.st-flip-f>.storybook-illustration,
+body.is-story-page .storybook-panel.st-flip-b>.storybook-text{visibility:hidden}
+body.is-story-page .storybook-panel.st-flipping>.storybook-text,body.is-story-page .storybook-panel.st-flipping>.storybook-illustration{animation:none!important}
+body.is-story-page .st-leaf{transform-style:preserve-3d;will-change:transform}
+body.is-story-page .st-leaf.is-f{left:50%;transform-origin:0 50%;animation:st-leaf-f 860ms cubic-bezier(.45,.05,.25,1) both}
+body.is-story-page .st-leaf.is-b{left:0;transform-origin:100% 50%;animation:st-leaf-b 860ms cubic-bezier(.45,.05,.25,1) both}
+body.is-story-page .st-face{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+body.is-story-page .st-face>:first-child{position:absolute;inset:0;width:100%;height:100%;max-width:none;margin:0}
+body.is-story-page .st-back{transform:rotateY(180deg)}
+body.is-story-page .st-sh{position:absolute;inset:0;pointer-events:none}
+/* light: front darkens toward the free edge as it rises, back brightens from shade as it settles; a glint sweeps across */
+body.is-story-page .st-leaf.is-f .st-front .st-sh{background:linear-gradient(90deg,rgba(30,16,4,0),rgba(30,16,4,.55)),linear-gradient(100deg,transparent 35%,rgba(255,240,200,.38) 50%,transparent 65%);background-size:100% 100%,260% 100%;animation:st-sh-front 860ms linear both}
+body.is-story-page .st-leaf.is-f .st-back .st-sh{background:linear-gradient(270deg,rgba(30,16,4,.0),rgba(30,16,4,.6));animation:st-sh-back 860ms linear both}
+body.is-story-page .st-leaf.is-b .st-front .st-sh{background:linear-gradient(270deg,rgba(30,16,4,0),rgba(30,16,4,.55)),linear-gradient(80deg,transparent 35%,rgba(255,240,200,.38) 50%,transparent 65%);background-size:100% 100%,260% 100%;animation:st-sh-front 860ms linear both}
+body.is-story-page .st-leaf.is-b .st-back .st-sh{background:linear-gradient(90deg,rgba(30,16,4,.0),rgba(30,16,4,.6));animation:st-sh-back 860ms linear both}
+body.is-story-page .st-cast{pointer-events:none;animation:st-cast 860ms ease-in-out both}
+body.is-story-page .st-cast.is-r{left:50%;background:linear-gradient(90deg,rgba(10,5,2,.6),rgba(10,5,2,0) 70%)}
+body.is-story-page .st-cast.is-l{left:0;background:linear-gradient(270deg,rgba(10,5,2,.6),rgba(10,5,2,0) 70%)}
+@keyframes st-leaf-f{0%{transform:translateZ(0) rotateY(0)}50%{transform:translateZ(46px) rotateY(-90deg) rotateX(1.2deg)}100%{transform:translateZ(0) rotateY(-180deg)}}
+@keyframes st-leaf-b{0%{transform:translateZ(0) rotateY(0)}50%{transform:translateZ(46px) rotateY(90deg) rotateX(1.2deg)}100%{transform:translateZ(0) rotateY(180deg)}}
+@keyframes st-sh-front{0%{opacity:0;background-position:0 0,0% 0}50%{opacity:1;background-position:0 0,100% 0}100%{opacity:1}}
+@keyframes st-sh-back{0%{opacity:1}100%{opacity:0}}
+@keyframes st-cast{0%{opacity:0}45%{opacity:.9}100%{opacity:0}}
+/* phone: the whole page lifts away (forward) or drops away (back) */
+body.is-story-page .st-flip .st-leaf-phone{left:0;right:0;width:auto;display:flex;flex-direction:column;overflow:hidden;border-radius:14px}
+body.is-story-page .st-leaf-phone>*:not(.st-sh){position:static;width:auto;max-width:none}
+body.is-story-page .st-leaf-phone.is-up{transform-origin:50% 0;animation:st-up 640ms cubic-bezier(.5,0,.2,1) both}
+body.is-story-page .st-leaf-phone.is-down{transform-origin:50% 100%;animation:st-down 640ms cubic-bezier(.5,0,.2,1) both}
+body.is-story-page .st-leaf-phone .st-sh{background:linear-gradient(180deg,rgba(30,16,4,.0),rgba(30,16,4,.5));animation:st-sh-front 640ms linear both}
+body.is-story-page .st-flip>.st-cast{left:0;width:100%;background:rgba(10,5,2,.45)}
+@keyframes st-up{0%{transform:rotateX(0);opacity:1}55%{opacity:1}100%{transform:translateY(-6%) rotateX(78deg);opacity:0}}
+@keyframes st-down{0%{transform:rotateX(0);opacity:1}55%{opacity:1}100%{transform:translateY(6%) rotateX(-78deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){body.is-story-page .st-flip{display:none}}
