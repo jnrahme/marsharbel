@@ -36,7 +36,7 @@ Enforcement: CI for 2. Review and the PR description for 1, 3 and 4. Worked exam
 | Rule | Enforcement |
 |---|---|
 | User-facing wording lives in `locales/<lang>/*.json` under stable keys (`navigation.home`), never as English text in templates. | CI: `scripts/qa/check_i18n_policy.py` (hardcoded-wording policy, baseline in `locales/legacy-text-baseline.json`). |
-| Locale pages are built from catalogs and templates (`npm run i18n:build`), and locales and slugs are registered in `locales/registry.json`. | CI: `build-international.py --check`, `test_i18n.py`, `check_language_routes.py`. |
+| Locale pages are built from catalogs and templates (`npm run i18n:build`), and locales and slugs are registered in `locales/registry.json`. | CI: `build-international.py --check`, `test_i18n.py`. |
 | Hreflang is emitted by the builder: reciprocal, absolute URLs, `x-default`, self-canonical. | CI: `check_seo.py`. |
 | An exact (authored) translation records `masterSha256` of the English master. When the English master changes, the digest changes and the locale file is stale. Refresh it only after the translation is updated, never to silence the check. | CI: `test_exact_master.py`, `test_exact_wiring.py`, `test_de_exact_catalogs.py`. |
 | Lanes supply translations. Engineering does not write locale copy. | Review. |
