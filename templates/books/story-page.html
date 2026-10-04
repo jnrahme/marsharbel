@@ -5,15 +5,16 @@
 <meta charset="utf-8"/>
 <!-- Google tag (gtag.js) -->
 {{> analytics}}
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!--opt:ogLocale-->@@ogLocale@@
+<!--/opt:ogLocale--><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>@@title@@</title>
   <meta name="description" content="@@desc@@" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="@@url@@" />
   {{> head-social "website" "@@title@@" "@@desc@@" "@@url@@" "@@ogImage@@" "@@title@@" "@@desc@@" "@@ogImage@@"}}
   {{> ld-webpage-audience "en" "Children and families" "@@ageMin@@" "@@ageMax@@" "@@title@@" "@@desc@@" "@@url@@" "Home" "https://marsharbel.com/" "@@h1@@" "@@url@@"}}
-  {{> ld-faq @@faqArgs@@}}
-
+<!--opt:faq-->  {{> ld-faq @@faqArgs@@}}
+<!--/opt:faq-->
 
 
 
@@ -51,23 +52,23 @@
 <link href="@@url@@" hreflang="x-default" rel="alternate"/>
 <link href="@@url@@" hreflang="en" rel="alternate"/>
 <!-- hreflang:end -->
-<style>#story-body.is-reflection { white-space: pre-line; }</style>
-</head>
+<!--opt:preLine--><style>#story-body.is-reflection { white-space: pre-line; }</style>
+<!--/opt:preLine--></head>
 <body class="is-story-page" data-story="@@storyId@@">
   {{> skip-link}}
 {{> header-open-3}}{{> primary-nav}}{{> header-close-2}}
 <main id="main-content" class="site-shell storybook-page" tabindex="-1">
 <section class="story-hero reveal">
-<span class="kicker">A Book for Ages 6-12</span>
+<span class="kicker">A Book for Ages @@ages@@</span>
 <h1>@@h1@@</h1>
 <p>@@intro@@</p>
 <p class="short-answer"><strong>Short answer:</strong> @@short@@</p>
 </section>
-<section class="section">
+<!--opt:summary--><section class="section">
 <h2>Story Summary</h2>
 <div class="card story">@@summary@@</div>
 </section>
-<div aria-live="polite" class="story-resume-banner" hidden="" id="story-resume-banner">
+<!--/opt:summary--><div aria-live="polite" class="story-resume-banner" hidden="" id="story-resume-banner">
 <span id="story-resume-text">Continue from Page 2?</span>
 <button class="btn subtle" id="story-resume-btn" type="button">Resume</button>
 <button aria-label="Dismiss" class="story-resume-dismiss" id="story-resume-dismiss" type="button">✕</button>
@@ -105,7 +106,7 @@
 <article class="storybook-panel">
 <div aria-hidden="true" class="storybook-illustration" id="story-illustration"><div class="scene-art scene-@@firstScene@@"><img alt="" class="scene-photo" decoding="async" fetchpriority="high" src="@@firstImage@@"/><div aria-hidden="true" class="scene-photo-overlay"></div></div></div>
 <div class="storybook-text">
-<p aria-live="polite" class="storybook-step" id="story-step">Page 1 of 10</p>
+<p aria-live="polite" class="storybook-step" id="story-step">Page 1 of @@pageCount@@</p>
 <h2 id="story-title">Loading story...</h2>
 <p id="story-body">Please wait while we open the storybook.</p>
 <p class="storybook-prayer" id="story-prayer"></p>
@@ -117,28 +118,29 @@
 <ul id="story-evidence-list"></ul>
 </details>
 </section>
-<p class="story-production-note" data-story-specific-disclosure="">AI-generated read-aloud narration. Illustrations are original composite scenes, not historical footage.</p>
-<section aria-labelledby="family-bible-reading" class="section">
+<p class="story-production-note"@@disclosureAttr@@>@@productionNote@@</p>
+<!--opt:family--><section aria-labelledby="family-bible-reading" class="section">
 <h2 id="family-bible-reading">Read the Bible and pray together</h2>
 <div class="card story">@@family@@</div>
 </section>
-<section class="section reveal">
+<!--/opt:family--><!--opt:saintBio-->{{> saint-bio "@@bioHeading@@" "@@bioFacts@@" "@@bioBody@@" "@@bioTail@@"}}
+<!--/opt:saintBio--><section class="section reveal">
 <h2>About this story</h2>
 <article class="card story">@@about@@</article>
 </section>
-<section class="section">
+<!--opt:faqSection--><section class="section">
 <h2>Frequently Asked Questions</h2>
 <div class="card story">@@faqCard@@</div>
 </section>
-<section class="section">
+<!--/opt:faqSection--><!--opt:related--><section class="section">
 <h2>More Saint Storybooks for Children</h2>
 <div class="card story"><ul>@@related@@</ul></div>
 </section>
-</main>
-{{> footer-credit-b "@@footer@@"}}
+<!--/opt:related--></main>
+{{> @@footerFragment@@ "@@footer@@"}}
 <script defer="" src="app.js"></script>
-<script defer="" src="@@dataFile@@"></script>
-<script defer="" src="storybook.js"></script>
+<!--opt:dataFile--><script defer="" src="@@dataFile@@"></script>
+<!--/opt:dataFile--><script defer="" src="storybook.js"></script>
 <script defer="" src="storybook-stage.js"></script>
 <script defer="" src="/locale-routes.js"></script>
 <script defer="" src="translate.js?v=20260922-1"></script>
