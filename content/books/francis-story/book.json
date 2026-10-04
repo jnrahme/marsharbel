@@ -1,0 +1,451 @@
+{
+  "schema": 1,
+  "id": "bk-francis",
+  "slug": "francis-story",
+  "legacyStoryId": "francis",
+  "pageUrl": "/francis-story",
+  "status": "published",
+  "access": "public",
+  "shelf": "centuries",
+  "order": 12,
+  "ageRange": "6-12",
+  "locales": [
+    "en"
+  ],
+  "cover": "bk-francis-img-01",
+  "voices": {
+    "en": [
+      {
+        "id": "directed-francis",
+        "label": "Story Voice",
+        "recommended": true,
+        "base": "media/storybook-francis/en-directed"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "bk-francis-p01",
+      "index": 1,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-francis-img-01",
+      "audio": {
+        "en": "bk-francis-aud-en-01"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "Original imaginative composite illustration, not a documentary reconstruction.",
+          "sources": [
+            "francisLife"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-francis-p02",
+      "index": 2,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-francis-img-02",
+      "audio": {
+        "en": "bk-francis-aud-en-02"
+      },
+      "evidence": [
+        {
+          "type": "tradition",
+          "claim": "Original imaginative composite illustration, not a documentary reconstruction.",
+          "sources": [
+            "francisLife"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-francis-p03",
+      "index": 3,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-francis-img-03",
+      "audio": {
+        "en": "bk-francis-aud-en-03"
+      },
+      "evidence": [
+        {
+          "type": "tradition",
+          "claim": "Original imaginative composite illustration, not a documentary reconstruction. Chapel repair is an illustrative composite, not a literal rendering of the reported call.",
+          "sources": [
+            "francisLife"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-francis-p04",
+      "index": 4,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-francis-img-04",
+      "audio": {
+        "en": "bk-francis-aud-en-04"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "Original imaginative composite illustration, not a documentary reconstruction. The clothed cloth-table scene symbolizes adult renunciation, not the literal historical gesture.",
+          "sources": [
+            "francisLife"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-francis-p05",
+      "index": 5,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-francis-img-05",
+      "audio": {
+        "en": "bk-francis-aud-en-05"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "Original imaginative composite illustration, not a documentary reconstruction.",
+          "sources": [
+            "francisLife"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-francis-p06",
+      "index": 6,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-francis-img-06",
+      "audio": {
+        "en": "bk-francis-aud-en-06"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "Original imaginative composite illustration, not a documentary reconstruction. Neighboring courtyards suggest related communities, not a documented joint meeting or the Rome approval scene.",
+          "sources": [
+            "francisLife"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-francis-p07",
+      "index": 7,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-francis-img-07",
+      "audio": {
+        "en": "bk-francis-aud-en-07"
+      },
+      "evidence": [
+        {
+          "type": "tradition",
+          "claim": "Original imaginative composite illustration, not a documentary reconstruction. The birds episode illustrates an attributed early account, not a verified animal response.",
+          "sources": [
+            "francisLife",
+            "francisBirds"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-francis-p08",
+      "index": 8,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-francis-img-08",
+      "audio": {
+        "en": "bk-francis-aud-en-08"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "Original imaginative composite illustration, not a documentary reconstruction.",
+          "sources": [
+            "francisLife"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-francis-p09",
+      "index": 9,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-francis-img-09",
+      "audio": {
+        "en": "bk-francis-aud-en-09"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "Original imaginative composite illustration, not a documentary reconstruction.",
+          "sources": [
+            "francisLife"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-francis-p10",
+      "index": 10,
+      "kind": "reflection",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-francis-img-10",
+      "audio": {
+        "en": "bk-francis-aud-en-10"
+      },
+      "evidence": [
+        {
+          "type": "pastoral",
+          "claim": "Original imaginative composite illustration, not a documentary reconstruction.",
+          "sources": [
+            "francisMatthew"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "francisBirds": {
+      "label": "Franciscan Media: St. Francis and the Birds",
+      "url": "https://www.franciscanmedia.org/st-anthony-messenger/st-francis-and-the-birds/"
+    },
+    "francisMatthew": {
+      "label": "Matthew 5:9",
+      "url": "https://bible.usccb.org/bible/matthew/5"
+    }
+  },
+  "assets": [
+    {
+      "id": "bk-francis-img-01",
+      "kind": "image",
+      "path": "media/storybook-francis/images/page-01.webp",
+      "mime": "image/webp",
+      "bytes": 176104,
+      "sha256": "4dfea2e795b7144521141764bcb55e2ea8bf6835694e808825bd003e217f815a",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-francis-aud-en-01",
+      "kind": "audio",
+      "path": "media/storybook-francis/en-directed/page-01.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 342477,
+      "sha256": "131c6498ff32c5e48fee214ec247fffc93f60a864da6be93523b3d4c79d43fed",
+      "access": "public",
+      "durationMs": 28512
+    },
+    {
+      "id": "bk-francis-img-02",
+      "kind": "image",
+      "path": "media/storybook-francis/images/page-02.webp",
+      "mime": "image/webp",
+      "bytes": 171932,
+      "sha256": "30ff60f246a2df0727c736148c21391c5b1f7a376e4b257791ced3101b5bca62",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-francis-aud-en-02",
+      "kind": "audio",
+      "path": "media/storybook-francis/en-directed/page-02.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 388557,
+      "sha256": "ee530bd389f9a3e726fd7c950401118efe675f3c3dd5dd0b49dc619c987b61a9",
+      "access": "public",
+      "durationMs": 32352
+    },
+    {
+      "id": "bk-francis-img-03",
+      "kind": "image",
+      "path": "media/storybook-francis/images/page-03.webp",
+      "mime": "image/webp",
+      "bytes": 238458,
+      "sha256": "e9d73fa6c497c64ce347f36af29405667293359b5c9e999f2918f0b0583175f6",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-francis-aud-en-03",
+      "kind": "audio",
+      "path": "media/storybook-francis/en-directed/page-03.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 326637,
+      "sha256": "5fee696844c9035e596f21c6139b218d0a1c9fad1377841ffa6c1b8c007d067f",
+      "access": "public",
+      "durationMs": 27192
+    },
+    {
+      "id": "bk-francis-img-04",
+      "kind": "image",
+      "path": "media/storybook-francis/images/page-04.webp",
+      "mime": "image/webp",
+      "bytes": 185930,
+      "sha256": "cf9de68bb50d51aaabe275d8f0535c731e8872b2add3384fc147547493dcd383",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-francis-aud-en-04",
+      "kind": "audio",
+      "path": "media/storybook-francis/en-directed/page-04.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 300141,
+      "sha256": "13309b0b4ea5e4cf24f0e2c5897d058fa784c3a630b47a5910ad988a9e4368c6",
+      "access": "public",
+      "durationMs": 24984
+    },
+    {
+      "id": "bk-francis-img-05",
+      "kind": "image",
+      "path": "media/storybook-francis/images/page-05.webp",
+      "mime": "image/webp",
+      "bytes": 229314,
+      "sha256": "3c5a7e9011125a684e3ebf9a93dd342067e86ca79b621c985fa2471950f9ac4d",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-francis-aud-en-05",
+      "kind": "audio",
+      "path": "media/storybook-francis/en-directed/page-05.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 337293,
+      "sha256": "4a191409dacb7ea01d91b3f6b948a81a63dcef0e8f9d64b69164fc7dbb0c050b",
+      "access": "public",
+      "durationMs": 28080
+    },
+    {
+      "id": "bk-francis-img-06",
+      "kind": "image",
+      "path": "media/storybook-francis/images/page-06.webp",
+      "mime": "image/webp",
+      "bytes": 272960,
+      "sha256": "5f7bd95aedf6bb0a8ca453f38e7c3edb8d765bf4cd1da5104f226992e04de376",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-francis-aud-en-06",
+      "kind": "audio",
+      "path": "media/storybook-francis/en-directed/page-06.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 341901,
+      "sha256": "398fd84e7edb3b54542dbf1bc02d747c0e584ab59bdfa8ea8428553719341e7d",
+      "access": "public",
+      "durationMs": 28464
+    },
+    {
+      "id": "bk-francis-img-07",
+      "kind": "image",
+      "path": "media/storybook-francis/images/page-07.webp",
+      "mime": "image/webp",
+      "bytes": 240012,
+      "sha256": "7c4485d7b56abfb17ea85c8209e8a48b866f468890977b17df98a60a2f156a00",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-francis-aud-en-07",
+      "kind": "audio",
+      "path": "media/storybook-francis/en-directed/page-07.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 366093,
+      "sha256": "50d88b78185f0622391db79aa76718815371e4eec38b589b9bb3868592fd95da",
+      "access": "public",
+      "durationMs": 30480
+    },
+    {
+      "id": "bk-francis-img-08",
+      "kind": "image",
+      "path": "media/storybook-francis/images/page-08.webp",
+      "mime": "image/webp",
+      "bytes": 216392,
+      "sha256": "93dfc88c71600144c2025d4c5b799b56b9c69f49c2f04803c2599a5a348aa729",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-francis-aud-en-08",
+      "kind": "audio",
+      "path": "media/storybook-francis/en-directed/page-08.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 353997,
+      "sha256": "d0d85885262c523951498f1bdc2f1bde59301894d8dc168fa7a6dbeb8a37b8ad",
+      "access": "public",
+      "durationMs": 29472
+    },
+    {
+      "id": "bk-francis-img-09",
+      "kind": "image",
+      "path": "media/storybook-francis/images/page-09.webp",
+      "mime": "image/webp",
+      "bytes": 198124,
+      "sha256": "a3fd8d8e235122ea17846ccbf5aae91504625440c2018fc3f58e980a67b127c0",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-francis-aud-en-09",
+      "kind": "audio",
+      "path": "media/storybook-francis/en-directed/page-09.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 355437,
+      "sha256": "8a7ce438b054c17f1adeaaab12b4d4cea8f41834f1471aff913e20efd5e029e8",
+      "access": "public",
+      "durationMs": 29592
+    },
+    {
+      "id": "bk-francis-img-10",
+      "kind": "image",
+      "path": "media/storybook-francis/images/page-10.webp",
+      "mime": "image/webp",
+      "bytes": 126708,
+      "sha256": "568e5bcc725ce252d827786e8d12f58a2b06965bb420946b74daf7e70872bc5d",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-francis-aud-en-10",
+      "kind": "audio",
+      "path": "media/storybook-francis/en-directed/page-10.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 658413,
+      "sha256": "b3c0ee6f49e084750e61af49b4458c5b2f948ba98047bf3fc4d9fa428e714fd6",
+      "access": "public",
+      "durationMs": 54840
+    }
+  ]
+}

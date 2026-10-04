@@ -10,7 +10,7 @@ AddType image/avif .avif
 RewriteEngine On
 
 # Deployment contains source and test files; these are never public endpoints.
-RewriteRule ^(?:\.git|\.github|supabase|scripts|tests|personal-docs|docs|node_modules|output|tmp|test-results)(?:/|$) - [F,L]
+RewriteRule ^(?:\.git|\.github|supabase|scripts|tests|personal-docs|docs|content|node_modules|output|tmp|test-results)(?:/|$) - [F,L]
 <FilesMatch "(?i)(^\.env(?:\..*)?$|\.(?:sql|toml)$|^turnstile-secret\.php(?:\..*)?$)">
   Require all denied
 </FilesMatch>

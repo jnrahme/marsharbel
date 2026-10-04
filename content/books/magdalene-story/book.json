@@ -1,0 +1,469 @@
+{
+  "schema": 1,
+  "id": "bk-magdalene",
+  "slug": "magdalene-story",
+  "legacyStoryId": "magdalene",
+  "pageUrl": "/magdalene-story",
+  "status": "published",
+  "access": "public",
+  "shelf": "jesus",
+  "order": 9,
+  "ageRange": "6-12",
+  "locales": [
+    "en"
+  ],
+  "cover": "bk-magdalene-img-01",
+  "voices": {
+    "en": [
+      {
+        "id": "directed-magdalene",
+        "label": "Story Voice",
+        "recommended": true,
+        "base": "media/storybook-magdalene/en"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "bk-magdalene-p01",
+      "index": 1,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-magdalene-img-01",
+      "audio": {
+        "en": "bk-magdalene-aud-en-01"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "Luke 8:1-3 names Mary among the women who accompanied and supported Jesus; Vatican News explains Magdala. The lake scene is imaginative.",
+          "sources": [
+            "magdaleneLuke8",
+            "magdaleneVaticanNews"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-magdalene-p02",
+      "index": 2,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-magdalene-img-02",
+      "audio": {
+        "en": "bk-magdalene-aud-en-02"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "Luke 8:1-3 describes Jesus traveling through towns and villages with the Twelve and women including Mary. Meals and dialogue are devotional scene-setting.",
+          "sources": [
+            "magdaleneLuke8"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-magdalene-p03",
+      "index": 3,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-magdalene-img-03",
+      "audio": {
+        "en": "bk-magdalene-aud-en-03"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "John 19:25 names Mary Magdalene beside the cross. The caregiver invitation is a present-day pastoral reflection.",
+          "sources": [
+            "magdaleneJohn19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-magdalene-p04",
+      "index": 4,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-magdalene-img-04",
+      "audio": {
+        "en": "bk-magdalene-aud-en-04"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "Matthew 27:59-61 describes the burial and stone; John 20:1-2 describes Mary arriving while dark, finding the stone moved, and telling the disciples.",
+          "sources": [
+            "magdaleneMatthew27",
+            "magdaleneJohn20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-magdalene-p05",
+      "index": 5,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-magdalene-img-05",
+      "audio": {
+        "en": "bk-magdalene-aud-en-05"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "John 20:3-15 describes the disciples at the tomb, Mary weeping, the angels, and her mistake about the gardener.",
+          "sources": [
+            "magdaleneJohn20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-magdalene-p06",
+      "index": 6,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-magdalene-img-06",
+      "audio": {
+        "en": "bk-magdalene-aud-en-06"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "John 20:15-16 describes Jesus calling Mary by name and her reply, Rabbouni.",
+          "sources": [
+            "magdaleneJohn20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-magdalene-p07",
+      "index": 7,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-magdalene-img-07",
+      "audio": {
+        "en": "bk-magdalene-aud-en-07"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "John 20:17-18 records the message Jesus gave Mary and her announcement to the disciples.",
+          "sources": [
+            "magdaleneJohn20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-magdalene-p08",
+      "index": 8,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-magdalene-img-08",
+      "audio": {
+        "en": "bk-magdalene-aud-en-08"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "The Holy See explains the title apostle of the apostles and the July 22 feast. The ancient scene is a retrospective remembrance, not Mary living in a later century.",
+          "sources": [
+            "magdaleneChurch2016",
+            "magdaleneVaticanNews"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-magdalene-p09",
+      "index": 9,
+      "kind": "story",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-magdalene-img-09",
+      "audio": {
+        "en": "bk-magdalene-aud-en-09"
+      },
+      "evidence": [
+        {
+          "type": "documented",
+          "claim": "John 20:18 records Mary announcing that she had seen the Lord. The illustration is an imaginative remembrance of her witness.",
+          "sources": [
+            "magdaleneJohn20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bk-magdalene-p10",
+      "index": 10,
+      "kind": "reflection",
+      "scene": "birth",
+      "access": "public",
+      "image": "bk-magdalene-img-10",
+      "audio": {
+        "en": "bk-magdalene-aud-en-10"
+      },
+      "evidence": [
+        {
+          "type": "devotional",
+          "claim": "Present-day family reflection and an original prayer, inviting a caregiver-assisted reading of John 20:11-18. The modern family is not a historical scene.",
+          "sources": [
+            "magdaleneJohn20"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "magdaleneLuke8": {
+      "label": "USCCB: Luke 8, women accompanying Jesus",
+      "url": "https://bible.usccb.org/bible/luke/8"
+    },
+    "magdaleneVaticanNews": {
+      "label": "Vatican News: Mary Magdalene, disciple of the Lord",
+      "url": "https://www.vaticannews.va/en/saints/07/22/st--mary-magdalene--disciple-of-the-lord-.html"
+    },
+    "magdaleneJohn19": {
+      "label": "USCCB: John 19, Mary beside the cross",
+      "url": "https://bible.usccb.org/bible/john/19"
+    },
+    "magdaleneMatthew27": {
+      "label": "USCCB: Matthew 27, burial and stone",
+      "url": "https://bible.usccb.org/bible/matthew/27"
+    },
+    "magdaleneJohn20": {
+      "label": "USCCB: John 20, Mary and the risen Jesus",
+      "url": "https://bible.usccb.org/bible/john/20"
+    },
+    "magdaleneChurch2016": {
+      "label": "Holy See: Mary Magdalene, apostle of the apostles",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2016/06/10/160610c.html"
+    }
+  },
+  "assets": [
+    {
+      "id": "bk-magdalene-img-01",
+      "kind": "image",
+      "path": "media/storybook-magdalene/images/page-01.webp",
+      "mime": "image/webp",
+      "bytes": 122704,
+      "sha256": "ba4b3ce71c5d0603f401e4ed823e9dabb8e5daf9b0082316a35a4db7d418bd6c",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-magdalene-aud-en-01",
+      "kind": "audio",
+      "path": "media/storybook-magdalene/en/page-01.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 325060,
+      "sha256": "038d8e86643de1ed85f7cc48b868ea72b8bbe9c15c409d4c0f481c4f633735cd",
+      "access": "public",
+      "durationMs": 29283
+    },
+    {
+      "id": "bk-magdalene-img-02",
+      "kind": "image",
+      "path": "media/storybook-magdalene/images/page-02.webp",
+      "mime": "image/webp",
+      "bytes": 132578,
+      "sha256": "8d6f3ed8e4850cfe1b4157d10d5c3ff80a1a8ac3ab8765cb580638f5804f4c50",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-magdalene-aud-en-02",
+      "kind": "audio",
+      "path": "media/storybook-magdalene/en/page-02.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 272492,
+      "sha256": "2ad78400ba494a61290005a1ab6b3ac1fedd9800ae46ff6f0b40932977ed3845",
+      "access": "public",
+      "durationMs": 24921
+    },
+    {
+      "id": "bk-magdalene-img-03",
+      "kind": "image",
+      "path": "media/storybook-magdalene/images/page-03.webp",
+      "mime": "image/webp",
+      "bytes": 270168,
+      "sha256": "ca25ca9b562ff8aa49ccb8a832bd1935d9d2206290d81c05ad005c8dc1179808",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-magdalene-aud-en-03",
+      "kind": "audio",
+      "path": "media/storybook-magdalene/en/page-03.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 287473,
+      "sha256": "2aa94f761aef7b2bd7b61e28efd84dd51f70b185a4768af2c413eff77e40dad9",
+      "access": "public",
+      "durationMs": 31556
+    },
+    {
+      "id": "bk-magdalene-img-04",
+      "kind": "image",
+      "path": "media/storybook-magdalene/images/page-04.webp",
+      "mime": "image/webp",
+      "bytes": 341658,
+      "sha256": "974196e762bfe491ed9a9605c55405544b4b9bc53ae46747184e8842fdb90094",
+      "access": "public",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "bk-magdalene-aud-en-04",
+      "kind": "audio",
+      "path": "media/storybook-magdalene/en/page-04.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 309245,
+      "sha256": "bbf83bc90e5376394c01f24132e3332c459356bac0aa0b6b2f4a6a09113b6765",
+      "access": "public",
+      "durationMs": 33228
+    },
+    {
+      "id": "bk-magdalene-img-05",
+      "kind": "image",
+      "path": "media/storybook-magdalene/images/page-05.webp",
+      "mime": "image/webp",
+      "bytes": 457486,
+      "sha256": "20679f72c1a33b79f551124c1cb96cf04cdab4aa95920dfa4e28b2f671aef553",
+      "access": "public",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "bk-magdalene-aud-en-05",
+      "kind": "audio",
+      "path": "media/storybook-magdalene/en/page-05.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 353381,
+      "sha256": "684a130afa046ca7ac3dc98a7c93dcf626ab1224c9d7487b64d4b27e20fc0568",
+      "access": "public",
+      "durationMs": 35918
+    },
+    {
+      "id": "bk-magdalene-img-06",
+      "kind": "image",
+      "path": "media/storybook-magdalene/images/page-06.webp",
+      "mime": "image/webp",
+      "bytes": 449078,
+      "sha256": "32e473f1aa2765e5c69748565b6a69bca05e27e0292b127b7f7913d01ca8e3b6",
+      "access": "public",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "bk-magdalene-aud-en-06",
+      "kind": "audio",
+      "path": "media/storybook-magdalene/en/page-06.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 347260,
+      "sha256": "ec852681bfd6430d92f61df4791087600c62dd52e0573bd2b610074b1c9aa754",
+      "access": "public",
+      "durationMs": 35631
+    },
+    {
+      "id": "bk-magdalene-img-07",
+      "kind": "image",
+      "path": "media/storybook-magdalene/images/page-07.webp",
+      "mime": "image/webp",
+      "bytes": 211708,
+      "sha256": "36a526176bbe56dd969a6bc0f2ebd6416341e9f3c4528ab1ff842d1a1b06fec4",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-magdalene-aud-en-07",
+      "kind": "audio",
+      "path": "media/storybook-magdalene/en/page-07.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 260332,
+      "sha256": "611e7f02bd0288166d2604299e3d3260c1449644c44520f51ca55600f3eb0e12",
+      "access": "public",
+      "durationMs": 22883
+    },
+    {
+      "id": "bk-magdalene-img-08",
+      "kind": "image",
+      "path": "media/storybook-magdalene/images/page-08.webp",
+      "mime": "image/webp",
+      "bytes": 357256,
+      "sha256": "5a7144d925b0bbb258867790b19fd995b50b5109a16de19daa187e637c69b7fb",
+      "access": "public",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "bk-magdalene-aud-en-08",
+      "kind": "audio",
+      "path": "media/storybook-magdalene/en/page-08.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 220206,
+      "sha256": "0ef39fc51cbaed4aee5f4fd5a721be5cb4a74019ae3469b651fb003f752afb89",
+      "access": "public",
+      "durationMs": 19879
+    },
+    {
+      "id": "bk-magdalene-img-09",
+      "kind": "image",
+      "path": "media/storybook-magdalene/images/page-09.webp",
+      "mime": "image/webp",
+      "bytes": 254464,
+      "sha256": "43f358ef5e597bbf090f41c6cae3ac91e1e11df4c27ffc42aa52370f39dccc42",
+      "access": "public",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bk-magdalene-aud-en-09",
+      "kind": "audio",
+      "path": "media/storybook-magdalene/en/page-09.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 260256,
+      "sha256": "d42a2b8239f0edff888bc511b789998af6efda3cf260529fca6903e914f36622",
+      "access": "public",
+      "durationMs": 23798
+    },
+    {
+      "id": "bk-magdalene-img-10",
+      "kind": "image",
+      "path": "media/storybook-magdalene/images/page-10.webp",
+      "mime": "image/webp",
+      "bytes": 432094,
+      "sha256": "34d67683a4d53cee46a830bb7141bfbcc5517e502e2b0d2d0de1ef6de7be7529",
+      "access": "public",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "bk-magdalene-aud-en-10",
+      "kind": "audio",
+      "path": "media/storybook-magdalene/en/page-10.mp3",
+      "mime": "audio/mpeg",
+      "bytes": 388449,
+      "sha256": "692554556086295d3fb30a9448af6681e3cb49bd4380b2da21e62b92ad0e1646",
+      "access": "public",
+      "durationMs": 37878
+    }
+  ]
+}
