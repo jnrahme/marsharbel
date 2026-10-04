@@ -1,19 +1,21 @@
 /* Reader stage: direction-aware page turn, progress dots, swipe + arrow keys.
    Observes the existing reader; never changes its state machine. */
 (function () {
-  'use strict';
   var panel = document.querySelector('.storybook-panel');
   var step = document.getElementById('story-step');
   var prev = document.getElementById('story-prev');
   var next = document.getElementById('story-next');
   var controls = document.querySelector('.storybook-controls');
   if (!panel || !step || !prev || !next || !controls) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   var last = 0, dots = null, timer = 0;
 
   function parse() {
     var m = (step.textContent || '').match(/(\d+)\D+(\d+)/);
     return m ? { n: +m[1], total: +m[2] } : null;
+  }
+  // Dot labels reuse the page's own localized "Page N of M" string, so no English lives in this file.
+  function label(i) {
+    return (step.textContent || '').replace(/\d+/, i);
   }
   function buildDots(total) {
     if (total > 16) return;
@@ -21,12 +23,10 @@
     if (dots) dots.remove();
     dots = document.createElement('div');
     dots.className = 'st-dots';
-    dots.setAttribute('role', 'group');
-    dots.setAttribute('aria-label', 'Pages');
     for (var i = 1; i <= total; i++) {
       var b = document.createElement('button');
       b.type = 'button';
-      b.setAttribute('aria-label', 'Page ' + i);
+      b.setAttribute('aria-label', label(i));
       b.dataset.page = i;
       dots.appendChild(b);
     }
@@ -71,11 +71,5 @@
       var b = dx < 0 ? next : prev; if (!b.disabled) b.click();
     }
   }, { passive: true });
-  document.addEventListener('keydown', function (e) {
-    if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
-    var tag = (e.target.tagName || '').toLowerCase();
-    if (tag === 'input' || tag === 'select' || tag === 'textarea') return;
-    if (e.key === 'ArrowRight' && !next.disabled) next.click();
-    else if (e.key === 'ArrowLeft' && !prev.disabled) prev.click();
-  });
+
 })();

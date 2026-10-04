@@ -50,7 +50,7 @@ body.is-story-page .storybook-illustration{
 body.is-story-page .storybook-illustration::before,body.is-story-page .storybook-illustration::after{display:none}
 body.is-story-page .scene-art{width:100%}
 body.is-story-page .storybook-illustration .scene-photo{
-  display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:3px;
+  display:block;width:100%;height:auto;object-fit:contain;border-radius:3px;
   box-shadow:0 0 0 1px rgba(80,50,20,.35),0 0 0 7px var(--st-paper),0 0 0 8px rgba(160,120,60,.45),0 14px 24px rgba(60,35,10,.28);
 }
 body.is-story-page .storybook-text{
@@ -70,7 +70,9 @@ body.is-story-page .storybook-prayer,body.is-story-page .storybook-heart{color:#
 body.is-story-page .storybook-text.is-reading #story-body{background:linear-gradient(transparent 60%,rgba(227,191,122,.35) 60%)}
 body.is-story-page .storybook-panel.is-reflection-page{grid-template-columns:1fr}
 body.is-story-page .storybook-panel.is-reflection-page::after{display:none}
-body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration{display:none}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration{border-radius:6px 14px 0 0;justify-content:center;padding:1rem 1rem 0}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration .scene-art{width:auto;max-width:100%}
+body.is-story-page .storybook-panel.is-reflection-page .storybook-illustration .scene-photo{max-height:220px;width:auto;max-width:100%;margin-inline:auto}
 body.is-story-page .storybook-panel.is-reflection-page .storybook-text{border-radius:6px 14px 14px 6px;max-width:none}
 
 /* page turn: forward unfolds the right page from the spine, back unfolds the left page */
@@ -127,7 +129,7 @@ body.is-story-page .story-production-note{color:#a8967a;text-align:center;paddin
   body.is-story-page .storybook-panel::before{inset:8px -4px -6px -4px}
   body.is-story-page .storybook-panel::after{display:none}
   body.is-story-page .storybook-illustration{border-radius:14px 14px 0 0;padding:.9rem .9rem .3rem;background:linear-gradient(180deg,var(--st-paper-2),var(--st-paper))}
-  body.is-story-page .storybook-illustration .scene-photo{max-height:none;width:100%;aspect-ratio:4/3}
+  body.is-story-page .storybook-illustration .scene-photo{max-height:none;width:100%}
   body.is-story-page .storybook-text{border-radius:0 0 14px 14px;background:var(--st-paper)}
   body.is-story-page .storybook-panel.st-fwd .storybook-text{transform-origin:50% 0;animation-name:st-fade}
   body.is-story-page .storybook-panel.st-back .storybook-illustration{transform-origin:50% 100%;animation-name:st-fade}
@@ -184,3 +186,21 @@ body.is-story-page .storybook-page .storybook-controls #story-prev:hover:not(:di
 @media (hover:hover){
  body.is-story-page .storybook-page .storybook-controls #story-next:hover:not(:disabled),
  body.is-story-page .storybook-page .storybook-controls #story-prev:hover:not(:disabled){background:linear-gradient(180deg,rgba(255,236,190,.2),rgba(255,236,190,.07));border-color:#f3d79c}}
+
+/* The dock stays reachable at every size: pinned to the viewport bottom while the book is on screen. */
+body.is-story-page .storybook-controls{position:sticky;top:auto;bottom:.6rem;z-index:20;align-self:center;width:fit-content;max-width:100%;
+  padding:.55rem 1rem .6rem;border-radius:28px;background:rgba(14,9,6,.78);backdrop-filter:blur(10px);border:1px solid rgba(227,191,122,.18);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+@media (max-width:820px){body.is-story-page .storybook-controls{bottom:0;align-self:stretch;width:auto;border-radius:0;border:0;box-shadow:none}}
+/* Compact hero so the whole book plus its dock fit a 1280x800 laptop viewport. */
+@media (min-width:821px){
+  body.is-story-page .story-hero{max-width:1120px;position:relative;padding:.9rem 1rem .2rem}
+  body.is-story-page .story-hero h1{font-size:clamp(1.9rem,3.2vw,2.5rem);margin:.1rem 0 .2rem}
+  body.is-story-page .story-hero p{font-size:.92rem;margin:0 auto}
+  body.is-story-page .story-hero .story-shelf-link{position:absolute;left:1rem;top:.9rem;margin:0}
+  body.is-story-page section.storybook{padding-top:.4rem;gap:.7rem}
+  body.is-story-page .storybook>details.story-settings{top:-2.4rem;right:1rem}
+  body.is-story-page .storybook-text{padding:1.6rem 2.4rem;gap:.5rem}
+  body.is-story-page .storybook-text #story-body{font-size:clamp(1rem,1.2vw,1.12rem);line-height:1.65}
+  body.is-story-page .storybook-text h2{font-size:clamp(1.6rem,2.4vw,2.1rem)}
+  body.is-story-page .storybook-illustration{padding:1.2rem}
+}
