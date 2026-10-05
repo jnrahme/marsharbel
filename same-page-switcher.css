@@ -13,3 +13,6 @@ nav.locale-nav a[aria-disabled="true"]{opacity:.75;cursor:default}
 nav.locale-nav a[aria-disabled="true"]{display:inline-block;max-width:100%;white-space:normal}
 /* Keep the shared compact phone chrome within its two navigation rows. */
 @media(max-width:640px){.topbar:has(#sc-language-switcher) .links{padding-block:0}.topbar:has(#sc-language-switcher) .links a,.topbar:has(#sc-language-switcher) .nav-group .nav-parent{padding-block:.25rem;line-height:1.2;min-height:24px;box-sizing:border-box}}
+
+/* A ready select replaces the expanded fallback nav, never before JS succeeds. */
+header nav.locale-nav[hidden]{display:none}

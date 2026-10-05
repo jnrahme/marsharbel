@@ -165,3 +165,24 @@ for(const code of languages) test(`${code} homepage offers every shipped homepag
   await expect(page).toHaveURL(new RegExp(registry.locales[next].home+'$'));
   await expect(page.locator('html')).toHaveAttribute('lang',next);
 });
+for (const route of ['/pt/annaya', '/it/annaya', '/ar/annaya']) {
+  test(`${route} enhances fallback language links into one compact control`, async ({browser, baseURL}, testInfo) => {
+    const context = await browser.newContext({...testInfo.project.use, baseURL});
+    const page = await context.newPage();
+    try {
+      await page.goto(route);
+      await expect(page.locator('#sc-language-select')).toBeVisible();
+      await expect(page.locator('header nav.locale-nav')).toBeHidden();
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+      await page.locator('#sc-language-select').focus();
+      await expect(page.locator('#sc-language-select')).toBeFocused();
+    } finally { await context.close(); }
+    const noScript = await browser.newContext({...testInfo.project.use, baseURL, javaScriptEnabled:false});
+    try {
+      const fallback = await noScript.newPage();
+      await fallback.goto(route);
+      await expect(fallback.locator('header nav.locale-nav')).toBeVisible();
+      await expect(fallback.locator(`header nav.locale-nav a[aria-current="page"]`)).toBeVisible();
+    } finally { await noScript.close(); }
+  });
+}
