@@ -6,7 +6,7 @@ from urllib.parse import urljoin, urlsplit
 from i18n.metadata import og_locales
 from i18n.mirror_structure import check_pair
 from bs4 import BeautifulSoup, NavigableString
-from i18n.catalog import read_json
+from i18n.catalog import read_json, page_url, topic_locales
 
 
 def render_home(root, registry, lang, catalog=None):
@@ -64,10 +64,22 @@ def render_home(root, registry, lang, catalog=None):
         a['href'] = route
     # Route existing controls to published twins without changing their structure.
     twins = {cfg['english']:cfg['routes'][lang] for cfg in registry.get('authoredMirrors',{}).values() if lang in cfg['routes']}
+    for topic, cfg in registry['topics'].items():
+        if lang in topic_locales(registry, topic):
+            twins[cfg['relatedEnglish'].rstrip('/')] = page_url(registry, lang, topic)
+    for cfg in registry.get('exactMirrors', {}).values():
+        if lang in cfg['routes']:
+            twins[cfg['english'].rstrip('/')] = cfg['routes'][lang]
+    # English app links can use the old /en guide alias for the full prayer master.
+    if '/saint-charbel-prayers' in twins:
+        twins['/en/prayers'] = twins['/saint-charbel-prayers']
+    if lang in registry.get('publicationSets', {}).get('eucharistic', []):
+        twins['/miracles/eucharistic'] = f'/{lang}/miracles/eucharistic/'
     for a in soup.select('a[href]'):
+        if a.has_attr('hreflang'): continue
         parts = urlsplit(a['href'])
-        if not parts.scheme and parts.path in twins:
-            a['href'] = twins[parts.path] + ('?' + parts.query if parts.query else '') + ('#' + parts.fragment if parts.fragment else '')
+        if not parts.scheme and parts.path.rstrip('/') in twins:
+            a['href'] = twins[parts.path.rstrip('/')] + ('?' + parts.query if parts.query else '') + ('#' + parts.fragment if parts.fragment else '')
     for script in soup.select('script[type="application/ld+json"]'):
         data = json.loads(script.string)
         for item in data.get('@graph', []):

@@ -39,6 +39,25 @@ class HomeMirrorTests(unittest.TestCase):
         page=next(item for item in graph if item['@type']=='WebPage')
         self.assertEqual((page['name'],page['url'],page['inLanguage']),('Lokaler Seitentitel','https://marsharbel.com/de/','de'))
 
+    def test_locale_home_links_use_published_twins(self):
+        from i18n.catalog import page_url,topic_locales
+        for lang in self.registry['homepageMirrors']['renderLocales']:
+            rendered=BeautifulSoup(render_home(ROOT,self.registry,lang),'html.parser')
+            links={a['href'] for a in rendered.select('a[href]') if not a.has_attr('hreflang')}
+            for topic,cfg in self.registry['topics'].items():
+                if lang not in topic_locales(self.registry,topic): continue
+                master=cfg['relatedEnglish']
+                source=BeautifulSoup((ROOT/'index.html').read_text(),'html.parser')
+                from urllib.parse import urljoin,urlsplit
+                master_links={urlsplit(urljoin('/',a['href'])).path.rstrip('/') for a in source.select('a[href]') if not a.has_attr('hreflang')}
+                if master.rstrip('/') not in master_links:continue
+                expected=page_url(self.registry,lang,topic)
+                for config in self.registry.get('exactMirrors',{}).values():
+                    if config['english']==master and lang in config['routes']:expected=config['routes'][lang]
+                self.assertIn(expected,links,f'{lang}: missing {topic} twin')
+                self.assertNotIn(master,links,f'{lang}: English {topic} leaked instead of its twin')
+            self.assertIn('/gallery',links,'Unpublished gallery twin must retain English destination')
+
     def test_missing_key_fails(self):
         self.copy.pop(next(iter(self.copy)))
         with self.assertRaisesRegex(ValueError, 'missing/extra'): render_home(ROOT, self.registry, 'de', self.copy)
