@@ -4,42 +4,14 @@ import json
 import re
 from urllib.parse import urljoin, urlsplit
 from i18n.metadata import og_locales
+from i18n.keyed_master import apply_keyed_master
 from i18n.mirror_structure import check_pair
 from bs4 import BeautifulSoup, NavigableString
 from i18n.catalog import read_json, page_url, topic_locales
 
 
 def render_home(root, registry, lang, catalog=None):
-    contract = read_json(root / 'locales/en/home-bindings.json')
-    raw = (root / contract['master']).read_bytes()
-    if hashlib.sha256(raw).hexdigest() != contract['masterSha256']:
-        raise ValueError('Home master changed: update bindings and reviewed locale catalogs')
-    english = read_json(root / 'locales/en/home-copy.json')
-    copy = catalog if catalog is not None else read_json(root / f'locales/{lang}/home-copy.json')
-    if set(copy) != set(english):
-        raise ValueError(f'Home {lang}: missing/extra message keys: {sorted(set(english) ^ set(copy))}')
-    for key, value in copy.items():
-        if not isinstance(value, str) or not value.strip() or re.search(r'<\s*/?\s*[A-Za-z!]', value):
-            raise ValueError(f'Home {lang}: unsafe or empty message {key}')
-        if set(re.findall(r'\{([A-Za-z]+)\}', value)) != set(re.findall(r'\{([A-Za-z]+)\}', english[key])):
-            raise ValueError(f'Home {lang}: placeholders differ for {key}')
-    soup = BeautifulSoup(raw, 'html.parser')
-    for binding in contract['bindings']:
-        nodes = soup.select(binding['selector'])
-        if len(nodes) != 1:
-            raise ValueError(f'Home: ambiguous binding {binding["key"]}')
-        node = nodes[0]
-        if binding['kind'] == 'attribute':
-            attr = binding['attribute']
-            if node.get(attr) != binding['source']:
-                raise ValueError(f'Home: changed attribute {binding["key"]}')
-            node[attr] = copy[binding['key']]
-        else:
-            text = node.contents[binding['nodeIndex']]
-            if not isinstance(text, NavigableString) or ' '.join(str(text).split()) != binding['source']:
-                raise ValueError(f'Home: changed text {binding["key"]}')
-            old = str(text)
-            text.replace_with(old[:len(old)-len(old.lstrip())] + copy[binding['key']] + old[len(old.rstrip()):])
+    raw, soup, copy = apply_keyed_master(root, 'home', lang, catalog)
     # Preserve asset paths, srcsets, forms and JS navigation from a nested route.
     for node in soup.select('[href], [src], [srcset], [action], [data-src-mp4]'):
         for attr in ('href', 'src', 'action', 'data-src-mp4'):
