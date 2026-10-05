@@ -1,5 +1,6 @@
 """Render optional, sourced reading guidance without changing prayer text."""
 from html import escape
+import re
 from urllib.parse import urlsplit
 from i18n.catalog import read_json, leaves
 
@@ -32,9 +33,15 @@ def load_guidance(root, code, topic):
     return catalog.get(topic)
 
 
+def render_label(label):
+    # Isolate Latin-script names when they wrap inside RTL reading links.
+    return re.sub(r"[A-Za-z][A-Za-z0-9]*(?:[ -][A-Za-z0-9]+)*",
+                  lambda match: '<bdi lang="en" dir="ltr">' + match[0] + '</bdi>', escape(label))
+
+
 def render_links(links):
     return '<p class="devotion-reading-links">' + ' · '.join(
-        f'<a href="{escape(link["href"], quote=True)}">{escape(link["label"])}</a>' for link in links) + '</p>'
+        f'<a href="{escape(link["href"], quote=True)}">{render_label(link["label"])}</a>' for link in links) + '</p>'
 
 
 def render_lead(entry):
