@@ -111,7 +111,7 @@ for (const route of ['/', ...new Set(Object.values(registry.topics).map(topic =>
   });
 }
 
-test('Arabic prayer mirror keeps authored copy and keeps English unavailable until published', async ({page}) => {
+test('Arabic prayer mirror keeps authored copy and always offers its English source', async ({page}) => {
   await page.goto('/ar/prayers');
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
   await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
@@ -122,7 +122,7 @@ test('Arabic prayer mirror keeps authored copy and keeps English unavailable unt
   await expect(page.locator('main img[src="/media/annaya/charbel-historic-photo.webp"]')).toHaveCount(1);
   await page.reload();
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
-  await expect(page.locator('#sc-language-select option[value="en"]')).toBeDisabled();
+  await expect(page.locator('#sc-language-select option[value="en"]')).toBeEnabled();
   await expect(page).toHaveURL(/\/ar\/prayers$/);
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
 });
@@ -151,3 +151,12 @@ for (const [source,target] of [['/ar/annaya','/en/annaya'],['/ar/biography','/en
     await expect(page.locator('html')).toHaveAttribute('lang','en');
   });
 }
+
+for(const code of languages) test(`${code} homepage offers every shipped homepage`,async({page})=>{
+  await page.goto(registry.locales[code].home);
+  for(const lang of languages) await expect(page.locator(`#sc-language-select option[value="${lang}"]`)).toBeEnabled();
+  const next=code==='fr'?'ar':'fr';
+  await page.selectOption('#sc-language-select',next);
+  await expect(page).toHaveURL(new RegExp(registry.locales[next].home+'$'));
+  await expect(page.locator('html')).toHaveAttribute('lang',next);
+});

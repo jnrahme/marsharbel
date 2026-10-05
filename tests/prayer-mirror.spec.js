@@ -30,7 +30,7 @@ for(const [route,code]of [['/en/prayers','en'],['/ar/prayers','ar'],['/fr/priere
     await expect(page.locator('h1')).toHaveText(heading);
     await expect(page.locator('html')).toHaveAttribute('lang',code);
     await expect(page.locator('#sc-language-select')).toHaveValue(code);
-    const other=code==='en'?'ar':'en';
+    const other=code==='fr'?'ar':'fr';
     await expect(page.locator(`#sc-language-select option[value="${other}"]`)).toBeDisabled();
     const before=await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
     expect(await page.evaluate(lang=>SC_LANGUAGE_SWITCH.request(lang),other)).toBe(false);

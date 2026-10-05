@@ -30,6 +30,9 @@ def with_english_sources(root, manifest):
             if target.netloc == 'marsharbel.com' and target.scheme == 'https':
                 sources[urlsplit(canonical['href']).path.rstrip('/') or '/'] = target.path
     result['englishSources'] = sources
+    registry = read_json(root/'locales/registry.json')
+    result['publishedHomes'] = {code: cfg['home'] for code,cfg in registry['locales'].items()
+        if (root / cfg['home'].strip('/') / 'index.html').exists()}
     _english_source_cache[key] = result
     return result
 

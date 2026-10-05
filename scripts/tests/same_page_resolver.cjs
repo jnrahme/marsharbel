@@ -22,3 +22,7 @@ let sourceEscape=resolve(manifest,'https://marsharbel.com/ar/full-history?lang=a
 assert.equal(sourceEscape.available,true);assert.equal(sourceEscape.reason,'english-source');assert.equal(sourceEscape.href,'https://marsharbel.com/history?campaign=test');
 assert.equal(resolve(manifest,'https://marsharbel.com/ar/full-history','fr','ar').available,false);
 console.log('English source is always offered even when current translation is pending; non-English gate unchanged PASS');
+manifest.publishedHomes={en:'/',ar:'/ar/',fr:'/fr/'};
+assert.equal(resolve(manifest,'https://marsharbel.com/ar/?lang=ar','fr','ar').href,'https://marsharbel.com/fr/');
+assert.equal(resolve(manifest,'https://marsharbel.com/ar/full-history','fr','ar').available,false);
+console.log('All published home routes switch, article review gate stays unchanged PASS');

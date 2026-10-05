@@ -46,6 +46,12 @@
     requested = ((manifest && manifest.aliases || {})[String(requested).toLowerCase()] || requested);
     var result = { available: false, href: href, contentLanguage: language, pageID: current && current.pageID, reason: 'translation-unavailable' };
     if (requested === language) { result.available = true; result.reason = 'same-language'; return result; }
+    var homes = manifest && manifest.publishedHomes || {};
+    if (Object.values(homes).some(function(path){return pathKey(path) === pathKey(url.pathname);}) && homes[requested]) {
+      url.pathname = homes[requested]; url.searchParams.delete('lang'); url.hash = '';
+      result.available = true; result.href = url.toString(); result.contentLanguage = requested;
+      result.reason = 'published-home'; return result;
+    }
     // English is the source escape route, not a claim of translated equivalence.
     var english = manifest && manifest.englishSources && manifest.englishSources[pathKey(url.pathname)];
     if (requested === 'en' && english) {
