@@ -49,11 +49,12 @@ try {
     assert.ok((await staticPage.locator('main').innerText()).length > 700, 'Localized content is available without JavaScript');
   }
   await page.goto(base + '/', { waitUntil: 'load' });
-  assert.equal(await page.locator('#sc-language-select option[value="fr"]').isDisabled(), true);
-  const original = await page.evaluate(() => ({url:location.href, main:document.querySelector('main').innerHTML, lang:document.documentElement.lang, canonical:document.querySelector('link[rel=canonical]').href}));
-  assert.equal(await page.evaluate(() => SC_LANGUAGE_SWITCH.request('fr')), false);
-  assert.deepEqual(await page.evaluate(() => ({url:location.href, main:document.querySelector('main').innerHTML, lang:document.documentElement.lang, canonical:document.querySelector('link[rel=canonical]').href})), original);
-  assert.equal(await page.locator('#sc-language-select').inputValue(), 'en');
+  assert.equal(await page.locator('#sc-language-select option[value="fr"]').isDisabled(), false);
+  assert.equal(await page.evaluate(() => SC_LANGUAGE_SWITCH.request('fr')), true);
+  await page.waitForURL(base + '/fr/');
+  assert.equal(await page.locator('html').getAttribute('lang'), 'fr');
+  assert.equal(await page.locator('link[rel=canonical]').getAttribute('href'), 'https://marsharbel.com/fr/');
+  assert.equal(await page.locator('#sc-language-select').inputValue(), 'fr');
   await noJs.close();
   console.log(`SEO runtime passed: ${urls.length} public pages, 7 noindex pages, and tracking parameters.`);
 } finally {
