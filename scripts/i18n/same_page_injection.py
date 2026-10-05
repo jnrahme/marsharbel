@@ -137,6 +137,8 @@ def inject_control(text, root, manifest, copy):
 
 def control_outputs(root, texts, manifest, copy):
     import json
+    from i18n.reviewed_history import history_manifest
+    manifest = history_manifest(root,texts,manifest)
     out={}
     for path,text in texts.items():
         if path.suffix=='.html' and 'https://marsharbel.com/' in text:out[path]=inject_control(text,root,manifest,copy)
