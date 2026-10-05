@@ -85,7 +85,8 @@ def render(registry, catalog, code, template, topic=None):
         full = page.get('fullGuide')
         full_href = registry['topics'][topic]['relatedEnglish'] + ('' if code == 'en' else '?lang=en')
         full_attrs = '' if code == 'en' else ' lang="en" dir="ltr"'
-        full_guide = (f'<p class="full-guide">{escape(full["lead"])} <a href="{full_href}"{full_attrs}>{escape(full["label"])}</a>.</p>' if full else '')
+        full_stop = '' if code == 'ar' else '.'
+        full_guide = (f'<p class="full-guide">{escape(full["lead"])} <a href="{full_href}"{full_attrs}>{escape(full["label"])}</a>{full_stop}</p>' if full else '')
         related_topics = [key for key in locale_topics(registry, code) if key != topic]
         # Readers of story leaves should get back to the hub before the broader
         # catalog; homepage cards still expose every topic for discovery.
