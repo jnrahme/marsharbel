@@ -15,10 +15,14 @@ class Norm(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.out, self.stack = [], []
     def handle_starttag(self, tag, attrs):
+        if tag == 'meta':  # charset values are case-insensitive (utf-8 == UTF-8)
+            attrs = [(k, v.lower() if k == 'charset' and v else v) for k, v in attrs]
         a = ' '.join(f'{k}={("" if v is None else v)!r}' for k, v in sorted(attrs))
         self.out.append(f'{"  " * len(self.stack)}<{tag} {a}>')
         if tag not in VOID: self.stack.append(tag)
     def handle_startendtag(self, tag, attrs):
+        if tag == 'meta':  # charset values are case-insensitive (utf-8 == UTF-8)
+            attrs = [(k, v.lower() if k == 'charset' and v else v) for k, v in attrs]
         a = ' '.join(f'{k}={("" if v is None else v)!r}' for k, v in sorted(attrs))
         self.out.append(f'{"  " * len(self.stack)}<{tag} {a}>')
     def handle_endtag(self, tag):
