@@ -97,6 +97,12 @@ def render_home(root, registry, lang, catalog=None):
         node.string = json.dumps(data, ensure_ascii=False).replace('<', '\\u003c')
         soup.head.append(node)
     rendered = str(soup)
+    # Match the existing Travel frame serializer's canonical indentation so
+    # reprocessing a generated home is byte-idempotent, not just DOM-equal.
+    travel = registry.get('authoredMirrors', {}).get('travel', {}).get('routes', {}).get(lang)
+    if travel:
+        rendered = re.sub(r'(?m)^([ \t]*)(<a href="' + re.escape(travel) + r'">[^<]*</a>)$',
+                          lambda match: '        ' + match[2], rendered)
     mismatches = check_pair(raw.decode('utf-8'), rendered, '/', route)
     if mismatches:
         raise ValueError(f'Home {lang}: mirror structure diverged: {mismatches}')
