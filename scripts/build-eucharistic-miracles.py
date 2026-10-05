@@ -38,7 +38,8 @@ def head(title, desc, url, image, bread):
     alternates += f'<link rel="alternate" hreflang="x-default" href="{url}">'
     return f'''<!doctype html>
 <html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"><!-- Google tag (gtag.js) -->
+<script defer src="/analytics-init.js"></script><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)} | Saint Charbel</title><meta name="description" content="{e(desc,quote=True)}">
 <meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url,quote=True)}">{alternates}
 <meta property="og:type" content="article"><meta property="og:site_name" content="Saint Charbel"><meta property="og:title" content="{e(title,quote=True)}"><meta property="og:description" content="{e(desc,quote=True)}"><meta property="og:url" content="{e(url,quote=True)}"><meta property="og:image" content="{e(image,quote=True)}">
