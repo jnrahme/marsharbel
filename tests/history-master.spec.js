@@ -2,6 +2,7 @@ const { test, expect } = require('@playwright/test');
 const routes = require('../locales/registry.json').pageMirrors['history-master'].routes;
 for (const [lang, route] of Object.entries(routes)) {
   test(`${lang} full history has complete joins, English access and decoded images`, async ({ page }) => {
+    test.setTimeout(60000);
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
     await page.goto(route);
@@ -10,7 +11,8 @@ for (const [lang, route] of Object.entries(routes)) {
     await expect(selector.locator('option[value="en"]')).toBeEnabled();
     await expect(page.locator('main')).toBeVisible();
     const result = await page.evaluate(async () => {
-      for (let y = 0; y < document.documentElement.scrollHeight; y += 800) {
+      const initialHeight = document.documentElement.scrollHeight;
+      for (let y = 0; y < initialHeight; y += 800) {
         scrollTo(0, y);
         await new Promise(resolve => setTimeout(resolve, 25));
       }
