@@ -15,6 +15,10 @@ class HistoryMirrors(unittest.TestCase):
    self.assertEqual(s.html['lang'],lang);self.assertEqual(s.main['tabindex'],'-1')
    self.assertEqual(s.select_one('link[rel=canonical]')['href'],self.r['site']+route)
    visit=s.select_one('#visit p').get_text(' ',strip=True)
+   paragraph=s.select_one('#visit p')
+   for link in paragraph.select('a'):
+    after=link.next_sibling
+    if after and str(after).lstrip()[:1].isalnum():self.assertTrue(str(after)[0].isspace(),(lang,str(after)))
    self.assertNotIn('[object Object]',visit);self.assertEqual(len(s.select('#visit p a')),3)
    self.assertTrue(all(a.get_text(strip=True) for a in s.select('#visit p a')),lang)
    copy=json.loads((ROOT/f'locales/{lang}/history-master-copy.json').read_text())

@@ -38,5 +38,14 @@ def apply_keyed_master(root, family, lang, catalog=None):
         if text is None:node[binding['attribute']]=value
         else:
             old=str(text)
-            text.replace_with(old[:len(old)-len(old.lstrip())]+value+old[len(old.rstrip()):])
+            leading=old[:len(old)-len(old.lstrip())]
+            # A punctuation-leading source join may translate to a word.
+            # Keep the inline boundary separated without asking catalogs to
+            # carry incidental HTML whitespace.
+            if not leading and value[0].isalnum() and text.previous_sibling is not None:
+                previous=text.previous_sibling
+                previous_text=previous.get_text() if hasattr(previous,'get_text') else str(previous)
+                if previous_text and (previous_text[-1].isalnum() or previous_text.endswith(')')):
+                    leading=' '
+            text.replace_with(leading+value+old[len(old.rstrip()):])
     return raw,soup,copy
