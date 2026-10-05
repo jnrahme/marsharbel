@@ -8,6 +8,34 @@ from html import escape
 import re,json,subprocess
 from i18n.catalog import read_json
 
+
+_english_source_cache = {}
+
+def with_english_sources(root, manifest):
+    key = str(root)
+    if key in _english_source_cache:
+        return _english_source_cache[key]
+    result = dict(manifest)
+    sources = {}
+    for item in manifest['pages'].values():
+        path = root / item['sourcePath']
+        if not path.exists():
+            continue
+        page = BeautifulSoup(path.read_text(), 'html.parser')
+        canonical = page.select_one('link[rel=canonical]')
+        english = page.select_one('link[rel=alternate][hreflang=en]')
+        if canonical and english:
+            from urllib.parse import urlsplit
+            target = urlsplit(english['href'])
+            if target.netloc == 'marsharbel.com' and target.scheme == 'https':
+                sources[urlsplit(canonical['href']).path.rstrip('/') or '/'] = target.path
+    result['englishSources'] = sources
+    registry = read_json(root/'locales/registry.json')
+    result['publishedHomes'] = {code: cfg['home'] for code,cfg in registry['locales'].items()
+        if (root / cfg['home'].strip('/') / 'index.html').exists()}
+    _english_source_cache[key] = result
+    return result
+
 def place_footer_navigation(text):
     """Move existing managed locale navigation to the semantic page-end footer."""
     soup=BeautifulSoup(text,'html.parser')
@@ -28,6 +56,7 @@ def place_footer_navigation(text):
     return text.replace('</main>','</main>\n<footer class="footer">\n'+container+'</footer>',1)
 
 def inject_control(text, root, manifest, copy):
+    manifest = with_english_sources(root, manifest)
     # English guide routes are live destinations, including the legacy prayer redirect.
     page=BeautifulSoup(text,'html.parser')
     canonical=page.select_one('link[rel=canonical]')
@@ -111,6 +140,7 @@ def control_outputs(root, texts, manifest, copy):
     out={}
     for path,text in texts.items():
         if path.suffix=='.html' and 'https://marsharbel.com/' in text:out[path]=inject_control(text,root,manifest,copy)
+    manifest = with_english_sources(root, manifest)
     out[root/'same-page-manifest.js']='window.SC_SAME_PAGE_MANIFEST = '+json.dumps(manifest,ensure_ascii=False,separators=(',',':'))+';\n'
     out[root/'same-page-copy.js']='window.SC_SAME_PAGE_COPY = '+json.dumps(copy,ensure_ascii=False,separators=(',',':'))+';\n'
     return out

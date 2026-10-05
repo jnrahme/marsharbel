@@ -57,8 +57,13 @@ for (const [language, config] of Object.entries(registry.locales)) {
           const next = published[(published.indexOf(language) + 1) % published.length];
           // Same-page switching is fail-closed: every unpublished twin stays an unavailable, non-navigating link.
           const target = page.locator(`header nav a[hreflang="${next}"]`).first();
-          await expect(target).toHaveAttribute('aria-disabled', 'true');
-          await expect(target).not.toHaveAttribute('href', /.+/);
+          if (next === 'en') {
+            await expect(target).not.toHaveAttribute('aria-disabled', 'true');
+            await expect(target).toHaveAttribute('href', /.+/);
+          } else {
+            await expect(target).toHaveAttribute('aria-disabled', 'true');
+            await expect(target).not.toHaveAttribute('href', /.+/);
+          }
         }
       } finally {
         await context.close();
@@ -106,7 +111,7 @@ for (const route of ['/', ...new Set(Object.values(registry.topics).map(topic =>
   });
 }
 
-test('Arabic prayer mirror keeps authored copy and keeps English unavailable until published', async ({page}) => {
+test('Arabic prayer mirror keeps authored copy and always offers its English source', async ({page}) => {
   await page.goto('/ar/prayers');
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
   await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
@@ -117,7 +122,7 @@ test('Arabic prayer mirror keeps authored copy and keeps English unavailable unt
   await expect(page.locator('main img[src="/media/annaya/charbel-historic-photo.webp"]')).toHaveCount(1);
   await page.reload();
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
-  await expect(page.locator('#sc-language-select option[value="en"]')).toBeDisabled();
+  await expect(page.locator('#sc-language-select option[value="en"]')).toBeEnabled();
   await expect(page).toHaveURL(/\/ar\/prayers$/);
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
 });
@@ -134,4 +139,24 @@ test('unpublished locale on a miracle story stays unavailable with no machine fa
   await expect(page.locator('#sc-language-select option[value="fr"]')).toBeDisabled();
   await expect(page).toHaveURL(/\/miracles\/nohad-el-shami\?lang=en$/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', registry.site + '/miracles/nohad-el-shami');
+});
+
+for (const [source,target] of [['/ar/annaya','/en/annaya'],['/ar/biography','/en/biography'],['/ar/22nd-of-the-month','/22nd-of-the-month']]) {
+  test(`${source} always offers its English source`, async ({page}) => {
+    await page.goto(source);
+    await expect(page.locator('#sc-language-select option[value="en"]')).toBeEnabled();
+    await expect(page.locator('header nav a[hreflang="en"]')).toHaveAttribute('href', /.+/);
+    await page.selectOption('#sc-language-select','en');
+    await expect(page).toHaveURL(new RegExp(target+'$'));
+    await expect(page.locator('html')).toHaveAttribute('lang','en');
+  });
+}
+
+for(const code of languages) test(`${code} homepage offers every shipped homepage`,async({page})=>{
+  await page.goto(registry.locales[code].home);
+  for(const lang of languages) await expect(page.locator(`#sc-language-select option[value="${lang}"]`)).toBeEnabled();
+  const next=code==='fr'?'ar':'fr';
+  await page.selectOption('#sc-language-select',next);
+  await expect(page).toHaveURL(new RegExp(registry.locales[next].home+'$'));
+  await expect(page.locator('html')).toHaveAttribute('lang',next);
 });
