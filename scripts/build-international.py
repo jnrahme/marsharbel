@@ -19,6 +19,7 @@ from i18n.litany_mirror import render_litany
 from i18n.eucharistic_mirror import render_eucharistic
 from i18n.chaplet_mirror import render_chaplet
 from i18n.exact_master import render_exact_set
+from i18n.home_mirror import render_home_set
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
 
@@ -215,6 +216,7 @@ def outputs(root=ROOT):
                     text=head+links+'\n'+text[head_end:]
             result[path]=text
     result.update(render_exact_set(root, registry))
+    result.update(render_home_set(root, registry))
     # Keep the English homepage and legacy canonical URLs stable.
     sitemap = root / 'sitemap.xml'
     text = sitemap.read_text()
