@@ -12,9 +12,10 @@
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="@@url@@" />
   {{> head-social "website" "@@title@@" "@@desc@@" "@@url@@" "@@ogImage@@" "@@title@@" "@@desc@@" "@@ogImage@@"}}
-  {{> ld-webpage-audience "en" "Children and families" "@@ageMin@@" "@@ageMax@@" "@@title@@" "@@descLd@@" "@@url@@" "Home" "https://marsharbel.com/" "@@h1@@" "@@url@@"}}
+  {{> ld-webpage-audience "en" "Children and families" "@@ageMin@@" "@@ageMax@@" "@@title@@" "@@descLd@@" "@@url@@" "Home" "https://marsharbel.com/" "@@crumb@@" "@@url@@"}}
 <!--opt:faq-->  {{> ld-faq @@faqArgs@@}}
-<!--/opt:faq-->
+<!--/opt:faq--><!--opt:videoLd-->  {{> ld-video @@videoLd@@}}
+<!--/opt:videoLd-->
 
 
 
@@ -53,7 +54,7 @@
 <!-- hreflang:end -->
 <!--opt:preLine--><style>#story-body.is-reflection { white-space: pre-line; }</style>
 <!--/opt:preLine--></head>
-<body class="is-story-page" data-story="@@storyId@@">
+<body class="is-story-page"@@storyIdAttr@@>
   {{> skip-link}}
 {{> header-open-3}}{{> primary-nav}}{{> header-close-2}}
 <main id="main-content" class="site-shell storybook-page" tabindex="-1">
@@ -72,7 +73,7 @@
 <button class="btn subtle" id="story-resume-btn" type="button">Resume</button>
 <button aria-label="Dismiss" class="story-resume-dismiss" id="story-resume-dismiss" type="button">✕</button>
 </div>
-<section aria-label="Illustrated storybook" class="storybook reveal">
+<section aria-label="Illustrated storybook" class="storybook reveal"@@storybookIdAttr@@>
 <div class="storybook-controls">
 <span class="story-reading-indicator" id="story-reading-indicator">
 <span class="story-reading-dot"></span>
@@ -117,17 +118,21 @@
 <ul id="story-evidence-list"></ul>
 </details>
 </section>
-<p class="story-production-note"@@disclosureAttr@@>@@productionNote@@</p>
-<!--opt:family--><section aria-labelledby="family-bible-reading" class="section">
+<!--opt:film-->@@film@@
+<!--/opt:film--><!--opt:productionNote--><p class="story-production-note"@@disclosureAttr@@>@@productionNote@@</p>
+<!--/opt:productionNote--><!--opt:learn-->@@learn@@
+<!--/opt:learn--><!--opt:family--><section aria-labelledby="family-bible-reading" class="section">
 <h2 id="family-bible-reading">Read the Bible and pray together</h2>
 <div class="card story">@@family@@</div>
 </section>
 <!--/opt:family--><!--opt:saintBio-->{{> saint-bio "@@bioHeading@@" "@@bioFacts@@" "@@bioBody@@" "@@bioTail@@"}}
-<!--/opt:saintBio--><section class="section reveal">
+<!--/opt:saintBio--><!--opt:dates-->@@dates@@
+<!--/opt:dates--><!--opt:research-->@@research@@
+<!--/opt:research--><!--opt:about--><section class="section reveal">
 <h2>About this story</h2>
 <article class="card story">@@about@@</article>
 </section>
-<!--opt:faqSection--><section class="section">
+<!--/opt:about--><!--opt:faqSection--><section class="section">
 <h2>Frequently Asked Questions</h2>
 <div class="card story">@@faqCard@@</div>
 </section>
