@@ -145,7 +145,7 @@ def load_catalog(root=ROOT):
         if set(catalogs[code]['pages']) != set(locale_topics(registry, code)):
             raise ValueError(f'{code}: missing or extra page topics')
         for topic, page in catalogs[code]['pages'].items():
-            if set(page) != {'title', 'description', 'intro', 'sections'}:
+            if set(page) - {'fullGuide'} != {'title', 'description', 'intro', 'sections'}:
                 raise ValueError(f'{code}/{topic}: invalid page fields')
             if set(page['sections']) != set(registry['topics'][topic]['sections']):
                 raise ValueError(f'{code}/{topic}: section IDs do not match registry')
