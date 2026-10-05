@@ -414,6 +414,7 @@ SAINT_STEMS = {
     "st-nimatullah",
     "st-padre-pio",
     "st-rafqa",
+    "st-sarkis-bakhos",
     "st-teresa-of-calcutta",
     "history",
 }

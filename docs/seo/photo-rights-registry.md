@@ -30,6 +30,11 @@ figcaption. New images: add a record here in the same batch.
   Rafqa, Jrabta, Lebanon. Author: unknown.
 - License: public domain (published before 1930; Lebanon Law 75/1999 expiry). Verified 2026-09-25.
 
+### st-sarkis-bakhos.webp (689x1000, 131KB)
+- Subject: Sts Sergius and Bacchus as mounted warrior saints, icon, Saint Catherine's Monastery, Mount Sinai, second half of the 13th century.
+- Source: Wikimedia Commons, File:Saint Sergius and Saint Bacchus, from Saint Catherine Monastery, Mount Sinai, second half of the 13th century.jpg. Author: 13th-century painter.
+- License: public domain (Commons: Public domain). Verified 2026-10-05.
+
 ### blessed-fulton-sheen.webp (873x693, 48KB)
 - Subject: Blessed Fulton Sheen at his desk, 1956 (real photograph).
 - Source: Wikimedia Commons, File:Bishop Fulton J. Sheen 1956.JPG
