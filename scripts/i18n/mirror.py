@@ -1,5 +1,6 @@
 from i18n.encyclopedia_nav import finish_nav
 """Render reviewed prayer locale pages from one DOM skeleton and strict text slots."""
+from i18n.devotion_guidance import load_guidance, render_lead
 from i18n.metadata import og_locales, published_locales
 
 def og_alternates(code, registry=None):
@@ -116,6 +117,12 @@ def render_mirrors(root=ROOT, registry=None):
             if nav_match:
                 block = nav_match.group(0)
                 text = text.replace(block, re.sub(r'(<a\b[^>]*\bhref=["\'])\./([^"\']*)(["\'])', r'\1/\2\3', block))
+        guidance = load_guidance(root, code, 'prayers')
+        if guidance:
+            marker = '    <section class="section">'
+            if text.count(marker) < 1:
+                raise ValueError('Prayer guidance insertion target missing')
+            text = text.replace(marker, render_lead(guidance) + '\n' + marker, 1)
         result[path] = finish_nav(text,root,code)
     return result
 
