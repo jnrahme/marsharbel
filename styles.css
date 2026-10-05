@@ -2822,6 +2822,8 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { font-family: 'Noto 
 .home-news a:focus-visible{outline:2px solid var(--theme-accent);outline-offset:4px}
 @media (prefers-reduced-motion:reduce){.home-news-photo img{transition:none}}
 @media (max-width:820px){.home-news-grid{grid-template-columns:1fr}.home-news-row{grid-template-columns:88px minmax(0,1fr)}.home-news-head{align-items:flex-end}}
+/* Long translated news links need their own row on narrow phones. */
+@media (max-width:480px){.home-news-head{flex-direction:column;align-items:flex-start;gap:.75rem}.home-news-all{max-width:100%;white-space:normal;overflow-wrap:anywhere}}
 
 .home-news-credit{display:block;color:var(--theme-muted);font-size:.72rem;line-height:1.45;margin:.45rem 0}
 
