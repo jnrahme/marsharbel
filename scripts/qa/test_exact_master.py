@@ -9,7 +9,7 @@ from i18n.exact_master import render_exact
 class ExactMasterTests(unittest.TestCase):
  def test_german_preview_complete(self):
   r=read_json(ROOT/'locales/registry.json')
-  for name,route in [('biography','/de/biografie'),('novena','/de/novene'),('feast','/de/gedenktag'),('miracles','/de/miracles/')]:
+  for name,route in [('novena','/de/novene'),('feast','/de/gedenktag'),('miracles','/de/miracles/')]:
    c=read_json(ROOT/f'locales/de/{name}-exact.json');source=BeautifulSoup((ROOT/c['master']).read_text(),'html.parser');s=BeautifulSoup(render_exact(ROOT,r,'de',name,route),'html.parser')
    self.assertEqual(s.select_one('body > a.skip-link').get_text(),read_json(ROOT/'locales/de/common.json')['navigation.skip'])
    self.assertEqual(s.select_one('body > a.skip-link')['href'],'#main-content')
@@ -41,10 +41,10 @@ class ExactRuntimeGuards(unittest.TestCase):
  def test_skip_target_changed_fails(self):
   import tempfile,shutil,hashlib
   with tempfile.TemporaryDirectory() as d:
-   root=Path(d);r=read_json(ROOT/'locales/registry.json');c=read_json(ROOT/'locales/de/biography-exact.json')
+   root=Path(d);r=read_json(ROOT/'locales/registry.json');c=read_json(ROOT/'locales/de/novena-exact.json')
    source=(ROOT/c['master']).read_text().replace('tabindex="-1"','tabindex="0"')
    (root/c['master']).write_text(source);c['masterSha256']=hashlib.sha256(source.encode()).hexdigest()
-   with self.assertRaisesRegex(ValueError,'focus attributes'):render_exact(root,r,'de','biography','/de/biografie',c)
+   with self.assertRaisesRegex(ValueError,'focus attributes'):render_exact(root,r,'de','novena','/de/novene',c)
 
 class ExactLocalizedDestinations(unittest.TestCase):
  def test_prayer_and_eucharistic_twins(self):

@@ -503,10 +503,7 @@
         "de": "/de/biografie",
         "ru": "/ru/biography"
       },
-      "renderLocales": [
-        "de",
-        "ru"
-      ]
+      "renderLocales": []
     },
     "novena": {
       "english": "/saint-charbel-novena",
@@ -554,5 +551,31 @@
       "pl",
       "ru"
     ]
+  },
+  "pageMirrors": {
+    "history-master": {
+      "master": "history.html",
+      "english": "/history",
+      "routes": {
+        "ar": "/ar/biography",
+        "fr": "/fr/biographie",
+        "es": "/es/biografia",
+        "pt": "/pt/biografia",
+        "it": "/it/biografia",
+        "de": "/de/biografie",
+        "pl": "/pl/biografia",
+        "ru": "/ru/biography"
+      },
+      "renderLocales": [
+        "ar",
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "pl",
+        "ru"
+      ]
+    }
   }
 }
