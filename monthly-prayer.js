@@ -39,7 +39,7 @@
         : message('today');
     } else {
       const nextGathering = new Date(now.getFullYear(), now.getMonth() + (day > 22 ? 1 : 0), 21);
-      const month = new Intl.DateTimeFormat(document.documentElement.lang || 'en', { month: 'long' }).format(nextGathering);
+      const month = new Intl.DateTimeFormat(document.documentElement.lang || 'en', { day: 'numeric', month: 'long' }).formatToParts(nextGathering).find(part => part.type === 'month').value;
       timing.textContent = message('next').replace('{month}', month);
     }
   }

@@ -62,6 +62,12 @@ def render_home(root, registry, lang, catalog=None):
             soup.head.append(soup.new_tag('meta', property='og:locale:alternate', content=value))
     for a in soup.select('header a[href="/"],header a[href="/index.html"]'):
         a['href'] = route
+    # Route existing controls to published twins without changing their structure.
+    twins = {cfg['english']:cfg['routes'][lang] for cfg in registry.get('authoredMirrors',{}).values() if lang in cfg['routes']}
+    for a in soup.select('a[href]'):
+        parts = urlsplit(a['href'])
+        if not parts.scheme and parts.path in twins:
+            a['href'] = twins[parts.path] + ('?' + parts.query if parts.query else '') + ('#' + parts.fragment if parts.fragment else '')
     for script in soup.select('script[type="application/ld+json"]'):
         data = json.loads(script.string)
         for item in data.get('@graph', []):

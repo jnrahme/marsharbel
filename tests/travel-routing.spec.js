@@ -21,5 +21,13 @@ for(const alias of Object.keys(config.englishAliases))test(`${alias} redirects t
  const r=await request.get(alias,{maxRedirects:0});expect(r.status()).toBe(301);expect(r.headers().location).toBe(config.englishAliases[alias]);
 });
 for(const route of ['/ar/','/ar/annaya'])test(`${route} has a direct localized Travel route and preserves its language control`,async({page})=>{
- await page.goto(route);await page.locator('.travel-hub-return').click();await expect(page).toHaveURL(/\/ar\/travel$/);await expect(page.locator('html')).toHaveAttribute('lang','ar');
+ await page.goto(route);
+ const registry=require('../locales/registry.json');
+ const migratedHome=route==='/ar/'&&registry.homepageMirrors?.renderLocales.includes('ar');
+ if(migratedHome){
+  const parent=page.locator('header a.nav-parent[href="/ar/travel"]');
+  await parent.click();
+  if(await page.evaluate(()=>innerWidth<=820||matchMedia('(hover: none)').matches))await page.locator('header .nav-sub a[href="/ar/travel"]').click();
+ }
+ else await page.locator('.travel-hub-return').click();await expect(page).toHaveURL(/\/ar\/travel$/);await expect(page.locator('html')).toHaveAttribute('lang','ar');
 });

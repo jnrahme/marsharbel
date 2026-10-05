@@ -284,7 +284,7 @@ def outputs(root=ROOT):
                 code=match[1]
                 route='/' + str(path.relative_to(root)).removesuffix('.html')
                 route=route.removesuffix('index') if route.endswith('/index') else route
-                result[path] = travel_frame(tour_nav(text,root,code),root,code,route,registry)
+                result[path] = text if code in registry.get('homepageMirrors', {}).get('renderLocales', []) and route == registry['locales'][code]['home'] else travel_frame(tour_nav(text,root,code),root,code,route,registry)
     from i18n.same_page_injection import control_outputs
     manifest=read_json(root/'locales/same-page-manifest.pending.json')
     control_copy=read_json(root/'locales/same-page-copy.json')
