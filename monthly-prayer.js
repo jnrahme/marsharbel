@@ -6,12 +6,12 @@
 
   const config = document.getElementById('sc-home-labels');
   const labels = config ? JSON.parse(config.textContent) : await fetch('/locales/en/home-copy.json').then(response => {
-    if (!response.ok) throw new Error('Home catalog unavailable');
+    if (!response.ok) throw new Error('HOME_CATALOG_UNAVAILABLE');
     return response.json();
   });
   const message = key => {
     const value = labels['home.runtime.monthly.' + key];
-    if (typeof value !== 'string') throw new Error('Missing home message: ' + key);
+    if (typeof value !== 'string') throw new Error('HOME_MESSAGE_MISSING:' + key);
     return value;
   };
   const guide = section.querySelector('details');

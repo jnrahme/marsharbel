@@ -64,6 +64,7 @@ npm run test:rosary-all
 echo "[qa] Eucharistic authored locale mirrors"
 python3 -m unittest discover -s scripts/qa -p 'test_eucharistic_locale.py'
 python3 -m unittest discover -s scripts/qa -p 'test_home_mirror.py'
+python3 -m unittest discover -s scripts/qa -p 'test_mirror_structure.py'
 PORT=4197 bash scripts/tests/run_eucharistic_locales.sh
 
 echo "[qa] Books content API: feed, shelf parity and round trip"

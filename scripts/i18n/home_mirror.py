@@ -4,6 +4,7 @@ import json
 import re
 from urllib.parse import urljoin, urlsplit
 from i18n.metadata import og_locales
+from i18n.mirror_structure import check_pair
 from bs4 import BeautifulSoup, NavigableString
 from i18n.catalog import read_json
 
@@ -55,7 +56,10 @@ def render_home(root, registry, lang, catalog=None):
     soup.select_one('meta[property="og:url"]')['content'] = canonical
     soup.select_one('meta[property="og:locale"]')['content'] = og_locales(registry)[lang]
     for node in soup.select('meta[property="og:locale:alternate"]'):
-        if node.get('content') == og_locales(registry)[lang]: node.decompose()
+        node.decompose()
+    for code, value in og_locales(registry).items():
+        if code != lang:
+            soup.head.append(soup.new_tag('meta', property='og:locale:alternate', content=value))
     for a in soup.select('header a[href="/"],header a[href="/index.html"]'):
         a['href'] = route
     for script in soup.select('script[type="application/ld+json"]'):
@@ -74,7 +78,11 @@ def render_home(root, registry, lang, catalog=None):
         node = soup.new_tag('script', type='application/json', id=ident)
         node.string = json.dumps(data, ensure_ascii=False).replace('<', '\\u003c')
         soup.head.append(node)
-    return str(soup)
+    rendered = str(soup)
+    mismatches = check_pair(raw.decode('utf-8'), rendered, '/', route)
+    if mismatches:
+        raise ValueError(f'Home {lang}: mirror structure diverged: {mismatches}')
+    return rendered
 
 
 def render_home_set(root, registry):

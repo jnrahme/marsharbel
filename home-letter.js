@@ -3,11 +3,11 @@
   if (!form) return;
   const config = document.getElementById('sc-home-labels');
   const labels = config ? JSON.parse(config.textContent) : await fetch('/locales/en/home-copy.json').then(response => {
-    if (!response.ok) throw new Error('Home catalog unavailable');
+    if (!response.ok) throw new Error('HOME_CATALOG_UNAVAILABLE');
     return response.json();
   });
   const storageError = labels['home.runtime.letter.storageError'];
-  if (typeof storageError !== 'string') throw new Error('Missing home letter storage message');
+  if (typeof storageError !== 'string') throw new Error('HOME_LETTER_STORAGE_KEY_MISSING');
   const draft = document.getElementById('home-letter-draft');
   const error = document.getElementById('home-letter-error');
   try {
