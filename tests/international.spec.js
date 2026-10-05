@@ -111,7 +111,9 @@ test('Arabic prayer mirror keeps authored copy and keeps English unavailable unt
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
   await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
   await expect(page.locator('main > section')).toHaveCount(8);
-  await expect(page.locator('.prayer-card')).toHaveCount(14);
+  // The ar Oct-22 devotion-guidance aside reuses card styling; count only
+  // the fourteen authored prayer cards inside the prayer grids.
+  await expect(page.locator('.prayer-grid .prayer-card')).toHaveCount(14);
   await expect(page.locator('main img[src="/media/annaya/charbel-historic-photo.webp"]')).toHaveCount(1);
   await page.reload();
   await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);

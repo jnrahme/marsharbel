@@ -43,15 +43,20 @@ class PrayerMirrorTests(unittest.TestCase):
         pages = render_pair(ROOT)
         en = pages[ROOT / 'saint-charbel-prayers.html']
         ar = pages[ROOT / 'ar/prayers.html']
-        self.assertEqual(Shape(en).nodes, Shape(ar).nodes)
-        self.assertEqual(Shape(en).images, Shape(ar).images)
+        # Arabic alone carries the keyed Oct-22 devotion-guidance aside
+        # (locales/ar/oct22-guidance.json via i18n/devotion_guidance.py).
+        # Strip that intentional, catalog-validated block before the
+        # structural-parity comparison, which still guards everything else.
+        ar_parity = re.sub(r'<aside[^>]*class="related devotion-guidance[^"]*"[^>]*>.*?</aside>', '', ar, flags=re.S)
+        self.assertEqual(Shape(en).nodes, Shape(ar_parity).nodes)
+        self.assertEqual(Shape(en).images, Shape(ar_parity).images)
         # The English master should not drift outside its keyed source.
         original = (ROOT / 'saint-charbel-prayers.html').read_text()
         # The published English master alone has P0's managed crawlable
         # footer-locale bar. The shared prayer body must still match Arabic.
         self.assertEqual(len(BeautifulSoup(original,'html.parser').select('nav.footer-locales')),1)
         original_body = re.sub(r'<nav[^>]*class="footer-locales"[^>]*>.*?</nav>', '', original, count=1, flags=re.S)
-        self.assertEqual(Shape(original_body).nodes, Shape(ar).nodes)
+        self.assertEqual(Shape(original_body).nodes, Shape(ar_parity).nodes)
         self.assertEqual(len(Shape(ar).images), 1)
         self.assertEqual(ar.count('card prayer-card'), 14)
         self.assertEqual(ar.count('<section class="section">'), 6)

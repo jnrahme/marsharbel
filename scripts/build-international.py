@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 from string import Template
 
+from i18n.devotion_guidance import load_guidance, render_lead, render_links
 from i18n.metadata import og_locales, published_locales, selector_aliases
 from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_locales, read_json
 from i18n.mirror import render_mirrors
@@ -76,14 +77,16 @@ def render(registry, catalog, code, template, topic=None):
     t = lambda key: escape(common[key])
     if topic:
         page = pages[topic]
+        guidance = load_guidance(ROOT, code, topic)
         section_ids = registry['topics'][topic]['sections']
         contents = ''.join(f'<li><a href="#section-{key}">{escape(page["sections"][key]["title"])}</a></li>' for key in section_ids)
-        sections = ''.join(f'<section id="section-{key}" class="section"><h2>{escape(page["sections"][key]["title"])}</h2><p>{escape(page["sections"][key]["body"])}</p></section>' for key in section_ids)
+        sections = ''.join(f'<section id="section-{key}" class="section"><h2>{escape(page["sections"][key]["title"])}</h2><p>{escape(page["sections"][key]["body"])}</p>{render_links(guidance["sectionLinks"][key]) if guidance and key in guidance["sectionLinks"] else ""}</section>' for key in section_ids)
         sources = ''.join(f'<li><a href="{escape(registry["sources"][key])}">{t("sources." + key)}</a></li>' for key in registry['topics'][topic]['sources'])
         full = page.get('fullGuide')
         full_href = registry['topics'][topic]['relatedEnglish'] + ('' if code == 'en' else '?lang=en')
         full_attrs = '' if code == 'en' else ' lang="en" dir="ltr"'
-        full_guide = (f'<p class="full-guide">{escape(full["lead"])} <a href="{full_href}"{full_attrs}>{escape(full["label"])}</a>.</p>' if full else '')
+        full_stop = '' if code == 'ar' else '.'
+        full_guide = (f'<p class="full-guide">{escape(full["lead"])} <a href="{full_href}"{full_attrs}>{escape(full["label"])}</a>{full_stop}</p>' if full else '')
         related_topics = [key for key in locale_topics(registry, code) if key != topic]
         # Readers of story leaves should get back to the hub before the broader
         # catalog; homepage cards still expose every topic for discovery.
@@ -91,8 +94,9 @@ def render(registry, catalog, code, template, topic=None):
             related_topics.remove('miracles')
             related_topics.insert(0, 'miracles')
         related = ''.join(f'<li><a href="{page_url(registry, code, key)}">{escape(pages[key]["title"])}</a></li>' for key in related_topics)
+        lead = render_lead(guidance) + '\n' if guidance else ''
         content = f'''<article><h1>{escape(page['title'])}</h1><p class="intro">{escape(page['intro'])}</p>{full_guide}
-<nav class="contents" aria-label="{t('navigation.contents')}"><h2>{t('navigation.contents')}</h2><ol>{contents}</ol></nav>
+{lead}<nav class="contents" aria-label="{t('navigation.contents')}"><h2>{t('navigation.contents')}</h2><ol>{contents}</ol></nav>
 {sections}<section class="section"><h2>{t('navigation.sources')}</h2><ul>{sources}</ul></section></article>
 <aside class="related"><h2>{t('navigation.related')}</h2><ul>{related}</ul><a href="{registry['topics'][topic]['relatedEnglish']}?lang=en">{t('navigation.englishResource')}</a></aside>'''
         title, description = page['title'], page['description']
