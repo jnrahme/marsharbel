@@ -49,15 +49,16 @@ for (const name of Object.keys(catalogs)) {
       expect(errors).toEqual([]);
     });
   }
-  test(`${slug} refuses unreviewed English/Arabic switches without changing the page`, async ({page}) => {
+  test(`${slug} offers English source and refuses unreviewed non-English switches`, async ({page}) => {
     for(const code of ['en','ar']) {
       const route=code==='en'?`/${slug}`:`/ar/${slug}`;
       await page.goto(route);
-      const other=code==='en'?'ar':'en';
+      const other=code==='en'?'ar':'de';
       await expect(page.locator(`#sc-language-select option[value="${other}"]`)).toBeDisabled();
       const before=await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
       expect(await page.evaluate(lang=>SC_LANGUAGE_SWITCH.request(lang),other)).toBe(false);
       expect(await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}))).toEqual(before);
+      if(code==='ar'){await expect(page.locator('#sc-language-select option[value=en]')).toBeEnabled();await page.selectOption('#sc-language-select','en');await expect(page).toHaveURL(new RegExp('/'+slug+'$'));await expect(page.locator('html')).toHaveAttribute('lang','en');}
     }
   });
 }
