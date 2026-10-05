@@ -57,8 +57,13 @@ for (const [language, config] of Object.entries(registry.locales)) {
           const next = published[(published.indexOf(language) + 1) % published.length];
           // Same-page switching is fail-closed: every unpublished twin stays an unavailable, non-navigating link.
           const target = page.locator(`header nav a[hreflang="${next}"]`).first();
-          await expect(target).toHaveAttribute('aria-disabled', 'true');
-          await expect(target).not.toHaveAttribute('href', /.+/);
+          if (next === 'en') {
+            await expect(target).not.toHaveAttribute('aria-disabled', 'true');
+            await expect(target).toHaveAttribute('href', /.+/);
+          } else {
+            await expect(target).toHaveAttribute('aria-disabled', 'true');
+            await expect(target).not.toHaveAttribute('href', /.+/);
+          }
         }
       } finally {
         await context.close();
@@ -135,3 +140,14 @@ test('unpublished locale on a miracle story stays unavailable with no machine fa
   await expect(page).toHaveURL(/\/miracles\/nohad-el-shami\?lang=en$/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', registry.site + '/miracles/nohad-el-shami');
 });
+
+for (const [source,target] of [['/ar/annaya','/en/annaya'],['/ar/biography','/en/biography'],['/ar/22nd-of-the-month','/22nd-of-the-month']]) {
+  test(`${source} always offers its English source`, async ({page}) => {
+    await page.goto(source);
+    await expect(page.locator('#sc-language-select option[value="en"]')).toBeEnabled();
+    await expect(page.locator('header nav a[hreflang="en"]')).toHaveAttribute('href', /.+/);
+    await page.selectOption('#sc-language-select','en');
+    await expect(page).toHaveURL(new RegExp(target+'$'));
+    await expect(page.locator('html')).toHaveAttribute('lang','en');
+  });
+}

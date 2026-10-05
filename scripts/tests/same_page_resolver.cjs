@@ -16,3 +16,9 @@ test('pending twin blocks',()=>{let v=manifest.pages.history.variants.ar;v.statu
 test('every offered code unavailable except actual source and reviewed Arabic',()=>{const fs=require('fs');const langs=JSON.parse(fs.readFileSync('scripts/tests/fixtures/legacy-language-options.json','utf8'));for(const lang of langs){const r=resolve(manifest,'https://marsharbel.com/history',lang.code,'en');assert.equal(r.available,['en','ar'].includes(lang.code))}assert.equal(langs.length,106)});
 test('ambiguous identity throws not silent first match',()=>{manifest.pages.duplicate={variants:{fr:variant('/history')}};assert.throws(()=>locate(manifest,'/history'),/ambiguous-page-identity/);delete manifest.pages.duplicate});
 console.log(n,'resolver cases passed; review IDs here are test fixtures only');
+manifest.englishSources={'/ar/full-history':'/history'};
+manifest.pages.history.variants.ar.status='pending';
+let sourceEscape=resolve(manifest,'https://marsharbel.com/ar/full-history?lang=ar&campaign=test#unknown','en','ar');
+assert.equal(sourceEscape.available,true);assert.equal(sourceEscape.reason,'english-source');assert.equal(sourceEscape.href,'https://marsharbel.com/history?campaign=test');
+assert.equal(resolve(manifest,'https://marsharbel.com/ar/full-history','fr','ar').available,false);
+console.log('English source is always offered even when current translation is pending; non-English gate unchanged PASS');
