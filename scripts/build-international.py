@@ -80,6 +80,10 @@ def render(registry, catalog, code, template, topic=None):
         contents = ''.join(f'<li><a href="#section-{key}">{escape(page["sections"][key]["title"])}</a></li>' for key in section_ids)
         sections = ''.join(f'<section id="section-{key}" class="section"><h2>{escape(page["sections"][key]["title"])}</h2><p>{escape(page["sections"][key]["body"])}</p></section>' for key in section_ids)
         sources = ''.join(f'<li><a href="{escape(registry["sources"][key])}">{t("sources." + key)}</a></li>' for key in registry['topics'][topic]['sources'])
+        full = page.get('fullGuide')
+        full_href = registry['topics'][topic]['relatedEnglish'] + ('' if code == 'en' else '?lang=en')
+        full_attrs = '' if code == 'en' else ' lang="en" dir="ltr"'
+        full_guide = (f'<p class="full-guide">{escape(full["lead"])} <a href="{full_href}"{full_attrs}>{escape(full["label"])}</a>.</p>' if full else '')
         related_topics = [key for key in locale_topics(registry, code) if key != topic]
         # Readers of story leaves should get back to the hub before the broader
         # catalog; homepage cards still expose every topic for discovery.
@@ -87,7 +91,7 @@ def render(registry, catalog, code, template, topic=None):
             related_topics.remove('miracles')
             related_topics.insert(0, 'miracles')
         related = ''.join(f'<li><a href="{page_url(registry, code, key)}">{escape(pages[key]["title"])}</a></li>' for key in related_topics)
-        content = f'''<article><h1>{escape(page['title'])}</h1><p class="intro">{escape(page['intro'])}</p>
+        content = f'''<article><h1>{escape(page['title'])}</h1><p class="intro">{escape(page['intro'])}</p>{full_guide}
 <nav class="contents" aria-label="{t('navigation.contents')}"><h2>{t('navigation.contents')}</h2><ol>{contents}</ol></nav>
 {sections}<section class="section"><h2>{t('navigation.sources')}</h2><ul>{sources}</ul></section></article>
 <aside class="related"><h2>{t('navigation.related')}</h2><ul>{related}</ul><a href="{registry['topics'][topic]['relatedEnglish']}?lang=en">{t('navigation.englishResource')}</a></aside>'''
