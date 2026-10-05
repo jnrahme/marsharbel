@@ -1,0 +1,1604 @@
+{
+  "version": 1,
+  "master": "index.html",
+  "masterSha256": "025036cf17a25f3ed47f4ac79e4d308973f4c179c6ec3db4feca8a1e15ed7b37",
+  "sourceRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+  "bindings": [
+    {
+      "key": "home.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.everything-about-saint-charbel-in-one-place",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "Everything about Saint Charbel, in one place",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.saint-charbel-the-hermit-of-annaya",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > h1:nth-of-type(1)",
+      "source": "Saint Charbel. The hermit of Annaya.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.prayers-miracles-his-story-and-annaya-free-and-in",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "Prayers, miracles, his story and Annaya, free and in one place. Start with nine days.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.begin-the-9-day-novena",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Begin the 9-day Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.pray-today-s-rosary",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Pray today's Rosary",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.or-browse-all-prayers",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "or browse all prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.prayers",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.miracles",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.story",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > nav:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.children-s-books",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > nav:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.tours",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > nav:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Tours",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-intro-band.the-creator-of-this-website-reports-seeing-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The creator of this website reports seeing Saint Charbel on December 22. This artistic rendition reflects his personal account, not independent verification or a photograph.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-intro-band.saint-charbel-1828-1898-was-a-maronite-monk-and",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Saint Charbel (1828-1898) was a Maronite monk and hermit of Annaya, Lebanon, canonized in 1977. Walk through his life in the mountains of Lebanon, discover the stories of faith linked to his intercession, and enter a quieter rhythm of prayer inspired by the hermit of Annaya.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-intro-band.born-in-bkaakafra",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Born in Bkaakafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-intro-band.entered-eternal-life",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Entered eternal life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-intro-band.canonized-a-saint",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "Canonized a saint",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.latest-news",
+      "selector": "#home-news-heading",
+      "source": "Latest news",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.read-the-latest-news",
+      "selector": "#latest-news > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Read the latest news",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.annaya-monastery-entrance-photo-llew-cc-by-sa-4",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Annaya monastery entrance. Photo: LLEW, CC BY-SA 4.0; venue context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.september-26-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "September 26, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.prayer-walk-to-annaya-brings-prayers-for-south-lebanon",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Prayer walk to Annaya brings prayers for south Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.pilgrims-walked-from-byblos-to-saint-charbel-s-shrine",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(4)",
+      "source": "Pilgrims walked from Byblos to Saint Charbel's shrine, carrying prayers for Christians in south Lebanon.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.october-2-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "October 2, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.kfifan-receives-relics-of-its-patron-saints-from-rome",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Kfifan receives relics of its patron saints from Rome",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.kfifan-monastery-2012-venue-context-not-the-relic-reception",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Kfifan monastery, 2012. Venue context, not the relic reception. Photo: Evilscaught, CC BY 3.0; WebP conversion.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.september-30-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "September 30, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.emmitsburg-celebrates-nine-years-of-saint-sharbel-s-shrine",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Emmitsburg celebrates nine years of Saint Sharbel's shrine",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.national-shrine-grotto-emmitsburg-2015-venue-context-not-the",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "National Shrine Grotto, Emmitsburg, 2015. Venue context, not the 2026 celebration. Photo: Bohemian Baltimore, CC BY-SA 4.0; resized to WebP.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.september-10-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "September 10, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-doctor-who-investigated-a-st-charbel-healing-speaks",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "The doctor who investigated a St. Charbel healing speaks",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.historic-saint-charbel-portrait-public-domain-not-a-photograph",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Historic Saint Charbel portrait (public domain); not a photograph of Dr. Borik.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.august-23-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "August 23, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.an-american-priest-walks-the-st-charbel-trail",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "An American priest walks the St. Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.photo-courtesy-of-father-michael-sliney-lc",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Photo courtesy of Father Michael Sliney, LC.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.december-2025",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(5) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "December 2025",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.charbel-the-movie-what-is-confirmed-about-the-new",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(5) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Charbel The Movie: what is confirmed about the new film",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.official-poster-mtv-nmpro",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(5) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Official poster: MTV/NMPRO.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-gallery.gallery",
+      "selector": "#main-content > div:nth-of-type(1) > section:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-gallery.see-how-he-may-have-looked",
+      "selector": "#home-gallery-heading",
+      "source": "See how he may have looked",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-gallery.an-imagined-portrait-of-saint-charbel-an-artistic-rendition",
+      "selector": "#main-content > div:nth-of-type(1) > section:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "An imagined portrait of Saint Charbel. An artistic rendition made with AI, not a photograph and not a historical record.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-gallery.open-the-gallery",
+      "selector": "#main-content > div:nth-of-type(1) > section:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Open the gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.every-month",
+      "selector": "#monthly-prayer > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "EVERY MONTH",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.one-community-in-prayer",
+      "selector": "#monthly-prayer > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "ONE COMMUNITY IN PRAYER",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.our-monthly-invitation",
+      "selector": "#monthly-prayer > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Our monthly invitation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.your-intentions",
+      "selector": "#monthly-prayer-title",
+      "source": "Your intentions.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.our-united-prayer",
+      "selector": "#monthly-prayer-title",
+      "source": "Our united prayer.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "home.monthly-prayer.come-closer-to-christ-through-saint-sharbel-s-intercession",
+      "selector": "#monthly-prayer > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2)",
+      "source": "Come closer to Christ through Saint Sharbel’s intercession. Bring what is on your heart, and carry the intentions of others in prayer.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.join-us-on-the-21st-22nd-of-every-month",
+      "selector": "#monthly-prayer > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(3)",
+      "source": "Join us on the 21st & 22nd of every month.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.pray-the-rosary",
+      "selector": "#monthly-prayer > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Pray the Rosary",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.a-daily-rhythm-a-deeper-faith",
+      "selector": "#monthly-prayer > div:nth-of-type(1) > a:nth-of-type(1) > small:nth-of-type(1)",
+      "source": "A daily rhythm. A deeper faith.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.enter-this-month-s-prayer",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > summary:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Enter this month’s prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.make-room-for-grace",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Make room for grace",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.prepare-your-heart",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Prepare your heart",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.in-the-days-leading-up-to-the-22nd-make",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "In the days leading up to the 22nd, make extra time for prayer. Pray the Rosary daily—a powerful spiritual weapon that draws us toward Christ. Begin with an Our Father, Hail Mary, and Glory Be, or follow the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.saint-charbel-novena",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.offer-your-intention",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Offer your intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.pause-and-name-your-intention-silently-before-god-then",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Pause and name your intention silently before God. Then pray for everyone joining this devotion, including those whose needs are known only to Him. Your intention stays between you and God.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.remain-close-return-with-thanks",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "Remain close. Return with thanks.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.be-attentive-to-god-s-grace-in-daily-life",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "Be attentive to God’s grace in daily life, with patience and discernment. Trust His timing. When you receive a blessing or believe you have received a miracle, thank God and Saint Sharbel for his intercession. Let gratitude lead you to Mass, faithful prayer, and acts of love.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.pause-breathe-pray",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Pause. Breathe. Pray.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.a-prayer-of-intercession",
+      "selector": "#monthly-prayer-heading",
+      "source": "A prayer of intercession",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.lord-jesus-christ-i-come-before-you-with-faith",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Lord Jesus Christ, I come before You with faith and hope. Through the intercession of Saint Sharbel, receive the intention I hold in my heart.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.take-a-quiet-moment-for-your-intention",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "Take a quiet moment for your intention.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.i-also-place-before-you-the-intentions-of-everyone",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "I also place before You the intentions of everyone praying with us. Comfort the suffering, strengthen the weary, bring peace to families, and draw us all closer to You.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.saint-sharbel-pray-for-us-teach-us-to-trust",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "Saint Sharbel, pray for us. Teach us to trust in God’s will and timing, to recognize His grace, and to live with grateful hearts. May every blessing lead us to love Christ more deeply and serve our neighbor more generously. Amen.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.a-devotional-prayer-written-for-this-community",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(6)",
+      "source": "A devotional prayer written for this community.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.continue-with-saint-charbel-prayers",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Continue with Saint Charbel prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.find-a-prayer-for-what-you-re-carrying",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a prayer for what you're carrying",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.why-the-22nd-this-monthly-devotion-recalls-nouhad-el",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Why the 22nd? This monthly devotion recalls Nouhad El Shami’s healing through Saint Sharbel’s intercession. We gather in hope, entrusting every outcome to God; miracles are not limited to a date.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.monthly-prayer.read-about-the-tradition",
+      "selector": "#monthly-prayer > details:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Read about the tradition",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-travel.travel",
+      "selector": "#main-content > section:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-travel.walk-the-places-of-saint-charbel",
+      "selector": "#home-travel-heading",
+      "source": "Walk the places of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-travel.take-the-online-tour-of-annaya-the-mountain-monastery",
+      "selector": "#main-content > section:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Take the online tour of Annaya, the mountain monastery where he lived as a monk and hermit and where his tomb is today, about 70 km north of Beirut.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-travel.start-the-annaya-tour",
+      "selector": "#main-content > section:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Start the Annaya tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-travel.photo-paul-saad",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "Photo: Paul Saad,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-travel.wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-travel.cc-by-sa-4-0-cropped-and-resized",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(1)",
+      "source": ", CC BY-SA 4.0 (cropped and resized)",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "home.home-letter.a-place-for-your-story",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "A place for your story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-letter.write-a-letter-to-saint-charbel",
+      "selector": "#home-letter-heading",
+      "source": "Write a Letter to Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-letter.tell-your-story-in-your-own-words-continue-to",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Tell your story in your own words. Continue to add your name and details before you send it. Letters stay private until a person reviews them for publication.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-letter.and-they-overcame-him-by-the-blood-of-the",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > figure:nth-of-type(1) > blockquote:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "\"And they overcame him by the blood of the Lamb, and by the word of the testimony…\"",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-letter.revelation-12-11-douay-rheims-first-part-of-the",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > cite:nth-of-type(1)",
+      "source": "Revelation 12:11 (Douay-Rheims), first part of the verse",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-letter.scripture-puts-testimony-in-the-same-sentence-as-the",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > figure:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Scripture puts testimony in the same sentence as the blood of the Lamb. That is how much a testimony matters, and why every Letter is read with care.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-letter.read-the-letters",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Read the Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-letter.your-letter",
+      "selector": "#home-letter-form > label:nth-of-type(1)",
+      "source": "Your letter",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-letter.your-draft-stays-in-this-tab-until-you-send",
+      "selector": "#home-letter-note",
+      "source": "Your draft stays in this tab until you send the form. Nothing appears on the site before review.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-letter.continue-to-add-your-name",
+      "selector": "#home-letter-form > button:nth-of-type(1)",
+      "source": "Continue to add your name",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.made-for-your-home",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Made For Your Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.two-ways-in-whether-you-are-gathering-children-or",
+      "selector": "#main-content > section:nth-of-type(6) > p:nth-of-type(1)",
+      "source": "Two ways in, whether you are gathering children or keeping a daily rosary.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.for-children-families",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "For Children & Families",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.listen-to-saint-charbel-s-story-for-children",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Listen to Saint Charbel's story for children",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.a-27-page-illustrated-storybook-for-ages-5-12",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A 27-page illustrated storybook for ages 5-12, with read-aloud narration on every page - a gentle first doorway into the hermit of Annaya's life of prayer.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.open-the-storybook",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Open the Storybook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.daily-rosary",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Daily Rosary",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.pray-the-rosary-with-a-daily-mystery-meditation",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Pray the Rosary with a daily mystery meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.a-guided-mystery-by-mystery-meditation-with-scripture-sacred",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A guided mystery-by-mystery meditation with scripture, sacred artwork, and hands-free audio - today's mystery, ready when you are.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.start-today-s-meditation",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Start Today's Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.hero-grid.at-a-glance",
+      "selector": "#main-content > section:nth-of-type(7) > article:nth-of-type(2) > h3:nth-of-type(1)",
+      "source": "At a Glance",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.hero-grid.born-in-bkaakafra-lebanon-may-8-1828",
+      "selector": "#main-content > section:nth-of-type(7) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+      "source": "Born in Bkaakafra, Lebanon (May 8, 1828)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.hero-grid.died-as-a-hermit-monk-december-24-1898",
+      "selector": "#main-content > section:nth-of-type(7) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+      "source": "Died as a hermit monk (December 24, 1898)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.hero-grid.canonized-by-pope-paul-vi-october-9-1977",
+      "selector": "#main-content > section:nth-of-type(7) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2)",
+      "source": "Canonized by Pope Paul VI (October 9, 1977)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.hero-grid.saint-charbel-is-remembered-for-total-surrender-to-prayer",
+      "selector": "#main-content > section:nth-of-type(7) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Saint Charbel is remembered for total surrender to prayer, Eucharistic devotion, fasting, humility, and a hidden life of holiness that continues to inspire millions.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.hero-grid.read-full-history",
+      "selector": "#main-content > section:nth-of-type(7) > article:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Read Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.hero-grid.saint-charbel-start-here",
+      "selector": "#main-content > section:nth-of-type(7) > article:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Saint Charbel: Start Here",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.hero-grid.explore-miracles",
+      "selector": "#main-content > section:nth-of-type(7) > article:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(3)",
+      "source": "Explore Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.hero-grid.pray-the-rosary",
+      "selector": "#main-content > section:nth-of-type(7) > article:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(4)",
+      "source": "Pray The Rosary",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.hero-grid.open-rosary-minibook",
+      "selector": "#main-content > section:nth-of-type(7) > article:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(5)",
+      "source": "Open Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.what-you-can-explore",
+      "selector": "#main-content > section:nth-of-type(8) > h2:nth-of-type(1)",
+      "source": "What You Can Explore",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.built-as-a-complete-resource-with-depth-beauty-and",
+      "selector": "#main-content > section:nth-of-type(8) > p:nth-of-type(1)",
+      "source": "Built as a complete resource with depth, beauty, and clear sourcing.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.complete-biography",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Complete Biography",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.from-his-early-years-in-the-mountains-of-lebanon",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "From his early years in the mountains of Lebanon to his monastic calling, priesthood, eremitical life, and eventual canonization.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.miracles-discernment",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
+      "source": "Miracles & Discernment",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.distinguishes-between-church-recognized-miracles-in-the-canonization-process",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Distinguishes between Church-recognized miracles in the canonization process and broader reported healings. Includes current counts and a realistic interpretation of what is formally verified.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.recent-miracle-reports",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(3) > h3:nth-of-type(1)",
+      "source": "Recent Miracle Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.tracks-recent-public-reports-and-shrine-updates-while-clearly",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "Tracks recent public reports and shrine updates while clearly labeling what has official Vatican confirmation and what remains devotional testimony.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.become-like-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(4) > h3:nth-of-type(1)",
+      "source": "Become Like Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.a-practical-life-rule-page-with-prayer-rhythm-silence",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "A practical life-rule page with prayer rhythm, silence habits, fasting framework, and concrete daily/weekly practices.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.visual-rosary-guide",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(5) > h3:nth-of-type(1)",
+      "source": "Visual Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.a-complete-step-by-step-rosary-walkthrough-with-meditative",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(1)",
+      "source": "A complete step-by-step Rosary walkthrough with meditative visualization for each Hail Mary so prayer becomes contemplative, focused, and transformative.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.prayers-in-your-language.saint-charbel-prayers-in-your-language",
+      "selector": "#prayers-in-your-language > h2:nth-of-type(1)",
+      "source": "Saint Charbel Prayers in Your Language",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.prayers-in-your-language.the-prayer-collection-is-also-available-in-seven-other",
+      "selector": "#prayers-in-your-language > p:nth-of-type(1)",
+      "source": "The prayer collection is also available in seven other languages.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.footer.last-updated-march-2-2026-built-for-marsharbel-com",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Last updated: March 2, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 5
+    },
+    {
+      "key": "home.footer.annaya-photo-llew-cc-by-sa-4-0",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Annaya photo: LLEW, CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "home.accessibility.explore-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > nav:nth-of-type(1)",
+      "source": "Explore Saint Charbel",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "home.accessibility.about-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(2)",
+      "source": "About Saint Charbel",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "home.accessibility.see-the-gallery-of-saint-charbel-renditions",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "See the gallery of Saint Charbel renditions",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "home.accessibility.an-artistic-rendition-of-saint-charbel-in-a-black",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > a:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "An artistic rendition of Saint Charbel in a black hooded habit, eyes lowered, as the creator of this website saw him on December 22",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.saint-charbel-at-a-glance",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Saint Charbel at a glance",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "home.accessibility.a-pilgrim-touching-the-statue-of-saint-charbel-at",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "A pilgrim touching the statue of Saint Charbel at the monastery entrance in Annaya",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.the-stone-kfifan-monastery-buildings-and-courtyard-in-lebanon",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The stone Kfifan monastery buildings and courtyard in Lebanon",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.the-stone-lourdes-grotto-at-the-national-shrine-in",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The stone Lourdes grotto at the National Shrine in Emmitsburg with visitors and statues",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.saint-charbel-makhlouf-the-traditional-hooded-portrait",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Saint Charbel Makhlouf, the traditional hooded portrait",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.pilgrims-on-the-saint-charbel-trail-photo-courtesy-of",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.official-poster-for-charbel-the-movie-mtv-nmpro",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(5) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Official poster for Charbel The Movie (MTV/NMPRO)",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.ai-transformation-not-a-photograph-saint-charbel-in-a",
+      "selector": "#main-content > div:nth-of-type(1) > section:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "AI transformation, not a photograph: Saint Charbel in a black cap and heavy black robe, eyes lowered, dark beard with a grey center streak, against a plain stone-colored wall",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.the-21st-and-22nd-of-every-month",
+      "selector": "#monthly-prayer > div:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "The 21st and 22nd of every month",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "home.accessibility.the-church-and-monastery-of-saint-maron-at-annaya",
+      "selector": "#main-content > section:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The church and monastery of Saint Maron at Annaya on a terraced mountainside in winter, with a bell tower and a red-tiled roof",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.dear-saint-charbel",
+      "selector": "#home-letter-draft",
+      "source": "Dear Saint Charbel, ...",
+      "kind": "attribute",
+      "attribute": "placeholder"
+    },
+    {
+      "key": "home.accessibility.illustration-from-the-children-s-storybook-a-child-praying",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > picture:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Illustration from the children's storybook: a child praying outside a mountain chapel at sunrise",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.the-baptism-of-the-lord-artwork-for-the-first",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > picture:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The Baptism of the Lord, artwork for the first Luminous Mystery of the Rosary",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.saint-charbel-portrait",
+      "selector": "#main-content > section:nth-of-type(7) > article:nth-of-type(1) > picture:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Saint Charbel portrait",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.accessibility.saint-charbel-prayers-in-other-languages",
+      "selector": "#prayers-in-your-language > nav:nth-of-type(1)",
+      "source": "Saint Charbel prayers in other languages",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "home.accessibility.languages",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Languages",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "home.accessibility.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.metadata.saint-charbel-mar-charbel-life-miracles-prayers",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Saint Charbel (Mar Charbel): Life, Miracles & Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.metadata.saint-charbel-st-charbel-mar-charbel-his-life-miracle",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(12)",
+      "source": "Saint Charbel (St Charbel, Mar Charbel): his life, miracle reports, letters from readers, prayers, the nine-day novena and guided Rosary resources.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "home.metadata.saint-charbel-mar-charbel-life-miracles-prayers",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Saint Charbel (Mar Charbel): Life, Miracles & Prayers",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "home.metadata.saint-charbel-st-charbel-mar-charbel-his-life-miracle",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(17)",
+      "source": "Saint Charbel (St Charbel, Mar Charbel): his life, miracle reports, letters from readers, prayers, the nine-day novena and guided Rosary resources.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "home.metadata.saint-charbel-mar-charbel-life-miracles-prayers",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Saint Charbel (Mar Charbel): Life, Miracles & Prayers",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "home.metadata.saint-charbel-st-charbel-mar-charbel-his-life-miracle",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(22)",
+      "source": "Saint Charbel (St Charbel, Mar Charbel): his life, miracle reports, letters from readers, prayers, the nine-day novena and guided Rosary resources.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "home.metadata.saint-charbel",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(27)",
+      "source": "Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    }
+  ],
+  "messages": {
+    "home.header.saint-charbel": "Saint Charbel",
+    "home.header.home": "Home",
+    "home.header.legacy": "Legacy",
+    "home.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "home.header.full-history": "Full History",
+    "home.header.gallery": "Gallery",
+    "home.header.miracles": "Miracles",
+    "home.header.miracles-reports": "Miracles & Reports",
+    "home.header.eucharistic-miracles": "Eucharistic Miracles",
+    "home.header.letters": "Letters",
+    "home.header.voice-testimony": "Voice Testimony",
+    "home.header.saints": "Saints",
+    "home.header.children-s-books": "Children's Books",
+    "home.header.prayer": "Prayer",
+    "home.header.prayer-library": "Prayer Library",
+    "home.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "home.header.prayer-for-the-sick": "Prayer for the Sick",
+    "home.header.prayer-for-healing": "Prayer for Healing",
+    "home.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "home.header.prayer-for-depression": "Prayer for Depression",
+    "home.header.prayer-for-students": "Prayer for Students",
+    "home.header.prayer-for-addiction": "Prayer for Addiction",
+    "home.header.prayer-for-family": "Prayer for Family",
+    "home.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "home.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "home.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "home.header.saint-charbel-novena": "Saint Charbel Novena",
+    "home.header.feast-day": "Feast Day",
+    "home.header.rosary-guide": "Rosary Guide",
+    "home.header.rosary-minibook": "Rosary Minibook",
+    "home.header.mystery-meditation": "Mystery Meditation",
+    "home.header.become-like-him": "Become Like Him",
+    "home.header.travel": "Travel",
+    "home.header.visiting-annaya": "Visiting Annaya",
+    "home.header.annaya-online-tour": "Annaya Online Tour",
+    "home.header.bekaa-kafra": "Bekaa Kafra",
+    "home.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "home.header.the-cedars-of-god": "the Cedars of God",
+    "home.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "home.header.qadisha-valley": "Qadisha Valley",
+    "home.header.qannoubine-monastery": "Qannoubine Monastery",
+    "home.header.qozhaya-monastery": "Qozhaya Monastery",
+    "home.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "home.header.the-hermitage": "The Hermitage",
+    "home.header.saint-charbel-trail": "Saint Charbel Trail",
+    "home.header.news": "News",
+    "home.home-cinematic-hero.everything-about-saint-charbel-in-one-place": "Everything about Saint Charbel, in one place",
+    "home.home-cinematic-hero.saint-charbel-the-hermit-of-annaya": "Saint Charbel. The hermit of Annaya.",
+    "home.home-cinematic-hero.prayers-miracles-his-story-and-annaya-free-and-in": "Prayers, miracles, his story and Annaya, free and in one place. Start with nine days.",
+    "home.home-cinematic-hero.begin-the-9-day-novena": "Begin the 9-day Novena",
+    "home.home-cinematic-hero.pray-today-s-rosary": "Pray today's Rosary",
+    "home.home-cinematic-hero.or-browse-all-prayers": "or browse all prayers",
+    "home.home-cinematic-hero.prayers": "Prayers",
+    "home.home-cinematic-hero.miracles": "Miracles",
+    "home.home-cinematic-hero.story": "Story",
+    "home.home-cinematic-hero.children-s-books": "Children's Books",
+    "home.home-cinematic-hero.tours": "Tours",
+    "home.home-intro-band.the-creator-of-this-website-reports-seeing-saint-charbel": "The creator of this website reports seeing Saint Charbel on December 22. This artistic rendition reflects his personal account, not independent verification or a photograph.",
+    "home.home-intro-band.saint-charbel-1828-1898-was-a-maronite-monk-and": "Saint Charbel (1828-1898) was a Maronite monk and hermit of Annaya, Lebanon, canonized in 1977. Walk through his life in the mountains of Lebanon, discover the stories of faith linked to his intercession, and enter a quieter rhythm of prayer inspired by the hermit of Annaya.",
+    "home.home-intro-band.born-in-bkaakafra": "Born in Bkaakafra",
+    "home.home-intro-band.entered-eternal-life": "Entered eternal life",
+    "home.home-intro-band.canonized-a-saint": "Canonized a saint",
+    "home.latest-news.latest-news": "Latest news",
+    "home.latest-news.read-the-latest-news": "Read the latest news",
+    "home.latest-news.annaya-monastery-entrance-photo-llew-cc-by-sa-4": "Annaya monastery entrance. Photo: LLEW, CC BY-SA 4.0; venue context.",
+    "home.latest-news.september-26-2026": "September 26, 2026",
+    "home.latest-news.prayer-walk-to-annaya-brings-prayers-for-south-lebanon": "Prayer walk to Annaya brings prayers for south Lebanon",
+    "home.latest-news.pilgrims-walked-from-byblos-to-saint-charbel-s-shrine": "Pilgrims walked from Byblos to Saint Charbel's shrine, carrying prayers for Christians in south Lebanon.",
+    "home.latest-news.october-2-2026": "October 2, 2026",
+    "home.latest-news.kfifan-receives-relics-of-its-patron-saints-from-rome": "Kfifan receives relics of its patron saints from Rome",
+    "home.latest-news.kfifan-monastery-2012-venue-context-not-the-relic-reception": "Kfifan monastery, 2012. Venue context, not the relic reception. Photo: Evilscaught, CC BY 3.0; WebP conversion.",
+    "home.latest-news.september-30-2026": "September 30, 2026",
+    "home.latest-news.emmitsburg-celebrates-nine-years-of-saint-sharbel-s-shrine": "Emmitsburg celebrates nine years of Saint Sharbel's shrine",
+    "home.latest-news.national-shrine-grotto-emmitsburg-2015-venue-context-not-the": "National Shrine Grotto, Emmitsburg, 2015. Venue context, not the 2026 celebration. Photo: Bohemian Baltimore, CC BY-SA 4.0; resized to WebP.",
+    "home.latest-news.september-10-2026": "September 10, 2026",
+    "home.latest-news.the-doctor-who-investigated-a-st-charbel-healing-speaks": "The doctor who investigated a St. Charbel healing speaks",
+    "home.latest-news.historic-saint-charbel-portrait-public-domain-not-a-photograph": "Historic Saint Charbel portrait (public domain); not a photograph of Dr. Borik.",
+    "home.latest-news.august-23-2026": "August 23, 2026",
+    "home.latest-news.an-american-priest-walks-the-st-charbel-trail": "An American priest walks the St. Charbel Trail",
+    "home.latest-news.photo-courtesy-of-father-michael-sliney-lc": "Photo courtesy of Father Michael Sliney, LC.",
+    "home.latest-news.december-2025": "December 2025",
+    "home.latest-news.charbel-the-movie-what-is-confirmed-about-the-new": "Charbel The Movie: what is confirmed about the new film",
+    "home.latest-news.official-poster-mtv-nmpro": "Official poster: MTV/NMPRO.",
+    "home.home-gallery.gallery": "Gallery",
+    "home.home-gallery.see-how-he-may-have-looked": "See how he may have looked",
+    "home.home-gallery.an-imagined-portrait-of-saint-charbel-an-artistic-rendition": "An imagined portrait of Saint Charbel. An artistic rendition made with AI, not a photograph and not a historical record.",
+    "home.home-gallery.open-the-gallery": "Open the gallery",
+    "home.monthly-prayer.every-month": "EVERY MONTH",
+    "home.monthly-prayer.one-community-in-prayer": "ONE COMMUNITY IN PRAYER",
+    "home.monthly-prayer.our-monthly-invitation": "Our monthly invitation",
+    "home.monthly-prayer.your-intentions": "Your intentions.",
+    "home.monthly-prayer.our-united-prayer": "Our united prayer.",
+    "home.monthly-prayer.come-closer-to-christ-through-saint-sharbel-s-intercession": "Come closer to Christ through Saint Sharbel’s intercession. Bring what is on your heart, and carry the intentions of others in prayer.",
+    "home.monthly-prayer.join-us-on-the-21st-22nd-of-every-month": "Join us on the 21st & 22nd of every month.",
+    "home.monthly-prayer.pray-the-rosary": "Pray the Rosary",
+    "home.monthly-prayer.a-daily-rhythm-a-deeper-faith": "A daily rhythm. A deeper faith.",
+    "home.monthly-prayer.enter-this-month-s-prayer": "Enter this month’s prayer",
+    "home.monthly-prayer.make-room-for-grace": "Make room for grace",
+    "home.monthly-prayer.prepare-your-heart": "Prepare your heart",
+    "home.monthly-prayer.in-the-days-leading-up-to-the-22nd-make": "In the days leading up to the 22nd, make extra time for prayer. Pray the Rosary daily—a powerful spiritual weapon that draws us toward Christ. Begin with an Our Father, Hail Mary, and Glory Be, or follow the",
+    "home.monthly-prayer.saint-charbel-novena": "Saint Charbel novena",
+    "home.monthly-prayer.offer-your-intention": "Offer your intention",
+    "home.monthly-prayer.pause-and-name-your-intention-silently-before-god-then": "Pause and name your intention silently before God. Then pray for everyone joining this devotion, including those whose needs are known only to Him. Your intention stays between you and God.",
+    "home.monthly-prayer.remain-close-return-with-thanks": "Remain close. Return with thanks.",
+    "home.monthly-prayer.be-attentive-to-god-s-grace-in-daily-life": "Be attentive to God’s grace in daily life, with patience and discernment. Trust His timing. When you receive a blessing or believe you have received a miracle, thank God and Saint Sharbel for his intercession. Let gratitude lead you to Mass, faithful prayer, and acts of love.",
+    "home.monthly-prayer.pause-breathe-pray": "Pause. Breathe. Pray.",
+    "home.monthly-prayer.a-prayer-of-intercession": "A prayer of intercession",
+    "home.monthly-prayer.lord-jesus-christ-i-come-before-you-with-faith": "Lord Jesus Christ, I come before You with faith and hope. Through the intercession of Saint Sharbel, receive the intention I hold in my heart.",
+    "home.monthly-prayer.take-a-quiet-moment-for-your-intention": "Take a quiet moment for your intention.",
+    "home.monthly-prayer.i-also-place-before-you-the-intentions-of-everyone": "I also place before You the intentions of everyone praying with us. Comfort the suffering, strengthen the weary, bring peace to families, and draw us all closer to You.",
+    "home.monthly-prayer.saint-sharbel-pray-for-us-teach-us-to-trust": "Saint Sharbel, pray for us. Teach us to trust in God’s will and timing, to recognize His grace, and to live with grateful hearts. May every blessing lead us to love Christ more deeply and serve our neighbor more generously. Amen.",
+    "home.monthly-prayer.a-devotional-prayer-written-for-this-community": "A devotional prayer written for this community.",
+    "home.monthly-prayer.continue-with-saint-charbel-prayers": "Continue with Saint Charbel prayers",
+    "home.monthly-prayer.find-a-prayer-for-what-you-re-carrying": "Find a prayer for what you're carrying",
+    "home.monthly-prayer.why-the-22nd-this-monthly-devotion-recalls-nouhad-el": "Why the 22nd? This monthly devotion recalls Nouhad El Shami’s healing through Saint Sharbel’s intercession. We gather in hope, entrusting every outcome to God; miracles are not limited to a date.",
+    "home.monthly-prayer.read-about-the-tradition": "Read about the tradition",
+    "home.home-travel.travel": "Travel",
+    "home.home-travel.walk-the-places-of-saint-charbel": "Walk the places of Saint Charbel",
+    "home.home-travel.take-the-online-tour-of-annaya-the-mountain-monastery": "Take the online tour of Annaya, the mountain monastery where he lived as a monk and hermit and where his tomb is today, about 70 km north of Beirut.",
+    "home.home-travel.start-the-annaya-tour": "Start the Annaya tour",
+    "home.home-travel.photo-paul-saad": "Photo: Paul Saad,",
+    "home.home-travel.wikimedia-commons": "Wikimedia Commons",
+    "home.home-travel.cc-by-sa-4-0-cropped-and-resized": ", CC BY-SA 4.0 (cropped and resized)",
+    "home.home-letter.a-place-for-your-story": "A place for your story",
+    "home.home-letter.write-a-letter-to-saint-charbel": "Write a Letter to Saint Charbel",
+    "home.home-letter.tell-your-story-in-your-own-words-continue-to": "Tell your story in your own words. Continue to add your name and details before you send it. Letters stay private until a person reviews them for publication.",
+    "home.home-letter.and-they-overcame-him-by-the-blood-of-the": "\"And they overcame him by the blood of the Lamb, and by the word of the testimony…\"",
+    "home.home-letter.revelation-12-11-douay-rheims-first-part-of-the": "Revelation 12:11 (Douay-Rheims), first part of the verse",
+    "home.home-letter.scripture-puts-testimony-in-the-same-sentence-as-the": "Scripture puts testimony in the same sentence as the blood of the Lamb. That is how much a testimony matters, and why every Letter is read with care.",
+    "home.home-letter.read-the-letters": "Read the Letters",
+    "home.home-letter.your-letter": "Your letter",
+    "home.home-letter.your-draft-stays-in-this-tab-until-you-send": "Your draft stays in this tab until you send the form. Nothing appears on the site before review.",
+    "home.home-letter.continue-to-add-your-name": "Continue to add your name",
+    "home.section.made-for-your-home": "Made For Your Home",
+    "home.section.two-ways-in-whether-you-are-gathering-children-or": "Two ways in, whether you are gathering children or keeping a daily rosary.",
+    "home.section.for-children-families": "For Children & Families",
+    "home.section.listen-to-saint-charbel-s-story-for-children": "Listen to Saint Charbel's story for children",
+    "home.section.a-27-page-illustrated-storybook-for-ages-5-12": "A 27-page illustrated storybook for ages 5-12, with read-aloud narration on every page - a gentle first doorway into the hermit of Annaya's life of prayer.",
+    "home.section.open-the-storybook": "Open the Storybook",
+    "home.section.daily-rosary": "Daily Rosary",
+    "home.section.pray-the-rosary-with-a-daily-mystery-meditation": "Pray the Rosary with a daily mystery meditation",
+    "home.section.a-guided-mystery-by-mystery-meditation-with-scripture-sacred": "A guided mystery-by-mystery meditation with scripture, sacred artwork, and hands-free audio - today's mystery, ready when you are.",
+    "home.section.start-today-s-meditation": "Start Today's Meditation",
+    "home.hero-grid.at-a-glance": "At a Glance",
+    "home.hero-grid.born-in-bkaakafra-lebanon-may-8-1828": "Born in Bkaakafra, Lebanon (May 8, 1828)",
+    "home.hero-grid.died-as-a-hermit-monk-december-24-1898": "Died as a hermit monk (December 24, 1898)",
+    "home.hero-grid.canonized-by-pope-paul-vi-october-9-1977": "Canonized by Pope Paul VI (October 9, 1977)",
+    "home.hero-grid.saint-charbel-is-remembered-for-total-surrender-to-prayer": "Saint Charbel is remembered for total surrender to prayer, Eucharistic devotion, fasting, humility, and a hidden life of holiness that continues to inspire millions.",
+    "home.hero-grid.read-full-history": "Read Full History",
+    "home.hero-grid.saint-charbel-start-here": "Saint Charbel: Start Here",
+    "home.hero-grid.explore-miracles": "Explore Miracles",
+    "home.hero-grid.pray-the-rosary": "Pray The Rosary",
+    "home.hero-grid.open-rosary-minibook": "Open Rosary Minibook",
+    "home.section.what-you-can-explore": "What You Can Explore",
+    "home.section.built-as-a-complete-resource-with-depth-beauty-and": "Built as a complete resource with depth, beauty, and clear sourcing.",
+    "home.section.complete-biography": "Complete Biography",
+    "home.section.from-his-early-years-in-the-mountains-of-lebanon": "From his early years in the mountains of Lebanon to his monastic calling, priesthood, eremitical life, and eventual canonization.",
+    "home.section.miracles-discernment": "Miracles & Discernment",
+    "home.section.distinguishes-between-church-recognized-miracles-in-the-canonization-process": "Distinguishes between Church-recognized miracles in the canonization process and broader reported healings. Includes current counts and a realistic interpretation of what is formally verified.",
+    "home.section.recent-miracle-reports": "Recent Miracle Reports",
+    "home.section.tracks-recent-public-reports-and-shrine-updates-while-clearly": "Tracks recent public reports and shrine updates while clearly labeling what has official Vatican confirmation and what remains devotional testimony.",
+    "home.section.become-like-saint-charbel": "Become Like Saint Charbel",
+    "home.section.a-practical-life-rule-page-with-prayer-rhythm-silence": "A practical life-rule page with prayer rhythm, silence habits, fasting framework, and concrete daily/weekly practices.",
+    "home.section.visual-rosary-guide": "Visual Rosary Guide",
+    "home.section.a-complete-step-by-step-rosary-walkthrough-with-meditative": "A complete step-by-step Rosary walkthrough with meditative visualization for each Hail Mary so prayer becomes contemplative, focused, and transformative.",
+    "home.prayers-in-your-language.saint-charbel-prayers-in-your-language": "Saint Charbel Prayers in Your Language",
+    "home.prayers-in-your-language.the-prayer-collection-is-also-available-in-seven-other": "The prayer collection is also available in seven other languages.",
+    "home.footer.last-updated-march-2-2026-built-for-marsharbel-com": "Last updated: March 2, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website.",
+    "home.footer.annaya-photo-llew-cc-by-sa-4-0": "Annaya photo: LLEW, CC BY-SA 4.0",
+    "home.accessibility.primary": "Primary",
+    "home.accessibility.explore-saint-charbel": "Explore Saint Charbel",
+    "home.accessibility.about-saint-charbel": "About Saint Charbel",
+    "home.accessibility.see-the-gallery-of-saint-charbel-renditions": "See the gallery of Saint Charbel renditions",
+    "home.accessibility.an-artistic-rendition-of-saint-charbel-in-a-black": "An artistic rendition of Saint Charbel in a black hooded habit, eyes lowered, as the creator of this website saw him on December 22",
+    "home.accessibility.saint-charbel-at-a-glance": "Saint Charbel at a glance",
+    "home.accessibility.a-pilgrim-touching-the-statue-of-saint-charbel-at": "A pilgrim touching the statue of Saint Charbel at the monastery entrance in Annaya",
+    "home.accessibility.the-stone-kfifan-monastery-buildings-and-courtyard-in-lebanon": "The stone Kfifan monastery buildings and courtyard in Lebanon",
+    "home.accessibility.the-stone-lourdes-grotto-at-the-national-shrine-in": "The stone Lourdes grotto at the National Shrine in Emmitsburg with visitors and statues",
+    "home.accessibility.saint-charbel-makhlouf-the-traditional-hooded-portrait": "Saint Charbel Makhlouf, the traditional hooded portrait",
+    "home.accessibility.pilgrims-on-the-saint-charbel-trail-photo-courtesy-of": "Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC",
+    "home.accessibility.official-poster-for-charbel-the-movie-mtv-nmpro": "Official poster for Charbel The Movie (MTV/NMPRO)",
+    "home.accessibility.ai-transformation-not-a-photograph-saint-charbel-in-a": "AI transformation, not a photograph: Saint Charbel in a black cap and heavy black robe, eyes lowered, dark beard with a grey center streak, against a plain stone-colored wall",
+    "home.accessibility.the-21st-and-22nd-of-every-month": "The 21st and 22nd of every month",
+    "home.accessibility.the-church-and-monastery-of-saint-maron-at-annaya": "The church and monastery of Saint Maron at Annaya on a terraced mountainside in winter, with a bell tower and a red-tiled roof",
+    "home.accessibility.dear-saint-charbel": "Dear Saint Charbel, ...",
+    "home.accessibility.illustration-from-the-children-s-storybook-a-child-praying": "Illustration from the children's storybook: a child praying outside a mountain chapel at sunrise",
+    "home.accessibility.the-baptism-of-the-lord-artwork-for-the-first": "The Baptism of the Lord, artwork for the first Luminous Mystery of the Rosary",
+    "home.accessibility.saint-charbel-portrait": "Saint Charbel portrait",
+    "home.accessibility.saint-charbel-prayers-in-other-languages": "Saint Charbel prayers in other languages",
+    "home.accessibility.languages": "Languages",
+    "home.accessibility.skip-to-main-content": "Skip to main content",
+    "home.metadata.saint-charbel-mar-charbel-life-miracles-prayers": "Saint Charbel (Mar Charbel): Life, Miracles & Prayers",
+    "home.metadata.saint-charbel-st-charbel-mar-charbel-his-life-miracle": "Saint Charbel (St Charbel, Mar Charbel): his life, miracle reports, letters from readers, prayers, the nine-day novena and guided Rosary resources.",
+    "home.metadata.saint-charbel": "Saint Charbel"
+  }
+}

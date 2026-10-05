@@ -1,0 +1,37 @@
+"""Every locale page is accounted for; rebuilt routes must pass strict mirror QA."""
+import json
+from pathlib import Path
+import sys,unittest
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'scripts'))
+from i18n.mirror_structure import check_pair
+
+class LocaleMirrorPolicy(unittest.TestCase):
+    def setUp(self):
+        self.registry=json.loads((ROOT/'locales/registry.json').read_text())
+        self.policy=json.loads((ROOT/'config/locale-mirror-policy.json').read_text())
+
+    def test_every_locale_page_has_explicit_master_and_status(self):
+        files={p.relative_to(ROOT).as_posix() for lang in self.registry['locales'] if lang!='en' for p in (ROOT/lang).rglob('*.html')}
+        self.assertEqual(files,set(self.policy['pages']),'Every new or removed locale route must update mirror coverage')
+        for path,entry in self.policy['pages'].items():
+            self.assertIn(entry['status'],('strict','migration-debt'),path)
+            self.assertTrue((ROOT/entry['master']).is_file(),path)
+            self.assertFalse(Path(entry['master']).is_absolute(),path)
+            self.assertNotIn('..',Path(entry['master']).parts,path)
+            self.assertTrue(entry['route'].startswith('/'+entry['locale']+'/'),path)
+
+    def test_activated_home_routes_cannot_stay_migration_debt(self):
+        for lang in self.registry.get('homepageMirrors',{}).get('renderLocales',[]):
+            self.assertEqual(self.policy['pages'][lang+'/index.html']['status'],'strict',lang)
+
+    def test_strict_pages_have_no_unregistered_structure_changes(self):
+        for path,entry in self.policy['pages'].items():
+            if entry['status']!='strict': continue
+            # No exception masking is implemented. A bounded exception needs a
+            # specific tested normalizer and verified evidence, never a wildcard.
+            self.assertNotIn(path,self.policy['exceptions'],'No whole-page bypasses permitted')
+            differences=check_pair((ROOT/entry['master']).read_text(),(ROOT/path).read_text(),entry['masterRoute'],entry['route'])
+            self.assertEqual(differences,[],f'{path}: divergence from {entry["master"]}')
+
+if __name__=='__main__':unittest.main()

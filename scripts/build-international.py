@@ -19,6 +19,7 @@ from i18n.litany_mirror import render_litany
 from i18n.eucharistic_mirror import render_eucharistic
 from i18n.chaplet_mirror import render_chaplet
 from i18n.exact_master import render_exact_set
+from i18n.home_mirror import render_home_set
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
 
@@ -215,6 +216,7 @@ def outputs(root=ROOT):
                     text=head+links+'\n'+text[head_end:]
             result[path]=text
     result.update(render_exact_set(root, registry))
+    result.update(render_home_set(root, registry))
     # Keep the English homepage and legacy canonical URLs stable.
     sitemap = root / 'sitemap.xml'
     text = sitemap.read_text()
@@ -282,7 +284,7 @@ def outputs(root=ROOT):
                 code=match[1]
                 route='/' + str(path.relative_to(root)).removesuffix('.html')
                 route=route.removesuffix('index') if route.endswith('/index') else route
-                result[path] = travel_frame(tour_nav(text,root,code),root,code,route,registry)
+                result[path] = text if code in registry.get('homepageMirrors', {}).get('renderLocales', []) and route == registry['locales'][code]['home'] else travel_frame(tour_nav(text,root,code),root,code,route,registry)
     from i18n.same_page_injection import control_outputs
     manifest=read_json(root/'locales/same-page-manifest.pending.json')
     control_copy=read_json(root/'locales/same-page-copy.json')
