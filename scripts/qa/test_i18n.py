@@ -46,10 +46,11 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(registry['topics']['twentySecond']['sources'], ['cnewaMonthly', 'monastery'])
         html = builder.outputs(ROOT)[ROOT/'ar/22nd-of-the-month.html']
         self.assertIn('href="https://cnewa.org/magazine/lebanons-beloved-saint/"', html)
-        self.assertIn('أعداد وردت في مقابلة، وليست عددًا ثابتًا', html)
-        self.assertIn('عندما يسمح الطقس', html)
-        self.assertIn('ليس تاريخًا أقرتْه الكنيسة عيدًا ليتورجيًا عامًا', html)
-        self.assertIn('لا يحلّ الزيت المبارك أو الحجّ أو الصلاة محلّ الرعاية الطبية', html)
+        self.assertIn('وردت في مقابلة، وليست عددًا ثابتًا', html)
+        self.assertIn('إن سمح الطقس', html)
+        self.assertIn('كلا. الأعياد الليتورجية هي 24 تموز في التقويم اللاتيني', html)
+        self.assertIn('والزيت المبارك والحج والصلاة لا تحلّ محلّ الرعاية الطبية', html)
+        self.assertIn('لا موعد ولا صيغة تضمن نتيجة', html)
         self.assertNotIn('تضمن الشفاء', html)
 
     def test_arabic_raymond_story_distinguishes_reporter_from_medical_record(self):

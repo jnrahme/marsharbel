@@ -110,7 +110,9 @@ def check(root):
         pages[canonical] = page
         # Local scripts load deferred so they never block first paint. Pages
         # with inline scripts that depend on execution order are exempt.
-        if relative_path.as_posix() not in SYNC_SCRIPT_PAGES:
+        mirrored_sync = {route.lstrip("/") + ".html" for family, cfg in json.loads((root / "locales/registry.json").read_text()).get("pageMirrors", {}).items()
+                         if cfg["master"] in SYNC_SCRIPT_PAGES for route in cfg["routes"].values()}
+        if relative_path.as_posix() not in SYNC_SCRIPT_PAGES | mirrored_sync:
             source = path.read_text(encoding="utf-8").split("<body", 1)[-1]
             for tag in re.findall(r"<script\b[^>]*\bsrc=[\"'](?!https?:)[^>]*>", source):
                 if not re.search(r"\b(defer|async)\b|type=[\"']module", tag):
@@ -158,7 +160,11 @@ def check(root):
                 errors.append(f"{url}: language alternate {language} is not an indexable page: {alternate}")
             elif pages[alternate].alternates != page.alternates:
                 errors.append(f"{url}: non-reciprocal language alternates with {alternate}")
-    for url in sorted(expected - set(urls)):
+    # Routes whose registry entry sets sitemap=false are held behind the review
+    # overlay and are added to the sitemap in the change that clears it.
+    held = {SITE + route for cfg in json.loads((root / "locales/registry.json").read_text()).get("pageMirrors", {}).values()
+            if cfg.get("sitemap") is False for route in cfg["routes"].values()}
+    for url in sorted(expected - set(urls) - held):
         errors.append(f"sitemap.xml: missing indexable page {url}")
     for url in sorted(set(urls) - expected):
         errors.append(f"sitemap.xml: URL is not an indexable canonical page: {url}")

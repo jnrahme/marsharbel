@@ -1,0 +1,1722 @@
+{
+  "version": 1,
+  "master": "saint-charbel-pilgrimage.html",
+  "masterSha256": "706922762e580fbe5b152517b0ccc61585d252024d5a7f24630abe846adc1226",
+  "sourceRevision": "40ff766c",
+  "bindings": [
+    {
+      "key": "pilgrimage.metadata.title-pilgrimage-to-saint-charbel-a-complete-lebanon-pilgrim",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Pilgrimage to Saint Charbel | A Complete Lebanon Pilgrim Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.metadata.description-how-to-plan-a-pilgrimage-to-saint-charbel-his-to",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "How to plan a pilgrimage to Saint Charbel: his tomb and hermitage at Annaya, his birthplace in Bekaa Kafra, the Qadisha Valley, and what else to see in Lebanon - with Google Maps locations and suggested itineraries.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "pilgrimage.metadata.og-title-pilgrimage-to-saint-charbel-a-complete-lebanon-pilg",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Pilgrimage to Saint Charbel | A Complete Lebanon Pilgrim Guide",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "pilgrimage.metadata.og-description-how-to-plan-a-pilgrimage-to-saint-charbel-his",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "How to plan a pilgrimage to Saint Charbel: his tomb and hermitage at Annaya, his birthplace in Bekaa Kafra, the Qadisha Valley, and what else to see in Lebanon - with Google Maps locations and suggested itineraries.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "pilgrimage.metadata.twitter-title-pilgrimage-to-saint-charbel-a-complete-lebanon",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Pilgrimage to Saint Charbel | A Complete Lebanon Pilgrim Guide",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "pilgrimage.metadata.twitter-description-how-to-plan-a-pilgrimage-to-saint-charbe",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "How to plan a pilgrimage to Saint Charbel: his tomb and hermitage at Annaya, his birthplace in Bekaa Kafra, the Qadisha Valley, and what else to see in Lebanon - with Google Maps locations and suggested itineraries.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "pilgrimage.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "pilgrimage.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.accessibility.in-this-guide",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "pilgrimage.body.home",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.body.travel",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.body.a-pilgrimage-to-saint-charbel",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "A Pilgrimage to Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.accessibility.the-monastery-of-saint-maron-in-annaya-seen-across-the-valle",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The Monastery of Saint Maron in Annaya seen across the valley, with the church and forested mountainside",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "pilgrimage.body.the-monastery-of-saint-maron-in-annaya-the-heart-of-every-pi",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The Monastery of Saint Maron in Annaya - the heart of every pilgrimage to Saint Charbel. Photograph: Paul Saad,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.body.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.body.text-2",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.body.cc-by-sa-4-0",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.body.text-3",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "pilgrimage.body.pilgrim-s-guide-lebanon",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Pilgrim's Guide · Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.a-pilgrimage-to-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "A Pilgrimage to Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.everything-you-need-to-plan-the-journey-praying-at-his-tomb",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Everything you need to plan the journey: praying at his tomb and hermitage at Annaya, standing in the mountain village where he was born, walking the valley that formed him, and the other holy places of Lebanon worth adding to the trip. Every stop below carries a Google Maps location, and the detailed pages for each place are linked along the way.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.visiting-annaya-full-guide",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Visiting Annaya: Full Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.pray-the-novena",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Pray the Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.i-rejoiced-at-the-things-that-were-said-to-me-we-shall-go-in",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > blockquote:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "\"I rejoiced at the things that were said to me: We shall go into the house of the Lord.\"",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.psalm-121-1-douay-rheims-psalm-122-1-in-modern-numbering",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > cite:nth-of-type(1)",
+      "source": "Psalm 121:1 (Douay-Rheims; Psalm 122:1 in modern numbering)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.every-pilgrimage-begins-with-someone-saying-yes-to-the-road",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Every pilgrimage begins with someone saying yes to the road. The Psalm gives the words for it.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.part-of-the",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Part of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.saint-charbel-encyclopedia",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.read",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ". Read",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.the-full-story-of-his-life",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "the full story of his life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.a-pilgrimage-to-saint-ch.or-browse-all-topics",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "or browse all topics.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.the-heart-of-it-annaya",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "The Heart of It: Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.every-pilgrimage-to-saint-charbel-begins-and-ends-at-the",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Every pilgrimage to Saint Charbel begins and ends at the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.monastery-of-saint-maron-in-annaya",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Monastery of Saint Maron in Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.where-he-took-his-monastic-vows-in-1853-died-on-christmas-ev",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", where he took his monastic vows in 1853, died on Christmas Eve 1898, and lies entombed. Pilgrims come to pray at the marble tomb, to see the small museum of his belongings, and to walk up to the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.hermitage-of-saints-peter-and-paul",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Hermitage of Saints Peter and Paul",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.where-he-spent-his-last-twenty-three-years-in-silence",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "where he spent his last twenty-three years in silence.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.the-monastery-receives-visitors-daily-check-opening-times-wi",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The monastery receives visitors daily; check opening times with the monastery before you travel. It sits about 52 kilometers from Beirut - usually around ninety minutes by car, depending on traffic, up from the coastal city of Jbeil (Byblos). There is no regular public transport to the gates, so plan on a rental car, a taxi for the day, or an organized pilgrimage group.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.open-the-monastery-of-saint-maron-in-google-maps",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Open the Monastery of Saint Maron in Google Maps",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.text",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "·",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.the-hermitage",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(2)",
+      "source": "the Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.before-you-go-read-the-full-practical-guide",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "Before you go, read the full practical guide:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.visiting-annaya-what-to-see-and-in-what-order-mass-times-the",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Visiting Annaya - what to see and in what order, Mass times, the holy oil, and the days that draw the crowds",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.text-2",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.accessibility.the-tomb-of-saint-charbel-in-the-monastery-church-at-annaya",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The tomb of Saint Charbel in the monastery church at Annaya, with his portrait and a vigil lamp",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.saint-charbel-s-tomb-in-the-monastery-church-at-annaya-pilgr",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "Saint Charbel's tomb in the monastery church at Annaya - pilgrims kneel, rest a hand on the marble, and leave written intentions. Photograph: LLEW,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.text-3",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.cc-by-sa-4-0",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-heart-of-it-annaya.text-2",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "pilgrimage.where-he-was-born-bekaa.where-he-was-born-bekaa-kafra",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "Where He Was Born: Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.where-he-was-born-bekaa.saint-charbel-born-youssef-antoun-makhlouf-in-1828-came-from",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Saint Charbel - born Youssef Antoun Makhlouf in 1828 - came from",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.where-he-was-born-bekaa.bekaa-kafra",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.where-he-was-born-bekaa.one-of-the-highest-villages-in-lebanon-in-the-mountains-abov",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", one of the highest villages in Lebanon, in the mountains above the Qadisha Valley. The village keeps his family's home, the church where he was baptized, and the grotto where the young shepherd went to pray. Standing there gives the rest of the pilgrimage its beginning: the mountains he left, and never went back to.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.where-he-was-born-bekaa.bekaa-kafra-pairs-naturally-with-the-drive-through-the-qadis",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Bekaa Kafra pairs naturally with the drive through the Qadisha Valley below it. Winter snow can close the high roads - spring through autumn is the dependable season.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.where-he-was-born-bekaa.open-bekaa-kafra-in-google-maps",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Open Bekaa Kafra in Google Maps",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.where-he-was-born-bekaa.full-guide",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "· Full guide:",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.where-he-was-born-bekaa.bekaa-kafra-his-birthplace-the-family-home-the-church-the-gr",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(2)",
+      "source": "Bekaa Kafra, his birthplace - the family home, the church, the grotto, and visiting today",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.where-he-was-born-bekaa.text",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.the-valley-that-formed-him-the-qadisha",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "The Valley That Formed Him: the Qadisha",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.below-bekaa-kafra-runs-the",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Below Bekaa Kafra runs the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.qadisha-valley",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.the-holy-valley-the-cradle-of-maronite-monastic-life-its-cli",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "- the Holy Valley - the cradle of Maronite monastic life, its cliffs honeycombed with hermitages and monasteries carved into the rock. Charbel grew up looking down into this valley, and the way of prayer it formed is the way he carried to Annaya. The valley and the Cedars forest above it together form a UNESCO World Heritage site.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.two-monasteries-reward-the-detour",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Two monasteries reward the detour:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.qannoubine",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Qannoubine",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.the-monastery-in-the-valley-floor-that-sheltered-the-maronit",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ", the monastery in the valley floor that sheltered the Maronite patriarchs for centuries, and",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.deir-qozhaya",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(2)",
+      "source": "Deir Qozhaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.the-monastery-of-saint-anthony-one-of-the-oldest-houses-of-s",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "- the Monastery of Saint Anthony - one of the oldest houses of Saint Charbel's own Lebanese Maronite Order, clinging to the valley wall.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.qannoubine-in-google-maps",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Qannoubine in Google Maps",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.text",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "·",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.deir-qozhaya-in-google-maps",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(2)",
+      "source": "Deir Qozhaya in Google Maps",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.accessibility.the-monastery-of-saint-anthony-of-qozhaya-built-against-the",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The Monastery of Saint Anthony of Qozhaya built against the cliff wall of the Qadisha Valley",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.deir-qozhaya-the-monastery-of-saint-anthony-against-the-wall",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "Deir Qozhaya - the Monastery of Saint Anthony - against the wall of the Qadisha Valley. Public domain,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.text-2",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.accessibility.mist-drifting-through-the-qadisha-valley-near-the-monastery",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(2) > img:nth-of-type(1)",
+      "source": "Mist drifting through the Qadisha Valley near the Monastery of Qozhaya",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.the-qadisha-valley-in-the-mist-near-deir-qozhaya-the-holy-va",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(2) > figcaption:nth-of-type(1)",
+      "source": "The Qadisha Valley in the mist, near Deir Qozhaya - the Holy Valley Charbel grew up above. Photograph: Vyacheslav Argenberg,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(2) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.text-3",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(2) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.cc-by-4-0",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(2) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.the-valley-that-formed-h.text-2",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(2) > figcaption:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.while-you-are-in-lebanon",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "While You Are in Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.a-pilgrimage-to-saint-charbel-usually-means-several-days-in",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A pilgrimage to Saint Charbel usually means several days in the country, and Lebanon's other holy places are close enough to weave in:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.harissa-our-lady-of-lebanon",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > strong:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Harissa - Our Lady of Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.the-great-marian-shrine-above-the-bay-of-jounieh-reached-by",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": ": the great Marian shrine above the bay of Jounieh, reached by the mountain road or the Téléférique cable car. Pilgrims often pair it with Annaya on the same trip.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.google-maps",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Google Maps",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.bkerke",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Bkerke",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.the-seat-of-the-maronite-patriarchate-overlooking-jounieh-th",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": ": the seat of the Maronite Patriarchate, overlooking Jounieh - the beating heart of the Maronite Church that Saint Charbel belonged to.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.google-maps",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Google Maps",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.the-cedars-of-god",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "The Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.the-ancient-cedar-grove-near-bsharri-on-lebanon-s-flag-and-i",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": ": the ancient cedar grove near Bsharri, on Lebanon's flag and in the Psalms - a natural cathedral about a 20-minute drive from Bekaa Kafra.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.google-maps",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Google Maps",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.byblos-jbeil",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > strong:nth-of-type(1)",
+      "source": "Byblos (Jbeil)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.one-of-the-oldest-continuously-inhabited-cities-in-the-world",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": ": one of the oldest continuously inhabited cities in the world, on the coast at the foot of the Annaya road - an easy stop on pilgrimage day itself.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.google-maps",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Google Maps",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.the-saint-charbel-trail",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > strong:nth-of-type(1)",
+      "source": "The Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.if-you-walk-the-darb-mar-charbel-links-monasteries-and-villa",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": ": if you walk, the Darb Mar Charbel links monasteries and villages through his mountains - see",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.our-trail-guide",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "our trail guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.text",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "pilgrimage.accessibility.the-statue-of-our-lady-of-lebanon-at-harissa-above-the-bay-o",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The statue of Our Lady of Lebanon at Harissa above the bay of Jounieh",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.our-lady-of-lebanon-at-harissa-above-the-bay-of-jounieh-phot",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "Our Lady of Lebanon at Harissa, above the bay of Jounieh. Photograph: Paul Saad,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.text-2",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.cc-by-sa-4-0",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.text",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "pilgrimage.accessibility.ancient-cedar-trees-in-the-cedars-of-god-forest-near-bsharri",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(2) > img:nth-of-type(1)",
+      "source": "Ancient cedar trees in the Cedars of God forest near Bsharri",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.the-cedars-of-god-near-bsharri-photograph-vyacheslav-argenbe",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(2) > figcaption:nth-of-type(1)",
+      "source": "The Cedars of God near Bsharri. Photograph: Vyacheslav Argenberg,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(2) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.text-2",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(2) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.cc-by-4-0",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(2) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.while-you-are-in-lebanon.text",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(2) > figcaption:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "pilgrimage.suggested-itineraries.suggested-itineraries",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Suggested Itineraries",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.suggested-itineraries.one-day",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "One day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.suggested-itineraries.beirut-to-annaya-in-the-morning-tomb-museum-hermitage-lunch",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ": Beirut to Annaya in the morning - tomb, museum, hermitage - lunch in Jbeil on the way down, Byblos old town and harbor in the afternoon.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.suggested-itineraries.three-days",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Three days",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.suggested-itineraries.day-one-annaya-and-byblos-day-two-up-to-bekaa-kafra-in-the-m",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ": Day one, Annaya and Byblos. Day two, up to Bekaa Kafra in the morning, then down into the Qadisha Valley for Qannoubine or Deir Qozhaya. Day three, Harissa in the morning, Bkerke, and an evening in Jounieh or Beirut.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.suggested-itineraries.a-week",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "A week",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.suggested-itineraries.the-three-days-above-plus-the-cedars-of-god-and-bsharri-a-se",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": ": the three days above, plus the Cedars of God and Bsharri, a section of the Saint Charbel Trail, and a slower return to Annaya for a feast day or the 22nd of the month if your dates allow.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.suggested-itineraries.however-long-you-have-put-annaya-first-the-rest-of-the-journ",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "However long you have, put Annaya first. The rest of the journey makes sense once you have stood at the tomb.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.planning-the-practical-s.planning-the-practical-side",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "Planning the Practical Side",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.planning-the-practical-s.when-to-come",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "When to come",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.planning-the-practical-s.the-great-gathering-is-the-feast-on-the-third-sunday-of-july",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": ": the great gathering is the feast on the third Sunday of July (Maronite calendar; July 24 in the Latin calendar), and the 22nd of every month draws crowds to the tomb. Ordinary weekdays are quietest.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.planning-the-practical-s.getting-around",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Getting around",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.planning-the-practical-s.the-mountain-sites-have-no-regular-public-transport-most-pil",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": ": the mountain sites have no regular public transport. Most pilgrims rent a car, hire a driver for the day, or join an organized pilgrimage - Maronite parishes and tour operators run them regularly.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.planning-the-practical-s.at-the-holy-places",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "At the holy places",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.planning-the-practical-s.modest-dress-and-quiet-voices-at-the-tomb-people-kneel-and-t",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": ": modest dress and quiet voices; at the tomb, people kneel and touch the marble - follow the pilgrims ahead of you. Photography is normal in the courtyards; be discreet in the churches during prayer.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.planning-the-practical-s.costs",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > strong:nth-of-type(1)",
+      "source": "Costs",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.planning-the-practical-s.check-with-the-monastery-for-any-current-charges-budget-for",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": ": Check with the monastery for any current charges. Budget for transport, and for the candle or oil you may want to take home.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.planning-the-practical-s.before-you-book",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > strong:nth-of-type(1)",
+      "source": "Before you book",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.planning-the-practical-s.lebanon-s-situation-changes-check-your-government-s-current",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": ": Lebanon's situation changes. Check your government's current travel advice, and ask locally about road conditions in the high mountains, especially in winter.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.pray-as-you-go.pray-as-you-go",
+      "selector": "#main-content > section:nth-of-type(8) > h2:nth-of-type(1)",
+      "source": "Pray as You Go",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.pray-as-you-go.a-pilgrimage-is-a-prayer-not-a-checklist-many-pilgrims-begin",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A pilgrimage is a prayer, not a checklist. Many pilgrims begin the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.pray-as-you-go.nine-day-novena",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "nine-day novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.pray-as-you-go.before-they-travel-and-finish-it-at-the-tomb-others-carry-th",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "before they travel and finish it at the tomb; others carry the intentions of people who asked them to pray - the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.pray-as-you-go.prayer-for-healing",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "prayer for healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.pray-as-you-go.is-the-one-most-often-said-at-the-marble-if-you-are-new-to-t",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "is the one most often said at the marble. If you are new to the Rosary, our",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "pilgrimage.pray-as-you-go.visual-guide",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "visual guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.pray-as-you-go.walks-it-bead-by-bead",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "walks it bead by bead.",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.frequently-asked-questions",
+      "selector": "#main-content > section:nth-of-type(9) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.is-there-an-entrance-fee-at-annaya",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Is there an entrance fee at Annaya?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.the-monastery-the-tomb-and-the-hermitage-are-open-to-everyon",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The monastery, the tomb, and the hermitage are open to everyone, of any faith or none. Check with the monastery before you travel for any current charges or opening times.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.how-many-days-do-i-need",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "How many days do I need?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.one-full-day-covers-annaya-and-byblos-three-days-lets-you-ad",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "One full day covers Annaya and Byblos. Three days lets you add Bekaa Kafra and the Qadisha Valley without rushing.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.what-is-the-best-season",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "What is the best season?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.spring-through-autumn-for-the-mountain-sites-winter-snow-can",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "Spring through autumn for the mountain sites - winter snow can close the roads to Bekaa Kafra and the Cedars. Check with the monastery for current opening times.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.can-i-attend-mass-at-annaya",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(4) > strong:nth-of-type(1)",
+      "source": "Can I attend Mass at Annaya?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.yes-the-monastery-celebrates-mass-daily-with-larger-celebrat",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "Yes - the monastery celebrates Mass daily, with larger celebrations on the 22nd of the month and during the July feast. See",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.the-annaya-guide",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "the Annaya guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.for-what-to-expect",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "for what to expect.",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.is-it-safe-to-travel-to-lebanon",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(5) > strong:nth-of-type(1)",
+      "source": "Is it safe to travel to Lebanon?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.frequently-asked-questio.conditions-change-check-your-government-s-current-travel-adv",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "Conditions change - check your government's current travel advice before booking, and take local advice on routes once you arrive. The pilgrimage sites themselves normally receive visitors; check before you go.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "pilgrimage.sources.sources",
+      "selector": "#main-content > section:nth-of-type(10) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.sources.saintcharbel-com-the-official-site-of-saint-charbel-and-the",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "saintcharbel.com - the official site of Saint Charbel and the Annaya monastery tradition",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.sources.our-detailed-place-guides",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "Our detailed place guides:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.sources.visiting-annaya",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.sources.text",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "pilgrimage.sources.bekaa-kafra",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.sources.text",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "pilgrimage.sources.the-hermitage",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(3)",
+      "source": "the Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.sources.text",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "pilgrimage.sources.saint-charbel-s-lebanon",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(4)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.sources.text",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 8
+    },
+    {
+      "key": "pilgrimage.sources.the-saint-charbel-trail",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(5)",
+      "source": "the Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.sources.google-maps-locations-are-linked-at-each-stop-above-opening",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "Google Maps locations are linked at each stop above - opening them gives you current driving routes and times.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.footer.a-pilgrimage-to-saint-charbel-author-please-pray-for-the-per",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "A Pilgrimage to Saint Charbel. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "pilgrimage.metadata.title-pilgrimage-to-saint-charbel-a-complete-lebanon-pilgrim": "Pilgrimage to Saint Charbel | A Complete Lebanon Pilgrim Guide",
+    "pilgrimage.metadata.description-how-to-plan-a-pilgrimage-to-saint-charbel-his-to": "How to plan a pilgrimage to Saint Charbel: his tomb and hermitage at Annaya, his birthplace in Bekaa Kafra, the Qadisha Valley, and what else to see in Lebanon - with Google Maps locations and suggested itineraries.",
+    "pilgrimage.metadata.og-title-pilgrimage-to-saint-charbel-a-complete-lebanon-pilg": "Pilgrimage to Saint Charbel | A Complete Lebanon Pilgrim Guide",
+    "pilgrimage.metadata.og-description-how-to-plan-a-pilgrimage-to-saint-charbel-his": "How to plan a pilgrimage to Saint Charbel: his tomb and hermitage at Annaya, his birthplace in Bekaa Kafra, the Qadisha Valley, and what else to see in Lebanon - with Google Maps locations and suggested itineraries.",
+    "pilgrimage.metadata.twitter-title-pilgrimage-to-saint-charbel-a-complete-lebanon": "Pilgrimage to Saint Charbel | A Complete Lebanon Pilgrim Guide",
+    "pilgrimage.metadata.twitter-description-how-to-plan-a-pilgrimage-to-saint-charbe": "How to plan a pilgrimage to Saint Charbel: his tomb and hermitage at Annaya, his birthplace in Bekaa Kafra, the Qadisha Valley, and what else to see in Lebanon - with Google Maps locations and suggested itineraries.",
+    "pilgrimage.body.skip-to-main-content": "Skip to main content",
+    "pilgrimage.header.text": "✦",
+    "pilgrimage.header.saint-charbel": "Saint Charbel",
+    "pilgrimage.accessibility.primary": "Primary",
+    "pilgrimage.header.home": "Home",
+    "pilgrimage.header.legacy": "Legacy",
+    "pilgrimage.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "pilgrimage.header.full-history": "Full History",
+    "pilgrimage.header.gallery": "Gallery",
+    "pilgrimage.header.miracles": "Miracles",
+    "pilgrimage.header.miracles-reports": "Miracles & Reports",
+    "pilgrimage.header.eucharistic-miracles": "Eucharistic Miracles",
+    "pilgrimage.header.letters": "Letters",
+    "pilgrimage.header.voice-testimony": "Voice Testimony",
+    "pilgrimage.header.saints": "Saints",
+    "pilgrimage.header.children-s-books": "Children's Books",
+    "pilgrimage.header.prayer": "Prayer",
+    "pilgrimage.header.prayer-library": "Prayer Library",
+    "pilgrimage.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "pilgrimage.header.prayer-for-the-sick": "Prayer for the Sick",
+    "pilgrimage.header.prayer-for-healing": "Prayer for Healing",
+    "pilgrimage.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "pilgrimage.header.prayer-for-depression": "Prayer for Depression",
+    "pilgrimage.header.prayer-for-students": "Prayer for Students",
+    "pilgrimage.header.prayer-for-addiction": "Prayer for Addiction",
+    "pilgrimage.header.prayer-for-family": "Prayer for Family",
+    "pilgrimage.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "pilgrimage.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "pilgrimage.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "pilgrimage.header.saint-charbel-novena": "Saint Charbel Novena",
+    "pilgrimage.header.feast-day": "Feast Day",
+    "pilgrimage.header.rosary-guide": "Rosary Guide",
+    "pilgrimage.header.rosary-minibook": "Rosary Minibook",
+    "pilgrimage.header.mystery-meditation": "Mystery Meditation",
+    "pilgrimage.header.become-like-him": "Become Like Him",
+    "pilgrimage.header.travel": "Travel",
+    "pilgrimage.header.visiting-annaya": "Visiting Annaya",
+    "pilgrimage.header.annaya-online-tour": "Annaya Online Tour",
+    "pilgrimage.header.bekaa-kafra": "Bekaa Kafra",
+    "pilgrimage.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "pilgrimage.header.the-cedars-of-god": "the Cedars of God",
+    "pilgrimage.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "pilgrimage.header.qadisha-valley": "Qadisha Valley",
+    "pilgrimage.header.qannoubine-monastery": "Qannoubine Monastery",
+    "pilgrimage.header.qozhaya-monastery": "Qozhaya Monastery",
+    "pilgrimage.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "pilgrimage.header.the-hermitage": "The Hermitage",
+    "pilgrimage.header.saint-charbel-trail": "Saint Charbel Trail",
+    "pilgrimage.header.news": "News",
+    "pilgrimage.accessibility.in-this-guide": "In this guide",
+    "pilgrimage.body.home": "Home",
+    "pilgrimage.body.text": "/",
+    "pilgrimage.body.travel": "Travel",
+    "pilgrimage.body.a-pilgrimage-to-saint-charbel": "A Pilgrimage to Saint Charbel",
+    "pilgrimage.accessibility.the-monastery-of-saint-maron-in-annaya-seen-across-the-valle": "The Monastery of Saint Maron in Annaya seen across the valley, with the church and forested mountainside",
+    "pilgrimage.body.the-monastery-of-saint-maron-in-annaya-the-heart-of-every-pi": "The Monastery of Saint Maron in Annaya - the heart of every pilgrimage to Saint Charbel. Photograph: Paul Saad,",
+    "pilgrimage.body.via-wikimedia-commons": "via Wikimedia Commons",
+    "pilgrimage.body.text-2": ",",
+    "pilgrimage.body.cc-by-sa-4-0": "CC BY-SA 4.0",
+    "pilgrimage.body.text-3": ".",
+    "pilgrimage.body.pilgrim-s-guide-lebanon": "Pilgrim's Guide · Lebanon",
+    "pilgrimage.a-pilgrimage-to-saint-ch.a-pilgrimage-to-saint-charbel": "A Pilgrimage to Saint Charbel",
+    "pilgrimage.a-pilgrimage-to-saint-ch.everything-you-need-to-plan-the-journey-praying-at-his-tomb": "Everything you need to plan the journey: praying at his tomb and hermitage at Annaya, standing in the mountain village where he was born, walking the valley that formed him, and the other holy places of Lebanon worth adding to the trip. Every stop below carries a Google Maps location, and the detailed pages for each place are linked along the way.",
+    "pilgrimage.a-pilgrimage-to-saint-ch.visiting-annaya-full-guide": "Visiting Annaya: Full Guide",
+    "pilgrimage.a-pilgrimage-to-saint-ch.pray-the-novena": "Pray the Novena",
+    "pilgrimage.a-pilgrimage-to-saint-ch.i-rejoiced-at-the-things-that-were-said-to-me-we-shall-go-in": "\"I rejoiced at the things that were said to me: We shall go into the house of the Lord.\"",
+    "pilgrimage.a-pilgrimage-to-saint-ch.psalm-121-1-douay-rheims-psalm-122-1-in-modern-numbering": "Psalm 121:1 (Douay-Rheims; Psalm 122:1 in modern numbering)",
+    "pilgrimage.a-pilgrimage-to-saint-ch.every-pilgrimage-begins-with-someone-saying-yes-to-the-road": "Every pilgrimage begins with someone saying yes to the road. The Psalm gives the words for it.",
+    "pilgrimage.a-pilgrimage-to-saint-ch.part-of-the": "Part of the",
+    "pilgrimage.a-pilgrimage-to-saint-ch.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "pilgrimage.a-pilgrimage-to-saint-ch.read": ". Read",
+    "pilgrimage.a-pilgrimage-to-saint-ch.the-full-story-of-his-life": "the full story of his life",
+    "pilgrimage.a-pilgrimage-to-saint-ch.or-browse-all-topics": "or browse all topics.",
+    "pilgrimage.the-heart-of-it-annaya.the-heart-of-it-annaya": "The Heart of It: Annaya",
+    "pilgrimage.the-heart-of-it-annaya.every-pilgrimage-to-saint-charbel-begins-and-ends-at-the": "Every pilgrimage to Saint Charbel begins and ends at the",
+    "pilgrimage.the-heart-of-it-annaya.monastery-of-saint-maron-in-annaya": "Monastery of Saint Maron in Annaya",
+    "pilgrimage.the-heart-of-it-annaya.where-he-took-his-monastic-vows-in-1853-died-on-christmas-ev": ", where he took his monastic vows in 1853, died on Christmas Eve 1898, and lies entombed. Pilgrims come to pray at the marble tomb, to see the small museum of his belongings, and to walk up to the",
+    "pilgrimage.the-heart-of-it-annaya.hermitage-of-saints-peter-and-paul": "Hermitage of Saints Peter and Paul",
+    "pilgrimage.the-heart-of-it-annaya.where-he-spent-his-last-twenty-three-years-in-silence": "where he spent his last twenty-three years in silence.",
+    "pilgrimage.the-heart-of-it-annaya.the-monastery-receives-visitors-daily-check-opening-times-wi": "The monastery receives visitors daily; check opening times with the monastery before you travel. It sits about 52 kilometers from Beirut - usually around ninety minutes by car, depending on traffic, up from the coastal city of Jbeil (Byblos). There is no regular public transport to the gates, so plan on a rental car, a taxi for the day, or an organized pilgrimage group.",
+    "pilgrimage.the-heart-of-it-annaya.open-the-monastery-of-saint-maron-in-google-maps": "Open the Monastery of Saint Maron in Google Maps",
+    "pilgrimage.the-heart-of-it-annaya.text": "·",
+    "pilgrimage.the-heart-of-it-annaya.the-hermitage": "the Hermitage",
+    "pilgrimage.the-heart-of-it-annaya.before-you-go-read-the-full-practical-guide": "Before you go, read the full practical guide:",
+    "pilgrimage.the-heart-of-it-annaya.visiting-annaya-what-to-see-and-in-what-order-mass-times-the": "Visiting Annaya - what to see and in what order, Mass times, the holy oil, and the days that draw the crowds",
+    "pilgrimage.the-heart-of-it-annaya.text-2": ".",
+    "pilgrimage.accessibility.the-tomb-of-saint-charbel-in-the-monastery-church-at-annaya": "The tomb of Saint Charbel in the monastery church at Annaya, with his portrait and a vigil lamp",
+    "pilgrimage.the-heart-of-it-annaya.saint-charbel-s-tomb-in-the-monastery-church-at-annaya-pilgr": "Saint Charbel's tomb in the monastery church at Annaya - pilgrims kneel, rest a hand on the marble, and leave written intentions. Photograph: LLEW,",
+    "pilgrimage.the-heart-of-it-annaya.via-wikimedia-commons": "via Wikimedia Commons",
+    "pilgrimage.the-heart-of-it-annaya.text-3": ",",
+    "pilgrimage.the-heart-of-it-annaya.cc-by-sa-4-0": "CC BY-SA 4.0",
+    "pilgrimage.where-he-was-born-bekaa.where-he-was-born-bekaa-kafra": "Where He Was Born: Bekaa Kafra",
+    "pilgrimage.where-he-was-born-bekaa.saint-charbel-born-youssef-antoun-makhlouf-in-1828-came-from": "Saint Charbel - born Youssef Antoun Makhlouf in 1828 - came from",
+    "pilgrimage.where-he-was-born-bekaa.bekaa-kafra": "Bekaa Kafra",
+    "pilgrimage.where-he-was-born-bekaa.one-of-the-highest-villages-in-lebanon-in-the-mountains-abov": ", one of the highest villages in Lebanon, in the mountains above the Qadisha Valley. The village keeps his family's home, the church where he was baptized, and the grotto where the young shepherd went to pray. Standing there gives the rest of the pilgrimage its beginning: the mountains he left, and never went back to.",
+    "pilgrimage.where-he-was-born-bekaa.bekaa-kafra-pairs-naturally-with-the-drive-through-the-qadis": "Bekaa Kafra pairs naturally with the drive through the Qadisha Valley below it. Winter snow can close the high roads - spring through autumn is the dependable season.",
+    "pilgrimage.where-he-was-born-bekaa.open-bekaa-kafra-in-google-maps": "Open Bekaa Kafra in Google Maps",
+    "pilgrimage.where-he-was-born-bekaa.full-guide": "· Full guide:",
+    "pilgrimage.where-he-was-born-bekaa.bekaa-kafra-his-birthplace-the-family-home-the-church-the-gr": "Bekaa Kafra, his birthplace - the family home, the church, the grotto, and visiting today",
+    "pilgrimage.where-he-was-born-bekaa.text": ".",
+    "pilgrimage.the-valley-that-formed-h.the-valley-that-formed-him-the-qadisha": "The Valley That Formed Him: the Qadisha",
+    "pilgrimage.the-valley-that-formed-h.below-bekaa-kafra-runs-the": "Below Bekaa Kafra runs the",
+    "pilgrimage.the-valley-that-formed-h.qadisha-valley": "Qadisha Valley",
+    "pilgrimage.the-valley-that-formed-h.the-holy-valley-the-cradle-of-maronite-monastic-life-its-cli": "- the Holy Valley - the cradle of Maronite monastic life, its cliffs honeycombed with hermitages and monasteries carved into the rock. Charbel grew up looking down into this valley, and the way of prayer it formed is the way he carried to Annaya. The valley and the Cedars forest above it together form a UNESCO World Heritage site.",
+    "pilgrimage.the-valley-that-formed-h.two-monasteries-reward-the-detour": "Two monasteries reward the detour:",
+    "pilgrimage.the-valley-that-formed-h.qannoubine": "Qannoubine",
+    "pilgrimage.the-valley-that-formed-h.the-monastery-in-the-valley-floor-that-sheltered-the-maronit": ", the monastery in the valley floor that sheltered the Maronite patriarchs for centuries, and",
+    "pilgrimage.the-valley-that-formed-h.deir-qozhaya": "Deir Qozhaya",
+    "pilgrimage.the-valley-that-formed-h.the-monastery-of-saint-anthony-one-of-the-oldest-houses-of-s": "- the Monastery of Saint Anthony - one of the oldest houses of Saint Charbel's own Lebanese Maronite Order, clinging to the valley wall.",
+    "pilgrimage.the-valley-that-formed-h.qannoubine-in-google-maps": "Qannoubine in Google Maps",
+    "pilgrimage.the-valley-that-formed-h.text": "·",
+    "pilgrimage.the-valley-that-formed-h.deir-qozhaya-in-google-maps": "Deir Qozhaya in Google Maps",
+    "pilgrimage.accessibility.the-monastery-of-saint-anthony-of-qozhaya-built-against-the": "The Monastery of Saint Anthony of Qozhaya built against the cliff wall of the Qadisha Valley",
+    "pilgrimage.the-valley-that-formed-h.deir-qozhaya-the-monastery-of-saint-anthony-against-the-wall": "Deir Qozhaya - the Monastery of Saint Anthony - against the wall of the Qadisha Valley. Public domain,",
+    "pilgrimage.the-valley-that-formed-h.via-wikimedia-commons": "via Wikimedia Commons",
+    "pilgrimage.the-valley-that-formed-h.text-2": ".",
+    "pilgrimage.accessibility.mist-drifting-through-the-qadisha-valley-near-the-monastery": "Mist drifting through the Qadisha Valley near the Monastery of Qozhaya",
+    "pilgrimage.the-valley-that-formed-h.the-qadisha-valley-in-the-mist-near-deir-qozhaya-the-holy-va": "The Qadisha Valley in the mist, near Deir Qozhaya - the Holy Valley Charbel grew up above. Photograph: Vyacheslav Argenberg,",
+    "pilgrimage.the-valley-that-formed-h.text-3": ",",
+    "pilgrimage.the-valley-that-formed-h.cc-by-4-0": "CC BY 4.0",
+    "pilgrimage.while-you-are-in-lebanon.while-you-are-in-lebanon": "While You Are in Lebanon",
+    "pilgrimage.while-you-are-in-lebanon.a-pilgrimage-to-saint-charbel-usually-means-several-days-in": "A pilgrimage to Saint Charbel usually means several days in the country, and Lebanon's other holy places are close enough to weave in:",
+    "pilgrimage.while-you-are-in-lebanon.harissa-our-lady-of-lebanon": "Harissa - Our Lady of Lebanon",
+    "pilgrimage.while-you-are-in-lebanon.the-great-marian-shrine-above-the-bay-of-jounieh-reached-by": ": the great Marian shrine above the bay of Jounieh, reached by the mountain road or the Téléférique cable car. Pilgrims often pair it with Annaya on the same trip.",
+    "pilgrimage.while-you-are-in-lebanon.google-maps": "Google Maps",
+    "pilgrimage.while-you-are-in-lebanon.bkerke": "Bkerke",
+    "pilgrimage.while-you-are-in-lebanon.the-seat-of-the-maronite-patriarchate-overlooking-jounieh-th": ": the seat of the Maronite Patriarchate, overlooking Jounieh - the beating heart of the Maronite Church that Saint Charbel belonged to.",
+    "pilgrimage.while-you-are-in-lebanon.the-cedars-of-god": "The Cedars of God",
+    "pilgrimage.while-you-are-in-lebanon.the-ancient-cedar-grove-near-bsharri-on-lebanon-s-flag-and-i": ": the ancient cedar grove near Bsharri, on Lebanon's flag and in the Psalms - a natural cathedral about a 20-minute drive from Bekaa Kafra.",
+    "pilgrimage.while-you-are-in-lebanon.byblos-jbeil": "Byblos (Jbeil)",
+    "pilgrimage.while-you-are-in-lebanon.one-of-the-oldest-continuously-inhabited-cities-in-the-world": ": one of the oldest continuously inhabited cities in the world, on the coast at the foot of the Annaya road - an easy stop on pilgrimage day itself.",
+    "pilgrimage.while-you-are-in-lebanon.the-saint-charbel-trail": "The Saint Charbel Trail",
+    "pilgrimage.while-you-are-in-lebanon.if-you-walk-the-darb-mar-charbel-links-monasteries-and-villa": ": if you walk, the Darb Mar Charbel links monasteries and villages through his mountains - see",
+    "pilgrimage.while-you-are-in-lebanon.our-trail-guide": "our trail guide",
+    "pilgrimage.while-you-are-in-lebanon.text": ".",
+    "pilgrimage.accessibility.the-statue-of-our-lady-of-lebanon-at-harissa-above-the-bay-o": "The statue of Our Lady of Lebanon at Harissa above the bay of Jounieh",
+    "pilgrimage.while-you-are-in-lebanon.our-lady-of-lebanon-at-harissa-above-the-bay-of-jounieh-phot": "Our Lady of Lebanon at Harissa, above the bay of Jounieh. Photograph: Paul Saad,",
+    "pilgrimage.while-you-are-in-lebanon.via-wikimedia-commons": "via Wikimedia Commons",
+    "pilgrimage.while-you-are-in-lebanon.text-2": ",",
+    "pilgrimage.while-you-are-in-lebanon.cc-by-sa-4-0": "CC BY-SA 4.0",
+    "pilgrimage.accessibility.ancient-cedar-trees-in-the-cedars-of-god-forest-near-bsharri": "Ancient cedar trees in the Cedars of God forest near Bsharri",
+    "pilgrimage.while-you-are-in-lebanon.the-cedars-of-god-near-bsharri-photograph-vyacheslav-argenbe": "The Cedars of God near Bsharri. Photograph: Vyacheslav Argenberg,",
+    "pilgrimage.while-you-are-in-lebanon.cc-by-4-0": "CC BY 4.0",
+    "pilgrimage.suggested-itineraries.suggested-itineraries": "Suggested Itineraries",
+    "pilgrimage.suggested-itineraries.one-day": "One day",
+    "pilgrimage.suggested-itineraries.beirut-to-annaya-in-the-morning-tomb-museum-hermitage-lunch": ": Beirut to Annaya in the morning - tomb, museum, hermitage - lunch in Jbeil on the way down, Byblos old town and harbor in the afternoon.",
+    "pilgrimage.suggested-itineraries.three-days": "Three days",
+    "pilgrimage.suggested-itineraries.day-one-annaya-and-byblos-day-two-up-to-bekaa-kafra-in-the-m": ": Day one, Annaya and Byblos. Day two, up to Bekaa Kafra in the morning, then down into the Qadisha Valley for Qannoubine or Deir Qozhaya. Day three, Harissa in the morning, Bkerke, and an evening in Jounieh or Beirut.",
+    "pilgrimage.suggested-itineraries.a-week": "A week",
+    "pilgrimage.suggested-itineraries.the-three-days-above-plus-the-cedars-of-god-and-bsharri-a-se": ": the three days above, plus the Cedars of God and Bsharri, a section of the Saint Charbel Trail, and a slower return to Annaya for a feast day or the 22nd of the month if your dates allow.",
+    "pilgrimage.suggested-itineraries.however-long-you-have-put-annaya-first-the-rest-of-the-journ": "However long you have, put Annaya first. The rest of the journey makes sense once you have stood at the tomb.",
+    "pilgrimage.planning-the-practical-s.planning-the-practical-side": "Planning the Practical Side",
+    "pilgrimage.planning-the-practical-s.when-to-come": "When to come",
+    "pilgrimage.planning-the-practical-s.the-great-gathering-is-the-feast-on-the-third-sunday-of-july": ": the great gathering is the feast on the third Sunday of July (Maronite calendar; July 24 in the Latin calendar), and the 22nd of every month draws crowds to the tomb. Ordinary weekdays are quietest.",
+    "pilgrimage.planning-the-practical-s.getting-around": "Getting around",
+    "pilgrimage.planning-the-practical-s.the-mountain-sites-have-no-regular-public-transport-most-pil": ": the mountain sites have no regular public transport. Most pilgrims rent a car, hire a driver for the day, or join an organized pilgrimage - Maronite parishes and tour operators run them regularly.",
+    "pilgrimage.planning-the-practical-s.at-the-holy-places": "At the holy places",
+    "pilgrimage.planning-the-practical-s.modest-dress-and-quiet-voices-at-the-tomb-people-kneel-and-t": ": modest dress and quiet voices; at the tomb, people kneel and touch the marble - follow the pilgrims ahead of you. Photography is normal in the courtyards; be discreet in the churches during prayer.",
+    "pilgrimage.planning-the-practical-s.costs": "Costs",
+    "pilgrimage.planning-the-practical-s.check-with-the-monastery-for-any-current-charges-budget-for": ": Check with the monastery for any current charges. Budget for transport, and for the candle or oil you may want to take home.",
+    "pilgrimage.planning-the-practical-s.before-you-book": "Before you book",
+    "pilgrimage.planning-the-practical-s.lebanon-s-situation-changes-check-your-government-s-current": ": Lebanon's situation changes. Check your government's current travel advice, and ask locally about road conditions in the high mountains, especially in winter.",
+    "pilgrimage.pray-as-you-go.pray-as-you-go": "Pray as You Go",
+    "pilgrimage.pray-as-you-go.a-pilgrimage-is-a-prayer-not-a-checklist-many-pilgrims-begin": "A pilgrimage is a prayer, not a checklist. Many pilgrims begin the",
+    "pilgrimage.pray-as-you-go.nine-day-novena": "nine-day novena",
+    "pilgrimage.pray-as-you-go.before-they-travel-and-finish-it-at-the-tomb-others-carry-th": "before they travel and finish it at the tomb; others carry the intentions of people who asked them to pray - the",
+    "pilgrimage.pray-as-you-go.prayer-for-healing": "prayer for healing",
+    "pilgrimage.pray-as-you-go.is-the-one-most-often-said-at-the-marble-if-you-are-new-to-t": "is the one most often said at the marble. If you are new to the Rosary, our",
+    "pilgrimage.pray-as-you-go.visual-guide": "visual guide",
+    "pilgrimage.pray-as-you-go.walks-it-bead-by-bead": "walks it bead by bead.",
+    "pilgrimage.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+    "pilgrimage.frequently-asked-questio.is-there-an-entrance-fee-at-annaya": "Is there an entrance fee at Annaya?",
+    "pilgrimage.frequently-asked-questio.the-monastery-the-tomb-and-the-hermitage-are-open-to-everyon": "The monastery, the tomb, and the hermitage are open to everyone, of any faith or none. Check with the monastery before you travel for any current charges or opening times.",
+    "pilgrimage.frequently-asked-questio.how-many-days-do-i-need": "How many days do I need?",
+    "pilgrimage.frequently-asked-questio.one-full-day-covers-annaya-and-byblos-three-days-lets-you-ad": "One full day covers Annaya and Byblos. Three days lets you add Bekaa Kafra and the Qadisha Valley without rushing.",
+    "pilgrimage.frequently-asked-questio.what-is-the-best-season": "What is the best season?",
+    "pilgrimage.frequently-asked-questio.spring-through-autumn-for-the-mountain-sites-winter-snow-can": "Spring through autumn for the mountain sites - winter snow can close the roads to Bekaa Kafra and the Cedars. Check with the monastery for current opening times.",
+    "pilgrimage.frequently-asked-questio.can-i-attend-mass-at-annaya": "Can I attend Mass at Annaya?",
+    "pilgrimage.frequently-asked-questio.yes-the-monastery-celebrates-mass-daily-with-larger-celebrat": "Yes - the monastery celebrates Mass daily, with larger celebrations on the 22nd of the month and during the July feast. See",
+    "pilgrimage.frequently-asked-questio.the-annaya-guide": "the Annaya guide",
+    "pilgrimage.frequently-asked-questio.for-what-to-expect": "for what to expect.",
+    "pilgrimage.frequently-asked-questio.is-it-safe-to-travel-to-lebanon": "Is it safe to travel to Lebanon?",
+    "pilgrimage.frequently-asked-questio.conditions-change-check-your-government-s-current-travel-adv": "Conditions change - check your government's current travel advice before booking, and take local advice on routes once you arrive. The pilgrimage sites themselves normally receive visitors; check before you go.",
+    "pilgrimage.sources.sources": "Sources",
+    "pilgrimage.sources.saintcharbel-com-the-official-site-of-saint-charbel-and-the": "saintcharbel.com - the official site of Saint Charbel and the Annaya monastery tradition",
+    "pilgrimage.sources.our-detailed-place-guides": "Our detailed place guides:",
+    "pilgrimage.sources.visiting-annaya": "Visiting Annaya",
+    "pilgrimage.sources.text": ",",
+    "pilgrimage.sources.bekaa-kafra": "Bekaa Kafra",
+    "pilgrimage.sources.the-hermitage": "the Hermitage",
+    "pilgrimage.sources.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "pilgrimage.sources.the-saint-charbel-trail": "the Saint Charbel Trail",
+    "pilgrimage.sources.google-maps-locations-are-linked-at-each-stop-above-opening": "Google Maps locations are linked at each stop above - opening them gives you current driving routes and times.",
+    "pilgrimage.footer.a-pilgrimage-to-saint-charbel-author-please-pray-for-the-per": "A Pilgrimage to Saint Charbel. Author: Please pray for the person who made this website."
+  }
+}

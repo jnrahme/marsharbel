@@ -11,7 +11,7 @@ class RussianSliceTests(unittest.TestCase):
   r,c=load_catalog(ROOT);self.assertEqual(locale_topics(r,'ru'),['biography'])
   self.assertEqual(r['locales']['ru']['nativeName'],'Русский');self.assertEqual(r['locales']['ru']['home'],'/ru/')
   for values in r['publicationSets'].values():self.assertNotIn('ru',values)
-  self.assertEqual(sorted(p.relative_to(ROOT/'ru').as_posix()for p in (ROOT/'ru').rglob('*.html')),['biography.html','index.html'])
+  self.assertEqual(sorted(p.relative_to(ROOT/'ru').as_posix()for p in (ROOT/'ru').rglob('*.html')),['22-chislo-mesyaca.html','annaya.html','biography.html','index.html','palomnichestvo.html'])
  def test_complete_history_not_short_guide(self):
   r,c=load_catalog(ROOT);x=read_json(ROOT/'locales/en/history-master-bindings.json');source=BeautifulSoup((ROOT/x['master']).read_text(),'html.parser');s=BeautifulSoup(render_page(ROOT,r,'ru','history-master','/ru/biography'),'html.parser')
   self.assertEqual(x['master'],'history.html');self.assertGreater(len(x['bindings']),200)

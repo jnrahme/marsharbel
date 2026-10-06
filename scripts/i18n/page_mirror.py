@@ -9,11 +9,12 @@ from i18n.metadata import og_locales
 from i18n.mirror_structure import check_pair
 
 
-def twin_routes(registry,lang):
+def twin_routes(registry,lang,page_families=True):
     routes={'/':registry['locales'][lang]['home']}
     for topic,cfg in registry['topics'].items():
         if lang in topic_locales(registry,topic):routes[cfg['relatedEnglish'].rstrip('/')]=page_url(registry,lang,topic)
-    for name in ('authoredMirrors','exactMirrors','domMirrors'):
+    for name in ('authoredMirrors','exactMirrors','domMirrors','pageMirrors'):
+        if name=='pageMirrors' and not page_families:continue
         for cfg in registry.get(name,{}).values():
             if lang in cfg['routes']:routes[cfg['english'].rstrip('/')]=cfg['routes'][lang]
     if '/saint-charbel-prayers' in routes:routes['/en/prayers']=routes['/saint-charbel-prayers']
@@ -25,7 +26,9 @@ def render_page(root,registry,lang,family,route,catalog=None):
     raw,soup,copy=apply_keyed_master(root,family,lang,catalog)
     source=read_json(root/f'locales/en/{family}-bindings.json')['master']
     master_route='/' + source.removesuffix('.html')
-    twins=twin_routes(registry,lang);twins[master_route]=route
+    prefix=next(iter(copy)).split('.')[0]
+    # The reviewed history bytes are pinned, so history keeps its reviewed links.
+    twins=twin_routes(registry,lang,family!='history-master');twins[master_route]=route
     for node in soup.select('[href],[src],[srcset],[action]'):
         for attr in ('href','src','action'):
             if node.has_attr(attr) and not node[attr].startswith(('#','mailto:','tel:','data:','javascript:')):
@@ -55,17 +58,28 @@ def render_page(root,registry,lang,family,route,catalog=None):
             # catalog. Resolve by source text, not another authored schema copy.
             lookup={b['source']:copy[b['key']] for b in read_json(root/f'locales/en/{family}-bindings.json')['bindings'] if b['kind']=='text'}
             for entry in data['mainEntity']:
-                for obj,key in [(entry,'name'),(entry['acceptedAnswer'],'text')]:
-                    if obj[key] not in lookup:raise ValueError(f'{family}: FAQ schema text has no keyed visible equivalent')
-                    obj[key]=lookup[obj[key]]
+                if entry['name'] not in lookup:raise ValueError(f'{family}: FAQ schema text has no keyed visible equivalent')
+                entry['name']=lookup[entry['name']]
+                answer=entry['acceptedAnswer']
+                if answer['text'] in lookup:answer['text']=lookup[answer['text']];continue
+                # Authored short answers can differ from the visible answer. The
+                # structured answer then mirrors the localized visible paragraph
+                # that follows the matching question heading, never other text.
+                heading=next((h for h in soup.select('main h3, main p > strong:first-child') if ' '.join(h.get_text().split())==entry['name']),None)
+                paragraph=None
+                if heading is not None:paragraph=heading.parent if heading.name=='strong' else heading.find_next_sibling('p')
+                if paragraph is None:raise ValueError(f'{family}: FAQ schema answer has no keyed visible equivalent')
+                text=' '.join(paragraph.get_text().split())
+                if heading.name=='strong':text=text[len(entry['name']):].lstrip()
+                answer['text']=text
             data['inLanguage']=lang
         else:
             data.update(url=canonical,inLanguage=lang,description=description)
             if data.get('@type')=='WebPage':data['name']=title
-            if data.get('@type')=='Person':data['name']=copy['history.header.saint-charbel']
+            if data.get('@type')=='Person':data['name']=copy[prefix+'.header.saint-charbel']
             if 'breadcrumb' in data:
                 items=data['breadcrumb']['itemListElement']
-                items[0].update(name=copy['history.header.home'],item=registry['site']+registry['locales'][lang]['home'])
+                items[0].update(name=copy[prefix+'.header.home'],item=registry['site']+registry['locales'][lang]['home'])
                 items[-1].update(name=soup.h1.get_text(' ',strip=True),item=canonical)
                 # Intermediate navigation label is translated in the same header.
                 for item in items[1:-1]:
