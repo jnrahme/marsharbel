@@ -45,6 +45,9 @@ RewriteRule ^(ar|fr|es|pt|it|de|pl|ru)\.html$ /$1/ [R=301,L]
 RewriteRule ^(ar|fr|es|pt|it|de|pl|ru)$ /$1/ [R=301,L]
 # i18n-routes:end
 
+# The miracles hub is a directory index; /miracles/index(.html) must not serve a duplicate page.
+RewriteRule ^miracles/index(?:\.html)?$ /miracles/ [R=301,L]
+
 # English-prefix aliases: existing authored /en guides stay in place.
 RewriteCond %{DOCUMENT_ROOT}/en/$1.html !-f
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
