@@ -9,6 +9,7 @@ fi
 
 cd "${ROOT}"
 
+python3 scripts/qa/test_source_copy_keys.py
 python3 scripts/qa/check_travel_routes.py
 python3 scripts/qa/test_travel.py
 npx playwright test tests/travel-routing.spec.js tests/travel-hub.spec.js --project=phone --project=laptop --workers=4
@@ -66,6 +67,9 @@ python3 -m unittest discover -s scripts/qa -p 'test_eucharistic_locale.py'
 python3 -m unittest discover -s scripts/qa -p 'test_home_mirror.py'
 python3 -m unittest discover -s scripts/qa -p 'test_mirror_structure.py'
 python3 -m unittest discover -s scripts/qa -p 'test_locale_mirror_policy.py'
+python3 -m unittest discover -s scripts/qa -p 'test_history_master_mirror.py'
+node scripts/tests/history_equivalence.cjs
+npx playwright test tests/history-master.spec.js --project=phone --project=laptop --workers=2
 PORT=4197 bash scripts/tests/run_eucharistic_locales.sh
 
 echo "[qa] Books content API: feed, shelf parity and round trip"

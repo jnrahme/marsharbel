@@ -9,7 +9,7 @@ for(const route of ['/de/biografie','/de/novene','/de/gedenktag','/de/miracles/'
  await expect(page.locator('#sc-language-select option[value=en]')).toBeEnabled();
  if(route==='/de/miracles/')expect(await page.locator('.hero h1').evaluate(el=>{const node=el.firstChild;return [...node.textContent.matchAll(/\S+/g)].every(m=>{const r=document.createRange();r.setStart(node,m.index);r.setEnd(node,m.index+m[0].length);return r.getClientRects().length===1;});})).toBe(true);
  const original=await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
- expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('fr'))).toBe(false);
+ if(route==='/de/biografie'){await expect(page.locator('#sc-language-select option[value=fr]')).toBeEnabled();} else expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('fr'))).toBe(false);
  expect(await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}))).toEqual(original);
  expect(await page.locator('main').innerText()).not.toContain('not available');
  for(const img of await page.locator('main img').all()){await img.scrollIntoViewIfNeeded();await expect.poll(()=>img.evaluate(e=>e.complete&&e.naturalWidth>0)).toBe(true);}

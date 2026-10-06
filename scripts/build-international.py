@@ -20,12 +20,15 @@ from i18n.eucharistic_mirror import render_eucharistic
 from i18n.chaplet_mirror import render_chaplet
 from i18n.exact_master import render_exact_set
 from i18n.home_mirror import render_home_set
+from i18n.page_mirror import render_page_set
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
 
 
 def alternate_links(registry, topic=None):
     languages = topic_locales(registry, topic) if topic else list(registry['locales'])
+    if topic == 'biography' and 'history-master' in registry.get('pageMirrors', {}):
+        return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{registry["site"]}/en/biography" />' for code in ('en', 'x-default'))
     if topic in registry.get('exactMirrors', {}):
         languages=[c for c in languages if c not in registry['exactMirrors'][topic].get('renderLocales',[])]
     links = {code: registry['site'] + page_url(registry, code, topic) for code in languages}
@@ -217,6 +220,7 @@ def outputs(root=ROOT):
             result[path]=text
     result.update(render_exact_set(root, registry))
     result.update(render_home_set(root, registry))
+    result.update(render_page_set(root, registry))
     # Keep the English homepage and legacy canonical URLs stable.
     sitemap = root / 'sitemap.xml'
     text = sitemap.read_text()
@@ -284,7 +288,9 @@ def outputs(root=ROOT):
                 code=match[1]
                 route='/' + str(path.relative_to(root)).removesuffix('.html')
                 route=route.removesuffix('index') if route.endswith('/index') else route
-                result[path] = text if code in registry.get('homepageMirrors', {}).get('renderLocales', []) and route == registry['locales'][code]['home'] else travel_frame(tour_nav(text,root,code),root,code,route,registry)
+                strict_page = any(route == cfg.get('routes', {}).get(code) and code in cfg.get('renderLocales', []) for cfg in registry.get('pageMirrors', {}).values())
+                strict_home = code in registry.get('homepageMirrors', {}).get('renderLocales', []) and route == registry['locales'][code]['home']
+                result[path] = text if strict_home or strict_page else travel_frame(tour_nav(text,root,code),root,code,route,registry)
     from i18n.same_page_injection import control_outputs
     manifest=read_json(root/'locales/same-page-manifest.pending.json')
     control_copy=read_json(root/'locales/same-page-copy.json')

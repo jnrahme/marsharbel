@@ -10,7 +10,7 @@ from i18n.catalog import ROOT, read_json, leaves
 from i18n.guarded_dom import translate_slots
 class GermanPreparedCatalogTests(unittest.TestCase):
     def test_full_master_and_dom_parity(self):
-        for name in ['biography','novena','feast','miracles']:
+        for name in ['novena','feast','miracles']:
             c=read_json(ROOT/f'locales/de/{name}-exact.json')
             source=(ROOT/c['master']).read_bytes()
             self.assertEqual(hashlib.sha256(source).hexdigest(), c['masterSha256'])
