@@ -8,4 +8,4 @@ for(const family of ['annaya-master','twenty-second-master','pilgrimage-master']
  await page.selectOption('#sc-language-select','en');await expect(page).toHaveURL(new RegExp(registry.pageMirrors[family].english+'$'));await expect(page.locator('html')).toHaveAttribute('lang','en');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
-test('genuinely pending prayer translation remains disabled',async({page})=>{await page.goto('/saint-charbel-prayers');await expect(page.locator('#sc-language-select option[value="fr"]')).toBeDisabled();});
+test('genuinely pending Russian prayer translation remains disabled',async({page})=>{await page.goto('/saint-charbel-prayers');await expect(page.locator('#sc-language-select option[value="ru"]')).toBeDisabled();});

@@ -18,7 +18,7 @@ class TravelPageMirrors(unittest.TestCase):
     self.assertEqual(check_pair(master,text,cfg['english'],route),[],(family,lang))
     self.assertEqual(s.html['lang'],lang);self.assertEqual(s.select_one('link[rel=canonical]')['href'],self.r['site']+route)
     self.assertEqual({l['hreflang']:l['href'] for l in s.select('link[hreflang]')},{'en':self.r['site']+cfg['english'],'x-default':self.r['site']+cfg['english'],**{c:self.r['site']+p for c,p in cfg['routes'].items()}})
-    for a in s.select('main a[href^="/"]'):self.assertNotIn(a['href'].split('?')[0].split('#')[0],[c['english'] for c in self.r['pageMirrors'].values()],(family,lang,a['href']))
+    for a in s.select('main a[href^="/"]'):self.assertNotIn(a['href'].split('?')[0].split('#')[0],[c['english'] for c in self.r['pageMirrors'].values() if lang in c['routes']],(family,lang,a['href']))
     schemas=[json.loads(x.string) for x in s.select('script[type="application/ld+json"]')]
     for sc in schemas:
      self.assertEqual(sc.get('inLanguage'),lang)
@@ -31,6 +31,10 @@ class TravelPageMirrors(unittest.TestCase):
   s=BeautifulSoup(render_page(ROOT,self.r,'ru','annaya-master','/ru/annaya'),'html.parser')
   hrefs=[a['href'] for a in s.select('main a')]
   self.assertIn(routes['twenty-second-master']['ru'],hrefs)
+ def test_missing_locale_twin_keeps_english_destination(self):
+  s=BeautifulSoup(render_page(ROOT,self.r,'ru','annaya-master','/ru/annaya'),'html.parser')
+  self.assertNotIn('ru',self.r['pageMirrors']['saint-charbel-novena-master']['routes'])
+  self.assertIn('/saint-charbel-novena',[a['href']for a in s.select('main a')])
  def test_missing_key_fails(self):
   c=json.loads((ROOT/'locales/fr/annaya-master-copy.json').read_text());c.pop(next(iter(c)))
   with self.assertRaisesRegex(ValueError,'missing/extra'):render_page(ROOT,self.r,'fr','annaya-master','/fr/annaya',c)

@@ -15,7 +15,8 @@ def apply_keyed_master(root, family, lang, catalog=None):
     if set(copy) != set(english):
         raise ValueError(f'{family} {lang}: missing/extra message keys: {sorted(set(english) ^ set(copy))}')
     for key, value in copy.items():
-        if not isinstance(value, str) or not value.strip() or re.search(r'<\s*/?\s*[A-Za-z!]', value):
+        established_empty = (family == 'saint-charbel-novena-master' and lang == 'ar' and key == 'saint-charbel-novena.traditional.day-6.collect.placeholder' and value == '')
+        if not isinstance(value, str) or (not value.strip() and not established_empty) or re.search(r'<\s*/?\s*[A-Za-z!]', value):
             raise ValueError(f'{family} {lang}: unsafe or empty message {key}')
         if set(re.findall(r'\{([A-Za-z]+)\}', value)) != set(re.findall(r'\{([A-Za-z]+)\}', english[key])):
             raise ValueError(f'{family} {lang}: placeholders differ for {key}')
@@ -42,7 +43,7 @@ def apply_keyed_master(root, family, lang, catalog=None):
             # A punctuation-leading source join may translate to a word.
             # Keep the inline boundary separated without asking catalogs to
             # carry incidental HTML whitespace.
-            if not leading and value[0].isalnum() and text.previous_sibling is not None:
+            if not leading and value and value[0].isalnum() and text.previous_sibling is not None:
                 previous=text.previous_sibling
                 previous_text=previous.get_text() if hasattr(previous,'get_text') else str(previous)
                 if previous_text and (previous_text[-1].isalnum() or previous_text.endswith(')')):

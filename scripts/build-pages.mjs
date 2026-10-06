@@ -59,7 +59,7 @@ for (const file of await walk(SRC).catch(() => [])) {
     // Arguments are inserted verbatim (no unescaping) so JSON/HTML escapes survive byte for byte.
     return indent + frags[name].replace(/\{\{(\d+|text)\}\}/g, (_m, k) => args[(k === 'text' ? 1 : Number(k)) - 1]);
   });
-  if (built.includes('rel="canonical"') && !/name=["']robots["'][^>]*content=["'][^"']*noindex/.test(built)) {
+  if (built.includes('rel="canonical"') && (rel === 'saint-charbel-prayers.html' || !/name=["']robots["'][^>]*content=["'][^"']*noindex/.test(built))) {
     const composed = spawnSync('python3', ['scripts/inject-same-page-stdin.py'], {input: built, encoding:'utf8',maxBuffer:20*1024*1024});
     if(composed.status!==0)throw new Error(`${rel}: language-control composition failed: ${composed.stderr}`);
     built=composed.stdout;

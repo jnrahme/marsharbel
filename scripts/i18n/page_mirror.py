@@ -25,7 +25,7 @@ def twin_routes(registry,lang,page_families=True):
 def render_page(root,registry,lang,family,route,catalog=None):
     raw,soup,copy=apply_keyed_master(root,family,lang,catalog)
     source=read_json(root/f'locales/en/{family}-bindings.json')['master']
-    master_route='/' + source.removesuffix('.html')
+    master_route=registry['pageMirrors'][family].get('english','/' + source.removesuffix('.html'))
     prefix=next(iter(copy)).split('.')[0]
     # The reviewed history bytes are pinned, so history keeps its reviewed links.
     twins=twin_routes(registry,lang);twins[master_route]=route
@@ -48,7 +48,7 @@ def render_page(root,registry,lang,family,route,catalog=None):
     for code,value in og_locales(registry).items():
         if code!=lang:soup.head.append(soup.new_tag('meta',property='og:locale:alternate',content=value))
     for node in soup.select('link[hreflang]'):node.decompose()
-    clusters={'en':master_route,**registry['pageMirrors'][family]['routes'],'x-default':master_route}
+    clusters=registry['pageMirrors'][family].get('discoveryRoutes',{'en':master_route,**registry['pageMirrors'][family]['routes'],'x-default':master_route})
     for code,path in clusters.items():soup.head.append(soup.new_tag('link',rel='alternate',hreflang=code,href=registry['site']+path))
     title=soup.title.get_text();description=soup.select_one('meta[name=description]')['content']
     for script in soup.select('script[type="application/ld+json"]'):
@@ -96,7 +96,13 @@ def render_page(root,registry,lang,family,route,catalog=None):
             if isinstance(text, Comment) or text.parent.name in ('script','style'): continue
             isolated = re.sub(r'[A-Za-z][A-Za-z0-9]*(?:[ .:/\-][A-Za-z0-9]+)*', lambda m: '\u2068' + m[0] + '\u2069', str(text))
             if isolated != str(text): text.replace_with(isolated)
-    rendered=str(soup);diff=check_pair(raw.decode('utf-8'),rendered,master_route,route)
+    rendered=str(soup);master_text=raw.decode('utf-8')
+    if family in ('saint-charbel-prayers-master','saint-charbel-novena-master'):
+        from i18n.prayer_runtime import share_head
+        hub=family=='saint-charbel-prayers-master'
+        rendered=share_head(rendered,root,lang,hub)
+        master_text=share_head(master_text,root,'en',hub)
+    diff=check_pair(master_text,rendered,master_route,route)
     if diff:raise ValueError(f'{family} {lang}: mirror structure diverged: {diff}')
     return rendered
 

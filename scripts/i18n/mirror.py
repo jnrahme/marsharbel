@@ -18,7 +18,7 @@ SITE = 'https://marsharbel.com'
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def render_mirrors(root=ROOT, registry=None):
+def render_mirrors(root=ROOT, registry=None, retired_routes=()):
     """Return rendered prayer pages without writes; fail on missing or extra text."""
     if registry is None:
         registry = read_json(root / 'locales/registry.json')
@@ -44,6 +44,7 @@ def render_mirrors(root=ROOT, registry=None):
         if set(catalog) != expected:
             raise ValueError(f'Prayer mirror {code} slot mismatch: missing {sorted(expected - set(catalog))}; extra {sorted(set(catalog) - expected)}')
     for code, catalog, path in [('en', catalogs['en'], english_path), *routes]:
+        if path in retired_routes: continue
         # The mirror catalogs are separate from the legacy short-guide catalogs.
         leaves(catalog)
         is_english_master = path == english_path

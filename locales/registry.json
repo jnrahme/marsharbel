@@ -511,9 +511,7 @@
         "en": "/saint-charbel-novena",
         "de": "/de/novene"
       },
-      "renderLocales": [
-        "de"
-      ]
+      "renderLocales": []
     },
     "feast": {
       "english": "/saint-charbel-feast-day",
@@ -648,6 +646,52 @@
         "pl",
         "ru"
       ]
+    },
+    "saint-charbel-prayers-master": {
+      "master": "saint-charbel-prayers.html",
+      "english": "/saint-charbel-prayers",
+      "routes": {
+        "ar": "/ar/prayers",
+        "de": "/de/gebete",
+        "fr": "/fr/prieres"
+      },
+      "renderLocales": [
+        "ar",
+        "de",
+        "fr"
+      ],
+      "discoveryRoutes": {
+        "en": "/saint-charbel-prayers",
+        "ar": "/ar/prayers",
+        "fr": "/fr/prieres",
+        "es": "/es/oraciones",
+        "pt": "/pt/oracoes",
+        "it": "/it/preghiere",
+        "de": "/de/gebete",
+        "pl": "/pl/modlitwy",
+        "x-default": "/saint-charbel-prayers"
+      }
+    },
+    "saint-charbel-novena-master": {
+      "master": "saint-charbel-novena.html",
+      "english": "/saint-charbel-novena",
+      "routes": {
+        "ar": "/ar/novena",
+        "de": "/de/novene",
+        "fr": "/fr/neuvaine"
+      },
+      "renderLocales": [
+        "ar",
+        "de",
+        "fr"
+      ],
+      "discoveryRoutes": {
+        "en": "/saint-charbel-novena",
+        "ar": "/ar/novena",
+        "fr": "/fr/neuvaine",
+        "de": "/de/novene",
+        "x-default": "/saint-charbel-novena"
+      }
     }
   }
 }
