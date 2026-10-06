@@ -344,3 +344,7 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 - Stop 3: family home and baptism church of Bekaa Kafra. No freely usable real photo located yet.
 - Stop 4: the grotto. No freely usable real photo located yet.
 - The two LebanonUntravelled photos on /bekaa-kafra (see the gap entry above) are NOT reused on the tour.
+
+## October 6 Beirut altar-consecration news
+
+- media/news/beirut-st-george-cathedral.webp: Lebnen18, Saint George Maronite Cathedral and Mohammad Al-Amin Mosque, downtown Beirut, uploaded March 2009 (own work). Source: https://commons.wikimedia.org/wiki/File:Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg . Observed source file: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg/960px-Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg . CC BY-SA 3.0 Unported (multi-licensed with GFDL and CC BY-SA 2.5/2.0/1.0), verified on the source file page. Converted to WebP, no content edits. Derivative under CC BY-SA 3.0. Caption explicitly says venue context, not the September 27, 2026 consecration Mass. Event photography from NNA/Annahar/L'Orient not reused: no verified license.
