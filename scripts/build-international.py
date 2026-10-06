@@ -25,10 +25,18 @@ from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
 
 
-def alternate_links(registry, topic=None):
+def alternate_links(registry, topic=None, master=False):
     languages = topic_locales(registry, topic) if topic else list(registry['locales'])
     if topic == 'biography' and 'history-master' in registry.get('pageMirrors', {}):
         return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{registry["site"]}/en/biography" />' for code in ('en', 'x-default'))
+    if topic:
+        english = registry['topics'][topic]['relatedEnglish']
+        for cfg in registry.get('pageMirrors', {}).values():
+            if cfg['english'] == english and 'renderLocales' in cfg and not master and 'en' in languages:
+                return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{registry["site"]}{page_url(registry, "en", topic)}" />' for code in ('en', 'x-default'))
+            if cfg['english'] == english and 'renderLocales' in cfg:
+                cluster = {'en': english, **{c: cfg['routes'][c] for c in cfg['renderLocales']}, 'x-default': english}
+                return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{registry["site"]}{path}" />' for code, path in cluster.items())
     if topic in registry.get('exactMirrors', {}):
         languages=[c for c in languages if c not in registry['exactMirrors'][topic].get('renderLocales',[])]
     links = {code: registry['site'] + page_url(registry, code, topic) for code in languages}
@@ -191,7 +199,7 @@ def outputs(root=ROOT):
             text = replace_block(text, 'i18n-navigation', footer_locale_bar(registry))
         if registry['defaultLocale'] not in topic_locales(registry, topic):
             # The English page is this topic's English alternate, so it carries the same cluster.
-            links = '\n'.join('  ' + line for line in alternate_links(registry, topic).split('\n'))
+            links = '\n'.join('  ' + line for line in alternate_links(registry, topic, master=True).split('\n'))
             text = replace_block(text, 'hreflang', links, begin='begin')
         result[path] = text
     # Declared discovery clusters are composed reciprocally; they do not enable
@@ -234,6 +242,7 @@ def outputs(root=ROOT):
     generated += [registry['site'] + '/' + code + '/miracles/eucharistic/' + ('' if slug=='index' else slug)
                   for code in published_locales(registry, 'eucharistic') if code != registry['defaultLocale']
                   for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney')]
+    # pageMirrors routes stay out of the sitemap while behind the review overlay.
     generated += [registry['site'] + route for mirror in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values()
                   for route in mirror['routes'].values() if route != mirror['english']]
     def entry(url):
@@ -244,8 +253,8 @@ def outputs(root=ROOT):
     result[sitemap] = text
     routing = {'aliases':selector_aliases(registry), 'homes':{code: cfg['home'] for code,cfg in registry['locales'].items()},
                'topics':{cfg['relatedEnglish']:{code:page_url(registry,code,topic) for code in topic_locales(registry,topic)} for topic,cfg in registry['topics'].items()}}
-    for mirror in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values():
-        routing['topics'][mirror['english']] = mirror['routes']
+    for mirror in {**registry.get('pageMirrors', {}), **registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values():
+        routing['topics'][mirror['english']] = {**routing['topics'].get(mirror['english'], {}), **mirror['routes']}
     routing['topics']['/saint-charbel-feast-day']['en']='/saint-charbel-feast-day'
     for slug in ('', 'lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica','ludbreg','amsterdam','ivorra','faverney'):
         english = '/miracles/eucharistic/' + slug
