@@ -3,7 +3,11 @@ const registry=require('../locales/registry.json');
 const contract=require('../locales/prayer-equivalence.json');
 for(const family of ['saint-charbel-prayers-master','saint-charbel-novena-master'])for(const [lang,route]of Object.entries({en:registry.pageMirrors[family].english,...registry.pageMirrors[family].routes}))test(`${route} prayer selection respects gated exact twins`,async({page,baseURL})=>{
  await page.route('**/*',r=>new URL(r.request().url()).origin===new URL(baseURL).origin?r.continue():r.fulfill({status:204,body:''}));
- await page.goto(route);const active=contract.gateStatus==='approved';
+ const response=await page.goto(route);expect(response.status()).toBe(200);
+ // Browser URL is the post-redirect entry, not merely the requested path.
+ await expect(page).toHaveURL(baseURL+route);
+ await expect(page.locator('head link[rel=canonical]')).toHaveAttribute('href',registry.site+route);
+ const active=contract.gateStatus==='approved';
  for(const code of ['en','ar','de','fr']){
   const option=page.locator(`#sc-language-select option[value="${code}"]`);
   if(active||code===lang||code==='en')await expect(option).toBeEnabled();else await expect(option).toBeDisabled();

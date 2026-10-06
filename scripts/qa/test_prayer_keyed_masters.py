@@ -6,6 +6,13 @@ from i18n.page_mirror import render_page
 from i18n.mirror_structure import check_pair
 from i18n.catalog import read_json
 class PrayerKeyedMasters(unittest.TestCase):
+ def test_reviewed_english_entries_are_not_redirected(self):
+  from verify_deployment import redirected_pages
+  r=read_json(ROOT/'locales/registry.json')
+  redirected=redirected_pages(ROOT)
+  for family in ('saint-charbel-prayers-master','saint-charbel-novena-master'):
+   entry=ROOT/(r['pageMirrors'][family]['english'].lstrip('/')+'.html')
+   self.assertNotIn(entry,redirected,'Redirecting a reviewed EN entry bypasses its exact-twin family')
  def test_six_routes_match_frozen_masters(self):
   r=read_json(ROOT/'locales/registry.json')
   for family in ('saint-charbel-prayers-master','saint-charbel-novena-master'):
