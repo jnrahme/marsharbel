@@ -7,6 +7,18 @@ news_desk = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(news_desk)
 
 class NewsDeskTests(unittest.TestCase):
+    def test_movie_opening_status(self):
+        import json
+        catalog=json.loads((ROOT/'locales/en/movie-status-copy.json').read_text())
+        source=(ROOT/'src/pages/saint-charbel-movie.html').read_text()
+        from html import escape
+        served=(ROOT/'saint-charbel-movie.html').read_text()
+        for key,value in catalog['copy'].items():
+            self.assertIn('{{copy movie-status '+key+'}}',source)
+            self.assertIn(escape(value,quote=True),served)
+        self.assertNotIn('was released in Lebanon in 2026',served)
+        self.assertIn('id="mar-charbel-october-opening-2026-10"',(ROOT/'news.html').read_text())
+
     def test_ministers_visit_card(self):
         text = (ROOT/'news.html').read_text()
         self.assertEqual(text.count('id="religious-trails-minister-visit-2026-10"'), 1)
