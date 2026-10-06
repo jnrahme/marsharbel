@@ -19,5 +19,5 @@ for(const family of ['saint-charbel-prayers-master','saint-charbel-novena-master
  const height=await page.evaluate(()=>document.documentElement.scrollHeight);
  for(let y=0,n=0;y<height;y+=800){await page.evaluate(y=>scrollTo(0,y),y);await page.screenshot({path:info.outputPath(`page-tile-${n++}.png`)});}
  await page.evaluate(()=>scrollTo(0,0));
- await expect(page.locator('#sc-language-select option[value=en]')).toBeEnabled();await page.selectOption('#sc-language-select','en');await expect(page).toHaveURL(new RegExp(registry.pageMirrors[family].english+'$'));await expect(page.locator('html')).toHaveAttribute('lang','en');
+ await expect(page.locator('#sc-language-select option[value=en]')).toBeEnabled();const anchor=new URL(page.url()).hash;await page.selectOption('#sc-language-select','en');await expect(page).toHaveURL(baseURL+registry.pageMirrors[family].english+anchor);await expect(page.locator('html')).toHaveAttribute('lang','en');
 });

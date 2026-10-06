@@ -7,7 +7,7 @@ for (const [route, code] of [['/saint-charbel-prayers','en'], ['/en/prayers','en
     await page.goto(route);
     await expect(page.locator('html')).toHaveAttribute('lang', code);
     await expect(page.locator('main > section')).toHaveCount(8);
-    await expect(page.locator('.prayer-card')).toHaveCount(route === '/ar/prayers' ? 15 : 14);
+    await expect(page.locator('.prayer-card')).toHaveCount(14);
     await expect(page.locator('#sc-language-select')).toHaveCount(1);
     const layout = await page.evaluate(() => ({
       width: document.documentElement.scrollWidth,
@@ -31,9 +31,18 @@ for(const [route,code]of [['/en/prayers','en'],['/ar/prayers','ar'],['/fr/priere
     await expect(page.locator('html')).toHaveAttribute('lang',code);
     await expect(page.locator('#sc-language-select')).toHaveValue(code);
     const other=code==='fr'?'ar':'fr';
-    await expect(page.locator(`#sc-language-select option[value="${other}"]`)).toBeDisabled();
+    if(['ar','fr','de'].includes(code)){
+      await expect(page.locator(`#sc-language-select option[value="${other}"]`)).toBeEnabled();
+      await page.selectOption('#sc-language-select',other);
+      const target=require('../locales/registry.json').pageMirrors['saint-charbel-prayers-master'].routes[other];
+      await expect(page).toHaveURL(new RegExp(target+'$'));await expect(page.locator('html')).toHaveAttribute('lang',other);
+      await page.goto(route);
+      for(const pending of ['ru','es','pt','it','pl'])await expect(page.locator(`#sc-language-select option[value="${pending}"]`)).toBeDisabled();
+    }else await expect(page.locator(`#sc-language-select option[value="${other}"]`)).toBeDisabled();
+    const pending='ru';
+    await expect(page.locator(`#sc-language-select option[value="${pending}"]`)).toBeDisabled();
     const before=await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
-    expect(await page.evaluate(lang=>SC_LANGUAGE_SWITCH.request(lang),other)).toBe(false);
+    expect(await page.evaluate(lang=>SC_LANGUAGE_SWITCH.request(lang),pending)).toBe(false);
     expect(await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}))).toEqual(before);
     await page.reload();await expect(page.locator('h1')).toHaveText(heading);
   });
