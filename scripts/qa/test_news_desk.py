@@ -12,6 +12,11 @@ class NewsDeskTests(unittest.TestCase):
         self.assertEqual(text.count('id="religious-trails-minister-visit-2026-10"'), 1)
         self.assertIn('not a new agreement or a trail opening', text)
 
+    def test_douaihy_hoayek_altar_card(self):
+        text = (ROOT/'news.html').read_text()
+        self.assertEqual(text.count('id="douaihy-hoayek-altar-consecration-2026-09"'), 1)
+        self.assertIn('Both remain Blessed, not canonized saints', text)
+
     def test_gallery_series_news(self):
         text = (ROOT/'news.html').read_text()
         self.assertEqual(text.count('id="gallery-ai-transformation-series-2026-10"'), 1)
