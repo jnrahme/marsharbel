@@ -26,7 +26,9 @@ for(const [route,code]of [['/en/prayers','en'],['/ar/prayers','ar'],['/fr/priere
   test(`${route} keeps authored prayer copy and refuses pending twins`,async({page})=>{
     await page.addInitScript(()=>localStorage.setItem('sc_lang_pref','en'));
     await page.goto(route+'?lang=ar');
-    const heading=require(`../locales/${code}/mirrors/prayers.json`)['hero.heading'];
+    const family='saint-charbel-prayers-master';
+    const binding=require(`../locales/en/${family}-bindings.json`).bindings.find(b=>b.kind==='text'&&/(^| > )h1(:nth-of-type\(\d+\))?$/.test(b.selector));
+    const heading=['ar','de','fr'].includes(code)?require(`../locales/${code}/${family}-copy.json`)[binding.key]:require(`../locales/${code}/mirrors/prayers.json`)['hero.heading'];
     await expect(page.locator('h1')).toHaveText(heading);
     await expect(page.locator('html')).toHaveAttribute('lang',code);
     await expect(page.locator('#sc-language-select')).toHaveValue(code);
