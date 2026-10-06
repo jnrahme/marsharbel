@@ -1,4 +1,5 @@
 """Characterize the shared JSON-LD serializers against committed served HTML."""
+import os
 import subprocess
 import unittest
 from pathlib import Path
@@ -7,21 +8,31 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 class JsonLdSerializerTest(unittest.TestCase):
-    def test_article_bytes_and_invalid_inputs(self):
+    def check_serialized_bytes(self, tamper=False):
         result = subprocess.run(
             ['node', '--input-type=module', '-'], cwd=ROOT,
             input=r'''
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { renderWebPage, renderWebPageArticle, renderWebPageAudience, renderFaq } from './scripts/lib/jsonld.mjs';
+const escapeText = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+function resolveCopy(source) {
+  return source.replace(/\{\{copy ([a-z0-9-]+) ([a-zA-Z0-9.-]+)\}\}/g, (_, name, key) => {
+    const copy = JSON.parse(readFileSync(`locales/en/${name}-copy.json`, 'utf8')).copy;
+    assert.ok(Object.hasOwn(copy, key), `missing ${name} copy key: ${key}`);
+    return escapeText(copy[key]);
+  });
+}
+assert.equal(escapeText('A & <B> "C"'), 'A &amp; &lt;B&gt; &quot;C&quot;');
+assert.throws(() => resolveCopy('{{copy prayer-errata missing-key}}'), /missing.*copy key/);
 let count = 0, audienceCount = 0;
 for (const file of readdirSync('src/pages').filter(f => f.endsWith('.html'))) {
-  const source = readFileSync(`src/pages/${file}`, 'utf8');
+  const source = resolveCopy(readFileSync(`src/pages/${file}`, 'utf8'));
   const marker = source.match(/\{\{> ld-webpage-article((?: "(?:[^"\\]|\\.)*")*)\}\}/);
   const audienceMarker = source.match(/\{\{> ld-webpage-audience((?: "(?:[^"\\]|\\.)*")*)\}\}/);
   if (!marker && !audienceMarker) continue;
   const args = [...(marker || audienceMarker)[1].matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]);
-  const served = readFileSync(file, 'utf8');
+  const served = readFileSync(file, 'utf8').replace(process.env.SERIALIZER_TEETH === '1' ? /twenty-nine invocations/g : /$^/, 'tampered invocations');
   const blocks = [...served.matchAll(/<script type="application\/ld\+json">\n[\s\S]*?\n  <\/script>/g)];
   const block = blocks.find(m => JSON.parse(m[0].replace(/^.*?\n|\n  <\/script>$/g, ''))['@type'] === 'WebPage');
   assert.ok(block, `${file}: missing WebPage`);
@@ -36,8 +47,8 @@ const fragments = Object.fromEntries(['ld-person', 'ld-place', 'ld-video', 'ld-w
   [name, readFileSync(`partials/fragments/${name}.html`, 'utf8').replace(/\n$/, '')]));
 let longTail = 0;
 for (const file of readdirSync('src/pages').filter(f => f.endsWith('.html'))) {
-  const source = readFileSync(`src/pages/${file}`, 'utf8');
-  const served = readFileSync(file, 'utf8');
+  const source = resolveCopy(readFileSync(`src/pages/${file}`, 'utf8'));
+  const served = readFileSync(file, 'utf8').replace(process.env.SERIALIZER_TEETH === '1' ? /twenty-nine invocations/g : /$^/, 'tampered invocations');
   for (const marker of source.matchAll(/\{\{> (ld-person|ld-place|ld-video|ld-webpage-plain|ld-webpage-article-modified)((?: "(?:[^"\\]|\\.)*")*)\}\}/g)) {
     const args = [...marker[2].matchAll(/ "((?:[^"\\]|\\.)*)"/g)].map(m => m[1]);
     const rendered = marker[1] === 'ld-webpage-article-modified'
@@ -63,8 +74,18 @@ assert.ok(escaped.includes('He said \\"hello\\"'));
 console.log(`${count} article and ${audienceCount} audience serializers matched served bytes; boundary cases passed.`);
 ''',
             text=True, capture_output=True,
+            env={**os.environ, 'SERIALIZER_TEETH': '1' if tamper else '0'},
         )
+        return result
+
+    def test_article_bytes_and_invalid_inputs(self):
+        result = self.check_serialized_bytes()
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_changed_schema_is_still_rejected(self):
+        result = self.check_serialized_bytes(tamper=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('serialized bytes changed', result.stdout + result.stderr)
 
 
 if __name__ == '__main__':
