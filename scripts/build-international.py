@@ -242,7 +242,9 @@ def outputs(root=ROOT):
     generated += [registry['site'] + '/' + code + '/miracles/eucharistic/' + ('' if slug=='index' else slug)
                   for code in published_locales(registry, 'eucharistic') if code != registry['defaultLocale']
                   for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney')]
-    # pageMirrors routes stay out of the sitemap while behind the review overlay.
+    # pageMirrors routes join the sitemap once released (registry sitemapHeld lists any still held).
+    generated += [registry['site'] + route for mirror in registry.get('pageMirrors', {}).values()
+                  for code, route in mirror['routes'].items() if code != 'en' and code in mirror.get('renderLocales', []) and code not in mirror.get('sitemapHeld', [])]
     generated += [registry['site'] + route for mirror in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values()
                   for route in mirror['routes'].values() if route != mirror['english']]
     def entry(url):
