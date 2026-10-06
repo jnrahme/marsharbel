@@ -186,3 +186,22 @@ for (const route of ['/pt/annaya', '/it/annaya', '/ar/annaya']) {
     } finally { await noScript.close(); }
   });
 }
+
+// Smallest supported phone: intrinsic option widths must not push RTL or LTR chrome out.
+for (const route of ['/ar/annaya', '/pt/annaya', '/it/annaya', '/en/annaya', '/']) {
+  test(`${route} language control fits inside its header at 320px`, async ({page}) => {
+    await page.setViewportSize({width:320,height:800});
+    await page.goto(route);
+    await expect(page.locator('#sc-language-select')).toBeVisible();
+    const layout = await page.evaluate(() => {
+      const host = document.querySelector('#sc-language-switcher');
+      const parent = host.parentElement.getBoundingClientRect();
+      return {width:document.documentElement.scrollWidth, viewport:innerWidth, parent:{left:parent.left,right:parent.right}, boxes:[host,document.querySelector('#sc-language-select')].map(node => {const box=node.getBoundingClientRect();return {left:box.left,right:box.right};})};
+    });
+    expect(layout.width).toBeLessThanOrEqual(layout.viewport);
+    for (const box of layout.boxes) {
+      expect(box.left).toBeGreaterThanOrEqual(layout.parent.left - 1);
+      expect(box.right).toBeLessThanOrEqual(layout.parent.right + 1);
+    }
+  });
+}
