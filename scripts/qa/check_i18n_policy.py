@@ -72,6 +72,9 @@ def snapshot(root=ROOT):
     generated.update((route.lstrip('/')+'index.html' if route.endswith('/') else route.lstrip('/')+'.html')
                      for cfg in registry.get('exactMirrors',{}).values() for code,route in cfg['routes'].items() if code in cfg.get('renderLocales',[]))
     generated.add("ar/litany-of-saint-charbel.html")
+    # Keyed page mirrors render from their English master; build-international.py --check verifies their bytes.
+    generated.update((route.lstrip('/')+'.html') for cfg in registry.get('pageMirrors',{}).values()
+                     for code,route in cfg['routes'].items() if code in cfg.get('renderLocales',[]))
     generated.update(route.lstrip("/")+".html" for route in registry.get("authoredMirrors", {}).get("travel", {}).get("routes", {}).values())
     result = {}
     for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'), *root.glob('miracles/*.html'), *root.glob('miracles/eucharistic/*.html'),
@@ -179,6 +182,14 @@ def check(root=ROOT):
         expected=travel_frame(tour_nav(expected,root,lang),root,lang,'/'+str(path.relative_to(root)).removesuffix('.html'),read_json(root/'locales/registry.json'))
         expected=inject_control(expected,root,read_json(root/'locales/same-page-manifest.pending.json'),read_json(root/'locales/same-page-copy.json'))
         if path.read_text()!=expected: errors.append(str(path.relative_to(root))+': exact output differs from guarded catalog')
+    _registry=read_json(root/'locales/registry.json')
+    # Mirror pages: bytes verified by build-international.py --check (same step of i18n:check).
+    # English masters keep their wording in a keyed catalog; the bindings check proves the page carries it.
+    master_catalogs={}
+    for _family,_cfg in _registry.get('pageMirrors',{}).items():
+        _copy=root/f'locales/en/{_family}-copy.json'
+        if _family!='history-master' and _copy.exists():
+            master_catalogs[_cfg['master']]=Counter(read_json(_copy).values())
     for file, values in snapshot(root).items():
         additions = Counter(values) - Counter(baseline.get(file, {}))
         if file == 'videos.html':
@@ -216,6 +227,7 @@ def check(root=ROOT):
         # Newly edited English legacy pages are catalog-backed, not added to
         # the frozen legacy baseline. The per-file counts prevent a second
         # unreviewed occurrence from being silently accepted.
+        additions -= master_catalogs.get(file, Counter())
         additions -= Counter(maroun_catalog.get(file, {}))
         additions -= Counter(augustine_catalog.get(file, {}))
         additions -= Counter(marina_catalog.get(file, {}))

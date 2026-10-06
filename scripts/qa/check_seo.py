@@ -160,10 +160,23 @@ def check(root):
                 errors.append(f"{url}: language alternate {language} is not an indexable page: {alternate}")
             elif pages[alternate].alternates != page.alternates:
                 errors.append(f"{url}: non-reciprocal language alternates with {alternate}")
-    # Routes whose registry entry sets sitemap=false are held behind the review
-    # overlay and are added to the sitemap in the change that clears it.
-    held = {SITE + route for cfg in json.loads((root / "locales/registry.json").read_text()).get("pageMirrors", {}).values()
-            if cfg.get("sitemap") is False for route in cfg["routes"].values()}
+    # sitemapHeld lists the brand-new locale routes held behind the review overlay;
+    # they join the sitemap in the change that clears it. Routes that were already
+    # live and indexed before the overlay stay in the sitemap (removing them would
+    # de-index live pages), so every other mirror route of such a family must be listed.
+    held = set()
+    must_list = set()
+    for cfg in json.loads((root / "locales/registry.json").read_text()).get("pageMirrors", {}).values():
+        if "sitemapHeld" not in cfg:
+            continue
+        for lang, route in cfg["routes"].items():
+            if lang == "en":
+                continue
+            (held if lang in cfg["sitemapHeld"] else must_list).add(SITE + route)
+    for url in sorted(held & set(urls)):
+        errors.append(f"sitemap.xml: held route must not be listed yet: {url}")
+    for url in sorted(must_list - set(urls)):
+        errors.append(f"sitemap.xml: pre-existing indexed route dropped: {url}")
     for url in sorted(expected - set(urls) - held):
         errors.append(f"sitemap.xml: missing indexable page {url}")
     for url in sorted(set(urls) - expected):
