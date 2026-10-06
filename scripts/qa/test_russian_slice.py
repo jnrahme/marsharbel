@@ -34,7 +34,7 @@ class RussianSliceTests(unittest.TestCase):
    for lang,v in p['variants'].items():
     self.assertEqual(v['status'],'pending');self.assertEqual(v['proof'],{})
     if lang=='ru':ru.append(v['path'])
-  self.assertEqual(sorted(ru),['/ru/','/ru/biography'])
+  self.assertEqual(sorted(ru),['/ru/','/ru/22-chislo-mesyaca','/ru/annaya','/ru/biography','/ru/palomnichestvo'])
   for file in (ROOT/'ru').glob('*.html'):
    s=BeautifulSoup(file.read_text(),'html.parser')
    for a in s.select('a[href]'):
