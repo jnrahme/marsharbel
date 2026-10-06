@@ -28,7 +28,7 @@ def render_page(root,registry,lang,family,route,catalog=None):
     master_route='/' + source.removesuffix('.html')
     prefix=next(iter(copy)).split('.')[0]
     # The reviewed history bytes are pinned, so history keeps its reviewed links.
-    twins=twin_routes(registry,lang,family!='history-master');twins[master_route]=route
+    twins=twin_routes(registry,lang);twins[master_route]=route
     for node in soup.select('[href],[src],[srcset],[action]'):
         for attr in ('href','src','action'):
             if node.has_attr(attr) and not node[attr].startswith(('#','mailto:','tel:','data:','javascript:')):

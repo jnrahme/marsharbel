@@ -22,7 +22,7 @@
       "file": "fr/biographie.html",
       "path": "/fr/biographie",
       "candidateFileSha256": "769686648e4557581116f309f2c24ecaf2397aeb2fa24563108eb945021b4961",
-      "bodySha256": "7cfd928fce99ab75458e84942a622d599f3b1e5ff206591ca54c8554dcb6fd0d",
+      "bodySha256": "8659b2c23360ba4af5cf874d94b17cb57939f4884258352f26e1d1693b6b7000",
       "catalog": "locales/fr/history-master-copy.json",
       "catalogSha256": "a744f81ef527c7ecd5d823419b3d6e82e458eb123271a69b5a727cc3d5ae56e1"
     },
@@ -30,7 +30,7 @@
       "file": "es/biografia.html",
       "path": "/es/biografia",
       "candidateFileSha256": "050153afa388193403de1e1bf18063b682fce1f05634a23e5db297b5de10054b",
-      "bodySha256": "88c6fe3d2d536e91090ac1c0cc3f5f5d6f825e64a7fa0a98b17f15787d13b0fe",
+      "bodySha256": "7e1c75a9a58c6f45f1cc66c9f2d1d226981859e1f0aaf4102ac85b1766a45a04",
       "catalog": "locales/es/history-master-copy.json",
       "catalogSha256": "c7a4dd741e6750f9989898cfb2bfb9453563ef0dc5af346dd42caae8f27e1961"
     },
@@ -38,7 +38,7 @@
       "file": "pt/biografia.html",
       "path": "/pt/biografia",
       "candidateFileSha256": "f80d5e0f1de8c9491ac84450bac01752510eece087fa48d4d821dad186518ad7",
-      "bodySha256": "ed65941f140d0cbf0c4d5d17f60e4b44dfa2b28de32633d13e90ef2b52d9966e",
+      "bodySha256": "c9c0799bb3a42f738a9e28891bd73b55df11beb5c2a049fdc6249d7ddcda6ba3",
       "catalog": "locales/pt/history-master-copy.json",
       "catalogSha256": "082f84e175640624255405f5678af6287a346e9e61d54892b2ab9d9201dfeee5"
     },
@@ -46,7 +46,7 @@
       "file": "it/biografia.html",
       "path": "/it/biografia",
       "candidateFileSha256": "9cb370c5ab829426f39f2fd3472b891f6e59e8dccd70a90cc283a6ded491c64d",
-      "bodySha256": "d0afab731d1ce06fa87c83678a5af1275bb243f2509216290406c01d9b0c5c9e",
+      "bodySha256": "6ae732ad0277ecf231ce8eed1ec3c056d829ce3aec9310d958be159866cf62ba",
       "catalog": "locales/it/history-master-copy.json",
       "catalogSha256": "226dfa6796a7c3496ba173047285697d3cdb7e97635b4357575f178f57036f1b"
     },
@@ -54,7 +54,7 @@
       "file": "de/biografie.html",
       "path": "/de/biografie",
       "candidateFileSha256": "2ab714af0e07830edec327ceb0ccb6b8edded368b25208f5c8e7ba955f1a17c5",
-      "bodySha256": "f6b86563aabacc41c8ba654f5cc07d736b0b95a4e25dd47b97cfa03c61030989",
+      "bodySha256": "a09ffff91e78b57baf15475c11fbc3ae7d138438d6e832509f6cf575f8150dcd",
       "catalog": "locales/de/history-master-copy.json",
       "catalogSha256": "77ec52dd4c4fcd7d4e37cea3548ce1dedf0469461adefc5a05537ddfc16f7679"
     },
@@ -62,7 +62,7 @@
       "file": "pl/biografia.html",
       "path": "/pl/biografia",
       "candidateFileSha256": "3f22a8a9f6ab1dff9d7c53e66900df76e41560791375ac6d054f31459872fb63",
-      "bodySha256": "b22343130ecd0093774091cf7990c375d4752bc12ff8839179d6fe3026c3eb1e",
+      "bodySha256": "490514d8a6f29f95853ed55f3c9c0a81e9642a0c353395307b366af87e8cf7fd",
       "catalog": "locales/pl/history-master-copy.json",
       "catalogSha256": "1a88df950445aa5e84818fb5a337a97c734e0f83c1387aca0a9d1e15184aa015"
     },
@@ -70,10 +70,11 @@
       "file": "ru/biography.html",
       "path": "/ru/biography",
       "candidateFileSha256": "375b53ae0c555fdaa16d9f2f311509f0a86a57fe665cdfa889ca86ffff730041",
-      "bodySha256": "ba6936bf8d92ddba0ba411acaaffa60110e097da0cf844d22c19a65dc9a36458",
+      "bodySha256": "afa67e0beac426ca3de8eb2f222d2cebea619bca6fd0663ce0a4bd3cc5a608a4",
       "catalog": "locales/ru/history-master-copy.json",
-      "catalogSha256": "d55ff87925118f34226e8517190afcf5fd41b42f061950bc0718ae27dcbbb9d7"
+      "catalogSha256": "754cfc6d62887ec62781a36c8339a5e12912861eb65d7ca3e7a50296c5eee1dc"
     }
   },
-  "renderedReview": "Independent render reviewer PASS candidate32085fd, relayed by parent Oct5 19:17:50; overlay switching checked separately before release."
+  "renderedReview": "Independent render reviewer PASS candidate32085fd, relayed by parent Oct5 19:17:50; overlay switching checked separately before release.",
+  "repinNote": "Locale history bodies re-pinned after links to the localized travel pages (annaya, 22nd, pilgrimage) were added; link hrefs only. Re-pinned locales: fr,es,pt,it,de,pl,ru. Rendered review of the new bytes is pending. ru catalog also drops '(на английском)' from the three labels whose targets are now localized ru pages (history.after.the-22nd-of-the-month, history.visit.visiting-annaya, history.section.visiting-annaya)."
 }
