@@ -9,6 +9,7 @@ fi
 
 cd "${ROOT}"
 
+python3 scripts/qa/test_source_copy_keys.py
 python3 scripts/qa/check_travel_routes.py
 python3 scripts/qa/test_travel.py
 npx playwright test tests/travel-routing.spec.js tests/travel-hub.spec.js --project=phone --project=laptop --workers=4

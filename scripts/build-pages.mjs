@@ -33,7 +33,7 @@ const used = new Set(); let stale = [], n = 0;
 for (const file of await walk(SRC).catch(() => [])) {
   const rel = path.relative(SRC, file);
   const source = await readFile(file, 'utf8');
-  const copyPattern = /\{\{copy ([a-z0-9-]+) ([a-zA-Z0-9.]+)\}\}/g;
+  const copyPattern = /\{\{copy ([a-z0-9-]+) ([a-zA-Z0-9.-]+)\}\}/g;
   for (const match of source.matchAll(copyPattern)) await catalog(match[1]);
   const catalogued = source.replace(copyPattern, (_, name, key) => {
     const copy = catalogs.get(name);
