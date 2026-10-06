@@ -141,6 +141,8 @@ def control_outputs(root, texts, manifest, copy):
     manifest = history_manifest(root,texts,manifest)
     from i18n.reviewed_travel import travel_manifest
     manifest = travel_manifest(root,texts,manifest)
+    from i18n.reviewed_prayers import prayer_manifest
+    manifest = prayer_manifest(root,texts,manifest)
     out={}
     for path,text in texts.items():
         if path.suffix=='.html' and 'https://marsharbel.com/' in text:out[path]=inject_control(text,root,manifest,copy)

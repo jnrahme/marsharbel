@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "renderedReviewStatus": "approved",
+  "catalogApplication": "Copied byte-identically from supplied reviewed application pack a9f41639. This is not identity to earlier producer catalogs.",
+  "catalogChanges": [
+    {
+      "locale": "de",
+      "family": "saint-charbel-prayers-master",
+      "key": "saint-charbel-prayers.how-this-collection-is-l.the-rosary-core-prayers-apostles-creed-our-father-hail-mary",
+      "change": "Dropped (Gotteslob) per German reviewer suggestion accepted in supplied application pack; differs from producer catalog 5ff85681.",
+      "source": "Parent message October 6 2026 00:47:41 EDT"
+    }
+  ],
+  "reviews": {
+    "de": {
+      "status": "approved",
+      "source": "Parent October 6 2026 00:47:41 EDT",
+      "scope": "Real routes at390/1280, language/assets/geometry/headings/a11y and fail-closed switching"
+    },
+    "ar": {
+      "status": "approved",
+      "source": "Parent October 6 2026 00:48:21 EDT",
+      "scope": "Real routes320/390/1280 RTL, placeholder, assets and English fallback"
+    },
+    "fr": {
+      "status": "approved",
+      "source": "Parent October 6 2026 00:48:30 EDT",
+      "scope": "Real routes390/1280 language/pixels/a11y, no blockers"
+    }
+  },
+  "catalogHashes": {
+    "locales/ar/saint-charbel-novena-master-copy.json": "b4e73f2462106f103f1eb8f505fb2666ef7c266a30db839c7dc23d75c06eb871",
+    "locales/ar/saint-charbel-prayers-master-copy.json": "87da3513660d4c5f05e7727ccea7da2854654944eebe783800800f21df554b91",
+    "locales/de/saint-charbel-novena-master-copy.json": "cbbaac2fb6d7f5ca2a9f8eb3192421bd27c0d2d0bc82a27fbc07898c3b8853b1",
+    "locales/de/saint-charbel-prayers-master-copy.json": "51ceddbfe09179a5cb19b2e5fad3c55153756fc0706b7a41d850c952d669d868",
+    "locales/fr/saint-charbel-novena-master-copy.json": "29ef56341843920daebf26cafa4727013f0d40c2ecdb932cd190f7a426fb601d",
+    "locales/fr/saint-charbel-prayers-master-copy.json": "7610f2d38362517116227c9436c600efd1e2d945ba1d3c79d06a9f9eec255496"
+  },
+  "nextBatchBacklog": [
+    "Arabic hub H2 numeral style",
+    "Arabic novena H1 shadda consistency",
+    "French self-chip hiding requires shared structure change",
+    "French mid-sentence Citations capitalization"
+  ],
+  "shareRuntimeReview": {
+    "status": "approved",
+    "source": "Reviewed ar/fr pair supplied by parent October6 01:19:58 EDT; head-runtime scope ruling01:20:33 EDT",
+    "catalogHashes": {
+      "en": "b81287ff7055ca6d68764544855decd4e19a9a7038d4d1404b8b8bf1c1717884",
+      "ar": "e4e50aba0a0ba66a5ccc98c6135ef3c4fc2af874de2483acea6a7965c3f89b54",
+      "de": "ac216def9453aef82ce0fcf84c4d459ba9a109975b025d100b07eb9bc769b5c6",
+      "fr": "21f731e6b06bac7d2ea438ae2c8b55c2368ef0c26de5a92a3212f19ec70a01d8"
+    },
+    "renderedReviewSource": "Parent October6 2026 01:38:55 EDT: independent fixed-point and 16 functional runs approved; runtime byte-identical"
+  },
+  "routingDeltaReview": {
+    "status": "approved",
+    "source": "Parent October6 2026 03:59:03 EDT",
+    "scope": "Independent16 runs all directions, anchors, pending-locale refusal, reciprocal discovery, zero errors"
+  }
+}

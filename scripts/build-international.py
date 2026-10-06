@@ -27,6 +27,9 @@ from i18n.travel_components import travel_frame
 
 def alternate_links(registry, topic=None, master=False):
     languages = topic_locales(registry, topic) if topic else list(registry['locales'])
+    if topic=='novena' and not master and 'saint-charbel-novena-master' in registry.get('pageMirrors',{}):
+        remaining=['en','es','pt','it','pl'];cluster={c:page_url(registry,c,topic)for c in remaining};cluster['x-default']=cluster['en']
+        return '\n'.join(f'<link rel="alternate" hreflang="{c}" href="{registry["site"]}{path}" />'for c,path in cluster.items())
     if topic == 'biography' and 'history-master' in registry.get('pageMirrors', {}):
         return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{registry["site"]}/en/biography" />' for code in ('en', 'x-default'))
     if topic:
@@ -148,7 +151,9 @@ def outputs(root=ROOT):
         for topic in locale_topics(registry, code):
             route = page_url(registry, code, topic)
             output_path = root / (route.lstrip('/') + 'index.html' if route.endswith('/') else route.lstrip('/') + '.html')
-            result[output_path] = render(registry, catalogs[code], code, template, topic)
+            keyed_routes={route for family in ('saint-charbel-prayers-master','saint-charbel-novena-master') for route in registry.get('pageMirrors',{}).get(family,{}).get('routes',{}).values()}
+            if route not in keyed_routes:
+                result[output_path] = render(registry, catalogs[code], code, template, topic)
         result[root / code / '.htaccess'] = '# Preserve language routes; never expose directory listings.\nOptions -Indexes\n'
         # A nested localized hub is a real directory with its own index; the
         # parent locale's Options -Indexes must not hide that index.
@@ -158,10 +163,15 @@ def outputs(root=ROOT):
                 result[root / route.lstrip('/') / '.htaccess'] = (
                     '# Canonical localized directory hub.\nOptions -Indexes\nDirectoryIndex index.html\n')
     # The reviewed pair shares one skeleton; other guide locales remain unchanged.
-    mirrors = render_mirrors(root, registry)
+    retired_routes={root/(route.lstrip('/')+'.html') for family in ('saint-charbel-prayers-master','saint-charbel-novena-master') for route in registry.get('pageMirrors',{}).get(family,{}).get('routes',{}).values()}
+    mirrors = render_mirrors(root, registry, retired_routes=retired_routes)
     # The English master receives its existing managed hreflang from the loop
     # below; only the Arabic mirror is handed to the generated-page set here.
     english_mirror = mirrors.pop(root / 'saint-charbel-prayers.html')
+    # New keyed prayer writers own these routes; retain all other mirror outputs.
+    for family in ('saint-charbel-prayers-master','saint-charbel-novena-master'):
+        for route in registry.get('pageMirrors',{}).get(family,{}).get('routes',{}).values():
+            mirrors.pop(root/(route.lstrip('/')+'.html'),None)
     result.update(mirrors)
     qadisha = render_qadisha(root, registry)
     english_qadisha = qadisha.pop(root / 'qadisha-valley.html')
@@ -204,7 +214,8 @@ def outputs(root=ROOT):
         result[path] = text
     # Declared discovery clusters are composed reciprocally; they do not enable
     # the same-page selector or certify independent content/native review.
-    for cfg in registry.get('exactMirrors', {}).values():
+    for name,cfg in registry.get('exactMirrors', {}).items():
+        if name=='novena' and 'saint-charbel-novena-master' in registry.get('pageMirrors',{}):continue
         master=root/(cfg['english'].lstrip('/')+'index.html' if cfg['english'].endswith('/') else cfg['english'].lstrip('/')+'.html')
         master_text=master.read_text()
         block=re.search(r'<!-- hreflang:begin -->[\s\S]*?<!-- hreflang:end -->',master_text)
@@ -229,6 +240,8 @@ def outputs(root=ROOT):
     result.update(render_exact_set(root, registry))
     result.update(render_home_set(root, registry))
     result.update(render_page_set(root, registry))
+    from i18n.prayer_metadata import compose_prayer_clusters
+    result=compose_prayer_clusters(root,registry,result)
     # Keep the English homepage and legacy canonical URLs stable.
     sitemap = root / 'sitemap.xml'
     text = sitemap.read_text()
@@ -237,6 +250,9 @@ def outputs(root=ROOT):
     # lastmod is owned by scripts/sitemap_lastmod.py (git history); keep it stable here.
     lastmods = {match.group(1): match.group(2) for match in localized.finditer(text) if match.group(2)}
     text = localized.sub('', text)
+    if 'saint-charbel-prayers-master' in registry.get('pageMirrors',{}):
+        if '<loc>'+registry['site']+'/saint-charbel-prayers</loc>' not in text:
+            text=text.replace('</urlset>','  <url><loc>'+registry['site']+'/saint-charbel-prayers</loc></url>\n</urlset>')
     generated = [registry['site'] + page_url(registry, code) for code in registry['locales'] if code != registry['defaultLocale']]
     generated += [registry['site'] + page_url(registry, code, topic) for code in registry['locales'] for topic in locale_topics(registry, code)]
     generated += [registry['site'] + '/' + code + '/miracles/eucharistic/' + ('' if slug=='index' else slug)

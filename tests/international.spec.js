@@ -18,13 +18,16 @@ const travelHeading = (code, family) => {
   const binding = require(`../locales/en/${family}-bindings.json`).bindings.find(b => b.kind === 'text' && /(^| > )h1(:nth-of-type\(\d+\))?$/.test(b.selector));
   return require(`../locales/${code}/${family}-copy.json`)[binding.key];
 };
-const topicHeading = (code, topic) => travelFor(code,topic) ? travelHeading(code, travelFor(code,topic)) : historyFor(code,topic) ? require(`../locales/${code}/history-master-copy.json`)['history.hero.the-life-of-saint-charbel-makhlouf'] : (exactFor(topic)?.renderLocales || []).includes(code) ? require(`../locales/${code}/${topic === 'feastDay' ? 'feast' : topic}-exact.json`).slots['1'].text : code === 'ar' && topic === 'feastDay' ? require('../locales/ar/feast-mirror.json').slots['1'].text : topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(code) ?
+const prayerFor = (code,topic) => ({prayers:'saint-charbel-prayers-master',novena:'saint-charbel-novena-master'}[topic] && registry.pageMirrors[{prayers:'saint-charbel-prayers-master',novena:'saint-charbel-novena-master'}[topic]]?.renderLocales.includes(code)) ? {prayers:'saint-charbel-prayers-master',novena:'saint-charbel-novena-master'}[topic] : null;
+const topicHeading = (code, topic) => prayerFor(code,topic) ? travelHeading(code,prayerFor(code,topic)) : travelFor(code,topic) ? travelHeading(code, travelFor(code,topic)) : historyFor(code,topic) ? require(`../locales/${code}/history-master-copy.json`)['history.hero.the-life-of-saint-charbel-makhlouf'] : (exactFor(topic)?.renderLocales || []).includes(code) ? require(`../locales/${code}/${topic === 'feastDay' ? 'feast' : topic}-exact.json`).slots['1'].text : code === 'ar' && topic === 'feastDay' ? require('../locales/ar/feast-mirror.json').slots['1'].text : topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(code) ?
   ({ar: prayerMirror, fr: prayerMirrorFrench, es: prayerMirrorSpanish, pt: prayerMirrorPortuguese, it: prayerMirrorItalian, de: prayerMirrorGerman, pl: prayerMirrorPolish, en: require('../locales/en/mirrors/prayers.json')})[code]['hero.heading'] :
   catalogs[code][topic].title;
-const routeFor = (code, topic) => travelFor(code,topic) ? registry.pageMirrors[travelFor(code,topic)].routes[code] : (exactFor(topic)?.renderLocales || []).includes(code) ? exactFor(topic).routes[code] : topic ? `/${code}/${registry.locales[code].slugs[topic]}` : registry.locales[code].home;
+const routeFor = (code, topic) => prayerFor(code,topic) ? registry.pageMirrors[prayerFor(code,topic)].routes[code] : travelFor(code,topic) ? registry.pageMirrors[travelFor(code,topic)].routes[code] : (exactFor(topic)?.renderLocales || []).includes(code) ? exactFor(topic).routes[code] : topic ? `/${code}/${registry.locales[code].slugs[topic]}` : registry.locales[code].home;
 const topicLanguages = topic => topic ? languages.filter(code => (registry.topics[topic].locales || languages).includes(code)) : languages;
 // Discovery clusters depend on this page's identity, not merely its topic.
 const clusterFor = (language, topic) => {
+  if(topic==='prayers') return language==='en' ? {en:'/en/prayers'} : Object.fromEntries(Object.entries(registry.pageMirrors['saint-charbel-prayers-master'].discoveryRoutes).filter(([k])=>k!=='x-default'));
+  if(topic==='novena') return prayerFor(language,topic) ? Object.fromEntries(Object.entries(registry.pageMirrors['saint-charbel-novena-master'].discoveryRoutes).filter(([k])=>k!=='x-default')) : Object.fromEntries(['en','es','pt','it','pl'].map(c=>[c,routeFor(c,topic)]));
   if (travelFor(language, topic)) return {en: registry.topics[topic].relatedEnglish, ...registry.pageMirrors[travelFor(language, topic)].routes};
   if (travelFamily[topic] && language === 'en') return {en: routeFor('en', topic)};
   if (topic === 'biography') return language === 'en' ? {en:'/en/biography'} : {en:'/history',...registry.pageMirrors['history-master'].routes};
@@ -63,7 +66,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
         const anchors = await page.locator('a[href^="#"]').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
         for (const anchor of anchors) await expect(page.locator(anchor)).toHaveCount(1);
         const published = topicLanguages(topic);
-        if (topic && topic !== 'biography' && !travelFor(language, topic) && !(exactFor(topic)?.renderLocales || []).includes(language) && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers') && !(language === 'ar' && topic === 'feastDay')) {
+        if (topic && topic !== 'biography' && !travelFor(language, topic) && !prayerFor(language,topic) && !(exactFor(topic)?.renderLocales || []).includes(language) && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers') && !(language === 'ar' && topic === 'feastDay')) {
           const next = published[(published.indexOf(language) + 1) % published.length];
           // Same-page switching is fail-closed: every unpublished twin stays an unavailable, non-navigating link.
           const target = page.locator(`header nav a[hreflang="${next}"]`).first();
@@ -89,7 +92,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
     test(`language selector keeps ${language} reading guide unavailable until published`,async({page}) => {
       // Same-page switching is fail-closed: an unpublished twin is a disabled option, never a navigation.
       await page.goto('/saint-charbel-prayers?lang=en');
-      await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeDisabled();
+      if(["ar","de","fr"].includes(language)){await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeEnabled();}else await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeDisabled();
       await expect(page).toHaveURL(/\/saint-charbel-prayers\?lang=en$/);
     });
   }
@@ -123,7 +126,7 @@ for (const route of ['/', ...new Set(Object.values(registry.topics).map(topic =>
 
 test('Arabic prayer mirror keeps authored copy and always offers its English source', async ({page}) => {
   await page.goto('/ar/prayers');
-  await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
+  await expect(page.locator('h1')).toHaveText(travelHeading('ar','saint-charbel-prayers-master'));
   await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
   await expect(page.locator('main > section')).toHaveCount(8);
   // The ar Oct-22 devotion-guidance aside reuses card styling; count only
@@ -131,10 +134,10 @@ test('Arabic prayer mirror keeps authored copy and always offers its English sou
   await expect(page.locator('.prayer-grid .prayer-card')).toHaveCount(14);
   await expect(page.locator('main img[src="/media/annaya/charbel-historic-photo.webp"]')).toHaveCount(1);
   await page.reload();
-  await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
+  await expect(page.locator('h1')).toHaveText(travelHeading('ar','saint-charbel-prayers-master'));
   await expect(page.locator('#sc-language-select option[value="en"]')).toBeEnabled();
   await expect(page).toHaveURL(/\/ar\/prayers$/);
-  await expect(page.locator('h1')).toHaveText(prayerMirror['hero.heading']);
+  await expect(page.locator('h1')).toHaveText(travelHeading('ar','saint-charbel-prayers-master'));
 });
 
 test('English directory hub selector keeps the Arabic hub unavailable until published', async ({page}) => {
@@ -173,7 +176,7 @@ for(const code of languages) test(`${code} homepage offers every shipped homepag
   await expect(page).toHaveURL(new RegExp(registry.locales[next].home+'$'));
   await expect(page.locator('html')).toHaveAttribute('lang',next);
 });
-for (const route of ['/pt/novena', '/it/novena', '/ar/novena']) {
+for (const route of ['/pt/novena', '/it/novena']) {
   test(`${route} enhances fallback language links into one compact control`, async ({browser, baseURL}, testInfo) => {
     const context = await browser.newContext({...testInfo.project.use, baseURL});
     const page = await context.newPage();

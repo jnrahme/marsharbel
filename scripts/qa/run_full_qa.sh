@@ -12,6 +12,11 @@ cd "${ROOT}"
 python3 scripts/qa/test_travel_equivalence.py
 node scripts/tests/travel_equivalence.cjs
 npx playwright test tests/travel-equivalence.spec.js --project=phone --project=laptop --workers=2
+python3 scripts/qa/test_prayer_keyed_masters.py
+python3 scripts/qa/test_prayer_equivalence.py
+npx playwright test tests/prayer-equivalence.spec.js --project=phone --project=laptop --workers=2
+npx playwright test tests/prayer-share-runtime.spec.js --project=phone --project=laptop --workers=2
+npx playwright test tests/prayer-keyed-masters.spec.js --project=laptop --workers=2
 python3 scripts/qa/test_source_copy_keys.py
 python3 scripts/qa/check_travel_routes.py
 python3 scripts/qa/test_travel.py

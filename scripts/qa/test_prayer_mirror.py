@@ -103,6 +103,9 @@ class PrayerMirrorTests(unittest.TestCase):
             self.assertEqual(tags.primary, [OG_LOCALE[code]], str(path))
             self.assertEqual(tags.alternates, expected, str(path))
             self.assertNotIn('&lt;meta', html, str(path))
+            # Retired ar/de/fr writers are characterized above, but not the
+            # production source. Keyed-master tests own their stored output.
+            if path in {ROOT/"ar/prayers.html",ROOT/"de/gebete.html",ROOT/"fr/prieres.html"}: continue
             stored = HeadMeta(path.read_text())
             self.assertEqual(stored.primary, tags.primary, str(path))
             self.assertEqual(stored.alternates, tags.alternates, str(path))
@@ -201,7 +204,7 @@ class PrayerMirrorTests(unittest.TestCase):
         expected=builder.outputs(ROOT)
         for page in (ROOT/'ar/prayers.html', ROOT/'en/prayers.html', ROOT/'fr/prieres.html', ROOT/'es/oraciones.html', ROOT/'pt/oracoes.html', ROOT/'it/preghiere.html', ROOT/'de/gebete.html', ROOT/'pl/modlitwy.html', ROOT/'saint-charbel-prayers.html'):
             self.assertEqual(page.read_text(),expected[page])
-        self.assertEqual(expected[ROOT/'ar/prayers.html'].count('hreflang="ar"'),1)
+        self.assertEqual(len(BeautifulSoup(expected[ROOT/'ar/prayers.html'],'html.parser').select('head link[hreflang=ar]')),1)
 
     def test_keys_and_urls_are_separated_from_page_structure(self):
         template = (ROOT / 'templates/mirrors/prayers.html').read_text()
