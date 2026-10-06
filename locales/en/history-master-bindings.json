@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "history.html",
-  "masterSha256": "87db23cfc1b8d4d1dd84273ce8ebded1af1df17a5f7859f6179f169d01d5d4bd",
+  "masterSha256": "f4ea5c7346e8a977fb9c10656068bbae3c5156463be687e8c267eaaf74a0b1bb",
   "sourceRevision": "817a009",
   "bindings": [
     {
@@ -1865,6 +1865,27 @@
       "source": "The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced.",
       "kind": "attribute",
       "attribute": "content"
+    },
+    {
+      "key": "history.table.facts.scroll-label",
+      "selector": "main .history-table-wrap:not(#cause .history-table-wrap):not(#status .history-table-wrap)",
+      "source": "At a glance: table, scroll horizontally to see all columns",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "history.table.cause.scroll-label",
+      "selector": "#cause .history-table-wrap",
+      "source": "Canonization: table, scroll horizontally to see all columns",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "history.table.status.scroll-label",
+      "selector": "#status .history-table-wrap",
+      "source": "Documents and tradition: table, scroll horizontally to see all columns",
+      "kind": "attribute",
+      "attribute": "aria-label"
     }
   ],
   "messages": {

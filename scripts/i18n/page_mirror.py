@@ -33,7 +33,7 @@ def render_page(root,registry,lang,family,route,catalog=None):
         if node.has_attr('srcset'):
             node['srcset']=', '.join(urljoin('/',p.strip().split()[0])+(' '+' '.join(p.strip().split()[1:]) if len(p.strip().split())>1 else '') for p in node['srcset'].split(','))
     for a in soup.select('a[href]'):
-        if a.has_attr('hreflang'):continue
+        if a.has_attr('hreflang') or a['href'].startswith('#'):continue
         parts=urlsplit(a['href']);key=parts.path.rstrip('/') or '/'
         if not parts.scheme and key in twins:a['href']=twins[key]+('?' +parts.query if parts.query else '')+('#'+parts.fragment if parts.fragment else '')
     canonical=registry['site']+route

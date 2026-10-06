@@ -110,7 +110,7 @@ def check(root=ROOT):
     a11y_path = root/'locales/en/a11y-statement-copy.json'
     a11y_catalog = read_json(a11y_path)['values'] if a11y_path.exists() else {}
     scripture_catalog = {}
-    for name in ('scripture-copy', 'nav-legacy-copy', 'encyclopedia-copy', 'home-travel-copy', 'history-copy', 'caption-copy', 'bekaa-tour-copy', 'bekaa-followup-copy', 'jpii-pass-copy', 'rosary-bead-copy'):
+    for name in ('scripture-copy', 'nav-legacy-copy', 'encyclopedia-copy', 'home-travel-copy', 'history-copy', 'history-accessibility-copy', 'caption-copy', 'bekaa-tour-copy', 'bekaa-followup-copy', 'jpii-pass-copy', 'rosary-bead-copy'):
         extra_path = root/f'locales/en/{name}.json'
         if extra_path.exists():
             for page, values in read_json(extra_path)['values'].items():

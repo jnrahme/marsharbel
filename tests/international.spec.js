@@ -11,13 +11,15 @@ const prayerMirrorItalian = require('../locales/it/mirrors/prayers.json');
 const prayerMirrorGerman = require('../locales/de/mirrors/prayers.json');
 const prayerMirrorPolish = require('../locales/pl/mirrors/prayers.json');
 const exactFor = topic => registry.exactMirrors?.[topic === 'feastDay' ? 'feast' : topic];
-const topicHeading = (code, topic) => (exactFor(topic)?.renderLocales || []).includes(code) ? require(`../locales/${code}/${topic === 'feastDay' ? 'feast' : topic}-exact.json`).slots['1'].text : code === 'ar' && topic === 'feastDay' ? require('../locales/ar/feast-mirror.json').slots['1'].text : topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(code) ?
+const historyFor = (code, topic) => topic === 'biography' && code !== 'en' && registry.pageMirrors['history-master'].renderLocales.includes(code);
+const topicHeading = (code, topic) => historyFor(code,topic) ? require(`../locales/${code}/history-master-copy.json`)['history.hero.the-life-of-saint-charbel-makhlouf'] : (exactFor(topic)?.renderLocales || []).includes(code) ? require(`../locales/${code}/${topic === 'feastDay' ? 'feast' : topic}-exact.json`).slots['1'].text : code === 'ar' && topic === 'feastDay' ? require('../locales/ar/feast-mirror.json').slots['1'].text : topic === 'prayers' && ['ar', 'en', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(code) ?
   ({ar: prayerMirror, fr: prayerMirrorFrench, es: prayerMirrorSpanish, pt: prayerMirrorPortuguese, it: prayerMirrorItalian, de: prayerMirrorGerman, pl: prayerMirrorPolish, en: require('../locales/en/mirrors/prayers.json')})[code]['hero.heading'] :
   catalogs[code][topic].title;
 const routeFor = (code, topic) => (exactFor(topic)?.renderLocales || []).includes(code) ? exactFor(topic).routes[code] : topic ? `/${code}/${registry.locales[code].slugs[topic]}` : registry.locales[code].home;
 const topicLanguages = topic => topic ? languages.filter(code => (registry.topics[topic].locales || languages).includes(code)) : languages;
 // Discovery clusters depend on this page's identity, not merely its topic.
 const clusterFor = (language, topic) => {
+  if (topic === 'biography') return language === 'en' ? {en:'/en/biography'} : {en:'/history',...registry.pageMirrors['history-master'].routes};
   const exact = exactFor(topic), route = routeFor(language, topic);
   if (exact && Object.values(exact.routes).includes(route)) return exact.routes;
   const codes = topicLanguages(topic).filter(code => !(exact?.renderLocales || []).includes(code));
@@ -53,7 +55,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
         const anchors = await page.locator('a[href^="#"]').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
         for (const anchor of anchors) await expect(page.locator(anchor)).toHaveCount(1);
         const published = topicLanguages(topic);
-        if (topic && !(exactFor(topic)?.renderLocales || []).includes(language) && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers') && !(language === 'ar' && topic === 'feastDay')) {
+        if (topic && topic !== 'biography' && !(exactFor(topic)?.renderLocales || []).includes(language) && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers') && !(language === 'ar' && topic === 'feastDay')) {
           const next = published[(published.indexOf(language) + 1) % published.length];
           // Same-page switching is fail-closed: every unpublished twin stays an unavailable, non-navigating link.
           const target = page.locator(`header nav a[hreflang="${next}"]`).first();
@@ -141,11 +143,14 @@ test('unpublished locale on a miracle story stays unavailable with no machine fa
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', registry.site + '/miracles/nohad-el-shami');
 });
 
-for (const [source,target] of [['/ar/annaya','/en/annaya'],['/ar/biography','/en/biography'],['/ar/22nd-of-the-month','/22nd-of-the-month']]) {
+for (const [source,target] of [['/ar/annaya','/en/annaya'],['/ar/biography','/history'],['/ar/22nd-of-the-month','/22nd-of-the-month']]) {
   test(`${source} always offers its English source`, async ({page}) => {
     await page.goto(source);
     await expect(page.locator('#sc-language-select option[value="en"]')).toBeEnabled();
-    await expect(page.locator('header nav a[hreflang="en"]')).toHaveAttribute('href', /.+/);
+    if(source === '/ar/biography'){
+      await expect(page.locator('head link[hreflang="en"]')).toHaveAttribute('href',registry.site+'/history');
+      await expect(page.locator('footer nav.footer-locales a[hreflang=en]')).toHaveAttribute('href','/');
+    } else await expect(page.locator('header nav a[hreflang="en"]')).toHaveAttribute('href', /.+/);
     await page.selectOption('#sc-language-select','en');
     await expect(page).toHaveURL(new RegExp(target+'$'));
     await expect(page.locator('html')).toHaveAttribute('lang','en');

@@ -10,6 +10,13 @@ for (const [lang, route] of Object.entries(routes)) {
     await expect(selector).toHaveCount(1);
     await expect(selector.locator('option[value="en"]')).toBeEnabled();
     await expect(page.locator('main')).toBeVisible();
+    for (const region of await page.locator('.history-table-wrap').all()) {
+      await expect(region).toHaveAttribute('tabindex','0');
+      await expect(region).toHaveAttribute('role','region');
+      await expect(region).toHaveAttribute('aria-label',/.+/);
+      await region.focus();
+      await expect(region).toBeFocused();
+    }
     const result = await page.evaluate(async () => {
       const initialHeight = document.documentElement.scrollHeight;
       for (let y = 0; y < initialHeight; y += 800) {

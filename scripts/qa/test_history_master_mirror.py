@@ -14,6 +14,7 @@ class HistoryMirrors(unittest.TestCase):
    self.assertEqual(check_pair(master,text,'/history',route),[],lang)
    self.assertEqual(s.html['lang'],lang);self.assertEqual(s.main['tabindex'],'-1')
    self.assertEqual(s.select_one('link[rel=canonical]')['href'],self.r['site']+route)
+   self.assertEqual(s.select_one('a.skip-link')['href'],'#main-content')
    visit=s.select_one('#visit p').get_text(' ',strip=True)
    paragraph=s.select_one('#visit p')
    for link in paragraph.select('a'):
