@@ -12,7 +12,7 @@ SITE = 'https://marsharbel.com'
 
 def render_chaplet(root=ROOT):
     catalog = read_json(root/'locales/ar/chaplet.json')
-    required = {'hero.kicker','hero.title','hero.intro','hero.caption',*(f'hero.action{i}' for i in range(1,4)),
+    required = {'metadata.description','hero.kicker','hero.title','hero.intro','hero.caption',*(f'hero.action{i}' for i in range(1,4)),
                 'what.title','what.body1before','what.link','what.body1after','what.body2',
                 'steps.title','steps.intro','prayers.title','prayers.fatherTitle','prayers.father',
                 'prayers.fatherContext','prayers.gracesTitle','prayers.graces','when.title',
@@ -80,7 +80,7 @@ def render_chaplet(root=ROOT):
     one('main .hero img')['alt']='الصورة التقليدية لمار شربل مخلوف مرتديًا قلنسوة الرهبان'
     # Head copy and FAQ schema from the same keyed source; leave English photo provenance untouched.
     title=catalog['hero.title']+' | طريقة صلاة مسبحة مار شربل'
-    description=catalog['hero.intro']
+    description=catalog['metadata.description']
     soup.title.string=title
     for selector,value in [('meta[name="description"]',description),('meta[property="og:title"]',title),
                            ('meta[property="og:description"]',description),('meta[name="twitter:title"]',title),
