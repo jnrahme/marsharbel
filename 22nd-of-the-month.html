@@ -278,7 +278,7 @@
       var next = new Date(now.getFullYear(), now.getMonth(), 22);
       if (now.getDate() > 22) next = new Date(now.getFullYear(), now.getMonth() + 1, 22);
       var fmt = new Intl.DateTimeFormat(document.documentElement.lang || 'en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-      el.textContent = fmt.format(next);
+      el.textContent = fmt.format(next).replace(/\.$/, '');
     })();
   </script>
   <script src="./nav.js?v=20260922-1" defer></script>

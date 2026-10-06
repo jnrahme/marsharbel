@@ -47,5 +47,8 @@ def apply_keyed_master(root, family, lang, catalog=None):
                 previous_text=previous.get_text() if hasattr(previous,'get_text') else str(previous)
                 if previous_text and (previous_text[-1].isalnum() or previous_text.endswith(')')):
                     leading=' '
+            # A translation that is only closing punctuation must not inherit the
+            # source's word-separating space ("page." becomes "." in some locales).
+            if leading and value[0] in '.,;:!?)\u00bb\u201d\u061b\u060c\u061f':leading=''
             text.replace_with(leading+value+old[len(old.rstrip()):])
     return raw,soup,copy

@@ -144,7 +144,7 @@
 <h2>Por que o dia 22?</h2>
 <div class="card story">
 <p>A tradição remonta a <strong>Nohad El Shami</strong>, uma mãe libanesa de doze filhos. Ela sofreu um derrame em 9 de janeiro de 1993 e ficou parcialmente paralisada. Seu filho mais velho, Saad, foi ao eremitério de Annaya, pediu a ajuda de São Charbel e trouxe <a href="/saint-charbel-oil">óleo abençoado</a> e terra do túmulo. Contamos como Nohad e a família dela contaram à CNEWA: é um relato pessoal, não um milagre declarado oficialmente pela Igreja.</p>
-<p>O relato dela sobre as palavras que São Charbel lhe dirigiu é recontado, claramente identificado como testemunho dela, em nossa página de <a href="/saint-charbel-quotes">citações de São Charbel</a> .</p>
+<p>O relato dela sobre as palavras que São Charbel lhe dirigiu é recontado, claramente identificado como testemunho dela, em nossa página de <a href="/saint-charbel-quotes">citações de São Charbel</a>.</p>
 <p>No relato dela, na noite de <strong>22 de janeiro de 1993</strong>, Nohad sonhou que São Charbel, acompanhado de outro monge, lhe fazia uma cirurgia. Ele lhe disse: <em>"Fiz a cirurgia para ajudar as pessoas a recuperarem a fé. Peço que visite o meu eremitério em Annaya no dia 22 de cada mês e participe da Missa com regularidade pelo resto da vida."</em></p>
 <p>Ela acordou curada, com duas pequenas cicatrizes no pescoço - e manteve essa peregrinação mensal pelo resto da vida, até a sua morte, em maio de 2025. O pedido do testemunho foi dirigido a ela. A Igreja não o transforma em regra para mais ninguém. Outras pessoas curadas por intercessão de São Charbel relataram sonhos semelhantes de "cirurgia" durante a noite.</p>
 </div>
@@ -212,7 +212,7 @@
       var next = new Date(now.getFullYear(), now.getMonth(), 22);
       if (now.getDate() > 22) next = new Date(now.getFullYear(), now.getMonth() + 1, 22);
       var fmt = new Intl.DateTimeFormat(document.documentElement.lang || 'en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-      el.textContent = fmt.format(next);
+      el.textContent = fmt.format(next).replace(/\.$/, '');
     })();
   </script>
 <script defer="" src="/nav.js?v=20260922-1"></script>

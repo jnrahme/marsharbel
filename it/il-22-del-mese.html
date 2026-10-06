@@ -144,7 +144,7 @@
 <h2>Perché il 22?</h2>
 <div class="card story">
 <p>La tradizione risale a <strong>Nohad El Shami</strong>, madre libanese di dodici figli. Il 9 gennaio 1993 fu colpita da un ictus e rimase parzialmente paralizzata. Il figlio maggiore, Saad, andò all'eremo di Annaya, invocò san Charbel e portò indietro <a href="/saint-charbel-oil">olio benedetto</a> e terra della tomba. Lo raccontiamo come Nohad e la sua famiglia lo hanno raccontato alla CNEWA: è una testimonianza personale, non un miracolo dichiarato ufficialmente dalla Chiesa.</p>
-<p>Il suo racconto delle parole che san Charbel le rivolse è riportato, chiaramente indicato come sua testimonianza, nella nostra pagina <a href="/saint-charbel-quotes">Citazioni di san Charbel</a> .</p>
+<p>Il suo racconto delle parole che san Charbel le rivolse è riportato, chiaramente indicato come sua testimonianza, nella nostra pagina <a href="/saint-charbel-quotes">Citazioni di san Charbel</a>.</p>
 <p>Secondo il suo racconto, nella notte del <strong>22 gennaio 1993</strong>, Nohad sognò che san Charbel, accompagnato da un altro monaco, la operava. Le disse: <em>«Ho fatto l'operazione per aiutare le persone a ritrovare la fede. Ti chiedo di visitare il mio eremo ad Annaya il 22 di ogni mese e di partecipare regolarmente alla Messa per il resto della tua vita.»</em></p>
 <p>Si svegliò guarita, con due piccole cicatrici sul collo, e mantenne quel pellegrinaggio mensile per il resto della vita, fino alla morte nel maggio 2025. La richiesta contenuta nella sua testimonianza era rivolta a lei. La Chiesa non ne fa una regola per nessun altro. Altre persone guarite per intercessione di san Charbel hanno riferito sogni simili di «intervento chirurgico» durante la notte.</p>
 </div>
@@ -212,7 +212,7 @@
       var next = new Date(now.getFullYear(), now.getMonth(), 22);
       if (now.getDate() > 22) next = new Date(now.getFullYear(), now.getMonth() + 1, 22);
       var fmt = new Intl.DateTimeFormat(document.documentElement.lang || 'en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-      el.textContent = fmt.format(next);
+      el.textContent = fmt.format(next).replace(/\.$/, '');
     })();
   </script>
 <script defer="" src="/nav.js?v=20260922-1"></script>
