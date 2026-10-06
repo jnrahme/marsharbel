@@ -33,9 +33,8 @@ RewriteRule ^mysteries/rosary-visual-guide(?:\.html)?/?$ /rosary-visual-guide [R
 RewriteRule ^rosary(?:\.html)?/?$ /rosary-visual-guide [R=301,L]
 RewriteRule ^the-22nd-of-the-month(?:\.html)?/?$ /22nd-of-the-month [R=301,L]
 
-# Retire the duplicate English prayer master: its body duplicates the
-# /en/prayers guide, which is the cluster's canonical English URL.
-RewriteRule ^saint-charbel-prayers(?:\.html)?/?$ /en/prayers [R=301,L]
+# Reviewed full prayer masters must remain served at their declared identities.
+# /en/prayers canonical adoption requires a separate head-cluster migration.
 
 # Language hubs are directory indexes with canonical trailing slashes.
 # i18n-routes:start
