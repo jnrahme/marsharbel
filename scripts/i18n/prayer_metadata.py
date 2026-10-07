@@ -16,6 +16,12 @@ def compose_prayer_clusters(root, registry, texts, source_inputs=False):
             end=text.index('</head>');head=re.sub(r'<link\b[^>]*\bhreflang=["\'][^>]*>\s*','',text[:end])
             if family=='saint-charbel-prayers-master' and (route==cfg['english'] or route in cfg['routes'].values()):
                 head=re.sub(r'<meta\b(?=[^>]*name=["\']robots["\'])(?=[^>]*content=["\']noindex["\'])[^>]*>\s*','',head)
+            # Locale identity belongs to the registry, including preserved English heads.
+            # Keep existing alternate membership, but refresh each locale's regional tag.
+            for locale in registry['locales'].values():
+                value=locale['ogLocale']
+                prefix=value.split('_',1)[0]+'_'
+                head=re.sub(r'(<meta\b(?=[^>]*property=[\"\']og:locale(?::alternate)?[\"\'])[^>]*content=[\"\'])'+re.escape(prefix)+r'[^\"\']+([\"\'])',lambda m:m.group(1)+value+m.group(2),head)
             from i18n.prayer_runtime import share_head
             text=head+links+'\n'+text[end:]
             if route==cfg['english'] or route in cfg['routes'].values():

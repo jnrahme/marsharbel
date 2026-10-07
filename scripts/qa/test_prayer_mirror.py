@@ -103,9 +103,15 @@ class PrayerMirrorTests(unittest.TestCase):
             self.assertEqual(tags.primary, [OG_LOCALE[code]], str(path))
             self.assertEqual(tags.alternates, expected, str(path))
             self.assertNotIn('&lt;meta', html, str(path))
-            # Retired ar/de/fr writers are characterized above, but not the
-            # production source. Keyed-master tests own their stored output.
-            if path in {ROOT/"ar/prayers.html",ROOT/"de/gebete.html",ROOT/"fr/prieres.html"}: continue
+            # Characterize retired writers above, then check real keyed output
+            # against its registry-owned all-locale OG membership below.
+            registry = read_json(ROOT / 'locales/registry.json')
+            keyed_routes = registry['pageMirrors']['saint-charbel-prayers-master']['routes']
+            if path in {ROOT/(route.lstrip('/')+'.html') for route in keyed_routes.values()}:
+                stored = HeadMeta(path.read_text())
+                self.assertEqual(stored.primary, [OG_LOCALE[code]], str(path))
+                self.assertEqual(stored.alternates, [value for lang,value in OG_LOCALE.items() if lang != code], str(path))
+                continue
             stored = HeadMeta(path.read_text())
             self.assertEqual(stored.primary, tags.primary, str(path))
             self.assertEqual(stored.alternates, tags.alternates, str(path))
