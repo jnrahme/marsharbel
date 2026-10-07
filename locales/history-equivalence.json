@@ -1,80 +1,103 @@
 {
   "version": 1,
   "sourceRevision": "32085fd9099b13478fe8cf78bb4a438380bfddfb",
-  "catalogReview": "Independent native-standard PASS relayed by parent Oct5 18:41-18:43, original verdicts in parent chat",
-  "renderedReviewStatus": "approved-32085fd-8-locales-390-1280",
+  "catalogReview": "Independent four-key locale verdicts APPROVED via parent Oct6 19:05-19:11; eight shipped locales; original verdicts held by parent.",
+  "renderedReviewStatus": "approved-history-source-correction-c476eada-9-pages-390-1280",
   "variants": {
     "en": {
       "file": "history.html",
       "path": "/history",
-      "candidateFileSha256": "87db23cfc1b8d4d1dd84273ce8ebded1af1df17a5f7859f6179f169d01d5d4bd",
-      "bodySha256": "8d4751c360946287e8f81f58e781df27a1978f9b667068a10471c89d631118aa"
+      "candidateFileSha256": "c476eada8921ffe1f4b2fa0475c74386b55cd7648a2503eac1f7635edea5e40a",
+      "bodySha256": "a210aae3390265d3cea32b581fd2807d077495589be8da4a02ad6c9b5bc49e0b"
     },
     "ar": {
       "file": "ar/biography.html",
       "path": "/ar/biography",
-      "candidateFileSha256": "a790c86e166c62f59d569ea3ca11d5aa1580e5ae411380cc6a57b1e13113914d",
-      "bodySha256": "9ea04e88c63fe608d1aa0078c62b0d69119afd95806663c5f9502945054bf0fb",
+      "candidateFileSha256": "1a6e6afb0957c1a9ce6a1198ec17bbbd917520d3f23b7cf9c84d140524d9d6f8",
+      "bodySha256": "b915d3c6e7d5369ba11d471c297368e926c302078a8f6759840d3cbb7277b60c",
       "catalog": "locales/ar/history-master-copy.json",
-      "catalogSha256": "417bd386a1f5689444202d600c7665cd8a9b4a06ad48b4aeca07183b48381bc2"
+      "catalogSha256": "6c7711fcc3dd8ccdb54089671e98762ad30a415f530e8d7da3decec55d460bc7"
     },
     "fr": {
       "file": "fr/biographie.html",
       "path": "/fr/biographie",
-      "candidateFileSha256": "769686648e4557581116f309f2c24ecaf2397aeb2fa24563108eb945021b4961",
-      "bodySha256": "8659b2c23360ba4af5cf874d94b17cb57939f4884258352f26e1d1693b6b7000",
+      "candidateFileSha256": "64e2e4d0bfbc9ada72f2b5537bfeccda3a58dfd8a74a5b102167980832650a19",
+      "bodySha256": "7df8da072032ca040663933211da668e50d23b42bcf7d8acd99edd4982ff602a",
       "catalog": "locales/fr/history-master-copy.json",
-      "catalogSha256": "a744f81ef527c7ecd5d823419b3d6e82e458eb123271a69b5a727cc3d5ae56e1"
+      "catalogSha256": "5960d990f71bba77a5403d42b36243d155e3723714424c66056592b46393b463"
     },
     "es": {
       "file": "es/biografia.html",
       "path": "/es/biografia",
-      "candidateFileSha256": "050153afa388193403de1e1bf18063b682fce1f05634a23e5db297b5de10054b",
-      "bodySha256": "7e1c75a9a58c6f45f1cc66c9f2d1d226981859e1f0aaf4102ac85b1766a45a04",
+      "candidateFileSha256": "1fb4362cbf71fb2ea65ff6b07270b255fef705dac129d6e8a3a2d374eb9079c9",
+      "bodySha256": "1d63c5ac5b89db95ca96b62d5cb89969954b3e5044f796b0b05b74794acf01d8",
       "catalog": "locales/es/history-master-copy.json",
-      "catalogSha256": "c7a4dd741e6750f9989898cfb2bfb9453563ef0dc5af346dd42caae8f27e1961"
+      "catalogSha256": "7b6111d3829fc936b41fe4761be32c0fc820a37ef1746d2b419be162f95b84b5"
     },
     "pt": {
       "file": "pt/biografia.html",
       "path": "/pt/biografia",
-      "candidateFileSha256": "f80d5e0f1de8c9491ac84450bac01752510eece087fa48d4d821dad186518ad7",
-      "bodySha256": "c9c0799bb3a42f738a9e28891bd73b55df11beb5c2a049fdc6249d7ddcda6ba3",
+      "candidateFileSha256": "f8b3093ffd09596b348894f59f990e8b28b8e4120b54c33d1b016ed96e2f2a45",
+      "bodySha256": "47f59a3113982892ef2cbf5cf230959efcf05f7daf88f3a4d5249a1f10156462",
       "catalog": "locales/pt/history-master-copy.json",
-      "catalogSha256": "082f84e175640624255405f5678af6287a346e9e61d54892b2ab9d9201dfeee5"
+      "catalogSha256": "463b182d3affe82eb3a84c02d2344709ccc16df89202a3779a08e07fe4729848"
     },
     "it": {
       "file": "it/biografia.html",
       "path": "/it/biografia",
-      "candidateFileSha256": "9cb370c5ab829426f39f2fd3472b891f6e59e8dccd70a90cc283a6ded491c64d",
-      "bodySha256": "6ae732ad0277ecf231ce8eed1ec3c056d829ce3aec9310d958be159866cf62ba",
+      "candidateFileSha256": "b4dca5181bd62ea8f501d586ebef208cdcfe6c362ecac0205e891f0583ebc21f",
+      "bodySha256": "214fc33940772bd59918d0f72d2bfc4653b9038de19ab9f081224d3b4a8c5840",
       "catalog": "locales/it/history-master-copy.json",
-      "catalogSha256": "226dfa6796a7c3496ba173047285697d3cdb7e97635b4357575f178f57036f1b"
+      "catalogSha256": "a77a0729751dc1ed8f83a60341482c5363c3ac26f46fde0ea326a12258eabef2"
     },
     "de": {
       "file": "de/biografie.html",
       "path": "/de/biografie",
-      "candidateFileSha256": "2ab714af0e07830edec327ceb0ccb6b8edded368b25208f5c8e7ba955f1a17c5",
-      "bodySha256": "a09ffff91e78b57baf15475c11fbc3ae7d138438d6e832509f6cf575f8150dcd",
+      "candidateFileSha256": "d412d7e045827580ff8b1820eddb9b76c64f96593bfeb26a97b854556fb495fa",
+      "bodySha256": "ca237800fb465c0f1c0c9039ca5ddab4f905e590584d09a37737cf7d9e3048b1",
       "catalog": "locales/de/history-master-copy.json",
-      "catalogSha256": "77ec52dd4c4fcd7d4e37cea3548ce1dedf0469461adefc5a05537ddfc16f7679"
+      "catalogSha256": "ff233cd4855bc429be07a56a4474a07fa6cb7d904a5d9a4c5f48a362d34d6917"
     },
     "pl": {
       "file": "pl/biografia.html",
       "path": "/pl/biografia",
-      "candidateFileSha256": "3f22a8a9f6ab1dff9d7c53e66900df76e41560791375ac6d054f31459872fb63",
-      "bodySha256": "490514d8a6f29f95853ed55f3c9c0a81e9642a0c353395307b366af87e8cf7fd",
+      "candidateFileSha256": "a0cec6c23342c9aeb97d003fb6064b67a1b9bf491be0ed82b47b861b63444ce0",
+      "bodySha256": "d6e2a3b1ea5ef88ef66e6dccb13046d507ca76f8ceb94c5e04da6217f2be016a",
       "catalog": "locales/pl/history-master-copy.json",
-      "catalogSha256": "1a88df950445aa5e84818fb5a337a97c734e0f83c1387aca0a9d1e15184aa015"
+      "catalogSha256": "d4d8257b4cc06d6f68cfac041b07e194b30539619d6bc66465bf832972792bdd"
     },
     "ru": {
+      "file": "ru/biography.html",
+      "path": "/ru/biography",
+      "candidateFileSha256": "b0699d7c9421e6d9a1f7ce527bd1923b74ec69dc6799a86814eab338c5abb2b0",
+      "bodySha256": "b8eda349d6b3c1fddb92d8bb54e76ac0699243611dbfe4edf1ea6817176cbcd1",
+      "catalog": "locales/ru/history-master-copy.json",
+      "catalogSha256": "9a432fb215306b69888e669291fa8731ac9ff5178ff066311d5320aee5fdc050"
+    }
+  },
+  "renderedReview": "Parent independent pixel acceptance Oct6 19:13:02 EDT, final nine-page 390/1280 contact sheets; RTL, corrected slot attribution, notes and zero overflow confirmed.",
+  "repinNote": "Four-key master-first source attribution and visible historical-prayer translation-status corrections; all eight locale deltas reviewed, final nine-page render accepted. RU union: retained the corrected stage history and applied existing RU prayer activation hrefs plus removal of English-only qualifiers from the two now-localized prayer labels. This routing-only delta has no new independent rendered acceptance.",
+  "ruPrayerRoutingUnion": {
+    "stageHistoryRevision": "4f834e399decce3ed60687859dd08557e237dd79",
+    "prayerBranchRevision": "b553f6e1d35162a9da92e95b9a0cd9fdff4018f4",
+    "acceptedStagePins": {
+      "file": "ru/biography.html",
+      "path": "/ru/biography",
+      "candidateFileSha256": "a166d44f2f2df42f5a0b2f4349ad4f8a1afdc37f3543addb72d0d12154b82587",
+      "bodySha256": "aa66ebb907cac6837fdc328bd43afb94114a2af6627f649068e972d246e913f5",
+      "catalog": "locales/ru/history-master-copy.json",
+      "catalogSha256": "b7b74adb6bf7578d3220babf2a8f213691a87f2d749acbc86c7cc2612733ff80"
+    },
+    "priorPrayerBranchPins": {
       "file": "ru/biography.html",
       "path": "/ru/biography",
       "candidateFileSha256": "375b53ae0c555fdaa16d9f2f311509f0a86a57fe665cdfa889ca86ffff730041",
       "bodySha256": "6bb7cb74f549b1e65df12aa0670fe00bcea1e79a70b85d2ef99a8fe8a0c0a355",
       "catalog": "locales/ru/history-master-copy.json",
       "catalogSha256": "a798d152630a8629848a4e3f6668e9672b511a4dd69287d5dd914618917d0d90"
-    }
-  },
-  "renderedReview": "Independent render reviewer PASS candidate32085fd, relayed by parent Oct5 19:17:50; overlay switching checked separately before release.",
-  "repinNote": "Locale history bodies re-pinned after links to the localized travel pages (annaya, 22nd, pilgrimage) were added; link hrefs only. Re-pinned locales: fr,es,pt,it,de,pl,ru. Rendered review of the new bytes is pending. ru catalog also drops '(на английском)' from the three labels whose targets are now localized ru pages (history.after.the-22nd-of-the-month, history.visit.visiting-annaya, history.section.visiting-annaya). Prayers and novena (ru) added later: ru history links to /ru/molitvy and /ru/novena (link hrefs only) and the ru catalog drops '(на английском)' from history.section.prayers and history.section.novena. Rendered review of the new bytes is pending."
+    },
+    "priorPrayerBranchRepinNote": "Locale history bodies re-pinned after links to the localized travel pages (annaya, 22nd, pilgrimage) were added; link hrefs only. Re-pinned locales: fr,es,pt,it,de,pl,ru. Rendered review of the new bytes is pending. ru catalog also drops '(на английском)' from the three labels whose targets are now localized ru pages (history.after.the-22nd-of-the-month, history.visit.visiting-annaya, history.section.visiting-annaya). Prayers and novena (ru) added later: ru history links to /ru/molitvy and /ru/novena (link hrefs only) and the ru catalog drops '(на английском)' from history.section.prayers and history.section.novena. Rendered review of the new bytes is pending.",
+    "renderedDeltaReviewStatus": "pending",
+    "scope": "Only RU prayer/novena hrefs and the two English-only label qualifiers; corrected historical-source and prayer-quote wording retained."
+  }
 }

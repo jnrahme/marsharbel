@@ -30,7 +30,7 @@
     var proof = variant && variant.proof;
     if (page && variant && proof && proof.type === 'reviewed-history-master') {
       return page.sourcePath === 'history.html' && proof.family === 'history-master' &&
-        variant.status === 'verified' && proof.renderedReviewStatus === 'approved-32085fd-8-locales-390-1280' &&
+        variant.status === 'verified' && proof.renderedReviewStatus === 'approved-history-source-correction-c476eada-9-pages-390-1280' &&
         !!proof.catalogReview && !!proof.renderedReview && proof.reviewedContentSha256 === variant.contentSha256 &&
         /^[a-f0-9]{64}$/.test(variant.contentSha256 || '') && variant.sourceSha256 === page.sourceSha256;
     }
