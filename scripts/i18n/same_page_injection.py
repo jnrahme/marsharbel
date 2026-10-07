@@ -53,6 +53,15 @@ def with_english_sources(root, manifest):
             local = local / 'index.html' if route.endswith('/') else local.with_suffix('.html')
             if local.is_file() and route.rstrip('/') not in reviewed_paths:
                 sources.setdefault(route.rstrip('/'), english)
+    # Newly generated full-master routes need the source escape before files exist.
+    for cfg in registry.get('pageMirrors', {}).values():
+        english=cfg['english']
+        target=root/english.strip('/')
+        target=target/'index.html' if english.endswith('/') else target.with_suffix('.html')
+        if not target.is_file():raise ValueError('Missing declared English master: '+english)
+        for code in cfg.get('renderLocales', []):
+            route=cfg['routes'][code]
+            if code!='en':sources.setdefault(route.rstrip('/'),english)
     result['englishSources'] = sources
     result['publishedHomes'] = {code: cfg['home'] for code,cfg in registry['locales'].items()
         if code in registry.get('homepageMirrors', {}).get('renderLocales', []) or (root / cfg['home'].strip('/') / 'index.html').exists()}
@@ -140,7 +149,14 @@ def inject_control(text, root, manifest, copy):
         nav=BeautifulSoup(match[0],'html.parser').nav
         homes=read_json(root/'locales/registry.json')['locales']
         nav.attrs.pop('aria-describedby',None)
-        for helper in nav.select('.sc-language-helper,.sc-unavailable-suffix'):helper.decompose()
+        nav.clear()
+        for code,cfg in homes.items():
+            if nav.contents:
+                nav.append(' ')
+                separator=BeautifulSoup('<span aria-hidden="true">-</span>','html.parser').span
+                nav.append(separator);nav.append(' ')
+            link=BeautifulSoup('<a></a>','html.parser').a
+            link['hreflang']=code;nav.append(link)
         for a in nav.select('a[hreflang]'):
             code=a['hreflang']
             if code not in homes:raise ValueError('Unregistered footer locale '+code)
