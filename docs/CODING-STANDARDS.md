@@ -42,6 +42,23 @@ Enforcement: CI for 2. Review and the PR description for 1, 3 and 4. Worked exam
 | Lanes supply translations. Engineering does not write locale copy. | Review. |
 | A missing string key must fail the build, with no silent English fallback. | Target. Not verified as enforced today; do not rely on it. |
 
+### New-page catalog gate (October 7, 2026)
+
+Every newly added public English HTML page must register a keyed `pageMirrors`
+family whose `master` is the served file. Include `locales/en/<family>-bindings.json`
+and `locales/<code>/<family>-copy.json` for English and ar/fr/es/pt/it/de/pl.
+Hindi, Thai and Simplified Chinese join the required set once their locale entries land on the PR
+base branch. The required list is computed from trusted base state, not removed
+by editing the candidate registry.
+
+`check_new_page_locales.py --base <full-base-sha>` checks added public URLs
+(including renamed URLs and utility pages), full master text/attribute bindings,
+source hash and exact nonempty key/placeholder coverage. UI labels alone cannot
+satisfy page copy coverage. Russian remains first-slice scoped and is noted, not required.
+Existing pages are not retroactively blocked. The gate
+checks key completeness, not native-language quality or approval to publish.
+Existing structural, editorial, browser and independent review gates still apply.
+
 ## 4. What CI enforces automatically
 
 Required checks: `qa` (`npm run qa:ci`, which runs the sections of `scripts/qa/run_full_qa.sh`), `browser-quality` (8-shard Playwright), `dead-code` (`scripts/qa/dead_code_check.sh`: unreferenced JS and images, orphan HTML pages with no inbound link, stale versioned JS).

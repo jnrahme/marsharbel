@@ -44,6 +44,15 @@ jobs:
       - name: Install Python dependencies
         run: pip install beautifulsoup4
 
+      - name: New-page locale key gate tests
+        run: python3 -m unittest discover -s scripts/qa -p 'test_new_page_locales.py'
+
+      - name: New-page locale key coverage (PR base)
+        if: github.event_name == 'pull_request'
+        env:
+          LOCALE_GATE_BASE: ${{ github.event.pull_request.base.sha }}
+        run: python3 scripts/qa/check_new_page_locales.py --base "$LOCALE_GATE_BASE"
+
       - name: Russian first-slice publication and browser guards
         run: |
           python3 -m unittest discover -s scripts/qa -p 'test_russian_slice.py'
