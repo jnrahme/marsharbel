@@ -4,7 +4,7 @@ from pathlib import Path
 import sys,unittest
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
-from i18n.mirror_structure import check_pair
+from i18n.mirror_structure import check_pair, NORMALIZERS
 
 class LocaleMirrorPolicy(unittest.TestCase):
     def setUp(self):
@@ -43,7 +43,10 @@ class LocaleMirrorPolicy(unittest.TestCase):
             # No exception masking is implemented. A bounded exception needs a
             # specific tested normalizer and verified evidence, never a wildcard.
             self.assertNotIn(path,self.policy['exceptions'],'No whole-page bypasses permitted')
-            differences=check_pair((ROOT/entry['master']).read_text(),(ROOT/path).read_text(),entry['masterRoute'],entry['route'])
+            normalizers=entry.get('normalizers',[])
+            for name in normalizers:
+                self.assertIn(name,NORMALIZERS,f'{path}: unregistered normalizer {name}')
+            differences=check_pair((ROOT/entry['master']).read_text(),(ROOT/path).read_text(),entry['masterRoute'],entry['route'],normalizers)
             self.assertEqual(differences,[],f'{path}: divergence from {entry["master"]}')
 
 if __name__=='__main__':unittest.main()

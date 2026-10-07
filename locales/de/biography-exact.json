@@ -1,5 +1,5 @@
 {
-  "master": "history.html",
+  "master": "templates/masters/history-exact.html",
   "title": "Das Leben des heiligen Charbel Makhlouf: Geschichte und Quellen",
   "description": "Das Leben des heiligen Charbel Makhlouf (1828-1898): Kindheit in Bekaa Kafra, Klosterjahre, Einsiedelei in Annaya, Tod und Heiligsprechung. Mit Quellen und Hinweisen zu unsicheren Angaben.",
   "slots": {
@@ -380,8 +380,8 @@
       "text": "Der Schlaganfall"
     },
     "94": {
-      "source": "On December 16, 1898, while saying the Divine Liturgy in the hermitage chapel, Charbel was struck down. The Order's accounts say it happened while reciting a liturgical prayer (\"Father of truth, behold your Son, a sacrifice pleasing to you...\") and that he kept his hands clasped around the Eucharist as he fell. His companion, Father Makarios Al-Mishmeshani, and other monks helped him to his cell.",
-      "text": "Am 16. Dezember 1898 erlitt Charbel während der Feier der göttlichen Liturgie in der Kapelle der Einsiedelei einen Schlaganfall. Die Berichte des Ordens nennen als Zeitpunkt das Sprechen eines liturgischen Gebets (in deutscher Wiedergabe des zitierten Fragments: \"Vater der Wahrheit, sieh deinen Sohn an, ein Opfer, das dir wohlgefällig ist ...\"). Sie berichten, dass er beim Sturz seine Hände weiterhin um die Eucharistie geschlossen hielt. Sein Gefährte, Pater Makarios Al-Mishmeshani, und andere Mönche halfen ihm in seine Zelle."
+      "source": "On December 16, 1898, while saying the Divine Liturgy in the hermitage chapel, Charbel was struck down. The Order's accounts say it happened while reciting a liturgical prayer (\"Father of truth, behold your Son, a sacrifice pleasing to you...\") and that he kept his hands clasped around the Eucharist as he fell. His companion, Father Makarios Al-Mishmeshani, and other monks helped him to his cell. The prayer fragment is an English rendering of the quoted historical account, not an authorized liturgical translation.",
+      "text": "Am 16. Dezember 1898 brach Charbel während der Feier der Göttlichen Liturgie in der Kapelle der Einsiedelei zusammen. Die Berichte des Ordens halten fest, es sei geschehen, als er ein liturgisches Gebet sprach (\"Vater der Wahrheit, schau auf deinen Sohn, ein Opfer, das dir wohlgefällt ...\"); er habe beim Fallen die Hände weiter um die Eucharistie geschlossen gehalten. Sein Gefährte, Pater Makarios Al-Mishmeshani, und andere Mönche halfen ihm in seine Zelle. Das Gebetsfragment ist eine deutsche Wiedergabe des zitierten historischen Berichts, keine autorisierte liturgische Übersetzung."
     },
     "95": {
       "source": "Death",
@@ -528,8 +528,8 @@
       "text": "7. Nach der Heiligsprechung"
     },
     "131": {
-      "source": "The Roman Martyrology entry for December 24 reads: Charbel Makhlouf, priest of the Lebanese Maronite Order, withdrew from the monastery to a hermitage in search of austere solitude, and came to rest in the Lord on December 24.",
-      "text": "Der Eintrag im Römischen Martyrologium für den 24. Dezember beschreibt Charbel Makhlouf als Priester des Libanesischen Maronitischen Ordens. Er zog sich vom Kloster in eine Einsiedelei zurück, um in strenger Einsamkeit zu leben, und entschlief am 24. Dezember im Herrn."
+      "source": "The Dicastery for the Causes of Saints describes Charbel Makhlouf as a priest of the Lebanese Maronite Order who withdrew from the monastery to a hermitage in search of austere solitude and came to rest in the Lord on December 24.",
+      "text": "Das Dikasterium für die Selig- und Heiligsprechungsprozesse beschreibt Charbel Makhlouf als Priester des Libanesisch-Maronitischen Ordens, der das Kloster verließ und sich auf der Suche nach strenger Einsamkeit in eine Einsiedelei zurückzog und am 24. Dezember im Herrn entschlief."
     },
     "132": {
       "source": "Monastery records cited by MARI say Annaya had received 135,000 letters from 95 countries by 1977.",
@@ -560,8 +560,8 @@
       "text": "Geburt, Ordenseintritt, Gelübde, Weihe, Einsiedelei, Tod"
     },
     "139": {
-      "source": "Documented in Church sources (Paul VI's 1977 homily, the Roman Martyrology)",
-      "text": "In kirchlichen Quellen dokumentiert (Predigt Pauls VI. von 1977, Römisches Martyrologium)"
+      "source": "Documented in Church sources (Paul VI's 1977 homily and the Dicastery for the Causes of Saints)",
+      "text": "In kirchlichen Quellen dokumentiert (Predigt Pauls VI. von 1977 und Dikasterium für die Selig- und Heiligsprechungsprozesse)"
     },
     "140": {
       "source": "Beatification and canonization dates",
@@ -824,8 +824,8 @@
       "text": "Papst Leo XIV., Besuch und Gebet am Grab des heiligen Charbel, Annaya, 1. Dezember 2025"
     },
     "205": {
-      "source": "Dicastery for the Causes of Saints, entry for the 1977 canonization (includes the Roman Martyrology text)",
-      "text": "Dikasterium für die Selig- und Heiligsprechungsprozesse, Eintrag zur Heiligsprechung von 1977 (mit dem Text des Römischen Martyrologiums)"
+      "source": "Dicastery for the Causes of Saints, entry for the 1977 canonization",
+      "text": "Dikasterium für die Selig- und Heiligsprechungsprozesse, Eintrag zur Heiligsprechung von 1977"
     },
     "206": {
       "source": "Guita G. Hourani, \"Saint Sharbel: The Passage to Sainthood,\" Maronite Research Institute (MARI), 1998 - cites the monastery's death record, the hermit rules, the letters received and the tomb openings",
@@ -853,7 +853,7 @@
     }
   },
   "translationNote": "Eigene deutsche Übersetzung des englischen Ausgangstexts; kein offizieller deutscher Klostertext. Quellenangaben und Unterschiede zwischen kirchlich anerkannten Aussagen und Überlieferung bleiben erhalten. Zitate Pauls VI. aus dem Französischen bzw. nach der englischen Fassung des MARI sind als Übersetzungen gekennzeichnet; das liturgische Fragment ist keine amtliche deutsche Gebetsfassung. Die zitierten Formulierungen des Sterbeeintrags sind unsere Übersetzung nach MARI.",
-  "masterSha256": "4f70973e73ea638d922735bd95060da6d13b0770d05b3d2309be0ac15194771d",
+  "masterSha256": "138b1701bed4160c73d0bd4cc168091d194ce2cb1d32a14044a8ea7dcd9962ff",
   "chrome": {
     "Saint Charbel": "Heiliger Charbel",
     "Home": "Startseite",

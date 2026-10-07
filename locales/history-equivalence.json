@@ -73,6 +73,28 @@
       "bodySha256": "b8eda349d6b3c1fddb92d8bb54e76ac0699243611dbfe4edf1ea6817176cbcd1",
       "catalog": "locales/ru/history-master-copy.json",
       "catalogSha256": "9a432fb215306b69888e669291fa8731ac9ff5178ff066311d5320aee5fdc050"
+    },
+    "hi": {
+      "file": "hi/history.html",
+      "path": "/hi/history",
+      "candidateFileSha256": "d2431ba2c5c6ce25e1697595e1d2ae90403f66a1a3039bf97b5fdc74d8bd43ca",
+      "bodySha256": "b8f7e914778a8c2c95894ed9b69b94b8f9951b282ebfcd481f172419687a0329",
+      "catalog": "locales/hi/history-master-copy.json",
+      "catalogSha256": "429cc13bf4c52d11696adebe0e9a59d6dc4ee6c9e960bfa371bf90731cf8cbcd",
+      "renderedReviewStatus": "approved-hi-th-preview-render-access-5effc075-390-1280",
+      "renderedReview": "Independent merge-lane acceptance relayed Oct7 07:23:08: eight full-scroll home/history desktop/phone preview captures, image.decode + 150ms scroll readiness;16 JS/no-JS language/glyph/image/overflow/error/English-footer access checks. Preview render/access acceptance ONLY. Selector routing, exact-head final CI and production proof remain pending.",
+      "status": "verified"
+    },
+    "th": {
+      "file": "th/history.html",
+      "path": "/th/history",
+      "candidateFileSha256": "4ddd90be98006e8d71d17a9e8500b11c15e08b57502bd9282c794351731de5fc",
+      "bodySha256": "14b39e8410f1f1e8994df5c6ddefb861241b5b14d5017aa65e5025725c513ba7",
+      "catalog": "locales/th/history-master-copy.json",
+      "catalogSha256": "af38d62a0b4f7ce82b6d061c0878227fdda45327e2065ad8e5ba22953b8176cb",
+      "renderedReviewStatus": "approved-hi-th-preview-render-access-5effc075-390-1280",
+      "renderedReview": "Independent merge-lane acceptance relayed Oct7 07:23:08: eight full-scroll home/history desktop/phone preview captures, image.decode + 150ms scroll readiness;16 JS/no-JS language/glyph/image/overflow/error/English-footer access checks. Preview render/access acceptance ONLY. Selector routing, exact-head final CI and production proof remain pending.",
+      "status": "verified"
     }
   },
   "renderedReview": "Parent independent pixel acceptance Oct6 19:13:02 EDT, final nine-page 390/1280 contact sheets; RTL, corrected slot attribution, notes and zero overflow confirmed.",
@@ -99,5 +121,17 @@
     "priorPrayerBranchRepinNote": "Locale history bodies re-pinned after links to the localized travel pages (annaya, 22nd, pilgrimage) were added; link hrefs only. Re-pinned locales: fr,es,pt,it,de,pl,ru. Rendered review of the new bytes is pending. ru catalog also drops '(на английском)' from the three labels whose targets are now localized ru pages (history.after.the-22nd-of-the-month, history.visit.visiting-annaya, history.section.visiting-annaya). Prayers and novena (ru) added later: ru history links to /ru/molitvy and /ru/novena (link hrefs only) and the ru catalog drops '(на английском)' from history.section.prayers and history.section.novena. Rendered review of the new bytes is pending.",
     "renderedDeltaReviewStatus": "pending",
     "scope": "Only RU prayer/novena hrefs and the two English-only label qualifiers; corrected historical-source and prayer-quote wording retained."
+  },
+  "limitedLaunchReview": {
+    "locales": [
+      "hi",
+      "th"
+    ],
+    "catalogReview": "Parent Oct6 copy closeout with reviewed history v3 + home/chrome v4 and three-key source safeguards. Original verdicts held by parent.",
+    "renderedReviewStatus": "approved-hi-th-preview-render-access-5effc075-390-1280",
+    "renderedReview": "Independent preview acceptance relayed by parent Oct7 07:23:08; does not certify selector routing, final CI or production.",
+    "selectorRoutingStatus": "pending-merge-lane-verification",
+    "finalCIStatus": "pending",
+    "productionProofStatus": "pending"
   }
 }

@@ -1998,6 +1998,66 @@
       "masterRoute": "/saint-charbel-novena",
       "family": "saint-charbel-novena",
       "status": "migration-debt"
+    },
+    "hi/index.html": {
+      "locale": "hi",
+      "route": "/hi/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "6c3a34486830eef06dc6eda2290aca91687c5cc0",
+      "normalizers": [
+        "launch-availability-annotations"
+      ]
+    },
+    "hi/history.html": {
+      "locale": "hi",
+      "route": "/hi/history",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "6c3a34486830eef06dc6eda2290aca91687c5cc0",
+      "normalizers": [
+        "launch-availability-annotations"
+      ]
+    },
+    "th/index.html": {
+      "locale": "th",
+      "route": "/th/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "6c3a34486830eef06dc6eda2290aca91687c5cc0",
+      "normalizers": [
+        "launch-availability-annotations"
+      ]
+    },
+    "th/history.html": {
+      "locale": "th",
+      "route": "/th/history",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "6c3a34486830eef06dc6eda2290aca91687c5cc0",
+      "normalizers": [
+        "launch-availability-annotations"
+      ]
     }
   }
 }

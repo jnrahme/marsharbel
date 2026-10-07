@@ -30,7 +30,8 @@
     var proof = variant && variant.proof;
     if (page && variant && proof && proof.type === 'reviewed-history-master') {
       return page.sourcePath === 'history.html' && proof.family === 'history-master' &&
-        variant.status === 'verified' && proof.renderedReviewStatus === 'approved-history-source-correction-c476eada-9-pages-390-1280' &&
+        variant.status === 'verified' && (proof.renderedReviewStatus === 'approved-history-source-correction-c476eada-9-pages-390-1280' ||
+        (['/hi/history','/th/history'].includes(variant.path) && proof.renderedReviewStatus === 'approved-hi-th-preview-render-access-5effc075-390-1280')) &&
         !!proof.catalogReview && !!proof.renderedReview && proof.reviewedContentSha256 === variant.contentSha256 &&
         /^[a-f0-9]{64}$/.test(variant.contentSha256 || '') && variant.sourceSha256 === page.sourceSha256;
     }
@@ -61,7 +62,18 @@
     // English is the source escape route, not a claim of translated equivalence.
     var english = manifest && manifest.englishSources && manifest.englishSources[pathKey(url.pathname)];
     if (requested === 'en' && english) {
-      url.pathname = english; url.searchParams.delete('lang'); url.hash = '';
+      var sourceHash = '';
+      var englishTarget = current && current.page.variants.en;
+      if (url.hash && current && verified(current.page, current.variant) &&
+          verified(current.page, englishTarget) && pathKey(englishTarget.path) === pathKey(english)) {
+        try {
+          var sourceKey = decodeURIComponent(url.hash.slice(1));
+          var sourceAnchors = current.page.anchorIDs || {};
+          var sourceLogical = Object.keys(sourceAnchors).find(function (id) { return sourceAnchors[id][language] === sourceKey; });
+          if (sourceLogical && sourceAnchors[sourceLogical].en) sourceHash = sourceAnchors[sourceLogical].en;
+        } catch (_) { /* Malformed fragments never block the English source escape. */ }
+      }
+      url.pathname = english; url.searchParams.delete('lang'); url.hash = sourceHash;
       result.available = true; result.href = url.toString(); result.contentLanguage = 'en';
       result.reason = 'english-source'; return result;
     }

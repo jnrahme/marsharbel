@@ -26,3 +26,16 @@ manifest.publishedHomes={en:'/',ar:'/ar/',fr:'/fr/'};
 assert.equal(resolve(manifest,'https://marsharbel.com/ar/?lang=ar','fr','ar').href,'https://marsharbel.com/fr/');
 assert.equal(resolve(manifest,'https://marsharbel.com/ar/full-history','fr','ar').available,false);
 console.log('All published home routes switch, article review gate stays unchanged PASS');
+
+// The English source escape preserves only reviewed, explicitly mapped fragments.
+manifest.pages.history.variants.ar.status='verified';
+assert.equal(resolve(manifest,'https://marsharbel.com/ar/full-history?lang=ar&campaign=test#chronologie','en','ar').href,'https://marsharbel.com/history?campaign=test#timeline');
+assert.equal(resolve(manifest,'https://marsharbel.com/ar/full-history#not-reviewed','en','ar').href,'https://marsharbel.com/history');
+assert.equal(resolve(manifest,'https://marsharbel.com/ar/full-history#%E0%A4%A','en','ar').href,'https://marsharbel.com/history');
+manifest.pages.history.variants.en.status='pending';
+assert.equal(resolve(manifest,'https://marsharbel.com/ar/full-history#chronologie','en','ar').href,'https://marsharbel.com/history');
+manifest.pages.history.variants.en.status='verified';
+manifest.pages.history.variants.ar.status='pending';
+assert.equal(resolve(manifest,'https://marsharbel.com/ar/full-history#chronologie','en','ar').href,'https://marsharbel.com/history');
+manifest.pages.history.variants.ar.status='verified';
+console.log('English escape reviewed anchors preserved; unknown/malformed/pending fragments cleared PASS');

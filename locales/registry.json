@@ -132,6 +132,22 @@
       },
       "ogLocale": "ru_RU",
       "selectorAliases": []
+    },
+    "hi": {
+      "nativeName": "हिन्दी",
+      "direction": "ltr",
+      "home": "/hi/",
+      "slugs": {},
+      "ogLocale": "hi_IN",
+      "selectorAliases": []
+    },
+    "th": {
+      "nativeName": "ไทย",
+      "direction": "ltr",
+      "home": "/th/",
+      "slugs": {},
+      "ogLocale": "th_TH",
+      "selectorAliases": []
     }
   },
   "authoredMirrors": {
@@ -484,7 +500,9 @@
     "it",
     "de",
     "pl",
-    "ru"
+    "ru",
+    "hi",
+    "th"
   ],
   "domMirrors": {
     "feast": {
@@ -547,7 +565,9 @@
       "it",
       "de",
       "pl",
-      "ru"
+      "ru",
+      "hi",
+      "th"
     ]
   },
   "pageMirrors": {
@@ -562,7 +582,9 @@
         "it": "/it/biografia",
         "de": "/de/biografie",
         "pl": "/pl/biografia",
-        "ru": "/ru/biography"
+        "ru": "/ru/biography",
+        "hi": "/hi/history",
+        "th": "/th/history"
       },
       "renderLocales": [
         "ar",
@@ -572,7 +594,9 @@
         "it",
         "de",
         "pl",
-        "ru"
+        "ru",
+        "hi",
+        "th"
       ]
     },
     "annaya-master": {
@@ -719,5 +743,9 @@
         "es": "/es/novena"
       }
     }
-  }
+  },
+  "limitedLaunchLocales": [
+    "hi",
+    "th"
+  ]
 }

@@ -19,6 +19,10 @@ def render_home(root, registry, lang, catalog=None):
                 node[attr] = urljoin('/', node[attr])
         if node.has_attr('srcset'):
             node['srcset'] = ', '.join(urljoin('/', p.strip().split()[0]) + (' ' + ' '.join(p.strip().split()[1:]) if len(p.strip().split()) > 1 else '') for p in node['srcset'].split(','))
+    # Registry discovery changes are metadata-only, not authored content.
+    for node in soup.select('link[rel=alternate][hreflang]'):node.decompose()
+    for code,path in {**{c:cfg['home'] for c,cfg in registry['locales'].items()},'x-default':'/'}.items():
+        soup.head.append(soup.new_tag('link',rel='alternate',hreflang=code,href=registry['site']+path))
     route = registry['locales'][lang]['home']
     canonical = registry['site'] + route
     soup.html['lang'] = lang
@@ -41,6 +45,9 @@ def render_home(root, registry, lang, catalog=None):
             twins[cfg['relatedEnglish'].rstrip('/')] = page_url(registry, lang, topic)
     for cfg in registry.get('exactMirrors', {}).values():
         if lang in cfg['routes']:
+            twins[cfg['english'].rstrip('/')] = cfg['routes'][lang]
+    for cfg in registry.get('pageMirrors', {}).values():
+        if lang in registry.get('limitedLaunchLocales', []) and lang in cfg['routes']:
             twins[cfg['english'].rstrip('/')] = cfg['routes'][lang]
     # English app links can use the old /en guide alias for the full prayer master.
     if '/saint-charbel-prayers' in twins:
@@ -78,7 +85,11 @@ def render_home(root, registry, lang, catalog=None):
     mismatches = check_pair(raw.decode('utf-8'), rendered, '/', route)
     if mismatches:
         raise ValueError(f'Home {lang}: mirror structure diverged: {mismatches}')
-    return rendered
+    if lang in registry.get('limitedLaunchLocales', []):
+        from i18n.prayer_runtime import share_head
+        rendered=share_head(rendered,root,lang)
+    from i18n.launch_availability import apply_launch_availability
+    return apply_launch_availability(rendered, root, registry, lang, home=True)
 
 
 def render_home_set(root, registry):

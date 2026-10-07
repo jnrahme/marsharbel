@@ -11,7 +11,15 @@ class HistoryMirrors(unittest.TestCase):
   master=(ROOT/'history.html').read_text()
   for lang,route in self.r['pageMirrors']['history-master']['routes'].items():
    text=render_page(ROOT,self.r,lang,'history-master',route);s=BeautifulSoup(text,'html.parser')
-   self.assertEqual(check_pair(master,text,'/history',route),[],lang)
+   parity=BeautifulSoup(text,'html.parser')
+   hints=parity.select('.launch-english-qualifier')
+   if lang in self.r.get('limitedLaunchLocales',[]):
+    qualifier=json.loads((ROOT/f'locales/{lang}/launch-availability.json').read_text())['availability.englishQualifier']
+    self.assertTrue(hints,lang)
+    for hint in hints:
+     self.assertEqual(hint.get_text().strip(),qualifier);self.assertEqual(hint.parent.name,'a');hint.decompose()
+   else:self.assertFalse(hints,lang)
+   self.assertEqual(check_pair(master,str(parity),'/history',route),[],lang)
    self.assertEqual(s.html['lang'],lang);self.assertEqual(s.main['tabindex'],'-1')
    self.assertEqual(s.select_one('link[rel=canonical]')['href'],self.r['site']+route)
    self.assertEqual(s.select_one('a.skip-link')['href'],'#main-content')

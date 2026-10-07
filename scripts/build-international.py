@@ -240,6 +240,13 @@ def outputs(root=ROOT):
     result.update(render_exact_set(root, registry))
     result.update(render_home_set(root, registry))
     result.update(render_page_set(root, registry))
+    # Full history is a separate reciprocal master cluster, not legacy biography.
+    history_cfg=registry['pageMirrors']['history-master']
+    history_path=root/'history.html'
+    history_text=result.get(history_path,history_path.read_text())
+    cluster={'en':'/history',**history_cfg['routes'],'x-default':'/history'}
+    links='\n'.join(f'<link rel="alternate" hreflang="{c}" href="{registry["site"]+u}" />' for c,u in cluster.items())
+    result[history_path]=replace_block(history_text,'hreflang',links,begin='begin')
     from i18n.prayer_metadata import compose_prayer_clusters
     result=compose_prayer_clusters(root,registry,result)
     # Keep the English homepage and legacy canonical URLs stable.
