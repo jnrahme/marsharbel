@@ -19,6 +19,9 @@ npx playwright test tests/prayer-equivalence.spec.js --project=phone --project=l
 npx playwright test tests/prayer-share-runtime.spec.js --project=phone --project=laptop --workers=2
 npx playwright test tests/prayer-keyed-masters.spec.js --project=laptop --workers=2
 python3 -m unittest discover -s scripts/qa -p test_source_safeguards.py
+python3 scripts/qa/test_exact_source_inputs.py
+python3 scripts/qa/test_limited_launch.py
+npx playwright test tests/limited-launch.spec.js --project=phone --project=laptop --workers=2
 python3 scripts/qa/test_source_copy_keys.py
 python3 scripts/qa/check_travel_routes.py
 python3 scripts/qa/test_travel.py

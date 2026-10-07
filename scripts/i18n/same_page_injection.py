@@ -55,7 +55,7 @@ def with_english_sources(root, manifest):
                 sources.setdefault(route.rstrip('/'), english)
     result['englishSources'] = sources
     result['publishedHomes'] = {code: cfg['home'] for code,cfg in registry['locales'].items()
-        if (root / cfg['home'].strip('/') / 'index.html').exists()}
+        if code in registry.get('homepageMirrors', {}).get('renderLocales', []) or (root / cfg['home'].strip('/') / 'index.html').exists()}
     _english_source_cache[key] = result
     return result
 

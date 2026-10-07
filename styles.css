@@ -3102,3 +3102,35 @@ body.is-saints-shelf .shelf-soon-row[hidden]{display:none}
 body.is-saints-shelf .shelf-soon-row strong{color:#f4e9d8;font-weight:700}
 body.is-saints-shelf .shelf-soon-row span{flex:1 1 100%;font-size:.8rem}
 body.is-saints-shelf .shelf-soon-row em{font-style:normal;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#e3bd7a;opacity:.8}
+
+/* Hindi and Thai launch fonts: Google Fonts, SIL OFL 1.1. */
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/media/fonts/notoserifdevanagari-variable.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif Thai';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/media/fonts/notoserifthai-variable.ttf') format('truetype');
+}
+:lang(hi) body, :lang(hi) button, :lang(hi) input, :lang(hi) select, :lang(hi) textarea,
+:lang(hi) h1, :lang(hi) h2, :lang(hi) h3, :lang(hi) .brand, :lang(hi) .hero-title {
+  font-family: 'Noto Serif Devanagari', serif;
+  letter-spacing: normal;
+}
+:lang(th) body, :lang(th) button, :lang(th) input, :lang(th) select, :lang(th) textarea,
+:lang(th) h1, :lang(th) h2, :lang(th) h3, :lang(th) .brand, :lang(th) .hero-title {
+  font-family: 'Noto Serif Thai', serif;
+  letter-spacing: normal;
+}
+:lang(hi) .launch-availability, :lang(th) .launch-availability {
+  margin-block: 1rem 2rem;
+}
+:lang(hi) .launch-english-qualifier, :lang(th) .launch-english-qualifier {
+  font-size: .85em;
+}

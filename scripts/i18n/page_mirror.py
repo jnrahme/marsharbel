@@ -104,7 +104,11 @@ def render_page(root,registry,lang,family,route,catalog=None):
         master_text=share_head(master_text,root,'en',hub)
     diff=check_pair(master_text,rendered,master_route,route)
     if diff:raise ValueError(f'{family} {lang}: mirror structure diverged: {diff}')
-    return rendered
+    if lang in registry.get('limitedLaunchLocales', []):
+        from i18n.prayer_runtime import share_head
+        rendered=share_head(rendered,root,lang)
+    from i18n.launch_availability import apply_launch_availability
+    return apply_launch_availability(rendered, root, registry, lang)
 
 
 def render_page_set(root,registry):
