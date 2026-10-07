@@ -69,12 +69,35 @@
     "ru": {
       "file": "ru/biography.html",
       "path": "/ru/biography",
+      "candidateFileSha256": "b0699d7c9421e6d9a1f7ce527bd1923b74ec69dc6799a86814eab338c5abb2b0",
+      "bodySha256": "b8eda349d6b3c1fddb92d8bb54e76ac0699243611dbfe4edf1ea6817176cbcd1",
+      "catalog": "locales/ru/history-master-copy.json",
+      "catalogSha256": "9a432fb215306b69888e669291fa8731ac9ff5178ff066311d5320aee5fdc050"
+    }
+  },
+  "renderedReview": "Parent independent pixel acceptance Oct6 19:13:02 EDT, final nine-page 390/1280 contact sheets; RTL, corrected slot attribution, notes and zero overflow confirmed.",
+  "repinNote": "Four-key master-first source attribution and visible historical-prayer translation-status corrections; all eight locale deltas reviewed, final nine-page render accepted. RU union: retained the corrected stage history and applied existing RU prayer activation hrefs plus removal of English-only qualifiers from the two now-localized prayer labels. This routing-only delta has no new independent rendered acceptance.",
+  "ruPrayerRoutingUnion": {
+    "stageHistoryRevision": "4f834e399decce3ed60687859dd08557e237dd79",
+    "prayerBranchRevision": "b553f6e1d35162a9da92e95b9a0cd9fdff4018f4",
+    "acceptedStagePins": {
+      "file": "ru/biography.html",
+      "path": "/ru/biography",
       "candidateFileSha256": "a166d44f2f2df42f5a0b2f4349ad4f8a1afdc37f3543addb72d0d12154b82587",
       "bodySha256": "aa66ebb907cac6837fdc328bd43afb94114a2af6627f649068e972d246e913f5",
       "catalog": "locales/ru/history-master-copy.json",
       "catalogSha256": "b7b74adb6bf7578d3220babf2a8f213691a87f2d749acbc86c7cc2612733ff80"
-    }
-  },
-  "renderedReview": "Parent independent pixel acceptance Oct6 19:13:02 EDT, final nine-page 390/1280 contact sheets; RTL, corrected slot attribution, notes and zero overflow confirmed.",
-  "repinNote": "Four-key master-first source attribution and visible historical-prayer translation-status corrections; all eight locale deltas reviewed, final nine-page render accepted."
+    },
+    "priorPrayerBranchPins": {
+      "file": "ru/biography.html",
+      "path": "/ru/biography",
+      "candidateFileSha256": "375b53ae0c555fdaa16d9f2f311509f0a86a57fe665cdfa889ca86ffff730041",
+      "bodySha256": "6bb7cb74f549b1e65df12aa0670fe00bcea1e79a70b85d2ef99a8fe8a0c0a355",
+      "catalog": "locales/ru/history-master-copy.json",
+      "catalogSha256": "a798d152630a8629848a4e3f6668e9672b511a4dd69287d5dd914618917d0d90"
+    },
+    "priorPrayerBranchRepinNote": "Locale history bodies re-pinned after links to the localized travel pages (annaya, 22nd, pilgrimage) were added; link hrefs only. Re-pinned locales: fr,es,pt,it,de,pl,ru. Rendered review of the new bytes is pending. ru catalog also drops '(на английском)' from the three labels whose targets are now localized ru pages (history.after.the-22nd-of-the-month, history.visit.visiting-annaya, history.section.visiting-annaya). Prayers and novena (ru) added later: ru history links to /ru/molitvy and /ru/novena (link hrefs only) and the ru catalog drops '(на английском)' from history.section.prayers and history.section.novena. Rendered review of the new bytes is pending.",
+    "renderedDeltaReviewStatus": "pending",
+    "scope": "Only RU prayer/novena hrefs and the two English-only label qualifiers; corrected historical-source and prayer-quote wording retained."
+  }
 }

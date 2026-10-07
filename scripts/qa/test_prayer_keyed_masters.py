@@ -59,7 +59,7 @@ class PrayerKeyedMasters(unittest.TestCase):
   def record(registry,catalog,code,template,topic=None):
    calls.append((code,topic));return real(registry,catalog,code,template,topic)
   with patch.object(builder,'render',side_effect=record):builder.outputs(ROOT)
-  for code in ('ar','de','fr'):
+  for code in ('ar','de','fr','ru'):
    for topic in ('prayers','novena'):self.assertNotIn((code,topic),calls)
   for code in ('es','pt','it','pl'):self.assertIn((code,'novena'),calls)
  def test_empty_slot_is_arabic_day6_only(self):

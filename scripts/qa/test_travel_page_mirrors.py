@@ -31,9 +31,21 @@ class TravelPageMirrors(unittest.TestCase):
   s=BeautifulSoup(render_page(ROOT,self.r,'ru','annaya-master','/ru/annaya'),'html.parser')
   hrefs=[a['href'] for a in s.select('main a')]
   self.assertIn(routes['twenty-second-master']['ru'],hrefs)
+ def test_published_novena_twins_use_localized_destination(self):
+  novena=self.r['pageMirrors']['saint-charbel-novena-master']
+  for lang in novena['renderLocales']:
+   route=self.r['pageMirrors']['annaya-master']['routes'][lang]
+   s=BeautifulSoup(render_page(ROOT,self.r,lang,'annaya-master',route),'html.parser')
+   hrefs=[a['href']for a in s.select('main a')]
+   self.assertIn(novena['routes'][lang],hrefs,lang)
+   self.assertNotIn(novena['english'],hrefs,lang)
  def test_missing_locale_twin_keeps_english_destination(self):
-  s=BeautifulSoup(render_page(ROOT,self.r,'ru','annaya-master','/ru/annaya'),'html.parser')
-  self.assertNotIn('ru',self.r['pageMirrors']['saint-charbel-novena-master']['routes'])
+  # Simulate an unpublished RU twin so fallback stays covered after activation.
+  r=json.loads(json.dumps(self.r))
+  cfg=r['pageMirrors']['saint-charbel-novena-master']
+  cfg['routes'].pop('ru',None)
+  cfg['renderLocales']=[lang for lang in cfg['renderLocales']if lang!='ru']
+  s=BeautifulSoup(render_page(ROOT,r,'ru','annaya-master','/ru/annaya'),'html.parser')
   self.assertIn('/saint-charbel-novena',[a['href']for a in s.select('main a')])
  def test_missing_key_fails(self):
   c=json.loads((ROOT/'locales/fr/annaya-master-copy.json').read_text());c.pop(next(iter(c)))

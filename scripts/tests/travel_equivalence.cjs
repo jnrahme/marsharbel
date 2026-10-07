@@ -8,5 +8,5 @@ for(const [id,group]of Object.entries(manifest.pages).filter(([id])=>['annaya-ma
  const bad=structuredClone(manifest);bad.pages[id].variants.fr.proof.renderedReview='';assert(!api.resolve(bad,'https://marsharbel.com'+group.variants.ar.path,'fr','ar').available);
  assert(!api.resolve(manifest,'https://marsharbel.com'+group.variants.ar.path+'#missing-anchor','fr','ar').available);
 }
-assert.equal(cases,243);assert(!api.resolve(manifest,'https://marsharbel.com/saint-charbel-prayers','ru','en').available);
-console.log('243 travel route pairs, missing-review/anchor refusal and unrelated pending Russian prayers PASS');
+assert.equal(cases,243);assert(!api.resolve(manifest,'https://marsharbel.com/saint-charbel-prayers','pl','en').available);
+console.log('243 travel route pairs, missing-review/anchor refusal and unrelated pending Polish prayers PASS');

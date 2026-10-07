@@ -1982,6 +1982,22 @@
       "masterRoute": "/saint-charbel-pilgrimage",
       "family": "pilgrimage-master",
       "status": "strict"
+    },
+    "ru/molitvy.html": {
+      "locale": "ru",
+      "route": "/ru/molitvy",
+      "master": "saint-charbel-prayers.html",
+      "masterRoute": "/saint-charbel-prayers",
+      "family": "saint-charbel-prayers",
+      "status": "migration-debt"
+    },
+    "ru/novena.html": {
+      "locale": "ru",
+      "route": "/ru/novena",
+      "master": "saint-charbel-novena.html",
+      "masterRoute": "/saint-charbel-novena",
+      "family": "saint-charbel-novena",
+      "status": "migration-debt"
     }
   }
 }

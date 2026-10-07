@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 
-for (const [route, code] of [['/saint-charbel-prayers','en'], ['/en/prayers','en'], ['/ar/prayers','ar'], ['/fr/prieres','fr'], ['/es/oraciones','es'], ['/pt/oracoes','pt'], ['/it/preghiere','it'], ['/de/gebete','de'], ['/pl/modlitwy','pl']]) {
+for (const [route, code] of [['/saint-charbel-prayers','en'], ['/en/prayers','en'], ['/ar/prayers','ar'], ['/fr/prieres','fr'], ['/es/oraciones','es'], ['/pt/oracoes','pt'], ['/it/preghiere','it'], ['/de/gebete','de'], ['/pl/modlitwy','pl'],['/ru/molitvy','ru']]) {
   test(`${route} prayers mirror stays readable and complete`, async ({page}) => {
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
@@ -22,26 +22,27 @@ for (const [route, code] of [['/saint-charbel-prayers','en'], ['/en/prayers','en
 }
 
 // Existing authored routes are tested directly; resemblance is not a twin review.
-for(const [route,code]of [['/en/prayers','en'],['/ar/prayers','ar'],['/fr/prieres','fr'],['/es/oraciones','es'],['/pt/oracoes','pt'],['/it/preghiere','it'],['/de/gebete','de'],['/pl/modlitwy','pl']]) {
+for(const [route,code]of [['/en/prayers','en'],['/ar/prayers','ar'],['/fr/prieres','fr'],['/es/oraciones','es'],['/pt/oracoes','pt'],['/it/preghiere','it'],['/de/gebete','de'],['/pl/modlitwy','pl'],['/ru/molitvy','ru']]) {
   test(`${route} keeps authored prayer copy and refuses pending twins`,async({page})=>{
     await page.addInitScript(()=>localStorage.setItem('sc_lang_pref','en'));
     await page.goto(route+'?lang=ar');
     const family='saint-charbel-prayers-master';
     const binding=require(`../locales/en/${family}-bindings.json`).bindings.find(b=>b.kind==='text'&&/(^| > )h1(:nth-of-type\(\d+\))?$/.test(b.selector));
-    const heading=['ar','de','fr'].includes(code)?require(`../locales/${code}/${family}-copy.json`)[binding.key]:require(`../locales/${code}/mirrors/prayers.json`)['hero.heading'];
+    const heading=['ar','de','fr','ru'].includes(code)?require(`../locales/${code}/${family}-copy.json`)[binding.key]:require(`../locales/${code}/mirrors/prayers.json`)['hero.heading'];
     await expect(page.locator('h1')).toHaveText(heading);
     await expect(page.locator('html')).toHaveAttribute('lang',code);
     await expect(page.locator('#sc-language-select')).toHaveValue(code);
     const other=code==='fr'?'ar':'fr';
-    if(['ar','fr','de'].includes(code)){
+    if(['ar','fr','de','ru'].includes(code)){
       await expect(page.locator(`#sc-language-select option[value="${other}"]`)).toBeEnabled();
       await page.selectOption('#sc-language-select',other);
       const target=require('../locales/registry.json').pageMirrors['saint-charbel-prayers-master'].routes[other];
       await expect(page).toHaveURL(new RegExp(target+'$'));await expect(page.locator('html')).toHaveAttribute('lang',other);
       await page.goto(route);
-      for(const pending of ['ru','es','pt','it','pl'])await expect(page.locator(`#sc-language-select option[value="${pending}"]`)).toBeDisabled();
+      await expect(page.locator('#sc-language-select option[value="ru"]')).toBeEnabled();
+      for(const pending of ['es','pt','it','pl'])await expect(page.locator(`#sc-language-select option[value="${pending}"]`)).toBeDisabled();
     }else await expect(page.locator(`#sc-language-select option[value="${other}"]`)).toBeDisabled();
-    const pending='ru';
+    const pending=['ar','fr','de','ru'].includes(code)?'es':'ru';
     await expect(page.locator(`#sc-language-select option[value="${pending}"]`)).toBeDisabled();
     const before=await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
     expect(await page.evaluate(lang=>SC_LANGUAGE_SWITCH.request(lang),pending)).toBe(false);
