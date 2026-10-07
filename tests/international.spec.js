@@ -92,7 +92,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
     test(`language selector keeps ${language} reading guide unavailable until published`,async({page}) => {
       // Same-page switching is fail-closed: an unpublished twin is a disabled option, never a navigation.
       await page.goto('/saint-charbel-prayers?lang=en');
-      if(["ar","de","fr","ru","pt","it","pl"].includes(language)){await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeEnabled();}else await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeDisabled();
+      if(["ar","de","fr","ru","pt","it","pl","es"].includes(language)){await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeEnabled();}else await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeDisabled();
       await expect(page).toHaveURL(/\/saint-charbel-prayers\?lang=en$/);
     });
   }
@@ -177,7 +177,7 @@ for(const code of languages) test(`${code} homepage offers every shipped homepag
   await expect(page.locator('html')).toHaveAttribute('lang',next);
 });
 // Keyed masters use crawlable footer homepage links, not the legacy header menu.
-for (const [route,code] of [['/pt/novena','pt'],['/it/novena','it'],['/ru/novena','ru'],['/pl/nowenna','pl']]) test(`${route} keeps keyed prayer and language fallback readable without JavaScript`, async ({browser, baseURL}, testInfo) => {
+for (const [route,code] of [['/pt/novena','pt'],['/it/novena','it'],['/ru/novena','ru'],['/pl/nowenna','pl'],['/es/novena','es']]) test(`${route} keeps keyed prayer and language fallback readable without JavaScript`, async ({browser, baseURL}, testInfo) => {
   const context = await browser.newContext({...testInfo.project.use, baseURL, javaScriptEnabled:false});
   try {
     const page = await context.newPage();

@@ -10,7 +10,7 @@ def prayer_manifest(root,texts,manifest):
     record=json.loads(path.read_text())
     if record.get('gateStatus')!='approved':return manifest
     review=json.loads((root/'locales/prayer-review-record.json').read_text())
-    if review['renderedReviewStatus']!='approved' or any(review['reviews'][lang]['status']!='approved' for lang in ('ar','de','fr','ru','pt','it','pl')):
+    if review['renderedReviewStatus']!='approved' or any(review['reviews'][lang]['status']!='approved' for lang in ('ar','de','fr','ru','pt','it','pl','es')):
         raise ValueError('Prayer integrated reviews incomplete')
     out=json.loads(json.dumps(manifest))
     for family,group in record['groups'].items():
