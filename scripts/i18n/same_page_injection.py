@@ -29,8 +29,31 @@ def with_english_sources(root, manifest):
             target = urlsplit(english['href'])
             if target.netloc == 'marsharbel.com' and target.scheme == 'https':
                 sources[urlsplit(canonical['href']).path.rstrip('/') or '/'] = target.path
-    result['englishSources'] = sources
     registry = read_json(root/'locales/registry.json')
+    # Topics may have an English source without an EN hreflang twin. This
+    # enables only the English escape route, never a translated-equivalence grant.
+    reviewed_paths = {variant['path'].rstrip('/')
+        for family in manifest.get('pages', {}).values()
+        for variant in family.get('variants', {}).values()
+        if variant.get('status') == 'verified'}
+    for topic, cfg in registry.get('topics', {}).items():
+        english = cfg.get('relatedEnglish')
+        if not english:
+            continue
+        target = root / english.strip('/')
+        target = target / 'index.html' if english.endswith('/') else target.with_suffix('.html')
+        if not target.is_file():
+            raise ValueError('Missing declared English source: '+english)
+        for code in cfg.get('locales', []):
+            slug = registry['locales'][code]['slugs'].get(topic)
+            if not slug:
+                continue
+            route = '/'+code+'/'+slug
+            local = root / route.strip('/')
+            local = local / 'index.html' if route.endswith('/') else local.with_suffix('.html')
+            if local.is_file() and route.rstrip('/') not in reviewed_paths:
+                sources.setdefault(route.rstrip('/'), english)
+    result['englishSources'] = sources
     result['publishedHomes'] = {code: cfg['home'] for code,cfg in registry['locales'].items()
         if (root / cfg['home'].strip('/') / 'index.html').exists()}
     _english_source_cache[key] = result

@@ -11,6 +11,18 @@ class LocaleMirrorPolicy(unittest.TestCase):
         self.registry=json.loads((ROOT/'locales/registry.json').read_text())
         self.policy=json.loads((ROOT/'config/locale-mirror-policy.json').read_text())
 
+    def test_registered_english_escape_for_non_equivalent_miracles_hub(self):
+        from i18n.same_page_injection import with_english_sources, _english_source_cache
+        _english_source_cache.clear()
+        manifest=json.loads((ROOT/'locales/same-page-manifest.pending.json').read_text())
+        enriched=with_english_sources(ROOT,manifest)
+        self.assertEqual(enriched['englishSources']['/ar/miracles'],'/miracles/')
+        # An English escape route must not promote the Arabic hub to verified.
+        for family in enriched['pages'].values():
+            for code,variant in family['variants'].items():
+                if variant['path'].rstrip('/')=='/ar/miracles':
+                    self.assertNotEqual(variant['status'],'verified')
+
     def test_every_locale_page_has_explicit_master_and_status(self):
         files={p.relative_to(ROOT).as_posix() for lang in self.registry['locales'] if lang!='en' for p in (ROOT/lang).rglob('*.html')}
         self.assertEqual(files,set(self.policy['pages']),'Every new or removed locale route must update mirror coverage')
