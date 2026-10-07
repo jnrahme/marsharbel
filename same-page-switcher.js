@@ -22,7 +22,8 @@
  select.value=actual;
  var status=document.createElement('span');status.id='sc-language-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');status.className='sc-language-status';
  function refuse(){var x=scrollX,y=scrollY;select.value=actual;status.textContent=copy.unavailable;window.scrollTo(x,y);}
- function request(lang){var r=api.resolve(manifest,location.href,lang,actual);if(!r.available){refuse();return false;}if(r.reason==='same-language'){select.value=actual;return true;}try{localStorage.setItem('sc_last_explicit_language',lang)}catch(_){}location.assign(r.href);return true;}
+ function remember(lang){try{localStorage.setItem('sc_last_explicit_language',lang);localStorage.setItem('sc_lang_pref',lang)}catch(_){}}
+ function request(lang){var r=api.resolve(manifest,location.href,lang,actual);if(!r.available){refuse();return false;}remember(lang);if(r.reason==='same-language'){select.value=actual;return true;}location.assign(r.href);return true;}
  select.addEventListener('change',function(){request(select.value)});
  host.append(label,select);
  var feedback=document.createElement('div');feedback.className='sc-language-feedback';feedback.append(status);(host.closest('header')||document.querySelector('main')||host).appendChild(feedback);
@@ -42,6 +43,21 @@
   nav.hidden=true;
  });
  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-language-switch]');if(!a)return;e.preventDefault();request(a.getAttribute('hreflang'))});
+ // Carry an explicit choice across ordinary navigation only to reviewed twins.
+ // Direct URLs and clearly marked English source links retain their own language.
+ document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href]');
+  if(a&&a.hasAttribute('hreflang')&&!a.hasAttribute('data-language-switch')){var choice=a.getAttribute('hreflang');if(choice==='x-default')choice='en';if(manifest.languages.includes(choice))remember(choice);}
+  if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download')||a.hasAttribute('hreflang')||a.hasAttribute('data-language-switch'))return;
+  var preferred='';try{preferred=localStorage.getItem('sc_last_explicit_language')||''}catch(_){}
+  if(!preferred)return;
+  var href=a.getAttribute('href');if(!href||href.charAt(0)==='#')return;
+  var url;try{url=new URL(href,location.href)}catch(_){return;}
+  if(url.origin!==location.origin||!/^https?:$/.test(url.protocol)||url.searchParams.get('lang')==='en'||a.getAttribute('lang')==='en')return;
+  var target=api.locate(manifest,url.pathname),targetLanguage=target?target.language:'en';
+  var result=api.resolve(manifest,url.href,preferred,targetLanguage);
+  if(result.available&&result.href!==url.href){e.preventDefault();location.assign(result.href);}
+ });
  window.SC_LANGUAGE_SWITCH={request:request,actualLanguage:actual};
  // Back/forward restores the page's own language; no preference redirect runs.
  window.addEventListener('pageshow',function(){select.value=actual});

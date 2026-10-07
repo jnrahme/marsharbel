@@ -32,6 +32,7 @@ node scripts/build-home-css.mjs --check
 npm run i18n:check
 python3 scripts/build-eucharistic-miracles.py --check
 npm run i18n:test
+npx playwright test tests/language-persistence.spec.js tests/locale-preference-routing.spec.js --project=phone --project=laptop --workers=2
 
 echo "[qa] Refactor, mirror and locale contract tests"
 for t in chaplet_mirror de_exact_catalogs encyclopedia_trail error_document exact_master exact_wiring feast_mirror footer_navigation head_fragments jsonld_serializer litany_mirror locale_foundation locale_home_navigation prayer_mirror saint_pillars tour_nav; do
