@@ -23,9 +23,10 @@ RewriteRule ^ https://marsharbel.com%{REQUEST_URI} [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+index(?:\.html)?(?:[\s?]|$) [NC]
 RewriteRule ^index(?:\.html)?$ / [R=301,L]
 
-# Recover the old misplaced Rosary links reported by Search Console. Keep the
-# language query parameter so visitors retain their selected translation.
-RewriteRule ^mysteries/rosary-visual-guide(?:\.html)?/?$ /rosary-visual-guide [R=301,L]
+# Recover the misplaced Rosary paths reported by Search Console.
+# The real Rosary page lives at the root.
+# Keep language query parameters and redirect before the generic .html rule.
+RewriteRule ^(?:mysteries|miracles(?:/eucharistic)?)/rosary-visual-guide(?:\.html)?/?$ /rosary-visual-guide [R=301,L]
 
 # Recover the legacy Rosary and 22nd-of-the-month URLs that Google still
 # reports. The generic ".html" redirect below would otherwise send them
