@@ -8,13 +8,13 @@ for(const family of ['saint-charbel-prayers-master','saint-charbel-novena-master
  await expect(page).toHaveURL(baseURL+route);
  await expect(page.locator('head link[rel=canonical]')).toHaveAttribute('href',registry.site+route);
  const active=contract.gateStatus==='approved';
- for(const code of ['en','ar','de','fr','ru','pt','it','pl']){
+ for(const code of ['en','ar','de','fr','ru','pt','it','pl','es']){
   const option=page.locator(`#sc-language-select option[value="${code}"]`);
   if(active||code===lang||code==='en')await expect(option).toBeEnabled();else await expect(option).toBeDisabled();
  }
- for(const code of ['es'])await expect(page.locator(`#sc-language-select option[value="${code}"]`)).toBeDisabled();
+ expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('zz'))).toBe(false);
  if(active){
-  for(const target of ['ar','de','fr','ru','pt','it','pl','en']){
+  for(const target of ['ar','de','fr','ru','pt','it','pl','es','en']){
    const path=target==='en'?registry.pageMirrors[family].english:registry.pageMirrors[family].routes[target];
    await page.selectOption('#sc-language-select',target);await expect(page).toHaveURL(baseURL+path);await expect(page.locator('html')).toHaveAttribute('lang',target);
   }
