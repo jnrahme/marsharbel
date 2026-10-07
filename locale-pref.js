@@ -3,5 +3,5 @@ document.addEventListener("click",function(e){
   if(!a)return;
   var l=(a.getAttribute("hreflang")||"").toLowerCase();
   if(l==="x-default")l="en";
-  try{localStorage.setItem("sc_lang_pref",l)}catch(_){}
+  try{localStorage.setItem("sc_lang_pref",l);localStorage.setItem("sc_last_explicit_language",l)}catch(_){}
 });
