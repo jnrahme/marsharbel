@@ -17,8 +17,10 @@ def tree(node):
     return [node.name, attrs, children]
 
 
-def signature(text, route):
+def signature(text, route, normalizers=()):
     soup = BeautifulSoup(text, 'html.parser')
+    for name in normalizers:
+        soup = NORMALIZERS[name](soup)
     def asset(value):
         return urlsplit(urljoin('https://marsharbel.com'+route,value)).path
     return {
@@ -30,7 +32,20 @@ def signature(text, route):
     }
 
 
-def check_pair(master, locale, master_route, locale_route):
+def check_pair(master, locale, master_route, locale_route, normalizers=()):
     english = signature(master, master_route)
-    translated = signature(locale, locale_route)
+    translated = signature(locale, locale_route, normalizers)
     return [key for key in english if english[key] != translated[key]]
+
+def _strip_launch_annotations(soup):
+    """Remove reviewed launch-availability annotations (English-only qualifiers and
+    the launch-availability aside) that limited-launch locale pages add on top of
+    the shared master structure. Scoped: only these two authored classes."""
+    for node in soup.select('.launch-english-qualifier'):
+        node.decompose()
+    for node in soup.select('aside.launch-availability'):
+        node.decompose()
+    return soup
+
+
+NORMALIZERS = {'launch-availability-annotations': _strip_launch_annotations}
