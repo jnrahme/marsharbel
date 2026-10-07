@@ -47,6 +47,15 @@
       "renderedReviewStatus": "pending",
       "finalQAStatus": "pending",
       "releaseGate": "Merge lane must pass complete CI on exact final PR head and fresh production390/1280 render/switch/share/no-JS, byte and overwrite proof before reporting shipped."
+    },
+    "pl": {
+      "status": "approved",
+      "source": "Parent relay of independent reviewer re-verdict, October 6 2026 7:34 PM EDT",
+      "scope": "v2 Polish catalogs text fixes, structure, share and anchors at 390/1366. Not final activation: calendar insertion and activation switcher recheck still required.",
+      "copyReviewStatus": "approved",
+      "renderedReviewStatus": "pending",
+      "finalQAStatus": "pending",
+      "releaseGate": "Complete merge-lane CI and fresh production render/switch/share/no-JS and byte proof on exact final head; separate source-first July28 clarification remains queued."
     }
   },
   "catalogHashes": {
