@@ -20,7 +20,7 @@ class PrayerEquivalence(unittest.TestCase):
    record['gateStatus']='approved';(root/'locales/prayer-equivalence.json').write_text(json.dumps(record))
    m=prayer_manifest(root,{}, {'pages':{}})
    self.assertEqual(len(m['pages']),2)
-   for page in m['pages'].values():self.assertEqual(set(page['variants']),{'en','ar','de','fr'})
+   for page in m['pages'].values():self.assertEqual(set(page['variants']),{'en','ar','de','fr','ru'})
    first=record['groups']['saint-charbel-prayers-master']['variants']['ar']
    with self.assertRaisesRegex(ValueError,'body drift'):prayer_manifest(root,{root/first['file']:(root/first['file']).read_text().replace('<main','<main data-drift="yes"',1)}, {'pages':{}})
    (root/first['catalog']).write_text('{}')

@@ -653,12 +653,14 @@
       "routes": {
         "ar": "/ar/prayers",
         "de": "/de/gebete",
-        "fr": "/fr/prieres"
+        "fr": "/fr/prieres",
+        "ru": "/ru/molitvy"
       },
       "renderLocales": [
         "ar",
         "de",
-        "fr"
+        "fr",
+        "ru"
       ],
       "discoveryRoutes": {
         "en": "/saint-charbel-prayers",
@@ -669,6 +671,7 @@
         "it": "/it/preghiere",
         "de": "/de/gebete",
         "pl": "/pl/modlitwy",
+        "ru": "/ru/molitvy",
         "x-default": "/saint-charbel-prayers"
       }
     },
@@ -678,18 +681,21 @@
       "routes": {
         "ar": "/ar/novena",
         "de": "/de/novene",
-        "fr": "/fr/neuvaine"
+        "fr": "/fr/neuvaine",
+        "ru": "/ru/novena"
       },
       "renderLocales": [
         "ar",
         "de",
-        "fr"
+        "fr",
+        "ru"
       ],
       "discoveryRoutes": {
         "en": "/saint-charbel-novena",
         "ar": "/ar/novena",
         "fr": "/fr/neuvaine",
         "de": "/de/novene",
+        "ru": "/ru/novena",
         "x-default": "/saint-charbel-novena"
       }
     }
