@@ -742,6 +742,36 @@
         "pl": "/pl/nowenna",
         "es": "/es/novena"
       }
+    },
+    "feedback": {
+      "master": "feedback.html",
+      "english": "/feedback",
+      "routes": {
+        "ar": "/ar/feedback",
+        "fr": "/fr/feedback",
+        "es": "/es/feedback",
+        "pt": "/pt/feedback",
+        "it": "/it/feedback",
+        "de": "/de/feedback",
+        "pl": "/pl/feedback",
+        "ru": "/ru/feedback"
+      },
+      "renderLocales": []
+    },
+    "feedback-review": {
+      "master": "feedback-review.html",
+      "english": "/feedback-review",
+      "routes": {
+        "ar": "/ar/feedback-review",
+        "fr": "/fr/feedback-review",
+        "es": "/es/feedback-review",
+        "pt": "/pt/feedback-review",
+        "it": "/it/feedback-review",
+        "de": "/de/feedback-review",
+        "pl": "/pl/feedback-review",
+        "ru": "/ru/feedback-review"
+      },
+      "renderLocales": []
     }
   },
   "limitedLaunchLocales": [

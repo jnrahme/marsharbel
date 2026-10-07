@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  {{> analytics}}
+  {{> head-og-locales}}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Your Feedback | Saint Charbel</title>
+  <meta name="description" content="Tell us what would help your prayer and your visit - suggestions, corrections, or a word of encouragement. Every message is read by a person." />
+  <meta name="robots" content="noindex,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://marsharbel.com/feedback" />
+  {{> head-social "website" "Share Your Feedback | Saint Charbel" "Tell us what would help your prayer and your visit - suggestions, corrections, or a word of encouragement. Every message is read by a person." "https://marsharbel.com/feedback" "https://marsharbel.com/saint-charbel.jpg" "Share Your Feedback | Saint Charbel" "Tell us what would help your prayer and your visit - suggestions, corrections, or a word of encouragement. Every message is read by a person." "https://marsharbel.com/saint-charbel.jpg"}}
+  {{> ld-webpage-plain "Share Your Feedback | Saint Charbel" "Tell us what would help your prayer and your visit - suggestions, corrections, or a word of encouragement. Every message is read by a person." "https://marsharbel.com/feedback"}}
+  {{> head-font-preloads}}
+  <link rel="stylesheet" href="styles.css?v=20260923-1" />
+  <!-- hreflang:begin -->
+  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/feedback" />
+  <link rel="alternate" hreflang="en" href="https://marsharbel.com/feedback" />
+  <!-- hreflang:end -->
+</head>
+<body>
+  {{> skip-link}}
+  {{> header-open-1}}{{> primary-nav}}{{> header-close-1}}
+
+  <main id="main-content" class="site-shell" tabindex="-1">
+    <section class="hero">
+      <span class="kicker">Feedback</span>
+      <h1>Tell Us What Would Help</h1>
+      <p>This site exists for your prayer. If something helped you, something is broken, or something is missing - a guide you wished for, a correction we should make, a prayer you could not find - write it here. Every message is read by a person, and the ones that can improve the site become real tasks on our work board.</p>
+    </section>
+
+    <section class="section">
+      <article class="card form-card">
+        <div class="security-note" role="note"><strong>Read by a person.</strong><span>Your message stays private. We may use it to improve the site, but we never publish your words or your name.</span></div>
+        <p id="feedback-availability" class="submit-status warn" role="status" hidden></p>
+        <form id="feedback-form" class="testimony-form">
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <label>What kind of feedback is this?
+            <select name="category">
+              <option value="suggestion">A suggestion - something to add or change</option>
+              <option value="bug">Something is broken or wrong</option>
+              <option value="question">A question about the faith or the site</option>
+              <option value="praise">A word of encouragement</option>
+              <option value="other">Something else</option>
+            </select>
+          </label>
+
+          <label>Your message
+            <textarea name="message" aria-describedby="message-help message-error" required minlength="10" maxlength="2000" rows="7" placeholder="Write it simply, the way you would tell a friend."></textarea>
+          </label>
+          <p id="message-help" class="source-meta">Between 10 and 2,000 characters. Please do not include medical records, passwords, or other sensitive information.</p>
+          <p id="message-error" class="submit-status warn" hidden></p>
+
+          <label>Your name (optional)
+            <input name="display_name" maxlength="80" autocomplete="nickname" />
+            <span class="source-meta">A first name is plenty. Leave it empty to stay anonymous.</span>
+          </label>
+
+          <label>Email (optional - only if you want a reply)
+            <input type="email" name="email" maxlength="254" autocomplete="email" />
+            <span class="source-meta">Used only to answer you. Never shared, never added to a list.</span>
+          </label>
+
+          <input type="hidden" name="page_url" value="" />
+
+          <div class="human-verification"><h2>Human verification</h2><p>Complete the security check, then send your feedback.</p><div id="turnstile-slot"></div></div>
+
+          <div id="submit-readiness" role="status" aria-live="polite" aria-atomic="true"></div>
+          <div class="cta-row">
+            <button id="send-feedback-btn" aria-describedby="submit-readiness" class="btn primary" type="submit" disabled>Send feedback</button>
+          </div>
+        </form>
+        <p id="submit-status" class="submit-status" role="status" aria-live="polite" tabindex="-1"></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="site-shell">Reader feedback, human-reviewed. Author: Please pray for the person who made this website. <a class="testimony-admin-link" href="./feedback-review">Admin</a></div></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4" integrity="sha384-AkNSQdptcXlJ0/NBZc4qGk86cDVXcCevwoWgEKIpHOEfbvlXGLlIkimQtONt8KNf" crossorigin="anonymous"></script>
+  <script src="testimony-config.js?v=20260923-1"></script>
+  <script src="testimony-client.js?v=20260923-1"></script>
+  <script src="feedback.js?v=20261007-1"></script>
+  <script src="global-audio-player.js"></script>
+  <script src="/locale-routes.js"></script>
+  <script src="translate.js?v=20260922-1"></script>
+  <script src="./nav.js?v=20260922-1" defer></script>
+</body>
+</html>
