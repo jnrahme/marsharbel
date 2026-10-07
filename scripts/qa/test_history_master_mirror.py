@@ -30,6 +30,16 @@ class HistoryMirrors(unittest.TestCase):
    schema=next(json.loads(x.string) for x in s.select('script[type="application/ld+json"]') if json.loads(x.string)['@type']=='FAQPage')
    clean=lambda t:t.replace('\u2068','').replace('\u2069','')
    self.assertEqual([(q['name'],q['acceptedAnswer']['text']) for q in schema['mainEntity']],[(clean(h.get_text(' ',strip=True)),clean(p.get_text(' ',strip=True))) for h,p in zip(faq.select('h3'),faq.select('p'))])
+ def test_source_label_and_status_cell_keep_their_own_keys(self):
+  contract=json.loads((ROOT/'locales/en/history-master-bindings.json').read_text())
+  for key,tag in [('history.section.dicastery-for-the-causes-of-saints-entry-for-the','a'),('history.status.documented-in-church-sources-paul-vi-s-1977-homily','td')]:
+   binding=next(b for b in contract['bindings'] if b['key']==key)
+   node=BeautifulSoup((ROOT/'history.html').read_text(),'html.parser').select_one(binding['selector'])
+   self.assertEqual(node.name,tag)
+   self.assertEqual(' '.join(node.get_text().split()),binding['source'])
+  en=json.loads((ROOT/'locales/en/history-master-copy.json').read_text())
+  self.assertTrue(en['history.section.dicastery-for-the-causes-of-saints-entry-for-the'].startswith('Dicastery'))
+  self.assertTrue(en['history.status.documented-in-church-sources-paul-vi-s-1977-homily'].startswith('Documented'))
  def test_missing_and_wrong_type_copy_fail(self):
   c=json.loads((ROOT/'locales/fr/history-master-copy.json').read_text());c.pop(next(iter(c)))
   with self.assertRaisesRegex(ValueError,'missing/extra'):render_page(ROOT,self.r,'fr','history-master','/fr/biographie',c)
