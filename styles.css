@@ -3002,6 +3002,9 @@ html[lang="de"][data-authored-mirror="miracles"] .hero h1{max-width:20ch;overflo
 .history-table{width:100%;border-collapse:collapse;font-size:1rem;line-height:1.5}
 .history-table th,.history-table td{padding:.65rem .8rem;border-bottom:1px solid var(--theme-line);text-align:left;vertical-align:top}
 .history-table th{width:34%;font-weight:600;color:var(--theme-ink)}
+/* German history compounds must wrap within the phone table, not widen it. */
+html[lang="de"][data-authored-mirror="history-master"] .history-table th,
+html[lang="de"][data-authored-mirror="history-master"] .history-table td{hyphens:auto;overflow-wrap:anywhere}
 .history-next{columns:2;column-gap:2rem;padding-left:1.1rem}
 .history-next li{break-inside:avoid;margin:.3rem 0}
 .history-copy h3{margin-top:1.4rem}
