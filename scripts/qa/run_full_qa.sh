@@ -8,6 +8,7 @@ if [[ "${1:-}" == "--ci" ]]; then
 fi
 
 cd "${ROOT}"
+python3 -m unittest discover -s scripts/qa -p 'test_new_page_locales.py'
 
 python3 scripts/qa/test_travel_equivalence.py
 node scripts/tests/travel_equivalence.cjs
