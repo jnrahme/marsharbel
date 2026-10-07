@@ -38,6 +38,15 @@
       "scope": "Independent faith/native-quality review APPROVED the pt prayer-hub, novena and share catalogs (pt-BR with liturgical vós), verifying traditional texts against vatican.va and fatima.pt.",
       "renderedReviewStatus": "approved",
       "renderedReviewSource": "Parent October 6 2026 19:12:29 EDT relays independent preview review at390/1280: share, anchors and switcher verified; recovery carry-over19:14:23 based on exact catalog SHA256 match."
+    },
+    "it": {
+      "status": "approved",
+      "scope": "COPY ONLY: Italian hub160/novena198/share14 key faith and native-quality review, corrected Rosary collect applied exactly. No independent rendered-preview verdict.",
+      "source": "Independent Italian review seat agent-01M49PFNDWG89S96A5MDT8CGW7 v2 verdict Oct6 19:02:14 EDT, required collect relayed by parent19:03:45; original evidence recovered and relayed Oct7 00:23:56 EDT.",
+      "copyReviewStatus": "approved",
+      "renderedReviewStatus": "pending",
+      "finalQAStatus": "pending",
+      "releaseGate": "Merge lane must pass complete CI on exact final PR head and fresh production390/1280 render/switch/share/no-JS, byte and overwrite proof before reporting shipped."
     }
   },
   "catalogHashes": {

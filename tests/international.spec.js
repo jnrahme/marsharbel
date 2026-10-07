@@ -92,7 +92,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
     test(`language selector keeps ${language} reading guide unavailable until published`,async({page}) => {
       // Same-page switching is fail-closed: an unpublished twin is a disabled option, never a navigation.
       await page.goto('/saint-charbel-prayers?lang=en');
-      if(["ar","de","fr","ru","pt"].includes(language)){await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeEnabled();}else await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeDisabled();
+      if(["ar","de","fr","ru","pt","it"].includes(language)){await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeEnabled();}else await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeDisabled();
       await expect(page).toHaveURL(/\/saint-charbel-prayers\?lang=en$/);
     });
   }
@@ -176,35 +176,13 @@ for(const code of languages) test(`${code} homepage offers every shipped homepag
   await expect(page).toHaveURL(new RegExp(registry.locales[next].home+'$'));
   await expect(page.locator('html')).toHaveAttribute('lang',next);
 });
-for (const route of ['/it/novena']) {
-  test(`${route} enhances fallback language links into one compact control`, async ({browser, baseURL}, testInfo) => {
-    const context = await browser.newContext({...testInfo.project.use, baseURL});
-    const page = await context.newPage();
-    try {
-      await page.goto(route);
-      await expect(page.locator('#sc-language-select')).toBeVisible();
-      await expect(page.locator('header nav.locale-nav')).toBeHidden();
-      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-      await page.locator('#sc-language-select').focus();
-      await expect(page.locator('#sc-language-select')).toBeFocused();
-    } finally { await context.close(); }
-    const noScript = await browser.newContext({...testInfo.project.use, baseURL, javaScriptEnabled:false});
-    try {
-      const fallback = await noScript.newPage();
-      await fallback.goto(route);
-      await expect(fallback.locator('header nav.locale-nav')).toBeVisible();
-      await expect(fallback.locator(`header nav.locale-nav a[aria-current="page"]`)).toBeVisible();
-    } finally { await noScript.close(); }
-  });
-}
-
 // Keyed masters use crawlable footer homepage links, not the legacy header menu.
-test('/pt/novena keeps keyed prayer and language fallback readable without JavaScript', async ({browser, baseURL}, testInfo) => {
+for (const [route,code] of [['/pt/novena','pt'],['/it/novena','it'],['/ru/novena','ru']]) test(`${route} keeps keyed prayer and language fallback readable without JavaScript`, async ({browser, baseURL}, testInfo) => {
   const context = await browser.newContext({...testInfo.project.use, baseURL, javaScriptEnabled:false});
   try {
     const page = await context.newPage();
-    await page.goto('/pt/novena');
-    await expect(page.locator('html')).toHaveAttribute('lang','pt');
+    await page.goto(route);
+    await expect(page.locator('html')).toHaveAttribute('lang',code);
     await expect(page.locator('h1')).toBeVisible();
     for (let day=1;day<=9;day++) await expect(page.locator(`#day-${day}`)).toHaveCount(1);
     await page.locator('a[href="#day-9"]').first().click();
@@ -220,7 +198,7 @@ test('/pt/novena keeps keyed prayer and language fallback readable without JavaS
       expect((await link.innerText()).trim()).not.toBe('');
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await page.screenshot({path:testInfo.outputPath('pt-keyed-nojs-footer.png')});
+    await page.screenshot({path:testInfo.outputPath(code+'-keyed-nojs-footer.png')});
     await fallback.locator('a[hreflang="en"]').click();
     await expect(page).toHaveURL(baseURL+registry.locales.en.home);
     await expect(page.locator('html')).toHaveAttribute('lang','en');
