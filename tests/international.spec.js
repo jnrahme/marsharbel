@@ -27,7 +27,7 @@ const topicLanguages = topic => topic ? languages.filter(code => (registry.topic
 // Discovery clusters depend on this page's identity, not merely its topic.
 const clusterFor = (language, topic) => {
   if(topic==='prayers') return language==='en' ? {en:'/en/prayers'} : Object.fromEntries(Object.entries(registry.pageMirrors['saint-charbel-prayers-master'].discoveryRoutes).filter(([k])=>k!=='x-default'));
-  if(topic==='novena') return prayerFor(language,topic) ? Object.fromEntries(Object.entries(registry.pageMirrors['saint-charbel-novena-master'].discoveryRoutes).filter(([k])=>k!=='x-default')) : Object.fromEntries(['en','es','pt','it','pl'].map(c=>[c,routeFor(c,topic)]));
+  if(topic==='novena') return prayerFor(language,topic) ? Object.fromEntries(Object.entries(registry.pageMirrors['saint-charbel-novena-master'].discoveryRoutes).filter(([k])=>k!=='x-default')) : Object.fromEntries(['en','es','pt','it','pl'].filter(c=>!registry.pageMirrors['saint-charbel-novena-master'].renderLocales.includes(c)).map(c=>[c,routeFor(c,topic)]));
   if (travelFor(language, topic)) return {en: registry.topics[topic].relatedEnglish, ...registry.pageMirrors[travelFor(language, topic)].routes};
   if (travelFamily[topic] && language === 'en') return {en: routeFor('en', topic)};
   if (topic === 'biography') return language === 'en' ? {en:'/en/biography'} : {en:'/history',...registry.pageMirrors['history-master'].routes};
@@ -92,7 +92,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
     test(`language selector keeps ${language} reading guide unavailable until published`,async({page}) => {
       // Same-page switching is fail-closed: an unpublished twin is a disabled option, never a navigation.
       await page.goto('/saint-charbel-prayers?lang=en');
-      if(["ar","de","fr","ru"].includes(language)){await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeEnabled();}else await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeDisabled();
+      if(["ar","de","fr","ru","pt"].includes(language)){await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeEnabled();}else await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeDisabled();
       await expect(page).toHaveURL(/\/saint-charbel-prayers\?lang=en$/);
     });
   }
@@ -176,7 +176,7 @@ for(const code of languages) test(`${code} homepage offers every shipped homepag
   await expect(page).toHaveURL(new RegExp(registry.locales[next].home+'$'));
   await expect(page.locator('html')).toHaveAttribute('lang',next);
 });
-for (const route of ['/pt/novena', '/it/novena']) {
+for (const route of ['/it/novena']) {
   test(`${route} enhances fallback language links into one compact control`, async ({browser, baseURL}, testInfo) => {
     const context = await browser.newContext({...testInfo.project.use, baseURL});
     const page = await context.newPage();
@@ -197,6 +197,35 @@ for (const route of ['/pt/novena', '/it/novena']) {
     } finally { await noScript.close(); }
   });
 }
+
+// Keyed masters use crawlable footer homepage links, not the legacy header menu.
+test('/pt/novena keeps keyed prayer and language fallback readable without JavaScript', async ({browser, baseURL}, testInfo) => {
+  const context = await browser.newContext({...testInfo.project.use, baseURL, javaScriptEnabled:false});
+  try {
+    const page = await context.newPage();
+    await page.goto('/pt/novena');
+    await expect(page.locator('html')).toHaveAttribute('lang','pt');
+    await expect(page.locator('h1')).toBeVisible();
+    for (let day=1;day<=9;day++) await expect(page.locator(`#day-${day}`)).toHaveCount(1);
+    await page.locator('a[href="#day-9"]').first().click();
+    await expect(page.locator('#day-9')).toBeInViewport();
+    const fallback = page.locator('nav.footer-locales');
+    await expect(fallback).toHaveCount(1);
+    await fallback.scrollIntoViewIfNeeded();
+    await expect(fallback).toBeVisible();
+    for (const lang of languages) {
+      const link = fallback.locator(`a[hreflang="${lang}"]`);
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute('href',registry.locales[lang].home);
+      expect((await link.innerText()).trim()).not.toBe('');
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await page.screenshot({path:testInfo.outputPath('pt-keyed-nojs-footer.png')});
+    await fallback.locator('a[hreflang="en"]').click();
+    await expect(page).toHaveURL(baseURL+registry.locales.en.home);
+    await expect(page.locator('html')).toHaveAttribute('lang','en');
+  } finally { await context.close(); }
+});
 
 // Smallest supported phone: intrinsic option widths must not push RTL or LTR chrome out.
 for (const route of ['/ar/annaya', '/pt/annaya', '/it/annaya', '/en/annaya', '/']) {
