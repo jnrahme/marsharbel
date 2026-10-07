@@ -78,7 +78,7 @@
         "annaya": "annaya",
         "feastDay": "festa"
       },
-      "ogLocale": "pt_PT",
+      "ogLocale": "pt_BR",
       "selectorAliases": []
     },
     "it": {
@@ -654,13 +654,15 @@
         "ar": "/ar/prayers",
         "de": "/de/gebete",
         "fr": "/fr/prieres",
-        "ru": "/ru/molitvy"
+        "ru": "/ru/molitvy",
+        "pt": "/pt/oracoes"
       },
       "renderLocales": [
         "ar",
         "de",
         "fr",
-        "ru"
+        "ru",
+        "pt"
       ],
       "discoveryRoutes": {
         "en": "/saint-charbel-prayers",
@@ -682,13 +684,15 @@
         "ar": "/ar/novena",
         "de": "/de/novene",
         "fr": "/fr/neuvaine",
-        "ru": "/ru/novena"
+        "ru": "/ru/novena",
+        "pt": "/pt/novena"
       },
       "renderLocales": [
         "ar",
         "de",
         "fr",
-        "ru"
+        "ru",
+        "pt"
       ],
       "discoveryRoutes": {
         "en": "/saint-charbel-novena",
@@ -696,7 +700,8 @@
         "fr": "/fr/neuvaine",
         "de": "/de/novene",
         "ru": "/ru/novena",
-        "x-default": "/saint-charbel-novena"
+        "x-default": "/saint-charbel-novena",
+        "pt": "/pt/novena"
       }
     }
   }

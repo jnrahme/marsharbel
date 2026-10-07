@@ -1,5 +1,5 @@
 const {test,expect}=require('@playwright/test');
-const routes={'/saint-charbel-prayers':'en','/saint-charbel-novena':'en','/ar/prayers':'ar','/ar/novena':'ar','/de/gebete':'de','/de/novene':'de','/fr/prieres':'fr','/fr/neuvaine':'fr','/ru/molitvy':'ru','/ru/novena':'ru'};
+const routes={'/saint-charbel-prayers':'en','/saint-charbel-novena':'en','/ar/prayers':'ar','/ar/novena':'ar','/de/gebete':'de','/de/novene':'de','/fr/prieres':'fr','/fr/neuvaine':'fr','/ru/molitvy':'ru','/ru/novena':'ru','/pt/oracoes':'pt','/pt/novena':'pt'};
 for(const [route,lang]of Object.entries(routes))test(`${route} reviewed share labels render and work`,async({page,baseURL},info)=>{
  await page.route('**/*',r=>new URL(r.request().url()).origin===new URL(baseURL).origin?r.continue():r.fulfill({status:204,body:''}));
  const errors=[];page.on('pageerror',e=>errors.push(e.message));

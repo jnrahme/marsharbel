@@ -48,7 +48,7 @@ class PrayerKeyedMasters(unittest.TestCase):
   retired={ROOT/(route.lstrip('/')+'.html')for route in r['pageMirrors']['saint-charbel-prayers-master']['routes'].values()}
   legacy=render_mirrors(ROOT,r,retired_routes=retired)
   self.assertTrue(retired.isdisjoint(legacy))
-  for file in ('en/prayers.html','es/oraciones.html','pt/oracoes.html','it/preghiere.html','pl/modlitwy.html'):
+  for file in ('en/prayers.html','es/oraciones.html','it/preghiere.html','pl/modlitwy.html'):
    self.assertIn(ROOT/file,legacy)
   import importlib.util
   spec=importlib.util.spec_from_file_location('prayer_builder',ROOT/'scripts/build-international.py')
@@ -59,9 +59,9 @@ class PrayerKeyedMasters(unittest.TestCase):
   def record(registry,catalog,code,template,topic=None):
    calls.append((code,topic));return real(registry,catalog,code,template,topic)
   with patch.object(builder,'render',side_effect=record):builder.outputs(ROOT)
-  for code in ('ar','de','fr','ru'):
+  for code in ('ar','de','fr','ru','pt'):
    for topic in ('prayers','novena'):self.assertNotIn((code,topic),calls)
-  for code in ('es','pt','it','pl'):self.assertIn((code,'novena'),calls)
+  for code in ('es','it','pl'):self.assertIn((code,'novena'),calls)
  def test_empty_slot_is_arabic_day6_only(self):
   r=read_json(ROOT/'locales/registry.json');family='saint-charbel-novena-master';ar=read_json(ROOT/f'locales/ar/{family}-copy.json')
   self.assertEqual(ar['saint-charbel-novena.traditional.day-6.collect.placeholder'],'')

@@ -28,21 +28,22 @@ for(const [route,code]of [['/en/prayers','en'],['/ar/prayers','ar'],['/fr/priere
     await page.goto(route+'?lang=ar');
     const family='saint-charbel-prayers-master';
     const binding=require(`../locales/en/${family}-bindings.json`).bindings.find(b=>b.kind==='text'&&/(^| > )h1(:nth-of-type\(\d+\))?$/.test(b.selector));
-    const heading=['ar','de','fr','ru'].includes(code)?require(`../locales/${code}/${family}-copy.json`)[binding.key]:require(`../locales/${code}/mirrors/prayers.json`)['hero.heading'];
+    const heading=['ar','de','fr','ru','pt'].includes(code)?require(`../locales/${code}/${family}-copy.json`)[binding.key]:require(`../locales/${code}/mirrors/prayers.json`)['hero.heading'];
     await expect(page.locator('h1')).toHaveText(heading);
     await expect(page.locator('html')).toHaveAttribute('lang',code);
     await expect(page.locator('#sc-language-select')).toHaveValue(code);
     const other=code==='fr'?'ar':'fr';
-    if(['ar','fr','de','ru'].includes(code)){
+    if(['ar','fr','de','ru','pt'].includes(code)){
       await expect(page.locator(`#sc-language-select option[value="${other}"]`)).toBeEnabled();
       await page.selectOption('#sc-language-select',other);
       const target=require('../locales/registry.json').pageMirrors['saint-charbel-prayers-master'].routes[other];
       await expect(page).toHaveURL(new RegExp(target+'$'));await expect(page.locator('html')).toHaveAttribute('lang',other);
       await page.goto(route);
       await expect(page.locator('#sc-language-select option[value="ru"]')).toBeEnabled();
-      for(const pending of ['es','pt','it','pl'])await expect(page.locator(`#sc-language-select option[value="${pending}"]`)).toBeDisabled();
+      await expect(page.locator('#sc-language-select option[value="pt"]')).toBeEnabled();
+      for(const pending of ['es','it','pl'])await expect(page.locator(`#sc-language-select option[value="${pending}"]`)).toBeDisabled();
     }else await expect(page.locator(`#sc-language-select option[value="${other}"]`)).toBeDisabled();
-    const pending=['ar','fr','de','ru'].includes(code)?'es':'ru';
+    const pending=['ar','fr','de','ru','pt'].includes(code)?'es':'ru';
     await expect(page.locator(`#sc-language-select option[value="${pending}"]`)).toBeDisabled();
     const before=await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
     expect(await page.evaluate(lang=>SC_LANGUAGE_SWITCH.request(lang),pending)).toBe(false);

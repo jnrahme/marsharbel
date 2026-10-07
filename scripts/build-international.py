@@ -28,7 +28,7 @@ from i18n.travel_components import travel_frame
 def alternate_links(registry, topic=None, master=False):
     languages = topic_locales(registry, topic) if topic else list(registry['locales'])
     if topic=='novena' and not master and 'saint-charbel-novena-master' in registry.get('pageMirrors',{}):
-        remaining=['en','es','pt','it','pl'];cluster={c:page_url(registry,c,topic)for c in remaining};cluster['x-default']=cluster['en']
+        remaining=[c for c in ('en','es','pt','it','pl') if c not in registry['pageMirrors']['saint-charbel-novena-master'].get('renderLocales',[])];cluster={c:page_url(registry,c,topic)for c in remaining};cluster['x-default']=cluster['en']
         return '\n'.join(f'<link rel="alternate" hreflang="{c}" href="{registry["site"]}{path}" />'for c,path in cluster.items())
     if topic == 'biography' and 'history-master' in registry.get('pageMirrors', {}):
         return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{registry["site"]}/en/biography" />' for code in ('en', 'x-default'))

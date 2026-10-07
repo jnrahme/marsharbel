@@ -27,7 +27,7 @@ const topicLanguages = topic => topic ? languages.filter(code => (registry.topic
 // Discovery clusters depend on this page's identity, not merely its topic.
 const clusterFor = (language, topic) => {
   if(topic==='prayers') return language==='en' ? {en:'/en/prayers'} : Object.fromEntries(Object.entries(registry.pageMirrors['saint-charbel-prayers-master'].discoveryRoutes).filter(([k])=>k!=='x-default'));
-  if(topic==='novena') return prayerFor(language,topic) ? Object.fromEntries(Object.entries(registry.pageMirrors['saint-charbel-novena-master'].discoveryRoutes).filter(([k])=>k!=='x-default')) : Object.fromEntries(['en','es','pt','it','pl'].map(c=>[c,routeFor(c,topic)]));
+  if(topic==='novena') return prayerFor(language,topic) ? Object.fromEntries(Object.entries(registry.pageMirrors['saint-charbel-novena-master'].discoveryRoutes).filter(([k])=>k!=='x-default')) : Object.fromEntries(['en','es','pt','it','pl'].filter(c=>!registry.pageMirrors['saint-charbel-novena-master'].renderLocales.includes(c)).map(c=>[c,routeFor(c,topic)]));
   if (travelFor(language, topic)) return {en: registry.topics[topic].relatedEnglish, ...registry.pageMirrors[travelFor(language, topic)].routes};
   if (travelFamily[topic] && language === 'en') return {en: routeFor('en', topic)};
   if (topic === 'biography') return language === 'en' ? {en:'/en/biography'} : {en:'/history',...registry.pageMirrors['history-master'].routes};
@@ -92,7 +92,7 @@ for (const [language, config] of Object.entries(registry.locales)) {
     test(`language selector keeps ${language} reading guide unavailable until published`,async({page}) => {
       // Same-page switching is fail-closed: an unpublished twin is a disabled option, never a navigation.
       await page.goto('/saint-charbel-prayers?lang=en');
-      if(["ar","de","fr","ru"].includes(language)){await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeEnabled();}else await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeDisabled();
+      if(["ar","de","fr","ru","pt"].includes(language)){await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeEnabled();}else await expect(page.locator(`#sc-language-select option[value="${language}"]`)).toBeDisabled();
       await expect(page).toHaveURL(/\/saint-charbel-prayers\?lang=en$/);
     });
   }
