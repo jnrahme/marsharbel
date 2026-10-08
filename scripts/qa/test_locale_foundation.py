@@ -35,6 +35,16 @@ class FoundationTests(unittest.TestCase):
         self.assertNotIn('<loc>https://marsharbel.com/zh-Hans/</loc>', sitemap)
         self.assertNotIn('/zh-Hans/miracles/eucharistic', sitemap)
 
+    def test_missing_runtime_catalog_fails_closed(self):
+        import shutil, tempfile
+        from i18n.catalog import load_catalog as real_load_catalog
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_root = Path(tmp)
+            shutil.copytree(ROOT / 'locales', tmp_root / 'locales')
+            (tmp_root / 'locales/pl/runtime.json').unlink()
+            with self.assertRaisesRegex(ValueError, 'pl: missing runtime catalog'):
+                real_load_catalog(tmp_root)
+
     def test_duplicate_alias_rejected(self):
         self.registry['locales']['de']['selectorAliases'] = ['EN']
         with self.assertRaisesRegex(ValueError, 'Duplicate selector alias'):

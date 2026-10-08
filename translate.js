@@ -32,13 +32,34 @@
     }
   }
 
-  function ensureLegalFooterLinks() {
+  function findOrCreateFooter() {
+    // Reuse an existing footer landmark: the site fragment emits footer.footer,
+    // the international topic template emits <footer class="shell"> after main.
+    // Creating a second footer fails landmark-no-duplicate-contentinfo (#656).
     var footer = document.querySelector('footer.footer');
+    if (!footer) {
+      var mainEl = document.querySelector('main');
+      var sib = mainEl && mainEl.nextElementSibling;
+      if (sib && sib.tagName === 'FOOTER') {
+        footer = sib;
+      }
+    }
+    if (!footer) {
+      var last = document.body.lastElementChild;
+      if (last && last.tagName === 'FOOTER') {
+        footer = last;
+      }
+    }
     if (!footer) {
       footer = document.createElement('footer');
       footer.className = 'footer';
       document.body.appendChild(footer);
     }
+    return footer;
+  }
+
+  function ensureLegalFooterLinks() {
+    var footer = findOrCreateFooter();
 
     var footerShell = footer.querySelector('.site-shell');
     if (!footerShell) {

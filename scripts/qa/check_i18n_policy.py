@@ -10,6 +10,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
+from i18n.runtime_labels import ensure_runtime_labels
 from i18n.build_error_404 import render as render_error_404
 from i18n.metadata import published_locales
 from i18n.catalog import locale_topics, read_json, page_url
@@ -179,7 +180,7 @@ def check(root=ROOT):
         from i18n.travel_components import travel_frame
         from i18n.tour_nav import tour_nav
         lang=path.relative_to(root).parts[0]
-        expected=travel_frame(tour_nav(expected,root,lang),root,lang,'/'+str(path.relative_to(root)).removesuffix('.html'),read_json(root/'locales/registry.json'))
+        expected=ensure_runtime_labels(travel_frame(tour_nav(expected,root,lang),root,lang,'/'+str(path.relative_to(root)).removesuffix('.html'),read_json(root/'locales/registry.json')),root,lang,read_json(root/'locales/registry.json'))
         expected=inject_control(expected,root,read_json(root/'locales/same-page-manifest.pending.json'),read_json(root/'locales/same-page-copy.json'))
         if path.read_text()!=expected: errors.append(str(path.relative_to(root))+': exact output differs from guarded catalog')
     _registry=read_json(root/'locales/registry.json')

@@ -147,6 +147,11 @@ def load_catalog(root=ROOT):
                 raise ValueError(f'Duplicate route: {route}')
             paths.add(route.rstrip('/'))
         catalogs[code] = {name: read_json(root / f'locales/{code}/{name}.json') for name in ('common', 'pages')}
+        if code != default:
+            runtime_path = root / f'locales/{code}/runtime.json'
+            if not runtime_path.exists():
+                raise ValueError(f'{code}: missing runtime catalog locales/{code}/runtime.json (translate.js labels; without it English chrome leaks silently)')
+            catalogs[code]['runtime'] = read_json(runtime_path)
         if set(catalogs[code]['pages']) != set(locale_topics(registry, code)):
             raise ValueError(f'{code}: missing or extra page topics')
         for topic, page in catalogs[code]['pages'].items():

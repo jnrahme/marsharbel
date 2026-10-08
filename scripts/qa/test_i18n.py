@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT/'scripts'))
 from i18n.catalog import load_catalog, locale_topics, read_json, page_url
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
+from i18n.runtime_labels import ensure_runtime_labels
 from i18n.same_page_injection import inject_control
 from i18n.travel_metadata import compose_travel_clusters
 from bs4 import BeautifulSoup
@@ -133,7 +134,10 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('href="/fr/vallee-qadisha"', fr)
         self.assertNotIn('href="/fr/saint-charbel-trail"', fr)
         self.assertIn('"@type": "TouristAttraction"', fr)
-        self.assertEqual(fc(travel_frame(tour_nav(fr,ROOT,'fr'),ROOT,'fr','/fr/vallee-qadisha',read_json(ROOT/'locales/registry.json'))), (ROOT / 'fr/vallee-qadisha.html').read_text())
+        # fc composes after its input, but the generator composes BEFORE runtime labels;
+        # the two orders are byte-visible, so this chain is written explicitly.
+        expected_fr = ensure_runtime_labels(compose_travel_clusters(ROOT,read_json(ROOT/'locales/registry.json'),{ROOT / 'fr/vallee-qadisha.html':travel_frame(tour_nav(fr,ROOT,'fr'),ROOT,'fr','/fr/vallee-qadisha',read_json(ROOT/'locales/registry.json'))})[ROOT / 'fr/vallee-qadisha.html'],ROOT,'fr',read_json(ROOT/'locales/registry.json'))
+        self.assertEqual(inject_control(expected_fr,ROOT,read_json(ROOT/'locales/same-page-manifest.pending.json'),read_json(ROOT/'locales/same-page-copy.json')), (ROOT / 'fr/vallee-qadisha.html').read_text())
         es = pages[ROOT / 'es/valle-qadisha.html']
         self.assertEqual(Shape(es).sections, Shape(en).sections)
         self.assertEqual(Shape(es).images, Shape(en).images)
@@ -145,7 +149,10 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('href="/es/annaya"', es)
         self.assertIn('href="/es/valle-qadisha"', es)
         self.assertNotIn('href="/es/saint-charbel-trail"', es)
-        self.assertEqual(fc(travel_frame(tour_nav(es,ROOT,'es'),ROOT,'es','/es/valle-qadisha',read_json(ROOT/'locales/registry.json'))), (ROOT / 'es/valle-qadisha.html').read_text())
+        # fc composes after its input, but the generator composes BEFORE runtime labels;
+        # the two orders are byte-visible, so this chain is written explicitly.
+        expected_es = ensure_runtime_labels(compose_travel_clusters(ROOT,read_json(ROOT/'locales/registry.json'),{ROOT / 'es/valle-qadisha.html':travel_frame(tour_nav(es,ROOT,'es'),ROOT,'es','/es/valle-qadisha',read_json(ROOT/'locales/registry.json'))})[ROOT / 'es/valle-qadisha.html'],ROOT,'es',read_json(ROOT/'locales/registry.json'))
+        self.assertEqual(inject_control(expected_es,ROOT,read_json(ROOT/'locales/same-page-manifest.pending.json'),read_json(ROOT/'locales/same-page-copy.json')), (ROOT / 'es/valle-qadisha.html').read_text())
 
 
     def test_qadisha_mirror_rejects_missing_keys_and_escapes_text(self):
