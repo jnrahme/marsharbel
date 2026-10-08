@@ -230,7 +230,7 @@ def render_eucharistic(root=ROOT, registry=None):
             for script in soup.select('script[type="application/ld+json"]'):
                 data=json.loads(script.string)
                 data['headline']=catalog['title'] if slug!='index' else local['hub']['title']
-                data['description']=catalog['lead'] if slug!='index' else local['hub']['intro']
+                data['description']=(catalog.get('description') or catalog['lead']) if slug!='index' else local['hub']['intro']
                 data['url']=current;data['inLanguage']=lang
                 crumbs=data['breadcrumb']['itemListElement']
                 crumbs[0]['name']=common['navigation.home'];crumbs[0]['item']=domain+registry['locales'][lang]['home']
