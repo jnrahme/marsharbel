@@ -3,14 +3,14 @@ import json
 import re
 from bs4 import NavigableString, Comment
 from urllib.parse import urljoin,urlsplit
-from i18n.catalog import read_json,page_url,topic_locales
+from i18n.catalog import read_json,page_url,topic_locales,home_url
 from i18n.keyed_master import apply_keyed_master
 from i18n.metadata import og_locales
 from i18n.mirror_structure import check_pair
 
 
 def twin_routes(registry,lang,page_families=True):
-    routes={'/':registry['locales'][lang]['home']}
+    routes={'/':home_url(registry, lang) or '/'}
     for topic,cfg in registry['topics'].items():
         if lang in topic_locales(registry,topic):routes[cfg['relatedEnglish'].rstrip('/')]=page_url(registry,lang,topic)
     for name in ('authoredMirrors','exactMirrors','domMirrors','pageMirrors'):
@@ -51,6 +51,22 @@ def render_page(root,registry,lang,family,route,catalog=None):
     clusters=registry['pageMirrors'][family].get('discoveryRoutes',{'en':master_route,**registry['pageMirrors'][family]['routes'],'x-default':master_route})
     for code,path in clusters.items():soup.head.append(soup.new_tag('link',rel='alternate',hreflang=code,href=registry['site']+path))
     title=soup.title.get_text();description=soup.select_one('meta[name=description]')['content']
+    contract=read_json(root/f'locales/en/{family}-bindings.json')
+    schema_copy={}
+    for binding in contract['bindings']:
+        source=binding['source'];value=copy[binding['key']]
+        if source in schema_copy and schema_copy[source] != value:
+            schema_copy[source]=None
+        elif source not in schema_copy:
+            schema_copy[source]=value
+    def translate_schema(node):
+        if isinstance(node,dict):
+            for key,value in list(node.items()):
+                if key in ('name','headline','description','text') and isinstance(value,str) and schema_copy.get(value) is not None:
+                    node[key]=schema_copy[value]
+                else:translate_schema(value)
+        elif isinstance(node,list):
+            for value in node:translate_schema(value)
     for script in soup.select('script[type="application/ld+json"]'):
         data=json.loads(script.string)
         if data.get('@type')=='FAQPage':
@@ -79,13 +95,14 @@ def render_page(root,registry,lang,family,route,catalog=None):
             if data.get('@type')=='Person':data['name']=copy[prefix+'.header.saint-charbel']
             if 'breadcrumb' in data:
                 items=data['breadcrumb']['itemListElement']
-                items[0].update(name=copy[prefix+'.header.home'],item=registry['site']+registry['locales'][lang]['home'])
+                items[0].update(name=copy[prefix+'.header.home'],item=registry['site']+(home_url(registry, lang) or '/'))
                 items[-1].update(name=soup.h1.get_text(' ',strip=True),item=canonical)
                 # Intermediate navigation label is translated in the same header.
                 for item in items[1:-1]:
                     path=urlsplit(item['item']).path
                     a=soup.select_one('header a[href="'+path+'"]')
                     if a:item['name']=a.get_text(' ',strip=True)
+        translate_schema(data)
         script.string=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
     runtime=read_json(root/f'locales/{lang}/runtime.json');runtime['language.choose']=read_json(root/f'locales/{lang}/common.json')['navigation.chooseLanguage'];runtime['nativeNames']={c:cfg['nativeName'] for c,cfg in registry['locales'].items()}
     node=soup.new_tag('script',type='application/json',id='sc-runtime-labels');node.string=json.dumps(runtime,ensure_ascii=False).replace('<','\\u003c');soup.head.append(node)

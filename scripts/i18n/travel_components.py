@@ -3,7 +3,7 @@ from html import escape
 import re
 import json
 from bs4 import BeautifulSoup
-from i18n.catalog import read_json,page_url,topic_locales
+from i18n.catalog import read_json,page_url,topic_locales,home_url
 
 def route_for(root,registry,english,code):
     if code=='en':return english
@@ -59,7 +59,7 @@ def travel_frame(text,root,code,route,registry):
         s=re.sub(pattern,group,s,flags=re.S)
         return s
     if code!='en':text=re.sub(r'<header\b.*?</header>',header,text,count=1,flags=re.S)
-    standalone=route==registry['locales'][code]['home'] or (code in registry['topics']['annaya'].get('locales',[]) and route==page_url(registry,code,'annaya'))
+    standalone=route==(home_url(registry, code) or '/') or (code in registry['topics']['annaya'].get('locales',[]) and route==page_url(registry,code,'annaya'))
     if route not in travel_routes(root,registry,code) and not standalone:return text
     # Standalone language-home/guide chrome keeps its existing single language control.
     if 'class="locale-nav"' in text:
@@ -94,7 +94,7 @@ def travel_frame(text,root,code,route,registry):
     text=re.sub(r'<!-- i18n-travel-frame:start -->.*?<!-- i18n-travel-frame:end -->\s*','',text,flags=re.S)
     text=re.sub(r'(<main\b[^>]*>)',lambda m:m[1]+'\n'+crumb,text,count=1)
     schema={'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[
-        {'@type':'ListItem','position':1,'name':common['navigation.home'],'item':registry['site']+registry['locales'][code]['home']},
+        {'@type':'ListItem','position':1,'name':common['navigation.home'],'item':registry['site']+(home_url(registry, code) or '/')},
         {'@type':'ListItem','position':2,'name':copy['hubLabel'],'item':registry['site']+hub}]}
     if route!=hub:schema['itemListElement'].append({'@type':'ListItem','position':3,'name':title,'item':registry['site']+route})
     text=re.sub(r'<!-- i18n-travel-schema:start -->.*?<!-- i18n-travel-schema:end -->\s*','',text,flags=re.S)

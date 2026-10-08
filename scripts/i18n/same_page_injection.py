@@ -6,7 +6,7 @@ Reviewed manifest and UI copy must be supplied by the integration gate.
 from bs4 import BeautifulSoup
 from html import escape
 import re,json,subprocess
-from i18n.catalog import read_json
+from i18n.catalog import read_json, published_home_locales, home_url
 
 
 _english_source_cache = {}
@@ -63,8 +63,7 @@ def with_english_sources(root, manifest):
             route=cfg['routes'][code]
             if code!='en':sources.setdefault(route.rstrip('/'),english)
     result['englishSources'] = sources
-    result['publishedHomes'] = {code: cfg['home'] for code,cfg in registry['locales'].items()
-        if code in registry.get('homepageMirrors', {}).get('renderLocales', []) or (root / cfg['home'].strip('/') / 'index.html').exists()}
+    result['publishedHomes'] = {code: home_url(registry, code) for code in published_home_locales(registry)}
     _english_source_cache[key] = result
     return result
 
@@ -96,7 +95,7 @@ def inject_control(text, root, manifest, copy):
     english_guides={registry['site']+'/en/'+slug for slug in registry['locales']['en']['slugs'].values()}
     if canonical and canonical.get('href') in english_guides and not page.select_one('nav.footer-locales'):
         if '</footer>' not in text:raise ValueError('English guide missing semantic footer')
-        links=' '.join('<a href="'+escape(cfg['home'])+'" hreflang="'+code+'" lang="'+code+'" dir="'+cfg['direction']+'">'+escape(cfg['nativeName'])+'</a>' for code,cfg in registry['locales'].items())
+        links=' '.join('<a href="'+escape(cfg['home'])+'" hreflang="'+code+'" lang="'+code+'" dir="'+cfg['direction']+'">'+escape(cfg['nativeName'])+'</a>' for code,cfg in registry['locales'].items() if code in published_home_locales(registry))
         block='<nav class="footer-locales" aria-label="Languages">'+links+'</nav>'
         text=text.replace('</footer>',block+'\n</footer>',1)
     text=place_footer_navigation(text)
@@ -117,8 +116,8 @@ def inject_control(text, root, manifest, copy):
     def static_nav(match):
         nav=BeautifulSoup(match[0],'html.parser').nav
         registry=read_json(root/'locales/registry.json')
-        home=registry['locales'][lang]['home']
-        if href.rstrip('/') == (registry['site']+home).rstrip('/'):
+        home=home_url(registry,lang)
+        if home is not None and href.rstrip('/') == (registry['site']+home).rstrip('/'):
             nav['data-locale-section-navigation']=''
             for helper in nav.select('.sc-language-helper,.sc-unavailable-suffix'):helper.decompose()
             for a in nav.select('a[hreflang]'):
@@ -147,7 +146,7 @@ def inject_control(text, root, manifest, copy):
     # Footer language links are locale-section navigation, never exact-page choices.
     def footer_nav(match):
         nav=BeautifulSoup(match[0],'html.parser').nav
-        homes=read_json(root/'locales/registry.json')['locales']
+        homes={code:registry['locales'][code] for code in published_home_locales(registry)}
         nav.attrs.pop('aria-describedby',None)
         nav.clear()
         for code,cfg in homes.items():

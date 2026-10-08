@@ -46,12 +46,15 @@ def validate_registry(registry):
     order = registry.get('ogLocaleOrder', [])
     if len(order) != len(set(order)) or set(order) != set(registry['locales']):
         raise ValueError('OG locale order must list each registered language once')
+    if len(registry.get('homePublicationLocales', [])) != len(set(registry.get('homePublicationLocales', []))) or not set(registry.get('homePublicationLocales', [])) <= registry['locales'].keys():
+        raise ValueError('Invalid homepage publication membership')
     aliases = {}
     for code, config in registry['locales'].items():
         if not re.fullmatch(r'[a-z]{2,3}(?:-[A-Za-z]{2,4})?', code):
             raise ValueError(f'Invalid locale code: {code}')
         if not re.fullmatch(r'[a-z]{2,3}_[A-Z]{2}', config.get('ogLocale', '')):
             raise ValueError(f'{code}: invalid or missing OG locale')
+        validate_capabilities(registry, code)
         values = config.get('selectorAliases')
         if not isinstance(values, list):
             raise ValueError(f'{code}: selectorAliases must be a list')
@@ -130,7 +133,7 @@ def load_catalog(root=ROOT):
         if config['direction'] not in ('ltr', 'rtl'):
             raise ValueError(f'{code}: invalid text direction')
         expected_home = '/' if code == default else f'/{code}/'
-        if config['home'] != expected_home:
+        if config['capabilities']['home'] and config.get('home') != expected_home:
             raise ValueError(f'{code}: invalid homepage route')
         if set(config['slugs']) != set(locale_topics(registry, code)):
             raise ValueError(f'{code}: missing or extra topic routes')
@@ -171,10 +174,73 @@ def load_catalog(root=ROOT):
 
 def page_url(registry, code, topic=None):
     config = registry['locales'][code]
-    return f'/{code}/{config["slugs"][topic]}' if topic else config['home']
+    if topic is None:
+        return home_url(registry, code)
+    if topic not in locale_topics(registry, code):
+        raise ValueError(f'{code}: unpublished topic {topic}')
+    return f'/{code}/{config["slugs"][topic]}'
 
 
 def public_html_files(root=ROOT):
     registry = read_json(root / 'locales/registry.json')
     return sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'), *root.glob('miracles/*.html'), *root.glob('miracles/eucharistic/*.html'),
                    *(p for code in registry['locales'] for p in root.glob(f'{code}/**/*.html'))])
+
+
+CAPABILITY_FIELDS = {'home', 'topicGuides', 'mirrorTabs', 'runtime', 'selectorCopy'}
+
+def validate_capabilities(registry, code):
+    config = registry['locales'][code]
+    caps = config.get('capabilities')
+    if not isinstance(caps, dict) or set(caps) != CAPABILITY_FIELDS:
+        raise ValueError(f'{code}: missing or unknown capability fields')
+    for field in ('home', 'runtime', 'selectorCopy'):
+        if type(caps[field]) is not bool:
+            raise ValueError(f'{code}: {field} capability must be boolean')
+    for field in ('topicGuides', 'mirrorTabs'):
+        if not isinstance(caps[field], list) or len(caps[field]) != len(set(caps[field])):
+            raise ValueError(f'{code}: invalid {field} capability')
+    if set(caps['topicGuides']) != set(locale_topics(registry, code)):
+        raise ValueError(f'{code}: topic capability differs from publication')
+    if not set(caps['mirrorTabs']) <= {'travel'}:
+        raise ValueError(f'{code}: unknown mirror tab')
+    membership = code in registry.get('homePublicationLocales', [])
+    if caps['home'] != membership or (not caps['home'] and 'home' in config):
+        raise ValueError(f'{code}: homepage capability/publication mismatch')
+    if caps['home'] and config.get('home') != ('/' if code == registry['defaultLocale'] else f'/{code}/'):
+        raise ValueError(f'{code}: missing or invalid published homepage')
+    if 'travel' in caps['mirrorTabs']:
+        expected = {'/travel', '/visit-annaya', '/bekaa-kafra', '/qadisha-valley', '/qannoubine-monastery', '/qozhaya-monastery', '/saint-charbel-hermitage', '/saint-charbel-trail', '/saint-charbel-places-lebanon', '/our-lady-of-lebanon-harissa', '/cedars-of-god-lebanon', '/bkerke-maronite-patriarchate', '/saint-charbel-pilgrimage', '/annaya-tour'}
+        declared = {cfg['english'] for group in ('authoredMirrors', 'pageMirrors', 'exactMirrors') for cfg in registry.get(group, {}).values() if code in cfg.get('routes', {}) and (group != 'pageMirrors' or code in cfg.get('renderLocales', []))}
+        if not expected <= declared:
+            raise ValueError(f'{code}: incomplete Travel tab: {sorted(expected - declared)}')
+    if caps['mirrorTabs'] and not (caps['runtime'] and caps['selectorCopy']):
+        raise ValueError(f'{code}: published mirror requires runtime and selector copy')
+
+
+def published_home_locales(registry, outputs=None, root=ROOT):
+    """Homes require explicit membership and a generator, optionally actual outputs.
+
+    The legacy generator owns every nondefault publication member not handled by
+    home_mirror; English is the source index. Files lying on disk prove nothing.
+    """
+    result = []
+    keyed = registry.get('homepageMirrors', {}).get('renderLocales', [])
+    for code in registry.get('homePublicationLocales', []):
+        config = registry['locales'][code]
+        if not config['capabilities']['home']:
+            raise ValueError(f'{code}: advertised homepage without capability')
+        # Legacy topic-home renderer is selected by explicit publication membership;
+        # keyed home renderer additionally validates its route contract below.
+        if code in keyed and code == registry['defaultLocale']:
+            raise ValueError('English home is owned by the source-index generator')
+        if outputs is not None:
+            path = root / ('index.html' if code == registry['defaultLocale'] else code + '/index.html')
+            if path not in outputs:
+                raise ValueError(f'{code}: published homepage missing from build output')
+        result.append(code)
+    return result
+
+
+def home_url(registry, code):
+    return registry['locales'][code]['home'] if code in published_home_locales(registry) else None

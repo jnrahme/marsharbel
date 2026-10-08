@@ -1,0 +1,962 @@
+{
+  "version": 1,
+  "master": "saint-charbel-hermitage.html",
+  "masterSha256": "78020bf7678737562172b0149fd8b2f6d2d1cedc542e70cf5b353fd0b2b10e3d",
+  "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
+  "bindings": [
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Saint Charbel's Hermitage: 23 Years Above Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "The Hermitage of Saints Peter and Paul above Annaya, where Saint Charbel lived his last 23 years: its history, his daily life there, and visiting today.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.header.skipLink",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.brand.mark",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.siteBrand",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.primaryLabel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "travel.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.fullHistory",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.miraclesAndReports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.eucharisticMiracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.voiceTestimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.childrenBooks",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerLibrary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.findAPrayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForTheSick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForHealing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAnxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForDepression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForStudents",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAddiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForFamily",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForPregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAMiracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.currentPrayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.feastDay",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.rosaryGuide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.rosaryMinibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.mysteryMeditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.becomeLikeHim",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.places",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.places",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.visitingAnnaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.annayaTour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.bekaaKafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.cedars",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.bkerke",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qadishaValley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qannoubineMonastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qozhayaMonastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.placesLebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node53",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "travel.shared.node54",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node55",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node56",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node57",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.heading1",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Saint Charbel's Hermitage: Twenty-Three Years Above Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.images.alt1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The Monastery of Saint Maron in Annaya seen across the valley, with the church and forested mountainside",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "travel.hero.caption1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The Monastery of Saint Maron in Annaya, the monastery below the hermitage where Saint Charbel lived from 1875. Photograph: Paul Saad,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.captionLink1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.caption2",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.hero.captionLink2",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.caption3",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.hero.kicker",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.heading1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Saint Charbel's Hermitage: Twenty-Three Years Above Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.text1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A fifteen-minute climb above the monastery of Annaya stands a cluster of narrow cells around a small chapel - the Hermitage of Saints Peter and Paul, where Saint Charbel lived from 1875 until his death. Here is what the hermitage is, how he lived there, and what you see when you visit.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Plan the Visit",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link2",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "His Full Life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link3",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "The 22nd Tradition",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.quote1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > blockquote:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "\"And rising very early, going out, he went into a desert place: and there he prayed.\"",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.quoteCite1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > cite:nth-of-type(1)",
+      "source": "Mark 1:35 (Douay-Rheims)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.quoteCaption1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Saint Charbel spent twenty-three years in a solitary place of his own above Annaya.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.trailText1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Part of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.trailLink1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.trailText2",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ". Read",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.hero.trailLink2",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "the full story of his life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.trailText3",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "or browse all topics.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section1.heading1",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "A Retreat Older Than the Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.text1a",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The hermitage predates the monastery below it. In 1798 two seekers, Yusuf Abi Ramia and Daoud Moussa Khalifeh, bought the hilltop plot and built a chapel and cells there to withdraw from the world. The chapel was first dedicated to the Transfiguration; in 1814, at the request of Patriarch John Helou, it was rededicated to the Apostles Peter and Paul, and the hermitage passed to the Lebanese Maronite Order. When the present monastery church was finished in 1828, the hermitage became its annex - the place, in the old Maronite monastic pattern, where a monk could go to be alone with God. Before Charbel, four hermits had lived there, the first of them Father Elisha al-Hardini, brother of",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.link1",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Nimatullah al-Hardini",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.text1b",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section2.heading1",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "February 15, 1875: Permission to Withdraw",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section2.text1",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Charbel had spent sixteen years in the monastery below - novice, student, priest, the brother who did the hardest fieldwork - asking all along for the hermit's life. The tradition records that his superiors hesitated until the incident of the lamp: his lamp, found full of water instead of oil, gave light anyway, and they read it as a sign that his request came from God. On February 15, 1875, he climbed the hill for good. He was forty-six.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.heading1",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "How He Lived There",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.text1a",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "For twenty-three years his days barely varied: prayer from midnight until his Mass at nine in the morning, kneeling on the floor; fieldwork on the mountain terraces from April to September; one meal a day; a cell so narrow a tall man could not stretch out, with a mat of goat hair for a bed and a log of wood for a pillow. Snow blocked the paths in winter; he did not come down. The monks who kept vigil the night he died asked one another how a man had lived twenty-three winters like that - and answered themselves: truly, this hermit was a saint. He died at the hermitage on",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.link1",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Christmas Eve, 1898",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.text1b",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", and villagers carried his body down through the snow to the monastery cemetery - the story continues on the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section3.link2",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "tomb page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.text1c",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section4.heading1",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "Visiting the Hermitage Today",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text1a",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The hermitage still stands above the monastery, about a fifteen-minute uphill walk, at roughly 1,400 meters above sea level with views to the sea. Pilgrims visit his cell, the chapel where he prayed, and the objects the hermits left behind - tools blackened by winter fires, the worn holy pictures, the great oak outside. It is part of every Annaya pilgrimage: the full route, drive times, and what to see in what order are on our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.link1",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "pilgrim's guide to Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text1b",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ". The 22nd-of-the-month devotion began with a climb to this hermitage - Nohad El Shami's story is on the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section4.link2",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "22nd of the month",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text1c",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "page. See Annaya first in the",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section4.link3",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "online tour of Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text1d",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "travel.faq.heading1",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question1",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Where is Saint Charbel's hermitage?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text1",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Above the Monastery of Saint Maron at Annaya, in the Jbeil (Byblos) district of North Lebanon - about a fifteen-minute uphill walk from the monastery, at roughly 1,400 meters above sea level.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question2",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "How long did Saint Charbel live in the hermitage?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text2",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Twenty-three years. He received permission and moved up on February 15, 1875, and died there on December 24, 1898.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question3",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "What is the Hermitage of Saints Peter and Paul?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text3",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "A small chapel and cells built in 1798 by two lay hermits, rededicated to Saints Peter and Paul in 1814, and later annexed to the monastery below as its house of withdrawal. Saint Charbel was the fifth hermit to live there.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question4",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "Can you visit Saint Charbel's cell?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text4",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "Yes. The hermitage is open to pilgrims as part of a visit to Annaya: his cell, the chapel, and the simple objects of his life are preserved. See the pilgrim's guide for the full route.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question5",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > h3:nth-of-type(5)",
+      "source": "What was daily life like in the hermitage?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text5",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "Prayer from midnight until Mass at nine, farm work on the mountain terraces, one meal a day, a mat and a wooden log for a bed - for twenty-three years, through snow and summer heat, without complaint, according to the monks who knew him.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.heading1",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link1",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Discover Lebanon: the history of the Annaya monastery and the Hermitage of Saints Peter and Paul - the 1798 foundation, the first hermits, Charbel's twenty-three years",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link2",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Eparchy of St Maron (Canada): Saint Charbel - the lamp account and the permission of February 15, 1875",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link3",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Charbel.org, 'Three Lights From the East': his last night at the hermitage and the vigil-keepers' testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.footer.credit",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Saint Charbel's hermitage. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.siteBrand",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(14)",
+      "source": "Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Saint Charbel's Hermitage: 23 Years Above Annaya",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "The Hermitage of Saints Peter and Paul above Annaya, where Saint Charbel lived his last 23 years: its history, his daily life there, and visiting today.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Saint Charbel's Hermitage: 23 Years Above Annaya",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "The Hermitage of Saints Peter and Paul above Annaya, where Saint Charbel lived his last 23 years: its history, his daily life there, and visiting today.",
+      "kind": "attribute",
+      "attribute": "content"
+    }
+  ],
+  "messages": {
+    "travel.meta.title": "Saint Charbel's Hermitage: 23 Years Above Annaya",
+    "travel.meta.description": "The Hermitage of Saints Peter and Paul above Annaya, where Saint Charbel lived his last 23 years: its history, his daily life there, and visiting today.",
+    "travel.header.skipLink": "Skip to main content",
+    "travel.brand.mark": "✦",
+    "travel.header.siteBrand": "Saint Charbel",
+    "travel.header.primaryLabel": "Primary",
+    "travel.header.home": "Home",
+    "travel.header.legacy": "Legacy",
+    "travel.header.encyclopedia": "Saint Charbel Encyclopedia",
+    "travel.header.fullHistory": "Full History",
+    "travel.header.gallery": "Gallery",
+    "travel.header.miracles": "Miracles",
+    "travel.header.miraclesAndReports": "Miracles & Reports",
+    "travel.header.eucharisticMiracles": "Eucharistic Miracles",
+    "travel.header.letters": "Letters",
+    "travel.header.voiceTestimony": "Voice Testimony",
+    "travel.header.saints": "Saints",
+    "travel.header.childrenBooks": "Children's Books",
+    "travel.header.prayer": "Prayer",
+    "travel.header.prayerLibrary": "Prayer Library",
+    "travel.header.findAPrayer": "Find a Prayer by Intention",
+    "travel.header.prayerForTheSick": "Prayer for the Sick",
+    "travel.header.prayerForHealing": "Prayer for Healing",
+    "travel.header.prayerForAnxiety": "Prayer for Anxiety",
+    "travel.header.prayerForDepression": "Prayer for Depression",
+    "travel.header.prayerForStudents": "Prayer for Students",
+    "travel.header.prayerForAddiction": "Prayer for Addiction",
+    "travel.header.prayerForFamily": "Prayer for Family",
+    "travel.header.prayerForPregnancy": "Prayer for Pregnancy",
+    "travel.header.prayerForAMiracle": "Prayer for a Miracle",
+    "travel.header.currentPrayers": "Saint Charbel Prayers",
+    "travel.header.novena": "Saint Charbel Novena",
+    "travel.header.feastDay": "Feast Day",
+    "travel.header.rosaryGuide": "Rosary Guide",
+    "travel.header.rosaryMinibook": "Rosary Minibook",
+    "travel.header.mysteryMeditation": "Mystery Meditation",
+    "travel.header.becomeLikeHim": "Become Like Him",
+    "travel.header.places": "Travel",
+    "travel.header.visitingAnnaya": "Visiting Annaya",
+    "travel.header.annayaTour": "Annaya Online Tour",
+    "travel.header.bekaaKafra": "Bekaa Kafra",
+    "travel.header.harissa": "Our Lady of Lebanon at Harissa",
+    "travel.header.cedars": "the Cedars of God",
+    "travel.header.bkerke": "Bkerke and the Maronite Patriarchate",
+    "travel.header.qadishaValley": "Qadisha Valley",
+    "travel.header.qannoubineMonastery": "Qannoubine Monastery",
+    "travel.header.qozhayaMonastery": "Qozhaya Monastery",
+    "travel.header.placesLebanon": "Saint Charbel's Lebanon",
+    "travel.header.hermitage": "The Hermitage",
+    "travel.header.trail": "Saint Charbel Trail",
+    "travel.header.news": "News",
+    "travel.shared.node53": "In this guide",
+    "travel.shared.node54": "Home",
+    "travel.shared.node55": "/",
+    "travel.shared.node56": "Travel",
+    "travel.shared.node57": "/",
+    "travel.hero.heading1": "Saint Charbel's Hermitage: Twenty-Three Years Above Annaya",
+    "travel.images.alt1": "The Monastery of Saint Maron in Annaya seen across the valley, with the church and forested mountainside",
+    "travel.hero.caption1": "The Monastery of Saint Maron in Annaya, the monastery below the hermitage where Saint Charbel lived from 1875. Photograph: Paul Saad,",
+    "travel.hero.captionLink1": "via Wikimedia Commons",
+    "travel.hero.caption2": ",",
+    "travel.hero.captionLink2": "CC BY-SA 4.0",
+    "travel.hero.caption3": ".",
+    "travel.hero.kicker": "The Hermitage",
+    "travel.hero.text1": "A fifteen-minute climb above the monastery of Annaya stands a cluster of narrow cells around a small chapel - the Hermitage of Saints Peter and Paul, where Saint Charbel lived from 1875 until his death. Here is what the hermitage is, how he lived there, and what you see when you visit.",
+    "travel.hero.link1": "Plan the Visit",
+    "travel.hero.link2": "His Full Life",
+    "travel.hero.link3": "The 22nd Tradition",
+    "travel.hero.quote1": "\"And rising very early, going out, he went into a desert place: and there he prayed.\"",
+    "travel.hero.quoteCite1": "Mark 1:35 (Douay-Rheims)",
+    "travel.hero.quoteCaption1": "Saint Charbel spent twenty-three years in a solitary place of his own above Annaya.",
+    "travel.hero.trailText1": "Part of the",
+    "travel.hero.trailLink1": "Saint Charbel Encyclopedia",
+    "travel.hero.trailText2": ". Read",
+    "travel.hero.trailLink2": "the full story of his life",
+    "travel.hero.trailText3": "or browse all topics.",
+    "travel.section1.heading1": "A Retreat Older Than the Monastery",
+    "travel.section1.text1a": "The hermitage predates the monastery below it. In 1798 two seekers, Yusuf Abi Ramia and Daoud Moussa Khalifeh, bought the hilltop plot and built a chapel and cells there to withdraw from the world. The chapel was first dedicated to the Transfiguration; in 1814, at the request of Patriarch John Helou, it was rededicated to the Apostles Peter and Paul, and the hermitage passed to the Lebanese Maronite Order. When the present monastery church was finished in 1828, the hermitage became its annex - the place, in the old Maronite monastic pattern, where a monk could go to be alone with God. Before Charbel, four hermits had lived there, the first of them Father Elisha al-Hardini, brother of",
+    "travel.section1.link1": "Saint Nimatullah al-Hardini",
+    "travel.section1.text1b": ".",
+    "travel.section2.heading1": "February 15, 1875: Permission to Withdraw",
+    "travel.section2.text1": "Charbel had spent sixteen years in the monastery below - novice, student, priest, the brother who did the hardest fieldwork - asking all along for the hermit's life. The tradition records that his superiors hesitated until the incident of the lamp: his lamp, found full of water instead of oil, gave light anyway, and they read it as a sign that his request came from God. On February 15, 1875, he climbed the hill for good. He was forty-six.",
+    "travel.section3.heading1": "How He Lived There",
+    "travel.section3.text1a": "For twenty-three years his days barely varied: prayer from midnight until his Mass at nine in the morning, kneeling on the floor; fieldwork on the mountain terraces from April to September; one meal a day; a cell so narrow a tall man could not stretch out, with a mat of goat hair for a bed and a log of wood for a pillow. Snow blocked the paths in winter; he did not come down. The monks who kept vigil the night he died asked one another how a man had lived twenty-three winters like that - and answered themselves: truly, this hermit was a saint. He died at the hermitage on",
+    "travel.section3.link1": "Christmas Eve, 1898",
+    "travel.section3.text1b": ", and villagers carried his body down through the snow to the monastery cemetery - the story continues on the",
+    "travel.section3.link2": "tomb page",
+    "travel.section3.text1c": ".",
+    "travel.section4.heading1": "Visiting the Hermitage Today",
+    "travel.section4.text1a": "The hermitage still stands above the monastery, about a fifteen-minute uphill walk, at roughly 1,400 meters above sea level with views to the sea. Pilgrims visit his cell, the chapel where he prayed, and the objects the hermits left behind - tools blackened by winter fires, the worn holy pictures, the great oak outside. It is part of every Annaya pilgrimage: the full route, drive times, and what to see in what order are on our",
+    "travel.section4.link1": "pilgrim's guide to Annaya",
+    "travel.section4.text1b": ". The 22nd-of-the-month devotion began with a climb to this hermitage - Nohad El Shami's story is on the",
+    "travel.section4.link2": "22nd of the month",
+    "travel.section4.text1c": "page. See Annaya first in the",
+    "travel.section4.link3": "online tour of Annaya",
+    "travel.section4.text1d": ".",
+    "travel.faq.heading1": "Frequently Asked Questions",
+    "travel.faq.question1": "Where is Saint Charbel's hermitage?",
+    "travel.faq.text1": "Above the Monastery of Saint Maron at Annaya, in the Jbeil (Byblos) district of North Lebanon - about a fifteen-minute uphill walk from the monastery, at roughly 1,400 meters above sea level.",
+    "travel.faq.question2": "How long did Saint Charbel live in the hermitage?",
+    "travel.faq.text2": "Twenty-three years. He received permission and moved up on February 15, 1875, and died there on December 24, 1898.",
+    "travel.faq.question3": "What is the Hermitage of Saints Peter and Paul?",
+    "travel.faq.text3": "A small chapel and cells built in 1798 by two lay hermits, rededicated to Saints Peter and Paul in 1814, and later annexed to the monastery below as its house of withdrawal. Saint Charbel was the fifth hermit to live there.",
+    "travel.faq.question4": "Can you visit Saint Charbel's cell?",
+    "travel.faq.text4": "Yes. The hermitage is open to pilgrims as part of a visit to Annaya: his cell, the chapel, and the simple objects of his life are preserved. See the pilgrim's guide for the full route.",
+    "travel.faq.question5": "What was daily life like in the hermitage?",
+    "travel.faq.text5": "Prayer from midnight until Mass at nine, farm work on the mountain terraces, one meal a day, a mat and a wooden log for a bed - for twenty-three years, through snow and summer heat, without complaint, according to the monks who knew him.",
+    "travel.sources.heading1": "Sources",
+    "travel.sources.link1": "Discover Lebanon: the history of the Annaya monastery and the Hermitage of Saints Peter and Paul - the 1798 foundation, the first hermits, Charbel's twenty-three years",
+    "travel.sources.link2": "Eparchy of St Maron (Canada): Saint Charbel - the lamp account and the permission of February 15, 1875",
+    "travel.sources.link3": "Charbel.org, 'Three Lights From the East': his last night at the hermitage and the vigil-keepers' testimony",
+    "travel.footer.credit": "Saint Charbel's hermitage. Author: Please pray for the person who made this website."
+  }
+}

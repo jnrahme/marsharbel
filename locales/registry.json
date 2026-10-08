@@ -15,7 +15,20 @@
         "annaya": "annaya"
       },
       "ogLocale": "en_US",
-      "selectorAliases": []
+      "selectorAliases": [],
+      "capabilities": {
+        "home": true,
+        "topicGuides": [
+          "biography",
+          "prayers",
+          "novena",
+          "rosary",
+          "annaya"
+        ],
+        "mirrorTabs": [],
+        "runtime": true,
+        "selectorCopy": true
+      }
     },
     "ar": {
       "nativeName": "العربية",
@@ -35,7 +48,26 @@
         "raymondStory": "miracles/raymond-nader"
       },
       "ogLocale": "ar_AR",
-      "selectorAliases": []
+      "selectorAliases": [],
+      "capabilities": {
+        "home": true,
+        "topicGuides": [
+          "biography",
+          "prayers",
+          "novena",
+          "rosary",
+          "annaya",
+          "feastDay",
+          "twentySecond",
+          "miracles",
+          "nohadStory",
+          "dafneStory",
+          "raymondStory"
+        ],
+        "mirrorTabs": [],
+        "runtime": true,
+        "selectorCopy": true
+      }
     },
     "fr": {
       "nativeName": "Français",
@@ -49,7 +81,20 @@
         "annaya": "annaya"
       },
       "ogLocale": "fr_FR",
-      "selectorAliases": []
+      "selectorAliases": [],
+      "capabilities": {
+        "home": true,
+        "topicGuides": [
+          "biography",
+          "prayers",
+          "novena",
+          "rosary",
+          "annaya"
+        ],
+        "mirrorTabs": [],
+        "runtime": true,
+        "selectorCopy": true
+      }
     },
     "es": {
       "nativeName": "Español",
@@ -64,7 +109,21 @@
         "feastDay": "fiesta"
       },
       "ogLocale": "es_ES",
-      "selectorAliases": []
+      "selectorAliases": [],
+      "capabilities": {
+        "home": true,
+        "topicGuides": [
+          "biography",
+          "prayers",
+          "novena",
+          "rosary",
+          "annaya",
+          "feastDay"
+        ],
+        "mirrorTabs": [],
+        "runtime": true,
+        "selectorCopy": true
+      }
     },
     "pt": {
       "nativeName": "Português",
@@ -79,7 +138,21 @@
         "feastDay": "festa"
       },
       "ogLocale": "pt_BR",
-      "selectorAliases": []
+      "selectorAliases": [],
+      "capabilities": {
+        "home": true,
+        "topicGuides": [
+          "biography",
+          "prayers",
+          "novena",
+          "rosary",
+          "annaya",
+          "feastDay"
+        ],
+        "mirrorTabs": [],
+        "runtime": true,
+        "selectorCopy": true
+      }
     },
     "it": {
       "nativeName": "Italiano",
@@ -93,7 +166,20 @@
         "annaya": "annaya"
       },
       "ogLocale": "it_IT",
-      "selectorAliases": []
+      "selectorAliases": [],
+      "capabilities": {
+        "home": true,
+        "topicGuides": [
+          "biography",
+          "prayers",
+          "novena",
+          "rosary",
+          "annaya"
+        ],
+        "mirrorTabs": [],
+        "runtime": true,
+        "selectorCopy": true
+      }
     },
     "de": {
       "nativeName": "Deutsch",
@@ -107,7 +193,20 @@
         "annaya": "annaya"
       },
       "ogLocale": "de_DE",
-      "selectorAliases": []
+      "selectorAliases": [],
+      "capabilities": {
+        "home": true,
+        "topicGuides": [
+          "biography",
+          "prayers",
+          "novena",
+          "rosary",
+          "annaya"
+        ],
+        "mirrorTabs": [],
+        "runtime": true,
+        "selectorCopy": true
+      }
     },
     "pl": {
       "nativeName": "Polski",
@@ -121,7 +220,20 @@
         "annaya": "annaya"
       },
       "ogLocale": "pl_PL",
-      "selectorAliases": []
+      "selectorAliases": [],
+      "capabilities": {
+        "home": true,
+        "topicGuides": [
+          "biography",
+          "prayers",
+          "novena",
+          "rosary",
+          "annaya"
+        ],
+        "mirrorTabs": [],
+        "runtime": true,
+        "selectorCopy": true
+      }
     },
     "ru": {
       "nativeName": "Русский",
@@ -131,7 +243,16 @@
         "biography": "biography"
       },
       "ogLocale": "ru_RU",
-      "selectorAliases": []
+      "selectorAliases": [],
+      "capabilities": {
+        "home": true,
+        "topicGuides": [
+          "biography"
+        ],
+        "mirrorTabs": [],
+        "runtime": true,
+        "selectorCopy": true
+      }
     },
     "hi": {
       "nativeName": "हिन्दी",
@@ -139,7 +260,14 @@
       "home": "/hi/",
       "slugs": {},
       "ogLocale": "hi_IN",
-      "selectorAliases": []
+      "selectorAliases": [],
+      "capabilities": {
+        "home": true,
+        "topicGuides": [],
+        "mirrorTabs": [],
+        "runtime": true,
+        "selectorCopy": true
+      }
     },
     "th": {
       "nativeName": "ไทย",
@@ -147,7 +275,14 @@
       "home": "/th/",
       "slugs": {},
       "ogLocale": "th_TH",
-      "selectorAliases": []
+      "selectorAliases": [],
+      "capabilities": {
+        "home": true,
+        "topicGuides": [],
+        "mirrorTabs": [],
+        "runtime": true,
+        "selectorCopy": true
+      }
     }
   },
   "authoredMirrors": {
@@ -745,6 +880,19 @@
     }
   },
   "limitedLaunchLocales": [
+    "hi",
+    "th"
+  ],
+  "homePublicationLocales": [
+    "en",
+    "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl",
+    "ru",
     "hi",
     "th"
   ]
