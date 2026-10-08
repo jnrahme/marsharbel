@@ -14,6 +14,7 @@ python3 scripts/qa/probe_partial_build.py
 python3 -m unittest discover -s scripts/qa -p test_travel_metadata.py
 python3 scripts/qa/test_travel_release.py
 
+npx playwright test tests/element-collision.spec.js --project=laptop --workers=2
 python3 scripts/qa/test_travel_equivalence.py
 node scripts/tests/travel_equivalence.cjs
 node scripts/tests/travel_release_proof.cjs

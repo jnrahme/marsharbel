@@ -17,3 +17,18 @@ nav.locale-nav a[aria-disabled="true"]{display:inline-block;max-width:100%;white
 
 /* A ready select replaces the expanded fallback nav, never before JS succeeds. */
 header nav.locale-nav[hidden]{display:none}
+/* Language and install controls retain usable targets as text grows or shrinks. */
+#sc-language-switcher{min-inline-size:0;max-inline-size:100%;block-size:auto}
+#sc-language-select,#sc-install-app-btn{min-block-size:44px;min-inline-size:44px;block-size:auto;box-sizing:border-box}
+#sc-install-app-btn{max-inline-size:100%;white-space:normal;overflow-wrap:anywhere;text-align:center;padding-block:.4rem;padding-inline:.7rem}
+/* Compact controls stay within the shared grid under long labels and text zoom. */
+.topbar:has(#sc-language-switcher) .nav{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"brand brand" "install lang" "links links";gap:.5rem}
+.topbar:has(#sc-language-switcher) .brand{justify-self:start;white-space:normal;overflow-wrap:normal;min-inline-size:0}
+.topbar:has(#sc-language-switcher) #sc-install-app-btn{justify-self:start;inline-size:auto}
+.topbar:has(#sc-language-switcher) #sc-language-switcher{justify-self:end;inline-size:auto}
+#sc-language-switcher select{max-inline-size:100%;min-inline-size:44px}
+@media(max-width:640px){
+ .topbar:has(#sc-language-switcher) .nav{grid-template-columns:minmax(0,1fr);grid-template-areas:"brand" "install" "lang" "links"}
+ .topbar:has(#sc-language-switcher) #sc-install-app-btn,.topbar:has(#sc-language-switcher) #sc-language-switcher{justify-self:start;max-inline-size:100%}
+ #sc-install-app-btn{border-radius:1.4rem}
+}

@@ -113,3 +113,6 @@
 .travel-page .scripture-quote p.scripture-note{color:var(--travel-muted)}
 /* English-only destination disclosure uses the dark menu's light text token. */
 .travel-page .topbar .links .nav-sub .enc-language{color:#f3ede3}
+/* Destination names remain readable when visitors enlarge their text. */
+.travel-destination-list>div,.travel-place{min-inline-size:0;max-inline-size:100%}
+.travel-place h3{overflow-wrap:anywhere}
