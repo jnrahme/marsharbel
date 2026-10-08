@@ -78,14 +78,6 @@ def render_home(root, registry, lang, catalog=None):
         node.string = json.dumps(data, ensure_ascii=False).replace('<', '\\u003c')
         soup.head.append(node)
     rendered = str(soup)
-    # Match the existing Travel frame serializer's canonical indentation so
-    # reprocessing a generated home is byte-idempotent, not just DOM-equal.
-    travel = registry.get('authoredMirrors', {}).get('travel', {}).get('routes', {}).get(lang)
-    if not travel:
-        travel = next((cfg['routes'][lang] for cfg in registry.get('pageMirrors', {}).values() if cfg['english'] == '/travel' and lang in cfg.get('renderLocales', [])), None)
-    if travel:
-        rendered = re.sub(r'(?m)^([ \t]*)(<a href="' + re.escape(travel) + r'">[^<]*</a>)$',
-                          lambda match: '        ' + match[2], rendered)
     mismatches = check_pair(raw.decode('utf-8'), rendered, '/', route)
     if mismatches:
         raise ValueError(f'Home {lang}: mirror structure diverged: {mismatches}')
@@ -93,7 +85,18 @@ def render_home(root, registry, lang, catalog=None):
         from i18n.prayer_runtime import share_head
         rendered=share_head(rendered,root,lang)
     from i18n.launch_availability import apply_launch_availability
-    return apply_launch_availability(rendered, root, registry, lang, home=True)
+    rendered = apply_launch_availability(rendered, root, registry, lang, home=True)
+    # Match the existing Travel frame serializer's canonical indentation so
+    # reprocessing a generated home is byte-idempotent, not just DOM-equal.
+    # This runs last: launch-availability re-serializes through BeautifulSoup,
+    # which normalizes the indentation back out of the header.
+    travel = registry.get('authoredMirrors', {}).get('travel', {}).get('routes', {}).get(lang)
+    if not travel:
+        travel = next((cfg['routes'][lang] for cfg in registry.get('pageMirrors', {}).values() if cfg['english'] == '/travel' and lang in cfg.get('renderLocales', [])), None)
+    if travel:
+        rendered = re.sub(r'(?m)^([ \t]*)(<a href="' + re.escape(travel) + r'">[^<]*</a>)$',
+                          lambda match: '        ' + match[2], rendered)
+    return rendered
 
 
 def render_home_set(root, registry):

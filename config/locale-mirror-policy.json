@@ -2025,6 +2025,17 @@
         "launch-availability-annotations"
       ]
     },
+    "hi/travel.html": {
+      "locale": "hi",
+      "route": "/hi/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations"
+      ]
+    },
     "th/index.html": {
       "locale": "th",
       "route": "/th/",
