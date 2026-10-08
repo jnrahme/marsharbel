@@ -114,3 +114,13 @@
 .media-hub .track-group-sub { font-size: .85rem; color: var(--theme-ink-soft); }
 .media-hub .track-group-sub a { overflow-wrap: anywhere; }
 .media-hub .track-tag + .track-tag { margin-inline-start: .25rem; }
+
+/* Music FAQ (visible mirror of the FAQ JSON-LD) */
+.music-faq{margin-top:2.5rem;max-width:46rem}
+.music-faq-item{border-bottom:1px solid rgba(255,255,255,.14)}
+.music-faq-item summary{cursor:pointer;padding:.9rem 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:1rem;min-height:44px;align-items:center}
+.music-faq-item summary::-webkit-details-marker{display:none}
+.music-faq-item summary::after{content:"+";font-size:1.3rem;opacity:.7;transition:transform .2s ease}
+.music-faq-item[open] summary::after{transform:rotate(45deg)}
+.music-faq-item p{margin:0 0 1rem;opacity:.85;line-height:1.6}
+@media (prefers-reduced-motion:reduce){.music-faq-item summary::after{transition:none}}
