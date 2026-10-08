@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 from i18n.reviewed_history import digest
 from i18n.travel_metadata import travel_clusters
 
+RELEASE_LOCALES = ('en', 'de', 'zh-Hans', 'ru', 'pl')
+
 CHECKS=('keyedTextComplete','mediaParity','linkParity','schemaParity','anchorParity','interactionParity')
 def nonempty(value):return isinstance(value,str) and bool(value.strip())
 def git_blob(root,revision,file):
@@ -14,7 +16,7 @@ def git_blob(root,revision,file):
 def catalog_paths(root,registry,source,code):
     family=next((name for name,cfg in registry['pageMirrors'].items() if cfg['english']==source and code in cfg.get('renderLocales',[])),None)
     if code=='en':
-        families=[name for name,cfg in registry['pageMirrors'].items() if cfg['english']==source and any(c in cfg.get('renderLocales',[]) for c in ('de','zh-Hans'))]
+        families=[name for name,cfg in registry['pageMirrors'].items() if cfg['english']==source and any(c in cfg.get('renderLocales',[]) for c in RELEASE_LOCALES[1:])]
         return {p for name in families for p in ('locales/en/'+name+'-bindings.json','locales/en/'+name+'-copy.json')}
     if family is None:raise ValueError('Travel release registered family missing')
     paths={'locales/en/'+family+'-bindings.json','locales/'+code+'/'+family+'-copy.json'}
@@ -47,7 +49,7 @@ def release_manifest(root,texts,manifest):
     for source,group in record['groups'].items():
         if not re.fullmatch(r'[a-f0-9]{40}',group.get('sourceRevision','')):raise ValueError('Travel release source revision invalid')
         if digest(git_blob(root,group['sourceRevision'],source.strip('/')+'.html').decode())!=group['variants']['en']['bodySha256']:raise ValueError('Travel release revision source mismatch')
-        if set(group['variants'])!={'en','de','zh-Hans'}:raise ValueError('Travel release exact locales required')
+        if set(group['variants'])!=set(RELEASE_LOCALES):raise ValueError('Travel release exact locales required')
         for code,v in group['variants'].items():
             if v['path']!=clusters[source][code] or v['file']!=v['path'].lstrip('/')+'.html':raise ValueError('Travel release route mismatch')
             file=root/v['file'];text=texts[file] if file in texts else file.read_text()
@@ -62,12 +64,12 @@ def release_manifest(root,texts,manifest):
             if not isinstance(v.get('checks'),dict) or set(v['checks'])!=set(CHECKS) or not all(v['checks'][k] is True for k in CHECKS):raise ValueError('Travel release equivalence incomplete')
             if not all(nonempty(v.get(k)) for k in ('editorialReview','renderedReview','nativeFollowUp')):raise ValueError('Travel release evidence missing')
         # Preserve already-reviewed other languages in established families.
-        candidates=[p for p in out['pages'].values() if p.get('sourcePath')==source.lstrip('/')+'.html' and any(code not in ('en','de','zh-Hans') and v.get('status')=='verified' for code,v in p.get('variants',{}).items())]
+        candidates=[p for p in out['pages'].values() if p.get('sourcePath')==source.lstrip('/')+'.html' and any(code not in RELEASE_LOCALES and v.get('status')=='verified' for code,v in p.get('variants',{}).items())]
         if any(p['sourceSha256']!=group['variants']['en']['bodySha256'] for p in candidates):raise ValueError('Travel release reviewed other-locale source drift')
         if len(candidates)>1:raise ValueError('Travel release ambiguous reviewed family')
         existing=candidates[0] if candidates else None
         page=json.loads(json.dumps(existing)) if existing else {'sourcePath':source.lstrip('/')+'.html','sourceRevision':group['sourceRevision'],'sourceSha256':group['variants']['en']['bodySha256'],'anchorIDs':{},'variants':{}}
-        if existing:page['variants']={code:v for code,v in page['variants'].items() if code in ('en','de','zh-Hans') or v.get('status')=='verified'}
+        if existing:page['variants']={code:v for code,v in page['variants'].items() if code in RELEASE_LOCALES or v.get('status')=='verified'}
         if page['sourceSha256']!=group['variants']['en']['bodySha256']:raise ValueError('Travel release source drift')
         paths={v['path'] for v in group['variants'].values()}
         for key in list(out['pages']):
