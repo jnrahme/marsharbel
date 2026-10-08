@@ -109,3 +109,8 @@
   .media-hub .track { transition: none; }
 }
 .media-hub .now-playing .song-disc span { width: 8rem; margin-inline: auto; }
+.media-hub .track-group { display: grid; gap: .15rem; padding: .9rem .25rem .25rem; }
+.media-hub .track-group-title { font-weight: 700; letter-spacing: .02em; }
+.media-hub .track-group-sub { font-size: .85rem; color: var(--theme-ink-soft); }
+.media-hub .track-group-sub a { overflow-wrap: anywhere; }
+.media-hub .track-tag + .track-tag { margin-inline-start: .25rem; }
