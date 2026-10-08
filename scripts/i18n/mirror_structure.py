@@ -49,7 +49,17 @@ def _strip_launch_annotations(soup):
 
 
 def _strip_partial_home_disclosure(soup):
-    for hint in soup.select('a[href="/"][hreflang="en"] > span.partial-home-language'):
+    for hint in soup.select('span.partial-home-language'):
+        from bs4 import NavigableString
+        anchor=hint.parent
+        if anchor.name != 'a' or anchor.get('href') != '/' or anchor.get('hreflang') != 'en':
+            raise ValueError('Unexpected partial Home disclosure target')
+        if len(anchor.select(':scope > span.partial-home-language')) != 1 or len(hint.contents) != 1 or not isinstance(hint.contents[0], NavigableString):
+            raise ValueError('Partial Home disclosure must be one text-only qualifier')
+        qualifier=str(hint.contents[0]).strip()
+        label=anchor.get_text(' ',strip=True)
+        if not qualifier or anchor.get('aria-label') != label:
+            raise ValueError('Partial Home qualifier/accessible label mismatch')
         hint.decompose()
     return soup
 

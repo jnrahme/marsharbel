@@ -71,6 +71,12 @@ class PartialLocaleTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Traditional Chinese'):
             validate_registry(self.registry)
 
+    def test_disclosure_cannot_hide_hostile_subtree(self):
+        from i18n.mirror_structure import signature
+        hostile='<header><a href="/" hreflang="en" aria-label="Home English"><span class="partial-home-language"><button>English</button></span></a></header><main></main>'
+        with self.assertRaisesRegex(ValueError, 'text-only'):
+            signature(hostile,'/zz/travel',('partial-home-disclosure',))
+
     def test_existing_homes_unchanged(self):
         for c in self.registry['homePublicationLocales']:
             self.assertEqual(home_url(self.registry, c), '/' if c == 'en' else f'/{c}/')

@@ -27,13 +27,17 @@ spec=importlib.util.spec_from_file_location('partial_fixture_builder',T/'scripts
 try:
  original=read_json(T/'locales/registry.json')
  # Strict malformed/collision/catalog probes before expensive full rendering.
- for label,mutate in [('collision',lambda x:x['pageMirrors']['test-annaya-tour']['routes'].update(zz='/zz/travel')),('home',lambda x:x['locales']['zz'].update(home='/zz/')),('zh-tw',lambda x:x['locales']['zz'].update(selectorAliases=['zh-TW']))]:
+ for label,mutate in [('nontravel-collision',lambda x:x['pageMirrors'].update(extra={'english':'/history','master':'history.html','routes':{'zz':'/zz/travel'},'renderLocales':['zz']})),('empty-capability',lambda x:x['locales']['zz']['capabilities'].update(mirrorTabs=[])),('collision',lambda x:x['pageMirrors']['test-annaya-tour']['routes'].update(zz='/zz/travel')),('home',lambda x:x['locales']['zz'].update(home='/zz/')),('zh-tw',lambda x:x['locales']['zz'].update(selectorAliases=['zh-TW']))]:
   if label=='zh-tw':continue  # Direct zh-Hans guard covered in unit fixture.
   import copy as cpmod
   bad=cpmod.deepcopy(original);mutate(bad);(T/'locales/registry.json').write_text(json.dumps(bad))
   try:load_catalog(T);raise AssertionError('accepted '+label)
   except ValueError:pass
  (T/'locales/registry.json').write_text(json.dumps(original))
+ selectors=read_json(T/'locales/same-page-copy.json');badnames=json.loads(json.dumps(selectors));badnames['fr']['names'].pop('zz');(T/'locales/same-page-copy.json').write_text(json.dumps(badnames))
+ try:load_catalog(T);raise AssertionError('accepted incomplete French names')
+ except ValueError:pass
+ (T/'locales/same-page-copy.json').write_text(json.dumps(selectors))
  for filename,key in [('runtime.json','install.label'),('common.json','navigation.home')]:
   file=T/'locales/zz'/filename;data=read_json(file);old=dict(data);data.pop(key);file.write_text(json.dumps(data))
   try:load_catalog(T);raise AssertionError('accepted missing '+key)

@@ -267,11 +267,21 @@ def validate_mirror_capabilities(root, registry):
                 if group == 'pageMirrors' and code not in family.get('renderLocales', []):
                     continue
                 key = route.rstrip('/')
-                if key in used and registry['locales'][code]['capabilities']['mirrorTabs'] and family.get('english') in {'/travel','/visit-annaya','/bekaa-kafra','/qadisha-valley','/qannoubine-monastery','/qozhaya-monastery','/saint-charbel-hermitage','/saint-charbel-trail','/saint-charbel-places-lebanon','/our-lady-of-lebanon-harissa','/cedars-of-god-lebanon','/bkerke-maronite-patriarchate','/saint-charbel-pilgrimage','/annaya-tour'}:
+                if key in used and not registry['locales'][code]['capabilities']['home']:
                     raise ValueError(f'Duplicate mirror route: {route}')
                 used[key] = (group, name, code)
+    selectors=read_json(root / 'locales/same-page-copy.json')
+    for ui in registry['locales']:
+        if ui not in selectors or set(selectors[ui].get('names', {})) != set(registry['locales']):
+            raise ValueError(f'{ui}: selector language names incomplete')
     for code, config in registry['locales'].items():
         caps = config['capabilities']
+        if not caps['home']:
+            owned=[(group,name) for group in ('authoredMirrors','pageMirrors','exactMirrors') for name,cfg in registry.get(group,{}).items() if code in cfg.get('routes',{}) and (group!='pageMirrors' or code in cfg.get('renderLocales',[]))]
+            if owned and caps['mirrorTabs'] != ['travel']:
+                raise ValueError(f'{code}: emitted families lack declared Travel capability')
+            if any(group != 'pageMirrors' for group,name in owned):
+                raise ValueError(f'{code}: partial requires supported keyed renderer')
         if caps['runtime'] and caps['mirrorTabs']:
             runtime = read_json(root / f'locales/{code}/runtime.json')
             if set(runtime) != RUNTIME_KEYS:
@@ -296,6 +306,8 @@ def validate_mirror_capabilities(root, registry):
                 cfg = registry[group][name]
                 english = cfg['english']
                 if english not in {'/travel','/visit-annaya','/bekaa-kafra','/qadisha-valley','/qannoubine-monastery','/qozhaya-monastery','/saint-charbel-hermitage','/saint-charbel-trail','/saint-charbel-places-lebanon','/our-lady-of-lebanon-harissa','/cedars-of-god-lebanon','/bkerke-maronite-patriarchate','/saint-charbel-pilgrimage','/annaya-tour'}:
+                    if not caps['home']:
+                        raise ValueError(f'{code}/{name}: undeclared non-Travel family output')
                     continue
                 source = cfg.get('master', english.lstrip('/') + '.html')
                 if not (root / source).is_file():
@@ -320,6 +332,9 @@ def validate_partial_outputs(root, registry, outputs):
     for code, config in registry['locales'].items():
         if config['capabilities']['home']:
             continue
+        if config['capabilities']['mirrorTabs'] != ['travel']:
+            if any(code in cfg.get('renderLocales',[]) for cfg in registry.get('pageMirrors',{}).values()):
+                raise ValueError(f'{code}: undeclared partial tab emission')
         expected = {root / (route.lstrip('/') + '.html')
             for family in registry.get('pageMirrors', {}).values()
             for owner, route in family.get('routes', {}).items()
