@@ -7,7 +7,7 @@ from i18n.catalog import read_json,page_url,topic_locales,home_url
 
 def route_for(root,registry,english,code):
     if code=='en':return english
-    for config in registry.get('authoredMirrors',{}).values():
+    for config in [*registry.get('authoredMirrors',{}).values(), *registry.get('pageMirrors',{}).values()]:
         if config['english']==english and code in config['routes']:return config['routes'][code]
     if english in read_json(root/'locales/travel-routes.json')['destinations']:return english
     for topic,config in registry['topics'].items():
@@ -88,7 +88,7 @@ def travel_frame(text,root,code,route,registry):
             text=text[:hero_match.start()]+ '<section class="hero travel-split-hero">'+picture+'<div class="travel-summary">'+remaining+'</div></section>'+text[hero_match.end():]
     # One generated breadcrumb uses cataloged home/Travel labels and the page's existing H1.
     soup=BeautifulSoup(text,'html.parser');title=soup.h1.get_text(' ',strip=True) if soup.h1 else ''
-    crumb=f'<!-- i18n-travel-frame:start -->\n<nav class="travel-breadcrumb" aria-label="{escape(common["navigation.contents"])}"><a href="{registry["locales"][code]["home"]}">{escape(common["navigation.home"])}</a><span aria-hidden="true">/</span>'
+    crumb=f'<!-- i18n-travel-frame:start -->\n<nav class="travel-breadcrumb" aria-label="{escape(common["navigation.contents"])}"><a href="{(home_url(registry, code) or "/")}">{escape(common["navigation.home"])}</a><span aria-hidden="true">/</span>'
     if route!=hub:crumb+=f'<a href="{hub}">{escape(copy["hubLabel"])}</a><span aria-hidden="true">/</span>'
     crumb+=f'<span aria-current="page">{escape(copy["hubLabel"] if route==hub else title)}</span></nav>\n<!-- i18n-travel-frame:end -->'
     text=re.sub(r'<!-- i18n-travel-frame:start -->.*?<!-- i18n-travel-frame:end -->\s*','',text,flags=re.S)

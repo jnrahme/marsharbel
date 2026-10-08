@@ -1,0 +1,1597 @@
+{
+  "version": 1,
+  "master": "visit-annaya.html",
+  "masterSha256": "6c0b18084f0c7cedcc0c0ec99e0a91dccaf3f672ea7856a44b1355c908c0ff34",
+  "sourceRevision": "1be64cf5",
+  "bindings": [
+    {
+      "key": "visit-annaya.metadata.title-visiting-annaya-a-pilgrim-s-guide-to-saint-charbel-s-t",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Visiting Annaya | A Pilgrim's Guide to Saint Charbel's Tomb",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.metadata.description-how-to-visit-the-monastery-of-saint-maron-in-ann",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "How to visit the Monastery of Saint Maron in Annaya: the drive from Beirut, Saint Charbel's tomb and hermitage, Mass, and practical pilgrim tips.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "visit-annaya.metadata.og-title-visiting-annaya-a-pilgrim-s-guide-to-saint-charbel",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Visiting Annaya | A Pilgrim's Guide to Saint Charbel's Tomb",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "visit-annaya.metadata.og-description-how-to-visit-the-monastery-of-saint-maron-in",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "How to visit the Monastery of Saint Maron in Annaya: the drive from Beirut, Saint Charbel's tomb and hermitage, Mass, and practical pilgrim tips.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "visit-annaya.metadata.twitter-title-visiting-annaya-a-pilgrim-s-guide-to-saint-cha",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Visiting Annaya | A Pilgrim's Guide to Saint Charbel's Tomb",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "visit-annaya.metadata.twitter-description-how-to-visit-the-monastery-of-saint-maro",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "How to visit the Monastery of Saint Maron in Annaya: the drive from Beirut, Saint Charbel's tomb and hermitage, Mass, and practical pilgrim tips.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "visit-annaya.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "visit-annaya.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.accessibility.in-this-guide",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "visit-annaya.body.home",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.body.travel",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.body.visiting-annaya",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.accessibility.the-statue-of-saint-charbel-in-the-monastery-courtyard-at-an",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The statue of Saint Charbel in the monastery courtyard at Annaya at dusk",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "visit-annaya.body.the-statue-of-saint-charbel-in-the-monastery-courtyard-at-an",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The statue of Saint Charbel in the monastery courtyard at Annaya, at dusk - the courtyard pilgrims cross on their way to the tomb. Photograph: Fayadjimmy,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.body.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.body.text-2",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "visit-annaya.body.cc-by-sa-4-0",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.body.text-3",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "visit-annaya.body.monastery-of-saint-maron-jbeil-district-mount-lebanon",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Monastery of Saint Maron · Jbeil District, Mount Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.visiting-annaya.visiting-annaya",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.visiting-annaya.a-practical-pilgrim-s-guide-to-the-monastery-where-saint-cha",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A practical pilgrim's guide to the monastery where Saint Charbel lived, died, and lies entombed: how to get there, what to see and in what order, praying at the tomb, the hermitage, the holy oil, and the days that draw the crowds. Everyone is welcome.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.visiting-annaya.plan-a-full-pilgrimage",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Plan a Full Pilgrimage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.visiting-annaya.the-feast-at-annaya",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "The Feast at Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.visiting-annaya.pray-the-novena",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Pray the Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.visiting-annaya.miracles-reports",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.visiting-annaya.part-of-the",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Part of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.visiting-annaya.saint-charbel-encyclopedia",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.visiting-annaya.read",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ". Read",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "visit-annaya.visiting-annaya.the-full-story-of-his-life",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "the full story of his life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.visiting-annaya.or-browse-all-topics",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "or browse all topics.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "visit-annaya.before-you-set-out.before-you-set-out",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "Before You Set Out",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.before-you-set-out.check-the-monastery-s-official-program",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Check the monastery's official program",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.before-you-set-out.for-the-mass-you-want-to-attend-especially-on-the-22nd-of-th",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "for the Mass you want to attend, especially on the 22nd of the month. The",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.before-you-set-out.monastery-s-website",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "monastery's website",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.before-you-set-out.is-the-place-to-look",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "is the place to look.",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "visit-annaya.before-you-set-out.ask-the-monastery-about-visiting-hours",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Ask the monastery about visiting hours",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.before-you-set-out.and-about-access-to-the-tomb-and-the-hermitage-if-anyone-in",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "and about access to the tomb and the hermitage if anyone in your group needs help getting around.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.before-you-set-out.agree-a-time-to-pray-and-a-place-to-meet",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "Agree a time to pray and a place to meet",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.before-you-set-out.with-the-people-traveling-with-you-so-the-logistics-do-not-c",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "with the people traveling with you, so the logistics do not crowd out the prayer. See also",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.before-you-set-out.the-22nd-of-the-month",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "the 22nd of the month",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.before-you-set-out.if-you-plan-to-come-that-day",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "if you plan to come that day.",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "visit-annaya.where-annaya-is.where-annaya-is",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "Where Annaya Is",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.where-annaya-is.annaya-is-a-village-in-the-jbeil-byblos-district-of-mount-le",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Annaya is a village in the Jbeil (Byblos) district of Mount Lebanon, about",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.where-annaya-is.52-kilometers-from-beirut",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "52 kilometers from Beirut",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.where-annaya-is.the-monastery-of-saint-maron-sits-above-the-village-at-about",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ". The Monastery of Saint Maron sits above the village at about",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "visit-annaya.where-annaya-is.1-200-meters",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(2)",
+      "source": "1,200 meters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.where-annaya-is.on-a-forested-mountainside-of-pine-and-oak-with-the-mediterr",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", on a forested mountainside of pine and oak with the Mediterranean visible in the distance.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "visit-annaya.where-annaya-is.the-drive-from-beirut-is-about-52-kilometers-usually-around",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The drive from Beirut is about 52 kilometers, usually around",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.where-annaya-is.90-minutes",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "90 minutes",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.where-annaya-is.depending-on-traffic-north-along-the-coastal-highway-to-jbei",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "depending on traffic: north along the coastal highway to Jbeil, then inland and uphill on a paved mountain road - about 17 kilometers from Jbeil - all the way to the monastery gates. There is",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "visit-annaya.where-annaya-is.no-regular-public-transport",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(2)",
+      "source": "no regular public transport",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.where-annaya-is.to-the-monastery-most-visitors-drive-hire-a-taxi-for-the-day",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "to the monastery; most visitors drive, hire a taxi for the day, or join an organized pilgrimage. Parking is available on the grounds.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.what-to-see-and-in-what-order",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "What to See, and in What Order",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.the-monastery",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.receives-visitors-daily",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "receives visitors daily",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.check-opening-times-with-the-monastery-before-you-travel-you",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "; check opening times with the monastery before you travel. You do not need to be Catholic, or Christian, to enter and pray.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.start-at-the-church-that-holds-the-tomb",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Start at the church that holds the tomb",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.the-reason-people-come-and-quietest-early-in-the-day",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "- the reason people come, and quietest early in the day.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.then-the-small-museum",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Then the small museum",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.of-saint-charbel-s-vestments-and-personal-belongings",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "of Saint Charbel's vestments and personal belongings.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.then-walk-uphill-to-the",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "Then walk uphill to the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.hermitage",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.where-he-spent-his-last-twenty-three-years",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "where he spent his last twenty-three years.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.finish-on-the-grounds-and-forest-paths",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > strong:nth-of-type(1)",
+      "source": "Finish on the grounds and forest paths",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.a-good-place-to-sit-before-driving-back-down",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": "- a good place to sit before driving back down.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.allow",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Allow",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.two-to-three-hours",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "two to three hours",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.what-to-see-and-in-what.for-an-unhurried-visit-on-the-22nd-of-the-month-or-during-th",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "for an unhurried visit. On the 22nd of the month or during the July feast, allow considerably longer - the line to reach the tomb moves slowly.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "visit-annaya.saint-charbel-s-tomb.saint-charbel-s-tomb",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "Saint Charbel's Tomb",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.saint-charbel-s-tomb.the-tomb-is-the-heart-of-the-pilgrimage-a-marble-sepulchre-i",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The tomb is the heart of the pilgrimage: a marble sepulchre in the monastery's Tomb Church, also called the Church of the Sepulchre. The large Church of Saint Charbel, which the Lebanese Maronite Order built on the western side of the monastery after his beatification in 1965 (it dates from 1974), was raised to hold the numbers coming to pray.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.saint-charbel-s-tomb.pilgrims-queue-to-reach-it-and-the-waiting-is-part-of-the-vi",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Pilgrims queue to reach it, and the waiting is part of the visit - people pray as they wait, many carrying a written intention, a photograph of someone sick, sometimes a medical report. At the tomb the gestures are simple: kneel, rest a hand flat on the marble, stay in silence. Many touch the stone and then the part of their body where they ask for healing. Written intentions are left at the tomb.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.saint-charbel-s-tomb.the-walls-nearby-are-lined-with-crutches-braces-photographs",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "The walls nearby are lined with crutches, braces, photographs, and handwritten letters left by those who believe they were healed through his intercession. Prayers rise in Arabic, French, English, Spanish, and more.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.saint-charbel-s-tomb.this-is-a-place-of-prayer-before-it-is-a-monument-keep-phone",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "This is a place of prayer before it is a monument: keep phones silent, photography discreet, and conversation low. For a quieter visit, come on an ordinary weekday morning, when you can kneel at the tomb without a queue behind you.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.the-hermitage-of-saints.the-hermitage-of-saints-peter-and-paul",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "The Hermitage of Saints Peter and Paul",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.the-hermitage-of-saints.higher-up-the-hill-a-short-walk-from-the-main-buildings-stan",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Higher up the hill, a short walk from the main buildings, stands the hermitage where Saint Charbel lived from",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.the-hermitage-of-saints.1875-until-his-death-on-christmas-eve-1898",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "1875 until his death on Christmas Eve 1898",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.the-hermitage-of-saints.the-last-twenty-three-years-of-his-life-it-is-small-and-plai",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "- the last twenty-three years of his life. It is small and plain: a chapel, a cell with a wooden bed and a simple table, and a modest garden, kept close to how it was in his lifetime. Many pilgrims call it the most moving part of the visit - the room where he prayed through the long years of his solitude, and where his silence still feels close.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "visit-annaya.the-holy-oil.the-holy-oil",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "The Holy Oil",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.the-holy-oil.after-saint-charbel-s-death-monks-reported-an-oil-like-subst",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "After Saint Charbel's death, monks reported an oil-like substance seeping from his body, and the tomb has been linked with an",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.the-holy-oil.oil",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "oil",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.the-holy-oil.pilgrims-apply-in-prayer-for-healing-at-annaya-you-will-find",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "pilgrims apply in prayer for healing. At Annaya you will find small bottles of blessed oil near the shrine, often given freely. Pilgrims anoint themselves or those they pray for, and carry it home as a physical link to the saint. It is a devotional aid, not a medicine - the Church presents it as an occasion for faith, not a guaranteed cure.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "visit-annaya.mass-at-annaya.mass-at-annaya",
+      "selector": "#main-content > section:nth-of-type(8) > h2:nth-of-type(1)",
+      "source": "Mass at Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.mass-at-annaya.mass-is-celebrated",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Mass is celebrated",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.mass-at-annaya.daily",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "daily",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.mass-at-annaya.at-the-monastery-usually-several-times-a-day-mainly-in-arabi",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "at the monastery, usually several times a day, mainly in Arabic in the Maronite rite, and the church stays open through the day for private prayer at the tomb. Times shift with the season and change on feast days and the 22nd of the month; they are posted at the church entrance. If you are traveling for a particular Mass, confirm with the monastery directly before you go rather than relying on a schedule found online.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "visit-annaya.when-to-come.when-to-come",
+      "selector": "#main-content > section:nth-of-type(9) > h2:nth-of-type(1)",
+      "source": "When to Come",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.when-to-come.an-ordinary-weekday-morning",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "An ordinary weekday morning",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.when-to-come.is-the-quietest-most-contemplative-time",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "is the quietest, most contemplative time.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.when-to-come.the",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "The",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.when-to-come.22nd-of-every-month",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "22nd of every month",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.when-to-come.draws-large-crowds-for-mass-and-weather-permitting-a-euchari",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "draws large crowds for Mass and, weather permitting, a Eucharistic procession - a tradition that traces to the healing of Nohad El Shami in January 1993.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.when-to-come.the-july",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "The July",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.when-to-come.feast-of-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "feast of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.when-to-come.third-sunday-of-july-in-the-maronite-calendar-july-24-univer",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "(third Sunday of July in the Maronite calendar, July 24 universally) is the busiest period of the year, with an all-night vigil and the great outdoor Divine Liturgy.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.when-to-come.christmas-eve",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > strong:nth-of-type(1)",
+      "source": "Christmas Eve",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.when-to-come.the-anniversary-of-his-death-is-another-major-day-of-pilgrim",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": ", the anniversary of his death, is another major day of pilgrimage.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.when-to-come.spring-and-autumn-are-the-most-pleasant-seasons-summers-are",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Spring and autumn are the most pleasant seasons. Summers are warm but cooler than the coast thanks to the altitude; winter can bring snow to the mountain road.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.practical-tips",
+      "selector": "#main-content > section:nth-of-type(10) > h2:nth-of-type(1)",
+      "source": "Practical Tips",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.dress-modestly",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Dress modestly",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.this-is-an-active-place-of-worship-shoulders-and-knees-cover",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "- this is an active place of worship. Shoulders and knees covered is a safe rule for everyone.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.practical-tips.wear-comfortable-shoes",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Wear comfortable shoes",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.the-ground-is-uneven-and-the-walk-to-the-hermitage-is-uphill",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "- the ground is uneven and the walk to the hermitage is uphill.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.practical-tips.carry-your-intention-with-you",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "Carry your intention with you",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.many-pilgrims-bring-a-written-prayer-or-a-photograph-of-the",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "- many pilgrims bring a written prayer or a photograph of the person they are praying for.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.practical-tips.see-the-bigger-map",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > strong:nth-of-type(1)",
+      "source": "See the bigger map",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.annaya-is-one-of-three-places-that-tell-his-whole-story",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": "- Annaya is one of three places that tell his whole story:",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.practical-tips.bekaa-kafra-mayfouq-and-annaya",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Bekaa Kafra, Mayfouq, and Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.text",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "visit-annaya.practical-tips.walk-a-section-of-the",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > strong:nth-of-type(1)",
+      "source": "Walk a section of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.darb-mar-charbel-trail",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > strong:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Darb Mar Charbel trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.lebanon-s-new-long-distance-pilgrimage-route-starts-at-the-m",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": "- Lebanon's new long-distance pilgrimage route starts at the monastery gates, and the first section to Mayfouq is open.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.practical-tips.pair-the-visit-with-jbeil-byblos",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6) > strong:nth-of-type(1)",
+      "source": "Pair the visit with Jbeil (Byblos)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.the-ancient-coastal-city-below-the-mountain-makes-a-natural",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6)",
+      "source": "- the ancient coastal city below the mountain makes a natural second stop the same day.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.practical-tips.complete-the-triangle",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > strong:nth-of-type(1)",
+      "source": "Complete the triangle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.nearby-kfifan-holds-the-tomb-of",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7)",
+      "source": "- nearby Kfifan holds the tomb of",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "visit-annaya.practical-tips.st-nimatullah-charbel-s-teacher",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(1)",
+      "source": "St Nimatullah, Charbel's teacher",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.and-jrabta-the-shrine-of",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7)",
+      "source": ", and Jrabta the shrine of",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "visit-annaya.practical-tips.st-rafqa",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(2)",
+      "source": "St Rafqa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.both-belong-to-the",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7)",
+      "source": "; both belong to the",
+      "kind": "text",
+      "nodeIndex": 5
+    },
+    {
+      "key": "visit-annaya.practical-tips.maronite-monastic-story",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(3)",
+      "source": "Maronite monastic story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.practical-tips.text",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 7
+    },
+    {
+      "key": "visit-annaya.practical-tips.however-you-come-and-whatever-you-carry-with-you-annaya-asks",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "However you come, and whatever you carry with you, Annaya asks little and offers much. Most pilgrims leave having done something very simple: they knelt at a tomb, in silence, and prayed.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.sources.sources",
+      "selector": "#main-content > section:nth-of-type(11) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.sources.charbel-app-visiting-annaya-location-and-drive-times-what-to",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Charbel App: Visiting Annaya - location and drive times, what to see, the tomb, the hermitage, the holy oil, Mass, the 22nd, and practical tips",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.sources.charbel-app-annaya-monastery-history-of-the-monastery",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Charbel App: Annaya Monastery - history of the monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.sources.onme-travel-saint-charbel-monastery-visit-a-pilgrim-s-guide",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Onme Travel: Saint Charbel Monastery Visit - a pilgrim's guide to the complex and what to expect",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.visiting-annaya-author-please-pray-for-the-person-who-made-t",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Visiting Annaya. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.accessibility.languages",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1)",
+      "source": "Languages",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "visit-annaya.footer.english",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "English",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text-2",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "العربية",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.fran-ais",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Français",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.espa-ol",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Español",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(4)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.portugu-s",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Português",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(5)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.italiano",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Italiano",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(6)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.deutsch",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Deutsch",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(7)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.polski",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Polski",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(8)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text-3",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Русский",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(9)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text-4",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "हिन्दी",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(10)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.footer.text-5",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "ไทย",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "visit-annaya.metadata.title-visiting-annaya-a-pilgrim-s-guide-to-saint-charbel-s-t": "Visiting Annaya | A Pilgrim's Guide to Saint Charbel's Tomb",
+    "visit-annaya.metadata.description-how-to-visit-the-monastery-of-saint-maron-in-ann": "How to visit the Monastery of Saint Maron in Annaya: the drive from Beirut, Saint Charbel's tomb and hermitage, Mass, and practical pilgrim tips.",
+    "visit-annaya.metadata.og-title-visiting-annaya-a-pilgrim-s-guide-to-saint-charbel": "Visiting Annaya | A Pilgrim's Guide to Saint Charbel's Tomb",
+    "visit-annaya.metadata.og-description-how-to-visit-the-monastery-of-saint-maron-in": "How to visit the Monastery of Saint Maron in Annaya: the drive from Beirut, Saint Charbel's tomb and hermitage, Mass, and practical pilgrim tips.",
+    "visit-annaya.metadata.twitter-title-visiting-annaya-a-pilgrim-s-guide-to-saint-cha": "Visiting Annaya | A Pilgrim's Guide to Saint Charbel's Tomb",
+    "visit-annaya.metadata.twitter-description-how-to-visit-the-monastery-of-saint-maro": "How to visit the Monastery of Saint Maron in Annaya: the drive from Beirut, Saint Charbel's tomb and hermitage, Mass, and practical pilgrim tips.",
+    "visit-annaya.body.skip-to-main-content": "Skip to main content",
+    "visit-annaya.header.text": "✦",
+    "visit-annaya.header.saint-charbel": "Saint Charbel",
+    "visit-annaya.accessibility.primary": "Primary",
+    "visit-annaya.header.home": "Home",
+    "visit-annaya.header.legacy": "Legacy",
+    "visit-annaya.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "visit-annaya.header.full-history": "Full History",
+    "visit-annaya.header.gallery": "Gallery",
+    "visit-annaya.header.miracles": "Miracles",
+    "visit-annaya.header.miracles-reports": "Miracles & Reports",
+    "visit-annaya.header.eucharistic-miracles": "Eucharistic Miracles",
+    "visit-annaya.header.letters": "Letters",
+    "visit-annaya.header.voice-testimony": "Voice Testimony",
+    "visit-annaya.header.saints": "Saints",
+    "visit-annaya.header.children-s-books": "Children's Books",
+    "visit-annaya.header.prayer": "Prayer",
+    "visit-annaya.header.prayer-library": "Prayer Library",
+    "visit-annaya.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "visit-annaya.header.prayer-for-the-sick": "Prayer for the Sick",
+    "visit-annaya.header.prayer-for-healing": "Prayer for Healing",
+    "visit-annaya.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "visit-annaya.header.prayer-for-depression": "Prayer for Depression",
+    "visit-annaya.header.prayer-for-students": "Prayer for Students",
+    "visit-annaya.header.prayer-for-addiction": "Prayer for Addiction",
+    "visit-annaya.header.prayer-for-family": "Prayer for Family",
+    "visit-annaya.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "visit-annaya.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "visit-annaya.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "visit-annaya.header.saint-charbel-novena": "Saint Charbel Novena",
+    "visit-annaya.header.feast-day": "Feast Day",
+    "visit-annaya.header.rosary-guide": "Rosary Guide",
+    "visit-annaya.header.rosary-minibook": "Rosary Minibook",
+    "visit-annaya.header.mystery-meditation": "Mystery Meditation",
+    "visit-annaya.header.become-like-him": "Become Like Him",
+    "visit-annaya.header.travel": "Travel",
+    "visit-annaya.header.visiting-annaya": "Visiting Annaya",
+    "visit-annaya.header.annaya-online-tour": "Annaya Online Tour",
+    "visit-annaya.header.bekaa-kafra": "Bekaa Kafra",
+    "visit-annaya.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "visit-annaya.header.the-cedars-of-god": "the Cedars of God",
+    "visit-annaya.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "visit-annaya.header.qadisha-valley": "Qadisha Valley",
+    "visit-annaya.header.qannoubine-monastery": "Qannoubine Monastery",
+    "visit-annaya.header.qozhaya-monastery": "Qozhaya Monastery",
+    "visit-annaya.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "visit-annaya.header.the-hermitage": "The Hermitage",
+    "visit-annaya.header.saint-charbel-trail": "Saint Charbel Trail",
+    "visit-annaya.header.news": "News",
+    "visit-annaya.accessibility.in-this-guide": "In this guide",
+    "visit-annaya.body.home": "Home",
+    "visit-annaya.body.text": "/",
+    "visit-annaya.body.travel": "Travel",
+    "visit-annaya.body.visiting-annaya": "Visiting Annaya",
+    "visit-annaya.accessibility.the-statue-of-saint-charbel-in-the-monastery-courtyard-at-an": "The statue of Saint Charbel in the monastery courtyard at Annaya at dusk",
+    "visit-annaya.body.the-statue-of-saint-charbel-in-the-monastery-courtyard-at-an": "The statue of Saint Charbel in the monastery courtyard at Annaya, at dusk - the courtyard pilgrims cross on their way to the tomb. Photograph: Fayadjimmy,",
+    "visit-annaya.body.via-wikimedia-commons": "via Wikimedia Commons",
+    "visit-annaya.body.text-2": ",",
+    "visit-annaya.body.cc-by-sa-4-0": "CC BY-SA 4.0",
+    "visit-annaya.body.text-3": ".",
+    "visit-annaya.body.monastery-of-saint-maron-jbeil-district-mount-lebanon": "Monastery of Saint Maron · Jbeil District, Mount Lebanon",
+    "visit-annaya.visiting-annaya.visiting-annaya": "Visiting Annaya",
+    "visit-annaya.visiting-annaya.a-practical-pilgrim-s-guide-to-the-monastery-where-saint-cha": "A practical pilgrim's guide to the monastery where Saint Charbel lived, died, and lies entombed: how to get there, what to see and in what order, praying at the tomb, the hermitage, the holy oil, and the days that draw the crowds. Everyone is welcome.",
+    "visit-annaya.visiting-annaya.plan-a-full-pilgrimage": "Plan a Full Pilgrimage",
+    "visit-annaya.visiting-annaya.the-feast-at-annaya": "The Feast at Annaya",
+    "visit-annaya.visiting-annaya.pray-the-novena": "Pray the Novena",
+    "visit-annaya.visiting-annaya.miracles-reports": "Miracles & Reports",
+    "visit-annaya.visiting-annaya.part-of-the": "Part of the",
+    "visit-annaya.visiting-annaya.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "visit-annaya.visiting-annaya.read": ". Read",
+    "visit-annaya.visiting-annaya.the-full-story-of-his-life": "the full story of his life",
+    "visit-annaya.visiting-annaya.or-browse-all-topics": "or browse all topics.",
+    "visit-annaya.before-you-set-out.before-you-set-out": "Before You Set Out",
+    "visit-annaya.before-you-set-out.check-the-monastery-s-official-program": "Check the monastery's official program",
+    "visit-annaya.before-you-set-out.for-the-mass-you-want-to-attend-especially-on-the-22nd-of-th": "for the Mass you want to attend, especially on the 22nd of the month. The",
+    "visit-annaya.before-you-set-out.monastery-s-website": "monastery's website",
+    "visit-annaya.before-you-set-out.is-the-place-to-look": "is the place to look.",
+    "visit-annaya.before-you-set-out.ask-the-monastery-about-visiting-hours": "Ask the monastery about visiting hours",
+    "visit-annaya.before-you-set-out.and-about-access-to-the-tomb-and-the-hermitage-if-anyone-in": "and about access to the tomb and the hermitage if anyone in your group needs help getting around.",
+    "visit-annaya.before-you-set-out.agree-a-time-to-pray-and-a-place-to-meet": "Agree a time to pray and a place to meet",
+    "visit-annaya.before-you-set-out.with-the-people-traveling-with-you-so-the-logistics-do-not-c": "with the people traveling with you, so the logistics do not crowd out the prayer. See also",
+    "visit-annaya.before-you-set-out.the-22nd-of-the-month": "the 22nd of the month",
+    "visit-annaya.before-you-set-out.if-you-plan-to-come-that-day": "if you plan to come that day.",
+    "visit-annaya.where-annaya-is.where-annaya-is": "Where Annaya Is",
+    "visit-annaya.where-annaya-is.annaya-is-a-village-in-the-jbeil-byblos-district-of-mount-le": "Annaya is a village in the Jbeil (Byblos) district of Mount Lebanon, about",
+    "visit-annaya.where-annaya-is.52-kilometers-from-beirut": "52 kilometers from Beirut",
+    "visit-annaya.where-annaya-is.the-monastery-of-saint-maron-sits-above-the-village-at-about": ". The Monastery of Saint Maron sits above the village at about",
+    "visit-annaya.where-annaya-is.1-200-meters": "1,200 meters",
+    "visit-annaya.where-annaya-is.on-a-forested-mountainside-of-pine-and-oak-with-the-mediterr": ", on a forested mountainside of pine and oak with the Mediterranean visible in the distance.",
+    "visit-annaya.where-annaya-is.the-drive-from-beirut-is-about-52-kilometers-usually-around": "The drive from Beirut is about 52 kilometers, usually around",
+    "visit-annaya.where-annaya-is.90-minutes": "90 minutes",
+    "visit-annaya.where-annaya-is.depending-on-traffic-north-along-the-coastal-highway-to-jbei": "depending on traffic: north along the coastal highway to Jbeil, then inland and uphill on a paved mountain road - about 17 kilometers from Jbeil - all the way to the monastery gates. There is",
+    "visit-annaya.where-annaya-is.no-regular-public-transport": "no regular public transport",
+    "visit-annaya.where-annaya-is.to-the-monastery-most-visitors-drive-hire-a-taxi-for-the-day": "to the monastery; most visitors drive, hire a taxi for the day, or join an organized pilgrimage. Parking is available on the grounds.",
+    "visit-annaya.what-to-see-and-in-what.what-to-see-and-in-what-order": "What to See, and in What Order",
+    "visit-annaya.what-to-see-and-in-what.the-monastery": "The monastery",
+    "visit-annaya.what-to-see-and-in-what.receives-visitors-daily": "receives visitors daily",
+    "visit-annaya.what-to-see-and-in-what.check-opening-times-with-the-monastery-before-you-travel-you": "; check opening times with the monastery before you travel. You do not need to be Catholic, or Christian, to enter and pray.",
+    "visit-annaya.what-to-see-and-in-what.start-at-the-church-that-holds-the-tomb": "Start at the church that holds the tomb",
+    "visit-annaya.what-to-see-and-in-what.the-reason-people-come-and-quietest-early-in-the-day": "- the reason people come, and quietest early in the day.",
+    "visit-annaya.what-to-see-and-in-what.then-the-small-museum": "Then the small museum",
+    "visit-annaya.what-to-see-and-in-what.of-saint-charbel-s-vestments-and-personal-belongings": "of Saint Charbel's vestments and personal belongings.",
+    "visit-annaya.what-to-see-and-in-what.then-walk-uphill-to-the": "Then walk uphill to the",
+    "visit-annaya.what-to-see-and-in-what.hermitage": "hermitage",
+    "visit-annaya.what-to-see-and-in-what.where-he-spent-his-last-twenty-three-years": "where he spent his last twenty-three years.",
+    "visit-annaya.what-to-see-and-in-what.finish-on-the-grounds-and-forest-paths": "Finish on the grounds and forest paths",
+    "visit-annaya.what-to-see-and-in-what.a-good-place-to-sit-before-driving-back-down": "- a good place to sit before driving back down.",
+    "visit-annaya.what-to-see-and-in-what.allow": "Allow",
+    "visit-annaya.what-to-see-and-in-what.two-to-three-hours": "two to three hours",
+    "visit-annaya.what-to-see-and-in-what.for-an-unhurried-visit-on-the-22nd-of-the-month-or-during-th": "for an unhurried visit. On the 22nd of the month or during the July feast, allow considerably longer - the line to reach the tomb moves slowly.",
+    "visit-annaya.saint-charbel-s-tomb.saint-charbel-s-tomb": "Saint Charbel's Tomb",
+    "visit-annaya.saint-charbel-s-tomb.the-tomb-is-the-heart-of-the-pilgrimage-a-marble-sepulchre-i": "The tomb is the heart of the pilgrimage: a marble sepulchre in the monastery's Tomb Church, also called the Church of the Sepulchre. The large Church of Saint Charbel, which the Lebanese Maronite Order built on the western side of the monastery after his beatification in 1965 (it dates from 1974), was raised to hold the numbers coming to pray.",
+    "visit-annaya.saint-charbel-s-tomb.pilgrims-queue-to-reach-it-and-the-waiting-is-part-of-the-vi": "Pilgrims queue to reach it, and the waiting is part of the visit - people pray as they wait, many carrying a written intention, a photograph of someone sick, sometimes a medical report. At the tomb the gestures are simple: kneel, rest a hand flat on the marble, stay in silence. Many touch the stone and then the part of their body where they ask for healing. Written intentions are left at the tomb.",
+    "visit-annaya.saint-charbel-s-tomb.the-walls-nearby-are-lined-with-crutches-braces-photographs": "The walls nearby are lined with crutches, braces, photographs, and handwritten letters left by those who believe they were healed through his intercession. Prayers rise in Arabic, French, English, Spanish, and more.",
+    "visit-annaya.saint-charbel-s-tomb.this-is-a-place-of-prayer-before-it-is-a-monument-keep-phone": "This is a place of prayer before it is a monument: keep phones silent, photography discreet, and conversation low. For a quieter visit, come on an ordinary weekday morning, when you can kneel at the tomb without a queue behind you.",
+    "visit-annaya.the-hermitage-of-saints.the-hermitage-of-saints-peter-and-paul": "The Hermitage of Saints Peter and Paul",
+    "visit-annaya.the-hermitage-of-saints.higher-up-the-hill-a-short-walk-from-the-main-buildings-stan": "Higher up the hill, a short walk from the main buildings, stands the hermitage where Saint Charbel lived from",
+    "visit-annaya.the-hermitage-of-saints.1875-until-his-death-on-christmas-eve-1898": "1875 until his death on Christmas Eve 1898",
+    "visit-annaya.the-hermitage-of-saints.the-last-twenty-three-years-of-his-life-it-is-small-and-plai": "- the last twenty-three years of his life. It is small and plain: a chapel, a cell with a wooden bed and a simple table, and a modest garden, kept close to how it was in his lifetime. Many pilgrims call it the most moving part of the visit - the room where he prayed through the long years of his solitude, and where his silence still feels close.",
+    "visit-annaya.the-holy-oil.the-holy-oil": "The Holy Oil",
+    "visit-annaya.the-holy-oil.after-saint-charbel-s-death-monks-reported-an-oil-like-subst": "After Saint Charbel's death, monks reported an oil-like substance seeping from his body, and the tomb has been linked with an",
+    "visit-annaya.the-holy-oil.oil": "oil",
+    "visit-annaya.the-holy-oil.pilgrims-apply-in-prayer-for-healing-at-annaya-you-will-find": "pilgrims apply in prayer for healing. At Annaya you will find small bottles of blessed oil near the shrine, often given freely. Pilgrims anoint themselves or those they pray for, and carry it home as a physical link to the saint. It is a devotional aid, not a medicine - the Church presents it as an occasion for faith, not a guaranteed cure.",
+    "visit-annaya.mass-at-annaya.mass-at-annaya": "Mass at Annaya",
+    "visit-annaya.mass-at-annaya.mass-is-celebrated": "Mass is celebrated",
+    "visit-annaya.mass-at-annaya.daily": "daily",
+    "visit-annaya.mass-at-annaya.at-the-monastery-usually-several-times-a-day-mainly-in-arabi": "at the monastery, usually several times a day, mainly in Arabic in the Maronite rite, and the church stays open through the day for private prayer at the tomb. Times shift with the season and change on feast days and the 22nd of the month; they are posted at the church entrance. If you are traveling for a particular Mass, confirm with the monastery directly before you go rather than relying on a schedule found online.",
+    "visit-annaya.when-to-come.when-to-come": "When to Come",
+    "visit-annaya.when-to-come.an-ordinary-weekday-morning": "An ordinary weekday morning",
+    "visit-annaya.when-to-come.is-the-quietest-most-contemplative-time": "is the quietest, most contemplative time.",
+    "visit-annaya.when-to-come.the": "The",
+    "visit-annaya.when-to-come.22nd-of-every-month": "22nd of every month",
+    "visit-annaya.when-to-come.draws-large-crowds-for-mass-and-weather-permitting-a-euchari": "draws large crowds for Mass and, weather permitting, a Eucharistic procession - a tradition that traces to the healing of Nohad El Shami in January 1993.",
+    "visit-annaya.when-to-come.the-july": "The July",
+    "visit-annaya.when-to-come.feast-of-saint-charbel": "feast of Saint Charbel",
+    "visit-annaya.when-to-come.third-sunday-of-july-in-the-maronite-calendar-july-24-univer": "(third Sunday of July in the Maronite calendar, July 24 universally) is the busiest period of the year, with an all-night vigil and the great outdoor Divine Liturgy.",
+    "visit-annaya.when-to-come.christmas-eve": "Christmas Eve",
+    "visit-annaya.when-to-come.the-anniversary-of-his-death-is-another-major-day-of-pilgrim": ", the anniversary of his death, is another major day of pilgrimage.",
+    "visit-annaya.when-to-come.spring-and-autumn-are-the-most-pleasant-seasons-summers-are": "Spring and autumn are the most pleasant seasons. Summers are warm but cooler than the coast thanks to the altitude; winter can bring snow to the mountain road.",
+    "visit-annaya.practical-tips.practical-tips": "Practical Tips",
+    "visit-annaya.practical-tips.dress-modestly": "Dress modestly",
+    "visit-annaya.practical-tips.this-is-an-active-place-of-worship-shoulders-and-knees-cover": "- this is an active place of worship. Shoulders and knees covered is a safe rule for everyone.",
+    "visit-annaya.practical-tips.wear-comfortable-shoes": "Wear comfortable shoes",
+    "visit-annaya.practical-tips.the-ground-is-uneven-and-the-walk-to-the-hermitage-is-uphill": "- the ground is uneven and the walk to the hermitage is uphill.",
+    "visit-annaya.practical-tips.carry-your-intention-with-you": "Carry your intention with you",
+    "visit-annaya.practical-tips.many-pilgrims-bring-a-written-prayer-or-a-photograph-of-the": "- many pilgrims bring a written prayer or a photograph of the person they are praying for.",
+    "visit-annaya.practical-tips.see-the-bigger-map": "See the bigger map",
+    "visit-annaya.practical-tips.annaya-is-one-of-three-places-that-tell-his-whole-story": "- Annaya is one of three places that tell his whole story:",
+    "visit-annaya.practical-tips.bekaa-kafra-mayfouq-and-annaya": "Bekaa Kafra, Mayfouq, and Annaya",
+    "visit-annaya.practical-tips.text": ".",
+    "visit-annaya.practical-tips.walk-a-section-of-the": "Walk a section of the",
+    "visit-annaya.practical-tips.darb-mar-charbel-trail": "Darb Mar Charbel trail",
+    "visit-annaya.practical-tips.lebanon-s-new-long-distance-pilgrimage-route-starts-at-the-m": "- Lebanon's new long-distance pilgrimage route starts at the monastery gates, and the first section to Mayfouq is open.",
+    "visit-annaya.practical-tips.pair-the-visit-with-jbeil-byblos": "Pair the visit with Jbeil (Byblos)",
+    "visit-annaya.practical-tips.the-ancient-coastal-city-below-the-mountain-makes-a-natural": "- the ancient coastal city below the mountain makes a natural second stop the same day.",
+    "visit-annaya.practical-tips.complete-the-triangle": "Complete the triangle",
+    "visit-annaya.practical-tips.nearby-kfifan-holds-the-tomb-of": "- nearby Kfifan holds the tomb of",
+    "visit-annaya.practical-tips.st-nimatullah-charbel-s-teacher": "St Nimatullah, Charbel's teacher",
+    "visit-annaya.practical-tips.and-jrabta-the-shrine-of": ", and Jrabta the shrine of",
+    "visit-annaya.practical-tips.st-rafqa": "St Rafqa",
+    "visit-annaya.practical-tips.both-belong-to-the": "; both belong to the",
+    "visit-annaya.practical-tips.maronite-monastic-story": "Maronite monastic story",
+    "visit-annaya.practical-tips.however-you-come-and-whatever-you-carry-with-you-annaya-asks": "However you come, and whatever you carry with you, Annaya asks little and offers much. Most pilgrims leave having done something very simple: they knelt at a tomb, in silence, and prayed.",
+    "visit-annaya.sources.sources": "Sources",
+    "visit-annaya.sources.charbel-app-visiting-annaya-location-and-drive-times-what-to": "Charbel App: Visiting Annaya - location and drive times, what to see, the tomb, the hermitage, the holy oil, Mass, the 22nd, and practical tips",
+    "visit-annaya.sources.charbel-app-annaya-monastery-history-of-the-monastery": "Charbel App: Annaya Monastery - history of the monastery",
+    "visit-annaya.sources.onme-travel-saint-charbel-monastery-visit-a-pilgrim-s-guide": "Onme Travel: Saint Charbel Monastery Visit - a pilgrim's guide to the complex and what to expect",
+    "visit-annaya.footer.visiting-annaya-author-please-pray-for-the-person-who-made-t": "Visiting Annaya. Author: Please pray for the person who made this website.",
+    "visit-annaya.accessibility.languages": "Languages",
+    "visit-annaya.footer.english": "English",
+    "visit-annaya.footer.text": "-",
+    "visit-annaya.footer.text-2": "العربية",
+    "visit-annaya.footer.fran-ais": "Français",
+    "visit-annaya.footer.espa-ol": "Español",
+    "visit-annaya.footer.portugu-s": "Português",
+    "visit-annaya.footer.italiano": "Italiano",
+    "visit-annaya.footer.deutsch": "Deutsch",
+    "visit-annaya.footer.polski": "Polski",
+    "visit-annaya.footer.text-3": "Русский",
+    "visit-annaya.footer.text-4": "हिन्दी",
+    "visit-annaya.footer.text-5": "ไทย"
+  }
+}

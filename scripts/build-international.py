@@ -9,7 +9,7 @@ from string import Template
 
 from i18n.devotion_guidance import load_guidance, render_lead, render_links
 from i18n.metadata import og_locales, published_locales, selector_aliases
-from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_locales, read_json, published_home_locales, home_url
+from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_locales, read_json, published_home_locales, home_url, validate_partial_outputs
 from i18n.mirror import render_mirrors
 from i18n.qadisha_mirror import render_qadisha
 from i18n.travel_mirror import render_travel
@@ -332,6 +332,7 @@ def outputs(root=ROOT):
     control_copy=read_json(root/'locales/same-page-copy.json')
     result.update(control_outputs(root,{path:text for path,text in result.items() if path.suffix=='.html'},manifest,control_copy))
     published_home_locales(registry, result, root)
+    validate_partial_outputs(root, registry, result)
     return result
 
 

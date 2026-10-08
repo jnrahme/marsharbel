@@ -28,7 +28,19 @@ def render_page(root,registry,lang,family,route,catalog=None):
     master_route=registry['pageMirrors'][family].get('english','/' + source.removesuffix('.html'))
     prefix=next(iter(copy)).split('.')[0]
     # The reviewed history bytes are pinned, so history keeps its reviewed links.
-    twins=twin_routes(registry,lang);twins[master_route]=route
+    twins=twin_routes(registry,lang)
+    if not family.endswith('-travel-master'):
+        # Existing reviewed families keep their established publication links.
+        # Adding exact Travel twins is not permission to re-pin unrelated bodies.
+        for name,cfg in registry.get('pageMirrors',{}).items():
+            if name.endswith('-travel-master') and lang in cfg.get('renderLocales',[]):
+                twins.pop(cfg['english'].rstrip('/'),None)
+        for topic,cfg in registry['topics'].items():
+            if lang in topic_locales(registry,topic):
+                twins[cfg['relatedEnglish'].rstrip('/')]=page_url(registry,lang,topic)
+        legacy=registry.get('travelPreviousRoutes',{}).get(lang,{})
+        twins.update(legacy)
+    twins[master_route]=route
     for node in soup.select('[href],[src],[srcset],[action]'):
         for attr in ('href','src','action'):
             if node.has_attr(attr) and not node[attr].startswith(('#','mailto:','tel:','data:','javascript:')):
@@ -50,6 +62,14 @@ def render_page(root,registry,lang,family,route,catalog=None):
     for node in soup.select('link[hreflang]'):node.decompose()
     clusters=registry['pageMirrors'][family].get('discoveryRoutes',{'en':master_route,**registry['pageMirrors'][family]['routes'],'x-default':master_route})
     for code,path in clusters.items():soup.head.append(soup.new_tag('link',rel='alternate',hreflang=code,href=registry['site']+path))
+    if home_url(registry, lang) is None:
+        qualifier=read_json(root/f'locales/{lang}/encyclopedia-trail.json')['englishQualifier']
+        for a in soup.select('a[href="/"]'):
+            a['hreflang']='en'
+            a['aria-label']=a.get_text(' ',strip=True)+' '+qualifier
+            if not a.find('span',class_='partial-home-language'):
+                hint=soup.new_tag('span',attrs={'class':'partial-home-language'})
+                hint.string=' '+qualifier;a.append(hint)
     title=soup.title.get_text();description=soup.select_one('meta[name=description]')['content']
     contract=read_json(root/f'locales/en/{family}-bindings.json')
     schema_copy={}
@@ -67,9 +87,20 @@ def render_page(root,registry,lang,family,route,catalog=None):
                 else:translate_schema(value)
         elif isinstance(node,list):
             for value in node:translate_schema(value)
-    for script in soup.select('script[type="application/ld+json"]'):
+    schema_path=root/f'locales/{lang}/{family}-schema-bindings.json'
+    schema_contract=read_json(schema_path) if schema_path.exists() else None
+    for ordinal,script in enumerate(soup.select('script[type="application/ld+json"]')):
         data=json.loads(script.string)
-        if data.get('@type')=='FAQPage':
+        if schema_contract is not None:
+            for binding in schema_contract['bindings']:
+                if binding['scriptOrdinal'] != ordinal:continue
+                tokens=[x.replace('~1','/').replace('~0','~') for x in binding['jsonPointer'].lstrip('/').split('/')]
+                target=data
+                for token in tokens[:-1]:target=target[int(token)] if isinstance(target,list) else target[token]
+                token=int(tokens[-1]) if isinstance(target,list) else tokens[-1]
+                if target[token] != binding['source']:raise ValueError(f'{family}: changed schema pointer')
+                target[token]=binding['translation']
+        if data.get('@type')=='FAQPage' and schema_contract is None:
             # Source questions/answers have exact text nodes bound to the same
             # catalog. Resolve by source text, not another authored schema copy.
             lookup={b['source']:copy[b['key']] for b in read_json(root/f'locales/en/{family}-bindings.json')['bindings'] if b['kind']=='text'}
@@ -102,7 +133,8 @@ def render_page(root,registry,lang,family,route,catalog=None):
                     path=urlsplit(item['item']).path
                     a=soup.select_one('header a[href="'+path+'"]')
                     if a:item['name']=a.get_text(' ',strip=True)
-        translate_schema(data)
+        if family.endswith('-travel-master') and schema_contract is None:
+            translate_schema(data)
         script.string=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
     runtime=read_json(root/f'locales/{lang}/runtime.json');runtime['language.choose']=read_json(root/f'locales/{lang}/common.json')['navigation.chooseLanguage'];runtime['nativeNames']={c:cfg['nativeName'] for c,cfg in registry['locales'].items()}
     node=soup.new_tag('script',type='application/json',id='sc-runtime-labels');node.string=json.dumps(runtime,ensure_ascii=False).replace('<','\\u003c');soup.head.append(node)
@@ -119,7 +151,7 @@ def render_page(root,registry,lang,family,route,catalog=None):
         hub=family=='saint-charbel-prayers-master'
         rendered=share_head(rendered,root,lang,hub)
         master_text=share_head(master_text,root,'en',hub)
-    diff=check_pair(master_text,rendered,master_route,route)
+    diff=check_pair(master_text,rendered,master_route,route, normalizers=('partial-home-disclosure',) if home_url(registry, lang) is None else ())
     if diff:raise ValueError(f'{family} {lang}: mirror structure diverged: {diff}')
     if lang in registry.get('limitedLaunchLocales', []):
         from i18n.prayer_runtime import share_head

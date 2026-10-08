@@ -48,4 +48,10 @@ def _strip_launch_annotations(soup):
     return soup
 
 
-NORMALIZERS = {'launch-availability-annotations': _strip_launch_annotations}
+def _strip_partial_home_disclosure(soup):
+    for hint in soup.select('a[href="/"][hreflang="en"] > span.partial-home-language'):
+        hint.decompose()
+    return soup
+
+NORMALIZERS = {'launch-availability-annotations': _strip_launch_annotations,
+               'partial-home-disclosure': _strip_partial_home_disclosure}

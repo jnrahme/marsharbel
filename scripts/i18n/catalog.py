@@ -64,6 +64,8 @@ def validate_registry(registry):
             key = alias.lower()
             if key in aliases:
                 raise ValueError(f'Duplicate selector alias: {alias}')
+            if key == 'zh-tw' and code == 'zh-Hans':
+                raise ValueError('Traditional Chinese cannot alias Simplified Chinese')
             aliases[key] = code
     sets = registry.get('publicationSets', {})
     if set(sets) != {'prayers', 'eucharistic'}:
@@ -169,6 +171,7 @@ def load_catalog(root=ROOT):
         for key, text in current.items():
             if set(PLACEHOLDER.findall(text)) != set(PLACEHOLDER.findall(reference[key])):
                 raise ValueError(f'{code}/{key}: placeholders differ from {default}')
+    validate_mirror_capabilities(root, registry)
     return registry, catalogs
 
 
@@ -244,3 +247,84 @@ def published_home_locales(registry, outputs=None, root=ROOT):
 
 def home_url(registry, code):
     return registry['locales'][code]['home'] if code in published_home_locales(registry) else None
+
+
+RUNTIME_KEYS = {'language.label', 'language.popular', 'language.all', 'install.label', 'install.link', 'install.ios', 'install.browser', 'footer.privacy', 'footer.terms', 'footer.accessibility'}
+
+def validate_mirror_capabilities(root, registry):
+    """Capability grants require real catalog and emitted family contracts."""
+    used = {}
+    for group in ('authoredMirrors', 'pageMirrors', 'exactMirrors'):
+        for name, family in registry.get(group, {}).items():
+            routes = family.get('routes', {})
+            for code, route in routes.items():
+                if code not in registry['locales']:
+                    raise ValueError(f'{name}: unknown route locale {code}')
+                if not isinstance(route, str) or not re.fullmatch(r'/[A-Za-z0-9-]+(?:/[a-z0-9-]+)*/?', route):
+                    raise ValueError(f'{name}: malformed mirror route')
+                if code == 'en':
+                    continue
+                if group == 'pageMirrors' and code not in family.get('renderLocales', []):
+                    continue
+                key = route.rstrip('/')
+                if key in used and registry['locales'][code]['capabilities']['mirrorTabs'] and family.get('english') in {'/travel','/visit-annaya','/bekaa-kafra','/qadisha-valley','/qannoubine-monastery','/qozhaya-monastery','/saint-charbel-hermitage','/saint-charbel-trail','/saint-charbel-places-lebanon','/our-lady-of-lebanon-harissa','/cedars-of-god-lebanon','/bkerke-maronite-patriarchate','/saint-charbel-pilgrimage','/annaya-tour'}:
+                    raise ValueError(f'Duplicate mirror route: {route}')
+                used[key] = (group, name, code)
+    for code, config in registry['locales'].items():
+        caps = config['capabilities']
+        if caps['runtime'] and caps['mirrorTabs']:
+            runtime = read_json(root / f'locales/{code}/runtime.json')
+            if set(runtime) != RUNTIME_KEYS:
+                raise ValueError(f'{code}: incomplete runtime catalog')
+            leaves(runtime)
+        if caps['selectorCopy'] and caps['mirrorTabs']:
+            selectors = read_json(root / 'locales/same-page-copy.json')
+            if code not in selectors or set(selectors[code]) != {'language','choose','unavailable','suffix','helper','names'}:
+                raise ValueError(f'{code}: incomplete selector catalog')
+            leaves(selectors[code])
+            if set(selectors[code]['names']) != set(registry['locales']):
+                raise ValueError(f'{code}: selector language names incomplete')
+        if not caps['home']:
+            if code in registry.get('homepageMirrors', {}).get('renderLocales', []) or code in registry.get('limitedLaunchLocales', []):
+                raise ValueError(f'{code}: undeclared home output')
+            if any(code in values for values in registry['publicationSets'].values()):
+                raise ValueError(f'{code}: partial mirror locale cannot gain prayer/eucharistic output')
+        if 'travel' in caps['mirrorTabs']:
+            for route, (group, name, owner) in used.items():
+                if owner != code:
+                    continue
+                cfg = registry[group][name]
+                english = cfg['english']
+                if english not in {'/travel','/visit-annaya','/bekaa-kafra','/qadisha-valley','/qannoubine-monastery','/qozhaya-monastery','/saint-charbel-hermitage','/saint-charbel-trail','/saint-charbel-places-lebanon','/our-lady-of-lebanon-harissa','/cedars-of-god-lebanon','/bkerke-maronite-patriarchate','/saint-charbel-pilgrimage','/annaya-tour'}:
+                    continue
+                source = cfg.get('master', english.lstrip('/') + '.html')
+                if not (root / source).is_file():
+                    raise ValueError(f'{code}/{name}: missing mirror master')
+                if group != 'pageMirrors':
+                    raise ValueError(f'{code}/{name}: partial tab requires explicit keyed master family')
+                contract = read_json(root / f'locales/en/{name}-bindings.json')
+                if contract['master'] != source:
+                    raise ValueError(f'{code}/{name}: family/master linkage differs')
+                import hashlib
+                if contract['masterSha256'] != hashlib.sha256((root / source).read_bytes()).hexdigest():
+                    raise ValueError(f'{code}/{name}: stale mirror master')
+                base = read_json(root / f'locales/en/{name}-copy.json')
+                local = read_json(root / f'locales/{code}/{name}-copy.json')
+                if set(base) != set(local):
+                    raise ValueError(f'{code}/{name}: incomplete keyed catalog')
+                leaves(local)
+
+
+def validate_partial_outputs(root, registry, outputs):
+    """Declared partial tab routes and generated HTML must be a bijection."""
+    for code, config in registry['locales'].items():
+        if config['capabilities']['home']:
+            continue
+        expected = {root / (route.lstrip('/') + '.html')
+            for family in registry.get('pageMirrors', {}).values()
+            for owner, route in family.get('routes', {}).items()
+            if owner == code and owner in family.get('renderLocales', [])}
+        actual = {path for path in outputs
+            if path.suffix == '.html' and path.relative_to(root).parts[0] == code}
+        if actual != expected:
+            raise ValueError(f'{code}: partial capability/output mismatch')

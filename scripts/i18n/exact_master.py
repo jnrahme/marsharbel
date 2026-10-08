@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit
 from bs4 import BeautifulSoup
-from i18n.catalog import ROOT, read_json, leaves, page_url, topic_locales
+from i18n.catalog import ROOT, read_json, leaves, page_url, topic_locales, home_url
 from i18n.guarded_dom import translate_slots, translatable_nodes
 from i18n.metadata import og_locales
 
@@ -74,7 +74,7 @@ def render_exact(root, registry, lang, name, route, catalog=None):
     site = registry['site']
     english_url = soup.select_one('link[rel=canonical]')['href']
     local_url = site + route
-    twins = {'': registry['locales'][lang]['home']}
+    twins = {'': (home_url(registry, lang) or '/')}
     for topic, cfg in registry['topics'].items():
         if lang in topic_locales(registry, topic):
             twins[cfg['relatedEnglish'].rstrip('/')] = page_url(registry, lang, topic)
@@ -163,7 +163,7 @@ def render_exact(root, registry, lang, name, route, catalog=None):
                     item['name']=label
                     path=urlsplit(item['item']).path.rstrip('/')
                     if path in twins:item['item']=site+twins[path]
-                items[0]['item']=site+registry['locales'][lang]['home']
+                items[0]['item']=site+(home_url(registry, lang) or '/')
                 items[-1]['item']=local_url
             if isinstance(data.get('mainEntity'),dict) and data['mainEntity'].get('@type')=='Article':
                 data['mainEntity']['headline']=soup.h1.get_text(' ',strip=True)

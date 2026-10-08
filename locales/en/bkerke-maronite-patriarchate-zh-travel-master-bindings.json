@@ -1,0 +1,1079 @@
+{
+  "version": 1,
+  "master": "bkerke-maronite-patriarchate.html",
+  "masterSha256": "cce581666d65419a53f5a8527bad1b5769634ac524c7078478d9500435a4746e",
+  "sourceRevision": "1be64cf5",
+  "bindings": [
+    {
+      "key": "bkerke-maronite-patriarchate.metadata.title-bkerke-the-seat-of-the-maronite-patriarchate-and-saint",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Bkerke: The Seat of the Maronite Patriarchate and Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.metadata.description-bkerke-the-seat-of-the-maronite-patriarchate-nea",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Bkerke, the seat of the Maronite Patriarchate near Harissa: its history, the patriarchs, and the place where Saint Charbel became a priest.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.metadata.og-title-bkerke-the-seat-of-the-maronite-patriarchate-and-sa",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Bkerke: The Seat of the Maronite Patriarchate and Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.metadata.og-description-bkerke-the-seat-of-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Bkerke, the seat of the Maronite Patriarchate near Harissa: its history, the patriarchs, and the place where Saint Charbel became a priest.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.metadata.twitter-title-bkerke-the-seat-of-the-maronite-patriarchate-a",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Bkerke: The Seat of the Maronite Patriarchate and Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.metadata.twitter-description-bkerke-the-seat-of-the-maronite-patriarc",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Bkerke, the seat of the Maronite Patriarchate near Harissa: its history, the patriarchs, and the place where Saint Charbel became a priest.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.accessibility.in-this-guide",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.body.home",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.body.travel",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.body.bkerke-seat-of-the-maronite-patriarchate",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Bkerke: Seat of the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.body.places-of-lebanon",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Places of Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.bkerke-seat-of-the-maron.bkerke-seat-of-the-maronite-patriarchate",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Bkerke: Seat of the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.bkerke-seat-of-the-maron.bkerke-is-the-seat-of-the-maronite-patriarchate-a-hillside-v",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Bkerke is the seat of the Maronite Patriarchate, a hillside village in the Jounieh district of Lebanon, near Harissa. The Maronite Patriarch has lived there in winter since the 19th century. Saint Charbel was ordained a priest at Bkerke on July 23, 1859.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.bkerke-seat-of-the-maron.charbel-s-life",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Charbel's Life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.bkerke-seat-of-the-maron.plan-a-pilgrimage",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Plan a Pilgrimage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.bkerke-seat-of-the-maron.qannoubine-monastery",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.what-bkerke-is.what-bkerke-is",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "What Bkerke Is",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.what-bkerke-is.bkerke-also-written-bkerk-or-bkirki-is-a-village-in-the-dist",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Bkerke (also written Bkerké or Bkirki) is a village in the district of Jounieh. It houses the seat of the Maronite Patriarchate for the entire East and is the winter residence of the Maronite Patriarch. According to the official Vatican-visit site for Pope Leo XIV, it is the tenth seat of the Maronite Patriarchate after Antioch. It stands on the hillside below",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.what-bkerke-is.harissa",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.what-bkerke-is.home-of-the-great-shrine-of-our-lady-of-lebanon",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", home of the great shrine of Our Lady of Lebanon.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.how-bkerke-became-the-se.how-bkerke-became-the-seat",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "How Bkerke Became the Seat",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.how-bkerke-became-the-se.sheikh-khattar-el-khazen-built-a-monastery-at-bkerke-in-1703",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Sheikh Khattar el-Khazen built a monastery at Bkerke in 1703. It passed through several hands, and an apostolic bull in 1779 dedicated it to the benefit of the Maronite community. The Maronite Synod treated it as a dependency of the See of Qannoubine in the Qadisha Valley. In 1823 it became the Patriarchal seat for the winter season.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.how-bkerke-became-the-se.sources-differ-on-the-date-of-the-move-another-history-place",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Sources differ on the date of the move: another history places the decree in 1790 and its carrying out in 1830, under Patriarch Joseph Hobeiche.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.how-bkerke-became-the-se.the-building-has-grown-over-time-patriarch-jean-el-hajj-reno",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "The building has grown over time. Patriarch Jean el-Hajj renovated it in 1890, adding an upper floor. Patriarch Paul Meouchi restored it in 1970, and Patriarch Nasrallah Sfeir added a wing in 1995 for the archives and a museum of the Patriarchal seat, with tombs of the Patriarchs and stained glass in the church.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.summer-in-dimane-winter.summer-in-dimane-winter-in-bkerke",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "Summer in Dimane, Winter in Bkerke",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.summer-in-dimane-winter.the-patriarchs-of-bkerke-have-moved-between-two-residences-d",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Patriarchs of Bkerke have moved between two residences: Dimane for the summer and Bkerke for the winter. Before Bkerke, the Maronite Synod treated the monastery there as a dependency of the See of Qannoubine, in the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.summer-in-dimane-winter.qadisha-valley",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.summer-in-dimane-winter.see-the",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ". See the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.summer-in-dimane-winter.qannoubine-monastery",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Qannoubine monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.summer-in-dimane-winter.text",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.accessibility.the-maronite-patriarch-s-summer-residence-at-dimane-a-long-s",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The Maronite Patriarch's summer residence at Dimane, a long stone building with a bell tower and a cedar tree in front",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.summer-in-dimane-winter.the-patriarchs-summer-residence-at-dimane-photograph-xtcride",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The Patriarchs' summer residence at Dimane. Photograph: Xtcrider,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.summer-in-dimane-winter.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.summer-in-dimane-winter.public-domain",
+      "selector": "#main-content > section:nth-of-type(4) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ", public domain.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.saint-charbel-at-bkerke",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "Saint Charbel at Bkerke",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.charbel-makhlouf-was-ordained-a-priest-at-the-maronite-patri",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Charbel Makhlouf was ordained a priest at the Maronite Patriarchate in Bkerke on July 23, 1859. His monastery was under the Patriarchal Vicar, who lived at Bkerke at the time. He then returned to the Monastery of Saint Maron at",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.annaya",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.where-he-lived-out-his-life-as-a-monk-and-later-a-hermit-for",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", where he lived out his life as a monk and, later, a hermit. For the full story, see",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.charbel-s-life",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Charbel's life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.or-start-with",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", or start with",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.saint-charbel-the-key-dates",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Saint Charbel: the key dates",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.text",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.our",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.pilgrimage-guide",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "pilgrimage guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.includes-bkerke-in-its-three-day-plan",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "includes Bkerke in its three-day plan.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.the-patriarchs-of-bkerke.the-patriarchs-of-bkerke",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "The Patriarchs of Bkerke",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.the-patriarchs-of-bkerke.the-official-list-of-patriarchs-between-dimane-and-bkerke-in",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The official list of Patriarchs between Dimane and Bkerke includes Youssef Hobeich (1823-1845), Paul Massad (1854-1890), Patriarch when Charbel was ordained, Elias Hoayek (1899-1931), Paul Meouchi (1955-1975) and Nasrallah Sfeir (1986-2011). The current Patriarch, Bechara Boutros al-Rai, has served since 2011.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.the-patriarchs-of-bkerke.patriarch-elias-hoayek-who-decided-to-build-the-shrine-of-ou",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Patriarch Elias Hoayek, who decided to build the shrine of Our Lady of Lebanon at Harissa, died at Bkerke on December 24, 1931. The Holy See recognized his heroic virtues in 2019, and he was beatified in Lebanon on July 25, 2026, at the Patriarchal seat of Dimane. Pope Leo XIV called him a \"man of dialogue and hope\" and the \"Father of Greater Lebanon\" (Vatican News).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.visiting-bkerke.visiting-bkerke",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "Visiting Bkerke",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.visiting-bkerke.bkerke-is-close-to",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Bkerke is close to",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.visiting-bkerke.harissa",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.visiting-bkerke.and-jounieh-so-it-is-easy-to-pair-with-them-our",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "and Jounieh, so it is easy to pair with them. Our",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.visiting-bkerke.three-day-plan",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "three-day plan",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.visiting-bkerke.puts-harissa-in-the-morning-and-bkerke-after-it-the-patriarc",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "puts Harissa in the morning and Bkerke after it. The Patriarchal seat is a working residence and a church, so ask ahead whether the church and museum can be visited when you plan to go.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.frequently-asked-questio.frequently-asked-questions",
+      "selector": "#main-content > section:nth-of-type(8) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.frequently-asked-questio.what-is-bkerke",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "What is Bkerke?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.frequently-asked-questio.the-seat-of-the-maronite-patriarchate-a-hillside-village-in",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The seat of the Maronite Patriarchate, a hillside village in the Jounieh district of Lebanon, near Harissa. The Maronite Patriarch lives there in winter.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.frequently-asked-questio.why-is-bkerke-important-to-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "Why is Bkerke important to Saint Charbel?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.frequently-asked-questio.he-was-ordained-a-priest-at-the-maronite-patriarchate-in-bke",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "He was ordained a priest at the Maronite Patriarchate in Bkerke on July 23, 1859.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.frequently-asked-questio.when-did-bkerke-become-the-patriarchal-seat",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "When did Bkerke become the Patriarchal seat?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.frequently-asked-questio.the-official-visit-site-for-pope-leo-xiv-dates-it-to-1823-as",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "The official visit site for Pope Leo XIV dates it to 1823, as the winter seat. Another history dates a decree to 1790 and its carrying out to 1830.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.frequently-asked-questio.who-lives-at-bkerke-today",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "Who lives at Bkerke today?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.frequently-asked-questio.the-maronite-patriarch-of-antioch-and-all-the-east-bechara-b",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "The Maronite Patriarch of Antioch and all the East, Bechara Boutros al-Rai, who has served since 2011.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.frequently-asked-questio.is-bkerke-the-same-as-harissa",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(5)",
+      "source": "Is Bkerke the same as Harissa?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.frequently-asked-questio.no-they-are-neighbors-on-the-same-hill-above-jounieh-harissa",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "No. They are neighbors on the same hill above Jounieh. Harissa is the shrine of Our Lady of Lebanon, and Bkerke is the seat of the Maronite Patriarchate.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.more-places-in-lebanon.more-places-in-lebanon",
+      "selector": "#main-content > section:nth-of-type(9) > h2:nth-of-type(1)",
+      "source": "More Places in Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.more-places-in-lebanon.our-lady-of-lebanon-at-harissa",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.more-places-in-lebanon.text",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ";",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.more-places-in-lebanon.the-cedars-of-god",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.more-places-in-lebanon.text-2",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.more-places-in-lebanon.saint-charbel-s-lebanon",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.more-places-in-lebanon.connects-the-places-in-his-life",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "connects the places in his life.",
+      "kind": "text",
+      "nodeIndex": 5
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.sources.sources",
+      "selector": "#main-content > section:nth-of-type(10) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.sources.pope-leo-xiv-in-lebanon-official-visit-site-november-25-2025",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Pope Leo XIV in Lebanon (official visit site), November 25, 2025: the Maronite Patriarchal See of Bkerke - history, building, list of Patriarchs",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.sources.shrine-of-our-lady-of-lebanon-official-history-patriarch-hoa",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Shrine of Our Lady of Lebanon (official): history - Patriarch Hoayek and the founding of Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.sources.maronite-foundation-the-main-christian-sanctuaries-bkerki-s",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Maronite Foundation: The main Christian sanctuaries - Bkerki's 1790 decree and 1830 settlement; Harissa hill",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.sources.saint-charbel-australia-history-ordination-in-bkerke-in-1859",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Saint Charbel (Australia): history - ordination in Bkerke in 1859, Patriarchal Vicar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.sources.wikipedia-charbel-makhlouf-ordination-on-july-23-1859-in-bke",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Wikipedia: Charbel Makhlouf - ordination on July 23, 1859, in Bkerke",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.sources.vatican-news-july-26-2026-pope-leo-xiv-hails-new-maronite-bl",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Vatican News, July 26, 2026: Pope Leo XIV hails new Maronite Blessed - Elias Hoayek beatified the previous day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.sources.holy-see-press-office-july-6-2019-decrees-of-the-congregatio",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(1)",
+      "source": "Holy See Press Office, July 6, 2019: decrees of the Congregation for the Causes of Saints - Elias Hoyek, died in Bkerke, December 24, 1931",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.footer.bkerke-author-please-pray-for-the-person-who-made-this-websi",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Bkerke. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "bkerke-maronite-patriarchate.metadata.title-bkerke-the-seat-of-the-maronite-patriarchate-and-saint": "Bkerke: The Seat of the Maronite Patriarchate and Saint Charbel",
+    "bkerke-maronite-patriarchate.metadata.description-bkerke-the-seat-of-the-maronite-patriarchate-nea": "Bkerke, the seat of the Maronite Patriarchate near Harissa: its history, the patriarchs, and the place where Saint Charbel became a priest.",
+    "bkerke-maronite-patriarchate.metadata.og-title-bkerke-the-seat-of-the-maronite-patriarchate-and-sa": "Bkerke: The Seat of the Maronite Patriarchate and Saint Charbel",
+    "bkerke-maronite-patriarchate.metadata.og-description-bkerke-the-seat-of-the-maronite-patriarchate": "Bkerke, the seat of the Maronite Patriarchate near Harissa: its history, the patriarchs, and the place where Saint Charbel became a priest.",
+    "bkerke-maronite-patriarchate.metadata.twitter-title-bkerke-the-seat-of-the-maronite-patriarchate-a": "Bkerke: The Seat of the Maronite Patriarchate and Saint Charbel",
+    "bkerke-maronite-patriarchate.metadata.twitter-description-bkerke-the-seat-of-the-maronite-patriarc": "Bkerke, the seat of the Maronite Patriarchate near Harissa: its history, the patriarchs, and the place where Saint Charbel became a priest.",
+    "bkerke-maronite-patriarchate.body.skip-to-main-content": "Skip to main content",
+    "bkerke-maronite-patriarchate.header.text": "✦",
+    "bkerke-maronite-patriarchate.header.saint-charbel": "Saint Charbel",
+    "bkerke-maronite-patriarchate.accessibility.primary": "Primary",
+    "bkerke-maronite-patriarchate.header.home": "Home",
+    "bkerke-maronite-patriarchate.header.legacy": "Legacy",
+    "bkerke-maronite-patriarchate.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "bkerke-maronite-patriarchate.header.full-history": "Full History",
+    "bkerke-maronite-patriarchate.header.gallery": "Gallery",
+    "bkerke-maronite-patriarchate.header.miracles": "Miracles",
+    "bkerke-maronite-patriarchate.header.miracles-reports": "Miracles & Reports",
+    "bkerke-maronite-patriarchate.header.eucharistic-miracles": "Eucharistic Miracles",
+    "bkerke-maronite-patriarchate.header.letters": "Letters",
+    "bkerke-maronite-patriarchate.header.voice-testimony": "Voice Testimony",
+    "bkerke-maronite-patriarchate.header.saints": "Saints",
+    "bkerke-maronite-patriarchate.header.children-s-books": "Children's Books",
+    "bkerke-maronite-patriarchate.header.prayer": "Prayer",
+    "bkerke-maronite-patriarchate.header.prayer-library": "Prayer Library",
+    "bkerke-maronite-patriarchate.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "bkerke-maronite-patriarchate.header.prayer-for-the-sick": "Prayer for the Sick",
+    "bkerke-maronite-patriarchate.header.prayer-for-healing": "Prayer for Healing",
+    "bkerke-maronite-patriarchate.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "bkerke-maronite-patriarchate.header.prayer-for-depression": "Prayer for Depression",
+    "bkerke-maronite-patriarchate.header.prayer-for-students": "Prayer for Students",
+    "bkerke-maronite-patriarchate.header.prayer-for-addiction": "Prayer for Addiction",
+    "bkerke-maronite-patriarchate.header.prayer-for-family": "Prayer for Family",
+    "bkerke-maronite-patriarchate.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "bkerke-maronite-patriarchate.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "bkerke-maronite-patriarchate.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "bkerke-maronite-patriarchate.header.saint-charbel-novena": "Saint Charbel Novena",
+    "bkerke-maronite-patriarchate.header.feast-day": "Feast Day",
+    "bkerke-maronite-patriarchate.header.rosary-guide": "Rosary Guide",
+    "bkerke-maronite-patriarchate.header.rosary-minibook": "Rosary Minibook",
+    "bkerke-maronite-patriarchate.header.mystery-meditation": "Mystery Meditation",
+    "bkerke-maronite-patriarchate.header.become-like-him": "Become Like Him",
+    "bkerke-maronite-patriarchate.header.travel": "Travel",
+    "bkerke-maronite-patriarchate.header.visiting-annaya": "Visiting Annaya",
+    "bkerke-maronite-patriarchate.header.annaya-online-tour": "Annaya Online Tour",
+    "bkerke-maronite-patriarchate.header.bekaa-kafra": "Bekaa Kafra",
+    "bkerke-maronite-patriarchate.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "bkerke-maronite-patriarchate.header.the-cedars-of-god": "the Cedars of God",
+    "bkerke-maronite-patriarchate.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "bkerke-maronite-patriarchate.header.qadisha-valley": "Qadisha Valley",
+    "bkerke-maronite-patriarchate.header.qannoubine-monastery": "Qannoubine Monastery",
+    "bkerke-maronite-patriarchate.header.qozhaya-monastery": "Qozhaya Monastery",
+    "bkerke-maronite-patriarchate.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "bkerke-maronite-patriarchate.header.the-hermitage": "The Hermitage",
+    "bkerke-maronite-patriarchate.header.saint-charbel-trail": "Saint Charbel Trail",
+    "bkerke-maronite-patriarchate.header.news": "News",
+    "bkerke-maronite-patriarchate.accessibility.in-this-guide": "In this guide",
+    "bkerke-maronite-patriarchate.body.home": "Home",
+    "bkerke-maronite-patriarchate.body.text": "/",
+    "bkerke-maronite-patriarchate.body.travel": "Travel",
+    "bkerke-maronite-patriarchate.body.bkerke-seat-of-the-maronite-patriarchate": "Bkerke: Seat of the Maronite Patriarchate",
+    "bkerke-maronite-patriarchate.body.places-of-lebanon": "Places of Lebanon",
+    "bkerke-maronite-patriarchate.bkerke-seat-of-the-maron.bkerke-seat-of-the-maronite-patriarchate": "Bkerke: Seat of the Maronite Patriarchate",
+    "bkerke-maronite-patriarchate.bkerke-seat-of-the-maron.bkerke-is-the-seat-of-the-maronite-patriarchate-a-hillside-v": "Bkerke is the seat of the Maronite Patriarchate, a hillside village in the Jounieh district of Lebanon, near Harissa. The Maronite Patriarch has lived there in winter since the 19th century. Saint Charbel was ordained a priest at Bkerke on July 23, 1859.",
+    "bkerke-maronite-patriarchate.bkerke-seat-of-the-maron.charbel-s-life": "Charbel's Life",
+    "bkerke-maronite-patriarchate.bkerke-seat-of-the-maron.plan-a-pilgrimage": "Plan a Pilgrimage",
+    "bkerke-maronite-patriarchate.bkerke-seat-of-the-maron.qannoubine-monastery": "Qannoubine Monastery",
+    "bkerke-maronite-patriarchate.what-bkerke-is.what-bkerke-is": "What Bkerke Is",
+    "bkerke-maronite-patriarchate.what-bkerke-is.bkerke-also-written-bkerk-or-bkirki-is-a-village-in-the-dist": "Bkerke (also written Bkerké or Bkirki) is a village in the district of Jounieh. It houses the seat of the Maronite Patriarchate for the entire East and is the winter residence of the Maronite Patriarch. According to the official Vatican-visit site for Pope Leo XIV, it is the tenth seat of the Maronite Patriarchate after Antioch. It stands on the hillside below",
+    "bkerke-maronite-patriarchate.what-bkerke-is.harissa": "Harissa",
+    "bkerke-maronite-patriarchate.what-bkerke-is.home-of-the-great-shrine-of-our-lady-of-lebanon": ", home of the great shrine of Our Lady of Lebanon.",
+    "bkerke-maronite-patriarchate.how-bkerke-became-the-se.how-bkerke-became-the-seat": "How Bkerke Became the Seat",
+    "bkerke-maronite-patriarchate.how-bkerke-became-the-se.sheikh-khattar-el-khazen-built-a-monastery-at-bkerke-in-1703": "Sheikh Khattar el-Khazen built a monastery at Bkerke in 1703. It passed through several hands, and an apostolic bull in 1779 dedicated it to the benefit of the Maronite community. The Maronite Synod treated it as a dependency of the See of Qannoubine in the Qadisha Valley. In 1823 it became the Patriarchal seat for the winter season.",
+    "bkerke-maronite-patriarchate.how-bkerke-became-the-se.sources-differ-on-the-date-of-the-move-another-history-place": "Sources differ on the date of the move: another history places the decree in 1790 and its carrying out in 1830, under Patriarch Joseph Hobeiche.",
+    "bkerke-maronite-patriarchate.how-bkerke-became-the-se.the-building-has-grown-over-time-patriarch-jean-el-hajj-reno": "The building has grown over time. Patriarch Jean el-Hajj renovated it in 1890, adding an upper floor. Patriarch Paul Meouchi restored it in 1970, and Patriarch Nasrallah Sfeir added a wing in 1995 for the archives and a museum of the Patriarchal seat, with tombs of the Patriarchs and stained glass in the church.",
+    "bkerke-maronite-patriarchate.summer-in-dimane-winter.summer-in-dimane-winter-in-bkerke": "Summer in Dimane, Winter in Bkerke",
+    "bkerke-maronite-patriarchate.summer-in-dimane-winter.the-patriarchs-of-bkerke-have-moved-between-two-residences-d": "The Patriarchs of Bkerke have moved between two residences: Dimane for the summer and Bkerke for the winter. Before Bkerke, the Maronite Synod treated the monastery there as a dependency of the See of Qannoubine, in the",
+    "bkerke-maronite-patriarchate.summer-in-dimane-winter.qadisha-valley": "Qadisha Valley",
+    "bkerke-maronite-patriarchate.summer-in-dimane-winter.see-the": ". See the",
+    "bkerke-maronite-patriarchate.summer-in-dimane-winter.qannoubine-monastery": "Qannoubine monastery",
+    "bkerke-maronite-patriarchate.summer-in-dimane-winter.text": ".",
+    "bkerke-maronite-patriarchate.accessibility.the-maronite-patriarch-s-summer-residence-at-dimane-a-long-s": "The Maronite Patriarch's summer residence at Dimane, a long stone building with a bell tower and a cedar tree in front",
+    "bkerke-maronite-patriarchate.summer-in-dimane-winter.the-patriarchs-summer-residence-at-dimane-photograph-xtcride": "The Patriarchs' summer residence at Dimane. Photograph: Xtcrider,",
+    "bkerke-maronite-patriarchate.summer-in-dimane-winter.via-wikimedia-commons": "via Wikimedia Commons",
+    "bkerke-maronite-patriarchate.summer-in-dimane-winter.public-domain": ", public domain.",
+    "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.saint-charbel-at-bkerke": "Saint Charbel at Bkerke",
+    "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.charbel-makhlouf-was-ordained-a-priest-at-the-maronite-patri": "Charbel Makhlouf was ordained a priest at the Maronite Patriarchate in Bkerke on July 23, 1859. His monastery was under the Patriarchal Vicar, who lived at Bkerke at the time. He then returned to the Monastery of Saint Maron at",
+    "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.annaya": "Annaya",
+    "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.where-he-lived-out-his-life-as-a-monk-and-later-a-hermit-for": ", where he lived out his life as a monk and, later, a hermit. For the full story, see",
+    "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.charbel-s-life": "Charbel's life",
+    "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.or-start-with": ", or start with",
+    "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.saint-charbel-the-key-dates": "Saint Charbel: the key dates",
+    "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.text": ".",
+    "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.our": "Our",
+    "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.pilgrimage-guide": "pilgrimage guide",
+    "bkerke-maronite-patriarchate.saint-charbel-at-bkerke.includes-bkerke-in-its-three-day-plan": "includes Bkerke in its three-day plan.",
+    "bkerke-maronite-patriarchate.the-patriarchs-of-bkerke.the-patriarchs-of-bkerke": "The Patriarchs of Bkerke",
+    "bkerke-maronite-patriarchate.the-patriarchs-of-bkerke.the-official-list-of-patriarchs-between-dimane-and-bkerke-in": "The official list of Patriarchs between Dimane and Bkerke includes Youssef Hobeich (1823-1845), Paul Massad (1854-1890), Patriarch when Charbel was ordained, Elias Hoayek (1899-1931), Paul Meouchi (1955-1975) and Nasrallah Sfeir (1986-2011). The current Patriarch, Bechara Boutros al-Rai, has served since 2011.",
+    "bkerke-maronite-patriarchate.the-patriarchs-of-bkerke.patriarch-elias-hoayek-who-decided-to-build-the-shrine-of-ou": "Patriarch Elias Hoayek, who decided to build the shrine of Our Lady of Lebanon at Harissa, died at Bkerke on December 24, 1931. The Holy See recognized his heroic virtues in 2019, and he was beatified in Lebanon on July 25, 2026, at the Patriarchal seat of Dimane. Pope Leo XIV called him a \"man of dialogue and hope\" and the \"Father of Greater Lebanon\" (Vatican News).",
+    "bkerke-maronite-patriarchate.visiting-bkerke.visiting-bkerke": "Visiting Bkerke",
+    "bkerke-maronite-patriarchate.visiting-bkerke.bkerke-is-close-to": "Bkerke is close to",
+    "bkerke-maronite-patriarchate.visiting-bkerke.harissa": "Harissa",
+    "bkerke-maronite-patriarchate.visiting-bkerke.and-jounieh-so-it-is-easy-to-pair-with-them-our": "and Jounieh, so it is easy to pair with them. Our",
+    "bkerke-maronite-patriarchate.visiting-bkerke.three-day-plan": "three-day plan",
+    "bkerke-maronite-patriarchate.visiting-bkerke.puts-harissa-in-the-morning-and-bkerke-after-it-the-patriarc": "puts Harissa in the morning and Bkerke after it. The Patriarchal seat is a working residence and a church, so ask ahead whether the church and museum can be visited when you plan to go.",
+    "bkerke-maronite-patriarchate.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+    "bkerke-maronite-patriarchate.frequently-asked-questio.what-is-bkerke": "What is Bkerke?",
+    "bkerke-maronite-patriarchate.frequently-asked-questio.the-seat-of-the-maronite-patriarchate-a-hillside-village-in": "The seat of the Maronite Patriarchate, a hillside village in the Jounieh district of Lebanon, near Harissa. The Maronite Patriarch lives there in winter.",
+    "bkerke-maronite-patriarchate.frequently-asked-questio.why-is-bkerke-important-to-saint-charbel": "Why is Bkerke important to Saint Charbel?",
+    "bkerke-maronite-patriarchate.frequently-asked-questio.he-was-ordained-a-priest-at-the-maronite-patriarchate-in-bke": "He was ordained a priest at the Maronite Patriarchate in Bkerke on July 23, 1859.",
+    "bkerke-maronite-patriarchate.frequently-asked-questio.when-did-bkerke-become-the-patriarchal-seat": "When did Bkerke become the Patriarchal seat?",
+    "bkerke-maronite-patriarchate.frequently-asked-questio.the-official-visit-site-for-pope-leo-xiv-dates-it-to-1823-as": "The official visit site for Pope Leo XIV dates it to 1823, as the winter seat. Another history dates a decree to 1790 and its carrying out to 1830.",
+    "bkerke-maronite-patriarchate.frequently-asked-questio.who-lives-at-bkerke-today": "Who lives at Bkerke today?",
+    "bkerke-maronite-patriarchate.frequently-asked-questio.the-maronite-patriarch-of-antioch-and-all-the-east-bechara-b": "The Maronite Patriarch of Antioch and all the East, Bechara Boutros al-Rai, who has served since 2011.",
+    "bkerke-maronite-patriarchate.frequently-asked-questio.is-bkerke-the-same-as-harissa": "Is Bkerke the same as Harissa?",
+    "bkerke-maronite-patriarchate.frequently-asked-questio.no-they-are-neighbors-on-the-same-hill-above-jounieh-harissa": "No. They are neighbors on the same hill above Jounieh. Harissa is the shrine of Our Lady of Lebanon, and Bkerke is the seat of the Maronite Patriarchate.",
+    "bkerke-maronite-patriarchate.more-places-in-lebanon.more-places-in-lebanon": "More Places in Lebanon",
+    "bkerke-maronite-patriarchate.more-places-in-lebanon.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "bkerke-maronite-patriarchate.more-places-in-lebanon.text": ";",
+    "bkerke-maronite-patriarchate.more-places-in-lebanon.the-cedars-of-god": "the Cedars of God",
+    "bkerke-maronite-patriarchate.more-places-in-lebanon.text-2": ".",
+    "bkerke-maronite-patriarchate.more-places-in-lebanon.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "bkerke-maronite-patriarchate.more-places-in-lebanon.connects-the-places-in-his-life": "connects the places in his life.",
+    "bkerke-maronite-patriarchate.sources.sources": "Sources",
+    "bkerke-maronite-patriarchate.sources.pope-leo-xiv-in-lebanon-official-visit-site-november-25-2025": "Pope Leo XIV in Lebanon (official visit site), November 25, 2025: the Maronite Patriarchal See of Bkerke - history, building, list of Patriarchs",
+    "bkerke-maronite-patriarchate.sources.shrine-of-our-lady-of-lebanon-official-history-patriarch-hoa": "Shrine of Our Lady of Lebanon (official): history - Patriarch Hoayek and the founding of Harissa",
+    "bkerke-maronite-patriarchate.sources.maronite-foundation-the-main-christian-sanctuaries-bkerki-s": "Maronite Foundation: The main Christian sanctuaries - Bkerki's 1790 decree and 1830 settlement; Harissa hill",
+    "bkerke-maronite-patriarchate.sources.saint-charbel-australia-history-ordination-in-bkerke-in-1859": "Saint Charbel (Australia): history - ordination in Bkerke in 1859, Patriarchal Vicar",
+    "bkerke-maronite-patriarchate.sources.wikipedia-charbel-makhlouf-ordination-on-july-23-1859-in-bke": "Wikipedia: Charbel Makhlouf - ordination on July 23, 1859, in Bkerke",
+    "bkerke-maronite-patriarchate.sources.vatican-news-july-26-2026-pope-leo-xiv-hails-new-maronite-bl": "Vatican News, July 26, 2026: Pope Leo XIV hails new Maronite Blessed - Elias Hoayek beatified the previous day",
+    "bkerke-maronite-patriarchate.sources.holy-see-press-office-july-6-2019-decrees-of-the-congregatio": "Holy See Press Office, July 6, 2019: decrees of the Congregation for the Causes of Saints - Elias Hoyek, died in Bkerke, December 24, 1931",
+    "bkerke-maronite-patriarchate.footer.bkerke-author-please-pray-for-the-person-who-made-this-websi": "Bkerke. Author: Please pray for the person who made this website."
+  }
+}

@@ -57,6 +57,20 @@ class PartialLocaleTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'missing from build output'):
             published_home_locales(self.registry, outputs, ROOT)
 
+    def test_home_capability_without_membership_rejected(self):
+        self.registry['locales']['zz']['capabilities']['home'] = True
+        self.registry['locales']['zz']['home'] = '/zz/'
+        with self.assertRaisesRegex(ValueError, 'homepage capability'):
+            validate_registry(self.registry)
+
+    def test_traditional_chinese_never_aliases_simplified(self):
+        cfg=self.registry['locales'].pop('zz')
+        cfg['ogLocale']='zh_CN';cfg['selectorAliases']=['zh-TW']
+        self.registry['locales']['zh-Hans']=cfg
+        self.registry['ogLocaleOrder'][-1]='zh-Hans'
+        with self.assertRaisesRegex(ValueError, 'Traditional Chinese'):
+            validate_registry(self.registry)
+
     def test_existing_homes_unchanged(self):
         for c in self.registry['homePublicationLocales']:
             self.assertEqual(home_url(self.registry, c), '/' if c == 'en' else f'/{c}/')

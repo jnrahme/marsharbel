@@ -1,0 +1,1047 @@
+{
+  "version": 1,
+  "master": "qannoubine-monastery.html",
+  "masterSha256": "8dcdc764c0ebd7fae93cf61e1ca991d2c0e4867e7118ce6e9409c8fca988cbd7",
+  "sourceRevision": "1be64cf5",
+  "bindings": [
+    {
+      "key": "qannoubine-monastery.metadata.title-qannoubine-monastery-fortress-convent-of-the-maronite",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Qannoubine Monastery: Fortress-Convent of the Maronite Patriarchs",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.metadata.description-qannoubine-cut-into-the-cliff-of-the-holy-valley",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(3)",
+      "source": "Qannoubine, cut into the cliff of the Holy Valley, was the seat of the Maronite patriarchs from the fifteenth to the nineteenth centuries - its great Coronation fresco, the cave of Saint Marina, the nuns who keep it, and how to walk down.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "qannoubine-monastery.metadata.og-title-qannoubine-monastery-fortress-convent-of-the-maroni",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(7)",
+      "source": "Qannoubine Monastery: Fortress-Convent of the Maronite Patriarchs",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "qannoubine-monastery.metadata.og-description-qannoubine-cut-into-the-cliff-of-the-holy-val",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+      "source": "Qannoubine, cut into the cliff of the Holy Valley, was the seat of the Maronite patriarchs from the fifteenth to the nineteenth centuries - its great Coronation fresco, the cave of Saint Marina, the nuns who keep it, and how to walk down.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "qannoubine-monastery.metadata.twitter-title-qannoubine-monastery-fortress-convent-of-the-m",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(23)",
+      "source": "Qannoubine Monastery: Fortress-Convent of the Maronite Patriarchs",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "qannoubine-monastery.metadata.twitter-description-qannoubine-cut-into-the-cliff-of-the-hol",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(24)",
+      "source": "Qannoubine, cut into the cliff of the Holy Valley, was the seat of the Maronite patriarchs from the fifteenth to the nineteenth centuries - its great Coronation fresco, the cave of Saint Marina, the nuns who keep it, and how to walk down.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "qannoubine-monastery.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "qannoubine-monastery.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.accessibility.in-this-guide",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "qannoubine-monastery.body.home",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.body.travel",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.body.qannoubine-the-fortress-convent-of-the-patriarchs",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Qannoubine, the Fortress-Convent of the Patriarchs",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.accessibility.the-old-stone-church-of-qannoubine-monastery-under-a-bright",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The old stone church of Qannoubine monastery under a bright sky, with the cliffs of the Qadisha Valley behind it. Photo by Hussein Sabboury, Wikimedia Commons",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "qannoubine-monastery.body.the-stone-church-of-qannoubine-with-the-valley-rising-behind",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The stone church of Qannoubine, with the valley rising behind it. Photo: Hussein Sabboury,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.body.wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.body.cc0",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "(CC0).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "qannoubine-monastery.body.places-of-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Places of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.qannoubine-the-fortress.qannoubine-the-fortress-convent-of-the-patriarchs",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Qannoubine, the Fortress-Convent of the Patriarchs",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.qannoubine-the-fortress.the-monastery-of-qannoubine-partly-built-into-the-rock-in-th",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Monastery of Qannoubine, partly built into the rock in the Qadisha Valley, served as a fortress and residence for Maronite patriarchs from the fifteenth to the nineteenth centuries. A small community of nuns cares for the monastery today.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.qannoubine-the-fortress.at-the-bottom-of-the-holy-valley-s-northern-branch-half-buil",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "At the bottom of the Holy Valley's northern branch, half built and half carved into the cliff, stands the monastery that held the Maronite Church together through its hardest centuries. For nearly four hundred years the patriarchs governed from this gorge - and a small community of nuns keeps it still.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.qannoubine-the-fortress.the-holy-valley",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "The Holy Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.qannoubine-the-fortress.qozhaya-monastery",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.qannoubine-the-fortress.saint-charbel-trail",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-monastery-par-excell.the-monastery-par-excellence",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "The Monastery Par Excellence",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-monastery-par-excell.the-name-says-what-it-was",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The name says what it was.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-monastery-par-excell.qannoubine",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > em:nth-of-type(1)",
+      "source": "Qannoubine",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-monastery-par-excell.is-a-syriac-word-of-greek-origin-meaning-simply-the-monaster",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "is a Syriac word of Greek origin meaning simply \"the monastery\" - the one that needed no other name, because for centuries it was the first monastery of the Maronite nation. Tradition carries its founding back to the end of the fourth century, to the age of the emperor Theodosius, when hermits first filled the caves of the Holy Valley. In 1998 UNESCO inscribed the Qadisha Valley - with Qannoubine at its heart - on the World Heritage List.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "qannoubine-monastery.seat-of-the-patriarchs-1.seat-of-the-patriarchs-1440-to-1823",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "Seat of the Patriarchs, 1440 to 1823",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.seat-of-the-patriarchs-1.after-the-last-mamluk-attack-on-the-old-patriarchal-seat-at",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "After the last Mamluk attack on the old patriarchal seat at Ilige in 1440, the Maronite patriarchs withdrew into the mountain. From that year the seat was here, deep in the gorge, and twenty-four patriarchs governed the Church from Qannoubine across nearly four centuries - through Ottoman rule, famine, and persecution - until the seat moved down to Dimane in 1823, and later to Bkerke.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.seat-of-the-patriarchs-1.they-did-not-govern-from-a-palace-qannoubine-is-a-fortress-o",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "They did not govern from a palace. Qannoubine is a fortress only by geography: cells and a church cut into the rock itself, reachable then as now by steep paths. Seventeen of the patriarchs are buried here; their names are carved in Syriac on a stone erected in 1909 in the cave chapel of Saint Marina beside the monastery.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-church-and-its-fresc.the-church-and-its-frescoes",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "The Church and Its Frescoes",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-church-and-its-fresc.the-church-half-built-into-the-rock-keeps-wall-paintings-fro",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The church, half built into the rock, keeps wall paintings from the patriarchal centuries. The eastern apse holds a Deisis - Christ enthroned, flanked by interceding saints - except that here Saint Stephen takes the usual place of John the Baptist: the patriarch who commissioned the work bore his name. Smaller apses show Saint Joseph holding the Child in one hand and a carpenter's saw in the other, and the prophet Daniel in the lions' den.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-church-and-its-fresc.above-all-stands-the-great",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Above all stands the great",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-church-and-its-fresc.coronation-of-the-virgin",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Coronation of the Virgin",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-church-and-its-fresc.some-four-and-a-half-meters-square-commissioned-from-the-pai",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ", some four and a half meters square, commissioned from the painter Boutros the Cypriot by Patriarch Estephan Douaihy - the scholar-patriarch who gave the Maronite Church its written history - at the end of the seventeenth century. Fifteen mitred patriarchs walk in procession toward the crowning of Mary as Queen of Lebanon. When the painter Moussa Dib of Dlebta restored the fresco in 1781, he lettered each patriarch's name in Syriac beneath the figures, so we still know who walks in the procession.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "qannoubine-monastery.accessibility.the-qadisha-valley-seen-from-the-monastery-of-qannoubine-sea",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The Qadisha Valley seen from the Monastery of Qannoubine, seat of the Maronite patriarchs",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "qannoubine-monastery.the-church-and-its-fresc.the-holy-valley-from-qannoubine-the-gorge-that-sheltered-the",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The Holy Valley from Qannoubine - the gorge that sheltered the Church and its patriarchs. Photograph: Evan Williams,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-church-and-its-fresc.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-church-and-its-fresc.text",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "qannoubine-monastery.the-church-and-its-fresc.cc-by-sa-4-0",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-church-and-its-fresc.text-2",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "qannoubine-monastery.the-cave-of-saint-marina.the-cave-of-saint-marina",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "The Cave of Saint Marina",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-cave-of-saint-marina.beside-the-monastery-a-cave-chapel-keeps-the-memory-of-marin",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Beside the monastery, a cave chapel keeps the memory of Marina the Monk. The old vita tells of a woman who entered a monastery of the valley dressed as a man and lived out her life unrecognized as a monk - a story the Maronite tradition places at Qannoubine, where she is honored as Saint Marina. It is her cave chapel that later received the bones of the patriarchs.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-nuns-who-keep-it.the-nuns-who-keep-it",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "The Nuns Who Keep It",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.the-nuns-who-keep-it.a-handful-of-nuns-live-at-qannoubine-all-year-round-through",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A handful of nuns live at Qannoubine all year round, through snow and silence alike, keeping the prayer of a monastery you can only reach on foot. What they keep is not a museum but a working monastery - visitors are welcome, with modest dress and quiet.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.walking-down-to-qannoubi.walking-down-to-qannoubine",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "Walking Down to Qannoubine",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.walking-down-to-qannoubi.qannoubine-is-earned-on-foot-paths-descend-from-the-rim-town",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Qannoubine is earned on foot. Paths descend from the rim towns on the Bsharri side of the valley - from the villages above the gorge, around Hadath el Jebbeh and Blouza - and a rough track runs along the valley floor. Allow the better part of an hour for the descent, and more for the climb back. Spring brings wildflowers and the full river; autumn is golden and quiet; in winter the high paths can close under snow. The walk is half the meaning of the visit: you arrive the way the patriarchs arrived.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.walking-down-to-qannoubi.qannoubine-lies-inside-the",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Qannoubine lies inside the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.walking-down-to-qannoubi.qadisha-valley",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.walking-down-to-qannoubi.and-our-valley-guide-covers-the-monasteries-the-hermitages-a",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ", and our valley guide covers the monasteries, the hermitages, and the seasons in full.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "qannoubine-monastery.pair-it-with-the-rest-of.pair-it-with-the-rest-of-the-holy-valley",
+      "selector": "#main-content > section:nth-of-type(8) > h2:nth-of-type(1)",
+      "source": "Pair It With the Rest of the Holy Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.pair-it-with-the-rest-of.across-the-valley-on-the-branch-beneath-ehden-stands",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Across the valley, on the branch beneath Ehden, stands",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.pair-it-with-the-rest-of.qozhaya",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Qozhaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.pair-it-with-the-rest-of.the-monastery-of-saint-anthony-reachable-by-car-and-home-to",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", the Monastery of Saint Anthony - reachable by car, and home to the press that printed the first book of the eastern Ottoman Empire. Above the gorge sits",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "qannoubine-monastery.pair-it-with-the-rest-of.bekaa-kafra",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.pair-it-with-the-rest-of.saint-charbel-s-birthplace-looking-down-into-the-valley-that",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", Saint Charbel's birthplace, looking down into the valley that formed his Church. The",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "qannoubine-monastery.pair-it-with-the-rest-of.saint-charbel-trail",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.pair-it-with-the-rest-of.links-his-places-across-mount-lebanon-on-foot-and-our",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "links his places across Mount Lebanon on foot, and our",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "qannoubine-monastery.pair-it-with-the-rest-of.guide-to-saint-charbel-places-in-lebanon",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "guide to Saint Charbel places in Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.pair-it-with-the-rest-of.maps-the-whole-country",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "maps the whole country.",
+      "kind": "text",
+      "nodeIndex": 8
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.frequently-asked-questions",
+      "selector": "#main-content > section:nth-of-type(9) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.what-is-qannoubine",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "What is Qannoubine?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.a-medieval-rock-cut-monastery-in-the-qadisha-valley-of-north",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A medieval rock-cut monastery in the Qadisha Valley of North Lebanon. It was the seat of the Maronite patriarchs from 1440 to 1823 and lies inside the UNESCO World Heritage listing of 1998.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.how-many-patriarchs-lived-at-qannoubine",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "How many patriarchs lived at Qannoubine?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.twenty-four-patriarchs-governed-the-maronite-church-from-qan",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Twenty-four patriarchs governed the Maronite Church from Qannoubine between 1440 and 1823. Seventeen of them are buried in the cave chapel of Saint Marina beside the monastery, their names recorded on a stone of 1909.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.what-is-the-coronation-of-the-virgin-at-qannoubine",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "What is the Coronation of the Virgin at Qannoubine?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.the-monastery-s-great-fresco-commissioned-by-patriarch-estep",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "The monastery's great fresco, commissioned by Patriarch Estephan Douaihy at the end of the seventeenth century: the Virgin crowned as Queen of Lebanon, with fifteen Maronite patriarchs walking in procession. It was restored in 1781.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.can-you-visit-qannoubine-today",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "Can you visit Qannoubine today?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.yes-it-remains-a-working-monastery-kept-all-year-by-a-small",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "Yes. It remains a working monastery, kept all year by a small community of nuns. Visitors are welcome with modest dress and quiet.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.how-do-you-get-to-qannoubine",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > h3:nth-of-type(5)",
+      "source": "How do you get to Qannoubine?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.on-foot-steep-paths-descend-from-the-rim-towns-above-bsharri",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "On foot. Steep paths descend from the rim towns above Bsharri, and a rough track runs along the valley floor. There is no car road to the monastery itself - the walk down is part of the visit.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.is-qannoubine-the-same-as-the-qadisha-valley",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > h3:nth-of-type(6)",
+      "source": "Is Qannoubine the same as the Qadisha Valley?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.frequently-asked-questio.qannoubine-is-one-of-the-qadisha-s-two-great-branches-the-pa",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(6)",
+      "source": "Qannoubine is one of the Qadisha's two great branches - the patriarchal one. The other, running beneath Ehden, is Qozhaya, home of the Monastery of Saint Anthony.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.sources.sources",
+      "selector": "#main-content > section:nth-of-type(10) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.sources.lebanonuntravelled-saint-kannoubine-monastery-the-fortress-p",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "LebanonUntravelled: Saint Kannoubine Monastery - the fortress-palace of the patriarchs, the church and its frescoes",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.sources.syriacpress-may-2022-the-coronation-of-the-virgin-at-qannoub",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "SyriacPress (May 2022): The Coronation of the Virgin at Qannoubine, part 1 - Douaihy's commission and the meaning of the name",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.sources.syriacpress-may-2022-the-coronation-of-the-virgin-at-qannoub-2",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "SyriacPress (May 2022): The Coronation of the Virgin at Qannoubine, part 2 - the fifteen patriarchs, the 1781 restoration, and the 1909 burial stele",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.sources.unesco-world-heritage-list-ouadi-qadisha-the-holy-valley-and",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "UNESCO World Heritage List: Ouadi Qadisha (the Holy Valley) and the Forest of the Cedars of God, inscribed 1998",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qannoubine-monastery.footer.qannoubine-monastery-author-please-pray-for-the-person-who-m",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Qannoubine Monastery. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "qannoubine-monastery.metadata.title-qannoubine-monastery-fortress-convent-of-the-maronite": "Qannoubine Monastery: Fortress-Convent of the Maronite Patriarchs",
+    "qannoubine-monastery.metadata.description-qannoubine-cut-into-the-cliff-of-the-holy-valley": "Qannoubine, cut into the cliff of the Holy Valley, was the seat of the Maronite patriarchs from the fifteenth to the nineteenth centuries - its great Coronation fresco, the cave of Saint Marina, the nuns who keep it, and how to walk down.",
+    "qannoubine-monastery.metadata.og-title-qannoubine-monastery-fortress-convent-of-the-maroni": "Qannoubine Monastery: Fortress-Convent of the Maronite Patriarchs",
+    "qannoubine-monastery.metadata.og-description-qannoubine-cut-into-the-cliff-of-the-holy-val": "Qannoubine, cut into the cliff of the Holy Valley, was the seat of the Maronite patriarchs from the fifteenth to the nineteenth centuries - its great Coronation fresco, the cave of Saint Marina, the nuns who keep it, and how to walk down.",
+    "qannoubine-monastery.metadata.twitter-title-qannoubine-monastery-fortress-convent-of-the-m": "Qannoubine Monastery: Fortress-Convent of the Maronite Patriarchs",
+    "qannoubine-monastery.metadata.twitter-description-qannoubine-cut-into-the-cliff-of-the-hol": "Qannoubine, cut into the cliff of the Holy Valley, was the seat of the Maronite patriarchs from the fifteenth to the nineteenth centuries - its great Coronation fresco, the cave of Saint Marina, the nuns who keep it, and how to walk down.",
+    "qannoubine-monastery.body.skip-to-main-content": "Skip to main content",
+    "qannoubine-monastery.header.text": "✦",
+    "qannoubine-monastery.header.saint-charbel": "Saint Charbel",
+    "qannoubine-monastery.accessibility.primary": "Primary",
+    "qannoubine-monastery.header.home": "Home",
+    "qannoubine-monastery.header.legacy": "Legacy",
+    "qannoubine-monastery.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "qannoubine-monastery.header.full-history": "Full History",
+    "qannoubine-monastery.header.gallery": "Gallery",
+    "qannoubine-monastery.header.miracles": "Miracles",
+    "qannoubine-monastery.header.miracles-reports": "Miracles & Reports",
+    "qannoubine-monastery.header.eucharistic-miracles": "Eucharistic Miracles",
+    "qannoubine-monastery.header.letters": "Letters",
+    "qannoubine-monastery.header.voice-testimony": "Voice Testimony",
+    "qannoubine-monastery.header.saints": "Saints",
+    "qannoubine-monastery.header.children-s-books": "Children's Books",
+    "qannoubine-monastery.header.prayer": "Prayer",
+    "qannoubine-monastery.header.prayer-library": "Prayer Library",
+    "qannoubine-monastery.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "qannoubine-monastery.header.prayer-for-the-sick": "Prayer for the Sick",
+    "qannoubine-monastery.header.prayer-for-healing": "Prayer for Healing",
+    "qannoubine-monastery.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "qannoubine-monastery.header.prayer-for-depression": "Prayer for Depression",
+    "qannoubine-monastery.header.prayer-for-students": "Prayer for Students",
+    "qannoubine-monastery.header.prayer-for-addiction": "Prayer for Addiction",
+    "qannoubine-monastery.header.prayer-for-family": "Prayer for Family",
+    "qannoubine-monastery.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "qannoubine-monastery.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "qannoubine-monastery.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "qannoubine-monastery.header.saint-charbel-novena": "Saint Charbel Novena",
+    "qannoubine-monastery.header.feast-day": "Feast Day",
+    "qannoubine-monastery.header.rosary-guide": "Rosary Guide",
+    "qannoubine-monastery.header.rosary-minibook": "Rosary Minibook",
+    "qannoubine-monastery.header.mystery-meditation": "Mystery Meditation",
+    "qannoubine-monastery.header.become-like-him": "Become Like Him",
+    "qannoubine-monastery.header.travel": "Travel",
+    "qannoubine-monastery.header.visiting-annaya": "Visiting Annaya",
+    "qannoubine-monastery.header.annaya-online-tour": "Annaya Online Tour",
+    "qannoubine-monastery.header.bekaa-kafra": "Bekaa Kafra",
+    "qannoubine-monastery.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "qannoubine-monastery.header.the-cedars-of-god": "the Cedars of God",
+    "qannoubine-monastery.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "qannoubine-monastery.header.qadisha-valley": "Qadisha Valley",
+    "qannoubine-monastery.header.qannoubine-monastery": "Qannoubine Monastery",
+    "qannoubine-monastery.header.qozhaya-monastery": "Qozhaya Monastery",
+    "qannoubine-monastery.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "qannoubine-monastery.header.the-hermitage": "The Hermitage",
+    "qannoubine-monastery.header.saint-charbel-trail": "Saint Charbel Trail",
+    "qannoubine-monastery.header.news": "News",
+    "qannoubine-monastery.accessibility.in-this-guide": "In this guide",
+    "qannoubine-monastery.body.home": "Home",
+    "qannoubine-monastery.body.text": "/",
+    "qannoubine-monastery.body.travel": "Travel",
+    "qannoubine-monastery.body.qannoubine-the-fortress-convent-of-the-patriarchs": "Qannoubine, the Fortress-Convent of the Patriarchs",
+    "qannoubine-monastery.accessibility.the-old-stone-church-of-qannoubine-monastery-under-a-bright": "The old stone church of Qannoubine monastery under a bright sky, with the cliffs of the Qadisha Valley behind it. Photo by Hussein Sabboury, Wikimedia Commons",
+    "qannoubine-monastery.body.the-stone-church-of-qannoubine-with-the-valley-rising-behind": "The stone church of Qannoubine, with the valley rising behind it. Photo: Hussein Sabboury,",
+    "qannoubine-monastery.body.wikimedia-commons": "Wikimedia Commons",
+    "qannoubine-monastery.body.cc0": "(CC0).",
+    "qannoubine-monastery.body.places-of-saint-charbel": "Places of Saint Charbel",
+    "qannoubine-monastery.qannoubine-the-fortress.qannoubine-the-fortress-convent-of-the-patriarchs": "Qannoubine, the Fortress-Convent of the Patriarchs",
+    "qannoubine-monastery.qannoubine-the-fortress.the-monastery-of-qannoubine-partly-built-into-the-rock-in-th": "The Monastery of Qannoubine, partly built into the rock in the Qadisha Valley, served as a fortress and residence for Maronite patriarchs from the fifteenth to the nineteenth centuries. A small community of nuns cares for the monastery today.",
+    "qannoubine-monastery.qannoubine-the-fortress.at-the-bottom-of-the-holy-valley-s-northern-branch-half-buil": "At the bottom of the Holy Valley's northern branch, half built and half carved into the cliff, stands the monastery that held the Maronite Church together through its hardest centuries. For nearly four hundred years the patriarchs governed from this gorge - and a small community of nuns keeps it still.",
+    "qannoubine-monastery.qannoubine-the-fortress.the-holy-valley": "The Holy Valley",
+    "qannoubine-monastery.qannoubine-the-fortress.qozhaya-monastery": "Qozhaya Monastery",
+    "qannoubine-monastery.qannoubine-the-fortress.saint-charbel-trail": "Saint Charbel Trail",
+    "qannoubine-monastery.the-monastery-par-excell.the-monastery-par-excellence": "The Monastery Par Excellence",
+    "qannoubine-monastery.the-monastery-par-excell.the-name-says-what-it-was": "The name says what it was.",
+    "qannoubine-monastery.the-monastery-par-excell.qannoubine": "Qannoubine",
+    "qannoubine-monastery.the-monastery-par-excell.is-a-syriac-word-of-greek-origin-meaning-simply-the-monaster": "is a Syriac word of Greek origin meaning simply \"the monastery\" - the one that needed no other name, because for centuries it was the first monastery of the Maronite nation. Tradition carries its founding back to the end of the fourth century, to the age of the emperor Theodosius, when hermits first filled the caves of the Holy Valley. In 1998 UNESCO inscribed the Qadisha Valley - with Qannoubine at its heart - on the World Heritage List.",
+    "qannoubine-monastery.seat-of-the-patriarchs-1.seat-of-the-patriarchs-1440-to-1823": "Seat of the Patriarchs, 1440 to 1823",
+    "qannoubine-monastery.seat-of-the-patriarchs-1.after-the-last-mamluk-attack-on-the-old-patriarchal-seat-at": "After the last Mamluk attack on the old patriarchal seat at Ilige in 1440, the Maronite patriarchs withdrew into the mountain. From that year the seat was here, deep in the gorge, and twenty-four patriarchs governed the Church from Qannoubine across nearly four centuries - through Ottoman rule, famine, and persecution - until the seat moved down to Dimane in 1823, and later to Bkerke.",
+    "qannoubine-monastery.seat-of-the-patriarchs-1.they-did-not-govern-from-a-palace-qannoubine-is-a-fortress-o": "They did not govern from a palace. Qannoubine is a fortress only by geography: cells and a church cut into the rock itself, reachable then as now by steep paths. Seventeen of the patriarchs are buried here; their names are carved in Syriac on a stone erected in 1909 in the cave chapel of Saint Marina beside the monastery.",
+    "qannoubine-monastery.the-church-and-its-fresc.the-church-and-its-frescoes": "The Church and Its Frescoes",
+    "qannoubine-monastery.the-church-and-its-fresc.the-church-half-built-into-the-rock-keeps-wall-paintings-fro": "The church, half built into the rock, keeps wall paintings from the patriarchal centuries. The eastern apse holds a Deisis - Christ enthroned, flanked by interceding saints - except that here Saint Stephen takes the usual place of John the Baptist: the patriarch who commissioned the work bore his name. Smaller apses show Saint Joseph holding the Child in one hand and a carpenter's saw in the other, and the prophet Daniel in the lions' den.",
+    "qannoubine-monastery.the-church-and-its-fresc.above-all-stands-the-great": "Above all stands the great",
+    "qannoubine-monastery.the-church-and-its-fresc.coronation-of-the-virgin": "Coronation of the Virgin",
+    "qannoubine-monastery.the-church-and-its-fresc.some-four-and-a-half-meters-square-commissioned-from-the-pai": ", some four and a half meters square, commissioned from the painter Boutros the Cypriot by Patriarch Estephan Douaihy - the scholar-patriarch who gave the Maronite Church its written history - at the end of the seventeenth century. Fifteen mitred patriarchs walk in procession toward the crowning of Mary as Queen of Lebanon. When the painter Moussa Dib of Dlebta restored the fresco in 1781, he lettered each patriarch's name in Syriac beneath the figures, so we still know who walks in the procession.",
+    "qannoubine-monastery.accessibility.the-qadisha-valley-seen-from-the-monastery-of-qannoubine-sea": "The Qadisha Valley seen from the Monastery of Qannoubine, seat of the Maronite patriarchs",
+    "qannoubine-monastery.the-church-and-its-fresc.the-holy-valley-from-qannoubine-the-gorge-that-sheltered-the": "The Holy Valley from Qannoubine - the gorge that sheltered the Church and its patriarchs. Photograph: Evan Williams,",
+    "qannoubine-monastery.the-church-and-its-fresc.via-wikimedia-commons": "via Wikimedia Commons",
+    "qannoubine-monastery.the-church-and-its-fresc.text": ",",
+    "qannoubine-monastery.the-church-and-its-fresc.cc-by-sa-4-0": "CC BY-SA 4.0",
+    "qannoubine-monastery.the-church-and-its-fresc.text-2": ".",
+    "qannoubine-monastery.the-cave-of-saint-marina.the-cave-of-saint-marina": "The Cave of Saint Marina",
+    "qannoubine-monastery.the-cave-of-saint-marina.beside-the-monastery-a-cave-chapel-keeps-the-memory-of-marin": "Beside the monastery, a cave chapel keeps the memory of Marina the Monk. The old vita tells of a woman who entered a monastery of the valley dressed as a man and lived out her life unrecognized as a monk - a story the Maronite tradition places at Qannoubine, where she is honored as Saint Marina. It is her cave chapel that later received the bones of the patriarchs.",
+    "qannoubine-monastery.the-nuns-who-keep-it.the-nuns-who-keep-it": "The Nuns Who Keep It",
+    "qannoubine-monastery.the-nuns-who-keep-it.a-handful-of-nuns-live-at-qannoubine-all-year-round-through": "A handful of nuns live at Qannoubine all year round, through snow and silence alike, keeping the prayer of a monastery you can only reach on foot. What they keep is not a museum but a working monastery - visitors are welcome, with modest dress and quiet.",
+    "qannoubine-monastery.walking-down-to-qannoubi.walking-down-to-qannoubine": "Walking Down to Qannoubine",
+    "qannoubine-monastery.walking-down-to-qannoubi.qannoubine-is-earned-on-foot-paths-descend-from-the-rim-town": "Qannoubine is earned on foot. Paths descend from the rim towns on the Bsharri side of the valley - from the villages above the gorge, around Hadath el Jebbeh and Blouza - and a rough track runs along the valley floor. Allow the better part of an hour for the descent, and more for the climb back. Spring brings wildflowers and the full river; autumn is golden and quiet; in winter the high paths can close under snow. The walk is half the meaning of the visit: you arrive the way the patriarchs arrived.",
+    "qannoubine-monastery.walking-down-to-qannoubi.qannoubine-lies-inside-the": "Qannoubine lies inside the",
+    "qannoubine-monastery.walking-down-to-qannoubi.qadisha-valley": "Qadisha Valley",
+    "qannoubine-monastery.walking-down-to-qannoubi.and-our-valley-guide-covers-the-monasteries-the-hermitages-a": ", and our valley guide covers the monasteries, the hermitages, and the seasons in full.",
+    "qannoubine-monastery.pair-it-with-the-rest-of.pair-it-with-the-rest-of-the-holy-valley": "Pair It With the Rest of the Holy Valley",
+    "qannoubine-monastery.pair-it-with-the-rest-of.across-the-valley-on-the-branch-beneath-ehden-stands": "Across the valley, on the branch beneath Ehden, stands",
+    "qannoubine-monastery.pair-it-with-the-rest-of.qozhaya": "Qozhaya",
+    "qannoubine-monastery.pair-it-with-the-rest-of.the-monastery-of-saint-anthony-reachable-by-car-and-home-to": ", the Monastery of Saint Anthony - reachable by car, and home to the press that printed the first book of the eastern Ottoman Empire. Above the gorge sits",
+    "qannoubine-monastery.pair-it-with-the-rest-of.bekaa-kafra": "Bekaa Kafra",
+    "qannoubine-monastery.pair-it-with-the-rest-of.saint-charbel-s-birthplace-looking-down-into-the-valley-that": ", Saint Charbel's birthplace, looking down into the valley that formed his Church. The",
+    "qannoubine-monastery.pair-it-with-the-rest-of.saint-charbel-trail": "Saint Charbel Trail",
+    "qannoubine-monastery.pair-it-with-the-rest-of.links-his-places-across-mount-lebanon-on-foot-and-our": "links his places across Mount Lebanon on foot, and our",
+    "qannoubine-monastery.pair-it-with-the-rest-of.guide-to-saint-charbel-places-in-lebanon": "guide to Saint Charbel places in Lebanon",
+    "qannoubine-monastery.pair-it-with-the-rest-of.maps-the-whole-country": "maps the whole country.",
+    "qannoubine-monastery.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+    "qannoubine-monastery.frequently-asked-questio.what-is-qannoubine": "What is Qannoubine?",
+    "qannoubine-monastery.frequently-asked-questio.a-medieval-rock-cut-monastery-in-the-qadisha-valley-of-north": "A medieval rock-cut monastery in the Qadisha Valley of North Lebanon. It was the seat of the Maronite patriarchs from 1440 to 1823 and lies inside the UNESCO World Heritage listing of 1998.",
+    "qannoubine-monastery.frequently-asked-questio.how-many-patriarchs-lived-at-qannoubine": "How many patriarchs lived at Qannoubine?",
+    "qannoubine-monastery.frequently-asked-questio.twenty-four-patriarchs-governed-the-maronite-church-from-qan": "Twenty-four patriarchs governed the Maronite Church from Qannoubine between 1440 and 1823. Seventeen of them are buried in the cave chapel of Saint Marina beside the monastery, their names recorded on a stone of 1909.",
+    "qannoubine-monastery.frequently-asked-questio.what-is-the-coronation-of-the-virgin-at-qannoubine": "What is the Coronation of the Virgin at Qannoubine?",
+    "qannoubine-monastery.frequently-asked-questio.the-monastery-s-great-fresco-commissioned-by-patriarch-estep": "The monastery's great fresco, commissioned by Patriarch Estephan Douaihy at the end of the seventeenth century: the Virgin crowned as Queen of Lebanon, with fifteen Maronite patriarchs walking in procession. It was restored in 1781.",
+    "qannoubine-monastery.frequently-asked-questio.can-you-visit-qannoubine-today": "Can you visit Qannoubine today?",
+    "qannoubine-monastery.frequently-asked-questio.yes-it-remains-a-working-monastery-kept-all-year-by-a-small": "Yes. It remains a working monastery, kept all year by a small community of nuns. Visitors are welcome with modest dress and quiet.",
+    "qannoubine-monastery.frequently-asked-questio.how-do-you-get-to-qannoubine": "How do you get to Qannoubine?",
+    "qannoubine-monastery.frequently-asked-questio.on-foot-steep-paths-descend-from-the-rim-towns-above-bsharri": "On foot. Steep paths descend from the rim towns above Bsharri, and a rough track runs along the valley floor. There is no car road to the monastery itself - the walk down is part of the visit.",
+    "qannoubine-monastery.frequently-asked-questio.is-qannoubine-the-same-as-the-qadisha-valley": "Is Qannoubine the same as the Qadisha Valley?",
+    "qannoubine-monastery.frequently-asked-questio.qannoubine-is-one-of-the-qadisha-s-two-great-branches-the-pa": "Qannoubine is one of the Qadisha's two great branches - the patriarchal one. The other, running beneath Ehden, is Qozhaya, home of the Monastery of Saint Anthony.",
+    "qannoubine-monastery.sources.sources": "Sources",
+    "qannoubine-monastery.sources.lebanonuntravelled-saint-kannoubine-monastery-the-fortress-p": "LebanonUntravelled: Saint Kannoubine Monastery - the fortress-palace of the patriarchs, the church and its frescoes",
+    "qannoubine-monastery.sources.syriacpress-may-2022-the-coronation-of-the-virgin-at-qannoub": "SyriacPress (May 2022): The Coronation of the Virgin at Qannoubine, part 1 - Douaihy's commission and the meaning of the name",
+    "qannoubine-monastery.sources.syriacpress-may-2022-the-coronation-of-the-virgin-at-qannoub-2": "SyriacPress (May 2022): The Coronation of the Virgin at Qannoubine, part 2 - the fifteen patriarchs, the 1781 restoration, and the 1909 burial stele",
+    "qannoubine-monastery.sources.unesco-world-heritage-list-ouadi-qadisha-the-holy-valley-and": "UNESCO World Heritage List: Ouadi Qadisha (the Holy Valley) and the Forest of the Cedars of God, inscribed 1998",
+    "qannoubine-monastery.footer.qannoubine-monastery-author-please-pray-for-the-person-who-m": "Qannoubine Monastery. Author: Please pray for the person who made this website."
+  }
+}
