@@ -2,661 +2,654 @@
   "version": 1,
   "master": "travel.html",
   "masterSha256": "42f7565e67806317a6a28f55838c9a733695de3e5d7d5394b9e024f669aa3ecf",
-  "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
+  "sourceRevision": "6a226cc5",
   "bindings": [
     {
-      "key": "travel.node.0",
+      "key": "travel.metadata.title-travel-through-saint-charbel-s-lebanon",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
       "source": "Travel through Saint Charbel's Lebanon",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.1",
+      "key": "travel.metadata.description-explore-annaya-online-then-find-guides-to-the-mo",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(3)",
       "source": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
       "kind": "attribute",
       "attribute": "content"
     },
     {
-      "key": "travel.node.2",
-      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(6)",
-      "source": "Saint Charbel",
-      "kind": "attribute",
-      "attribute": "content"
-    },
-    {
-      "key": "travel.node.3",
+      "key": "travel.metadata.og-title-travel-through-saint-charbel-s-lebanon",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(7)",
       "source": "Travel through Saint Charbel's Lebanon",
       "kind": "attribute",
       "attribute": "content"
     },
     {
-      "key": "travel.node.4",
+      "key": "travel.metadata.og-description-explore-annaya-online-then-find-guides-to-the",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
       "source": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
       "kind": "attribute",
       "attribute": "content"
     },
     {
-      "key": "travel.node.5",
+      "key": "travel.metadata.twitter-title-travel-through-saint-charbel-s-lebanon",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(24)",
       "source": "Travel through Saint Charbel's Lebanon",
       "kind": "attribute",
       "attribute": "content"
     },
     {
-      "key": "travel.node.6",
+      "key": "travel.metadata.twitter-description-explore-annaya-online-then-find-guides-t",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(25)",
       "source": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
       "kind": "attribute",
       "attribute": "content"
     },
     {
-      "key": "travel.node.7",
+      "key": "travel.body.skip-to-content",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Skip to content",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.8",
+      "key": "travel.header.text",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
       "source": "✦",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.9",
+      "key": "travel.header.saint-charbel",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
       "source": "Saint Charbel",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.10",
+      "key": "travel.accessibility.primary",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
       "source": "Primary",
       "kind": "attribute",
       "attribute": "aria-label"
     },
     {
-      "key": "travel.node.11",
+      "key": "travel.header.home",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Home",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.12",
+      "key": "travel.header.legacy",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Legacy",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.13",
+      "key": "travel.header.saint-charbel-encyclopedia",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Saint Charbel Encyclopedia",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.14",
+      "key": "travel.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.15",
+      "key": "travel.header.gallery",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.16",
+      "key": "travel.header.miracles",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
       "source": "Miracles",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.17",
+      "key": "travel.header.miracles-reports",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Miracles & Reports",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.18",
+      "key": "travel.header.eucharistic-miracles",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Eucharistic Miracles",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.19",
+      "key": "travel.header.letters",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Letters",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.20",
+      "key": "travel.header.voice-testimony",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
       "source": "Voice Testimony",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.21",
+      "key": "travel.header.saints",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
       "source": "Saints",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.22",
+      "key": "travel.header.saints",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Saints",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.23",
+      "key": "travel.header.children-s-books",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.24",
+      "key": "travel.header.prayer",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
       "source": "Prayer",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.25",
+      "key": "travel.header.prayer-library",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Prayer Library",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.26",
+      "key": "travel.header.find-a-prayer-by-intention",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Find a Prayer by Intention",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.27",
+      "key": "travel.header.prayer-for-the-sick",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Prayer for the Sick",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.28",
+      "key": "travel.header.prayer-for-healing",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
       "source": "Prayer for Healing",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.29",
+      "key": "travel.header.prayer-for-anxiety",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
       "source": "Prayer for Anxiety",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.30",
+      "key": "travel.header.prayer-for-depression",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
       "source": "Prayer for Depression",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.31",
+      "key": "travel.header.prayer-for-students",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
       "source": "Prayer for Students",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.32",
+      "key": "travel.header.prayer-for-addiction",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
       "source": "Prayer for Addiction",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.33",
+      "key": "travel.header.prayer-for-family",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
       "source": "Prayer for Family",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.34",
+      "key": "travel.header.prayer-for-pregnancy",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
       "source": "Prayer for Pregnancy",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.35",
+      "key": "travel.header.prayer-for-a-miracle",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
       "source": "Prayer for a Miracle",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.36",
+      "key": "travel.header.saint-charbel-prayers",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
       "source": "Saint Charbel Prayers",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.37",
+      "key": "travel.header.saint-charbel-novena",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
       "source": "Saint Charbel Novena",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.38",
+      "key": "travel.header.feast-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
       "source": "Feast Day",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.39",
+      "key": "travel.header.rosary-guide",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
       "source": "Rosary Guide",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.40",
+      "key": "travel.header.rosary-minibook",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
       "source": "Rosary Minibook",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.41",
+      "key": "travel.header.mystery-meditation",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
       "source": "Mystery Meditation",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.42",
+      "key": "travel.header.become-like-him",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
       "source": "Become Like Him",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.43",
+      "key": "travel.header.travel",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
       "source": "Travel",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.44",
+      "key": "travel.header.travel",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Travel",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.45",
+      "key": "travel.header.visiting-annaya",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Visiting Annaya",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.46",
+      "key": "travel.header.annaya-online-tour",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Annaya Online Tour",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.47",
+      "key": "travel.header.bekaa-kafra",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
       "source": "Bekaa Kafra",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.48",
+      "key": "travel.header.our-lady-of-lebanon-at-harissa",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
       "source": "Our Lady of Lebanon at Harissa",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.49",
+      "key": "travel.header.the-cedars-of-god",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
       "source": "the Cedars of God",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.50",
+      "key": "travel.header.bkerke-and-the-maronite-patriarchate",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
       "source": "Bkerke and the Maronite Patriarchate",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.51",
+      "key": "travel.header.qadisha-valley",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
       "source": "Qadisha Valley",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.52",
+      "key": "travel.header.qannoubine-monastery",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
       "source": "Qannoubine Monastery",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.53",
+      "key": "travel.header.qozhaya-monastery",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
       "source": "Qozhaya Monastery",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.54",
+      "key": "travel.header.saint-charbel-s-lebanon",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
       "source": "Saint Charbel's Lebanon",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.55",
+      "key": "travel.header.the-hermitage",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
       "source": "The Hermitage",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.56",
+      "key": "travel.header.saint-charbel-trail",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
       "source": "Saint Charbel Trail",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.57",
+      "key": "travel.header.news",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
       "source": "News",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.58",
+      "key": "travel.accessibility.in-this-guide",
       "selector": "#main-content > nav:nth-of-type(1)",
       "source": "In this guide",
       "kind": "attribute",
       "attribute": "aria-label"
     },
     {
-      "key": "travel.node.59",
+      "key": "travel.body.home",
       "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Home",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.60",
+      "key": "travel.body.text",
       "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
       "source": "/",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.61",
+      "key": "travel.body.travel",
       "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
       "source": "Travel",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.62",
+      "key": "travel.body.paul-saad",
       "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
       "source": "Paul Saad /",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.63",
+      "key": "travel.body.wikimedia-commons",
       "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Wikimedia Commons",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.64",
+      "key": "travel.body.text",
       "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
       "source": "/",
       "kind": "text",
       "nodeIndex": 2
     },
     {
-      "key": "travel.node.65",
+      "key": "travel.body.cc-by-sa-4-0",
       "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
       "source": "CC BY-SA 4.0",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.66",
+      "key": "travel.travel-through-saint-cha.travel-through-saint-charbel-s-lebanon",
       "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
       "source": "Travel through Saint Charbel's Lebanon",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.67",
+      "key": "travel.travel-through-saint-cha.explore-annaya-online-then-find-guides-to-the-mountains-mona",
       "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
       "source": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.68",
+      "key": "travel.travel-through-saint-cha.begin-the-tour",
       "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Begin the tour",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.69",
+      "key": "travel.travel-through-saint-cha.plan-a-visit",
       "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Plan a visit",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.70",
+      "key": "travel.accessibility.travel-through-saint-charbel-s-lebanon",
       "selector": "#main-content > nav:nth-of-type(2)",
       "source": "Travel through Saint Charbel's Lebanon",
       "kind": "attribute",
       "attribute": "aria-label"
     },
     {
-      "key": "travel.node.71",
+      "key": "travel.travel-through-saint-cha.walk-through-annaya-online",
       "selector": "#main-content > nav:nth-of-type(2) > a:nth-of-type(1)",
       "source": "Walk through Annaya, online",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.72",
+      "key": "travel.travel-through-saint-cha.explore-the-destinations",
       "selector": "#main-content > nav:nth-of-type(2) > a:nth-of-type(2)",
       "source": "Explore the destinations",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.73",
+      "key": "travel.travel-through-saint-cha.plan-your-pilgrimage",
       "selector": "#main-content > nav:nth-of-type(2) > a:nth-of-type(3)",
       "source": "Plan your pilgrimage",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.74",
+      "key": "travel.annaya-and-the-hermitage.annaya-and-the-hermitage",
       "selector": "#destinations-annaya > h2:nth-of-type(1)",
       "source": "Annaya and the hermitage",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.75",
+      "key": "travel.annaya-and-the-hermitage.annaya-visit-guide",
       "selector": "#destinations-annaya > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "Annaya visit guide",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.76",
+      "key": "travel.annaya-and-the-hermitage.the-hermitage",
       "selector": "#destinations-annaya > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "The Hermitage",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.77",
+      "key": "travel.annaya-and-the-hermitage.saint-charbel-s-lebanon",
       "selector": "#destinations-annaya > div:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "Saint Charbel's Lebanon",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.78",
+      "key": "travel.the-northern-mountains.the-northern-mountains",
       "selector": "#destinations-north > h2:nth-of-type(1)",
       "source": "The northern mountains",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.79",
+      "key": "travel.the-northern-mountains.qadisha-valley",
       "selector": "#destinations-north > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "Qadisha Valley",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.80",
+      "key": "travel.the-northern-mountains.evan-williams-cc-by-sa-4-0",
       "selector": "#destinations-north > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
       "source": "Evan Williams / CC BY-SA 4.0",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.81",
+      "key": "travel.the-northern-mountains.qannoubine-monastery",
       "selector": "#destinations-north > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "Qannoubine Monastery",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.82",
+      "key": "travel.the-northern-mountains.hussein-sabboury-cc0",
       "selector": "#destinations-north > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
       "source": "Hussein Sabboury / CC0",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.83",
+      "key": "travel.the-northern-mountains.qozhaya-monastery",
       "selector": "#destinations-north > div:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "Qozhaya Monastery",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.84",
+      "key": "travel.the-northern-mountains.yellaban-wikimedia-commons",
       "selector": "#destinations-north > div:nth-of-type(1) > div:nth-of-type(3) > p:nth-of-type(1)",
       "source": "Yellaban / Wikimedia Commons",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.85",
+      "key": "travel.the-northern-mountains.bekaa-kafra",
       "selector": "#destinations-north > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "Bekaa Kafra",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.86",
+      "key": "travel.the-northern-mountains.the-cedars-of-god",
       "selector": "#destinations-north > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "The Cedars of God",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.87",
+      "key": "travel.coast-and-pilgrimage-sto.coast-and-pilgrimage-stops",
       "selector": "#destinations-coast > h2:nth-of-type(1)",
       "source": "Coast and pilgrimage stops",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.88",
+      "key": "travel.coast-and-pilgrimage-sto.our-lady-of-lebanon-at-harissa",
       "selector": "#destinations-coast > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "Our Lady of Lebanon at Harissa",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.89",
+      "key": "travel.coast-and-pilgrimage-sto.bkerke-and-the-maronite-patriarchate",
       "selector": "#destinations-coast > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "Bkerke and the Maronite Patriarchate",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.90",
+      "key": "travel.travel-guides.travel-guides",
       "selector": "#planning > h2:nth-of-type(1)",
       "source": "Travel guides",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.91",
+      "key": "travel.travel-guides.saint-charbel-pilgrimage",
       "selector": "#planning > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "Saint Charbel pilgrimage",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.92",
+      "key": "travel.travel-guides.saint-charbel-trail",
       "selector": "#planning > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1) > h3:nth-of-type(1)",
       "source": "Saint Charbel Trail",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "travel.node.93",
+      "key": "travel.footer.independent-devotional-website-dedicated-to-saint-charbel-wi",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
       "source": "Independent devotional website dedicated to Saint Charbel, without official affiliation to the Annaya shrine.",
       "kind": "text",
@@ -664,100 +657,95 @@
     }
   ],
   "messages": {
-    "travel.node.0": "Travel through Saint Charbel's Lebanon",
-    "travel.node.1": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
-    "travel.node.2": "Saint Charbel",
-    "travel.node.3": "Travel through Saint Charbel's Lebanon",
-    "travel.node.4": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
-    "travel.node.5": "Travel through Saint Charbel's Lebanon",
-    "travel.node.6": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
-    "travel.node.7": "Skip to content",
-    "travel.node.8": "✦",
-    "travel.node.9": "Saint Charbel",
-    "travel.node.10": "Primary",
-    "travel.node.11": "Home",
-    "travel.node.12": "Legacy",
-    "travel.node.13": "Saint Charbel Encyclopedia",
-    "travel.node.14": "Full History",
-    "travel.node.15": "Gallery",
-    "travel.node.16": "Miracles",
-    "travel.node.17": "Miracles & Reports",
-    "travel.node.18": "Eucharistic Miracles",
-    "travel.node.19": "Letters",
-    "travel.node.20": "Voice Testimony",
-    "travel.node.21": "Saints",
-    "travel.node.22": "Saints",
-    "travel.node.23": "Children's Books",
-    "travel.node.24": "Prayer",
-    "travel.node.25": "Prayer Library",
-    "travel.node.26": "Find a Prayer by Intention",
-    "travel.node.27": "Prayer for the Sick",
-    "travel.node.28": "Prayer for Healing",
-    "travel.node.29": "Prayer for Anxiety",
-    "travel.node.30": "Prayer for Depression",
-    "travel.node.31": "Prayer for Students",
-    "travel.node.32": "Prayer for Addiction",
-    "travel.node.33": "Prayer for Family",
-    "travel.node.34": "Prayer for Pregnancy",
-    "travel.node.35": "Prayer for a Miracle",
-    "travel.node.36": "Saint Charbel Prayers",
-    "travel.node.37": "Saint Charbel Novena",
-    "travel.node.38": "Feast Day",
-    "travel.node.39": "Rosary Guide",
-    "travel.node.40": "Rosary Minibook",
-    "travel.node.41": "Mystery Meditation",
-    "travel.node.42": "Become Like Him",
-    "travel.node.43": "Travel",
-    "travel.node.44": "Travel",
-    "travel.node.45": "Visiting Annaya",
-    "travel.node.46": "Annaya Online Tour",
-    "travel.node.47": "Bekaa Kafra",
-    "travel.node.48": "Our Lady of Lebanon at Harissa",
-    "travel.node.49": "the Cedars of God",
-    "travel.node.50": "Bkerke and the Maronite Patriarchate",
-    "travel.node.51": "Qadisha Valley",
-    "travel.node.52": "Qannoubine Monastery",
-    "travel.node.53": "Qozhaya Monastery",
-    "travel.node.54": "Saint Charbel's Lebanon",
-    "travel.node.55": "The Hermitage",
-    "travel.node.56": "Saint Charbel Trail",
-    "travel.node.57": "News",
-    "travel.node.58": "In this guide",
-    "travel.node.59": "Home",
-    "travel.node.60": "/",
-    "travel.node.61": "Travel",
-    "travel.node.62": "Paul Saad /",
-    "travel.node.63": "Wikimedia Commons",
-    "travel.node.64": "/",
-    "travel.node.65": "CC BY-SA 4.0",
-    "travel.node.66": "Travel through Saint Charbel's Lebanon",
-    "travel.node.67": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
-    "travel.node.68": "Begin the tour",
-    "travel.node.69": "Plan a visit",
-    "travel.node.70": "Travel through Saint Charbel's Lebanon",
-    "travel.node.71": "Walk through Annaya, online",
-    "travel.node.72": "Explore the destinations",
-    "travel.node.73": "Plan your pilgrimage",
-    "travel.node.74": "Annaya and the hermitage",
-    "travel.node.75": "Annaya visit guide",
-    "travel.node.76": "The Hermitage",
-    "travel.node.77": "Saint Charbel's Lebanon",
-    "travel.node.78": "The northern mountains",
-    "travel.node.79": "Qadisha Valley",
-    "travel.node.80": "Evan Williams / CC BY-SA 4.0",
-    "travel.node.81": "Qannoubine Monastery",
-    "travel.node.82": "Hussein Sabboury / CC0",
-    "travel.node.83": "Qozhaya Monastery",
-    "travel.node.84": "Yellaban / Wikimedia Commons",
-    "travel.node.85": "Bekaa Kafra",
-    "travel.node.86": "The Cedars of God",
-    "travel.node.87": "Coast and pilgrimage stops",
-    "travel.node.88": "Our Lady of Lebanon at Harissa",
-    "travel.node.89": "Bkerke and the Maronite Patriarchate",
-    "travel.node.90": "Travel guides",
-    "travel.node.91": "Saint Charbel pilgrimage",
-    "travel.node.92": "Saint Charbel Trail",
-    "travel.node.93": "Independent devotional website dedicated to Saint Charbel, without official affiliation to the Annaya shrine.",
-    "travel.header.home": "Home"
+    "travel.metadata.title-travel-through-saint-charbel-s-lebanon": "Travel through Saint Charbel's Lebanon",
+    "travel.metadata.description-explore-annaya-online-then-find-guides-to-the-mo": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
+    "travel.metadata.og-title-travel-through-saint-charbel-s-lebanon": "Travel through Saint Charbel's Lebanon",
+    "travel.metadata.og-description-explore-annaya-online-then-find-guides-to-the": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
+    "travel.metadata.twitter-title-travel-through-saint-charbel-s-lebanon": "Travel through Saint Charbel's Lebanon",
+    "travel.metadata.twitter-description-explore-annaya-online-then-find-guides-t": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
+    "travel.body.skip-to-content": "Skip to content",
+    "travel.header.text": "✦",
+    "travel.header.saint-charbel": "Saint Charbel",
+    "travel.accessibility.primary": "Primary",
+    "travel.header.home": "Home",
+    "travel.header.legacy": "Legacy",
+    "travel.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "travel.header.full-history": "Full History",
+    "travel.header.gallery": "Gallery",
+    "travel.header.miracles": "Miracles",
+    "travel.header.miracles-reports": "Miracles & Reports",
+    "travel.header.eucharistic-miracles": "Eucharistic Miracles",
+    "travel.header.letters": "Letters",
+    "travel.header.voice-testimony": "Voice Testimony",
+    "travel.header.saints": "Saints",
+    "travel.header.children-s-books": "Children's Books",
+    "travel.header.prayer": "Prayer",
+    "travel.header.prayer-library": "Prayer Library",
+    "travel.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "travel.header.prayer-for-the-sick": "Prayer for the Sick",
+    "travel.header.prayer-for-healing": "Prayer for Healing",
+    "travel.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "travel.header.prayer-for-depression": "Prayer for Depression",
+    "travel.header.prayer-for-students": "Prayer for Students",
+    "travel.header.prayer-for-addiction": "Prayer for Addiction",
+    "travel.header.prayer-for-family": "Prayer for Family",
+    "travel.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "travel.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "travel.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "travel.header.saint-charbel-novena": "Saint Charbel Novena",
+    "travel.header.feast-day": "Feast Day",
+    "travel.header.rosary-guide": "Rosary Guide",
+    "travel.header.rosary-minibook": "Rosary Minibook",
+    "travel.header.mystery-meditation": "Mystery Meditation",
+    "travel.header.become-like-him": "Become Like Him",
+    "travel.header.travel": "Travel",
+    "travel.header.visiting-annaya": "Visiting Annaya",
+    "travel.header.annaya-online-tour": "Annaya Online Tour",
+    "travel.header.bekaa-kafra": "Bekaa Kafra",
+    "travel.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "travel.header.the-cedars-of-god": "the Cedars of God",
+    "travel.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "travel.header.qadisha-valley": "Qadisha Valley",
+    "travel.header.qannoubine-monastery": "Qannoubine Monastery",
+    "travel.header.qozhaya-monastery": "Qozhaya Monastery",
+    "travel.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "travel.header.the-hermitage": "The Hermitage",
+    "travel.header.saint-charbel-trail": "Saint Charbel Trail",
+    "travel.header.news": "News",
+    "travel.accessibility.in-this-guide": "In this guide",
+    "travel.body.home": "Home",
+    "travel.body.text": "/",
+    "travel.body.travel": "Travel",
+    "travel.body.paul-saad": "Paul Saad /",
+    "travel.body.wikimedia-commons": "Wikimedia Commons",
+    "travel.body.cc-by-sa-4-0": "CC BY-SA 4.0",
+    "travel.travel-through-saint-cha.travel-through-saint-charbel-s-lebanon": "Travel through Saint Charbel's Lebanon",
+    "travel.travel-through-saint-cha.explore-annaya-online-then-find-guides-to-the-mountains-mona": "Explore Annaya online, then find guides to the mountains, monasteries and places connected with his life.",
+    "travel.travel-through-saint-cha.begin-the-tour": "Begin the tour",
+    "travel.travel-through-saint-cha.plan-a-visit": "Plan a visit",
+    "travel.accessibility.travel-through-saint-charbel-s-lebanon": "Travel through Saint Charbel's Lebanon",
+    "travel.travel-through-saint-cha.walk-through-annaya-online": "Walk through Annaya, online",
+    "travel.travel-through-saint-cha.explore-the-destinations": "Explore the destinations",
+    "travel.travel-through-saint-cha.plan-your-pilgrimage": "Plan your pilgrimage",
+    "travel.annaya-and-the-hermitage.annaya-and-the-hermitage": "Annaya and the hermitage",
+    "travel.annaya-and-the-hermitage.annaya-visit-guide": "Annaya visit guide",
+    "travel.annaya-and-the-hermitage.the-hermitage": "The Hermitage",
+    "travel.annaya-and-the-hermitage.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "travel.the-northern-mountains.the-northern-mountains": "The northern mountains",
+    "travel.the-northern-mountains.qadisha-valley": "Qadisha Valley",
+    "travel.the-northern-mountains.evan-williams-cc-by-sa-4-0": "Evan Williams / CC BY-SA 4.0",
+    "travel.the-northern-mountains.qannoubine-monastery": "Qannoubine Monastery",
+    "travel.the-northern-mountains.hussein-sabboury-cc0": "Hussein Sabboury / CC0",
+    "travel.the-northern-mountains.qozhaya-monastery": "Qozhaya Monastery",
+    "travel.the-northern-mountains.yellaban-wikimedia-commons": "Yellaban / Wikimedia Commons",
+    "travel.the-northern-mountains.bekaa-kafra": "Bekaa Kafra",
+    "travel.the-northern-mountains.the-cedars-of-god": "The Cedars of God",
+    "travel.coast-and-pilgrimage-sto.coast-and-pilgrimage-stops": "Coast and pilgrimage stops",
+    "travel.coast-and-pilgrimage-sto.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "travel.coast-and-pilgrimage-sto.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "travel.travel-guides.travel-guides": "Travel guides",
+    "travel.travel-guides.saint-charbel-pilgrimage": "Saint Charbel pilgrimage",
+    "travel.travel-guides.saint-charbel-trail": "Saint Charbel Trail",
+    "travel.footer.independent-devotional-website-dedicated-to-saint-charbel-wi": "Independent devotional website dedicated to Saint Charbel, without official affiliation to the Annaya shrine."
   }
 }
