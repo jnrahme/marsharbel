@@ -1,7 +1,7 @@
 const {test,expect}=require('@playwright/test');
 const {default:AxeBuilder}=require('@axe-core/playwright');
 const registry=require('../locales/registry.json');
-const expectedLocales=['en','ar','fr','es','pt','it','de','pl','ru','hi','th'];
+const expectedLocales=['en','ar','fr','es','pt','it','de','pl','ru','hi','th','zh-Hans'];
 async function assertOptions(page){
  expect(Object.keys(registry.locales)).toEqual(expectedLocales);
  await expect(page.locator('#sc-language-select option')).toHaveCount(expectedLocales.length);
@@ -14,7 +14,7 @@ for(const route of ['/ru/','/ru/biography'])test(`${route}: Cyrillic, loaded ass
  if(route==='/ru/'){await page.locator('main a[href="/ru/biography"]').first().click();await expect(page).toHaveURL(/\/ru\/biography$/)}else{await page.evaluate(()=>window.scrollTo(0,0));const before=page.url();await expect(page.locator('#sc-language-select option[value="de"]')).toBeEnabled();await page.selectOption('#sc-language-select','en');await expect(page).toHaveURL(/\/history$/);await expect(page.locator('html')).toHaveAttribute('lang','en')}
 });
 
-for(const route of ['/ru/annaya','/ru/molitvy','/ru/novena'])test(`${route}: all eleven choices and page-specific HI/TH refusal`,async({page})=>{
+for(const route of ['/ru/annaya','/ru/molitvy','/ru/novena'])test(`${route}: all registered choices and page-specific HI/TH refusal`,async({page})=>{
  await page.goto(route);await assertOptions(page);
  for(const code of ['hi','th']){
   const option=page.locator(`#sc-language-select option[value="${code}"]`);
