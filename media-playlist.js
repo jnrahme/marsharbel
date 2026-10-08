@@ -9,6 +9,14 @@
   var upNext = el('[data-up-next]'), openEl = el('[data-open]'), labelEl = el('[data-now-label]');
   var player = null, apiState = 'idle', index = 0, pending = null, playing = false;
 
+  /* Labels come from the locale's music-playlist catalog: inlined as #sc-playlist-labels on mirrors, fetched from the English catalog otherwise. */
+  var labels = {};
+  function lab(k) { var v = labels['playlist.' + k]; return typeof v === 'string' ? v : ''; }
+  function loadLabels() {
+    var cfg = document.getElementById('sc-playlist-labels');
+    if (cfg) { try { return Promise.resolve(JSON.parse(cfg.textContent)); } catch (e) { return Promise.resolve({}); } }
+    return fetch('/locales/en/music-playlist.json').then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; });
+  }
   function text(i, sel) { return items[i].querySelector(sel); }
   function show(i) {
     index = i;
@@ -21,10 +29,10 @@
     creditEl.innerHTML = text(i, '.track-credit').innerHTML;
     openEl.href = it.dataset.ytList ? 'https://www.youtube.com/playlist?list=' + it.dataset.ytList + '&index=' + (idxOf(it) + 1) : 'https://www.youtube.com/watch?v=' + it.dataset.yt;
     var n = items[i + 1];
-    upNext.textContent = n ? 'Up next: ' + text(i + 1, '.track-translit').textContent : 'Last track in the playlist';
+    upNext.textContent = n ? lab('upNext') + text(i + 1, '.track-translit').textContent : lab('lastTrack');
     root.classList.toggle('is-playing', playing);
   }
-  function setPlaying(v) { playing = v; root.classList.toggle('is-playing', v); labelEl.textContent = v ? 'Now playing' : 'Selected'; }
+  function setPlaying(v) { playing = v; root.classList.toggle('is-playing', v); labelEl.textContent = v ? lab('nowPlaying') : lab('selected'); }
 
   function loadApi(cb) {
     if (apiState === 'ready') return cb();
@@ -78,4 +86,5 @@
   el('[data-next]').addEventListener('click', function () { if (index < items.length - 1) play(index + 1); });
   el('[data-prev]').addEventListener('click', function () { if (index > 0) play(index - 1); });
   show(0);
+  loadLabels().then(function (l) { labels = l; show(index); setPlaying(playing); });
 })();
