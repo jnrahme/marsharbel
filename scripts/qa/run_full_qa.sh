@@ -29,7 +29,7 @@ python3 -m unittest discover -s scripts/qa -p test_source_safeguards.py
 python3 scripts/qa/test_new_master_english_escape.py
 python3 scripts/qa/test_exact_source_inputs.py
 python3 scripts/qa/test_limited_launch.py
-npx playwright test tests/limited-launch.spec.js --project=phone --project=laptop --workers=2
+npx playwright test tests/limited-launch.spec.js tests/hindi-travel-hub.spec.js --project=phone --project=laptop --workers=2
 python3 scripts/qa/test_source_copy_keys.py
 python3 scripts/qa/check_travel_routes.py
 python3 scripts/qa/test_travel.py

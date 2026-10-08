@@ -1062,10 +1062,12 @@
       "master": "travel.html",
       "english": "/travel",
       "routes": {
-        "de": "/de/travel"
+        "de": "/de/travel",
+        "hi": "/hi/travel"
       },
       "renderLocales": [
-        "de"
+        "de",
+        "hi"
       ],
       "discoveryRoutes": {
         "en": "/travel",
@@ -1077,7 +1079,8 @@
         "pl": "/pl/travel",
         "de": "/de/travel",
         "zh-Hans": "/zh-Hans/travel",
-        "x-default": "/travel"
+        "x-default": "/travel",
+        "hi": "/hi/travel"
       }
     },
     "cedars-of-god-lebanon-travel-master": {
@@ -1252,7 +1255,8 @@
         "pl": "/pl/travel",
         "de": "/de/travel",
         "zh-Hans": "/zh-Hans/travel",
-        "x-default": "/travel"
+        "x-default": "/travel",
+        "hi": "/hi/travel"
       }
     },
     "bekaa-kafra-zh-travel-master": {
