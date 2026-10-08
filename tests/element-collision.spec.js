@@ -14,3 +14,9 @@ for(const lang of ['en','de','ar'])for(const width of [390,768,1100,1280])for(co
  });
  expect(state.brandHeight).toBeLessThanOrEqual(state.brandFont*3);expect(state.clipped).toBe(false);expect(state.hits).toEqual([]);expect(state.overflow).toBe(false);for(const h of state.heights)expect(h).toBeGreaterThanOrEqual(44);for(const w of state.widths)expect(w).toBeGreaterThanOrEqual(44);
 });
+for(const lang of ['en','de','ar','zh-Hans'])for(const width of [390,768])test(`language name readable ${lang} ${width} 200%`,async({page},info)=>{
+ test.skip(info.project.name!=='laptop');await page.setViewportSize({width,height:900});await page.goto({en:'/travel',de:'/de/travel',ar:'/ar/travel','zh-Hans':'/travel'}[lang]);await page.addStyleTag({content:'html{font-size:200%}'});
+ if(lang==='zh-Hans')await page.evaluate(()=>{document.querySelector('#sc-language-select').selectedOptions[0].textContent='简体中文';});
+ const state=await page.evaluate(()=>{const e=document.querySelector('#sc-language-select'),s=getComputedStyle(e),c=document.createElement('canvas').getContext('2d');c.font=s.font;return{scroll:e.scrollWidth,client:e.clientWidth,text:c.measureText(e.selectedOptions[0].textContent).width,neededPadding:parseFloat(s.paddingLeft)+parseFloat(s.paddingRight)+20,label:e.selectedOptions[0].textContent};});
+ expect(state.label).toBe({en:'English',de:'Deutsch',ar:'العربية','zh-Hans':'简体中文'}[lang]);expect(state.scroll).toBeLessThanOrEqual(state.client);expect(state.text+state.neededPadding).toBeLessThanOrEqual(state.client);
+});

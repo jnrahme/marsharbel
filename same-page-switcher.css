@@ -27,11 +27,11 @@ header nav.locale-nav[hidden]{display:none}
 .topbar:has(#sc-language-switcher) #sc-install-app-btn{order:1;flex:0 1 auto;inline-size:auto;max-inline-size:100%;border-radius:1.4rem}
 .topbar:has(#sc-language-switcher) #sc-language-switcher{order:2;flex:0 1 auto;inline-size:fit-content;min-inline-size:0;max-inline-size:min(100%,calc(220px + 12rem))}
 .topbar:has(#sc-language-switcher) .links{order:3;flex:1 0 100%;min-inline-size:0}
-#sc-language-switcher select{inline-size:clamp(44px,20vw,220px);max-inline-size:100%;min-inline-size:44px}
+#sc-language-switcher select{inline-size:clamp(calc(8ch + 2rem),20vw,220px);max-inline-size:100%;min-inline-size:min(100%,calc(8ch + 2rem));text-overflow:ellipsis;text-align:start}
 @media(max-width:640px){
  .topbar:has(#sc-language-switcher) .nav{row-gap:0;padding-block:.2rem}
  .topbar:has(#sc-language-switcher) .brand{flex:1 1 auto}
- .topbar:has(#sc-language-switcher) #sc-language-switcher{max-inline-size:calc(96px + .5rem + 2px);padding-block:0;border:0}
- #sc-language-switcher select{inline-size:clamp(44px,25vw,96px);max-inline-size:100%}
+ .topbar:has(#sc-language-switcher) #sc-language-switcher{max-inline-size:100%;min-inline-size:min(100%,calc(8ch + 2rem));padding-block:0;border:0}
+ #sc-language-switcher select{inline-size:clamp(calc(8ch + 2rem),25vw,96px);max-inline-size:100%}
  .topbar:has(#sc-language-switcher) .links{margin-block:0}
 }
