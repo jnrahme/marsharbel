@@ -62,8 +62,12 @@ def release_manifest(root,texts,manifest):
             if not isinstance(v.get('checks'),dict) or set(v['checks'])!=CHECKS or not all(v['checks'][k] is True for k in CHECKS):raise ValueError('Travel release equivalence incomplete')
             if not all(nonempty(v.get(k)) for k in ('editorialReview','renderedReview','nativeFollowUp')):raise ValueError('Travel release evidence missing')
         # Preserve already-reviewed other languages in established families.
-        existing=next((p for p in out['pages'].values() if p.get('sourcePath')==source.lstrip('/')+'.html' and 'en' in p['variants']),None)
+        candidates=[p for p in out['pages'].values() if p.get('sourcePath')==source.lstrip('/')+'.html' and any(code not in ('en','de','zh-Hans') and v.get('status')=='verified' for code,v in p.get('variants',{}).items())]
+        if any(p['sourceSha256']!=group['variants']['en']['bodySha256'] for p in candidates):raise ValueError('Travel release reviewed other-locale source drift')
+        if len(candidates)>1:raise ValueError('Travel release ambiguous reviewed family')
+        existing=candidates[0] if candidates else None
         page=json.loads(json.dumps(existing)) if existing else {'sourcePath':source.lstrip('/')+'.html','sourceRevision':group['sourceRevision'],'sourceSha256':group['variants']['en']['bodySha256'],'anchorIDs':{},'variants':{}}
+        if existing:page['variants']={code:v for code,v in page['variants'].items() if code in ('en','de','zh-Hans') or v.get('status')=='verified'}
         if page['sourceSha256']!=group['variants']['en']['bodySha256']:raise ValueError('Travel release source drift')
         paths={v['path'] for v in group['variants'].values()}
         for key in list(out['pages']):
