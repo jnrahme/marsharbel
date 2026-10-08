@@ -285,6 +285,22 @@
         "runtime": true,
         "selectorCopy": true
       }
+    },
+    "zh-Hans": {
+      "nativeName": "简体中文",
+      "direction": "ltr",
+      "ogLocale": "zh_CN",
+      "selectorAliases": [],
+      "slugs": {},
+      "capabilities": {
+        "home": false,
+        "topicGuides": [],
+        "mirrorTabs": [
+          "travel"
+        ],
+        "runtime": true,
+        "selectorCopy": true
+      }
     }
   },
   "authoredMirrors": {
@@ -638,7 +654,8 @@
     "pl",
     "ru",
     "hi",
-    "th"
+    "th",
+    "zh-Hans"
   ],
   "domMirrors": {
     "feast": {
@@ -794,7 +811,8 @@
         "it": "/it/pellegrinaggio",
         "de": "/de/pilgerreise",
         "pl": "/pl/pielgrzymka",
-        "ru": "/ru/palomnichestvo"
+        "ru": "/ru/palomnichestvo",
+        "zh-Hans": "/zh-Hans/pilgrimage"
       },
       "renderLocales": [
         "ar",
@@ -804,7 +822,8 @@
         "it",
         "de",
         "pl",
-        "ru"
+        "ru",
+        "zh-Hans"
       ]
     },
     "saint-charbel-prayers-master": {
@@ -1007,6 +1026,136 @@
       },
       "renderLocales": [
         "de"
+      ]
+    },
+    "our-lady-of-lebanon-harissa-zh-travel-master": {
+      "master": "our-lady-of-lebanon-harissa.html",
+      "english": "/our-lady-of-lebanon-harissa",
+      "routes": {
+        "zh-Hans": "/zh-Hans/our-lady-of-lebanon-harissa"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "saint-charbel-places-lebanon-zh-travel-master": {
+      "master": "saint-charbel-places-lebanon.html",
+      "english": "/saint-charbel-places-lebanon",
+      "routes": {
+        "zh-Hans": "/zh-Hans/saint-charbel-places-lebanon"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "annaya-tour-zh-travel-master": {
+      "master": "annaya-tour.html",
+      "english": "/annaya-tour",
+      "routes": {
+        "zh-Hans": "/zh-Hans/annaya-tour"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "qannoubine-monastery-zh-travel-master": {
+      "master": "qannoubine-monastery.html",
+      "english": "/qannoubine-monastery",
+      "routes": {
+        "zh-Hans": "/zh-Hans/qannoubine-monastery"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "cedars-of-god-lebanon-zh-travel-master": {
+      "master": "cedars-of-god-lebanon.html",
+      "english": "/cedars-of-god-lebanon",
+      "routes": {
+        "zh-Hans": "/zh-Hans/cedars-of-god-lebanon"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "qadisha-valley-zh-travel-master": {
+      "master": "qadisha-valley.html",
+      "english": "/qadisha-valley",
+      "routes": {
+        "zh-Hans": "/zh-Hans/qadisha-valley"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "travel-zh-travel-master": {
+      "master": "travel.html",
+      "english": "/travel",
+      "routes": {
+        "zh-Hans": "/zh-Hans/travel"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "bekaa-kafra-zh-travel-master": {
+      "master": "bekaa-kafra.html",
+      "english": "/bekaa-kafra",
+      "routes": {
+        "zh-Hans": "/zh-Hans/bekaa-kafra"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "qozhaya-monastery-zh-travel-master": {
+      "master": "qozhaya-monastery.html",
+      "english": "/qozhaya-monastery",
+      "routes": {
+        "zh-Hans": "/zh-Hans/qozhaya-monastery"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "bkerke-maronite-patriarchate-zh-travel-master": {
+      "master": "bkerke-maronite-patriarchate.html",
+      "english": "/bkerke-maronite-patriarchate",
+      "routes": {
+        "zh-Hans": "/zh-Hans/bkerke-maronite-patriarchate"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "visit-annaya-zh-travel-master": {
+      "master": "visit-annaya.html",
+      "english": "/visit-annaya",
+      "routes": {
+        "zh-Hans": "/zh-Hans/visit-annaya"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "saint-charbel-hermitage-zh-travel-master": {
+      "master": "saint-charbel-hermitage.html",
+      "english": "/saint-charbel-hermitage",
+      "routes": {
+        "zh-Hans": "/zh-Hans/saint-charbel-hermitage"
+      },
+      "renderLocales": [
+        "zh-Hans"
+      ]
+    },
+    "saint-charbel-trail-zh-travel-master": {
+      "master": "saint-charbel-trail.html",
+      "english": "/saint-charbel-trail",
+      "routes": {
+        "zh-Hans": "/zh-Hans/saint-charbel-trail"
+      },
+      "renderLocales": [
+        "zh-Hans"
       ]
     }
   },
