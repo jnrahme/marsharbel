@@ -40,6 +40,11 @@ def render_page(root,registry,lang,family,route,catalog=None):
                 twins[cfg['relatedEnglish'].rstrip('/')]=page_url(registry,lang,topic)
         legacy=registry.get('travelPreviousRoutes',{}).get(lang,{})
         twins.update(legacy)
+    # Bounded DE Annaya href-only correction, no translated text change.
+    if family == 'annaya-master' and lang == 'de':
+        all_twins=twin_routes(registry,lang)
+        for destination in ('/saint-charbel-hermitage','/saint-charbel-places-lebanon','/qadisha-valley','/qannoubine-monastery','/qozhaya-monastery','/saint-charbel-trail'):
+            if destination in all_twins:twins[destination]=all_twins[destination]
     twins[master_route]=route
     for node in soup.select('[href],[src],[srcset],[action]'):
         for attr in ('href','src','action'):
