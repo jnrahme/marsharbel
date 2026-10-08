@@ -115,7 +115,8 @@ RewriteRule ^(.+?)/?$ $1.html [L]
     Header always set X-Robots-Tag "noindex, follow"
   </Files>
   <Files "feedback-review.html">
-    Header always set X-Robots-Tag "noindex, follow"
+    Header always set X-Robots-Tag "noindex, nofollow, noarchive"
+    Header always set Referrer-Policy "no-referrer"
   </Files>
   <Files "daily-prayer-admin.html">
     Header always set X-Robots-Tag "noindex, nofollow, noarchive"
