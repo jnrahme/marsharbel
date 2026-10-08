@@ -4,7 +4,7 @@ const params = new URLSearchParams(window.location.search);
 const scriptConfig = (document.currentScript && document.currentScript.dataset) || {};
 const key = window.MYSTERY_KEY || scriptConfig.mysteryKey || params.get('m') || 'luminous_1';
 const basePath = window.MYSTERY_BASE || scriptConfig.mysteryBase || './';
-const audioVersion = window.ROSARY_AUDIO_VERSION || scriptConfig.audioVersion || '20261004-loudness-normalized';
+const audioVersion = window.ROSARY_AUDIO_VERSION || scriptConfig.audioVersion || '20261008-prayer-revoice';
 const mystery = mysteries[key] || mysteries.luminous_1;
 const textLibrary = window.ROSARY_MYSTERY_LIBRARY || {};
 const mysteryText = textLibrary[key] || null;
@@ -303,6 +303,9 @@ let autoPrayerVoiceEnabled = false;
 let churchMusicEnabled = false;
 let clipManifest = null;
 let clipAvailable = false;
+const INTER_CLIP_PAUSE_MS = 200; // ~0.4s clip trail + 0.2s coded + ~0.4s next lead = ~1s speech-to-speech, consistent; no dead air, no overlap
+const prayerWarmCache = {};
+let rebuildLiveSteps = null;
 let clipAudio = null;
 let clipPreload = null;
 let prayerClipAudio = null;
@@ -533,9 +536,9 @@ const stagePrayerClipPath = index => {
     return `${basePath}media/rosary/prayers/intro_prayers.mp3`;
   }
   if (kind === 'end_prayers') {
-    // Keep end-prayer stage on individual prayer clips only
-    // until the dedicated end_prayers.mp3 is re-recorded.
-    return null;
+    // Revoiced instruction clip (rosary rebuild rail): plays first, then the
+    // runtime chains the individual closing prayers - same shape as intro.
+    return `${basePath}media/rosary/prayers/end_prayers.mp3`;
   }
   return null;
 };
@@ -590,6 +593,9 @@ const loadClipManifest = async () => {
         const rebuildManifest = await rebuildResponse.json();
         Object.entries(rebuildManifest?.mysteries || {}).forEach(([mysteryKey, entry]) => {
           if (entry?.status !== 'live' || !entry?.steps) return;
+          if (mysteryKey === key) {
+            rebuildLiveSteps = entry.steps;
+          }
           const overlay = {};
           Object.entries(entry.steps).forEach(([stepKey, clip]) => {
             if (clip?.path) {
@@ -834,7 +840,12 @@ const speakPrayerSequence = (sequence, onComplete = null, requestId = playbackRe
       return;
     }
     const prayerKey = list[idx++];
-    speakPrayer(prayerKey, next, requestId);
+    setTimeout(() => {
+      if (!isActivePlaybackRequest(requestId)) {
+        return;
+      }
+      speakPrayer(prayerKey, next, requestId);
+    }, INTER_CLIP_PAUSE_MS);
   };
   next();
 };
@@ -877,7 +888,11 @@ const handleNarrationComplete = currentStageIndex => {
         return;
       }
       if (autoPrayerVoiceEnabled) {
-        nextStage();
+        setTimeout(() => {
+          if (currentStageIndex === stageIndex) {
+            nextStage();
+          }
+        }, INTER_CLIP_PAUSE_MS);
         return;
       }
       soundStatus.textContent = 'Prayer complete. Press Next when ready.';
@@ -887,7 +902,11 @@ const handleNarrationComplete = currentStageIndex => {
   }
 
   if (autoPrayerVoiceEnabled) {
-    nextStage();
+    setTimeout(() => {
+      if (currentStageIndex === stageIndex) {
+        nextStage();
+      }
+    }, INTER_CLIP_PAUSE_MS);
     return;
   }
 
@@ -898,6 +917,19 @@ const handleNarrationComplete = currentStageIndex => {
 
   soundStatus.textContent = 'Voice complete. Press Next when ready.';
   updateVoiceButtonLabel();
+};
+
+const warmPrayerClips = index => {
+  (prayerSequenceForStage(index) || []).forEach(prayerKey => {
+    const clip = prayerAudioPaths[prayerKey];
+    if (!clip || prayerWarmCache[prayerKey]) {
+      return;
+    }
+    const warm = new Audio();
+    warm.preload = 'auto';
+    warm.src = normalizeClipPath(clip);
+    prayerWarmCache[prayerKey] = true;
+  });
 };
 
 const preloadNextClip = index => {
@@ -1025,7 +1057,11 @@ const playVoice = ({ userInitiated = false } = {}) => {
           return;
         }
         if (autoPrayerVoiceEnabled) {
-          nextStage();
+          setTimeout(() => {
+            if (isActivePlaybackRequest(requestId) && currentStageIndex === stageIndex) {
+              nextStage();
+            }
+          }, INTER_CLIP_PAUSE_MS);
           return;
         }
         soundStatus.textContent = 'Prayer complete. Press Next when ready.';
@@ -1120,6 +1156,7 @@ const render = (userInitiated) => {
   updateStartGuidedAudioButton();
   syncGlobalAudioContext();
   preloadNextClip(stageIndex);
+  warmPrayerClips(stageIndex);
   if (render.hasInteracted) {
     stageTitle.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
@@ -1576,4 +1613,179 @@ loadClipManifest()
   .finally(() => {
     soundStatus.textContent = 'Press Play Guided Audio to begin.';
     updateStartGuidedAudioButton();
+    initRebuildTrackList();
   });
+
+/* ---------- Decade track list (rosary rebuild rail, PR #666 preview) ----------
+   Ported from the visual lane's SCMedTracks module (ui-mystery-tracklist patch)
+   and wired to the CURRENT page: mounts after the meditation card, feeds from
+   the rebuild manifest for status:live decades only, and adds the dimmed
+   library prayer rows so the list shows the real narration -> prayer
+   interleave. Taps fire a cancelable med:select; this page cancels it and does
+   a direct stage-jump (the Next/Previous stepping fallback is not used).
+   Styles are inlined with the current card's dark/gold tokens; the visual lane
+   restyles later. */
+const RB_TRACK_CSS = `
+.med-tracks{margin:1.6rem 0 0;padding:clamp(1rem,3vw,1.6rem);border:1px solid #3a332c;border-radius:20px;background:linear-gradient(180deg,rgba(52,46,41,.5),rgba(30,26,22,.65));box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.med-tracks-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.med-tracks-head h2{margin:0;font-size:clamp(1.25rem,2.6vw,1.6rem)}
+.med-tracks-meta{margin:0;color:#b9ac9a;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.med-tracks-now{margin:.6rem 0 .4rem;min-height:1.4em;font-style:italic;color:#c9a24b}
+.med-tracks-bar{height:3px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;margin-bottom:.9rem}
+.med-tracks-bar i{display:block;height:100%;width:100%;transform-origin:left;transform:scaleX(var(--med-progress,0));background:linear-gradient(90deg,#c4a574,#f6e7c6);transition:transform .6s ease}
+.med-tracklist{list-style:none;margin:0;padding:0;display:grid;gap:.4rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,21rem),1fr))}
+.med-track{display:grid;grid-template-columns:2rem minmax(0,1fr) auto;align-items:center;gap:.7rem;width:100%;min-height:48px;padding:.35rem .9rem .35rem .8rem;text-align:left;cursor:pointer;
+  color:#f0e9df;background:rgba(255,255,255,.04);border:1px solid rgba(217,193,154,.16);border-radius:12px;font:inherit;font-size:.92rem;transition:background .2s,border-color .2s,transform .2s ease}
+.med-track:active{transform:scale(.985)}
+@media (hover:hover) and (pointer:fine){.med-track:hover{background:rgba(217,193,154,.1);border-color:#a8833a}}
+.med-track-n{color:#b9ac9a;font-variant-numeric:tabular-nums;text-align:right;font-size:.82rem}
+.med-track-title{overflow-wrap:anywhere;line-height:1.3}
+.med-track-tag{display:block;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:#b9ac9a;font-style:normal}
+.med-track-dur{color:#b9ac9a;font-variant-numeric:tabular-nums;font-size:.8rem}
+.med-track-n,.med-track-bars{grid-column:1;grid-row:1}
+.med-track-title{grid-column:2;grid-row:1}.med-track-dur{grid-column:3;grid-row:1}
+.med-track-bars{display:none;align-items:flex-end;justify-content:flex-end;gap:2px;height:14px}
+.med-track-bars i{width:3px;height:100%;border-radius:2px;background:#c9a24b;transform-origin:bottom;transform:scaleY(.35)}
+.is-played .med-track{opacity:.62}
+.is-current .med-track{opacity:1;background:linear-gradient(180deg,rgba(217,193,154,.2),rgba(217,193,154,.08));border-color:#a8833a;box-shadow:0 0 0 1px rgba(217,193,154,.25)}
+.is-current .med-track-n{display:none}.is-current .med-track-bars{display:flex}
+.is-current .med-track-title{color:#fff;font-weight:600}
+.is-playing .med-track-bars i{animation:med-eq 1s ease-in-out infinite}
+.is-playing .med-track-bars i:nth-child(2){animation-delay:.2s}.is-playing .med-track-bars i:nth-child(3){animation-delay:.4s}
+@keyframes med-eq{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+.med-track.rb-prayer{background:transparent;border-style:dashed;opacity:.6;min-height:42px}
+.med-track.rb-prayer .med-track-title{font-style:italic}
+.is-current .med-track.rb-prayer{opacity:1}
+@media (max-width:480px){.med-tracklist{grid-template-columns:1fr}.med-track{padding-right:.8rem}}
+`;
+let rbTrackMount = null;
+let rbTrackRows = [];
+let rbTrackLive = false;
+const rbFmt = sec => {
+  sec = Math.round(sec || 0);
+  return `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, '0')}`;
+};
+const rbStageNow = () => {
+  const m = /(\d+)\s+of\s+\d+/i.exec(stepCounter.textContent || '');
+  return m ? parseInt(m[1], 10) - 1 : -1;
+};
+const rbPlayingNow = () =>
+  hasActiveNarration() ||
+  Boolean(clipAudio && !clipAudio.paused && !clipAudio.ended) ||
+  Boolean(prayerClipAudio && !prayerClipAudio.paused && !prayerClipAudio.ended);
+const rbMarkTracks = () => {
+  if (!rbTrackRows.length) return;
+  const cur = rbStageNow();
+  const playing = rbPlayingNow();
+  rbTrackRows.forEach(row => {
+    const on = row.stage === cur;
+    row.li.classList.toggle('is-current', on);
+    row.li.classList.toggle('is-playing', on && playing);
+    row.li.classList.toggle('is-played', !row.prayer && row.stage < cur);
+    if (on) row.btn.setAttribute('aria-current', 'true');
+    else row.btn.removeAttribute('aria-current');
+  });
+  if (rbTrackMount) {
+    const ix = rbTrackRows.findIndex(row => row.stage === cur);
+    const total = rbTrackRows.filter(row => !row.prayer).length;
+    const done = rbTrackRows.filter(row => !row.prayer && row.stage < cur).length + (ix >= 0 ? 1 : 0);
+    rbTrackMount.style.setProperty('--med-progress', total ? done / total : 0);
+    const np = rbTrackMount.querySelector('[data-med-now]');
+    if (np) np.textContent = ix < 0 ? '' : `${playing ? 'Now playing' : 'Selected'} - ${rbTrackRows[ix].title}`;
+  }
+};
+const rbRenderTracks = tracks => {
+  if (!tracks || !tracks.length) return;
+  const host = document.querySelector('article.meditation-content') || document.querySelector('.meditation-content');
+  if (!host) return;
+  if (!document.getElementById('rb-track-styles')) {
+    const style = document.createElement('style');
+    style.id = 'rb-track-styles';
+    style.textContent = RB_TRACK_CSS;
+    document.head.appendChild(style);
+  }
+  if (rbTrackMount) rbTrackMount.remove();
+  rbTrackMount = document.createElement('section');
+  rbTrackMount.className = 'med-tracks';
+  rbTrackMount.setAttribute('aria-labelledby', 'med-tracks-h');
+  const total = tracks.reduce((acc, t) => acc + (t.duration_sec || 0), 0);
+  rbTrackMount.innerHTML = `<div class="med-tracks-head"><h2 id="med-tracks-h">In this decade</h2><p class="med-tracks-meta">${tracks.length} clips - ${rbFmt(total)}</p></div>` +
+    '<p class="med-tracks-now" data-med-now aria-live="polite"></p><div class="med-tracks-bar" aria-hidden="true"><i></i></div><ol class="med-tracklist"></ol>';
+  const ol = rbTrackMount.querySelector('ol');
+  rbTrackRows = [];
+  const prayerDurEls = {};
+  tracks.forEach((t, i) => {
+    const li = document.createElement('li');
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = `med-track${t.prayer ? ' rb-prayer' : ''}`;
+    b.innerHTML = `<span class="med-track-n" aria-hidden="true">${i + 1}</span><span class="med-track-bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="med-track-title"></span><span class="med-track-dur"></span>`;
+    const titleEl = b.querySelector('.med-track-title');
+    titleEl.textContent = t.title;
+    if (t.tag) {
+      const tag = document.createElement('span');
+      tag.className = 'med-track-tag';
+      tag.textContent = t.tag;
+      titleEl.appendChild(tag);
+    }
+    const durEl = b.querySelector('.med-track-dur');
+    durEl.textContent = t.duration_sec ? rbFmt(t.duration_sec) : '';
+    if (t.prayer && t.prayerKey) {
+      (prayerDurEls[t.prayerKey] = prayerDurEls[t.prayerKey] || []).push(durEl);
+    }
+    b.setAttribute('aria-label', `Play ${t.title}${t.duration_sec ? `, ${rbFmt(t.duration_sec)}` : ''}`);
+    b.addEventListener('click', () => {
+      const ev = new CustomEvent('med:select', { detail: { stage: t.stage }, cancelable: true });
+      document.dispatchEvent(ev);
+    });
+    li.appendChild(b);
+    ol.appendChild(li);
+    rbTrackRows.push({ stage: t.stage, title: t.title, prayer: Boolean(t.prayer), li, btn: b });
+  });
+  host.insertAdjacentElement('afterend', rbTrackMount);
+  Object.entries(prayerDurEls).forEach(([prayerKey, els]) => {
+    const clip = prayerAudioPaths[prayerKey];
+    if (!clip) return;
+    const probe = new Audio();
+    probe.preload = 'metadata';
+    probe.addEventListener('loadedmetadata', () => {
+      if (Number.isFinite(probe.duration)) {
+        els.forEach(el => { el.textContent = rbFmt(probe.duration); });
+      }
+    });
+    probe.src = normalizeClipPath(clip);
+  });
+  rbMarkTracks();
+};
+const initRebuildTrackList = () => {
+  if (!rebuildLiveSteps || typeof rebuildLiveSteps !== 'object') return;
+  const tracks = [];
+  Object.keys(rebuildLiveSteps).sort().forEach(stepKey => {
+    const n = parseInt(stepKey.replace('step-', ''), 10);
+    if (!Number.isFinite(n)) return;
+    const clip = rebuildLiveSteps[stepKey] || {};
+    tracks.push({ stage: n, title: clip.clip_title || `Meditation ${n}`, duration_sec: clip.duration_sec || 0 });
+    if (n === 2) tracks.push({ stage: 2.5, title: 'Our Father', tag: 'library prayer', prayer: true, prayerKey: 'our_father' });
+    if (n >= 3 && n <= 12) tracks.push({ stage: n + 0.5, title: `Hail Mary ${n - 2}`, tag: 'library prayer', prayer: true, prayerKey: 'hail_mary' });
+    if (n === 13) {
+      tracks.push({ stage: 13.5, title: 'Glory Be', tag: 'library prayer', prayer: true, prayerKey: 'glory_be' });
+      tracks.push({ stage: 13.6, title: 'Fatima Prayer', tag: 'library prayer', prayer: true, prayerKey: 'fatima' });
+    }
+  });
+  if (!tracks.length) return;
+  rbRenderTracks(tracks);
+  rbTrackLive = true;
+};
+document.addEventListener('med:select', ev => {
+  if (!rbTrackLive) return;
+  ev.preventDefault();
+  const raw = Number(ev.detail && ev.detail.stage);
+  if (!Number.isFinite(raw)) return;
+  const target = Math.max(0, Math.min(stages.length - 1, Math.floor(raw)));
+  stopVoice();
+  stageIndex = target;
+  render(true);
+  startGuidedAudioButton.click();
+});
+new MutationObserver(() => rbMarkTracks()).observe(stepCounter, { childList: true, characterData: true, subtree: true });
+setInterval(() => { if (rbTrackRows.length) rbMarkTracks(); }, 500);
