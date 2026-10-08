@@ -81,6 +81,8 @@ def render_home(root, registry, lang, catalog=None):
     # Match the existing Travel frame serializer's canonical indentation so
     # reprocessing a generated home is byte-idempotent, not just DOM-equal.
     travel = registry.get('authoredMirrors', {}).get('travel', {}).get('routes', {}).get(lang)
+    if not travel:
+        travel = next((cfg['routes'][lang] for cfg in registry.get('pageMirrors', {}).values() if cfg['english'] == '/travel' and lang in cfg.get('renderLocales', [])), None)
     if travel:
         rendered = re.sub(r'(?m)^([ \t]*)(<a href="' + re.escape(travel) + r'">[^<]*</a>)$',
                           lambda match: '        ' + match[2], rendered)
