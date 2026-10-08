@@ -12,6 +12,7 @@ python3 -m unittest discover -s scripts/qa -p 'test_new_page_locales.py'
 python3 -m unittest discover -s scripts/qa -p 'test_partial_locale.py'
 python3 scripts/qa/probe_partial_build.py
 python3 -m unittest discover -s scripts/qa -p test_travel_metadata.py
+python3 scripts/qa/test_travel_release.py
 
 python3 scripts/qa/test_travel_equivalence.py
 node scripts/tests/travel_equivalence.cjs

@@ -182,6 +182,8 @@ def control_outputs(root, texts, manifest, copy):
     manifest = history_manifest(root,texts,manifest)
     from i18n.reviewed_travel import travel_manifest
     manifest = travel_manifest(root,texts,manifest)
+    from i18n.travel_release import release_manifest
+    manifest = release_manifest(root,texts,manifest)
     from i18n.reviewed_prayers import prayer_manifest
     manifest = prayer_manifest(root,texts,manifest)
     out={}
