@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "qozhaya-monastery.html",
-  "masterSha256": "70ca711e11f478a512c9361f65f12db33058593d6e222e25551e85214ef20c05",
+  "masterSha256": "0ee3fca669157a1ba94a816a399162e17f7a41545513455118a89fc1ffc5f67e",
   "sourceRevision": "1be64cf5",
   "bindings": [
     {
@@ -99,13 +99,6 @@
       "key": "qozhaya-monastery.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "qozhaya-monastery.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1014,7 +1007,6 @@
     "qozhaya-monastery.header.legacy": "Legacy",
     "qozhaya-monastery.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
     "qozhaya-monastery.header.full-history": "Full History",
-    "qozhaya-monastery.header.gallery": "Gallery",
     "qozhaya-monastery.header.miracles": "Miracles",
     "qozhaya-monastery.header.miracles-reports": "Miracles & Reports",
     "qozhaya-monastery.header.eucharistic-miracles": "Eucharistic Miracles",

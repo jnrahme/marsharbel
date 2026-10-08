@@ -173,6 +173,13 @@ def render_page(root,registry,lang,family,route,catalog=None):
         from i18n.prayer_runtime import share_head
         rendered=share_head(rendered,root,lang)
     from i18n.launch_availability import apply_launch_availability
+    if family == 'music-master':
+        labels = read_json(root / f'locales/{lang}/music-playlist.json')
+        expected = {'playlist.upNext', 'playlist.lastTrack', 'playlist.nowPlaying', 'playlist.selected'}
+        if set(labels) != expected or any(not isinstance(value, str) or not value.strip() for value in labels.values()):
+            raise ValueError(f'{family} {lang}: incomplete playlist runtime labels')
+        config = '<script type="application/json" id="sc-playlist-labels">' + json.dumps(labels, ensure_ascii=False).replace('<', '\\u003c') + '</script>\n'
+        rendered = rendered.replace('</head>', config + '</head>', 1)
     return apply_launch_availability(rendered, root, registry, lang)
 
 

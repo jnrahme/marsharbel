@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "saint-charbel-trail.html",
-  "masterSha256": "522082a1f388244021ccebb4a0202209671f6753bdfe0713b91edc80d2c76564",
+  "masterSha256": "191604a98612bd5549f52bc483f59578cc478604043ee9170f90e1c6893dda12",
   "sourceRevision": "1be64cf5",
   "bindings": [
     {
@@ -99,13 +99,6 @@
       "key": "saint-charbel-trail.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "saint-charbel-trail.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -881,7 +874,6 @@
     "saint-charbel-trail.header.legacy": "Legacy",
     "saint-charbel-trail.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
     "saint-charbel-trail.header.full-history": "Full History",
-    "saint-charbel-trail.header.gallery": "Gallery",
     "saint-charbel-trail.header.miracles": "Miracles",
     "saint-charbel-trail.header.miracles-reports": "Miracles & Reports",
     "saint-charbel-trail.header.eucharistic-miracles": "Eucharistic Miracles",

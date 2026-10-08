@@ -9,6 +9,7 @@ from html import escape
 import json
 from pathlib import Path
 import re
+import subprocess
 
 from i18n.catalog import ROOT, leaves, page_url, read_json, topic_locales
 
@@ -53,15 +54,19 @@ def render_monasteries(root=ROOT, registry=None):
             if '{{' in text or '}}' in text:
                 raise ValueError(f'{name}/{code}: unresolved slot')
             if code == 'en':
-                # English places are not translated mirrors yet. Keep their
-                # links in the English header only until locale catalogs exist.
-                text = re.sub(r'<header\b[\s\S]*?</header>', lambda header: header[0].replace('<a href="/bekaa-kafra">Bekaa Kafra</a>',
-                    '<a href="/bekaa-kafra">Bekaa Kafra</a>\n'
-                    '        <a href="/our-lady-of-lebanon-harissa">Our Lady of Lebanon at Harissa</a>\n'
-                    '        <a href="/cedars-of-god-lebanon">the Cedars of God</a>\n'
-                    '        <a href="/bkerke-maronite-patriarchate">Bkerke and the Maronite Patriarchate</a>'), text, count=1)
-                # Managed English nav spells its existing ampersand literally.
-                text = text.replace('>Miracles &amp; Reports</a>', '>Miracles & Reports</a>')
+                # English generated pages share the same navigation renderer as
+                # sync-navigation/build-pages. A template's old header must not
+                # undo later shared-nav changes during international rebuilds.
+                nav = subprocess.run(
+                    ['node', '--input-type=module', '-e',
+                     "import fs from 'node:fs'; import {renderPrimaryNav} from './scripts/lib/primary-nav.mjs'; "
+                     "process.stdout.write(renderPrimaryNav(fs.readFileSync('partials/primary-navigation.html','utf8').trim(),process.argv[1]));",
+                     name + '-monastery.html'],
+                    cwd=root, check=True, capture_output=True, text=True).stdout
+                pattern = r'<nav\b[^>]*class=[\"\']links[\"\'][^>]*>[\s\S]*?</nav>'
+                if len(re.findall(pattern, text)) != 1:
+                    raise ValueError(f'{name}: expected one primary navigation')
+                text = re.sub(pattern, lambda _: nav, text, count=1)
                 text = text.replace('src="/app.js"', 'src="app.js"').replace('src="/translate.js?', 'src="translate.js?')
                 text = re.sub(r'(<a\b[^>]*\bhref=["\'])/(?!/)([^"\']*)(["\'])', r'\1./\2\3', text)
                 text = text.replace('href="./miracles"', 'href="./miracles/"')

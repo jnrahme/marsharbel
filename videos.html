@@ -119,6 +119,7 @@
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/videos" />
   <!-- hreflang:end -->
   <link rel="stylesheet" href="video-playback.css" />
+  <link rel="stylesheet" href="media-subnav.css" />
 <link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
@@ -133,7 +134,6 @@
         <div class="nav-sub">
         <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
-        <a href="./gallery">Gallery</a>
         </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./miracles/" aria-haspopup="true" aria-expanded="false">Miracles<span class="nav-chev" aria-hidden="true"></span></a>
@@ -189,14 +189,22 @@
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
         <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="active nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a class="active" href="./videos" aria-current="page">Video</a>
+        <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
-  <main id="main-content" class="site-shell" tabindex="-1">
+  <main id="main-content" class="site-shell media-hub" tabindex="-1">
+    <nav class="media-subnav" aria-label="Media"><span class="media-subnav-label">Media</span><a href="./music">Music</a><a href="./videos" aria-current="page">Video</a><a href="./gallery">Gallery</a></nav>
     <section class="hero">
-      <span class="kicker">Videos</span>
+      <span class="kicker">Video</span>
       <h1>Saint Charbel on Film</h1>
       <p>Documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - gathered in one place, each linked back to the page that tells its story carefully.</p>
       <div class="cta-row">
@@ -596,6 +604,7 @@
   <script defer src="app.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
+  <script defer src="media-motion.js"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
 <script defer src="/same-page-manifest.js"></script>
 <script defer src="/same-page-copy.js"></script>

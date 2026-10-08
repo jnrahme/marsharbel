@@ -31,6 +31,19 @@ spec.loader.exec_module(builder)
 
 
 class CatalogTests(unittest.TestCase):
+    def test_english_monasteries_share_navigation_renderer(self):
+        import re
+        import subprocess
+        from i18n.monastery_mirror import render_monasteries
+        registry = json.loads((ROOT / 'locales/registry.json').read_text())
+        outputs = render_monasteries(ROOT, registry)
+        driver = "import fs from 'node:fs';import {renderPrimaryNav} from './scripts/lib/primary-nav.mjs';process.stdout.write(renderPrimaryNav(fs.readFileSync('partials/primary-navigation.html','utf8').trim(),process.argv[1]));"
+        for name in ('qannoubine', 'qozhaya'):
+            file = name + '-monastery.html'
+            nav = re.search(r'<nav\b[^>]*class=["\']links["\'][^>]*>[\s\S]*?</nav>', outputs[ROOT / file])[0]
+            expected = subprocess.check_output(['node', '--input-type=module', '-e', driver, file], cwd=ROOT, text=True)
+            self.assertEqual(nav, expected)
+
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)

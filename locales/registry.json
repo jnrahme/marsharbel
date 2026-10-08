@@ -1465,6 +1465,45 @@
         "ru": "/ru/daily-prayer-admin"
       },
       "renderLocales": []
+    },
+    "music-master": {
+      "master": "music.html",
+      "english": "/music",
+      "routes": {
+        "ar": "/ar/music",
+        "fr": "/fr/music",
+        "es": "/es/music",
+        "pt": "/pt/music",
+        "it": "/it/music",
+        "de": "/de/music",
+        "pl": "/pl/music",
+        "hi": "/hi/music",
+        "th": "/th/music"
+      },
+      "renderLocales": [
+        "ar",
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "pl",
+        "hi",
+        "th"
+      ],
+      "discoveryRoutes": {
+        "en": "/music",
+        "ar": "/ar/music",
+        "fr": "/fr/music",
+        "es": "/es/music",
+        "pt": "/pt/music",
+        "it": "/it/music",
+        "de": "/de/music",
+        "pl": "/pl/music",
+        "hi": "/hi/music",
+        "th": "/th/music",
+        "x-default": "/music"
+      }
     }
   },
   "limitedLaunchLocales": [

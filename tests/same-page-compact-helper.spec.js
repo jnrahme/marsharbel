@@ -7,6 +7,6 @@ for(const width of [390,1440])for(const route of ['/','/story','/history','/trav
  await expect(page.locator('#sc-language-helper')).toHaveCount(0);
  await expect(page.locator('#sc-language-select')).not.toHaveAttribute('aria-describedby','sc-language-helper');
  await page.locator('#sc-language-select').focus();await expect(page.locator('.sc-language-feedback')).not.toHaveClass(/is-open/);
- for(const option of await page.locator('#sc-language-select option:disabled').all())await expect(option).toContainText('not available');
+ for(const option of await page.locator('#sc-language-select option:disabled').all())await expect(option).toContainText('under review');
  expect(await height()).toBe(before);await page.keyboard.press('Tab');expect(await height()).toBe(before);
 });

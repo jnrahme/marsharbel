@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "feedback-review.html",
-  "masterSha256": "e4c37723c3b1df8ec3183d7f7b631f1d9c7d9750d1a3cf70e783609e910c7465",
+  "masterSha256": "a69a5a9731561f937349a9bebc0c873f3ce162d65d4e70ae0114e8df33dd29f2",
   "sourceRevision": "38d13c38",
   "bindings": [
     {
@@ -99,13 +99,6 @@
       "key": "feedback-review.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "feedback-review.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -552,7 +545,6 @@
     "feedback-review.header.legacy": "Legacy",
     "feedback-review.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
     "feedback-review.header.full-history": "Full History",
-    "feedback-review.header.gallery": "Gallery",
     "feedback-review.header.miracles": "Miracles",
     "feedback-review.header.miracles-reports": "Miracles & Reports",
     "feedback-review.header.eucharistic-miracles": "Eucharistic Miracles",

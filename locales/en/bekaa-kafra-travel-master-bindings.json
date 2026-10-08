@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "bekaa-kafra.html",
-  "masterSha256": "9b86b3a4313f08d973fbdf576d2764096e21a3026ea655c80ac199386d8f0b01",
+  "masterSha256": "01cba0586b1097cf3c5bad0e823e6cf11ef21fb0c17214b5ab89add623a5b022",
   "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
   "bindings": [
     {
@@ -71,13 +71,6 @@
       "key": "travel.header.fullHistory",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "travel.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1087,7 +1080,6 @@
     "travel.header.legacy": "Legacy",
     "travel.header.encyclopedia": "Saint Charbel Encyclopedia",
     "travel.header.fullHistory": "Full History",
-    "travel.header.gallery": "Gallery",
     "travel.header.miracles": "Miracles",
     "travel.header.miraclesAndReports": "Miracles & Reports",
     "travel.header.eucharisticMiracles": "Eucharistic Miracles",
