@@ -98,7 +98,7 @@ RewriteRule ^(.+?)/?$ $1.html [L]
   Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://cdn.jsdelivr.net https://challenges.cloudflare.com https://js.hcaptcha.com https://*.hcaptcha.com https://cdn.shopify.com 'sha256-XUc8JiXD7MgiRdkm/qC5alVSnfZ5mjS6fyZsSFAPO+A=' 'sha256-udIr1mfCcek64YOssSH6ob3Xg5kCEWTh040pvRe/3yc=' 'sha256-nl2DCuO/6Knr/qaRn2lfhiAbou0I1Ayclrm/nb2np7k=' 'sha256-9WQsezAJngPQP5h0wdVGNnbpTxfjAqvawluEBxT2qAs=' 'sha256-mfd+xUhZU0KOHCh0XHQhaBxum2H/p6kg0hv4piDUZwc=' 'sha256-oCLbR4GLhIWheA1H+8Wsp5N0QWuJBqv+OMGSqQuxRy8=' 'sha256-WQxY48R937cgyWJ92u11hw5zvCyPTTu03e7RYjU9yLg=' 'sha256-NLw/b0iL6+v7ABXVPkhNWWJ8Vhoi5fcBuIX+jNLZFI4=' 'sha256-wxvFqjoVYiomQaaHwQ6kinYU0fui5XbmYRykKGbMPmU=' 'sha256-ZOvhwlRU3Qhb6FB8PPmg/miGdDucY9lDmHZDOsnMSgs='; style-src 'self' 'unsafe-inline' https://*.hcaptcha.com; img-src 'self' data: blob: https:; font-src 'self' data: https://*.hcaptcha.com; connect-src 'self' https://alxccoizzksyitxvqhpv.supabase.co wss://alxccoizzksyitxvqhpv.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://translate.googleapis.com https://challenges.cloudflare.com https://*.hcaptcha.com https://*.myshopify.com https://*.shopify.com; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com https://*.hcaptcha.com; media-src 'self' blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'"
   # One-year HSTS, host-only. No includeSubDomains/preload: ftp.marsharbel.com resolves but has no HTTPS.
   Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
-  <FilesMatch "^(?:account|submit-testimony|testimony-review|feedback|feedback-review)\.html$">
+  <FilesMatch "^(?:account|submit-testimony|testimony-review|feedback|feedback-review|daily-prayer|daily-prayer-admin)\.html$">
     Header unset Cache-Control
     Header always set Cache-Control "no-store, max-age=0"
   </FilesMatch>
@@ -115,6 +115,10 @@ RewriteRule ^(.+?)/?$ $1.html [L]
     Header always set X-Robots-Tag "noindex, follow"
   </Files>
   <Files "feedback-review.html">
+    Header always set X-Robots-Tag "noindex, nofollow, noarchive"
+    Header always set Referrer-Policy "no-referrer"
+  </Files>
+  <Files "daily-prayer-admin.html">
     Header always set X-Robots-Tag "noindex, nofollow, noarchive"
     Header always set Referrer-Policy "no-referrer"
   </Files>

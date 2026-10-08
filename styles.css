@@ -3134,3 +3134,76 @@ body.is-saints-shelf .shelf-soon-row em{font-style:normal;font-size:.72rem;lette
 :lang(hi) .launch-english-qualifier, :lang(th) .launch-english-qualifier {
   font-size: .85em;
 }
+
+/* Daily prayer signup page (scoped) */
+.arrive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.arrive-card {
+  padding: 1.4rem 1.5rem;
+  transition: transform 180ms ease-out, box-shadow 180ms ease-out;
+}
+
+.arrive-card h3 {
+  margin-block: 0 0.5rem;
+  font-size: 1.35rem;
+  overflow-wrap: anywhere;
+}
+
+.arrive-card p {
+  margin: 0;
+}
+
+@media (hover: hover) {
+  .arrive-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 48px var(--theme-shadow);
+  }
+}
+
+@media (max-width: 960px) {
+  .arrive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prayer-sample {
+  background: var(--panel);
+  border-inline-start: 3px solid var(--gold);
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+}
+
+.prayer-sample-text {
+  margin-block: 0 0.9rem;
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.prayer-sample-source {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+@keyframes dp-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+.dp-rise {
+  animation: dp-rise 420ms ease-out both;
+}
+
+.dp-d1 { animation-delay: 70ms; }
+.dp-d2 { animation-delay: 140ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dp-rise { animation: none; }
+  .arrive-card { transition: none; }
+}

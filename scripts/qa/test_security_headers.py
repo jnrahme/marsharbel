@@ -38,7 +38,7 @@ class SecurityHeaderTests(unittest.TestCase):
         self.assertIn('"expr=%{HTTPS} == \'on\'"', self.config)
 
     def test_private_pages(self):
-        self.assertIn('(?:account|submit-testimony|testimony-review|feedback|feedback-review)', self.config)
+        self.assertIn('(?:account|submit-testimony|testimony-review|feedback|feedback-review|daily-prayer|daily-prayer-admin)', self.config)
         self.assertIn('Header always set Cache-Control "no-store, max-age=0"', self.config)
         self.assertIn('Header always set X-Robots-Tag "noindex, nofollow, noarchive"', self.config)
 
