@@ -1,0 +1,656 @@
+{
+  "version": 1,
+  "master": "daily-prayer.html",
+  "masterSha256": "3fd68cf7c61684b98310fc0deaf52928b14441a717e69d2a3311a0fe73905d88",
+  "sourceRevision": "d51852d0",
+  "bindings": [
+    {
+      "key": "daily-prayer.metadata.title-daily-prayer-by-email-saint-charbel",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Daily Prayer by Email | Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.metadata.description-one-short-email-every-morning-at-6-am-a-prayer-a",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "One short email every morning at 6 AM: a prayer and the day's rosary to pray or meditate with, the Maronite prayers of the day, and a daily prayer to Saint Charbel. Free, with one-tap unsubscribe.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "daily-prayer.metadata.og-title-daily-prayer-by-email-saint-charbel",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Daily Prayer by Email | Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "daily-prayer.metadata.og-description-one-short-email-every-morning-at-6-am-a-praye",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "One short email every morning at 6 AM: a prayer and the day's rosary to pray or meditate with, the Maronite prayers of the day, and a daily prayer to Saint Charbel. Free, with one-tap unsubscribe.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "daily-prayer.metadata.twitter-title-daily-prayer-by-email-saint-charbel",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Daily Prayer by Email | Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "daily-prayer.metadata.twitter-description-one-short-email-every-morning-at-6-am-a",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "One short email every morning at 6 AM: a prayer and the day's rosary to pray or meditate with, the Maronite prayers of the day, and a daily prayer to Saint Charbel. Free, with one-tap unsubscribe.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "daily-prayer.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "daily-prayer.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.body.daily-prayer",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Daily Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.begin-every-morning-in-p.begin-every-morning-in-prayer",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Begin Every Morning in Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.begin-every-morning-in-p.one-short-email-at-6-am-a-prayer-and-the-day-s-rosary-to-pra",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "One short email at 6 AM: a prayer and the day's rosary to pray or meditate with, the Maronite prayers of the day, and a prayer to Saint Charbel. Free, and you can stop it with one tap.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.what-arrives-each-mornin.what-arrives-each-morning",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "What arrives each morning",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.what-arrives-each-mornin.a-prayer-to-open-the-day",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "A prayer to open the day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.what-arrives-each-mornin.a-short-morning-prayer-you-can-pray-in-a-quiet-minute-or-car",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A short morning prayer you can pray in a quiet minute, or carry with you through the day.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.what-arrives-each-mornin.the-day-s-rosary",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
+      "source": "The day's rosary",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.what-arrives-each-mornin.the-mystery-set-for-the-day-listed-one-by-one-ready-to-pray",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "The mystery set for the day, listed one by one - ready to pray or to meditate at your own pace.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.what-arrives-each-mornin.a-prayer-to-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(3) > h3:nth-of-type(1)",
+      "source": "A prayer to Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.what-arrives-each-mornin.a-daily-prayer-asking-his-intercession-with-a-link-to-all-th",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "A daily prayer asking his intercession, with a link to all the Maronite prayers of the day.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.from-the-daily-email.from-the-daily-email",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "From the daily email",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.from-the-daily-email.o-god-infinitely-holy-and-glorified-in-your-saints-you-inspi",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "O God, infinitely holy and glorified in Your saints, You inspired Saint Charbel to live and die in perfect union with Christ. Through his intercession, grant me the grace I seek in faith and trust: [name your intention]. Help me to walk in conversion, humility, and perseverance, and to surrender completely to Your will. Through Christ our Lord. Amen.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.from-the-daily-email.general-intercession-prayer-from-our",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "General Intercession Prayer - from our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.from-the-daily-email.saint-charbel-prayers",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.receive-the-daily-prayer.receive-the-daily-prayer",
+      "selector": "#main-content > section:nth-of-type(4) > article:nth-of-type(1) > h2:nth-of-type(1)",
+      "source": "Receive the daily prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.receive-the-daily-prayer.free-always",
+      "selector": "#main-content > section:nth-of-type(4) > article:nth-of-type(1) > div:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Free, always.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.receive-the-daily-prayer.no-account-no-password-your-email-is-used-only-for-the-daily",
+      "selector": "#main-content > section:nth-of-type(4) > article:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "No account, no password. Your email is used only for the daily prayer, and every email carries a one-tap unsubscribe.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.receive-the-daily-prayer.your-email-address",
+      "selector": "#subscribe-form > label:nth-of-type(1)",
+      "source": "Your email address",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.receive-the-daily-prayer.you-example-com",
+      "selector": "#subscribe-form > label:nth-of-type(1) > input:nth-of-type(1)",
+      "source": "you@example.com",
+      "kind": "attribute",
+      "attribute": "placeholder"
+    },
+    {
+      "key": "daily-prayer.receive-the-daily-prayer.we-send-one-confirmation-email-first-your-subscription-begin",
+      "selector": "#email-help",
+      "source": "We send one confirmation email first. Your subscription begins only after you tap the link inside it.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.human-verification.human-verification",
+      "selector": "#subscribe-form > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "source": "Human verification",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.human-verification.complete-the-security-check-then-subscribe",
+      "selector": "#subscribe-form > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Complete the security check, then subscribe.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.human-verification.send-me-the-daily-prayer",
+      "selector": "#subscribe-btn",
+      "source": "Send me the daily prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.footer.daily-prayer-by-email-human-run-author-please-pray-for-the-p",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Daily prayer by email, human-run. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "daily-prayer.metadata.title-daily-prayer-by-email-saint-charbel": "Daily Prayer by Email | Saint Charbel",
+    "daily-prayer.metadata.description-one-short-email-every-morning-at-6-am-a-prayer-a": "One short email every morning at 6 AM: a prayer and the day's rosary to pray or meditate with, the Maronite prayers of the day, and a daily prayer to Saint Charbel. Free, with one-tap unsubscribe.",
+    "daily-prayer.metadata.og-title-daily-prayer-by-email-saint-charbel": "Daily Prayer by Email | Saint Charbel",
+    "daily-prayer.metadata.og-description-one-short-email-every-morning-at-6-am-a-praye": "One short email every morning at 6 AM: a prayer and the day's rosary to pray or meditate with, the Maronite prayers of the day, and a daily prayer to Saint Charbel. Free, with one-tap unsubscribe.",
+    "daily-prayer.metadata.twitter-title-daily-prayer-by-email-saint-charbel": "Daily Prayer by Email | Saint Charbel",
+    "daily-prayer.metadata.twitter-description-one-short-email-every-morning-at-6-am-a": "One short email every morning at 6 AM: a prayer and the day's rosary to pray or meditate with, the Maronite prayers of the day, and a daily prayer to Saint Charbel. Free, with one-tap unsubscribe.",
+    "daily-prayer.body.skip-to-main-content": "Skip to main content",
+    "daily-prayer.header.text": "✦",
+    "daily-prayer.header.saint-charbel": "Saint Charbel",
+    "daily-prayer.accessibility.primary": "Primary",
+    "daily-prayer.header.home": "Home",
+    "daily-prayer.header.legacy": "Legacy",
+    "daily-prayer.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "daily-prayer.header.full-history": "Full History",
+    "daily-prayer.header.gallery": "Gallery",
+    "daily-prayer.header.miracles": "Miracles",
+    "daily-prayer.header.miracles-reports": "Miracles & Reports",
+    "daily-prayer.header.eucharistic-miracles": "Eucharistic Miracles",
+    "daily-prayer.header.letters": "Letters",
+    "daily-prayer.header.voice-testimony": "Voice Testimony",
+    "daily-prayer.header.saints": "Saints",
+    "daily-prayer.header.children-s-books": "Children's Books",
+    "daily-prayer.header.prayer": "Prayer",
+    "daily-prayer.header.prayer-library": "Prayer Library",
+    "daily-prayer.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "daily-prayer.header.prayer-for-the-sick": "Prayer for the Sick",
+    "daily-prayer.header.prayer-for-healing": "Prayer for Healing",
+    "daily-prayer.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "daily-prayer.header.prayer-for-depression": "Prayer for Depression",
+    "daily-prayer.header.prayer-for-students": "Prayer for Students",
+    "daily-prayer.header.prayer-for-addiction": "Prayer for Addiction",
+    "daily-prayer.header.prayer-for-family": "Prayer for Family",
+    "daily-prayer.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "daily-prayer.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "daily-prayer.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "daily-prayer.header.saint-charbel-novena": "Saint Charbel Novena",
+    "daily-prayer.header.feast-day": "Feast Day",
+    "daily-prayer.header.rosary-guide": "Rosary Guide",
+    "daily-prayer.header.rosary-minibook": "Rosary Minibook",
+    "daily-prayer.header.mystery-meditation": "Mystery Meditation",
+    "daily-prayer.header.become-like-him": "Become Like Him",
+    "daily-prayer.header.travel": "Travel",
+    "daily-prayer.header.visiting-annaya": "Visiting Annaya",
+    "daily-prayer.header.annaya-online-tour": "Annaya Online Tour",
+    "daily-prayer.header.bekaa-kafra": "Bekaa Kafra",
+    "daily-prayer.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "daily-prayer.header.the-cedars-of-god": "the Cedars of God",
+    "daily-prayer.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "daily-prayer.header.qadisha-valley": "Qadisha Valley",
+    "daily-prayer.header.qannoubine-monastery": "Qannoubine Monastery",
+    "daily-prayer.header.qozhaya-monastery": "Qozhaya Monastery",
+    "daily-prayer.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "daily-prayer.header.the-hermitage": "The Hermitage",
+    "daily-prayer.header.saint-charbel-trail": "Saint Charbel Trail",
+    "daily-prayer.header.news": "News",
+    "daily-prayer.body.daily-prayer": "Daily Prayer",
+    "daily-prayer.begin-every-morning-in-p.begin-every-morning-in-prayer": "Begin Every Morning in Prayer",
+    "daily-prayer.begin-every-morning-in-p.one-short-email-at-6-am-a-prayer-and-the-day-s-rosary-to-pra": "One short email at 6 AM: a prayer and the day's rosary to pray or meditate with, the Maronite prayers of the day, and a prayer to Saint Charbel. Free, and you can stop it with one tap.",
+    "daily-prayer.what-arrives-each-mornin.what-arrives-each-morning": "What arrives each morning",
+    "daily-prayer.what-arrives-each-mornin.a-prayer-to-open-the-day": "A prayer to open the day",
+    "daily-prayer.what-arrives-each-mornin.a-short-morning-prayer-you-can-pray-in-a-quiet-minute-or-car": "A short morning prayer you can pray in a quiet minute, or carry with you through the day.",
+    "daily-prayer.what-arrives-each-mornin.the-day-s-rosary": "The day's rosary",
+    "daily-prayer.what-arrives-each-mornin.the-mystery-set-for-the-day-listed-one-by-one-ready-to-pray": "The mystery set for the day, listed one by one - ready to pray or to meditate at your own pace.",
+    "daily-prayer.what-arrives-each-mornin.a-prayer-to-saint-charbel": "A prayer to Saint Charbel",
+    "daily-prayer.what-arrives-each-mornin.a-daily-prayer-asking-his-intercession-with-a-link-to-all-th": "A daily prayer asking his intercession, with a link to all the Maronite prayers of the day.",
+    "daily-prayer.from-the-daily-email.from-the-daily-email": "From the daily email",
+    "daily-prayer.from-the-daily-email.o-god-infinitely-holy-and-glorified-in-your-saints-you-inspi": "O God, infinitely holy and glorified in Your saints, You inspired Saint Charbel to live and die in perfect union with Christ. Through his intercession, grant me the grace I seek in faith and trust: [name your intention]. Help me to walk in conversion, humility, and perseverance, and to surrender completely to Your will. Through Christ our Lord. Amen.",
+    "daily-prayer.from-the-daily-email.general-intercession-prayer-from-our": "General Intercession Prayer - from our",
+    "daily-prayer.from-the-daily-email.saint-charbel-prayers": "Saint Charbel prayers",
+    "daily-prayer.receive-the-daily-prayer.receive-the-daily-prayer": "Receive the daily prayer",
+    "daily-prayer.receive-the-daily-prayer.free-always": "Free, always.",
+    "daily-prayer.receive-the-daily-prayer.no-account-no-password-your-email-is-used-only-for-the-daily": "No account, no password. Your email is used only for the daily prayer, and every email carries a one-tap unsubscribe.",
+    "daily-prayer.receive-the-daily-prayer.your-email-address": "Your email address",
+    "daily-prayer.receive-the-daily-prayer.you-example-com": "you@example.com",
+    "daily-prayer.receive-the-daily-prayer.we-send-one-confirmation-email-first-your-subscription-begin": "We send one confirmation email first. Your subscription begins only after you tap the link inside it.",
+    "daily-prayer.human-verification.human-verification": "Human verification",
+    "daily-prayer.human-verification.complete-the-security-check-then-subscribe": "Complete the security check, then subscribe.",
+    "daily-prayer.human-verification.send-me-the-daily-prayer": "Send me the daily prayer",
+    "daily-prayer.footer.daily-prayer-by-email-human-run-author-please-pray-for-the-p": "Daily prayer by email, human-run. Author: Please pray for the person who made this website."
+  }
+}

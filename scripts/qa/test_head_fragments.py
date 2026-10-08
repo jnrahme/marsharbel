@@ -53,9 +53,9 @@ class HeadFragmentTest(unittest.TestCase):
                 self.assertIn('  ' + rendered, served, f'{source.name}: {name} changed bytes')
                 counts[name] = counts.get(name, 0) + 1
         self.assertEqual(counts, {
-            'head-og-locales': 91,
-            'head-social': 110,
-            'head-font-preloads': 79,
+            'head-og-locales': 92,
+            'head-social': 111,
+            'head-font-preloads': 80,
             'head-font-preloads-legacy': 16,
         })
 
