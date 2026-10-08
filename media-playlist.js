@@ -18,7 +18,7 @@
     titleEl.textContent = text(i, '.track-title').textContent;
     translitEl.textContent = text(i, '.track-translit').textContent;
     creditEl.innerHTML = text(i, '.track-credit').innerHTML;
-    openEl.href = 'https://www.youtube.com/watch?v=' + it.dataset.yt;
+    openEl.href = it.dataset.ytList ? 'https://www.youtube.com/playlist?list=' + it.dataset.ytList : 'https://www.youtube.com/watch?v=' + it.dataset.yt;
     var n = items[i + 1];
     upNext.textContent = n ? 'Up next: ' + text(i + 1, '.track-translit').textContent : 'Last track in the playlist';
     root.classList.toggle('is-playing', playing);
@@ -40,7 +40,12 @@
           onStateChange: function (e) {
             if (e.data === 1) setPlaying(true);
             else if (e.data === 2) setPlaying(false);
-            else if (e.data === 0) { setPlaying(false); if (index < items.length - 1) play(index + 1); }
+            else if (e.data === 0) {
+              setPlaying(false);
+              var inList = items[index].dataset.ytList;
+              if (inList) { var pl = player.getPlaylist() || []; if (player.getPlaylistIndex() < pl.length - 1) return; }
+              if (index < items.length - 1) play(index + 1);
+            }
           },
           onError: function () { setPlaying(false); if (index < items.length - 1) play(index + 1); }
         }
@@ -53,7 +58,11 @@
   }
   function play(i) {
     show(i);
-    loadApi(function () { player.loadVideoById(items[i].dataset.yt); });
+    loadApi(function () {
+      var d = items[i].dataset;
+      if (d.ytList) player.loadPlaylist({ listType: 'playlist', list: d.ytList, index: 0 });
+      else player.loadVideoById(d.yt);
+    });
   }
   items.forEach(function (li, i) {
     li.querySelector('.track-play').addEventListener('click', function () { play(i); });
