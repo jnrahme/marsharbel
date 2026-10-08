@@ -1,6 +1,6 @@
 const {test,expect}=require('@playwright/test');
 const registry=require('../locales/registry.json');
-for(const code of Object.keys(registry.locales))test(`${code} explicit choice persists across reviewed navigation`,async({page})=>{
+for(const code of Object.keys(registry.locales).filter(c=>registry.locales[c].home))test(`${code} explicit choice persists across reviewed navigation`,async({page})=>{
  await page.goto('/');await page.evaluate(c=>window.SC_LANGUAGE_SWITCH.request(c),code);
  await expect(page).toHaveURL(new RegExp(registry.locales[code].home+'$'));
  await expect(page.locator('#sc-language-select')).toHaveValue(code);
@@ -34,5 +34,12 @@ test('footer choice persists but explicit English source remains English',async(
  expect(await page.evaluate(()=>localStorage.getItem('sc_last_explicit_language'))).toBe('de');
  await page.goto('/news');await page.evaluate(()=>{const a=document.createElement('a');a.href='/history';a.hreflang='en';a.id='explicit-english-link';a.textContent='English source';document.querySelector('main').prepend(a);});
  await page.locator('#explicit-english-link').click();await expect(page).toHaveURL(/\/history$/);await expect(page.locator('html')).toHaveAttribute('lang','en');
+ expect(await page.evaluate(()=>localStorage.getItem('sc_last_explicit_language'))).toBe('en');
+});
+
+for(const code of Object.keys(registry.locales).filter(c=>!registry.locales[c].home))test(`${code} absent home refuses without changing URL or preference`,async({page})=>{
+ await page.goto('/');await page.evaluate(()=>localStorage.setItem('sc_last_explicit_language','en'));
+ await page.evaluate(c=>window.SC_LANGUAGE_SWITCH.request(c),code);
+ await expect(page).toHaveURL(/\/$/);await expect(page.locator('html')).toHaveAttribute('lang','en');
  expect(await page.evaluate(()=>localStorage.getItem('sc_last_explicit_language'))).toBe('en');
 });
