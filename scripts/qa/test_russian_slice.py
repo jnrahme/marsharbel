@@ -3,7 +3,7 @@ import sys,json,unittest,hashlib
 from pathlib import Path
 from bs4 import BeautifulSoup
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from i18n.catalog import ROOT,load_catalog,read_json,locale_topics
+from i18n.catalog import ROOT,load_catalog,read_json,locale_topics,published_home_locales
 from i18n.page_mirror import render_page
 from i18n.guarded_dom import translatable_nodes
 class RussianSliceTests(unittest.TestCase):
@@ -25,8 +25,10 @@ class RussianSliceTests(unittest.TestCase):
   r=read_json(ROOT/'locales/registry.json');expected={code:r['site']+route for code,route in r['pageMirrors']['history-master']['routes'].items()};expected.update(en=r['site']+'/history');expected['x-default']=r['site']+'/history'
   for p in ('history.html','de/biografie.html','ru/biography.html'):
    s=BeautifulSoup((ROOT/p).read_text(),'html.parser');self.assertEqual({x['hreflang']:x['href']for x in s.select('head link[hreflang]')},expected)
-  r=read_json(ROOT/'locales/registry.json');expected={code:r['site']+cfg['home']for code,cfg in r['locales'].items()};expected['x-default']=r['site']+'/'
-  for code,cfg in r['locales'].items():
+  r=read_json(ROOT/'locales/registry.json');homes={code:r['locales'][code]for code in published_home_locales(r)}
+  expected={code:r['site']+cfg['home']for code,cfg in homes.items()};expected['x-default']=r['site']+'/'
+  self.assertNotIn('zh-Hans',homes);self.assertFalse((ROOT/'zh-Hans/index.html').exists())
+  for code,cfg in homes.items():
    s=BeautifulSoup((ROOT/('index.html'if code=='en'else code+'/index.html')).read_text(),'html.parser');self.assertEqual({x['hreflang']:x['href']for x in s.select('head link[hreflang]')},expected)
  def test_pending_only_and_no_placeholder_destinations(self):
   m=read_json(ROOT/'locales/same-page-manifest.pending.json');self.assertIn('ru',m['languages']);ru=[]
