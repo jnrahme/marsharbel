@@ -3,11 +3,11 @@ from html import escape
 import re
 import json
 from bs4 import BeautifulSoup
-from i18n.catalog import read_json,page_url,topic_locales
+from i18n.catalog import read_json,page_url,topic_locales,home_url
 
 def route_for(root,registry,english,code):
     if code=='en':return english
-    for config in registry.get('authoredMirrors',{}).values():
+    for config in [*registry.get('authoredMirrors',{}).values(), *registry.get('pageMirrors',{}).values()]:
         if config['english']==english and code in config['routes']:return config['routes'][code]
     if english in read_json(root/'locales/travel-routes.json')['destinations']:return english
     for topic,config in registry['topics'].items():
@@ -38,7 +38,8 @@ def directory(root,registry,code):
 def travel_frame(text,root,code,route,registry):
     """Idempotent frame: nav has correct route/current state; content is preserved."""
     # A synthetic/unpublished locale has no Travel chrome or catalog requirement.
-    if code not in registry.get('authoredMirrors',{}).get('travel',{}).get('routes',{}):return text
+    has_hub = code in registry.get('authoredMirrors',{}).get('travel',{}).get('routes',{}) or any(cfg['english']=='/travel' and code in cfg.get('renderLocales',[]) for cfg in registry.get('pageMirrors',{}).values())
+    if not has_hub:return text
     cfg=read_json(root/'locales/travel-routes.json');copy=read_json(root/f'locales/{code}/travel.json');common=read_json(root/f'locales/{code}/common.json')
     hub=route_for(root,registry,cfg['hub'],code)
     def header(m):
@@ -50,6 +51,8 @@ def travel_frame(text,root,code,route,registry):
         def group(g):
             parent=g[1];body=g[2]
             body=re.sub(r' class="active"| aria-current="page"','',body)
+            if code in ('de','zh-Hans'):
+                body=re.sub(r'(<a\b[^>]*href=["\'])(/travel)(["\'])',lambda x:x[1]+hub+x[3],body)
             body=re.sub(r'\s*<a\b[^>]*href=["\']'+re.escape(hub)+r'["\'][^>]*>.*?</a>','',body)
             current=' class="active" aria-current="page"' if route==hub else ''
             body=f'\n        <a{current} href="{hub}">{escape(copy["hubLabel"])}</a>'+body
@@ -59,7 +62,7 @@ def travel_frame(text,root,code,route,registry):
         s=re.sub(pattern,group,s,flags=re.S)
         return s
     if code!='en':text=re.sub(r'<header\b.*?</header>',header,text,count=1,flags=re.S)
-    standalone=route==registry['locales'][code]['home'] or (code in registry['topics']['annaya'].get('locales',[]) and route==page_url(registry,code,'annaya'))
+    standalone=route==(home_url(registry, code) or '/') or (code in registry['topics']['annaya'].get('locales',[]) and route==page_url(registry,code,'annaya'))
     if route not in travel_routes(root,registry,code) and not standalone:return text
     # Standalone language-home/guide chrome keeps its existing single language control.
     if 'class="locale-nav"' in text:
@@ -88,13 +91,13 @@ def travel_frame(text,root,code,route,registry):
             text=text[:hero_match.start()]+ '<section class="hero travel-split-hero">'+picture+'<div class="travel-summary">'+remaining+'</div></section>'+text[hero_match.end():]
     # One generated breadcrumb uses cataloged home/Travel labels and the page's existing H1.
     soup=BeautifulSoup(text,'html.parser');title=soup.h1.get_text(' ',strip=True) if soup.h1 else ''
-    crumb=f'<!-- i18n-travel-frame:start -->\n<nav class="travel-breadcrumb" aria-label="{escape(common["navigation.contents"])}"><a href="{registry["locales"][code]["home"]}">{escape(common["navigation.home"])}</a><span aria-hidden="true">/</span>'
+    crumb=f'<!-- i18n-travel-frame:start -->\n<nav class="travel-breadcrumb" aria-label="{escape(common["navigation.contents"])}"><a href="{(home_url(registry, code) or "/")}">{escape(common["navigation.home"])}</a><span aria-hidden="true">/</span>'
     if route!=hub:crumb+=f'<a href="{hub}">{escape(copy["hubLabel"])}</a><span aria-hidden="true">/</span>'
     crumb+=f'<span aria-current="page">{escape(copy["hubLabel"] if route==hub else title)}</span></nav>\n<!-- i18n-travel-frame:end -->'
     text=re.sub(r'<!-- i18n-travel-frame:start -->.*?<!-- i18n-travel-frame:end -->\s*','',text,flags=re.S)
     text=re.sub(r'(<main\b[^>]*>)',lambda m:m[1]+'\n'+crumb,text,count=1)
     schema={'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[
-        {'@type':'ListItem','position':1,'name':common['navigation.home'],'item':registry['site']+registry['locales'][code]['home']},
+        {'@type':'ListItem','position':1,'name':common['navigation.home'],'item':registry['site']+(home_url(registry, code) or '/')},
         {'@type':'ListItem','position':2,'name':copy['hubLabel'],'item':registry['site']+hub}]}
     if route!=hub:schema['itemListElement'].append({'@type':'ListItem','position':3,'name':title,'item':registry['site']+route})
     text=re.sub(r'<!-- i18n-travel-schema:start -->.*?<!-- i18n-travel-schema:end -->\s*','',text,flags=re.S)

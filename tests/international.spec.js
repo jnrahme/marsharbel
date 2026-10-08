@@ -2,6 +2,8 @@ const {test, expect} = require('@playwright/test');
 const AxeBuilder = require('@axe-core/playwright').default;
 const registry = require('../locales/registry.json');
 const languages = Object.keys(registry.locales);
+const homeLanguages=languages.filter(code=>registry.locales[code].home&&registry.locales[code].capabilities?.home!==false);
+const noHomeLanguages=languages.filter(code=>!homeLanguages.includes(code));
 const catalogs = Object.fromEntries(languages.map(code => [code, require(`../locales/${code}/pages.json`)]));
 const prayerMirror = require('../locales/ar/mirrors/prayers.json');
 const prayerMirrorFrench = require('../locales/fr/mirrors/prayers.json');
@@ -26,9 +28,10 @@ const routeFor = (code, topic) => prayerFor(code,topic) ? registry.pageMirrors[p
 const topicLanguages = topic => topic ? languages.filter(code => (registry.topics[topic].locales || languages).includes(code)) : languages;
 // Discovery clusters depend on this page's identity, not merely its topic.
 const clusterFor = (language, topic) => {
+  if(!topic)return Object.fromEntries(homeLanguages.map(code=>[code,registry.locales[code].home]));
   if(topic==='prayers') return language==='en' ? {en:'/en/prayers'} : Object.fromEntries(Object.entries(registry.pageMirrors['saint-charbel-prayers-master'].discoveryRoutes).filter(([k])=>k!=='x-default'));
   if(topic==='novena') return prayerFor(language,topic) ? Object.fromEntries(Object.entries(registry.pageMirrors['saint-charbel-novena-master'].discoveryRoutes).filter(([k])=>k!=='x-default')) : Object.fromEntries(['en','es','pt','it','pl'].filter(c=>!registry.pageMirrors['saint-charbel-novena-master'].renderLocales.includes(c)).map(c=>[c,routeFor(c,topic)]));
-  if (travelFor(language, topic)) return {en: registry.topics[topic].relatedEnglish, ...registry.pageMirrors[travelFor(language, topic)].routes};
+  if (travelFor(language, topic)) {const cfg=registry.pageMirrors[travelFor(language,topic)];return Object.fromEntries(Object.entries(cfg.discoveryRoutes||{en:registry.topics[topic].relatedEnglish,...cfg.routes}).filter(([code])=>code!=='x-default'));}
   if (travelFamily[topic] && language === 'en') return {en: routeFor('en', topic)};
   if (topic === 'biography') return language === 'en' ? {en:'/en/biography'} : {en:'/history',...registry.pageMirrors['history-master'].routes};
   const exact = exactFor(topic), route = routeFor(language, topic);
@@ -41,7 +44,7 @@ const clusterFor = (language, topic) => {
 
 for (const [language, config] of Object.entries(registry.locales)) {
   const topics = Object.keys(registry.topics).filter(topic => topicLanguages(topic).includes(language));
-  const resources = language === registry.defaultLocale ? topics : [null, ...topics];
+  const resources = language === registry.defaultLocale || !homeLanguages.includes(language) ? topics : [null, ...topics];
   for (const topic of resources) {
     const route = routeFor(language, topic);
     test(`${route} reads and switches language without JavaScript`, async ({browser, baseURL}, testInfo) => {
@@ -112,9 +115,10 @@ for (const route of ['/', ...new Set(Object.values(registry.topics).map(topic =>
     // crawlable path that replaced runtime-only switching.
     const localeBarCount = await page.locator('nav.footer-locales').count();
     expect(localeBarCount).toBeLessThanOrEqual(1);
-    for (const code of languages) {
+    for (const code of homeLanguages) {
       await expect(page.locator(`nav.footer-locales a[hreflang="${code}"]`)).toHaveCount(localeBarCount);
     }
+    for(const code of noHomeLanguages)await expect(page.locator(`nav.footer-locales a[hreflang="${code}"]`)).toHaveCount(0);
     const footerHtml = ((await (await page.request.get(route)).text()).match(/<nav[^>]*footer-locales[\s\S]*?<\/nav>/) || [''])[0];
     expect(footerHtml).not.toContain('?lang=');
     for (const code of languages) {
@@ -168,9 +172,10 @@ for (const [source,target] of [['/ar/annaya','/visit-annaya'],['/ar/biography','
   });
 }
 
-for(const code of languages) test(`${code} homepage offers every shipped homepage`,async({page})=>{
+for(const code of homeLanguages) test(`${code} homepage offers every shipped homepage`,async({page})=>{
   await page.goto(registry.locales[code].home);
-  for(const lang of languages) await expect(page.locator(`#sc-language-select option[value="${lang}"]`)).toBeEnabled();
+  for(const lang of homeLanguages) await expect(page.locator(`#sc-language-select option[value="${lang}"]`)).toBeEnabled();
+  for(const lang of noHomeLanguages){await expect(page.locator(`#sc-language-select option[value="${lang}"]`)).toBeDisabled();const before=page.url();expect(await page.evaluate(c=>SC_LANGUAGE_SWITCH.request(c),lang)).toBe(false);await expect(page).toHaveURL(before);}
   const next=code==='fr'?'ar':'fr';
   await page.selectOption('#sc-language-select',next);
   await expect(page).toHaveURL(new RegExp(registry.locales[next].home+'$'));
@@ -191,12 +196,13 @@ for (const [route,code] of [['/pt/novena','pt'],['/it/novena','it'],['/ru/novena
     await expect(fallback).toHaveCount(1);
     await fallback.scrollIntoViewIfNeeded();
     await expect(fallback).toBeVisible();
-    for (const lang of languages) {
+    for (const lang of homeLanguages) {
       const link = fallback.locator(`a[hreflang="${lang}"]`);
       await expect(link).toBeVisible();
       await expect(link).toHaveAttribute('href',registry.locales[lang].home);
       expect((await link.innerText()).trim()).not.toBe('');
     }
+    for(const lang of noHomeLanguages)await expect(fallback.locator(`a[hreflang="${lang}"]`)).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await page.screenshot({path:testInfo.outputPath(code+'-keyed-nojs-footer.png')});
     await fallback.locator('a[hreflang="en"]').click();

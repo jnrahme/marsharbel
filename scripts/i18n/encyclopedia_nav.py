@@ -10,7 +10,8 @@ def disclose_nav(text, root, lang):
     if not header:raise ValueError('Missing Encyclopedia navigation header')
     from i18n.catalog import read_json, page_url
     registry=read_json(root/'locales/registry.json')
-    biography=page_url(registry,lang,'biography')
+    from i18n.catalog import locale_topics
+    biography=page_url(registry,lang,'biography') if 'biography' in locale_topics(registry,lang) else '/history'
     history_paths=['./history','/history',biography]
     header_text=header[0]
     for path in history_paths:

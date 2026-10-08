@@ -3,7 +3,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from i18n.same_page_injection import inject_control
-from i18n.catalog import ROOT,read_json
+from i18n.catalog import ROOT,read_json,published_home_locales
 class FooterNavigation(unittest.TestCase):
  def test_generated_footer_links_are_native_home_navigation(self):
   registry=read_json(ROOT/'locales/registry.json');count=0
@@ -15,7 +15,9 @@ class FooterNavigation(unittest.TestCase):
     self.assertIsNotNone(nav.find_parent("footer"),str(file))
     self.assertIsNone(nav.find_parent("main"),str(file))
     self.assertFalse(nav.select('.sc-language-helper,.sc-unavailable-suffix'))
-    for code,cfg in registry['locales'].items():
+    self.assertEqual({a['hreflang'] for a in nav.select('a[hreflang]')},set(published_home_locales(registry)))
+    for code in published_home_locales(registry):
+     cfg=registry['locales'][code]
      a=nav.select_one('a[hreflang="'+code+'"]');self.assertIsNotNone(a,str(file))
      self.assertEqual(a['href'],cfg['home']);self.assertEqual(a.get_text(),cfg['nativeName'])
      self.assertEqual(a['lang'],code);self.assertEqual(a['dir'],cfg['direction'])

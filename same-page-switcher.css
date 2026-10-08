@@ -17,3 +17,21 @@ nav.locale-nav a[aria-disabled="true"]{display:inline-block;max-width:100%;white
 
 /* A ready select replaces the expanded fallback nav, never before JS succeeds. */
 header nav.locale-nav[hidden]{display:none}
+/* Language and install controls retain usable targets as text grows or shrinks. */
+#sc-language-switcher{min-inline-size:0;max-inline-size:100%;block-size:auto}
+#sc-language-select,#sc-install-app-btn{min-block-size:44px;min-inline-size:44px;block-size:auto;box-sizing:border-box}
+#sc-install-app-btn{max-inline-size:100%;white-space:normal;overflow-wrap:anywhere;text-align:center;padding-block:.4rem;padding-inline:.7rem}
+/* Natural rows preserve compact chrome without starving the brand under text zoom. */
+.topbar:has(#sc-language-switcher) .nav{display:flex;flex-wrap:wrap;gap:.35rem .5rem;align-items:center}
+.topbar:has(#sc-language-switcher) .brand{order:0;flex:1 0 auto;max-inline-size:100%;white-space:normal;overflow-wrap:anywhere;min-inline-size:0}
+.topbar:has(#sc-language-switcher) #sc-install-app-btn{order:1;flex:0 1 auto;inline-size:auto;max-inline-size:100%;border-radius:1.4rem}
+.topbar:has(#sc-language-switcher) #sc-language-switcher{order:2;flex:0 1 auto;inline-size:fit-content;min-inline-size:0;max-inline-size:min(100%,calc(220px + 12rem))}
+.topbar:has(#sc-language-switcher) .links{order:3;flex:1 0 100%;min-inline-size:0}
+#sc-language-switcher select{inline-size:clamp(calc(8ch + 2rem),20vw,220px);max-inline-size:100%;min-inline-size:min(100%,calc(8ch + 2rem));text-overflow:ellipsis;text-align:start}
+@media(max-width:640px){
+ .topbar:has(#sc-language-switcher) .nav{row-gap:0;padding-block:.2rem}
+ .topbar:has(#sc-language-switcher) .brand{flex:1 1 auto}
+ .topbar:has(#sc-language-switcher) #sc-language-switcher{max-inline-size:100%;min-inline-size:min(100%,calc(8ch + 2rem));padding-block:0;border:0}
+ #sc-language-switcher select{inline-size:clamp(calc(8ch + 2rem),25vw,96px);max-inline-size:100%}
+ .topbar:has(#sc-language-switcher) .links{margin-block:0}
+}

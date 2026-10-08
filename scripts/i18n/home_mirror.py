@@ -7,10 +7,12 @@ from i18n.metadata import og_locales
 from i18n.keyed_master import apply_keyed_master
 from i18n.mirror_structure import check_pair
 from bs4 import BeautifulSoup, NavigableString
-from i18n.catalog import read_json, page_url, topic_locales
+from i18n.catalog import read_json, page_url, topic_locales, published_home_locales
 
 
 def render_home(root, registry, lang, catalog=None):
+    if lang not in published_home_locales(registry):
+        raise ValueError(f'{lang}: unpublished homepage renderer')
     raw, soup, copy = apply_keyed_master(root, 'home', lang, catalog)
     # Preserve asset paths, srcsets, forms and JS navigation from a nested route.
     for node in soup.select('[href], [src], [srcset], [action], [data-src-mp4]'):
@@ -21,7 +23,7 @@ def render_home(root, registry, lang, catalog=None):
             node['srcset'] = ', '.join(urljoin('/', p.strip().split()[0]) + (' ' + ' '.join(p.strip().split()[1:]) if len(p.strip().split()) > 1 else '') for p in node['srcset'].split(','))
     # Registry discovery changes are metadata-only, not authored content.
     for node in soup.select('link[rel=alternate][hreflang]'):node.decompose()
-    for code,path in {**{c:cfg['home'] for c,cfg in registry['locales'].items()},'x-default':'/'}.items():
+    for code,path in {**{c:registry['locales'][c]['home'] for c in published_home_locales(registry)},'x-default':'/'}.items():
         soup.head.append(soup.new_tag('link',rel='alternate',hreflang=code,href=registry['site']+path))
     route = registry['locales'][lang]['home']
     canonical = registry['site'] + route
@@ -47,7 +49,7 @@ def render_home(root, registry, lang, catalog=None):
         if lang in cfg['routes']:
             twins[cfg['english'].rstrip('/')] = cfg['routes'][lang]
     for cfg in registry.get('pageMirrors', {}).values():
-        if lang in registry.get('limitedLaunchLocales', []) and lang in cfg['routes']:
+        if lang in cfg['routes'] and (lang in registry.get('limitedLaunchLocales', []) or cfg['english'] == '/travel'):
             twins[cfg['english'].rstrip('/')] = cfg['routes'][lang]
     # English app links can use the old /en guide alias for the full prayer master.
     if '/saint-charbel-prayers' in twins:
@@ -79,6 +81,8 @@ def render_home(root, registry, lang, catalog=None):
     # Match the existing Travel frame serializer's canonical indentation so
     # reprocessing a generated home is byte-idempotent, not just DOM-equal.
     travel = registry.get('authoredMirrors', {}).get('travel', {}).get('routes', {}).get(lang)
+    if not travel:
+        travel = next((cfg['routes'][lang] for cfg in registry.get('pageMirrors', {}).values() if cfg['english'] == '/travel' and lang in cfg.get('renderLocales', [])), None)
     if travel:
         rendered = re.sub(r'(?m)^([ \t]*)(<a href="' + re.escape(travel) + r'">[^<]*</a>)$',
                           lambda match: '        ' + match[2], rendered)

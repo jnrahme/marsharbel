@@ -1,0 +1,1188 @@
+{
+  "version": 1,
+  "master": "qadisha-valley.html",
+  "masterSha256": "d5afa5319c12d873643aaa0d17366965c084911184c667b42e34549caab55849",
+  "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
+  "bindings": [
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Qadisha Valley: The Holy Valley Where Maronite Monks Hid for Centuries",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(3)",
+      "source": "The Qadisha Valley sheltered Maronite monks and hermits for a thousand years. Its monasteries, hermitages, UNESCO status, and how to visit.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.brand.mark",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.siteBrand",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.primaryLabel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "travel.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.fullHistory",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.miraclesAndReports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.eucharisticMiracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.voiceTestimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.childrenBooks",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerLibrary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.findAPrayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForTheSick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForHealing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAnxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForDepression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForStudents",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAddiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForFamily",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForPregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAMiracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.currentPrayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.feastDay",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.rosaryGuide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.rosaryMinibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.mysteryMeditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.becomeLikeHim",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.places",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.places",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.visitingAnnaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node40",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.bekaaKafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qadishaValley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qannoubineMonastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qozhayaMonastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.placesLebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node49",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "travel.shared.node50",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node51",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node52",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node53",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.heading1",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "The Qadisha Valley, Lebanon's Holy Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.images.alt1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Aerial view over the Qadisha Valley near Qannoubine: steep green cliffs and a monastery tucked into the rock. Photo by Evan Williams, Wikimedia Commons",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "travel.hero.caption1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The Qadisha Valley from above Qannoubine - monasteries still cling to its cliffs. Photo: Evan Williams, Wikimedia Commons (CC BY-SA 4.0).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.heading1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "The Qadisha Valley, Lebanon's Holy Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.answer1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Qadisha Valley - the Holy Valley - is the deep gorge in North Lebanon where Maronite monasticism took root: a thousand years of hermit caves and cliff-built monasteries, today a UNESCO World Heritage site together with the Cedars of God above its source.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.visiting.heading1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Visiting the Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.places",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.text1",
+      "selector": "#main-content > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "In the mountains of North Lebanon, below the country's highest peaks, a deep green gorge carries a name that says everything about it: Qadisha, the Holy Valley. For more than a thousand years its caves and cliff-built monasteries sheltered Maronite monks, hermits, and patriarchs - and today the whole valley is a UNESCO World Heritage site, together with the Cedars of God that stand above its source.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link1",
+      "selector": "#main-content > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Walk the Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link2",
+      "selector": "#main-content > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link3",
+      "selector": "#main-content > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Visit Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.eyebrow1",
+      "selector": "#main-content > nav:nth-of-type(2)",
+      "source": "Places of Saint Charbel",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "travel.meaning.heading1",
+      "selector": "#main-content > nav:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Why It's Called the Holy Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.heading1",
+      "selector": "#main-content > nav:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "The Monasteries of the Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.visiting.heading1",
+      "selector": "#main-content > nav:nth-of-type(2) > a:nth-of-type(3)",
+      "source": "Visiting the Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.heading1",
+      "selector": "#main-content > nav:nth-of-type(2) > a:nth-of-type(4)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.meaning.heading1",
+      "selector": "#meaning > h2:nth-of-type(1)",
+      "source": "Why It's Called the Holy Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.meaning.emphasis1",
+      "selector": "#meaning > div:nth-of-type(1) > p:nth-of-type(1) > em:nth-of-type(1)",
+      "source": "Qadisha",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.meaning.text1",
+      "selector": "#meaning > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "is Aramaic for \"holy\" - the same Semitic root as the Hebrew",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "travel.meaning.emphasis2",
+      "selector": "#meaning > div:nth-of-type(1) > p:nth-of-type(1) > em:nth-of-type(2)",
+      "source": "kadosh",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.meaning.text2",
+      "selector": "#meaning > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ". The valley is also written Kadisha, and in French sources Ouadi Qadisha; all of them mean the Holy Valley. The gorge cuts into the flank of Mount Lebanon beneath Qornet es-Sawda, the country's highest summit, and the river that carved it - Nahr Qadisha, the Holy River - rises from a grotto just below the Cedars of God before running some 35 kilometers toward the sea. Below Bsharri the valley forks into its two great branches, Qannoubine and Qozhaya.",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "travel.meaning.text3",
+      "selector": "#meaning > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "People sheltered in the valley's caves from the Stone Age onward, and from the first centuries of Christianity solitaries came here to pray in them. So many monks, hermits, monasteries, and shrines eventually filled the gorge that the valley itself took the name of what it held: holy.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.refuge.heading1",
+      "selector": "#refuge > h2:nth-of-type(1)",
+      "source": "A Refuge for the Maronites",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.refuge.text1",
+      "selector": "#refuge > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "For the Maronite Church, the Qadisha is not scenery - it is survival. When persecution and war swept the coast and the plains, the community withdrew into a gorge that armies could barely enter. The Mamluk campaigns of 1268 and 1283 stormed the mountain and destroyed its villages; people hid in fortress-caves high in the cliffs, and in one of them, at Asi al-Hadath, excavators found the mummified remains of villagers from that era, left where the cave had kept them.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.refuge.text2",
+      "selector": "#refuge > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Through the hardest centuries the valley held the Church together. The rock-cut monastery of Qannoubine became the seat of the Maronite patriarchs, and twenty-four of them governed from the gorge between 1440 and 1823. A Maronite priest, Father Hani Tawk, put the feeling plainly to a reporter in 2022: \"It's our roots here. Our Jerusalem, our Rome.\"",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.heading1",
+      "selector": "#monasteries > h2:nth-of-type(1)",
+      "source": "The Monasteries of the Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.text1",
+      "selector": "#monasteries > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Dozens of monasteries, hermitages, and cave chapels are built into the Qadisha's walls - some still home to monks and nuns, some kept only by the rock. Four give the shape of the whole:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.question1",
+      "selector": "#monasteries > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Deir Qannoubine, the Monastery of Qannoubine",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.text2",
+      "selector": "#monasteries > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The heart of the holy valley. Cut into the cliff at the bottom of the Qannoubine branch, this was the seat of the Maronite patriarchs from 1440 to 1823, and its medieval wall paintings still survive in the stone church. A handful of nuns live here all year round, through snow and silence alike. You reach it on foot, down steep paths from the rim, or by a narrow track carved into the valley wall.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.images.alt2",
+      "selector": "#monasteries > div:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The old stone church of Qannoubine monastery under a bright sky, with the cliffs of the Qadisha Valley behind it. Photo by Hussein Sabboury, Wikimedia Commons",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "travel.monasteries.caption1",
+      "selector": "#monasteries > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The stone church of Qannoubine, with the valley rising behind it. Photo: Hussein Sabboury, Wikimedia Commons (CC0).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.question2",
+      "selector": "#monasteries > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "Deir Mar Antonios Qozhaya, the Monastery of Saint Anthony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.text3",
+      "selector": "#monasteries > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "On the opposite branch of the valley stands Qozhaya, dedicated to Saint Anthony the Great, the father of monasticism. Tradition carries its origins back to the disciples of Saint Hilarion in the fourth century, and documents confirm a monastery here by the Middle Ages; destroyed in the sixteenth century, it was rebuilt and is today a mother house of the Lebanese Maronite Order. Qozhaya also holds a place in world history: a press installed at the monastery printed a bilingual Psalter in Syriac and Garshuni in 1610 - the first book printed in the eastern Ottoman Empire.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.images.alt3",
+      "selector": "#monasteries > div:nth-of-type(1) > figure:nth-of-type(2) > img:nth-of-type(1)",
+      "source": "The monastery of Qozhaya, a large stone complex with red-tiled roofs built against the forested cliff of the Qadisha Valley. Photo by Yellaban, Wikimedia Commons",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "travel.monasteries.caption2",
+      "selector": "#monasteries > div:nth-of-type(1) > figure:nth-of-type(2) > figcaption:nth-of-type(1)",
+      "source": "Qozhaya, the Monastery of Saint Anthony, built against the cliff. Photo: Yellaban, Wikimedia Commons (public domain).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.question3",
+      "selector": "#monasteries > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "Deir es-Salib, the Monastery of the Cross",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.text4",
+      "selector": "#monasteries > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "Below the village of Hadchit, in the Houlat branch of the Qannoubine valley, a whole church hides inside a great cave in the cliff. Deir es-Salib keeps medieval wall paintings still in place on its plaster - among the most studied in the valley - and remains one of the Qadisha's least-visited treasures.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.question4",
+      "selector": "#monasteries > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "Deir Mar Lichaa, the Monastery of Saint Elisha",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.text5",
+      "selector": "#monasteries > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "First mentioned in the fourteenth century, Mar Lichaa is the valley at its most austere: four chapels cut directly into the rock, shared down the centuries by Maronite solitaries and later by Discalced Carmelite hermits. Hermits still keep the valley's oldest vocation here.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.images.alt4",
+      "selector": "#monasteries > div:nth-of-type(1) > figure:nth-of-type(3) > img:nth-of-type(1)",
+      "source": "Mar Lichaa monastery, its stone buildings tucked under an overhanging cliff in the Qadisha Valley above olive terraces. Photo by Eusebius, Wikimedia Commons",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "travel.monasteries.caption3",
+      "selector": "#monasteries > div:nth-of-type(1) > figure:nth-of-type(3) > figcaption:nth-of-type(1)",
+      "source": "Mar Lichaa, tucked under the overhanging rock above the terraces. Photo: Eusebius, Wikimedia Commons (CC BY 3.0).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.monasteries.text6",
+      "selector": "#monasteries > div:nth-of-type(1) > p:nth-of-type(6)",
+      "source": "Around these four lie many more: Saydet Hawqa, founded in the late thirteenth century on a ledge at 1,150 meters; Mar Sarkis at Ras al-Nahr, the \"Watchful Eye of the Qadisha,\" whose church dates to the eighth century; and hermitages beyond counting, some no more than a doorway in the cliff.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.charbel.heading1",
+      "selector": "#charbel > h2:nth-of-type(1)",
+      "source": "Saint Charbel and the Qadisha",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.charbel.text1",
+      "selector": "#charbel > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Saint Charbel was born in 1828 in",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.charbel.link1",
+      "selector": "#charbel > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.charbel.text2",
+      "selector": "#charbel > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", the village at the very head of the holy valley, and grew up looking down into the Qannoubine gorge that had formed his Church. His path continued through the novitiate at Our Lady of Mayfouq and the Monastery of Saint Maron in Annaya, farther south in the Jbeil district. The",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.charbel.link2",
+      "selector": "#charbel > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Hermitage of Saints Peter and Paul",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.charbel.text3",
+      "selector": "#charbel > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", where he later lived, stands on a hill above that Annaya monastery, not in the Qadisha Valley.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.charbel.text4",
+      "selector": "#charbel > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "He is, in the end, the best-known son of the tradition the valley carried - the Maronite eremitic life that filled these caves for a thousand years produced, in him, a hermit the whole world now comes to see. The",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.charbel.link3",
+      "selector": "#charbel > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.charbel.text5",
+      "selector": "#charbel > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "links his places on foot through this landscape, and the full timeline of his life is on our",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.charbel.link4",
+      "selector": "#charbel > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "history page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.charbel.text6",
+      "selector": "#charbel > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.unesco.heading1",
+      "selector": "#unesco > h2:nth-of-type(1)",
+      "source": "UNESCO World Heritage Status",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.unesco.text1",
+      "selector": "#unesco > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "In 1998 UNESCO inscribed the valley on the World Heritage List as \"Ouadi Qadisha (the Holy Valley) and the Forest of the Cedars of God (Horsh Arz el-Rab)\" - reference 850, under cultural criteria (iii) and (iv). UNESCO describes the Qadisha as one of the most important early Christian monastic settlements in the world: a place where the caves, monasteries, and terraced hillsides preserve a way of life continuous since the first centuries of the Church.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.unesco.text2",
+      "selector": "#unesco > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The pairing in the inscription is the journey itself: the monasteries in the gorge below, the last grove of the biblical cedars on the heights above, and",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.unesco.link1",
+      "selector": "#unesco > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel's birthplace",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.unesco.text3",
+      "selector": "#unesco > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "in Bekaa Kafra. The birthplace is nearby in the same mountain region, but it is not a third property in the UNESCO inscription; road time varies with the route and conditions.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.visiting.heading1",
+      "selector": "#visiting > h2:nth-of-type(1)",
+      "source": "Visiting the Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.visiting.text1",
+      "selector": "#visiting > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The two rim towns are the natural bases -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.visiting.emphasis1",
+      "selector": "#visiting > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Bsharri",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.visiting.text2",
+      "selector": "#visiting > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "for the Qannoubine side,",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.visiting.emphasis2",
+      "selector": "#visiting > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(2)",
+      "source": "Ehden",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.visiting.text3",
+      "selector": "#visiting > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "for Qozhaya - each about two hours by road from Beirut. Qozhaya is the easy monastery: a road descends right to it. Qannoubine is earned on foot, down the steep paths from the rim or along the valley track, and the walk is half the meaning of the visit. Spring brings wildflowers and the full river; autumn is golden and quiet; in winter the high roads can close under snow.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.visiting.text4",
+      "selector": "#visiting > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "These are working monasteries, not museums: dress modestly, keep voices low, and come in the morning when the light fills the gorge. A day pairs the valley with the Cedars of God and Bekaa Kafra above it; a second day adds",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.visiting.link1",
+      "selector": "#visiting > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Annaya and the tomb of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.visiting.text5",
+      "selector": "#visiting > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ". For the whole map, see our",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.visiting.link2",
+      "selector": "#visiting > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "guide to Saint Charbel places in Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.visiting.text6",
+      "selector": "#visiting > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.faq.heading1",
+      "selector": "#faq > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question1",
+      "selector": "#faq > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "What does \"Qadisha\" mean?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text1",
+      "selector": "#faq > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Qadisha is Aramaic for \"holy.\" The valley is also spelled Kadisha, or written in French as Ouadi Qadisha - all of them mean the Holy Valley, named for the monasteries and hermits who filled it.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question2",
+      "selector": "#faq > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "Why is the Qadisha Valley a UNESCO World Heritage site?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text2",
+      "selector": "#faq > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "UNESCO inscribed it in 1998, together with the Forest of the Cedars of God, as one of the most important early Christian monastic settlements in the world - a landscape where monastic life has continued in the caves and cliffs since the first centuries of Christianity.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question3",
+      "selector": "#faq > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "Can you visit the monasteries in the Qadisha Valley?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text3",
+      "selector": "#faq > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "Yes. Qozhaya is reachable by car, and Qannoubine, Mar Lichaa, and the other valley monasteries by footpaths from the rim towns. They are working monasteries - visitors are welcome, with modest dress and quiet.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question4",
+      "selector": "#faq > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "Is the Qadisha Valley the same as the Qannoubine Valley?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text4",
+      "selector": "#faq > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "Qannoubine is one of the Qadisha's two great branches - the one that held the patriarchs' seat from 1440 to 1823. The other branch, running beneath Ehden, is Qozhaya. Together they make up the Holy Valley.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question5",
+      "selector": "#faq > div:nth-of-type(1) > h3:nth-of-type(5)",
+      "source": "What is Saint Charbel's connection to the Qadisha Valley?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text5",
+      "selector": "#faq > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "He was born in Bekaa Kafra near Bsharri, above the Qadisha Valley. His later hermitage of Saints Peter and Paul is at Annaya, farther south, not in the valley. The eremitic tradition preserved in the Qadisha shaped his Church, and the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.link1",
+      "selector": "#faq > div:nth-of-type(1) > p:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text6",
+      "selector": "#faq > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "connects places in his life.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.faq.question6",
+      "selector": "#faq > div:nth-of-type(1) > h3:nth-of-type(6)",
+      "source": "How do you get to the Qadisha Valley from Beirut?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text7",
+      "selector": "#faq > div:nth-of-type(1) > p:nth-of-type(6)",
+      "source": "By road to Bsharri or Ehden, about two hours from Beirut through the mountains of North Lebanon. From Bsharri, footpaths descend into the Qannoubine branch; a road runs down to Qozhaya from the Ehden side.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.heading1",
+      "selector": "#sources > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link1",
+      "selector": "#sources > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "UNESCO World Heritage Centre: Ouadi Qadisha (the Holy Valley) and the Forest of the Cedars of God (Horsh Arz el-Rab) - inscription 850, 1998",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link2",
+      "selector": "#sources > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "The National, April 15, 2022: Lebanon's Christians seek simple Easter respite in ancient Qadisha Valley - Deir Qannoubine today, and Father Hani Tawk's words",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link3",
+      "selector": "#sources > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "USEK Library, Holy Spirit University of Kaslik: Hidden Treasures - the 1610 Qozhaya Psalter, first book printed in the eastern Ottoman Empire",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link4",
+      "selector": "#sources > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Journal of Eastern Mediterranean Archaeology and Heritage Studies: Wall Paintings in the Qadisha Valley - the medieval paintings of Deir es-Salib and Saydet Qannoubine",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.footer.credit",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Qadisha Valley. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.siteBrand",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(6)",
+      "source": "Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(7)",
+      "source": "Qadisha Valley: The Holy Valley Where Maronite Monks Hid for Centuries",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+      "source": "The Qadisha Valley sheltered Maronite monks and hermits for a thousand years. Its monasteries, hermitages, UNESCO status, and how to visit.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(24)",
+      "source": "Qadisha Valley: The Holy Valley Where Maronite Monks Hid for Centuries",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(25)",
+      "source": "The Qadisha Valley sheltered Maronite monks and hermits for a thousand years. Its monasteries, hermitages, UNESCO status, and how to visit.",
+      "kind": "attribute",
+      "attribute": "content"
+    }
+  ],
+  "messages": {
+    "travel.meta.title": "Qadisha Valley: The Holy Valley Where Maronite Monks Hid for Centuries",
+    "travel.meta.description": "The Qadisha Valley sheltered Maronite monks and hermits for a thousand years. Its monasteries, hermitages, UNESCO status, and how to visit.",
+    "travel.brand.mark": "✦",
+    "travel.header.siteBrand": "Saint Charbel",
+    "travel.header.primaryLabel": "Primary",
+    "travel.header.home": "Home",
+    "travel.header.legacy": "Legacy",
+    "travel.header.encyclopedia": "Saint Charbel Encyclopedia",
+    "travel.header.fullHistory": "Full History",
+    "travel.header.gallery": "Gallery",
+    "travel.header.miracles": "Miracles",
+    "travel.header.miraclesAndReports": "Miracles & Reports",
+    "travel.header.eucharisticMiracles": "Eucharistic Miracles",
+    "travel.header.letters": "Letters",
+    "travel.header.voiceTestimony": "Voice Testimony",
+    "travel.header.saints": "Saints",
+    "travel.header.childrenBooks": "Children's Books",
+    "travel.header.prayer": "Prayer",
+    "travel.header.prayerLibrary": "Prayer Library",
+    "travel.header.findAPrayer": "Find a Prayer by Intention",
+    "travel.header.prayerForTheSick": "Prayer for the Sick",
+    "travel.header.prayerForHealing": "Prayer for Healing",
+    "travel.header.prayerForAnxiety": "Prayer for Anxiety",
+    "travel.header.prayerForDepression": "Prayer for Depression",
+    "travel.header.prayerForStudents": "Prayer for Students",
+    "travel.header.prayerForAddiction": "Prayer for Addiction",
+    "travel.header.prayerForFamily": "Prayer for Family",
+    "travel.header.prayerForPregnancy": "Prayer for Pregnancy",
+    "travel.header.prayerForAMiracle": "Prayer for a Miracle",
+    "travel.header.currentPrayers": "Saint Charbel Prayers",
+    "travel.header.novena": "Saint Charbel Novena",
+    "travel.header.feastDay": "Feast Day",
+    "travel.header.rosaryGuide": "Rosary Guide",
+    "travel.header.rosaryMinibook": "Rosary Minibook",
+    "travel.header.mysteryMeditation": "Mystery Meditation",
+    "travel.header.becomeLikeHim": "Become Like Him",
+    "travel.header.places": "Travel",
+    "travel.header.visitingAnnaya": "Visiting Annaya",
+    "travel.shared.node40": "Annaya Online Tour",
+    "travel.header.bekaaKafra": "Bekaa Kafra",
+    "travel.header.qadishaValley": "Qadisha Valley",
+    "travel.header.qannoubineMonastery": "Qannoubine Monastery",
+    "travel.header.qozhayaMonastery": "Qozhaya Monastery",
+    "travel.header.placesLebanon": "Saint Charbel's Lebanon",
+    "travel.header.hermitage": "The Hermitage",
+    "travel.header.trail": "Saint Charbel Trail",
+    "travel.header.news": "News",
+    "travel.shared.node49": "In this guide",
+    "travel.shared.node50": "Home",
+    "travel.shared.node51": "/",
+    "travel.shared.node52": "Travel",
+    "travel.shared.node53": "/",
+    "travel.hero.heading1": "The Qadisha Valley, Lebanon's Holy Valley",
+    "travel.images.alt1": "Aerial view over the Qadisha Valley near Qannoubine: steep green cliffs and a monastery tucked into the rock. Photo by Evan Williams, Wikimedia Commons",
+    "travel.hero.caption1": "The Qadisha Valley from above Qannoubine - monasteries still cling to its cliffs. Photo: Evan Williams, Wikimedia Commons (CC BY-SA 4.0).",
+    "travel.hero.answer1": "The Qadisha Valley - the Holy Valley - is the deep gorge in North Lebanon where Maronite monasticism took root: a thousand years of hermit caves and cliff-built monasteries, today a UNESCO World Heritage site together with the Cedars of God above its source.",
+    "travel.visiting.heading1": "Visiting the Valley",
+    "travel.hero.text1": "In the mountains of North Lebanon, below the country's highest peaks, a deep green gorge carries a name that says everything about it: Qadisha, the Holy Valley. For more than a thousand years its caves and cliff-built monasteries sheltered Maronite monks, hermits, and patriarchs - and today the whole valley is a UNESCO World Heritage site, together with the Cedars of God that stand above its source.",
+    "travel.hero.link1": "Walk the Saint Charbel Trail",
+    "travel.hero.link2": "Bekaa Kafra",
+    "travel.hero.link3": "Visit Annaya",
+    "travel.hero.eyebrow1": "Places of Saint Charbel",
+    "travel.meaning.heading1": "Why It's Called the Holy Valley",
+    "travel.monasteries.heading1": "The Monasteries of the Valley",
+    "travel.faq.heading1": "Frequently Asked Questions",
+    "travel.meaning.emphasis1": "Qadisha",
+    "travel.meaning.text1": "is Aramaic for \"holy\" - the same Semitic root as the Hebrew",
+    "travel.meaning.emphasis2": "kadosh",
+    "travel.meaning.text2": ". The valley is also written Kadisha, and in French sources Ouadi Qadisha; all of them mean the Holy Valley. The gorge cuts into the flank of Mount Lebanon beneath Qornet es-Sawda, the country's highest summit, and the river that carved it - Nahr Qadisha, the Holy River - rises from a grotto just below the Cedars of God before running some 35 kilometers toward the sea. Below Bsharri the valley forks into its two great branches, Qannoubine and Qozhaya.",
+    "travel.meaning.text3": "People sheltered in the valley's caves from the Stone Age onward, and from the first centuries of Christianity solitaries came here to pray in them. So many monks, hermits, monasteries, and shrines eventually filled the gorge that the valley itself took the name of what it held: holy.",
+    "travel.refuge.heading1": "A Refuge for the Maronites",
+    "travel.refuge.text1": "For the Maronite Church, the Qadisha is not scenery - it is survival. When persecution and war swept the coast and the plains, the community withdrew into a gorge that armies could barely enter. The Mamluk campaigns of 1268 and 1283 stormed the mountain and destroyed its villages; people hid in fortress-caves high in the cliffs, and in one of them, at Asi al-Hadath, excavators found the mummified remains of villagers from that era, left where the cave had kept them.",
+    "travel.refuge.text2": "Through the hardest centuries the valley held the Church together. The rock-cut monastery of Qannoubine became the seat of the Maronite patriarchs, and twenty-four of them governed from the gorge between 1440 and 1823. A Maronite priest, Father Hani Tawk, put the feeling plainly to a reporter in 2022: \"It's our roots here. Our Jerusalem, our Rome.\"",
+    "travel.monasteries.text1": "Dozens of monasteries, hermitages, and cave chapels are built into the Qadisha's walls - some still home to monks and nuns, some kept only by the rock. Four give the shape of the whole:",
+    "travel.monasteries.question1": "Deir Qannoubine, the Monastery of Qannoubine",
+    "travel.monasteries.text2": "The heart of the holy valley. Cut into the cliff at the bottom of the Qannoubine branch, this was the seat of the Maronite patriarchs from 1440 to 1823, and its medieval wall paintings still survive in the stone church. A handful of nuns live here all year round, through snow and silence alike. You reach it on foot, down steep paths from the rim, or by a narrow track carved into the valley wall.",
+    "travel.images.alt2": "The old stone church of Qannoubine monastery under a bright sky, with the cliffs of the Qadisha Valley behind it. Photo by Hussein Sabboury, Wikimedia Commons",
+    "travel.monasteries.caption1": "The stone church of Qannoubine, with the valley rising behind it. Photo: Hussein Sabboury, Wikimedia Commons (CC0).",
+    "travel.monasteries.question2": "Deir Mar Antonios Qozhaya, the Monastery of Saint Anthony",
+    "travel.monasteries.text3": "On the opposite branch of the valley stands Qozhaya, dedicated to Saint Anthony the Great, the father of monasticism. Tradition carries its origins back to the disciples of Saint Hilarion in the fourth century, and documents confirm a monastery here by the Middle Ages; destroyed in the sixteenth century, it was rebuilt and is today a mother house of the Lebanese Maronite Order. Qozhaya also holds a place in world history: a press installed at the monastery printed a bilingual Psalter in Syriac and Garshuni in 1610 - the first book printed in the eastern Ottoman Empire.",
+    "travel.images.alt3": "The monastery of Qozhaya, a large stone complex with red-tiled roofs built against the forested cliff of the Qadisha Valley. Photo by Yellaban, Wikimedia Commons",
+    "travel.monasteries.caption2": "Qozhaya, the Monastery of Saint Anthony, built against the cliff. Photo: Yellaban, Wikimedia Commons (public domain).",
+    "travel.monasteries.question3": "Deir es-Salib, the Monastery of the Cross",
+    "travel.monasteries.text4": "Below the village of Hadchit, in the Houlat branch of the Qannoubine valley, a whole church hides inside a great cave in the cliff. Deir es-Salib keeps medieval wall paintings still in place on its plaster - among the most studied in the valley - and remains one of the Qadisha's least-visited treasures.",
+    "travel.monasteries.question4": "Deir Mar Lichaa, the Monastery of Saint Elisha",
+    "travel.monasteries.text5": "First mentioned in the fourteenth century, Mar Lichaa is the valley at its most austere: four chapels cut directly into the rock, shared down the centuries by Maronite solitaries and later by Discalced Carmelite hermits. Hermits still keep the valley's oldest vocation here.",
+    "travel.images.alt4": "Mar Lichaa monastery, its stone buildings tucked under an overhanging cliff in the Qadisha Valley above olive terraces. Photo by Eusebius, Wikimedia Commons",
+    "travel.monasteries.caption3": "Mar Lichaa, tucked under the overhanging rock above the terraces. Photo: Eusebius, Wikimedia Commons (CC BY 3.0).",
+    "travel.monasteries.text6": "Around these four lie many more: Saydet Hawqa, founded in the late thirteenth century on a ledge at 1,150 meters; Mar Sarkis at Ras al-Nahr, the \"Watchful Eye of the Qadisha,\" whose church dates to the eighth century; and hermitages beyond counting, some no more than a doorway in the cliff.",
+    "travel.charbel.heading1": "Saint Charbel and the Qadisha",
+    "travel.charbel.text1": "Saint Charbel was born in 1828 in",
+    "travel.charbel.link1": "Bekaa Kafra",
+    "travel.charbel.text2": ", the village at the very head of the holy valley, and grew up looking down into the Qannoubine gorge that had formed his Church. His path continued through the novitiate at Our Lady of Mayfouq and the Monastery of Saint Maron in Annaya, farther south in the Jbeil district. The",
+    "travel.charbel.link2": "Hermitage of Saints Peter and Paul",
+    "travel.charbel.text3": ", where he later lived, stands on a hill above that Annaya monastery, not in the Qadisha Valley.",
+    "travel.charbel.text4": "He is, in the end, the best-known son of the tradition the valley carried - the Maronite eremitic life that filled these caves for a thousand years produced, in him, a hermit the whole world now comes to see. The",
+    "travel.charbel.link3": "Saint Charbel Trail",
+    "travel.charbel.text5": "links his places on foot through this landscape, and the full timeline of his life is on our",
+    "travel.charbel.link4": "history page",
+    "travel.charbel.text6": ".",
+    "travel.unesco.heading1": "UNESCO World Heritage Status",
+    "travel.unesco.text1": "In 1998 UNESCO inscribed the valley on the World Heritage List as \"Ouadi Qadisha (the Holy Valley) and the Forest of the Cedars of God (Horsh Arz el-Rab)\" - reference 850, under cultural criteria (iii) and (iv). UNESCO describes the Qadisha as one of the most important early Christian monastic settlements in the world: a place where the caves, monasteries, and terraced hillsides preserve a way of life continuous since the first centuries of the Church.",
+    "travel.unesco.text2": "The pairing in the inscription is the journey itself: the monasteries in the gorge below, the last grove of the biblical cedars on the heights above, and",
+    "travel.unesco.link1": "Saint Charbel's birthplace",
+    "travel.unesco.text3": "in Bekaa Kafra. The birthplace is nearby in the same mountain region, but it is not a third property in the UNESCO inscription; road time varies with the route and conditions.",
+    "travel.visiting.text1": "The two rim towns are the natural bases -",
+    "travel.visiting.emphasis1": "Bsharri",
+    "travel.visiting.text2": "for the Qannoubine side,",
+    "travel.visiting.emphasis2": "Ehden",
+    "travel.visiting.text3": "for Qozhaya - each about two hours by road from Beirut. Qozhaya is the easy monastery: a road descends right to it. Qannoubine is earned on foot, down the steep paths from the rim or along the valley track, and the walk is half the meaning of the visit. Spring brings wildflowers and the full river; autumn is golden and quiet; in winter the high roads can close under snow.",
+    "travel.visiting.text4": "These are working monasteries, not museums: dress modestly, keep voices low, and come in the morning when the light fills the gorge. A day pairs the valley with the Cedars of God and Bekaa Kafra above it; a second day adds",
+    "travel.visiting.link1": "Annaya and the tomb of Saint Charbel",
+    "travel.visiting.text5": ". For the whole map, see our",
+    "travel.visiting.link2": "guide to Saint Charbel places in Lebanon",
+    "travel.visiting.text6": ".",
+    "travel.faq.question1": "What does \"Qadisha\" mean?",
+    "travel.faq.text1": "Qadisha is Aramaic for \"holy.\" The valley is also spelled Kadisha, or written in French as Ouadi Qadisha - all of them mean the Holy Valley, named for the monasteries and hermits who filled it.",
+    "travel.faq.question2": "Why is the Qadisha Valley a UNESCO World Heritage site?",
+    "travel.faq.text2": "UNESCO inscribed it in 1998, together with the Forest of the Cedars of God, as one of the most important early Christian monastic settlements in the world - a landscape where monastic life has continued in the caves and cliffs since the first centuries of Christianity.",
+    "travel.faq.question3": "Can you visit the monasteries in the Qadisha Valley?",
+    "travel.faq.text3": "Yes. Qozhaya is reachable by car, and Qannoubine, Mar Lichaa, and the other valley monasteries by footpaths from the rim towns. They are working monasteries - visitors are welcome, with modest dress and quiet.",
+    "travel.faq.question4": "Is the Qadisha Valley the same as the Qannoubine Valley?",
+    "travel.faq.text4": "Qannoubine is one of the Qadisha's two great branches - the one that held the patriarchs' seat from 1440 to 1823. The other branch, running beneath Ehden, is Qozhaya. Together they make up the Holy Valley.",
+    "travel.faq.question5": "What is Saint Charbel's connection to the Qadisha Valley?",
+    "travel.faq.text5": "He was born in Bekaa Kafra near Bsharri, above the Qadisha Valley. His later hermitage of Saints Peter and Paul is at Annaya, farther south, not in the valley. The eremitic tradition preserved in the Qadisha shaped his Church, and the",
+    "travel.faq.link1": "Saint Charbel Trail",
+    "travel.faq.text6": "connects places in his life.",
+    "travel.faq.question6": "How do you get to the Qadisha Valley from Beirut?",
+    "travel.faq.text7": "By road to Bsharri or Ehden, about two hours from Beirut through the mountains of North Lebanon. From Bsharri, footpaths descend into the Qannoubine branch; a road runs down to Qozhaya from the Ehden side.",
+    "travel.sources.heading1": "Sources",
+    "travel.sources.link1": "UNESCO World Heritage Centre: Ouadi Qadisha (the Holy Valley) and the Forest of the Cedars of God (Horsh Arz el-Rab) - inscription 850, 1998",
+    "travel.sources.link2": "The National, April 15, 2022: Lebanon's Christians seek simple Easter respite in ancient Qadisha Valley - Deir Qannoubine today, and Father Hani Tawk's words",
+    "travel.sources.link3": "USEK Library, Holy Spirit University of Kaslik: Hidden Treasures - the 1610 Qozhaya Psalter, first book printed in the eastern Ottoman Empire",
+    "travel.sources.link4": "Journal of Eastern Mediterranean Archaeology and Heritage Studies: Wall Paintings in the Qadisha Valley - the medieval paintings of Deir es-Salib and Saydet Qannoubine",
+    "travel.footer.credit": "Qadisha Valley. Author: Please pray for the person who made this website."
+  }
+}

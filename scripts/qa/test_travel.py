@@ -4,30 +4,32 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
-from i18n.catalog import read_json
+from i18n.catalog import read_json,published_home_locales
 from i18n.travel_mirror import render_travel
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
 from i18n.same_page_injection import inject_control
+from i18n.travel_metadata import compose_travel_clusters
 def fc(t):return inject_control(t,ROOT,read_json(ROOT/'locales/same-page-manifest.pending.json'),read_json(ROOT/'locales/same-page-copy.json'))
 class TravelTests(unittest.TestCase):
  def test_catalog_and_render_parity(self):
   registry=read_json(ROOT/'locales/registry.json')
   pages=render_travel(ROOT,registry)
-  self.assertEqual(len(pages),8)
+  self.assertEqual(len(pages),len(registry['authoredMirrors']['travel']['routes']))
   for path,text in pages.items():
-   self.assertEqual(path.read_text(),fc(travel_frame(tour_nav(text,ROOT,'en' if path.parent==ROOT else path.parent.name),ROOT,'en' if path.parent==ROOT else path.parent.name,'/'+str(path.relative_to(ROOT)).removesuffix('.html'),registry)))
+   self.assertEqual(path.read_text(),fc(compose_travel_clusters(ROOT,registry,{path:travel_frame(tour_nav(text,ROOT,'en' if path.parent==ROOT else path.parent.name),ROOT,'en' if path.parent==ROOT else path.parent.name,'/'+str(path.relative_to(ROOT)).removesuffix('.html'),registry)})[path]))
    soup=BeautifulSoup(text,'html.parser')
    self.assertEqual(len(soup.select('main')),1)
    self.assertEqual(len(soup.select('a.skip-link')),1)
    self.assertEqual(len(soup.select('.travel-place')),12)
    self.assertEqual(soup.select_one('.travel-hero .btn.primary')['href'],'/annaya-tour')
-   self.assertEqual(len(soup.select('link[hreflang]')),9)
+   self.assertEqual(len(soup.select('link[hreflang]')),len(registry['authoredMirrors']['travel']['routes'])+1)
    self.assertIn('/travel.css',soup.select('link[rel=stylesheet]')[-1]['href'])
    self.assertNotIn('{{',text)
  def test_homes_never_receive_travel_framing(self):
   registry=read_json(ROOT/'locales/registry.json')
-  for code,config in registry['locales'].items():
+  for code in published_home_locales(registry):
+   config=registry['locales'][code]
    path=ROOT/(code+'/index.html' if code!='en' else 'index.html')
    text=path.read_text();soup=BeautifulSoup(text,'html.parser')
    self.assertNotIn('travel-page',soup.body.get('class',[]))

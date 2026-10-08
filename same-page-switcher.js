@@ -15,10 +15,10 @@
  }
  host.replaceChildren();
  var label=document.createElement('label');label.htmlFor='sc-language-select';label.textContent=copy.language;
- var select=document.createElement('select');select.id='sc-language-select';select.setAttribute('aria-label',copy.choose);
+ var select=document.createElement('select');select.id='sc-language-select';select.dir='auto';select.setAttribute('aria-label',copy.choose);
  var names=copy.names;
  if(!names)return;
- manifest.languages.forEach(function(lang){var option=document.createElement('option');option.value=lang;option.dir=actual==='ar'?'rtl':'ltr';var r=api.resolve(manifest,location.href,lang,actual);option.disabled=!r.available;option.textContent=names[lang]+(!r.available?' ('+copy.suffix+')':'');select.appendChild(option)});
+ manifest.languages.forEach(function(lang){var option=document.createElement('option');option.value=lang;option.dir='auto';var r=api.resolve(manifest,location.href,lang,actual);option.disabled=!r.available;option.textContent=names[lang]+(!r.available?' ('+copy.suffix+')':'');select.appendChild(option)});
  select.value=actual;
  var status=document.createElement('span');status.id='sc-language-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');status.className='sc-language-status';
  function refuse(){var x=scrollX,y=scrollY;select.value=actual;status.textContent=copy.unavailable;window.scrollTo(x,y);}

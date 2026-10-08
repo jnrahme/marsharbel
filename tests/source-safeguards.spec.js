@@ -3,7 +3,7 @@ const registry=require('../locales/registry.json');
 const key='saint-charbel-novena.when-to-pray-it.the-feast-falls-on-the-third-sunday-of-july-in-the-maronite';
 const novena=registry.pageMirrors['saint-charbel-novena-master'];
 const supportedNovenaLocales=new Set(['en',...(novena.renderLocales||Object.keys(novena.routes||{}))]);
-for(const code of Object.keys(registry.locales))test(`${code} source-first safeguards stay readable`,async({page,baseURL},info)=>{
+for(const code of Object.keys(registry.locales).filter(code=>registry.locales[code].capabilities?.home!==false&&registry.locales[code].home))test(`${code} source-first safeguards stay readable`,async({page,baseURL},info)=>{
  await page.route('**/*',r=>new URL(r.request().url()).origin===new URL(baseURL).origin?r.continue():r.fulfill({status:204,body:''}));
  const home=require(`../locales/${code}/home-copy.json`);
  await page.goto(registry.locales[code].home);
@@ -36,3 +36,5 @@ for(const code of Object.keys(registry.locales))test(`${code} source-first safeg
   await page.screenshot({path:info.outputPath(code+'-calendar-english-fallback.png')});
  }
 });
+
+for(const code of Object.keys(registry.locales).filter(code=>registry.locales[code].capabilities?.home===false||!registry.locales[code].home))test(`${code} does not invent a safeguard home or novena`,async({page})=>{expect(registry.locales[code].home).toBeUndefined();expect(novena.routes[code]).toBeUndefined();expect(novena.discoveryRoutes[code]).toBeUndefined();await page.goto('/');await expect(page.locator(`footer a[hreflang="${code}"]`)).toHaveCount(0);await expect(page.locator(`#sc-language-select option[value="${code}"]`)).toBeDisabled();});

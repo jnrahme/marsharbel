@@ -1,0 +1,1226 @@
+{
+  "version": 1,
+  "master": "bekaa-kafra.html",
+  "masterSha256": "9b86b3a4313f08d973fbdf576d2764096e21a3026ea655c80ac199386d8f0b01",
+  "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
+  "bindings": [
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Bekaa Kafra: Saint Charbel's Mountain Birthplace",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Bekaa Kafra, widely known as Lebanon's highest village and Saint Charbel's birthplace: the Makhlouf home, baptism church, prayer grotto, and a complete visiting guide.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.header.skipLink",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.brand.mark",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.siteBrand",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.primaryLabel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "travel.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.fullHistory",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.miraclesAndReports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.eucharisticMiracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.voiceTestimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.childrenBooks",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerLibrary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.findAPrayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForTheSick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForHealing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAnxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForDepression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForStudents",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAddiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForFamily",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForPregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAMiracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.currentPrayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.feastDay",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.rosaryGuide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.rosaryMinibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.mysteryMeditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.becomeLikeHim",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.places",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.places",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.visitingAnnaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.annayaTour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.bekaaKafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.cedars",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.bkerke",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qadishaValley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qannoubineMonastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qozhayaMonastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.placesLebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node53",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "travel.shared.node54",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node55",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node56",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node57",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.heading1",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Bekaa Kafra, Where It All Began",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.images.alt1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Snow on the old stone houses of Bekaa Kafra, with the mountain valley behind. Photo courtesy of LebanonUntravelled.com",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "travel.hero.caption1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "Winter in Bekaa Kafra - the village keeps its old stone architecture. Photo courtesy of LebanonUntravelled.com.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.kicker",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Places of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.heading1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Bekaa Kafra, Where It All Began",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.text1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Before the monastery and the hermitage, before the miracles and the crowds, there was a mountain village perched at the top of Lebanon. Youssef Antoun Makhlouf - the boy who would become Saint Charbel - was born here, traditionally on May 8, 1828, and the village has kept his house, his church, and his grotto ever since.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Charbel's Life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link2",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Take the Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link3",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Visit Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link4",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.trailText1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Part of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.trailLink1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.trailText2",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ". Read",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.hero.trailLink2",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "the full story of his life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.trailText3",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "or browse all topics.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section1.heading1",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "The Highest Village in Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.text1a",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Bekaa Kafra sits at about 1,800 meters above sea level in the Bsharri district of North Lebanon - widely known as the highest village in the country. Its name is Syriac:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.emphasis1",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > em:nth-of-type(1)",
+      "source": "bekaa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.text1b",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", ground, and",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section1.emphasis2",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > em:nth-of-type(2)",
+      "source": "kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.text1c",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", rich - \"rich soil.\" It overlooks the holy valley of Qannoubine, which sheltered twenty-four Maronite patriarchs between 1440 and 1823 along with generations of hermits and monks, and it neighbors the Cedars of God. The village's own history reaches back at least to the tenth century by the historian Fouad Boustany Ephram's account, and its houses still keep their modest old architecture.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section2.heading1",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "The Makhlouf Family Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section2.text1",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Youssef Antoun Makhlouf was born here, traditionally on May 8, 1828, the youngest of five children of Antoun Zaarour Makhlouf and Brigitta Chidiac. His father died when he was about three, and the boy grew up in this house - tending the family's small flock, praying, living the ordinary life of a poor mountain village. The house still stands and is kept as a place of pilgrimage; during the week of Saint Charbel's feast in July, the street leading to it fills with an exhibition of homemade products prepared by the villagers.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.heading1",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "The Church Where He Was Baptized",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.text1",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The village church where the newborn Makhlouf was baptized is itself ancient - built sometime between the seventh and thirteenth centuries, in the long era when this valley was the heart of Maronite life. A second church, Notre-Dame, was built in 1925, and the village also keeps the convent of Saint Eusebius.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.heading1",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "The Grotto Where He Prayed",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text1a",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Above the village is a small grotto where the boy Youssef used to withdraw to pray - the first hermitage, in a sense, of a man who would spend his last twenty-three years in another one. Pilgrims climb to it as the opening chapter of a story that continues at the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.link1",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "hermitage of Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text1b",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section5.heading1",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "From Bekaa Kafra to Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section5.text1a",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "In 1851, at twenty-three, Youssef left the village for the Monastery of Our Lady of Mayfouk, then Saint Maron of Annaya, taking the religious name Charbel after a second-century martyr of the Antiochene Church. He never returned to live in Bekaa Kafra - but the village never stopped claiming him. Today its people, in the words of one account, consider themselves the relatives of the saint known in the four corners of the earth. The full timeline of the life that began here is on our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section5.link1",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "history page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section5.text1b",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ". Planning the whole journey - Annaya, this village, the valley, and Lebanon's other holy places, with Google Maps locations - starts at",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section5.link2",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "our pilgrimage guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section5.text1c",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section6.heading1",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "Visiting Today",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.text1a",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Religious tourism is the village's life. Several mountain roads lead in: from Shekka via Amioune and Hadath el Jebbeh, from Tripoli through Koura and Hadath el Jebbeh, from Ehden and Bsharri, or over the top past the Cedars. Most pilgrims pair Bekaa Kafra with Annaya - the birthplace in the morning, the tomb and hermitage in the afternoon; our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.link1",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "guide to visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.text1b",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "has the practical details for that half of the day. Mountain weather is real at 1,800 meters: check conditions before setting out in winter.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section7.heading1",
+      "selector": "#main-content > section:nth-of-type(8) > h2:nth-of-type(1)",
+      "source": "What to See in the Village",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.text1",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Everything here is walkable - the village is small, and the slope does the navigating for you:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.strong1",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "The Makhlouf family home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.list1",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "- where Youssef Antoun was born, traditionally on May 8, 1828, and grew up the youngest of five. Kept as a place of pilgrimage.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "travel.section7.strong2",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "The baptism church",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.list2",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "- the old village church where he was baptized, built sometime between the seventh and thirteenth centuries.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "travel.section7.strong3",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "Notre-Dame Church",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.list3",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "- the newer parish church, built in 1925.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "travel.section7.strong4",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > strong:nth-of-type(1)",
+      "source": "The convent of Saint Eusebius",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.list4",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": "- the village's small convent.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "travel.section7.strong5",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > strong:nth-of-type(1)",
+      "source": "The grotto",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.list5",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": "- above the village, where the boy used to withdraw to pray. Allow a little time for the climb.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "travel.section7.strong6",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6) > strong:nth-of-type(1)",
+      "source": "The feast-week exhibition",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.list6",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6)",
+      "source": "- during the week of Saint Charbel's anniversary festivities in July, homemade products line the street to the saint's house, and the village stages a traditional nineteenth-century wedding.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "travel.images.alt2",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "A stone spring fountain in Bekaa Kafra with clay water jugs. Photo courtesy of LebanonUntravelled.com",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "travel.section7.caption1",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "One of the village springs. Photo courtesy of LebanonUntravelled.com.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.heading1",
+      "selector": "#main-content > section:nth-of-type(9) > h2:nth-of-type(1)",
+      "source": "Pair It With the Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.text1a",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Bekaa Kafra sits at the head of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.link1",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Qadisha - the Holy Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.text1b",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "- and no visit should stop at the village line. Below lies",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section8.strong1",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Qannoubine",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.text1c",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", the valley that sheltered twenty-four Maronite patriarchs between 1440 and 1823 along with generations of hermits; its rock-cut monasteries are still walkable on foot. About twenty minutes away rise the",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section8.strong2",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(2)",
+      "source": "Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.text1d",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", the last grove of the biblical cedars. And the valley is the heart of the",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "travel.section8.link2",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.text1e",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", the long-distance pilgrimage route that links his places across Mount Lebanon.",
+      "kind": "text",
+      "nodeIndex": 8
+    },
+    {
+      "key": "travel.section8.text2a",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "For the valley itself - the monasteries of Qannoubine and Qozhaya, the hermitages in the rock, and how to visit - see our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.link3",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Qadisha Valley guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.text2b",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ". For the wider map of everything Charbel in Lebanon - Annaya, Kfifan, Jrabta, the valley and more - see our",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section8.link4",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "guide to Saint Charbel places in Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.text2c",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.faq.heading1",
+      "selector": "#main-content > section:nth-of-type(10) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question1",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Where is Bekaa Kafra?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text1",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "In the Bsharri district of North Lebanon, at about 1,800 meters above sea level - widely known as the highest village in Lebanon. It overlooks the Qannoubine valley and neighbors the Cedars of God.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question2",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "Why is Bekaa Kafra famous?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text2",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "It is the birthplace of Saint Charbel Makhlouf (traditionally May 8, 1828), Lebanon's most beloved saint. His family home, baptism church, and childhood prayer grotto are all preserved there.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question3",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "Can you visit Saint Charbel's house in Bekaa Kafra?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text3",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "Yes. The Makhlouf family home is kept as a place of pilgrimage, and the street to it hosts a festival exhibition during the week of his July feast.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question4",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "How high is Bekaa Kafra?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text4",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "About 1,800 meters above sea level - widely known as the highest village in Lebanon - plan for real mountain weather, especially in winter.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question5",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > h3:nth-of-type(5)",
+      "source": "Is Bekaa Kafra the same as Bkaakafra?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text5",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "Yes - the same village, spelled different ways in English (Bekaa Kafra, Bkaakafra, Beqaa Kafra). All refer to Saint Charbel's birthplace in the Bsharri district.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question6",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > h3:nth-of-type(6)",
+      "source": "When is the best time to visit Bekaa Kafra?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text6",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(6)",
+      "source": "Late spring through October for open roads and walking weather. July brings the feast-week festivities. Winter is beautiful under snow - the village sits at 1,800 meters - but check road conditions before setting out, and expect some paths to the grotto to be icy.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question7",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > h3:nth-of-type(7)",
+      "source": "How do I get to Bekaa Kafra?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text7",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(7)",
+      "source": "By mountain road from Shekka or Tripoli via Hadath el Jebbeh, from Ehden and Bsharri, or over the top past the Cedars. Most pilgrims combine it with a visit to Annaya the same day.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.heading1",
+      "selector": "#main-content > section:nth-of-type(11) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link1",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "LebanonUntravelled: Bekaa Kafra, the highest village in Lebanon - altitude, etymology, churches, the saint's house and grotto, access roads",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link2",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Discover Lebanon: the village of Bkaa Kafra and the places of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link3",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Monastery of Saint Maron, Annaya: the saint's life from birth in Bekaa Kafra to death at the hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.footer.credit",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Bekaa Kafra. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.siteBrand",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(14)",
+      "source": "Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Bekaa Kafra: Saint Charbel's Mountain Birthplace",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Bekaa Kafra, widely known as Lebanon's highest village and Saint Charbel's birthplace: the Makhlouf home, baptism church, prayer grotto, and a complete visiting guide.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Bekaa Kafra: Saint Charbel's Mountain Birthplace",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Bekaa Kafra, widely known as Lebanon's highest village and Saint Charbel's birthplace: the Makhlouf home, baptism church, prayer grotto, and a complete visiting guide.",
+      "kind": "attribute",
+      "attribute": "content"
+    }
+  ],
+  "messages": {
+    "travel.meta.title": "Bekaa Kafra: Saint Charbel's Mountain Birthplace",
+    "travel.meta.description": "Bekaa Kafra, widely known as Lebanon's highest village and Saint Charbel's birthplace: the Makhlouf home, baptism church, prayer grotto, and a complete visiting guide.",
+    "travel.header.skipLink": "Skip to main content",
+    "travel.brand.mark": "✦",
+    "travel.header.siteBrand": "Saint Charbel",
+    "travel.header.primaryLabel": "Primary",
+    "travel.header.home": "Home",
+    "travel.header.legacy": "Legacy",
+    "travel.header.encyclopedia": "Saint Charbel Encyclopedia",
+    "travel.header.fullHistory": "Full History",
+    "travel.header.gallery": "Gallery",
+    "travel.header.miracles": "Miracles",
+    "travel.header.miraclesAndReports": "Miracles & Reports",
+    "travel.header.eucharisticMiracles": "Eucharistic Miracles",
+    "travel.header.letters": "Letters",
+    "travel.header.voiceTestimony": "Voice Testimony",
+    "travel.header.saints": "Saints",
+    "travel.header.childrenBooks": "Children's Books",
+    "travel.header.prayer": "Prayer",
+    "travel.header.prayerLibrary": "Prayer Library",
+    "travel.header.findAPrayer": "Find a Prayer by Intention",
+    "travel.header.prayerForTheSick": "Prayer for the Sick",
+    "travel.header.prayerForHealing": "Prayer for Healing",
+    "travel.header.prayerForAnxiety": "Prayer for Anxiety",
+    "travel.header.prayerForDepression": "Prayer for Depression",
+    "travel.header.prayerForStudents": "Prayer for Students",
+    "travel.header.prayerForAddiction": "Prayer for Addiction",
+    "travel.header.prayerForFamily": "Prayer for Family",
+    "travel.header.prayerForPregnancy": "Prayer for Pregnancy",
+    "travel.header.prayerForAMiracle": "Prayer for a Miracle",
+    "travel.header.currentPrayers": "Saint Charbel Prayers",
+    "travel.header.novena": "Saint Charbel Novena",
+    "travel.header.feastDay": "Feast Day",
+    "travel.header.rosaryGuide": "Rosary Guide",
+    "travel.header.rosaryMinibook": "Rosary Minibook",
+    "travel.header.mysteryMeditation": "Mystery Meditation",
+    "travel.header.becomeLikeHim": "Become Like Him",
+    "travel.header.places": "Travel",
+    "travel.header.visitingAnnaya": "Visiting Annaya",
+    "travel.header.annayaTour": "Annaya Online Tour",
+    "travel.header.bekaaKafra": "Bekaa Kafra",
+    "travel.header.harissa": "Our Lady of Lebanon at Harissa",
+    "travel.header.cedars": "the Cedars of God",
+    "travel.header.bkerke": "Bkerke and the Maronite Patriarchate",
+    "travel.header.qadishaValley": "Qadisha Valley",
+    "travel.header.qannoubineMonastery": "Qannoubine Monastery",
+    "travel.header.qozhayaMonastery": "Qozhaya Monastery",
+    "travel.header.placesLebanon": "Saint Charbel's Lebanon",
+    "travel.header.hermitage": "The Hermitage",
+    "travel.header.trail": "Saint Charbel Trail",
+    "travel.header.news": "News",
+    "travel.shared.node53": "In this guide",
+    "travel.shared.node54": "Home",
+    "travel.shared.node55": "/",
+    "travel.shared.node56": "Travel",
+    "travel.shared.node57": "/",
+    "travel.hero.heading1": "Bekaa Kafra, Where It All Began",
+    "travel.images.alt1": "Snow on the old stone houses of Bekaa Kafra, with the mountain valley behind. Photo courtesy of LebanonUntravelled.com",
+    "travel.hero.caption1": "Winter in Bekaa Kafra - the village keeps its old stone architecture. Photo courtesy of LebanonUntravelled.com.",
+    "travel.hero.kicker": "Places of Saint Charbel",
+    "travel.hero.text1": "Before the monastery and the hermitage, before the miracles and the crowds, there was a mountain village perched at the top of Lebanon. Youssef Antoun Makhlouf - the boy who would become Saint Charbel - was born here, traditionally on May 8, 1828, and the village has kept his house, his church, and his grotto ever since.",
+    "travel.hero.link1": "Charbel's Life",
+    "travel.hero.link2": "Take the Online Tour",
+    "travel.hero.link3": "Visit Annaya",
+    "travel.hero.link4": "The Hermitage",
+    "travel.hero.trailText1": "Part of the",
+    "travel.hero.trailLink1": "Saint Charbel Encyclopedia",
+    "travel.hero.trailText2": ". Read",
+    "travel.hero.trailLink2": "the full story of his life",
+    "travel.hero.trailText3": "or browse all topics.",
+    "travel.section1.heading1": "The Highest Village in Lebanon",
+    "travel.section1.text1a": "Bekaa Kafra sits at about 1,800 meters above sea level in the Bsharri district of North Lebanon - widely known as the highest village in the country. Its name is Syriac:",
+    "travel.section1.emphasis1": "bekaa",
+    "travel.section1.text1b": ", ground, and",
+    "travel.section1.emphasis2": "kafra",
+    "travel.section1.text1c": ", rich - \"rich soil.\" It overlooks the holy valley of Qannoubine, which sheltered twenty-four Maronite patriarchs between 1440 and 1823 along with generations of hermits and monks, and it neighbors the Cedars of God. The village's own history reaches back at least to the tenth century by the historian Fouad Boustany Ephram's account, and its houses still keep their modest old architecture.",
+    "travel.section2.heading1": "The Makhlouf Family Home",
+    "travel.section2.text1": "Youssef Antoun Makhlouf was born here, traditionally on May 8, 1828, the youngest of five children of Antoun Zaarour Makhlouf and Brigitta Chidiac. His father died when he was about three, and the boy grew up in this house - tending the family's small flock, praying, living the ordinary life of a poor mountain village. The house still stands and is kept as a place of pilgrimage; during the week of Saint Charbel's feast in July, the street leading to it fills with an exhibition of homemade products prepared by the villagers.",
+    "travel.section3.heading1": "The Church Where He Was Baptized",
+    "travel.section3.text1": "The village church where the newborn Makhlouf was baptized is itself ancient - built sometime between the seventh and thirteenth centuries, in the long era when this valley was the heart of Maronite life. A second church, Notre-Dame, was built in 1925, and the village also keeps the convent of Saint Eusebius.",
+    "travel.section4.heading1": "The Grotto Where He Prayed",
+    "travel.section4.text1a": "Above the village is a small grotto where the boy Youssef used to withdraw to pray - the first hermitage, in a sense, of a man who would spend his last twenty-three years in another one. Pilgrims climb to it as the opening chapter of a story that continues at the",
+    "travel.section4.link1": "hermitage of Annaya",
+    "travel.section4.text1b": ".",
+    "travel.section5.heading1": "From Bekaa Kafra to Annaya",
+    "travel.section5.text1a": "In 1851, at twenty-three, Youssef left the village for the Monastery of Our Lady of Mayfouk, then Saint Maron of Annaya, taking the religious name Charbel after a second-century martyr of the Antiochene Church. He never returned to live in Bekaa Kafra - but the village never stopped claiming him. Today its people, in the words of one account, consider themselves the relatives of the saint known in the four corners of the earth. The full timeline of the life that began here is on our",
+    "travel.section5.link1": "history page",
+    "travel.section5.text1b": ". Planning the whole journey - Annaya, this village, the valley, and Lebanon's other holy places, with Google Maps locations - starts at",
+    "travel.section5.link2": "our pilgrimage guide",
+    "travel.section5.text1c": ".",
+    "travel.section6.heading1": "Visiting Today",
+    "travel.section6.text1a": "Religious tourism is the village's life. Several mountain roads lead in: from Shekka via Amioune and Hadath el Jebbeh, from Tripoli through Koura and Hadath el Jebbeh, from Ehden and Bsharri, or over the top past the Cedars. Most pilgrims pair Bekaa Kafra with Annaya - the birthplace in the morning, the tomb and hermitage in the afternoon; our",
+    "travel.section6.link1": "guide to visiting Annaya",
+    "travel.section6.text1b": "has the practical details for that half of the day. Mountain weather is real at 1,800 meters: check conditions before setting out in winter.",
+    "travel.section7.heading1": "What to See in the Village",
+    "travel.section7.text1": "Everything here is walkable - the village is small, and the slope does the navigating for you:",
+    "travel.section7.strong1": "The Makhlouf family home",
+    "travel.section7.list1": "- where Youssef Antoun was born, traditionally on May 8, 1828, and grew up the youngest of five. Kept as a place of pilgrimage.",
+    "travel.section7.strong2": "The baptism church",
+    "travel.section7.list2": "- the old village church where he was baptized, built sometime between the seventh and thirteenth centuries.",
+    "travel.section7.strong3": "Notre-Dame Church",
+    "travel.section7.list3": "- the newer parish church, built in 1925.",
+    "travel.section7.strong4": "The convent of Saint Eusebius",
+    "travel.section7.list4": "- the village's small convent.",
+    "travel.section7.strong5": "The grotto",
+    "travel.section7.list5": "- above the village, where the boy used to withdraw to pray. Allow a little time for the climb.",
+    "travel.section7.strong6": "The feast-week exhibition",
+    "travel.section7.list6": "- during the week of Saint Charbel's anniversary festivities in July, homemade products line the street to the saint's house, and the village stages a traditional nineteenth-century wedding.",
+    "travel.images.alt2": "A stone spring fountain in Bekaa Kafra with clay water jugs. Photo courtesy of LebanonUntravelled.com",
+    "travel.section7.caption1": "One of the village springs. Photo courtesy of LebanonUntravelled.com.",
+    "travel.section8.heading1": "Pair It With the Qadisha Valley",
+    "travel.section8.text1a": "Bekaa Kafra sits at the head of the",
+    "travel.section8.link1": "Qadisha - the Holy Valley",
+    "travel.section8.text1b": "- and no visit should stop at the village line. Below lies",
+    "travel.section8.strong1": "Qannoubine",
+    "travel.section8.text1c": ", the valley that sheltered twenty-four Maronite patriarchs between 1440 and 1823 along with generations of hermits; its rock-cut monasteries are still walkable on foot. About twenty minutes away rise the",
+    "travel.section8.strong2": "Cedars of God",
+    "travel.section8.text1d": ", the last grove of the biblical cedars. And the valley is the heart of the",
+    "travel.section8.link2": "Saint Charbel Trail",
+    "travel.section8.text1e": ", the long-distance pilgrimage route that links his places across Mount Lebanon.",
+    "travel.section8.text2a": "For the valley itself - the monasteries of Qannoubine and Qozhaya, the hermitages in the rock, and how to visit - see our",
+    "travel.section8.link3": "Qadisha Valley guide",
+    "travel.section8.text2b": ". For the wider map of everything Charbel in Lebanon - Annaya, Kfifan, Jrabta, the valley and more - see our",
+    "travel.section8.link4": "guide to Saint Charbel places in Lebanon",
+    "travel.section8.text2c": ".",
+    "travel.faq.heading1": "Frequently Asked Questions",
+    "travel.faq.question1": "Where is Bekaa Kafra?",
+    "travel.faq.text1": "In the Bsharri district of North Lebanon, at about 1,800 meters above sea level - widely known as the highest village in Lebanon. It overlooks the Qannoubine valley and neighbors the Cedars of God.",
+    "travel.faq.question2": "Why is Bekaa Kafra famous?",
+    "travel.faq.text2": "It is the birthplace of Saint Charbel Makhlouf (traditionally May 8, 1828), Lebanon's most beloved saint. His family home, baptism church, and childhood prayer grotto are all preserved there.",
+    "travel.faq.question3": "Can you visit Saint Charbel's house in Bekaa Kafra?",
+    "travel.faq.text3": "Yes. The Makhlouf family home is kept as a place of pilgrimage, and the street to it hosts a festival exhibition during the week of his July feast.",
+    "travel.faq.question4": "How high is Bekaa Kafra?",
+    "travel.faq.text4": "About 1,800 meters above sea level - widely known as the highest village in Lebanon - plan for real mountain weather, especially in winter.",
+    "travel.faq.question5": "Is Bekaa Kafra the same as Bkaakafra?",
+    "travel.faq.text5": "Yes - the same village, spelled different ways in English (Bekaa Kafra, Bkaakafra, Beqaa Kafra). All refer to Saint Charbel's birthplace in the Bsharri district.",
+    "travel.faq.question6": "When is the best time to visit Bekaa Kafra?",
+    "travel.faq.text6": "Late spring through October for open roads and walking weather. July brings the feast-week festivities. Winter is beautiful under snow - the village sits at 1,800 meters - but check road conditions before setting out, and expect some paths to the grotto to be icy.",
+    "travel.faq.question7": "How do I get to Bekaa Kafra?",
+    "travel.faq.text7": "By mountain road from Shekka or Tripoli via Hadath el Jebbeh, from Ehden and Bsharri, or over the top past the Cedars. Most pilgrims combine it with a visit to Annaya the same day.",
+    "travel.sources.heading1": "Sources",
+    "travel.sources.link1": "LebanonUntravelled: Bekaa Kafra, the highest village in Lebanon - altitude, etymology, churches, the saint's house and grotto, access roads",
+    "travel.sources.link2": "Discover Lebanon: the village of Bkaa Kafra and the places of Saint Charbel",
+    "travel.sources.link3": "Monastery of Saint Maron, Annaya: the saint's life from birth in Bekaa Kafra to death at the hermitage",
+    "travel.footer.credit": "Bekaa Kafra. Author: Please pray for the person who made this website."
+  }
+}

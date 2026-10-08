@@ -14,8 +14,14 @@ from i18n.catalog import load_catalog, locale_topics, read_json, page_url
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
 from i18n.same_page_injection import inject_control
+from i18n.travel_metadata import compose_travel_clusters
+from bs4 import BeautifulSoup
 from i18n.catalog import read_json as _read_json_fc
-def fc(t):return inject_control(t,ROOT,_read_json_fc(ROOT/'locales/same-page-manifest.pending.json'),_read_json_fc(ROOT/'locales/same-page-copy.json'))
+def fc(t):
+    canonical=BeautifulSoup(t,'html.parser').select_one('link[rel=canonical]')['href'].removeprefix('https://marsharbel.com')
+    path=ROOT/(canonical.lstrip('/')+'.html')
+    t=compose_travel_clusters(ROOT,_read_json_fc(ROOT/'locales/registry.json'),{path:t})[path]
+    return inject_control(t,ROOT,_read_json_fc(ROOT/'locales/same-page-manifest.pending.json'),_read_json_fc(ROOT/'locales/same-page-copy.json'))
 from check_i18n_policy import check, extract_html
 
 spec = importlib.util.spec_from_file_location('international_builder', ROOT/'scripts/build-international.py')
@@ -34,6 +40,12 @@ class CatalogTests(unittest.TestCase):
         registry['exactMirrors']={}
         (self.root/'locales/registry.json').write_text(json.dumps(registry))
         shutil.copyfile(ROOT/'same-page-copy.js', self.root/'same-page-copy.js')
+        # Mirror capability validation needs real source masters in this fixture.
+        for cfg in registry.get('pageMirrors',{}).values():
+            master=cfg['master']
+            if not (self.root/master).exists():
+                (self.root/master).parent.mkdir(parents=True,exist_ok=True)
+                shutil.copyfile(ROOT/master,self.root/master)
 
     def edit(self, file, update):
         path = self.root/'locales'/file
@@ -361,6 +373,7 @@ class CatalogTests(unittest.TestCase):
             d['topics']['sampleTopic']={'sections':['date'],'relatedEnglish':'/sample-topic','sources':['monastery'],'locales':list(locales)}
             for code in locales:
                 d['locales'][code]['slugs']['sampleTopic']='sample-topic'
+                d['locales'][code]['capabilities']['topicGuides'].append('sampleTopic')
         self.edit('registry.json',registry)
         for code in locales:
             self.edit(f'{code}/pages.json',lambda d:d.update({'sampleTopic':{'title':'Feast','description':'Feast day guide','intro':'Intro text','sections':{'date':{'title':'Date','body':'Body text'}}}}))
@@ -399,7 +412,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_partial_topic_rejects_unknown_language(self):
         self.edit('registry.json',lambda d:d['topics']['prayers'].update({'locales':['xx']}))
-        with self.assertRaisesRegex(ValueError,'locales must be'):
+        with self.assertRaisesRegex(ValueError,'locales must be|topic capability differs from publication'):
             load_catalog(self.root)
 
     def test_legacy_guard_detects_new_visible_text(self):

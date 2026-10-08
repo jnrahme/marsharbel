@@ -1,0 +1,1034 @@
+{
+  "version": 1,
+  "master": "cedars-of-god-lebanon.html",
+  "masterSha256": "56126a02b7cc4c18e14a4c164421e5313a9fc67a0e628c5037083d8bfcb04192",
+  "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
+  "bindings": [
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Cedars of God, Lebanon: The Sacred Cedar Forest of Bsharri",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "The Cedars of God above Bsharri: Lebanon's oldest cedar grove, its place in the Bible, the Maronite chapel, UNESCO status, and how to visit.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.header.skipLink",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.brand.mark",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.siteBrand",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.primaryLabel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "travel.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.fullHistory",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.miraclesAndReports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.eucharisticMiracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.voiceTestimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.childrenBooks",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerLibrary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.findAPrayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForTheSick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForHealing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAnxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForDepression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForStudents",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAddiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForFamily",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForPregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAMiracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.currentPrayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.feastDay",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.rosaryGuide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.rosaryMinibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.mysteryMeditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.becomeLikeHim",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.places",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.places",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.visitingAnnaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.annayaTour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.bekaaKafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.cedars",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.bkerke",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qadishaValley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qannoubineMonastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qozhayaMonastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.placesLebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node53",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "travel.shared.node54",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node55",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node56",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node57",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.heading1",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "The Cedars of God: Lebanon's Sacred Cedar Forest",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.images.alt1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Ancient cedar trees in the Cedars of God forest near Bsharri",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "travel.hero.caption1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The Cedars of God near Bsharri. Photograph: Vyacheslav Argenberg,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.captionLink1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.caption2",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.hero.captionLink2",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.caption3",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ". Resized and converted to WebP.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.hero.kicker",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Places of Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.heading1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "The Cedars of God: Lebanon's Sacred Cedar Forest",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.text1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Cedars of God (Arz el-Rab) is Lebanon's oldest cedar grove, on Mount Makmel above Bsharri, at about 1,900 to 2,050 meters. The Lebanon cedar is named 103 times in the Bible. The grove and the Qadisha Valley below it are together a UNESCO World Heritage Site, inscribed in 1998.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "The Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link2",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link3",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Plan a Pilgrimage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.heading1",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "What the Cedars of God Are",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.text1a",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Arz el-Rab means \"Cedars of the Lord.\" The grove stands on Mount Makmel, between 1,900 and 2,050 meters, to the east of the village of Bsharri in North Lebanon. UNESCO calls it the last vestige of the antique forests of Lebanon and one of the rare sites where the Lebanon cedar (",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.em1",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > em:nth-of-type(1)",
+      "source": "Cedrus libani",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.text1b",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ") still grows.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section1.text2",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Some of the trees here are more than 30 meters tall and about 2,000 years old, according to reporting in The National. The cedar sits at the center of Lebanon's national flag.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section2.heading1",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "The Cedars in Scripture",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section2.text1",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The cedar of Lebanon is cited 103 times in the Bible, and in antiquity its wood was prized for building great religious buildings. Psalm 92 says the righteous will grow like a cedar of Lebanon. For Lebanese Christians the grove is a sacred place, and the old trees are a living link to the land of the Bible.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.heading1",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "A Forest the Church Protects",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.text1",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Maronite Church has long protected the grove. A small chapel stands in the middle of the grove, and a Mass is celebrated there each year to honor the cedars. The Associated Press reported in 2023 on a Feast of the Transfiguration gathering at a mid-19th-century chapel in the forest, where the Maronite Patriarch, Bechara Boutros al-Rai, preached and the people sang hymns in Arabic and Aramaic.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.text2",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The Church keeps strict rules to protect the forest and keep building out of it. Kiosks, tourist shops and a large car park are set far away from the trees.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.heading1",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "The Cedars, the Qadisha Valley and Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text1a",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Cedars overlook the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.link1",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text1b",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", the \"Holy Valley,\" where Maronite monks and hermits took refuge for centuries. UNESCO lists the valley and the cedar forest as one World Heritage Site. The cliffs of the valley hold the monasteries of",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section4.link2",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Qannoubine",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text1c",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "and",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section4.link3",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Qozhaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text1d",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "travel.section4.text2a",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The Cedars are in the same mountains as",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.link4",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text2b",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ", the village where Saint Charbel was born in 1828, and our",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section4.link5",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "pilgrimage guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text2c",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "places the grove about a 20-minute drive from the village. Pilgrims often add Bsharri and the Cedars to a week-long Charbel itinerary.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section5.heading1",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Caring for the Cedars",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section5.text1",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The long-term survival of the forest is in doubt as temperatures rise. Local environmentalists told the Associated Press in 2023 that warmer weather has brought larger colonies of pests that feed on the cedars' bark. A Bsharri environmental group has planted about 200,000 cedars at higher altitudes over the years, and about 180,000 of them survived.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.heading1",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "Visiting the Cedars",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.text1a",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Bsharri is the nearest town and the usual base for the Cedars and the upper Qadisha Valley. Spring through autumn is the best season: winter snow can close the roads up to the Cedars, as our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.link1",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "pilgrimage guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.text1b",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "notes. Check conditions with local hosts before you drive up.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section6.text2",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The grove is a protected forest and a place of prayer for many visitors. Walk quietly, keep to the paths, and leave the trees as you found them.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.heading1",
+      "selector": "#main-content > section:nth-of-type(8) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question1",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "What are the Cedars of God?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text1",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The last great grove of ancient Lebanon cedars, on Mount Makmel above Bsharri in North Lebanon. In Arabic it is Arz el-Rab, \"Cedars of the Lord.\"",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question2",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "How high is the Cedars of God forest?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text2",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "UNESCO places it between 1,900 and 2,050 meters above sea level, east of the village of Bsharri.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question3",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "How old are the cedars?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text3",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "Some of the trees are reported to be more than 30 meters tall and about 2,000 years old. Counts and ages vary between sources, so treat them as estimates.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question4",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "Why are the cedars sacred?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text4",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "The Lebanon cedar is named 103 times in the Bible, and the Maronite Church has protected the grove, with a chapel in it and a Mass each year to honor the trees.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question5",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(5)",
+      "source": "Is the Cedars of God a UNESCO World Heritage Site?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text5",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "Yes. UNESCO inscribed the Qadisha Valley and the Forest of the Cedars of God together as one site in 1998.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.heading1",
+      "selector": "#main-content > section:nth-of-type(9) > h2:nth-of-type(1)",
+      "source": "More Places in Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.link1",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.text1",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ";",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "travel.section7.link2",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.text2",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "travel.section7.link3",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.text3",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "connects the places in his life.",
+      "kind": "text",
+      "nodeIndex": 5
+    },
+    {
+      "key": "travel.sources.heading1",
+      "selector": "#main-content > section:nth-of-type(10) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link1",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "UNESCO World Heritage Centre: Ouadi Qadisha (the Holy Valley) and the Forest of the Cedars of God (Horsh Arz el-Rab) - location, altitude, 103 Bible citations, 1998 inscription",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link2",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Associated Press (Kareem Chehayeb), December 5, 2023: the Transfiguration Mass at the chapel, Church protection, climate threats, replanting",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link3",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "The National, May 19, 2023: Maronite Church protection, the chapel and annual Mass, tree height and age",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.footer.credit",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Cedars of God. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.siteBrand",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(14)",
+      "source": "Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Cedars of God, Lebanon: The Sacred Cedar Forest of Bsharri",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "The Cedars of God above Bsharri: Lebanon's oldest cedar grove, its place in the Bible, the Maronite chapel, UNESCO status, and how to visit.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Cedars of God, Lebanon: The Sacred Cedar Forest of Bsharri",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "The Cedars of God above Bsharri: Lebanon's oldest cedar grove, its place in the Bible, the Maronite chapel, UNESCO status, and how to visit.",
+      "kind": "attribute",
+      "attribute": "content"
+    }
+  ],
+  "messages": {
+    "travel.meta.title": "Cedars of God, Lebanon: The Sacred Cedar Forest of Bsharri",
+    "travel.meta.description": "The Cedars of God above Bsharri: Lebanon's oldest cedar grove, its place in the Bible, the Maronite chapel, UNESCO status, and how to visit.",
+    "travel.header.skipLink": "Skip to main content",
+    "travel.brand.mark": "✦",
+    "travel.header.siteBrand": "Saint Charbel",
+    "travel.header.primaryLabel": "Primary",
+    "travel.header.home": "Home",
+    "travel.header.legacy": "Legacy",
+    "travel.header.encyclopedia": "Saint Charbel Encyclopedia",
+    "travel.header.fullHistory": "Full History",
+    "travel.header.gallery": "Gallery",
+    "travel.header.miracles": "Miracles",
+    "travel.header.miraclesAndReports": "Miracles & Reports",
+    "travel.header.eucharisticMiracles": "Eucharistic Miracles",
+    "travel.header.letters": "Letters",
+    "travel.header.voiceTestimony": "Voice Testimony",
+    "travel.header.saints": "Saints",
+    "travel.header.childrenBooks": "Children's Books",
+    "travel.header.prayer": "Prayer",
+    "travel.header.prayerLibrary": "Prayer Library",
+    "travel.header.findAPrayer": "Find a Prayer by Intention",
+    "travel.header.prayerForTheSick": "Prayer for the Sick",
+    "travel.header.prayerForHealing": "Prayer for Healing",
+    "travel.header.prayerForAnxiety": "Prayer for Anxiety",
+    "travel.header.prayerForDepression": "Prayer for Depression",
+    "travel.header.prayerForStudents": "Prayer for Students",
+    "travel.header.prayerForAddiction": "Prayer for Addiction",
+    "travel.header.prayerForFamily": "Prayer for Family",
+    "travel.header.prayerForPregnancy": "Prayer for Pregnancy",
+    "travel.header.prayerForAMiracle": "Prayer for a Miracle",
+    "travel.header.currentPrayers": "Saint Charbel Prayers",
+    "travel.header.novena": "Saint Charbel Novena",
+    "travel.header.feastDay": "Feast Day",
+    "travel.header.rosaryGuide": "Rosary Guide",
+    "travel.header.rosaryMinibook": "Rosary Minibook",
+    "travel.header.mysteryMeditation": "Mystery Meditation",
+    "travel.header.becomeLikeHim": "Become Like Him",
+    "travel.header.places": "Travel",
+    "travel.header.visitingAnnaya": "Visiting Annaya",
+    "travel.header.annayaTour": "Annaya Online Tour",
+    "travel.header.bekaaKafra": "Bekaa Kafra",
+    "travel.header.harissa": "Our Lady of Lebanon at Harissa",
+    "travel.header.cedars": "the Cedars of God",
+    "travel.header.bkerke": "Bkerke and the Maronite Patriarchate",
+    "travel.header.qadishaValley": "Qadisha Valley",
+    "travel.header.qannoubineMonastery": "Qannoubine Monastery",
+    "travel.header.qozhayaMonastery": "Qozhaya Monastery",
+    "travel.header.placesLebanon": "Saint Charbel's Lebanon",
+    "travel.header.hermitage": "The Hermitage",
+    "travel.header.trail": "Saint Charbel Trail",
+    "travel.header.news": "News",
+    "travel.shared.node53": "In this guide",
+    "travel.shared.node54": "Home",
+    "travel.shared.node55": "/",
+    "travel.shared.node56": "Travel",
+    "travel.shared.node57": "/",
+    "travel.hero.heading1": "The Cedars of God: Lebanon's Sacred Cedar Forest",
+    "travel.images.alt1": "Ancient cedar trees in the Cedars of God forest near Bsharri",
+    "travel.hero.caption1": "The Cedars of God near Bsharri. Photograph: Vyacheslav Argenberg,",
+    "travel.hero.captionLink1": "via Wikimedia Commons",
+    "travel.hero.caption2": ",",
+    "travel.hero.captionLink2": "CC BY 4.0",
+    "travel.hero.caption3": ". Resized and converted to WebP.",
+    "travel.hero.kicker": "Places of Lebanon",
+    "travel.hero.text1": "The Cedars of God (Arz el-Rab) is Lebanon's oldest cedar grove, on Mount Makmel above Bsharri, at about 1,900 to 2,050 meters. The Lebanon cedar is named 103 times in the Bible. The grove and the Qadisha Valley below it are together a UNESCO World Heritage Site, inscribed in 1998.",
+    "travel.hero.link1": "The Qadisha Valley",
+    "travel.hero.link2": "Bekaa Kafra",
+    "travel.hero.link3": "Plan a Pilgrimage",
+    "travel.section1.heading1": "What the Cedars of God Are",
+    "travel.section1.text1a": "Arz el-Rab means \"Cedars of the Lord.\" The grove stands on Mount Makmel, between 1,900 and 2,050 meters, to the east of the village of Bsharri in North Lebanon. UNESCO calls it the last vestige of the antique forests of Lebanon and one of the rare sites where the Lebanon cedar (",
+    "travel.section1.em1": "Cedrus libani",
+    "travel.section1.text1b": ") still grows.",
+    "travel.section1.text2": "Some of the trees here are more than 30 meters tall and about 2,000 years old, according to reporting in The National. The cedar sits at the center of Lebanon's national flag.",
+    "travel.section2.heading1": "The Cedars in Scripture",
+    "travel.section2.text1": "The cedar of Lebanon is cited 103 times in the Bible, and in antiquity its wood was prized for building great religious buildings. Psalm 92 says the righteous will grow like a cedar of Lebanon. For Lebanese Christians the grove is a sacred place, and the old trees are a living link to the land of the Bible.",
+    "travel.section3.heading1": "A Forest the Church Protects",
+    "travel.section3.text1": "The Maronite Church has long protected the grove. A small chapel stands in the middle of the grove, and a Mass is celebrated there each year to honor the cedars. The Associated Press reported in 2023 on a Feast of the Transfiguration gathering at a mid-19th-century chapel in the forest, where the Maronite Patriarch, Bechara Boutros al-Rai, preached and the people sang hymns in Arabic and Aramaic.",
+    "travel.section3.text2": "The Church keeps strict rules to protect the forest and keep building out of it. Kiosks, tourist shops and a large car park are set far away from the trees.",
+    "travel.section4.heading1": "The Cedars, the Qadisha Valley and Saint Charbel",
+    "travel.section4.text1a": "The Cedars overlook the",
+    "travel.section4.link1": "Qadisha Valley",
+    "travel.section4.text1b": ", the \"Holy Valley,\" where Maronite monks and hermits took refuge for centuries. UNESCO lists the valley and the cedar forest as one World Heritage Site. The cliffs of the valley hold the monasteries of",
+    "travel.section4.link2": "Qannoubine",
+    "travel.section4.text1c": "and",
+    "travel.section4.link3": "Qozhaya",
+    "travel.section4.text1d": ".",
+    "travel.section4.text2a": "The Cedars are in the same mountains as",
+    "travel.section4.link4": "Bekaa Kafra",
+    "travel.section4.text2b": ", the village where Saint Charbel was born in 1828, and our",
+    "travel.section4.link5": "pilgrimage guide",
+    "travel.section4.text2c": "places the grove about a 20-minute drive from the village. Pilgrims often add Bsharri and the Cedars to a week-long Charbel itinerary.",
+    "travel.section5.heading1": "Caring for the Cedars",
+    "travel.section5.text1": "The long-term survival of the forest is in doubt as temperatures rise. Local environmentalists told the Associated Press in 2023 that warmer weather has brought larger colonies of pests that feed on the cedars' bark. A Bsharri environmental group has planted about 200,000 cedars at higher altitudes over the years, and about 180,000 of them survived.",
+    "travel.section6.heading1": "Visiting the Cedars",
+    "travel.section6.text1a": "Bsharri is the nearest town and the usual base for the Cedars and the upper Qadisha Valley. Spring through autumn is the best season: winter snow can close the roads up to the Cedars, as our",
+    "travel.section6.link1": "pilgrimage guide",
+    "travel.section6.text1b": "notes. Check conditions with local hosts before you drive up.",
+    "travel.section6.text2": "The grove is a protected forest and a place of prayer for many visitors. Walk quietly, keep to the paths, and leave the trees as you found them.",
+    "travel.faq.heading1": "Frequently Asked Questions",
+    "travel.faq.question1": "What are the Cedars of God?",
+    "travel.faq.text1": "The last great grove of ancient Lebanon cedars, on Mount Makmel above Bsharri in North Lebanon. In Arabic it is Arz el-Rab, \"Cedars of the Lord.\"",
+    "travel.faq.question2": "How high is the Cedars of God forest?",
+    "travel.faq.text2": "UNESCO places it between 1,900 and 2,050 meters above sea level, east of the village of Bsharri.",
+    "travel.faq.question3": "How old are the cedars?",
+    "travel.faq.text3": "Some of the trees are reported to be more than 30 meters tall and about 2,000 years old. Counts and ages vary between sources, so treat them as estimates.",
+    "travel.faq.question4": "Why are the cedars sacred?",
+    "travel.faq.text4": "The Lebanon cedar is named 103 times in the Bible, and the Maronite Church has protected the grove, with a chapel in it and a Mass each year to honor the trees.",
+    "travel.faq.question5": "Is the Cedars of God a UNESCO World Heritage Site?",
+    "travel.faq.text5": "Yes. UNESCO inscribed the Qadisha Valley and the Forest of the Cedars of God together as one site in 1998.",
+    "travel.section7.heading1": "More Places in Lebanon",
+    "travel.section7.link1": "Our Lady of Lebanon at Harissa",
+    "travel.section7.text1": ";",
+    "travel.section7.link2": "Bkerke and the Maronite Patriarchate",
+    "travel.section7.text2": ".",
+    "travel.section7.link3": "Saint Charbel's Lebanon",
+    "travel.section7.text3": "connects the places in his life.",
+    "travel.sources.heading1": "Sources",
+    "travel.sources.link1": "UNESCO World Heritage Centre: Ouadi Qadisha (the Holy Valley) and the Forest of the Cedars of God (Horsh Arz el-Rab) - location, altitude, 103 Bible citations, 1998 inscription",
+    "travel.sources.link2": "Associated Press (Kareem Chehayeb), December 5, 2023: the Transfiguration Mass at the chapel, Church protection, climate threats, replanting",
+    "travel.sources.link3": "The National, May 19, 2023: Maronite Church protection, the chapel and annual Mass, tree height and age",
+    "travel.footer.credit": "Cedars of God. Author: Please pray for the person who made this website."
+  }
+}

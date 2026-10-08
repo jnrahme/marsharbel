@@ -56,7 +56,7 @@
         "de": {
           "file": "de/annaya.html",
           "path": "/de/annaya",
-          "bodySha256": "28f247dba6c3ba2c833d85d20fb7d36aed49696befaf5071e2ded933dd4161ae",
+          "bodySha256": "7c54d6d9e2ad4d3c306bf219d07821334f750407dfe38ba557263774e2b31559",
           "candidateFileSha256": "8df793aaa5edf89336831d13b5e0acdc2ff422a7f4b71b2a64e559a5cf5cf944",
           "catalog": "locales/de/annaya-master-copy.json",
           "catalogSha256": "0d4e662e0513570a66e835c93587e558662253d93b06466f0fbe2e6f8e42308f"
@@ -77,7 +77,23 @@
           "catalog": "locales/ru/annaya-master-copy.json",
           "catalogSha256": "5c6ef7fd701740b7467b63f272b73b2eb9c042372bf8e7dcde053cb7e45be284"
         }
-      }
+      },
+      "boundedReviewAmendments": [
+        {
+          "locale": "de",
+          "scope": "href-only six exact DE Travel twins; anchor text identical",
+          "beforeBodySha256": "28f247dba6c3ba2c833d85d20fb7d36aed49696befaf5071e2ded933dd4161ae",
+          "afterBodySha256": "7c54d6d9e2ad4d3c306bf219d07821334f750407dfe38ba557263774e2b31559",
+          "review": "parent seat1 bounded content PASS 2026-10-08T02:06:18-04:00",
+          "deployTogether": true,
+          "englishNoTwinExceptions": [
+            "/st-nimatullah",
+            "/st-rafqa",
+            "/maronite-history",
+            "/news"
+          ]
+        }
+      ]
     },
     "twenty-second-master": {
       "sourceRevision": "78cde58d08fec465be0014893e9c0ca6cf7d5e89",
@@ -212,10 +228,23 @@
         "de": {
           "file": "de/pilgerreise.html",
           "path": "/de/pilgerreise",
-          "bodySha256": "e025a82137ee2646016f138e3804d2dab76942f56a7be6e6eccc82e059caeb6c",
+          "bodySha256": "b569dee78687c2f0d624aa62814c2260489ec292fa2d0b3cb294757d8716f397",
           "candidateFileSha256": "f2392b2cb318ee4d392bb9a08d619596542546def20e18918c875f051dd5ce08",
           "catalog": "locales/de/pilgrimage-master-copy.json",
-          "catalogSha256": "eaae14c7df3a5593bd76f5bf9ab45d9bd23ef566fd551168229b01d49f13aa99"
+          "catalogSha256": "c03465eb5a052cf050fedc27b23a652ef474e4e2d3a85828095ef2a364ef09b5",
+          "reviewAmendment": {
+            "reason": "Exact current-English Bekaa Kafra hedge correction only; one main-text hunk.",
+            "previousBodySha256": "e025a82137ee2646016f138e3804d2dab76942f56a7be6e6eccc82e059caeb6c",
+            "contentReview": "parent relay 2026-10-08T01:07:29-04:00: seat 1 CONTENT PASS",
+            "renderedReview": "2026-10-08 local 390 and 1280, JS/no-JS, all full-page sections inspected after lazy-image loading; zero horizontal overflow and page errors",
+            "evidence": [
+              "g1-de-pilgerreise-390-js.png",
+              "g1-de-pilgerreise-1280-js.png",
+              "g1-de-pilgerreise-390-nojs.png",
+              "g1-de-pilgerreise-1280-nojs.png",
+              "g1-de-review-matrix.json"
+            ]
+          }
         },
         "pl": {
           "file": "pl/pielgrzymka.html",
