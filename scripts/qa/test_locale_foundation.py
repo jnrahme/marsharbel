@@ -17,40 +17,23 @@ class FoundationTests(unittest.TestCase):
     def setUp(self):
         self.registry = copy.deepcopy(read_json(ROOT/'locales/registry.json'))
 
-    def test_alias_identity_without_publication(self):
-        self.assertNotIn('zh-cn', selector_aliases(self.registry))
-        cfg = copy.deepcopy(self.registry['locales']['de'])
-        cfg.update(home='/zh-Hans/', nativeName='简体中文', slugs={}, ogLocale='zh_CN', selectorAliases=['zh-cn'])
-        self.registry['locales']['zh-Hans'] = cfg
-        self.registry['ogLocaleOrder'].append('zh-Hans')
-        validate_registry(self.registry)
+    def test_alias_identity_without_home_publication(self):
         self.assertEqual(selector_aliases(self.registry)['zh-cn'], 'zh-Hans')
         self.assertEqual(selector_aliases(self.registry)['zh-hans'], 'zh-Hans')
+        self.assertNotIn('home', self.registry['locales']['zh-Hans'])
         self.assertNotIn('zh-Hans', topic_locales(self.registry, 'prayers'))
         self.assertNotIn('zh-Hans', published_locales(self.registry, 'eucharistic'))
         self.assertEqual(og_locales(self.registry)['zh-Hans'], 'zh_CN')
 
     def test_incomplete_locale_does_not_force_or_advertise_clusters(self):
-        registry, catalogs = load_catalog(ROOT)
-        registry = copy.deepcopy(registry)
-        cfg = copy.deepcopy(registry['locales']['de'])
-        cfg.update(home='/zh-Hans/', nativeName='简体中文', slugs={}, ogLocale='zh_CN', selectorAliases=['zh-cn'])
-        registry['locales']['zh-Hans'] = cfg
-        registry['ogLocaleOrder'].append('zh-Hans')
-        catalogs = {**catalogs, 'zh-Hans': {'common': catalogs['en']['common'], 'pages': {}}}
-        spec = importlib.util.spec_from_file_location('foundation_builder', ROOT/'scripts/build-international.py')
-        builder = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(builder)
-        import i18n.same_page_injection as same_page
-        # The synthetic locale has no reviewed selector copy; same-page controls are tested elsewhere.
-        with patch.object(builder, 'load_catalog', return_value=(registry, catalogs)), patch.object(same_page, 'control_outputs', return_value={}):
-            outputs = builder.outputs(ROOT)
-        self.assertIn(ROOT/'zh-Hans/index.html', outputs)
-        self.assertFalse(any('zh-Hans/miracles/eucharistic' in str(path) for path in outputs))
-        self.assertNotIn('/zh-Hans/miracles/eucharistic', outputs[ROOT/'sitemap.xml'])
-        self.assertIn('"zh-cn":"zh-Hans"', outputs[ROOT/'locale-routes.js'])
-        # A generic homepage can be built only by explicit registry admission;
-        # the production registry does NOT contain this synthetic locale.
+        # Actual registered partial locale must not silently become a home.
+        from i18n.catalog import published_home_locales, home_url
+        self.assertNotIn('zh-Hans', published_home_locales(self.registry))
+        self.assertIsNone(home_url(self.registry, 'zh-Hans'))
+        self.assertFalse((ROOT/'zh-Hans/index.html').exists())
+        sitemap=(ROOT/'sitemap.xml').read_text()
+        self.assertNotIn('<loc>https://marsharbel.com/zh-Hans/</loc>', sitemap)
+        self.assertNotIn('/zh-Hans/miracles/eucharistic', sitemap)
 
     def test_duplicate_alias_rejected(self):
         self.registry['locales']['de']['selectorAliases'] = ['EN']

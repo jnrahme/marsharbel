@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from i18n.home_mirror import render_home
+from i18n.catalog import published_home_locales
 
 class HomeMirrorTests(unittest.TestCase):
     def setUp(self):
@@ -34,7 +35,8 @@ class HomeMirrorTests(unittest.TestCase):
         self.assertEqual(rendered.select_one('meta[property="og:title"]')['content'],'Lokaler Seitentitel')
         self.assertEqual(rendered.select_one('meta[property="og:locale"]')['content'],'de_DE')
         self.assertEqual({n['hreflang']:n['href'] for n in rendered.select('link[hreflang]')},
-            {**{code:self.registry['site']+cfg['home'] for code,cfg in self.registry['locales'].items()},'x-default':self.registry['site']+'/'})
+            {**{code:self.registry['site']+self.registry['locales'][code]['home'] for code in published_home_locales(self.registry)},'x-default':self.registry['site']+'/'})
+        self.assertIsNone(rendered.select_one('link[hreflang="zh-Hans"]'))
         graph=json.loads(rendered.select_one('script[type="application/ld+json"]').string)['@graph']
         page=next(item for item in graph if item['@type']=='WebPage')
         self.assertEqual((page['name'],page['url'],page['inLanguage']),('Lokaler Seitentitel','https://marsharbel.com/de/','de'))
