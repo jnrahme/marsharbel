@@ -1,0 +1,616 @@
+{
+  "version": 1,
+  "master": "feedback-review.html",
+  "masterSha256": "e4c37723c3b1df8ec3183d7f7b631f1d9c7d9750d1a3cf70e783609e910c7465",
+  "sourceRevision": "38d13c38",
+  "bindings": [
+    {
+      "key": "feedback-review.metadata.title-saint-charbel-feedback-admin",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Saint Charbel | Feedback Admin",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.metadata.description-moderator-review-queue-for-reader-feedback-on-ma",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(3)",
+      "source": "Moderator review queue for reader feedback on marsharbel.com.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "feedback-review.metadata.og-title-saint-charbel-feedback-admin",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(7)",
+      "source": "Saint Charbel | Feedback Admin",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "feedback-review.metadata.og-description-moderator-review-queue-for-reader-feedback-on",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+      "source": "Moderator review queue for reader feedback on marsharbel.com.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "feedback-review.metadata.twitter-title-saint-charbel-feedback-admin",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(12)",
+      "source": "Saint Charbel | Feedback Admin",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "feedback-review.metadata.twitter-description-moderator-review-queue-for-reader-feedba",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
+      "source": "Moderator review queue for reader feedback on marsharbel.com.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "feedback-review.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "feedback-review.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.body.admin",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Admin",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.feedback-review-queue",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Feedback Review Queue",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.read-reader-feedback-approve-the-items-that-should-become-bo",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Read reader feedback, approve the items that should become board cards, and close the rest. Nothing here is published.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.moderator-access-only",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Moderator access only.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.only-the-site-moderator-can-read-private-feedback-sign-in-wi",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Only the site moderator can read private feedback. Sign in with your email, password, and human verification. Review decisions are recorded in the feedback audit history.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.remember-this-browser",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Remember this browser",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.keep-your-verified-admin-session-on-this-browser-until-you-s",
+      "selector": "#admin-remember-help",
+      "source": "Keep your verified admin session on this browser until you sign out or the session ends. Use only on your own device. Your password is not saved.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.admin-email",
+      "selector": "#admin-login-form > label:nth-of-type(1)",
+      "source": "Admin email",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.password",
+      "selector": "#admin-login-form > label:nth-of-type(2)",
+      "source": "Password",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.login",
+      "selector": "#admin-login-form > div:nth-of-type(2) > button:nth-of-type(1)",
+      "source": "Login",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.scan-this-qr-code-in-your-authenticator-app-keep-its-secret",
+      "selector": "#mfa-enrollment > p:nth-of-type(1)",
+      "source": "Scan this QR code in your authenticator app. Keep its secret private.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.accessibility.authenticator-enrollment-qr-code",
+      "selector": "#mfa-qr",
+      "source": "Authenticator enrollment QR code",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.authenticator-code",
+      "selector": "#admin-mfa-form > label:nth-of-type(1)",
+      "source": "Authenticator code",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.verify-authenticator",
+      "selector": "#admin-mfa-form > button:nth-of-type(1)",
+      "source": "Verify authenticator",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.forget-this-browser-and-sign-out",
+      "selector": "#admin-logout-btn",
+      "source": "Forget this browser and sign out",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.feedback-review-queue.refresh-queue",
+      "selector": "#refresh-queue",
+      "source": "Refresh queue",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.pending-feedback.pending-feedback",
+      "selector": "#admin-panel > h2:nth-of-type(1)",
+      "source": "Pending feedback",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.pending-feedback.recent-audit-history",
+      "selector": "#admin-panel > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "Recent audit history",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.footer.admin-moderation-only-author-please-pray-for-the-person-who",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Admin moderation only. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "feedback-review.metadata.title-saint-charbel-feedback-admin": "Saint Charbel | Feedback Admin",
+    "feedback-review.metadata.description-moderator-review-queue-for-reader-feedback-on-ma": "Moderator review queue for reader feedback on marsharbel.com.",
+    "feedback-review.metadata.og-title-saint-charbel-feedback-admin": "Saint Charbel | Feedback Admin",
+    "feedback-review.metadata.og-description-moderator-review-queue-for-reader-feedback-on": "Moderator review queue for reader feedback on marsharbel.com.",
+    "feedback-review.metadata.twitter-title-saint-charbel-feedback-admin": "Saint Charbel | Feedback Admin",
+    "feedback-review.metadata.twitter-description-moderator-review-queue-for-reader-feedba": "Moderator review queue for reader feedback on marsharbel.com.",
+    "feedback-review.body.skip-to-main-content": "Skip to main content",
+    "feedback-review.header.text": "✦",
+    "feedback-review.header.saint-charbel": "Saint Charbel",
+    "feedback-review.accessibility.primary": "Primary",
+    "feedback-review.header.home": "Home",
+    "feedback-review.header.legacy": "Legacy",
+    "feedback-review.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "feedback-review.header.full-history": "Full History",
+    "feedback-review.header.gallery": "Gallery",
+    "feedback-review.header.miracles": "Miracles",
+    "feedback-review.header.miracles-reports": "Miracles & Reports",
+    "feedback-review.header.eucharistic-miracles": "Eucharistic Miracles",
+    "feedback-review.header.letters": "Letters",
+    "feedback-review.header.voice-testimony": "Voice Testimony",
+    "feedback-review.header.saints": "Saints",
+    "feedback-review.header.children-s-books": "Children's Books",
+    "feedback-review.header.prayer": "Prayer",
+    "feedback-review.header.prayer-library": "Prayer Library",
+    "feedback-review.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "feedback-review.header.prayer-for-the-sick": "Prayer for the Sick",
+    "feedback-review.header.prayer-for-healing": "Prayer for Healing",
+    "feedback-review.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "feedback-review.header.prayer-for-depression": "Prayer for Depression",
+    "feedback-review.header.prayer-for-students": "Prayer for Students",
+    "feedback-review.header.prayer-for-addiction": "Prayer for Addiction",
+    "feedback-review.header.prayer-for-family": "Prayer for Family",
+    "feedback-review.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "feedback-review.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "feedback-review.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "feedback-review.header.saint-charbel-novena": "Saint Charbel Novena",
+    "feedback-review.header.feast-day": "Feast Day",
+    "feedback-review.header.rosary-guide": "Rosary Guide",
+    "feedback-review.header.rosary-minibook": "Rosary Minibook",
+    "feedback-review.header.mystery-meditation": "Mystery Meditation",
+    "feedback-review.header.become-like-him": "Become Like Him",
+    "feedback-review.header.travel": "Travel",
+    "feedback-review.header.visiting-annaya": "Visiting Annaya",
+    "feedback-review.header.annaya-online-tour": "Annaya Online Tour",
+    "feedback-review.header.bekaa-kafra": "Bekaa Kafra",
+    "feedback-review.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "feedback-review.header.the-cedars-of-god": "the Cedars of God",
+    "feedback-review.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "feedback-review.header.qadisha-valley": "Qadisha Valley",
+    "feedback-review.header.qannoubine-monastery": "Qannoubine Monastery",
+    "feedback-review.header.qozhaya-monastery": "Qozhaya Monastery",
+    "feedback-review.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "feedback-review.header.the-hermitage": "The Hermitage",
+    "feedback-review.header.saint-charbel-trail": "Saint Charbel Trail",
+    "feedback-review.header.news": "News",
+    "feedback-review.body.admin": "Admin",
+    "feedback-review.feedback-review-queue.feedback-review-queue": "Feedback Review Queue",
+    "feedback-review.feedback-review-queue.read-reader-feedback-approve-the-items-that-should-become-bo": "Read reader feedback, approve the items that should become board cards, and close the rest. Nothing here is published.",
+    "feedback-review.feedback-review-queue.moderator-access-only": "Moderator access only.",
+    "feedback-review.feedback-review-queue.only-the-site-moderator-can-read-private-feedback-sign-in-wi": "Only the site moderator can read private feedback. Sign in with your email, password, and human verification. Review decisions are recorded in the feedback audit history.",
+    "feedback-review.feedback-review-queue.remember-this-browser": "Remember this browser",
+    "feedback-review.feedback-review-queue.keep-your-verified-admin-session-on-this-browser-until-you-s": "Keep your verified admin session on this browser until you sign out or the session ends. Use only on your own device. Your password is not saved.",
+    "feedback-review.feedback-review-queue.admin-email": "Admin email",
+    "feedback-review.feedback-review-queue.password": "Password",
+    "feedback-review.feedback-review-queue.login": "Login",
+    "feedback-review.feedback-review-queue.scan-this-qr-code-in-your-authenticator-app-keep-its-secret": "Scan this QR code in your authenticator app. Keep its secret private.",
+    "feedback-review.accessibility.authenticator-enrollment-qr-code": "Authenticator enrollment QR code",
+    "feedback-review.feedback-review-queue.authenticator-code": "Authenticator code",
+    "feedback-review.feedback-review-queue.verify-authenticator": "Verify authenticator",
+    "feedback-review.feedback-review-queue.forget-this-browser-and-sign-out": "Forget this browser and sign out",
+    "feedback-review.feedback-review-queue.refresh-queue": "Refresh queue",
+    "feedback-review.pending-feedback.pending-feedback": "Pending feedback",
+    "feedback-review.pending-feedback.recent-audit-history": "Recent audit history",
+    "feedback-review.footer.admin-moderation-only-author-please-pray-for-the-person-who": "Admin moderation only. Author: Please pray for the person who made this website."
+  }
+}
