@@ -7,6 +7,13 @@ news_desk = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(news_desk)
 
 class NewsDeskTests(unittest.TestCase):
+    def test_el_paso_is_archived_not_upcoming(self):
+        text=(ROOT/'news.html').read_text()
+        self.assertNotIn('Upcoming parish festival',text)
+        self.assertNotIn('El Paso will host',text)
+        self.assertIn('Archived parish announcement',text)
+        self.assertIn('not a post-event report',text)
+
     def test_movie_opening_status(self):
         import json
         catalog=json.loads((ROOT/'locales/en/movie-status-copy.json').read_text())
