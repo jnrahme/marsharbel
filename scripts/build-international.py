@@ -327,6 +327,8 @@ def outputs(root=ROOT):
                 strict_page = any(route == cfg.get('routes', {}).get(code) and code in cfg.get('renderLocales', []) for cfg in registry.get('pageMirrors', {}).values())
                 strict_home = code in registry.get('homepageMirrors', {}).get('renderLocales', []) and route == home_url(registry, code)
                 result[path] = text if strict_home or strict_page else travel_frame(tour_nav(text,root,code),root,code,route,registry)
+    from i18n.travel_metadata import compose_travel_clusters
+    result=compose_travel_clusters(root,registry,result)
     from i18n.same_page_injection import control_outputs
     manifest=read_json(root/'locales/same-page-manifest.pending.json')
     control_copy=read_json(root/'locales/same-page-copy.json')

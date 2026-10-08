@@ -774,7 +774,20 @@
         "de",
         "pl",
         "ru"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/visit-annaya",
+        "ar": "/ar/annaya",
+        "fr": "/fr/annaya",
+        "es": "/es/annaya",
+        "pt": "/pt/annaya",
+        "it": "/it/annaya",
+        "de": "/de/annaya",
+        "pl": "/pl/annaya",
+        "ru": "/ru/annaya",
+        "zh-Hans": "/zh-Hans/visit-annaya",
+        "x-default": "/visit-annaya"
+      }
     },
     "twenty-second-master": {
       "master": "22nd-of-the-month.html",
@@ -824,7 +837,20 @@
         "pl",
         "ru",
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/saint-charbel-pilgrimage",
+        "ar": "/ar/pilgrimage",
+        "fr": "/fr/pelerinage",
+        "es": "/es/peregrinacion",
+        "pt": "/pt/peregrinacao",
+        "it": "/it/pellegrinaggio",
+        "de": "/de/pilgerreise",
+        "pl": "/pl/pielgrzymka",
+        "ru": "/ru/palomnichestvo",
+        "zh-Hans": "/zh-Hans/pilgrimage",
+        "x-default": "/saint-charbel-pilgrimage"
+      }
     },
     "saint-charbel-prayers-master": {
       "master": "saint-charbel-prayers.html",
@@ -906,7 +932,13 @@
       },
       "renderLocales": [
         "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/our-lady-of-lebanon-harissa",
+        "de": "/de/our-lady-of-lebanon-harissa",
+        "zh-Hans": "/zh-Hans/our-lady-of-lebanon-harissa",
+        "x-default": "/our-lady-of-lebanon-harissa"
+      }
     },
     "bekaa-kafra-travel-master": {
       "master": "bekaa-kafra.html",
@@ -916,7 +948,13 @@
       },
       "renderLocales": [
         "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/bekaa-kafra",
+        "de": "/de/bekaa-kafra",
+        "zh-Hans": "/zh-Hans/bekaa-kafra",
+        "x-default": "/bekaa-kafra"
+      }
     },
     "qozhaya-monastery-travel-master": {
       "master": "qozhaya-monastery.html",
@@ -926,7 +964,16 @@
       },
       "renderLocales": [
         "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/qozhaya-monastery",
+        "ar": "/ar/qozhaya-monastery",
+        "fr": "/fr/monastere-qozhaya",
+        "es": "/es/monasterio-qozhaya",
+        "de": "/de/qozhaya-monastery",
+        "zh-Hans": "/zh-Hans/qozhaya-monastery",
+        "x-default": "/qozhaya-monastery"
+      }
     },
     "bkerke-maronite-patriarchate-travel-master": {
       "master": "bkerke-maronite-patriarchate.html",
@@ -936,7 +983,13 @@
       },
       "renderLocales": [
         "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/bkerke-maronite-patriarchate",
+        "de": "/de/bkerke-maronite-patriarchate",
+        "zh-Hans": "/zh-Hans/bkerke-maronite-patriarchate",
+        "x-default": "/bkerke-maronite-patriarchate"
+      }
     },
     "annaya-tour-travel-master": {
       "master": "annaya-tour.html",
@@ -946,7 +999,13 @@
       },
       "renderLocales": [
         "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/annaya-tour",
+        "de": "/de/annaya-tour",
+        "zh-Hans": "/zh-Hans/annaya-tour",
+        "x-default": "/annaya-tour"
+      }
     },
     "saint-charbel-trail-travel-master": {
       "master": "saint-charbel-trail.html",
@@ -956,7 +1015,13 @@
       },
       "renderLocales": [
         "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/saint-charbel-trail",
+        "de": "/de/saint-charbel-trail",
+        "zh-Hans": "/zh-Hans/saint-charbel-trail",
+        "x-default": "/saint-charbel-trail"
+      }
     },
     "saint-charbel-places-lebanon-travel-master": {
       "master": "saint-charbel-places-lebanon.html",
@@ -966,17 +1031,13 @@
       },
       "renderLocales": [
         "de"
-      ]
-    },
-    "visit-annaya-travel-master": {
-      "master": "visit-annaya.html",
-      "english": "/visit-annaya",
-      "routes": {
-        "de": "/de/visit-annaya"
-      },
-      "renderLocales": [
-        "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/saint-charbel-places-lebanon",
+        "de": "/de/saint-charbel-places-lebanon",
+        "zh-Hans": "/zh-Hans/saint-charbel-places-lebanon",
+        "x-default": "/saint-charbel-places-lebanon"
+      }
     },
     "qannoubine-monastery-travel-master": {
       "master": "qannoubine-monastery.html",
@@ -986,7 +1047,16 @@
       },
       "renderLocales": [
         "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/qannoubine-monastery",
+        "ar": "/ar/qannoubine-monastery",
+        "fr": "/fr/monastere-qannoubine",
+        "es": "/es/monasterio-qannoubine",
+        "de": "/de/qannoubine-monastery",
+        "zh-Hans": "/zh-Hans/qannoubine-monastery",
+        "x-default": "/qannoubine-monastery"
+      }
     },
     "travel-travel-master": {
       "master": "travel.html",
@@ -996,7 +1066,19 @@
       },
       "renderLocales": [
         "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/travel",
+        "ar": "/ar/travel",
+        "fr": "/fr/travel",
+        "es": "/es/travel",
+        "pt": "/pt/travel",
+        "it": "/it/travel",
+        "pl": "/pl/travel",
+        "de": "/de/travel",
+        "zh-Hans": "/zh-Hans/travel",
+        "x-default": "/travel"
+      }
     },
     "cedars-of-god-lebanon-travel-master": {
       "master": "cedars-of-god-lebanon.html",
@@ -1006,7 +1088,13 @@
       },
       "renderLocales": [
         "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/cedars-of-god-lebanon",
+        "de": "/de/cedars-of-god-lebanon",
+        "zh-Hans": "/zh-Hans/cedars-of-god-lebanon",
+        "x-default": "/cedars-of-god-lebanon"
+      }
     },
     "qadisha-valley-travel-master": {
       "master": "qadisha-valley.html",
@@ -1016,7 +1104,16 @@
       },
       "renderLocales": [
         "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/qadisha-valley",
+        "ar": "/ar/qadisha-valley",
+        "fr": "/fr/vallee-qadisha",
+        "es": "/es/valle-qadisha",
+        "de": "/de/qadisha-valley",
+        "zh-Hans": "/zh-Hans/qadisha-valley",
+        "x-default": "/qadisha-valley"
+      }
     },
     "saint-charbel-hermitage-travel-master": {
       "master": "saint-charbel-hermitage.html",
@@ -1026,7 +1123,13 @@
       },
       "renderLocales": [
         "de"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/saint-charbel-hermitage",
+        "de": "/de/saint-charbel-hermitage",
+        "zh-Hans": "/zh-Hans/saint-charbel-hermitage",
+        "x-default": "/saint-charbel-hermitage"
+      }
     },
     "our-lady-of-lebanon-harissa-zh-travel-master": {
       "master": "our-lady-of-lebanon-harissa.html",
@@ -1036,7 +1139,13 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/our-lady-of-lebanon-harissa",
+        "de": "/de/our-lady-of-lebanon-harissa",
+        "zh-Hans": "/zh-Hans/our-lady-of-lebanon-harissa",
+        "x-default": "/our-lady-of-lebanon-harissa"
+      }
     },
     "saint-charbel-places-lebanon-zh-travel-master": {
       "master": "saint-charbel-places-lebanon.html",
@@ -1046,7 +1155,13 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/saint-charbel-places-lebanon",
+        "de": "/de/saint-charbel-places-lebanon",
+        "zh-Hans": "/zh-Hans/saint-charbel-places-lebanon",
+        "x-default": "/saint-charbel-places-lebanon"
+      }
     },
     "annaya-tour-zh-travel-master": {
       "master": "annaya-tour.html",
@@ -1056,7 +1171,13 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/annaya-tour",
+        "de": "/de/annaya-tour",
+        "zh-Hans": "/zh-Hans/annaya-tour",
+        "x-default": "/annaya-tour"
+      }
     },
     "qannoubine-monastery-zh-travel-master": {
       "master": "qannoubine-monastery.html",
@@ -1066,7 +1187,16 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/qannoubine-monastery",
+        "ar": "/ar/qannoubine-monastery",
+        "fr": "/fr/monastere-qannoubine",
+        "es": "/es/monasterio-qannoubine",
+        "de": "/de/qannoubine-monastery",
+        "zh-Hans": "/zh-Hans/qannoubine-monastery",
+        "x-default": "/qannoubine-monastery"
+      }
     },
     "cedars-of-god-lebanon-zh-travel-master": {
       "master": "cedars-of-god-lebanon.html",
@@ -1076,7 +1206,13 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/cedars-of-god-lebanon",
+        "de": "/de/cedars-of-god-lebanon",
+        "zh-Hans": "/zh-Hans/cedars-of-god-lebanon",
+        "x-default": "/cedars-of-god-lebanon"
+      }
     },
     "qadisha-valley-zh-travel-master": {
       "master": "qadisha-valley.html",
@@ -1086,7 +1222,16 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/qadisha-valley",
+        "ar": "/ar/qadisha-valley",
+        "fr": "/fr/vallee-qadisha",
+        "es": "/es/valle-qadisha",
+        "de": "/de/qadisha-valley",
+        "zh-Hans": "/zh-Hans/qadisha-valley",
+        "x-default": "/qadisha-valley"
+      }
     },
     "travel-zh-travel-master": {
       "master": "travel.html",
@@ -1096,7 +1241,19 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/travel",
+        "ar": "/ar/travel",
+        "fr": "/fr/travel",
+        "es": "/es/travel",
+        "pt": "/pt/travel",
+        "it": "/it/travel",
+        "pl": "/pl/travel",
+        "de": "/de/travel",
+        "zh-Hans": "/zh-Hans/travel",
+        "x-default": "/travel"
+      }
     },
     "bekaa-kafra-zh-travel-master": {
       "master": "bekaa-kafra.html",
@@ -1106,7 +1263,13 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/bekaa-kafra",
+        "de": "/de/bekaa-kafra",
+        "zh-Hans": "/zh-Hans/bekaa-kafra",
+        "x-default": "/bekaa-kafra"
+      }
     },
     "qozhaya-monastery-zh-travel-master": {
       "master": "qozhaya-monastery.html",
@@ -1116,7 +1279,16 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/qozhaya-monastery",
+        "ar": "/ar/qozhaya-monastery",
+        "fr": "/fr/monastere-qozhaya",
+        "es": "/es/monasterio-qozhaya",
+        "de": "/de/qozhaya-monastery",
+        "zh-Hans": "/zh-Hans/qozhaya-monastery",
+        "x-default": "/qozhaya-monastery"
+      }
     },
     "bkerke-maronite-patriarchate-zh-travel-master": {
       "master": "bkerke-maronite-patriarchate.html",
@@ -1126,7 +1298,13 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/bkerke-maronite-patriarchate",
+        "de": "/de/bkerke-maronite-patriarchate",
+        "zh-Hans": "/zh-Hans/bkerke-maronite-patriarchate",
+        "x-default": "/bkerke-maronite-patriarchate"
+      }
     },
     "visit-annaya-zh-travel-master": {
       "master": "visit-annaya.html",
@@ -1136,7 +1314,20 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/visit-annaya",
+        "ar": "/ar/annaya",
+        "fr": "/fr/annaya",
+        "es": "/es/annaya",
+        "pt": "/pt/annaya",
+        "it": "/it/annaya",
+        "de": "/de/annaya",
+        "pl": "/pl/annaya",
+        "ru": "/ru/annaya",
+        "zh-Hans": "/zh-Hans/visit-annaya",
+        "x-default": "/visit-annaya"
+      }
     },
     "saint-charbel-hermitage-zh-travel-master": {
       "master": "saint-charbel-hermitage.html",
@@ -1146,7 +1337,13 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/saint-charbel-hermitage",
+        "de": "/de/saint-charbel-hermitage",
+        "zh-Hans": "/zh-Hans/saint-charbel-hermitage",
+        "x-default": "/saint-charbel-hermitage"
+      }
     },
     "saint-charbel-trail-zh-travel-master": {
       "master": "saint-charbel-trail.html",
@@ -1156,7 +1353,13 @@
       },
       "renderLocales": [
         "zh-Hans"
-      ]
+      ],
+      "discoveryRoutes": {
+        "en": "/saint-charbel-trail",
+        "de": "/de/saint-charbel-trail",
+        "zh-Hans": "/zh-Hans/saint-charbel-trail",
+        "x-default": "/saint-charbel-trail"
+      }
     }
   },
   "limitedLaunchLocales": [

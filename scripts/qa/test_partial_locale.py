@@ -67,7 +67,8 @@ class PartialLocaleTests(unittest.TestCase):
         cfg=self.registry['locales'].pop('zz')
         cfg['ogLocale']='zh_CN';cfg['selectorAliases']=['zh-TW']
         self.registry['locales']['zh-Hans']=cfg
-        self.registry['ogLocaleOrder'][-1]='zh-Hans'
+        self.registry['ogLocaleOrder']=[c for c in self.registry['ogLocaleOrder'] if c!='zz']
+        if 'zh-Hans' not in self.registry['ogLocaleOrder']:self.registry['ogLocaleOrder'].append('zh-Hans')
         with self.assertRaisesRegex(ValueError, 'Traditional Chinese'):
             validate_registry(self.registry)
 

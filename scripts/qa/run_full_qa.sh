@@ -11,9 +11,11 @@ cd "${ROOT}"
 python3 -m unittest discover -s scripts/qa -p 'test_new_page_locales.py'
 python3 -m unittest discover -s scripts/qa -p 'test_partial_locale.py'
 python3 scripts/qa/probe_partial_build.py
+python3 -m unittest discover -s scripts/qa -p test_travel_metadata.py
 
 python3 scripts/qa/test_travel_equivalence.py
 node scripts/tests/travel_equivalence.cjs
+node scripts/tests/travel_release_proof.cjs
 npx playwright test tests/travel-equivalence.spec.js --project=phone --project=laptop --workers=2
 npx playwright test tests/miracles-english-escape.spec.js --project=phone --project=laptop --workers=2
 python3 scripts/qa/test_prayer_keyed_masters.py

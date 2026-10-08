@@ -100,7 +100,7 @@ def render_page(root,registry,lang,family,route,catalog=None):
                 token=int(tokens[-1]) if isinstance(target,list) else tokens[-1]
                 if target[token] != binding['source']:raise ValueError(f'{family}: changed schema pointer')
                 target[token]=binding['translation']
-        if data.get('@type')=='FAQPage' and schema_contract is None:
+        if data.get('@type')=='FAQPage' and not (schema_contract and any(b['scriptOrdinal']==ordinal for b in schema_contract['bindings'])):
             # Source questions/answers have exact text nodes bound to the same
             # catalog. Resolve by source text, not another authored schema copy.
             lookup={b['source']:copy[b['key']] for b in read_json(root/f'locales/en/{family}-bindings.json')['bindings'] if b['kind']=='text'}
@@ -133,7 +133,7 @@ def render_page(root,registry,lang,family,route,catalog=None):
                     path=urlsplit(item['item']).path
                     a=soup.select_one('header a[href="'+path+'"]')
                     if a:item['name']=a.get_text(' ',strip=True)
-        if family.endswith('-travel-master') and schema_contract is None:
+        if family.endswith('-travel-master'):
             translate_schema(data)
         if family.endswith('-travel-master'):
             def localize_schema_routes(node):

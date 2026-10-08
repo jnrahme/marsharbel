@@ -212,10 +212,23 @@
         "de": {
           "file": "de/pilgerreise.html",
           "path": "/de/pilgerreise",
-          "bodySha256": "e025a82137ee2646016f138e3804d2dab76942f56a7be6e6eccc82e059caeb6c",
+          "bodySha256": "b569dee78687c2f0d624aa62814c2260489ec292fa2d0b3cb294757d8716f397",
           "candidateFileSha256": "f2392b2cb318ee4d392bb9a08d619596542546def20e18918c875f051dd5ce08",
           "catalog": "locales/de/pilgrimage-master-copy.json",
-          "catalogSha256": "eaae14c7df3a5593bd76f5bf9ab45d9bd23ef566fd551168229b01d49f13aa99"
+          "catalogSha256": "c03465eb5a052cf050fedc27b23a652ef474e4e2d3a85828095ef2a364ef09b5",
+          "reviewAmendment": {
+            "reason": "Exact current-English Bekaa Kafra hedge correction only; one main-text hunk.",
+            "previousBodySha256": "e025a82137ee2646016f138e3804d2dab76942f56a7be6e6eccc82e059caeb6c",
+            "contentReview": "parent relay 2026-10-08T01:07:29-04:00: seat 1 CONTENT PASS",
+            "renderedReview": "2026-10-08 local 390 and 1280, JS/no-JS, all full-page sections inspected after lazy-image loading; zero horizontal overflow and page errors",
+            "evidence": [
+              "g1-de-pilgerreise-390-js.png",
+              "g1-de-pilgerreise-1280-js.png",
+              "g1-de-pilgerreise-390-nojs.png",
+              "g1-de-pilgerreise-1280-nojs.png",
+              "g1-de-review-matrix.json"
+            ]
+          }
         },
         "pl": {
           "file": "pl/pielgrzymka.html",

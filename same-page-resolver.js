@@ -35,6 +35,21 @@
         !!proof.catalogReview && !!proof.renderedReview && proof.reviewedContentSha256 === variant.contentSha256 &&
         /^[a-f0-9]{64}$/.test(variant.contentSha256 || '') && variant.sourceSha256 === page.sourceSha256;
     }
+    if (page && variant && proof && proof.type === 'reviewed-travel-release') {
+      var travelSources = ['travel.html','visit-annaya.html','bekaa-kafra.html','qadisha-valley.html','qannoubine-monastery.html','qozhaya-monastery.html','saint-charbel-hermitage.html','saint-charbel-trail.html','saint-charbel-places-lebanon.html','our-lady-of-lebanon-harissa.html','cedars-of-god-lebanon.html','bkerke-maronite-patriarchate.html','saint-charbel-pilgrimage.html','annaya-tour.html'];
+      var sourceLeaf = page.sourcePath.replace(/\.html$/, '');
+      var allowedPaths = ['/' + sourceLeaf, '/de/' + sourceLeaf, '/zh-Hans/' + sourceLeaf];
+      if (sourceLeaf === 'visit-annaya') allowedPaths.push('/de/annaya');
+      if (sourceLeaf === 'saint-charbel-pilgrimage') allowedPaths.push('/de/pilgerreise', '/zh-Hans/pilgrimage');
+      return travelSources.includes(page.sourcePath) && allowedPaths.includes(pathKey(variant.path)) &&
+        variant.status === 'verified' && /^[a-f0-9]{64}$/.test(page.sourceSha256 || '') &&
+        /^[a-f0-9]{40}$/.test(page.sourceRevision || '') && /^[a-f0-9]{64}$/.test(variant.contentSha256 || '') &&
+        variant.sourceSha256 === page.sourceSha256 && proof.reviewedContentSha256 === variant.contentSha256 &&
+        proof.nativeReviewStatus === 'pending-post-release' && !!proof.nativeFollowUp &&
+        proof.contentReviewMode === 'model-only' && !!proof.editorialReview && !!proof.renderedReview &&
+        proof.keyedTextComplete === true && proof.mediaParity === true && proof.linkParity === true &&
+        proof.schemaParity === true && proof.anchorParity === true && proof.interactionParity === true;
+    }
     return !!(page && variant && variant.status === 'verified' &&
       /^[a-f0-9]{64}$/.test(page.sourceSha256 || '') &&
       /^[a-f0-9]{40}$/.test(page.sourceRevision || '') &&

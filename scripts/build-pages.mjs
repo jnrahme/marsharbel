@@ -11,6 +11,7 @@ import { renderPrimaryNav } from './lib/primary-nav.mjs';
 import { renderVideoFallback } from './lib/video-fallback.mjs';
 const videoCopy = JSON.parse(await readFile('locales/en/video-playback.json', 'utf8'));
 const check = process.argv.includes('--check');
+const selected = process.argv.find(arg => arg.startsWith('--pages='))?.slice(8).split(',');
 const SRC = 'src/pages', FRAG = 'partials/fragments';
 const navTemplate = (await readFile('partials/primary-navigation.html', 'utf8')).trim();
 const frags = {};
@@ -32,6 +33,7 @@ async function catalog(name) {
 const used = new Set(); let stale = [], n = 0;
 for (const file of await walk(SRC).catch(() => [])) {
   const rel = path.relative(SRC, file);
+  if (selected && !selected.includes(rel)) continue;
   const source = await readFile(file, 'utf8');
   const copyPattern = /\{\{copy ([a-z0-9-]+) ([a-zA-Z0-9.-]+)\}\}/g;
   for (const match of source.matchAll(copyPattern)) await catalog(match[1]);
@@ -69,7 +71,7 @@ for (const file of await walk(SRC).catch(() => [])) {
   if (current !== built) { stale.push(rel); if (!check) { await mkdir(path.dirname(rel) || '.', { recursive: true }); await writeFile(rel, built); } }
 }
 const unused = Object.keys(frags).filter(k => !used.has(k));
-if (unused.length) { console.error(`Unused fragments: ${unused.join(', ')}`); process.exitCode = 1; }
+if (!selected && unused.length) { console.error(`Unused fragments: ${unused.join(', ')}`); process.exitCode = 1; }
 console.log(`${n} pages built from src/pages; ${stale.length} ${check ? 'out of date' : 'written'}.`);
 if (stale.length) console.log(stale.join('\n'));
 if (check && stale.length) process.exitCode = 1;

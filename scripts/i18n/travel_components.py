@@ -38,7 +38,8 @@ def directory(root,registry,code):
 def travel_frame(text,root,code,route,registry):
     """Idempotent frame: nav has correct route/current state; content is preserved."""
     # A synthetic/unpublished locale has no Travel chrome or catalog requirement.
-    if code not in registry.get('authoredMirrors',{}).get('travel',{}).get('routes',{}):return text
+    has_hub = code in registry.get('authoredMirrors',{}).get('travel',{}).get('routes',{}) or any(cfg['english']=='/travel' and code in cfg.get('renderLocales',[]) for cfg in registry.get('pageMirrors',{}).values())
+    if not has_hub:return text
     cfg=read_json(root/'locales/travel-routes.json');copy=read_json(root/f'locales/{code}/travel.json');common=read_json(root/f'locales/{code}/common.json')
     hub=route_for(root,registry,cfg['hub'],code)
     def header(m):
