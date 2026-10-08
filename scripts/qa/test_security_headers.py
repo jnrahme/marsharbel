@@ -38,9 +38,25 @@ class SecurityHeaderTests(unittest.TestCase):
         self.assertIn('"expr=%{HTTPS} == \'on\'"', self.config)
 
     def test_private_pages(self):
-        self.assertIn('(?:account|submit-testimony|testimony-review|feedback|feedback-review|daily-prayer|daily-prayer-admin)', self.config)
+        self.assertIn('(?:account|submit-testimony|testimony-review|feedback|feedback-review|daily-prayer|daily-prayer-admin|daily-prayer-result)', self.config)
         self.assertIn('Header always set Cache-Control "no-store, max-age=0"', self.config)
         self.assertIn('Header always set X-Robots-Tag "noindex, nofollow, noarchive"', self.config)
+
+    def files_block(self, name):
+        match = re.search(r'<Files "' + re.escape(name) + r'">(.*?)</Files>', self.config, re.S)
+        self.assertIsNotNone(match, name)
+        return match.group(1)
+
+    def test_moderation_page_headers_pinned(self):
+        # Union-merge lesson (2026-10-08): these directives are security-relevant and must
+        # never be silently loosened by a merge; pin them exactly.
+        for page in ('testimony-review.html', 'feedback-review.html', 'daily-prayer-admin.html'):
+            block = self.files_block(page)
+            self.assertIn('Header always set X-Robots-Tag "noindex, nofollow, noarchive"', block, page)
+            self.assertIn('Header always set Referrer-Policy "no-referrer"', block, page)
+        result = self.files_block('daily-prayer-result.html')
+        self.assertIn('Header always set X-Robots-Tag "noindex, follow"', result)
+        self.assertIn('Header always set Referrer-Policy "no-referrer"', result)
 
     def test_supabase_cdn_integrity(self):
         for filename in ('account.html', 'submit-testimony.html', 'testimonies.html', 'testimony-review.html'):
