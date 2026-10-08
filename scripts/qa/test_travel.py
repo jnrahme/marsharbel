@@ -8,6 +8,7 @@ from i18n.catalog import read_json,published_home_locales
 from i18n.travel_mirror import render_travel
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
+from i18n.runtime_labels import ensure_runtime_labels
 from i18n.same_page_injection import inject_control
 from i18n.travel_metadata import compose_travel_clusters
 def fc(t):return inject_control(t,ROOT,read_json(ROOT/'locales/same-page-manifest.pending.json'),read_json(ROOT/'locales/same-page-copy.json'))
@@ -17,7 +18,7 @@ class TravelTests(unittest.TestCase):
   pages=render_travel(ROOT,registry)
   self.assertEqual(len(pages),len(registry['authoredMirrors']['travel']['routes']))
   for path,text in pages.items():
-   self.assertEqual(path.read_text(),fc(compose_travel_clusters(ROOT,registry,{path:travel_frame(tour_nav(text,ROOT,'en' if path.parent==ROOT else path.parent.name),ROOT,'en' if path.parent==ROOT else path.parent.name,'/'+str(path.relative_to(ROOT)).removesuffix('.html'),registry)})[path]))
+   self.assertEqual(path.read_text(),fc(ensure_runtime_labels(compose_travel_clusters(ROOT,registry,{path:travel_frame(tour_nav(text,ROOT,'en' if path.parent==ROOT else path.parent.name),ROOT,'en' if path.parent==ROOT else path.parent.name,'/'+str(path.relative_to(ROOT)).removesuffix('.html'),registry)})[path],ROOT,'en' if path.parent==ROOT else path.parent.name,registry)))
    soup=BeautifulSoup(text,'html.parser')
    self.assertEqual(len(soup.select('main')),1)
    self.assertEqual(len(soup.select('a.skip-link')),1)

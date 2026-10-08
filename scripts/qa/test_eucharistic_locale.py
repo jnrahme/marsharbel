@@ -7,6 +7,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from i18n.catalog import read_json
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
+from i18n.runtime_labels import ensure_runtime_labels
 from i18n.same_page_injection import inject_control
 from i18n.catalog import read_json as _read_json_fc
 def fc(t):return inject_control(t,ROOT,_read_json_fc(ROOT/'locales/same-page-manifest.pending.json'),_read_json_fc(ROOT/'locales/same-page-copy.json'))
@@ -40,7 +41,7 @@ class EucharisticLocaleTests(unittest.TestCase):
             for slug in ('index',*SLUGS):
                 route=ROOT/lang/'miracles/eucharistic'/f'{slug}.html'
                 translated=outputs[route]
-                self.assertEqual(route.read_text(),fc(travel_frame(tour_nav(translated,ROOT,lang),ROOT,lang,'/'+lang+'/miracles/eucharistic/'+('' if slug=='index' else slug),read_json(ROOT/"locales/registry.json"))),route)
+                self.assertEqual(route.read_text(),fc(ensure_runtime_labels(travel_frame(tour_nav(translated,ROOT,lang),ROOT,lang,'/'+lang+'/miracles/eucharistic/'+('' if slug=='index' else slug),read_json(ROOT/"locales/registry.json")),ROOT,lang,read_json(ROOT/"locales/registry.json"))),route)
                 source=(ROOT/'miracles/eucharistic'/f'{slug}.html').read_text()
                 a,b=Shape(source),Shape(translated)
                 self.assertEqual(a.tags,b.tags,(lang,slug))

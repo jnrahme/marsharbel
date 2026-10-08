@@ -16,6 +16,7 @@ step "international build, i18n policy, same-page control"
 python3 scripts/build-international.py --check
 python3 scripts/qa/check_i18n_policy.py
 python3 scripts/build-same-page-control.py --check
+python3 scripts/qa/check_runtime_labels.py
 step "SEO, sitemap lastmod, specs"
 python3 scripts/qa/check_seo.py
 python3 scripts/sitemap_lastmod.py --check
