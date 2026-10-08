@@ -20,14 +20,16 @@
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/videos" />
   <!-- hreflang:end -->
   <link rel="stylesheet" href="video-playback.css" />
+  <link rel="stylesheet" href="media-subnav.css" />
 </head>
 <body>
   {{> skip-link}}
   {{> header-open-1}}{{> primary-nav}}{{> header-close-1}}
 
-  <main id="main-content" class="site-shell" tabindex="-1">
+  <main id="main-content" class="site-shell media-hub" tabindex="-1">
+    <nav class="media-subnav" aria-label="Media"><span class="media-subnav-label">Media</span><a href="./music">Music</a><a href="./videos" aria-current="page">Video</a><a href="./gallery">Gallery</a></nav>
     <section class="hero">
-      <span class="kicker">Videos</span>
+      <span class="kicker">Video</span>
       <h1>Saint Charbel on Film</h1>
       <p>Documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - gathered in one place, each linked back to the page that tells its story carefully.</p>
       <div class="cta-row">
@@ -264,6 +266,7 @@
   <script defer src="app.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
+  <script defer src="media-motion.js"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
 </body>
 </html>

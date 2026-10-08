@@ -1,0 +1,63 @@
+/* Media section switcher shared by Music, Video and Gallery. */
+.media-subnav { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 1.25rem 0 1.5rem; }
+.media-subnav-label { margin-inline-end: .5rem; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--theme-ink-soft); font-weight: 700; }
+.media-subnav a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: .45rem 1.1rem; border-radius: 999px;
+  border: 1px solid var(--theme-line); background: var(--theme-wash); color: var(--theme-ink);
+  font-weight: 600; text-decoration: none; transition: background-color .15s ease, border-color .15s ease;
+}
+.media-subnav a[aria-current="page"] { background: var(--theme-surface-raised); border-color: var(--theme-accent); }
+.media-subnav a:focus-visible { outline: 3px solid var(--theme-accent); outline-offset: 3px; }
+@media (hover: hover) and (pointer: fine) { .media-subnav a:hover { background: var(--theme-surface-raised); border-color: var(--theme-accent); } }
+@media (prefers-reduced-motion: reduce) { .media-subnav a { transition: none; } }
+
+/* Motion: halo, scroll reveal, pointer tilt with a light sheen, and a turning record. Transforms and opacity only. */
+.media-hub .hero, .gallery-page .hero { position: relative; isolation: isolate; }
+.media-hub .hero::before, .gallery-page .hero::before {
+  content: ""; position: absolute; z-index: -1; inset-block-start: -4rem; inset-inline-end: 2%; width: min(34rem, 70vw); aspect-ratio: 1; border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent, color-mix(in srgb, var(--theme-accent) 38%, transparent), transparent 40%, color-mix(in srgb, var(--theme-accent) 22%, transparent), transparent 80%);
+  -webkit-mask: radial-gradient(circle, transparent 58%, #000 59% 61%, transparent 62%); mask: radial-gradient(circle, transparent 58%, #000 59% 61%, transparent 62%);
+  opacity: .8; transform: perspective(900px) rotateX(62deg) rotateZ(0deg); animation: media-halo 40s linear infinite; pointer-events: none;
+}
+@keyframes media-halo { to { transform: perspective(900px) rotateX(62deg) rotateZ(360deg); } }
+.media-hub .song-lead, .media-hub .song-list > .card, .media-hub .grid-2 > .card, .gallery-page figure {
+  --rx: 0deg; --ry: 0deg; position: relative; transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), border-color .2s ease;
+}
+.media-hub .song-lead::after, .media-hub .song-list > .card::after, .media-hub .grid-2 > .card::after, .gallery-page figure::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .25s ease;
+  background: radial-gradient(circle at var(--sx, 50%) var(--sy, 0%), rgba(255,255,255,.14), transparent 55%);
+}
+.media-hub .song-links li { transition: transform .25s cubic-bezier(.2,.7,.2,1); }
+.media-hub .song-disc { display: none; }
+@media (min-width: 820px) {
+  .media-hub .song-lead { grid-template-columns: minmax(0, 1.3fr) 13rem minmax(0, 1fr); align-items: center; }
+  .media-hub .song-disc { display: block; perspective: 600px; }
+  .media-hub .song-disc span {
+    display: block; aspect-ratio: 1; border-radius: 50%; transform: rotateX(48deg) rotateZ(0deg);
+    background:
+      radial-gradient(circle, var(--theme-accent) 0 11%, #120d0a 11.5% 13%, transparent 13.5%),
+      repeating-radial-gradient(circle, #19130f 0 2px, #2c231c 2px 4px),
+      conic-gradient(from 20deg, rgba(255,255,255,.2), transparent 25%, rgba(255,255,255,.14) 50%, transparent 75%, rgba(255,255,255,.2));
+    box-shadow: 0 2rem 3rem rgba(0,0,0,.5), 0 0 0 .35rem rgba(255,255,255,.04);
+    animation: media-disc-turn 9s linear infinite;
+  }
+}
+@keyframes media-disc-turn { to { transform: rotateX(48deg) rotateZ(360deg); } }
+@supports (animation-timeline: view()) {
+  .media-hub .song-list > .card, .media-hub .song-links li, .media-hub .grid-2 > .card, .gallery-page figure, .media-hub .media-photo {
+    animation: media-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 40%;
+  }
+}
+@keyframes media-rise { from { opacity: 0; translate: 0 2rem; scale: .96; } to { opacity: 1; translate: 0 0; scale: 1; } }
+@media (hover: hover) and (pointer: fine) {
+  .media-hub .song-lead:hover::after, .media-hub .song-list > .card:hover::after, .media-hub .grid-2 > .card:hover::after, .gallery-page figure:hover::after { opacity: 1; }
+  .media-hub .song-list > .card:hover, .media-hub .grid-2 > .card:hover, .gallery-page figure:hover { border-color: var(--theme-accent); }
+  .media-hub .song-lead:hover .song-disc span { animation-duration: 3s; }
+  .media-hub .song-links li:hover { transform: translateY(-3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .media-hub .hero::before, .gallery-page .hero::before, .media-hub .song-disc span { animation: none; }
+  .media-hub .song-list > .card, .media-hub .song-links li, .media-hub .grid-2 > .card, .gallery-page figure, .media-hub .media-photo { animation: none; transition: none; transform: none; }
+}
+.media-hub, .gallery-page { overflow-x: clip; }
