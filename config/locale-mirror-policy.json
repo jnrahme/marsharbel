@@ -1544,12 +1544,8 @@
       "route": "/de/travel",
       "master": "travel.html",
       "masterRoute": "/travel",
-      "family": "travel",
-      "status": "migration-debt",
-      "baseMainParity": true,
-      "baseCssParity": true,
-      "baseImagesParity": true,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "family": "travel-travel-master",
+      "status": "strict"
     },
     "pl/annaya.html": {
       "locale": "pl",
@@ -2057,6 +2053,248 @@
       "baseRevision": "6c3a34486830eef06dc6eda2290aca91687c5cc0",
       "normalizers": [
         "launch-availability-annotations"
+      ]
+    },
+    "zh-Hans/pilgrimage.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/pilgrimage",
+      "master": "saint-charbel-pilgrimage.html",
+      "masterRoute": "/saint-charbel-pilgrimage",
+      "family": "pilgrimage-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "de/our-lady-of-lebanon-harissa.html": {
+      "locale": "de",
+      "route": "/de/our-lady-of-lebanon-harissa",
+      "master": "our-lady-of-lebanon-harissa.html",
+      "masterRoute": "/our-lady-of-lebanon-harissa",
+      "family": "our-lady-of-lebanon-harissa-travel-master",
+      "status": "strict"
+    },
+    "de/bekaa-kafra.html": {
+      "locale": "de",
+      "route": "/de/bekaa-kafra",
+      "master": "bekaa-kafra.html",
+      "masterRoute": "/bekaa-kafra",
+      "family": "bekaa-kafra-travel-master",
+      "status": "strict"
+    },
+    "de/qozhaya-monastery.html": {
+      "locale": "de",
+      "route": "/de/qozhaya-monastery",
+      "master": "qozhaya-monastery.html",
+      "masterRoute": "/qozhaya-monastery",
+      "family": "qozhaya-monastery-travel-master",
+      "status": "strict"
+    },
+    "de/bkerke-maronite-patriarchate.html": {
+      "locale": "de",
+      "route": "/de/bkerke-maronite-patriarchate",
+      "master": "bkerke-maronite-patriarchate.html",
+      "masterRoute": "/bkerke-maronite-patriarchate",
+      "family": "bkerke-maronite-patriarchate-travel-master",
+      "status": "strict"
+    },
+    "de/annaya-tour.html": {
+      "locale": "de",
+      "route": "/de/annaya-tour",
+      "master": "annaya-tour.html",
+      "masterRoute": "/annaya-tour",
+      "family": "annaya-tour-travel-master",
+      "status": "strict"
+    },
+    "de/saint-charbel-trail.html": {
+      "locale": "de",
+      "route": "/de/saint-charbel-trail",
+      "master": "saint-charbel-trail.html",
+      "masterRoute": "/saint-charbel-trail",
+      "family": "saint-charbel-trail-travel-master",
+      "status": "strict"
+    },
+    "de/saint-charbel-places-lebanon.html": {
+      "locale": "de",
+      "route": "/de/saint-charbel-places-lebanon",
+      "master": "saint-charbel-places-lebanon.html",
+      "masterRoute": "/saint-charbel-places-lebanon",
+      "family": "saint-charbel-places-lebanon-travel-master",
+      "status": "strict"
+    },
+    "de/qannoubine-monastery.html": {
+      "locale": "de",
+      "route": "/de/qannoubine-monastery",
+      "master": "qannoubine-monastery.html",
+      "masterRoute": "/qannoubine-monastery",
+      "family": "qannoubine-monastery-travel-master",
+      "status": "strict"
+    },
+    "de/cedars-of-god-lebanon.html": {
+      "locale": "de",
+      "route": "/de/cedars-of-god-lebanon",
+      "master": "cedars-of-god-lebanon.html",
+      "masterRoute": "/cedars-of-god-lebanon",
+      "family": "cedars-of-god-lebanon-travel-master",
+      "status": "strict"
+    },
+    "de/qadisha-valley.html": {
+      "locale": "de",
+      "route": "/de/qadisha-valley",
+      "master": "qadisha-valley.html",
+      "masterRoute": "/qadisha-valley",
+      "family": "qadisha-valley-travel-master",
+      "status": "strict"
+    },
+    "de/saint-charbel-hermitage.html": {
+      "locale": "de",
+      "route": "/de/saint-charbel-hermitage",
+      "master": "saint-charbel-hermitage.html",
+      "masterRoute": "/saint-charbel-hermitage",
+      "family": "saint-charbel-hermitage-travel-master",
+      "status": "strict"
+    },
+    "zh-Hans/our-lady-of-lebanon-harissa.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/our-lady-of-lebanon-harissa",
+      "master": "our-lady-of-lebanon-harissa.html",
+      "masterRoute": "/our-lady-of-lebanon-harissa",
+      "family": "our-lady-of-lebanon-harissa-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/saint-charbel-places-lebanon.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/saint-charbel-places-lebanon",
+      "master": "saint-charbel-places-lebanon.html",
+      "masterRoute": "/saint-charbel-places-lebanon",
+      "family": "saint-charbel-places-lebanon-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/annaya-tour.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/annaya-tour",
+      "master": "annaya-tour.html",
+      "masterRoute": "/annaya-tour",
+      "family": "annaya-tour-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/qannoubine-monastery.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/qannoubine-monastery",
+      "master": "qannoubine-monastery.html",
+      "masterRoute": "/qannoubine-monastery",
+      "family": "qannoubine-monastery-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/cedars-of-god-lebanon.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/cedars-of-god-lebanon",
+      "master": "cedars-of-god-lebanon.html",
+      "masterRoute": "/cedars-of-god-lebanon",
+      "family": "cedars-of-god-lebanon-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/qadisha-valley.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/qadisha-valley",
+      "master": "qadisha-valley.html",
+      "masterRoute": "/qadisha-valley",
+      "family": "qadisha-valley-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/travel.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/bekaa-kafra.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/bekaa-kafra",
+      "master": "bekaa-kafra.html",
+      "masterRoute": "/bekaa-kafra",
+      "family": "bekaa-kafra-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/qozhaya-monastery.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/qozhaya-monastery",
+      "master": "qozhaya-monastery.html",
+      "masterRoute": "/qozhaya-monastery",
+      "family": "qozhaya-monastery-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/bkerke-maronite-patriarchate.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/bkerke-maronite-patriarchate",
+      "master": "bkerke-maronite-patriarchate.html",
+      "masterRoute": "/bkerke-maronite-patriarchate",
+      "family": "bkerke-maronite-patriarchate-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/visit-annaya.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/visit-annaya",
+      "master": "visit-annaya.html",
+      "masterRoute": "/visit-annaya",
+      "family": "visit-annaya-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/saint-charbel-hermitage.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/saint-charbel-hermitage",
+      "master": "saint-charbel-hermitage.html",
+      "masterRoute": "/saint-charbel-hermitage",
+      "family": "saint-charbel-hermitage-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/saint-charbel-trail.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/saint-charbel-trail",
+      "master": "saint-charbel-trail.html",
+      "masterRoute": "/saint-charbel-trail",
+      "family": "saint-charbel-trail-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
       ]
     }
   }
