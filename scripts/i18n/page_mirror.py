@@ -135,6 +135,17 @@ def render_page(root,registry,lang,family,route,catalog=None):
                     if a:item['name']=a.get_text(' ',strip=True)
         if family.endswith('-travel-master') and schema_contract is None:
             translate_schema(data)
+        if family.endswith('-travel-master'):
+            def localize_schema_routes(node):
+                if isinstance(node,dict):
+                    for key,value in list(node.items()):
+                        if key == 'item' and isinstance(value,str) and value.startswith(registry['site']):
+                            path=value.removeprefix(registry['site']).rstrip('/') or '/'
+                            if path in twins:node[key]=registry['site']+twins[path]
+                        else:localize_schema_routes(value)
+                elif isinstance(node,list):
+                    for value in node:localize_schema_routes(value)
+            localize_schema_routes(data)
         script.string=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
     runtime=read_json(root/f'locales/{lang}/runtime.json');runtime['language.choose']=read_json(root/f'locales/{lang}/common.json')['navigation.chooseLanguage'];runtime['nativeNames']={c:cfg['nativeName'] for c,cfg in registry['locales'].items()}
     node=soup.new_tag('script',type='application/json',id='sc-runtime-labels');node.string=json.dumps(runtime,ensure_ascii=False).replace('<','\\u003c');soup.head.append(node)
