@@ -78,6 +78,17 @@ class PartialLocaleTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'text-only'):
             signature(hostile,'/zz/travel',('partial-home-disclosure',))
 
+    def test_runtime_inventory_includes_partial_locale_without_home_or_proof(self):
+        from i18n.same_page_injection import with_english_sources, _english_source_cache
+        _english_source_cache.clear()
+        seed = read_json(ROOT / 'locales/same-page-manifest.pending.json')
+        result = with_english_sources(ROOT, seed)
+        self.assertEqual(result['languages'], list(read_json(ROOT / 'locales/registry.json')['locales']))
+        self.assertIn('zh-Hans', result['languages'])
+        self.assertEqual(result['aliases']['zh-hans'], 'zh-Hans')
+        self.assertNotIn('zh-Hans', result['publishedHomes'])
+        self.assertEqual(result['pages'], seed['pages'])
+
     def test_existing_homes_unchanged(self):
         for c in self.registry['homePublicationLocales']:
             self.assertEqual(home_url(self.registry, c), '/' if c == 'en' else f'/{c}/')

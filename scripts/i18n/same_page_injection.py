@@ -63,6 +63,9 @@ def with_english_sources(root, manifest):
             route=cfg['routes'][code]
             if code!='en':sources.setdefault(route.rstrip('/'),english)
     result['englishSources'] = sources
+    # Registered partial locales belong in the selector, without inventing homes or proofs.
+    result['languages'] = list(registry['locales'])
+    result['aliases'] = {alias.lower():code for code,cfg in registry['locales'].items() for alias in [code,*cfg.get('selectorAliases',[])]}
     result['publishedHomes'] = {code: home_url(registry, code) for code in published_home_locales(registry)}
     _english_source_cache[key] = result
     return result
