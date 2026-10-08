@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "daily-prayer.html",
-  "masterSha256": "3fd68cf7c61684b98310fc0deaf52928b14441a717e69d2a3311a0fe73905d88",
+  "masterSha256": "0d645b52d295b209754fb0e737065936ed87d88ca7b4ae2be2f328b03b4b06d1",
   "sourceRevision": "d51852d0",
   "bindings": [
     {
@@ -99,13 +99,6 @@
       "key": "daily-prayer.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "daily-prayer.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -587,7 +580,6 @@
     "daily-prayer.header.legacy": "Legacy",
     "daily-prayer.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
     "daily-prayer.header.full-history": "Full History",
-    "daily-prayer.header.gallery": "Gallery",
     "daily-prayer.header.miracles": "Miracles",
     "daily-prayer.header.miracles-reports": "Miracles & Reports",
     "daily-prayer.header.eucharistic-miracles": "Eucharistic Miracles",

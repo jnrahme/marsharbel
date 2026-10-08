@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "visit-annaya.html",
-  "masterSha256": "498a5fc866a622942d526896a687c465925676bd7ae710b7f7bb75c01b181d95",
+  "masterSha256": "2bcca3c2e664eaa28a045e13856075bce71c52786398b13407c7b7de14157bfc",
   "sourceRevision": "1be64cf5",
   "bindings": [
     {
@@ -99,13 +99,6 @@
       "key": "visit-annaya.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "visit-annaya.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1420,7 +1413,6 @@
     "visit-annaya.header.legacy": "Legacy",
     "visit-annaya.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
     "visit-annaya.header.full-history": "Full History",
-    "visit-annaya.header.gallery": "Gallery",
     "visit-annaya.header.miracles": "Miracles",
     "visit-annaya.header.miracles-reports": "Miracles & Reports",
     "visit-annaya.header.eucharistic-miracles": "Eucharistic Miracles",

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "saint-charbel-trail.html",
-  "masterSha256": "522082a1f388244021ccebb4a0202209671f6753bdfe0713b91edc80d2c76564",
+  "masterSha256": "191604a98612bd5549f52bc483f59578cc478604043ee9170f90e1c6893dda12",
   "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
   "bindings": [
     {
@@ -71,13 +71,6 @@
       "key": "travel.header.fullHistory",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "travel.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -884,7 +877,6 @@
     "travel.header.legacy": "Legacy",
     "travel.header.encyclopedia": "Saint Charbel Encyclopedia",
     "travel.header.fullHistory": "Full History",
-    "travel.header.gallery": "Gallery",
     "travel.header.miracles": "Miracles",
     "travel.header.miraclesAndReports": "Miracles & Reports",
     "travel.header.eucharisticMiracles": "Eucharistic Miracles",

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "6c03847269f3d4dd40c671101e10be78c5affaa525785bb9d67a0fdfeed8b16c",
+  "masterSha256": "a3aa829bda90151dbc7b588dffecab754978d7f459c98c91b00edaa255e32c1c",
   "sourceRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
   "bindings": [
     {
@@ -36,13 +36,6 @@
       "key": "home.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1411,7 +1404,6 @@
     "home.header.legacy": "Legacy",
     "home.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
     "home.header.full-history": "Full History",
-    "home.header.gallery": "Gallery",
     "home.header.miracles": "Miracles",
     "home.header.miracles-reports": "Miracles & Reports",
     "home.header.eucharistic-miracles": "Eucharistic Miracles",

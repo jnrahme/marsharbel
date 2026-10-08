@@ -903,7 +903,10 @@
     "Saint Charbel Encyclopedia": "Enzyklopädie des heiligen Charbel",
     "Children's Books": "Kinderbücher",
     "News": "Neuigkeiten",
-    "Annaya Online Tour": "Annaya: Online-Rundgang"
+    "Annaya Online Tour": "Annaya: Online-Rundgang",
+    "Media": "Medien",
+    "Music": "Musik",
+    "Video": "Video"
   },
   "footer": "Historische Daten nach vatikanischen und maronitischen Quellen. Aktualisiert am 2. März 2026. Autor: Bitte beten Sie für den Menschen, der diese Website erstellt hat.",
   "faqHeading": "Häufige Fragen",
@@ -939,6 +942,15 @@
     },
     "main img[src='./media/annaya/charbel-tomb.webp']": {
       "alt": "Geschnitzter hölzerner Grabschrein in einer Kapelle mit Steingewölbe in Annaya; dahinter eine hängende Öllampe und ein gerahmtes Porträt des heiligen Charbel"
+    },
+    "main #cause .history-table-wrap": {
+      "aria-label": "Heiligsprechung: Tabelle, horizontal scrollen, um alle Spalten zu sehen"
+    },
+    "main #status .history-table-wrap": {
+      "aria-label": "Dokumente und Überlieferung: Tabelle, horizontal scrollen, um alle Spalten zu sehen"
+    },
+    "main .history-table-wrap:not(#cause .history-table-wrap):not(#status .history-table-wrap)": {
+      "aria-label": "Auf einen Blick: Tabelle, horizontal scrollen, um alle Spalten zu sehen"
     }
   },
   "alternates": {

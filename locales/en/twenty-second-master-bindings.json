@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "22nd-of-the-month.html",
-  "masterSha256": "4f7a6fec1bbe11549438bfb4d81946e59b7979628531a2493ae96b8b6be17df1",
+  "masterSha256": "b8d63a9640164cfc56cdb555de97a0e4952b8b37c21df33141e5fd9307e40e88",
   "sourceRevision": "c8616c9a",
   "bindings": [
     {
@@ -99,13 +99,6 @@
       "key": "twentysecond.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "twentysecond.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1091,7 +1084,6 @@
     "twentysecond.header.legacy": "Legacy",
     "twentysecond.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
     "twentysecond.header.full-history": "Full History",
-    "twentysecond.header.gallery": "Gallery",
     "twentysecond.header.miracles": "Miracles",
     "twentysecond.header.miracles-reports": "Miracles & Reports",
     "twentysecond.header.eucharistic-miracles": "Eucharistic Miracles",

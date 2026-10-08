@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "bekaa-kafra.html",
-  "masterSha256": "9b86b3a4313f08d973fbdf576d2764096e21a3026ea655c80ac199386d8f0b01",
+  "masterSha256": "01cba0586b1097cf3c5bad0e823e6cf11ef21fb0c17214b5ab89add623a5b022",
   "sourceRevision": "1be64cf5",
   "bindings": [
     {
@@ -99,13 +99,6 @@
       "key": "bekaa-kafra.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "bekaa-kafra.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1084,7 +1077,6 @@
     "bekaa-kafra.header.legacy": "Legacy",
     "bekaa-kafra.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
     "bekaa-kafra.header.full-history": "Full History",
-    "bekaa-kafra.header.gallery": "Gallery",
     "bekaa-kafra.header.miracles": "Miracles",
     "bekaa-kafra.header.miracles-reports": "Miracles & Reports",
     "bekaa-kafra.header.eucharistic-miracles": "Eucharistic Miracles",
