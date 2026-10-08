@@ -79,8 +79,8 @@
   border: 1px solid var(--theme-line); background: var(--theme-wash); color: var(--theme-ink); text-decoration: none;
 }
 .media-hub .pl-btn:focus-visible, .media-hub .track-play:focus-visible { outline: 3px solid var(--theme-accent); outline-offset: 3px; }
-.media-hub .tracklist { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; max-height: 34rem; overflow-y: auto; overscroll-behavior: contain; }
-@media (max-width: 899px) { .media-hub .tracklist { max-height: none; } }
+.media-hub .tracklist { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; max-height: 34rem; overflow-y: auto; }
+@media (max-width: 899px) { .media-hub .tracklist { max-height: none; overflow: visible; } }
 .media-hub .track { border: 1px solid var(--theme-line); border-radius: 14px; background: var(--theme-wash); transition: border-color .2s ease, background-color .2s ease; }
 .media-hub .track[aria-current="true"] { border-color: var(--theme-accent); background: var(--theme-surface-raised); }
 .media-hub .track-play {
