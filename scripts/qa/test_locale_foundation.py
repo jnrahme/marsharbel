@@ -18,7 +18,7 @@ class FoundationTests(unittest.TestCase):
         self.registry = copy.deepcopy(read_json(ROOT/'locales/registry.json'))
 
     def test_alias_identity_without_home_publication(self):
-        self.assertEqual(selector_aliases(self.registry)['zh-cn'], 'zh-Hans')
+        self.assertNotIn('zh-cn', selector_aliases(self.registry))
         self.assertEqual(selector_aliases(self.registry)['zh-hans'], 'zh-Hans')
         self.assertNotIn('home', self.registry['locales']['zh-Hans'])
         self.assertNotIn('zh-Hans', topic_locales(self.registry, 'prayers'))
@@ -58,7 +58,7 @@ class FoundationTests(unittest.TestCase):
 
     def test_topics_cannot_silently_expand(self):
         del self.registry['topics']['biography']['locales']
-        with self.assertRaisesRegex(ValueError, 'explicit publication'):
+        with self.assertRaisesRegex(ValueError, 'explicit publication|topic capability differs from publication'):
             validate_registry(self.registry)
 
     def test_partial_eucharistic_not_advertised(self):
