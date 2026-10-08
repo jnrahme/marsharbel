@@ -581,6 +581,30 @@ const loadClipManifest = async () => {
       return;
     }
     clipManifest = await response.json();
+    // Rosary rebuild rail (PR #666): overlay re-recorded narration for any
+    // decade marked live in the rebuild manifest. Library prayers still play
+    // via the auto-prayer sequence; mysteries not yet re-recorded are untouched.
+    try {
+      const rebuildResponse = await fetch(`${basePath}media/rosary-rebuild/manifest.json`, { cache: 'no-store' });
+      if (rebuildResponse.ok) {
+        const rebuildManifest = await rebuildResponse.json();
+        Object.entries(rebuildManifest?.mysteries || {}).forEach(([mysteryKey, entry]) => {
+          if (entry?.status !== 'live' || !entry?.steps) return;
+          const overlay = {};
+          Object.entries(entry.steps).forEach(([stepKey, clip]) => {
+            if (clip?.path) {
+              overlay[stepKey] = { path: clip.path, duration_sec: clip.duration_sec || 0 };
+            }
+          });
+          if (Object.keys(overlay).length) {
+            clipManifest.mysteries = clipManifest.mysteries || {};
+            clipManifest.mysteries[mysteryKey] = overlay;
+          }
+        });
+      }
+    } catch (_) {
+      // Rebuild overlay is optional; the library manifest alone still plays.
+    }
     clipAvailable = Boolean(clipForStage(stageIndex));
   } catch (_) {
     clipManifest = null;
