@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from i18n.reviewed_history import digest
 from i18n.travel_metadata import travel_clusters
 
-CHECKS={'keyedTextComplete','mediaParity','linkParity','schemaParity','anchorParity','interactionParity'}
+CHECKS=('keyedTextComplete','mediaParity','linkParity','schemaParity','anchorParity','interactionParity')
 def nonempty(value):return isinstance(value,str) and bool(value.strip())
 def git_blob(root,revision,file):
     try:return subprocess.check_output(['git','show',revision+':'+file],cwd=root,stderr=subprocess.DEVNULL)
@@ -59,7 +59,7 @@ def release_manifest(root,texts,manifest):
                 if Path(pin['file']).is_absolute() or '..' in Path(pin['file']).parts:raise ValueError('Travel release unsafe catalog path')
                 if hashlib.sha256(git_blob(root,record['reviewedHead'],pin['file'])).hexdigest()!=pin['sha256']:raise ValueError('Travel release reviewed catalog mismatch')
                 if hashlib.sha256((root/pin['file']).read_bytes()).hexdigest()!=pin['sha256']:raise ValueError('Travel release catalog drift')
-            if not isinstance(v.get('checks'),dict) or set(v['checks'])!=CHECKS or not all(v['checks'][k] is True for k in CHECKS):raise ValueError('Travel release equivalence incomplete')
+            if not isinstance(v.get('checks'),dict) or set(v['checks'])!=set(CHECKS) or not all(v['checks'][k] is True for k in CHECKS):raise ValueError('Travel release equivalence incomplete')
             if not all(nonempty(v.get(k)) for k in ('editorialReview','renderedReview','nativeFollowUp')):raise ValueError('Travel release evidence missing')
         # Preserve already-reviewed other languages in established families.
         candidates=[p for p in out['pages'].values() if p.get('sourcePath')==source.lstrip('/')+'.html' and any(code not in ('en','de','zh-Hans') and v.get('status')=='verified' for code,v in p.get('variants',{}).items())]

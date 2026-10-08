@@ -43,6 +43,12 @@ class ReleaseTests(unittest.TestCase):
    with self.assertRaisesRegex(ValueError,'reviewed other-locale source drift'):release_manifest(root,{}, {'pages':{'stale':stale}})
    resolver=ROOT/'same-page-resolver.js'
    result=subprocess.check_output(['node','-e',"const api=require(process.argv[1]);let m=JSON.parse(process.argv[2]);m.version=1;m.languages=['en','de','zh-Hans'];console.log(JSON.stringify(api.resolve(m,'https://marsharbel.com/travel','de','en')))",str(resolver),json.dumps(out)],text=True);self.assertTrue(json.loads(result)['available'])
+   seed_outputs=[]
+   for seed in ('1','2'):
+    env=dict(__import__('os').environ,PYTHONHASHSEED=seed)
+    driver="import sys,json;from pathlib import Path;sys.path.insert(0,sys.argv[1]);from i18n.travel_release import release_manifest;print(json.dumps(release_manifest(Path(sys.argv[2]),{}, {'pages':{}}),ensure_ascii=False))"
+    seed_outputs.append(subprocess.check_output([sys.executable,'-c',driver,str(ROOT/'scripts'),str(root)],env=env))
+   self.assertEqual(*seed_outputs,'enabled release must serialize identically across hash seeds')
    mutations=[lambda r:r['groups']['/travel']['variants']['de']['checks'].update(type='other',nativeSampleReview='invented'),lambda r:r.update(ownerEvidenceRefs={'fake':'value'}),lambda r:r.update(independentReviewRef=True),lambda r:r.update(reviewedHead='a'*40),lambda r:r['groups']['/travel'].update(sourceRevision='b'*40),lambda r:r.update(ownerEvidenceRefs=[]),lambda r:r.update(independentReviewRef=''),lambda r:r.update(nativeStatusAuthority='user-approved-deferral'),lambda r:r['groups'].pop('/travel'),lambda r:r['groups']['/travel']['variants']['de'].update(path='/fr/travel'),lambda r:r['groups']['/travel']['variants']['de'].update(bodySha256='c'*64),lambda r:r['groups']['/travel']['variants']['de'].update(catalogs=[]),lambda r:r['groups']['/travel']['variants']['de']['checks'].update(linkParity=False)]
    for mutate in mutations:
     bad=copy.deepcopy(record);mutate(bad);path.write_text(json.dumps(bad))
