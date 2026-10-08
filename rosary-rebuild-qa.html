@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Rosary rebuild QA - Joyful 1 (The Annunciation) - internal preview</title>
+<style>
+:root{--bg:#141210;--card:#1f1b17;--line:#3a332c;--text:#f0e9df;--dim:#b8ab98;--gold:#c9a24b;--green:#7fbf7f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:640px;margin:0 auto;padding:24px 16px 120px}
+h1{font-size:1.35rem;margin:.2em 0}h2{font-size:1rem;color:var(--dim);font-weight:500;margin:.2em 0 1em}
+.note{background:#2a241d;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.9rem;color:var(--dim);margin-bottom:16px}
+.note b{color:var(--gold)}
+.track{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 12px;margin:6px 0;cursor:pointer;color:var(--text);font-size:.95rem}
+.track:hover{border-color:var(--gold)}
+.track.playing{border-color:var(--gold);background:#2c261e}
+.track .n{color:var(--dim);min-width:2ch;text-align:right}
+.badge{font-size:.62rem;letter-spacing:.06em;padding:2px 7px;border-radius:99px;border:1px solid var(--line);color:var(--dim);white-space:nowrap}
+.badge.new{color:#141210;background:var(--gold);border-color:var(--gold);font-weight:700}
+.track.playing .badge.new{background:var(--green);border-color:var(--green)}
+.dur{margin-left:auto;color:var(--dim);font-size:.8rem;white-space:nowrap}
+.player{position:fixed;left:0;right:0;bottom:0;background:#0e0c0a;border-top:1px solid var(--line);padding:10px 16px}
+.player .wrap{padding:0}
+.player .row{display:flex;align-items:center;gap:12px}
+.player .title{font-size:.85rem;color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+audio{width:100%;margin-top:8px}
+.progress{font-size:.78rem;color:var(--dim);white-space:nowrap}
+button.step{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 10px;cursor:pointer;min-width:44px;min-height:44px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Rosary rebuild - QA player</h1>
+<h2>Decade 1 of 20: Joyful 1 - The Annunciation</h2>
+<div class="note"><b>Internal QA page (noindex).</b> Plays the full decade exactly as it will ship: new re-recorded narration (<b>NEW</b>) interleaved with the existing prayer library. Decades 2-20 append to this same page as they are verified. Loudness-checked at -17 LUFS target, peaks under -1.5 dBTP. Tap any track to start there; playback auto-advances.</div>
+<div id="list"></div>
+</div>
+<div class="player"><div class="wrap">
+<div class="row">
+<button class="step" id="prev" aria-label="Previous track">&#9664;</button>
+<div class="title" id="nowtitle">Pick a track to begin</div>
+<div class="progress" id="prog">0 / 25</div>
+<button class="step" id="next" aria-label="Next track">&#9654;</button>
+</div>
+<audio id="au" controls preload="none"></audio>
+</div></div>
+<script>
+const NEW="/media/rosary-rebuild/joyful_1/", LIB="/media/rosary/joyful_1/";
+const items=[
+ {s:"step-01",t:"Opening",lib:0,d:"0:33"},
+ {s:"step-02",t:"Meaning and intention",lib:0,d:"0:08"},
+ {s:"step-02",t:"Our Father",lib:1,d:"0:29"},
+ {s:"step-03",t:"Visualization 1",lib:0,d:"0:04"},
+ {s:"step-03",t:"Hail Mary 1",lib:1,d:""},
+ {s:"step-04",t:"Visualization 2",lib:0,d:"0:04"},
+ {s:"step-04",t:"Hail Mary 2",lib:1,d:""},
+ {s:"step-05",t:"Visualization 3",lib:0,d:"0:05"},
+ {s:"step-05",t:"Hail Mary 3",lib:1,d:""},
+ {s:"step-06",t:"Visualization 4",lib:0,d:"0:05"},
+ {s:"step-06",t:"Hail Mary 4",lib:1,d:""},
+ {s:"step-07",t:"Visualization 5",lib:0,d:"0:05"},
+ {s:"step-07",t:"Hail Mary 5",lib:1,d:""},
+ {s:"step-08",t:"Visualization 6 - halfway ask",lib:0,d:"0:07"},
+ {s:"step-08",t:"Hail Mary 6",lib:1,d:""},
+ {s:"step-09",t:"Visualization 7",lib:0,d:"0:04"},
+ {s:"step-09",t:"Hail Mary 7",lib:1,d:""},
+ {s:"step-10",t:"Visualization 8",lib:0,d:"0:05"},
+ {s:"step-10",t:"Hail Mary 8",lib:1,d:""},
+ {s:"step-11",t:"Visualization 9",lib:0,d:"0:04"},
+ {s:"step-11",t:"Hail Mary 9",lib:1,d:""},
+ {s:"step-12",t:"Visualization 10",lib:0,d:"0:05"},
+ {s:"step-12",t:"Hail Mary 10",lib:1,d:""},
+ {s:"step-13",t:"Closing petition and prayers",lib:0,d:"0:10"},
+ {s:"step-13",t:"Glory Be and Fatima prayer",lib:1,d:""}
+];
+const au=document.getElementById('au'),list=document.getElementById('list'),
+nowtitle=document.getElementById('nowtitle'),prog=document.getElementById('prog');
+let cur=-1;const rows=[];
+items.forEach((it,i)=>{
+ const b=document.createElement('button');b.className='track';
+ b.innerHTML='<span class="n">'+(i+1)+'</span>'+(it.lib?'<span class="badge">LIBRARY</span>':'<span class="badge new">NEW</span>')+'<span>'+it.t+'</span><span class="dur">'+it.d+'</span>';
+ b.onclick=()=>play(i);list.appendChild(b);rows.push(b);
+});
+function play(i){
+ if(i<0||i>=items.length)return;
+ cur=i;const it=items[i];
+ au.src=(it.lib?LIB:NEW)+it.s+'.mp3';au.play();
+ rows.forEach((r,j)=>r.classList.toggle('playing',j===i));
+ nowtitle.textContent=(i+1)+'. '+it.t+(it.lib?' (library)':' (new narration)');
+ prog.textContent=(i+1)+' / '+items.length;
+}
+au.addEventListener('ended',()=>play(cur+1));
+document.getElementById('prev').onclick=()=>play(cur-1);
+document.getElementById('next').onclick=()=>play(cur<0?0:cur+1);
+</script>
+</body>
+</html>
