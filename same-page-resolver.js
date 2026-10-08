@@ -9,6 +9,16 @@
     var clean = path.replace(/\/index(?:\.html)?$/, '/').replace(/\.html$/, '').replace(/\/$/, '');
     return clean || '/';
   }
+  function travelIdentity(page, variant, language) {
+    if (!variant || !variant.proof || variant.proof.type !== 'reviewed-travel-release') return true;
+    if (!page || typeof page.sourcePath !== 'string' || typeof variant.path !== 'string' ||
+        !Array.isArray(variant.aliases) || variant.aliases.length) return false;
+    var leaf = page.sourcePath.replace(/\.html$/, '');
+    var routes = {en:'/' + leaf, de:'/de/' + leaf, 'zh-Hans':'/zh-Hans/' + leaf};
+    if (leaf === 'visit-annaya') routes.de='/de/annaya';
+    if (leaf === 'saint-charbel-pilgrimage') {routes.de='/de/pilgerreise';routes['zh-Hans']='/zh-Hans/pilgrimage';}
+    return Object.hasOwn(routes,language) && variant.path === routes[language];
+  }
   function locate(manifest, pathname) {
     if (!manifest || manifest.version !== 1) return null;
     var key = pathKey(pathname), found = null;
@@ -16,6 +26,7 @@
       var page = manifest.pages[id];
       Object.keys(page.variants || {}).forEach(function (lang) {
         var variant = page.variants[lang];
+        if (!travelIdentity(page,variant,lang)) return;
         [variant.path].concat(variant.aliases || []).forEach(function (path) {
           if (pathKey(path) === key) {
             if (found && (found.pageID !== id || found.language !== lang)) throw new Error('ambiguous-page-identity');
@@ -37,10 +48,12 @@
     }
     if (page && variant && proof && proof.type === 'reviewed-travel-release') {
       var travelSources = ['travel.html','visit-annaya.html','bekaa-kafra.html','qadisha-valley.html','qannoubine-monastery.html','qozhaya-monastery.html','saint-charbel-hermitage.html','saint-charbel-trail.html','saint-charbel-places-lebanon.html','our-lady-of-lebanon-harissa.html','cedars-of-god-lebanon.html','bkerke-maronite-patriarchate.html','saint-charbel-pilgrimage.html','annaya-tour.html'];
+      if (typeof page.sourcePath !== 'string' || typeof variant.path !== 'string' ||
+          !Array.isArray(variant.aliases) || variant.aliases.length) return false;
       var sourceLeaf = page.sourcePath.replace(/\.html$/, '');
-      var allowedPaths = ['/' + sourceLeaf, '/de/' + sourceLeaf, '/zh-Hans/' + sourceLeaf];
-      if (sourceLeaf === 'visit-annaya') allowedPaths.push('/de/annaya');
-      if (sourceLeaf === 'saint-charbel-pilgrimage') allowedPaths.push('/de/pilgerreise', '/zh-Hans/pilgrimage');
+      var allowedPaths = ['/' + sourceLeaf,
+        sourceLeaf === 'visit-annaya' ? '/de/annaya' : sourceLeaf === 'saint-charbel-pilgrimage' ? '/de/pilgerreise' : '/de/' + sourceLeaf,
+        sourceLeaf === 'saint-charbel-pilgrimage' ? '/zh-Hans/pilgrimage' : '/zh-Hans/' + sourceLeaf];
       return travelSources.includes(page.sourcePath) && allowedPaths.includes(pathKey(variant.path)) &&
         variant.status === 'verified' && /^[a-f0-9]{64}$/.test(page.sourceSha256 || '') &&
         /^[a-f0-9]{40}$/.test(page.sourceRevision || '') && /^[a-f0-9]{64}$/.test(variant.contentSha256 || '') &&
@@ -94,7 +107,8 @@
     }
     if (!current || !(manifest.languages || []).includes(requested)) return result;
     var target = current.page.variants[requested];
-    if (!verified(current.page, current.variant) || !verified(current.page, target)) return result;
+    if (!travelIdentity(current.page,current.variant,language) || !travelIdentity(current.page,target,requested) ||
+        !verified(current.page, current.variant) || !verified(current.page, target)) return result;
     if (url.hash) {
       var key;
       try { key = decodeURIComponent(url.hash.slice(1)); } catch (_) { return result; }
