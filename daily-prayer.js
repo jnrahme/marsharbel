@@ -1,6 +1,10 @@
 (async function () {
   'use strict';
-  const { config, configured, status, captcha } = window.Testimony;
+  const testimony = window.Testimony || {};
+  const { config, configured, captcha } = testimony;
+  // If the client script never executed (stub-served by the edge challenge), keep the
+  // paused path working with a local status helper instead of crashing.
+  const status = testimony.status || ((el, text, error = false) => { el.textContent = text; el.className = `submit-status ${error ? 'warn' : ''}`; });
   const form = document.getElementById('subscribe-form');
   const message = document.getElementById('submit-status');
   const submit = document.getElementById('subscribe-btn');
