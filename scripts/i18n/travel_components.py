@@ -51,7 +51,8 @@ def travel_frame(text,root,code,route,registry):
         def group(g):
             parent=g[1];body=g[2]
             body=re.sub(r' class="active"| aria-current="page"','',body)
-            body=re.sub(r'(<a\b[^>]*href=["\'])(/travel)(["\'])',lambda x:x[1]+hub+x[3],body)
+            if code in ('de','zh-Hans'):
+                body=re.sub(r'(<a\b[^>]*href=["\'])(/travel)(["\'])',lambda x:x[1]+hub+x[3],body)
             body=re.sub(r'\s*<a\b[^>]*href=["\']'+re.escape(hub)+r'["\'][^>]*>.*?</a>','',body)
             current=' class="active" aria-current="page"' if route==hub else ''
             body=f'\n        <a{current} href="{hub}">{escape(copy["hubLabel"])}</a>'+body

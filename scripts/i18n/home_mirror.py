@@ -49,7 +49,7 @@ def render_home(root, registry, lang, catalog=None):
         if lang in cfg['routes']:
             twins[cfg['english'].rstrip('/')] = cfg['routes'][lang]
     for cfg in registry.get('pageMirrors', {}).values():
-        if lang in registry.get('limitedLaunchLocales', []) and lang in cfg['routes']:
+        if lang in cfg['routes'] and (lang in registry.get('limitedLaunchLocales', []) or cfg['english'] == '/travel'):
             twins[cfg['english'].rstrip('/')] = cfg['routes'][lang]
     # English app links can use the old /en guide alias for the full prayer master.
     if '/saint-charbel-prayers' in twins:
