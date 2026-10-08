@@ -10,7 +10,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from bs4 import BeautifulSoup, Comment, NavigableString
+from bs4 import BeautifulSoup, Comment, NavigableString, Doctype, Declaration
 
 ROOT = Path(__file__).resolve().parents[2]
 REQUIRED = {'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'}
@@ -58,7 +58,7 @@ def check_page(root, page, registry, required):
                 covered.add(('attr', id(node), binding['attribute']))
         # Prevent satisfying page coverage with selector/header labels alone.
         for node in soup.descendants:
-            if isinstance(node, NavigableString) and not isinstance(node, Comment):
+            if isinstance(node, NavigableString) and not isinstance(node, (Comment, Doctype, Declaration)):
                 if node.parent.name in ('script', 'style') or not str(node).strip():
                     continue
                 if ('text', id(node)) not in covered:

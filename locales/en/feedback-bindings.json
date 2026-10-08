@@ -1,0 +1,648 @@
+{
+  "version": 1,
+  "master": "feedback.html",
+  "masterSha256": "12a63c7df4e4bc04bc724cd785dc0f8e0ae1a7a36d23227792be1c1af32e69cc",
+  "sourceRevision": "74863ddf",
+  "bindings": [
+    {
+      "key": "feedback.metadata.title-share-your-feedback-saint-charbel",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Share Your Feedback | Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.metadata.description-tell-us-what-would-help-your-prayer-and-your-vis",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Tell us what would help your prayer and your visit - suggestions, corrections, or a word of encouragement. Every message is read by a person.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "feedback.metadata.og-title-share-your-feedback-saint-charbel",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Share Your Feedback | Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "feedback.metadata.og-description-tell-us-what-would-help-your-prayer-and-your",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Tell us what would help your prayer and your visit - suggestions, corrections, or a word of encouragement. Every message is read by a person.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "feedback.metadata.twitter-title-share-your-feedback-saint-charbel",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Share Your Feedback | Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "feedback.metadata.twitter-description-tell-us-what-would-help-your-prayer-and",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Tell us what would help your prayer and your visit - suggestions, corrections, or a word of encouragement. Every message is read by a person.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "feedback.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "feedback.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.body.feedback",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Feedback",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.tell-us-what-would-help",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Tell Us What Would Help",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.this-site-exists-for-your-prayer-if-something-helped-you-som",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "This site exists for your prayer. If something helped you, something is broken, or something is missing - a guide you wished for, a correction we should make, a prayer you could not find - write it here. Every message is read by a person, and the ones that can improve the site become real tasks on our work board.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.read-by-a-person",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > div:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Read by a person.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.your-message-stays-private-we-may-use-it-to-improve-the-site",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Your message stays private. We may use it to improve the site, but we never publish your words or your name.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.what-kind-of-feedback-is-this",
+      "selector": "#feedback-form > label:nth-of-type(1)",
+      "source": "What kind of feedback is this?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.a-suggestion-something-to-add-or-change",
+      "selector": "#feedback-form > label:nth-of-type(1) > select:nth-of-type(1) > option:nth-of-type(1)",
+      "source": "A suggestion - something to add or change",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.something-is-broken-or-wrong",
+      "selector": "#feedback-form > label:nth-of-type(1) > select:nth-of-type(1) > option:nth-of-type(2)",
+      "source": "Something is broken or wrong",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.a-question-about-the-faith-or-the-site",
+      "selector": "#feedback-form > label:nth-of-type(1) > select:nth-of-type(1) > option:nth-of-type(3)",
+      "source": "A question about the faith or the site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.a-word-of-encouragement",
+      "selector": "#feedback-form > label:nth-of-type(1) > select:nth-of-type(1) > option:nth-of-type(4)",
+      "source": "A word of encouragement",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.something-else",
+      "selector": "#feedback-form > label:nth-of-type(1) > select:nth-of-type(1) > option:nth-of-type(5)",
+      "source": "Something else",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.your-message",
+      "selector": "#feedback-form > label:nth-of-type(2)",
+      "source": "Your message",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.write-it-simply-the-way-you-would-tell-a-friend",
+      "selector": "#feedback-form > label:nth-of-type(2) > textarea:nth-of-type(1)",
+      "source": "Write it simply, the way you would tell a friend.",
+      "kind": "attribute",
+      "attribute": "placeholder"
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.between-10-and-2-000-characters-please-do-not-include-medica",
+      "selector": "#message-help",
+      "source": "Between 10 and 2,000 characters. Please do not include medical records, passwords, or other sensitive information.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.your-name-optional",
+      "selector": "#feedback-form > label:nth-of-type(3)",
+      "source": "Your name (optional)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.a-first-name-is-plenty-leave-it-empty-to-stay-anonymous",
+      "selector": "#feedback-form > label:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "A first name is plenty. Leave it empty to stay anonymous.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.email-optional-only-if-you-want-a-reply",
+      "selector": "#feedback-form > label:nth-of-type(4)",
+      "source": "Email (optional - only if you want a reply)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.tell-us-what-would-help.used-only-to-answer-you-never-shared-never-added-to-a-list",
+      "selector": "#feedback-form > label:nth-of-type(4) > span:nth-of-type(1)",
+      "source": "Used only to answer you. Never shared, never added to a list.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.human-verification.human-verification",
+      "selector": "#feedback-form > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "source": "Human verification",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.human-verification.complete-the-security-check-then-send-your-feedback",
+      "selector": "#feedback-form > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Complete the security check, then send your feedback.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.human-verification.send-feedback",
+      "selector": "#send-feedback-btn",
+      "source": "Send feedback",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.footer.reader-feedback-human-reviewed-author-please-pray-for-the-pe",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Reader feedback, human-reviewed. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback.footer.admin",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Admin",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "feedback.metadata.title-share-your-feedback-saint-charbel": "Share Your Feedback | Saint Charbel",
+    "feedback.metadata.description-tell-us-what-would-help-your-prayer-and-your-vis": "Tell us what would help your prayer and your visit - suggestions, corrections, or a word of encouragement. Every message is read by a person.",
+    "feedback.metadata.og-title-share-your-feedback-saint-charbel": "Share Your Feedback | Saint Charbel",
+    "feedback.metadata.og-description-tell-us-what-would-help-your-prayer-and-your": "Tell us what would help your prayer and your visit - suggestions, corrections, or a word of encouragement. Every message is read by a person.",
+    "feedback.metadata.twitter-title-share-your-feedback-saint-charbel": "Share Your Feedback | Saint Charbel",
+    "feedback.metadata.twitter-description-tell-us-what-would-help-your-prayer-and": "Tell us what would help your prayer and your visit - suggestions, corrections, or a word of encouragement. Every message is read by a person.",
+    "feedback.body.skip-to-main-content": "Skip to main content",
+    "feedback.header.text": "✦",
+    "feedback.header.saint-charbel": "Saint Charbel",
+    "feedback.accessibility.primary": "Primary",
+    "feedback.header.home": "Home",
+    "feedback.header.legacy": "Legacy",
+    "feedback.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "feedback.header.full-history": "Full History",
+    "feedback.header.gallery": "Gallery",
+    "feedback.header.miracles": "Miracles",
+    "feedback.header.miracles-reports": "Miracles & Reports",
+    "feedback.header.eucharistic-miracles": "Eucharistic Miracles",
+    "feedback.header.letters": "Letters",
+    "feedback.header.voice-testimony": "Voice Testimony",
+    "feedback.header.saints": "Saints",
+    "feedback.header.children-s-books": "Children's Books",
+    "feedback.header.prayer": "Prayer",
+    "feedback.header.prayer-library": "Prayer Library",
+    "feedback.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "feedback.header.prayer-for-the-sick": "Prayer for the Sick",
+    "feedback.header.prayer-for-healing": "Prayer for Healing",
+    "feedback.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "feedback.header.prayer-for-depression": "Prayer for Depression",
+    "feedback.header.prayer-for-students": "Prayer for Students",
+    "feedback.header.prayer-for-addiction": "Prayer for Addiction",
+    "feedback.header.prayer-for-family": "Prayer for Family",
+    "feedback.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "feedback.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "feedback.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "feedback.header.saint-charbel-novena": "Saint Charbel Novena",
+    "feedback.header.feast-day": "Feast Day",
+    "feedback.header.rosary-guide": "Rosary Guide",
+    "feedback.header.rosary-minibook": "Rosary Minibook",
+    "feedback.header.mystery-meditation": "Mystery Meditation",
+    "feedback.header.become-like-him": "Become Like Him",
+    "feedback.header.travel": "Travel",
+    "feedback.header.visiting-annaya": "Visiting Annaya",
+    "feedback.header.annaya-online-tour": "Annaya Online Tour",
+    "feedback.header.bekaa-kafra": "Bekaa Kafra",
+    "feedback.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "feedback.header.the-cedars-of-god": "the Cedars of God",
+    "feedback.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "feedback.header.qadisha-valley": "Qadisha Valley",
+    "feedback.header.qannoubine-monastery": "Qannoubine Monastery",
+    "feedback.header.qozhaya-monastery": "Qozhaya Monastery",
+    "feedback.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "feedback.header.the-hermitage": "The Hermitage",
+    "feedback.header.saint-charbel-trail": "Saint Charbel Trail",
+    "feedback.header.news": "News",
+    "feedback.body.feedback": "Feedback",
+    "feedback.tell-us-what-would-help.tell-us-what-would-help": "Tell Us What Would Help",
+    "feedback.tell-us-what-would-help.this-site-exists-for-your-prayer-if-something-helped-you-som": "This site exists for your prayer. If something helped you, something is broken, or something is missing - a guide you wished for, a correction we should make, a prayer you could not find - write it here. Every message is read by a person, and the ones that can improve the site become real tasks on our work board.",
+    "feedback.tell-us-what-would-help.read-by-a-person": "Read by a person.",
+    "feedback.tell-us-what-would-help.your-message-stays-private-we-may-use-it-to-improve-the-site": "Your message stays private. We may use it to improve the site, but we never publish your words or your name.",
+    "feedback.tell-us-what-would-help.what-kind-of-feedback-is-this": "What kind of feedback is this?",
+    "feedback.tell-us-what-would-help.a-suggestion-something-to-add-or-change": "A suggestion - something to add or change",
+    "feedback.tell-us-what-would-help.something-is-broken-or-wrong": "Something is broken or wrong",
+    "feedback.tell-us-what-would-help.a-question-about-the-faith-or-the-site": "A question about the faith or the site",
+    "feedback.tell-us-what-would-help.a-word-of-encouragement": "A word of encouragement",
+    "feedback.tell-us-what-would-help.something-else": "Something else",
+    "feedback.tell-us-what-would-help.your-message": "Your message",
+    "feedback.tell-us-what-would-help.write-it-simply-the-way-you-would-tell-a-friend": "Write it simply, the way you would tell a friend.",
+    "feedback.tell-us-what-would-help.between-10-and-2-000-characters-please-do-not-include-medica": "Between 10 and 2,000 characters. Please do not include medical records, passwords, or other sensitive information.",
+    "feedback.tell-us-what-would-help.your-name-optional": "Your name (optional)",
+    "feedback.tell-us-what-would-help.a-first-name-is-plenty-leave-it-empty-to-stay-anonymous": "A first name is plenty. Leave it empty to stay anonymous.",
+    "feedback.tell-us-what-would-help.email-optional-only-if-you-want-a-reply": "Email (optional - only if you want a reply)",
+    "feedback.tell-us-what-would-help.used-only-to-answer-you-never-shared-never-added-to-a-list": "Used only to answer you. Never shared, never added to a list.",
+    "feedback.human-verification.human-verification": "Human verification",
+    "feedback.human-verification.complete-the-security-check-then-send-your-feedback": "Complete the security check, then send your feedback.",
+    "feedback.human-verification.send-feedback": "Send feedback",
+    "feedback.footer.reader-feedback-human-reviewed-author-please-pray-for-the-pe": "Reader feedback, human-reviewed. Author: Please pray for the person who made this website.",
+    "feedback.footer.admin": "Admin"
+  }
+}
