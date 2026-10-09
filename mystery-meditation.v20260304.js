@@ -324,6 +324,7 @@ const prayerTexts = {
   hail_holy_queen: "Hail, Holy Queen, Mother of mercy, our life, our sweetness, and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us, and after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary. Pray for us, O Holy Mother of God, that we may be made worthy of the promises of Christ.",
   rosary_concluding_prayer: "O God, whose only-begotten Son, by His life, death and resurrection, has purchased for us the rewards of eternal life; grant, we beseech Thee, that by meditating on these mysteries of the most holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen."
 };
+const RB_TAG_LIBRARY = 'library prayer';
 const prayerLabels = {
   apostles_creed: "Apostles' Creed",
   our_father: 'Our Father',
@@ -1765,11 +1766,11 @@ const initRebuildTrackList = () => {
     if (!Number.isFinite(n)) return;
     const clip = rebuildLiveSteps[stepKey] || {};
     tracks.push({ stage: n, title: clip.clip_title || `Meditation ${n}`, duration_sec: clip.duration_sec || 0 });
-    if (n === 2) tracks.push({ stage: 2.5, title: 'Our Father', tag: 'library prayer', prayer: true, prayerKey: 'our_father' });
-    if (n >= 3 && n <= 12) tracks.push({ stage: n + 0.5, title: `Hail Mary ${n - 2}`, tag: 'library prayer', prayer: true, prayerKey: 'hail_mary' });
+    if (n === 2) tracks.push({ stage: 2.5, title: prayerLabels.our_father, tag: RB_TAG_LIBRARY, prayer: true, prayerKey: 'our_father' });
+    if (n >= 3 && n <= 12) tracks.push({ stage: n + 0.5, title: `${prayerLabels.hail_mary} ${n - 2}`, tag: RB_TAG_LIBRARY, prayer: true, prayerKey: 'hail_mary' });
     if (n === 13) {
-      tracks.push({ stage: 13.5, title: 'Glory Be', tag: 'library prayer', prayer: true, prayerKey: 'glory_be' });
-      tracks.push({ stage: 13.6, title: 'Fatima Prayer', tag: 'library prayer', prayer: true, prayerKey: 'fatima' });
+      tracks.push({ stage: 13.5, title: prayerLabels.glory_be, tag: RB_TAG_LIBRARY, prayer: true, prayerKey: 'glory_be' });
+      tracks.push({ stage: 13.6, title: prayerLabels.fatima, tag: RB_TAG_LIBRARY, prayer: true, prayerKey: 'fatima' });
     }
   });
   if (!tracks.length) return;
