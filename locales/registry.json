@@ -995,15 +995,18 @@
       "master": "annaya-tour.html",
       "english": "/annaya-tour",
       "routes": {
-        "de": "/de/annaya-tour"
+        "de": "/de/annaya-tour",
+        "ru": "/ru/annaya-tour"
       },
       "renderLocales": [
-        "de"
+        "de",
+        "ru"
       ],
       "discoveryRoutes": {
         "en": "/annaya-tour",
         "de": "/de/annaya-tour",
         "zh-Hans": "/zh-Hans/annaya-tour",
+        "ru": "/ru/annaya-tour",
         "x-default": "/annaya-tour"
       }
     },
@@ -1027,15 +1030,18 @@
       "master": "saint-charbel-places-lebanon.html",
       "english": "/saint-charbel-places-lebanon",
       "routes": {
-        "de": "/de/saint-charbel-places-lebanon"
+        "de": "/de/saint-charbel-places-lebanon",
+        "ru": "/ru/saint-charbel-places-lebanon"
       },
       "renderLocales": [
-        "de"
+        "de",
+        "ru"
       ],
       "discoveryRoutes": {
         "en": "/saint-charbel-places-lebanon",
         "de": "/de/saint-charbel-places-lebanon",
         "zh-Hans": "/zh-Hans/saint-charbel-places-lebanon",
+        "ru": "/ru/saint-charbel-places-lebanon",
         "x-default": "/saint-charbel-places-lebanon"
       }
     },
@@ -1063,11 +1069,13 @@
       "english": "/travel",
       "routes": {
         "de": "/de/travel",
-        "hi": "/hi/travel"
+        "hi": "/hi/travel",
+        "ru": "/ru/travel"
       },
       "renderLocales": [
         "de",
-        "hi"
+        "hi",
+        "ru"
       ],
       "discoveryRoutes": {
         "en": "/travel",
@@ -1079,6 +1087,7 @@
         "pl": "/pl/travel",
         "de": "/de/travel",
         "zh-Hans": "/zh-Hans/travel",
+        "ru": "/ru/travel",
         "x-default": "/travel",
         "hi": "/hi/travel",
         "th": "/th/travel"

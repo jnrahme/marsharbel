@@ -2473,6 +2473,30 @@
       "normalizers": [
         "launch-availability-annotations"
       ]
+    },
+    "ru/travel.html": {
+      "locale": "ru",
+      "route": "/ru/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel-travel-master",
+      "status": "strict"
+    },
+    "ru/saint-charbel-places-lebanon.html": {
+      "locale": "ru",
+      "route": "/ru/saint-charbel-places-lebanon",
+      "master": "saint-charbel-places-lebanon.html",
+      "masterRoute": "/saint-charbel-places-lebanon",
+      "family": "saint-charbel-places-lebanon-travel-master",
+      "status": "strict"
+    },
+    "ru/annaya-tour.html": {
+      "locale": "ru",
+      "route": "/ru/annaya-tour",
+      "master": "annaya-tour.html",
+      "masterRoute": "/annaya-tour",
+      "family": "annaya-tour-travel-master",
+      "status": "strict"
     }
   }
 }
