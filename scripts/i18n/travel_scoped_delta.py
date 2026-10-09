@@ -14,13 +14,13 @@ class Tokens(HTMLParser):
         for i,c in enumerate(text):
             if c=='\n':self.lines.append(i+1)
         self.feed(text)
-    def offset(self):
+    def source_position(self):
         line,col=self.getpos();return self.lines[line-1]+col
     def handle_starttag(self,tag,attrs):
-        start=self.offset();self.tokens.append(('tag',start,start+len(self.get_starttag_text()),tag,attrs))
+        start=self.source_position();self.tokens.append(('tag',start,start+len(self.get_starttag_text()),tag,attrs))
     handle_startendtag=handle_starttag
     def handle_data(self,data):
-        start=self.offset();self.tokens.append(('data',start,start+len(data),data,None))
+        start=self.source_position();self.tokens.append(('data',start,start+len(data),data,None))
 
 def parsed_without_ru(text,slug,required=False):
     soup=BeautifulSoup(text,'html.parser');nodes=soup.select('link[hreflang="ru"]')
