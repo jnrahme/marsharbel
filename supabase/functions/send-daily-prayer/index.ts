@@ -59,6 +59,7 @@ Deno.serve(async request => {
     let failed = Number(claim.failed) || 0;
     let afterId: string | null = null;
     let deferred = 0;
+    let budgetExhausted = false;
 
     while (true) {
       const { data: batch, error: batchError } = await db.rpc('prayer_confirmed_batch', { p_after_id: afterId, p_limit: 100 });
@@ -67,8 +68,9 @@ Deno.serve(async request => {
       const { data: grant, error: budgetError } = await db.rpc('claim_email_send_budget', { p_flow: 'subscription', p_count: batch.length });
       if (budgetError) throw budgetError;
       let claimed = Number(grant) || 0;
-      for (const subscriber of batch) {
-        if (claimed <= 0) { deferred++; continue; }
+      for (let i = 0; i < batch.length; i++) {
+        const subscriber = batch[i];
+        if (claimed <= 0) { deferred += batch.length - i; budgetExhausted = true; break; }
         afterId = subscriber.id;
         const unsubscribeUrl = `${supabaseUrl}/functions/v1/unsubscribe-prayer?token=${await mintSubscriberToken(subscriber.id)}`;
         const content: IssueContent = {
@@ -99,7 +101,7 @@ Deno.serve(async request => {
         });
         await new Promise(resolve => setTimeout(resolve, 120));
       }
-      if (batch.length < 100) break;
+      if (budgetExhausted || batch.length < 100) break;
     }
     if (deferred === 0) await db.rpc('prayer_issue_complete', { p_issue_id: issueId });
     return json(200, { issue: issueId, attempted, sent, failed, deferred, completed: deferred === 0 });
