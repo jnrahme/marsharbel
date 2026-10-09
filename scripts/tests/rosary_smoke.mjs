@@ -133,6 +133,7 @@ try {
   await expect('Unavailable language preserves the actual page', async () => {
     await page.goto(`${baseUrl}/mysteries/joyful-1.html?lang=es`, { waitUntil: 'domcontentloaded' });
     await page.waitForFunction(() => window.SC_LANGUAGE_SWITCH);
+    await page.waitForLoadState('networkidle'); // settle async track-list mount before snapshotting main (CI flake: 'Refusal changed page')
     const before = await page.evaluate(() => ({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
     if (await page.locator('#sc-language-select').inputValue() !== 'en') throw new Error('Selector must show actual English content');
     if (!await page.locator('#sc-language-select option[value="es"]').isDisabled()) throw new Error('Unreviewed Spanish twin must be unavailable');
@@ -144,6 +145,7 @@ try {
   await expect('Language requests never rewrite ordinary navigation', async () => {
     await page.goto(`${baseUrl}/mysteries/joyful-1.html?lang=es`, { waitUntil: 'domcontentloaded' });
     await page.waitForFunction(() => window.SC_LANGUAGE_SWITCH);
+    await page.waitForLoadState('networkidle'); // settle async mounts before snapshotting nav state
     const links = await page.locator('.topbar .links a[href]').evaluateAll(nodes => nodes.map(a => a.getAttribute('href')));
     await page.evaluate(() => {localStorage.setItem('sc_lang_pref','es');SC_LANGUAGE_SWITCH.request('es')});
     const after = await page.locator('.topbar .links a[href]').evaluateAll(nodes => nodes.map(a => a.getAttribute('href')));

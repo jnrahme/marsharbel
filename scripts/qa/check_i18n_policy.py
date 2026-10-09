@@ -196,6 +196,8 @@ def check(root=ROOT):
         if file == 'videos.html':
             # Exact fragment output is checked by build-pages --check; never expand the legacy baseline.
             additions -= Counter({v: 23 for v in read_json(root/'locales/en/video-playback.json').values()})
+        if file=='mystery-meditation.v20260304.js':
+            additions-=Counter(read_json(root/'locales/en/rosary-tracklist.json').values())
         if file=='share.js':
             additions-=Counter(v for k,v in read_json(root/'locales/en/share.json').items() if k.startswith('share.'))
         # One generated Travel hub entry, backed by the shared locale catalog.
