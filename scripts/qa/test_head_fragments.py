@@ -54,7 +54,7 @@ class HeadFragmentTest(unittest.TestCase):
                 counts[name] = counts.get(name, 0) + 1
         self.assertEqual(counts, {
             'head-og-locales': 93,
-            'head-social': 114,
+            'head-social': 115,
             'head-font-preloads': 82,
             'head-font-preloads-legacy': 17,
         })

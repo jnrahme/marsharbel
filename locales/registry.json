@@ -1504,6 +1504,42 @@
         "th": "/th/music",
         "x-default": "/music"
       }
+    },
+    "all-saints-and-all-souls-master": {
+      "master": "all-saints-and-all-souls.html",
+      "english": "/all-saints-and-all-souls",
+      "routes": {
+        "ar": "/ar/all-saints",
+        "de": "/de/allerheiligen",
+        "fr": "/fr/toussaint",
+        "ru": "/ru/vse-svyatye",
+        "pt": "/pt/todos-os-santos",
+        "it": "/it/tutti-i-santi",
+        "pl": "/pl/wszystkich-swietych",
+        "es": "/es/todos-los-santos"
+      },
+      "renderLocales": [
+        "ar",
+        "de",
+        "fr",
+        "ru",
+        "pt",
+        "it",
+        "pl",
+        "es"
+      ],
+      "discoveryRoutes": {
+        "en": "/all-saints-and-all-souls",
+        "ar": "/ar/all-saints",
+        "fr": "/fr/toussaint",
+        "es": "/es/todos-los-santos",
+        "pt": "/pt/todos-os-santos",
+        "it": "/it/tutti-i-santi",
+        "de": "/de/allerheiligen",
+        "pl": "/pl/wszystkich-swietych",
+        "ru": "/ru/vse-svyatye",
+        "x-default": "/all-saints-and-all-souls"
+      }
     }
   },
   "limitedLaunchLocales": [

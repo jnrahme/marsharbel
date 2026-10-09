@@ -15,6 +15,14 @@
       "baseImagesParity": true,
       "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
     },
+    "ar/all-saints.html": {
+      "locale": "ar",
+      "route": "/ar/all-saints",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict"
+    },
     "ar/annaya.html": {
       "locale": "ar",
       "route": "/ar/annaya",
@@ -351,6 +359,22 @@
       "baseImagesParity": true,
       "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
     },
+    "de/allerheiligen.html": {
+      "locale": "de",
+      "route": "/de/allerheiligen",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict"
+    },
+    "es/todos-los-santos.html": {
+      "locale": "es",
+      "route": "/es/todos-los-santos",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict"
+    },
     "fr/annaya.html": {
       "locale": "fr",
       "route": "/fr/annaya",
@@ -578,6 +602,14 @@
       "baseCssParity": true,
       "baseImagesParity": true,
       "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/toussaint.html": {
+      "locale": "fr",
+      "route": "/fr/toussaint",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict"
     },
     "fr/travel.html": {
       "locale": "fr",
@@ -867,6 +899,22 @@
       "baseImagesParity": true,
       "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
     },
+    "it/tutti-i-santi.html": {
+      "locale": "it",
+      "route": "/it/tutti-i-santi",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict"
+    },
+    "pl/wszystkich-swietych.html": {
+      "locale": "pl",
+      "route": "/pl/wszystkich-swietych",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict"
+    },
     "pt/annaya.html": {
       "locale": "pt",
       "route": "/pt/annaya",
@@ -1082,6 +1130,14 @@
       "baseCssParity": false,
       "baseImagesParity": true,
       "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/todos-os-santos.html": {
+      "locale": "pt",
+      "route": "/pt/todos-os-santos",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict"
     },
     "pt/travel.html": {
       "locale": "pt",
@@ -2035,6 +2091,14 @@
       "normalizers": [
         "launch-availability-annotations"
       ]
+    },
+    "ru/vse-svyatye.html": {
+      "locale": "ru",
+      "route": "/ru/vse-svyatye",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict"
     },
     "th/index.html": {
       "locale": "th",
