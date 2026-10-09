@@ -34,7 +34,7 @@ test('ar Qadisha keeps authored language and offers English while refusing pendi
 
 test('Arabic Qadisha has functioning nav and local authored links', async ({page}) => {
   await page.goto('/ar/qadisha-valley');
-  const travel = page.locator('header .nav-group').last().locator('.nav-sub');
+  const travel = page.locator('header .nav-group:has(.nav-parent[href="/ar/travel"])').locator('.nav-sub');
   for (const destination of ['/ar/qannoubine-monastery', '/ar/qozhaya-monastery', '/ar/qadisha-valley']) {
     await expect(travel.locator(`a[href="${destination}"]`)).toHaveCount(1);
   }
