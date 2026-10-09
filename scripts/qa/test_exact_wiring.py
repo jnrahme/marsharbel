@@ -16,3 +16,5 @@ class ExactWiring(unittest.TestCase):
         r=read_json(ROOT/'locales/registry.json')
         r['exactMirrors']={'test':{'english':'/history','routes':{'en':'/history','xx':'/xx/history'}}}
         with self.assertRaisesRegex(ValueError,'locale not registered'):render_exact_set(ROOT,r)
+
+if __name__=='__main__':unittest.main()
