@@ -40,6 +40,34 @@ class RuNavAlignmentRepinTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 m.catalog_delta('{"annaya.header.travel":"Паломничество","other":"same"}', target)
 
+    def schema(self):
+        import json
+        data = {'@type':'WebPage','breadcrumb':{'@type':'BreadcrumbList','itemListElement':[
+            {'position':1,'name':'Главная','item':'https://marsharbel.com/ru/'},
+            {'position':2,'name':'Паломничество','item':'https://marsharbel.com/travel'}]}}
+        return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False)+'</script>'
+
+    def schema_before_after(self):
+        old=self.before().decode().replace('</head>',self.schema()+'</head>')
+        new=old.replace('/travel">','/ru/travel">').replace('Паломничество','Путешествия')
+        return old.encode(),new.encode()
+
+    def test_bounded_schema_name_delta(self):
+        old,new=self.schema_before_after()
+        for file in m.SCHEMA_PAGES:m.nav_delta(old,new,file)
+
+    def test_schema_url_position_page_and_wrong_name_refused(self):
+        old,new=self.schema_before_after()
+        for file,after in [('ru/annaya.html',new.replace(b'https://marsharbel.com/travel',b'https://marsharbel.com/ru/travel')),
+                           ('ru/annaya.html',new.replace('Главная'.encode(),'Другая'.encode())),
+                           ('ru/novena.html',new),
+                           ('ru/annaya.html',new.replace('Путешествия'.encode(),'Иное'.encode()))]:
+            with self.subTest(file=file),self.assertRaises(ValueError):m.nav_delta(old,after,file)
+
+    def test_other_schema_bytes_refused(self):
+        old,new=self.schema_before_after()
+        with self.assertRaises(ValueError):m.nav_delta(old,new.replace(b'"position": 1',b'"position" : 1'),'ru/annaya.html')
+
 
 if __name__ == '__main__':
     unittest.main()
