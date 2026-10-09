@@ -4,6 +4,7 @@ Independent executor: check first, review raw table, then write. No copy/review 
 import argparse
 import importlib.util
 import json
+import re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 spec=importlib.util.spec_from_file_location('ru_repin',ROOT/'scripts/i18n/repin_ru_travel_release.py')
@@ -13,6 +14,7 @@ FAMILIES['travel-th-travel-master']='travel'
 
 
 def prepare(root,base):
+    if not re.fullmatch(r"[0-9a-f]{40}",base):raise ValueError("Full committed base SHA required")
     updates,rows={},[]
     for family,slug in sorted(FAMILIES.items()):
         file='locales/en/'+family+'-bindings.json'
@@ -25,14 +27,18 @@ def prepare(root,base):
         if prior['master']!=master or prior['masterSha256']!=old or current['masterSha256'] not in (old,new):
             raise ValueError('Unknown source pin provenance')
         clean=dict(current);clean['masterSha256']=prior['masterSha256']
-        if clean!=prior:raise ValueError('Non-pin binding/provenance edit')
+        if clean!=prior or tools.pin_text(text,'masterSha256',current['masterSha256'],old).encode()!=raw:
+            raise ValueError('Non-pin binding/provenance edit')
         updates[root/file]=tools.pin_text(text,'masterSha256',current['masterSha256'],new)
         rows.append({'file':file,'master':master,'old':old,'new':new,'bodyBefore':tools.main_hash(before),'bodyAfter':tools.main_hash(after)})
         code='th' if family=='travel-th-travel-master' else 'zh-Hans'
         catalog='locales/'+code+'/'+family+'-copy.json'
         if tools.blob(root,base,catalog)!=(root/catalog).read_bytes():raise ValueError('Parallel copy changed')
-        schema='locales/'+code+'/'+family+'-schema-bindings.json'
-        if (root/schema).exists() and tools.blob(root,base,schema)!=(root/schema).read_bytes():raise ValueError('Parallel schema binding changed')
+        for frozen in ('locales/en/'+family+'-copy.json','locales/'+code+'/'+family+'-schema-bindings.json'):
+            tracked=__import__('subprocess').check_output(['git','ls-tree','--name-only',base,'--',frozen],cwd=root).strip()
+            if tracked and (not (root/frozen).exists() or tools.blob(root,base,frozen)!=(root/frozen).read_bytes()):
+                raise ValueError('Parallel source/schema catalog changed')
+            if not tracked and (root/frozen).exists():raise ValueError('New parallel source/schema catalog')
     # All preexisting provenance/review/release records are frozen; no arbitrary
     # recursive hash replacement and no addition of parallel exact group records.
     for file in ('locales/travel-equivalence.json','locales/history-equivalence.json','locales/prayer-equivalence.json'):
