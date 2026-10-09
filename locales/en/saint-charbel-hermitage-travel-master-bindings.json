@@ -836,6 +836,34 @@
       "source": "The Hermitage of Saints Peter and Paul above Annaya, where Saint Charbel lived his last 23 years: its history, his daily life there, and visiting today.",
       "kind": "attribute",
       "attribute": "content"
+    },
+    {
+      "key": "travel.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -949,6 +977,10 @@
     "travel.sources.link1": "Discover Lebanon: the history of the Annaya monastery and the Hermitage of Saints Peter and Paul - the 1798 foundation, the first hermits, Charbel's twenty-three years",
     "travel.sources.link2": "Eparchy of St Maron (Canada): Saint Charbel - the lamp account and the permission of February 15, 1875",
     "travel.sources.link3": "Charbel.org, 'Three Lights From the East': his last night at the hermitage and the vigil-keepers' testimony",
-    "travel.footer.credit": "Saint Charbel's hermitage. Author: Please pray for the person who made this website."
+    "travel.footer.credit": "Saint Charbel's hermitage. Author: Please pray for the person who made this website.",
+    "travel.header.media": "Media",
+    "travel.header.music": "Music",
+    "travel.header.video": "Video",
+    "travel.header.gallery": "Gallery"
   }
 }

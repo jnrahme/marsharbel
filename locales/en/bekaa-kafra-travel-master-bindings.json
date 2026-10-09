@@ -1067,6 +1067,34 @@
       "source": "Bekaa Kafra, widely known as Lebanon's highest village and Saint Charbel's birthplace: the Makhlouf home, baptism church, prayer grotto, and a complete visiting guide.",
       "kind": "attribute",
       "attribute": "content"
+    },
+    {
+      "key": "travel.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -1213,6 +1241,10 @@
     "travel.sources.link1": "LebanonUntravelled: Bekaa Kafra, the highest village in Lebanon - altitude, etymology, churches, the saint's house and grotto, access roads",
     "travel.sources.link2": "Discover Lebanon: the village of Bkaa Kafra and the places of Saint Charbel",
     "travel.sources.link3": "Monastery of Saint Maron, Annaya: the saint's life from birth in Bekaa Kafra to death at the hermitage",
-    "travel.footer.credit": "Bekaa Kafra. Author: Please pray for the person who made this website."
+    "travel.footer.credit": "Bekaa Kafra. Author: Please pray for the person who made this website.",
+    "travel.header.media": "Media",
+    "travel.header.music": "Music",
+    "travel.header.video": "Video",
+    "travel.header.gallery": "Gallery"
   }
 }
