@@ -207,7 +207,7 @@ def prepare(root, base):
                 import sys
                 if str(root/'scripts') not in sys.path:sys.path.insert(0,str(root/'scripts'))
                 from i18n.travel_variant_evidence import validate_variant
-                validate_variant(root,family,code,variant,after.decode())
+                validate_variant(root,family,code,variant,after.decode(),final=True)
             if main_hash(before) != prior['bodySha256'] or main_hash(after) != prior['bodySha256']:
                 raise ValueError('Reviewed body changed: ' + family + '/' + code)
             # No digest grant for rewritten body/navigation/schema/copy here.

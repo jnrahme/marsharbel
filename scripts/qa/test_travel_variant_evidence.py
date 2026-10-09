@@ -132,5 +132,45 @@ class TravelVariantEvidenceTests(unittest.TestCase):
         with patch.object(m,'blob',return_value=raw),self.assertRaises(ValueError):
             m.validate_variant(ROOT,'travel-travel-master','en',v,raw.replace('<main>','<main data-injected="yes">'))
 
+    def test_control_outputs_actual_final_boundary_wiring(self):
+        import tempfile
+        from i18n import same_page_injection as injection
+        raw,v=self.evidence();v['bodySha256']=m.digest(raw)
+        group={'evidenceSchema':'scoped-variants-v1','variants':{'en':v}}
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);(root/'locales').mkdir()
+            (root/'locales/travel-equivalence.json').write_text(json.dumps({'groups':{'travel-travel-master':group}}))
+            texts={root/'travel.html':raw.replace('</head>','<meta content="https://marsharbel.com/"/></head>')}
+            # Pipeline overlays are mocked to isolate the real control_outputs
+            # injection loop and the REAL final validator call. Candidate bytes
+            # include that unchanged metadata so only injected drift is tested.
+            candidate=texts[root/'travel.html'];v['candidateFileSha256']=m.sha(candidate);v['reviewEvidence']['candidateFileSha256']=m.sha(candidate)
+            (root/'locales/travel-equivalence.json').write_text(json.dumps({'groups':{'travel-travel-master':group}}))
+            from contextlib import ExitStack
+            def setup(stack):
+                for module in ('reviewed_history.history_manifest','reviewed_travel.travel_manifest','travel_release.release_manifest','reviewed_prayers.prayer_manifest'):
+                    stack.enter_context(patch('i18n.'+module,side_effect=lambda root,texts,manifest:manifest))
+                stack.enter_context(patch.object(injection,'with_english_sources',side_effect=lambda root,manifest:manifest))
+                stack.enter_context(patch.object(m,'blob',return_value=candidate))
+                stack.enter_context(patch.object(m,'validate_group'))
+            for drift in (lambda t:t.replace('</head>','<meta name="post-injection-drift"/></head>'),lambda t:t.replace('Original','Changed')):
+                with ExitStack() as stack:
+                    setup(stack);stack.enter_context(patch.object(injection,'inject_control',side_effect=lambda t,*args:drift(t)))
+                    with self.assertRaises(ValueError):injection.control_outputs(root,texts,{'pages':{}},{})
+                with ExitStack() as stack:
+                    setup(stack);stack.enter_context(patch.object(injection,'inject_control',side_effect=lambda t,*args:drift(t)))
+                    stack.enter_context(patch.object(m,'validate_final_outputs'))
+                    result=injection.control_outputs(root,texts,{'pages':{}},{})
+                    self.assertEqual(result[root/'travel.html'],drift(candidate))
+
+    def test_final_default_and_guard_explicit_final_true(self):
+        import inspect
+        self.assertIs(inspect.signature(m.validate_variant).parameters['final'].default,True)
+        import ast
+        tree=ast.parse((ROOT/'scripts/i18n/repin_ru_travel_release.py').read_text())
+        calls=[n for n in ast.walk(tree) if isinstance(n,ast.Call) and isinstance(n.func,ast.Name) and n.func.id=='validate_variant']
+        self.assertEqual(len(calls),1)
+        self.assertTrue(any(k.arg=='final' and isinstance(k.value,ast.Constant) and k.value.value is True for k in calls[0].keywords))
+
 
 if __name__=='__main__':unittest.main()
