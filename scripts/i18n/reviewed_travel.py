@@ -24,7 +24,7 @@ def travel_manifest(root, texts, manifest):
         for code, variant in variants.items():
             file = root / variant['file']
             text = texts.get(file, file.read_text())
-            if scoped:validate_variant(root,family,code,variant,text)
+            if scoped:validate_variant(root,family,code,variant,text,final=False)
             if digest(text) != variant['bodySha256']:
                 raise ValueError('Travel body changed after review: ' + family + ' ' + code)
             if code != 'en' and hashlib.sha256((root / variant['catalog']).read_bytes()).hexdigest() != variant['catalogSha256']:
@@ -50,6 +50,6 @@ def travel_manifest(root, texts, manifest):
         if scoped:
             for code, variant in variants.items():
                 file=root/variant['file']
-                page['variants'][code]['proof']=validate_variant(root,family,code,variant,texts.get(file,file.read_text()))
+                page['variants'][code]['proof']=validate_variant(root,family,code,variant,texts.get(file,file.read_text()),final=False)
         out['pages'][family + '-equivalence'] = page
     return out

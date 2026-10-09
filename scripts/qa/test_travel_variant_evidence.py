@@ -31,7 +31,7 @@ class TravelVariantEvidenceTests(unittest.TestCase):
 
     def evidence(self):
         raw=self.raw();ev={'stageRevision':m.STAGE,'preparedRevision':'a'*40,'candidateFileSha256':m.sha(raw),'state':'carried','scope':'stage bytes carried; no new review','nativeReviewStatus':'not-certified'}
-        return raw,{'file':'travel.html','path':'/travel','candidateFileSha256':m.sha(raw),'bodySha256':'b'*64,'reviewEvidence':ev}
+        return raw,{'file':'travel.html','path':'/travel','candidateFileSha256':m.sha(raw),'bodySha256':m.digest(raw),'reviewEvidence':ev}
 
     def test_carried_actual_blob_equality_not_recorded_claim(self):
         raw,v=self.evidence()
@@ -118,6 +118,19 @@ class TravelVariantEvidenceTests(unittest.TestCase):
         source=(ROOT/'scripts/i18n/reviewed_travel.py').read_text()
         self.assertIn("'sourceRevision': review['sourceRevision']",source)
         self.assertIn("page['variants'][code]['proof']=validate_variant",source)
+
+    def test_preboundary_allows_only_nonmain_serializer_change(self):
+        raw,v=self.evidence();v['bodySha256']=m.digest(raw)
+        pre=raw.replace('</head>','<meta name="serialization-boundary"/></head>')
+        with patch.object(m,'blob',return_value=raw):
+            m.validate_variant(ROOT,'travel-travel-master','en',v,pre,final=False)
+            with self.assertRaises(ValueError):m.validate_variant(ROOT,'travel-travel-master','en',v,pre,final=True)
+            with self.assertRaises(ValueError):m.validate_variant(ROOT,'travel-travel-master','en',v,pre.replace('Original','Changed'),final=False)
+
+    def test_post_injection_inside_main_drift_refuses(self):
+        raw,v=self.evidence();v['bodySha256']=m.digest(raw)
+        with patch.object(m,'blob',return_value=raw),self.assertRaises(ValueError):
+            m.validate_variant(ROOT,'travel-travel-master','en',v,raw.replace('<main>','<main data-injected="yes">'))
 
 
 if __name__=='__main__':unittest.main()
