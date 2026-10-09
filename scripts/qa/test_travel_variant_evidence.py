@@ -63,6 +63,9 @@ class TravelVariantEvidenceTests(unittest.TestCase):
         stage=self.raw()
         labels=('Media','Music','Video','Galerie') if code=='de' else ('मीडिया','संगीत','वीडियो','चित्र संग्रह') if code=='hi' else ('Медиа','Музыка','Видео','Галерея (на английском)')
         raw=self.raw(labels)
+        if code=='hi':
+            raw=raw.replace('>वीडियो<','>वीडियो<span class="launch-english-qualifier"> (अंग्रेज़ी में)</span><').replace('>चित्र संग्रह<','>चित्र संग्रह<span class="launch-english-qualifier"> (अंग्रेज़ी में)</span><')
+            stage=stage.replace('>Video<','>Video<span class="launch-english-qualifier"> (अंग्रेज़ी में)</span><').replace('>Gallery<','>Gallery<span class="launch-english-qualifier"> (अंग्रेज़ी में)</span><')
         ev={**record,'stageRevision':m.STAGE,'preparedRevision':'a'*40}
         ev['candidateFileSha256']=m.sha(raw)
         v={'file':code+'/travel.html','path':'/'+code+'/travel','bodySha256':m.digest(raw),'candidateFileSha256':m.sha(raw),'reviewEvidence':ev}

@@ -58,7 +58,13 @@ def label_delta(before, after, code, slug):
         if not header:raise ValueError('Missing header')
         raw=header[0]
         for anchor,label in zip(groups[0].select('a'),expected):
-            if anchor.get_text(strip=True)!=label:raise ValueError('Wrong Media label')
+            visible=label
+            if code=='hi' and label in ('Video','Gallery','वीडियो','चित्र संग्रह'):
+                visible+='(अंग्रेज़ी में)'
+                qualifiers=anchor.select('span.launch-english-qualifier')
+                if len(qualifiers)!=1 or qualifiers[0].get_text()!=' (अंग्रेज़ी में)':
+                    raise ValueError('Hindi English qualifier changed')
+            if anchor.get_text(strip=True)!=visible:raise ValueError('Wrong Media label')
             token='>'+label+'<'
             if raw.count(token)!=1:raise ValueError('Ambiguous Media label scalar')
             raw=raw.replace(token,'>C0016_LABEL<',1)
