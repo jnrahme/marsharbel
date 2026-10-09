@@ -1,8 +1,8 @@
 {
   "version": 1,
   "master": "qadisha-valley.html",
-  "masterSha256": "d5afa5319c12d873643aaa0d17366965c084911184c667b42e34549caab55849",
-  "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
+  "masterSha256": "2b051c9cf7b170cd52d306a57beba4b4563dbbfbad8192305f592e6d02cc7b25",
+  "sourceRevision": "0ec9a314",
   "bindings": [
     {
       "key": "travel.meta.title",
@@ -64,13 +64,6 @@
       "key": "travel.header.fullHistory",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "travel.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1046,6 +1039,34 @@
       "source": "The Qadisha Valley sheltered Maronite monks and hermits for a thousand years. Its monasteries, hermitages, UNESCO status, and how to visit.",
       "kind": "attribute",
       "attribute": "content"
+    },
+    {
+      "key": "travel.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -1058,7 +1079,6 @@
     "travel.header.legacy": "Legacy",
     "travel.header.encyclopedia": "Saint Charbel Encyclopedia",
     "travel.header.fullHistory": "Full History",
-    "travel.header.gallery": "Gallery",
     "travel.header.miracles": "Miracles",
     "travel.header.miraclesAndReports": "Miracles & Reports",
     "travel.header.eucharisticMiracles": "Eucharistic Miracles",
@@ -1183,6 +1203,10 @@
     "travel.sources.link2": "The National, April 15, 2022: Lebanon's Christians seek simple Easter respite in ancient Qadisha Valley - Deir Qannoubine today, and Father Hani Tawk's words",
     "travel.sources.link3": "USEK Library, Holy Spirit University of Kaslik: Hidden Treasures - the 1610 Qozhaya Psalter, first book printed in the eastern Ottoman Empire",
     "travel.sources.link4": "Journal of Eastern Mediterranean Archaeology and Heritage Studies: Wall Paintings in the Qadisha Valley - the medieval paintings of Deir es-Salib and Saydet Qannoubine",
-    "travel.footer.credit": "Qadisha Valley. Author: Please pray for the person who made this website."
+    "travel.footer.credit": "Qadisha Valley. Author: Please pray for the person who made this website.",
+    "travel.header.media": "Media",
+    "travel.header.music": "Music",
+    "travel.header.video": "Video",
+    "travel.header.gallery": "Gallery"
   }
 }

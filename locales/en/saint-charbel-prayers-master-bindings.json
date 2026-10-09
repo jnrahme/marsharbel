@@ -1,8 +1,8 @@
 {
   "version": 1,
   "master": "templates/masters/saint-charbel-prayers.html",
-  "masterSha256": "3fbf112e6f9673721e070afe40d04d45e66a26386433b4af6a7af2c48a8e1cae",
-  "sourceRevision": "78cde58",
+  "masterSha256": "fc72f4d098f7ea58e6e5873855bc3fd86da580646a45d596846cc051974a8b77",
+  "sourceRevision": "0ec9a314",
   "bindings": [
     {
       "key": "saint-charbel-prayers.metadata.title-saint-charbel-prayers-catholic-prayer-collection",
@@ -99,13 +99,6 @@
       "key": "saint-charbel-prayers.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "saint-charbel-prayers.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -372,6 +365,34 @@
       "key": "saint-charbel-prayers.header.news",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
       "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-prayers.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-prayers.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-prayers.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-prayers.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1217,7 +1238,6 @@
     "saint-charbel-prayers.header.legacy": "Legacy",
     "saint-charbel-prayers.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
     "saint-charbel-prayers.header.full-history": "Full History",
-    "saint-charbel-prayers.header.gallery": "Gallery",
     "saint-charbel-prayers.header.miracles": "Miracles",
     "saint-charbel-prayers.header.miracles-reports": "Miracles & Reports",
     "saint-charbel-prayers.header.eucharistic-miracles": "Eucharistic Miracles",
@@ -1255,6 +1275,10 @@
     "saint-charbel-prayers.header.the-hermitage": "The Hermitage",
     "saint-charbel-prayers.header.saint-charbel-trail": "Saint Charbel Trail",
     "saint-charbel-prayers.header.news": "News",
+    "saint-charbel-prayers.header.media": "Media",
+    "saint-charbel-prayers.header.music": "Music",
+    "saint-charbel-prayers.header.video": "Video",
+    "saint-charbel-prayers.header.gallery": "Gallery",
     "saint-charbel-prayers.body.prayer-collection": "Prayer Collection",
     "saint-charbel-prayers.saint-charbel-prayer-lib.saint-charbel-prayer-library": "Saint Charbel Prayer Library",
     "saint-charbel-prayers.saint-charbel-prayer-lib.all-major-saint-charbel-devotional-prayers-in-one-place-for": "All major Saint Charbel devotional prayers in one place for daily use: intercession, healing, novena rhythm, family prayer, and complete Rosary core prayers. To meditate on the saint's own recorded words, see",

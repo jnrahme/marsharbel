@@ -1,8 +1,8 @@
 {
   "version": 3,
   "master": "templates/masters/saint-charbel-novena.html",
-  "masterSha256": "8ef61ca1c3d702bcc1947536ccc2af196e23ab796b067b7e9963e59cfcf1c75c",
-  "sourceRevision": "78cde58",
+  "masterSha256": "d323eab01e365f17526d46a6fda98a098fd31f4be8d045988fb895bee85c7df3",
+  "sourceRevision": "0ec9a314",
   "bindings": [
     {
       "key": "saint-charbel-novena.metadata.title-saint-charbel-novena-9-day-prayer-to-saint-charbel",
@@ -99,13 +99,6 @@
       "key": "saint-charbel-novena.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "saint-charbel-novena.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1452,6 +1445,34 @@
       "source": "Русский",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -1469,7 +1490,6 @@
     "saint-charbel-novena.header.legacy": "Legacy",
     "saint-charbel-novena.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
     "saint-charbel-novena.header.full-history": "Full History",
-    "saint-charbel-novena.header.gallery": "Gallery",
     "saint-charbel-novena.header.miracles": "Miracles",
     "saint-charbel-novena.header.miracles-reports": "Miracles & Reports",
     "saint-charbel-novena.header.eucharistic-miracles": "Eucharistic Miracles",
@@ -1652,6 +1672,10 @@
     "saint-charbel-novena.footer.italiano": "Italiano",
     "saint-charbel-novena.footer.deutsch": "Deutsch",
     "saint-charbel-novena.footer.polski": "Polski",
-    "saint-charbel-novena.footer.text-3": "Русский"
+    "saint-charbel-novena.footer.text-3": "Русский",
+    "saint-charbel-novena.header.media": "Media",
+    "saint-charbel-novena.header.music": "Music",
+    "saint-charbel-novena.header.video": "Video",
+    "saint-charbel-novena.header.gallery": "Gallery"
   }
 }

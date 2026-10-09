@@ -1,8 +1,8 @@
 {
   "version": 1,
   "master": "qadisha-valley.html",
-  "masterSha256": "d5afa5319c12d873643aaa0d17366965c084911184c667b42e34549caab55849",
-  "sourceRevision": "1be64cf5",
+  "masterSha256": "2b051c9cf7b170cd52d306a57beba4b4563dbbfbad8192305f592e6d02cc7b25",
+  "sourceRevision": "0ec9a314",
   "bindings": [
     {
       "key": "qadisha-valley.metadata.title-qadisha-valley-the-holy-valley-where-maronite-monks-hi",
@@ -92,13 +92,6 @@
       "key": "qadisha-valley.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "qadisha-valley.header.gallery",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
-      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -372,6 +365,34 @@
       "key": "qadisha-valley.header.news",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
       "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qadisha-valley.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qadisha-valley.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qadisha-valley.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "qadisha-valley.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1055,7 +1076,6 @@
     "qadisha-valley.header.legacy": "Legacy",
     "qadisha-valley.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
     "qadisha-valley.header.full-history": "Full History",
-    "qadisha-valley.header.gallery": "Gallery",
     "qadisha-valley.header.miracles": "Miracles",
     "qadisha-valley.header.miracles-reports": "Miracles & Reports",
     "qadisha-valley.header.eucharistic-miracles": "Eucharistic Miracles",
@@ -1093,6 +1113,10 @@
     "qadisha-valley.header.the-hermitage": "The Hermitage",
     "qadisha-valley.header.saint-charbel-trail": "Saint Charbel Trail",
     "qadisha-valley.header.news": "News",
+    "qadisha-valley.header.media": "Media",
+    "qadisha-valley.header.music": "Music",
+    "qadisha-valley.header.video": "Video",
+    "qadisha-valley.header.gallery": "Gallery",
     "qadisha-valley.accessibility.in-this-guide": "In this guide",
     "qadisha-valley.body.home": "Home",
     "qadisha-valley.body.text": "/",
