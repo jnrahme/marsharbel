@@ -7,7 +7,7 @@ ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.home_mirror import render_home
 from i18n.page_mirror import render_page
-from i18n.catalog import locale_topics
+from i18n.catalog import locale_topics, validate_registry, home_url, PRAYER_FAMILIES
 from i18n.launch_availability import apply_launch_availability
 
 class LimitedLaunch(unittest.TestCase):
@@ -51,6 +51,25 @@ class LimitedLaunch(unittest.TestCase):
   english=json.loads((ROOT/'locales/en/travel-travel-master-copy.json').read_text())
   self.assertEqual(set(catalog),set(english))
   self.assertNotEqual(catalog['travel.node.66'],english['travel.node.66'])
+ def test_zh_prayer_capability_does_not_invent_home_or_legacy_publication(self):
+  self.r['locales']['zh-Hans']['capabilities']['mirrorTabs'].append('prayers')
+  for name,(english,pinned) in PRAYER_FAMILIES.items():
+   cfg=self.r['pageMirrors'][name]
+   cfg['routes']['zh-Hans']='/zh-Hans'+english
+   cfg['renderLocales'].append('zh-Hans')
+  validate_registry(self.r)
+  self.assertIsNone(home_url(self.r,'zh-Hans'))
+  self.assertNotIn('zh-Hans',self.r['homepageMirrors']['renderLocales'])
+  for values in self.r['publicationSets'].values():self.assertNotIn('zh-Hans',values)
+  self.assertEqual(locale_topics(self.r,'zh-Hans'),[])
+  self.assertNotIn('zh-Hans',self.r.get('limitedLaunchLocales',[]))
+ def test_zh_history_partial_grant_is_not_home_publication(self):
+  self.r['locales']['zh-Hans']['capabilities']['mirrorTabs'].append('history')
+  cfg=self.r['pageMirrors']['history-master'];cfg['routes']['zh-Hans']='/zh-Hans/history';cfg['renderLocales'].append('zh-Hans')
+  validate_registry(self.r)
+  self.assertIsNone(home_url(self.r,'zh-Hans'))
+  self.assertNotIn('zh-Hans',self.r['homepageMirrors']['renderLocales'])
+  self.assertEqual(locale_topics(self.r,'zh-Hans'),[])
  def test_existing_locale_identity_and_pt_br_preserved(self):
   self.assertEqual(self.r['locales']['pt']['ogLocale'],'pt_BR')
   for lang in ('ar','fr','es','pt','it','de','pl','ru'):
