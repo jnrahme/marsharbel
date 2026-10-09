@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from i18n.reviewed_history import digest
 
 STAGE = '6701907d05aedc47b7942ada6a14cfc6470c31ce'
+REVIEW_REFS_SHA256 = 'fd6d60cf162bbb66041dafc7378fcf7dc619f5658102bbd190b778276b8e4a14'
 SLUGS = {'travel','annaya-tour','bekaa-kafra','bkerke-maronite-patriarchate',
          'cedars-of-god-lebanon','our-lady-of-lebanon-harissa','qadisha-valley',
          'qannoubine-monastery','qozhaya-monastery','saint-charbel-hermitage',
@@ -37,7 +38,8 @@ def without_ru(text, slug):
     pattern = re.compile(r'<link\b[^>]*\bhreflang="ru"[^>]*?/>(?:\n)?')
     matches = pattern.findall(text)
     if len(matches)!=len(nodes):raise ValueError('Non-isolated RU hreflang')
-    return pattern.sub('',text)
+    isolated=re.compile(r'^[ \t]*<link\b[^>]*\bhreflang="ru"[^>]*?/>[ \t]*\n',re.M)
+    return pattern.sub('',isolated.sub('',text))
 
 
 def label_delta(before, after, code, slug):
@@ -82,7 +84,10 @@ def validate_variant(root, family, code, variant, text):
         if without_ru(blob(root,STAGE,file),slug)!=without_ru(candidate,slug):raise ValueError('Carried stage drift')
         if any(k in evidence for k in ('renderedReview','catalogReview')):raise ValueError('Carried cannot claim new review')
     else:
-        refs=json.loads((root/'locales/travel-c0016-review-refs.json').read_text())
+        refs_raw=(root/'locales/travel-c0016-review-refs.json').read_bytes()
+        if hashlib.sha256(refs_raw).hexdigest()!=REVIEW_REFS_SHA256:
+            raise ValueError('Reviewer reference table edited')
+        refs=json.loads(refs_raw)
         record=refs.get(file)
         if not record or evidence.get('state')!='approved':raise ValueError('Missing approved review record')
         for key in ('candidateFileSha256','scope','renderedReview','catalogReview'):
