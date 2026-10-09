@@ -37,7 +37,6 @@ class ExactMasterTests(unittest.TestCase):
  def test_drift_fails(self):
   r=read_json(ROOT/'locales/registry.json');c=prepared_catalog('novena');c['masterSha256']='bad'
   with self.assertRaisesRegex(ValueError,'digest changed'):render_exact(ROOT,r,'de','novena','/de/novene',c)
-if __name__=='__main__':unittest.main()
 
 class ExactRuntimeGuards(unittest.TestCase):
  def test_missing_accessible_attribute_fails(self):
@@ -61,3 +60,5 @@ class ExactLocalizedDestinations(unittest.TestCase):
    links=[a for a in s.select('main a[href]') if a.get_text(strip=True)==label]
    self.assertTrue(links)
    self.assertTrue(all(a.get('href')==href for a in links))
+
+if __name__=='__main__':unittest.main()

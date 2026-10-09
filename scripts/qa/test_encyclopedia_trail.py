@@ -29,3 +29,5 @@ class NavDisclosure(unittest.TestCase):
   self.assertEqual(a['aria-label'],'Encyklopedia świętego Szarbela (po angielsku)')
   self.assertFalse(a.has_attr('lang'));self.assertEqual(a['hreflang'],'en')
   self.assertEqual(a.find_next_sibling('span').get_text(),'(po angielsku)')
+
+if __name__=='__main__':unittest.main()
