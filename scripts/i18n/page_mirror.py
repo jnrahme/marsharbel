@@ -180,7 +180,8 @@ def render_page(root,registry,lang,family,route,catalog=None):
             raise ValueError(f'{family} {lang}: incomplete playlist runtime labels')
         config = '<script type="application/json" id="sc-playlist-labels">' + json.dumps(labels, ensure_ascii=False).replace('<', '\\u003c') + '</script>\n'
         rendered = rendered.replace('</head>', config + '</head>', 1)
-    return apply_launch_availability(rendered, root, registry, lang)
+    from i18n.ru_travel_chrome import localize_travel_chrome
+    return localize_travel_chrome(apply_launch_availability(rendered, root, registry, lang), registry, lang, family)
 
 
 def render_page_set(root,registry):

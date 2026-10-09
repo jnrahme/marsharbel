@@ -50,6 +50,7 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_media_nav_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_history_nav_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_ru_travel_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_ru_nav_alignment_repin.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_ru_travel_chrome.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_media_bindings_prepare.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_retired_novena_nav_repin.py
 
