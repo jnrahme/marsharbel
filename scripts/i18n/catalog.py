@@ -195,6 +195,31 @@ def public_html_files(root=ROOT):
                    *(p for code in registry['locales'] for p in root.glob(f'{code}/**/*.html'))])
 
 
+TRAVEL_ROUTES = {'/travel', '/visit-annaya', '/bekaa-kafra', '/qadisha-valley', '/qannoubine-monastery', '/qozhaya-monastery', '/saint-charbel-hermitage', '/saint-charbel-trail', '/saint-charbel-places-lebanon', '/our-lady-of-lebanon-harissa', '/cedars-of-god-lebanon', '/bkerke-maronite-patriarchate', '/saint-charbel-pilgrimage', '/annaya-tour'}
+# These two Prayer bindings have established immutable-template pins, not
+# served-page pins. SHA256 therefore detects template drift only; served-page
+# drift will not trip "stale mirror master". That bounded tradeoff is intended.
+# Prayer rollout is gradual: any subset of this allowlist, including a
+# prayers-only locale without Travel, is valid. This is not tab completeness.
+PRAYER_FAMILIES = {
+    'saint-charbel-prayers-master': ('/saint-charbel-prayers', 'templates/masters/saint-charbel-prayers.html'),
+    'saint-charbel-novena-master': ('/saint-charbel-novena', 'templates/masters/saint-charbel-novena.html'),
+    'twenty-second-master': ('/22nd-of-the-month', '22nd-of-the-month.html'),
+}
+
+HISTORY_FAMILY = ('history-master', '/history', 'history.html')
+
+
+def mirror_tab(group, name, family):
+    if group == 'pageMirrors' and (name, family['english']) == HISTORY_FAMILY[:2]:
+        return 'history'
+    if group == 'pageMirrors' and name in PRAYER_FAMILIES and family['english'] == PRAYER_FAMILIES[name][0]:
+        return 'prayers'
+    if family['english'] in TRAVEL_ROUTES:
+        return 'travel'
+    return None
+
+
 CAPABILITY_FIELDS = {'home', 'topicGuides', 'mirrorTabs', 'runtime', 'selectorCopy'}
 
 def validate_capabilities(registry, code):
@@ -210,7 +235,7 @@ def validate_capabilities(registry, code):
             raise ValueError(f'{code}: invalid {field} capability')
     if set(caps['topicGuides']) != set(locale_topics(registry, code)):
         raise ValueError(f'{code}: topic capability differs from publication')
-    if not set(caps['mirrorTabs']) <= {'travel'}:
+    if not set(caps['mirrorTabs']) <= {'travel', 'prayers', 'history'}:
         raise ValueError(f'{code}: unknown mirror tab')
     membership = code in registry.get('homePublicationLocales', [])
     if caps['home'] != membership or (not caps['home'] and 'home' in config):
@@ -218,7 +243,7 @@ def validate_capabilities(registry, code):
     if caps['home'] and config.get('home') != ('/' if code == registry['defaultLocale'] else f'/{code}/'):
         raise ValueError(f'{code}: missing or invalid published homepage')
     if 'travel' in caps['mirrorTabs']:
-        expected = {'/travel', '/visit-annaya', '/bekaa-kafra', '/qadisha-valley', '/qannoubine-monastery', '/qozhaya-monastery', '/saint-charbel-hermitage', '/saint-charbel-trail', '/saint-charbel-places-lebanon', '/our-lady-of-lebanon-harissa', '/cedars-of-god-lebanon', '/bkerke-maronite-patriarchate', '/saint-charbel-pilgrimage', '/annaya-tour'}
+        expected = TRAVEL_ROUTES
         declared = {cfg['english'] for group in ('authoredMirrors', 'pageMirrors', 'exactMirrors') for cfg in registry.get(group, {}).values() if code in cfg.get('routes', {}) and (group != 'pageMirrors' or code in cfg.get('renderLocales', []))}
         if not expected <= declared:
             raise ValueError(f'{code}: incomplete Travel tab: {sorted(expected - declared)}')
@@ -283,8 +308,8 @@ def validate_mirror_capabilities(root, registry):
         caps = config['capabilities']
         if not caps['home']:
             owned=[(group,name) for group in ('authoredMirrors','pageMirrors','exactMirrors') for name,cfg in registry.get(group,{}).items() if code in cfg.get('routes',{}) and (group!='pageMirrors' or code in cfg.get('renderLocales',[]))]
-            if owned and caps['mirrorTabs'] != ['travel']:
-                raise ValueError(f'{code}: emitted families lack declared Travel capability')
+            if any(mirror_tab(group, name, registry[group][name]) not in caps['mirrorTabs'] for group, name in owned):
+                raise ValueError(f'{code}: emitted family lacks declared mirror capability')
             if any(group != 'pageMirrors' for group,name in owned):
                 raise ValueError(f'{code}: partial requires supported keyed renderer')
         if caps['runtime'] and caps['mirrorTabs']:
@@ -304,26 +329,32 @@ def validate_mirror_capabilities(root, registry):
                 raise ValueError(f'{code}: undeclared home output')
             if any(code in values for values in registry['publicationSets'].values()):
                 raise ValueError(f'{code}: partial mirror locale cannot gain prayer/eucharistic output')
-        if 'travel' in caps['mirrorTabs']:
+        if caps['mirrorTabs']:
             for route, (group, name, owner) in used.items():
                 if owner != code:
                     continue
                 cfg = registry[group][name]
                 english = cfg['english']
-                if english not in {'/travel','/visit-annaya','/bekaa-kafra','/qadisha-valley','/qannoubine-monastery','/qozhaya-monastery','/saint-charbel-hermitage','/saint-charbel-trail','/saint-charbel-places-lebanon','/our-lady-of-lebanon-harissa','/cedars-of-god-lebanon','/bkerke-maronite-patriarchate','/saint-charbel-pilgrimage','/annaya-tour'}:
+                tab = mirror_tab(group, name, cfg)
+                if tab not in caps['mirrorTabs']:
                     if not caps['home']:
-                        raise ValueError(f'{code}/{name}: undeclared non-Travel family output')
+                        raise ValueError(f'{code}/{name}: undeclared mirror family output')
                     continue
                 source = cfg.get('master', english.lstrip('/') + '.html')
+                if tab in ('prayers', 'history') and source != english.lstrip('/') + '.html':
+                    raise ValueError(f'{code}/{name}: keyed family/served master linkage differs')
                 if not (root / source).is_file():
                     raise ValueError(f'{code}/{name}: missing mirror master')
                 if group != 'pageMirrors':
                     raise ValueError(f'{code}/{name}: partial tab requires explicit keyed master family')
                 contract = read_json(root / f'locales/en/{name}-bindings.json')
-                if contract['master'] != source:
+                pinned_source = PRAYER_FAMILIES[name][1] if tab == 'prayers' else source
+                if contract['master'] != pinned_source:
                     raise ValueError(f'{code}/{name}: family/master linkage differs')
+                if not (root / pinned_source).is_file():
+                    raise ValueError(f'{code}/{name}: missing pinned mirror master')
                 import hashlib
-                if contract['masterSha256'] != hashlib.sha256((root / source).read_bytes()).hexdigest():
+                if contract['masterSha256'] != hashlib.sha256((root / pinned_source).read_bytes()).hexdigest():
                     raise ValueError(f'{code}/{name}: stale mirror master')
                 base = read_json(root / f'locales/en/{name}-copy.json')
                 local = read_json(root / f'locales/{code}/{name}-copy.json')
@@ -337,9 +368,9 @@ def validate_partial_outputs(root, registry, outputs):
     for code, config in registry['locales'].items():
         if config['capabilities']['home']:
             continue
-        if config['capabilities']['mirrorTabs'] != ['travel']:
-            if any(code in cfg.get('renderLocales',[]) for cfg in registry.get('pageMirrors',{}).values()):
-                raise ValueError(f'{code}: undeclared partial tab emission')
+        if any(code in cfg.get('renderLocales', []) and mirror_tab('pageMirrors', name, cfg) not in config['capabilities']['mirrorTabs']
+               for name, cfg in registry.get('pageMirrors', {}).items()):
+            raise ValueError(f'{code}: undeclared partial tab emission')
         expected = {root / (route.lstrip('/') + '.html')
             for family in registry.get('pageMirrors', {}).values()
             for owner, route in family.get('routes', {}).items()
