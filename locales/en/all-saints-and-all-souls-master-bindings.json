@@ -1,0 +1,1119 @@
+{
+  "version": 1,
+  "master": "all-saints-and-all-souls.html",
+  "masterSha256": "b79e776cef8ea848cacccedfb05c2ea7ade37a165a7b06f20fe805f06e9eb91f",
+  "sourceRevision": "5bcfb743",
+  "bindings": [
+    {
+      "key": "allsaints.metadata.title-all-saints-and-all-souls-november-1-2-meaning-history",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "All Saints and All Souls: November 1-2 Meaning, History & How to Pray",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.metadata.description-all-saints-november-1-and-all-souls-november-2-w",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "All Saints (November 1) and All Souls (November 2): what each day means, where they come from, how they differ, and simple ways to pray for the dead and with the saints.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "allsaints.metadata.og-title-all-saints-and-all-souls-november-1-2-meaning-histo",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "All Saints and All Souls: November 1-2 Meaning, History & How to Pray",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "allsaints.metadata.og-description-all-saints-november-1-and-all-souls-november",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "All Saints (November 1) and All Souls (November 2): what each day means, where they come from, how they differ, and simple ways to pray for the dead and with the saints.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "allsaints.metadata.twitter-title-all-saints-and-all-souls-november-1-2-meaning",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "All Saints and All Souls: November 1-2 Meaning, History & How to Pray",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "allsaints.metadata.twitter-description-all-saints-november-1-and-all-souls-nove",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "All Saints (November 1) and All Souls (November 2): what each day means, where they come from, how they differ, and simple ways to pray for the dead and with the saints.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "allsaints.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "allsaints.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.body.november-1-november-2",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "November 1 · November 2",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.all-saints-and-all-souls",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "All Saints and All Souls",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.short-answer",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Short answer:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.on-november-1-the-church-honors-every-saint-in-heaven-on-nov",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "On November 1 the Church honors every saint in heaven; on November 2 she prays for all the faithful departed still on their way to God. The two days stand together: one looks up in gratitude, the other looks around in love.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.this-guide-explains-what-each-day-means-where-the-two-feasts",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "This guide explains what each day means, where the two feasts come from, how they differ, and simple ways to mark them at home, at Mass, and at the cemetery. It ends with the Saint Charbel connection: his tomb at Annaya has become a place where the living ask a saint to carry their prayers, including prayers for their dead.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.accessibility.the-vigil-lamp-burning-at-the-tomb-of-saint-charbel-in-annay",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The vigil lamp burning at the tomb of Saint Charbel in Annaya",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.the-vigil-lamp-at-saint-charbel-s-tomb-in-annaya-a-small-fla",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The vigil lamp at Saint Charbel's tomb in Annaya: a small flame kept before a saint, like the candles many families light for their dead in early November. Photograph: LLEW,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.text",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.cc-by-sa-4-0",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.text-2",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.pray-the-saint-charbel-novena",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Pray the Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.full-prayer-library",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.the-tomb-at-annaya",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "The Tomb at Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.part-of-the",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "Part of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.saint-charbel-encyclopedia",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.browse",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3)",
+      "source": ". Browse",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.the-stories-shelf",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(2)",
+      "source": "the stories shelf",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.or-read",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "or read",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.the-full-story-of-saint-charbel-s-life",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(3)",
+      "source": "the full story of Saint Charbel's life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.all-saints-and-all-souls.text-2",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "allsaints.what-all-saints-means-no.what-all-saints-means-november-1",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "What All Saints Means (November 1)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.what-all-saints-means-no.all-saints-is-the-solemnity-of-every-saint-in-heaven-the-fam",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "All Saints is the solemnity of every saint in heaven: the famous ones with churches and feast days, and the countless ones nobody canonized. The book of Revelation gives the day its horizon - \"a great multitude that no one could count, from every nation, tribe, people and language, standing before the throne\" (Revelation 7:9). The Catechism teaches that the saints in glory \"contemplate God, praise him and constantly care for those whom they have left on earth\" (CCC 2683), which is why the Church asks their intercession rather than treating them as gone.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.what-all-saints-means-no.in-many-countries-november-1-is-a-holy-day-of-obligation-whe",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "In many countries November 1 is a holy day of obligation. Where it falls next to a weekend the local bishops' conference may lift the obligation; your parish bulletin is the reliable answer for a given year.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.what-all-souls-means-nov.what-all-souls-means-november-2",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "What All Souls Means (November 2)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.what-all-souls-means-nov.all-souls-is-the-commemoration-of-all-the-faithful-departed",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "All Souls is the commemoration of all the faithful departed: the ordinary dead - our parents, friends, and everyone forgotten by history - who died in God's friendship but are still being purified. The Catechism names this final purification purgatory and roots prayer for the dead in scripture: Judas Maccabeus \"made atonement for the dead, that they might be delivered from their sin\" (2 Maccabees 12:46), and Paul writes of the one who is saved \"only as through fire\" (1 Corinthians 3:15). The Church concludes that our prayer can help them (CCC 1030-1032).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.what-all-souls-means-nov.all-souls-is-not-a-holy-day-of-obligation-but-the-church-fil",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "All Souls is not a holy day of obligation, but the Church fills it with practice: Mass for the dead, cemetery visits, and the old custom of praying for the dead throughout the first days of November.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.one-family-three-states.one-family-three-states",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "One Family, Three States",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.one-family-three-states.the-two-days-belong-to-one-doctrine-the-communion-of-saints",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The two days belong to one doctrine, the communion of saints: the Church is a single family in three states. The saints in heaven intercede for us; the souls being purified are helped by our prayers; and we on earth are bound to both (CCC 946-962). All Saints looks to the family members who have arrived; All Souls looks to those still on the road. Nothing in either day is a transaction - the Church has never sold heaven, and this guide makes no promise that any particular prayer obtains a particular outcome.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.where-the-two-days-come.where-the-two-days-come-from",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "Where the Two Days Come From",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.where-the-two-days-come.fourth-century",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Fourth century:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.where-the-two-days-come.churches-in-the-east-keep-a-common-feast-of-all-martyrs-the",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "churches in the East keep a common feast of all martyrs; the practice of honoring them together is older than any single date.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "allsaints.where-the-two-days-come.may-13-609",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "May 13, 609:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.where-the-two-days-come.pope-boniface-iv-dedicates-the-pagan-pantheon-in-rome-as-a-c",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "Pope Boniface IV dedicates the pagan Pantheon in Rome as a church to Mary and all the martyrs - an early Roman All Saints.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "allsaints.where-the-two-days-come.835",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "835:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.where-the-two-days-come.pope-gregory-iv-fixes-november-1-as-the-feast-of-all-saints",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "Pope Gregory IV fixes November 1 as the feast of All Saints for the Western Church.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "allsaints.where-the-two-days-come.998",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > strong:nth-of-type(1)",
+      "source": "998:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.where-the-two-days-come.saint-odilo-abbot-of-cluny-sets-november-2-as-a-day-of-praye",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": "Saint Odilo, abbot of Cluny, sets November 2 as a day of prayer for all the dead in his monasteries; the custom spreads through the whole Church.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "allsaints.where-the-two-days-come.today",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > strong:nth-of-type(1)",
+      "source": "Today:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.where-the-two-days-come.the-two-days-stand-back-to-back-sainthood-and-solidarity-in",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": "the two days stand back to back, sainthood and solidarity, in every Catholic calendar.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "allsaints.keeping-the-days.keeping-the-days",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Keeping the Days",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.keeping-the-days.suggestions-not-obligations-or-promises",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Suggestions, not obligations or promises:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.keeping-the-days.go-to-mass",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Go to Mass.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.keeping-the-days.november-1-especially-on-november-2-the-mass-is-offered-for",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "November 1 especially; on November 2 the Mass is offered for the dead, and you can bring their names in your heart.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "allsaints.keeping-the-days.pray-for-your-dead-by-name",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Pray for your dead by name.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.keeping-the-days.the-simplest-all-souls-prayer-is-the-old-one-eternal-rest-gr",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "The simplest All Souls prayer is the old one: \"Eternal rest grant unto them, O Lord, and let perpetual light shine upon them. May they rest in peace. Amen.\"",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "allsaints.keeping-the-days.visit-a-cemetery-if-you-can",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "Visit a cemetery if you can.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.keeping-the-days.the-church-attaches-a-plenary-indulgence-to-a-cemetery-visit",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "The Church attaches a plenary indulgence to a cemetery visit with prayer for the dead in the first days of November, under the usual conditions (sacramental confession, Communion, prayer for the Pope's intentions, freedom from attachment to sin). A partial indulgence is attached in other cases; the details belong to the Church's current norms, not to this page.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "allsaints.keeping-the-days.light-a-candle-safely",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > strong:nth-of-type(1)",
+      "source": "Light a candle safely.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.keeping-the-days.a-flameless-candle-is-fine-never-leave-a-real-flame-unattend",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": "A flameless candle is fine. Never leave a real flame unattended.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "allsaints.keeping-the-days.tell-the-stories",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > strong:nth-of-type(1)",
+      "source": "Tell the stories.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.keeping-the-days.read-children-the-life-of-a-saint-your-family-loves-the",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": "Read children the life of a saint your family loves; the",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "allsaints.keeping-the-days.saint-charbel-story-for-children",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Saint Charbel story for children",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.keeping-the-days.was-written-for-exactly-this",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": "was written for exactly this.",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "allsaints.the-saint-charbel-connec.the-saint-charbel-connection",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "The Saint Charbel Connection",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.the-saint-charbel-connec.saint-charbel-spent-twenty-three-years-as-a-hermit-praying-f",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Saint Charbel spent twenty-three years as a hermit praying for the world, and the night he died - Christmas Eve 1898 - his community carried his body down from the hermitage in the snow. Ever since, pilgrims have brought him their dead: photographs laid at the tomb, names whispered at the vigil lamp, requests that he pray for a father or a child. That is the communion of saints in daily dress, and it is why All Saints and All Souls matter on a website about him. On November 1 we thank God that hidden lives like Charbel's end in glory; on November 2 we ask the same God, through Charbel's prayers if we wish, to bring every soul we love into the same light.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.the-saint-charbel-connec.if-you-would-like-a-structured-prayer-for-the-season-the",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "If you would like a structured prayer for the season, the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.the-saint-charbel-connec.saint-charbel-novena",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.the-saint-charbel-connec.can-be-prayed-for-the-dead-as-well-as-for-the-living-the",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "can be prayed for the dead as well as for the living; the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "allsaints.the-saint-charbel-connec.litany-of-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Litany of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.the-saint-charbel-connec.ends-every-petition-the-way-all-souls-does-asking-a-saint-to",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "ends every petition the way All Souls does - asking a saint to pray for us.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "allsaints.frequently-asked-questio.frequently-asked-questions",
+      "selector": "#main-content > section:nth-of-type(8) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.frequently-asked-questio.what-is-the-difference-between-all-saints-and-all-souls",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "What is the difference between All Saints and All Souls?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.frequently-asked-questio.all-saints-november-1-honors-every-saint-in-heaven-known-and",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "All Saints (November 1) honors every saint in heaven, known and unknown. All Souls (November 2) is the day the Church prays for all the faithful departed who are still being purified.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.frequently-asked-questio.is-all-saints-a-holy-day-of-obligation",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "Is All Saints a holy day of obligation?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.frequently-asked-questio.in-many-countries-including-the-united-states-november-1-is",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "In many countries, including the United States, November 1 is a holy day of obligation; when it falls on a Saturday or Monday, the obligation may be lifted by the local conference. All Souls is not a holy day of obligation, though Catholics are encouraged to attend Mass and pray for the dead.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.frequently-asked-questio.why-do-catholics-pray-for-the-dead",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "Why do Catholics pray for the dead?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.frequently-asked-questio.the-practice-rests-on-scripture-2-maccabees-12-43-46-1-corin",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "The practice rests on scripture (2 Maccabees 12:43-46; 1 Corinthians 3:15) and on the Church's teaching about purification after death (Catechism 1030-1032). Prayer for the dead expresses the communion between the Church on earth and the souls being purified.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.frequently-asked-questio.where-do-all-saints-and-all-souls-come-from",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "Where do All Saints and All Souls come from?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.frequently-asked-questio.commemorations-of-all-martyrs-appear-by-the-fourth-century-r",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "Commemorations of all martyrs appear by the fourth century; Rome kept an All Saints dedication at the Pantheon on May 13, 609, and November 1 was fixed under Pope Gregory IV in 835. All Souls was spread from 998 by Saint Odilo of Cluny.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.frequently-asked-questio.how-can-i-keep-all-souls-at-home",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > h3:nth-of-type(5)",
+      "source": "How can I keep All Souls at home?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.frequently-asked-questio.attend-mass-if-you-can-pray-for-your-dead-by-name-light-a-ca",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "Attend Mass if you can, pray for your dead by name, light a candle safely, visit a cemetery if possible, and read about the hope of the resurrection. Small acts done with faith matter more than elaborate ones.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.sources.sources",
+      "selector": "#main-content > section:nth-of-type(9) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.sources.catholic-encyclopedia-all-saints-day-the-fourth-century-orig",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Catholic Encyclopedia: All Saints' Day - the fourth-century origins, the Pantheon dedication of 609, and Gregory IV's November 1 date",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.sources.catholic-encyclopedia-all-souls-day-saint-odilo-of-cluny-998",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Catholic Encyclopedia: All Souls' Day - Saint Odilo of Cluny (998) and the spread of the commemoration",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.sources.catechism-of-the-catholic-church-communion-of-saints-946-962",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Catechism of the Catholic Church: communion of saints (946-962), purgatory (1030-1032), the saints' intercession (2683)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.sources.usccb-solemnity-of-all-saints-its-rank-and-observance",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "USCCB: Solemnity of All Saints, its rank and observance",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.sources.holy-see-press-office-pope-leo-xiv-at-saint-charbel-s-tomb-1",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Holy See Press Office: Pope Leo XIV at Saint Charbel's tomb (1 December 2025) - prayer before a saint's grave",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "allsaints.footer.all-saints-and-all-souls-author-please-pray-for-the-person-w",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "All Saints and All Souls. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "allsaints.metadata.title-all-saints-and-all-souls-november-1-2-meaning-history": "All Saints and All Souls: November 1-2 Meaning, History & How to Pray",
+    "allsaints.metadata.description-all-saints-november-1-and-all-souls-november-2-w": "All Saints (November 1) and All Souls (November 2): what each day means, where they come from, how they differ, and simple ways to pray for the dead and with the saints.",
+    "allsaints.metadata.og-title-all-saints-and-all-souls-november-1-2-meaning-histo": "All Saints and All Souls: November 1-2 Meaning, History & How to Pray",
+    "allsaints.metadata.og-description-all-saints-november-1-and-all-souls-november": "All Saints (November 1) and All Souls (November 2): what each day means, where they come from, how they differ, and simple ways to pray for the dead and with the saints.",
+    "allsaints.metadata.twitter-title-all-saints-and-all-souls-november-1-2-meaning": "All Saints and All Souls: November 1-2 Meaning, History & How to Pray",
+    "allsaints.metadata.twitter-description-all-saints-november-1-and-all-souls-nove": "All Saints (November 1) and All Souls (November 2): what each day means, where they come from, how they differ, and simple ways to pray for the dead and with the saints.",
+    "allsaints.body.skip-to-main-content": "Skip to main content",
+    "allsaints.header.text": "✦",
+    "allsaints.header.saint-charbel": "Saint Charbel",
+    "allsaints.accessibility.primary": "Primary",
+    "allsaints.header.home": "Home",
+    "allsaints.header.legacy": "Legacy",
+    "allsaints.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "allsaints.header.full-history": "Full History",
+    "allsaints.header.miracles": "Miracles",
+    "allsaints.header.miracles-reports": "Miracles & Reports",
+    "allsaints.header.eucharistic-miracles": "Eucharistic Miracles",
+    "allsaints.header.letters": "Letters",
+    "allsaints.header.voice-testimony": "Voice Testimony",
+    "allsaints.header.saints": "Saints",
+    "allsaints.header.children-s-books": "Children's Books",
+    "allsaints.header.prayer": "Prayer",
+    "allsaints.header.prayer-library": "Prayer Library",
+    "allsaints.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "allsaints.header.prayer-for-the-sick": "Prayer for the Sick",
+    "allsaints.header.prayer-for-healing": "Prayer for Healing",
+    "allsaints.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "allsaints.header.prayer-for-depression": "Prayer for Depression",
+    "allsaints.header.prayer-for-students": "Prayer for Students",
+    "allsaints.header.prayer-for-addiction": "Prayer for Addiction",
+    "allsaints.header.prayer-for-family": "Prayer for Family",
+    "allsaints.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "allsaints.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "allsaints.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "allsaints.header.saint-charbel-novena": "Saint Charbel Novena",
+    "allsaints.header.feast-day": "Feast Day",
+    "allsaints.header.rosary-guide": "Rosary Guide",
+    "allsaints.header.rosary-minibook": "Rosary Minibook",
+    "allsaints.header.mystery-meditation": "Mystery Meditation",
+    "allsaints.header.become-like-him": "Become Like Him",
+    "allsaints.header.travel": "Travel",
+    "allsaints.header.visiting-annaya": "Visiting Annaya",
+    "allsaints.header.annaya-online-tour": "Annaya Online Tour",
+    "allsaints.header.bekaa-kafra": "Bekaa Kafra",
+    "allsaints.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "allsaints.header.the-cedars-of-god": "the Cedars of God",
+    "allsaints.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "allsaints.header.qadisha-valley": "Qadisha Valley",
+    "allsaints.header.qannoubine-monastery": "Qannoubine Monastery",
+    "allsaints.header.qozhaya-monastery": "Qozhaya Monastery",
+    "allsaints.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "allsaints.header.the-hermitage": "The Hermitage",
+    "allsaints.header.saint-charbel-trail": "Saint Charbel Trail",
+    "allsaints.header.news": "News",
+    "allsaints.header.media": "Media",
+    "allsaints.header.music": "Music",
+    "allsaints.header.video": "Video",
+    "allsaints.header.gallery": "Gallery",
+    "allsaints.body.november-1-november-2": "November 1 · November 2",
+    "allsaints.all-saints-and-all-souls.all-saints-and-all-souls": "All Saints and All Souls",
+    "allsaints.all-saints-and-all-souls.short-answer": "Short answer:",
+    "allsaints.all-saints-and-all-souls.on-november-1-the-church-honors-every-saint-in-heaven-on-nov": "On November 1 the Church honors every saint in heaven; on November 2 she prays for all the faithful departed still on their way to God. The two days stand together: one looks up in gratitude, the other looks around in love.",
+    "allsaints.all-saints-and-all-souls.this-guide-explains-what-each-day-means-where-the-two-feasts": "This guide explains what each day means, where the two feasts come from, how they differ, and simple ways to mark them at home, at Mass, and at the cemetery. It ends with the Saint Charbel connection: his tomb at Annaya has become a place where the living ask a saint to carry their prayers, including prayers for their dead.",
+    "allsaints.accessibility.the-vigil-lamp-burning-at-the-tomb-of-saint-charbel-in-annay": "The vigil lamp burning at the tomb of Saint Charbel in Annaya",
+    "allsaints.all-saints-and-all-souls.the-vigil-lamp-at-saint-charbel-s-tomb-in-annaya-a-small-fla": "The vigil lamp at Saint Charbel's tomb in Annaya: a small flame kept before a saint, like the candles many families light for their dead in early November. Photograph: LLEW,",
+    "allsaints.all-saints-and-all-souls.via-wikimedia-commons": "via Wikimedia Commons",
+    "allsaints.all-saints-and-all-souls.text": ",",
+    "allsaints.all-saints-and-all-souls.cc-by-sa-4-0": "CC BY-SA 4.0",
+    "allsaints.all-saints-and-all-souls.text-2": ".",
+    "allsaints.all-saints-and-all-souls.pray-the-saint-charbel-novena": "Pray the Saint Charbel Novena",
+    "allsaints.all-saints-and-all-souls.full-prayer-library": "Full Prayer Library",
+    "allsaints.all-saints-and-all-souls.the-tomb-at-annaya": "The Tomb at Annaya",
+    "allsaints.all-saints-and-all-souls.part-of-the": "Part of the",
+    "allsaints.all-saints-and-all-souls.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "allsaints.all-saints-and-all-souls.browse": ". Browse",
+    "allsaints.all-saints-and-all-souls.the-stories-shelf": "the stories shelf",
+    "allsaints.all-saints-and-all-souls.or-read": "or read",
+    "allsaints.all-saints-and-all-souls.the-full-story-of-saint-charbel-s-life": "the full story of Saint Charbel's life",
+    "allsaints.what-all-saints-means-no.what-all-saints-means-november-1": "What All Saints Means (November 1)",
+    "allsaints.what-all-saints-means-no.all-saints-is-the-solemnity-of-every-saint-in-heaven-the-fam": "All Saints is the solemnity of every saint in heaven: the famous ones with churches and feast days, and the countless ones nobody canonized. The book of Revelation gives the day its horizon - \"a great multitude that no one could count, from every nation, tribe, people and language, standing before the throne\" (Revelation 7:9). The Catechism teaches that the saints in glory \"contemplate God, praise him and constantly care for those whom they have left on earth\" (CCC 2683), which is why the Church asks their intercession rather than treating them as gone.",
+    "allsaints.what-all-saints-means-no.in-many-countries-november-1-is-a-holy-day-of-obligation-whe": "In many countries November 1 is a holy day of obligation. Where it falls next to a weekend the local bishops' conference may lift the obligation; your parish bulletin is the reliable answer for a given year.",
+    "allsaints.what-all-souls-means-nov.what-all-souls-means-november-2": "What All Souls Means (November 2)",
+    "allsaints.what-all-souls-means-nov.all-souls-is-the-commemoration-of-all-the-faithful-departed": "All Souls is the commemoration of all the faithful departed: the ordinary dead - our parents, friends, and everyone forgotten by history - who died in God's friendship but are still being purified. The Catechism names this final purification purgatory and roots prayer for the dead in scripture: Judas Maccabeus \"made atonement for the dead, that they might be delivered from their sin\" (2 Maccabees 12:46), and Paul writes of the one who is saved \"only as through fire\" (1 Corinthians 3:15). The Church concludes that our prayer can help them (CCC 1030-1032).",
+    "allsaints.what-all-souls-means-nov.all-souls-is-not-a-holy-day-of-obligation-but-the-church-fil": "All Souls is not a holy day of obligation, but the Church fills it with practice: Mass for the dead, cemetery visits, and the old custom of praying for the dead throughout the first days of November.",
+    "allsaints.one-family-three-states.one-family-three-states": "One Family, Three States",
+    "allsaints.one-family-three-states.the-two-days-belong-to-one-doctrine-the-communion-of-saints": "The two days belong to one doctrine, the communion of saints: the Church is a single family in three states. The saints in heaven intercede for us; the souls being purified are helped by our prayers; and we on earth are bound to both (CCC 946-962). All Saints looks to the family members who have arrived; All Souls looks to those still on the road. Nothing in either day is a transaction - the Church has never sold heaven, and this guide makes no promise that any particular prayer obtains a particular outcome.",
+    "allsaints.where-the-two-days-come.where-the-two-days-come-from": "Where the Two Days Come From",
+    "allsaints.where-the-two-days-come.fourth-century": "Fourth century:",
+    "allsaints.where-the-two-days-come.churches-in-the-east-keep-a-common-feast-of-all-martyrs-the": "churches in the East keep a common feast of all martyrs; the practice of honoring them together is older than any single date.",
+    "allsaints.where-the-two-days-come.may-13-609": "May 13, 609:",
+    "allsaints.where-the-two-days-come.pope-boniface-iv-dedicates-the-pagan-pantheon-in-rome-as-a-c": "Pope Boniface IV dedicates the pagan Pantheon in Rome as a church to Mary and all the martyrs - an early Roman All Saints.",
+    "allsaints.where-the-two-days-come.835": "835:",
+    "allsaints.where-the-two-days-come.pope-gregory-iv-fixes-november-1-as-the-feast-of-all-saints": "Pope Gregory IV fixes November 1 as the feast of All Saints for the Western Church.",
+    "allsaints.where-the-two-days-come.998": "998:",
+    "allsaints.where-the-two-days-come.saint-odilo-abbot-of-cluny-sets-november-2-as-a-day-of-praye": "Saint Odilo, abbot of Cluny, sets November 2 as a day of prayer for all the dead in his monasteries; the custom spreads through the whole Church.",
+    "allsaints.where-the-two-days-come.today": "Today:",
+    "allsaints.where-the-two-days-come.the-two-days-stand-back-to-back-sainthood-and-solidarity-in": "the two days stand back to back, sainthood and solidarity, in every Catholic calendar.",
+    "allsaints.keeping-the-days.keeping-the-days": "Keeping the Days",
+    "allsaints.keeping-the-days.suggestions-not-obligations-or-promises": "Suggestions, not obligations or promises:",
+    "allsaints.keeping-the-days.go-to-mass": "Go to Mass.",
+    "allsaints.keeping-the-days.november-1-especially-on-november-2-the-mass-is-offered-for": "November 1 especially; on November 2 the Mass is offered for the dead, and you can bring their names in your heart.",
+    "allsaints.keeping-the-days.pray-for-your-dead-by-name": "Pray for your dead by name.",
+    "allsaints.keeping-the-days.the-simplest-all-souls-prayer-is-the-old-one-eternal-rest-gr": "The simplest All Souls prayer is the old one: \"Eternal rest grant unto them, O Lord, and let perpetual light shine upon them. May they rest in peace. Amen.\"",
+    "allsaints.keeping-the-days.visit-a-cemetery-if-you-can": "Visit a cemetery if you can.",
+    "allsaints.keeping-the-days.the-church-attaches-a-plenary-indulgence-to-a-cemetery-visit": "The Church attaches a plenary indulgence to a cemetery visit with prayer for the dead in the first days of November, under the usual conditions (sacramental confession, Communion, prayer for the Pope's intentions, freedom from attachment to sin). A partial indulgence is attached in other cases; the details belong to the Church's current norms, not to this page.",
+    "allsaints.keeping-the-days.light-a-candle-safely": "Light a candle safely.",
+    "allsaints.keeping-the-days.a-flameless-candle-is-fine-never-leave-a-real-flame-unattend": "A flameless candle is fine. Never leave a real flame unattended.",
+    "allsaints.keeping-the-days.tell-the-stories": "Tell the stories.",
+    "allsaints.keeping-the-days.read-children-the-life-of-a-saint-your-family-loves-the": "Read children the life of a saint your family loves; the",
+    "allsaints.keeping-the-days.saint-charbel-story-for-children": "Saint Charbel story for children",
+    "allsaints.keeping-the-days.was-written-for-exactly-this": "was written for exactly this.",
+    "allsaints.the-saint-charbel-connec.the-saint-charbel-connection": "The Saint Charbel Connection",
+    "allsaints.the-saint-charbel-connec.saint-charbel-spent-twenty-three-years-as-a-hermit-praying-f": "Saint Charbel spent twenty-three years as a hermit praying for the world, and the night he died - Christmas Eve 1898 - his community carried his body down from the hermitage in the snow. Ever since, pilgrims have brought him their dead: photographs laid at the tomb, names whispered at the vigil lamp, requests that he pray for a father or a child. That is the communion of saints in daily dress, and it is why All Saints and All Souls matter on a website about him. On November 1 we thank God that hidden lives like Charbel's end in glory; on November 2 we ask the same God, through Charbel's prayers if we wish, to bring every soul we love into the same light.",
+    "allsaints.the-saint-charbel-connec.if-you-would-like-a-structured-prayer-for-the-season-the": "If you would like a structured prayer for the season, the",
+    "allsaints.the-saint-charbel-connec.saint-charbel-novena": "Saint Charbel Novena",
+    "allsaints.the-saint-charbel-connec.can-be-prayed-for-the-dead-as-well-as-for-the-living-the": "can be prayed for the dead as well as for the living; the",
+    "allsaints.the-saint-charbel-connec.litany-of-saint-charbel": "Litany of Saint Charbel",
+    "allsaints.the-saint-charbel-connec.ends-every-petition-the-way-all-souls-does-asking-a-saint-to": "ends every petition the way All Souls does - asking a saint to pray for us.",
+    "allsaints.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+    "allsaints.frequently-asked-questio.what-is-the-difference-between-all-saints-and-all-souls": "What is the difference between All Saints and All Souls?",
+    "allsaints.frequently-asked-questio.all-saints-november-1-honors-every-saint-in-heaven-known-and": "All Saints (November 1) honors every saint in heaven, known and unknown. All Souls (November 2) is the day the Church prays for all the faithful departed who are still being purified.",
+    "allsaints.frequently-asked-questio.is-all-saints-a-holy-day-of-obligation": "Is All Saints a holy day of obligation?",
+    "allsaints.frequently-asked-questio.in-many-countries-including-the-united-states-november-1-is": "In many countries, including the United States, November 1 is a holy day of obligation; when it falls on a Saturday or Monday, the obligation may be lifted by the local conference. All Souls is not a holy day of obligation, though Catholics are encouraged to attend Mass and pray for the dead.",
+    "allsaints.frequently-asked-questio.why-do-catholics-pray-for-the-dead": "Why do Catholics pray for the dead?",
+    "allsaints.frequently-asked-questio.the-practice-rests-on-scripture-2-maccabees-12-43-46-1-corin": "The practice rests on scripture (2 Maccabees 12:43-46; 1 Corinthians 3:15) and on the Church's teaching about purification after death (Catechism 1030-1032). Prayer for the dead expresses the communion between the Church on earth and the souls being purified.",
+    "allsaints.frequently-asked-questio.where-do-all-saints-and-all-souls-come-from": "Where do All Saints and All Souls come from?",
+    "allsaints.frequently-asked-questio.commemorations-of-all-martyrs-appear-by-the-fourth-century-r": "Commemorations of all martyrs appear by the fourth century; Rome kept an All Saints dedication at the Pantheon on May 13, 609, and November 1 was fixed under Pope Gregory IV in 835. All Souls was spread from 998 by Saint Odilo of Cluny.",
+    "allsaints.frequently-asked-questio.how-can-i-keep-all-souls-at-home": "How can I keep All Souls at home?",
+    "allsaints.frequently-asked-questio.attend-mass-if-you-can-pray-for-your-dead-by-name-light-a-ca": "Attend Mass if you can, pray for your dead by name, light a candle safely, visit a cemetery if possible, and read about the hope of the resurrection. Small acts done with faith matter more than elaborate ones.",
+    "allsaints.sources.sources": "Sources",
+    "allsaints.sources.catholic-encyclopedia-all-saints-day-the-fourth-century-orig": "Catholic Encyclopedia: All Saints' Day - the fourth-century origins, the Pantheon dedication of 609, and Gregory IV's November 1 date",
+    "allsaints.sources.catholic-encyclopedia-all-souls-day-saint-odilo-of-cluny-998": "Catholic Encyclopedia: All Souls' Day - Saint Odilo of Cluny (998) and the spread of the commemoration",
+    "allsaints.sources.catechism-of-the-catholic-church-communion-of-saints-946-962": "Catechism of the Catholic Church: communion of saints (946-962), purgatory (1030-1032), the saints' intercession (2683)",
+    "allsaints.sources.usccb-solemnity-of-all-saints-its-rank-and-observance": "USCCB: Solemnity of All Saints, its rank and observance",
+    "allsaints.sources.holy-see-press-office-pope-leo-xiv-at-saint-charbel-s-tomb-1": "Holy See Press Office: Pope Leo XIV at Saint Charbel's tomb (1 December 2025) - prayer before a saint's grave",
+    "allsaints.footer.all-saints-and-all-souls-author-please-pray-for-the-person-w": "All Saints and All Souls. Author: Please pray for the person who made this website."
+  }
+}
