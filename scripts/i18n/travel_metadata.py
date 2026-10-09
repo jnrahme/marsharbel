@@ -32,8 +32,13 @@ def compose_travel_clusters(root, registry, texts):
     for file, text in list(texts.items()):
         if file.suffix != '.html':
             continue
-        canonical = re.search(r'<link\b[^>]*rel=["\']canonical["\'][^>]*href=["\']([^"\']+)', text)
-        cluster = owners.get(urlsplit(canonical[1]).path) if canonical else None
+        # Read attributes independently of serializer order. Never reserialize
+        # body/head to discover identity; the existing transform remains head-only.
+        from bs4 import BeautifulSoup
+        heads = BeautifulSoup(text[:text.index('</head>')], 'html.parser')
+        canonical = heads.select('link[rel="canonical"]')
+        if len(canonical) > 1:raise ValueError('Ambiguous Travel canonical')
+        cluster = owners.get(urlsplit(canonical[0].get('href','')).path) if canonical else None
         if cluster is None:
             continue
         end = text.index('</head>')
