@@ -14,11 +14,10 @@ def travel_manifest(root, texts, manifest):
     for family, review in groups.items():
         scoped = review.get('evidenceSchema') == 'scoped-variants-v1'
         if scoped:
-            from i18n.travel_variant_evidence import SLUGS, validate_variant
-            slug=family.removesuffix('-travel-master')
-            required={'en','de','ru','hi'} if slug=='travel' else {'en','de','ru'}
-            if slug not in SLUGS or set(review['variants'])!=required:
-                raise ValueError('Scoped Travel membership mismatch')
+            from i18n.travel_variant_evidence import validate_group, validate_variant
+            validate_group(family,review)
+        elif family.endswith('-travel-master'):
+            raise ValueError('New-family evidence schema missing')
         elif review['renderedReviewStatus'] != 'approved' or not review['catalogReview'] or not review['renderedReview']:
             raise ValueError('Travel review incomplete: ' + family)
         variants = review['variants']

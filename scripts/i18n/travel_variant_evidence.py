@@ -66,6 +66,24 @@ def label_delta(before, after, code, slug):
     if mask(before,False)!=mask(after,True):raise ValueError('Non-label/hreflang byte delta')
 
 
+def validate_group(family, group):
+    slug=family.removesuffix('-travel-master')
+    if slug not in SLUGS or group.get('evidenceSchema')!='scoped-variants-v1':
+        raise ValueError('New-family evidence schema missing')
+    if any(k in group for k in ('renderedReviewStatus','catalogReview','renderedReview')):
+        raise ValueError('Group-level review laundering')
+    expected={'en','de','ru','hi'} if slug=='travel' else {'en','de','ru'}
+    if set(group['variants'])!=expected:raise ValueError('Scoped Travel membership mismatch')
+
+
+def isolated_en_ru(text, slug):
+    clean=without_ru(text,slug)
+    if 'hreflang="ru"' in text:
+        found=re.findall(r'^[ \t]*<link\b[^>]*\bhreflang="ru"[^>]*?/>[ \t]*\n',text,re.M)
+        if len(found)!=1:raise ValueError('EN RU hreflang must be isolated line')
+    return clean
+
+
 def validate_variant(root, family, code, variant, text):
     slug=family.removesuffix('-travel-master')
     if slug not in SLUGS or code not in ({'en','de','ru','hi'} if slug=='travel' else {'en','de','ru'}):
@@ -81,7 +99,8 @@ def validate_variant(root, family, code, variant, text):
     if without_ru(candidate,slug)!=without_ru(text,slug):raise ValueError('Post-review candidate drift')
     if code=='en':
         if evidence.get('state')!='carried' or evidence.get('scope')!='stage bytes carried; no new review':raise ValueError('EN must be carried')
-        if without_ru(blob(root,STAGE,file),slug)!=without_ru(candidate,slug):raise ValueError('Carried stage drift')
+        if isolated_en_ru(blob(root,STAGE,file),slug)!=isolated_en_ru(candidate,slug):raise ValueError('Carried stage drift')
+        isolated_en_ru(text,slug)
         if any(k in evidence for k in ('renderedReview','catalogReview')):raise ValueError('Carried cannot claim new review')
     else:
         refs_raw=(root/'locales/travel-c0016-review-refs.json').read_bytes()

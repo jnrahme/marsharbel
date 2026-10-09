@@ -174,8 +174,10 @@ def prepare(root, base):
         prior_group = old['groups'][family]
         # Pin-only continuation of already supplied reviews, never creation.
         if family in FAMILIES:
-            if group.get('evidenceSchema') != 'scoped-variants-v1':
-                raise ValueError('New families require per-variant scoped evidence')
+            import sys
+            if str(root/'scripts') not in sys.path:sys.path.insert(0,str(root/'scripts'))
+            from i18n.travel_variant_evidence import validate_group
+            validate_group(family,group)
         elif (group.get('renderedReviewStatus') != 'approved'
                 or not group.get('catalogReview') or not group.get('renderedReview')):
             raise ValueError('Prepared review incomplete: ' + family)
