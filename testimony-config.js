@@ -9,6 +9,6 @@ window.TESTIMONY_CONFIG = Object.freeze({
   accountsEnabled: false,
   submissionsEnabled: true,
   moderationEnabled: true,
-  // Password-access migration applied after owner confirmation.
-  moderatorMfaRequired: false
+  // Moderator sign-in requires an authenticator code (aal2); the database enforces the same rule.
+  moderatorMfaRequired: true
 });
