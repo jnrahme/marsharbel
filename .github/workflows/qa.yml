@@ -59,7 +59,7 @@ jobs:
         run: pip install beautifulsoup4
 
       - name: Run QA suite shard
-        run: bash scripts/qa/run_full_qa.sh --ci --shard ${{ matrix.shard }}/8
+        run: bash scripts/qa/run_full_qa.sh --ci --shard ${{ matrix.shard }}/8 --skip-i18n-test
 
       - name: Upload debug artifacts
         if: failure()
@@ -144,14 +144,53 @@ jobs:
             output/playwright/
           if-no-files-found: ignore
 
+  # i18n:test (python unittest, 34 tests, ~258s) was the longest single step in
+  # shard 3. It now runs as its own parallel job and is skipped in the CI shard invocation (--skip-i18n-test); local run_full_qa.sh still runs it.
+  i18n-test:
+    name: i18n-test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Python dependencies
+        run: pip install beautifulsoup4
+
+      - name: i18n unit tests
+        run: npm run i18n:test
+
+      - name: Upload debug artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: i18n-test-debug-artifacts
+          path: |
+            tmp/
+            test-results/
+          if-no-files-found: ignore
+
   # Required status check. Keeps the exact name "qa" and fails unless every shard passed.
   qa:
     if: ${{ always() && !cancelled() }}
-    needs: [qa-shard, qa-gates]
+    needs: [qa-shard, qa-gates, i18n-test]
     runs-on: ubuntu-latest
     steps:
       - run: |
           echo "shards: ${{ needs.qa-shard.result }}"
           echo "gates: ${{ needs.qa-gates.result }}"
+          echo "i18n-test: ${{ needs.i18n-test.result }}"
           test "${{ needs.qa-shard.result }}" = "success"
           test "${{ needs.qa-gates.result }}" = "success"
+          test "${{ needs.i18n-test.result }}" = "success"

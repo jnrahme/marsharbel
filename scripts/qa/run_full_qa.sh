@@ -3,11 +3,14 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 
-SHARD_K=""; SHARD_N=""
+SHARD_K=""; SHARD_N=""; SKIP_I18N_TEST=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --ci) export CI=1 ;;
     --shard) SHARD_K="${2%%/*}"; SHARD_N="${2##*/}"; shift ;;
+    # CI only: i18n:test runs as its own parallel job (i18n-test in qa.yml).
+    # Local/unsharded runs omit this flag and still run it exactly once.
+    --skip-i18n-test) SKIP_I18N_TEST=1 ;;
     *) echo "unknown arg: $1" >&2; exit 2 ;;
   esac
   shift
@@ -78,7 +81,8 @@ qa_step python3 -m unittest discover -s scripts/qa -p 'test_security_headers.py'
 qa_step node scripts/build-home-css.mjs --check
 qa_step npm run i18n:check
 qa_step python3 scripts/build-eucharistic-miracles.py --check
-qa_step npm run i18n:test
+# The step index is still consumed when skipped, so shard assignment of every other step is unchanged.
+if [[ -n "${SKIP_I18N_TEST}" ]]; then STEP_INDEX=$((STEP_INDEX + 1)); else qa_step npm run i18n:test; fi
 qa_step npx playwright test tests/language-persistence.spec.js tests/locale-preference-routing.spec.js --project=phone --project=laptop --workers=2
 
 echo "[qa] Refactor, mirror and locale contract tests"
