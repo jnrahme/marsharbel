@@ -1879,6 +1879,34 @@
       "source": "Documents and tradition: table, scroll horizontally to see all columns",
       "kind": "attribute",
       "attribute": "aria-label"
+    },
+    {
+      "key": "history.header.media",
+      "selector": "header nav a.nav-parent[href=\"./music\"]",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "history.header.music",
+      "selector": "header nav .nav-group:has(> a.nav-parent[href=\"./music\"]) .nav-sub a[href=\"./music\"]",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "history.header.video",
+      "selector": "header nav .nav-group:has(> a.nav-parent[href=\"./music\"]) .nav-sub a[href=\"./videos\"]",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "history.header.gallery",
+      "selector": "header nav .nav-group:has(> a.nav-parent[href=\"./music\"]) .nav-sub a[href=\"./gallery\"]",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -2138,6 +2166,14 @@
     "history.accessibility.languages": "Languages",
     "history.accessibility.skip-to-main-content": "Skip to main content",
     "history.metadata.saint-charbel-makhlouf-full-life-timeline-and-canonization-1828": "Saint Charbel Makhlouf: Full Life, Timeline and Canonization (1828-1977)",
-    "history.metadata.the-full-story-of-saint-charbel-bekaa-kafra-16": "The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced."
+    "history.metadata.the-full-story-of-saint-charbel-bekaa-kafra-16": "The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced.",
+  "history.header.media": "Media",
+  "history.header.music": "Music",
+  "history.header.video": "Video",
+  "history.header.gallery": "Gallery",
+  "history.visit.heading": "Visiting Annaya",
+  "history.table.facts.scroll-label": "At a glance: table, scroll horizontally to see all columns",
+  "history.table.cause.scroll-label": "Canonization: table, scroll horizontally to see all columns",
+  "history.table.status.scroll-label": "Documents and tradition: table, scroll horizontally to see all columns"
   }
 }
