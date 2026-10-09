@@ -26,6 +26,17 @@ def travel_clusters(root, registry):
     return clusters
 
 
+# Explicit served paths from the approved authored-mirror producer boundary.
+# Nineteen explicitly reviewed authored-mirror producer files.
+PARTIAL_AUTHORED_FILES = frozenset({
+    'ar/qadisha-valley.html','fr/vallee-qadisha.html','es/valle-qadisha.html',
+    'ar/qannoubine-monastery.html','fr/monastere-qannoubine.html','es/monasterio-qannoubine.html',
+    'ar/qozhaya-monastery.html','fr/monastere-qozhaya.html','es/monasterio-qozhaya.html',
+    'travel.html','ar/travel.html','es/travel.html','fr/travel.html','it/travel.html','pl/travel.html','pt/travel.html',
+    'qadisha-valley.html','qannoubine-monastery.html','qozhaya-monastery.html',
+})
+
+
 def compose_travel_clusters(root, registry, texts):
     clusters = travel_clusters(root, registry)
     owners = {route: cluster for cluster in clusters.values() for route in cluster.values()}
@@ -41,11 +52,11 @@ def compose_travel_clusters(root, registry, texts):
         cluster = owners.get(urlsplit(canonical[0].get('href','')).path) if canonical else None
         if cluster is None:
             continue
-        texts[file] = splice_travel_alternates(text, cluster, registry['site'])
+        texts[file] = splice_travel_alternates(text, cluster, registry['site'], file.relative_to(root).as_posix())
     return texts
 
 
-def splice_travel_alternates(text, cluster, site):
+def splice_travel_alternates(text, cluster, site, file=None):
     """No serialization of an existing discovery block. Missing RU only."""
     from bs4 import BeautifulSoup
     from i18n.travel_scoped_delta import Tokens
@@ -59,13 +70,16 @@ def splice_travel_alternates(text, cluster, site):
             raise ValueError('Malformed/duplicate/unexpected Travel alternate')
         actual[code]=link['href']
     if actual==expected:return text
-    if not actual:
-        # Initial source composition has no block to preserve. Existing blocks
-        # NEVER use this bootstrap branch.
+    if not actual:raise ValueError('Travel bootstrap forbidden: missing discovery block')
+    missing=set(expected)-set(actual)
+    if missing!={'ru'}:
+        if file not in PARTIAL_AUTHORED_FILES or not set(actual)<set(expected):
+            raise ValueError('Existing Travel block has non-RU discovery gap')
+        # Exact old composer serialization, bounded to the declared partial
+        # producer files. Raw replacement remains HEAD-only and unchanged MAIN.
+        head=re.sub(r'<link\b[^>]*\bhreflang=["\'][^>]*>\s*','',head)
         block='\n'.join('<link rel="alternate" hreflang="'+code+'" href="'+href+'" />' for code,href in expected.items())
         return head+block+'\n'+text[end:]
-    if set(expected)-set(actual)!={'ru'} or 'ru' in actual:
-        raise ValueError('Existing Travel block has non-RU discovery gap')
     # Reviewed compact candidates place RU immediately before x-default with
     # href/hreflang/rel order. Locate that raw tag, not a soup reserialization.
     tokens=[t for t in Tokens(head).tokens if t[0]=='tag' and t[3]=='link' and dict(t[4]).get('hreflang')=='x-default']

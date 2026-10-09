@@ -3,7 +3,7 @@ import sys,unittest
 from pathlib import Path
 from unittest.mock import patch
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
-from i18n.travel_metadata import compose_travel_clusters
+from i18n.travel_metadata import compose_travel_clusters, splice_travel_alternates, PARTIAL_AUTHORED_FILES
 class SpliceTests(unittest.TestCase):
  def run_composer(self,text):
   p=ROOT/'travel.html';cluster={'/travel':{'en':'/travel','ru':'/ru/travel','x-default':'/travel'}}
@@ -23,4 +23,16 @@ class SpliceTests(unittest.TestCase):
   correct=self.run_composer(self.base())
   for bad in [correct.replace('/ru/travel','/ru/wrong'),correct.replace(self.tag(),self.tag()*2),correct.replace('hreflang="ru" rel="alternate"','hreflang="ru" rel="canonical"'),self.base().replace('hreflang="en"','hreflang="fr"')]:
    with self.subTest(bad=bad),self.assertRaises(ValueError):self.run_composer(bad)
+ def test_partial_allowlist_legacy_emission_offlist_and_wrong_href_refuse(self):
+  cluster={'en':'/qadisha-valley','de':'/de/qadisha-valley','ru':'/ru/qadisha-valley','x-default':'/qadisha-valley'}
+  raw='<head><title>Same</title><link rel="alternate" hreflang="en" href="https://marsharbel.com/qadisha-valley" />\n<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qadisha-valley" />\n</head><main>Exact</main>'
+  expected='<head><title>Same</title>'+ '\n'.join('<link rel="alternate" hreflang="'+c+'" href="https://marsharbel.com'+v+'" />' for c,v in cluster.items())+'\n</head><main>Exact</main>'
+  self.assertEqual(splice_travel_alternates(raw,cluster,'https://marsharbel.com','qadisha-valley.html'),expected)
+  for file,text in [('de/qadisha-valley.html',raw),('qadisha-valley.html',raw.replace('/qadisha-valley','/wrong'))]:
+   with self.assertRaises(ValueError):splice_travel_alternates(text,cluster,'https://marsharbel.com',file)
+  self.assertNotIn('de/qozhaya-monastery.html',PARTIAL_AUTHORED_FILES)
+  self.assertEqual(len(PARTIAL_AUTHORED_FILES),19)
+  self.assertIn('travel.html',PARTIAL_AUTHORED_FILES)
+ def test_no_empty_block_bootstrap(self):
+  with self.assertRaisesRegex(ValueError,'bootstrap forbidden'):self.run_composer('<head><link rel="canonical" href="https://marsharbel.com/travel"/></head><main>Body</main>')
 if __name__=='__main__':unittest.main()
