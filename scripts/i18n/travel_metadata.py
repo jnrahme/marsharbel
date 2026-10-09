@@ -41,8 +41,35 @@ def compose_travel_clusters(root, registry, texts):
         cluster = owners.get(urlsplit(canonical[0].get('href','')).path) if canonical else None
         if cluster is None:
             continue
-        end = text.index('</head>')
-        head = re.sub(r'<link\b[^>]*\bhreflang=["\'][^>]*>\s*', '', text[:end])
-        links = '\n'.join('<link rel="alternate" hreflang="' + code + '" href="' + registry['site'] + route + '" />' for code, route in cluster.items())
-        texts[file] = head + links + '\n' + text[end:]
+        texts[file] = splice_travel_alternates(text, cluster, registry['site'])
     return texts
+
+
+def splice_travel_alternates(text, cluster, site):
+    """No serialization of an existing discovery block. Missing RU only."""
+    from bs4 import BeautifulSoup
+    from i18n.travel_scoped_delta import Tokens
+    end=text.index('</head>');head=text[:end]
+    soup=BeautifulSoup(head,'html.parser');links=soup.select('link[hreflang]')
+    expected={code:site+route for code,route in cluster.items()}
+    actual={}
+    for link in links:
+        code=link.get('hreflang')
+        if code in actual or link.get('rel')!=['alternate'] or link.get('href')!=expected.get(code):
+            raise ValueError('Malformed/duplicate/unexpected Travel alternate')
+        actual[code]=link['href']
+    if actual==expected:return text
+    if not actual:
+        # Initial source composition has no block to preserve. Existing blocks
+        # NEVER use this bootstrap branch.
+        block='\n'.join('<link rel="alternate" hreflang="'+code+'" href="'+href+'" />' for code,href in expected.items())
+        return head+block+'\n'+text[end:]
+    if set(expected)-set(actual)!={'ru'} or 'ru' in actual:
+        raise ValueError('Existing Travel block has non-RU discovery gap')
+    # Reviewed compact candidates place RU immediately before x-default with
+    # href/hreflang/rel order. Locate that raw tag, not a soup reserialization.
+    tokens=[t for t in Tokens(head).tokens if t[0]=='tag' and t[3]=='link' and dict(t[4]).get('hreflang')=='x-default']
+    if len(tokens)!=1:raise ValueError('Missing unique x-default insertion anchor')
+    position=tokens[0][1]
+    tag='<link href="'+expected['ru']+'" hreflang="ru" rel="alternate"/>'
+    return text[:position]+tag+text[position:]
