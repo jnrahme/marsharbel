@@ -12,12 +12,20 @@ def travel_manifest(root, texts, manifest):
     groups = json.loads(path.read_text())['groups']
     out = json.loads(json.dumps(manifest))
     for family, review in groups.items():
-        if review['renderedReviewStatus'] != 'approved' or not review['catalogReview'] or not review['renderedReview']:
+        scoped = review.get('evidenceSchema') == 'scoped-variants-v1'
+        if scoped:
+            from i18n.travel_variant_evidence import SLUGS, validate_variant
+            slug=family.removesuffix('-travel-master')
+            required={'en','de','ru','hi'} if slug=='travel' else {'en','de','ru'}
+            if slug not in SLUGS or set(review['variants'])!=required:
+                raise ValueError('Scoped Travel membership mismatch')
+        elif review['renderedReviewStatus'] != 'approved' or not review['catalogReview'] or not review['renderedReview']:
             raise ValueError('Travel review incomplete: ' + family)
         variants = review['variants']
         for code, variant in variants.items():
             file = root / variant['file']
             text = texts.get(file, file.read_text())
+            if scoped:validate_variant(root,family,code,variant,text)
             if digest(text) != variant['bodySha256']:
                 raise ValueError('Travel body changed after review: ' + family + ' ' + code)
             if code != 'en' and hashlib.sha256((root / variant['catalog']).read_bytes()).hexdigest() != variant['catalogSha256']:
@@ -37,8 +45,12 @@ def travel_manifest(root, texts, manifest):
                 'contentSha256': variant['bodySha256'], 'sourceSha256': page['sourceSha256'],
                 'proof': {**{key: True for key in ('keyedTextComplete', 'mediaParity', 'linkParity',
                     'schemaParity', 'anchorParity', 'interactionParity')},
-                    'editorialReview': hashlib.sha256(review['catalogReview'].encode()).hexdigest(),
-                    'nativeSampleReview': hashlib.sha256(review['catalogReview'].encode()).hexdigest(),
-                    'renderedReview': hashlib.sha256(review['renderedReview'].encode()).hexdigest()}}
+                    'editorialReview': hashlib.sha256(review.get('catalogReview','').encode()).hexdigest(),
+                    'nativeSampleReview': hashlib.sha256(review.get('catalogReview','').encode()).hexdigest(),
+                    'renderedReview': hashlib.sha256(review.get('renderedReview','').encode()).hexdigest()}}
+        if scoped:
+            for code, variant in variants.items():
+                file=root/variant['file']
+                page['variants'][code]['proof']=validate_variant(root,family,code,variant,texts.get(file,file.read_text()))
         out['pages'][family + '-equivalence'] = page
     return out

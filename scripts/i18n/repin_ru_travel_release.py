@@ -173,7 +173,10 @@ def prepare(root, base):
     for family, group in review['groups'].items():
         prior_group = old['groups'][family]
         # Pin-only continuation of already supplied reviews, never creation.
-        if (group.get('renderedReviewStatus') != 'approved'
+        if family in FAMILIES:
+            if group.get('evidenceSchema') != 'scoped-variants-v1':
+                raise ValueError('New families require per-variant scoped evidence')
+        elif (group.get('renderedReviewStatus') != 'approved'
                 or not group.get('catalogReview') or not group.get('renderedReview')):
             raise ValueError('Prepared review incomplete: ' + family)
         if set(group['variants']) != set(prior_group['variants']):
@@ -188,8 +191,6 @@ def prepare(root, base):
             if set(group['variants']) & {'zh-Hans', 'th'}:
                 raise ValueError('Parallel masters cannot join exact group')
             expected_locales = {'en', 'de', 'ru'}
-            if slug in {'travel', 'qadisha-valley', 'qannoubine-monastery', 'qozhaya-monastery'}:
-                expected_locales |= {'ar', 'fr', 'es', 'pt', 'it', 'pl'}
             if slug == 'travel':
                 expected_locales.add('hi')
             if set(group['variants']) != expected_locales:
@@ -200,6 +201,11 @@ def prepare(root, base):
             if file.startswith('/') or '..' in Path(file).parts:
                 raise ValueError('Unsafe variant path')
             before = blob(root, base, file); after = (root / file).read_bytes()
+            if family in FAMILIES:
+                import sys
+                if str(root/'scripts') not in sys.path:sys.path.insert(0,str(root/'scripts'))
+                from i18n.travel_variant_evidence import validate_variant
+                validate_variant(root,family,code,variant,after.decode())
             if main_hash(before) != prior['bodySha256'] or main_hash(after) != prior['bodySha256']:
                 raise ValueError('Reviewed body changed: ' + family + '/' + code)
             # No digest grant for rewritten body/navigation/schema/copy here.
