@@ -35,6 +35,7 @@ Deno.serve(async request => {
     const supabaseUrl = Deno.env.get('SUPABASE_URL'); const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
     if (!supabaseUrl || !serviceKey) return json(503, { error: 'not_configured' });
     const db = createClient(supabaseUrl, serviceKey, { auth: { persistSession: false } });
+    await db.from('email_worker_heartbeat').upsert({ worker: 'daily-prayer', last_run_at: new Date().toISOString() });
 
     // Issue date anchors to the site owner's calendar (America/New_York).
     const nowEt = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
@@ -53,19 +54,21 @@ Deno.serve(async request => {
     if (claim?.error || !claim?.id) return json(503, { error: 'claim_failed' });
 
     const issueId = claim.id as string;
-    const cap = Math.max(1, Number(claim.cap) || 90);
     let attempted = Number(claim.attempted) || 0;
     let sent = Number(claim.sent) || 0;
     let failed = Number(claim.failed) || 0;
     let afterId: string | null = null;
     let deferred = 0;
 
-    while (attempted < cap) {
+    while (true) {
       const { data: batch, error: batchError } = await db.rpc('prayer_confirmed_batch', { p_after_id: afterId, p_limit: 100 });
       if (batchError) throw batchError;
       if (!batch || batch.length === 0) break;
+      const { data: grant, error: budgetError } = await db.rpc('claim_email_send_budget', { p_flow: 'subscription', p_count: batch.length });
+      if (budgetError) throw budgetError;
+      let claimed = Number(grant) || 0;
       for (const subscriber of batch) {
-        if (attempted >= cap) { deferred++; continue; }
+        if (claimed <= 0) { deferred++; continue; }
         afterId = subscriber.id;
         const unsubscribeUrl = `${supabaseUrl}/functions/v1/unsubscribe-prayer?token=${await mintSubscriberToken(subscriber.id)}`;
         const content: IssueContent = {
@@ -87,6 +90,7 @@ Deno.serve(async request => {
           headers: { 'List-Unsubscribe': `<${unsubscribeUrl}>`, 'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click' }
         });
         attempted++;
+        claimed--;
         if (result.ok) sent++; else failed++;
         await db.rpc('prayer_record_send', {
           p_issue_id: issueId, p_subscriber_id: subscriber.id,
