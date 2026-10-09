@@ -49,6 +49,7 @@ qa_step python3 scripts/qa/test_travel_release.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_media_nav_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_history_nav_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_ru_travel_repin.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_travel_scoped_delta.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_parallel_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata_attribute_order.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_variant_evidence.py

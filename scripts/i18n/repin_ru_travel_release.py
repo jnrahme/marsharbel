@@ -215,7 +215,11 @@ def prepare(root, base):
             if before != after and (family not in FAMILIES or code == 'ru'):
                 raise ValueError('Unexpected rendered change after prepared base')
             if before != after:
-                hreflang_delta(before, after, registry['site'] + '/ru/' + FAMILIES[family])
+                if code in ('de','hi'):
+                    from i18n.travel_scoped_delta import scoped_delta
+                    scoped_delta(root,before,after,code,FAMILIES[family],variant)
+                else:
+                    hreflang_delta(before, after, registry['site'] + '/ru/' + FAMILIES[family])
             if code == 'en':
                 continue
             catalog = variant['catalog']
