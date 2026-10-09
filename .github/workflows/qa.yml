@@ -31,8 +31,61 @@ jobs:
           # Full history: sitemap lastmod is checked against each page's git history.
           fetch-depth: 0
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Playwright browser
+        if: steps.pw-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+
+      - name: Install Playwright system dependencies (browser cache hit)
+        if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+
+      - name: Install Python dependencies
+        run: pip install beautifulsoup4
+
+      - name: Run QA suite shard
+        run: bash scripts/qa/run_full_qa.sh --ci --shard ${{ matrix.shard }}/8
+
+      - name: Upload debug artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-debug-artifacts-${{ matrix.shard }}
+          path: |
+            tmp/
+            test-results/
+            output/playwright/
+          if-no-files-found: ignore
+
+  # Runs the gates that used to be shard-0-only steps, in parallel with qa-shard.
+  # Not a required check by itself: "qa" below needs it and fails if it fails.
+  qa-gates:
+    name: qa-gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Full history: sitemap lastmod is checked against each page's git history.
+          fetch-depth: 0
+
       - name: Test deployment verification
-        if: matrix.shard == 0
         run: python3 -m unittest discover -s scripts/qa -p 'test_verify_deployment.py'
 
       - name: Setup Node
@@ -62,35 +115,29 @@ jobs:
       - name: Install Python dependencies
         run: pip install beautifulsoup4
 
-      # These four gates run once (shard 0) because they are not part of run_full_qa.sh.
+      # These gates are not part of run_full_qa.sh. They run once, in parallel with the shards.
       - name: New-page locale key gate tests
-        if: matrix.shard == 0
         run: python3 -m unittest discover -s scripts/qa -p 'test_new_page_locales.py'
 
       - name: New-page locale key coverage (PR base)
-        if: matrix.shard == 0 && github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request'
         env:
           LOCALE_GATE_BASE: ${{ github.event.pull_request.base.sha }}
         run: python3 scripts/qa/check_new_page_locales.py --base "$LOCALE_GATE_BASE"
 
       - name: Russian first-slice publication and browser guards
-        if: matrix.shard == 0
         run: |
           python3 -m unittest discover -s scripts/qa -p 'test_russian_slice.py'
           npx playwright test tests/russian-first-slice.spec.js --project=small-phone --project=phone --project=laptop --workers=2
 
       - name: Clean-checkout page build is in sync
-        if: matrix.shard == 0
         run: node scripts/build-pages.mjs --check
-
-      - name: Run QA suite shard
-        run: bash scripts/qa/run_full_qa.sh --ci --shard ${{ matrix.shard }}/8
 
       - name: Upload debug artifacts
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: qa-debug-artifacts-${{ matrix.shard }}
+          name: qa-gates-debug-artifacts
           path: |
             tmp/
             test-results/
@@ -100,9 +147,11 @@ jobs:
   # Required status check. Keeps the exact name "qa" and fails unless every shard passed.
   qa:
     if: ${{ always() && !cancelled() }}
-    needs: qa-shard
+    needs: [qa-shard, qa-gates]
     runs-on: ubuntu-latest
     steps:
       - run: |
           echo "shards: ${{ needs.qa-shard.result }}"
+          echo "gates: ${{ needs.qa-gates.result }}"
           test "${{ needs.qa-shard.result }}" = "success"
+          test "${{ needs.qa-gates.result }}" = "success"
