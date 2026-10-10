@@ -29,11 +29,6 @@ def travel_clusters(root, registry):
 # Explicit served paths from the approved authored-mirror producer boundary.
 # Nineteen explicitly reviewed authored-mirror producer files.
 PARTIAL_AUTHORED_FILES = frozenset({
-    # Eight EN source composers carry valid en/x-default discovery stubs.
-    'our-lady-of-lebanon-harissa.html','bekaa-kafra.html',
-    'bkerke-maronite-patriarchate.html','annaya-tour.html',
-    'saint-charbel-trail.html','saint-charbel-places-lebanon.html',
-    'cedars-of-god-lebanon.html','saint-charbel-hermitage.html',
     'ar/qadisha-valley.html','fr/vallee-qadisha.html','es/valle-qadisha.html',
     'ar/qannoubine-monastery.html','fr/monastere-qannoubine.html','es/monasterio-qannoubine.html',
     'ar/qozhaya-monastery.html','fr/monastere-qozhaya.html','es/monasterio-qozhaya.html',
@@ -42,7 +37,16 @@ PARTIAL_AUTHORED_FILES = frozenset({
 })
 
 
-def compose_travel_clusters(root, registry, texts):
+SOURCE_STUB_FILES = frozenset({
+    # Eight EN source composers carry valid en/x-default discovery stubs.
+    'our-lady-of-lebanon-harissa.html','bekaa-kafra.html',
+    'bkerke-maronite-patriarchate.html','annaya-tour.html',
+    'saint-charbel-trail.html','saint-charbel-places-lebanon.html',
+    'cedars-of-god-lebanon.html','saint-charbel-hermitage.html',
+})
+
+
+def compose_travel_clusters(root, registry, texts, source_inputs=False):
     clusters = travel_clusters(root, registry)
     owners = {route: cluster for cluster in clusters.values() for route in cluster.values()}
     for file, text in list(texts.items()):
@@ -57,11 +61,11 @@ def compose_travel_clusters(root, registry, texts):
         cluster = owners.get(urlsplit(canonical[0].get('href','')).path) if canonical else None
         if cluster is None:
             continue
-        texts[file] = splice_travel_alternates(text, cluster, registry['site'], file.relative_to(root).as_posix())
+        texts[file] = splice_travel_alternates(text, cluster, registry['site'], file.relative_to(root).as_posix(), source_inputs=source_inputs)
     return texts
 
 
-def splice_travel_alternates(text, cluster, site, file=None):
+def splice_travel_alternates(text, cluster, site, file=None, source_inputs=False):
     """No serialization of an existing discovery block. Missing RU only."""
     from bs4 import BeautifulSoup
     from i18n.travel_scoped_delta import Tokens
@@ -78,7 +82,8 @@ def splice_travel_alternates(text, cluster, site, file=None):
     if not actual:raise ValueError('Travel bootstrap forbidden: missing discovery block')
     missing=set(expected)-set(actual)
     if missing!={'ru'}:
-        if file not in PARTIAL_AUTHORED_FILES or not set(actual)<set(expected):
+        source_stub=(source_inputs and file in SOURCE_STUB_FILES and set(actual)=={'en','x-default'})
+        if not (file in PARTIAL_AUTHORED_FILES or source_stub) or not set(actual)<set(expected):
             raise ValueError('Existing Travel block has non-RU discovery gap')
         # Exact old composer serialization, bounded to the declared partial
         # producer files. Raw replacement remains HEAD-only and unchanged MAIN.

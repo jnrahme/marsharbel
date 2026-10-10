@@ -31,8 +31,24 @@ class SpliceTests(unittest.TestCase):
   for file,text in [('de/qadisha-valley.html',raw),('qadisha-valley.html',raw.replace('/qadisha-valley','/wrong'))]:
    with self.assertRaises(ValueError):splice_travel_alternates(text,cluster,'https://marsharbel.com',file)
   self.assertNotIn('de/qozhaya-monastery.html',PARTIAL_AUTHORED_FILES)
-  self.assertEqual(len(PARTIAL_AUTHORED_FILES),27)
+  self.assertEqual(len(PARTIAL_AUTHORED_FILES),19)
   self.assertIn('travel.html',PARTIAL_AUTHORED_FILES)
  def test_no_empty_block_bootstrap(self):
   with self.assertRaisesRegex(ValueError,'bootstrap forbidden'):self.run_composer('<head><link rel="canonical" href="https://marsharbel.com/travel"/></head><main>Body</main>')
+ def test_source_stub_flag_cannot_leak_into_served_inputs(self):
+  from i18n.travel_metadata import SOURCE_STUB_FILES
+  self.assertEqual(len(SOURCE_STUB_FILES),8)
+  for file in SOURCE_STUB_FILES:
+   slug=file.removesuffix('.html')
+   cluster={'en':'/'+slug,'de':'/de/'+slug,'ru':'/ru/'+slug,'x-default':'/'+slug}
+   raw='<head><title>Same</title>'+''.join('<link rel="alternate" hreflang="'+c+'" href="https://marsharbel.com/'+slug+'" />\n' for c in ('en','x-default'))+'</head><main>Exact</main>'
+   expected='<head><title>Same</title>'+'\n'.join('<link rel="alternate" hreflang="'+c+'" href="https://marsharbel.com'+route+'" />' for c,route in cluster.items())+'\n</head><main>Exact</main>'
+   with self.subTest(file=file):
+    self.assertEqual(splice_travel_alternates(raw,cluster,'https://marsharbel.com',file,source_inputs=True),expected)
+    with self.assertRaises(ValueError):splice_travel_alternates(raw,cluster,'https://marsharbel.com',file)
+    with self.assertRaises(ValueError):splice_travel_alternates(raw.replace('/'+slug,'/wrong'),cluster,'https://marsharbel.com',file,source_inputs=True)
+    extra=raw.replace('</head>','<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/'+slug+'" />\n</head>')
+    # Use an extra required locale so the third-code partial is not RU-only.
+    larger={**cluster,'fr':'/fr/'+slug}
+    with self.assertRaises(ValueError):splice_travel_alternates(extra,larger,'https://marsharbel.com',file,source_inputs=True)
 if __name__=='__main__':unittest.main()

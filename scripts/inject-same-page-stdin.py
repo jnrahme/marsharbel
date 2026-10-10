@@ -23,5 +23,5 @@ if canonical:
 if canonical:
  from i18n.travel_metadata import compose_travel_clusters
  file=root/(route.lstrip('/')+'.html')
- text=compose_travel_clusters(root,registry,{file:text}).get(file,text)
+ text=compose_travel_clusters(root,registry,{file:text},source_inputs=True).get(file,text)
 sys.stdout.write(inject_control(text,root,manifest,copy))
