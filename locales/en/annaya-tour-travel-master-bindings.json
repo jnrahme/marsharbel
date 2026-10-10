@@ -412,91 +412,91 @@
     },
     {
       "key": "travel.hero.kicker",
-      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > span:nth-of-type(1)",
       "source": "Online tour · Annaya, Lebanon",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "travel.hero.heading1",
-      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > h1:nth-of-type(1)",
       "source": "Walk Through Annaya, Online",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "travel.hero.answerLead",
-      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(1) > strong:nth-of-type(1)",
       "source": "Short answer:",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "travel.hero.answer1",
-      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(1)",
       "source": "This is a guided walk through Annaya, the Lebanese mountain monastery where Saint Charbel lived and is buried. Scroll through five stops: the monastery, the church, the courtyard, the tomb, and the hermitage. Each has a real photograph and a short story of why it matters.",
       "kind": "text",
       "nodeIndex": 1
     },
     {
       "key": "travel.hero.link1",
-      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > div:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Begin the Tour",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "travel.hero.link2",
-      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Plan a Real Visit",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "travel.hero.link3",
-      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > div:nth-of-type(2) > a:nth-of-type(1)",
       "source": "Next: His Birthplace",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "travel.hero.link4",
-      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > div:nth-of-type(2) > a:nth-of-type(2)",
       "source": "Also: Bekaa Tour",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "travel.hero.trailText1",
-      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(2)",
       "source": "Part of the",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "travel.hero.trailLink1",
-      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(2) > a:nth-of-type(1)",
       "source": "Saint Charbel Encyclopedia",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "travel.hero.trailText2",
-      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(2)",
       "source": ". Read",
       "kind": "text",
       "nodeIndex": 2
     },
     {
       "key": "travel.hero.trailLink2",
-      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(2) > a:nth-of-type(2)",
       "source": "the full story of his life",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "travel.hero.trailText3",
-      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(2)",
       "source": "or browse all topics.",
       "kind": "text",
       "nodeIndex": 4
@@ -976,6 +976,41 @@
       "source": "Gallery",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "annaya.hero.imageAlt",
+      "selector": ".annaya-tour-lead img",
+      "source": "Saint Maron monastery and the church bell tower at Annaya in winter",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "annaya.hero.creditAuthor",
+      "selector": ".annaya-tour-lead figcaption",
+      "source": "Paul Saad /",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya.hero.creditCommons",
+      "selector": ".annaya-tour-lead figcaption a:nth-of-type(1)",
+      "source": "Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya.hero.creditSeparator",
+      "selector": ".annaya-tour-lead figcaption",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "annaya.hero.creditLicense",
+      "selector": ".annaya-tour-lead figcaption a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -1105,6 +1140,11 @@
     "travel.header.media": "Media",
     "travel.header.music": "Music",
     "travel.header.video": "Video",
-    "travel.header.gallery": "Gallery"
+    "travel.header.gallery": "Gallery",
+    "annaya.hero.imageAlt": "Saint Maron monastery and the church bell tower at Annaya in winter",
+    "annaya.hero.creditAuthor": "Paul Saad /",
+    "annaya.hero.creditCommons": "Wikimedia Commons",
+    "annaya.hero.creditSeparator": "/",
+    "annaya.hero.creditLicense": "CC BY-SA 4.0"
   }
 }
