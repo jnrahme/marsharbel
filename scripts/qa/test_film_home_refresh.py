@@ -1,4 +1,4 @@
-"""Content executor validates exact existing-home catalog delta and refusal."""
+"""ONE-SHOT delivery validation: fails after the 201 contract lands by design. Not part of standing QA - do not wire into run_full_qa.sh. Content executor validates exact existing-home catalog delta and refusal."""
 import importlib.util,json,shutil,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
