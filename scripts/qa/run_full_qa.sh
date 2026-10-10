@@ -55,6 +55,7 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_ru_travel_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_scoped_delta.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_parallel_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata_attribute_order.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_provenance_stage_reachable.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata_splice.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_authored_final_hashes.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_page_mirror_ru_whitespace.py
