@@ -20,6 +20,7 @@ python3 scripts/qa/check_runtime_labels.py
 step "SEO, sitemap lastmod, specs"
 python3 scripts/qa/check_seo.py
 python3 scripts/sitemap_lastmod.py --check
+python3 scripts/build-media-sitemaps.py --check
 python3 scripts/qa/check_spec_paths.py
 step "fast unit tests (everything except the slow i18n suite)"
 for t in scripts/qa/test_*.py; do
