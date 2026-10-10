@@ -12,6 +12,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://marsharbel.com"
 DEFAULT_IMAGE = f"{SITE}/saint-charbel.jpg"
+# Text-led editorial pages whose social image is the established site image;
+# an incidental archive photo is not the feature's social image.
+TEXT_LED_PAGES = ("news.html", "saint-charbel-movie.html")
 # The site publishes under its own name; no personal or organizational credentials are claimed.
 PUBLISHER = {"@type": "Organization", "name": "marsharbel.com", "url": f"{SITE}/"}
 CHARBEL_ALIASES = ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"]
@@ -270,6 +273,8 @@ def hero_image(path: Path, html: str) -> str | None:
 
 
 def og_image_for(path: Path, html: str = "") -> str:
+    if path.relative_to(ROOT).as_posix() in TEXT_LED_PAGES:
+        return DEFAULT_IMAGE
     # pio-story.html renders its cover via storybook.js (no static hero <img>),
     # so pin the storybook cover instead of falling back to the default.
     if path.name == "augustine-story.html":
@@ -324,7 +329,7 @@ def first_published(path: Path, html: str) -> str | None:
 
 def article_schema(path: Path, html: str) -> dict | None:
     """Article entity for pages with a featured hero image (news/feature pages)."""
-    image = hero_image(path, html)
+    image = DEFAULT_IMAGE if path.relative_to(ROOT).as_posix() in TEXT_LED_PAGES else hero_image(path, html)
     heading = re.search(r"<h1\b[^>]*>(.*?)</h1>", html, re.I | re.S)
     if not image or not heading:
         return None

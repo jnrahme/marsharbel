@@ -18,13 +18,23 @@ class NewsDeskTests(unittest.TestCase):
         import json
         catalog=json.loads((ROOT/'locales/en/movie-status-copy.json').read_text())
         source=(ROOT/'src/pages/saint-charbel-movie.html').read_text()
-        from html import escape
+        from html import unescape
         served=(ROOT/'saint-charbel-movie.html').read_text()
         for key,value in catalog['copy'].items():
             self.assertIn('{{copy movie-status '+key+'}}',source)
-            self.assertIn(escape(value,quote=True),served)
+            self.assertIn(value,unescape(served))
         self.assertNotIn('was released in Lebanon in 2026',served)
         self.assertIn('id="mar-charbel-october-opening-2026-10"',(ROOT/'news.html').read_text())
+
+    def test_premiere_feature_is_sourced_and_not_a_worldwide_release(self):
+        news=(ROOT/'news.html').read_text()
+        movie=(ROOT/'saint-charbel-movie.html').read_text()
+        self.assertEqual(news.count('id="charbel-premiere-release-2026-10"'),1)
+        self.assertIn('https://www.nidaalwatan.com/article/401403',news)
+        self.assertIn('https://www.lorientlejour.com/article/1550058/la-projection-du-film-charbel-au-profit-de-anta-akhi.html',news)
+        self.assertIn('no screening sessions scheduled',news)
+        self.assertIn('International release dates, streaming distribution and English-language availability remain unconfirmed',news)
+        self.assertNotIn('movie-poster-hero.webp',movie)
 
     def test_ministers_visit_card(self):
         text = (ROOT/'news.html').read_text()
@@ -56,10 +66,10 @@ class NewsDeskTests(unittest.TestCase):
         self.assertIn('https://www.familyofsaintsharbel.org/our-news',text)
     def test_static_editorial_news(self):
         text = (ROOT/'index.html').read_text()
-        self.assertEqual(text.count('class="home-news-lead"'), 1)
+        self.assertEqual(text.count('class="home-news-lead home-news-lead--film"'), 1)
         self.assertEqual(text.count('class="home-news-row"'), 5)
         self.assertNotIn('news-rotator.js', text)
-        self.assertIn('class="home-news-lead" href="./news#byblos-annaya-prayer-walk-2026-09"', text)
+        self.assertIn('class="home-news-lead home-news-lead--film" href="./news#charbel-premiere-release-2026-10"', text)
         self.assertNotIn('el-paso-lebanese-festival-2026-10', text)
 
     def test_unsupported_movie_headline_removed(self):

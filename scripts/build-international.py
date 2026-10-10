@@ -331,26 +331,8 @@ def outputs(root=ROOT):
                 result[path] = text if strict_home or strict_page else travel_frame(tour_nav(text,root,code),root,code,route,registry)
     from i18n.travel_metadata import compose_travel_clusters
     result=compose_travel_clusters(root,registry,result)
-    from i18n.same_page_injection import control_outputs
-    manifest=read_json(root/'locales/same-page-manifest.pending.json')
-    control_copy=read_json(root/'locales/same-page-copy.json')
-    # Generated locale pages need the runtime dictionary translate.js reads
-    # (install/footer labels); page_mirror families already embed it. This runs
-    # before control_outputs so the same-page manifest sees the final bytes.
-    from i18n.runtime_labels import ensure_runtime_labels
-    for path, text in list(result.items()):
-        if path.suffix != '.html':
-            continue
-        lang = re.search(r'<html[^>]*lang=["\']([^"\']+)', text)
-        if lang and lang.group(1) in registry['locales'] and lang.group(1) != registry['defaultLocale']:
-            code = lang.group(1)
-            if 'runtime' not in catalogs.get(code, {}):
-                # Explicit synthetic-locale path: only reachable when load_catalog
-                # is replaced (the foundation gate's zh-Hans). Real loads always
-                # carry 'runtime' - load_catalog raises otherwise.
-                continue
-            result[path] = ensure_runtime_labels(text, root, code, registry)
-    result.update(control_outputs(root,{path:text for path,text in result.items() if path.suffix=='.html'},manifest,control_copy))
+    from i18n.generated_postprocess import postprocess_outputs
+    result = postprocess_outputs(root, registry, catalogs, result)
     published_home_locales(registry, result, root)
     validate_partial_outputs(root, registry, result)
     return result
