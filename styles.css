@@ -3215,3 +3215,12 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .card.story p + p { margin-top:
 main:has(.hero-figure img[src$="st-rafqa.webp"]) .hero-figure figcaption { max-width: 68ch; font-size: .9rem; line-height: 1.5; color: var(--theme-ink-soft); }
 main:has(.hero-figure img[src$="st-rafqa.webp"]) .hero-figure { flex: 0 0 100%; }
 main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: .7rem; }
+
+/* Text-led cinema feature: no unlicensed poster; dates remain readable in all scripts. */
+.home-news-lead--film{padding-block:1.5rem;border-block:1px solid var(--gold);gap:2rem}
+.home-news-lead--film .home-news-title{font-size:clamp(2.5rem,4vw,4rem);line-height:1.08}
+.film-news-dates{display:grid;gap:1.5rem;padding-block:1rem;border-block:1px solid var(--theme-line)}
+.film-news-dates>span{display:grid;gap:.4rem;min-width:0;overflow-wrap:anywhere}
+.film-news-dates strong{font-size:clamp(1.1rem,2vw,1.5rem);line-height:1.4}
+.film-news-video{aspect-ratio:16/9;margin-block:1rem}
+.film-news-video iframe{width:100%;height:100%;border:0}
