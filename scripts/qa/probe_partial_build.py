@@ -27,10 +27,10 @@ for v in cp.values():v['names']={**v['names'],'zz':'Test'}
 for path in ['/travel',*read_json(T/'locales/travel-routes.json')['destinations']]:
  page=path[1:];family='test-'+page;# actual source binding generated using fixture-local module ROOT
  import i18n.make_bindings as mb;mb.ROOT=T
- contract,copy=mb.build(page+'.html',family,'test')
+ contract,fixture_copy=mb.build(page+'.html',family,'test')
  # Renderer's schema/home interface requires a stable alias.
- copy['test.header.home']='Home';contract['messages']=copy
- for lang,kind,data in [('en','bindings',contract),('en','copy',copy),('zz','copy',copy)]:
+ fixture_copy['test.header.home']='Home';contract['messages']=fixture_copy
+ for lang,kind,data in [('en','bindings',contract),('en','copy',fixture_copy),('zz','copy',fixture_copy)]:
   (T/f'locales/{lang}/{family}-{kind}.json').write_text(json.dumps(data,ensure_ascii=False))
  r['pageMirrors'][family]={'master':page+'.html','english':path,'routes':{'zz':'/zz/'+page},'renderLocales':['zz']}
 # Add only the three explicitly permitted keyed Prayer families. English values
