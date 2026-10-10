@@ -23,3 +23,9 @@ def scoped_provenance(root,text):
         for variant in page['variants'].values():
             scopes[variant['proof']['scope']]+=1
     return scopes
+
+
+def manifest_text_counter(root,text,values):
+    counter=Counter(values);provenance=scoped_provenance(root,text)
+    if provenance-counter:raise ValueError('Manifest provenance missing from JS extractor')
+    return counter-provenance

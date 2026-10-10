@@ -95,10 +95,8 @@ def snapshot(root=ROOT):
         values = json.loads(subprocess.check_output(['node', str(root/'scripts/i18n/extract-js-text.mjs'), str(path)],text=True))
         counter=Counter(values)
         if path.name=='same-page-manifest.js':
-            from i18n.manifest_policy import scoped_provenance
-            provenance=scoped_provenance(root,path.read_text())
-            if provenance-counter:raise ValueError('Manifest provenance missing from JS extractor')
-            counter-=provenance
+            from i18n.manifest_policy import manifest_text_counter
+            counter=manifest_text_counter(root,path.read_text(),values)
         result[path.name] = dict(counter)
     return result
 

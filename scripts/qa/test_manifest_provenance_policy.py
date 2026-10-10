@@ -1,5 +1,5 @@
 """Precise path-bound provenance exclusion cannot exempt arbitrary wording."""
-import copy,json,sys,unittest
+import copy,json,sys,unittest,tempfile,subprocess
 from collections import Counter
 from pathlib import Path
 from unittest.mock import patch
@@ -29,4 +29,16 @@ class ManifestPolicyTests(unittest.TestCase):
   bad=copy.deepcopy(pages);bad[key]['variants']['zh-Hans']=copy.deepcopy(pages[key]['variants']['en']);variants.append(bad)
   for bad in variants:
    with self.subTest(bad=bad),patch.object(m,'travel_manifest',return_value={'pages':pages}),self.assertRaises(ValueError):m.scoped_provenance(ROOT,self.text(bad))
+ def test_real_js_extractor_and_production_filter_keep_unbound_display(self):
+  pages=self.pages();phrase='stage bytes carried; no new review'
+  text=self.text(pages,{'outside':phrase,'display':'New display wording'})
+  with tempfile.TemporaryDirectory() as d:
+   file=Path(d)/'same-page-manifest.js';file.write_text(text)
+   values=json.loads(subprocess.check_output(['node',str(ROOT/'scripts/i18n/extract-js-text.mjs'),str(file)],text=True))
+   # Isolate only evidence lookup; extraction and the production snapshot's
+   # exact filter path are real. The lane also runs full real-tree policy.
+   with patch.object(m,'travel_manifest',return_value={'pages':pages}):
+    remaining=m.manifest_text_counter(ROOT,text,values)
+   self.assertEqual(remaining,Counter({phrase:1,'New display wording':1}))
+   self.assertEqual(Counter(values)[phrase],13)
 if __name__=='__main__':unittest.main()
