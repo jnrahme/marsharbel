@@ -57,6 +57,7 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_travel_authored_final
 qa_step python3 -m unittest discover -s scripts/qa -p test_page_mirror_ru_whitespace.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_variant_evidence.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_generated_availability.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_generated_sitemap_dates.py
 qa_step node scripts/tests/scoped_travel_resolver.cjs
 qa_step python3 -m unittest discover -s scripts/qa -p test_ru_nav_alignment_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_ru_travel_chrome.py
