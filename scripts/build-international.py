@@ -274,7 +274,8 @@ def outputs(root=ROOT):
                   for route in mirror['routes'].values() if route != mirror['english']]
     def entry(url):
         from i18n.sitemap_dates import generated_lastmod
-        lastmod = '<lastmod>'+generated_lastmod(root,url,lastmods)+'</lastmod>'
+        changed=generated_lastmod(root,url,lastmods)
+        lastmod = '<lastmod>'+changed+'</lastmod>' if changed else ''
         return f'  <url><loc>{url}</loc>{lastmod}</url>'
     text = text.replace('</urlset>', '\n' + '\n'.join(entry(url) for url in dict.fromkeys(generated)) + '\n</urlset>')
     text = re.sub(r'\n[ \t]*\n(?:[ \t]*\n)+', '\n\n', text)

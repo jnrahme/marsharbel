@@ -15,9 +15,11 @@ class SitemapDateTests(unittest.TestCase):
   with patch.object(m,'git',return_value='2026-10-09') as git,patch.object(m,'source_for') as source:
    self.assertEqual(m.generated_lastmod(ROOT,'https://marsharbel.com/ru/travel',{'https://marsharbel.com/ru/travel':'2026-09-01'}),'2026-09-01')
    git.assert_not_called();source.assert_not_called()
- def test_dirty_untracked_no_history_and_bad_format_refuse(self):
+ def test_dirty_untracked_no_history_omit_and_bad_format_refuses(self):
   source=ROOT/'ru/travel.html'
-  for values in [[' M ru/travel.html'],['',''],['','ru/travel.html',''],['','ru/travel.html','10/09/2026']]:
-   with self.subTest(values=values),patch.object(m,'source_for',return_value=source),patch.object(m,'git',side_effect=values),self.assertRaises(ValueError):
-    m.generated_lastmod(ROOT,'https://marsharbel.com/ru/travel',{})
+  for values in [[' M ru/travel.html'],['',''],['','ru/travel.html','']]:
+   with self.subTest(values=values),patch.object(m,'source_for',return_value=source),patch.object(m,'git',side_effect=values):
+    self.assertEqual(m.generated_lastmod(ROOT,'https://marsharbel.com/ru/travel',{}),'')
+  with patch.object(m,'source_for',return_value=source),patch.object(m,'git',side_effect=['','ru/travel.html','10/09/2026']),self.assertRaises(ValueError):
+   m.generated_lastmod(ROOT,'https://marsharbel.com/ru/travel',{})
 if __name__=='__main__':unittest.main()
