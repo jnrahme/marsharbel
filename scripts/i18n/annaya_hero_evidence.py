@@ -54,4 +54,5 @@ def validate_variant(root,family,code,variant,text,final=True):
     if set(ev.get('catalogDigests',{}))!=catalogs:raise ValueError('Annaya catalog inventory mismatch')
     for path,value in ev['catalogDigests'].items():
         if hashlib.sha256((root/path).read_bytes()).hexdigest()!=value:raise ValueError('Annaya catalog digest drift')
-    return {'type':SCHEMA,'state':'approved','scope':SCOPE,'candidateFileSha256':sha(candidate),'reviewedContentSha256':digest(candidate),'nativeReviewStatus':'not-certified','evidenceRef':ev['renderedReview']}
+    # Runtime proof shape stays scoped-travel-variant so the language resolver verifies the twins.
+    return {'type':'scoped-travel-variant','state':'approved','scope':SCOPE,'candidateFileSha256':sha(candidate),'reviewedContentSha256':digest(candidate),'nativeReviewStatus':'not-certified','evidenceRef':ev['renderedReview']}
