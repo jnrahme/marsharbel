@@ -97,6 +97,23 @@
   <!-- hreflang:begin -->
   <!-- hreflang:end -->
 <style>
+.annaya-tour-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);align-items:start;padding-block:2rem 3rem}
+.annaya-tour-hero>*{min-inline-size:0}
+.annaya-tour-hero figure{margin:0;position:sticky;inset-block-start:calc(var(--annaya-nav-height,7rem) + 1.5rem)}
+.annaya-tour-hero figure img{display:block;inline-size:100%;block-size:auto;aspect-ratio:1.4;object-fit:cover;object-position:40% 50%;border-radius:var(--radius,1rem)}
+.annaya-tour-hero figcaption{font-size:max(.75rem,12px);line-height:1.6;color:var(--text);background:var(--bg);padding-block:.75rem;overflow-wrap:anywhere}
+.annaya-tour-hero figcaption a{color:var(--text);text-decoration:underline;text-underline-offset:.15em}
+.annaya-tour-hero h1{font-size:clamp(2rem,4vw,3.75rem);line-height:1.1;text-wrap:balance;overflow-wrap:anywhere;margin-block:.25rem 1.25rem}
+.annaya-tour-hero .cta-row{flex-wrap:wrap}
+.annaya-tour-hero .btn{border-radius:12px;white-space:normal;min-block-size:44px;overflow-wrap:anywhere;text-align:center}
+.annaya-tour-hero p{overflow-wrap:anywhere}
+.annaya-tour-summary .enc-trail a{color:var(--text)}
+.annaya-tour-hero .btn.subtle{background:transparent;border:1px solid var(--muted);color:var(--text)}
+.annaya-tour-links{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;margin-block:1rem}
+.annaya-tour-links a{display:inline-flex;align-items:center;min-block-size:44px;text-decoration:underline;text-underline-offset:.15em}
+.annaya-tour-links a:after{content:"→";margin-inline-start:.5em}
+[dir="rtl"] .annaya-tour-links a:after{content:"←"}
+@media(max-width:760px){.annaya-tour-hero{grid-template-columns:minmax(0,1fr);gap:1rem}.annaya-tour-hero figure{position:static}}
 .tour-stop{position:relative;min-height:88vh;display:flex;align-items:flex-end;margin:0 calc(50% - 50vw);width:100vw;overflow:hidden;background:#17120e;color:#fff}
 .tour-stop img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .tour-stop::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,7,4,.88) 0%,rgba(10,7,4,.55) 38%,rgba(10,7,4,0) 70%)}
@@ -202,17 +219,25 @@
 <!-- i18n-travel-frame:start -->
 <nav class="travel-breadcrumb" aria-label="In this guide"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/travel">Travel</a><span aria-hidden="true">/</span><span aria-current="page">Walk Through Annaya, Online</span></nav>
 <!-- i18n-travel-frame:end -->
-<section class="hero">
+<section class="annaya-tour-hero">
+<figure class="annaya-tour-lead">
+<img src="/media/tour/annaya-winter-panorama.webp" alt="Saint Maron monastery and the church bell tower at Annaya in winter" width="2400" height="917" fetchpriority="high" decoding="async" />
+<figcaption>Paul Saad / <a href="https://commons.wikimedia.org/wiki/File:Pan_Annaya_in_Winter.JPG">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></figcaption>
+</figure>
+<div class="annaya-tour-summary">
 <span class="kicker">Online tour &middot; Annaya, Lebanon</span>
 <h1>Walk Through Annaya, Online</h1>
 <p><strong>Short answer:</strong> This is a guided walk through Annaya, the Lebanese mountain monastery where Saint Charbel lived and is buried. Scroll through five stops: the monastery, the church, the courtyard, the tomb, and the hermitage. Each has a real photograph and a short story of why it matters.</p>
 <div class="cta-row">
 <a class='btn primary' href='#stop1'>Begin the Tour</a>
 <a class='btn subtle' href='./visit-annaya'>Plan a Real Visit</a>
-<a class='btn subtle' href='./bekaa-kafra'>Next: His Birthplace</a>
-<a class='btn subtle' href='./bekaa-tour'>Also: Bekaa Tour</a>
+</div>
+<div class='annaya-tour-links'>
+<a href='./bekaa-kafra'>Next: His Birthplace</a>
+<a href='./bekaa-tour'>Also: Bekaa Tour</a>
 </div>
 <p class="enc-trail">Part of the <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>. Read <a href="./history">the full story of his life</a> or browse all topics.</p>
+</div>
     </section>
 <section class="tour-stop" aria-labelledby="stop1">
 <img src="./media/tour/annaya-winter-panorama.webp" alt="The church and monastery of Saint Maron at Annaya on a terraced mountainside in winter, with a bell tower and a red-tiled roof" width="2400" height="917" loading="eager" decoding="async" />
