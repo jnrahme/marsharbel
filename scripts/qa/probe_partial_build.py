@@ -66,7 +66,8 @@ PENDING_KEYS={
 }
 from i18n import travel_metadata as tm,reviewed_travel as rt,travel_variant_evidence as ve
 from i18n.travel_scoped_delta import Tokens
-real_compose=tm.compose_travel_clusters;real_travel=rt.travel_manifest
+real_compose=tm.compose_travel_clusters;real_travel=rt.travel_manifest;real_final=ve.validate_final_outputs
+final_calls=[]
 hits=Counter();composition={'negative':False,'synthetic_heads':set(),'production':set()}
 
 def head_map(text):
@@ -116,6 +117,11 @@ def synthetic_travel(root,texts,manifest):
  print('SYNTHETIC omitted pending routes',json.dumps(PENDING_KEYS,sort_keys=True))
  assert not SCOPED_KEYS & set(out['pages'])
  return out
+
+def observed_final(root,texts):
+ count=sum(group.get('evidenceSchema')=='scoped-variants-v1' for group in read_json(root/'locales/travel-equivalence.json')['groups'].values())
+ final_calls.append(count);print('REAL FINAL VALIDATOR called; scoped records',count)
+ return real_final(root,texts)
 
 def fail_diff(file,expected,actual):
  if expected!=actual:
@@ -204,10 +210,11 @@ try:
   try:load_catalog(T);raise AssertionError('accepted missing '+key)
   except ValueError:pass
   file.write_text(json.dumps(old))
- with patch.object(tm,'compose_travel_clusters',side_effect=prepare_fixture_heads),patch.object(rt,'travel_manifest',side_effect=synthetic_travel):
+ with patch.object(tm,'compose_travel_clusters',side_effect=prepare_fixture_heads),patch.object(rt,'travel_manifest',side_effect=synthetic_travel),patch.object(ve,'validate_final_outputs',side_effect=observed_final):
   out=b.outputs(T)
  zz=[p for p in out if p.relative_to(T).parts[0]=='zz' and p.suffix=='.html'];assert len(zz)==18,zz;assert T/'zz/index.html' not in out;assert 'zz' not in json.loads(out[T/'locale-routes.js'].split(' = ')[1].rstrip(';\n'))['homes'];print('PARTIAL FULL OUTPUT PASS',len(out),len(zz));assert not any('/eucharistic' in str(p) for p in zz);assert {T/('zz'+v[0]+'.html') for v in PRAYER_FAMILIES.values()} <= set(zz)
 
+ assert final_calls==[0],final_calls
  assert composition['negative'] and len(composition['synthetic_heads'])==14
  expected_production=set()
  original_clusters=tm.travel_clusters(R,original_registry)
