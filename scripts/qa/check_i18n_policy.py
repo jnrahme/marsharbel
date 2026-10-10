@@ -93,7 +93,13 @@ def snapshot(root=ROOT):
         if (path.name == 'same-page-copy.js' and copy_path.exists()) or path.name in ('locale-routes.js', 'eucharistic.js') or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()):
             continue
         values = json.loads(subprocess.check_output(['node', str(root/'scripts/i18n/extract-js-text.mjs'), str(path)],text=True))
-        result[path.name] = dict(Counter(values))
+        counter=Counter(values)
+        if path.name=='same-page-manifest.js':
+            from i18n.manifest_policy import scoped_provenance
+            provenance=scoped_provenance(root,path.read_text())
+            if provenance-counter:raise ValueError('Manifest provenance missing from JS extractor')
+            counter-=provenance
+        result[path.name] = dict(counter)
     return result
 
 
