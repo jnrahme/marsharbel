@@ -11,7 +11,8 @@ spec=importlib.util.spec_from_file_location('production_probe_builder',R/'script
 production_builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(production_builder)
 production=production_builder.outputs(R)
 for file,text in production.items():
- if file.exists():assert file.read_text()==text,'Production build drift: '+str(file.relative_to(R))
+ assert file.is_file(),'Missing production output: '+str(file.relative_to(R))
+ assert file.read_text()==text,'Production build drift: '+str(file.relative_to(R))
 original_registry=read_json(R/'locales/registry.json')
 print('PRODUCTION LEG real validators + committed-byte equality',len(production))
 # Build synthetic capability world in isolated copy, never production writes.
@@ -208,6 +209,17 @@ try:
  zz=[p for p in out if p.relative_to(T).parts[0]=='zz' and p.suffix=='.html'];assert len(zz)==18,zz;assert T/'zz/index.html' not in out;assert 'zz' not in json.loads(out[T/'locale-routes.js'].split(' = ')[1].rstrip(';\n'))['homes'];print('PARTIAL FULL OUTPUT PASS',len(out),len(zz));assert not any('/eucharistic' in str(p) for p in zz);assert {T/('zz'+v[0]+'.html') for v in PRAYER_FAMILIES.values()} <= set(zz)
 
  assert composition['negative'] and len(composition['synthetic_heads'])==14
+ expected_production=set()
+ original_clusters=tm.travel_clusters(R,original_registry)
+ owned={route for cluster in original_clusters.values() for route in cluster.values()}
+ for file,text in production.items():
+  if file.suffix!='.html':continue
+  canonical=BeautifulSoup(text.split('</head>')[0],'html.parser').select_one('link[rel=canonical]')
+  if canonical and canonical['href'].removeprefix(original_registry['site']) in owned:
+   expected_production.add(file.relative_to(R).as_posix())
+ assert composition['production']==expected_production,(len(composition['production']),len(expected_production),composition['production']^expected_production)
+ print('PRODUCTION TRAVEL INPUTS prepared',len(composition['production']),'expected',len(expected_production),'fixture-injected alternates are NOT renderer proof')
+ print('SYNTHETIC VALIDATORS real renderer/structural catalog capability collision; legacy Travel History Prayer body+catalog; real final validator sees zero scoped records')
  assert all(Path(f).parts[0]=='zz' for f in composition['synthetic_heads'])
  assert len(zz)==18 and not any(p.relative_to(T).parts[0]!='zz' for p in zz)
  for file in zz:
@@ -229,6 +241,11 @@ try:
   file=prod_file.relative_to(R).as_posix();candidate=out[T/file]
   if file.endswith('.html'):
    normalized=strip_html_zz(candidate);fail_diff(file,old,normalized)
+   if file=='travel.html':
+    corrupted=candidate.replace('</main>','X</main>',1);assert corrupted!=candidate
+    try:fail_diff(file,old,strip_html_zz(corrupted));raise AssertionError('accepted real candidate corruption')
+    except AssertionError as exc:assert 'Unexpected synthetic production diff' in str(exc)
+    print('NEGATIVE real travel candidate stray-byte refused')
   elif file in ('same-page-manifest.js','same-page-copy.js','locale-routes.js'):compare_json(file,old,candidate)
   elif file=='sitemap.xml':
    normalized=candidate
