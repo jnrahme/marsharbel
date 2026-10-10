@@ -31,7 +31,7 @@ class SpliceTests(unittest.TestCase):
   for file,text in [('de/qadisha-valley.html',raw),('qadisha-valley.html',raw.replace('/qadisha-valley','/wrong'))]:
    with self.assertRaises(ValueError):splice_travel_alternates(text,cluster,'https://marsharbel.com',file)
   self.assertNotIn('de/qozhaya-monastery.html',PARTIAL_AUTHORED_FILES)
-  self.assertEqual(len(PARTIAL_AUTHORED_FILES),19)
+  self.assertEqual(len(PARTIAL_AUTHORED_FILES),27)
   self.assertIn('travel.html',PARTIAL_AUTHORED_FILES)
  def test_no_empty_block_bootstrap(self):
   with self.assertRaisesRegex(ValueError,'bootstrap forbidden'):self.run_composer('<head><link rel="canonical" href="https://marsharbel.com/travel"/></head><main>Body</main>')

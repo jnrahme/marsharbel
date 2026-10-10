@@ -22,4 +22,10 @@ class SitemapDateTests(unittest.TestCase):
     self.assertEqual(m.generated_lastmod(ROOT,'https://marsharbel.com/ru/travel',{}),'')
   with patch.object(m,'source_for',return_value=source),patch.object(m,'git',side_effect=['','ru/travel.html','10/09/2026']),self.assertRaises(ValueError):
    m.generated_lastmod(ROOT,'https://marsharbel.com/ru/travel',{})
+ def test_missing_source_omits_but_other_source_errors_propagate(self):
+  url='https://marsharbel.com/zz/history'
+  with patch.object(m,'source_for',side_effect=ValueError('no source file for '+url+': expected zz/history.html')),patch.object(m,'git') as git:
+   self.assertEqual(m.generated_lastmod(ROOT,url,{}),'');git.assert_not_called()
+  with patch.object(m,'source_for',side_effect=ValueError('not a site URL: bad')),self.assertRaises(ValueError):
+   m.generated_lastmod(ROOT,'bad',{})
 if __name__=='__main__':unittest.main()

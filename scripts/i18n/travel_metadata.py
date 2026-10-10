@@ -29,6 +29,11 @@ def travel_clusters(root, registry):
 # Explicit served paths from the approved authored-mirror producer boundary.
 # Nineteen explicitly reviewed authored-mirror producer files.
 PARTIAL_AUTHORED_FILES = frozenset({
+    # Eight EN source composers carry valid en/x-default discovery stubs.
+    'our-lady-of-lebanon-harissa.html','bekaa-kafra.html',
+    'bkerke-maronite-patriarchate.html','annaya-tour.html',
+    'saint-charbel-trail.html','saint-charbel-places-lebanon.html',
+    'cedars-of-god-lebanon.html','saint-charbel-hermitage.html',
     'ar/qadisha-valley.html','fr/vallee-qadisha.html','es/valle-qadisha.html',
     'ar/qannoubine-monastery.html','fr/monastere-qannoubine.html','es/monasterio-qannoubine.html',
     'ar/qozhaya-monastery.html','fr/monastere-qozhaya.html','es/monasterio-qozhaya.html',
