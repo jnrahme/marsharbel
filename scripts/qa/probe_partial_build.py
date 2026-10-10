@@ -203,7 +203,7 @@ try:
   try:load_catalog(T);raise AssertionError('accepted missing '+key)
   except ValueError:pass
   file.write_text(json.dumps(old))
- with patch.object(tm,'compose_travel_clusters',side_effect=prepare_fixture_heads),patch.object(rt,'travel_manifest',side_effect=synthetic_travel),patch.object(ve,'validate_final_outputs',return_value=None):
+ with patch.object(tm,'compose_travel_clusters',side_effect=prepare_fixture_heads),patch.object(rt,'travel_manifest',side_effect=synthetic_travel):
   out=b.outputs(T)
  zz=[p for p in out if p.relative_to(T).parts[0]=='zz' and p.suffix=='.html'];assert len(zz)==18,zz;assert T/'zz/index.html' not in out;assert 'zz' not in json.loads(out[T/'locale-routes.js'].split(' = ')[1].rstrip(';\n'))['homes'];print('PARTIAL FULL OUTPUT PASS',len(out),len(zz));assert not any('/eucharistic' in str(p) for p in zz);assert {T/('zz'+v[0]+'.html') for v in PRAYER_FAMILIES.values()} <= set(zz)
 
