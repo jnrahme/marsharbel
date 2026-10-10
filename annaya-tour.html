@@ -113,6 +113,9 @@
 .annaya-tour-links a{display:inline-flex;align-items:center;min-block-size:44px;text-decoration:underline;text-underline-offset:.15em}
 .annaya-tour-links a:after{content:"→";margin-inline-start:.5em}
 [dir="rtl"] .annaya-tour-links a:after{content:"←"}
+.travel-breadcrumb{padding-block-start:1rem;display:flex;flex-wrap:wrap;align-items:baseline}
+.travel-breadcrumb>span[aria-hidden]{margin-inline:.5em;opacity:.55}
+.skip-link:not(:focus){position:absolute;inline-size:1px;block-size:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(max-width:760px){.annaya-tour-hero{grid-template-columns:minmax(0,1fr);gap:1rem}.annaya-tour-hero figure{position:static}.annaya-tour-hero figure img{aspect-ratio:4/3}}
 .tour-stop{position:relative;min-height:88vh;display:grid;grid-template-rows:1fr auto;margin:0 calc(50% - 50vw);width:100vw;overflow:hidden;background:#17120e;color:#fff}
 .tour-stop img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -128,7 +131,7 @@
 @media (min-width:900px){.tour-stop{min-height:92vh}.tour-copy{margin-left:max(1.25rem,calc((100vw - 70rem)/2))}}
 .tour-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
 </style>
-<script>document.addEventListener('DOMContentLoaded',function(){var s=document.querySelectorAll('.tour-stop');if(!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('seen')});return}var o=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('seen')}})},{threshold:.25});s.forEach(function(e){o.observe(e)})});</script>
+<script>document.addEventListener('DOMContentLoaded',function(){var header=document.querySelector('header');if(header&&'ResizeObserver' in window){new ResizeObserver(function(){document.documentElement.style.setProperty('--annaya-nav-height',header.getBoundingClientRect().height+'px')}).observe(header)}var s=document.querySelectorAll('.tour-stop');if(!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('seen')});return}var o=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('seen')}})},{threshold:.25});s.forEach(function(e){o.observe(e)})});</script>
 <link rel="alternate" hreflang="en" href="https://marsharbel.com/annaya-tour" />
 <link rel="alternate" hreflang="de" href="https://marsharbel.com/de/annaya-tour" />
 <link rel="alternate" hreflang="ru" href="https://marsharbel.com/ru/annaya-tour" />
