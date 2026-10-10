@@ -6,7 +6,7 @@ FAMILIES={'annaya-tour-travel-master':{'en','de','ru'},'annaya-tour-zh-travel-ma
 SCHEMA='annaya-hero-v1'
 SCOPE='hero-alt-credit-scrim'
 # Deliberately unset. Only the independent reviewer can activate a reviewed table.
-REVIEW_TABLE_SHA256=None
+REVIEW_TABLE_SHA256='fcc33fcd5d8a117c34f1828fe43f1687d0e53157c178f187090a5784650ed253'
 TABLE='locales/annaya-hero-review-refs.json'
 def sha(text):return hashlib.sha256(text.encode()).hexdigest()
 def validate_group(family,group):
