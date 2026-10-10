@@ -17,7 +17,7 @@ from i18n.catalog import ROOT, read_json
 SLUGS = ('lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica', 'ludbreg', 'amsterdam', 'ivorra', 'faverney')
 PROVENANCE = ('image', 'credit', 'licenseurl', 'photo', 'source', 'source2')
 COUNTRIES = {'lanciano':'Italy', 'bolsena-orvieto':'Italy', 'siena':'Italy', 'santarem':'Portugal', 'sokolka':'Poland', 'legnica':'Poland', 'ludbreg':'Croatia', 'amsterdam':'Netherlands', 'ivorra':'Spain', 'faverney':'France'}
-TEXT_ONLY = ('title', 'place', 'era', 'label', 'alt', 'license', 'sourceLabel', 'source2Label', 'lead', 'reflection')
+TEXT_ONLY = ('title', 'place', 'era', 'label', 'alt', 'license', 'sourceLabel', 'source2Label', 'lead', 'description', 'reflection')
 HTML_TAG = re.compile(r'<\s*/?\s*[a-zA-Z!]')
 
 
