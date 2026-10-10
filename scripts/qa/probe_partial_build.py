@@ -136,7 +136,7 @@ def synthetic_travel(root,texts,manifest):
  return out
 
 def observed_final(root,texts):
- count=sum(group.get('evidenceSchema')=='scoped-variants-v1' for group in read_json(root/'locales/travel-equivalence.json')['groups'].values())
+ count=sum(group.get('evidenceSchema') in ('scoped-variants-v1','annaya-hero-v1') for group in read_json(root/'locales/travel-equivalence.json')['groups'].values())
  final_calls.append(count);print('REAL FINAL VALIDATOR called; scoped records',count)
  return real_final(root,texts)
 
@@ -218,7 +218,7 @@ def compare_json(file,old,new):
 # The synthetic locale cannot claim the twelve full-file scoped release grants.
 # Filter only that exact class from the copied evidence input; keep legacy records.
 record=read_json(T/'locales/travel-equivalence.json')
-removed={key for key,value in record['groups'].items() if value.get('evidenceSchema')=='scoped-variants-v1'}
+removed={key for key,value in record['groups'].items() if value.get('evidenceSchema') in ('scoped-variants-v1','annaya-hero-v1')}
 assert {key+'-equivalence' for key in removed}==SCOPED_KEYS and len(removed)==12
 for key in removed:del record['groups'][key]
 (T/'locales/travel-equivalence.json').write_text(json.dumps(record))

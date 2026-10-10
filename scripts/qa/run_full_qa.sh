@@ -156,6 +156,8 @@ qa_step python3 -m unittest discover -s scripts/qa -p 'test_feature_mirror.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_feature_wording_policy.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_history_master_mirror.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_travel_page_mirrors.py'
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_annaya_hero_evidence.py'
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_annaya_tour_hero_prepare.py'
 qa_step node scripts/tests/history_equivalence.cjs
 qa_step npx playwright test tests/history-master.spec.js --project=phone --project=laptop --workers=2
 qa_step npx playwright test tests/travel-master.spec.js --project=phone --project=laptop --workers=2

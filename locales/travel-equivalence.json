@@ -265,58 +265,83 @@
       }
     },
     "annaya-tour-travel-master": {
-      "evidenceSchema": "scoped-variants-v1",
-      "sourceRevision": "19845304893719bcdee5864fb31fd3c3e043e386",
+      "evidenceSchema": "annaya-hero-v1",
+      "sourceRevision": "800d39deb791ef80343b51800054e7a4f564ade4",
       "variants": {
         "en": {
           "file": "annaya-tour.html",
           "path": "/annaya-tour",
-          "bodySha256": "83482d921988e264704f5cba2723d1e8ba24bc359909dacfe45ffd1d735149f1",
-          "candidateFileSha256": "d30d65e3f3ca90f3c219bfb4881216a4f4d6dc9153d047b8256aff5570509250",
+          "bodySha256": "64ddfb75914b2832bdfe8a99c756011cd01f4e67f4f26decc139f6126f822f9c",
+          "candidateFileSha256": "c9bdc94171ed6126b4370b2551950bf7432bd7585197f7b7d8cfe846ff609796",
           "reviewEvidence": {
-            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
-            "preparedRevision": "19845304893719bcdee5864fb31fd3c3e043e386",
-            "candidateFileSha256": "d30d65e3f3ca90f3c219bfb4881216a4f4d6dc9153d047b8256aff5570509250",
-            "state": "carried",
-            "scope": "stage bytes carried; no new review",
-            "nativeReviewStatus": "not-certified"
+            "amendmentSchema": "annaya-hero-v1",
+            "state": "approved",
+            "scope": "hero-alt-credit-scrim",
+            "nativeReviewStatus": "not-certified",
+            "renderedReview": "scrum-nonauthor-pixels-20261010-en-390-1280-200pct",
+            "catalogReview": "scrum-nonauthor-alt-credit-keys-20261010-en",
+            "preparedRevision": "800d39deb791ef80343b51800054e7a4f564ade4",
+            "baseRevision": "f94949dba10ff7251e02b4c26773302de39a5143",
+            "candidateFileSha256": "c9bdc94171ed6126b4370b2551950bf7432bd7585197f7b7d8cfe846ff609796",
+            "bodySha256": "64ddfb75914b2832bdfe8a99c756011cd01f4e67f4f26decc139f6126f822f9c",
+            "masterSha256": "c9bdc94171ed6126b4370b2551950bf7432bd7585197f7b7d8cfe846ff609796",
+            "catalogDigests": {
+              "locales/en/annaya-tour-travel-master-bindings.json": "8947214ce0290d9e5d909be859762acbb76b4dee0e793fa89f5d32a48fad60f6",
+              "locales/en/annaya-tour-travel-master-copy.json": "44bea6171d78f029f40f57346eb0e41a020b3a19a13406a667cb91588f07ff95",
+              "locales/en/annaya-tour-zh-travel-master-bindings.json": "5e0db5d50d31d881b11bf0c37978912d2b52f946dfc65cba210df61d7f8e6b66",
+              "locales/en/annaya-tour-zh-travel-master-copy.json": "be25e2f3a6f5bc7191a097f215e9eaca181937521a09306b24088ad33e2b0851"
+            }
           }
         },
         "de": {
           "file": "de/annaya-tour.html",
           "path": "/de/annaya-tour",
-          "bodySha256": "bad2dd21303ff4b8c197955e6ae25b202ad3469bebc6d7eac1bedee0c5cd4c0a",
-          "candidateFileSha256": "4ae247f49e2560127dfce8202ae824167caac2b4e8a796ead557e1e85568543d",
-          "catalog": "locales/de/annaya-tour-travel-master-copy.json",
-          "catalogSha256": "8f598315462b1eacc796fe56708eb712844970024b5d7a7bb1ce5a9605f7c5e8",
+          "bodySha256": "175acbbb16adb87e94496de10e66b033601f2de8de1b35ae0d38e773765dceee",
+          "candidateFileSha256": "b1903f21385d385ac51fc0faf2595a5a35a1e757e03797c998d64658a577cdaa",
           "reviewEvidence": {
-            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
-            "preparedRevision": "19845304893719bcdee5864fb31fd3c3e043e386",
-            "candidateFileSha256": "4ae247f49e2560127dfce8202ae824167caac2b4e8a796ead557e1e85568543d",
+            "amendmentSchema": "annaya-hero-v1",
             "state": "approved",
-            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
-            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-4ae247f49e2560127dfce8202ae824167caac2b4e8a796ead557e1e85568543d",
-            "catalogReview": "existing-model-Media-values-placement-only",
-            "nativeReviewStatus": "not-certified"
-          }
+            "scope": "hero-alt-credit-scrim",
+            "nativeReviewStatus": "not-certified",
+            "renderedReview": "scrum-nonauthor-pixels-20261010-de-390-1280-200pct",
+            "catalogReview": "scrum-nonauthor-alt-credit-keys-20261010-de",
+            "preparedRevision": "800d39deb791ef80343b51800054e7a4f564ade4",
+            "baseRevision": "f94949dba10ff7251e02b4c26773302de39a5143",
+            "candidateFileSha256": "b1903f21385d385ac51fc0faf2595a5a35a1e757e03797c998d64658a577cdaa",
+            "bodySha256": "175acbbb16adb87e94496de10e66b033601f2de8de1b35ae0d38e773765dceee",
+            "masterSha256": "c9bdc94171ed6126b4370b2551950bf7432bd7585197f7b7d8cfe846ff609796",
+            "catalogDigests": {
+              "locales/de/annaya-tour-travel-master-copy.json": "5073c11f7724c69227867677a58ee59c556c65e50df13b74ee6042f46850355c",
+              "locales/en/annaya-tour-travel-master-bindings.json": "8947214ce0290d9e5d909be859762acbb76b4dee0e793fa89f5d32a48fad60f6"
+            }
+          },
+          "catalog": "locales/de/annaya-tour-travel-master-copy.json",
+          "catalogSha256": "5073c11f7724c69227867677a58ee59c556c65e50df13b74ee6042f46850355c"
         },
         "ru": {
           "file": "ru/annaya-tour.html",
           "path": "/ru/annaya-tour",
-          "bodySha256": "fceb7c14e5f857df424bfb10c90ee3d01c61358dde96fa12831d9acb4c6c5411",
-          "candidateFileSha256": "2c477a4b5a103d6496eedc96f1b192bcf740419c571ed29c433b995b0606082d",
-          "catalog": "locales/ru/annaya-tour-travel-master-copy.json",
-          "catalogSha256": "c8fd95b7eb2cb6fa01f05c99affffd3ae454120567e6274d738b4222f4102400",
+          "bodySha256": "9c1a738a4f97468e18a8baaf3e8b255c3290af0d1ab024f63637a1043778da8c",
+          "candidateFileSha256": "67a97c48ef82a5b65be80e768ff6523d1bb2c0e9d1ae3b8e65effc2fba240100",
           "reviewEvidence": {
-            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
-            "preparedRevision": "19845304893719bcdee5864fb31fd3c3e043e386",
-            "candidateFileSha256": "2c477a4b5a103d6496eedc96f1b192bcf740419c571ed29c433b995b0606082d",
+            "amendmentSchema": "annaya-hero-v1",
             "state": "approved",
-            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
-            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-2c477a4b5a103d6496eedc96f1b192bcf740419c571ed29c433b995b0606082d",
-            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
-            "nativeReviewStatus": "not-certified"
-          }
+            "scope": "hero-alt-credit-scrim",
+            "nativeReviewStatus": "not-certified",
+            "renderedReview": "scrum-nonauthor-pixels-20261010-ru-390-1280-200pct",
+            "catalogReview": "scrum-nonauthor-alt-credit-keys-20261010-ru",
+            "preparedRevision": "800d39deb791ef80343b51800054e7a4f564ade4",
+            "baseRevision": "f94949dba10ff7251e02b4c26773302de39a5143",
+            "candidateFileSha256": "67a97c48ef82a5b65be80e768ff6523d1bb2c0e9d1ae3b8e65effc2fba240100",
+            "bodySha256": "9c1a738a4f97468e18a8baaf3e8b255c3290af0d1ab024f63637a1043778da8c",
+            "masterSha256": "c9bdc94171ed6126b4370b2551950bf7432bd7585197f7b7d8cfe846ff609796",
+            "catalogDigests": {
+              "locales/en/annaya-tour-travel-master-bindings.json": "8947214ce0290d9e5d909be859762acbb76b4dee0e793fa89f5d32a48fad60f6",
+              "locales/ru/annaya-tour-travel-master-copy.json": "1fbff1cd81dfab2a48faabaa7570beef1ecfa0196ca50f93e22d96e84949bdbd"
+            }
+          },
+          "catalog": "locales/ru/annaya-tour-travel-master-copy.json",
+          "catalogSha256": "1fbff1cd81dfab2a48faabaa7570beef1ecfa0196ca50f93e22d96e84949bdbd"
         }
       }
     },

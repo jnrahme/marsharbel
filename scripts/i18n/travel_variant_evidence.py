@@ -73,6 +73,9 @@ def label_delta(before, after, code, slug):
 
 
 def validate_group(family, group):
+    if group.get('evidenceSchema')=='annaya-hero-v1':
+        from i18n.annaya_hero_evidence import validate_group as validate_annaya
+        return validate_annaya(family,group)
     slug=family.removesuffix('-travel-master')
     if slug not in SLUGS or group.get('evidenceSchema')!='scoped-variants-v1':
         raise ValueError('New-family evidence schema missing')
@@ -90,7 +93,11 @@ def isolated_en_ru(text, slug):
     return clean
 
 
-def validate_variant(root, family, code, variant, text, final=True):
+def validate_variant(root, family, code, variant, text, final=True, schema='scoped-variants-v1'):
+    if schema=='annaya-hero-v1':
+        from i18n.annaya_hero_evidence import validate_variant as validate_annaya
+        return validate_annaya(root,family,code,variant,text,final)
+    if schema!='scoped-variants-v1':raise ValueError('Unknown Travel evidence schema')
     slug=family.removesuffix('-travel-master')
     if slug not in SLUGS or code not in ({'en','de','ru','hi'} if slug=='travel' else {'en','de','ru'}):
         raise ValueError('Wrong keyed variant membership')
@@ -134,9 +141,9 @@ def validate_final_outputs(root, texts):
     record=root/'locales/travel-equivalence.json'
     if not record.exists():return
     for family,group in json.loads(record.read_text())['groups'].items():
-        if group.get('evidenceSchema')!='scoped-variants-v1':continue
+        if group.get('evidenceSchema') not in ('scoped-variants-v1','annaya-hero-v1'):continue
         validate_group(family,group)
         for code,variant in group['variants'].items():
             file=root/variant['file']
             text=texts[file] if file in texts else file.read_text()
-            validate_variant(root,family,code,variant,text,final=True)
+            validate_variant(root,family,code,variant,text,final=True,schema=group['evidenceSchema'])

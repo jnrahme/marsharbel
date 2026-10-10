@@ -7,14 +7,14 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from i18n import manifest_policy as m
 class ManifestPolicyTests(unittest.TestCase):
  def pages(self):
-  return {slug+'-travel-master-equivalence':{'sourcePath':slug+'.html','variants':{code:{'proof':{'type':'scoped-travel-variant','scope':'stage bytes carried; no new review' if code=='en' else 'reviewed scope'}} for code in (('en','de','ru','hi') if slug=='travel' else ('en','de','ru'))}} for slug in m.SLUGS}
+  return {slug+'-travel-master-equivalence':{'sourcePath':slug+'.html','variants':{code:{'proof':{'type':'scoped-travel-variant','scope':('hero-alt-credit-scrim' if slug=='annaya-tour' else 'stage bytes carried; no new review' if code=='en' else 'reviewed scope')}} for code in (('en','de','ru','hi') if slug=='travel' else ('en','de','ru'))}} for slug in m.SLUGS}
  def text(self,pages,extra=None):return m.PREFIX+json.dumps({'pages':pages,**(extra or {})})+';\n'
- def test_exact_thirty_seven_scope_entries_only(self):
+ def test_exact_thirty_four_scope_entries_only(self):
   pages=self.pages()
   with patch.object(m,'travel_manifest',return_value={'pages':pages}):
    excluded=m.scoped_provenance(ROOT,self.text(pages))
-  self.assertEqual(sum(excluded.values()),37)
-  self.assertEqual(excluded['stage bytes carried; no new review'],12)
+  self.assertEqual(sum(excluded.values()),34)
+  self.assertEqual(excluded['stage bytes carried; no new review'],11)
  def test_same_phrase_outside_scope_and_new_display_still_flag(self):
   pages=self.pages();phrase='stage bytes carried; no new review'
   with patch.object(m,'travel_manifest',return_value={'pages':pages}):
@@ -40,5 +40,5 @@ class ManifestPolicyTests(unittest.TestCase):
    with patch.object(m,'travel_manifest',return_value={'pages':pages}):
     remaining=m.manifest_text_counter(ROOT,text,values)
    self.assertEqual(remaining,Counter({phrase:1,'New display wording':1}))
-   self.assertEqual(Counter(values)[phrase],13)
+   self.assertEqual(Counter(values)[phrase],12)
 if __name__=='__main__':unittest.main()

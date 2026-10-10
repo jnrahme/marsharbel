@@ -21,7 +21,8 @@ def scoped_provenance(root,text):
         page=manifest['pages'][key];source=expected[key]
         if page!=source:raise ValueError('Scoped manifest differs from validated locale evidence: '+key)
         for variant in page['variants'].values():
-            scopes[variant['proof']['scope']]+=1
+            # annaya-hero-v1 scope is a non-prose token, never extracted as display text.
+            if key!='annaya-tour-travel-master-equivalence':scopes[variant['proof']['scope']]+=1
     return scopes
 
 

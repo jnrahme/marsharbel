@@ -36,21 +36,41 @@
 <!-- hreflang:begin -->
 <!-- hreflang:end -->
 <style>
-.tour-stop{position:relative;min-height:88vh;display:flex;align-items:flex-end;margin:0 calc(50% - 50vw);width:100vw;overflow:hidden;background:#17120e;color:#fff}
+.annaya-tour-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);align-items:start;padding-block:2rem 3rem}
+.annaya-tour-hero>*{min-inline-size:0}
+.annaya-tour-hero figure{margin:0;position:sticky;inset-block-start:calc(var(--annaya-nav-height,7rem) + 1.5rem)}
+.annaya-tour-hero figure img{display:block;inline-size:100%;block-size:auto;aspect-ratio:1.4;object-fit:cover;object-position:40% 50%;border-radius:var(--radius,1rem)}
+.annaya-tour-hero figcaption{font-size:max(.75rem,12px);line-height:1.6;color:var(--text);background:var(--bg);padding-block:.75rem;overflow-wrap:anywhere}
+.annaya-tour-hero figcaption a{color:var(--text);text-decoration:underline;text-underline-offset:.15em}
+.annaya-tour-hero h1{font-size:clamp(2rem,4vw,3.75rem);line-height:1.1;text-wrap:balance;overflow-wrap:anywhere;margin-block:.25rem 1.25rem}
+.annaya-tour-hero .cta-row{flex-wrap:wrap}
+.annaya-tour-hero .btn{border-radius:12px;white-space:normal;min-block-size:44px;overflow-wrap:anywhere;text-align:center}
+.annaya-tour-hero p{overflow-wrap:anywhere}
+.annaya-tour-summary .enc-trail a{color:var(--text)}
+.annaya-tour-hero .btn.subtle{background:transparent;border:1px solid var(--muted);color:var(--text)}
+.annaya-tour-links{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;margin-block:1rem}
+.annaya-tour-links a{display:inline-flex;align-items:center;min-block-size:44px;text-decoration:underline;text-underline-offset:.15em}
+.annaya-tour-links a:after{content:"→";margin-inline-start:.5em}
+[dir="rtl"] .annaya-tour-links a:after{content:"←"}
+.travel-breadcrumb{padding-block-start:1rem;display:flex;flex-wrap:wrap;align-items:baseline}
+.travel-breadcrumb>span[aria-hidden]{margin-inline:.5em;opacity:.55}
+.skip-link:not(:focus){position:absolute;inline-size:1px;block-size:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:760px){.annaya-tour-hero{grid-template-columns:minmax(0,1fr);gap:1rem}.annaya-tour-hero figure{position:static}.annaya-tour-hero figure img{aspect-ratio:4/3}}
+.tour-stop{position:relative;min-height:88vh;display:grid;grid-template-rows:1fr auto;margin:0 calc(50% - 50vw);width:100vw;overflow:hidden;background:#17120e;color:#fff}
 .tour-stop img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .tour-stop::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,7,4,.88) 0%,rgba(10,7,4,.55) 38%,rgba(10,7,4,0) 70%)}
-.tour-copy{position:relative;z-index:1;max-width:44rem;padding:2rem 1.25rem 4.75rem;margin:0 auto;width:100%;box-sizing:border-box}
+.tour-copy{position:relative;z-index:1;align-self:end;background:linear-gradient(to top,rgba(10,7,4,.92),rgba(10,7,4,.8));max-width:44rem;padding:2rem 1.25rem;margin:0 auto;width:100%;box-sizing:border-box}
 .tour-copy h2{color:#fff;margin:.2rem 0 .6rem}
 .tour-copy p{color:#f6efe4;margin:.4rem 0}
 .tour-step{font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:#f1d9a6}
 .tour-why{border-left:3px solid #f1d9a6;padding-left:.8rem;margin-top:.9rem}
-.tour-credit{position:absolute;z-index:2;right:.6rem;bottom:.4rem;font-size:.72rem;color:#f6efe4;background:rgba(10,7,4,.62);padding:.15rem .5rem;border-radius:.4rem;max-width:calc(100% - 1.2rem)}
-.tour-credit a{color:#f1d9a6}
+.tour-credit{position:relative;z-index:2;margin:0;padding:.75rem 1.25rem;font-size:max(.75rem,12px);line-height:1.6;color:#f6efe4;background:#17120e;overflow-wrap:anywhere;box-sizing:border-box;inline-size:100%;min-inline-size:0}
+.tour-credit a{color:#f6efe4;text-decoration:underline;text-underline-offset:.15em}
 @media (prefers-reduced-motion:no-preference){.tour-stop img{transform:scale(1.04);transition:transform 6s ease-out}.tour-stop.seen img{transform:scale(1)}}
 @media (min-width:900px){.tour-stop{min-height:92vh}.tour-copy{margin-left:max(1.25rem,calc((100vw - 70rem)/2))}}
 .tour-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
 </style>
-<script>document.addEventListener('DOMContentLoaded',function(){var s=document.querySelectorAll('.tour-stop');if(!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('seen')});return}var o=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('seen')}})},{threshold:.25});s.forEach(function(e){o.observe(e)})});</script>
+<script>document.addEventListener('DOMContentLoaded',function(){var header=document.querySelector('header');if(header&&'ResizeObserver' in window){new ResizeObserver(function(){document.documentElement.style.setProperty('--annaya-nav-height',header.getBoundingClientRect().height+'px')}).observe(header)}var s=document.querySelectorAll('.tour-stop');if(!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('seen')});return}var o=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('seen')}})},{threshold:.25});s.forEach(function(e){o.observe(e)})});</script>
 
 
 
@@ -139,17 +159,25 @@
 <!-- i18n-travel-frame:start -->
 <nav aria-label="В этом путеводителе" class="travel-breadcrumb"><a href="/ru/">Главная</a><span aria-hidden="true">/</span><a href="/ru/travel">Путешествия</a><span aria-hidden="true">/</span><span aria-current="page">Прогулка по Аннайе онлайн</span></nav>
 <!-- i18n-travel-frame:end -->
-<section class="hero">
+<section class="annaya-tour-hero">
+<figure class="annaya-tour-lead">
+<img alt="Монастырь святого Марона и церковная колокольня в Аннайе зимой" decoding="async" fetchpriority="high" height="917" src="/media/tour/annaya-winter-panorama.webp" width="2400"/>
+<figcaption>Paul Saad / <a href="https://commons.wikimedia.org/wiki/File:Pan_Annaya_in_Winter.JPG">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></figcaption>
+</figure>
+<div class="annaya-tour-summary">
 <span class="kicker">Онлайн-тур · Аннайя, Ливан</span>
 <h1>Прогулка по Аннайе онлайн</h1>
 <p><strong>Кратко:</strong> Это прогулка с гидом по Аннайе - ливанскому горному монастырю, где жил и погребён святой Шарбель. Прокрутите пять остановок: монастырь, церковь, двор, гробница и скит. У каждой - настоящая фотография и короткий рассказ о том, почему это место важно.</p>
 <div class="cta-row">
 <a class="btn primary" href="#stop1">Начать тур</a>
 <a class="btn subtle" href="/ru/annaya">Спланировать настоящий визит</a>
-<a class="btn subtle" href="/ru/bekaa-kafra">Далее: его родная деревня</a>
-<a class="btn subtle" href="/bekaa-tour">Также: тур по Бекаа</a>
+</div>
+<div class="annaya-tour-links">
+<a href="/ru/bekaa-kafra">Далее: его родная деревня</a>
+<a href="/bekaa-tour">Также: тур по Бекаа</a>
 </div>
 <p class="enc-trail">Материал входит в <a href="/saint-charbel-encyclopedia">Энциклопедия святого Шарбеля</a>. Прочитайте <a href="/ru/biography">полную историю его жизни</a> или посмотрите все темы.</p>
+</div>
 </section>
 <section aria-labelledby="stop1" class="tour-stop">
 <img alt="Церковь и монастырь святого Марона в Аннайе на террасном горном склоне зимой, с колокольней и красной черепичной крышей" decoding="async" height="917" loading="eager" src="/media/tour/annaya-winter-panorama.webp" width="2400"/>
