@@ -68,7 +68,7 @@ from i18n import travel_metadata as tm,reviewed_travel as rt,travel_variant_evid
 from i18n.travel_scoped_delta import Tokens
 real_compose=tm.compose_travel_clusters;real_travel=rt.travel_manifest;real_final=ve.validate_final_outputs
 final_calls=[]
-hits=Counter();composition={'negative':False,'synthetic_heads':set(),'production':set()}
+hits=Counter();composition={'negative':False,'synthetic_heads':set(),'production':set(),'roundtrip':0,'roundtrip-pretty':0,'roundtrip-minified':0}
 
 def head_map(text):
  return {n['hreflang']:n['href'] for n in BeautifulSoup(text.split('</head>')[0],'html.parser').select('link[hreflang]')}
@@ -100,9 +100,26 @@ def prepare_fixture_heads(root,registry,texts):
    # Exact raw self-anchor serialization, only two bound scalar substitutions.
    new=raw.replace('hreflang="x-default"','hreflang="zz"').replace('href="'+expected['x-default']+'"','href="'+expected['zz']+'"')
    assert new!=raw and head_map('<head>'+new+'</head>')=={'zz':expected['zz']}
-   tail='\n' if text[token[2]:token[2]+1]=='\n' else ''
-   texts[file]=text[:token[1]]+new+tail+text[token[1]:]
+   # Line-whole insertion: the x-default anchor keeps its committed bytes and
+   # the prepared head is the original plus exactly one zz line.
+   line_start=text.rfind('\n',0,token[1])+1
+   indent=text[line_start:token[1]]
+   if indent.strip()=='':
+    # Pretty-printed head: one indented zz line before the x-default line.
+    inserted=indent+new+'\n'
+    prepared=text[:line_start]+inserted+text[line_start:]
+    assert prepared[:line_start]+prepared[line_start+len(inserted):]==text,(file,'prepared-minus-zz-line != original head')
+    composition['roundtrip-pretty']+=1
+   else:
+    # Minified head: anchors share one line; the exact tag plus its own
+    # trailing separator goes at the tag boundary, other bytes untouched.
+    inserted=new+'\n'
+    prepared=text[:token[1]]+inserted+text[token[1]:]
+    assert prepared[:token[1]]+prepared[token[1]+len(inserted):]==text,(file,'prepared-minus-zz-line != original head')
+    composition['roundtrip-minified']+=1
+   texts[file]=prepared
    composition['production'].add(file.relative_to(root).as_posix())
+   composition['roundtrip']+=1
  # This is the real strict composer, on fully prepared fixture-owned inputs.
  return real_compose(root,registry,texts)
 
@@ -141,7 +158,10 @@ def strip_html_zz(text):
   if tag=='meta' and attrs.get('property')=='og:locale:alternate' and attrs.get('content')=='zz_ZZ':
    assert raw in ['<meta property="og:locale:alternate" content="zz_ZZ" />','<meta content="zz_ZZ" property="og:locale:alternate"/>'],raw;category='og'
   if category:
-   # Only the exact tag's own line separator, not preceding/neighbour text.
+   # Remove the whole zz line: the line's own leading whitespace, the exact
+   # tag, and its trailing separator. Neighbour lines keep their exact bytes.
+   line_start=text.rfind('\n',0,start)+1
+   if text[line_start:start].strip()=='':start=line_start
    if text[end:end+1]=='\n':end+=1
    edits.append((start,end,''));hits[category]+=1
  for start,end,replacement in reversed(edits):text=text[:start]+replacement+text[end:]
@@ -273,6 +293,8 @@ try:
   if counts!={'alternate':1,'og':1,'runtime':expected_runtime} or len(codes)!=len(set(codes)) or actual!=complete or actual.get('zz')!=fixture_zz or any(link.get('rel')!=['alternate'] for link in links):
    print('AUTHORED RAW HEAD FAILURE',file,raw_head)
    raise AssertionError('Unbound authored synthetic head: '+file)
+ assert composition['roundtrip']==len(composition['production']),(composition['roundtrip'],len(composition['production']))
+ print('PREPARED ROUND TRIP',composition['roundtrip'],'=',composition['roundtrip-pretty'],'pretty +',composition['roundtrip-minified'],'minified; prepared-minus-zz-line == original head on every prepared page')
  print('PRODUCTION TRAVEL OWNERS',len(expected_production),'=',len(composition['production']),'+',len(authored),'authored actual-head complement checked; injected masks NOT renderer proof')
  print('SYNTHETIC VALIDATORS real renderer/structural catalog capability collision; legacy Travel History Prayer body+catalog; real final validator sees zero scoped records')
  assert all(Path(f).parts[0]=='zz' for f in composition['synthetic_heads'])
