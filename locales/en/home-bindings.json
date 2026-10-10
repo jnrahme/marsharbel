@@ -1,8 +1,8 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "e06ada3d0b2aad382c0a28aeaa407d42c538c3e1246686b2bde01755695544f6",
-  "sourceRevision": "83ac466acd2c708ff5f0bc917bd0cf56b3eebb50",
+  "masterSha256": "22789d753c050babc485a42f1fee9c6f2bd0a739c66985489ac4a57cd13aeb73",
+  "sourceRevision": "cee06faf4baaa1b7c517db8cc09f3b45fb32a13b",
   "bindings": [
     {
       "key": "home.header.saint-charbel",
@@ -1364,50 +1364,64 @@
     },
     {
       "key": "home.latest-news.premiere.shortTitle",
-      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(1)",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
       "source": "Charbel Premieres in Beirut",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "home.latest-news.premiere.homeDek",
-      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(2)",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
       "source": "The NMPRO and MTV feature has premiered at Beirut Media Zone. Lebanese cinemas are preparing for October 22; check individual cinemas for sessions.",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "home.latest-news.premiere.premiereLabel",
-      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1) > span:nth-of-type(1)",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1) > span:nth-of-type(1)",
       "source": "Special premiere",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "home.latest-news.premiere.premiereValue",
-      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1) > strong:nth-of-type(1)",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1) > strong:nth-of-type(1)",
       "source": "October 9, 2026 · Beirut Media Zone",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "home.latest-news.premiere.openingLabel",
-      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2) > span:nth-of-type(1)",
       "source": "Lebanese cinema rollout",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "home.latest-news.premiere.openingValue",
-      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2) > strong:nth-of-type(1)",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2) > strong:nth-of-type(1)",
       "source": "Planned from October 22, 2026",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "home.latest-news.premiere.read",
-      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(3)",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(4)",
       "source": "Read the premiere and release update →",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.premiere.photoAlt",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Church and monastery at Annaya on a wooded hillside",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.latest-news.premiere.photoCaption",
+      "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Annaya church and monastery. Photo: Paul Saad, Wikimedia Commons, CC BY-SA 4.0; cropped and converted to WebP. Context photo, not film or premiere footage.",
       "kind": "text",
       "nodeIndex": 0
     }
@@ -1613,6 +1627,8 @@
     "home.latest-news.premiere.premiereValue": "October 9, 2026 · Beirut Media Zone",
     "home.latest-news.premiere.openingLabel": "Lebanese cinema rollout",
     "home.latest-news.premiere.openingValue": "Planned from October 22, 2026",
-    "home.latest-news.premiere.read": "Read the premiere and release update →"
+    "home.latest-news.premiere.read": "Read the premiere and release update →",
+    "home.latest-news.premiere.photoAlt": "Church and monastery at Annaya on a wooded hillside",
+    "home.latest-news.premiere.photoCaption": "Annaya church and monastery. Photo: Paul Saad, Wikimedia Commons, CC BY-SA 4.0; cropped and converted to WebP. Context photo, not film or premiere footage."
   }
 }
