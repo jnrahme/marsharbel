@@ -64,8 +64,19 @@ def render_page(root,registry,lang,family,route,catalog=None):
     for node in soup.select('meta[property="og:locale:alternate"]'):node.decompose()
     for code,value in og_locales(registry).items():
         if code!=lang:soup.head.append(soup.new_tag('meta',property='og:locale:alternate',content=value))
-    for node in soup.select('link[hreflang]'):node.decompose()
     clusters=registry['pageMirrors'][family].get('discoveryRoutes',{'en':master_route,**registry['pageMirrors'][family]['routes'],'x-default':master_route})
+    source_links=soup.select('link[hreflang]')
+    from i18n.travel_variant_evidence import SLUGS
+    scoped_ru=(lang in ('de','ru') and family in {slug+'-travel-master' for slug in SLUGS})
+    if scoped_ru:
+        ru=[node for node in source_links if node.get('hreflang')=='ru']
+        if len(ru)!=1 or 'ru' not in clusters or ru[0].get('rel')!=['alternate'] or ru[0].get('href')!=registry['site']+clusters['ru']:
+            raise ValueError('Unexpected source RU discovery for scoped Travel renderer')
+        following=ru[0].next_sibling
+        if not isinstance(following,NavigableString) or isinstance(following,Comment) or str(following)!='\n':
+            raise ValueError('Source RU discovery must have exactly one trailing newline')
+        following.extract()
+    for node in source_links:node.decompose()
     for code,path in clusters.items():soup.head.append(soup.new_tag('link',rel='alternate',hreflang=code,href=registry['site']+path))
     if home_url(registry, lang) is None:
         qualifier=read_json(root/f'locales/{lang}/encyclopedia-trail.json')['englishQualifier']

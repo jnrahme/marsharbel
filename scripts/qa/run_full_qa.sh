@@ -53,6 +53,8 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_travel_scoped_delta.p
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_parallel_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata_attribute_order.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata_splice.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_travel_authored_final_hashes.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_page_mirror_ru_whitespace.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_variant_evidence.py
 qa_step node scripts/tests/scoped_travel_resolver.cjs
 qa_step python3 -m unittest discover -s scripts/qa -p test_ru_nav_alignment_repin.py
