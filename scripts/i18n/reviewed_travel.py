@@ -12,7 +12,7 @@ def travel_manifest(root, texts, manifest):
     groups = json.loads(path.read_text())['groups']
     out = json.loads(json.dumps(manifest))
     for family, review in groups.items():
-        scoped = review.get('evidenceSchema') == 'scoped-variants-v1'
+        scoped = review.get('evidenceSchema') in ('scoped-variants-v1','annaya-hero-v1')
         if scoped:
             from i18n.travel_variant_evidence import validate_group, validate_variant
             validate_group(family,review)
@@ -24,7 +24,7 @@ def travel_manifest(root, texts, manifest):
         for code, variant in variants.items():
             file = root / variant['file']
             text = texts.get(file, file.read_text())
-            if scoped:validate_variant(root,family,code,variant,text,final=False)
+            if scoped:validate_variant(root,family,code,variant,text,final=False,schema=review['evidenceSchema'])
             if digest(text) != variant['bodySha256']:
                 raise ValueError('Travel body changed after review: ' + family + ' ' + code)
             if code != 'en' and hashlib.sha256((root / variant['catalog']).read_bytes()).hexdigest() != variant['catalogSha256']:
@@ -50,6 +50,6 @@ def travel_manifest(root, texts, manifest):
         if scoped:
             for code, variant in variants.items():
                 file=root/variant['file']
-                page['variants'][code]['proof']=validate_variant(root,family,code,variant,texts.get(file,file.read_text()),final=False)
+                page['variants'][code]['proof']=validate_variant(root,family,code,variant,texts.get(file,file.read_text()),final=False,schema=review['evidenceSchema'])
         out['pages'][family + '-equivalence'] = page
     return out
