@@ -241,7 +241,21 @@ try:
   actual={link['hreflang']:link['href'] for link in links}
   expected={code:r['site']+path for code,path in original_owners.get(route,{}).items()}
   complete={code:r['site']+path for code,path in synthetic_owners.get(route,{}).items()}
-  if len(codes)!=len(set(codes)) or actual!=expected or set(complete)-set(actual)!={'zz'} or any(link.get('rel')!=['alternate'] for link in links):
+  fixture_routes={cfg['english']:cfg['routes']['zz'] for cfg in r['pageMirrors'].values() if 'zz' in cfg.get('routes',{})}
+  english=next((source for source,cluster in original_clusters.items() if route in cluster.values()),None)
+  fixture_zz=r['site']+fixture_routes[english]
+  assert complete=={**expected,'zz':fixture_zz}
+  zz_links=[link for link in links if link.get('hreflang')=='zz']
+  zz_meta=soup.select('meta[property="og:locale:alternate"][content="zz_ZZ"]')
+  runtime=soup.select('script#sc-runtime-labels')
+  runtime_hits=sum(json.loads(str(script.string)).get('nativeNames',{}).get('zz')=='Test' for script in runtime)
+  counts={'alternate':len(zz_links),'og':len(zz_meta),'runtime':runtime_hits}
+  print('AUTHORED ZZ CLASSES',file,json.dumps(counts,sort_keys=True))
+  if file=='ar/qadisha-valley.html':
+   print('DISTINCT alternate link:',str(zz_links[0]) if zz_links else '<absent>')
+   print('DISTINCT OG alternate meta:',str(zz_meta[0]) if zz_meta else '<absent>')
+   print('DISTINCT runtime nativeNames JSON key:', '"zz": "Test"' if runtime_hits else '<absent>')
+  if counts!={'alternate':1,'og':1,'runtime':1} or len(codes)!=len(set(codes)) or actual!=complete or actual.get('zz')!=fixture_zz or any(link.get('rel')!=['alternate'] for link in links):
    print('AUTHORED RAW HEAD FAILURE',file,raw_head)
    raise AssertionError('Unbound authored synthetic head: '+file)
  print('PRODUCTION TRAVEL OWNERS',len(expected_production),'=',len(composition['production']),'+',len(authored),'authored actual-head complement checked; injected masks NOT renderer proof')
