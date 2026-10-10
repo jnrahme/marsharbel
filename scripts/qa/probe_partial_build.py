@@ -224,8 +224,27 @@ try:
   canonical=BeautifulSoup(text.split('</head>')[0],'html.parser').select_one('link[rel=canonical]')
   if canonical and canonical['href'].removeprefix(original_registry['site']) in owned:
    expected_production.add(file.relative_to(R).as_posix())
- assert composition['production']==expected_production,(len(composition['production']),len(expected_production),composition['production']^expected_production)
- print('PRODUCTION TRAVEL INPUTS prepared',len(composition['production']),'expected',len(expected_production),'fixture-injected alternates are NOT renderer proof')
+ authored=set(tm.PARTIAL_AUTHORED_FILES)
+ assert len(authored)==19 and authored<=expected_production
+ composed=expected_production-authored
+ assert not composition['production']&authored
+ assert composition['production']==composed,(len(composition['production']),len(composed),composition['production']^composed)
+ assert expected_production-composition['production']==authored
+ synthetic_clusters=tm.travel_clusters(T,r)
+ original_owners={route:cluster for cluster in original_clusters.values() for route in cluster.values()}
+ synthetic_owners={route:cluster for cluster in synthetic_clusters.values() for route in cluster.values()}
+ for file in sorted(authored):
+  text=out[T/file];raw_head=text.split('</head>')[0]
+  soup=BeautifulSoup(raw_head,'html.parser');canonical=soup.select_one('link[rel=canonical]')
+  links=soup.select('link[hreflang]');codes=[link['hreflang'] for link in links]
+  route=canonical['href'].removeprefix(r['site']) if canonical else ''
+  actual={link['hreflang']:link['href'] for link in links}
+  expected={code:r['site']+path for code,path in original_owners.get(route,{}).items()}
+  complete={code:r['site']+path for code,path in synthetic_owners.get(route,{}).items()}
+  if len(codes)!=len(set(codes)) or actual!=expected or set(complete)-set(actual)!={'zz'} or any(link.get('rel')!=['alternate'] for link in links):
+   print('AUTHORED RAW HEAD FAILURE',file,raw_head)
+   raise AssertionError('Unbound authored synthetic head: '+file)
+ print('PRODUCTION TRAVEL OWNERS',len(expected_production),'=',len(composition['production']),'+',len(authored),'authored actual-head complement checked; injected masks NOT renderer proof')
  print('SYNTHETIC VALIDATORS real renderer/structural catalog capability collision; legacy Travel History Prayer body+catalog; real final validator sees zero scoped records')
  assert all(Path(f).parts[0]=='zz' for f in composition['synthetic_heads'])
  assert len(zz)==18 and not any(p.relative_to(T).parts[0]!='zz' for p in zz)
