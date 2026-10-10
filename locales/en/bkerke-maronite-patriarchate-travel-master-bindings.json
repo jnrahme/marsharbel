@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "bkerke-maronite-patriarchate.html",
-  "masterSha256": "f85649de34d3c91917661edf161f6a13cef67ee67735d43cb886698ae5100303",
+  "masterSha256": "83a6ab4f4e60a3173b2bdba5f7b107702988c5c58285513f3ada379223538ff6",
   "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
   "bindings": [
     {
@@ -941,6 +941,34 @@
       "source": "Bkerke, the seat of the Maronite Patriarchate near Harissa: its history, the patriarchs, and the place where Saint Charbel became a priest.",
       "kind": "attribute",
       "attribute": "content"
+    },
+    {
+      "key": "travel.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -1069,6 +1097,10 @@
     "travel.sources.link5": "Wikipedia: Charbel Makhlouf - ordination on July 23, 1859, in Bkerke",
     "travel.sources.link6": "Vatican News, July 26, 2026: Pope Leo XIV hails new Maronite Blessed - Elias Hoayek beatified the previous day",
     "travel.sources.link7": "Holy See Press Office, July 6, 2019: decrees of the Congregation for the Causes of Saints - Elias Hoyek, died in Bkerke, December 24, 1931",
-    "travel.footer.credit": "Bkerke. Author: Please pray for the person who made this website."
+    "travel.footer.credit": "Bkerke. Author: Please pray for the person who made this website.",
+    "travel.header.media": "Media",
+    "travel.header.music": "Music",
+    "travel.header.video": "Video",
+    "travel.header.gallery": "Gallery"
   }
 }

@@ -72,10 +72,10 @@
         "ru": {
           "file": "ru/annaya.html",
           "path": "/ru/annaya",
-          "bodySha256": "b5149fedfc6187c35a9102f19eeff32b7c04dbc8c3592d5fb9f0dcff193f03ba",
+          "bodySha256": "e4b405a104e118d2d8e418b823b673cdfe8a0a42515d522fd3babaa30618c861",
           "candidateFileSha256": "ea0eec571c48318fc5ca99b9f96e773e182b4c8068b79d06afa562eedc22184b",
           "catalog": "locales/ru/annaya-master-copy.json",
-          "catalogSha256": "e315def6bf131c22f03bd12a6ed27850d2b907e065dca012dc476bf53726c5e5"
+          "catalogSha256": "e888ddfec659aadc2c4f0813d2e2b739b916b15ecb9cf13765c6530512967adf"
         }
       },
       "boundedReviewAmendments": [
@@ -169,7 +169,7 @@
           "bodySha256": "4c76363e8b724c1771050c6a03089aa0c25c2589a15d64d9b61de02a9081bdcb",
           "candidateFileSha256": "9b709cc67c497478c575e2896f7b059e7477b785dd4f1bbf3f5cf550c8c1bb1e",
           "catalog": "locales/ru/twenty-second-master-copy.json",
-          "catalogSha256": "1f086066aface43ca6d531a6db5e3e6a4909e543c3c78be8a7496e1c0c7af80c"
+          "catalogSha256": "1095d73aa8f46c36596984ec20b0ef2912cb282ef53af6f92f24e3694a1dce3b"
         }
       }
     },
@@ -257,10 +257,700 @@
         "ru": {
           "file": "ru/palomnichestvo.html",
           "path": "/ru/palomnichestvo",
-          "bodySha256": "65cec08324b8a2fee584180043564c84a6f1653e28c3efbb9982079d6fcfb3cf",
+          "bodySha256": "6bfb24725d8e98d2a19da9d820bb947b5788848c6e760ae9260f3dd66fd23ac0",
           "candidateFileSha256": "0ab56e9f32cccf3827c3ada922d1e0d7434c81a99a4afb0961214e162b069562",
           "catalog": "locales/ru/pilgrimage-master-copy.json",
-          "catalogSha256": "defc432dd65a678044da3b16d672423afc970d1714dd88385d4e71368d130b47"
+          "catalogSha256": "722f6c2f9dafe194ba5e932e023227088dce3dc757b844f4097e800dde4baf28"
+        }
+      }
+    },
+    "annaya-tour-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "annaya-tour.html",
+          "path": "/annaya-tour",
+          "bodySha256": "83482d921988e264704f5cba2723d1e8ba24bc359909dacfe45ffd1d735149f1",
+          "candidateFileSha256": "d30d65e3f3ca90f3c219bfb4881216a4f4d6dc9153d047b8256aff5570509250",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "d30d65e3f3ca90f3c219bfb4881216a4f4d6dc9153d047b8256aff5570509250",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/annaya-tour.html",
+          "path": "/de/annaya-tour",
+          "bodySha256": "bad2dd21303ff4b8c197955e6ae25b202ad3469bebc6d7eac1bedee0c5cd4c0a",
+          "candidateFileSha256": "4ae247f49e2560127dfce8202ae824167caac2b4e8a796ead557e1e85568543d",
+          "catalog": "locales/de/annaya-tour-travel-master-copy.json",
+          "catalogSha256": "8f598315462b1eacc796fe56708eb712844970024b5d7a7bb1ce5a9605f7c5e8",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "4ae247f49e2560127dfce8202ae824167caac2b4e8a796ead557e1e85568543d",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-4ae247f49e2560127dfce8202ae824167caac2b4e8a796ead557e1e85568543d",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/annaya-tour.html",
+          "path": "/ru/annaya-tour",
+          "bodySha256": "fceb7c14e5f857df424bfb10c90ee3d01c61358dde96fa12831d9acb4c6c5411",
+          "candidateFileSha256": "2c477a4b5a103d6496eedc96f1b192bcf740419c571ed29c433b995b0606082d",
+          "catalog": "locales/ru/annaya-tour-travel-master-copy.json",
+          "catalogSha256": "c8fd95b7eb2cb6fa01f05c99affffd3ae454120567e6274d738b4222f4102400",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "2c477a4b5a103d6496eedc96f1b192bcf740419c571ed29c433b995b0606082d",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-2c477a4b5a103d6496eedc96f1b192bcf740419c571ed29c433b995b0606082d",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        }
+      }
+    },
+    "bekaa-kafra-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "bekaa-kafra.html",
+          "path": "/bekaa-kafra",
+          "bodySha256": "c453572f0c2e667acdcad682e8c1cd15f81e7f4c40dd4d0ea37ff8894b3a2642",
+          "candidateFileSha256": "fdc2e9aa0b6eddc0d1d90624dcd6ceb59c51cf26f2926f292de5cf49c5aba46c",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "fdc2e9aa0b6eddc0d1d90624dcd6ceb59c51cf26f2926f292de5cf49c5aba46c",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/bekaa-kafra.html",
+          "path": "/de/bekaa-kafra",
+          "bodySha256": "eb200efcebc8f89414c6200d47c23c463d5301246de1e404573b9eefe72cd0ea",
+          "candidateFileSha256": "2acc89427ad1b90a17f7cbdf6264ef067665d35048054a222fe78cc199e44af4",
+          "catalog": "locales/de/bekaa-kafra-travel-master-copy.json",
+          "catalogSha256": "3c44e834c5ec0f9722677c0a745681fe1cef5151a3caf982a96471758f0a8e2c",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "2acc89427ad1b90a17f7cbdf6264ef067665d35048054a222fe78cc199e44af4",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-2acc89427ad1b90a17f7cbdf6264ef067665d35048054a222fe78cc199e44af4",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/bekaa-kafra.html",
+          "path": "/ru/bekaa-kafra",
+          "bodySha256": "b94535626f8f08eb5b4e87f5e69cc0df9330dd773f0f793a1d0b06f9dd41b71c",
+          "candidateFileSha256": "7c2b2dba9cc780b710fa07233f913c76cd502e2645ed5ba595b8ada77728903d",
+          "catalog": "locales/ru/bekaa-kafra-travel-master-copy.json",
+          "catalogSha256": "3d94336e5ddf5acdd525ef1543856fb7ae7a61ee64e7fb96409b5cd270063d17",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "7c2b2dba9cc780b710fa07233f913c76cd502e2645ed5ba595b8ada77728903d",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-7c2b2dba9cc780b710fa07233f913c76cd502e2645ed5ba595b8ada77728903d",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        }
+      }
+    },
+    "bkerke-maronite-patriarchate-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "bkerke-maronite-patriarchate.html",
+          "path": "/bkerke-maronite-patriarchate",
+          "bodySha256": "e0e640c74f87d6e3542cbf2ff8851329e7e7f132a76c896449ba4b85e2f34b4b",
+          "candidateFileSha256": "83a6ab4f4e60a3173b2bdba5f7b107702988c5c58285513f3ada379223538ff6",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "83a6ab4f4e60a3173b2bdba5f7b107702988c5c58285513f3ada379223538ff6",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/bkerke-maronite-patriarchate.html",
+          "path": "/de/bkerke-maronite-patriarchate",
+          "bodySha256": "62bb3b81d4b69c4fce1bfe63cee60c3562a3666fbf93af659bedb2218f8f08ec",
+          "candidateFileSha256": "18b0929616fc416e4634ea48663d473c8c4f1ab72446fc12d3ca506e447a1a20",
+          "catalog": "locales/de/bkerke-maronite-patriarchate-travel-master-copy.json",
+          "catalogSha256": "7bc61a078411459e256c535dc1c6042d82dcdddc8fde8f98132d97e145379fba",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "18b0929616fc416e4634ea48663d473c8c4f1ab72446fc12d3ca506e447a1a20",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-18b0929616fc416e4634ea48663d473c8c4f1ab72446fc12d3ca506e447a1a20",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/bkerke-maronite-patriarchate.html",
+          "path": "/ru/bkerke-maronite-patriarchate",
+          "bodySha256": "df3ced113f16bff04a84f424a83ae6d89355141dfa242d16e9b8f06c37dacf68",
+          "candidateFileSha256": "cca4fadc7979373f7b30c6fa5ff88b9ed014507c97b8c0373c745b761109f5a2",
+          "catalog": "locales/ru/bkerke-maronite-patriarchate-travel-master-copy.json",
+          "catalogSha256": "79e5e046acaceb086ca1d1226bd93a35b589f19a37b9ca1a589467c03e207ab3",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "cca4fadc7979373f7b30c6fa5ff88b9ed014507c97b8c0373c745b761109f5a2",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-cca4fadc7979373f7b30c6fa5ff88b9ed014507c97b8c0373c745b761109f5a2",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        }
+      }
+    },
+    "cedars-of-god-lebanon-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "cedars-of-god-lebanon.html",
+          "path": "/cedars-of-god-lebanon",
+          "bodySha256": "490cee3967b00867bf1418d2c96be84768c993909e9302dd4d6dbe7277ef8d48",
+          "candidateFileSha256": "989ea61aa8d7f9dbf7b4b7f6262a66902c3fc034fef4be13b22473cf375b9bbb",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "989ea61aa8d7f9dbf7b4b7f6262a66902c3fc034fef4be13b22473cf375b9bbb",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/cedars-of-god-lebanon.html",
+          "path": "/de/cedars-of-god-lebanon",
+          "bodySha256": "9783090c413399556706e83243085c6da9634c50caac4594d82a93a320bdf95b",
+          "candidateFileSha256": "5cbc5d51ba89b3d0e126821307580a60b3b18b3fb570b5b5786d362ae5a1f28b",
+          "catalog": "locales/de/cedars-of-god-lebanon-travel-master-copy.json",
+          "catalogSha256": "556707f49136d4c6416f91bb1cf72c75dbacdfa9ad7acc51016b9b8f1bc37e55",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "5cbc5d51ba89b3d0e126821307580a60b3b18b3fb570b5b5786d362ae5a1f28b",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-5cbc5d51ba89b3d0e126821307580a60b3b18b3fb570b5b5786d362ae5a1f28b",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/cedars-of-god-lebanon.html",
+          "path": "/ru/cedars-of-god-lebanon",
+          "bodySha256": "de6a5e8d4e8609a517c9c088d62a5ad1f2d3c54b222be59a504b04b64f8e8de7",
+          "candidateFileSha256": "a597b0cbd2813a442cac035b64a64eb98c5a63901f374d81193b8065fc0d9b3d",
+          "catalog": "locales/ru/cedars-of-god-lebanon-travel-master-copy.json",
+          "catalogSha256": "ff1cb87be5075305a96744ee47bb211f160190efe9103af466997ed3f1fdded1",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "a597b0cbd2813a442cac035b64a64eb98c5a63901f374d81193b8065fc0d9b3d",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-a597b0cbd2813a442cac035b64a64eb98c5a63901f374d81193b8065fc0d9b3d",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        }
+      }
+    },
+    "our-lady-of-lebanon-harissa-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "our-lady-of-lebanon-harissa.html",
+          "path": "/our-lady-of-lebanon-harissa",
+          "bodySha256": "9abec6678a0543fb2e5454f281a646e26ba6d15808047ce70e4c4b3e505aea9c",
+          "candidateFileSha256": "4a638b85457bbc2fa31791360075f97f0e5ec3c84e96b1f2c90a157776132b6a",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "4a638b85457bbc2fa31791360075f97f0e5ec3c84e96b1f2c90a157776132b6a",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/our-lady-of-lebanon-harissa.html",
+          "path": "/de/our-lady-of-lebanon-harissa",
+          "bodySha256": "69c6550aa74c579c55fb5da11995e22ecc37ae261cbf1869eff750387637d12a",
+          "candidateFileSha256": "c0badf8f32ea1b1601091686dd98a57fe063345356659fd5ad5bad3c368ce42d",
+          "catalog": "locales/de/our-lady-of-lebanon-harissa-travel-master-copy.json",
+          "catalogSha256": "bfe7f0cee787fd2c4db8e366acb2c94285a3aa9a8446860c1c58696aa78a139f",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "c0badf8f32ea1b1601091686dd98a57fe063345356659fd5ad5bad3c368ce42d",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-c0badf8f32ea1b1601091686dd98a57fe063345356659fd5ad5bad3c368ce42d",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/our-lady-of-lebanon-harissa.html",
+          "path": "/ru/our-lady-of-lebanon-harissa",
+          "bodySha256": "8b83a6ddfed1e741349fd78a46c62c50c6da4a4b71aee7a6291fc39fc29efc1f",
+          "candidateFileSha256": "e17caf9dddc8cbecd8f80ba92d39528994e5923d35e751f9392158eccfba866f",
+          "catalog": "locales/ru/our-lady-of-lebanon-harissa-travel-master-copy.json",
+          "catalogSha256": "013466ee426cac9e2114fd56cf7304292a560bd904ed8985c3d5810b88850a3b",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "e17caf9dddc8cbecd8f80ba92d39528994e5923d35e751f9392158eccfba866f",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-e17caf9dddc8cbecd8f80ba92d39528994e5923d35e751f9392158eccfba866f",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        }
+      }
+    },
+    "qadisha-valley-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "qadisha-valley.html",
+          "path": "/qadisha-valley",
+          "bodySha256": "71c1bfe9d87aecc5fc0583676b65fd67152e58eacbc2911edbe3ded24721ac89",
+          "candidateFileSha256": "af93c056d95d92ee2c092b4a26f03b7efeef71cd17f89c9d281b2f0fa75f6e03",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "af93c056d95d92ee2c092b4a26f03b7efeef71cd17f89c9d281b2f0fa75f6e03",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/qadisha-valley.html",
+          "path": "/de/qadisha-valley",
+          "bodySha256": "1f66644c7415066ec04536ed61b9c6127a947699a40136bae2de4a5807012c5e",
+          "candidateFileSha256": "ace209005f813c7092cdc1d832e161bf34e6eefeda761d44f1b2b4bc497b58f0",
+          "catalog": "locales/de/qadisha-valley-travel-master-copy.json",
+          "catalogSha256": "81139def6e1f66098bf88dca688d121e58cbcefaf337194f0259f03ac13032d0",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "ace209005f813c7092cdc1d832e161bf34e6eefeda761d44f1b2b4bc497b58f0",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-ace209005f813c7092cdc1d832e161bf34e6eefeda761d44f1b2b4bc497b58f0",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/qadisha-valley.html",
+          "path": "/ru/qadisha-valley",
+          "bodySha256": "218523a702e15a5f4adeb89249ac8883b9411e22a00c76c32b2668be3e0e8741",
+          "candidateFileSha256": "f3d96f50b411bb056becc44f0807e1df4953ead6c75426c1bbecd93745fbaac6",
+          "catalog": "locales/ru/qadisha-valley-travel-master-copy.json",
+          "catalogSha256": "44534efcf27f49a85c514df44df567bac570038d0a856b3ad82a97cd977599ce",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "f3d96f50b411bb056becc44f0807e1df4953ead6c75426c1bbecd93745fbaac6",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-f3d96f50b411bb056becc44f0807e1df4953ead6c75426c1bbecd93745fbaac6",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        }
+      }
+    },
+    "qannoubine-monastery-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "qannoubine-monastery.html",
+          "path": "/qannoubine-monastery",
+          "bodySha256": "873cb0d5989d7efffc72ca96e84d4c534cb5e6bf31fbb614eafc2f7028d0ab26",
+          "candidateFileSha256": "c61a8b5e7b064edc8e608225e6b2409d21b3d1af2c5f0e064f5d8f4698e607e9",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "c61a8b5e7b064edc8e608225e6b2409d21b3d1af2c5f0e064f5d8f4698e607e9",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/qannoubine-monastery.html",
+          "path": "/de/qannoubine-monastery",
+          "bodySha256": "72b1c6d18bc78a5e5c6c6e6d9946723f3306551c345bb30f4a1980e16d23197a",
+          "candidateFileSha256": "a113e7cd979df92acded505c0d04e2ee4b4fbe1455d7576262bdc7ce802d3cb8",
+          "catalog": "locales/de/qannoubine-monastery-travel-master-copy.json",
+          "catalogSha256": "73f3a57cecdcf90f1235609b6aac660841d6d8c5152515a293816cefa7159424",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "a113e7cd979df92acded505c0d04e2ee4b4fbe1455d7576262bdc7ce802d3cb8",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-a113e7cd979df92acded505c0d04e2ee4b4fbe1455d7576262bdc7ce802d3cb8",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/qannoubine-monastery.html",
+          "path": "/ru/qannoubine-monastery",
+          "bodySha256": "696c3e01aee6a84144c5f573e376533ec860a27f6f35c5fc32a53df51f614a18",
+          "candidateFileSha256": "23407e945137ad855303f23cdd3d959819a9ba28786188a2e3e50ffb84caa1d2",
+          "catalog": "locales/ru/qannoubine-monastery-travel-master-copy.json",
+          "catalogSha256": "797b0b94c7e81db4e170658149302a544710d7b4749fc98c2569695a0d6a9bfe",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "23407e945137ad855303f23cdd3d959819a9ba28786188a2e3e50ffb84caa1d2",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-23407e945137ad855303f23cdd3d959819a9ba28786188a2e3e50ffb84caa1d2",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        }
+      }
+    },
+    "qozhaya-monastery-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "qozhaya-monastery.html",
+          "path": "/qozhaya-monastery",
+          "bodySha256": "4419366ec51f3dfe7ca627e5ca9ade9d53c83aaf4275110c10075fa7abdcc2b8",
+          "candidateFileSha256": "cfb8b33465dad974b74d5917aaf0d1bd9dbc3d72122744376bcc22868200ccf8",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "cfb8b33465dad974b74d5917aaf0d1bd9dbc3d72122744376bcc22868200ccf8",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/qozhaya-monastery.html",
+          "path": "/de/qozhaya-monastery",
+          "bodySha256": "5838bf25a169a41a7cd5b88fc8a784e6c5c833eda7b8180fc62455a1746ac6e6",
+          "candidateFileSha256": "1212cf13526eef3ebc59fdb4277ea97926c4a3136ee32d84907757b9a890f26c",
+          "catalog": "locales/de/qozhaya-monastery-travel-master-copy.json",
+          "catalogSha256": "512d5c30811e4a89cd6dd9089ed58c54efb117f18d2969353afbd9ceccbddd03",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "1212cf13526eef3ebc59fdb4277ea97926c4a3136ee32d84907757b9a890f26c",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-1212cf13526eef3ebc59fdb4277ea97926c4a3136ee32d84907757b9a890f26c",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/qozhaya-monastery.html",
+          "path": "/ru/qozhaya-monastery",
+          "bodySha256": "339e38f7665779d0de89d332676e4e99b5d6f0e92c73fd162b338c38625d799b",
+          "candidateFileSha256": "8dd7c169c18cae98d6713832a667b4235e270b0da8efb451454ed8bec16589c8",
+          "catalog": "locales/ru/qozhaya-monastery-travel-master-copy.json",
+          "catalogSha256": "0d26b59d34fb1a2d75fcedad64be9a1479a565fea792f470ae519dc870f56458",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "8dd7c169c18cae98d6713832a667b4235e270b0da8efb451454ed8bec16589c8",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-8dd7c169c18cae98d6713832a667b4235e270b0da8efb451454ed8bec16589c8",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        }
+      }
+    },
+    "saint-charbel-hermitage-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "saint-charbel-hermitage.html",
+          "path": "/saint-charbel-hermitage",
+          "bodySha256": "86e3a370cc1c41451c0774f7456d9ab04996beae710dff90c28339fc3debea60",
+          "candidateFileSha256": "bb98f6e085148ba3311d5374165faf0b1243b24aa7fc61e6b3f0fdd0dc3d3114",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "bb98f6e085148ba3311d5374165faf0b1243b24aa7fc61e6b3f0fdd0dc3d3114",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/saint-charbel-hermitage.html",
+          "path": "/de/saint-charbel-hermitage",
+          "bodySha256": "1a23a2d90958bafb7862ab28c02b3f77efeafa61d5049a9678717a832fb49e2e",
+          "candidateFileSha256": "9270154fe2a406857b83977c92c99ef793590b9275e202c3c0d9a4b2106e10a1",
+          "catalog": "locales/de/saint-charbel-hermitage-travel-master-copy.json",
+          "catalogSha256": "ac97b7ff6ff3b6435c42870cbe9bc4714529e77660a1b4425ddb8e1f319f03e1",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "9270154fe2a406857b83977c92c99ef793590b9275e202c3c0d9a4b2106e10a1",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-9270154fe2a406857b83977c92c99ef793590b9275e202c3c0d9a4b2106e10a1",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/saint-charbel-hermitage.html",
+          "path": "/ru/saint-charbel-hermitage",
+          "bodySha256": "4d3f1991e2ec7b0b44cc1adb09b6fc95e248028c440fb97250ac6d3083f9ce65",
+          "candidateFileSha256": "a77294d98caef1e5a954db4656ca390968a8996a885a65b5ae4e8e7723e7beeb",
+          "catalog": "locales/ru/saint-charbel-hermitage-travel-master-copy.json",
+          "catalogSha256": "f2303699b816a902b913899992ec0cae8f3552f0b3fe65356c84fd1f9f356044",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "a77294d98caef1e5a954db4656ca390968a8996a885a65b5ae4e8e7723e7beeb",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-a77294d98caef1e5a954db4656ca390968a8996a885a65b5ae4e8e7723e7beeb",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        }
+      }
+    },
+    "saint-charbel-places-lebanon-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "saint-charbel-places-lebanon.html",
+          "path": "/saint-charbel-places-lebanon",
+          "bodySha256": "7045d6d84ef80188c971f766887384e48ab5f16675ce8a3f20216aec6efb5a43",
+          "candidateFileSha256": "67400107780b70f8f8b8d0175134ad110b89a849a5637200b6171adbb7216ec5",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "67400107780b70f8f8b8d0175134ad110b89a849a5637200b6171adbb7216ec5",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/saint-charbel-places-lebanon.html",
+          "path": "/de/saint-charbel-places-lebanon",
+          "bodySha256": "8323faad60db9ebb42c9dff0162e1d67480959f5680090d17affc7f8743b1f42",
+          "candidateFileSha256": "4e9711e93eefb1168974d63e4a277fa813e180ee020bb35fb34b9a4537f309e9",
+          "catalog": "locales/de/saint-charbel-places-lebanon-travel-master-copy.json",
+          "catalogSha256": "92e9f4c0675312aeab69c42269cc2c86965791448db61a13a99bf746216503ad",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "4e9711e93eefb1168974d63e4a277fa813e180ee020bb35fb34b9a4537f309e9",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-4e9711e93eefb1168974d63e4a277fa813e180ee020bb35fb34b9a4537f309e9",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/saint-charbel-places-lebanon.html",
+          "path": "/ru/saint-charbel-places-lebanon",
+          "bodySha256": "24984200a0852b3d4238194e681ebcc0f2fe6da939b4132a2d842350e88504c1",
+          "candidateFileSha256": "c069a10de17ce2db1ff6a8fbf2e6634421a6b61fd9042c1ffe6394d1f5cde171",
+          "catalog": "locales/ru/saint-charbel-places-lebanon-travel-master-copy.json",
+          "catalogSha256": "de29f87b64feedb1b78733881677042a799e7a3573c2697c8f31d0d14be07a10",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "c069a10de17ce2db1ff6a8fbf2e6634421a6b61fd9042c1ffe6394d1f5cde171",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-c069a10de17ce2db1ff6a8fbf2e6634421a6b61fd9042c1ffe6394d1f5cde171",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        }
+      }
+    },
+    "saint-charbel-trail-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "saint-charbel-trail.html",
+          "path": "/saint-charbel-trail",
+          "bodySha256": "ffeab2c9aee14839b0ae242d72a5cc0327fe1fa13900fd331a44d18c62a5c5ec",
+          "candidateFileSha256": "35233a99909a91fdf561d9b3266a3836a306dc1881bb2ae093c5ace42c743324",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "35233a99909a91fdf561d9b3266a3836a306dc1881bb2ae093c5ace42c743324",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/saint-charbel-trail.html",
+          "path": "/de/saint-charbel-trail",
+          "bodySha256": "b285bac4bc4ffec85ad5c5a68ebee543a6ac0db7405192db03b2896d301ffd7f",
+          "candidateFileSha256": "72a61113678ec5385b50357868af832eaf3cbc2884ae318ecf5adb4992c2212d",
+          "catalog": "locales/de/saint-charbel-trail-travel-master-copy.json",
+          "catalogSha256": "233ff01d8fd6c7c8b044612a7127b7976e2290df55dd2176ff049d101f694930",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "72a61113678ec5385b50357868af832eaf3cbc2884ae318ecf5adb4992c2212d",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-72a61113678ec5385b50357868af832eaf3cbc2884ae318ecf5adb4992c2212d",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/saint-charbel-trail.html",
+          "path": "/ru/saint-charbel-trail",
+          "bodySha256": "bd028bbf759656f4d53a656db9153d6d434e4e37f61491bc9b9aeae288866a3b",
+          "candidateFileSha256": "cf591ef311238316997117ccbf9503191d42be86fb3072d5a6be114a5f41700f",
+          "catalog": "locales/ru/saint-charbel-trail-travel-master-copy.json",
+          "catalogSha256": "231007d58226015bbcb338b4ac5aa560487524ce8c9ca509d7337dceb121c476",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "cf591ef311238316997117ccbf9503191d42be86fb3072d5a6be114a5f41700f",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-cf591ef311238316997117ccbf9503191d42be86fb3072d5a6be114a5f41700f",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        }
+      }
+    },
+    "travel-travel-master": {
+      "evidenceSchema": "scoped-variants-v1",
+      "sourceRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+      "variants": {
+        "en": {
+          "file": "travel.html",
+          "path": "/travel",
+          "bodySha256": "748541e36ccf88ee76ffd006c790d9e29cb9146a98853ff539ca1cf079cfcdc5",
+          "candidateFileSha256": "ed987710836f50df86c35aa8af9dcb59198295f7256626a6aea627029ebab436",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "ed987710836f50df86c35aa8af9dcb59198295f7256626a6aea627029ebab436",
+            "state": "carried",
+            "scope": "stage bytes carried; no new review",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "de": {
+          "file": "de/travel.html",
+          "path": "/de/travel",
+          "bodySha256": "64b9278d588a639448cac937a01b90848c4824bb539b735bb76fddaba1e12caa",
+          "candidateFileSha256": "4833dc30b6a00293d1bd6c66a13bdd2d162da1952f871c0530917803afda6efd",
+          "catalog": "locales/de/travel-travel-master-copy.json",
+          "catalogSha256": "1aece3a71d9b8f406994ef6e93050f2ed0833ff7f9524f3e4efe97631e05d8e2",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "4833dc30b6a00293d1bd6c66a13bdd2d162da1952f871c0530917803afda6efd",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-de-buildwriter-review-20261009T183700-4833dc30b6a00293d1bd6c66a13bdd2d162da1952f871c0530917803afda6efd",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "ru": {
+          "file": "ru/travel.html",
+          "path": "/ru/travel",
+          "bodySha256": "0a42a7f7ee83cddc8f4c7f0d0dc8af2bb5c98ac8f426d629cdc40c3ae7cbf1d0",
+          "candidateFileSha256": "debfa9f94449532e5eba83c1c3bfb1e3bfe6f754f434d087ce330710fff67a47",
+          "catalog": "locales/ru/travel-travel-master-copy.json",
+          "catalogSha256": "74d392166abed2421070354c361b280a96ff483a6891d0f050bb4739318ddafc",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "debfa9f94449532e5eba83c1c3bfb1e3bfe6f754f434d087ce330710fff67a47",
+            "state": "approved",
+            "scope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+            "renderedReview": "C0016-ru-buildwriter-review-20261009T183700-debfa9f94449532e5eba83c1c3bfb1e3bfe6f754f434d087ce330710fff67a47",
+            "catalogReview": "C0016-RU-catalog-value-review-8a96bbee938908d0b17e625cc0d4121be8272a8b-1501-values",
+            "nativeReviewStatus": "not-certified"
+          }
+        },
+        "hi": {
+          "file": "hi/travel.html",
+          "path": "/hi/travel",
+          "bodySha256": "9d2c17790d1069f8d4f424559f3b68976baf4bb3189b0c899bd8f27471ac7424",
+          "candidateFileSha256": "2fdc371f6813470ebd75d8ff4c4c2b356c637d826b2396cd1d6a1e63d43bcb73",
+          "catalog": "locales/hi/travel-travel-master-copy.json",
+          "catalogSha256": "fbc6f7e57cac90bdb1be4f81b58eb3ac07befeedf515c9ec684c5b441d89de62",
+          "reviewEvidence": {
+            "stageRevision": "6701907d05aedc47b7942ada6a14cfc6470c31ce",
+            "preparedRevision": "fdcd070f688af4c400008f4bac94ed038478b1bb",
+            "candidateFileSha256": "2fdc371f6813470ebd75d8ff4c4c2b356c637d826b2396cd1d6a1e63d43bcb73",
+            "state": "approved",
+            "scope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+            "renderedReview": "C0016-hi-buildwriter-review-20261009T183700-2fdc371f6813470ebd75d8ff4c4c2b356c637d826b2396cd1d6a1e63d43bcb73",
+            "catalogReview": "existing-model-Media-values-placement-only",
+            "nativeReviewStatus": "not-certified"
+          }
         }
       }
     }

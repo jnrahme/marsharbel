@@ -51,6 +51,21 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata.py
 qa_step python3 scripts/qa/test_travel_release.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_media_nav_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_history_nav_repin.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_ru_travel_repin.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_travel_scoped_delta.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_travel_parallel_repin.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata_attribute_order.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata_splice.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_travel_authored_final_hashes.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_page_mirror_ru_whitespace.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_travel_variant_evidence.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_travel_generated_availability.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_generated_sitemap_dates.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_manifest_provenance_policy.py
+qa_step node scripts/tests/scoped_travel_resolver.cjs
+qa_step python3 -m unittest discover -s scripts/qa -p test_ru_nav_alignment_repin.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_ru_travel_chrome.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_travel_media_bindings_prepare.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_retired_novena_nav_repin.py
 
 qa_step npx playwright test tests/element-collision.spec.js --project=laptop --workers=2

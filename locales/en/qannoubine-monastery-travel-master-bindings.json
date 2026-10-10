@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "qannoubine-monastery.html",
-  "masterSha256": "6d6ff7c28184dd7d27fb67dcf9b7e66bbdfa882f2985909f65dd0a30c21a8eb9",
+  "masterSha256": "c61a8b5e7b064edc8e608225e6b2409d21b3d1af2c5f0e064f5d8f4698e607e9",
   "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
   "bindings": [
     {
@@ -913,6 +913,34 @@
       "source": "Qannoubine Monastery. Author: Please pray for the person who made this website.",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -1046,6 +1074,10 @@
     "travel.node.128": "SyriacPress (May 2022): The Coronation of the Virgin at Qannoubine, part 2 - the fifteen patriarchs, the 1781 restoration, and the 1909 burial stele",
     "travel.node.129": "UNESCO World Heritage List: Ouadi Qadisha (the Holy Valley) and the Forest of the Cedars of God, inscribed 1998",
     "travel.node.130": "Qannoubine Monastery. Author: Please pray for the person who made this website.",
-    "travel.header.home": "Home"
+    "travel.header.home": "Home",
+    "travel.header.media": "Media",
+    "travel.header.music": "Music",
+    "travel.header.video": "Video",
+    "travel.header.gallery": "Gallery"
   }
 }

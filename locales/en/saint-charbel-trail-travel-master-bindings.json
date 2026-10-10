@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "saint-charbel-trail.html",
-  "masterSha256": "191604a98612bd5549f52bc483f59578cc478604043ee9170f90e1c6893dda12",
+  "masterSha256": "35233a99909a91fdf561d9b3266a3836a306dc1881bb2ae093c5ace42c743324",
   "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
   "bindings": [
     {
@@ -864,6 +864,34 @@
       "source": "Darb Mar Charbel is Lebanon's first official long-distance pilgrimage trail, launched July 20, 2025 at Annaya. What is open now and how to walk it.",
       "kind": "attribute",
       "attribute": "content"
+    },
+    {
+      "key": "travel.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -981,6 +1009,10 @@
     "travel.sources.heading1": "Sources",
     "travel.sources.link1": "Darb Mar Charbel - the official trail site (Darbessama)",
     "travel.sources.link2": "Lebanon Traveler: Lebanon Announces the Launch of the Darb Mar Charbel Trail - inauguration details, sections, and partners",
-    "travel.footer.credit": "Saint Charbel trail. Author: Please pray for the person who made this website."
+    "travel.footer.credit": "Saint Charbel trail. Author: Please pray for the person who made this website.",
+    "travel.header.media": "Media",
+    "travel.header.music": "Music",
+    "travel.header.video": "Video",
+    "travel.header.gallery": "Gallery"
   }
 }

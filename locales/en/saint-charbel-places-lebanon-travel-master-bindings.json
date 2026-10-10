@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "saint-charbel-places-lebanon.html",
-  "masterSha256": "86ba432cf4a5d9a5610985f21c71bb6905f15e815ff55145c056e7520e4d8786",
+  "masterSha256": "67400107780b70f8f8b8d0175134ad110b89a849a5637200b6171adbb7216ec5",
   "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
   "bindings": [
     {
@@ -948,6 +948,34 @@
       "source": "Follow Saint Charbel's life across Lebanon: Bekaa Kafra, his birthplace; Mayfouq, where he became a monk; and Annaya, his hermitage and tomb.",
       "kind": "attribute",
       "attribute": "content"
+    },
+    {
+      "key": "travel.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -1077,6 +1105,10 @@
     "travel.sources.link3": "Monastery of Saint Maron, Annaya: Saint Charbel biography",
     "travel.sources.link4": "Lebanon Traveler: Darb Mar Charbel trail sections, including Annaya to Mayfouq",
     "travel.sources.link5": "OSV News: Pope Leo is first pontiff to go to St. Charbel's tomb - visit is source of great joy for Lebanon",
-    "travel.footer.credit": "Saint Charbel's Lebanon. Author: Please pray for the person who made this website."
+    "travel.footer.credit": "Saint Charbel's Lebanon. Author: Please pray for the person who made this website.",
+    "travel.header.media": "Media",
+    "travel.header.music": "Music",
+    "travel.header.video": "Video",
+    "travel.header.gallery": "Gallery"
   }
 }

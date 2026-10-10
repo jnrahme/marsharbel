@@ -189,6 +189,8 @@ def control_outputs(root, texts, manifest, copy):
     out={}
     for path,text in texts.items():
         if path.suffix=='.html' and 'https://marsharbel.com/' in text:out[path]=inject_control(text,root,manifest,copy)
+    from i18n.travel_variant_evidence import validate_final_outputs
+    validate_final_outputs(root,out)
     manifest = with_english_sources(root, manifest)
     out[root/'same-page-manifest.js']='window.SC_SAME_PAGE_MANIFEST = '+json.dumps(manifest,ensure_ascii=False,separators=(',',':'))+';\n'
     out[root/'same-page-copy.js']='window.SC_SAME_PAGE_COPY = '+json.dumps(copy,ensure_ascii=False,separators=(',',':'))+';\n'

@@ -39,6 +39,18 @@
   }
   function verified(page, variant) {
     var proof = variant && variant.proof;
+    if (page && variant && proof && proof.type === 'scoped-travel-variant') {
+      var leaf = page.sourcePath.replace(/\.html$/, '');
+      var sources = ['travel','annaya-tour','bekaa-kafra','bkerke-maronite-patriarchate','cedars-of-god-lebanon','our-lady-of-lebanon-harissa','qadisha-valley','qannoubine-monastery','qozhaya-monastery','saint-charbel-hermitage','saint-charbel-places-lebanon','saint-charbel-trail'];
+      var paths = ['/' + leaf, '/de/' + leaf, '/ru/' + leaf];
+      if (leaf === 'travel') paths.push('/hi/travel');
+      return sources.includes(leaf) && paths.includes(variant.path) && variant.status === 'verified' &&
+        ['approved','carried'].includes(proof.state) && proof.nativeReviewStatus === 'not-certified' &&
+        typeof proof.scope === 'string' && !!proof.scope && typeof proof.evidenceRef === 'string' && !!proof.evidenceRef &&
+        /^[a-f0-9]{64}$/.test(proof.candidateFileSha256 || '') && /^[a-f0-9]{40}$/.test(page.sourceRevision || '') &&
+        /^[a-f0-9]{64}$/.test(variant.contentSha256 || '') && proof.reviewedContentSha256 === variant.contentSha256 &&
+        variant.sourceSha256 === page.sourceSha256 && Array.isArray(variant.aliases) && variant.aliases.length === 0;
+    }
     if (page && variant && proof && proof.type === 'reviewed-history-master') {
       return page.sourcePath === 'history.html' && proof.family === 'history-master' &&
         variant.status === 'verified' && (proof.renderedReviewStatus === 'approved-history-source-correction-c476eada-9-pages-390-1280' ||

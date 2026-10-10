@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "our-lady-of-lebanon-harissa.html",
-  "masterSha256": "5b81fe25cc9253a0192592763547c9d69b69750dde1a0c06c8067538079e9566",
+  "masterSha256": "4a638b85457bbc2fa31791360075f97f0e5ec3c84e96b1f2c90a157776132b6a",
   "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
   "bindings": [
     {
@@ -962,6 +962,34 @@
       "source": "Harissa, the shrine of Our Lady of Lebanon above Jounieh: its 1908 statue, the basilica, the cable car, and how to visit.",
       "kind": "attribute",
       "attribute": "content"
+    },
+    {
+      "key": "travel.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -1093,6 +1121,10 @@
     "travel.sources.link4": "The Holy See: Pope Leo XIV's address at the Shrine of Our Lady of Lebanon, Harissa, December 1, 2025",
     "travel.sources.link5": "Téléférique Lebanon: location, ride length, elevation, tickets and opening hours",
     "travel.sources.link6": "Catholic News Service via CNEWA, March 25, 2010: the Annunciation as a national holiday, Muslim pilgrims at Harissa",
-    "travel.footer.credit": "Harissa. Author: Please pray for the person who made this website."
+    "travel.footer.credit": "Harissa. Author: Please pray for the person who made this website.",
+    "travel.header.media": "Media",
+    "travel.header.music": "Music",
+    "travel.header.video": "Video",
+    "travel.header.gallery": "Gallery"
   }
 }

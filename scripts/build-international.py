@@ -273,7 +273,9 @@ def outputs(root=ROOT):
     generated += [registry['site'] + route for mirror in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values()
                   for route in mirror['routes'].values() if route != mirror['english']]
     def entry(url):
-        lastmod = f'<lastmod>{lastmods[url]}</lastmod>' if url in lastmods else ''
+        from i18n.sitemap_dates import generated_lastmod
+        changed=generated_lastmod(root,url,lastmods)
+        lastmod = '<lastmod>'+changed+'</lastmod>' if changed else ''
         return f'  <url><loc>{url}</loc>{lastmod}</url>'
     text = text.replace('</urlset>', '\n' + '\n'.join(entry(url) for url in dict.fromkeys(generated)) + '\n</urlset>')
     text = re.sub(r'\n[ \t]*\n(?:[ \t]*\n)+', '\n\n', text)

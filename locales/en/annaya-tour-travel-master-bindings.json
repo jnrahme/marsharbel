@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "annaya-tour.html",
-  "masterSha256": "0f532271946f17bb1ed5c831a83e8261c68e17bfae2fa2df7eecd009da952e98",
+  "masterSha256": "d30d65e3f3ca90f3c219bfb4881216a4f4d6dc9153d047b8256aff5570509250",
   "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
   "bindings": [
     {
@@ -948,6 +948,34 @@
       "source": "A guided online walk through Annaya in five stops: the monastery, the pilgrim church, the courtyard, the tomb, and the hermitage, with real photographs.",
       "kind": "attribute",
       "attribute": "content"
+    },
+    {
+      "key": "travel.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -1073,6 +1101,10 @@
     "travel.sources.link1": "Charbel App: Annaya Monastery - about 1,200 meters, Jbeil district, the 1974 church, the 1875 move to the hermitage",
     "travel.sources.link2": "Charbel App: Visiting Annaya - the tomb, the hermitage from 1875 until his death on Christmas Eve 1898",
     "travel.sources.link3": "Saint Charbel Oasis (the monastery's site): the Hermitage of Saints Peter and Paul",
-    "travel.footer.credit": "Annaya online tour. Author: Please pray for the person who made this website."
+    "travel.footer.credit": "Annaya online tour. Author: Please pray for the person who made this website.",
+    "travel.header.media": "Media",
+    "travel.header.music": "Music",
+    "travel.header.video": "Video",
+    "travel.header.gallery": "Gallery"
   }
 }
