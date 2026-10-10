@@ -46,6 +46,7 @@ class SpliceTests(unittest.TestCase):
    with self.subTest(file=file):
     self.assertEqual(splice_travel_alternates(raw,cluster,'https://marsharbel.com',file,source_inputs=True),expected)
     with self.assertRaises(ValueError):splice_travel_alternates(raw,cluster,'https://marsharbel.com',file)
+    with self.assertRaises(ValueError):splice_travel_alternates(raw,cluster,'https://marsharbel.com','off-list.html',source_inputs=True)
     with self.assertRaises(ValueError):splice_travel_alternates(raw.replace('/'+slug,'/wrong'),cluster,'https://marsharbel.com',file,source_inputs=True)
     extra=raw.replace('</head>','<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/'+slug+'" />\n</head>')
     # Use an extra required locale so the third-code partial is not RU-only.
