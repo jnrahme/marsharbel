@@ -1,0 +1,2521 @@
+{
+  "version": 1,
+  "master": "videos.html",
+  "masterSha256": "c75986bd45a05c144493ed3bee9d8f975c2779fff73448fc3795acba69c75969",
+  "sourceRevision": "f508f8a7",
+  "bindings": [
+    {
+      "key": "videos.metadata.title-saint-charbel-videos-documentaries-film-and-miracle-re",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Saint Charbel Videos: Documentaries, Film and Miracle Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.metadata.description-watch-saint-charbel-documentaries-the-full-movie",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "videos.metadata.og-title-saint-charbel-videos-documentaries-film-and-miracle",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Saint Charbel Videos: Documentaries, Film and Miracle Reports",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "videos.metadata.og-description-watch-saint-charbel-documentaries-the-full-mo",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "videos.metadata.twitter-title-saint-charbel-videos-documentaries-film-and-mi",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Saint Charbel Videos: Documentaries, Film and Miracle Reports",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "videos.metadata.twitter-description-watch-saint-charbel-documentaries-the-fu",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "videos.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "videos.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.accessibility.media",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "Media",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "videos.body.media",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.body.music",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.body.video",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.body.gallery",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.body.video",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.saint-charbel-on-film.saint-charbel-on-film",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Saint Charbel on Film",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.saint-charbel-on-film.documentaries-the-full-movie-the-six-part-film-miracle-repor",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - gathered in one place, each linked back to the page that tells its story carefully.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.saint-charbel-on-film.miracles-reports",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.saint-charbel-on-film.visit-annaya",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visit Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.saint-charbel-on-film.the-relics",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "The Relics",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.short-voiced-prayers.short-voiced-prayers",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "Short Voiced Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.short-voiced-prayers.brief-prayers-read-aloud-new-from-our-instagram",
+      "selector": "#main-content > section:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Brief prayers read aloud, new from our Instagram.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.short-voiced-prayers.a-prayer-for-the-sick-read-aloud-by-candlelight-our-first-vo",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A prayer for the sick, read aloud by candlelight - our first voiced reel.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.short-voiced-prayers.watch-on-instagram",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Watch on Instagram",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.documentaries",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "Documentaries",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.longer-films-on-the-life-and-legacy-of-the-hermit-of-annaya",
+      "selector": "#main-content > section:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "Longer films on the life and legacy of the hermit of Annaya.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.saint-charbel-documentary-ascension-presents-9-57",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel documentary - Ascension Presents (9:57)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.documentaries.ascension-presents-short-documentary-on-the-saint-s-life-9-5",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Ascension Presents' short documentary on the saint's life (9:57).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.saint-charbel-documentary-24-54",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel documentary (24:54)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.documentaries.a-half-hour-documentary-on-saint-charbel-s-life-and-miracles",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "A half-hour documentary on Saint Charbel's life and miracles (24:54).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.saint-charbel-full-length-documentary-1-20-16",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel full-length documentary (1:20:16)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.documentaries.a-full-length-documentary-for-a-slow-evening-1-20-16",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "A full-length documentary for a slow evening (1:20:16).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.documentaries.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-movie.the-movie",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "The Movie",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-movie.the-feature-film-about-saint-charbel-s-life-with-english-sub",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "The feature film about Saint Charbel's life, with English subtitles.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-movie.saint-charbel-the-movie-english-subtitles-1-43-46",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel - the movie, English subtitles (1:43:46)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.the-movie.the-full-feature-film-with-english-subtitles-1-43-46",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The full feature film, with English subtitles (1:43:46).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-movie.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-movie.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-movie.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-movie.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-movie.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-movie.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-movie.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.the-six-part-film",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "The Six-Part Film",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.the-older-dramatized-film-of-his-life-in-six-parts",
+      "selector": "#main-content > section:nth-of-type(5) > p:nth-of-type(1)",
+      "source": "The older dramatized film of his life, in six parts.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.saint-charbel-film-part-1-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel film - part 1 of 6",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.the-six-part-film.part-1-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Part 1 of 6.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.saint-charbel-film-part-2-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel film - part 2 of 6",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.the-six-part-film.part-2-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Part 2 of 6.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.saint-charbel-film-part-3-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel film - part 3 of 6",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.the-six-part-film.part-3-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "Part 3 of 6.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.saint-charbel-film-part-4-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel film - part 4 of 6",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.the-six-part-film.part-4-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "Part 4 of 6.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.saint-charbel-film-part-5-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel film - part 5 of 6",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.the-six-part-film.part-5-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(1)",
+      "source": "Part 5 of 6.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.saint-charbel-film-part-6-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel film - part 6 of 6",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.the-six-part-film.part-6-of-6",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(6) > p:nth-of-type(1)",
+      "source": "Part 6 of 6.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.the-six-part-film.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.miracle-reports",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Miracle Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.video-reports-on-the-healings-told-on-our",
+      "selector": "#main-content > section:nth-of-type(6) > p:nth-of-type(1)",
+      "source": "Video reports on the healings told on our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.miracles-pages",
+      "selector": "#main-content > section:nth-of-type(6) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "miracles pages",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.text",
+      "selector": "#main-content > section:nth-of-type(6) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "videos.miracle-reports.nohad-el-shami-recounts-her-healing-15-54",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Nohad El Shami recounts her healing (15:54)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.miracle-reports.nohad-el-shami-telling-her-own-story-15-54",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Nohad El Shami telling her own story (15:54) -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.read-her-story",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "read her story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.text",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "videos.miracle-reports.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.dafne-gutierrez-tells-the-story-of-her-healing-19-01",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Dafne Gutierrez tells the story of her healing (19:01)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.miracle-reports.dafne-gutierrez-on-the-phoenix-healing-19-01",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Dafne Gutierrez on the Phoenix healing (19:01) -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.read-the-account",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "read the account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.text",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "videos.miracle-reports.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.archival-footage-of-the-1965-beatification-6-00",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Archival footage of the 1965 beatification (6:00)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.miracle-reports.the-1965-beatification-in-archival-footage-6-00",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "The 1965 beatification in archival footage (6:00) -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.the-three-church-approved-miracles",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "the three Church-approved miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.text",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "videos.miracle-reports.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.raymond-nader-recounts-the-night-at-the-hermitage-7-01",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Raymond Nader recounts the night at the hermitage (7:01)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.miracle-reports.raymond-nader-in-his-own-words-7-01",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "Raymond Nader in his own words (7:01) -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.read-his-story",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "read his story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.text",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "videos.miracle-reports.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.the-tablet-reports-on-the-january-2026-healings-2-20",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "The Tablet reports on the January 2026 healings (2:20)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.miracle-reports.the-tablet-on-the-two-healings-recorded-in-january-2026-2-20",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(1)",
+      "source": "The Tablet on the two healings recorded in January 2026 (2:20) -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.the-latest-register-entries",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "the latest register entries",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.text",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "videos.miracle-reports.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.miracle-reports.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.annaya-the-hermitage",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "Annaya & the Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.the-monastery-the-hermitage-and-the-mountain-plan-a-visit-wi",
+      "selector": "#main-content > section:nth-of-type(7) > p:nth-of-type(1)",
+      "source": "The monastery, the hermitage, and the mountain. Plan a visit with our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.guide-to-visiting-annaya",
+      "selector": "#main-content > section:nth-of-type(7) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "guide to visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.and-the",
+      "selector": "#main-content > section:nth-of-type(7) > p:nth-of-type(1)",
+      "source": "and the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "videos.annaya-the-hermitage.hermitage-page",
+      "selector": "#main-content > section:nth-of-type(7) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "hermitage page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.text",
+      "selector": "#main-content > section:nth-of-type(7) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "videos.annaya-the-hermitage.annaya-and-the-monastery-10-46",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Annaya and the monastery (10:46)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.annaya-the-hermitage.the-monastery-of-saint-maron-at-annaya-10-46",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The monastery of Saint Maron at Annaya (10:46).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.the-hermitage-at-annaya-5-47",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "The hermitage at Annaya (5:47)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.annaya-the-hermitage.the-hermitage-where-he-spent-twenty-three-years-5-47",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "The hermitage where he spent twenty-three years (5:47).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.annaya-pilgrimage-footage-2-27",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Annaya pilgrimage footage (2:27)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.annaya-the-hermitage.pilgrimage-footage-from-annaya-2-27",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "Pilgrimage footage from Annaya (2:27).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.annaya-and-the-hermitage-7-00",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Annaya and the hermitage (7:00)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.annaya-the-hermitage.the-monastery-and-the-mountain-above-it-7-00",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "The monastery and the mountain above it (7:00).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.annaya-short-clip-0-35",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Annaya short clip (0:35)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.annaya-the-hermitage.a-short-glimpse-of-annaya-0-35",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(1)",
+      "source": "A short glimpse of Annaya (0:35).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.annaya-the-hermitage.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.relic-tours",
+      "selector": "#main-content > section:nth-of-type(8) > h2:nth-of-type(1)",
+      "source": "Relic Tours",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.saint-charbel-s-relics-travel",
+      "selector": "#main-content > section:nth-of-type(8) > p:nth-of-type(1)",
+      "source": "Saint Charbel's relics travel -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.how-the-relic-tours-work",
+      "selector": "#main-content > section:nth-of-type(8) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "how the relic tours work",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.text",
+      "selector": "#main-content > section:nth-of-type(8) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "videos.relic-tours.saint-charbel-relic-tour-report",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel relic tour report",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.relic-tours.a-relic-tour-report",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A relic tour report.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.saint-charbel-relic-tour-report",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel relic tour report",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.relic-tours.a-relic-tour-report",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "A relic tour report.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.saint-charbel-relics-in-bethlehem",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Saint Charbel relics in Bethlehem",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "videos.relic-tours.the-relics-welcomed-in-bethlehem",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "The relics welcomed in Bethlehem.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.if-the-player-cannot-load-use-the-original-video-link-or-rea",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.open-original-video-on-youtube",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Open original video on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.read-related-context-on-this-site",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Read related context on this site",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.this-video-is-unavailable-or-private-on-youtube-the-original",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(1)",
+      "source": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.the-owner-does-not-allow-this-video-to-play-on-other-website",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(2)",
+      "source": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.youtube-could-not-identify-this-site-s-player-request-you-ca",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(3)",
+      "source": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.relic-tours.this-video-could-not-play-here-you-can-try-the-original-vide",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(2) > template:nth-of-type(4)",
+      "source": "This video could not play here. You can try the original video on YouTube or read the related context.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.a-note-on-these-videos.a-note-on-these-videos",
+      "selector": "#main-content > section:nth-of-type(9) > h2:nth-of-type(1)",
+      "source": "A Note on These Videos",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.a-note-on-these-videos.every-video-here-is-hosted-on-youtube-by-the-channel-that-ma",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Every video here is hosted on YouTube by the channel that made it - we did not produce them and cannot vouch for every word in every report. Where a video tells a miracle story, our own pages keep the careful distinctions: what the Church has formally recognized, what is recorded at the monastery, and what remains a personal testimony. Embeds use youtube-nocookie.com, using YouTube's privacy-enhanced embed mode.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.frequently-asked-questions",
+      "selector": "#main-content > section:nth-of-type(10) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.what-videos-are-on-this-page",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "What videos are on this page?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.documentaries-on-saint-charbel-s-life-from-a-short-ten-minut",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Documentaries on Saint Charbel's life, from a short ten-minute film to a full eighty-minute documentary, the complete feature film with English subtitles, the older six-part film, miracle reports, and footage from Annaya and the relic tours.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.are-the-videos-hosted-on-this-site",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "Are the videos hosted on this site?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.no-they-are-embedded-from-youtube-through-the-youtube-nocook",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "No. They are embedded from YouTube through the youtube-nocookie player, using YouTube's privacy-enhanced embed mode.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.can-i-watch-the-full-saint-charbel-movie-here",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "Can I watch the full Saint Charbel movie here?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.yes-the-full-feature-film-about-saint-charbel-s-life-with-en",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "Yes. The full feature film about Saint Charbel's life, with English subtitles, is embedded on this page - about one hour and forty-four minutes.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.where-can-i-read-the-story-behind-a-video",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "Where can I read the story behind a video?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.the-site-also-has-written-context-on-the",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "The site also has written context on the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.miracles-pages",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Miracles pages",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.the",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": ", the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "videos.frequently-asked-questio.pilgrimage-guide",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(4) > a:nth-of-type(2)",
+      "source": "pilgrimage guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.and-the",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": ", and the",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "videos.frequently-asked-questio.relics-page",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(4) > a:nth-of-type(3)",
+      "source": "relics page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "videos.frequently-asked-questio.text",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "videos.footer.saint-charbel-videos-author-please-pray-for-the-person-who-m",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Saint Charbel videos. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "videos.metadata.title-saint-charbel-videos-documentaries-film-and-miracle-re": "Saint Charbel Videos: Documentaries, Film and Miracle Reports",
+    "videos.metadata.description-watch-saint-charbel-documentaries-the-full-movie": "Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place.",
+    "videos.metadata.og-title-saint-charbel-videos-documentaries-film-and-miracle": "Saint Charbel Videos: Documentaries, Film and Miracle Reports",
+    "videos.metadata.og-description-watch-saint-charbel-documentaries-the-full-mo": "Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place.",
+    "videos.metadata.twitter-title-saint-charbel-videos-documentaries-film-and-mi": "Saint Charbel Videos: Documentaries, Film and Miracle Reports",
+    "videos.metadata.twitter-description-watch-saint-charbel-documentaries-the-fu": "Watch Saint Charbel documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - all in one place.",
+    "videos.body.skip-to-main-content": "Skip to main content",
+    "videos.header.text": "✦",
+    "videos.header.saint-charbel": "Saint Charbel",
+    "videos.accessibility.primary": "Primary",
+    "videos.header.home": "Home",
+    "videos.header.legacy": "Legacy",
+    "videos.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "videos.header.full-history": "Full History",
+    "videos.header.miracles": "Miracles",
+    "videos.header.miracles-reports": "Miracles & Reports",
+    "videos.header.eucharistic-miracles": "Eucharistic Miracles",
+    "videos.header.letters": "Letters",
+    "videos.header.voice-testimony": "Voice Testimony",
+    "videos.header.saints": "Saints",
+    "videos.header.children-s-books": "Children's Books",
+    "videos.header.prayer": "Prayer",
+    "videos.header.prayer-library": "Prayer Library",
+    "videos.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "videos.header.prayer-for-the-sick": "Prayer for the Sick",
+    "videos.header.prayer-for-healing": "Prayer for Healing",
+    "videos.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "videos.header.prayer-for-depression": "Prayer for Depression",
+    "videos.header.prayer-for-students": "Prayer for Students",
+    "videos.header.prayer-for-addiction": "Prayer for Addiction",
+    "videos.header.prayer-for-family": "Prayer for Family",
+    "videos.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "videos.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "videos.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "videos.header.saint-charbel-novena": "Saint Charbel Novena",
+    "videos.header.feast-day": "Feast Day",
+    "videos.header.rosary-guide": "Rosary Guide",
+    "videos.header.rosary-minibook": "Rosary Minibook",
+    "videos.header.mystery-meditation": "Mystery Meditation",
+    "videos.header.become-like-him": "Become Like Him",
+    "videos.header.travel": "Travel",
+    "videos.header.visiting-annaya": "Visiting Annaya",
+    "videos.header.annaya-online-tour": "Annaya Online Tour",
+    "videos.header.bekaa-kafra": "Bekaa Kafra",
+    "videos.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "videos.header.the-cedars-of-god": "the Cedars of God",
+    "videos.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "videos.header.qadisha-valley": "Qadisha Valley",
+    "videos.header.qannoubine-monastery": "Qannoubine Monastery",
+    "videos.header.qozhaya-monastery": "Qozhaya Monastery",
+    "videos.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "videos.header.the-hermitage": "The Hermitage",
+    "videos.header.saint-charbel-trail": "Saint Charbel Trail",
+    "videos.header.news": "News",
+    "videos.header.media": "Media",
+    "videos.header.music": "Music",
+    "videos.header.video": "Video",
+    "videos.header.gallery": "Gallery",
+    "videos.accessibility.media": "Media",
+    "videos.body.media": "Media",
+    "videos.body.music": "Music",
+    "videos.body.video": "Video",
+    "videos.body.gallery": "Gallery",
+    "videos.saint-charbel-on-film.saint-charbel-on-film": "Saint Charbel on Film",
+    "videos.saint-charbel-on-film.documentaries-the-full-movie-the-six-part-film-miracle-repor": "Documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - gathered in one place, each linked back to the page that tells its story carefully.",
+    "videos.saint-charbel-on-film.miracles-reports": "Miracles & Reports",
+    "videos.saint-charbel-on-film.visit-annaya": "Visit Annaya",
+    "videos.saint-charbel-on-film.the-relics": "The Relics",
+    "videos.short-voiced-prayers.short-voiced-prayers": "Short Voiced Prayers",
+    "videos.short-voiced-prayers.brief-prayers-read-aloud-new-from-our-instagram": "Brief prayers read aloud, new from our Instagram.",
+    "videos.short-voiced-prayers.a-prayer-for-the-sick-read-aloud-by-candlelight-our-first-vo": "A prayer for the sick, read aloud by candlelight - our first voiced reel.",
+    "videos.short-voiced-prayers.watch-on-instagram": "Watch on Instagram",
+    "videos.documentaries.documentaries": "Documentaries",
+    "videos.documentaries.longer-films-on-the-life-and-legacy-of-the-hermit-of-annaya": "Longer films on the life and legacy of the hermit of Annaya.",
+    "videos.documentaries.saint-charbel-documentary-ascension-presents-9-57": "Saint Charbel documentary - Ascension Presents (9:57)",
+    "videos.documentaries.ascension-presents-short-documentary-on-the-saint-s-life-9-5": "Ascension Presents' short documentary on the saint's life (9:57).",
+    "videos.documentaries.if-the-player-cannot-load-use-the-original-video-link-or-rea": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+    "videos.documentaries.open-original-video-on-youtube": "Open original video on YouTube",
+    "videos.documentaries.read-related-context-on-this-site": "Read related context on this site",
+    "videos.documentaries.this-video-is-unavailable-or-private-on-youtube-the-original": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+    "videos.documentaries.the-owner-does-not-allow-this-video-to-play-on-other-website": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+    "videos.documentaries.youtube-could-not-identify-this-site-s-player-request-you-ca": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+    "videos.documentaries.this-video-could-not-play-here-you-can-try-the-original-vide": "This video could not play here. You can try the original video on YouTube or read the related context.",
+    "videos.documentaries.saint-charbel-documentary-24-54": "Saint Charbel documentary (24:54)",
+    "videos.documentaries.a-half-hour-documentary-on-saint-charbel-s-life-and-miracles": "A half-hour documentary on Saint Charbel's life and miracles (24:54).",
+    "videos.documentaries.saint-charbel-full-length-documentary-1-20-16": "Saint Charbel full-length documentary (1:20:16)",
+    "videos.documentaries.a-full-length-documentary-for-a-slow-evening-1-20-16": "A full-length documentary for a slow evening (1:20:16).",
+    "videos.the-movie.the-movie": "The Movie",
+    "videos.the-movie.the-feature-film-about-saint-charbel-s-life-with-english-sub": "The feature film about Saint Charbel's life, with English subtitles.",
+    "videos.the-movie.saint-charbel-the-movie-english-subtitles-1-43-46": "Saint Charbel - the movie, English subtitles (1:43:46)",
+    "videos.the-movie.the-full-feature-film-with-english-subtitles-1-43-46": "The full feature film, with English subtitles (1:43:46).",
+    "videos.the-movie.if-the-player-cannot-load-use-the-original-video-link-or-rea": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+    "videos.the-movie.open-original-video-on-youtube": "Open original video on YouTube",
+    "videos.the-movie.read-related-context-on-this-site": "Read related context on this site",
+    "videos.the-movie.this-video-is-unavailable-or-private-on-youtube-the-original": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+    "videos.the-movie.the-owner-does-not-allow-this-video-to-play-on-other-website": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+    "videos.the-movie.youtube-could-not-identify-this-site-s-player-request-you-ca": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+    "videos.the-movie.this-video-could-not-play-here-you-can-try-the-original-vide": "This video could not play here. You can try the original video on YouTube or read the related context.",
+    "videos.the-six-part-film.the-six-part-film": "The Six-Part Film",
+    "videos.the-six-part-film.the-older-dramatized-film-of-his-life-in-six-parts": "The older dramatized film of his life, in six parts.",
+    "videos.the-six-part-film.saint-charbel-film-part-1-of-6": "Saint Charbel film - part 1 of 6",
+    "videos.the-six-part-film.part-1-of-6": "Part 1 of 6.",
+    "videos.the-six-part-film.if-the-player-cannot-load-use-the-original-video-link-or-rea": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+    "videos.the-six-part-film.open-original-video-on-youtube": "Open original video on YouTube",
+    "videos.the-six-part-film.read-related-context-on-this-site": "Read related context on this site",
+    "videos.the-six-part-film.this-video-is-unavailable-or-private-on-youtube-the-original": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+    "videos.the-six-part-film.the-owner-does-not-allow-this-video-to-play-on-other-website": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+    "videos.the-six-part-film.youtube-could-not-identify-this-site-s-player-request-you-ca": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+    "videos.the-six-part-film.this-video-could-not-play-here-you-can-try-the-original-vide": "This video could not play here. You can try the original video on YouTube or read the related context.",
+    "videos.the-six-part-film.saint-charbel-film-part-2-of-6": "Saint Charbel film - part 2 of 6",
+    "videos.the-six-part-film.part-2-of-6": "Part 2 of 6.",
+    "videos.the-six-part-film.saint-charbel-film-part-3-of-6": "Saint Charbel film - part 3 of 6",
+    "videos.the-six-part-film.part-3-of-6": "Part 3 of 6.",
+    "videos.the-six-part-film.saint-charbel-film-part-4-of-6": "Saint Charbel film - part 4 of 6",
+    "videos.the-six-part-film.part-4-of-6": "Part 4 of 6.",
+    "videos.the-six-part-film.saint-charbel-film-part-5-of-6": "Saint Charbel film - part 5 of 6",
+    "videos.the-six-part-film.part-5-of-6": "Part 5 of 6.",
+    "videos.the-six-part-film.saint-charbel-film-part-6-of-6": "Saint Charbel film - part 6 of 6",
+    "videos.the-six-part-film.part-6-of-6": "Part 6 of 6.",
+    "videos.miracle-reports.miracle-reports": "Miracle Reports",
+    "videos.miracle-reports.video-reports-on-the-healings-told-on-our": "Video reports on the healings told on our",
+    "videos.miracle-reports.miracles-pages": "miracles pages",
+    "videos.miracle-reports.text": ".",
+    "videos.miracle-reports.nohad-el-shami-recounts-her-healing-15-54": "Nohad El Shami recounts her healing (15:54)",
+    "videos.miracle-reports.nohad-el-shami-telling-her-own-story-15-54": "Nohad El Shami telling her own story (15:54) -",
+    "videos.miracle-reports.read-her-story": "read her story",
+    "videos.miracle-reports.if-the-player-cannot-load-use-the-original-video-link-or-rea": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+    "videos.miracle-reports.open-original-video-on-youtube": "Open original video on YouTube",
+    "videos.miracle-reports.read-related-context-on-this-site": "Read related context on this site",
+    "videos.miracle-reports.this-video-is-unavailable-or-private-on-youtube-the-original": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+    "videos.miracle-reports.the-owner-does-not-allow-this-video-to-play-on-other-website": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+    "videos.miracle-reports.youtube-could-not-identify-this-site-s-player-request-you-ca": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+    "videos.miracle-reports.this-video-could-not-play-here-you-can-try-the-original-vide": "This video could not play here. You can try the original video on YouTube or read the related context.",
+    "videos.miracle-reports.dafne-gutierrez-tells-the-story-of-her-healing-19-01": "Dafne Gutierrez tells the story of her healing (19:01)",
+    "videos.miracle-reports.dafne-gutierrez-on-the-phoenix-healing-19-01": "Dafne Gutierrez on the Phoenix healing (19:01) -",
+    "videos.miracle-reports.read-the-account": "read the account",
+    "videos.miracle-reports.archival-footage-of-the-1965-beatification-6-00": "Archival footage of the 1965 beatification (6:00)",
+    "videos.miracle-reports.the-1965-beatification-in-archival-footage-6-00": "The 1965 beatification in archival footage (6:00) -",
+    "videos.miracle-reports.the-three-church-approved-miracles": "the three Church-approved miracles",
+    "videos.miracle-reports.raymond-nader-recounts-the-night-at-the-hermitage-7-01": "Raymond Nader recounts the night at the hermitage (7:01)",
+    "videos.miracle-reports.raymond-nader-in-his-own-words-7-01": "Raymond Nader in his own words (7:01) -",
+    "videos.miracle-reports.read-his-story": "read his story",
+    "videos.miracle-reports.the-tablet-reports-on-the-january-2026-healings-2-20": "The Tablet reports on the January 2026 healings (2:20)",
+    "videos.miracle-reports.the-tablet-on-the-two-healings-recorded-in-january-2026-2-20": "The Tablet on the two healings recorded in January 2026 (2:20) -",
+    "videos.miracle-reports.the-latest-register-entries": "the latest register entries",
+    "videos.annaya-the-hermitage.annaya-the-hermitage": "Annaya & the Hermitage",
+    "videos.annaya-the-hermitage.the-monastery-the-hermitage-and-the-mountain-plan-a-visit-wi": "The monastery, the hermitage, and the mountain. Plan a visit with our",
+    "videos.annaya-the-hermitage.guide-to-visiting-annaya": "guide to visiting Annaya",
+    "videos.annaya-the-hermitage.and-the": "and the",
+    "videos.annaya-the-hermitage.hermitage-page": "hermitage page",
+    "videos.annaya-the-hermitage.text": ".",
+    "videos.annaya-the-hermitage.annaya-and-the-monastery-10-46": "Annaya and the monastery (10:46)",
+    "videos.annaya-the-hermitage.the-monastery-of-saint-maron-at-annaya-10-46": "The monastery of Saint Maron at Annaya (10:46).",
+    "videos.annaya-the-hermitage.if-the-player-cannot-load-use-the-original-video-link-or-rea": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+    "videos.annaya-the-hermitage.open-original-video-on-youtube": "Open original video on YouTube",
+    "videos.annaya-the-hermitage.read-related-context-on-this-site": "Read related context on this site",
+    "videos.annaya-the-hermitage.this-video-is-unavailable-or-private-on-youtube-the-original": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+    "videos.annaya-the-hermitage.the-owner-does-not-allow-this-video-to-play-on-other-website": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+    "videos.annaya-the-hermitage.youtube-could-not-identify-this-site-s-player-request-you-ca": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+    "videos.annaya-the-hermitage.this-video-could-not-play-here-you-can-try-the-original-vide": "This video could not play here. You can try the original video on YouTube or read the related context.",
+    "videos.annaya-the-hermitage.the-hermitage-at-annaya-5-47": "The hermitage at Annaya (5:47)",
+    "videos.annaya-the-hermitage.the-hermitage-where-he-spent-twenty-three-years-5-47": "The hermitage where he spent twenty-three years (5:47).",
+    "videos.annaya-the-hermitage.annaya-pilgrimage-footage-2-27": "Annaya pilgrimage footage (2:27)",
+    "videos.annaya-the-hermitage.pilgrimage-footage-from-annaya-2-27": "Pilgrimage footage from Annaya (2:27).",
+    "videos.annaya-the-hermitage.annaya-and-the-hermitage-7-00": "Annaya and the hermitage (7:00)",
+    "videos.annaya-the-hermitage.the-monastery-and-the-mountain-above-it-7-00": "The monastery and the mountain above it (7:00).",
+    "videos.annaya-the-hermitage.annaya-short-clip-0-35": "Annaya short clip (0:35)",
+    "videos.annaya-the-hermitage.a-short-glimpse-of-annaya-0-35": "A short glimpse of Annaya (0:35).",
+    "videos.relic-tours.relic-tours": "Relic Tours",
+    "videos.relic-tours.saint-charbel-s-relics-travel": "Saint Charbel's relics travel -",
+    "videos.relic-tours.how-the-relic-tours-work": "how the relic tours work",
+    "videos.relic-tours.text": ".",
+    "videos.relic-tours.saint-charbel-relic-tour-report": "Saint Charbel relic tour report",
+    "videos.relic-tours.a-relic-tour-report": "A relic tour report.",
+    "videos.relic-tours.if-the-player-cannot-load-use-the-original-video-link-or-rea": "If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.",
+    "videos.relic-tours.open-original-video-on-youtube": "Open original video on YouTube",
+    "videos.relic-tours.read-related-context-on-this-site": "Read related context on this site",
+    "videos.relic-tours.this-video-is-unavailable-or-private-on-youtube-the-original": "This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.",
+    "videos.relic-tours.the-owner-does-not-allow-this-video-to-play-on-other-website": "The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.",
+    "videos.relic-tours.youtube-could-not-identify-this-site-s-player-request-you-ca": "YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.",
+    "videos.relic-tours.this-video-could-not-play-here-you-can-try-the-original-vide": "This video could not play here. You can try the original video on YouTube or read the related context.",
+    "videos.relic-tours.saint-charbel-relics-in-bethlehem": "Saint Charbel relics in Bethlehem",
+    "videos.relic-tours.the-relics-welcomed-in-bethlehem": "The relics welcomed in Bethlehem.",
+    "videos.a-note-on-these-videos.a-note-on-these-videos": "A Note on These Videos",
+    "videos.a-note-on-these-videos.every-video-here-is-hosted-on-youtube-by-the-channel-that-ma": "Every video here is hosted on YouTube by the channel that made it - we did not produce them and cannot vouch for every word in every report. Where a video tells a miracle story, our own pages keep the careful distinctions: what the Church has formally recognized, what is recorded at the monastery, and what remains a personal testimony. Embeds use youtube-nocookie.com, using YouTube's privacy-enhanced embed mode.",
+    "videos.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+    "videos.frequently-asked-questio.what-videos-are-on-this-page": "What videos are on this page?",
+    "videos.frequently-asked-questio.documentaries-on-saint-charbel-s-life-from-a-short-ten-minut": "Documentaries on Saint Charbel's life, from a short ten-minute film to a full eighty-minute documentary, the complete feature film with English subtitles, the older six-part film, miracle reports, and footage from Annaya and the relic tours.",
+    "videos.frequently-asked-questio.are-the-videos-hosted-on-this-site": "Are the videos hosted on this site?",
+    "videos.frequently-asked-questio.no-they-are-embedded-from-youtube-through-the-youtube-nocook": "No. They are embedded from YouTube through the youtube-nocookie player, using YouTube's privacy-enhanced embed mode.",
+    "videos.frequently-asked-questio.can-i-watch-the-full-saint-charbel-movie-here": "Can I watch the full Saint Charbel movie here?",
+    "videos.frequently-asked-questio.yes-the-full-feature-film-about-saint-charbel-s-life-with-en": "Yes. The full feature film about Saint Charbel's life, with English subtitles, is embedded on this page - about one hour and forty-four minutes.",
+    "videos.frequently-asked-questio.where-can-i-read-the-story-behind-a-video": "Where can I read the story behind a video?",
+    "videos.frequently-asked-questio.the-site-also-has-written-context-on-the": "The site also has written context on the",
+    "videos.frequently-asked-questio.miracles-pages": "Miracles pages",
+    "videos.frequently-asked-questio.the": ", the",
+    "videos.frequently-asked-questio.pilgrimage-guide": "pilgrimage guide",
+    "videos.frequently-asked-questio.and-the": ", and the",
+    "videos.frequently-asked-questio.relics-page": "relics page",
+    "videos.frequently-asked-questio.text": ".",
+    "videos.footer.saint-charbel-videos-author-please-pray-for-the-person-who-m": "Saint Charbel videos. Author: Please pray for the person who made this website."
+  }
+}
