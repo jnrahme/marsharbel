@@ -57,6 +57,26 @@ def extract_html(text):
     return Counter(parser.values)
 
 
+# Private exact producer allowlist. Its absence has no effect until this route exists.
+FEATURE_PRODUCERS = {'film-premiere-v1': ('ar/charbel-film-premiere.html', 'scripts/build_film_news_ar.py')}
+
+def check_registered_feature(root=ROOT):
+    import importlib.util
+    family = 'film-premiere-v1'
+    relative, producer = FEATURE_PRODUCERS[family]
+    path = root/relative
+    if not path.exists():
+        return []
+    if not (root/producer).is_file():
+        return [relative+': exact keyed feature producer missing']
+    spec = importlib.util.spec_from_file_location('registered_film_feature_producer',root/producer)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    expected_path, expected = module.output(root)
+    if expected_path != path or path.read_text() != expected:
+        return [relative+': differs from exact keyed feature producer '+family]
+    return []
+
 def snapshot(root=ROOT):
     registry = read_json(root / 'locales/registry.json')
     generated = {f'{code}/index.html' for code in registry['locales'] if code != registry['defaultLocale']}
@@ -73,6 +93,12 @@ def snapshot(root=ROOT):
     generated.update((route.lstrip('/')+'index.html' if route.endswith('/') else route.lstrip('/')+'.html')
                      for cfg in registry.get('exactMirrors',{}).values() for code,route in cfg['routes'].items() if code in cfg.get('renderLocales',[]))
     generated.add("ar/litany-of-saint-charbel.html")
+    # One exact feature family only. No pattern, glob or baseline expansion.
+    if (root/'ar/charbel-film-premiere.html').exists():
+        feature_errors = check_registered_feature(root)
+        if feature_errors:
+            raise ValueError('; '.join(feature_errors))
+        generated.add('ar/charbel-film-premiere.html')
     # Keyed page mirrors render from their English master; build-international.py --check verifies their bytes.
     generated.update((route.lstrip('/')+'.html') for cfg in registry.get('pageMirrors',{}).values()
                      for code,route in cfg['routes'].items() if code in cfg.get('renderLocales',[]))
@@ -104,6 +130,7 @@ def snapshot(root=ROOT):
 def check(root=ROOT):
     baseline = read_json(root/'locales/legacy-text-baseline.json')
     errors = []
+    errors.extend(check_registered_feature(root))
     error_404_path = root / "404.html"
     error_404_rendered = render_error_404(root) if error_404_path.exists() else None
     if error_404_rendered is not None and error_404_path.read_text() != error_404_rendered:
