@@ -189,7 +189,21 @@ def compare_json(file,old,new):
   assert b['aliases'].pop('zz')=='zz';assert b['languages'].pop()=='zz'
   extra={k:b['englishSources'].pop(k) for k in list(b['englishSources']) if k.startswith('/zz/')}
   assert len(extra)==18 and all(k=='/zz'+v.rstrip('/') for k,v in extra.items()),extra
-  hits['manifest-routes']+=18;print('MANIFEST proof excluded in synthetic only 12; legacy overlays real; compared 243')
+  hits['manifest-routes']+=18
+  # Same proof-class exclusion as the 12 page keys: the scoped masters' self-route
+  # identity entries come from the omitted overlay rows. Assert identity in the
+  # real manifest AND absence in the synthetic one before removing.
+  scoped_routes={'/'+key.removesuffix('-travel-master-equivalence') for key in SCOPED_KEYS}
+  assert len(scoped_routes)==12
+  for route in scoped_routes:
+   assert a['englishSources'].get(route)==route,(route,'real englishSources self-route not identity')
+   assert route not in b['englishSources'],(route,'synthetic englishSources carries scoped self-route')
+  for route in scoped_routes:del a['englishSources'][route]
+  # /de/travel is pending-omitted yet its englishSources entry resolves to /travel and survives on both sides.
+  assert a['englishSources'].get('/de/travel')=='/travel'==b['englishSources'].get('/de/travel'),'de/travel must survive resolving to /travel'
+  hits['manifest-sources']+=12;print('MANIFEST proof excluded in synthetic only 12; legacy overlays real; compared 243')
+  print('MANIFEST englishSources scoped self-routes excluded',len(scoped_routes),json.dumps(sorted(scoped_routes)))
+  print('EXCLUDED TOTAL 12 page keys + 12 englishSources + 13 pending + 18 zz =',12+12+13+18)
  elif file=='same-page-copy.js':
   zz=b.pop('zz');expected=copy.deepcopy(b['de']);assert zz==expected
   for row in b.values():assert row['names'].pop('zz')=='Test';hits['copy-names']+=1
