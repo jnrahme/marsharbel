@@ -267,11 +267,6 @@ def outputs(root=ROOT):
     generated += [registry['site'] + '/' + code + '/miracles/eucharistic/' + ('' if slug=='index' else slug)
                   for code in published_locales(registry, 'eucharistic') if code != registry['defaultLocale']
                   for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney')]
-    # One-story Arabic news feature, not a translation of the news archive.
-    from build_film_news_ar import render_source as film_news_output
-    film_path, film_text = film_news_output(root)
-    result[film_path] = film_text
-    generated.append(registry['site'] + '/ar/charbel-film-premiere')
     # pageMirrors routes join the sitemap once released (registry sitemapHeld lists any still held).
     generated += [registry['site'] + route for mirror in registry.get('pageMirrors', {}).values()
                   for code, route in mirror['routes'].items() if code != 'en' and code in mirror.get('renderLocales', []) and code not in mirror.get('sitemapHeld', [])]
@@ -331,7 +326,7 @@ def outputs(root=ROOT):
                 code=match[1]
                 route='/' + str(path.relative_to(root)).removesuffix('.html')
                 route=route.removesuffix('index') if route.endswith('/index') else route
-                strict_page = route == '/ar/charbel-film-premiere' or any(route == cfg.get('routes', {}).get(code) and code in cfg.get('renderLocales', []) for cfg in registry.get('pageMirrors', {}).values())
+                strict_page = any(route == cfg.get('routes', {}).get(code) and code in cfg.get('renderLocales', []) for cfg in registry.get('pageMirrors', {}).values())
                 strict_home = code in registry.get('homepageMirrors', {}).get('renderLocales', []) and route == home_url(registry, code)
                 result[path] = text if strict_home or strict_page else travel_frame(tour_nav(text,root,code),root,code,route,registry)
     from i18n.travel_metadata import compose_travel_clusters
