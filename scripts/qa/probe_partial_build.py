@@ -233,6 +233,15 @@ try:
  synthetic_clusters=tm.travel_clusters(T,r)
  original_owners={route:cluster for cluster in original_clusters.values() for route in cluster.values()}
  synthetic_owners={route:cluster for cluster in synthetic_clusters.values() for route in cluster.values()}
+ en_external={'travel.html','qadisha-valley.html','qannoubine-monastery.html','qozhaya-monastery.html'}
+ assert len(en_external)==4 and en_external<=authored
+ locale_runtime=authored-en_external
+ assert len(locale_runtime)==15 and not en_external&locale_runtime
+ print('AUTHORED EXTERNAL RUNTIME class4',json.dumps(sorted(en_external)))
+ print('AUTHORED EMBEDDED RUNTIME class15',json.dumps(sorted(locale_runtime)))
+ _,synthetic_copy=json_assignment(out[T/'same-page-copy.js'])
+ assert synthetic_copy['en']['names']['zz']=='Test' and synthetic_copy['zz']['names']['zz']=='Test'
+ print('EN external same-page-copy ZZ name positively checked')
  for file in sorted(authored):
   text=out[T/file];raw_head=text.split('</head>')[0]
   soup=BeautifulSoup(raw_head,'html.parser');canonical=soup.select_one('link[rel=canonical]')
@@ -249,13 +258,19 @@ try:
   zz_meta=soup.select('meta[property="og:locale:alternate"][content="zz_ZZ"]')
   runtime=soup.select('script#sc-runtime-labels')
   runtime_hits=sum(json.loads(str(script.string)).get('nativeNames',{}).get('zz')=='Test' for script in runtime)
+  if file in en_external:
+   assert not runtime and not BeautifulSoup(production[R/file],'html.parser').select('script#sc-runtime-labels'),file
+   expected_runtime=0
+  else:
+   assert len(runtime)==1 and len(BeautifulSoup(production[R/file],'html.parser').select('script#sc-runtime-labels'))==1,file
+   expected_runtime=1
   counts={'alternate':len(zz_links),'og':len(zz_meta),'runtime':runtime_hits}
   print('AUTHORED ZZ CLASSES',file,json.dumps(counts,sort_keys=True))
   if file=='ar/qadisha-valley.html':
    print('DISTINCT alternate link:',str(zz_links[0]) if zz_links else '<absent>')
    print('DISTINCT OG alternate meta:',str(zz_meta[0]) if zz_meta else '<absent>')
    print('DISTINCT runtime nativeNames JSON key:', '"zz": "Test"' if runtime_hits else '<absent>')
-  if counts!={'alternate':1,'og':1,'runtime':1} or len(codes)!=len(set(codes)) or actual!=complete or actual.get('zz')!=fixture_zz or any(link.get('rel')!=['alternate'] for link in links):
+  if counts!={'alternate':1,'og':1,'runtime':expected_runtime} or len(codes)!=len(set(codes)) or actual!=complete or actual.get('zz')!=fixture_zz or any(link.get('rel')!=['alternate'] for link in links):
    print('AUTHORED RAW HEAD FAILURE',file,raw_head)
    raise AssertionError('Unbound authored synthetic head: '+file)
  print('PRODUCTION TRAVEL OWNERS',len(expected_production),'=',len(composition['production']),'+',len(authored),'authored actual-head complement checked; injected masks NOT renderer proof')
