@@ -61,6 +61,11 @@ def render_home(root, registry, lang, catalog=None):
         parts = urlsplit(a['href'])
         if not parts.scheme and parts.path.rstrip('/') in twins:
             a['href'] = twins[parts.path.rstrip('/')] + ('?' + parts.query if parts.query else '') + ('#' + parts.fragment if parts.fragment else '')
+    # Film feature: only Arabic has a dedicated premiere article; the ar home
+    # lead must land there, not on the English archive anchor (bounded rebind).
+    if lang == 'ar':
+        for a in soup.select('a[href="/news#charbel-premiere-release-2026-10"]'):
+            a['href'] = '/ar/charbel-film-premiere'
     for script in soup.select('script[type="application/ld+json"]'):
         data = json.loads(script.string)
         for item in data.get('@graph', []):
