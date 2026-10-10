@@ -51,7 +51,7 @@ SOURCE_BLOCKS.update({
         'lack':frozenset({'zh-Hans'}),
     },
     'visit-annaya.html':{
-        'have':frozenset({'ar','de','en','es','fr','hi','it','pl','pt','ru','th','x-default'}),
+        'have':frozenset({'ar','de','en','es','fr','it','pl','pt','ru','x-default'}),
         'lack':frozenset({'zh-Hans'}),
     },
 })

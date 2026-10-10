@@ -56,6 +56,8 @@ class SpliceTests(unittest.TestCase):
   from i18n.travel_metadata import SOURCE_BLOCKS
   for file in ('saint-charbel-pilgrimage.html','visit-annaya.html'):
    have=SOURCE_BLOCKS[file]['have'];slug=file.removesuffix('.html')
+   self.assertEqual(have,{'ar','de','en','es','fr','it','pl','pt','ru','x-default'})
+   self.assertEqual(SOURCE_BLOCKS[file]['lack'],{'zh-Hans'})
    cluster={c:('/'+slug if c in ('en','x-default') else '/'+c+'/'+slug) for c in sorted(have|{'zh-Hans'})}
    def raw(codes):return '<head><title>Same</title>'+''.join('<link rel="alternate" hreflang="'+c+'" href="https://marsharbel.com'+cluster[c]+'" />\n' for c in sorted(codes))+'</head><main>Exact</main>'
    source=raw(have)
