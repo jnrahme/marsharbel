@@ -48,6 +48,12 @@ figcaption. New images: add a record here in the same batch.
 - Subject: Saint Charbel Makhlouf - the traditional hooded portrait.
 - Already in use sitewide (og:image default, canonization pages). Same
   caption reused on /saints.
+- Provenance unknown; first committed 2026-03-05 (initial commit f84b3573 holds
+  this 906x667 portrait at two paths, saint-charbel.jpg and
+  gallery/charbel-portrait.jpg - byte-identical files, no source recorded; this
+  WebP derivative added 2026-09-24 in fe086a68). Caption makes no license claim
+  (C-0080, 2026-10-10: removed the unsupported "public domain" clause from the
+  homepage caption (EN + 10 locales)).
 
 ## media/annaya/ (added 2026-09-25, photo pass batch 4 - prayer-intention pages)
 
