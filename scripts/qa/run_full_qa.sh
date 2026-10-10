@@ -152,6 +152,7 @@ qa_step python3 -m unittest discover -s scripts/qa -p 'test_eucharistic_locale.p
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_home_mirror.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_mirror_structure.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_locale_mirror_policy.py'
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_feature_mirror.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_history_master_mirror.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_travel_page_mirrors.py'
 qa_step node scripts/tests/history_equivalence.cjs

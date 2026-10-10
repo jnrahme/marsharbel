@@ -27,7 +27,7 @@ class LocaleMirrorPolicy(unittest.TestCase):
         files={p.relative_to(ROOT).as_posix() for lang in self.registry['locales'] if lang!='en' for p in (ROOT/lang).rglob('*.html')}
         self.assertEqual(files,set(self.policy['pages']),'Every new or removed locale route must update mirror coverage')
         for path,entry in self.policy['pages'].items():
-            self.assertIn(entry['status'],('strict','migration-debt'),path)
+            self.assertIn(entry['status'],('strict','migration-debt','extracted-feature'),path)
             self.assertTrue((ROOT/entry['master']).is_file(),path)
             self.assertFalse(Path(entry['master']).is_absolute(),path)
             self.assertNotIn('..',Path(entry['master']).parts,path)
@@ -36,6 +36,18 @@ class LocaleMirrorPolicy(unittest.TestCase):
     def test_activated_home_routes_cannot_stay_migration_debt(self):
         for lang in self.registry.get('homepageMirrors',{}).get('renderLocales',[]):
             self.assertEqual(self.policy['pages'][lang+'/index.html']['status'],'strict',lang)
+
+    def test_extracted_features_have_bounded_provenance_and_shell(self):
+        from i18n.feature_mirror import check_feature, FEATURES
+        for path, entry in self.policy['pages'].items():
+            if entry['status'] != 'extracted-feature':
+                continue
+            self.assertNotIn(path,self.policy['exceptions'])
+            self.assertIn(entry['family'],FEATURES)
+            self.assertEqual(path,FEATURES[entry['family']]['target'])
+            contract_path='config/feature-mirrors/'+entry['family']+'.json'
+            contract=json.loads((ROOT/contract_path).read_text())
+            self.assertEqual(check_feature(ROOT,entry,contract),[])
 
     def test_strict_pages_have_no_unregistered_structure_changes(self):
         for path,entry in self.policy['pages'].items():
