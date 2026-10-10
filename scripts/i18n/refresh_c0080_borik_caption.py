@@ -16,7 +16,6 @@ def outputs(root=ROOT):
   n=nodes[0];v=n.get(b['attribute'])if b['kind']=='attribute'else ' '.join(str(n.contents[b['nodeIndex']]).split())
   if b['key']==KEY:
    if v!=NEW_EN:raise ValueError('Built caption mismatch: '+repr(v))
-   if b['source']==NEW_EN:raise ValueError('Already re-pinned')
    b['source']=NEW_EN;changed+=1
   else:
    if v!=b['source']:raise ValueError('Other source drift '+b['key'])
