@@ -36,9 +36,9 @@ class SpliceTests(unittest.TestCase):
  def test_no_empty_block_bootstrap(self):
   with self.assertRaisesRegex(ValueError,'bootstrap forbidden'):self.run_composer('<head><link rel="canonical" href="https://marsharbel.com/travel"/></head><main>Body</main>')
  def test_source_stub_flag_cannot_leak_into_served_inputs(self):
-  from i18n.travel_metadata import SOURCE_STUB_FILES
-  self.assertEqual(len(SOURCE_STUB_FILES),8)
-  for file in SOURCE_STUB_FILES:
+  from i18n.travel_metadata import SOURCE_BLOCKS
+  self.assertEqual(len(SOURCE_BLOCKS),10)
+  for file in (f for f,shape in SOURCE_BLOCKS.items() if 'lack' not in shape):
    slug=file.removesuffix('.html')
    cluster={'en':'/'+slug,'de':'/de/'+slug,'ru':'/ru/'+slug,'x-default':'/'+slug}
    raw='<head><title>Same</title>'+''.join('<link rel="alternate" hreflang="'+c+'" href="https://marsharbel.com/'+slug+'" />\n' for c in ('en','x-default'))+'</head><main>Exact</main>'
@@ -52,4 +52,16 @@ class SpliceTests(unittest.TestCase):
     # Use an extra required locale so the third-code partial is not RU-only.
     larger={**cluster,'fr':'/fr/'+slug}
     with self.assertRaises(ValueError):splice_travel_alternates(extra,larger,'https://marsharbel.com',file,source_inputs=True)
+ def test_mapped_two_zh_gaps_exact_source_shape_only(self):
+  from i18n.travel_metadata import SOURCE_BLOCKS
+  for file in ('saint-charbel-pilgrimage.html','visit-annaya.html'):
+   have=SOURCE_BLOCKS[file]['have'];slug=file.removesuffix('.html')
+   cluster={c:('/'+slug if c in ('en','x-default') else '/'+c+'/'+slug) for c in sorted(have|{'zh-Hans'})}
+   def raw(codes):return '<head><title>Same</title>'+''.join('<link rel="alternate" hreflang="'+c+'" href="https://marsharbel.com'+cluster[c]+'" />\n' for c in sorted(codes))+'</head><main>Exact</main>'
+   source=raw(have)
+   expected='<head><title>Same</title>'+'\n'.join('<link rel="alternate" hreflang="'+c+'" href="https://marsharbel.com'+route+'" />' for c,route in cluster.items())+'\n</head><main>Exact</main>'
+   with self.subTest(file=file):
+    self.assertEqual(splice_travel_alternates(source,cluster,'https://marsharbel.com',file,source_inputs=True),expected)
+    for badfile,bad,mode in [(file,source,False),('off-list.html',source,True),(file,raw(have-{'de'}),True),(file,source.replace('https://marsharbel.com/'+slug,'https://marsharbel.com/wrong'),True),(file,source.replace('</head>','<link rel="alternate" hreflang="en" href="https://marsharbel.com/'+slug+'" /></head>'),True)]:
+     with self.assertRaises(ValueError):splice_travel_alternates(bad,cluster,'https://marsharbel.com',badfile,source_inputs=mode)
 if __name__=='__main__':unittest.main()

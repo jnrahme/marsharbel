@@ -37,12 +37,23 @@ PARTIAL_AUTHORED_FILES = frozenset({
 })
 
 
-SOURCE_STUB_FILES = frozenset({
-    # Eight EN source composers carry valid en/x-default discovery stubs.
-    'our-lady-of-lebanon-harissa.html','bekaa-kafra.html',
-    'bkerke-maronite-patriarchate.html','annaya-tour.html',
-    'saint-charbel-trail.html','saint-charbel-places-lebanon.html',
-    'cedars-of-god-lebanon.html','saint-charbel-hermitage.html',
+SOURCE_BLOCKS = {
+    file:{'have':frozenset({'en','x-default'})} for file in (
+        'our-lady-of-lebanon-harissa.html','bekaa-kafra.html',
+        'bkerke-maronite-patriarchate.html','annaya-tour.html',
+        'saint-charbel-trail.html','saint-charbel-places-lebanon.html',
+        'cedars-of-god-lebanon.html','saint-charbel-hermitage.html',
+    )
+}
+SOURCE_BLOCKS.update({
+    'saint-charbel-pilgrimage.html':{
+        'have':frozenset({'ar','de','en','es','fr','it','pl','pt','ru','x-default'}),
+        'lack':frozenset({'zh-Hans'}),
+    },
+    'visit-annaya.html':{
+        'have':frozenset({'ar','de','en','es','fr','hi','it','pl','pt','ru','th','x-default'}),
+        'lack':frozenset({'zh-Hans'}),
+    },
 })
 
 
@@ -82,7 +93,8 @@ def splice_travel_alternates(text, cluster, site, file=None, source_inputs=False
     if not actual:raise ValueError('Travel bootstrap forbidden: missing discovery block')
     missing=set(expected)-set(actual)
     if missing!={'ru'}:
-        source_stub=(source_inputs and file in SOURCE_STUB_FILES and set(actual)=={'en','x-default'})
+        shape=SOURCE_BLOCKS.get(file,{})
+        source_stub=(source_inputs and set(actual)==shape.get('have') and ('lack' not in shape or missing==shape['lack']))
         if not (file in PARTIAL_AUTHORED_FILES or source_stub) or not set(actual)<set(expected):
             raise ValueError('Existing Travel block has non-RU discovery gap')
         # Exact old composer serialization, bounded to the declared partial
