@@ -95,7 +95,7 @@ def frontend_files(root):
     files.update((root / "mysteries").glob("*.html"))
     for language in json.loads((root / "locales/registry.json").read_text())["locales"]:
         files.update((root / language).glob("*.html"))
-    files.update(root / name for name in ("robots.txt", "sitemap.xml", "indexnow-key.txt"))
+    files.update(root / name for name in ("robots.txt", "sitemap.xml", "sitemap-images.xml", "sitemap-video.xml", "indexnow-key.txt"))
     files.update((root / "media/promo/optimized").glob("*.webp"))
     files.update((root / "media/fonts").glob("*.woff2"))
     files.update((root / "media/optimized").glob("*.webp"))
