@@ -67,7 +67,24 @@ def render_page(root,registry,lang,family,route,catalog=None):
     clusters=registry['pageMirrors'][family].get('discoveryRoutes',{'en':master_route,**registry['pageMirrors'][family]['routes'],'x-default':master_route})
     source_links=soup.select('link[hreflang]')
     from i18n.travel_variant_evidence import SLUGS
-    scoped_ru=(lang in ('de','ru') and family in {slug+'-travel-master' for slug in SLUGS})
+    # C-0073 admits only the twelve already-rendered Chinese Travel families.
+    # Thai and every other keyed family retain their original whitespace.
+    zh_ru_newline_families = {
+        'annaya-tour-zh-travel-master',
+        'bekaa-kafra-zh-travel-master',
+        'bkerke-maronite-patriarchate-zh-travel-master',
+        'cedars-of-god-lebanon-zh-travel-master',
+        'our-lady-of-lebanon-harissa-zh-travel-master',
+        'qadisha-valley-zh-travel-master',
+        'qannoubine-monastery-zh-travel-master',
+        'qozhaya-monastery-zh-travel-master',
+        'saint-charbel-hermitage-zh-travel-master',
+        'saint-charbel-places-lebanon-zh-travel-master',
+        'saint-charbel-trail-zh-travel-master',
+        'travel-zh-travel-master',
+    }
+    scoped_ru=((lang in ('de','ru') and family in {slug+'-travel-master' for slug in SLUGS})
+               or (lang == 'zh-Hans' and family in zh_ru_newline_families))
     if scoped_ru:
         ru=[node for node in source_links if node.get('hreflang')=='ru']
         if len(ru)!=1 or 'ru' not in clusters or ru[0].get('rel')!=['alternate'] or ru[0].get('href')!=registry['site']+clusters['ru']:
