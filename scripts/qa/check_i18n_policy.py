@@ -61,6 +61,10 @@ def extract_html(text):
 FEATURE_PRODUCERS = {'film-premiere-v1': ('ar/charbel-film-premiere.html', 'scripts/build_film_news_ar.py')}
 
 def check_registered_feature(root=ROOT):
+    # New strict family is opt-in; absent registration retains the old path.
+    from i18n.film_master_family import registered, validate_family
+    if registered(root):
+        return validate_family(root)
     import importlib.util
     family = 'film-premiere-v1'
     relative, producer = FEATURE_PRODUCERS[family]
