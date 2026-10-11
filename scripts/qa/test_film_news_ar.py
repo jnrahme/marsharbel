@@ -29,6 +29,14 @@ class FilmNewsArabicTests(unittest.TestCase):
         self.assertEqual(str(final.select_one('main article')),str(BeautifulSoup(raw,'html.parser').article))
         self.assertEqual(final.html['dir'],'rtl')
         self.assertEqual(final.select_one('link[rel=canonical]')['href'],'https://marsharbel.com'+module.ROUTE)
+    def test_exact_single_inline_link_rule(self):
+        _,text=module.render_source(ROOT)
+        page=BeautifulSoup(text,'html.parser')
+        styles=page.select('head style')
+        self.assertEqual(len(styles),1)
+        self.assertEqual(styles[0].get_text(),'.film-news-article p a{text-decoration:underline;text-underline-offset:.15em}')
+        served=BeautifulSoup((ROOT/'ar/charbel-film-premiere.html').read_text(),'html.parser')
+        self.assertEqual([s.get_text() for s in served.select('head style')],[styles[0].get_text()])
     def test_ar_home_lead_reaches_feature_only(self):
         home=BeautifulSoup((ROOT/'ar/index.html').read_text(),'html.parser')
         self.assertEqual(home.select_one('.home-news-lead--film')['href'],module.ROUTE)
