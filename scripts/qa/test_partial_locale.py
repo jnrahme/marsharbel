@@ -213,6 +213,69 @@ class PartialLocaleTests(unittest.TestCase):
                         validate_registry(bad)
                         validate_mirror_capabilities(ROOT, bad)
 
+    def film_fixture(self):
+        import hashlib
+        from tempfile import TemporaryDirectory
+        from i18n.catalog import FILM_FAMILY
+        temp=TemporaryDirectory(); self.addCleanup(temp.cleanup); root=Path(temp.name)
+        name,english,master=FILM_FAMILY
+        self.registry['locales']['zz']['capabilities']['mirrorTabs']=['film']
+        self.registry['pageMirrors'][name]={'english':english,'master':master,'routes':{'zz':'/zz'+english},'renderLocales':['zz']}
+        selectors=copy.deepcopy(read_json(ROOT/'locales/same-page-copy.json'));selectors['zz']=copy.deepcopy(selectors['de'])
+        for value in selectors.values():value['names']['zz']='Test'
+        source='<html><main>Film fixture</main></html>';(root/master).write_text(source)
+        def reader(path):
+            if path.name=='same-page-copy.json':return selectors
+            if path.name==name+'-bindings.json':return {'master':master,'masterSha256':hashlib.sha256(source.encode()).hexdigest()}
+            if path.name==name+'-copy.json':return {'film.body':'Fixture'}
+            if path.parent.name=='zz' and path.name=='runtime.json':return read_json(ROOT/'locales/de/runtime.json')
+            return read_json(ROOT/path.relative_to(root))
+        for cfg in self.registry['pageMirrors'].values():
+            master=cfg.get('master')
+            if master and (ROOT/master).is_file() and not (root/master).exists():
+                target=root/master;target.parent.mkdir(parents=True,exist_ok=True);target.symlink_to(ROOT/master)
+        return root,reader
+
+    def test_exact_film_partial_grant_without_home_or_topics(self):
+        from i18n.catalog import validate_mirror_capabilities,validate_partial_outputs,mirror_tab,FILM_FAMILY
+        root,reader=self.film_fixture();name,english,master=FILM_FAMILY
+        self.assertEqual(mirror_tab('pageMirrors',name,self.registry['pageMirrors'][name]),'film')
+        validate_registry(self.registry)
+        with patch('i18n.catalog.read_json',side_effect=reader):validate_mirror_capabilities(root,self.registry)
+        outputs={root/(route.lstrip('/')+'.html'):'' for cfg in self.registry['pageMirrors'].values() for code,route in cfg['routes'].items() if code in ('zz','zh-Hans') and code in cfg.get('renderLocales',[])}
+        validate_partial_outputs(root,self.registry,outputs)
+        for extra in ('zz/index.html','zz/history.html'):
+            with self.assertRaisesRegex(ValueError,'output mismatch'):validate_partial_outputs(root,self.registry,{**outputs,root/extra:''})
+        self.assertIsNone(home_url(self.registry,'zz'))
+        self.registry['locales']['zh-Hans']['capabilities']['mirrorTabs'].append('film')
+        self.registry['pageMirrors'][name]['routes']['zh-Hans']='/zh-Hans'+english
+        self.registry['pageMirrors'][name]['renderLocales'].append('zh-Hans')
+        validate_registry(self.registry)
+        self.assertIsNone(home_url(self.registry,'zh-Hans'))
+        self.assertEqual(self.registry['locales']['zh-Hans']['capabilities']['topicGuides'],[])
+        self.assertEqual(self.registry['locales']['zz']['capabilities']['topicGuides'],[])
+
+    def test_film_exact_identity_group_and_missing_grant_refuse(self):
+        from i18n.catalog import validate_mirror_capabilities,mirror_tab,FILM_FAMILY
+        for case in ('name','english','master','authored','exact','missing-grant','media'):
+            with self.subTest(case=case):
+                self.setUp();root,reader=self.film_fixture();name=FILM_FAMILY[0]
+                family=self.registry['pageMirrors'][name]
+                if case=='name':name='film-other';self.registry['pageMirrors'][name]=self.registry['pageMirrors'].pop(FILM_FAMILY[0])
+                if case=='english':family['english']='/film-other'
+                if case=='master':family['master']='history.html'
+                group='pageMirrors'
+                if case in ('authored','exact'):
+                    group=case+'Mirrors';self.registry[group][name]=self.registry['pageMirrors'].pop(name)
+                if case in ('name','english','master','authored','exact'):self.assertIsNone(mirror_tab(group,name,family))
+                if case=='missing-grant':self.registry['locales']['zz']['capabilities']['mirrorTabs']=[]
+                if case=='media':
+                    self.registry['locales']['zz']['capabilities']['mirrorTabs']=['media']
+                    with self.assertRaisesRegex(ValueError,'unknown mirror tab'):validate_registry(self.registry)
+                    continue
+                with patch('i18n.catalog.read_json',side_effect=reader):
+                    with self.assertRaisesRegex(ValueError,'lacks declared mirror capability'):validate_mirror_capabilities(root,self.registry)
+
     def test_home_publication_needs_actual_build_output(self):
         outputs = {ROOT / ('index.html' if c == 'en' else c + '/index.html'): '' for c in self.registry['homePublicationLocales']}
         self.assertEqual(published_home_locales(self.registry, outputs, ROOT), self.registry['homePublicationLocales'])
