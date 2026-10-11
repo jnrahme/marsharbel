@@ -174,5 +174,8 @@ qa_step env PORT=4197 bash scripts/tests/run_eucharistic_locales.sh
 echo "[qa] Books content API: feed, shelf parity and round trip"
 qa_step npm run books:check
 
+echo "[qa] Same-page language switcher resolver (pure node, was never run in CI)"
+qa_step node scripts/tests/same_page_resolver.cjs
+
 
 echo "[qa] QA suite finished"
