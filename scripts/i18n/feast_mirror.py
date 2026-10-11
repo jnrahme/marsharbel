@@ -1,4 +1,5 @@
 from i18n.encyclopedia_nav import finish_nav
+from i18n.shared_chrome import shared_header_chrome
 """Locale-agnostic feast mirror: preserve the English DOM and fail on untranslated master edits."""
 from i18n.metadata import og_locales
 from i18n.catalog import page_url, topic_locales
@@ -70,6 +71,7 @@ def render_feast_locale(root=ROOT, lang='ar', registry=None):
         elif not href.startswith(('/','#','https://','http://')):tag[attr]='/'+href
     en=read_json(root/'locales/en/mirrors/prayers.json');local=read_json(root/f'locales/{lang}/mirrors/prayers.json')
     chrome={v:local[k] for k,v in en.items() if k.startswith('header.') and k in local and isinstance(v,str)}
+    chrome.update(shared_header_chrome(root,lang))
     chrome.update(copy.get('chrome',{}))
     for node in soup.select_one('header.topbar').find_all(string=True):
         old=str(node);key=old.strip()
