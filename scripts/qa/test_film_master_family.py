@@ -32,6 +32,9 @@ class FilmMasterFamily(unittest.TestCase):
   with self.assertRaisesRegex(ValueError,message):m.validate_family(self.root)
  def change_page(self,code,old,new):
   file,text=self.pages[code];self.write(file,text.replace(old,new))
+ def test_missing_registry_not_registered(self):
+  (self.root/'locales/registry.json').unlink()
+  self.assertFalse(m.registered(self.root))
  def test_complete_twelve_pass(self):self.assertEqual(m.validate_family(self.root),[])
  def test_unregistered_unaffected(self):self.r['pageMirrors']={};self.write('locales/registry.json',self.r);self.assertEqual(m.validate_family(self.root),[])
  def test_11_13_active_sets_refuse(self):

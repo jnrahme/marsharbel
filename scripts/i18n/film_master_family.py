@@ -8,7 +8,9 @@ SLUG='charbel-film-premiere'
 ID='charbel-premiere-release-2026-10'
 RULE='.film-news-article p a{text-decoration:underline;text-underline-offset:.15em}'
 def registered(root):
-    return FAMILY in json.loads((root/'locales/registry.json').read_text()).get('pageMirrors',{})
+    path=root/'locales/registry.json'
+    if not path.is_file():return False
+    return FAMILY in json.loads(path.read_text()).get('pageMirrors',{})
 def validate_family(root):
     registry=json.loads((root/'locales/registry.json').read_text())
     if FAMILY not in registry.get('pageMirrors',{}):return []
