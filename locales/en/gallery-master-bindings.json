@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "master": "gallery.html",
+  "masterSha256": "170db79e5fdd4259137c1fc028fe4f99209b95488b905b57881bdb6d7148ba44",
+  "sourceRevision": "f508f8a7",
+  "bindings": [
+    {
+      "key": "gallery.metadata.title-saint-charbel-gallery-devotional-images",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Saint Charbel Gallery | Devotional Images",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.metadata.description-browse-a-real-image-gallery-of-saint-charbel-dev",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "gallery.metadata.og-title-saint-charbel-gallery-devotional-images",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Saint Charbel Gallery | Devotional Images",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "gallery.metadata.og-description-browse-a-real-image-gallery-of-saint-charbel",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "gallery.metadata.twitter-title-saint-charbel-gallery-devotional-images",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Saint Charbel Gallery | Devotional Images",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "gallery.metadata.twitter-description-browse-a-real-image-gallery-of-saint-cha",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "gallery.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "gallery.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.accessibility.media",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "Media",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "gallery.body.media",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.body.music",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.body.video",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.body.gallery",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.body.saint-charbel-gallery",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Saint Charbel Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.real-images-devotional-archive",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Real Images & Devotional Archive",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.the-gallery-gathers-images-used-in-saint-charbel-devotion-a",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The gallery gathers images used in Saint Charbel devotion: a crowd scene, a sepia portrait, an image shared with a testimony account, the historic photograph of Saint Charbel, and a series of AI-assisted devotional portraits and comparison images, each clearly labeled. Click any image to open it full-screen and move through the collection with the arrow keys.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.one-thing-i-have-asked-of-the-lord-this-will-i-seek-after-th",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > blockquote:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "\"One thing I have asked of the Lord, this will I seek after; that I may dwell in the house of the Lord all the days of my life. That I may see the delight of the Lord, and may visit his temple.\"",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.psalm-26-4-douay-rheims-psalm-27-4-in-modern-numbering",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > cite:nth-of-type(1)",
+      "source": "Psalm 26:4 (Douay-Rheims; Psalm 27:4 in modern numbering)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.the-images-here-are-made-for-quiet-looking-stay-with-one-as",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The images here are made for quiet looking. Stay with one as long as you like.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.previous-image",
+      "selector": "#gallery-prev",
+      "source": "Previous Image",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.next-image",
+      "selector": "#gallery-next",
+      "source": "Next Image",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.tip-click-any-image-to-open-full-view-use-arrow-keys-to-navi",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Tip: click any image to open full view. Use arrow keys to navigate.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.accessibility.grainy-archival-black-and-white-photograph-of-a-crowd-gather",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(1) > a:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Grainy archival black-and-white photograph of a crowd gathered around a monk, from the Saint Charbel devotion archive",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "gallery.accessibility.sepia-archival-close-up-photograph-of-saint-charbel-s-face",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(2) > a:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Sepia archival close-up photograph of Saint Charbel's face",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "gallery.accessibility.black-and-white-testimony-photograph-showing-two-figures-sha",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(3) > a:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Black-and-white testimony photograph showing two figures, shared with a Saint Charbel apparition account",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "gallery.accessibility.historic-photograph-of-saint-charbel-with-lowered-eyes-weari",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(4) > a:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Historic photograph of Saint Charbel with lowered eyes, wearing his monastic hood",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "gallery.real-images-devotional-a.saint-charbel-makhlouf-1828-1898-the-historic-photograph-kep",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(4) > figcaption:nth-of-type(1)",
+      "source": "Saint Charbel Makhlouf (1828-1898) - the historic photograph kept of the saint. Photographer unknown. Wikimedia Commons identifies this photograph as public domain.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.accessibility.ai-transformation-not-a-photograph-saint-charbel-in-a-black",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(5) > a:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "AI transformation, not a photograph: Saint Charbel in a black cap and heavy black robe, eyes lowered, dark beard with a grey center streak, against a plain stone-colored wall",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "gallery.real-images-devotional-a.the-creator-of-this-website-reports-seeing-saint-charbel-on",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(5) > figcaption:nth-of-type(1)",
+      "source": "The creator of this website reports seeing Saint Charbel on December 22. This artistic rendition reflects his personal account, not independent verification or a photograph. AI transformation, series candidate 1: an AI-assisted imagined portrait.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.accessibility.ai-transformation-not-a-photograph-saint-charbel-in-a-black-2",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(6) > a:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "AI transformation, not a photograph: Saint Charbel in a black hood and robe, eyes lowered, seated in a stone hermitage room beside a window and a clay jug",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "gallery.real-images-devotional-a.ai-transformation-not-a-photograph-series-candidate-2-an-ai",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(6) > figcaption:nth-of-type(1)",
+      "source": "AI transformation, not a photograph. Series, candidate 2: an AI-assisted imagined portrait in a stone hermitage.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.accessibility.ai-transformation-comparison-strip-not-a-photograph-the-hist",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(7) > a:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "AI transformation comparison strip, not a photograph: the historic image of Saint Charbel on the left beside two AI transformations with a window behind him",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "gallery.real-images-devotional-a.ai-transformation-not-a-photograph-series-before-and-after-t",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(7) > figcaption:nth-of-type(1)",
+      "source": "AI transformation, not a photograph. Series, before and after: the historic image (left) beside the final rendition (center) and an alternate take (right).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.accessibility.ai-transformation-not-a-photograph-close-portrait-of-saint-c",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(8) > a:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "AI transformation, not a photograph: close portrait of Saint Charbel in a black hood, eyes lowered, white beard, a window blurred behind him, alternate take",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "gallery.real-images-devotional-a.ai-transformation-not-a-photograph-series-alternate-take-an",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(8) > figcaption:nth-of-type(1)",
+      "source": "AI transformation, not a photograph. Series, alternate take: an AI-assisted close portrait based on the historic photograph.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.accessibility.ai-transformation-not-a-photograph-close-portrait-of-saint-c-2",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(9) > a:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "AI transformation, not a photograph: close portrait of Saint Charbel in a black monastic hood, eyes lowered, with a full dark beard, a lit window blurred behind him",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "gallery.real-images-devotional-a.ai-transformation-not-a-photograph-series-final-an-ai-assist",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(2) > figure:nth-of-type(9) > figcaption:nth-of-type(1)",
+      "source": "AI transformation, not a photograph. Series, final: an AI-assisted close portrait of Saint Charbel in an imagined hermitage, based on the historic photograph above. It shows how he might have looked and is not a record of any real scene.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.image-sources",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Image Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.image-1",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "Image 1 (",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.user-link-1-jpg",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > code:nth-of-type(1)",
+      "source": "user-link-1.jpg",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.text",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "):",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "gallery.real-images-devotional-a.google-photos-source-1",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Google Photos (Source 1)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.image-2",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "Image 2 (",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.user-link-3-jpg",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > code:nth-of-type(1)",
+      "source": "user-link-3.jpg",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.text",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "):",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "gallery.real-images-devotional-a.google-photos-source-2",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Google Photos (Source 2)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.image-3",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "Image 3 (",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.user-link-4-lady-jpg",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > code:nth-of-type(1)",
+      "source": "user-link-4-lady.jpg",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.text",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "):",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "gallery.real-images-devotional-a.google-photos-source-3",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Google Photos (Source 3)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.image-4",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": "Image 4 (",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.charbel-historic-photo-webp",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > code:nth-of-type(1)",
+      "source": "charbel-historic-photo.webp",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.text",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": "):",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "gallery.real-images-devotional-a.wikimedia-commons-charbel-jpg",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Wikimedia Commons: Charbel.jpg",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.photographer-unknown-listed-as-public-domain-by-wikimedia-co",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": "- photographer unknown; listed as public domain by Wikimedia Commons.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "gallery.real-images-devotional-a.images-5-to-9",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": "Images 5 to 9 (",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.charbel-rendition-01-faithful-webp",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > code:nth-of-type(1)",
+      "source": "charbel-rendition-01-faithful.webp",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.text-2",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "gallery.real-images-devotional-a.charbel-rendition-02-hermitage-webp",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > code:nth-of-type(2)",
+      "source": "charbel-rendition-02-hermitage.webp",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.text-2",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "gallery.real-images-devotional-a.charbel-transformation-strip-webp",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > code:nth-of-type(3)",
+      "source": "charbel-transformation-strip.webp",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.text-2",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "gallery.real-images-devotional-a.charbel-rendition-final-alt-webp",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > code:nth-of-type(4)",
+      "source": "charbel-rendition-final-alt.webp",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.text-2",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 8
+    },
+    {
+      "key": "gallery.real-images-devotional-a.charbel-window-rendition-webp",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > code:nth-of-type(5)",
+      "source": "charbel-window-rendition.webp",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.real-images-devotional-a.the-ai-transformation-series-made-for-this-site-the-final-al",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": "): the AI transformation series made for this site. The final, alternate final and final comparison strip use the historic photograph in Image 4 as their reference. The earlier candidates are imagined portraits with no verified historic-source claim. These are illustrations, not photographs or a historical record, shown for devotional illustration only.",
+      "kind": "text",
+      "nodeIndex": 10
+    },
+    {
+      "key": "gallery.about-this-archive.about-this-archive",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "About This Archive",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.about-this-archive.this-gallery-brings-together-the-images-used-on-the-site-a-b",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "This gallery brings together the images used on the site: a black-and-white scene of a crowd gathered around a monk, the familiar sepia devotional portrait, an image shared with an apparition testimony, the historic photograph of Saint Charbel, and a series of AI-assisted devotional portraits and comparison images, each labeled as an illustration. The links below each image show the credited source. The testimony image is presented as part of that account, not independent proof of an apparition.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.about-this-archive.four-photographs-each-with-its-source-linked-in-the-image-so",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "Four photographs, each with its source linked in the Image Sources section above, plus a series of labeled AI transformations.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.about-this-archive.devotional-and-testimony-images-with-source-links",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "Devotional and testimony images, with source links.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.about-this-archive.full-screen-viewing-with-keyboard-navigation-click-an-image",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "Full-screen viewing with keyboard navigation: click an image, then use the arrow keys.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.frequently-asked-questio.frequently-asked-questions",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.frequently-asked-questio.what-is-in-the-gallery",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "What is in the gallery?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.frequently-asked-questio.images-used-in-saint-charbel-devotion-a-crowd-scene-a-sepia",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Images used in Saint Charbel devotion: a crowd scene, a sepia devotional portrait, an image shared with an apparition testimony, the historic photograph of Saint Charbel, and a series of AI-assisted devotional portraits and comparison images, each labeled as an illustration and not a photograph. Each image has its source or origin noted on the page.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.frequently-asked-questio.where-do-the-images-come-from",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "Where do the images come from?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.frequently-asked-questio.every-image-has-its-source-listed-in-the-image-sources-secti",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Every image has its source listed in the Image Sources section on this page, with a link, so you can see where each photograph was found.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.frequently-asked-questio.how-do-i-view-an-image-full-screen",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "How do I view an image full-screen?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.frequently-asked-questio.click-any-image-to-open-the-full-view-then-move-through-the",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "Click any image to open the full view, then move through the collection with the Previous and Next buttons or the arrow keys on your keyboard.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.frequently-asked-questio.can-i-reuse-these-photographs",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "Can I reuse these photographs?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.frequently-asked-questio.a-source-credit-is-not-permission-to-reuse-an-image-check-th",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "A source credit is not permission to reuse an image. Check the rights with the source before copying or sharing it.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.accessibility.gallery-image-viewer",
+      "selector": "#gallery-lightbox",
+      "source": "Gallery image viewer",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "gallery.frequently-asked-questio.close",
+      "selector": "#lightbox-close",
+      "source": "Close",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.frequently-asked-questio.previous",
+      "selector": "#lightbox-prev",
+      "source": "Previous",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.frequently-asked-questio.next",
+      "selector": "#lightbox-next",
+      "source": "Next",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "gallery.footer.gallery-updated-march-2-2026-author-please-pray-for-the-pers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Gallery updated March 2, 2026. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "gallery.metadata.title-saint-charbel-gallery-devotional-images": "Saint Charbel Gallery | Devotional Images",
+    "gallery.metadata.description-browse-a-real-image-gallery-of-saint-charbel-dev": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+    "gallery.metadata.og-title-saint-charbel-gallery-devotional-images": "Saint Charbel Gallery | Devotional Images",
+    "gallery.metadata.og-description-browse-a-real-image-gallery-of-saint-charbel": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+    "gallery.metadata.twitter-title-saint-charbel-gallery-devotional-images": "Saint Charbel Gallery | Devotional Images",
+    "gallery.metadata.twitter-description-browse-a-real-image-gallery-of-saint-cha": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+    "gallery.body.skip-to-main-content": "Skip to main content",
+    "gallery.header.text": "✦",
+    "gallery.header.saint-charbel": "Saint Charbel",
+    "gallery.accessibility.primary": "Primary",
+    "gallery.header.home": "Home",
+    "gallery.header.legacy": "Legacy",
+    "gallery.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "gallery.header.full-history": "Full History",
+    "gallery.header.miracles": "Miracles",
+    "gallery.header.miracles-reports": "Miracles & Reports",
+    "gallery.header.eucharistic-miracles": "Eucharistic Miracles",
+    "gallery.header.letters": "Letters",
+    "gallery.header.voice-testimony": "Voice Testimony",
+    "gallery.header.saints": "Saints",
+    "gallery.header.children-s-books": "Children's Books",
+    "gallery.header.prayer": "Prayer",
+    "gallery.header.prayer-library": "Prayer Library",
+    "gallery.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "gallery.header.prayer-for-the-sick": "Prayer for the Sick",
+    "gallery.header.prayer-for-healing": "Prayer for Healing",
+    "gallery.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "gallery.header.prayer-for-depression": "Prayer for Depression",
+    "gallery.header.prayer-for-students": "Prayer for Students",
+    "gallery.header.prayer-for-addiction": "Prayer for Addiction",
+    "gallery.header.prayer-for-family": "Prayer for Family",
+    "gallery.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "gallery.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "gallery.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "gallery.header.saint-charbel-novena": "Saint Charbel Novena",
+    "gallery.header.feast-day": "Feast Day",
+    "gallery.header.rosary-guide": "Rosary Guide",
+    "gallery.header.rosary-minibook": "Rosary Minibook",
+    "gallery.header.mystery-meditation": "Mystery Meditation",
+    "gallery.header.become-like-him": "Become Like Him",
+    "gallery.header.travel": "Travel",
+    "gallery.header.visiting-annaya": "Visiting Annaya",
+    "gallery.header.annaya-online-tour": "Annaya Online Tour",
+    "gallery.header.bekaa-kafra": "Bekaa Kafra",
+    "gallery.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "gallery.header.the-cedars-of-god": "the Cedars of God",
+    "gallery.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "gallery.header.qadisha-valley": "Qadisha Valley",
+    "gallery.header.qannoubine-monastery": "Qannoubine Monastery",
+    "gallery.header.qozhaya-monastery": "Qozhaya Monastery",
+    "gallery.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "gallery.header.the-hermitage": "The Hermitage",
+    "gallery.header.saint-charbel-trail": "Saint Charbel Trail",
+    "gallery.header.news": "News",
+    "gallery.header.media": "Media",
+    "gallery.header.music": "Music",
+    "gallery.header.video": "Video",
+    "gallery.header.gallery": "Gallery",
+    "gallery.accessibility.media": "Media",
+    "gallery.body.media": "Media",
+    "gallery.body.music": "Music",
+    "gallery.body.video": "Video",
+    "gallery.body.gallery": "Gallery",
+    "gallery.body.saint-charbel-gallery": "Saint Charbel Gallery",
+    "gallery.real-images-devotional-a.real-images-devotional-archive": "Real Images & Devotional Archive",
+    "gallery.real-images-devotional-a.the-gallery-gathers-images-used-in-saint-charbel-devotion-a": "The gallery gathers images used in Saint Charbel devotion: a crowd scene, a sepia portrait, an image shared with a testimony account, the historic photograph of Saint Charbel, and a series of AI-assisted devotional portraits and comparison images, each clearly labeled. Click any image to open it full-screen and move through the collection with the arrow keys.",
+    "gallery.real-images-devotional-a.one-thing-i-have-asked-of-the-lord-this-will-i-seek-after-th": "\"One thing I have asked of the Lord, this will I seek after; that I may dwell in the house of the Lord all the days of my life. That I may see the delight of the Lord, and may visit his temple.\"",
+    "gallery.real-images-devotional-a.psalm-26-4-douay-rheims-psalm-27-4-in-modern-numbering": "Psalm 26:4 (Douay-Rheims; Psalm 27:4 in modern numbering)",
+    "gallery.real-images-devotional-a.the-images-here-are-made-for-quiet-looking-stay-with-one-as": "The images here are made for quiet looking. Stay with one as long as you like.",
+    "gallery.real-images-devotional-a.previous-image": "Previous Image",
+    "gallery.real-images-devotional-a.next-image": "Next Image",
+    "gallery.real-images-devotional-a.tip-click-any-image-to-open-full-view-use-arrow-keys-to-navi": "Tip: click any image to open full view. Use arrow keys to navigate.",
+    "gallery.accessibility.grainy-archival-black-and-white-photograph-of-a-crowd-gather": "Grainy archival black-and-white photograph of a crowd gathered around a monk, from the Saint Charbel devotion archive",
+    "gallery.accessibility.sepia-archival-close-up-photograph-of-saint-charbel-s-face": "Sepia archival close-up photograph of Saint Charbel's face",
+    "gallery.accessibility.black-and-white-testimony-photograph-showing-two-figures-sha": "Black-and-white testimony photograph showing two figures, shared with a Saint Charbel apparition account",
+    "gallery.accessibility.historic-photograph-of-saint-charbel-with-lowered-eyes-weari": "Historic photograph of Saint Charbel with lowered eyes, wearing his monastic hood",
+    "gallery.real-images-devotional-a.saint-charbel-makhlouf-1828-1898-the-historic-photograph-kep": "Saint Charbel Makhlouf (1828-1898) - the historic photograph kept of the saint. Photographer unknown. Wikimedia Commons identifies this photograph as public domain.",
+    "gallery.accessibility.ai-transformation-not-a-photograph-saint-charbel-in-a-black": "AI transformation, not a photograph: Saint Charbel in a black cap and heavy black robe, eyes lowered, dark beard with a grey center streak, against a plain stone-colored wall",
+    "gallery.real-images-devotional-a.the-creator-of-this-website-reports-seeing-saint-charbel-on": "The creator of this website reports seeing Saint Charbel on December 22. This artistic rendition reflects his personal account, not independent verification or a photograph. AI transformation, series candidate 1: an AI-assisted imagined portrait.",
+    "gallery.accessibility.ai-transformation-not-a-photograph-saint-charbel-in-a-black-2": "AI transformation, not a photograph: Saint Charbel in a black hood and robe, eyes lowered, seated in a stone hermitage room beside a window and a clay jug",
+    "gallery.real-images-devotional-a.ai-transformation-not-a-photograph-series-candidate-2-an-ai": "AI transformation, not a photograph. Series, candidate 2: an AI-assisted imagined portrait in a stone hermitage.",
+    "gallery.accessibility.ai-transformation-comparison-strip-not-a-photograph-the-hist": "AI transformation comparison strip, not a photograph: the historic image of Saint Charbel on the left beside two AI transformations with a window behind him",
+    "gallery.real-images-devotional-a.ai-transformation-not-a-photograph-series-before-and-after-t": "AI transformation, not a photograph. Series, before and after: the historic image (left) beside the final rendition (center) and an alternate take (right).",
+    "gallery.accessibility.ai-transformation-not-a-photograph-close-portrait-of-saint-c": "AI transformation, not a photograph: close portrait of Saint Charbel in a black hood, eyes lowered, white beard, a window blurred behind him, alternate take",
+    "gallery.real-images-devotional-a.ai-transformation-not-a-photograph-series-alternate-take-an": "AI transformation, not a photograph. Series, alternate take: an AI-assisted close portrait based on the historic photograph.",
+    "gallery.accessibility.ai-transformation-not-a-photograph-close-portrait-of-saint-c-2": "AI transformation, not a photograph: close portrait of Saint Charbel in a black monastic hood, eyes lowered, with a full dark beard, a lit window blurred behind him",
+    "gallery.real-images-devotional-a.ai-transformation-not-a-photograph-series-final-an-ai-assist": "AI transformation, not a photograph. Series, final: an AI-assisted close portrait of Saint Charbel in an imagined hermitage, based on the historic photograph above. It shows how he might have looked and is not a record of any real scene.",
+    "gallery.real-images-devotional-a.image-sources": "Image Sources",
+    "gallery.real-images-devotional-a.image-1": "Image 1 (",
+    "gallery.real-images-devotional-a.user-link-1-jpg": "user-link-1.jpg",
+    "gallery.real-images-devotional-a.text": "):",
+    "gallery.real-images-devotional-a.google-photos-source-1": "Google Photos (Source 1)",
+    "gallery.real-images-devotional-a.image-2": "Image 2 (",
+    "gallery.real-images-devotional-a.user-link-3-jpg": "user-link-3.jpg",
+    "gallery.real-images-devotional-a.google-photos-source-2": "Google Photos (Source 2)",
+    "gallery.real-images-devotional-a.image-3": "Image 3 (",
+    "gallery.real-images-devotional-a.user-link-4-lady-jpg": "user-link-4-lady.jpg",
+    "gallery.real-images-devotional-a.google-photos-source-3": "Google Photos (Source 3)",
+    "gallery.real-images-devotional-a.image-4": "Image 4 (",
+    "gallery.real-images-devotional-a.charbel-historic-photo-webp": "charbel-historic-photo.webp",
+    "gallery.real-images-devotional-a.wikimedia-commons-charbel-jpg": "Wikimedia Commons: Charbel.jpg",
+    "gallery.real-images-devotional-a.photographer-unknown-listed-as-public-domain-by-wikimedia-co": "- photographer unknown; listed as public domain by Wikimedia Commons.",
+    "gallery.real-images-devotional-a.images-5-to-9": "Images 5 to 9 (",
+    "gallery.real-images-devotional-a.charbel-rendition-01-faithful-webp": "charbel-rendition-01-faithful.webp",
+    "gallery.real-images-devotional-a.text-2": ",",
+    "gallery.real-images-devotional-a.charbel-rendition-02-hermitage-webp": "charbel-rendition-02-hermitage.webp",
+    "gallery.real-images-devotional-a.charbel-transformation-strip-webp": "charbel-transformation-strip.webp",
+    "gallery.real-images-devotional-a.charbel-rendition-final-alt-webp": "charbel-rendition-final-alt.webp",
+    "gallery.real-images-devotional-a.charbel-window-rendition-webp": "charbel-window-rendition.webp",
+    "gallery.real-images-devotional-a.the-ai-transformation-series-made-for-this-site-the-final-al": "): the AI transformation series made for this site. The final, alternate final and final comparison strip use the historic photograph in Image 4 as their reference. The earlier candidates are imagined portraits with no verified historic-source claim. These are illustrations, not photographs or a historical record, shown for devotional illustration only.",
+    "gallery.about-this-archive.about-this-archive": "About This Archive",
+    "gallery.about-this-archive.this-gallery-brings-together-the-images-used-on-the-site-a-b": "This gallery brings together the images used on the site: a black-and-white scene of a crowd gathered around a monk, the familiar sepia devotional portrait, an image shared with an apparition testimony, the historic photograph of Saint Charbel, and a series of AI-assisted devotional portraits and comparison images, each labeled as an illustration. The links below each image show the credited source. The testimony image is presented as part of that account, not independent proof of an apparition.",
+    "gallery.about-this-archive.four-photographs-each-with-its-source-linked-in-the-image-so": "Four photographs, each with its source linked in the Image Sources section above, plus a series of labeled AI transformations.",
+    "gallery.about-this-archive.devotional-and-testimony-images-with-source-links": "Devotional and testimony images, with source links.",
+    "gallery.about-this-archive.full-screen-viewing-with-keyboard-navigation-click-an-image": "Full-screen viewing with keyboard navigation: click an image, then use the arrow keys.",
+    "gallery.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+    "gallery.frequently-asked-questio.what-is-in-the-gallery": "What is in the gallery?",
+    "gallery.frequently-asked-questio.images-used-in-saint-charbel-devotion-a-crowd-scene-a-sepia": "Images used in Saint Charbel devotion: a crowd scene, a sepia devotional portrait, an image shared with an apparition testimony, the historic photograph of Saint Charbel, and a series of AI-assisted devotional portraits and comparison images, each labeled as an illustration and not a photograph. Each image has its source or origin noted on the page.",
+    "gallery.frequently-asked-questio.where-do-the-images-come-from": "Where do the images come from?",
+    "gallery.frequently-asked-questio.every-image-has-its-source-listed-in-the-image-sources-secti": "Every image has its source listed in the Image Sources section on this page, with a link, so you can see where each photograph was found.",
+    "gallery.frequently-asked-questio.how-do-i-view-an-image-full-screen": "How do I view an image full-screen?",
+    "gallery.frequently-asked-questio.click-any-image-to-open-the-full-view-then-move-through-the": "Click any image to open the full view, then move through the collection with the Previous and Next buttons or the arrow keys on your keyboard.",
+    "gallery.frequently-asked-questio.can-i-reuse-these-photographs": "Can I reuse these photographs?",
+    "gallery.frequently-asked-questio.a-source-credit-is-not-permission-to-reuse-an-image-check-th": "A source credit is not permission to reuse an image. Check the rights with the source before copying or sharing it.",
+    "gallery.accessibility.gallery-image-viewer": "Gallery image viewer",
+    "gallery.frequently-asked-questio.close": "Close",
+    "gallery.frequently-asked-questio.previous": "Previous",
+    "gallery.frequently-asked-questio.next": "Next",
+    "gallery.footer.gallery-updated-march-2-2026-author-please-pray-for-the-pers": "Gallery updated March 2, 2026. Author: Please pray for the person who made this website."
+  }
+}

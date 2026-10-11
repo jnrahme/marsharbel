@@ -7,8 +7,9 @@ from pathlib import Path
 import re
 from string import Template
 
+from i18n.devotion_guidance import load_guidance, render_lead, render_links
 from i18n.metadata import og_locales, published_locales, selector_aliases
-from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_locales
+from i18n.catalog import ROOT, load_catalog, locale_topics, page_url, topic_locales, read_json, published_home_locales, home_url, validate_partial_outputs
 from i18n.mirror import render_mirrors
 from i18n.qadisha_mirror import render_qadisha
 from i18n.travel_mirror import render_travel
@@ -18,24 +19,43 @@ from i18n.litany_mirror import render_litany
 from i18n.eucharistic_mirror import render_eucharistic
 from i18n.chaplet_mirror import render_chaplet
 from i18n.exact_master import render_exact_set
+from i18n.home_mirror import render_home_set
+from i18n.page_mirror import render_page_set
 from i18n.tour_nav import tour_nav
+from i18n.travel_components import travel_frame
 
 
-def alternate_links(registry, topic=None):
-    languages = topic_locales(registry, topic) if topic else list(registry['locales'])
+def alternate_links(registry, topic=None, master=False):
+    languages = topic_locales(registry, topic) if topic else published_home_locales(registry)
+    if topic=='novena' and not master and 'saint-charbel-novena-master' in registry.get('pageMirrors',{}):
+        remaining=[c for c in ('en','es','pt','it','pl') if c not in registry['pageMirrors']['saint-charbel-novena-master'].get('renderLocales',[])];cluster={c:page_url(registry,c,topic)for c in remaining};cluster['x-default']=cluster['en']
+        return '\n'.join(f'<link rel="alternate" hreflang="{c}" href="{registry["site"]}{path}" />'for c,path in cluster.items())
+    if topic == 'biography' and 'history-master' in registry.get('pageMirrors', {}):
+        return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{registry["site"]}/en/biography" />' for code in ('en', 'x-default'))
+    if topic:
+        english = registry['topics'][topic]['relatedEnglish']
+        for cfg in registry.get('pageMirrors', {}).values():
+            if cfg['english'] == english and 'renderLocales' in cfg and not master and 'en' in languages:
+                return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{registry["site"]}{page_url(registry, "en", topic)}" />' for code in ('en', 'x-default'))
+            if cfg['english'] == english and 'renderLocales' in cfg:
+                cluster = {'en': english, **{c: cfg['routes'][c] for c in cfg['renderLocales']}, 'x-default': english}
+                return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{registry["site"]}{path}" />' for code, path in cluster.items())
+    if topic in registry.get('exactMirrors', {}):
+        languages=[c for c in languages if c not in registry['exactMirrors'][topic].get('renderLocales',[])]
     links = {code: registry['site'] + page_url(registry, code, topic) for code in languages}
     default = registry['defaultLocale']
-    if default not in links:
+    if default not in links and topic not in registry.get('exactMirrors', {}):
         # A topic authored only in some languages pairs with its existing English page.
         links = {default: registry['site'] + registry['topics'][topic]['relatedEnglish'], **links}
-    links['x-default'] = links[default]
+    links['x-default'] = links.get(default, next(iter(links.values())))
     return '\n'.join(f'<link rel="alternate" hreflang="{code}" href="{url}" />' for code, url in links.items())
 
 
 
 def footer_locale_bar(registry):
     links = []
-    for language, config in registry['locales'].items():
+    for language in published_home_locales(registry):
+        config = registry['locales'][language]
         path = page_url(registry, language)
         links.append(f'<a href="{path}" hreflang="{language}" lang="{language}" dir="{config["direction"]}">{escape(config["nativeName"])}</a>')
     return '<nav class="footer-locales" aria-label="Languages">' + ' <span aria-hidden="true">-</span> '.join(links) + '</nav>'
@@ -50,8 +70,9 @@ def og_locale_tags(registry, code):
 
 def navigation(registry, code, topic=None, mark_current=True):
     links = []
-    available = topic_locales(registry, topic) if topic else list(registry['locales'])
-    for language, config in registry['locales'].items():
+    available = topic_locales(registry, topic) if topic else published_home_locales(registry)
+    for language in published_home_locales(registry):
+        config = registry['locales'][language]
         if language in available:
             path = page_url(registry, language, topic)
         elif language == registry['defaultLocale']:
@@ -64,15 +85,7 @@ def navigation(registry, code, topic=None, mark_current=True):
     # destination honors the stored sc_lang_pref and would bounce a visitor
     # back to their previous locale. A click on a language link is an explicit
     # choice, so persist it before navigation (the same key translate.js uses).
-    links.append(
-        '<script>document.addEventListener("click",function(e){'
-        'var a=e.target&&e.target.closest?e.target.closest("a[hreflang]"):null;'
-        'if(!a)return;'
-        'var l=(a.getAttribute("hreflang")||"").toLowerCase();'
-        'if(l==="x-default")l="en";'
-        'try{localStorage.setItem("sc_lang_pref",l)}catch(_){}'
-        '});</script>'
-    )
+    links.append('<script defer src="/locale-pref.js"></script>')
     return '\n'.join(links)
 
 
@@ -81,10 +94,16 @@ def render(registry, catalog, code, template, topic=None):
     t = lambda key: escape(common[key])
     if topic:
         page = pages[topic]
+        guidance = load_guidance(ROOT, code, topic)
         section_ids = registry['topics'][topic]['sections']
         contents = ''.join(f'<li><a href="#section-{key}">{escape(page["sections"][key]["title"])}</a></li>' for key in section_ids)
-        sections = ''.join(f'<section id="section-{key}" class="section"><h2>{escape(page["sections"][key]["title"])}</h2><p>{escape(page["sections"][key]["body"])}</p></section>' for key in section_ids)
+        sections = ''.join(f'<section id="section-{key}" class="section"><h2>{escape(page["sections"][key]["title"])}</h2><p>{escape(page["sections"][key]["body"])}</p>{render_links(guidance["sectionLinks"][key]) if guidance and key in guidance["sectionLinks"] else ""}</section>' for key in section_ids)
         sources = ''.join(f'<li><a href="{escape(registry["sources"][key])}">{t("sources." + key)}</a></li>' for key in registry['topics'][topic]['sources'])
+        full = page.get('fullGuide')
+        full_href = registry['topics'][topic]['relatedEnglish'] + ('' if code == 'en' else '?lang=en')
+        full_attrs = '' if code == 'en' else ' lang="en" dir="ltr"'
+        full_stop = '' if code == 'ar' else '.'
+        full_guide = (f'<p class="full-guide">{escape(full["lead"])} <a href="{full_href}"{full_attrs}>{escape(full["label"])}</a>{full_stop}</p>' if full else '')
         related_topics = [key for key in locale_topics(registry, code) if key != topic]
         # Readers of story leaves should get back to the hub before the broader
         # catalog; homepage cards still expose every topic for discovery.
@@ -92,8 +111,9 @@ def render(registry, catalog, code, template, topic=None):
             related_topics.remove('miracles')
             related_topics.insert(0, 'miracles')
         related = ''.join(f'<li><a href="{page_url(registry, code, key)}">{escape(pages[key]["title"])}</a></li>' for key in related_topics)
-        content = f'''<article><h1>{escape(page['title'])}</h1><p class="intro">{escape(page['intro'])}</p>
-<nav class="contents" aria-label="{t('navigation.contents')}"><h2>{t('navigation.contents')}</h2><ol>{contents}</ol></nav>
+        lead = render_lead(guidance) + '\n' if guidance else ''
+        content = f'''<article><h1>{escape(page['title'])}</h1><p class="intro">{escape(page['intro'])}</p>{full_guide}
+{lead}<nav class="contents" aria-label="{t('navigation.contents')}"><h2>{t('navigation.contents')}</h2><ol>{contents}</ol></nav>
 {sections}<section class="section"><h2>{t('navigation.sources')}</h2><ul>{sources}</ul></section></article>
 <aside class="related"><h2>{t('navigation.related')}</h2><ul>{related}</ul><a href="{registry['topics'][topic]['relatedEnglish']}?lang=en">{t('navigation.englishResource')}</a></aside>'''
         title, description = page['title'], page['description']
@@ -128,12 +148,14 @@ def outputs(root=ROOT):
     template = Template((root / 'templates/international/page.html').read_text())
     result = {}
     for code in registry['locales']:
-        if code != registry['defaultLocale']:
+        if code != registry['defaultLocale'] and home_url(registry, code) is not None:
             result[root / code / 'index.html'] = render(registry, catalogs[code], code, template)
         for topic in locale_topics(registry, code):
             route = page_url(registry, code, topic)
             output_path = root / (route.lstrip('/') + 'index.html' if route.endswith('/') else route.lstrip('/') + '.html')
-            result[output_path] = render(registry, catalogs[code], code, template, topic)
+            keyed_routes={route for family in ('saint-charbel-prayers-master','saint-charbel-novena-master') for route in registry.get('pageMirrors',{}).get(family,{}).get('routes',{}).values()}
+            if route not in keyed_routes:
+                result[output_path] = render(registry, catalogs[code], code, template, topic)
         result[root / code / '.htaccess'] = '# Preserve language routes; never expose directory listings.\nOptions -Indexes\n'
         # A nested localized hub is a real directory with its own index; the
         # parent locale's Options -Indexes must not hide that index.
@@ -143,10 +165,15 @@ def outputs(root=ROOT):
                 result[root / route.lstrip('/') / '.htaccess'] = (
                     '# Canonical localized directory hub.\nOptions -Indexes\nDirectoryIndex index.html\n')
     # The reviewed pair shares one skeleton; other guide locales remain unchanged.
-    mirrors = render_mirrors(root, registry)
+    retired_routes={root/(route.lstrip('/')+'.html') for family in ('saint-charbel-prayers-master','saint-charbel-novena-master') for route in registry.get('pageMirrors',{}).get(family,{}).get('routes',{}).values()}
+    mirrors = render_mirrors(root, registry, retired_routes=retired_routes)
     # The English master receives its existing managed hreflang from the loop
     # below; only the Arabic mirror is handed to the generated-page set here.
     english_mirror = mirrors.pop(root / 'saint-charbel-prayers.html')
+    # New keyed prayer writers own these routes; retain all other mirror outputs.
+    for family in ('saint-charbel-prayers-master','saint-charbel-novena-master'):
+        for route in registry.get('pageMirrors',{}).get(family,{}).get('routes',{}).values():
+            mirrors.pop(root/(route.lstrip('/')+'.html'),None)
     result.update(mirrors)
     qadisha = render_qadisha(root, registry)
     english_qadisha = qadisha.pop(root / 'qadisha-valley.html')
@@ -160,7 +187,7 @@ def outputs(root=ROOT):
     result.update(eucharistic)
     result.update(render_chaplet(root))
     result.update(render_feast(root))
-    result.update(render_exact_set(root, registry))
+    # Master cluster composition happens below before exact-source rendering.
     # Nested localized directory indexes must be explicit; Options -Indexes
     # otherwise hides hubs on some hosts.
     for code in published_locales(registry, 'eucharistic'):
@@ -184,9 +211,46 @@ def outputs(root=ROOT):
             text = replace_block(text, 'i18n-navigation', footer_locale_bar(registry))
         if registry['defaultLocale'] not in topic_locales(registry, topic):
             # The English page is this topic's English alternate, so it carries the same cluster.
-            links = '\n'.join('  ' + line for line in alternate_links(registry, topic).split('\n'))
+            links = '\n'.join('  ' + line for line in alternate_links(registry, topic, master=True).split('\n'))
             text = replace_block(text, 'hreflang', links, begin='begin')
         result[path] = text
+    # Declared discovery clusters are composed reciprocally; they do not enable
+    # the same-page selector or certify independent content/native review.
+    for name,cfg in registry.get('exactMirrors', {}).items():
+        if name=='novena' and 'saint-charbel-novena-master' in registry.get('pageMirrors',{}):continue
+        master=root/(cfg['english'].lstrip('/')+'index.html' if cfg['english'].endswith('/') else cfg['english'].lstrip('/')+'.html')
+        master_text=master.read_text()
+        block=re.search(r'<!-- hreflang:begin -->[\s\S]*?<!-- hreflang:end -->',master_text)
+        for route in cfg['routes'].values():
+            path=root/(route.lstrip('/')+'index.html' if route.endswith('/') else route.lstrip('/')+'.html')
+            text=result.get(path,path.read_text())
+            if route==cfg['english'] and block:
+                text=re.sub(r'<!-- hreflang:begin -->[\s\S]*?<!-- hreflang:end -->',lambda _:block[0],text,count=1)
+            elif route!=cfg['english'] and route not in [cfg['routes'].get(c) for c in cfg.get('renderLocales',[])]:
+                if block and '<!-- hreflang:begin -->' in text:
+                    from bs4 import BeautifulSoup
+                    existing={(n.get('hreflang'),n.get('href')) for n in BeautifulSoup(text,'html.parser').select('head link[hreflang]')}
+                    target={(code,registry['site']+url) for code,url in {**cfg['routes'],'x-default':cfg['english']}.items()}
+                    if existing==target:continue
+                    text=re.sub(r'<!-- hreflang:begin -->[\s\S]*?<!-- hreflang:end -->',lambda _:block[0],text,count=1)
+                else:
+                    head_end=text.index('</head>')
+                    head=re.sub(r'<link\b[^>]*\bhreflang=["\'][^>]*>\s*','',text[:head_end])
+                    links='\n'.join(f'<link rel="alternate" hreflang="{code}" href="{registry["site"]+url}" />' for code,url in {**cfg['routes'],'x-default':cfg['english']}.items())
+                    text=head+links+'\n'+text[head_end:]
+            result[path]=text
+    result.update(render_exact_set(root, registry))
+    result.update(render_home_set(root, registry))
+    result.update(render_page_set(root, registry))
+    # Full history is a separate reciprocal master cluster, not legacy biography.
+    history_cfg=registry['pageMirrors']['history-master']
+    history_path=root/'history.html'
+    history_text=result.get(history_path,history_path.read_text())
+    cluster={'en':'/history',**history_cfg['routes'],'x-default':'/history'}
+    links='\n'.join(f'<link rel="alternate" hreflang="{c}" href="{registry["site"]+u}" />' for c,u in cluster.items())
+    result[history_path]=replace_block(history_text,'hreflang',links,begin='begin')
+    from i18n.prayer_metadata import compose_prayer_clusters
+    result=compose_prayer_clusters(root,registry,result)
     # Keep the English homepage and legacy canonical URLs stable.
     sitemap = root / 'sitemap.xml'
     text = sitemap.read_text()
@@ -195,23 +259,35 @@ def outputs(root=ROOT):
     # lastmod is owned by scripts/sitemap_lastmod.py (git history); keep it stable here.
     lastmods = {match.group(1): match.group(2) for match in localized.finditer(text) if match.group(2)}
     text = localized.sub('', text)
-    generated = [registry['site'] + page_url(registry, code) for code in registry['locales'] if code != registry['defaultLocale']]
+    if 'saint-charbel-prayers-master' in registry.get('pageMirrors',{}):
+        if '<loc>'+registry['site']+'/saint-charbel-prayers</loc>' not in text:
+            text=text.replace('</urlset>','  <url><loc>'+registry['site']+'/saint-charbel-prayers</loc></url>\n</urlset>')
+    from build_film_news_ar import render_source as film_feature_source
+    film_path,film_text=film_feature_source(root)
+    result[film_path]=film_text
+    generated = [registry['site'] + page_url(registry, code) for code in published_home_locales(registry) if code != registry['defaultLocale']]
     generated += [registry['site'] + page_url(registry, code, topic) for code in registry['locales'] for topic in locale_topics(registry, code)]
     generated += [registry['site'] + '/' + code + '/miracles/eucharistic/' + ('' if slug=='index' else slug)
                   for code in published_locales(registry, 'eucharistic') if code != registry['defaultLocale']
                   for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney')]
+    # pageMirrors routes join the sitemap once released (registry sitemapHeld lists any still held).
+    generated += [registry['site'] + route for mirror in registry.get('pageMirrors', {}).values()
+                  for code, route in mirror['routes'].items() if code != 'en' and code in mirror.get('renderLocales', []) and code not in mirror.get('sitemapHeld', [])]
     generated += [registry['site'] + route for mirror in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values()
                   for route in mirror['routes'].values() if route != mirror['english']]
+    generated.append(registry['site']+'/ar/charbel-film-premiere')
     def entry(url):
-        lastmod = f'<lastmod>{lastmods[url]}</lastmod>' if url in lastmods else ''
+        from i18n.sitemap_dates import generated_lastmod
+        changed=generated_lastmod(root,url,lastmods)
+        lastmod = '<lastmod>'+changed+'</lastmod>' if changed else ''
         return f'  <url><loc>{url}</loc>{lastmod}</url>'
-    text = text.replace('</urlset>', '\n' + '\n'.join(entry(url) for url in generated) + '\n</urlset>')
+    text = text.replace('</urlset>', '\n' + '\n'.join(entry(url) for url in dict.fromkeys(generated)) + '\n</urlset>')
     text = re.sub(r'\n[ \t]*\n(?:[ \t]*\n)+', '\n\n', text)
     result[sitemap] = text
-    routing = {'aliases':selector_aliases(registry), 'homes':{code: cfg['home'] for code,cfg in registry['locales'].items()},
+    routing = {'aliases':selector_aliases(registry), 'homes':{code: home_url(registry, code) for code in published_home_locales(registry)},
                'topics':{cfg['relatedEnglish']:{code:page_url(registry,code,topic) for code in topic_locales(registry,topic)} for topic,cfg in registry['topics'].items()}}
-    for mirror in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values():
-        routing['topics'][mirror['english']] = mirror['routes']
+    for mirror in {**registry.get('pageMirrors', {}), **registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values():
+        routing['topics'][mirror['english']] = {**routing['topics'].get(mirror['english'], {}), **mirror['routes']}
     routing['topics']['/saint-charbel-feast-day']['en']='/saint-charbel-feast-day'
     for slug in ('', 'lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica','ludbreg','amsterdam','ivorra','faverney'):
         english = '/miracles/eucharistic/' + slug
@@ -232,7 +308,7 @@ def outputs(root=ROOT):
     start, end = '# i18n-routes:start', '# i18n-routes:end'
     # Localized hubs use real directory indexes. This avoids file/directory name
     # collisions on LiteSpeed and gives every non-English homepage one canonical URL.
-    nondefault = '|'.join(code for code in registry['locales'] if code != registry['defaultLocale'])
+    nondefault = '|'.join(code for code in published_home_locales(registry) if code != registry['defaultLocale'])
     rules = (f'{start}\n'
              f'RewriteRule ^en/?$ / [R=301,L]\n'
              f'RewriteRule ^({nondefault})/index(?:\\.html)?$ /$1/ [R=301,L]\n'
@@ -243,11 +319,26 @@ def outputs(root=ROOT):
     if count != 1:
         raise ValueError('Expected exactly one managed i18n-routes block in .htaccess')
     result[htaccess] = updated
+    for route in json.loads((root/'locales/travel-routes.json').read_text())['destinations']:
+        path=root/(route.lstrip('/')+'.html')
+        result.setdefault(path,path.read_text())
     for path,text in list(result.items()):
         if path.suffix == '.html' and '<header' in text:
             import re as _re
             match = _re.search(r'<html[^>]*lang=["\']([^"\']+)',text)
-            if match: result[path] = tour_nav(text,root,match[1])
+            if match:
+                code=match[1]
+                route='/' + str(path.relative_to(root)).removesuffix('.html')
+                route=route.removesuffix('index') if route.endswith('/index') else route
+                strict_page = any(route == cfg.get('routes', {}).get(code) and code in cfg.get('renderLocales', []) for cfg in registry.get('pageMirrors', {}).values())
+                strict_home = code in registry.get('homepageMirrors', {}).get('renderLocales', []) and route == home_url(registry, code)
+                result[path] = text if strict_home or strict_page else travel_frame(tour_nav(text,root,code),root,code,route,registry)
+    from i18n.travel_metadata import compose_travel_clusters
+    result=compose_travel_clusters(root,registry,result)
+    from i18n.generated_postprocess import postprocess_outputs
+    result = postprocess_outputs(root, registry, catalogs, result)
+    published_home_locales(registry, result, root)
+    validate_partial_outputs(root, registry, result)
     return result
 
 

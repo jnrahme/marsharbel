@@ -40,6 +40,8 @@ try {
     await page.reload();
     assert.equal(await page.locator('[name=story]').inputValue(),revised);
     await page.goto(base+'/');
+    // Homepage restore awaits its catalog; enabled submit marks initialization complete.
+    await page.waitForFunction(()=>!document.querySelector('#home-letter-form button[type=submit]').disabled);
     assert.equal(await page.locator('#home-letter-draft').inputValue(),revised);
     await page.goto(base+'/submit-testimony');
     assert.equal(await page.locator('[name=story]').inputValue(),revised);

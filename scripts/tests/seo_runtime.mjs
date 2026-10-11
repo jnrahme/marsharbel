@@ -49,13 +49,12 @@ try {
     assert.ok((await staticPage.locator('main').innerText()).length > 700, 'Localized content is available without JavaScript');
   }
   await page.goto(base + '/', { waitUntil: 'load' });
-  await page.locator('#sc-language-select').selectOption('fr');
+  assert.equal(await page.locator('#sc-language-select option[value="fr"]').isDisabled(), false);
+  assert.equal(await page.evaluate(() => SC_LANGUAGE_SWITCH.request('fr')), true);
   await page.waitForURL(base + '/fr/');
-  await page.getByRole('link', { name: 'English', exact: true }).click();
-  // Canonical English URL carries no language parameter (P0: parameter URLs are
-  // crawlable duplicates).
-  await page.waitForURL(base + '/');
-  assert.equal(await page.locator('#sc-language-select').inputValue(), 'en');
+  assert.equal(await page.locator('html').getAttribute('lang'), 'fr');
+  assert.equal(await page.locator('link[rel=canonical]').getAttribute('href'), 'https://marsharbel.com/fr/');
+  assert.equal(await page.locator('#sc-language-select').inputValue(), 'fr');
   await noJs.close();
   console.log(`SEO runtime passed: ${urls.length} public pages, 7 noindex pages, and tracking parameters.`);
 } finally {

@@ -4,19 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 <!-- Google tag (gtag.js) -->
-<script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+<script defer src="/analytics-init.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Come pregare il Rosario: una guida semplice</title>
 <meta name="description" content="Scopri le preghiere iniziali del Rosario, come recitare una decina e i misteri gaudiosi, luminosi, dolorosi e gloriosi con i giorni abituali." />
@@ -36,9 +24,13 @@
 <meta property="og:locale:alternate" content="ar_AR" />
 <meta property="og:locale:alternate" content="fr_FR" />
 <meta property="og:locale:alternate" content="es_ES" />
-<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
 <meta property="og:locale:alternate" content="de_DE" />
 <meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="San Charbel" />
 <meta property="og:title" content="Come pregare il Rosario: una guida semplice" />
@@ -46,20 +38,25 @@
 <meta property="og:url" content="https://marsharbel.com/it/rosario" />
 <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="/international.css" />
+<link rel="stylesheet" href="/international.css?v=20261002-ui1" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Come pregare il Rosario: una guida semplice", "description": "Scopri le preghiere iniziali del Rosario, come recitare una decina e i misteri gaudiosi, luminosi, dolorosi e gloriosi con i giorni abituali.", "url": "https://marsharbel.com/it/rosario", "inLanguage": "it", "isPartOf": {"@id": "https://marsharbel.com/#website"}}</script>
+<script id="sc-runtime-labels" type="application/json">{"language.label": "Lingua", "language.popular": "Più usate", "language.all": "Tutte le lingue (A-Z)", "install.label": "Installa l'app", "install.link": "Tocca qui per installare questa app", "install.ios": "Su iPhone, in Safari: tocca \"Condividi\" e poi \"Aggiungi alla schermata Home\".", "install.browser": "Se non compare alcuna finestra, apri il menu del browser e scegli \"Installa app\" o \"Aggiungi alla schermata Home\".", "footer.privacy": "Informativa sulla privacy (in inglese)", "footer.terms": "Termini di utilizzo (in inglese)", "footer.accessibility": "Accessibilità (in inglese)", "language.choose": "Scegli la lingua", "nativeNames": {"en": "English", "ar": "العربية", "fr": "Français", "es": "Español", "pt": "Português", "it": "Italiano", "de": "Deutsch", "pl": "Polski", "ru": "Русский", "hi": "हिन्दी", "th": "ไทย", "zh-Hans": "简体中文"}}</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
 <a class="skip-link" href="#main">Vai al contenuto</a>
-<header><div class="shell masthead"><a class="brand" href="/it/">San Charbel</a><nav class="locale-nav" aria-label="Scegli la lingua"><a href="/en/rosary" hreflang="en" lang="en" dir="ltr">English</a>
-<a href="/ar/rosary" hreflang="ar" lang="ar" dir="rtl">العربية</a>
-<a href="/fr/chapelet" hreflang="fr" lang="fr" dir="ltr">Français</a>
-<a href="/es/rosario" hreflang="es" lang="es" dir="ltr">Español</a>
-<a href="/pt/rosario" hreflang="pt" lang="pt" dir="ltr">Português</a>
-<a href="/it/rosario" hreflang="it" lang="it" dir="ltr" aria-current="page">Italiano</a>
-<a href="/de/rosenkranz" hreflang="de" lang="de" dir="ltr">Deutsch</a>
-<a href="/pl/rozaniec" hreflang="pl" lang="pl" dir="ltr">Polski</a>
-<script>document.addEventListener("click",function(e){var a=e.target&&e.target.closest?e.target.closest("a[hreflang]"):null;if(!a)return;var l=(a.getAttribute("hreflang")||"").toLowerCase();if(l==="x-default")l="en";try{localStorage.setItem("sc_lang_pref",l)}catch(_){}});</script></nav></div></header>
+<header><div class="shell masthead"><a class="brand" href="/it/">San Charbel</a><nav aria-label="Scegli la lingua" class="locale-nav"><a dir="ltr" href="https://marsharbel.com/en/rosary" hreflang="en">Inglese</a>
+<a aria-disabled="true" dir="rtl" hreflang="ar" tabindex="-1">Arabo (in revisione)</a>
+<a aria-disabled="true" dir="ltr" hreflang="fr" tabindex="-1">Francese (in revisione)</a>
+<a aria-disabled="true" dir="ltr" hreflang="es" tabindex="-1">Spagnolo (in revisione)</a>
+<a aria-disabled="true" dir="ltr" hreflang="pt" tabindex="-1">Portoghese (in revisione)</a>
+<a aria-current="page" dir="ltr" href="https://marsharbel.com/it/rosario" hreflang="it">Italiano</a>
+<a aria-disabled="true" dir="ltr" hreflang="de" tabindex="-1">Tedesco (in revisione)</a>
+<a aria-disabled="true" dir="ltr" hreflang="pl" tabindex="-1">Polacco (in revisione)</a>
+<a aria-disabled="true" dir="ltr" hreflang="ru" tabindex="-1">Русский (in revisione)</a>
+<a aria-disabled="true" dir="ltr" hreflang="hi" tabindex="-1">हिन्दी (in revisione)</a>
+<a aria-disabled="true" dir="ltr" hreflang="th" tabindex="-1">ไทย (in revisione)</a>
+<script defer="" src="/locale-pref.js"></script><span class="sc-language-helper">Alcune traduzioni di questa pagina sono in revisione.</span></nav></div></header>
 <main id="main" class="shell" tabindex="-1">
 <a class="back" href="/it/">Pagina iniziale</a>
 <article><h1>Come pregare il Rosario: una guida semplice</h1><p class="intro">Il Rosario accompagna la contemplazione della vita di Gesù con Maria. Puoi pregarlo personalmente, in famiglia o in comunità. Questa guida ne spiega la struttura; le fonti del Vaticano aiutano ad approfondire le preghiere tradizionali.</p>
@@ -67,4 +64,9 @@
 <section id="section-opening" class="section"><h2>Le preghiere iniziali</h2><p>Fai il segno della croce e recita il Credo degli Apostoli. Prega un Padre nostro sul primo grano grande, tre Ave Maria sui piccoli e un Gloria al Padre. Puoi offrire un’intenzione prima di iniziare.</p></section><section id="section-decade" class="section"><h2>Come pregare una decina</h2><p>Annuncia un mistero e contempla brevemente quell’evento del Vangelo. Recita un Padre nostro, dieci Ave Maria e un Gloria. Passa al mistero seguente. Una corona comprende abitualmente cinque decine; alcune comunità aggiungono invocazioni secondo il proprio uso.</p></section><section id="section-joyful" class="section"><h2>Misteri gaudiosi — lunedì e sabato</h2><p>L’Annunciazione; la Visitazione; la Nascita di Gesù; la Presentazione al Tempio; il Ritrovamento di Gesù nel Tempio. Invitano a contemplare l’accoglienza di Cristo e la sua infanzia.</p></section><section id="section-luminous" class="section"><h2>Misteri luminosi — giovedì</h2><p>Il Battesimo di Gesù; le nozze di Cana; l’annuncio del Regno e l’invito alla conversione; la Trasfigurazione; l’istituzione dell’Eucaristia. Rivolgono l’attenzione alla vita pubblica di Cristo.</p></section><section id="section-sorrowful" class="section"><h2>Misteri dolorosi — martedì e venerdì</h2><p>L’Agonia nell’orto; la Flagellazione; l’Incoronazione di spine; Gesù che porta la croce; la Crocifissione. Puoi ricordare chi soffre e chi accompagna queste persone.</p></section><section id="section-glorious" class="section"><h2>Misteri gloriosi — mercoledì e domenica</h2><p>La Risurrezione; l’Ascensione; la Pentecoste; l’Assunzione di Maria; l’Incoronazione di Maria. Questa distribuzione abituale può adattarsi al tempo liturgico e alla preghiera comunitaria.</p></section><section id="section-finish" class="section"><h2>Concludere e continuare</h2><p>Dopo cinque decine, puoi concludere con la Salve Regina e il segno della croce. Se stai imparando, comprendi prima una decina. Se ti distrai, torna con dolcezza alla meditazione senza ricominciare. Alcuni strumenti audio del sito restano in inglese.</p></section><section class="section"><h2>Fonti e riferimenti</h2><ul><li><a href="https://www.vatican.va/special/rosary/documents/misteri_fr.html">Misteri del Rosario (Vaticano, francese)</a></li><li><a href="https://www.vaticannews.va/fr/priere/rosaire.html">Preghiere del Rosario (Vatican News, francese)</a></li></ul></section></article>
 <aside class="related"><h2>Continua la scoperta</h2><ul><li><a href="/it/biografia">San Charbel: biografia e tappe della sua vita</a></li><li><a href="/it/preghiere">Pregare con san Charbel: intenzioni e preghiere</a></li><li><a href="/it/novena">San Charbel: un cammino di preghiera di nove giorni</a></li><li><a href="/it/annaya">Annaya e san Charbel: preparare una visita</a></li></ul><a href="/rosary-intro?lang=en">Risorsa correlata in inglese</a></aside>
 </main><footer class="shell"><p>Sito devozionale indipendente dedicato a san Charbel, senza affiliazione ufficiale al santuario di Annaya.</p></footer>
+<script defer src="/translate.js?v=20260922-1"></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body></html>

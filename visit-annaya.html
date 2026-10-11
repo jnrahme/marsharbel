@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -76,6 +64,12 @@
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Travel",
+        "item": "https://marsharbel.com/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "Visiting Annaya",
         "item": "https://marsharbel.com/visit-annaya"
       }
@@ -119,11 +113,22 @@
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/visit-annaya" />
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/visit-annaya" />
   <!-- hreflang:end -->
+<link rel="stylesheet" href="/travel.css?v=20261002-3" />
+<link rel="alternate" hreflang="en" href="https://marsharbel.com/visit-annaya" />
+<link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/annaya" />
+<link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/annaya" />
+<link rel="alternate" hreflang="es" href="https://marsharbel.com/es/annaya" />
+<link rel="alternate" hreflang="pt" href="https://marsharbel.com/pt/annaya" />
+<link rel="alternate" hreflang="it" href="https://marsharbel.com/it/annaya" />
+<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/annaya" />
+<link rel="alternate" hreflang="pl" href="https://marsharbel.com/pl/annaya" />
+<link rel="alternate" hreflang="ru" href="https://marsharbel.com/ru/annaya" />
+<link rel="alternate" hreflang="zh-Hans" href="https://marsharbel.com/zh-Hans/visit-annaya" />
+<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/visit-annaya" />
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
-<body>
+<body class="travel-page travel-destination">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="topbar">
     <div class="site-shell nav">
@@ -131,9 +136,9 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -141,11 +146,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -169,8 +178,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="active nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="active nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a class="active" href="./visit-annaya" aria-current="page">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -184,38 +194,59 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
-    <section class="hero">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="In this guide"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/travel">Travel</a><span aria-hidden="true">/</span><span aria-current="page">Visiting Annaya</span></nav>
+<!-- i18n-travel-frame:end -->
+<section class="hero travel-split-hero"><figure class="hero-figure"><img src="./media/annaya/annaya-statue-dusk.webp" alt="The statue of Saint Charbel in the monastery courtyard at Annaya at dusk" width="754" height="534" loading="eager" fetchpriority="high" /><figcaption>The statue of Saint Charbel in the monastery courtyard at Annaya, at dusk - the courtyard pilgrims cross on their way to the tomb. Photograph: Fayadjimmy, <a href="https://commons.wikimedia.org/wiki/File:SaintCharbelAnnaya.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption></figure><div class="travel-summary">
       <span class="kicker">Monastery of Saint Maron &middot; Jbeil District, Mount Lebanon</span>
       <h1>Visiting Annaya</h1>
-      <p>A practical pilgrim's guide to the monastery where Saint Charbel lived, died, and lies entombed: how to get there, what to see and in what order, praying at the tomb, the hermitage, the holy oil, and the days that draw the crowds. There is no entrance fee, nothing to book, and everyone is welcome.</p>
-      <figure class="hero-figure"><img src="./media/annaya/annaya-statue-dusk.webp" alt="The statue of Saint Charbel in the monastery courtyard at Annaya at dusk" width="754" height="534" loading="lazy" /><figcaption>The statue of Saint Charbel in the monastery courtyard at Annaya, at dusk - the courtyard pilgrims cross on their way to the tomb. Photograph: Fayadjimmy, <a href="https://commons.wikimedia.org/wiki/File:SaintCharbelAnnaya.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption></figure>
+      <p>A practical pilgrim's guide to the monastery where Saint Charbel lived, died, and lies entombed: how to get there, what to see and in what order, praying at the tomb, the hermitage, the holy oil, and the days that draw the crowds. Everyone is welcome.</p>
+
       <div class="cta-row">
         <a class='btn primary' href='saint-charbel-pilgrimage'>Plan a Full Pilgrimage</a>
         <a class='btn subtle' href='saint-charbel-feast-day'>The Feast at Annaya</a>
         <a class='btn subtle' href='saint-charbel-novena'>Pray the Novena</a>
         <a class='btn subtle' href='miracles'>Miracles &amp; Reports</a>
       </div>
-    </section>
+<p class="enc-trail">Part of the <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>. Read <a href="./history">the full story of his life</a> or browse all topics.</p>
+</div></section>
 
+    <section class="section">
+      <h2>Before You Set Out</h2>
+      <div class="card story">
+        <ol>
+          <li><strong>Check the monastery's official program</strong> for the Mass you want to attend, especially on the 22nd of the month. The <a href="https://saintcharbel.com/" target="_blank" rel="noopener">monastery's website</a> is the place to look.</li>
+          <li><strong>Ask the monastery about visiting hours</strong> and about access to the tomb and the hermitage if anyone in your group needs help getting around.</li>
+          <li><strong>Agree a time to pray and a place to meet</strong> with the people traveling with you, so the logistics do not crowd out the prayer. See also <a href="22nd-of-the-month">the 22nd of the month</a> if you plan to come that day.</li>
+        </ol>
+      </div>
+    </section>
     <section class="section">
       <h2>Where Annaya Is</h2>
       <div class="card story">
-        <p>Annaya is a village in the Jbeil (Byblos) district of Mount Lebanon, roughly <strong>70 kilometers north of Beirut</strong>. The Monastery of Saint Maron sits above the village at about <strong>1,200 meters</strong>, on a forested mountainside of pine and oak with the Mediterranean visible in the distance.</p>
-        <p>The drive from Beirut takes about <strong>90 minutes</strong>: north along the coastal highway to Jbeil, then inland and uphill on a paved mountain road - about 17 kilometers from the coast - all the way to the monastery gates. There is <strong>no regular public transport</strong> to the monastery; most visitors drive, hire a taxi for the day, or join an organized pilgrimage. Parking is available on the grounds.</p>
+        <p>Annaya is a village in the Jbeil (Byblos) district of Mount Lebanon, about <strong>52 kilometers from Beirut</strong>. The Monastery of Saint Maron sits above the village at about <strong>1,200 meters</strong>, on a forested mountainside of pine and oak with the Mediterranean visible in the distance.</p>
+        <p>The drive from Beirut is about 52 kilometers, usually around <strong>90 minutes</strong> depending on traffic: north along the coastal highway to Jbeil, then inland and uphill on a paved mountain road - about 17 kilometers from Jbeil - all the way to the monastery gates. There is <strong>no regular public transport</strong> to the monastery; most visitors drive, hire a taxi for the day, or join an organized pilgrimage. Parking is available on the grounds.</p>
       </div>
     </section>
 
     <section class="section">
       <h2>What to See, and in What Order</h2>
       <div class="card story">
-        <p>The monastery is open to visitors <strong>daily, year-round, with no entrance fee</strong>. You do not need to be Catholic, or Christian, to enter and pray.</p>
+        <p>The monastery <strong>receives visitors daily</strong>; check opening times with the monastery before you travel. You do not need to be Catholic, or Christian, to enter and pray.</p>
         <ul>
           <li><strong>Start at the church that holds the tomb</strong> - the reason people come, and quietest early in the day.</li>
           <li><strong>Then the small museum</strong> of Saint Charbel's vestments and personal belongings.</li>
@@ -229,7 +260,7 @@
     <section class="section">
       <h2>Saint Charbel's Tomb</h2>
       <div class="card story">
-        <p>The tomb is the heart of the pilgrimage: a marble sepulchre inside the large church the Lebanese Maronite Order built after his beatification in 1965 and consecrated in 1974, raised specifically to hold the numbers coming to pray at his grave.</p>
+        <p>The tomb is the heart of the pilgrimage: a marble sepulchre in the monastery's Tomb Church, also called the Church of the Sepulchre. The large Church of Saint Charbel, which the Lebanese Maronite Order built on the western side of the monastery after his beatification in 1965 (it dates from 1974), was raised to hold the numbers coming to pray.</p>
         <p>Pilgrims queue to reach it, and the waiting is part of the visit - people pray as they wait, many carrying a written intention, a photograph of someone sick, sometimes a medical report. At the tomb the gestures are simple: kneel, rest a hand flat on the marble, stay in silence. Many touch the stone and then the part of their body where they ask for healing. Written intentions are left at the tomb.</p>
         <p>The walls nearby are lined with crutches, braces, photographs, and handwritten letters left by those who believe they were healed through his intercession. Prayers rise in Arabic, French, English, Spanish, and more.</p>
         <p>This is a place of prayer before it is a monument: keep phones silent, photography discreet, and conversation low. For a quieter visit, come on an ordinary weekday morning, when you can kneel at the tomb without a queue behind you.</p>
@@ -253,7 +284,7 @@
     <section class="section">
       <h2>Mass at Annaya</h2>
       <div class="card story">
-        <p>Mass is celebrated <strong>daily</strong> at the monastery, usually several times a day, mainly in Arabic in the Maronite rite, and the basilica stays open through the day for private prayer at the tomb. Times shift with the season and change on feast days and the 22nd of the month; they are posted at the church entrance. If you are traveling for a particular Mass, confirm with the monastery directly before you go rather than relying on a schedule found online.</p>
+        <p>Mass is celebrated <strong>daily</strong> at the monastery, usually several times a day, mainly in Arabic in the Maronite rite, and the church stays open through the day for private prayer at the tomb. Times shift with the season and change on feast days and the 22nd of the month; they are posted at the church entrance. If you are traveling for a particular Mass, confirm with the monastery directly before you go rather than relying on a schedule found online.</p>
       </div>
     </section>
 
@@ -296,19 +327,26 @@
         </ul>
       </div>
     </section>
-  <!-- i18n-navigation:start -->
-<nav class="footer-locales" aria-label="Languages"><a href="/" hreflang="en" lang="en" dir="ltr">English</a> <span aria-hidden="true">-</span> <a href="/ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a> <span aria-hidden="true">-</span> <a href="/fr/" hreflang="fr" lang="fr" dir="ltr">Français</a> <span aria-hidden="true">-</span> <a href="/es/" hreflang="es" lang="es" dir="ltr">Español</a> <span aria-hidden="true">-</span> <a href="/pt/" hreflang="pt" lang="pt" dir="ltr">Português</a> <span aria-hidden="true">-</span> <a href="/it/" hreflang="it" lang="it" dir="ltr">Italiano</a> <span aria-hidden="true">-</span> <a href="/de/" hreflang="de" lang="de" dir="ltr">Deutsch</a> <span aria-hidden="true">-</span> <a href="/pl/" hreflang="pl" lang="pl" dir="ltr">Polski</a></nav>
-<!-- i18n-navigation:end -->
+
 </main>
   </main>
 
   <footer class="footer">
     <div class="site-shell">Visiting Annaya. Author: Please pray for the person who made this website.</div>
-  </footer>
+  <div class="site-shell">
+<!-- i18n-navigation:start -->
+<nav aria-label="Languages" class="footer-locales"><a dir="ltr" href="/" hreflang="en" lang="en">English</a> <span aria-hidden="true">-</span> <a dir="rtl" href="/ar/" hreflang="ar" lang="ar">العربية</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/fr/" hreflang="fr" lang="fr">Français</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/es/" hreflang="es" lang="es">Español</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/pt/" hreflang="pt" lang="pt">Português</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/it/" hreflang="it" lang="it">Italiano</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/de/" hreflang="de" lang="de">Deutsch</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/pl/" hreflang="pl" lang="pl">Polski</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/ru/" hreflang="ru" lang="ru">Русский</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/th/" hreflang="th" lang="th">ไทย</a></nav>
+<!-- i18n-navigation:end -->
+</div>
+</footer>
 
   <script defer src="app.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

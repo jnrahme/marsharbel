@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -76,6 +64,12 @@
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Legacy",
+        "item": "https://marsharbel.com/saint-charbel-encyclopedia"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "Gallery",
         "item": "https://marsharbel.com/gallery"
       }
@@ -125,7 +119,8 @@
   </script>
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20261002-share-2" />
+  <link rel="stylesheet" href="styles.css?v=20261003-b5a" />
+  <link rel="stylesheet" href="media-subnav.css" />
   <style>
     /* Reserve a separate row for source captions in the image viewer. */
     #gallery-lightbox { grid-template-rows: minmax(0, 1fr) auto; padding-top: 4.5rem; background: rgb(4, 8, 12); }
@@ -142,6 +137,7 @@
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/gallery" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/gallery" />
   <!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -154,9 +150,9 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -164,11 +160,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -192,8 +192,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -207,19 +208,28 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="active nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a class="active" href="./gallery" aria-current="page">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
-  <main id="main-content" class="site-shell" tabindex="-1">
+  <main id="main-content" class="site-shell gallery-page" tabindex="-1">
+    <nav class="media-subnav" aria-label="Media"><span class="media-subnav-label">Media</span><a href="./music">Music</a><a href="./videos">Video</a><a href="./gallery" aria-current="page">Gallery</a></nav>
     <section class="hero">
       <span class="kicker reveal">Saint Charbel Gallery</span>
       <h1 class="reveal">Real Images & Devotional Archive</h1>
       <p class="reveal">
         The gallery gathers images used in Saint Charbel devotion: a crowd scene, a sepia portrait, an image shared with a testimony account, the historic photograph of Saint Charbel, and a series of AI-assisted devotional portraits and comparison images, each clearly labeled. Click any image to open it full-screen and move through the collection with the arrow keys.
       </p>
+      <figure class="scripture-quote"><blockquote><p>"One thing I have asked of the Lord, this will I seek after; that I may dwell in the house of the Lord all the days of my life. That I may see the delight of the Lord, and may visit his temple."</p></blockquote><figcaption><cite>Psalm 26:4 (Douay-Rheims; Psalm 27:4 in modern numbering)</cite></figcaption><p class="scripture-note">The images here are made for quiet looking. Stay with one as long as you like.</p></figure>
     </section>
 
     <section class="section">
@@ -237,7 +247,7 @@
 
         <figure class="gallery-card">
           <a class="gallery-item" data-index="1" href="gallery/8-saint-charbel-sepia-portrait.jpg">
-            <img src="gallery/8-saint-charbel-sepia-portrait.jpg" alt="Sepia archival close-up photograph of Saint Charbel's face" width="800" height="1084" loading="lazy" decoding="async" />
+            <img src="gallery/8-saint-charbel-sepia-portrait-card.webp" alt="Sepia archival close-up photograph of Saint Charbel's face" width="1122" height="1520" loading="lazy" decoding="async" />
           </a>
         </figure>
 
@@ -259,7 +269,7 @@
           <a class="gallery-item" data-index="4" href="gallery/charbel-rendition-01-faithful.webp?v=20261002-dark-beard-3">
             <img src="gallery/charbel-rendition-01-faithful.webp?v=20261002-dark-beard-3" alt="AI transformation, not a photograph: Saint Charbel in a black cap and heavy black robe, eyes lowered, dark beard with a grey center streak, against a plain stone-colored wall" width="1122" height="1402" loading="lazy" decoding="async" />
           </a>
-          <figcaption>This is how the creator of this website saw Saint Charbel when he appeared to him on December 22. An artistic rendition of that moment - not a photograph. AI transformation, series candidate 1: an AI-assisted imagined portrait.</figcaption>
+          <figcaption>The creator of this website reports seeing Saint Charbel on December 22. This artistic rendition reflects his personal account, not independent verification or a photograph. AI transformation, series candidate 1: an AI-assisted imagined portrait.</figcaption>
         </figure>
 
         <figure class="gallery-card">
@@ -285,7 +295,7 @@
 
         <figure class="gallery-card">
           <a class="gallery-item" data-index="8" href="gallery/charbel-window-rendition.webp?v=20261002-dark-beard-3">
-            <img src="gallery/charbel-window-rendition.webp?v=20261002-dark-beard-3" alt="AI transformation, not a photograph: close portrait of Saint Charbel in a black monastic hood, eyes lowered, with a full dark beard, a lit window blurred behind him" width="2244" height="2804" loading="lazy" decoding="async" />
+            <img src="gallery/charbel-window-rendition-card.webp?v=20261002-dark-beard-3" alt="AI transformation, not a photograph: close portrait of Saint Charbel in a black monastic hood, eyes lowered, with a full dark beard, a lit window blurred behind him" width="1122" height="1402" loading="lazy" decoding="async" />
           </a>
           <figcaption>AI transformation, not a photograph. Series, final: an AI-assisted close portrait of Saint Charbel in an imagined hermitage, based on the historic photograph above. It shows how he might have looked and is not a record of any real scene.</figcaption>
         </figure>
@@ -347,7 +357,12 @@
   <script defer src="global-audio-player.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
+  <script defer src="media-motion.js"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
   <script defer src="share.js?v=20261002-share-2" data-share-mode="gallery"></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

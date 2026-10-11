@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -76,6 +64,12 @@
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Travel",
+        "item": "https://marsharbel.com/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "The Cedars of God: Lebanon's Sacred Cedar Forest",
         "item": "https://marsharbel.com/cedars-of-god-lebanon"
       }
@@ -133,7 +127,7 @@
       "name": "How high is the Cedars of God forest?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "UNESCO places it between 1,900 and 2,050 meters above sea level, east of the village of Bcharr\u00e9."
+        "text": "UNESCO places it between 1,900 and 2,050 meters above sea level, east of the village of Bsharri."
       }
     },
     {
@@ -167,11 +161,16 @@
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/cedars-of-god-lebanon" />
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/cedars-of-god-lebanon" />
   <!-- hreflang:end -->
+<link rel="stylesheet" href="/travel.css?v=20261002-3" />
+<link rel="alternate" hreflang="en" href="https://marsharbel.com/cedars-of-god-lebanon" />
+<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/cedars-of-god-lebanon" />
+<link rel="alternate" hreflang="ru" href="https://marsharbel.com/ru/cedars-of-god-lebanon" />
+<link rel="alternate" hreflang="zh-Hans" href="https://marsharbel.com/zh-Hans/cedars-of-god-lebanon" />
+<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/cedars-of-god-lebanon" />
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
-<body>
+<body class="travel-page travel-destination">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="topbar">
     <div class="site-shell nav">
@@ -179,9 +178,9 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -189,11 +188,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -217,8 +220,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="active nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="active nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -232,14 +236,24 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
-    <section class="hero">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="In this guide"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/travel">Travel</a><span aria-hidden="true">/</span><span aria-current="page">The Cedars of God: Lebanon&#x27;s Sacred Cedar Forest</span></nav>
+<!-- i18n-travel-frame:end -->
+<section class="hero travel-split-hero"><figure class="hero-figure"><img src="./media/annaya/lebanon-cedars.webp" alt="Ancient cedar trees in the Cedars of God forest near Bsharri" width="1100" height="825" loading="eager" fetchpriority="high" /><figcaption>The Cedars of God near Bsharri. Photograph: Vyacheslav Argenberg, <a href="https://commons.wikimedia.org/wiki/File:Cedars_of_God_(Lebanon_cedar_forest),_Lebanon.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Resized and converted to WebP.</figcaption></figure><div class="travel-summary">
       <span class="kicker">Places of Lebanon</span>
       <h1>The Cedars of God: Lebanon's Sacred Cedar Forest</h1>
       <p>The Cedars of God (Arz el-Rab) is Lebanon's oldest cedar grove, on Mount Makmel above Bsharri, at about 1,900 to 2,050 meters. The Lebanon cedar is named 103 times in the Bible. The grove and the Qadisha Valley below it are together a UNESCO World Heritage Site, inscribed in 1998.</p>
@@ -248,13 +262,13 @@
         <a class='btn subtle' href='./bekaa-kafra'>Bekaa Kafra</a>
         <a class='btn subtle' href='./saint-charbel-pilgrimage'>Plan a Pilgrimage</a>
       </div>
-      <figure class="hero-figure"><img src="./media/annaya/lebanon-cedars.webp" alt="Ancient cedar trees in the Cedars of God forest near Bsharri" width="1100" height="825" loading="lazy" /><figcaption>The Cedars of God near Bsharri. Photograph: Vyacheslav Argenberg, <a href="https://commons.wikimedia.org/wiki/File:Cedars_of_God_(Lebanon_cedar_forest),_Lebanon.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Resized and converted to WebP.</figcaption></figure>
-    </section>
+
+</div></section>
 
     <section class="section">
       <h2>What the Cedars of God Are</h2>
       <div class="card story">
-        <p>Arz el-Rab means "Cedars of the Lord." The grove stands on Mount Makmel, between 1,900 and 2,050 meters, to the east of the village of Bcharré in North Lebanon. UNESCO calls it the last vestige of the antique forests of Lebanon and one of the rare sites where the Lebanon cedar (<em>Cedrus libani</em>) still grows.</p>
+        <p>Arz el-Rab means "Cedars of the Lord." The grove stands on Mount Makmel, between 1,900 and 2,050 meters, to the east of the village of Bsharri in North Lebanon. UNESCO calls it the last vestige of the antique forests of Lebanon and one of the rare sites where the Lebanon cedar (<em>Cedrus libani</em>) still grows.</p>
         <p>Some of the trees here are more than 30 meters tall and about 2,000 years old, according to reporting in The National. The cedar sits at the center of Lebanon's national flag.</p>
       </div>
     </section>
@@ -269,7 +283,7 @@
     <section class="section">
       <h2>A Forest the Church Protects</h2>
       <div class="card story">
-        <p>The Maronite Church has long protected the grove. A small chapel stands in the middle of the grove, and a Mass is celebrated there each year to honor the cedars. The Associated Press reported in 2023 on a Feast of the Transfiguration gathering at a mid-19th-century chapel in the forest, where the Maronite Patriarch, Beshara al-Rai, preached and the people sang hymns in Arabic and Aramaic.</p>
+        <p>The Maronite Church has long protected the grove. A small chapel stands in the middle of the grove, and a Mass is celebrated there each year to honor the cedars. The Associated Press reported in 2023 on a Feast of the Transfiguration gathering at a mid-19th-century chapel in the forest, where the Maronite Patriarch, Bechara Boutros al-Rai, preached and the people sang hymns in Arabic and Aramaic.</p>
         <p>The Church keeps strict rules to protect the forest and keep building out of it. Kiosks, tourist shops and a large car park are set far away from the trees.</p>
       </div>
     </section>
@@ -278,14 +292,14 @@
       <h2>The Cedars, the Qadisha Valley and Saint Charbel</h2>
       <div class="card story">
         <p>The Cedars overlook the <a href="./qadisha-valley">Qadisha Valley</a>, the "Holy Valley," where Maronite monks and hermits took refuge for centuries. UNESCO lists the valley and the cedar forest as one World Heritage Site. The cliffs of the valley hold the monasteries of <a href="./qannoubine-monastery">Qannoubine</a> and <a href="./qozhaya-monastery">Qozhaya</a>.</p>
-        <p>The Cedars are in the same mountains as <a href="./bekaa-kafra">Bekaa Kafra</a>, the village where Saint Charbel was born in 1828, and our <a href="./saint-charbel-pilgrimage">pilgrimage guide</a> places the grove about an hour from the village. Pilgrims often add Bsharri and the Cedars to a week-long Charbel itinerary.</p>
+        <p>The Cedars are in the same mountains as <a href="./bekaa-kafra">Bekaa Kafra</a>, the village where Saint Charbel was born in 1828, and our <a href="./saint-charbel-pilgrimage">pilgrimage guide</a> places the grove about a 20-minute drive from the village. Pilgrims often add Bsharri and the Cedars to a week-long Charbel itinerary.</p>
       </div>
     </section>
 
     <section class="section">
       <h2>Caring for the Cedars</h2>
       <div class="card story">
-        <p>The long-term survival of the forest is in doubt as temperatures rise. Local environmentalists told the Associated Press in 2023 that warmer weather has brought larger colonies of pests that feed on the cedars' bark. A Bcharre environmental group has planted about 200,000 cedars at higher altitudes over the years, and about 180,000 of them survived.</p>
+        <p>The long-term survival of the forest is in doubt as temperatures rise. Local environmentalists told the Associated Press in 2023 that warmer weather has brought larger colonies of pests that feed on the cedars' bark. A Bsharri environmental group has planted about 200,000 cedars at higher altitudes over the years, and about 180,000 of them survived.</p>
       </div>
     </section>
 
@@ -303,7 +317,7 @@
         <h3>What are the Cedars of God?</h3>
         <p>The last great grove of ancient Lebanon cedars, on Mount Makmel above Bsharri in North Lebanon. In Arabic it is Arz el-Rab, "Cedars of the Lord."</p>
         <h3>How high is the Cedars of God forest?</h3>
-        <p>UNESCO places it between 1,900 and 2,050 meters above sea level, east of the village of Bcharré.</p>
+        <p>UNESCO places it between 1,900 and 2,050 meters above sea level, east of the village of Bsharri.</p>
         <h3>How old are the cedars?</h3>
         <p>Some of the trees are reported to be more than 30 meters tall and about 2,000 years old. Counts and ages vary between sources, so treat them as estimates.</p>
         <h3>Why are the cedars sacred?</h3>
@@ -338,5 +352,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

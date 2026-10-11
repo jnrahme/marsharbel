@@ -1,0 +1,1079 @@
+{
+  "version": 1,
+  "master": "saint-charbel-places-lebanon.html",
+  "masterSha256": "67400107780b70f8f8b8d0175134ad110b89a849a5637200b6171adbb7216ec5",
+  "sourceRevision": "1be64cf5",
+  "bindings": [
+    {
+      "key": "saint-charbel-places-lebanon.metadata.title-saint-charbel-s-lebanon-bekaa-kafra-mayfouq-annaya",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Saint Charbel's Lebanon | Bekaa Kafra, Mayfouq & Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.metadata.description-follow-saint-charbel-s-life-across-lebanon-bekaa",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Follow Saint Charbel's life across Lebanon: Bekaa Kafra, his birthplace; Mayfouq, where he became a monk; and Annaya, his hermitage and tomb.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-places-lebanon.metadata.og-title-saint-charbel-s-lebanon-bekaa-kafra-mayfouq-annaya",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Saint Charbel's Lebanon | Bekaa Kafra, Mayfouq & Annaya",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-places-lebanon.metadata.og-description-follow-saint-charbel-s-life-across-lebanon-be",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Follow Saint Charbel's life across Lebanon: Bekaa Kafra, his birthplace; Mayfouq, where he became a monk; and Annaya, his hermitage and tomb.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-places-lebanon.metadata.twitter-title-saint-charbel-s-lebanon-bekaa-kafra-mayfouq-an",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Saint Charbel's Lebanon | Bekaa Kafra, Mayfouq & Annaya",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-places-lebanon.metadata.twitter-description-follow-saint-charbel-s-life-across-leban",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Follow Saint Charbel's life across Lebanon: Bekaa Kafra, his birthplace; Mayfouq, where he became a monk; and Annaya, his hermitage and tomb.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-places-lebanon.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.accessibility.in-this-guide",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "saint-charbel-places-lebanon.body.home",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.body.travel",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.body.saint-charbel-s-lebanon-bekaa-kafra-mayfouq-annaya",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Saint Charbel's Lebanon: Bekaa Kafra, Mayfouq & Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.body.a-pilgrimage-map-of-his-life",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "A Pilgrimage Map of His Life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.saint-charbel-s-lebanon.saint-charbel-s-lebanon-bekaa-kafra-mayfouq-annaya",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Saint Charbel's Lebanon: Bekaa Kafra, Mayfouq & Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.saint-charbel-s-lebanon.saint-charbel-s-whole-life-fits-on-a-small-map-of-the-lebane",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Saint Charbel's whole life fits on a small map of the Lebanese mountains. He was born in Bekaa Kafra, widely known as the country's highest village; he became a monk at Mayfouq; and he lived, died, and lies entombed at Annaya. Visiting the three in order is walking his story from beginning to end - and the new Darb Mar Charbel trail now ties them together on foot.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.saint-charbel-s-lebanon.the-annaya-visit-guide",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "The Annaya Visit Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.saint-charbel-s-lebanon.darb-mar-charbel-trail",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Darb Mar Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.saint-charbel-s-lebanon.his-full-history",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "His Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.saint-charbel-s-lebanon.part-of-the",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Part of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.saint-charbel-s-lebanon.saint-charbel-encyclopedia",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.saint-charbel-s-lebanon.read",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ". Read",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-places-lebanon.saint-charbel-s-lebanon.the-full-story-of-his-life",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "the full story of his life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.saint-charbel-s-lebanon.or-browse-all-topics",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "or browse all topics.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.bekaa-kafra-where-it-began-1828-1851",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "Bekaa Kafra: Where It Began (1828-1851)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.youssef-antoun-makhlouf-the-future-saint-charbel-was-born-he",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Youssef Antoun Makhlouf - the future Saint Charbel - was born here, traditionally on",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.may-8-1828",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "May 8, 1828",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.the-youngest-of-five-children-in-a-poor-maronite-farming-fam",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", the youngest of five children in a poor Maronite farming family. Bekaa Kafra sits in the Bsharri district of North Lebanon, high above the town of Bsharri and looking across the Qadisha Valley, the gorge that sheltered Maronite hermits for centuries. The built-up village stands at roughly",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.1-800-meters",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(2)",
+      "source": "1,800 meters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.which-is-why-it-is-widely-known-as-the-highest-permanently-i",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", which is why it is widely known as the highest permanently inhabited village in Lebanon. The ancient",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.cedars-of-god",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.stand-a-short-drive-away",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "stand a short drive away.",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.as-a-boy-he-tended-the-family-s-flock-on-these-slopes-and-he",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "As a boy he tended the family's flock on these slopes, and he found a secluded cave where he would slip away to pray for hours - the spot villagers still know as the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.saint-s-cave",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Saint's Cave",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.his",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ". His",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.birth-house",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(2)",
+      "source": "birth house",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.still-stands-after-his-death-and-the-spread-of-devotion-the",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "still stands: after his death and the spread of devotion, the Lebanese Maronite Order acquired the family home, and monks care for it today as a small shrine and museum of his childhood world - plain rooms, simple tools, nothing grand, which is exactly what moves the pilgrims who come.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.visiting",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "Visiting:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.bekaa-kafra-is-roughly-120-kilometers-from-beirut-about-two",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "Bekaa Kafra is roughly 120 kilometers from Beirut, about two hours by car into the high mountains. Give it a full day and pair it with Bsharri, the Cedars, and the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.qadisha-valley",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.below-in-winter-the-village-can-sit-under-deep-snow-check-ro",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "below. In winter the village can sit under deep snow - check road conditions before you set out, and confirm the birth house's hours locally, as they shift with the season.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-places-lebanon.mayfouq-where-he-became.mayfouq-where-he-became-a-monk-1851-1853",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "Mayfouq: Where He Became a Monk (1851-1853)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.mayfouq-where-he-became.in-1851-at-twenty-three-youssef-left-his-village-and-walked",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "In 1851, at twenty-three, Youssef left his village and walked south to the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.mayfouq-where-he-became.monastery-of-our-lady-of-mayfouq",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Monastery of Our Lady of Mayfouq",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.mayfouq-where-he-became.the-novitiate-of-the-lebanese-maronite-order-there-he-receiv",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", the novitiate of the Lebanese Maronite Order. There he received the habit and took the name",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-places-lebanon.mayfouq-where-he-became.charbel",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(2)",
+      "source": "Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.mayfouq-where-he-became.after-an-early-martyr-of-the-church-of-antioch-the-name-the",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", after an early martyr of the Church of Antioch - the name the whole world now knows him by. Mayfouq was his school of monastic beginnings: prayer, work, fasting, and obedience, the pattern he would keep for the rest of his life.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-places-lebanon.mayfouq-where-he-became.mayfouq-matters-to-pilgrims-for-a-second-reason-it-is-the-fa",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Mayfouq matters to pilgrims for a second reason: it is the far end of the first open section of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.mayfouq-where-he-became.darb-mar-charbel-trail",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Darb Mar Charbel trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.mayfouq-where-he-became.which-runs-from-annaya-to-mayfouq-walking-that-section-you-c",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ", which runs from Annaya to Mayfouq. Walking that section, you cross in a day the same ground the young novice crossed for good in 1851.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.annaya-where-he-lived-died-and-lies-entombed-1853-1898",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "Annaya: Where He Lived, Died, and Lies Entombed (1853-1898)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.in-1853-brother-charbel-moved-to-the",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "In 1853 Brother Charbel moved to the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.monastery-of-saint-maron-in-annaya",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Monastery of Saint Maron in Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.in-the-jbeil-district-of-mount-lebanon-and-made-his-perpetua",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", in the Jbeil district of Mount Lebanon, and made his perpetual vows. He was ordained a priest in 1859. After more than two decades of monastic life he received permission in 1875 to withdraw to the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.hermitage-of-saints-peter-and-paul",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(2)",
+      "source": "hermitage of Saints Peter and Paul",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.on-the-hill-above-the-monastery-and-there-he-spent-his-final",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "on the hill above the monastery - and there he spent his final twenty-three years in silence, prayer, and penance, until his death on",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.christmas-eve-1898",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(3)",
+      "source": "Christmas Eve 1898",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.text",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.annaya-is-the-destination-of-the-pilgrimage-the-tomb-in-the",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Annaya is the destination of the pilgrimage: the tomb in the great church, the hermitage above, the holy oil, daily Mass, and the crowds of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.22nd-of-every-month",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "22nd of every month",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.and-the",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "and the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.july-feast",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "July feast",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.it-is-also-where",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ". It is also where",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.pope-leo-xiv-came-as-a-pilgrim-on-december-1-2025",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(3)",
+      "source": "Pope Leo XIV came as a pilgrim on December 1, 2025",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.the-first-pope-ever-to-pray-at-the-tomb-our",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "- the first pope ever to pray at the tomb. Our",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.annaya-visit-guide",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(4)",
+      "source": "Annaya visit guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.annaya-where-he-lived-di.covers-the-drive-the-order-of-what-to-see-and-the-practical",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "covers the drive, the order of what to see, and the practical details.",
+      "kind": "text",
+      "nodeIndex": 8
+    },
+    {
+      "key": "saint-charbel-places-lebanon.how-the-three-places-con.how-the-three-places-connect",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "How the Three Places Connect",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.how-the-three-places-con.the-geography-tells-the-theology-bekaa-kafra-is-the-root-a-m",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The geography tells the theology. Bekaa Kafra is the root: a mountain childhood of work and prayer. Mayfouq is the calling: the doorway into religious life. Annaya is the gift complete: forty-five years of monastic fidelity, twenty-three of them in a hermit's cell. Pilgrims who can only manage one stop choose Annaya, because the tomb is there. Pilgrims with two or three days add Bekaa Kafra and the north, and walk the trail's first open section between Annaya and Mayfouq. For the full plan - routes, Google Maps locations, itineraries, and what else to see in Lebanon - use our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.how-the-three-places-con.saint-charbel-pilgrimage-guide",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel pilgrimage guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.how-the-three-places-con.including",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", including",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-places-lebanon.how-the-three-places-con.bkerke",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Bkerke",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.how-the-three-places-con.text",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-places-lebanon.how-the-three-places-con.beyond-the-three-lie-the-places-his-devotion-reached-rather",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Beyond the three lie the places his devotion reached rather than his feet: the shrine of Our Lady of Lebanon at",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.how-the-three-places-con.harissa",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.how-the-three-places-con.where-the-trail-is-planned-to-end-and-the-churches-and-shrin",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ", where the trail is planned to end, and the churches and shrines that bear his name on every continent the Lebanese carried him to - mapped on our",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-places-lebanon.how-the-three-places-con.saint-charbel-around-the-world",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Saint Charbel around the world",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.how-the-three-places-con.page",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "page.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-places-lebanon.sources.sources",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.sources.wikipedia-bekaa-kafra-village-location-altitude-and-status-a",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Wikipedia: Bekaa Kafra - village location, altitude, and status as Lebanon's highest village",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.sources.vatican-state-saint-of-the-day-saint-charbel-makhlouf-his-ch",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Vatican State, Saint of the Day: Saint Charbel Makhlouf - his childhood cave, entry into the Order, ordination, hermitage, and death",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.sources.monastery-of-saint-maron-annaya-saint-charbel-biography",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Monastery of Saint Maron, Annaya: Saint Charbel biography",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.sources.lebanon-traveler-darb-mar-charbel-trail-sections-including-a",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Lebanon Traveler: Darb Mar Charbel trail sections, including Annaya to Mayfouq",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.sources.osv-news-pope-leo-is-first-pontiff-to-go-to-st-charbel-s-tom",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "OSV News: Pope Leo is first pontiff to go to St. Charbel's tomb - visit is source of great joy for Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-places-lebanon.footer.saint-charbel-s-lebanon-author-please-pray-for-the-person-wh",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Saint Charbel's Lebanon. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "saint-charbel-places-lebanon.metadata.title-saint-charbel-s-lebanon-bekaa-kafra-mayfouq-annaya": "Saint Charbel's Lebanon | Bekaa Kafra, Mayfouq & Annaya",
+    "saint-charbel-places-lebanon.metadata.description-follow-saint-charbel-s-life-across-lebanon-bekaa": "Follow Saint Charbel's life across Lebanon: Bekaa Kafra, his birthplace; Mayfouq, where he became a monk; and Annaya, his hermitage and tomb.",
+    "saint-charbel-places-lebanon.metadata.og-title-saint-charbel-s-lebanon-bekaa-kafra-mayfouq-annaya": "Saint Charbel's Lebanon | Bekaa Kafra, Mayfouq & Annaya",
+    "saint-charbel-places-lebanon.metadata.og-description-follow-saint-charbel-s-life-across-lebanon-be": "Follow Saint Charbel's life across Lebanon: Bekaa Kafra, his birthplace; Mayfouq, where he became a monk; and Annaya, his hermitage and tomb.",
+    "saint-charbel-places-lebanon.metadata.twitter-title-saint-charbel-s-lebanon-bekaa-kafra-mayfouq-an": "Saint Charbel's Lebanon | Bekaa Kafra, Mayfouq & Annaya",
+    "saint-charbel-places-lebanon.metadata.twitter-description-follow-saint-charbel-s-life-across-leban": "Follow Saint Charbel's life across Lebanon: Bekaa Kafra, his birthplace; Mayfouq, where he became a monk; and Annaya, his hermitage and tomb.",
+    "saint-charbel-places-lebanon.body.skip-to-main-content": "Skip to main content",
+    "saint-charbel-places-lebanon.header.text": "✦",
+    "saint-charbel-places-lebanon.header.saint-charbel": "Saint Charbel",
+    "saint-charbel-places-lebanon.accessibility.primary": "Primary",
+    "saint-charbel-places-lebanon.header.home": "Home",
+    "saint-charbel-places-lebanon.header.legacy": "Legacy",
+    "saint-charbel-places-lebanon.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "saint-charbel-places-lebanon.header.full-history": "Full History",
+    "saint-charbel-places-lebanon.header.miracles": "Miracles",
+    "saint-charbel-places-lebanon.header.miracles-reports": "Miracles & Reports",
+    "saint-charbel-places-lebanon.header.eucharistic-miracles": "Eucharistic Miracles",
+    "saint-charbel-places-lebanon.header.letters": "Letters",
+    "saint-charbel-places-lebanon.header.voice-testimony": "Voice Testimony",
+    "saint-charbel-places-lebanon.header.saints": "Saints",
+    "saint-charbel-places-lebanon.header.children-s-books": "Children's Books",
+    "saint-charbel-places-lebanon.header.prayer": "Prayer",
+    "saint-charbel-places-lebanon.header.prayer-library": "Prayer Library",
+    "saint-charbel-places-lebanon.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "saint-charbel-places-lebanon.header.prayer-for-the-sick": "Prayer for the Sick",
+    "saint-charbel-places-lebanon.header.prayer-for-healing": "Prayer for Healing",
+    "saint-charbel-places-lebanon.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "saint-charbel-places-lebanon.header.prayer-for-depression": "Prayer for Depression",
+    "saint-charbel-places-lebanon.header.prayer-for-students": "Prayer for Students",
+    "saint-charbel-places-lebanon.header.prayer-for-addiction": "Prayer for Addiction",
+    "saint-charbel-places-lebanon.header.prayer-for-family": "Prayer for Family",
+    "saint-charbel-places-lebanon.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "saint-charbel-places-lebanon.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "saint-charbel-places-lebanon.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "saint-charbel-places-lebanon.header.saint-charbel-novena": "Saint Charbel Novena",
+    "saint-charbel-places-lebanon.header.feast-day": "Feast Day",
+    "saint-charbel-places-lebanon.header.rosary-guide": "Rosary Guide",
+    "saint-charbel-places-lebanon.header.rosary-minibook": "Rosary Minibook",
+    "saint-charbel-places-lebanon.header.mystery-meditation": "Mystery Meditation",
+    "saint-charbel-places-lebanon.header.become-like-him": "Become Like Him",
+    "saint-charbel-places-lebanon.header.travel": "Travel",
+    "saint-charbel-places-lebanon.header.visiting-annaya": "Visiting Annaya",
+    "saint-charbel-places-lebanon.header.annaya-online-tour": "Annaya Online Tour",
+    "saint-charbel-places-lebanon.header.bekaa-kafra": "Bekaa Kafra",
+    "saint-charbel-places-lebanon.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "saint-charbel-places-lebanon.header.the-cedars-of-god": "the Cedars of God",
+    "saint-charbel-places-lebanon.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "saint-charbel-places-lebanon.header.qadisha-valley": "Qadisha Valley",
+    "saint-charbel-places-lebanon.header.qannoubine-monastery": "Qannoubine Monastery",
+    "saint-charbel-places-lebanon.header.qozhaya-monastery": "Qozhaya Monastery",
+    "saint-charbel-places-lebanon.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "saint-charbel-places-lebanon.header.the-hermitage": "The Hermitage",
+    "saint-charbel-places-lebanon.header.saint-charbel-trail": "Saint Charbel Trail",
+    "saint-charbel-places-lebanon.header.news": "News",
+    "saint-charbel-places-lebanon.accessibility.in-this-guide": "In this guide",
+    "saint-charbel-places-lebanon.body.home": "Home",
+    "saint-charbel-places-lebanon.body.text": "/",
+    "saint-charbel-places-lebanon.body.travel": "Travel",
+    "saint-charbel-places-lebanon.body.saint-charbel-s-lebanon-bekaa-kafra-mayfouq-annaya": "Saint Charbel's Lebanon: Bekaa Kafra, Mayfouq & Annaya",
+    "saint-charbel-places-lebanon.body.a-pilgrimage-map-of-his-life": "A Pilgrimage Map of His Life",
+    "saint-charbel-places-lebanon.saint-charbel-s-lebanon.saint-charbel-s-lebanon-bekaa-kafra-mayfouq-annaya": "Saint Charbel's Lebanon: Bekaa Kafra, Mayfouq & Annaya",
+    "saint-charbel-places-lebanon.saint-charbel-s-lebanon.saint-charbel-s-whole-life-fits-on-a-small-map-of-the-lebane": "Saint Charbel's whole life fits on a small map of the Lebanese mountains. He was born in Bekaa Kafra, widely known as the country's highest village; he became a monk at Mayfouq; and he lived, died, and lies entombed at Annaya. Visiting the three in order is walking his story from beginning to end - and the new Darb Mar Charbel trail now ties them together on foot.",
+    "saint-charbel-places-lebanon.saint-charbel-s-lebanon.the-annaya-visit-guide": "The Annaya Visit Guide",
+    "saint-charbel-places-lebanon.saint-charbel-s-lebanon.darb-mar-charbel-trail": "Darb Mar Charbel Trail",
+    "saint-charbel-places-lebanon.saint-charbel-s-lebanon.his-full-history": "His Full History",
+    "saint-charbel-places-lebanon.saint-charbel-s-lebanon.part-of-the": "Part of the",
+    "saint-charbel-places-lebanon.saint-charbel-s-lebanon.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "saint-charbel-places-lebanon.saint-charbel-s-lebanon.read": ". Read",
+    "saint-charbel-places-lebanon.saint-charbel-s-lebanon.the-full-story-of-his-life": "the full story of his life",
+    "saint-charbel-places-lebanon.saint-charbel-s-lebanon.or-browse-all-topics": "or browse all topics.",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.bekaa-kafra-where-it-began-1828-1851": "Bekaa Kafra: Where It Began (1828-1851)",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.youssef-antoun-makhlouf-the-future-saint-charbel-was-born-he": "Youssef Antoun Makhlouf - the future Saint Charbel - was born here, traditionally on",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.may-8-1828": "May 8, 1828",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.the-youngest-of-five-children-in-a-poor-maronite-farming-fam": ", the youngest of five children in a poor Maronite farming family. Bekaa Kafra sits in the Bsharri district of North Lebanon, high above the town of Bsharri and looking across the Qadisha Valley, the gorge that sheltered Maronite hermits for centuries. The built-up village stands at roughly",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.1-800-meters": "1,800 meters",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.which-is-why-it-is-widely-known-as-the-highest-permanently-i": ", which is why it is widely known as the highest permanently inhabited village in Lebanon. The ancient",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.cedars-of-god": "Cedars of God",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.stand-a-short-drive-away": "stand a short drive away.",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.as-a-boy-he-tended-the-family-s-flock-on-these-slopes-and-he": "As a boy he tended the family's flock on these slopes, and he found a secluded cave where he would slip away to pray for hours - the spot villagers still know as the",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.saint-s-cave": "Saint's Cave",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.his": ". His",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.birth-house": "birth house",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.still-stands-after-his-death-and-the-spread-of-devotion-the": "still stands: after his death and the spread of devotion, the Lebanese Maronite Order acquired the family home, and monks care for it today as a small shrine and museum of his childhood world - plain rooms, simple tools, nothing grand, which is exactly what moves the pilgrims who come.",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.visiting": "Visiting:",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.bekaa-kafra-is-roughly-120-kilometers-from-beirut-about-two": "Bekaa Kafra is roughly 120 kilometers from Beirut, about two hours by car into the high mountains. Give it a full day and pair it with Bsharri, the Cedars, and the",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.qadisha-valley": "Qadisha Valley",
+    "saint-charbel-places-lebanon.bekaa-kafra-where-it-beg.below-in-winter-the-village-can-sit-under-deep-snow-check-ro": "below. In winter the village can sit under deep snow - check road conditions before you set out, and confirm the birth house's hours locally, as they shift with the season.",
+    "saint-charbel-places-lebanon.mayfouq-where-he-became.mayfouq-where-he-became-a-monk-1851-1853": "Mayfouq: Where He Became a Monk (1851-1853)",
+    "saint-charbel-places-lebanon.mayfouq-where-he-became.in-1851-at-twenty-three-youssef-left-his-village-and-walked": "In 1851, at twenty-three, Youssef left his village and walked south to the",
+    "saint-charbel-places-lebanon.mayfouq-where-he-became.monastery-of-our-lady-of-mayfouq": "Monastery of Our Lady of Mayfouq",
+    "saint-charbel-places-lebanon.mayfouq-where-he-became.the-novitiate-of-the-lebanese-maronite-order-there-he-receiv": ", the novitiate of the Lebanese Maronite Order. There he received the habit and took the name",
+    "saint-charbel-places-lebanon.mayfouq-where-he-became.charbel": "Charbel",
+    "saint-charbel-places-lebanon.mayfouq-where-he-became.after-an-early-martyr-of-the-church-of-antioch-the-name-the": ", after an early martyr of the Church of Antioch - the name the whole world now knows him by. Mayfouq was his school of monastic beginnings: prayer, work, fasting, and obedience, the pattern he would keep for the rest of his life.",
+    "saint-charbel-places-lebanon.mayfouq-where-he-became.mayfouq-matters-to-pilgrims-for-a-second-reason-it-is-the-fa": "Mayfouq matters to pilgrims for a second reason: it is the far end of the first open section of the",
+    "saint-charbel-places-lebanon.mayfouq-where-he-became.darb-mar-charbel-trail": "Darb Mar Charbel trail",
+    "saint-charbel-places-lebanon.mayfouq-where-he-became.which-runs-from-annaya-to-mayfouq-walking-that-section-you-c": ", which runs from Annaya to Mayfouq. Walking that section, you cross in a day the same ground the young novice crossed for good in 1851.",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.annaya-where-he-lived-died-and-lies-entombed-1853-1898": "Annaya: Where He Lived, Died, and Lies Entombed (1853-1898)",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.in-1853-brother-charbel-moved-to-the": "In 1853 Brother Charbel moved to the",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.monastery-of-saint-maron-in-annaya": "Monastery of Saint Maron in Annaya",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.in-the-jbeil-district-of-mount-lebanon-and-made-his-perpetua": ", in the Jbeil district of Mount Lebanon, and made his perpetual vows. He was ordained a priest in 1859. After more than two decades of monastic life he received permission in 1875 to withdraw to the",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.hermitage-of-saints-peter-and-paul": "hermitage of Saints Peter and Paul",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.on-the-hill-above-the-monastery-and-there-he-spent-his-final": "on the hill above the monastery - and there he spent his final twenty-three years in silence, prayer, and penance, until his death on",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.christmas-eve-1898": "Christmas Eve 1898",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.text": ".",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.annaya-is-the-destination-of-the-pilgrimage-the-tomb-in-the": "Annaya is the destination of the pilgrimage: the tomb in the great church, the hermitage above, the holy oil, daily Mass, and the crowds of the",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.22nd-of-every-month": "22nd of every month",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.and-the": "and the",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.july-feast": "July feast",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.it-is-also-where": ". It is also where",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.pope-leo-xiv-came-as-a-pilgrim-on-december-1-2025": "Pope Leo XIV came as a pilgrim on December 1, 2025",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.the-first-pope-ever-to-pray-at-the-tomb-our": "- the first pope ever to pray at the tomb. Our",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.annaya-visit-guide": "Annaya visit guide",
+    "saint-charbel-places-lebanon.annaya-where-he-lived-di.covers-the-drive-the-order-of-what-to-see-and-the-practical": "covers the drive, the order of what to see, and the practical details.",
+    "saint-charbel-places-lebanon.how-the-three-places-con.how-the-three-places-connect": "How the Three Places Connect",
+    "saint-charbel-places-lebanon.how-the-three-places-con.the-geography-tells-the-theology-bekaa-kafra-is-the-root-a-m": "The geography tells the theology. Bekaa Kafra is the root: a mountain childhood of work and prayer. Mayfouq is the calling: the doorway into religious life. Annaya is the gift complete: forty-five years of monastic fidelity, twenty-three of them in a hermit's cell. Pilgrims who can only manage one stop choose Annaya, because the tomb is there. Pilgrims with two or three days add Bekaa Kafra and the north, and walk the trail's first open section between Annaya and Mayfouq. For the full plan - routes, Google Maps locations, itineraries, and what else to see in Lebanon - use our",
+    "saint-charbel-places-lebanon.how-the-three-places-con.saint-charbel-pilgrimage-guide": "Saint Charbel pilgrimage guide",
+    "saint-charbel-places-lebanon.how-the-three-places-con.including": ", including",
+    "saint-charbel-places-lebanon.how-the-three-places-con.bkerke": "Bkerke",
+    "saint-charbel-places-lebanon.how-the-three-places-con.text": ".",
+    "saint-charbel-places-lebanon.how-the-three-places-con.beyond-the-three-lie-the-places-his-devotion-reached-rather": "Beyond the three lie the places his devotion reached rather than his feet: the shrine of Our Lady of Lebanon at",
+    "saint-charbel-places-lebanon.how-the-three-places-con.harissa": "Harissa",
+    "saint-charbel-places-lebanon.how-the-three-places-con.where-the-trail-is-planned-to-end-and-the-churches-and-shrin": ", where the trail is planned to end, and the churches and shrines that bear his name on every continent the Lebanese carried him to - mapped on our",
+    "saint-charbel-places-lebanon.how-the-three-places-con.saint-charbel-around-the-world": "Saint Charbel around the world",
+    "saint-charbel-places-lebanon.how-the-three-places-con.page": "page.",
+    "saint-charbel-places-lebanon.sources.sources": "Sources",
+    "saint-charbel-places-lebanon.sources.wikipedia-bekaa-kafra-village-location-altitude-and-status-a": "Wikipedia: Bekaa Kafra - village location, altitude, and status as Lebanon's highest village",
+    "saint-charbel-places-lebanon.sources.vatican-state-saint-of-the-day-saint-charbel-makhlouf-his-ch": "Vatican State, Saint of the Day: Saint Charbel Makhlouf - his childhood cave, entry into the Order, ordination, hermitage, and death",
+    "saint-charbel-places-lebanon.sources.monastery-of-saint-maron-annaya-saint-charbel-biography": "Monastery of Saint Maron, Annaya: Saint Charbel biography",
+    "saint-charbel-places-lebanon.sources.lebanon-traveler-darb-mar-charbel-trail-sections-including-a": "Lebanon Traveler: Darb Mar Charbel trail sections, including Annaya to Mayfouq",
+    "saint-charbel-places-lebanon.sources.osv-news-pope-leo-is-first-pontiff-to-go-to-st-charbel-s-tom": "OSV News: Pope Leo is first pontiff to go to St. Charbel's tomb - visit is source of great joy for Lebanon",
+    "saint-charbel-places-lebanon.footer.saint-charbel-s-lebanon-author-please-pray-for-the-person-wh": "Saint Charbel's Lebanon. Author: Please pray for the person who made this website."
+  }
+}

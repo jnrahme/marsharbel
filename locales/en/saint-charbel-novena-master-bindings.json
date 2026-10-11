@@ -1,0 +1,1681 @@
+{
+  "version": 3,
+  "master": "templates/masters/saint-charbel-novena.html",
+  "masterSha256": "d323eab01e365f17526d46a6fda98a098fd31f4be8d045988fb895bee85c7df3",
+  "sourceRevision": "0ec9a314",
+  "bindings": [
+    {
+      "key": "saint-charbel-novena.metadata.title-saint-charbel-novena-9-day-prayer-to-saint-charbel",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Saint Charbel Novena | 9-Day Prayer to Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.metadata.description-pray-the-complete-nine-day-novena-to-saint-charb",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Pray the complete nine-day novena to Saint Charbel, day by day, with the traditional prayers, how to pray them, and the July feast novena dates.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-novena.metadata.og-title-saint-charbel-novena-9-day-prayer-to-saint-charbel",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Saint Charbel Novena | 9-Day Prayer to Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-novena.metadata.og-description-pray-the-complete-nine-day-novena-to-saint-ch",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Pray the complete nine-day novena to Saint Charbel, day by day, with the traditional prayers, how to pray them, and the July feast novena dates.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-novena.metadata.twitter-title-saint-charbel-novena-9-day-prayer-to-saint-cha",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Saint Charbel Novena | 9-Day Prayer to Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-novena.metadata.twitter-description-pray-the-complete-nine-day-novena-to-sai",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Pray the complete nine-day novena to Saint Charbel, day by day, with the traditional prayers, how to pray them, and the July feast novena dates.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-novena.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "saint-charbel-novena.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.body.nine-days-of-prayer",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Nine Days of Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.saint-charbel-novena",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.short-answer",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Short answer:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.the-saint-charbel-novena-is-nine-consecutive-days-of-prayer",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Saint Charbel novena is nine consecutive days of prayer, each day with its own prayer text and a closing Our Father, Hail Mary, and Glory Be. A possible time is July 15 to 23, ending on the eve of the July 24 feast, though it can be prayed at any time of year. The prayers below are the traditional ones published by the Monastery of Saint Maron in Annaya.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.the-complete-nine-day-novena-to-saint-charbel-day-by-day-wit",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The complete nine-day novena to Saint Charbel, day by day, with the traditional prayers published by the Monastery of Saint Maron in Annaya, and a simple guide on how and when to pray it.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.accessibility.the-village-of-annaya-on-its-hill-above-the-sea",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The village of Annaya on its hill, above the sea",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.annaya-the-mountain-village-whose-monastery-published-the-tr",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "Annaya, the mountain village whose monastery published the traditional novena prayers this page follows. Photograph: Paul Saad,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.text",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.cc-by-sa-4-0",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.text-2",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.the-nine-days",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "The Nine Days",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.saint-charbel-prayers",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.full-prayer-library",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Full Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.part-of-the",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "Part of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.saint-charbel-encyclopedia",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.read",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3)",
+      "source": ". Read",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.the-full-story-of-his-life",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3) > a:nth-of-type(2)",
+      "source": "the full story of his life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.saint-charbel-novena.or-browse-all-topics",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "or browse all topics.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-novena.what-is-a-novena.what-is-a-novena",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "What Is a Novena?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.what-is-a-novena.a-novena-is-a-devotion-of-prayers-repeated-over-nine-consecu",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A novena is a devotion of prayers repeated over nine consecutive days. The word comes from the Latin",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.what-is-a-novena.novem",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > em:nth-of-type(1)",
+      "source": "novem",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.what-is-a-novena.meaning-nine-the-tradition-reaches-back-to-the-earliest-days",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", meaning nine. The tradition reaches back to the earliest days of the Church, when the apostles and the Blessed Virgin Mary spent nine days in continuous prayer between Christ's Ascension and the descent of the Holy Spirit at Pentecost - the original nine-day vigil that became the model for every novena since.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.what-is-a-novena.the-novena-to-saint-charbel-draws-on-that-ancient-practice-a",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The novena to Saint Charbel draws on that ancient practice and channels it through the intercession of a saint whose life was defined by silence, sacrifice, and total surrender to God. Each of the nine days carries its own prayer, and the devotion deepens as the days build.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.how-to-pray-this-novena",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "How to Pray This Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.no-special-preparation-is-needed-beyond-a-sincere-heart-and",
+      "selector": "#main-content > section:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "No special preparation is needed beyond a sincere heart and the perseverance to pray for nine days in a row.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.1-choose-your-intention",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "1. Choose your intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.before-you-begin-clearly-name-what-you-are-asking-for",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Before you begin, clearly name what you are asking for -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.healing",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.guidance-reconciliation-or-any-need-weighing-on-your-heart",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", guidance, reconciliation, or any need weighing on your heart.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.2-find-a-quiet-place",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
+      "source": "2. Find a quiet place",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.saint-charbel-spent-twenty-three-years-in-the-silence-of-a-h",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Saint Charbel spent twenty-three years in the silence of a hermitage. Honor his spirit with a still, undisturbed space for your prayer.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.3-begin-with-the-sign-of-the-cross",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(3) > h3:nth-of-type(1)",
+      "source": "3. Begin with the Sign of the Cross",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.in-the-name-of-the-father-and-of-the-son-and-of-the-holy-spi",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen. Then state your intention, aloud or silently.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.4-pray-the-day-s-prayer",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(4) > h3:nth-of-type(1)",
+      "source": "4. Pray the day's prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.each-of-the-nine-days-below-has-its-own-prayer-text-close-ea",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "Each of the nine days below has its own prayer text. Close each day with one Our Father, one Hail Mary, and one Glory Be.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.5-keep-the-rhythm",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(5) > h3:nth-of-type(1)",
+      "source": "5. Keep the rhythm",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.repeat-for-nine-consecutive-days-ideally-at-the-same-time-ea",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(1)",
+      "source": "Repeat for nine consecutive days, ideally at the same time each day. If you miss a day, continue with the next day when you can. This is a devotion, not a test of perfect attendance.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.6-pray-with-trust-not-a-bargain",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(6) > h3:nth-of-type(1)",
+      "source": "6. Pray with trust, not a bargain",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.how-to-pray-this-novena.a-novena-is-devotional-tradition-not-a-transaction-no-prayer",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(6) > p:nth-of-type(1)",
+      "source": "A novena is devotional tradition, not a transaction. No prayer mechanically guarantees healing or any other outcome: prayer asks, and God remains free.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.when-to-pray-it.when-to-pray-it",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "When to Pray It",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.when-to-pray-it.a-possible-time-is-the-feast-novena-the-day-by-day-prayers-o",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A possible time is the feast novena: the day-by-day prayers over the nine days before the feast -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.when-to-pray-it.july-15-to-july-23",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "July 15 to July 23",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.when-to-pray-it.for-the-july-24-feast-ending-on-the-eve-of-the",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "for the July 24 feast - ending on the eve of the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.when-to-pray-it.feast-of-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "feast of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.when-to-pray-it.the-feast-falls-on-the-third-sunday-of-july-in-the-maronite",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ". In Poland, Saint Charbel's liturgical memorial is observed on July 28; the July 15-23 example here precedes the July 24 observance. The feast falls on the third Sunday of July in the Maronite liturgical calendar and is observed widely on July 24. On the feast itself, attend Mass if you can and pray the intercession prayer. The novena may also be prayed at any time of year, whenever a need weighs on your heart. Some pilgrims time a novena to end on the",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-novena.when-to-pray-it.22nd-of-the-month",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "22nd of the month",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.when-to-pray-it.the-monthly-day-of-pilgrimage-at-annaya",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", the monthly day of pilgrimage at Annaya.",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "saint-charbel-novena.the-nine-days.the-nine-days",
+      "selector": "#nine-days > h2:nth-of-type(1)",
+      "source": "The Nine Days",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.the-nine-days.the-traditional-day-by-day-text-published-by-the-monastery-o",
+      "selector": "#nine-days > p:nth-of-type(1)",
+      "source": "The traditional day-by-day text published by the Monastery of Saint Maron, Annaya (Deir Annaya). Close each day with one Our Father, one Hail Mary, and one Glory Be.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.accessibility.jump-to-a-day-of-the-novena",
+      "selector": "#nine-days > nav:nth-of-type(1)",
+      "source": "Jump to a day of the novena",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "saint-charbel-novena.the-nine-days.day-1",
+      "selector": "#nine-days > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Day 1",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.the-nine-days.day-2",
+      "selector": "#nine-days > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Day 2",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.the-nine-days.day-3",
+      "selector": "#nine-days > nav:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Day 3",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.the-nine-days.day-4",
+      "selector": "#nine-days > nav:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Day 4",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.the-nine-days.day-5",
+      "selector": "#nine-days > nav:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Day 5",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.the-nine-days.day-6",
+      "selector": "#nine-days > nav:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Day 6",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.the-nine-days.day-7",
+      "selector": "#nine-days > nav:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Day 7",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.the-nine-days.day-8",
+      "selector": "#nine-days > nav:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Day 8",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.the-nine-days.day-9",
+      "selector": "#nine-days > nav:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Day 9",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-1.heading",
+      "selector": "#day-1 > h3:nth-of-type(1)",
+      "source": "Day 1",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-1.invocation",
+      "selector": "#day-1 > p:nth-of-type(1)",
+      "source": "Oh, Saint Charbel pray for me.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-1.petition-before",
+      "selector": "#day-1 > p:nth-of-type(2)",
+      "source": "Oh, Miraculous Saint Charbel, from whose immaculate body, which overpowers corruption, emanates the scent of heaven, come to my rescue and grant me from God the grace which I need",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-1.placeholder",
+      "selector": "#day-1 > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "(name the grace)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-1.petition-after",
+      "selector": "#day-1 > p:nth-of-type(2)",
+      "source": ". Amen.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-1.collect",
+      "selector": "#day-1 > p:nth-of-type(3)",
+      "source": "Oh Lord, who has bestowed on Saint Charbel the grace of faith, I plead to you to grant me through his intercession that divine grace to live according to your commandments and Bible. The glory is yours till the end. Amen.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-2.heading",
+      "selector": "#day-2 > h3:nth-of-type(1)",
+      "source": "Day 2",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-2.invocation",
+      "selector": "#day-2 > p:nth-of-type(1)",
+      "source": "Oh, Saint Charbel, vase of perfume, intercede for me.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-2.petition-before",
+      "selector": "#day-2 > p:nth-of-type(2)",
+      "source": "Oh, Saint Charbel, Hero of monastic life, who experienced suffering, and whom Lord Jesus made of a bright beacon, I resort to you and ask through your intercession the grace",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-2.placeholder",
+      "selector": "#day-2 > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "(name the grace)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-2.petition-after",
+      "selector": "#day-2 > p:nth-of-type(2)",
+      "source": ". I confide in you. Amen.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-2.collect",
+      "selector": "#day-2 > p:nth-of-type(3)",
+      "source": "Oh, God of complete benevolence, who honored Saint Charbel by giving him the grace to perform miracles, have mercy on me and grant me what I ask from you through his intercession. The glory is yours till the end. Amen.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-3.heading",
+      "selector": "#day-3 > h3:nth-of-type(1)",
+      "source": "Day 3",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-3.invocation",
+      "selector": "#day-3 > p:nth-of-type(1)",
+      "source": "Oh, Saint Charbel, the example of patience and silence, intercede for me.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-3.petition-before",
+      "selector": "#day-3 > p:nth-of-type(2)",
+      "source": "Oh, Saint Charbel, the amiable, who shines like a bright star in the church sky, brighten my way, and fortify my hope. From you I ask for the grace",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-3.placeholder",
+      "selector": "#day-3 > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "(name the grace)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-3.petition-after",
+      "selector": "#day-3 > p:nth-of-type(2)",
+      "source": ". Ask for it from Jesus the crucified whom you perpetually worship. Amen.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-3.collect",
+      "selector": "#day-3 > p:nth-of-type(3)",
+      "source": "Oh, Lord Jesus, who sanctified Saint Charbel and helped him to carry his cross, give me the courage to bear life's difficulties with patience and submission to your divine will through Saint Charbel's intercession, to you is gratefulness forever. Amen.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-4.heading",
+      "selector": "#day-4 > h3:nth-of-type(1)",
+      "source": "Day 4",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-4.invocation",
+      "selector": "#day-4 > p:nth-of-type(1)",
+      "source": "Oh, Saint Charbel, orchard of virtue, intercede for me.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-4.petition-before",
+      "selector": "#day-4 > p:nth-of-type(2)",
+      "source": "Oh, Saint Charbel, the affectionate, I resort to you. My confidence in you fills my heart. With the power of your intercession with God, I am waiting for the Grace which I ask from you",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-4.placeholder",
+      "selector": "#day-4 > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "(name the grace)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-4.petition-after",
+      "selector": "#day-4 > p:nth-of-type(2)",
+      "source": ". Show me your affection once more.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-4.collect",
+      "selector": "#day-4 > p:nth-of-type(3)",
+      "source": "Oh, God, you, who granted Saint Charbel the grace of your resemblance, grant me the help to grow in the Christian virtues and have mercy on me to be able to praise you till the end. Amen.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-5.heading",
+      "selector": "#day-5 > h3:nth-of-type(1)",
+      "source": "Day 5",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-5.invocation",
+      "selector": "#day-5 > p:nth-of-type(1)",
+      "source": "Oh, Saint Charbel, friend of the crucified, intercede for me.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-5.petition-before",
+      "selector": "#day-5 > p:nth-of-type(2)",
+      "source": "Oh, Saint Charbel, loved by God, enlighten me, help me and teach me how to please God. Hurry to my rescue. Oh affectionate Father; I beg of you to ask God for this grace",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-5.placeholder",
+      "selector": "#day-5 > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "(name the grace)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-5.petition-after",
+      "selector": "#day-5 > p:nth-of-type(2)",
+      "source": ". Amen.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-5.collect",
+      "selector": "#day-5 > p:nth-of-type(3)",
+      "source": "Oh, God hear my demand through Saint Charbel's intercession. Save my poor heart and give me peace. Calm the troubles of my soul. To be glory you till the end. Amen.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-6.heading",
+      "selector": "#day-6 > h3:nth-of-type(1)",
+      "source": "Day 6",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-6.invocation",
+      "selector": "#day-6 > p:nth-of-type(1)",
+      "source": "Oh, Saint Charbel, joy of heaven and earth, intercede for me.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-6.petition-before",
+      "selector": "#day-6 > p:nth-of-type(2)",
+      "source": "Oh, Saint Charbel, all powerful intercessor, I ask you to fulfill the grace which I need",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-6.placeholder",
+      "selector": "#day-6 > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "(name the grace)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-6.petition-after",
+      "selector": "#day-6 > p:nth-of-type(2)",
+      "source": ". A single word from you to Jesus is enough to forgive me, to have mercy on me and to grant me my wish.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-6.collect.before",
+      "selector": "#day-6 > p:nth-of-type(3)",
+      "source": "Oh, God, who chose Saint Charbel to defend us before your divine power, grant me through his intercession this grace",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-6.collect.placeholder",
+      "selector": "#day-6 > p:nth-of-type(3) > em:nth-of-type(1)",
+      "source": "(name the grace)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-6.collect.after",
+      "selector": "#day-6 > p:nth-of-type(3)",
+      "source": "to glorify you with him till the end. Amen.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-7.heading",
+      "selector": "#day-7 > h3:nth-of-type(1)",
+      "source": "Day 7",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-7.invocation",
+      "selector": "#day-7 > p:nth-of-type(1)",
+      "source": "Oh, Saint Charbel, a star that counsels the bewildered, intercede for me.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-7.petition-before",
+      "selector": "#day-7 > p:nth-of-type(2)",
+      "source": "Oh, Saint Charbel, loved by everyone, helper of the needy; I have firm hope in your intercession before God. Fulfill this grace for me",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-7.placeholder",
+      "selector": "#day-7 > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "(name the grace)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-7.petition-after",
+      "selector": "#day-7 > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-7.collect",
+      "selector": "#day-7 > p:nth-of-type(3)",
+      "source": "Oh, God, my numerous sins hinder your grace to reach me. Grant me the grace to repent. Answer me through Saint Charbel's intercession. Return the joy to my sad heart and grant me my demand. You, the embodiment of graces, glory and gratefulness be to you. Amen.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-8.heading",
+      "selector": "#day-8 > h3:nth-of-type(1)",
+      "source": "Day 8",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-8.invocation",
+      "selector": "#day-8 > p:nth-of-type(1)",
+      "source": "Oh, Saint Charbel, absorbed in God, intercede for me.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-8.petition-before",
+      "selector": "#day-8 > p:nth-of-type(2)",
+      "source": "Oh, Saint Charbel, whenever I see you kneeling down on the cane mat, fasting, abstaining and absorbed in calling God, my hope and my faith in you augment. I beg you to help me to receive the grace that I am asking for",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-8.placeholder",
+      "selector": "#day-8 > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "(name the grace)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-8.petition-after",
+      "selector": "#day-8 > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-8.collect",
+      "selector": "#day-8 > p:nth-of-type(3)",
+      "source": "Oh, Jesus, the most peaceful, you who has raised your beloved Charbel to Christian perfection, I solemnly ask you to grant me the grace to spend the rest of my life according to your demand. I love you, oh God, my savior. Amen.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-9.heading",
+      "selector": "#day-9 > h3:nth-of-type(1)",
+      "source": "Day 9",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-9.invocation",
+      "selector": "#day-9 > p:nth-of-type(1)",
+      "source": "Oh, Saint Charbel, crowned with glory, intercede for me.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-9.petition-before",
+      "selector": "#day-9 > p:nth-of-type(2)",
+      "source": "Oh, Saint Charbel, here I am at the end of the Novena. My heart gets nourished when I speak to you. I have great hope that I will obtain from Jesus the grace I asked for through your intercession. I repent, and I promise that I will never ever fall into sin. I ask you to fulfill my demand",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-9.placeholder",
+      "selector": "#day-9 > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "(name the demand)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-9.petition-after",
+      "selector": "#day-9 > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-novena.traditional.day-9.collect",
+      "selector": "#day-9 > p:nth-of-type(3)",
+      "source": "Oh, Lord, you listened to Saint Charbel's prayers, and you fulfilled the grace of being with you, have mercy on me in my moment of distress. Save me from malice which I cannot bear. Glory and gratefulness be to you till the end. Amen.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.frequently-asked-questio.frequently-asked-questions",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.frequently-asked-questio.how-many-days-is-the-saint-charbel-novena",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "How many days is the Saint Charbel novena?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.frequently-asked-questio.nine-consecutive-days-the-word-novena-comes-from-the-latin-n",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Nine consecutive days - the word novena comes from the Latin novem, meaning nine. Each of the nine days has its own prayer text, and every day closes with one Our Father, one Hail Mary, and one Glory Be.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.frequently-asked-questio.when-should-you-pray-the-saint-charbel-novena",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "When should you pray the Saint Charbel novena?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.frequently-asked-questio.a-possible-time-is-the-feast-novena-july-15-to-july-23-endin",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "A possible time is the feast novena: July 15 to July 23, ending on the eve of the July 24 feast of Saint Charbel. The novena may also be prayed at any time of year, and some pilgrims time it to end on the 22nd of the month, the monthly day of pilgrimage at Annaya.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.frequently-asked-questio.what-if-you-miss-a-day-of-the-novena",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "What if you miss a day of the novena?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.frequently-asked-questio.continue-with-the-next-day-when-you-can-devotional-advice-ma",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "Continue with the next day when you can. Devotional advice may vary; missing a day does not turn prayer into a failure or a guarantee of any outcome.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.frequently-asked-questio.how-do-you-pray-the-novena",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "How do you pray the novena?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.frequently-asked-questio.name-your-intention-find-a-quiet-place-begin-with-the-sign-o",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "Name your intention, find a quiet place, begin with the Sign of the Cross, then pray that day's prayer and close with one Our Father, one Hail Mary, and one Glory Be. Repeat for nine consecutive days. No special preparation is needed beyond a sincere heart.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.frequently-asked-questio.does-a-novena-guarantee-healing-or-an-answer",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > h3:nth-of-type(5)",
+      "source": "Does a novena guarantee healing or an answer?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.frequently-asked-questio.no-a-novena-is-devotional-tradition-not-a-transaction-no-pra",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "No. A novena is devotional tradition, not a transaction: no prayer mechanically guarantees healing or any other outcome. Prayer asks, and God remains free.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.sources.sources",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.sources.monastery-of-saint-maron-annaya-deir-annaya-novena-of-saint",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Monastery of Saint Maron, Annaya (Deir Annaya): Novena of Saint Charbel - the day-by-day prayer text",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.sources.charbel-app-novena-to-saint-charbel-what-a-novena-is-and-how",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Charbel App: Novena to Saint Charbel - what a novena is and how to pray it",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.sources.the-divine-mercy-pastoral-advice-about-a-missed-novena-day-g",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "The Divine Mercy: pastoral advice about a missed novena day (general devotional guidance, not a Saint Charbel-specific rule)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.saint-charbel-novena-author-please-pray-for-the-person-who-m",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Saint Charbel novena. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.accessibility.languages",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1)",
+      "source": "Languages",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "saint-charbel-novena.footer.english",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "English",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.text-2",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "العربية",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.fran-ais",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Français",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.espa-ol",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Español",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(4)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.portugu-s",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Português",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(5)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.italiano",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Italiano",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(6)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.deutsch",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Deutsch",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(7)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.polski",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Polski",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > span:nth-of-type(8)",
+      "source": "-",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.footer.text-3",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > nav:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Русский",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-novena.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "saint-charbel-novena.metadata.title-saint-charbel-novena-9-day-prayer-to-saint-charbel": "Saint Charbel Novena | 9-Day Prayer to Saint Charbel",
+    "saint-charbel-novena.metadata.description-pray-the-complete-nine-day-novena-to-saint-charb": "Pray the complete nine-day novena to Saint Charbel, day by day, with the traditional prayers, how to pray them, and the July feast novena dates.",
+    "saint-charbel-novena.metadata.og-title-saint-charbel-novena-9-day-prayer-to-saint-charbel": "Saint Charbel Novena | 9-Day Prayer to Saint Charbel",
+    "saint-charbel-novena.metadata.og-description-pray-the-complete-nine-day-novena-to-saint-ch": "Pray the complete nine-day novena to Saint Charbel, day by day, with the traditional prayers, how to pray them, and the July feast novena dates.",
+    "saint-charbel-novena.metadata.twitter-title-saint-charbel-novena-9-day-prayer-to-saint-cha": "Saint Charbel Novena | 9-Day Prayer to Saint Charbel",
+    "saint-charbel-novena.metadata.twitter-description-pray-the-complete-nine-day-novena-to-sai": "Pray the complete nine-day novena to Saint Charbel, day by day, with the traditional prayers, how to pray them, and the July feast novena dates.",
+    "saint-charbel-novena.body.skip-to-main-content": "Skip to main content",
+    "saint-charbel-novena.header.text": "✦",
+    "saint-charbel-novena.header.saint-charbel": "Saint Charbel",
+    "saint-charbel-novena.accessibility.primary": "Primary",
+    "saint-charbel-novena.header.home": "Home",
+    "saint-charbel-novena.header.legacy": "Legacy",
+    "saint-charbel-novena.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "saint-charbel-novena.header.full-history": "Full History",
+    "saint-charbel-novena.header.miracles": "Miracles",
+    "saint-charbel-novena.header.miracles-reports": "Miracles & Reports",
+    "saint-charbel-novena.header.eucharistic-miracles": "Eucharistic Miracles",
+    "saint-charbel-novena.header.letters": "Letters",
+    "saint-charbel-novena.header.voice-testimony": "Voice Testimony",
+    "saint-charbel-novena.header.saints": "Saints",
+    "saint-charbel-novena.header.children-s-books": "Children's Books",
+    "saint-charbel-novena.header.prayer": "Prayer",
+    "saint-charbel-novena.header.prayer-library": "Prayer Library",
+    "saint-charbel-novena.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "saint-charbel-novena.header.prayer-for-the-sick": "Prayer for the Sick",
+    "saint-charbel-novena.header.prayer-for-healing": "Prayer for Healing",
+    "saint-charbel-novena.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "saint-charbel-novena.header.prayer-for-depression": "Prayer for Depression",
+    "saint-charbel-novena.header.prayer-for-students": "Prayer for Students",
+    "saint-charbel-novena.header.prayer-for-addiction": "Prayer for Addiction",
+    "saint-charbel-novena.header.prayer-for-family": "Prayer for Family",
+    "saint-charbel-novena.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "saint-charbel-novena.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "saint-charbel-novena.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "saint-charbel-novena.header.saint-charbel-novena": "Saint Charbel Novena",
+    "saint-charbel-novena.header.feast-day": "Feast Day",
+    "saint-charbel-novena.header.rosary-guide": "Rosary Guide",
+    "saint-charbel-novena.header.rosary-minibook": "Rosary Minibook",
+    "saint-charbel-novena.header.mystery-meditation": "Mystery Meditation",
+    "saint-charbel-novena.header.become-like-him": "Become Like Him",
+    "saint-charbel-novena.header.travel": "Travel",
+    "saint-charbel-novena.header.visiting-annaya": "Visiting Annaya",
+    "saint-charbel-novena.header.annaya-online-tour": "Annaya Online Tour",
+    "saint-charbel-novena.header.bekaa-kafra": "Bekaa Kafra",
+    "saint-charbel-novena.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "saint-charbel-novena.header.the-cedars-of-god": "the Cedars of God",
+    "saint-charbel-novena.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "saint-charbel-novena.header.qadisha-valley": "Qadisha Valley",
+    "saint-charbel-novena.header.qannoubine-monastery": "Qannoubine Monastery",
+    "saint-charbel-novena.header.qozhaya-monastery": "Qozhaya Monastery",
+    "saint-charbel-novena.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "saint-charbel-novena.header.the-hermitage": "The Hermitage",
+    "saint-charbel-novena.header.saint-charbel-trail": "Saint Charbel Trail",
+    "saint-charbel-novena.header.news": "News",
+    "saint-charbel-novena.body.nine-days-of-prayer": "Nine Days of Prayer",
+    "saint-charbel-novena.saint-charbel-novena.saint-charbel-novena": "Saint Charbel Novena",
+    "saint-charbel-novena.saint-charbel-novena.short-answer": "Short answer:",
+    "saint-charbel-novena.saint-charbel-novena.the-saint-charbel-novena-is-nine-consecutive-days-of-prayer": "The Saint Charbel novena is nine consecutive days of prayer, each day with its own prayer text and a closing Our Father, Hail Mary, and Glory Be. A possible time is July 15 to 23, ending on the eve of the July 24 feast, though it can be prayed at any time of year. The prayers below are the traditional ones published by the Monastery of Saint Maron in Annaya.",
+    "saint-charbel-novena.saint-charbel-novena.the-complete-nine-day-novena-to-saint-charbel-day-by-day-wit": "The complete nine-day novena to Saint Charbel, day by day, with the traditional prayers published by the Monastery of Saint Maron in Annaya, and a simple guide on how and when to pray it.",
+    "saint-charbel-novena.accessibility.the-village-of-annaya-on-its-hill-above-the-sea": "The village of Annaya on its hill, above the sea",
+    "saint-charbel-novena.saint-charbel-novena.annaya-the-mountain-village-whose-monastery-published-the-tr": "Annaya, the mountain village whose monastery published the traditional novena prayers this page follows. Photograph: Paul Saad,",
+    "saint-charbel-novena.saint-charbel-novena.via-wikimedia-commons": "via Wikimedia Commons",
+    "saint-charbel-novena.saint-charbel-novena.text": ",",
+    "saint-charbel-novena.saint-charbel-novena.cc-by-sa-4-0": "CC BY-SA 4.0",
+    "saint-charbel-novena.saint-charbel-novena.text-2": ".",
+    "saint-charbel-novena.saint-charbel-novena.the-nine-days": "The Nine Days",
+    "saint-charbel-novena.saint-charbel-novena.saint-charbel-prayers": "Saint Charbel Prayers",
+    "saint-charbel-novena.saint-charbel-novena.full-prayer-library": "Full Prayer Library",
+    "saint-charbel-novena.saint-charbel-novena.part-of-the": "Part of the",
+    "saint-charbel-novena.saint-charbel-novena.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "saint-charbel-novena.saint-charbel-novena.read": ". Read",
+    "saint-charbel-novena.saint-charbel-novena.the-full-story-of-his-life": "the full story of his life",
+    "saint-charbel-novena.saint-charbel-novena.or-browse-all-topics": "or browse all topics.",
+    "saint-charbel-novena.what-is-a-novena.what-is-a-novena": "What Is a Novena?",
+    "saint-charbel-novena.what-is-a-novena.a-novena-is-a-devotion-of-prayers-repeated-over-nine-consecu": "A novena is a devotion of prayers repeated over nine consecutive days. The word comes from the Latin",
+    "saint-charbel-novena.what-is-a-novena.novem": "novem",
+    "saint-charbel-novena.what-is-a-novena.meaning-nine-the-tradition-reaches-back-to-the-earliest-days": ", meaning nine. The tradition reaches back to the earliest days of the Church, when the apostles and the Blessed Virgin Mary spent nine days in continuous prayer between Christ's Ascension and the descent of the Holy Spirit at Pentecost - the original nine-day vigil that became the model for every novena since.",
+    "saint-charbel-novena.what-is-a-novena.the-novena-to-saint-charbel-draws-on-that-ancient-practice-a": "The novena to Saint Charbel draws on that ancient practice and channels it through the intercession of a saint whose life was defined by silence, sacrifice, and total surrender to God. Each of the nine days carries its own prayer, and the devotion deepens as the days build.",
+    "saint-charbel-novena.how-to-pray-this-novena.how-to-pray-this-novena": "How to Pray This Novena",
+    "saint-charbel-novena.how-to-pray-this-novena.no-special-preparation-is-needed-beyond-a-sincere-heart-and": "No special preparation is needed beyond a sincere heart and the perseverance to pray for nine days in a row.",
+    "saint-charbel-novena.how-to-pray-this-novena.1-choose-your-intention": "1. Choose your intention",
+    "saint-charbel-novena.how-to-pray-this-novena.before-you-begin-clearly-name-what-you-are-asking-for": "Before you begin, clearly name what you are asking for -",
+    "saint-charbel-novena.how-to-pray-this-novena.healing": "healing",
+    "saint-charbel-novena.how-to-pray-this-novena.guidance-reconciliation-or-any-need-weighing-on-your-heart": ", guidance, reconciliation, or any need weighing on your heart.",
+    "saint-charbel-novena.how-to-pray-this-novena.2-find-a-quiet-place": "2. Find a quiet place",
+    "saint-charbel-novena.how-to-pray-this-novena.saint-charbel-spent-twenty-three-years-in-the-silence-of-a-h": "Saint Charbel spent twenty-three years in the silence of a hermitage. Honor his spirit with a still, undisturbed space for your prayer.",
+    "saint-charbel-novena.how-to-pray-this-novena.3-begin-with-the-sign-of-the-cross": "3. Begin with the Sign of the Cross",
+    "saint-charbel-novena.how-to-pray-this-novena.in-the-name-of-the-father-and-of-the-son-and-of-the-holy-spi": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen. Then state your intention, aloud or silently.",
+    "saint-charbel-novena.how-to-pray-this-novena.4-pray-the-day-s-prayer": "4. Pray the day's prayer",
+    "saint-charbel-novena.how-to-pray-this-novena.each-of-the-nine-days-below-has-its-own-prayer-text-close-ea": "Each of the nine days below has its own prayer text. Close each day with one Our Father, one Hail Mary, and one Glory Be.",
+    "saint-charbel-novena.how-to-pray-this-novena.5-keep-the-rhythm": "5. Keep the rhythm",
+    "saint-charbel-novena.how-to-pray-this-novena.repeat-for-nine-consecutive-days-ideally-at-the-same-time-ea": "Repeat for nine consecutive days, ideally at the same time each day. If you miss a day, continue with the next day when you can. This is a devotion, not a test of perfect attendance.",
+    "saint-charbel-novena.how-to-pray-this-novena.6-pray-with-trust-not-a-bargain": "6. Pray with trust, not a bargain",
+    "saint-charbel-novena.how-to-pray-this-novena.a-novena-is-devotional-tradition-not-a-transaction-no-prayer": "A novena is devotional tradition, not a transaction. No prayer mechanically guarantees healing or any other outcome: prayer asks, and God remains free.",
+    "saint-charbel-novena.when-to-pray-it.when-to-pray-it": "When to Pray It",
+    "saint-charbel-novena.when-to-pray-it.a-possible-time-is-the-feast-novena-the-day-by-day-prayers-o": "A possible time is the feast novena: the day-by-day prayers over the nine days before the feast -",
+    "saint-charbel-novena.when-to-pray-it.july-15-to-july-23": "July 15 to July 23",
+    "saint-charbel-novena.when-to-pray-it.for-the-july-24-feast-ending-on-the-eve-of-the": "for the July 24 feast - ending on the eve of the",
+    "saint-charbel-novena.when-to-pray-it.feast-of-saint-charbel": "feast of Saint Charbel",
+    "saint-charbel-novena.when-to-pray-it.the-feast-falls-on-the-third-sunday-of-july-in-the-maronite": ". In Poland, Saint Charbel's liturgical memorial is observed on July 28; the July 15-23 example here precedes the July 24 observance. The feast falls on the third Sunday of July in the Maronite liturgical calendar and is observed widely on July 24. On the feast itself, attend Mass if you can and pray the intercession prayer. The novena may also be prayed at any time of year, whenever a need weighs on your heart. Some pilgrims time a novena to end on the",
+    "saint-charbel-novena.when-to-pray-it.22nd-of-the-month": "22nd of the month",
+    "saint-charbel-novena.when-to-pray-it.the-monthly-day-of-pilgrimage-at-annaya": ", the monthly day of pilgrimage at Annaya.",
+    "saint-charbel-novena.the-nine-days.the-nine-days": "The Nine Days",
+    "saint-charbel-novena.the-nine-days.the-traditional-day-by-day-text-published-by-the-monastery-o": "The traditional day-by-day text published by the Monastery of Saint Maron, Annaya (Deir Annaya). Close each day with one Our Father, one Hail Mary, and one Glory Be.",
+    "saint-charbel-novena.accessibility.jump-to-a-day-of-the-novena": "Jump to a day of the novena",
+    "saint-charbel-novena.the-nine-days.day-1": "Day 1",
+    "saint-charbel-novena.the-nine-days.day-2": "Day 2",
+    "saint-charbel-novena.the-nine-days.day-3": "Day 3",
+    "saint-charbel-novena.the-nine-days.day-4": "Day 4",
+    "saint-charbel-novena.the-nine-days.day-5": "Day 5",
+    "saint-charbel-novena.the-nine-days.day-6": "Day 6",
+    "saint-charbel-novena.the-nine-days.day-7": "Day 7",
+    "saint-charbel-novena.the-nine-days.day-8": "Day 8",
+    "saint-charbel-novena.the-nine-days.day-9": "Day 9",
+    "saint-charbel-novena.traditional.day-1.heading": "Day 1",
+    "saint-charbel-novena.traditional.day-1.invocation": "Oh, Saint Charbel pray for me.",
+    "saint-charbel-novena.traditional.day-1.petition-before": "Oh, Miraculous Saint Charbel, from whose immaculate body, which overpowers corruption, emanates the scent of heaven, come to my rescue and grant me from God the grace which I need",
+    "saint-charbel-novena.traditional.day-1.placeholder": "(name the grace)",
+    "saint-charbel-novena.traditional.day-1.petition-after": ". Amen.",
+    "saint-charbel-novena.traditional.day-1.collect": "Oh Lord, who has bestowed on Saint Charbel the grace of faith, I plead to you to grant me through his intercession that divine grace to live according to your commandments and Bible. The glory is yours till the end. Amen.",
+    "saint-charbel-novena.traditional.day-2.heading": "Day 2",
+    "saint-charbel-novena.traditional.day-2.invocation": "Oh, Saint Charbel, vase of perfume, intercede for me.",
+    "saint-charbel-novena.traditional.day-2.petition-before": "Oh, Saint Charbel, Hero of monastic life, who experienced suffering, and whom Lord Jesus made of a bright beacon, I resort to you and ask through your intercession the grace",
+    "saint-charbel-novena.traditional.day-2.placeholder": "(name the grace)",
+    "saint-charbel-novena.traditional.day-2.petition-after": ". I confide in you. Amen.",
+    "saint-charbel-novena.traditional.day-2.collect": "Oh, God of complete benevolence, who honored Saint Charbel by giving him the grace to perform miracles, have mercy on me and grant me what I ask from you through his intercession. The glory is yours till the end. Amen.",
+    "saint-charbel-novena.traditional.day-3.heading": "Day 3",
+    "saint-charbel-novena.traditional.day-3.invocation": "Oh, Saint Charbel, the example of patience and silence, intercede for me.",
+    "saint-charbel-novena.traditional.day-3.petition-before": "Oh, Saint Charbel, the amiable, who shines like a bright star in the church sky, brighten my way, and fortify my hope. From you I ask for the grace",
+    "saint-charbel-novena.traditional.day-3.placeholder": "(name the grace)",
+    "saint-charbel-novena.traditional.day-3.petition-after": ". Ask for it from Jesus the crucified whom you perpetually worship. Amen.",
+    "saint-charbel-novena.traditional.day-3.collect": "Oh, Lord Jesus, who sanctified Saint Charbel and helped him to carry his cross, give me the courage to bear life's difficulties with patience and submission to your divine will through Saint Charbel's intercession, to you is gratefulness forever. Amen.",
+    "saint-charbel-novena.traditional.day-4.heading": "Day 4",
+    "saint-charbel-novena.traditional.day-4.invocation": "Oh, Saint Charbel, orchard of virtue, intercede for me.",
+    "saint-charbel-novena.traditional.day-4.petition-before": "Oh, Saint Charbel, the affectionate, I resort to you. My confidence in you fills my heart. With the power of your intercession with God, I am waiting for the Grace which I ask from you",
+    "saint-charbel-novena.traditional.day-4.placeholder": "(name the grace)",
+    "saint-charbel-novena.traditional.day-4.petition-after": ". Show me your affection once more.",
+    "saint-charbel-novena.traditional.day-4.collect": "Oh, God, you, who granted Saint Charbel the grace of your resemblance, grant me the help to grow in the Christian virtues and have mercy on me to be able to praise you till the end. Amen.",
+    "saint-charbel-novena.traditional.day-5.heading": "Day 5",
+    "saint-charbel-novena.traditional.day-5.invocation": "Oh, Saint Charbel, friend of the crucified, intercede for me.",
+    "saint-charbel-novena.traditional.day-5.petition-before": "Oh, Saint Charbel, loved by God, enlighten me, help me and teach me how to please God. Hurry to my rescue. Oh affectionate Father; I beg of you to ask God for this grace",
+    "saint-charbel-novena.traditional.day-5.placeholder": "(name the grace)",
+    "saint-charbel-novena.traditional.day-5.petition-after": ". Amen.",
+    "saint-charbel-novena.traditional.day-5.collect": "Oh, God hear my demand through Saint Charbel's intercession. Save my poor heart and give me peace. Calm the troubles of my soul. To be glory you till the end. Amen.",
+    "saint-charbel-novena.traditional.day-6.heading": "Day 6",
+    "saint-charbel-novena.traditional.day-6.invocation": "Oh, Saint Charbel, joy of heaven and earth, intercede for me.",
+    "saint-charbel-novena.traditional.day-6.petition-before": "Oh, Saint Charbel, all powerful intercessor, I ask you to fulfill the grace which I need",
+    "saint-charbel-novena.traditional.day-6.placeholder": "(name the grace)",
+    "saint-charbel-novena.traditional.day-6.petition-after": ". A single word from you to Jesus is enough to forgive me, to have mercy on me and to grant me my wish.",
+    "saint-charbel-novena.traditional.day-6.collect.before": "Oh, God, who chose Saint Charbel to defend us before your divine power, grant me through his intercession this grace",
+    "saint-charbel-novena.traditional.day-6.collect.placeholder": "(name the grace)",
+    "saint-charbel-novena.traditional.day-6.collect.after": "to glorify you with him till the end. Amen.",
+    "saint-charbel-novena.traditional.day-7.heading": "Day 7",
+    "saint-charbel-novena.traditional.day-7.invocation": "Oh, Saint Charbel, a star that counsels the bewildered, intercede for me.",
+    "saint-charbel-novena.traditional.day-7.petition-before": "Oh, Saint Charbel, loved by everyone, helper of the needy; I have firm hope in your intercession before God. Fulfill this grace for me",
+    "saint-charbel-novena.traditional.day-7.placeholder": "(name the grace)",
+    "saint-charbel-novena.traditional.day-7.petition-after": ".",
+    "saint-charbel-novena.traditional.day-7.collect": "Oh, God, my numerous sins hinder your grace to reach me. Grant me the grace to repent. Answer me through Saint Charbel's intercession. Return the joy to my sad heart and grant me my demand. You, the embodiment of graces, glory and gratefulness be to you. Amen.",
+    "saint-charbel-novena.traditional.day-8.heading": "Day 8",
+    "saint-charbel-novena.traditional.day-8.invocation": "Oh, Saint Charbel, absorbed in God, intercede for me.",
+    "saint-charbel-novena.traditional.day-8.petition-before": "Oh, Saint Charbel, whenever I see you kneeling down on the cane mat, fasting, abstaining and absorbed in calling God, my hope and my faith in you augment. I beg you to help me to receive the grace that I am asking for",
+    "saint-charbel-novena.traditional.day-8.placeholder": "(name the grace)",
+    "saint-charbel-novena.traditional.day-8.petition-after": ".",
+    "saint-charbel-novena.traditional.day-8.collect": "Oh, Jesus, the most peaceful, you who has raised your beloved Charbel to Christian perfection, I solemnly ask you to grant me the grace to spend the rest of my life according to your demand. I love you, oh God, my savior. Amen.",
+    "saint-charbel-novena.traditional.day-9.heading": "Day 9",
+    "saint-charbel-novena.traditional.day-9.invocation": "Oh, Saint Charbel, crowned with glory, intercede for me.",
+    "saint-charbel-novena.traditional.day-9.petition-before": "Oh, Saint Charbel, here I am at the end of the Novena. My heart gets nourished when I speak to you. I have great hope that I will obtain from Jesus the grace I asked for through your intercession. I repent, and I promise that I will never ever fall into sin. I ask you to fulfill my demand",
+    "saint-charbel-novena.traditional.day-9.placeholder": "(name the demand)",
+    "saint-charbel-novena.traditional.day-9.petition-after": ".",
+    "saint-charbel-novena.traditional.day-9.collect": "Oh, Lord, you listened to Saint Charbel's prayers, and you fulfilled the grace of being with you, have mercy on me in my moment of distress. Save me from malice which I cannot bear. Glory and gratefulness be to you till the end. Amen.",
+    "saint-charbel-novena.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+    "saint-charbel-novena.frequently-asked-questio.how-many-days-is-the-saint-charbel-novena": "How many days is the Saint Charbel novena?",
+    "saint-charbel-novena.frequently-asked-questio.nine-consecutive-days-the-word-novena-comes-from-the-latin-n": "Nine consecutive days - the word novena comes from the Latin novem, meaning nine. Each of the nine days has its own prayer text, and every day closes with one Our Father, one Hail Mary, and one Glory Be.",
+    "saint-charbel-novena.frequently-asked-questio.when-should-you-pray-the-saint-charbel-novena": "When should you pray the Saint Charbel novena?",
+    "saint-charbel-novena.frequently-asked-questio.a-possible-time-is-the-feast-novena-july-15-to-july-23-endin": "A possible time is the feast novena: July 15 to July 23, ending on the eve of the July 24 feast of Saint Charbel. The novena may also be prayed at any time of year, and some pilgrims time it to end on the 22nd of the month, the monthly day of pilgrimage at Annaya.",
+    "saint-charbel-novena.frequently-asked-questio.what-if-you-miss-a-day-of-the-novena": "What if you miss a day of the novena?",
+    "saint-charbel-novena.frequently-asked-questio.continue-with-the-next-day-when-you-can-devotional-advice-ma": "Continue with the next day when you can. Devotional advice may vary; missing a day does not turn prayer into a failure or a guarantee of any outcome.",
+    "saint-charbel-novena.frequently-asked-questio.how-do-you-pray-the-novena": "How do you pray the novena?",
+    "saint-charbel-novena.frequently-asked-questio.name-your-intention-find-a-quiet-place-begin-with-the-sign-o": "Name your intention, find a quiet place, begin with the Sign of the Cross, then pray that day's prayer and close with one Our Father, one Hail Mary, and one Glory Be. Repeat for nine consecutive days. No special preparation is needed beyond a sincere heart.",
+    "saint-charbel-novena.frequently-asked-questio.does-a-novena-guarantee-healing-or-an-answer": "Does a novena guarantee healing or an answer?",
+    "saint-charbel-novena.frequently-asked-questio.no-a-novena-is-devotional-tradition-not-a-transaction-no-pra": "No. A novena is devotional tradition, not a transaction: no prayer mechanically guarantees healing or any other outcome. Prayer asks, and God remains free.",
+    "saint-charbel-novena.sources.sources": "Sources",
+    "saint-charbel-novena.sources.monastery-of-saint-maron-annaya-deir-annaya-novena-of-saint": "Monastery of Saint Maron, Annaya (Deir Annaya): Novena of Saint Charbel - the day-by-day prayer text",
+    "saint-charbel-novena.sources.charbel-app-novena-to-saint-charbel-what-a-novena-is-and-how": "Charbel App: Novena to Saint Charbel - what a novena is and how to pray it",
+    "saint-charbel-novena.sources.the-divine-mercy-pastoral-advice-about-a-missed-novena-day-g": "The Divine Mercy: pastoral advice about a missed novena day (general devotional guidance, not a Saint Charbel-specific rule)",
+    "saint-charbel-novena.footer.saint-charbel-novena-author-please-pray-for-the-person-who-m": "Saint Charbel novena. Author: Please pray for the person who made this website.",
+    "saint-charbel-novena.accessibility.languages": "Languages",
+    "saint-charbel-novena.footer.english": "English",
+    "saint-charbel-novena.footer.text": "-",
+    "saint-charbel-novena.footer.text-2": "العربية",
+    "saint-charbel-novena.footer.fran-ais": "Français",
+    "saint-charbel-novena.footer.espa-ol": "Español",
+    "saint-charbel-novena.footer.portugu-s": "Português",
+    "saint-charbel-novena.footer.italiano": "Italiano",
+    "saint-charbel-novena.footer.deutsch": "Deutsch",
+    "saint-charbel-novena.footer.polski": "Polski",
+    "saint-charbel-novena.footer.text-3": "Русский",
+    "saint-charbel-novena.header.media": "Media",
+    "saint-charbel-novena.header.music": "Music",
+    "saint-charbel-novena.header.video": "Video",
+    "saint-charbel-novena.header.gallery": "Gallery"
+  }
+}

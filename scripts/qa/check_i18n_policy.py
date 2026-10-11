@@ -10,6 +10,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
+from i18n.runtime_labels import ensure_runtime_labels
 from i18n.build_error_404 import render as render_error_404
 from i18n.metadata import published_locales
 from i18n.catalog import locale_topics, read_json, page_url
@@ -56,6 +57,26 @@ def extract_html(text):
     return Counter(parser.values)
 
 
+# Private exact producer allowlist. Its absence has no effect until this route exists.
+FEATURE_PRODUCERS = {'film-premiere-v1': ('ar/charbel-film-premiere.html', 'scripts/build_film_news_ar.py')}
+
+def check_registered_feature(root=ROOT):
+    import importlib.util
+    family = 'film-premiere-v1'
+    relative, producer = FEATURE_PRODUCERS[family]
+    path = root/relative
+    if not path.exists():
+        return []
+    if not (root/producer).is_file():
+        return [relative+': exact keyed feature producer missing']
+    spec = importlib.util.spec_from_file_location('registered_film_feature_producer',root/producer)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    expected_path, expected = module.output(root)
+    if expected_path != path or path.read_text() != expected:
+        return [relative+': differs from exact keyed feature producer '+family]
+    return []
+
 def snapshot(root=ROOT):
     registry = read_json(root / 'locales/registry.json')
     generated = {f'{code}/index.html' for code in registry['locales'] if code != registry['defaultLocale']}
@@ -68,7 +89,19 @@ def snapshot(root=ROOT):
     generated.update(f'{code}/miracles/eucharistic/'+('index.html' if slug=='index' else slug+'.html')
                      for code in published_locales(registry, 'eucharistic') if code != registry['defaultLocale']
                      for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney'))
+    # Exact outputs retain strict guarded-source and byte-freshness checks.
+    generated.update((route.lstrip('/')+'index.html' if route.endswith('/') else route.lstrip('/')+'.html')
+                     for cfg in registry.get('exactMirrors',{}).values() for code,route in cfg['routes'].items() if code in cfg.get('renderLocales',[]))
     generated.add("ar/litany-of-saint-charbel.html")
+    # One exact feature family only. No pattern, glob or baseline expansion.
+    if (root/'ar/charbel-film-premiere.html').exists():
+        feature_errors = check_registered_feature(root)
+        if feature_errors:
+            raise ValueError('; '.join(feature_errors))
+        generated.add('ar/charbel-film-premiere.html')
+    # Keyed page mirrors render from their English master; build-international.py --check verifies their bytes.
+    generated.update((route.lstrip('/')+'.html') for cfg in registry.get('pageMirrors',{}).values()
+                     for code,route in cfg['routes'].items() if code in cfg.get('renderLocales',[]))
     generated.update(route.lstrip("/")+".html" for route in registry.get("authoredMirrors", {}).get("travel", {}).get("routes", {}).values())
     result = {}
     for path in sorted([*root.glob('*.html'), *root.glob('mysteries/*.html'), *root.glob('miracles/*.html'), *root.glob('miracles/eucharistic/*.html'),
@@ -77,17 +110,27 @@ def snapshot(root=ROOT):
         relative = path.relative_to(root).as_posix()
         if relative not in generated:
             result[relative] = dict(extract_html(path.read_text()))
+    # Catalog-generated control copy is exact-checked, not a blanket JS exemption.
+    copy_path=root/'locales/same-page-copy.json'
+    if copy_path.exists():
+        expected='window.SC_SAME_PAGE_COPY = '+json.dumps(read_json(copy_path),ensure_ascii=False,separators=(',',':'))+';\n'
+        if (root/'same-page-copy.js').read_text()!=expected:raise ValueError('same-page-copy.js differs from UI catalog')
     for path in sorted(root.glob('*.js')):
-        if path.name in ('locale-routes.js', 'eucharistic.js') or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()):
+        if (path.name == 'same-page-copy.js' and copy_path.exists()) or path.name in ('locale-routes.js', 'eucharistic.js') or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()):
             continue
         values = json.loads(subprocess.check_output(['node', str(root/'scripts/i18n/extract-js-text.mjs'), str(path)],text=True))
-        result[path.name] = dict(Counter(values))
+        counter=Counter(values)
+        if path.name=='same-page-manifest.js':
+            from i18n.manifest_policy import manifest_text_counter
+            counter=manifest_text_counter(root,path.read_text(),values)
+        result[path.name] = dict(counter)
     return result
 
 
 def check(root=ROOT):
     baseline = read_json(root/'locales/legacy-text-baseline.json')
     errors = []
+    errors.extend(check_registered_feature(root))
     error_404_path = root / "404.html"
     error_404_rendered = render_error_404(root) if error_404_path.exists() else None
     if error_404_rendered is not None and error_404_path.read_text() != error_404_rendered:
@@ -101,12 +144,32 @@ def check(root=ROOT):
     pillar_catalog = read_json(pillar_path)['values'] if pillar_path.exists() else {}
     a11y_path = root/'locales/en/a11y-statement-copy.json'
     a11y_catalog = read_json(a11y_path)['values'] if a11y_path.exists() else {}
+    scripture_catalog = {}
+    for name in ('scripture-copy', 'nav-legacy-copy', 'encyclopedia-copy', 'home-travel-copy', 'history-copy', 'history-accessibility-copy', 'caption-copy', 'bekaa-tour-copy', 'bekaa-followup-copy', 'jpii-pass-copy', 'rosary-bead-copy', 'movie-status-copy'):
+        extra_path = root/f'locales/en/{name}.json'
+        if extra_path.exists():
+            for page, values in read_json(extra_path)['values'].items():
+                scripture_catalog.setdefault(page, Counter()).update(values)
     storybook_catalog = read_json(root/'locales/en/storybook.json')
     teresa_catalog = read_json(root/'locales/en/mother-teresa-story-copy.json')
     rafqa_catalog = read_json(root/'locales/en/rafqa-story-copy.json')
     charbel_v2_catalog = read_json(root/'locales/en/charbel-v2-story-copy.json')
     magdalene_path = root/'locales/en/magdalene-story-copy.json'
     magdalene_catalog = read_json(magdalene_path)['values'] if magdalene_path.exists() else {}
+    maroun_path = root/'locales/en/maroun-story-copy.json'
+    maroun_catalog = read_json(maroun_path)['values'] if maroun_path.exists() else {}
+    augustine_path = root/'locales/en/augustine-story-copy.json'
+    augustine_catalog = read_json(augustine_path)['values'] if augustine_path.exists() else {}
+    marina_path = root/'locales/en/marina-story-copy.json'
+    marina_catalog = read_json(marina_path)['values'] if marina_path.exists() else {}
+    annaya_path = root/'locales/en/annaya-practical-copy.json'
+    annaya_catalog = read_json(annaya_path)['values'] if annaya_path.exists() else {}
+    sergius_path = root/'locales/en/sergius-bacchus-story-copy.json'
+    sergius_catalog = read_json(sergius_path)['values'] if sergius_path.exists() else {}
+    saint_bios_path = root/'locales/en/saint-bios-copy.json'
+    saint_bios_catalog = read_json(saint_bios_path)['values'] if saint_bios_path.exists() else {}
+    shelf_path = root/'locales/en/stories-shelf-copy.json'
+    shelf_catalog = read_json(shelf_path)['values'] if shelf_path.exists() else {}
     jude_path = root/'locales/en/jude-story-copy.json'
     jude_catalog = read_json(jude_path)['values'] if jude_path.exists() else {}
     peter_path = root/'locales/en/peter-story-copy.json'
@@ -123,6 +186,10 @@ def check(root=ROOT):
     therese_catalog = read_json(therese_path)['values'] if therese_path.exists() else {}
     massabki_path = root/'locales/en/massabki-story-copy.json'
     massabki_catalog = read_json(massabki_path)['values'] if massabki_path.exists() else {}
+    jpii_story_path = root/'locales/en/jpii-story-copy.json'
+    jpii_story_catalog = read_json(jpii_story_path)['values'] if jpii_story_path.exists() else {}
+    story_copy_path = root/'locales/en/story-copy.json'
+    story_copy_catalog = read_json(story_copy_path)['values'] if story_copy_path.exists() else {}
     hardini_catalog = read_json(root/'locales/en/hardini-story-copy.json')
     pio_film_catalog = read_json(root/'locales/en/pio-film-copy.json')
     testimony_path = root / 'locales/en/testimonies.json'
@@ -138,8 +205,35 @@ def check(root=ROOT):
         for key in ('readerUnavailable', 'readerSuccess', 'readerError'):
             if json.dumps(testimony_catalog[key], ensure_ascii=False) not in generated_copy:
                 errors.append(f'testimonies-copy.js: {key} differs from English catalog')
+    from i18n.exact_master import render_exact_set
+    for path, expected in render_exact_set(root,read_json(root/'locales/registry.json')).items():
+        from i18n.same_page_injection import inject_control
+        from i18n.travel_components import travel_frame
+        from i18n.tour_nav import tour_nav
+        lang=path.relative_to(root).parts[0]
+        expected=ensure_runtime_labels(travel_frame(tour_nav(expected,root,lang),root,lang,'/'+str(path.relative_to(root)).removesuffix('.html'),read_json(root/'locales/registry.json')),root,lang,read_json(root/'locales/registry.json'))
+        expected=inject_control(expected,root,read_json(root/'locales/same-page-manifest.pending.json'),read_json(root/'locales/same-page-copy.json'))
+        if path.read_text()!=expected: errors.append(str(path.relative_to(root))+': exact output differs from guarded catalog')
+    _registry=read_json(root/'locales/registry.json')
+    # Mirror pages: bytes verified by build-international.py --check (same step of i18n:check).
+    # English masters keep their wording in a keyed catalog; the bindings check proves the page carries it.
+    master_catalogs={}
+    for _family,_cfg in _registry.get('pageMirrors',{}).items():
+        _copy=root/f'locales/en/{_family}-copy.json'
+        if _family!='history-master' and _copy.exists():
+            master_catalogs[_cfg['master']]=Counter(read_json(_copy).values())
     for file, values in snapshot(root).items():
         additions = Counter(values) - Counter(baseline.get(file, {}))
+        if file == 'videos.html':
+            # Exact fragment output is checked by build-pages --check; never expand the legacy baseline.
+            additions -= Counter({v: 23 for v in read_json(root/'locales/en/video-playback.json').values()})
+        if file=='mystery-meditation.v20260304.js':
+            additions-=Counter(read_json(root/'locales/en/rosary-tracklist.json').values())
+        if file=='share.js':
+            additions-=Counter(v for k,v in read_json(root/'locales/en/share.json').items() if k.startswith('share.'))
+        # One generated Travel hub entry, backed by the shared locale catalog.
+        if '<nav class="links"' in (root/file).read_text() and file.endswith('.html'):
+            additions -= Counter({read_json(root/'locales/en/travel.json')['hubLabel']:1})
         if file.endswith('.html'):
             from bs4 import BeautifulSoup
             page = BeautifulSoup((root/file).read_text(),'html.parser')
@@ -167,6 +261,12 @@ def check(root=ROOT):
         # Newly edited English legacy pages are catalog-backed, not added to
         # the frozen legacy baseline. The per-file counts prevent a second
         # unreviewed occurrence from being silently accepted.
+        additions -= master_catalogs.get(file, Counter())
+        additions -= Counter(maroun_catalog.get(file, {}))
+        additions -= Counter(augustine_catalog.get(file, {}))
+        additions -= Counter(marina_catalog.get(file, {}))
+        additions -= Counter(annaya_catalog.get(file, {}))
+        additions -= Counter(sergius_catalog.get(file, {}))
         additions -= Counter(magdalene_catalog.get(file, {}))
         additions -= Counter(jude_catalog.get(file, {}))
         additions -= Counter(peter_catalog.get(file, {}))
@@ -176,11 +276,19 @@ def check(root=ROOT):
         additions -= Counter(answer_catalog.get(file, {}))
         additions -= Counter(francis_catalog.get(file, {}))
         additions -= Counter(massabki_catalog.get(file, {}))
+        additions -= Counter(jpii_story_catalog.get(file, {}))
+        additions -= Counter(story_copy_catalog.get(file, {}))
         additions -= Counter(display_catalog.get(file, {}))
         additions -= Counter(accessibility_catalog.get(file, {}))
         additions -= Counter(aeo_catalog.get(file, {}))
+        additions -= Counter(shelf_catalog.get(file, {}))
+        additions -= Counter(saint_bios_catalog.get(file, {}))
         additions -= Counter(pillar_catalog.get(file, {}))
         additions -= Counter(a11y_catalog.get(file, {}))
+        additions -= Counter(scripture_catalog.get(file, {}))
+        stale_scripture = Counter(scripture_catalog.get(file, {})) - Counter(values)
+        if stale_scripture:
+            errors.append(f'{file}: scripture-copy catalog entries missing from the page: {sorted(stale_scripture)[:3]}')
         if file == 'miracles/index.html':
             euch_entry = read_json(root/'locales/en/eucharistic-miracles.json')['hub']
             additions -= Counter({euch_entry[key]: 1 for key in ('charbelEntryTitle','charbelEntryIntro','charbelEntryAction','charbelEntryCredit','charbelEntryAlt','charbelEntryPhotoSource','charbelEntryLicense','charbelEntryLicenseText','eyebrow')})

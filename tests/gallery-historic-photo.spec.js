@@ -15,7 +15,7 @@ test('gallery historic photograph is credited, opens, and wraps to the first ima
   expect(captionBox.y + captionBox.height).toBeLessThanOrEqual(page.viewportSize().height);
   await expect(page.locator('#lightbox-image')).toHaveAttribute('src', /\/?media\/annaya\/charbel-historic-photo\.webp$/);
   await page.locator('#lightbox-next').click();
-  await expect(page.locator('#lightbox-caption')).toContainText('An artistic rendition of that moment - not a photograph');
+  await expect(page.locator('#lightbox-caption')).toContainText('This artistic rendition reflects his personal account, not independent verification or a photograph');
   await expect(page.locator('#lightbox-caption')).toContainText('AI transformation');
   await expect(page.locator('#lightbox-image')).toHaveAttribute('src', /gallery\/charbel-rendition-01-faithful\.webp\?v=20261002-dark-beard-3$/);
   await expect(page.locator('#gallery-lightbox')).toHaveCSS('background-color', 'rgb(4, 8, 12)');

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+{{> analytics}}
+  {{> head-og-locales}}
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>John Paul II Story for Kids | Catholic Storybook</title>
+  <meta name="description" content="Read a child-friendly John Paul II storybook for ages 5-12 with read-aloud narration, simple language, faith lessons, and an engaging guided experience." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://marsharbel.com/jpii-story" />
+  {{> head-social "website" "John Paul II Story for Kids | Catholic Storybook" "Read a child-friendly John Paul II storybook for ages 5-12 with read-aloud narration, simple language, faith lessons, and an engaging guided experience." "https://marsharbel.com/jpii-story" "https://marsharbel.com/media/storybook-jpii/images/page-01.webp" "John Paul II Story for Kids | Catholic Storybook" "Read a child-friendly John Paul II storybook for ages 5-12 with read-aloud narration, simple language, faith lessons, and an engaging guided experience." "https://marsharbel.com/media/storybook-jpii/images/page-01.webp"}}
+  {{> ld-webpage-audience "en" "Children and families" "5" "12" "John Paul II Story for Kids | Catholic Storybook" "Read a child-friendly John Paul II storybook for ages 5-12 with read-aloud narration, simple language, faith lessons, and an engaging guided experience." "https://marsharbel.com/jpii-story" "Home" "https://marsharbel.com/" "The Story of John Paul II" "https://marsharbel.com/jpii-story"}}
+  {{> ld-faq "Who is this storybook for?" "Children ages 5 to 12, reading on their own or listening with family. Every page has a Read Aloud button with gentle narration, so the book can be heard as well as read." "Who was John Paul II?" "Karol Wojtyla (1920-2005), a Polish cardinal elected pope in 1978 - the first non-Italian pope in 455 years. He carried the Gospel to 129 countries and was canonized on April 27, 2014." "Is the story true?" "Yes. It retells documented events: his boyhood in Wadowice, the secret seminary during the war, his election as pope in 1978, and his forgiveness of the man who shot him." "Why did he say \"do not be afraid\"?" "He spoke those words at the start of his papacy in 1978, to a world that had lived through wars and dictatorships. He meant that trust in Christ is stronger than fear."}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {{> head-font-preloads}}
+<link href="styles.css?v=20260922-1" rel="stylesheet"/>
+<link href="storybook.css" rel="stylesheet"/>
+<link href="storybook-joy.css" rel="stylesheet"/>
+<link href="storybook-stage.css" rel="stylesheet"/>
+<!-- hreflang:begin -->
+<link href="https://marsharbel.com/jpii-story" hreflang="x-default" rel="alternate"/>
+<link href="https://marsharbel.com/jpii-story" hreflang="en" rel="alternate"/>
+<!-- hreflang:end -->
+</head>
+<body class="is-story-page" data-story="jpii">
+  {{> skip-link}}
+{{> header-open-3}}{{> primary-nav}}{{> header-close-2}}
+<main id="main-content" class="site-shell storybook-page" tabindex="-1">
+<section class="story-hero reveal">
+<span class="kicker">A Book for Ages 5-12</span>
+<h1>The Story of John Paul II</h1>
+<p> A true story told in simple words: a boy called Lolek from a Polish town who lost his family one person at a time, kept his faith alive through war, became pope, and taught the world to "not be afraid." </p>
+<p class="short-answer"><strong>Short answer:</strong> This read-aloud John Paul II storybook for children ages 5 to 12 tells how Karol Wojtyla, called Lolek, of Wadowice in Poland kept his faith alive through war, studied for the priesthood in secret and became the first non-Italian pope in 455 years. It ends with his words: do not be afraid.</p>
+</section>
+<section class="section">
+<h2>Story Summary</h2>
+<div class="card story"><p>This read-aloud storybook tells children ages 5 to 12 the true story of John Paul II: the boy Karol Wojtyla, called Lolek, from Wadowice in Poland, who lost his family one person at a time, kept his faith alive through war, studied for the priesthood in secret, and became the first non-Italian pope in 455 years. It ends with the three words he gave the world - do not be afraid - and with the forgiveness he showed the man who shot him.</p><ul><li>For ages 5 to 12, with read-aloud narration on every page.</li><li>An 11-page storybook told in simple words.</li><li>Grounded in the documented record; the fuller adult account is on the <a href='st-john-paul-ii'>St John Paul II</a> page.</li><li>Part of the <a href='stories'>Saint Storybooks</a> library.</li></ul></div>
+</section>
+<div aria-live="polite" class="story-resume-banner" hidden id="story-resume-banner">
+<span id="story-resume-text">Continue from Page 2?</span>
+<button class="btn subtle" id="story-resume-btn" type="button">Resume</button>
+<button aria-label="Dismiss" class="story-resume-dismiss" id="story-resume-dismiss" type="button">✕</button>
+</div>
+<section aria-label="Illustrated storybook" class="storybook reveal">
+<div class="storybook-controls">
+<span class="story-reading-indicator" id="story-reading-indicator">
+<span class="story-reading-dot"></span>
+<span id="story-reading-label">Reading…</span>
+<span class="story-elapsed" id="story-elapsed">0:00</span>
+</span>
+<label class="story-voice-pack" for="story-voice-pack">
+          Voice Pack
+          <select aria-label="Select story voice pack" id="story-voice-pack"></select>
+</label>
+<button aria-label="Previous page" class="btn subtle" disabled id="story-prev" type="button">Previous Page</button>
+<button class="btn subtle" id="story-read" type="button">Read Aloud</button>
+<button aria-label="Next page" class="btn primary" id="story-next" type="button">Next Page</button>
+</div>
+<details class="story-settings">
+<summary aria-label="Story settings" title="Story settings"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"></path></svg></summary>
+<div class="storybook-extras">
+<button class="story-reader-toggle" id="story-reader-toggle" title="Toggle reader mode for easier reading" type="button">Reader Mode</button>
+<label class="story-auto-continue" title="Automatically read next page when current page finishes">
+<input id="story-auto-continue" type="checkbox"/>
+          Auto Continue
+        </label>
+<div aria-label="Playback speed" class="story-rate-group" role="group">
+<button class="story-rate-btn" data-rate="0.7" type="button">Slow</button>
+<button class="story-rate-btn is-active" data-rate="1" type="button">Normal</button>
+<button class="story-rate-btn" data-rate="1.3" type="button">Fast</button>
+</div>
+</div>
+</details>
+<article class="storybook-panel">
+<div aria-hidden="true" class="storybook-illustration" id="story-illustration"><div class="scene-art scene-birth"><img alt="" class="scene-photo" decoding="async" fetchpriority="high" src="./media/storybook-jpii/images/page-01.webp"/><div aria-hidden="true" class="scene-photo-overlay"></div></div></div>
+<div class="storybook-text">
+<p aria-live="polite" class="storybook-step" id="story-step">Page 1 of 11</p>
+<h2 id="story-title">Loading story...</h2>
+<p id="story-body">Please wait while we open the storybook.</p>
+<p class="storybook-prayer" id="story-prayer"></p>
+<p class="storybook-heart" id="story-heart"></p>
+</div>
+</article>
+<details class="story-evidence">
+<summary id="story-evidence-title">Evidence for This Page</summary>
+<ul id="story-evidence-list"></ul>
+</details>
+</section>
+<p class="story-production-note">AI-generated read-aloud narration. Illustrations are original composite scenes, not historical footage.</p>
+<section class="section reveal">
+<h2>What Young Hearts Can Learn</h2>
+<div class="grid-2">
+<article class="card story"><h3>Do Not Be Afraid</h3><p>He had known fear his whole life - war, loss, danger - and still told the world not to be afraid.</p></article>
+<article class="card story"><h3>Keep Praying</h3><p>He learned prayer watching his father kneel, and he never let go of it, through grief, war, and the papacy.</p></article>
+<article class="card story"><h3>Small Lights in the Dark</h3><p>When his country went dark, he helped protect words, theater, and faith - things fear could not put out.</p></article>
+<article class="card story"><h3>Forgiveness</h3><p>He forgave the man who shot him - refusing to let hatred have the final word.</p></article>
+</div>
+</section>
+{{> saint-bio "About Saint John Paul II" "<div><dt>Lived</dt><dd>1920-2005</dd></div><div><dt>Place</dt><dd>Wadowice and Krakow, Poland; Rome</dd></div><div><dt>Status</dt><dd>Canonized April 27, 2014, by Pope Francis</dd></div><div><dt>Feast</dt><dd>October 22</dd></div>" "<p>Karol Wojtyla was born on May 18, 1920 in Wadowice, Poland. He lost his mother, his brother and his father while still young. During the Nazi occupation he worked in a quarry and a chemical plant and secretly studied for the priesthood. He was ordained on November 1, 1946.</p><p>He became Archbishop of Krakow in 1964 and was elected pope on October 16, 1978, the first Pole to hold the office and the first non-Italian since 1523. He visited 129 countries and started World Youth Day. He survived a shooting in Saint Peter's Square on May 13, 1981, and later forgave the gunman. He died on April 2, 2005, and was canonized with Pope John XXIII.</p><aside class='saint-key' aria-labelledby='saint-key-jpii-story'><h3 id='saint-key-jpii-story'>Key teaching</h3><p>John Paul II took the faith to people in 129 countries and to young people through World Youth Day. After he was shot, he forgave the gunman.</p></aside>" "<p class='saint-bio-more'><a href='./st-john-paul-ii'>Read the full life of Saint John Paul II <span aria-hidden='true'>&rarr;</span></a></p><p class='saint-bio-sources'>Sources: <a href='https://www.vatican.va/news_services/press/documentazione/documents/santopadre_biografie/giovanni_paolo_ii_biografia_breve_en.html' target='_blank' rel='noopener'>Holy See: short biography of John Paul II</a>.</p>"}}
+<section class="section reveal">
+<h2>True Dates in the Story</h2>
+<article class="card story">
+<ul>
+<li>May 18, 1920: Karol Jozef Wojtyla is born in Wadowice, Poland - called Lolek at home.</li>
+<li>April 13, 1929: His mother Emilia dies. Karol is eight years old.</li>
+<li>1932: His brother Edmund, a doctor, dies.</li>
+<li>1938: He begins university in Krakow. 1939: Nazi forces invade Poland and close the university; he works in a quarry and a chemical factory.</li>
+<li>February 18, 1941: His father dies. 1942: He enters the clandestine seminary of Krakow.</li>
+<li>November 1, 1946: He is ordained a priest.</li>
+<li>October 16, 1978: He is elected pope and takes the name John Paul II. October 22: "Do not be afraid" - his first homily as pope.</li>
+<li>1985: He announces World Youth Day; the first official celebration follows in 1986.</li>
+<li>May 13, 1981: He is shot and seriously wounded in Saint Peter's Square. He later forgives his attacker.</li>
+<li>April 2, 2005: He dies in the Vatican. April 27, 2014: Canonized by Pope Francis. His feast day is October 22.</li>
+</ul>
+<p style="margin-top:0.8rem; opacity:0.88;"> Note: The dates in this story come from the Holy See's biographical profile and the Wadowice family-home museum's family chronology. The story's sounds and scenes (church bells, a closed classroom) are story imagery, not claims of one witnessed moment. </p>
+</article>
+</section>
+<section class="section reveal">
+<h2>Research Basis</h2>
+<article class="card story">
+<ul>
+<li><a href="https://www.vatican.va/special/canonizzazione-27042014/documents/biografia_gpii_canonizzazione_en.html" target="_blank" rel="noopener">Vatican (Holy See): Biographical profile for the canonization of John Paul II (2014)</a></li>
+<li><a href="https://www.vatican.va/content/john-paul-ii/en/homilies/1978/documents/hf_jp-ii_hom_19781022_inizio-pontificato.html" target="_blank" rel="noopener">Vatican (John Paul II): Inaugural homily - "Do not be afraid" (October 22, 1978)</a></li>
+<li><a href="https://www.vatican.va/gmg/documents/gmg_chronicle-wyd_20020325_en.html" target="_blank" rel="noopener">Vatican (Holy See): World Youth Day chronology</a></li>
+<li><a href="https://domjp2.pl/en/the-wojtyla-family" target="_blank" rel="noopener">Wadowice Family Home Museum: the Wojtyla family (the nickname Lolek, family dates, his father at prayer)</a></li>
+</ul>
+<p>For the full documented life and the video collection, read <a href="st-john-paul-ii">St. John Paul II</a>.</p>
+</article>
+</section>
+<section class="section">
+<h2>Frequently Asked Questions</h2>
+<div class="card story"><h3>Who is this storybook for?</h3><p>Children ages 5 to 12, reading on their own or listening with family. Every page has a Read Aloud button with gentle narration, so the book can be heard as well as read.</p><h3>Who was John Paul II?</h3><p>Karol Wojtyla (1920-2005), a Polish cardinal elected pope in 1978 - the first non-Italian pope in 455 years. He carried the Gospel to 129 countries and was canonized on April 27, 2014.</p><h3>Is the story true?</h3><p>Yes. It retells documented events: his boyhood in Wadowice, the secret seminary during the war, his election as pope in 1978, and his forgiveness of the man who shot him.</p><h3>Why did he say "do not be afraid"?</h3><p>He spoke those words at the start of his papacy in 1978, to a world that had lived through wars and dictatorships. He meant that trust in Christ is stronger than fear.</p></div>
+</section>
+<section class="section">
+<h2>More Saint Storybooks for Children</h2>
+<div class="card story"><ul><li><a href="./jude-story">Saint Jude</a></li><li><a href="./magdalene-story">Mary Magdalene</a></li><li><a href="./mother-teresa-story">Mother Teresa</a></li><li><a href="./stories">All saint storybooks for children</a></li></ul></div>
+</section>
+</main>
+{{> footer-credit-a "Children's story page added September 26, 2026."}}
+<script defer src="app.js"></script>
+<script defer src="storybook.js"></script>
+<script defer src="storybook-stage.js"></script>
+<script defer src="/locale-routes.js"></script>
+<script defer src="translate.js?v=20260922-1"></script>
+<script defer src="global-audio-player.js"></script>
+<script defer src="./nav.js?v=20260922-1"></script>
+</body>
+</html>

@@ -7,6 +7,52 @@ news_desk = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(news_desk)
 
 class NewsDeskTests(unittest.TestCase):
+    def test_el_paso_is_archived_not_upcoming(self):
+        text=(ROOT/'news.html').read_text()
+        self.assertNotIn('Upcoming parish festival',text)
+        self.assertNotIn('El Paso will host',text)
+        self.assertIn('Archived parish announcement',text)
+        self.assertIn('not a post-event report',text)
+
+    def test_movie_opening_status(self):
+        import json
+        catalog=json.loads((ROOT/'locales/en/movie-status-copy.json').read_text())
+        source=(ROOT/'src/pages/saint-charbel-movie.html').read_text()
+        from html import unescape
+        served=(ROOT/'saint-charbel-movie.html').read_text()
+        for key,value in catalog['copy'].items():
+            self.assertIn('{{copy movie-status '+key+'}}',source)
+            self.assertIn(value,unescape(served))
+        self.assertNotIn('was released in Lebanon in 2026',served)
+        self.assertIn('id="mar-charbel-october-opening-2026-10"',(ROOT/'news.html').read_text())
+
+    def test_premiere_feature_is_sourced_and_not_a_worldwide_release(self):
+        news=(ROOT/'news.html').read_text()
+        movie=(ROOT/'saint-charbel-movie.html').read_text()
+        self.assertEqual(news.count('id="charbel-premiere-release-2026-10"'),1)
+        self.assertIn('https://www.nidaalwatan.com/article/401403',news)
+        self.assertIn('https://www.lorientlejour.com/article/1550058/la-projection-du-film-charbel-au-profit-de-anta-akhi.html',news)
+        self.assertIn('no screening sessions scheduled',news)
+        self.assertIn('International release dates, streaming distribution and English-language availability remain unconfirmed',news)
+        self.assertNotIn('movie-poster-hero.webp',movie)
+
+    def test_ministers_visit_card(self):
+        text = (ROOT/'news.html').read_text()
+        self.assertEqual(text.count('id="religious-trails-minister-visit-2026-10"'), 1)
+        self.assertIn('not a new agreement or a trail opening', text)
+
+    def test_douaihy_hoayek_altar_card(self):
+        text = (ROOT/'news.html').read_text()
+        self.assertEqual(text.count('id="douaihy-hoayek-altar-consecration-2026-09"'), 1)
+        self.assertIn('Both remain Blessed, not canonized saints', text)
+
+    def test_gallery_series_news(self):
+        text = (ROOT/'news.html').read_text()
+        self.assertEqual(text.count('id="gallery-ai-transformation-series-2026-10"'), 1)
+        self.assertIn('dark beard with a grey center streak', text)
+        self.assertIn('not independent verification', text)
+        self.assertIn('href="./gallery"', text)
+
     def test_generated_output_fresh(self):
         for path, text in news_desk.outputs().items():
             self.assertEqual(path.read_text(), text, str(path))
@@ -20,10 +66,10 @@ class NewsDeskTests(unittest.TestCase):
         self.assertIn('https://www.familyofsaintsharbel.org/our-news',text)
     def test_static_editorial_news(self):
         text = (ROOT/'index.html').read_text()
-        self.assertEqual(text.count('class="home-news-lead"'), 1)
+        self.assertEqual(text.count('class="home-news-lead home-news-lead--film"'), 1)
         self.assertEqual(text.count('class="home-news-row"'), 5)
         self.assertNotIn('news-rotator.js', text)
-        self.assertIn('class="home-news-lead" href="./news#byblos-annaya-prayer-walk-2026-09"', text)
+        self.assertIn('class="home-news-lead home-news-lead--film" href="./news#charbel-premiere-release-2026-10"', text)
         self.assertNotIn('el-paso-lebanese-festival-2026-10', text)
 
     def test_unsupported_movie_headline_removed(self):

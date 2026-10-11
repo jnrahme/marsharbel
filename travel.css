@@ -49,7 +49,7 @@
 
 .travel-page main .travel-hero-image figcaption a{color:#fff8eb;text-decoration:underline}
 .travel-page .topbar .brand,.travel-page .topbar .links a{color:#e8dfd0}
-.travel-page .topbar .links .nav-sub a{color:inherit}
+.travel-page .topbar .links .nav-sub a{color:#f3ede3}
 /* Shared legacy link styles are more specific on the English master. */
 .travel-page main .travel-intro .btn.subtle{color:var(--travel-ink);background:transparent;border-color:var(--travel-accent)}
 .travel-page main .travel-section .card.story a{color:var(--travel-accent);text-decoration:underline}
@@ -61,3 +61,58 @@
 .travel-page .footer a,.travel-page .footer .install-app-link,.travel-page .footer .sc-install-app-link{color:var(--travel-accent);text-decoration:underline;text-underline-offset:.22em}
 /* Install link receives an inline color from the shared installer. */
 .travel-page .footer a[href="#install-app"]{color:var(--travel-accent)!important}
+/* Travel rewrite: route landmarks and a visible photograph before copy on phones. */
+.travel-breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem;padding:1rem max(1.25rem,calc((100% - 1180px)/2));font-size:.85rem;background:var(--travel-paper);color:var(--travel-muted)}
+.travel-page main .travel-breadcrumb a{color:var(--travel-accent)}
+.travel-destination-list{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+.travel-place-text{min-height:5rem;display:flex;align-items:center}
+.travel-page .travel-hero-image{z-index:0}
+.travel-page .travel-hero-copy{position:relative;z-index:1}
+.travel-page .travel-hero-image figcaption{z-index:2}
+.travel-page .travel-hero-image img{object-position:center 45%}
+.travel-page .travel-directory{padding-block:3rem;border-bottom:1px solid var(--travel-line)}
+.travel-page .hero:not(.travel-hero){padding:2rem max(1.25rem,calc((100% - 1180px)/2));background:none}
+.travel-page .hero:not(.travel-hero) h1{max-width:23ch;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.1}
+.travel-page .hero:not(.travel-hero) p{max-width:72ch}
+.travel-page .hero:not(.travel-hero) .hero-figure{max-width:1180px;margin-block:2rem;background:none;border:0;border-radius:0}
+.travel-page .hero:not(.travel-hero) .hero-figure img{width:100%;max-height:560px;object-fit:cover;border-radius:0}
+.travel-page main .section:not(.travel-section){width:min(100% - 2.5rem,1180px);margin-inline:auto;padding-block:2rem}
+.travel-page main .section:not(.travel-section) .card{background:transparent;border:0;box-shadow:none;padding:0;max-width:74ch}
+.travel-page main .section:not(.travel-section) a,.travel-page main .hero:not(.travel-hero) a{color:var(--travel-accent)}
+.travel-page main .hero:not(.travel-hero) .btn.subtle{color:var(--travel-ink);background:none;border-color:var(--travel-accent)}
+.travel-page main .hero:not(.travel-hero) .kicker{display:none}
+.travel-page main .hero-figure figcaption{color:var(--travel-muted)}
+@media(max-width:700px){
+ .travel-destination-list{grid-template-columns:1fr}
+ .travel-page .travel-hero{display:block;min-height:0;background:var(--travel-paper)}
+ .travel-page .travel-hero-image{position:relative;height:260px;z-index:0}
+ .travel-page .travel-hero-image:after{background:linear-gradient(0deg,rgba(14,18,13,.8),transparent 35%)}
+ .travel-page .travel-hero-copy{padding-block:1.8rem 2rem}
+ .travel-page .travel-hero h1{color:var(--travel-ink);font-size:2.6rem;max-width:20ch}
+ .travel-page .travel-hero p{color:var(--travel-muted)}
+ .travel-page .travel-hero .btn.subtle{color:var(--travel-ink);background:transparent;border-color:var(--travel-accent)}
+ .travel-page .travel-hero-image figcaption{font-size:.7rem;inset-inline:1rem;bottom:.5rem}
+}
+.travel-page .travel-split-hero{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.travel-page .hero.travel-split-hero .hero-figure{margin:0;position:sticky;top:7rem}
+.travel-page .hero.travel-split-hero .hero-figure img{max-height:none;height:auto;object-fit:contain}
+.travel-page .travel-summary .cta-row{flex-wrap:wrap}
+.travel-page .travel-summary p{font-size:1.05rem}
+.travel-page .travel-link-list .travel-place h3{font-family:inherit;font-size:1.15rem;font-weight:600;margin:.4rem 0;line-height:1.4}
+.travel-page .travel-link-list .travel-place{min-height:0;border-bottom:1px solid var(--travel-line)}
+@media(max-width:700px){.travel-page .travel-split-hero{display:flex;flex-direction:column;gap:1.5rem}.travel-page .hero.travel-split-hero .hero-figure{position:static;order:-1;width:100%}.travel-page .travel-split-hero .travel-summary{width:100%}}
+.travel-page main .section .card.story a{color:var(--travel-accent);text-decoration:underline}
+.travel-page .card{background:#fbf6ec;border-color:var(--travel-line);box-shadow:none;color:var(--travel-ink)}
+.travel-page .card h3{color:var(--travel-ink)}
+.travel-page .card p{color:var(--travel-muted)}
+.travel-page .tag{border-color:var(--travel-line)}
+.travel-page .tag.ok{color:#2f5d2b;border-color:#8fb58a}
+.travel-page .tag.warn{color:#7a4f0c;border-color:#c9a25a}
+/* Scripture citations sit on Travel paper, not the shared dark reading surface. */
+.travel-page .scripture-quote cite,
+.travel-page .scripture-quote p.scripture-note{color:var(--travel-muted)}
+/* English-only destination disclosure uses the dark menu's light text token. */
+.travel-page .topbar .links .nav-sub .enc-language{color:#f3ede3}
+/* Destination names remain readable when visitors enlarge their text. */
+.travel-destination-list>div,.travel-place{min-inline-size:0;max-inline-size:100%}
+.travel-place h3{overflow-wrap:anywhere}

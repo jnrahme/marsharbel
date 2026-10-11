@@ -18,33 +18,31 @@ for (const [route, lang, heading] of [
   });
 }
 
-test('a saved choice redirects an English URL to its published twin, but explicit English wins', async ({page}) => {
+test('saved preferences never redirect or enable an unreviewed twin', async ({page}) => {
+  await page.addInitScript(() => localStorage.setItem('sc_lang_pref', 'ar'));
   await page.goto('/qannoubine-monastery?lang=en');
-  await page.locator('#sc-language-select').selectOption('ar');
-  await expect(page).toHaveURL(/\/ar\/qannoubine-monastery$/);
-  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-  expect(await page.evaluate(() => localStorage.getItem('sc_lang_pref'))).toBe('ar');
-  await page.goto('/qannoubine-monastery');
-  await expect(page).toHaveURL(/\/ar\/qannoubine-monastery$/);
-  await page.goto('/qannoubine-monastery?lang=en');
+  await expect(page.locator('#sc-language-select option[value="ar"]')).toBeDisabled();
+  expect(await page.evaluate(() => SC_LANGUAGE_SWITCH.request('ar'))).toBe(false);
   await expect(page).toHaveURL(/\/qannoubine-monastery\?lang=en$/);
+  await page.goto('/qannoubine-monastery');
+  await expect(page).toHaveURL(/\/qannoubine-monastery$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-  await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
   await expect(page.locator('#sc-language-select')).toHaveValue('en');
   expect(await page.evaluate(() => localStorage.getItem('sc_lang_pref'))).toBe('ar');
 });
 
-test('an explicit published language query on English URL lands on its canonical twin', async ({page}) => {
+test('language query preserves English URL, query, fragment and content', async ({page}) => {
   await page.goto('/qozhaya-monastery?lang=ar&ref=test#visiting');
-  await expect(page).toHaveURL(/\/ar\/qozhaya-monastery\?ref=test#visiting$/);
-  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-  await expect(page.locator('#sc-language-select')).toHaveValue('ar');
+  await expect(page).toHaveURL(/\/qozhaya-monastery\?lang=ar&ref=test#visiting$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.locator('#sc-language-select')).toHaveValue('en');
 });
 
-test('unpublished locale query remains runtime fallback, with no fabricated indexed twin', async ({page}) => {
+test('unreviewed locale query has no machine fallback or fabricated indexed twin', async ({page}) => {
   await page.goto('/miracles/nohad-el-shami?lang=fr');
-  await expect(page.locator('#sc-language-select')).toHaveValue('fr');
-  await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
+  await expect(page.locator('#sc-language-select')).toHaveValue('en');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.locator('#sc-language-select option[value="fr"]')).toBeDisabled();
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', registry.site+'/miracles/nohad-el-shami');
 });
 
@@ -53,24 +51,24 @@ for (const route of ['/news', '/bekaa-kafra']) {
     await page.addInitScript(() => localStorage.setItem('sc_lang_pref', 'ar'));
     await page.goto(route);
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-    await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
+    expect(await page.locator('html').evaluate(el=>getComputedStyle(el).direction)).toBe('ltr');
     await expect(page.locator('#sc-language-select')).toHaveValue('en');
     expect(await page.evaluate(() => localStorage.getItem('sc_lang_pref'))).toBe('ar');
   });
 }
 
-test('the English homepage with a saved Arabic choice opens its authored Arabic hub', async ({page}) => {
+test('the English homepage ignores a saved Arabic choice', async ({page}) => {
   await page.addInitScript(() => localStorage.setItem('sc_lang_pref', 'ar'));
   await page.goto('/');
-  await expect(page).toHaveURL(/\/ar\/$/);
-  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 });
 
-test('a story with a published Arabic twin follows the preference', async ({page}) => {
+test('a story does not substitute its pending Arabic identity', async ({page}) => {
   await page.addInitScript(() => localStorage.setItem('sc_lang_pref', 'ar'));
   await page.goto('/miracles/nohad-el-shami');
-  await expect(page).toHaveURL(/\/ar\/miracles\/nohad-el-shami$/);
-  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  await expect(page).toHaveURL(/\/miracles\/nohad-el-shami$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 });
 
 test('a stray language query never changes an authored localized URL', async ({page}) => {

@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monasterio de Qannoubine: el convento-fortaleza de los patriarcas maronitas</title>
   <meta name="description" content="Qannoubine, excavado en el acantilado del Valle Santo, fue la sede de los patriarcas maronitas del siglo XV al XIX: su gran fresco de la Coronación, la gruta de santa Marina, las monjas que lo guardan y cómo bajar a pie." />
@@ -30,10 +18,14 @@
   <meta property="og:locale:alternate" content="en_US" />
 <meta property="og:locale:alternate" content="ar_AR" />
 <meta property="og:locale:alternate" content="fr_FR" />
-<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
 <meta property="og:locale:alternate" content="it_IT" />
 <meta property="og:locale:alternate" content="de_DE" />
 <meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:image" content="https://marsharbel.com/media/annaya/qannoubine-church.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Monasterio de Qannoubine: el convento-fortaleza de los patriarcas maronitas" />
@@ -50,7 +42,14 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "San Chárbel",
-    "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"],
+    "alternateName": [
+      "Mar Charbel",
+      "Saint Charbel Makhlouf",
+      "Sharbel",
+      "St Charbel",
+      "Saint Sharbel",
+      "Charbel Makhlouf"
+    ],
     "url": "https://marsharbel.com/",
     "publisher": {
       "@type": "Organization",
@@ -65,11 +64,17 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Inicio",
-        "item": "https://marsharbel.com/"
+        "item": "https://marsharbel.com/es/"
       },
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Viajes",
+        "item": "https://marsharbel.com/es/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "Qannoubine, el convento-fortaleza de los patriarcas",
         "item": "https://marsharbel.com/es/monasterio-qannoubine"
       }
@@ -168,14 +173,20 @@
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qannoubine-monastery" />
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/qannoubine-monastery" />
-  <link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qannoubine-monastery" />
-  <link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/monastere-qannoubine" />
-  <link rel="alternate" hreflang="es" href="https://marsharbel.com/es/monasterio-qannoubine" />
   <!-- hreflang:end -->
+<link rel="stylesheet" href="/travel.css?v=20261002-3" />
+<link rel="alternate" hreflang="en" href="https://marsharbel.com/qannoubine-monastery" />
+<link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qannoubine-monastery" />
+<link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/monastere-qannoubine" />
+<link rel="alternate" hreflang="es" href="https://marsharbel.com/es/monasterio-qannoubine" />
+<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/qannoubine-monastery" />
+<link rel="alternate" hreflang="ru" href="https://marsharbel.com/ru/qannoubine-monastery" />
+<link rel="alternate" hreflang="zh-Hans" href="https://marsharbel.com/zh-Hans/qannoubine-monastery" />
+<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qannoubine-monastery" />
+<script id="sc-runtime-labels" type="application/json">{"language.label": "Idioma", "language.popular": "Populares", "language.all": "Todos los idiomas (A-Z)", "install.label": "Instalar la app", "install.link": "Toca aquí para instalar esta app", "install.ios": "En iPhone, en Safari: toca \"Compartir\" y luego \"Añadir a pantalla de inicio\".", "install.browser": "Si no aparece ninguna ventana, abre el menú del navegador y elige \"Instalar app\" o \"Añadir a la pantalla de inicio\".", "footer.privacy": "Política de privacidad (en inglés)", "footer.terms": "Términos de uso (en inglés)", "footer.accessibility": "Accesibilidad (en inglés)", "language.choose": "Elegir idioma", "nativeNames": {"en": "English", "ar": "العربية", "fr": "Français", "es": "Español", "pt": "Português", "it": "Italiano", "de": "Deutsch", "pl": "Polski", "ru": "Русский", "hi": "हिन्दी", "th": "ไทย", "zh-Hans": "简体中文"}}</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
-<body>
+<body class="travel-page travel-destination">
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
   <header class="topbar">
     <div class="site-shell nav">
@@ -183,21 +194,25 @@
       <nav class="links" aria-label="Navegación principal">
         <a href="/">Inicio</a>
         <div class="nav-group">
-        <a class="nav-parent" href="/stories" aria-haspopup="true" aria-expanded="false">Historia<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="/saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false" hreflang="en" aria-label="Legado espiritual (en inglés)">Legado espiritual<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="/stories">Cuentos de santos</a>
-        <a href="/es/biografia">Historia completa</a>
+        <div class="enc-nav-item"><a href="/saint-charbel-encyclopedia" hreflang="en" aria-label="Enciclopedia de san Charbel (en inglés)">Enciclopedia de san Charbel</a> <span class="enc-language">(en inglés)</span></div>
+        <div class="enc-nav-item"><a href="/history" hreflang="en" aria-label="Historia completa (en inglés)">Historia completa</a> <span class="enc-language">(en inglés)</span></div>
         </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="/miracles" aria-haspopup="true" aria-expanded="false">Milagros<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="/miracles">Milagros y testimonios</a>
         <a href="/miracles/eucharistic/">Milagros eucarísticos</a>
-        <a href="/news">Últimas noticias</a>
         <a href="/testimonies">Cartas</a>
         <a href="/voice-testimony">Testimonios de voz</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="/saints" aria-haspopup="true" aria-expanded="false">Santos<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="/saints">Santos</a>
+        <a href="/stories">Libros infantiles</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="/prayer-library" aria-haspopup="true" aria-expanded="false">Oración<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -221,25 +236,37 @@
         <a href="/become-like-charbel">Seguir su ejemplo</a>
         </div></div>
         <div class="nav-group">
-        <a class="active nav-parent" href="/es/annaya" aria-haspopup="true" aria-expanded="false">Viajes<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="active nav-parent" href="/es/travel" aria-haspopup="true" aria-expanded="false">Viajes<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="/es/travel">Viajes</a>
         <a href="/es/annaya">Visitar Annaya</a>
         <a href="/bekaa-kafra">Bekaa Kafra</a>
         <a href="/es/valle-qadisha">Valle de Qadisha</a>
-        <a class="active" href="/es/monasterio-qannoubine" aria-current="page">Monasterio de Qannoubine</a>
+        <a class="active" aria-current="page" href="/es/monasterio-qannoubine">Monasterio de Qannoubine</a>
         <a href="/es/monasterio-qozhaya">Monasterio de Qozhaya</a>
         <a href="/saint-charbel-places-lebanon">El Líbano de san Charbel</a>
         <a href="/saint-charbel-hermitage">La ermita</a>
         <a href="/saint-charbel-trail">Sendero de san Charbel</a>
         </div></div>
-        <a href="/gallery">Galería</a>
+        <a href="/news">Noticias</a>
+<div class="nav-group">
+<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/music">Media<span aria-hidden="true" class="nav-chev"></span></a>
+<div class="nav-sub">
+<a href="/music">Music</a>
+<a href="/videos">Video</a>
+<a href="/gallery">Galería</a>
+</div></div>
+
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
-    <section class="hero">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="En esta guía"><a href="/es/">Inicio</a><span aria-hidden="true">/</span><a href="/es/travel">Viajes</a><span aria-hidden="true">/</span><span aria-current="page">Qannoubine, el convento-fortaleza de los patriarcas</span></nav>
+<!-- i18n-travel-frame:end -->
+    <section class="hero travel-split-hero"><figure class="hero-figure"><img src="/media/annaya/qannoubine-church.webp" alt="La antigua iglesia de piedra del monasterio de Qannoubine bajo un cielo claro, con los acantilados del valle de Qadisha detrás. Foto de Hussein Sabboury, Wikimedia Commons" width="1100" height="733" loading="eager" fetchpriority="high" /><figcaption>La iglesia de piedra de Qannoubine, con el valle elevándose detrás. Foto: Hussein Sabboury, <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a> (CC0).</figcaption></figure><div class="travel-summary">
       <span class="kicker">Los lugares de san Charbel</span>
       <h1>Qannoubine, el convento-fortaleza de los patriarcas</h1>
       <p>El Monasterio de Qannoubine, construido en parte en la roca del Valle de Qadisha, fue fortaleza y residencia de los patriarcas maronitas del siglo XV al XIX. Hoy una pequeña comunidad de monjas cuida el monasterio.</p>
@@ -249,8 +276,8 @@
         <a class='btn subtle' href='/es/monasterio-qozhaya'>Monasterio de Qozhaya</a>
         <a class='btn subtle' href='/saint-charbel-trail'>Sendero de san Charbel</a>
       </div>
-      <figure class="hero-figure"><img src="/media/annaya/qannoubine-church.webp" alt="La antigua iglesia de piedra del monasterio de Qannoubine bajo un cielo claro, con los acantilados del valle de Qadisha detrás. Foto de Hussein Sabboury, Wikimedia Commons" width="1100" height="733" loading="lazy" /><figcaption>La iglesia de piedra de Qannoubine, con el valle elevándose detrás. Foto: Hussein Sabboury, <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a> (CC0).</figcaption></figure>
-    </section>
+
+</div></section>
 
     <section class="section">
       <h2>El monasterio por excelencia</h2>
@@ -338,5 +365,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="/translate.js?v=20260922-1"></script>
   <script src="/nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -76,6 +64,12 @@
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Travel",
+        "item": "https://marsharbel.com/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "A Pilgrimage to Saint Charbel",
         "item": "https://marsharbel.com/saint-charbel-pilgrimage"
       }
@@ -101,8 +95,8 @@
   }
 }
   </script>
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/saint-charbel-pilgrimage" />
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/saint-charbel-pilgrimage" />
+  <!-- hreflang:begin -->
+  <!-- hreflang:end -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -113,7 +107,7 @@
       "name": "Is there an entrance fee at Annaya?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No - the monastery, the tomb, and the hermitage are free and open to everyone, of any faith or none."
+        "text": "The monastery, the tomb, and the hermitage are open to everyone, of any faith or none. Check with the monastery before you travel for any current charges or opening times."
       }
     },
     {
@@ -129,7 +123,7 @@
       "name": "What is the best season?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Spring through autumn for the mountain sites - winter snow can close the roads to Bekaa Kafra and the Cedars. Annaya itself is open year-round."
+        "text": "Spring through autumn for the mountain sites - winter snow can close the roads to Bekaa Kafra and the Cedars. Check with the monastery for current opening times."
       }
     },
     {
@@ -145,7 +139,7 @@
       "name": "Is it safe to travel to Lebanon?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Conditions change - check your government's current travel advice before booking, and take local advice on routes once you arrive. The pilgrimage sites themselves receive visitors year-round."
+        "text": "Conditions change - check your government's current travel advice before booking, and take local advice on routes once you arrive. The pilgrimage sites themselves normally receive visitors; check before you go."
       }
     }
   ]
@@ -154,8 +148,21 @@
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
+<link rel="stylesheet" href="/travel.css?v=20261002-3" />
+<link rel="alternate" hreflang="en" href="https://marsharbel.com/saint-charbel-pilgrimage" />
+<link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/pilgrimage" />
+<link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/pelerinage" />
+<link rel="alternate" hreflang="es" href="https://marsharbel.com/es/peregrinacion" />
+<link rel="alternate" hreflang="pt" href="https://marsharbel.com/pt/peregrinacao" />
+<link rel="alternate" hreflang="it" href="https://marsharbel.com/it/pellegrinaggio" />
+<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/pilgerreise" />
+<link rel="alternate" hreflang="pl" href="https://marsharbel.com/pl/pielgrzymka" />
+<link rel="alternate" hreflang="ru" href="https://marsharbel.com/ru/palomnichestvo" />
+<link rel="alternate" hreflang="zh-Hans" href="https://marsharbel.com/zh-Hans/pilgrimage" />
+<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/saint-charbel-pilgrimage" />
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
-<body>
+<body class="travel-page travel-destination">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="topbar">
     <div class="site-shell nav">
@@ -163,9 +170,9 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -173,11 +180,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -201,8 +212,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -216,29 +228,41 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
-    <section class="hero">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="In this guide"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/travel">Travel</a><span aria-hidden="true">/</span><span aria-current="page">A Pilgrimage to Saint Charbel</span></nav>
+<!-- i18n-travel-frame:end -->
+<section class="hero travel-split-hero"><figure class="hero-figure"><img src="./media/annaya/annaya-monastery.webp" alt="The Monastery of Saint Maron in Annaya seen across the valley, with the church and forested mountainside" width="1100" height="618" loading="eager" fetchpriority="high" /><figcaption>The Monastery of Saint Maron in Annaya - the heart of every pilgrimage to Saint Charbel. Photograph: Paul Saad, <a href="https://commons.wikimedia.org/wiki/File:Pan_Annaya_Church_And_Monastry.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption></figure><div class="travel-summary">
       <span class="kicker">Pilgrim's Guide &middot; Lebanon</span>
       <h1>A Pilgrimage to Saint Charbel</h1>
       <p>Everything you need to plan the journey: praying at his tomb and hermitage at Annaya, standing in the mountain village where he was born, walking the valley that formed him, and the other holy places of Lebanon worth adding to the trip. Every stop below carries a Google Maps location, and the detailed pages for each place are linked along the way.</p>
-      <figure class="hero-figure"><img src="./media/annaya/annaya-monastery.webp" alt="The Monastery of Saint Maron in Annaya seen across the valley, with the church and forested mountainside" width="1100" height="618" loading="lazy" /><figcaption>The Monastery of Saint Maron in Annaya - the heart of every pilgrimage to Saint Charbel. Photograph: Paul Saad, <a href="https://commons.wikimedia.org/wiki/File:Pan_Annaya_Church_And_Monastry.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption></figure>
+
       <div class="cta-row">
         <a class='btn primary' href='visit-annaya'>Visiting Annaya: Full Guide</a>
         <a class='btn subtle' href='saint-charbel-novena'>Pray the Novena</a>
       </div>
-    </section>
+<figure class="scripture-quote"><blockquote><p>"I rejoiced at the things that were said to me: We shall go into the house of the Lord."</p></blockquote><figcaption><cite>Psalm 121:1 (Douay-Rheims; Psalm 122:1 in modern numbering)</cite></figcaption><p class="scripture-note">Every pilgrimage begins with someone saying yes to the road. The Psalm gives the words for it.</p></figure>
+<p class="enc-trail">Part of the <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>. Read <a href="./history">the full story of his life</a> or browse all topics.</p>
+</div></section>
 
     <section class="section">
       <h2>The Heart of It: Annaya</h2>
       <div class="card story">
-        <p>Every pilgrimage to Saint Charbel begins and ends at the <strong>Monastery of Saint Maron in Annaya</strong>, where he lived as a monk from 1853, died on Christmas Eve 1898, and lies entombed. Pilgrims come to pray at the marble tomb, to see the small museum of his belongings, and to walk up to the <a href="./saint-charbel-hermitage">Hermitage of Saints Peter and Paul</a> where he spent his last twenty-three years in silence.</p>
-        <p>The monastery is open daily, year-round, with <strong>no entrance fee and nothing to book</strong>. It sits about 70 kilometers north of Beirut - roughly ninety minutes by car, up from the coastal city of Jbeil (Byblos). There is no regular public transport to the gates, so plan on a rental car, a taxi for the day, or an organized pilgrimage group.</p>
+        <p>Every pilgrimage to Saint Charbel begins and ends at the <strong>Monastery of Saint Maron in Annaya</strong>, where he took his monastic vows in 1853, died on Christmas Eve 1898, and lies entombed. Pilgrims come to pray at the marble tomb, to see the small museum of his belongings, and to walk up to the <a href="./saint-charbel-hermitage">Hermitage of Saints Peter and Paul</a> where he spent his last twenty-three years in silence.</p>
+        <p>The monastery receives visitors daily; check opening times with the monastery before you travel. It sits about 52 kilometers from Beirut - usually around ninety minutes by car, depending on traffic, up from the coastal city of Jbeil (Byblos). There is no regular public transport to the gates, so plan on a rental car, a taxi for the day, or an organized pilgrimage group.</p>
         <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Monastery+of+Saint+Maron+Annaya" target="_blank" rel="noopener">Open the Monastery of Saint Maron in Google Maps</a> &middot; <a href="https://www.google.com/maps/search/?api=1&amp;query=Saint+Charbel+Hermitage+Annaya" target="_blank" rel="noopener">the Hermitage</a></p>
         <p>Before you go, read the full practical guide: <a href="./visit-annaya">Visiting Annaya - what to see and in what order, Mass times, the holy oil, and the days that draw the crowds</a>.</p>
       </div>
@@ -248,7 +272,7 @@
     <section class="section">
       <h2>Where He Was Born: Bekaa Kafra</h2>
       <div class="card story">
-        <p>Saint Charbel - born Youssef Antoun Makhlouf in 1828 - came from <strong>Bekaa Kafra</strong>, the highest village in Lebanon, in the mountains above the Qadisha Valley. The village keeps his family's home, the church where he was baptized, and the grotto where the young shepherd went to pray. Standing there gives the rest of the pilgrimage its beginning: the mountains he left, and never went back to.</p>
+        <p>Saint Charbel - born Youssef Antoun Makhlouf in 1828 - came from <strong>Bekaa Kafra</strong>, widely known as the highest village in Lebanon, in the mountains above the Qadisha Valley. The village keeps his family's home, the church where he was baptized, and the grotto where the young shepherd went to pray. Standing there gives the rest of the pilgrimage its beginning: the mountains he left, and never went back to.</p>
         <p>Bekaa Kafra pairs naturally with the drive through the Qadisha Valley below it. Winter snow can close the high roads - spring through autumn is the dependable season.</p>
         <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Bekaa+Kafra+Lebanon" target="_blank" rel="noopener">Open Bekaa Kafra in Google Maps</a> &middot; Full guide: <a href="./bekaa-kafra">Bekaa Kafra, his birthplace - the family home, the church, the grotto, and visiting today</a>.</p>
       </div>
@@ -272,7 +296,7 @@
         <ul>
           <li><strong><a href="./our-lady-of-lebanon-harissa">Harissa - Our Lady of Lebanon</a></strong>: the great Marian shrine above the bay of Jounieh, reached by the mountain road or the Téléférique cable car. Pilgrims often pair it with Annaya on the same trip. <a href="https://www.google.com/maps/search/?api=1&amp;query=Our+Lady+of+Lebanon+Harissa" target="_blank" rel="noopener">Google Maps</a></li>
           <li><strong><a href="./bkerke-maronite-patriarchate">Bkerke</a></strong>: the seat of the Maronite Patriarchate, overlooking Jounieh - the beating heart of the Maronite Church that Saint Charbel belonged to. <a href="https://www.google.com/maps/search/?api=1&amp;query=Bkerke+Maronite+Patriarchate" target="_blank" rel="noopener">Google Maps</a></li>
-          <li><strong><a href="./cedars-of-god-lebanon">The Cedars of God</a></strong>: the ancient cedar grove near Bsharri, on Lebanon's flag and in its psalms - a natural cathedral an hour from Bekaa Kafra. <a href="https://www.google.com/maps/search/?api=1&amp;query=Cedars+of+God+Bsharri" target="_blank" rel="noopener">Google Maps</a></li>
+          <li><strong><a href="./cedars-of-god-lebanon">The Cedars of God</a></strong>: the ancient cedar grove near Bsharri, on Lebanon's flag and in the Psalms - a natural cathedral about a 20-minute drive from Bekaa Kafra. <a href="https://www.google.com/maps/search/?api=1&amp;query=Cedars+of+God+Bsharri" target="_blank" rel="noopener">Google Maps</a></li>
           <li><strong>Byblos (Jbeil)</strong>: one of the oldest continuously inhabited cities in the world, on the coast at the foot of the Annaya road - an easy stop on pilgrimage day itself. <a href="https://www.google.com/maps/search/?api=1&amp;query=Byblos+Lebanon" target="_blank" rel="noopener">Google Maps</a></li>
           <li><strong>The Saint Charbel Trail</strong>: if you walk, the Darb Mar Charbel links monasteries and villages through his mountains - see <a href="./saint-charbel-trail">our trail guide</a>.</li>
         </ul>
@@ -295,10 +319,10 @@
       <h2>Planning the Practical Side</h2>
       <div class="card story">
         <ul>
-          <li><strong>When to come</strong>: the great gathering is the feast in the third week of July (Maronite calendar; July 24 in the Latin calendar), and the 22nd of every month draws crowds to the tomb. Ordinary weekdays are quietest.</li>
+          <li><strong>When to come</strong>: the great gathering is the feast on the third Sunday of July (Maronite calendar; July 24 in the Latin calendar), and the 22nd of every month draws crowds to the tomb. Ordinary weekdays are quietest.</li>
           <li><strong>Getting around</strong>: the mountain sites have no regular public transport. Most pilgrims rent a car, hire a driver for the day, or join an organized pilgrimage - Maronite parishes and tour operators run them regularly.</li>
           <li><strong>At the holy places</strong>: modest dress and quiet voices; at the tomb, people kneel and touch the marble - follow the pilgrims ahead of you. Photography is normal in the courtyards; be discreet in the churches during prayer.</li>
-          <li><strong>Costs</strong>: Annaya charges no entrance fee. Budget for transport, and for the candle or oil you may want to take home.</li>
+          <li><strong>Costs</strong>: Check with the monastery for any current charges. Budget for transport, and for the candle or oil you may want to take home.</li>
           <li><strong>Before you book</strong>: Lebanon's situation changes. Check your government's current travel advice, and ask locally about road conditions in the high mountains, especially in winter.</li>
         </ul>
       </div>
@@ -314,11 +338,11 @@
     <section class="section">
       <h2>Frequently Asked Questions</h2>
       <div class="card story">
-        <p><strong>Is there an entrance fee at Annaya?</strong> No - the monastery, the tomb, and the hermitage are free and open to everyone, of any faith or none.</p>
+        <p><strong>Is there an entrance fee at Annaya?</strong> The monastery, the tomb, and the hermitage are open to everyone, of any faith or none. Check with the monastery before you travel for any current charges or opening times.</p>
         <p><strong>How many days do I need?</strong> One full day covers Annaya and Byblos. Three days lets you add Bekaa Kafra and the Qadisha Valley without rushing.</p>
-        <p><strong>What is the best season?</strong> Spring through autumn for the mountain sites - winter snow can close the roads to Bekaa Kafra and the Cedars. Annaya itself is open year-round.</p>
+        <p><strong>What is the best season?</strong> Spring through autumn for the mountain sites - winter snow can close the roads to Bekaa Kafra and the Cedars. Check with the monastery for current opening times.</p>
         <p><strong>Can I attend Mass at Annaya?</strong> Yes - the monastery celebrates Mass daily, with larger celebrations on the 22nd of the month and during the July feast. See <a href="./visit-annaya">the Annaya guide</a> for what to expect.</p>
-        <p><strong>Is it safe to travel to Lebanon?</strong> Conditions change - check your government's current travel advice before booking, and take local advice on routes once you arrive. The pilgrimage sites themselves receive visitors year-round.</p>
+        <p><strong>Is it safe to travel to Lebanon?</strong> Conditions change - check your government's current travel advice before booking, and take local advice on routes once you arrive. The pilgrimage sites themselves normally receive visitors; check before you go.</p>
       </div>
     </section>
 
@@ -345,5 +369,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

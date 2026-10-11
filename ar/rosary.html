@@ -4,19 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 <!-- Google tag (gtag.js) -->
-<script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+<script defer src="/analytics-init.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>كيف نصلّي المسبحة الوردية؟ دليل بالعربية</title>
 <meta name="description" content="تعلّم خطوات المسبحة الوردية: الصلوات الافتتاحية، طريقة صلاة بيت واحد، وأسرار الفرح والنور والحزن والمجد وتوزيعها خلال الأسبوع." />
@@ -35,10 +23,14 @@
 <meta property="og:locale:alternate" content="en_US" />
 <meta property="og:locale:alternate" content="fr_FR" />
 <meta property="og:locale:alternate" content="es_ES" />
-<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
 <meta property="og:locale:alternate" content="it_IT" />
 <meta property="og:locale:alternate" content="de_DE" />
 <meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="مار شربل" />
 <meta property="og:title" content="كيف نصلّي المسبحة الوردية؟ دليل بالعربية" />
@@ -46,20 +38,25 @@
 <meta property="og:url" content="https://marsharbel.com/ar/rosary" />
 <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="/international.css" />
+<link rel="stylesheet" href="/international.css?v=20261002-ui1" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "كيف نصلّي المسبحة الوردية؟ دليل بالعربية", "description": "تعلّم خطوات المسبحة الوردية: الصلوات الافتتاحية، طريقة صلاة بيت واحد، وأسرار الفرح والنور والحزن والمجد وتوزيعها خلال الأسبوع.", "url": "https://marsharbel.com/ar/rosary", "inLanguage": "ar", "isPartOf": {"@id": "https://marsharbel.com/#website"}}</script>
+<script id="sc-runtime-labels" type="application/json">{"language.label": "اللغة", "language.popular": "الأكثر استخدامًا", "language.all": "جميع اللغات (A-Z)", "install.label": "ثبّت التطبيق", "install.link": "اضغط هنا لتثبيت هذا التطبيق", "install.ios": "على iPhone في Safari: اضغط على \"مشاركة\"، ثم على \"إضافة إلى الشاشة الرئيسية\".", "install.browser": "إذا لم تظهر نافذة، افتح قائمة المتصفح واختر \"تثبيت التطبيق\" أو \"إضافة إلى الشاشة الرئيسية\".", "footer.privacy": "سياسة الخصوصية (بالإنكليزية)", "footer.terms": "شروط الاستخدام (بالإنكليزية)", "footer.accessibility": "إمكانية الوصول (بالإنكليزية)", "language.choose": "اختر اللغة", "nativeNames": {"en": "English", "ar": "العربية", "fr": "Français", "es": "Español", "pt": "Português", "it": "Italiano", "de": "Deutsch", "pl": "Polski", "ru": "Русский", "hi": "हिन्दी", "th": "ไทย", "zh-Hans": "简体中文"}}</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
 <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
-<header><div class="shell masthead"><a class="brand" href="/ar/">مار شربل</a><nav class="locale-nav" aria-label="اختر اللغة"><a href="/en/rosary" hreflang="en" lang="en" dir="ltr">English</a>
-<a href="/ar/rosary" hreflang="ar" lang="ar" dir="rtl" aria-current="page">العربية</a>
-<a href="/fr/chapelet" hreflang="fr" lang="fr" dir="ltr">Français</a>
-<a href="/es/rosario" hreflang="es" lang="es" dir="ltr">Español</a>
-<a href="/pt/rosario" hreflang="pt" lang="pt" dir="ltr">Português</a>
-<a href="/it/rosario" hreflang="it" lang="it" dir="ltr">Italiano</a>
-<a href="/de/rosenkranz" hreflang="de" lang="de" dir="ltr">Deutsch</a>
-<a href="/pl/rozaniec" hreflang="pl" lang="pl" dir="ltr">Polski</a>
-<script>document.addEventListener("click",function(e){var a=e.target&&e.target.closest?e.target.closest("a[hreflang]"):null;if(!a)return;var l=(a.getAttribute("hreflang")||"").toLowerCase();if(l==="x-default")l="en";try{localStorage.setItem("sc_lang_pref",l)}catch(_){}});</script></nav></div></header>
+<header><div class="shell masthead"><a class="brand" href="/ar/">مار شربل</a><nav aria-label="اختر اللغة" class="locale-nav"><a dir="ltr" href="https://marsharbel.com/en/rosary" hreflang="en">English</a>
+<a aria-current="page" dir="rtl" href="https://marsharbel.com/ar/rosary" hreflang="ar">العربية</a>
+<a aria-disabled="true" dir="ltr" hreflang="fr" tabindex="-1">Français (قيد المراجعة)</a>
+<a aria-disabled="true" dir="ltr" hreflang="es" tabindex="-1">Español (قيد المراجعة)</a>
+<a aria-disabled="true" dir="ltr" hreflang="pt" tabindex="-1">Português (قيد المراجعة)</a>
+<a aria-disabled="true" dir="ltr" hreflang="it" tabindex="-1">Italiano (قيد المراجعة)</a>
+<a aria-disabled="true" dir="ltr" hreflang="de" tabindex="-1">Deutsch (قيد المراجعة)</a>
+<a aria-disabled="true" dir="ltr" hreflang="pl" tabindex="-1">Polski (قيد المراجعة)</a>
+<a aria-disabled="true" dir="ltr" hreflang="ru" tabindex="-1">Русский (قيد المراجعة)</a>
+<a aria-disabled="true" dir="ltr" hreflang="hi" tabindex="-1">हिन्दी (قيد المراجعة)</a>
+<a aria-disabled="true" dir="ltr" hreflang="th" tabindex="-1">ไทย (قيد المراجعة)</a>
+<script defer="" src="/locale-pref.js"></script><span class="sc-language-helper">بعض ترجمات هذه الصفحة قيد المراجعة.</span></nav></div></header>
 <main id="main" class="shell" tabindex="-1">
 <a class="back" href="/ar/">الرئيسية</a>
 <article><h1>كيف نصلّي المسبحة الوردية؟ دليل بالعربية</h1><p class="intro">ترافق المسبحة الوردية التأمل في حياة يسوع مع مريم. يمكن أن نصلّيها وحدنا أو مع العائلة والجماعة. يشرح هذا الدليل ترتيبها وأسرارها، ويمكن الرجوع إلى مرجع الفاتيكان أدناه لمتابعة القراءة.</p>
@@ -67,4 +64,9 @@
 <section id="section-opening" class="section"><h2>الصلوات الافتتاحية</h2><p>نرسم إشارة الصليب ونصلّي قانون الإيمان. ثم نصلّي الأبانا على الحبّة الكبيرة الأولى، والسلام عليكِ يا مريم ثلاث مرات على الحبّات الصغيرة، ونختم بالمجد للآب. يمكن أن نقدّم نية خاصة قبل البدء.</p></section><section id="section-decade" class="section"><h2>كيف نصلّي بيتًا واحدًا؟</h2><p>نعلن السر الذي نتأمل فيه ونتوقف لحظة عند هذا الحدث من الإنجيل. نصلّي الأبانا مرة، والسلام عليكِ يا مريم عشر مرات، والمجد للآب مرة. ثم ننتقل إلى السر التالي. تتكوّن المسبحة عادة من خمسة أبيات، وقد تضيف الجماعات بعض الطلبات بحسب تقاليدها.</p></section><section id="section-joyful" class="section"><h2>أسرار الفرح — الاثنين والسبت</h2><p>البشارة؛ زيارة مريم لأليصابات؛ ميلاد يسوع؛ تقدمة يسوع إلى الهيكل؛ وجود يسوع في الهيكل. تدعونا هذه الأسرار إلى التأمل في استقبال المسيح وأحداث طفولته.</p></section><section id="section-luminous" class="section"><h2>أسرار النور — الخميس</h2><p>معمودية يسوع؛ عرس قانا؛ إعلان ملكوت الله والدعوة إلى التوبة؛ التجلّي؛ تأسيس سر القربان المقدس. توجّه هذه الأسرار تأملنا إلى حياة المسيح العلنية ورسالته.</p></section><section id="section-sorrowful" class="section"><h2>أسرار الحزن — الثلاثاء والجمعة</h2><p>نزاع يسوع في بستان الزيتون؛ جلد يسوع؛ تكليله بالشوك؛ حمله الصليب؛ صلبه وموته. يمكن أن نرافق التأمل بصلاة من أجل المتألّمين ومن يساندونهم.</p></section><section id="section-glorious" class="section"><h2>أسرار المجد — الأربعاء والأحد</h2><p>قيامة يسوع؛ صعوده إلى السماء؛ حلول الروح القدس؛ انتقال مريم إلى السماء؛ تتويج مريم ملكة على السماء والأرض. هذا توزيع أسبوعي شائع، ويمكن أن يتكيّف مع الزمن الليتورجي وظروف صلاة الجماعة.</p></section><section id="section-finish" class="section"><h2>الختام والمثابرة</h2><p>بعد الأبيات الخمسة يمكن أن نختم بصلاة السلام عليك أيتها الملكة وإشارة الصليب. إذا كنت تتعلّم، خذ وقتك لفهم بيت واحد قبل المتابعة. وعندما يتشتت انتباهك، عد بلطف إلى التأمل من دون الحاجة إلى البدء من جديد. قد تبقى بعض التسجيلات والأدوات الصوتية في الموقع باللغة الإنجليزية.</p></section><section class="section"><h2>المصادر والمراجع</h2><ul><li><a href="https://www.vatican.va/special/rosary/documents/misteri_fr.html">أسرار الوردية (الفاتيكان، بالفرنسية)</a></li><li><a href="https://www.vaticannews.va/fr/priere/rosaire.html">صلوات الوردية (أخبار الفاتيكان، بالفرنسية)</a></li></ul></section></article>
 <aside class="related"><h2>للمتابعة</h2><ul><li><a href="/ar/biography">سيرة مار شربل: حياته ودعوته وإعلان قداسته</a></li><li><a href="/ar/prayers">صلوات مع مار شربل للعائلة والمرضى والسلام</a></li><li><a href="/ar/novena">تساعية مع مار شربل: مسار صلاة لتسعة أيام</a></li><li><a href="/ar/annaya">زيارة عنايا ومزار مار شربل: دليل للاستعداد</a></li><li><a href="/ar/feast-day">عيد مار شربل: الأحد الثالث من تموز و٢٤ تموز</a></li><li><a href="/ar/22nd-of-the-month">الثاني والعشرون من كل شهر: الحج الشهري إلى مار شربل</a></li><li><a href="/ar/miracles/">عجائب مار شربل المعترف بها كنسيًا: ثلاثة أشفية فحصتها الكنيسة</a></li><li><a href="/ar/miracles/nohad-el-shami">نهاد الشامي ومار شربل: شهادة الشفاء وراء حجّ الثاني والعشرين</a></li><li><a href="/ar/miracles/dafne-gutierrez">دافني غوتييريز ومار شربل: شهادة استعادة البصر في فينيكس</a></li><li><a href="/ar/miracles/raymond-nader">ريمون نادر ومار شربل: شهادة عن ليلة صلاة في محبسة عنايا</a></li></ul><a href="/rosary-intro?lang=en">صفحة ذات صلة باللغة الإنجليزية</a></aside>
 </main><footer class="shell"><p>موقع تعبّدي مستقل مكرّس للقديس شربل، لا يمثّل مزار عنايا رسميًا.</p></footer>
+<script defer src="/translate.js?v=20260922-1"></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body></html>

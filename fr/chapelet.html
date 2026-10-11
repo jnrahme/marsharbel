@@ -4,19 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 <!-- Google tag (gtag.js) -->
-<script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+<script defer src="/analytics-init.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Comment prier le chapelet : guide en français</title>
 <meta name="description" content="Apprenez à prier le chapelet : les étapes d’une dizaine, les quatre séries de mystères et leur répartition habituelle au fil de la semaine." />
@@ -35,10 +23,14 @@
 <meta property="og:locale:alternate" content="en_US" />
 <meta property="og:locale:alternate" content="ar_AR" />
 <meta property="og:locale:alternate" content="es_ES" />
-<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
 <meta property="og:locale:alternate" content="it_IT" />
 <meta property="og:locale:alternate" content="de_DE" />
 <meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Saint Charbel" />
 <meta property="og:title" content="Comment prier le chapelet : guide en français" />
@@ -46,20 +38,25 @@
 <meta property="og:url" content="https://marsharbel.com/fr/chapelet" />
 <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="/international.css" />
+<link rel="stylesheet" href="/international.css?v=20261002-ui1" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Comment prier le chapelet : guide en français", "description": "Apprenez à prier le chapelet : les étapes d’une dizaine, les quatre séries de mystères et leur répartition habituelle au fil de la semaine.", "url": "https://marsharbel.com/fr/chapelet", "inLanguage": "fr", "isPartOf": {"@id": "https://marsharbel.com/#website"}}</script>
+<script id="sc-runtime-labels" type="application/json">{"language.label": "Langue", "language.popular": "Les plus utilisées", "language.all": "Toutes les langues (A-Z)", "install.label": "Installer l'application", "install.link": "Appuyez ici pour installer cette application", "install.ios": "Sur iPhone, dans Safari : appuyez sur \"Partager\", puis sur \"Sur l'écran d'accueil\".", "install.browser": "Si aucune fenêtre ne s'affiche, ouvrez le menu du navigateur et choisissez \"Installer l'application\" ou \"Ajouter à l'écran d'accueil\".", "footer.privacy": "Confidentialité (en anglais)", "footer.terms": "Conditions d'utilisation (en anglais)", "footer.accessibility": "Accessibilité (en anglais)", "language.choose": "Choisir la langue", "nativeNames": {"en": "English", "ar": "العربية", "fr": "Français", "es": "Español", "pt": "Português", "it": "Italiano", "de": "Deutsch", "pl": "Polski", "ru": "Русский", "hi": "हिन्दी", "th": "ไทย", "zh-Hans": "简体中文"}}</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
 <a class="skip-link" href="#main">Aller au contenu</a>
-<header><div class="shell masthead"><a class="brand" href="/fr/">Saint Charbel</a><nav class="locale-nav" aria-label="Choisir la langue"><a href="/en/rosary" hreflang="en" lang="en" dir="ltr">English</a>
-<a href="/ar/rosary" hreflang="ar" lang="ar" dir="rtl">العربية</a>
-<a href="/fr/chapelet" hreflang="fr" lang="fr" dir="ltr" aria-current="page">Français</a>
-<a href="/es/rosario" hreflang="es" lang="es" dir="ltr">Español</a>
-<a href="/pt/rosario" hreflang="pt" lang="pt" dir="ltr">Português</a>
-<a href="/it/rosario" hreflang="it" lang="it" dir="ltr">Italiano</a>
-<a href="/de/rosenkranz" hreflang="de" lang="de" dir="ltr">Deutsch</a>
-<a href="/pl/rozaniec" hreflang="pl" lang="pl" dir="ltr">Polski</a>
-<script>document.addEventListener("click",function(e){var a=e.target&&e.target.closest?e.target.closest("a[hreflang]"):null;if(!a)return;var l=(a.getAttribute("hreflang")||"").toLowerCase();if(l==="x-default")l="en";try{localStorage.setItem("sc_lang_pref",l)}catch(_){}});</script></nav></div></header>
+<header><div class="shell masthead"><a class="brand" href="/fr/">Saint Charbel</a><nav aria-label="Choisir la langue" class="locale-nav"><a dir="ltr" href="https://marsharbel.com/en/rosary" hreflang="en">Anglais</a>
+<a aria-disabled="true" dir="rtl" hreflang="ar" tabindex="-1">Arabe (en cours de révision)</a>
+<a aria-current="page" dir="ltr" href="https://marsharbel.com/fr/chapelet" hreflang="fr">Français</a>
+<a aria-disabled="true" dir="ltr" hreflang="es" tabindex="-1">Espagnol (en cours de révision)</a>
+<a aria-disabled="true" dir="ltr" hreflang="pt" tabindex="-1">Portugais (en cours de révision)</a>
+<a aria-disabled="true" dir="ltr" hreflang="it" tabindex="-1">Italien (en cours de révision)</a>
+<a aria-disabled="true" dir="ltr" hreflang="de" tabindex="-1">Allemand (en cours de révision)</a>
+<a aria-disabled="true" dir="ltr" hreflang="pl" tabindex="-1">Polonais (en cours de révision)</a>
+<a aria-disabled="true" dir="ltr" hreflang="ru" tabindex="-1">Русский (en cours de révision)</a>
+<a aria-disabled="true" dir="ltr" hreflang="hi" tabindex="-1">हिन्दी (en cours de révision)</a>
+<a aria-disabled="true" dir="ltr" hreflang="th" tabindex="-1">ไทย (en cours de révision)</a>
+<script defer="" src="/locale-pref.js"></script><span class="sc-language-helper">Certaines traductions de cette page sont en cours de révision.</span></nav></div></header>
 <main id="main" class="shell" tabindex="-1">
 <a class="back" href="/fr/">Accueil</a>
 <article><h1>Comment prier le chapelet : guide en français</h1><p class="intro">Le chapelet accompagne la contemplation de la vie de Jésus avec Marie. Il peut être prié seul, en famille ou en communauté. Ce guide explique sa structure ; les textes des prières sont accessibles dans la ressource du Vatican indiquée en référence.</p>
@@ -67,4 +64,9 @@
 <section id="section-opening" class="section"><h2>Les premières prières</h2><p>Faites le signe de la croix et récitez le Credo. Sur le premier gros grain, priez le Notre Père ; sur les trois petits grains, trois Je vous salue Marie. Terminez cette introduction par le Gloire au Père. Vous pouvez confier une intention avant de commencer.</p></section><section id="section-decade" class="section"><h2>Prier une dizaine</h2><p>Annoncez un mystère, puis prenez un instant pour contempler cet événement de l’Évangile. Priez un Notre Père, dix Je vous salue Marie et un Gloire au Père. Passez ensuite au mystère suivant. Un chapelet comprend habituellement cinq dizaines ; certaines communautés ajoutent des invocations selon leur usage.</p></section><section id="section-joyful" class="section"><h2>Les mystères joyeux — lundi et samedi</h2><p>L’Annonciation ; la Visitation ; la Nativité ; la Présentation de Jésus au Temple ; le Recouvrement de Jésus au Temple. Ces mystères invitent à méditer l’accueil du Christ et les événements de son enfance.</p></section><section id="section-luminous" class="section"><h2>Les mystères lumineux — jeudi</h2><p>Le Baptême de Jésus ; les noces de Cana ; l’annonce du Royaume et l’appel à la conversion ; la Transfiguration ; l’institution de l’Eucharistie. Ils orientent la méditation vers la vie publique du Christ.</p></section><section id="section-sorrowful" class="section"><h2>Les mystères douloureux — mardi et vendredi</h2><p>L’Agonie de Jésus au jardin des Oliviers ; la Flagellation ; le Couronnement d’épines ; le Portement de la croix ; la Crucifixion. Prenez le temps de confier à Dieu les personnes éprouvées.</p></section><section id="section-glorious" class="section"><h2>Les mystères glorieux — mercredi et dimanche</h2><p>La Résurrection ; l’Ascension ; la Pentecôte ; l’Assomption de Marie ; le Couronnement de Marie. Cette répartition hebdomadaire est un usage courant, qui peut être adapté au temps liturgique et à la prière communautaire.</p></section><section id="section-finish" class="section"><h2>Terminer et reprendre</h2><p>Après les cinq dizaines, vous pouvez conclure par le Salve Regina et le signe de la croix. Si vous débutez, prenez le temps de comprendre une seule dizaine avant de poursuivre. Les distractions ne demandent pas de recommencer : revenez doucement à la méditation. Les outils audio du site peuvent encore être en anglais.</p></section><section class="section"><h2>Sources et références</h2><ul><li><a href="https://www.vatican.va/special/rosary/documents/misteri_fr.html">Mystères du Rosaire (Vatican, français)</a></li><li><a href="https://www.vaticannews.va/fr/priere/rosaire.html">Prières du Rosaire (Vatican News, français)</a></li></ul></section></article>
 <aside class="related"><h2>Continuer la découverte</h2><ul><li><a href="/fr/biographie">Saint Charbel : biographie et repères de sa vie</a></li><li><a href="/fr/prieres">Prier avec saint Charbel : intentions et prières</a></li><li><a href="/fr/neuvaine">Saint Charbel : un parcours de prière de neuf jours</a></li><li><a href="/fr/annaya">Annaya et saint Charbel : préparer sa visite</a></li></ul><a href="/rosary-intro?lang=en">Ressource complémentaire en anglais</a></aside>
 </main><footer class="shell"><p>Site de dévotion indépendant consacré à saint Charbel, sans affiliation officielle au sanctuaire d’Annaya.</p></footer>
+<script defer src="/translate.js?v=20260922-1"></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body></html>

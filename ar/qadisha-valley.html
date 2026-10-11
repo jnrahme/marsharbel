@@ -5,19 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>وادي قاديشا: الوادي المقدس وأديرته المارونية في لبنان</title>
   <meta name="description" content="تعرّف إلى وادي قاديشا وأديرته وحرش أرز الرب، وتاريخ الرهبنة المارونية وصلته بمسقط رأس مار شربل وكيفية زيارته." />
@@ -32,10 +20,14 @@
   <meta property="og:locale:alternate" content="en_US" />
 <meta property="og:locale:alternate" content="es_ES" />
 <meta property="og:locale:alternate" content="fr_FR" />
-<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
 <meta property="og:locale:alternate" content="it_IT" />
 <meta property="og:locale:alternate" content="de_DE" />
 <meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:image" content="https://marsharbel.com/media/annaya/qadisha-valley-aerial.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="وادي قاديشا: الوادي المقدس وأديرته المارونية في لبنان" />
@@ -52,7 +44,14 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "مار شربل",
-    "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"],
+    "alternateName": [
+      "Mar Charbel",
+      "Saint Charbel Makhlouf",
+      "Sharbel",
+      "St Charbel",
+      "Saint Sharbel",
+      "Charbel Makhlouf"
+    ],
     "url": "https://marsharbel.com/",
     "publisher": {
       "@type": "Organization",
@@ -67,11 +66,17 @@
         "@type": "ListItem",
         "position": 1,
         "name": "الرئيسية",
-        "item": "https://marsharbel.com/"
+        "item": "https://marsharbel.com/ar/"
       },
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "السفر",
+        "item": "https://marsharbel.com/ar/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "وادي قاديشا: الوادي المقدس في لبنان",
         "item": "https://marsharbel.com/ar/qadisha-valley"
       }
@@ -170,15 +175,20 @@
   <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles.css?v=20260922-1" />
-  <link rel="stylesheet" href="/travel.css?v=20261002-1" />
+  <link rel="stylesheet" href="/travel.css?v=20261002-3" />
   <style>html[lang="ar"][data-authored-mirror="qadisha"] body{line-height:1.8}html[lang="ar"][data-authored-mirror="qadisha"] h1,html[lang="ar"][data-authored-mirror="qadisha"] h2,html[lang="ar"][data-authored-mirror="qadisha"] h3{line-height:1.35}html[lang="ar"][data-authored-mirror="qadisha"] .hero h1{max-width:16ch}</style>
   <!-- hreflang:begin -->
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qadisha-valley" />
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/qadisha-valley" />
-  <link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qadisha-valley" />
-  <link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/vallee-qadisha" />
-  <link rel="alternate" hreflang="es" href="https://marsharbel.com/es/valle-qadisha" />
   <!-- hreflang:end -->
+<link rel="alternate" hreflang="en" href="https://marsharbel.com/qadisha-valley" />
+<link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qadisha-valley" />
+<link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/vallee-qadisha" />
+<link rel="alternate" hreflang="es" href="https://marsharbel.com/es/valle-qadisha" />
+<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/qadisha-valley" />
+<link rel="alternate" hreflang="ru" href="https://marsharbel.com/ru/qadisha-valley" />
+<link rel="alternate" hreflang="zh-Hans" href="https://marsharbel.com/zh-Hans/qadisha-valley" />
+<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qadisha-valley" />
+<script id="sc-runtime-labels" type="application/json">{"language.label": "اللغة", "language.popular": "الأكثر استخدامًا", "language.all": "جميع اللغات (A-Z)", "install.label": "ثبّت التطبيق", "install.link": "اضغط هنا لتثبيت هذا التطبيق", "install.ios": "على iPhone في Safari: اضغط على \"مشاركة\"، ثم على \"إضافة إلى الشاشة الرئيسية\".", "install.browser": "إذا لم تظهر نافذة، افتح قائمة المتصفح واختر \"تثبيت التطبيق\" أو \"إضافة إلى الشاشة الرئيسية\".", "footer.privacy": "سياسة الخصوصية (بالإنكليزية)", "footer.terms": "شروط الاستخدام (بالإنكليزية)", "footer.accessibility": "إمكانية الوصول (بالإنكليزية)", "language.choose": "اختر اللغة", "nativeNames": {"en": "English", "ar": "العربية", "fr": "Français", "es": "Español", "pt": "Português", "it": "Italiano", "de": "Deutsch", "pl": "Polski", "ru": "Русский", "hi": "हिन्दी", "th": "ไทย", "zh-Hans": "简体中文"}}</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body class="travel-page travel-destination">
   <header class="topbar">
@@ -187,21 +197,25 @@
       <nav class="links" aria-label="القائمة الرئيسية">
         <a href="/">الرئيسية</a>
         <div class="nav-group">
-        <a class="nav-parent" href="/stories" aria-haspopup="true" aria-expanded="false">القصة<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="/saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false" hreflang="en" aria-label="الإرث الروحي (بالإنجليزية)">الإرث الروحي<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="/stories">قصص القديسين</a>
-        <a href="/ar/biography">السيرة الكاملة</a>
+        <div class="enc-nav-item"><a href="/saint-charbel-encyclopedia" hreflang="en" aria-label="موسوعة مار شربل (بالإنجليزية)">موسوعة مار شربل</a> <span class="enc-language">(بالإنجليزية)</span></div>
+        <div class="enc-nav-item"><a href="/history" hreflang="en" aria-label="السيرة الكاملة (بالإنجليزية)">السيرة الكاملة</a> <span class="enc-language">(بالإنجليزية)</span></div>
         </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="/ar/miracles/" aria-haspopup="true" aria-expanded="false">العجائب<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="/ar/miracles/">العجائب والشهادات</a>
         <a href="/miracles/eucharistic/">عجائب القربان المقدس</a>
-        <a href="/news">آخر الأخبار</a>
         <a href="/testimonies">الرسائل</a>
         <a href="/voice-testimony">شهادات صوتية</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="/saints" aria-haspopup="true" aria-expanded="false">القديسون<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="/saints">القديسون</a>
+        <a href="/stories">كتب للأطفال</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="/prayer-library" aria-haspopup="true" aria-expanded="false">الصلاة<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -225,25 +239,37 @@
         <a href="/become-like-charbel">الاقتداء به</a>
         </div></div>
         <div class="nav-group">
-        <a class="active nav-parent" href="/ar/annaya" aria-haspopup="true" aria-expanded="false">السفر مع مار شربل<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="active nav-parent" href="/ar/travel" aria-haspopup="true" aria-expanded="false">السفر مع مار شربل<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="/ar/travel">السفر</a>
         <a href="/ar/annaya">زيارة عنايا</a>
         <a href="/annaya-tour">جولة افتراضية في عنايا</a>
         <a href="/bekaa-kafra">بقاعكفرا</a>
-        <a class="active" href="/ar/qadisha-valley" aria-current="page">وادي قاديشا</a>
+        <a class="active" aria-current="page" href="/ar/qadisha-valley">وادي قاديشا</a>
         <a href="/ar/qannoubine-monastery">دير قنوبين</a>
         <a href="/ar/qozhaya-monastery">دير قزحيا</a>
         <a href="/saint-charbel-places-lebanon">لبنان مار شربل</a>
         <a href="/saint-charbel-hermitage">المحبسة</a>
         <a href="/saint-charbel-trail">درب مار شربل</a>
         </div></div>
-        <a href="/gallery">معرض الصور</a>
+        <a href="/news">الأخبار</a>
+<div class="nav-group">
+<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/music">Media<span aria-hidden="true" class="nav-chev"></span></a>
+<div class="nav-sub">
+<a href="/music">Music</a>
+<a href="/videos">Video</a>
+<a href="/gallery">معرض الصور</a>
+</div></div>
+
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="في هذا الدليل"><a href="/ar/">الرئيسية</a><span aria-hidden="true">/</span><a href="/ar/travel">السفر</a><span aria-hidden="true">/</span><span aria-current="page">وادي قاديشا: الوادي المقدس في لبنان</span></nav>
+<!-- i18n-travel-frame:end -->
     <section class="travel-hero">
       <figure class="travel-hero-image"><img src="/media/annaya/qadisha-valley-aerial.webp" alt="منظر جوي لوادي قاديشا قرب قنوبين: منحدرات خضراء ودير مبني في الصخر. تصوير إيفان ويليامز، ويكيميديا كومنز" width="1200" height="899" fetchpriority="high" decoding="async" /><figcaption>وادي قاديشا من جهة قنوبين، وأديرته معلّقة بين الصخور. تصوير: إيفان ويليامز، ويكيميديا كومنز (CC BY-SA 4.0).</figcaption></figure>
       <div class="travel-hero-copy"><h1>وادي قاديشا: الوادي المقدس في لبنان</h1><p>وادي قاديشا - الوادي المقدس - هو الجرف العميق في شمال لبنان حيث ترسّخت الحياة الرهبانية المارونية: ألف عام من مغاور النساك والأديرة المنحوتة في الصخور، وهو اليوم موقع تراث عالمي لليونسكو مع أرز الرب عند منبعه.</p>
@@ -349,5 +375,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="/translate.js?v=20260922-1"></script>
   <script src="/nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

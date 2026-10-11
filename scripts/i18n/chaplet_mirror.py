@@ -1,3 +1,4 @@
+from i18n.encyclopedia_nav import finish_nav
 """Generate the Arabic Chaplet from the current English master and keyed copy."""
 from bs4 import BeautifulSoup
 from pathlib import Path
@@ -11,7 +12,7 @@ SITE = 'https://marsharbel.com'
 
 def render_chaplet(root=ROOT):
     catalog = read_json(root/'locales/ar/chaplet.json')
-    required = {'hero.kicker','hero.title','hero.intro','hero.caption',*(f'hero.action{i}' for i in range(1,4)),
+    required = {'metadata.description','hero.kicker','hero.title','hero.intro','hero.caption',*(f'hero.action{i}' for i in range(1,4)),
                 'what.title','what.body1before','what.link','what.body1after','what.body2',
                 'steps.title','steps.intro','prayers.title','prayers.fatherTitle','prayers.father',
                 'prayers.fatherContext','prayers.gracesTitle','prayers.graces','when.title',
@@ -42,8 +43,11 @@ def render_chaplet(root=ROOT):
             node.string=catalog[keys[2*i+1]]
             tag.append(node)
         tag.append(catalog[keys[-1]])
+    # The complete, reviewed shared trail catalog is mandatory. No English fallback.
+    from i18n.encyclopedia_trail import apply_trail
+    apply_trail(soup, root, 'ar', '/history')
     # Keep the English layout, DOM structure, all media and links. Only replace text nodes.
-    for selector,key in [('main .hero .kicker','hero.kicker'),('main h1','hero.title'),('main .hero > p','hero.intro'),
+    for selector,key in [('main .hero .kicker','hero.kicker'),('main h1','hero.title'),('main .hero > p:not(.enc-trail)','hero.intro'),
                          ('main .hero figcaption','hero.caption'),('main .section:nth-of-type(2) h2','what.title'),
                          ('main .section:nth-of-type(3) h2','steps.title'),('main .section:nth-of-type(3) .section-sub','steps.intro'),
                          ('main .section:nth-of-type(4) h2','prayers.title'),('main .section:nth-of-type(5) h2','when.title'),
@@ -76,7 +80,7 @@ def render_chaplet(root=ROOT):
     one('main .hero img')['alt']='الصورة التقليدية لمار شربل مخلوف مرتديًا قلنسوة الرهبان'
     # Head copy and FAQ schema from the same keyed source; leave English photo provenance untouched.
     title=catalog['hero.title']+' | طريقة صلاة مسبحة مار شربل'
-    description=catalog['hero.intro']
+    description=catalog['metadata.description']
     soup.title.string=title
     for selector,value in [('meta[name="description"]',description),('meta[property="og:title"]',title),
                            ('meta[property="og:description"]',description),('meta[name="twitter:title"]',title),
@@ -128,4 +132,4 @@ def render_chaplet(root=ROOT):
     article['breadcrumb']['itemListElement'][1]['name']='الصلاة'
     schemas[0].string=json.dumps(article,ensure_ascii=False,indent=2).replace('<','\\u003c')
     footer=one('footer .site-shell');footer.string=catalog['hero.title']+'. الكاتب: صلّ من أجل من أنشأ هذا الموقع.'
-    return {root/'ar/saint-charbel-chaplet.html':str(soup)}
+    return {root/'ar/saint-charbel-chaplet.html':finish_nav(str(soup),root,'ar')}

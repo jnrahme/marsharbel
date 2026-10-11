@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Qozhaya Monastery: Saint Anthony&#x27;s House and the 1610 Psalter</title>
   <meta name="description" content="Qozhaya, the Monastery of Saint Anthony in the Holy Valley - hermits since the fourth century, historic mother house of the Lebanese Maronite Order, and the press behind the 1610 Psalter, the first book printed in the eastern Ottoman Empire." />
@@ -30,10 +18,14 @@
   <meta property="og:locale:alternate" content="ar_AR" />
 <meta property="og:locale:alternate" content="es_ES" />
 <meta property="og:locale:alternate" content="fr_FR" />
-<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
 <meta property="og:locale:alternate" content="it_IT" />
 <meta property="og:locale:alternate" content="de_DE" />
 <meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:image" content="https://marsharbel.com/media/annaya/lebanon-qozhaya-monastery.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Qozhaya Monastery: Saint Anthony&#x27;s House and the 1610 Psalter" />
@@ -50,7 +42,14 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "Saint Charbel",
-    "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"],
+    "alternateName": [
+      "Mar Charbel",
+      "Saint Charbel Makhlouf",
+      "Sharbel",
+      "St Charbel",
+      "Saint Sharbel",
+      "Charbel Makhlouf"
+    ],
     "url": "https://marsharbel.com/",
     "publisher": {
       "@type": "Organization",
@@ -70,6 +69,12 @@
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Travel",
+        "item": "https://marsharbel.com/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "Qozhaya, Saint Anthony's House",
         "item": "https://marsharbel.com/qozhaya-monastery"
       }
@@ -168,14 +173,19 @@
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qozhaya-monastery" />
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/qozhaya-monastery" />
-  <link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qozhaya-monastery" />
-  <link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/monastere-qozhaya" />
-  <link rel="alternate" hreflang="es" href="https://marsharbel.com/es/monasterio-qozhaya" />
   <!-- hreflang:end -->
+<link rel="stylesheet" href="/travel.css?v=20261002-3" />
+<link rel="alternate" hreflang="en" href="https://marsharbel.com/qozhaya-monastery" />
+<link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qozhaya-monastery" />
+<link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/monastere-qozhaya" />
+<link rel="alternate" hreflang="es" href="https://marsharbel.com/es/monasterio-qozhaya" />
+<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/qozhaya-monastery" />
+<link rel="alternate" hreflang="ru" href="https://marsharbel.com/ru/qozhaya-monastery" />
+<link rel="alternate" hreflang="zh-Hans" href="https://marsharbel.com/zh-Hans/qozhaya-monastery" />
+<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qozhaya-monastery" />
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
-<body>
+<body class="travel-page travel-destination">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="topbar">
     <div class="site-shell nav">
@@ -183,9 +193,9 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -193,11 +203,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -221,8 +235,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="active nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="active nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -236,14 +251,24 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
-    <section class="hero">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="In this guide"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/travel">Travel</a><span aria-hidden="true">/</span><span aria-current="page">Qozhaya, Saint Anthony&#x27;s House</span></nav>
+<!-- i18n-travel-frame:end -->
+    <section class="hero travel-split-hero"><figure class="hero-figure"><img src="./media/annaya/lebanon-qozhaya-monastery.webp" alt="The Monastery of Saint Anthony of Qozhaya built against the cliff wall of the Qadisha Valley" width="1026" height="567" loading="eager" fetchpriority="high" /><figcaption>Deir Qozhaya - the Monastery of Saint Anthony - against the wall of the Qadisha Valley. Public domain, <a href="https://commons.wikimedia.org/wiki/File:Qozhaya01072003.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>.</figcaption></figure><div class="travel-summary">
       <span class="kicker">Places of Saint Charbel</span>
       <h1>Qozhaya, Saint Anthony's House</h1>
       <p>The Monastery of Qozhaya (Saint Anthony), beneath Ehden in the Qadisha Valley, belongs to the Lebanese Maronite Order - Saint Charbel's order. It served as the order's mother house from 1708 to 1723, and a bilingual Syriac and Garshuni Psalter was printed here in 1610.</p>
@@ -253,8 +278,8 @@
         <a class='btn subtle' href='./qannoubine-monastery'>Qannoubine Monastery</a>
         <a class='btn subtle' href='./visit-annaya'>Visit Annaya</a>
       </div>
-      <figure class="hero-figure"><img src="./media/annaya/lebanon-qozhaya-monastery.webp" alt="The Monastery of Saint Anthony of Qozhaya built against the cliff wall of the Qadisha Valley" width="1026" height="567" loading="lazy" /><figcaption>Deir Qozhaya - the Monastery of Saint Anthony - against the wall of the Qadisha Valley. Public domain, <a href="https://commons.wikimedia.org/wiki/File:Qozhaya01072003.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>.</figcaption></figure>
-    </section>
+
+</div></section>
 
     <section class="section">
       <h2>The Treasure of Life</h2>
@@ -348,5 +373,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

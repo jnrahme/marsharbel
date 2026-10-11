@@ -20,22 +20,21 @@ for (const route of ['/qadisha-valley', '/ar/qadisha-valley']) {
   });
 }
 
-test('Arabic Qadisha persists in Arabic, switches to English master, and returns', async ({page}) => {
-  await page.goto('/qadisha-valley?lang=en');
-  await page.locator('#sc-language-select').selectOption('ar');
-  await expect(page).toHaveURL(/\/ar\/qadisha-valley$/);
-  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-  await expect(page.locator('h1')).toHaveText(catalog['hero.heading1']);
+test('ar Qadisha keeps authored language and offers English while refusing pending non-English', async ({page}) => {
   await page.goto('/ar/qadisha-valley?lang=en');
   await expect(page.locator('h1')).toHaveText(catalog['hero.heading1']);
-  await page.locator('#sc-language-select').selectOption('en');
-  await expect(page).toHaveURL(/\/qadisha-valley$/);
-  await expect(page.locator('h1')).toHaveText("The Qadisha Valley, Lebanon's Holy Valley");
+  await expect(page.locator('html')).toHaveAttribute('lang','ar');
+  await expect(page.locator('#sc-language-select option[value="en"]')).toBeEnabled();
+  const before=await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
+  expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('de'))).toBe(false);
+  expect(await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}))).toEqual(before);
+  await page.reload();await expect(page.locator('h1')).toHaveText(catalog['hero.heading1']);
+  await page.selectOption('#sc-language-select','en');await expect(page).toHaveURL(/\/qadisha-valley$/);await expect(page.locator('html')).toHaveAttribute('lang','en');
 });
 
 test('Arabic Qadisha has functioning nav and local authored links', async ({page}) => {
   await page.goto('/ar/qadisha-valley');
-  const travel = page.locator('header .nav-group').last().locator('.nav-sub');
+  const travel = page.locator('header .nav-group:has(.nav-parent[href="/ar/travel"])').locator('.nav-sub');
   for (const destination of ['/ar/qannoubine-monastery', '/ar/qozhaya-monastery', '/ar/qadisha-valley']) {
     await expect(travel.locator(`a[href="${destination}"]`)).toHaveCount(1);
   }

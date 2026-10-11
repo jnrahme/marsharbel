@@ -1,0 +1,1119 @@
+{
+  "version": 1,
+  "master": "annaya-tour.html",
+  "masterSha256": "c9bdc94171ed6126b4370b2551950bf7432bd7585197f7b7d8cfe846ff609796",
+  "sourceRevision": "1f490155db3949906ced179afc4c6c128a63121d",
+  "bindings": [
+    {
+      "key": "annaya-tour.metadata.title-annaya-online-tour-walk-saint-charbel-s-monastery",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Annaya Online Tour: Walk Saint Charbel's Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.metadata.description-a-guided-online-walk-through-annaya-in-five-stop",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "A guided online walk through Annaya in five stops: the monastery, the pilgrim church, the courtyard, the tomb, and the hermitage, with real photographs.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "annaya-tour.metadata.og-title-annaya-online-tour-walk-saint-charbel-s-monastery",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Annaya Online Tour: Walk Saint Charbel's Monastery",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "annaya-tour.metadata.og-description-a-guided-online-walk-through-annaya-in-five-s",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "A guided online walk through Annaya in five stops: the monastery, the pilgrim church, the courtyard, the tomb, and the hermitage, with real photographs.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "annaya-tour.metadata.twitter-title-annaya-online-tour-walk-saint-charbel-s-monast",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Annaya Online Tour: Walk Saint Charbel's Monastery",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "annaya-tour.metadata.twitter-description-a-guided-online-walk-through-annaya-in-f",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "A guided online walk through Annaya in five stops: the monastery, the pilgrim church, the courtyard, the tomb, and the hermitage, with real photographs.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "annaya-tour.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "annaya-tour.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.accessibility.in-this-guide",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "annaya-tour.body.home",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.body.travel",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.body.walk-through-annaya-online",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Walk Through Annaya, Online",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.body.online-tour-annaya-lebanon",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > span:nth-of-type(1)",
+      "source": "Online tour · Annaya, Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.walk-through-annaya-online",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > h1:nth-of-type(1)",
+      "source": "Walk Through Annaya, Online",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.short-answer",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Short answer:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.this-is-a-guided-walk-through-annaya-the-lebanese-mountain-m",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(1)",
+      "source": "This is a guided walk through Annaya, the Lebanese mountain monastery where Saint Charbel lived and is buried. Scroll through five stops: the monastery, the church, the courtyard, the tomb, and the hermitage. Each has a real photograph and a short story of why it matters.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.begin-the-tour",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Begin the Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.plan-a-real-visit",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Plan a Real Visit",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.next-his-birthplace",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Next: His Birthplace",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.also-bekaa-tour",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > div:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Also: Bekaa Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.part-of-the",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(2)",
+      "source": "Part of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.saint-charbel-encyclopedia",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.read",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(2)",
+      "source": ". Read",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.the-full-story-of-his-life",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "the full story of his life",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.or-browse-all-topics",
+      "selector": "#main-content > section:nth-of-type(1) > div.annaya-tour-summary > p:nth-of-type(2)",
+      "source": "or browse all topics.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "annaya-tour.accessibility.the-church-and-monastery-of-saint-maron-at-annaya-on-a-terra",
+      "selector": "#main-content > section:nth-of-type(2) > img:nth-of-type(1)",
+      "source": "The church and monastery of Saint Maron at Annaya on a terraced mountainside in winter, with a bell tower and a red-tiled roof",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "annaya-tour.walk-through-annaya-onli.stop-1-of-5",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Stop 1 of 5",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-monastery-on-the-mou.the-monastery-on-the-mountain",
+      "selector": "#stop1",
+      "source": "The Monastery on the Mountain",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-monastery-on-the-mou.begin-on-the-hillside-annaya-belongs-to-the-jbeil-district-r",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Begin on the hillside. Annaya belongs to the Jbeil district, roughly 52 km north of Beirut. The monastery rests on a wooded slope near 1,200 m, and on a clear day the sea shows far below the terraces.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-monastery-on-the-mou.why-it-matters",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Why it matters:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-monastery-on-the-mou.charbel-spent-most-of-his-grown-life-on-this-hill-and-every",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Charbel spent most of his grown life on this hill, and every stop that follows is a short walk from where you are standing.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "annaya-tour.the-monastery-on-the-mou.photo-paul-saad",
+      "selector": "#main-content > section:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Photo: Paul Saad,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-monastery-on-the-mou.wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(2) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-monastery-on-the-mou.cc-by-sa-4-0-cropped-and-resized",
+      "selector": "#main-content > section:nth-of-type(2) > p:nth-of-type(1)",
+      "source": ", CC BY-SA 4.0 (cropped and resized)",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "annaya-tour.accessibility.night-view-from-above-of-the-annaya-church-with-its-lit-cros",
+      "selector": "#main-content > section:nth-of-type(3) > img:nth-of-type(1)",
+      "source": "Night view from above of the Annaya church with its lit cross and the monastery buildings among the pines and village lights",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "annaya-tour.the-monastery-on-the-mou.stop-2-of-5",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Stop 2 of 5",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-church-built-for-the.the-church-built-for-the-pilgrims",
+      "selector": "#stop2",
+      "source": "The Church Built for the Pilgrims",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-church-built-for-the.once-charbel-was-beatified-in-1965-visitors-came-in-far-grea",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Once Charbel was beatified in 1965, visitors came in far greater numbers than the old buildings could take. The Lebanese Maronite Order answered with a new, larger church, consecrated in 1974. The tomb itself lies in the vaulted Tomb Church nearby - stop 4 on this walk.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-church-built-for-the.why-it-matters",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Why it matters:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-church-built-for-the.its-size-tells-you-how-many-people-still-make-the-climb-espe",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Its size tells you how many people still make the climb, especially on the 22nd of the month and at the July feast.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "annaya-tour.the-church-built-for-the.photo-saintcharbel-com",
+      "selector": "#main-content > section:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "Photo: saintcharbel.com.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.accessibility.the-stone-monastery-courtyard-at-annaya-at-night-with-arched",
+      "selector": "#main-content > section:nth-of-type(4) > img:nth-of-type(1)",
+      "source": "The stone monastery courtyard at Annaya at night, with arched windows and a round stone fountain",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "annaya-tour.the-church-built-for-the.stop-3-of-5",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Stop 3 of 5",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-courtyard.the-courtyard",
+      "selector": "#stop3",
+      "source": "The Courtyard",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-courtyard.every-pilgrim-passes-through-this-courtyard-on-the-way-in-th",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Every pilgrim passes through this courtyard on the way in. The walls are bare stone, the windows are arched, and a fountain murmurs in the middle. Nobody pays to enter, and nobody is asked what they believe.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-courtyard.why-it-matters",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Why it matters:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-courtyard.people-arrive-talking-and-leave-quiet-the-place-works-on-you",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "People arrive talking and leave quiet. The place works on you before you have decided to pray.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "annaya-tour.the-courtyard.photo-saintcharbel-com",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "Photo: saintcharbel.com.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.accessibility.arched-tomb-chamber-at-annaya-with-a-candle-lit-icon-of-sain",
+      "selector": "#main-content > section:nth-of-type(5) > img:nth-of-type(1)",
+      "source": "Arched tomb chamber at Annaya with a candle-lit icon of Saint Charbel above the reliquary",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "annaya-tour.the-courtyard.stop-4-of-5",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Stop 4 of 5",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-tomb.the-tomb",
+      "selector": "#stop4",
+      "source": "The Tomb",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-tomb.here-is-what-the-climb-is-for-a-line-forms-and-the-people-in",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Here is what the climb is for. A line forms, and the people in it pray while they wait. Many hold a folded note with a name on it. When your turn comes there is nothing to perform: you kneel, you touch the stone if you wish, and you stay as long as you need.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-tomb.why-it-matters",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Why it matters:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-tomb.for-most-visitors-this-is-the-whole-reason-for-the-journey-m",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "For most visitors, this is the whole reason for the journey. More on",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "annaya-tour.the-tomb.the-tomb-page",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "the tomb page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-tomb.text",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "annaya-tour.the-tomb.photo-saintcharbel-com",
+      "selector": "#main-content > section:nth-of-type(5) > p:nth-of-type(1)",
+      "source": "Photo: saintcharbel.com.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.accessibility.view-toward-the-coast-and-the-sea-from-the-hermitage-area-of",
+      "selector": "#main-content > section:nth-of-type(6) > img:nth-of-type(1)",
+      "source": "View toward the coast and the sea from the hermitage area of Annaya, over a stone terrace and flat roof",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "annaya-tour.the-tomb.stop-5-of-5",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Stop 5 of 5",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-hermitage-of-saints.the-hermitage-of-saints-peter-and-paul",
+      "selector": "#stop5",
+      "source": "The Hermitage of Saints Peter and Paul",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-hermitage-of-saints.a-path-leads-up-from-the-monastery-to-the-hermitage-of-saint",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A path leads up from the monastery to the hermitage of Saints Peter and Paul. This photograph, taken from the hermitage area and published on the monastery's own hermitage page, looks out over a terrace toward the sea. Charbel moved up here in 1875. He remained for twenty-three years, until he died on Christmas Eve 1898.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-hermitage-of-saints.why-it-matters",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Why it matters:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-hermitage-of-saints.the-tomb-is-where-people-go-to-ask-him-for-help-the-hermitag",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The tomb is where people go to ask him for help. The hermitage is where he did his own praying, alone. More on",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "annaya-tour.the-hermitage-of-saints.the-hermitage-page",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "the hermitage page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.the-hermitage-of-saints.text",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "annaya-tour.the-hermitage-of-saints.photo-saintcharbel-com",
+      "selector": "#main-content > section:nth-of-type(6) > p:nth-of-type(1)",
+      "source": "Photo: saintcharbel.com.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.where-to-go-next.where-to-go-next",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "Where to Go Next",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.where-to-go-next.saint-charbel-was-born-in-a-village-far-north-of-annaya-cont",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Saint Charbel was born in a village far north of Annaya. Continue to",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.where-to-go-next.bekaa-kafra-his-birthplace",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Bekaa Kafra, his birthplace",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.where-to-go-next.or-pray-the",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", or pray the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "annaya-tour.where-to-go-next.nine-day-novena",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "nine-day novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.where-to-go-next.for-travel-details-hours-and-tips-use-the",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ". For travel details, hours and tips, use the",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "annaya-tour.where-to-go-next.annaya-visiting-guide",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya visiting guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.where-to-go-next.text",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "annaya-tour.where-to-go-next.the-arabic-guide",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The Arabic guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.where-to-go-next.annaya-in-arabic",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Annaya in Arabic",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.where-to-go-next.has-the-same-place-in-arabic",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "has the same place in Arabic.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "annaya-tour.photo-credits.photo-credits",
+      "selector": "#main-content > section:nth-of-type(8) > h2:nth-of-type(1)",
+      "source": "Photo Credits",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.photo-credits.stop-1-paul-saad-wikimedia-commons-cc-by-sa-4-0-stops-2-to-5",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Stop 1: Paul Saad, Wikimedia Commons, CC BY-SA 4.0. Stops 2 to 5: Photo: saintcharbel.com. The tour uses real photographs only.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.sources.sources",
+      "selector": "#main-content > section:nth-of-type(9) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.sources.charbel-app-annaya-monastery-about-1-200-meters-jbeil-distri",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Charbel App: Annaya Monastery - about 1,200 meters, Jbeil district, the 1974 church, the 1875 move to the hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.sources.charbel-app-visiting-annaya-the-tomb-the-hermitage-from-1875",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Charbel App: Visiting Annaya - the tomb, the hermitage from 1875 until his death on Christmas Eve 1898",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.sources.saint-charbel-oasis-the-monastery-s-site-the-hermitage-of-sa",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saint Charbel Oasis (the monastery's site): the Hermitage of Saints Peter and Paul",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya-tour.footer.annaya-online-tour-author-please-pray-for-the-person-who-mad",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Annaya online tour. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya.hero.imageAlt",
+      "selector": ".annaya-tour-lead img",
+      "source": "Saint Maron monastery and the church bell tower at Annaya in winter",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "annaya.hero.creditAuthor",
+      "selector": ".annaya-tour-lead figcaption",
+      "source": "Paul Saad /",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya.hero.creditCommons",
+      "selector": ".annaya-tour-lead figcaption a:nth-of-type(1)",
+      "source": "Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "annaya.hero.creditSeparator",
+      "selector": ".annaya-tour-lead figcaption",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "annaya.hero.creditLicense",
+      "selector": ".annaya-tour-lead figcaption a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "annaya-tour.metadata.title-annaya-online-tour-walk-saint-charbel-s-monastery": "Annaya Online Tour: Walk Saint Charbel's Monastery",
+    "annaya-tour.metadata.description-a-guided-online-walk-through-annaya-in-five-stop": "A guided online walk through Annaya in five stops: the monastery, the pilgrim church, the courtyard, the tomb, and the hermitage, with real photographs.",
+    "annaya-tour.metadata.og-title-annaya-online-tour-walk-saint-charbel-s-monastery": "Annaya Online Tour: Walk Saint Charbel's Monastery",
+    "annaya-tour.metadata.og-description-a-guided-online-walk-through-annaya-in-five-s": "A guided online walk through Annaya in five stops: the monastery, the pilgrim church, the courtyard, the tomb, and the hermitage, with real photographs.",
+    "annaya-tour.metadata.twitter-title-annaya-online-tour-walk-saint-charbel-s-monast": "Annaya Online Tour: Walk Saint Charbel's Monastery",
+    "annaya-tour.metadata.twitter-description-a-guided-online-walk-through-annaya-in-f": "A guided online walk through Annaya in five stops: the monastery, the pilgrim church, the courtyard, the tomb, and the hermitage, with real photographs.",
+    "annaya-tour.body.skip-to-main-content": "Skip to main content",
+    "annaya-tour.header.text": "✦",
+    "annaya-tour.header.saint-charbel": "Saint Charbel",
+    "annaya-tour.accessibility.primary": "Primary",
+    "annaya-tour.header.home": "Home",
+    "annaya-tour.header.legacy": "Legacy",
+    "annaya-tour.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "annaya-tour.header.full-history": "Full History",
+    "annaya-tour.header.miracles": "Miracles",
+    "annaya-tour.header.miracles-reports": "Miracles & Reports",
+    "annaya-tour.header.eucharistic-miracles": "Eucharistic Miracles",
+    "annaya-tour.header.letters": "Letters",
+    "annaya-tour.header.voice-testimony": "Voice Testimony",
+    "annaya-tour.header.saints": "Saints",
+    "annaya-tour.header.children-s-books": "Children's Books",
+    "annaya-tour.header.prayer": "Prayer",
+    "annaya-tour.header.prayer-library": "Prayer Library",
+    "annaya-tour.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "annaya-tour.header.prayer-for-the-sick": "Prayer for the Sick",
+    "annaya-tour.header.prayer-for-healing": "Prayer for Healing",
+    "annaya-tour.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "annaya-tour.header.prayer-for-depression": "Prayer for Depression",
+    "annaya-tour.header.prayer-for-students": "Prayer for Students",
+    "annaya-tour.header.prayer-for-addiction": "Prayer for Addiction",
+    "annaya-tour.header.prayer-for-family": "Prayer for Family",
+    "annaya-tour.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "annaya-tour.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "annaya-tour.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "annaya-tour.header.saint-charbel-novena": "Saint Charbel Novena",
+    "annaya-tour.header.feast-day": "Feast Day",
+    "annaya-tour.header.rosary-guide": "Rosary Guide",
+    "annaya-tour.header.rosary-minibook": "Rosary Minibook",
+    "annaya-tour.header.mystery-meditation": "Mystery Meditation",
+    "annaya-tour.header.become-like-him": "Become Like Him",
+    "annaya-tour.header.travel": "Travel",
+    "annaya-tour.header.visiting-annaya": "Visiting Annaya",
+    "annaya-tour.header.annaya-online-tour": "Annaya Online Tour",
+    "annaya-tour.header.bekaa-kafra": "Bekaa Kafra",
+    "annaya-tour.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "annaya-tour.header.the-cedars-of-god": "the Cedars of God",
+    "annaya-tour.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "annaya-tour.header.qadisha-valley": "Qadisha Valley",
+    "annaya-tour.header.qannoubine-monastery": "Qannoubine Monastery",
+    "annaya-tour.header.qozhaya-monastery": "Qozhaya Monastery",
+    "annaya-tour.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "annaya-tour.header.the-hermitage": "The Hermitage",
+    "annaya-tour.header.saint-charbel-trail": "Saint Charbel Trail",
+    "annaya-tour.header.news": "News",
+    "annaya-tour.accessibility.in-this-guide": "In this guide",
+    "annaya-tour.body.home": "Home",
+    "annaya-tour.body.text": "/",
+    "annaya-tour.body.travel": "Travel",
+    "annaya-tour.body.walk-through-annaya-online": "Walk Through Annaya, Online",
+    "annaya-tour.body.online-tour-annaya-lebanon": "Online tour · Annaya, Lebanon",
+    "annaya-tour.walk-through-annaya-onli.walk-through-annaya-online": "Walk Through Annaya, Online",
+    "annaya-tour.walk-through-annaya-onli.short-answer": "Short answer:",
+    "annaya-tour.walk-through-annaya-onli.this-is-a-guided-walk-through-annaya-the-lebanese-mountain-m": "This is a guided walk through Annaya, the Lebanese mountain monastery where Saint Charbel lived and is buried. Scroll through five stops: the monastery, the church, the courtyard, the tomb, and the hermitage. Each has a real photograph and a short story of why it matters.",
+    "annaya-tour.walk-through-annaya-onli.begin-the-tour": "Begin the Tour",
+    "annaya-tour.walk-through-annaya-onli.plan-a-real-visit": "Plan a Real Visit",
+    "annaya-tour.walk-through-annaya-onli.next-his-birthplace": "Next: His Birthplace",
+    "annaya-tour.walk-through-annaya-onli.also-bekaa-tour": "Also: Bekaa Tour",
+    "annaya-tour.walk-through-annaya-onli.part-of-the": "Part of the",
+    "annaya-tour.walk-through-annaya-onli.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "annaya-tour.walk-through-annaya-onli.read": ". Read",
+    "annaya-tour.walk-through-annaya-onli.the-full-story-of-his-life": "the full story of his life",
+    "annaya-tour.walk-through-annaya-onli.or-browse-all-topics": "or browse all topics.",
+    "annaya-tour.accessibility.the-church-and-monastery-of-saint-maron-at-annaya-on-a-terra": "The church and monastery of Saint Maron at Annaya on a terraced mountainside in winter, with a bell tower and a red-tiled roof",
+    "annaya-tour.walk-through-annaya-onli.stop-1-of-5": "Stop 1 of 5",
+    "annaya-tour.the-monastery-on-the-mou.the-monastery-on-the-mountain": "The Monastery on the Mountain",
+    "annaya-tour.the-monastery-on-the-mou.begin-on-the-hillside-annaya-belongs-to-the-jbeil-district-r": "Begin on the hillside. Annaya belongs to the Jbeil district, roughly 52 km north of Beirut. The monastery rests on a wooded slope near 1,200 m, and on a clear day the sea shows far below the terraces.",
+    "annaya-tour.the-monastery-on-the-mou.why-it-matters": "Why it matters:",
+    "annaya-tour.the-monastery-on-the-mou.charbel-spent-most-of-his-grown-life-on-this-hill-and-every": "Charbel spent most of his grown life on this hill, and every stop that follows is a short walk from where you are standing.",
+    "annaya-tour.the-monastery-on-the-mou.photo-paul-saad": "Photo: Paul Saad,",
+    "annaya-tour.the-monastery-on-the-mou.wikimedia-commons": "Wikimedia Commons",
+    "annaya-tour.the-monastery-on-the-mou.cc-by-sa-4-0-cropped-and-resized": ", CC BY-SA 4.0 (cropped and resized)",
+    "annaya-tour.accessibility.night-view-from-above-of-the-annaya-church-with-its-lit-cros": "Night view from above of the Annaya church with its lit cross and the monastery buildings among the pines and village lights",
+    "annaya-tour.the-monastery-on-the-mou.stop-2-of-5": "Stop 2 of 5",
+    "annaya-tour.the-church-built-for-the.the-church-built-for-the-pilgrims": "The Church Built for the Pilgrims",
+    "annaya-tour.the-church-built-for-the.once-charbel-was-beatified-in-1965-visitors-came-in-far-grea": "Once Charbel was beatified in 1965, visitors came in far greater numbers than the old buildings could take. The Lebanese Maronite Order answered with a new, larger church, consecrated in 1974. The tomb itself lies in the vaulted Tomb Church nearby - stop 4 on this walk.",
+    "annaya-tour.the-church-built-for-the.why-it-matters": "Why it matters:",
+    "annaya-tour.the-church-built-for-the.its-size-tells-you-how-many-people-still-make-the-climb-espe": "Its size tells you how many people still make the climb, especially on the 22nd of the month and at the July feast.",
+    "annaya-tour.the-church-built-for-the.photo-saintcharbel-com": "Photo: saintcharbel.com.",
+    "annaya-tour.accessibility.the-stone-monastery-courtyard-at-annaya-at-night-with-arched": "The stone monastery courtyard at Annaya at night, with arched windows and a round stone fountain",
+    "annaya-tour.the-church-built-for-the.stop-3-of-5": "Stop 3 of 5",
+    "annaya-tour.the-courtyard.the-courtyard": "The Courtyard",
+    "annaya-tour.the-courtyard.every-pilgrim-passes-through-this-courtyard-on-the-way-in-th": "Every pilgrim passes through this courtyard on the way in. The walls are bare stone, the windows are arched, and a fountain murmurs in the middle. Nobody pays to enter, and nobody is asked what they believe.",
+    "annaya-tour.the-courtyard.why-it-matters": "Why it matters:",
+    "annaya-tour.the-courtyard.people-arrive-talking-and-leave-quiet-the-place-works-on-you": "People arrive talking and leave quiet. The place works on you before you have decided to pray.",
+    "annaya-tour.the-courtyard.photo-saintcharbel-com": "Photo: saintcharbel.com.",
+    "annaya-tour.accessibility.arched-tomb-chamber-at-annaya-with-a-candle-lit-icon-of-sain": "Arched tomb chamber at Annaya with a candle-lit icon of Saint Charbel above the reliquary",
+    "annaya-tour.the-courtyard.stop-4-of-5": "Stop 4 of 5",
+    "annaya-tour.the-tomb.the-tomb": "The Tomb",
+    "annaya-tour.the-tomb.here-is-what-the-climb-is-for-a-line-forms-and-the-people-in": "Here is what the climb is for. A line forms, and the people in it pray while they wait. Many hold a folded note with a name on it. When your turn comes there is nothing to perform: you kneel, you touch the stone if you wish, and you stay as long as you need.",
+    "annaya-tour.the-tomb.why-it-matters": "Why it matters:",
+    "annaya-tour.the-tomb.for-most-visitors-this-is-the-whole-reason-for-the-journey-m": "For most visitors, this is the whole reason for the journey. More on",
+    "annaya-tour.the-tomb.the-tomb-page": "the tomb page",
+    "annaya-tour.the-tomb.text": ".",
+    "annaya-tour.the-tomb.photo-saintcharbel-com": "Photo: saintcharbel.com.",
+    "annaya-tour.accessibility.view-toward-the-coast-and-the-sea-from-the-hermitage-area-of": "View toward the coast and the sea from the hermitage area of Annaya, over a stone terrace and flat roof",
+    "annaya-tour.the-tomb.stop-5-of-5": "Stop 5 of 5",
+    "annaya-tour.the-hermitage-of-saints.the-hermitage-of-saints-peter-and-paul": "The Hermitage of Saints Peter and Paul",
+    "annaya-tour.the-hermitage-of-saints.a-path-leads-up-from-the-monastery-to-the-hermitage-of-saint": "A path leads up from the monastery to the hermitage of Saints Peter and Paul. This photograph, taken from the hermitage area and published on the monastery's own hermitage page, looks out over a terrace toward the sea. Charbel moved up here in 1875. He remained for twenty-three years, until he died on Christmas Eve 1898.",
+    "annaya-tour.the-hermitage-of-saints.why-it-matters": "Why it matters:",
+    "annaya-tour.the-hermitage-of-saints.the-tomb-is-where-people-go-to-ask-him-for-help-the-hermitag": "The tomb is where people go to ask him for help. The hermitage is where he did his own praying, alone. More on",
+    "annaya-tour.the-hermitage-of-saints.the-hermitage-page": "the hermitage page",
+    "annaya-tour.the-hermitage-of-saints.text": ".",
+    "annaya-tour.the-hermitage-of-saints.photo-saintcharbel-com": "Photo: saintcharbel.com.",
+    "annaya-tour.where-to-go-next.where-to-go-next": "Where to Go Next",
+    "annaya-tour.where-to-go-next.saint-charbel-was-born-in-a-village-far-north-of-annaya-cont": "Saint Charbel was born in a village far north of Annaya. Continue to",
+    "annaya-tour.where-to-go-next.bekaa-kafra-his-birthplace": "Bekaa Kafra, his birthplace",
+    "annaya-tour.where-to-go-next.or-pray-the": ", or pray the",
+    "annaya-tour.where-to-go-next.nine-day-novena": "nine-day novena",
+    "annaya-tour.where-to-go-next.for-travel-details-hours-and-tips-use-the": ". For travel details, hours and tips, use the",
+    "annaya-tour.where-to-go-next.annaya-visiting-guide": "Annaya visiting guide",
+    "annaya-tour.where-to-go-next.text": ".",
+    "annaya-tour.where-to-go-next.the-arabic-guide": "The Arabic guide",
+    "annaya-tour.where-to-go-next.annaya-in-arabic": "Annaya in Arabic",
+    "annaya-tour.where-to-go-next.has-the-same-place-in-arabic": "has the same place in Arabic.",
+    "annaya-tour.photo-credits.photo-credits": "Photo Credits",
+    "annaya-tour.photo-credits.stop-1-paul-saad-wikimedia-commons-cc-by-sa-4-0-stops-2-to-5": "Stop 1: Paul Saad, Wikimedia Commons, CC BY-SA 4.0. Stops 2 to 5: Photo: saintcharbel.com. The tour uses real photographs only.",
+    "annaya-tour.sources.sources": "Sources",
+    "annaya-tour.sources.charbel-app-annaya-monastery-about-1-200-meters-jbeil-distri": "Charbel App: Annaya Monastery - about 1,200 meters, Jbeil district, the 1974 church, the 1875 move to the hermitage",
+    "annaya-tour.sources.charbel-app-visiting-annaya-the-tomb-the-hermitage-from-1875": "Charbel App: Visiting Annaya - the tomb, the hermitage from 1875 until his death on Christmas Eve 1898",
+    "annaya-tour.sources.saint-charbel-oasis-the-monastery-s-site-the-hermitage-of-sa": "Saint Charbel Oasis (the monastery's site): the Hermitage of Saints Peter and Paul",
+    "annaya-tour.footer.annaya-online-tour-author-please-pray-for-the-person-who-mad": "Annaya online tour. Author: Please pray for the person who made this website.",
+    "annaya.hero.imageAlt": "Saint Maron monastery and the church bell tower at Annaya in winter",
+    "annaya.hero.creditAuthor": "Paul Saad /",
+    "annaya.hero.creditCommons": "Wikimedia Commons",
+    "annaya.hero.creditSeparator": "/",
+    "annaya.hero.creditLicense": "CC BY-SA 4.0"
+  }
+}

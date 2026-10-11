@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "gateStatus": "approved",
+  "groups": {
+    "saint-charbel-prayers-master": {
+      "sourceRevision": "78cde58d08fec465be0014893e9c0ca6cf7d5e89",
+      "catalogReview": "Supplied reviewed application pack a9f41639; de hub reviewer-suggested single-key removal is recorded in prayer-review-record.json",
+      "variants": {
+        "en": {
+          "file": "saint-charbel-prayers.html",
+          "path": "/saint-charbel-prayers",
+          "bodySha256": "e42a1aa08b7ef10e238f6ae0944bfec0d23832a192c5c23644e56e03510fd1a6"
+        },
+        "ar": {
+          "file": "ar/prayers.html",
+          "path": "/ar/prayers",
+          "bodySha256": "2fc63678f929a15b16d37a8deaa3535a54fb0f65a3c333d8d41340bd2cdfc5b2",
+          "catalog": "locales/ar/saint-charbel-prayers-master-copy.json",
+          "catalogSha256": "7061a74799f2835cfd46a63848550d6b126165ec5ef404d76a3a9d68ca2998fd"
+        },
+        "de": {
+          "file": "de/gebete.html",
+          "path": "/de/gebete",
+          "bodySha256": "905c257d8b8a97916ca0e0a00d02c783a94288893fa51860da230f80832d477b",
+          "catalog": "locales/de/saint-charbel-prayers-master-copy.json",
+          "catalogSha256": "1fba3e6b6b82f4b2459e14aa5291523ae642791a1ff5f516711503d0d9e8d579"
+        },
+        "fr": {
+          "file": "fr/prieres.html",
+          "path": "/fr/prieres",
+          "bodySha256": "22a1d507f9df19d959ea73500ab6179709d7aa46c5f2d7d6fa96785e13c08acc",
+          "catalog": "locales/fr/saint-charbel-prayers-master-copy.json",
+          "catalogSha256": "f0c62bd77b41f8de4e3a840f27b046479c1fdf2296376428a699765c0eed8f20"
+        },
+        "ru": {
+          "file": "ru/molitvy.html",
+          "path": "/ru/molitvy",
+          "bodySha256": "9fa0062eea4957a760ad4e370a0bc5d7331acf42bfd1f31144e54d93b1ff8619",
+          "catalog": "locales/ru/saint-charbel-prayers-master-copy.json",
+          "catalogSha256": "bc706eb7c3d0274617d5e516fde3bf7616e017da127c9b3bbf43611eb1684aae"
+        },
+        "pt": {
+          "file": "pt/oracoes.html",
+          "path": "/pt/oracoes",
+          "bodySha256": "bee77ce4a65149dfad272eca11a9a40943ffc712cb88dbaf0938d1bc87c7766b",
+          "catalog": "locales/pt/saint-charbel-prayers-master-copy.json",
+          "catalogSha256": "2c7a14ab342c02d54b614cc1532d2b5fce90f1d06f334415ed00d68f77e121ae"
+        },
+        "it": {
+          "file": "it/preghiere.html",
+          "path": "/it/preghiere",
+          "bodySha256": "9186fa9edbce93078253dc027d8fc7c1e7ace39f356f29db02160665b6cf61b1",
+          "catalog": "locales/it/saint-charbel-prayers-master-copy.json",
+          "catalogSha256": "5b7786d3cd77170cc4e4f21a5663630b5eb8288907dff135bcd5141d862a0be5",
+          "reviewStatus": "pending-final-qa"
+        },
+        "pl": {
+          "file": "pl/modlitwy.html",
+          "path": "/pl/modlitwy",
+          "bodySha256": "4c7c8827825dfab6c5ca3f3f8f0fe949c7a48869650e37c36b940d197f90ce2a",
+          "catalog": "locales/pl/saint-charbel-prayers-master-copy.json",
+          "catalogSha256": "2de8ff514c7e75ea17b1c79d989c257285c69aece4df514b0ebe535080036a11"
+        },
+        "es": {
+          "file": "es/oraciones.html",
+          "path": "/es/oraciones",
+          "bodySha256": "1a6fad6f806203a29774cfff38fa2c2a681c14d528da9ee857f82922f072c6cb",
+          "catalog": "locales/es/saint-charbel-prayers-master-copy.json",
+          "catalogSha256": "01042e43c89811247025c85ca4f71cd7fd1ae530475f6eb0b9fc9840424be737"
+        }
+      }
+    },
+    "saint-charbel-novena-master": {
+      "sourceRevision": "78cde58d08fec465be0014893e9c0ca6cf7d5e89",
+      "catalogReview": "Supplied reviewed application pack a9f41639; de hub reviewer-suggested single-key removal is recorded in prayer-review-record.json",
+      "variants": {
+        "en": {
+          "file": "saint-charbel-novena.html",
+          "path": "/saint-charbel-novena",
+          "bodySha256": "c09fb636951838ede96758d221e95d0d2cf7786f54070e7ad972f1c87bad62b6"
+        },
+        "ar": {
+          "file": "ar/novena.html",
+          "path": "/ar/novena",
+          "bodySha256": "7d15a8aede62cd2b075183e7aecbc215728f1444c4527991bf01649efababb47",
+          "catalog": "locales/ar/saint-charbel-novena-master-copy.json",
+          "catalogSha256": "bfb013fba9bbb7a80e1e21f3355d6a0116a0616a726e264e05e5fa818f63ee04"
+        },
+        "de": {
+          "file": "de/novene.html",
+          "path": "/de/novene",
+          "bodySha256": "509d4b06d93b4f25e37ebd57afe1e987c158096537ff9d3b0b765b46f7418fc8",
+          "catalog": "locales/de/saint-charbel-novena-master-copy.json",
+          "catalogSha256": "8837448c2862cbb2f4cad33379ffece0de29b8f550fdf29de09edd9662e6f798"
+        },
+        "fr": {
+          "file": "fr/neuvaine.html",
+          "path": "/fr/neuvaine",
+          "bodySha256": "6c3c5e90b538e2ee59f93ca6baab46dc8112647d4baaff20caa9f3834c4f807c",
+          "catalog": "locales/fr/saint-charbel-novena-master-copy.json",
+          "catalogSha256": "71d8ee7d9c287349209898c595cd3329cb46d72d4885becc37b9c6612f3346d9"
+        },
+        "ru": {
+          "file": "ru/novena.html",
+          "path": "/ru/novena",
+          "bodySha256": "b06d0090c59e481891e2da300f6223d9c3e5e525472a36ee2241f9d936825603",
+          "catalog": "locales/ru/saint-charbel-novena-master-copy.json",
+          "catalogSha256": "1b6ef1f64104c683321c24bf653c4232495a630c821d532f557e9447b44acb28"
+        },
+        "pt": {
+          "file": "pt/novena.html",
+          "path": "/pt/novena",
+          "bodySha256": "3c75bce050d443744dcdf77a5a283f90da660371234c7335e9ea9eda019c6a3b",
+          "catalog": "locales/pt/saint-charbel-novena-master-copy.json",
+          "catalogSha256": "a6574f3b32b992bd73c53f3aeeac604278bafebdf46e01ed5f8b533dc6221364"
+        },
+        "it": {
+          "file": "it/novena.html",
+          "path": "/it/novena",
+          "bodySha256": "35b119238362ec2d9f1cc33c0a08ef0d3624751ec1777045c9319c257aecbd12",
+          "catalog": "locales/it/saint-charbel-novena-master-copy.json",
+          "catalogSha256": "ca66b989515996e439276ce1edac680243ee8d417fd9d0feaa84b82f9728100d",
+          "reviewStatus": "pending-final-qa"
+        },
+        "pl": {
+          "file": "pl/nowenna.html",
+          "path": "/pl/nowenna",
+          "bodySha256": "9e25579454ae041da512c74bcdbdd9ef51bfd58a0467fb6d56db97ae719df3a4",
+          "catalog": "locales/pl/saint-charbel-novena-master-copy.json",
+          "catalogSha256": "32fd8c2928ac9a2928c55bfddfe6a9bfd62f79a7da38ea50be81a4307e835ecb"
+        },
+        "es": {
+          "file": "es/novena.html",
+          "path": "/es/novena",
+          "bodySha256": "89eb8d5482d6b486a939ac7b1587af26915218ff4d59ebdf59f85a31ae37016f",
+          "catalog": "locales/es/saint-charbel-novena-master-copy.json",
+          "catalogSha256": "c6465fcdd2fd4201f87fbf800f1902a0c3c017c59e4b4795fe6f1449aeb7ec30"
+        }
+      }
+    }
+  },
+  "finalQAEvidence": {
+    "candidate": "501ca1bc8297ced406f8db896d6a380fad3eac36",
+    "base": "d1f58bd900f3b48415a0160d3c5d6f309f943c84",
+    "fullQAExit": 0,
+    "sourcePages": 109,
+    "sourceStale": 0,
+    "log": "prayer-post630-clean-full-qa.log"
+  },
+  "sourceCorrection": {
+    "copyReviewStatus": "approved",
+    "provenance": "Parent Oct6 19:27:12 EN source-first approval and19:30:47 ten-locale round complete; three-key reviewed delta files applied without other prayer changes.",
+    "renderedReviewStatus": "pending",
+    "finalQAStatus": "pending",
+    "scope": "Home two safeguards plus PolandJuly28 calendar addition; July15-23 example, July24 and Maronite dates preserved."
+  }
+}

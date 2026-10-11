@@ -30,6 +30,11 @@ figcaption. New images: add a record here in the same batch.
   Rafqa, Jrabta, Lebanon. Author: unknown.
 - License: public domain (published before 1930; Lebanon Law 75/1999 expiry). Verified 2026-09-25.
 
+### st-sarkis-bakhos.webp (689x1000, 131KB)
+- Subject: Sts Sergius and Bacchus as mounted warrior saints, icon, Saint Catherine's Monastery, Mount Sinai, second half of the 13th century.
+- Source: Wikimedia Commons, File:Saint Sergius and Saint Bacchus, from Saint Catherine Monastery, Mount Sinai, second half of the 13th century.jpg. Author: 13th-century painter.
+- License: public domain (Commons: Public domain). Verified 2026-10-05.
+
 ### blessed-fulton-sheen.webp (873x693, 48KB)
 - Subject: Blessed Fulton Sheen at his desk, 1956 (real photograph).
 - Source: Wikimedia Commons, File:Bishop Fulton J. Sheen 1956.JPG
@@ -43,6 +48,12 @@ figcaption. New images: add a record here in the same batch.
 - Subject: Saint Charbel Makhlouf - the traditional hooded portrait.
 - Already in use sitewide (og:image default, canonization pages). Same
   caption reused on /saints.
+- Provenance unknown; first committed 2026-03-05 (initial commit f84b3573 holds
+  this 906x667 portrait at two paths, saint-charbel.jpg and
+  gallery/charbel-portrait.jpg - byte-identical files, no source recorded; this
+  WebP derivative added 2026-09-24 in fe086a68). Caption makes no license claim
+  (C-0080, 2026-10-10: removed the unsupported "public domain" clause from the
+  homepage caption (EN + 10 locales)).
 
 ## media/annaya/ (added 2026-09-25, photo pass batch 4 - prayer-intention pages)
 
@@ -306,3 +317,49 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 
 ## 2026-10-02 - Letters page country flags (media/flags/*.svg)
 - 97 SVG flags (96 from the published list plus Canada, added at Joey request 2026-10-02) from the flag-icons project (github.com/lipis/flag-icons, 4x3 set), MIT License, Copyright (c) 2013 Panayiotis Lipiridis. Downloaded 2026-10-02 from raw.githubusercontent.com. England uses the gb-eng flag (matches the source list; gb.svg removed). The MIT LICENSE text ships as media/flags/LICENSE. Credit shown under the flag list on testimonies.html. Country list: the names published at saintcharbel.net.au/letters (99 distinct names); Yugoslavia, Zaire and Congo shown without a flag.
+
+## 2026-10-03 - /history rewrite (held, not integrated), media/history/
+
+### media/history/annaya-hermitage-exterior.webp (1280x852)
+- Subject: front of the Hermitage of Saints Peter and Paul above Annaya (stone facade with cross between two cedars). Real photograph.
+- Source: saintcharbel.com/wp-content/uploads/2025/12/hermitage-outside-003.jpg (page /the-hermitage, file name "hermitage-outside-003"). The small logo overlay at the bottom was left in, not cropped.
+- Credit on page: Photo: saintcharbel.com. (No permission from the rights holder is claimed.)
+- Basis: standing owner grant 2026-10-02 (Joey, relayed by the main agent: scrape-and-credit, no permission letters). Reviewer caveat stands: owner attestation, not an independent licence finding. Checked 2026-10-03: not a filtered image (the sibling hermitage-outside-silhouette-01 is a painterly filter and was rejected).
+
+### media/history/bekaa-kafra-winter.webp (500x375)
+- Subject: snow on the houses of Bekaa Kafra.
+- Source: Wikimedia Commons, File:Bekaa Kafra winter.jpg (https://commons.wikimedia.org/wiki/File:Bekaa_Kafra_winter.jpg). Author: Potatoes8895, 2012-02-20.
+- License: CC BY-SA 3.0. Verified via Commons API 2026-10-03. Shown at 500px (source resolution); do not upscale.
+
+### Reused on /history (already registered above)
+- media/annaya/annaya-monastery.webp (Paul Saad, CC BY-SA 4.0), media/annaya/charbel-tomb.webp (LLEW, CC BY-SA 4.0), media/annaya/charbel-historic-photo.webp (Commons File:Charbel.jpg, public domain tags PD-old-assumed and PD-1923, author unknown, source st-charbel.fr; Commons notes some countries may differ).
+- Grotto of Saint Charbel at Bekaa Kafra: no freely licensed photo found (Commons, Wikipedia en/fr image lists). Only Getty (paid), saintcharbel.net.au and commercial pages. Standing need.
+
+### Gap closed 2026-10-03: media/news/bekaa-kafra-winter.webp and bekaa-kafra-spring.webp (/bekaa-kafra)
+- Previously unregistered. Source: LebanonUntravelled.com (batch 18 bot-log docs/seo/bot-log/2026-09-25-batch-18-bekaa-guide-expansion.md: "2 real shots from LebanonUntravelled (cited source)"). Credit on page: "Photo courtesy of LebanonUntravelled.com".
+- Licence: NOT found. No Creative Commons or reuse statement was located for these two images, so there is no independent licence finding. They stand only on the standing owner rule of 2026-10-02 (source real material, show credit, no rights outreach), which post-dates their use. Risk: unlicensed third-party photos. Replace with a clean photo when one exists (the Commons Bekaa Kafra winter image is only 500px, too small for the hero).
+
+## 2026-10-03 - /bekaa-tour (Bekaa Kafra online tour), media/tour/
+
+### media/tour/bekaa-kafra-winter.webp (500x375)
+- Subject: snow on the houses of Bekaa Kafra. Real photograph. Same file as media/history/bekaa-kafra-winter.webp.
+- Source: Wikimedia Commons, File:Bekaa_Kafra_winter.jpg. Author: Potatoes8895, 2012-02-20. Licence CC BY-SA 3.0 (Commons API check 2026-10-03).
+- Credit on page: Photo: Potatoes8895, Wikimedia Commons, CC BY-SA 3.0 (resized).
+
+### Standing photo needs (shown on the page as visible "Photo needed" notes)
+- Stop 3: family home and baptism church of Bekaa Kafra. No freely usable real photo located yet.
+- Stop 4: the grotto. No freely usable real photo located yet.
+- The two LebanonUntravelled photos on /bekaa-kafra (see the gap entry above) are NOT reused on the tour.
+
+## October 6 Beirut altar-consecration news
+
+- media/news/beirut-st-george-cathedral.webp: Lebnen18, Saint George Maronite Cathedral and Mohammad Al-Amin Mosque, downtown Beirut, uploaded March 2009 (own work). Source: https://commons.wikimedia.org/wiki/File:Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg . Observed source file: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg/960px-Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg . CC BY-SA 3.0 Unported (multi-licensed with GFDL and CC BY-SA 2.5/2.0/1.0), verified on the source file page. Converted to WebP, no content edits. Derivative under CC BY-SA 3.0. Caption explicitly says venue context, not the September 27, 2026 consecration Mass. Event photography from NNA/Annahar/L'Orient not reused: no verified license.
+
+## Film homepage contextual photo reuse (2026-10-10)
+
+- Asset: media/annaya/annaya-monastery.webp (1100x618), unchanged existing WebP.
+- Source: https://commons.wikimedia.org/wiki/File:Pan_Annaya_Church_And_Monastry.jpg
+- Author: Paul Saad. License: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0
+- Verified: Commons API imageinfo/extmetadata on 2026-10-10 returns creator paul saad, required attribution, CC BY-SA 4.0 and the license URL above.
+- Treatment: existing crop/WebP conversion; CSS cover crops in the card. Visible card credit names photographer, Commons, license and changes. The existing article is the card destination; its photo-credit listing retains source/license links, avoiding nested anchors in the whole-card link.
+- Context: church and monastery at Annaya, not the Beirut premiere venue, a film still, or premiere footage. Caption and keyed alt explicitly name the real subject.

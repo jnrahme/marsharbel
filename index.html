@@ -4,19 +4,7 @@
   <meta name="msvalidate.01" content="6A67D2C9F51532AA962A2489F63AC3C8" />
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -26,19 +14,19 @@
     <meta property="og:locale:alternate" content="de_DE" />
     <meta property="og:locale:alternate" content="pl_PL" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Saint Charbel | History, Miracles, Letters & Rosary</title>
-  <meta name="description" content="Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources." />
+  <title>Saint Charbel (Mar Charbel): Life, Miracles & Prayers</title>
+  <meta name="description" content="Saint Charbel (St Charbel, Mar Charbel): his life, miracle reports, letters from readers, prayers, the nine-day novena and guided Rosary resources." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Saint Charbel" />
-  <meta property="og:title" content="Saint Charbel | History, Miracles, Letters & Rosary" />
-  <meta property="og:description" content="Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources." />
+  <meta property="og:title" content="Saint Charbel (Mar Charbel): Life, Miracles & Prayers" />
+  <meta property="og:description" content="Saint Charbel (St Charbel, Mar Charbel): his life, miracle reports, letters from readers, prayers, the nine-day novena and guided Rosary resources." />
   <meta property="og:url" content="https://marsharbel.com/" />
   <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saint Charbel | History, Miracles, Letters & Rosary" />
-  <meta name="twitter:description" content="Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources." />
+  <meta name="twitter:title" content="Saint Charbel (Mar Charbel): Life, Miracles & Prayers" />
+  <meta name="twitter:description" content="Saint Charbel (St Charbel, Mar Charbel): his life, miracle reports, letters from readers, prayers, the nine-day novena and guided Rosary resources." />
   <meta name="twitter:image" content="https://marsharbel.com/saint-charbel.jpg" />
   <script type="application/ld+json">
 {
@@ -49,12 +37,13 @@
       "name": "Saint Charbel",
       "url": "https://marsharbel.com/",
       "@id": "https://marsharbel.com/#website",
-      "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"]
+      "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"],
+      "sameAs": ["https://www.facebook.com/marsharbelmakhlouf/", "https://www.instagram.com/marsharbelmakhlouf/"]
     },
     {
       "@type": "WebPage",
-      "name": "Saint Charbel | History, Miracles, Letters & Rosary",
-      "description": "Discover Saint Charbel’s life, explore miracle reports and testimonies, and find prayers, a nine-day novena, and guided Rosary resources.",
+      "name": "Saint Charbel (Mar Charbel): Life, Miracles & Prayers",
+      "description": "Saint Charbel (St Charbel, Mar Charbel): his life, miracle reports, letters from readers, prayers, the nine-day novena and guided Rosary resources.",
       "url": "https://marsharbel.com/",
       "isPartOf": {
         "@id": "https://marsharbel.com/#website"
@@ -73,7 +62,7 @@
   <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png" />
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="./home.css?v=20260925-news-1" />
+  <link rel="stylesheet" href="./home.css?v=20261003-1" />
   <link rel="stylesheet" href="./monthly-prayer.css" />
   <!-- i18n-alternates:start -->
 <link rel="alternate" hreflang="en" href="https://marsharbel.com/" />
@@ -84,8 +73,12 @@
 <link rel="alternate" hreflang="it" href="https://marsharbel.com/it/" />
 <link rel="alternate" hreflang="de" href="https://marsharbel.com/de/" />
 <link rel="alternate" hreflang="pl" href="https://marsharbel.com/pl/" />
+<link rel="alternate" hreflang="ru" href="https://marsharbel.com/ru/" />
+<link rel="alternate" hreflang="hi" href="https://marsharbel.com/hi/" />
+<link rel="alternate" hreflang="th" href="https://marsharbel.com/th/" />
 <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/" />
 <!-- i18n-alternates:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body class="layout-open">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -98,9 +91,9 @@
       <nav class="links" aria-label="Primary">
         <a class="active" href="./" aria-current="page">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -108,11 +101,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -136,8 +133,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -151,7 +149,14 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
@@ -167,11 +172,11 @@
         <h1 class="reveal">Saint Charbel. The hermit of Annaya.</h1>
         <p class="home-hero-sub reveal">Prayers, miracles, his story and Annaya, free and in one place. Start with nine days.</p>
         <div class="cinematic-actions home-hero-actions reveal"><a class="btn primary home-hero-cta" href="./saint-charbel-novena">Begin the 9-day Novena <span aria-hidden="true">&rarr;</span></a><a class="btn glass home-hero-cta2" href="./mystery-meditation">Pray today&#x27;s Rosary</a><a class="home-hero-link" href="./prayer-library">or browse all prayers</a></div>
-        <nav class="home-hero-quick reveal" aria-label="Explore Saint Charbel"><a href="./prayer-library">Prayers</a><a href="./miracles/">Miracles</a><a href="./history">Story</a><a href="./stories">Children&#x27;s Books</a><a href="./visit-annaya">Tours</a></nav>
+        <nav class="home-hero-quick reveal" aria-label="Explore Saint Charbel"><a href="./prayer-library">Prayers</a><a href="./miracles/">Miracles</a><a href="./history">Story</a><a href="./stories">Children&#x27;s Books</a><a href="./annaya-tour">Tours</a></nav>
       </div>
     </section>
     <section class="home-intro-band" aria-label="About Saint Charbel">
-      <figure class="home-portrait"><a href="./gallery" aria-label="See the gallery of Saint Charbel renditions"><img src="./gallery/charbel-rendition-01-faithful.webp?v=20261002-dark-beard-3" alt="An artistic rendition of Saint Charbel in a black hooded habit, eyes lowered, as the creator of this website saw him on December 22" width="1122" height="1402" loading="lazy" decoding="async" /></a><figcaption>This is how the creator of this website saw Saint Charbel when he appeared to him on December 22. An artistic rendition of that moment - not a photograph.</figcaption></figure>
+      <figure class="home-portrait"><a href="./gallery" aria-label="See the gallery of Saint Charbel renditions"><img src="./gallery/charbel-rendition-01-faithful.webp?v=20261002-dark-beard-3" alt="An artistic rendition of Saint Charbel in a black hooded habit, eyes lowered, reflecting what the creator of this website reports seeing on December 22" width="1122" height="1402" loading="lazy" decoding="async" /></a><figcaption>The creator of this website reports seeing Saint Charbel on December 22. This artistic rendition reflects his personal account, not independent verification or a photograph.</figcaption></figure>
       <div class="home-intro-text">
       <p class="cinematic-lede">Saint Charbel (1828-1898) was a Maronite monk and hermit of Annaya, Lebanon, canonized in 1977. Walk through his life in the mountains of Lebanon, discover the stories of faith linked to his intercession, and enter a quieter rhythm of prayer inspired by the hermit of Annaya.</p>
       <div class="cinematic-facts" aria-label="Saint Charbel at a glance"><div><strong>1828</strong><span>Born in Bkaakafra</span></div><div><strong>1898</strong><span>Entered eternal life</span></div><div><strong>1977</strong><span>Canonized a saint</span></div></div>
@@ -179,7 +184,7 @@
     </section>
 
 <!-- i18n-news-home:start -->
-<section class="home-news" id="latest-news" aria-labelledby="home-news-heading"><div class="home-news-head"><h2 id="home-news-heading">Latest news</h2><a class="home-news-all" href="./news">Read the latest news <span aria-hidden="true">&rarr;</span></a></div><div class="home-news-grid"><a class="home-news-lead" href="./news#byblos-annaya-prayer-walk-2026-09"><span class="home-news-photo"><img src="./media/annaya/annaya-entrance-pilgrims.webp" alt="A pilgrim touching the statue of Saint Charbel at the monastery entrance in Annaya" width="1100" height="733" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-credit">Annaya monastery entrance. Photo: LLEW, CC BY-SA 4.0; venue context.</span><span class="home-news-meta">September 26, 2026</span><span class="home-news-title">Prayer walk to Annaya brings prayers for south Lebanon</span><span class="home-news-dek">Pilgrims walked from Byblos to Saint Charbel&#x27;s shrine, carrying prayers for Christians in south Lebanon.</span></span></a><div class="home-news-rows"><a class="home-news-row" href="./news#kfifan-patron-relics-2026-10"><span class="home-news-photo"><img src="./media/news/kfifan-context.webp" alt="The stone Kfifan monastery buildings and courtyard in Lebanon" width="960" height="720" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-meta">October 2, 2026</span><span class="home-news-title">Kfifan receives relics of its patron saints from Rome</span><span class="home-news-credit">Kfifan monastery, 2012. Venue context, not the relic reception. Photo: Evilscaught, CC BY 3.0; WebP conversion.</span></span></a><a class="home-news-row" href="./news#emmitsburg-shrine-anniversary-2026-09"><span class="home-news-photo"><img src="./media/news/emmitsburg-grotto-context.webp" alt="The stone Lourdes grotto at the National Shrine in Emmitsburg with visitors and statues" width="960" height="720" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-meta">September 30, 2026</span><span class="home-news-title">Emmitsburg celebrates nine years of Saint Sharbel&#x27;s shrine</span><span class="home-news-credit">National Shrine Grotto, Emmitsburg, 2015. Venue context, not the 2026 celebration. Photo: Bohemian Baltimore, CC BY-SA 4.0; resized to WebP.</span></span></a><a class="home-news-row" href="./news#doctor-borik-interview-2026-09"><span class="home-news-photo"><img src="./media/news/saint-charbel-portrait.webp" alt="Saint Charbel Makhlouf, the traditional hooded portrait" width="906" height="667" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-meta">September 10, 2026</span><span class="home-news-title">The doctor who investigated a St. Charbel healing speaks</span><span class="home-news-credit">Historic Saint Charbel portrait (public domain); not a photograph of Dr. Borik.</span></span></a><a class="home-news-row" href="./saint-charbel-trail"><span class="home-news-photo"><img src="./media/news/trail-pilgrimage.webp" alt="Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC" width="320" height="320" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-meta">August 23, 2026</span><span class="home-news-title">An American priest walks the St. Charbel Trail</span><span class="home-news-credit">Photo courtesy of Father Michael Sliney, LC.</span></span></a><a class="home-news-row" href="./saint-charbel-movie"><span class="home-news-photo"><img src="./media/news/movie-portrait.webp" alt="Official poster for Charbel The Movie (MTV/NMPRO)" width="320" height="320" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-meta">December 2025</span><span class="home-news-title">Charbel The Movie: what is confirmed about the new film</span><span class="home-news-credit">Official poster: MTV/NMPRO.</span></span></a></div></div></section>
+<section class="home-news" id="latest-news" aria-labelledby="home-news-heading"><div class="home-news-head"><h2 id="home-news-heading">Latest news</h2><a class="home-news-all" href="./news">Read the latest news <span aria-hidden="true">&rarr;</span></a></div><div class="home-news-grid"><a class="home-news-lead home-news-lead--film" href="./news#charbel-premiere-release-2026-10"><span class="home-news-photo"><img src="./media/annaya/annaya-monastery.webp" alt="Church and monastery at Annaya on a wooded hillside" width="1100" height="618" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-credit">Annaya church and monastery. Photo: Paul Saad, Wikimedia Commons, CC BY-SA 4.0; cropped and converted to WebP. Context photo, not film or premiere footage.</span><span class="home-news-title">Charbel Premieres in Beirut</span><span class="home-news-dek">The NMPRO and MTV feature has premiered at Beirut Media Zone. Lebanese cinemas are preparing for October 22; check individual cinemas for sessions.</span></span><span class="film-news-dates"><span><span class="home-news-credit">Special premiere</span><strong>October 9, 2026 · Beirut Media Zone</strong></span><span><span class="home-news-credit">Lebanese cinema rollout</span><strong>Planned from October 22, 2026</strong></span></span><span class="home-news-meta">Read the premiere and release update &rarr;</span></a><div class="home-news-rows"><a class="home-news-row" href="./news#byblos-annaya-prayer-walk-2026-09"><span class="home-news-photo"><img src="./media/annaya/annaya-entrance-pilgrims.webp" alt="A pilgrim touching the statue of Saint Charbel at the monastery entrance in Annaya" width="1100" height="733" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-credit">Annaya monastery entrance. Photo: LLEW, CC BY-SA 4.0; venue context.</span><span class="home-news-meta">September 26, 2026</span><span class="home-news-title">Prayer walk to Annaya brings prayers for south Lebanon</span></span></a><a class="home-news-row" href="./news#kfifan-patron-relics-2026-10"><span class="home-news-photo"><img src="./media/news/kfifan-context.webp" alt="The stone Kfifan monastery buildings and courtyard in Lebanon" width="960" height="720" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-meta">October 2, 2026</span><span class="home-news-title">Kfifan receives relics of its patron saints from Rome</span><span class="home-news-credit">Kfifan monastery, 2012. Venue context, not the relic reception. Photo: Evilscaught, CC BY 3.0; WebP conversion.</span></span></a><a class="home-news-row" href="./news#emmitsburg-shrine-anniversary-2026-09"><span class="home-news-photo"><img src="./media/news/emmitsburg-grotto-context.webp" alt="The stone Lourdes grotto at the National Shrine in Emmitsburg with visitors and statues" width="960" height="720" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-meta">September 30, 2026</span><span class="home-news-title">Emmitsburg celebrates nine years of Saint Sharbel&#x27;s shrine</span><span class="home-news-credit">National Shrine Grotto, Emmitsburg, 2015. Venue context, not the 2026 celebration. Photo: Bohemian Baltimore, CC BY-SA 4.0; resized to WebP.</span></span></a><a class="home-news-row" href="./news#doctor-borik-interview-2026-09"><span class="home-news-photo"><img src="./media/news/saint-charbel-portrait.webp" alt="Saint Charbel Makhlouf, the traditional hooded portrait" width="906" height="667" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-meta">September 10, 2026</span><span class="home-news-title">The doctor who investigated a St. Charbel healing speaks</span><span class="home-news-credit">Traditional portrait of Saint Charbel; not a photograph of Dr. Borik.</span></span></a><a class="home-news-row" href="./saint-charbel-trail"><span class="home-news-photo"><img src="./media/news/trail-pilgrimage.webp" alt="Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC" width="320" height="320" loading="lazy" decoding="async" /></span><span class="home-news-copy"><span class="home-news-meta">August 23, 2026</span><span class="home-news-title">An American priest walks the St. Charbel Trail</span><span class="home-news-credit">Photo courtesy of Father Michael Sliney, LC.</span></span></a></div></div></section>
 
 <!-- i18n-news-home:end -->
 <div class="home-pair">
@@ -221,17 +226,20 @@
             <a href="./en/prayers">Continue with Saint Charbel prayers <span aria-hidden="true">→</span></a>
             <a href="./prayer-library#find-a-prayer">Find a prayer for what you're carrying <span aria-hidden="true">→</span></a>
           </article>
-          <p class="monthly-prayer-context">Why the 22nd? This monthly devotion recalls Nouhad El Shami’s healing through Saint Sharbel’s intercession. We gather in hope, entrusting every outcome to God; miracles are not limited to a date. <a href="https://maronite.org.au/news/pilgrimage-and-mass-in-annaya-lebanon/">Read about the tradition <span aria-hidden="true">↗</span></a></p>
+          <p class="monthly-prayer-context">Why the 22nd? This monthly devotion recalls Nouhad El Shami's reported healing, attributed in her private account to Saint Sharbel's intercession. This account is not a Church declaration. We gather in hope, entrusting every outcome to God; miracles are not limited to a date. <a href="https://maronite.org.au/news/pilgrimage-and-mass-in-annaya-lebanon/">Read about the tradition <span aria-hidden="true">↗</span></a></p>
         </div>
       </details>
     </section>
 </div>
+
+<section class="home-travel" aria-labelledby="home-travel-heading"><a class="home-travel-card" href="./annaya-tour"><span class="home-travel-photo"><img src="./media/tour/annaya-winter-panorama.webp" alt="The church and monastery of Saint Maron at Annaya on a terraced mountainside in winter, with a bell tower and a red-tiled roof" width="2400" height="917" loading="lazy" decoding="async" /></span><span class="home-travel-copy"><span class="home-gallery-eyebrow">Travel</span><h2 id="home-travel-heading">Walk the places of Saint Charbel</h2><span class="home-gallery-dek">Take the online tour of Annaya, the mountain monastery where he lived as a monk and hermit and where his tomb is today, about 52 km north of Beirut.</span><span class="home-gallery-cta">Start the Annaya tour <span aria-hidden="true">&rarr;</span></span></span></a><p class="home-travel-credit">Photo: Paul Saad, <a href="https://commons.wikimedia.org/wiki/File:Pan_Annaya_in_Winter.JPG" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0 (cropped and resized)</p></section>
 
     <section class="home-letter section" aria-labelledby="home-letter-heading">
       <div class="home-letter-intro">
         <span class="kicker">A place for your story</span>
         <h2 id="home-letter-heading">Write a Letter to Saint Charbel</h2>
         <p>Tell your story in your own words. Continue to add your name and details before you send it. Letters stay private until a person reviews them for publication.</p>
+        <figure class="scripture-quote"><blockquote><p>"And they overcame him by the blood of the Lamb, and by the word of the testimony…"</p></blockquote><figcaption><cite>Revelation 12:11 (Douay-Rheims), first part of the verse</cite></figcaption><p class="scripture-note">Scripture puts testimony in the same sentence as the blood of the Lamb. That is how much a testimony matters, and why every Letter is read with care.</p></figure>
         <a href="./testimonies">Read the Letters <span aria-hidden="true">→</span></a>
       </div>
       <form id="home-letter-form" class="home-letter-form" action="./submit-testimony" method="get">
@@ -349,11 +357,26 @@
         </article>
       </div>
     </section>
+    <section class="section locale-prayers" id="prayers-in-your-language">
+      <h2>Saint Charbel Prayers in Your Language</h2>
+      <p class="section-sub">The prayer collection is also available in seven other languages.</p>
+      <nav aria-label="Saint Charbel prayers in other languages">
+        <ul class="locale-prayer-list">
+          <li><a class="locale-prayer-link" href="/ar/prayers" hreflang="ar" lang="ar" dir="rtl">صلوات مار شربل</a></li>
+          <li><a class="locale-prayer-link" href="/fr/prieres" hreflang="fr" lang="fr" dir="ltr">Prières à saint Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/es/oraciones" hreflang="es" lang="es" dir="ltr">Oraciones a san Chárbel</a></li>
+          <li><a class="locale-prayer-link" href="/pt/oracoes" hreflang="pt" lang="pt" dir="ltr">Orações a São Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/it/preghiere" hreflang="it" lang="it" dir="ltr">Preghiere a san Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/de/gebete" hreflang="de" lang="de" dir="ltr">Gebete zum heiligen Charbel</a></li>
+          <li><a class="locale-prayer-link" href="/pl/modlitwy" hreflang="pl" lang="pl" dir="ltr">Modlitwy do świętego Szarbela</a></li>
+        </ul>
+      </nav>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="site-shell"><!-- i18n-navigation:start -->
-<nav class="footer-locales" aria-label="Languages"><a href="/" hreflang="en" lang="en" dir="ltr">English</a> <span aria-hidden="true">-</span> <a href="/ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a> <span aria-hidden="true">-</span> <a href="/fr/" hreflang="fr" lang="fr" dir="ltr">Français</a> <span aria-hidden="true">-</span> <a href="/es/" hreflang="es" lang="es" dir="ltr">Español</a> <span aria-hidden="true">-</span> <a href="/pt/" hreflang="pt" lang="pt" dir="ltr">Português</a> <span aria-hidden="true">-</span> <a href="/it/" hreflang="it" lang="it" dir="ltr">Italiano</a> <span aria-hidden="true">-</span> <a href="/de/" hreflang="de" lang="de" dir="ltr">Deutsch</a> <span aria-hidden="true">-</span> <a href="/pl/" hreflang="pl" lang="pl" dir="ltr">Polski</a></nav>
+<nav aria-label="Languages" class="footer-locales"><a dir="ltr" href="/" hreflang="en" lang="en">English</a> <span aria-hidden="true">-</span> <a dir="rtl" href="/ar/" hreflang="ar" lang="ar">العربية</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/fr/" hreflang="fr" lang="fr">Français</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/es/" hreflang="es" lang="es">Español</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/pt/" hreflang="pt" lang="pt">Português</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/it/" hreflang="it" lang="it">Italiano</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/de/" hreflang="de" lang="de">Deutsch</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/pl/" hreflang="pl" lang="pl">Polski</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/ru/" hreflang="ru" lang="ru">Русский</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/th/" hreflang="th" lang="th">ไทย</a></nav>
 <!-- i18n-navigation:end -->Last updated: March 2, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website. <span class="home-photo-credit">Annaya photo: LLEW, CC BY-SA 4.0</span></div>
   </footer>
 
@@ -365,5 +388,9 @@
   <script src="./translate.js?v=20260922-1" defer></script>
   <script src="./nav.js?v=20260922-1" defer></script>
 <script src="./home-hero.js?v=2" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

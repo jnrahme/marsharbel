@@ -5,19 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Valle de Qadisha: los monasterios del Valle Santo del Líbano</title>
   <meta name="description" content="Conoce los monasterios y ermitas del valle de Qadisha, su patrimonio de la UNESCO, el vínculo con san Chárbel y cómo visitarlo." />
@@ -32,10 +20,14 @@
   <meta property="og:locale:alternate" content="en_US" />
 <meta property="og:locale:alternate" content="ar_AR" />
 <meta property="og:locale:alternate" content="fr_FR" />
-<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
 <meta property="og:locale:alternate" content="it_IT" />
 <meta property="og:locale:alternate" content="de_DE" />
 <meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:image" content="https://marsharbel.com/media/annaya/qadisha-valley-aerial.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Valle de Qadisha: los monasterios del Valle Santo del Líbano" />
@@ -52,7 +44,14 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "San Chárbel",
-    "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"],
+    "alternateName": [
+      "Mar Charbel",
+      "Saint Charbel Makhlouf",
+      "Sharbel",
+      "St Charbel",
+      "Saint Sharbel",
+      "Charbel Makhlouf"
+    ],
     "url": "https://marsharbel.com/",
     "publisher": {
       "@type": "Organization",
@@ -67,11 +66,17 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Inicio",
-        "item": "https://marsharbel.com/"
+        "item": "https://marsharbel.com/es/"
       },
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Viajes",
+        "item": "https://marsharbel.com/es/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "El valle de Qadisha, el Valle Santo del Líbano",
         "item": "https://marsharbel.com/es/valle-qadisha"
       }
@@ -170,15 +175,20 @@
   <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles.css?v=20260922-1" />
-  <link rel="stylesheet" href="/travel.css?v=20261002-1" />
+  <link rel="stylesheet" href="/travel.css?v=20261002-3" />
   <style>html[lang="ar"][data-authored-mirror="qadisha"] body{line-height:1.8}html[lang="ar"][data-authored-mirror="qadisha"] h1,html[lang="ar"][data-authored-mirror="qadisha"] h2,html[lang="ar"][data-authored-mirror="qadisha"] h3{line-height:1.35}html[lang="ar"][data-authored-mirror="qadisha"] .hero h1{max-width:16ch}</style>
   <!-- hreflang:begin -->
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qadisha-valley" />
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/qadisha-valley" />
-  <link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qadisha-valley" />
-  <link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/vallee-qadisha" />
-  <link rel="alternate" hreflang="es" href="https://marsharbel.com/es/valle-qadisha" />
   <!-- hreflang:end -->
+<link rel="alternate" hreflang="en" href="https://marsharbel.com/qadisha-valley" />
+<link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qadisha-valley" />
+<link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/vallee-qadisha" />
+<link rel="alternate" hreflang="es" href="https://marsharbel.com/es/valle-qadisha" />
+<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/qadisha-valley" />
+<link rel="alternate" hreflang="ru" href="https://marsharbel.com/ru/qadisha-valley" />
+<link rel="alternate" hreflang="zh-Hans" href="https://marsharbel.com/zh-Hans/qadisha-valley" />
+<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qadisha-valley" />
+<script id="sc-runtime-labels" type="application/json">{"language.label": "Idioma", "language.popular": "Populares", "language.all": "Todos los idiomas (A-Z)", "install.label": "Instalar la app", "install.link": "Toca aquí para instalar esta app", "install.ios": "En iPhone, en Safari: toca \"Compartir\" y luego \"Añadir a pantalla de inicio\".", "install.browser": "Si no aparece ninguna ventana, abre el menú del navegador y elige \"Instalar app\" o \"Añadir a la pantalla de inicio\".", "footer.privacy": "Política de privacidad (en inglés)", "footer.terms": "Términos de uso (en inglés)", "footer.accessibility": "Accesibilidad (en inglés)", "language.choose": "Elegir idioma", "nativeNames": {"en": "English", "ar": "العربية", "fr": "Français", "es": "Español", "pt": "Português", "it": "Italiano", "de": "Deutsch", "pl": "Polski", "ru": "Русский", "hi": "हिन्दी", "th": "ไทย", "zh-Hans": "简体中文"}}</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body class="travel-page travel-destination">
   <header class="topbar">
@@ -187,21 +197,25 @@
       <nav class="links" aria-label="Navegación principal">
         <a href="/">Inicio</a>
         <div class="nav-group">
-        <a class="nav-parent" href="/stories" aria-haspopup="true" aria-expanded="false">Historia<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="/saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false" hreflang="en" aria-label="Legado espiritual (en inglés)">Legado espiritual<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="/stories">Cuentos de santos</a>
-        <a href="/es/biografia">Historia completa</a>
+        <div class="enc-nav-item"><a href="/saint-charbel-encyclopedia" hreflang="en" aria-label="Enciclopedia de san Charbel (en inglés)">Enciclopedia de san Charbel</a> <span class="enc-language">(en inglés)</span></div>
+        <div class="enc-nav-item"><a href="/history" hreflang="en" aria-label="Historia completa (en inglés)">Historia completa</a> <span class="enc-language">(en inglés)</span></div>
         </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="/miracles" aria-haspopup="true" aria-expanded="false">Milagros<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="/miracles">Milagros y testimonios</a>
         <a href="/miracles/eucharistic/">Milagros eucarísticos</a>
-        <a href="/news">Últimas noticias</a>
         <a href="/testimonies">Cartas</a>
         <a href="/voice-testimony">Testimonios de voz</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="/saints" aria-haspopup="true" aria-expanded="false">Santos<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="/saints">Santos</a>
+        <a href="/stories">Libros infantiles</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="/prayer-library" aria-haspopup="true" aria-expanded="false">Oración<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -225,24 +239,36 @@
         <a href="/become-like-charbel">Seguir su ejemplo</a>
         </div></div>
         <div class="nav-group">
-        <a class="active nav-parent" href="/es/annaya" aria-haspopup="true" aria-expanded="false">Viajes<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="active nav-parent" href="/es/travel" aria-haspopup="true" aria-expanded="false">Viajes<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="/es/travel">Viajes</a>
         <a href="/es/annaya">Visitar Annaya</a>
         <a href="/bekaa-kafra">Bekaa Kafra</a>
-        <a class="active" href="/es/valle-qadisha" aria-current="page">Valle de Qadisha</a>
+        <a class="active" aria-current="page" href="/es/valle-qadisha">Valle de Qadisha</a>
         <a href="/es/monasterio-qannoubine">Monasterio de Qannoubine</a>
         <a href="/es/monasterio-qozhaya">Monasterio de Qozhaya</a>
         <a href="/saint-charbel-places-lebanon">El Líbano de san Charbel</a>
         <a href="/saint-charbel-hermitage">La ermita</a>
         <a href="/saint-charbel-trail">Sendero de san Charbel</a>
         </div></div>
-        <a href="/gallery">Galería</a>
+        <a href="/news">Noticias</a>
+<div class="nav-group">
+<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/music">Media<span aria-hidden="true" class="nav-chev"></span></a>
+<div class="nav-sub">
+<a href="/music">Music</a>
+<a href="/videos">Video</a>
+<a href="/gallery">Galería</a>
+</div></div>
+
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="En esta guía"><a href="/es/">Inicio</a><span aria-hidden="true">/</span><a href="/es/travel">Viajes</a><span aria-hidden="true">/</span><span aria-current="page">El valle de Qadisha, el Valle Santo del Líbano</span></nav>
+<!-- i18n-travel-frame:end -->
     <section class="travel-hero">
       <figure class="travel-hero-image"><img src="/media/annaya/qadisha-valley-aerial.webp" alt="Vista aérea del valle de Qadisha cerca de Qannoubine: acantilados verdes y un monasterio enclavado en la roca. Foto de Evan Williams, Wikimedia Commons" width="1200" height="899" fetchpriority="high" decoding="async" /><figcaption>El valle de Qadisha visto desde encima de Qannoubine; los monasterios aún se aferran a sus riscos. Foto: Evan Williams, Wikimedia Commons (CC BY-SA 4.0).</figcaption></figure>
       <div class="travel-hero-copy"><h1>El valle de Qadisha, el Valle Santo del Líbano</h1><p>El Valle de Qadisha - el Valle Santo - es la profunda garganta del norte del Líbano donde echó raíces el monacato maronita: mil años de cuevas de ermitaños y monasterios colgados de la roca, hoy Patrimonio de la Humanidad de la UNESCO junto con los Cedros de Dios sobre su nacimiento.</p>
@@ -348,5 +374,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="/translate.js?v=20260922-1"></script>
   <script src="/nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

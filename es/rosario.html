@@ -4,19 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 <!-- Google tag (gtag.js) -->
-<script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+<script defer src="/analytics-init.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cómo rezar el rosario: guía paso a paso</title>
 <meta name="description" content="Aprende las oraciones iniciales del rosario, cómo rezar una decena y los misterios gozosos, luminosos, dolorosos y gloriosos con sus días habituales." />
@@ -35,10 +23,14 @@
 <meta property="og:locale:alternate" content="en_US" />
 <meta property="og:locale:alternate" content="ar_AR" />
 <meta property="og:locale:alternate" content="fr_FR" />
-<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
 <meta property="og:locale:alternate" content="it_IT" />
 <meta property="og:locale:alternate" content="de_DE" />
 <meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="San Chárbel" />
 <meta property="og:title" content="Cómo rezar el rosario: guía paso a paso" />
@@ -46,20 +38,25 @@
 <meta property="og:url" content="https://marsharbel.com/es/rosario" />
 <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="/international.css" />
+<link rel="stylesheet" href="/international.css?v=20261002-ui1" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Cómo rezar el rosario: guía paso a paso", "description": "Aprende las oraciones iniciales del rosario, cómo rezar una decena y los misterios gozosos, luminosos, dolorosos y gloriosos con sus días habituales.", "url": "https://marsharbel.com/es/rosario", "inLanguage": "es", "isPartOf": {"@id": "https://marsharbel.com/#website"}}</script>
+<script id="sc-runtime-labels" type="application/json">{"language.label": "Idioma", "language.popular": "Populares", "language.all": "Todos los idiomas (A-Z)", "install.label": "Instalar la app", "install.link": "Toca aquí para instalar esta app", "install.ios": "En iPhone, en Safari: toca \"Compartir\" y luego \"Añadir a pantalla de inicio\".", "install.browser": "Si no aparece ninguna ventana, abre el menú del navegador y elige \"Instalar app\" o \"Añadir a la pantalla de inicio\".", "footer.privacy": "Política de privacidad (en inglés)", "footer.terms": "Términos de uso (en inglés)", "footer.accessibility": "Accesibilidad (en inglés)", "language.choose": "Elegir idioma", "nativeNames": {"en": "English", "ar": "العربية", "fr": "Français", "es": "Español", "pt": "Português", "it": "Italiano", "de": "Deutsch", "pl": "Polski", "ru": "Русский", "hi": "हिन्दी", "th": "ไทย", "zh-Hans": "简体中文"}}</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
 <a class="skip-link" href="#main">Ir al contenido</a>
-<header><div class="shell masthead"><a class="brand" href="/es/">San Chárbel</a><nav class="locale-nav" aria-label="Elegir idioma"><a href="/en/rosary" hreflang="en" lang="en" dir="ltr">English</a>
-<a href="/ar/rosary" hreflang="ar" lang="ar" dir="rtl">العربية</a>
-<a href="/fr/chapelet" hreflang="fr" lang="fr" dir="ltr">Français</a>
-<a href="/es/rosario" hreflang="es" lang="es" dir="ltr" aria-current="page">Español</a>
-<a href="/pt/rosario" hreflang="pt" lang="pt" dir="ltr">Português</a>
-<a href="/it/rosario" hreflang="it" lang="it" dir="ltr">Italiano</a>
-<a href="/de/rosenkranz" hreflang="de" lang="de" dir="ltr">Deutsch</a>
-<a href="/pl/rozaniec" hreflang="pl" lang="pl" dir="ltr">Polski</a>
-<script>document.addEventListener("click",function(e){var a=e.target&&e.target.closest?e.target.closest("a[hreflang]"):null;if(!a)return;var l=(a.getAttribute("hreflang")||"").toLowerCase();if(l==="x-default")l="en";try{localStorage.setItem("sc_lang_pref",l)}catch(_){}});</script></nav></div></header>
+<header><div class="shell masthead"><a class="brand" href="/es/">San Chárbel</a><nav aria-label="Elegir idioma" class="locale-nav"><a dir="ltr" href="https://marsharbel.com/en/rosary" hreflang="en">Inglés</a>
+<a aria-disabled="true" dir="rtl" hreflang="ar" tabindex="-1">Árabe (en revisión)</a>
+<a aria-disabled="true" dir="ltr" hreflang="fr" tabindex="-1">Francés (en revisión)</a>
+<a aria-current="page" dir="ltr" href="https://marsharbel.com/es/rosario" hreflang="es">Español</a>
+<a aria-disabled="true" dir="ltr" hreflang="pt" tabindex="-1">Portugués (en revisión)</a>
+<a aria-disabled="true" dir="ltr" hreflang="it" tabindex="-1">Italiano (en revisión)</a>
+<a aria-disabled="true" dir="ltr" hreflang="de" tabindex="-1">Alemán (en revisión)</a>
+<a aria-disabled="true" dir="ltr" hreflang="pl" tabindex="-1">Polaco (en revisión)</a>
+<a aria-disabled="true" dir="ltr" hreflang="ru" tabindex="-1">Русский (en revisión)</a>
+<a aria-disabled="true" dir="ltr" hreflang="hi" tabindex="-1">हिन्दी (en revisión)</a>
+<a aria-disabled="true" dir="ltr" hreflang="th" tabindex="-1">ไทย (en revisión)</a>
+<script defer="" src="/locale-pref.js"></script><span class="sc-language-helper">Algunas traducciones de esta página están en revisión.</span></nav></div></header>
 <main id="main" class="shell" tabindex="-1">
 <a class="back" href="/es/">Inicio</a>
 <article><h1>Cómo rezar el rosario: guía paso a paso</h1><p class="intro">El rosario acompaña la contemplación de la vida de Jesús con María. Puedes rezarlo a solas, en familia o en comunidad. Esta guía explica su estructura; las referencias del Vaticano ofrecen textos tradicionales para profundizar.</p>
@@ -67,4 +64,9 @@
 <section id="section-opening" class="section"><h2>Las oraciones iniciales</h2><p>Haz la señal de la cruz y reza el Credo de los Apóstoles. Reza un padrenuestro en la primera cuenta grande, tres avemarías en las pequeñas y un gloria. Puedes ofrecer una intención antes de empezar.</p></section><section id="section-decade" class="section"><h2>Cómo rezar una decena</h2><p>Anuncia un misterio y contempla brevemente ese acontecimiento del Evangelio. Reza un padrenuestro, diez avemarías y un gloria. Continúa con el siguiente misterio. Un rosario suele tener cinco decenas; algunas comunidades añaden invocaciones según su costumbre.</p></section><section id="section-joyful" class="section"><h2>Misterios gozosos — lunes y sábado</h2><p>La Anunciación; la Visitación; el Nacimiento de Jesús; la Presentación en el Templo; el Niño Jesús perdido y hallado en el Templo. Invitan a contemplar la acogida de Cristo y su infancia.</p></section><section id="section-luminous" class="section"><h2>Misterios luminosos — jueves</h2><p>El Bautismo de Jesús; las bodas de Caná; el anuncio del Reino y la llamada a la conversión; la Transfiguración; la institución de la Eucaristía. Se centran en la vida pública de Cristo.</p></section><section id="section-sorrowful" class="section"><h2>Misterios dolorosos — martes y viernes</h2><p>La Oración en el Huerto; la Flagelación; la Coronación de espinas; Jesús con la cruz a cuestas; la Crucifixión. Puedes recordar a quienes sufren y a quienes los acompañan.</p></section><section id="section-glorious" class="section"><h2>Misterios gloriosos — miércoles y domingo</h2><p>La Resurrección; la Ascensión; la venida del Espíritu Santo; la Asunción de María; la Coronación de María. Esta distribución habitual puede adaptarse al tiempo litúrgico y a la oración comunitaria.</p></section><section id="section-finish" class="section"><h2>Terminar y continuar</h2><p>Después de cinco decenas, puedes concluir con la Salve y la señal de la cruz. Si estás aprendiendo, comprende primero una decena. Si te distraes, vuelve suavemente a la meditación sin empezar de nuevo. Algunos recursos de audio del sitio siguen en inglés.</p></section><section class="section"><h2>Fuentes y referencias</h2><ul><li><a href="https://www.vatican.va/special/rosary/documents/misteri_fr.html">Misterios del rosario (Vaticano, francés)</a></li><li><a href="https://www.vaticannews.va/fr/priere/rosaire.html">Oraciones del rosario (Vatican News, francés)</a></li></ul></section></article>
 <aside class="related"><h2>Seguir descubriendo</h2><ul><li><a href="/es/biografia">San Chárbel: biografía y etapas de su vida</a></li><li><a href="/es/oraciones">Orar con san Chárbel: intenciones y oraciones</a></li><li><a href="/es/novena">San Chárbel: un camino de oración de nueve días</a></li><li><a href="/es/annaya">Annaya y san Chárbel: preparar una visita</a></li><li><a href="/es/fiesta">Fiesta de san Chárbel: tercer domingo de julio y 24 de julio</a></li></ul><a href="/rosary-intro?lang=en">Recurso relacionado en inglés</a></aside>
 </main><footer class="shell"><p>Sitio devocional independiente dedicado a san Chárbel, sin afiliación oficial al santuario de Annaya.</p></footer>
+<script defer src="/translate.js?v=20260922-1"></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body></html>

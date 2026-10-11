@@ -8,7 +8,7 @@ for(const language of ['en','ar','fr','es','pt','it','de','pl']) {
     await page.evaluate(async()=>{for(const image of document.images){image.loading='eager';await image.decode();}});
     await expect(page.locator('html')).toHaveAttribute('lang',language);
     await expect(page.locator('#sc-language-select')).toHaveCount(1);
-    await expect(page.locator('.travel-destination-list .travel-place')).toHaveCount(3);
+    await expect(page.locator('.travel-place')).toHaveCount(12);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
     expect(errors).toEqual([]);
     const axe=await new AxeBuilder({page}).analyze();
@@ -17,16 +17,15 @@ for(const language of ['en','ar','fr','es','pt','it','de','pl']) {
     await expect(page).toHaveURL(/\/annaya-tour(?:\?lang=[a-z]+)?$/);
   });
 }
-test('Travel selector switches to the same hub and back',async({page})=>{
+test('Travel selector keeps pending translations unavailable instead of switching pages',async({page})=>{
   await page.goto('/travel');
-  await page.locator('#sc-language-select').selectOption('ar');
-  await expect(page).toHaveURL(/\/ar\/travel$/);
-  await expect(page.locator('html')).toHaveAttribute('dir','rtl');
-  await page.locator('#sc-language-select').selectOption('en');
+  const select=page.locator('#sc-language-select');
+  await expect(select.locator('option[value="ar"]')).toBeDisabled();
+  await expect(select).toHaveValue('en');
   await expect(page).toHaveURL(/\/travel$/);
 });
 test('Photo destination opens the Qadisha guide',async({page})=>{
-  await page.goto('/travel');await page.locator('.travel-place').first().click();
+  await page.goto('/travel');await page.locator('.travel-place[href="/qadisha-valley"]').click();
   await expect(page).toHaveURL(/\/qadisha-valley$/);
   await page.locator('.travel-hero .btn.primary').click();
   await expect(page).toHaveURL(/#visiting$/);
@@ -42,3 +41,14 @@ for (const route of ['/qadisha-valley','/ar/qadisha-valley']) {
     await expect(page.locator('#sc-language-select')).toHaveCount(1);
   });
 }
+
+test('Travel page navigation dropdown links stay readable on the dark panel',async({page})=>{
+  await page.goto('/travel');
+  await page.locator('.nav-group:has(.nav-parent[href$="travel"]) .nav-parent').first().focus();
+  await page.keyboard.press('Enter').catch(()=>{});
+  await page.locator('.nav-group:has(.nav-parent[href$="travel"])').first().hover();
+  const links=page.locator('.nav-group:has(.nav-parent[href$="travel"]) .nav-sub a');
+  await expect(links.first()).toBeVisible();
+  const colors=await links.evaluateAll(es=>es.map(e=>getComputedStyle(e).color));
+  for(const color of colors){const [r,g,b]=color.match(/\d+/g).map(Number);expect(r+g+b,`link color ${color} is too dark for the dark panel`).toBeGreaterThan(450)}
+});

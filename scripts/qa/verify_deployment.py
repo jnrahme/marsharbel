@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Verify public frontend files against this checkout, not just HTTP success."""
 
+import re
 import argparse
 import json
 import struct
@@ -75,19 +76,33 @@ def contents_match(path, expected, actual):
     return False
 
 
+def redirected_pages(root):
+    """Checkout pages that .htaccess deliberately 301s elsewhere (no longer served as themselves)."""
+    htaccess = root / ".htaccess"
+    if not htaccess.is_file():
+        return set()
+    names = set()
+    for line in htaccess.read_text().splitlines():
+        match = re.match(r"\s*RewriteRule\s+\^([a-z0-9-]+)\(\?:\\\.html\)\?/\?\$\s+\S+\s+\[[^\]]*R=301", line)
+        if match:
+            names.add(root / f"{match.group(1)}.html")
+    return names
+
+
 def frontend_files(root):
     files = {path for pattern in ("*.html", "*.js", "*.css", "*.webmanifest")
              for path in root.glob(pattern)}
     files.update((root / "mysteries").glob("*.html"))
     for language in json.loads((root / "locales/registry.json").read_text())["locales"]:
         files.update((root / language).glob("*.html"))
-    files.update(root / name for name in ("robots.txt", "sitemap.xml", "indexnow-key.txt"))
+    files.update(root / name for name in ("robots.txt", "sitemap.xml", "sitemap-images.xml", "sitemap-video.xml", "indexnow-key.txt"))
     files.update((root / "media/promo/optimized").glob("*.webp"))
     files.update((root / "media/fonts").glob("*.woff2"))
     files.update((root / "media/optimized").glob("*.webp"))
     files.update((root / "media/optimized").glob("*.avif"))
     files.update((root / "media/promo/optimized").glob("*.avif"))
     files.update((root / "pwa").glob("*-v2.png"))
+    files -= redirected_pages(root)
     return sorted(path for path in files if path.is_file())
 
 

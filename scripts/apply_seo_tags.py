@@ -12,6 +12,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://marsharbel.com"
 DEFAULT_IMAGE = f"{SITE}/saint-charbel.jpg"
+# Text-led editorial pages whose social image is the established site image;
+# an incidental archive photo is not the feature's social image.
+TEXT_LED_PAGES = ("news.html", "saint-charbel-movie.html")
 # The site publishes under its own name; no personal or organizational credentials are claimed.
 PUBLISHER = {"@type": "Organization", "name": "marsharbel.com", "url": f"{SITE}/"}
 CHARBEL_ALIASES = ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"]
@@ -28,11 +31,16 @@ NOINDEX = {
 }
 
 DESCRIPTIONS = {
+    "sergius-bacchus-story.html": "Saints Sergius and Bacchus storybook for ages 6-12: nine illustrated pages about two Roman officers, a friendship, a hard choice, and the city that took a saint's name, with a family reflection.",
+    "augustine-story.html": "Saint Augustine storybook for ages 6-12: ten illustrated pages about a boy from North Africa who searched for years, found God, and became the bishop of Hippo, with a family reflection.",
+    "marina-story.html": "Saint Marina storybook for ages 6-12: ten illustrated pages from the Lebanese tradition of a girl who followed her father to a monastery, was blamed unfairly, and kept her faith, with a family reflection.",
+    "maroun-story.html": "Saint Maroun storybook for ages 6-12: nine illustrated pages about a hermit on a Syrian hilltop, the people who climbed up to meet him, and the Maronite family that took his name, with a family reflection.",
     "travel.html": json.loads((ROOT / "locales/en/travel.json").read_text())["intro"],
+    "saint-charbel-encyclopedia.html": "A guided index to everything about Saint Charbel: the story of his life, the Church's verdict, the healings and devotions, and the places in Lebanon, each with its own sourced page.",
     "magdalene-story.html": "Mary Magdalene storybook for ages 6-12: nine illustrated narrative pages from Galilee to the Easter garden, with flowing narration and a family reflection.",
     "jude-story.html": "Saint Jude storybook for ages 6-12: nine illustrated pages about a question at the Last Supper, with flowing narration and a family reflection.",
     "massabki-story.html": "Read the Massabki brothers’ story for ages 6-12 with a trusted adult: narrated pages about service, faith, remembrance, and choosing safety and peace.",
-    "history.html": "Discover Saint Charbel's life timeline from 1828 to canonization in 1977, including his Maronite monastic vocation and enduring spiritual legacy.",
+    "history.html": "The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced.",
     "story.html": "Read a child-friendly Saint Charbel storybook for ages 5-12 with simple language, faith lessons, and an engaging guided experience.",
     "miracles.html": "Explore Saint Charbel miracle records with clear distinction between formally recognized Church miracles and reported testimonies from Annaya.",
     "testimonies.html": json.loads((ROOT / "locales/en/testimonies.json").read_text())["description"],
@@ -59,8 +67,9 @@ CANONICAL_OVERRIDE = {
 
 TITLE_OVERRIDE = {
     "travel.html": json.loads((ROOT / "locales/en/travel.json").read_text())["title"],
+    "saint-charbel-encyclopedia.html": 'Saint Charbel Encyclopedia: Life, Miracles, Places and Devotion',
     "index.html": "Saint Charbel | History, Miracles, Testimonies & Rosary",
-    "history.html": "Saint Charbel History | Biography, Timeline & Canonization",
+    "history.html": "Saint Charbel Makhlouf: Full Life, Timeline and Canonization (1828-1977)",
     "story.html": "Saint Charbel Story for Kids | Catholic Storybook",
     "miracles.html": "Saint Charbel Miracles | Verified Reports & Testimonies",
     "testimonies.html": json.loads((ROOT / "locales/en/testimonies.json").read_text())["title"],
@@ -81,6 +90,7 @@ TITLE_OVERRIDE = {
 # Home > section > page. Each entry is (label, file) for the section and page.
 SECTIONS = {
     "story": ("Story", "story.html"),
+    "legacy": ("Legacy", "saint-charbel-encyclopedia.html"),
     "miracles": ("Miracles", "miracles/index.html"),
     "prayer": ("Prayer", "prayer-library.html"),
     "rosary": ("Rosary Guide", "rosary-visual-guide.html"),
@@ -88,7 +98,8 @@ SECTIONS = {
 
 BREADCRUMBS = {
     "story.html": (None, "Story for Children"),
-    "history.html": ("story", "Full History"),
+    "history.html": ("legacy", "Full History"),
+    "saint-charbel-encyclopedia.html": (None, "Saint Charbel Encyclopedia"),
     "miracles/index.html": (None, "Miracles"),
     "miracles/eucharistic/index.html": ("miracles", "Eucharistic Miracles"),
     "miracles/eucharistic/lanciano.html": ("miracles", "Eucharistic Miracle of Lanciano"),
@@ -102,7 +113,7 @@ BREADCRUMBS = {
     "miracles/eucharistic/ivorra.html": ("miracles", "Eucharistic Tradition of Ivorra"),
     "miracles/eucharistic/faverney.html": ("miracles", "Eucharistic Event of Faverney"),
 
-    "news.html": ("miracles", "Latest News"),
+    "news.html": (None, "News"),
     "testimonies.html": ("miracles", "Letters"),
     "voice-testimony.html": ("miracles", "Voice Testimony"),
     "prayer-library.html": (None, "Prayer Library"),
@@ -117,7 +128,7 @@ BREADCRUMBS = {
     "become-like-charbel.html": ("prayer", "Become Like Him"),
     "rosary-intro.html": ("rosary", "Rosary for Beginners"),
     "rosary-prayer-coach.html": ("rosary", "Rosary Prayer Coach"),
-    "gallery.html": (None, "Gallery"),
+    "gallery.html": ("legacy", "Gallery"),
     "visit-annaya.html": (None, "Visiting Annaya"),
     "22nd-of-the-month.html": (None, "The 22nd of the Month"),
     "privacy-policy.html": (None, "Privacy Policy"),
@@ -151,6 +162,15 @@ def breadcrumb_for(path: Path, title: str) -> dict | None:
     safe Home > Page trail instead of requiring hand-authored JSON-LD.
     """
     rel = path.relative_to(ROOT).as_posix()
+    travel_config=ROOT/'locales/travel-routes.json'
+    if travel_config.exists():
+        travel=json.loads(travel_config.read_text())
+        route='/'+rel.removesuffix('.html')
+        if route in travel['destinations']:
+            return {'@type':'BreadcrumbList','itemListElement':[
+                {'@type':'ListItem','position':1,'name':'Home','item':SITE+'/'},
+                {'@type':'ListItem','position':2,'name':'Travel','item':SITE+travel['hub']},
+                {'@type':'ListItem','position':3,'name':heading_label(path,title),'item':path_to_url(path)}]}
     if rel.startswith("mysteries/"):
         section, label = "rosary", mystery_name(title).split(" - ")[0]
     elif rel in BREADCRUMBS:
@@ -253,8 +273,18 @@ def hero_image(path: Path, html: str) -> str | None:
 
 
 def og_image_for(path: Path, html: str = "") -> str:
+    if path.relative_to(ROOT).as_posix() in TEXT_LED_PAGES:
+        return DEFAULT_IMAGE
     # pio-story.html renders its cover via storybook.js (no static hero <img>),
     # so pin the storybook cover instead of falling back to the default.
+    if path.name == "augustine-story.html":
+        return f"{SITE}/media/storybook-augustine/images/page-01.webp"
+    if path.name == "marina-story.html":
+        return f"{SITE}/media/storybook-marina/images/page-01.webp"
+    if path.name == "maroun-story.html":
+        return f"{SITE}/media/storybook-maroun/images/page-01.webp"
+    if path.name == "sergius-bacchus-story.html":
+        return f"{SITE}/media/storybook-sergius-bacchus/images/page-01.webp"
     if path.name == "magdalene-story.html":
         return f"{SITE}/media/storybook-magdalene/images/page-01.webp"
     if path.name == "jude-story.html":
@@ -299,7 +329,7 @@ def first_published(path: Path, html: str) -> str | None:
 
 def article_schema(path: Path, html: str) -> dict | None:
     """Article entity for pages with a featured hero image (news/feature pages)."""
-    image = hero_image(path, html)
+    image = DEFAULT_IMAGE if path.relative_to(ROOT).as_posix() in TEXT_LED_PAGES else hero_image(path, html)
     heading = re.search(r"<h1\b[^>]*>(.*?)</h1>", html, re.I | re.S)
     if not image or not heading:
         return None
@@ -389,6 +419,7 @@ SAINT_STEMS = {
     "st-nimatullah",
     "st-padre-pio",
     "st-rafqa",
+    "st-sarkis-bakhos",
     "st-teresa-of-calcutta",
     "history",
 }
@@ -409,7 +440,12 @@ def person_schema(path: Path, html: str, url: str, title: str, description: str)
         return None
     person = {"@type": "Person", "name": name, "description": description, "url": url}
     if path.stem == "history":
+        # Day of birth is not documented in an authenticated record: year only.
+        person["name"] = "Saint Charbel Makhlouf"
         person["alternateName"] = CHARBEL_ALIASES
+        person["birthDate"] = "1828"
+        person["deathDate"] = "1898-12-24"
+        person["sameAs"] = ["https://en.wikipedia.org/wiki/Charbel_Makhlouf", "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1977/10/09.html"]
     return person
 
 

@@ -1,0 +1,982 @@
+{
+  "version": 1,
+  "master": "saint-charbel-trail.html",
+  "masterSha256": "35233a99909a91fdf561d9b3266a3836a306dc1881bb2ae093c5ace42c743324",
+  "sourceRevision": "1be64cf5",
+  "bindings": [
+    {
+      "key": "saint-charbel-trail.metadata.title-darb-mar-charbel-the-saint-charbel-trail-in-lebanon",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Darb Mar Charbel | The Saint Charbel Trail in Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.metadata.description-darb-mar-charbel-is-lebanon-s-first-official-lon",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Darb Mar Charbel is Lebanon's first official long-distance pilgrimage trail, launched July 20, 2025 at Annaya. What is open now and how to walk it.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-trail.metadata.og-title-darb-mar-charbel-the-saint-charbel-trail-in-lebanon",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Darb Mar Charbel | The Saint Charbel Trail in Lebanon",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-trail.metadata.og-description-darb-mar-charbel-is-lebanon-s-first-official",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Darb Mar Charbel is Lebanon's first official long-distance pilgrimage trail, launched July 20, 2025 at Annaya. What is open now and how to walk it.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-trail.metadata.twitter-title-darb-mar-charbel-the-saint-charbel-trail-in-le",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Darb Mar Charbel | The Saint Charbel Trail in Lebanon",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-trail.metadata.twitter-description-darb-mar-charbel-is-lebanon-s-first-offi",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Darb Mar Charbel is Lebanon's first official long-distance pilgrimage trail, launched July 20, 2025 at Annaya. What is open now and how to walk it.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-trail.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "saint-charbel-trail.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.accessibility.in-this-guide",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "saint-charbel-trail.body.home",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.body.travel",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.body.text",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.body.darb-mar-charbel-the-saint-charbel-trail",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Darb Mar Charbel: The Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.accessibility.pilgrims-on-the-saint-charbel-trail-in-lebanon-photo-courtes",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Pilgrims on the Saint Charbel Trail in Lebanon. Photo courtesy of Father Michael Sliney, LC",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "saint-charbel-trail.body.pilgrims-on-the-saint-charbel-trail-photo-courtesy-of-father",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.body.lebanon-s-pilgrimage-trail",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Lebanon's Pilgrimage Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.darb-mar-charbel-the-sai.darb-mar-charbel-the-saint-charbel-trail",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Darb Mar Charbel: The Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.darb-mar-charbel-the-sai.darb-mar-charbel-the-saint-charbel-trail-is-lebanon-s-first",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Darb Mar Charbel (the Saint Charbel Trail) is Lebanon's first official long-distance pilgrimage route - a path in the spirit of the Camino de Santiago that links the places of Saint Charbel's life, starting at the monastery where he is buried. The first section opened in 2025, and the trail is still growing.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.darb-mar-charbel-the-sai.visiting-annaya",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.darb-mar-charbel-the-sai.his-life-story",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "His Life Story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.darb-mar-charbel-the-sai.the-feast-day",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "The Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.what-the-trail-is.what-the-trail-is",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "What the Trail Is",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.what-the-trail-is.darb-mar-charbel-arabic-for-the-path-of-saint-charbel-is-leb",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Darb Mar Charbel - Arabic for \"the path of Saint Charbel\" - is Lebanon's first official long-distance pilgrimage trail. Inspired by global spiritual routes such as Spain's Camino de Santiago, it weaves through the sacred and historic landscapes tied to Saint Charbel's life, connecting monasteries, churches, and rural villages across Mount Lebanon.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.what-the-trail-is.when-complete-the-trail-is-planned-to-span-from-the-northern",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "When complete, the trail is planned to span from the northern mountains to",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.what-the-trail-is.harissa",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.what-the-trail-is.in-the-south-home-of-the-shrine-of-our-lady-of-lebanon-the-p",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "in the south, home of the shrine of Our Lady of Lebanon. The project was launched by",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-trail.what-the-trail-is.darbessama",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(2)",
+      "source": "Darbessama",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.what-the-trail-is.in-partnership-with-the",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "in partnership with the",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-trail.what-the-trail-is.lebanon-mountain-trail-association-lmta",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(3)",
+      "source": "Lebanon Mountain Trail Association (LMTA)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.what-the-trail-is.and-its-development-has-been-funded-through-grassroots-fundr",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ", and its development has been funded through grassroots fundraising and community involvement. The official trail site describes it as \"an open trail to all who desire to take the journey, irrespective of religion and nationality\" - a fitting character for a saint whose tomb draws visitors of every faith.",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "saint-charbel-trail.the-launch-july-20-2025.the-launch-july-20-2025",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "The Launch: July 20, 2025",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-launch-july-20-2025.the-first-section-of-the-trail-was-officially-inaugurated-on",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The first section of the trail was officially inaugurated on",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-launch-july-20-2025.july-20-2025",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "July 20, 2025",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-launch-july-20-2025.the-feast-day-of-saint-charbel-that-year-at-the",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "- the feast day of Saint Charbel that year - at the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-trail.the-launch-july-20-2025.monastery-of-saint-maron-in-annaya",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Monastery of Saint Maron in Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-launch-july-20-2025.where-the-saint-lived-died-and-lies-entombed-the-ceremony-wa",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", where the saint lived, died, and lies entombed. The ceremony was presided over by the President of the Lebanese Republic, General Joseph Aoun, and a \"Kilometer Zero\" monument was blessed by the Maronite Patriarch, Cardinal Mar Bechara Boutros al-Rai, alongside the Superior General of the Lebanese Maronite Order and the Superior of the monastery. The launch fell inside the Jubilee Year 2025, \"Pilgrims of Hope.\"",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.the-route-section-by-section",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "The Route, Section by Section",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.the-trail-is-opening-in-stages-section-status-as-reported-at",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "The trail is opening in stages. Section status as reported at launch; check the official site before you walk.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.now-open",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Now open",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.section-a1-annaya-to-mayfouq",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Section A1: Annaya to Mayfouq",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.the-first-walkable-section-inaugurated-on-july-20-2025-it-st",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The first walkable section, inaugurated on July 20, 2025. It starts at the monastery and tomb of Saint Charbel in Annaya and runs to Mayfouq, the village where he first entered monastic life at the Monastery of Our Lady of Mayfouq in 1851.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.coming-soon",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Coming soon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.section-a2-mar-yaacoub-el-hosn-to-mayfouq",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
+      "source": "Section A2: Mar Yaacoub El Hosn to Mayfouq",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.the-next-stage-north-of-mayfouq-continuing-the-path-through",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "The next stage north of Mayfouq, continuing the path through the villages and high country of the Batroun and Jbeil districts.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.coming-soon",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "Coming soon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.section-a3-wata-houb-to-mar-yaacoub-el-hosn",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > h3:nth-of-type(1)",
+      "source": "Section A3: Wata Houb to Mar Yaacoub El Hosn",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.the-third-stage-reaching-toward-wata-houb-in-the-northern-mo",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "The third stage, reaching toward Wata Houb in the northern mountains above the Qadisha valley region.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.expected-2026",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(4) > span:nth-of-type(1)",
+      "source": "Expected 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.southern-extension-to-harissa",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(4) > h3:nth-of-type(1)",
+      "source": "Southern extension to Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.the-route-section-by-sec.the-long-term-plan-carries-the-trail-south-to-harissa-and-th",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "The long-term plan carries the trail south to Harissa and the shrine of Our Lady of Lebanon, joining Lebanon's two great places of pilgrimage in a single route.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.walking-it-as-a-pilgrim",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "Walking It as a Pilgrim",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.the-natural-beginning-is",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The natural beginning is",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.annaya-itself",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Annaya itself",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.pray-at-the-tomb-climb-to-the-hermitage-where-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ": pray at the tomb, climb to the hermitage where Saint Charbel spent his last twenty-three years, and then set out on foot. Walking the trail turns a visit into a pilgrimage - the same shift the Camino works in Spain, where the road itself becomes part of the prayer.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.start-at-kilometer-zero",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Start at Kilometer Zero",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.at-the-monastery-of-saint-maron-annaya-about-90-minutes-from",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "at the Monastery of Saint Maron, Annaya, about 90 minutes from Beirut.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.check-section-status-before-you-go",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Check section status before you go",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.the-trail-opened-in-2025-and-is-still-being-built-out-the-of",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "- the trail opened in 2025 and is still being built out; the official site (below) carries current conditions.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.prepare-for-mountain-terrain",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > strong:nth-of-type(1)",
+      "source": "Prepare for mountain terrain",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.sturdy-shoes-water-and-sun-protection-annaya-sits-at-about-1",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "- sturdy shoes, water, and sun protection; Annaya sits at about 1,200 meters.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.come-as-you-are",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > strong:nth-of-type(1)",
+      "source": "Come as you are",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.the-trail-is-explicitly-open-to-walkers-of-every-religion-an",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": "- the trail is explicitly open to walkers of every religion and nationality, for prayer, reflection, or simply the landscape.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.if-your-time-is-short-pair-one-section-of-the-trail-with-a-f",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "If your time is short, pair one section of the trail with a full visit to the monastery rather than trying to rush both. Our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.annaya-pilgrim-s-guide",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Annaya pilgrim's guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.covers-the-tomb-the-hermitage-mass-times-and-the-practical-d",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "covers the tomb, the hermitage, Mass times, and the practical details of the monastery itself, and",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.saint-charbel-s-lebanon",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.maps-the-three-places-bekaa-kafra-mayfouq-and-annaya-that-th",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "maps the three places - Bekaa Kafra, Mayfouq, and Annaya - that the trail ties together, and the",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.pilgrimage-guide",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(3)",
+      "source": "pilgrimage guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.walking-it-as-a-pilgrim.plans-the-whole-journey-with-google-maps-locations-and-itine",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "plans the whole journey with Google Maps locations and itineraries.",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "saint-charbel-trail.sources.sources",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.sources.darb-mar-charbel-the-official-trail-site-darbessama",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Darb Mar Charbel - the official trail site (Darbessama)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.sources.lebanon-traveler-lebanon-announces-the-launch-of-the-darb-ma",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Lebanon Traveler: Lebanon Announces the Launch of the Darb Mar Charbel Trail - inauguration details, sections, and partners",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.footer.saint-charbel-trail-author-please-pray-for-the-person-who-ma",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Saint Charbel trail. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "saint-charbel-trail.metadata.title-darb-mar-charbel-the-saint-charbel-trail-in-lebanon": "Darb Mar Charbel | The Saint Charbel Trail in Lebanon",
+    "saint-charbel-trail.metadata.description-darb-mar-charbel-is-lebanon-s-first-official-lon": "Darb Mar Charbel is Lebanon's first official long-distance pilgrimage trail, launched July 20, 2025 at Annaya. What is open now and how to walk it.",
+    "saint-charbel-trail.metadata.og-title-darb-mar-charbel-the-saint-charbel-trail-in-lebanon": "Darb Mar Charbel | The Saint Charbel Trail in Lebanon",
+    "saint-charbel-trail.metadata.og-description-darb-mar-charbel-is-lebanon-s-first-official": "Darb Mar Charbel is Lebanon's first official long-distance pilgrimage trail, launched July 20, 2025 at Annaya. What is open now and how to walk it.",
+    "saint-charbel-trail.metadata.twitter-title-darb-mar-charbel-the-saint-charbel-trail-in-le": "Darb Mar Charbel | The Saint Charbel Trail in Lebanon",
+    "saint-charbel-trail.metadata.twitter-description-darb-mar-charbel-is-lebanon-s-first-offi": "Darb Mar Charbel is Lebanon's first official long-distance pilgrimage trail, launched July 20, 2025 at Annaya. What is open now and how to walk it.",
+    "saint-charbel-trail.body.skip-to-main-content": "Skip to main content",
+    "saint-charbel-trail.header.text": "✦",
+    "saint-charbel-trail.header.saint-charbel": "Saint Charbel",
+    "saint-charbel-trail.accessibility.primary": "Primary",
+    "saint-charbel-trail.header.home": "Home",
+    "saint-charbel-trail.header.legacy": "Legacy",
+    "saint-charbel-trail.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "saint-charbel-trail.header.full-history": "Full History",
+    "saint-charbel-trail.header.miracles": "Miracles",
+    "saint-charbel-trail.header.miracles-reports": "Miracles & Reports",
+    "saint-charbel-trail.header.eucharistic-miracles": "Eucharistic Miracles",
+    "saint-charbel-trail.header.letters": "Letters",
+    "saint-charbel-trail.header.voice-testimony": "Voice Testimony",
+    "saint-charbel-trail.header.saints": "Saints",
+    "saint-charbel-trail.header.children-s-books": "Children's Books",
+    "saint-charbel-trail.header.prayer": "Prayer",
+    "saint-charbel-trail.header.prayer-library": "Prayer Library",
+    "saint-charbel-trail.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "saint-charbel-trail.header.prayer-for-the-sick": "Prayer for the Sick",
+    "saint-charbel-trail.header.prayer-for-healing": "Prayer for Healing",
+    "saint-charbel-trail.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "saint-charbel-trail.header.prayer-for-depression": "Prayer for Depression",
+    "saint-charbel-trail.header.prayer-for-students": "Prayer for Students",
+    "saint-charbel-trail.header.prayer-for-addiction": "Prayer for Addiction",
+    "saint-charbel-trail.header.prayer-for-family": "Prayer for Family",
+    "saint-charbel-trail.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "saint-charbel-trail.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "saint-charbel-trail.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "saint-charbel-trail.header.saint-charbel-novena": "Saint Charbel Novena",
+    "saint-charbel-trail.header.feast-day": "Feast Day",
+    "saint-charbel-trail.header.rosary-guide": "Rosary Guide",
+    "saint-charbel-trail.header.rosary-minibook": "Rosary Minibook",
+    "saint-charbel-trail.header.mystery-meditation": "Mystery Meditation",
+    "saint-charbel-trail.header.become-like-him": "Become Like Him",
+    "saint-charbel-trail.header.travel": "Travel",
+    "saint-charbel-trail.header.visiting-annaya": "Visiting Annaya",
+    "saint-charbel-trail.header.annaya-online-tour": "Annaya Online Tour",
+    "saint-charbel-trail.header.bekaa-kafra": "Bekaa Kafra",
+    "saint-charbel-trail.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "saint-charbel-trail.header.the-cedars-of-god": "the Cedars of God",
+    "saint-charbel-trail.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "saint-charbel-trail.header.qadisha-valley": "Qadisha Valley",
+    "saint-charbel-trail.header.qannoubine-monastery": "Qannoubine Monastery",
+    "saint-charbel-trail.header.qozhaya-monastery": "Qozhaya Monastery",
+    "saint-charbel-trail.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "saint-charbel-trail.header.the-hermitage": "The Hermitage",
+    "saint-charbel-trail.header.saint-charbel-trail": "Saint Charbel Trail",
+    "saint-charbel-trail.header.news": "News",
+    "saint-charbel-trail.accessibility.in-this-guide": "In this guide",
+    "saint-charbel-trail.body.home": "Home",
+    "saint-charbel-trail.body.text": "/",
+    "saint-charbel-trail.body.travel": "Travel",
+    "saint-charbel-trail.body.darb-mar-charbel-the-saint-charbel-trail": "Darb Mar Charbel: The Saint Charbel Trail",
+    "saint-charbel-trail.accessibility.pilgrims-on-the-saint-charbel-trail-in-lebanon-photo-courtes": "Pilgrims on the Saint Charbel Trail in Lebanon. Photo courtesy of Father Michael Sliney, LC",
+    "saint-charbel-trail.body.pilgrims-on-the-saint-charbel-trail-photo-courtesy-of-father": "Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC.",
+    "saint-charbel-trail.body.lebanon-s-pilgrimage-trail": "Lebanon's Pilgrimage Trail",
+    "saint-charbel-trail.darb-mar-charbel-the-sai.darb-mar-charbel-the-saint-charbel-trail": "Darb Mar Charbel: The Saint Charbel Trail",
+    "saint-charbel-trail.darb-mar-charbel-the-sai.darb-mar-charbel-the-saint-charbel-trail-is-lebanon-s-first": "Darb Mar Charbel (the Saint Charbel Trail) is Lebanon's first official long-distance pilgrimage route - a path in the spirit of the Camino de Santiago that links the places of Saint Charbel's life, starting at the monastery where he is buried. The first section opened in 2025, and the trail is still growing.",
+    "saint-charbel-trail.darb-mar-charbel-the-sai.visiting-annaya": "Visiting Annaya",
+    "saint-charbel-trail.darb-mar-charbel-the-sai.his-life-story": "His Life Story",
+    "saint-charbel-trail.darb-mar-charbel-the-sai.the-feast-day": "The Feast Day",
+    "saint-charbel-trail.what-the-trail-is.what-the-trail-is": "What the Trail Is",
+    "saint-charbel-trail.what-the-trail-is.darb-mar-charbel-arabic-for-the-path-of-saint-charbel-is-leb": "Darb Mar Charbel - Arabic for \"the path of Saint Charbel\" - is Lebanon's first official long-distance pilgrimage trail. Inspired by global spiritual routes such as Spain's Camino de Santiago, it weaves through the sacred and historic landscapes tied to Saint Charbel's life, connecting monasteries, churches, and rural villages across Mount Lebanon.",
+    "saint-charbel-trail.what-the-trail-is.when-complete-the-trail-is-planned-to-span-from-the-northern": "When complete, the trail is planned to span from the northern mountains to",
+    "saint-charbel-trail.what-the-trail-is.harissa": "Harissa",
+    "saint-charbel-trail.what-the-trail-is.in-the-south-home-of-the-shrine-of-our-lady-of-lebanon-the-p": "in the south, home of the shrine of Our Lady of Lebanon. The project was launched by",
+    "saint-charbel-trail.what-the-trail-is.darbessama": "Darbessama",
+    "saint-charbel-trail.what-the-trail-is.in-partnership-with-the": "in partnership with the",
+    "saint-charbel-trail.what-the-trail-is.lebanon-mountain-trail-association-lmta": "Lebanon Mountain Trail Association (LMTA)",
+    "saint-charbel-trail.what-the-trail-is.and-its-development-has-been-funded-through-grassroots-fundr": ", and its development has been funded through grassroots fundraising and community involvement. The official trail site describes it as \"an open trail to all who desire to take the journey, irrespective of religion and nationality\" - a fitting character for a saint whose tomb draws visitors of every faith.",
+    "saint-charbel-trail.the-launch-july-20-2025.the-launch-july-20-2025": "The Launch: July 20, 2025",
+    "saint-charbel-trail.the-launch-july-20-2025.the-first-section-of-the-trail-was-officially-inaugurated-on": "The first section of the trail was officially inaugurated on",
+    "saint-charbel-trail.the-launch-july-20-2025.july-20-2025": "July 20, 2025",
+    "saint-charbel-trail.the-launch-july-20-2025.the-feast-day-of-saint-charbel-that-year-at-the": "- the feast day of Saint Charbel that year - at the",
+    "saint-charbel-trail.the-launch-july-20-2025.monastery-of-saint-maron-in-annaya": "Monastery of Saint Maron in Annaya",
+    "saint-charbel-trail.the-launch-july-20-2025.where-the-saint-lived-died-and-lies-entombed-the-ceremony-wa": ", where the saint lived, died, and lies entombed. The ceremony was presided over by the President of the Lebanese Republic, General Joseph Aoun, and a \"Kilometer Zero\" monument was blessed by the Maronite Patriarch, Cardinal Mar Bechara Boutros al-Rai, alongside the Superior General of the Lebanese Maronite Order and the Superior of the monastery. The launch fell inside the Jubilee Year 2025, \"Pilgrims of Hope.\"",
+    "saint-charbel-trail.the-route-section-by-sec.the-route-section-by-section": "The Route, Section by Section",
+    "saint-charbel-trail.the-route-section-by-sec.the-trail-is-opening-in-stages-section-status-as-reported-at": "The trail is opening in stages. Section status as reported at launch; check the official site before you walk.",
+    "saint-charbel-trail.the-route-section-by-sec.now-open": "Now open",
+    "saint-charbel-trail.the-route-section-by-sec.section-a1-annaya-to-mayfouq": "Section A1: Annaya to Mayfouq",
+    "saint-charbel-trail.the-route-section-by-sec.the-first-walkable-section-inaugurated-on-july-20-2025-it-st": "The first walkable section, inaugurated on July 20, 2025. It starts at the monastery and tomb of Saint Charbel in Annaya and runs to Mayfouq, the village where he first entered monastic life at the Monastery of Our Lady of Mayfouq in 1851.",
+    "saint-charbel-trail.the-route-section-by-sec.coming-soon": "Coming soon",
+    "saint-charbel-trail.the-route-section-by-sec.section-a2-mar-yaacoub-el-hosn-to-mayfouq": "Section A2: Mar Yaacoub El Hosn to Mayfouq",
+    "saint-charbel-trail.the-route-section-by-sec.the-next-stage-north-of-mayfouq-continuing-the-path-through": "The next stage north of Mayfouq, continuing the path through the villages and high country of the Batroun and Jbeil districts.",
+    "saint-charbel-trail.the-route-section-by-sec.section-a3-wata-houb-to-mar-yaacoub-el-hosn": "Section A3: Wata Houb to Mar Yaacoub El Hosn",
+    "saint-charbel-trail.the-route-section-by-sec.the-third-stage-reaching-toward-wata-houb-in-the-northern-mo": "The third stage, reaching toward Wata Houb in the northern mountains above the Qadisha valley region.",
+    "saint-charbel-trail.the-route-section-by-sec.expected-2026": "Expected 2026",
+    "saint-charbel-trail.the-route-section-by-sec.southern-extension-to-harissa": "Southern extension to Harissa",
+    "saint-charbel-trail.the-route-section-by-sec.the-long-term-plan-carries-the-trail-south-to-harissa-and-th": "The long-term plan carries the trail south to Harissa and the shrine of Our Lady of Lebanon, joining Lebanon's two great places of pilgrimage in a single route.",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.walking-it-as-a-pilgrim": "Walking It as a Pilgrim",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.the-natural-beginning-is": "The natural beginning is",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.annaya-itself": "Annaya itself",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.pray-at-the-tomb-climb-to-the-hermitage-where-saint-charbel": ": pray at the tomb, climb to the hermitage where Saint Charbel spent his last twenty-three years, and then set out on foot. Walking the trail turns a visit into a pilgrimage - the same shift the Camino works in Spain, where the road itself becomes part of the prayer.",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.start-at-kilometer-zero": "Start at Kilometer Zero",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.at-the-monastery-of-saint-maron-annaya-about-90-minutes-from": "at the Monastery of Saint Maron, Annaya, about 90 minutes from Beirut.",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.check-section-status-before-you-go": "Check section status before you go",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.the-trail-opened-in-2025-and-is-still-being-built-out-the-of": "- the trail opened in 2025 and is still being built out; the official site (below) carries current conditions.",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.prepare-for-mountain-terrain": "Prepare for mountain terrain",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.sturdy-shoes-water-and-sun-protection-annaya-sits-at-about-1": "- sturdy shoes, water, and sun protection; Annaya sits at about 1,200 meters.",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.come-as-you-are": "Come as you are",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.the-trail-is-explicitly-open-to-walkers-of-every-religion-an": "- the trail is explicitly open to walkers of every religion and nationality, for prayer, reflection, or simply the landscape.",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.if-your-time-is-short-pair-one-section-of-the-trail-with-a-f": "If your time is short, pair one section of the trail with a full visit to the monastery rather than trying to rush both. Our",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.annaya-pilgrim-s-guide": "Annaya pilgrim's guide",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.covers-the-tomb-the-hermitage-mass-times-and-the-practical-d": "covers the tomb, the hermitage, Mass times, and the practical details of the monastery itself, and",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.maps-the-three-places-bekaa-kafra-mayfouq-and-annaya-that-th": "maps the three places - Bekaa Kafra, Mayfouq, and Annaya - that the trail ties together, and the",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.pilgrimage-guide": "pilgrimage guide",
+    "saint-charbel-trail.walking-it-as-a-pilgrim.plans-the-whole-journey-with-google-maps-locations-and-itine": "plans the whole journey with Google Maps locations and itineraries.",
+    "saint-charbel-trail.sources.sources": "Sources",
+    "saint-charbel-trail.sources.darb-mar-charbel-the-official-trail-site-darbessama": "Darb Mar Charbel - the official trail site (Darbessama)",
+    "saint-charbel-trail.sources.lebanon-traveler-lebanon-announces-the-launch-of-the-darb-ma": "Lebanon Traveler: Lebanon Announces the Launch of the Darb Mar Charbel Trail - inauguration details, sections, and partners",
+    "saint-charbel-trail.footer.saint-charbel-trail-author-please-pray-for-the-person-who-ma": "Saint Charbel trail. Author: Please pray for the person who made this website."
+  }
+}

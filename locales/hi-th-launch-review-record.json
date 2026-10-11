@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "baseRevision": "38265fe10eabc81603cb0fad750f5e1f7e6824fa",
+  "locales": [
+    "hi",
+    "th"
+  ],
+  "scope": "Only home + full history localized; unpublished prayers/guides/story/audio English destinations explicitly qualified. No traditional prayer words changed.",
+  "catalogReviewStatus": "copy-approved-with-provenance",
+  "catalogReview": "Parent Oct6 19:30:57 HI final closeout; TH home/chrome+availability closeout Oct6 19:29:39-56; history-v3 approved copy with four-key source corrections. Original verdicts retained by parent.",
+  "selectorReview": "Parent Oct7 06:09:48 relay of independent HI and TH review seats: exact HI unavailable fix and TH unavailable/suffix/helper fixes applied; native names unchanged.",
+  "renderedReviewStatus": "pending-merge-lane-CI-and-production-proof",
+  "renderedReview": "Local producer screenshots/tests are supporting proof only, not independent release acceptance.",
+  "limitations": [
+    "HI/TH history exact-page selector variants remain pending until final gate.",
+    "Full page-source build and full i18n test suite did not complete within local command windows.",
+    "Stamp four new sitemap lastmod dates from actual committed generated-page history.",
+    "Directory-index redirects and live deployment not verified here."
+  ]
+}

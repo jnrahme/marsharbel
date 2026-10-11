@@ -1,20 +1,27 @@
+import json
 import unittest,sys,json,shutil,tempfile
 from pathlib import Path
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.feast_mirror import render_feast
 from i18n.tour_nav import tour_nav
+from i18n.travel_components import travel_frame
+from i18n.runtime_labels import ensure_runtime_labels
+from i18n.catalog import read_json
+from i18n.same_page_injection import inject_control
+from i18n.catalog import read_json as _read_json_fc
+def fc(t):return inject_control(t,ROOT,_read_json_fc(ROOT/'locales/same-page-manifest.pending.json'),_read_json_fc(ROOT/'locales/same-page-copy.json'))
 class FeastMirrorTests(unittest.TestCase):
  def test_shape_and_provenance(self):
   en=BeautifulSoup((ROOT/'saint-charbel-feast-day.html').read_text(),'html.parser');text=render_feast(ROOT)[ROOT/'ar/feast-day.html'];ar=BeautifulSoup(text,'html.parser')
-  self.assertEqual(tour_nav(text,ROOT,'ar'),(ROOT/'ar/feast-day.html').read_text())
-  self.assertEqual([n.name for n in en.select('main *')],[n.name for n in ar.select('main *')])
+  self.assertEqual(fc(ensure_runtime_labels(travel_frame(tour_nav(text,ROOT,'ar'),ROOT,'ar','/ar/feast-day',read_json(ROOT/'locales/registry.json')),ROOT,'ar',read_json(ROOT/'locales/registry.json'))),(ROOT/'ar/feast-day.html').read_text())
+  self.assertEqual([n.name for n in en.select('main *')],[n.name for n in ar.select('main *:not(.enc-language)')])
   self.assertEqual(len(ar.select('main > section')),14)
   self.assertEqual(ar.html['dir'],'rtl');self.assertEqual(ar.html['lang'],'ar')
   self.assertEqual(ar.select_one('main img')['src'],en.select_one('main img')['src'].removeprefix('.'))
   self.assertEqual([n['href'] for n in en.select('main a[href^="https:"]')],[n['href'] for n in ar.select('main a[href^="https:"]')])
   self.assertEqual({n['hreflang']:n['href'] for n in en.select('link[hreflang]')},{n['hreflang']:n['href'] for n in ar.select('link[hreflang]')})
-  route=(ROOT/'locale-routes.js').read_text();self.assertIn('"/saint-charbel-feast-day":{"ar":"/ar/feast-day","es":"/es/fiesta","pt":"/pt/festa","en":"/saint-charbel-feast-day"}',route)
+  route=(ROOT/'locale-routes.js').read_text();routes=json.loads(route.split(' = ',1)[1].rstrip(';\n'))['topics'];self.assertEqual(routes['/saint-charbel-feast-day'],read_json(ROOT/'locales/registry.json')['exactMirrors']['feast']['routes'])
   self.assertNotIn('footer-locales',text);self.assertEqual(len(ar.select('script[type="application/ld+json"]')),2)
   faq=json.loads(ar.select('script[type="application/ld+json"]')[1].string)
   section=next(sec for sec in ar.select('main section') if sec.h2 and sec.h2.get_text()=='أسئلة شائعة')

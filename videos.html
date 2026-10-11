@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -130,6 +118,9 @@
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/videos" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/videos" />
   <!-- hreflang:end -->
+  <link rel="stylesheet" href="video-playback.css" />
+  <link rel="stylesheet" href="media-subnav.css" />
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -139,9 +130,9 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -149,11 +140,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -177,8 +172,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -192,15 +188,23 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="active nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a class="active" href="./videos" aria-current="page">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
-  <main id="main-content" class="site-shell" tabindex="-1">
+  <main id="main-content" class="site-shell media-hub" tabindex="-1">
+    <nav class="media-subnav" aria-label="Media"><span class="media-subnav-label">Media</span><a href="./music">Music</a><a href="./videos" aria-current="page">Video</a><a href="./gallery">Gallery</a></nav>
     <section class="hero">
-      <span class="kicker">Videos</span>
+      <span class="kicker">Video</span>
       <h1>Saint Charbel on Film</h1>
       <p>Documentaries, the full movie, the six-part film, miracle reports, and footage from Annaya and the relic tours - gathered in one place, each linked back to the page that tells its story carefully.</p>
       <div class="cta-row">
@@ -213,26 +217,61 @@
     <!-- OUR FILM SLOT: our own 12-minute Saint Charbel story film drops in here, at the top of the hub, after Joey's visual review. Do not publish before his yes. -->
 
     <section class="section">
+      <h2>Short Voiced Prayers</h2>
+      <p class="section-sub">Brief prayers read aloud, new from our Instagram.</p>
+      <div class="grid-2">
+        <article class="card update">
+          <p>A prayer for the sick, read aloud by candlelight - our first voiced reel.</p>
+          <p><a class="btn subtle" href="https://www.instagram.com/reel/DeQ0v2jER7y/" target="_blank" rel="noopener">Watch on Instagram</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
       <h2>Documentaries</h2>
       <p class="section-sub">Longer films on the life and legacy of the hermit of Annaya.</p>
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/tF8SYCuYKBE" title="Saint Charbel documentary - Ascension Presents (9:57)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/tF8SYCuYKBE" title="Saint Charbel documentary - Ascension Presents (9:57)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Ascension Presents' short documentary on the saint's life (9:57).</p>
+          <div class="video-fallback" data-video-id="tF8SYCuYKBE">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=tF8SYCuYKBE" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-encyclopedia">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/aprfrtO8YuE" title="Saint Charbel documentary (24:54)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/aprfrtO8YuE" title="Saint Charbel documentary (24:54)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>A half-hour documentary on Saint Charbel's life and miracles (24:54).</p>
+          <div class="video-fallback" data-video-id="aprfrtO8YuE">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=aprfrtO8YuE" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-encyclopedia">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/bI1wftAyhbk" title="Saint Charbel full-length documentary (1:20:16)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/bI1wftAyhbk" title="Saint Charbel full-length documentary (1:20:16)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>A full-length documentary for a slow evening (1:20:16).</p>
+          <div class="video-fallback" data-video-id="bI1wftAyhbk">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=bI1wftAyhbk" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-encyclopedia">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
       </div>
     </section>
@@ -242,9 +281,17 @@
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/IE8f4VTRuzc" title="Saint Charbel - the movie, English subtitles (1:43:46)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/IE8f4VTRuzc" title="Saint Charbel - the movie, English subtitles (1:43:46)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The full feature film, with English subtitles (1:43:46).</p>
+          <div class="video-fallback" data-video-id="IE8f4VTRuzc">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=IE8f4VTRuzc" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-encyclopedia">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
       </div>
     </section>
@@ -254,39 +301,87 @@
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/anSLIzK-g0Q" title="Saint Charbel film - part 1 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/anSLIzK-g0Q" title="Saint Charbel film - part 1 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 1 of 6.</p>
+          <div class="video-fallback" data-video-id="anSLIzK-g0Q">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=anSLIzK-g0Q" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-encyclopedia">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/eyEOV33l-6s" title="Saint Charbel film - part 2 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/eyEOV33l-6s" title="Saint Charbel film - part 2 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 2 of 6.</p>
+          <div class="video-fallback" data-video-id="eyEOV33l-6s">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=eyEOV33l-6s" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-encyclopedia">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/Yp3suNf3nE0" title="Saint Charbel film - part 3 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/Yp3suNf3nE0" title="Saint Charbel film - part 3 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 3 of 6.</p>
+          <div class="video-fallback" data-video-id="Yp3suNf3nE0">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=Yp3suNf3nE0" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-encyclopedia">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/sFxz15Q25cM" title="Saint Charbel film - part 4 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/sFxz15Q25cM" title="Saint Charbel film - part 4 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 4 of 6.</p>
+          <div class="video-fallback" data-video-id="sFxz15Q25cM">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=sFxz15Q25cM" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-encyclopedia">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/YMk_ZwM89Hk" title="Saint Charbel film - part 5 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/YMk_ZwM89Hk" title="Saint Charbel film - part 5 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 5 of 6.</p>
+          <div class="video-fallback" data-video-id="YMk_ZwM89Hk">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=YMk_ZwM89Hk" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-encyclopedia">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/-vm2LgAOxKY" title="Saint Charbel film - part 6 of 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/-vm2LgAOxKY" title="Saint Charbel film - part 6 of 6" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Part 6 of 6.</p>
+          <div class="video-fallback" data-video-id="-vm2LgAOxKY">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=-vm2LgAOxKY" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-encyclopedia">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
       </div>
     </section>
@@ -296,33 +391,73 @@
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/aJ7BQw3Jb7w" title="Nohad El Shami recounts her healing (15:54)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/aJ7BQw3Jb7w" title="Nohad El Shami recounts her healing (15:54)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Nohad El Shami telling her own story (15:54) - <a href="./miracles/nohad-el-shami">read her story</a>.</p>
+          <div class="video-fallback" data-video-id="aJ7BQw3Jb7w">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=aJ7BQw3Jb7w" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./miracles/nohad-el-shami">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/PtO7UYdg8ac" title="Dafne Gutierrez tells the story of her healing (19:01)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/PtO7UYdg8ac" title="Dafne Gutierrez tells the story of her healing (19:01)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Dafne Gutierrez on the Phoenix healing (19:01) - <a href="./miracles/dafne-gutierrez">read the account</a>.</p>
+          <div class="video-fallback" data-video-id="PtO7UYdg8ac">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=PtO7UYdg8ac" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./miracles/dafne-gutierrez">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/_AYx8EKBt1w" title="Archival footage of the 1965 beatification (6:00)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/_AYx8EKBt1w" title="Archival footage of the 1965 beatification (6:00)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The 1965 beatification in archival footage (6:00) - <a href="./miracles/canonization">the three Church-approved miracles</a>.</p>
+          <div class="video-fallback" data-video-id="_AYx8EKBt1w">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=_AYx8EKBt1w" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./miracles/canonization">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/SPcpSHCn78I" title="Raymond Nader recounts the night at the hermitage (7:01)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/SPcpSHCn78I" title="Raymond Nader recounts the night at the hermitage (7:01)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Raymond Nader in his own words (7:01) - <a href="./miracles/raymond-nader">read his story</a>.</p>
+          <div class="video-fallback" data-video-id="SPcpSHCn78I">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=SPcpSHCn78I" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./miracles/raymond-nader">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/3RrAr39PE8I" title="The Tablet reports on the January 2026 healings (2:20)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/3RrAr39PE8I" title="The Tablet reports on the January 2026 healings (2:20)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The Tablet on the two healings recorded in January 2026 (2:20) - <a href="./miracles/latest-register-entries">the latest register entries</a>.</p>
+          <div class="video-fallback" data-video-id="3RrAr39PE8I">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=3RrAr39PE8I" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./miracles/latest-register-entries">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
       </div>
     </section>
@@ -332,33 +467,73 @@
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/QY5i1o36hK4" title="Annaya and the monastery (10:46)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/QY5i1o36hK4" title="Annaya and the monastery (10:46)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The monastery of Saint Maron at Annaya (10:46).</p>
+          <div class="video-fallback" data-video-id="QY5i1o36hK4">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=QY5i1o36hK4" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./visit-annaya">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/n6nHifPR1IU" title="The hermitage at Annaya (5:47)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/n6nHifPR1IU" title="The hermitage at Annaya (5:47)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The hermitage where he spent twenty-three years (5:47).</p>
+          <div class="video-fallback" data-video-id="n6nHifPR1IU">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=n6nHifPR1IU" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./visit-annaya">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/fhPk5QRA6Bk" title="Annaya pilgrimage footage (2:27)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/fhPk5QRA6Bk" title="Annaya pilgrimage footage (2:27)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>Pilgrimage footage from Annaya (2:27).</p>
+          <div class="video-fallback" data-video-id="fhPk5QRA6Bk">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=fhPk5QRA6Bk" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./visit-annaya">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/jAtXdt-JiqY" title="Annaya and the hermitage (7:00)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/jAtXdt-JiqY" title="Annaya and the hermitage (7:00)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The monastery and the mountain above it (7:00).</p>
+          <div class="video-fallback" data-video-id="jAtXdt-JiqY">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=jAtXdt-JiqY" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./visit-annaya">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/U6LM2nIU19k" title="Annaya short clip (0:35)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/U6LM2nIU19k" title="Annaya short clip (0:35)" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>A short glimpse of Annaya (0:35).</p>
+          <div class="video-fallback" data-video-id="U6LM2nIU19k">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=U6LM2nIU19k" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./visit-annaya">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
       </div>
     </section>
@@ -368,21 +543,45 @@
       <div class="grid-2">
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/5nSgs7VI1go" title="Saint Charbel relic tour report" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/5nSgs7VI1go" title="Saint Charbel relic tour report" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>A relic tour report.</p>
+          <div class="video-fallback" data-video-id="5nSgs7VI1go">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=5nSgs7VI1go" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-relics">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/USXxBmIdILg" title="Saint Charbel relic tour report" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/USXxBmIdILg" title="Saint Charbel relic tour report" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>A relic tour report.</p>
+          <div class="video-fallback" data-video-id="USXxBmIdILg">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=USXxBmIdILg" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-relics">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
         <article class="card update">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/uLs6r2XCFHY" title="Saint Charbel relics in Bethlehem" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/uLs6r2XCFHY" title="Saint Charbel relics in Bethlehem" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <p>The relics welcomed in Bethlehem.</p>
+          <div class="video-fallback" data-video-id="uLs6r2XCFHY">
+            <p class="video-status" role="status" aria-live="polite" aria-atomic="true">If the player cannot load, use the original video link or read the related context. YouTube may also restrict the original video.</p>
+            <p class="video-links"><a href="https://www.youtube.com/watch?v=uLs6r2XCFHY" target="_blank" rel="noopener noreferrer">Open original video on YouTube</a> <a href="./saint-charbel-relics">Read related context on this site</a></p>
+            <template data-error="100">This video is unavailable or private on YouTube. The original link may be unavailable too; you can still read the related context.</template>
+            <template data-error="101 150">The owner does not allow this video to play on other websites. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="153">YouTube could not identify this site's player request. You can try the original video on YouTube or read the related context.</template>
+            <template data-error="2 5">This video could not play here. You can try the original video on YouTube or read the related context.</template>
+          </div>
         </article>
       </div>
     </section>
@@ -412,9 +611,15 @@
     <div class="site-shell">Saint Charbel videos. Author: Please pray for the person who made this website.</div>
   </footer>
 
+  <script defer src="video-playback.js"></script>
   <script defer src="app.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
+  <script defer src="media-motion.js"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

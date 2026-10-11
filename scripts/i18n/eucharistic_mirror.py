@@ -1,18 +1,7 @@
+from i18n.encyclopedia_nav import finish_nav
 from i18n.metadata import og_locales, published_locales
 GTAG_BLOCK = '''<!-- Google tag (gtag.js) -->
-<script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>'''
+<script defer src="/analytics-init.js"></script>'''
 
 """Render complete localized Eucharistic mirrors from the reviewed English pages.
 
@@ -28,7 +17,7 @@ from i18n.catalog import ROOT, read_json
 SLUGS = ('lanciano', 'bolsena-orvieto', 'siena', 'santarem', 'sokolka', 'legnica', 'ludbreg', 'amsterdam', 'ivorra', 'faverney')
 PROVENANCE = ('image', 'credit', 'licenseurl', 'photo', 'source', 'source2')
 COUNTRIES = {'lanciano':'Italy', 'bolsena-orvieto':'Italy', 'siena':'Italy', 'santarem':'Portugal', 'sokolka':'Poland', 'legnica':'Poland', 'ludbreg':'Croatia', 'amsterdam':'Netherlands', 'ivorra':'Spain', 'faverney':'France'}
-TEXT_ONLY = ('title', 'place', 'era', 'label', 'alt', 'license', 'sourceLabel', 'source2Label', 'lead', 'reflection')
+TEXT_ONLY = ('title', 'place', 'era', 'label', 'alt', 'license', 'sourceLabel', 'source2Label', 'lead', 'description', 'reflection')
 HTML_TAG = re.compile(r'<\s*/?\s*[a-zA-Z!]')
 
 
@@ -99,7 +88,7 @@ def render_eucharistic(root=ROOT, registry=None):
             for code in [lang] + [k for k in OG_MAP if k != lang and k in published_locales(registry, 'eucharistic')]:
                 t = soup.new_tag('meta'); t['property'] = 'og:locale' if code == lang else 'og:locale:alternate'; t['content'] = OG_MAP[code]
                 anchor.insert_after(t); anchor = t
-            if 'G-CJX1M0VFKP' not in str(soup.head):
+            if 'analytics-init.js' not in str(soup.head):
                 head_tag = soup.find('meta', attrs={'charset': True})
                 if head_tag:
                     from bs4 import BeautifulSoup as _BS
@@ -241,7 +230,7 @@ def render_eucharistic(root=ROOT, registry=None):
             for script in soup.select('script[type="application/ld+json"]'):
                 data=json.loads(script.string)
                 data['headline']=catalog['title'] if slug!='index' else local['hub']['title']
-                data['description']=catalog['lead'] if slug!='index' else local['hub']['intro']
+                data['description']=(catalog.get('description') or catalog['lead']) if slug!='index' else local['hub']['intro']
                 data['url']=current;data['inLanguage']=lang
                 crumbs=data['breadcrumb']['itemListElement']
                 crumbs[0]['name']=common['navigation.home'];crumbs[0]['item']=domain+registry['locales'][lang]['home']
@@ -253,5 +242,5 @@ def render_eucharistic(root=ROOT, registry=None):
                 script.string=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
             if slug=='index':path=root/lang/'miracles/eucharistic/index.html'
             else:path=root/lang/'miracles/eucharistic'/f'{slug}.html'
-            result[path]='<!doctype html>\n'+str(soup).lstrip().removeprefix('<!DOCTYPE html>\n').lstrip()
+            result[path]=finish_nav('<!doctype html>\n'+str(soup).lstrip().removeprefix('<!DOCTYPE html>\n').lstrip(),root,lang)
     return result

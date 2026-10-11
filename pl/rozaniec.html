@@ -4,19 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 <!-- Google tag (gtag.js) -->
-<script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+<script defer src="/analytics-init.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Jak odmawiać różaniec: prosty przewodnik</title>
 <meta name="description" content="Poznaj modlitwy początkowe różańca, przebieg dziesiątki oraz tajemnice radosne, światła, bolesne i chwalebne z ich zwyczajowymi dniami." />
@@ -36,9 +24,13 @@
 <meta property="og:locale:alternate" content="ar_AR" />
 <meta property="og:locale:alternate" content="fr_FR" />
 <meta property="og:locale:alternate" content="es_ES" />
-<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
 <meta property="og:locale:alternate" content="it_IT" />
 <meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Święty Szarbel" />
 <meta property="og:title" content="Jak odmawiać różaniec: prosty przewodnik" />
@@ -46,20 +38,25 @@
 <meta property="og:url" content="https://marsharbel.com/pl/rozaniec" />
 <meta property="og:image" content="https://marsharbel.com/saint-charbel.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="/international.css" />
+<link rel="stylesheet" href="/international.css?v=20261002-ui1" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Jak odmawiać różaniec: prosty przewodnik", "description": "Poznaj modlitwy początkowe różańca, przebieg dziesiątki oraz tajemnice radosne, światła, bolesne i chwalebne z ich zwyczajowymi dniami.", "url": "https://marsharbel.com/pl/rozaniec", "inLanguage": "pl", "isPartOf": {"@id": "https://marsharbel.com/#website"}}</script>
+<script id="sc-runtime-labels" type="application/json">{"language.label": "Język", "language.popular": "Popularne", "language.all": "Wszystkie języki (A-Z)", "install.label": "Zainstaluj aplikację", "install.link": "Dotknij tutaj, aby zainstalować tę aplikację", "install.ios": "Na iPhonie w Safari: dotknij „Udostępnij”, a potem „Dodaj do ekranu początkowego”.", "install.browser": "Jeśli nie pojawi się okno, otwórz menu przeglądarki i wybierz „Zainstaluj aplikację” lub „Dodaj do ekranu głównego”.", "footer.privacy": "Polityka prywatności (po angielsku)", "footer.terms": "Warunki korzystania (po angielsku)", "footer.accessibility": "Dostępność (po angielsku)", "language.choose": "Wybierz język", "nativeNames": {"en": "English", "ar": "العربية", "fr": "Français", "es": "Español", "pt": "Português", "it": "Italiano", "de": "Deutsch", "pl": "Polski", "ru": "Русский", "hi": "हिन्दी", "th": "ไทย", "zh-Hans": "简体中文"}}</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
 <a class="skip-link" href="#main">Przejdź do treści</a>
-<header><div class="shell masthead"><a class="brand" href="/pl/">Święty Szarbel</a><nav class="locale-nav" aria-label="Wybierz język"><a href="/en/rosary" hreflang="en" lang="en" dir="ltr">English</a>
-<a href="/ar/rosary" hreflang="ar" lang="ar" dir="rtl">العربية</a>
-<a href="/fr/chapelet" hreflang="fr" lang="fr" dir="ltr">Français</a>
-<a href="/es/rosario" hreflang="es" lang="es" dir="ltr">Español</a>
-<a href="/pt/rosario" hreflang="pt" lang="pt" dir="ltr">Português</a>
-<a href="/it/rosario" hreflang="it" lang="it" dir="ltr">Italiano</a>
-<a href="/de/rosenkranz" hreflang="de" lang="de" dir="ltr">Deutsch</a>
-<a href="/pl/rozaniec" hreflang="pl" lang="pl" dir="ltr" aria-current="page">Polski</a>
-<script>document.addEventListener("click",function(e){var a=e.target&&e.target.closest?e.target.closest("a[hreflang]"):null;if(!a)return;var l=(a.getAttribute("hreflang")||"").toLowerCase();if(l==="x-default")l="en";try{localStorage.setItem("sc_lang_pref",l)}catch(_){}});</script></nav></div></header>
+<header><div class="shell masthead"><a class="brand" href="/pl/">Święty Szarbel</a><nav aria-label="Wybierz język" class="locale-nav"><a dir="ltr" href="https://marsharbel.com/en/rosary" hreflang="en">Angielski</a>
+<a aria-disabled="true" dir="rtl" hreflang="ar" tabindex="-1">Arabski (w trakcie weryfikacji)</a>
+<a aria-disabled="true" dir="ltr" hreflang="fr" tabindex="-1">Francuski (w trakcie weryfikacji)</a>
+<a aria-disabled="true" dir="ltr" hreflang="es" tabindex="-1">Hiszpański (w trakcie weryfikacji)</a>
+<a aria-disabled="true" dir="ltr" hreflang="pt" tabindex="-1">Portugalski (w trakcie weryfikacji)</a>
+<a aria-disabled="true" dir="ltr" hreflang="it" tabindex="-1">Włoski (w trakcie weryfikacji)</a>
+<a aria-disabled="true" dir="ltr" hreflang="de" tabindex="-1">Niemiecki (w trakcie weryfikacji)</a>
+<a aria-current="page" dir="ltr" href="https://marsharbel.com/pl/rozaniec" hreflang="pl">Polski</a>
+<a aria-disabled="true" dir="ltr" hreflang="ru" tabindex="-1">Русский (w trakcie weryfikacji)</a>
+<a aria-disabled="true" dir="ltr" hreflang="hi" tabindex="-1">हिन्दी (w trakcie weryfikacji)</a>
+<a aria-disabled="true" dir="ltr" hreflang="th" tabindex="-1">ไทย (w trakcie weryfikacji)</a>
+<script defer="" src="/locale-pref.js"></script><span class="sc-language-helper">Niektóre tłumaczenia tej strony są w trakcie weryfikacji.</span></nav></div></header>
 <main id="main" class="shell" tabindex="-1">
 <a class="back" href="/pl/">Strona główna</a>
 <article><h1>Jak odmawiać różaniec: prosty przewodnik</h1><p class="intro">Różaniec towarzyszy rozważaniu życia Jezusa wraz z Maryją. Można modlić się samemu, w rodzinie lub we wspólnocie. Ten przewodnik wyjaśnia jego budowę; źródła watykańskie pomagają poznać tradycyjne modlitwy.</p>
@@ -67,4 +64,9 @@
 <section id="section-opening" class="section"><h2>Modlitwy początkowe</h2><p>Uczyń znak krzyża i odmów Skład Apostolski. Na pierwszym dużym paciorku odmów Ojcze nasz, na małych trzy Zdrowaś Maryjo, a następnie Chwała Ojcu. Przed rozpoczęciem możesz ofiarować intencję.</p></section><section id="section-decade" class="section"><h2>Jak odmawiać dziesiątkę?</h2><p>Zapowiedz tajemnicę i przez chwilę rozważ wydarzenie z Ewangelii. Odmów jedno Ojcze nasz, dziesięć Zdrowaś Maryjo i jedno Chwała Ojcu. Przejdź do następnej tajemnicy. Jedna część różańca obejmuje zwykle pięć dziesiątek; wspólnoty mogą dodawać wezwania zgodnie ze zwyczajem.</p></section><section id="section-joyful" class="section"><h2>Tajemnice radosne — poniedziałek i sobota</h2><p>Zwiastowanie; Nawiedzenie świętej Elżbiety; Narodzenie Jezusa; Ofiarowanie w świątyni; Odnalezienie Jezusa w świątyni. Zapraszają do rozważania przyjęcia Chrystusa i Jego dzieciństwa.</p></section><section id="section-luminous" class="section"><h2>Tajemnice światła — czwartek</h2><p>Chrzest Jezusa; wesele w Kanie; głoszenie królestwa Bożego i wezwanie do nawrócenia; Przemienienie; ustanowienie Eucharystii. Kierują uwagę na publiczną działalność Chrystusa.</p></section><section id="section-sorrowful" class="section"><h2>Tajemnice bolesne — wtorek i piątek</h2><p>Modlitwa w Ogrójcu; Biczowanie; Cierniem ukoronowanie; Dźwiganie krzyża; Ukrzyżowanie. Możesz pamiętać o osobach cierpiących i tych, które im towarzyszą.</p></section><section id="section-glorious" class="section"><h2>Tajemnice chwalebne — środa i niedziela</h2><p>Zmartwychwstanie; Wniebowstąpienie; Zesłanie Ducha Świętego; Wniebowzięcie Maryi; Ukoronowanie Maryi. Ten zwyczajowy podział można dostosować do okresu liturgicznego i modlitwy wspólnotowej.</p></section><section id="section-finish" class="section"><h2>Zakończenie i dalsza modlitwa</h2><p>Po pięciu dziesiątkach można zakończyć modlitwą Witaj, Królowo i znakiem krzyża. Na początku spokojnie poznaj jedną dziesiątkę. Gdy się rozproszysz, łagodnie wróć do rozważania, bez zaczynania od nowa. Niektóre nagrania na stronie pozostają w języku angielskim.</p></section><section class="section"><h2>Źródła i odniesienia</h2><ul><li><a href="https://www.vatican.va/special/rosary/documents/misteri_fr.html">Tajemnice różańca (Watykan, po francusku)</a></li><li><a href="https://www.vaticannews.va/fr/priere/rosaire.html">Modlitwy różańcowe (Vatican News, po francusku)</a></li></ul></section></article>
 <aside class="related"><h2>Poznawaj dalej</h2><ul><li><a href="/pl/biografia">Święty Szarbel: biografia i najważniejsze daty</a></li><li><a href="/pl/modlitwy">Modlitwa ze świętym Szarbelem: intencje i teksty</a></li><li><a href="/pl/nowenna">Święty Szarbel: dziewięć dni modlitwy</a></li><li><a href="/pl/annaya">Annaya i święty Szarbel: przygotowanie do wizyty</a></li></ul><a href="/rosary-intro?lang=en">Powiązany materiał po angielsku</a></aside>
 </main><footer class="shell"><p>Niezależna strona modlitewna poświęcona świętemu Szarbelowi, bez oficjalnego powiązania z sanktuarium w Annai.</p></footer>
+<script defer src="/translate.js?v=20260922-1"></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body></html>

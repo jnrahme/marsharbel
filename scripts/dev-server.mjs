@@ -92,6 +92,13 @@ createServer(async (req, res) => {
     return serve(req, res, join(ROOT, 'gallery.html'));
   }
 
+  // Mirror the production /en alias rule without shadowing authored /en guides.
+  if (/^\/en\/[a-z0-9-]+(?:\.html)?\/?$/.test(pathname) && !(await isFile(filePath + '.html')) && !(await isFile(filePath))) {
+    const target = pathname.replace(/^\/en/, '').replace(/\.html\/?$/, '').replace(/\/$/, '');
+    if (await isFile(join(ROOT, target + '.html'))) {
+      res.writeHead(301, { Location: target + url.search }); res.end(); return;
+    }
+  }
   const htmlPath = filePath + '.html';
   if (!extname(pathname) && await isFile(htmlPath)) {
     return serve(req, res, htmlPath);
