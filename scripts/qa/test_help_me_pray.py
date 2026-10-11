@@ -142,6 +142,44 @@ class TestLocaleMasterDigest(unittest.TestCase):
         self.assertEqual(master['digest'], hashlib.sha256(body.encode()).hexdigest(),
                          'locale master digest stale - rerun the digest step after content changes')
 
+    def test_no_english_need_label_in_non_en_renders(self):
+        """Rendered locale pages show localized need labels, never the English ones."""
+        en_needs = json.loads((ROOT / 'locales/en/help-me-pray-catalog.json').read_text())['needs']
+        registry = json.loads((ROOT / 'locales/registry.json').read_text())
+        fam = registry['pageMirrors']['help-me-pray-master']
+        for lang in fam['renderLocales']:
+            if lang == 'en':
+                continue
+            page = (ROOT / lang / 'help-me-pray.html').read_text()
+            cat = json.loads((ROOT / f'locales/{lang}/help-me-pray-catalog.json').read_text())
+            for key, label in cat['needs'].items():
+                self.assertIn(label, page, f'{lang}: localized need label {key} missing from render')
+            for key, en_label in en_needs.items():
+                if en_label not in cat['needs'].values():
+                    self.assertNotIn(en_label, page, f'{lang}: English need label {key} leaked into render')
+
+    def test_export_needkey_resolves_in_needs(self):
+        """Every exported card needKey resolves to a non-empty localized label; fail-closed contract."""
+        payload = json.loads((ROOT / 'assets/help-me-pray-data.json').read_text())
+        for lang in LOCALES:
+            needs = payload[lang]['needs']
+            self.assertEqual(set(needs), set(NEEDS), f'{lang}: needs keys')
+            for key, label in needs.items():
+                self.assertIsInstance(label, str) ; self.assertTrue(label.strip(), f'{lang}/{key} empty label')
+            for cid, card in payload[lang]['cards'].items():
+                self.assertIn(card['needKey'], needs, f'{lang}/{cid}: needKey has no label')
+
+    def test_card_need_mapping_stable(self):
+        """Card-to-needKey mapping is identical across all 12 locales (desk contract)."""
+        mapping = None
+        for lang in LOCALES:
+            cat = json.loads((ROOT / f'locales/{lang}/help-me-pray-catalog.json').read_text())
+            current = {cid: NEED_KEY_MAP[c['need']] for cid, c in cat['cards'].items()}
+            if mapping is None:
+                mapping = current
+            else:
+                self.assertEqual(mapping, current, f'{lang}: card->needKey mapping drift')
+
 
 if __name__ == '__main__':
     unittest.main()

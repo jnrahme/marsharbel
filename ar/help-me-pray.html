@@ -16,10 +16,10 @@
 <meta content="https://marsharbel.com/ar/help-me-pray" property="og:url"/>
 <meta content="ar_AR" property="og:locale"/>
 <meta content="summary" name="twitter:card"/>
-<link href="/assets/site.css" rel="stylesheet"/>
+<link href="/styles.css?v=20260922-1" rel="stylesheet"/>
 <style>
 .hmp-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
-.hmp-nav .need-link{padding:.5rem .9rem;border:1px solid #b9a27a;border-radius:999px;text-decoration:none;color:inherit}
+.hmp-nav .need-link{padding:.5rem .9rem;border:1px solid #b9a27a;border-radius:999px;background:none;font:inherit;color:inherit;cursor:pointer}
 .hmp-nav .need-link[aria-pressed="true"]{background:#b9a27a;color:#fff}
 .hmp-card{border:1px solid #ddd;border-radius:8px;padding:1rem;margin:1rem 0}
 .hmp-status{display:inline-block;font-size:.8rem;padding:.15rem .5rem;border-radius:999px;background:#eee}
@@ -40,12 +40,12 @@
 </div>
 <h2 id="needs-heading">ما الذي أتى بك إلى هنا؟</h2>
 <nav class="hmp-nav" id="hmp-nav">
-<a class="need-link" data-need="restart" href="#need-restart"><span class="need-label">بدء الصلاة أو العودة إليها</span></a>
-<a class="need-link" data-need="family" href="#need-family"><span class="need-label">العائلة</span></a>
-<a class="need-link" data-need="illness" href="#need-illness"><span class="need-label">المرض</span></a>
-<a class="need-link" data-need="gratitude" href="#need-gratitude"><span class="need-label">الشكر</span></a>
-<a class="need-link" data-need="discouragement" href="#need-discouragement"><span class="need-label">الإحباط في الصلاة</span></a>
-<a class="need-link" data-need="maronite" href="#need-maronite"><span class="need-label">فهم الصلاة المارونية</span></a>
+<button class="need-link" data-need="restart" type="button"><span class="need-label">بدء الصلاة أو العودة إليها</span></button>
+<button class="need-link" data-need="family" type="button"><span class="need-label">العائلة</span></button>
+<button class="need-link" data-need="illness" type="button"><span class="need-label">المرض</span></button>
+<button class="need-link" data-need="gratitude" type="button"><span class="need-label">الشكر</span></button>
+<button class="need-link" data-need="discouragement" type="button"><span class="need-label">الإحباط في الصلاة</span></button>
+<button class="need-link" data-need="maronite" type="button"><span class="need-label">فهم الصلاة المارونية</span></button>
 </nav>
 <div id="hmp-app"></div>
 <noscript><p class="review-note">البطاقات الموسومة بقيد المراجعة ليست جاهزة للاستخدام. نصّ صلاتها وإجراء البدء غير متاحين.</p></noscript>

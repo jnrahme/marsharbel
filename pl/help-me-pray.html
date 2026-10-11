@@ -16,10 +16,10 @@
 <meta content="https://marsharbel.com/pl/help-me-pray" property="og:url"/>
 <meta content="pl_PL" property="og:locale"/>
 <meta content="summary" name="twitter:card"/>
-<link href="/assets/site.css" rel="stylesheet"/>
+<link href="/styles.css?v=20260922-1" rel="stylesheet"/>
 <style>
 .hmp-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
-.hmp-nav .need-link{padding:.5rem .9rem;border:1px solid #b9a27a;border-radius:999px;text-decoration:none;color:inherit}
+.hmp-nav .need-link{padding:.5rem .9rem;border:1px solid #b9a27a;border-radius:999px;background:none;font:inherit;color:inherit;cursor:pointer}
 .hmp-nav .need-link[aria-pressed="true"]{background:#b9a27a;color:#fff}
 .hmp-card{border:1px solid #ddd;border-radius:8px;padding:1rem;margin:1rem 0}
 .hmp-status{display:inline-block;font-size:.8rem;padding:.15rem .5rem;border-radius:999px;background:#eee}
@@ -40,12 +40,12 @@
 </div>
 <h2 id="needs-heading">Co cię tu sprowadza?</h2>
 <nav class="hmp-nav" id="hmp-nav">
-<a class="need-link" data-need="restart" href="#need-restart"><span class="need-label">Początek lub powrót do modlitwy</span></a>
-<a class="need-link" data-need="family" href="#need-family"><span class="need-label">Rodzina</span></a>
-<a class="need-link" data-need="illness" href="#need-illness"><span class="need-label">Choroba</span></a>
-<a class="need-link" data-need="gratitude" href="#need-gratitude"><span class="need-label">Wdzięczność</span></a>
-<a class="need-link" data-need="discouragement" href="#need-discouragement"><span class="need-label">Zniechęcenie w modlitwie</span></a>
-<a class="need-link" data-need="maronite" href="#need-maronite"><span class="need-label">Zrozumienie modlitwy maronickiej</span></a>
+<button class="need-link" data-need="restart" type="button"><span class="need-label">Początek lub powrót do modlitwy</span></button>
+<button class="need-link" data-need="family" type="button"><span class="need-label">Rodzina</span></button>
+<button class="need-link" data-need="illness" type="button"><span class="need-label">Choroba</span></button>
+<button class="need-link" data-need="gratitude" type="button"><span class="need-label">Wdzięczność</span></button>
+<button class="need-link" data-need="discouragement" type="button"><span class="need-label">Zniechęcenie w modlitwie</span></button>
+<button class="need-link" data-need="maronite" type="button"><span class="need-label">Zrozumienie modlitwy maronickiej</span></button>
 </nav>
 <div id="hmp-app"></div>
 <noscript><p class="review-note">Karty oznaczone W przeglądzie nie są gotowe do użycia. Ich tekst modlitwy i działanie Rozpocznij są niedostępne.</p></noscript>

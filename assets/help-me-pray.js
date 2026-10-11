@@ -61,8 +61,12 @@ async function boot() {
     data = await (await fetch('/assets/help-me-pray-data.json')).json();
   } catch (e) { return; }
   const pack = data[lang];
-  if (!pack) return;
+  if (!pack) return; // fail closed: no locale pack, no fallback render
   const { ui, cards, needs } = pack;
+  // Fail closed on any missing need label: never fall back to card.need (English metadata).
+  for (const [, card] of Object.entries(cards)) {
+    if (!needs || typeof needs[card.needKey] !== 'string' || !needs[card.needKey].trim()) return;
+  }
   const byNeed = {};
   for (const [id, card] of Object.entries(cards)) {
     (byNeed[card.needKey] = byNeed[card.needKey] || []).push([id, card]);
@@ -71,7 +75,7 @@ async function boot() {
   for (const need of NEED_ORDER) {
     const sec = el('section', 'hmp-need');
     sec.id = 'need-' + need;
-    sec.appendChild(el('h2', null, needs[need] || ''));
+    sec.appendChild(el('h2', null, needs[need]));
     const list = el('div', 'hmp-list');
     const rows = byNeed[need] || [];
     if (!rows.length) list.appendChild(el('p', null, ui.noResults));
@@ -83,12 +87,12 @@ async function boot() {
   const nav = document.getElementById('hmp-nav');
   if (nav) {
     nav.addEventListener('click', (ev) => {
-      const a = ev.target.closest('a[data-need]');
+      const a = ev.target.closest('button[data-need]');
       if (!a) return;
       ev.preventDefault();
       const need = a.dataset.need;
       const active = a.getAttribute('aria-pressed') === 'true';
-      for (const link of nav.querySelectorAll('a[data-need]')) link.setAttribute('aria-pressed', 'false');
+      for (const link of nav.querySelectorAll('button[data-need]')) link.setAttribute('aria-pressed', 'false');
       for (const [k, sec] of Object.entries(sections)) sec.hidden = !active && k !== need;
       if (!active) a.setAttribute('aria-pressed', 'true');
     });
