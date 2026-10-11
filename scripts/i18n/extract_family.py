@@ -77,7 +77,7 @@ def main():
             if not txt or len(txt) < 2:
                 continue
             parent = el.parent
-            idx = list(parent.contents).index(el)
+            idx = next(i for i, c in enumerate(parent.contents) if c is el)
             sel = selector_for(parent)
             sec = parent.find_parent(id=True)
             sec_id = sec['id'] if sec else parent.name
