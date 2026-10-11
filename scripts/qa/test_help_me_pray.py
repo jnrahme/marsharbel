@@ -51,7 +51,11 @@ class TestCatalogCompleteness(unittest.TestCase):
     def test_exact_structure_per_locale(self):
         for lang in LOCALES:
             cat = load_catalog(lang)
-            self.assertEqual(set(cat['page']), PAGE_KEYS, f'{lang} page keys')
+            extra = set(cat['page']) - PAGE_KEYS
+            if lang == 'ru':
+                self.assertEqual(extra, {'languageReviewNotice'}, 'ru page keys: only the deliberate RU-only allowlist key may be extra')
+            else:
+                self.assertEqual(extra, set(), f'{lang} page keys')
             self.assertEqual(set(cat['needs']), set(NEEDS), f'{lang} needs')
             self.assertEqual(set(cat['ui']), UI_KEYS, f'{lang} ui keys')
             self.assertEqual(set(cat['cards']), set(CARD_IDS), f'{lang} card ids')
@@ -179,6 +183,26 @@ class TestLocaleMasterDigest(unittest.TestCase):
                 mapping = current
             else:
                 self.assertEqual(mapping, current, f'{lang}: card->needKey mapping drift')
+
+    def test_language_review_notice_ru_only(self):
+        """languageReviewNotice: deliberate RU-only allowlist; no global key, no English gloss."""
+        NOTICE = 'Русский текст пока не проверен носителем русского языка.'
+        GLOSS = 'The Russian wording has not yet been reviewed'
+        payload = json.loads((ROOT / 'assets/help-me-pray-data.json').read_text())
+        for lang in LOCALES:
+            cat = json.loads((ROOT / f'locales/{lang}/help-me-pray-catalog.json').read_text())
+            if lang == 'ru':
+                self.assertEqual(cat['page'].get('languageReviewNotice'), NOTICE)
+                self.assertEqual(payload['ru']['page'].get('languageReviewNotice'), NOTICE,
+                                 'notice must survive the public export')
+            else:
+                self.assertNotIn('languageReviewNotice', cat['page'], f'{lang}: global key expansion')
+                self.assertNotIn('languageReviewNotice', payload[lang]['page'], f'{lang}: notice leaked into export')
+            self.assertNotIn(GLOSS, json.dumps(payload[lang], ensure_ascii=False), f'{lang}: English gloss in browser data')
+        for render in ROOT.glob('*/help-me-pray.html'):
+            self.assertNotIn(GLOSS, render.read_text(), f'{render}: English gloss in render')
+            if render.parts[0] != 'ru':
+                self.assertNotIn(NOTICE, render.read_text(), f'{render}: RU notice in non-RU static render')
 
 
 if __name__ == '__main__':

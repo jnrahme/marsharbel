@@ -63,6 +63,13 @@ async function boot() {
   const pack = data[lang];
   if (!pack) return; // fail closed: no locale pack, no fallback render
   const { ui, cards, needs } = pack;
+  // RU-only language-review notice (deliberate allowlist: page.languageReviewNotice).
+  // Rendered only when the locale payload carries the key; never an English gloss.
+  if (typeof pack.page.languageReviewNotice === 'string' && pack.page.languageReviewNotice.trim()) {
+    const note = el('p', 'review-note', pack.page.languageReviewNotice);
+    const heading = document.getElementById('needs-heading');
+    if (heading) heading.before(note);
+  }
   // Fail closed on any missing need label: never fall back to card.need (English metadata).
   for (const [, card] of Object.entries(cards)) {
     if (!needs || typeof needs[card.needKey] !== 'string' || !needs[card.needKey].trim()) return;
