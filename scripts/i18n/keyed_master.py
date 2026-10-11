@@ -5,6 +5,31 @@ from bs4 import BeautifulSoup, NavigableString
 from i18n.catalog import read_json
 
 
+def resolve_binding_value(root, family, lang, binding, copy):
+    """Resolve one explicit binding, never auto-bind by its source label."""
+    key = binding['key']
+    if 'sharedMessage' not in binding:
+        return copy[key]
+    reference = binding['sharedMessage']
+    allowed = {'navigation.media', 'navigation.music', 'navigation.video'}
+    if key in copy:
+        raise ValueError(f'{family}: duplicate family/shared message {key}')
+    if reference not in allowed or binding['kind'] != 'text':
+        raise ValueError(f'{family}: unregistered shared nav reference {reference}')
+    shared_en = read_json(root / 'locales/en/common.json')
+    shared_local = read_json(root / f'locales/{lang}/common.json')
+    if reference not in shared_en or reference not in shared_local:
+        raise ValueError(f'{family} {lang}: missing shared nav message {reference}')
+    value = shared_local[reference]
+    if shared_en[reference] != binding['source']:
+        raise ValueError(f'{family}: shared nav English source drift {reference}')
+    if not isinstance(value, str) or not value.strip() or re.search(r'<\s*/?\s*[A-Za-z!]', value):
+        raise ValueError(f'{family} {lang}: unsafe shared nav message {reference}')
+    if set(re.findall(r'\{([A-Za-z]+)\}', value)) != set(re.findall(r'\{([A-Za-z]+)\}', binding['source'])):
+        raise ValueError(f'{family} {lang}: shared nav placeholder mismatch {reference}')
+    return value
+
+
 def apply_keyed_master(root, family, lang, catalog=None):
     contract = read_json(root / f'locales/en/{family}-bindings.json')
     raw = (root / contract['master']).read_bytes()
@@ -22,6 +47,7 @@ def apply_keyed_master(root, family, lang, catalog=None):
             raise ValueError(f'{family} {lang}: placeholders differ for {key}')
     soup = BeautifulSoup(raw, 'html.parser')
     pending=[]
+    values = {b['key']: resolve_binding_value(root, family, lang, b, copy) for b in contract['bindings']}
     for binding in contract['bindings']:
         nodes=soup.select(binding['selector'])
         if len(nodes)!=1:raise ValueError(f'{family}: ambiguous binding {binding["key"]}')
@@ -35,7 +61,7 @@ def apply_keyed_master(root, family, lang, catalog=None):
             pending.append((node,binding,text))
     # Validate all bindings before replacing any node, including repeated keys.
     for node,binding,text in pending:
-        value=copy[binding['key']]
+        value = values[binding['key']]
         if text is None:node[binding['attribute']]=value
         else:
             old=str(text)

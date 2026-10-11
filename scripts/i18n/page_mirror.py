@@ -4,7 +4,7 @@ import re
 from bs4 import NavigableString, Comment
 from urllib.parse import urljoin,urlsplit
 from i18n.catalog import read_json,page_url,topic_locales,home_url
-from i18n.keyed_master import apply_keyed_master
+from i18n.keyed_master import apply_keyed_master, resolve_binding_value
 from i18n.metadata import og_locales
 from i18n.mirror_structure import check_pair
 
@@ -107,7 +107,7 @@ def render_page(root,registry,lang,family,route,catalog=None):
     contract=read_json(root/f'locales/en/{family}-bindings.json')
     schema_copy={}
     for binding in contract['bindings']:
-        source=binding['source'];value=copy[binding['key']]
+        source=binding['source'];value=resolve_binding_value(root,family,lang,binding,copy)
         if source in schema_copy and schema_copy[source] != value:
             schema_copy[source]=None
         elif source not in schema_copy:
@@ -136,7 +136,7 @@ def render_page(root,registry,lang,family,route,catalog=None):
         if data.get('@type')=='FAQPage' and not (schema_contract and any(b['scriptOrdinal']==ordinal for b in schema_contract['bindings'])):
             # Source questions/answers have exact text nodes bound to the same
             # catalog. Resolve by source text, not another authored schema copy.
-            lookup={b['source']:copy[b['key']] for b in read_json(root/f'locales/en/{family}-bindings.json')['bindings'] if b['kind']=='text'}
+            lookup={b['source']:resolve_binding_value(root,family,lang,b,copy) for b in contract['bindings'] if b['kind']=='text'}
             for entry in data['mainEntity']:
                 if entry['name'] not in lookup:raise ValueError(f'{family}: FAQ schema text has no keyed visible equivalent')
                 entry['name']=lookup[entry['name']]
