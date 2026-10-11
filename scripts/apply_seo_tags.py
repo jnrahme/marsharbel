@@ -309,10 +309,15 @@ def og_image_for(path: Path, html: str = "") -> str:
 
 
 def first_published(path: Path, html: str) -> str | None:
-    """Date the page first appeared in the repo (stable once set).
+    """Date the page first appeared (stable once set).
 
-    Needs full git history; without it, keep the value already in the page so
-    shallow checkouts do not rewrite the schema."""
+    A datePublished already in the page always wins: squash merges re-add the file
+    on the merge day, so the git add date drifts later than the real first date and
+    would rewrite published pages. Git history only seeds pages that have no value yet
+    (needs full history; shallow checkouts return None)."""
+    existing = re.search(r'"datePublished":\s*"([0-9-]+)"', html)
+    if existing:
+        return existing[1]
     try:
         shallow = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "--is-shallow-repository"],
                                  capture_output=True, text=True, check=True).stdout.strip()
@@ -323,8 +328,7 @@ def first_published(path: Path, html: str) -> str | None:
                 return dates[-1]
     except (OSError, subprocess.CalledProcessError, ValueError):
         pass
-    existing = re.search(r'"datePublished":\s*"([0-9-]+)"', html)
-    return existing[1] if existing else None
+    return None
 
 
 def article_schema(path: Path, html: str) -> dict | None:
