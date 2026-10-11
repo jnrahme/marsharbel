@@ -215,6 +215,8 @@ def render_page(root,registry,lang,family,route,catalog=None):
 def render_page_set(root,registry):
     result={}
     for family,cfg in registry.get('pageMirrors',{}).items():
+        # The strict film family renders via scripts/build_film_premiere_family.py.
+        if family=='film-premiere-master':continue
         for lang in cfg.get('renderLocales',[]):
             route=cfg['routes'][lang];result[root/(route.lstrip('/')+'.html')]=render_page(root,registry,lang,family,route)
     return result

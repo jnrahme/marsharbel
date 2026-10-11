@@ -4,6 +4,7 @@
 Existing publication is not grandfathered into translation approval. This check
 checks key coverage, not translation quality or permission to publish a twin.
 """
+from collections import Counter
 import argparse
 import json
 import re
@@ -25,6 +26,35 @@ def public_page(path):
 def required_locales(base_registry):
     # Newly landing language expansions activate the requirement on later PRs.
     return REQUIRED | ({'hi', 'th', 'zh-Hans'} & set(base_registry.get('locales', {})))
+
+
+def film_shell_coverage(root,page,family,contract,soup,uncovered):
+    """Exact film-only alignment of separate catalog ownership models."""
+    if page!='charbel-film-premiere.html' or family!='film-premiere-master':return False
+    sys.path.insert(0,str(root/'scripts'))
+    from i18n.film_master_family import registered
+    if not registered(root):return False
+    shell=json.loads((root/'locales/en/film-premiere-shell-copy.json').read_text())
+    if set(shell)!={page}:raise ValueError('film new-page shell catalog scope mismatch')
+    nav=json.loads((root/'locales/en/nav-legacy-copy.json').read_text())['values'][page]
+    if any(type(v) is not int or v<1 for v in [*shell[page].values(),*nav.values()]):raise ValueError('film new-page catalog counts must be positive integers')
+    caption=[b for b in contract['bindings'] if b['key']=='premiere.videoCaption']
+    expected={('text','article#charbel-premiere-release-2026-10 p:nth-of-type(5)',0),('attribute','article#charbel-premiere-release-2026-10 .film-news-video iframe','title')}
+    actual={(b['kind'],b['selector'],b.get('nodeIndex') if b['kind']=='text' else b.get('attribute')) for b in caption}
+    if len(caption)!=2 or actual!=expected or len({b['source'] for b in caption})!=1:raise ValueError('film new-page exact caption pair required')
+    value=caption[0]['source']
+    for b in caption:
+        nodes=soup.select(b['selector'])
+        if len(nodes)!=1:raise ValueError('film new-page caption node ambiguous')
+        actual_value=str(nodes[0].contents[b['nodeIndex']]).strip() if b['kind']=='text' else nodes[0].get(b['attribute'])
+        if actual_value!=value:raise ValueError('film new-page caption value drift')
+    counts=Counter(shell[page])
+    if counts[value]!=1:raise ValueError('film new-page caption mapping must be exactly one occurrence')
+    counts.subtract({value:1});counts+=Counter(nav)
+    if '<nav class="links"' in (root/page).read_text():
+        counts.update({json.loads((root/'locales/en/travel.json').read_text())['hubLabel']:1})
+    if Counter(uncovered)!=counts:raise ValueError('film new-page exact uncovered/catalog counter mismatch')
+    return True
 
 
 def check_page(root, page, registry, required):
@@ -56,12 +86,15 @@ def check_page(root, page, registry, required):
                 covered.add(('text', id(node.contents[binding['nodeIndex']])))
             else:
                 covered.add(('attr', id(node), binding['attribute']))
+        uncovered=Counter()
+        coverage_start=len(errors)
         # Prevent satisfying page coverage with selector/header labels alone.
         for node in soup.descendants:
             if isinstance(node, NavigableString) and not isinstance(node, (Comment, Doctype, Declaration)):
                 if node.parent.name in ('script', 'style') or not str(node).strip():
                     continue
                 if ('text', id(node)) not in covered:
+                    uncovered[' '.join(str(node).split())]+=1
                     errors.append(f'{page}: unkeyed master text: {str(node).strip()[:70]}')
             if getattr(node, 'attrs', None):
                 attrs = ['alt', 'title', 'aria-label', 'placeholder']
@@ -70,7 +103,10 @@ def check_page(root, page, registry, required):
                     attrs.append('content')
                 for attr in attrs:
                     if node.get(attr) and ('attr', id(node), attr) not in covered:
+                        uncovered[node[attr]]+=1
                         errors.append(f'{page}: unkeyed {attr} attribute')
+        if film_shell_coverage(root,page,family,contract,soup,uncovered):
+            del errors[coverage_start:]
         # Reuse production validation for SHA pin, source bindings, placeholders,
         # exact key parity, unsafe/empty values and real keyed application.
         sys.path.insert(0, str(root / 'scripts'))

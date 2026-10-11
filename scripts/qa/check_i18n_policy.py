@@ -57,28 +57,11 @@ def extract_html(text):
     return Counter(parser.values)
 
 
-# Private exact producer allowlist. Its absence has no effect until this route exists.
-FEATURE_PRODUCERS = {'film-premiere-v1': ('ar/charbel-film-premiere.html', 'scripts/build_film_news_ar.py')}
-
 def check_registered_feature(root=ROOT):
-    # New strict family is opt-in; absent registration retains the old path.
+    # Strict film family validation only; the transitional AR producer is retired.
     from i18n.film_master_family import registered, validate_family
     if registered(root):
         return validate_family(root)
-    import importlib.util
-    family = 'film-premiere-v1'
-    relative, producer = FEATURE_PRODUCERS[family]
-    path = root/relative
-    if not path.exists():
-        return []
-    if not (root/producer).is_file():
-        return [relative+': exact keyed feature producer missing']
-    spec = importlib.util.spec_from_file_location('registered_film_feature_producer',root/producer)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    expected_path, expected = module.output(root)
-    if expected_path != path or path.read_text() != expected:
-        return [relative+': differs from exact keyed feature producer '+family]
     return []
 
 def snapshot(root=ROOT):
@@ -97,12 +80,10 @@ def snapshot(root=ROOT):
     generated.update((route.lstrip('/')+'index.html' if route.endswith('/') else route.lstrip('/')+'.html')
                      for cfg in registry.get('exactMirrors',{}).values() for code,route in cfg['routes'].items() if code in cfg.get('renderLocales',[]))
     generated.add("ar/litany-of-saint-charbel.html")
-    # One exact feature family only. No pattern, glob or baseline expansion.
-    if (root/'ar/charbel-film-premiere.html').exists():
-        feature_errors = check_registered_feature(root)
-        if feature_errors:
-            raise ValueError('; '.join(feature_errors))
-        generated.add('ar/charbel-film-premiere.html')
+    # Strict film family validation; locale routes join `generated` via pageMirrors below.
+    feature_errors = check_registered_feature(root)
+    if feature_errors:
+        raise ValueError('; '.join(feature_errors))
     # Keyed page mirrors render from their English master; build-international.py --check verifies their bytes.
     generated.update((route.lstrip('/')+'.html') for cfg in registry.get('pageMirrors',{}).values()
                      for code,route in cfg['routes'].items() if code in cfg.get('renderLocales',[]))
@@ -129,6 +110,18 @@ def snapshot(root=ROOT):
             counter=manifest_text_counter(root,path.read_text(),values)
         result[path.name] = dict(counter)
     return result
+
+
+def film_shell_wording(root,file):
+    """Only the EN film shell may use this exact file-scoped catalog."""
+    if file!='charbel-film-premiere.html':return Counter()
+    path=root/'locales/en/film-premiere-shell-copy.json'
+    if not path.is_file():return Counter()
+    data=read_json(path)
+    if set(data)!={'charbel-film-premiere.html'}:raise ValueError('film shell catalog must name only the exact EN film file')
+    counts=data[file]
+    if not isinstance(counts,dict) or any(not isinstance(k,str) or not k.strip() or type(v) is not int or v<1 for k,v in counts.items()):raise ValueError('film shell catalog needs nonempty text and positive exact counts')
+    return Counter(counts)
 
 
 def check(root=ROOT):
@@ -307,6 +300,7 @@ def check(root=ROOT):
         additions -= Counter(rafqa_catalog.get(file, {}))
         additions -= Counter(hardini_catalog.get(file, {}))
         additions -= Counter(pio_film_catalog.get(file, {}))
+        additions -= film_shell_wording(root,file)
         additions -= Counter(charbel_v2_catalog.get(file, {}))
         if additions:
             errors.append(f'{file}: new hardcoded wording; move it to locales/: {list(additions)[:3]}')

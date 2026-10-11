@@ -297,7 +297,8 @@
         "topicGuides": [],
         "mirrorTabs": [
           "travel"
-        ],
+        ,
+          "film"],
         "runtime": true,
         "selectorCopy": true
       }
@@ -724,6 +725,36 @@
     ]
   },
   "pageMirrors": {
+    "film-premiere-master": {
+      "master": "charbel-film-premiere.html",
+      "english": "/charbel-film-premiere",
+      "routes": {
+        "ar": "/ar/charbel-film-premiere",
+        "de": "/de/charbel-film-premiere",
+        "es": "/es/charbel-film-premiere",
+        "fr": "/fr/charbel-film-premiere",
+        "hi": "/hi/charbel-film-premiere",
+        "it": "/it/charbel-film-premiere",
+        "pl": "/pl/charbel-film-premiere",
+        "pt": "/pt/charbel-film-premiere",
+        "ru": "/ru/charbel-film-premiere",
+        "th": "/th/charbel-film-premiere",
+        "zh-Hans": "/zh-Hans/charbel-film-premiere"
+      },
+      "renderLocales": [
+        "ar",
+        "de",
+        "es",
+        "fr",
+        "hi",
+        "it",
+        "pl",
+        "pt",
+        "ru",
+        "th",
+        "zh-Hans"
+      ]
+    },
     "history-master": {
       "master": "history.html",
       "english": "/history",

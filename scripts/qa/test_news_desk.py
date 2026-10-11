@@ -69,7 +69,7 @@ class NewsDeskTests(unittest.TestCase):
         self.assertEqual(text.count('class="home-news-lead home-news-lead--film"'), 1)
         self.assertEqual(text.count('class="home-news-row"'), 5)
         self.assertNotIn('news-rotator.js', text)
-        self.assertIn('class="home-news-lead home-news-lead--film" href="./news#charbel-premiere-release-2026-10"', text)
+        self.assertIn('class="home-news-lead home-news-lead--film" href="./charbel-film-premiere"', text)
         self.assertNotIn('el-paso-lebanese-festival-2026-10', text)
 
     def test_unsupported_movie_headline_removed(self):

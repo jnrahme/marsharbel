@@ -43,16 +43,17 @@ class LocaleMirrorPolicy(unittest.TestCase):
             self.assertEqual(validate_family(ROOT),[])
 
     def test_extracted_features_have_bounded_provenance_and_shell(self):
-        from i18n.feature_mirror import check_feature, FEATURES
+        from i18n.film_master_family import FAMILY, registered, validate_family
         for path, entry in self.policy['pages'].items():
             if entry['status'] != 'extracted-feature':
                 continue
             self.assertNotIn(path,self.policy['exceptions'])
-            self.assertIn(entry['family'],FEATURES)
-            self.assertEqual(path,FEATURES[entry['family']]['target'])
-            contract_path='config/feature-mirrors/'+entry['family']+'.json'
-            contract=json.loads((ROOT/contract_path).read_text())
-            self.assertEqual(check_feature(ROOT,entry,contract),[])
+            self.assertEqual(entry['family'],FAMILY,path+': only the strict film family may be an extracted feature')
+            self.assertEqual(path,entry['locale']+'/charbel-film-premiere.html')
+            self.assertEqual((entry['route'],entry['master'],entry['masterRoute']),('/'+entry['locale']+'/charbel-film-premiere','charbel-film-premiere.html','/charbel-film-premiere'),path)
+            self.assertTrue(registered(ROOT),path+': extracted-feature family must be registered in locales/registry.json')
+            self.assertFalse(entry.get('normalizers'),path)
+            self.assertEqual(validate_family(ROOT),[],path)
 
     def test_strict_pages_have_no_unregistered_structure_changes(self):
         for path,entry in self.policy['pages'].items():
