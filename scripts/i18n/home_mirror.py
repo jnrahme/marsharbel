@@ -9,6 +9,8 @@ from i18n.mirror_structure import check_pair
 from bs4 import BeautifulSoup, NavigableString
 from i18n.catalog import read_json, page_url, topic_locales, published_home_locales
 
+HEADER_NAV_LABELS = {'Media': 'navigation.media', 'Music': 'navigation.music', 'Video': 'navigation.video', 'Gallery': 'navigation.gallery'}
+
 
 def render_home(root, registry, lang, catalog=None):
     if lang not in published_home_locales(registry):
@@ -75,6 +77,15 @@ def render_home(root, registry, lang, catalog=None):
             if item.get('@type') == 'WebPage':
                 item.update(url=canonical, inLanguage=lang, name=soup.title.get_text(), description=soup.select_one('meta[name=description]')['content'])
         script.string = json.dumps(data, ensure_ascii=False).replace('<', '\\u003c')
+    # Shared Media/Music/Video/Gallery header chrome uses the locale's reviewed common.json label; never new text.
+    common_nav = read_json(root / f'locales/{lang}/common.json')
+    for link in soup.select('header nav a'):
+        key = HEADER_NAV_LABELS.get(link.get_text(strip=True))
+        if not key: continue
+        chev = link.find('span', class_='nav-chev')
+        if chev: chev.extract()
+        link.clear(); link.append(common_nav[key])
+        if chev: link.append(chev)
     runtime = read_json(root / f'locales/{lang}/runtime.json')
     required_runtime = {'language.label','language.popular','language.all','install.label','install.link','install.ios','install.browser','footer.privacy','footer.terms','footer.accessibility'}
     if set(runtime) != required_runtime or any(not isinstance(v,str) or not v.strip() for v in runtime.values()):
