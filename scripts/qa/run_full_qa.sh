@@ -84,7 +84,8 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_source_safeguards.py
 qa_step python3 scripts/qa/test_new_master_english_escape.py
 qa_step python3 scripts/qa/test_exact_source_inputs.py
 qa_step python3 scripts/qa/test_limited_launch.py
-qa_step npx playwright test tests/limited-launch.spec.js tests/hindi-travel-hub.spec.js --project=phone --project=laptop --workers=2
+mkdir -p tmp
+qa_step bash -o pipefail -c 'npx playwright test tests/limited-launch.spec.js tests/hindi-travel-hub.spec.js --project=phone --project=laptop --workers=2 2>&1 | tee tmp/shard7-playwright.txt'
 qa_step python3 scripts/qa/test_source_copy_keys.py
 qa_step python3 scripts/qa/check_travel_routes.py
 qa_step python3 scripts/qa/test_travel.py
@@ -103,7 +104,14 @@ qa_step npx playwright test tests/language-persistence.spec.js tests/locale-pref
 
 echo "[qa] Refactor, mirror and locale contract tests"
 for t in chaplet_mirror de_exact_catalogs encyclopedia_trail error_document exact_master exact_wiring feast_mirror footer_navigation head_fragments jsonld_serializer litany_mirror locale_foundation locale_home_navigation prayer_mirror saint_pillars tour_nav; do
-  qa_step python3 "scripts/qa/test_${t}.py"
+  if [[ "$t" == "litany_mirror" ]]; then
+    echo "[qa-diagnostic] git status --porcelain before litany step:"
+    git status --porcelain
+    mkdir -p tmp
+    qa_step bash -o pipefail -c 'python3 -m unittest -v scripts.qa.test_litany_mirror 2>&1 | tee tmp/litany.txt'
+  else
+    qa_step python3 "scripts/qa/test_${t}.py"
+  fi
 done
 
 echo "[qa] Checking specs for absolute machine paths"
