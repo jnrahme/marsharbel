@@ -151,6 +151,7 @@ echo "[qa] Eucharistic authored locale mirrors"
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_eucharistic_locale.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_home_mirror.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_mirror_structure.py'
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_shared_nav_references.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_locale_mirror_policy.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_feature_mirror.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_feature_wording_policy.py'
