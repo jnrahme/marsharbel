@@ -1,34 +1,34 @@
 {
   "version": 1,
-  "master": "templates/masters/help-me-pray.html",
-  "masterSha256": "f9be0b43bb1a07ed5ff6b0577e50134755121af5dca78c8530a9f0c027074b9b",
-  "sourceRevision": "38f55296",
+  "master": "help-me-pray.html",
+  "masterSha256": "884097d0a8b66127f3ef079dff864564311926cd4eadb682e57f142eb69579ab",
+  "sourceRevision": "13f5fb3c",
   "bindings": [
     {
-      "key": "help-me-pray.metadata.title-help-me-pray-find-a-prayer-for-what-you-carry",
+      "key": "help-me-pray.metadata.title-help-me-pray",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
-      "source": "Help Me Pray | Find a Prayer for What You Carry",
+      "source": "Help Me Pray",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.metadata.description-a-quiet-place-to-find-a-catholic-prayer-for-what",
+      "key": "help-me-pray.metadata.description-choose-what-you-are-carrying-today-find-a-small",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(3)",
-      "source": "A quiet place to find a Catholic prayer for what you are carrying: beginning again, family, illness, gratitude, discouragement, and Maronite practice.",
+      "source": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
       "kind": "attribute",
       "attribute": "content"
     },
     {
-      "key": "help-me-pray.metadata.og-title-help-me-pray-find-a-prayer-for-what-you-carry",
+      "key": "help-me-pray.metadata.og-title-help-me-pray",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(7)",
-      "source": "Help Me Pray | Find a Prayer for What You Carry",
+      "source": "Help Me Pray",
       "kind": "attribute",
       "attribute": "content"
     },
     {
-      "key": "help-me-pray.metadata.og-description-a-quiet-place-to-find-a-catholic-prayer-for-w",
+      "key": "help-me-pray.metadata.og-description-choose-what-you-are-carrying-today-find-a-sma",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
-      "source": "A quiet place to find a Catholic prayer for what you are carrying: beginning again, family, illness, gratitude, discouragement, and Maronite practice.",
+      "source": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
       "kind": "attribute",
       "attribute": "content"
     },
@@ -40,9 +40,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.help-me-pray.a-quiet-place-to-find-a-prayer-for-what-you-are-carrying",
+      "key": "help-me-pray.help-me-pray.choose-what-you-are-carrying-today-find-a-small-step-toward",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "A quiet place to find a prayer for what you are carrying.",
+      "source": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -54,664 +54,101 @@
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.what-are-you-carrying.what-are-you-carrying",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > h2:nth-of-type(1)",
-      "source": "What are you carrying?",
+      "key": "help-me-pray.what-brings-you-here.what-brings-you-here",
+      "selector": "#needs-heading",
+      "source": "What brings you here?",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.accessibility.need-choices-unavailable-during-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1)",
-      "source": "Need choices, unavailable during review",
-      "kind": "attribute",
-      "attribute": "aria-label"
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.text",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "-",
+      "key": "help-me-pray.what-brings-you-here.beginning-or-returning-to-prayer",
+      "selector": "#hmp-nav > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Beginning or returning to prayer",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.what-are-you-carrying.begin-or-restart",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(1)",
-      "source": "Begin or restart",
-      "kind": "text",
-      "nodeIndex": 1
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.text",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "-",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.family",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(2)",
-      "source": "Family",
-      "kind": "text",
-      "nodeIndex": 1
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.text",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(3) > span:nth-of-type(1)",
-      "source": "-",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.illness",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(3)",
-      "source": "Illness",
-      "kind": "text",
-      "nodeIndex": 1
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.text",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(4) > span:nth-of-type(1)",
-      "source": "-",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.gratitude",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(4)",
-      "source": "Gratitude",
-      "kind": "text",
-      "nodeIndex": 1
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.text",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(5) > span:nth-of-type(1)",
-      "source": "-",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.discouragement-in-prayer",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(5)",
-      "source": "Discouragement in prayer",
-      "kind": "text",
-      "nodeIndex": 1
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.text",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(6) > span:nth-of-type(1)",
-      "source": "-",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.maronite-practice",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > nav:nth-of-type(1) > button:nth-of-type(6)",
-      "source": "Maronite practice",
-      "kind": "text",
-      "nodeIndex": 1
-    },
-    {
-      "key": "help-me-pray.what-are-you-carrying.all-six-choices-are-unavailable-during-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > aside:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "All six choices are unavailable during review.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.begin-or-restart.begin-or-restart",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > h2:nth-of-type(1)",
-      "source": "Begin or restart",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.begin-or-restart.i-haven-t-prayed-in-a-while-how-do-i-return",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
-      "source": "I haven’t prayed in a while. How do I return?",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.begin-or-restart.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "In review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.begin-or-restart.holy-see-catechism-of-the-catholic-church",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Holy See / Catechism of the Catholic Church",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.begin-or-restart.ccc-2697-paraphrase",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "CCC 2697 · PARAPHRASE",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.begin-or-restart.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.begin-or-restart.what-if-i-don-t-know-what-to-say",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
-      "source": "What if I don’t know what to say?",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.begin-or-restart.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
-      "source": "In review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.begin-or-restart.usccb-nabre",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "USCCB (NABRE)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.begin-or-restart.matthew-6-7-8-consulted-in-nabre-original-paraphrase-only-pa",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "Matthew 6:7-8 (consulted in NABRE; original paraphrase only) · PARAPHRASE",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.begin-or-restart.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.family.family",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "key": "help-me-pray.what-brings-you-here.family",
+      "selector": "#hmp-nav > a:nth-of-type(2) > span:nth-of-type(1)",
       "source": "Family",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.family.how-can-our-family-begin-praying-together",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
-      "source": "How can our family begin praying together?",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.family.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "In review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.family.holy-see-catechism-of-the-catholic-church",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Holy See / Catechism of the Catholic Church",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.family.ccc-2685-paraphrase",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "CCC 2685 · PARAPHRASE",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.family.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.family.can-i-pray-for-my-family-if-they-don-t-pray-with-me",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
-      "source": "Can I pray for my family if they don’t pray with me?",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.family.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
-      "source": "In review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.family.holy-see-catechism-of-the-catholic-church",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Holy See / Catechism of the Catholic Church",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.family.ccc-2683-paraphrase",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "CCC 2683 · PARAPHRASE",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.family.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.illness.illness",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "key": "help-me-pray.what-brings-you-here.illness",
+      "selector": "#hmp-nav > a:nth-of-type(3) > span:nth-of-type(1)",
       "source": "Illness",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.illness.i-am-praying-for-someone-sick-where-do-i-begin",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
-      "source": "I am praying for someone sick. Where do I begin?",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.illness.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "In review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.illness.holy-see-catechism-of-the-catholic-church",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Holy See / Catechism of the Catholic Church",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.illness.ccc-2734-paraphrase",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "CCC 2734 · PARAPHRASE",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.illness.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.illness.will-praying-through-saint-charbel-guarantee-healing",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
-      "source": "Will praying through Saint Charbel guarantee healing?",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.illness.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
-      "source": "In review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.illness.holy-see-catechism-of-the-catholic-church",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Holy See / Catechism of the Catholic Church",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.illness.ccc-1532-effects-of-the-anointing-of-the-sick-paraphrase",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "CCC 1532, effects of the Anointing of the Sick · PARAPHRASE",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.illness.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.gratitude.gratitude",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "key": "help-me-pray.what-brings-you-here.gratitude",
+      "selector": "#hmp-nav > a:nth-of-type(4) > span:nth-of-type(1)",
       "source": "Gratitude",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.gratitude.how-can-i-thank-god-for-something-good",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
-      "source": "How can I thank God for something good?",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.gratitude.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "In review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.gratitude.holy-see-catechism-of-the-catholic-church",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Holy See / Catechism of the Catholic Church",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.gratitude.ccc-2638-paraphrase",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "CCC 2638 · PARAPHRASE",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.gratitude.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.gratitude.can-i-give-thanks-when-life-is-difficult",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
-      "source": "Can I give thanks when life is difficult?",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.gratitude.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
-      "source": "In review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.gratitude.usccb-nabre",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "USCCB (NABRE)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.gratitude.1-thessalonians-5-18-consulted-in-nabre-original-paraphrase",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "1 Thessalonians 5:18 (consulted in NABRE; original paraphrase only) · PARAPHRASE",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.gratitude.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.discouragement-in-prayer.discouragement-in-prayer",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "key": "help-me-pray.what-brings-you-here.discouragement-in-prayer",
+      "selector": "#hmp-nav > a:nth-of-type(5) > span:nth-of-type(1)",
       "source": "Discouragement in prayer",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.discouragement-in-prayer.my-prayer-seems-unanswered-has-god-ignored-me",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
-      "source": "My prayer seems unanswered. Has God ignored me?",
+      "key": "help-me-pray.what-brings-you-here.understanding-maronite-prayer",
+      "selector": "#hmp-nav > a:nth-of-type(6) > span:nth-of-type(1)",
+      "source": "Understanding Maronite prayer",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.discouragement-in-prayer.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "In review",
+      "key": "help-me-pray.what-brings-you-here.cards-marked-in-review-are-not-ready-to-use-their-prayer-tex",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > noscript:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Cards marked \"In review\" are not ready to use. Their prayer text and Begin action are unavailable.",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.discouragement-in-prayer.holy-see-catechism-of-the-catholic-church",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Holy See / Catechism of the Catholic Church",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.discouragement-in-prayer.ccc-2739-within-ccc-2734-2741-paraphrase",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "CCC 2739, within CCC 2734-2741 · PARAPHRASE",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.discouragement-in-prayer.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.discouragement-in-prayer.should-i-stop-praying-if-nothing-changes",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
-      "source": "Should I stop praying if nothing changes?",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.discouragement-in-prayer.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
-      "source": "In review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.discouragement-in-prayer.holy-see-catechism-of-the-catholic-church",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Holy See / Catechism of the Catholic Church",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.discouragement-in-prayer.ccc-2725-paraphrase",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "CCC 2725 · PARAPHRASE",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.discouragement-in-prayer.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.maronite-practice.maronite-practice",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(6) > h2:nth-of-type(1)",
-      "source": "Maronite practice",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.maronite-practice.how-do-maronites-pray-daily",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
-      "source": "How do Maronites pray daily?",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.maronite-practice.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "In review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.maronite-practice.eparchy-of-saint-maron-of-brooklyn",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Eparchy of Saint Maron of Brooklyn",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.maronite-practice.cir-25-117-office-ordo-2025-2026-attached-ordo-pages-1-2-par",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "Cir. 25.117, Office Ordo 2025-2026; attached Ordo pages 1-2 · PARAPHRASE",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.maronite-practice.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.maronite-practice.is-a-saint-charbel-prayer-the-same-as-the-divine-liturgy",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
-      "source": "Is a Saint Charbel prayer the same as the Divine Liturgy?",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.maronite-practice.in-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
-      "source": "In review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.maronite-practice.eparchy-of-saint-maron-of-brooklyn",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Eparchy of Saint Maron of Brooklyn",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.maronite-practice.a-guide-to-the-maronite-divine-liturgy-service-of-the-euchar",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "A Guide to the Maronite Divine Liturgy, Service of the Eucharist - The Anaphora · QUOTATION",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.maronite-practice.prayer-text-after-review",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2)",
-      "source": "Prayer text: after review",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "help-me-pray.prayer-formation-not-per.prayer-formation-not-personal-pastoral-advice",
+      "key": "help-me-pray.prayer-and-the-help-you.prayer-and-the-help-you-need",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > h2:nth-of-type(1)",
-      "source": "Prayer formation, not personal pastoral advice.",
+      "source": "Prayer and the help you need",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.prayer-formation-not-per.for-confession-medical-need-or-crisis-speak-to-a-priest-or-d",
+      "key": "help-me-pray.prayer-and-the-help-you.this-guide-offers-devotional-guidance-not-a-sacrament-diagno",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "For confession, medical need, or crisis, speak to a priest or doctor. Prayer does not replace medical care.",
+      "source": "This guide offers devotional guidance, not a sacrament, diagnosis, or promise of healing. For confession or personal spiritual direction, speak with a priest. Keep receiving medical care, and seek urgent local help in a crisis.",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "help-me-pray.prayer-formation-not-per.no-personal-intention-is-requested-or-stored-in-this-draft",
-      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "No personal intention is requested or stored in this draft.",
+      "key": "help-me-pray.prayer-and-the-help-you.you-do-not-need-to-enter-your-name-prayer-intention-or-perso",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "You do not need to enter your name, prayer intention, or personal details to use this guide.",
       "kind": "text",
       "nodeIndex": 0
     }
   ],
   "messages": {
-    "help-me-pray.metadata.title-help-me-pray-find-a-prayer-for-what-you-carry": "Help Me Pray | Find a Prayer for What You Carry",
-    "help-me-pray.metadata.description-a-quiet-place-to-find-a-catholic-prayer-for-what": "A quiet place to find a Catholic prayer for what you are carrying: beginning again, family, illness, gratitude, discouragement, and Maronite practice.",
-    "help-me-pray.metadata.og-title-help-me-pray-find-a-prayer-for-what-you-carry": "Help Me Pray | Find a Prayer for What You Carry",
-    "help-me-pray.metadata.og-description-a-quiet-place-to-find-a-catholic-prayer-for-w": "A quiet place to find a Catholic prayer for what you are carrying: beginning again, family, illness, gratitude, discouragement, and Maronite practice.",
+    "help-me-pray.metadata.title-help-me-pray": "Help Me Pray",
+    "help-me-pray.metadata.description-choose-what-you-are-carrying-today-find-a-small": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
+    "help-me-pray.metadata.og-title-help-me-pray": "Help Me Pray",
+    "help-me-pray.metadata.og-description-choose-what-you-are-carrying-today-find-a-sma": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
     "help-me-pray.help-me-pray.help-me-pray": "Help Me Pray",
-    "help-me-pray.help-me-pray.a-quiet-place-to-find-a-prayer-for-what-you-are-carrying": "A quiet place to find a prayer for what you are carrying.",
+    "help-me-pray.help-me-pray.choose-what-you-are-carrying-today-find-a-small-step-toward": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
     "help-me-pray.help-me-pray.cards-marked-in-review-are-not-ready-to-use-their-prayer-tex": "Cards marked \"In review\" are not ready to use. Their prayer text and Begin action are unavailable.",
-    "help-me-pray.what-are-you-carrying.what-are-you-carrying": "What are you carrying?",
-    "help-me-pray.accessibility.need-choices-unavailable-during-review": "Need choices, unavailable during review",
-    "help-me-pray.what-are-you-carrying.text": "-",
-    "help-me-pray.what-are-you-carrying.begin-or-restart": "Begin or restart",
-    "help-me-pray.what-are-you-carrying.family": "Family",
-    "help-me-pray.what-are-you-carrying.illness": "Illness",
-    "help-me-pray.what-are-you-carrying.gratitude": "Gratitude",
-    "help-me-pray.what-are-you-carrying.discouragement-in-prayer": "Discouragement in prayer",
-    "help-me-pray.what-are-you-carrying.maronite-practice": "Maronite practice",
-    "help-me-pray.what-are-you-carrying.all-six-choices-are-unavailable-during-review": "All six choices are unavailable during review.",
-    "help-me-pray.begin-or-restart.begin-or-restart": "Begin or restart",
-    "help-me-pray.begin-or-restart.i-haven-t-prayed-in-a-while-how-do-i-return": "I haven’t prayed in a while. How do I return?",
-    "help-me-pray.begin-or-restart.in-review": "In review",
-    "help-me-pray.begin-or-restart.holy-see-catechism-of-the-catholic-church": "Holy See / Catechism of the Catholic Church",
-    "help-me-pray.begin-or-restart.ccc-2697-paraphrase": "CCC 2697 · PARAPHRASE",
-    "help-me-pray.begin-or-restart.prayer-text-after-review": "Prayer text: after review",
-    "help-me-pray.begin-or-restart.what-if-i-don-t-know-what-to-say": "What if I don’t know what to say?",
-    "help-me-pray.begin-or-restart.usccb-nabre": "USCCB (NABRE)",
-    "help-me-pray.begin-or-restart.matthew-6-7-8-consulted-in-nabre-original-paraphrase-only-pa": "Matthew 6:7-8 (consulted in NABRE; original paraphrase only) · PARAPHRASE",
-    "help-me-pray.family.family": "Family",
-    "help-me-pray.family.how-can-our-family-begin-praying-together": "How can our family begin praying together?",
-    "help-me-pray.family.in-review": "In review",
-    "help-me-pray.family.holy-see-catechism-of-the-catholic-church": "Holy See / Catechism of the Catholic Church",
-    "help-me-pray.family.ccc-2685-paraphrase": "CCC 2685 · PARAPHRASE",
-    "help-me-pray.family.prayer-text-after-review": "Prayer text: after review",
-    "help-me-pray.family.can-i-pray-for-my-family-if-they-don-t-pray-with-me": "Can I pray for my family if they don’t pray with me?",
-    "help-me-pray.family.ccc-2683-paraphrase": "CCC 2683 · PARAPHRASE",
-    "help-me-pray.illness.illness": "Illness",
-    "help-me-pray.illness.i-am-praying-for-someone-sick-where-do-i-begin": "I am praying for someone sick. Where do I begin?",
-    "help-me-pray.illness.in-review": "In review",
-    "help-me-pray.illness.holy-see-catechism-of-the-catholic-church": "Holy See / Catechism of the Catholic Church",
-    "help-me-pray.illness.ccc-2734-paraphrase": "CCC 2734 · PARAPHRASE",
-    "help-me-pray.illness.prayer-text-after-review": "Prayer text: after review",
-    "help-me-pray.illness.will-praying-through-saint-charbel-guarantee-healing": "Will praying through Saint Charbel guarantee healing?",
-    "help-me-pray.illness.ccc-1532-effects-of-the-anointing-of-the-sick-paraphrase": "CCC 1532, effects of the Anointing of the Sick · PARAPHRASE",
-    "help-me-pray.gratitude.gratitude": "Gratitude",
-    "help-me-pray.gratitude.how-can-i-thank-god-for-something-good": "How can I thank God for something good?",
-    "help-me-pray.gratitude.in-review": "In review",
-    "help-me-pray.gratitude.holy-see-catechism-of-the-catholic-church": "Holy See / Catechism of the Catholic Church",
-    "help-me-pray.gratitude.ccc-2638-paraphrase": "CCC 2638 · PARAPHRASE",
-    "help-me-pray.gratitude.prayer-text-after-review": "Prayer text: after review",
-    "help-me-pray.gratitude.can-i-give-thanks-when-life-is-difficult": "Can I give thanks when life is difficult?",
-    "help-me-pray.gratitude.usccb-nabre": "USCCB (NABRE)",
-    "help-me-pray.gratitude.1-thessalonians-5-18-consulted-in-nabre-original-paraphrase": "1 Thessalonians 5:18 (consulted in NABRE; original paraphrase only) · PARAPHRASE",
-    "help-me-pray.discouragement-in-prayer.discouragement-in-prayer": "Discouragement in prayer",
-    "help-me-pray.discouragement-in-prayer.my-prayer-seems-unanswered-has-god-ignored-me": "My prayer seems unanswered. Has God ignored me?",
-    "help-me-pray.discouragement-in-prayer.in-review": "In review",
-    "help-me-pray.discouragement-in-prayer.holy-see-catechism-of-the-catholic-church": "Holy See / Catechism of the Catholic Church",
-    "help-me-pray.discouragement-in-prayer.ccc-2739-within-ccc-2734-2741-paraphrase": "CCC 2739, within CCC 2734-2741 · PARAPHRASE",
-    "help-me-pray.discouragement-in-prayer.prayer-text-after-review": "Prayer text: after review",
-    "help-me-pray.discouragement-in-prayer.should-i-stop-praying-if-nothing-changes": "Should I stop praying if nothing changes?",
-    "help-me-pray.discouragement-in-prayer.ccc-2725-paraphrase": "CCC 2725 · PARAPHRASE",
-    "help-me-pray.maronite-practice.maronite-practice": "Maronite practice",
-    "help-me-pray.maronite-practice.how-do-maronites-pray-daily": "How do Maronites pray daily?",
-    "help-me-pray.maronite-practice.in-review": "In review",
-    "help-me-pray.maronite-practice.eparchy-of-saint-maron-of-brooklyn": "Eparchy of Saint Maron of Brooklyn",
-    "help-me-pray.maronite-practice.cir-25-117-office-ordo-2025-2026-attached-ordo-pages-1-2-par": "Cir. 25.117, Office Ordo 2025-2026; attached Ordo pages 1-2 · PARAPHRASE",
-    "help-me-pray.maronite-practice.prayer-text-after-review": "Prayer text: after review",
-    "help-me-pray.maronite-practice.is-a-saint-charbel-prayer-the-same-as-the-divine-liturgy": "Is a Saint Charbel prayer the same as the Divine Liturgy?",
-    "help-me-pray.maronite-practice.a-guide-to-the-maronite-divine-liturgy-service-of-the-euchar": "A Guide to the Maronite Divine Liturgy, Service of the Eucharist - The Anaphora · QUOTATION",
-    "help-me-pray.prayer-formation-not-per.prayer-formation-not-personal-pastoral-advice": "Prayer formation, not personal pastoral advice.",
-    "help-me-pray.prayer-formation-not-per.for-confession-medical-need-or-crisis-speak-to-a-priest-or-d": "For confession, medical need, or crisis, speak to a priest or doctor. Prayer does not replace medical care.",
-    "help-me-pray.prayer-formation-not-per.no-personal-intention-is-requested-or-stored-in-this-draft": "No personal intention is requested or stored in this draft."
+    "help-me-pray.what-brings-you-here.what-brings-you-here": "What brings you here?",
+    "help-me-pray.what-brings-you-here.beginning-or-returning-to-prayer": "Beginning or returning to prayer",
+    "help-me-pray.what-brings-you-here.family": "Family",
+    "help-me-pray.what-brings-you-here.illness": "Illness",
+    "help-me-pray.what-brings-you-here.gratitude": "Gratitude",
+    "help-me-pray.what-brings-you-here.discouragement-in-prayer": "Discouragement in prayer",
+    "help-me-pray.what-brings-you-here.understanding-maronite-prayer": "Understanding Maronite prayer",
+    "help-me-pray.what-brings-you-here.cards-marked-in-review-are-not-ready-to-use-their-prayer-tex": "Cards marked \"In review\" are not ready to use. Their prayer text and Begin action are unavailable.",
+    "help-me-pray.prayer-and-the-help-you.prayer-and-the-help-you-need": "Prayer and the help you need",
+    "help-me-pray.prayer-and-the-help-you.this-guide-offers-devotional-guidance-not-a-sacrament-diagno": "This guide offers devotional guidance, not a sacrament, diagnosis, or promise of healing. For confession or personal spiritual direction, speak with a priest. Keep receiving medical care, and seek urgent local help in a crisis.",
+    "help-me-pray.prayer-and-the-help-you.you-do-not-need-to-enter-your-name-prayer-intention-or-perso": "You do not need to enter your name, prayer intention, or personal details to use this guide."
   }
 }

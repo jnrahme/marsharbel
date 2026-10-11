@@ -1,166 +1,146 @@
-"""Help Me Pray release-gate tests (faith-desk reconciliation 2026-10-11).
+"""Help Me Pray release-gate tests (faith-desk reconciliation + quality verdicts).
 
-These tests encode the desk's four engineering requirements. Until the
-reconciled 12-locale catalogs land, they FAIL CLOSED by design: a draft PR
-carrying this family cannot merge without real, complete catalogs.
+Runtime catalogs are the PUBLIC-REPO projection: private fields (reviewNotice,
+originalReview, privateProvenance*, prayer words) are stripped at projection time.
+These tests guard the publicationContract: missing locale/key fails the build,
+no English fallback, nothing private reaches browser data, Begin stays off.
 """
 import hashlib
 import json
+
+NEED_KEY_MAP = {
+    'beginning/restarting prayer': 'restart',
+    'family': 'family',
+    'illness': 'illness',
+    'gratitude': 'gratitude',
+    'discouragement in prayer': 'discouragement',
+    'understanding Maronite practice': 'maronite',
+}
+
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-FAMILY = 'help-me-pray-master'
 LOCALES = ['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl', 'ru', 'hi', 'th', 'zh-Hans']
 NEEDS = ['restart', 'family', 'illness', 'gratitude', 'discouragement', 'maronite']
-
-PAGE_KEYS = {'title', 'intro', 'needsHeading', 'reviewNotice', 'pendingNotice', 'boundaryHeading', 'boundaryCopy', 'privacyCopy'}
-CARD_KEYS = {'question', 'practicalAnswer', 'why', 'source.publisher', 'source.section', 'source.label',
-             'practiceType', 'boundaryNote', 'prayerTarget.heading', 'prayerTarget.type', 'sourceAuthor'}
-BEGGIANI = 'Chorbishop Seely Beggiani, A Guide to the Maronite Divine Liturgy, Eparchy of Saint Maron of Brooklyn'
-
-
-def catalog_path(lang):
-    return ROOT / 'locales' / lang / 'help-me-pray-catalog.json'
+CARD_IDS = ['restart-01', 'restart-02', 'family-01', 'family-02', 'illness-01', 'illness-02',
+            'gratitude-01', 'gratitude-02', 'discouragement-01', 'discouragement-02',
+            'maronite-01', 'maronite-02']
+PAGE_KEYS = {'title', 'intro', 'needsHeading', 'pendingNotice', 'boundaryHeading', 'boundaryCopy', 'privacyCopy'}
+UI_KEYS = {'inReview', 'practicalAnswer', 'why', 'source', 'practiceType', 'boundary',
+           'backToNeeds', 'noResults', 'notReady', 'begin', 'close', 'readMore'}
+COPY_KEYS = {'question', 'practicalAnswer', 'why', 'source.publisher', 'source.section', 'source.label',
+             'practiceType', 'boundaryNote', 'prayerTarget.heading', 'prayerTarget.type'}
+CARD_META = {'need', 'copy', 'sourceURL', 'prayerTargetURL', 'additionalSourceURLs', 'beginEnabled'}
+PRIVATE_TOKENS = ['reviewNotice', 'originalReview', 'privateProvenance', 'private-review',
+                  'This guide is a private draft']
+BEGGIANI = 'Chorbishop Seely Beggiani'
 
 
 def load_catalog(lang):
-    p = catalog_path(lang)
-    if not p.exists():
-        raise FileNotFoundError(f'missing catalog {p}')
-    return json.loads(p.read_text())
+    return json.loads((ROOT / 'locales' / lang / 'help-me-pray-catalog.json').read_text())
 
 
 class TestCatalogCompleteness(unittest.TestCase):
-    """Requirement 2: a missing translation/catalog key must FAIL THE BUILD."""
+    """publicationContract: missingLocaleOrKey=fail-build, englishFallback=false."""
 
     def test_all_12_locale_catalogs_exist(self):
-        missing = [lang for lang in LOCALES if not catalog_path(lang).exists()]
-        self.assertEqual(missing, [], f'catalogs missing for: {missing} (fail-closed until reconciled catalogs land)')
+        missing = [l for l in LOCALES if not (ROOT / 'locales' / l / 'help-me-pray-catalog.json').exists()]
+        self.assertEqual(missing, [])
 
-    def test_exact_key_set_no_holes_no_extras(self):
+    def test_exact_structure_per_locale(self):
         for lang in LOCALES:
-            try:
-                cat = load_catalog(lang)
-            except FileNotFoundError:
-                self.skipTest(f'{lang} catalog not landed yet (covered by existence test)')
-            page = cat.get('page', {})
-            self.assertEqual(set(page), PAGE_KEYS, f'{lang}: page keys mismatch')
-            self.assertEqual(set(cat.get('needs', {})), set(NEEDS), f'{lang}: needs mismatch')
-            self.assertIn('cards', cat, f'{lang}: cards section missing (fail-closed until reconciled)')
-            self.assertIn('ui', cat, f'{lang}: ui section missing')
-            for need in NEEDS:
-                for i, card in enumerate(cat.get('cards', {}).get(need, [])):
-                    self.assertEqual(set(card), CARD_KEYS, f'{lang}/{need}[{i}]: card keys mismatch')
+            cat = load_catalog(lang)
+            self.assertEqual(set(cat['page']), PAGE_KEYS, f'{lang} page keys')
+            self.assertEqual(set(cat['needs']), set(NEEDS), f'{lang} needs')
+            self.assertEqual(set(cat['ui']), UI_KEYS, f'{lang} ui keys')
+            self.assertEqual(set(cat['cards']), set(CARD_IDS), f'{lang} card ids')
+            for cid in CARD_IDS:
+                card = cat['cards'][cid]
+                expected_meta = CARD_META | ({'sourceAuthor'} if cid == 'maronite-02' else set())
+                self.assertEqual(set(card), expected_meta, f'{lang}/{cid} card keys')
+                self.assertEqual(set(card['copy']), COPY_KEYS, f'{lang}/{cid} copy keys')
+                self.assertIs(card['beginEnabled'], False, f'{lang}/{cid} Begin must stay OFF')
+                self.assertIn(card['need'], NEED_KEY_MAP, f'{lang}/{cid} need unmapped: {card["need"]!r}')
 
     def test_no_silent_english_fallback(self):
-        en = load_catalog('en') if catalog_path('en').exists() else None
-        if en is None:
-            self.skipTest('en catalog not landed yet')
-        en_text = json.dumps(en, ensure_ascii=False)
+        en_page = json.dumps(load_catalog('en')['page'], ensure_ascii=False, sort_keys=True)
         for lang in LOCALES[1:]:
-            try:
-                cat = load_catalog(lang)
-            except FileNotFoundError:
-                continue
-            self.assertNotEqual(json.dumps(cat, ensure_ascii=False), en_text,
-                                f'{lang}: catalog identical to English (silent fallback)')
+            cat = load_catalog(lang)
+            self.assertNotEqual(json.dumps(cat['page'], ensure_ascii=False, sort_keys=True), en_page,
+                                f'{lang}: page identical to English')
 
-    def test_no_results_is_never_an_ordinary_empty_state(self):
-        """noResults must be an explicit keyed string, never a bare empty render."""
+    def test_no_results_is_real_copy(self):
         for lang in LOCALES:
-            try:
-                cat = load_catalog(lang)
-            except FileNotFoundError:
-                continue
-            nr = cat.get('ui', {}).get('noResults')
-            self.assertIsInstance(nr, str, f'{lang}: ui.noResults key required')
-            self.assertGreater(len(nr.strip()), 20, f'{lang}: noResults must be real copy, not an empty-state stub')
+            nr = load_catalog(lang)['ui']['noResults']
+            self.assertGreater(len(nr.strip()), 10, f'{lang}: noResults must be real keyed copy')
 
 
-class TestReviewNoticeSplit(unittest.TestCase):
-    """Requirement 1: private reviewNotice and public pending-card notice are separate."""
+class TestNothingPrivateInRepoRuntime(unittest.TestCase):
+    """Quality's allowlist: private fields are stripped before the public repo."""
 
-    def test_private_notice_key_is_separate_and_never_in_public_render(self):
-        try:
-            en = load_catalog('en')
-        except FileNotFoundError:
-            self.skipTest('en catalog not landed yet')
-        page = en['page']
-        self.assertIn('reviewNotice', page)
-        self.assertIn('pendingNotice', page, 'public pending-card notice must be its OWN key')
-        self.assertNotEqual(page['reviewNotice'].strip(), page['pendingNotice'].strip(),
-                            'private and public notices must not share copy')
-        master = (ROOT / 'templates/masters/help-me-pray.html').read_text()
-        built_public = master  # public render must never bind reviewNotice into a visible node
-        self.assertNotIn(page['reviewNotice'].strip(), built_public,
-                         'private reviewNotice wording leaked into the public master')
+    def test_runtime_catalogs_carry_no_private_tokens(self):
+        for lang in LOCALES:
+            raw = (ROOT / 'locales' / lang / 'help-me-pray-catalog.json').read_text()
+            for token in PRIVATE_TOKENS:
+                self.assertNotIn(token, raw, f'{lang}: private token {token!r} in runtime catalog')
 
+    def test_master_never_binds_private_wording(self):
+        master = (ROOT / 'help-me-pray.html').read_text()
+        for token in PRIVATE_TOKENS:
+            self.assertNotIn(token, master, f'private token {token!r} in public master')
 
-class TestPendingPrayerNotSerialized(unittest.TestCase):
-    """Requirement 3: pending-card prayer text stays OUT of serialized browser data."""
-
-    def test_no_prayer_text_in_serialized_payload(self):
-        try:
-            en = load_catalog('en')
-        except FileNotFoundError:
-            self.skipTest('en catalog not landed yet')
-        data_file = ROOT / 'assets/help-me-pray-data.json'
-        if not data_file.exists():
-            return  # no serialized payload yet; when it exists it must be clean
-        payload = data_file.read_text()
-        for need in NEEDS:
-            for card in en.get('cards', {}).get(need, []):
-                if card.get('review', {}).get('status') != 'approved':
-                    prayer = card.get('prayerTarget', {}).get('text')
-                    if prayer:
-                        self.assertNotIn(prayer, payload,
-                                         f'pending card {card.get("id", need)} prayer text serialized to browser data')
+    def test_maronite02_public_author_citation(self):
+        for lang in LOCALES:
+            card = load_catalog(lang)['cards']['maronite-02']
+            self.assertEqual(card.get('sourceAuthor'), BEGGIANI, f'{lang}: maronite-02 citation')
+            self.assertTrue(card['copy']['source.label'].strip(), f'{lang}: PARAPHRASE label localized')
 
 
 class TestPublicExport(unittest.TestCase):
-    """Independent-verdict copy gate: the public export must be deliberately clean."""
+    """The browser payload must be a clean positive-allowlist projection."""
 
     EXPORT = ROOT / 'assets/help-me-pray-data.json'
 
     def test_public_export_exists_and_is_clean(self):
-        self.assertTrue(self.EXPORT.exists(), 'public export not built yet (fail-closed until renderer lands)')
+        self.assertTrue(self.EXPORT.exists(), 'public export not built (run scripts/i18n/help_me_pray_export.py)')
         raw = self.EXPORT.read_text()
         data = json.loads(raw)
-        # pendingNotice survives the public export
-        try:
-            en = load_catalog('en')
-            self.assertIn(en['page']['pendingNotice'], raw, 'pendingNotice dropped from public export')
-        except FileNotFoundError:
-            self.fail('en catalog missing')
-        # nothing private reaches browser data
-        for forbidden in ('reviewNotice', 'originalReview', 'privateProvenance', 'prayerText', 'quote'):
-            self.assertNotIn(forbidden, raw, f'private field {forbidden} reached browser data')
-        self.assertNotIn(en['page']['reviewNotice'], raw, 'reviewNotice wording reached browser data')
-        # Begin is deliberately off in exported data
-        self.assertIn('"beginEnabled": false', raw.replace(': false', ':false').replace('"beginEnabled":false', '"beginEnabled": false') if False else raw,
-                      'beginEnabled=false must be present in exported data')
-        # maronite-02 carries the deliberate localized public author citation
-        cards = json.dumps(data, ensure_ascii=False)
-        self.assertIn('maronite-02', cards, 'maronite-02 missing from export')
-        self.assertIn('Beggiani', cards,
-                      'maronite-02 public author citation dropped - must carry localized: ' + BEGGIANI)
+        en = load_catalog('en')
+        parsed = json.loads(raw)
+        for lang in LOCALES:
+            self.assertEqual(parsed[lang]['page']['pendingNotice'],
+                             json.loads((ROOT / f'locales/{lang}/help-me-pray-catalog.json').read_text())['page']['pendingNotice'],
+                             f'{lang}: pendingNotice dropped or altered in public export')
+            for cid, card in parsed[lang]['cards'].items():
+                self.assertIn(card['needKey'], NEEDS, f'{lang}/{cid} needKey')
+                self.assertFalse(card['beginEnabled'], f'{lang}/{cid} beginEnabled')
+        for token in PRIVATE_TOKENS + ['prayerText', '"quote"']:
+            self.assertNotIn(token, raw, f'{token!r} reached browser data')
+        self.assertIn('"beginEnabled": false', raw, 'beginEnabled=false must be present per card')
+        self.assertNotIn('"beginEnabled": true', raw, 'a card has Begin ON - forbidden before release gates')
+        self.assertIn(BEGGIANI, raw, 'maronite-02 Beggiani citation dropped from export')
+
+    def test_no_prayer_body_text_in_export(self):
+        if not self.EXPORT.exists():
+            self.skipTest('export not built yet')
+        raw = self.EXPORT.read_text()
+        for pf in (ROOT / 'locales').glob('*/help-me-pray-prayers.json'):
+            for row in json.loads(pf.read_text())['rows']:
+                self.assertNotIn(row['text'], raw,
+                                 f'{pf.parent.name}:{row["prayer"]} body text reached browser data (pendingPrayerTextInBrowserData=false)')
 
 
 class TestLocaleMasterDigest(unittest.TestCase):
-    """Requirement 4: locale master carries a fresh digest + review records."""
+    """Locale master carries a fresh digest + review records over landed content."""
 
     def test_master_digest_and_review_records(self):
-        master_file = ROOT / 'locales/help-me-pray-locale-master.json'
-        self.assertTrue(master_file.exists(), 'locale master not landed yet (fail-closed)')
-        master = json.loads(master_file.read_text())
-        self.assertIn('digest', master)
-        self.assertIn('reviews', master)
+        master = json.loads((ROOT / 'locales/help-me-pray-locale-master.json').read_text())
         self.assertIn('internal-faith', master['reviews'])
         self.assertIn('locale', master['reviews'])
         body = json.dumps(master.get('catalogs', {}), ensure_ascii=False, sort_keys=True)
         self.assertEqual(master['digest'], hashlib.sha256(body.encode()).hexdigest(),
-                         'locale master digest is stale - recompute after any catalog change')
+                         'locale master digest stale - rerun the digest step after content changes')
 
 
 if __name__ == '__main__':

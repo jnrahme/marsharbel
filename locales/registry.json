@@ -1619,7 +1619,7 @@
       }
     },
     "help-me-pray-master": {
-      "master": "templates/masters/help-me-pray.html",
+      "master": "help-me-pray.html",
       "english": "/help-me-pray",
       "routes": {
         "ar": "/ar/help-me-pray",
@@ -1633,7 +1633,31 @@
         "ru": "/ru/help-me-pray",
         "th": "/th/help-me-pray",
         "zh-Hans": "/zh-Hans/help-me-pray"
-      }
+      },
+      "renderLocales": [
+        "ar",
+        "de",
+        "es",
+        "fr",
+        "hi",
+        "it",
+        "pl",
+        "pt",
+        "ru",
+        "th"
+      ],
+      "sitemapHeld": [
+        "ar",
+        "de",
+        "es",
+        "fr",
+        "hi",
+        "it",
+        "pl",
+        "pt",
+        "ru",
+        "th"
+      ]
     }
   },
   "limitedLaunchLocales": [

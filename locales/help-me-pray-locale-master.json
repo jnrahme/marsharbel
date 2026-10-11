@@ -1,17 +1,48 @@
 {
   "family": "help-me-pray-master",
-  "contentState": "partial: 14 standard OF/GB rows (7 locales) + en shell catalog; 11 locale catalogs + cards pending reconciliation",
+  "contentState": "full: 22 standard OF/GB rows (11 locales, artifacts 00b14c13 + 483e11f2) + 12 v3 runtime catalogs (144 cards, private fields stripped) + 12 render copies + public export; 4 original-target cards still pending Joey; Begin OFF all cards; noindex retained",
   "catalogs": {
+    "assets/help-me-pray-data.json": "a82b3d07f6897ced9781d9c6e05e69e07e91576161b9139ac62de298660030f0",
+    "assets/help-me-pray.js": "60257f7762a45c423f4ac05918a2a9e55f955a54bae1996cab98f0eb6a728103",
+    "help-me-pray.html": "884097d0a8b66127f3ef079dff864564311926cd4eadb682e57f142eb69579ab",
+    "locales/ar/help-me-pray-catalog.json": "416e4c23eb13761ba074a9ce4deb78c5b055fb9467d0cf35cfe6744b9148b767",
+    "locales/ar/help-me-pray-master-copy.json": "db7ddba22c7979ac1b52b9763039e42bf9cbf5fd4b72a3272bcf02bd3a02c20a",
     "locales/ar/help-me-pray-prayers.json": "1fb42c3a29ed3f19bf1d472e4d0627a6c1ea597d5296b2f55e9e6430333f72d8",
+    "locales/de/help-me-pray-catalog.json": "cdefceb3e0d294843cb004641eed42ada025c5b351aa0c5d60697568f8d574f1",
+    "locales/de/help-me-pray-master-copy.json": "2088ae29eca3b91c328329b47644ff81d4a045678e5b785086c4a2fd836eff9b",
     "locales/de/help-me-pray-prayers.json": "a5341f1643a13e3d2528d555e91473e17c9b5275d39de710f9b0bf9a92015314",
+    "locales/en/help-me-pray-catalog.json": "3f6c197ab7d1945bfd131f938da28c58293179dde559a06b5a9ca3f98fac590d",
+    "locales/en/help-me-pray-master-bindings.json": "1393c15869fba83f0e0fbea4d48f659d5e3dd95f5f9ffef2d4bcd5e75c38ad61",
+    "locales/en/help-me-pray-master-copy.json": "88384ef61197677091abfbb663a5a2fde2a61d702e37695f244efd65f84cd215",
+    "locales/es/help-me-pray-catalog.json": "cd0b241ef12add77f0603af5513db2390d38bb7360579846e3bcd9e219ab3289",
+    "locales/es/help-me-pray-master-copy.json": "352202522720aadd5d4b61e3efacaa12b4d5718589d8cb8ac94dd0fff3d56fc9",
     "locales/es/help-me-pray-prayers.json": "c1c9f6abce6df890548bc05e584df36beca8feec6c839a775d67b495c0758d42",
+    "locales/fr/help-me-pray-catalog.json": "8aaf6c1d16d101fbe4b158b7a852b551514dccde18c60baebdf30fcfd72c8d17",
+    "locales/fr/help-me-pray-master-copy.json": "90017e818ad04159e38ffaed58f470616315c7c6f8c418a7f1ae60905d9aa3ea",
     "locales/fr/help-me-pray-prayers.json": "1cbc72a4504deefc11e999ec47da5e7f64e780039f55ebca687954d6d9fe0fe2",
+    "locales/hi/help-me-pray-catalog.json": "a208eb3e79ec9bd4cc3c2e33c2e5859323e42ca4fd76ce6b8e7acf9b187b93d9",
+    "locales/hi/help-me-pray-master-copy.json": "930ffb7f600f53929433d7be873b01b4bf9073a62678228a8f29b793309dea41",
+    "locales/hi/help-me-pray-prayers.json": "50985b07ea94d36ab3a21d45f1736d9b7f26c6b14e30219b92aa130ee4ee07bb",
+    "locales/it/help-me-pray-catalog.json": "0b07af7d6aa662571adbeb8647ae46638019ce3b2ed09765bd609ac24d795ebc",
+    "locales/it/help-me-pray-master-copy.json": "693548ae9a74663021ec8c662727ed725c63c519915921e87ac9bbc8da3cee37",
     "locales/it/help-me-pray-prayers.json": "073b151dcdf16b200bf443a70357798696343a6d868166ba9e4980835aa00bf8",
+    "locales/pl/help-me-pray-catalog.json": "8e998516617a0c2310ed27d664f0e685e91a64985029b97b0fe421b9222ed54d",
+    "locales/pl/help-me-pray-master-copy.json": "6de85637e05bf4d047bd2bc425082f05036b0c910aee9374c5c4dea439bfc10a",
     "locales/pl/help-me-pray-prayers.json": "859a5ea794126b071e631a29e28dd9e9a020df496e9eb319480eb05f6a777cf6",
+    "locales/pt/help-me-pray-catalog.json": "aaff1df076204d484ca0adcc110cd435e1fed3e3f3fc613fa14dbccb19cb0f9a",
+    "locales/pt/help-me-pray-master-copy.json": "53aca64083df9203b1bc5a6f69099370c25681b194dcc217560b3a87d7eeeb79",
     "locales/pt/help-me-pray-prayers.json": "510a0f8af18b838fe191f6f6ddb29574ea23f2a91332a5a1f7df1d5d615f8d7f",
-    "locales/en/help-me-pray-catalog.json": "77a5754eb346c7eb7e16fe17d83c1c5a6014f0945e04406021198d6e064e2223"
+    "locales/ru/help-me-pray-catalog.json": "f4941ca835ff5f47f2feb0f94f9549715f314dcf682b6419f7bb59641c0d1cbd",
+    "locales/ru/help-me-pray-master-copy.json": "fd5e34fb178adbf61b0190e6b78654660595af3df82dce9d820b5e4b9b1f69e5",
+    "locales/ru/help-me-pray-prayers.json": "ffbc9b8affdd4ab08d76ea1765a397bd20a0a2bb02932c0dbd19e2b8b70a7a4a",
+    "locales/th/help-me-pray-catalog.json": "ef26eff578e2cc06331f6613ea999fa8fee13accca3b03080bb8d9a540c22356",
+    "locales/th/help-me-pray-master-copy.json": "862e947b6f48e0049b79c49c1c4f320816255e2103dedf10cd759f0373e27e43",
+    "locales/th/help-me-pray-prayers.json": "db93554dd60850f4da419a35a6dfe3d18132902590f787dd49f1cddb5833582a",
+    "locales/zh-Hans/help-me-pray-catalog.json": "05113b10e7f6b89033760f79d2809b0d7af0e509bc81a8f2a1e02c6452668bb4",
+    "locales/zh-Hans/help-me-pray-master-copy.json": "a0e3302a602893b705d3248f16e13fdb97b751c4892d531d581151deb222213d",
+    "locales/zh-Hans/help-me-pray-prayers.json": "8a3e10431a37dd7c270a439a740db97ed1da0f59f80ab56e8b5aa2536584adf7"
   },
-  "digest": "bfacbff85a0383b66a280845d6534396d0788fd345d3ccd0181533720c25ac82",
+  "digest": "63baed4d7e0a50056df847fff2b9a9992f506a4dae34deb233e1cd3dc4bd1031",
   "reviews": {
     "internal-faith": {
       "status": "quality-verified-candidate",
@@ -22,6 +53,16 @@
       "payloadManifestSha256": "0e5c18f724863fe9f9957810eb565a46a357486557f72a058c186c19e18f4bb1",
       "rowRefConvention": "locale:prayer",
       "rows": 14
+    },
+    "catalog": {
+      "status": "quality-PASS",
+      "bundleSha256": "3a52bca7a3a98245461cd9b369a878383b95df3b3db7dcef35562af778865265",
+      "cards": 144
+    },
+    "standard-8": {
+      "status": "quality-verified-candidate-fixed",
+      "artifactSha256": "483e11f2f9679b056f364463b11e5697baa5671627a6673c5477725fe964cf2e",
+      "rows": 8
     }
   }
 }

@@ -1,36 +1,276 @@
 {
-  "page": {
-    "title": "Help Me Pray",
-    "intro": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
-    "needsHeading": "What brings you here?",
-    "reviewNotice": "This guide is a private draft awaiting faith, source, and language review. Prayer text and Begin are not available while a card is in review.",
-    "boundaryHeading": "Prayer and the help you need",
-    "boundaryCopy": "This guide offers devotional guidance, not a sacrament, diagnosis, or promise of healing. For confession or personal spiritual direction, speak with a priest. Keep receiving medical care, and seek urgent local help in a crisis.",
-    "privacyCopy": "You do not need to enter your name, prayer intention, or personal details to use this guide.",
-    "pendingNotice": "Cards marked \"In review\" are not ready to use. Their prayer text and Begin action are unavailable."
+ "schema": 2,
+ "locale": "en",
+ "direction": "ltr",
+ "publicationContract": {
+  "missingLocaleOrKey": "fail-build",
+  "englishFallback": false,
+  "pendingPrayerTextInBrowserData": false,
+  "privateReviewNoticeInBrowserData": false
+ },
+ "page": {
+  "title": "Help Me Pray",
+  "intro": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
+  "needsHeading": "What brings you here?",
+  "boundaryHeading": "Prayer and the help you need",
+  "boundaryCopy": "This guide offers devotional guidance, not a sacrament, diagnosis, or promise of healing. For confession or personal spiritual direction, speak with a priest. Keep receiving medical care, and seek urgent local help in a crisis.",
+  "privacyCopy": "You do not need to enter your name, prayer intention, or personal details to use this guide.",
+  "pendingNotice": "Cards marked \"In review\" are not ready to use. Their prayer text and Begin action are unavailable."
+ },
+ "needs": {
+  "restart": "Beginning or returning to prayer",
+  "family": "Family",
+  "illness": "Illness",
+  "gratitude": "Gratitude",
+  "discouragement": "Discouragement in prayer",
+  "maronite": "Understanding Maronite prayer"
+ },
+ "ui": {
+  "inReview": "In review",
+  "practicalAnswer": "A small step",
+  "why": "Why this may help",
+  "source": "Source",
+  "practiceType": "Practice",
+  "boundary": "Keep in mind",
+  "backToNeeds": "Back to needs",
+  "noResults": "No cards match this choice.",
+  "notReady": "This card is awaiting review. Prayer text and Begin are not available.",
+  "begin": "Begin",
+  "close": "Close",
+  "readMore": "Read the source"
+ },
+ "cards": {
+  "illness-01": {
+   "need": "illness",
+   "copy": {
+    "question": "I am praying for someone sick. Where do I begin?",
+    "practicalAnswer": "Bring this person before God and ask for strength, peace, and healing.\nPray the Prayer for the Sick slowly, alongside the care they need.\nPrayer carries no guarantee of outcome.",
+    "why": "PARAPHRASE (editorial explanation): Christian prayer calls us to remain with God in difficulty; it is not a way to control the result. CCC 2734.",
+    "source.publisher": "Holy See / Catechism of the Catholic Church",
+    "source.section": "CCC 2734",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor. Prayer does not replace medical care.",
+    "prayerTarget.heading": "Prayer for the Sick",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
   },
-  "needs": {
-    "restart": "Beginning or returning to prayer",
-    "family": "Family",
-    "illness": "Illness",
-    "gratitude": "Gratitude",
-    "discouragement": "Discouragement in prayer",
-    "maronite": "Understanding Maronite prayer"
+  "illness-02": {
+   "need": "illness",
+   "copy": {
+    "question": "Will praying through Saint Charbel guarantee healing?",
+    "practicalAnswer": "No. Ask Saint Charbel to intercede, and entrust the person to God without promising a cure.\nPrayer carries no guarantee of outcome.\nFor serious illness, ask a priest about the Anointing of the Sick and continue medical care.",
+    "why": "PARAPHRASE: CCC 1532 describes health being restored through Anointing of the Sick only when that serves the person's salvation. This guide offers a private devotion, not that sacrament, and does not promise healing.",
+    "source.publisher": "Holy See / Catechism of the Catholic Church",
+    "source.section": "CCC 1532, effects of the Anointing of the Sick",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor. This guide neither diagnoses illness nor administers a sacrament.",
+    "prayerTarget.heading": "Prayer for the Sick",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/in_brief.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
   },
-  "ui": {
-    "inReview": "In review",
-    "practicalAnswer": "A small step",
-    "why": "Why this may help",
-    "source": "Source",
-    "practiceType": "Practice",
-    "boundary": "Keep in mind",
-    "backToNeeds": "Back to needs",
-    "noResults": "No cards match this choice.",
-    "notReady": "This card is awaiting review. Prayer text and Begin are not available.",
-    "begin": "Begin",
-    "close": "Close",
-    "readMore": "Read the source"
+  "restart-01": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "I haven't prayed in a while. How do I return?",
+    "practicalAnswer": "Begin with one Our Father, slowly, without trying to make up every missed day.\nChoose a small, regular time to return tomorrow; bring your real concerns to God.",
+    "why": "PARAPHRASE (editorial explanation): Set times help prayer become part of life. The small first step is practical guidance, not a prescribed Church rule. CCC 2697.",
+    "source.publisher": "Holy See / Catechism of the Catholic Church",
+    "source.section": "CCC 2697",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor. If you want confession or personal spiritual direction, speak with a priest.",
+    "prayerTarget.heading": "Our Father",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
   },
-  "draftStatus": "English shell candidate v2, pending independent internal-quality review; not release approved",
-  "privacyCaveat": "Privacy wording describes an input-free shell only, not unverified analytics/storage behavior. ReviewNotice is for the private prototype; release wording needs review before any public use. Begin label is only a key, never authorization to enable it. Public pendingNotice is a separate candidate key; private reviewNotice must never be compiled into the public page."
+  "discouragement-01": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "My prayer seems unanswered. Has God ignored me?",
+    "practicalAnswer": "Tell God honestly that waiting is hard; you do not need to hide your disappointment.\nKeep bringing your need to him without treating the requested result as a test of his love.\nThis guide cannot explain why a particular loss or delay has happened.",
+    "why": "PARAPHRASE (editorial explanation): The Catechism names unanswered petition as a real difficulty, not a reason to shame the person praying. CCC 2734-2741, especially 2739.",
+    "source.publisher": "Holy See / Catechism of the Catholic Church",
+    "source.section": "CCC 2739, within CCC 2734-2741",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor. No prophecy, explanation of God's hidden purposes, or promised outcome is offered.",
+    "prayerTarget.heading": "General Intercession Prayer",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-02": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "Should I stop praying if nothing changes?",
+    "practicalAnswer": "Try a short prayer you can return to, even when you feel discouraged.\nAsk for help to remain close to Christ, and bring your struggle to a priest if you need personal direction.",
+    "why": "PARAPHRASE (editorial explanation): Perseverance begins with grace and a response from us; difficulty is not proof that your prayer has failed. CCC 2725, read alongside 2734-2741.",
+    "source.publisher": "Holy See / Catechism of the Catholic Church",
+    "source.section": "CCC 2725",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor. Prayer is not a replacement for care in a mental-health crisis.",
+    "prayerTarget.heading": "In Suffering",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-01": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "How do Maronites pray daily?",
+    "practicalAnswer": "You can begin a daily rhythm with an Our Father in the morning or evening.\nFor the Maronite Divine Office, ask your parish which eparchy's Ordo applies.\nThe devotional prayer offered here is a starting point, not a substitute for the Office.",
+    "why": "PARAPHRASE: The Eparchy of Saint Maron of Brooklyn publishes the Divine Office Ordo for 2025-2026. Its attached book identifies its use in the Eparchy of Our Lady of Lebanon of Los Angeles according to the Syriac Maronite rite. Ask your parish how to use the Office; this guide does not select today's texts.",
+    "source.publisher": "Eparchy of Saint Maron of Brooklyn",
+    "source.section": "Cir. 25.117, Office Ordo 2025-2026; attached Ordo pages 1-2",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor. Not today's Office. The 2025-2026 Ordo is a dated resource, not a verified latest edition. Ask your parish which eparchy's Ordo applies.",
+    "prayerTarget.heading": "Our Father",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [
+    "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+    "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her"
+   ],
+   "beginEnabled": false
+  },
+  "family-01": {
+   "need": "family",
+   "copy": {
+    "question": "How can our family begin praying together?",
+    "practicalAnswer": "Choose a calm moment and invite your family to pray one short prayer together.\nBegin with the Prayer for Families; leave room for each person to name a need, without pressure.",
+    "why": "PARAPHRASE (editorial explanation): A family can be a place where prayer is patiently learned. A short shared prayer is a practical starting point, not a required format. CCC 2685.",
+    "source.publisher": "Holy See / Catechism of the Catholic Church",
+    "source.section": "CCC 2685",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor.",
+    "prayerTarget.heading": "Prayer for Families",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "family-02": {
+   "need": "family",
+   "copy": {
+    "question": "Can I pray for my family if they don't pray with me?",
+    "practicalAnswer": "Yes. Bring your family to God even if you are praying alone.\nAsk Saint Charbel to intercede, and let your prayer support patient, loving care rather than pressure on others.",
+    "why": "PARAPHRASE (editorial explanation): The Church teaches that the saints' intercession can be sought for ourselves and for others. This does not promise a particular family outcome. CCC 2683.",
+    "source.publisher": "Holy See / Catechism of the Catholic Church",
+    "source.section": "CCC 2683",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor. Prayer does not require you to remain in an unsafe situation or excuse harm.",
+    "prayerTarget.heading": "Prayer for Families",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "gratitude-01": {
+   "need": "gratitude",
+   "copy": {
+    "question": "How can I thank God for something good?",
+    "practicalAnswer": "Name the gift you have received and thank God for it in your own words.\nThen pray the Glory Be slowly, letting your thanks become praise.",
+    "why": "PARAPHRASE (editorial explanation): Thanksgiving can bring the events of daily life into prayer. CCC 2638.",
+    "source.publisher": "Holy See / Catechism of the Catholic Church",
+    "source.section": "CCC 2638",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor.",
+    "prayerTarget.heading": "Glory Be",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_one/article_3/iv_prayer_of_thanksgiving.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-02": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "What if I don't know what to say?",
+    "practicalAnswer": "You can begin with the Our Father rather than searching for impressive words.\nRead it slowly; pause when a petition names what you are carrying.",
+    "why": "PARAPHRASE: Jesus discourages prayer that relies on piling up words and teaches that the Father already knows our needs. Matthew 6:7-8.",
+    "source.publisher": "USCCB (NABRE)",
+    "source.section": "Matthew 6:7-8 (consulted in NABRE; original paraphrase only)",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor.",
+    "prayerTarget.heading": "Our Father",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/matthew/6",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-02": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "Is a Saint Charbel prayer the same as the Divine Liturgy?",
+    "practicalAnswer": "Editorial explanation: this guide offers the site's Saint Charbel prayers for private devotion, not as approved Maronite liturgical texts.\nThe Divine Liturgy is the Church's Eucharistic worship; pray the Glory Be now, and use the eparchy's guide to learn about worship with your parish.",
+    "why": "PARAPHRASE: The eparchy describes the Eucharistic prayer as addressed to the Father, Son, and Holy Spirit. This supports the account of the Divine Liturgy, not the status of this site's prayer texts. The devotional label is this guide's editorial classification, not an eparchy certification. A Guide to the Maronite Divine Liturgy, Service of the Eucharist - The Anaphora.",
+    "source.publisher": "Eparchy of Saint Maron of Brooklyn",
+    "source.section": "A Guide to the Maronite Divine Liturgy, Service of the Eucharist - The Anaphora",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor. Questions about confession or participation in the sacraments belong with a priest.",
+    "prayerTarget.heading": "Glory Be",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://www.stmaron.org/liturgy-guide",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false,
+   "sourceAuthor": "Chorbishop Seely Beggiani"
+  },
+  "gratitude-02": {
+   "need": "gratitude",
+   "copy": {
+    "question": "Can I give thanks when life is difficult?",
+    "practicalAnswer": "Yes, but you do not have to pretend pain is good or hide it from God.\nName one gift you can honestly receive today, then bring your suffering to him as well.",
+    "why": "PARAPHRASE: Paul calls believers to thank God in every situation as part of life in Christ. This guidance does not ask anyone to praise harm. 1 Thessalonians 5:18.",
+    "source.publisher": "USCCB (NABRE)",
+    "source.section": "1 Thessalonians 5:18 (consulted in NABRE; original paraphrase only)",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Devotional prayer",
+    "boundaryNote": "For confession, medical need, or crisis, speak to a priest or doctor. Gratitude does not mean accepting abuse, refusing treatment, or avoiding help.",
+    "prayerTarget.heading": "Glory Be",
+    "prayerTarget.type": "Devotional prayer"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/1thessalonians/5",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  }
+ }
 }

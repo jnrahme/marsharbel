@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<script defer src="/analytics-init.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Help Me Pray</title>
+<meta name="description" content="Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits." />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="canonical" href="https://marsharbel.com/help-me-pray" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Saint Charbel" />
+<meta property="og:title" content="Help Me Pray" />
+<meta property="og:description" content="Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits." />
+<meta property="og:url" content="https://marsharbel.com/help-me-pray" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary" />
+<link rel="stylesheet" href="/assets/site.css" />
+<style>
+.hmp-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.hmp-nav .need-link{padding:.5rem .9rem;border:1px solid #b9a27a;border-radius:999px;text-decoration:none;color:inherit}
+.hmp-nav .need-link[aria-pressed="true"]{background:#b9a27a;color:#fff}
+.hmp-card{border:1px solid #ddd;border-radius:8px;padding:1rem;margin:1rem 0}
+.hmp-status{display:inline-block;font-size:.8rem;padding:.15rem .5rem;border-radius:999px;background:#eee}
+.hmp-field{margin:.5rem 0}
+.hmp-label{font-weight:600}
+.hmp-begin[disabled]{opacity:.5}
+.hmp-notready{font-size:.9rem;color:#555}
+.review-note{background:#fdf6e3;border:1px solid #e8d9a0;padding:.6rem .8rem;border-radius:6px}
+</style>
+</head>
+<body>
+<main>
+<div class="opening">
+<h1>Help Me Pray</h1>
+<p>Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.</p>
+<p class="review-note">Cards marked &quot;In review&quot; are not ready to use. Their prayer text and Begin action are unavailable.</p>
+</div>
+<h2 id="needs-heading">What brings you here?</h2>
+<nav class="hmp-nav" id="hmp-nav">
+      <a class="need-link" href="#need-restart" data-need="restart"><span class="need-label">Beginning or returning to prayer</span></a>
+      <a class="need-link" href="#need-family" data-need="family"><span class="need-label">Family</span></a>
+      <a class="need-link" href="#need-illness" data-need="illness"><span class="need-label">Illness</span></a>
+      <a class="need-link" href="#need-gratitude" data-need="gratitude"><span class="need-label">Gratitude</span></a>
+      <a class="need-link" href="#need-discouragement" data-need="discouragement"><span class="need-label">Discouragement in prayer</span></a>
+      <a class="need-link" href="#need-maronite" data-need="maronite"><span class="need-label">Understanding Maronite prayer</span></a>
+</nav>
+<div id="hmp-app"></div>
+<noscript><p class="review-note">Cards marked &quot;In review&quot; are not ready to use. Their prayer text and Begin action are unavailable.</p></noscript>
+<section class="boundary">
+<h2>Prayer and the help you need</h2>
+<p>This guide offers devotional guidance, not a sacrament, diagnosis, or promise of healing. For confession or personal spiritual direction, speak with a priest. Keep receiving medical care, and seek urgent local help in a crisis.</p>
+</section>
+<p class="privacy-note">You do not need to enter your name, prayer intention, or personal details to use this guide.</p>
+</main>
+<script type="module" src="/assets/help-me-pray.js"></script>
+</body>
+</html>
