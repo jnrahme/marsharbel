@@ -906,6 +906,30 @@
       "source": "Qannoubine Monastery. Author: Please pray for the person who made this website.",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "shared-nav.header.media",
+      "selector": "header nav a.nav-parent[href=\"./music\"]",
+      "kind": "text",
+      "nodeIndex": 0,
+      "source": "Media",
+      "sharedMessage": "navigation.media"
+    },
+    {
+      "key": "shared-nav.header.music",
+      "selector": "header nav .nav-group:has(> a.nav-parent[href=\"./music\"]) .nav-sub a[href=\"./music\"]",
+      "kind": "text",
+      "nodeIndex": 0,
+      "source": "Music",
+      "sharedMessage": "navigation.music"
+    },
+    {
+      "key": "shared-nav.header.video",
+      "selector": "header nav .nav-group:has(> a.nav-parent[href=\"./music\"]) .nav-sub a[href=\"./videos\"]",
+      "kind": "text",
+      "nodeIndex": 0,
+      "source": "Video",
+      "sharedMessage": "navigation.video"
     }
   ],
   "messages": {
