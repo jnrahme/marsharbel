@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "status": "preview",
+  "note": "Provider-agnostic launch catalog. Prices stay null until real Printify costs are read by API and Joey approves (see docs/store/pricing-sheet.md). Nothing here is for sale.",
+  "checkout": {
+    "provider": "printify-popup",
+    "storeUrl": null,
+    "enabled": false
+  },
+  "products": [
+    {
+      "id": "tee-classic",
+      "kind": "apparel",
+      "title": "Hermitage Tee",
+      "blurb": "Heavy cotton unisex tee with a quiet painterly print from the storybook.",
+      "art": "/media/storybook-charbel-v2/images/page-01.webp",
+      "printify": {
+        "blueprintHint": "Unisex Heavy Cotton Tee",
+        "verify": true
+      },
+      "priceCents": null,
+      "checkoutUrl": null,
+      "alt": "Hermitage Tee - storybook artwork"
+    },
+    {
+      "id": "mug-11oz",
+      "kind": "home",
+      "title": "Morning Prayer Mug",
+      "blurb": "11 oz ceramic mug for the first quiet minutes of the day.",
+      "art": "/media/storybook-charbel-v2/images/page-02.webp",
+      "printify": {
+        "blueprintHint": "Accent or white ceramic mug 11oz",
+        "verify": true
+      },
+      "priceCents": null,
+      "checkoutUrl": null,
+      "alt": "Morning Prayer Mug - storybook artwork"
+    },
+    {
+      "id": "tote-canvas",
+      "kind": "accessory",
+      "title": "Pilgrim Tote",
+      "blurb": "Canvas tote for the rosary, a missal and the walk to church.",
+      "art": "/media/storybook-charbel-v2/images/page-03.webp",
+      "printify": {
+        "blueprintHint": "Cotton tote bag",
+        "verify": true
+      },
+      "priceCents": null,
+      "checkoutUrl": null,
+      "alt": "Pilgrim Tote - storybook artwork"
+    },
+    {
+      "id": "poster-matte",
+      "kind": "print",
+      "title": "Cedar Light Poster",
+      "blurb": "Matte art print of a storybook scene, ready to frame.",
+      "art": "/media/storybook-charbel-v2/images/page-04-v2.webp",
+      "printify": {
+        "blueprintHint": "Matte vertical poster",
+        "verify": true
+      },
+      "priceCents": null,
+      "checkoutUrl": null,
+      "alt": "Cedar Light Poster - storybook artwork"
+    },
+    {
+      "id": "cards-prayer",
+      "kind": "print",
+      "title": "Prayer Card Set",
+      "blurb": "Small cards with a short prayer on the back. Offered only if the print catalog supports them.",
+      "art": "/media/storybook-charbel-v2/images/page-05-v2.webp",
+      "printify": {
+        "blueprintHint": "Greeting or postcard set",
+        "verify": true,
+        "optional": true
+      },
+      "priceCents": null,
+      "checkoutUrl": null,
+      "alt": "Prayer Card Set - storybook artwork"
+    }
+  ],
+  "labels": {
+    "order": "Order",
+    "preview": "Preview only"
+  }
+}
