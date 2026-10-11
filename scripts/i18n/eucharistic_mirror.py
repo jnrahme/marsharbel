@@ -21,6 +21,8 @@ TEXT_ONLY = ('title', 'place', 'era', 'label', 'alt', 'license', 'sourceLabel', 
 HTML_TAG = re.compile(r'<\s*/?\s*[a-zA-Z!]')
 
 
+SHARED_NAV_LABELS={'Media':'navigation.media','Music':'navigation.music','Video':'navigation.video'}
+
 def validate(en, local, lang):
     if set(local) != set(en) or set(local['hub']) != set(en['hub']) or set(local['stories']) != set(en['stories']):
         raise ValueError(f'{lang}: catalog shape differs from English')
@@ -173,6 +175,12 @@ def render_eucharistic(root=ROOT, registry=None):
                 text=link.get_text(strip=True).replace('▾','')
                 if text=='Miracles & Reports':
                     link.string=header['header.miraclesAndReports']
+                elif text in SHARED_NAV_LABELS:
+                    # Shared Media/Music/Video chrome uses the locale's reviewed common.json label; never new text.
+                    child=link.find('span',class_='nav-chev')
+                    if child:child.extract()
+                    link.clear();link.append(common[SHARED_NAV_LABELS[text]])
+                    if child:link.append(child)
                 else:
                     key=chrome_lookup.get(text)
                     if key and key in header:
