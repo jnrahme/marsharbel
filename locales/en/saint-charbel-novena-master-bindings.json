@@ -1451,21 +1451,24 @@
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
       "source": "Media",
       "kind": "text",
-      "nodeIndex": 0
+      "nodeIndex": 0,
+      "sharedMessage": "navigation.media"
     },
     {
       "key": "saint-charbel-novena.header.music",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Music",
       "kind": "text",
-      "nodeIndex": 0
+      "nodeIndex": 0,
+      "sharedMessage": "navigation.music"
     },
     {
       "key": "saint-charbel-novena.header.video",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
       "source": "Video",
       "kind": "text",
-      "nodeIndex": 0
+      "nodeIndex": 0,
+      "sharedMessage": "navigation.video"
     },
     {
       "key": "saint-charbel-novena.header.gallery",
@@ -1673,9 +1676,6 @@
     "saint-charbel-novena.footer.deutsch": "Deutsch",
     "saint-charbel-novena.footer.polski": "Polski",
     "saint-charbel-novena.footer.text-3": "Русский",
-    "saint-charbel-novena.header.media": "Media",
-    "saint-charbel-novena.header.music": "Music",
-    "saint-charbel-novena.header.video": "Video",
     "saint-charbel-novena.header.gallery": "Gallery"
   }
 }
