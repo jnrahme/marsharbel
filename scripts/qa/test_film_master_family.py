@@ -11,9 +11,9 @@ class FilmMasterFamily(unittest.TestCase):
   self.codes=('en','ar','fr','es','pt','it','de','pl','ru','hi','th','zh-Hans')
   self.routes={c:('/'+m.SLUG if c=='en' else '/'+c+'/'+m.SLUG) for c in self.codes}
   self.cfg={'master':m.SLUG+'.html','english':self.routes['en'],'routes':{c:p for c,p in self.routes.items() if c!='en'},'renderLocales':list(self.codes[1:])}
-  self.r={'site':'https://marsharbel.com','defaultLocale':'en','locales':{c:{'direction':'rtl' if c=='ar' else 'ltr'} for c in self.codes},'pageMirrors':{m.FAMILY:self.cfg}}
+  self.r={'site':'https://marsharbel.com','defaultLocale':'en','locales':{c:{'direction':'rtl' if c=='ar' else 'ltr','home':None if c=='zh-Hans' else ('/' if c=='en' else '/'+c+'/')} for c in self.codes},'pageMirrors':{m.FAMILY:self.cfg}}
   self.write('locales/registry.json',self.r)
-  template='<article id="'+m.ID+'"><h3><a class="card-cover" href="/news">${premiere.title}</a></h3><p>${premiere.body} <a href="https://example.invalid/source">Source</a></p><h4>Video</h4><iframe src="https://example.invalid/video"></iframe></article>'
+  template='<article id="'+m.ID+'"><h3><a class="card-cover" href="/'+m.SLUG+'">${premiere.title}</a></h3><p>${premiere.body} <a href="https://example.invalid/source">Source</a></p><h4>Video</h4><iframe src="https://example.invalid/video"></iframe></article>'
   self.write('templates/news-desk/cards.html',template);english={'premiere.title':'Title','premiere.body':'Body'};self.write('locales/en/news-desk.json',english)
   source=template.replace('${premiere.title}','Title').replace('${premiere.body}','Body');self.write('news.html',source)
   article=str(m.adapted(BeautifulSoup(source,'html.parser').article))
@@ -21,13 +21,19 @@ class FilmMasterFamily(unittest.TestCase):
   switcher='<nav class="film-locale-switcher">'+''.join('<a hreflang="'+c+'" href="'+p+'">'+c+'</a>' for c,p in self.routes.items())+'</nav>'
   self.pages={}
   for c,route in self.routes.items():
-   text='<html lang="'+c+'" dir="'+self.r['locales'][c]['direction']+'"><head><link rel="canonical" href="https://marsharbel.com'+route+'"/>'+links+'<style>'+m.RULE+'</style></head><body><header>Header</header><main>'+article+'</main>'+switcher+'<footer>Footer</footer></body></html>'
+   text='<html lang="'+c+'" dir="'+self.r['locales'][c]['direction']+'"><head><link rel="canonical" href="https://marsharbel.com'+route+'"/>'+links+'<style>'+m.style_for(c)+'</style></head><body><header>Header</header><main>'+article+'</main>'+switcher+'<footer>Footer</footer></body></html>'
    file=m.SLUG+'.html' if c=='en' else c+'/'+m.SLUG+'.html';self.write(file,text);self.pages[c]=(file,text)
    self.write('locales/'+c+'/'+m.FAMILY+'-copy.json',{'body':'Body'})
   master=self.pages['en'][1];self.write('locales/en/'+m.FAMILY+'-bindings.json',{'master':m.SLUG+'.html','masterSha256':m.digest(master),'bindings':[{'key':'body','selector':'article p','kind':'text','nodeIndex':0,'source':'Body'}]})
   raw=BeautifulSoup(template,'html.parser').article
   self.contract={'family':m.FAMILY,'templateSha256':m.digest(str(raw)),'englishCatalogSha256':m.digest(json.dumps(english,ensure_ascii=False,sort_keys=True)),'sourceFeatureSha256':m.digest(str(BeautifulSoup(source,'html.parser').article)),'shellSha256':{c:m.shell_digest(t,self.routes[c]) for c,(f,t) in self.pages.items()}}
   self.write('config/film-master-family.json',self.contract)
+  self.sitemap='<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>https://marsharbel.com'+p+'</loc><lastmod>2026-10-10</lastmod></url>' for p in self.routes.values())+'</urlset>'
+  self.write('sitemap.xml',self.sitemap)
+  for c,cfg in self.r['locales'].items():
+   if cfg['home']:
+    f='index.html' if c=='en' else c+'/index.html'
+    self.write(f,'<a class="home-news-lead home-news-lead--film" href="'+self.routes[c]+'">Film</a>')
  def fail(self,message):
   with self.assertRaisesRegex(ValueError,message):m.validate_family(self.root)
  def change_page(self,code,old,new):
@@ -55,8 +61,8 @@ class FilmMasterFamily(unittest.TestCase):
    self.change_page('ar',old,new);self.fail('article differs from keyed output ar')
  def test_altered_shell_refuse(self):self.change_page('ar','Header','Changed header');self.fail('independent final shell drift ar')
  def test_missing_duplicate_wrong_underline_refuse(self):
-  for replacement in ('',('<style>'+m.RULE+'</style>')*2,'<style>'+m.RULE.replace('underline','none')+'</style>'):
-   self.change_page('ar','<style>'+m.RULE+'</style>',replacement);self.fail('exactly one exact underline rule required ar')
+  for replacement in ('',('<style>'+m.style_for('ar')+'</style>')*2,'<style>'+m.style_for('ar').replace('underline','none')+'</style>','<style>'+m.RULE+'</style>'):
+   self.change_page('ar','<style>'+m.style_for('ar')+'</style>',replacement);self.fail('exactly one exact underline rule required ar')
  def test_missing_wrong_xdefault_and_nonreciprocal_refuse(self):
   old='<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/'+m.SLUG+'"/>'
   for replacement in ('',old.replace('/'+m.SLUG,'/other')):
@@ -65,4 +71,41 @@ class FilmMasterFamily(unittest.TestCase):
  def test_js_only_switcher_refuse(self):
   file,text=self.pages['ar'];text=text.replace('<a hreflang="fr" href="/fr/'+m.SLUG+'">','<a hreflang="fr" data-href="/fr/'+m.SLUG+'">');self.write(file,text)
   self.contract['shellSha256']['ar']=m.shell_digest(text,self.routes['ar']);self.write('config/film-master-family.json',self.contract);self.fail('crawlable 12-locale switcher required ar')
+ def test_missing_duplicate_sitemap_url_refuse(self):
+  entry='<url><loc>https://marsharbel.com'+self.routes['ar']+'</loc><lastmod>2026-10-10</lastmod></url>'
+  for replacement in ('',entry*2):
+   self.write('sitemap.xml',self.sitemap.replace(entry,replacement));self.fail('sitemap URL must occur exactly once ar')
+ def test_lastmod_required_for_each_of_twelve(self):
+  for code,route in self.routes.items():
+   old='<loc>https://marsharbel.com'+route+'</loc><lastmod>2026-10-10</lastmod>'
+   self.write('sitemap.xml',self.sitemap.replace(old,'<loc>https://marsharbel.com'+route+'</loc>'))
+   self.fail('valid sitemap lastmod required '+code)
+ def test_missing_invalid_lastmod_refuse(self):
+  for replacement in ('','<lastmod>2026-02-30</lastmod>','<lastmod>tomorrow</lastmod>'):
+   self.write('sitemap.xml',self.sitemap.replace('<lastmod>2026-10-10</lastmod>',replacement));self.fail('valid sitemap lastmod required')
+ def test_wrong_js_only_home_lead_refuse(self):
+  for link in ('<a class="home-news-lead--film" href="/charbel-film-premiere">Film</a>','<a class="home-news-lead--film" data-href="/ar/charbel-film-premiere">Film</a>','<a class="home-news-lead--film" href="/ar/charbel-film-premiere" rel="nofollow">Film</a>'):
+   self.write('ar/index.html',link);self.fail('home lead must reach own locale article ar')
+ def test_news_card_wrong_target_refuse(self):
+  source=(self.root/'news.html').read_text().replace('href="/'+m.SLUG+'"','href="/saint-charbel-movie"')
+  self.write('news.html',source)
+  # Discovery is separately tested so source-contract drift cannot mask it.
+  with self.assertRaisesRegex(ValueError,'news card must reach EN article'):m.validate_discovery(self.root,self.r,self.routes)
+class FilmShellWording(unittest.TestCase):
+ def test_exact_file_only_and_count_limits(self):
+  import importlib.util
+  spec=importlib.util.spec_from_file_location('film_wording_policy',ROOT/'scripts/qa/check_i18n_policy.py');policy=importlib.util.module_from_spec(spec);spec.loader.exec_module(policy)
+  with tempfile.TemporaryDirectory() as tmp:
+   root=Path(tmp);path=root/'locales/en/film-premiere-shell-copy.json';path.parent.mkdir(parents=True)
+   self.assertEqual(policy.film_shell_wording(root,'charbel-film-premiere.html'),{})
+   path.write_text(json.dumps({'charbel-film-premiere.html':{'Title':2,'Description':2,'Skip':1}}))
+   self.assertEqual(policy.film_shell_wording(root,'other.html'),{})
+   allowed=policy.film_shell_wording(root,'charbel-film-premiere.html')
+   from collections import Counter
+   self.assertEqual(Counter({'Title':3,'Unexpected':1})-allowed,{'Title':1,'Unexpected':1})
+   path.write_text(json.dumps({'other.html':{'Title':2}}))
+   with self.assertRaisesRegex(ValueError,'exact EN film file'):policy.film_shell_wording(root,'charbel-film-premiere.html')
+   for bad in (0,-1,True,'2'):
+    path.write_text(json.dumps({'charbel-film-premiere.html':{'Title':bad}}))
+    with self.assertRaisesRegex(ValueError,'positive exact counts'):policy.film_shell_wording(root,'charbel-film-premiere.html')
 if __name__=='__main__':unittest.main()

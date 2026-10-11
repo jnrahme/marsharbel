@@ -52,6 +52,8 @@ class CatalogTests(unittest.TestCase):
         # Minimal policy fixture tests unrelated hardcoded strings, not full mirror rendering.
         registry=json.loads((self.root/'locales/registry.json').read_text())
         registry['exactMirrors']={}
+        # The film family has its own strict gate (test_film_master_family); keep it out of this string-policy fixture.
+        registry.get('pageMirrors',{}).pop('film-premiere-master',None)
         (self.root/'locales/registry.json').write_text(json.dumps(registry))
         shutil.copyfile(ROOT/'same-page-copy.js', self.root/'same-page-copy.js')
         # Mirror capability validation needs real source masters in this fixture.

@@ -132,5 +132,65 @@ class NewPageLocales(unittest.TestCase):
         self.assertIn('register exactly one', self.errors(added)[0])
 
 
+class FilmExactShellCoverage(unittest.TestCase):
+    def setUp(self):
+        import copy
+        from collections import Counter
+        from bs4 import BeautifulSoup
+        from check_new_page_locales import film_shell_coverage
+        self.temp=TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name)
+        self.page='charbel-film-premiere.html';self.family='film-premiere-master'
+        self.contract=json.loads((ROOT/'locales/en/film-premiere-master-bindings.json').read_text())
+        (self.root/self.page).write_bytes((ROOT/self.page).read_bytes())
+        self.soup=BeautifulSoup((ROOT/self.page).read_text(),'html.parser')
+        for file in ('locales/registry.json','locales/en/film-premiere-shell-copy.json','locales/en/nav-legacy-copy.json','locales/en/travel.json'):
+            path=self.root/file;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes((ROOT/file).read_bytes())
+        # Independent fixture counter is collected from real uncovered DOM nodes.
+        from bs4 import Comment,NavigableString,Doctype,Declaration
+        covered=set()
+        for b in self.contract['bindings']:
+            node=self.soup.select(b['selector'])[0]
+            covered.add(('text',id(node.contents[b['nodeIndex']]))) if b['kind']=='text' else covered.add(('attr',id(node),b['attribute']))
+        self.uncovered=Counter()
+        for node in self.soup.descendants:
+            if isinstance(node,NavigableString) and not isinstance(node,(Comment,Doctype,Declaration)) and node.parent.name not in ('script','style') and str(node).strip() and ('text',id(node)) not in covered:self.uncovered[' '.join(str(node).split())]+=1
+            if getattr(node,'attrs',None):
+                attrs=['alt','title','aria-label','placeholder']
+                if node.name=='meta' and (node.get('name')=='description' or node.get('property') in ('og:title','og:description','twitter:title','twitter:description')):attrs.append('content')
+                for attr in attrs:
+                    if node.get(attr) and ('attr',id(node),attr) not in covered:self.uncovered[node[attr]]+=1
+        self.validate=film_shell_coverage
+    def call(self):return self.validate(self.root,self.page,self.family,self.contract,self.soup,self.uncovered)
+    def test_exact_real_counter_passes(self):self.assertTrue(self.call())
+    def test_extra_uncovered_and_each_catalog_occurrence_refuse(self):
+        original=self.uncovered.copy()
+        for value in ['Uncataloged injected text',*json.loads((self.root/'locales/en/film-premiere-shell-copy.json').read_text())[self.page]]:
+            self.uncovered=original.copy();self.uncovered[value]+=1
+            with self.assertRaisesRegex(ValueError,'exact uncovered/catalog counter mismatch'):self.call()
+    def test_missing_nav_legacy_phrase_refuse(self):
+        nav=json.loads((self.root/'locales/en/nav-legacy-copy.json').read_text())['values'][self.page]
+        for value in nav:
+            original=self.uncovered.copy();self.uncovered[value]-=1
+            with self.assertRaisesRegex(ValueError,'exact uncovered/catalog counter mismatch'):self.call()
+            self.uncovered=original
+    def test_non_film_page_same_strings_not_covered(self):
+        self.page='other.html';self.assertFalse(self.call())
+    def test_unregistered_family_not_covered(self):
+        file=self.root/'locales/registry.json';r=json.loads(file.read_text());r['pageMirrors'].pop(self.family);file.write_text(json.dumps(r));self.assertFalse(self.call())
+    def test_hub_allowance_absent_without_nav_condition(self):
+        file=self.root/self.page;file.write_text(file.read_text().replace('<nav class="links"','<nav class="other"'))
+        with self.assertRaisesRegex(ValueError,'exact uncovered/catalog counter mismatch'):self.call()
+        value=json.loads((self.root/'locales/en/travel.json').read_text())['hubLabel'];self.uncovered[value]-=1
+        self.assertTrue(self.call())
+    def test_extra_travel_occurrence_refuse(self):
+        value=json.loads((self.root/'locales/en/travel.json').read_text())['hubLabel'];self.uncovered[value]+=1
+        with self.assertRaisesRegex(ValueError,'exact uncovered/catalog counter mismatch'):self.call()
+    def test_caption_pair_mapping_exactly_once(self):
+        caption=next(b['source'] for b in self.contract['bindings'] if b['key']=='premiere.videoCaption')
+        file=self.root/'locales/en/film-premiere-shell-copy.json';d=json.loads(file.read_text());d[self.page][caption]=2;file.write_text(json.dumps(d))
+        with self.assertRaisesRegex(ValueError,'exactly one occurrence'):self.call()
+        d[self.page][caption]=1;file.write_text(json.dumps(d));self.contract['bindings']=[b for b in self.contract['bindings'] if not(b['key']=='premiere.videoCaption' and b['kind']=='attribute')]
+        with self.assertRaisesRegex(ValueError,'exact caption pair'):self.call()
+
 if __name__ == '__main__':
     unittest.main()

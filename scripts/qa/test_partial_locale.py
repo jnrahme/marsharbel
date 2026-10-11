@@ -231,9 +231,9 @@ class PartialLocaleTests(unittest.TestCase):
             if path.parent.name=='zz' and path.name=='runtime.json':return read_json(ROOT/'locales/de/runtime.json')
             return read_json(ROOT/path.relative_to(root))
         for cfg in self.registry['pageMirrors'].values():
-            master=cfg.get('master')
-            if master and (ROOT/master).is_file() and not (root/master).exists():
-                target=root/master;target.parent.mkdir(parents=True,exist_ok=True);target.symlink_to(ROOT/master)
+            other_master=cfg.get('master')
+            if other_master and (ROOT/other_master).is_file() and not (root/other_master).exists():
+                target=root/other_master;target.parent.mkdir(parents=True,exist_ok=True);target.symlink_to(ROOT/other_master)
         return root,reader
 
     def test_exact_film_partial_grant_without_home_or_topics(self):
@@ -247,7 +247,9 @@ class PartialLocaleTests(unittest.TestCase):
         for extra in ('zz/index.html','zz/history.html'):
             with self.assertRaisesRegex(ValueError,'output mismatch'):validate_partial_outputs(root,self.registry,{**outputs,root/extra:''})
         self.assertIsNone(home_url(self.registry,'zz'))
-        self.registry['locales']['zh-Hans']['capabilities']['mirrorTabs'].append('film')
+        tabs=self.registry['locales']['zh-Hans']['capabilities']['mirrorTabs']
+        if 'film' not in tabs:tabs.append('film')
+        self.assertEqual(tabs,['travel','film'])
         self.registry['pageMirrors'][name]['routes']['zh-Hans']='/zh-Hans'+english
         self.registry['pageMirrors'][name]['renderLocales'].append('zh-Hans')
         validate_registry(self.registry)

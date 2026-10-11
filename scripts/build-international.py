@@ -262,9 +262,8 @@ def outputs(root=ROOT):
     if 'saint-charbel-prayers-master' in registry.get('pageMirrors',{}):
         if '<loc>'+registry['site']+'/saint-charbel-prayers</loc>' not in text:
             text=text.replace('</urlset>','  <url><loc>'+registry['site']+'/saint-charbel-prayers</loc></url>\n</urlset>')
-    from build_film_news_ar import render_source as film_feature_source
-    film_path,film_text=film_feature_source(root)
-    result[film_path]=film_text
+    from build_film_premiere_family import outputs as film_family_outputs
+    result.update(film_family_outputs(root))
     generated = [registry['site'] + page_url(registry, code) for code in published_home_locales(registry) if code != registry['defaultLocale']]
     generated += [registry['site'] + page_url(registry, code, topic) for code in registry['locales'] for topic in locale_topics(registry, code)]
     generated += [registry['site'] + '/' + code + '/miracles/eucharistic/' + ('' if slug=='index' else slug)
@@ -275,7 +274,11 @@ def outputs(root=ROOT):
                   for code, route in mirror['routes'].items() if code != 'en' and code in mirror.get('renderLocales', []) and code not in mirror.get('sitemapHeld', [])]
     generated += [registry['site'] + route for mirror in {**registry.get('authoredMirrors', {}), **registry.get('exactMirrors', {})}.values()
                   for route in mirror['routes'].values() if route != mirror['english']]
-    generated.append(registry['site']+'/ar/charbel-film-premiere')
+    # Strict film family: locale routes join via pageMirrors above; register the EN route here.
+    if 'film-premiere-master' in registry.get('pageMirrors',{}):
+        en_film=registry['site']+registry['pageMirrors']['film-premiere-master']['english']
+        if '<loc>'+en_film+'</loc>' not in text:
+            generated.append(en_film)
     def entry(url):
         from i18n.sitemap_dates import generated_lastmod
         changed=generated_lastmod(root,url,lastmods)

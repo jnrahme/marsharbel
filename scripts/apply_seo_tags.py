@@ -14,7 +14,7 @@ SITE = "https://marsharbel.com"
 DEFAULT_IMAGE = f"{SITE}/saint-charbel.jpg"
 # Text-led editorial pages whose social image is the established site image;
 # an incidental archive photo is not the feature's social image.
-TEXT_LED_PAGES = ("news.html", "saint-charbel-movie.html")
+TEXT_LED_PAGES = ("news.html", "saint-charbel-movie.html", "charbel-film-premiere.html")
 # The site publishes under its own name; no personal or organizational credentials are claimed.
 PUBLISHER = {"@type": "Organization", "name": "marsharbel.com", "url": f"{SITE}/"}
 CHARBEL_ALIASES = ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"]
