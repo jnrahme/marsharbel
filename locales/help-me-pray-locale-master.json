@@ -1,0 +1,27 @@
+{
+  "family": "help-me-pray-master",
+  "contentState": "partial: 14 standard OF/GB rows (7 locales) + en shell catalog; 11 locale catalogs + cards pending reconciliation",
+  "catalogs": {
+    "locales/ar/help-me-pray-prayers.json": "1fb42c3a29ed3f19bf1d472e4d0627a6c1ea597d5296b2f55e9e6430333f72d8",
+    "locales/de/help-me-pray-prayers.json": "a5341f1643a13e3d2528d555e91473e17c9b5275d39de710f9b0bf9a92015314",
+    "locales/es/help-me-pray-prayers.json": "c1c9f6abce6df890548bc05e584df36beca8feec6c839a775d67b495c0758d42",
+    "locales/fr/help-me-pray-prayers.json": "1cbc72a4504deefc11e999ec47da5e7f64e780039f55ebca687954d6d9fe0fe2",
+    "locales/it/help-me-pray-prayers.json": "073b151dcdf16b200bf443a70357798696343a6d868166ba9e4980835aa00bf8",
+    "locales/pl/help-me-pray-prayers.json": "859a5ea794126b071e631a29e28dd9e9a020df496e9eb319480eb05f6a777cf6",
+    "locales/pt/help-me-pray-prayers.json": "510a0f8af18b838fe191f6f6ddb29574ea23f2a91332a5a1f7df1d5d615f8d7f",
+    "locales/en/help-me-pray-catalog.json": "77a5754eb346c7eb7e16fe17d83c1c5a6014f0945e04406021198d6e064e2223"
+  },
+  "digest": "bfacbff85a0383b66a280845d6534396d0788fd345d3ccd0181533720c25ac82",
+  "reviews": {
+    "internal-faith": {
+      "status": "quality-verified-candidate",
+      "artifactSha256": "00b14c13ee25281a379169b6e900cb393cf1b249aa547523de909958ea3d6eed"
+    },
+    "locale": {
+      "status": "intl-scoped-pass",
+      "payloadManifestSha256": "0e5c18f724863fe9f9957810eb565a46a357486557f72a058c186c19e18f4bb1",
+      "rowRefConvention": "locale:prayer",
+      "rows": 14
+    }
+  }
+}
