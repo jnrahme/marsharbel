@@ -1,9 +1,415 @@
 {
  "version": 1,
  "master": "gallery.html",
- "masterSha256": "170db79e5fdd4259137c1fc028fe4f99209b95488b905b57881bdb6d7148ba44",
+ "masterSha256": "ecc95e0e3e8c3f79145610bdc779e2a73b9ae0923d27cc70f3286b434089692e",
  "sourceRevision": "0b4d186b",
  "bindings": [
+  {
+   "key": "gallery.title",
+   "selector": "html > head:nth-of-type(1) > title:nth-of-type(1)",
+   "source": "Saint Charbel Gallery | Devotional Images",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.meta-description",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(11)",
+   "source": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "gallery.meta-og-title",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(15)",
+   "source": "Saint Charbel Gallery | Devotional Images",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "gallery.meta-og-description",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(16)",
+   "source": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "gallery.meta-twitter-title",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(20)",
+   "source": "Saint Charbel Gallery | Devotional Images",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "gallery.meta-twitter-description",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(21)",
+   "source": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "gallery.header.saint-charbel",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+   "source": "Saint Charbel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header.home",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Home",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-legacy",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Legacy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-saint-charbel-encyclopedia",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Charbel Encyclopedia",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-full-history",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Full History",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-miracles",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-miracles-reports",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Miracles & Reports",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-eucharistic-miracles",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Eucharistic Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-letters",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Letters",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-voice-testimony",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Voice Testimony",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-saints",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-saints-2",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-children-s-books",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Children's Books",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-prayer",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+   "source": "Prayer",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-prayer-library",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Prayer Library",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-find-a-prayer-by-intention",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Find a Prayer by Intention",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-prayer-for-the-sick",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Prayer for the Sick",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-prayer-for-healing",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Prayer for Healing",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-prayer-for-anxiety",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Prayer for Anxiety",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-prayer-for-depression",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "Prayer for Depression",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-prayer-for-students",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Prayer for Students",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-prayer-for-addiction",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Prayer for Addiction",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-prayer-for-family",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Prayer for Family",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-prayer-for-pregnancy",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Prayer for Pregnancy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-prayer-for-a-miracle",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Prayer for a Miracle",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-saint-charbel-prayers",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "Saint Charbel Prayers",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-saint-charbel-novena",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Novena",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-feast-day",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+   "source": "Feast Day",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-rosary-guide",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+   "source": "Rosary Guide",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-rosary-minibook",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+   "source": "Rosary Minibook",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-mystery-meditation",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+   "source": "Mystery Meditation",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-become-like-him",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+   "source": "Become Like Him",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-travel",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-travel-2",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-visiting-annaya",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Visiting Annaya",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-annaya-online-tour",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Annaya Online Tour",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-bekaa-kafra",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Bekaa Kafra",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-our-lady-of-lebanon-at-harissa",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Our Lady of Lebanon at Harissa",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-the-cedars-of-god",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "the Cedars of God",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-bkerke-and-the-maronite-patriarchate",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Bkerke and the Maronite Patriarchate",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-qadisha-valley",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Qadisha Valley",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-qannoubine-monastery",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Qannoubine Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-qozhaya-monastery",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Qozhaya Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-saint-charbel-s-lebanon",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Saint Charbel's Lebanon",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-the-hermitage",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "The Hermitage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-saint-charbel-trail",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Trail",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-news",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "News",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-media",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+   "source": "Media",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-music",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Music",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-video",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Video",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-a-gallery",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Gallery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.header-aria-primary",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+   "source": "Primary",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
   {
    "key": "gallery.main-main-content-media-2",
    "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
@@ -472,11 +878,107 @@
    "source": "AI transformation, not a photograph: close portrait of Saint Charbel in a black monastic hood, eyes lowered, with a full dark beard, a lit window blurred behind him",
    "kind": "attribute",
    "attribute": "alt"
+  },
+  {
+   "key": "gallery.main-aria-media-3",
+   "selector": "#main-content > nav:nth-of-type(1)",
+   "source": "Media",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "gallery.footer-div-gallery-updated-march-2-2026-author",
+   "selector": "html > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "Gallery updated March 2, 2026. Author: Please pray for the person who made this website.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.body-a-skip-to-main-content",
+   "selector": "html > body:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Skip to main content",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.body-gallery-lightbox-close",
+   "selector": "#lightbox-close",
+   "source": "Close",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.body-gallery-lightbox-previous",
+   "selector": "#lightbox-prev",
+   "source": "Previous",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "gallery.body-gallery-lightbox-next",
+   "selector": "#lightbox-next",
+   "source": "Next",
+   "kind": "text",
+   "nodeIndex": 0
   }
  ],
  "messages": {
-  "gallery.header.home": "Home",
-  "gallery.header.saint-charbel": "Saint Charbel",
+  "gallery.title": "Saint Charbel Gallery | Devotional Images",
+  "gallery.meta-description": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+  "gallery.meta-og-title": "Saint Charbel Gallery | Devotional Images",
+  "gallery.meta-og-description": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+  "gallery.meta-twitter-title": "Saint Charbel Gallery | Devotional Images",
+  "gallery.meta-twitter-description": "Browse a real image gallery of Saint Charbel devotion, sacred moments, and visual resources for prayer and reflection.",
+  "gallery.header-a-legacy": "Legacy",
+  "gallery.header-a-saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+  "gallery.header-a-full-history": "Full History",
+  "gallery.header-a-miracles": "Miracles",
+  "gallery.header-a-miracles-reports": "Miracles & Reports",
+  "gallery.header-a-eucharistic-miracles": "Eucharistic Miracles",
+  "gallery.header-a-letters": "Letters",
+  "gallery.header-a-voice-testimony": "Voice Testimony",
+  "gallery.header-a-saints": "Saints",
+  "gallery.header-a-saints-2": "Saints",
+  "gallery.header-a-children-s-books": "Children's Books",
+  "gallery.header-a-prayer": "Prayer",
+  "gallery.header-a-prayer-library": "Prayer Library",
+  "gallery.header-a-find-a-prayer-by-intention": "Find a Prayer by Intention",
+  "gallery.header-a-prayer-for-the-sick": "Prayer for the Sick",
+  "gallery.header-a-prayer-for-healing": "Prayer for Healing",
+  "gallery.header-a-prayer-for-anxiety": "Prayer for Anxiety",
+  "gallery.header-a-prayer-for-depression": "Prayer for Depression",
+  "gallery.header-a-prayer-for-students": "Prayer for Students",
+  "gallery.header-a-prayer-for-addiction": "Prayer for Addiction",
+  "gallery.header-a-prayer-for-family": "Prayer for Family",
+  "gallery.header-a-prayer-for-pregnancy": "Prayer for Pregnancy",
+  "gallery.header-a-prayer-for-a-miracle": "Prayer for a Miracle",
+  "gallery.header-a-saint-charbel-prayers": "Saint Charbel Prayers",
+  "gallery.header-a-saint-charbel-novena": "Saint Charbel Novena",
+  "gallery.header-a-feast-day": "Feast Day",
+  "gallery.header-a-rosary-guide": "Rosary Guide",
+  "gallery.header-a-rosary-minibook": "Rosary Minibook",
+  "gallery.header-a-mystery-meditation": "Mystery Meditation",
+  "gallery.header-a-become-like-him": "Become Like Him",
+  "gallery.header-a-travel": "Travel",
+  "gallery.header-a-travel-2": "Travel",
+  "gallery.header-a-visiting-annaya": "Visiting Annaya",
+  "gallery.header-a-annaya-online-tour": "Annaya Online Tour",
+  "gallery.header-a-bekaa-kafra": "Bekaa Kafra",
+  "gallery.header-a-our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+  "gallery.header-a-the-cedars-of-god": "the Cedars of God",
+  "gallery.header-a-bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+  "gallery.header-a-qadisha-valley": "Qadisha Valley",
+  "gallery.header-a-qannoubine-monastery": "Qannoubine Monastery",
+  "gallery.header-a-qozhaya-monastery": "Qozhaya Monastery",
+  "gallery.header-a-saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+  "gallery.header-a-the-hermitage": "The Hermitage",
+  "gallery.header-a-saint-charbel-trail": "Saint Charbel Trail",
+  "gallery.header-a-news": "News",
+  "gallery.header-a-media": "Media",
+  "gallery.header-a-music": "Music",
+  "gallery.header-a-video": "Video",
+  "gallery.header-a-gallery": "Gallery",
+  "gallery.header-aria-primary": "Primary",
   "gallery.main-main-content-media-2": "Media",
   "gallery.main-main-content-music-2": "Music",
   "gallery.main-main-content-video-2": "Video",
@@ -543,6 +1045,14 @@
   "gallery.main-img-alt-ai-transformation-not-a-photograph-saint-2": "AI transformation, not a photograph: Saint Charbel in a black hood and robe, eyes lowered, seated in a stone hermitage room beside a window and a clay jug",
   "gallery.main-img-alt-ai-transformation-comparison-strip-not-a": "AI transformation comparison strip, not a photograph: the historic image of Saint Charbel on the left beside two AI transformations with a window behind him",
   "gallery.main-img-alt-ai-transformation-not-a-photograph-close": "AI transformation, not a photograph: close portrait of Saint Charbel in a black hood, eyes lowered, white beard, a window blurred behind him, alternate take",
-  "gallery.main-img-alt-ai-transformation-not-a-photograph-close-2": "AI transformation, not a photograph: close portrait of Saint Charbel in a black monastic hood, eyes lowered, with a full dark beard, a lit window blurred behind him"
+  "gallery.main-img-alt-ai-transformation-not-a-photograph-close-2": "AI transformation, not a photograph: close portrait of Saint Charbel in a black monastic hood, eyes lowered, with a full dark beard, a lit window blurred behind him",
+  "gallery.main-aria-media-3": "Media",
+  "gallery.footer-div-gallery-updated-march-2-2026-author": "Gallery updated March 2, 2026. Author: Please pray for the person who made this website.",
+  "gallery.body-a-skip-to-main-content": "Skip to main content",
+  "gallery.body-gallery-lightbox-close": "Close",
+  "gallery.body-gallery-lightbox-previous": "Previous",
+  "gallery.body-gallery-lightbox-next": "Next",
+  "gallery.header.home": "Home",
+  "gallery.header.saint-charbel": "Saint Charbel"
  }
 }
