@@ -296,9 +296,9 @@
         "home": false,
         "topicGuides": [],
         "mirrorTabs": [
-          "travel"
-        ,
-          "film"],
+          "travel",
+          "film"
+        ],
         "runtime": true,
         "selectorCopy": true
       }
@@ -1616,6 +1616,23 @@
         "de": "/de/allerheiligen",
         "pl": "/pl/wszystkich-swietych",
         "x-default": "/all-saints-and-all-souls"
+      }
+    },
+    "help-me-pray-master": {
+      "master": "templates/masters/help-me-pray.html",
+      "english": "/help-me-pray",
+      "routes": {
+        "ar": "/ar/help-me-pray",
+        "de": "/de/help-me-pray",
+        "es": "/es/help-me-pray",
+        "fr": "/fr/help-me-pray",
+        "hi": "/hi/help-me-pray",
+        "it": "/it/help-me-pray",
+        "pl": "/pl/help-me-pray",
+        "pt": "/pt/help-me-pray",
+        "ru": "/ru/help-me-pray",
+        "th": "/th/help-me-pray",
+        "zh-Hans": "/zh-Hans/help-me-pray"
       }
     }
   },
