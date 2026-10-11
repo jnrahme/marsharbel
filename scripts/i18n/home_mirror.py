@@ -51,6 +51,13 @@ def render_home(root, registry, lang, catalog=None):
     for cfg in registry.get('pageMirrors', {}).values():
         if lang in cfg['routes'] and (lang in registry.get('limitedLaunchLocales', []) or cfg['english'] == '/travel'):
             twins[cfg['english'].rstrip('/')] = cfg['routes'][lang]
+    # Extracted features are not equivalent to the whole English archive.
+    # Repoint only the exact reviewed lead destination for its released locale.
+    if lang == 'ar':
+        leads = soup.select('a.home-news-lead--film[href="/news#charbel-premiere-release-2026-10"]')
+        if len(leads) != 1:
+            raise ValueError('Arabic film lead source destination changed')
+        leads[0]['href'] = '/ar/charbel-film-premiere'
     # English app links can use the old /en guide alias for the full prayer master.
     if '/saint-charbel-prayers' in twins:
         twins['/en/prayers'] = twins['/saint-charbel-prayers']
