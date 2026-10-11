@@ -78,6 +78,12 @@ createServer(async (req, res) => {
     pathname = pathname.slice(0, -1);
   }
 
+  // Production serves the Arabic webfonts from untracked -v3 names (PR #278, Hostinger snapshot
+  // shadows tracked paths). Locally the same bytes live at the tracked -v2 names.
+  if (/^\/media\/fonts\/noto-(sans|naskh)-arabic-arabic-v3\.woff2$/.test(pathname) && !(await isFile(join(ROOT, pathname)))) {
+    pathname = pathname.replace('-v3.woff2', '-v2.woff2');
+  }
+
   const filePath = join(ROOT, pathname);
 
   if (await isFile(filePath)) {
