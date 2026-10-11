@@ -37,6 +37,11 @@ class LocaleMirrorPolicy(unittest.TestCase):
         for lang in self.registry.get('homepageMirrors',{}).get('renderLocales',[]):
             self.assertEqual(self.policy['pages'][lang+'/index.html']['status'],'strict',lang)
 
+    def test_registered_film_master_family(self):
+        from i18n.film_master_family import registered, validate_family
+        if registered(ROOT):
+            self.assertEqual(validate_family(ROOT),[])
+
     def test_extracted_features_have_bounded_provenance_and_shell(self):
         from i18n.feature_mirror import check_feature, FEATURES
         for path, entry in self.policy['pages'].items():
