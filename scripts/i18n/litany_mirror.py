@@ -1,4 +1,5 @@
 from i18n.encyclopedia_nav import finish_nav
+from i18n.shared_chrome import shared_header_chrome
 """Arabic litany mirror: preserve the English DOM and fail on untranslated master edits."""
 from bs4 import BeautifulSoup
 import json,re
@@ -55,6 +56,7 @@ def render_litany(root=ROOT):
     en=read_json(root/'locales/en/mirrors/prayers.json');ar=read_json(root/'locales/ar/mirrors/prayers.json')
     chrome={v:ar[k] for k,v in en.items() if k.startswith('header.') and k in ar and isinstance(v,str)}
     chrome.update({'Saint Charbel':'مار شربل','Primary':'التنقل الرئيسي'})
+    chrome.update(shared_header_chrome(root,'ar'))
     for node in soup.select_one('header.topbar').find_all(string=True):
         old=str(node);key=old.strip()
         if key in chrome:node.replace_with(old.replace(key,chrome[key]))
