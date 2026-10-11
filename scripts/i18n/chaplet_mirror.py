@@ -1,4 +1,5 @@
 from i18n.encyclopedia_nav import finish_nav
+from i18n.shared_chrome import shared_header_chrome
 """Generate the Arabic Chaplet from the current English master and keyed copy."""
 from bs4 import BeautifulSoup
 from pathlib import Path
@@ -122,6 +123,7 @@ def render_chaplet(root=ROOT):
     chrome={value:arabic_header[key] for key,value in english_header.items()
             if key.startswith('header.') and key in arabic_header and isinstance(value,str)}
     chrome.update({'Saint Charbel':'مار شربل','Primary':'التنقل الرئيسي'})
+    chrome.update(shared_header_chrome(root,'ar'))
     for node in one('header.topbar').find_all(string=True):
         original=str(node)
         stripped=original.strip()
