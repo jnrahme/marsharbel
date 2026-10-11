@@ -16,7 +16,8 @@ NEEDS = ['restart', 'family', 'illness', 'gratitude', 'discouragement', 'maronit
 
 PAGE_KEYS = {'title', 'intro', 'needsHeading', 'reviewNotice', 'pendingNotice', 'boundaryHeading', 'boundaryCopy', 'privacyCopy'}
 CARD_KEYS = {'question', 'practicalAnswer', 'why', 'source.publisher', 'source.section', 'source.label',
-             'practiceType', 'boundaryNote', 'prayerTarget.heading', 'prayerTarget.type'}
+             'practiceType', 'boundaryNote', 'prayerTarget.heading', 'prayerTarget.type', 'sourceAuthor'}
+BEGGIANI = 'Chorbishop Seely Beggiani, A Guide to the Maronite Divine Liturgy, Eparchy of Saint Maron of Brooklyn'
 
 
 def catalog_path(lang):
@@ -115,6 +116,35 @@ class TestPendingPrayerNotSerialized(unittest.TestCase):
                     if prayer:
                         self.assertNotIn(prayer, payload,
                                          f'pending card {card.get("id", need)} prayer text serialized to browser data')
+
+
+class TestPublicExport(unittest.TestCase):
+    """Independent-verdict copy gate: the public export must be deliberately clean."""
+
+    EXPORT = ROOT / 'assets/help-me-pray-data.json'
+
+    def test_public_export_exists_and_is_clean(self):
+        self.assertTrue(self.EXPORT.exists(), 'public export not built yet (fail-closed until renderer lands)')
+        raw = self.EXPORT.read_text()
+        data = json.loads(raw)
+        # pendingNotice survives the public export
+        try:
+            en = load_catalog('en')
+            self.assertIn(en['page']['pendingNotice'], raw, 'pendingNotice dropped from public export')
+        except FileNotFoundError:
+            self.fail('en catalog missing')
+        # nothing private reaches browser data
+        for forbidden in ('reviewNotice', 'originalReview', 'privateProvenance', 'prayerText', 'quote'):
+            self.assertNotIn(forbidden, raw, f'private field {forbidden} reached browser data')
+        self.assertNotIn(en['page']['reviewNotice'], raw, 'reviewNotice wording reached browser data')
+        # Begin is deliberately off in exported data
+        self.assertIn('"beginEnabled": false', raw.replace(': false', ':false').replace('"beginEnabled":false', '"beginEnabled": false') if False else raw,
+                      'beginEnabled=false must be present in exported data')
+        # maronite-02 carries the deliberate localized public author citation
+        cards = json.dumps(data, ensure_ascii=False)
+        self.assertIn('maronite-02', cards, 'maronite-02 missing from export')
+        self.assertIn('Beggiani', cards,
+                      'maronite-02 public author citation dropped - must carry localized: ' + BEGGIANI)
 
 
 class TestLocaleMasterDigest(unittest.TestCase):
