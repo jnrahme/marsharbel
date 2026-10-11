@@ -17,7 +17,7 @@ class LimitedLaunch(unittest.TestCase):
    self.assertEqual(locale_topics(self.r,lang),[])
    self.assertEqual(self.r['locales'][lang]['slugs'],{})
    families=[name for name,cfg in self.r['pageMirrors'].items() if lang in cfg['routes']]
-   self.assertEqual(families,{'hi':['film-premiere-master','history-master','travel-travel-master','music-master'],'th':['film-premiere-master','history-master','travel-th-travel-master','music-master']}[lang])
+   self.assertEqual(families,{'hi':['film-premiere-master','history-master','travel-travel-master','music-master','help-me-pray-master'],'th':['film-premiere-master','history-master','travel-th-travel-master','music-master','help-me-pray-master']}[lang])
    for subset in self.r['publicationSets'].values():self.assertNotIn(lang,subset)
  def test_visible_availability_and_nonuse_of_dormant_copy(self):
   for lang in ('hi','th'):

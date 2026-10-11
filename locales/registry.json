@@ -296,9 +296,9 @@
         "home": false,
         "topicGuides": [],
         "mirrorTabs": [
-          "travel"
-        ,
-          "film"],
+          "travel",
+          "film"
+        ],
         "runtime": true,
         "selectorCopy": true
       }
@@ -1616,6 +1616,60 @@
         "de": "/de/allerheiligen",
         "pl": "/pl/wszystkich-swietych",
         "x-default": "/all-saints-and-all-souls"
+      }
+    },
+    "help-me-pray-master": {
+      "master": "help-me-pray.html",
+      "english": "/help-me-pray",
+      "routes": {
+        "ar": "/ar/help-me-pray",
+        "de": "/de/help-me-pray",
+        "es": "/es/help-me-pray",
+        "fr": "/fr/help-me-pray",
+        "hi": "/hi/help-me-pray",
+        "it": "/it/help-me-pray",
+        "pl": "/pl/help-me-pray",
+        "pt": "/pt/help-me-pray",
+        "ru": "/ru/help-me-pray",
+        "th": "/th/help-me-pray"
+      },
+      "renderLocales": [
+        "ar",
+        "de",
+        "es",
+        "fr",
+        "hi",
+        "it",
+        "pl",
+        "pt",
+        "ru",
+        "th"
+      ],
+      "sitemapHeld": [
+        "ar",
+        "de",
+        "es",
+        "fr",
+        "hi",
+        "it",
+        "pl",
+        "pt",
+        "ru",
+        "th"
+      ],
+      "discoveryRoutes": {
+        "en": "/help-me-pray",
+        "ar": "/ar/help-me-pray",
+        "de": "/de/help-me-pray",
+        "es": "/es/help-me-pray",
+        "fr": "/fr/help-me-pray",
+        "hi": "/hi/help-me-pray",
+        "it": "/it/help-me-pray",
+        "pl": "/pl/help-me-pray",
+        "pt": "/pt/help-me-pray",
+        "ru": "/ru/help-me-pray",
+        "th": "/th/help-me-pray",
+        "x-default": "/help-me-pray"
       }
     }
   },

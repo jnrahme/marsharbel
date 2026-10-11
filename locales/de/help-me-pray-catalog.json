@@ -1,0 +1,276 @@
+{
+ "schema": 2,
+ "locale": "de",
+ "direction": "ltr",
+ "publicationContract": {
+  "missingLocaleOrKey": "fail-build",
+  "englishFallback": false,
+  "pendingPrayerTextInBrowserData": false,
+  "privateReviewNoticeInBrowserData": false
+ },
+ "page": {
+  "title": "Hilf mir zu beten",
+  "intro": "Wähle, was dich heute bewegt. Finde einen kleinen Schritt zum Gebet, mit Quellen und klaren Grenzen.",
+  "needsHeading": "Was führt dich hierher?",
+  "boundaryHeading": "Gebet und die Hilfe, die du brauchst",
+  "boundaryCopy": "Dieser Leitfaden bietet Orientierung zur Andacht, kein Sakrament, keine Diagnose und kein Heilungsversprechen. Sprich für Beichte oder persönliche geistliche Begleitung mit einem Priester. Setze medizinische Versorgung fort und suche in einer Krise dringend Hilfe vor Ort.",
+  "privacyCopy": "Du musst keinen Namen, kein Gebetsanliegen und keine persönlichen Angaben eingeben, um diesen Leitfaden zu nutzen.",
+  "pendingNotice": "Karten mit der Kennzeichnung In Prüfung sind noch nicht nutzbar. Ihr Gebetstext und die Aktion Starten sind nicht verfügbar."
+ },
+ "needs": {
+  "restart": "Mit dem Beten beginnen oder zurückkehren",
+  "family": "Familie",
+  "illness": "Krankheit",
+  "gratitude": "Dankbarkeit",
+  "discouragement": "Entmutigung im Gebet",
+  "maronite": "Maronitisches Gebet verstehen"
+ },
+ "ui": {
+  "inReview": "In Prüfung",
+  "practicalAnswer": "Ein kleiner Schritt",
+  "why": "Warum das helfen kann",
+  "source": "Quelle",
+  "practiceType": "Praxis",
+  "boundary": "Bedenke",
+  "backToNeeds": "Zurück zu den Anliegen",
+  "noResults": "Keine Karte passt zu dieser Auswahl.",
+  "notReady": "Diese Karte wartet auf Prüfung. Gebetstext und Starten sind nicht verfügbar.",
+  "begin": "Starten",
+  "close": "Schließen",
+  "readMore": "Quelle lesen"
+ },
+ "cards": {
+  "illness-01": {
+   "need": "illness",
+   "copy": {
+    "question": "Ich bete für einen kranken Menschen. Wo fange ich an?",
+    "practicalAnswer": "Bringe diesen Menschen vor Gott und bitte um Kraft, Frieden und Heilung.\nBete das Gebet für Kranke langsam, neben der nötigen Versorgung.\nDas Gebet garantiert kein bestimmtes Ergebnis.",
+    "why": "SINNGEMÄSSE WIEDERGABE (redaktionelle Erklärung): Christliches Gebet ruft uns auf, in Schwierigkeiten bei Gott zu bleiben; es ist kein Mittel, das Ergebnis zu kontrollieren. KKK 2734.",
+    "source.publisher": "Heiliger Stuhl / Katechismus der Katholischen Kirche",
+    "source.section": "KKK 2734",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt. Gebet ersetzt keine medizinische Versorgung.",
+    "prayerTarget.heading": "Gebet für Kranke",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "illness-02": {
+   "need": "illness",
+   "copy": {
+    "question": "Garantiert das Gebet durch die Fürsprache des heiligen Charbel Heilung?",
+    "practicalAnswer": "Nein. Bitte den heiligen Charbel um Fürsprache und vertraue den Menschen Gott an, ohne eine Heilung zu versprechen.\nDas Gebet garantiert kein bestimmtes Ergebnis.\nFrage bei schwerer Krankheit einen Priester nach der Krankensalbung und führe die medizinische Versorgung fort.",
+    "why": "SINNGEMÄSSE WIEDERGABE: KKK 1532 beschreibt die Wiederherstellung der Gesundheit durch die Krankensalbung nur dann, wenn sie dem Heil des Menschen dient. Dieser Leitfaden bietet private Andacht, nicht dieses Sakrament, und verspricht keine Heilung.",
+    "source.publisher": "Heiliger Stuhl / Katechismus der Katholischen Kirche",
+    "source.section": "KKK 1532, Wirkungen der Krankensalbung",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt. Dieser Leitfaden stellt keine Diagnose und spendet kein Sakrament.",
+    "prayerTarget.heading": "Gebet für Kranke",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/in_brief.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-01": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "Ich habe lange nicht gebetet. Wie kehre ich zurück?",
+    "practicalAnswer": "Beginne mit einem Vaterunser, langsam, ohne jeden versäumten Tag nachholen zu wollen.\nWähle eine kurze, regelmäßige Zeit für morgen; bringe deine wirklichen Sorgen zu Gott.",
+    "why": "SINNGEMÄSSE WIEDERGABE (redaktionelle Erklärung): Feste Zeiten helfen, das Gebet zum Teil des Lebens zu machen. Der kleine erste Schritt ist praktische Orientierung, keine vorgeschriebene Regel der Kirche. KKK 2697.",
+    "source.publisher": "Heiliger Stuhl / Katechismus der Katholischen Kirche",
+    "source.section": "KKK 2697",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt. Für Beichte oder persönliche geistliche Begleitung wende dich an einen Priester.",
+    "prayerTarget.heading": "Vaterunser",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-01": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "Mein Gebet scheint unbeantwortet. Hat Gott mich ignoriert?",
+    "practicalAnswer": "Sage Gott ehrlich, dass das Warten schwer ist; du musst deine Enttäuschung nicht verbergen.\nBringe ihm weiterhin dein Anliegen, ohne das gewünschte Ergebnis zum Test seiner Liebe zu machen.\nDieser Leitfaden kann nicht erklären, warum ein bestimmter Verlust oder eine Verzögerung eingetreten ist.",
+    "why": "SINNGEMÄSSE WIEDERGABE (redaktionelle Erklärung): Der Katechismus nennt die unbeantwortete Bitte eine echte Schwierigkeit, keinen Grund, den betenden Menschen zu beschämen. KKK 2734-2741, besonders 2739.",
+    "source.publisher": "Heiliger Stuhl / Katechismus der Katholischen Kirche",
+    "source.section": "KKK 2739, innerhalb von KKK 2734-2741",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt. Es werden keine Prophezeiung, Erklärung von Gottes verborgenen Absichten oder Ergebnisversprechen angeboten.",
+    "prayerTarget.heading": "Allgemeines Fürbittengebet",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-02": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "Soll ich aufhören zu beten, wenn sich nichts ändert?",
+    "practicalAnswer": "Versuche ein kurzes Gebet, zu dem du auch bei Entmutigung zurückkehren kannst.\nBitte um Hilfe, Christus nahe zu bleiben, und sprich mit einem Priester über deine Schwierigkeit, wenn du persönliche Begleitung brauchst.",
+    "why": "SINNGEMÄSSE WIEDERGABE (redaktionelle Erklärung): Beharrlichkeit beginnt mit der Gnade und unserer Antwort; Schwierigkeiten beweisen nicht, dass dein Gebet gescheitert ist. KKK 2725, zusammen mit 2734-2741 zu lesen.",
+    "source.publisher": "Heiliger Stuhl / Katechismus der Katholischen Kirche",
+    "source.section": "KKK 2725",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt. Gebet ersetzt keine Versorgung in einer psychischen Krise.",
+    "prayerTarget.heading": "Im Leiden",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-01": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "Wie beten Maroniten täglich?",
+    "practicalAnswer": "Du kannst einen täglichen Rhythmus mit einem Vaterunser morgens oder abends beginnen.\nFrage für das maronitische Stundengebet deine Pfarrei, welcher Ordo einer Eparchie gilt.\nDas hier angebotene Andachtsgebet ist ein Anfang, kein Ersatz für das Stundengebet.",
+    "why": "SINNGEMÄSSE WIEDERGABE: Die Eparchie des heiligen Maron von Brooklyn veröffentlicht den Ordo des Stundengebets für 2025-2026. Das beigefügte Buch benennt seine Verwendung in der Eparchie Unserer Lieben Frau vom Libanon in Los Angeles nach dem syrisch-maronitischen Ritus. Frage deine Pfarrei nach der Verwendung; dieser Leitfaden wählt nicht die heutigen Texte aus.",
+    "source.publisher": "Eparchie des heiligen Maron von Brooklyn",
+    "source.section": "Rundschreiben 25.117, Ordo des Stundengebets 2025-2026; beigefügte Ordo-Seiten 1-2",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt. Dies ist nicht das heutige Stundengebet. Der Ordo 2025-2026 ist eine datierte Quelle, keine als aktuellste bestätigte Ausgabe. Frage deine Pfarrei, welcher Ordo einer Eparchie gilt.",
+    "prayerTarget.heading": "Vaterunser",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [
+    "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+    "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her"
+   ],
+   "beginEnabled": false
+  },
+  "family-01": {
+   "need": "family",
+   "copy": {
+    "question": "Wie kann unsere Familie gemeinsam beten lernen?",
+    "practicalAnswer": "Wähle einen ruhigen Moment und lade deine Familie zu einem kurzen gemeinsamen Gebet ein.\nBeginnt mit dem Gebet für Familien; lasst jedem Raum, ohne Druck ein Anliegen zu nennen.",
+    "why": "SINNGEMÄSSE WIEDERGABE (redaktionelle Erklärung): Die Familie kann ein Ort sein, an dem das Gebet geduldig gelernt wird. Ein kurzes gemeinsames Gebet ist ein praktischer Anfang, keine vorgeschriebene Form. KKK 2685.",
+    "source.publisher": "Heiliger Stuhl / Katechismus der Katholischen Kirche",
+    "source.section": "KKK 2685",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt.",
+    "prayerTarget.heading": "Gebet für Familien",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "family-02": {
+   "need": "family",
+   "copy": {
+    "question": "Kann ich für meine Familie beten, wenn sie nicht mitbetet?",
+    "practicalAnswer": "Ja. Bringe deine Familie zu Gott, auch wenn du allein betest.\nBitte den heiligen Charbel um Fürsprache und lass dein Gebet geduldige, liebevolle Fürsorge unterstützen, statt Druck auf andere auszuüben.",
+    "why": "SINNGEMÄSSE WIEDERGABE (redaktionelle Erklärung): Die Kirche lehrt, dass die Fürsprache der Heiligen für uns selbst und andere erbeten werden kann. Das verspricht kein bestimmtes Ergebnis für die Familie. KKK 2683.",
+    "source.publisher": "Heiliger Stuhl / Katechismus der Katholischen Kirche",
+    "source.section": "KKK 2683",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt. Gebet verlangt nicht, in einer unsicheren Situation zu bleiben, und entschuldigt kein Unrecht.",
+    "prayerTarget.heading": "Gebet für Familien",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "gratitude-01": {
+   "need": "gratitude",
+   "copy": {
+    "question": "Wie kann ich Gott für etwas Gutes danken?",
+    "practicalAnswer": "Benenne die Gabe, die du erhalten hast, und danke Gott mit deinen eigenen Worten.\nBete dann langsam das Ehre sei dem Vater und lass deinen Dank zum Lob werden.",
+    "why": "SINNGEMÄSSE WIEDERGABE (redaktionelle Erklärung): Danksagung kann die Ereignisse des Alltags ins Gebet bringen. KKK 2638.",
+    "source.publisher": "Heiliger Stuhl / Katechismus der Katholischen Kirche",
+    "source.section": "KKK 2638",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt.",
+    "prayerTarget.heading": "Ehre sei dem Vater",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_one/article_3/iv_prayer_of_thanksgiving.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-02": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "Was, wenn ich nicht weiß, was ich sagen soll?",
+    "practicalAnswer": "Du kannst mit dem Vaterunser beginnen, statt nach eindrucksvollen Worten zu suchen.\nLies es langsam; halte inne, wenn eine Bitte ausdrückt, was dich bewegt.",
+    "why": "SINNGEMÄSSE WIEDERGABE: Jesus rät von einem Gebet ab, das auf dem Anhäufen von Worten beruht, und lehrt, dass der Vater unsere Bedürfnisse bereits kennt. Matthäus 6:7-8.",
+    "source.publisher": "Katholische Bischofskonferenz der Vereinigten Staaten (NABRE)",
+    "source.section": "Matthäus 6:7-8 (in NABRE konsultiert; nur eigene sinngemäße Wiedergabe)",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt.",
+    "prayerTarget.heading": "Vaterunser",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/matthew/6",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-02": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "Ist ein Gebet zum heiligen Charbel dasselbe wie die Göttliche Liturgie?",
+    "practicalAnswer": "Redaktionelle Erklärung: Dieser Leitfaden bietet die Charbel-Gebete der Website für private Andacht an, nicht als genehmigte maronitische liturgische Texte.\nDie Göttliche Liturgie ist der eucharistische Gottesdienst der Kirche; bete jetzt das Ehre sei dem Vater und nutze den Leitfaden der Eparchie, um mit deiner Pfarrei mehr über den Gottesdienst zu lernen.",
+    "why": "SINNGEMÄSSE WIEDERGABE: Die Eparchie beschreibt das eucharistische Gebet als an Vater, Sohn und Heiligen Geist gerichtet. Das stützt die Erklärung der Göttlichen Liturgie, nicht den Status der Gebete dieser Website. Die Bezeichnung als Andacht ist eine redaktionelle Einordnung dieses Leitfadens, keine Bestätigung durch die Eparchie. Leitfaden zur maronitischen Göttlichen Liturgie, Dienst der Eucharistie - Die Anaphora.",
+    "source.publisher": "Eparchie des heiligen Maron von Brooklyn",
+    "source.section": "Leitfaden zur maronitischen Göttlichen Liturgie, Dienst der Eucharistie - Die Anaphora",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt. Fragen zur Beichte oder zur Teilnahme an den Sakramenten gehören zu einem Priester.",
+    "prayerTarget.heading": "Ehre sei dem Vater",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://www.stmaron.org/liturgy-guide",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false,
+   "sourceAuthor": "Chorbishop Seely Beggiani"
+  },
+  "gratitude-02": {
+   "need": "gratitude",
+   "copy": {
+    "question": "Kann ich danken, wenn das Leben schwer ist?",
+    "practicalAnswer": "Ja, aber du musst nicht so tun, als sei Schmerz gut, oder ihn vor Gott verbergen.\nBenenne eine Gabe, die du heute ehrlich annehmen kannst, und bringe ihm dann auch dein Leiden.",
+    "why": "SINNGEMÄSSE WIEDERGABE: Paulus ruft die Gläubigen auf, Gott in jeder Situation als Teil des Lebens in Christus zu danken. Diese Orientierung verlangt von niemandem, erlittenes Unrecht zu loben. 1 Thessalonicher 5:18.",
+    "source.publisher": "Katholische Bischofskonferenz der Vereinigten Staaten (NABRE)",
+    "source.section": "1 Thessalonicher 5:18 (in NABRE konsultiert; nur eigene sinngemäße Wiedergabe)",
+    "source.label": "SINNGEMÄSSE WIEDERGABE",
+    "practiceType": "Andachtsgebet",
+    "boundaryNote": "Für Beichte, medizinische Anliegen oder Krisen sprich mit einem Priester oder Arzt. Dankbarkeit bedeutet nicht, Missbrauch hinzunehmen, Behandlung abzulehnen oder Hilfe zu vermeiden.",
+    "prayerTarget.heading": "Ehre sei dem Vater",
+    "prayerTarget.type": "Andachtsgebet"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/1thessalonians/5",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  }
+ }
+}
