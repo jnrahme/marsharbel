@@ -20,7 +20,7 @@ CARD_KEYS = {'question', 'practicalAnswer', 'why', 'source.publisher', 'source.s
 
 
 def catalog_path(lang):
-    return ROOT / 'locales' / lang / f'{FAMILY}-copy.json'
+    return ROOT / 'locales' / lang / 'help-me-pray-catalog.json'
 
 
 def load_catalog(lang):
@@ -46,6 +46,8 @@ class TestCatalogCompleteness(unittest.TestCase):
             page = cat.get('page', {})
             self.assertEqual(set(page), PAGE_KEYS, f'{lang}: page keys mismatch')
             self.assertEqual(set(cat.get('needs', {})), set(NEEDS), f'{lang}: needs mismatch')
+            self.assertIn('cards', cat, f'{lang}: cards section missing (fail-closed until reconciled)')
+            self.assertIn('ui', cat, f'{lang}: ui section missing')
             for need in NEEDS:
                 for i, card in enumerate(cat.get('cards', {}).get(need, [])):
                     self.assertEqual(set(card), CARD_KEYS, f'{lang}/{need}[{i}]: card keys mismatch')
@@ -70,8 +72,8 @@ class TestCatalogCompleteness(unittest.TestCase):
                 cat = load_catalog(lang)
             except FileNotFoundError:
                 continue
-            nr = cat.get('noResults')
-            self.assertIsInstance(nr, str, f'{lang}: noResults key required')
+            nr = cat.get('ui', {}).get('noResults')
+            self.assertIsInstance(nr, str, f'{lang}: ui.noResults key required')
             self.assertGreater(len(nr.strip()), 20, f'{lang}: noResults must be real copy, not an empty-state stub')
 
 
