@@ -29,6 +29,17 @@ ffmpeg -loop 1 -i page-NN.webp -i scene-NN.wav -filter_complex \
 - Scenes joined with xfade dissolves (seam grids reviewed - blends must be proper dissolves).
 - Final container: 1280x720, 25 fps, h264 crf 20, AAC audio.
 
+## AI motion accents (LTX ZeroGPU route)
+The Pio film's AI-animated accents (real character motion inside a beat, e.g. the boy turning toward the church, extending a water glass) were generated on Hugging Face's ZeroGPU fleet, not on any local GPU. This route needs no GPU in the production environment and costs $0.
+
+- Service: the public HF Space `Lightricks/ltx-video-distilled` (LTX Video 0.9.8 13B Distilled, image-to-video) at https://huggingface.co/spaces/Lightricks/ltx-video-distilled . Verified live and "Running on Zero" as of 2026-10-11.
+- Access: anonymous - no HF login was demanded (Google AI Studio / Veo was tried first and abandoned because it required a Google sign-in). Driven through the cloud browser against the Gradio UI; no API key, no paid plan.
+- Driver loop (per clip): reveal the hidden Gradio file input via execute-js and upload the storybook PNG; set prompt + settings via form-input; click Generate; poll execute-js for a NEW video element src; download the file from the public endpoint `lightricks-ltx-video-distilled.hf.space/gradio_api/file=...` with plain curl (no auth); QA a frame strip before accepting the clip.
+- Working settings: 768x512, 5 s duration, ~40 s wall per clip. 8.5 s at 1216x704 exceeded the anonymous ZeroGPU envelope and errored; treat 768x512/5 s as the production ceiling and chain scenes by uploading the last frame of the previous clip.
+- Quota reality: anonymous ZeroGPU quota is per-IP per day. In production it exhausted after a handful of HD runs and refreshed in about 3 hours. Plan a few clips per window, run retry wakes (~3 h cadence), and interleave Ken Burns work while waiting. Bulk generation in one sitting is not possible on this route.
+- Role in the assembly: AI clips are beat-level accents boomerang-fit into the Ken Burns beat-cut timeline, never whole-scene replacements. Ken Burns remains the sanctioned baseline whenever a generation fails or quota is dry.
+- License (verified from the primary source during production): LTX custom Open Weights license - free for any purpose including commercial for entities under $10M annual revenue; the licensor claims no rights in the output; one requirement: machine-generated content must be expressly and intelligibly disclosed as such (ship the small "AI-animated" label wherever these clips appear).
+
 ## End card (site-referral tail)
 - 3 s freeze on the final outro frame + text overlay: "Read the free storybook at marsharbel.com".
 - Pure tail append after the last scene; no narration change.
