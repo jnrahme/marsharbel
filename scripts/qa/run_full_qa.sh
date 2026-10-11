@@ -176,6 +176,8 @@ qa_step npm run books:check
 
 echo "[qa] Same-page language switcher resolver (pure node, was never run in CI)"
 qa_step node scripts/tests/same_page_resolver.cjs
+qa_step node scripts/tests/nav_legacy_combined.cjs
+qa_step node scripts/tests/same_page_enabled_navigation.cjs
 
 
 echo "[qa] QA suite finished"
