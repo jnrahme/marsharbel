@@ -24,8 +24,15 @@ AR2_PAIRS=[('gallery','/gallery','/ar/gallery'),('saints','/saints','/ar/saints'
  ('eucharistic-hub','/miracles/eucharistic/','/ar/miracles/eucharistic/')]+[
  ('eucharistic-'+n,'/miracles/eucharistic/'+n,'/ar/miracles/eucharistic/'+n) for n in
  ('amsterdam','bolsena-orvieto','faverney','ivorra','lanciano','legnica','ludbreg','santarem','siena','sokolka')]
-AR2_AR_PATHS=[a for _,_,a in AR2_PAIRS]
-AR2_EN_PATHS=[e for _,e,_ in AR2_PAIRS]
+# Travel-4 (scrum ruling 2026-10-12): the ar variant is ADDED INTO the existing verified
+# travel families after the travel manifest is built; en/de/ru/hi variants keep their
+# scoped-travel-variant proof. The frozen travel machinery stays untouched.
+AR2_TRAVEL_PAIRS=[('travel','/travel','/ar/travel'),('qadisha-valley','/qadisha-valley','/ar/qadisha-valley'),
+ ('qannoubine-monastery','/qannoubine-monastery','/ar/qannoubine-monastery'),
+ ('qozhaya-monastery','/qozhaya-monastery','/ar/qozhaya-monastery')]
+AR2_TRAVEL_FAMILIES={slug:slug+'-travel-master-equivalence' for slug,_,_ in AR2_TRAVEL_PAIRS}
+AR2_AR_PATHS=[a for _,_,a in AR2_PAIRS+AR2_TRAVEL_PAIRS]
+AR2_EN_PATHS=[e for _,e,_ in AR2_PAIRS+AR2_TRAVEL_PAIRS]
 
 def route_file(root,route):
     if route=='/':return root/'index.html'
@@ -41,11 +48,11 @@ def ar2_manifest(root,texts,manifest):
     if not re.fullmatch(r'[0-9a-f]{40}',revision):
         raise ValueError('AR-2 evidence must pin a frozen 40-hex sourceRevision')
     out=json.loads(json.dumps(manifest))
-    pinned={slug for slug,_,_ in AR2_PAIRS}
+    pinned={slug for slug,_,_ in AR2_PAIRS+AR2_TRAVEL_PAIRS}
     missing=pinned-set(rows)
     if missing:raise ValueError('AR-2 evidence rows missing pinned twins: '+','.join(sorted(missing)))
     rows={k:v for k,v in rows.items() if k in pinned}
-    expect={slug:(en,ar) for slug,en,ar in AR2_PAIRS}
+    expect={slug:(en,ar) for slug,en,ar in AR2_PAIRS+AR2_TRAVEL_PAIRS}
     for slug,row in rows.items():
         if (row['en'],row['ar'])!=expect[slug]:
             raise ValueError('AR-2 evidence route outside the pinned lists: '+slug)
@@ -53,6 +60,38 @@ def ar2_manifest(root,texts,manifest):
         en_text=texts.get(en_file) or en_file.read_text()
         ar_text=texts.get(ar_file) or ar_file.read_text()
         en_digest=digest(en_text);ar_digest=digest(ar_text)
+        if slug in AR2_TRAVEL_FAMILIES:
+            key=AR2_TRAVEL_FAMILIES[slug]
+            family=out['pages'].get(key)
+            # The synthetic scoped overlay (probe_partial_build) deliberately excludes the
+            # 12 scoped travel families; with no family in context there is nothing to
+            # inject into. The pairing test asserts presence in the real build instead.
+            if not family:continue
+            en_variant=family['variants'].get('en',{})
+            if en_variant.get('path')!=row['en'] or en_variant.get('status')!='verified':
+                raise ValueError('AR-2 travel family en variant not the verified master: '+key)
+            if 'ar' in family['variants']:raise ValueError('AR-2 travel family already carries ar: '+key)
+            if not re.fullmatch(r'[0-9a-f]{40}',family.get('sourceRevision','')):
+                raise ValueError('AR-2 travel family sourceRevision not frozen 40-hex: '+key)
+            ar_file=route_file(root,row['ar'])
+            ar_text=texts.get(ar_file) or ar_file.read_text()
+            ar_digest=digest(ar_text)
+            for other in list(out['pages']):
+                if other==key:continue
+                entry=out['pages'][other]
+                if any(v['path']==row['ar'] for v in entry['variants'].values()):
+                    # Loud guard: only single-variant pending rows may be superseded.
+                    vs=list(entry['variants'].values())
+                    if len(vs)!=1 or vs[0].get('status')!='pending':
+                        raise ValueError('AR-2 pairing would replace a non-pending family: '+other)
+                    del out['pages'][other]
+            family['variants']['ar']={'path':row['ar'],'aliases':[],'status':'verified','contentSha256':ar_digest,
+                'sourceSha256':family['sourceSha256'],
+                'proof':{'type':AR2,'state':'approved','scope':row['scope'],
+                         'candidateFileSha256':hashlib.sha256(ar_file.read_bytes()).hexdigest(),
+                         'reviewedContentSha256':ar_digest,'nativeReviewStatus':row['nativeReviewStatus'],
+                         'evidenceRef':row['evidenceRef']}}
+            continue
         paths={row['en'],row['ar']}
         for key in list(out['pages']):
             entry=out['pages'][key]
