@@ -13,13 +13,17 @@ const manifest=JSON.parse(text.slice('window.SC_SAME_PAGE_MANIFEST = '.length).t
 const TWINS=[['gallery','/gallery','/ar/gallery'],['saints','/saints','/ar/saints'],
  ['prayer-library','/prayer-library','/ar/prayer-library'],['encyclopedia','/saint-charbel-encyclopedia','/ar/encyclopedia'],
  ['news','/news','/ar/news'],['videos','/videos','/ar/videos'],['testimonies','/testimonies','/ar/testimonies'],
- ['voice-testimony','/voice-testimony','/ar/voice-testimony']];
+ ['voice-testimony','/voice-testimony','/ar/voice-testimony'],
+ ['home','/','/ar/'],['feast-day','/saint-charbel-feast-day','/ar/feast-day'],
+ ['litany','/litany-of-saint-charbel','/ar/litany-of-saint-charbel'],['chaplet','/saint-charbel-chaplet','/ar/saint-charbel-chaplet'],
+ ['eucharistic-hub','/miracles/eucharistic/','/ar/miracles/eucharistic/'],
+ ...['amsterdam','bolsena-orvieto','faverney','ivorra','lanciano','legnica','ludbreg','santarem','siena','sokolka'].map(n=>['eucharistic-'+n,'/miracles/eucharistic/'+n,'/ar/miracles/eucharistic/'+n])];
 // Scrum ruling 2026-10-12: exactly these 8. /feedback and /submit-testimony are noindex,
 // the control build skips noindex pages, so they can never render the switcher and must
 // stay unpaired until the noindex coverage decision (todo-01M4R14M4SBH49AFECW3MEW5H9).
 const NOINDEX_UNPAIRED=['feedback','submit-testimony'];
 let n=0;function test(name,f){f();n++;console.log('PASS',name)}
-test('all 8 AR-2 pairs present with exact pinned routes',()=>{
+test('all 23 AR-2 pairs present with exact pinned routes',()=>{
  for(const [slug,en,ar] of TWINS){
   const page=manifest.pages['ar2-'+slug+'-equivalence'];
   assert.ok(page,'missing pair '+slug);
@@ -41,7 +45,8 @@ test('English page offers the Arabic twin and click-through resolves',()=>{
  for(const [slug,en,ar] of TWINS){
   const r=resolve(manifest,'https://marsharbel.com'+en,'ar','en');
   assert.equal(r.available,true,slug+' ar offered');
-  assert.equal(r.reason,'verified-twin',slug);
+  // Home resolves through the published-home route (still lands on the verified /ar/ twin).
+  assert.equal(r.reason,slug==='home'?'published-home':'verified-twin',slug);
   assert.equal(r.href,'https://marsharbel.com'+ar,slug+' resolves to twin');
  }});
 test('Arabic twin offers the English source page back',()=>{
@@ -60,17 +65,17 @@ test('the two noindex pages stay unpaired (no switcher stack, no pair)',()=>{
  for(const slug of NOINDEX_UNPAIRED){
   assert.ok(!manifest.pages['ar2-'+slug+'-equivalence'],'noindex page must not be paired: '+slug);
  }
- assert.equal(Object.keys(manifest.pages).filter(k=>k.startsWith('ar2-')).length,TWINS.length,'exactly the 8 approved pairs');
+ assert.equal(Object.keys(manifest.pages).filter(k=>k.startsWith('ar2-')).length,TWINS.length,'exactly the 23 approved pairs');
 });
 test('every paired English page actually carries the switcher stack',()=>{
  // A pair for a page without the control stack can never render the switcher:
  // refuse it here so a future noindex pair fails red instead of shipping dead.
  for(const [slug,en] of TWINS){
-  const file=en==='/' ? 'index.html' : en.slice(1)+'.html';
+  const file=en==='/' ? 'index.html' : en.endsWith('/') ? en.slice(1)+'index.html' : en.slice(1)+'.html';
   const html=fs.readFileSync(path.join(root,file),'utf8');
   assert.ok(html.includes('/same-page-switcher.js'),slug+' EN page lacks the switcher stack - do not pair it');
  }});
-test('no other manifest family claims the 16 pinned routes',()=>{
+test('no other manifest family claims the 46 pinned routes',()=>{
  const paths=new Set();for(const [,en,ar] of TWINS){paths.add(en);paths.add(ar)}
  for(const [id,page] of Object.entries(manifest.pages)){
   if(id.startsWith('ar2-'))continue;

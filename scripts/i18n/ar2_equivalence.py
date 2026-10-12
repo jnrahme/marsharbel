@@ -11,13 +11,26 @@ from i18n.reviewed_history import digest
 
 EVIDENCE='locales/ar2-pairing-evidence.json'
 AR2='scoped-ar2-variant'
-# /feedback and /submit-testimony are noindex: the control build skips them, so they can
-# never render the switcher. Scrum ruling 2026-10-12: exactly these 8 pairs; the two
-# noindex pages stay out until the noindex coverage decision (todo-01M4R14M4SBH49AFECW3MEW5H9).
-AR2_AR_PATHS=['/ar/gallery','/ar/saints','/ar/prayer-library','/ar/encyclopedia','/ar/news',
-              '/ar/videos','/ar/testimonies','/ar/voice-testimony']
-AR2_EN_PATHS=['/gallery','/saints','/prayer-library','/saint-charbel-encyclopedia','/news',
-              '/videos','/testimonies','/voice-testimony']
+# Pinned (slug, en, ar) pairs. Batch 1 (#750): 8 pairs. /feedback and /submit-testimony are
+# noindex, the control build skips them, so they stay unpaired (todo-01M4R14M4SBH49AFECW3MEW5H9).
+# Batch 2: 15 legacy twins, scope ar-legacy-twin-scripted-parity.
+AR2_PAIRS=[('gallery','/gallery','/ar/gallery'),('saints','/saints','/ar/saints'),
+ ('prayer-library','/prayer-library','/ar/prayer-library'),('encyclopedia','/saint-charbel-encyclopedia','/ar/encyclopedia'),
+ ('news','/news','/ar/news'),('videos','/videos','/ar/videos'),('testimonies','/testimonies','/ar/testimonies'),
+ ('voice-testimony','/voice-testimony','/ar/voice-testimony'),
+ ('home','/','/ar/'),('feast-day','/saint-charbel-feast-day','/ar/feast-day'),
+ ('litany','/litany-of-saint-charbel','/ar/litany-of-saint-charbel'),
+ ('chaplet','/saint-charbel-chaplet','/ar/saint-charbel-chaplet'),
+ ('eucharistic-hub','/miracles/eucharistic/','/ar/miracles/eucharistic/')]+[
+ ('eucharistic-'+n,'/miracles/eucharistic/'+n,'/ar/miracles/eucharistic/'+n) for n in
+ ('amsterdam','bolsena-orvieto','faverney','ivorra','lanciano','legnica','ludbreg','santarem','siena','sokolka')]
+AR2_AR_PATHS=[a for _,_,a in AR2_PAIRS]
+AR2_EN_PATHS=[e for _,e,_ in AR2_PAIRS]
+
+def route_file(root,route):
+    if route=='/':return root/'index.html'
+    if route.endswith('/'):return root/route.strip('/')/'index.html'
+    return root/(route.strip('/')+'.html')
 
 def ar2_manifest(root,texts,manifest):
     path=root/EVIDENCE
@@ -28,14 +41,15 @@ def ar2_manifest(root,texts,manifest):
     if not re.fullmatch(r'[0-9a-f]{40}',revision):
         raise ValueError('AR-2 evidence must pin a frozen 40-hex sourceRevision')
     out=json.loads(json.dumps(manifest))
-    pinned={s.split('/')[-1] for s in AR2_AR_PATHS}
+    pinned={slug for slug,_,_ in AR2_PAIRS}
     missing=pinned-set(rows)
     if missing:raise ValueError('AR-2 evidence rows missing pinned twins: '+','.join(sorted(missing)))
     rows={k:v for k,v in rows.items() if k in pinned}
+    expect={slug:(en,ar) for slug,en,ar in AR2_PAIRS}
     for slug,row in rows.items():
-        if row['ar'] not in AR2_AR_PATHS or row['en'] not in AR2_EN_PATHS:
+        if (row['en'],row['ar'])!=expect[slug]:
             raise ValueError('AR-2 evidence route outside the pinned lists: '+slug)
-        en_file=root/(row['en'].strip('/')+'.html');ar_file=root/(row['ar'].strip('/')+'.html')
+        en_file=route_file(root,row['en']);ar_file=route_file(root,row['ar'])
         en_text=texts.get(en_file) or en_file.read_text()
         ar_text=texts.get(ar_file) or ar_file.read_text()
         en_digest=digest(en_text);ar_digest=digest(ar_text)

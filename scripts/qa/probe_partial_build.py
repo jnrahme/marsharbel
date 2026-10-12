@@ -182,10 +182,10 @@ def json_assignment(text):
 def compare_json(file,old,new):
  prefix,a=json_assignment(old);other,b=json_assignment(new);assert prefix==other
  if file=='same-page-manifest.js':
-  assert len(a['pages'])==255 and len(SCOPED_KEYS)==12
+  assert len(a['pages'])==240 and len(SCOPED_KEYS)==12
   assert SCOPED_KEYS<=set(a['pages']);assert not SCOPED_KEYS&set(b['pages'])
   for key in SCOPED_KEYS:del a['pages'][key]
-  assert len(a['pages'])==len(b['pages'])==243
+  assert len(a['pages'])==len(b['pages'])==228
   assert b['aliases'].pop('zz')=='zz';assert b['languages'].pop()=='zz'
   extra={k:b['englishSources'].pop(k) for k in list(b['englishSources']) if k.startswith('/zz/')}
   assert len(extra)==18 and all(k=='/zz'+v.rstrip('/') for k,v in extra.items()),extra
@@ -201,7 +201,7 @@ def compare_json(file,old,new):
   for route in scoped_routes:del a['englishSources'][route]
   # /de/travel is pending-omitted yet its englishSources entry resolves to /travel and survives on both sides.
   assert a['englishSources'].get('/de/travel')=='/travel'==b['englishSources'].get('/de/travel'),'de/travel must survive resolving to /travel'
-  hits['manifest-sources']+=12;print('MANIFEST proof excluded in synthetic only 12; legacy overlays real; compared 243')
+  hits['manifest-sources']+=12;print('MANIFEST proof excluded in synthetic only 12; legacy overlays real; compared 228')
   print('MANIFEST englishSources scoped self-routes excluded',len(scoped_routes),json.dumps(sorted(scoped_routes)))
   print('EXCLUDED TOTAL 12 page keys + 12 englishSources + 13 pending + 18 zz =',12+12+13+18)
  elif file=='same-page-copy.js':
