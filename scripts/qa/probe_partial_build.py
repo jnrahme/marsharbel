@@ -243,6 +243,27 @@ def compare_json(file,old,new):
  else:raise AssertionError('Unbound generated JS diff: '+file)
  assert a==b,(file,'Non-zz JSON difference')
 
+# Review-frozen (family, locale) pairs from the REAL root, captured before the
+# synthetic-root evidence deletion below removes exactly this class there. Pinned
+# pages keep their review-frozen header bytes in production (nav marking skips
+# them); the synthetic world cannot see the grant, so its re-render marks those
+# headers. The synthetic comparison below therefore excludes the <header> element
+# for exactly these files - every other byte is still compared, and every
+# unpinned page is compared in full.
+review_frozen_pairs=ve.review_pinned_locales(R)
+review_frozen_files=set()
+for frozen_family,frozen_lang in review_frozen_pairs:
+ frozen_cfg=original_registry.get('pageMirrors',{}).get(frozen_family) or {}
+ frozen_route=frozen_cfg.get('routes',{}).get(frozen_lang)
+ if frozen_route:
+  frozen_path=frozen_route.lstrip('/')
+  review_frozen_files.add(frozen_path+'index.html' if frozen_path.endswith('/') else frozen_path+'.html')
+assert len(review_frozen_files)==len(review_frozen_pairs),(review_frozen_pairs,review_frozen_files)
+
+def without_header(text):
+ # Constant placeholder: both sides lose exactly their <header> element bytes.
+ return re.sub(r'<header\b[\s\S]*?</header>','<header></header>',text,count=1)
+
 # The synthetic locale cannot claim the twelve full-file scoped release grants.
 # Filter only that exact class from the copied evidence input; keep legacy records.
 record=read_json(T/'locales/travel-equivalence.json')
@@ -359,7 +380,9 @@ try:
  for prod_file,old in production.items():
   file=prod_file.relative_to(R).as_posix();candidate=out[T/file]
   if file.endswith('.html'):
-   normalized=strip_html_zz(candidate);fail_diff(file,old,normalized)
+   normalized=strip_html_zz(candidate)
+   if file in review_frozen_files:fail_diff(file,without_header(old),without_header(normalized))
+   else:fail_diff(file,old,normalized)
    if file=='travel.html':
     corrupted=candidate.replace('</main>','X</main>',1);assert corrupted!=candidate
     try:fail_diff(file,old,strip_html_zz(corrupted));raise AssertionError('accepted real candidate corruption')
