@@ -90,3 +90,49 @@ def route_nav_hrefs(text, root, lang):
 def finish_nav(text, root, lang):
     from i18n.tour_nav import tour_nav
     return route_nav_hrefs(disclose_nav(tour_nav(text, root, lang), root, lang), root, lang)
+
+
+def mark_english_nav_hrefs(text, root, lang, label=True):
+    """Header-only: mark links that still land on English with hreflang/aria + a visible qualifier.
+
+    Runs after twin routing; anything left unrouted has no registered twin. Adds
+    hreflang="en" and an aria-label carrying the localized English qualifier, plus
+    (when label=True) a visible <span class="enc-language"> qualifier inside the
+    anchor so the destination language is never a surprise. Idempotent per build.
+    """
+    if lang == 'en':
+        return text
+    m = re.search(r'<header\b[\s\S]*?</header>', text)
+    if not m:
+        return text
+    from urllib.parse import urlsplit
+    from html import escape, unescape
+    qualifier = load_trail(root, lang)['englishQualifier']
+    block = m[0]
+    def replace(mm):
+        pre, href, post, body = mm.group(1), mm.group(2), mm.group(3), mm.group(4)
+        if 'hreflang=' in pre + post or 'enc-language' in body:
+            return mm[0]
+        if href.startswith(('#', 'mailto:', 'tel:')):
+            return mm[0]
+        parts = urlsplit(href)
+        if parts.scheme or not parts.path.startswith('/'):
+            return mm[0]
+        if re.match(r'^/(ar|de|es|fr|hi|it|pl|pt|ru|th|zh-Hans)(/|$)', parts.path):
+            return mm[0]
+        visible = unescape(re.sub(r'<[^>]+>', '', body)).strip()
+        clean = pre.strip()
+        new_attrs = (' ' + clean if clean else '') + f' hreflang="en" aria-label="{escape(visible + " " + qualifier, quote=True)}"'
+        new_body = body + (f' <span class="enc-language">{escape(qualifier)}</span>' if label else '')
+        return '<a' + new_attrs + f' href="{href}"' + post + '>' + new_body + '</a>'
+    block = re.sub(r'<a\b([^>]*?)href="([^"]*)"([^>]*)>([\s\S]*?)</a>', replace, block)
+    return text[:m.start()] + block + text[m.end():]
+
+
+def route_and_mark_nav(text, root, lang, label=True):
+    """Arabic launch: route header links to registered twins, mark the rest as English."""
+    if lang != 'ar':
+        return text
+    if not re.search(r'<header\b', text):
+        return text
+    return mark_english_nav_hrefs(route_nav_hrefs(text, root, lang), root, lang, label)
