@@ -23,7 +23,11 @@
   // collision-free at any zoom level.
   const settingsRowFit = () => {
     const rootEm = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-    document.body.classList.toggle('st-settings-row', window.innerWidth >= 20 * rootEm && window.innerWidth <= 820);
+    // Never lift Settings while the resume banner owns the shelf row: the absolutely
+    // positioned control would land on the banner's Resume button (CI: peter-story at 390).
+    const banner = document.getElementById('story-resume-banner');
+    const resumeShown = banner && !banner.hidden;
+    document.body.classList.toggle('st-settings-row', !resumeShown && window.innerWidth >= 20 * rootEm && window.innerWidth <= 820);
   };
   settingsRowFit();
   window.addEventListener('resize', settingsRowFit);
@@ -1657,14 +1661,16 @@
       if (banner && bannerText && bannerBtn) {
         bannerText.textContent = `Continue from ${UI.pagePrefix} ${lastPage + 1}?`;
         banner.hidden = false;
+        settingsRowFit();
         bannerBtn.addEventListener('click', () => {
           index = lastPage;
           render();
           scrollToReader();
           banner.hidden = true;
+          settingsRowFit();
         });
         if (bannerDismiss) {
-          bannerDismiss.addEventListener('click', () => { banner.hidden = true; });
+          bannerDismiss.addEventListener('click', () => { banner.hidden = true; settingsRowFit(); });
         }
       }
     }
