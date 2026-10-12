@@ -4,11 +4,14 @@ from i18n.shared_chrome import shared_header_chrome
 from bs4 import BeautifulSoup
 from pathlib import Path
 import json
-from i18n.catalog import ROOT, read_json
+from i18n.catalog import ROOT, read_json, page_url
 
 EN = '/saint-charbel-chaplet'
 AR = '/ar/saint-charbel-chaplet'
 SITE = 'https://marsharbel.com'
+
+
+LEGACY_CHROME_MAP={'saint-charbel-novena','./saint-charbel-novena','visit-annaya','22nd-of-the-month','saint-charbel-feast-day','./en/prayers'}
 
 
 def render_chaplet(root=ROOT):
@@ -105,13 +108,23 @@ def render_chaplet(root=ROOT):
     for tag,obj in zip(schemas,(article,faq_schema)):
         tag.string=json.dumps(obj,ensure_ascii=False,indent=2).replace('<','\\u003c')
     # Absolute internal paths prevent /ar/ relative resolution errors. Map only authored destinations.
+    # AR-2 body-link follow-up: twin destinations resolve from the registry.
+    registry=read_json(root/'locales/registry.json')
+    prayer_library=registry['pageMirrors']['prayer-library-master']['routes']['ar']
+    encyclopedia=registry['pageMirrors']['saint-charbel-encyclopedia-master']['routes']['ar']
+    biography=page_url(registry,'ar','biography')
     mapped={'saint-charbel-novena':'/ar/novena','./saint-charbel-novena':'/ar/novena',
-            'prayer-library':'/prayer-library','./prayer-library#find-a-prayer':'/prayer-library#find-a-prayer',
+            'prayer-library':prayer_library,'./prayer-library':prayer_library,
+            'prayer-library#find-a-prayer':prayer_library+'#find-a-prayer','./prayer-library#find-a-prayer':prayer_library+'#find-a-prayer',
+            'saint-charbel-encyclopedia':encyclopedia,'./saint-charbel-encyclopedia':encyclopedia,
+            'history':biography,'./history':biography,
             'visit-annaya':'/ar/annaya','22nd-of-the-month':'/ar/22nd-of-the-month',
             'saint-charbel-feast-day':'/ar/feast-day','./en/prayers':'/ar/prayers'}
     for a in soup.select('a[href]'):
         href=a['href']
-        if href in mapped:a['href']=mapped[href]
+        # Header/footer chrome is routed by finish_nav; the twin mapping is body-only.
+        if href in mapped and a.find_parent(['header','footer','nav']) is None:a['href']=mapped[href]
+        elif href in mapped and href in LEGACY_CHROME_MAP:a['href']=mapped[href]
         elif href.startswith('./'):a['href']='/'+href[2:]
     for tag in soup.select('script[src],link[href],img[src]'):
         attr='src' if tag.has_attr('src') else 'href';url=tag[attr]

@@ -44,6 +44,10 @@ def render_litany(root=ROOT):
     mirrors=read_json(root/'locales/registry.json').get('authoredMirrors',{})
     if 'chaplet' in mirrors and 'ar' in mirrors['chaplet']['routes']:
         mapped['saint-charbel-chaplet']=mirrors['chaplet']['routes']['ar']
+    # AR-2 body-link follow-up: prayer-library twin resolves from the registry.
+    prayer_library=read_json(root/'locales/registry.json')['pageMirrors']['prayer-library-master']['routes']['ar']
+    mapped['prayer-library']=prayer_library
+    mapped['prayer-library#find-a-prayer']=prayer_library+'#find-a-prayer'
     for a in soup.select('a[href]'):
         href=a['href'];path=href.removeprefix('./')
         if path in mapped:a['href']=mapped[path]

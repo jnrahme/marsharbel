@@ -1,7 +1,7 @@
 """Pure Travel hub renderer with one template and complete keyed locale copy."""
 from html import escape
 import re
-from i18n.catalog import read_json
+from i18n.catalog import read_json, page_url, topic_locales
 from i18n.metadata import og_locales
 from i18n.travel_components import directory, travel_frame
 from i18n.encyclopedia_nav import finish_nav
@@ -30,6 +30,9 @@ def render_travel(root, registry):
             return values[key] if key in ('locale.alternates','locale.ogLocaleAlternates','locale.destinationDirectory') else escape(values[key],quote=True)
         text=SLOT.sub(replace,template)
         targets={cfg['english']:cfg['routes'][lang] for cfg in registry['authoredMirrors'].values() if lang in cfg['routes']}
+        # AR-2 body-link follow-up (ar only): the visit-Annaya topic twin localizes too.
+        if lang=='ar' and lang in topic_locales(registry,'annaya'):
+            targets['/visit-annaya']=page_url(registry,'ar','annaya')
         # Only published routes are localized; other destinations stay on existing English URLs.
         text=re.sub(r'(<a\b[^>]*\bhref=["\'])(/[^"\']*)(["\'])',lambda m:m[1]+targets.get(m[2],m[2])+m[3],text)
         if lang=='en':
