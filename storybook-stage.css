@@ -135,7 +135,6 @@ body.is-story-page .story-production-note{color:#a8967a;text-align:center;paddin
   body.is-story-page .storybook-panel.st-back .storybook-illustration{transform-origin:50% 100%;animation-name:st-fade}
   body.is-story-page section.storybook{padding-bottom:calc(8.5rem + env(safe-area-inset-bottom))}
   body.is-story-page .storybook-controls{position:sticky;bottom:0;z-index:20;padding:.7rem .5rem calc(.7rem + env(safe-area-inset-bottom));margin:0;
-    border-radius:18px;border:1px solid rgba(227,191,122,.18);box-shadow:0 14px 34px rgba(0,0,0,.45);
     background:rgba(14,9,6,.95)}
   body.is-story-page .storybook-controls .btn{flex:1 1 0;min-width:0;padding:0 .6rem}
   body.is-story-page .storybook-controls .story-voice-pack,body.is-story-page .storybook-controls .story-reading-indicator{flex-basis:100%;justify-content:center}
