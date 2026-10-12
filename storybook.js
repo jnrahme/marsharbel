@@ -17,6 +17,25 @@
   const contentLang = selectedLang === 'ar' ? 'ar' : selectedLang === 'fr' ? 'fr' : 'en';
   const isRtl = contentLang === 'ar';
 
+  // The Settings control may share the shelf-link row (see storybook-stage.css) only when the
+  // row truly fits both controls. Measure the effective width in root-em units so text zoom
+  // (which grows both controls) closes the window and the static stacked fallback keeps them
+  // collision-free at any zoom level.
+  const settingsRowFit = () => {
+    const rootEm = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    // Never lift Settings while the resume banner owns the shelf row: the absolutely
+    // positioned control would land on the banner's Resume button (CI: peter-story at 390).
+    const banner = document.getElementById('story-resume-banner');
+    const resumeShown = banner && !banner.hidden;
+    document.body.classList.toggle('st-settings-row', !resumeShown && window.innerWidth >= 20 * rootEm && window.innerWidth <= 820);
+  };
+  settingsRowFit();
+  window.addEventListener('resize', settingsRowFit);
+  // Re-check when the root font size can change without a resize: injected style rules
+  // (accessibility tooling, tests) or runtime html style/class changes.
+  new MutationObserver(settingsRowFit).observe(document.documentElement, { attributes: true, attributeFilter: ['style', 'class'] });
+  if (document.head) new MutationObserver(settingsRowFit).observe(document.head, { childList: true, subtree: true });
+
   const COPY = {
     en: {
       pagePrefix: 'Page',
@@ -1642,14 +1661,16 @@
       if (banner && bannerText && bannerBtn) {
         bannerText.textContent = `Continue from ${UI.pagePrefix} ${lastPage + 1}?`;
         banner.hidden = false;
+        settingsRowFit();
         bannerBtn.addEventListener('click', () => {
           index = lastPage;
           render();
           scrollToReader();
           banner.hidden = true;
+          settingsRowFit();
         });
         if (bannerDismiss) {
-          bannerDismiss.addEventListener('click', () => { banner.hidden = true; });
+          bannerDismiss.addEventListener('click', () => { banner.hidden = true; settingsRowFit(); });
         }
       }
     }
