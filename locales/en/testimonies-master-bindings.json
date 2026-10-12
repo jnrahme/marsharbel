@@ -1,0 +1,2402 @@
+{
+  "version": 1,
+  "master": "testimonies.html",
+  "masterSha256": "c62ef0f44020b828ccf9f05f03b07a5672594e926fd85512bf53e30aad0f88fa",
+  "sourceRevision": "9399bc01",
+  "bindings": [
+    {
+      "key": "testimonies.title",
+      "selector": "html > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Letters - Saint Charbel | Historical and Personal Accounts",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.meta-description",
+      "selector": "html > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "testimonies.meta-og-title",
+      "selector": "html > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Letters - Saint Charbel | Historical and Personal Accounts",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "testimonies.meta-og-description",
+      "selector": "html > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "testimonies.meta-twitter-title",
+      "selector": "html > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Letters - Saint Charbel | Historical and Personal Accounts",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "testimonies.meta-twitter-description",
+      "selector": "html > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "testimonies.header.saint-charbel",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header.home",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-legacy",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-saint-charbel-encyclopedia",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-full-history",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-miracles",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-miracles-reports",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-eucharistic-miracles",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-letters",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-voice-testimony",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-saints",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-saints-2",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-children-s-books",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-prayer",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-prayer-library",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-find-a-prayer-by-intention",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-prayer-for-the-sick",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-prayer-for-healing",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-prayer-for-anxiety",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-prayer-for-depression",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-prayer-for-students",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-prayer-for-addiction",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-prayer-for-family",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-prayer-for-pregnancy",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-prayer-for-a-miracle",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-saint-charbel-prayers",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-saint-charbel-novena",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-feast-day",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-rosary-guide",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-rosary-minibook",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-mystery-meditation",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-become-like-him",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-travel",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-travel-2",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-visiting-annaya",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-annaya-online-tour",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-bekaa-kafra",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-our-lady-of-lebanon-at-harissa",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-the-cedars-of-god",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-bkerke-and-the-maronite-patriarchate",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-qadisha-valley",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-qannoubine-monastery",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-qozhaya-monastery",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-saint-charbel-s-lebanon",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-the-hermitage",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-saint-charbel-trail",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-news",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-media",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-music",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-video",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-a-gallery",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.header-aria-primary",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "testimonies.main-main-content-published",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Published",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-letters-2",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-read-source-attributed-summaries-of-historical",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Read source-attributed summaries of historical cases and ministry-published personal accounts. We distinguish Church-recognized healings from personal reports. Letters sent by readers appear separately after human editorial review.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-write-a-letter",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Write a Letter",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-and-they-overcame-him-by-the",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > blockquote:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "\"And they overcame him by the blood of the Lamb, and by the word of the testimony…\"",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-revelation-12-11-douay-rheims-first",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > cite:nth-of-type(1)",
+      "source": "Revelation 12:11 (Douay-Rheims), first part of the verse",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-scripture-puts-testimony-in-the-same",
+      "selector": "#main-content > section:nth-of-type(2) > figure:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Scripture puts testimony in the same sentence as the blood of the Lamb. That is how much a testimony matters, and why every Letter is read with care.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-letters-from-around-the-world",
+      "selector": "#letters-globe-title",
+      "source": "Letters from around the world",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-saint-charbel-is-prayed-to-on",
+      "selector": "#main-content > section:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "Saint Charbel is prayed to on every continent. Turn the globe and tap a flag to see whose letters come from there.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-drag-to-turn-the-globe-tap",
+      "selector": "#main-content > section:nth-of-type(3) > p:nth-of-type(2)",
+      "source": "Drag to turn the globe. Tap a flag.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-all-100-countries",
+      "selector": "#main-content > section:nth-of-type(3) > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "All 100 countries",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-yugoslavia-and-zaire-are-former-countries",
+      "selector": "#main-content > section:nth-of-type(3) > details:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Yugoslavia and Zaire are former countries, and the list does not say which Congo it means, so those three show without a flag.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-the-99-countries-named-in-the",
+      "selector": "#main-content > section:nth-of-type(3) > p:nth-of-type(3)",
+      "source": "The 99 countries named in the letters published by saintcharbel.net.au, plus Canada and the letters on this page.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-what-are-the-letters",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "What are the Letters?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-people-have-long-written-to-saint",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "People have long written to Saint Charbel. They write to the monastery at Annaya, where he is buried, in many languages. Some send thanks for a prayer they believe was answered. Some ask him to pray for a sick child, a marriage, or a country at war. Some ask for a little blessed oil to carry to someone who cannot travel.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-we-call-these-letters-because-that",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(2)",
+      "source": "We call these Letters because that is what they are: one person speaking plainly to a saint. They are not reviews, and they are not medical records.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-what-a-letter-does-and-does",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(2)",
+      "source": "What a Letter does and does not say",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-a-letter-is-one-person-s",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(3)",
+      "source": "A Letter is one person's account in their own words. It tells you what happened and what they believe about it. It cannot prove a healing. The Church studies cases separately, and only a few are formally recognized. Here we keep the two apart. Source-published accounts carry their source, and letters from readers appear only after a person has read them.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-countries-named-in-the-published-list",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(3)",
+      "source": "Countries named in the published list",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-the-ministry-at",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(4)",
+      "source": "The ministry at",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-saintcharbel-net-au",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "saintcharbel.net.au",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-publishes-a-list-of-the-countries",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(4)",
+      "source": "publishes a list of the countries that letters to the monastery have come from, from Lebanon to Argentina, Japan, Nigeria and Norway. We show the 99 names on that list below, plus Canada, which we added because letters come from there too. It is their list, not our count, and we have not checked it ourselves.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "testimonies.main-main-content-lebanon",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-algeria",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Algeria",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-argentina",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "Argentina",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-australia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(4) > span:nth-of-type(1)",
+      "source": "Australia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-austria",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(5) > span:nth-of-type(1)",
+      "source": "Austria",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-belarus",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(6) > span:nth-of-type(1)",
+      "source": "Belarus",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-belgium",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(7) > span:nth-of-type(1)",
+      "source": "Belgium",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-benin",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(8) > span:nth-of-type(1)",
+      "source": "Benin",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-bolivia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(9) > span:nth-of-type(1)",
+      "source": "Bolivia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-brazil",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(10) > span:nth-of-type(1)",
+      "source": "Brazil",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-bulgaria",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(11) > span:nth-of-type(1)",
+      "source": "Bulgaria",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-burkina-faso",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(12) > span:nth-of-type(1)",
+      "source": "Burkina Faso",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-cameroon",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(13) > span:nth-of-type(1)",
+      "source": "Cameroon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-canada",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(14) > span:nth-of-type(1)",
+      "source": "Canada",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-chile",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(15) > span:nth-of-type(1)",
+      "source": "Chile",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-colombia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(16) > span:nth-of-type(1)",
+      "source": "Colombia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-costa-rica",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(17) > span:nth-of-type(1)",
+      "source": "Costa Rica",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-croatia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(18) > span:nth-of-type(1)",
+      "source": "Croatia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-cuba",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(19) > span:nth-of-type(1)",
+      "source": "Cuba",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-cyprus",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(20) > span:nth-of-type(1)",
+      "source": "Cyprus",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-czech-republic",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(21) > span:nth-of-type(1)",
+      "source": "Czech Republic",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-c-te-d-ivoire",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(22) > span:nth-of-type(1)",
+      "source": "Côte d’Ivoire",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-denmark",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(23) > span:nth-of-type(1)",
+      "source": "Denmark",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-djibouti",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(24) > span:nth-of-type(1)",
+      "source": "Djibouti",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-dominican-republic",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(25) > span:nth-of-type(1)",
+      "source": "Dominican Republic",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-ecuador",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(26) > span:nth-of-type(1)",
+      "source": "Ecuador",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-egypt",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(27) > span:nth-of-type(1)",
+      "source": "Egypt",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-estonia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(28) > span:nth-of-type(1)",
+      "source": "Estonia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-ethiopia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(29) > span:nth-of-type(1)",
+      "source": "Ethiopia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-fiji",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(30) > span:nth-of-type(1)",
+      "source": "Fiji",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-france",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(31) > span:nth-of-type(1)",
+      "source": "France",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-gabon",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(32) > span:nth-of-type(1)",
+      "source": "Gabon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-gambia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(33) > span:nth-of-type(1)",
+      "source": "Gambia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-germany",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(34) > span:nth-of-type(1)",
+      "source": "Germany",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-ghana",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(35) > span:nth-of-type(1)",
+      "source": "Ghana",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-greece",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(36) > span:nth-of-type(1)",
+      "source": "Greece",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-guatemala",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(37) > span:nth-of-type(1)",
+      "source": "Guatemala",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-guinea",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(38) > span:nth-of-type(1)",
+      "source": "Guinea",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-guyana",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(39) > span:nth-of-type(1)",
+      "source": "Guyana",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-haiti",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(40) > span:nth-of-type(1)",
+      "source": "Haiti",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-hungary",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(41) > span:nth-of-type(1)",
+      "source": "Hungary",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-india",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(42) > span:nth-of-type(1)",
+      "source": "India",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-iran",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(43) > span:nth-of-type(1)",
+      "source": "Iran",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-iraq",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(44) > span:nth-of-type(1)",
+      "source": "Iraq",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-ireland",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(45) > span:nth-of-type(1)",
+      "source": "Ireland",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-italy",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(46) > span:nth-of-type(1)",
+      "source": "Italy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-japan",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(47) > span:nth-of-type(1)",
+      "source": "Japan",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-jordan",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(48) > span:nth-of-type(1)",
+      "source": "Jordan",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-kazakhstan",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(49) > span:nth-of-type(1)",
+      "source": "Kazakhstan",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-kenya",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(50) > span:nth-of-type(1)",
+      "source": "Kenya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-kuwait",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(51) > span:nth-of-type(1)",
+      "source": "Kuwait",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-latvia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(52) > span:nth-of-type(1)",
+      "source": "Latvia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-lithuania",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(53) > span:nth-of-type(1)",
+      "source": "Lithuania",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-luxembourg",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(54) > span:nth-of-type(1)",
+      "source": "Luxembourg",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-madagascar",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(55) > span:nth-of-type(1)",
+      "source": "Madagascar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-malaysia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(56) > span:nth-of-type(1)",
+      "source": "Malaysia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-mali",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(57) > span:nth-of-type(1)",
+      "source": "Mali",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-malta",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(58) > span:nth-of-type(1)",
+      "source": "Malta",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-mauritania",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(59) > span:nth-of-type(1)",
+      "source": "Mauritania",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-mexico",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(60) > span:nth-of-type(1)",
+      "source": "Mexico",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-monaco",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(61) > span:nth-of-type(1)",
+      "source": "Monaco",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-morocco",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(62) > span:nth-of-type(1)",
+      "source": "Morocco",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-mozambique",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(63) > span:nth-of-type(1)",
+      "source": "Mozambique",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-new-zealand",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(64) > span:nth-of-type(1)",
+      "source": "New Zealand",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-nigeria",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(65) > span:nth-of-type(1)",
+      "source": "Nigeria",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-norway",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(66) > span:nth-of-type(1)",
+      "source": "Norway",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-oman",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(67) > span:nth-of-type(1)",
+      "source": "Oman",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-pakistan",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(68) > span:nth-of-type(1)",
+      "source": "Pakistan",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-panama",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(69) > span:nth-of-type(1)",
+      "source": "Panama",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-paraguay",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(70) > span:nth-of-type(1)",
+      "source": "Paraguay",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-peru",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(71) > span:nth-of-type(1)",
+      "source": "Peru",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-philippines",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(72) > span:nth-of-type(1)",
+      "source": "Philippines",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-poland",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(73) > span:nth-of-type(1)",
+      "source": "Poland",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-portugal",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(74) > span:nth-of-type(1)",
+      "source": "Portugal",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-romania",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(75) > span:nth-of-type(1)",
+      "source": "Romania",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-russia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(76) > span:nth-of-type(1)",
+      "source": "Russia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-saint-lucia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(77) > span:nth-of-type(1)",
+      "source": "Saint Lucia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-saudi-arabia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(78) > span:nth-of-type(1)",
+      "source": "Saudi Arabia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-senegal",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(79) > span:nth-of-type(1)",
+      "source": "Senegal",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-seychelles",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(80) > span:nth-of-type(1)",
+      "source": "Seychelles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-sierra-leone",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(81) > span:nth-of-type(1)",
+      "source": "Sierra Leone",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-singapore",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(82) > span:nth-of-type(1)",
+      "source": "Singapore",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-slovakia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(83) > span:nth-of-type(1)",
+      "source": "Slovakia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-south-africa",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(84) > span:nth-of-type(1)",
+      "source": "South Africa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-spain",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(85) > span:nth-of-type(1)",
+      "source": "Spain",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-sri-lanka",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(86) > span:nth-of-type(1)",
+      "source": "Sri Lanka",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-sudan",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(87) > span:nth-of-type(1)",
+      "source": "Sudan",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-sweden",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(88) > span:nth-of-type(1)",
+      "source": "Sweden",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-united-arab-emirates",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(89) > span:nth-of-type(1)",
+      "source": "United Arab Emirates",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-england",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(90) > span:nth-of-type(1)",
+      "source": "England",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-united-states",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(91) > span:nth-of-type(1)",
+      "source": "United States",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-uruguay",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(92) > span:nth-of-type(1)",
+      "source": "Uruguay",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-vatican-city",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(93) > span:nth-of-type(1)",
+      "source": "Vatican City",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-venezuela",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(94) > span:nth-of-type(1)",
+      "source": "Venezuela",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-vietnam",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(95) > span:nth-of-type(1)",
+      "source": "Vietnam",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-zambia",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(96) > span:nth-of-type(1)",
+      "source": "Zambia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-zimbabwe",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(97) > span:nth-of-type(1)",
+      "source": "Zimbabwe",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-congo",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(98) > span:nth-of-type(2)",
+      "source": "Congo",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-yugoslavia-former-country",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(99) > span:nth-of-type(2)",
+      "source": "Yugoslavia (former country)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-zaire-former-country",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(100) > span:nth-of-type(2)",
+      "source": "Zaire (former country)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-flags-flag-icons-project-mit-license",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(5)",
+      "source": "Flags: flag-icons project, MIT license. Yugoslavia and Zaire are former countries, and the list does not say which Congo it means, so those three show without a flag.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-reader-letters-appear-here-after-editorial",
+      "selector": "#testimony-empty",
+      "source": "Reader letters appear here after editorial review. They are not medical verification or official Church recognition.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-accounts",
+      "selector": "#testimony-list > h2:nth-of-type(1)",
+      "source": "Source-published accounts",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-these-are-summaries-of-linked-historical",
+      "selector": "#testimony-list > p:nth-of-type(1)",
+      "source": "These are summaries of linked historical and ministry sources, not letters sent to this site. Church-recognized healings are distinguished from personal reports.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-nohad-el-shami",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Nohad El Shami",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-annaya-lebanon-january-22-1993",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Annaya, Lebanon - January 22, 1993",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-cnewa-reports-that-nohad-el-shami",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "CNEWA reports that Nohad El Shami was partially paralyzed after a stroke in January 1993. Her son Saad prayed at Saint Charbel’s hermitage and brought back blessed oil and soil. According to her family, she dreamed of surgery by Saint Charbel and another monk on January 22; when she awoke, she had two neck scars. She then made a monthly pilgrimage to Annaya for the rest of her life.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-reported-account-cnewa-lebanon-s-beloved",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Reported account - CNEWA, \"Lebanon’s Beloved Saint\" (interviews with the Shami family)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-2",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-antonio-ishaac",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
+      "source": "Antonio Ishaac",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-lebanon-recorded-at-the-monastery-october",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(2)",
+      "source": "Lebanon - recorded at the monastery, October 2025",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-in-an-interview-with-cnewa-antonio",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(3)",
+      "source": "In an interview with CNEWA, Antonio Ishaac said he had stopped treatment for Crohn’s disease in December 2024. He visited the monastery in May 2025 and prayed; he reported that his pain vanished after an intense night. He said later tests showed the disease had disappeared. CNEWA reports that the monastery recorded his account in October 2025.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-reported-account-cnewa-lebanon-s-beloved-2",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Reported account - CNEWA, \"Lebanon’s Beloved Saint\"",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-3",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-mariam-assaf-awad",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(3) > h3:nth-of-type(1)",
+      "source": "Mariam Assaf Awad",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-lebanon-1967-the-canonization-miracle",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(2)",
+      "source": "Lebanon - 1967 - the canonization miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-charbel-app-s-account-says-mariam",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(3)",
+      "source": "Charbel App’s account says Mariam Assaf Awad underwent several cancer operations between 1963 and 1965. She prayed for healing through Saint Charbel’s intercession in 1967 and reported that her symptoms were gone the next morning. The Church accepted her healing as the miracle for his canonization in 1977.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-historical-summary-charbel-app-saint-charbel",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Historical summary - Charbel App, Saint Charbel canonization account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-4",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-sister-maria-abel-kamari",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(4) > h3:nth-of-type(1)",
+      "source": "Sister Maria Abel Kamari",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-sisters-of-the-sacred-hearts-july",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(2)",
+      "source": "Sisters of the Sacred Hearts - July 1950 - a beatification miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-charbel-app-s-account-says-sister",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(3)",
+      "source": "Charbel App’s account says Sister Maria Abel Kamari, bedridden with severe illness and paralysis, recovered after visiting Saint Charbel’s tomb at Annaya in July 1950. The Church approved her healing among the miracles for his beatification in 1965.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-historical-summary-charbel-app-saint-charbel-2",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Historical summary - Charbel App, Saint Charbel canonization account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-5",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-iskandar-naim-obeid",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(5) > h3:nth-of-type(1)",
+      "source": "Iskandar Naim Obeid",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-baabdat-lebanon-1950-a-beatification-miracle",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(2)",
+      "source": "Baabdat, Lebanon - 1950 - a beatification miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-charbel-app-s-account-says-iskandar",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(3)",
+      "source": "Charbel App’s account says Iskandar Naim Obeid, a blacksmith from Baabdat, lost sight in one eye after a metal fragment struck it. On pilgrimage to Annaya in 1950, he reported a dream of a monk touching his eye and said his sight returned. The Church approved his healing among the miracles for Saint Charbel’s beatification.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-historical-summary-charbel-app-saint-charbel-3",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Historical summary - Charbel App, Saint Charbel canonization account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-6",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(6) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-brian-k-kravec",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(6) > h3:nth-of-type(1)",
+      "source": "Brian K. Kravec",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-united-states-ministry-published-healing-testimony",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(6) > p:nth-of-type(2)",
+      "source": "United States - ministry-published healing testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-brian-reports-that-severe-femur-pain",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(6) > p:nth-of-type(3)",
+      "source": "Brian reports that severe femur pain disappeared after he prayed for Saint Sharbel’s intercession and used relic oil. He says follow-up X-rays showed a healthy femur. This is a personal ministry account, not a Vatican-recognized miracle.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony of Brian K. Kravec",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-7",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(7) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-renny-palmisano",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(7) > h3:nth-of-type(1)",
+      "source": "Renny Palmisano",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-united-states-2026-ministry-published-account",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(7) > p:nth-of-type(2)",
+      "source": "United States - 2026 ministry-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-renny-reports-that-a-scan-first",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(7) > p:nth-of-type(3)",
+      "source": "Renny reports that a scan first appeared to show a cancer recurrence. After praying a novena and asking for Saint Sharbel’s intercession, a later review by her oncology team identified inflammation and scar tissue instead. She describes the outcome as an answered prayer.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-2",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(7) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony of Renny Palmisano",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-8",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(8) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-victor-g-akroush",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(8) > h3:nth-of-type(1)",
+      "source": "Victor G. Akroush",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-united-states-ministry-published-healing-testimony-2",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(8) > p:nth-of-type(2)",
+      "source": "United States - ministry-published healing testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-victor-s-family-describes-severe-stomach",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(8) > p:nth-of-type(3)",
+      "source": "Victor’s family describes severe stomach pain and a difficult medical diagnosis. They asked Saint Sharbel to intercede before treatment and report that Victor later recovered. The account is presented by the Family of Saint Sharbel USA as a personal testimony.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-3",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(8) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony of Victor G. Akroush",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-9",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(9) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-vanessa-el-fghali",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(9) > h3:nth-of-type(1)",
+      "source": "Vanessa El Fghali",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-bdadoun-lebanon-ministry-published-account",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(9) > p:nth-of-type(2)",
+      "source": "Bdadoun, Lebanon - ministry-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-vanessa-s-mother-reports-praying-to",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(9) > p:nth-of-type(3)",
+      "source": "Vanessa’s mother reports praying to Saint Sharbel for her daughter’s spinal condition and asking for his intercession. The ministry account says Vanessa’s recovery was later confirmed by medical follow-up.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-4",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(9) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony for Vanessa El Fghali",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-10",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(10) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-nader-ahmad-al-sawwaf-zantout",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(10) > h3:nth-of-type(1)",
+      "source": "Nader Ahmad Al-Sawwaf Zantout",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-lebanon-accident-recovery-testimony",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(10) > p:nth-of-type(2)",
+      "source": "Lebanon - accident recovery testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-after-a-serious-accident-left-nader",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(10) > p:nth-of-type(3)",
+      "source": "After a serious accident left Nader in a coma with fractures and paralysis, his family and monks at Annaya prayed for Saint Sharbel’s intercession. The published account says he regained consciousness and recovered.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-5",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(10) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony of Nader Ahmad Al-Sawwaf Zantout",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-11",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(11) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-tani-youssef-wehbeh",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(11) > h3:nth-of-type(1)",
+      "source": "Tani Youssef Wehbeh",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-lebanon-ministry-published-healing-testimony",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(11) > p:nth-of-type(2)",
+      "source": "Lebanon - ministry-published healing testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-tani-s-testimony-describes-a-serious",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(11) > p:nth-of-type(3)",
+      "source": "Tani’s testimony describes a serious leg condition during surgery and a reported intervention attributed to Saint Sharbel. The account says his leg was saved from major amputation.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-6",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(11) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony of Tani Youssef Wehbeh",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-12",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(12) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-sharbel-said-nassif",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(12) > h3:nth-of-type(1)",
+      "source": "Sharbel Said Nassif",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-australia-recorded-ministry-testimony",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(12) > p:nth-of-type(2)",
+      "source": "Australia - recorded ministry testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-sharbel-s-family-reports-praying-with",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(12) > p:nth-of-type(3)",
+      "source": "Sharbel’s family reports praying with blessed water and soil from Saint Charbel’s tomb after he was diagnosed with a serious heart condition. The published testimony says later medical results showed recovery.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-7",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(12) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony of Sharbel Said Nassif",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-13",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(13) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-georgiane-walker",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(13) > h3:nth-of-type(1)",
+      "source": "Georgiane Walker",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-united-states-post-surgery-recovery-testimony",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(13) > p:nth-of-type(2)",
+      "source": "United States - post-surgery recovery testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-georgiane-reports-that-a-post-surgery",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(13) > p:nth-of-type(3)",
+      "source": "Georgiane reports that a post-surgery wound that had not healed closed after she prayed to Saint Sharbel and used his oil. The testimony was later featured by EWTN News; it remains a personal account rather than a Church-certified miracle.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-8",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(13) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony of Georgiane Walker",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-14",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(14) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-rita-antoine-kirakos",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(14) > h3:nth-of-type(1)",
+      "source": "Rita Antoine Kirakos",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-lebanon-hearing-recovery-recorded-july-25",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(14) > p:nth-of-type(2)",
+      "source": "Lebanon - hearing recovery recorded July 25, 2024",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-the-ministry-account-says-rita-regained",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(14) > p:nth-of-type(3)",
+      "source": "The ministry account says Rita regained hearing in her right ear after prayer for Saint Sharbel’s intercession. The testimony was recorded by the ministry in July 2024.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-9",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(14) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony for Rita Antoine Kirakos",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-15",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(15) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-hoda-antoine-chalhoub",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(15) > h3:nth-of-type(1)",
+      "source": "Hoda Antoine Chalhoub",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-lebanon-healing-testimony-recorded-december-5",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(15) > p:nth-of-type(2)",
+      "source": "Lebanon - healing testimony recorded December 5, 2023",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-hoda-s-testimony-says-she-was",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(15) > p:nth-of-type(3)",
+      "source": "Hoda’s testimony says she was diagnosed with lung cancer and later received clear test results after prayers to Saint Sharbel. The published account identifies this as a ministry-recorded testimony, not a Vatican ruling.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-10",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(15) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony of Hoda Antoine Chalhoub",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-16",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(16) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-th-r-se-youssef-khoury-fahd",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(16) > h3:nth-of-type(1)",
+      "source": "Thérèse Youssef Khoury Fahd",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-lebanon-ministry-published-healing-testimony-2",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(16) > p:nth-of-type(2)",
+      "source": "Lebanon - ministry-published healing testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-th-r-se-s-account-describes",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(16) > p:nth-of-type(3)",
+      "source": "Thérèse’s account describes a brain tumor and a planned operation. The published testimony says the tumor disappeared after prayers to Saint Sharbel and that doctors confirmed the change.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-11",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(16) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony of Thérèse Youssef Khoury Fahd",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-source-published-account-17",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(17) > p:nth-of-type(1)",
+      "source": "Source-published account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-elias-youssef-rahmeh",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(17) > h3:nth-of-type(1)",
+      "source": "Elias Youssef Rahmeh",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-sin-el-fil-lebanon-healing-testimony",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(17) > p:nth-of-type(2)",
+      "source": "Sin El Fil, Lebanon - healing testimony recorded 2024",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-elias-s-ministry-published-testimony-says",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(17) > p:nth-of-type(3)",
+      "source": "Elias’s ministry-published testimony says he was diagnosed with rectal cancer and later received tests showing recovery after prayer to Saint Charbel. The source presents this as a recorded personal testimony.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-12",
+      "selector": "#testimony-list > div:nth-of-type(1) > article:nth-of-type(17) > a:nth-of-type(1)",
+      "source": "Family of Saint Sharbel USA - Healing Testimony of Elias Youssef Rahmeh",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-stories-on-video",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Stories on Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-people-telling-their-own-stories-in",
+      "selector": "#main-content > section:nth-of-type(6) > p:nth-of-type(1)",
+      "source": "People telling their own stories, in their own words - hosted on YouTube by the channels that made them. These are personal testimonies, not medical verification or official Church recognition. Embeds use youtube-nocookie, so nothing is tracked until you press play.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-featured",
+      "selector": "#main-content > section:nth-of-type(6) > article:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Featured:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-deacon-michael-chirichella-of-the-united",
+      "selector": "#main-content > section:nth-of-type(6) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Deacon Michael Chirichella of the United States shares his 2026 cancer testimony - two and a half minutes, in his own words (2:47).",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "testimonies.main-main-content-yassine-jaber-a-sunni-muslim-tells",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Yassine Jaber, a Sunni Muslim, tells his healing story after prayer to Saint Charbel - a witness across religious lines (31:15).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-dafne-gutierrez-speaking-at-st-joseph",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Dafne Gutierrez speaking at St Joseph Maronite Church in Phoenix, where her 2016 healing took place (7:18) -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-read-the-account",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "read the account",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-watch-their-stories",
+      "selector": "#main-content > section:nth-of-type(6) > h3:nth-of-type(1)",
+      "source": "Watch their stories",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-stephanie-serrano-of-the-united-states",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Stephanie Serrano of the United States shares her cancer testimony (10:08).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-christiane-eid-on-faith-the-diaspora",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Christiane Eid on faith, the diaspora, and Saint Charbel - a podcast conversation (33:08).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-raymond-nader-recounts-the-night-at",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "Raymond Nader recounts the night at the hermitage in 1994 (7:01) -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-read-his-story",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(3) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "read his story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-nohad-el-shami-s-full-account",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "Nohad El Shami's full account, in Arabic (OTV, 39:54) -",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-read-her-story-in-english",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(4) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "read her story in English",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-nohad-el-shami-and-her-son",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(5) > p:nth-of-type(1)",
+      "source": "Nohad El Shami and her son Saad, interviewed together, in Arabic (MTV, 31:38).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-main-content-dafne-gutierrez-s-story-in-spanish",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(6) > p:nth-of-type(1)",
+      "source": "Dafne Gutierrez's story, in Spanish (Telemundo, 4:20).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.main-aria-interactive-globe-with-flags-marking-the",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > canvas:nth-of-type(1)",
+      "source": "Interactive globe with flags marking the countries letters come from",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "testimonies.main-aria-countries-named-in-the-published-list-2",
+      "selector": "#main-content > section:nth-of-type(4) > ul:nth-of-type(1)",
+      "source": "Countries named in the published list",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "testimonies.main-title-deacon-michael-chirichella-shares-his-2026",
+      "selector": "#main-content > section:nth-of-type(6) > article:nth-of-type(1) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Deacon Michael Chirichella shares his 2026 cancer testimony (2:47)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "testimonies.main-title-yassine-jaber-tells-his-healing-story",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Yassine Jaber tells his healing story (31:15)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "testimonies.main-title-dafne-gutierrez-speaks-at-her-phoenix",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Dafne Gutierrez speaks at her Phoenix parish (7:18)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "testimonies.main-title-stephanie-serrano-shares-her-cancer-testimony",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(1) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Stephanie Serrano shares her cancer testimony (10:08)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "testimonies.main-title-christiane-eid-on-faith-the-diaspora-2",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(2) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Christiane Eid on faith, the diaspora, and Saint Charbel (33:08)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "testimonies.main-title-raymond-nader-recounts-the-1994-night",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(3) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Raymond Nader recounts the 1994 night at the hermitage (7:01)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "testimonies.main-title-nohad-el-shami-full-account-arabic",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(4) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Nohad El Shami full account, Arabic (OTV, 39:54)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "testimonies.main-title-nohad-el-shami-and-her-son-2",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(5) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Nohad El Shami and her son Saad, Arabic (MTV, 31:38)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "testimonies.main-title-dafne-gutierrez-in-spanish-telemundo-4",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(2) > article:nth-of-type(6) > div:nth-of-type(1) > iframe:nth-of-type(1)",
+      "source": "Dafne Gutierrez in Spanish (Telemundo, 4:20)",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "testimonies.footer-div-moderated-testimony-archive-author-please-pray",
+      "selector": "html > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Moderated testimony archive. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.footer-a-admin",
+      "selector": "html > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Admin",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "testimonies.body-a-skip-to-main-content",
+      "selector": "html > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "testimonies.title": "Letters - Saint Charbel | Historical and Personal Accounts",
+    "testimonies.meta-description": "Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review.",
+    "testimonies.meta-og-title": "Letters - Saint Charbel | Historical and Personal Accounts",
+    "testimonies.meta-og-description": "Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review.",
+    "testimonies.meta-twitter-title": "Letters - Saint Charbel | Historical and Personal Accounts",
+    "testimonies.meta-twitter-description": "Read sourced historical accounts and personal healing reports about Saint Charbel. Reader-submitted stories appear only after editorial review.",
+    "testimonies.header-a-legacy": "Legacy",
+    "testimonies.header-a-saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "testimonies.header-a-full-history": "Full History",
+    "testimonies.header-a-miracles": "Miracles",
+    "testimonies.header-a-miracles-reports": "Miracles & Reports",
+    "testimonies.header-a-eucharistic-miracles": "Eucharistic Miracles",
+    "testimonies.header-a-letters": "Letters",
+    "testimonies.header-a-voice-testimony": "Voice Testimony",
+    "testimonies.header-a-saints": "Saints",
+    "testimonies.header-a-saints-2": "Saints",
+    "testimonies.header-a-children-s-books": "Children's Books",
+    "testimonies.header-a-prayer": "Prayer",
+    "testimonies.header-a-prayer-library": "Prayer Library",
+    "testimonies.header-a-find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "testimonies.header-a-prayer-for-the-sick": "Prayer for the Sick",
+    "testimonies.header-a-prayer-for-healing": "Prayer for Healing",
+    "testimonies.header-a-prayer-for-anxiety": "Prayer for Anxiety",
+    "testimonies.header-a-prayer-for-depression": "Prayer for Depression",
+    "testimonies.header-a-prayer-for-students": "Prayer for Students",
+    "testimonies.header-a-prayer-for-addiction": "Prayer for Addiction",
+    "testimonies.header-a-prayer-for-family": "Prayer for Family",
+    "testimonies.header-a-prayer-for-pregnancy": "Prayer for Pregnancy",
+    "testimonies.header-a-prayer-for-a-miracle": "Prayer for a Miracle",
+    "testimonies.header-a-saint-charbel-prayers": "Saint Charbel Prayers",
+    "testimonies.header-a-saint-charbel-novena": "Saint Charbel Novena",
+    "testimonies.header-a-feast-day": "Feast Day",
+    "testimonies.header-a-rosary-guide": "Rosary Guide",
+    "testimonies.header-a-rosary-minibook": "Rosary Minibook",
+    "testimonies.header-a-mystery-meditation": "Mystery Meditation",
+    "testimonies.header-a-become-like-him": "Become Like Him",
+    "testimonies.header-a-travel": "Travel",
+    "testimonies.header-a-travel-2": "Travel",
+    "testimonies.header-a-visiting-annaya": "Visiting Annaya",
+    "testimonies.header-a-annaya-online-tour": "Annaya Online Tour",
+    "testimonies.header-a-bekaa-kafra": "Bekaa Kafra",
+    "testimonies.header-a-our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "testimonies.header-a-the-cedars-of-god": "the Cedars of God",
+    "testimonies.header-a-bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "testimonies.header-a-qadisha-valley": "Qadisha Valley",
+    "testimonies.header-a-qannoubine-monastery": "Qannoubine Monastery",
+    "testimonies.header-a-qozhaya-monastery": "Qozhaya Monastery",
+    "testimonies.header-a-saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "testimonies.header-a-the-hermitage": "The Hermitage",
+    "testimonies.header-a-saint-charbel-trail": "Saint Charbel Trail",
+    "testimonies.header-a-news": "News",
+    "testimonies.header-a-media": "Media",
+    "testimonies.header-a-music": "Music",
+    "testimonies.header-a-video": "Video",
+    "testimonies.header-a-gallery": "Gallery",
+    "testimonies.header-aria-primary": "Primary",
+    "testimonies.main-main-content-published": "Published",
+    "testimonies.main-main-content-letters-2": "Letters",
+    "testimonies.main-main-content-read-source-attributed-summaries-of-historical": "Read source-attributed summaries of historical cases and ministry-published personal accounts. We distinguish Church-recognized healings from personal reports. Letters sent by readers appear separately after human editorial review.",
+    "testimonies.main-main-content-write-a-letter": "Write a Letter",
+    "testimonies.main-main-content-and-they-overcame-him-by-the": "\"And they overcame him by the blood of the Lamb, and by the word of the testimony…\"",
+    "testimonies.main-main-content-revelation-12-11-douay-rheims-first": "Revelation 12:11 (Douay-Rheims), first part of the verse",
+    "testimonies.main-main-content-scripture-puts-testimony-in-the-same": "Scripture puts testimony in the same sentence as the blood of the Lamb. That is how much a testimony matters, and why every Letter is read with care.",
+    "testimonies.main-main-content-letters-from-around-the-world": "Letters from around the world",
+    "testimonies.main-main-content-saint-charbel-is-prayed-to-on": "Saint Charbel is prayed to on every continent. Turn the globe and tap a flag to see whose letters come from there.",
+    "testimonies.main-main-content-drag-to-turn-the-globe-tap": "Drag to turn the globe. Tap a flag.",
+    "testimonies.main-main-content-all-100-countries": "All 100 countries",
+    "testimonies.main-main-content-yugoslavia-and-zaire-are-former-countries": "Yugoslavia and Zaire are former countries, and the list does not say which Congo it means, so those three show without a flag.",
+    "testimonies.main-main-content-the-99-countries-named-in-the": "The 99 countries named in the letters published by saintcharbel.net.au, plus Canada and the letters on this page.",
+    "testimonies.main-main-content-what-are-the-letters": "What are the Letters?",
+    "testimonies.main-main-content-people-have-long-written-to-saint": "People have long written to Saint Charbel. They write to the monastery at Annaya, where he is buried, in many languages. Some send thanks for a prayer they believe was answered. Some ask him to pray for a sick child, a marriage, or a country at war. Some ask for a little blessed oil to carry to someone who cannot travel.",
+    "testimonies.main-main-content-we-call-these-letters-because-that": "We call these Letters because that is what they are: one person speaking plainly to a saint. They are not reviews, and they are not medical records.",
+    "testimonies.main-main-content-what-a-letter-does-and-does": "What a Letter does and does not say",
+    "testimonies.main-main-content-a-letter-is-one-person-s": "A Letter is one person's account in their own words. It tells you what happened and what they believe about it. It cannot prove a healing. The Church studies cases separately, and only a few are formally recognized. Here we keep the two apart. Source-published accounts carry their source, and letters from readers appear only after a person has read them.",
+    "testimonies.main-main-content-countries-named-in-the-published-list": "Countries named in the published list",
+    "testimonies.main-main-content-the-ministry-at": "The ministry at",
+    "testimonies.main-main-content-saintcharbel-net-au": "saintcharbel.net.au",
+    "testimonies.main-main-content-publishes-a-list-of-the-countries": "publishes a list of the countries that letters to the monastery have come from, from Lebanon to Argentina, Japan, Nigeria and Norway. We show the 99 names on that list below, plus Canada, which we added because letters come from there too. It is their list, not our count, and we have not checked it ourselves.",
+    "testimonies.main-main-content-lebanon": "Lebanon",
+    "testimonies.main-main-content-algeria": "Algeria",
+    "testimonies.main-main-content-argentina": "Argentina",
+    "testimonies.main-main-content-australia": "Australia",
+    "testimonies.main-main-content-austria": "Austria",
+    "testimonies.main-main-content-belarus": "Belarus",
+    "testimonies.main-main-content-belgium": "Belgium",
+    "testimonies.main-main-content-benin": "Benin",
+    "testimonies.main-main-content-bolivia": "Bolivia",
+    "testimonies.main-main-content-brazil": "Brazil",
+    "testimonies.main-main-content-bulgaria": "Bulgaria",
+    "testimonies.main-main-content-burkina-faso": "Burkina Faso",
+    "testimonies.main-main-content-cameroon": "Cameroon",
+    "testimonies.main-main-content-canada": "Canada",
+    "testimonies.main-main-content-chile": "Chile",
+    "testimonies.main-main-content-colombia": "Colombia",
+    "testimonies.main-main-content-costa-rica": "Costa Rica",
+    "testimonies.main-main-content-croatia": "Croatia",
+    "testimonies.main-main-content-cuba": "Cuba",
+    "testimonies.main-main-content-cyprus": "Cyprus",
+    "testimonies.main-main-content-czech-republic": "Czech Republic",
+    "testimonies.main-main-content-c-te-d-ivoire": "Côte d’Ivoire",
+    "testimonies.main-main-content-denmark": "Denmark",
+    "testimonies.main-main-content-djibouti": "Djibouti",
+    "testimonies.main-main-content-dominican-republic": "Dominican Republic",
+    "testimonies.main-main-content-ecuador": "Ecuador",
+    "testimonies.main-main-content-egypt": "Egypt",
+    "testimonies.main-main-content-estonia": "Estonia",
+    "testimonies.main-main-content-ethiopia": "Ethiopia",
+    "testimonies.main-main-content-fiji": "Fiji",
+    "testimonies.main-main-content-france": "France",
+    "testimonies.main-main-content-gabon": "Gabon",
+    "testimonies.main-main-content-gambia": "Gambia",
+    "testimonies.main-main-content-germany": "Germany",
+    "testimonies.main-main-content-ghana": "Ghana",
+    "testimonies.main-main-content-greece": "Greece",
+    "testimonies.main-main-content-guatemala": "Guatemala",
+    "testimonies.main-main-content-guinea": "Guinea",
+    "testimonies.main-main-content-guyana": "Guyana",
+    "testimonies.main-main-content-haiti": "Haiti",
+    "testimonies.main-main-content-hungary": "Hungary",
+    "testimonies.main-main-content-india": "India",
+    "testimonies.main-main-content-iran": "Iran",
+    "testimonies.main-main-content-iraq": "Iraq",
+    "testimonies.main-main-content-ireland": "Ireland",
+    "testimonies.main-main-content-italy": "Italy",
+    "testimonies.main-main-content-japan": "Japan",
+    "testimonies.main-main-content-jordan": "Jordan",
+    "testimonies.main-main-content-kazakhstan": "Kazakhstan",
+    "testimonies.main-main-content-kenya": "Kenya",
+    "testimonies.main-main-content-kuwait": "Kuwait",
+    "testimonies.main-main-content-latvia": "Latvia",
+    "testimonies.main-main-content-lithuania": "Lithuania",
+    "testimonies.main-main-content-luxembourg": "Luxembourg",
+    "testimonies.main-main-content-madagascar": "Madagascar",
+    "testimonies.main-main-content-malaysia": "Malaysia",
+    "testimonies.main-main-content-mali": "Mali",
+    "testimonies.main-main-content-malta": "Malta",
+    "testimonies.main-main-content-mauritania": "Mauritania",
+    "testimonies.main-main-content-mexico": "Mexico",
+    "testimonies.main-main-content-monaco": "Monaco",
+    "testimonies.main-main-content-morocco": "Morocco",
+    "testimonies.main-main-content-mozambique": "Mozambique",
+    "testimonies.main-main-content-new-zealand": "New Zealand",
+    "testimonies.main-main-content-nigeria": "Nigeria",
+    "testimonies.main-main-content-norway": "Norway",
+    "testimonies.main-main-content-oman": "Oman",
+    "testimonies.main-main-content-pakistan": "Pakistan",
+    "testimonies.main-main-content-panama": "Panama",
+    "testimonies.main-main-content-paraguay": "Paraguay",
+    "testimonies.main-main-content-peru": "Peru",
+    "testimonies.main-main-content-philippines": "Philippines",
+    "testimonies.main-main-content-poland": "Poland",
+    "testimonies.main-main-content-portugal": "Portugal",
+    "testimonies.main-main-content-romania": "Romania",
+    "testimonies.main-main-content-russia": "Russia",
+    "testimonies.main-main-content-saint-lucia": "Saint Lucia",
+    "testimonies.main-main-content-saudi-arabia": "Saudi Arabia",
+    "testimonies.main-main-content-senegal": "Senegal",
+    "testimonies.main-main-content-seychelles": "Seychelles",
+    "testimonies.main-main-content-sierra-leone": "Sierra Leone",
+    "testimonies.main-main-content-singapore": "Singapore",
+    "testimonies.main-main-content-slovakia": "Slovakia",
+    "testimonies.main-main-content-south-africa": "South Africa",
+    "testimonies.main-main-content-spain": "Spain",
+    "testimonies.main-main-content-sri-lanka": "Sri Lanka",
+    "testimonies.main-main-content-sudan": "Sudan",
+    "testimonies.main-main-content-sweden": "Sweden",
+    "testimonies.main-main-content-united-arab-emirates": "United Arab Emirates",
+    "testimonies.main-main-content-england": "England",
+    "testimonies.main-main-content-united-states": "United States",
+    "testimonies.main-main-content-uruguay": "Uruguay",
+    "testimonies.main-main-content-vatican-city": "Vatican City",
+    "testimonies.main-main-content-venezuela": "Venezuela",
+    "testimonies.main-main-content-vietnam": "Vietnam",
+    "testimonies.main-main-content-zambia": "Zambia",
+    "testimonies.main-main-content-zimbabwe": "Zimbabwe",
+    "testimonies.main-main-content-congo": "Congo",
+    "testimonies.main-main-content-yugoslavia-former-country": "Yugoslavia (former country)",
+    "testimonies.main-main-content-zaire-former-country": "Zaire (former country)",
+    "testimonies.main-main-content-flags-flag-icons-project-mit-license": "Flags: flag-icons project, MIT license. Yugoslavia and Zaire are former countries, and the list does not say which Congo it means, so those three show without a flag.",
+    "testimonies.main-main-content-reader-letters-appear-here-after-editorial": "Reader letters appear here after editorial review. They are not medical verification or official Church recognition.",
+    "testimonies.main-testimony-list-source-published-accounts": "Source-published accounts",
+    "testimonies.main-testimony-list-these-are-summaries-of-linked-historical": "These are summaries of linked historical and ministry sources, not letters sent to this site. Church-recognized healings are distinguished from personal reports.",
+    "testimonies.main-testimony-list-source-published-account": "Source-published account",
+    "testimonies.main-testimony-list-nohad-el-shami": "Nohad El Shami",
+    "testimonies.main-testimony-list-annaya-lebanon-january-22-1993": "Annaya, Lebanon - January 22, 1993",
+    "testimonies.main-testimony-list-cnewa-reports-that-nohad-el-shami": "CNEWA reports that Nohad El Shami was partially paralyzed after a stroke in January 1993. Her son Saad prayed at Saint Charbel’s hermitage and brought back blessed oil and soil. According to her family, she dreamed of surgery by Saint Charbel and another monk on January 22; when she awoke, she had two neck scars. She then made a monthly pilgrimage to Annaya for the rest of her life.",
+    "testimonies.main-testimony-list-reported-account-cnewa-lebanon-s-beloved": "Reported account - CNEWA, \"Lebanon’s Beloved Saint\" (interviews with the Shami family)",
+    "testimonies.main-testimony-list-source-published-account-2": "Source-published account",
+    "testimonies.main-testimony-list-antonio-ishaac": "Antonio Ishaac",
+    "testimonies.main-testimony-list-lebanon-recorded-at-the-monastery-october": "Lebanon - recorded at the monastery, October 2025",
+    "testimonies.main-testimony-list-in-an-interview-with-cnewa-antonio": "In an interview with CNEWA, Antonio Ishaac said he had stopped treatment for Crohn’s disease in December 2024. He visited the monastery in May 2025 and prayed; he reported that his pain vanished after an intense night. He said later tests showed the disease had disappeared. CNEWA reports that the monastery recorded his account in October 2025.",
+    "testimonies.main-testimony-list-reported-account-cnewa-lebanon-s-beloved-2": "Reported account - CNEWA, \"Lebanon’s Beloved Saint\"",
+    "testimonies.main-testimony-list-source-published-account-3": "Source-published account",
+    "testimonies.main-testimony-list-mariam-assaf-awad": "Mariam Assaf Awad",
+    "testimonies.main-testimony-list-lebanon-1967-the-canonization-miracle": "Lebanon - 1967 - the canonization miracle",
+    "testimonies.main-testimony-list-charbel-app-s-account-says-mariam": "Charbel App’s account says Mariam Assaf Awad underwent several cancer operations between 1963 and 1965. She prayed for healing through Saint Charbel’s intercession in 1967 and reported that her symptoms were gone the next morning. The Church accepted her healing as the miracle for his canonization in 1977.",
+    "testimonies.main-testimony-list-historical-summary-charbel-app-saint-charbel": "Historical summary - Charbel App, Saint Charbel canonization account",
+    "testimonies.main-testimony-list-source-published-account-4": "Source-published account",
+    "testimonies.main-testimony-list-sister-maria-abel-kamari": "Sister Maria Abel Kamari",
+    "testimonies.main-testimony-list-sisters-of-the-sacred-hearts-july": "Sisters of the Sacred Hearts - July 1950 - a beatification miracle",
+    "testimonies.main-testimony-list-charbel-app-s-account-says-sister": "Charbel App’s account says Sister Maria Abel Kamari, bedridden with severe illness and paralysis, recovered after visiting Saint Charbel’s tomb at Annaya in July 1950. The Church approved her healing among the miracles for his beatification in 1965.",
+    "testimonies.main-testimony-list-historical-summary-charbel-app-saint-charbel-2": "Historical summary - Charbel App, Saint Charbel canonization account",
+    "testimonies.main-testimony-list-source-published-account-5": "Source-published account",
+    "testimonies.main-testimony-list-iskandar-naim-obeid": "Iskandar Naim Obeid",
+    "testimonies.main-testimony-list-baabdat-lebanon-1950-a-beatification-miracle": "Baabdat, Lebanon - 1950 - a beatification miracle",
+    "testimonies.main-testimony-list-charbel-app-s-account-says-iskandar": "Charbel App’s account says Iskandar Naim Obeid, a blacksmith from Baabdat, lost sight in one eye after a metal fragment struck it. On pilgrimage to Annaya in 1950, he reported a dream of a monk touching his eye and said his sight returned. The Church approved his healing among the miracles for Saint Charbel’s beatification.",
+    "testimonies.main-testimony-list-historical-summary-charbel-app-saint-charbel-3": "Historical summary - Charbel App, Saint Charbel canonization account",
+    "testimonies.main-testimony-list-source-published-account-6": "Source-published account",
+    "testimonies.main-testimony-list-brian-k-kravec": "Brian K. Kravec",
+    "testimonies.main-testimony-list-united-states-ministry-published-healing-testimony": "United States - ministry-published healing testimony",
+    "testimonies.main-testimony-list-brian-reports-that-severe-femur-pain": "Brian reports that severe femur pain disappeared after he prayed for Saint Sharbel’s intercession and used relic oil. He says follow-up X-rays showed a healthy femur. This is a personal ministry account, not a Vatican-recognized miracle.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing": "Family of Saint Sharbel USA - Healing Testimony of Brian K. Kravec",
+    "testimonies.main-testimony-list-source-published-account-7": "Source-published account",
+    "testimonies.main-testimony-list-renny-palmisano": "Renny Palmisano",
+    "testimonies.main-testimony-list-united-states-2026-ministry-published-account": "United States - 2026 ministry-published account",
+    "testimonies.main-testimony-list-renny-reports-that-a-scan-first": "Renny reports that a scan first appeared to show a cancer recurrence. After praying a novena and asking for Saint Sharbel’s intercession, a later review by her oncology team identified inflammation and scar tissue instead. She describes the outcome as an answered prayer.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-2": "Family of Saint Sharbel USA - Healing Testimony of Renny Palmisano",
+    "testimonies.main-testimony-list-source-published-account-8": "Source-published account",
+    "testimonies.main-testimony-list-victor-g-akroush": "Victor G. Akroush",
+    "testimonies.main-testimony-list-united-states-ministry-published-healing-testimony-2": "United States - ministry-published healing testimony",
+    "testimonies.main-testimony-list-victor-s-family-describes-severe-stomach": "Victor’s family describes severe stomach pain and a difficult medical diagnosis. They asked Saint Sharbel to intercede before treatment and report that Victor later recovered. The account is presented by the Family of Saint Sharbel USA as a personal testimony.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-3": "Family of Saint Sharbel USA - Healing Testimony of Victor G. Akroush",
+    "testimonies.main-testimony-list-source-published-account-9": "Source-published account",
+    "testimonies.main-testimony-list-vanessa-el-fghali": "Vanessa El Fghali",
+    "testimonies.main-testimony-list-bdadoun-lebanon-ministry-published-account": "Bdadoun, Lebanon - ministry-published account",
+    "testimonies.main-testimony-list-vanessa-s-mother-reports-praying-to": "Vanessa’s mother reports praying to Saint Sharbel for her daughter’s spinal condition and asking for his intercession. The ministry account says Vanessa’s recovery was later confirmed by medical follow-up.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-4": "Family of Saint Sharbel USA - Healing Testimony for Vanessa El Fghali",
+    "testimonies.main-testimony-list-source-published-account-10": "Source-published account",
+    "testimonies.main-testimony-list-nader-ahmad-al-sawwaf-zantout": "Nader Ahmad Al-Sawwaf Zantout",
+    "testimonies.main-testimony-list-lebanon-accident-recovery-testimony": "Lebanon - accident recovery testimony",
+    "testimonies.main-testimony-list-after-a-serious-accident-left-nader": "After a serious accident left Nader in a coma with fractures and paralysis, his family and monks at Annaya prayed for Saint Sharbel’s intercession. The published account says he regained consciousness and recovered.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-5": "Family of Saint Sharbel USA - Healing Testimony of Nader Ahmad Al-Sawwaf Zantout",
+    "testimonies.main-testimony-list-source-published-account-11": "Source-published account",
+    "testimonies.main-testimony-list-tani-youssef-wehbeh": "Tani Youssef Wehbeh",
+    "testimonies.main-testimony-list-lebanon-ministry-published-healing-testimony": "Lebanon - ministry-published healing testimony",
+    "testimonies.main-testimony-list-tani-s-testimony-describes-a-serious": "Tani’s testimony describes a serious leg condition during surgery and a reported intervention attributed to Saint Sharbel. The account says his leg was saved from major amputation.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-6": "Family of Saint Sharbel USA - Healing Testimony of Tani Youssef Wehbeh",
+    "testimonies.main-testimony-list-source-published-account-12": "Source-published account",
+    "testimonies.main-testimony-list-sharbel-said-nassif": "Sharbel Said Nassif",
+    "testimonies.main-testimony-list-australia-recorded-ministry-testimony": "Australia - recorded ministry testimony",
+    "testimonies.main-testimony-list-sharbel-s-family-reports-praying-with": "Sharbel’s family reports praying with blessed water and soil from Saint Charbel’s tomb after he was diagnosed with a serious heart condition. The published testimony says later medical results showed recovery.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-7": "Family of Saint Sharbel USA - Healing Testimony of Sharbel Said Nassif",
+    "testimonies.main-testimony-list-source-published-account-13": "Source-published account",
+    "testimonies.main-testimony-list-georgiane-walker": "Georgiane Walker",
+    "testimonies.main-testimony-list-united-states-post-surgery-recovery-testimony": "United States - post-surgery recovery testimony",
+    "testimonies.main-testimony-list-georgiane-reports-that-a-post-surgery": "Georgiane reports that a post-surgery wound that had not healed closed after she prayed to Saint Sharbel and used his oil. The testimony was later featured by EWTN News; it remains a personal account rather than a Church-certified miracle.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-8": "Family of Saint Sharbel USA - Healing Testimony of Georgiane Walker",
+    "testimonies.main-testimony-list-source-published-account-14": "Source-published account",
+    "testimonies.main-testimony-list-rita-antoine-kirakos": "Rita Antoine Kirakos",
+    "testimonies.main-testimony-list-lebanon-hearing-recovery-recorded-july-25": "Lebanon - hearing recovery recorded July 25, 2024",
+    "testimonies.main-testimony-list-the-ministry-account-says-rita-regained": "The ministry account says Rita regained hearing in her right ear after prayer for Saint Sharbel’s intercession. The testimony was recorded by the ministry in July 2024.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-9": "Family of Saint Sharbel USA - Healing Testimony for Rita Antoine Kirakos",
+    "testimonies.main-testimony-list-source-published-account-15": "Source-published account",
+    "testimonies.main-testimony-list-hoda-antoine-chalhoub": "Hoda Antoine Chalhoub",
+    "testimonies.main-testimony-list-lebanon-healing-testimony-recorded-december-5": "Lebanon - healing testimony recorded December 5, 2023",
+    "testimonies.main-testimony-list-hoda-s-testimony-says-she-was": "Hoda’s testimony says she was diagnosed with lung cancer and later received clear test results after prayers to Saint Sharbel. The published account identifies this as a ministry-recorded testimony, not a Vatican ruling.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-10": "Family of Saint Sharbel USA - Healing Testimony of Hoda Antoine Chalhoub",
+    "testimonies.main-testimony-list-source-published-account-16": "Source-published account",
+    "testimonies.main-testimony-list-th-r-se-youssef-khoury-fahd": "Thérèse Youssef Khoury Fahd",
+    "testimonies.main-testimony-list-lebanon-ministry-published-healing-testimony-2": "Lebanon - ministry-published healing testimony",
+    "testimonies.main-testimony-list-th-r-se-s-account-describes": "Thérèse’s account describes a brain tumor and a planned operation. The published testimony says the tumor disappeared after prayers to Saint Sharbel and that doctors confirmed the change.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-11": "Family of Saint Sharbel USA - Healing Testimony of Thérèse Youssef Khoury Fahd",
+    "testimonies.main-testimony-list-source-published-account-17": "Source-published account",
+    "testimonies.main-testimony-list-elias-youssef-rahmeh": "Elias Youssef Rahmeh",
+    "testimonies.main-testimony-list-sin-el-fil-lebanon-healing-testimony": "Sin El Fil, Lebanon - healing testimony recorded 2024",
+    "testimonies.main-testimony-list-elias-s-ministry-published-testimony-says": "Elias’s ministry-published testimony says he was diagnosed with rectal cancer and later received tests showing recovery after prayer to Saint Charbel. The source presents this as a recorded personal testimony.",
+    "testimonies.main-testimony-list-family-of-saint-sharbel-usa-healing-12": "Family of Saint Sharbel USA - Healing Testimony of Elias Youssef Rahmeh",
+    "testimonies.main-main-content-stories-on-video": "Stories on Video",
+    "testimonies.main-main-content-people-telling-their-own-stories-in": "People telling their own stories, in their own words - hosted on YouTube by the channels that made them. These are personal testimonies, not medical verification or official Church recognition. Embeds use youtube-nocookie, so nothing is tracked until you press play.",
+    "testimonies.main-main-content-featured": "Featured:",
+    "testimonies.main-main-content-deacon-michael-chirichella-of-the-united": "Deacon Michael Chirichella of the United States shares his 2026 cancer testimony - two and a half minutes, in his own words (2:47).",
+    "testimonies.main-main-content-yassine-jaber-a-sunni-muslim-tells": "Yassine Jaber, a Sunni Muslim, tells his healing story after prayer to Saint Charbel - a witness across religious lines (31:15).",
+    "testimonies.main-main-content-dafne-gutierrez-speaking-at-st-joseph": "Dafne Gutierrez speaking at St Joseph Maronite Church in Phoenix, where her 2016 healing took place (7:18) -",
+    "testimonies.main-main-content-read-the-account": "read the account",
+    "testimonies.main-main-content-watch-their-stories": "Watch their stories",
+    "testimonies.main-main-content-stephanie-serrano-of-the-united-states": "Stephanie Serrano of the United States shares her cancer testimony (10:08).",
+    "testimonies.main-main-content-christiane-eid-on-faith-the-diaspora": "Christiane Eid on faith, the diaspora, and Saint Charbel - a podcast conversation (33:08).",
+    "testimonies.main-main-content-raymond-nader-recounts-the-night-at": "Raymond Nader recounts the night at the hermitage in 1994 (7:01) -",
+    "testimonies.main-main-content-read-his-story": "read his story",
+    "testimonies.main-main-content-nohad-el-shami-s-full-account": "Nohad El Shami's full account, in Arabic (OTV, 39:54) -",
+    "testimonies.main-main-content-read-her-story-in-english": "read her story in English",
+    "testimonies.main-main-content-nohad-el-shami-and-her-son": "Nohad El Shami and her son Saad, interviewed together, in Arabic (MTV, 31:38).",
+    "testimonies.main-main-content-dafne-gutierrez-s-story-in-spanish": "Dafne Gutierrez's story, in Spanish (Telemundo, 4:20).",
+    "testimonies.main-aria-interactive-globe-with-flags-marking-the": "Interactive globe with flags marking the countries letters come from",
+    "testimonies.main-aria-countries-named-in-the-published-list-2": "Countries named in the published list",
+    "testimonies.main-title-deacon-michael-chirichella-shares-his-2026": "Deacon Michael Chirichella shares his 2026 cancer testimony (2:47)",
+    "testimonies.main-title-yassine-jaber-tells-his-healing-story": "Yassine Jaber tells his healing story (31:15)",
+    "testimonies.main-title-dafne-gutierrez-speaks-at-her-phoenix": "Dafne Gutierrez speaks at her Phoenix parish (7:18)",
+    "testimonies.main-title-stephanie-serrano-shares-her-cancer-testimony": "Stephanie Serrano shares her cancer testimony (10:08)",
+    "testimonies.main-title-christiane-eid-on-faith-the-diaspora-2": "Christiane Eid on faith, the diaspora, and Saint Charbel (33:08)",
+    "testimonies.main-title-raymond-nader-recounts-the-1994-night": "Raymond Nader recounts the 1994 night at the hermitage (7:01)",
+    "testimonies.main-title-nohad-el-shami-full-account-arabic": "Nohad El Shami full account, Arabic (OTV, 39:54)",
+    "testimonies.main-title-nohad-el-shami-and-her-son-2": "Nohad El Shami and her son Saad, Arabic (MTV, 31:38)",
+    "testimonies.main-title-dafne-gutierrez-in-spanish-telemundo-4": "Dafne Gutierrez in Spanish (Telemundo, 4:20)",
+    "testimonies.footer-div-moderated-testimony-archive-author-please-pray": "Moderated testimony archive. Author: Please pray for the person who made this website.",
+    "testimonies.footer-a-admin": "Admin",
+    "testimonies.body-a-skip-to-main-content": "Skip to main content",
+    "testimonies.header.home": "Home",
+    "testimonies.header.saint-charbel": "Saint Charbel"
+  }
+}
