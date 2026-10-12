@@ -182,10 +182,25 @@ def json_assignment(text):
 def compare_json(file,old,new):
  prefix,a=json_assignment(old);other,b=json_assignment(new);assert prefix==other
  if file=='same-page-manifest.js':
-  assert len(a['pages'])==240 and len(SCOPED_KEYS)==12
+  assert len(a['pages'])==236 and len(SCOPED_KEYS)==12
   assert SCOPED_KEYS<=set(a['pages']);assert not SCOPED_KEYS&set(b['pages'])
+  # Travel-4 (scrum re-pin 2026-10-12): the real manifest carries the 4 ar travel twins
+  # inside the verified travel families with scoped-ar2-variant proofs, never as
+  # standalone pages; the synthetic overlay excludes those families, so the twins remain
+  # synthetic-only pending rows and are excluded below with the same proof-class treatment.
+  ar_travel_sources={'ar/travel.html','ar/qadisha-valley.html','ar/qannoubine-monastery.html','ar/qozhaya-monastery.html'}
+  for family in ('travel-travel-master-equivalence','qadisha-valley-travel-master-equivalence','qannoubine-monastery-travel-master-equivalence','qozhaya-monastery-travel-master-equivalence'):
+   assert a['pages'][family]['variants'].get('ar',{}).get('proof',{}).get('type')=='scoped-ar2-variant',family
+  assert not any(page.get('sourcePath') in ar_travel_sources for page in a['pages'].values())
   for key in SCOPED_KEYS:del a['pages'][key]
-  assert len(a['pages'])==len(b['pages'])==228
+  synthetic_only=sorted(key for key,page in b['pages'].items() if page.get('sourcePath') in ar_travel_sources)
+  assert len(synthetic_only)==4,synthetic_only
+  for key in synthetic_only:
+   variants=b['pages'][key]['variants']
+   assert list(variants)==['ar'] and variants['ar'].get('status')=='pending',key
+   del b['pages'][key]
+  hits['manifest-travel4-ar']+=4
+  assert len(a['pages'])==len(b['pages'])==224
   assert b['aliases'].pop('zz')=='zz';assert b['languages'].pop()=='zz'
   extra={k:b['englishSources'].pop(k) for k in list(b['englishSources']) if k.startswith('/zz/')}
   assert len(extra)==18 and all(k=='/zz'+v.rstrip('/') for k,v in extra.items()),extra
@@ -201,7 +216,20 @@ def compare_json(file,old,new):
   for route in scoped_routes:del a['englishSources'][route]
   # /de/travel is pending-omitted yet its englishSources entry resolves to /travel and survives on both sides.
   assert a['englishSources'].get('/de/travel')=='/travel'==b['englishSources'].get('/de/travel'),'de/travel must survive resolving to /travel'
-  hits['manifest-sources']+=12;print('MANIFEST proof excluded in synthetic only 12; legacy overlays real; compared 228')
+  # Travel-4 (scrum-approved 2026-10-12, REVERSED direction, same proof-class
+  # pattern): the real manifest resolves the 4 ar travel twins via the ar variants
+  # inside the families, so their englishSources keys never appear on the real side;
+  # the synthetic overlay carries them via its pending rows. EXACTLY these 4 keys by
+  # explicit list - no startswith('/ar/') wildcard: #752's 15 pairs appear on both
+  # sides and must stay compared. Assert real-side absence AND synthetic identity,
+  # then drop from the synthetic side.
+  ar4={'/ar/travel':'/travel','/ar/qadisha-valley':'/qadisha-valley','/ar/qannoubine-monastery':'/qannoubine-monastery','/ar/qozhaya-monastery':'/qozhaya-monastery'}
+  for ar_route,en_route in ar4.items():
+   assert ar_route not in a['englishSources'],(ar_route,'real englishSources carries ar travel twin')
+   assert b['englishSources'].get(ar_route)==en_route,(ar_route,'synthetic englishSources ar travel twin not identity')
+  for ar_route in ar4:del b['englishSources'][ar_route]
+  hits['manifest-travel4-ar-sources']+=4
+  hits['manifest-sources']+=12;print('MANIFEST proof excluded in synthetic only 12; legacy overlays real; compared 224')
   print('MANIFEST englishSources scoped self-routes excluded',len(scoped_routes),json.dumps(sorted(scoped_routes)))
   print('EXCLUDED TOTAL 12 page keys + 12 englishSources + 13 pending + 18 zz =',12+12+13+18)
  elif file=='same-page-copy.js':
