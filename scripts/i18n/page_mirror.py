@@ -168,7 +168,7 @@ def render_page(root,registry,lang,family,route,catalog=None):
                 # Intermediate navigation label is translated in the same header.
                 for item in items[1:-1]:
                     path=urlsplit(item['item']).path
-                    a=soup.select_one('header a[href="'+path+'"]')
+                    a=soup.select_one('header a[href="'+path+'"]') or soup.select_one('header a[href="'+twins.get(path, path)+'"]')
                     if a:item['name']=a.get_text(' ',strip=True)
         if family.endswith('-travel-master'):
             translate_schema(data)
