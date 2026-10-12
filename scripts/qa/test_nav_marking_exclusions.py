@@ -42,4 +42,27 @@ class NavMarkingExclusions(unittest.TestCase):
    s=BeautifulSoup(text,'html.parser')
    self.assertFalse(s.select('header span.enc-language'),(family,lang))
    self.assertIsNotNone(s.select_one('header'),(family,lang))
+ def test_no_marked_link_has_registered_twin(self):
+  from i18n.encyclopedia_nav import nav_twin_hrefs
+  skip=('film-premiere-master','feedback','feedback-review','daily-prayer','daily-prayer-result','daily-prayer-admin')
+  for family,cfg in self.r['pageMirrors'].items():
+   if family in skip:continue
+   for lang in GATED:
+    if lang not in cfg.get('routes',{}):continue
+    if (family,lang) in registry_scoped_pairs():continue
+    text=render_page(ROOT,self.r,lang,family,cfg['routes'][lang])
+    s=BeautifulSoup(text,'html.parser')
+    if s.select_one('header') is None:continue
+    twins=nav_twin_hrefs(self.r,lang)
+    for a in s.select('header a[hreflang="en"]'):
+     href=a.get('href','').split('#')[0].split('?')[0]
+     key=href if href=='/' else href.rstrip('/')
+     self.assertNotIn(key,twins,(family,lang,href))
+ def test_de_twinned_routes_are_routed_not_marked(self):
+  twinned=['/annaya-tour','/bekaa-kafra','/bkerke-maronite-patriarchate','/cedars-of-god-lebanon','/music','/our-lady-of-lebanon-harissa','/qadisha-valley','/qannoubine-monastery','/qozhaya-monastery','/saint-charbel-hermitage','/saint-charbel-places-lebanon','/saint-charbel-trail']
+  cfg=self.r['pageMirrors']['history-master']
+  text=render_page(ROOT,self.r,'de','history-master',cfg['routes']['de'])
+  s=BeautifulSoup(text,'html.parser')
+  for route in twinned:
+   self.assertEqual(s.select('header a[hreflang="en"][href="%s"]'%route),[],route)
 if __name__=='__main__':unittest.main()
