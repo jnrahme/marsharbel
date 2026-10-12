@@ -59,10 +59,23 @@ def render_feast_locale(root=ROOT, lang='ar', registry=None):
     # Prayer master redirects into this legacy guide cluster.
     if lang in topic_locales(registry, 'prayers'):
         mapped['en/prayers'] = page_url(registry, lang, 'prayers')
+    # AR-2 body-link follow-up (ar only): page-mirror twins join the map;
+    # localizedLinks below still gates every entry.
+    if lang=='ar':
+        for mirror in registry.get('pageMirrors',{}).values():
+            if lang in mirror.get('routes',{}):
+                mapped[mirror['english'].strip('/')]=mirror['routes'][lang]
     mapped={key:value for key,value in mapped.items() if key in copy['localizedLinks']}
+    # Absolute body hrefs keep their leading slash; match those too (ar only).
+    # Body-only: header/footer chrome is routed by finish_nav, never here.
+    body_only={}
+    if lang=='ar':
+        body_only={'/'+key:value for key,value in mapped.items()}
     for a in soup.select('a[href]'):
         href=a['href'];path=href.removeprefix('./')
-        if path in mapped:a['href']=mapped[path]
+        in_chrome=a.find_parent(['header','footer','nav']) is not None
+        if href in body_only and not in_chrome:a['href']=body_only[href];continue
+        if path in mapped and not (in_chrome and lang=='ar' and path in ('prayer-library','saint-charbel-encyclopedia')):a['href']=mapped[path]
         elif href.startswith('./'):a['href']='/'+path
         elif not href.startswith(('/','#','https://','http://')):a['href']='/'+href
     for tag in soup.select('script[src],link[href],img[src]'):
