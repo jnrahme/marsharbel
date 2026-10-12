@@ -7,7 +7,7 @@ header/main/footer (excluding script/style/noscript), img[alt] in main.
 """
 import hashlib, json, re, sys
 from pathlib import Path
-from bs4 import BeautifulSoup, NavigableString
+from bs4 import BeautifulSoup, Comment, NavigableString
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -86,6 +86,8 @@ def main():
         for el in root_el.find_all(string=True):
             if not isinstance(el, NavigableString):
                 continue
+            if isinstance(el, Comment):
+                continue  # HTML comments are machine markers, never visible copy
             if el.parent.name in ('script', 'style', 'noscript'):
                 continue
             txt = ' '.join(str(el).split())
