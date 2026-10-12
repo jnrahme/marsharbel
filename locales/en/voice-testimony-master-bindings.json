@@ -1,0 +1,850 @@
+{
+ "version": 1,
+ "master": "voice-testimony.html",
+ "masterSha256": "b8138ef8f41f0d2d170eb17701fb298dd7b0106628784e06afe6fd014eb07677",
+ "sourceRevision": "unknown",
+ "bindings": [
+  {
+   "key": "voice-testimony.title",
+   "selector": "html > head:nth-of-type(1) > title:nth-of-type(1)",
+   "source": "Saint Charbel's Recorded Voice | Sacred Testimony",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.meta-description",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(11)",
+   "source": "Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "voice-testimony.meta-og-title",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(15)",
+   "source": "Saint Charbel's Recorded Voice | Sacred Testimony",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "voice-testimony.meta-og-description",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(16)",
+   "source": "Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "voice-testimony.meta-twitter-title",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(20)",
+   "source": "Saint Charbel's Recorded Voice | Sacred Testimony",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "voice-testimony.meta-twitter-description",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(21)",
+   "source": "Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "voice-testimony.header.saint-charbel",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+   "source": "Saint Charbel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header.home",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Home",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-legacy",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Legacy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-saint-charbel-encyclopedia",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Charbel Encyclopedia",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-full-history",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Full History",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-miracles",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-miracles-reports",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Miracles & Reports",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-eucharistic-miracles",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Eucharistic Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-letters",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Letters",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-voice-testimony",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Voice Testimony",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-saints",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-saints-2",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-children-s-books",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Children's Books",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-prayer",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+   "source": "Prayer",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-prayer-library",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Prayer Library",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-find-a-prayer-by-intention",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Find a Prayer by Intention",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-prayer-for-the-sick",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Prayer for the Sick",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-prayer-for-healing",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Prayer for Healing",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-prayer-for-anxiety",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Prayer for Anxiety",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-prayer-for-depression",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "Prayer for Depression",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-prayer-for-students",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Prayer for Students",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-prayer-for-addiction",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Prayer for Addiction",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-prayer-for-family",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Prayer for Family",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-prayer-for-pregnancy",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Prayer for Pregnancy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-prayer-for-a-miracle",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Prayer for a Miracle",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-saint-charbel-prayers",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "Saint Charbel Prayers",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-saint-charbel-novena",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Novena",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-feast-day",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+   "source": "Feast Day",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-rosary-guide",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+   "source": "Rosary Guide",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-rosary-minibook",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+   "source": "Rosary Minibook",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-mystery-meditation",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+   "source": "Mystery Meditation",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-become-like-him",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+   "source": "Become Like Him",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-travel",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-travel-2",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-visiting-annaya",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Visiting Annaya",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-annaya-online-tour",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Annaya Online Tour",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-bekaa-kafra",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Bekaa Kafra",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-our-lady-of-lebanon-at-harissa",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Our Lady of Lebanon at Harissa",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-the-cedars-of-god",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "the Cedars of God",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-bkerke-and-the-maronite-patriarchate",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Bkerke and the Maronite Patriarchate",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-qadisha-valley",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Qadisha Valley",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-qannoubine-monastery",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Qannoubine Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-qozhaya-monastery",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Qozhaya Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-saint-charbel-s-lebanon",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Saint Charbel's Lebanon",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-the-hermitage",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "The Hermitage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-saint-charbel-trail",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Trail",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-news",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "News",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-media",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+   "source": "Media",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-music",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Music",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-video",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Video",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-a-gallery",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Gallery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.header-aria-primary",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+   "source": "Primary",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "voice-testimony.main-main-content-sacred-testimony",
+   "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Sacred Testimony",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-main-content-saint-charbel-s-recorded-voice",
+   "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+   "source": "Saint Charbel's Recorded Voice",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-main-content-this-page-preserves-his-recorded-message",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "This page preserves his recorded message with care. The transcript below is prepared for publication with a conservative editorial method: preserving message intent, avoiding invention, and marking the text as audio-based.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-main-content-download-recording-mp4",
+   "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Download Recording (MP4)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-main-content-pray-with-rosary-guide",
+   "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Pray With Rosary Guide",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-main-content-listen",
+   "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Listen",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-main-content-how-to-receive",
+   "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "How To Receive",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-main-content-publishing-draft",
+   "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Publishing Draft",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-main-content-full-capture-raw",
+   "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Full Capture (Raw)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-listen-listen-2",
+   "selector": "#listen > h2:nth-of-type(1)",
+   "source": "Listen",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-listen-your-browser-does-not-support-video",
+   "selector": "#testimony-video",
+   "source": "Your browser does not support video playback.",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "voice-testimony.main-listen-fallback-unable-to-play-in-this-browser",
+   "selector": "#listen-fallback > p:nth-of-type(1)",
+   "source": "Unable to play in this browser.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-listen-fallback-download-to-listen-mp4",
+   "selector": "#listen-fallback > p:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Download to listen (MP4)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-listen-read-the-transcript-of-this-recording",
+   "selector": "#listen > article:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Read the transcript of this recording",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-listen-no-timed-captions-yet",
+   "selector": "#listen > article:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "(no timed captions yet).",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "voice-testimony.main-listen-suggested-prayer-use-listen-slowly-pause",
+   "selector": "#listen > article:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "Suggested prayer use: listen slowly, pause after key lines, pray one Our Father, then one decade of the Rosary.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-how-to-receive-how-to-receive-this-message",
+   "selector": "#how-to-receive > h2:nth-of-type(1)",
+   "source": "How To Receive This Message",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-how-to-receive-rosary",
+   "selector": "#how-to-receive > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
+   "source": "Rosary",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-how-to-receive-his-call-emphasizes-persistent-rosary-prayer",
+   "selector": "#how-to-receive > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "His call emphasizes persistent Rosary prayer as a path of sanctification and peace.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-how-to-receive-eucharist",
+   "selector": "#how-to-receive > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
+   "source": "Eucharist",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-how-to-receive-the-message-points-to-christ-as",
+   "selector": "#how-to-receive > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+   "source": "The message points to Christ as true nourishment and keeps Eucharistic life central.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-how-to-receive-christ-and-mary",
+   "selector": "#how-to-receive > div:nth-of-type(1) > article:nth-of-type(3) > h3:nth-of-type(1)",
+   "source": "Christ and Mary",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-how-to-receive-mary-leads-to-jesus-the-message",
+   "selector": "#how-to-receive > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+   "source": "Mary leads to Jesus. The message keeps Marian devotion Christ-centered and obedient.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-how-to-receive-pastoral-tone",
+   "selector": "#how-to-receive > div:nth-of-type(1) > article:nth-of-type(4) > h3:nth-of-type(1)",
+   "source": "Pastoral Tone",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-how-to-receive-no-fear-no-pressure-prayer-repentance",
+   "selector": "#how-to-receive > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
+   "source": "No fear, no pressure: prayer, repentance, unity, and holy joy in daily life.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-publishing-transcript-publishing-draft",
+   "selector": "#transcript-publishing > h2:nth-of-type(1)",
+   "source": "Transcript (Publishing Draft)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-publishing-conservative-editorial-pass-clear-lines-are",
+   "selector": "#transcript-publishing > p:nth-of-type(1)",
+   "source": "Conservative editorial pass: clear lines are preserved, uncertain audio is explicitly marked as",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-publishing-text",
+   "selector": "#transcript-publishing > p:nth-of-type(1) > strong:nth-of-type(1)",
+   "source": "[غير واضح]",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-publishing-unclear",
+   "selector": "#transcript-publishing > p:nth-of-type(1) > strong:nth-of-type(2)",
+   "source": "[unclear]",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-publishing-arabic-publishing-draft-conservative",
+   "selector": "#transcript-publishing > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
+   "source": "Arabic (Publishing Draft - Conservative)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-publishing-text-2",
+   "selector": "#transcript-ar",
+   "source": "الله يبارككم ويقدّسكم. نعمة الله... نعمة الله... حياة لكم. [غير واضح: عبارة غير مكتملة عن القلوب/الرب] السهر مع مريم. هي أمّكم... هي أمّ الفادي. السهر مع مريم ليس خسارة، بل ربح. نحن معكم. يسوع فيكم. صلّوا يا أولادي، صلّوا. الورديّة بتقدّسكم. الورديّة [غير واضح: بتدلّكم/بتقودكم]. مريم لا [غير واضح] إلا على ابنها يسوع. ...[غير واضح]... ومن يريد السلام يتبع مريم. اذكروا أنّ الله اختار مريم. كونوا [غير واضح]... أحبّوها قد ما بتحبّوا يسوع. يسوع وصّاكم فيها. أنا لا أقدّم إلا يسوع. هو غذاؤكم. هو الخبز والخمر [غير واضح: نازل/ينزل] من السماء. اسكنوا الفرح بقلوبكم. ولا تخلّوا العالم يسرق منكم هذا الفرح. يا أولاد مريم، مريم معكم. حضورها ليس من اليوم. دور مريم على الأرض: نداء للسلام، نداء للوحدة، [غير واضح: نداء للتوبة]. لا تخافوا. وين بتكون أمّي أنا بكون معها. وبدّي إيّاكم تكونوا حدّنا. تسكنوا بقلبنا. قلوبنا مليانة من نعمة الله.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-publishing-copy-transcript",
+   "selector": "#transcript-publishing > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "source": "Copy Transcript",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-publishing-english-faithful-draft-conservative",
+   "selector": "#transcript-publishing > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
+   "source": "English (Faithful Draft - Conservative)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-publishing-may-god-bless-you-and-sanctify",
+   "selector": "#transcript-en",
+   "source": "May God bless you and sanctify you. God's grace... God's grace... life for you. [unclear: incomplete phrase about hearts/the Lord] Keeping vigil with Mary. She is your Mother... she is the Mother of the Redeemer. Keeping vigil with Mary is not a loss; it is a gain. We are with you. Jesus is in you. Pray, my children, pray. The Rosary sanctifies you. The Rosary [unclear: guides you / shows you the way]. Mary points to no one except her Son Jesus. ...[unclear]... Whoever wants peace should follow Mary. Remember that God chose Mary. Be [unclear]... Love her as much as you love Jesus. Jesus entrusted her to you. I offer only Jesus. He is your nourishment. He is the bread and the wine [unclear: descending from heaven]. Let joy dwell in your hearts. Do not let the world steal this joy from you. Children of Mary, Mary is with you. Her presence is not only from today. Mary's role on earth: a call to peace, a call to unity, [unclear: a call to repentance]. Do not be afraid. Where my Mother is, I am with her. I want you to be with us. To dwell in our heart. Our hearts are filled with God's grace.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-publishing-read-aloud-english",
+   "selector": "#transcript-publishing > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "source": "Read Aloud (English)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-publishing-copy-transcript-2",
+   "selector": "#transcript-publishing > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2)",
+   "source": "Copy Transcript",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-raw-full-capture-raw-timestamped",
+   "selector": "#transcript-raw > h2:nth-of-type(1)",
+   "source": "Full Capture (Raw, Timestamped)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-raw-this-section-shows-the-complete-automatic",
+   "selector": "#transcript-raw > p:nth-of-type(1)",
+   "source": "This section shows the complete automatic capture timeline from the recording without editorial trimming. It is intentionally raw.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-raw-arabic-full-capture-all-recognized-segments",
+   "selector": "#transcript-raw > article:nth-of-type(1) > h3:nth-of-type(1)",
+   "source": "Arabic Full Capture - All Recognized Segments",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-raw-loading-full-capture-transcript",
+   "selector": "#voice-full",
+   "source": "Loading full capture transcript...",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-transcript-raw-copy-transcript-3",
+   "selector": "#transcript-raw > article:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "source": "Copy Transcript",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.main-aria-page-sections",
+   "selector": "#main-content > nav:nth-of-type(1)",
+   "source": "Page sections",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "voice-testimony.main-aria-arabic-transcript",
+   "selector": "#transcript-ar",
+   "source": "Arabic transcript",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "voice-testimony.main-aria-english-transcript",
+   "selector": "#transcript-en",
+   "source": "English transcript",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "voice-testimony.main-aria-full-capture-transcript",
+   "selector": "#voice-full",
+   "source": "Full capture transcript",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "voice-testimony.footer-div-prepared-with-care-from-the-recorded",
+   "selector": "html > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "Prepared with care from the recorded audio. Final ecclesial proofreading is recommended before print publication. Author: Please pray for the person who made this website.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "voice-testimony.body-a-skip-to-main-content",
+   "selector": "html > body:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Skip to main content",
+   "kind": "text",
+   "nodeIndex": 0
+  }
+ ],
+ "messages": {
+  "voice-testimony.title": "Saint Charbel's Recorded Voice | Sacred Testimony",
+  "voice-testimony.meta-description": "Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation.",
+  "voice-testimony.meta-og-title": "Saint Charbel's Recorded Voice | Sacred Testimony",
+  "voice-testimony.meta-og-description": "Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation.",
+  "voice-testimony.meta-twitter-title": "Saint Charbel's Recorded Voice | Sacred Testimony",
+  "voice-testimony.meta-twitter-description": "Submit a Saint Charbel voice testimony and share your story of prayer, healing, gratitude, and spiritual transformation.",
+  "voice-testimony.header-a-legacy": "Legacy",
+  "voice-testimony.header-a-saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+  "voice-testimony.header-a-full-history": "Full History",
+  "voice-testimony.header-a-miracles": "Miracles",
+  "voice-testimony.header-a-miracles-reports": "Miracles & Reports",
+  "voice-testimony.header-a-eucharistic-miracles": "Eucharistic Miracles",
+  "voice-testimony.header-a-letters": "Letters",
+  "voice-testimony.header-a-voice-testimony": "Voice Testimony",
+  "voice-testimony.header-a-saints": "Saints",
+  "voice-testimony.header-a-saints-2": "Saints",
+  "voice-testimony.header-a-children-s-books": "Children's Books",
+  "voice-testimony.header-a-prayer": "Prayer",
+  "voice-testimony.header-a-prayer-library": "Prayer Library",
+  "voice-testimony.header-a-find-a-prayer-by-intention": "Find a Prayer by Intention",
+  "voice-testimony.header-a-prayer-for-the-sick": "Prayer for the Sick",
+  "voice-testimony.header-a-prayer-for-healing": "Prayer for Healing",
+  "voice-testimony.header-a-prayer-for-anxiety": "Prayer for Anxiety",
+  "voice-testimony.header-a-prayer-for-depression": "Prayer for Depression",
+  "voice-testimony.header-a-prayer-for-students": "Prayer for Students",
+  "voice-testimony.header-a-prayer-for-addiction": "Prayer for Addiction",
+  "voice-testimony.header-a-prayer-for-family": "Prayer for Family",
+  "voice-testimony.header-a-prayer-for-pregnancy": "Prayer for Pregnancy",
+  "voice-testimony.header-a-prayer-for-a-miracle": "Prayer for a Miracle",
+  "voice-testimony.header-a-saint-charbel-prayers": "Saint Charbel Prayers",
+  "voice-testimony.header-a-saint-charbel-novena": "Saint Charbel Novena",
+  "voice-testimony.header-a-feast-day": "Feast Day",
+  "voice-testimony.header-a-rosary-guide": "Rosary Guide",
+  "voice-testimony.header-a-rosary-minibook": "Rosary Minibook",
+  "voice-testimony.header-a-mystery-meditation": "Mystery Meditation",
+  "voice-testimony.header-a-become-like-him": "Become Like Him",
+  "voice-testimony.header-a-travel": "Travel",
+  "voice-testimony.header-a-travel-2": "Travel",
+  "voice-testimony.header-a-visiting-annaya": "Visiting Annaya",
+  "voice-testimony.header-a-annaya-online-tour": "Annaya Online Tour",
+  "voice-testimony.header-a-bekaa-kafra": "Bekaa Kafra",
+  "voice-testimony.header-a-our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+  "voice-testimony.header-a-the-cedars-of-god": "the Cedars of God",
+  "voice-testimony.header-a-bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+  "voice-testimony.header-a-qadisha-valley": "Qadisha Valley",
+  "voice-testimony.header-a-qannoubine-monastery": "Qannoubine Monastery",
+  "voice-testimony.header-a-qozhaya-monastery": "Qozhaya Monastery",
+  "voice-testimony.header-a-saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+  "voice-testimony.header-a-the-hermitage": "The Hermitage",
+  "voice-testimony.header-a-saint-charbel-trail": "Saint Charbel Trail",
+  "voice-testimony.header-a-news": "News",
+  "voice-testimony.header-a-media": "Media",
+  "voice-testimony.header-a-music": "Music",
+  "voice-testimony.header-a-video": "Video",
+  "voice-testimony.header-a-gallery": "Gallery",
+  "voice-testimony.header-aria-primary": "Primary",
+  "voice-testimony.main-main-content-sacred-testimony": "Sacred Testimony",
+  "voice-testimony.main-main-content-saint-charbel-s-recorded-voice": "Saint Charbel's Recorded Voice",
+  "voice-testimony.main-main-content-this-page-preserves-his-recorded-message": "This page preserves his recorded message with care. The transcript below is prepared for publication with a conservative editorial method: preserving message intent, avoiding invention, and marking the text as audio-based.",
+  "voice-testimony.main-main-content-download-recording-mp4": "Download Recording (MP4)",
+  "voice-testimony.main-main-content-pray-with-rosary-guide": "Pray With Rosary Guide",
+  "voice-testimony.main-main-content-listen": "Listen",
+  "voice-testimony.main-main-content-how-to-receive": "How To Receive",
+  "voice-testimony.main-main-content-publishing-draft": "Publishing Draft",
+  "voice-testimony.main-main-content-full-capture-raw": "Full Capture (Raw)",
+  "voice-testimony.main-listen-listen-2": "Listen",
+  "voice-testimony.main-listen-your-browser-does-not-support-video": "Your browser does not support video playback.",
+  "voice-testimony.main-listen-fallback-unable-to-play-in-this-browser": "Unable to play in this browser.",
+  "voice-testimony.main-listen-fallback-download-to-listen-mp4": "Download to listen (MP4)",
+  "voice-testimony.main-listen-read-the-transcript-of-this-recording": "Read the transcript of this recording",
+  "voice-testimony.main-listen-no-timed-captions-yet": "(no timed captions yet).",
+  "voice-testimony.main-listen-suggested-prayer-use-listen-slowly-pause": "Suggested prayer use: listen slowly, pause after key lines, pray one Our Father, then one decade of the Rosary.",
+  "voice-testimony.main-how-to-receive-how-to-receive-this-message": "How To Receive This Message",
+  "voice-testimony.main-how-to-receive-rosary": "Rosary",
+  "voice-testimony.main-how-to-receive-his-call-emphasizes-persistent-rosary-prayer": "His call emphasizes persistent Rosary prayer as a path of sanctification and peace.",
+  "voice-testimony.main-how-to-receive-eucharist": "Eucharist",
+  "voice-testimony.main-how-to-receive-the-message-points-to-christ-as": "The message points to Christ as true nourishment and keeps Eucharistic life central.",
+  "voice-testimony.main-how-to-receive-christ-and-mary": "Christ and Mary",
+  "voice-testimony.main-how-to-receive-mary-leads-to-jesus-the-message": "Mary leads to Jesus. The message keeps Marian devotion Christ-centered and obedient.",
+  "voice-testimony.main-how-to-receive-pastoral-tone": "Pastoral Tone",
+  "voice-testimony.main-how-to-receive-no-fear-no-pressure-prayer-repentance": "No fear, no pressure: prayer, repentance, unity, and holy joy in daily life.",
+  "voice-testimony.main-transcript-publishing-transcript-publishing-draft": "Transcript (Publishing Draft)",
+  "voice-testimony.main-transcript-publishing-conservative-editorial-pass-clear-lines-are": "Conservative editorial pass: clear lines are preserved, uncertain audio is explicitly marked as",
+  "voice-testimony.main-transcript-publishing-text": "[غير واضح]",
+  "voice-testimony.main-transcript-publishing-unclear": "[unclear]",
+  "voice-testimony.main-transcript-publishing-arabic-publishing-draft-conservative": "Arabic (Publishing Draft - Conservative)",
+  "voice-testimony.main-transcript-publishing-text-2": "الله يبارككم ويقدّسكم. نعمة الله... نعمة الله... حياة لكم. [غير واضح: عبارة غير مكتملة عن القلوب/الرب] السهر مع مريم. هي أمّكم... هي أمّ الفادي. السهر مع مريم ليس خسارة، بل ربح. نحن معكم. يسوع فيكم. صلّوا يا أولادي، صلّوا. الورديّة بتقدّسكم. الورديّة [غير واضح: بتدلّكم/بتقودكم]. مريم لا [غير واضح] إلا على ابنها يسوع. ...[غير واضح]... ومن يريد السلام يتبع مريم. اذكروا أنّ الله اختار مريم. كونوا [غير واضح]... أحبّوها قد ما بتحبّوا يسوع. يسوع وصّاكم فيها. أنا لا أقدّم إلا يسوع. هو غذاؤكم. هو الخبز والخمر [غير واضح: نازل/ينزل] من السماء. اسكنوا الفرح بقلوبكم. ولا تخلّوا العالم يسرق منكم هذا الفرح. يا أولاد مريم، مريم معكم. حضورها ليس من اليوم. دور مريم على الأرض: نداء للسلام، نداء للوحدة، [غير واضح: نداء للتوبة]. لا تخافوا. وين بتكون أمّي أنا بكون معها. وبدّي إيّاكم تكونوا حدّنا. تسكنوا بقلبنا. قلوبنا مليانة من نعمة الله.",
+  "voice-testimony.main-transcript-publishing-copy-transcript": "Copy Transcript",
+  "voice-testimony.main-transcript-publishing-english-faithful-draft-conservative": "English (Faithful Draft - Conservative)",
+  "voice-testimony.main-transcript-publishing-may-god-bless-you-and-sanctify": "May God bless you and sanctify you. God's grace... God's grace... life for you. [unclear: incomplete phrase about hearts/the Lord] Keeping vigil with Mary. She is your Mother... she is the Mother of the Redeemer. Keeping vigil with Mary is not a loss; it is a gain. We are with you. Jesus is in you. Pray, my children, pray. The Rosary sanctifies you. The Rosary [unclear: guides you / shows you the way]. Mary points to no one except her Son Jesus. ...[unclear]... Whoever wants peace should follow Mary. Remember that God chose Mary. Be [unclear]... Love her as much as you love Jesus. Jesus entrusted her to you. I offer only Jesus. He is your nourishment. He is the bread and the wine [unclear: descending from heaven]. Let joy dwell in your hearts. Do not let the world steal this joy from you. Children of Mary, Mary is with you. Her presence is not only from today. Mary's role on earth: a call to peace, a call to unity, [unclear: a call to repentance]. Do not be afraid. Where my Mother is, I am with her. I want you to be with us. To dwell in our heart. Our hearts are filled with God's grace.",
+  "voice-testimony.main-transcript-publishing-read-aloud-english": "Read Aloud (English)",
+  "voice-testimony.main-transcript-publishing-copy-transcript-2": "Copy Transcript",
+  "voice-testimony.main-transcript-raw-full-capture-raw-timestamped": "Full Capture (Raw, Timestamped)",
+  "voice-testimony.main-transcript-raw-this-section-shows-the-complete-automatic": "This section shows the complete automatic capture timeline from the recording without editorial trimming. It is intentionally raw.",
+  "voice-testimony.main-transcript-raw-arabic-full-capture-all-recognized-segments": "Arabic Full Capture - All Recognized Segments",
+  "voice-testimony.main-transcript-raw-loading-full-capture-transcript": "Loading full capture transcript...",
+  "voice-testimony.main-transcript-raw-copy-transcript-3": "Copy Transcript",
+  "voice-testimony.main-aria-page-sections": "Page sections",
+  "voice-testimony.main-aria-arabic-transcript": "Arabic transcript",
+  "voice-testimony.main-aria-english-transcript": "English transcript",
+  "voice-testimony.main-aria-full-capture-transcript": "Full capture transcript",
+  "voice-testimony.footer-div-prepared-with-care-from-the-recorded": "Prepared with care from the recorded audio. Final ecclesial proofreading is recommended before print publication. Author: Please pray for the person who made this website.",
+  "voice-testimony.body-a-skip-to-main-content": "Skip to main content",
+  "voice-testimony.header.home": "Home",
+  "voice-testimony.header.saint-charbel": "Saint Charbel"
+ }
+}
