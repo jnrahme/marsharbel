@@ -76,4 +76,22 @@ test('no other manifest family claims the 16 pinned routes',()=>{
   if(id.startsWith('ar2-'))continue;
   for(const v of Object.values(page.variants))assert.ok(!paths.has(v.path),id+' collides on '+v.path);
  }});
+test('sourceRevision is the frozen evidence revision, never the build HEAD',()=>{
+ const evidence=JSON.parse(fs.readFileSync(path.join(root,'locales/ar2-pairing-evidence.json'),'utf8'));
+ assert.match(evidence.sourceRevision,/^[0-9a-f]{40}$/,'evidence pins a frozen 40-hex sourceRevision');
+ for(const [slug] of TWINS){
+  assert.equal(manifest.pages['ar2-'+slug+'-equivalence'].sourceRevision,evidence.sourceRevision,slug+' sourceRevision frozen');
+ }
+ // Static determinism guard: the emitter must not consult git state at build time.
+ const emitterSrc=fs.readFileSync(path.join(root,'scripts/i18n/ar2_equivalence.py'),'utf8');
+ assert.ok(!emitterSrc.includes('rev-parse') && !emitterSrc.includes('subprocess'),'emitter must not read git HEAD (non-deterministic builds)');
+});
+test('index-matched pairing: no Arabic page under an English route',()=>{
+ const page=JSON.parse(JSON.stringify(manifest.pages['ar2-saints-equivalence']));
+ page.variants.ar.path='/gallery'; // ar variant on an EN-pinned path
+ assert.equal(verified(page,page.variants.ar),false,'ar variant on EN path must fail');
+ const page2=JSON.parse(JSON.stringify(manifest.pages['ar2-saints-equivalence']));
+ page2.variants.en.path='/gallery'; // en variant at the WRONG index (saints pair, gallery path)
+ assert.equal(verified(page2,page2.variants.en),false,'index-mismatched en path must fail');
+});
 console.log(n,'AR-2 pairing cases passed on',path.basename(manifestFile));

@@ -54,7 +54,14 @@
     if (page && variant && proof && proof.type === 'scoped-ar2-variant') {
       var ar2ArPaths = ['/ar/gallery','/ar/saints','/ar/prayer-library','/ar/encyclopedia','/ar/news','/ar/videos','/ar/testimonies','/ar/voice-testimony']; // /feedback and /submit-testimony excluded: noindex pages never get the control stack (scrum ruling 2026-10-12)
       var ar2EnPaths = ['/gallery','/saints','/prayer-library','/saint-charbel-encyclopedia','/news','/videos','/testimonies','/voice-testimony'];
-      return (ar2ArPaths.includes(variant.path) || ar2EnPaths.includes(variant.path)) &&
+      // Exact index-matched pair (scrum review, PR #750): an en variant must sit at an
+      // EN-pinned path, an ar variant at the AR-pinned path of the SAME index, so an
+      // Arabic page can never ride under an English route.
+      var ar2Code = Object.keys(page.variants || {}).find(function(k){ return page.variants[k] === variant; });
+      var ar2Idx = ar2Code === 'en' ? ar2EnPaths.indexOf(variant.path) : ar2Code === 'ar' ? ar2ArPaths.indexOf(variant.path) : -1;
+      var ar2PairOk = ar2Idx >= 0 && !!(page.variants.en && page.variants.ar) &&
+        page.variants.en.path === ar2EnPaths[ar2Idx] && page.variants.ar.path === ar2ArPaths[ar2Idx];
+      return ar2PairOk &&
         variant.status === 'verified' && proof.state === 'approved' &&
         proof.nativeReviewStatus === 'not-certified' &&
         typeof proof.scope === 'string' && !!proof.scope && typeof proof.evidenceRef === 'string' && !!proof.evidenceRef &&

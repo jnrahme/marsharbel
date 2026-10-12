@@ -5,7 +5,7 @@ written by the scrum non-author reviewer. Hashes are computed from the built pag
 build time so nav/body re-routes (PR #749) reseal automatically instead of going stale.
 Rows prove structural parity only: nativeReviewStatus stays not-certified.
 """
-import hashlib,json,subprocess
+import hashlib,json,re
 from bs4 import BeautifulSoup
 from i18n.reviewed_history import digest
 
@@ -22,8 +22,11 @@ AR2_EN_PATHS=['/gallery','/saints','/prayer-library','/saint-charbel-encyclopedi
 def ar2_manifest(root,texts,manifest):
     path=root/EVIDENCE
     if not path.exists():return manifest
-    rows=json.loads(path.read_text())['pages']
-    revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()
+    data=json.loads(path.read_text())
+    rows=data['pages']
+    revision=data.get('sourceRevision','')
+    if not re.fullmatch(r'[0-9a-f]{40}',revision):
+        raise ValueError('AR-2 evidence must pin a frozen 40-hex sourceRevision')
     out=json.loads(json.dumps(manifest))
     pinned={s.split('/')[-1] for s in AR2_AR_PATHS}
     missing=pinned-set(rows)
@@ -38,7 +41,14 @@ def ar2_manifest(root,texts,manifest):
         en_digest=digest(en_text);ar_digest=digest(ar_text)
         paths={row['en'],row['ar']}
         for key in list(out['pages']):
-            if any(v['path'] in paths for v in out['pages'][key]['variants'].values()):del out['pages'][key]
+            entry=out['pages'][key]
+            if any(v['path'] in paths for v in entry['variants'].values()):
+                # Loud guard: only single-variant pending rows may be superseded;
+                # never replace a verified family (scrum review, PR #750).
+                vs=list(entry['variants'].values())
+                if len(vs)!=1 or vs[0].get('status')!='pending':
+                    raise ValueError('AR-2 pairing would replace a non-pending family: '+key)
+                del out['pages'][key]
         page={'sourcePath':en_file.relative_to(root).as_posix(),'sourceRevision':revision,
               'sourceSha256':en_digest,'anchorIDs':{},'variants':{}}
         for code,text,route,dig,file in (('en',en_text,row['en'],en_digest,en_file),('ar',ar_text,row['ar'],ar_digest,ar_file)):
