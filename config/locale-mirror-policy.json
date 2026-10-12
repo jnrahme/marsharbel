@@ -2737,6 +2737,18 @@
       "masterRoute": "/saint-charbel-trail",
       "family": "saint-charbel-trail-travel-master",
       "status": "strict"
+    },
+    "ar/gallery.html": {
+      "locale": "ar",
+      "route": "/ar/gallery",
+      "master": "gallery.html",
+      "masterRoute": "/gallery",
+      "family": "gallery-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
     }
   }
 }
