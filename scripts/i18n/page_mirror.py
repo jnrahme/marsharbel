@@ -214,7 +214,14 @@ def render_page(root,registry,lang,family,route,catalog=None):
         rendered = rendered.replace('</head>', config + '</head>', 1)
     from i18n.ru_travel_chrome import localize_travel_chrome
     from i18n.encyclopedia_nav import route_and_mark_nav
-    return localize_travel_chrome(route_and_mark_nav(apply_launch_availability(rendered, root, registry, lang), root, lang), registry, lang, family)
+    from i18n.travel_variant_evidence import review_pinned_locales
+    # Review-pinned variants (scoped/annaya-hero evidence in the travel-equivalence
+    # registry) byte-freeze the rendered page: nav marking skips exactly those
+    # (family, locale) pairs until scrum amends their review evidence.
+    marked = apply_launch_availability(rendered, root, registry, lang)
+    if (family, lang) not in review_pinned_locales(root):
+        marked = route_and_mark_nav(marked, root, lang)
+    return localize_travel_chrome(marked, registry, lang, family)
 
 
 def render_page_set(root,registry):

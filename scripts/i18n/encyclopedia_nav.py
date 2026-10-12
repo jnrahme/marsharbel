@@ -130,8 +130,11 @@ def mark_english_nav_hrefs(text, root, lang, label=True):
 
 
 def route_and_mark_nav(text, root, lang, label=True):
-    """Arabic launch: route header links to registered twins, mark the rest as English."""
-    if lang != 'ar':
+    """Locale launch: route header links to registered twins, mark the rest as English.
+
+    Gated per locale as each locale's nav PR lands (ar, then de); every locale uses
+    its own registry twin map and its own reviewed qualifier catalog."""
+    if lang not in ('ar', 'de'):
         return text
     if not re.search(r'<header\b', text):
         return text

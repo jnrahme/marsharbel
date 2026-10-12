@@ -136,6 +136,24 @@ def validate_variant(root, family, code, variant, text, final=True, schema='scop
             'evidenceRef':evidence.get('renderedReview','stage-'+STAGE)}
 
 
+def review_pinned_locales(root):
+    """(family, locale) pairs whose rendered bytes are frozen by the final review
+    boundary (scoped-variants / annaya-hero evidence in locales/travel-equivalence.json).
+    Drives every exclusion from the pin registry itself; EN is never frozen by nav
+    marking and stays out of the set."""
+    record = root / 'locales/travel-equivalence.json'
+    if not record.exists():
+        return set()
+    out = set()
+    for family, group in json.loads(record.read_text()).get('groups', {}).items():
+        if group.get('evidenceSchema') not in ('scoped-variants-v1', 'annaya-hero-v1'):
+            continue
+        for code in group.get('variants', {}):
+            if code != 'en':
+                out.add((family, code))
+    return out
+
+
 def validate_final_outputs(root, texts):
     """Final injection boundary: full-file continuity plus actual final main pins."""
     record=root/'locales/travel-equivalence.json'
