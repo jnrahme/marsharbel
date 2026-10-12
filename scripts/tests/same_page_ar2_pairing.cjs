@@ -18,6 +18,11 @@ const TWINS=[['gallery','/gallery','/ar/gallery'],['saints','/saints','/ar/saint
  ['litany','/litany-of-saint-charbel','/ar/litany-of-saint-charbel'],['chaplet','/saint-charbel-chaplet','/ar/saint-charbel-chaplet'],
  ['eucharistic-hub','/miracles/eucharistic/','/ar/miracles/eucharistic/'],
  ...['amsterdam','bolsena-orvieto','faverney','ivorra','lanciano','legnica','ludbreg','santarem','siena','sokolka'].map(n=>['eucharistic-'+n,'/miracles/eucharistic/'+n,'/ar/miracles/eucharistic/'+n])];
+// Travel-4 (scrum ruling 2026-10-12): the ar variant is ADDED INTO the existing verified
+// travel families (en/de/ru/hi keep their scoped-travel proof); no new ar2- family.
+const TRAVEL_TWINS=[['travel','/travel','/ar/travel'],['qadisha-valley','/qadisha-valley','/ar/qadisha-valley'],
+ ['qannoubine-monastery','/qannoubine-monastery','/ar/qannoubine-monastery'],
+ ['qozhaya-monastery','/qozhaya-monastery','/ar/qozhaya-monastery']];
 // Scrum ruling 2026-10-12: exactly these 8. /feedback and /submit-testimony are noindex,
 // the control build skips noindex pages, so they can never render the switcher and must
 // stay unpaired until the noindex coverage decision (todo-01M4R14M4SBH49AFECW3MEW5H9).
@@ -55,6 +60,38 @@ test('Arabic twin offers the English source page back',()=>{
   assert.equal(r.available,true,slug+' en offered');
   assert.equal(r.href,'https://marsharbel.com'+en,slug);
  }});
+test('travel-4: ar variants ride inside the 4 verified travel families',()=>{
+ for(const [slug,en,ar] of TRAVEL_TWINS){
+  const page=manifest.pages[slug+'-travel-master-equivalence'];
+  assert.ok(page,'missing travel family '+slug);
+  assert.equal(page.variants.en.path,en,slug+' en path');
+  assert.ok(page.variants.ar,slug+' ar variant present');
+  assert.equal(page.variants.ar.path,ar,slug+' ar path');
+  assert.equal(page.variants.ar.proof.type,'scoped-ar2-variant',slug+' ar proof type');
+  assert.equal(page.variants.ar.proof.nativeReviewStatus,'not-certified',slug+' ar honesty');
+  assert.equal(page.variants.ar.status,'verified',slug+' ar status');
+  assert.equal(verified(page,page.variants.ar),true,slug+' ar verified()');
+  assert.equal(page.variants.en.proof.type,'scoped-travel-variant',slug+' en keeps scoped-travel proof');
+  assert.equal(verified(page,page.variants.en),true,slug+' en verified()');
+  const r=resolve(manifest,'https://marsharbel.com'+en,'ar','en');
+  assert.equal(r.available,true,slug+' ar offered');
+  assert.equal(r.href,'https://marsharbel.com'+ar,slug+' resolves to ar twin');
+  const back=resolve(manifest,'https://marsharbel.com'+ar,'en','ar');
+  assert.equal(back.available,true,slug+' en offered back');
+  assert.equal(back.href,'https://marsharbel.com'+en,slug+' resolves back to en');
+ }});
+test('travel-4 regression: the 8 existing de/ru travel variants still resolve',()=>{
+ for(const [slug,en] of TRAVEL_TWINS){
+  const page=manifest.pages[slug+'-travel-master-equivalence'];
+  for(const code of ['de','ru']){
+   const v=page.variants[code];
+   assert.ok(v,slug+' '+code+' variant present');
+   assert.equal(v.status,'verified',slug+' '+code+' status');
+   assert.equal(verified(page,v),true,slug+' '+code+' verified()');
+   const r=resolve(manifest,'https://marsharbel.com'+en,code,'en');
+   assert.equal(r.available,true,slug+' '+code+' offered');
+   assert.equal(r.href,'https://marsharbel.com/'+code+'/'+slug,slug+' resolves to '+code+' twin');
+  }}});
 test('a not-certified twin on an unlisted route is refused',()=>{
  const page=JSON.parse(JSON.stringify(manifest.pages['ar2-gallery-equivalence']));
  page.variants.ar.path='/ar/feast-day';
@@ -65,20 +102,21 @@ test('the two noindex pages stay unpaired (no switcher stack, no pair)',()=>{
  for(const slug of NOINDEX_UNPAIRED){
   assert.ok(!manifest.pages['ar2-'+slug+'-equivalence'],'noindex page must not be paired: '+slug);
  }
- assert.equal(Object.keys(manifest.pages).filter(k=>k.startsWith('ar2-')).length,TWINS.length,'exactly the 23 approved pairs');
+ assert.equal(Object.keys(manifest.pages).filter(k=>k.startsWith('ar2-')).length,TWINS.length,'exactly the 23 approved standalone pairs');
 });
 test('every paired English page actually carries the switcher stack',()=>{
  // A pair for a page without the control stack can never render the switcher:
  // refuse it here so a future noindex pair fails red instead of shipping dead.
- for(const [slug,en] of TWINS){
+ for(const [slug,en] of TWINS.concat(TRAVEL_TWINS)){
   const file=en==='/' ? 'index.html' : en.endsWith('/') ? en.slice(1)+'index.html' : en.slice(1)+'.html';
   const html=fs.readFileSync(path.join(root,file),'utf8');
   assert.ok(html.includes('/same-page-switcher.js'),slug+' EN page lacks the switcher stack - do not pair it');
  }});
 test('no other manifest family claims the 46 pinned routes',()=>{
- const paths=new Set();for(const [,en,ar] of TWINS){paths.add(en);paths.add(ar)}
+ const paths=new Set();for(const [,en,ar] of TWINS.concat(TRAVEL_TWINS)){paths.add(en);paths.add(ar)}
+ const travelIds=new Set(TRAVEL_TWINS.map(([slug])=>slug+'-travel-master-equivalence'));
  for(const [id,page] of Object.entries(manifest.pages)){
-  if(id.startsWith('ar2-'))continue;
+  if(id.startsWith('ar2-')||travelIds.has(id))continue;
   for(const v of Object.values(page.variants))assert.ok(!paths.has(v.path),id+' collides on '+v.path);
  }});
 test('sourceRevision is the frozen evidence revision, never the build HEAD',()=>{

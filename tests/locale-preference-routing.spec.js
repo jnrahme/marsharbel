@@ -20,15 +20,28 @@ for (const [route, lang, heading] of [
 
 test('saved preferences never redirect or enable an unreviewed twin', async ({page}) => {
   await page.addInitScript(() => localStorage.setItem('sc_lang_pref', 'ar'));
-  await page.goto('/qannoubine-monastery?lang=en');
+  // /miracles/nohad-el-shami is the genuinely unpaired twin; this flips when its
+  // Arabic is rebuilt and paired.
+  await page.goto('/miracles/nohad-el-shami?lang=en');
   await expect(page.locator('#sc-language-select option[value="ar"]')).toBeDisabled();
   expect(await page.evaluate(() => SC_LANGUAGE_SWITCH.request('ar'))).toBe(false);
-  await expect(page).toHaveURL(/\/qannoubine-monastery\?lang=en$/);
+  await expect(page).toHaveURL(/\/miracles\/nohad-el-shami\?lang=en$/);
   await page.goto('/qannoubine-monastery');
   await expect(page).toHaveURL(/\/qannoubine-monastery$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.locator('#sc-language-select')).toHaveValue('en');
   expect(await page.evaluate(() => localStorage.getItem('sc_lang_pref'))).toBe('ar');
+});
+
+test('paired Arabic twin is offered but never auto-redirects a saved preference', async ({page}) => {
+  await page.addInitScript(() => localStorage.setItem('sc_lang_pref', 'ar'));
+  await page.goto('/qannoubine-monastery?lang=en');
+  await expect(page.locator('#sc-language-select option[value="ar"]')).toBeEnabled();
+  await expect(page).toHaveURL(/\/qannoubine-monastery\?lang=en$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  expect(await page.evaluate(() => SC_LANGUAGE_SWITCH.request('ar'))).toBe(true);
+  await expect(page).toHaveURL(/\/ar\/qannoubine-monastery$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
 });
 
 test('language query preserves English URL, query, fragment and content', async ({page}) => {

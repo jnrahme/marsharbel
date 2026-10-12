@@ -17,10 +17,13 @@ class GeneratedTravelAvailabilityTests(unittest.TestCase):
   scoped={key:page for key,page in manifest['pages'].items() if any(v.get('proof',{}).get('type')=='scoped-travel-variant' for v in page['variants'].values())}
   expected={slug+'-travel-master-equivalence' for slug in SLUGS}
   self.assertEqual(set(scoped),expected)
+  # Travel-4 re-pin (scrum 2026-10-12): exactly these 4 families carry the additive ar
+  # variant; the other 8 scoped slugs must stay en/de/ru - a mistaken ar there still fails.
+  TRAVEL4={'travel','qadisha-valley','qannoubine-monastery','qozhaya-monastery'}
   queries=[]
   for slug in sorted(SLUGS):
    page=scoped[slug+'-travel-master-equivalence']
-   self.assertEqual(set(page['variants']),{'en','de','ru','hi'} if slug=='travel' else {'en','de','ru'})
+   self.assertEqual(set(page['variants']),{'en','de','ru','hi','ar'} if slug=='travel' else ({'en','de','ru','ar'} if slug in TRAVEL4 else {'en','de','ru'}))
    self.assertNotIn('zh-Hans',page['variants']);self.assertNotIn('th',page['variants'])
    # Also call the real resolver: discoveryRoutes cannot silently widen proof.
    for code in ('zh-Hans','th'):
@@ -32,6 +35,22 @@ class GeneratedTravelAvailabilityTests(unittest.TestCase):
    with self.subTest(query=query):
     self.assertFalse(result['available'],result)
     self.assertEqual(result['reason'],'translation-unavailable')
+  # Travel-4: the actual resolver offers Arabic from EN for exactly the 4 paired families
+  # and still refuses it for the other 8 - re-pinned as a check, not a loosening.
+  ar_queries=[{'href':'https://marsharbel.com/'+slug,'requested':'ar','actual':'en'} for slug in sorted(SLUGS)]
+  ar_results=json.loads(subprocess.check_output(['node','-e',driver,str(ROOT/'same-page-resolver.js')],input=json.dumps({'manifest':manifest,'queries':ar_queries}),text=True))
+  self.assertEqual(len(ar_results),12)
+  for query,result in zip(ar_queries,ar_results):
+   with self.subTest(query=query):
+    slug=query['href'].rsplit('/',1)[-1]
+    if slug in TRAVEL4:
+     self.assertTrue(result['available'],result)
+     self.assertEqual(result['reason'],'verified-twin',result)
+     self.assertEqual(result['contentLanguage'],'ar',result)
+     self.assertEqual(result['href'],'https://marsharbel.com/ar/'+slug,result)
+    else:
+     self.assertFalse(result['available'],result)
+     self.assertEqual(result['reason'],'translation-unavailable',result)
  def test_actual_resolver_approved_de_ru_and_hi_hub_available(self):
   raw=(ROOT/'same-page-manifest.js').read_text()
   manifest=json.loads(raw.split(' = ',1)[1].strip().removesuffix(';'))

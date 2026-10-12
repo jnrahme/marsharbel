@@ -14,7 +14,10 @@ def scoped_provenance(root,text):
     from i18n.ar2_equivalence import ar2_manifest, AR2
     actual_ar2={key for key,page in manifest['pages'].items() if any(v.get('proof',{}).get('type')==AR2 for v in page['variants'].values())}
     if actual_ar2:
-        expected_ar2=ar2_manifest(root,{}, {'pages':{}})['pages']
+        # Mirror the control_outputs order (travel manifest first, then the ar2 emitter),
+        # then keep only families carrying ar2 proofs - the same predicate as actual_ar2.
+        chained=ar2_manifest(root,{}, travel_manifest(root,{}, {'pages':{}}))['pages']
+        expected_ar2={key:page for key,page in chained.items() if any(v.get('proof',{}).get('type')==AR2 for v in page['variants'].values())}
         if actual_ar2!=set(expected_ar2):raise ValueError('Unknown scoped ar2 manifest family membership')
         for key in sorted(actual_ar2):
             if manifest['pages'][key]!=expected_ar2[key]:raise ValueError('Scoped ar2 manifest differs from validated locale evidence: '+key)
@@ -26,6 +29,8 @@ def scoped_provenance(root,text):
     scopes=Counter()
     for key in sorted(families):
         page=manifest['pages'][key];source=expected[key]
+        # scoped-ar2-variant variants (travel-4 ar twins) are owned by the ar2 validation above.
+        page={**page,'variants':{c:v for c,v in page['variants'].items() if v.get('proof',{}).get('type')!='scoped-ar2-variant'}}
         if page!=source:raise ValueError('Scoped manifest differs from validated locale evidence: '+key)
         for variant in page['variants'].values():
             # annaya-hero-v1 scope is a non-prose token, never extracted as display text.

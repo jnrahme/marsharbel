@@ -20,15 +20,20 @@ for (const route of ['/qadisha-valley', '/ar/qadisha-valley']) {
   });
 }
 
-test('ar Qadisha keeps authored language and offers English while refusing pending non-English', async ({page}) => {
+test('ar Qadisha keeps authored language and offers English while refusing unverified non-English', async ({page}) => {
   await page.goto('/ar/qadisha-valley?lang=en');
   await expect(page.locator('h1')).toHaveText(catalog['hero.heading1']);
   await expect(page.locator('html')).toHaveAttribute('lang','ar');
   await expect(page.locator('#sc-language-select option[value="en"]')).toBeEnabled();
   const before=await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
-  expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('de'))).toBe(false);
+  expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('fr'))).toBe(false);
+  expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('es'))).toBe(false);
   expect(await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}))).toEqual(before);
-  await page.reload();await expect(page.locator('h1')).toHaveText(catalog['hero.heading1']);
+  expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('de'))).toBe(true);
+  await expect(page).toHaveURL(/\/de\/qadisha-valley$/);
+  await expect(page.locator('html')).toHaveAttribute('lang','de');
+  await page.goto('/ar/qadisha-valley?lang=en');
+  await expect(page.locator('h1')).toHaveText(catalog['hero.heading1']);
   await page.selectOption('#sc-language-select','en');await expect(page).toHaveURL(/\/qadisha-valley$/);await expect(page.locator('html')).toHaveAttribute('lang','en');
 });
 
