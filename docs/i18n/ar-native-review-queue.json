@@ -1,0 +1,44 @@
+[
+  {
+    "route": "/ar/gallery",
+    "status": "agent-translated-native-not-certified",
+    "family": "gallery-master",
+    "copyFile": "locales/ar/gallery-master-copy.json",
+    "keyCount": 131,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN gallery page (AR-2 pilot, #737)",
+    "sourceUrls": [
+      "https://marsharbel.com/gallery"
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "route": "/ar/saints",
+    "status": "agent-translated-native-not-certified",
+    "family": "saints-master",
+    "copyFile": "locales/ar/saints-master-copy.json",
+    "keyCount": 282,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN saints page (AR-2 second territory, #739)",
+    "sourceUrls": [
+      "https://marsharbel.com/saints"
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "route": "/ar (shared chrome)",
+    "status": "agent-translated-native-not-certified",
+    "family": "chrome",
+    "copyFile": null,
+    "keyCount": null,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "AR-1 chrome labels: shared header/nav strings shipped with the first Arabic rollout and reused across the /ar mirror pages (header home, Saint Charbel, nav items)",
+    "sourceUrls": [
+      "https://marsharbel.com/ar"
+    ],
+    "checkedAt": "2026-10-11"
+  }
+]
