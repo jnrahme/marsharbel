@@ -124,5 +124,19 @@
       "https://marsharbel.com/news"
     ],
     "checkedAt": "2026-10-12"
+  },
+  {
+    "route": "/ar/videos",
+    "status": "agent-translated-native-not-certified",
+    "family": "videos-master",
+    "copyFile": "locales/ar/videos-master-copy.json",
+    "keyCount": 320,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN videos hub page incl. meta, section headings, card copy, player fallback strings and FAQ; 320 keys (63 Arabic-only reuse, 257 fresh incl. 23 iframe title attributes) (AR-2 seventh territory)",
+    "sourceUrls": [
+      "https://marsharbel.com/videos"
+    ],
+    "checkedAt": "2026-10-12"
   }
 ]

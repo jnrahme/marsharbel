@@ -108,6 +108,12 @@ def main():
             val = el2.get('aria-label', '').strip()
             if val and not val.startswith('http'):
                 add(selector_for(el2), val, 'attribute', f'{region}-aria-{slug(val, used)}', attribute='aria-label')
+        # Accessible names on embeds (iframe title) are announced to screen
+        # readers; bind any Latin-letter title attribute as translatable copy.
+        for el3 in root_el.select('[title]'):
+            val = el3.get('title', '').strip()
+            if val and re.search(r'[A-Za-z]', val):
+                add(selector_for(el3), val, 'attribute', f'{region}-title-{slug(val, used)}', attribute='title')
 
     # Reserved-key convention (music-master contract): the header brand home
     # link and saint name double as breadcrumb/Person-schema copy, so they
