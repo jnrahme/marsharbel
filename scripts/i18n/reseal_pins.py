@@ -28,9 +28,10 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 
 from bs4 import BeautifulSoup
 import i18n.reviewed_history as rh
+import i18n.reviewed_prayers as rp
 import i18n.reviewed_travel as rt
 
-PIN_FILES = ['locales/history-equivalence.json', 'locales/travel-equivalence.json']
+PIN_FILES = ['locales/history-equivalence.json', 'locales/travel-equivalence.json', 'locales/prayer-equivalence.json']
 
 
 def digest_main(text):
@@ -70,10 +71,24 @@ def twin_rewrites():
 
 def rendered_texts():
     rh.history_manifest = lambda root, texts, manifest: manifest
+    rp.prayer_manifest = lambda root, texts, manifest: manifest
     rt.travel_manifest = lambda root, texts, manifest: manifest
     import importlib
     build = importlib.import_module('build-international')
     return build.outputs()
+
+
+def iter_variants(data):
+    """Yield (group, locale, variant) across both pin-file shapes.
+
+    history/travel: top-level variants.<locale>; prayer: groups.<group>.variants.<locale>.
+    The group key keeps reseals scoped so two groups cannot cross-update.
+    """
+    for code, v in data.get('variants', {}).items():
+        yield None, code, v
+    for group, g in data.get('groups', {}).items():
+        for code, v in g.get('variants', {}).items():
+            yield group, code, v
 
 
 def main():
@@ -87,7 +102,7 @@ def main():
             continue
         data = json.loads(pin_path.read_text())
         swaps = []
-        for code, v in data.get('variants', {}).items():
+        for group, code, v in iter_variants(data):
             f = ROOT / v['file']
             new = texts.get(f)
             if new is None:
@@ -99,10 +114,11 @@ def main():
             for loc, twin, english in rewrites:
                 if loc == code:
                     reverted = reverted.replace(f'href="{twin}"', f'href="{english}"')
+                    reverted = reverted.replace(f'href="{twin}#', f'href="{english}#')
             if base is None or reverted != base:
-                rejected.append(f"{pin_rel}:{code} ({v['file']})")
+                rejected.append(f"{pin_rel}:{group or '-'}:{code} ({v['file']})")
                 continue
-            accepted.append((pin_rel, code, v['file'], v['bodySha256'], digest_main(new)))
+            accepted.append((pin_rel, group, code, v['file'], v['bodySha256'], digest_main(new)))
             if write:
                 swaps.append((v['bodySha256'], digest_main(new)))
         if write and swaps:
@@ -111,8 +127,8 @@ def main():
                 assert text.count(old_sha) == 1, f'pin sha not unique in {pin_rel}'
                 text = text.replace(old_sha, new_sha)
             pin_path.write_text(text)
-    for pin_rel, code, file, old, new in accepted:
-        print(f'RESEAL-OK {pin_rel} {code} {file} {old[:12]}->{new[:12]}')
+    for pin_rel, group, code, file, old, new in accepted:
+        print(f'RESEAL-OK {pin_rel} {group or "-"}:{code} {file} {old[:12]}->{new[:12]}')
     for r in rejected:
         print(f'RESEAL-REJECTED {r}')
     if rejected:
