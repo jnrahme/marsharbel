@@ -1,0 +1,2018 @@
+{
+ "version": 1,
+ "master": "news.html",
+ "masterSha256": "f9b098c25c38adda5dd4d9f74ca8abb67d9bfa9a07671efb1326d6d22078caf9",
+ "sourceRevision": "c1281aae2fe2d2c7af5dc8f9904e338552a5183e",
+ "bindings": [
+  {
+   "key": "news.title",
+   "selector": "html > head:nth-of-type(1) > title:nth-of-type(1)",
+   "source": "Saint Charbel News | Latest Miracles, Movie & Events",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.meta-description",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(11)",
+   "source": "The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "news.meta-og-title",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(15)",
+   "source": "Saint Charbel News | Latest Miracles, Movie & Events",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "news.meta-og-description",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(16)",
+   "source": "The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "news.meta-twitter-title",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(20)",
+   "source": "Saint Charbel News | Latest Miracles, Movie & Events",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "news.meta-twitter-description",
+   "selector": "html > head:nth-of-type(1) > meta:nth-of-type(21)",
+   "source": "The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "news.header.saint-charbel",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+   "source": "Saint Charbel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header.home",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Home",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-legacy",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Legacy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-saint-charbel-encyclopedia",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Charbel Encyclopedia",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-full-history",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Full History",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-miracles",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-miracles-reports",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Miracles & Reports",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-eucharistic-miracles",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Eucharistic Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-letters",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Letters",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-voice-testimony",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Voice Testimony",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-saints",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-saints-2",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-children-s-books",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Children's Books",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-prayer",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+   "source": "Prayer",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-prayer-library",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Prayer Library",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-find-a-prayer-by-intention",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Find a Prayer by Intention",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-prayer-for-the-sick",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Prayer for the Sick",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-prayer-for-healing",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Prayer for Healing",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-prayer-for-anxiety",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Prayer for Anxiety",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-prayer-for-depression",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "Prayer for Depression",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-prayer-for-students",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Prayer for Students",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-prayer-for-addiction",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Prayer for Addiction",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-prayer-for-family",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Prayer for Family",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-prayer-for-pregnancy",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Prayer for Pregnancy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-prayer-for-a-miracle",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Prayer for a Miracle",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-saint-charbel-prayers",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "Saint Charbel Prayers",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-saint-charbel-novena",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Novena",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-feast-day",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+   "source": "Feast Day",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-rosary-guide",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+   "source": "Rosary Guide",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-rosary-minibook",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+   "source": "Rosary Minibook",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-mystery-meditation",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+   "source": "Mystery Meditation",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-become-like-him",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+   "source": "Become Like Him",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-travel",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-travel-2",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-visiting-annaya",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Visiting Annaya",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-annaya-online-tour",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Annaya Online Tour",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-bekaa-kafra",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Bekaa Kafra",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-our-lady-of-lebanon-at-harissa",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Our Lady of Lebanon at Harissa",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-the-cedars-of-god",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "the Cedars of God",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-bkerke-and-the-maronite-patriarchate",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Bkerke and the Maronite Patriarchate",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-qadisha-valley",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Qadisha Valley",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-qannoubine-monastery",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Qannoubine Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-qozhaya-monastery",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Qozhaya Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-saint-charbel-s-lebanon",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Saint Charbel's Lebanon",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-the-hermitage",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "The Hermitage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-saint-charbel-trail",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Trail",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-news",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "News",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-media",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+   "source": "Media",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-music",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Music",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-video",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Video",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-a-gallery",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Gallery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.header-aria-primary",
+   "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+   "source": "Primary",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "news.main-main-content-latest-news",
+   "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Latest News",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-saint-charbel-in-the-news",
+   "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+   "source": "Saint Charbel in the News",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-dated-sourced-coverage-of-what-is",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "Dated, sourced coverage of what is happening now around Saint Charbel and the Lebanon saints - newly recorded miracles, the upcoming film, papal milestones, relic pilgrimages, feast-day events - with beatifications and canonizations from the wider Church below. Every item links to its original source so you can read the full report.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-miracles-overview",
+   "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Miracles Overview",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-read-letters",
+   "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Read Letters",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-charbel-the-movie",
+   "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+   "source": "Charbel The Movie",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-a-feature-film-about-saint-charbel",
+   "selector": "#main-content > section:nth-of-type(2) > p:nth-of-type(1)",
+   "source": "A feature film about Saint Charbel is real and moving toward release. Status below reflects verified public reporting as of September 20, 2026.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-announced-december-2025-in-release-rollout",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Announced December 2025 · In release rollout",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-charbel-the-movie-mar-charbel",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "\"Charbel The Movie\" (Mar Charbel)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-producer-nadim-mehanna-nmpro-arts-announced",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "Producer Nadim Mehanna (NMPRO Arts) announced the film on MTV Lebanon's talk show Sar El Wa2et on December 21, 2025, unveiling a trailer and a national fundraising campaign that raised more than $1.3 million to support an international release. Four actors portray Charbel across his life, with Jerry Ghazal as the younger Charbel and the story's central figure. The film is listed with Lebanese cinemas for 2026. This is a new production, distinct from the 2009 film \"Charbel\" by Nabil Lebbos.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-announcement-coverage-blog-baladi-december-21",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Announcement coverage (Blog Baladi, December 21, 2025)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-background-cast-and-both-films",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "Background, cast, and both films:",
+   "kind": "text",
+   "nodeIndex": 3
+  },
+  {
+   "key": "news.main-main-content-the-saint-charbel-movie-page",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "the Saint Charbel Movie page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-what-we-do-not-know-yet",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(2) > span:nth-of-type(1)",
+   "source": "What we do not know yet",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-open-questions-on-the-release",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
+   "source": "Open Questions on the Release",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-as-of-september-20-2026-public",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+   "source": "As of September 20, 2026, public reporting does not confirm a wide international release date, streaming distribution, or English-language availability. Lebanese cinema listings mark the film as coming soon. This page will be updated when an official date is announced by the production company.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-news-of-saint-charbel-and-the",
+   "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+   "source": "News of Saint Charbel and the Lebanon Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-reported-events-and-newly-recorded-cases",
+   "selector": "#main-content > section:nth-of-type(3) > p:nth-of-type(1)",
+   "source": "Reported events and newly recorded cases are not the same as formal Vatican recognition. Labels on each card say which is which.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-october-9-premiere-reported-october-10",
+   "selector": "#charbel-premiere-release-2026-10 > span:nth-of-type(1)",
+   "source": "October 9 premiere · Reported October 10, 2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-charbel-premieres-in-beirut-lebanese-cinema",
+   "selector": "#charbel-premiere-release-2026-10 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Charbel Premieres in Beirut; Lebanese Cinema Release Set for October 22",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-charbel-the-new-feature-film-about",
+   "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(1)",
+   "source": "Charbel, the new feature film about Saint Charbel, held its special premiere on October 9 at BlackBox in Beirut Media Zone, according to Nidaa al-Watan's October 10 report. The film is a joint NMPRO and MTV production, directed by Nadim Mehanna and written by Claudia Marshalian, with Jerry Ghazal playing the young Charbel and Father Roukoz El Hajj portraying him later in life. Cinemacity lists a runtime of 130 minutes.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-lebtalks-reported-that-the-october-9",
+   "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(2)",
+   "source": "Lebtalks reported that the October 9 launch was under President Joseph Aoun's patronage and would be broadcast on MTV, with a nationwide Lebanese theatrical rollout planned from October 22. Cinemacity Beirut independently lists Thursday, October 22 as its opening date. Its page still has no screening sessions scheduled. The completed premiere and the upcoming public cinema opening are different milestones.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-a-separate-charity-screening-in-support",
+   "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(3)",
+   "source": "A separate charity screening in support of Anta Akhi is scheduled for October 12 at ABC Achrafieh. International release dates, streaming distribution and English-language availability remain unconfirmed.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-l-orient-le-jour-october-12",
+   "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "L'Orient-Le Jour: October 12 charity screening for Anta Akhi (October 8, French)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-nidaa-al-watan-premiere-report-and",
+   "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(4) > a:nth-of-type(1)",
+   "source": "Nidaa al-Watan: premiere report and interview with Nadim Mehanna (October 10, Arabic)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-lebtalks-launch-patronage-mtv-broadcast-and",
+   "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(4) > a:nth-of-type(2)",
+   "source": "Lebtalks: launch, patronage, MTV broadcast and planned Lebanese release (October 9, Arabic)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-cinemacity-beirut-october-22-opening-listing",
+   "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(4) > a:nth-of-type(3)",
+   "source": "Cinemacity Beirut: October 22 opening listing",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-watch-the-film-trailer-and-premiere",
+   "selector": "#charbel-premiere-release-2026-10 > h4:nth-of-type(1)",
+   "source": "Watch the Film Trailer and Premiere Coverage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-nmpro-arts-official-charbel-film-trailer",
+   "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(5)",
+   "source": "NMPRO Arts: official Charbel film trailer, in Arabic, 2 minutes 25 seconds. This is a trailer, not a recording of the premiere.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-watch-the-official-trailer-on-youtube",
+   "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(5) > a:nth-of-type(1)",
+   "source": "Watch the official trailer on YouTube",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-watch-mtv-s-october-9-premiere",
+   "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(6) > a:nth-of-type(1)",
+   "source": "Watch MTV's October 9 premiere coverage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-charbel-premiere-release-2026-10-mtv-s-launch-report-includes-an",
+   "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(6)",
+   "source": ". MTV's launch report includes an attached video from the premiere. A YouTube recording of the premiere has not yet been verified.",
+   "kind": "text",
+   "nodeIndex": 1
+  },
+  {
+   "key": "news.main-mar-charbel-october-opening-2026-10-reported-october-5-2026-cinema-listing",
+   "selector": "#mar-charbel-october-opening-2026-10 > span:nth-of-type(1)",
+   "source": "Reported October 5, 2026 · Cinema listing checked October 6",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-mar-charbel-october-opening-2026-10-mar-charbel-listed-for-october-22",
+   "selector": "#mar-charbel-october-opening-2026-10 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Mar Charbel Listed for October 22 Opening in Beirut",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-mar-charbel-october-opening-2026-10-beirut-souks-cinemacity-now-lists-october",
+   "selector": "#mar-charbel-october-opening-2026-10 > p:nth-of-type(1)",
+   "source": "Beirut Souks Cinemacity now lists October 22, 2026 as the opening date for Mar Charbel, the 130-minute biopic directed by Nadim Mehanna. Its film page has no screening sessions scheduled yet. Lebanon24 reported on October 5 that the film would begin showing in Lebanese cinemas on October 22 after an earlier postponement; its account of booking demand cites an unnamed source. The cinema listing supports the planned opening date, not a completed release, a confirmed showtime or an international rollout.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-mar-charbel-october-opening-2026-10-cinemacity-beirut-opening-date-and-current",
+   "selector": "#mar-charbel-october-opening-2026-10 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Cinemacity Beirut: opening date and current session status",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-mar-charbel-october-opening-2026-10-lebanon24-october-5-report-arabic",
+   "selector": "#mar-charbel-october-opening-2026-10 > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "Lebanon24: October 5 report (Arabic)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-gallery-ai-transformation-series-2026-10-october-3-2026-from-our-gallery",
+   "selector": "#gallery-ai-transformation-series-2026-10 > span:nth-of-type(1)",
+   "source": "October 3, 2026 · From our gallery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-gallery-ai-transformation-series-2026-10-from-the-historic-photograph-to-a",
+   "selector": "#gallery-ai-transformation-series-2026-10 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "From the Historic Photograph to a New Saint Charbel Art Series",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-gallery-ai-transformation-series-2026-10-we-have-added-an-ai-transformation",
+   "selector": "#gallery-ai-transformation-series-2026-10 > p:nth-of-type(1)",
+   "source": "We have added an AI transformation series to our gallery, bringing the historic photograph of Saint Charbel into conversation with new devotional art. The original stays visible beside the renditions, so visitors can see the source and the artistic choices for themselves.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-gallery-ai-transformation-series-2026-10-the-historic-reference-photograph-not-an",
+   "selector": "#gallery-ai-transformation-series-2026-10 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "The historic reference photograph, not an AI rendition. Photographer unknown; public domain according to Wikimedia Commons.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-gallery-ai-transformation-series-2026-10-the-collection-shows-the-work-as",
+   "selector": "#gallery-ai-transformation-series-2026-10 > p:nth-of-type(2)",
+   "source": "The collection shows the work as a series, from imagined portraits to close portraits and a comparison strip. The current first candidate has a dark beard with a grey center streak; the window portrait also has a dark beard. Other takes remain visible, so visitors can compare different artistic choices rather than seeing one image presented as a definitive likeness. The final and alternate renditions use the historic photograph as their reference; the early candidates are imagined portraits, not verified transformations of that source photograph.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-gallery-ai-transformation-series-2026-10-we-are-proud-to-share-the",
+   "selector": "#gallery-ai-transformation-series-2026-10 > p:nth-of-type(3)",
+   "source": "We are proud to share the series, and we want its meaning to be clear. These are AI-assisted artistic renditions, not newly discovered photographs, a reconstruction of a documented scene or proof of an apparition. The gallery labels the new images as artistic renditions or \"AI transformation, not a photograph.\" The historic photograph remains separately identified and credited. A personal-experience caption on the first candidate is presented as the website creator's own account, not independent verification.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-gallery-ai-transformation-series-2026-10-explore-the-series-in-our-gallery",
+   "selector": "#gallery-ai-transformation-series-2026-10 > p:nth-of-type(4)",
+   "source": "Explore the series in our gallery: open an image full-screen, compare the original and the renditions, and read the caption beside each piece.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-gallery-ai-transformation-series-2026-10-see-the-ai-transformation-series-in",
+   "selector": "#gallery-ai-transformation-series-2026-10 > p:nth-of-type(5) > a:nth-of-type(1)",
+   "source": "See the AI transformation series in our gallery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-gallery-ai-transformation-series-2026-10-wikimedia-commons-historic-charbel-photograph",
+   "selector": "#gallery-ai-transformation-series-2026-10 > p:nth-of-type(5) > a:nth-of-type(2)",
+   "source": "Wikimedia Commons: historic Charbel photograph",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-religious-trails-minister-visit-2026-10-reported-october-3-2026-religious-tourism",
+   "selector": "#religious-trails-minister-visit-2026-10 > span:nth-of-type(1)",
+   "source": "Reported October 3, 2026 · Religious tourism",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-religious-trails-minister-visit-2026-10-lebanese-and-jordanian-ministers-visit-saint",
+   "selector": "#religious-trails-minister-visit-2026-10 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Lebanese and Jordanian Ministers Visit Saint Charbel's Pilgrimage Sites",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-religious-trails-minister-visit-2026-10-qozhaya-monastery-archival-venue-context-not",
+   "selector": "#religious-trails-minister-visit-2026-10 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "Qozhaya monastery, archival venue context, not the ministers' visit. Photo: Yellaban, public domain.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-religious-trails-minister-visit-2026-10-image-source",
+   "selector": "#religious-trails-minister-visit-2026-10 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Image source",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-religious-trails-minister-visit-2026-10-lebanon-s-tourism-minister-laura-al",
+   "selector": "#religious-trails-minister-visit-2026-10 > p:nth-of-type(1)",
+   "source": "Lebanon's Tourism Minister Laura Al-Khazen Lahoud and Jordan's Tourism and Antiquities Minister Imad Hijazin visited Qozhaya monastery, Bqaa Kafra, Annaya and Saint Charbel's hermitage on Friday, according to the National News Agency's October 3 report. They met priests and monks and were briefed on Lebanon's religious trails, including the Lebanon Mountain Trail and the trail associated with Saint Charbel. The report describes a visit and briefing, not a new agreement or a trail opening.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-religious-trails-minister-visit-2026-10-national-news-agency-ministers-visit-qozhaya",
+   "selector": "#religious-trails-minister-visit-2026-10 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "National News Agency: ministers visit Qozhaya, Bqaa Kafra and Annaya (October 3, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-kfifan-patron-relics-2026-10-reported-october-2-2026-relics-at",
+   "selector": "#kfifan-patron-relics-2026-10 > span:nth-of-type(1)",
+   "source": "Reported October 2, 2026 · Relics at Kfifan",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-kfifan-patron-relics-2026-10-saint-charbel-s-formation-monastery-receives",
+   "selector": "#kfifan-patron-relics-2026-10 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Charbel's Formation Monastery Receives Relics from Rome",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-kfifan-patron-relics-2026-10-kfifan-monastery-2012-venue-context-not",
+   "selector": "#kfifan-patron-relics-2026-10 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "Kfifan monastery, 2012. Venue context, not the relic reception. Photo: Evilscaught, CC BY 3.0; WebP conversion.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-kfifan-patron-relics-2026-10-image-source-2",
+   "selector": "#kfifan-patron-relics-2026-10 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Image source",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-kfifan-patron-relics-2026-10-cc-by-3-0",
+   "selector": "#kfifan-patron-relics-2026-10 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "CC BY 3.0",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-kfifan-patron-relics-2026-10-kfifan-s-monastery-of-saints-cyprian",
+   "selector": "#kfifan-patron-relics-2026-10 > p:nth-of-type(1)",
+   "source": "Kfifan's Monastery of Saints Cyprian and Justina received relics of its two patron saints from Rome, MTV Lebanon reported on October 2. Mass, a blessing and a procession marked their feast. Father Emile Akiki of the Lebanese Maronite Order led the Mass. Saint Charbel studied at Kfifan before his ordination, under Saint Nimatullah Al-Hardini. The report also recalls the monastery's connection with Blessed Estephan Nehme. These are relics of Cyprian and Justina, not Saint Charbel. The ceremony's exact calendar date is not specified.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-kfifan-patron-relics-2026-10-mtv-lebanon-relic-reception-at-kfifan",
+   "selector": "#kfifan-patron-relics-2026-10 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "MTV Lebanon: relic reception at Kfifan (October 2, 2026, Arabic)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-kfifan-patron-relics-2026-10-maronites-church-directory-saints-cyprian-and",
+   "selector": "#kfifan-patron-relics-2026-10 > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "Maronites Church directory: Saints Cyprian and Justina monastery, Kfifan",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-kfifan-patron-relics-2026-10-saint-sharbel-maronite-catholic-church-formation",
+   "selector": "#kfifan-patron-relics-2026-10 > p:nth-of-type(2) > a:nth-of-type(3)",
+   "source": "Saint Sharbel Maronite Catholic Church: formation at Kfifan",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-el-paso-lebanese-festival-2026-10-october-3-4-2026-archived-parish",
+   "selector": "#el-paso-lebanese-festival-2026-10 > span:nth-of-type(1)",
+   "source": "October 3-4, 2026 · Archived parish announcement",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-el-paso-lebanese-festival-2026-10-el-paso-parish-announced-an-october",
+   "selector": "#el-paso-lebanese-festival-2026-10 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "El Paso Parish Announced an October 3-4 Lebanese Festival",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-el-paso-lebanese-festival-2026-10-lebanese-food-in-barcelona-2021-illustrative",
+   "selector": "#el-paso-lebanese-festival-2026-10 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "Lebanese food in Barcelona, 2021. Illustrative, not the El Paso event. Photo: El Mono Español, CC BY-SA 4.0; resized to WebP.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-el-paso-lebanese-festival-2026-10-image-source-3",
+   "selector": "#el-paso-lebanese-festival-2026-10 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Image source",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-el-paso-lebanese-festival-2026-10-cc-by-sa-4-0",
+   "selector": "#el-paso-lebanese-festival-2026-10 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "CC BY-SA 4.0",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-el-paso-lebanese-festival-2026-10-saint-sharbel-maronite-catholic-mission-in",
+   "selector": "#el-paso-lebanese-festival-2026-10 > p:nth-of-type(1)",
+   "source": "Saint Sharbel Maronite Catholic Mission in El Paso announced a Lebanese Festival for October 3 and 4, 2026, with Lebanese food, live entertainment and dabke dancing. Those advertised dates have passed. This card preserves the original announcement, not a post-event report; attendance and the event outcome have not been verified.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-el-paso-lebanese-festival-2026-10-parish-announcement-saint-sharbel-maronite-catholic",
+   "selector": "#el-paso-lebanese-festival-2026-10 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Parish announcement: Saint Sharbel Maronite Catholic Mission",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-el-paso-lebanese-festival-2026-10-ktsm-interview-with-parish-representatives-september",
+   "selector": "#el-paso-lebanese-festival-2026-10 > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "KTSM interview with parish representatives (September 30, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-douaihy-hoayek-altar-consecration-2026-09-september-27-2026-altar-consecration-in",
+   "selector": "#douaihy-hoayek-altar-consecration-2026-09 > span:nth-of-type(1)",
+   "source": "September 27, 2026 · Altar consecration in Beirut · Reported October 6",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-douaihy-hoayek-altar-consecration-2026-09-beirut-cathedral-consecrates-an-altar-to",
+   "selector": "#douaihy-hoayek-altar-consecration-2026-09 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Beirut Cathedral Consecrates an Altar to Blessed Patriarchs Douaihy and Hoayek",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-douaihy-hoayek-altar-consecration-2026-09-saint-george-maronite-cathedral-left-and",
+   "selector": "#douaihy-hoayek-altar-consecration-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "Saint George Maronite Cathedral (left) and the Mohammad Al-Amin Mosque, downtown Beirut, 2009. Venue context, not the consecration Mass. Photo: Lebnen18, CC BY-SA 3.0; WebP conversion.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-douaihy-hoayek-altar-consecration-2026-09-image-source-4",
+   "selector": "#douaihy-hoayek-altar-consecration-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Image source",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-douaihy-hoayek-altar-consecration-2026-09-cc-by-sa-3-0",
+   "selector": "#douaihy-hoayek-altar-consecration-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "CC BY-SA 3.0",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-douaihy-hoayek-altar-consecration-2026-09-on-sunday-september-27-maronite-patriarch",
+   "selector": "#douaihy-hoayek-altar-consecration-2026-09 > p:nth-of-type(1)",
+   "source": "On Sunday, September 27, Maronite Patriarch Cardinal Bechara Boutros Al-Rahi presided over the consecration of an altar dedicated to Blessed Patriarchs Estephan Douaihy and Elias Hoayek at Saint George Maronite Cathedral in downtown Beirut, with the two patriarchs' relics placed within it. President Joseph Aoun attended, alongside religious and official figures and faithful from across Lebanon, especially Zgharta-Ehden, Douaihy's birthplace region. In his homily, Al-Rahi paired the two blesseds: Douaihy \"preserved the church's memory and heritage amidst persecution,\" while Hoayek \"carried the nation's cause amidst major transformations.\" Both remain Blessed, not canonized saints: Douaihy was beatified in 2024, Hoayek on July 25, 2026.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-douaihy-hoayek-altar-consecration-2026-09-national-news-agency-president-aoun-attends",
+   "selector": "#douaihy-hoayek-altar-consecration-2026-09 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "National News Agency: President Aoun attends the Mass (September 27, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-douaihy-hoayek-altar-consecration-2026-09-an-nahar-the-consecration-and-homily",
+   "selector": "#douaihy-hoayek-altar-consecration-2026-09 > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "An-Nahar: the consecration and homily (September 27, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-douaihy-hoayek-altar-consecration-2026-09-l-orient-today-relics-placed-in",
+   "selector": "#douaihy-hoayek-altar-consecration-2026-09 > p:nth-of-type(2) > a:nth-of-type(3)",
+   "source": "L'Orient Today: relics placed in the cathedral altar (September 27, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-emmitsburg-shrine-anniversary-2026-09-september-26-2026-shrine-anniversary-reported",
+   "selector": "#emmitsburg-shrine-anniversary-2026-09 > span:nth-of-type(1)",
+   "source": "September 26, 2026 · Shrine anniversary · Reported September 30",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-emmitsburg-shrine-anniversary-2026-09-emmitsburg-celebrates-nine-years-of-saint",
+   "selector": "#emmitsburg-shrine-anniversary-2026-09 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Emmitsburg Celebrates Nine Years of Saint Sharbel's Shrine",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-emmitsburg-shrine-anniversary-2026-09-national-shrine-grotto-emmitsburg-2015-venue",
+   "selector": "#emmitsburg-shrine-anniversary-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "National Shrine Grotto, Emmitsburg, 2015. Venue context, not the 2026 celebration. Photo: Bohemian Baltimore, CC BY-SA 4.0; resized to WebP.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-emmitsburg-shrine-anniversary-2026-09-image-source-5",
+   "selector": "#emmitsburg-shrine-anniversary-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Image source",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-emmitsburg-shrine-anniversary-2026-09-cc-by-sa-4-0-2",
+   "selector": "#emmitsburg-shrine-anniversary-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "CC BY-SA 4.0",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-emmitsburg-shrine-anniversary-2026-09-the-family-of-saint-sharbel-usa",
+   "selector": "#emmitsburg-shrine-anniversary-2026-09 > p:nth-of-type(1)",
+   "source": "The Family of Saint Sharbel USA reports that pilgrims gathered on September 26 at the National Shrine Grotto of Our Lady of Lourdes in Emmitsburg, Maryland, for the ninth anniversary of Saint Sharbel's shrine dedication. The celebration included Eucharistic Adoration, confessions and Mass celebrated by Father Theodore Trinko, IVE, at St. Mary's Glass Chapel. After Mass, pilgrims followed the saint's relic in procession to the shrine, where they received a blessing with Saint Sharbel's oil and venerated the relic. The organizer published its account on September 30.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-emmitsburg-shrine-anniversary-2026-09-family-of-saint-sharbel-usa-anniversary",
+   "selector": "#emmitsburg-shrine-anniversary-2026-09 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Family of Saint Sharbel USA: anniversary account (September 30, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-byblos-annaya-prayer-walk-2026-09-september-26-2026-pilgrimage",
+   "selector": "#byblos-annaya-prayer-walk-2026-09 > span:nth-of-type(1)",
+   "source": "September 26, 2026 · Pilgrimage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-byblos-annaya-prayer-walk-2026-09-prayer-walk-from-byblos-to-annaya",
+   "selector": "#byblos-annaya-prayer-walk-2026-09 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Prayer Walk from Byblos to Annaya for South Lebanon's Christians",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-byblos-annaya-prayer-walk-2026-09-at-the-monastery-entrance-in-annaya",
+   "selector": "#byblos-annaya-prayer-walk-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "At the monastery entrance in Annaya, where the walk ends: a pilgrim reaches up to Saint Charbel's statue. Photograph: LLEW,",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-byblos-annaya-prayer-walk-2026-09-via-wikimedia-commons",
+   "selector": "#byblos-annaya-prayer-walk-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "via Wikimedia Commons",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-byblos-annaya-prayer-walk-2026-09-cc-by-sa-4-0-3",
+   "selector": "#byblos-annaya-prayer-walk-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "CC BY-SA 4.0",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-byblos-annaya-prayer-walk-2026-09-on-september-26-pilgrims-walked-from",
+   "selector": "#byblos-annaya-prayer-walk-2026-09 > p:nth-of-type(1)",
+   "source": "On September 26, pilgrims walked from Byblos to Annaya carrying the intentions of the Christians who remain in Lebanon's southern border villages - Rmeich, Ain Ebel, Debel - turning the journey into an act of solidarity and hope. Believers from across Lebanon gathered in Byblos and walked some 10 miles from the Mar Girgis church to the Monastery of Saint Maron in Annaya, where the pilgrimage concluded with Mass at the Church of Saint Charbel. Organizer Anthony Jarjour of Rmeich, who walked some 112 miles from Rmeich to Annaya last year, had set out from Tyre on September 22 and reached the shrine after five days on foot - about 93 miles, rerouted for road closures. The pilgrimage was organized with the Monastery of St. Maron in Annaya and the municipalities of Byblos and Annaya, with Civil Defense and Red Cross support.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-byblos-annaya-prayer-walk-2026-09-catholic-world-report-ewtn-news-september",
+   "selector": "#byblos-annaya-prayer-walk-2026-09 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Catholic World Report / EWTN News (September 20, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-byblos-annaya-prayer-walk-2026-09-outcome",
+   "selector": "#byblos-annaya-prayer-walk-2026-09 > p:nth-of-type(2)",
+   "source": "; outcome:",
+   "kind": "text",
+   "nodeIndex": 1
+  },
+  {
+   "key": "news.main-byblos-annaya-prayer-walk-2026-09-aci-mena-september-27-2026-arabic",
+   "selector": "#byblos-annaya-prayer-walk-2026-09 > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "ACI MENA (September 27, 2026, Arabic)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-doctor-borik-interview-2026-09-september-10-2026-interview",
+   "selector": "#doctor-borik-interview-2026-09 > span:nth-of-type(1)",
+   "source": "September 10, 2026 · Interview",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-doctor-borik-interview-2026-09-the-doctor-who-investigated-a-st",
+   "selector": "#doctor-borik-interview-2026-09 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "The Doctor Who Investigated a St. Charbel Healing Speaks",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-doctor-borik-interview-2026-09-saint-charbel-makhlouf-1828-1898-the",
+   "selector": "#doctor-borik-interview-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "Saint Charbel Makhlouf (1828-1898), the hermit of Annaya.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-doctor-borik-interview-2026-09-dr-anne-borik-the-phoenix-physician",
+   "selector": "#doctor-borik-interview-2026-09 > p:nth-of-type(1)",
+   "source": "Dr. Anne Borik, the Phoenix physician who headed the medical committee examining Dafne Gutierrez's 2016 recovery of sight after prayers at a St. Charbel relic visit, gave a new interview on how the case changed her practice of medicine. She now directs the Saint Sharbel Spiritual Life Center in Pittsburgh.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-doctor-borik-interview-2026-09-zeale-news-interview-september-10-2026",
+   "selector": "#doctor-borik-interview-2026-09 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Zeale News interview (September 10, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-doctor-borik-interview-2026-09-more-on-healing-through-his-intercession",
+   "selector": "#doctor-borik-interview-2026-09 > p:nth-of-type(2)",
+   "source": "More on healing through his intercession:",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "news.main-doctor-borik-interview-2026-09-the-saint-charbel-prayer-for-healing",
+   "selector": "#doctor-borik-interview-2026-09 > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "the Saint Charbel prayer for healing",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-st-charbel-trail-pilgrimage-2026-08-august-23-2026-pilgrimage",
+   "selector": "#st-charbel-trail-pilgrimage-2026-08 > span:nth-of-type(1)",
+   "source": "August 23, 2026 · Pilgrimage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-st-charbel-trail-pilgrimage-2026-08-american-priest-walks-the-st-charbel",
+   "selector": "#st-charbel-trail-pilgrimage-2026-08 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "American Priest Walks the St. Charbel Trail",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-st-charbel-trail-pilgrimage-2026-08-pilgrims-on-the-saint-charbel-trail",
+   "selector": "#st-charbel-trail-pilgrimage-2026-08 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-st-charbel-trail-pilgrimage-2026-08-father-michael-sliney-lc-completed-a",
+   "selector": "#st-charbel-trail-pilgrimage-2026-08 > p:nth-of-type(1)",
+   "source": "Father Michael Sliney, LC, completed a pilgrimage along Lebanon's St. Charbel Trail, which links monasteries, villages, and historic sites, and encouraged more Americans to make the journey.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-st-charbel-trail-pilgrimage-2026-08-catholic-world-report-ewtn-news-august",
+   "selector": "#st-charbel-trail-pilgrimage-2026-08 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Catholic World Report / EWTN News (August 23, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-st-charbel-trail-pilgrimage-2026-08-our-guide",
+   "selector": "#st-charbel-trail-pilgrimage-2026-08 > p:nth-of-type(2)",
+   "source": "Our guide:",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "news.main-st-charbel-trail-pilgrimage-2026-08-the-saint-charbel-trail",
+   "selector": "#st-charbel-trail-pilgrimage-2026-08 > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "the Saint Charbel Trail",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-july-25-2026-beatification",
+   "selector": "#hoayek-beatification-2026-07 > span:nth-of-type(1)",
+   "source": "July 25, 2026 · Beatification",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-maronite-patriarch-elias-hoayek-beatified-at",
+   "selector": "#hoayek-beatification-2026-07 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Maronite Patriarch Elias Hoayek Beatified at Dimane",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-on-saturday-july-25-2026-elias",
+   "selector": "#hoayek-beatification-2026-07 > p:nth-of-type(1)",
+   "source": "On Saturday, July 25, 2026, Elias Hoayek, Maronite Patriarch of Antioch from 1899 to 1931, was beatified at the Patriarchal summer seat of Dimane in Lebanon. Vatican News reports that President Joseph Aoun attended, that Cardinal Marcello Semeraro, prefect of the Dicastery for the Causes of Saints, concelebrated as the envoy of Pope Leo XIV, and that Patriarch Bechara Boutros al-Rai gave the homily. From that day he is called Blessed. The miracle for his beatification was approved by decree on May 22, 2026. At the Angelus the next day, Pope Leo XIV called him \"a man of dialogue and hope\" and the \"Father of Greater Lebanon.\" Hoayek was born in Helta on December 4, 1843, founded the Maronite Sisters of the Holy Family, and died at",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-bkerke",
+   "selector": "#hoayek-beatification-2026-07 > p:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Bkerke",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-on-december-24-1931-he-decided",
+   "selector": "#hoayek-beatification-2026-07 > p:nth-of-type(1)",
+   "source": "on December 24, 1931. He decided to build the shrine at",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-harissa",
+   "selector": "#hoayek-beatification-2026-07 > p:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Harissa",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-vatican-news-july-26-2026",
+   "selector": "#hoayek-beatification-2026-07 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Vatican News (July 26, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-ceremony-report",
+   "selector": "#hoayek-beatification-2026-07 > p:nth-of-type(2)",
+   "source": "Ceremony report:",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-vatican-news-in-italian-july-25",
+   "selector": "#hoayek-beatification-2026-07 > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "Vatican News, in Italian (July 25, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-decree-coverage",
+   "selector": "#hoayek-beatification-2026-07 > p:nth-of-type(2)",
+   "source": "; decree coverage:",
+   "kind": "text",
+   "nodeIndex": 4
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-vatican-news-may-22-2026",
+   "selector": "#hoayek-beatification-2026-07 > p:nth-of-type(2) > a:nth-of-type(3)",
+   "source": "Vatican News (May 22, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-birth-and-death-dates",
+   "selector": "#hoayek-beatification-2026-07 > p:nth-of-type(2)",
+   "source": "; birth and death dates:",
+   "kind": "text",
+   "nodeIndex": 6
+  },
+  {
+   "key": "news.main-hoayek-beatification-2026-07-holy-see-press-office-bulletin-may",
+   "selector": "#hoayek-beatification-2026-07 > p:nth-of-type(2) > a:nth-of-type(4)",
+   "source": "Holy See Press Office bulletin (May 22, 2026, Italian)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-revesby-feast-2026-07-july-20-2026-feast-day",
+   "selector": "#revesby-feast-2026-07 > span:nth-of-type(1)",
+   "source": "July 20, 2026 · Feast day",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-revesby-feast-2026-07-hundreds-honor-st-charbel-at-revesby",
+   "selector": "#revesby-feast-2026-07 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Hundreds Honor St. Charbel at Revesby Feast",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-revesby-feast-2026-07-saint-charbel-makhlouf-1828-1898-the-2",
+   "selector": "#revesby-feast-2026-07 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "Saint Charbel Makhlouf (1828-1898) - the historic photograph kept of the saint. Public domain.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-revesby-feast-2026-07-hundreds-of-faithful-gathered-at-revesby",
+   "selector": "#revesby-feast-2026-07 > p:nth-of-type(1)",
+   "source": "Hundreds of faithful gathered at Revesby, Sydney, for the saint's July feast, one of many annual celebrations held by Maronite parishes around the world for the third Sunday of July (Maronite calendar) and July 24 (Latin calendar).",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-revesby-feast-2026-07-the-catholic-weekly-july-20-2026",
+   "selector": "#revesby-feast-2026-07 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "The Catholic Weekly (July 20, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-cebu-relic-visit-2026-06-june-29-july-1-2026-relic",
+   "selector": "#cebu-relic-visit-2026-06 > span:nth-of-type(1)",
+   "source": "June 29 - July 1, 2026 · Relic pilgrimage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-cebu-relic-visit-2026-06-st-charbel-s-pilgrim-relic-visits",
+   "selector": "#cebu-relic-visit-2026-06 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "St. Charbel's Pilgrim Relic Visits Cebu",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-cebu-relic-visit-2026-06-the-vigil-lamp-at-saint-charbel",
+   "selector": "#cebu-relic-visit-2026-06 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "The vigil lamp at Saint Charbel's tomb in Annaya, from which the pilgrim relic travels. Photograph: LLEW,",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-cebu-relic-visit-2026-06-via-wikimedia-commons-2",
+   "selector": "#cebu-relic-visit-2026-06 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "via Wikimedia Commons",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-cebu-relic-visit-2026-06-cc-by-sa-4-0-4",
+   "selector": "#cebu-relic-visit-2026-06 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "CC BY-SA 4.0",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-cebu-relic-visit-2026-06-the-archdiocese-of-cebu-welcomed-the",
+   "selector": "#cebu-relic-visit-2026-06 > p:nth-of-type(1)",
+   "source": "The Archdiocese of Cebu welcomed the Pilgrim Relic of St. Charbel Makhlouf with a Welcome Mass at San Carlos Seminary College and three days of public veneration across parishes.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-cebu-relic-visit-2026-06-archdiocese-of-cebu-june-29-2026",
+   "selector": "#cebu-relic-visit-2026-06 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Archdiocese of Cebu (June 29, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-new-miracles-reported-2026-01-january-28-2026-reported-recorded-at",
+   "selector": "#new-miracles-reported-2026-01 > span:nth-of-type(1)",
+   "source": "January 28, 2026 · Reported, recorded at Annaya",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-new-miracles-reported-2026-01-two-new-miracles-reported-in-early",
+   "selector": "#new-miracles-reported-2026-01 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Two New Miracles Reported in Early 2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-new-miracles-reported-2026-01-the-monastery-of-saint-maron-in",
+   "selector": "#new-miracles-reported-2026-01 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "The Monastery of Saint Maron in Annaya, which keeps the register of reported miracles. Photograph: Paul Saad,",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-new-miracles-reported-2026-01-via-wikimedia-commons-3",
+   "selector": "#new-miracles-reported-2026-01 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "via Wikimedia Commons",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-new-miracles-reported-2026-01-cc-by-sa-4-0-5",
+   "selector": "#new-miracles-reported-2026-01 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "CC BY-SA 4.0",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-new-miracles-reported-2026-01-two-new-miracles-attributed-to-st",
+   "selector": "#new-miracles-reported-2026-01 > p:nth-of-type(1)",
+   "source": "Two new miracles attributed to St. Charbel's intercession were reported in the first weeks of 2026 - one in the United States and one in Lebanon - continuing the monastery's long-running register, which now exceeds 29,680 recorded cases.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-new-miracles-reported-2026-01-catholic-world-report-ewtn-news-january",
+   "selector": "#new-miracles-reported-2026-01 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Catholic World Report / EWTN News (January 28, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-papal-visit-annaya-2025-12-december-1-2025-milestone",
+   "selector": "#papal-visit-annaya-2025-12 > span:nth-of-type(1)",
+   "source": "December 1, 2025 · Milestone",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-papal-visit-annaya-2025-12-first-papal-visit-to-saint-charbel",
+   "selector": "#papal-visit-annaya-2025-12 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "First Papal Visit to Saint Charbel's Tomb",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-papal-visit-annaya-2025-12-pope-leo-xiv-praying-at-the",
+   "selector": "#papal-visit-annaya-2025-12 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "Pope Leo XIV praying at the tomb of Saint Charbel in Annaya. Photo: Vatican Media / Vatican News.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-papal-visit-annaya-2025-12-pope-leo-xiv-prayed-at-the",
+   "selector": "#papal-visit-annaya-2025-12 > p:nth-of-type(1)",
+   "source": "Pope Leo XIV prayed at the saint's tomb in Annaya during his apostolic journey to Lebanon - the first pope ever to visit - and entrusted Lebanon, the Church, and the world to Saint Charbel's intercession.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-papal-visit-annaya-2025-12-official-vatican-text-december-1-2025",
+   "selector": "#papal-visit-annaya-2025-12 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Official Vatican text (December 1, 2025)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-papal-visit-annaya-2025-12-full-recap",
+   "selector": "#papal-visit-annaya-2025-12 > p:nth-of-type(2)",
+   "source": "Full recap:",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "news.main-papal-visit-annaya-2025-12-pope-leo-xiv-at-the-tomb",
+   "selector": "#papal-visit-annaya-2025-12 > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "Pope Leo XIV at the tomb of Saint Charbel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-world-saints-and-the-wider-catholic",
+   "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+   "source": "World Saints and the Wider Catholic Family",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-beatifications-canonizations-and-news-from-the",
+   "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(1)",
+   "source": "Beatifications, canonizations, and news from the worldwide Church and the wider Maronite and Catholic community - every item dated and linked to its original source, newest first.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-september-27-2026-beatification",
+   "selector": "#monte-sole-beatification-2026-09 > span:nth-of-type(1)",
+   "source": "September 27, 2026 · Beatification",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-three-priests-martyred-at-monte-sole",
+   "selector": "#monte-sole-beatification-2026-09 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Three Priests Martyred at Monte Sole Beatified in Bologna",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-inside-the-sacrario-the-memorial-to",
+   "selector": "#monte-sole-beatification-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "Inside the sacrario, the memorial to the fallen at Marzabotto on the Monte Sole ridge, where the 1944 massacres took place. Photograph: Gianni Careddu,",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-via-wikimedia-commons-4",
+   "selector": "#monte-sole-beatification-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "via Wikimedia Commons",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-cc-by-sa-4-0-6",
+   "selector": "#monte-sole-beatification-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "CC BY-SA 4.0",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-on-sunday-september-27-in-the",
+   "selector": "#monte-sole-beatification-2026-09 > p:nth-of-type(1)",
+   "source": "On Sunday, September 27, in the Basilica of San Petronio in Bologna, Cardinal Marcello Semeraro, prefect of the Dicastery for the Causes of Saints, beatified three priests killed by Nazi forces in the 1944 Monte Sole massacres: Don Ubaldo Marchioni, a diocesan priest; Don Elia Comini, a Salesian; and Father Martino Capelli, a Dehonian. Because the Church has recognized them as martyrs, no miracle was required for their beatification - from Sunday they are called Blessed. Bologna Today reported that a bullet-pierced pyx, found in the rubble of the altar of Casaglia's church, has become a symbol of the massacre the three priests did not escape.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-dehonians-may-4-2026",
+   "selector": "#monte-sole-beatification-2026-09 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Dehonians (May 4, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-decree-coverage-2",
+   "selector": "#monte-sole-beatification-2026-09 > p:nth-of-type(2)",
+   "source": "Decree coverage:",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-vatican-news-november-21-2025",
+   "selector": "#monte-sole-beatification-2026-09 > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "Vatican News (November 21, 2025)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-ceremony-details",
+   "selector": "#monte-sole-beatification-2026-09 > p:nth-of-type(2)",
+   "source": "; ceremony details:",
+   "kind": "text",
+   "nodeIndex": 4
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-diocese-of-bologna-september-11-2026",
+   "selector": "#monte-sole-beatification-2026-09 > p:nth-of-type(2) > a:nth-of-type(3)",
+   "source": "Diocese of Bologna (September 11, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-outcome-2",
+   "selector": "#monte-sole-beatification-2026-09 > p:nth-of-type(2)",
+   "source": "; outcome:",
+   "kind": "text",
+   "nodeIndex": 6
+  },
+  {
+   "key": "news.main-monte-sole-beatification-2026-09-vatican-news-september-27-2026-italian",
+   "selector": "#monte-sole-beatification-2026-09 > p:nth-of-type(2) > a:nth-of-type(4)",
+   "source": "Vatican News (September 27, 2026, Italian)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-fulton-sheen-beatification-2026-09-september-24-2026-beatification",
+   "selector": "#fulton-sheen-beatification-2026-09 > span:nth-of-type(1)",
+   "source": "September 24, 2026 · Beatification",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-fulton-sheen-beatification-2026-09-fulton-sheen-beatified-in-saint-louis",
+   "selector": "#fulton-sheen-beatification-2026-09 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Fulton Sheen Beatified in Saint Louis Before 50,000",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-fulton-sheen-beatification-2026-09-blessed-fulton-sheen-at-his-desk",
+   "selector": "#fulton-sheen-beatification-2026-09 > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+   "source": "Blessed Fulton Sheen at his desk in 1956, at the height of his television years.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-fulton-sheen-beatification-2026-09-archbishop-fulton-j-sheen-the-emmy",
+   "selector": "#fulton-sheen-beatification-2026-09 > p:nth-of-type(1)",
+   "source": "Archbishop Fulton J. Sheen - the Emmy-winning broadcaster of",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-fulton-sheen-beatification-2026-09-life-is-worth-living",
+   "selector": "#fulton-sheen-beatification-2026-09 > p:nth-of-type(1) > em:nth-of-type(1)",
+   "source": "Life Is Worth Living",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-fulton-sheen-beatification-2026-09-was-declared-blessed-at-a-mass",
+   "selector": "#fulton-sheen-beatification-2026-09 > p:nth-of-type(1)",
+   "source": "- was declared Blessed at a Mass in The Dome at America's Center in Saint Louis, Missouri. Cardinal Luis Antonio Tagle presided for Pope Leo XIV before a crowd organizers estimated near 50,000; the miracle that cleared the way was the 2010 revival of James Fulton Engstrom, who carried Sheen's relic in the procession. A day earlier, Pope Leo XIV praised Sheen's media apostolate at the Wednesday General Audience. He is Blessed, not yet a saint - his cause for canonization continues.",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "news.main-fulton-sheen-beatification-2026-09-vatican-news-september-23-2026",
+   "selector": "#fulton-sheen-beatification-2026-09 > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Vatican News (September 23, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-fulton-sheen-beatification-2026-09-catholic-register-osv-news-september-24",
+   "selector": "#fulton-sheen-beatification-2026-09 > p:nth-of-type(2) > a:nth-of-type(2)",
+   "source": "Catholic Register / OSV News (September 24, 2026)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-fulton-sheen-beatification-2026-09-our-page",
+   "selector": "#fulton-sheen-beatification-2026-09 > p:nth-of-type(2)",
+   "source": "Our page:",
+   "kind": "text",
+   "nodeIndex": 4
+  },
+  {
+   "key": "news.main-fulton-sheen-beatification-2026-09-blessed-fulton-sheen-his-life-what",
+   "selector": "#fulton-sheen-beatification-2026-09 > p:nth-of-type(2) > a:nth-of-type(3)",
+   "source": "Blessed Fulton Sheen - his life, what beatification means, and where to watch his talks",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-editorial-standard",
+   "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+   "source": "Editorial Standard",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-this-page-summarizes-and-links-to",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "This page summarizes and links to original reporting; it does not republish articles. Dates are the original publication dates of the sources. Reported healings and movie production news are labeled separately from miracles formally recognized by the Catholic Church. To follow how recorded cases differ from recognized ones, see the",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-miracles-page",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Miracles page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.main-main-content-if-a-source-corrects-or-withdraws",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+   "source": ". If a source corrects or withdraws a story, this page will be updated to match.",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "news.main-img-alt-historic-photograph-of-saint-charbel-in",
+   "selector": "#gallery-ai-transformation-series-2026-10 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "Historic photograph of Saint Charbel in a monastic hood, eyes lowered, with a white beard",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-qozhaya-monastery-buildings-with-red-roofs",
+   "selector": "#religious-trails-minister-visit-2026-10 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "Qozhaya monastery buildings with red roofs against a rocky mountainside",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-the-stone-kfifan-monastery-buildings-and",
+   "selector": "#kfifan-patron-relics-2026-10 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "The stone Kfifan monastery buildings and courtyard in Lebanon",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-lebanese-food-with-hummus-flatbread-and",
+   "selector": "#el-paso-lebanese-festival-2026-10 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "Lebanese food with hummus, flatbread and falafel, photographed in Barcelona",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-saint-george-maronite-cathedral-in-downtown",
+   "selector": "#douaihy-hoayek-altar-consecration-2026-09 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "Saint George Maronite Cathedral in downtown Beirut, with the Mohammad Al-Amin Mosque beside it",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-the-stone-lourdes-grotto-at-the",
+   "selector": "#emmitsburg-shrine-anniversary-2026-09 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "The stone Lourdes grotto at the National Shrine in Emmitsburg with visitors and statues",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-a-pilgrim-touching-the-statue-of",
+   "selector": "#byblos-annaya-prayer-walk-2026-09 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "A pilgrim touching the statue of Saint Charbel at the monastery entrance in Annaya",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-saint-charbel-makhlouf-the-traditional-hooded",
+   "selector": "#doctor-borik-interview-2026-09 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "Saint Charbel Makhlouf, the traditional hooded portrait",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-pilgrims-on-the-saint-charbel-trail-2",
+   "selector": "#st-charbel-trail-pilgrimage-2026-08 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "Pilgrims on the Saint Charbel Trail in Lebanon",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-the-historic-photograph-of-saint-charbel",
+   "selector": "#revesby-feast-2026-07 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "The historic photograph of Saint Charbel Makhlouf",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-the-vigil-lamp-burning-at-the",
+   "selector": "#cebu-relic-visit-2026-06 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "The vigil lamp burning at the tomb of Saint Charbel in Annaya",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-the-monastery-of-saint-maron-in-2",
+   "selector": "#new-miracles-reported-2026-01 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "The Monastery of Saint Maron in Annaya, seen across the valley",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-pope-leo-xiv-praying-at-the-2",
+   "selector": "#papal-visit-annaya-2025-12 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "Pope Leo XIV praying at the tomb of Saint Charbel in Annaya",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-inside-the-memorial-shrine-of-the",
+   "selector": "#monte-sole-beatification-2026-09 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "Inside the memorial shrine of the fallen at Marzabotto, on the Monte Sole ridge",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.main-img-alt-blessed-fulton-sheen-at-his-desk-2",
+   "selector": "#fulton-sheen-beatification-2026-09 > figure:nth-of-type(1) > img:nth-of-type(1)",
+   "source": "Blessed Fulton Sheen at his desk in 1956",
+   "kind": "attribute",
+   "attribute": "alt"
+  },
+  {
+   "key": "news.footer-div-news-page-updated-september-25-2026",
+   "selector": "html > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "News page updated September 25, 2026. Author: Please pray for the person who made this website.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "news.body-a-skip-to-main-content",
+   "selector": "html > body:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Skip to main content",
+   "kind": "text",
+   "nodeIndex": 0
+  }
+ ],
+ "messages": {
+  "news.title": "Saint Charbel News | Latest Miracles, Movie & Events",
+  "news.meta-description": "The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources.",
+  "news.meta-og-title": "Saint Charbel News | Latest Miracles, Movie & Events",
+  "news.meta-og-description": "The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources.",
+  "news.meta-twitter-title": "Saint Charbel News | Latest Miracles, Movie & Events",
+  "news.meta-twitter-description": "The latest verified Saint Charbel news: newly recorded miracles, the Charbel movie, papal visits, relic pilgrimages, and feast-day events with dated sources.",
+  "news.header-a-legacy": "Legacy",
+  "news.header-a-saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+  "news.header-a-full-history": "Full History",
+  "news.header-a-miracles": "Miracles",
+  "news.header-a-miracles-reports": "Miracles & Reports",
+  "news.header-a-eucharistic-miracles": "Eucharistic Miracles",
+  "news.header-a-letters": "Letters",
+  "news.header-a-voice-testimony": "Voice Testimony",
+  "news.header-a-saints": "Saints",
+  "news.header-a-saints-2": "Saints",
+  "news.header-a-children-s-books": "Children's Books",
+  "news.header-a-prayer": "Prayer",
+  "news.header-a-prayer-library": "Prayer Library",
+  "news.header-a-find-a-prayer-by-intention": "Find a Prayer by Intention",
+  "news.header-a-prayer-for-the-sick": "Prayer for the Sick",
+  "news.header-a-prayer-for-healing": "Prayer for Healing",
+  "news.header-a-prayer-for-anxiety": "Prayer for Anxiety",
+  "news.header-a-prayer-for-depression": "Prayer for Depression",
+  "news.header-a-prayer-for-students": "Prayer for Students",
+  "news.header-a-prayer-for-addiction": "Prayer for Addiction",
+  "news.header-a-prayer-for-family": "Prayer for Family",
+  "news.header-a-prayer-for-pregnancy": "Prayer for Pregnancy",
+  "news.header-a-prayer-for-a-miracle": "Prayer for a Miracle",
+  "news.header-a-saint-charbel-prayers": "Saint Charbel Prayers",
+  "news.header-a-saint-charbel-novena": "Saint Charbel Novena",
+  "news.header-a-feast-day": "Feast Day",
+  "news.header-a-rosary-guide": "Rosary Guide",
+  "news.header-a-rosary-minibook": "Rosary Minibook",
+  "news.header-a-mystery-meditation": "Mystery Meditation",
+  "news.header-a-become-like-him": "Become Like Him",
+  "news.header-a-travel": "Travel",
+  "news.header-a-travel-2": "Travel",
+  "news.header-a-visiting-annaya": "Visiting Annaya",
+  "news.header-a-annaya-online-tour": "Annaya Online Tour",
+  "news.header-a-bekaa-kafra": "Bekaa Kafra",
+  "news.header-a-our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+  "news.header-a-the-cedars-of-god": "the Cedars of God",
+  "news.header-a-bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+  "news.header-a-qadisha-valley": "Qadisha Valley",
+  "news.header-a-qannoubine-monastery": "Qannoubine Monastery",
+  "news.header-a-qozhaya-monastery": "Qozhaya Monastery",
+  "news.header-a-saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+  "news.header-a-the-hermitage": "The Hermitage",
+  "news.header-a-saint-charbel-trail": "Saint Charbel Trail",
+  "news.header-a-news": "News",
+  "news.header-a-media": "Media",
+  "news.header-a-music": "Music",
+  "news.header-a-video": "Video",
+  "news.header-a-gallery": "Gallery",
+  "news.header-aria-primary": "Primary",
+  "news.main-main-content-latest-news": "Latest News",
+  "news.main-main-content-saint-charbel-in-the-news": "Saint Charbel in the News",
+  "news.main-main-content-dated-sourced-coverage-of-what-is": "Dated, sourced coverage of what is happening now around Saint Charbel and the Lebanon saints - newly recorded miracles, the upcoming film, papal milestones, relic pilgrimages, feast-day events - with beatifications and canonizations from the wider Church below. Every item links to its original source so you can read the full report.",
+  "news.main-main-content-miracles-overview": "Miracles Overview",
+  "news.main-main-content-read-letters": "Read Letters",
+  "news.main-main-content-charbel-the-movie": "Charbel The Movie",
+  "news.main-main-content-a-feature-film-about-saint-charbel": "A feature film about Saint Charbel is real and moving toward release. Status below reflects verified public reporting as of September 20, 2026.",
+  "news.main-main-content-announced-december-2025-in-release-rollout": "Announced December 2025 · In release rollout",
+  "news.main-main-content-charbel-the-movie-mar-charbel": "\"Charbel The Movie\" (Mar Charbel)",
+  "news.main-main-content-producer-nadim-mehanna-nmpro-arts-announced": "Producer Nadim Mehanna (NMPRO Arts) announced the film on MTV Lebanon's talk show Sar El Wa2et on December 21, 2025, unveiling a trailer and a national fundraising campaign that raised more than $1.3 million to support an international release. Four actors portray Charbel across his life, with Jerry Ghazal as the younger Charbel and the story's central figure. The film is listed with Lebanese cinemas for 2026. This is a new production, distinct from the 2009 film \"Charbel\" by Nabil Lebbos.",
+  "news.main-main-content-announcement-coverage-blog-baladi-december-21": "Announcement coverage (Blog Baladi, December 21, 2025)",
+  "news.main-main-content-background-cast-and-both-films": "Background, cast, and both films:",
+  "news.main-main-content-the-saint-charbel-movie-page": "the Saint Charbel Movie page",
+  "news.main-main-content-what-we-do-not-know-yet": "What we do not know yet",
+  "news.main-main-content-open-questions-on-the-release": "Open Questions on the Release",
+  "news.main-main-content-as-of-september-20-2026-public": "As of September 20, 2026, public reporting does not confirm a wide international release date, streaming distribution, or English-language availability. Lebanese cinema listings mark the film as coming soon. This page will be updated when an official date is announced by the production company.",
+  "news.main-main-content-news-of-saint-charbel-and-the": "News of Saint Charbel and the Lebanon Saints",
+  "news.main-main-content-reported-events-and-newly-recorded-cases": "Reported events and newly recorded cases are not the same as formal Vatican recognition. Labels on each card say which is which.",
+  "news.main-charbel-premiere-release-2026-10-october-9-premiere-reported-october-10": "October 9 premiere · Reported October 10, 2026",
+  "news.main-charbel-premiere-release-2026-10-charbel-premieres-in-beirut-lebanese-cinema": "Charbel Premieres in Beirut; Lebanese Cinema Release Set for October 22",
+  "news.main-charbel-premiere-release-2026-10-charbel-the-new-feature-film-about": "Charbel, the new feature film about Saint Charbel, held its special premiere on October 9 at BlackBox in Beirut Media Zone, according to Nidaa al-Watan's October 10 report. The film is a joint NMPRO and MTV production, directed by Nadim Mehanna and written by Claudia Marshalian, with Jerry Ghazal playing the young Charbel and Father Roukoz El Hajj portraying him later in life. Cinemacity lists a runtime of 130 minutes.",
+  "news.main-charbel-premiere-release-2026-10-lebtalks-reported-that-the-october-9": "Lebtalks reported that the October 9 launch was under President Joseph Aoun's patronage and would be broadcast on MTV, with a nationwide Lebanese theatrical rollout planned from October 22. Cinemacity Beirut independently lists Thursday, October 22 as its opening date. Its page still has no screening sessions scheduled. The completed premiere and the upcoming public cinema opening are different milestones.",
+  "news.main-charbel-premiere-release-2026-10-a-separate-charity-screening-in-support": "A separate charity screening in support of Anta Akhi is scheduled for October 12 at ABC Achrafieh. International release dates, streaming distribution and English-language availability remain unconfirmed.",
+  "news.main-charbel-premiere-release-2026-10-l-orient-le-jour-october-12": "L'Orient-Le Jour: October 12 charity screening for Anta Akhi (October 8, French)",
+  "news.main-charbel-premiere-release-2026-10-nidaa-al-watan-premiere-report-and": "Nidaa al-Watan: premiere report and interview with Nadim Mehanna (October 10, Arabic)",
+  "news.main-charbel-premiere-release-2026-10-lebtalks-launch-patronage-mtv-broadcast-and": "Lebtalks: launch, patronage, MTV broadcast and planned Lebanese release (October 9, Arabic)",
+  "news.main-charbel-premiere-release-2026-10-cinemacity-beirut-october-22-opening-listing": "Cinemacity Beirut: October 22 opening listing",
+  "news.main-charbel-premiere-release-2026-10-watch-the-film-trailer-and-premiere": "Watch the Film Trailer and Premiere Coverage",
+  "news.main-charbel-premiere-release-2026-10-nmpro-arts-official-charbel-film-trailer": "NMPRO Arts: official Charbel film trailer, in Arabic, 2 minutes 25 seconds. This is a trailer, not a recording of the premiere.",
+  "news.main-charbel-premiere-release-2026-10-watch-the-official-trailer-on-youtube": "Watch the official trailer on YouTube",
+  "news.main-charbel-premiere-release-2026-10-watch-mtv-s-october-9-premiere": "Watch MTV's October 9 premiere coverage",
+  "news.main-charbel-premiere-release-2026-10-mtv-s-launch-report-includes-an": ". MTV's launch report includes an attached video from the premiere. A YouTube recording of the premiere has not yet been verified.",
+  "news.main-mar-charbel-october-opening-2026-10-reported-october-5-2026-cinema-listing": "Reported October 5, 2026 · Cinema listing checked October 6",
+  "news.main-mar-charbel-october-opening-2026-10-mar-charbel-listed-for-october-22": "Mar Charbel Listed for October 22 Opening in Beirut",
+  "news.main-mar-charbel-october-opening-2026-10-beirut-souks-cinemacity-now-lists-october": "Beirut Souks Cinemacity now lists October 22, 2026 as the opening date for Mar Charbel, the 130-minute biopic directed by Nadim Mehanna. Its film page has no screening sessions scheduled yet. Lebanon24 reported on October 5 that the film would begin showing in Lebanese cinemas on October 22 after an earlier postponement; its account of booking demand cites an unnamed source. The cinema listing supports the planned opening date, not a completed release, a confirmed showtime or an international rollout.",
+  "news.main-mar-charbel-october-opening-2026-10-cinemacity-beirut-opening-date-and-current": "Cinemacity Beirut: opening date and current session status",
+  "news.main-mar-charbel-october-opening-2026-10-lebanon24-october-5-report-arabic": "Lebanon24: October 5 report (Arabic)",
+  "news.main-gallery-ai-transformation-series-2026-10-october-3-2026-from-our-gallery": "October 3, 2026 · From our gallery",
+  "news.main-gallery-ai-transformation-series-2026-10-from-the-historic-photograph-to-a": "From the Historic Photograph to a New Saint Charbel Art Series",
+  "news.main-gallery-ai-transformation-series-2026-10-we-have-added-an-ai-transformation": "We have added an AI transformation series to our gallery, bringing the historic photograph of Saint Charbel into conversation with new devotional art. The original stays visible beside the renditions, so visitors can see the source and the artistic choices for themselves.",
+  "news.main-gallery-ai-transformation-series-2026-10-the-historic-reference-photograph-not-an": "The historic reference photograph, not an AI rendition. Photographer unknown; public domain according to Wikimedia Commons.",
+  "news.main-gallery-ai-transformation-series-2026-10-the-collection-shows-the-work-as": "The collection shows the work as a series, from imagined portraits to close portraits and a comparison strip. The current first candidate has a dark beard with a grey center streak; the window portrait also has a dark beard. Other takes remain visible, so visitors can compare different artistic choices rather than seeing one image presented as a definitive likeness. The final and alternate renditions use the historic photograph as their reference; the early candidates are imagined portraits, not verified transformations of that source photograph.",
+  "news.main-gallery-ai-transformation-series-2026-10-we-are-proud-to-share-the": "We are proud to share the series, and we want its meaning to be clear. These are AI-assisted artistic renditions, not newly discovered photographs, a reconstruction of a documented scene or proof of an apparition. The gallery labels the new images as artistic renditions or \"AI transformation, not a photograph.\" The historic photograph remains separately identified and credited. A personal-experience caption on the first candidate is presented as the website creator's own account, not independent verification.",
+  "news.main-gallery-ai-transformation-series-2026-10-explore-the-series-in-our-gallery": "Explore the series in our gallery: open an image full-screen, compare the original and the renditions, and read the caption beside each piece.",
+  "news.main-gallery-ai-transformation-series-2026-10-see-the-ai-transformation-series-in": "See the AI transformation series in our gallery",
+  "news.main-gallery-ai-transformation-series-2026-10-wikimedia-commons-historic-charbel-photograph": "Wikimedia Commons: historic Charbel photograph",
+  "news.main-religious-trails-minister-visit-2026-10-reported-october-3-2026-religious-tourism": "Reported October 3, 2026 · Religious tourism",
+  "news.main-religious-trails-minister-visit-2026-10-lebanese-and-jordanian-ministers-visit-saint": "Lebanese and Jordanian Ministers Visit Saint Charbel's Pilgrimage Sites",
+  "news.main-religious-trails-minister-visit-2026-10-qozhaya-monastery-archival-venue-context-not": "Qozhaya monastery, archival venue context, not the ministers' visit. Photo: Yellaban, public domain.",
+  "news.main-religious-trails-minister-visit-2026-10-image-source": "Image source",
+  "news.main-religious-trails-minister-visit-2026-10-lebanon-s-tourism-minister-laura-al": "Lebanon's Tourism Minister Laura Al-Khazen Lahoud and Jordan's Tourism and Antiquities Minister Imad Hijazin visited Qozhaya monastery, Bqaa Kafra, Annaya and Saint Charbel's hermitage on Friday, according to the National News Agency's October 3 report. They met priests and monks and were briefed on Lebanon's religious trails, including the Lebanon Mountain Trail and the trail associated with Saint Charbel. The report describes a visit and briefing, not a new agreement or a trail opening.",
+  "news.main-religious-trails-minister-visit-2026-10-national-news-agency-ministers-visit-qozhaya": "National News Agency: ministers visit Qozhaya, Bqaa Kafra and Annaya (October 3, 2026)",
+  "news.main-kfifan-patron-relics-2026-10-reported-october-2-2026-relics-at": "Reported October 2, 2026 · Relics at Kfifan",
+  "news.main-kfifan-patron-relics-2026-10-saint-charbel-s-formation-monastery-receives": "Saint Charbel's Formation Monastery Receives Relics from Rome",
+  "news.main-kfifan-patron-relics-2026-10-kfifan-monastery-2012-venue-context-not": "Kfifan monastery, 2012. Venue context, not the relic reception. Photo: Evilscaught, CC BY 3.0; WebP conversion.",
+  "news.main-kfifan-patron-relics-2026-10-image-source-2": "Image source",
+  "news.main-kfifan-patron-relics-2026-10-cc-by-3-0": "CC BY 3.0",
+  "news.main-kfifan-patron-relics-2026-10-kfifan-s-monastery-of-saints-cyprian": "Kfifan's Monastery of Saints Cyprian and Justina received relics of its two patron saints from Rome, MTV Lebanon reported on October 2. Mass, a blessing and a procession marked their feast. Father Emile Akiki of the Lebanese Maronite Order led the Mass. Saint Charbel studied at Kfifan before his ordination, under Saint Nimatullah Al-Hardini. The report also recalls the monastery's connection with Blessed Estephan Nehme. These are relics of Cyprian and Justina, not Saint Charbel. The ceremony's exact calendar date is not specified.",
+  "news.main-kfifan-patron-relics-2026-10-mtv-lebanon-relic-reception-at-kfifan": "MTV Lebanon: relic reception at Kfifan (October 2, 2026, Arabic)",
+  "news.main-kfifan-patron-relics-2026-10-maronites-church-directory-saints-cyprian-and": "Maronites Church directory: Saints Cyprian and Justina monastery, Kfifan",
+  "news.main-kfifan-patron-relics-2026-10-saint-sharbel-maronite-catholic-church-formation": "Saint Sharbel Maronite Catholic Church: formation at Kfifan",
+  "news.main-el-paso-lebanese-festival-2026-10-october-3-4-2026-archived-parish": "October 3-4, 2026 · Archived parish announcement",
+  "news.main-el-paso-lebanese-festival-2026-10-el-paso-parish-announced-an-october": "El Paso Parish Announced an October 3-4 Lebanese Festival",
+  "news.main-el-paso-lebanese-festival-2026-10-lebanese-food-in-barcelona-2021-illustrative": "Lebanese food in Barcelona, 2021. Illustrative, not the El Paso event. Photo: El Mono Español, CC BY-SA 4.0; resized to WebP.",
+  "news.main-el-paso-lebanese-festival-2026-10-image-source-3": "Image source",
+  "news.main-el-paso-lebanese-festival-2026-10-cc-by-sa-4-0": "CC BY-SA 4.0",
+  "news.main-el-paso-lebanese-festival-2026-10-saint-sharbel-maronite-catholic-mission-in": "Saint Sharbel Maronite Catholic Mission in El Paso announced a Lebanese Festival for October 3 and 4, 2026, with Lebanese food, live entertainment and dabke dancing. Those advertised dates have passed. This card preserves the original announcement, not a post-event report; attendance and the event outcome have not been verified.",
+  "news.main-el-paso-lebanese-festival-2026-10-parish-announcement-saint-sharbel-maronite-catholic": "Parish announcement: Saint Sharbel Maronite Catholic Mission",
+  "news.main-el-paso-lebanese-festival-2026-10-ktsm-interview-with-parish-representatives-september": "KTSM interview with parish representatives (September 30, 2026)",
+  "news.main-douaihy-hoayek-altar-consecration-2026-09-september-27-2026-altar-consecration-in": "September 27, 2026 · Altar consecration in Beirut · Reported October 6",
+  "news.main-douaihy-hoayek-altar-consecration-2026-09-beirut-cathedral-consecrates-an-altar-to": "Beirut Cathedral Consecrates an Altar to Blessed Patriarchs Douaihy and Hoayek",
+  "news.main-douaihy-hoayek-altar-consecration-2026-09-saint-george-maronite-cathedral-left-and": "Saint George Maronite Cathedral (left) and the Mohammad Al-Amin Mosque, downtown Beirut, 2009. Venue context, not the consecration Mass. Photo: Lebnen18, CC BY-SA 3.0; WebP conversion.",
+  "news.main-douaihy-hoayek-altar-consecration-2026-09-image-source-4": "Image source",
+  "news.main-douaihy-hoayek-altar-consecration-2026-09-cc-by-sa-3-0": "CC BY-SA 3.0",
+  "news.main-douaihy-hoayek-altar-consecration-2026-09-on-sunday-september-27-maronite-patriarch": "On Sunday, September 27, Maronite Patriarch Cardinal Bechara Boutros Al-Rahi presided over the consecration of an altar dedicated to Blessed Patriarchs Estephan Douaihy and Elias Hoayek at Saint George Maronite Cathedral in downtown Beirut, with the two patriarchs' relics placed within it. President Joseph Aoun attended, alongside religious and official figures and faithful from across Lebanon, especially Zgharta-Ehden, Douaihy's birthplace region. In his homily, Al-Rahi paired the two blesseds: Douaihy \"preserved the church's memory and heritage amidst persecution,\" while Hoayek \"carried the nation's cause amidst major transformations.\" Both remain Blessed, not canonized saints: Douaihy was beatified in 2024, Hoayek on July 25, 2026.",
+  "news.main-douaihy-hoayek-altar-consecration-2026-09-national-news-agency-president-aoun-attends": "National News Agency: President Aoun attends the Mass (September 27, 2026)",
+  "news.main-douaihy-hoayek-altar-consecration-2026-09-an-nahar-the-consecration-and-homily": "An-Nahar: the consecration and homily (September 27, 2026)",
+  "news.main-douaihy-hoayek-altar-consecration-2026-09-l-orient-today-relics-placed-in": "L'Orient Today: relics placed in the cathedral altar (September 27, 2026)",
+  "news.main-emmitsburg-shrine-anniversary-2026-09-september-26-2026-shrine-anniversary-reported": "September 26, 2026 · Shrine anniversary · Reported September 30",
+  "news.main-emmitsburg-shrine-anniversary-2026-09-emmitsburg-celebrates-nine-years-of-saint": "Emmitsburg Celebrates Nine Years of Saint Sharbel's Shrine",
+  "news.main-emmitsburg-shrine-anniversary-2026-09-national-shrine-grotto-emmitsburg-2015-venue": "National Shrine Grotto, Emmitsburg, 2015. Venue context, not the 2026 celebration. Photo: Bohemian Baltimore, CC BY-SA 4.0; resized to WebP.",
+  "news.main-emmitsburg-shrine-anniversary-2026-09-image-source-5": "Image source",
+  "news.main-emmitsburg-shrine-anniversary-2026-09-cc-by-sa-4-0-2": "CC BY-SA 4.0",
+  "news.main-emmitsburg-shrine-anniversary-2026-09-the-family-of-saint-sharbel-usa": "The Family of Saint Sharbel USA reports that pilgrims gathered on September 26 at the National Shrine Grotto of Our Lady of Lourdes in Emmitsburg, Maryland, for the ninth anniversary of Saint Sharbel's shrine dedication. The celebration included Eucharistic Adoration, confessions and Mass celebrated by Father Theodore Trinko, IVE, at St. Mary's Glass Chapel. After Mass, pilgrims followed the saint's relic in procession to the shrine, where they received a blessing with Saint Sharbel's oil and venerated the relic. The organizer published its account on September 30.",
+  "news.main-emmitsburg-shrine-anniversary-2026-09-family-of-saint-sharbel-usa-anniversary": "Family of Saint Sharbel USA: anniversary account (September 30, 2026)",
+  "news.main-byblos-annaya-prayer-walk-2026-09-september-26-2026-pilgrimage": "September 26, 2026 · Pilgrimage",
+  "news.main-byblos-annaya-prayer-walk-2026-09-prayer-walk-from-byblos-to-annaya": "Prayer Walk from Byblos to Annaya for South Lebanon's Christians",
+  "news.main-byblos-annaya-prayer-walk-2026-09-at-the-monastery-entrance-in-annaya": "At the monastery entrance in Annaya, where the walk ends: a pilgrim reaches up to Saint Charbel's statue. Photograph: LLEW,",
+  "news.main-byblos-annaya-prayer-walk-2026-09-via-wikimedia-commons": "via Wikimedia Commons",
+  "news.main-byblos-annaya-prayer-walk-2026-09-cc-by-sa-4-0-3": "CC BY-SA 4.0",
+  "news.main-byblos-annaya-prayer-walk-2026-09-on-september-26-pilgrims-walked-from": "On September 26, pilgrims walked from Byblos to Annaya carrying the intentions of the Christians who remain in Lebanon's southern border villages - Rmeich, Ain Ebel, Debel - turning the journey into an act of solidarity and hope. Believers from across Lebanon gathered in Byblos and walked some 10 miles from the Mar Girgis church to the Monastery of Saint Maron in Annaya, where the pilgrimage concluded with Mass at the Church of Saint Charbel. Organizer Anthony Jarjour of Rmeich, who walked some 112 miles from Rmeich to Annaya last year, had set out from Tyre on September 22 and reached the shrine after five days on foot - about 93 miles, rerouted for road closures. The pilgrimage was organized with the Monastery of St. Maron in Annaya and the municipalities of Byblos and Annaya, with Civil Defense and Red Cross support.",
+  "news.main-byblos-annaya-prayer-walk-2026-09-catholic-world-report-ewtn-news-september": "Catholic World Report / EWTN News (September 20, 2026)",
+  "news.main-byblos-annaya-prayer-walk-2026-09-outcome": "; outcome:",
+  "news.main-byblos-annaya-prayer-walk-2026-09-aci-mena-september-27-2026-arabic": "ACI MENA (September 27, 2026, Arabic)",
+  "news.main-doctor-borik-interview-2026-09-september-10-2026-interview": "September 10, 2026 · Interview",
+  "news.main-doctor-borik-interview-2026-09-the-doctor-who-investigated-a-st": "The Doctor Who Investigated a St. Charbel Healing Speaks",
+  "news.main-doctor-borik-interview-2026-09-saint-charbel-makhlouf-1828-1898-the": "Saint Charbel Makhlouf (1828-1898), the hermit of Annaya.",
+  "news.main-doctor-borik-interview-2026-09-dr-anne-borik-the-phoenix-physician": "Dr. Anne Borik, the Phoenix physician who headed the medical committee examining Dafne Gutierrez's 2016 recovery of sight after prayers at a St. Charbel relic visit, gave a new interview on how the case changed her practice of medicine. She now directs the Saint Sharbel Spiritual Life Center in Pittsburgh.",
+  "news.main-doctor-borik-interview-2026-09-zeale-news-interview-september-10-2026": "Zeale News interview (September 10, 2026)",
+  "news.main-doctor-borik-interview-2026-09-more-on-healing-through-his-intercession": "More on healing through his intercession:",
+  "news.main-doctor-borik-interview-2026-09-the-saint-charbel-prayer-for-healing": "the Saint Charbel prayer for healing",
+  "news.main-st-charbel-trail-pilgrimage-2026-08-august-23-2026-pilgrimage": "August 23, 2026 · Pilgrimage",
+  "news.main-st-charbel-trail-pilgrimage-2026-08-american-priest-walks-the-st-charbel": "American Priest Walks the St. Charbel Trail",
+  "news.main-st-charbel-trail-pilgrimage-2026-08-pilgrims-on-the-saint-charbel-trail": "Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC.",
+  "news.main-st-charbel-trail-pilgrimage-2026-08-father-michael-sliney-lc-completed-a": "Father Michael Sliney, LC, completed a pilgrimage along Lebanon's St. Charbel Trail, which links monasteries, villages, and historic sites, and encouraged more Americans to make the journey.",
+  "news.main-st-charbel-trail-pilgrimage-2026-08-catholic-world-report-ewtn-news-august": "Catholic World Report / EWTN News (August 23, 2026)",
+  "news.main-st-charbel-trail-pilgrimage-2026-08-our-guide": "Our guide:",
+  "news.main-st-charbel-trail-pilgrimage-2026-08-the-saint-charbel-trail": "the Saint Charbel Trail",
+  "news.main-hoayek-beatification-2026-07-july-25-2026-beatification": "July 25, 2026 · Beatification",
+  "news.main-hoayek-beatification-2026-07-maronite-patriarch-elias-hoayek-beatified-at": "Maronite Patriarch Elias Hoayek Beatified at Dimane",
+  "news.main-hoayek-beatification-2026-07-on-saturday-july-25-2026-elias": "On Saturday, July 25, 2026, Elias Hoayek, Maronite Patriarch of Antioch from 1899 to 1931, was beatified at the Patriarchal summer seat of Dimane in Lebanon. Vatican News reports that President Joseph Aoun attended, that Cardinal Marcello Semeraro, prefect of the Dicastery for the Causes of Saints, concelebrated as the envoy of Pope Leo XIV, and that Patriarch Bechara Boutros al-Rai gave the homily. From that day he is called Blessed. The miracle for his beatification was approved by decree on May 22, 2026. At the Angelus the next day, Pope Leo XIV called him \"a man of dialogue and hope\" and the \"Father of Greater Lebanon.\" Hoayek was born in Helta on December 4, 1843, founded the Maronite Sisters of the Holy Family, and died at",
+  "news.main-hoayek-beatification-2026-07-bkerke": "Bkerke",
+  "news.main-hoayek-beatification-2026-07-on-december-24-1931-he-decided": "on December 24, 1931. He decided to build the shrine at",
+  "news.main-hoayek-beatification-2026-07-harissa": "Harissa",
+  "news.main-hoayek-beatification-2026-07-vatican-news-july-26-2026": "Vatican News (July 26, 2026)",
+  "news.main-hoayek-beatification-2026-07-ceremony-report": "Ceremony report:",
+  "news.main-hoayek-beatification-2026-07-vatican-news-in-italian-july-25": "Vatican News, in Italian (July 25, 2026)",
+  "news.main-hoayek-beatification-2026-07-decree-coverage": "; decree coverage:",
+  "news.main-hoayek-beatification-2026-07-vatican-news-may-22-2026": "Vatican News (May 22, 2026)",
+  "news.main-hoayek-beatification-2026-07-birth-and-death-dates": "; birth and death dates:",
+  "news.main-hoayek-beatification-2026-07-holy-see-press-office-bulletin-may": "Holy See Press Office bulletin (May 22, 2026, Italian)",
+  "news.main-revesby-feast-2026-07-july-20-2026-feast-day": "July 20, 2026 · Feast day",
+  "news.main-revesby-feast-2026-07-hundreds-honor-st-charbel-at-revesby": "Hundreds Honor St. Charbel at Revesby Feast",
+  "news.main-revesby-feast-2026-07-saint-charbel-makhlouf-1828-1898-the-2": "Saint Charbel Makhlouf (1828-1898) - the historic photograph kept of the saint. Public domain.",
+  "news.main-revesby-feast-2026-07-hundreds-of-faithful-gathered-at-revesby": "Hundreds of faithful gathered at Revesby, Sydney, for the saint's July feast, one of many annual celebrations held by Maronite parishes around the world for the third Sunday of July (Maronite calendar) and July 24 (Latin calendar).",
+  "news.main-revesby-feast-2026-07-the-catholic-weekly-july-20-2026": "The Catholic Weekly (July 20, 2026)",
+  "news.main-cebu-relic-visit-2026-06-june-29-july-1-2026-relic": "June 29 - July 1, 2026 · Relic pilgrimage",
+  "news.main-cebu-relic-visit-2026-06-st-charbel-s-pilgrim-relic-visits": "St. Charbel's Pilgrim Relic Visits Cebu",
+  "news.main-cebu-relic-visit-2026-06-the-vigil-lamp-at-saint-charbel": "The vigil lamp at Saint Charbel's tomb in Annaya, from which the pilgrim relic travels. Photograph: LLEW,",
+  "news.main-cebu-relic-visit-2026-06-via-wikimedia-commons-2": "via Wikimedia Commons",
+  "news.main-cebu-relic-visit-2026-06-cc-by-sa-4-0-4": "CC BY-SA 4.0",
+  "news.main-cebu-relic-visit-2026-06-the-archdiocese-of-cebu-welcomed-the": "The Archdiocese of Cebu welcomed the Pilgrim Relic of St. Charbel Makhlouf with a Welcome Mass at San Carlos Seminary College and three days of public veneration across parishes.",
+  "news.main-cebu-relic-visit-2026-06-archdiocese-of-cebu-june-29-2026": "Archdiocese of Cebu (June 29, 2026)",
+  "news.main-new-miracles-reported-2026-01-january-28-2026-reported-recorded-at": "January 28, 2026 · Reported, recorded at Annaya",
+  "news.main-new-miracles-reported-2026-01-two-new-miracles-reported-in-early": "Two New Miracles Reported in Early 2026",
+  "news.main-new-miracles-reported-2026-01-the-monastery-of-saint-maron-in": "The Monastery of Saint Maron in Annaya, which keeps the register of reported miracles. Photograph: Paul Saad,",
+  "news.main-new-miracles-reported-2026-01-via-wikimedia-commons-3": "via Wikimedia Commons",
+  "news.main-new-miracles-reported-2026-01-cc-by-sa-4-0-5": "CC BY-SA 4.0",
+  "news.main-new-miracles-reported-2026-01-two-new-miracles-attributed-to-st": "Two new miracles attributed to St. Charbel's intercession were reported in the first weeks of 2026 - one in the United States and one in Lebanon - continuing the monastery's long-running register, which now exceeds 29,680 recorded cases.",
+  "news.main-new-miracles-reported-2026-01-catholic-world-report-ewtn-news-january": "Catholic World Report / EWTN News (January 28, 2026)",
+  "news.main-papal-visit-annaya-2025-12-december-1-2025-milestone": "December 1, 2025 · Milestone",
+  "news.main-papal-visit-annaya-2025-12-first-papal-visit-to-saint-charbel": "First Papal Visit to Saint Charbel's Tomb",
+  "news.main-papal-visit-annaya-2025-12-pope-leo-xiv-praying-at-the": "Pope Leo XIV praying at the tomb of Saint Charbel in Annaya. Photo: Vatican Media / Vatican News.",
+  "news.main-papal-visit-annaya-2025-12-pope-leo-xiv-prayed-at-the": "Pope Leo XIV prayed at the saint's tomb in Annaya during his apostolic journey to Lebanon - the first pope ever to visit - and entrusted Lebanon, the Church, and the world to Saint Charbel's intercession.",
+  "news.main-papal-visit-annaya-2025-12-official-vatican-text-december-1-2025": "Official Vatican text (December 1, 2025)",
+  "news.main-papal-visit-annaya-2025-12-full-recap": "Full recap:",
+  "news.main-papal-visit-annaya-2025-12-pope-leo-xiv-at-the-tomb": "Pope Leo XIV at the tomb of Saint Charbel",
+  "news.main-main-content-world-saints-and-the-wider-catholic": "World Saints and the Wider Catholic Family",
+  "news.main-main-content-beatifications-canonizations-and-news-from-the": "Beatifications, canonizations, and news from the worldwide Church and the wider Maronite and Catholic community - every item dated and linked to its original source, newest first.",
+  "news.main-monte-sole-beatification-2026-09-september-27-2026-beatification": "September 27, 2026 · Beatification",
+  "news.main-monte-sole-beatification-2026-09-three-priests-martyred-at-monte-sole": "Three Priests Martyred at Monte Sole Beatified in Bologna",
+  "news.main-monte-sole-beatification-2026-09-inside-the-sacrario-the-memorial-to": "Inside the sacrario, the memorial to the fallen at Marzabotto on the Monte Sole ridge, where the 1944 massacres took place. Photograph: Gianni Careddu,",
+  "news.main-monte-sole-beatification-2026-09-via-wikimedia-commons-4": "via Wikimedia Commons",
+  "news.main-monte-sole-beatification-2026-09-cc-by-sa-4-0-6": "CC BY-SA 4.0",
+  "news.main-monte-sole-beatification-2026-09-on-sunday-september-27-in-the": "On Sunday, September 27, in the Basilica of San Petronio in Bologna, Cardinal Marcello Semeraro, prefect of the Dicastery for the Causes of Saints, beatified three priests killed by Nazi forces in the 1944 Monte Sole massacres: Don Ubaldo Marchioni, a diocesan priest; Don Elia Comini, a Salesian; and Father Martino Capelli, a Dehonian. Because the Church has recognized them as martyrs, no miracle was required for their beatification - from Sunday they are called Blessed. Bologna Today reported that a bullet-pierced pyx, found in the rubble of the altar of Casaglia's church, has become a symbol of the massacre the three priests did not escape.",
+  "news.main-monte-sole-beatification-2026-09-dehonians-may-4-2026": "Dehonians (May 4, 2026)",
+  "news.main-monte-sole-beatification-2026-09-decree-coverage-2": "Decree coverage:",
+  "news.main-monte-sole-beatification-2026-09-vatican-news-november-21-2025": "Vatican News (November 21, 2025)",
+  "news.main-monte-sole-beatification-2026-09-ceremony-details": "; ceremony details:",
+  "news.main-monte-sole-beatification-2026-09-diocese-of-bologna-september-11-2026": "Diocese of Bologna (September 11, 2026)",
+  "news.main-monte-sole-beatification-2026-09-outcome-2": "; outcome:",
+  "news.main-monte-sole-beatification-2026-09-vatican-news-september-27-2026-italian": "Vatican News (September 27, 2026, Italian)",
+  "news.main-fulton-sheen-beatification-2026-09-september-24-2026-beatification": "September 24, 2026 · Beatification",
+  "news.main-fulton-sheen-beatification-2026-09-fulton-sheen-beatified-in-saint-louis": "Fulton Sheen Beatified in Saint Louis Before 50,000",
+  "news.main-fulton-sheen-beatification-2026-09-blessed-fulton-sheen-at-his-desk": "Blessed Fulton Sheen at his desk in 1956, at the height of his television years.",
+  "news.main-fulton-sheen-beatification-2026-09-archbishop-fulton-j-sheen-the-emmy": "Archbishop Fulton J. Sheen - the Emmy-winning broadcaster of",
+  "news.main-fulton-sheen-beatification-2026-09-life-is-worth-living": "Life Is Worth Living",
+  "news.main-fulton-sheen-beatification-2026-09-was-declared-blessed-at-a-mass": "- was declared Blessed at a Mass in The Dome at America's Center in Saint Louis, Missouri. Cardinal Luis Antonio Tagle presided for Pope Leo XIV before a crowd organizers estimated near 50,000; the miracle that cleared the way was the 2010 revival of James Fulton Engstrom, who carried Sheen's relic in the procession. A day earlier, Pope Leo XIV praised Sheen's media apostolate at the Wednesday General Audience. He is Blessed, not yet a saint - his cause for canonization continues.",
+  "news.main-fulton-sheen-beatification-2026-09-vatican-news-september-23-2026": "Vatican News (September 23, 2026)",
+  "news.main-fulton-sheen-beatification-2026-09-catholic-register-osv-news-september-24": "Catholic Register / OSV News (September 24, 2026)",
+  "news.main-fulton-sheen-beatification-2026-09-our-page": "Our page:",
+  "news.main-fulton-sheen-beatification-2026-09-blessed-fulton-sheen-his-life-what": "Blessed Fulton Sheen - his life, what beatification means, and where to watch his talks",
+  "news.main-main-content-editorial-standard": "Editorial Standard",
+  "news.main-main-content-this-page-summarizes-and-links-to": "This page summarizes and links to original reporting; it does not republish articles. Dates are the original publication dates of the sources. Reported healings and movie production news are labeled separately from miracles formally recognized by the Catholic Church. To follow how recorded cases differ from recognized ones, see the",
+  "news.main-main-content-miracles-page": "Miracles page",
+  "news.main-main-content-if-a-source-corrects-or-withdraws": ". If a source corrects or withdraws a story, this page will be updated to match.",
+  "news.main-img-alt-historic-photograph-of-saint-charbel-in": "Historic photograph of Saint Charbel in a monastic hood, eyes lowered, with a white beard",
+  "news.main-img-alt-qozhaya-monastery-buildings-with-red-roofs": "Qozhaya monastery buildings with red roofs against a rocky mountainside",
+  "news.main-img-alt-the-stone-kfifan-monastery-buildings-and": "The stone Kfifan monastery buildings and courtyard in Lebanon",
+  "news.main-img-alt-lebanese-food-with-hummus-flatbread-and": "Lebanese food with hummus, flatbread and falafel, photographed in Barcelona",
+  "news.main-img-alt-saint-george-maronite-cathedral-in-downtown": "Saint George Maronite Cathedral in downtown Beirut, with the Mohammad Al-Amin Mosque beside it",
+  "news.main-img-alt-the-stone-lourdes-grotto-at-the": "The stone Lourdes grotto at the National Shrine in Emmitsburg with visitors and statues",
+  "news.main-img-alt-a-pilgrim-touching-the-statue-of": "A pilgrim touching the statue of Saint Charbel at the monastery entrance in Annaya",
+  "news.main-img-alt-saint-charbel-makhlouf-the-traditional-hooded": "Saint Charbel Makhlouf, the traditional hooded portrait",
+  "news.main-img-alt-pilgrims-on-the-saint-charbel-trail-2": "Pilgrims on the Saint Charbel Trail in Lebanon",
+  "news.main-img-alt-the-historic-photograph-of-saint-charbel": "The historic photograph of Saint Charbel Makhlouf",
+  "news.main-img-alt-the-vigil-lamp-burning-at-the": "The vigil lamp burning at the tomb of Saint Charbel in Annaya",
+  "news.main-img-alt-the-monastery-of-saint-maron-in-2": "The Monastery of Saint Maron in Annaya, seen across the valley",
+  "news.main-img-alt-pope-leo-xiv-praying-at-the-2": "Pope Leo XIV praying at the tomb of Saint Charbel in Annaya",
+  "news.main-img-alt-inside-the-memorial-shrine-of-the": "Inside the memorial shrine of the fallen at Marzabotto, on the Monte Sole ridge",
+  "news.main-img-alt-blessed-fulton-sheen-at-his-desk-2": "Blessed Fulton Sheen at his desk in 1956",
+  "news.footer-div-news-page-updated-september-25-2026": "News page updated September 25, 2026. Author: Please pray for the person who made this website.",
+  "news.body-a-skip-to-main-content": "Skip to main content",
+  "news.header.home": "Home",
+  "news.header.saint-charbel": "Saint Charbel"
+ }
+}

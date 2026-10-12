@@ -110,5 +110,19 @@
       "https://marsharbel.com/saint-charbel-encyclopedia"
     ],
     "checkedAt": "2026-10-12"
+  },
+  {
+    "route": "/ar/news",
+    "status": "agent-translated-native-not-certified",
+    "family": "news-master",
+    "copyFile": "locales/ar/news-master-copy.json",
+    "keyCount": 251,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN news desk page incl. meta, card copy, photo credits and footer; 251 keys (84 Arabic-only reuse, 167 fresh; comment-marker keys excluded by extractor fix) (AR-2 sixth territory)",
+    "sourceUrls": [
+      "https://marsharbel.com/news"
+    ],
+    "checkedAt": "2026-10-12"
   }
 ]
