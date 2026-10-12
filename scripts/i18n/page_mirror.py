@@ -213,7 +213,8 @@ def render_page(root,registry,lang,family,route,catalog=None):
         config = '<script type="application/json" id="sc-playlist-labels">' + json.dumps(labels, ensure_ascii=False).replace('<', '\\u003c') + '</script>\n'
         rendered = rendered.replace('</head>', config + '</head>', 1)
     from i18n.ru_travel_chrome import localize_travel_chrome
-    return localize_travel_chrome(apply_launch_availability(rendered, root, registry, lang), registry, lang, family)
+    from i18n.encyclopedia_nav import route_and_mark_nav
+    return localize_travel_chrome(route_and_mark_nav(apply_launch_availability(rendered, root, registry, lang), root, lang), registry, lang, family)
 
 
 def render_page_set(root,registry):

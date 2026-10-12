@@ -116,7 +116,8 @@ def render_home(root, registry, lang, catalog=None):
         rendered = re.sub(r'(?m)^([ \t]*)(<a href="' + re.escape(travel) + r'">[^<]*</a>)$',
                           lambda match: '        ' + match[2], rendered)
     from i18n.ru_travel_chrome import localize_travel_chrome
-    return localize_travel_chrome(rendered, registry, lang, 'home')
+    from i18n.encyclopedia_nav import route_and_mark_nav
+    return localize_travel_chrome(route_and_mark_nav(rendered, root, lang), registry, lang, 'home')
 
 
 def render_home_set(root, registry):
