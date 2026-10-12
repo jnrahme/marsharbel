@@ -40,5 +40,47 @@
       "https://marsharbel.com/ar"
     ],
     "checkedAt": "2026-10-11"
+  },
+  {
+    "route": "/ar/feedback",
+    "status": "agent-translated-native-not-certified",
+    "family": "feedback-master",
+    "copyFile": "locales/ar/feedback-master-copy.json",
+    "keyCount": 83,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN feedback form page (AR-2 third territory, forms PR)",
+    "sourceUrls": [
+      "https://marsharbel.com/feedback"
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "route": "/ar/submit-testimony",
+    "status": "agent-translated-native-not-certified",
+    "family": "submit-testimony-master",
+    "copyFile": "locales/ar/submit-testimony-master-copy.json",
+    "keyCount": 84,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN submit-testimony form page (AR-2 third territory, forms PR)",
+    "sourceUrls": [
+      "https://marsharbel.com/submit-testimony"
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "route": "/ar/voice-testimony",
+    "status": "agent-translated-native-not-certified",
+    "family": "voice-testimony-master",
+    "copyFile": "locales/ar/voice-testimony-master-copy.json",
+    "keyCount": 105,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN voice-testimony page incl. verbatim transcript keys (AR-2 third territory, forms PR)",
+    "sourceUrls": [
+      "https://marsharbel.com/voice-testimony"
+    ],
+    "checkedAt": "2026-10-11"
   }
 ]

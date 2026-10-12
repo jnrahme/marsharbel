@@ -16,7 +16,11 @@ def twin_routes(registry,lang,page_families=True):
     for name in ('authoredMirrors','exactMirrors','domMirrors','pageMirrors'):
         if name=='pageMirrors' and not page_families:continue
         for cfg in registry.get(name,{}).values():
-            if lang in cfg['routes']:routes[cfg['english'].rstrip('/')]=cfg['routes'][lang]
+            if lang not in cfg['routes']:continue
+            # Dormant page families (routes listed but not in renderLocales) keep
+            # their EN links until the twin actually renders.
+            if name=='pageMirrors' and lang not in cfg.get('renderLocales',[]):continue
+            routes[cfg['english'].rstrip('/')]=cfg['routes'][lang]
     if '/saint-charbel-prayers' in routes:routes['/en/prayers']=routes['/saint-charbel-prayers']
     if lang in registry.get('publicationSets',{}).get('eucharistic',[]):routes['/miracles/eucharistic']=f'/{lang}/miracles/eucharistic/'
     return routes

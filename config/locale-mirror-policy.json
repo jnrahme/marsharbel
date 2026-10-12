@@ -2761,6 +2761,42 @@
       "baseCssParity": true,
       "baseImagesParity": true,
       "baseRevision": "908aa9ba40c6b9aafc7ef29a7e43b3ff3c02ac7b"
+    },
+    "ar/feedback.html": {
+      "locale": "ar",
+      "route": "/ar/feedback",
+      "master": "feedback.html",
+      "masterRoute": "/feedback",
+      "family": "feedback-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/submit-testimony.html": {
+      "locale": "ar",
+      "route": "/ar/submit-testimony",
+      "master": "submit-testimony.html",
+      "masterRoute": "/submit-testimony",
+      "family": "submit-testimony-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/voice-testimony.html": {
+      "locale": "ar",
+      "route": "/ar/voice-testimony",
+      "master": "voice-testimony.html",
+      "masterRoute": "/voice-testimony",
+      "family": "voice-testimony-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
     }
   }
 }
