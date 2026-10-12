@@ -3243,3 +3243,4 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 .souvenir-pill{display:inline-flex;align-items:center;min-height:2rem;padding-inline:.9rem;border:1px solid var(--theme-line);border-radius:999px;color:var(--theme-accent);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
 @media(prefers-reduced-motion:reduce){.souvenir-card{transition:none;transform:none}}
 .souvenir-hero h1,.souvenir-store-heading h2,.souvenir-principles h2{overflow-wrap:anywhere}
+:lang(ar) code{direction:ltr;unicode-bidi:isolate;display:inline-block;max-width:100%;overflow-wrap:anywhere;font-size:.88em}
