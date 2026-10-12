@@ -10,6 +10,9 @@
       "masterRoute": "/22nd-of-the-month",
       "family": "twenty-second-master",
       "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": true,
@@ -21,7 +24,10 @@
       "master": "all-saints-and-all-souls.html",
       "masterRoute": "/all-saints-and-all-souls",
       "family": "all-saints-and-all-souls-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "ar/annaya.html": {
       "locale": "ar",
@@ -30,6 +36,9 @@
       "masterRoute": "/visit-annaya",
       "family": "annaya-master",
       "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
@@ -42,6 +51,9 @@
       "masterRoute": "/history",
       "family": "history-master",
       "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
@@ -82,6 +94,9 @@
       "masterRoute": "/",
       "family": "home",
       "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
@@ -1925,7 +1940,10 @@
       "master": "saint-charbel-pilgrimage.html",
       "masterRoute": "/saint-charbel-pilgrimage",
       "family": "pilgrimage-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "de/der-22-des-monats.html": {
       "locale": "de",
@@ -2535,7 +2553,8 @@
       "family": "music-master",
       "status": "strict",
       "normalizers": [
-        "launch-availability-annotations"
+        "launch-availability-annotations",
+        "english-nav-disclosure"
       ]
     },
     "fr/music.html": {

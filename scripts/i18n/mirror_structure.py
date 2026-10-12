@@ -2,6 +2,7 @@
 from bs4 import BeautifulSoup, Tag
 from urllib.parse import urljoin, urlsplit
 import json
+import re
 
 INVARIANT = {'id','class','style','hidden','inert','role','tabindex','type','colspan','rowspan','width','height','loading','decoding','aria-hidden','aria-expanded','aria-controls','aria-labelledby','aria-describedby','aria-haspopup','disabled','required','readonly','maxlength','rows'}
 
@@ -63,5 +64,32 @@ def _strip_partial_home_disclosure(soup):
         hint.decompose()
     return soup
 
+
+def _strip_english_nav_disclosure(soup):
+    """Remove reviewed English-destination disclosure marks added inside the shared
+    header on locale pages (hreflang/aria-label plus one visible qualifier span).
+    Scoped: only inside <header>; validates the full reviewed shape and raises on
+    any deviation, so an unexpected header change still fails the gate."""
+    from bs4 import NavigableString
+    header = soup.header
+    if header is None:
+        return soup
+    for hint in header.select('span.enc-language'):
+        anchor = hint.parent
+        if anchor.name != 'a' or anchor.get('hreflang') != 'en':
+            raise ValueError('English nav disclosure must sit on an hreflang="en" anchor')
+        href = anchor.get('href') or ''
+        if not href.startswith('/') or re.match(r'^/(ar|de|es|fr|hi|it|pl|pt|ru|th|zh-Hans)(/|$)', href):
+            raise ValueError('English nav disclosure target must be an unprefixed English route')
+        if hint.get('class') != ['enc-language'] or len(anchor.select(':scope > span.enc-language')) != 1 or len(hint.contents) != 1 or not isinstance(hint.contents[0], NavigableString):
+            raise ValueError('English nav disclosure must be one text-only qualifier')
+        qualifier = str(hint.contents[0]).strip()
+        visible = ''.join(text for text in anchor.find_all(string=True) if text.find_parent('span', class_='enc-language') is None).strip()
+        if not qualifier or not visible or anchor.get('aria-label') != visible + ' ' + qualifier:
+            raise ValueError('English nav disclosure qualifier/accessible label mismatch')
+        hint.decompose()
+    return soup
+
 NORMALIZERS = {'launch-availability-annotations': _strip_launch_annotations,
-               'partial-home-disclosure': _strip_partial_home_disclosure}
+               'partial-home-disclosure': _strip_partial_home_disclosure,
+               'english-nav-disclosure': _strip_english_nav_disclosure}

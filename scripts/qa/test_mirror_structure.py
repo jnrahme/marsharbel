@@ -29,6 +29,29 @@ class MirrorStructure(unittest.TestCase):
         other_aside=locale.replace('class="launch-availability"','class="other-note"')
         self.assertIn('main',check_pair(master,other_aside,'/','/hi/',normalizers))
 
+    def test_english_nav_disclosure_normalizer_scoped_and_validated(self):
+        master='<header><nav><a href="/stories">Stories</a></nav></header><main><section><h1>Hi</h1></section></main><footer></footer>'
+        mark='<a hreflang="en" aria-label="Stories (English)" href="/stories">Stories <span class="enc-language">(English)</span></a>'
+        locale=master.replace('<a href="/stories">Stories</a>',mark)
+        normalizers=['english-nav-disclosure']
+        # Unnormalized the marked header diverges; normalized it is equal to the master.
+        self.assertIn('header',check_pair(master,locale,'/','/ar/'))
+        self.assertEqual(check_pair(master,locale,'/','/ar/',normalizers),[])
+        # The same marking inside <main> is out of scope and must still fail.
+        in_main=master.replace('<h1>Hi</h1>','<h1>Hi</h1>'+mark)
+        self.assertIn('main',check_pair(master,in_main,'/','/ar/',normalizers))
+        # A mismatched aria-label raises instead of being stripped.
+        bad_label=locale.replace('aria-label="Stories (English)"','aria-label="Other (English)"')
+        self.assertRaises(ValueError,check_pair,master,bad_label,'/','/ar/',normalizers)
+        # Marking a locale-prefixed href raises.
+        prefixed=locale.replace('href="/stories"','href="/ar/stories"')
+        self.assertRaises(ValueError,check_pair,master,prefixed,'/','/ar/',normalizers)
+        # Any other tag/class change in the header still fails after normalizing.
+        changed=locale.replace('<nav>','<nav hidden>')
+        self.assertIn('header',check_pair(master,changed,'/','/ar/',normalizers))
+        changed_class=locale.replace('class="enc-language"','class="enc-language extra"')
+        self.assertRaises(ValueError,check_pair,master,changed_class,'/','/ar/',normalizers)
+
     def test_home_renderer_preserves_all_regions_and_assets(self):
         master=(ROOT/'index.html').read_text()
         registry=json.loads((ROOT/'locales/registry.json').read_text())
