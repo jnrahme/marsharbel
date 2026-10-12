@@ -179,5 +179,15 @@ qa_step node scripts/tests/same_page_resolver.cjs
 qa_step node scripts/tests/nav_legacy_combined.cjs
 qa_step node scripts/tests/same_page_enabled_navigation.cjs
 
+echo "[qa] Same-page contract, previews, switcher, locale identity (orphan steps wired: ticket-01M4NVXW37FW3VKFSAV5NMR0T7)"
+qa_step node scripts/tests/same_page_contract.cjs
+qa_step node scripts/tests/same_page_static_verified.cjs
+qa_step node scripts/tests/same_page_ar2_pairing.cjs
+qa_step node scripts/tests/locale_identity.mjs
+qa_step node scripts/tests/same_page_integrated_visual.cjs
+qa_step node scripts/tests/same_page_real_preview.cjs
+qa_step node scripts/tests/same_page_switcher.cjs
+qa_step node scripts/tests/same_page_exhaustive_preview.cjs
+
 
 echo "[qa] QA suite finished"

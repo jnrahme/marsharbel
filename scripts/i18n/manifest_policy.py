@@ -11,6 +11,13 @@ def scoped_provenance(root,text):
     if not text.startswith(PREFIX) or not text.endswith(';\n'):
         raise ValueError('Unexpected manifest serialization')
     manifest=json.loads(text[len(PREFIX):-2])
+    from i18n.ar2_equivalence import ar2_manifest, AR2
+    actual_ar2={key for key,page in manifest['pages'].items() if any(v.get('proof',{}).get('type')==AR2 for v in page['variants'].values())}
+    if actual_ar2:
+        expected_ar2=ar2_manifest(root,{}, {'pages':{}})['pages']
+        if actual_ar2!=set(expected_ar2):raise ValueError('Unknown scoped ar2 manifest family membership')
+        for key in sorted(actual_ar2):
+            if manifest['pages'][key]!=expected_ar2[key]:raise ValueError('Scoped ar2 manifest differs from validated locale evidence: '+key)
     expected=travel_manifest(root,{}, {'pages':{}})['pages']
     families={slug+'-travel-master-equivalence' for slug in SLUGS}
     actual={key for key,page in manifest['pages'].items() if any(v.get('proof',{}).get('type')=='scoped-travel-variant' for v in page['variants'].values())}
