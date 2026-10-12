@@ -17,12 +17,16 @@ for(const language of ['en','ar','fr','es','pt','it','de','pl']) {
     await expect(page).toHaveURL(/\/annaya-tour(?:\?lang=[a-z]+)?$/);
   });
 }
-test('Travel selector keeps pending translations unavailable instead of switching pages',async({page})=>{
+test('Travel selector offers only the verified Arabic, German, Russian and Hindi twins',async({page})=>{
   await page.goto('/travel');
   const select=page.locator('#sc-language-select');
-  await expect(select.locator('option[value="ar"]')).toBeDisabled();
+  for(const language of ['ar','de','ru','hi']) await expect(select.locator(`option[value="${language}"]`)).toBeEnabled();
+  for(const language of ['fr','es','pt','it','pl','th','zh-Hans']) await expect(select.locator(`option[value="${language}"]`)).toBeDisabled();
   await expect(select).toHaveValue('en');
   await expect(page).toHaveURL(/\/travel$/);
+  await select.selectOption('ar');
+  await expect(page).toHaveURL(/\/ar\/travel$/);
+  await expect(page.locator('html')).toHaveAttribute('lang','ar');
 });
 test('Photo destination opens the Qadisha guide',async({page})=>{
   await page.goto('/travel');await page.locator('.travel-place[href="/qadisha-valley"]').click();
