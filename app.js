@@ -3,10 +3,11 @@ const observer = new IntersectionObserver(
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('on');
+        observer.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.15 }
+  { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
 );
 
 const revealElements = [...document.querySelectorAll('.reveal')];
@@ -14,9 +15,35 @@ const revealElements = [...document.querySelectorAll('.reveal')];
 // Keep initial content visible; animate only content below the viewport.
 const belowFoldReveals = revealElements.filter(el => el.getBoundingClientRect().top >= window.innerHeight);
 belowFoldReveals.forEach(el => el.classList.add('reveal-pending'));
+// Stagger siblings in DOM order, capped at 5 steps (--i 0..4), per motion spec v1.
+const staggerGroups = new Map();
+belowFoldReveals.forEach(el => {
+  const key = el.parentElement || el;
+  const n = staggerGroups.get(key) || 0;
+  el.style.setProperty('--i', Math.min(n, 4));
+  staggerGroups.set(key, n + 1);
+});
 revealElements.forEach(el => {
   observer.observe(el);
 });
+
+// Motion spec v1: pause candle loops offscreen and when the tab is hidden.
+const candles = [...document.querySelectorAll('.candle')];
+if (candles.length) {
+  const candleVisible = new WeakMap();
+  const syncCandle = el => el.classList.toggle('candle-paused', document.hidden || candleVisible.get(el) === false);
+  const candleObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        candleVisible.set(entry.target, entry.isIntersecting);
+        syncCandle(entry.target);
+      });
+    },
+    { threshold: 0 }
+  );
+  candles.forEach(el => candleObserver.observe(el));
+  document.addEventListener('visibilitychange', () => candles.forEach(syncCandle));
+}
 
 const counters = document.querySelectorAll('[data-count]');
 const animateCounter = el => {

@@ -116,6 +116,21 @@
 }
 
 /* Global visual theme: edit these tokens to recolor every page. */
+/* Motion spec v1 tokens (design gate Oct 12, 2026): transform/opacity only, no bounce. */
+:root{
+  --motion-ease-out: cubic-bezier(.22,.61,.36,1);
+  --motion-ease-loop: cubic-bezier(.45,.05,.55,.95);
+  --motion-fast: 160ms;
+  --motion-base: 260ms;
+  --motion-reveal: 420ms;
+  --motion-slow: 600ms;
+  --motion-rise: 12px;
+  --motion-stagger: 60ms;
+  --motion-lift: 2px;
+  --dir: 1;
+}
+[dir="rtl"]{--dir:-1}
+
 :root {
   --theme-page: #1d1a17;
   --theme-page-deep: #171411;
@@ -1681,19 +1696,23 @@ h3 {
   color: var(--text);
 }
 
-/* Reveal is transform-only: text stays fully opaque so contrast is always the final value
-   (an opacity fade is sampled mid-transition by axe and fails color-contrast). */
+/* Motion spec v1: opacity + 12px rise, 420ms ease-out, staggered by --i (max 5 steps).
+   Hidden state applies only once JS marks .reveal-pending, so no-JS shows everything. */
 .reveal {
+  opacity: 1;
   transform: none;
-  transition: transform 550ms ease;
+  transition: opacity var(--motion-reveal) var(--motion-ease-out), transform var(--motion-reveal) var(--motion-ease-out);
+  transition-delay: calc(var(--i, 0) * var(--motion-stagger));
 }
 
 .reveal.reveal-pending:not(.on) {
-  transform: translateY(18px);
+  opacity: 0;
+  transform: translateY(var(--motion-rise));
 }
 
 .reveal.on {
-  transform: translateY(0);
+  opacity: 1;
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3244,3 +3263,116 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 @media(prefers-reduced-motion:reduce){.souvenir-card{transition:none;transform:none}}
 .souvenir-hero h1,.souvenir-store-heading h2,.souvenir-principles h2{overflow-wrap:anywhere}
 :lang(ar) code{direction:ltr;unicode-bidi:isolate;display:inline-block;max-width:100%;overflow-wrap:anywhere;font-size:.88em}
+
+/* === Motion spec v1: home hero load sequence (preview lane) ===
+   Eyebrow, H1, sub, CTAs, quick nav: 12px rise + fade, 80ms apart, 420ms each,
+   total < 700ms from first paint. CSS-only so it starts at first paint, not after video. */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(var(--motion-rise)); }
+  to { opacity: 1; transform: none; }
+}
+.home-cinematic-hero .cinematic-content > .kicker,
+.home-cinematic-hero .cinematic-content > h1,
+.home-cinematic-hero .cinematic-content > .home-hero-sub,
+.home-cinematic-hero .cinematic-content > .home-hero-actions,
+.home-cinematic-hero .cinematic-content > .home-hero-quick {
+  animation: hero-rise var(--motion-reveal) var(--motion-ease-out) both;
+}
+.home-cinematic-hero .cinematic-content > .kicker { animation-delay: 0ms; }
+.home-cinematic-hero .cinematic-content > h1 { animation-delay: 80ms; }
+.home-cinematic-hero .cinematic-content > .home-hero-sub { animation-delay: 160ms; }
+.home-cinematic-hero .cinematic-content > .home-hero-actions { animation-delay: 240ms; }
+.home-cinematic-hero .cinematic-content > .home-hero-quick { animation-delay: 320ms; }
+
+/* CTA press: hover lift 260ms, active scale .98 160ms. Focus-visible ring unchanged. */
+.home-hero-cta, .home-hero-cta2, .home-hero-link {
+  transition: transform var(--motion-base) var(--motion-ease-out);
+}
+.home-hero-cta:hover, .home-hero-cta2:hover, .home-hero-link:hover {
+  transform: translateY(calc(var(--motion-lift) * -1));
+}
+.home-hero-cta:active, .home-hero-cta2:active, .home-hero-link:active {
+  transform: scale(.98);
+  transition-duration: var(--motion-fast);
+}
+
+/* === Motion spec v1: pure-CSS candle (signature) === */
+.candle { position: relative; width: 56px; height: 120px; }
+.candle-wax {
+  position: absolute; bottom: 0; left: 50%; margin-inline-start: -13px;
+  width: 26px; height: 64px; border-radius: 6px 6px 4px 4px;
+  background: linear-gradient(180deg, #F3EDE3 0%, #e4d8c6 60%, #d8c9b2 100%);
+}
+.candle-wick {
+  position: absolute; bottom: 62px; left: 50%; margin-inline-start: -1px;
+  width: 2px; height: 8px; background: #3a2f26; border-radius: 1px;
+}
+.candle-sway {
+  position: absolute; bottom: 68px; left: 50%; width: 0; height: 0;
+  animation: candle-sway 4.7s var(--motion-ease-loop) -1.9s infinite alternate;
+  will-change: transform;
+}
+.candle-flame {
+  position: absolute; bottom: 0; left: 0; width: 18px; height: 34px;
+  margin-inline-start: -9px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: radial-gradient(ellipse at 50% 78%, #F3D9B0 0%, #D9A58E 55%, rgba(217,165,142,0) 78%);
+  transform-origin: 50% 100%;
+  animation: candle-flicker-a 2.3s var(--motion-ease-loop) -0.7s infinite alternate;
+  will-change: transform, opacity;
+}
+.candle-flame-core {
+  position: absolute; bottom: 3px; left: 50%; width: 8px; height: 18px;
+  margin-inline-start: -4px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: radial-gradient(ellipse at 50% 75%, #F3EDE3 0%, #F3D9B0 70%, rgba(243,217,176,0) 100%);
+  transform-origin: 50% 100%;
+  animation: candle-flicker-b 3.1s var(--motion-ease-loop) -2.2s infinite alternate;
+  will-change: transform;
+}
+.candle-glow {
+  position: absolute; bottom: 40px; left: 50%; width: 54px; height: 54px;
+  margin-inline-start: -27px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(217,165,142,.55), transparent 65%);
+  animation: candle-glow 6s var(--motion-ease-loop) -3s infinite alternate;
+}
+@keyframes candle-flicker-a {
+  from { transform: scaleY(.97) scaleX(1); opacity: .92; }
+  to { transform: scaleY(1.03) scaleX(.98); opacity: 1; }
+}
+@keyframes candle-flicker-b {
+  from { transform: scaleY(1.02) translateX(calc(var(--dir) * .5px)); }
+  to { transform: scaleY(.96) translateX(0); }
+}
+@keyframes candle-sway {
+  from { transform: rotate(-1.2deg); }
+  to { transform: rotate(1.2deg); }
+}
+@keyframes candle-glow {
+  from { opacity: .35; transform: scale(1); }
+  to { opacity: .5; transform: scale(1.06); }
+}
+/* Loops pause offscreen (IO toggles .candle-paused) and honor reduced motion. */
+.candle-paused .candle-sway, .candle-paused .candle-flame, .candle-paused .candle-flame-core, .candle-paused .candle-glow {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-cinematic-hero .cinematic-content > .kicker,
+  .home-cinematic-hero .cinematic-content > h1,
+  .home-cinematic-hero .cinematic-content > .home-hero-sub,
+  .home-cinematic-hero .cinematic-content > .home-hero-actions,
+  .home-cinematic-hero .cinematic-content > .home-hero-quick { animation: none; }
+  .home-hero-cta, .home-hero-cta2, .home-hero-link { transition: none; }
+  .candle-sway, .candle-flame, .candle-flame-core { animation: none; }
+  .candle-glow { animation: none; opacity: .42; }
+}
+/* Sizing: 28-40px flame mobile, max 56px desktop. */
+@media (max-width: 700px) {
+  .candle { width: 40px; height: 92px; }
+  .candle-wax { width: 20px; height: 50px; margin-inline-start: -10px; }
+  .candle-wick { bottom: 48px; }
+  .candle-sway { bottom: 54px; }
+  .candle-flame { width: 14px; height: 28px; margin-inline-start: -7px; }
+  .candle-flame-core { width: 6px; height: 14px; margin-inline-start: -3px; }
+  .candle-glow { bottom: 32px; width: 42px; height: 42px; margin-inline-start: -21px; }
+}
