@@ -26,11 +26,14 @@ def disclose_nav(text, root, lang):
     reroute={}
     if lang=='ar':
         twins=nav_twin_hrefs(registry,lang)
-        for destination in ('/saint-charbel-encyclopedia',):
+        for destination in ('/saint-charbel-encyclopedia','/history'):
             if destination in twins:reroute[destination]=twins[destination]
     for path in history_paths:
+        if path==biography and '/history' in reroute:continue
         header_text=header_text.replace('href="'+path+'"','href="/history"')
-    pattern=r'<a\b([^>]*\bhref=["\'](?:(?:\./|/)saint-charbel-encyclopedia|/history)["\'][^>]*)>([\s\S]*?)</a>'
+    destinations=r'(?:\./|/)saint-charbel-encyclopedia|/history'
+    if '/history' in reroute:destinations+='|'+re.escape(biography)
+    pattern=r'<a\b([^>]*\bhref=["\'](?:'+destinations+r')["\'][^>]*)>([\s\S]*?)</a>'
     matches=list(re.finditer(pattern,header_text))
     if len(matches)!=3:raise ValueError('Expected Legacy parent, Encyclopedia child and Full History')
     def replace(m):
@@ -38,6 +41,7 @@ def disclose_nav(text, root, lang):
         if 'hreflang=' in attrs or 'enc-language' in body:raise ValueError('Duplicate destination disclosure')
         dest=re.search(r'href=["\']([^"\']+)["\']',attrs).group(1).lstrip('.')
         key=dest if dest=='/' else dest.rstrip('/')
+        if key==biography.rstrip('/') and '/history' in reroute:return m[0]
         if key in reroute:
             attrs=re.sub(r'href=["\'][^"\']*["\']','href="'+reroute[key]+'"',attrs,count=1)
             return '<a'+attrs+'>'+body+'</a>'
