@@ -2,7 +2,7 @@
  "version": 1,
  "master": "news.html",
  "masterSha256": "f9b098c25c38adda5dd4d9f74ca8abb67d9bfa9a07671efb1326d6d22078caf9",
- "sourceRevision": "c1281aae2fe2d2c7af5dc8f9904e338552a5183e",
+ "sourceRevision": "9399bc01",
  "bindings": [
   {
    "key": "news.title",
@@ -1748,6 +1748,13 @@
    "attribute": "alt"
   },
   {
+   "key": "news.main-title-nmpro-arts-official-charbel-film-trailer-2",
+   "selector": "#charbel-premiere-release-2026-10 > div:nth-of-type(1) > iframe:nth-of-type(1)",
+   "source": "NMPRO Arts: official Charbel film trailer, in Arabic, 2 minutes 25 seconds. This is a trailer, not a recording of the premiere.",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
    "key": "news.footer-div-news-page-updated-september-25-2026",
    "selector": "html > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
    "source": "News page updated September 25, 2026. Author: Please pray for the person who made this website.",
@@ -2010,6 +2017,7 @@
   "news.main-img-alt-pope-leo-xiv-praying-at-the-2": "Pope Leo XIV praying at the tomb of Saint Charbel in Annaya",
   "news.main-img-alt-inside-the-memorial-shrine-of-the": "Inside the memorial shrine of the fallen at Marzabotto, on the Monte Sole ridge",
   "news.main-img-alt-blessed-fulton-sheen-at-his-desk-2": "Blessed Fulton Sheen at his desk in 1956",
+  "news.main-title-nmpro-arts-official-charbel-film-trailer-2": "NMPRO Arts: official Charbel film trailer, in Arabic, 2 minutes 25 seconds. This is a trailer, not a recording of the premiere.",
   "news.footer-div-news-page-updated-september-25-2026": "News page updated September 25, 2026. Author: Please pray for the person who made this website.",
   "news.body-a-skip-to-main-content": "Skip to main content",
   "news.header.home": "Home",
