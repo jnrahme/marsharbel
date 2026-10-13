@@ -15,6 +15,17 @@ def outputs(root=ROOT):
  # Existing selectors describe the pre-insertion tree. Resolve them without
  # the new sibling, then restore it before calculating current selectors.
  following=section.next_sibling; parent=section.parent
+ wrapper=section.parent if section.parent.name=='template' else None
+ def resolves(old):
+  nodes=soup.select(old['selector'])
+  if len(nodes)!=1:return False
+  n=nodes[0]
+  value=n.get(old['attribute']) if old['kind']=='attribute' else ' '.join(str(n.contents[old['nodeIndex']]).split())
+  return value==old['source']
+ unwrap=wrapper is not None and not all(resolves(b) for b in contract['bindings'] if not b['key'].startswith('home.saintDay.'))
+ if unwrap:
+  section.extract()
+  soup.select_one('#latest-news').insert_after(section)
  already=any(b["key"].startswith("home.saintDay.") for b in contract["bindings"])
  if not already:section.extract()
  preserved=[]
@@ -28,6 +39,7 @@ def outputs(root=ROOT):
  if not already:
   if following:following.insert_before(section)
   else:parent.append(section)
+ if unwrap:wrapper.append(section)
  bindings=[]
  for b,n in preserved:b['selector']=selector(n);bindings.append(b)
  copy=json.loads((root/'locales/en/home-copy.json').read_text())
@@ -40,7 +52,7 @@ def outputs(root=ROOT):
  for n in section.select('[data-saint-key],[data-saint-alt],[data-saint-generated-date]'):
   attr='alt' if n.has_attr('data-saint-alt') else None
   name=n.get('data-saint-alt') or n.get('data-saint-key') or n['data-saint-generated-date'];key='home.saintDay.'+name
-  value=n[attr] if attr else n.get_text()
+  value=n[attr] if attr else ''.join(str(c) for c in n.contents)
   if value!=messages[name]:raise ValueError('Saint source mismatch '+name)
   b={'key':key,'selector':selector(n),'source':value,'kind':'attribute' if attr else 'text'}
   if attr:b['attribute']=attr

@@ -1,4 +1,5 @@
-<section class="home-news home-saint-day" id="saint-of-the-day" aria-labelledby="saint-day-heading" data-saint-date="${date}" hidden>
+<template id="saint-of-the-day-template" data-saint-date="${date}" data-saint-after="main > .home-news">
+<section class="home-news home-saint-day" id="saint-of-the-day" aria-labelledby="saint-day-heading" data-saint-date="${date}">
   <div class="home-news-head"><h2 id="saint-day-heading" data-saint-key="heading">${heading}</h2><time datetime="${date}" data-saint-generated-date="dateLabel">${dateLabel}</time></div>
   <div class="home-saint-pair">
     <a class="home-news-lead home-saint-info" href="${infoUrl}">
@@ -15,3 +16,4 @@
   </div>
   <p class="home-saint-source"><a href="${calendarUrl}" data-saint-key="sourceLabel">${sourceLabel}</a></p>
 </section>
+</template>

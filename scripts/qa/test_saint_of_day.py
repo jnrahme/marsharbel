@@ -23,8 +23,8 @@ class SaintDay(unittest.TestCase):
   m=json.loads((ROOT/'locales/saint-of-day.json').read_text())
   n=BeautifulSoup((ROOT/'index.html').read_text(),'html.parser').select_one('#saint-of-the-day')
   from datetime import date
-  self.assertTrue(n.has_attr('hidden'));self.assertEqual(n['data-saint-date'],m['activeDate'])
-  self.assertEqual(n.time.get_text(),date.fromisoformat(m['activeDate']).strftime('%d.%m.%Y'))
+  self.assertEqual(n.parent.name,'template');self.assertEqual(n.parent.parent.name,'body');self.assertEqual(n.parent['id'],'saint-of-the-day-template');self.assertFalse(n.has_attr('hidden')); self.assertEqual(n['data-saint-date'],m['activeDate'])
+  self.assertEqual(''.join(str(c) for c in n.time.contents),date.fromisoformat(m['activeDate']).strftime('%d.%m.%Y'))
   self.assertNotIn('dateLabel',json.loads((ROOT/'locales/en/saint-of-day.json').read_text()))
  def test_missing_date_rejected(self):
   with tempfile.TemporaryDirectory() as tmp:
