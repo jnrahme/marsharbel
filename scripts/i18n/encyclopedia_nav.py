@@ -10,6 +10,12 @@ from i18n.encyclopedia_trail import load_trail
 # per-call-site literals. QA mirrors import this constant.
 MARKING_LOCALES=frozenset({'ar','de','ru'})
 
+# Review-pinned travel variants whose rendered bytes may be nav-marked anyway,
+# gated per locale by scrum ticket (de: pinned-twin marking 2026-10-13; ru follows
+# in its own PR). page_mirror skips pinned pairs unless the locale is listed here;
+# the pin reseal then runs as the non-author step on the diff.
+PINNED_MARKING_LOCALES=frozenset({'de'})
+
 
 def nav_twin_hrefs(registry, lang):
     """renderLocales-gated header hrefs for the locale's registered twins."""
