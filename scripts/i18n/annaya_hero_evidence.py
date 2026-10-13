@@ -47,7 +47,9 @@ def validate_variant(root,family,code,variant,text,final=True):
     if remainder(before)!=remainder(candidate):raise ValueError('Annaya non-hero main changed')
     master=(root/'annaya-tour.html').read_text()
     if sha(master)!=ev.get('masterSha256'):raise ValueError('Annaya master drift')
-    if final and sha(text)!=sha(candidate):raise ValueError('Annaya post-review full-file drift')
+    if final:
+        from i18n.header_marking_delta import strip_for_locale
+        if sha(strip_for_locale(root,code,text))!=sha(candidate):raise ValueError('Annaya post-review full-file drift')
     catalogs={f'locales/en/{family}-bindings.json',f'locales/{code}/{family}-copy.json'}
     # The shared EN row binds both families; each locale row binds its owner.
     if code=='en':catalogs={f'locales/en/{f}-{suffix}.json' for f in FAMILIES for suffix in ('bindings','copy')}

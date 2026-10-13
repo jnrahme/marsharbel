@@ -109,7 +109,9 @@ def validate_variant(root, family, code, variant, text, final=True, schema='scop
     candidate=blob(root,evidence.get('preparedRevision',''),file)
     if sha(candidate)!=evidence.get('candidateFileSha256') or variant.get('candidateFileSha256')!=sha(candidate):
         raise ValueError('Candidate hash not actual prepared bytes')
-    if final and without_ru(candidate,slug)!=without_ru(text,slug):raise ValueError('Post-review candidate drift')
+    if final:
+        from i18n.header_marking_delta import strip_for_locale
+        if without_ru(candidate,slug)!=without_ru(strip_for_locale(root,code,text),slug):raise ValueError('Post-review candidate drift')
     if digest(candidate)!=variant['bodySha256'] or digest(text)!=variant['bodySha256']:
         raise ValueError('Candidate/current main drift')
     if code=='en':

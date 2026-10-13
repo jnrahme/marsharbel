@@ -60,6 +60,7 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata_splic
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_authored_final_hashes.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_page_mirror_ru_whitespace.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_variant_evidence.py
+qa_step python3 scripts/qa/test_header_marking_delta.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_generated_availability.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_generated_sitemap_dates.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_manifest_provenance_policy.py
