@@ -32,6 +32,9 @@ LEGACY_LABELS = {
     # Past event: the plain "Announcement" chip reads as upcoming in the feed,
     # so keep the archived wording subscribers already received.
     "el-paso-lebanese-festival-2026-10": "Archived parish announcement",
+    # Same past-event case as the festival row: the October 13 Rosary has
+    # passed, so the feed label freezes the archived wording.
+    "pope-leo-rosary-announcement-2026-10-13": "Archived Rosary announcement",
 }
 # pubDate values subscribers already received; keyed by row id so the item
 # date stays stable even when the row shows the event date (e.g. the

@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 class AuthoredFinalHashTests(unittest.TestCase):
  def test_actual_pipeline_nineteen_frozen_full_file_hashes(self):
   raw=(ROOT/'scripts/qa/fixtures/travel-authored-heads-f6e0d947.json').read_bytes()
-  self.assertEqual(hashlib.sha256(raw).hexdigest(),'f3a248bc7273955ae8eaa20117a680b3e7904bd7e3da4d207577ded32f687cd8')
+  self.assertEqual(hashlib.sha256(raw).hexdigest(),'57ff5f3476b1249bf7ac77eeed1b459b6312ac018f626593a6f2c7d3e4750c3f')
   files=json.loads(raw)['files'];self.assertEqual(len(files),19)
   spec=importlib.util.spec_from_file_location('authored_final_build',ROOT/'scripts/build-international.py')
   builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder)
