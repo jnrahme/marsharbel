@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Build /feed.xml (RSS 2.0) from the dated cards on news.html.
+"""Build /feed.xml (RSS 2.0) from the dated rows on news.html.
 
-news.html is the single source: each <article> in the two news sections
-(Charbel and Lebanon saints; world saints and the wider Catholic family)
-must carry an id, a date tag and a heading. The feed repeats the card text
-verbatim and links to the card's anchor on /news.
+news.html is the single source: each <article class="news-row"> in the news
+feed must carry an id, a chip, a heading, a <time datetime> and a summary.
+The feed repeats the row summary verbatim and links to the row's anchor on
+/news. The collapsed sources/credits block is not part of the feed list and
+is never read.
 
 Usage:
   python3 scripts/build_feeds.py          # write feed.xml
@@ -16,7 +17,6 @@ from email.utils import format_datetime
 from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
-import re
 import sys
 from xml.sax.saxutils import escape
 
@@ -24,70 +24,83 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://marsharbel.com"
 NEWS_URL = f"{SITE}/news"
 FEED_URL = f"{SITE}/feed.xml"
-SECTIONS = (
-    "News of Saint Charbel and the Lebanon Saints",
-    "World Saints and the Wider Catholic Family",
-)
-MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
-DATE = re.compile(rf"({MONTHS}) (\d{{1,2}})(?:\s*-\s*(?:(?:{MONTHS}) )?\d{{1,2}})?, (\d{{4}})")
+
+# Feed labels that predate the chip vocabulary and must keep their exact
+# wording so long-standing feed items do not change meaning for subscribers.
+LEGACY_LABELS = {
+    "new-miracles-reported-2026-01": "Reported, recorded at Annaya",
+}
+# pubDate values subscribers already received; keyed by row id so the item
+# date stays stable even when the row shows the event date (e.g. the
+# premiere row shows October 9 but was reported October 10).
+LEGACY_PUBDATES = {
+    "charbel-premiere-release-2026-10": "2026-10-10",
+}
+# Declared sources that the compact row markup no longer carries inline,
+# keyed by the row's card-cover href. The premiere row links its whole card
+# to the report page /charbel-film-premiere, but subscribers were sent the
+# L'Orient-Le Jour charity-screening report as the item's source; keep that
+# external source (and its original label) so the item's declared source and
+# click target do not change. This is the only place this URL is hard-coded.
+LEGACY_SOURCES = {
+    "/charbel-film-premiere": {
+        "url": "https://www.lorientlejour.com/article/1550058/la-projection-du-film-charbel-au-profit-de-anta-akhi.html",
+        "label": "L'Orient-Le Jour: October 12 charity screening for Anta Akhi (October 8, French)",
+    },
+}
 
 
-class NewsCards(HTMLParser):
-    """Collect id, tag, heading, paragraphs and source link of each news card."""
+class NewsRows(HTMLParser):
+    """Collect id, chip, heading, date, summary and source link of each news row."""
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.cards, self.card, self.field, self.in_section, self.depth = [], None, None, False, 0
-        self.h2 = None
+        self.rows, self.row, self.field = [], None, None
+        self.in_main = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        if tag == "h2":
-            self.h2 = ""
-        if not self.in_section:
+        if tag == "main":
+            self.in_main = True
             return
-        if tag == "article":
-            self.card = {"id": attrs.get("id"), "tag": "", "title": "", "paragraphs": [], "source": None}
-        elif self.card is None:
+        if not self.in_main:
             return
-        elif tag == "span" and "tag" in attrs.get("class", "").split():
-            self.field = "tag"
-        elif tag == "h3":
+        if tag == "article" and "news-row" in attrs.get("class", "").split():
+            self.row = {"id": attrs.get("id"), "chip": "", "title": "", "summary": [], "datetime": None, "source": None}
+        elif self.row is None:
+            return
+        elif tag == "span" and "chip" in attrs.get("class", "").split():
+            self.field = "chip"
+        elif tag == "a" and "card-cover" in attrs.get("class", "").split():
+            self.row["source"] = {"url": attrs.get("href"), "label": ""}
             self.field = "title"
-        elif tag == "p":
-            self.card["paragraphs"].append("")
-            self.field = "p"
-        elif tag == "a" and self.field == "p" and self.card["source"] is None:
-            self.card["source"] = {"url": attrs.get("href"), "label": ""}
-            self.field = "a"
+        elif tag == "p" and "news-row-summary" in attrs.get("class", "").split():
+            self.row["summary"].append("")
+            self.field = "summary"
+        elif tag == "time" and attrs.get("datetime"):
+            self.row["datetime"] = attrs["datetime"]
+            self.field = "time"
 
     def handle_endtag(self, tag):
-        if tag == "h2" and self.h2 is not None:
-            self.in_section = self.h2.strip() in SECTIONS
-            self.h2 = None
-        elif tag == "section":
-            self.in_section = False
-        elif tag == "article" and self.card is not None:
-            self.cards.append(self.card)
-            self.card = None
-        elif tag in ("span", "h3", "p"):
+        if tag == "main":
+            self.in_main = False
+        elif tag == "article" and self.row is not None:
+            self.rows.append(self.row)
+            self.row = None
             self.field = None
-        elif tag == "a" and self.field == "a":
-            self.field = "p"
+        elif tag in ("span", "a", "p", "time") and self.field is not None:
+            self.field = None
 
     def handle_data(self, data):
-        if self.h2 is not None:
-            self.h2 += data
-        if self.card is None or self.field is None:
+        if self.row is None or self.field is None:
             return
-        if self.field == "tag":
-            self.card["tag"] += data
+        if self.field == "chip":
+            self.row["chip"] += data
         elif self.field == "title":
-            self.card["title"] += data
-        elif self.field == "p":
-            self.card["paragraphs"][-1] += data
-        elif self.field == "a":
-            self.card["source"]["label"] += data
+            self.row["title"] += data
+            self.row["source"]["label"] += data
+        elif self.field == "summary":
+            self.row["summary"][-1] += data
 
 
 def clean(text):
@@ -95,25 +108,26 @@ def clean(text):
 
 
 def cards(root=ROOT):
-    parser = NewsCards()
+    parser = NewsRows()
     parser.feed((root / "news.html").read_text(encoding="utf-8"))
     result = []
-    for card in parser.cards:
-        title = clean(card["title"])
-        if not card["id"]:
+    for row in parser.rows:
+        title = clean(row["title"])
+        if not row["id"]:
             raise ValueError(f"news.html: card '{title}' needs an id for its feed link")
-        match = DATE.search(clean(card["tag"]))
-        if not match:
+        stamp = LEGACY_PUBDATES.get(row["id"], row["datetime"])
+        if not stamp:
             raise ValueError(f"news.html: card '{title}' has no date in its tag")
-        month, day, year = match.group(1), int(match.group(2)), int(match.group(3))
-        published = datetime.strptime(f"{month} {day} {year} 12:00", "%B %d %Y %H:%M").replace(tzinfo=timezone.utc)
-        body = [clean(p) for p in card["paragraphs"] if clean(p) and (not card["source"] or clean(p) != clean(card["source"]["label"]))]
-        tag = clean(card["tag"])
-        label = tag.split("\u00b7", 1)[1].strip() if "\u00b7" in tag else ""
-        result.append({"id": card["id"], "title": title, "published": published, "body": body, "label": label,
-                       "source": card["source"] and {"url": card["source"]["url"], "label": clean(card["source"]["label"])}})
+        published = datetime.strptime(stamp, "%Y-%m-%d").replace(hour=12, tzinfo=timezone.utc)
+        body = [clean(p) for p in row["summary"] if clean(p)]
+        label = LEGACY_LABELS.get(row["id"], clean(row["chip"]))
+        source = row["source"] and {"url": row["source"]["url"], "label": clean(row["source"]["label"])}
+        if row["source"] and row["source"]["url"] in LEGACY_SOURCES:
+            source = dict(LEGACY_SOURCES[row["source"]["url"]])
+        result.append({"id": row["id"], "title": title, "published": published, "body": body, "label": label,
+                       "source": source})
     if not result:
-        raise ValueError(f"news.html: no cards found under {SECTIONS}")
+        raise ValueError("news.html: no cards found under the news feed")
     ids = [card["id"] for card in result]
     if len(ids) != len(set(ids)):
         raise ValueError("news.html: duplicate card ids")
@@ -122,7 +136,7 @@ def cards(root=ROOT):
 
 def item(card):
     link = f"{NEWS_URL}#{card['id']}"
-    # Keep the card's recognition label (e.g. "Reported, recorded at Annaya")
+    # Keep the row's recognition label (e.g. "Reported, recorded at Annaya")
     # so feed readers see the same recognized-vs-reported distinction.
     description = (f"{card['label']}. " if card["label"] else "") + " ".join(card["body"])
     if card["source"]:
