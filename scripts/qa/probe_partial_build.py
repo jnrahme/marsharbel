@@ -169,6 +169,11 @@ def strip_html_zz(text):
  soup=BeautifulSoup(text,'html.parser')
  for script in soup.select('script#sc-runtime-labels'):
   payload=str(script.string);data=json.loads(payload)
+  if data['nativeNames'].get('zz')!='Test':
+   # Authored-mirror pages are generated without the zz probe locale; a
+   # generated page losing zz still fails here (negative control).
+   assert soup.html.has_attr('data-authored-mirror'),'zz runtime nativeNames missing on a generated page'
+   continue
   assert data['nativeNames'].get('zz')=='Test'
   token=', "zz": "Test"';assert payload.count(token)==1
   replacement=payload.replace(token,'',1);parsed=json.loads(replacement)
@@ -200,7 +205,10 @@ def compare_json(file,old,new):
    assert list(variants)==['ar'] and variants['ar'].get('status')=='pending',key
    del b['pages'][key]
   hits['manifest-travel4-ar']+=4
-  assert len(a['pages'])==len(b['pages'])==224
+  # 219 = 231 real families - 12 travel-scoped; the 5 authored AR-2 pages (#769:
+  # rosary-intro, miracles hub, 3 stories) are production-only, absent from the
+  # synthetic overlay on both sides.
+  assert len(a['pages'])==len(b['pages'])==219
   assert b['aliases'].pop('zz')=='zz';assert b['languages'].pop()=='zz'
   extra={k:b['englishSources'].pop(k) for k in list(b['englishSources']) if k.startswith('/zz/')}
   assert len(extra)==18 and all(k=='/zz'+v.rstrip('/') for k,v in extra.items()),extra

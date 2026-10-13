@@ -73,6 +73,12 @@ def snapshot(root=ROOT):
                      for code in registry['locales'] for topic in locale_topics(registry, code))
     if 'chaplet' in registry.get('authoredMirrors', {}):
         generated.update(route.lstrip('/')+'.html' for code,route in registry['authoredMirrors']['chaplet']['routes'].items() if code != 'en')
+    # Authored AR-2 pages (#769): already registered as exactMirrors families; exempt
+    # their non-en routes from the literal-arabic snapshot like the chaplet precedent.
+    for family in ('rosary-intro', 'miracles', 'dafne-story', 'nohad-story', 'raymond-story'):
+        if family in registry.get('exactMirrors', {}):
+            generated.update((route.lstrip('/') + ('index.html' if route.endswith('/') else '.html'))
+                             for code, route in registry['exactMirrors'][family]['routes'].items() if code != 'en')
     generated.update(f'{code}/miracles/eucharistic/'+('index.html' if slug=='index' else slug+'.html')
                      for code in published_locales(registry, 'eucharistic') if code != registry['defaultLocale']
                      for slug in ('index','lanciano','bolsena-orvieto','siena','santarem','sokolka','legnica','ludbreg','amsterdam','ivorra','faverney'))

@@ -370,6 +370,10 @@ class CatalogTests(unittest.TestCase):
         assert_hreflang_reciprocity(self, 'miracles/index.html', 'ar/miracles/index.html',
                                     'https://marsharbel.com/miracles/', 'https://marsharbel.com/ar/miracles/')
         assert_external_sources_mirrored(self, 'miracles/index.html', 'ar/miracles/index.html', 11)
+        # The rosary-intro <-> ar/rosary pair must survive a build-pages regen:
+        # exactly one ar alternate per side, pointing at each other.
+        assert_hreflang_reciprocity(self, 'rosary-intro.html', 'ar/rosary.html',
+                                    'https://marsharbel.com/rosary-intro', 'https://marsharbel.com/ar/rosary')
 
     def test_unsafe_route_is_rejected(self):
         self.edit('registry.json',lambda d:d['locales']['es']['slugs'].update({'prayers':'../../account'}))
