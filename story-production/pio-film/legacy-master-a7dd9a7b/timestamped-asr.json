@@ -1,0 +1,6531 @@
+{
+  "method": "faster-whisper base.en int8 CPU; ASR and word alignment, not listening or exact script proof",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.94,
+      "text": "In a small Italian town called Pyatrolcina, a child named Francesco grew up with his family.",
+      "words": [
+        {
+          "word": "In",
+          "start": 0.0,
+          "end": 0.56,
+          "probability": 0.9164557456970215
+        },
+        {
+          "word": "a",
+          "start": 0.56,
+          "end": 0.64,
+          "probability": 0.9976525902748108
+        },
+        {
+          "word": "small",
+          "start": 0.64,
+          "end": 0.92,
+          "probability": 0.9961208701133728
+        },
+        {
+          "word": "Italian",
+          "start": 0.92,
+          "end": 1.24,
+          "probability": 0.9163427948951721
+        },
+        {
+          "word": "town",
+          "start": 1.24,
+          "end": 1.98,
+          "probability": 0.9989144802093506
+        },
+        {
+          "word": "called",
+          "start": 1.98,
+          "end": 2.4,
+          "probability": 0.9792048335075378
+        },
+        {
+          "word": "Pyatrolcina,",
+          "start": 2.4,
+          "end": 3.26,
+          "probability": 0.47834208607673645
+        },
+        {
+          "word": "a",
+          "start": 3.5,
+          "end": 3.98,
+          "probability": 0.9926928281784058
+        },
+        {
+          "word": "child",
+          "start": 3.98,
+          "end": 4.34,
+          "probability": 0.9974223375320435
+        },
+        {
+          "word": "named",
+          "start": 4.34,
+          "end": 4.78,
+          "probability": 0.9833911657333374
+        },
+        {
+          "word": "Francesco",
+          "start": 4.78,
+          "end": 5.7,
+          "probability": 0.9405772984027863
+        },
+        {
+          "word": "grew",
+          "start": 5.7,
+          "end": 6.0,
+          "probability": 0.9978637099266052
+        },
+        {
+          "word": "up",
+          "start": 6.0,
+          "end": 6.24,
+          "probability": 0.9992772936820984
+        },
+        {
+          "word": "with",
+          "start": 6.24,
+          "end": 6.38,
+          "probability": 0.9993341565132141
+        },
+        {
+          "word": "his",
+          "start": 6.38,
+          "end": 6.54,
+          "probability": 0.9988892674446106
+        },
+        {
+          "word": "family.",
+          "start": 6.54,
+          "end": 6.94,
+          "probability": 0.9993637204170227
+        }
+      ]
+    },
+    {
+      "start": 8.28,
+      "end": 10.82,
+      "text": "His parents gave him the name Francesco.",
+      "words": [
+        {
+          "word": "His",
+          "start": 8.28,
+          "end": 8.6,
+          "probability": 0.9914032816886902
+        },
+        {
+          "word": "parents",
+          "start": 8.6,
+          "end": 8.96,
+          "probability": 0.9925602674484253
+        },
+        {
+          "word": "gave",
+          "start": 8.96,
+          "end": 9.24,
+          "probability": 0.9988099336624146
+        },
+        {
+          "word": "him",
+          "start": 9.24,
+          "end": 9.5,
+          "probability": 0.9973968267440796
+        },
+        {
+          "word": "the",
+          "start": 9.5,
+          "end": 9.6,
+          "probability": 0.9968628883361816
+        },
+        {
+          "word": "name",
+          "start": 9.6,
+          "end": 9.84,
+          "probability": 0.9972055554389954
+        },
+        {
+          "word": "Francesco.",
+          "start": 9.84,
+          "end": 10.82,
+          "probability": 0.9310015738010406
+        }
+      ]
+    },
+    {
+      "start": 11.84,
+      "end": 15.28,
+      "text": "Long before crowds knew his name, he learned to pray.",
+      "words": [
+        {
+          "word": "Long",
+          "start": 11.84,
+          "end": 12.44,
+          "probability": 0.9744267463684082
+        },
+        {
+          "word": "before",
+          "start": 12.44,
+          "end": 12.8,
+          "probability": 0.996136486530304
+        },
+        {
+          "word": "crowds",
+          "start": 12.8,
+          "end": 13.24,
+          "probability": 0.6868448853492737
+        },
+        {
+          "word": "knew",
+          "start": 13.24,
+          "end": 13.5,
+          "probability": 0.9879921674728394
+        },
+        {
+          "word": "his",
+          "start": 13.5,
+          "end": 13.68,
+          "probability": 0.9967300891876221
+        },
+        {
+          "word": "name,",
+          "start": 13.68,
+          "end": 14.0,
+          "probability": 0.9994726777076721
+        },
+        {
+          "word": "he",
+          "start": 14.46,
+          "end": 14.52,
+          "probability": 0.995689332485199
+        },
+        {
+          "word": "learned",
+          "start": 14.52,
+          "end": 14.72,
+          "probability": 0.9863815307617188
+        },
+        {
+          "word": "to",
+          "start": 14.72,
+          "end": 14.94,
+          "probability": 0.9994338154792786
+        },
+        {
+          "word": "pray.",
+          "start": 14.94,
+          "end": 15.28,
+          "probability": 0.9903720617294312
+        }
+      ]
+    },
+    {
+      "start": 16.58,
+      "end": 19.78,
+      "text": "Prayer was not a trick for getting everything he wanted.",
+      "words": [
+        {
+          "word": "Prayer",
+          "start": 16.58,
+          "end": 17.02,
+          "probability": 0.6626117825508118
+        },
+        {
+          "word": "was",
+          "start": 17.02,
+          "end": 17.38,
+          "probability": 0.998494029045105
+        },
+        {
+          "word": "not",
+          "start": 17.38,
+          "end": 17.66,
+          "probability": 0.9995102882385254
+        },
+        {
+          "word": "a",
+          "start": 17.66,
+          "end": 17.82,
+          "probability": 0.9983410835266113
+        },
+        {
+          "word": "trick",
+          "start": 17.82,
+          "end": 18.08,
+          "probability": 0.998907208442688
+        },
+        {
+          "word": "for",
+          "start": 18.08,
+          "end": 18.36,
+          "probability": 0.9938761591911316
+        },
+        {
+          "word": "getting",
+          "start": 18.36,
+          "end": 18.64,
+          "probability": 0.9985054731369019
+        },
+        {
+          "word": "everything",
+          "start": 18.64,
+          "end": 19.2,
+          "probability": 0.9974263310432434
+        },
+        {
+          "word": "he",
+          "start": 19.2,
+          "end": 19.5,
+          "probability": 0.9976266026496887
+        },
+        {
+          "word": "wanted.",
+          "start": 19.5,
+          "end": 19.78,
+          "probability": 0.9995129108428955
+        }
+      ]
+    },
+    {
+      "start": 21.28,
+      "end": 23.9,
+      "text": "It was a way to bring his whole life before God.",
+      "words": [
+        {
+          "word": "It",
+          "start": 21.28,
+          "end": 21.52,
+          "probability": 0.9963362216949463
+        },
+        {
+          "word": "was",
+          "start": 21.52,
+          "end": 21.62,
+          "probability": 0.9996540546417236
+        },
+        {
+          "word": "a",
+          "start": 21.62,
+          "end": 21.72,
+          "probability": 0.9986157417297363
+        },
+        {
+          "word": "way",
+          "start": 21.72,
+          "end": 21.9,
+          "probability": 0.9997420907020569
+        },
+        {
+          "word": "to",
+          "start": 21.9,
+          "end": 22.08,
+          "probability": 0.9982719421386719
+        },
+        {
+          "word": "bring",
+          "start": 22.08,
+          "end": 22.26,
+          "probability": 0.9992210865020752
+        },
+        {
+          "word": "his",
+          "start": 22.26,
+          "end": 22.44,
+          "probability": 0.9976354837417603
+        },
+        {
+          "word": "whole",
+          "start": 22.44,
+          "end": 22.66,
+          "probability": 0.9935076236724854
+        },
+        {
+          "word": "life",
+          "start": 22.66,
+          "end": 23.08,
+          "probability": 0.9997135996818542
+        },
+        {
+          "word": "before",
+          "start": 23.08,
+          "end": 23.5,
+          "probability": 0.9983742237091064
+        },
+        {
+          "word": "God.",
+          "start": 23.5,
+          "end": 23.9,
+          "probability": 0.9888256192207336
+        }
+      ]
+    },
+    {
+      "start": 24.8,
+      "end": 28.16,
+      "text": "Imagine the road out of his village on a winter morning.",
+      "words": [
+        {
+          "word": "Imagine",
+          "start": 24.8,
+          "end": 25.4,
+          "probability": 0.9921218156814575
+        },
+        {
+          "word": "the",
+          "start": 25.4,
+          "end": 25.8,
+          "probability": 0.9977384805679321
+        },
+        {
+          "word": "road",
+          "start": 25.8,
+          "end": 26.08,
+          "probability": 0.9983164072036743
+        },
+        {
+          "word": "out",
+          "start": 26.08,
+          "end": 26.36,
+          "probability": 0.9971895813941956
+        },
+        {
+          "word": "of",
+          "start": 26.36,
+          "end": 26.48,
+          "probability": 0.9973124265670776
+        },
+        {
+          "word": "his",
+          "start": 26.48,
+          "end": 26.6,
+          "probability": 0.9890991449356079
+        },
+        {
+          "word": "village",
+          "start": 26.6,
+          "end": 26.92,
+          "probability": 0.9956275224685669
+        },
+        {
+          "word": "on",
+          "start": 26.92,
+          "end": 27.42,
+          "probability": 0.9782739281654358
+        },
+        {
+          "word": "a",
+          "start": 27.42,
+          "end": 27.48,
+          "probability": 0.9970314502716064
+        },
+        {
+          "word": "winter",
+          "start": 27.48,
+          "end": 27.7,
+          "probability": 0.9873673915863037
+        },
+        {
+          "word": "morning.",
+          "start": 27.7,
+          "end": 28.16,
+          "probability": 0.9952658414840698
+        }
+      ]
+    },
+    {
+      "start": 29.16,
+      "end": 34.06,
+      "text": "At 16, Francesco left home and entered the Capuchin friars.",
+      "words": [
+        {
+          "word": "At",
+          "start": 29.16,
+          "end": 29.8,
+          "probability": 0.2746013104915619
+        },
+        {
+          "word": "16,",
+          "start": 29.8,
+          "end": 30.1,
+          "probability": 0.9651654362678528
+        },
+        {
+          "word": "Francesco",
+          "start": 30.84,
+          "end": 31.56,
+          "probability": 0.9323333203792572
+        },
+        {
+          "word": "left",
+          "start": 31.56,
+          "end": 31.8,
+          "probability": 0.9972781538963318
+        },
+        {
+          "word": "home",
+          "start": 31.8,
+          "end": 32.14,
+          "probability": 0.997787356376648
+        },
+        {
+          "word": "and",
+          "start": 32.14,
+          "end": 32.44,
+          "probability": 0.9880025386810303
+        },
+        {
+          "word": "entered",
+          "start": 32.44,
+          "end": 32.8,
+          "probability": 0.998330295085907
+        },
+        {
+          "word": "the",
+          "start": 32.8,
+          "end": 32.94,
+          "probability": 0.9967137575149536
+        },
+        {
+          "word": "Capuchin",
+          "start": 32.94,
+          "end": 33.38,
+          "probability": 0.8569697737693787
+        },
+        {
+          "word": "friars.",
+          "start": 33.38,
+          "end": 34.06,
+          "probability": 0.6471324861049652
+        }
+      ]
+    },
+    {
+      "start": 35.38,
+      "end": 37.74,
+      "text": "He received a new name, Brother Pio.",
+      "words": [
+        {
+          "word": "He",
+          "start": 35.38,
+          "end": 35.56,
+          "probability": 0.9784441590309143
+        },
+        {
+          "word": "received",
+          "start": 35.56,
+          "end": 35.84,
+          "probability": 0.9980024695396423
+        },
+        {
+          "word": "a",
+          "start": 35.84,
+          "end": 36.1,
+          "probability": 0.9976237416267395
+        },
+        {
+          "word": "new",
+          "start": 36.1,
+          "end": 36.26,
+          "probability": 0.9964616894721985
+        },
+        {
+          "word": "name,",
+          "start": 36.26,
+          "end": 36.58,
+          "probability": 0.998877227306366
+        },
+        {
+          "word": "Brother",
+          "start": 36.92,
+          "end": 37.18,
+          "probability": 0.8742411732673645
+        },
+        {
+          "word": "Pio.",
+          "start": 37.18,
+          "end": 37.74,
+          "probability": 0.7140899002552032
+        }
+      ]
+    },
+    {
+      "start": 38.84,
+      "end": 44.66,
+      "text": "The brothers followed St. Francis, seeking a simple life of prayer, poverty and service.",
+      "words": [
+        {
+          "word": "The",
+          "start": 38.84,
+          "end": 39.32,
+          "probability": 0.9894863367080688
+        },
+        {
+          "word": "brothers",
+          "start": 39.32,
+          "end": 39.54,
+          "probability": 0.9823709726333618
+        },
+        {
+          "word": "followed",
+          "start": 39.54,
+          "end": 40.12,
+          "probability": 0.9980066418647766
+        },
+        {
+          "word": "St.",
+          "start": 40.12,
+          "end": 40.34,
+          "probability": 0.708655595779419
+        },
+        {
+          "word": "Francis,",
+          "start": 40.66,
+          "end": 40.8,
+          "probability": 0.9894692897796631
+        },
+        {
+          "word": "seeking",
+          "start": 41.5,
+          "end": 41.66,
+          "probability": 0.9989547729492188
+        },
+        {
+          "word": "a",
+          "start": 41.66,
+          "end": 41.98,
+          "probability": 0.9980626702308655
+        },
+        {
+          "word": "simple",
+          "start": 41.98,
+          "end": 42.22,
+          "probability": 0.9951430559158325
+        },
+        {
+          "word": "life",
+          "start": 42.22,
+          "end": 42.66,
+          "probability": 0.9991623163223267
+        },
+        {
+          "word": "of",
+          "start": 42.66,
+          "end": 42.84,
+          "probability": 0.9988090991973877
+        },
+        {
+          "word": "prayer,",
+          "start": 42.84,
+          "end": 43.1,
+          "probability": 0.9926046133041382
+        },
+        {
+          "word": "poverty",
+          "start": 43.68,
+          "end": 43.94,
+          "probability": 0.9989027976989746
+        },
+        {
+          "word": "and",
+          "start": 43.94,
+          "end": 44.28,
+          "probability": 0.4485305845737457
+        },
+        {
+          "word": "service.",
+          "start": 44.28,
+          "end": 44.66,
+          "probability": 0.9994161128997803
+        }
+      ]
+    },
+    {
+      "start": 45.9,
+      "end": 47.88,
+      "text": "A new name did not make his path easy.",
+      "words": [
+        {
+          "word": "A",
+          "start": 45.9,
+          "end": 46.04,
+          "probability": 0.9943318367004395
+        },
+        {
+          "word": "new",
+          "start": 46.04,
+          "end": 46.18,
+          "probability": 0.9991312623023987
+        },
+        {
+          "word": "name",
+          "start": 46.18,
+          "end": 46.52,
+          "probability": 0.9996668100357056
+        },
+        {
+          "word": "did",
+          "start": 46.52,
+          "end": 46.7,
+          "probability": 0.9901662468910217
+        },
+        {
+          "word": "not",
+          "start": 46.7,
+          "end": 46.88,
+          "probability": 0.9998331069946289
+        },
+        {
+          "word": "make",
+          "start": 46.88,
+          "end": 47.08,
+          "probability": 0.998683512210846
+        },
+        {
+          "word": "his",
+          "start": 47.08,
+          "end": 47.24,
+          "probability": 0.996970534324646
+        },
+        {
+          "word": "path",
+          "start": 47.24,
+          "end": 47.54,
+          "probability": 0.9958447813987732
+        },
+        {
+          "word": "easy.",
+          "start": 47.54,
+          "end": 47.88,
+          "probability": 0.9963588118553162
+        }
+      ]
+    },
+    {
+      "start": 49.3,
+      "end": 55.92,
+      "text": "Picture a young friar in a plain brown habit, rising to pray while the village outside was still dark.",
+      "words": [
+        {
+          "word": "Picture",
+          "start": 49.3,
+          "end": 49.86,
+          "probability": 0.9629775285720825
+        },
+        {
+          "word": "a",
+          "start": 49.86,
+          "end": 50.08,
+          "probability": 0.9980922341346741
+        },
+        {
+          "word": "young",
+          "start": 50.08,
+          "end": 50.28,
+          "probability": 0.9986101388931274
+        },
+        {
+          "word": "friar",
+          "start": 50.28,
+          "end": 50.92,
+          "probability": 0.9882494807243347
+        },
+        {
+          "word": "in",
+          "start": 50.92,
+          "end": 51.02,
+          "probability": 0.9712285995483398
+        },
+        {
+          "word": "a",
+          "start": 51.02,
+          "end": 51.1,
+          "probability": 0.9959014058113098
+        },
+        {
+          "word": "plain",
+          "start": 51.1,
+          "end": 51.34,
+          "probability": 0.9962316155433655
+        },
+        {
+          "word": "brown",
+          "start": 51.34,
+          "end": 51.76,
+          "probability": 0.7456943392753601
+        },
+        {
+          "word": "habit,",
+          "start": 51.76,
+          "end": 52.22,
+          "probability": 0.9914275407791138
+        },
+        {
+          "word": "rising",
+          "start": 52.7,
+          "end": 53.06,
+          "probability": 0.9975206255912781
+        },
+        {
+          "word": "to",
+          "start": 53.06,
+          "end": 53.38,
+          "probability": 0.999275267124176
+        },
+        {
+          "word": "pray",
+          "start": 53.38,
+          "end": 53.62,
+          "probability": 0.9449484348297119
+        },
+        {
+          "word": "while",
+          "start": 53.62,
+          "end": 54.04,
+          "probability": 0.9546338319778442
+        },
+        {
+          "word": "the",
+          "start": 54.04,
+          "end": 54.16,
+          "probability": 0.9979581832885742
+        },
+        {
+          "word": "village",
+          "start": 54.16,
+          "end": 54.46,
+          "probability": 0.9939814209938049
+        },
+        {
+          "word": "outside",
+          "start": 54.46,
+          "end": 54.72,
+          "probability": 0.9986459612846375
+        },
+        {
+          "word": "was",
+          "start": 54.72,
+          "end": 55.34,
+          "probability": 0.9951596856117249
+        },
+        {
+          "word": "still",
+          "start": 55.34,
+          "end": 55.6,
+          "probability": 0.9997729659080505
+        },
+        {
+          "word": "dark.",
+          "start": 55.6,
+          "end": 55.92,
+          "probability": 0.9994825124740601
+        }
+      ]
+    },
+    {
+      "start": 56.94,
+      "end": 59.2,
+      "text": "There were no crowds to cheer him on.",
+      "words": [
+        {
+          "word": "There",
+          "start": 56.94,
+          "end": 57.54,
+          "probability": 0.42751723527908325
+        },
+        {
+          "word": "were",
+          "start": 57.54,
+          "end": 57.64,
+          "probability": 0.047159384936094284
+        },
+        {
+          "word": "no",
+          "start": 57.64,
+          "end": 57.84,
+          "probability": 0.9984143972396851
+        },
+        {
+          "word": "crowds",
+          "start": 57.84,
+          "end": 58.16,
+          "probability": 0.9982841610908508
+        },
+        {
+          "word": "to",
+          "start": 58.16,
+          "end": 58.56,
+          "probability": 0.9991389513015747
+        },
+        {
+          "word": "cheer",
+          "start": 58.56,
+          "end": 58.8,
+          "probability": 0.997209370136261
+        },
+        {
+          "word": "him",
+          "start": 58.8,
+          "end": 59.0,
+          "probability": 0.947775661945343
+        },
+        {
+          "word": "on.",
+          "start": 59.0,
+          "end": 59.2,
+          "probability": 0.999036431312561
+        }
+      ]
+    },
+    {
+      "start": 60.36,
+      "end": 64.92,
+      "text": "There was work to learn and a promise to keep day after ordinary day.",
+      "words": [
+        {
+          "word": "There",
+          "start": 60.36,
+          "end": 60.8,
+          "probability": 0.28158143162727356
+        },
+        {
+          "word": "was",
+          "start": 60.8,
+          "end": 60.9,
+          "probability": 0.9988008737564087
+        },
+        {
+          "word": "work",
+          "start": 60.9,
+          "end": 61.12,
+          "probability": 0.9992294311523438
+        },
+        {
+          "word": "to",
+          "start": 61.12,
+          "end": 61.3,
+          "probability": 0.9993398785591125
+        },
+        {
+          "word": "learn",
+          "start": 61.3,
+          "end": 61.6,
+          "probability": 0.9995781779289246
+        },
+        {
+          "word": "and",
+          "start": 61.6,
+          "end": 61.9,
+          "probability": 0.9540063142776489
+        },
+        {
+          "word": "a",
+          "start": 61.9,
+          "end": 61.98,
+          "probability": 0.9876806735992432
+        },
+        {
+          "word": "promise",
+          "start": 61.98,
+          "end": 62.3,
+          "probability": 0.9997100234031677
+        },
+        {
+          "word": "to",
+          "start": 62.3,
+          "end": 62.54,
+          "probability": 0.9977703094482422
+        },
+        {
+          "word": "keep",
+          "start": 62.54,
+          "end": 62.78,
+          "probability": 0.9994211196899414
+        },
+        {
+          "word": "day",
+          "start": 62.78,
+          "end": 63.5,
+          "probability": 0.8490291237831116
+        },
+        {
+          "word": "after",
+          "start": 63.5,
+          "end": 63.96,
+          "probability": 0.9881932139396667
+        },
+        {
+          "word": "ordinary",
+          "start": 63.96,
+          "end": 64.3,
+          "probability": 0.9890457987785339
+        },
+        {
+          "word": "day.",
+          "start": 64.3,
+          "end": 64.92,
+          "probability": 0.9990805387496948
+        }
+      ]
+    },
+    {
+      "start": 66.02,
+      "end": 70.98,
+      "text": "His new name marked the beginning of years of learning to give his life to God.",
+      "words": [
+        {
+          "word": "His",
+          "start": 66.02,
+          "end": 66.56,
+          "probability": 0.9970237612724304
+        },
+        {
+          "word": "new",
+          "start": 66.56,
+          "end": 66.76,
+          "probability": 0.9979327917098999
+        },
+        {
+          "word": "name",
+          "start": 66.76,
+          "end": 67.14,
+          "probability": 0.997639536857605
+        },
+        {
+          "word": "marked",
+          "start": 67.14,
+          "end": 67.54,
+          "probability": 0.9870581030845642
+        },
+        {
+          "word": "the",
+          "start": 67.54,
+          "end": 67.8,
+          "probability": 0.9979912042617798
+        },
+        {
+          "word": "beginning",
+          "start": 67.8,
+          "end": 68.14,
+          "probability": 0.9974880218505859
+        },
+        {
+          "word": "of",
+          "start": 68.14,
+          "end": 68.42,
+          "probability": 0.997136116027832
+        },
+        {
+          "word": "years",
+          "start": 68.42,
+          "end": 68.64,
+          "probability": 0.9905576705932617
+        },
+        {
+          "word": "of",
+          "start": 68.64,
+          "end": 68.94,
+          "probability": 0.9986322522163391
+        },
+        {
+          "word": "learning",
+          "start": 68.94,
+          "end": 69.24,
+          "probability": 0.9991744160652161
+        },
+        {
+          "word": "to",
+          "start": 69.24,
+          "end": 69.84,
+          "probability": 0.8709381222724915
+        },
+        {
+          "word": "give",
+          "start": 69.84,
+          "end": 70.04,
+          "probability": 0.998479425907135
+        },
+        {
+          "word": "his",
+          "start": 70.04,
+          "end": 70.2,
+          "probability": 0.9685922265052795
+        },
+        {
+          "word": "life",
+          "start": 70.2,
+          "end": 70.42,
+          "probability": 0.9997119307518005
+        },
+        {
+          "word": "to",
+          "start": 70.42,
+          "end": 70.7,
+          "probability": 0.9995723366737366
+        },
+        {
+          "word": "God.",
+          "start": 70.7,
+          "end": 70.98,
+          "probability": 0.9951553344726562
+        }
+      ]
+    },
+    {
+      "start": 72.1,
+      "end": 77.48,
+      "text": "He became a priest in 1910, but poor health interrupted his plans.",
+      "words": [
+        {
+          "word": "He",
+          "start": 72.1,
+          "end": 72.38,
+          "probability": 0.9942197799682617
+        },
+        {
+          "word": "became",
+          "start": 72.38,
+          "end": 72.62,
+          "probability": 0.9974525570869446
+        },
+        {
+          "word": "a",
+          "start": 72.62,
+          "end": 72.82,
+          "probability": 0.9981777667999268
+        },
+        {
+          "word": "priest",
+          "start": 72.82,
+          "end": 73.08,
+          "probability": 0.9828270673751831
+        },
+        {
+          "word": "in",
+          "start": 73.08,
+          "end": 73.42,
+          "probability": 0.998357355594635
+        },
+        {
+          "word": "1910,",
+          "start": 73.42,
+          "end": 74.06,
+          "probability": 0.9994169473648071
+        },
+        {
+          "word": "but",
+          "start": 75.58,
+          "end": 75.8,
+          "probability": 0.9942333102226257
+        },
+        {
+          "word": "poor",
+          "start": 75.8,
+          "end": 76.0,
+          "probability": 0.9947556257247925
+        },
+        {
+          "word": "health",
+          "start": 76.0,
+          "end": 76.36,
+          "probability": 0.991510272026062
+        },
+        {
+          "word": "interrupted",
+          "start": 76.36,
+          "end": 76.74,
+          "probability": 0.9978540539741516
+        },
+        {
+          "word": "his",
+          "start": 76.74,
+          "end": 77.18,
+          "probability": 0.9947121143341064
+        },
+        {
+          "word": "plans.",
+          "start": 77.18,
+          "end": 77.48,
+          "probability": 0.9982806444168091
+        }
+      ]
+    },
+    {
+      "start": 78.9,
+      "end": 82.12,
+      "text": "For years, he stayed near his family while he recovered.",
+      "words": [
+        {
+          "word": "For",
+          "start": 78.9,
+          "end": 79.34,
+          "probability": 0.927605152130127
+        },
+        {
+          "word": "years,",
+          "start": 79.34,
+          "end": 79.62,
+          "probability": 0.9998533725738525
+        },
+        {
+          "word": "he",
+          "start": 80.08,
+          "end": 80.18,
+          "probability": 0.9899437427520752
+        },
+        {
+          "word": "stayed",
+          "start": 80.18,
+          "end": 80.38,
+          "probability": 0.9986104965209961
+        },
+        {
+          "word": "near",
+          "start": 80.38,
+          "end": 80.72,
+          "probability": 0.9987342953681946
+        },
+        {
+          "word": "his",
+          "start": 80.72,
+          "end": 80.92,
+          "probability": 0.9970851540565491
+        },
+        {
+          "word": "family",
+          "start": 80.92,
+          "end": 81.26,
+          "probability": 0.9998218417167664
+        },
+        {
+          "word": "while",
+          "start": 81.26,
+          "end": 81.7,
+          "probability": 0.9919347763061523
+        },
+        {
+          "word": "he",
+          "start": 81.7,
+          "end": 81.88,
+          "probability": 0.9988248944282532
+        },
+        {
+          "word": "recovered.",
+          "start": 81.88,
+          "end": 82.12,
+          "probability": 0.9992846846580505
+        }
+      ]
+    },
+    {
+      "start": 83.38,
+      "end": 87.28,
+      "text": "When you are sick, even an ordinary day can feel long.",
+      "words": [
+        {
+          "word": "When",
+          "start": 83.38,
+          "end": 83.96,
+          "probability": 0.4560640752315521
+        },
+        {
+          "word": "you",
+          "start": 83.96,
+          "end": 84.16,
+          "probability": 0.9631593227386475
+        },
+        {
+          "word": "are",
+          "start": 84.16,
+          "end": 84.3,
+          "probability": 0.9856390357017517
+        },
+        {
+          "word": "sick,",
+          "start": 84.3,
+          "end": 84.6,
+          "probability": 0.9991520643234253
+        },
+        {
+          "word": "even",
+          "start": 84.98,
+          "end": 85.3,
+          "probability": 0.9962450861930847
+        },
+        {
+          "word": "an",
+          "start": 85.3,
+          "end": 85.46,
+          "probability": 0.9938861727714539
+        },
+        {
+          "word": "ordinary",
+          "start": 85.46,
+          "end": 85.76,
+          "probability": 0.994838297367096
+        },
+        {
+          "word": "day",
+          "start": 85.76,
+          "end": 86.38,
+          "probability": 0.9997064471244812
+        },
+        {
+          "word": "can",
+          "start": 86.38,
+          "end": 86.66,
+          "probability": 0.9936580061912537
+        },
+        {
+          "word": "feel",
+          "start": 86.66,
+          "end": 86.9,
+          "probability": 0.9951162338256836
+        },
+        {
+          "word": "long.",
+          "start": 86.9,
+          "end": 87.28,
+          "probability": 0.9956831932067871
+        }
+      ]
+    },
+    {
+      "start": 88.82,
+      "end": 93.3,
+      "text": "It would be easy to think a life of service has to wait until you are strong.",
+      "words": [
+        {
+          "word": "It",
+          "start": 88.82,
+          "end": 88.92,
+          "probability": 0.9717176556587219
+        },
+        {
+          "word": "would",
+          "start": 88.92,
+          "end": 89.02,
+          "probability": 0.9973272085189819
+        },
+        {
+          "word": "be",
+          "start": 89.02,
+          "end": 89.16,
+          "probability": 0.9983400106430054
+        },
+        {
+          "word": "easy",
+          "start": 89.16,
+          "end": 89.56,
+          "probability": 0.9973406195640564
+        },
+        {
+          "word": "to",
+          "start": 89.56,
+          "end": 89.72,
+          "probability": 0.9982587695121765
+        },
+        {
+          "word": "think",
+          "start": 89.72,
+          "end": 89.92,
+          "probability": 0.9986482262611389
+        },
+        {
+          "word": "a",
+          "start": 89.92,
+          "end": 90.08,
+          "probability": 0.986922025680542
+        },
+        {
+          "word": "life",
+          "start": 90.08,
+          "end": 90.3,
+          "probability": 0.9962018132209778
+        },
+        {
+          "word": "of",
+          "start": 90.3,
+          "end": 90.5,
+          "probability": 0.9935159683227539
+        },
+        {
+          "word": "service",
+          "start": 90.5,
+          "end": 90.9,
+          "probability": 0.99874347448349
+        },
+        {
+          "word": "has",
+          "start": 90.9,
+          "end": 91.42,
+          "probability": 0.9921121597290039
+        },
+        {
+          "word": "to",
+          "start": 91.42,
+          "end": 91.62,
+          "probability": 0.9991565942764282
+        },
+        {
+          "word": "wait",
+          "start": 91.62,
+          "end": 91.88,
+          "probability": 0.9987012147903442
+        },
+        {
+          "word": "until",
+          "start": 91.88,
+          "end": 92.44,
+          "probability": 0.9833834767341614
+        },
+        {
+          "word": "you",
+          "start": 92.44,
+          "end": 92.74,
+          "probability": 0.9994593262672424
+        },
+        {
+          "word": "are",
+          "start": 92.74,
+          "end": 92.88,
+          "probability": 0.9960951209068298
+        },
+        {
+          "word": "strong.",
+          "start": 92.88,
+          "end": 93.3,
+          "probability": 0.9992024302482605
+        }
+      ]
+    },
+    {
+      "start": 94.7,
+      "end": 97.02,
+      "text": "Brother Pio kept praying through those years.",
+      "words": [
+        {
+          "word": "Brother",
+          "start": 94.7,
+          "end": 95.1,
+          "probability": 0.979310929775238
+        },
+        {
+          "word": "Pio",
+          "start": 95.1,
+          "end": 95.54,
+          "probability": 0.4339436888694763
+        },
+        {
+          "word": "kept",
+          "start": 95.54,
+          "end": 95.76,
+          "probability": 0.99610435962677
+        },
+        {
+          "word": "praying",
+          "start": 95.76,
+          "end": 96.12,
+          "probability": 0.9716875553131104
+        },
+        {
+          "word": "through",
+          "start": 96.12,
+          "end": 96.46,
+          "probability": 0.9948912858963013
+        },
+        {
+          "word": "those",
+          "start": 96.46,
+          "end": 96.72,
+          "probability": 0.9930364489555359
+        },
+        {
+          "word": "years.",
+          "start": 96.72,
+          "end": 97.02,
+          "probability": 0.9990208148956299
+        }
+      ]
+    },
+    {
+      "start": 98.06,
+      "end": 102.12,
+      "text": "In 1916, he went to the friary at San Giovanni Rotondo.",
+      "words": [
+        {
+          "word": "In",
+          "start": 98.06,
+          "end": 98.44,
+          "probability": 0.992131769657135
+        },
+        {
+          "word": "1916,",
+          "start": 98.44,
+          "end": 99.1,
+          "probability": 0.9986481070518494
+        },
+        {
+          "word": "he",
+          "start": 99.98,
+          "end": 100.16,
+          "probability": 0.9921203851699829
+        },
+        {
+          "word": "went",
+          "start": 100.16,
+          "end": 100.32,
+          "probability": 0.99813312292099
+        },
+        {
+          "word": "to",
+          "start": 100.32,
+          "end": 100.44,
+          "probability": 0.9976992011070251
+        },
+        {
+          "word": "the",
+          "start": 100.44,
+          "end": 100.54,
+          "probability": 0.9969536066055298
+        },
+        {
+          "word": "friary",
+          "start": 100.54,
+          "end": 101.06,
+          "probability": 0.5947825908660889
+        },
+        {
+          "word": "at",
+          "start": 101.06,
+          "end": 101.3,
+          "probability": 0.9935903549194336
+        },
+        {
+          "word": "San",
+          "start": 101.3,
+          "end": 101.56,
+          "probability": 0.9627674221992493
+        },
+        {
+          "word": "Giovanni",
+          "start": 101.56,
+          "end": 101.8,
+          "probability": 0.8885731101036072
+        },
+        {
+          "word": "Rotondo.",
+          "start": 101.8,
+          "end": 102.12,
+          "probability": 0.740194171667099
+        }
+      ]
+    },
+    {
+      "start": 103.82000000000001,
+      "end": 105.9,
+      "text": "He would live there until his death.",
+      "words": [
+        {
+          "word": "He",
+          "start": 103.82000000000001,
+          "end": 104.4,
+          "probability": 0.9962847232818604
+        },
+        {
+          "word": "would",
+          "start": 104.4,
+          "end": 104.52,
+          "probability": 0.9977184534072876
+        },
+        {
+          "word": "live",
+          "start": 104.52,
+          "end": 104.76,
+          "probability": 0.993489146232605
+        },
+        {
+          "word": "there",
+          "start": 104.76,
+          "end": 105.04,
+          "probability": 0.9990637898445129
+        },
+        {
+          "word": "until",
+          "start": 105.04,
+          "end": 105.32,
+          "probability": 0.990704357624054
+        },
+        {
+          "word": "his",
+          "start": 105.32,
+          "end": 105.62,
+          "probability": 0.9988686442375183
+        },
+        {
+          "word": "death.",
+          "start": 105.62,
+          "end": 105.9,
+          "probability": 0.9994984865188599
+        }
+      ]
+    },
+    {
+      "start": 106.98,
+      "end": 112.66,
+      "text": "On the road to the friary, no one could have guessed how many footsteps would later follow his.",
+      "words": [
+        {
+          "word": "On",
+          "start": 106.98,
+          "end": 107.54,
+          "probability": 0.363300621509552
+        },
+        {
+          "word": "the",
+          "start": 107.54,
+          "end": 107.66,
+          "probability": 0.9964152574539185
+        },
+        {
+          "word": "road",
+          "start": 107.66,
+          "end": 107.86,
+          "probability": 0.9962833523750305
+        },
+        {
+          "word": "to",
+          "start": 107.86,
+          "end": 108.12,
+          "probability": 0.9978833794593811
+        },
+        {
+          "word": "the",
+          "start": 108.12,
+          "end": 108.2,
+          "probability": 0.9966614246368408
+        },
+        {
+          "word": "friary,",
+          "start": 108.2,
+          "end": 108.8,
+          "probability": 0.6923256367444992
+        },
+        {
+          "word": "no",
+          "start": 109.24,
+          "end": 109.46,
+          "probability": 0.9895535707473755
+        },
+        {
+          "word": "one",
+          "start": 109.46,
+          "end": 109.7,
+          "probability": 0.9838097095489502
+        },
+        {
+          "word": "could",
+          "start": 109.7,
+          "end": 109.88,
+          "probability": 0.9971097111701965
+        },
+        {
+          "word": "have",
+          "start": 109.88,
+          "end": 109.98,
+          "probability": 0.9352124929428101
+        },
+        {
+          "word": "guessed",
+          "start": 109.98,
+          "end": 110.2,
+          "probability": 0.9862993359565735
+        },
+        {
+          "word": "how",
+          "start": 110.2,
+          "end": 110.56,
+          "probability": 0.997462272644043
+        },
+        {
+          "word": "many",
+          "start": 110.56,
+          "end": 110.72,
+          "probability": 0.9992074370384216
+        },
+        {
+          "word": "footsteps",
+          "start": 110.72,
+          "end": 111.14,
+          "probability": 0.981113076210022
+        },
+        {
+          "word": "would",
+          "start": 111.14,
+          "end": 111.6,
+          "probability": 0.9957864880561829
+        },
+        {
+          "word": "later",
+          "start": 111.6,
+          "end": 111.8,
+          "probability": 0.9949906468391418
+        },
+        {
+          "word": "follow",
+          "start": 111.8,
+          "end": 112.38,
+          "probability": 0.9975245594978333
+        },
+        {
+          "word": "his.",
+          "start": 112.38,
+          "end": 112.66,
+          "probability": 0.8847732543945312
+        }
+      ]
+    },
+    {
+      "start": 114.2,
+      "end": 117.52,
+      "text": "Behind each pair of footsteps would be a person with a story.",
+      "words": [
+        {
+          "word": "Behind",
+          "start": 114.2,
+          "end": 114.52,
+          "probability": 0.8123961687088013
+        },
+        {
+          "word": "each",
+          "start": 114.52,
+          "end": 114.9,
+          "probability": 0.9964549541473389
+        },
+        {
+          "word": "pair",
+          "start": 114.9,
+          "end": 115.24,
+          "probability": 0.9992783665657043
+        },
+        {
+          "word": "of",
+          "start": 115.24,
+          "end": 115.38,
+          "probability": 0.9985802173614502
+        },
+        {
+          "word": "footsteps",
+          "start": 115.38,
+          "end": 115.78,
+          "probability": 0.9885916113853455
+        },
+        {
+          "word": "would",
+          "start": 115.78,
+          "end": 116.26,
+          "probability": 0.9855068922042847
+        },
+        {
+          "word": "be",
+          "start": 116.26,
+          "end": 116.4,
+          "probability": 0.999372661113739
+        },
+        {
+          "word": "a",
+          "start": 116.4,
+          "end": 116.52,
+          "probability": 0.9985464215278625
+        },
+        {
+          "word": "person",
+          "start": 116.52,
+          "end": 116.92,
+          "probability": 0.9979257583618164
+        },
+        {
+          "word": "with",
+          "start": 116.92,
+          "end": 117.12,
+          "probability": 0.9983810186386108
+        },
+        {
+          "word": "a",
+          "start": 117.12,
+          "end": 117.24,
+          "probability": 0.9973574280738831
+        },
+        {
+          "word": "story.",
+          "start": 117.24,
+          "end": 117.52,
+          "probability": 0.9978387951850891
+        }
+      ]
+    },
+    {
+      "start": 119.16,
+      "end": 120.66,
+      "text": "Some would come hoping for comfort.",
+      "words": [
+        {
+          "word": "Some",
+          "start": 119.16,
+          "end": 119.38,
+          "probability": 0.9524993300437927
+        },
+        {
+          "word": "would",
+          "start": 119.38,
+          "end": 119.56,
+          "probability": 0.9976122379302979
+        },
+        {
+          "word": "come",
+          "start": 119.56,
+          "end": 119.72,
+          "probability": 0.997412383556366
+        },
+        {
+          "word": "hoping",
+          "start": 119.72,
+          "end": 120.04,
+          "probability": 0.9940033555030823
+        },
+        {
+          "word": "for",
+          "start": 120.04,
+          "end": 120.34,
+          "probability": 0.999240517616272
+        },
+        {
+          "word": "comfort.",
+          "start": 120.34,
+          "end": 120.66,
+          "probability": 0.9949178695678711
+        }
+      ]
+    },
+    {
+      "start": 122.2,
+      "end": 123.76,
+      "text": "Others would come carrying regret.",
+      "words": [
+        {
+          "word": "Others",
+          "start": 122.2,
+          "end": 122.54,
+          "probability": 0.9890131950378418
+        },
+        {
+          "word": "would",
+          "start": 122.54,
+          "end": 122.78,
+          "probability": 0.9977553486824036
+        },
+        {
+          "word": "come",
+          "start": 122.78,
+          "end": 123.0,
+          "probability": 0.9989234805107117
+        },
+        {
+          "word": "carrying",
+          "start": 123.0,
+          "end": 123.42,
+          "probability": 0.9929565191268921
+        },
+        {
+          "word": "regret.",
+          "start": 123.42,
+          "end": 123.76,
+          "probability": 0.996626615524292
+        }
+      ]
+    },
+    {
+      "start": 125.04,
+      "end": 128.34,
+      "text": "The people came slowly at first, then in great numbers.",
+      "words": [
+        {
+          "word": "The",
+          "start": 125.04,
+          "end": 125.22,
+          "probability": 0.9852679967880249
+        },
+        {
+          "word": "people",
+          "start": 125.22,
+          "end": 125.5,
+          "probability": 0.9991512298583984
+        },
+        {
+          "word": "came",
+          "start": 125.5,
+          "end": 125.74,
+          "probability": 0.9957245588302612
+        },
+        {
+          "word": "slowly",
+          "start": 125.74,
+          "end": 126.16,
+          "probability": 0.9984862208366394
+        },
+        {
+          "word": "at",
+          "start": 126.16,
+          "end": 126.48,
+          "probability": 0.9948952794075012
+        },
+        {
+          "word": "first,",
+          "start": 126.48,
+          "end": 126.72,
+          "probability": 0.9982842803001404
+        },
+        {
+          "word": "then",
+          "start": 127.36,
+          "end": 127.48,
+          "probability": 0.99726402759552
+        },
+        {
+          "word": "in",
+          "start": 127.48,
+          "end": 127.62,
+          "probability": 0.9953595995903015
+        },
+        {
+          "word": "great",
+          "start": 127.62,
+          "end": 127.88,
+          "probability": 0.9988821148872375
+        },
+        {
+          "word": "numbers.",
+          "start": 127.88,
+          "end": 128.34,
+          "probability": 0.9997269511222839
+        }
+      ]
+    },
+    {
+      "start": 129.6,
+      "end": 131.68,
+      "text": "Some were searching for a word of hope.",
+      "words": [
+        {
+          "word": "Some",
+          "start": 129.6,
+          "end": 130.16,
+          "probability": 0.9983622431755066
+        },
+        {
+          "word": "were",
+          "start": 130.16,
+          "end": 130.32,
+          "probability": 0.9961761236190796
+        },
+        {
+          "word": "searching",
+          "start": 130.32,
+          "end": 130.66,
+          "probability": 0.9996209144592285
+        },
+        {
+          "word": "for",
+          "start": 130.66,
+          "end": 130.96,
+          "probability": 0.9995119571685791
+        },
+        {
+          "word": "a",
+          "start": 130.96,
+          "end": 131.08,
+          "probability": 0.9977272152900696
+        },
+        {
+          "word": "word",
+          "start": 131.08,
+          "end": 131.28,
+          "probability": 0.9978906512260437
+        },
+        {
+          "word": "of",
+          "start": 131.28,
+          "end": 131.44,
+          "probability": 0.9992707371711731
+        },
+        {
+          "word": "hope.",
+          "start": 131.44,
+          "end": 131.68,
+          "probability": 0.9970229268074036
+        }
+      ]
+    },
+    {
+      "start": 132.78,
+      "end": 135.96,
+      "text": "Some wanted to turn away from things they had done wrong.",
+      "words": [
+        {
+          "word": "Some",
+          "start": 132.78,
+          "end": 133.38,
+          "probability": 0.16524076461791992
+        },
+        {
+          "word": "wanted",
+          "start": 133.38,
+          "end": 133.72,
+          "probability": 0.996117353439331
+        },
+        {
+          "word": "to",
+          "start": 133.72,
+          "end": 133.86,
+          "probability": 0.9983111619949341
+        },
+        {
+          "word": "turn",
+          "start": 133.86,
+          "end": 134.08,
+          "probability": 0.9974206686019897
+        },
+        {
+          "word": "away",
+          "start": 134.08,
+          "end": 134.36,
+          "probability": 0.9993574023246765
+        },
+        {
+          "word": "from",
+          "start": 134.36,
+          "end": 134.68,
+          "probability": 0.9985016584396362
+        },
+        {
+          "word": "things",
+          "start": 134.68,
+          "end": 134.98,
+          "probability": 0.9943774342536926
+        },
+        {
+          "word": "they",
+          "start": 134.98,
+          "end": 135.26,
+          "probability": 0.9938457608222961
+        },
+        {
+          "word": "had",
+          "start": 135.26,
+          "end": 135.38,
+          "probability": 0.9961755275726318
+        },
+        {
+          "word": "done",
+          "start": 135.38,
+          "end": 135.6,
+          "probability": 0.9994844198226929
+        },
+        {
+          "word": "wrong.",
+          "start": 135.6,
+          "end": 135.96,
+          "probability": 0.9996019005775452
+        }
+      ]
+    },
+    {
+      "start": 137.46,
+      "end": 142.16,
+      "text": "Padre P. spent long hours celebrating the Eucharist and hearing confessions.",
+      "words": [
+        {
+          "word": "Padre",
+          "start": 137.46,
+          "end": 137.84,
+          "probability": 0.9464650750160217
+        },
+        {
+          "word": "P.",
+          "start": 137.84,
+          "end": 138.06,
+          "probability": 0.7399629950523376
+        },
+        {
+          "word": "spent",
+          "start": 138.34,
+          "end": 138.62,
+          "probability": 0.9560090899467468
+        },
+        {
+          "word": "long",
+          "start": 138.62,
+          "end": 138.9,
+          "probability": 0.9986158609390259
+        },
+        {
+          "word": "hours",
+          "start": 138.9,
+          "end": 139.56,
+          "probability": 0.9984606504440308
+        },
+        {
+          "word": "celebrating",
+          "start": 139.56,
+          "end": 140.08,
+          "probability": 0.9887641668319702
+        },
+        {
+          "word": "the",
+          "start": 140.08,
+          "end": 140.48,
+          "probability": 0.9964064955711365
+        },
+        {
+          "word": "Eucharist",
+          "start": 140.48,
+          "end": 141.04,
+          "probability": 0.9489007989565531
+        },
+        {
+          "word": "and",
+          "start": 141.04,
+          "end": 141.28,
+          "probability": 0.9878661632537842
+        },
+        {
+          "word": "hearing",
+          "start": 141.28,
+          "end": 141.58,
+          "probability": 0.9975290894508362
+        },
+        {
+          "word": "confessions.",
+          "start": 141.58,
+          "end": 142.16,
+          "probability": 0.9291461110115051
+        }
+      ]
+    },
+    {
+      "start": 143.58,
+      "end": 147.68,
+      "text": "Imagine waiting in a line with a secret you are afraid to say aloud.",
+      "words": [
+        {
+          "word": "Imagine",
+          "start": 143.58,
+          "end": 144.18,
+          "probability": 0.987405002117157
+        },
+        {
+          "word": "waiting",
+          "start": 144.18,
+          "end": 144.66,
+          "probability": 0.9787551760673523
+        },
+        {
+          "word": "in",
+          "start": 144.66,
+          "end": 144.9,
+          "probability": 0.9974362254142761
+        },
+        {
+          "word": "a",
+          "start": 144.9,
+          "end": 144.98,
+          "probability": 0.9863873720169067
+        },
+        {
+          "word": "line",
+          "start": 144.98,
+          "end": 145.32,
+          "probability": 0.9982307553291321
+        },
+        {
+          "word": "with",
+          "start": 145.32,
+          "end": 145.76,
+          "probability": 0.9527669548988342
+        },
+        {
+          "word": "a",
+          "start": 145.76,
+          "end": 145.86,
+          "probability": 0.937538743019104
+        },
+        {
+          "word": "secret",
+          "start": 145.86,
+          "end": 146.22,
+          "probability": 0.9979795813560486
+        },
+        {
+          "word": "you",
+          "start": 146.22,
+          "end": 146.46,
+          "probability": 0.994941771030426
+        },
+        {
+          "word": "are",
+          "start": 146.46,
+          "end": 146.62,
+          "probability": 0.9929653406143188
+        },
+        {
+          "word": "afraid",
+          "start": 146.62,
+          "end": 146.9,
+          "probability": 0.998885452747345
+        },
+        {
+          "word": "to",
+          "start": 146.9,
+          "end": 147.16,
+          "probability": 0.9987196922302246
+        },
+        {
+          "word": "say",
+          "start": 147.16,
+          "end": 147.38,
+          "probability": 0.9953183531761169
+        },
+        {
+          "word": "aloud.",
+          "start": 147.38,
+          "end": 147.68,
+          "probability": 0.9716370701789856
+        }
+      ]
+    },
+    {
+      "start": 149.32,
+      "end": 151.94,
+      "text": "What that person needed was not a spectacle.",
+      "words": [
+        {
+          "word": "What",
+          "start": 149.32,
+          "end": 149.56,
+          "probability": 0.987069845199585
+        },
+        {
+          "word": "that",
+          "start": 149.56,
+          "end": 149.76,
+          "probability": 0.99383944272995
+        },
+        {
+          "word": "person",
+          "start": 149.76,
+          "end": 150.24,
+          "probability": 0.9985570311546326
+        },
+        {
+          "word": "needed",
+          "start": 150.24,
+          "end": 150.52,
+          "probability": 0.9989744424819946
+        },
+        {
+          "word": "was",
+          "start": 150.52,
+          "end": 151.18,
+          "probability": 0.9658064842224121
+        },
+        {
+          "word": "not",
+          "start": 151.18,
+          "end": 151.42,
+          "probability": 0.9994818568229675
+        },
+        {
+          "word": "a",
+          "start": 151.42,
+          "end": 151.52,
+          "probability": 0.9831750988960266
+        },
+        {
+          "word": "spectacle.",
+          "start": 151.52,
+          "end": 151.94,
+          "probability": 0.999233603477478
+        }
+      ]
+    },
+    {
+      "start": 153.22,
+      "end": 156.9,
+      "text": "They needed the mercy of Jesus and a priest willing to listen.",
+      "words": [
+        {
+          "word": "They",
+          "start": 153.22,
+          "end": 153.36,
+          "probability": 0.9962000250816345
+        },
+        {
+          "word": "needed",
+          "start": 153.36,
+          "end": 153.58,
+          "probability": 0.9947659969329834
+        },
+        {
+          "word": "the",
+          "start": 153.58,
+          "end": 153.84,
+          "probability": 0.9923269152641296
+        },
+        {
+          "word": "mercy",
+          "start": 153.84,
+          "end": 154.06,
+          "probability": 0.9967459440231323
+        },
+        {
+          "word": "of",
+          "start": 154.06,
+          "end": 154.4,
+          "probability": 0.9992464780807495
+        },
+        {
+          "word": "Jesus",
+          "start": 154.4,
+          "end": 154.72,
+          "probability": 0.992235004901886
+        },
+        {
+          "word": "and",
+          "start": 154.72,
+          "end": 155.54,
+          "probability": 0.862028956413269
+        },
+        {
+          "word": "a",
+          "start": 155.54,
+          "end": 155.6,
+          "probability": 0.9926718473434448
+        },
+        {
+          "word": "priest",
+          "start": 155.6,
+          "end": 155.86,
+          "probability": 0.9925553202629089
+        },
+        {
+          "word": "willing",
+          "start": 155.86,
+          "end": 156.36,
+          "probability": 0.998627781867981
+        },
+        {
+          "word": "to",
+          "start": 156.36,
+          "end": 156.66,
+          "probability": 0.9996709823608398
+        },
+        {
+          "word": "listen.",
+          "start": 156.66,
+          "end": 156.9,
+          "probability": 0.999631404876709
+        }
+      ]
+    },
+    {
+      "start": 158.32,
+      "end": 160.68,
+      "text": "Padre Pio could be direct with people.",
+      "words": [
+        {
+          "word": "Padre",
+          "start": 158.32,
+          "end": 158.88,
+          "probability": 0.9969877600669861
+        },
+        {
+          "word": "Pio",
+          "start": 158.88,
+          "end": 159.34,
+          "probability": 0.7132641822099686
+        },
+        {
+          "word": "could",
+          "start": 159.34,
+          "end": 159.6,
+          "probability": 0.9806017875671387
+        },
+        {
+          "word": "be",
+          "start": 159.6,
+          "end": 159.74,
+          "probability": 0.9993035793304443
+        },
+        {
+          "word": "direct",
+          "start": 159.74,
+          "end": 160.04,
+          "probability": 0.9920046925544739
+        },
+        {
+          "word": "with",
+          "start": 160.04,
+          "end": 160.28,
+          "probability": 0.9976602792739868
+        },
+        {
+          "word": "people.",
+          "start": 160.28,
+          "end": 160.68,
+          "probability": 0.9967340230941772
+        }
+      ]
+    },
+    {
+      "start": 161.68,
+      "end": 168.32,
+      "text": "The church remembered the crowds who returned seeking forgiveness, even when facing the truth was hard.",
+      "words": [
+        {
+          "word": "The",
+          "start": 161.68,
+          "end": 162.3,
+          "probability": 0.8711456060409546
+        },
+        {
+          "word": "church",
+          "start": 162.3,
+          "end": 162.56,
+          "probability": 0.7297967076301575
+        },
+        {
+          "word": "remembered",
+          "start": 162.56,
+          "end": 163.02,
+          "probability": 0.9858799576759338
+        },
+        {
+          "word": "the",
+          "start": 163.02,
+          "end": 163.4,
+          "probability": 0.9983986020088196
+        },
+        {
+          "word": "crowds",
+          "start": 163.4,
+          "end": 163.68,
+          "probability": 0.9980154037475586
+        },
+        {
+          "word": "who",
+          "start": 163.68,
+          "end": 164.08,
+          "probability": 0.9929324388504028
+        },
+        {
+          "word": "returned",
+          "start": 164.08,
+          "end": 164.38,
+          "probability": 0.9964963793754578
+        },
+        {
+          "word": "seeking",
+          "start": 164.38,
+          "end": 164.9,
+          "probability": 0.9988441467285156
+        },
+        {
+          "word": "forgiveness,",
+          "start": 164.9,
+          "end": 165.42,
+          "probability": 0.9968908429145813
+        },
+        {
+          "word": "even",
+          "start": 166.18,
+          "end": 166.46,
+          "probability": 0.9974067807197571
+        },
+        {
+          "word": "when",
+          "start": 166.46,
+          "end": 166.66,
+          "probability": 0.9993000030517578
+        },
+        {
+          "word": "facing",
+          "start": 166.66,
+          "end": 167.06,
+          "probability": 0.9964967370033264
+        },
+        {
+          "word": "the",
+          "start": 167.06,
+          "end": 167.4,
+          "probability": 0.9973105192184448
+        },
+        {
+          "word": "truth",
+          "start": 167.4,
+          "end": 167.68,
+          "probability": 0.9960135221481323
+        },
+        {
+          "word": "was",
+          "start": 167.68,
+          "end": 167.98,
+          "probability": 0.9966773986816406
+        },
+        {
+          "word": "hard.",
+          "start": 167.98,
+          "end": 168.32,
+          "probability": 0.9969205856323242
+        }
+      ]
+    },
+    {
+      "start": 170.0,
+      "end": 173.92,
+      "text": "In the confessional, he did not offer a magic escape from consequences.",
+      "words": [
+        {
+          "word": "In",
+          "start": 170.0,
+          "end": 170.06,
+          "probability": 0.9930459856987
+        },
+        {
+          "word": "the",
+          "start": 170.06,
+          "end": 170.16,
+          "probability": 0.9868549108505249
+        },
+        {
+          "word": "confessional,",
+          "start": 170.16,
+          "end": 170.78,
+          "probability": 0.9314218759536743
+        },
+        {
+          "word": "he",
+          "start": 171.4,
+          "end": 171.48,
+          "probability": 0.81293785572052
+        },
+        {
+          "word": "did",
+          "start": 171.48,
+          "end": 171.62,
+          "probability": 0.9986708164215088
+        },
+        {
+          "word": "not",
+          "start": 171.62,
+          "end": 171.8,
+          "probability": 0.9998403787612915
+        },
+        {
+          "word": "offer",
+          "start": 171.8,
+          "end": 172.22,
+          "probability": 0.9995855689048767
+        },
+        {
+          "word": "a",
+          "start": 172.22,
+          "end": 172.4,
+          "probability": 0.9985888600349426
+        },
+        {
+          "word": "magic",
+          "start": 172.4,
+          "end": 172.76,
+          "probability": 0.9914496541023254
+        },
+        {
+          "word": "escape",
+          "start": 172.76,
+          "end": 173.14,
+          "probability": 0.9979142546653748
+        },
+        {
+          "word": "from",
+          "start": 173.14,
+          "end": 173.48,
+          "probability": 0.9987928867340088
+        },
+        {
+          "word": "consequences.",
+          "start": 173.48,
+          "end": 173.92,
+          "probability": 0.997108519077301
+        }
+      ]
+    },
+    {
+      "start": 175.5,
+      "end": 179.14,
+      "text": "He helped people repent, begin again and trust God's mercy.",
+      "words": [
+        {
+          "word": "He",
+          "start": 175.5,
+          "end": 175.96,
+          "probability": 0.992183268070221
+        },
+        {
+          "word": "helped",
+          "start": 175.96,
+          "end": 176.14,
+          "probability": 0.9925565123558044
+        },
+        {
+          "word": "people",
+          "start": 176.14,
+          "end": 176.48,
+          "probability": 0.9984514713287354
+        },
+        {
+          "word": "repent,",
+          "start": 176.48,
+          "end": 176.88,
+          "probability": 0.9978812336921692
+        },
+        {
+          "word": "begin",
+          "start": 177.26,
+          "end": 177.48,
+          "probability": 0.9961203932762146
+        },
+        {
+          "word": "again",
+          "start": 177.48,
+          "end": 177.72,
+          "probability": 0.9984147548675537
+        },
+        {
+          "word": "and",
+          "start": 177.72,
+          "end": 178.14,
+          "probability": 0.3384166657924652
+        },
+        {
+          "word": "trust",
+          "start": 178.14,
+          "end": 178.38,
+          "probability": 0.9943792223930359
+        },
+        {
+          "word": "God's",
+          "start": 178.38,
+          "end": 179.0,
+          "probability": 0.9909611642360687
+        },
+        {
+          "word": "mercy.",
+          "start": 179.0,
+          "end": 179.14,
+          "probability": 0.9960551261901855
+        }
+      ]
+    },
+    {
+      "start": 180.56,
+      "end": 184.8,
+      "text": "This was a daily work repeated for years, one person at a time.",
+      "words": [
+        {
+          "word": "This",
+          "start": 180.56,
+          "end": 180.74,
+          "probability": 0.9887866377830505
+        },
+        {
+          "word": "was",
+          "start": 180.74,
+          "end": 180.94,
+          "probability": 0.998424768447876
+        },
+        {
+          "word": "a",
+          "start": 180.94,
+          "end": 181.1,
+          "probability": 0.993453860282898
+        },
+        {
+          "word": "daily",
+          "start": 181.1,
+          "end": 181.36,
+          "probability": 0.9965202808380127
+        },
+        {
+          "word": "work",
+          "start": 181.36,
+          "end": 181.78,
+          "probability": 0.998078465461731
+        },
+        {
+          "word": "repeated",
+          "start": 181.78,
+          "end": 182.28,
+          "probability": 0.8124400973320007
+        },
+        {
+          "word": "for",
+          "start": 182.28,
+          "end": 182.58,
+          "probability": 0.9990904331207275
+        },
+        {
+          "word": "years,",
+          "start": 182.58,
+          "end": 182.84,
+          "probability": 0.9992874264717102
+        },
+        {
+          "word": "one",
+          "start": 183.58,
+          "end": 183.62,
+          "probability": 0.9934116005897522
+        },
+        {
+          "word": "person",
+          "start": 183.62,
+          "end": 184.04,
+          "probability": 0.9995073080062866
+        },
+        {
+          "word": "at",
+          "start": 184.04,
+          "end": 184.32,
+          "probability": 0.9963881969451904
+        },
+        {
+          "word": "a",
+          "start": 184.32,
+          "end": 184.38,
+          "probability": 0.9972354769706726
+        },
+        {
+          "word": "time.",
+          "start": 184.38,
+          "end": 184.8,
+          "probability": 0.9999324083328247
+        }
+      ]
+    },
+    {
+      "start": 185.88,
+      "end": 190.44,
+      "text": "Think of someone at the back of the line, afraid everyone will see their face.",
+      "words": [
+        {
+          "word": "Think",
+          "start": 185.88,
+          "end": 186.4,
+          "probability": 0.9945759773254395
+        },
+        {
+          "word": "of",
+          "start": 186.4,
+          "end": 186.54,
+          "probability": 0.9976115226745605
+        },
+        {
+          "word": "someone",
+          "start": 186.54,
+          "end": 186.84,
+          "probability": 0.997042715549469
+        },
+        {
+          "word": "at",
+          "start": 186.84,
+          "end": 187.02,
+          "probability": 0.9971464276313782
+        },
+        {
+          "word": "the",
+          "start": 187.02,
+          "end": 187.1,
+          "probability": 0.9997674822807312
+        },
+        {
+          "word": "back",
+          "start": 187.1,
+          "end": 187.3,
+          "probability": 0.9996116757392883
+        },
+        {
+          "word": "of",
+          "start": 187.3,
+          "end": 187.46,
+          "probability": 0.9988806843757629
+        },
+        {
+          "word": "the",
+          "start": 187.46,
+          "end": 187.56,
+          "probability": 0.9983865022659302
+        },
+        {
+          "word": "line,",
+          "start": 187.56,
+          "end": 187.84,
+          "probability": 0.9984038472175598
+        },
+        {
+          "word": "afraid",
+          "start": 188.44,
+          "end": 188.72,
+          "probability": 0.9920714497566223
+        },
+        {
+          "word": "everyone",
+          "start": 188.72,
+          "end": 189.34,
+          "probability": 0.992816686630249
+        },
+        {
+          "word": "will",
+          "start": 189.34,
+          "end": 189.7,
+          "probability": 0.9951647520065308
+        },
+        {
+          "word": "see",
+          "start": 189.7,
+          "end": 189.9,
+          "probability": 0.9992555975914001
+        },
+        {
+          "word": "their",
+          "start": 189.9,
+          "end": 190.12,
+          "probability": 0.9994407296180725
+        },
+        {
+          "word": "face.",
+          "start": 190.12,
+          "end": 190.44,
+          "probability": 0.9984412789344788
+        }
+      ]
+    },
+    {
+      "start": 191.68,
+      "end": 193.84,
+      "text": "They wait, take a step, wait again.",
+      "words": [
+        {
+          "word": "They",
+          "start": 191.68,
+          "end": 192.16,
+          "probability": 0.7208908200263977
+        },
+        {
+          "word": "wait,",
+          "start": 192.16,
+          "end": 192.38,
+          "probability": 0.9597556591033936
+        },
+        {
+          "word": "take",
+          "start": 192.42,
+          "end": 192.66,
+          "probability": 0.9979986548423767
+        },
+        {
+          "word": "a",
+          "start": 192.66,
+          "end": 192.8,
+          "probability": 0.9990046620368958
+        },
+        {
+          "word": "step,",
+          "start": 192.8,
+          "end": 193.02,
+          "probability": 0.9992117881774902
+        },
+        {
+          "word": "wait",
+          "start": 193.26,
+          "end": 193.46,
+          "probability": 0.9972105622291565
+        },
+        {
+          "word": "again.",
+          "start": 193.46,
+          "end": 193.84,
+          "probability": 0.9926929473876953
+        }
+      ]
+    },
+    {
+      "start": 195.36,
+      "end": 198.02,
+      "text": "We cannot know what a particular visitor said.",
+      "words": [
+        {
+          "word": "We",
+          "start": 195.36,
+          "end": 195.5,
+          "probability": 0.9034059047698975
+        },
+        {
+          "word": "cannot",
+          "start": 195.5,
+          "end": 195.68,
+          "probability": 0.9436847567558289
+        },
+        {
+          "word": "know",
+          "start": 195.68,
+          "end": 196.2,
+          "probability": 0.9983066320419312
+        },
+        {
+          "word": "what",
+          "start": 196.2,
+          "end": 196.62,
+          "probability": 0.9953688979148865
+        },
+        {
+          "word": "a",
+          "start": 196.62,
+          "end": 196.7,
+          "probability": 0.9991727471351624
+        },
+        {
+          "word": "particular",
+          "start": 196.7,
+          "end": 196.98,
+          "probability": 0.9988827109336853
+        },
+        {
+          "word": "visitor",
+          "start": 196.98,
+          "end": 197.44,
+          "probability": 0.9967074394226074
+        },
+        {
+          "word": "said.",
+          "start": 197.44,
+          "end": 198.02,
+          "probability": 0.9990078806877136
+        }
+      ]
+    },
+    {
+      "start": 199.42,
+      "end": 203.7,
+      "text": "We do know why so many came. They hoped God had not stopped loving them.",
+      "words": [
+        {
+          "word": "We",
+          "start": 199.42,
+          "end": 199.6,
+          "probability": 0.9564772844314575
+        },
+        {
+          "word": "do",
+          "start": 199.6,
+          "end": 199.7,
+          "probability": 0.9984480142593384
+        },
+        {
+          "word": "know",
+          "start": 199.7,
+          "end": 199.92,
+          "probability": 0.9969409108161926
+        },
+        {
+          "word": "why",
+          "start": 199.92,
+          "end": 200.14,
+          "probability": 0.9986333250999451
+        },
+        {
+          "word": "so",
+          "start": 200.14,
+          "end": 200.4,
+          "probability": 0.9992243051528931
+        },
+        {
+          "word": "many",
+          "start": 200.4,
+          "end": 200.58,
+          "probability": 0.9997541308403015
+        },
+        {
+          "word": "came.",
+          "start": 200.58,
+          "end": 200.92,
+          "probability": 0.9993457198143005
+        },
+        {
+          "word": "They",
+          "start": 201.58,
+          "end": 201.66,
+          "probability": 0.9950333833694458
+        },
+        {
+          "word": "hoped",
+          "start": 201.66,
+          "end": 201.88,
+          "probability": 0.9893805980682373
+        },
+        {
+          "word": "God",
+          "start": 201.88,
+          "end": 202.2,
+          "probability": 0.9920799136161804
+        },
+        {
+          "word": "had",
+          "start": 202.2,
+          "end": 202.5,
+          "probability": 0.9963275790214539
+        },
+        {
+          "word": "not",
+          "start": 202.5,
+          "end": 202.66,
+          "probability": 0.9994333386421204
+        },
+        {
+          "word": "stopped",
+          "start": 202.66,
+          "end": 203.02,
+          "probability": 0.9951743483543396
+        },
+        {
+          "word": "loving",
+          "start": 203.02,
+          "end": 203.38,
+          "probability": 0.9982557892799377
+        },
+        {
+          "word": "them.",
+          "start": 203.38,
+          "end": 203.7,
+          "probability": 0.9996780157089233
+        }
+      ]
+    },
+    {
+      "start": 205.06,
+      "end": 208.06,
+      "text": "That hope is at the heart of the sacrament of forgiveness.",
+      "words": [
+        {
+          "word": "That",
+          "start": 205.06,
+          "end": 205.34,
+          "probability": 0.993956446647644
+        },
+        {
+          "word": "hope",
+          "start": 205.34,
+          "end": 205.62,
+          "probability": 0.9975981116294861
+        },
+        {
+          "word": "is",
+          "start": 205.62,
+          "end": 205.96,
+          "probability": 0.9987216591835022
+        },
+        {
+          "word": "at",
+          "start": 205.96,
+          "end": 206.1,
+          "probability": 0.9965407252311707
+        },
+        {
+          "word": "the",
+          "start": 206.1,
+          "end": 206.24,
+          "probability": 0.9993854761123657
+        },
+        {
+          "word": "heart",
+          "start": 206.24,
+          "end": 206.52,
+          "probability": 0.999397873878479
+        },
+        {
+          "word": "of",
+          "start": 206.52,
+          "end": 206.78,
+          "probability": 0.9984114170074463
+        },
+        {
+          "word": "the",
+          "start": 206.78,
+          "end": 206.88,
+          "probability": 0.9950003027915955
+        },
+        {
+          "word": "sacrament",
+          "start": 206.88,
+          "end": 207.22,
+          "probability": 0.9473928213119507
+        },
+        {
+          "word": "of",
+          "start": 207.22,
+          "end": 207.68,
+          "probability": 0.9989294409751892
+        },
+        {
+          "word": "forgiveness.",
+          "start": 207.68,
+          "end": 208.06,
+          "probability": 0.9974915981292725
+        }
+      ]
+    },
+    {
+      "start": 209.32,
+      "end": 211.46,
+      "text": "He knew suffering from the inside too.",
+      "words": [
+        {
+          "word": "He",
+          "start": 209.32,
+          "end": 209.64,
+          "probability": 0.9973655343055725
+        },
+        {
+          "word": "knew",
+          "start": 209.64,
+          "end": 209.8,
+          "probability": 0.9977769255638123
+        },
+        {
+          "word": "suffering",
+          "start": 209.8,
+          "end": 210.16,
+          "probability": 0.9984912872314453
+        },
+        {
+          "word": "from",
+          "start": 210.16,
+          "end": 210.52,
+          "probability": 0.998997151851654
+        },
+        {
+          "word": "the",
+          "start": 210.52,
+          "end": 210.64,
+          "probability": 0.9979242086410522
+        },
+        {
+          "word": "inside",
+          "start": 210.64,
+          "end": 210.8,
+          "probability": 0.9743219614028931
+        },
+        {
+          "word": "too.",
+          "start": 210.8,
+          "end": 211.46,
+          "probability": 0.7360982894897461
+        }
+      ]
+    },
+    {
+      "start": 212.78,
+      "end": 215.36,
+      "text": "He had lived with fragile health since he was young.",
+      "words": [
+        {
+          "word": "He",
+          "start": 212.78,
+          "end": 213.1,
+          "probability": 0.9983553290367126
+        },
+        {
+          "word": "had",
+          "start": 213.1,
+          "end": 213.2,
+          "probability": 0.9960439205169678
+        },
+        {
+          "word": "lived",
+          "start": 213.2,
+          "end": 213.42,
+          "probability": 0.9996660947799683
+        },
+        {
+          "word": "with",
+          "start": 213.42,
+          "end": 213.7,
+          "probability": 0.9991452693939209
+        },
+        {
+          "word": "fragile",
+          "start": 213.7,
+          "end": 214.0,
+          "probability": 0.9968035221099854
+        },
+        {
+          "word": "health",
+          "start": 214.0,
+          "end": 214.46,
+          "probability": 0.9941278696060181
+        },
+        {
+          "word": "since",
+          "start": 214.46,
+          "end": 214.82,
+          "probability": 0.984185516834259
+        },
+        {
+          "word": "he",
+          "start": 214.82,
+          "end": 215.0,
+          "probability": 0.9870168566703796
+        },
+        {
+          "word": "was",
+          "start": 215.0,
+          "end": 215.12,
+          "probability": 0.9994916915893555
+        },
+        {
+          "word": "young.",
+          "start": 215.12,
+          "end": 215.36,
+          "probability": 0.9998034834861755
+        }
+      ]
+    },
+    {
+      "start": 215.36,
+      "end": 220.78,
+      "text": "In 1918, wounds appeared on his hands feet inside.",
+      "words": [
+        {
+          "word": "In",
+          "start": 215.36,
+          "end": 216.0,
+          "probability": 0.3070891797542572
+        },
+        {
+          "word": "1918,",
+          "start": 216.0,
+          "end": 217.7,
+          "probability": 0.9960246086120605
+        },
+        {
+          "word": "wounds",
+          "start": 218.4,
+          "end": 218.72,
+          "probability": 0.8609527349472046
+        },
+        {
+          "word": "appeared",
+          "start": 218.72,
+          "end": 219.14,
+          "probability": 0.9986556768417358
+        },
+        {
+          "word": "on",
+          "start": 219.14,
+          "end": 219.4,
+          "probability": 0.9975211024284363
+        },
+        {
+          "word": "his",
+          "start": 219.4,
+          "end": 219.5,
+          "probability": 0.9251381754875183
+        },
+        {
+          "word": "hands",
+          "start": 219.5,
+          "end": 219.88,
+          "probability": 0.9680328965187073
+        },
+        {
+          "word": "feet",
+          "start": 219.88,
+          "end": 220.36,
+          "probability": 0.4014039933681488
+        },
+        {
+          "word": "inside.",
+          "start": 220.36,
+          "end": 220.78,
+          "probability": 0.5401439666748047
+        }
+      ]
+    },
+    {
+      "start": 222.48,
+      "end": 225.62,
+      "text": "They reminded people of the wounds of Jesus on the cross.",
+      "words": [
+        {
+          "word": "They",
+          "start": 222.48,
+          "end": 222.62,
+          "probability": 0.973709225654602
+        },
+        {
+          "word": "reminded",
+          "start": 222.62,
+          "end": 222.9,
+          "probability": 0.9980853796005249
+        },
+        {
+          "word": "people",
+          "start": 222.9,
+          "end": 223.5,
+          "probability": 0.9946799874305725
+        },
+        {
+          "word": "of",
+          "start": 223.5,
+          "end": 223.86,
+          "probability": 0.9956715106964111
+        },
+        {
+          "word": "the",
+          "start": 223.86,
+          "end": 223.98,
+          "probability": 0.9946516156196594
+        },
+        {
+          "word": "wounds",
+          "start": 223.98,
+          "end": 224.26,
+          "probability": 0.9251052141189575
+        },
+        {
+          "word": "of",
+          "start": 224.26,
+          "end": 224.54,
+          "probability": 0.9987383484840393
+        },
+        {
+          "word": "Jesus",
+          "start": 224.54,
+          "end": 224.82,
+          "probability": 0.9982466697692871
+        },
+        {
+          "word": "on",
+          "start": 224.82,
+          "end": 225.26,
+          "probability": 0.9975879192352295
+        },
+        {
+          "word": "the",
+          "start": 225.26,
+          "end": 225.36,
+          "probability": 0.9981738328933716
+        },
+        {
+          "word": "cross.",
+          "start": 225.36,
+          "end": 225.62,
+          "probability": 0.8956522345542908
+        }
+      ]
+    },
+    {
+      "start": 227.26,
+      "end": 229.48,
+      "text": "Padre Pio carried them for many years.",
+      "words": [
+        {
+          "word": "Padre",
+          "start": 227.26,
+          "end": 227.64,
+          "probability": 0.8324636816978455
+        },
+        {
+          "word": "Pio",
+          "start": 227.64,
+          "end": 228.1,
+          "probability": 0.8018918931484222
+        },
+        {
+          "word": "carried",
+          "start": 228.1,
+          "end": 228.5,
+          "probability": 0.983852744102478
+        },
+        {
+          "word": "them",
+          "start": 228.5,
+          "end": 228.78,
+          "probability": 0.9992719292640686
+        },
+        {
+          "word": "for",
+          "start": 228.78,
+          "end": 228.96,
+          "probability": 0.9970268607139587
+        },
+        {
+          "word": "many",
+          "start": 228.96,
+          "end": 229.12,
+          "probability": 0.9975988268852234
+        },
+        {
+          "word": "years.",
+          "start": 229.12,
+          "end": 229.48,
+          "probability": 0.9997802376747131
+        }
+      ]
+    },
+    {
+      "start": 231.02,
+      "end": 234.22,
+      "text": "The wounds drew attention and they also brought questions.",
+      "words": [
+        {
+          "word": "The",
+          "start": 231.02,
+          "end": 231.14,
+          "probability": 0.993760883808136
+        },
+        {
+          "word": "wounds",
+          "start": 231.14,
+          "end": 231.4,
+          "probability": 0.9914074540138245
+        },
+        {
+          "word": "drew",
+          "start": 231.4,
+          "end": 231.82,
+          "probability": 0.9994912147521973
+        },
+        {
+          "word": "attention",
+          "start": 231.82,
+          "end": 232.24,
+          "probability": 0.998967170715332
+        },
+        {
+          "word": "and",
+          "start": 232.24,
+          "end": 232.96,
+          "probability": 0.5536856651306152
+        },
+        {
+          "word": "they",
+          "start": 232.96,
+          "end": 233.08,
+          "probability": 0.994879961013794
+        },
+        {
+          "word": "also",
+          "start": 233.08,
+          "end": 233.3,
+          "probability": 0.997305154800415
+        },
+        {
+          "word": "brought",
+          "start": 233.3,
+          "end": 233.66,
+          "probability": 0.997700035572052
+        },
+        {
+          "word": "questions.",
+          "start": 233.66,
+          "end": 234.22,
+          "probability": 0.9987760186195374
+        }
+      ]
+    },
+    {
+      "start": 235.48,
+      "end": 241.2,
+      "text": "Church authorities investigated and for periods they restricted parts of his public ministry.",
+      "words": [
+        {
+          "word": "Church",
+          "start": 235.48,
+          "end": 235.78,
+          "probability": 0.7529429793357849
+        },
+        {
+          "word": "authorities",
+          "start": 235.78,
+          "end": 236.24,
+          "probability": 0.9915056824684143
+        },
+        {
+          "word": "investigated",
+          "start": 236.24,
+          "end": 237.16,
+          "probability": 0.9987450838088989
+        },
+        {
+          "word": "and",
+          "start": 237.16,
+          "end": 238.28,
+          "probability": 0.7146815657615662
+        },
+        {
+          "word": "for",
+          "start": 238.28,
+          "end": 238.42,
+          "probability": 0.9708767533302307
+        },
+        {
+          "word": "periods",
+          "start": 238.42,
+          "end": 238.88,
+          "probability": 0.9984567165374756
+        },
+        {
+          "word": "they",
+          "start": 238.88,
+          "end": 239.22,
+          "probability": 0.6030322313308716
+        },
+        {
+          "word": "restricted",
+          "start": 239.22,
+          "end": 239.6,
+          "probability": 0.9961270689964294
+        },
+        {
+          "word": "parts",
+          "start": 239.6,
+          "end": 240.08,
+          "probability": 0.9992702603340149
+        },
+        {
+          "word": "of",
+          "start": 240.08,
+          "end": 240.36,
+          "probability": 0.9990653395652771
+        },
+        {
+          "word": "his",
+          "start": 240.36,
+          "end": 240.46,
+          "probability": 0.9892318844795227
+        },
+        {
+          "word": "public",
+          "start": 240.46,
+          "end": 240.78,
+          "probability": 0.9898386001586914
+        },
+        {
+          "word": "ministry.",
+          "start": 240.78,
+          "end": 241.2,
+          "probability": 0.9875478744506836
+        }
+      ]
+    },
+    {
+      "start": 242.42000000000002,
+      "end": 245.68,
+      "text": "He accepted the restrictions and obeyed his superiors.",
+      "words": [
+        {
+          "word": "He",
+          "start": 242.42000000000002,
+          "end": 243.02,
+          "probability": 0.28351402282714844
+        },
+        {
+          "word": "accepted",
+          "start": 243.02,
+          "end": 243.36,
+          "probability": 0.9686708450317383
+        },
+        {
+          "word": "the",
+          "start": 243.36,
+          "end": 243.64,
+          "probability": 0.9961866736412048
+        },
+        {
+          "word": "restrictions",
+          "start": 243.64,
+          "end": 244.02,
+          "probability": 0.9967086315155029
+        },
+        {
+          "word": "and",
+          "start": 244.02,
+          "end": 244.8,
+          "probability": 0.9392017126083374
+        },
+        {
+          "word": "obeyed",
+          "start": 244.8,
+          "end": 245.18,
+          "probability": 0.8775236308574677
+        },
+        {
+          "word": "his",
+          "start": 245.18,
+          "end": 245.34,
+          "probability": 0.9630715250968933
+        },
+        {
+          "word": "superiors.",
+          "start": 245.34,
+          "end": 245.68,
+          "probability": 0.9905890226364136
+        }
+      ]
+    },
+    {
+      "start": 247.52,
+      "end": 250.64,
+      "text": "We do not need to pretend that the waiting or pain was easy.",
+      "words": [
+        {
+          "word": "We",
+          "start": 247.52,
+          "end": 247.6,
+          "probability": 0.3212129771709442
+        },
+        {
+          "word": "do",
+          "start": 247.6,
+          "end": 247.72,
+          "probability": 0.9956252574920654
+        },
+        {
+          "word": "not",
+          "start": 247.72,
+          "end": 247.88,
+          "probability": 0.9985413551330566
+        },
+        {
+          "word": "need",
+          "start": 247.88,
+          "end": 248.12,
+          "probability": 0.9991376399993896
+        },
+        {
+          "word": "to",
+          "start": 248.12,
+          "end": 248.24,
+          "probability": 0.9990445971488953
+        },
+        {
+          "word": "pretend",
+          "start": 248.24,
+          "end": 248.54,
+          "probability": 0.9990028738975525
+        },
+        {
+          "word": "that",
+          "start": 248.54,
+          "end": 248.96,
+          "probability": 0.9962420463562012
+        },
+        {
+          "word": "the",
+          "start": 248.96,
+          "end": 249.1,
+          "probability": 0.9938324689865112
+        },
+        {
+          "word": "waiting",
+          "start": 249.1,
+          "end": 249.46,
+          "probability": 0.8839440941810608
+        },
+        {
+          "word": "or",
+          "start": 249.46,
+          "end": 249.78,
+          "probability": 0.9535912871360779
+        },
+        {
+          "word": "pain",
+          "start": 249.78,
+          "end": 250.04,
+          "probability": 0.987275242805481
+        },
+        {
+          "word": "was",
+          "start": 250.04,
+          "end": 250.36,
+          "probability": 0.997539758682251
+        },
+        {
+          "word": "easy.",
+          "start": 250.36,
+          "end": 250.64,
+          "probability": 0.9994230270385742
+        }
+      ]
+    },
+    {
+      "start": 252.28,
+      "end": 255.94,
+      "text": "A closed door can feel especially heavy when you want to help.",
+      "words": [
+        {
+          "word": "A",
+          "start": 252.28,
+          "end": 252.38,
+          "probability": 0.7929328680038452
+        },
+        {
+          "word": "closed",
+          "start": 252.38,
+          "end": 252.62,
+          "probability": 0.9892149567604065
+        },
+        {
+          "word": "door",
+          "start": 252.62,
+          "end": 253.14,
+          "probability": 0.9996850490570068
+        },
+        {
+          "word": "can",
+          "start": 253.14,
+          "end": 253.4,
+          "probability": 0.9986482262611389
+        },
+        {
+          "word": "feel",
+          "start": 253.4,
+          "end": 253.7,
+          "probability": 0.9992092251777649
+        },
+        {
+          "word": "especially",
+          "start": 253.7,
+          "end": 253.94,
+          "probability": 0.9975540041923523
+        },
+        {
+          "word": "heavy",
+          "start": 253.94,
+          "end": 254.72,
+          "probability": 0.9964233040809631
+        },
+        {
+          "word": "when",
+          "start": 254.72,
+          "end": 255.26,
+          "probability": 0.9703611135482788
+        },
+        {
+          "word": "you",
+          "start": 255.26,
+          "end": 255.4,
+          "probability": 0.9986635446548462
+        },
+        {
+          "word": "want",
+          "start": 255.4,
+          "end": 255.58,
+          "probability": 0.9404965043067932
+        },
+        {
+          "word": "to",
+          "start": 255.58,
+          "end": 255.68,
+          "probability": 0.9886791110038757
+        },
+        {
+          "word": "help.",
+          "start": 255.68,
+          "end": 255.94,
+          "probability": 0.9995754361152649
+        }
+      ]
+    },
+    {
+      "start": 257.28,
+      "end": 261.46,
+      "text": "What can a person do when the work they love is taken away for a time?",
+      "words": [
+        {
+          "word": "What",
+          "start": 257.28,
+          "end": 257.62,
+          "probability": 0.9485024809837341
+        },
+        {
+          "word": "can",
+          "start": 257.62,
+          "end": 257.8,
+          "probability": 0.9991199374198914
+        },
+        {
+          "word": "a",
+          "start": 257.8,
+          "end": 257.9,
+          "probability": 0.998291552066803
+        },
+        {
+          "word": "person",
+          "start": 257.9,
+          "end": 258.26,
+          "probability": 0.9996471405029297
+        },
+        {
+          "word": "do",
+          "start": 258.26,
+          "end": 258.56,
+          "probability": 0.9993876218795776
+        },
+        {
+          "word": "when",
+          "start": 258.56,
+          "end": 259.1,
+          "probability": 0.9738855361938477
+        },
+        {
+          "word": "the",
+          "start": 259.1,
+          "end": 259.2,
+          "probability": 0.9989399313926697
+        },
+        {
+          "word": "work",
+          "start": 259.2,
+          "end": 259.4,
+          "probability": 0.9998482465744019
+        },
+        {
+          "word": "they",
+          "start": 259.4,
+          "end": 259.6,
+          "probability": 0.9893909096717834
+        },
+        {
+          "word": "love",
+          "start": 259.6,
+          "end": 259.9,
+          "probability": 0.9955130219459534
+        },
+        {
+          "word": "is",
+          "start": 259.9,
+          "end": 260.18,
+          "probability": 0.9852644801139832
+        },
+        {
+          "word": "taken",
+          "start": 260.18,
+          "end": 260.38,
+          "probability": 0.9625038504600525
+        },
+        {
+          "word": "away",
+          "start": 260.38,
+          "end": 260.7,
+          "probability": 0.9994378685951233
+        },
+        {
+          "word": "for",
+          "start": 260.7,
+          "end": 261.0,
+          "probability": 0.9912230968475342
+        },
+        {
+          "word": "a",
+          "start": 261.0,
+          "end": 261.08,
+          "probability": 0.9947713017463684
+        },
+        {
+          "word": "time?",
+          "start": 261.08,
+          "end": 261.46,
+          "probability": 0.9996261596679688
+        }
+      ]
+    },
+    {
+      "start": 262.92,
+      "end": 264.86,
+      "text": "Padre Pio did what he still could.",
+      "words": [
+        {
+          "word": "Padre",
+          "start": 262.92,
+          "end": 263.3,
+          "probability": 0.9162504971027374
+        },
+        {
+          "word": "Pio",
+          "start": 263.3,
+          "end": 263.74,
+          "probability": 0.8187840580940247
+        },
+        {
+          "word": "did",
+          "start": 263.74,
+          "end": 264.02,
+          "probability": 0.9946369528770447
+        },
+        {
+          "word": "what",
+          "start": 264.02,
+          "end": 264.16,
+          "probability": 0.9996683597564697
+        },
+        {
+          "word": "he",
+          "start": 264.16,
+          "end": 264.26,
+          "probability": 0.9984058737754822
+        },
+        {
+          "word": "still",
+          "start": 264.26,
+          "end": 264.48,
+          "probability": 0.9991410970687866
+        },
+        {
+          "word": "could.",
+          "start": 264.48,
+          "end": 264.86,
+          "probability": 0.9992293119430542
+        }
+      ]
+    },
+    {
+      "start": 265.82,
+      "end": 271.52,
+      "text": "He prayed and waited, trusting God without pretending to understand every trial.",
+      "words": [
+        {
+          "word": "He",
+          "start": 265.82,
+          "end": 266.46,
+          "probability": 0.2024642676115036
+        },
+        {
+          "word": "prayed",
+          "start": 266.46,
+          "end": 266.86,
+          "probability": 0.9967020153999329
+        },
+        {
+          "word": "and",
+          "start": 266.86,
+          "end": 267.16,
+          "probability": 0.9937570095062256
+        },
+        {
+          "word": "waited,",
+          "start": 267.16,
+          "end": 267.42,
+          "probability": 0.9802728891372681
+        },
+        {
+          "word": "trusting",
+          "start": 267.94,
+          "end": 268.34,
+          "probability": 0.9980431795120239
+        },
+        {
+          "word": "God",
+          "start": 268.34,
+          "end": 268.84,
+          "probability": 0.9982543587684631
+        },
+        {
+          "word": "without",
+          "start": 268.84,
+          "end": 269.16,
+          "probability": 0.9423446655273438
+        },
+        {
+          "word": "pretending",
+          "start": 269.16,
+          "end": 269.72,
+          "probability": 0.9982617497444153
+        },
+        {
+          "word": "to",
+          "start": 269.72,
+          "end": 270.02,
+          "probability": 0.9991124272346497
+        },
+        {
+          "word": "understand",
+          "start": 270.02,
+          "end": 270.34,
+          "probability": 0.9988792538642883
+        },
+        {
+          "word": "every",
+          "start": 270.34,
+          "end": 271.08,
+          "probability": 0.9972719550132751
+        },
+        {
+          "word": "trial.",
+          "start": 271.08,
+          "end": 271.52,
+          "probability": 0.9958283305168152
+        }
+      ]
+    },
+    {
+      "start": 272.52,
+      "end": 277.42,
+      "text": "When Christians speak about the cross, they do not mean that pain is good by itself.",
+      "words": [
+        {
+          "word": "When",
+          "start": 272.52,
+          "end": 272.88,
+          "probability": 0.9897593259811401
+        },
+        {
+          "word": "Christians",
+          "start": 272.88,
+          "end": 273.26,
+          "probability": 0.9989820122718811
+        },
+        {
+          "word": "speak",
+          "start": 273.26,
+          "end": 273.64,
+          "probability": 0.9979562759399414
+        },
+        {
+          "word": "about",
+          "start": 273.64,
+          "end": 273.9,
+          "probability": 0.9986392855644226
+        },
+        {
+          "word": "the",
+          "start": 273.9,
+          "end": 274.06,
+          "probability": 0.9965558052062988
+        },
+        {
+          "word": "cross,",
+          "start": 274.06,
+          "end": 274.34,
+          "probability": 0.9751847982406616
+        },
+        {
+          "word": "they",
+          "start": 275.06,
+          "end": 275.18,
+          "probability": 0.9974849224090576
+        },
+        {
+          "word": "do",
+          "start": 275.18,
+          "end": 275.3,
+          "probability": 0.9977541565895081
+        },
+        {
+          "word": "not",
+          "start": 275.3,
+          "end": 275.46,
+          "probability": 0.9996103644371033
+        },
+        {
+          "word": "mean",
+          "start": 275.46,
+          "end": 275.72,
+          "probability": 0.9983813762664795
+        },
+        {
+          "word": "that",
+          "start": 275.72,
+          "end": 275.96,
+          "probability": 0.9991403818130493
+        },
+        {
+          "word": "pain",
+          "start": 275.96,
+          "end": 276.24,
+          "probability": 0.989372193813324
+        },
+        {
+          "word": "is",
+          "start": 276.24,
+          "end": 276.62,
+          "probability": 0.9994852542877197
+        },
+        {
+          "word": "good",
+          "start": 276.62,
+          "end": 276.82,
+          "probability": 0.986560583114624
+        },
+        {
+          "word": "by",
+          "start": 276.82,
+          "end": 277.08,
+          "probability": 0.9996514320373535
+        },
+        {
+          "word": "itself.",
+          "start": 277.08,
+          "end": 277.42,
+          "probability": 0.9976142644882202
+        }
+      ]
+    },
+    {
+      "start": 278.7,
+      "end": 281.68,
+      "text": "Or that someone who is sick should be left without help.",
+      "words": [
+        {
+          "word": "Or",
+          "start": 278.7,
+          "end": 278.82,
+          "probability": 0.9200367331504822
+        },
+        {
+          "word": "that",
+          "start": 278.82,
+          "end": 278.96,
+          "probability": 0.9807329177856445
+        },
+        {
+          "word": "someone",
+          "start": 278.96,
+          "end": 279.28,
+          "probability": 0.9924823641777039
+        },
+        {
+          "word": "who",
+          "start": 279.28,
+          "end": 279.58,
+          "probability": 0.9956170320510864
+        },
+        {
+          "word": "is",
+          "start": 279.58,
+          "end": 279.72,
+          "probability": 0.9920409321784973
+        },
+        {
+          "word": "sick",
+          "start": 279.72,
+          "end": 280.0,
+          "probability": 0.9988892674446106
+        },
+        {
+          "word": "should",
+          "start": 280.0,
+          "end": 280.56,
+          "probability": 0.9731878638267517
+        },
+        {
+          "word": "be",
+          "start": 280.56,
+          "end": 280.7,
+          "probability": 0.9996803998947144
+        },
+        {
+          "word": "left",
+          "start": 280.7,
+          "end": 280.92,
+          "probability": 0.9989425539970398
+        },
+        {
+          "word": "without",
+          "start": 280.92,
+          "end": 281.2,
+          "probability": 0.9986875653266907
+        },
+        {
+          "word": "help.",
+          "start": 281.2,
+          "end": 281.68,
+          "probability": 0.9988723397254944
+        }
+      ]
+    },
+    {
+      "start": 283.58,
+      "end": 285.0,
+      "text": "Jesus met people in their suffering.",
+      "words": [
+        {
+          "word": "Jesus",
+          "start": 283.58,
+          "end": 283.58,
+          "probability": 0.9937374591827393
+        },
+        {
+          "word": "met",
+          "start": 283.58,
+          "end": 283.98,
+          "probability": 0.9870041012763977
+        },
+        {
+          "word": "people",
+          "start": 283.98,
+          "end": 284.34,
+          "probability": 0.9990110397338867
+        },
+        {
+          "word": "in",
+          "start": 284.34,
+          "end": 284.56,
+          "probability": 0.9491932988166809
+        },
+        {
+          "word": "their",
+          "start": 284.56,
+          "end": 284.68,
+          "probability": 0.9990001320838928
+        },
+        {
+          "word": "suffering.",
+          "start": 284.68,
+          "end": 285.0,
+          "probability": 0.9975862503051758
+        }
+      ]
+    },
+    {
+      "start": 286.6,
+      "end": 291.7,
+      "text": "Padre Pio's response to his own trials was to keep praying and to care for others.",
+      "words": [
+        {
+          "word": "Padre",
+          "start": 286.6,
+          "end": 287.0,
+          "probability": 0.9168418347835541
+        },
+        {
+          "word": "Pio's",
+          "start": 287.0,
+          "end": 287.48,
+          "probability": 0.7717622220516205
+        },
+        {
+          "word": "response",
+          "start": 287.48,
+          "end": 287.82,
+          "probability": 0.9990617632865906
+        },
+        {
+          "word": "to",
+          "start": 287.82,
+          "end": 288.18,
+          "probability": 0.99924635887146
+        },
+        {
+          "word": "his",
+          "start": 288.18,
+          "end": 288.3,
+          "probability": 0.9443314671516418
+        },
+        {
+          "word": "own",
+          "start": 288.3,
+          "end": 288.52,
+          "probability": 0.9981346130371094
+        },
+        {
+          "word": "trials",
+          "start": 288.52,
+          "end": 288.9,
+          "probability": 0.9960447549819946
+        },
+        {
+          "word": "was",
+          "start": 288.9,
+          "end": 289.72,
+          "probability": 0.9868452548980713
+        },
+        {
+          "word": "to",
+          "start": 289.72,
+          "end": 289.88,
+          "probability": 0.9894569516181946
+        },
+        {
+          "word": "keep",
+          "start": 289.88,
+          "end": 290.12,
+          "probability": 0.9837527275085449
+        },
+        {
+          "word": "praying",
+          "start": 290.12,
+          "end": 290.46,
+          "probability": 0.998623251914978
+        },
+        {
+          "word": "and",
+          "start": 290.46,
+          "end": 290.9,
+          "probability": 0.9908344745635986
+        },
+        {
+          "word": "to",
+          "start": 290.9,
+          "end": 291.02,
+          "probability": 0.9951829314231873
+        },
+        {
+          "word": "care",
+          "start": 291.02,
+          "end": 291.18,
+          "probability": 0.998181939125061
+        },
+        {
+          "word": "for",
+          "start": 291.18,
+          "end": 291.48,
+          "probability": 0.9996470212936401
+        },
+        {
+          "word": "others.",
+          "start": 291.48,
+          "end": 291.7,
+          "probability": 0.9989864230155945
+        }
+      ]
+    },
+    {
+      "start": 292.78000000000003,
+      "end": 295.46,
+      "text": "He saw Christ in poor and sick neighbors.",
+      "words": [
+        {
+          "word": "He",
+          "start": 292.78000000000003,
+          "end": 293.42,
+          "probability": 0.28687629103660583
+        },
+        {
+          "word": "saw",
+          "start": 293.42,
+          "end": 293.66,
+          "probability": 0.9826536774635315
+        },
+        {
+          "word": "Christ",
+          "start": 293.66,
+          "end": 293.92,
+          "probability": 0.9938310384750366
+        },
+        {
+          "word": "in",
+          "start": 293.92,
+          "end": 294.24,
+          "probability": 0.9957946538925171
+        },
+        {
+          "word": "poor",
+          "start": 294.24,
+          "end": 294.48,
+          "probability": 0.9974315762519836
+        },
+        {
+          "word": "and",
+          "start": 294.48,
+          "end": 294.8,
+          "probability": 0.9857892394065857
+        },
+        {
+          "word": "sick",
+          "start": 294.8,
+          "end": 295.0,
+          "probability": 0.9986991882324219
+        },
+        {
+          "word": "neighbors.",
+          "start": 295.0,
+          "end": 295.46,
+          "probability": 0.797991931438446
+        }
+      ]
+    },
+    {
+      "start": 296.94,
+      "end": 299.9,
+      "text": "His faith could not stay inside the walls of the chapel.",
+      "words": [
+        {
+          "word": "His",
+          "start": 296.94,
+          "end": 297.12,
+          "probability": 0.9918221831321716
+        },
+        {
+          "word": "faith",
+          "start": 297.12,
+          "end": 297.36,
+          "probability": 0.9984304308891296
+        },
+        {
+          "word": "could",
+          "start": 297.36,
+          "end": 297.66,
+          "probability": 0.9980407357215881
+        },
+        {
+          "word": "not",
+          "start": 297.66,
+          "end": 297.84,
+          "probability": 0.9985194802284241
+        },
+        {
+          "word": "stay",
+          "start": 297.84,
+          "end": 298.14,
+          "probability": 0.9986465573310852
+        },
+        {
+          "word": "inside",
+          "start": 298.14,
+          "end": 298.52,
+          "probability": 0.9974192380905151
+        },
+        {
+          "word": "the",
+          "start": 298.52,
+          "end": 298.98,
+          "probability": 0.9943040013313293
+        },
+        {
+          "word": "walls",
+          "start": 298.98,
+          "end": 299.28,
+          "probability": 0.998458743095398
+        },
+        {
+          "word": "of",
+          "start": 299.28,
+          "end": 299.52,
+          "probability": 0.9987636804580688
+        },
+        {
+          "word": "the",
+          "start": 299.52,
+          "end": 299.62,
+          "probability": 0.997031569480896
+        },
+        {
+          "word": "chapel.",
+          "start": 299.62,
+          "end": 299.9,
+          "probability": 0.993309497833252
+        }
+      ]
+    },
+    {
+      "start": 301.16,
+      "end": 307.38,
+      "text": "So the friar whose own body hurt took part in building a place where other hurting people could be treated.",
+      "words": [
+        {
+          "word": "So",
+          "start": 301.16,
+          "end": 301.32,
+          "probability": 0.9839836359024048
+        },
+        {
+          "word": "the",
+          "start": 301.32,
+          "end": 301.44,
+          "probability": 0.8848264813423157
+        },
+        {
+          "word": "friar",
+          "start": 301.44,
+          "end": 301.96,
+          "probability": 0.8335282504558563
+        },
+        {
+          "word": "whose",
+          "start": 301.96,
+          "end": 302.1,
+          "probability": 0.7897151112556458
+        },
+        {
+          "word": "own",
+          "start": 302.1,
+          "end": 302.4,
+          "probability": 0.9836408495903015
+        },
+        {
+          "word": "body",
+          "start": 302.4,
+          "end": 302.78,
+          "probability": 0.9941389560699463
+        },
+        {
+          "word": "hurt",
+          "start": 302.78,
+          "end": 303.18,
+          "probability": 0.9499357342720032
+        },
+        {
+          "word": "took",
+          "start": 303.18,
+          "end": 303.46,
+          "probability": 0.9945138692855835
+        },
+        {
+          "word": "part",
+          "start": 303.46,
+          "end": 303.8,
+          "probability": 0.9980682730674744
+        },
+        {
+          "word": "in",
+          "start": 303.8,
+          "end": 304.0,
+          "probability": 0.9984506368637085
+        },
+        {
+          "word": "building",
+          "start": 304.0,
+          "end": 304.22,
+          "probability": 0.9990301132202148
+        },
+        {
+          "word": "a",
+          "start": 304.22,
+          "end": 304.5,
+          "probability": 0.998055100440979
+        },
+        {
+          "word": "place",
+          "start": 304.5,
+          "end": 304.9,
+          "probability": 0.9987622499465942
+        },
+        {
+          "word": "where",
+          "start": 304.9,
+          "end": 305.52,
+          "probability": 0.9768344759941101
+        },
+        {
+          "word": "other",
+          "start": 305.52,
+          "end": 305.8,
+          "probability": 0.9988144636154175
+        },
+        {
+          "word": "hurting",
+          "start": 305.8,
+          "end": 306.14,
+          "probability": 0.883693516254425
+        },
+        {
+          "word": "people",
+          "start": 306.14,
+          "end": 306.7,
+          "probability": 0.9979787468910217
+        },
+        {
+          "word": "could",
+          "start": 306.7,
+          "end": 306.88,
+          "probability": 0.9987704157829285
+        },
+        {
+          "word": "be",
+          "start": 306.88,
+          "end": 307.02,
+          "probability": 0.9994627833366394
+        },
+        {
+          "word": "treated.",
+          "start": 307.02,
+          "end": 307.38,
+          "probability": 0.9993818998336792
+        }
+      ]
+    },
+    {
+      "start": 308.82,
+      "end": 310.16,
+      "text": "Many people helped him.",
+      "words": [
+        {
+          "word": "Many",
+          "start": 308.82,
+          "end": 309.12,
+          "probability": 0.9956313371658325
+        },
+        {
+          "word": "people",
+          "start": 309.12,
+          "end": 309.58,
+          "probability": 0.9987427592277527
+        },
+        {
+          "word": "helped",
+          "start": 309.58,
+          "end": 309.84,
+          "probability": 0.9992165565490723
+        },
+        {
+          "word": "him.",
+          "start": 309.84,
+          "end": 310.16,
+          "probability": 0.9744616150856018
+        }
+      ]
+    },
+    {
+      "start": 311.28,
+      "end": 316.7,
+      "text": "Together they founded the home for the relief of suffering, a hospital in San Giovanni Rotondo.",
+      "words": [
+        {
+          "word": "Together",
+          "start": 311.28,
+          "end": 311.82,
+          "probability": 0.9980804920196533
+        },
+        {
+          "word": "they",
+          "start": 311.82,
+          "end": 312.2,
+          "probability": 0.5272491574287415
+        },
+        {
+          "word": "founded",
+          "start": 312.2,
+          "end": 312.54,
+          "probability": 0.9902697801589966
+        },
+        {
+          "word": "the",
+          "start": 312.54,
+          "end": 312.76,
+          "probability": 0.9497712850570679
+        },
+        {
+          "word": "home",
+          "start": 312.76,
+          "end": 312.98,
+          "probability": 0.946851909160614
+        },
+        {
+          "word": "for",
+          "start": 312.98,
+          "end": 313.3,
+          "probability": 0.997569739818573
+        },
+        {
+          "word": "the",
+          "start": 313.3,
+          "end": 313.38,
+          "probability": 0.9930973649024963
+        },
+        {
+          "word": "relief",
+          "start": 313.38,
+          "end": 313.64,
+          "probability": 0.9829407334327698
+        },
+        {
+          "word": "of",
+          "start": 313.64,
+          "end": 313.86,
+          "probability": 0.9984922409057617
+        },
+        {
+          "word": "suffering,",
+          "start": 313.86,
+          "end": 314.32,
+          "probability": 0.9938766360282898
+        },
+        {
+          "word": "a",
+          "start": 314.82,
+          "end": 315.04,
+          "probability": 0.9977849721908569
+        },
+        {
+          "word": "hospital",
+          "start": 315.04,
+          "end": 315.54,
+          "probability": 0.9863942265510559
+        },
+        {
+          "word": "in",
+          "start": 315.54,
+          "end": 315.86,
+          "probability": 0.9983227849006653
+        },
+        {
+          "word": "San",
+          "start": 315.86,
+          "end": 316.08,
+          "probability": 0.9826518297195435
+        },
+        {
+          "word": "Giovanni",
+          "start": 316.08,
+          "end": 316.54,
+          "probability": 0.8835442066192627
+        },
+        {
+          "word": "Rotondo.",
+          "start": 316.54,
+          "end": 316.86,
+          "probability": 0.5011583417654037
+        }
+      ]
+    },
+    {
+      "start": 318.40000000000003,
+      "end": 320.4,
+      "text": "It opened in 1956.",
+      "words": [
+        {
+          "word": "It",
+          "start": 318.40000000000003,
+          "end": 319.04,
+          "probability": 0.9960471987724304
+        },
+        {
+          "word": "opened",
+          "start": 319.04,
+          "end": 319.28,
+          "probability": 0.9993560910224915
+        },
+        {
+          "word": "in",
+          "start": 319.28,
+          "end": 319.68,
+          "probability": 0.9976359605789185
+        },
+        {
+          "word": "1956.",
+          "start": 319.68,
+          "end": 320.4,
+          "probability": 0.9972739815711975
+        }
+      ]
+    },
+    {
+      "start": 321.7,
+      "end": 326.38,
+      "text": "Think of the difference between telling a sick person, I hope you get well.",
+      "words": [
+        {
+          "word": "Think",
+          "start": 321.7,
+          "end": 322.38,
+          "probability": 0.8810406923294067
+        },
+        {
+          "word": "of",
+          "start": 322.38,
+          "end": 322.56,
+          "probability": 0.9956112504005432
+        },
+        {
+          "word": "the",
+          "start": 322.56,
+          "end": 322.7,
+          "probability": 0.9975124597549438
+        },
+        {
+          "word": "difference",
+          "start": 322.7,
+          "end": 323.06,
+          "probability": 0.9959167838096619
+        },
+        {
+          "word": "between",
+          "start": 323.06,
+          "end": 323.48,
+          "probability": 0.9985612034797668
+        },
+        {
+          "word": "telling",
+          "start": 323.48,
+          "end": 323.94,
+          "probability": 0.9939051270484924
+        },
+        {
+          "word": "a",
+          "start": 323.94,
+          "end": 324.18,
+          "probability": 0.9980154037475586
+        },
+        {
+          "word": "sick",
+          "start": 324.18,
+          "end": 324.38,
+          "probability": 0.9978228807449341
+        },
+        {
+          "word": "person,",
+          "start": 324.38,
+          "end": 324.8,
+          "probability": 0.9994402527809143
+        },
+        {
+          "word": "I",
+          "start": 325.36,
+          "end": 325.56,
+          "probability": 0.20639042556285858
+        },
+        {
+          "word": "hope",
+          "start": 325.56,
+          "end": 325.72,
+          "probability": 0.9990794658660889
+        },
+        {
+          "word": "you",
+          "start": 325.72,
+          "end": 325.9,
+          "probability": 0.9934444427490234
+        },
+        {
+          "word": "get",
+          "start": 325.9,
+          "end": 326.06,
+          "probability": 0.9957049489021301
+        },
+        {
+          "word": "well.",
+          "start": 326.06,
+          "end": 326.38,
+          "probability": 0.9938541650772095
+        }
+      ]
+    },
+    {
+      "start": 327.46,
+      "end": 330.32,
+      "text": "And helping make a bed, a doctor in care available.",
+      "words": [
+        {
+          "word": "And",
+          "start": 327.46,
+          "end": 327.58,
+          "probability": 0.8939392566680908
+        },
+        {
+          "word": "helping",
+          "start": 327.58,
+          "end": 327.78,
+          "probability": 0.9601050615310669
+        },
+        {
+          "word": "make",
+          "start": 327.78,
+          "end": 328.14,
+          "probability": 0.9964918494224548
+        },
+        {
+          "word": "a",
+          "start": 328.14,
+          "end": 328.26,
+          "probability": 0.9939441084861755
+        },
+        {
+          "word": "bed,",
+          "start": 328.26,
+          "end": 328.52,
+          "probability": 0.9765675663948059
+        },
+        {
+          "word": "a",
+          "start": 328.9,
+          "end": 328.96,
+          "probability": 0.9973151087760925
+        },
+        {
+          "word": "doctor",
+          "start": 328.96,
+          "end": 329.36,
+          "probability": 0.9983831644058228
+        },
+        {
+          "word": "in",
+          "start": 329.36,
+          "end": 329.6,
+          "probability": 0.41616690158843994
+        },
+        {
+          "word": "care",
+          "start": 329.6,
+          "end": 329.84,
+          "probability": 0.9980985522270203
+        },
+        {
+          "word": "available.",
+          "start": 329.84,
+          "end": 330.32,
+          "probability": 0.9785822629928589
+        }
+      ]
+    },
+    {
+      "start": 331.92,
+      "end": 335.46,
+      "text": "The hospital was not a claim that prayer replaces medicine.",
+      "words": [
+        {
+          "word": "The",
+          "start": 331.92,
+          "end": 332.06,
+          "probability": 0.5590739250183105
+        },
+        {
+          "word": "hospital",
+          "start": 332.06,
+          "end": 332.48,
+          "probability": 0.9940803647041321
+        },
+        {
+          "word": "was",
+          "start": 332.48,
+          "end": 333.02,
+          "probability": 0.9941258430480957
+        },
+        {
+          "word": "not",
+          "start": 333.02,
+          "end": 333.24,
+          "probability": 0.9995362758636475
+        },
+        {
+          "word": "a",
+          "start": 333.24,
+          "end": 333.32,
+          "probability": 0.9918044805526733
+        },
+        {
+          "word": "claim",
+          "start": 333.32,
+          "end": 333.7,
+          "probability": 0.999014139175415
+        },
+        {
+          "word": "that",
+          "start": 333.7,
+          "end": 334.06,
+          "probability": 0.9924111366271973
+        },
+        {
+          "word": "prayer",
+          "start": 334.06,
+          "end": 334.34,
+          "probability": 0.81705641746521
+        },
+        {
+          "word": "replaces",
+          "start": 334.34,
+          "end": 335.1,
+          "probability": 0.9965929388999939
+        },
+        {
+          "word": "medicine.",
+          "start": 335.1,
+          "end": 335.46,
+          "probability": 0.9952612519264221
+        }
+      ]
+    },
+    {
+      "start": 337.28,
+      "end": 339.16,
+      "text": "It was a way to put love into action.",
+      "words": [
+        {
+          "word": "It",
+          "start": 337.28,
+          "end": 337.34,
+          "probability": 0.9837910532951355
+        },
+        {
+          "word": "was",
+          "start": 337.34,
+          "end": 337.44,
+          "probability": 0.9993183612823486
+        },
+        {
+          "word": "a",
+          "start": 337.44,
+          "end": 337.56,
+          "probability": 0.9983633160591125
+        },
+        {
+          "word": "way",
+          "start": 337.56,
+          "end": 337.72,
+          "probability": 0.9996019005775452
+        },
+        {
+          "word": "to",
+          "start": 337.72,
+          "end": 337.88,
+          "probability": 0.9976423382759094
+        },
+        {
+          "word": "put",
+          "start": 337.88,
+          "end": 338.1,
+          "probability": 0.999342143535614
+        },
+        {
+          "word": "love",
+          "start": 338.1,
+          "end": 338.36,
+          "probability": 0.9951305389404297
+        },
+        {
+          "word": "into",
+          "start": 338.36,
+          "end": 338.66,
+          "probability": 0.9951322674751282
+        },
+        {
+          "word": "action.",
+          "start": 338.66,
+          "end": 339.16,
+          "probability": 0.9989203214645386
+        }
+      ]
+    },
+    {
+      "start": 340.34,
+      "end": 342.76,
+      "text": "Padre Pio also encouraged prayer groups.",
+      "words": [
+        {
+          "word": "Padre",
+          "start": 340.34,
+          "end": 340.72,
+          "probability": 0.8892714381217957
+        },
+        {
+          "word": "Pio",
+          "start": 340.72,
+          "end": 341.1,
+          "probability": 0.8579833507537842
+        },
+        {
+          "word": "also",
+          "start": 341.1,
+          "end": 341.46,
+          "probability": 0.9383525252342224
+        },
+        {
+          "word": "encouraged",
+          "start": 341.46,
+          "end": 342.06,
+          "probability": 0.992671012878418
+        },
+        {
+          "word": "prayer",
+          "start": 342.06,
+          "end": 342.4,
+          "probability": 0.9835172891616821
+        },
+        {
+          "word": "groups.",
+          "start": 342.4,
+          "end": 342.76,
+          "probability": 0.9994753003120422
+        }
+      ]
+    },
+    {
+      "start": 343.94000000000005,
+      "end": 348.18,
+      "text": "People could pray together rather than carry every burden alone.",
+      "words": [
+        {
+          "word": "People",
+          "start": 343.94000000000005,
+          "end": 344.66,
+          "probability": 0.9513912796974182
+        },
+        {
+          "word": "could",
+          "start": 344.66,
+          "end": 344.86,
+          "probability": 0.9984116554260254
+        },
+        {
+          "word": "pray",
+          "start": 344.86,
+          "end": 345.08,
+          "probability": 0.9944057464599609
+        },
+        {
+          "word": "together",
+          "start": 345.08,
+          "end": 345.5,
+          "probability": 0.9988872408866882
+        },
+        {
+          "word": "rather",
+          "start": 345.5,
+          "end": 346.2,
+          "probability": 0.6381385922431946
+        },
+        {
+          "word": "than",
+          "start": 346.2,
+          "end": 346.5,
+          "probability": 0.9985784292221069
+        },
+        {
+          "word": "carry",
+          "start": 346.5,
+          "end": 346.88,
+          "probability": 0.9925202131271362
+        },
+        {
+          "word": "every",
+          "start": 346.88,
+          "end": 347.34,
+          "probability": 0.9950814247131348
+        },
+        {
+          "word": "burden",
+          "start": 347.34,
+          "end": 347.78,
+          "probability": 0.9992766976356506
+        },
+        {
+          "word": "alone.",
+          "start": 347.78,
+          "end": 348.18,
+          "probability": 0.9917763471603394
+        }
+      ]
+    },
+    {
+      "start": 349.34000000000003,
+      "end": 352.3,
+      "text": "Prayer and care belong together in his life.",
+      "words": [
+        {
+          "word": "Prayer",
+          "start": 349.34000000000003,
+          "end": 349.98,
+          "probability": 0.00347340595908463
+        },
+        {
+          "word": "and",
+          "start": 349.98,
+          "end": 350.32,
+          "probability": 0.9874082803726196
+        },
+        {
+          "word": "care",
+          "start": 350.32,
+          "end": 350.66,
+          "probability": 0.990875244140625
+        },
+        {
+          "word": "belong",
+          "start": 350.66,
+          "end": 351.06,
+          "probability": 0.9771197438240051
+        },
+        {
+          "word": "together",
+          "start": 351.06,
+          "end": 351.62,
+          "probability": 0.9985142350196838
+        },
+        {
+          "word": "in",
+          "start": 351.62,
+          "end": 351.88,
+          "probability": 0.9975938200950623
+        },
+        {
+          "word": "his",
+          "start": 351.88,
+          "end": 351.98,
+          "probability": 0.9777376651763916
+        },
+        {
+          "word": "life.",
+          "start": 351.98,
+          "end": 352.3,
+          "probability": 0.9984093308448792
+        }
+      ]
+    },
+    {
+      "start": 353.84,
+      "end": 356.6,
+      "text": "At the hospital, someone could receive treatment.",
+      "words": [
+        {
+          "word": "At",
+          "start": 353.84,
+          "end": 353.96,
+          "probability": 0.9150091409683228
+        },
+        {
+          "word": "the",
+          "start": 353.96,
+          "end": 354.08,
+          "probability": 0.9982433319091797
+        },
+        {
+          "word": "hospital,",
+          "start": 354.08,
+          "end": 354.56,
+          "probability": 0.991293728351593
+        },
+        {
+          "word": "someone",
+          "start": 355.06,
+          "end": 355.4,
+          "probability": 0.9970875382423401
+        },
+        {
+          "word": "could",
+          "start": 355.4,
+          "end": 355.66,
+          "probability": 0.9990836381912231
+        },
+        {
+          "word": "receive",
+          "start": 355.66,
+          "end": 355.88,
+          "probability": 0.9988787770271301
+        },
+        {
+          "word": "treatment.",
+          "start": 355.88,
+          "end": 356.6,
+          "probability": 0.9987331032752991
+        }
+      ]
+    },
+    {
+      "start": 357.84,
+      "end": 361.46,
+      "text": "In a prayer group, someone could know they had not been forgotten.",
+      "words": [
+        {
+          "word": "In",
+          "start": 357.84,
+          "end": 358.22,
+          "probability": 0.9958395957946777
+        },
+        {
+          "word": "a",
+          "start": 358.22,
+          "end": 358.3,
+          "probability": 0.9990046620368958
+        },
+        {
+          "word": "prayer",
+          "start": 358.3,
+          "end": 358.52,
+          "probability": 0.9780446887016296
+        },
+        {
+          "word": "group,",
+          "start": 358.52,
+          "end": 359.02,
+          "probability": 0.9994066953659058
+        },
+        {
+          "word": "someone",
+          "start": 359.42,
+          "end": 359.76,
+          "probability": 0.9977014660835266
+        },
+        {
+          "word": "could",
+          "start": 359.76,
+          "end": 360.02,
+          "probability": 0.9980247020721436
+        },
+        {
+          "word": "know",
+          "start": 360.02,
+          "end": 360.28,
+          "probability": 0.9989301562309265
+        },
+        {
+          "word": "they",
+          "start": 360.28,
+          "end": 360.5,
+          "probability": 0.9792378544807434
+        },
+        {
+          "word": "had",
+          "start": 360.5,
+          "end": 360.68,
+          "probability": 0.9851458072662354
+        },
+        {
+          "word": "not",
+          "start": 360.68,
+          "end": 360.9,
+          "probability": 0.999112069606781
+        },
+        {
+          "word": "been",
+          "start": 360.9,
+          "end": 361.12,
+          "probability": 0.9973114728927612
+        },
+        {
+          "word": "forgotten.",
+          "start": 361.12,
+          "end": 361.46,
+          "probability": 0.9958745837211609
+        }
+      ]
+    },
+    {
+      "start": 363.1,
+      "end": 365.62,
+      "text": "Neither act made suffering disappear on command.",
+      "words": [
+        {
+          "word": "Neither",
+          "start": 363.1,
+          "end": 363.38,
+          "probability": 0.9892783164978027
+        },
+        {
+          "word": "act",
+          "start": 363.38,
+          "end": 363.68,
+          "probability": 0.9159473180770874
+        },
+        {
+          "word": "made",
+          "start": 363.68,
+          "end": 363.98,
+          "probability": 0.9613741636276245
+        },
+        {
+          "word": "suffering",
+          "start": 363.98,
+          "end": 364.34,
+          "probability": 0.9959776997566223
+        },
+        {
+          "word": "disappear",
+          "start": 364.34,
+          "end": 365.06,
+          "probability": 0.9987068176269531
+        },
+        {
+          "word": "on",
+          "start": 365.06,
+          "end": 365.3,
+          "probability": 0.9979914426803589
+        },
+        {
+          "word": "command.",
+          "start": 365.3,
+          "end": 365.62,
+          "probability": 0.9944165945053101
+        }
+      ]
+    },
+    {
+      "start": 367.16,
+      "end": 369.28,
+      "text": "Both could tell a person, you matter.",
+      "words": [
+        {
+          "word": "Both",
+          "start": 367.16,
+          "end": 367.6,
+          "probability": 0.997353196144104
+        },
+        {
+          "word": "could",
+          "start": 367.6,
+          "end": 367.8,
+          "probability": 0.9856533408164978
+        },
+        {
+          "word": "tell",
+          "start": 367.8,
+          "end": 368.0,
+          "probability": 0.9989107847213745
+        },
+        {
+          "word": "a",
+          "start": 368.0,
+          "end": 368.1,
+          "probability": 0.9968839287757874
+        },
+        {
+          "word": "person,",
+          "start": 368.1,
+          "end": 368.48,
+          "probability": 0.999690055847168
+        },
+        {
+          "word": "you",
+          "start": 369.0,
+          "end": 369.04,
+          "probability": 0.4000106453895569
+        },
+        {
+          "word": "matter.",
+          "start": 369.04,
+          "end": 369.28,
+          "probability": 0.9959892630577087
+        }
+      ]
+    },
+    {
+      "start": 370.4,
+      "end": 372.16,
+      "text": "A child can understand this.",
+      "words": [
+        {
+          "word": "A",
+          "start": 370.4,
+          "end": 370.68,
+          "probability": 0.9975493550300598
+        },
+        {
+          "word": "child",
+          "start": 370.68,
+          "end": 371.04,
+          "probability": 0.999383807182312
+        },
+        {
+          "word": "can",
+          "start": 371.04,
+          "end": 371.34,
+          "probability": 0.9963777661323547
+        },
+        {
+          "word": "understand",
+          "start": 371.34,
+          "end": 371.52,
+          "probability": 0.9995489716529846
+        },
+        {
+          "word": "this.",
+          "start": 371.52,
+          "end": 372.16,
+          "probability": 0.9994103908538818
+        }
+      ]
+    },
+    {
+      "start": 373.16,
+      "end": 377.26,
+      "text": "When someone is alone, sitting beside them is a real gift.",
+      "words": [
+        {
+          "word": "When",
+          "start": 373.16,
+          "end": 373.8,
+          "probability": 0.9966799020767212
+        },
+        {
+          "word": "someone",
+          "start": 373.8,
+          "end": 374.1,
+          "probability": 0.9991937279701233
+        },
+        {
+          "word": "is",
+          "start": 374.1,
+          "end": 374.34,
+          "probability": 0.9992400407791138
+        },
+        {
+          "word": "alone,",
+          "start": 374.34,
+          "end": 374.64,
+          "probability": 0.9938321113586426
+        },
+        {
+          "word": "sitting",
+          "start": 375.18,
+          "end": 375.48,
+          "probability": 0.998950183391571
+        },
+        {
+          "word": "beside",
+          "start": 375.48,
+          "end": 375.94,
+          "probability": 0.9990401864051819
+        },
+        {
+          "word": "them",
+          "start": 375.94,
+          "end": 376.3,
+          "probability": 0.9985604882240295
+        },
+        {
+          "word": "is",
+          "start": 376.3,
+          "end": 376.54,
+          "probability": 0.9730408787727356
+        },
+        {
+          "word": "a",
+          "start": 376.54,
+          "end": 376.66,
+          "probability": 0.9983211159706116
+        },
+        {
+          "word": "real",
+          "start": 376.66,
+          "end": 376.92,
+          "probability": 0.9989957213401794
+        },
+        {
+          "word": "gift.",
+          "start": 376.92,
+          "end": 377.26,
+          "probability": 0.999126136302948
+        }
+      ]
+    },
+    {
+      "start": 378.28,
+      "end": 384.42,
+      "text": "When someone is ill, bringing water or asking an adult for help can be a real act of love.",
+      "words": [
+        {
+          "word": "When",
+          "start": 378.28,
+          "end": 378.96,
+          "probability": 0.8284432291984558
+        },
+        {
+          "word": "someone",
+          "start": 378.96,
+          "end": 379.32,
+          "probability": 0.99528968334198
+        },
+        {
+          "word": "is",
+          "start": 379.32,
+          "end": 379.52,
+          "probability": 0.9985333681106567
+        },
+        {
+          "word": "ill,",
+          "start": 379.52,
+          "end": 379.86,
+          "probability": 0.9996380805969238
+        },
+        {
+          "word": "bringing",
+          "start": 380.42,
+          "end": 380.68,
+          "probability": 0.9926704168319702
+        },
+        {
+          "word": "water",
+          "start": 380.68,
+          "end": 381.14,
+          "probability": 0.9990068078041077
+        },
+        {
+          "word": "or",
+          "start": 381.14,
+          "end": 381.4,
+          "probability": 0.966563880443573
+        },
+        {
+          "word": "asking",
+          "start": 381.4,
+          "end": 381.82,
+          "probability": 0.9986767172813416
+        },
+        {
+          "word": "an",
+          "start": 381.82,
+          "end": 382.04,
+          "probability": 0.997378945350647
+        },
+        {
+          "word": "adult",
+          "start": 382.04,
+          "end": 382.28,
+          "probability": 0.9973135590553284
+        },
+        {
+          "word": "for",
+          "start": 382.28,
+          "end": 382.56,
+          "probability": 0.989371657371521
+        },
+        {
+          "word": "help",
+          "start": 382.56,
+          "end": 382.78,
+          "probability": 0.9989744424819946
+        },
+        {
+          "word": "can",
+          "start": 382.78,
+          "end": 383.04,
+          "probability": 0.9803520441055298
+        },
+        {
+          "word": "be",
+          "start": 383.04,
+          "end": 383.2,
+          "probability": 0.998765230178833
+        },
+        {
+          "word": "a",
+          "start": 383.2,
+          "end": 383.32,
+          "probability": 0.9964555501937866
+        },
+        {
+          "word": "real",
+          "start": 383.32,
+          "end": 383.54,
+          "probability": 0.9977357387542725
+        },
+        {
+          "word": "act",
+          "start": 383.54,
+          "end": 383.94,
+          "probability": 0.9978467226028442
+        },
+        {
+          "word": "of",
+          "start": 383.94,
+          "end": 384.08,
+          "probability": 0.9986051917076111
+        },
+        {
+          "word": "love.",
+          "start": 384.08,
+          "end": 384.42,
+          "probability": 0.9983281493186951
+        }
+      ]
+    },
+    {
+      "start": 385.86,
+      "end": 388.76,
+      "text": "Big kindness often begins with something small.",
+      "words": [
+        {
+          "word": "Big",
+          "start": 385.86,
+          "end": 386.14,
+          "probability": 0.9347721338272095
+        },
+        {
+          "word": "kindness",
+          "start": 386.14,
+          "end": 386.66,
+          "probability": 0.9773818254470825
+        },
+        {
+          "word": "often",
+          "start": 386.66,
+          "end": 387.18,
+          "probability": 0.9829145073890686
+        },
+        {
+          "word": "begins",
+          "start": 387.18,
+          "end": 387.68,
+          "probability": 0.9978206157684326
+        },
+        {
+          "word": "with",
+          "start": 387.68,
+          "end": 388.0,
+          "probability": 0.9982467889785767
+        },
+        {
+          "word": "something",
+          "start": 388.0,
+          "end": 388.28,
+          "probability": 0.9989738464355469
+        },
+        {
+          "word": "small.",
+          "start": 388.28,
+          "end": 388.76,
+          "probability": 0.9981583952903748
+        }
+      ]
+    },
+    {
+      "start": 390.02,
+      "end": 391.46,
+      "text": "He died in 1968.",
+      "words": [
+        {
+          "word": "He",
+          "start": 390.02,
+          "end": 390.12,
+          "probability": 0.9927486777305603
+        },
+        {
+          "word": "died",
+          "start": 390.12,
+          "end": 390.38,
+          "probability": 0.999377965927124
+        },
+        {
+          "word": "in",
+          "start": 390.38,
+          "end": 390.72,
+          "probability": 0.9983110427856445
+        },
+        {
+          "word": "1968.",
+          "start": 390.72,
+          "end": 391.46,
+          "probability": 0.9977801442146301
+        }
+      ]
+    },
+    {
+      "start": 393.0,
+      "end": 399.12,
+      "text": "Years later, the church carefully examined his life and proclaimed him a saint in 2002.",
+      "words": [
+        {
+          "word": "Years",
+          "start": 393.0,
+          "end": 393.38,
+          "probability": 0.9931407570838928
+        },
+        {
+          "word": "later,",
+          "start": 393.38,
+          "end": 393.86,
+          "probability": 0.9991075396537781
+        },
+        {
+          "word": "the",
+          "start": 394.14,
+          "end": 394.36,
+          "probability": 0.9956907629966736
+        },
+        {
+          "word": "church",
+          "start": 394.36,
+          "end": 394.58,
+          "probability": 0.848425030708313
+        },
+        {
+          "word": "carefully",
+          "start": 394.58,
+          "end": 395.14,
+          "probability": 0.9993184804916382
+        },
+        {
+          "word": "examined",
+          "start": 395.14,
+          "end": 395.52,
+          "probability": 0.9993380904197693
+        },
+        {
+          "word": "his",
+          "start": 395.52,
+          "end": 395.92,
+          "probability": 0.995617151260376
+        },
+        {
+          "word": "life",
+          "start": 395.92,
+          "end": 396.2,
+          "probability": 0.9985144734382629
+        },
+        {
+          "word": "and",
+          "start": 396.2,
+          "end": 396.9,
+          "probability": 0.8652229309082031
+        },
+        {
+          "word": "proclaimed",
+          "start": 396.9,
+          "end": 397.24,
+          "probability": 0.9952303767204285
+        },
+        {
+          "word": "him",
+          "start": 397.24,
+          "end": 397.58,
+          "probability": 0.997380793094635
+        },
+        {
+          "word": "a",
+          "start": 397.58,
+          "end": 397.7,
+          "probability": 0.9989390969276428
+        },
+        {
+          "word": "saint",
+          "start": 397.7,
+          "end": 397.96,
+          "probability": 0.9841264486312866
+        },
+        {
+          "word": "in",
+          "start": 397.96,
+          "end": 398.28,
+          "probability": 0.9971340894699097
+        },
+        {
+          "word": "2002.",
+          "start": 398.28,
+          "end": 399.12,
+          "probability": 0.9983711838722229
+        }
+      ]
+    },
+    {
+      "start": 400.66,
+      "end": 404.18,
+      "text": "Pope John Paul II spoke of his long hours in the confessional.",
+      "words": [
+        {
+          "word": "Pope",
+          "start": 400.66,
+          "end": 400.9,
+          "probability": 0.9928460717201233
+        },
+        {
+          "word": "John",
+          "start": 400.9,
+          "end": 401.22,
+          "probability": 0.9976909160614014
+        },
+        {
+          "word": "Paul",
+          "start": 401.22,
+          "end": 401.6,
+          "probability": 0.992577850818634
+        },
+        {
+          "word": "II",
+          "start": 401.6,
+          "end": 402.12,
+          "probability": 0.37625598907470703
+        },
+        {
+          "word": "spoke",
+          "start": 402.12,
+          "end": 402.6,
+          "probability": 0.9969504475593567
+        },
+        {
+          "word": "of",
+          "start": 402.6,
+          "end": 402.82,
+          "probability": 0.9898578524589539
+        },
+        {
+          "word": "his",
+          "start": 402.82,
+          "end": 402.94,
+          "probability": 0.9958237409591675
+        },
+        {
+          "word": "long",
+          "start": 402.94,
+          "end": 403.16,
+          "probability": 0.9936360120773315
+        },
+        {
+          "word": "hours",
+          "start": 403.16,
+          "end": 403.78,
+          "probability": 0.9937472343444824
+        },
+        {
+          "word": "in",
+          "start": 403.78,
+          "end": 404.04,
+          "probability": 0.9960935711860657
+        },
+        {
+          "word": "the",
+          "start": 404.04,
+          "end": 404.14,
+          "probability": 0.9881535172462463
+        },
+        {
+          "word": "confessional.",
+          "start": 404.14,
+          "end": 404.47999999999996,
+          "probability": 0.9347870647907257
+        }
+      ]
+    },
+    {
+      "start": 405.34000000000003,
+      "end": 407.64,
+      "text": "His prayer groups and the hospital.",
+      "words": [
+        {
+          "word": "His",
+          "start": 405.34000000000003,
+          "end": 406.04,
+          "probability": 0.09260372817516327
+        },
+        {
+          "word": "prayer",
+          "start": 406.04,
+          "end": 406.3,
+          "probability": 0.9489355087280273
+        },
+        {
+          "word": "groups",
+          "start": 406.3,
+          "end": 406.7,
+          "probability": 0.9912168979644775
+        },
+        {
+          "word": "and",
+          "start": 406.7,
+          "end": 407.14,
+          "probability": 0.91956627368927
+        },
+        {
+          "word": "the",
+          "start": 407.14,
+          "end": 407.26,
+          "probability": 0.9824663400650024
+        },
+        {
+          "word": "hospital.",
+          "start": 407.26,
+          "end": 407.64,
+          "probability": 0.9604293704032898
+        }
+      ]
+    },
+    {
+      "start": 409.34,
+      "end": 413.58,
+      "text": "He held prayer and charity together as the heart of Padre Pio's lesson.",
+      "words": [
+        {
+          "word": "He",
+          "start": 409.34,
+          "end": 409.4,
+          "probability": 0.9079068303108215
+        },
+        {
+          "word": "held",
+          "start": 409.4,
+          "end": 409.64,
+          "probability": 0.9988783001899719
+        },
+        {
+          "word": "prayer",
+          "start": 409.64,
+          "end": 409.88,
+          "probability": 0.9944856762886047
+        },
+        {
+          "word": "and",
+          "start": 409.88,
+          "end": 410.28,
+          "probability": 0.9942070245742798
+        },
+        {
+          "word": "charity",
+          "start": 410.28,
+          "end": 410.52,
+          "probability": 0.9978603720664978
+        },
+        {
+          "word": "together",
+          "start": 410.52,
+          "end": 411.02,
+          "probability": 0.9987645149230957
+        },
+        {
+          "word": "as",
+          "start": 411.02,
+          "end": 411.7,
+          "probability": 0.8241298198699951
+        },
+        {
+          "word": "the",
+          "start": 411.7,
+          "end": 411.86,
+          "probability": 0.990352213382721
+        },
+        {
+          "word": "heart",
+          "start": 411.86,
+          "end": 412.16,
+          "probability": 0.9642806649208069
+        },
+        {
+          "word": "of",
+          "start": 412.16,
+          "end": 412.36,
+          "probability": 0.9978938698768616
+        },
+        {
+          "word": "Padre",
+          "start": 412.36,
+          "end": 412.86,
+          "probability": 0.953860878944397
+        },
+        {
+          "word": "Pio's",
+          "start": 412.86,
+          "end": 413.4,
+          "probability": 0.7919527093569437
+        },
+        {
+          "word": "lesson.",
+          "start": 413.4,
+          "end": 413.58,
+          "probability": 0.9780957698822021
+        }
+      ]
+    },
+    {
+      "start": 415.04,
+      "end": 416.64,
+      "text": "You may never build a hospital.",
+      "words": [
+        {
+          "word": "You",
+          "start": 415.04,
+          "end": 415.12,
+          "probability": 0.9488055109977722
+        },
+        {
+          "word": "may",
+          "start": 415.12,
+          "end": 415.3,
+          "probability": 0.9956389665603638
+        },
+        {
+          "word": "never",
+          "start": 415.3,
+          "end": 415.72,
+          "probability": 0.9960331320762634
+        },
+        {
+          "word": "build",
+          "start": 415.72,
+          "end": 416.1,
+          "probability": 0.9978396892547607
+        },
+        {
+          "word": "a",
+          "start": 416.1,
+          "end": 416.24,
+          "probability": 0.9982718229293823
+        },
+        {
+          "word": "hospital.",
+          "start": 416.24,
+          "end": 416.64,
+          "probability": 0.9941650032997131
+        }
+      ]
+    },
+    {
+      "start": 418.06,
+      "end": 420.98,
+      "text": "You may not know what to say when someone is hurting.",
+      "words": [
+        {
+          "word": "You",
+          "start": 418.06,
+          "end": 418.48,
+          "probability": 0.9943101406097412
+        },
+        {
+          "word": "may",
+          "start": 418.48,
+          "end": 418.62,
+          "probability": 0.9981151819229126
+        },
+        {
+          "word": "not",
+          "start": 418.62,
+          "end": 418.82,
+          "probability": 0.9993569254875183
+        },
+        {
+          "word": "know",
+          "start": 418.82,
+          "end": 419.06,
+          "probability": 0.9993337988853455
+        },
+        {
+          "word": "what",
+          "start": 419.06,
+          "end": 419.3,
+          "probability": 0.9986308217048645
+        },
+        {
+          "word": "to",
+          "start": 419.3,
+          "end": 419.44,
+          "probability": 0.9992696642875671
+        },
+        {
+          "word": "say",
+          "start": 419.44,
+          "end": 419.7,
+          "probability": 0.9993777275085449
+        },
+        {
+          "word": "when",
+          "start": 419.7,
+          "end": 420.06,
+          "probability": 0.9886844754219055
+        },
+        {
+          "word": "someone",
+          "start": 420.06,
+          "end": 420.4,
+          "probability": 0.9981831908226013
+        },
+        {
+          "word": "is",
+          "start": 420.4,
+          "end": 420.62,
+          "probability": 0.998661994934082
+        },
+        {
+          "word": "hurting.",
+          "start": 420.62,
+          "end": 420.98,
+          "probability": 0.9935450553894043
+        }
+      ]
+    },
+    {
+      "start": 422.48,
+      "end": 423.2,
+      "text": "Start smaller.",
+      "words": [
+        {
+          "word": "Start",
+          "start": 422.48,
+          "end": 422.74,
+          "probability": 0.9932896494865417
+        },
+        {
+          "word": "smaller.",
+          "start": 422.74,
+          "end": 423.2,
+          "probability": 0.9660671949386597
+        }
+      ]
+    },
+    {
+      "start": 424.56,
+      "end": 426.26,
+      "text": "Listen without rushing away.",
+      "words": [
+        {
+          "word": "Listen",
+          "start": 424.56,
+          "end": 425.04,
+          "probability": 0.9971452355384827
+        },
+        {
+          "word": "without",
+          "start": 425.04,
+          "end": 425.36,
+          "probability": 0.9951817393302917
+        },
+        {
+          "word": "rushing",
+          "start": 425.36,
+          "end": 425.86,
+          "probability": 0.9989426732063293
+        },
+        {
+          "word": "away.",
+          "start": 425.86,
+          "end": 426.26,
+          "probability": 0.9994908571243286
+        }
+      ]
+    },
+    {
+      "start": 427.64,
+      "end": 428.98,
+      "text": "Ask if they need help.",
+      "words": [
+        {
+          "word": "Ask",
+          "start": 427.64,
+          "end": 428.08,
+          "probability": 0.9987034797668457
+        },
+        {
+          "word": "if",
+          "start": 428.08,
+          "end": 428.3,
+          "probability": 0.9988322854042053
+        },
+        {
+          "word": "they",
+          "start": 428.3,
+          "end": 428.46,
+          "probability": 0.9989321827888489
+        },
+        {
+          "word": "need",
+          "start": 428.46,
+          "end": 428.64,
+          "probability": 0.9994742274284363
+        },
+        {
+          "word": "help.",
+          "start": 428.64,
+          "end": 428.98,
+          "probability": 0.9998358488082886
+        }
+      ]
+    },
+    {
+      "start": 430.18,
+      "end": 433.02,
+      "text": "Pray for them and do one useful kind thing.",
+      "words": [
+        {
+          "word": "Pray",
+          "start": 430.18,
+          "end": 430.64,
+          "probability": 0.9837188422679901
+        },
+        {
+          "word": "for",
+          "start": 430.64,
+          "end": 430.82,
+          "probability": 0.998285710811615
+        },
+        {
+          "word": "them",
+          "start": 430.82,
+          "end": 430.98,
+          "probability": 0.9995742440223694
+        },
+        {
+          "word": "and",
+          "start": 430.98,
+          "end": 431.32,
+          "probability": 0.8840996623039246
+        },
+        {
+          "word": "do",
+          "start": 431.32,
+          "end": 431.48,
+          "probability": 0.9991562366485596
+        },
+        {
+          "word": "one",
+          "start": 431.48,
+          "end": 431.74,
+          "probability": 0.9967755675315857
+        },
+        {
+          "word": "useful",
+          "start": 431.74,
+          "end": 432.18,
+          "probability": 0.9965178966522217
+        },
+        {
+          "word": "kind",
+          "start": 432.18,
+          "end": 432.56,
+          "probability": 0.9760668277740479
+        },
+        {
+          "word": "thing.",
+          "start": 432.56,
+          "end": 433.02,
+          "probability": 0.9962800145149231
+        }
+      ]
+    },
+    {
+      "start": 434.48,
+      "end": 438.16,
+      "text": "If you have made a mistake, ask forgiveness and begin again.",
+      "words": [
+        {
+          "word": "If",
+          "start": 434.48,
+          "end": 434.66,
+          "probability": 0.9634688496589661
+        },
+        {
+          "word": "you",
+          "start": 434.66,
+          "end": 434.84,
+          "probability": 0.9978445768356323
+        },
+        {
+          "word": "have",
+          "start": 434.84,
+          "end": 434.98,
+          "probability": 0.9953747391700745
+        },
+        {
+          "word": "made",
+          "start": 434.98,
+          "end": 435.2,
+          "probability": 0.9989283680915833
+        },
+        {
+          "word": "a",
+          "start": 435.2,
+          "end": 435.28,
+          "probability": 0.9992879033088684
+        },
+        {
+          "word": "mistake,",
+          "start": 435.28,
+          "end": 435.78,
+          "probability": 0.9998507499694824
+        },
+        {
+          "word": "ask",
+          "start": 436.32,
+          "end": 436.56,
+          "probability": 0.9979214072227478
+        },
+        {
+          "word": "forgiveness",
+          "start": 436.56,
+          "end": 436.96,
+          "probability": 0.9165983200073242
+        },
+        {
+          "word": "and",
+          "start": 436.96,
+          "end": 437.38,
+          "probability": 0.975712239742279
+        },
+        {
+          "word": "begin",
+          "start": 437.38,
+          "end": 437.6,
+          "probability": 0.9924852252006531
+        },
+        {
+          "word": "again.",
+          "start": 437.6,
+          "end": 438.16,
+          "probability": 0.9994592070579529
+        }
+      ]
+    },
+    {
+      "start": 439.62,
+      "end": 444.84,
+      "text": "Padre Pio's life says that love for God grows when it becomes love for a neighbor.",
+      "words": [
+        {
+          "word": "Padre",
+          "start": 439.62,
+          "end": 439.98,
+          "probability": 0.9336660802364349
+        },
+        {
+          "word": "Pio's",
+          "start": 439.98,
+          "end": 440.52,
+          "probability": 0.5813441276550293
+        },
+        {
+          "word": "life",
+          "start": 440.52,
+          "end": 440.7,
+          "probability": 0.9393343329429626
+        },
+        {
+          "word": "says",
+          "start": 440.7,
+          "end": 441.14,
+          "probability": 0.9949595928192139
+        },
+        {
+          "word": "that",
+          "start": 441.14,
+          "end": 441.38,
+          "probability": 0.9852391481399536
+        },
+        {
+          "word": "love",
+          "start": 441.38,
+          "end": 441.94,
+          "probability": 0.6889368295669556
+        },
+        {
+          "word": "for",
+          "start": 441.94,
+          "end": 442.22,
+          "probability": 0.9968915581703186
+        },
+        {
+          "word": "God",
+          "start": 442.22,
+          "end": 442.46,
+          "probability": 0.992359459400177
+        },
+        {
+          "word": "grows",
+          "start": 442.46,
+          "end": 442.94,
+          "probability": 0.9907711744308472
+        },
+        {
+          "word": "when",
+          "start": 442.94,
+          "end": 443.42,
+          "probability": 0.9800572395324707
+        },
+        {
+          "word": "it",
+          "start": 443.42,
+          "end": 443.52,
+          "probability": 0.9984337687492371
+        },
+        {
+          "word": "becomes",
+          "start": 443.52,
+          "end": 443.78,
+          "probability": 0.9987427592277527
+        },
+        {
+          "word": "love",
+          "start": 443.78,
+          "end": 444.1,
+          "probability": 0.9975287318229675
+        },
+        {
+          "word": "for",
+          "start": 444.1,
+          "end": 444.4,
+          "probability": 0.9993941783905029
+        },
+        {
+          "word": "a",
+          "start": 444.4,
+          "end": 444.48,
+          "probability": 0.9933947920799255
+        },
+        {
+          "word": "neighbor.",
+          "start": 444.48,
+          "end": 444.84,
+          "probability": 0.9566015005111694
+        }
+      ]
+    },
+    {
+      "start": 446.0,
+      "end": 449.22,
+      "text": "Today, who is one person you can notice and help.",
+      "words": [
+        {
+          "word": "Today,",
+          "start": 446.0,
+          "end": 446.6,
+          "probability": 0.9942374229431152
+        },
+        {
+          "word": "who",
+          "start": 446.9,
+          "end": 447.1,
+          "probability": 0.988976776599884
+        },
+        {
+          "word": "is",
+          "start": 447.1,
+          "end": 447.24,
+          "probability": 0.9980112314224243
+        },
+        {
+          "word": "one",
+          "start": 447.24,
+          "end": 447.46,
+          "probability": 0.9961203336715698
+        },
+        {
+          "word": "person",
+          "start": 447.46,
+          "end": 447.88,
+          "probability": 0.9990768432617188
+        },
+        {
+          "word": "you",
+          "start": 447.88,
+          "end": 448.14,
+          "probability": 0.9832929968833923
+        },
+        {
+          "word": "can",
+          "start": 448.14,
+          "end": 448.3,
+          "probability": 0.9987704157829285
+        },
+        {
+          "word": "notice",
+          "start": 448.3,
+          "end": 448.62,
+          "probability": 0.9955436587333679
+        },
+        {
+          "word": "and",
+          "start": 448.62,
+          "end": 448.98,
+          "probability": 0.9951996803283691
+        },
+        {
+          "word": "help.",
+          "start": 448.98,
+          "end": 449.22,
+          "probability": 0.9991896748542786
+        }
+      ]
+    }
+  ]
+}
