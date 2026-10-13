@@ -56,6 +56,9 @@ def render_feast_locale(root=ROOT, lang='ar', registry=None):
     for mirror in registry.get('domMirrors',{}).values():
         if lang in mirror['routes']:
             mapped[mirror['english'].strip('/')] = mirror['routes'][lang]
+    for mirror in registry.get('exactMirrors',{}).values():
+        if lang in mirror['routes']:
+            mapped[mirror['english'].strip('/')] = mirror['routes'][lang]
     # Prayer master redirects into this legacy guide cluster.
     if lang in topic_locales(registry, 'prayers'):
         mapped['en/prayers'] = page_url(registry, lang, 'prayers')

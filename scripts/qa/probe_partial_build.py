@@ -182,7 +182,7 @@ def json_assignment(text):
 def compare_json(file,old,new):
  prefix,a=json_assignment(old);other,b=json_assignment(new);assert prefix==other
  if file=='same-page-manifest.js':
-  assert len(a['pages'])==236 and len(SCOPED_KEYS)==12
+  assert len(a['pages'])==231 and len(SCOPED_KEYS)==12
   assert SCOPED_KEYS<=set(a['pages']);assert not SCOPED_KEYS&set(b['pages'])
   # Travel-4 (scrum re-pin 2026-10-12): the real manifest carries the 4 ar travel twins
   # inside the verified travel families with scoped-ar2-variant proofs, never as

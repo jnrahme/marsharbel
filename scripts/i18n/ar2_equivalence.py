@@ -14,7 +14,13 @@ AR2='scoped-ar2-variant'
 # Pinned (slug, en, ar) pairs. Batch 1 (#750): 8 pairs. /feedback and /submit-testimony are
 # noindex, the control build skips them, so they stay unpaired (todo-01M4R14M4SBH49AFECW3MEW5H9).
 # Batch 2: 15 legacy twins, scope ar-legacy-twin-scripted-parity.
-AR2_PAIRS=[('gallery','/gallery','/ar/gallery'),('saints','/saints','/ar/saints'),
+AR2_PAIRS=[('gallery','/gallery','/ar/gallery'),
+ ('miracles-hub','/miracles/','/ar/miracles/'),
+ ('dafne-gutierrez','/miracles/dafne-gutierrez','/ar/miracles/dafne-gutierrez'),
+ ('nohad-el-shami','/miracles/nohad-el-shami','/ar/miracles/nohad-el-shami'),
+ ('raymond-nader','/miracles/raymond-nader','/ar/miracles/raymond-nader'),
+ ('rosary-intro','/rosary-intro','/ar/rosary'),
+ ('saints','/saints','/ar/saints'),
  ('prayer-library','/prayer-library','/ar/prayer-library'),('encyclopedia','/saint-charbel-encyclopedia','/ar/encyclopedia'),
  ('news','/news','/ar/news'),('videos','/videos','/ar/videos'),('testimonies','/testimonies','/ar/testimonies'),
  ('voice-testimony','/voice-testimony','/ar/voice-testimony'),

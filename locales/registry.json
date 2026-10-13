@@ -38,14 +38,9 @@
         "biography": "biography",
         "prayers": "prayers",
         "novena": "novena",
-        "rosary": "rosary",
         "annaya": "annaya",
         "feastDay": "feast-day",
-        "twentySecond": "22nd-of-the-month",
-        "miracles": "miracles/",
-        "nohadStory": "miracles/nohad-el-shami",
-        "dafneStory": "miracles/dafne-gutierrez",
-        "raymondStory": "miracles/raymond-nader"
+        "twentySecond": "22nd-of-the-month"
       },
       "ogLocale": "ar_AR",
       "selectorAliases": [],
@@ -55,14 +50,9 @@
           "biography",
           "prayers",
           "novena",
-          "rosary",
           "annaya",
           "feastDay",
-          "twentySecond",
-          "miracles",
-          "nohadStory",
-          "dafneStory",
-          "raymondStory"
+          "twentySecond"
         ],
         "mirrorTabs": [],
         "runtime": true,
@@ -458,7 +448,6 @@
       ],
       "locales": [
         "en",
-        "ar",
         "fr",
         "es",
         "pt",
@@ -524,80 +513,6 @@
       "sources": [
         "cnewaMonthly",
         "monastery"
-      ],
-      "locales": [
-        "ar"
-      ]
-    },
-    "miracles": {
-      "sections": [
-        "recognized",
-        "kamari",
-        "obeid",
-        "awad",
-        "testimonies",
-        "prayer"
-      ],
-      "relatedEnglish": "/miracles/",
-      "sources": [
-        "monasteryArabicBio",
-        "canonizationHomily",
-        "monastery",
-        "maroniteParishMiracles"
-      ],
-      "locales": [
-        "ar"
-      ]
-    },
-    "nohadStory": {
-      "sections": [
-        "before",
-        "account",
-        "evidence",
-        "status",
-        "pilgrimage",
-        "questions"
-      ],
-      "relatedEnglish": "/miracles/nohad-el-shami",
-      "sources": [
-        "cnewaMonthly",
-        "monastery"
-      ],
-      "locales": [
-        "ar"
-      ]
-    },
-    "dafneStory": {
-      "sections": [
-        "before",
-        "event",
-        "medical",
-        "church",
-        "pilgrims",
-        "questions"
-      ],
-      "relatedEnglish": "/miracles/dafne-gutierrez",
-      "sources": [
-        "maroniteVoiceDafne",
-        "registerDafne"
-      ],
-      "locales": [
-        "ar"
-      ]
-    },
-    "raymondStory": {
-      "sections": [
-        "background",
-        "account",
-        "medical",
-        "status",
-        "today",
-        "questions"
-      ],
-      "relatedEnglish": "/miracles/raymond-nader",
-      "sources": [
-        "raymondAccount",
-        "catholicWorldRaymond"
       ],
       "locales": [
         "ar"
@@ -702,11 +617,44 @@
       "english": "/miracles/",
       "routes": {
         "en": "/miracles/",
-        "de": "/de/miracles/"
+        "de": "/de/miracles/",
+        "ar": "/ar/miracles/"
       },
       "renderLocales": [
         "de"
       ]
+    },
+    "nohad-story": {
+      "english": "/miracles/nohad-el-shami",
+      "routes": {
+        "en": "/miracles/nohad-el-shami",
+        "ar": "/ar/miracles/nohad-el-shami"
+      },
+      "renderLocales": []
+    },
+    "dafne-story": {
+      "english": "/miracles/dafne-gutierrez",
+      "routes": {
+        "en": "/miracles/dafne-gutierrez",
+        "ar": "/ar/miracles/dafne-gutierrez"
+      },
+      "renderLocales": []
+    },
+    "raymond-story": {
+      "english": "/miracles/raymond-nader",
+      "routes": {
+        "en": "/miracles/raymond-nader",
+        "ar": "/ar/miracles/raymond-nader"
+      },
+      "renderLocales": []
+    },
+    "rosary-intro": {
+      "english": "/rosary-intro",
+      "routes": {
+        "en": "/rosary-intro",
+        "ar": "/ar/rosary"
+      },
+      "renderLocales": []
     }
   },
   "homepageMirrors": {
