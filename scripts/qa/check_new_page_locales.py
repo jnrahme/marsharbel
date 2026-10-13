@@ -122,10 +122,72 @@ def check_page(root, page, registry, required):
     return errors
 
 
+ALLOWLIST = 'locales/private-preview-pages.json'
+
+
+def load_private_previews(root):
+    """Explicit private-preview allowlist. Each entry: page, owner, reason, handoff."""
+    path = root / ALLOWLIST
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text())
+    entries = data['pages'] if isinstance(data, dict) else data
+    out = {}
+    for entry in entries:
+        page = entry.get('page', '')
+        if not public_page(page):
+            raise ValueError('private preview entry is not a served page path: ' + page)
+        if page in out:
+            raise ValueError('duplicate private preview entry: ' + page)
+        for field in ('owner', 'reason', 'handoff'):
+            if not str(entry.get(field, '')).strip():
+                raise ValueError('private preview entry missing ' + field + ': ' + page)
+        if not (root / page).is_file():
+            raise ValueError('private preview entry names a missing page: ' + page)
+        out[page] = entry
+    return out
+
+
+def private_preview_errors(root, page):
+    """Isolation contract for an allowlisted private preview page."""
+    errors = []
+    soup = BeautifulSoup((root / page).read_text(), 'html.parser')
+    robots = soup.find('meta', attrs={'name': 'robots'})
+    if not robots or 'noindex' not in robots.get('content', '').lower():
+        errors.append(page + ': private preview requires meta robots noindex')
+    stem = page[:-len('.html')] if page.endswith('.html') else page
+    sitemap = (root / 'sitemap.xml')
+    if sitemap.exists():
+        for loc in re.findall(r'<loc>([^<]+)</loc>', sitemap.read_text()):
+            u = loc.split('marsharbel.com/', 1)[-1].rstrip('/')
+            if u in {stem, page}:
+                errors.append(page + ': private preview must stay out of sitemap.xml')
+    href_pat = re.compile(r'href=["\'](?:https://marsharbel\.com)?/?\.?/?'
+                          + re.escape(stem) + r'(?:\.html)?/?["\'#?]')
+    sources = [p for p in root.glob('*.html')]
+    sources += [p for p in (root / 'partials').glob('**/*.html')] if (root / 'partials').is_dir() else []
+    sources += [p for p in (root / 'src/pages').glob('*.html')] if (root / 'src/pages').is_dir() else []
+    for other in sources:
+        rel = other.relative_to(root).as_posix()
+        if rel == page:
+            continue
+        if href_pat.search(other.read_text()):
+            errors.append(page + ': inbound link from ' + rel)
+    feed = root / 'feed.xml'
+    if feed.exists() and href_pat.search(feed.read_text()):
+        errors.append(page + ': referenced in feed.xml')
+    return errors
+
+
 def check(root, added, base_registry):
     registry = json.loads((root / 'locales/registry.json').read_text())
     errors = []
     checked = []
+    previews = load_private_previews(root)
+    # Isolation is asserted for every allowlisted page on every run, so a later
+    # unrelated PR cannot quietly link or index a preview.
+    for preview_page in previews:
+        errors.extend(private_preview_errors(root, preview_page))
     for page in added:
         if not public_page(page):
             continue
@@ -136,6 +198,11 @@ def check(root, added, base_registry):
             continue
         # Public utility/error pages are also pages. No implicit exemptions.
         checked.append(page)
+        if page in previews:
+            # Explicitly allowlisted private preview: exempt from the keyed-mirror
+            # requirement only while the full isolation contract holds.
+            errors.extend(private_preview_errors(root, page))
+            continue
         errors.extend(check_page(root, page, registry, required_locales(base_registry)))
     return checked, errors
 
