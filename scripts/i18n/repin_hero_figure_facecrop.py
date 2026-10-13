@@ -14,7 +14,8 @@ deterministic mechanism, not the approval. All checks finish before writing:
 Usage: python3 scripts/i18n/repin_hero_figure_facecrop.py          # report only
        python3 scripts/i18n/repin_hero_figure_facecrop.py --write  # rewrite pins
 """
-import argparse, copy, hashlib, json, subprocess, sys
+import argparse
+import re, copy, hashlib, json, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -61,6 +62,15 @@ if __name__ == '__main__':
     a = ap.parse_args()
     updates, rows, skipped = prepare(a.base)
     if a.write:
+        old_by_rel = {row['binding']: row['oldMasterSha256'] for row in rows}
         for rel, data in updates.items():
-            (ROOT / rel).write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+            path = ROOT / rel
+            text = path.read_text()
+            old_sha, new_sha = old_by_rel[rel], data['masterSha256']
+            new_text, n = re.subn(
+                r'("masterSha256":\s*")' + re.escape(old_sha) + r'(")',
+                lambda m: m.group(1) + new_sha + m.group(2), text, count=1)
+            if n != 1:
+                raise ValueError(f'{rel}: targeted re-pin matched {n} times (expected 1)')
+            path.write_text(new_text)
     print(json.dumps({'mode': 'write' if a.write else 'report', 'repinned': rows, 'skipped': skipped}, indent=2))
