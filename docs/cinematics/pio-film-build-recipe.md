@@ -53,7 +53,7 @@ The Pio film's AI-animated accents (real character motion inside a beat, e.g. th
 ## Process gates (the production standard)
 1. Script map BEFORE voicing: full film script per scene, every narration line mapped to the panel that carries it. One review gate. Do not sanitize hard beats (deaths, war, violence stay told) - voice them in language the adjacent art can honestly carry (mood, aftermath, what a person did next).
 2. After the nod: Kokoro re-voice + reassemble.
-3. Full play-speed WATCHED verification of the new master, including crossfades: per-line verdicts (match/weak/mismatch - Pio's accepted tally was 38 match / 2 weak / 0 mismatch over 40 lines), seam grids per join, audio smoke slices at scene starts. Paper audits alone failed before (JPII stop-ship); the watch is the gate.
+3. Full play-speed WATCHED verification of the new master, including crossfades: per-line verdicts (match/weak/mismatch - the 38 match / 2 weak / 0 mismatch tally over 40 lines was JPII v3's, not Pio's; Pio v3 predates the watched-verification protocol and its QA of record is Joey's acceptance), seam grids per join, audio smoke slices at scene starts. Paper audits alone failed before (JPII stop-ship); the watch is the gate.
 4. Deploy via TUS upload to the Hostinger webroot path; verify live with ranged-GET MD5 of first/last bytes + full Content-Length.
 5. Durable records per film (NEW standard for the daily lane): script map, scene manifest, voice params, watched-verification verdicts, and a rights ledger entry - committed to the repo, not left in a container.
 
