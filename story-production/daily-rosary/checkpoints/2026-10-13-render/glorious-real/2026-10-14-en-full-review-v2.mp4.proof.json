@@ -1,0 +1,29 @@
+{
+  "sha256": "1d5409ee02ca600d33e5ba5f8b0e05b77446e672f2c06938ec01ff1ecc47bb11",
+  "bytes": 20204533,
+  "intro_sha256": "5ea74359037a8f9a97422009a009d0d337a3f2492232261d52f93aa72806fc01",
+  "body_sha256": "38b4dc24d371df5314de149861c3d1ba1e2bffd9cbb1e5439edffe233db3ba51",
+  "body_offset_seconds": 11.05,
+  "preservation": {
+    "video": {
+      "body_packets": 4052,
+      "payloads_identical": true
+    },
+    "audio": {
+      "body_packets": 47490,
+      "payloads_identical": true
+    }
+  },
+  "decoded_frames": {
+    "video": 4074,
+    "audio": 47748
+  },
+  "quality_gate": "private-machine-structural-pixel-pass;ownerfirstlistenpending;publicrightsHOLD",
+  "video_identical_to_structural_pass": true,
+  "duration_seconds": 2037.248,
+  "loudness": {
+    "integrated_lufs": -18.52,
+    "true_peak_db": -2.48,
+    "lra": 5.3
+  }
+}
