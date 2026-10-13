@@ -8,7 +8,7 @@ from i18n.encyclopedia_trail import load_trail
 # for the marking mechanism: adding a locale's nav drop means adding its code
 # here (plus its registry twins and reviewed qualifier catalog), never editing
 # per-call-site literals. QA mirrors import this constant.
-MARKING_LOCALES=frozenset({'ar','de'})
+MARKING_LOCALES=frozenset({'ar','de','ru'})
 
 
 def nav_twin_hrefs(registry, lang):
