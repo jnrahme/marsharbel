@@ -5,7 +5,8 @@ ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.page_mirror import render_page
 from i18n.travel_variant_evidence import review_pinned_locales
-GATED=('ar','de')
+from i18n.encyclopedia_nav import MARKING_LOCALES
+GATED=MARKING_LOCALES
 def registry_scoped_pairs():
     groups=json.loads((ROOT/'locales/travel-equivalence.json').read_text())['groups']
     out=set()

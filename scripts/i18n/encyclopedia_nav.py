@@ -3,6 +3,13 @@ from html import escape
 import re
 from i18n.encyclopedia_trail import load_trail
 
+# Locales whose header nav links are routed to registered twins and marked
+# English with the localized qualifier where no twin exists. The single gate
+# for the marking mechanism: adding a locale's nav drop means adding its code
+# here (plus its registry twins and reviewed qualifier catalog), never editing
+# per-call-site literals. QA mirrors import this constant.
+MARKING_LOCALES=frozenset({'ar','de'})
+
 
 def nav_twin_hrefs(registry, lang):
     """renderLocales-gated header hrefs for the locale's registered twins."""
@@ -63,7 +70,7 @@ def route_nav_hrefs(text, root, lang):
     Arabic launch, then de (locale-drop PR 2): twins are looked up per locale from
     the registry, so marking only touches links that have no registered twin.
     """
-    if lang not in ('ar','de'):return text
+    if lang not in MARKING_LOCALES:return text
     header=re.search(r'<header\b[\s\S]*?</header>',text)
     if not header:raise ValueError('Missing navigation header')
     from i18n.catalog import read_json
@@ -134,7 +141,7 @@ def route_and_mark_nav(text, root, lang, label=True):
 
     Gated per locale as each locale's nav PR lands (ar, then de); every locale uses
     its own registry twin map and its own reviewed qualifier catalog."""
-    if lang not in ('ar', 'de'):
+    if lang not in MARKING_LOCALES:
         return text
     if not re.search(r'<header\b', text):
         return text

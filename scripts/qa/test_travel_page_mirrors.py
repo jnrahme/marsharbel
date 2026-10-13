@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.page_mirror import render_page
+from i18n.encyclopedia_nav import MARKING_LOCALES
 from i18n.mirror_structure import check_pair
 from i18n.catalog import home_url
 FAMILIES=('annaya-master','twenty-second-master','pilgrimage-master')
@@ -17,7 +18,7 @@ class TravelPageMirrors(unittest.TestCase):
    for lang,route in cfg['routes'].items():
     text=render_page(ROOT,self.r,lang,family,route);s=BeautifulSoup(text,'html.parser')
     normalizers=('partial-home-disclosure',) if home_url(self.r,lang) is None else ()
-    if lang in ('ar','de'):normalizers=normalizers+('english-nav-disclosure',)
+    if lang in MARKING_LOCALES:normalizers=normalizers+('english-nav-disclosure',)
     self.assertEqual(check_pair(master,text,cfg['english'],route,normalizers=normalizers),[],(family,lang))
     self.assertEqual(s.html['lang'],lang);self.assertEqual(s.select_one('link[rel=canonical]')['href'],self.r['site']+route)
     self.assertEqual({l['hreflang']:l['href'] for l in s.select('link[hreflang]')},{c:self.r['site']+p for c,p in cfg.get('discoveryRoutes',{'en':cfg['english'],'x-default':cfg['english'],**cfg['routes']}).items()})

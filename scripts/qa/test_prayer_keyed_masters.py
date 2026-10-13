@@ -3,6 +3,7 @@ import json,sys,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.page_mirror import render_page
+from i18n.encyclopedia_nav import MARKING_LOCALES
 from i18n.mirror_structure import check_pair
 from i18n.catalog import read_json
 class PrayerKeyedMasters(unittest.TestCase):
@@ -19,7 +20,7 @@ class PrayerKeyedMasters(unittest.TestCase):
    master=ROOT/read_json(ROOT/f'locales/en/{family}-bindings.json')['master']
    for lang,route in r['pageMirrors'][family]['routes'].items():
     from i18n.prayer_runtime import share_head
-    self.assertEqual(check_pair(share_head(master.read_text(),ROOT,'en',family=='saint-charbel-prayers-master'),render_page(ROOT,r,lang,family,route),r['pageMirrors'][family]['english'],route,('english-nav-disclosure',) if lang in ('ar','de') else ()),[])
+    self.assertEqual(check_pair(share_head(master.read_text(),ROOT,'en',family=='saint-charbel-prayers-master'),render_page(ROOT,r,lang,family,route),r['pageMirrors'][family]['english'],route,('english-nav-disclosure',) if lang in MARKING_LOCALES else ()),[])
  def test_metadata_preserves_existing_bodies(self):
   import hashlib,re
   contract=read_json(ROOT/'locales/prayer-metadata-contract.json')
