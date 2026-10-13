@@ -1,3 +1,4 @@
+-- REQUIRED ORDER: (1) client accounts/Facebook flags OFF; (2) dashboard disable_signup=true if opened; (3) run this SQL.
 -- Safety rollback after independently approved migration, NOT automatic execution.
 -- First disable client accounts/Facebook feature flags; if signup was opened,
 -- set disable_signup=true in Auth configuration (not SQL). Leave Site URL and testimony OTP settings unchanged.
