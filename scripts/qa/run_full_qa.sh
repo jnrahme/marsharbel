@@ -143,6 +143,7 @@ echo "[qa] Eucharistic collection browser checks"
 qa_step env PORT=4189 bash scripts/tests/run_eucharistic_collection.sh
 
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_rosary_bead_copy.py'
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_mystery_art.py'
 qa_step npx playwright test tests/rosary-bead-teacher.spec.js --project=small-phone --project=phone --project=laptop --workers=2
 
 echo "[qa] Running rosary regression tests"

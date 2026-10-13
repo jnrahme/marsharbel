@@ -204,6 +204,29 @@ if (!mystery) {
   subEl.textContent = `${mystery.day} | Fruit: ${mystery.fruit}`;
   imageEl.src = mystery.image;
   imageEl.alt = mystery.title;
+  if (mystery.imageWidth && mystery.imageHeight) {
+    imageEl.width = mystery.imageWidth;
+    imageEl.height = mystery.imageHeight;
+  }
+  imageEl.loading = 'lazy';
+  imageEl.decoding = 'async';
+  const creditEl = document.getElementById('mystery-art-credit');
+  if (creditEl && mystery.imageCredit && mystery.imageCreditUrl) {
+    creditEl.textContent = '';
+    const marker = 'Wikimedia Commons';
+    const idx = mystery.imageCredit.lastIndexOf(marker);
+    if (idx >= 0) {
+      creditEl.append(document.createTextNode(mystery.imageCredit.slice(0, idx)));
+      const creditLink = document.createElement('a');
+      creditLink.href = mystery.imageCreditUrl;
+      creditLink.target = '_blank';
+      creditLink.rel = 'noopener';
+      creditLink.textContent = marker;
+      creditEl.append(creditLink);
+    } else {
+      creditEl.textContent = mystery.imageCredit;
+    }
+  }
 }
 
 const setKeys = mysterySets[currentSet] || [];
