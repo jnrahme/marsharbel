@@ -419,7 +419,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "fr/biographie.html": {
       "locale": "fr",
@@ -431,7 +434,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "fr/chapelet.html": {
       "locale": "fr",
@@ -455,7 +461,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "fr/miracles/eucharistic/amsterdam.html": {
       "locale": "fr",
@@ -643,7 +652,10 @@
       "master": "all-saints-and-all-souls.html",
       "masterRoute": "/all-saints-and-all-souls",
       "family": "all-saints-and-all-souls-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "fr/travel.html": {
       "locale": "fr",
@@ -2027,7 +2039,10 @@
       "master": "22nd-of-the-month.html",
       "masterRoute": "/22nd-of-the-month",
       "family": "twenty-second-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "fr/charbel-film-premiere.html": {
       "locale": "fr",
@@ -2055,7 +2070,10 @@
       "master": "saint-charbel-pilgrimage.html",
       "masterRoute": "/saint-charbel-pilgrimage",
       "family": "pilgrimage-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "it/il-22-del-mese.html": {
       "locale": "it",
@@ -2598,7 +2616,8 @@
       "family": "music-master",
       "status": "strict",
       "normalizers": [
-        "launch-availability-annotations"
+        "launch-availability-annotations",
+        "english-nav-disclosure"
       ]
     },
     "es/music.html": {

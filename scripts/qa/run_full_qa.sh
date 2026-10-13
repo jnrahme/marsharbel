@@ -68,6 +68,7 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_ru_nav_alignment_repi
 qa_step python3 -m unittest discover -s scripts/qa -p test_ru_travel_chrome.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_media_bindings_prepare.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_retired_novena_nav_repin.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_fr_header_marking.py
 
 qa_step npx playwright test tests/element-collision.spec.js --project=laptop --workers=2
 qa_step python3 scripts/qa/test_travel_equivalence.py
