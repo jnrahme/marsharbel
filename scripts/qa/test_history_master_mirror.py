@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.page_mirror import render_page
+from i18n.encyclopedia_nav import MARKING_LOCALES
 from i18n.mirror_structure import check_pair
 class HistoryMirrors(unittest.TestCase):
  def setUp(self):self.r=json.loads((ROOT/'locales/registry.json').read_text())
@@ -19,7 +20,7 @@ class HistoryMirrors(unittest.TestCase):
     for hint in hints:
      self.assertEqual(hint.get_text().strip(),qualifier);self.assertEqual(hint.parent.name,'a');hint.decompose()
    else:self.assertFalse(hints,lang)
-   self.assertEqual(check_pair(master,str(parity),'/history',route,('english-nav-disclosure',) if lang in ('ar','de') else ()),[],lang)
+   self.assertEqual(check_pair(master,str(parity),'/history',route,('english-nav-disclosure',) if lang in MARKING_LOCALES else ()),[],lang)
    self.assertEqual(s.html['lang'],lang);self.assertEqual(s.main['tabindex'],'-1')
    self.assertEqual(s.select_one('link[rel=canonical]')['href'],self.r['site']+route)
    self.assertEqual(s.select_one('a.skip-link')['href'],'#main-content')
