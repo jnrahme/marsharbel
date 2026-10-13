@@ -14,6 +14,6 @@ Audit at 2026-10-13 3:35 PM EDT, stage d5b67353. Pages = sitemap URLs per locale
 | pt | 24 | not started | after pl | none | build --check OK on stage; strings gap not measured | not merged |
 | hi | 5 | not started (limited launch) | mark-as-English | none | build --check OK on stage; strings gap not measured | not merged |
 | th | 5 | not started (limited launch) | mark-as-English | none | build --check OK on stage; strings gap not measured | not merged |
-| zh-Hans | 15 | travel equivalence and film catalogs in flight | ACTIVE locale, limited launch (main, 3:34 PM): rule j applies; registry config gap (not in homePublicationLocales/limitedLaunchLocales) fixed by content follow-up PR | none | build --check OK on stage; strings gap not measured | not merged (15 pages live) |
+| zh-Hans | 15 | travel and film mirror families (no homepage) | Mirror-only ACTIVE locale (scrum ruling 3:49 PM): rule j applies to its mirrored families; config lists unchanged on purpose | none | build --check OK on stage; strings gap not measured | not merged (15 pages live) |
 
 Rule (j): a page ships only when every active locale has it. Native review is not certified for any locale. Commit SHAs are in COMPLETED.md and the PR column. Worklists: /downloads/locale-links-worklist-87b40854.csv (87 rows), locale-links-deep-ar-de-ru-ae83ec61.csv (2172 rows).
