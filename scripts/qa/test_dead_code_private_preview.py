@@ -35,6 +35,13 @@ class DeadCodePrivatePreviewTests(unittest.TestCase):
             self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
             self.assertIn('noindex missing', result.stdout)
 
+    def test_noindex_outside_meta_robots_still_fails(self):
+        body_only = NOINDEX.replace('<meta name="robots" content="noindex,nofollow">', '<!-- noindex -->')
+        with tempfile.TemporaryDirectory() as t:
+            result = self.run_check(self.make_repo(t, page_html=body_only))
+            self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+            self.assertIn('noindex missing', result.stdout)
+
     def test_unlisted_orphan_still_fails(self):
         with tempfile.TemporaryDirectory() as t:
             result = self.run_check(self.make_repo(t, listed=False))

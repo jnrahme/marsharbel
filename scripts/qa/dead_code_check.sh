@@ -130,7 +130,7 @@ data = json.load(open('locales/private-preview-pages.json'))
 sys.exit(0 if any(entry.get('page') == page for entry in data.get('pages', [])) else 1)
 PYSKIP
   then
-    if grep -qi 'noindex' "$htmlfile"; then
+    if grep -qiE '<meta[^>]+name="robots"[^>]+noindex' "$htmlfile"; then
       continue
     fi
     echo "  ORPHAN HTML: $htmlfile (listed in locales/private-preview-pages.json but noindex missing)"
