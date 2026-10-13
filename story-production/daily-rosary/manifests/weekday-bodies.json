@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "weekday_mapping": {
+    "Monday": "joyful",
+    "Tuesday": "sorrowful",
+    "Wednesday": "glorious",
+    "Thursday": "luminous",
+    "Friday": "sorrowful",
+    "Saturday": "joyful",
+    "Sunday": "glorious"
+  },
+  "languages": {
+    "en": {
+      "sorrowful": {
+        "status": "Quality-passed;owner-approvedV6tail",
+        "sha256": "7af122b6f2cd475e857447afeaf24b22a5acadd750b3f6d2681e2d26213a7c99",
+        "bytes": 22821974,
+        "master": "immutable external asset, registry URL pending",
+        "prayer_counts": {
+          "hail_mary": 53,
+          "our_father": 6,
+          "glory_be": 6,
+          "fatima": 5
+        }
+      },
+      "joyful": {
+        "status": "not-produced"
+      },
+      "glorious": {
+        "status": "not-produced"
+      },
+      "luminous": {
+        "status": "not-produced"
+      }
+    },
+    "ar": {
+      "status": "recognizedCatholicprayertexts+Achirdpronunciationgatepending"
+    }
+  }
+}

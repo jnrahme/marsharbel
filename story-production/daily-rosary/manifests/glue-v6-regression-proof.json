@@ -1,0 +1,22 @@
+{
+  "sha256": "93ebcf24695ac4fa39a4b311842dfda3da4bb745fdfeb9fe76f972fcf23b06d2",
+  "bytes": 23038119,
+  "intro_sha256": "184fa3fbc6fb7637ab2bc2731ff51c3af54c94bedfa5faa15f55be3728c761d0",
+  "body_sha256": "7af122b6f2cd475e857447afeaf24b22a5acadd750b3f6d2681e2d26213a7c99",
+  "body_offset_seconds": 13.55,
+  "preservation": {
+    "video": {
+      "body_packets": 4349,
+      "payloads_identical": true
+    },
+    "audio": {
+      "body_packets": 50967,
+      "payloads_identical": true
+    }
+  },
+  "decoded_frames": {
+    "video": 4376,
+    "audio": 51284
+  },
+  "quality_gate": "pending-independent-review"
+}
