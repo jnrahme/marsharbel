@@ -71,6 +71,15 @@ def render_home(root, registry, lang, catalog=None):
         parts = urlsplit(a['href'])
         if not parts.scheme and parts.path.rstrip('/') in twins:
             a['href'] = twins[parts.path.rstrip('/')] + ('?' + parts.query if parts.query else '') + ('#' + parts.fragment if parts.fragment else '')
+    # The daily-rosary YouTube promo resolves to the locale's own rosary twin
+    # #pray-along section when the locale publishes one; homes without a twin
+    # keep the English target (marked English by launch availability on hi/th,
+    # inline qualifier in the label on ru).
+    promo = soup.select('a.promo-link[href="/rosary-visual-guide#pray-along"]')
+    if len(promo) != 1:
+        raise ValueError(f'Home {lang}: YouTube promo anchor missing or duplicated')
+    if lang in topic_locales(registry, 'rosary'):
+        promo[0]['href'] = page_url(registry, lang, 'rosary') + '#pray-along'
     for script in soup.select('script[type="application/ld+json"]'):
         data = json.loads(script.string)
         for item in data.get('@graph', []):
