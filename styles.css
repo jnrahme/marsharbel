@@ -3279,3 +3279,5 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 .home-saint-source{margin-block:1rem 0;font-size:.875rem}
 .home-saint-source a{display:inline-flex;align-items:center;min-height:44px;text-underline-offset:.2em}
 @media(max-width:650px){.home-saint-pair{grid-template-columns:minmax(0,1fr)}}
+
+.home-saint-day[hidden]{display:none!important}

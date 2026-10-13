@@ -18,6 +18,14 @@ class SaintDay(unittest.TestCase):
   from bs4 import BeautifulSoup
   s=BeautifulSoup((ROOT/'index.html').read_text(),'html.parser');n=s.select_one('#saint-of-the-day')
   self.assertEqual(len(n.select('.home-saint-pair > a')),2);self.assertIsNone(n.select_one('a a'))
+ def test_date_is_generated_and_initial_state_fails_closed(self):
+  from bs4 import BeautifulSoup
+  m=json.loads((ROOT/'locales/saint-of-day.json').read_text())
+  n=BeautifulSoup((ROOT/'index.html').read_text(),'html.parser').select_one('#saint-of-the-day')
+  from datetime import date
+  self.assertTrue(n.has_attr('hidden'));self.assertEqual(n['data-saint-date'],m['activeDate'])
+  self.assertEqual(n.time.get_text(),date.fromisoformat(m['activeDate']).strftime('%d.%m.%Y'))
+  self.assertNotIn('dateLabel',json.loads((ROOT/'locales/en/saint-of-day.json').read_text()))
  def test_missing_date_rejected(self):
   with tempfile.TemporaryDirectory() as tmp:
    p=Path(tmp);(p/'locales').mkdir();(p/'locales/saint-of-day.json').write_text('{"activeDate":"bad","entries":{}}')

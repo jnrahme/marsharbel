@@ -195,3 +195,4 @@ qa_step node scripts/tests/same_page_exhaustive_preview.cjs
 echo "[qa] QA suite finished"
 
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_saint_of_day.py'
+qa_step node scripts/qa/test_saint_day_runtime.cjs

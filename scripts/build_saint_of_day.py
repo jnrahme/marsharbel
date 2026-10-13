@@ -9,7 +9,7 @@ def output(root=ROOT):
     selected=manifest['activeDate']; date.fromisoformat(selected)
     entry=manifest['entries'][selected]
     copy=json.loads((root/'locales/en/saint-of-day.json').read_text())
-    values={**entry,**copy,'date':selected,'calendarUrl':entry['sources'][0]}
+    values={**entry,**copy,'date':selected,'dateLabel':date.fromisoformat(selected).strftime('%d.%m.%Y'),'calendarUrl':entry['sources'][0]}
     template=(root/'templates/saint-of-day/home.html').read_text()
     card=re.sub(r'\$\{([^}]+)\}',lambda m:html.escape(values[m[1]],quote=True),template)
     path=root/'src/pages/index.html'; source=path.read_text()
