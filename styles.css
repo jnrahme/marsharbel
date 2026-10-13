@@ -2517,6 +2517,17 @@ main .grid-2>.card,main .grid-2>.story,main .grid-2>.practice,main .grid-2>.upda
   align-items: center;
 }
 
+/* Marked-locale headers: long nav-parent labels must wrap inside the flex row
+   instead of forcing the page wider than the viewport (390px/200% overflow,
+   scrum ruling 2026-10-13). Inert on unmarked pages. */
+.nav-group {
+  max-width: 100%;
+}
+.nav-group .nav-parent {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
 /* Keep anchor/scroll targets clear of the sticky top bar (site-wide) */
 main[id], main [id], main section, main h1, main h2, main h3 {
   scroll-margin-top: 112px;
