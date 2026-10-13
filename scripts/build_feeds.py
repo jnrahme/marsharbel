@@ -29,6 +29,9 @@ FEED_URL = f"{SITE}/feed.xml"
 # wording so long-standing feed items do not change meaning for subscribers.
 LEGACY_LABELS = {
     "new-miracles-reported-2026-01": "Reported, recorded at Annaya",
+    # Past event: the plain "Announcement" chip reads as upcoming in the feed,
+    # so keep the archived wording subscribers already received.
+    "el-paso-lebanese-festival-2026-10": "Archived parish announcement",
 }
 # pubDate values subscribers already received; keyed by row id so the item
 # date stays stable even when the row shows the event date (e.g. the
