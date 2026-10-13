@@ -116,14 +116,17 @@
     "status": "agent-translated-native-not-certified",
     "family": "news-master",
     "copyFile": "locales/ar/news-master-copy.json",
-    "keyCount": 252,
+    "keyCount": 199,
     "nativeReviewRequired": true,
     "reviewer": "pending (native Arabic)",
-    "scope": "Keyed family mirror of the EN news desk page incl. meta, card copy, photo credits and footer; 252 keys (84 Arabic-only reuse, 168 fresh; comment-marker keys excluded + iframe title bound by extractor fixes) (AR-2 sixth territory)",
+    "scope": "Keyed family mirror of the EN news desk page incl. meta, lead block, compact report-list rows, month bands, chip vocabulary, and footer; 137 keys (65 fresh in the PR 2 list rebuild incl. bands/chips/summaries, phrasing reused from approved AR where identical; chip Event rendered مناسبة and H2 آخر الأخبار flagged for native read) (AR-2 sixth territory, PR 2 rebuild)",
     "sourceUrls": [
       "https://marsharbel.com/news"
     ],
-    "checkedAt": "2026-10-12"
+    "checkedAt": "2026-10-13",
+    "flags": [
+      "المصادر وحقوق الصور credits section: 7 new keys agent-translated, 55 reuse previously approved AR"
+    ]
   },
   {
     "route": "/ar/videos",

@@ -30,10 +30,17 @@ class NewsDeskTests(unittest.TestCase):
         news=(ROOT/'news.html').read_text()
         movie=(ROOT/'saint-charbel-movie.html').read_text()
         self.assertEqual(news.count('id="charbel-premiere-release-2026-10"'),1)
+        # /news carries a compact row; sources stay in its credits list and the
+        # full claims live in the standalone article (PR 2 decoupling).
         self.assertIn('https://www.nidaalwatan.com/article/401403',news)
         self.assertIn('https://www.lorientlejour.com/article/1550058/la-projection-du-film-charbel-au-profit-de-anta-akhi.html',news)
-        self.assertIn('no screening sessions scheduled',news)
-        self.assertIn('International release dates, streaming distribution and English-language availability remain unconfirmed',news)
+        from bs4 import BeautifulSoup
+        article=BeautifulSoup((ROOT/'charbel-film-premiere.html').read_text(),'html.parser').select_one('main > article.film-news-article')
+        self.assertIsNotNone(article)
+        article_text=article.get_text(' ')
+        self.assertIn('no screening sessions scheduled',article_text)
+        self.assertIn('International release dates, streaming distribution and English-language availability remain unconfirmed',article_text)
+        self.assertIn('no screening sessions are scheduled yet',news)
         self.assertNotIn('movie-poster-hero.webp',movie)
 
     def test_ministers_visit_card(self):
@@ -49,9 +56,12 @@ class NewsDeskTests(unittest.TestCase):
     def test_gallery_series_news(self):
         text = (ROOT/'news.html').read_text()
         self.assertEqual(text.count('id="gallery-ai-transformation-series-2026-10"'), 1)
-        self.assertIn('dark beard with a grey center streak', text)
-        self.assertIn('not independent verification', text)
+        self.assertIn('artistic renditions, not photographs', text)
         self.assertIn('href="./gallery"', text)
+        # The long caveats live on the gallery page the row links to.
+        gallery=(ROOT/'gallery.html').read_text()
+        self.assertIn('dark beard with a grey center streak', gallery)
+        self.assertIn('not independent verification', gallery)
 
     def test_generated_output_fresh(self):
         for path, text in news_desk.outputs().items():

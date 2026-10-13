@@ -45,6 +45,11 @@ class NewsFeedTests(unittest.TestCase):
         self.assertEqual(reported.findtext("category"), "Reported, recorded at Annaya")
         self.assertTrue(reported.findtext("description").startswith("Reported, recorded at Annaya."))
 
+    def test_legacy_label_is_not_doubled_in_description(self):
+        root = ET.fromstring(feeds.news_feed(self.root))
+        elpaso = [i for i in root.iter("item") if "El Paso" in i.findtext("title")][0]
+        self.assertEqual(elpaso.findtext("description").lower().count("archived parish announcement"), 1)
+
     def test_card_without_id_fails(self):
         path = self.root / "news.html"
         path.write_text(path.read_text().replace(' id="revesby-feast-2026-07"', "", 1))

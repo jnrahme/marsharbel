@@ -53,17 +53,20 @@ def validate_family(root):
     if cfg.get('routes')!={c:p for c,p in routes.items() if c!='en'} or set(cfg.get('renderLocales',[]))!=codes-{'en'} or len(cfg.get('renderLocales',[]))!=11:raise ValueError('film: locale membership/routes must be exactly all 12 once')
     contract=json.loads((root/'config/film-master-family.json').read_text())
     if contract.get('family')!=FAMILY or set(contract.get('shellSha256',{}))!=codes:raise ValueError('film: independent shell pins must cover all 12')
-    template=(root/'templates/news-desk/cards.html').read_text();raw=one(BeautifulSoup(template,'html.parser'),'article#'+ID)
+    # The premiere feature lives in its own template; the /news feed carries a compact row.
+    template=(root/'templates/news-desk/premiere-feature.html').read_text();raw=one(BeautifulSoup(template,'html.parser'),'article#'+ID)
     keys=set(re.findall(r'\$\{([^}]+)\}',str(raw)))
     if not keys or any(not k.startswith('premiere.') for k in keys):raise ValueError('film: source feature key scope mismatch')
     english=json.loads((root/'locales/en/news-desk.json').read_text());values={k:english[k] for k in sorted(keys)}
     rendered=re.sub(r'\$\{([^}]+)\}',lambda m:html.escape(english[m[1]],quote=True),str(raw))
-    source=one(BeautifulSoup((root/'news.html').read_text(),'html.parser'),'article#'+ID)
-    if str(source)!=str(BeautifulSoup(rendered,'html.parser').article):raise ValueError('film: served news source differs from keyed source')
-    for name,value in {'templateSha256':digest(str(raw)),'englishCatalogSha256':digest(json.dumps(values,ensure_ascii=False,sort_keys=True)),'sourceFeatureSha256':digest(str(source))}.items():
+    # sourceFeatureSha256 hashes the rendered feature (the same string the old served-card check pinned).
+    feature=BeautifulSoup(rendered,'html.parser').article
+    news_row=one(BeautifulSoup((root/'news.html').read_text(),'html.parser'),'article#'+ID)
+    if not news_row.select_one('a.card-cover[href]'):raise ValueError('film: news row must keep the card-cover link')
+    for name,value in {'templateSha256':digest(str(raw)),'englishCatalogSha256':digest(json.dumps(values,ensure_ascii=False,sort_keys=True)),'sourceFeatureSha256':digest(str(feature))}.items():
         if contract.get(name)!=value:raise ValueError('film: stale source provenance '+name)
     master=BeautifulSoup((root/(SLUG+'.html')).read_text(),'html.parser')
-    if str(one(master,'main > article.film-news-article'))!=str(adapted(source)):raise ValueError('film: EN article differs from adapted news feature')
+    if str(one(master,'main > article.film-news-article'))!=str(adapted(feature)):raise ValueError('film: EN article differs from adapted news feature')
     alternates={**{c:registry['site']+p for c,p in routes.items()},'x-default':registry['site']+routes['en']}
     for code,route in sorted(routes.items()):
         file=SLUG+'.html' if code=='en' else code+'/'+SLUG+'.html';text=(root/file).read_text();soup=BeautifulSoup(text,'html.parser')

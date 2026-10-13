@@ -14,8 +14,9 @@ class FilmMasterFamily(unittest.TestCase):
   self.r={'site':'https://marsharbel.com','defaultLocale':'en','locales':{c:{'direction':'rtl' if c=='ar' else 'ltr','home':None if c=='zh-Hans' else ('/' if c=='en' else '/'+c+'/')} for c in self.codes},'pageMirrors':{m.FAMILY:self.cfg}}
   self.write('locales/registry.json',self.r)
   template='<article id="'+m.ID+'"><h3><a class="card-cover" href="/'+m.SLUG+'">${premiere.title}</a></h3><p>${premiere.body} <a href="https://example.invalid/source">Source</a></p><h4>Video</h4><iframe src="https://example.invalid/video"></iframe></article>'
-  self.write('templates/news-desk/cards.html',template);english={'premiere.title':'Title','premiere.body':'Body'};self.write('locales/en/news-desk.json',english)
-  source=template.replace('${premiere.title}','Title').replace('${premiere.body}','Body');self.write('news.html',source)
+  self.write('templates/news-desk/premiere-feature.html',template);english={'premiere.title':'Title','premiere.body':'Body'};self.write('locales/en/news-desk.json',english)
+  source=template.replace('${premiere.title}','Title').replace('${premiere.body}','Body')
+  row='<article id="'+m.ID+'" class="news-row update"><h3><a class="card-cover news-row-link" href="/'+m.SLUG+'">Title</a></h3></article>';self.write('news.html',row)
   article=str(m.adapted(BeautifulSoup(source,'html.parser').article))
   links=''.join('<link rel="alternate" hreflang="'+c+'" href="https://marsharbel.com'+p+'"/>' for c,p in {**self.routes,'x-default':self.routes['en']}.items())
   switcher='<nav class="film-locale-switcher">'+''.join('<a hreflang="'+c+'" href="'+p+'">'+c+'</a>' for c,p in self.routes.items())+'</nav>'
@@ -55,7 +56,9 @@ class FilmMasterFamily(unittest.TestCase):
  def test_stale_three_source_digests_refuse(self):
   for key in ('templateSha256','englishCatalogSha256','sourceFeatureSha256'):
    c=copy.deepcopy(self.contract);c[key]='0'*64;self.write('config/film-master-family.json',c);self.fail('stale source provenance '+key)
- def test_source_news_drift_refuse(self):self.write('news.html','<article id="'+m.ID+'">Wrong</article>');self.fail('served news source differs')
+ def test_news_row_without_card_cover_refuse(self):
+  row='<article id="'+m.ID+'" class="news-row update"><h3><a class="news-row-link" href="/'+m.SLUG+'">Title</a></h3></article>'
+  self.write('news.html',row);self.fail('news row must keep the card-cover link')
  def test_changed_article_links_media_refuse(self):
   for old,new in [('Body','Other'),('example.invalid/source','example.invalid/wrong'),('example.invalid/video','example.invalid/other')]:
    self.change_page('ar',old,new);self.fail('article differs from keyed output ar')
