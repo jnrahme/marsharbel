@@ -1,4 +1,4 @@
-// AR-2 twin pairing: every one of the 10 hand-authored Arabic twins must be
+// AR-2 twin pairing: every one of the 15 hand-authored Arabic twins must be
 // offered by the same-page switcher from its English page (and back), with
 // honest not-certified proof scoped to exactly the pinned routes.
 // Mutation proof: delete one 'ar2-...-equivalence' entry (or move a variant to
@@ -10,7 +10,7 @@ const manifestFile=process.argv[2]||path.join(root,'same-page-manifest.js');
 const text=fs.readFileSync(manifestFile,'utf8');
 assert.ok(text.startsWith('window.SC_SAME_PAGE_MANIFEST = '),'manifest serialization');
 const manifest=JSON.parse(text.slice('window.SC_SAME_PAGE_MANIFEST = '.length).trim().replace(/;$/,''));
-const TWINS=[['gallery','/gallery','/ar/gallery'],['saints','/saints','/ar/saints'],
+const TWINS=[['gallery','/gallery','/ar/gallery'],['miracles-hub','/miracles/','/ar/miracles/'],['dafne-gutierrez','/miracles/dafne-gutierrez','/ar/miracles/dafne-gutierrez'],['nohad-el-shami','/miracles/nohad-el-shami','/ar/miracles/nohad-el-shami'],['raymond-nader','/miracles/raymond-nader','/ar/miracles/raymond-nader'],['rosary-intro','/rosary-intro','/ar/rosary'],['saints','/saints','/ar/saints'],
  ['prayer-library','/prayer-library','/ar/prayer-library'],['encyclopedia','/saint-charbel-encyclopedia','/ar/encyclopedia'],
  ['news','/news','/ar/news'],['videos','/videos','/ar/videos'],['testimonies','/testimonies','/ar/testimonies'],
  ['voice-testimony','/voice-testimony','/ar/voice-testimony'],
@@ -28,7 +28,7 @@ const TRAVEL_TWINS=[['travel','/travel','/ar/travel'],['qadisha-valley','/qadish
 // stay unpaired until the noindex coverage decision (todo-01M4R14M4SBH49AFECW3MEW5H9).
 const NOINDEX_UNPAIRED=['feedback','submit-testimony'];
 let n=0;function test(name,f){f();n++;console.log('PASS',name)}
-test('all 23 AR-2 pairs present with exact pinned routes',()=>{
+test('all 28 AR-2 pairs present with exact pinned routes',()=>{
  for(const [slug,en,ar] of TWINS){
   const page=manifest.pages['ar2-'+slug+'-equivalence'];
   assert.ok(page,'missing pair '+slug);
@@ -102,7 +102,7 @@ test('the two noindex pages stay unpaired (no switcher stack, no pair)',()=>{
  for(const slug of NOINDEX_UNPAIRED){
   assert.ok(!manifest.pages['ar2-'+slug+'-equivalence'],'noindex page must not be paired: '+slug);
  }
- assert.equal(Object.keys(manifest.pages).filter(k=>k.startsWith('ar2-')).length,TWINS.length,'exactly the 23 approved standalone pairs');
+ assert.equal(Object.keys(manifest.pages).filter(k=>k.startsWith('ar2-')).length,TWINS.length,'exactly the 28 approved standalone pairs');
 });
 test('every paired English page actually carries the switcher stack',()=>{
  // A pair for a page without the control stack can never render the switcher:

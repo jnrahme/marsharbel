@@ -20,6 +20,34 @@ try {
     assert.equal(await page.locator('meta[property="og:url"]').getAttribute('content'), canonical);
     assert.ok(!(await page.locator('meta[name="robots"]').getAttribute('content')).includes('noindex'));
   }
+  // Authored AR pages (#769): head-integrity invariant. An entity-escaped comment or
+  // any stray text node in <head> triggers the HTML5 head-closing rule and the
+  // canonical/og/hreflang tags silently parse into <body> (translate.js then injects
+  // a duplicate canonical). Assert head ancestry in the LIVE DOM, not just counts.
+  for (const path of ['/ar/rosary', '/ar/miracles/', '/ar/miracles/nohad-el-shami', '/ar/miracles/dafne-gutierrez', '/ar/miracles/raymond-nader']) {
+    await page.close(); page = await context.newPage();
+    const response = await page.goto(base + path, { waitUntil: 'load' });
+    assert.equal(response.status(), 200, path);
+    const audit = await page.evaluate(() => {
+      const inHead = (el) => el && el.closest('head') !== null;
+      const headText = [...document.head.childNodes]
+        .filter((n) => n.nodeType === Node.TEXT_NODE)
+        .map((n) => n.textContent).join('').trim();
+      return {
+        headText,
+        canonicals: [...document.querySelectorAll('link[rel="canonical"]')].map((el) => ({ inHead: inHead(el), href: el.getAttribute('href') })),
+        alternates: [...document.querySelectorAll('link[rel="alternate"][hreflang]')].map((el) => inHead(el)),
+        robots: inHead(document.querySelector('meta[name="robots"]')),
+        title: inHead(document.querySelector('title')),
+      };
+    });
+    assert.equal(audit.headText, '', `${path}: stray text node in <head>`);
+    assert.equal(audit.canonicals.length, 1, `${path}: expected exactly one canonical, got ${JSON.stringify(audit.canonicals)}`);
+    assert.ok(audit.canonicals[0].inHead, `${path}: canonical outside <head>`);
+    assert.ok(audit.alternates.length > 0 && audit.alternates.every(Boolean), `${path}: hreflang alternates missing from <head>`);
+    assert.ok(audit.robots, `${path}: robots meta outside <head>`);
+    assert.ok(audit.title, `${path}: title outside <head>`);
+  }
   for (const path of ['/shop', '/shop-mockup', '/voice-lab', '/submit-testimony', '/testimony-review', '/souvenirs', '/account']) {
     await page.goto(base + path, { waitUntil: 'load' });
     assert.match(await page.locator('meta[name="robots"]').getAttribute('content'), /noindex/, path);

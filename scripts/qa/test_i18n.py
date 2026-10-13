@@ -1,6 +1,7 @@
 import copy
 import importlib.util
 import json
+import re
 from pathlib import Path
 import shutil
 import sys
@@ -28,6 +29,31 @@ from check_i18n_policy import check, extract_html
 spec = importlib.util.spec_from_file_location('international_builder', ROOT/'scripts/build-international.py')
 builder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(builder)
+
+
+def external_page_hrefs(text):
+    """External source links a page offers its readers (site-internal excluded)."""
+    return {u for u in re.findall(r'<a [^>]*href="(https?://[^"]+)"', text)
+            if 'marsharbel.com' not in u}
+
+
+def assert_hreflang_reciprocity(case, en_path, ar_path, en_url, ar_url):
+    """Authored AR-2 twins carry their own alternate links: exactly one ar
+    alternate per side, and the EN master and AR twin point at each other."""
+    en = (ROOT/en_path).read_text(encoding='utf8')
+    ar = (ROOT/ar_path).read_text(encoding='utf8')
+    case.assertEqual(en.count('<link rel="alternate" hreflang="ar"'), 1)
+    case.assertEqual(ar.count('<link rel="alternate" hreflang="ar"'), 1)
+    case.assertIn(f'<link rel="alternate" hreflang="ar" href="{ar_url}"', en)
+    case.assertIn(f'<link rel="alternate" hreflang="en" href="{en_url}"', ar)
+
+
+def assert_external_sources_mirrored(case, en_path, ar_path, count):
+    """The AR twin must offer the same external sources as the EN master."""
+    en = external_page_hrefs((ROOT/en_path).read_text(encoding='utf8'))
+    ar = external_page_hrefs((ROOT/ar_path).read_text(encoding='utf8'))
+    case.assertEqual(en, ar)
+    case.assertEqual(len(ar), count)
 
 
 class CatalogTests(unittest.TestCase):
@@ -82,28 +108,19 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn('تضمن الشفاء', html)
 
     def test_arabic_raymond_story_distinguishes_reporter_from_medical_record(self):
-        registry, _ = load_catalog(ROOT)
-        self.assertEqual(registry['topics']['raymondStory']['sources'],
-                         ['raymondAccount', 'catholicWorldRaymond'])
-        html = builder.outputs(ROOT)[ROOT/'ar/miracles/raymond-nader.html']
-        self.assertIn('https://www.catholicworldreport.com/2019/01/28/lebanese-man-finds-hand-of-providence-in-mystical-experience/', html)
-        self.assertIn('لا ملف طبي منشور ولا حكم من لجنة كنسية', html)
-        self.assertIn('الاعتراف بالجماعة لا يعني المصادقة', html)
-        self.assertIn('ثلاث مرات', html)
-        self.assertNotIn('أعلنت العلامة عجيبة.', html.split('id="section-medical"')[1].split('id="section-status"')[0])
+        # Authored AR-2 twin (PR #769): read the real page, not generator output.
+        ar = (ROOT/'ar/miracles/raymond-nader.html').read_text(encoding='utf8')
+        self.assertIn('ولم تعلنه الكنيسة عجيبة', ar)
+        assert_hreflang_reciprocity(self, 'miracles/raymond-nader.html', 'ar/miracles/raymond-nader.html',
+                                    'https://marsharbel.com/miracles/raymond-nader', 'https://marsharbel.com/ar/miracles/raymond-nader')
+        assert_external_sources_mirrored(self, 'miracles/raymond-nader.html', 'ar/miracles/raymond-nader.html', 2)
 
     def test_arabic_dafne_story_anchors_eparchy_statement_without_roman_approval(self):
-        registry, catalogs = load_catalog(ROOT)
-        sources = registry['topics']['dafneStory']['sources']
-        self.assertEqual(sources, ['maroniteVoiceDafne', 'registerDafne'])
-        self.assertEqual(registry['sources']['maroniteVoiceDafne'],
-                         'https://www.catholicsun.org/2018/01/29/she-came-and-prayed-asking-st-sharbel-to-cure-her/')
-        html = builder.outputs(ROOT)[ROOT/'ar/miracles/dafne-gutierrez.html']
-        self.assertIn('لم تجد تفسيرًا طبيًا', html)
-        self.assertIn('تحديد الشفاء الجسدي ليس من اختصاصه', html)
-        self.assertIn('لا إعلان صادر عن روما', html)
-        self.assertIn('href="https://www.catholicsun.org/2018/01/29/she-came-and-prayed-asking-st-sharbel-to-cure-her/"', html)
-        self.assertIn('href="https://www.ncregister.com/news/phoenix-mother-st-charbel-cured-my-blindness"', html)
+        ar = (ROOT/'ar/miracles/dafne-gutierrez.html').read_text(encoding='utf8')
+        self.assertIn('لا إعلان صادر عن الفاتيكان؛ فلم تُرفع الحالة إلى روما', ar)
+        assert_hreflang_reciprocity(self, 'miracles/dafne-gutierrez.html', 'ar/miracles/dafne-gutierrez.html',
+                                    'https://marsharbel.com/miracles/dafne-gutierrez', 'https://marsharbel.com/ar/miracles/dafne-gutierrez')
+        assert_external_sources_mirrored(self, 'miracles/dafne-gutierrez.html', 'ar/miracles/dafne-gutierrez.html', 3)
 
     def test_qadisha_correction_tracks_visible_copy_and_faq_schema(self):
         from i18n.qadisha_copy import validate as validate_qadisha
@@ -283,13 +300,14 @@ class CatalogTests(unittest.TestCase):
         self.assertTrue({'biography','prayers','novena','rosary','annaya'} <= set(catalogs['pl']['pages']))
 
     def test_directory_english_related_page_is_generated_in_index(self):
-        registry, _ = load_catalog(self.root)
-        self.assertEqual(registry['topics']['miracles']['relatedEnglish'], '/miracles/')
-        self.assertEqual(builder.alternate_links(registry, 'miracles').count('https://marsharbel.com/miracles/'), 2)
-        # The real project's output maps the directory route to index.html,
-        # never to a hidden ".html" file inside the directory.
-        self.assertIn(ROOT/'miracles/index.html', builder.outputs())
-        self.assertNotIn(ROOT/'miracles/.html', builder.outputs())
+        # The eucharistic hub is the surviving directory-routed fixture: a
+        # directory route maps to a real index.html, never a hidden ".html"
+        # file inside the directory.
+        generated = builder.outputs(ROOT)
+        self.assertIn(ROOT/'ar/miracles/eucharistic/index.html', generated)
+        self.assertNotIn(ROOT/'ar/miracles/eucharistic/.html', generated)
+        # The English related page is served as the directory index too.
+        self.assertTrue((ROOT/'miracles/eucharistic/index.html').exists())
 
     def test_missing_key_is_rejected(self):
         self.edit('pl/common.json', lambda d:d.pop('navigation.skip'))
@@ -318,37 +336,39 @@ class CatalogTests(unittest.TestCase):
             load_catalog(self.root)
 
     def test_nested_locale_route_and_directory_hub(self):
-        registry, catalogs = load_catalog(ROOT)
-        self.assertEqual(page_url(registry, 'ar', 'miracles'), '/ar/miracles/')
-        self.assertEqual(page_url(registry, 'ar', 'nohadStory'), '/ar/miracles/nohad-el-shami')
+        registry, _ = load_catalog(ROOT)
+        hub = ROOT/'ar/miracles/eucharistic'
         generated = builder.outputs(ROOT)
-        self.assertIn(ROOT/'ar/miracles/index.html', generated)
-        self.assertIn(ROOT/'ar/miracles/.htaccess', generated)
-        self.assertIn('DirectoryIndex index.html', generated[ROOT/'ar/miracles/.htaccess'])
-        self.assertIn(ROOT/'ar/miracles/nohad-el-shami.html', generated)
-        self.assertNotIn(ROOT/'ar/miracles.html', generated)
-        self.assertIn('https://marsharbel.com/ar/miracles/', builder.alternate_links(registry, 'miracles'))
-        self.edit('registry.json',lambda d:d['locales']['ar']['slugs'].update({'nohadStory':'miracles/../private'}))
+        self.assertIn(hub/'index.html', generated)
+        self.assertIn(hub/'.htaccess', generated)
+        self.assertIn('DirectoryIndex index.html', generated[hub/'.htaccess'])
+        self.assertNotIn(ROOT/'ar/miracles/eucharistic.html', generated)
+        # Nested story routes live under the hub directory.
+        self.assertIn(ROOT/'ar/miracles/eucharistic/lanciano.html', generated)
+        # Unsafe slugs stay rejected.
+        self.edit('registry.json', lambda d: d['locales']['ar']['slugs'].update({'annaya': 'miracles/../private'}))
         with self.assertRaisesRegex(ValueError, 'unsafe'):
             load_catalog(self.root)
 
     def test_miracle_story_related_links_start_with_hub(self):
-        registry, catalogs = load_catalog(ROOT)
-        template = Template((ROOT/'templates/international/page.html').read_text())
-        html = builder.render(registry, catalogs['ar'], 'ar', template, 'raymondStory')
-        related = html.split('<aside class="related">', 1)[1]
-        self.assertIn('<li><a href="/ar/miracles/">', related)
-        self.assertLess(related.index('href="/ar/miracles/"'),
-                        related.index('href="/ar/biography"'))
+        for slug in ('raymond-nader', 'dafne-gutierrez', 'nohad-el-shami'):
+            html = (ROOT/f'ar/miracles/{slug}.html').read_text(encoding='utf8')
+            related = html.split('<div class="cta-row">', 1)[1]
+            self.assertIn('href="/ar/miracles/"', related)
+        nohad = (ROOT/'ar/miracles/nohad-el-shami.html').read_text(encoding='utf8')
+        self.assertIn('ولم تفحصها محكمة طبية', nohad)
+        self.assertIn('وليس عجيبة أعلنتها الكنيسة', nohad)
+        assert_hreflang_reciprocity(self, 'miracles/nohad-el-shami.html', 'ar/miracles/nohad-el-shami.html',
+                                    'https://marsharbel.com/miracles/nohad-el-shami', 'https://marsharbel.com/ar/miracles/nohad-el-shami')
+        assert_external_sources_mirrored(self, 'miracles/nohad-el-shami.html', 'ar/miracles/nohad-el-shami.html', 5)
 
     def test_arabic_miracle_hub_anchors_approval_and_separates_testimony(self):
-        registry, catalogs = load_catalog(ROOT)
-        html = builder.outputs(ROOT)[ROOT/'ar/miracles/index.html']
-        self.assertIn('href="https://www.sharbel.org/st-sharbel"', html)
-        self.assertIn('٥ كانون الأول ١٩٦٥', html)
-        self.assertIn('٩ تشرين الأول ١٩٧٧', html)
-        self.assertIn('ليست ضمن الحالات الثلاث', html)
-        self.assertEqual(builder.alternate_links(registry, 'miracles').count('hreflang="ar"'), 1)
+        ar = (ROOT/'ar/miracles/index.html').read_text(encoding='utf8')
+        self.assertIn('والتسجيل في الدير ليس هو الاعتراف الرسمي من الكنيسة', ar)
+        self.assertIn('٥ كانون الأول ١٩٦٥', ar)
+        self.assertIn('٩ تشرين الأول ١٩٧٧', ar)
+        assert_hreflang_reciprocity(self, 'miracles/index.html', 'ar/miracles/index.html',
+                                    'https://marsharbel.com/miracles/', 'https://marsharbel.com/ar/miracles/')
 
     def test_unsafe_route_is_rejected(self):
         self.edit('registry.json',lambda d:d['locales']['es']['slugs'].update({'prayers':'../../account'}))
