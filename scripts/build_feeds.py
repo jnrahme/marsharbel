@@ -141,7 +141,13 @@ def item(card):
     link = f"{NEWS_URL}#{card['id']}"
     # Keep the row's recognition label (e.g. "Reported, recorded at Annaya")
     # so feed readers see the same recognized-vs-reported distinction.
-    description = (f"{card['label']}. " if card["label"] else "") + " ".join(card["body"])
+    body = " ".join(card["body"])
+    # Skip the label prefix when the summary already opens with the label
+    # (case-insensitive), so a legacy label does not double in the feed.
+    if card["label"] and body.lower().startswith(card["label"].lower()):
+        description = body
+    else:
+        description = (f"{card['label']}. " if card["label"] else "") + body
     if card["source"]:
         description += f" Source: {card['source']['label']} ({card['source']['url']})"
     return (
