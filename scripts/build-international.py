@@ -89,6 +89,21 @@ def navigation(registry, code, topic=None, mark_current=True):
     return '\n'.join(links)
 
 
+
+def rosary_videos_block(registry, code, t):
+    # Daily-rosary YouTube place: data-file-driven; each published day drops in
+    # by editing locales/rosary-videos.json (no markup edits). Locale topic
+    # pages link out; embeds live on the English visual guide.
+    data = read_json(ROOT / 'locales/rosary-videos.json')
+    channel = data['channelUrl']
+    items = []
+    for video in data.get('videos', []):
+        href = 'https://www.youtube.com/watch?v=' + video['videoId']
+        items.append(f'<li><a href="{escape(href)}" target="_blank" rel="noopener">{escape(video["title"])}</a> ({escape(video["date"])})</li>')
+    body = ('<ul>' + ''.join(items) + '</ul>') if items else ''
+    body += f'<p class="cta-row"><a class="btn subtle" href="{escape(channel)}" target="_blank" rel="noopener">{t("rosaryVideo.channelCta")}</a></p>'
+    return f'<section class="section" id="pray-along"><h2>{t("rosaryVideo.heading")}</h2><p class="section-sub">{t("rosaryVideo.sub")}</p>{body}</section>'
+
 def render(registry, catalog, code, template, topic=None):
     common, pages = catalog['common'], catalog['pages']
     t = lambda key: escape(common[key])
@@ -114,11 +129,11 @@ def render(registry, catalog, code, template, topic=None):
         lead = render_lead(guidance) + '\n' if guidance else ''
         content = f'''<article><h1>{escape(page['title'])}</h1><p class="intro">{escape(page['intro'])}</p>{full_guide}
 {lead}<nav class="contents" aria-label="{t('navigation.contents')}"><h2>{t('navigation.contents')}</h2><ol>{contents}</ol></nav>
-{sections}<section class="section"><h2>{t('navigation.sources')}</h2><ul>{sources}</ul></section></article>
+{sections}{rosary_videos_block(registry, code, t) if topic == 'rosary' else ''}<section class="section"><h2>{t('navigation.sources')}</h2><ul>{sources}</ul></section></article>
 <aside class="related"><h2>{t('navigation.related')}</h2><ul>{related}</ul><a href="{registry['topics'][topic]['relatedEnglish']}?lang=en">{t('navigation.englishResource')}</a></aside>'''
         title, description = page['title'], page['description']
     else:
-        cards = ''.join(f'<section class="section"><h2><a href="{page_url(registry, code, key)}">{escape(pages[key]["title"])}</a></h2><p>{escape(pages[key]["intro"])}</p><a href="{page_url(registry, code, key)}">{t("navigation.openGuide")}</a></section>' for key in locale_topics(registry, code))
+        cards = ''.join(f'<section class="section"><h2><a href="{page_url(registry, code, key)}">{escape(pages[key]["title"])}</a></h2><p>{escape(pages[key]["intro"])}</p><a href="{page_url(registry, code, key)}">{t("navigation.openGuide")}</a>' + (f' <a href="{page_url(registry, code, key)}#pray-along">{t("rosaryVideo.homeLink")}</a>' if key == 'rosary' else '') + '</section>' for key in locale_topics(registry, code))
         content = f'<h1>{t("home.heading")}</h1><p class="intro">{t("home.intro")}</p>{cards}<aside class="related"><h2>{t("home.availabilityHeading")}</h2><p>{t("home.availability")}</p></aside>'
         title, description = common['home.title'], common['home.description']
     url = registry['site'] + page_url(registry, code, topic)

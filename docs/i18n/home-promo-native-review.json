@@ -1,0 +1,70 @@
+[
+  {
+    "route": "/hi/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/hi/home-copy.json",
+    "keys": [
+      "home.section.pray-along-on-youtube"
+    ],
+    "value": "YouTube पर प्रार्थना करें",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native hi)",
+    "scope": "Home promo link to the daily-rosary YouTube section (#772). ru label carries the inline English-target qualifier per the established ru convention; hi/th homes mark the English target via the launch-availability qualifier.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/th/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/th/home-copy.json",
+    "keys": [
+      "home.section.pray-along-on-youtube"
+    ],
+    "value": "อธิษฐานบน YouTube",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native th)",
+    "scope": "Home promo link to the daily-rosary YouTube section (#772). ru label carries the inline English-target qualifier per the established ru convention; hi/th homes mark the English target via the launch-availability qualifier.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ru/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ru/home-copy.json",
+    "keys": [
+      "home.section.pray-along-on-youtube"
+    ],
+    "value": "Молиться на YouTube (на английском)",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ru)",
+    "scope": "Home promo link to the daily-rosary YouTube section (#772). ru label carries the inline English-target qualifier per the established ru convention; hi/th homes mark the English target via the launch-availability qualifier.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ar/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ar/home-copy.json",
+    "keys": [
+      "home.section.pray-along-on-youtube"
+    ],
+    "value": "صلّوا معنا على يوتيوب (بالإنجليزية)",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ar)",
+    "scope": "Home promo link to the daily-rosary YouTube section (#772). ar carries the inline English-target qualifier (بالإنجليزية) per the ru convention; target stays the English /rosary-visual-guide#pray-along (no pray-along section on the authored ar rosary page per scrum ruling).",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  }
+]
