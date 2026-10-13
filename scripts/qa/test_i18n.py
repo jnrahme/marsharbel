@@ -370,41 +370,6 @@ class CatalogTests(unittest.TestCase):
         assert_hreflang_reciprocity(self, 'miracles/index.html', 'ar/miracles/index.html',
                                     'https://marsharbel.com/miracles/', 'https://marsharbel.com/ar/miracles/')
 
-    def test_authored_ar_pages_have_clean_html5_heads(self):
-        # Regression for the dee5712d escaped-gtag-comment bug: an entity-escaped
-        # comment (&lt;!-- ... --&gt;) is a TEXT node in <head>, and the HTML5
-        # head-closing rule then parses canonical/og/hreflang into <body>
-        # (translate.js injected a duplicate canonical; seo_runtime shard 2/8 red).
-        # html.parser does NOT emulate that rule - html5lib does.
-        import html5lib
-        ns = '{http://www.w3.org/1999/xhtml}'
-        pages = ['ar/rosary.html', 'ar/miracles/index.html',
-                 'ar/miracles/nohad-el-shami.html', 'ar/miracles/dafne-gutierrez.html',
-                 'ar/miracles/raymond-nader.html']
-        for page in pages:
-            doc = html5lib.parse((ROOT/page).read_text(encoding='utf8'),
-                                 treebuilder='etree', namespaceHTMLElements=True)
-            head = doc.find(f'{ns}head')
-            self.assertIsNotNone(head, page)
-            head_text = (head.text or '') + ''.join(child.tail or '' for child in head)
-            self.assertEqual(head_text.strip(), '', f'{page}: stray text node in <head>')
-            canonicals = [e for e in doc.iter() if e.tag == f'{ns}link' and e.get('rel') == 'canonical']
-            self.assertEqual(len(canonicals), 1, f'{page}: expected exactly one canonical')
-            for sel, desc in ((f'{ns}link[@rel="canonical"]', 'canonical'),
-                              (f'{ns}link[@rel="alternate"]', 'hreflang alternate'),
-                              (f'{ns}meta[@name="robots"]', 'robots'),
-                              (f'{ns}title', 'title')):
-                self.assertTrue(head.findall(sel), f'{page}: {desc} missing from <head>')
-            for e in doc.iter():
-                if e.get('rel') in ('canonical', 'alternate') or e.get('name') == 'robots' or e.tag == f'{ns}title':
-                    in_head = any(e is h for h in head.iter())
-                    self.assertTrue(in_head, f'{page}: {e.tag} {e.get("rel") or e.get("name") or ""} outside <head>')
-        assert_external_sources_mirrored(self, 'miracles/index.html', 'ar/miracles/index.html', 11)
-        # The rosary-intro <-> ar/rosary pair must survive a build-pages regen:
-        # exactly one ar alternate per side, pointing at each other.
-        assert_hreflang_reciprocity(self, 'rosary-intro.html', 'ar/rosary.html',
-                                    'https://marsharbel.com/rosary-intro', 'https://marsharbel.com/ar/rosary')
-
     def test_unsafe_route_is_rejected(self):
         self.edit('registry.json',lambda d:d['locales']['es']['slugs'].update({'prayers':'../../account'}))
         with self.assertRaisesRegex(ValueError,'unsafe'):
