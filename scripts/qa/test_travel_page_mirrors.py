@@ -17,7 +17,7 @@ class TravelPageMirrors(unittest.TestCase):
    for lang,route in cfg['routes'].items():
     text=render_page(ROOT,self.r,lang,family,route);s=BeautifulSoup(text,'html.parser')
     normalizers=('partial-home-disclosure',) if home_url(self.r,lang) is None else ()
-    if lang=='ar':normalizers=normalizers+('english-nav-disclosure',)
+    if lang in ('ar','de'):normalizers=normalizers+('english-nav-disclosure',)
     self.assertEqual(check_pair(master,text,cfg['english'],route,normalizers=normalizers),[],(family,lang))
     self.assertEqual(s.html['lang'],lang);self.assertEqual(s.select_one('link[rel=canonical]')['href'],self.r['site']+route)
     self.assertEqual({l['hreflang']:l['href'] for l in s.select('link[hreflang]')},{c:self.r['site']+p for c,p in cfg.get('discoveryRoutes',{'en':cfg['english'],'x-default':cfg['english'],**cfg['routes']}).items()})

@@ -19,7 +19,7 @@ class HistoryMirrors(unittest.TestCase):
     for hint in hints:
      self.assertEqual(hint.get_text().strip(),qualifier);self.assertEqual(hint.parent.name,'a');hint.decompose()
    else:self.assertFalse(hints,lang)
-   self.assertEqual(check_pair(master,str(parity),'/history',route,('english-nav-disclosure',) if lang=='ar' else ()),[],lang)
+   self.assertEqual(check_pair(master,str(parity),'/history',route,('english-nav-disclosure',) if lang in ('ar','de') else ()),[],lang)
    self.assertEqual(s.html['lang'],lang);self.assertEqual(s.main['tabindex'],'-1')
    self.assertEqual(s.select_one('link[rel=canonical]')['href'],self.r['site']+route)
    self.assertEqual(s.select_one('a.skip-link')['href'],'#main-content')

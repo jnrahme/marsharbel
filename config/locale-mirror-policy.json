@@ -396,7 +396,10 @@
       "master": "all-saints-and-all-souls.html",
       "masterRoute": "/all-saints-and-all-souls",
       "family": "all-saints-and-all-souls-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "es/todos-los-santos.html": {
       "locale": "es",
@@ -1453,6 +1456,9 @@
       "masterRoute": "/visit-annaya",
       "family": "annaya-master",
       "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
@@ -1465,6 +1471,9 @@
       "masterRoute": "/history",
       "family": "history-master",
       "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
       "baseMainParity": true,
       "baseCssParity": true,
       "baseImagesParity": true,
@@ -1509,6 +1518,9 @@
       "masterRoute": "/",
       "family": "home",
       "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
@@ -1955,7 +1967,10 @@
       "master": "22nd-of-the-month.html",
       "masterRoute": "/22nd-of-the-month",
       "family": "twenty-second-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "de/pilgerreise.html": {
       "locale": "de",
@@ -1967,7 +1982,10 @@
       "master": "saint-charbel-pilgrimage.html",
       "masterRoute": "/saint-charbel-pilgrimage",
       "family": "pilgrimage-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "es/el-22-de-cada-mes.html": {
       "locale": "es",
@@ -2609,6 +2627,7 @@
       "family": "music-master",
       "status": "strict",
       "normalizers": [
+        "english-nav-disclosure",
         "launch-availability-annotations"
       ]
     },

@@ -57,7 +57,7 @@ class MirrorStructure(unittest.TestCase):
         registry=json.loads((ROOT/'locales/registry.json').read_text())
         copy=json.loads((ROOT/'locales/en/home-copy.json').read_text())
         locale=render_home(ROOT,registry,'de',copy)
-        self.assertEqual(check_pair(master,locale,'/','/de/'),[])
+        self.assertEqual(check_pair(master,locale,'/','/de/',['english-nav-disclosure']),[])
 
     def test_published_home_mirrors_match_english(self):
         registry=json.loads((ROOT/'locales/registry.json').read_text())

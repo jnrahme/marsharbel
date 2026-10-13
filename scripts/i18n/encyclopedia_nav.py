@@ -60,10 +60,10 @@ def disclose_nav(text, root, lang):
 def route_nav_hrefs(text, root, lang):
     """Route plain header nav hrefs to the locale's registered twins.
 
-    Arabic launch only: the newly registered twins are Arabic, and rerouting other
-    locales' reviewed English links is out of scope for this change.
+    Arabic launch, then de (locale-drop PR 2): twins are looked up per locale from
+    the registry, so marking only touches links that have no registered twin.
     """
-    if lang!='ar':return text
+    if lang not in ('ar','de'):return text
     header=re.search(r'<header\b[\s\S]*?</header>',text)
     if not header:raise ValueError('Missing navigation header')
     from i18n.catalog import read_json
@@ -130,8 +130,11 @@ def mark_english_nav_hrefs(text, root, lang, label=True):
 
 
 def route_and_mark_nav(text, root, lang, label=True):
-    """Arabic launch: route header links to registered twins, mark the rest as English."""
-    if lang != 'ar':
+    """Locale launch: route header links to registered twins, mark the rest as English.
+
+    Gated per locale as each locale's nav PR lands (ar, then de); every locale uses
+    its own registry twin map and its own reviewed qualifier catalog."""
+    if lang not in ('ar', 'de'):
         return text
     if not re.search(r'<header\b', text):
         return text
