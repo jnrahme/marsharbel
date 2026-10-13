@@ -3249,3 +3249,22 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 .movie-glance{list-style:none;margin:1rem 0 0;padding:1rem 1.1rem;display:grid;gap:.5rem;border:1px solid var(--theme-line-soft);border-radius:12px;background:var(--theme-surface);max-width:46rem;text-align:start}
 .movie-glance li{margin:0;font-size:.98rem;line-height:1.45;color:var(--theme-ink-soft)}
 .movie-glance strong{color:var(--theme-ink);margin-inline-end:.35rem}
+
+.meditation-image-card:has(.mystery-art-credit) img {
+  height: auto;
+}
+.mystery-art-credit {
+  margin: 0;
+  padding: 0.55rem 0.9rem 0.7rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--theme-ink-soft);
+}
+.mystery-art-credit:empty {
+  padding: 0;
+}
+.mystery-art-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
