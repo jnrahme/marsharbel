@@ -3283,3 +3283,16 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+/* Dated Saint of the Day companion: same editorial card system as Latest news. */
+.home-saint-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.5rem;align-items:start}
+.home-saint-pair>a{min-width:0;text-decoration:none}
+.home-saint-info{padding:clamp(1.25rem,3vw,2rem);gap:1rem;align-content:start}
+.home-saint-info .home-news-title{margin:0;font-size:clamp(1.7rem,3vw,2.4rem);overflow-wrap:anywhere}
+.home-saint-info .home-news-dek{margin:0;font-size:1.0625rem;line-height:1.65}
+.home-saint-book .home-news-photo img{aspect-ratio:3/2;object-fit:cover}
+.home-saint-book .home-news-copy{gap:.75rem}
+.home-saint-source{margin-block:1rem 0;font-size:.875rem}
+.home-saint-source a{display:inline-flex;align-items:center;min-height:44px;text-underline-offset:.2em}
+@media(max-width:650px){.home-saint-pair{grid-template-columns:minmax(0,1fr)}}
+
+.home-saint-day[hidden]{display:none!important}
