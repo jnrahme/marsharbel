@@ -16,6 +16,18 @@ const SRC = 'src/pages', FRAG = 'partials/fragments';
 const navTemplate = (await readFile('partials/primary-navigation.html', 'utf8')).trim();
 const frags = {};
 for (const f of await readdir(FRAG)) if (f.endsWith('.html')) frags[f.slice(0, -5)] = (await readFile(path.join(FRAG, f), 'utf8')).replace(/\n$/, '');
+const rosaryVideos = JSON.parse(await readFile('locales/rosary-videos.json', 'utf8'));
+// Daily-rosary YouTube place: data-driven via locales/rosary-videos.json; each
+// published day drops in by editing the JSON (no markup edits). Empty state is
+// the channel card; videos render newest-first as lazy youtube-nocookie embeds.
+const esc = s => String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+const rosaryVideoCards = rosaryVideos.videos.length
+  ? '<div class="grid-2">' + rosaryVideos.videos.slice().reverse().map(v =>
+      '<article class="card update"><div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/' + esc(v.videoId) + '" title="' + esc(v.title) + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>'
+      + '<p>' + esc(v.title) + ' (' + esc(v.date) + '). <a href="https://www.youtube.com/watch?v=' + esc(v.videoId) + '" target="_blank" rel="noopener">Watch on YouTube</a>.</p></article>').join('') + '</div>'
+  : '<div class="grid-2"><article class="card update"><p>A guided video for each day\'s mysteries lands here as the series publishes - one video per day, ready to pray along with.</p><p class="cta-row"><a class="btn subtle" href="' + esc(rosaryVideos.channelUrl) + '" target="_blank" rel="noopener">Open the marsharbel YouTube channel</a></p></article></div>';
+frags['rosary-videos'] = '<section class="section" id="pray-along"><h2>Pray along: the daily rosary on YouTube</h2><p class="section-sub">A guided video for each day\'s mysteries, published day by day. Embeds use youtube-nocookie.com - no YouTube cookies are set unless you press play.</p>' + rosaryVideoCards + '</section>';
+
 async function walk(dir) {
   const out = [];
   for (const e of await readdir(dir, { withFileTypes: true })) {

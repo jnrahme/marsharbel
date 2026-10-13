@@ -1,8 +1,8 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "d11c8fb9d5394d6424550ec24d0fbbf3e9a41f9225a117da69a56802f07ca757",
-  "sourceRevision": "b3e92ffe",
+  "masterSha256": "979e88bd9c472b95a29f7971b3cb2bf3902edf7181c401127cc278c44c2d0413",
+  "sourceRevision": "dc3e3529",
   "bindings": [
     {
       "key": "home.header.saint-charbel",
@@ -1422,6 +1422,13 @@
       "key": "home.latest-news.premiere.photoCaption",
       "selector": "#latest-news > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
       "source": "Annaya church and monastery. Photo: Paul Saad, Wikimedia Commons, CC BY-SA 4.0; cropped and converted to WebP. Context photo, not film or premiere footage.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.section.pray-along-on-youtube",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Pray along on YouTube",
       "kind": "text",
       "nodeIndex": 0
     }
