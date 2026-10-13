@@ -176,6 +176,7 @@ qa_step node scripts/tests/history_equivalence.cjs
 qa_step npx playwright test tests/history-master.spec.js --project=phone --project=laptop --workers=2
 qa_step npx playwright test tests/travel-master.spec.js --project=phone --project=laptop --workers=2
 qa_step env PORT=4197 bash scripts/tests/run_eucharistic_locales.sh
+qa_step env PORT=4198 bash scripts/tests/run_hero_figure_crop.sh
 
 echo "[qa] Books content API: feed, shelf parity and round trip"
 qa_step npm run books:check
