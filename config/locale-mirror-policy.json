@@ -1925,6 +1925,9 @@
       "masterRoute": "/history",
       "family": "history-master",
       "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
       "baseMainParity": false,
       "baseCssParity": true,
       "baseImagesParity": true,
@@ -1937,6 +1940,9 @@
       "masterRoute": "/",
       "family": "home",
       "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
@@ -2149,7 +2155,10 @@
       "master": "22nd-of-the-month.html",
       "masterRoute": "/22nd-of-the-month",
       "family": "twenty-second-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "ru/annaya.html": {
       "locale": "ru",
@@ -2161,7 +2170,10 @@
       "master": "visit-annaya.html",
       "masterRoute": "/visit-annaya",
       "family": "annaya-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "ru/palomnichestvo.html": {
       "locale": "ru",
@@ -2173,7 +2185,10 @@
       "master": "saint-charbel-pilgrimage.html",
       "masterRoute": "/saint-charbel-pilgrimage",
       "family": "pilgrimage-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "ru/molitvy.html": {
       "locale": "ru",
