@@ -1,4 +1,5 @@
-/* News landing redesign - PR 1: compact hero, lead-story block, fixed status chips.
+/* News landing redesign - PR 1: compact hero, lead-story block. PR 2: compact report list,
+   month bands, fixed chip vocabulary (Confirmed / Report / Update / Event / Announcement).
    Scoped to /news (+/ar/news). System bar: Cormorant headlines, Manrope UI, clay/cream/espresso tokens. */
 
 /* Hero: compact, no CTA buttons (removed in master) */
@@ -7,10 +8,10 @@
 .news-standfirst{font-size:1.06rem;max-width:56ch;margin:0;color:var(--theme-ink-soft)}
 @media (max-width:520px){.news-hero h1{font-size:1.92rem}}
 
-/* Fixed status chip vocabulary: Confirmed / Reported / Announced / Archived */
+/* Fixed status chip vocabulary: Confirmed / Report / Update / Event / Announcement.
+   Text-only, clay on dark, 13px minimum, contrast >= 4.5:1. */
 .chip{display:inline-block;border-radius:999px;padding:.26rem .68rem;font-size:13px;font-weight:600;line-height:1.25;letter-spacing:.01em;white-space:nowrap}
-.chip-confirmed,.chip-reported,.chip-announced{background:var(--theme-accent);color:#1d1a17;border:1px solid transparent}
-.chip-archived{background:transparent;color:var(--theme-ink-soft);border:1px solid var(--theme-line)}
+.chip-confirmed,.chip-report,.chip-update,.chip-event,.chip-announcement{background:var(--theme-accent);color:#1d1a17;border:1px solid transparent}
 .news-meta{font-size:.86rem;color:var(--theme-ink-soft)}
 
 /* Lead-story block: 16:9 whole-poster frame left at desktop, stacked image-first on phone.
@@ -27,15 +28,65 @@
 .news-lead-cta{display:inline-flex;align-items:center;min-height:44px;padding:.4rem 1rem;border-radius:10px;background:var(--theme-button);color:#1d1a17;font-weight:600;text-decoration:none}
 .news-lead-cta:hover{background:var(--theme-button-end)}
 .news-lead-body{padding:1.3rem 1.3rem 1.3rem 0}
-/* Share on the lead: removed (director 2026-10-12: "or remove from lead") - the Read-the-report CTA deep-links the full coverage. Feed cards keep an icon-only 44px share. */
+[dir="rtl"] .news-lead-body{padding:1.3rem 0 1.3rem 1.3rem}
+/* Share on the lead: removed - the Read-the-report CTA deep-links the full coverage. Feed rows keep an icon-only 44px share. */
 #news-lead-premiere .share-bar{display:none}
-.grid-2 .update .share-trigger{min-width:44px;min-height:44px;justify-content:center}
-.grid-2 .update .share-trigger .share-text{display:none}
-@media (max-width:900px){.news-lead{grid-template-columns:1fr;gap:0}.news-lead-media img{aspect-ratio:16/9}.news-lead-body{padding:1rem 1rem 1.1rem}}
+@media (max-width:900px){.news-lead{grid-template-columns:1fr;gap:0}.news-lead-media img{aspect-ratio:16/9}.news-lead-body{padding:1rem 1rem 1.1rem}[dir="rtl"] .news-lead-body{padding:1rem 1rem 1.1rem}}
 /* Phone: keep headline + summary + CTA inside the first screen (390x844) */
 @media (max-width:520px){.news-hero{padding-block:.9rem .5rem}.news-lead-section{padding-top:0}.news-lead-summary{font-size:1rem}}
 
-/* Exception: the premiere card's tag is byte-pinned by the strict film-premiere pipeline
-   (templates/news-desk + independent-review contract). Restyle to the clay chip system in
-   CSS only; text conversion to the fixed vocabulary is a separate pipeline PR. */
-#charbel-premiere-release-2026-10 .tag.ok{background:var(--theme-accent);color:#1d1a17;border-color:transparent;font-size:13px;font-weight:600;padding:.26rem .68rem}
+/* PR 2 feed: month bands + compact report rows. */
+.news-feed-section .section-sub{max-width:68ch}
+.news-band{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--theme-accent);margin:1.6rem 0 .2rem;letter-spacing:.02em}
+.news-list{list-style:none;margin:0;padding:0}
+.news-list li{border-block-start:1px solid #3A342E}
+.news-list li:first-child{border-block-start:0}
+
+/* Row: 96px thumbnail | text | arrow. Whole row is the tap target (stretched link);
+   the share button sits above the overlay (z-index 3, set on .share-bar in styles.css). */
+.news-row{position:relative;display:grid;grid-template-columns:96px 1fr auto;gap:1rem;align-items:center;padding-block:1rem;transition:background-color .2s ease}
+.news-row:hover{background:#2C2621}
+.news-row-thumb{display:block;width:96px;height:96px;border-radius:10px;overflow:hidden;background:#171411}
+.news-row-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.news-row-thumb--tile img{object-fit:contain;padding:6px}
+.news-row-thumb--empty{background:transparent;border-radius:0}
+.news-row-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;line-height:1.2;margin:0 0 .15rem;text-wrap:balance;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.news-row-link{color:inherit;text-decoration:none}
+.news-row-link:hover{text-decoration:underline;text-underline-offset:.15em}
+.news-row-link::after{content:"";position:absolute;inset:0;z-index:1}
+.news-row-summary{margin:0;color:var(--theme-ink-soft);font-size:.98rem;line-height:1.45;max-width:68ch;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.news-row-meta{margin:.35rem 0 0;display:flex;align-items:center;gap:.5rem;font-size:.86rem;color:var(--theme-ink-soft)}
+.news-row-arrow{position:relative;width:24px;height:24px;margin-inline:.25rem;color:var(--theme-accent);transition:transform .2s ease}
+.news-row-arrow::before{content:"";position:absolute;inset:6px;border-inline-end:2px solid currentColor;border-block-end:2px solid currentColor;transform:rotate(-45deg)}
+[dir="rtl"] .news-row-arrow::before{transform:rotate(135deg)}
+.news-row:hover .news-row-arrow{transform:translateX(3px)}
+[dir="rtl"] .news-row:hover .news-row-arrow{transform:translateX(-3px)}
+
+/* Icon-only 44px share, floating at the row's inline-end before the arrow. */
+.news-row .share-bar{position:absolute;inset-inline-end:2.75rem;inset-block-start:50%;transform:translateY(-50%);margin:0;padding:0}
+.news-row .share-trigger{min-width:44px;min-height:44px;justify-content:center;padding:.4rem}
+.news-row .share-trigger .share-text{display:none}
+.news-row .share-status{position:absolute;inset-block-start:100%;inset-inline-end:0;background:var(--theme-surface);padding:.25rem .55rem;border-radius:8px;white-space:nowrap;font-size:.8rem}
+
+@media (max-width:520px){
+  .news-row{gap:.8rem;padding-block:.9rem}
+  .news-row-title{font-size:1.18rem}
+  .news-row-summary{font-size:.94rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .news-row,.news-row-arrow{transition:none}
+}
+
+/* Sources and photo credits (collapsed); keeps each report's citations and licences on the page. */
+.news-credits{margin-top:2rem;border:1px solid var(--theme-line-soft);border-radius:12px;background:var(--theme-surface)}
+.news-credits summary{list-style:none;cursor:pointer;position:relative;min-height:44px;display:flex;align-items:center;padding:.7rem 1.1rem;font-family:'Cormorant Garamond',serif;font-size:1.25rem}
+.news-credits summary::-webkit-details-marker{display:none}
+.news-credits summary::after{content:"";position:absolute;inset-inline-end:1.1rem;width:10px;height:10px;border-inline-end:2px solid var(--theme-accent);border-block-end:2px solid var(--theme-accent);transform:rotate(45deg);transition:transform .2s ease}
+.news-credits[open] summary::after{transform:rotate(225deg)}
+.news-credits-list{list-style:none;margin:0;padding:.2rem 1.1rem 1rem}
+.news-credits-list li{padding:.55rem 0;border-block-start:1px solid var(--theme-line-soft);font-size:.92rem;line-height:1.55;color:var(--theme-ink-soft)}
+.news-credit-title{color:var(--theme-ink);font-weight:600}
+.news-credit-label{color:var(--theme-ink);font-weight:600;white-space:nowrap}
+.news-credits a{color:var(--theme-accent);text-decoration:underline;text-underline-offset:.15em}
+@media (prefers-reduced-motion:reduce){.news-credits summary::after{transition:none}}
