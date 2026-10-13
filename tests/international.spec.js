@@ -144,11 +144,21 @@ test('Arabic prayer mirror keeps authored copy and always offers its English sou
   await expect(page.locator('h1')).toHaveText(travelHeading('ar','saint-charbel-prayers-master'));
 });
 
-test('English directory hub selector keeps the Arabic hub unavailable until published', async ({page}) => {
+test('English directory hub selector routes Arabic to its published twin, other locales stay unpublished', async ({page}) => {
   await page.goto('/miracles/?lang=en');
-  await expect(page.locator('#sc-language-select option[value="ar"]')).toBeDisabled();
-  await expect(page).toHaveURL(/\/miracles\/\?lang=en$/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', registry.site + '/miracles/');
+  // #769 published /ar/miracles/: the ar option is enabled and routes to the twin.
+  await expect(page.locator('#sc-language-select option[value="ar"]')).toBeEnabled();
+  expect(await page.evaluate(c=>SC_LANGUAGE_SWITCH.request(c),'ar')).toBe(true);
+  await expect(page).toHaveURL(/\/ar\/miracles\/$/);
+  await expect(page.locator('html')).toHaveAttribute('lang','ar');
+  await expect(page.locator('html')).toHaveAttribute('dir','rtl');
+  // Control: fr has no /miracles/ twin in the registry and stays unpublished.
+  await page.goto('/miracles/?lang=en');
+  await expect(page.locator('#sc-language-select option[value="fr"]')).toBeDisabled();
+  const before=page.url();
+  expect(await page.evaluate(c=>SC_LANGUAGE_SWITCH.request(c),'fr')).toBe(false);
+  await expect(page).toHaveURL(before);
 });
 
 test('unpublished locale on a miracle story stays unavailable with no machine fallback', async ({page}) => {
