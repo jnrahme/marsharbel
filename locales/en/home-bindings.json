@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "2446a51dd2ca55406ba89cf05b161d871cd17f73ca1ebb100afeba4365b733d9",
+  "masterSha256": "6c0f0d9f4f4e66e178161ef6666dff9bf4dfb3866e5e87716a1a1ccad2229b74",
   "sourceRevision": "dc3e3529",
   "bindings": [
     {
@@ -1522,6 +1522,41 @@
       "source": "Feast source: Maronite Eparchy of Saint Maron, Canada",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "home.follow-us.title",
+      "selector": "#follow-us > h2:nth-of-type(1)",
+      "source": "Follow Along",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.follow-us.sub",
+      "selector": "#follow-us > p:nth-of-type(1)",
+      "source": "Short reels, saint stories and the daily rosary, shared where you already are.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.follow-us.instagram",
+      "selector": "#follow-us > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Reels and quotes",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.follow-us.facebook",
+      "selector": "#follow-us > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Stories and updates",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.follow-us.youtube",
+      "selector": "#follow-us > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Films and narrated stories",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -1741,6 +1776,11 @@
     "home.saintDay.bookDek": "Read and listen together to Jude’s question and Jesus’ answer.",
     "home.saintDay.bookCredit": "Imaginative storybook illustration, not a historical portrait.",
     "home.saintDay.bookCta": "Open the children’s book",
-    "home.saintDay.sourceLabel": "Feast source: Maronite Eparchy of Saint Maron, Canada"
+    "home.saintDay.sourceLabel": "Feast source: Maronite Eparchy of Saint Maron, Canada",
+    "home.follow-us.title": "Follow Along",
+    "home.follow-us.sub": "Short reels, saint stories and the daily rosary, shared where you already are.",
+    "home.follow-us.instagram": "Reels and quotes",
+    "home.follow-us.facebook": "Stories and updates",
+    "home.follow-us.youtube": "Films and narrated stories"
   }
 }

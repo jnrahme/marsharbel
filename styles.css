@@ -3296,3 +3296,11 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 @media(max-width:650px){.home-saint-pair{grid-template-columns:minmax(0,1fr)}}
 
 .home-saint-day[hidden]{display:none!important}
+
+.follow-list{list-style:none;margin:1.1rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.follow-card{display:flex;align-items:center;gap:1rem;min-height:88px;padding:1rem 1.2rem;border:1px solid var(--theme-line-soft,rgba(211,178,110,.28));border-radius:16px;background:var(--panel);color:var(--text);text-decoration:none;transition:transform .2s ease,border-color .2s ease}
+.follow-ico{flex:0 0 auto;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--theme-wash,rgba(205,190,171,.1));border:1px solid var(--line);color:var(--gold)}
+.follow-txt{display:flex;flex-direction:column;min-width:0}.follow-txt strong{font-size:1.1rem}.follow-handle{color:var(--gold);font-size:.92rem;overflow-wrap:anywhere}.follow-line{color:var(--muted);font-size:.9rem}
+.follow-card:hover,.follow-card:focus-visible{border-color:var(--gold);transform:translateY(-2px)}
+@media(max-width:760px){.follow-list{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.follow-card{transition:none}.follow-card:hover,.follow-card:focus-visible{transform:none}}
