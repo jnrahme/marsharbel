@@ -175,6 +175,8 @@ def check(root=ROOT):
     shelf_catalog = read_json(shelf_path)['values'] if shelf_path.exists() else {}
     jude_path = root/'locales/en/jude-story-copy.json'
     jude_catalog = read_json(jude_path)['values'] if jude_path.exists() else {}
+    rosary_book_joyful_path = root/'locales/en/rosary-book-joyful-copy.json'
+    rosary_book_joyful_catalog = read_json(rosary_book_joyful_path)['values'] if rosary_book_joyful_path.exists() else {}
     peter_path = root/'locales/en/peter-story-copy.json'
     peter_catalog = read_json(peter_path)['values'] if peter_path.exists() else {}
     francis_path = root/'locales/en/francis-story-copy.json'
@@ -272,6 +274,7 @@ def check(root=ROOT):
         additions -= Counter(sergius_catalog.get(file, {}))
         additions -= Counter(magdalene_catalog.get(file, {}))
         additions -= Counter(jude_catalog.get(file, {}))
+        additions -= Counter(rosary_book_joyful_catalog.get(file, {}))
         additions -= Counter(peter_catalog.get(file, {}))
         additions -= Counter(therese_catalog.get(file, {}))
         additions -= Counter(anthony_catalog.get(file, {}))
@@ -292,6 +295,9 @@ def check(root=ROOT):
         stale_scripture = Counter(scripture_catalog.get(file, {})) - Counter(values)
         if stale_scripture:
             errors.append(f'{file}: scripture-copy catalog entries missing from the page: {sorted(stale_scripture)[:3]}')
+        stale_rosary_book_joyful = Counter(rosary_book_joyful_catalog.get(file, {})) - Counter(values)
+        if stale_rosary_book_joyful:
+            errors.append(f'{file}: rosary-book-joyful-copy catalog entries missing from the page: {sorted(stale_rosary_book_joyful)[:3]}')
         if file == 'miracles/index.html':
             euch_entry = read_json(root/'locales/en/eucharistic-miracles.json')['hub']
             additions -= Counter({euch_entry[key]: 1 for key in ('charbelEntryTitle','charbelEntryIntro','charbelEntryAction','charbelEntryCredit','charbelEntryAlt','charbelEntryPhotoSource','charbelEntryLicense','charbelEntryLicenseText','eyebrow')})

@@ -17,6 +17,12 @@ const navTemplate = (await readFile('partials/primary-navigation.html', 'utf8'))
 const frags = {};
 for (const f of await readdir(FRAG)) if (f.endsWith('.html')) frags[f.slice(0, -5)] = (await readFile(path.join(FRAG, f), 'utf8')).replace(/\n$/, '');
 const rosaryVideos = JSON.parse(await readFile('locales/rosary-videos.json', 'utf8'));
+const travelEquivalence = JSON.parse(await readFile('locales/travel-equivalence.json', 'utf8'));
+// Travel-pinned masters are byte-locked by reviewed twin evidence; ratio
+// classes reach them only through the twin re-pin tooling, so the classifier
+// leaves them untouched here.
+const travelPinnedMasters = new Set(Object.values(travelEquivalence.groups || travelEquivalence).map(g => g && g.variants && g.variants.en && g.variants.en.file).filter(Boolean));
+
 // Daily-rosary YouTube place: data-driven via locales/rosary-videos.json; each
 // published day drops in by editing the JSON (no markup edits). Empty state is
 // the channel card; videos render newest-first as lazy youtube-nocookie embeds.
@@ -72,6 +78,21 @@ for (const file of await walk(SRC).catch(() => [])) {
     if (slots.size !== args.length || [...slots].some(k => k > args.length)) throw new Error(`${rel}: fragment ${name} takes ${slots.size} argument(s), got ${args.length}`);
     // Arguments are inserted verbatim (no unescaping) so JSON/HTML escapes survive byte for byte.
     return indent + frags[name].replace(/\{\{(\d+|text)\}\}/g, (_m, k) => args[(k === 'text' ? 1 : Number(k)) - 1]);
+  });
+  // Hero-figure ratio classes (design-director face-crop spec): fixed-box
+  // layouts key off the image's own ratio, read from the width/height attrs.
+  // Portrait art gets is-portrait, near-square gets is-square-ish; landscape
+  // stays unclassed and keeps the contextual default frame.
+  if (!travelPinnedMasters.has(rel)) built = built.replace(/(<figure class="hero-figure[^"]*"[^>]*>\s*<img\b)([^>]*?)(\/?)>/g, (m, open, attrs, close) => {
+    const w = /width="(\d+)"/.exec(attrs), h = /height="(\d+)"/.exec(attrs);
+    if (!w || !h) return m;
+    const ratio = Number(w[1]) / Number(h[1]);
+    const cls = ratio < 0.9 ? 'is-portrait' : (ratio <= 1.3 ? 'is-square-ish' : null);
+    if (!cls) return m;
+    const existing = /class="([^"]*)"/.exec(attrs);
+    const clean = attrs.replace(/\s+$/, '');
+    const next = existing ? clean.replace(existing[0], `class="${existing[1]} ${cls}"`) : clean + ` class="${cls}"`;
+    return open + next + close + '>';
   });
   if (built.includes('rel="canonical"') && (rel === 'saint-charbel-prayers.html' || !/name=["']robots["'][^>]*content=["'][^"']*noindex/.test(built))) {
     const composed = spawnSync('python3', ['scripts/inject-same-page-stdin.py'], {input: built, encoding:'utf8',maxBuffer:20*1024*1024});

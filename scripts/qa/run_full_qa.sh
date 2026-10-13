@@ -45,6 +45,9 @@ qa_report() {
 trap qa_report EXIT
 
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_new_page_locales.py'
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_private_preview_gate.py'
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_rosary_book_joyful_catalog.py'
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_dead_code_private_preview.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_partial_locale.py'
 qa_step python3 scripts/qa/probe_partial_build.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata.py
@@ -60,6 +63,7 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata_splic
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_authored_final_hashes.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_page_mirror_ru_whitespace.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_variant_evidence.py
+qa_step python3 scripts/qa/test_header_marking_delta.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_generated_availability.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_generated_sitemap_dates.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_manifest_provenance_policy.py
@@ -68,6 +72,7 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_ru_nav_alignment_repi
 qa_step python3 -m unittest discover -s scripts/qa -p test_ru_travel_chrome.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_media_bindings_prepare.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_retired_novena_nav_repin.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_fr_header_marking.py
 
 qa_step npx playwright test tests/element-collision.spec.js --project=laptop --workers=2
 qa_step python3 scripts/qa/test_travel_equivalence.py
@@ -172,6 +177,7 @@ qa_step node scripts/tests/history_equivalence.cjs
 qa_step npx playwright test tests/history-master.spec.js --project=phone --project=laptop --workers=2
 qa_step npx playwright test tests/travel-master.spec.js --project=phone --project=laptop --workers=2
 qa_step env PORT=4197 bash scripts/tests/run_eucharistic_locales.sh
+qa_step env PORT=4198 bash scripts/tests/run_hero_figure_crop.sh
 
 echo "[qa] Books content API: feed, shelf parity and round trip"
 qa_step npm run books:check
