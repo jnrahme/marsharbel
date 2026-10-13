@@ -82,5 +82,39 @@ class NewsDeskTests(unittest.TestCase):
         self.assertIn('class="home-news-lead home-news-lead--film" href="./charbel-film-premiere"', text)
         self.assertNotIn('el-paso-lebanese-festival-2026-10', text)
 
+    def test_papal_rows_en_ar_parity(self):
+        from bs4 import BeautifulSoup
+        expected = {
+            'pope-leo-gemelli-prayer-2026-10-13': ('chip-event', 'Event'),
+            'pope-leo-rosary-announcement-2026-10-13': ('chip-announcement', 'Announcement'),
+        }
+        en_text = (ROOT/'news.html').read_text()
+        ar_text = (ROOT/'ar/news.html').read_text()
+        en = BeautifulSoup(en_text, 'html.parser')
+        ar = BeautifulSoup(ar_text, 'html.parser')
+        for rid, (chip_class, chip_text) in expected.items():
+            self.assertEqual(en_text.count(f'id="{rid}"'), 1)
+            self.assertEqual(ar_text.count(f'id="{rid}"'), 1)
+            en_row = en.select_one(f'article#{rid}')
+            ar_row = ar.select_one(f'article#{rid}')
+            self.assertIsNotNone(en_row)
+            self.assertIsNotNone(ar_row)
+            en_links = [a.get('href') for a in en_row.select('a')]
+            ar_links = [a.get('href') for a in ar_row.select('a')]
+            # Row hrefs stay on Vatican News only, and AR carries the same hrefs as EN.
+            self.assertTrue(en_links)
+            for href in en_links + ar_links:
+                self.assertIn('https://www.vaticannews.va/', href)
+            self.assertEqual(en_links, ar_links)
+            # Same chip class on both; EN chip text matches the ruling vocabulary.
+            self.assertIn(chip_class, en_row.select_one('.chip').get('class'))
+            self.assertIn(chip_class, ar_row.select_one('.chip').get('class'))
+            self.assertEqual(en_row.select_one('.chip').get_text(strip=True), chip_text)
+            # Each row href is cited in the credits list on both pages.
+            for soup in (en, ar):
+                credit_hrefs = [a.get('href') for a in soup.select('.news-credits-list a')]
+                for href in en_links:
+                    self.assertIn(href, credit_hrefs)
+
     def test_unsupported_movie_headline_removed(self):
         self.assertNotIn('rolls out worldwide', (ROOT/'index.html').read_text())
