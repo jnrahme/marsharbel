@@ -121,6 +121,22 @@ for htmlfile in *.html; do
     google*.html|index.html) continue ;;
     mystery-meditation.html|rosary-source-text.html|testimony-review.html|404.html|voice-lab.html|souvenirs.html|pio-story.html|jpii-story.html|stories.html) continue ;;
   esac
+  # Private preview pages (scrum ruling 2026-10-13): skip the orphan flag only when the
+  # page is listed in locales/private-preview-pages.json AND still carries noindex.
+  if [ -f locales/private-preview-pages.json ] && python3 - "$htmlfile" <<'PYSKIP'
+import json, sys
+page = sys.argv[1]
+data = json.load(open('locales/private-preview-pages.json'))
+sys.exit(0 if any(entry.get('page') == page for entry in data.get('pages', [])) else 1)
+PYSKIP
+  then
+    if grep -qi 'noindex' "$htmlfile"; then
+      continue
+    fi
+    echo "  ORPHAN HTML: $htmlfile (listed in locales/private-preview-pages.json but noindex missing)"
+    FAILURES=$((FAILURES + 1))
+    continue
+  fi
   # Check if any OTHER html file links to this page
   if ! grep -rql "$htmlfile" --include="*.html" . --exclude-dir=node_modules --exclude-dir=tmp --exclude-dir=.venv --exclude-dir=.git --exclude="$htmlfile" >/dev/null 2>&1; then
     # Also check JS files (some pages are navigated to via JS); match both the

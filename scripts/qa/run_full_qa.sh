@@ -46,6 +46,8 @@ trap qa_report EXIT
 
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_new_page_locales.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_private_preview_gate.py'
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_rosary_book_joyful_catalog.py'
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_dead_code_private_preview.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_partial_locale.py'
 qa_step python3 scripts/qa/probe_partial_build.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata.py
