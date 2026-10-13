@@ -80,10 +80,6 @@ def render_home(root, registry, lang, catalog=None):
         raise ValueError(f'Home {lang}: YouTube promo anchor missing or duplicated')
     if lang in topic_locales(registry, 'rosary'):
         promo[0]['href'] = page_url(registry, lang, 'rosary') + '#pray-along'
-    elif (root / lang / 'rosary.html').exists():
-        # Authored (non-generated) rosary page, e.g. the ar exact-mirror: same
-        # own-route rule, URL from the file location rather than the registry.
-        promo[0]['href'] = f'/{lang}/rosary#pray-along'
     for script in soup.select('script[type="application/ld+json"]'):
         data = json.loads(script.string)
         for item in data.get('@graph', []):

@@ -49,5 +49,22 @@
       "https://marsharbel.com/"
     ],
     "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ar/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ar/home-copy.json",
+    "keys": [
+      "home.section.pray-along-on-youtube"
+    ],
+    "value": "صلّوا معنا على يوتيوب (بالإنجليزية)",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ar)",
+    "scope": "Home promo link to the daily-rosary YouTube section (#772). ar carries the inline English-target qualifier (بالإنجليزية) per the ru convention; target stays the English /rosary-visual-guide#pray-along (no pray-along section on the authored ar rosary page per scrum ruling).",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
   }
 ]
