@@ -373,3 +373,8 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 - License: Commons tags PD-old-assumed + PD-1923 (published/made before 1923, author unknown, subject died 1898). Verified 2026-10-13.
 - Derivative: the 419x595 original is placed on a sepia field built from a blurred, toned copy of itself; the face is scaled 1.06x (og) / 1.12x (news), never stretched. Thumb is a 128px square crop.
 - Replaces: a modern sepia digital painting (source and author unknown, rights unsourced). That file is kept unchanged at gallery/charbel-portrait.jpg and is still used by storybook.js as a scene fallback; any page that shows it must label it an artistic rendition.
+
+## Joyful Mysteries read-aloud book art and narration (books/joyful/, 2026-10-13)
+
+- books/joyful/art/p02-annunciation.webp, p03-visitation.webp, p04-nativity.webp, p05-presentation.webp, p06-finding.webp (1600w WebP): own AI-generated art from the marsharbel studio pipeline (generation allocation and director-pass inspection recorded in the studio art ledger, 2026-10-12). No third-party source imagery, no stock, no web scrape; character reference sheets were generated in the same pipeline. Cleared as own work.
+- books/joyful/audio/page-01.mp3 through page-06.mp3 and page-22.mp3: generated narration (text-to-speech synthesis of the book's own text). No recorded third-party voice or external audio.
