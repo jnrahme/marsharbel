@@ -363,3 +363,13 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 - Verified: Commons API imageinfo/extmetadata on 2026-10-10 returns creator paul saad, required attribution, CC BY-SA 4.0 and the license URL above.
 - Treatment: existing crop/WebP conversion; CSS cover crops in the card. Visible card credit names photographer, Commons, license and changes. The existing article is the card destination; its photo-credit listing retains source/license links, avoiding nested anchors in the whole-card link.
 - Context: church and monastery at Annaya, not the Beirut premiere venue, a film still, or premiere footage. Caption and keyed alt explicitly name the real subject.
+
+## Default Saint Charbel portrait (swapped 2026-10-13)
+
+### saint-charbel.jpg (1200x630), media/news/saint-charbel-portrait.webp (906x667), media/news/thumb/saint-charbel-portrait-128.webp (128x128)
+- Subject: Saint Charbel Makhlouf - the authentic early photograph (before 1898), eyes lowered.
+- Source: Wikimedia Commons, File:Charbel.jpg
+  (https://commons.wikimedia.org/wiki/File:Charbel.jpg), original source st-charbel.fr. Photographer: unknown.
+- License: Commons tags PD-old-assumed + PD-1923 (published/made before 1923, author unknown, subject died 1898). Verified 2026-10-13.
+- Derivative: the 419x595 original is placed on a sepia field built from a blurred, toned copy of itself; the face is scaled 1.06x (og) / 1.12x (news), never stretched. Thumb is a 128px square crop.
+- Replaces: a modern sepia digital painting (source and author unknown, rights unsourced). That file is kept unchanged at gallery/charbel-portrait.jpg and is still used by storybook.js as a scene fallback; any page that shows it must label it an artistic rendition.
