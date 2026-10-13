@@ -3244,3 +3244,8 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 @media(prefers-reduced-motion:reduce){.souvenir-card{transition:none;transform:none}}
 .souvenir-hero h1,.souvenir-store-heading h2,.souvenir-principles h2{overflow-wrap:anywhere}
 :lang(ar) code{direction:ltr;unicode-bidi:isolate;display:inline-block;max-width:100%;overflow-wrap:anywhere;font-size:.88em}
+
+/* Movie page: at-a-glance answer block in the hero (release, trailer, where to watch). */
+.movie-glance{list-style:none;margin:1rem 0 0;padding:1rem 1.1rem;display:grid;gap:.5rem;border:1px solid var(--theme-line-soft);border-radius:12px;background:var(--theme-surface);max-width:46rem;text-align:start}
+.movie-glance li{margin:0;font-size:.98rem;line-height:1.45;color:var(--theme-ink-soft)}
+.movie-glance strong{color:var(--theme-ink);margin-inline-end:.35rem}
