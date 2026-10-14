@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "fd25c1b71ab0ab1ad80255a2b5d56b4d281a80ca012adef1c8f44afacf6cac39",
+  "masterSha256": "9efb49fb9c4f15677fdd0a1a9ec0edf22c6d2277bec89b2be373796a8bd184db",
   "sourceRevision": "dc3e3529",
   "bindings": [
     {
@@ -1412,62 +1412,6 @@
       "nodeIndex": 0
     },
     {
-      "key": "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "Gemelli Hospital in Rome seen from its forecourt",
-      "kind": "attribute",
-      "attribute": "alt"
-    },
-    {
-      "key": "home.latest-news.october-14-2026",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "October 14, 2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.pope-leo-has-a-calm-first-night-after-lung-surgery",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
-      "source": "Pope Leo has a calm first night after lung surgery",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.the-holy-see-says-pope-leo-had-a-calm-first-night-after-surg",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
-      "source": "The Holy See says Pope Leo had a calm first night after surgery; another update is expected later today. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "Interior of the Sacro Cuore church at Gemelli Hospital in Rome, looking toward the altar",
-      "kind": "attribute",
-      "attribute": "alt"
-    },
-    {
-      "key": "home.latest-news.october-13-2026",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "October 13, 2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.catholics-pray-for-pope-leo-at-gemelli",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
-      "source": "Catholics pray for Pope Leo at Gemelli",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
-      "source": "Cardinal Baldassarre Reina led the evening Rosary in the hospital chapel as Catholics prayed for the Pope. Context photo: the Sacro Cuore church at Gemelli, not the Rosary itself. Photo: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; resized to WebP.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
       "key": "home.saintDay.2026-10-14.heading",
       "selector": "template[data-saint-date=\"2026-10-14\"] #saint-day-heading",
       "source": "Saint of the Day",
@@ -1837,6 +1781,62 @@
       "source": "Feast source: Vatican News saints calendar",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Gemelli Hospital in Rome seen from its forecourt",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.latest-news.october-14-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "October 14, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.pope-leo-s-recovery-is-progressing-normally",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Pope Leo's recovery is progressing normally",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-holy-see-says-postoperative-tests-are-within-the-expecte",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "The Holy See says postoperative tests are within the expected range. Pope Leo has begun walking in his room and has resumed eating normally. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Interior of the Sacro Cuore church at Gemelli Hospital in Rome, looking toward the altar",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.latest-news.october-13-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "October 13, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.catholics-pray-for-pope-leo-at-gemelli",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Catholics pray for Pope Leo at Gemelli",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Cardinal Baldassarre Reina led the evening Rosary in the hospital chapel as Catholics prayed for the Pope. Context photo: the Sacro Cuore church at Gemelli, not the Rosary itself. Photo: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; resized to WebP.",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -2047,8 +2047,6 @@
     "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt": "Gemelli Hospital in Rome seen from its forecourt",
     "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital": "Interior of the Sacro Cuore church at Gemelli Hospital in Rome, looking toward the altar",
     "home.latest-news.october-14-2026": "October 14, 2026",
-    "home.latest-news.pope-leo-has-a-calm-first-night-after-lung-surgery": "Pope Leo has a calm first night after lung surgery",
-    "home.latest-news.the-holy-see-says-pope-leo-had-a-calm-first-night-after-surg": "The Holy See says Pope Leo had a calm first night after surgery; another update is expected later today. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
     "home.saintDay.2026-10-14.heading": "Saint of the Day",
     "home.saintDay.2026-10-14.dateLabel": "14.10.2026",
     "home.saintDay.2026-10-14.calendar": "Maronite calendar",
@@ -2101,6 +2099,8 @@
     "home.saintDay.2026-10-19.story": "Six French Jesuit priests, a Jesuit lay brother, and a layman carried the Gospel to the indigenous peoples of New France and gave their lives as martyrs. The Church remembers them as the Canadian Martyrs, the seed of the Church in North America.",
     "home.saintDay.2026-10-19.provenance": "Brief story based on Vatican News' saint of the day.",
     "home.saintDay.2026-10-19.infoCta": "Read about the Canadian Martyrs",
-    "home.saintDay.2026-10-19.sourceLabel": "Feast source: Vatican News saints calendar"
+    "home.saintDay.2026-10-19.sourceLabel": "Feast source: Vatican News saints calendar",
+    "home.latest-news.pope-leo-s-recovery-is-progressing-normally": "Pope Leo's recovery is progressing normally",
+    "home.latest-news.the-holy-see-says-postoperative-tests-are-within-the-expecte": "The Holy See says postoperative tests are within the expected range. Pope Leo has begun walking in his room and has resumed eating normally. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP."
   }
 }
