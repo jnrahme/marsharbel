@@ -8,7 +8,7 @@ from i18n.encyclopedia_trail import load_trail
 # for the marking mechanism: adding a locale's nav drop means adding its code
 # here (plus its registry twins and reviewed qualifier catalog), never editing
 # per-call-site literals. QA mirrors import this constant.
-MARKING_LOCALES=frozenset({'ar','de','ru','fr'})
+MARKING_LOCALES=frozenset({'ar','de','ru','fr','es'})
 
 # Review-pinned travel variants whose rendered bytes may be nav-marked anyway,
 # gated per locale by scrum ticket (de: pinned-twin marking 2026-10-13; ru follows

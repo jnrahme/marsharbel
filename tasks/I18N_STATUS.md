@@ -8,7 +8,7 @@ Audit at 2026-10-13 3:35 PM EDT, stage d5b67353. Pages = sitemap URLs per locale
 | de | 36 | marked on stage (#766); pinned 12 twins in #782 | finish_nav 13 pages queued (T-007) | #782 draft 8723ea64 | build --check OK on stage; strings gap not measured | merged on stage |
 | ru | 20 | marked on stage (#773) | pinned travel twins pending source commit | none open | build --check OK on stage; strings gap not measured | merged on stage |
 | fr | 26 | #783 merge approved 67eee959 | 4 authored hashes repinned by script | #783 | build --check OK on stage; strings gap not measured | not merged |
-| es | 27 | reviewed patch 7b48d889, no PR | waits fr merge, repin | none | build --check OK on stage; strings gap not measured | not merged |
+| es | 27 | merged on stage (#787) | native review not certified | none | build --check OK on stage; strings gap not measured | merged on stage |
 | it | 23 | not started | after es | none | build --check OK on stage; strings gap not measured | not merged |
 | pl | 23 | not started | after it | none | build --check OK on stage; strings gap not measured | not merged |
 | pt | 24 | not started | after pl | none | build --check OK on stage; strings gap not measured | not merged |
