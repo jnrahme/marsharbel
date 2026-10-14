@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "ef3ff3e52acbb6f8c70b91b49a3d6e2f53abd46698d9a3bbdc65452328698a1e",
+  "masterSha256": "366e97dc1fc86dee1c8a286886f034642a7b16e7d3764fd42cccb63ee8c944fe",
   "sourceRevision": "dc3e3529",
   "bindings": [
     {
@@ -1412,6 +1412,62 @@
       "nodeIndex": 0
     },
     {
+      "key": "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Gemelli Hospital in Rome seen from its forecourt",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.latest-news.october-13-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "October 13, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.pope-leo-xiv-s-lung-surgery-completed-successfully",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Pope Leo XIV's lung surgery completed successfully",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "The Holy See says the operation was successful with no complications and Pope Leo has returned to his room. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Interior of the Sacro Cuore church at Gemelli Hospital in Rome, looking toward the altar",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.latest-news.october-13-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "October 13, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.catholics-pray-for-pope-leo-at-gemelli",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Catholics pray for Pope Leo at Gemelli",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Cardinal Baldassarre Reina led the evening Rosary in the hospital chapel as Catholics prayed for the Pope. Context photo: the Sacro Cuore church at Gemelli, not the Rosary itself. Photo: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; resized to WebP.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
       "key": "home.saintDay.2026-10-14.heading",
       "selector": "template[data-saint-date=\"2026-10-14\"] #saint-day-heading",
       "source": "Saint of the Day",
@@ -1499,62 +1555,6 @@
       "key": "home.saintDay.2026-10-14.sourceLabel",
       "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Feast source: Maronite Eparchy of Saint Maron, Canada",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "Gemelli Hospital in Rome seen from its forecourt",
-      "kind": "attribute",
-      "attribute": "alt"
-    },
-    {
-      "key": "home.latest-news.october-13-2026",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "October 13, 2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.pope-leo-xiv-s-lung-surgery-completed-successfully",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
-      "source": "Pope Leo XIV's lung surgery completed successfully",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
-      "source": "The Holy See says the operation was successful with no complications and Pope Leo has returned to his room. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "Interior of the Sacro Cuore church at Gemelli Hospital in Rome, looking toward the altar",
-      "kind": "attribute",
-      "attribute": "alt"
-    },
-    {
-      "key": "home.latest-news.october-13-2026",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "October 13, 2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.catholics-pray-for-pope-leo-at-gemelli",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
-      "source": "Catholics pray for Pope Leo at Gemelli",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
-      "source": "Cardinal Baldassarre Reina led the evening Rosary in the hospital chapel as Catholics prayed for the Pope. Context photo: the Sacro Cuore church at Gemelli, not the Rosary itself. Photo: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; resized to WebP.",
       "kind": "text",
       "nodeIndex": 0
     }
@@ -1766,6 +1766,8 @@
     "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl": "The Holy See says the operation was successful with no complications and Pope Leo has returned to his room. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
     "home.latest-news.catholics-pray-for-pope-leo-at-gemelli": "Catholics pray for Pope Leo at Gemelli",
     "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos": "Cardinal Baldassarre Reina led the evening Rosary in the hospital chapel as Catholics prayed for the Pope. Context photo: the Sacro Cuore church at Gemelli, not the Rosary itself. Photo: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; resized to WebP.",
+    "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt": "Gemelli Hospital in Rome seen from its forecourt",
+    "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital": "Interior of the Sacro Cuore church at Gemelli Hospital in Rome, looking toward the altar",
     "home.saintDay.2026-10-14.heading": "Saint of the Day",
     "home.saintDay.2026-10-14.dateLabel": "14.10.2026",
     "home.saintDay.2026-10-14.calendar": "Maronite calendar",
@@ -1778,8 +1780,6 @@
     "home.saintDay.2026-10-14.bookDek": "Read and listen together to Jude’s question and Jesus’ answer.",
     "home.saintDay.2026-10-14.bookCredit": "Imaginative storybook illustration, not a historical portrait.",
     "home.saintDay.2026-10-14.bookCta": "Open the children’s book",
-    "home.saintDay.2026-10-14.sourceLabel": "Feast source: Maronite Eparchy of Saint Maron, Canada",
-    "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt": "Gemelli Hospital in Rome seen from its forecourt",
-    "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital": "Interior of the Sacro Cuore church at Gemelli Hospital in Rome, looking toward the altar"
+    "home.saintDay.2026-10-14.sourceLabel": "Feast source: Maronite Eparchy of Saint Maron, Canada"
   }
 }
