@@ -28,7 +28,9 @@ Ids: `news-<slug>-<date>`, `saint-<slug>`, `prayer-<slug>`, `book-<slug>` (exist
 SQL contract: `services/content-api/schema/001_content.sql` (not applied in phase 1).
 
 ## API surface
-Built: `GET /api/v1/health`, `/manifest.json`, `/news?locale=&limit=`, `/news/{id}?locale=`, `/rosary/today?locale=&date=`, `/saints/today?locale=&date=`. Contract only (returns 501): `/prayers?locale=`, `/search?q=&locale=`. Later: `/books`, `/books/{id}`, auth and notifications under `/api/v1/me/...`.
+Built: `GET /api/v1/health`, `/manifest.json`, `/news?locale=&limit=`, `/news/{id}?locale=`, `/rosary/today?locale=&date=`, `/saints/today?locale=&date=`.
+
+Phase-1 data ships in `content/` (news per locale, rosary daily config, saint-of-day) as generated seeds: `scripts/content-api/extract-news-from-homes.mjs` bridges the generated homes, `scripts/content-api/extract-saint-of-day.mjs` converts the reviewed saint manifest (`locales/saint-of-day.json`) and refuses a manifest with no entry for today. The service tests and both extractor `--check` gates run in `scripts/qa/prepush.sh` and `run_full_qa.sh`, so CI exercises the backend and fails on a stale seed. Contract only (returns 501): `/prayers?locale=`, `/search?q=&locale=`. Later: `/books`, `/books/{id}`, auth and notifications under `/api/v1/me/...`.
 Conventions: `schema` field on every body, ETag, `Cache-Control: public, max-age=60, stale-while-revalidate=300`, CORS limited to marsharbel.com, 4xx/5xx always `{error}`.
 
 ## Caching and CDN

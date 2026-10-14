@@ -1,15 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { cpSync, mkdtempSync } from 'node:fs';
+import { cpSync, mkdtempSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createApp } from './server.mjs';
 
 const root = join(import.meta.dirname, '..', '..');
+const contentDir = join(root, 'content');
+// Writable copy of the real deployment data set: everything the tests exercise ships in content/.
 const dir = mkdtempSync(join(tmpdir(), 'capi-'));
-cpSync(join(root, 'content/news'), join(dir, 'news'), { recursive: true });
-cpSync(join(root, 'content/rosary'), join(dir, 'rosary'), { recursive: true });
-cpSync(join(root, 'locales/saint-of-day.json'), join(dir, 'saint-of-day.json'));
+cpSync(contentDir, dir, { recursive: true });
 const app = createApp({ dataDir: dir, adminToken: 'secret', now: () => new Date('2026-10-14T15:00:00Z') });
 const srv = app.server();
 await new Promise(r => srv.listen(0, '127.0.0.1', r));
@@ -55,4 +55,40 @@ test('news by id, saints today, unbuilt endpoints', async () => {
   assert.equal((await get('/api/v1/news/nope')).status, 404);
   assert.equal((await (await get('/api/v1/saints/today?date=2026-10-14')).json()).saint.saint, 'jude');
   assert.equal((await get('/api/v1/search?q=x')).status, 501);
+});
+
+test('shipped content seed serves the saint of the day for today', async () => {
+  // The deployment seed itself, read straight from content/ - not an augmented fixture.
+  const seed = JSON.parse(readFileSync(join(contentDir, 'saint-of-day.json'), 'utf8'));
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: seed.timezone || 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const real = createApp({ dataDir: contentDir });
+  const rs = real.server();
+  await new Promise(r => rs.listen(0, '127.0.0.1', r));
+  try {
+    const res = await fetch(`http://127.0.0.1:${rs.address().port}/api/v1/saints/today?date=${today}`);
+    assert.equal(res.status, 200, `seed must cover ${today}: regenerate content/saint-of-day.json from a fresh locales/saint-of-day.json`);
+    assert.equal((await res.json()).saint.saint, seed.entries[today].saint);
+  } finally {
+    rs.close();
+  }
+});
+
+test('impossible and malformed dates are rejected with 400', async () => {
+  for (const bad of ['2026-02-31', '2026-02-29', '2026-13-01', '2026-00-10', '2026-10-00', '2026-2-3', '2026-10-14x']) {
+    assert.equal((await get('/api/v1/rosary/today?date=' + bad)).status, 400, 'rosary ' + bad);
+    assert.equal((await get('/api/v1/saints/today?date=' + bad)).status, 400, 'saints ' + bad);
+  }
+  // Leap day is real in 2024; rosary answers for any valid date, entry or not.
+  assert.equal((await get('/api/v1/rosary/today?date=2024-02-29')).status, 200);
+  const r = await (await get('/api/v1/rosary/today?date=2024-02-29')).json();
+  assert.equal(r.date, '2024-02-29'); assert.equal(r.weekday, 'thursday');
+});
+
+test('health keeps its explicit Cache-Control: no-store', async () => {
+  const h = await get('/api/v1/health');
+  assert.equal(h.status, 200);
+  assert.equal(h.headers.get('cache-control'), 'no-store');
+  // Ordinary GET responses still get the public default.
+  const n = await get('/api/v1/news?locale=en&limit=1');
+  assert.match(n.headers.get('cache-control'), /^public, max-age=60/);
 });

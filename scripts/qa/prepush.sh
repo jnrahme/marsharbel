@@ -22,6 +22,10 @@ python3 scripts/qa/check_seo.py
 python3 scripts/sitemap_lastmod.py --check
 python3 scripts/build-media-sitemaps.py --check
 python3 scripts/qa/check_spec_paths.py
+step "content API service tests and generated content seeds"
+node services/content-api/server.test.mjs
+node scripts/content-api/extract-news-from-homes.mjs --check
+node scripts/content-api/extract-saint-of-day.mjs --check
 step "fast unit tests (everything except the slow i18n suite)"
 for t in scripts/qa/test_*.py; do
   case "$t" in *test_i18n.py) continue ;; esac

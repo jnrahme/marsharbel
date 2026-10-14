@@ -7,6 +7,18 @@ import { join } from 'node:path';
 const LOCALES = ['en', 'ar', 'de', 'es', 'fr', 'hi', 'it', 'pl', 'pt', 'ru', 'th'];
 const ORIGINS = new Set(['https://marsharbel.com', 'https://www.marsharbel.com']);
 const WEEKDAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+const DATE_RE = /^(\d{4})-(\d{2})-(\d{2})$/;
+// Strict calendar check shared by every ?date= parameter: Date.parse rolls an impossible
+// date like 2026-02-31 over to March, so format-plus-parse alone accepts fabricated dates.
+export function isValidDate(date) {
+  const m = DATE_RE.exec(date);
+  if (!m) return false;
+  const y = +m[1], mo = +m[2], d = +m[3];
+  if (mo < 1 || mo > 12 || d < 1 || d > 31) return false;
+  const dt = new Date(0);
+  dt.setUTCFullYear(y, mo - 1, d);
+  return dt.getUTCFullYear() === y && dt.getUTCMonth() === mo - 1 && dt.getUTCDate() === d;
+}
 
 export function createApp({ dataDir, adminToken = '', now = () => new Date() }) {
   const cache = new Map();
@@ -41,7 +53,7 @@ export function createApp({ dataDir, adminToken = '', now = () => new Date() }) 
   function saintToday(url) {
     const loc = locale(url.searchParams.get('locale'));
     const date = url.searchParams.get('date') || today(load('rosary/daily.json')?.timezone || 'America/New_York');
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(date))) return [400, { error: 'bad_date' }];
+    if (!isValidDate(date)) return [400, { error: 'bad_date' }];
     const saint = (load('saint-of-day.json')?.entries || {})[date];
     return saint ? [200, { schema: 1, date, locale: loc, saint }] : [404, { error: 'no_entry_for_date' }];
   }
@@ -51,7 +63,7 @@ export function createApp({ dataDir, adminToken = '', now = () => new Date() }) 
     const cfg = load('rosary/daily.json');
     if (!cfg) return [503, { error: 'rosary_unavailable' }];
     const date = url.searchParams.get('date') || today(cfg.timezone);
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(date))) return [400, { error: 'bad_date' }];
+    if (!isValidDate(date)) return [400, { error: 'bad_date' }];
     const weekday = WEEKDAYS[new Date(`${date}T12:00:00Z`).getUTCDay()];
     const set = cfg.weekdaySets[weekday];
     const saint = (load('saint-of-day.json')?.entries || {})[date] || null;
@@ -84,7 +96,8 @@ export function createApp({ dataDir, adminToken = '', now = () => new Date() }) 
       const h = { ...headers, ...extra };
       if (status === 200 && req.method === 'GET') {
         h.ETag = `"${createHash('sha1').update(body).digest('hex').slice(0, 16)}"`;
-        h['Cache-Control'] = 'public, max-age=60, stale-while-revalidate=300';
+        // An explicit Cache-Control from the route (health: no-store) wins over this default.
+        h['Cache-Control'] = h['Cache-Control'] || 'public, max-age=60, stale-while-revalidate=300';
         if (req.headers['if-none-match'] === h.ETag) { res.writeHead(304, h); return res.end(); }
       }
       res.writeHead(status, h); res.end(req.method === 'HEAD' ? undefined : body);
