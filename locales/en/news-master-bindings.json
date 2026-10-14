@@ -1,8 +1,8 @@
 {
   "version": 1,
   "master": "news.html",
-  "masterSha256": "2837e771721aa260ab0ec9c52b5bd8675c89291092582b8d15266442cba551f6",
-  "sourceRevision": "f3d5f0fb",
+  "masterSha256": "18f972276f2eeb363877ce53390b44096c2cf60686b57b2c62ba68ffbcadc1f2",
+  "sourceRevision": "2943fc5a",
   "bindings": [
     {
       "key": "news.metadata.title-saint-charbel-news-latest-miracles-movie-events",
@@ -509,16 +509,16 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.pope-leo-has-a-calm-first-night-after-lung-surgery",
+      "key": "news.latest-news.pope-leo-s-recovery-is-progressing-normally",
       "selector": "#pope-leo-gemelli-prayer-2026-10-13 > div:nth-of-type(1) > h3:nth-of-type(1) > a:nth-of-type(1)",
-      "source": "Pope Leo has a calm first night after lung surgery",
+      "source": "Pope Leo's recovery is progressing normally",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.pope-leo-xiv-had-a-calm-first-night-at-gemelli-hospital-the",
+      "key": "news.latest-news.the-holy-see-says-pope-leo-xiv-s-scheduled-blood-tests-and-c",
       "selector": "#pope-leo-gemelli-prayer-2026-10-13 > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Pope Leo XIV had a calm first night at Gemelli Hospital, the Holy See Press Office said on October 14. Doctors removed the lower lobe of his right lung on October 13; tissue examined during the successful operation confirmed lung adenocarcinoma. Further information is expected later today.",
+      "source": "The Holy See says Pope Leo XIV's scheduled blood tests and chest X-ray confirm that recovery is progressing normally after his lung surgery. He has begun respiratory physiotherapy and walking in his room, and has resumed eating normally.",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1118,9 +1118,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.pope-leo-has-a-calm-first-night-after-lung-surgery",
+      "key": "news.latest-news.pope-leo-s-recovery-is-progressing-normally",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "Pope Leo has a calm first night after lung surgery",
+      "source": "Pope Leo's recovery is progressing normally",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1132,9 +1132,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.vatican-news-first-night-recovery-update-october-14-2026",
+      "key": "news.latest-news.vatican-news-afternoon-recovery-bulletin-october-14-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
-      "source": "Vatican News: first-night recovery update (October 14, 2026)",
+      "source": "Vatican News: afternoon recovery bulletin (October 14, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1146,9 +1146,9 @@
       "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.pope-leo-has-a-calm-first-night-after-lung-surgery",
+      "key": "news.latest-news.pope-leo-s-recovery-is-progressing-normally",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "Pope Leo has a calm first night after lung surgery",
+      "source": "Pope Leo's recovery is progressing normally",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2533,8 +2533,8 @@
     "news.latest-news.latest-news": "Latest news",
     "news.latest-news.dated-sourced-reports-reported-events-and-newly-recorded-cas": "Dated, sourced reports. Reported events and newly recorded cases are not the same as formal Vatican recognition; the label on each report says which is which.",
     "news.latest-news.october-2026": "October 2026",
-    "news.latest-news.pope-leo-has-a-calm-first-night-after-lung-surgery": "Pope Leo has a calm first night after lung surgery",
-    "news.latest-news.pope-leo-xiv-had-a-calm-first-night-at-gemelli-hospital-the": "Pope Leo XIV had a calm first night at Gemelli Hospital, the Holy See Press Office said on October 14. Doctors removed the lower lobe of his right lung on October 13; tissue examined during the successful operation confirmed lung adenocarcinoma. Further information is expected later today.",
+    "news.latest-news.pope-leo-s-recovery-is-progressing-normally": "Pope Leo's recovery is progressing normally",
+    "news.latest-news.the-holy-see-says-pope-leo-xiv-s-scheduled-blood-tests-and-c": "The Holy See says Pope Leo XIV's scheduled blood tests and chest X-ray confirm that recovery is progressing normally after his lung surgery. He has begun respiratory physiotherapy and walking in his room, and has resumed eating normally.",
     "news.latest-news.update": "Update",
     "news.latest-news.october-14-2026": "October 14, 2026",
     "news.latest-news.catholics-pray-for-pope-leo-at-gemelli": "Catholics Pray for Pope Leo at Gemelli",
@@ -2604,7 +2604,7 @@
     "news.latest-news.december-1-2025": "December 1, 2025",
     "news.latest-news.sources-and-photo-credits": "Sources and photo credits",
     "news.latest-news.source": "Source:",
-    "news.latest-news.vatican-news-first-night-recovery-update-october-14-2026": "Vatican News: first-night recovery update (October 14, 2026)",
+    "news.latest-news.vatican-news-afternoon-recovery-bulletin-october-14-2026": "Vatican News: afternoon recovery bulletin (October 14, 2026)",
     "news.latest-news.text": ".",
     "news.latest-news.vatican-news-in-italian-detailed-holy-see-bulletin-october-1": "Vatican News in Italian: detailed Holy See bulletin (October 13, 2026)",
     "news.latest-news.vatican-news-catholics-gather-to-pray-the-rosary-for-pope-le": "Vatican News: Catholics gather to pray the Rosary for Pope Leo (October 13, 2026)",

@@ -104,10 +104,14 @@ class NewsDeskTests(unittest.TestCase):
             self.assertIsNotNone(ar_row)
             en_links = [a.get('href') for a in en_row.select('a')]
             ar_links = [a.get('href') for a in ar_row.select('a')]
-            # Row hrefs stay on Vatican News only, and AR carries the same hrefs as EN.
+            # Row hrefs stay on the row's cited primary source, and AR carries the same hrefs as EN.
+            domains = {
+                'pope-leo-gemelli-prayer-2026-10-13': 'https://www.vaticannews.va/',
+                'pope-leo-rosary-announcement-2026-10-13': 'https://www.usccb.org/',
+            }
             self.assertTrue(en_links)
             for href in en_links + ar_links:
-                self.assertIn('https://www.vaticannews.va/', href)
+                self.assertIn(domains[rid], href)
             self.assertEqual(en_links, ar_links)
             # Same chip class on both; EN chip text matches the ruling vocabulary.
             self.assertIn(chip_class, en_row.select_one('.chip').get('class'))
@@ -121,3 +125,7 @@ class NewsDeskTests(unittest.TestCase):
 
     def test_unsupported_movie_headline_removed(self):
         self.assertNotIn('rolls out worldwide', (ROOT/'index.html').read_text())
+
+
+if __name__ == '__main__':
+    unittest.main()
