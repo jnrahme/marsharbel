@@ -7,13 +7,17 @@ import unittest
 from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from i18n.home_mirror import render_home
+from i18n.home_mirror import render_home, mark_home_prayer_disclosures, PRAYER_DISCLOSURE_CONTROLS
 from i18n.catalog import published_home_locales
 
 class HomeMirrorTests(unittest.TestCase):
     def setUp(self):
         self.registry = json.loads((ROOT/'locales/registry.json').read_text())
         self.copy = json.loads((ROOT/'locales/en/home-copy.json').read_text())
+        # Explicit English-copy test fixture retains the reviewed DE handoff notice.
+        qualifier = json.loads((ROOT/'locales/de/encyclopedia-trail.json').read_text())['englishQualifier']
+        for _, key in PRAYER_DISCLOSURE_CONTROLS:
+            self.copy[key] += ' ' + qualifier
 
     def test_main_structure_and_asset_paths_preserved(self):
         # English copy is an explicit test fixture, never a published locale.
@@ -60,6 +64,50 @@ class HomeMirrorTests(unittest.TestCase):
                 self.assertNotIn(master,links,f'{lang}: English {topic} leaked instead of its twin')
             routes=json.loads((ROOT/'locale-routes.js').read_text().split('=',1)[1].strip().rstrip(';'))['topics']
             self.assertIn(routes.get('/gallery',{}).get(lang,'/gallery'),links,'Gallery link must be the published twin, else the English destination')
+
+    def test_reviewed_prayer_controls_and_hindi_thai_unchanged(self):
+        for lang in self.registry['homepageMirrors']['renderLocales']:
+            rendered = BeautifulSoup(render_home(ROOT, self.registry, lang), 'html.parser')
+            catalog = json.loads((ROOT/f'locales/{lang}/home-copy.json').read_text())
+            qualifier = json.loads((ROOT/f'locales/{lang}/encyclopedia-trail.json').read_text())['englishQualifier']
+            for selector, key in PRAYER_DISCLOSURE_CONTROLS:
+                anchor = rendered.select_one(selector)
+                self.assertEqual(anchor['href'], '/mystery-meditation')
+                self.assertEqual(catalog[key].count(qualifier), 1)
+                if lang in ('hi', 'th'):
+                    self.assertNotIn('hreflang', anchor.attrs)
+                    self.assertNotIn('aria-label', anchor.attrs)
+                else:
+                    self.assertEqual(anchor['hreflang'], 'en')
+                    self.assertEqual(anchor['aria-label'], catalog[key])
+            youtube = rendered.select('a.promo-link[href*="#pray-along"]')
+            self.assertEqual(len(youtube), 1)
+
+    def test_prayer_disclosure_negative_controls(self):
+        catalog = json.loads((ROOT/'locales/de/home-copy.json').read_text())
+        qualifier = json.loads((ROOT/'locales/de/encyclopedia-trail.json').read_text())['englishQualifier']
+        rendered = render_home(ROOT, self.registry, 'de')
+        for mutation in ('target', 'missing', 'duplicate', 'label', 'qualifier', 'double'):
+            with self.subTest(mutation=mutation):
+                soup = BeautifulSoup(rendered, 'html.parser')
+                changed = dict(catalog)
+                anchor = soup.select_one('a.home-hero-cta2')
+                if mutation == 'target': anchor['href'] = '/rosary-intro'
+                elif mutation == 'missing': anchor.decompose()
+                elif mutation == 'duplicate': anchor.insert_after(copy.deepcopy(anchor))
+                elif mutation == 'label': anchor.string = 'Wrong label'
+                elif mutation == 'qualifier': changed[PRAYER_DISCLOSURE_CONTROLS[0][1]] = 'No notice'
+                elif mutation == 'double': changed[PRAYER_DISCLOSURE_CONTROLS[0][1]] += ' ' + qualifier
+                with self.assertRaises(ValueError):
+                    mark_home_prayer_disclosures(soup, 'de', changed, qualifier)
+
+    def test_new_meditation_twin_requires_review(self):
+        registry = copy.deepcopy(self.registry)
+        registry['pageMirrors']['test-meditation'] = {
+            'english': '/mystery-meditation', 'routes': {'de': '/de/meditation'},
+            'renderLocales': ['de']}
+        with self.assertRaisesRegex(ValueError, 'twin now exists'):
+            render_home(ROOT, registry, 'de')
 
     def test_missing_key_fails(self):
         self.copy.pop(next(iter(self.copy)))

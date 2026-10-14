@@ -12,6 +12,40 @@ from i18n.catalog import read_json, page_url, topic_locales, published_home_loca
 HEADER_NAV_LABELS = {'Media': 'navigation.media', 'Music': 'navigation.music', 'Video': 'navigation.video', 'Gallery': 'navigation.gallery'}
 
 
+# Only the reviewed home hero and meditation promo. Other English links and the
+# already-qualified HI/TH controls retain their existing behavior and markup.
+PRAYER_DISCLOSURE_LOCALES = frozenset({'ar', 'de', 'es', 'fr', 'it', 'pl', 'pt', 'ru'})
+PRAYER_DISCLOSURE_CONTROLS = (
+    ('a.home-hero-cta2', 'home.home-cinematic-hero.pray-today-s-rosary'),
+    ('a.promo-link[href="/mystery-meditation"]', 'home.section.start-today-s-meditation'),
+)
+
+
+def mark_home_prayer_disclosures(soup, lang, copy, qualifier):
+    """Validate the exact reviewed controls before marking their English target."""
+    if lang not in PRAYER_DISCLOSURE_LOCALES:
+        return
+    if not qualifier or qualifier != qualifier.strip():
+        raise ValueError(f'Home {lang}: invalid prayer English qualifier')
+    for selector, key in PRAYER_DISCLOSURE_CONTROLS:
+        matches = soup.select(selector)
+        if len(matches) != 1:
+            raise ValueError(f'Home {lang}: prayer control missing or duplicated: {key}')
+        anchor = matches[0]
+        label = copy[key]
+        if (anchor.get('href') != '/mystery-meditation' or
+                not label.endswith(' ' + qualifier) or label.count(qualifier) != 1):
+            raise ValueError(f'Home {lang}: prayer target or qualifier changed: {key}')
+        # Ignore only the existing decorative arrow; all readable text must
+        # match the complete catalog message, not a label assembled at runtime.
+        visible = ''.join(str(t) for t in anchor.find_all(string=True)
+                          if not any(p.get('aria-hidden') == 'true' for p in t.parents)).strip()
+        if visible != label:
+            raise ValueError(f'Home {lang}: prayer visible label differs: {key}')
+        anchor['hreflang'] = 'en'
+        anchor['aria-label'] = label
+
+
 def render_home(root, registry, lang, catalog=None):
     if lang not in published_home_locales(registry):
         raise ValueError(f'{lang}: unpublished homepage renderer')
@@ -71,6 +105,12 @@ def render_home(root, registry, lang, catalog=None):
         parts = urlsplit(a['href'])
         if not parts.scheme and parts.path.rstrip('/') in twins:
             a['href'] = twins[parts.path.rstrip('/')] + ('?' + parts.query if parts.query else '') + ('#' + parts.fragment if parts.fragment else '')
+    if lang in PRAYER_DISCLOSURE_LOCALES:
+        if any(lang in cfg.get('routes', {}) for cfg in registry.get('pageMirrors', {}).values()
+               if cfg.get('english') == '/mystery-meditation'):
+            raise ValueError(f'Home {lang}: prayer twin now exists; review the English handoff')
+        qualifier = read_json(root / f'locales/{lang}/encyclopedia-trail.json')['englishQualifier']
+        mark_home_prayer_disclosures(soup, lang, copy, qualifier)
     # The daily-rosary YouTube promo resolves to the locale's own rosary twin
     # #pray-along section when the locale publishes one; homes without a twin
     # keep the English target (marked English by launch availability on hi/th,
