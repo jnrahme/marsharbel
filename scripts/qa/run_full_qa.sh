@@ -74,6 +74,9 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_travel_media_bindings
 qa_step python3 -m unittest discover -s scripts/qa -p test_retired_novena_nav_repin.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_fr_header_marking.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_es_header_marking.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_it_header_marking.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_pl_header_marking.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_pt_header_marking.py
 
 qa_step npx playwright test tests/element-collision.spec.js --project=laptop --workers=2
 qa_step python3 scripts/qa/test_travel_equivalence.py

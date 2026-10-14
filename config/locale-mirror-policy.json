@@ -979,7 +979,10 @@
       "master": "all-saints-and-all-souls.html",
       "masterRoute": "/all-saints-and-all-souls",
       "family": "all-saints-and-all-souls-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pl/wszystkich-swietych.html": {
       "locale": "pl",
@@ -987,7 +990,10 @@
       "master": "all-saints-and-all-souls.html",
       "masterRoute": "/all-saints-and-all-souls",
       "family": "all-saints-and-all-souls-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pt/annaya.html": {
       "locale": "pt",
@@ -999,7 +1005,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pt/biografia.html": {
       "locale": "pt",
@@ -1011,7 +1020,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pt/charbel-film-premiere.html": {
       "locale": "pt",
@@ -1051,7 +1063,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pt/miracles/eucharistic/amsterdam.html": {
       "locale": "pt",
@@ -1227,7 +1242,10 @@
       "master": "all-saints-and-all-souls.html",
       "masterRoute": "/all-saints-and-all-souls",
       "family": "all-saints-and-all-souls-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pt/travel.html": {
       "locale": "pt",
@@ -1251,7 +1269,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "it/biografia.html": {
       "locale": "it",
@@ -1263,7 +1284,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "it/charbel-film-premiere.html": {
       "locale": "it",
@@ -1291,7 +1315,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "it/miracles/eucharistic/amsterdam.html": {
       "locale": "it",
@@ -1739,7 +1766,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pl/biografia.html": {
       "locale": "pl",
@@ -1751,7 +1781,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pl/index.html": {
       "locale": "pl",
@@ -1763,7 +1796,10 @@
       "baseMainParity": false,
       "baseCssParity": false,
       "baseImagesParity": false,
-      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pl/miracles/eucharistic/amsterdam.html": {
       "locale": "pl",
@@ -2106,7 +2142,10 @@
       "master": "22nd-of-the-month.html",
       "masterRoute": "/22nd-of-the-month",
       "family": "twenty-second-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "it/pellegrinaggio.html": {
       "locale": "it",
@@ -2118,7 +2157,10 @@
       "master": "saint-charbel-pilgrimage.html",
       "masterRoute": "/saint-charbel-pilgrimage",
       "family": "pilgrimage-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pl/22-dnia-miesiaca.html": {
       "locale": "pl",
@@ -2130,7 +2172,10 @@
       "master": "22nd-of-the-month.html",
       "masterRoute": "/22nd-of-the-month",
       "family": "twenty-second-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pl/charbel-film-premiere.html": {
       "locale": "pl",
@@ -2158,7 +2203,10 @@
       "master": "saint-charbel-pilgrimage.html",
       "masterRoute": "/saint-charbel-pilgrimage",
       "family": "pilgrimage-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pt/o-dia-22-do-mes.html": {
       "locale": "pt",
@@ -2170,7 +2218,10 @@
       "master": "22nd-of-the-month.html",
       "masterRoute": "/22nd-of-the-month",
       "family": "twenty-second-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "pt/peregrinacao.html": {
       "locale": "pt",
@@ -2182,7 +2233,10 @@
       "master": "saint-charbel-pilgrimage.html",
       "masterRoute": "/saint-charbel-pilgrimage",
       "family": "pilgrimage-master",
-      "status": "strict"
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
     },
     "ru/22-chislo-mesyaca.html": {
       "locale": "ru",
@@ -2694,7 +2748,8 @@
       "family": "music-master",
       "status": "strict",
       "normalizers": [
-        "launch-availability-annotations"
+        "launch-availability-annotations",
+        "english-nav-disclosure"
       ]
     },
     "it/music.html": {
@@ -2705,7 +2760,8 @@
       "family": "music-master",
       "status": "strict",
       "normalizers": [
-        "launch-availability-annotations"
+        "launch-availability-annotations",
+        "english-nav-disclosure"
       ]
     },
     "de/music.html": {
@@ -2728,7 +2784,8 @@
       "family": "music-master",
       "status": "strict",
       "normalizers": [
-        "launch-availability-annotations"
+        "launch-availability-annotations",
+        "english-nav-disclosure"
       ]
     },
     "hi/music.html": {
