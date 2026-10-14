@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "366e97dc1fc86dee1c8a286886f034642a7b16e7d3764fd42cccb63ee8c944fe",
+  "masterSha256": "ca075cf1a294fd1f5a6766d147fb990cc39d855ac2d006d6369b8e1b95a4091d",
   "sourceRevision": "dc3e3529",
   "bindings": [
     {
@@ -1557,6 +1557,286 @@
       "source": "Feast source: Maronite Eparchy of Saint Maron, Canada",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-15.heading",
+      "selector": "template[data-saint-date=\"2026-10-15\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-15.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-15\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "15.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-15.calendar",
+      "selector": "template[data-saint-date=\"2026-10-15\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Roman calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-15.name",
+      "selector": "template[data-saint-date=\"2026-10-15\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Teresa of Jesus (Avila)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-15.story",
+      "selector": "template[data-saint-date=\"2026-10-15\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Teresa lived in sixteenth-century Spain, at the time of Martin Luther, and worked to bring significant reform to the Carmelite Order. A great teacher of prayer, she was the first woman proclaimed a Doctor of the Church, together with Catherine of Siena. She is a patroness of Catholic writers.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-15.provenance",
+      "selector": "template[data-saint-date=\"2026-10-15\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Vatican News' saint of the day.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-15.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-15\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saint Teresa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-15.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-15\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Vatican News saints calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-16.heading",
+      "selector": "template[data-saint-date=\"2026-10-16\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-16.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-16\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "16.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-16.calendar",
+      "selector": "template[data-saint-date=\"2026-10-16\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Roman calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-16.name",
+      "selector": "template[data-saint-date=\"2026-10-16\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Hedwig of Silesia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-16.story",
+      "selector": "template[data-saint-date=\"2026-10-16\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Hedwig was a duchess of Silesia and Poland who showed that true nobility means serving those most in need. She later lived as a religious in a Cistercian monastery.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-16.provenance",
+      "selector": "template[data-saint-date=\"2026-10-16\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Vatican News' saint of the day.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-16.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-16\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saint Hedwig",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-16.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-16\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Vatican News saints calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-17.heading",
+      "selector": "template[data-saint-date=\"2026-10-17\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-17.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-17\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "17.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-17.calendar",
+      "selector": "template[data-saint-date=\"2026-10-17\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Roman calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-17.name",
+      "selector": "template[data-saint-date=\"2026-10-17\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Ignatius of Antioch",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-17.story",
+      "selector": "template[data-saint-date=\"2026-10-17\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Ignatius was an early second-century bishop of Antioch. Led to Rome as a prisoner, he wrote seven letters that remain a precious witness to the faith of the Apostolic Church. There he was thrown to wild beasts and became, in his own words, Christ's pure bread.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-17.provenance",
+      "selector": "template[data-saint-date=\"2026-10-17\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Vatican News' saint of the day.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-17.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-17\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saint Ignatius",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-17.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-17\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Vatican News saints calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-18.heading",
+      "selector": "template[data-saint-date=\"2026-10-18\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-18.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-18\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "18.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-18.calendar",
+      "selector": "template[data-saint-date=\"2026-10-18\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Traditional feast date",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-18.name",
+      "selector": "template[data-saint-date=\"2026-10-18\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Luke the Evangelist",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-18.story",
+      "selector": "template[data-saint-date=\"2026-10-18\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Luke wrote the third Gospel and the Acts of the Apostles. A physician and the most vivid portraitist among the Evangelists, tradition remembers him as a painter, and the Church honors him as the patron of artists.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-18.provenance",
+      "selector": "template[data-saint-date=\"2026-10-18\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Vatican News' saint of the day.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-18.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-18\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saint Luke",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-18.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-18\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Vatican News saints calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-19.heading",
+      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-19.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "19.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-19.calendar",
+      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Roman calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-19.name",
+      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saints John de Brebeuf, Isaac Jogues and Companions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-19.story",
+      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Six French Jesuit priests, a Jesuit lay brother, and a layman carried the Gospel to the indigenous peoples of New France and gave their lives as martyrs. The Church remembers them as the Canadian Martyrs, the seed of the Church in North America.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-19.provenance",
+      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Vatican News' saint of the day.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-19.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about the Canadian Martyrs",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-19.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Vatican News saints calendar",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -1780,6 +2060,46 @@
     "home.saintDay.2026-10-14.bookDek": "Read and listen together to Jude’s question and Jesus’ answer.",
     "home.saintDay.2026-10-14.bookCredit": "Imaginative storybook illustration, not a historical portrait.",
     "home.saintDay.2026-10-14.bookCta": "Open the children’s book",
-    "home.saintDay.2026-10-14.sourceLabel": "Feast source: Maronite Eparchy of Saint Maron, Canada"
+    "home.saintDay.2026-10-14.sourceLabel": "Feast source: Maronite Eparchy of Saint Maron, Canada",
+    "home.saintDay.2026-10-15.heading": "Saint of the Day",
+    "home.saintDay.2026-10-15.dateLabel": "15.10.2026",
+    "home.saintDay.2026-10-15.calendar": "Roman calendar",
+    "home.saintDay.2026-10-15.name": "Saint Teresa of Jesus (Avila)",
+    "home.saintDay.2026-10-15.story": "Teresa lived in sixteenth-century Spain, at the time of Martin Luther, and worked to bring significant reform to the Carmelite Order. A great teacher of prayer, she was the first woman proclaimed a Doctor of the Church, together with Catherine of Siena. She is a patroness of Catholic writers.",
+    "home.saintDay.2026-10-15.provenance": "Brief story based on Vatican News' saint of the day.",
+    "home.saintDay.2026-10-15.infoCta": "Read about Saint Teresa",
+    "home.saintDay.2026-10-15.sourceLabel": "Feast source: Vatican News saints calendar",
+    "home.saintDay.2026-10-16.heading": "Saint of the Day",
+    "home.saintDay.2026-10-16.dateLabel": "16.10.2026",
+    "home.saintDay.2026-10-16.calendar": "Roman calendar",
+    "home.saintDay.2026-10-16.name": "Saint Hedwig of Silesia",
+    "home.saintDay.2026-10-16.story": "Hedwig was a duchess of Silesia and Poland who showed that true nobility means serving those most in need. She later lived as a religious in a Cistercian monastery.",
+    "home.saintDay.2026-10-16.provenance": "Brief story based on Vatican News' saint of the day.",
+    "home.saintDay.2026-10-16.infoCta": "Read about Saint Hedwig",
+    "home.saintDay.2026-10-16.sourceLabel": "Feast source: Vatican News saints calendar",
+    "home.saintDay.2026-10-17.heading": "Saint of the Day",
+    "home.saintDay.2026-10-17.dateLabel": "17.10.2026",
+    "home.saintDay.2026-10-17.calendar": "Roman calendar",
+    "home.saintDay.2026-10-17.name": "Saint Ignatius of Antioch",
+    "home.saintDay.2026-10-17.story": "Ignatius was an early second-century bishop of Antioch. Led to Rome as a prisoner, he wrote seven letters that remain a precious witness to the faith of the Apostolic Church. There he was thrown to wild beasts and became, in his own words, Christ's pure bread.",
+    "home.saintDay.2026-10-17.provenance": "Brief story based on Vatican News' saint of the day.",
+    "home.saintDay.2026-10-17.infoCta": "Read about Saint Ignatius",
+    "home.saintDay.2026-10-17.sourceLabel": "Feast source: Vatican News saints calendar",
+    "home.saintDay.2026-10-18.heading": "Saint of the Day",
+    "home.saintDay.2026-10-18.dateLabel": "18.10.2026",
+    "home.saintDay.2026-10-18.calendar": "Traditional feast date",
+    "home.saintDay.2026-10-18.name": "Saint Luke the Evangelist",
+    "home.saintDay.2026-10-18.story": "Luke wrote the third Gospel and the Acts of the Apostles. A physician and the most vivid portraitist among the Evangelists, tradition remembers him as a painter, and the Church honors him as the patron of artists.",
+    "home.saintDay.2026-10-18.provenance": "Brief story based on Vatican News' saint of the day.",
+    "home.saintDay.2026-10-18.infoCta": "Read about Saint Luke",
+    "home.saintDay.2026-10-18.sourceLabel": "Feast source: Vatican News saints calendar",
+    "home.saintDay.2026-10-19.heading": "Saint of the Day",
+    "home.saintDay.2026-10-19.dateLabel": "19.10.2026",
+    "home.saintDay.2026-10-19.calendar": "Roman calendar",
+    "home.saintDay.2026-10-19.name": "Saints John de Brebeuf, Isaac Jogues and Companions",
+    "home.saintDay.2026-10-19.story": "Six French Jesuit priests, a Jesuit lay brother, and a layman carried the Gospel to the indigenous peoples of New France and gave their lives as martyrs. The Church remembers them as the Canadian Martyrs, the seed of the Church in North America.",
+    "home.saintDay.2026-10-19.provenance": "Brief story based on Vatican News' saint of the day.",
+    "home.saintDay.2026-10-19.infoCta": "Read about the Canadian Martyrs",
+    "home.saintDay.2026-10-19.sourceLabel": "Feast source: Vatican News saints calendar"
   }
 }
