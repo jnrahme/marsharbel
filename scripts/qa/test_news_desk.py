@@ -70,8 +70,11 @@ class NewsDeskTests(unittest.TestCase):
         text = (ROOT/'news.html').read_text()
         for ident in ['el-paso-lebanese-festival-2026-10','emmitsburg-shrine-anniversary-2026-09','kfifan-patron-relics-2026-10']:
             self.assertEqual(text.count('id="'+ident+'"'), 1)
-            if ident.startswith(('emmitsburg', 'kfifan')):
+            if ident.startswith('emmitsburg'):
                 self.assertIn('./news#'+ident, (ROOT/'index.html').read_text())
+        index = (ROOT/'index.html').read_text()
+        for ident in ['pope-leo-gemelli-prayer-2026-10-13','pope-leo-rosary-announcement-2026-10-13']:
+            self.assertIn('./news#'+ident, index)
         self.assertIn('https://stsharbelelpaso.org/',text)
         self.assertIn('https://www.familyofsaintsharbel.org/our-news',text)
     def test_static_editorial_news(self):
@@ -85,8 +88,8 @@ class NewsDeskTests(unittest.TestCase):
     def test_papal_rows_en_ar_parity(self):
         from bs4 import BeautifulSoup
         expected = {
-            'pope-leo-gemelli-prayer-2026-10-13': ('chip-event', 'Event'),
-            'pope-leo-rosary-announcement-2026-10-13': ('chip-announcement', 'Announcement'),
+            'pope-leo-gemelli-prayer-2026-10-13': ('chip-update', 'Update'),
+            'pope-leo-rosary-announcement-2026-10-13': ('chip-event', 'Prayer'),
         }
         en_text = (ROOT/'news.html').read_text()
         ar_text = (ROOT/'ar/news.html').read_text()

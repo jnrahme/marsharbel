@@ -156,7 +156,10 @@ figcaption. New images: add a record here in the same batch.
 - Photo courtesy of Father Michael Sliney, LC (site-credited; in use on saint-charbel-trail).
 
 ### media/news/pope-annaya-hero.webp (1200x791) - papal-visit-annaya card
-- Photo: Vatican Media / Vatican News (site-credited; in use on pope-leo-xiv-annaya-visit).
+- Photo: Vatican Media / Vatican News (site-credited; in use on pope-leo-xiv-annaya-visit and the homepage Latest News Gemelli row).
+
+### media/news/pope-annaya.webp (320x320) - pope home news rows / archive thumb
+- Photo: Vatican Media / Vatican News (site-credited; previously used on the December 2025 papal-visit home news row and the /news papal rows; now on the homepage Latest News Rosary row).
 
 ### media/news/movie-poster-hero.webp (686x386) - Charbel The Movie card
 - Official poster, "Charbel The Movie" (MTV/NMPRO) - production-company promotional poster, credited.
