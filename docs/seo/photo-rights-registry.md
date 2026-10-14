@@ -381,3 +381,7 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 
 - books/joyful/art/p02-annunciation.webp, p03-visitation.webp, p04-nativity.webp, p05-presentation.webp, p06-finding.webp (1600w WebP): own AI-generated art from the marsharbel studio pipeline (generation allocation and director-pass inspection recorded in the studio art ledger, 2026-10-12). No third-party source imagery, no stock, no web scrape; character reference sheets were generated in the same pipeline. Cleared as own work.
 - books/joyful/audio/page-01.mp3 through page-06.mp3 and page-22.mp3: generated narration (text-to-speech synthesis of the book's own text). No recorded third-party voice or external audio.
+
+### media/news/gemelli-hospital-context.webp and gemelli-church-context.webp (added 2026-10-13)
+- media/news/gemelli-hospital-context.webp: Blackcat, "2013-06-18 Roma Policlinico Gemelli.jpg", CC BY-SA 3.0 it. Source: https://commons.wikimedia.org/wiki/File:2013-06-18_Roma_Policlinico_Gemelli.jpg . Resized to 960px wide WebP. Context photo for the October 13 Gemelli surgery item on the home news rows; not an event photo.
+- media/news/gemelli-church-context.webp: Pufui PcPifpef, "Roma, Policlinico Gemelli, chiesa centrale del Sacro Cuore - Interno.jpg", CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:Roma,_Policlinico_Gemelli,_chiesa_centrale_del_Sacro_Cuore_-_Interno.jpg . Resized to 960px wide WebP. Context photo for the October 13 Rosary item; the caption says it is not the Rosary itself.
