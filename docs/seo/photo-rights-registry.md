@@ -381,3 +381,17 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 
 - books/joyful/art/p02-annunciation.webp, p03-visitation.webp, p04-nativity.webp, p05-presentation.webp, p06-finding.webp (1600w WebP): own AI-generated art from the marsharbel studio pipeline (generation allocation and director-pass inspection recorded in the studio art ledger, 2026-10-12). No third-party source imagery, no stock, no web scrape; character reference sheets were generated in the same pipeline. Cleared as own work.
 - books/joyful/audio/page-01.mp3 through page-06.mp3 and page-22.mp3: generated narration (text-to-speech synthesis of the book's own text). No recorded third-party voice or external audio.
+
+## media/social-cards/ (added 2026-10-13)
+
+### 20261014-jude-card.png (1080x1350, 1,000,981 bytes, sha256 0f63a3ce449cc57624098a3d81aadc8e27c6dc200572d33e21ddc34a65509e95)
+- Subject: Saint Jude the Apostle social card for the 2026-10-14 Maronite feast (IG/FB static card).
+- NOT a photograph; composed card. Art: existing marsharbel Saint Jude storybook page-01
+  (media/storybook-jude/images/page-01.jpg, in-repo house art, no new generation, no
+  third-party source photos). Card itself carries the disclosure "Imaginative storybook
+  illustration, not a historical portrait."
+- Sources for the on-card date claim: Maronite Eparchy of Saint Maron (Canada) October
+  saints calendar (https://www.maronites.ca/maronites/maronite-saints/maronites-saints-celebrated-in-october/);
+  Benedict XVI, General Audience 2006-10-11 (vatican.va).
+- License: house art (marsharbel-generated), site-owned. Packet: news desk 2026-10-13,
+  dedupe saint-card:2026-10-14:jude:v1; scrum non-author approved.
