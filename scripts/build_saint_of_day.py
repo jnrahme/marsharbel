@@ -11,7 +11,7 @@ from datetime import date,datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 ROOT=Path(__file__).resolve().parents[1]
-REQUIRED=('saint','calendar','infoUrl','bookUrl','bookImage','sources','translationStatus')
+REQUIRED=('saint','calendar','infoUrl','sources','translationStatus')
 def load(root):
     manifest=json.loads((root/'locales/saint-of-day.json').read_text())
     entries=manifest['entries']
@@ -23,14 +23,21 @@ def load(root):
     for d,entry in entries.items():
         missing=[k for k in REQUIRED if not entry.get(k)]
         if missing: raise ValueError(f'saint unit {d} missing sourced fields: {missing}')
+        has_url,has_img=bool(entry.get('bookUrl')),bool(entry.get('bookImage'))
+        explicit_none='book' in entry and entry['book'] is None
+        if has_url!=has_img: raise ValueError(f'saint unit {d} carries only one of bookUrl/bookImage; a book is both or neither')
+        if has_url and explicit_none: raise ValueError(f'saint unit {d} contradicts itself: "book": null with bookUrl/bookImage set')
+        if not has_url and not explicit_none: raise ValueError(f'saint unit {d} has no book and no explicit "book": null; a missing book is never silent')
         if d not in copy: raise ValueError(f'saint unit {d} has no English copy')
     return manifest,copy
 def output(root=ROOT):
     manifest,copy=load(root)
-    template=(root/'templates/saint-of-day/home.html').read_text()
+    pair=(root/'templates/saint-of-day/home.html').read_text()
+    solo=(root/'templates/saint-of-day/home-nobook.html').read_text()
     units=[]
     for d in sorted(manifest['entries']):
         entry=manifest['entries'][d]
+        template=pair if entry.get('bookUrl') else solo
         values={**entry,**copy[d],'date':d,'dateLabel':date.fromisoformat(d).strftime('%d.%m.%Y'),'calendarUrl':entry['sources'][0]}
         units.append(re.sub(r'\$\{([^}]+)\}',lambda m:html.escape(values[m[1]],quote=True),template))
     path=root/'src/pages/index.html'; source=path.read_text()
