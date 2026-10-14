@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "6c0f0d9f4f4e66e178161ef6666dff9bf4dfb3866e5e87716a1a1ccad2229b74",
+  "masterSha256": "0c175544ddc77f9213bd53a0b226e0265a5941e6c72593bf31536a231de3a443",
   "sourceRevision": "dc3e3529",
   "bindings": [
     {
@@ -456,48 +456,6 @@
       "key": "home.latest-news.read-the-latest-news",
       "selector": "#latest-news > div:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Read the latest news",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.annaya-monastery-entrance-photo-llew-cc-by-sa-4",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "Annaya monastery entrance. Photo: LLEW, CC BY-SA 4.0; venue context.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.september-26-2026",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
-      "source": "September 26, 2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.prayer-walk-to-annaya-brings-prayers-for-south-lebanon",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
-      "source": "Prayer walk to Annaya brings prayers for south Lebanon",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.october-2-2026",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "October 2, 2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.kfifan-receives-relics-of-its-patron-saints-from-rome",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
-      "source": "Kfifan receives relics of its patron saints from Rome",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.kfifan-monastery-2012-venue-context-not-the-relic-reception",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
-      "source": "Kfifan monastery, 2012. Venue context, not the relic reception. Photo: Evilscaught, CC BY 3.0; WebP conversion.",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1209,20 +1167,6 @@
       "attribute": "aria-label"
     },
     {
-      "key": "home.accessibility.a-pilgrim-touching-the-statue-of-saint-charbel-at",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "A pilgrim touching the statue of Saint Charbel at the monastery entrance in Annaya",
-      "kind": "attribute",
-      "attribute": "alt"
-    },
-    {
-      "key": "home.accessibility.the-stone-kfifan-monastery-buildings-and-courtyard-in-lebanon",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "The stone Kfifan monastery buildings and courtyard in Lebanon",
-      "kind": "attribute",
-      "attribute": "alt"
-    },
-    {
       "key": "home.accessibility.the-stone-lourdes-grotto-at-the-national-shrine-in",
       "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3) > span:nth-of-type(1) > img:nth-of-type(1)",
       "source": "The stone Lourdes grotto at the National Shrine in Emmitsburg with visitors and statues",
@@ -1433,97 +1377,6 @@
       "nodeIndex": 0
     },
     {
-      "key": "home.saintDay.heading",
-      "selector": "#saint-day-heading",
-      "source": "Saint of the Day",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.dateLabel",
-      "selector": "#saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
-      "source": "14.10.2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.calendar",
-      "selector": "#saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "Maronite calendar",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.name",
-      "selector": "#saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > h3:nth-of-type(1)",
-      "source": "Saint Jude the Apostle",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.story",
-      "selector": "#saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Jude was one of the Twelve apostles, not Judas Iscariot. At the Last Supper he asked Jesus why he would reveal himself to his disciples and not to the world. Jesus answered by speaking of love, keeping his word, and making a home with those who love him. Jude invites us to listen and live that love.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.provenance",
-      "selector": "#saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2)",
-      "source": "Brief story based on Benedict XVI’s October 11, 2006 audience.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.infoCta",
-      "selector": "#saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(3)",
-      "source": "Read about Saint Jude",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.bookAlt",
-      "selector": "#saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "Illustrated Jude among the apostles in the children’s storybook",
-      "kind": "attribute",
-      "attribute": "alt"
-    },
-    {
-      "key": "home.saintDay.bookTitle",
-      "selector": "#saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "Saint Jude: the illustrated story",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.bookDek",
-      "selector": "#saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
-      "source": "Read and listen together to Jude’s question and Jesus’ answer.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.bookCredit",
-      "selector": "#saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
-      "source": "Imaginative storybook illustration, not a historical portrait.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.bookCta",
-      "selector": "#saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(4)",
-      "source": "Open the children’s book",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.sourceLabel",
-      "selector": "#saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
-      "source": "Feast source: Maronite Eparchy of Saint Maron, Canada",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
       "key": "home.follow-us.title",
       "selector": "#follow-us > h2:nth-of-type(1)",
       "source": "Follow Along",
@@ -1555,6 +1408,153 @@
       "key": "home.follow-us.youtube",
       "selector": "#follow-us > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
       "source": "Films and narrated stories",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.accessibility.pope-leo-xiv-praying-at-the-tomb-of-saint-charbel-in-annaya",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Pope Leo XIV praying at the tomb of Saint Charbel in Annaya",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.latest-news.october-13-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "October 13, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.pope-leo-xiv-s-lung-surgery-completed-successfully",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Pope Leo XIV's lung surgery completed successfully",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "The Holy See says the operation was successful with no complications and Pope Leo has returned to his room. Photo: Vatican Media / Vatican News.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.accessibility.pope-leo-xiv-praying-at-the-tomb-of-saint-charbel-in-annaya",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Pope Leo XIV praying at the tomb of Saint Charbel in Annaya",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.latest-news.october-13-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "October 13, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.catholics-pray-for-pope-leo-at-gemelli",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Catholics pray for Pope Leo at Gemelli",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Cardinal Baldassarre Reina led the evening Rosary in the hospital chapel as Catholics prayed for the Pope. Photo: Vatican Media / Vatican News.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.heading",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "14.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.calendar",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Maronite calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.name",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Jude the Apostle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.story",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Jude was one of the Twelve apostles, not Judas Iscariot. At the Last Supper he asked Jesus why he would reveal himself to his disciples and not to the world. Jesus answered by speaking of love, keeping his word, and making a home with those who love him. Jude invites us to listen and live that love.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.provenance",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Benedict XVI’s October 11, 2006 audience.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saint Jude",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.bookAlt",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Illustrated Jude among the apostles in the children’s storybook",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.saintDay.2026-10-14.bookTitle",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Saint Jude: the illustrated story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.bookDek",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Read and listen together to Jude’s question and Jesus’ answer.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.bookCredit",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Imaginative storybook illustration, not a historical portrait.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.bookCta",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(4)",
+      "source": "Open the children’s book",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-14.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-14\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Maronite Eparchy of Saint Maron, Canada",
       "kind": "text",
       "nodeIndex": 0
     }
@@ -1623,12 +1623,6 @@
     "home.home-intro-band.canonized-a-saint": "Canonized a saint",
     "home.latest-news.latest-news": "Latest news",
     "home.latest-news.read-the-latest-news": "Read the latest news",
-    "home.latest-news.annaya-monastery-entrance-photo-llew-cc-by-sa-4": "Annaya monastery entrance. Photo: LLEW, CC BY-SA 4.0; venue context.",
-    "home.latest-news.september-26-2026": "September 26, 2026",
-    "home.latest-news.prayer-walk-to-annaya-brings-prayers-for-south-lebanon": "Prayer walk to Annaya brings prayers for south Lebanon",
-    "home.latest-news.october-2-2026": "October 2, 2026",
-    "home.latest-news.kfifan-receives-relics-of-its-patron-saints-from-rome": "Kfifan receives relics of its patron saints from Rome",
-    "home.latest-news.kfifan-monastery-2012-venue-context-not-the-relic-reception": "Kfifan monastery, 2012. Venue context, not the relic reception. Photo: Evilscaught, CC BY 3.0; WebP conversion.",
     "home.latest-news.september-30-2026": "September 30, 2026",
     "home.latest-news.emmitsburg-celebrates-nine-years-of-saint-sharbel-s-shrine": "Emmitsburg celebrates nine years of Saint Sharbel's shrine",
     "home.latest-news.national-shrine-grotto-emmitsburg-2015-venue-context-not-the": "National Shrine Grotto, Emmitsburg, 2015. Venue context, not the 2026 celebration. Photo: Bohemian Baltimore, CC BY-SA 4.0; resized to WebP.",
@@ -1730,8 +1724,6 @@
     "home.accessibility.see-the-gallery-of-saint-charbel-renditions": "See the gallery of Saint Charbel renditions",
     "home.accessibility.an-artistic-rendition-of-saint-charbel-in-a-black": "An artistic rendition of Saint Charbel in a black hooded habit, eyes lowered, reflecting what the creator of this website reports seeing on December 22",
     "home.accessibility.saint-charbel-at-a-glance": "Saint Charbel at a glance",
-    "home.accessibility.a-pilgrim-touching-the-statue-of-saint-charbel-at": "A pilgrim touching the statue of Saint Charbel at the monastery entrance in Annaya",
-    "home.accessibility.the-stone-kfifan-monastery-buildings-and-courtyard-in-lebanon": "The stone Kfifan monastery buildings and courtyard in Lebanon",
     "home.accessibility.the-stone-lourdes-grotto-at-the-national-shrine-in": "The stone Lourdes grotto at the National Shrine in Emmitsburg with visitors and statues",
     "home.accessibility.saint-charbel-makhlouf-the-traditional-hooded-portrait": "Saint Charbel Makhlouf, the traditional hooded portrait",
     "home.accessibility.pilgrims-on-the-saint-charbel-trail-photo-courtesy-of": "Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC",
@@ -1764,23 +1756,29 @@
     "home.latest-news.premiere.photoAlt": "Church and monastery at Annaya on a wooded hillside",
     "home.latest-news.premiere.photoCaption": "Annaya church and monastery. Photo: Paul Saad, Wikimedia Commons, CC BY-SA 4.0; cropped and converted to WebP. Context photo, not film or premiere footage.",
     "home.section.pray-along-on-youtube": "Pray along on YouTube",
-    "home.saintDay.heading": "Saint of the Day",
-    "home.saintDay.dateLabel": "14.10.2026",
-    "home.saintDay.calendar": "Maronite calendar",
-    "home.saintDay.name": "Saint Jude the Apostle",
-    "home.saintDay.story": "Jude was one of the Twelve apostles, not Judas Iscariot. At the Last Supper he asked Jesus why he would reveal himself to his disciples and not to the world. Jesus answered by speaking of love, keeping his word, and making a home with those who love him. Jude invites us to listen and live that love.",
-    "home.saintDay.provenance": "Brief story based on Benedict XVI’s October 11, 2006 audience.",
-    "home.saintDay.infoCta": "Read about Saint Jude",
-    "home.saintDay.bookAlt": "Illustrated Jude among the apostles in the children’s storybook",
-    "home.saintDay.bookTitle": "Saint Jude: the illustrated story",
-    "home.saintDay.bookDek": "Read and listen together to Jude’s question and Jesus’ answer.",
-    "home.saintDay.bookCredit": "Imaginative storybook illustration, not a historical portrait.",
-    "home.saintDay.bookCta": "Open the children’s book",
-    "home.saintDay.sourceLabel": "Feast source: Maronite Eparchy of Saint Maron, Canada",
     "home.follow-us.title": "Follow Along",
     "home.follow-us.sub": "Short reels, saint stories and the daily rosary, shared where you already are.",
     "home.follow-us.instagram": "Reels and quotes",
     "home.follow-us.facebook": "Stories and updates",
-    "home.follow-us.youtube": "Films and narrated stories"
+    "home.follow-us.youtube": "Films and narrated stories",
+    "home.latest-news.october-13-2026": "October 13, 2026",
+    "home.latest-news.pope-leo-xiv-s-lung-surgery-completed-successfully": "Pope Leo XIV's lung surgery completed successfully",
+    "home.accessibility.pope-leo-xiv-praying-at-the-tomb-of-saint-charbel-in-annaya": "Pope Leo XIV praying at the tomb of Saint Charbel in Annaya",
+    "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl": "The Holy See says the operation was successful with no complications and Pope Leo has returned to his room. Photo: Vatican Media / Vatican News.",
+    "home.latest-news.catholics-pray-for-pope-leo-at-gemelli": "Catholics pray for Pope Leo at Gemelli",
+    "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos": "Cardinal Baldassarre Reina led the evening Rosary in the hospital chapel as Catholics prayed for the Pope. Photo: Vatican Media / Vatican News.",
+    "home.saintDay.2026-10-14.heading": "Saint of the Day",
+    "home.saintDay.2026-10-14.dateLabel": "14.10.2026",
+    "home.saintDay.2026-10-14.calendar": "Maronite calendar",
+    "home.saintDay.2026-10-14.name": "Saint Jude the Apostle",
+    "home.saintDay.2026-10-14.story": "Jude was one of the Twelve apostles, not Judas Iscariot. At the Last Supper he asked Jesus why he would reveal himself to his disciples and not to the world. Jesus answered by speaking of love, keeping his word, and making a home with those who love him. Jude invites us to listen and live that love.",
+    "home.saintDay.2026-10-14.provenance": "Brief story based on Benedict XVI’s October 11, 2006 audience.",
+    "home.saintDay.2026-10-14.infoCta": "Read about Saint Jude",
+    "home.saintDay.2026-10-14.bookAlt": "Illustrated Jude among the apostles in the children’s storybook",
+    "home.saintDay.2026-10-14.bookTitle": "Saint Jude: the illustrated story",
+    "home.saintDay.2026-10-14.bookDek": "Read and listen together to Jude’s question and Jesus’ answer.",
+    "home.saintDay.2026-10-14.bookCredit": "Imaginative storybook illustration, not a historical portrait.",
+    "home.saintDay.2026-10-14.bookCta": "Open the children’s book",
+    "home.saintDay.2026-10-14.sourceLabel": "Feast source: Maronite Eparchy of Saint Maron, Canada"
   }
 }

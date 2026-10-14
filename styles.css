@@ -3304,3 +3304,4 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 .follow-card:hover,.follow-card:focus-visible{border-color:var(--gold);transform:translateY(-2px)}
 @media(max-width:760px){.follow-list{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.follow-card{transition:none}.follow-card:hover,.follow-card:focus-visible{transform:none}}
+@media (max-width:820px){.home-news-rows{order:-1}.home-news-rows .home-news-row:last-child{border-bottom:0}.home-news-lead--film{margin-top:.5rem}}
