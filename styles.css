@@ -3287,7 +3287,7 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 .home-saint-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.5rem;align-items:start}
 .home-saint-pair>a{min-width:0;text-decoration:none}
 .home-saint-info{padding:clamp(1.25rem,3vw,2rem);gap:1rem;align-content:start;grid-template-columns:minmax(0,1fr)}
-.home-saint-info>*,.home-saint-book .home-news-copy>*{min-width:0;max-width:100%;overflow-wrap:anywhere;hyphens:auto}
+.home-saint-info>*,.home-saint-book .home-news-copy>*{min-width:0;max-width:100%;overflow-wrap:break-word;hyphens:auto}
 .home-saint-day .home-news-head h2{min-width:0;overflow-wrap:anywhere}
 :lang(ar) .home-saint-day .home-news-head h2{overflow-wrap:normal}
 :lang(ar) .home-saint-day .home-news-title{overflow-wrap:normal}
@@ -3310,3 +3310,32 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 @media(max-width:760px){.follow-list{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.follow-card{transition:none}.follow-card:hover,.follow-card:focus-visible{transform:none}}
 @media (max-width:820px){.home-news-rows{order:-1}.home-news-rows .home-news-row:last-child{border-bottom:0}.home-news-lead--film{margin-top:.5rem}}
+/* Saint of the Day: two matched boxes. Left: the saint. Right: that saint's storybook. */
+.home-saint-pair{align-items:stretch;gap:clamp(1rem,2.4vw,1.75rem)}
+.home-saint-pair>a{display:flex;flex-direction:column;border:1px solid var(--theme-line-soft,rgba(211,178,110,.28));border-radius:18px;background:var(--panel);overflow:hidden;transition:border-color .2s ease,transform .2s ease}
+.home-saint-pair>a:hover,.home-saint-pair>a:focus-visible{border-color:var(--gold);transform:translateY(-2px)}
+.home-saint-info{--sp:clamp(1.1rem,2.6vw,1.6rem);position:relative;padding:0 var(--sp) 0;gap:0}
+.home-saint-info::before{content:"";display:block;aspect-ratio:3/2;margin-inline:calc(var(--sp)*-1);background:radial-gradient(circle at 50% 50%,transparent 0 12%,rgba(211,178,110,.6) 12.4% 12.9%,transparent 13.3% 19%,rgba(211,178,110,.3) 19.3% 19.7%,transparent 20.1%),radial-gradient(circle at 50% 50%,rgba(217,165,142,.32),rgba(217,165,142,.08) 28%,transparent 46%),linear-gradient(160deg,#3a2f26,#241e19);border-bottom:1px solid var(--theme-line-soft,rgba(211,178,110,.28))}
+.home-saint-info>.home-news-meta:first-of-type{margin-top:1.25rem}
+.home-saint-info>.home-news-title{margin-top:.5rem}
+.home-saint-info>.home-news-dek{margin-top:.75rem}
+.home-saint-info>.home-news-credit{margin-top:.9rem}
+.home-saint-info>.home-news-meta:last-child{margin-block:auto 0;padding-block:1rem 1.35rem}
+.home-saint-book .home-news-photo{border-radius:0}
+.home-saint-book .home-news-photo img{aspect-ratio:3/2;border-radius:0;display:block;width:100%;height:auto}
+.home-saint-book .home-news-copy{padding:1.25rem clamp(1.1rem,2.6vw,1.6rem) 1.35rem;flex:1;display:flex;flex-direction:column}
+.home-saint-book .home-news-copy .home-news-meta{margin-top:auto;padding-top:.5rem}
+.home-saint-book .home-news-title{font-size:clamp(1.5rem,2.6vw,2.1rem)}
+:lang(ar) .home-saint-info .home-news-title,:lang(ar) .home-saint-book .home-news-title{overflow-wrap:normal}
+@media(prefers-reduced-motion:reduce){.home-saint-pair>a{transition:none}.home-saint-pair>a:hover,.home-saint-pair>a:focus-visible{transform:none}}
+/* Saint of the Day, solo (no storybook yet): one framed card, plate beside the text on wide screens */
+.home-saint-day>a.home-saint-info{display:flex;flex-direction:column;border:1px solid var(--theme-line-soft,rgba(211,178,110,.28));border-radius:18px;background:var(--panel);overflow:hidden;text-decoration:none;transition:border-color .2s ease,transform .2s ease}
+.home-saint-day>a.home-saint-info:hover,.home-saint-day>a.home-saint-info:focus-visible{border-color:var(--gold);transform:translateY(-2px)}
+@media(min-width:760px){
+.home-saint-day>a.home-saint-info{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(1.25rem,3vw,2.25rem);padding:0;padding-inline-end:var(--sp);align-content:stretch}
+.home-saint-day>a.home-saint-info::before{grid-column:1;grid-row:1/span 6;margin:0;aspect-ratio:auto;height:100%;min-height:15rem}
+.home-saint-day>a.home-saint-info>*{grid-column:2}
+.home-saint-day>a.home-saint-info>.home-news-meta:first-of-type{margin-top:clamp(1.1rem,2.6vw,1.6rem)}
+.home-saint-day>a.home-saint-info>.home-news-meta:last-child{padding-block:1rem clamp(1.1rem,2.6vw,1.6rem)}
+}
+@media(prefers-reduced-motion:reduce){.home-saint-day>a.home-saint-info{transition:none}.home-saint-day>a.home-saint-info:hover,.home-saint-day>a.home-saint-info:focus-visible{transform:none}}
