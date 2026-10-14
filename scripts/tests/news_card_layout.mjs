@@ -14,7 +14,7 @@ try {
     assert.equal(await page.locator('#latest-news .home-news-lead').count(),1);
     const rows=await page.locator('#latest-news .home-news-row').count();
     assert.ok(rows>=3,'at least three headline rows');
-    const lead=await page.locator('.home-news-lead .home-news-photo img').boundingBox();
+    const lead=await page.locator('#latest-news .home-news-lead .home-news-photo img').boundingBox();
     assert.ok(lead.width >= (width<=820?300:500));
     assert.ok(lead.height >= 180);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
