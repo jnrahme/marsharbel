@@ -31,6 +31,21 @@ export function createApp({ dataDir, adminToken = '', now = () => new Date() }) 
     return [200, { schema: 1, locale: data.locale, fallback: data.locale !== loc, heading: data.heading, allLabel: data.allLabel, items: data.items.slice(0, limit) }];
   }
 
+  function newsItem(id, url) {
+    const loc = locale(url.searchParams.get('locale'));
+    const data = load(`news/${loc}.json`) || load('news/en.json');
+    const item = data && data.items.find(i => i.id === id);
+    return item ? [200, { schema: 1, locale: data.locale, fallback: data.locale !== loc, item }] : [404, { error: 'not_found' }];
+  }
+
+  function saintToday(url) {
+    const loc = locale(url.searchParams.get('locale'));
+    const date = url.searchParams.get('date') || today(load('rosary/daily.json')?.timezone || 'America/New_York');
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(date))) return [400, { error: 'bad_date' }];
+    const saint = (load('saint-of-day.json')?.entries || {})[date];
+    return saint ? [200, { schema: 1, date, locale: loc, saint }] : [404, { error: 'no_entry_for_date' }];
+  }
+
   function rosary(url) {
     const loc = locale(url.searchParams.get('locale'));
     const cfg = load('rosary/daily.json');
@@ -76,7 +91,7 @@ export function createApp({ dataDir, adminToken = '', now = () => new Date() }) 
     };
     const url = new URL(req.url, 'http://x');
     if (req.method === 'OPTIONS') { res.writeHead(204, headers); return res.end(); }
-    if (req.method === 'PUT' && url.pathname === '/v1/admin/news') {
+    if (req.method === 'PUT' && url.pathname === '/api/v1/admin/news') {
       const auth = (req.headers.authorization || '').replace(/^Bearer /, '');
       if (!adminToken || !ok(auth, adminToken)) return send(401, { error: 'unauthorized' });
       let raw = ''; for await (const c of req) { raw += c; if (raw.length > 200000) return send(413, { error: 'too_large' }); }
@@ -84,11 +99,15 @@ export function createApp({ dataDir, adminToken = '', now = () => new Date() }) 
     }
     if (req.method !== 'GET' && req.method !== 'HEAD') return send(405, { error: 'method_not_allowed' });
     try {
+      const nm = url.pathname.match(/^\/api\/v1\/news\/([a-z0-9-]{1,120})$/);
+      if (nm) return send(...newsItem(nm[1], url));
       switch (url.pathname) {
-        case '/v1/health': return send(200, { ok: true, news: LOCALES.filter(l => existsSync(join(dataDir, `news/${l}.json`))).length, time: now().toISOString() }, { 'Cache-Control': 'no-store' });
-        case '/v1/manifest.json': return send(200, { schema: 1, endpoints: ['/v1/news?locale=&limit=', '/v1/rosary/daily?date=&locale='], locales: LOCALES });
-        case '/v1/news': return send(...news(url));
-        case '/v1/rosary/daily': return send(...rosary(url));
+        case '/api/v1/health': return send(200, { ok: true, news: LOCALES.filter(l => existsSync(join(dataDir, `news/${l}.json`))).length, time: now().toISOString() }, { 'Cache-Control': 'no-store' });
+        case '/api/v1/manifest.json': return send(200, { schema: 1, endpoints: ['/api/v1/news?locale=&limit=', '/api/v1/news/{id}?locale=', '/api/v1/rosary/today?locale=&date=', '/api/v1/saints/today?locale=&date='], locales: LOCALES });
+        case '/api/v1/news': return send(...news(url));
+        case '/api/v1/rosary/today': case '/api/v1/rosary/daily': return send(...rosary(url));
+        case '/api/v1/saints/today': return send(...saintToday(url));
+        case '/api/v1/prayers': case '/api/v1/search': return send(501, { error: 'not_implemented', phase: 4 });
         default: return send(404, { error: 'not_found' });
       }
     } catch (e) { return send(500, { error: 'internal' }); }

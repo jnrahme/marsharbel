@@ -2,7 +2,7 @@
 // API answers with a valid, different list, the rows are rebuilt from it. Any failure leaves the
 // server-rendered HTML untouched.
 (function () {
-  var API = 'https://api.marsharbel.com/v1/news';
+  var API = 'https://api.marsharbel.com/api/v1/news';
   var box = document.querySelector('#latest-news .home-news-rows');
   if (!box || !window.fetch) return;
   var loc = (document.documentElement.lang || 'en').slice(0, 2);
