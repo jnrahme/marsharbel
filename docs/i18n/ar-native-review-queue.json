@@ -116,16 +116,16 @@
     "status": "agent-translated-native-not-certified",
     "family": "news-master",
     "copyFile": "locales/ar/news-master-copy.json",
-    "keyCount": 206,
+    "keyCount": 209,
     "nativeReviewRequired": true,
     "reviewer": "pending (native Arabic)",
-    "scope": "Keyed family mirror of the EN news desk page incl. meta, lead block, compact report-list rows, month bands, chip vocabulary, and footer; 137 keys (65 fresh in the PR 2 list rebuild incl. bands/chips/summaries, phrasing reused from approved AR where identical; chip Event rendered مناسبة and H2 آخر الأخبار flagged for native read) (AR-2 sixth territory, PR 2 rebuild); 2026-10-13: +7 keys for the Pope Leo Gemelli admission and Rosary rows (papal news PR 3).",
+    "scope": "Keyed family mirror of the EN news desk page incl. meta, lead block, compact report-list rows, month bands, chip vocabulary, and footer; 137 keys (65 fresh in the PR 2 list rebuild incl. bands/chips/summaries, phrasing reused from approved AR where identical; chip Event rendered مناسبة and H2 آخر الأخبار flagged for native read) (AR-2 sixth territory, PR 2 rebuild); 2026-10-13: +7 keys for the Pope Leo Gemelli admission and Rosary rows (papal news PR 3). 2026-10-13 (pope surgery update): regenerated contract after film-text drift repair; +10 keys (2 pope rows rewritten post-event, IT bulletin + USCCB sources, chips Update/Prayer), -7 dead admission/announcement keys; 2 film keys rebound with unchanged AR text.",
     "sourceUrls": [
       "https://marsharbel.com/news"
     ],
     "checkedAt": "2026-10-13",
     "flags": [
-      "المصادر وحقوق الصور credits section: 7 new keys agent-translated, 55 reuse previously approved AR"
+      "pope Gemelli/Rosary rewrite + credits: 10 new keys agent-translated, others reuse previously approved AR"
     ]
   },
   {
