@@ -129,3 +129,52 @@ class NewsDeskTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+class NewsImageRecordTests(unittest.TestCase):
+    def setUp(self):
+        import json
+        self.records = json.loads((ROOT/'locales/en/news-image-records.json').read_text())['slots']
+        self.template = (ROOT/'templates/news-desk/home.html').read_text()
+
+    def test_records_cover_every_home_slot_and_template_renders_from_records(self):
+        self.assertEqual(set(self.records), set(news_desk.SLOT_ANCHORS))
+        for slot in news_desk.SLOT_ANCHORS:
+            self.assertIn('${img.%s.src}' % slot, self.template)
+            self.assertIn('${img.%s.width}' % slot, self.template)
+            self.assertIn('${img.%s.height}' % slot, self.template)
+        self.assertNotIn('src="./media/', self.template)
+
+    def test_records_validate_against_template_anchors(self):
+        news_desk.load_image_records(ROOT, self.template)
+
+    def test_story_drift_fails_closed(self):
+        import tempfile, shutil
+        tmp = Path(tempfile.mkdtemp())
+        shutil.copytree(ROOT/'locales/en', tmp/'locales/en')
+        rec = json.loads((tmp/'locales/en/news-image-records.json').read_text())
+        rec['slots']['trail']['storyId'] = 'some-other-story'
+        (tmp/'locales/en/news-image-records.json').write_text(json.dumps(rec))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+
+    def test_license_evidence_fields_and_revalidation_notes_present(self):
+        for slot, rec in self.records.items():
+            for field in ('author', 'spdx', 'permittedUse', 'adaptations'):
+                self.assertTrue(rec['license'].get(field), '%s license.%s' % (slot, field))
+            self.assertTrue(rec['revalidation']['note'], slot)
+
+    def test_trail_permission_gap_is_documented_not_silent(self):
+        trail = self.records['trail']
+        self.assertIn('permission', trail['license']['spdx'] + trail['license']['permittedUse'] + trail['revalidation']['note'])
+        self.assertIn('gap', trail['license']['permittedUse'].lower())
+
+    def test_home_img_alts_match_refresh_catalog(self):
+        """Alt attributes must equal the refresh_pope_home_news.py EN catalog so
+        the refresh script and the records renderer never diverge."""
+        import re
+        refresh = (ROOT/'scripts/refresh_pope_home_news.py').read_text()
+        index = (ROOT/'index.html').read_text()
+        block = index.split('i18n-news-home')[1].split('i18n-news-home')[0]
+        for alt in re.findall(r'alt="([^"]+)"', block):
+            if 'Gemelli' in alt or 'Rosary' in alt:
+                self.assertIn(alt.replace('&amp;', '&'), refresh.replace('&amp;', '&'))
