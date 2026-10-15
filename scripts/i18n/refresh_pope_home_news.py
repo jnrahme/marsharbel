@@ -25,7 +25,7 @@ def outputs(root=ROOT):
     new_keys = set(KEYS.values())
     bindings = []
     for old in contract['bindings']:
-        if old['key'] in removed or old['key'] in new_keys:
+        if (old['key'] in removed or old['key'] in new_keys) and not old['selector'].startswith('#latest-news > details'):
             continue
         nodes = soup.select(old['selector'])
         if len(nodes) != 1:

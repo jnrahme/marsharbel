@@ -3341,3 +3341,15 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 .home-saint-day>a.home-saint-info>.home-news-meta:last-child{padding-block:1rem clamp(1.1rem,2.6vw,1.6rem)}
 }
 @media(prefers-reduced-motion:reduce){.home-saint-day>a.home-saint-info{transition:none}.home-saint-day>a.home-saint-info:hover,.home-saint-day>a.home-saint-info:focus-visible{transform:none}}
+
+.news-credits{margin-top:2rem;border:1px solid var(--theme-line-soft);border-radius:12px;background:var(--theme-surface)}
+.news-credits summary{list-style:none;cursor:pointer;position:relative;min-height:44px;display:flex;align-items:center;padding:.7rem 1.1rem;font-family:'Cormorant Garamond',serif;font-size:1.25rem}
+.news-credits summary::-webkit-details-marker{display:none}
+.news-credits summary::after{content:"";position:absolute;inset-inline-end:1.1rem;width:10px;height:10px;border-inline-end:2px solid var(--theme-accent);border-block-end:2px solid var(--theme-accent);transform:rotate(45deg);transition:transform .2s ease}
+.news-credits[open] summary::after{transform:rotate(225deg)}
+.news-credits-list{list-style:none;margin:0;padding:.2rem 1.1rem 1rem}
+.news-credits-list li{padding:.55rem 0;border-block-start:1px solid var(--theme-line-soft);font-size:.92rem;line-height:1.55;color:var(--theme-ink-soft)}
+.news-credit-title{color:var(--theme-ink);font-weight:600}
+.news-credit-label{color:var(--theme-ink);font-weight:600;white-space:nowrap}
+.news-credits a{color:var(--theme-accent);text-decoration:underline;text-underline-offset:.15em}
+@media (prefers-reduced-motion:reduce){.news-credits summary::after{transition:none}}
