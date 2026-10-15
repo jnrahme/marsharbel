@@ -85,6 +85,18 @@ class EmbeddedTests(unittest.TestCase):
   with self.assertRaises(m.Pending):m.snapshot(self.a,EXPECTED)
  def add_later(self,a,status,conclusion):
   r=make_run(self.path,22,status=status,conclusion=conclusion);a.runs[self.path].append(r);a.current[22]=copy.deepcopy(r);a.attempt[22,1]=copy.deepcopy(r);a.jobs[22,1]=make_jobs(r)
+ def test_coherent_older_run_returned_by_selected_url_rejected(self):
+  older=make_run(self.path,19)
+  self.a.current[20]=copy.deepcopy(older)
+  self.a.attempt[19,1]=copy.deepcopy(older)
+  self.a.jobs[19,1]=make_jobs(older)
+  # Every alternative lookup is coherent and successful. Rejection must be
+  # the explicit selected/current ID predicate, not a KeyError downstream.
+  with self.assertRaisesRegex(m.Closed,'current run ID differs from selected latest run'):
+   m.snapshot(self.a,EXPECTED)
+  self.assertFalse(any('/runs/19/attempts/' in p for p in self.a.calls))
+  with self.assertRaisesRegex(m.Closed,'current run ID differs from selected latest run'):
+   m.stable(self.a,EXPECTED)
  def test_latest_selected_before_status(self):
   for state,conclusion in [('queued',None),('completed','failure'),('completed','success')]:
    a=Fixture();self.add_later(a,state,conclusion)

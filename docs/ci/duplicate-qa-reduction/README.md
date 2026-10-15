@@ -12,7 +12,7 @@ From repository root, with Python and PyYAML available:
 python3 docs/ci/duplicate-qa-reduction/test_embedded.py
 ```
 
-The tests extract the actual Python block from `.github/workflows/deploy-stage.yml`, not the standalone copy. `actual-embedded.py` is a review snapshot of those same bytes. 34 tests pass locally; controls include API deadlines/errors, pagination, strict latest-run/attempt selection, partial-rerun fail-closed, workflow/repo/SHA/tree/blob/job identities, before/after races, and artifact source tampering. This is fixture execution, not a deployed Actions run. `test-results.log` records that distinction. Intentional skips in existing test reports remain skips.
+The tests extract the actual Python block from `.github/workflows/deploy-stage.yml`, not the standalone copy. `actual-embedded.py` is a review snapshot of those same bytes. 35 tests pass locally; controls include API deadlines/errors, pagination, strict latest-run/attempt selection, partial-rerun fail-closed, workflow/repo/SHA/tree/blob/job identities, before/after races, and artifact source tampering. This is fixture execution, not a deployed Actions run. `test-results.log` records that distinction. Intentional skips in existing test reports remain skips.
 
 ## Current-base command equivalence
 
@@ -37,3 +37,7 @@ All QA/browser jobs retain separate workspaces and existing command order. No pa
 Latest matching run is the highest run ID after exact-stage event/branch selection; all matching records must pass identity validation. Latest attempt is read from that run before any conclusion checks. Duplicate record IDs or job-name multisets fail. A partial rerun cannot mix prior attempt jobs: use "rerun all jobs" to obtain a complete new attempt. Old success never covers a newer pending/failed attempt.
 
 Successful test/review evidence remains distinct from per-commit publication observation and mutable latest-live state. The scan only covers the existing verifier file selector. Cancellation can interrupt finalizers and leave no JSON artifact; the platform's cancelled attempt remains unverified. No guarantee of every-commit publication. This workflow neither uploads nor serializes Hostinger's external publisher.
+
+## Reviewer counterexample repair
+
+The fetched current run must have the SAME ID as the latest selected run-list ID before any attempt lookup. A coherent alternate older successful run/attempt/job fixture now rejects on this explicit predicate, not on a missing fixture lookup. Independent review still pending.

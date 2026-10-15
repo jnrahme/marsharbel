@@ -150,6 +150,7 @@ def snapshot(api, expected):
         # Read current run first: old successful attempts must never hide reruns.
         current = api.get('/actions/runs/%s' % latest['id'])
         run_identity(current, expected, wid, path)
+        require(current['id'] == latest['id'], 'current run ID differs from selected latest run')
         require(current['run_attempt'] >= latest['run_attempt'], 'attempt moved backwards')
         attempt = current['run_attempt']
         selected = api.get('/actions/runs/%s/attempts/%s' % (current['id'], attempt))
