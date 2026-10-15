@@ -130,12 +130,13 @@ class PartialLocaleTests(unittest.TestCase):
                     validate_mirror_capabilities(ROOT, self.registry)
             self.registry['publicationSets'][name].remove('zz')
 
-    def test_prayer_allowlist_exactly_three_names_and_routes(self):
+    def test_prayer_allowlist_exactly_four_names_and_routes(self):
         from i18n.catalog import PRAYER_FAMILIES
         self.assertEqual(PRAYER_FAMILIES, {
             'saint-charbel-prayers-master': ('/saint-charbel-prayers', 'templates/masters/saint-charbel-prayers.html'),
             'saint-charbel-novena-master': ('/saint-charbel-novena', 'templates/masters/saint-charbel-novena.html'),
             'twenty-second-master': ('/22nd-of-the-month', '22nd-of-the-month.html'),
+            'saint-charbel-medal-master': ('/saint-charbel-medal', 'saint-charbel-medal.html'),
         })
 
     def test_prayer_bypass_paths_rejected(self):
@@ -184,7 +185,7 @@ class PartialLocaleTests(unittest.TestCase):
         from i18n.catalog import validate_mirror_capabilities, validate_partial_outputs, HISTORY_FAMILY
         self.assertEqual(HISTORY_FAMILY, ('history-master', '/history', 'history.html'))
         reader = self.prayer_fixture()
-        for name in ('saint-charbel-prayers-master', 'saint-charbel-novena-master', 'twenty-second-master'):
+        for name in ('saint-charbel-prayers-master', 'saint-charbel-novena-master', 'twenty-second-master', 'saint-charbel-medal-master'):
             cfg = self.registry['pageMirrors'][name]
             cfg['routes'].pop('zz')
             cfg['renderLocales'].remove('zz')
@@ -249,7 +250,7 @@ class PartialLocaleTests(unittest.TestCase):
         self.assertIsNone(home_url(self.registry,'zz'))
         tabs=self.registry['locales']['zh-Hans']['capabilities']['mirrorTabs']
         if 'film' not in tabs:tabs.append('film')
-        self.assertEqual(tabs,['travel','film'])
+        self.assertEqual(tabs,['travel','film','prayers'])
         self.registry['pageMirrors'][name]['routes']['zh-Hans']='/zh-Hans'+english
         self.registry['pageMirrors'][name]['renderLocales'].append('zh-Hans')
         validate_registry(self.registry)

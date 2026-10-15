@@ -205,6 +205,7 @@ PRAYER_FAMILIES = {
     'saint-charbel-prayers-master': ('/saint-charbel-prayers', 'templates/masters/saint-charbel-prayers.html'),
     'saint-charbel-novena-master': ('/saint-charbel-novena', 'templates/masters/saint-charbel-novena.html'),
     'twenty-second-master': ('/22nd-of-the-month', '22nd-of-the-month.html'),
+    'saint-charbel-medal-master': ('/saint-charbel-medal', 'saint-charbel-medal.html'),
 }
 
 HISTORY_FAMILY = ('history-master', '/history', 'history.html')

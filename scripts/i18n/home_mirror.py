@@ -96,6 +96,14 @@ def render_home(root, registry, lang, catalog=None):
         if len(leads) != 1:
             raise ValueError('Film lead source destination changed ' + lang)
         leads[0]['href'] = film['routes'][lang]
+    # Same repoint for the home medal card: the medal master's locale twin is
+    # the card destination wherever the family renders (mirrors the film lead).
+    medal = registry.get('pageMirrors', {}).get('saint-charbel-medal-master')
+    if medal and lang in medal.get('renderLocales', []):
+        cards = soup.select('section.home-medal a[href="/saint-charbel-medal"]')
+        if len(cards) != 1:
+            raise ValueError('Medal card source destination changed ' + lang)
+        cards[0]['href'] = medal['routes'][lang]
     # English app links can use the old /en guide alias for the full prayer master.
     if '/saint-charbel-prayers' in twins:
         twins['/en/prayers'] = twins['/saint-charbel-prayers']

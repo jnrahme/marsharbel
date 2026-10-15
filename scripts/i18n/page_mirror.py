@@ -224,6 +224,10 @@ def render_page(root,registry,lang,family,route,catalog=None):
     # is never annotated as English-bound (hi/th limited launch).
     marked = route_nav_hrefs(rendered, root, lang) if gate else rendered
     marked = apply_launch_availability(marked, root, registry, lang)
+    source_links = (registry.get('pageMirrors', {}).get(family, {}).get('sourceLinks') or {}).get(lang)
+    if source_links:
+        from i18n.localized_source_links import apply_localized_source_links
+        marked = apply_localized_source_links(marked, source_links)
     if gate:
         marked = mark_english_nav_hrefs(marked, root, lang)
     return localize_travel_chrome(marked, registry, lang, family)

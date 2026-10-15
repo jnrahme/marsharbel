@@ -4,7 +4,7 @@ from pathlib import Path
 import sys,unittest
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
-from i18n.mirror_structure import check_pair, NORMALIZERS
+from i18n.mirror_structure import check_pair, NORMALIZERS, CONTEXT_NORMALIZERS
 
 class LocaleMirrorPolicy(unittest.TestCase):
     def setUp(self):
@@ -63,8 +63,40 @@ class LocaleMirrorPolicy(unittest.TestCase):
             self.assertNotIn(path,self.policy['exceptions'],'No whole-page bypasses permitted')
             normalizers=entry.get('normalizers',[])
             for name in normalizers:
-                self.assertIn(name,NORMALIZERS,f'{path}: unregistered normalizer {name}')
-            differences=check_pair((ROOT/entry['master']).read_text(),(ROOT/path).read_text(),entry['masterRoute'],entry['route'],normalizers)
+                self.assertIn(name,tuple(NORMALIZERS)+tuple(CONTEXT_NORMALIZERS),f'{path}: unregistered normalizer {name}')
+            context=None
+            if any(name in CONTEXT_NORMALIZERS for name in normalizers):
+                from i18n.localized_source_links import resolve_family
+                context={'family':resolve_family(self.registry,entry['master'],entry['route'],entry['locale']),
+                         'lang':entry['locale']}
+            differences=check_pair((ROOT/entry['master']).read_text(),(ROOT/path).read_text(),entry['masterRoute'],entry['route'],normalizers,context)
             self.assertEqual(differences,[],f'{path}: divergence from {entry["master"]}')
+
+    def test_citation_targets_match_registration(self):
+        # The structural signature records no hrefs, so citation correctness is
+        # asserted explicitly: every rendered twin of a sourceLinks family
+        # carries exactly one anchor per registered target (or the master target
+        # when the locale registers no swap) and no anchor registered to another
+        # locale or family.
+        from bs4 import BeautifulSoup
+        from i18n.localized_source_links import registered_targets
+        for name,cfg in self.registry.get('pageMirrors',{}).items():
+            source_links=cfg.get('sourceLinks') or {}
+            if not source_links: continue
+            master_hrefs=list({master for mapping in source_links.values() for master in mapping})
+            self.assertTrue(master_hrefs,name+': sourceLinks without master hrefs')
+            for lang,route in (cfg.get('routes') or {}).items():
+                page=ROOT/(route.lstrip('/')+'.html')
+                self.assertTrue(page.is_file(),f'{name}:{lang} rendered twin missing: {page}')
+                soup=BeautifulSoup(page.read_text(),'html.parser')
+                mapping=source_links.get(lang) or {}
+                own_targets=set(mapping.values())
+                for master_href in master_hrefs:
+                    expected=mapping.get(master_href,master_href)
+                    found=len(soup.select(f'a[href="{expected}"]'))
+                    self.assertEqual(found,1,f'{name}:{lang} citation target {expected} occurs {found} times')
+                foreign={h:o for h,o in registered_targets(self.registry,skip_family=name,skip_lang=lang).items() if h not in own_targets}
+                for anchor in soup.select('a[href]'):
+                    self.assertNotIn(anchor['href'],foreign,f'{name}:{lang} carries citation target registered to {foreign.get(anchor["href"])}: {anchor["href"]}')
 
 if __name__=='__main__':unittest.main()

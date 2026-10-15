@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "charbel-film-premiere.html",
-  "masterSha256": "a1894ebd412232237c59bdd0d0222230448b2b395be89166b3e1a96cab4c8af1",
+  "masterSha256": "13ed789e65f1a6ac87bd2f2dc2675898131fe2ed92ca8e1e36164fc545cf1e69",
   "sourceRevision": "888b9431",
   "bindings": [
     {
@@ -108,6 +108,20 @@
       "source": "NMPRO Arts: official Charbel film trailer, in Arabic, 2 minutes 25 seconds. This is a trailer, not a recording of the premiere.",
       "kind": "attribute",
       "attribute": "title"
+    },
+    {
+      "key": "premiere.medalNote",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(7)",
+      "source": "After the film - the medal many pilgrims carry, and how to have one blessed:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.medalLink",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(7) a:nth-of-type(1)",
+      "source": "Saint Charbel medal",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": [
@@ -118,6 +132,8 @@
     "premiere.coverageNote",
     "premiere.date",
     "premiere.launchSource",
+    "premiere.medalLink",
+    "premiere.medalNote",
     "premiere.release",
     "premiere.scope",
     "premiere.source",
