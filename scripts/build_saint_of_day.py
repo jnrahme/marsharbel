@@ -6,11 +6,13 @@ today + next N, N<=7 in America/New_York). saint-of-day.js mounts exactly the
 unit matching the New York date and fails closed when none matches. --prune
 rewrites the manifest dropping entries expired before the New York today; the
 pack lane runs it when adding a sourced unit."""
-import argparse,html,json,re
+import argparse,html,json,re,sys
 from datetime import date,datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'scripts'))
+from i18n.saint_plate import plate_fields
 REQUIRED=('saint','calendar','infoUrl','sources','translationStatus')
 def load(root):
     manifest=json.loads((root/'locales/saint-of-day.json').read_text())
@@ -28,17 +30,29 @@ def load(root):
         if has_url!=has_img: raise ValueError(f'saint unit {d} carries only one of bookUrl/bookImage; a book is both or neither')
         if has_url and explicit_none: raise ValueError(f'saint unit {d} contradicts itself: "book": null with bookUrl/bookImage set')
         if not has_url and not explicit_none: raise ValueError(f'saint unit {d} has no book and no explicit "book": null; a missing book is never silent')
+        if entry.get('saintImage'):
+            if has_url: raise ValueError(f'saint unit {d} carries both a book and saintImage; the photo plate is a solo-card variant')
+            if not copy.get(d,{}).get('imageAlt'): raise ValueError(f'saint unit {d} has saintImage but no reviewed English imageAlt')
         if d not in copy: raise ValueError(f'saint unit {d} has no English copy')
     return manifest,copy
 def output(root=ROOT):
     manifest,copy=load(root)
     pair=(root/'templates/saint-of-day/home.html').read_text()
     solo=(root/'templates/saint-of-day/home-nobook.html').read_text()
+    mono=(root/'templates/saint-of-day/home-nobook-mono.html').read_text()
+    image=(root/'templates/saint-of-day/home-nobook-image.html').read_text()
     units=[]
     for d in sorted(manifest['entries']):
         entry=manifest['entries'][d]
-        template=pair if entry.get('bookUrl') else solo
         values={**entry,**copy[d],'date':d,'dateLabel':date.fromisoformat(d).strftime('%d.%m.%Y'),'calendarUrl':entry['sources'][0]}
+        if entry.get('bookUrl'):
+            template=pair
+        elif entry.get('saintImage'):
+            template=image
+        else:
+            fields=plate_fields(copy[d].get('name',''),'en',d,override=copy[d].get('monogram'))
+            if fields: values.update(fields);template=mono
+            else: template=solo
         units.append(re.sub(r'\$\{([^}]+)\}',lambda m:html.escape(values[m[1]],quote=True),template))
     path=root/'src/pages/index.html'; source=path.read_text()
     pattern=r'(<!-- saint-of-day:start -->).*?(<!-- saint-of-day:end -->)'

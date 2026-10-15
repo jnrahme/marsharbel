@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "f4447ca5f15ca39c1dd56ebc1e39785f5871217d845d8e850a44cc0f2b33b99d",
+  "masterSha256": "257ff5a54df0a83d3a3e2d2c94a7fd3c1ade24bff1cc1146e5dead0fdab29e0e",
   "sourceRevision": "802b6e7c56a7634b99a24d8c8ccee051b8edca22",
   "bindings": [
     {
@@ -1622,6 +1622,90 @@
       "nodeIndex": 0
     },
     {
+      "key": "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Gemelli Hospital in Rome seen from its forecourt",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.latest-news.october-14-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "October 14, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.pope-leo-s-recovery-is-progressing-normally",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Pope Leo's recovery is progressing normally",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-holy-see-says-postoperative-tests-are-within-the-expecte",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "The Holy See says postoperative tests are within the expected range. Pope Leo has begun walking in his room and has resumed eating normally. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Interior of the Sacro Cuore church at Gemelli Hospital in Rome, looking toward the altar",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.latest-news.october-13-2026",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "October 13, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.catholics-pray-for-pope-leo-at-gemelli",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Catholics pray for Pope Leo at Gemelli",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Cardinal Baldassarre Reina led the evening Rosary in the hospital chapel as Catholics prayed for the Pope. Context photo: the Sacro Cuore church at Gemelli, not the Rosary itself. Photo: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; resized to WebP.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-medal.devotion",
+      "selector": "#main-content > section:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Devotion",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-medal.the-saint-charbel-medal",
+      "selector": "#home-medal-heading",
+      "source": "The Saint Charbel medal",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-medal.what-the-medal-depicts-what-the-church-means",
+      "selector": "#main-content > section:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "What the medal depicts, what the Church means when she calls it a sacramental, and how to have one blessed.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-medal.read-the-medal-guide",
+      "selector": "#main-content > section:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Read the medal guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
       "key": "home.saintDay.2026-10-14.heading",
       "selector": "template[data-saint-date=\"2026-10-14\"] #saint-day-heading",
       "source": "Saint of the Day",
@@ -1727,6 +1811,20 @@
       "nodeIndex": 0
     },
     {
+      "key": "home.saintDay.2026-10-15.monogram",
+      "selector": "template[data-saint-date=\"2026-10-15\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "T",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-15.dateShort",
+      "selector": "template[data-saint-date=\"2026-10-15\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "15 Oct",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
       "key": "home.saintDay.2026-10-15.calendar",
       "selector": "template[data-saint-date=\"2026-10-15\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
       "source": "Roman calendar",
@@ -1779,6 +1877,20 @@
       "key": "home.saintDay.2026-10-16.dateLabel",
       "selector": "template[data-saint-date=\"2026-10-16\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
       "source": "16.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-16.monogram",
+      "selector": "template[data-saint-date=\"2026-10-16\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "H",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-16.dateShort",
+      "selector": "template[data-saint-date=\"2026-10-16\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "16 Oct",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1839,6 +1951,20 @@
       "nodeIndex": 0
     },
     {
+      "key": "home.saintDay.2026-10-17.monogram",
+      "selector": "template[data-saint-date=\"2026-10-17\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "I",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-17.dateShort",
+      "selector": "template[data-saint-date=\"2026-10-17\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "17 Oct",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
       "key": "home.saintDay.2026-10-17.calendar",
       "selector": "template[data-saint-date=\"2026-10-17\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
       "source": "Roman calendar",
@@ -1891,6 +2017,20 @@
       "key": "home.saintDay.2026-10-18.dateLabel",
       "selector": "template[data-saint-date=\"2026-10-18\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
       "source": "18.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-18.monogram",
+      "selector": "template[data-saint-date=\"2026-10-18\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "L",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-18.dateShort",
+      "selector": "template[data-saint-date=\"2026-10-18\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "18 Oct",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1951,6 +2091,20 @@
       "nodeIndex": 0
     },
     {
+      "key": "home.saintDay.2026-10-19.monogram",
+      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "S",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-19.dateShort",
+      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "19 Oct",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
       "key": "home.saintDay.2026-10-19.calendar",
       "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
       "source": "Roman calendar",
@@ -1989,90 +2143,6 @@
       "key": "home.saintDay.2026-10-19.sourceLabel",
       "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Feast source: Vatican News saints calendar",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "Gemelli Hospital in Rome seen from its forecourt",
-      "kind": "attribute",
-      "attribute": "alt"
-    },
-    {
-      "key": "home.latest-news.october-14-2026",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "October 14, 2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.pope-leo-s-recovery-is-progressing-normally",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
-      "source": "Pope Leo's recovery is progressing normally",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.the-holy-see-says-postoperative-tests-are-within-the-expecte",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
-      "source": "The Holy See says postoperative tests are within the expected range. Pope Leo has begun walking in his room and has resumed eating normally. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "Interior of the Sacro Cuore church at Gemelli Hospital in Rome, looking toward the altar",
-      "kind": "attribute",
-      "attribute": "alt"
-    },
-    {
-      "key": "home.latest-news.october-13-2026",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "October 13, 2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.catholics-pray-for-pope-leo-at-gemelli",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
-      "source": "Catholics pray for Pope Leo at Gemelli",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
-      "source": "Cardinal Baldassarre Reina led the evening Rosary in the hospital chapel as Catholics prayed for the Pope. Context photo: the Sacro Cuore church at Gemelli, not the Rosary itself. Photo: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; resized to WebP.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.home-medal.devotion",
-      "selector": "#main-content > section:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
-      "source": "Devotion",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.home-medal.the-saint-charbel-medal",
-      "selector": "#home-medal-heading",
-      "source": "The Saint Charbel medal",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.home-medal.what-the-medal-depicts-what-the-church-means",
-      "selector": "#main-content > section:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
-      "source": "What the medal depicts, what the Church means when she calls it a sacramental, and how to have one blessed.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.home-medal.read-the-medal-guide",
-      "selector": "#main-content > section:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3)",
-      "source": "Read the medal guide",
       "kind": "text",
       "nodeIndex": 0
     }
@@ -2283,6 +2353,18 @@
     "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt": "Gemelli Hospital in Rome seen from its forecourt",
     "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital": "Interior of the Sacro Cuore church at Gemelli Hospital in Rome, looking toward the altar",
     "home.latest-news.october-14-2026": "October 14, 2026",
+    "home.latest-news.pope-leo-s-recovery-is-progressing-normally": "Pope Leo's recovery is progressing normally",
+    "home.latest-news.the-holy-see-says-postoperative-tests-are-within-the-expecte": "The Holy See says postoperative tests are within the expected range. Pope Leo has begun walking in his room and has resumed eating normally. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
+    "home.accessibility.pilgrims-at-the-entrance-of-the-monastery-of-saint-charbel": "Pilgrims at the entrance of the monastery of Saint Charbel in Annaya, Lebanon",
+    "home.latest-news.context-photo-the-monastery-of-saint-charbel-in-annaya": "Context photo: the monastery of Saint Charbel in Annaya, not the trail itself. Photo: LLEW, Wikimedia Commons, CC BY-SA 4.0; cropped and converted to WebP.",
+    "home.latest-news.sources-and-photo-credits": "Sources and photo credits",
+    "home.latest-news.photo": "Photo:",
+    "home.latest-news.via-wikimedia-commons": "via Wikimedia Commons",
+    "home.latest-news.the-webp-derivative-is-shared-under-the-same-license": "The WebP derivative is shared under the same license.",
+    "home.home-medal.devotion": "Devotion",
+    "home.home-medal.the-saint-charbel-medal": "The Saint Charbel medal",
+    "home.home-medal.what-the-medal-depicts-what-the-church-means": "What the medal depicts, what the Church means when she calls it a sacramental, and how to have one blessed.",
+    "home.home-medal.read-the-medal-guide": "Read the medal guide",
     "home.saintDay.2026-10-14.heading": "Saint of the Day",
     "home.saintDay.2026-10-14.dateLabel": "14.10.2026",
     "home.saintDay.2026-10-14.calendar": "Maronite calendar",
@@ -2298,6 +2380,8 @@
     "home.saintDay.2026-10-14.sourceLabel": "Feast source: Maronite Eparchy of Saint Maron, Canada",
     "home.saintDay.2026-10-15.heading": "Saint of the Day",
     "home.saintDay.2026-10-15.dateLabel": "15.10.2026",
+    "home.saintDay.2026-10-15.monogram": "T",
+    "home.saintDay.2026-10-15.dateShort": "15 Oct",
     "home.saintDay.2026-10-15.calendar": "Roman calendar",
     "home.saintDay.2026-10-15.name": "Saint Teresa of Jesus (Avila)",
     "home.saintDay.2026-10-15.story": "Teresa lived in sixteenth-century Spain, at the time of Martin Luther, and worked to bring significant reform to the Carmelite Order. A great teacher of prayer, she was the first woman proclaimed a Doctor of the Church, together with Catherine of Siena. She is a patroness of Catholic writers.",
@@ -2306,6 +2390,8 @@
     "home.saintDay.2026-10-15.sourceLabel": "Feast source: Vatican News saints calendar",
     "home.saintDay.2026-10-16.heading": "Saint of the Day",
     "home.saintDay.2026-10-16.dateLabel": "16.10.2026",
+    "home.saintDay.2026-10-16.monogram": "H",
+    "home.saintDay.2026-10-16.dateShort": "16 Oct",
     "home.saintDay.2026-10-16.calendar": "Roman calendar",
     "home.saintDay.2026-10-16.name": "Saint Hedwig of Silesia",
     "home.saintDay.2026-10-16.story": "Hedwig was a duchess of Silesia and Poland who showed that true nobility means serving those most in need. She later lived as a religious in a Cistercian monastery.",
@@ -2314,6 +2400,8 @@
     "home.saintDay.2026-10-16.sourceLabel": "Feast source: Vatican News saints calendar",
     "home.saintDay.2026-10-17.heading": "Saint of the Day",
     "home.saintDay.2026-10-17.dateLabel": "17.10.2026",
+    "home.saintDay.2026-10-17.monogram": "I",
+    "home.saintDay.2026-10-17.dateShort": "17 Oct",
     "home.saintDay.2026-10-17.calendar": "Roman calendar",
     "home.saintDay.2026-10-17.name": "Saint Ignatius of Antioch",
     "home.saintDay.2026-10-17.story": "Ignatius was an early second-century bishop of Antioch. Led to Rome as a prisoner, he wrote seven letters that remain a precious witness to the faith of the Apostolic Church. There he was thrown to wild beasts and became, in his own words, Christ's pure bread.",
@@ -2322,6 +2410,8 @@
     "home.saintDay.2026-10-17.sourceLabel": "Feast source: Vatican News saints calendar",
     "home.saintDay.2026-10-18.heading": "Saint of the Day",
     "home.saintDay.2026-10-18.dateLabel": "18.10.2026",
+    "home.saintDay.2026-10-18.monogram": "L",
+    "home.saintDay.2026-10-18.dateShort": "18 Oct",
     "home.saintDay.2026-10-18.calendar": "Traditional feast date",
     "home.saintDay.2026-10-18.name": "Saint Luke the Evangelist",
     "home.saintDay.2026-10-18.story": "Luke wrote the third Gospel and the Acts of the Apostles. A physician and the most vivid portraitist among the Evangelists, tradition remembers him as a painter, and the Church honors him as the patron of artists.",
@@ -2330,31 +2420,13 @@
     "home.saintDay.2026-10-18.sourceLabel": "Feast source: Vatican News saints calendar",
     "home.saintDay.2026-10-19.heading": "Saint of the Day",
     "home.saintDay.2026-10-19.dateLabel": "19.10.2026",
+    "home.saintDay.2026-10-19.monogram": "S",
+    "home.saintDay.2026-10-19.dateShort": "19 Oct",
     "home.saintDay.2026-10-19.calendar": "Roman calendar",
     "home.saintDay.2026-10-19.name": "Saints John de Brebeuf, Isaac Jogues and Companions",
     "home.saintDay.2026-10-19.story": "Six French Jesuit priests, a Jesuit lay brother, and a layman carried the Gospel to the indigenous peoples of New France and gave their lives as martyrs. The Church remembers them as the Canadian Martyrs, the seed of the Church in North America.",
     "home.saintDay.2026-10-19.provenance": "Brief story based on Vatican News' saint of the day.",
     "home.saintDay.2026-10-19.infoCta": "Read about the Canadian Martyrs",
-    "home.saintDay.2026-10-19.sourceLabel": "Feast source: Vatican News saints calendar",
-    "home.latest-news.pope-leo-s-recovery-is-progressing-normally": "Pope Leo's recovery is progressing normally",
-    "home.latest-news.the-holy-see-says-postoperative-tests-are-within-the-expecte": "The Holy See says postoperative tests are within the expected range. Pope Leo has begun walking in his room and has resumed eating normally. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
-    "home.accessibility.pilgrims-at-the-entrance-of-the-monastery-of-saint-charbel": "Pilgrims at the entrance of the monastery of Saint Charbel in Annaya, Lebanon",
-    "home.latest-news.context-photo-the-monastery-of-saint-charbel-in-annaya": "Context photo: the monastery of Saint Charbel in Annaya, not the trail itself. Photo: LLEW, Wikimedia Commons, CC BY-SA 4.0; cropped and converted to WebP.",
-    "home.latest-news.sources-and-photo-credits": "Sources and photo credits",
-    "home.latest-news.photo": "Photo:",
-    "home.latest-news.via-wikimedia-commons": "via Wikimedia Commons",
-    "home.latest-news.the-webp-derivative-is-shared-under-the-same-license": "The WebP derivative is shared under the same license.",
-    "home.home-medal.devotion": {
-      "en": "Devotion"
-    },
-    "home.home-medal.the-saint-charbel-medal": {
-      "en": "The Saint Charbel medal"
-    },
-    "home.home-medal.read-the-medal-guide": {
-      "en": "Read the medal guide"
-    },
-    "home.home-medal.what-the-medal-depicts-what-the-church-means": {
-      "en": "What the medal depicts, what the Church means when she calls it a sacramental, and how to have one blessed."
-    }
+    "home.saintDay.2026-10-19.sourceLabel": "Feast source: Vatican News saints calendar"
   }
 }
