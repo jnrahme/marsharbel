@@ -17,7 +17,7 @@ class LimitedLaunch(unittest.TestCase):
    self.assertEqual(locale_topics(self.r,lang),[])
    self.assertEqual(self.r['locales'][lang]['slugs'],{})
    families=[name for name,cfg in self.r['pageMirrors'].items() if lang in cfg['routes']]
-   self.assertEqual(families,{'hi':['film-premiere-master','history-master','travel-travel-master','music-master','help-me-pray-master'],'th':['film-premiere-master','history-master','travel-th-travel-master','music-master','help-me-pray-master']}[lang])
+   self.assertEqual(families,{'hi':['film-premiere-master','history-master','saint-charbel-medal-master','travel-travel-master','music-master','help-me-pray-master'],'th':['film-premiere-master','history-master','saint-charbel-medal-master','travel-th-travel-master','music-master','help-me-pray-master']}[lang])
    for subset in self.r['publicationSets'].values():self.assertNotIn(lang,subset)
  def test_visible_availability_and_nonuse_of_dormant_copy(self):
   for lang in ('hi','th'):
@@ -52,7 +52,8 @@ class LimitedLaunch(unittest.TestCase):
   self.assertEqual(set(catalog),set(english))
   self.assertNotEqual(catalog['travel.node.66'],english['travel.node.66'])
  def test_zh_prayer_capability_does_not_invent_home_or_legacy_publication(self):
-  self.r['locales']['zh-Hans']['capabilities']['mirrorTabs'].append('prayers')
+  tabs=self.r['locales']['zh-Hans']['capabilities']['mirrorTabs']
+  if 'prayers' not in tabs:tabs.append('prayers')
   for name,(english,pinned) in PRAYER_FAMILIES.items():
    cfg=self.r['pageMirrors'][name]
    cfg['routes']['zh-Hans']='/zh-Hans'+english

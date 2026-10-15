@@ -211,8 +211,8 @@ def compare_json(file,old,new):
   assert len(a['pages'])==len(b['pages'])==219
   assert b['aliases'].pop('zz')=='zz';assert b['languages'].pop()=='zz'
   extra={k:b['englishSources'].pop(k) for k in list(b['englishSources']) if k.startswith('/zz/')}
-  assert len(extra)==18 and all(k=='/zz'+v.rstrip('/') for k,v in extra.items()),extra
-  hits['manifest-routes']+=18
+  assert len(extra)==19 and all(k=='/zz'+v.rstrip('/') for k,v in extra.items()),extra
+  hits['manifest-routes']+=19
   # Same proof-class exclusion as the 12 page keys: the scoped masters' self-route
   # identity entries come from the omitted overlay rows. Assert identity in the
   # real manifest AND absence in the synthetic one before removing.
@@ -239,7 +239,7 @@ def compare_json(file,old,new):
   hits['manifest-travel4-ar-sources']+=4
   hits['manifest-sources']+=12;print('MANIFEST proof excluded in synthetic only 12; legacy overlays real; compared 224')
   print('MANIFEST englishSources scoped self-routes excluded',len(scoped_routes),json.dumps(sorted(scoped_routes)))
-  print('EXCLUDED TOTAL 12 page keys + 12 englishSources + 13 pending + 18 zz =',12+12+13+18)
+  print('EXCLUDED TOTAL 12 page keys + 12 englishSources + 13 pending + 19 zz =',12+12+13+19)
  elif file=='same-page-copy.js':
   zz=b.pop('zz');expected=copy.deepcopy(b['de']);assert zz==expected
   for row in b.values():assert row['names'].pop('zz')=='Test';hits['copy-names']+=1
@@ -247,7 +247,7 @@ def compare_json(file,old,new):
   assert b['aliases'].pop('zz')=='zz';count=0
   for english,row in b['topics'].items():
    if 'zz' in row:assert row.pop('zz')=='/zz'+english;count+=1
-  assert count==18;hits['routing']+=count
+  assert count==19;hits['routing']+=count
  else:raise AssertionError('Unbound generated JS diff: '+file)
  assert a==b,(file,'Non-zz JSON difference')
 
@@ -303,7 +303,7 @@ try:
   file.write_text(json.dumps(old))
  with patch.object(tm,'compose_travel_clusters',side_effect=prepare_fixture_heads),patch.object(rt,'travel_manifest',side_effect=synthetic_travel),patch.object(ve,'validate_final_outputs',side_effect=observed_final):
   out=b.outputs(T)
- zz=[p for p in out if p.relative_to(T).parts[0]=='zz' and p.suffix=='.html'];assert len(zz)==18,zz;assert T/'zz/index.html' not in out;assert 'zz' not in json.loads(out[T/'locale-routes.js'].split(' = ')[1].rstrip(';\n'))['homes'];print('PARTIAL FULL OUTPUT PASS',len(out),len(zz));assert not any('/eucharistic' in str(p) for p in zz);assert {T/('zz'+v[0]+'.html') for v in PRAYER_FAMILIES.values()} <= set(zz)
+ zz=[p for p in out if p.relative_to(T).parts[0]=='zz' and p.suffix=='.html'];assert len(zz)==19,zz;assert T/'zz/index.html' not in out;assert 'zz' not in json.loads(out[T/'locale-routes.js'].split(' = ')[1].rstrip(';\n'))['homes'];print('PARTIAL FULL OUTPUT PASS',len(out),len(zz));assert not any('/eucharistic' in str(p) for p in zz);assert {T/('zz'+v[0]+'.html') for v in PRAYER_FAMILIES.values()} <= set(zz)
 
  assert final_calls==[0],final_calls
  assert composition['negative'] and len(composition['synthetic_heads'])==14
@@ -369,14 +369,14 @@ try:
  print('PRODUCTION TRAVEL OWNERS',len(expected_production),'=',len(composition['production']),'+',len(authored),'authored actual-head complement checked; injected masks NOT renderer proof')
  print('SYNTHETIC VALIDATORS real renderer/structural catalog capability collision; legacy Travel History Prayer body+catalog; real final validator sees zero scoped records')
  assert all(Path(f).parts[0]=='zz' for f in composition['synthetic_heads'])
- assert len(zz)==18 and not any(p.relative_to(T).parts[0]!='zz' for p in zz)
+ assert len(zz)==19 and not any(p.relative_to(T).parts[0]!='zz' for p in zz)
  for file in zz:
   text=out[file];soup=BeautifulSoup(text,'html.parser');assert len(soup.select('main'))==1
   route='/'+file.relative_to(T).as_posix().removesuffix('.html')
   assert soup.select_one('link[rel=canonical]')['href']==r['site']+route
- print('SYNTHETIC explicit pages checked 18; production in zz set 0; Travel heads checked 14')
+ print('SYNTHETIC explicit pages checked 19; production in zz set 0; Travel heads checked 14')
  sitemap=out[T/'sitemap.xml'];zzrows=re.findall(r'<url><loc>(https://marsharbel.com/zz/[^<]+)</loc></url>',sitemap)
- assert len(zzrows)==18 and len(set(zzrows))==18 and 'https://marsharbel.com/zz/history' in zzrows
+ assert len(zzrows)==19 and len(set(zzrows))==19 and 'https://marsharbel.com/zz/history' in zzrows
  assert not (T/'zz/history.html').exists()
  # Negative real source_for control: restoring that crash is observable.
  from i18n import sitemap_dates
@@ -401,7 +401,7 @@ try:
    normalized=candidate
    for url in zzrows:
     line='  <url><loc>'+url+'</loc></url>\n';assert normalized.count(line)==1;normalized=normalized.replace(line,'',1)
-   fail_diff(file,old,normalized);hits['sitemap']+=18
+   fail_diff(file,old,normalized);hits['sitemap']+=19
   else:fail_diff(file,old,candidate)
  assert hits['alternate']>0 and hits['og']>0 and hits['runtime']>0 and hits['copy-names']==12
  # Unexpected production prose always fails the identical-byte comparison.
