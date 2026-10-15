@@ -51,7 +51,40 @@ EXACT_JOBS = [
          alt_sets={'main figure.hero-figure img': AERIAL_ALT_DE}),
 ]
 
+TOMB_CHAPEL_ALT = ('The candlelit tomb chapel of Saint Charbel in the monastery '
+                   'church at Annaya')
+TOMB_CHAPEL_ALT_TR = {
+    'ar': 'مصلّى ضريح القديس شربل المضاء بالشموع في كنيسة الدير في عنّايا',
+    'de': 'Die kerzenbeleuchtete Grabkapelle des heiligen Charbel in der Klosterkirche von Annaya',
+    'es': 'La capilla del sepulcro de San Charbel a la luz de las velas en la iglesia del monasterio de Annaya',
+    'fr': "La chapelle du tombeau de saint Charbel éclairée de cierges dans l'église du monastère d'Annaya",
+    'it': 'La cappella della tomba di San Charbel illuminata a lume di candela nella chiesa del monastero ad Annaya',
+    'pl': 'Oświetlona świecami kaplica grobu św. Charbela w kościele klasztornym w Annaji',
+    'pt': 'A capela do túmulo de São Charbel à luz de velas na igreja do mosteiro em Annaya',
+    'ru': 'Освещённая свечами часовня гроба святого Шарбеля в монастырской церкви в Аннайе',
+    'zh-Hans': '安纳亚修道院教堂内烛光映照的圣夏贝尔墓祷堂',
+}
+
 # keyed contracts whose rendered masters changed only in og:image/JSON-LD URLs
+KEYED_JOBS = [
+    # scrum 2026-10-15: alt described people; the photo is an empty candlelit chapel
+    dict(family='pilgrimage-master',
+         locales=['ar', 'de', 'es', 'fr', 'it', 'pl', 'pt', 'ru', 'zh-Hans'],
+         ops=[dict(op='rekey-alt',
+                   old='pilgrimage.accessibility.pilgrims-at-the-tomb-of-saint-charbel-in-the-monastery-churc',
+                   prefix='pilgrimage.accessibility.',
+                   en=TOMB_CHAPEL_ALT, tr=TOMB_CHAPEL_ALT_TR)]),
+    # scrum 2026-10-15: alt claimed the modern church interior is where Saint
+    # Charbel prayed for forty-seven years - unproven exact-building claim
+    dict(family='prayer-library-master',
+         locales=['ar'],
+         ops=[dict(op='rekey-alt',
+                   old='prayer-library.main-img-alt-inside-the-monastery-church-at-annaya-where-saint-charbel-pr',
+                   prefix='prayer-library.main-img-alt-',
+                   en='Inside the monastery church at Annaya',
+                   tr={'ar': 'داخل كنيسة الدير في عنّايا'})]),
+]
+
 SHA_JOBS = [
     dict(family='pilgrimage-master', locales=[], ops=[]),
     dict(family='all-saints-and-all-souls-master', locales=[], ops=[]),
@@ -125,6 +158,8 @@ if __name__ == '__main__':
     ok = True
     for job in EXACT_JOBS:
         ok = refresh_exact(job, check=args.check) and ok
+    for job in KEYED_JOBS:
+        ok = apply_family(job, check=args.check) and ok
     for job in SHA_JOBS:
         ok = apply_family(job, check=args.check) and ok
     sys.exit(0 if ok else 1)

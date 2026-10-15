@@ -57,5 +57,13 @@ class HistoryMirrors(unittest.TestCase):
  def test_arabic_latin_runs_are_bidi_isolated(self):
   s=BeautifulSoup(render_page(ROOT,self.r,'ar','history-master','/ar/biography'),'html.parser')
   self.assertIn('\u2068ora et labora\u2069',s.main.get_text())
-  self.assertIn('\u2068CC BY-SA 4.0\u2069',s.main.get_text())
+  # 2026-10-15 Batch 1: the monastery figure became the owner-granted night
+  # aerial and the CC BY-SA credit left with the retired asset.
+  self.assertNotIn('CC BY-SA 4.0',s.main.get_text())
+  figs=s.main.find_all('figure')
+  self.assertIn('/media/tour/annaya-night-aerial.webp',figs[2].find('img')['src'])
+  self.assertIn('\u0623\u0628\u0631\u0632 \u0634\u0631\u0628\u0644 \u0646\u0630\u0648\u0631\u0647',figs[2].get_text())
+  import re as _re
+  stripped=_re.sub('\u2068[^\u2069]*\u2069','',s.main.get_text())
+  self.assertIsNone(_re.search(r'[A-Za-z]{3,}',stripped),'unisolated Latin run in Arabic page')
 if __name__=='__main__':unittest.main()

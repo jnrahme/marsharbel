@@ -271,14 +271,16 @@ class NewsImageRecordTests(unittest.TestCase):
             self.assertTrue(rec['revalidation']['note'], slot)
 
     def test_trail_swap_from_permission_gap_is_documented(self):
-        """The trail slot's 2026-10-15 swap from the courtesy permission-record gap
-        to the licensed LLEW derivative must stay documented, not silent."""
+        """The trail slot's 2026-10-15 swap from the LLEW CC BY-SA derivative to
+        the owner-granted monastery photo (owner-reported permission with a
+        record gap) must stay documented, not silent."""
         trail = self.records['trail']
-        self.assertEqual(trail['license']['status'], 'licensed')
-        self.assertEqual(trail['license']['spdx'], 'CC BY-SA 4.0')
-        self.assertIn('St_Charbel_Makhlouf_Annaya.jpg', trail['license']['sourceUrl'])
-        self.assertIn('permission-record gap', trail['revalidation']['note'])
-        self.assertIn('Sliney', trail['revalidation']['note'])
+        self.assertEqual(trail['license']['status'], 'courtesy-permission-record-gap')
+        self.assertEqual(trail['license']['spdx'], 'LicenseRef-owner-reported-permission')
+        self.assertIn('saintcharbel.com', trail['license']['sourceUrl'])
+        self.assertTrue(trail['image']['src'].endswith('/annaya-church-dusk-entrance.webp'))
+        self.assertIn('LLEW', trail['revalidation']['note'])
+        self.assertIn('2026-10-15', trail['revalidation']['note'])
 
     def test_home_img_alts_match_refresh_catalog(self):
         """Alt attributes must equal the refresh_pope_home_news.py EN catalog so
