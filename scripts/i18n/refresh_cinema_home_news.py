@@ -17,6 +17,8 @@ OLD_CINEMA_KEY = 'news.latest-news.cinemacity-beirut-opening-date-and-current-se
 VOX_KEY = 'news.latest-news.vox-city-centre-beirut-listed-october-21-sessions'
 NEWCINEMA_KEY = 'news.latest-news.cinemacity-beirut-october-22-opening-listing-no-sessions'
 LEB24_KEY = 'news.latest-news.lebanon24-october-5-report-arabic'
+LEADMETA_KEY = 'news.saint-charbel-in-the-new.premiered-october-9-lebanese-cinema-release-planned-from-oct'
+LEADDEK_KEY = 'news.charbel-premieres-in-bei.the-new-feature-film-premiered-october-9-in-beirut-the-leban'
 LI7 = '#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7)'
 
 EN = {
@@ -25,6 +27,8 @@ EN = {
     PREMROW_KEY: 'The NMPRO and MTV feature premiered October 9 at Beirut Media Zone; Lebanese cinema dates differ - VOX lists October 21 sessions, Cinemacity lists October 22. International release and streaming remain unconfirmed.',
     VOX_KEY: 'VOX City Centre Beirut: listed October 21 sessions',
     NEWCINEMA_KEY: 'Cinemacity Beirut: October 22 opening listing, no sessions scheduled',
+    LEADMETA_KEY: 'Premiered October 9 · Cinema dates differ: VOX October 21, Cinemacity October 22 · 4 sources',
+    LEADDEK_KEY: 'The new feature film premiered October 9 in Beirut. Cinema dates differ: VOX lists October 21 sessions, Cinemacity lists an October 22 opening with no sessions yet; international release and streaming remain unconfirmed.',
 }
 AR = {
     TITLE_KEY: 'مواعيد سينما مار شربل تختلف: فوكس يسرد 21 تشرين الأول وسينما سيتي 22 تشرين الأول',
@@ -32,8 +36,10 @@ AR = {
     PREMROW_KEY: 'عُرض فيلم NMPRO وMTV لأول مرة في 9 تشرين الأول في Beirut Media Zone؛ وتختلف مواعيد السينما اللبنانية - فوكس يسرد عروض 21 تشرين الأول وسينما سيتي يسرد 22 تشرين الأول. ويبقى العرض الدولي والبث غير مؤكدين.',
     VOX_KEY: 'فوكس سيتي سنتر بيروت: عروض مسردة في 21 تشرين الأول',
     NEWCINEMA_KEY: 'سينما سيتي بيروت: إدراج افتتاح في 22 تشرين الأول من دون عروض مسجلة',
+    LEADMETA_KEY: 'العرض الأول في 9 تشرين الأول · مواعيد السينما تختلف: فوكس 21 تشرين الأول، سينما سيتي 22 تشرين الأول · 4 مصادر',
+    LEADDEK_KEY: 'عُرض الفيلم الروائي الجديد لأول مرة في 9 تشرين الأول في بيروت. تختلف مواعيد السينما: فوكس يسرد عروض 21 تشرين الأول وسينما سيتي يسرد افتتاحًا في 22 تشرين الأول من دون عروض بعد؛ ويبقى العرض الدولي والبث غير مؤكدين.',
 }
-REBIND = (TITLE_KEY, ROWSUM_KEY, PREMROW_KEY)
+REBIND = (TITLE_KEY, ROWSUM_KEY, PREMROW_KEY, LEADMETA_KEY, LEADDEK_KEY)
 
 HOME_KEYS = ('home.latest-news.premiere.homeDek', 'home.latest-news.premiere.openingValue')
 HOME_EN = {

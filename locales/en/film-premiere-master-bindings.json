@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "charbel-film-premiere.html",
-  "masterSha256": "13ed789e65f1a6ac87bd2f2dc2675898131fe2ed92ca8e1e36164fc545cf1e69",
+  "masterSha256": "0d1a6494f549545655b4fcc07ecd1c1917ed8ff905c6b763c255eff9e6397685",
   "sourceRevision": "888b9431",
   "bindings": [
     {
@@ -14,7 +14,7 @@
     {
       "key": "premiere.title",
       "selector": "article#charbel-premiere-release-2026-10 h1",
-      "source": "Charbel Premieres in Beirut; Lebanese Cinema Release Set for October 22",
+      "source": "Charbel Premieres in Beirut; Cinema Dates Differ - VOX October 21, Cinemacity October 22",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -28,7 +28,7 @@
     {
       "key": "premiere.release",
       "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(2)",
-      "source": "Lebtalks reported that the October 9 launch was under President Joseph Aoun's patronage and would be broadcast on MTV, with a nationwide Lebanese theatrical rollout planned from October 22. Cinemacity Beirut independently lists Thursday, October 22 as its opening date. Its page still has no screening sessions scheduled. The completed premiere and the upcoming public cinema opening are different milestones.",
+      "source": "Lebtalks reported that the October 9 launch was under President Joseph Aoun's patronage and would be broadcast on MTV, with a nationwide Lebanese theatrical rollout planned from October 22. Cinema dates can differ by cinema: VOX City Centre Beirut lists October 21 sessions (Standard 7:00 and 7:30pm, GOLD 7:30pm; Arabic audio with English subtitles), while Cinemacity Beirut lists Thursday, October 22 as its opening date with no screening sessions scheduled yet. A listed session is a cinema listing, not a seat guarantee - check your cinema. The completed premiere and the upcoming public cinema opening are different milestones.",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -120,6 +120,13 @@
       "key": "premiere.medalLink",
       "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(7) a:nth-of-type(1)",
       "source": "Saint Charbel medal",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.voxSource",
+      "selector": "article#charbel-premiere-release-2026-10 a[href^=\"https://lbn.voxcinemas.com\"]",
+      "source": "VOX City Centre Beirut: listed October 21 sessions",
       "kind": "text",
       "nodeIndex": 0
     }
