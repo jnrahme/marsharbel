@@ -12,7 +12,7 @@ From repository root, with Python and PyYAML available:
 python3 docs/ci/duplicate-qa-reduction/test_embedded.py
 ```
 
-The tests extract the actual Python block from `.github/workflows/deploy-stage.yml`, not the standalone copy. `actual-embedded.py` is a review snapshot of those same bytes. 35 tests pass locally; controls include API deadlines/errors, pagination, strict latest-run/attempt selection, partial-rerun fail-closed, workflow/repo/SHA/tree/blob/job identities, before/after races, and artifact source tampering. This is fixture execution, not a deployed Actions run. `test-results.log` records that distinction. Intentional skips in existing test reports remain skips.
+The tests extract the actual Python block from `.github/workflows/deploy-stage.yml`, not the standalone copy. `actual-embedded.py` is a review snapshot of those same bytes. 38 tests pass locally; controls include API deadlines/errors, pagination, strict latest-run/attempt selection, partial-rerun fail-closed, workflow/repo/SHA/tree/blob/job identities, before/after races, and artifact source tampering. This is fixture execution, not a deployed Actions run. `test-results.log` records that distinction. Intentional skips in existing test reports remain skips.
 
 ## Current-base command equivalence
 
@@ -41,3 +41,7 @@ Successful test/review evidence remains distinct from per-commit publication obs
 ## Reviewer counterexample repair
 
 The fetched current run must have the SAME ID as the latest selected run-list ID before any attempt lookup. A coherent alternate older successful run/attempt/job fixture now rejects on this explicit predicate, not on a missing fixture lookup. Independent review still pending.
+
+## Stage observation-window repair
+
+Closing current-stage reads now occur after dependency snapshots at wait admission, before scan launch, and after scan before awarding a receipt. Actual-helper fixtures advance stage inside all three snapshot windows and reject superseded/unverified. These checks are observations, not atomic external-publication locks.

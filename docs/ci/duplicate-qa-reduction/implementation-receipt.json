@@ -1,11 +1,12 @@
 {
   "status": "local implementation preparation; NOT final successor review/CI/deploy proof",
   "base": "6cf7e5b75049f6e2003211b09698d5acfe4305a6",
-  "workflow_sha256": "0261fd5d9a8b7b698d3addfcf30eb0ebeefcc441f8141a2aa7a7a1ec17de060d",
-  "tests": 35,
+  "workflow_sha256": "703b9703c519a62678658620bfdad30b9af810f0fe4386a4317e18270c49e6b9",
+  "tests": 38,
   "lint": "actionlint1.7.12 -shellcheck= -pyflakes= clean; embedded Python compile and helper extraction/tamper controls PASS",
   "source_only_file": ".github/workflows/deploy-stage.yml",
   "pending": "actual post-817 tip, refreshed inventory, source review, PR CI, first real stage execution",
   "label": "DUPLICATE-QA REDUCTION ONLY; cancellation unchanged",
-  "repair": "selected list run ID == current fetched run ID; coherent stale alternative run/attempt/jobs control rejects explicitly"
+  "repair": "selected list run ID == current fetched run ID; coherent stale alternative run/attempt/jobs control rejects explicitly",
+  "closing_stage_rechecks": "after wait stable; after prescan stable; after postscan stable before receipt"
 }

@@ -22,7 +22,11 @@ test_pagination_truncation_duplicate_missing_malformed (__main__.EmbeddedTests) 
 test_partial_rerun_must_rerun_all_jobs (__main__.EmbeddedTests) ... ok
 test_post_api_error_never_superseded (__main__.EmbeddedTests) ... unverified: HTTP401 read access refused
 ok
+test_post_snapshot_stage_window_closes (__main__.EmbeddedTests) ... superseded/unverified: newer stage SHA confirmed: ffffffffffffffffffffffffffffffffffffffff
+ok
 test_post_successful_new_attempt_still_new_evidence (__main__.EmbeddedTests) ... unverified: dependencies changed after scan
+ok
+test_prescan_snapshot_stage_window_closes (__main__.EmbeddedTests) ... superseded/unverified: newer stage SHA confirmed: ffffffffffffffffffffffffffffffffffffffff
 ok
 test_run_list_duplicates_malformed_and_zero_count (__main__.EmbeddedTests) ... ok
 test_scan_post_stage_superseded_vs_unreadable (__main__.EmbeddedTests) ... superseded/unverified: newer stage SHA confirmed: ffffffffffffffffffffffffffffffffffffffff
@@ -46,12 +50,14 @@ ok
 test_wait_pending_is_bounded_and_error_closed (__main__.EmbeddedTests) ... wait
 unverified: 45-minute admission deadline exhausted
 ok
+test_wait_snapshot_stage_window_closes (__main__.EmbeddedTests) ... superseded/unverified: newer stage SHA confirmed: ffffffffffffffffffffffffffffffffffffffff
+ok
 test_wrong_current_or_attempt_identity (__main__.EmbeddedTests) ... ok
 test_wrong_event_branch_are_never_admitted (__main__.EmbeddedTests) ... ok
 test_wrong_run_identities (__main__.EmbeddedTests) ... ok
 test_wrong_workflow_same_display_name (__main__.EmbeddedTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 35 tests in 0.157s
+Ran 38 tests in 0.159s
 
 OK

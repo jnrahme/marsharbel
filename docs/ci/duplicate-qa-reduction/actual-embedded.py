@@ -216,6 +216,7 @@ def main(mode, directory):
                     print(str(error), flush=True)
                     require(time.monotonic() + 30 < deadline, '45-minute admission deadline exhausted')
                     time.sleep(30)
+            current_stage(api, sha)
             record['admission'] = 'success'
             record['admitted_at'] = timestamp()
         elif mode == 'scan':
@@ -225,6 +226,7 @@ def main(mode, directory):
                     'admission artifact identity mismatch')
             current_stage(api, sha)
             require(stable(api, expected) == admitted['dependencies'], 'dependencies changed before scan')
+            current_stage(api, sha)
             record['dependencies'] = admitted['dependencies']
             # Reuse the existing selector, record EXACT scope and unchanged verifier.
             sys.path.insert(0, str(Path('scripts/qa').resolve()))
@@ -239,6 +241,7 @@ def main(mode, directory):
             api.deadline = time.monotonic() + 60
             current_stage(api, sha)
             require(stable(api, expected) == admitted['dependencies'], 'dependencies changed after scan')
+            current_stage(api, sha)
             require(result.returncode == 0, 'bounded verifier failed')
             record['publication'] = 'verified-existing-scope'
         else:

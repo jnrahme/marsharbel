@@ -210,6 +210,41 @@ class EmbeddedTests(unittest.TestCase):
    fake=types.SimpleNamespace(frontend_files=lambda _:[])
    with patch.dict(os.environ,env),patch.object(m,'API',return_value=a),patch.object(m,'source_identity',return_value=EXPECTED),patch.dict(sys.modules,verify_deployment=fake),patch.object(m.subprocess,'run',side_effect=scan):rc=m.main('scan',d)
    return rc,json.loads(Path(d,'publication.json').read_text())
+ def drift_during_snapshot(self,phase):
+  calls=[0];original=m.stable;scan_calls=[0]
+  def stable(api,expected):
+   calls[0]+=1
+   get=api.get
+   def race(path):
+    if path.startswith('/actions/workflows/qa.yml') and calls[0]==phase:
+     api.head='f'*40
+    return get(path)
+   api.get=race
+   try:return original(api,expected)
+   finally:api.get=get
+  with patch.object(m,'stable',side_effect=stable):
+   rc,x=self.main_scan()
+  return rc,x
+ def test_post_snapshot_stage_window_closes(self):
+  # main_scan fixture setup itself reads stable once; postscan is call3.
+  rc,x=self.drift_during_snapshot(3)
+  self.assertEqual(rc,1);self.assertEqual(x['publication'],'superseded/unverified')
+  self.assertEqual(x['scan_exit'],0)
+ def test_prescan_snapshot_stage_window_closes(self):
+  rc,x=self.drift_during_snapshot(2)
+  self.assertEqual(rc,1);self.assertEqual(x['publication'],'superseded/unverified')
+  self.assertNotIn('scan_started_at',x)
+ def test_wait_snapshot_stage_window_closes(self):
+  env={'GITHUB_REPOSITORY':REPO,'PUSH_SHA':SHA,'GITHUB_RUN_ID':'500','GITHUB_RUN_ATTEMPT':'1'}
+  api=Fixture();get=api.get
+  def race(path):
+   if path.startswith('/actions/workflows/qa.yml'):api.head='f'*40
+   return get(path)
+  api.get=race
+  with tempfile.TemporaryDirectory() as d,patch.dict(os.environ,env),patch.object(m,'API',return_value=api),patch.object(m,'source_identity',return_value=EXPECTED):
+   self.assertEqual(m.main('wait',d),1)
+   x=json.loads(Path(d,'admission.json').read_text())
+   self.assertEqual(x['publication'],'superseded/unverified');self.assertNotEqual(x.get('admission'),'success')
  def test_scan_success_and_failure(self):
   rc,x=self.main_scan();self.assertEqual(rc,0);self.assertEqual(x['publication'],'verified-existing-scope')
   rc,x=self.main_scan(exit_code=1);self.assertEqual(rc,1);self.assertEqual(x['publication'],'unverified')
