@@ -60,8 +60,8 @@ def outputs(root=ROOT):
         raise ValueError('Credits heading mismatch - run build_news_desk first')
     new_entries.append({'key': KEYS['heading'], 'selector': selector(summ), 'source': EN['heading'], 'kind': 'text', 'nodeIndex': 0})
     lis = details.select('li')
-    if len(lis) != 6:
-        raise ValueError('Credits block should list six photo slots')
+    if len(lis) != 5:
+        raise ValueError('Credits block should list five photo slots (premiere entry dropped 2026-10-15: previously credited image no longer used)')
     for li in lis:
         title = li.select_one('.news-credit-title')
         title_key = by_source.get(title.get_text(strip=True))

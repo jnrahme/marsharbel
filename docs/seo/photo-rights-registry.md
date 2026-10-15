@@ -360,14 +360,18 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 
 - media/news/beirut-st-george-cathedral.webp: Lebnen18, Saint George Maronite Cathedral and Mohammad Al-Amin Mosque, downtown Beirut, uploaded March 2009 (own work). Source: https://commons.wikimedia.org/wiki/File:Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg . Observed source file: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg/960px-Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg . CC BY-SA 3.0 Unported (multi-licensed with GFDL and CC BY-SA 2.5/2.0/1.0), verified on the source file page. Converted to WebP, no content edits. Derivative under CC BY-SA 3.0. Caption explicitly says venue context, not the September 27, 2026 consecration Mass. Event photography from NNA/Annahar/L'Orient not reused: no verified license.
 
-## Film homepage contextual photo reuse (2026-10-10)
+## Film homepage contextual photo reuse (2026-10-10) - SUPERSEDED 2026-10-15
 
-- Asset: media/annaya/annaya-monastery.webp (1100x618), unchanged existing WebP.
-- Source: https://commons.wikimedia.org/wiki/File:Pan_Annaya_Church_And_Monastry.jpg
-- Author: Paul Saad. License: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0
-- Verified: Commons API imageinfo/extmetadata on 2026-10-10 returns creator paul saad, required attribution, CC BY-SA 4.0 and the license URL above.
-- Treatment: existing crop/WebP conversion; CSS cover crops in the card. Visible card credit names photographer, Commons, license and changes. The existing article is the card destination; its photo-credit listing retains source/license links, avoiding nested anchors in the whole-card link.
-- Context: church and monastery at Annaya, not the Beirut premiere venue, a film still, or premiere footage. Caption and keyed alt explicitly name the real subject.
+- Superseded by the owner-granted swap below. The Paul Saad CC BY-SA 4.0 photo (media/annaya/annaya-monastery.webp, Commons File:Pan_Annaya_Church_And_Monastry.jpg, verified via Commons API 2026-10-10) no longer serves the home premiere card.
+
+## Film homepage premiere photo (swapped 2026-10-15, owner directive)
+
+- Asset: media/tour/annaya-night-aerial.webp (1060x596), the existing tour WebP reused as-is.
+- Subject: Saint Charbel's church and the monastery of Saint Maron at Annaya at dusk (aerial). Context photo, not the Beirut premiere venue, a film still, or premiere footage.
+- Source: saintcharbel.com (official Monastery of Saint Maron - Annaya site), annaya-monastery-top-view-01; original 1500x844 JPEG re-verified reachable 2026-10-15.
+- Rights basis: owner-reported blanket permission from the Lebanese Maronite Order for Saint Charbel and church-related material on this website - owner-reported 2026-10-14, restated verbatim 2026-10-15 (owner WhatsApp: "i told you you have permission to use any photos you need and you still kept this one", directing this exact swap). Website scope, not document-certified; recorded as reported, not upgraded (news-image-records status courtesy-permission-record-gap).
+- Treatment: no visible credit or license links. Rights basis: owner-reported reuse permission; attribution terms not independently documented; the home "Sources and photo credits" details entry for this item was dropped because the previously credited image is no longer used. Provenance lives here and in locales/en/news-image-records.json.
+- Prior registration for the same asset: Annaya tour entry (media/tour/annaya-night-aerial.webp, "used with owner permission").
 
 ## Default Saint Charbel portrait (swapped 2026-10-13)
 
