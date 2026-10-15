@@ -220,7 +220,7 @@ class NewsImageRecordTests(unittest.TestCase):
         self.assertIn('checkedAt', str(ctx.exception))
 
     def test_licensed_slots_require_evidence_urls(self):
-        tmp = self._records_root(lambda rec: rec['slots']['premiere']['license'].update(licenseUrl=''))
+        tmp = self._records_root(lambda rec: rec['slots']['popeGemelli']['license'].update(licenseUrl=''))
         with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
         self.assertIn('licenseUrl', str(ctx.exception))
