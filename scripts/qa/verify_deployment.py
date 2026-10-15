@@ -227,11 +227,15 @@ def main():
         # let a stuck worker outlive the job after shutdown(wait=False).)
         tasks = queue.Queue()
         results = queue.Queue()
+        stop = threading.Event()
 
         def worker():
             while True:
                 path = tasks.get()
-                if path is None:
+                # Stop-event checked BEFORE each task: an abandoned attempt never
+                # drains queued requests, and sentinels retire workers cleanly after
+                # normal completion (no idle daemons left behind).
+                if path is None or stop.is_set():
                     return
                 try:
                     results.put(verify_file(root, path, args.base_url, nonce,
@@ -275,6 +279,9 @@ def main():
                       f"{pending} checks of attempt {attempt}.", flush=True)
                 stopped = "budget-exhausted"
                 break
+        stop.set()
+        for _ in range(6):
+            tasks.put(None)
         last_errors = errors
         if not errors and stopped is None:
             print(f"Verified {len(files)} live frontend files match the checkout.", flush=True)
@@ -285,7 +292,11 @@ def main():
         if stopped is not None:
             break
         if attempt < args.attempts:
-            time.sleep(args.interval)
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                stopped = "budget-exhausted"
+                break
+            time.sleep(min(args.interval, remaining))
     if stopped is None:
         stopped = "persistent-mismatch"
     categories = {}

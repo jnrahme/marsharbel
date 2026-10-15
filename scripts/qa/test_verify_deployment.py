@@ -240,6 +240,8 @@ def bounded_handler(root, mode, delay=2.0):
                 self.send_response(404)
                 self.end_headers()
                 return
+            if mode == "wrong":
+                body = body + b"tampered"
             self.send_response(200)
             self.send_header("Content-Length", str(len(body)))
             self.end_headers()
@@ -342,6 +344,10 @@ class BoundedExecution(unittest.TestCase):
         self.assertIn("budget-exhausted", out)
         self.assertLessEqual(HITS["count"], 6, f"queued work was drained: {HITS['count']} hits")
         self.assertLess(elapsed, 1.5, f"cancellation not prompt: {elapsed:.3f}s")
+        # scrum's control: abandoned workers must not drain the queue afterwards.
+        time.sleep(1.5)
+        self.assertLessEqual(HITS["count"], 6,
+                             f"queue drained after abandon: {HITS['count']} hits")
 
     def test_majority_timeouts_fail_fast(self):
         with TemporaryDirectory() as tmp:
@@ -356,6 +362,25 @@ class BoundedExecution(unittest.TestCase):
         self.assertEqual(rc, 1)
         self.assertIn("mass-timeout", out)
         self.assertLess(elapsed, 6.0, f"mass-timeout detected too late: {elapsed:.3f}s")
+
+
+class BetweenAttemptsBudget(unittest.TestCase):
+    def test_budget_expiring_between_attempts_skips_retry(self):
+        # Attempt 1 fails fast with content mismatches; the retry sleep must be
+        # clamped to the remaining budget and the loop must stop there.
+        with TemporaryDirectory() as tmp:
+            root = make_root(tmp)
+            server = BoundedServer(root, "wrong")
+            try:
+                rc, out, elapsed = run_main(root, server.port, "--attempts", "5",
+                                            "--interval", "30", "--budget", "0.5",
+                                            "--request-budget", "5")
+            finally:
+                server.stop()
+        self.assertEqual(rc, 1)
+        self.assertIn("budget-exhausted", out)
+        self.assertNotIn("Attempt 2/", out)
+        self.assertLess(elapsed, 3.0, f"retry sleep not clamped: {elapsed:.3f}s")
 
 
 class CliProcessExit(unittest.TestCase):
