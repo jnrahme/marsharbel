@@ -142,6 +142,7 @@ figcaption. New images: add a record here in the same batch.
 
 ### media/annaya/annaya-entrance-pilgrims.webp (1100x733) - byblos-annaya-prayer-walk card
 - Source: Wikimedia Commons, File:St Charbel Makhlouf Annaya.jpg, author LLEW, CC BY-SA 4.0 (verified 2026-09-25 via Commons API, see bot-log 2026-09-25-photo-p1-b1).
+- Reuse: homepage Latest News trail row since 2026-10-15, replacing the Sliney courtesy photo in that slot (isolated permission-record gap, news desk 2026-10-14); adaptations noted in locales/en/news-image-records.json.
 
 ### media/annaya/annaya-monastery.webp (1100x618) - new-miracles-reported card
 - Source: Wikimedia Commons, File:Pan Annaya Church And Monastry.jpg, author Paul Saad, CC BY-SA 4.0 (verified 2026-09-25, bot-log photo-p1-b1).
@@ -154,6 +155,7 @@ figcaption. New images: add a record here in the same batch.
 
 ### media/news/trail-pilgrimage-hero.webp (1200x675) - st-charbel-trail-pilgrimage card
 - Photo courtesy of Father Michael Sliney, LC (site-credited; in use on saint-charbel-trail).
+- 2026-10-15: the homepage trail row stopped using the courtesy 320px sibling media/news/trail-pilgrimage.webp (swapped to the LLEW Annaya derivative above). Remaining courtesy-credit placements, still under the isolated permission-record gap: saint-charbel-trail page hero (this asset) and miracles/raymond-nader EN+AR (320px sibling).
 
 ### media/news/pope-annaya-hero.webp (1200x791) - papal-visit-annaya card
 - Photo: Vatican Media / Vatican News (site-credited; in use on pope-leo-xiv-annaya-visit and the homepage Latest News Gemelli row).

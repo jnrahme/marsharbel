@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "9efb49fb9c4f15677fdd0a1a9ec0edf22c6d2277bec89b2be373796a8bd184db",
+  "masterSha256": "a861e4b2dd02ef933bc655e4219b4f7d0f530aff087ebad0efd8fff837afaaf2",
   "sourceRevision": "dc3e3529",
   "bindings": [
     {
@@ -516,9 +516,226 @@
       "nodeIndex": 0
     },
     {
-      "key": "home.latest-news.photo-courtesy-of-father-michael-sliney-lc",
+      "key": "home.accessibility.pilgrims-at-the-entrance-of-the-monastery-of-saint-charbel",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(5) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Pilgrims at the entrance of the monastery of Saint Charbel in Annaya, Lebanon",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.latest-news.context-photo-the-monastery-of-saint-charbel-in-annaya",
       "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(5) > span:nth-of-type(2) > span:nth-of-type(3)",
-      "source": "Photo courtesy of Father Michael Sliney, LC.",
+      "source": "Context photo: the monastery of Saint Charbel in Annaya, not the trail itself. Photo: LLEW, Wikimedia Commons, CC BY-SA 4.0; cropped and converted to WebP.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.sources-and-photo-credits",
+      "selector": "#latest-news > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "Sources and photo credits",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.premiere.shortTitle",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Charbel Premieres in Beirut",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.photo",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Photo:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.premiere.photoCaption",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1)",
+      "source": "Annaya church and monastery. Photo: Paul Saad, Wikimedia Commons, CC BY-SA 4.0; cropped and converted to WebP. Context photo, not film or premiere footage.",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "home.latest-news.via-wikimedia-commons",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-webp-derivative-is-shared-under-the-same-license",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "The WebP derivative is shared under the same license.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.pope-leo-s-recovery-is-progressing-normally",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Pope Leo's recovery is progressing normally",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.photo",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Photo:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-holy-see-says-postoperative-tests-are-within-the-expecte",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "The Holy See says postoperative tests are within the expected range. Pope Leo has begun walking in his room and has resumed eating normally. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "home.latest-news.via-wikimedia-commons",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-webp-derivative-is-shared-under-the-same-license",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "The WebP derivative is shared under the same license.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.catholics-pray-for-pope-leo-at-gemelli",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "Catholics pray for Pope Leo at Gemelli",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.photo",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Photo:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "Cardinal Baldassarre Reina led the evening Rosary in the hospital chapel as Catholics prayed for the Pope. Context photo: the Sacro Cuore church at Gemelli, not the Rosary itself. Photo: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; resized to WebP.",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "home.latest-news.via-wikimedia-commons",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-webp-derivative-is-shared-under-the-same-license",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > span:nth-of-type(3)",
+      "source": "The WebP derivative is shared under the same license.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.emmitsburg-celebrates-nine-years-of-saint-sharbel-s-shrine",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > span:nth-of-type(1)",
+      "source": "Emmitsburg celebrates nine years of Saint Sharbel's shrine",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.photo",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > span:nth-of-type(2)",
+      "source": "Photo:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.national-shrine-grotto-emmitsburg-2015-venue-context-not-the",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": "National Shrine Grotto, Emmitsburg, 2015. Venue context, not the 2026 celebration. Photo: Bohemian Baltimore, CC BY-SA 4.0; resized to WebP.",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "home.latest-news.via-wikimedia-commons",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-webp-derivative-is-shared-under-the-same-license",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > span:nth-of-type(3)",
+      "source": "The WebP derivative is shared under the same license.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-doctor-who-investigated-a-st-charbel-healing-speaks",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > span:nth-of-type(1)",
+      "source": "The doctor who investigated a St. Charbel healing speaks",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.photo",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > span:nth-of-type(2)",
+      "source": "Photo:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.historic-saint-charbel-portrait-public-domain-not-a-photograph",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": "Traditional portrait of Saint Charbel; not a photograph of Dr. Borik.",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "home.latest-news.via-wikimedia-commons",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.an-american-priest-walks-the-st-charbel-trail",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6) > span:nth-of-type(1)",
+      "source": "An American priest walks the St. Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.photo",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6) > span:nth-of-type(2)",
+      "source": "Photo:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.context-photo-the-monastery-of-saint-charbel-in-annaya",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6)",
+      "source": "Context photo: the monastery of Saint Charbel in Annaya, not the trail itself. Photo: LLEW, Wikimedia Commons, CC BY-SA 4.0; cropped and converted to WebP.",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "home.latest-news.via-wikimedia-commons",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.latest-news.the-webp-derivative-is-shared-under-the-same-license",
+      "selector": "#latest-news > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6) > span:nth-of-type(3)",
+      "source": "The WebP derivative is shared under the same license.",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1177,13 +1394,6 @@
       "key": "home.accessibility.saint-charbel-makhlouf-the-traditional-hooded-portrait",
       "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4) > span:nth-of-type(1) > img:nth-of-type(1)",
       "source": "Saint Charbel Makhlouf, the traditional hooded portrait",
-      "kind": "attribute",
-      "attribute": "alt"
-    },
-    {
-      "key": "home.accessibility.pilgrims-on-the-saint-charbel-trail-photo-courtesy-of",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(5) > span:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC",
       "kind": "attribute",
       "attribute": "alt"
     },
@@ -1911,7 +2121,6 @@
     "home.latest-news.historic-saint-charbel-portrait-public-domain-not-a-photograph": "Traditional portrait of Saint Charbel; not a photograph of Dr. Borik.",
     "home.latest-news.august-23-2026": "August 23, 2026",
     "home.latest-news.an-american-priest-walks-the-st-charbel-trail": "An American priest walks the St. Charbel Trail",
-    "home.latest-news.photo-courtesy-of-father-michael-sliney-lc": "Photo courtesy of Father Michael Sliney, LC.",
     "home.home-gallery.gallery": "Gallery",
     "home.home-gallery.see-how-he-may-have-looked": "See how he may have looked",
     "home.home-gallery.an-imagined-portrait-of-saint-charbel-an-artistic-rendition": "An imagined portrait of Saint Charbel. An artistic rendition made with AI, not a photograph and not a historical record.",
@@ -2006,7 +2215,6 @@
     "home.accessibility.saint-charbel-at-a-glance": "Saint Charbel at a glance",
     "home.accessibility.the-stone-lourdes-grotto-at-the-national-shrine-in": "The stone Lourdes grotto at the National Shrine in Emmitsburg with visitors and statues",
     "home.accessibility.saint-charbel-makhlouf-the-traditional-hooded-portrait": "Saint Charbel Makhlouf, the traditional hooded portrait",
-    "home.accessibility.pilgrims-on-the-saint-charbel-trail-photo-courtesy-of": "Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC",
     "home.accessibility.ai-transformation-not-a-photograph-saint-charbel-in-a": "AI transformation, not a photograph: Saint Charbel in a black cap and heavy black robe, eyes lowered, dark beard with a grey center streak, against a plain stone-colored wall",
     "home.accessibility.the-21st-and-22nd-of-every-month": "The 21st and 22nd of every month",
     "home.accessibility.the-church-and-monastery-of-saint-maron-at-annaya": "The church and monastery of Saint Maron at Annaya on a terraced mountainside in winter, with a bell tower and a red-tiled roof",
@@ -2101,6 +2309,12 @@
     "home.saintDay.2026-10-19.infoCta": "Read about the Canadian Martyrs",
     "home.saintDay.2026-10-19.sourceLabel": "Feast source: Vatican News saints calendar",
     "home.latest-news.pope-leo-s-recovery-is-progressing-normally": "Pope Leo's recovery is progressing normally",
-    "home.latest-news.the-holy-see-says-postoperative-tests-are-within-the-expecte": "The Holy See says postoperative tests are within the expected range. Pope Leo has begun walking in his room and has resumed eating normally. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP."
+    "home.latest-news.the-holy-see-says-postoperative-tests-are-within-the-expecte": "The Holy See says postoperative tests are within the expected range. Pope Leo has begun walking in his room and has resumed eating normally. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0; resized to WebP.",
+    "home.accessibility.pilgrims-at-the-entrance-of-the-monastery-of-saint-charbel": "Pilgrims at the entrance of the monastery of Saint Charbel in Annaya, Lebanon",
+    "home.latest-news.context-photo-the-monastery-of-saint-charbel-in-annaya": "Context photo: the monastery of Saint Charbel in Annaya, not the trail itself. Photo: LLEW, Wikimedia Commons, CC BY-SA 4.0; cropped and converted to WebP.",
+    "home.latest-news.sources-and-photo-credits": "Sources and photo credits",
+    "home.latest-news.photo": "Photo:",
+    "home.latest-news.via-wikimedia-commons": "via Wikimedia Commons",
+    "home.latest-news.the-webp-derivative-is-shared-under-the-same-license": "The WebP derivative is shared under the same license."
   }
 }
