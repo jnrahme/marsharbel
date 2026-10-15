@@ -1,100 +1,6 @@
 {
   "version": 1,
   "groups": {
-    "annaya-master": {
-      "sourceRevision": "78cde58d08fec465be0014893e9c0ca6cf7d5e89",
-      "renderedReviewStatus": "approved",
-      "catalogReview": "parent-report-2026-10-05T23:51:22-524d6a70",
-      "renderedReview": "parent-report-2026-10-05T23:51:22-524d6a70",
-      "variants": {
-        "en": {
-          "file": "visit-annaya.html",
-          "path": "/visit-annaya",
-          "bodySha256": "2ad6f1e229450a799c91fa49f51177a1b28a1b6203655ba32ee6ccd7bc408518",
-          "candidateFileSha256": "0d84b9b063de9a51f10d9c920ca7a9319d327bf820604b5e9b79b3973bd11588"
-        },
-        "ar": {
-          "file": "ar/annaya.html",
-          "path": "/ar/annaya",
-          "bodySha256": "aee2f8c3b924f340bb346e54bd0e65aa72b87935026ede205b6514cc71405cab",
-          "candidateFileSha256": "c7ce3db0b6de83c4662c6fd9f9d6a5de9c5f75a9c5a7dbf7f57206b3de789d11",
-          "catalog": "locales/ar/annaya-master-copy.json",
-          "catalogSha256": "a457f50bdaa661456538b1c117fd3d45d94059489498947f9ab9f8be2820d67e"
-        },
-        "fr": {
-          "file": "fr/annaya.html",
-          "path": "/fr/annaya",
-          "bodySha256": "17e25660575122e8216a9e91133fda2b3668b3d938c4f53a7221e48a4c4bfb9d",
-          "candidateFileSha256": "e2e69d39a65a1eb5460b880609df410fc23937b8a043f030d7c4a1c4a2c763f9",
-          "catalog": "locales/fr/annaya-master-copy.json",
-          "catalogSha256": "b9497435d89cd47820cdb11d056721576b81e29165db97f70e96cee1b8cfdea9"
-        },
-        "es": {
-          "file": "es/annaya.html",
-          "path": "/es/annaya",
-          "bodySha256": "bba4ce3a099af581b346345fe8a09442c4daf8e8e52839fae0a72ebd1b20eff9",
-          "candidateFileSha256": "b907d1919bd76571998fbbb54ba9d46b691ea4c287536f89b91af8a6bed4b245",
-          "catalog": "locales/es/annaya-master-copy.json",
-          "catalogSha256": "cc7a4dad7b4dfd4252a842a681927acd919eea93498c9fb3518f86533ba162eb"
-        },
-        "pt": {
-          "file": "pt/annaya.html",
-          "path": "/pt/annaya",
-          "bodySha256": "0e1ce753dc19b6a73d3649667106e2debb7c4f8487e9b9069b1641bd4db2ea81",
-          "candidateFileSha256": "8616e4b5be41219a2977e10a4770f13b5f811d5e40d7fcc329da9ef7f625ffef",
-          "catalog": "locales/pt/annaya-master-copy.json",
-          "catalogSha256": "faf83808d02967228f591313a9a5f4355e3c3f39f68d0f57b5287c3b9d3c6d67"
-        },
-        "it": {
-          "file": "it/annaya.html",
-          "path": "/it/annaya",
-          "bodySha256": "10adde7756a9f96e351a3522be85d1a975c39245accfa379926fb4e7f4187e7d",
-          "candidateFileSha256": "36d0518e6ea65fa67c43e088570dd3241de1bc3cef897133e82b5a60d7900535",
-          "catalog": "locales/it/annaya-master-copy.json",
-          "catalogSha256": "3a17984827c7a9dee80f03989cb133c21a16dc4fb8708b8301d029a7d76feca3"
-        },
-        "de": {
-          "file": "de/annaya.html",
-          "path": "/de/annaya",
-          "bodySha256": "7c54d6d9e2ad4d3c306bf219d07821334f750407dfe38ba557263774e2b31559",
-          "candidateFileSha256": "8df793aaa5edf89336831d13b5e0acdc2ff422a7f4b71b2a64e559a5cf5cf944",
-          "catalog": "locales/de/annaya-master-copy.json",
-          "catalogSha256": "84daaf3a0b76e5602385dcdb14a803930a6a1805c31b4bdfcda71e199552c3cb"
-        },
-        "pl": {
-          "file": "pl/annaya.html",
-          "path": "/pl/annaya",
-          "bodySha256": "45d396aa12d9cbb2a210f1db05025c04be56e11a95f69ecf8c661ac862e54ce2",
-          "candidateFileSha256": "1c00f68da193fa29b2f3cc3d22907bb629b1fc8524e69e94a93d0715c82703f5",
-          "catalog": "locales/pl/annaya-master-copy.json",
-          "catalogSha256": "422fc6aaa17a7b442bf245b5737f8b5b9e9a0fcb144b666807f55873f9808b92"
-        },
-        "ru": {
-          "file": "ru/annaya.html",
-          "path": "/ru/annaya",
-          "bodySha256": "e4b405a104e118d2d8e418b823b673cdfe8a0a42515d522fd3babaa30618c861",
-          "candidateFileSha256": "ea0eec571c48318fc5ca99b9f96e773e182b4c8068b79d06afa562eedc22184b",
-          "catalog": "locales/ru/annaya-master-copy.json",
-          "catalogSha256": "e888ddfec659aadc2c4f0813d2e2b739b916b15ecb9cf13765c6530512967adf"
-        }
-      },
-      "boundedReviewAmendments": [
-        {
-          "locale": "de",
-          "scope": "href-only six exact DE Travel twins; anchor text identical",
-          "beforeBodySha256": "28f247dba6c3ba2c833d85d20fb7d36aed49696befaf5071e2ded933dd4161ae",
-          "afterBodySha256": "7c54d6d9e2ad4d3c306bf219d07821334f750407dfe38ba557263774e2b31559",
-          "review": "parent seat1 bounded content PASS 2026-10-08T02:06:18-04:00",
-          "deployTogether": true,
-          "englishNoTwinExceptions": [
-            "/st-nimatullah",
-            "/st-rafqa",
-            "/maronite-history",
-            "/news"
-          ]
-        }
-      ]
-    },
     "twenty-second-master": {
       "sourceRevision": "78cde58d08fec465be0014893e9c0ca6cf7d5e89",
       "renderedReviewStatus": "approved",
@@ -978,7 +884,101 @@
           "catalogSha256": "c69e98a6950847cbbef411f6d57d8308244ddcfaf40c9c92a4c835bb21ff0b18"
         }
       }
+    },
+    "annaya-master": {
+      "sourceRevision": "78cde58d08fec465be0014893e9c0ca6cf7d5e89",
+      "renderedReviewStatus": "approved",
+      "catalogReview": "parent-report-2026-10-05T23:51:22-524d6a70",
+      "renderedReview": "parent-report-2026-10-05T23:51:22-524d6a70",
+      "variants": {
+        "en": {
+          "file": "visit-annaya.html",
+          "path": "/visit-annaya",
+          "bodySha256": "5bcff5c6396aedaf691b63af3c3f5b72c3d085aed1d070749ff988cb1cc48b44",
+          "candidateFileSha256": "0d84b9b063de9a51f10d9c920ca7a9319d327bf820604b5e9b79b3973bd11588"
+        },
+        "ar": {
+          "file": "ar/annaya.html",
+          "path": "/ar/annaya",
+          "bodySha256": "8384d4fc27bb508634348af1671e71944daaee564c0ac129e64e361f99013d06",
+          "candidateFileSha256": "c7ce3db0b6de83c4662c6fd9f9d6a5de9c5f75a9c5a7dbf7f57206b3de789d11",
+          "catalog": "locales/ar/annaya-master-copy.json",
+          "catalogSha256": "542428c6db2c831367c93b8ea94dcd5fe53900dd9eab56ca2e65ab1049b509c7"
+        },
+        "fr": {
+          "file": "fr/annaya.html",
+          "path": "/fr/annaya",
+          "bodySha256": "d6cf672c5b103682f98e66fd01ddcfcdbbed9ea0944438605c08812013428e2a",
+          "candidateFileSha256": "e2e69d39a65a1eb5460b880609df410fc23937b8a043f030d7c4a1c4a2c763f9",
+          "catalog": "locales/fr/annaya-master-copy.json",
+          "catalogSha256": "81527eecf706dd3703f30b473ee009796b1b1b20eb24547877ff737e15033153"
+        },
+        "es": {
+          "file": "es/annaya.html",
+          "path": "/es/annaya",
+          "bodySha256": "e716f4c14280f8115652f02b9e051783b487863a23a848e1f9feaf912ca36ad8",
+          "candidateFileSha256": "b907d1919bd76571998fbbb54ba9d46b691ea4c287536f89b91af8a6bed4b245",
+          "catalog": "locales/es/annaya-master-copy.json",
+          "catalogSha256": "bdbf7e613d51bf46426b5e810494d2238ee1799dda79ba63af46967cb8bade91"
+        },
+        "pt": {
+          "file": "pt/annaya.html",
+          "path": "/pt/annaya",
+          "bodySha256": "4ef03023f664c66f8046e805282ce3cc9beee3ad85fccdf7443998eb0e9a6a12",
+          "candidateFileSha256": "8616e4b5be41219a2977e10a4770f13b5f811d5e40d7fcc329da9ef7f625ffef",
+          "catalog": "locales/pt/annaya-master-copy.json",
+          "catalogSha256": "99e6a1c2a1493b63146341523cfc65b8381115be875a51678597e90edcc8401c"
+        },
+        "it": {
+          "file": "it/annaya.html",
+          "path": "/it/annaya",
+          "bodySha256": "2788cd41e543098f6b54eff083ab60a0c909ad79052c9c025d86d182f09c349d",
+          "candidateFileSha256": "36d0518e6ea65fa67c43e088570dd3241de1bc3cef897133e82b5a60d7900535",
+          "catalog": "locales/it/annaya-master-copy.json",
+          "catalogSha256": "20a92f90854511a9144fad4a483fb36f0821a016df3afeddc08e344c2a26de53"
+        },
+        "de": {
+          "file": "de/annaya.html",
+          "path": "/de/annaya",
+          "bodySha256": "297563132ffb5d31940297bccef7fcb7fbe72149dda2ea49bf92ff7c8b5d7142",
+          "candidateFileSha256": "8df793aaa5edf89336831d13b5e0acdc2ff422a7f4b71b2a64e559a5cf5cf944",
+          "catalog": "locales/de/annaya-master-copy.json",
+          "catalogSha256": "3dedd7d486674b9f4845dfcb696d06650c7881adea81680341078a7d31a15814"
+        },
+        "pl": {
+          "file": "pl/annaya.html",
+          "path": "/pl/annaya",
+          "bodySha256": "a3228148fc847ed0f77bcd558f467f9d71a5e90640e220d06982da9518f7e4c4",
+          "candidateFileSha256": "1c00f68da193fa29b2f3cc3d22907bb629b1fc8524e69e94a93d0715c82703f5",
+          "catalog": "locales/pl/annaya-master-copy.json",
+          "catalogSha256": "5ff4178d90dee7aeb78eabaaf7ef33eed90cb2532bd89756fc5a845a57b65beb"
+        },
+        "ru": {
+          "file": "ru/annaya.html",
+          "path": "/ru/annaya",
+          "bodySha256": "dc709e661d64983f8f1773db86e563c097575a8228d225657d065665518a714a",
+          "candidateFileSha256": "ea0eec571c48318fc5ca99b9f96e773e182b4c8068b79d06afa562eedc22184b",
+          "catalog": "locales/ru/annaya-master-copy.json",
+          "catalogSha256": "e61f228dd452de499e732105621c12f00e71680050d3a93982b590039c037a97"
+        }
+      },
+      "boundedReviewAmendments": [
+        {
+          "locale": "de",
+          "scope": "href-only six exact DE Travel twins; anchor text identical",
+          "beforeBodySha256": "28f247dba6c3ba2c833d85d20fb7d36aed49696befaf5071e2ded933dd4161ae",
+          "afterBodySha256": "7c54d6d9e2ad4d3c306bf219d07821334f750407dfe38ba557263774e2b31559",
+          "review": "parent seat1 bounded content PASS 2026-10-08T02:06:18-04:00",
+          "deployTogether": true,
+          "englishNoTwinExceptions": [
+            "/st-nimatullah",
+            "/st-rafqa",
+            "/maronite-history",
+            "/news"
+          ]
+        }
+      ]
     }
   },
-  "repinNote": "pilgrimage-master re-pinned 2026-10-15: Batch 1 photo provenance fix replaces the two externally credited Wikimedia figures (hero aerial, tomb) with owner-granted Order photos from saintcharbel.com and strips the credit line from captions in all 9 reviewed locales; candidateFileSha256 pins and rendered review of the new bytes are pending. Previous note: pl twenty-second body re-pinned 2026-10-07: accuracy fix adds the Polish 28 July memorial next to the universal 24 July date (KEP via Radio Nadzieja/KAI 2020-07-28; kosciol.wiara.pl corroboration). Rendered review of the new bytes is pending. Previous note: ru travel bodies re-pinned after links to /ru/molitvy and /ru/novena were added (link hrefs only). Rendered review of the new bytes is pending."
+  "repinNote": "annaya-master re-pinned 2026-10-15: Batch 1 photo provenance fix replaces the credited courtyard statue hero with an owner-granted Order courtyard-dusk photo and strips the credit from captions in all reviewed locales; rendered review of the new bytes is pending. pilgrimage-master re-pinned 2026-10-15: Batch 1 photo provenance fix replaces the two externally credited Wikimedia figures (hero aerial, tomb) with owner-granted Order photos from saintcharbel.com and strips the credit line from captions in all 9 reviewed locales; candidateFileSha256 pins and rendered review of the new bytes are pending. Previous note: pl twenty-second body re-pinned 2026-10-07: accuracy fix adds the Polish 28 July memorial next to the universal 24 July date (KEP via Radio Nadzieja/KAI 2020-07-28; kosciol.wiara.pl corroboration). Rendered review of the new bytes is pending. Previous note: ru travel bodies re-pinned after links to /ru/molitvy and /ru/novena were added (link hrefs only). Rendered review of the new bytes is pending."
 }

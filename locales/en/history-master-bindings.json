@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "history.html",
-  "masterSha256": "4774cebdb5595c6eb0057d41682bd9d8077882bd98a90be28db9b92600837122",
+  "masterSha256": "31bdc7500390d28e7b7d26e502921779e97f95876e1d8d875646b5463f4d098b",
   "sourceRevision": "817a009",
   "bindings": [
     {
@@ -726,34 +726,6 @@
       "nodeIndex": 0
     },
     {
-      "key": "history.section.photo-paul-saad",
-      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "Photo: Paul Saad,",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "history.section.wikimedia-commons",
-      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(1) > a:nth-of-type(1)",
-      "source": "Wikimedia Commons",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "history.section.cc-by-sa-4-0",
-      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(1) > a:nth-of-type(2)",
-      "source": "CC BY-SA 4.0",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "history.section.resized",
-      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "(resized).",
-      "kind": "text",
-      "nodeIndex": 4
-    },
-    {
       "key": "history.section.study",
       "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > h3:nth-of-type(3)",
       "source": "Study",
@@ -1018,34 +990,6 @@
       "source": "The tomb of Saint Charbel in the monastery church at Annaya.",
       "kind": "text",
       "nodeIndex": 0
-    },
-    {
-      "key": "history.tomb.photo-llew",
-      "selector": "#tomb > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "Photo: LLEW,",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "history.tomb.wikimedia-commons",
-      "selector": "#tomb > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(1) > a:nth-of-type(1)",
-      "source": "Wikimedia Commons",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "history.tomb.cc-by-sa-4-0",
-      "selector": "#tomb > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(1) > a:nth-of-type(2)",
-      "source": "CC BY-SA 4.0",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "history.tomb.resized",
-      "selector": "#tomb > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "(resized).",
-      "kind": "text",
-      "nodeIndex": 4
     },
     {
       "key": "history.tomb.reported-light",
@@ -1783,9 +1727,9 @@
       "attribute": "alt"
     },
     {
-      "key": "history.accessibility.the-church-and-monastery-of-saint-maron-at-annaya",
+      "key": "history.accessibility.the-monastery-of-saint-maron-at-annaya-at-night-the-church-a",
       "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "The church and monastery of Saint Maron at Annaya, a stone complex with a bell tower and red-tiled roof on a terraced mountainside",
+      "source": "The monastery of Saint Maron at Annaya at night, the church and monastic buildings lit above the valley",
       "kind": "attribute",
       "attribute": "alt"
     },
@@ -1797,9 +1741,9 @@
       "attribute": "alt"
     },
     {
-      "key": "history.accessibility.a-carved-wooden-tomb-chest-inside-a-stone-vaulted",
+      "key": "history.accessibility.the-tomb-of-saint-charbel-in-the-monastery-church-at-annaya",
       "selector": "#tomb > div:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "A carved wooden tomb chest inside a stone-vaulted chapel at Annaya, with a hanging oil lamp and a framed portrait of Saint Charbel on the wall behind it",
+      "source": "The tomb of Saint Charbel in the monastery church at Annaya, his portrait above the shrine",
       "kind": "attribute",
       "attribute": "alt"
     },
@@ -1993,7 +1937,6 @@
     "history.section.in-one-minute": "In one minute",
     "history.section.the-best-known-photograph-of-saint-charbel-taken-before": "The best-known photograph of Saint Charbel, taken before 1898.",
     "history.section.photographer-unknown-public-domain-per": "Photographer unknown; public domain per",
-    "history.section.wikimedia-commons": "Wikimedia Commons",
     "history.section.he-wrote-nothing-that-survives-he-held-no-office": "He wrote nothing that survives. He held no office and founded nothing, and he spent the last 23 years of his life in a stone hermitage above a mountain monastery. The Church did not honor him for a program. It honored a life lived inside three vows (poverty, chastity and obedience), a daily Mass and silence.",
     "history.section.paul-vi-said-so-directly-in-1977-in-the": "Paul VI said so directly in 1977, in the canonization homily: the life is hard, and the key to it is the search for conformity to the humble and poor Christ, with the Mass at the center.",
     "history.world.1-the-world-he-was-born-into-1828-1851": "1. The world he was born into (1828-1851)",
@@ -2014,9 +1957,6 @@
     "history.section.vows": "Vows",
     "history.section.his-novitiate-began-at-mayfouq-and-continued-at-the": "His novitiate began at Mayfouq and continued at the Monastery of Saint Maron at Annaya. On November 1, 1853, at Mass, with the superior, novice master and community present, he made his vows of obedience, chastity and poverty until death. Families and the public were not admitted.",
     "history.section.the-monastery-of-saint-maron-at-annaya-where-charbel": "The Monastery of Saint Maron at Annaya, where Charbel made his vows and lived for most of his adult life.",
-    "history.section.photo-paul-saad": "Photo: Paul Saad,",
-    "history.section.cc-by-sa-4-0": "CC BY-SA 4.0",
-    "history.section.resized": "(resized).",
     "history.section.study": "Study",
     "history.section.he-was-then-sent-to-the-monastery-of-saints": "He was then sent to the Monastery of Saints Cyprian and Justina at Kfifan, the Order's main school of theology, for philosophy and theology (about six years, to 1859). One of his teachers there was Nimatullah Kassab Al-Hardini, a reforming monk who became his spiritual guide.",
     "history.section.saint-nimatullah": "Saint Nimatullah",
@@ -2055,10 +1995,6 @@
     "history.death.according-to-mari-the-only-authenticated-document-in-the": "According to MARI, the only authenticated document in the monastery archive about his life is the death entry. It was written by the superior, Father Antonios Mishmeshani, who had been away at the Patriarchate and came back to find Charbel dead. He wrote that he would not give details of his life \"because of what he is going to accomplish after his death\", and that his obedience was \"angelic and not human\". The entry gives his age as 68. Counting from 1828 gives 70, the figure Paul VI used. We print 70 and note the difference.",
     "history.tomb.5-the-tomb-1899-onward": "5. The tomb (1899 onward)",
     "history.tomb.the-tomb-of-saint-charbel-in-the-monastery-church": "The tomb of Saint Charbel in the monastery church at Annaya.",
-    "history.tomb.photo-llew": "Photo: LLEW,",
-    "history.tomb.wikimedia-commons": "Wikimedia Commons",
-    "history.tomb.cc-by-sa-4-0": "CC BY-SA 4.0",
-    "history.tomb.resized": "(resized).",
     "history.tomb.reported-light": "Reported light.",
     "history.tomb.monks-and-villagers-reported-a-light-over-the-grave": "Monks and villagers reported a light over the grave after the burial. The Order's accounts say it drew attention, including from an Ottoman patrol, and the superior asked the Church authorities for leave to open the grave. This is reported tradition, and we label it as such.",
     "history.tomb.april-1899": "April 1899.",
@@ -2163,17 +2099,18 @@
     "history.accessibility.primary": "Primary",
     "history.accessibility.old-black-and-white-portrait-photograph-of-saint-charbel": "Old black-and-white portrait photograph of Saint Charbel in a monk's habit and hood",
     "history.accessibility.snow-covered-stone-houses-of-bekaa-kafra-on-a": "Snow-covered stone houses of Bekaa Kafra on a mountain slope under a grey winter sky, with bare trees in the foreground",
-    "history.accessibility.the-church-and-monastery-of-saint-maron-at-annaya": "The church and monastery of Saint Maron at Annaya, a stone complex with a bell tower and red-tiled roof on a terraced mountainside",
     "history.accessibility.the-front-of-a-stone-building-topped-by-a": "The front of a stone building topped by a small white cross, with a low doorway, standing between two tall cedar trees on a paved courtyard",
-    "history.accessibility.a-carved-wooden-tomb-chest-inside-a-stone-vaulted": "A carved wooden tomb chest inside a stone-vaulted chapel at Annaya, with a hanging oil lamp and a framed portrait of Saint Charbel on the wall behind it",
     "history.accessibility.languages": "Languages",
     "history.accessibility.skip-to-main-content": "Skip to main content",
     "history.metadata.saint-charbel-makhlouf-full-life-timeline-and-canonization-1828": "Saint Charbel Makhlouf: Full Life, Timeline and Canonization (1828-1977)",
     "history.metadata.the-full-story-of-saint-charbel-bekaa-kafra-16": "The full story of Saint Charbel: Bekaa Kafra, 16 years in community, 23 as a hermit at Annaya, the tomb, and sainthood. Dated and sourced.",
-  "history.header.gallery": "Gallery",
-  "history.visit.heading": "Visiting Annaya",
-  "history.table.facts.scroll-label": "At a glance: table, scroll horizontally to see all columns",
-  "history.table.cause.scroll-label": "Canonization: table, scroll horizontally to see all columns",
-  "history.table.status.scroll-label": "Documents and tradition: table, scroll horizontally to see all columns"
+    "history.visit.heading": "Visiting Annaya",
+    "history.table.facts.scroll-label": "At a glance: table, scroll horizontally to see all columns",
+    "history.table.cause.scroll-label": "Canonization: table, scroll horizontally to see all columns",
+    "history.table.status.scroll-label": "Documents and tradition: table, scroll horizontally to see all columns",
+    "history.header.gallery": "Gallery",
+    "history.accessibility.the-monastery-of-saint-maron-at-annaya-at-night-the-church-a": "The monastery of Saint Maron at Annaya at night, the church and monastic buildings lit above the valley",
+    "history.accessibility.the-tomb-of-saint-charbel-in-the-monastery-church-at-annaya": "The tomb of Saint Charbel in the monastery church at Annaya, his portrait above the shrine",
+    "history.section.wikimedia-commons": "Wikimedia Commons"
   }
 }
