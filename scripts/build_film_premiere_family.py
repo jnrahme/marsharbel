@@ -66,7 +66,19 @@ def render_locale(root, registry, code):
 def outputs(root=ROOT):
     registry = json.loads((root / 'locales/registry.json').read_text())
     cfg = registry['pageMirrors'][FAMILY]
-    return dict(render_locale(root, registry, code) for code in cfg['renderLocales'])
+    result = dict(render_locale(root, registry, code) for code in cfg['renderLocales'])
+    # Own the final bytes: page_mirror families embed the runtime dictionary and
+    # same-page controls themselves, so the international build's postprocess
+    # pass (build-international.py) is a no-op on these pages.
+    from i18n.catalog import read_json
+    from i18n.runtime_labels import ensure_runtime_labels
+    from i18n.same_page_injection import control_outputs
+    manifest = read_json(root / 'locales/same-page-manifest.pending.json')
+    control_copy = read_json(root / 'locales/same-page-copy.json')
+    for path, text in list(result.items()):
+        result[path] = ensure_runtime_labels(text, root, path.parent.name, registry)
+    result.update(control_outputs(root, result, manifest, control_copy))
+    return result
 
 def main():
     parser = argparse.ArgumentParser(); parser.add_argument('--check', action='store_true'); args = parser.parse_args()
