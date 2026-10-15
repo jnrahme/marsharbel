@@ -2528,6 +2528,11 @@ main .grid-2>.card,main .grid-2>.story,main .grid-2>.practice,main .grid-2>.upda
   max-width: 100%;
 }
 
+/* English qualifier inside a flex nav-parent: the source space is a
+   whitespace-only flex item and gets dropped, so the qualifier butts against
+   the chevron (most visible at 200% zoom). Margin survives flex. */
+.nav-group .nav-parent > .enc-language { margin-inline-start: .25em; }
+
 /* Keep anchor/scroll targets clear of the sticky top bar (site-wide) */
 main[id], main [id], main section, main h1, main h2, main h3 {
   scroll-margin-top: 112px;
