@@ -1,12 +1,28 @@
 {
-  "status": "local implementation preparation; NOT final successor review/CI/deploy proof",
-  "base": "6cf7e5b75049f6e2003211b09698d5acfe4305a6",
-  "workflow_sha256": "703b9703c519a62678658620bfdad30b9af810f0fe4386a4317e18270c49e6b9",
-  "tests": 38,
-  "lint": "actionlint1.7.12 -shellcheck= -pyflakes= clean; embedded Python compile and helper extraction/tamper controls PASS",
-  "source_only_file": ".github/workflows/deploy-stage.yml",
-  "pending": "actual post-817 tip, refreshed inventory, source review, PR CI, first real stage execution",
   "label": "DUPLICATE-QA REDUCTION ONLY; cancellation unchanged",
-  "repair": "selected list run ID == current fetched run ID; coherent stale alternative run/attempt/jobs control rejects explicitly",
-  "closing_stage_rechecks": "after wait stable; after prescan stable; after postscan stable before receipt"
+  "candidate_sha": "5ba320cc865ed1545c26957ec34c5e4457673921",
+  "base_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+  "base_tree": "4f5259095bec44f516e24cd09d6ab3d2c865fc0c",
+  "workflow_sha256": "703b9703c519a62678658620bfdad30b9af810f0fe4386a4317e18270c49e6b9",
+  "historical_source_test_claim": {
+    "observed_at": "2026-10-15T07:24:30-04:00",
+    "actual_logic_fixture_tests": 38,
+    "verifier_tests": 20,
+    "command_selections": 138,
+    "exact_union": true,
+    "i18n_index": 62,
+    "scope": "source/local tests, not PR CI or deployed workflow proof"
+  },
+  "latest_stage_reconciliation": {
+    "observed_at": "2026-10-15T11:25:01.980293+00:00",
+    "sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+    "claim": "GitHub stage ref only; not public site byte verification"
+  },
+  "pending": [
+    "independent source review",
+    "PR creation",
+    "exact-head PR CI",
+    "authorized merge",
+    "first real admission run and raw receipts"
+  ]
 }

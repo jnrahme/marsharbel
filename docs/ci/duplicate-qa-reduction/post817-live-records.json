@@ -1,0 +1,3326 @@
+{
+  "historical_exact_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+  "historical_record_read_at": "2026-10-15T11:24:58.440110+00:00",
+  "runs": [
+    {
+      "workflow": "qa.yml",
+      "run": {
+        "id": 38723904134,
+        "name": "QA",
+        "node_id": "WFR_kwLORe2kEc8AAAAJBB_ihg",
+        "head_branch": "stage",
+        "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+        "path": ".github/workflows/qa.yml",
+        "display_title": "Saint Charbel medal guide - full 12-locale family, home card, film sl\u2026",
+        "run_number": 2892,
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "workflow_id": 241818046,
+        "check_suite_id": 104935514030,
+        "check_suite_node_id": "CS_kwDORe2kEc8AAAAYbqTfrg",
+        "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+        "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134",
+        "pull_requests": [],
+        "created_at": "2026-10-15T10:57:22Z",
+        "updated_at": "2026-10-15T11:05:40Z",
+        "actor": {
+          "login": "jnrahme",
+          "id": 11262696,
+          "node_id": "MDQ6VXNlcjExMjYyNjk2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/jnrahme",
+          "html_url": "https://github.com/jnrahme",
+          "followers_url": "https://api.github.com/users/jnrahme/followers",
+          "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+          "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+          "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+          "repos_url": "https://api.github.com/users/jnrahme/repos",
+          "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "run_attempt": 1,
+        "referenced_workflows": [],
+        "run_started_at": "2026-10-15T10:57:22Z",
+        "triggering_actor": {
+          "login": "jnrahme",
+          "id": 11262696,
+          "node_id": "MDQ6VXNlcjExMjYyNjk2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/jnrahme",
+          "html_url": "https://github.com/jnrahme",
+          "followers_url": "https://api.github.com/users/jnrahme/followers",
+          "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+          "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+          "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+          "repos_url": "https://api.github.com/users/jnrahme/repos",
+          "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "jobs_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134/jobs",
+        "logs_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134/logs",
+        "check_suite_url": "https://api.github.com/repos/jnrahme/marsharbel/check-suites/104935514030",
+        "artifacts_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134/artifacts",
+        "cancel_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134/cancel",
+        "rerun_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134/rerun",
+        "previous_attempt_url": null,
+        "workflow_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/workflows/241818046",
+        "head_commit": {
+          "id": "136de2bd3507066d8f33af564fc49483eacae9fa",
+          "tree_id": "4f5259095bec44f516e24cd09d6ab3d2c865fc0c",
+          "message": "Saint Charbel medal guide - full 12-locale family, home card, film slot (#817)\n\n* feat(content): Saint Charbel medal guide EN master (sacramental teaching page)\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* feat(content): Saint Charbel medal guide - 11 locale twins, i18n capability grants, FAQ schema removal\n\n- Words-only mirrors of the doctrinally reviewed EN master in ar, de, es,\n  fr, hi, it, pl, pt, ru, th, zh-Hans (110 keys each, EN key order,\n  placeholder parity; 57 chrome reuse + 53 authored per locale)\n- CCC 1667/1669/1670/1674 quotes sourced per locale: official Vatican\n  texts (ar/de/es/fr/it/pl/pt/ru), Traditional->Simplified conversion (zh);\n  hi/th agent-translated, flagged for native review\n- zh-Hans capability grant: medal family added to PRAYER_FAMILIES,\n  mirrorTabs = travel/film/prayers; checkpoint tests updated\n  (partial-locale, limited-launch, probe counts 18->19)\n- locale-mirror-policy: 11 strict twins with launch-availability-annotations\n  and english-nav-disclosure normalizers (+ partial-home-disclosure zh-Hans)\n- Schema-only FAQ JSON-LD fragment removed (no visible FAQ section; mirror\n  renderer and Google both require keyed visible content)\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Saint Charbel medal guide: 12-locale family, home card, film slot\n\n- Medal guide EN master + 11 twins; localized Catechism source links\n  (10 locale editions) and per-locale quote provenance\n- Thai keys repaired against the Thai CCC (thaicatechesis.com)\n- Home medal card on all 10 home locales (travel-card pattern, no new\n  chrome); home_mirror repoint routes full-launch cards to locale twins\n- Film-premiere medal note/link slot in all 12 film catalogs (zh-Hans\n  reachability route)\n- Encyclopedia medal card (EN/ar)\n- Commented CI expectation updates; film contract pins recomputed via\n  the family's own validation math\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Scrum fixes: scoped source-links normalizer, card 200% clip, hi disclosure\n\n- localized-source-links: inverse now scoped to the exact registered\n  family+locale; one-to-one mapping enforced; missing/duplicate,\n  wrong-locale, and unregistered citation anchors fail loudly instead of\n  a registry-wide silent reversal; context required through signature()\n- Explicit citation-target assertion in the locale mirror policy test\n  (the structural signature records no hrefs); hi policy entry drops the\n  normalizer (no swap registered) and keeps an identity-target assertion\n- 16 negative controls: apply/inverse/policy rejection paths\n- Home medal card: scoped mobile-track minmax(0,1fr) + copy min-width:0\n  with anywhere wrap - no clipping at 390px/200% root font (EN/DE/AR\n  stress-verified); travel card untouched\n- hi quotation-source disclosure bounded to page-level evidence\n- Film contract pins recomputed from final post-chrome bytes (after the\n  full i18n build, not the intermediate family-builder output)\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Wires test_localized_source_links.py (16 gate controls) into\nrun_full_qa.sh so the unsharded deploy run and the shard union both\nexecute it (scrum #817 wiring fix, cf. #814).\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* es CCC 1670: keep corrected \"con ella\", disclose Vatican typo (scrum ruling)\n\nThe Vatican HTML edition carries a typographical duplication (\"con a\nella\") in CCC 1670; the es quotation keeps the corrected text and the\nSources note now states the correction transparently. Meaning unchanged.\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Home medal card: de-collide selectors (.home-medal-card) + exact-copy i18n catalog\n\n- Medal card gets its own DOM hook (.home-medal-card, section .home-medal);\n  travel card keeps .home-travel-card - fixes strict-mode collisions in\n  hindi-travel-hub, nav_legacy and same-page harness selectors.\n- styles.css groups selectors for shared visuals; 200% rules retargeted.\n- New locales/en/home-medal-copy.json exact-copy catalog (6 strings) and\n  check_i18n_policy catalog list entry - fixes i18n policy failure.\n- home-bindings re-pinned (296/296 selectors verified), manifest regenerated.\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n---------\n\nCo-authored-by: Instinct Agent <agent@instinct.com>",
+          "timestamp": "2026-10-15T10:57:19Z",
+          "author": {
+            "name": "jnrahme",
+            "email": "jnrahme@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com"
+          }
+        },
+        "repository": {
+          "id": 1173201937,
+          "node_id": "R_kgDORe2kEQ",
+          "name": "marsharbel",
+          "full_name": "jnrahme/marsharbel",
+          "private": false,
+          "owner": {
+            "login": "jnrahme",
+            "id": 11262696,
+            "node_id": "MDQ6VXNlcjExMjYyNjk2",
+            "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jnrahme",
+            "html_url": "https://github.com/jnrahme",
+            "followers_url": "https://api.github.com/users/jnrahme/followers",
+            "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+            "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+            "repos_url": "https://api.github.com/users/jnrahme/repos",
+            "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "html_url": "https://github.com/jnrahme/marsharbel",
+          "description": "marcharbel website",
+          "fork": false,
+          "url": "https://api.github.com/repos/jnrahme/marsharbel",
+          "forks_url": "https://api.github.com/repos/jnrahme/marsharbel/forks",
+          "keys_url": "https://api.github.com/repos/jnrahme/marsharbel/keys{/key_id}",
+          "collaborators_url": "https://api.github.com/repos/jnrahme/marsharbel/collaborators{/collaborator}",
+          "teams_url": "https://api.github.com/repos/jnrahme/marsharbel/teams",
+          "hooks_url": "https://api.github.com/repos/jnrahme/marsharbel/hooks",
+          "issue_events_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/events{/number}",
+          "events_url": "https://api.github.com/repos/jnrahme/marsharbel/events",
+          "assignees_url": "https://api.github.com/repos/jnrahme/marsharbel/assignees{/user}",
+          "branches_url": "https://api.github.com/repos/jnrahme/marsharbel/branches{/branch}",
+          "tags_url": "https://api.github.com/repos/jnrahme/marsharbel/tags",
+          "blobs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/blobs{/sha}",
+          "git_tags_url": "https://api.github.com/repos/jnrahme/marsharbel/git/tags{/sha}",
+          "git_refs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/refs{/sha}",
+          "trees_url": "https://api.github.com/repos/jnrahme/marsharbel/git/trees{/sha}",
+          "statuses_url": "https://api.github.com/repos/jnrahme/marsharbel/statuses/{sha}",
+          "languages_url": "https://api.github.com/repos/jnrahme/marsharbel/languages",
+          "stargazers_url": "https://api.github.com/repos/jnrahme/marsharbel/stargazers",
+          "contributors_url": "https://api.github.com/repos/jnrahme/marsharbel/contributors",
+          "subscribers_url": "https://api.github.com/repos/jnrahme/marsharbel/subscribers",
+          "subscription_url": "https://api.github.com/repos/jnrahme/marsharbel/subscription",
+          "commits_url": "https://api.github.com/repos/jnrahme/marsharbel/commits{/sha}",
+          "git_commits_url": "https://api.github.com/repos/jnrahme/marsharbel/git/commits{/sha}",
+          "comments_url": "https://api.github.com/repos/jnrahme/marsharbel/comments{/number}",
+          "issue_comment_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/comments{/number}",
+          "contents_url": "https://api.github.com/repos/jnrahme/marsharbel/contents/{+path}",
+          "compare_url": "https://api.github.com/repos/jnrahme/marsharbel/compare/{base}...{head}",
+          "merges_url": "https://api.github.com/repos/jnrahme/marsharbel/merges",
+          "archive_url": "https://api.github.com/repos/jnrahme/marsharbel/{archive_format}{/ref}",
+          "downloads_url": "https://api.github.com/repos/jnrahme/marsharbel/downloads",
+          "issues_url": "https://api.github.com/repos/jnrahme/marsharbel/issues{/number}",
+          "pulls_url": "https://api.github.com/repos/jnrahme/marsharbel/pulls{/number}",
+          "milestones_url": "https://api.github.com/repos/jnrahme/marsharbel/milestones{/number}",
+          "notifications_url": "https://api.github.com/repos/jnrahme/marsharbel/notifications{?since,all,participating}",
+          "labels_url": "https://api.github.com/repos/jnrahme/marsharbel/labels{/name}",
+          "releases_url": "https://api.github.com/repos/jnrahme/marsharbel/releases{/id}",
+          "deployments_url": "https://api.github.com/repos/jnrahme/marsharbel/deployments"
+        },
+        "head_repository": {
+          "id": 1173201937,
+          "node_id": "R_kgDORe2kEQ",
+          "name": "marsharbel",
+          "full_name": "jnrahme/marsharbel",
+          "private": false,
+          "owner": {
+            "login": "jnrahme",
+            "id": 11262696,
+            "node_id": "MDQ6VXNlcjExMjYyNjk2",
+            "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jnrahme",
+            "html_url": "https://github.com/jnrahme",
+            "followers_url": "https://api.github.com/users/jnrahme/followers",
+            "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+            "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+            "repos_url": "https://api.github.com/users/jnrahme/repos",
+            "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "html_url": "https://github.com/jnrahme/marsharbel",
+          "description": "marcharbel website",
+          "fork": false,
+          "url": "https://api.github.com/repos/jnrahme/marsharbel",
+          "forks_url": "https://api.github.com/repos/jnrahme/marsharbel/forks",
+          "keys_url": "https://api.github.com/repos/jnrahme/marsharbel/keys{/key_id}",
+          "collaborators_url": "https://api.github.com/repos/jnrahme/marsharbel/collaborators{/collaborator}",
+          "teams_url": "https://api.github.com/repos/jnrahme/marsharbel/teams",
+          "hooks_url": "https://api.github.com/repos/jnrahme/marsharbel/hooks",
+          "issue_events_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/events{/number}",
+          "events_url": "https://api.github.com/repos/jnrahme/marsharbel/events",
+          "assignees_url": "https://api.github.com/repos/jnrahme/marsharbel/assignees{/user}",
+          "branches_url": "https://api.github.com/repos/jnrahme/marsharbel/branches{/branch}",
+          "tags_url": "https://api.github.com/repos/jnrahme/marsharbel/tags",
+          "blobs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/blobs{/sha}",
+          "git_tags_url": "https://api.github.com/repos/jnrahme/marsharbel/git/tags{/sha}",
+          "git_refs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/refs{/sha}",
+          "trees_url": "https://api.github.com/repos/jnrahme/marsharbel/git/trees{/sha}",
+          "statuses_url": "https://api.github.com/repos/jnrahme/marsharbel/statuses/{sha}",
+          "languages_url": "https://api.github.com/repos/jnrahme/marsharbel/languages",
+          "stargazers_url": "https://api.github.com/repos/jnrahme/marsharbel/stargazers",
+          "contributors_url": "https://api.github.com/repos/jnrahme/marsharbel/contributors",
+          "subscribers_url": "https://api.github.com/repos/jnrahme/marsharbel/subscribers",
+          "subscription_url": "https://api.github.com/repos/jnrahme/marsharbel/subscription",
+          "commits_url": "https://api.github.com/repos/jnrahme/marsharbel/commits{/sha}",
+          "git_commits_url": "https://api.github.com/repos/jnrahme/marsharbel/git/commits{/sha}",
+          "comments_url": "https://api.github.com/repos/jnrahme/marsharbel/comments{/number}",
+          "issue_comment_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/comments{/number}",
+          "contents_url": "https://api.github.com/repos/jnrahme/marsharbel/contents/{+path}",
+          "compare_url": "https://api.github.com/repos/jnrahme/marsharbel/compare/{base}...{head}",
+          "merges_url": "https://api.github.com/repos/jnrahme/marsharbel/merges",
+          "archive_url": "https://api.github.com/repos/jnrahme/marsharbel/{archive_format}{/ref}",
+          "downloads_url": "https://api.github.com/repos/jnrahme/marsharbel/downloads",
+          "issues_url": "https://api.github.com/repos/jnrahme/marsharbel/issues{/number}",
+          "pulls_url": "https://api.github.com/repos/jnrahme/marsharbel/pulls{/number}",
+          "milestones_url": "https://api.github.com/repos/jnrahme/marsharbel/milestones{/number}",
+          "notifications_url": "https://api.github.com/repos/jnrahme/marsharbel/notifications{?since,all,participating}",
+          "labels_url": "https://api.github.com/repos/jnrahme/marsharbel/labels{/name}",
+          "releases_url": "https://api.github.com/repos/jnrahme/marsharbel/releases{/id}",
+          "deployments_url": "https://api.github.com/repos/jnrahme/marsharbel/deployments"
+        }
+      },
+      "attempt_jobs": {
+        "total_count": 11,
+        "jobs": [
+          {
+            "id": 116384925907,
+            "run_id": 38723904134,
+            "workflow_name": "QA",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUI0w",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384925907",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134/job/116384925907",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:03:29Z",
+            "name": "qa-gates",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:26Z",
+                "completed_at": "2026-10-15T10:57:27Z"
+              },
+              {
+                "name": "Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:42Z"
+              },
+              {
+                "name": "Test deployment verification",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:42Z",
+                "completed_at": "2026-10-15T10:57:56Z"
+              },
+              {
+                "name": "Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:56Z",
+                "completed_at": "2026-10-15T10:58:01Z"
+              },
+              {
+                "name": "Install dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:58:01Z",
+                "completed_at": "2026-10-15T10:58:02Z"
+              },
+              {
+                "name": "Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T10:58:02Z",
+                "completed_at": "2026-10-15T10:58:05Z"
+              },
+              {
+                "name": "Install Playwright browser",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 7,
+                "started_at": "2026-10-15T10:58:05Z",
+                "completed_at": "2026-10-15T10:58:05Z"
+              },
+              {
+                "name": "Install Playwright system dependencies (browser cache hit)",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 8,
+                "started_at": "2026-10-15T10:58:05Z",
+                "completed_at": "2026-10-15T10:58:18Z"
+              },
+              {
+                "name": "Install Python dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 9,
+                "started_at": "2026-10-15T10:58:18Z",
+                "completed_at": "2026-10-15T10:58:19Z"
+              },
+              {
+                "name": "New-page locale key gate tests",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 10,
+                "started_at": "2026-10-15T10:58:19Z",
+                "completed_at": "2026-10-15T10:58:20Z"
+              },
+              {
+                "name": "New-page locale key coverage (PR base)",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 11,
+                "started_at": "2026-10-15T10:58:20Z",
+                "completed_at": "2026-10-15T10:58:20Z"
+              },
+              {
+                "name": "Russian first-slice publication and browser guards",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 12,
+                "started_at": "2026-10-15T10:58:20Z",
+                "completed_at": "2026-10-15T10:58:43Z"
+              },
+              {
+                "name": "Clean-checkout page build is in sync",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 13,
+                "started_at": "2026-10-15T10:58:43Z",
+                "completed_at": "2026-10-15T11:03:27Z"
+              },
+              {
+                "name": "Upload debug artifacts",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 14,
+                "started_at": "2026-10-15T11:03:27Z",
+                "completed_at": "2026-10-15T11:03:27Z"
+              },
+              {
+                "name": "Post Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 26,
+                "started_at": "2026-10-15T11:03:27Z",
+                "completed_at": "2026-10-15T11:03:27Z"
+              },
+              {
+                "name": "Post Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 27,
+                "started_at": "2026-10-15T11:03:27Z",
+                "completed_at": "2026-10-15T11:03:27Z"
+              },
+              {
+                "name": "Post Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 28,
+                "started_at": "2026-10-15T11:03:27Z",
+                "completed_at": "2026-10-15T11:03:27Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 29,
+                "started_at": "2026-10-15T11:03:27Z",
+                "completed_at": "2026-10-15T11:03:27Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384925907",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043528,
+            "runner_name": "GitHub Actions 1000043528",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926361,
+            "run_id": 38723904134,
+            "workflow_name": "QA",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUKmQ",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926361",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134/job/116384926361",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:00:02Z",
+            "name": "qa-shard (4/8)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:26Z",
+                "completed_at": "2026-10-15T10:57:27Z"
+              },
+              {
+                "name": "Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:40Z"
+              },
+              {
+                "name": "Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:40Z",
+                "completed_at": "2026-10-15T10:57:45Z"
+              },
+              {
+                "name": "Install dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:45Z",
+                "completed_at": "2026-10-15T10:57:46Z"
+              },
+              {
+                "name": "Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:46Z",
+                "completed_at": "2026-10-15T10:57:50Z"
+              },
+              {
+                "name": "Install Playwright browser",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:50Z",
+                "completed_at": "2026-10-15T10:57:50Z"
+              },
+              {
+                "name": "Install Playwright system dependencies (browser cache hit)",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:57:50Z",
+                "completed_at": "2026-10-15T10:58:03Z"
+              },
+              {
+                "name": "Install Python dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 8,
+                "started_at": "2026-10-15T10:58:03Z",
+                "completed_at": "2026-10-15T10:58:05Z"
+              },
+              {
+                "name": "Run QA suite shard",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 9,
+                "started_at": "2026-10-15T10:58:05Z",
+                "completed_at": "2026-10-15T10:59:59Z"
+              },
+              {
+                "name": "Upload debug artifacts",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 10,
+                "started_at": "2026-10-15T10:59:59Z",
+                "completed_at": "2026-10-15T10:59:59Z"
+              },
+              {
+                "name": "Post Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 18,
+                "started_at": "2026-10-15T10:59:59Z",
+                "completed_at": "2026-10-15T10:59:59Z"
+              },
+              {
+                "name": "Post Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 19,
+                "started_at": "2026-10-15T10:59:59Z",
+                "completed_at": "2026-10-15T10:59:59Z"
+              },
+              {
+                "name": "Post Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 20,
+                "started_at": "2026-10-15T10:59:59Z",
+                "completed_at": "2026-10-15T10:59:59Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 21,
+                "started_at": "2026-10-15T10:59:59Z",
+                "completed_at": "2026-10-15T10:59:59Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926361",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043529,
+            "runner_name": "GitHub Actions 1000043529",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926399,
+            "run_id": 38723904134,
+            "workflow_name": "QA",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUKvw",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926399",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134/job/116384926399",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:00:15Z",
+            "name": "qa-shard (3/8)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:26Z",
+                "completed_at": "2026-10-15T10:57:27Z"
+              },
+              {
+                "name": "Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:40Z"
+              },
+              {
+                "name": "Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:40Z",
+                "completed_at": "2026-10-15T10:57:45Z"
+              },
+              {
+                "name": "Install dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:45Z",
+                "completed_at": "2026-10-15T10:57:46Z"
+              },
+              {
+                "name": "Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:46Z",
+                "completed_at": "2026-10-15T10:57:49Z"
+              },
+              {
+                "name": "Install Playwright browser",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:49Z",
+                "completed_at": "2026-10-15T10:57:49Z"
+              },
+              {
+                "name": "Install Playwright system dependencies (browser cache hit)",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:57:49Z",
+                "completed_at": "2026-10-15T10:58:03Z"
+              },
+              {
+                "name": "Install Python dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 8,
+                "started_at": "2026-10-15T10:58:03Z",
+                "completed_at": "2026-10-15T10:58:04Z"
+              },
+              {
+                "name": "Run QA suite shard",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 9,
+                "started_at": "2026-10-15T10:58:04Z",
+                "completed_at": "2026-10-15T11:00:12Z"
+              },
+              {
+                "name": "Upload debug artifacts",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 10,
+                "started_at": "2026-10-15T11:00:12Z",
+                "completed_at": "2026-10-15T11:00:12Z"
+              },
+              {
+                "name": "Post Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 18,
+                "started_at": "2026-10-15T11:00:12Z",
+                "completed_at": "2026-10-15T11:00:13Z"
+              },
+              {
+                "name": "Post Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 19,
+                "started_at": "2026-10-15T11:00:13Z",
+                "completed_at": "2026-10-15T11:00:13Z"
+              },
+              {
+                "name": "Post Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 20,
+                "started_at": "2026-10-15T11:00:13Z",
+                "completed_at": "2026-10-15T11:00:13Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 21,
+                "started_at": "2026-10-15T11:00:13Z",
+                "completed_at": "2026-10-15T11:00:13Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926399",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043530,
+            "runner_name": "GitHub Actions 1000043530",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926488,
+            "run_id": 38723904134,
+            "workflow_name": "QA",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRULGA",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926488",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134/job/116384926488",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:00:12Z",
+            "name": "qa-shard (2/8)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:28Z"
+              },
+              {
+                "name": "Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:28Z",
+                "completed_at": "2026-10-15T10:57:41Z"
+              },
+              {
+                "name": "Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:41Z",
+                "completed_at": "2026-10-15T10:57:47Z"
+              },
+              {
+                "name": "Install dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:47Z",
+                "completed_at": "2026-10-15T10:57:48Z"
+              },
+              {
+                "name": "Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:48Z",
+                "completed_at": "2026-10-15T10:57:51Z"
+              },
+              {
+                "name": "Install Playwright browser",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:51Z",
+                "completed_at": "2026-10-15T10:57:51Z"
+              },
+              {
+                "name": "Install Playwright system dependencies (browser cache hit)",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:57:51Z",
+                "completed_at": "2026-10-15T10:58:10Z"
+              },
+              {
+                "name": "Install Python dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 8,
+                "started_at": "2026-10-15T10:58:10Z",
+                "completed_at": "2026-10-15T10:58:13Z"
+              },
+              {
+                "name": "Run QA suite shard",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 9,
+                "started_at": "2026-10-15T10:58:13Z",
+                "completed_at": "2026-10-15T11:00:09Z"
+              },
+              {
+                "name": "Upload debug artifacts",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 10,
+                "started_at": "2026-10-15T11:00:09Z",
+                "completed_at": "2026-10-15T11:00:09Z"
+              },
+              {
+                "name": "Post Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 18,
+                "started_at": "2026-10-15T11:00:09Z",
+                "completed_at": "2026-10-15T11:00:09Z"
+              },
+              {
+                "name": "Post Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 19,
+                "started_at": "2026-10-15T11:00:09Z",
+                "completed_at": "2026-10-15T11:00:09Z"
+              },
+              {
+                "name": "Post Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 20,
+                "started_at": "2026-10-15T11:00:09Z",
+                "completed_at": "2026-10-15T11:00:10Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 21,
+                "started_at": "2026-10-15T11:00:10Z",
+                "completed_at": "2026-10-15T11:00:10Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926488",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043531,
+            "runner_name": "GitHub Actions 1000043531",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926526,
+            "run_id": 38723904134,
+            "workflow_name": "QA",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRULPg",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926526",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134/job/116384926526",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:00:55Z",
+            "name": "qa-shard (0/8)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:28Z"
+              },
+              {
+                "name": "Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:28Z",
+                "completed_at": "2026-10-15T10:57:54Z"
+              },
+              {
+                "name": "Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:54Z",
+                "completed_at": "2026-10-15T10:58:01Z"
+              },
+              {
+                "name": "Install dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:58:01Z",
+                "completed_at": "2026-10-15T10:58:02Z"
+              },
+              {
+                "name": "Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:58:02Z",
+                "completed_at": "2026-10-15T10:58:07Z"
+              },
+              {
+                "name": "Install Playwright browser",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 6,
+                "started_at": "2026-10-15T10:58:07Z",
+                "completed_at": "2026-10-15T10:58:07Z"
+              },
+              {
+                "name": "Install Playwright system dependencies (browser cache hit)",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:58:07Z",
+                "completed_at": "2026-10-15T10:58:19Z"
+              },
+              {
+                "name": "Install Python dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 8,
+                "started_at": "2026-10-15T10:58:19Z",
+                "completed_at": "2026-10-15T10:58:22Z"
+              },
+              {
+                "name": "Run QA suite shard",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 9,
+                "started_at": "2026-10-15T10:58:22Z",
+                "completed_at": "2026-10-15T11:00:51Z"
+              },
+              {
+                "name": "Upload debug artifacts",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 10,
+                "started_at": "2026-10-15T11:00:51Z",
+                "completed_at": "2026-10-15T11:00:51Z"
+              },
+              {
+                "name": "Post Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 18,
+                "started_at": "2026-10-15T11:00:51Z",
+                "completed_at": "2026-10-15T11:00:51Z"
+              },
+              {
+                "name": "Post Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 19,
+                "started_at": "2026-10-15T11:00:51Z",
+                "completed_at": "2026-10-15T11:00:51Z"
+              },
+              {
+                "name": "Post Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 20,
+                "started_at": "2026-10-15T11:00:51Z",
+                "completed_at": "2026-10-15T11:00:52Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 21,
+                "started_at": "2026-10-15T11:00:52Z",
+                "completed_at": "2026-10-15T11:00:52Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926526",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043533,
+            "runner_name": "GitHub Actions 1000043533",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926548,
+            "run_id": 38723904134,
+            "workflow_name": "QA",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRULVA",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926548",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134/job/116384926548",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:02:37Z",
+            "name": "i18n-test",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:28Z"
+              },
+              {
+                "name": "Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:28Z",
+                "completed_at": "2026-10-15T10:57:42Z"
+              },
+              {
+                "name": "Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:42Z",
+                "completed_at": "2026-10-15T10:57:49Z"
+              },
+              {
+                "name": "Install dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:49Z",
+                "completed_at": "2026-10-15T10:57:50Z"
+              },
+              {
+                "name": "Install Python dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:50Z",
+                "completed_at": "2026-10-15T10:57:54Z"
+              },
+              {
+                "name": "i18n unit tests",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:54Z",
+                "completed_at": "2026-10-15T11:02:33Z"
+              },
+              {
+                "name": "Upload debug artifacts",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 7,
+                "started_at": "2026-10-15T11:02:33Z",
+                "completed_at": "2026-10-15T11:02:33Z"
+              },
+              {
+                "name": "Post Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 13,
+                "started_at": "2026-10-15T11:02:33Z",
+                "completed_at": "2026-10-15T11:02:33Z"
+              },
+              {
+                "name": "Post Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 14,
+                "started_at": "2026-10-15T11:02:33Z",
+                "completed_at": "2026-10-15T11:02:33Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 15,
+                "started_at": "2026-10-15T11:02:33Z",
+                "completed_at": "2026-10-15T11:02:34Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926548",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043534,
+            "runner_name": "GitHub Actions 1000043534",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926567,
+            "run_id": 38723904134,
+            "workflow_name": "QA",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRULZw",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926567",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134/job/116384926567",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:02:39Z",
+            "name": "qa-shard (1/8)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:26Z",
+                "completed_at": "2026-10-15T10:57:27Z"
+              },
+              {
+                "name": "Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:41Z"
+              },
+              {
+                "name": "Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:41Z",
+                "completed_at": "2026-10-15T10:57:46Z"
+              },
+              {
+                "name": "Install dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:46Z",
+                "completed_at": "2026-10-15T10:57:47Z"
+              },
+              {
+                "name": "Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:47Z",
+                "completed_at": "2026-10-15T10:57:50Z"
+              },
+              {
+                "name": "Install Playwright browser",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:50Z",
+                "completed_at": "2026-10-15T10:57:50Z"
+              },
+              {
+                "name": "Install Playwright system dependencies (browser cache hit)",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:57:50Z",
+                "completed_at": "2026-10-15T10:58:02Z"
+              },
+              {
+                "name": "Install Python dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 8,
+                "started_at": "2026-10-15T10:58:02Z",
+                "completed_at": "2026-10-15T10:58:04Z"
+              },
+              {
+                "name": "Run QA suite shard",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 9,
+                "started_at": "2026-10-15T10:58:04Z",
+                "completed_at": "2026-10-15T11:02:36Z"
+              },
+              {
+                "name": "Upload debug artifacts",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 10,
+                "started_at": "2026-10-15T11:02:36Z",
+                "completed_at": "2026-10-15T11:02:36Z"
+              },
+              {
+                "name": "Post Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 18,
+                "started_at": "2026-10-15T11:02:36Z",
+                "completed_at": "2026-10-15T11:02:37Z"
+              },
+              {
+                "name": "Post Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 19,
+                "started_at": "2026-10-15T11:02:37Z",
+                "completed_at": "2026-10-15T11:02:37Z"
+              },
+              {
+                "name": "Post Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 20,
+                "started_at": "2026-10-15T11:02:37Z",
+                "completed_at": "2026-10-15T11:02:37Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 21,
+                "started_at": "2026-10-15T11:02:37Z",
+                "completed_at": "2026-10-15T11:02:37Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926567",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043535,
+            "runner_name": "GitHub Actions 1000043535",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926569,
+            "run_id": 38723904134,
+            "workflow_name": "QA",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRULaQ",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926569",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134/job/116384926569",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:01:05Z",
+            "name": "qa-shard (7/8)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:26Z",
+                "completed_at": "2026-10-15T10:57:28Z"
+              },
+              {
+                "name": "Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:28Z",
+                "completed_at": "2026-10-15T10:57:43Z"
+              },
+              {
+                "name": "Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:43Z",
+                "completed_at": "2026-10-15T10:57:48Z"
+              },
+              {
+                "name": "Install dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:48Z",
+                "completed_at": "2026-10-15T10:57:49Z"
+              },
+              {
+                "name": "Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:49Z",
+                "completed_at": "2026-10-15T10:57:52Z"
+              },
+              {
+                "name": "Install Playwright browser",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:52Z",
+                "completed_at": "2026-10-15T10:57:52Z"
+              },
+              {
+                "name": "Install Playwright system dependencies (browser cache hit)",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:57:52Z",
+                "completed_at": "2026-10-15T10:58:06Z"
+              },
+              {
+                "name": "Install Python dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 8,
+                "started_at": "2026-10-15T10:58:06Z",
+                "completed_at": "2026-10-15T10:58:08Z"
+              },
+              {
+                "name": "Run QA suite shard",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 9,
+                "started_at": "2026-10-15T10:58:08Z",
+                "completed_at": "2026-10-15T11:01:03Z"
+              },
+              {
+                "name": "Upload debug artifacts",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 10,
+                "started_at": "2026-10-15T11:01:03Z",
+                "completed_at": "2026-10-15T11:01:03Z"
+              },
+              {
+                "name": "Post Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 18,
+                "started_at": "2026-10-15T11:01:03Z",
+                "completed_at": "2026-10-15T11:01:03Z"
+              },
+              {
+                "name": "Post Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 19,
+                "started_at": "2026-10-15T11:01:03Z",
+                "completed_at": "2026-10-15T11:01:03Z"
+              },
+              {
+                "name": "Post Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 20,
+                "started_at": "2026-10-15T11:01:03Z",
+                "completed_at": "2026-10-15T11:01:04Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 21,
+                "started_at": "2026-10-15T11:01:04Z",
+                "completed_at": "2026-10-15T11:01:04Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926569",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043536,
+            "runner_name": "GitHub Actions 1000043536",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926575,
+            "run_id": 38723904134,
+            "workflow_name": "QA",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRULbw",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926575",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134/job/116384926575",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T10:59:57Z",
+            "name": "qa-shard (6/8)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:28Z"
+              },
+              {
+                "name": "Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:28Z",
+                "completed_at": "2026-10-15T10:57:41Z"
+              },
+              {
+                "name": "Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:41Z",
+                "completed_at": "2026-10-15T10:57:46Z"
+              },
+              {
+                "name": "Install dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:46Z",
+                "completed_at": "2026-10-15T10:57:47Z"
+              },
+              {
+                "name": "Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:47Z",
+                "completed_at": "2026-10-15T10:57:50Z"
+              },
+              {
+                "name": "Install Playwright browser",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:50Z",
+                "completed_at": "2026-10-15T10:57:50Z"
+              },
+              {
+                "name": "Install Playwright system dependencies (browser cache hit)",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:57:50Z",
+                "completed_at": "2026-10-15T10:58:10Z"
+              },
+              {
+                "name": "Install Python dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 8,
+                "started_at": "2026-10-15T10:58:10Z",
+                "completed_at": "2026-10-15T10:58:12Z"
+              },
+              {
+                "name": "Run QA suite shard",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 9,
+                "started_at": "2026-10-15T10:58:12Z",
+                "completed_at": "2026-10-15T10:59:54Z"
+              },
+              {
+                "name": "Upload debug artifacts",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 10,
+                "started_at": "2026-10-15T10:59:54Z",
+                "completed_at": "2026-10-15T10:59:54Z"
+              },
+              {
+                "name": "Post Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 18,
+                "started_at": "2026-10-15T10:59:54Z",
+                "completed_at": "2026-10-15T10:59:54Z"
+              },
+              {
+                "name": "Post Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 19,
+                "started_at": "2026-10-15T10:59:54Z",
+                "completed_at": "2026-10-15T10:59:54Z"
+              },
+              {
+                "name": "Post Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 20,
+                "started_at": "2026-10-15T10:59:54Z",
+                "completed_at": "2026-10-15T10:59:54Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 21,
+                "started_at": "2026-10-15T10:59:54Z",
+                "completed_at": "2026-10-15T10:59:54Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926575",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043532,
+            "runner_name": "GitHub Actions 1000043532",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926855,
+            "run_id": 38723904134,
+            "workflow_name": "QA",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUMhw",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926855",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134/job/116384926855",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:05:32Z",
+            "name": "qa-shard (5/8)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:26Z",
+                "completed_at": "2026-10-15T10:57:27Z"
+              },
+              {
+                "name": "Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:42Z"
+              },
+              {
+                "name": "Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:42Z",
+                "completed_at": "2026-10-15T10:57:46Z"
+              },
+              {
+                "name": "Install dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:46Z",
+                "completed_at": "2026-10-15T10:57:48Z"
+              },
+              {
+                "name": "Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:48Z",
+                "completed_at": "2026-10-15T10:57:50Z"
+              },
+              {
+                "name": "Install Playwright browser",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:50Z",
+                "completed_at": "2026-10-15T10:57:50Z"
+              },
+              {
+                "name": "Install Playwright system dependencies (browser cache hit)",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:57:50Z",
+                "completed_at": "2026-10-15T10:58:02Z"
+              },
+              {
+                "name": "Install Python dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 8,
+                "started_at": "2026-10-15T10:58:02Z",
+                "completed_at": "2026-10-15T10:58:06Z"
+              },
+              {
+                "name": "Run QA suite shard",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 9,
+                "started_at": "2026-10-15T10:58:06Z",
+                "completed_at": "2026-10-15T11:05:29Z"
+              },
+              {
+                "name": "Upload debug artifacts",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 10,
+                "started_at": "2026-10-15T11:05:29Z",
+                "completed_at": "2026-10-15T11:05:29Z"
+              },
+              {
+                "name": "Post Cache Playwright browsers",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 18,
+                "started_at": "2026-10-15T11:05:29Z",
+                "completed_at": "2026-10-15T11:05:30Z"
+              },
+              {
+                "name": "Post Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 19,
+                "started_at": "2026-10-15T11:05:30Z",
+                "completed_at": "2026-10-15T11:05:30Z"
+              },
+              {
+                "name": "Post Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 20,
+                "started_at": "2026-10-15T11:05:30Z",
+                "completed_at": "2026-10-15T11:05:30Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 21,
+                "started_at": "2026-10-15T11:05:30Z",
+                "completed_at": "2026-10-15T11:05:30Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926855",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043537,
+            "runner_name": "GitHub Actions 1000043537",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116388111159,
+            "run_id": 38723904134,
+            "workflow_name": "QA",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904134",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGUWjNw",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116388111159",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904134/job/116388111159",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T11:05:32Z",
+            "started_at": "2026-10-15T11:05:36Z",
+            "completed_at": "2026-10-15T11:05:40Z",
+            "name": "qa",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T11:05:37Z",
+                "completed_at": "2026-10-15T11:05:37Z"
+              },
+              {
+                "name": "Run echo \"shards: success\"",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T11:05:37Z",
+                "completed_at": "2026-10-15T11:05:37Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T11:05:37Z",
+                "completed_at": "2026-10-15T11:05:37Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116388111159",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043547,
+            "runner_name": "GitHub Actions 1000043547",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          }
+        ]
+      },
+      "read_at": "2026-10-15T11:24:59.585573+00:00"
+    },
+    {
+      "workflow": "quality.yml",
+      "run": {
+        "id": 38723904187,
+        "name": "Browser quality",
+        "node_id": "WFR_kwLORe2kEc8AAAAJBB_iuw",
+        "head_branch": "stage",
+        "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+        "path": ".github/workflows/quality.yml",
+        "display_title": "Saint Charbel medal guide - full 12-locale family, home card, film sl\u2026",
+        "run_number": 2767,
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "workflow_id": 361787853,
+        "check_suite_id": 104935514178,
+        "check_suite_node_id": "CS_kwDORe2kEc8AAAAYbqTgQg",
+        "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187",
+        "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904187",
+        "pull_requests": [],
+        "created_at": "2026-10-15T10:57:22Z",
+        "updated_at": "2026-10-15T11:08:57Z",
+        "actor": {
+          "login": "jnrahme",
+          "id": 11262696,
+          "node_id": "MDQ6VXNlcjExMjYyNjk2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/jnrahme",
+          "html_url": "https://github.com/jnrahme",
+          "followers_url": "https://api.github.com/users/jnrahme/followers",
+          "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+          "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+          "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+          "repos_url": "https://api.github.com/users/jnrahme/repos",
+          "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "run_attempt": 1,
+        "referenced_workflows": [],
+        "run_started_at": "2026-10-15T10:57:22Z",
+        "triggering_actor": {
+          "login": "jnrahme",
+          "id": 11262696,
+          "node_id": "MDQ6VXNlcjExMjYyNjk2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/jnrahme",
+          "html_url": "https://github.com/jnrahme",
+          "followers_url": "https://api.github.com/users/jnrahme/followers",
+          "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+          "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+          "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+          "repos_url": "https://api.github.com/users/jnrahme/repos",
+          "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "jobs_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187/jobs",
+        "logs_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187/logs",
+        "check_suite_url": "https://api.github.com/repos/jnrahme/marsharbel/check-suites/104935514178",
+        "artifacts_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187/artifacts",
+        "cancel_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187/cancel",
+        "rerun_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187/rerun",
+        "previous_attempt_url": null,
+        "workflow_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/workflows/361787853",
+        "head_commit": {
+          "id": "136de2bd3507066d8f33af564fc49483eacae9fa",
+          "tree_id": "4f5259095bec44f516e24cd09d6ab3d2c865fc0c",
+          "message": "Saint Charbel medal guide - full 12-locale family, home card, film slot (#817)\n\n* feat(content): Saint Charbel medal guide EN master (sacramental teaching page)\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* feat(content): Saint Charbel medal guide - 11 locale twins, i18n capability grants, FAQ schema removal\n\n- Words-only mirrors of the doctrinally reviewed EN master in ar, de, es,\n  fr, hi, it, pl, pt, ru, th, zh-Hans (110 keys each, EN key order,\n  placeholder parity; 57 chrome reuse + 53 authored per locale)\n- CCC 1667/1669/1670/1674 quotes sourced per locale: official Vatican\n  texts (ar/de/es/fr/it/pl/pt/ru), Traditional->Simplified conversion (zh);\n  hi/th agent-translated, flagged for native review\n- zh-Hans capability grant: medal family added to PRAYER_FAMILIES,\n  mirrorTabs = travel/film/prayers; checkpoint tests updated\n  (partial-locale, limited-launch, probe counts 18->19)\n- locale-mirror-policy: 11 strict twins with launch-availability-annotations\n  and english-nav-disclosure normalizers (+ partial-home-disclosure zh-Hans)\n- Schema-only FAQ JSON-LD fragment removed (no visible FAQ section; mirror\n  renderer and Google both require keyed visible content)\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Saint Charbel medal guide: 12-locale family, home card, film slot\n\n- Medal guide EN master + 11 twins; localized Catechism source links\n  (10 locale editions) and per-locale quote provenance\n- Thai keys repaired against the Thai CCC (thaicatechesis.com)\n- Home medal card on all 10 home locales (travel-card pattern, no new\n  chrome); home_mirror repoint routes full-launch cards to locale twins\n- Film-premiere medal note/link slot in all 12 film catalogs (zh-Hans\n  reachability route)\n- Encyclopedia medal card (EN/ar)\n- Commented CI expectation updates; film contract pins recomputed via\n  the family's own validation math\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Scrum fixes: scoped source-links normalizer, card 200% clip, hi disclosure\n\n- localized-source-links: inverse now scoped to the exact registered\n  family+locale; one-to-one mapping enforced; missing/duplicate,\n  wrong-locale, and unregistered citation anchors fail loudly instead of\n  a registry-wide silent reversal; context required through signature()\n- Explicit citation-target assertion in the locale mirror policy test\n  (the structural signature records no hrefs); hi policy entry drops the\n  normalizer (no swap registered) and keeps an identity-target assertion\n- 16 negative controls: apply/inverse/policy rejection paths\n- Home medal card: scoped mobile-track minmax(0,1fr) + copy min-width:0\n  with anywhere wrap - no clipping at 390px/200% root font (EN/DE/AR\n  stress-verified); travel card untouched\n- hi quotation-source disclosure bounded to page-level evidence\n- Film contract pins recomputed from final post-chrome bytes (after the\n  full i18n build, not the intermediate family-builder output)\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Wires test_localized_source_links.py (16 gate controls) into\nrun_full_qa.sh so the unsharded deploy run and the shard union both\nexecute it (scrum #817 wiring fix, cf. #814).\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* es CCC 1670: keep corrected \"con ella\", disclose Vatican typo (scrum ruling)\n\nThe Vatican HTML edition carries a typographical duplication (\"con a\nella\") in CCC 1670; the es quotation keeps the corrected text and the\nSources note now states the correction transparently. Meaning unchanged.\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Home medal card: de-collide selectors (.home-medal-card) + exact-copy i18n catalog\n\n- Medal card gets its own DOM hook (.home-medal-card, section .home-medal);\n  travel card keeps .home-travel-card - fixes strict-mode collisions in\n  hindi-travel-hub, nav_legacy and same-page harness selectors.\n- styles.css groups selectors for shared visuals; 200% rules retargeted.\n- New locales/en/home-medal-copy.json exact-copy catalog (6 strings) and\n  check_i18n_policy catalog list entry - fixes i18n policy failure.\n- home-bindings re-pinned (296/296 selectors verified), manifest regenerated.\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n---------\n\nCo-authored-by: Instinct Agent <agent@instinct.com>",
+          "timestamp": "2026-10-15T10:57:19Z",
+          "author": {
+            "name": "jnrahme",
+            "email": "jnrahme@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com"
+          }
+        },
+        "repository": {
+          "id": 1173201937,
+          "node_id": "R_kgDORe2kEQ",
+          "name": "marsharbel",
+          "full_name": "jnrahme/marsharbel",
+          "private": false,
+          "owner": {
+            "login": "jnrahme",
+            "id": 11262696,
+            "node_id": "MDQ6VXNlcjExMjYyNjk2",
+            "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jnrahme",
+            "html_url": "https://github.com/jnrahme",
+            "followers_url": "https://api.github.com/users/jnrahme/followers",
+            "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+            "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+            "repos_url": "https://api.github.com/users/jnrahme/repos",
+            "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "html_url": "https://github.com/jnrahme/marsharbel",
+          "description": "marcharbel website",
+          "fork": false,
+          "url": "https://api.github.com/repos/jnrahme/marsharbel",
+          "forks_url": "https://api.github.com/repos/jnrahme/marsharbel/forks",
+          "keys_url": "https://api.github.com/repos/jnrahme/marsharbel/keys{/key_id}",
+          "collaborators_url": "https://api.github.com/repos/jnrahme/marsharbel/collaborators{/collaborator}",
+          "teams_url": "https://api.github.com/repos/jnrahme/marsharbel/teams",
+          "hooks_url": "https://api.github.com/repos/jnrahme/marsharbel/hooks",
+          "issue_events_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/events{/number}",
+          "events_url": "https://api.github.com/repos/jnrahme/marsharbel/events",
+          "assignees_url": "https://api.github.com/repos/jnrahme/marsharbel/assignees{/user}",
+          "branches_url": "https://api.github.com/repos/jnrahme/marsharbel/branches{/branch}",
+          "tags_url": "https://api.github.com/repos/jnrahme/marsharbel/tags",
+          "blobs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/blobs{/sha}",
+          "git_tags_url": "https://api.github.com/repos/jnrahme/marsharbel/git/tags{/sha}",
+          "git_refs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/refs{/sha}",
+          "trees_url": "https://api.github.com/repos/jnrahme/marsharbel/git/trees{/sha}",
+          "statuses_url": "https://api.github.com/repos/jnrahme/marsharbel/statuses/{sha}",
+          "languages_url": "https://api.github.com/repos/jnrahme/marsharbel/languages",
+          "stargazers_url": "https://api.github.com/repos/jnrahme/marsharbel/stargazers",
+          "contributors_url": "https://api.github.com/repos/jnrahme/marsharbel/contributors",
+          "subscribers_url": "https://api.github.com/repos/jnrahme/marsharbel/subscribers",
+          "subscription_url": "https://api.github.com/repos/jnrahme/marsharbel/subscription",
+          "commits_url": "https://api.github.com/repos/jnrahme/marsharbel/commits{/sha}",
+          "git_commits_url": "https://api.github.com/repos/jnrahme/marsharbel/git/commits{/sha}",
+          "comments_url": "https://api.github.com/repos/jnrahme/marsharbel/comments{/number}",
+          "issue_comment_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/comments{/number}",
+          "contents_url": "https://api.github.com/repos/jnrahme/marsharbel/contents/{+path}",
+          "compare_url": "https://api.github.com/repos/jnrahme/marsharbel/compare/{base}...{head}",
+          "merges_url": "https://api.github.com/repos/jnrahme/marsharbel/merges",
+          "archive_url": "https://api.github.com/repos/jnrahme/marsharbel/{archive_format}{/ref}",
+          "downloads_url": "https://api.github.com/repos/jnrahme/marsharbel/downloads",
+          "issues_url": "https://api.github.com/repos/jnrahme/marsharbel/issues{/number}",
+          "pulls_url": "https://api.github.com/repos/jnrahme/marsharbel/pulls{/number}",
+          "milestones_url": "https://api.github.com/repos/jnrahme/marsharbel/milestones{/number}",
+          "notifications_url": "https://api.github.com/repos/jnrahme/marsharbel/notifications{?since,all,participating}",
+          "labels_url": "https://api.github.com/repos/jnrahme/marsharbel/labels{/name}",
+          "releases_url": "https://api.github.com/repos/jnrahme/marsharbel/releases{/id}",
+          "deployments_url": "https://api.github.com/repos/jnrahme/marsharbel/deployments"
+        },
+        "head_repository": {
+          "id": 1173201937,
+          "node_id": "R_kgDORe2kEQ",
+          "name": "marsharbel",
+          "full_name": "jnrahme/marsharbel",
+          "private": false,
+          "owner": {
+            "login": "jnrahme",
+            "id": 11262696,
+            "node_id": "MDQ6VXNlcjExMjYyNjk2",
+            "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jnrahme",
+            "html_url": "https://github.com/jnrahme",
+            "followers_url": "https://api.github.com/users/jnrahme/followers",
+            "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+            "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+            "repos_url": "https://api.github.com/users/jnrahme/repos",
+            "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "html_url": "https://github.com/jnrahme/marsharbel",
+          "description": "marcharbel website",
+          "fork": false,
+          "url": "https://api.github.com/repos/jnrahme/marsharbel",
+          "forks_url": "https://api.github.com/repos/jnrahme/marsharbel/forks",
+          "keys_url": "https://api.github.com/repos/jnrahme/marsharbel/keys{/key_id}",
+          "collaborators_url": "https://api.github.com/repos/jnrahme/marsharbel/collaborators{/collaborator}",
+          "teams_url": "https://api.github.com/repos/jnrahme/marsharbel/teams",
+          "hooks_url": "https://api.github.com/repos/jnrahme/marsharbel/hooks",
+          "issue_events_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/events{/number}",
+          "events_url": "https://api.github.com/repos/jnrahme/marsharbel/events",
+          "assignees_url": "https://api.github.com/repos/jnrahme/marsharbel/assignees{/user}",
+          "branches_url": "https://api.github.com/repos/jnrahme/marsharbel/branches{/branch}",
+          "tags_url": "https://api.github.com/repos/jnrahme/marsharbel/tags",
+          "blobs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/blobs{/sha}",
+          "git_tags_url": "https://api.github.com/repos/jnrahme/marsharbel/git/tags{/sha}",
+          "git_refs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/refs{/sha}",
+          "trees_url": "https://api.github.com/repos/jnrahme/marsharbel/git/trees{/sha}",
+          "statuses_url": "https://api.github.com/repos/jnrahme/marsharbel/statuses/{sha}",
+          "languages_url": "https://api.github.com/repos/jnrahme/marsharbel/languages",
+          "stargazers_url": "https://api.github.com/repos/jnrahme/marsharbel/stargazers",
+          "contributors_url": "https://api.github.com/repos/jnrahme/marsharbel/contributors",
+          "subscribers_url": "https://api.github.com/repos/jnrahme/marsharbel/subscribers",
+          "subscription_url": "https://api.github.com/repos/jnrahme/marsharbel/subscription",
+          "commits_url": "https://api.github.com/repos/jnrahme/marsharbel/commits{/sha}",
+          "git_commits_url": "https://api.github.com/repos/jnrahme/marsharbel/git/commits{/sha}",
+          "comments_url": "https://api.github.com/repos/jnrahme/marsharbel/comments{/number}",
+          "issue_comment_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/comments{/number}",
+          "contents_url": "https://api.github.com/repos/jnrahme/marsharbel/contents/{+path}",
+          "compare_url": "https://api.github.com/repos/jnrahme/marsharbel/compare/{base}...{head}",
+          "merges_url": "https://api.github.com/repos/jnrahme/marsharbel/merges",
+          "archive_url": "https://api.github.com/repos/jnrahme/marsharbel/{archive_format}{/ref}",
+          "downloads_url": "https://api.github.com/repos/jnrahme/marsharbel/downloads",
+          "issues_url": "https://api.github.com/repos/jnrahme/marsharbel/issues{/number}",
+          "pulls_url": "https://api.github.com/repos/jnrahme/marsharbel/pulls{/number}",
+          "milestones_url": "https://api.github.com/repos/jnrahme/marsharbel/milestones{/number}",
+          "notifications_url": "https://api.github.com/repos/jnrahme/marsharbel/notifications{?since,all,participating}",
+          "labels_url": "https://api.github.com/repos/jnrahme/marsharbel/labels{/name}",
+          "releases_url": "https://api.github.com/repos/jnrahme/marsharbel/releases{/id}",
+          "deployments_url": "https://api.github.com/repos/jnrahme/marsharbel/deployments"
+        }
+      },
+      "attempt_jobs": {
+        "total_count": 9,
+        "jobs": [
+          {
+            "id": 116384925970,
+            "run_id": 38723904187,
+            "workflow_name": "Browser quality",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUJEg",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384925970",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904187/job/116384925970",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:07:48Z",
+            "name": "browser-quality-shard (2)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:28Z"
+              },
+              {
+                "name": "Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:28Z",
+                "completed_at": "2026-10-15T10:57:40Z"
+              },
+              {
+                "name": "Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:40Z",
+                "completed_at": "2026-10-15T10:57:51Z"
+              },
+              {
+                "name": "Run node scripts/sync-navigation.mjs --check",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:51Z",
+                "completed_at": "2026-10-15T10:57:51Z"
+              },
+              {
+                "name": "Run npm ci",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:51Z",
+                "completed_at": "2026-10-15T10:57:53Z"
+              },
+              {
+                "name": "Run npx playwright install --with-deps chromium",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:53Z",
+                "completed_at": "2026-10-15T10:58:15Z"
+              },
+              {
+                "name": "Run npx playwright test --config playwright.config.cjs --shard=2/8",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:58:15Z",
+                "completed_at": "2026-10-15T11:07:44Z"
+              },
+              {
+                "name": "Run actions/upload-artifact@v4",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 8,
+                "started_at": "2026-10-15T11:07:44Z",
+                "completed_at": "2026-10-15T11:07:44Z"
+              },
+              {
+                "name": "Post Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 15,
+                "started_at": "2026-10-15T11:07:44Z",
+                "completed_at": "2026-10-15T11:07:44Z"
+              },
+              {
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 16,
+                "started_at": "2026-10-15T11:07:44Z",
+                "completed_at": "2026-10-15T11:07:44Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 17,
+                "started_at": "2026-10-15T11:07:44Z",
+                "completed_at": "2026-10-15T11:07:44Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384925970",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043538,
+            "runner_name": "GitHub Actions 1000043538",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926265,
+            "run_id": 38723904187,
+            "workflow_name": "Browser quality",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUKOQ",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926265",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904187/job/116384926265",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:07:57Z",
+            "name": "browser-quality-shard (5)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:28Z"
+              },
+              {
+                "name": "Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:28Z",
+                "completed_at": "2026-10-15T10:57:41Z"
+              },
+              {
+                "name": "Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:41Z",
+                "completed_at": "2026-10-15T10:57:49Z"
+              },
+              {
+                "name": "Run node scripts/sync-navigation.mjs --check",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:49Z",
+                "completed_at": "2026-10-15T10:57:49Z"
+              },
+              {
+                "name": "Run npm ci",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:49Z",
+                "completed_at": "2026-10-15T10:57:50Z"
+              },
+              {
+                "name": "Run npx playwright install --with-deps chromium",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:50Z",
+                "completed_at": "2026-10-15T10:58:16Z"
+              },
+              {
+                "name": "Run npx playwright test --config playwright.config.cjs --shard=5/8",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:58:16Z",
+                "completed_at": "2026-10-15T11:07:53Z"
+              },
+              {
+                "name": "Run actions/upload-artifact@v4",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 8,
+                "started_at": "2026-10-15T11:07:53Z",
+                "completed_at": "2026-10-15T11:07:53Z"
+              },
+              {
+                "name": "Post Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 15,
+                "started_at": "2026-10-15T11:07:53Z",
+                "completed_at": "2026-10-15T11:07:53Z"
+              },
+              {
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 16,
+                "started_at": "2026-10-15T11:07:53Z",
+                "completed_at": "2026-10-15T11:07:53Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 17,
+                "started_at": "2026-10-15T11:07:53Z",
+                "completed_at": "2026-10-15T11:07:53Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926265",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043539,
+            "runner_name": "GitHub Actions 1000043539",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926320,
+            "run_id": 38723904187,
+            "workflow_name": "Browser quality",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUKcA",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926320",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904187/job/116384926320",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:02:23Z",
+            "name": "browser-quality-shard (4)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:26Z",
+                "completed_at": "2026-10-15T10:57:28Z"
+              },
+              {
+                "name": "Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:28Z",
+                "completed_at": "2026-10-15T10:57:39Z"
+              },
+              {
+                "name": "Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:39Z",
+                "completed_at": "2026-10-15T10:57:45Z"
+              },
+              {
+                "name": "Run node scripts/sync-navigation.mjs --check",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:45Z",
+                "completed_at": "2026-10-15T10:57:45Z"
+              },
+              {
+                "name": "Run npm ci",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:45Z",
+                "completed_at": "2026-10-15T10:57:46Z"
+              },
+              {
+                "name": "Run npx playwright install --with-deps chromium",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:46Z",
+                "completed_at": "2026-10-15T10:58:04Z"
+              },
+              {
+                "name": "Run npx playwright test --config playwright.config.cjs --shard=4/8",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:58:04Z",
+                "completed_at": "2026-10-15T11:02:20Z"
+              },
+              {
+                "name": "Run actions/upload-artifact@v4",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 8,
+                "started_at": "2026-10-15T11:02:20Z",
+                "completed_at": "2026-10-15T11:02:20Z"
+              },
+              {
+                "name": "Post Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 15,
+                "started_at": "2026-10-15T11:02:20Z",
+                "completed_at": "2026-10-15T11:02:20Z"
+              },
+              {
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 16,
+                "started_at": "2026-10-15T11:02:20Z",
+                "completed_at": "2026-10-15T11:02:20Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 17,
+                "started_at": "2026-10-15T11:02:20Z",
+                "completed_at": "2026-10-15T11:02:20Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926320",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043540,
+            "runner_name": "GitHub Actions 1000043540",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926412,
+            "run_id": 38723904187,
+            "workflow_name": "Browser quality",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUKzA",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926412",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904187/job/116384926412",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:08:37Z",
+            "name": "browser-quality-shard (3)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:28Z"
+              },
+              {
+                "name": "Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:28Z",
+                "completed_at": "2026-10-15T10:57:42Z"
+              },
+              {
+                "name": "Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:42Z",
+                "completed_at": "2026-10-15T10:57:52Z"
+              },
+              {
+                "name": "Run node scripts/sync-navigation.mjs --check",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:52Z",
+                "completed_at": "2026-10-15T10:57:52Z"
+              },
+              {
+                "name": "Run npm ci",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:52Z",
+                "completed_at": "2026-10-15T10:57:53Z"
+              },
+              {
+                "name": "Run npx playwright install --with-deps chromium",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:53Z",
+                "completed_at": "2026-10-15T10:58:26Z"
+              },
+              {
+                "name": "Run npx playwright test --config playwright.config.cjs --shard=3/8",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:58:26Z",
+                "completed_at": "2026-10-15T11:08:33Z"
+              },
+              {
+                "name": "Run actions/upload-artifact@v4",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 8,
+                "started_at": "2026-10-15T11:08:33Z",
+                "completed_at": "2026-10-15T11:08:33Z"
+              },
+              {
+                "name": "Post Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 15,
+                "started_at": "2026-10-15T11:08:33Z",
+                "completed_at": "2026-10-15T11:08:33Z"
+              },
+              {
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 16,
+                "started_at": "2026-10-15T11:08:33Z",
+                "completed_at": "2026-10-15T11:08:34Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 17,
+                "started_at": "2026-10-15T11:08:34Z",
+                "completed_at": "2026-10-15T11:08:34Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926412",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043544,
+            "runner_name": "GitHub Actions 1000043544",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926427,
+            "run_id": 38723904187,
+            "workflow_name": "Browser quality",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUK2w",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926427",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904187/job/116384926427",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:08:25Z",
+            "name": "browser-quality-shard (6)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:28Z"
+              },
+              {
+                "name": "Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:28Z",
+                "completed_at": "2026-10-15T10:57:40Z"
+              },
+              {
+                "name": "Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:40Z",
+                "completed_at": "2026-10-15T10:57:47Z"
+              },
+              {
+                "name": "Run node scripts/sync-navigation.mjs --check",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:47Z",
+                "completed_at": "2026-10-15T10:57:47Z"
+              },
+              {
+                "name": "Run npm ci",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:47Z",
+                "completed_at": "2026-10-15T10:57:49Z"
+              },
+              {
+                "name": "Run npx playwright install --with-deps chromium",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:49Z",
+                "completed_at": "2026-10-15T10:58:09Z"
+              },
+              {
+                "name": "Run npx playwright test --config playwright.config.cjs --shard=6/8",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:58:09Z",
+                "completed_at": "2026-10-15T11:08:21Z"
+              },
+              {
+                "name": "Run actions/upload-artifact@v4",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 8,
+                "started_at": "2026-10-15T11:08:21Z",
+                "completed_at": "2026-10-15T11:08:21Z"
+              },
+              {
+                "name": "Post Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 15,
+                "started_at": "2026-10-15T11:08:21Z",
+                "completed_at": "2026-10-15T11:08:22Z"
+              },
+              {
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 16,
+                "started_at": "2026-10-15T11:08:22Z",
+                "completed_at": "2026-10-15T11:08:22Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 17,
+                "started_at": "2026-10-15T11:08:22Z",
+                "completed_at": "2026-10-15T11:08:22Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926427",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043542,
+            "runner_name": "GitHub Actions 1000043542",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926446,
+            "run_id": 38723904187,
+            "workflow_name": "Browser quality",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUK7g",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926446",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904187/job/116384926446",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:03:41Z",
+            "name": "browser-quality-shard (1)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:27Z"
+              },
+              {
+                "name": "Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:41Z"
+              },
+              {
+                "name": "Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:41Z",
+                "completed_at": "2026-10-15T10:57:47Z"
+              },
+              {
+                "name": "Run node scripts/sync-navigation.mjs --check",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:47Z",
+                "completed_at": "2026-10-15T10:57:47Z"
+              },
+              {
+                "name": "Run npm ci",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:47Z",
+                "completed_at": "2026-10-15T10:57:48Z"
+              },
+              {
+                "name": "Run npx playwright install --with-deps chromium",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:48Z",
+                "completed_at": "2026-10-15T10:58:08Z"
+              },
+              {
+                "name": "Run npx playwright test --config playwright.config.cjs --shard=1/8",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:58:08Z",
+                "completed_at": "2026-10-15T11:03:38Z"
+              },
+              {
+                "name": "Run actions/upload-artifact@v4",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 8,
+                "started_at": "2026-10-15T11:03:38Z",
+                "completed_at": "2026-10-15T11:03:38Z"
+              },
+              {
+                "name": "Post Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 15,
+                "started_at": "2026-10-15T11:03:38Z",
+                "completed_at": "2026-10-15T11:03:38Z"
+              },
+              {
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 16,
+                "started_at": "2026-10-15T11:03:38Z",
+                "completed_at": "2026-10-15T11:03:38Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 17,
+                "started_at": "2026-10-15T11:03:38Z",
+                "completed_at": "2026-10-15T11:03:38Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926446",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043543,
+            "runner_name": "GitHub Actions 1000043543",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926458,
+            "run_id": 38723904187,
+            "workflow_name": "Browser quality",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUK-g",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926458",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904187/job/116384926458",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:08:48Z",
+            "name": "browser-quality-shard (8)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:27Z"
+              },
+              {
+                "name": "Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:40Z"
+              },
+              {
+                "name": "Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:40Z",
+                "completed_at": "2026-10-15T10:57:46Z"
+              },
+              {
+                "name": "Run node scripts/sync-navigation.mjs --check",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:46Z",
+                "completed_at": "2026-10-15T10:57:46Z"
+              },
+              {
+                "name": "Run npm ci",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:46Z",
+                "completed_at": "2026-10-15T10:57:48Z"
+              },
+              {
+                "name": "Run npx playwright install --with-deps chromium",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:48Z",
+                "completed_at": "2026-10-15T10:58:08Z"
+              },
+              {
+                "name": "Run npx playwright test --config playwright.config.cjs --shard=8/8",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:58:08Z",
+                "completed_at": "2026-10-15T11:08:45Z"
+              },
+              {
+                "name": "Run actions/upload-artifact@v4",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 8,
+                "started_at": "2026-10-15T11:08:45Z",
+                "completed_at": "2026-10-15T11:08:45Z"
+              },
+              {
+                "name": "Post Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 15,
+                "started_at": "2026-10-15T11:08:45Z",
+                "completed_at": "2026-10-15T11:08:45Z"
+              },
+              {
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 16,
+                "started_at": "2026-10-15T11:08:45Z",
+                "completed_at": "2026-10-15T11:08:45Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 17,
+                "started_at": "2026-10-15T11:08:45Z",
+                "completed_at": "2026-10-15T11:08:45Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926458",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043541,
+            "runner_name": "GitHub Actions 1000043541",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116384926572,
+            "run_id": 38723904187,
+            "workflow_name": "Browser quality",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRULbA",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384926572",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904187/job/116384926572",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:05:10Z",
+            "name": "browser-quality-shard (7)",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:28Z"
+              },
+              {
+                "name": "Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:28Z",
+                "completed_at": "2026-10-15T10:57:39Z"
+              },
+              {
+                "name": "Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:39Z",
+                "completed_at": "2026-10-15T10:57:45Z"
+              },
+              {
+                "name": "Run node scripts/sync-navigation.mjs --check",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:45Z",
+                "completed_at": "2026-10-15T10:57:45Z"
+              },
+              {
+                "name": "Run npm ci",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:57:45Z",
+                "completed_at": "2026-10-15T10:57:47Z"
+              },
+              {
+                "name": "Run npx playwright install --with-deps chromium",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T10:57:47Z",
+                "completed_at": "2026-10-15T10:58:10Z"
+              },
+              {
+                "name": "Run npx playwright test --config playwright.config.cjs --shard=7/8",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:58:10Z",
+                "completed_at": "2026-10-15T11:05:07Z"
+              },
+              {
+                "name": "Run actions/upload-artifact@v4",
+                "status": "completed",
+                "conclusion": "skipped",
+                "number": 8,
+                "started_at": "2026-10-15T11:05:07Z",
+                "completed_at": "2026-10-15T11:05:07Z"
+              },
+              {
+                "name": "Post Run actions/setup-node@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 15,
+                "started_at": "2026-10-15T11:05:07Z",
+                "completed_at": "2026-10-15T11:05:08Z"
+              },
+              {
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 16,
+                "started_at": "2026-10-15T11:05:08Z",
+                "completed_at": "2026-10-15T11:05:08Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 17,
+                "started_at": "2026-10-15T11:05:08Z",
+                "completed_at": "2026-10-15T11:05:08Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384926572",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043545,
+            "runner_name": "GitHub Actions 1000043545",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116389404599,
+            "run_id": 38723904187,
+            "workflow_name": "Browser quality",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904187",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGVlftw",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116389404599",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904187/job/116389404599",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T11:08:51Z",
+            "started_at": "2026-10-15T11:08:54Z",
+            "completed_at": "2026-10-15T11:08:56Z",
+            "name": "browser-quality",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T11:08:55Z",
+                "completed_at": "2026-10-15T11:08:55Z"
+              },
+              {
+                "name": "Run echo \"shards: success\"",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T11:08:55Z",
+                "completed_at": "2026-10-15T11:08:55Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T11:08:55Z",
+                "completed_at": "2026-10-15T11:08:55Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116389404599",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043548,
+            "runner_name": "GitHub Actions 1000043548",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          }
+        ]
+      },
+      "read_at": "2026-10-15T11:25:00.815531+00:00"
+    },
+    {
+      "workflow": "deploy-stage.yml",
+      "run": {
+        "id": 38723904184,
+        "name": "Deploy to Hostinger",
+        "node_id": "WFR_kwLORe2kEc8AAAAJBB_iuA",
+        "head_branch": "stage",
+        "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+        "path": ".github/workflows/deploy-stage.yml",
+        "display_title": "Saint Charbel medal guide - full 12-locale family, home card, film sl\u2026",
+        "run_number": 536,
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "workflow_id": 241826591,
+        "check_suite_id": 104935514173,
+        "check_suite_node_id": "CS_kwDORe2kEc8AAAAYbqTgPQ",
+        "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904184",
+        "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904184",
+        "pull_requests": [],
+        "created_at": "2026-10-15T10:57:22Z",
+        "updated_at": "2026-10-15T11:21:46Z",
+        "actor": {
+          "login": "jnrahme",
+          "id": 11262696,
+          "node_id": "MDQ6VXNlcjExMjYyNjk2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/jnrahme",
+          "html_url": "https://github.com/jnrahme",
+          "followers_url": "https://api.github.com/users/jnrahme/followers",
+          "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+          "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+          "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+          "repos_url": "https://api.github.com/users/jnrahme/repos",
+          "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "run_attempt": 1,
+        "referenced_workflows": [],
+        "run_started_at": "2026-10-15T10:57:22Z",
+        "triggering_actor": {
+          "login": "jnrahme",
+          "id": 11262696,
+          "node_id": "MDQ6VXNlcjExMjYyNjk2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/jnrahme",
+          "html_url": "https://github.com/jnrahme",
+          "followers_url": "https://api.github.com/users/jnrahme/followers",
+          "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+          "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+          "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+          "repos_url": "https://api.github.com/users/jnrahme/repos",
+          "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "jobs_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904184/jobs",
+        "logs_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904184/logs",
+        "check_suite_url": "https://api.github.com/repos/jnrahme/marsharbel/check-suites/104935514173",
+        "artifacts_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904184/artifacts",
+        "cancel_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904184/cancel",
+        "rerun_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904184/rerun",
+        "previous_attempt_url": null,
+        "workflow_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/workflows/241826591",
+        "head_commit": {
+          "id": "136de2bd3507066d8f33af564fc49483eacae9fa",
+          "tree_id": "4f5259095bec44f516e24cd09d6ab3d2c865fc0c",
+          "message": "Saint Charbel medal guide - full 12-locale family, home card, film slot (#817)\n\n* feat(content): Saint Charbel medal guide EN master (sacramental teaching page)\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* feat(content): Saint Charbel medal guide - 11 locale twins, i18n capability grants, FAQ schema removal\n\n- Words-only mirrors of the doctrinally reviewed EN master in ar, de, es,\n  fr, hi, it, pl, pt, ru, th, zh-Hans (110 keys each, EN key order,\n  placeholder parity; 57 chrome reuse + 53 authored per locale)\n- CCC 1667/1669/1670/1674 quotes sourced per locale: official Vatican\n  texts (ar/de/es/fr/it/pl/pt/ru), Traditional->Simplified conversion (zh);\n  hi/th agent-translated, flagged for native review\n- zh-Hans capability grant: medal family added to PRAYER_FAMILIES,\n  mirrorTabs = travel/film/prayers; checkpoint tests updated\n  (partial-locale, limited-launch, probe counts 18->19)\n- locale-mirror-policy: 11 strict twins with launch-availability-annotations\n  and english-nav-disclosure normalizers (+ partial-home-disclosure zh-Hans)\n- Schema-only FAQ JSON-LD fragment removed (no visible FAQ section; mirror\n  renderer and Google both require keyed visible content)\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Saint Charbel medal guide: 12-locale family, home card, film slot\n\n- Medal guide EN master + 11 twins; localized Catechism source links\n  (10 locale editions) and per-locale quote provenance\n- Thai keys repaired against the Thai CCC (thaicatechesis.com)\n- Home medal card on all 10 home locales (travel-card pattern, no new\n  chrome); home_mirror repoint routes full-launch cards to locale twins\n- Film-premiere medal note/link slot in all 12 film catalogs (zh-Hans\n  reachability route)\n- Encyclopedia medal card (EN/ar)\n- Commented CI expectation updates; film contract pins recomputed via\n  the family's own validation math\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Scrum fixes: scoped source-links normalizer, card 200% clip, hi disclosure\n\n- localized-source-links: inverse now scoped to the exact registered\n  family+locale; one-to-one mapping enforced; missing/duplicate,\n  wrong-locale, and unregistered citation anchors fail loudly instead of\n  a registry-wide silent reversal; context required through signature()\n- Explicit citation-target assertion in the locale mirror policy test\n  (the structural signature records no hrefs); hi policy entry drops the\n  normalizer (no swap registered) and keeps an identity-target assertion\n- 16 negative controls: apply/inverse/policy rejection paths\n- Home medal card: scoped mobile-track minmax(0,1fr) + copy min-width:0\n  with anywhere wrap - no clipping at 390px/200% root font (EN/DE/AR\n  stress-verified); travel card untouched\n- hi quotation-source disclosure bounded to page-level evidence\n- Film contract pins recomputed from final post-chrome bytes (after the\n  full i18n build, not the intermediate family-builder output)\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Wires test_localized_source_links.py (16 gate controls) into\nrun_full_qa.sh so the unsharded deploy run and the shard union both\nexecute it (scrum #817 wiring fix, cf. #814).\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* es CCC 1670: keep corrected \"con ella\", disclose Vatican typo (scrum ruling)\n\nThe Vatican HTML edition carries a typographical duplication (\"con a\nella\") in CCC 1670; the es quotation keeps the corrected text and the\nSources note now states the correction transparently. Meaning unchanged.\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n* Home medal card: de-collide selectors (.home-medal-card) + exact-copy i18n catalog\n\n- Medal card gets its own DOM hook (.home-medal-card, section .home-medal);\n  travel card keeps .home-travel-card - fixes strict-mode collisions in\n  hindi-travel-hub, nav_legacy and same-page harness selectors.\n- styles.css groups selectors for shared visuals; 200% rules retargeted.\n- New locales/en/home-medal-copy.json exact-copy catalog (6 strings) and\n  check_i18n_policy catalog list entry - fixes i18n policy failure.\n- home-bindings re-pinned (296/296 selectors verified), manifest regenerated.\n\nCo-authored-by: Instinct Agent <agent@instinct.com>\n\n---------\n\nCo-authored-by: Instinct Agent <agent@instinct.com>",
+          "timestamp": "2026-10-15T10:57:19Z",
+          "author": {
+            "name": "jnrahme",
+            "email": "jnrahme@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com"
+          }
+        },
+        "repository": {
+          "id": 1173201937,
+          "node_id": "R_kgDORe2kEQ",
+          "name": "marsharbel",
+          "full_name": "jnrahme/marsharbel",
+          "private": false,
+          "owner": {
+            "login": "jnrahme",
+            "id": 11262696,
+            "node_id": "MDQ6VXNlcjExMjYyNjk2",
+            "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jnrahme",
+            "html_url": "https://github.com/jnrahme",
+            "followers_url": "https://api.github.com/users/jnrahme/followers",
+            "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+            "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+            "repos_url": "https://api.github.com/users/jnrahme/repos",
+            "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "html_url": "https://github.com/jnrahme/marsharbel",
+          "description": "marcharbel website",
+          "fork": false,
+          "url": "https://api.github.com/repos/jnrahme/marsharbel",
+          "forks_url": "https://api.github.com/repos/jnrahme/marsharbel/forks",
+          "keys_url": "https://api.github.com/repos/jnrahme/marsharbel/keys{/key_id}",
+          "collaborators_url": "https://api.github.com/repos/jnrahme/marsharbel/collaborators{/collaborator}",
+          "teams_url": "https://api.github.com/repos/jnrahme/marsharbel/teams",
+          "hooks_url": "https://api.github.com/repos/jnrahme/marsharbel/hooks",
+          "issue_events_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/events{/number}",
+          "events_url": "https://api.github.com/repos/jnrahme/marsharbel/events",
+          "assignees_url": "https://api.github.com/repos/jnrahme/marsharbel/assignees{/user}",
+          "branches_url": "https://api.github.com/repos/jnrahme/marsharbel/branches{/branch}",
+          "tags_url": "https://api.github.com/repos/jnrahme/marsharbel/tags",
+          "blobs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/blobs{/sha}",
+          "git_tags_url": "https://api.github.com/repos/jnrahme/marsharbel/git/tags{/sha}",
+          "git_refs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/refs{/sha}",
+          "trees_url": "https://api.github.com/repos/jnrahme/marsharbel/git/trees{/sha}",
+          "statuses_url": "https://api.github.com/repos/jnrahme/marsharbel/statuses/{sha}",
+          "languages_url": "https://api.github.com/repos/jnrahme/marsharbel/languages",
+          "stargazers_url": "https://api.github.com/repos/jnrahme/marsharbel/stargazers",
+          "contributors_url": "https://api.github.com/repos/jnrahme/marsharbel/contributors",
+          "subscribers_url": "https://api.github.com/repos/jnrahme/marsharbel/subscribers",
+          "subscription_url": "https://api.github.com/repos/jnrahme/marsharbel/subscription",
+          "commits_url": "https://api.github.com/repos/jnrahme/marsharbel/commits{/sha}",
+          "git_commits_url": "https://api.github.com/repos/jnrahme/marsharbel/git/commits{/sha}",
+          "comments_url": "https://api.github.com/repos/jnrahme/marsharbel/comments{/number}",
+          "issue_comment_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/comments{/number}",
+          "contents_url": "https://api.github.com/repos/jnrahme/marsharbel/contents/{+path}",
+          "compare_url": "https://api.github.com/repos/jnrahme/marsharbel/compare/{base}...{head}",
+          "merges_url": "https://api.github.com/repos/jnrahme/marsharbel/merges",
+          "archive_url": "https://api.github.com/repos/jnrahme/marsharbel/{archive_format}{/ref}",
+          "downloads_url": "https://api.github.com/repos/jnrahme/marsharbel/downloads",
+          "issues_url": "https://api.github.com/repos/jnrahme/marsharbel/issues{/number}",
+          "pulls_url": "https://api.github.com/repos/jnrahme/marsharbel/pulls{/number}",
+          "milestones_url": "https://api.github.com/repos/jnrahme/marsharbel/milestones{/number}",
+          "notifications_url": "https://api.github.com/repos/jnrahme/marsharbel/notifications{?since,all,participating}",
+          "labels_url": "https://api.github.com/repos/jnrahme/marsharbel/labels{/name}",
+          "releases_url": "https://api.github.com/repos/jnrahme/marsharbel/releases{/id}",
+          "deployments_url": "https://api.github.com/repos/jnrahme/marsharbel/deployments"
+        },
+        "head_repository": {
+          "id": 1173201937,
+          "node_id": "R_kgDORe2kEQ",
+          "name": "marsharbel",
+          "full_name": "jnrahme/marsharbel",
+          "private": false,
+          "owner": {
+            "login": "jnrahme",
+            "id": 11262696,
+            "node_id": "MDQ6VXNlcjExMjYyNjk2",
+            "avatar_url": "https://avatars.githubusercontent.com/u/11262696?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jnrahme",
+            "html_url": "https://github.com/jnrahme",
+            "followers_url": "https://api.github.com/users/jnrahme/followers",
+            "following_url": "https://api.github.com/users/jnrahme/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jnrahme/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jnrahme/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jnrahme/subscriptions",
+            "organizations_url": "https://api.github.com/users/jnrahme/orgs",
+            "repos_url": "https://api.github.com/users/jnrahme/repos",
+            "events_url": "https://api.github.com/users/jnrahme/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jnrahme/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "html_url": "https://github.com/jnrahme/marsharbel",
+          "description": "marcharbel website",
+          "fork": false,
+          "url": "https://api.github.com/repos/jnrahme/marsharbel",
+          "forks_url": "https://api.github.com/repos/jnrahme/marsharbel/forks",
+          "keys_url": "https://api.github.com/repos/jnrahme/marsharbel/keys{/key_id}",
+          "collaborators_url": "https://api.github.com/repos/jnrahme/marsharbel/collaborators{/collaborator}",
+          "teams_url": "https://api.github.com/repos/jnrahme/marsharbel/teams",
+          "hooks_url": "https://api.github.com/repos/jnrahme/marsharbel/hooks",
+          "issue_events_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/events{/number}",
+          "events_url": "https://api.github.com/repos/jnrahme/marsharbel/events",
+          "assignees_url": "https://api.github.com/repos/jnrahme/marsharbel/assignees{/user}",
+          "branches_url": "https://api.github.com/repos/jnrahme/marsharbel/branches{/branch}",
+          "tags_url": "https://api.github.com/repos/jnrahme/marsharbel/tags",
+          "blobs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/blobs{/sha}",
+          "git_tags_url": "https://api.github.com/repos/jnrahme/marsharbel/git/tags{/sha}",
+          "git_refs_url": "https://api.github.com/repos/jnrahme/marsharbel/git/refs{/sha}",
+          "trees_url": "https://api.github.com/repos/jnrahme/marsharbel/git/trees{/sha}",
+          "statuses_url": "https://api.github.com/repos/jnrahme/marsharbel/statuses/{sha}",
+          "languages_url": "https://api.github.com/repos/jnrahme/marsharbel/languages",
+          "stargazers_url": "https://api.github.com/repos/jnrahme/marsharbel/stargazers",
+          "contributors_url": "https://api.github.com/repos/jnrahme/marsharbel/contributors",
+          "subscribers_url": "https://api.github.com/repos/jnrahme/marsharbel/subscribers",
+          "subscription_url": "https://api.github.com/repos/jnrahme/marsharbel/subscription",
+          "commits_url": "https://api.github.com/repos/jnrahme/marsharbel/commits{/sha}",
+          "git_commits_url": "https://api.github.com/repos/jnrahme/marsharbel/git/commits{/sha}",
+          "comments_url": "https://api.github.com/repos/jnrahme/marsharbel/comments{/number}",
+          "issue_comment_url": "https://api.github.com/repos/jnrahme/marsharbel/issues/comments{/number}",
+          "contents_url": "https://api.github.com/repos/jnrahme/marsharbel/contents/{+path}",
+          "compare_url": "https://api.github.com/repos/jnrahme/marsharbel/compare/{base}...{head}",
+          "merges_url": "https://api.github.com/repos/jnrahme/marsharbel/merges",
+          "archive_url": "https://api.github.com/repos/jnrahme/marsharbel/{archive_format}{/ref}",
+          "downloads_url": "https://api.github.com/repos/jnrahme/marsharbel/downloads",
+          "issues_url": "https://api.github.com/repos/jnrahme/marsharbel/issues{/number}",
+          "pulls_url": "https://api.github.com/repos/jnrahme/marsharbel/pulls{/number}",
+          "milestones_url": "https://api.github.com/repos/jnrahme/marsharbel/milestones{/number}",
+          "notifications_url": "https://api.github.com/repos/jnrahme/marsharbel/notifications{?since,all,participating}",
+          "labels_url": "https://api.github.com/repos/jnrahme/marsharbel/labels{/name}",
+          "releases_url": "https://api.github.com/repos/jnrahme/marsharbel/releases{/id}",
+          "deployments_url": "https://api.github.com/repos/jnrahme/marsharbel/deployments"
+        }
+      },
+      "attempt_jobs": {
+        "total_count": 2,
+        "jobs": [
+          {
+            "id": 116384925944,
+            "run_id": 38723904184,
+            "workflow_name": "Deploy to Hostinger",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904184",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGRUI-A",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116384925944",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904184/job/116384925944",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T10:57:23Z",
+            "started_at": "2026-10-15T10:57:26Z",
+            "completed_at": "2026-10-15T11:21:08Z",
+            "name": "qa",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T10:57:26Z",
+                "completed_at": "2026-10-15T10:57:27Z"
+              },
+              {
+                "name": "Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T10:57:27Z",
+                "completed_at": "2026-10-15T10:57:41Z"
+              },
+              {
+                "name": "Test deployment verification",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T10:57:41Z",
+                "completed_at": "2026-10-15T10:57:54Z"
+              },
+              {
+                "name": "Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4,
+                "started_at": "2026-10-15T10:57:54Z",
+                "completed_at": "2026-10-15T10:58:02Z"
+              },
+              {
+                "name": "Install dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5,
+                "started_at": "2026-10-15T10:58:02Z",
+                "completed_at": "2026-10-15T10:58:03Z"
+              },
+              {
+                "name": "Install Playwright browser dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T10:58:03Z",
+                "completed_at": "2026-10-15T10:58:22Z"
+              },
+              {
+                "name": "Install Python dependencies",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T10:58:22Z",
+                "completed_at": "2026-10-15T10:58:23Z"
+              },
+              {
+                "name": "Run QA suite",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 8,
+                "started_at": "2026-10-15T10:58:23Z",
+                "completed_at": "2026-10-15T11:21:05Z"
+              },
+              {
+                "name": "Post Setup Node",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 15,
+                "started_at": "2026-10-15T11:21:05Z",
+                "completed_at": "2026-10-15T11:21:05Z"
+              },
+              {
+                "name": "Post Checkout",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 16,
+                "started_at": "2026-10-15T11:21:05Z",
+                "completed_at": "2026-10-15T11:21:05Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 17,
+                "started_at": "2026-10-15T11:21:05Z",
+                "completed_at": "2026-10-15T11:21:05Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116384925944",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043526,
+            "runner_name": "GitHub Actions 1000043526",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          },
+          {
+            "id": 116394246391,
+            "run_id": 38723904184,
+            "workflow_name": "Deploy to Hostinger",
+            "head_branch": "stage",
+            "run_url": "https://api.github.com/repos/jnrahme/marsharbel/actions/runs/38723904184",
+            "run_attempt": 1,
+            "node_id": "CR_kwDORe2kEc8AAAAbGaNA9w",
+            "head_sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+            "url": "https://api.github.com/repos/jnrahme/marsharbel/actions/jobs/116394246391",
+            "html_url": "https://github.com/jnrahme/marsharbel/actions/runs/38723904184/job/116394246391",
+            "status": "completed",
+            "conclusion": "success",
+            "created_at": "2026-10-15T11:21:08Z",
+            "started_at": "2026-10-15T11:21:11Z",
+            "completed_at": "2026-10-15T11:21:45Z",
+            "name": "verify-deployment",
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1,
+                "started_at": "2026-10-15T11:21:12Z",
+                "completed_at": "2026-10-15T11:21:13Z"
+              },
+              {
+                "name": "Checkout pushed version",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2,
+                "started_at": "2026-10-15T11:21:13Z",
+                "completed_at": "2026-10-15T11:21:25Z"
+              },
+              {
+                "name": "Verify Hostinger serves this frontend",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3,
+                "started_at": "2026-10-15T11:21:25Z",
+                "completed_at": "2026-10-15T11:21:43Z"
+              },
+              {
+                "name": "Post Checkout pushed version",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6,
+                "started_at": "2026-10-15T11:21:43Z",
+                "completed_at": "2026-10-15T11:21:43Z"
+              },
+              {
+                "name": "Complete job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7,
+                "started_at": "2026-10-15T11:21:43Z",
+                "completed_at": "2026-10-15T11:21:43Z"
+              }
+            ],
+            "check_run_url": "https://api.github.com/repos/jnrahme/marsharbel/check-runs/116394246391",
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "runner_id": 1000043554,
+            "runner_name": "GitHub Actions 1000043554",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions"
+          }
+        ]
+      },
+      "read_at": "2026-10-15T11:25:01.783730+00:00"
+    }
+  ],
+  "latest_stage_reconciliation": {
+    "observed_at": "2026-10-15T11:25:01.980293+00:00",
+    "sha": "136de2bd3507066d8f33af564fc49483eacae9fa",
+    "claim": "GitHub stage ref only; not public site byte verification"
+  }
+}
