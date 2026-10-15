@@ -140,18 +140,20 @@ figcaption. New images: add a record here in the same batch.
 
 ## Reused as /news card headers (2026-09-25 news restructure)
 
-### media/annaya/annaya-entrance-pilgrims.webp (1100x733) - byblos-annaya-prayer-walk card
+### media/annaya/annaya-entrance-pilgrims.webp (1100x733) - byblos-annaya-prayer-walk card - SUPERSEDED in those slots 2026-10-15
 - Source: Wikimedia Commons, File:St Charbel Makhlouf Annaya.jpg, author LLEW, CC BY-SA 4.0 (verified 2026-09-25 via Commons API, see bot-log 2026-09-25-photo-p1-b1).
-- Reuse: homepage Latest News trail row since 2026-10-15, replacing the Sliney courtesy photo in that slot (isolated permission-record gap, news desk 2026-10-14); adaptations noted in locales/en/news-image-records.json.
+- 2026-10-15: replaced by the owner-granted media/annaya/annaya-church-dusk-entrance.webp on the byblos-annaya-prayer-walk card and the homepage Latest News trail row (Batch 1 owner-granted set below). Still referenced by templates/masters/miracles-exact.html hero/social meta (scoped hero family, pending).
 
-### media/annaya/annaya-monastery.webp (1100x618) - new-miracles-reported card
+### media/annaya/annaya-monastery.webp (1100x618) - new-miracles-reported card - SUPERSEDED in that slot 2026-10-15
 - Source: Wikimedia Commons, File:Pan Annaya Church And Monastry.jpg, author Paul Saad, CC BY-SA 4.0 (verified 2026-09-25, bot-log photo-p1-b1).
+- 2026-10-15: replaced by the owner-granted media/annaya/annaya-monastery-aerial-day.webp on the new-miracles-reported card, and superseded in the Batch 1 body-figure swaps (relics, tomb, oil, how-did, prayer-for-healing, miracles-2026, all-saints, pilgrimage, history, prayer-library, novena, visit-annaya). Still referenced by pilgrimage/hermitage/history-exact heroes and social meta and by annaya-tour (scoped hero/tour families, pending).
 
 ### media/annaya/charbel-historic-photo.webp (419x595) - revesby-feast card
 - Source: Wikimedia Commons, File:Charbel.jpg, author unknown (old photo), public domain (verified 2026-09-25, bot-log photo-p1-b2). Small source - only known historic photo of the saint.
 
-### media/annaya/charbel-tomb-vigil-lamp.webp (589x468) - cebu-relic-visit card
+### media/annaya/charbel-tomb-vigil-lamp.webp (589x468) - cebu-relic-visit card - SUPERSEDED in that slot 2026-10-15
 - Source: crop of Wikimedia Commons File:Charbel Makhlouf grave.JPG, author LLEW, CC BY-SA 4.0 (verified 2026-09-25, bot-log photo-p1-b2).
+- 2026-10-15: replaced by the owner-granted media/annaya/charbel-tomb-pilgrims.webp on the cebu-relic-visit card. Still referenced by the oil and all-saints heroes/social meta (scoped hero family, pending).
 
 ### media/news/trail-pilgrimage-hero.webp (1200x675) - st-charbel-trail-pilgrimage card
 - Photo courtesy of Father Michael Sliney, LC (site-credited; in use on saint-charbel-trail).
@@ -372,6 +374,16 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 - Rights basis: owner-reported blanket permission from the Lebanese Maronite Order for Saint Charbel and church-related material on this website - owner-reported 2026-10-14, restated verbatim 2026-10-15 (owner WhatsApp: "i told you you have permission to use any photos you need and you still kept this one", directing this exact swap). Website scope, not document-certified; recorded as reported, not upgraded (news-image-records status courtesy-permission-record-gap).
 - Treatment: no visible credit or license links. Rights basis: owner-reported reuse permission; attribution terms not independently documented; the home "Sources and photo credits" details entry for this item was dropped because the previously credited image is no longer used. Provenance lives here and in locales/en/news-image-records.json.
 - Prior registration for the same asset: Annaya tour entry (media/tour/annaya-night-aerial.webp, "used with owner permission").
+
+## Annaya Batch 1 owner-granted photo set (added 2026-10-15, owner directive)
+
+- Assets (WebP converted from owner-site originals, each visually inspected before commit): media/annaya/annaya-monastery-aerial-day.webp (1080x608, monastery from above by day), annaya-church-dusk-entrance.webp (1000x838, church entrance at dusk), annaya-church-interior.webp (1500x661, church interior), annaya-courtyard-dusk.webp (1000x667, courtyard at dusk), annaya-church-snow.webp (1000x667, church in the snow), charbel-tomb-shrine.webp (1500x1063, tomb shrine), charbel-tomb-chapel.webp (1000x667, tomb chapel), charbel-tomb-pilgrims.webp (1000x667, pilgrims at the tomb), charbel-oil-lamp-hermitage.webp (1000x667, oil lamp at the hermitage).
+- Source: saintcharbel.com (official Monastery of Saint Maron - Annaya site), media library originals retrieved 2026-10-15.
+- Rights basis: owner-reported blanket permission from the Lebanese Maronite Order for Saint Charbel and church-related material on this website - owner-reported 2026-10-14, restated verbatim 2026-10-15 (owner WhatsApp: "i told you you have permission to use any photos you need and you still kept this one"). Website scope, not document-certified; recorded as reported, not upgraded (news-image-records status courtesy-permission-record-gap where that file applies).
+- Treatment: no visible credits or license links on swapped placements. Rights basis: owner-reported reuse permission; attribution terms not independently documented; prior credits removed because the previously credited images are no longer used in those slots.
+- Placements swapped: relics, tomb, oil, how-did-saint-charbel-die, prayer-for-healing, miracles-2026 (commit 224e70af); all-saints-and-all-souls and pilgrimage families (commit 7fc5c8a1); history, prayer-library, novena, visit-annaya (commit 2dc61117); home trail row, home travel card, footer credit span, byblos-annaya-prayer-walk / cebu-relic-visit / new-miracles-reported news cards and the home credits details entries for swapped items (home/news-desk chunk).
+- Hero and social-meta images on the exact-master families (miracles-exact, all-saints, history-exact, pilgrimage, hermitage, oil) and the annaya-tour stops are scoped families with pinned review evidence; they are NOT part of this batch and are handled through the prepared-review repin flow.
+- media/tour/annaya-winter-panorama.webp (Paul Saad, CC BY-SA 4.0) no longer serves the home travel card (replaced by annaya-church-snow.webp); it remains in use on annaya-tour stop 1 pending the scoped tour swap.
 
 ## Default Saint Charbel portrait (swapped 2026-10-13)
 
