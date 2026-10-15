@@ -18,10 +18,17 @@ def tree(node):
     return [node.name, attrs, children]
 
 
-def signature(text, route, normalizers=()):
+def signature(text, route, normalizers=(), context=None):
     soup = BeautifulSoup(text, 'html.parser')
     for name in normalizers:
-        soup = NORMALIZERS[name](soup)
+        if name in NORMALIZERS:
+            soup = NORMALIZERS[name](soup)
+        elif name in CONTEXT_NORMALIZERS:
+            if not context or not context.get('family') or not context.get('lang'):
+                raise ValueError(f'normalizer {name} requires family+lang context')
+            soup = CONTEXT_NORMALIZERS[name](soup, context)
+        else:
+            raise ValueError(f'unregistered normalizer {name}')
     def asset(value):
         return urlsplit(urljoin('https://marsharbel.com'+route,value)).path
     return {
@@ -33,9 +40,9 @@ def signature(text, route, normalizers=()):
     }
 
 
-def check_pair(master, locale, master_route, locale_route, normalizers=()):
+def check_pair(master, locale, master_route, locale_route, normalizers=(), context=None):
     english = signature(master, master_route)
-    translated = signature(locale, locale_route, normalizers)
+    translated = signature(locale, locale_route, normalizers, context)
     return [key for key in english if english[key] != translated[key]]
 
 def _strip_launch_annotations(soup):
@@ -90,24 +97,25 @@ def _strip_english_nav_disclosure(soup):
         hint.decompose()
     return soup
 
-def _strip_localized_source_links(soup):
-    """Revert registered per-locale citation hrefs to the master target.
+def _strip_localized_source_links(soup, context):
+    """Revert this page's registered per-locale citation hrefs to the master target.
 
-    Reads the same pageMirrors sourceLinks config the render pass applies, so the
-    policy diff waives exactly the registered citation swaps and nothing else.
+    Scoped to the exact (family, lang) page identity from context: only that
+    family's registered swaps for that locale revert, with strict
+    missing/duplicate/wrong-locale/unregistered checks - never a registry-wide
+    reversal.
     """
     import json as _json
     from pathlib import Path as _Path
-    from i18n.localized_source_links import reverse_map
+    from i18n.localized_source_links import strip_localized_source_links
     registry = _json.loads((_Path(__file__).resolve().parents[2] / 'locales/registry.json').read_text())
-    for anchor in soup.select('a[href]'):
-        master = reverse_map(registry).get(anchor['href'])
-        if master is not None:
-            anchor['href'] = master
-    return soup
+    return strip_localized_source_links(soup, registry, context['family'], context['lang'])
 
 
 NORMALIZERS = {'launch-availability-annotations': _strip_launch_annotations,
                'partial-home-disclosure': _strip_partial_home_disclosure,
-               'english-nav-disclosure': _strip_english_nav_disclosure,
-               'localized-source-links': _strip_localized_source_links}
+               'english-nav-disclosure': _strip_english_nav_disclosure}
+
+# Normalizers that need the exact page identity (family+lang) to act; signature()
+# requires a context argument when one of these is requested.
+CONTEXT_NORMALIZERS = {'localized-source-links': _strip_localized_source_links}
