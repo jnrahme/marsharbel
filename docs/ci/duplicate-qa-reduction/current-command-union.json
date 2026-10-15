@@ -1,0 +1,2775 @@
+{
+  "base_sha": "6cf7e5b75049f6e2003211b09698d5acfe4305a6",
+  "tree": "b04dc8a36b5ccbbf3370cc3348414df075399617",
+  "runner_sha256": "c6564c152bdaa14e7d5f2fefb13efe32ae51e9291abd3c83cb5aedabc02263e6",
+  "full": [
+    {
+      "index": 0,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_new_page_locales.py"
+      ]
+    },
+    {
+      "index": 1,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_private_preview_gate.py"
+      ]
+    },
+    {
+      "index": 2,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_rosary_book_joyful_catalog.py"
+      ]
+    },
+    {
+      "index": 3,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_dead_code_private_preview.py"
+      ]
+    },
+    {
+      "index": 4,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_partial_locale.py"
+      ]
+    },
+    {
+      "index": 5,
+      "argv": [
+        "python3",
+        "scripts/qa/probe_partial_build.py"
+      ]
+    },
+    {
+      "index": 6,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_metadata.py"
+      ]
+    },
+    {
+      "index": 7,
+      "argv": [
+        "python3",
+        "scripts/qa/test_travel_release.py"
+      ]
+    },
+    {
+      "index": 8,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_media_nav_repin.py"
+      ]
+    },
+    {
+      "index": 9,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_history_nav_repin.py"
+      ]
+    },
+    {
+      "index": 10,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_ru_travel_repin.py"
+      ]
+    },
+    {
+      "index": 11,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_scoped_delta.py"
+      ]
+    },
+    {
+      "index": 12,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_parallel_repin.py"
+      ]
+    },
+    {
+      "index": 13,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_metadata_attribute_order.py"
+      ]
+    },
+    {
+      "index": 14,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_provenance_stage_reachable.py"
+      ]
+    },
+    {
+      "index": 15,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_metadata_splice.py"
+      ]
+    },
+    {
+      "index": 16,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_authored_final_hashes.py"
+      ]
+    },
+    {
+      "index": 17,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_page_mirror_ru_whitespace.py"
+      ]
+    },
+    {
+      "index": 18,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_variant_evidence.py"
+      ]
+    },
+    {
+      "index": 19,
+      "argv": [
+        "python3",
+        "scripts/qa/test_header_marking_delta.py"
+      ]
+    },
+    {
+      "index": 20,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_generated_availability.py"
+      ]
+    },
+    {
+      "index": 21,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_generated_sitemap_dates.py"
+      ]
+    },
+    {
+      "index": 22,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_manifest_provenance_policy.py"
+      ]
+    },
+    {
+      "index": 23,
+      "argv": [
+        "node",
+        "scripts/tests/scoped_travel_resolver.cjs"
+      ]
+    },
+    {
+      "index": 24,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_ru_nav_alignment_repin.py"
+      ]
+    },
+    {
+      "index": 25,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_ru_travel_chrome.py"
+      ]
+    },
+    {
+      "index": 26,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_media_bindings_prepare.py"
+      ]
+    },
+    {
+      "index": 27,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_retired_novena_nav_repin.py"
+      ]
+    },
+    {
+      "index": 28,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_fr_header_marking.py"
+      ]
+    },
+    {
+      "index": 29,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_es_header_marking.py"
+      ]
+    },
+    {
+      "index": 30,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_it_header_marking.py"
+      ]
+    },
+    {
+      "index": 31,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_pl_header_marking.py"
+      ]
+    },
+    {
+      "index": 32,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_pt_header_marking.py"
+      ]
+    },
+    {
+      "index": 33,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_hi_header_marking.py"
+      ]
+    },
+    {
+      "index": 34,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_th_header_marking.py"
+      ]
+    },
+    {
+      "index": 35,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/element-collision.spec.js",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    },
+    {
+      "index": 36,
+      "argv": [
+        "python3",
+        "scripts/qa/test_travel_equivalence.py"
+      ]
+    },
+    {
+      "index": 37,
+      "argv": [
+        "node",
+        "scripts/tests/travel_equivalence.cjs"
+      ]
+    },
+    {
+      "index": 38,
+      "argv": [
+        "node",
+        "scripts/tests/travel_release_proof.cjs"
+      ]
+    },
+    {
+      "index": 39,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/travel-equivalence.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    },
+    {
+      "index": 40,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/miracles-english-escape.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    },
+    {
+      "index": 41,
+      "argv": [
+        "python3",
+        "scripts/qa/test_prayer_keyed_masters.py"
+      ]
+    },
+    {
+      "index": 42,
+      "argv": [
+        "python3",
+        "scripts/qa/test_prayer_equivalence.py"
+      ]
+    },
+    {
+      "index": 43,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/prayer-equivalence.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    },
+    {
+      "index": 44,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/prayer-share-runtime.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    },
+    {
+      "index": 45,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/prayer-keyed-masters.spec.js",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    },
+    {
+      "index": 46,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_source_safeguards.py"
+      ]
+    },
+    {
+      "index": 47,
+      "argv": [
+        "python3",
+        "scripts/qa/test_new_master_english_escape.py"
+      ]
+    },
+    {
+      "index": 48,
+      "argv": [
+        "python3",
+        "scripts/qa/test_exact_source_inputs.py"
+      ]
+    },
+    {
+      "index": 49,
+      "argv": [
+        "python3",
+        "scripts/qa/test_limited_launch.py"
+      ]
+    },
+    {
+      "index": 50,
+      "argv": [
+        "bash",
+        "-o",
+        "pipefail",
+        "-c",
+        "npx playwright test tests/limited-launch.spec.js tests/hindi-travel-hub.spec.js --project=phone --project=laptop --workers=2 2>&1 | tee tmp/shard7-playwright.txt"
+      ]
+    },
+    {
+      "index": 51,
+      "argv": [
+        "python3",
+        "scripts/qa/test_source_copy_keys.py"
+      ]
+    },
+    {
+      "index": 52,
+      "argv": [
+        "python3",
+        "scripts/qa/check_travel_routes.py"
+      ]
+    },
+    {
+      "index": 53,
+      "argv": [
+        "python3",
+        "scripts/qa/test_travel.py"
+      ]
+    },
+    {
+      "index": 54,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/travel-routing.spec.js",
+        "tests/travel-hub.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=4"
+      ]
+    },
+    {
+      "index": 55,
+      "argv": [
+        "node",
+        "scripts/tests/video-fallback.mjs"
+      ]
+    },
+    {
+      "index": 56,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/video-playback.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    },
+    {
+      "index": 57,
+      "argv": [
+        "node",
+        "scripts/qa/test_analytics_hostname.cjs"
+      ]
+    },
+    {
+      "index": 58,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_security_headers.py"
+      ]
+    },
+    {
+      "index": 59,
+      "argv": [
+        "node",
+        "scripts/build-home-css.mjs",
+        "--check"
+      ]
+    },
+    {
+      "index": 60,
+      "argv": [
+        "npm",
+        "run",
+        "i18n:check"
+      ]
+    },
+    {
+      "index": 61,
+      "argv": [
+        "python3",
+        "scripts/build-eucharistic-miracles.py",
+        "--check"
+      ]
+    },
+    {
+      "index": 62,
+      "argv": [
+        "npm",
+        "run",
+        "i18n:test"
+      ]
+    },
+    {
+      "index": 63,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/language-persistence.spec.js",
+        "tests/locale-preference-routing.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    },
+    {
+      "index": 64,
+      "argv": [
+        "python3",
+        "scripts/qa/test_chaplet_mirror.py"
+      ]
+    },
+    {
+      "index": 65,
+      "argv": [
+        "python3",
+        "scripts/qa/test_de_exact_catalogs.py"
+      ]
+    },
+    {
+      "index": 66,
+      "argv": [
+        "python3",
+        "scripts/qa/test_encyclopedia_trail.py"
+      ]
+    },
+    {
+      "index": 67,
+      "argv": [
+        "python3",
+        "scripts/qa/test_error_document.py"
+      ]
+    },
+    {
+      "index": 68,
+      "argv": [
+        "python3",
+        "scripts/qa/test_exact_master.py"
+      ]
+    },
+    {
+      "index": 69,
+      "argv": [
+        "python3",
+        "scripts/qa/test_exact_wiring.py"
+      ]
+    },
+    {
+      "index": 70,
+      "argv": [
+        "python3",
+        "scripts/qa/test_feast_mirror.py"
+      ]
+    },
+    {
+      "index": 71,
+      "argv": [
+        "python3",
+        "scripts/qa/test_footer_navigation.py"
+      ]
+    },
+    {
+      "index": 72,
+      "argv": [
+        "python3",
+        "scripts/qa/test_head_fragments.py"
+      ]
+    },
+    {
+      "index": 73,
+      "argv": [
+        "python3",
+        "scripts/qa/test_jsonld_serializer.py"
+      ]
+    },
+    {
+      "index": 74,
+      "argv": [
+        "bash",
+        "-o",
+        "pipefail",
+        "-c",
+        "python3 -m unittest -v scripts.qa.test_litany_mirror 2>&1 | tee tmp/litany.txt"
+      ]
+    },
+    {
+      "index": 75,
+      "argv": [
+        "python3",
+        "scripts/qa/test_locale_foundation.py"
+      ]
+    },
+    {
+      "index": 76,
+      "argv": [
+        "python3",
+        "scripts/qa/test_locale_home_navigation.py"
+      ]
+    },
+    {
+      "index": 77,
+      "argv": [
+        "python3",
+        "scripts/qa/test_prayer_mirror.py"
+      ]
+    },
+    {
+      "index": 78,
+      "argv": [
+        "python3",
+        "scripts/qa/test_saint_pillars.py"
+      ]
+    },
+    {
+      "index": 79,
+      "argv": [
+        "python3",
+        "scripts/qa/test_tour_nav.py"
+      ]
+    },
+    {
+      "index": 80,
+      "argv": [
+        "python3",
+        "scripts/qa/check_spec_paths.py"
+      ]
+    },
+    {
+      "index": 81,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_spec_paths.py"
+      ]
+    },
+    {
+      "index": 82,
+      "argv": [
+        "python3",
+        "scripts/qa/check_seo.py"
+      ]
+    },
+    {
+      "index": 83,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_seo.py"
+      ]
+    },
+    {
+      "index": 84,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_answer_faq_parity.py"
+      ]
+    },
+    {
+      "index": 85,
+      "argv": [
+        "python3",
+        "scripts/build_news_desk.py",
+        "--check"
+      ]
+    },
+    {
+      "index": 86,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_news_desk.py"
+      ]
+    },
+    {
+      "index": 87,
+      "argv": [
+        "python3",
+        "scripts/build_feeds.py",
+        "--check"
+      ]
+    },
+    {
+      "index": 88,
+      "argv": [
+        "python3",
+        "scripts/build_news_thumbs.py",
+        "--check"
+      ]
+    },
+    {
+      "index": 89,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_feeds.py"
+      ]
+    },
+    {
+      "index": 90,
+      "argv": [
+        "node",
+        "scripts/build-testimony-baseline.mjs",
+        "--check"
+      ]
+    },
+    {
+      "index": 91,
+      "argv": [
+        "node",
+        "scripts/tests/testimony_static.mjs"
+      ]
+    },
+    {
+      "index": 92,
+      "argv": [
+        "npm",
+        "run",
+        "test:testimony-security"
+      ]
+    },
+    {
+      "index": 93,
+      "argv": [
+        "npm",
+        "run",
+        "test:site-smoke"
+      ]
+    },
+    {
+      "index": 94,
+      "argv": [
+        "env",
+        "PORT=4189",
+        "bash",
+        "scripts/tests/run_eucharistic_collection.sh"
+      ]
+    },
+    {
+      "index": 95,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_rosary_bead_copy.py"
+      ]
+    },
+    {
+      "index": 96,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_mystery_art.py"
+      ]
+    },
+    {
+      "index": 97,
+      "argv": [
+        "python3",
+        "scripts/qa/test_private_directories.py"
+      ]
+    },
+    {
+      "index": 98,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/rosary-bead-teacher.spec.js",
+        "--project=small-phone",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    },
+    {
+      "index": 99,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-smoke"
+      ]
+    },
+    {
+      "index": 100,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-menu"
+      ]
+    },
+    {
+      "index": 101,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-end-rules"
+      ]
+    },
+    {
+      "index": 102,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-prayer-behavior"
+      ]
+    },
+    {
+      "index": 103,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-intro-cta"
+      ]
+    },
+    {
+      "index": 104,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-ui-regression"
+      ]
+    },
+    {
+      "index": 105,
+      "argv": [
+        "npm",
+        "run",
+        "test:story-floating-player"
+      ]
+    },
+    {
+      "index": 106,
+      "argv": [
+        "npm",
+        "run",
+        "test:checklist"
+      ]
+    },
+    {
+      "index": 107,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_eucharistic_locale.py"
+      ]
+    },
+    {
+      "index": 108,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_home_mirror.py"
+      ]
+    },
+    {
+      "index": 109,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_mirror_structure.py"
+      ]
+    },
+    {
+      "index": 110,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_shared_nav_references.py"
+      ]
+    },
+    {
+      "index": 111,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_locale_mirror_policy.py"
+      ]
+    },
+    {
+      "index": 112,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_film_master_family.py"
+      ]
+    },
+    {
+      "index": 113,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_history_master_mirror.py"
+      ]
+    },
+    {
+      "index": 114,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_page_mirrors.py"
+      ]
+    },
+    {
+      "index": 115,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_annaya_hero_evidence.py"
+      ]
+    },
+    {
+      "index": 116,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_annaya_tour_hero_prepare.py"
+      ]
+    },
+    {
+      "index": 117,
+      "argv": [
+        "node",
+        "scripts/tests/history_equivalence.cjs"
+      ]
+    },
+    {
+      "index": 118,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/history-master.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    },
+    {
+      "index": 119,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/travel-master.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    },
+    {
+      "index": 120,
+      "argv": [
+        "env",
+        "PORT=4197",
+        "bash",
+        "scripts/tests/run_eucharistic_locales.sh"
+      ]
+    },
+    {
+      "index": 121,
+      "argv": [
+        "env",
+        "PORT=4198",
+        "bash",
+        "scripts/tests/run_hero_figure_crop.sh"
+      ]
+    },
+    {
+      "index": 122,
+      "argv": [
+        "npm",
+        "run",
+        "books:check"
+      ]
+    },
+    {
+      "index": 123,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_resolver.cjs"
+      ]
+    },
+    {
+      "index": 124,
+      "argv": [
+        "node",
+        "scripts/tests/nav_legacy_combined.cjs"
+      ]
+    },
+    {
+      "index": 125,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_enabled_navigation.cjs"
+      ]
+    },
+    {
+      "index": 126,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_contract.cjs"
+      ]
+    },
+    {
+      "index": 127,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_static_verified.cjs"
+      ]
+    },
+    {
+      "index": 128,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_ar2_pairing.cjs"
+      ]
+    },
+    {
+      "index": 129,
+      "argv": [
+        "node",
+        "scripts/tests/locale_identity.mjs"
+      ]
+    },
+    {
+      "index": 130,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_integrated_visual.cjs"
+      ]
+    },
+    {
+      "index": 131,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_real_preview.cjs"
+      ]
+    },
+    {
+      "index": 132,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_switcher.cjs"
+      ]
+    },
+    {
+      "index": 133,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_exhaustive_preview.cjs"
+      ]
+    },
+    {
+      "index": 134,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_saint_of_day.py"
+      ]
+    },
+    {
+      "index": 135,
+      "argv": [
+        "node",
+        "scripts/qa/test_saint_day_runtime.cjs"
+      ]
+    },
+    {
+      "index": 136,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/saint-of-day.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ]
+    }
+  ],
+  "shards": [
+    [
+      {
+        "index": 0,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_new_page_locales.py"
+        ]
+      },
+      {
+        "index": 8,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_media_nav_repin.py"
+        ]
+      },
+      {
+        "index": 16,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_travel_authored_final_hashes.py"
+        ]
+      },
+      {
+        "index": 24,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_ru_nav_alignment_repin.py"
+        ]
+      },
+      {
+        "index": 32,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_pt_header_marking.py"
+        ]
+      },
+      {
+        "index": 40,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/miracles-english-escape.spec.js",
+          "--project=phone",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      },
+      {
+        "index": 48,
+        "argv": [
+          "python3",
+          "scripts/qa/test_exact_source_inputs.py"
+        ]
+      },
+      {
+        "index": 56,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/video-playback.spec.js",
+          "--project=phone",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      },
+      {
+        "index": 64,
+        "argv": [
+          "python3",
+          "scripts/qa/test_chaplet_mirror.py"
+        ]
+      },
+      {
+        "index": 72,
+        "argv": [
+          "python3",
+          "scripts/qa/test_head_fragments.py"
+        ]
+      },
+      {
+        "index": 80,
+        "argv": [
+          "python3",
+          "scripts/qa/check_spec_paths.py"
+        ]
+      },
+      {
+        "index": 88,
+        "argv": [
+          "python3",
+          "scripts/build_news_thumbs.py",
+          "--check"
+        ]
+      },
+      {
+        "index": 96,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_mystery_art.py"
+        ]
+      },
+      {
+        "index": 104,
+        "argv": [
+          "npm",
+          "run",
+          "test:rosary-ui-regression"
+        ]
+      },
+      {
+        "index": 112,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_film_master_family.py"
+        ]
+      },
+      {
+        "index": 120,
+        "argv": [
+          "env",
+          "PORT=4197",
+          "bash",
+          "scripts/tests/run_eucharistic_locales.sh"
+        ]
+      },
+      {
+        "index": 128,
+        "argv": [
+          "node",
+          "scripts/tests/same_page_ar2_pairing.cjs"
+        ]
+      },
+      {
+        "index": 136,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/saint-of-day.spec.js",
+          "--project=phone",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      }
+    ],
+    [
+      {
+        "index": 1,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_private_preview_gate.py"
+        ]
+      },
+      {
+        "index": 9,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_history_nav_repin.py"
+        ]
+      },
+      {
+        "index": 17,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_page_mirror_ru_whitespace.py"
+        ]
+      },
+      {
+        "index": 25,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_ru_travel_chrome.py"
+        ]
+      },
+      {
+        "index": 33,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_hi_header_marking.py"
+        ]
+      },
+      {
+        "index": 41,
+        "argv": [
+          "python3",
+          "scripts/qa/test_prayer_keyed_masters.py"
+        ]
+      },
+      {
+        "index": 49,
+        "argv": [
+          "python3",
+          "scripts/qa/test_limited_launch.py"
+        ]
+      },
+      {
+        "index": 57,
+        "argv": [
+          "node",
+          "scripts/qa/test_analytics_hostname.cjs"
+        ]
+      },
+      {
+        "index": 65,
+        "argv": [
+          "python3",
+          "scripts/qa/test_de_exact_catalogs.py"
+        ]
+      },
+      {
+        "index": 73,
+        "argv": [
+          "python3",
+          "scripts/qa/test_jsonld_serializer.py"
+        ]
+      },
+      {
+        "index": 81,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_spec_paths.py"
+        ]
+      },
+      {
+        "index": 89,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_feeds.py"
+        ]
+      },
+      {
+        "index": 97,
+        "argv": [
+          "python3",
+          "scripts/qa/test_private_directories.py"
+        ]
+      },
+      {
+        "index": 105,
+        "argv": [
+          "npm",
+          "run",
+          "test:story-floating-player"
+        ]
+      },
+      {
+        "index": 113,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_history_master_mirror.py"
+        ]
+      },
+      {
+        "index": 121,
+        "argv": [
+          "env",
+          "PORT=4198",
+          "bash",
+          "scripts/tests/run_hero_figure_crop.sh"
+        ]
+      },
+      {
+        "index": 129,
+        "argv": [
+          "node",
+          "scripts/tests/locale_identity.mjs"
+        ]
+      }
+    ],
+    [
+      {
+        "index": 2,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_rosary_book_joyful_catalog.py"
+        ]
+      },
+      {
+        "index": 10,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_ru_travel_repin.py"
+        ]
+      },
+      {
+        "index": 18,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_travel_variant_evidence.py"
+        ]
+      },
+      {
+        "index": 26,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_travel_media_bindings_prepare.py"
+        ]
+      },
+      {
+        "index": 34,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_th_header_marking.py"
+        ]
+      },
+      {
+        "index": 42,
+        "argv": [
+          "python3",
+          "scripts/qa/test_prayer_equivalence.py"
+        ]
+      },
+      {
+        "index": 50,
+        "argv": [
+          "bash",
+          "-o",
+          "pipefail",
+          "-c",
+          "npx playwright test tests/limited-launch.spec.js tests/hindi-travel-hub.spec.js --project=phone --project=laptop --workers=2 2>&1 | tee tmp/shard7-playwright.txt"
+        ]
+      },
+      {
+        "index": 58,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_security_headers.py"
+        ]
+      },
+      {
+        "index": 66,
+        "argv": [
+          "python3",
+          "scripts/qa/test_encyclopedia_trail.py"
+        ]
+      },
+      {
+        "index": 74,
+        "argv": [
+          "bash",
+          "-o",
+          "pipefail",
+          "-c",
+          "python3 -m unittest -v scripts.qa.test_litany_mirror 2>&1 | tee tmp/litany.txt"
+        ]
+      },
+      {
+        "index": 82,
+        "argv": [
+          "python3",
+          "scripts/qa/check_seo.py"
+        ]
+      },
+      {
+        "index": 90,
+        "argv": [
+          "node",
+          "scripts/build-testimony-baseline.mjs",
+          "--check"
+        ]
+      },
+      {
+        "index": 98,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/rosary-bead-teacher.spec.js",
+          "--project=small-phone",
+          "--project=phone",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      },
+      {
+        "index": 106,
+        "argv": [
+          "npm",
+          "run",
+          "test:checklist"
+        ]
+      },
+      {
+        "index": 114,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_travel_page_mirrors.py"
+        ]
+      },
+      {
+        "index": 122,
+        "argv": [
+          "npm",
+          "run",
+          "books:check"
+        ]
+      },
+      {
+        "index": 130,
+        "argv": [
+          "node",
+          "scripts/tests/same_page_integrated_visual.cjs"
+        ]
+      }
+    ],
+    [
+      {
+        "index": 3,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_dead_code_private_preview.py"
+        ]
+      },
+      {
+        "index": 11,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_travel_scoped_delta.py"
+        ]
+      },
+      {
+        "index": 19,
+        "argv": [
+          "python3",
+          "scripts/qa/test_header_marking_delta.py"
+        ]
+      },
+      {
+        "index": 27,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_retired_novena_nav_repin.py"
+        ]
+      },
+      {
+        "index": 35,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/element-collision.spec.js",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      },
+      {
+        "index": 43,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/prayer-equivalence.spec.js",
+          "--project=phone",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      },
+      {
+        "index": 51,
+        "argv": [
+          "python3",
+          "scripts/qa/test_source_copy_keys.py"
+        ]
+      },
+      {
+        "index": 59,
+        "argv": [
+          "node",
+          "scripts/build-home-css.mjs",
+          "--check"
+        ]
+      },
+      {
+        "index": 67,
+        "argv": [
+          "python3",
+          "scripts/qa/test_error_document.py"
+        ]
+      },
+      {
+        "index": 75,
+        "argv": [
+          "python3",
+          "scripts/qa/test_locale_foundation.py"
+        ]
+      },
+      {
+        "index": 83,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_seo.py"
+        ]
+      },
+      {
+        "index": 91,
+        "argv": [
+          "node",
+          "scripts/tests/testimony_static.mjs"
+        ]
+      },
+      {
+        "index": 99,
+        "argv": [
+          "npm",
+          "run",
+          "test:rosary-smoke"
+        ]
+      },
+      {
+        "index": 107,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_eucharistic_locale.py"
+        ]
+      },
+      {
+        "index": 115,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_annaya_hero_evidence.py"
+        ]
+      },
+      {
+        "index": 123,
+        "argv": [
+          "node",
+          "scripts/tests/same_page_resolver.cjs"
+        ]
+      },
+      {
+        "index": 131,
+        "argv": [
+          "node",
+          "scripts/tests/same_page_real_preview.cjs"
+        ]
+      }
+    ],
+    [
+      {
+        "index": 4,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_partial_locale.py"
+        ]
+      },
+      {
+        "index": 12,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_travel_parallel_repin.py"
+        ]
+      },
+      {
+        "index": 20,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_travel_generated_availability.py"
+        ]
+      },
+      {
+        "index": 28,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_fr_header_marking.py"
+        ]
+      },
+      {
+        "index": 36,
+        "argv": [
+          "python3",
+          "scripts/qa/test_travel_equivalence.py"
+        ]
+      },
+      {
+        "index": 44,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/prayer-share-runtime.spec.js",
+          "--project=phone",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      },
+      {
+        "index": 52,
+        "argv": [
+          "python3",
+          "scripts/qa/check_travel_routes.py"
+        ]
+      },
+      {
+        "index": 60,
+        "argv": [
+          "npm",
+          "run",
+          "i18n:check"
+        ]
+      },
+      {
+        "index": 68,
+        "argv": [
+          "python3",
+          "scripts/qa/test_exact_master.py"
+        ]
+      },
+      {
+        "index": 76,
+        "argv": [
+          "python3",
+          "scripts/qa/test_locale_home_navigation.py"
+        ]
+      },
+      {
+        "index": 84,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_answer_faq_parity.py"
+        ]
+      },
+      {
+        "index": 92,
+        "argv": [
+          "npm",
+          "run",
+          "test:testimony-security"
+        ]
+      },
+      {
+        "index": 100,
+        "argv": [
+          "npm",
+          "run",
+          "test:rosary-menu"
+        ]
+      },
+      {
+        "index": 108,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_home_mirror.py"
+        ]
+      },
+      {
+        "index": 116,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_annaya_tour_hero_prepare.py"
+        ]
+      },
+      {
+        "index": 124,
+        "argv": [
+          "node",
+          "scripts/tests/nav_legacy_combined.cjs"
+        ]
+      },
+      {
+        "index": 132,
+        "argv": [
+          "node",
+          "scripts/tests/same_page_switcher.cjs"
+        ]
+      }
+    ],
+    [
+      {
+        "index": 5,
+        "argv": [
+          "python3",
+          "scripts/qa/probe_partial_build.py"
+        ]
+      },
+      {
+        "index": 13,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_travel_metadata_attribute_order.py"
+        ]
+      },
+      {
+        "index": 21,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_generated_sitemap_dates.py"
+        ]
+      },
+      {
+        "index": 29,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_es_header_marking.py"
+        ]
+      },
+      {
+        "index": 37,
+        "argv": [
+          "node",
+          "scripts/tests/travel_equivalence.cjs"
+        ]
+      },
+      {
+        "index": 45,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/prayer-keyed-masters.spec.js",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      },
+      {
+        "index": 53,
+        "argv": [
+          "python3",
+          "scripts/qa/test_travel.py"
+        ]
+      },
+      {
+        "index": 61,
+        "argv": [
+          "python3",
+          "scripts/build-eucharistic-miracles.py",
+          "--check"
+        ]
+      },
+      {
+        "index": 69,
+        "argv": [
+          "python3",
+          "scripts/qa/test_exact_wiring.py"
+        ]
+      },
+      {
+        "index": 77,
+        "argv": [
+          "python3",
+          "scripts/qa/test_prayer_mirror.py"
+        ]
+      },
+      {
+        "index": 85,
+        "argv": [
+          "python3",
+          "scripts/build_news_desk.py",
+          "--check"
+        ]
+      },
+      {
+        "index": 93,
+        "argv": [
+          "npm",
+          "run",
+          "test:site-smoke"
+        ]
+      },
+      {
+        "index": 101,
+        "argv": [
+          "npm",
+          "run",
+          "test:rosary-end-rules"
+        ]
+      },
+      {
+        "index": 109,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_mirror_structure.py"
+        ]
+      },
+      {
+        "index": 117,
+        "argv": [
+          "node",
+          "scripts/tests/history_equivalence.cjs"
+        ]
+      },
+      {
+        "index": 125,
+        "argv": [
+          "node",
+          "scripts/tests/same_page_enabled_navigation.cjs"
+        ]
+      },
+      {
+        "index": 133,
+        "argv": [
+          "node",
+          "scripts/tests/same_page_exhaustive_preview.cjs"
+        ]
+      }
+    ],
+    [
+      {
+        "index": 6,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_travel_metadata.py"
+        ]
+      },
+      {
+        "index": 14,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_provenance_stage_reachable.py"
+        ]
+      },
+      {
+        "index": 22,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_manifest_provenance_policy.py"
+        ]
+      },
+      {
+        "index": 30,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_it_header_marking.py"
+        ]
+      },
+      {
+        "index": 38,
+        "argv": [
+          "node",
+          "scripts/tests/travel_release_proof.cjs"
+        ]
+      },
+      {
+        "index": 46,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_source_safeguards.py"
+        ]
+      },
+      {
+        "index": 54,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/travel-routing.spec.js",
+          "tests/travel-hub.spec.js",
+          "--project=phone",
+          "--project=laptop",
+          "--workers=4"
+        ]
+      },
+      {
+        "index": 70,
+        "argv": [
+          "python3",
+          "scripts/qa/test_feast_mirror.py"
+        ]
+      },
+      {
+        "index": 78,
+        "argv": [
+          "python3",
+          "scripts/qa/test_saint_pillars.py"
+        ]
+      },
+      {
+        "index": 86,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_news_desk.py"
+        ]
+      },
+      {
+        "index": 94,
+        "argv": [
+          "env",
+          "PORT=4189",
+          "bash",
+          "scripts/tests/run_eucharistic_collection.sh"
+        ]
+      },
+      {
+        "index": 102,
+        "argv": [
+          "npm",
+          "run",
+          "test:rosary-prayer-behavior"
+        ]
+      },
+      {
+        "index": 110,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_shared_nav_references.py"
+        ]
+      },
+      {
+        "index": 118,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/history-master.spec.js",
+          "--project=phone",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      },
+      {
+        "index": 126,
+        "argv": [
+          "node",
+          "scripts/tests/same_page_contract.cjs"
+        ]
+      },
+      {
+        "index": 134,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_saint_of_day.py"
+        ]
+      }
+    ],
+    [
+      {
+        "index": 7,
+        "argv": [
+          "python3",
+          "scripts/qa/test_travel_release.py"
+        ]
+      },
+      {
+        "index": 15,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_travel_metadata_splice.py"
+        ]
+      },
+      {
+        "index": 23,
+        "argv": [
+          "node",
+          "scripts/tests/scoped_travel_resolver.cjs"
+        ]
+      },
+      {
+        "index": 31,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_pl_header_marking.py"
+        ]
+      },
+      {
+        "index": 39,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/travel-equivalence.spec.js",
+          "--project=phone",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      },
+      {
+        "index": 47,
+        "argv": [
+          "python3",
+          "scripts/qa/test_new_master_english_escape.py"
+        ]
+      },
+      {
+        "index": 55,
+        "argv": [
+          "node",
+          "scripts/tests/video-fallback.mjs"
+        ]
+      },
+      {
+        "index": 63,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/language-persistence.spec.js",
+          "tests/locale-preference-routing.spec.js",
+          "--project=phone",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      },
+      {
+        "index": 71,
+        "argv": [
+          "python3",
+          "scripts/qa/test_footer_navigation.py"
+        ]
+      },
+      {
+        "index": 79,
+        "argv": [
+          "python3",
+          "scripts/qa/test_tour_nav.py"
+        ]
+      },
+      {
+        "index": 87,
+        "argv": [
+          "python3",
+          "scripts/build_feeds.py",
+          "--check"
+        ]
+      },
+      {
+        "index": 95,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_rosary_bead_copy.py"
+        ]
+      },
+      {
+        "index": 103,
+        "argv": [
+          "npm",
+          "run",
+          "test:rosary-intro-cta"
+        ]
+      },
+      {
+        "index": 111,
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "scripts/qa",
+          "-p",
+          "test_locale_mirror_policy.py"
+        ]
+      },
+      {
+        "index": 119,
+        "argv": [
+          "npx",
+          "playwright",
+          "test",
+          "tests/travel-master.spec.js",
+          "--project=phone",
+          "--project=laptop",
+          "--workers=2"
+        ]
+      },
+      {
+        "index": 127,
+        "argv": [
+          "node",
+          "scripts/tests/same_page_static_verified.cjs"
+        ]
+      },
+      {
+        "index": 135,
+        "argv": [
+          "node",
+          "scripts/qa/test_saint_day_runtime.cjs"
+        ]
+      }
+    ]
+  ],
+  "dedicated_i18n": [
+    {
+      "index": 62,
+      "argv": [
+        "npm",
+        "run",
+        "i18n:test"
+      ]
+    }
+  ],
+  "equal_union": true,
+  "added_vs_d27": [
+    [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/qa",
+      "-p",
+      "test_hi_header_marking.py"
+    ],
+    [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/qa",
+      "-p",
+      "test_th_header_marking.py"
+    ]
+  ],
+  "removed_vs_d27": []
+}

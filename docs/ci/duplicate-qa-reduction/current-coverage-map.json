@@ -1,0 +1,1618 @@
+{
+  "label": "DUPLICATE-QA REDUCTION ONLY; cancellation unchanged",
+  "base_sha": "6cf7e5b75049f6e2003211b09698d5acfe4305a6",
+  "tree": "b04dc8a36b5ccbbf3370cc3348414df075399617",
+  "final_post_817_evidence": false,
+  "full_command_count": 137,
+  "coverage": [
+    {
+      "index": 0,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_new_page_locales.py"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 1,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_private_preview_gate.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 2,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_rosary_book_joyful_catalog.py"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 3,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_dead_code_private_preview.py"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 4,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_partial_locale.py"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 5,
+      "argv": [
+        "python3",
+        "scripts/qa/probe_partial_build.py"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 6,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_metadata.py"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 7,
+      "argv": [
+        "python3",
+        "scripts/qa/test_travel_release.py"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 8,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_media_nav_repin.py"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 9,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_history_nav_repin.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 10,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_ru_travel_repin.py"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 11,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_scoped_delta.py"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 12,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_parallel_repin.py"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 13,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_metadata_attribute_order.py"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 14,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_provenance_stage_reachable.py"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 15,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_metadata_splice.py"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 16,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_authored_final_hashes.py"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 17,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_page_mirror_ru_whitespace.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 18,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_variant_evidence.py"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 19,
+      "argv": [
+        "python3",
+        "scripts/qa/test_header_marking_delta.py"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 20,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_generated_availability.py"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 21,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_generated_sitemap_dates.py"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 22,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_manifest_provenance_policy.py"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 23,
+      "argv": [
+        "node",
+        "scripts/tests/scoped_travel_resolver.cjs"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 24,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_ru_nav_alignment_repin.py"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 25,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_ru_travel_chrome.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 26,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_media_bindings_prepare.py"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 27,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_retired_novena_nav_repin.py"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 28,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_fr_header_marking.py"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 29,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_es_header_marking.py"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 30,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_it_header_marking.py"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 31,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_pl_header_marking.py"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 32,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_pt_header_marking.py"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 33,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_hi_header_marking.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 34,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_th_header_marking.py"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 35,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/element-collision.spec.js",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 36,
+      "argv": [
+        "python3",
+        "scripts/qa/test_travel_equivalence.py"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 37,
+      "argv": [
+        "node",
+        "scripts/tests/travel_equivalence.cjs"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 38,
+      "argv": [
+        "node",
+        "scripts/tests/travel_release_proof.cjs"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 39,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/travel-equivalence.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 40,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/miracles-english-escape.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 41,
+      "argv": [
+        "python3",
+        "scripts/qa/test_prayer_keyed_masters.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 42,
+      "argv": [
+        "python3",
+        "scripts/qa/test_prayer_equivalence.py"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 43,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/prayer-equivalence.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 44,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/prayer-share-runtime.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 45,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/prayer-keyed-masters.spec.js",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 46,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_source_safeguards.py"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 47,
+      "argv": [
+        "python3",
+        "scripts/qa/test_new_master_english_escape.py"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 48,
+      "argv": [
+        "python3",
+        "scripts/qa/test_exact_source_inputs.py"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 49,
+      "argv": [
+        "python3",
+        "scripts/qa/test_limited_launch.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 50,
+      "argv": [
+        "bash",
+        "-o",
+        "pipefail",
+        "-c",
+        "npx playwright test tests/limited-launch.spec.js tests/hindi-travel-hub.spec.js --project=phone --project=laptop --workers=2 2>&1 | tee tmp/shard7-playwright.txt"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 51,
+      "argv": [
+        "python3",
+        "scripts/qa/test_source_copy_keys.py"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 52,
+      "argv": [
+        "python3",
+        "scripts/qa/check_travel_routes.py"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 53,
+      "argv": [
+        "python3",
+        "scripts/qa/test_travel.py"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 54,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/travel-routing.spec.js",
+        "tests/travel-hub.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=4"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 55,
+      "argv": [
+        "node",
+        "scripts/tests/video-fallback.mjs"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 56,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/video-playback.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 57,
+      "argv": [
+        "node",
+        "scripts/qa/test_analytics_hostname.cjs"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 58,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_security_headers.py"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 59,
+      "argv": [
+        "node",
+        "scripts/build-home-css.mjs",
+        "--check"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 60,
+      "argv": [
+        "npm",
+        "run",
+        "i18n:check"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 61,
+      "argv": [
+        "python3",
+        "scripts/build-eucharistic-miracles.py",
+        "--check"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 62,
+      "argv": [
+        "npm",
+        "run",
+        "i18n:test"
+      ],
+      "coverage": "i18n-test"
+    },
+    {
+      "index": 63,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/language-persistence.spec.js",
+        "tests/locale-preference-routing.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 64,
+      "argv": [
+        "python3",
+        "scripts/qa/test_chaplet_mirror.py"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 65,
+      "argv": [
+        "python3",
+        "scripts/qa/test_de_exact_catalogs.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 66,
+      "argv": [
+        "python3",
+        "scripts/qa/test_encyclopedia_trail.py"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 67,
+      "argv": [
+        "python3",
+        "scripts/qa/test_error_document.py"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 68,
+      "argv": [
+        "python3",
+        "scripts/qa/test_exact_master.py"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 69,
+      "argv": [
+        "python3",
+        "scripts/qa/test_exact_wiring.py"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 70,
+      "argv": [
+        "python3",
+        "scripts/qa/test_feast_mirror.py"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 71,
+      "argv": [
+        "python3",
+        "scripts/qa/test_footer_navigation.py"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 72,
+      "argv": [
+        "python3",
+        "scripts/qa/test_head_fragments.py"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 73,
+      "argv": [
+        "python3",
+        "scripts/qa/test_jsonld_serializer.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 74,
+      "argv": [
+        "bash",
+        "-o",
+        "pipefail",
+        "-c",
+        "python3 -m unittest -v scripts.qa.test_litany_mirror 2>&1 | tee tmp/litany.txt"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 75,
+      "argv": [
+        "python3",
+        "scripts/qa/test_locale_foundation.py"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 76,
+      "argv": [
+        "python3",
+        "scripts/qa/test_locale_home_navigation.py"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 77,
+      "argv": [
+        "python3",
+        "scripts/qa/test_prayer_mirror.py"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 78,
+      "argv": [
+        "python3",
+        "scripts/qa/test_saint_pillars.py"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 79,
+      "argv": [
+        "python3",
+        "scripts/qa/test_tour_nav.py"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 80,
+      "argv": [
+        "python3",
+        "scripts/qa/check_spec_paths.py"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 81,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_spec_paths.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 82,
+      "argv": [
+        "python3",
+        "scripts/qa/check_seo.py"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 83,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_seo.py"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 84,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_answer_faq_parity.py"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 85,
+      "argv": [
+        "python3",
+        "scripts/build_news_desk.py",
+        "--check"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 86,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_news_desk.py"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 87,
+      "argv": [
+        "python3",
+        "scripts/build_feeds.py",
+        "--check"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 88,
+      "argv": [
+        "python3",
+        "scripts/build_news_thumbs.py",
+        "--check"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 89,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_feeds.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 90,
+      "argv": [
+        "node",
+        "scripts/build-testimony-baseline.mjs",
+        "--check"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 91,
+      "argv": [
+        "node",
+        "scripts/tests/testimony_static.mjs"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 92,
+      "argv": [
+        "npm",
+        "run",
+        "test:testimony-security"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 93,
+      "argv": [
+        "npm",
+        "run",
+        "test:site-smoke"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 94,
+      "argv": [
+        "env",
+        "PORT=4189",
+        "bash",
+        "scripts/tests/run_eucharistic_collection.sh"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 95,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_rosary_bead_copy.py"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 96,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_mystery_art.py"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 97,
+      "argv": [
+        "python3",
+        "scripts/qa/test_private_directories.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 98,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/rosary-bead-teacher.spec.js",
+        "--project=small-phone",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 99,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-smoke"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 100,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-menu"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 101,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-end-rules"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 102,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-prayer-behavior"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 103,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-intro-cta"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 104,
+      "argv": [
+        "npm",
+        "run",
+        "test:rosary-ui-regression"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 105,
+      "argv": [
+        "npm",
+        "run",
+        "test:story-floating-player"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 106,
+      "argv": [
+        "npm",
+        "run",
+        "test:checklist"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 107,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_eucharistic_locale.py"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 108,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_home_mirror.py"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 109,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_mirror_structure.py"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 110,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_shared_nav_references.py"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 111,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_locale_mirror_policy.py"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 112,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_film_master_family.py"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 113,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_history_master_mirror.py"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 114,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_travel_page_mirrors.py"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 115,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_annaya_hero_evidence.py"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 116,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_annaya_tour_hero_prepare.py"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 117,
+      "argv": [
+        "node",
+        "scripts/tests/history_equivalence.cjs"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 118,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/history-master.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 119,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/travel-master.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 120,
+      "argv": [
+        "env",
+        "PORT=4197",
+        "bash",
+        "scripts/tests/run_eucharistic_locales.sh"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 121,
+      "argv": [
+        "env",
+        "PORT=4198",
+        "bash",
+        "scripts/tests/run_hero_figure_crop.sh"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 122,
+      "argv": [
+        "npm",
+        "run",
+        "books:check"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 123,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_resolver.cjs"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 124,
+      "argv": [
+        "node",
+        "scripts/tests/nav_legacy_combined.cjs"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 125,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_enabled_navigation.cjs"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 126,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_contract.cjs"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 127,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_static_verified.cjs"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 128,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_ar2_pairing.cjs"
+      ],
+      "coverage": "qa-shard (0/8)"
+    },
+    {
+      "index": 129,
+      "argv": [
+        "node",
+        "scripts/tests/locale_identity.mjs"
+      ],
+      "coverage": "qa-shard (1/8)"
+    },
+    {
+      "index": 130,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_integrated_visual.cjs"
+      ],
+      "coverage": "qa-shard (2/8)"
+    },
+    {
+      "index": 131,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_real_preview.cjs"
+      ],
+      "coverage": "qa-shard (3/8)"
+    },
+    {
+      "index": 132,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_switcher.cjs"
+      ],
+      "coverage": "qa-shard (4/8)"
+    },
+    {
+      "index": 133,
+      "argv": [
+        "node",
+        "scripts/tests/same_page_exhaustive_preview.cjs"
+      ],
+      "coverage": "qa-shard (5/8)"
+    },
+    {
+      "index": 134,
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/qa",
+        "-p",
+        "test_saint_of_day.py"
+      ],
+      "coverage": "qa-shard (6/8)"
+    },
+    {
+      "index": 135,
+      "argv": [
+        "node",
+        "scripts/qa/test_saint_day_runtime.cjs"
+      ],
+      "coverage": "qa-shard (7/8)"
+    },
+    {
+      "index": 136,
+      "argv": [
+        "npx",
+        "playwright",
+        "test",
+        "tests/saint-of-day.spec.js",
+        "--project=phone",
+        "--project=laptop",
+        "--workers=2"
+      ],
+      "coverage": "qa-shard (0/8)"
+    }
+  ],
+  "verifier_unit_duplicate_removed": "python3 -m unittest discover -s scripts/qa -p 'test_verify_deployment.py'",
+  "verifier_unit_retained_job": "qa-gates",
+  "qa_gates_commands": [
+    {
+      "name": "Test deployment verification",
+      "run": "python3 -m unittest discover -s scripts/qa -p 'test_verify_deployment.py'",
+      "if": null
+    },
+    {
+      "name": "Install dependencies",
+      "run": "npm ci",
+      "if": null
+    },
+    {
+      "name": "Install Playwright browser",
+      "run": "npx playwright install --with-deps chromium",
+      "if": "steps.pw-cache.outputs.cache-hit != 'true'"
+    },
+    {
+      "name": "Install Playwright system dependencies (browser cache hit)",
+      "run": "npx playwright install-deps chromium",
+      "if": "steps.pw-cache.outputs.cache-hit == 'true'"
+    },
+    {
+      "name": "Install Python dependencies",
+      "run": "pip install beautifulsoup4",
+      "if": null
+    },
+    {
+      "name": "New-page locale key gate tests",
+      "run": "python3 -m unittest discover -s scripts/qa -p 'test_new_page_locales.py'",
+      "if": null
+    },
+    {
+      "name": "New-page locale key coverage (PR base)",
+      "run": "python3 scripts/qa/check_new_page_locales.py --base \"$LOCALE_GATE_BASE\"",
+      "if": "github.event_name == 'pull_request'"
+    },
+    {
+      "name": "Russian first-slice publication and browser guards",
+      "run": "python3 -m unittest discover -s scripts/qa -p 'test_russian_slice.py'\nnpx playwright test tests/russian-first-slice.spec.js --project=small-phone --project=phone --project=laptop --workers=2\n",
+      "if": null
+    },
+    {
+      "name": "Clean-checkout page build is in sync",
+      "run": "node scripts/build-pages.mjs --check",
+      "if": null
+    }
+  ],
+  "qa_aggregate_needs": [
+    "qa-shard",
+    "qa-gates",
+    "i18n-test"
+  ],
+  "dedicated_i18n_consumed_index": 62,
+  "dedicated_i18n_command": [
+    "npm",
+    "run",
+    "i18n:test"
+  ],
+  "skip_index_preserved": true,
+  "browser_quality_matrix": {
+    "shard": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "sources": {
+    ".github/workflows/qa.yml": {
+      "sha256": "3cdc31e86633266969fbe89770356aa56de8370f996e0103a750956be7665d5f",
+      "base_blob": "eab8ef89ee1ab50ec459b215ce8e0139f816e14f",
+      "review_blob": "eab8ef89ee1ab50ec459b215ce8e0139f816e14f"
+    },
+    ".github/workflows/quality.yml": {
+      "sha256": "ca516fe6eb3279ee400ab7dabff81389e3473058d12f6fcacdfaa72227a3df4a",
+      "base_blob": "1c1c9758466a8f9d4ddf208eb7f49200ba7e41be",
+      "review_blob": "1c1c9758466a8f9d4ddf208eb7f49200ba7e41be"
+    },
+    ".github/workflows/deploy-stage.yml": {
+      "sha256": "0ab662c0610c1a81bf4269374789895f46d97dcc0b60e883dd94119b0d518d26",
+      "base_blob": "540af63f08e091b52afe546a99d94178684a5825",
+      "review_blob": "4c8657568c68fdff628f03e63d258b153d861999"
+    },
+    "scripts/qa/run_full_qa.sh": {
+      "sha256": "c6564c152bdaa14e7d5f2fefb13efe32ae51e9291abd3c83cb5aedabc02263e6",
+      "base_blob": "48d806b30271c2bd2796330d0b30526dbb940498",
+      "review_blob": "48d806b30271c2bd2796330d0b30526dbb940498"
+    },
+    "scripts/qa/test_verify_deployment.py": {
+      "sha256": "459904d6affadef148996b1e26522b3fff0be4272f8a81aed6de70682ec0bca2",
+      "base_blob": "206da9d08f67ba3e82255324a912a8fcd43f664c",
+      "review_blob": "206da9d08f67ba3e82255324a912a8fcd43f664c"
+    },
+    "scripts/qa/verify_deployment.py": {
+      "sha256": "fbe6f750d793b9ba3d0935537dada0e1e8874c22177cf90bbeec158e91192cba",
+      "base_blob": "cb8ee12dc8d9728e10d6f24e00cb6d9d57b24fa3",
+      "review_blob": "cb8ee12dc8d9728e10d6f24e00cb6d9d57b24fa3"
+    },
+    "package.json": {
+      "sha256": "a3ac49e0056f17550065a52f10ac10db2f63d999bfe25eab1aba1ea0889dff89",
+      "base_blob": "af32963d9b64e456c0c67d3e6d0dd12064878eef",
+      "review_blob": "af32963d9b64e456c0c67d3e6d0dd12064878eef"
+    }
+  }
+}
