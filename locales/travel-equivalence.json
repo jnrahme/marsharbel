@@ -173,97 +173,6 @@
         }
       }
     },
-    "pilgrimage-master": {
-      "sourceRevision": "cf50ee5878c2a8a18090311f7c1ca06a2de5438e",
-      "renderedReviewStatus": "approved",
-      "catalogReview": "parent-report-2026-10-05T23:51:22-524d6a70",
-      "renderedReview": "parent-report-2026-10-05T23:51:22-524d6a70",
-      "variants": {
-        "en": {
-          "file": "saint-charbel-pilgrimage.html",
-          "path": "/saint-charbel-pilgrimage",
-          "bodySha256": "599ecf8b06750fc2e1fb962c1309b497c1608e2b693a8d323be881acf24b4722",
-          "candidateFileSha256": "13adb8b118eeecd42f244e6e1b58b33e5269367e71084608139aa451b9d7d497"
-        },
-        "ar": {
-          "file": "ar/pilgrimage.html",
-          "path": "/ar/pilgrimage",
-          "bodySha256": "16b12ffa961b7e3c33fd2a1ae9908f30a67632047b30272066cc910a55240cf5",
-          "candidateFileSha256": "79818e4548afad1dc2d2d6cf44083fa4f83ce2ad8901e3ac9814358b00bb1af1",
-          "catalog": "locales/ar/pilgrimage-master-copy.json",
-          "catalogSha256": "a5e52ec85963e054068283cd03efd5130453597b97971d9426ca679945896e56"
-        },
-        "fr": {
-          "file": "fr/pelerinage.html",
-          "path": "/fr/pelerinage",
-          "bodySha256": "7df2bc8b1c6f6f69ee973a436fe26c2a9314e846e7c1eeb0152b8b0de9102f7e",
-          "candidateFileSha256": "ec286f0f05d789c4006f351a5fbcc92f6261474a0fb2fcf42e13780f9ac76dde",
-          "catalog": "locales/fr/pilgrimage-master-copy.json",
-          "catalogSha256": "b415f1d8af4724136945ada5d2c3d7161efeb917edefc6f43bfb3c7b92ff6f61"
-        },
-        "es": {
-          "file": "es/peregrinacion.html",
-          "path": "/es/peregrinacion",
-          "bodySha256": "827de5819d43a94fc9a80f483d7e523e38351c3bedeba4f6cd57f4433542621c",
-          "candidateFileSha256": "f3184c64457a49117e61a3f20607e57e6e2b456f413b2302f883a47161582f62",
-          "catalog": "locales/es/pilgrimage-master-copy.json",
-          "catalogSha256": "fee8b20e68e5a0f34db1319986d0eb99df659cf9fc27f510c3131c70e365a46d"
-        },
-        "pt": {
-          "file": "pt/peregrinacao.html",
-          "path": "/pt/peregrinacao",
-          "bodySha256": "c4dfe63cd6c73606d6116b5eed5b9e68a26782a090747284a6ef2a375e72e2fb",
-          "candidateFileSha256": "38c022b31112237fa5839e8afb3d2f6863c0ed8a8b963c7328fa60bc8d3c0b3b",
-          "catalog": "locales/pt/pilgrimage-master-copy.json",
-          "catalogSha256": "924e912c1f3e895908b9d5782db32371c779fb7a02a1e744521d4627f4c7a306"
-        },
-        "it": {
-          "file": "it/pellegrinaggio.html",
-          "path": "/it/pellegrinaggio",
-          "bodySha256": "af21f142c8fa5fb84412e9773c0d97046d2405899bd5f160d1072a7064273c9c",
-          "candidateFileSha256": "c6426e84f9b72f667b399cc39c4fa204495543c0f4fc94e38a38ed361722def6",
-          "catalog": "locales/it/pilgrimage-master-copy.json",
-          "catalogSha256": "bd197e5baaa9e0118f397ca79d02fdd7d51300770781218977512ea8a78c44c0"
-        },
-        "de": {
-          "file": "de/pilgerreise.html",
-          "path": "/de/pilgerreise",
-          "bodySha256": "b569dee78687c2f0d624aa62814c2260489ec292fa2d0b3cb294757d8716f397",
-          "candidateFileSha256": "f2392b2cb318ee4d392bb9a08d619596542546def20e18918c875f051dd5ce08",
-          "catalog": "locales/de/pilgrimage-master-copy.json",
-          "catalogSha256": "8654a40d077043691e02f96ed5b95017af3ea08f33cd28693a4f68e6c7f7b5e4",
-          "reviewAmendment": {
-            "reason": "Exact current-English Bekaa Kafra hedge correction only; one main-text hunk.",
-            "previousBodySha256": "e025a82137ee2646016f138e3804d2dab76942f56a7be6e6eccc82e059caeb6c",
-            "contentReview": "parent relay 2026-10-08T01:07:29-04:00: seat 1 CONTENT PASS",
-            "renderedReview": "2026-10-08 local 390 and 1280, JS/no-JS, all full-page sections inspected after lazy-image loading; zero horizontal overflow and page errors",
-            "evidence": [
-              "g1-de-pilgerreise-390-js.png",
-              "g1-de-pilgerreise-1280-js.png",
-              "g1-de-pilgerreise-390-nojs.png",
-              "g1-de-pilgerreise-1280-nojs.png",
-              "g1-de-review-matrix.json"
-            ]
-          }
-        },
-        "pl": {
-          "file": "pl/pielgrzymka.html",
-          "path": "/pl/pielgrzymka",
-          "bodySha256": "00185403dabf424015b7fc29fef7cae1414800e712d8a368f2b48ac625152722",
-          "candidateFileSha256": "9ed607d7e007c90e31ce8b6e7a2549c1e2ed74817b2fd0f3518a3132f94034f5",
-          "catalog": "locales/pl/pilgrimage-master-copy.json",
-          "catalogSha256": "0c7061449fd083d63402e71aa4ed354ad3a80b5e3316860175fb3b7151e14b09"
-        },
-        "ru": {
-          "file": "ru/palomnichestvo.html",
-          "path": "/ru/palomnichestvo",
-          "bodySha256": "6bfb24725d8e98d2a19da9d820bb947b5788848c6e760ae9260f3dd66fd23ac0",
-          "candidateFileSha256": "0ab56e9f32cccf3827c3ada922d1e0d7434c81a99a4afb0961214e162b069562",
-          "catalog": "locales/ru/pilgrimage-master-copy.json",
-          "catalogSha256": "722f6c2f9dafe194ba5e932e023227088dce3dc757b844f4097e800dde4baf28"
-        }
-      }
-    },
     "annaya-tour-travel-master": {
       "evidenceSchema": "annaya-hero-v1",
       "sourceRevision": "6467797f2a245a16c323bef9fd27c012e85686ba",
@@ -978,7 +887,98 @@
           }
         }
       }
+    },
+    "pilgrimage-master": {
+      "sourceRevision": "cf50ee5878c2a8a18090311f7c1ca06a2de5438e",
+      "renderedReviewStatus": "approved",
+      "catalogReview": "parent-report-2026-10-05T23:51:22-524d6a70",
+      "renderedReview": "parent-report-2026-10-05T23:51:22-524d6a70",
+      "variants": {
+        "en": {
+          "file": "saint-charbel-pilgrimage.html",
+          "path": "/saint-charbel-pilgrimage",
+          "bodySha256": "132cb26d03b622433706f529bb75f51acfd480f26d313daa7e34c4c95ee25ea3",
+          "candidateFileSha256": "13adb8b118eeecd42f244e6e1b58b33e5269367e71084608139aa451b9d7d497"
+        },
+        "ar": {
+          "file": "ar/pilgrimage.html",
+          "path": "/ar/pilgrimage",
+          "bodySha256": "de79df1b229d71e6bc289e26cdc3657af3d52c167ac235b6b69940c4dcd8da98",
+          "candidateFileSha256": "79818e4548afad1dc2d2d6cf44083fa4f83ce2ad8901e3ac9814358b00bb1af1",
+          "catalog": "locales/ar/pilgrimage-master-copy.json",
+          "catalogSha256": "eddac94a5e38df4c4a5d8353108ceaa6b20b86578619be6434c0c3b6fa49a51b"
+        },
+        "fr": {
+          "file": "fr/pelerinage.html",
+          "path": "/fr/pelerinage",
+          "bodySha256": "201ec6d8acd867114fd3be58a96c907bc7c9b79d077421c97cdc7b01cec128b6",
+          "candidateFileSha256": "ec286f0f05d789c4006f351a5fbcc92f6261474a0fb2fcf42e13780f9ac76dde",
+          "catalog": "locales/fr/pilgrimage-master-copy.json",
+          "catalogSha256": "1e8b4b701bb9d8937d1e72a08104127b43b6fbe3b1dae79edf0432ab80aa267b"
+        },
+        "es": {
+          "file": "es/peregrinacion.html",
+          "path": "/es/peregrinacion",
+          "bodySha256": "098aad61d92aa9cf5a19aee689c9921a13c9fcebd59b83f5786810e31fbca0c5",
+          "candidateFileSha256": "f3184c64457a49117e61a3f20607e57e6e2b456f413b2302f883a47161582f62",
+          "catalog": "locales/es/pilgrimage-master-copy.json",
+          "catalogSha256": "bdd4608ed1927ba87d747fa01b5ef655b1259ce083c8d93549ed257566dc48d1"
+        },
+        "pt": {
+          "file": "pt/peregrinacao.html",
+          "path": "/pt/peregrinacao",
+          "bodySha256": "b89faea0f9690a8290f4116d49187501304f0fc6590f4a1cac2493cf52d718ec",
+          "candidateFileSha256": "38c022b31112237fa5839e8afb3d2f6863c0ed8a8b963c7328fa60bc8d3c0b3b",
+          "catalog": "locales/pt/pilgrimage-master-copy.json",
+          "catalogSha256": "f590acf0038c901cf994d1908096f5e341cc8e61c2e1fe72382740de648297e6"
+        },
+        "it": {
+          "file": "it/pellegrinaggio.html",
+          "path": "/it/pellegrinaggio",
+          "bodySha256": "64ffac110c65c78455b5554c594e82d8277a960548e59368b48318e53e0c8ef3",
+          "candidateFileSha256": "c6426e84f9b72f667b399cc39c4fa204495543c0f4fc94e38a38ed361722def6",
+          "catalog": "locales/it/pilgrimage-master-copy.json",
+          "catalogSha256": "aeb247800bfd1c1363effd85e6c956f15e5c5b7ad685317ac85ab6f88cc653cb"
+        },
+        "de": {
+          "file": "de/pilgerreise.html",
+          "path": "/de/pilgerreise",
+          "bodySha256": "56b30a72622c383a27d6cce835635484607f032c4bffc8208e8a51a842dc49f5",
+          "candidateFileSha256": "f2392b2cb318ee4d392bb9a08d619596542546def20e18918c875f051dd5ce08",
+          "catalog": "locales/de/pilgrimage-master-copy.json",
+          "catalogSha256": "f3eb45bc823a6292b5b0b2a120a68bdc8c3f837a142db4bc06906534bb0f147e",
+          "reviewAmendment": {
+            "reason": "Exact current-English Bekaa Kafra hedge correction only; one main-text hunk.",
+            "previousBodySha256": "e025a82137ee2646016f138e3804d2dab76942f56a7be6e6eccc82e059caeb6c",
+            "contentReview": "parent relay 2026-10-08T01:07:29-04:00: seat 1 CONTENT PASS",
+            "renderedReview": "2026-10-08 local 390 and 1280, JS/no-JS, all full-page sections inspected after lazy-image loading; zero horizontal overflow and page errors",
+            "evidence": [
+              "g1-de-pilgerreise-390-js.png",
+              "g1-de-pilgerreise-1280-js.png",
+              "g1-de-pilgerreise-390-nojs.png",
+              "g1-de-pilgerreise-1280-nojs.png",
+              "g1-de-review-matrix.json"
+            ]
+          }
+        },
+        "pl": {
+          "file": "pl/pielgrzymka.html",
+          "path": "/pl/pielgrzymka",
+          "bodySha256": "b797dfe4820a3ac69f7e5db7d84d79fe67842ccb120afe4e0e3d07d15437dabf",
+          "candidateFileSha256": "9ed607d7e007c90e31ce8b6e7a2549c1e2ed74817b2fd0f3518a3132f94034f5",
+          "catalog": "locales/pl/pilgrimage-master-copy.json",
+          "catalogSha256": "7d0646492e4c309f0b35446c154ec1f6e980b628b1140fefa3af4ec48d6c3318"
+        },
+        "ru": {
+          "file": "ru/palomnichestvo.html",
+          "path": "/ru/palomnichestvo",
+          "bodySha256": "2cf812b963a3b03cc87bcf1a0933512456a1272e3f0559ff2121ea0cb12e42c3",
+          "candidateFileSha256": "0ab56e9f32cccf3827c3ada922d1e0d7434c81a99a4afb0961214e162b069562",
+          "catalog": "locales/ru/pilgrimage-master-copy.json",
+          "catalogSha256": "c69e98a6950847cbbef411f6d57d8308244ddcfaf40c9c92a4c835bb21ff0b18"
+        }
+      }
     }
   },
-  "repinNote": "pl twenty-second body re-pinned 2026-10-07: accuracy fix adds the Polish 28 July memorial next to the universal 24 July date (KEP via Radio Nadzieja/KAI 2020-07-28; kosciol.wiara.pl corroboration). Rendered review of the new bytes is pending. Previous note: ru travel bodies re-pinned after links to /ru/molitvy and /ru/novena were added (link hrefs only). Rendered review of the new bytes is pending."
+  "repinNote": "pilgrimage-master re-pinned 2026-10-15: Batch 1 photo provenance fix replaces the two externally credited Wikimedia figures (hero aerial, tomb) with owner-granted Order photos from saintcharbel.com and strips the credit line from captions in all 9 reviewed locales; candidateFileSha256 pins and rendered review of the new bytes are pending. Previous note: pl twenty-second body re-pinned 2026-10-07: accuracy fix adds the Polish 28 July memorial next to the universal 24 July date (KEP via Radio Nadzieja/KAI 2020-07-28; kosciol.wiara.pl corroboration). Rendered review of the new bytes is pending. Previous note: ru travel bodies re-pinned after links to /ru/molitvy and /ru/novena were added (link hrefs only). Rendered review of the new bytes is pending."
 }
