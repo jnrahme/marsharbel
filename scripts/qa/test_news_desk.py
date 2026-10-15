@@ -149,10 +149,7 @@ class NewsImageRecordTests(unittest.TestCase):
         import tempfile, shutil
         tmp = Path(tempfile.mkdtemp())
         shutil.copytree(ROOT/'locales/en', tmp/'locales/en')
-        for slot, rec in self.records.items():
-            asset = tmp / rec['image']['src']
-            asset.parent.mkdir(parents=True, exist_ok=True)
-            asset.touch()
+        self._touch_assets(tmp)
         rec = json.loads((tmp/'locales/en/news-image-records.json').read_text())
         rec['slots']['trail']['storyId'] = 'some-other-story'
         (tmp/'locales/en/news-image-records.json').write_text(json.dumps(rec))
@@ -161,65 +158,86 @@ class NewsImageRecordTests(unittest.TestCase):
         self.assertIn('trail', str(ctx.exception))
         self.assertIn('story drift', str(ctx.exception))
 
+    def _touch_assets(self, tmp):
+        for slot, rec in self.records.items():
+            asset = tmp / rec['image']['src']
+            asset.parent.mkdir(parents=True, exist_ok=True)
+            asset.touch()
+
     def _record_with(self, mutate):
         import tempfile, shutil
         tmp = Path(tempfile.mkdtemp())
         shutil.copytree(ROOT/'locales/en', tmp/'locales/en')
+        self._touch_assets(tmp)
         rec = json.loads((tmp/'locales/en/news-image-records.json').read_text())
         mutate(rec['slots']['premiere'])
         (tmp/'locales/en/news-image-records.json').write_text(json.dumps(rec))
         return tmp
 
-    def _records_root(self, mutate_top):
+    def _records_root(self, mutate_top=lambda rec: None):
         import tempfile, shutil
         tmp = Path(tempfile.mkdtemp())
         shutil.copytree(ROOT/'locales/en', tmp/'locales/en')
+        self._touch_assets(tmp)
         rec = json.loads((tmp/'locales/en/news-image-records.json').read_text())
         mutate_top(rec)
         (tmp/'locales/en/news-image-records.json').write_text(json.dumps(rec))
         return tmp
 
+    def test_valid_fixture_passes(self):
+        news_desk.load_image_records(self._records_root(), self.template)
+
     def test_schema_version_pinned(self):
         tmp = self._records_root(lambda rec: rec.update(schemaVersion=99))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('schemaVersion', str(ctx.exception))
 
     def test_exactly_the_six_slots(self):
         tmp = self._records_root(lambda rec: rec['slots'].pop('trail'))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('slot set', str(ctx.exception))
         tmp = self._records_root(lambda rec: rec['slots'].update(extra=rec['slots']['trail']))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('slot set', str(ctx.exception))
 
     def test_subject_and_context_types_required(self):
         tmp = self._records_root(lambda rec: rec['slots']['premiere'].update(subject=''))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('subject', str(ctx.exception))
         tmp = self._records_root(lambda rec: rec['slots']['premiere'].update(contextNotEvent='yes'))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('contextNotEvent', str(ctx.exception))
 
     def test_checked_at_must_be_a_real_date(self):
         tmp = self._records_root(lambda rec: rec['slots']['premiere']['revalidation'].update(checkedAt='soon'))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('checkedAt', str(ctx.exception))
 
     def test_licensed_slots_require_evidence_urls(self):
         tmp = self._records_root(lambda rec: rec['slots']['premiere']['license'].update(licenseUrl=''))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('licenseUrl', str(ctx.exception))
         tmp = self._records_root(lambda rec: rec['slots']['emmitsburg']['license'].update(sourceUrl=''))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('sourceUrl', str(ctx.exception))
 
     def test_unlicensed_status_requires_reason(self):
         tmp = self._records_root(lambda rec: rec['slots']['trail']['license'].pop('reason'))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('reason', str(ctx.exception))
         tmp = self._records_root(lambda rec: rec['slots']['borik']['license'].update(reason='  '))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('reason', str(ctx.exception))
 
     def test_uncertain_slots_are_not_marked_licensed(self):
         """The two documented-uncertainty slots must never silently claim a verified licence."""
@@ -230,19 +248,22 @@ class NewsImageRecordTests(unittest.TestCase):
 
     def test_src_traversal_rejected(self):
         tmp = self._record_with(lambda slot: slot['image'].update(src='./media/../index.html'))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('escapes media', str(ctx.exception))
 
     def test_src_injection_charset_rejected(self):
         tmp = self._record_with(lambda slot: slot['image'].update(src='./media/test" onerror="bad.jpg'))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
+        self.assertIn('invalid characters', str(ctx.exception))
 
     def test_bool_and_nonpositive_dims_rejected(self):
         for bad in (True, -5, 0, '960'):
             tmp = self._record_with(lambda slot, bad=bad: slot['image'].update(width=bad))
-            with self.assertRaises(ValueError, msg=repr(bad)):
+            with self.assertRaises(ValueError, msg=repr(bad)) as ctx:
                 news_desk.load_image_records(tmp, self.template)
+            self.assertIn('positive integer', str(ctx.exception), repr(bad))
 
     def test_license_evidence_fields_and_revalidation_notes_present(self):
         for slot, rec in self.records.items():
