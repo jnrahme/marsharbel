@@ -16,7 +16,7 @@ class HomeMirrorTests(unittest.TestCase):
         self.copy = json.loads((ROOT/'locales/en/home-copy.json').read_text())
         # Explicit English-copy test fixture retains the reviewed DE handoff notice.
         qualifier = json.loads((ROOT/'locales/de/encyclopedia-trail.json').read_text())['englishQualifier']
-        for _, key in PRAYER_DISCLOSURE_CONTROLS:
+        for _, _, key in PRAYER_DISCLOSURE_CONTROLS:
             self.copy[key] += ' ' + qualifier
 
     def test_main_structure_and_asset_paths_preserved(self):
@@ -65,21 +65,17 @@ class HomeMirrorTests(unittest.TestCase):
             routes=json.loads((ROOT/'locale-routes.js').read_text().split('=',1)[1].strip().rstrip(';'))['topics']
             self.assertIn(routes.get('/gallery',{}).get(lang,'/gallery'),links,'Gallery link must be the published twin, else the English destination')
 
-    def test_reviewed_prayer_controls_and_hindi_thai_unchanged(self):
+    def test_reviewed_prayer_controls_disclosed_on_every_home(self):
         for lang in self.registry['homepageMirrors']['renderLocales']:
             rendered = BeautifulSoup(render_home(ROOT, self.registry, lang), 'html.parser')
             catalog = json.loads((ROOT/f'locales/{lang}/home-copy.json').read_text())
             qualifier = json.loads((ROOT/f'locales/{lang}/encyclopedia-trail.json').read_text())['englishQualifier']
-            for selector, key in PRAYER_DISCLOSURE_CONTROLS:
+            for selector, href, key in PRAYER_DISCLOSURE_CONTROLS:
                 anchor = rendered.select_one(selector)
-                self.assertEqual(anchor['href'], '/mystery-meditation')
+                self.assertEqual(anchor['href'], href)
                 self.assertEqual(catalog[key].count(qualifier), 1)
-                if lang in ('hi', 'th'):
-                    self.assertNotIn('hreflang', anchor.attrs)
-                    self.assertNotIn('aria-label', anchor.attrs)
-                else:
-                    self.assertEqual(anchor['hreflang'], 'en')
-                    self.assertEqual(anchor['aria-label'], catalog[key])
+                self.assertEqual(anchor['hreflang'], 'en')
+                self.assertEqual(anchor['aria-label'], catalog[key])
             youtube = rendered.select('a.promo-link[href*="#pray-along"]')
             self.assertEqual(len(youtube), 1)
 
@@ -96,8 +92,8 @@ class HomeMirrorTests(unittest.TestCase):
                 elif mutation == 'missing': anchor.decompose()
                 elif mutation == 'duplicate': anchor.insert_after(copy.deepcopy(anchor))
                 elif mutation == 'label': anchor.string = 'Wrong label'
-                elif mutation == 'qualifier': changed[PRAYER_DISCLOSURE_CONTROLS[0][1]] = 'No notice'
-                elif mutation == 'double': changed[PRAYER_DISCLOSURE_CONTROLS[0][1]] += ' ' + qualifier
+                elif mutation == 'qualifier': changed[PRAYER_DISCLOSURE_CONTROLS[0][2]] = 'No notice'
+                elif mutation == 'double': changed[PRAYER_DISCLOSURE_CONTROLS[0][2]] += ' ' + qualifier
                 with self.assertRaises(ValueError):
                     mark_home_prayer_disclosures(soup, 'de', changed, qualifier)
 

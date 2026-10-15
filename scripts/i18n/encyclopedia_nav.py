@@ -8,7 +8,7 @@ from i18n.encyclopedia_trail import load_trail
 # for the marking mechanism: adding a locale's nav drop means adding its code
 # here (plus its registry twins and reviewed qualifier catalog), never editing
 # per-call-site literals. QA mirrors import this constant.
-MARKING_LOCALES=frozenset({'ar','de','ru','fr','es','it','pl','pt'})
+MARKING_LOCALES=frozenset({'ar','de','ru','fr','es','it','pl','pt','hi','th'})
 
 # Review-pinned travel variants whose rendered bytes may be nav-marked anyway,
 # gated per locale by scrum ticket (de: pinned-twin marking 2026-10-13; ru follows
@@ -133,6 +133,9 @@ def mark_english_nav_hrefs(text, root, lang, label=True):
             return mm[0]
         if re.match(r'^/(ar|de|es|fr|hi|it|pl|pt|ru|th|zh-Hans)(/|$)', parts.path):
             return mm[0]
+        # Upgrade a reviewed launch-availability header annotation (hi/th limited
+        # launch) instead of double-annotating the same link.
+        body = re.sub(r' ?<span class="launch-english-qualifier">[\s\S]*?</span>', '', body)
         visible = unescape(re.sub(r'<[^>]+>', '', body)).strip()
         clean = pre.strip()
         new_attrs = (' ' + clean if clean else '') + f' hreflang="en" aria-label="{escape(visible + " " + qualifier, quote=True)}"'

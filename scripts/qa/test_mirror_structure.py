@@ -57,7 +57,8 @@ class MirrorStructure(unittest.TestCase):
         registry=json.loads((ROOT/'locales/registry.json').read_text())
         copy=json.loads((ROOT/'locales/en/home-copy.json').read_text())
         qualifier=json.loads((ROOT/'locales/de/encyclopedia-trail.json').read_text())['englishQualifier']
-        for key in ('home.home-cinematic-hero.pray-today-s-rosary', 'home.section.start-today-s-meditation'):
+        from i18n.home_mirror import PRAYER_DISCLOSURE_CONTROLS
+        for _, _, key in PRAYER_DISCLOSURE_CONTROLS:
             copy[key] += ' ' + qualifier
         locale=render_home(ROOT,registry,'de',copy)
         self.assertEqual(check_pair(master,locale,'/','/de/',['english-nav-disclosure']),[])

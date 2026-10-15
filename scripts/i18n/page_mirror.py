@@ -213,14 +213,19 @@ def render_page(root,registry,lang,family,route,catalog=None):
         config = '<script type="application/json" id="sc-playlist-labels">' + json.dumps(labels, ensure_ascii=False).replace('<', '\\u003c') + '</script>\n'
         rendered = rendered.replace('</head>', config + '</head>', 1)
     from i18n.ru_travel_chrome import localize_travel_chrome
-    from i18n.encyclopedia_nav import route_and_mark_nav, PINNED_MARKING_LOCALES
+    from i18n.encyclopedia_nav import MARKING_LOCALES, route_nav_hrefs, mark_english_nav_hrefs, PINNED_MARKING_LOCALES
     from i18n.travel_variant_evidence import review_pinned_locales
     # Review-pinned variants (scoped/annaya-hero evidence in the travel-equivalence
     # registry) byte-freeze the rendered page: nav marking skips exactly those
     # (family, locale) pairs until scrum amends their review evidence.
-    marked = apply_launch_availability(rendered, root, registry, lang)
-    if (family, lang) not in review_pinned_locales(root) or lang in PINNED_MARKING_LOCALES:
-        marked = route_and_mark_nav(marked, root, lang)
+    gate = (lang in MARKING_LOCALES and (family, lang) not in review_pinned_locales(root)
+            or lang in PINNED_MARKING_LOCALES) and re.search(r'<header\b', rendered) is not None
+    # Twin routing precedes launch annotations so a link that lands on a locale twin
+    # is never annotated as English-bound (hi/th limited launch).
+    marked = route_nav_hrefs(rendered, root, lang) if gate else rendered
+    marked = apply_launch_availability(marked, root, registry, lang)
+    if gate:
+        marked = mark_english_nav_hrefs(marked, root, lang)
     return localize_travel_chrome(marked, registry, lang, family)
 
 
