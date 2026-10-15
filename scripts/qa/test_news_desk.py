@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from pathlib import Path
 import unittest
 ROOT = Path(__file__).resolve().parents[2]
@@ -125,6 +126,166 @@ class NewsDeskTests(unittest.TestCase):
 
     def test_unsupported_movie_headline_removed(self):
         self.assertNotIn('rolls out worldwide', (ROOT/'index.html').read_text())
+
+
+
+class NewsImageRecordTests(unittest.TestCase):
+    def setUp(self):
+        self.records = json.loads((ROOT/'locales/en/news-image-records.json').read_text())['slots']
+        self.template = (ROOT/'templates/news-desk/home.html').read_text()
+
+    def test_records_cover_every_home_slot_and_template_renders_from_records(self):
+        self.assertEqual(set(self.records), set(news_desk.SLOT_ANCHORS))
+        for slot in news_desk.SLOT_ANCHORS:
+            self.assertIn('${img.%s.src}' % slot, self.template)
+            self.assertIn('${img.%s.width}' % slot, self.template)
+            self.assertIn('${img.%s.height}' % slot, self.template)
+        self.assertNotIn('src="./media/', self.template)
+
+    def test_records_validate_against_template_anchors(self):
+        news_desk.load_image_records(ROOT, self.template)
+
+    def test_story_drift_fails_closed(self):
+        import tempfile, shutil
+        tmp = Path(tempfile.mkdtemp())
+        shutil.copytree(ROOT/'locales/en', tmp/'locales/en')
+        self._touch_assets(tmp)
+        rec = json.loads((tmp/'locales/en/news-image-records.json').read_text())
+        rec['slots']['trail']['storyId'] = 'some-other-story'
+        (tmp/'locales/en/news-image-records.json').write_text(json.dumps(rec))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('trail', str(ctx.exception))
+        self.assertIn('story drift', str(ctx.exception))
+
+    def _touch_assets(self, tmp):
+        for slot, rec in self.records.items():
+            asset = tmp / rec['image']['src']
+            asset.parent.mkdir(parents=True, exist_ok=True)
+            asset.touch()
+
+    def _record_with(self, mutate):
+        import tempfile, shutil
+        tmp = Path(tempfile.mkdtemp())
+        shutil.copytree(ROOT/'locales/en', tmp/'locales/en')
+        self._touch_assets(tmp)
+        rec = json.loads((tmp/'locales/en/news-image-records.json').read_text())
+        mutate(rec['slots']['premiere'])
+        (tmp/'locales/en/news-image-records.json').write_text(json.dumps(rec))
+        return tmp
+
+    def _records_root(self, mutate_top=lambda rec: None):
+        import tempfile, shutil
+        tmp = Path(tempfile.mkdtemp())
+        shutil.copytree(ROOT/'locales/en', tmp/'locales/en')
+        self._touch_assets(tmp)
+        rec = json.loads((tmp/'locales/en/news-image-records.json').read_text())
+        mutate_top(rec)
+        (tmp/'locales/en/news-image-records.json').write_text(json.dumps(rec))
+        return tmp
+
+    def test_valid_fixture_passes(self):
+        news_desk.load_image_records(self._records_root(), self.template)
+
+    def test_schema_version_pinned(self):
+        tmp = self._records_root(lambda rec: rec.update(schemaVersion=99))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('schemaVersion', str(ctx.exception))
+
+    def test_exactly_the_six_slots(self):
+        tmp = self._records_root(lambda rec: rec['slots'].pop('trail'))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('slot set', str(ctx.exception))
+        tmp = self._records_root(lambda rec: rec['slots'].update(extra=rec['slots']['trail']))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('slot set', str(ctx.exception))
+
+    def test_subject_and_context_types_required(self):
+        tmp = self._records_root(lambda rec: rec['slots']['premiere'].update(subject=''))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('subject', str(ctx.exception))
+        tmp = self._records_root(lambda rec: rec['slots']['premiere'].update(contextNotEvent='yes'))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('contextNotEvent', str(ctx.exception))
+
+    def test_checked_at_must_be_a_real_date(self):
+        tmp = self._records_root(lambda rec: rec['slots']['premiere']['revalidation'].update(checkedAt='soon'))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('checkedAt', str(ctx.exception))
+
+    def test_licensed_slots_require_evidence_urls(self):
+        tmp = self._records_root(lambda rec: rec['slots']['premiere']['license'].update(licenseUrl=''))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('licenseUrl', str(ctx.exception))
+        tmp = self._records_root(lambda rec: rec['slots']['emmitsburg']['license'].update(sourceUrl=''))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('sourceUrl', str(ctx.exception))
+
+    def test_unlicensed_status_requires_reason(self):
+        tmp = self._records_root(lambda rec: rec['slots']['trail']['license'].pop('reason'))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('reason', str(ctx.exception))
+        tmp = self._records_root(lambda rec: rec['slots']['borik']['license'].update(reason='  '))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('reason', str(ctx.exception))
+
+    def test_uncertain_slots_are_not_marked_licensed(self):
+        """The two documented-uncertainty slots must never silently claim a verified licence."""
+        self.assertNotEqual(self.records['borik']['license']['status'], 'licensed')
+        self.assertNotEqual(self.records['trail']['license']['status'], 'licensed')
+        self.assertIn('Charbel.jpg', self.records['borik']['license']['sourceUrl'])
+        self.assertIn('photograph', self.records['borik']['subject'])
+
+    def test_src_traversal_rejected(self):
+        tmp = self._record_with(lambda slot: slot['image'].update(src='./media/../index.html'))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('escapes media', str(ctx.exception))
+
+    def test_src_injection_charset_rejected(self):
+        tmp = self._record_with(lambda slot: slot['image'].update(src='./media/test" onerror="bad.jpg'))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('invalid characters', str(ctx.exception))
+
+    def test_bool_and_nonpositive_dims_rejected(self):
+        for bad in (True, -5, 0, '960'):
+            tmp = self._record_with(lambda slot, bad=bad: slot['image'].update(width=bad))
+            with self.assertRaises(ValueError, msg=repr(bad)) as ctx:
+                news_desk.load_image_records(tmp, self.template)
+            self.assertIn('positive integer', str(ctx.exception), repr(bad))
+
+    def test_license_evidence_fields_and_revalidation_notes_present(self):
+        for slot, rec in self.records.items():
+            for field in ('author', 'spdx', 'permittedUse', 'adaptations'):
+                self.assertTrue(rec['license'].get(field), '%s license.%s' % (slot, field))
+            self.assertTrue(rec['revalidation']['note'], slot)
+
+    def test_trail_permission_gap_is_documented_not_silent(self):
+        trail = self.records['trail']
+        self.assertIn('permission', trail['license']['spdx'] + trail['license']['permittedUse'] + trail['revalidation']['note'])
+        self.assertIn('gap', trail['license']['permittedUse'].lower())
+
+    def test_home_img_alts_match_refresh_catalog(self):
+        """Alt attributes must equal the refresh_pope_home_news.py EN catalog so
+        the refresh script and the records renderer never diverge."""
+        import re
+        refresh = (ROOT/'scripts/i18n/refresh_pope_home_news.py').read_text()
+        index = (ROOT/'index.html').read_text()
+        block = index.split('i18n-news-home')[1].split('i18n-news-home')[0]
+        for alt in re.findall(r'alt="([^"]+)"', block):
+            if 'Gemelli' in alt or 'Rosary' in alt:
+                self.assertIn(alt.replace('&amp;', '&'), refresh.replace('&amp;', '&'))
 
 
 if __name__ == '__main__':
