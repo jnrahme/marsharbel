@@ -3348,7 +3348,7 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 .news-credits summary::after{content:"";position:absolute;inset-inline-end:1.1rem;width:10px;height:10px;border-inline-end:2px solid var(--theme-accent);border-block-end:2px solid var(--theme-accent);transform:rotate(45deg);transition:transform .2s ease}
 .news-credits[open] summary::after{transform:rotate(225deg)}
 .news-credits-list{list-style:none;margin:0;padding:.2rem 1.1rem 1rem}
-.news-credits-list li{padding:.55rem 0;border-block-start:1px solid var(--theme-line-soft);font-size:.92rem;line-height:1.55;color:var(--theme-ink-soft)}
+.news-credits-list li{padding:.55rem 0;border-block-start:1px solid var(--theme-line-soft);font-size:.92rem;line-height:1.55;color:var(--theme-ink-soft);overflow-wrap:anywhere;word-break:break-word}
 .news-credit-title{color:var(--theme-ink);font-weight:600}
 .news-credit-label{color:var(--theme-ink);font-weight:600;white-space:nowrap}
 .news-credit-derivative{color:var(--theme-ink);font-weight:600}
