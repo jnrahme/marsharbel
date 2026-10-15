@@ -144,15 +144,31 @@ def verify_file(root, path, base_url, nonce):
     return None
 
 
+def categorize(error):
+    """Bucket a failure line for the self-diagnosis summary."""
+    text = error.lower()
+    if "timed out" in text or "timeout" in text:
+        return "timeout"
+    if "redirects" in text:
+        return "redirect"
+    if "contents differ" in text:
+        return "mismatch"
+    return "http-error"
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base-url", default="https://marsharbel.com")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--attempts", type=int, default=10)
     parser.add_argument("--interval", type=float, default=20)
+    parser.add_argument("--budget", type=float, default=660,
+                        help="internal time budget in seconds (default 660, deliberately below "
+                             "the workflow's 15-minute job timeout so the script names its own "
+                             "failure signature instead of dying silently on cancellation)")
     args = parser.parse_args()
-    if args.attempts < 1 or args.interval < 0:
-        parser.error("attempts must be positive and interval must be nonnegative")
+    if args.attempts < 1 or args.interval < 0 or args.budget <= 0:
+        parser.error("attempts must be positive and interval/budget must be nonnegative/positive")
     root = args.root.resolve()
     if not (root / "index.html").is_file():
         parser.error("root must contain the website, including index.html")
@@ -160,19 +176,65 @@ def main():
         files = frontend_files(root)
     except (OSError, ValueError, KeyError) as error:
         parser.error(f"root must contain a valid locales/registry.json: {error}")
+    started = time.monotonic()
+    deadline = started + args.budget
+    last_errors = []
+    attempts_run = 0
+    stopped = None
     for attempt in range(1, args.attempts + 1):
+        if attempt > 1 and time.monotonic() >= deadline:
+            stopped = "budget-exhausted"
+            break
+        attempts_run = attempt
         nonce = time.time_ns()
-        with ThreadPoolExecutor(max_workers=6) as pool:
-            errors = list(filter(None, pool.map(
-                lambda path: verify_file(root, path, args.base_url, nonce), files)))
-        if not errors:
+        print(f"Attempt {attempt}/{args.attempts}: checking {len(files)} files "
+              f"({time.monotonic() - started:.0f}s of {args.budget:.0f}s budget used)", flush=True)
+        errors = []
+        done = 0
+        pool = ThreadPoolExecutor(max_workers=6)
+        try:
+            for error in pool.map(lambda path: verify_file(root, path, args.base_url, nonce), files):
+                done += 1
+                if error:
+                    errors.append(error)
+                if done % 50 == 0 or done == len(files):
+                    print(f"Attempt {attempt}: {done}/{len(files)} checked, {len(errors)} failing, "
+                          f"{time.monotonic() - started:.0f}s elapsed", flush=True)
+                if time.monotonic() >= deadline:
+                    print(f"Internal budget exhausted mid-attempt: abandoning the remaining "
+                          f"{len(files) - done} checks of attempt {attempt}.", flush=True)
+                    stopped = "budget-exhausted"
+                    break
+        finally:
+            pool.shutdown(wait=True, cancel_futures=True)
+        last_errors = errors
+        if not errors and stopped is None:
             print(f"Verified {len(files)} live frontend files match the checkout.", flush=True)
             return 0
         print(f"Attempt {attempt}/{args.attempts}: {len(errors)} files not verified", flush=True)
         for error in errors:
             print(f"  {error}", flush=True)
+        if stopped is None and errors:
+            timeouts = sum(1 for error in errors if categorize(error) == "timeout")
+            if timeouts > len(files) // 2:
+                print(f"MASS TIMEOUT: {timeouts}/{len(files)} files unreachable this attempt; "
+                      f"the site is mid-deploy or stalling, so retrying would only burn the "
+                      f"job timeout. Failing fast.", flush=True)
+                stopped = "mass-timeout"
+        if stopped is not None:
+            break
         if attempt < args.attempts:
             time.sleep(args.interval)
+    if stopped is None:
+        stopped = "persistent-mismatch"
+    categories = {}
+    for error in last_errors:
+        kind = categorize(error)
+        categories[kind] = categories.get(kind, 0) + 1
+    print(f"SELF-DIAGNOSIS: {stopped} - {attempts_run} attempt(s) in "
+          f"{time.monotonic() - started:.0f}s against {len(files)} files; "
+          f"last attempt failures by category: "
+          f"{json.dumps(categories, sort_keys=True) if categories else '{}'}.", flush=True)
     print("Deployment verification failed. Check Hostinger Git build output and cache.")
     return 1
 
