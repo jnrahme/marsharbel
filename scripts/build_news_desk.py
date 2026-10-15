@@ -37,12 +37,19 @@ def load_image_records(root, template_text):
         if not rec.get('revalidation', {}).get('note'):
             raise ValueError(f'image records: slot {slot} missing revalidation note')
         img = rec['image']
-        if not img['src'].startswith('./media/'):
-            raise ValueError(f'image records: slot {slot} src must stay under ./media/')
-        if not (root / img['src']).is_file():
-            raise ValueError(f'image records: slot {slot} asset missing: {img["src"]}')
-        if not (isinstance(img['width'], int) and isinstance(img['height'], int)):
-            raise ValueError(f'image records: slot {slot} width/height must be integers')
+        src = img['src']
+        if not re.fullmatch(r'\./media/[A-Za-z0-9._/-]+', src):
+            raise ValueError(f'image records: slot {slot} src has invalid characters: {src!r}')
+        media_root = (root / 'media').resolve()
+        asset = (root / src).resolve()
+        if media_root not in asset.parents:
+            raise ValueError(f'image records: slot {slot} src escapes media/: {src!r}')
+        if not asset.is_file():
+            raise ValueError(f'image records: slot {slot} asset missing: {src}')
+        for dim in ('width', 'height'):
+            v = img[dim]
+            if type(v) is not int or v <= 0:
+                raise ValueError(f'image records: slot {slot} {dim} must be a positive integer')
         for field in REQUIRED_LICENSE_FIELDS:
             if not rec['license'].get(field):
                 raise ValueError(f'image records: slot {slot} license.{field} required')
@@ -64,7 +71,7 @@ def outputs(root=ROOT):
         def repl(m, values=values):
             key = m[1]
             if key in values:
-                return values[key]
+                return html.escape(values[key], quote=True)
             return html.escape(copy[key], quote=True)
 
         content = re.sub(r'\$\{([^}]+)\}', repl, content)

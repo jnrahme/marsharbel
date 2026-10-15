@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from pathlib import Path
 import unittest
 ROOT = Path(__file__).resolve().parents[2]
@@ -127,12 +128,9 @@ class NewsDeskTests(unittest.TestCase):
         self.assertNotIn('rolls out worldwide', (ROOT/'index.html').read_text())
 
 
-if __name__ == '__main__':
-    unittest.main()
 
 class NewsImageRecordTests(unittest.TestCase):
     def setUp(self):
-        import json
         self.records = json.loads((ROOT/'locales/en/news-image-records.json').read_text())['slots']
         self.template = (ROOT/'templates/news-desk/home.html').read_text()
 
@@ -151,11 +149,42 @@ class NewsImageRecordTests(unittest.TestCase):
         import tempfile, shutil
         tmp = Path(tempfile.mkdtemp())
         shutil.copytree(ROOT/'locales/en', tmp/'locales/en')
+        for slot, rec in self.records.items():
+            asset = tmp / rec['image']['src']
+            asset.parent.mkdir(parents=True, exist_ok=True)
+            asset.touch()
         rec = json.loads((tmp/'locales/en/news-image-records.json').read_text())
         rec['slots']['trail']['storyId'] = 'some-other-story'
         (tmp/'locales/en/news-image-records.json').write_text(json.dumps(rec))
+        with self.assertRaises(ValueError) as ctx:
+            news_desk.load_image_records(tmp, self.template)
+        self.assertIn('trail', str(ctx.exception))
+        self.assertIn('story drift', str(ctx.exception))
+
+    def _record_with(self, mutate):
+        import tempfile, shutil
+        tmp = Path(tempfile.mkdtemp())
+        shutil.copytree(ROOT/'locales/en', tmp/'locales/en')
+        rec = json.loads((tmp/'locales/en/news-image-records.json').read_text())
+        mutate(rec['slots']['premiere'])
+        (tmp/'locales/en/news-image-records.json').write_text(json.dumps(rec))
+        return tmp
+
+    def test_src_traversal_rejected(self):
+        tmp = self._record_with(lambda slot: slot['image'].update(src='./media/../index.html'))
         with self.assertRaises(ValueError):
             news_desk.load_image_records(tmp, self.template)
+
+    def test_src_injection_charset_rejected(self):
+        tmp = self._record_with(lambda slot: slot['image'].update(src='./media/test" onerror="bad.jpg'))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+
+    def test_bool_and_nonpositive_dims_rejected(self):
+        for bad in (True, -5, 0, '960'):
+            tmp = self._record_with(lambda slot, bad=bad: slot['image'].update(width=bad))
+            with self.assertRaises(ValueError, msg=repr(bad)):
+                news_desk.load_image_records(tmp, self.template)
 
     def test_license_evidence_fields_and_revalidation_notes_present(self):
         for slot, rec in self.records.items():
@@ -172,9 +201,13 @@ class NewsImageRecordTests(unittest.TestCase):
         """Alt attributes must equal the refresh_pope_home_news.py EN catalog so
         the refresh script and the records renderer never diverge."""
         import re
-        refresh = (ROOT/'scripts/refresh_pope_home_news.py').read_text()
+        refresh = (ROOT/'scripts/i18n/refresh_pope_home_news.py').read_text()
         index = (ROOT/'index.html').read_text()
         block = index.split('i18n-news-home')[1].split('i18n-news-home')[0]
         for alt in re.findall(r'alt="([^"]+)"', block):
             if 'Gemelli' in alt or 'Rosary' in alt:
                 self.assertIn(alt.replace('&amp;', '&'), refresh.replace('&amp;', '&'))
+
+
+if __name__ == '__main__':
+    unittest.main()
