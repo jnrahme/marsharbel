@@ -12,7 +12,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
-from i18n.saint_plate import plate_fields
+from i18n.saint_plate import plate_fields,saint_image_rejection
 REQUIRED=('saint','calendar','infoUrl','sources','translationStatus')
 def load(root):
     manifest=json.loads((root/'locales/saint-of-day.json').read_text())
@@ -33,6 +33,8 @@ def load(root):
         if entry.get('saintImage'):
             if has_url: raise ValueError(f'saint unit {d} carries both a book and saintImage; the photo plate is a solo-card variant')
             if not copy.get(d,{}).get('imageAlt'): raise ValueError(f'saint unit {d} has saintImage but no reviewed English imageAlt')
+            reason=saint_image_rejection(entry)
+            if reason: print(f'saint unit {d}: photo plate REFUSED ({reason}); falling back to monogram',file=sys.stderr)
         if d not in copy: raise ValueError(f'saint unit {d} has no English copy')
     return manifest,copy
 def output(root=ROOT):
@@ -47,7 +49,7 @@ def output(root=ROOT):
         values={**entry,**copy[d],'date':d,'dateLabel':date.fromisoformat(d).strftime('%d.%m.%Y'),'calendarUrl':entry['sources'][0]}
         if entry.get('bookUrl'):
             template=pair
-        elif entry.get('saintImage'):
+        elif entry.get('saintImage') and saint_image_rejection(entry) is None:
             template=image
         else:
             fields=plate_fields(copy[d].get('name',''),'en',d,override=copy[d].get('monogram'))

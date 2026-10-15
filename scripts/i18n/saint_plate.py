@@ -97,3 +97,30 @@ def plate_fields(name, lang, iso_date, override=None):
     if mono is None:
         return None
     return {'monogram': mono, 'dateShort': date_short(iso_date, lang)}
+
+
+# --- saintImage production gate (design-director hard rule, 2026-10-15) ---
+# The photo plate is only ever a REAL photograph or approved portrait of THAT
+# saint, backed by an explicit per-saint source record. Storybook illustration
+# paths are never eligible; no keyword-picking, no generated imagery.
+BOOK_ART_MARKERS = ('storybook', '/books/')
+
+def saint_image_rejection(entry):
+    """Return None when entry's saintImage may render, else the refusal reason.
+
+    The caller falls back to the monogram plate on any non-None result.
+    """
+    img = (entry or {}).get('saintImage')
+    if not img:
+        return 'no saintImage'
+    low = img.lower()
+    for marker in BOOK_ART_MARKERS:
+        if marker in low:
+            return f'saintImage points at book/storybook art: {img}'
+    src = (entry or {}).get('saintImageSource')
+    if not isinstance(src, dict):
+        return 'saintImage without a saintImageSource record'
+    for field in ('url', 'licence', 'credit'):
+        if not (src.get(field) or '').strip():
+            return f'saintImageSource missing {field}'
+    return None

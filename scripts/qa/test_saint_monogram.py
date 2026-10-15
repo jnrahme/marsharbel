@@ -3,7 +3,7 @@ import sys,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
-from i18n.saint_plate import derive_monogram,date_short,plate_fields
+from i18n.saint_plate import saint_image_rejection, derive_monogram,date_short,plate_fields
 
 class Derivation(unittest.TestCase):
  def test_titles_stripped_per_locale(self):
@@ -57,5 +57,20 @@ class DateShort(unittest.TestCase):
    with self.subTest(lang=lang): self.assertNotIn('2026',date_short('2026-10-15',lang))
  def test_unknown_locale_falls_back_to_en_months(self):
   self.assertEqual(date_short('2026-10-15','xx'),'15 Oct')
+
+
+class SaintImageGate(unittest.TestCase):
+ def test_book_illustration_path_rejected(self):
+  e={'saintImage':'/media/storybook-jude/images/page-01.jpg','saintImageSource':{'url':'https://example.com','licence':'CC0','credit':'X'}}
+  self.assertIsNotNone(saint_image_rejection(e))
+ def test_missing_credit_rejected(self):
+  e={'saintImage':'/media/saints/teresa-avila.jpg','saintImageSource':{'url':'https://commons.wikimedia.org/x','licence':'Public domain','credit':''}}
+  self.assertIsNotNone(saint_image_rejection(e))
+ def test_missing_source_record_rejected(self):
+  e={'saintImage':'/media/saints/teresa-avila.jpg'}
+  self.assertIsNotNone(saint_image_rejection(e))
+ def test_valid_photo_accepted(self):
+  e={'saintImage':'/media/saints/teresa-avila.jpg','saintImageSource':{'url':'https://commons.wikimedia.org/wiki/File:Teresa_of_Avila.jpg','licence':'Public domain','credit':'Wikimedia Commons'}}
+  self.assertIsNone(saint_image_rejection(e))
 
 if __name__=='__main__': unittest.main()

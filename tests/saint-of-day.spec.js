@@ -21,7 +21,7 @@ for(const path of ['/','/ar/','/hi/','/th/'])for(const [date,active] of clocks){
   const card=page.locator('#saint-of-the-day');
   await expect(card).toHaveCount(active?1:0);
   if(active){
-   await expect(card).toBeVisible();await expect(card.locator('time')).toHaveText(label(active));
+   await expect(card).toBeVisible();await expect(card.locator('time[data-saint-generated-date="dateLabel"]')).toHaveText(label(active));
    if(manifest.entries[active].bookUrl){
     await expect(card.locator('.home-saint-pair > a')).toHaveCount(2);
    }else{
