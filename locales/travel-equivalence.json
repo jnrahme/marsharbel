@@ -1,100 +1,6 @@
 {
   "version": 1,
   "groups": {
-    "annaya-master": {
-      "sourceRevision": "78cde58d08fec465be0014893e9c0ca6cf7d5e89",
-      "renderedReviewStatus": "approved",
-      "catalogReview": "parent-report-2026-10-05T23:51:22-524d6a70",
-      "renderedReview": "parent-report-2026-10-05T23:51:22-524d6a70",
-      "variants": {
-        "en": {
-          "file": "visit-annaya.html",
-          "path": "/visit-annaya",
-          "bodySha256": "2ad6f1e229450a799c91fa49f51177a1b28a1b6203655ba32ee6ccd7bc408518",
-          "candidateFileSha256": "0d84b9b063de9a51f10d9c920ca7a9319d327bf820604b5e9b79b3973bd11588"
-        },
-        "ar": {
-          "file": "ar/annaya.html",
-          "path": "/ar/annaya",
-          "bodySha256": "aee2f8c3b924f340bb346e54bd0e65aa72b87935026ede205b6514cc71405cab",
-          "candidateFileSha256": "c7ce3db0b6de83c4662c6fd9f9d6a5de9c5f75a9c5a7dbf7f57206b3de789d11",
-          "catalog": "locales/ar/annaya-master-copy.json",
-          "catalogSha256": "a457f50bdaa661456538b1c117fd3d45d94059489498947f9ab9f8be2820d67e"
-        },
-        "fr": {
-          "file": "fr/annaya.html",
-          "path": "/fr/annaya",
-          "bodySha256": "17e25660575122e8216a9e91133fda2b3668b3d938c4f53a7221e48a4c4bfb9d",
-          "candidateFileSha256": "e2e69d39a65a1eb5460b880609df410fc23937b8a043f030d7c4a1c4a2c763f9",
-          "catalog": "locales/fr/annaya-master-copy.json",
-          "catalogSha256": "b9497435d89cd47820cdb11d056721576b81e29165db97f70e96cee1b8cfdea9"
-        },
-        "es": {
-          "file": "es/annaya.html",
-          "path": "/es/annaya",
-          "bodySha256": "bba4ce3a099af581b346345fe8a09442c4daf8e8e52839fae0a72ebd1b20eff9",
-          "candidateFileSha256": "b907d1919bd76571998fbbb54ba9d46b691ea4c287536f89b91af8a6bed4b245",
-          "catalog": "locales/es/annaya-master-copy.json",
-          "catalogSha256": "cc7a4dad7b4dfd4252a842a681927acd919eea93498c9fb3518f86533ba162eb"
-        },
-        "pt": {
-          "file": "pt/annaya.html",
-          "path": "/pt/annaya",
-          "bodySha256": "0e1ce753dc19b6a73d3649667106e2debb7c4f8487e9b9069b1641bd4db2ea81",
-          "candidateFileSha256": "8616e4b5be41219a2977e10a4770f13b5f811d5e40d7fcc329da9ef7f625ffef",
-          "catalog": "locales/pt/annaya-master-copy.json",
-          "catalogSha256": "faf83808d02967228f591313a9a5f4355e3c3f39f68d0f57b5287c3b9d3c6d67"
-        },
-        "it": {
-          "file": "it/annaya.html",
-          "path": "/it/annaya",
-          "bodySha256": "10adde7756a9f96e351a3522be85d1a975c39245accfa379926fb4e7f4187e7d",
-          "candidateFileSha256": "36d0518e6ea65fa67c43e088570dd3241de1bc3cef897133e82b5a60d7900535",
-          "catalog": "locales/it/annaya-master-copy.json",
-          "catalogSha256": "3a17984827c7a9dee80f03989cb133c21a16dc4fb8708b8301d029a7d76feca3"
-        },
-        "de": {
-          "file": "de/annaya.html",
-          "path": "/de/annaya",
-          "bodySha256": "7c54d6d9e2ad4d3c306bf219d07821334f750407dfe38ba557263774e2b31559",
-          "candidateFileSha256": "8df793aaa5edf89336831d13b5e0acdc2ff422a7f4b71b2a64e559a5cf5cf944",
-          "catalog": "locales/de/annaya-master-copy.json",
-          "catalogSha256": "84daaf3a0b76e5602385dcdb14a803930a6a1805c31b4bdfcda71e199552c3cb"
-        },
-        "pl": {
-          "file": "pl/annaya.html",
-          "path": "/pl/annaya",
-          "bodySha256": "45d396aa12d9cbb2a210f1db05025c04be56e11a95f69ecf8c661ac862e54ce2",
-          "candidateFileSha256": "1c00f68da193fa29b2f3cc3d22907bb629b1fc8524e69e94a93d0715c82703f5",
-          "catalog": "locales/pl/annaya-master-copy.json",
-          "catalogSha256": "422fc6aaa17a7b442bf245b5737f8b5b9e9a0fcb144b666807f55873f9808b92"
-        },
-        "ru": {
-          "file": "ru/annaya.html",
-          "path": "/ru/annaya",
-          "bodySha256": "e4b405a104e118d2d8e418b823b673cdfe8a0a42515d522fd3babaa30618c861",
-          "candidateFileSha256": "ea0eec571c48318fc5ca99b9f96e773e182b4c8068b79d06afa562eedc22184b",
-          "catalog": "locales/ru/annaya-master-copy.json",
-          "catalogSha256": "e888ddfec659aadc2c4f0813d2e2b739b916b15ecb9cf13765c6530512967adf"
-        }
-      },
-      "boundedReviewAmendments": [
-        {
-          "locale": "de",
-          "scope": "href-only six exact DE Travel twins; anchor text identical",
-          "beforeBodySha256": "28f247dba6c3ba2c833d85d20fb7d36aed49696befaf5071e2ded933dd4161ae",
-          "afterBodySha256": "7c54d6d9e2ad4d3c306bf219d07821334f750407dfe38ba557263774e2b31559",
-          "review": "parent seat1 bounded content PASS 2026-10-08T02:06:18-04:00",
-          "deployTogether": true,
-          "englishNoTwinExceptions": [
-            "/st-nimatullah",
-            "/st-rafqa",
-            "/maronite-history",
-            "/news"
-          ]
-        }
-      ]
-    },
     "twenty-second-master": {
       "sourceRevision": "78cde58d08fec465be0014893e9c0ca6cf7d5e89",
       "renderedReviewStatus": "approved",
@@ -170,97 +76,6 @@
           "candidateFileSha256": "9b709cc67c497478c575e2896f7b059e7477b785dd4f1bbf3f5cf550c8c1bb1e",
           "catalog": "locales/ru/twenty-second-master-copy.json",
           "catalogSha256": "1095d73aa8f46c36596984ec20b0ef2912cb282ef53af6f92f24e3694a1dce3b"
-        }
-      }
-    },
-    "pilgrimage-master": {
-      "sourceRevision": "cf50ee5878c2a8a18090311f7c1ca06a2de5438e",
-      "renderedReviewStatus": "approved",
-      "catalogReview": "parent-report-2026-10-05T23:51:22-524d6a70",
-      "renderedReview": "parent-report-2026-10-05T23:51:22-524d6a70",
-      "variants": {
-        "en": {
-          "file": "saint-charbel-pilgrimage.html",
-          "path": "/saint-charbel-pilgrimage",
-          "bodySha256": "599ecf8b06750fc2e1fb962c1309b497c1608e2b693a8d323be881acf24b4722",
-          "candidateFileSha256": "13adb8b118eeecd42f244e6e1b58b33e5269367e71084608139aa451b9d7d497"
-        },
-        "ar": {
-          "file": "ar/pilgrimage.html",
-          "path": "/ar/pilgrimage",
-          "bodySha256": "16b12ffa961b7e3c33fd2a1ae9908f30a67632047b30272066cc910a55240cf5",
-          "candidateFileSha256": "79818e4548afad1dc2d2d6cf44083fa4f83ce2ad8901e3ac9814358b00bb1af1",
-          "catalog": "locales/ar/pilgrimage-master-copy.json",
-          "catalogSha256": "a5e52ec85963e054068283cd03efd5130453597b97971d9426ca679945896e56"
-        },
-        "fr": {
-          "file": "fr/pelerinage.html",
-          "path": "/fr/pelerinage",
-          "bodySha256": "7df2bc8b1c6f6f69ee973a436fe26c2a9314e846e7c1eeb0152b8b0de9102f7e",
-          "candidateFileSha256": "ec286f0f05d789c4006f351a5fbcc92f6261474a0fb2fcf42e13780f9ac76dde",
-          "catalog": "locales/fr/pilgrimage-master-copy.json",
-          "catalogSha256": "b415f1d8af4724136945ada5d2c3d7161efeb917edefc6f43bfb3c7b92ff6f61"
-        },
-        "es": {
-          "file": "es/peregrinacion.html",
-          "path": "/es/peregrinacion",
-          "bodySha256": "827de5819d43a94fc9a80f483d7e523e38351c3bedeba4f6cd57f4433542621c",
-          "candidateFileSha256": "f3184c64457a49117e61a3f20607e57e6e2b456f413b2302f883a47161582f62",
-          "catalog": "locales/es/pilgrimage-master-copy.json",
-          "catalogSha256": "fee8b20e68e5a0f34db1319986d0eb99df659cf9fc27f510c3131c70e365a46d"
-        },
-        "pt": {
-          "file": "pt/peregrinacao.html",
-          "path": "/pt/peregrinacao",
-          "bodySha256": "c4dfe63cd6c73606d6116b5eed5b9e68a26782a090747284a6ef2a375e72e2fb",
-          "candidateFileSha256": "38c022b31112237fa5839e8afb3d2f6863c0ed8a8b963c7328fa60bc8d3c0b3b",
-          "catalog": "locales/pt/pilgrimage-master-copy.json",
-          "catalogSha256": "924e912c1f3e895908b9d5782db32371c779fb7a02a1e744521d4627f4c7a306"
-        },
-        "it": {
-          "file": "it/pellegrinaggio.html",
-          "path": "/it/pellegrinaggio",
-          "bodySha256": "af21f142c8fa5fb84412e9773c0d97046d2405899bd5f160d1072a7064273c9c",
-          "candidateFileSha256": "c6426e84f9b72f667b399cc39c4fa204495543c0f4fc94e38a38ed361722def6",
-          "catalog": "locales/it/pilgrimage-master-copy.json",
-          "catalogSha256": "bd197e5baaa9e0118f397ca79d02fdd7d51300770781218977512ea8a78c44c0"
-        },
-        "de": {
-          "file": "de/pilgerreise.html",
-          "path": "/de/pilgerreise",
-          "bodySha256": "b569dee78687c2f0d624aa62814c2260489ec292fa2d0b3cb294757d8716f397",
-          "candidateFileSha256": "f2392b2cb318ee4d392bb9a08d619596542546def20e18918c875f051dd5ce08",
-          "catalog": "locales/de/pilgrimage-master-copy.json",
-          "catalogSha256": "8654a40d077043691e02f96ed5b95017af3ea08f33cd28693a4f68e6c7f7b5e4",
-          "reviewAmendment": {
-            "reason": "Exact current-English Bekaa Kafra hedge correction only; one main-text hunk.",
-            "previousBodySha256": "e025a82137ee2646016f138e3804d2dab76942f56a7be6e6eccc82e059caeb6c",
-            "contentReview": "parent relay 2026-10-08T01:07:29-04:00: seat 1 CONTENT PASS",
-            "renderedReview": "2026-10-08 local 390 and 1280, JS/no-JS, all full-page sections inspected after lazy-image loading; zero horizontal overflow and page errors",
-            "evidence": [
-              "g1-de-pilgerreise-390-js.png",
-              "g1-de-pilgerreise-1280-js.png",
-              "g1-de-pilgerreise-390-nojs.png",
-              "g1-de-pilgerreise-1280-nojs.png",
-              "g1-de-review-matrix.json"
-            ]
-          }
-        },
-        "pl": {
-          "file": "pl/pielgrzymka.html",
-          "path": "/pl/pielgrzymka",
-          "bodySha256": "00185403dabf424015b7fc29fef7cae1414800e712d8a368f2b48ac625152722",
-          "candidateFileSha256": "9ed607d7e007c90e31ce8b6e7a2549c1e2ed74817b2fd0f3518a3132f94034f5",
-          "catalog": "locales/pl/pilgrimage-master-copy.json",
-          "catalogSha256": "0c7061449fd083d63402e71aa4ed354ad3a80b5e3316860175fb3b7151e14b09"
-        },
-        "ru": {
-          "file": "ru/palomnichestvo.html",
-          "path": "/ru/palomnichestvo",
-          "bodySha256": "6bfb24725d8e98d2a19da9d820bb947b5788848c6e760ae9260f3dd66fd23ac0",
-          "candidateFileSha256": "0ab56e9f32cccf3827c3ada922d1e0d7434c81a99a4afb0961214e162b069562",
-          "catalog": "locales/ru/pilgrimage-master-copy.json",
-          "catalogSha256": "722f6c2f9dafe194ba5e932e023227088dce3dc757b844f4097e800dde4baf28"
         }
       }
     },
@@ -978,7 +793,192 @@
           }
         }
       }
+    },
+    "pilgrimage-master": {
+      "sourceRevision": "cf50ee5878c2a8a18090311f7c1ca06a2de5438e",
+      "renderedReviewStatus": "approved",
+      "catalogReview": "parent-report-2026-10-05T23:51:22-524d6a70",
+      "renderedReview": "parent-report-2026-10-05T23:51:22-524d6a70",
+      "variants": {
+        "en": {
+          "file": "saint-charbel-pilgrimage.html",
+          "path": "/saint-charbel-pilgrimage",
+          "bodySha256": "dcf179a1dea44afe9bfe9cbacbceeac7e5939ba52cfcc4a2527c8b9acea0a8e5",
+          "candidateFileSha256": "13adb8b118eeecd42f244e6e1b58b33e5269367e71084608139aa451b9d7d497"
+        },
+        "ar": {
+          "file": "ar/pilgrimage.html",
+          "path": "/ar/pilgrimage",
+          "bodySha256": "02b92b1ac0ee2c116ebd2a734fbcb63fff64bcfa736139877a195c2b911a173e",
+          "candidateFileSha256": "79818e4548afad1dc2d2d6cf44083fa4f83ce2ad8901e3ac9814358b00bb1af1",
+          "catalog": "locales/ar/pilgrimage-master-copy.json",
+          "catalogSha256": "2ca56dfbb57fb89bb8b84b89d9174f0e56f4e02f7b7487297b1e1f93b2416743"
+        },
+        "fr": {
+          "file": "fr/pelerinage.html",
+          "path": "/fr/pelerinage",
+          "bodySha256": "e4ab16e811bed56e0832cbe5aa3aae289eab72091da431d20ff9c82b79516b1d",
+          "candidateFileSha256": "ec286f0f05d789c4006f351a5fbcc92f6261474a0fb2fcf42e13780f9ac76dde",
+          "catalog": "locales/fr/pilgrimage-master-copy.json",
+          "catalogSha256": "cb72765a5d56007bebdbb41ab582fc23169ba973f3975b32bf95f38d3277527d"
+        },
+        "es": {
+          "file": "es/peregrinacion.html",
+          "path": "/es/peregrinacion",
+          "bodySha256": "73e1527333c3b7a58840aaf28cbc202bd6de18f59bdb41ad404e3174dfd55575",
+          "candidateFileSha256": "f3184c64457a49117e61a3f20607e57e6e2b456f413b2302f883a47161582f62",
+          "catalog": "locales/es/pilgrimage-master-copy.json",
+          "catalogSha256": "e3c63c7bfda9a003cf1e92a9ac21cbdc0def42784c7a2355813d3491dc594036"
+        },
+        "pt": {
+          "file": "pt/peregrinacao.html",
+          "path": "/pt/peregrinacao",
+          "bodySha256": "9659622eec133817774b754493a5d7fc251eac3eb8d676119c34f9f2e9a4c5c9",
+          "candidateFileSha256": "38c022b31112237fa5839e8afb3d2f6863c0ed8a8b963c7328fa60bc8d3c0b3b",
+          "catalog": "locales/pt/pilgrimage-master-copy.json",
+          "catalogSha256": "d6fc9484c314489df66909b6379867c9b82121d6c0aa403260b53ac1e7115c1f"
+        },
+        "it": {
+          "file": "it/pellegrinaggio.html",
+          "path": "/it/pellegrinaggio",
+          "bodySha256": "c2bcfab9efa33e99944d35ad355e681a19ce13dfffc28bdbd359e44de863e044",
+          "candidateFileSha256": "c6426e84f9b72f667b399cc39c4fa204495543c0f4fc94e38a38ed361722def6",
+          "catalog": "locales/it/pilgrimage-master-copy.json",
+          "catalogSha256": "f03bde2fbebf55d90a7246d0097fc256ed7583ad11a5c8506eb8c3148fa40427"
+        },
+        "de": {
+          "file": "de/pilgerreise.html",
+          "path": "/de/pilgerreise",
+          "bodySha256": "03f36aec734bdb2933863f3bb16091f62804711da5b91c3bb944b16730a3d3db",
+          "candidateFileSha256": "f2392b2cb318ee4d392bb9a08d619596542546def20e18918c875f051dd5ce08",
+          "catalog": "locales/de/pilgrimage-master-copy.json",
+          "catalogSha256": "b8aa11a8a0df2a370ae6d6d0391715269dfbd0b304fa945d52e0417fa641aa57",
+          "reviewAmendment": {
+            "reason": "Exact current-English Bekaa Kafra hedge correction only; one main-text hunk.",
+            "previousBodySha256": "e025a82137ee2646016f138e3804d2dab76942f56a7be6e6eccc82e059caeb6c",
+            "contentReview": "parent relay 2026-10-08T01:07:29-04:00: seat 1 CONTENT PASS",
+            "renderedReview": "2026-10-08 local 390 and 1280, JS/no-JS, all full-page sections inspected after lazy-image loading; zero horizontal overflow and page errors",
+            "evidence": [
+              "g1-de-pilgerreise-390-js.png",
+              "g1-de-pilgerreise-1280-js.png",
+              "g1-de-pilgerreise-390-nojs.png",
+              "g1-de-pilgerreise-1280-nojs.png",
+              "g1-de-review-matrix.json"
+            ]
+          }
+        },
+        "pl": {
+          "file": "pl/pielgrzymka.html",
+          "path": "/pl/pielgrzymka",
+          "bodySha256": "63093e378da256afa7310f74fc6968ac7f2824c9567c6fdbf030b7968c378197",
+          "candidateFileSha256": "9ed607d7e007c90e31ce8b6e7a2549c1e2ed74817b2fd0f3518a3132f94034f5",
+          "catalog": "locales/pl/pilgrimage-master-copy.json",
+          "catalogSha256": "571baf2d1d85641238694fe493cbec7473cbed652f811cf3b99ac7a419f057b7"
+        },
+        "ru": {
+          "file": "ru/palomnichestvo.html",
+          "path": "/ru/palomnichestvo",
+          "bodySha256": "507604af4b346dd5fc998d8d47f0d2926a593eeba54df394aeaaaf7351b35b9b",
+          "candidateFileSha256": "0ab56e9f32cccf3827c3ada922d1e0d7434c81a99a4afb0961214e162b069562",
+          "catalog": "locales/ru/pilgrimage-master-copy.json",
+          "catalogSha256": "c571aefedd3784b1e603df65d74de510c8016659c0386c9e383a45a91e7bf6b6"
+        }
+      }
+    },
+    "annaya-master": {
+      "sourceRevision": "78cde58d08fec465be0014893e9c0ca6cf7d5e89",
+      "renderedReviewStatus": "approved",
+      "catalogReview": "parent-report-2026-10-05T23:51:22-524d6a70",
+      "renderedReview": "parent-report-2026-10-05T23:51:22-524d6a70",
+      "variants": {
+        "en": {
+          "file": "visit-annaya.html",
+          "path": "/visit-annaya",
+          "bodySha256": "5bcff5c6396aedaf691b63af3c3f5b72c3d085aed1d070749ff988cb1cc48b44",
+          "candidateFileSha256": "0d84b9b063de9a51f10d9c920ca7a9319d327bf820604b5e9b79b3973bd11588"
+        },
+        "ar": {
+          "file": "ar/annaya.html",
+          "path": "/ar/annaya",
+          "bodySha256": "8384d4fc27bb508634348af1671e71944daaee564c0ac129e64e361f99013d06",
+          "candidateFileSha256": "c7ce3db0b6de83c4662c6fd9f9d6a5de9c5f75a9c5a7dbf7f57206b3de789d11",
+          "catalog": "locales/ar/annaya-master-copy.json",
+          "catalogSha256": "542428c6db2c831367c93b8ea94dcd5fe53900dd9eab56ca2e65ab1049b509c7"
+        },
+        "fr": {
+          "file": "fr/annaya.html",
+          "path": "/fr/annaya",
+          "bodySha256": "d6cf672c5b103682f98e66fd01ddcfcdbbed9ea0944438605c08812013428e2a",
+          "candidateFileSha256": "e2e69d39a65a1eb5460b880609df410fc23937b8a043f030d7c4a1c4a2c763f9",
+          "catalog": "locales/fr/annaya-master-copy.json",
+          "catalogSha256": "81527eecf706dd3703f30b473ee009796b1b1b20eb24547877ff737e15033153"
+        },
+        "es": {
+          "file": "es/annaya.html",
+          "path": "/es/annaya",
+          "bodySha256": "e716f4c14280f8115652f02b9e051783b487863a23a848e1f9feaf912ca36ad8",
+          "candidateFileSha256": "b907d1919bd76571998fbbb54ba9d46b691ea4c287536f89b91af8a6bed4b245",
+          "catalog": "locales/es/annaya-master-copy.json",
+          "catalogSha256": "bdbf7e613d51bf46426b5e810494d2238ee1799dda79ba63af46967cb8bade91"
+        },
+        "pt": {
+          "file": "pt/annaya.html",
+          "path": "/pt/annaya",
+          "bodySha256": "4ef03023f664c66f8046e805282ce3cc9beee3ad85fccdf7443998eb0e9a6a12",
+          "candidateFileSha256": "8616e4b5be41219a2977e10a4770f13b5f811d5e40d7fcc329da9ef7f625ffef",
+          "catalog": "locales/pt/annaya-master-copy.json",
+          "catalogSha256": "99e6a1c2a1493b63146341523cfc65b8381115be875a51678597e90edcc8401c"
+        },
+        "it": {
+          "file": "it/annaya.html",
+          "path": "/it/annaya",
+          "bodySha256": "2788cd41e543098f6b54eff083ab60a0c909ad79052c9c025d86d182f09c349d",
+          "candidateFileSha256": "36d0518e6ea65fa67c43e088570dd3241de1bc3cef897133e82b5a60d7900535",
+          "catalog": "locales/it/annaya-master-copy.json",
+          "catalogSha256": "20a92f90854511a9144fad4a483fb36f0821a016df3afeddc08e344c2a26de53"
+        },
+        "de": {
+          "file": "de/annaya.html",
+          "path": "/de/annaya",
+          "bodySha256": "297563132ffb5d31940297bccef7fcb7fbe72149dda2ea49bf92ff7c8b5d7142",
+          "candidateFileSha256": "8df793aaa5edf89336831d13b5e0acdc2ff422a7f4b71b2a64e559a5cf5cf944",
+          "catalog": "locales/de/annaya-master-copy.json",
+          "catalogSha256": "3dedd7d486674b9f4845dfcb696d06650c7881adea81680341078a7d31a15814"
+        },
+        "pl": {
+          "file": "pl/annaya.html",
+          "path": "/pl/annaya",
+          "bodySha256": "a3228148fc847ed0f77bcd558f467f9d71a5e90640e220d06982da9518f7e4c4",
+          "candidateFileSha256": "1c00f68da193fa29b2f3cc3d22907bb629b1fc8524e69e94a93d0715c82703f5",
+          "catalog": "locales/pl/annaya-master-copy.json",
+          "catalogSha256": "5ff4178d90dee7aeb78eabaaf7ef33eed90cb2532bd89756fc5a845a57b65beb"
+        },
+        "ru": {
+          "file": "ru/annaya.html",
+          "path": "/ru/annaya",
+          "bodySha256": "dc709e661d64983f8f1773db86e563c097575a8228d225657d065665518a714a",
+          "candidateFileSha256": "ea0eec571c48318fc5ca99b9f96e773e182b4c8068b79d06afa562eedc22184b",
+          "catalog": "locales/ru/annaya-master-copy.json",
+          "catalogSha256": "e61f228dd452de499e732105621c12f00e71680050d3a93982b590039c037a97"
+        }
+      },
+      "boundedReviewAmendments": [
+        {
+          "locale": "de",
+          "scope": "href-only six exact DE Travel twins; anchor text identical",
+          "beforeBodySha256": "28f247dba6c3ba2c833d85d20fb7d36aed49696befaf5071e2ded933dd4161ae",
+          "afterBodySha256": "7c54d6d9e2ad4d3c306bf219d07821334f750407dfe38ba557263774e2b31559",
+          "review": "parent seat1 bounded content PASS 2026-10-08T02:06:18-04:00",
+          "deployTogether": true,
+          "englishNoTwinExceptions": [
+            "/st-nimatullah",
+            "/st-rafqa",
+            "/maronite-history",
+            "/news"
+          ]
+        }
+      ]
     }
   },
-  "repinNote": "pl twenty-second body re-pinned 2026-10-07: accuracy fix adds the Polish 28 July memorial next to the universal 24 July date (KEP via Radio Nadzieja/KAI 2020-07-28; kosciol.wiara.pl corroboration). Rendered review of the new bytes is pending. Previous note: ru travel bodies re-pinned after links to /ru/molitvy and /ru/novena were added (link hrefs only). Rendered review of the new bytes is pending."
+  "repinNote": "annaya-master re-pinned 2026-10-15: Batch 1 photo provenance fix replaces the credited courtyard statue hero with an owner-granted Order courtyard-dusk photo and strips the credit from captions in all reviewed locales; rendered review of the new bytes is pending. pilgrimage-master re-pinned 2026-10-15: Batch 1 photo provenance fix replaces the two externally credited Wikimedia figures (hero aerial, tomb) with owner-granted Order photos from saintcharbel.com and strips the credit line from captions in all 9 reviewed locales; candidateFileSha256 pins and rendered review of the new bytes are pending. Previous note: pl twenty-second body re-pinned 2026-10-07: accuracy fix adds the Polish 28 July memorial next to the universal 24 July date (KEP via Radio Nadzieja/KAI 2020-07-28; kosciol.wiara.pl corroboration). Rendered review of the new bytes is pending. Previous note: ru travel bodies re-pinned after links to /ru/molitvy and /ru/novena were added (link hrefs only). Rendered review of the new bytes is pending."
 }
