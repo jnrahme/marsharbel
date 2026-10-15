@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "news.html",
-  "masterSha256": "59c48fb1b43b742de2b3c3df8f41079dd7738ae8c0fc7ff89b0310d9019f2fcd",
+  "masterSha256": "5f58ec4a708a858d26352a4d0f2d069a20af68dedc5e73b8daf82fbec9da4a0c",
   "sourceRevision": "136de2bd",
   "bindings": [
     {
@@ -581,7 +581,7 @@
     {
       "key": "news.latest-news.the-nmpro-and-mtv-feature-premiered-october-9-at-beirut-medi",
       "selector": "#charbel-premiere-release-2026-10 > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "The NMPRO and MTV feature premiered October 9 at Beirut Media Zone; the Lebanese cinema release is planned from October 22. International release and streaming remain unconfirmed.",
+      "source": "The NMPRO and MTV feature premiered October 9 at Beirut Media Zone; Lebanese cinema dates differ - VOX lists October 21 sessions, Cinemacity lists October 22. International release and streaming remain unconfirmed.",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -602,14 +602,14 @@
     {
       "key": "news.latest-news.mar-charbel-listed-for-october-22-opening-in-beirut",
       "selector": "#mar-charbel-october-opening-2026-10 > div:nth-of-type(1) > h3:nth-of-type(1) > a:nth-of-type(1)",
-      "source": "Mar Charbel Listed for October 22 Opening in Beirut",
+      "source": "Mar Charbel Cinema Dates Differ: VOX Lists October 21, Cinemacity October 22",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.cinemacity-beirut-souks-lists-october-22-as-the-opening-date",
       "selector": "#mar-charbel-october-opening-2026-10 > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Cinemacity Beirut Souks lists October 22 as the opening date; no screening sessions are scheduled yet.",
+      "source": "Cinema listings checked October 15: VOX City Centre Beirut lists October 21 sessions (Standard 7:00 and 7:30pm, GOLD 7:30pm; Arabic audio with English subtitles); Cinemacity Beirut lists an October 22 opening with no sessions yet. A listed session is a cinema listing, not a seat guarantee - check your cinema.",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1365,7 +1365,7 @@
     {
       "key": "news.latest-news.mar-charbel-listed-for-october-22-opening-in-beirut",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > span:nth-of-type(1)",
-      "source": "Mar Charbel Listed for October 22 Opening in Beirut",
+      "source": "Mar Charbel Cinema Dates Differ: VOX Lists October 21, Cinemacity October 22",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1377,9 +1377,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.cinemacity-beirut-opening-date-and-current-session-status",
+      "key": "news.latest-news.vox-city-centre-beirut-listed-october-21-sessions",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(1)",
-      "source": "Cinemacity Beirut: opening date and current session status",
+      "source": "VOX City Centre Beirut: listed October 21 sessions",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1392,7 +1392,7 @@
     },
     {
       "key": "news.latest-news.lebanon24-october-5-report-arabic",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(3)",
       "source": "Lebanon24: October 5 report (Arabic)",
       "kind": "text",
       "nodeIndex": 0
@@ -1402,7 +1402,7 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 7
+      "nodeIndex": 9
     },
     {
       "key": "news.latest-news.from-the-historic-photograph-to-a-new-saint-charbel-art-seri",
@@ -2411,6 +2411,20 @@
       "source": "News page updated September 25, 2026. Author: Please pray for the person who made this website.",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.cinemacity-beirut-october-22-opening-listing-no-sessions",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(2)",
+      "source": "Cinemacity Beirut: October 22 opening listing, no sessions scheduled",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7)",
+      "source": "·",
+      "kind": "text",
+      "nodeIndex": 7
     }
   ],
   "messages": {
@@ -2494,11 +2508,11 @@
     "news.latest-news.prayer": "Prayer",
     "news.latest-news.october-13-2026": "October 13, 2026",
     "news.latest-news.charbel-premieres-in-beirut": "Charbel Premieres in Beirut",
-    "news.latest-news.the-nmpro-and-mtv-feature-premiered-october-9-at-beirut-medi": "The NMPRO and MTV feature premiered October 9 at Beirut Media Zone; the Lebanese cinema release is planned from October 22. International release and streaming remain unconfirmed.",
+    "news.latest-news.the-nmpro-and-mtv-feature-premiered-october-9-at-beirut-medi": "The NMPRO and MTV feature premiered October 9 at Beirut Media Zone; Lebanese cinema dates differ - VOX lists October 21 sessions, Cinemacity lists October 22. International release and streaming remain unconfirmed.",
     "news.latest-news.confirmed": "Confirmed",
     "news.latest-news.october-9-2026": "October 9, 2026",
-    "news.latest-news.mar-charbel-listed-for-october-22-opening-in-beirut": "Mar Charbel Listed for October 22 Opening in Beirut",
-    "news.latest-news.cinemacity-beirut-souks-lists-october-22-as-the-opening-date": "Cinemacity Beirut Souks lists October 22 as the opening date; no screening sessions are scheduled yet.",
+    "news.latest-news.mar-charbel-listed-for-october-22-opening-in-beirut": "Mar Charbel Cinema Dates Differ: VOX Lists October 21, Cinemacity October 22",
+    "news.latest-news.cinemacity-beirut-souks-lists-october-22-as-the-opening-date": "Cinema listings checked October 15: VOX City Centre Beirut lists October 21 sessions (Standard 7:00 and 7:30pm, GOLD 7:30pm; Arabic audio with English subtitles); Cinemacity Beirut lists an October 22 opening with no sessions yet. A listed session is a cinema listing, not a seat guarantee - check your cinema.",
     "news.latest-news.announcement": "Announcement",
     "news.latest-news.october-5-2026": "October 5, 2026",
     "news.latest-news.from-the-historic-photograph-to-a-new-saint-charbel-art-seri": "From the Historic Photograph to a New Saint Charbel Art Series",
@@ -2571,7 +2585,6 @@
     "news.latest-news.watch-mtv-s-october-9-premiere-coverage": "Watch MTV's October 9 premiere coverage",
     "news.latest-news.photo": "Photo:",
     "news.latest-news.official-film-poster-mtv-nmpro-promotional-artwork-not-a-sce": "Official film poster, MTV/NMPRO. Promotional artwork, not a scene photograph.",
-    "news.latest-news.cinemacity-beirut-opening-date-and-current-session-status": "Cinemacity Beirut: opening date and current session status",
     "news.latest-news.lebanon24-october-5-report-arabic": "Lebanon24: October 5 report (Arabic)",
     "news.latest-news.the-historic-reference-photograph-not-an-ai-rendition-photog": "The historic reference photograph, not an AI rendition. Photographer unknown; public domain according to Wikimedia Commons.",
     "news.latest-news.image-source": "Image source",
@@ -2625,6 +2638,8 @@
     "news.editorial-standard.this-page-summarizes-and-links-to-original-reporting-it-does": "This page summarizes and links to original reporting; it does not republish articles. Dates are the original publication dates of the sources. Reported healings and movie production news are labeled separately from miracles formally recognized by the Catholic Church. To follow how recorded cases differ from recognized ones, see the",
     "news.editorial-standard.miracles-page": "Miracles page",
     "news.editorial-standard.if-a-source-corrects-or-withdraws-a-story-this-page-will-be": ". If a source corrects or withdraws a story, this page will be updated to match.",
-    "news.footer.news-page-updated-september-25-2026-author-please-pray-for-t": "News page updated September 25, 2026. Author: Please pray for the person who made this website."
+    "news.footer.news-page-updated-september-25-2026-author-please-pray-for-t": "News page updated September 25, 2026. Author: Please pray for the person who made this website.",
+    "news.latest-news.vox-city-centre-beirut-listed-october-21-sessions": "VOX City Centre Beirut: listed October 21 sessions",
+    "news.latest-news.cinemacity-beirut-october-22-opening-listing-no-sessions": "Cinemacity Beirut: October 22 opening listing, no sessions scheduled"
   }
 }
