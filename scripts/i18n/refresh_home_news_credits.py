@@ -84,7 +84,7 @@ def outputs(root=ROOT):
         if via is None:
             raise ValueError('Credits row source link missing')
         new_entries.append({'key': KEYS['via'], 'selector': selector(via), 'source': EN['via'], 'kind': 'text', 'nodeIndex': 0})
-        deriv = li.find('span', class_='news-credit-label', string=lambda s: s and s.strip() == EN['derivative'])
+        deriv = li.find('span', class_='news-credit-derivative', string=lambda s: s and s.strip() == EN['derivative'])
         if deriv is not None:
             new_entries.append({'key': KEYS['derivative'], 'selector': selector(deriv), 'source': EN['derivative'], 'kind': 'text', 'nodeIndex': 0})
     anchor = next((i for i, b in enumerate(bindings) if b['key'] == 'home.latest-news.context-photo-the-monastery-of-saint-charbel-in-annaya'), None)
