@@ -103,7 +103,7 @@ class SaintDayBookContract(unittest.TestCase):
    self.assertIn('data-saint-key="monogram">Z<',text)
  def test_saint_image_renders_photo_plate(self):
   with tempfile.TemporaryDirectory() as tmp:
-   p=self._root(tmp,self._entry(**{'book':None,'saintImage':'/x.jpg'}),self._copy(imageAlt='a'))
+   p=self._root(tmp,self._entry(**{'book':None,'saintImage':'/x.jpg','saintImageSource':{'url':'https://commons.wikimedia.org/wiki/File:X.jpg','licence':'Public domain','credit':'Wikimedia Commons'}}),self._copy(imageAlt='a'))
    _,text=mod.output(p)
    self.assertIn('img class="home-saint-plate-img"',text);self.assertIn('src="/x.jpg"',text)
    self.assertNotIn('home-saint-plate-initial',text)

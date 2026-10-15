@@ -103,6 +103,8 @@ def plate_fields(name, lang, iso_date, override=None):
 # The photo plate is only ever a REAL photograph or approved portrait of THAT
 # saint, backed by an explicit per-saint source record. Storybook illustration
 # paths are never eligible; no keyword-picking, no generated imagery.
+# Production photo contract: portrait or face-visible crop only; set
+# object-position per image (template default 50% 15%); never crop a face.
 BOOK_ART_MARKERS = ('storybook', '/books/')
 
 def saint_image_rejection(entry):
