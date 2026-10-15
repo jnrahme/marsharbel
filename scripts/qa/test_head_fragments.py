@@ -52,10 +52,13 @@ class HeadFragmentTest(unittest.TestCase):
                 rendered = re.sub(r'\{\{(\d+)\}\}', lambda m: args[int(m[1]) - 1], fragment)
                 self.assertIn('  ' + rendered, served, f'{source.name}: {name} changed bytes')
                 counts[name] = counts.get(name, 0) + 1
+        # saint-charbel-medal.html (the 11-locale medal guide) intentionally
+        # contributes one head-social, one head-og-locales and one
+        # head-font-preloads inclusion; these counts track that page.
         self.assertEqual(counts, {
-            'head-og-locales': 94,
-            'head-social': 116,
-            'head-font-preloads': 83,
+            'head-og-locales': 95,  # 94 + saint-charbel-medal.html
+            'head-social': 117,  # 116 + saint-charbel-medal.html
+            'head-font-preloads': 84,  # 83 + saint-charbel-medal.html
             'head-font-preloads-legacy': 17,
         })
 

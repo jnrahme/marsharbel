@@ -90,6 +90,24 @@ def _strip_english_nav_disclosure(soup):
         hint.decompose()
     return soup
 
+def _strip_localized_source_links(soup):
+    """Revert registered per-locale citation hrefs to the master target.
+
+    Reads the same pageMirrors sourceLinks config the render pass applies, so the
+    policy diff waives exactly the registered citation swaps and nothing else.
+    """
+    import json as _json
+    from pathlib import Path as _Path
+    from i18n.localized_source_links import reverse_map
+    registry = _json.loads((_Path(__file__).resolve().parents[2] / 'locales/registry.json').read_text())
+    for anchor in soup.select('a[href]'):
+        master = reverse_map(registry).get(anchor['href'])
+        if master is not None:
+            anchor['href'] = master
+    return soup
+
+
 NORMALIZERS = {'launch-availability-annotations': _strip_launch_annotations,
                'partial-home-disclosure': _strip_partial_home_disclosure,
-               'english-nav-disclosure': _strip_english_nav_disclosure}
+               'english-nav-disclosure': _strip_english_nav_disclosure,
+               'localized-source-links': _strip_localized_source_links}
