@@ -1,0 +1,56 @@
+test_abc_supersession_actual_main (__main__.EmbeddedTests) ... superseded/unverified: newer stage SHA confirmed: cccccccccccccccccccccccccccccccccccccccc
+{"sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "admission": null, "publication": "verified-existing-scope"}
+ok
+test_all_job_states_fail_closed (__main__.EmbeddedTests) ... ok
+test_all_pending_run_states (__main__.EmbeddedTests) ... ok
+test_all_scripts_compile_and_artifact_source_exact (__main__.EmbeddedTests) ... ok
+test_all_terminal_run_conclusions (__main__.EmbeddedTests) ... ok
+test_between_snapshots_race (__main__.EmbeddedTests) ... ok
+test_curl_has_hard_deadline_and_token_only_stdin (__main__.EmbeddedTests) ... ok
+test_current_attempt_race (__main__.EmbeddedTests) ... ok
+test_happy_snapshot_real_job_names (__main__.EmbeddedTests) ... ok
+test_jobs_missing_duplicate_mixed_attempt_wrong_identity (__main__.EmbeddedTests) ... ok
+test_latest_selected_before_status (__main__.EmbeddedTests) ... ok
+test_missing_dependency (__main__.EmbeddedTests) ... ok
+test_network_fail_auth_malformed_timeout (__main__.EmbeddedTests) ... ok
+test_newer_pending_or_failed_attempt_blocks_old_success (__main__.EmbeddedTests) ... ok
+test_page_count_changed (__main__.EmbeddedTests) ... ok
+test_pagination_101_results (__main__.EmbeddedTests) ... ok
+test_pagination_jobs_101_and_999_runs (__main__.EmbeddedTests) ... ok
+test_pagination_truncation_duplicate_missing_malformed (__main__.EmbeddedTests) ... ok
+test_partial_rerun_must_rerun_all_jobs (__main__.EmbeddedTests) ... ok
+test_post_api_error_never_superseded (__main__.EmbeddedTests) ... unverified: HTTP401 read access refused
+ok
+test_post_successful_new_attempt_still_new_evidence (__main__.EmbeddedTests) ... unverified: dependencies changed after scan
+ok
+test_run_list_duplicates_malformed_and_zero_count (__main__.EmbeddedTests) ... ok
+test_scan_post_stage_superseded_vs_unreadable (__main__.EmbeddedTests) ... superseded/unverified: newer stage SHA confirmed: ffffffffffffffffffffffffffffffffffffffff
+unverified: unreadable stage SHA
+ok
+test_scan_pre_post_attempt_run_blob_races (__main__.EmbeddedTests) ... unverified: dependencies changed after scan
+unverified: (20, 2)
+unverified: attempt changed during read
+unverified: admission artifact identity mismatch
+unverified: admission artifact identity mismatch
+unverified: dependencies changed before scan
+ok
+test_scan_success_and_failure (__main__.EmbeddedTests) ... {"sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "admission": null, "publication": "verified-existing-scope"}
+unverified: bounded verifier failed
+ok
+test_source_identity_rejects_wrong_tree_and_dirty_blob (__main__.EmbeddedTests) ... ok
+test_source_tree_sha_blob_scope_identity (__main__.EmbeddedTests) ... ok
+test_stage_supersession_only_confirmed_newer (__main__.EmbeddedTests) ... ok
+test_verifier_timeout_record (__main__.EmbeddedTests) ... unverified: Command 'verifier' timed out after 720 seconds
+ok
+test_wait_pending_is_bounded_and_error_closed (__main__.EmbeddedTests) ... wait
+unverified: 45-minute admission deadline exhausted
+ok
+test_wrong_current_or_attempt_identity (__main__.EmbeddedTests) ... ok
+test_wrong_event_branch_are_never_admitted (__main__.EmbeddedTests) ... ok
+test_wrong_run_identities (__main__.EmbeddedTests) ... ok
+test_wrong_workflow_same_display_name (__main__.EmbeddedTests) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.155s
+
+OK
