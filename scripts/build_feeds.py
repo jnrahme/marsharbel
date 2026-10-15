@@ -49,9 +49,17 @@ LEGACY_PUBDATES = {
 # external source (and its original label) so the item's declared source and
 # click target do not change. This is the only place this URL is hard-coded.
 LEGACY_SOURCES = {
+    # Both cinema-dates rows now lead with the VOX October 21 / Cinemacity
+    # October 22 listings; the premiere article carries both cinema source
+    # links, so it is the summary source (the L'Orient charity report never
+    # verified cinema dates).
     "/charbel-film-premiere": {
-        "url": "https://www.lorientlejour.com/article/1550058/la-projection-du-film-charbel-au-profit-de-anta-akhi.html",
-        "label": "L'Orient-Le Jour: October 12 charity screening for Anta Akhi (October 8, French)",
+        "url": "https://marsharbel.com/charbel-film-premiere",
+        "label": "Charbel film premiere article: VOX October 21 sessions and Cinemacity October 22 opening, with cinema source links",
+    },
+    "./saint-charbel-movie": {
+        "url": "https://marsharbel.com/charbel-film-premiere",
+        "label": "Charbel film premiere article: VOX October 21 sessions and Cinemacity October 22 opening, with cinema source links",
     },
 }
 

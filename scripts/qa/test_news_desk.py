@@ -40,8 +40,9 @@ class NewsDeskTests(unittest.TestCase):
         self.assertIsNotNone(article)
         article_text=article.get_text(' ')
         self.assertIn('no screening sessions scheduled',article_text)
-        self.assertIn('International release dates, streaming distribution and English-language availability remain unconfirmed',article_text)
-        self.assertIn('no screening sessions are scheduled yet',news)
+        self.assertIn('International release dates, streaming distribution and any English-dubbed version remain unconfirmed; VOX lists the film with Arabic audio and English subtitles',article_text)
+        self.assertNotIn('English-language availability remain unconfirmed',article_text)
+        self.assertIn('Cinemacity Beirut lists an October 22 opening with no sessions yet',news)
         self.assertNotIn('movie-poster-hero.webp',movie)
 
     def test_ministers_visit_card(self):
