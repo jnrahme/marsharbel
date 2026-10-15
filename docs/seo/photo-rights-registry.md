@@ -370,7 +370,7 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 - Subject: Saint Charbel's church and the monastery of Saint Maron at Annaya at dusk (aerial). Context photo, not the Beirut premiere venue, a film still, or premiere footage.
 - Source: saintcharbel.com (official Monastery of Saint Maron - Annaya site), annaya-monastery-top-view-01; original 1500x844 JPEG re-verified reachable 2026-10-15.
 - Rights basis: owner-reported blanket permission from the Lebanese Maronite Order for Saint Charbel and church-related material on this website - owner-reported 2026-10-14, restated verbatim 2026-10-15 (owner WhatsApp: "i told you you have permission to use any photos you need and you still kept this one", directing this exact swap). Website scope, not document-certified; recorded as reported, not upgraded (news-image-records status courtesy-permission-record-gap).
-- Treatment: no visible credit or license links (attribution not required under the grant); the home "Sources and photo credits" details entry for this item was dropped with the swap. Provenance lives here and in locales/en/news-image-records.json.
+- Treatment: no visible credit or license links. Rights basis: owner-reported reuse permission; attribution terms not independently documented; the home "Sources and photo credits" details entry for this item was dropped because the previously credited image is no longer used. Provenance lives here and in locales/en/news-image-records.json.
 - Prior registration for the same asset: Annaya tour entry (media/tour/annaya-night-aerial.webp, "used with owner permission").
 
 ## Default Saint Charbel portrait (swapped 2026-10-13)

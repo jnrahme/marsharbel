@@ -4,9 +4,11 @@ Owner directive 2026-10-15 (WhatsApp, verbatim): "i told you you have permission
 photos you need and you still kept this one" - the credited Paul Saad / Wikimedia context
 photo on the home premiere card is replaced by the monastery's own night aerial
 (media/tour/annaya-night-aerial.webp, saintcharbel.com, owner-reported Order permission).
-The two premiere photo keys keep their names; only their sources change. The home
-"Sources and photo credits" details entry for this item is dropped (no attribution
-required), so every '#latest-news > details' binding is left to refresh_home_news_credits.
+The two premiere photo keys keep their names; only their sources change. Rights basis:
+owner-reported reuse permission; attribution terms not independently documented. The home
+"Sources and photo credits" details entry for this item is dropped because the previously
+credited image is no longer used, so every '#latest-news > details' binding is left to
+refresh_home_news_credits.
 Executor only: python3 scripts/i18n/refresh_premiere_home_photo.py [--check]
 """
 import argparse, hashlib, json, sys
