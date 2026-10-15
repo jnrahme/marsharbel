@@ -230,7 +230,7 @@ class NewsImageRecordTests(unittest.TestCase):
         self.assertIn('sourceUrl', str(ctx.exception))
 
     def test_unlicensed_status_requires_reason(self):
-        tmp = self._records_root(lambda rec: rec['slots']['trail']['license'].pop('reason'))
+        tmp = self._records_root(lambda rec: rec['slots']['borik']['license'].pop('reason'))
         with self.assertRaises(ValueError) as ctx:
             news_desk.load_image_records(tmp, self.template)
         self.assertIn('reason', str(ctx.exception))
@@ -240,9 +240,8 @@ class NewsImageRecordTests(unittest.TestCase):
         self.assertIn('reason', str(ctx.exception))
 
     def test_uncertain_slots_are_not_marked_licensed(self):
-        """The two documented-uncertainty slots must never silently claim a verified licence."""
+        """The documented-uncertainty slot must never silently claim a verified licence."""
         self.assertNotEqual(self.records['borik']['license']['status'], 'licensed')
-        self.assertNotEqual(self.records['trail']['license']['status'], 'licensed')
         self.assertIn('Charbel.jpg', self.records['borik']['license']['sourceUrl'])
         self.assertIn('photograph', self.records['borik']['subject'])
 
@@ -271,10 +270,15 @@ class NewsImageRecordTests(unittest.TestCase):
                 self.assertTrue(rec['license'].get(field), '%s license.%s' % (slot, field))
             self.assertTrue(rec['revalidation']['note'], slot)
 
-    def test_trail_permission_gap_is_documented_not_silent(self):
+    def test_trail_swap_from_permission_gap_is_documented(self):
+        """The trail slot's 2026-10-15 swap from the courtesy permission-record gap
+        to the licensed LLEW derivative must stay documented, not silent."""
         trail = self.records['trail']
-        self.assertIn('permission', trail['license']['spdx'] + trail['license']['permittedUse'] + trail['revalidation']['note'])
-        self.assertIn('gap', trail['license']['permittedUse'].lower())
+        self.assertEqual(trail['license']['status'], 'licensed')
+        self.assertEqual(trail['license']['spdx'], 'CC BY-SA 4.0')
+        self.assertIn('St_Charbel_Makhlouf_Annaya.jpg', trail['license']['sourceUrl'])
+        self.assertIn('permission-record gap', trail['revalidation']['note'])
+        self.assertIn('Sliney', trail['revalidation']['note'])
 
     def test_home_img_alts_match_refresh_catalog(self):
         """Alt attributes must equal the refresh_pope_home_news.py EN catalog so

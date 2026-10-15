@@ -121,25 +121,24 @@
     "trail": {
       "storyId": "saint-charbel-trail",
       "image": {
-        "src": "./media/news/trail-pilgrimage.webp",
-        "width": 320,
-        "height": 320
+        "src": "./media/annaya/annaya-entrance-pilgrims.webp",
+        "width": 1100,
+        "height": 733
       },
-      "subject": "Pilgrims on the Saint Charbel Trail",
-      "contextNotEvent": false,
+      "subject": "Pilgrims at the entrance of the monastery of Saint Charbel in Annaya (context photo)",
+      "contextNotEvent": true,
       "license": {
-        "author": "Father Michael Sliney, LC (courtesy credit)",
-        "spdx": "courtesy-permission-record-gap",
-        "licenseUrl": "",
-        "sourceUrl": "",
-        "permittedUse": "ISOLATED GAP: courtesy credit without a documented permission record (news desk 2026-10-14). Not a cleared asset.",
-        "adaptations": "resized to WebP 320x320",
-        "status": "courtesy-permission-record-gap",
-        "reason": "Courtesy credit without a documented permission record (news desk 2026-10-14); isolated gap per management steering 2026-10-14. Not a cleared asset."
+        "author": "LLEW",
+        "spdx": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:St_Charbel_Makhlouf_Annaya.jpg",
+        "permittedUse": "redistribute/adapt including commercial website use with credit, source and licence links; changes stated; ShareAlike; no implied endorsement",
+        "adaptations": "cropped and converted to WebP",
+        "status": "licensed"
       },
       "revalidation": {
-        "note": "Unresolved permission-record gap, isolated per management steering 2026-10-14. Cleared replacement prepared: media/annaya/annaya-entrance-pilgrims.webp derivative (LLEW, own work, CC BY-SA 4.0, rights-registry line 143) - swap ships as its own follow-up PR because it changes mirrored alt/credit copy.",
-        "checkedAt": "2026-10-14"
+        "note": "2026-10-15: swapped from the courtesy-credit Sliney photo (permission-record gap, isolated 2026-10-14) to the rights-cleared LLEW derivative per this slot's recorded revalidation plan. Story unchanged; revalidate when the story changes.",
+        "checkedAt": "2026-10-15"
       }
     }
   }
