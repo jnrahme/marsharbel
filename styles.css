@@ -3381,3 +3381,14 @@ img.home-saint-plate-img{display:block;width:100%;height:100%;object-fit:cover;o
 .news-credit-derivative{color:var(--theme-ink);font-weight:600}
 .news-credits a{color:var(--theme-accent);text-decoration:underline;text-underline-offset:.15em}
 @media (prefers-reduced-motion:reduce){.news-credits summary::after{transition:none}}
+/* Saint of the Day follow-ups: narrow hierarchy, pair title baseline, AR heading at 200% */
+.home-saint-pair .home-saint-info>.home-news-meta:first-of-type{min-height:1.5rem}
+@media(min-width:651px){.home-saint-pair .home-saint-book .home-news-copy::before{content:"";display:block;flex:none;height:1.8rem}}
+@media(max-width:480px){
+.home-saint-info .home-news-dek{font-size:1rem}
+.home-saint-info .home-news-title,.home-saint-book .home-news-title{font-size:1.8rem}
+.home-saint-day .home-news-head{align-items:stretch}
+.home-saint-day .home-news-head h2{max-inline-size:100%;font-size:min(var(--home-h2-size,2.4rem),12vw)}
+:lang(ar) .home-saint-day .home-news-head h2{overflow-wrap:anywhere}
+:lang(ar) .home-saint-info .home-news-title,:lang(ar) .home-saint-book .home-news-title{font-size:1.55rem;overflow-wrap:anywhere}
+}
