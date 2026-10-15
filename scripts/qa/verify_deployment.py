@@ -6,7 +6,8 @@ import argparse
 import json
 import struct
 import zlib
-from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
+import queue
+import threading
 from pathlib import Path
 import time
 from urllib.error import HTTPError, URLError
@@ -219,42 +220,61 @@ def main():
         errors = []
         done = 0
         consecutive_timeouts = 0
-        pool = ThreadPoolExecutor(max_workers=6)
-        try:
-            futures = {pool.submit(verify_file, root, path, args.base_url, nonce,
-                                   args.request_budget, args.socket_timeout): path for path in files}
-            pending = set(futures)
-            while pending:
-                poll = min(2.0, max(0.05, deadline - time.monotonic()))
-                finished, pending = wait(pending, timeout=poll, return_when=FIRST_COMPLETED)
-                for future in finished:
-                    done += 1
-                    error = future.result()
-                    if error:
-                        errors.append(error)
-                        consecutive_timeouts = consecutive_timeouts + 1 if categorize(error) == "timeout" else 0
-                    else:
-                        consecutive_timeouts = 0
-                    if done % 50 == 0 or done == len(files):
-                        print(f"Attempt {attempt}: {done}/{len(files)} checked, {len(errors)} failing, "
-                              f"{time.monotonic() - started:.0f}s elapsed", flush=True)
-                timeouts = sum(1 for error in errors if categorize(error) == "timeout")
-                if timeouts > len(files) // 2 or consecutive_timeouts >= 12:
-                    print(f"MASS TIMEOUT mid-attempt: {timeouts} timeout failures of {done} checked "
-                          f"({consecutive_timeouts} consecutive); the site is mid-deploy or stalling. "
-                          f"Failing fast with {len(pending)} checks abandoned.", flush=True)
-                    stopped = "mass-timeout"
-                    break
-                if time.monotonic() >= deadline:
-                    print(f"Internal budget exhausted mid-attempt: abandoning the remaining "
-                          f"{len(pending)} checks of attempt {attempt}.", flush=True)
-                    stopped = "budget-exhausted"
-                    break
-        finally:
-            # wait=False: never block the job on a stuck worker. Running workers still
-            # finish under their own per-request wall bound (request_budget + one
-            # socket timeout), so total job time stays budget + that tail.
-            pool.shutdown(wait=False, cancel_futures=True)
+        # Daemon workers: abandoning an attempt never blocks interpreter exit, so the
+        # budget is a real process-exit bound even when a worker is stuck in connect,
+        # DNS, or a slow-drip HEADER phase that no in-thread wall check can interrupt.
+        # (ThreadPoolExecutor's non-daemon threads are joined at exit - that is what
+        # let a stuck worker outlive the job after shutdown(wait=False).)
+        tasks = queue.Queue()
+        results = queue.Queue()
+
+        def worker():
+            while True:
+                path = tasks.get()
+                if path is None:
+                    return
+                try:
+                    results.put(verify_file(root, path, args.base_url, nonce,
+                                            args.request_budget, args.socket_timeout))
+                except Exception as error:  # a worker bug must not hang the attempt
+                    results.put(f"{path.relative_to(root).as_posix()}: {error}")
+
+        for _ in range(6):
+            threading.Thread(target=worker, daemon=True).start()
+        for path in files:
+            tasks.put(path)
+        pending = len(files)
+        while pending:
+            poll = min(2.0, max(0.05, deadline - time.monotonic()))
+            try:
+                error = results.get(timeout=poll)
+            except queue.Empty:
+                error = None
+                if time.monotonic() < deadline:
+                    continue
+            else:
+                pending -= 1
+                done += 1
+                if error:
+                    errors.append(error)
+                    consecutive_timeouts = consecutive_timeouts + 1 if categorize(error) == "timeout" else 0
+                else:
+                    consecutive_timeouts = 0
+                if done % 50 == 0 or done == len(files):
+                    print(f"Attempt {attempt}: {done}/{len(files)} checked, {len(errors)} failing, "
+                          f"{time.monotonic() - started:.0f}s elapsed", flush=True)
+            timeouts = sum(1 for item in errors if categorize(item) == "timeout")
+            if timeouts > len(files) // 2 or consecutive_timeouts >= 12:
+                print(f"MASS TIMEOUT mid-attempt: {timeouts} timeout failures of {done} checked "
+                      f"({consecutive_timeouts} consecutive); the site is mid-deploy or stalling. "
+                      f"Failing fast with {pending} checks abandoned.", flush=True)
+                stopped = "mass-timeout"
+                break
+            if time.monotonic() >= deadline:
+                print(f"Internal budget exhausted mid-attempt: abandoning the remaining "
+                      f"{pending} checks of attempt {attempt}.", flush=True)
+                stopped = "budget-exhausted"
+                break
         last_errors = errors
         if not errors and stopped is None:
             print(f"Verified {len(files)} live frontend files match the checkout.", flush=True)
