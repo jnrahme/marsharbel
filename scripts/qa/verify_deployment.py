@@ -6,7 +6,7 @@ import argparse
 import json
 import struct
 import zlib
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
 import time
 from urllib.error import HTTPError, URLError
@@ -125,14 +125,34 @@ def public_path(relative):
     return relative
 
 
-def verify_file(root, path, base_url, nonce):
+def verify_file(root, path, base_url, nonce, request_budget=45, socket_timeout=15):
+    """Verify one file with a TOTAL wall-time bound, not just socket-operation timeouts.
+
+    urlopen's timeout governs each blocking socket call; a slow-drip response can
+    otherwise extend one request indefinitely. Reading in chunks and checking a
+    wall-clock deadline between chunks bounds one request to about
+    request_budget + one socket timeout, whatever the server does.
+    """
     relative = path.relative_to(root).as_posix()
     url = f"{base_url.rstrip('/')}/{quote(public_path(relative))}?deployment-check={nonce}"
     request = Request(url, headers={"Cache-Control": "no-cache",
                                    "User-Agent": "Marsharbel-Deployment-Check/1.0"})
+    deadline = time.monotonic() + request_budget
     try:
-        with OPENER.open(request, timeout=15) as response:
-            actual = response.read()
+        with OPENER.open(request, timeout=socket_timeout) as response:
+            # read1 returns after a single socket read, so the wall-clock deadline is
+            # re-checked between socket operations even on a slow-drip body.
+            read_chunk = getattr(response, "read1", response.read)
+            chunks = []
+            while True:
+                if time.monotonic() >= deadline:
+                    return (f"{relative}: timed out - response not complete after "
+                            f"{request_budget:.0f}s total (aborted slow read)")
+                chunk = read_chunk(65536)
+                if not chunk:
+                    break
+                chunks.append(chunk)
+            actual = b"".join(chunks)
         if not contents_match(path, path.read_bytes(), actual):
             return f"{relative}: deployed contents differ from checkout"
     except HTTPError as error:
@@ -162,13 +182,20 @@ def main():
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--attempts", type=int, default=10)
     parser.add_argument("--interval", type=float, default=20)
+    parser.add_argument("--socket-timeout", type=float, default=15,
+                        help="per-socket-operation timeout in seconds (default 15); the worst "
+                             "request tail is request-budget + one socket timeout")
+    parser.add_argument("--request-budget", type=float, default=45,
+                        help="total wall-time bound per file request in seconds (default 45); "
+                             "with the 15s socket timeout the worst request tail is about 60s, "
+                             "keeping the whole job under budget + 60s")
     parser.add_argument("--budget", type=float, default=660,
                         help="internal time budget in seconds (default 660, deliberately below "
                              "the workflow's 15-minute job timeout so the script names its own "
                              "failure signature instead of dying silently on cancellation)")
     args = parser.parse_args()
-    if args.attempts < 1 or args.interval < 0 or args.budget <= 0:
-        parser.error("attempts must be positive and interval/budget must be nonnegative/positive")
+    if args.attempts < 1 or args.interval < 0 or args.budget <= 0 or args.request_budget <= 0 or args.socket_timeout <= 0:
+        parser.error("attempts must be positive and interval/budget/request-budget/socket-timeout must be nonnegative/positive")
     root = args.root.resolve()
     if not (root / "index.html").is_file():
         parser.error("root must contain the website, including index.html")
@@ -191,22 +218,43 @@ def main():
               f"({time.monotonic() - started:.0f}s of {args.budget:.0f}s budget used)", flush=True)
         errors = []
         done = 0
+        consecutive_timeouts = 0
         pool = ThreadPoolExecutor(max_workers=6)
         try:
-            for error in pool.map(lambda path: verify_file(root, path, args.base_url, nonce), files):
-                done += 1
-                if error:
-                    errors.append(error)
-                if done % 50 == 0 or done == len(files):
-                    print(f"Attempt {attempt}: {done}/{len(files)} checked, {len(errors)} failing, "
-                          f"{time.monotonic() - started:.0f}s elapsed", flush=True)
+            futures = {pool.submit(verify_file, root, path, args.base_url, nonce,
+                                   args.request_budget, args.socket_timeout): path for path in files}
+            pending = set(futures)
+            while pending:
+                poll = min(2.0, max(0.05, deadline - time.monotonic()))
+                finished, pending = wait(pending, timeout=poll, return_when=FIRST_COMPLETED)
+                for future in finished:
+                    done += 1
+                    error = future.result()
+                    if error:
+                        errors.append(error)
+                        consecutive_timeouts = consecutive_timeouts + 1 if categorize(error) == "timeout" else 0
+                    else:
+                        consecutive_timeouts = 0
+                    if done % 50 == 0 or done == len(files):
+                        print(f"Attempt {attempt}: {done}/{len(files)} checked, {len(errors)} failing, "
+                              f"{time.monotonic() - started:.0f}s elapsed", flush=True)
+                timeouts = sum(1 for error in errors if categorize(error) == "timeout")
+                if timeouts > len(files) // 2 or consecutive_timeouts >= 12:
+                    print(f"MASS TIMEOUT mid-attempt: {timeouts} timeout failures of {done} checked "
+                          f"({consecutive_timeouts} consecutive); the site is mid-deploy or stalling. "
+                          f"Failing fast with {len(pending)} checks abandoned.", flush=True)
+                    stopped = "mass-timeout"
+                    break
                 if time.monotonic() >= deadline:
                     print(f"Internal budget exhausted mid-attempt: abandoning the remaining "
-                          f"{len(files) - done} checks of attempt {attempt}.", flush=True)
+                          f"{len(pending)} checks of attempt {attempt}.", flush=True)
                     stopped = "budget-exhausted"
                     break
         finally:
-            pool.shutdown(wait=True, cancel_futures=True)
+            # wait=False: never block the job on a stuck worker. Running workers still
+            # finish under their own per-request wall bound (request_budget + one
+            # socket timeout), so total job time stays budget + that tail.
+            pool.shutdown(wait=False, cancel_futures=True)
         last_errors = errors
         if not errors and stopped is None:
             print(f"Verified {len(files)} live frontend files match the checkout.", flush=True)
@@ -214,13 +262,6 @@ def main():
         print(f"Attempt {attempt}/{args.attempts}: {len(errors)} files not verified", flush=True)
         for error in errors:
             print(f"  {error}", flush=True)
-        if stopped is None and errors:
-            timeouts = sum(1 for error in errors if categorize(error) == "timeout")
-            if timeouts > len(files) // 2:
-                print(f"MASS TIMEOUT: {timeouts}/{len(files)} files unreachable this attempt; "
-                      f"the site is mid-deploy or stalling, so retrying would only burn the "
-                      f"job timeout. Failing fast.", flush=True)
-                stopped = "mass-timeout"
         if stopped is not None:
             break
         if attempt < args.attempts:
