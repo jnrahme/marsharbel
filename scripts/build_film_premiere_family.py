@@ -67,22 +67,27 @@ def outputs(root=ROOT):
     registry = json.loads((root / 'locales/registry.json').read_text())
     cfg = registry['pageMirrors'][FAMILY]
     result = dict(render_locale(root, registry, code) for code in cfg['renderLocales'])
-    # Own the final bytes: page_mirror families embed the runtime dictionary and
-    # same-page controls themselves, so the international build's postprocess
-    # pass (build-international.py) is a no-op on these pages.
-    from i18n.catalog import read_json
+    # page_mirror families embed the runtime dictionary translate.js reads;
+    # the international build's postprocess owns the same-page control pass as
+    # the single final injection boundary (probe_partial_build enforces one call).
     from i18n.runtime_labels import ensure_runtime_labels
-    from i18n.same_page_injection import control_outputs
-    manifest = read_json(root / 'locales/same-page-manifest.pending.json')
-    control_copy = read_json(root / 'locales/same-page-copy.json')
     for path, text in list(result.items()):
         result[path] = ensure_runtime_labels(text, root, path.parent.name, registry)
+    return result
+
+def final_outputs(root=ROOT):
+    """Rendered pages after the build's same-page control pass - the bytes that ship."""
+    from i18n.catalog import read_json
+    from i18n.same_page_injection import control_outputs
+    result = outputs(root)
+    manifest = read_json(root / 'locales/same-page-manifest.pending.json')
+    control_copy = read_json(root / 'locales/same-page-copy.json')
     result.update(control_outputs(root, result, manifest, control_copy))
     return result
 
 def main():
     parser = argparse.ArgumentParser(); parser.add_argument('--check', action='store_true'); args = parser.parse_args()
-    result = outputs()
+    result = final_outputs()
     if args.check:
         stale = [str(p) for p, t in result.items() if not p.exists() or p.read_text() != t]
         if stale: raise SystemExit('Film premiere family stale: ' + ', '.join(stale))
