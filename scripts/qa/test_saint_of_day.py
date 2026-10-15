@@ -25,6 +25,7 @@ class SaintDay(unittest.TestCase):
    else:
     self.assertIn('book',e,d+' no-book entry must carry explicit "book": null');self.assertIsNone(e['book'],d)
     self.assertFalse(e.get('bookImage'),d+' book is both or neither')
+    if e.get('saintImage'): self.assertTrue((ROOT/e['saintImage'].lstrip('/')).is_file(),d+' saintImage file must exist')
  def test_section_and_ids(self):
   from bs4 import BeautifulSoup
   s=BeautifulSoup((ROOT/'index.html').read_text(),'html.parser')
@@ -38,7 +39,10 @@ class SaintDay(unittest.TestCase):
    else:
     self.assertEqual(len(n.select('.home-saint-pair')),0,d+' no-book renders no pair grid')
     self.assertEqual(len(n.select('a.home-saint-info')),1,d+' no-book renders the info card alone')
-    self.assertEqual(len(n.select('img')),0,d+' no-book renders no image')
+    if entries[d].get('saintImage'):
+     self.assertEqual(len(n.select('img.home-saint-plate-img')),1,d+' image plate renders exactly one photo')
+    else:
+     self.assertEqual(len(n.select('img')),0,d+' no-book monogram/halo renders no image')
    self.assertIsNone(n.select_one('a a'))
  def test_date_is_generated_and_initial_state_fails_closed(self):
   from bs4 import BeautifulSoup
@@ -71,6 +75,8 @@ class SaintDayBookContract(unittest.TestCase):
   (p/'locales/en/saint-of-day.json').write_text(json.dumps({'2026-10-15':copy}))
   (p/'templates/saint-of-day/home.html').write_text((ROOT/'templates/saint-of-day/home.html').read_text())
   (p/'templates/saint-of-day/home-nobook.html').write_text((ROOT/'templates/saint-of-day/home-nobook.html').read_text())
+  (p/'templates/saint-of-day/home-nobook-mono.html').write_text((ROOT/'templates/saint-of-day/home-nobook-mono.html').read_text())
+  (p/'templates/saint-of-day/home-nobook-image.html').write_text((ROOT/'templates/saint-of-day/home-nobook-image.html').read_text())
   (p/'src/pages/index.html').write_text('<!-- saint-of-day:start --><!-- saint-of-day:end -->')
   return p
  def _entry(self,**kw):
@@ -81,7 +87,32 @@ class SaintDayBookContract(unittest.TestCase):
   with tempfile.TemporaryDirectory() as tmp:
    p=self._root(tmp,self._entry(**{'book':None}),self._copy())
    _,text=mod.output(p)
-   self.assertNotIn('<img',text);self.assertNotIn('home-saint-pair',text);self.assertIn('a class="home-news-lead home-saint-info"',text)
+   self.assertNotIn('<img',text);self.assertNotIn('home-saint-pair',text)
+   self.assertIn('home-saint-plate',text,'solo card with derivable name renders the monogram plate')
+   self.assertIn('data-saint-key="monogram">N<',text,'initial derived from the English name')
+   self.assertIn('data-saint-key="dateShort">15 Oct<',text)
+ def test_underivable_name_falls_back_to_halo(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   p=self._root(tmp,self._entry(**{'book':None}),self._copy(name='!!!'))
+   _,text=mod.output(p)
+   self.assertNotIn('home-saint-plate',text);self.assertIn('a class="home-news-lead home-saint-info"',text)
+ def test_monogram_override_wins_in_render(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   p=self._root(tmp,self._entry(**{'book':None}),self._copy(monogram='Z'))
+   _,text=mod.output(p)
+   self.assertIn('data-saint-key="monogram">Z<',text)
+ def test_saint_image_renders_photo_plate(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   p=self._root(tmp,self._entry(**{'book':None,'saintImage':'/x.jpg','saintImageSource':{'url':'https://commons.wikimedia.org/wiki/File:X.jpg','licence':'Public domain','credit':'Wikimedia Commons'}}),self._copy(imageAlt='a'))
+   _,text=mod.output(p)
+   self.assertIn('img class="home-saint-plate-img"',text);self.assertIn('src="/x.jpg"',text)
+   self.assertNotIn('home-saint-plate-initial',text)
+ def test_saint_image_without_alt_rejected(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   with self.assertRaises(ValueError):mod.output(self._root(tmp,self._entry(**{'book':None,'saintImage':'/x.jpg'}),self._copy()))
+ def test_saint_image_with_book_rejected(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   with self.assertRaises(ValueError):mod.output(self._root(tmp,self._entry(bookUrl='/x-story',bookImage='/x.jpg',saintImage='/y.jpg'),self._copy(bookTitle='t',bookDek='d',bookCredit='c',bookCta='b',bookAlt='a',imageAlt='a')))
  def test_book_pair_renders_pair(self):
   with tempfile.TemporaryDirectory() as tmp:
    p=self._root(tmp,self._entry(bookUrl='/x-story',bookImage='/x.jpg'),self._copy(bookTitle='t',bookDek='d',bookCredit='c',bookCta='b',bookAlt='a'))

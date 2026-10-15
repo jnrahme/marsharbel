@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/"scripts"))
 from i18n.refresh_film_home_bindings import selector
+from i18n.saint_plate import plate_fields
 
 def outputs(root=ROOT):
  contract=json.loads((root/'locales/en/home-bindings.json').read_text())
@@ -44,6 +45,10 @@ def outputs(root=ROOT):
   section=t.select_one('#saint-of-the-day')
   if section is None:raise ValueError('Saint unit absent '+d)
   messages=dict(packs[d]);messages['dateLabel']=date_type.fromisoformat(d).strftime('%d.%m.%Y')
+  entry=manifest['entries'][d]
+  if not entry.get('bookUrl') and not entry.get('saintImage'):
+   fields=plate_fields(messages.get('name',''),'en',d,override=messages.get('monogram'))
+   if fields:messages.update(fields)
   for n in section.select('[data-saint-key],[data-saint-alt],[data-saint-generated-date]'):
    attr='alt' if n.has_attr('data-saint-alt') else None
    name=n.get('data-saint-alt') or n.get('data-saint-key') or n['data-saint-generated-date'];key='home.saintDay.'+d+'.'+name
@@ -62,6 +67,13 @@ def outputs(root=ROOT):
    if k.startswith('home.saintDay.'):del local[k]
   for d in dates:
    messages=dict(pack[d]);messages['dateLabel']=date_type.fromisoformat(d).strftime('%d.%m.%Y')
+   entry=manifest['entries'][d]
+   if not entry.get('bookUrl') and not entry.get('saintImage'):
+    en_fields=plate_fields(packs[d].get('name',''),'en',d,override=packs[d].get('monogram'))
+    if en_fields is not None:
+     fields=plate_fields(messages.get('name',''),lang,d,override=messages.get('monogram'))
+     if fields is None:raise ValueError(f'No monogram derivable for {lang} saint unit {d}; add a reviewed monogram override to the pack')
+     messages.update(fields)
    for key in messages:local['home.saintDay.'+d+'.'+key]=messages[key]
   if set(local)!=set(copy):raise ValueError('Locale home keys differ '+lang)
   result[root/f'locales/{lang}/home-copy.json']=local
