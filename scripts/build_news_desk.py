@@ -16,17 +16,26 @@ SLOT_ANCHORS = {
     'trail': 'href="./saint-charbel-trail"',
 }
 REQUIRED_LICENSE_FIELDS = ('author', 'spdx', 'permittedUse', 'adaptations')
+EXPECTED_SCHEMA_VERSION = 1
+LICENSE_STATUSES = ('licensed', 'pd-assumed-territory-uncertain', 'courtesy-permission-record-gap')
 
 
 def load_image_records(root, template_text):
     """Fail-closed image-record contract: every home news image renders from a
-    dated, credited, rights-evidenced record; a story-ID change without a
-    matching record change fails the build."""
+    dated, credited record with explicit rights status; a story-ID change
+    without a matching record change fails the build. Only slots with status
+    'licensed' claim verified licences; other statuses carry explicit reasons
+    and are not implied to be cleared."""
+    import datetime
     records = json.loads((root / 'locales/en/news-image-records.json').read_text())
+    if records.get('schemaVersion') != EXPECTED_SCHEMA_VERSION:
+        raise ValueError(f'image records: schemaVersion must be {EXPECTED_SCHEMA_VERSION}')
     slots = records['slots']
+    if set(slots) != set(SLOT_ANCHORS):
+        raise ValueError(
+            f'image records: slot set must be exactly {sorted(SLOT_ANCHORS)}, '
+            f'got {sorted(slots)}')
     for slot, anchor in SLOT_ANCHORS.items():
-        if slot not in slots:
-            raise ValueError(f'image records: missing slot {slot}')
         rec = slots[slot]
         story = anchor.split('#')[-1].rstrip('"').split('/')[-1].rstrip('"')
         if rec.get('storyId') != story:
@@ -34,8 +43,27 @@ def load_image_records(root, template_text):
                 f'image records: slot {slot} story drift - template anchor is '
                 f'{story!r} but record says {rec.get("storyId")!r}; update the '
                 f'record or add an explicit revalidation note')
-        if not rec.get('revalidation', {}).get('note'):
+        if not isinstance(rec.get('subject'), str) or not rec['subject'].strip():
+            raise ValueError(f'image records: slot {slot} subject required')
+        if type(rec.get('contextNotEvent')) is not bool:
+            raise ValueError(f'image records: slot {slot} contextNotEvent must be a boolean')
+        rev = rec.get('revalidation', {})
+        if not rev.get('note'):
             raise ValueError(f'image records: slot {slot} missing revalidation note')
+        try:
+            datetime.date.fromisoformat(str(rev.get('checkedAt', '')))
+        except ValueError:
+            raise ValueError(f'image records: slot {slot} revalidation.checkedAt must be an ISO date')
+        lic = rec['license']
+        status = lic.get('status')
+        if status not in LICENSE_STATUSES:
+            raise ValueError(f'image records: slot {slot} license.status must be one of {LICENSE_STATUSES}')
+        if status == 'licensed':
+            for url_field in ('licenseUrl', 'sourceUrl'):
+                if not str(lic.get(url_field, '')).startswith('https://'):
+                    raise ValueError(f'image records: licensed slot {slot} requires evidence URL license.{url_field}')
+        elif not str(lic.get('reason', '')).strip():
+            raise ValueError(f'image records: unlicensed slot {slot} requires an explicit license.reason')
         img = rec['image']
         src = img['src']
         if not re.fullmatch(r'\./media/[A-Za-z0-9._/-]+', src):

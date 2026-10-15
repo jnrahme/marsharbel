@@ -4,51 +4,143 @@
   "slots": {
     "premiere": {
       "storyId": "charbel-film-premiere",
-      "image": {"src": "./media/annaya/annaya-monastery.webp", "width": 1100, "height": 618},
+      "image": {
+        "src": "./media/annaya/annaya-monastery.webp",
+        "width": 1100,
+        "height": 618
+      },
       "subject": "Church and monastery at Annaya (context photo)",
       "contextNotEvent": true,
-      "license": {"author": "Paul Saad", "spdx": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pan_Annaya_Church_And_Monastry.jpg", "permittedUse": "redistribute/adapt including commercial website use with credit, source and licence links; changes stated; ShareAlike; no implied endorsement", "adaptations": "cropped and converted to WebP"},
-      "revalidation": {"note": "Interim licensed context photo pending an NMPRO-granted premiere asset (Track A held for explicit permission). Revalidate when a granted premiere asset exists.", "checkedAt": "2026-10-14"}
+      "license": {
+        "author": "Paul Saad",
+        "spdx": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pan_Annaya_Church_And_Monastry.jpg",
+        "permittedUse": "redistribute/adapt including commercial website use with credit, source and licence links; changes stated; ShareAlike; no implied endorsement",
+        "adaptations": "cropped and converted to WebP",
+        "status": "licensed"
+      },
+      "revalidation": {
+        "note": "Interim licensed context photo pending an NMPRO-granted premiere asset (Track A held for explicit permission). Revalidate when a granted premiere asset exists.",
+        "checkedAt": "2026-10-14"
+      }
     },
     "popeGemelli": {
       "storyId": "pope-leo-gemelli-prayer-2026-10-13",
-      "image": {"src": "./media/news/gemelli-hospital-context.webp", "width": 960, "height": 639},
+      "image": {
+        "src": "./media/news/gemelli-hospital-context.webp",
+        "width": 960,
+        "height": 639
+      },
       "subject": "Gemelli Hospital, Rome (venue context photo)",
       "contextNotEvent": true,
-      "license": {"author": "Blackcat (Sergio D'Afflitto)", "spdx": "CC BY-SA 3.0 IT", "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/it/deed.en", "sourceUrl": "https://commons.wikimedia.org/wiki/File:2013-06-18_Roma_Policlinico_Gemelli.jpg", "permittedUse": "redistribute/adapt including commercial website use with credit, source and licence links; changes stated; ShareAlike; no implied endorsement", "adaptations": "resized to WebP"},
-      "revalidation": {"note": "Venue context, not the Oct 13 event. Revalidate when the story changes.", "checkedAt": "2026-10-14"}
+      "license": {
+        "author": "Blackcat (Sergio D'Afflitto)",
+        "spdx": "CC BY-SA 3.0 IT",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/it/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2013-06-18_Roma_Policlinico_Gemelli.jpg",
+        "permittedUse": "redistribute/adapt including commercial website use with credit, source and licence links; changes stated; ShareAlike; no implied endorsement",
+        "adaptations": "resized to WebP",
+        "status": "licensed"
+      },
+      "revalidation": {
+        "note": "Venue context, not the Oct 13 event. Revalidate when the story changes.",
+        "checkedAt": "2026-10-14"
+      }
     },
     "popeRosary": {
       "storyId": "pope-leo-rosary-announcement-2026-10-13",
-      "image": {"src": "./media/news/gemelli-church-context.webp", "width": 960, "height": 881},
+      "image": {
+        "src": "./media/news/gemelli-church-context.webp",
+        "width": 960,
+        "height": 881
+      },
       "subject": "Sacro Cuore church interior at Gemelli (venue context photo)",
       "contextNotEvent": true,
-      "license": {"author": "Pufui PcPifpef", "spdx": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roma,_Policlinico_Gemelli,_chiesa_centrale_del_Sacro_Cuore_-_Interno.jpg", "permittedUse": "redistribute/adapt including commercial website use with credit, source and licence links; changes stated; ShareAlike; no implied endorsement", "adaptations": "resized to WebP"},
-      "revalidation": {"note": "Church interior context, not the Oct 13 Rosary gathering. Revalidate when the story changes.", "checkedAt": "2026-10-14"}
+      "license": {
+        "author": "Pufui PcPifpef",
+        "spdx": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roma,_Policlinico_Gemelli,_chiesa_centrale_del_Sacro_Cuore_-_Interno.jpg",
+        "permittedUse": "redistribute/adapt including commercial website use with credit, source and licence links; changes stated; ShareAlike; no implied endorsement",
+        "adaptations": "resized to WebP",
+        "status": "licensed"
+      },
+      "revalidation": {
+        "note": "Church interior context, not the Oct 13 Rosary gathering. Revalidate when the story changes.",
+        "checkedAt": "2026-10-14"
+      }
     },
     "emmitsburg": {
       "storyId": "emmitsburg-shrine-anniversary-2026-09",
-      "image": {"src": "./media/news/emmitsburg-grotto-context.webp", "width": 960, "height": 720},
+      "image": {
+        "src": "./media/news/emmitsburg-grotto-context.webp",
+        "width": 960,
+        "height": 720
+      },
       "subject": "National Shrine Grotto, Emmitsburg (venue context photo, 2015)",
       "contextNotEvent": true,
-      "license": {"author": "Bohemian Baltimore", "spdx": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_153.JPG", "permittedUse": "redistribute/adapt including commercial website use with credit, source and licence links; changes stated; ShareAlike; no implied endorsement", "adaptations": "resized to WebP"},
-      "revalidation": {"note": "Venue context, not the 2026 celebration. Revalidate when the story changes.", "checkedAt": "2026-10-14"}
+      "license": {
+        "author": "Bohemian Baltimore",
+        "spdx": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_153.JPG",
+        "permittedUse": "redistribute/adapt including commercial website use with credit, source and licence links; changes stated; ShareAlike; no implied endorsement",
+        "adaptations": "resized to WebP",
+        "status": "licensed"
+      },
+      "revalidation": {
+        "note": "Venue context, not the 2026 celebration. Revalidate when the story changes.",
+        "checkedAt": "2026-10-14"
+      }
     },
     "borik": {
       "storyId": "doctor-borik-interview-2026-09",
-      "image": {"src": "./media/news/saint-charbel-portrait.webp", "width": 906, "height": 667},
-      "subject": "Traditional hooded portrait of Saint Charbel (historical artwork)",
+      "image": {
+        "src": "./media/news/saint-charbel-portrait.webp",
+        "width": 906,
+        "height": 667
+      },
+      "subject": "Saint Charbel Makhlouf - authentic early photograph (before 1898), eyes lowered; sepia field built from a blurred, toned copy of the photograph",
       "contextNotEvent": true,
-      "license": {"author": "unknown (historical portrait)", "spdx": "public-domain-claim", "licenseUrl": "", "sourceUrl": "", "permittedUse": "Long-standing devotional use; copy asserts historic public-domain portrait; owner-reported Maronite Order permission for Saint Charbel material on this website (confirmed 2026-10-14, website scope)", "adaptations": "resized to WebP"},
-      "revalidation": {"note": "Source-country copyright term formally uncertain - NOT upgraded to worldwide PD. Documentary scope of the Order permission unverified (owner-reported). Revalidate on any documentary evidence.", "checkedAt": "2026-10-14"}
+      "license": {
+        "status": "pd-assumed-territory-uncertain",
+        "author": "unknown photographer (original source st-charbel.fr)",
+        "spdx": "PD-old-assumed + PD-1923 (Wikimedia Commons tags)",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charbel.jpg",
+        "permittedUse": "Commons PD-old-assumed + PD-1923 tags (published/made before 1923, author unknown, subject died 1898), verified 2026-10-13 per docs/seo/photo-rights-registry.md lines 373-382. Assumed-PD tags do not certify every territory - NOT treated as worldwide public domain. Additional owner-reported basis: Maronite Order permission for Saint Charbel material on this website (owner-reported 2026-10-14, website scope, not document-certified).",
+        "adaptations": "419x595 original placed on a sepia field built from a blurred, toned copy of itself; face scaled 1.12x (news); resized to WebP 906x667",
+        "reason": "Assumed-PD tags are territory-uncertain and the Order permission is owner-reported, not document-certified; recorded as reported, not upgraded."
+      },
+      "revalidation": {
+        "note": "Source-country copyright term formally uncertain - NOT upgraded to worldwide PD. Documentary scope of the Order permission unverified (owner-reported). Revalidate on any documentary evidence.",
+        "checkedAt": "2026-10-14"
+      }
     },
     "trail": {
       "storyId": "saint-charbel-trail",
-      "image": {"src": "./media/news/trail-pilgrimage.webp", "width": 320, "height": 320},
+      "image": {
+        "src": "./media/news/trail-pilgrimage.webp",
+        "width": 320,
+        "height": 320
+      },
       "subject": "Pilgrims on the Saint Charbel Trail",
       "contextNotEvent": false,
-      "license": {"author": "Father Michael Sliney, LC (courtesy credit)", "spdx": "courtesy-permission-record-gap", "licenseUrl": "", "sourceUrl": "", "permittedUse": "ISOLATED GAP: courtesy credit without a documented permission record (news desk 2026-10-14). Not a cleared asset.", "adaptations": "resized to WebP 320x320"},
-      "revalidation": {"note": "Unresolved permission-record gap, isolated per management steering 2026-10-14. Cleared replacement prepared: media/annaya/annaya-entrance-pilgrims.webp derivative (LLEW, own work, CC BY-SA 4.0, rights-registry line 143) - swap ships as its own follow-up PR because it changes mirrored alt/credit copy.", "checkedAt": "2026-10-14"}
+      "license": {
+        "author": "Father Michael Sliney, LC (courtesy credit)",
+        "spdx": "courtesy-permission-record-gap",
+        "licenseUrl": "",
+        "sourceUrl": "",
+        "permittedUse": "ISOLATED GAP: courtesy credit without a documented permission record (news desk 2026-10-14). Not a cleared asset.",
+        "adaptations": "resized to WebP 320x320",
+        "status": "courtesy-permission-record-gap",
+        "reason": "Courtesy credit without a documented permission record (news desk 2026-10-14); isolated gap per management steering 2026-10-14. Not a cleared asset."
+      },
+      "revalidation": {
+        "note": "Unresolved permission-record gap, isolated per management steering 2026-10-14. Cleared replacement prepared: media/annaya/annaya-entrance-pilgrims.webp derivative (LLEW, own work, CC BY-SA 4.0, rights-registry line 143) - swap ships as its own follow-up PR because it changes mirrored alt/credit copy.",
+        "checkedAt": "2026-10-14"
+      }
     }
   }
 }

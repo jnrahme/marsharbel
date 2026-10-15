@@ -170,6 +170,64 @@ class NewsImageRecordTests(unittest.TestCase):
         (tmp/'locales/en/news-image-records.json').write_text(json.dumps(rec))
         return tmp
 
+    def _records_root(self, mutate_top):
+        import tempfile, shutil
+        tmp = Path(tempfile.mkdtemp())
+        shutil.copytree(ROOT/'locales/en', tmp/'locales/en')
+        rec = json.loads((tmp/'locales/en/news-image-records.json').read_text())
+        mutate_top(rec)
+        (tmp/'locales/en/news-image-records.json').write_text(json.dumps(rec))
+        return tmp
+
+    def test_schema_version_pinned(self):
+        tmp = self._records_root(lambda rec: rec.update(schemaVersion=99))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+
+    def test_exactly_the_six_slots(self):
+        tmp = self._records_root(lambda rec: rec['slots'].pop('trail'))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+        tmp = self._records_root(lambda rec: rec['slots'].update(extra=rec['slots']['trail']))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+
+    def test_subject_and_context_types_required(self):
+        tmp = self._records_root(lambda rec: rec['slots']['premiere'].update(subject=''))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+        tmp = self._records_root(lambda rec: rec['slots']['premiere'].update(contextNotEvent='yes'))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+
+    def test_checked_at_must_be_a_real_date(self):
+        tmp = self._records_root(lambda rec: rec['slots']['premiere']['revalidation'].update(checkedAt='soon'))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+
+    def test_licensed_slots_require_evidence_urls(self):
+        tmp = self._records_root(lambda rec: rec['slots']['premiere']['license'].update(licenseUrl=''))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+        tmp = self._records_root(lambda rec: rec['slots']['emmitsburg']['license'].update(sourceUrl=''))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+
+    def test_unlicensed_status_requires_reason(self):
+        tmp = self._records_root(lambda rec: rec['slots']['trail']['license'].pop('reason'))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+        tmp = self._records_root(lambda rec: rec['slots']['borik']['license'].update(reason='  '))
+        with self.assertRaises(ValueError):
+            news_desk.load_image_records(tmp, self.template)
+
+    def test_uncertain_slots_are_not_marked_licensed(self):
+        """The two documented-uncertainty slots must never silently claim a verified licence."""
+        self.assertNotEqual(self.records['borik']['license']['status'], 'licensed')
+        self.assertNotEqual(self.records['trail']['license']['status'], 'licensed')
+        self.assertIn('Charbel.jpg', self.records['borik']['license']['sourceUrl'])
+        self.assertIn('photograph', self.records['borik']['subject'])
+
     def test_src_traversal_rejected(self):
         tmp = self._record_with(lambda slot: slot['image'].update(src='./media/../index.html'))
         with self.assertRaises(ValueError):
