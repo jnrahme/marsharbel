@@ -13,7 +13,7 @@ The approved text does not give his age. Use this coherent artistic series with 
 - Plates 8-9: no Isaiah bodily appearance. Plate 8 prophetic animals; plate 9 symbolic later readers in separate eras.
 - Plate 10: present-day family, not Isaiah's family.
 
-Judah wardrobe proposal: plain knee-to-calf-length woven tunic with narrow or short sleeves, simple wrap over shoulder when needed, no embroidery claim, plain belt/sandals. Color is an imagined muted earth tone because stone references do not preserve original garment color. No striped prisoner costume copied into every civilian scene, no royal/Assyrian ceremonial dress. Museum relief study is a limit on anachronisms, not a recovered personal outfit. Needs independent reference review.
+Judah wardrobe proposal: plain calf-to-ankle-length tunic with restrained plain sleeve geometry, simple wrap over shoulder when needed, no embroidery claim, plain belt/sandals. Color is an imagined muted earth tone because stone references do not preserve original garment color. No striped prisoner costume copied into every civilian scene, no royal/Assyrian ceremonial dress. Museum relief study is a limit on anachronisms, not a recovered personal outfit. Actual accessible Lachish relief photograph inspected at 12:28 ET and recorded in the supplemental art-plan register. Needs independent reference review.
 
 ## Teresa
 One imagined recognizable face: broad forehead, dark eyes, straight-to-gently rounded nose, dark brown hair before enclosure, natural unglamorous skin. No claim to historical portrait likeness. Face develops through youth, middle age and older age; no fixed elderly face on every page.
