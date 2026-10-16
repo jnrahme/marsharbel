@@ -276,8 +276,19 @@
     trigger = el('button', 'scs-trigger', { type: 'button', 'aria-label': T.open, 'aria-haspopup': 'dialog', title: T.open });
     trigger.innerHTML = ICON_SEARCH;
     var lab = el('span', 'scs-trigger-label'); lab.textContent = T.open; trigger.appendChild(lab);
-    if (host.classList.contains('nav')) { host.classList.add('scs-grid'); trigger.classList.add('scs-in-grid'); }
     host.appendChild(trigger);
+    if (host.classList.contains('nav')) {
+      // Wide phones and up: a fourth cell in the brand row. Small phones: the end of the link row, so the sticky header never grows
+      // a row (longer German, Russian and Polish labels have no spare width beside Install and Language).
+      var links = host.querySelector('.links');
+      var narrow = window.matchMedia('(max-width:480px)');
+      var place = function () {
+        if (narrow.matches && links) { host.classList.remove('scs-grid'); trigger.classList.remove('scs-in-grid'); trigger.classList.add('scs-in-links'); links.appendChild(trigger); }
+        else { host.classList.add('scs-grid'); trigger.classList.add('scs-in-grid'); trigger.classList.remove('scs-in-links'); host.appendChild(trigger); }
+      };
+      place();
+      if (narrow.addEventListener) narrow.addEventListener('change', place); else if (narrow.addListener) narrow.addListener(place);
+    }
     trigger.addEventListener('click', function () { openSearch(''); });
     var warm = function () { loadIndex(indexLoc).then(function (p) { prepared = p; }).catch(function () {}); };
     trigger.addEventListener('pointerenter', warm, { once: true });

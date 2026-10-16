@@ -19,6 +19,8 @@
 @media (min-width:720px){.scs-trigger .scs-trigger-label{display:inline}.scs-trigger{padding:0 .95rem 0 .8rem}}
 .nav.scs-grid{grid-template-columns:minmax(0,1fr) auto auto auto;grid-template-areas:"brand install lang search" "links links links links"}
 .scs-trigger.scs-in-grid{grid-area:search}
+.scs-trigger.scs-in-links{margin:0;margin-inline-start:auto;min-inline-size:1.6rem;block-size:1.5rem;padding:0 .3rem;align-self:center}
+.scs-trigger.scs-in-links svg{inline-size:.95rem;block-size:.95rem}
 @media (max-width:640px){
   .nav.scs-grid{column-gap:.4rem}
   .scs-trigger{min-inline-size:2.1rem;block-size:2.1rem;padding:0 .5rem}
