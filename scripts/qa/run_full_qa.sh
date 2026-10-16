@@ -114,7 +114,7 @@ if [[ -n "${SKIP_I18N_TEST}" ]]; then STEP_INDEX=$((STEP_INDEX + 1)); else qa_st
 qa_step npx playwright test tests/language-persistence.spec.js tests/locale-preference-routing.spec.js --project=phone --project=laptop --workers=2
 
 echo "[qa] Refactor, mirror and locale contract tests"
-for t in chaplet_mirror de_exact_catalogs encyclopedia_trail error_document exact_master exact_wiring feast_mirror footer_navigation head_fragments jsonld_serializer litany_mirror locale_foundation locale_home_navigation prayer_mirror saint_pillars tour_nav; do
+for t in annaya_tier3_check chaplet_mirror de_exact_catalogs encyclopedia_trail error_document exact_master exact_wiring feast_mirror footer_navigation head_fragments jsonld_serializer litany_mirror locale_foundation locale_home_navigation prayer_mirror saint_pillars tour_nav; do
   if [[ "$t" == "litany_mirror" ]]; then
     echo "[qa-diagnostic] git status --porcelain before litany step:"
     git status --porcelain
