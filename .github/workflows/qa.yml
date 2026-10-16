@@ -18,7 +18,11 @@ jobs:
   qa-shard:
     name: qa-shard (${{ matrix.shard }}/8)
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # 45: shard 5/8 flaked on a green tree (stage QA run 38824388383,
+    # 2026-10-15): attempt 1 cancelled after 30m22s (23:34:31Z -> 00:04:53Z)
+    # at this job timeout; attempt 2 succeeded in 5m14s. A marginal timeout
+    # that flakes once will flake again; 45 gives headroom without masking hangs.
+    timeout-minutes: 45
     strategy:
       fail-fast: false
       matrix:

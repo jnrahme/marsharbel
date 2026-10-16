@@ -233,7 +233,13 @@ jobs:
                         'run_attempt': os.environ['GITHUB_RUN_ATTEMPT'], 'sha': sha, 'repo': repo}
               result_path = out / ('admission.json' if mode == 'wait' else 'publication.json')
               try:
-                  deadline = time.monotonic() + (2700 if mode == 'wait' else 60)
+                  # Admission stays fail-closed: 3300s is headroom above the
+                  # 45-minute qa-shard job timeout (qa.yml), not a removed gate -
+                  # a shard using its full timeout plus queue/aggregate overhead
+                  # must still fit inside the admission window. 3300 (55 min)
+                  # reserves ~5 min of this job's 60-minute timeout for checkout
+                  # and receipt/evidence upload after the helper returns.
+                  deadline = time.monotonic() + (3300 if mode == 'wait' else 60)
                   api = API(repo, deadline)
                   expected = source_identity(api, repo, sha)
                   record['identity'] = expected
@@ -245,7 +251,7 @@ jobs:
                               break
                           except Pending as error:
                               print(str(error), flush=True)
-                              require(time.monotonic() + 30 < deadline, '45-minute admission deadline exhausted')
+                              require(time.monotonic() + 30 < deadline, '55-minute admission deadline exhausted')
                               time.sleep(30)
                       current_stage(api, sha)
                       record['admission'] = 'success'
