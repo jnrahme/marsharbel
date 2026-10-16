@@ -20,7 +20,7 @@
   });
 
   function fold(s) {
-    return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ');
+    return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\u0610-\u061a\u064b-\u065f\u0670\u06d6-\u06ed]/g, '').replace(/[^\p{L}\p{N}\p{M} ]+/gu, ' ').replace(/\s+/g, ' ');
   }
 
   var L = tools.dataset;
