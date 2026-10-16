@@ -100,3 +100,5 @@ html.scs-lock{overflow:hidden}
 @media (forced-colors:active){
   .scs-panel{border:1px solid CanvasText}.scs-row[aria-selected=true]{outline:2px solid Highlight}.scs-row mark{text-decoration:underline;background:transparent;color:inherit}
 }
+
+html{scroll-padding-top:var(--scs-hdr,0px)}

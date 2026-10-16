@@ -290,6 +290,14 @@
       if (narrow.addEventListener) narrow.addEventListener('change', place); else if (narrow.addListener) narrow.addListener(place);
     }
     trigger.addEventListener('click', function () { openSearch(''); });
+    // Real clearance for skip-link and anchor jumps: keep scroll-padding equal to the sticky header height.
+    var bar = document.querySelector('.topbar') || host;
+    var syncPad = function () {
+      var pos = window.getComputedStyle(bar).position;
+      document.documentElement.style.setProperty('--scs-hdr', (pos === 'sticky' || pos === 'fixed') ? Math.round(bar.getBoundingClientRect().height) + 'px' : '0px');
+    };
+    syncPad();
+    if (window.ResizeObserver) new ResizeObserver(syncPad).observe(bar); else window.addEventListener('resize', syncPad);
     var warm = function () { loadIndex(indexLoc).then(function (p) { prepared = p; }).catch(function () {}); };
     trigger.addEventListener('pointerenter', warm, { once: true });
     trigger.addEventListener('focus', warm, { once: true });
