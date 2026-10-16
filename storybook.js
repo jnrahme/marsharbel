@@ -987,7 +987,7 @@
   maroun: { en: [{ id: "directed-maroun", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-maroun/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   sergius: { en: [{ id: "directed-sergius", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-sergius-bacchus/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   magdalene: { en: [{ id: "directed-magdalene", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-magdalene/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
-  longinus: { en: [{ id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  longinus: { en: [{ id: "directed-longinus", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-longinus/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   jude: { en: [{ id: "directed-jude", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-jude/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   peter: { en: [{ id: 'kokoro-peter', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-peter/en-directed-r1' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   rafqa: { en: [
