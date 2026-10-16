@@ -1,28 +1,12 @@
 /* Site search: header trigger and overlay. Loads search-core.js first (see translate.js). Every page, every locale. */
 (function () {
-  'use strict';
   if (window.__scSearchInit || !window.SCSearchCore) return;
   window.__scSearchInit = true;
   var core = window.SCSearchCore;
 
-  // Strings per locale. Native-speaker read pending for all non-English rows (tracked with the release).
-  var L = {
-    en: { open: 'Search', ph: 'Search prayers, saints, places…', pop: 'Popular pages', rec: 'Recent searches', clear: 'Clear', none: 'No results for “{q}”', help: 'Check the spelling or try a shorter word.', one: '1 result', many: '{n} results', close: 'Close search', err: 'Search is unavailable right now. Please try again.', eng: 'In English' },
-    es: { open: 'Buscar', ph: 'Busca oraciones, santos, lugares…', pop: 'Páginas populares', rec: 'Búsquedas recientes', clear: 'Borrar', none: 'Sin resultados para «{q}»', help: 'Revisa la ortografía o prueba una palabra más corta.', one: '1 resultado', many: '{n} resultados', close: 'Cerrar búsqueda', err: 'La búsqueda no está disponible ahora. Inténtalo de nuevo.', eng: 'En inglés' },
-    fr: { open: 'Rechercher', ph: 'Rechercher prières, saints, lieux…', pop: 'Pages populaires', rec: 'Recherches récentes', clear: 'Effacer', none: 'Aucun résultat pour « {q} »', help: 'Vérifiez l’orthographe ou essayez un mot plus court.', one: '1 résultat', many: '{n} résultats', close: 'Fermer la recherche', err: 'La recherche est indisponible pour le moment. Réessayez.', eng: 'En anglais' },
-    de: { open: 'Suchen', ph: 'Gebete, Heilige, Orte suchen…', pop: 'Beliebte Seiten', rec: 'Letzte Suchen', clear: 'Löschen', none: 'Keine Ergebnisse für „{q}“', help: 'Prüfen Sie die Schreibweise oder versuchen Sie ein kürzeres Wort.', one: '1 Ergebnis', many: '{n} Ergebnisse', close: 'Suche schließen', err: 'Die Suche ist gerade nicht verfügbar. Bitte versuchen Sie es erneut.', eng: 'Auf Englisch' },
-    it: { open: 'Cerca', ph: 'Cerca preghiere, santi, luoghi…', pop: 'Pagine popolari', rec: 'Ricerche recenti', clear: 'Cancella', none: 'Nessun risultato per «{q}»', help: 'Controlla l’ortografia o prova una parola più breve.', one: '1 risultato', many: '{n} risultati', close: 'Chiudi la ricerca', err: 'La ricerca non è disponibile al momento. Riprova.', eng: 'In inglese' },
-    pt: { open: 'Pesquisar', ph: 'Pesquise orações, santos, lugares…', pop: 'Páginas populares', rec: 'Pesquisas recentes', clear: 'Limpar', none: 'Nenhum resultado para “{q}”', help: 'Verifique a ortografia ou tente uma palavra mais curta.', one: '1 resultado', many: '{n} resultados', close: 'Fechar pesquisa', err: 'A pesquisa não está disponível agora. Tente novamente.', eng: 'Em inglês' },
-    pl: { open: 'Szukaj', ph: 'Szukaj modlitw, świętych, miejsc…', pop: 'Popularne strony', rec: 'Ostatnie wyszukiwania', clear: 'Wyczyść', none: 'Brak wyników dla „{q}”', help: 'Sprawdź pisownię lub spróbuj krótszego słowa.', one: 'Wyniki: 1', many: 'Wyniki: {n}', close: 'Zamknij wyszukiwanie', err: 'Wyszukiwanie jest teraz niedostępne. Spróbuj ponownie.', eng: 'Po angielsku' },
-    ru: { open: 'Поиск', ph: 'Искать молитвы, святых, места…', pop: 'Популярные страницы', rec: 'Недавние запросы', clear: 'Очистить', none: 'Ничего не найдено по запросу «{q}»', help: 'Проверьте написание или попробуйте более короткое слово.', one: 'Найдено: 1', many: 'Найдено: {n}', close: 'Закрыть поиск', err: 'Поиск сейчас недоступен. Попробуйте ещё раз.', eng: 'На английском' },
-    ar: { open: 'بحث', ph: 'ابحث عن صلوات وقدّيسين وأماكن…', pop: 'صفحات شائعة', rec: 'عمليات البحث الأخيرة', clear: 'مسح', none: 'لا نتائج لـ «{q}»', help: 'تحقّق من الإملاء أو جرّب كلمة أقصر.', one: 'النتائج: 1', many: 'النتائج: {n}', close: 'إغلاق البحث', err: 'البحث غير متاح الآن. حاول مرة أخرى.', eng: 'بالإنجليزية' },
-    hi: { open: 'खोजें', ph: 'प्रार्थनाएँ, संत, स्थान खोजें…', pop: 'लोकप्रिय पृष्ठ', rec: 'हाल की खोजें', clear: 'मिटाएँ', none: '“{q}” के लिए कोई परिणाम नहीं', help: 'वर्तनी जाँचें या छोटा शब्द आज़माएँ।', one: 'परिणाम: 1', many: 'परिणाम: {n}', close: 'खोज बंद करें', err: 'खोज अभी उपलब्ध नहीं है। कृपया फिर कोशिश करें।', eng: 'अंग्रेज़ी में' },
-    th: { open: 'ค้นหา', ph: 'ค้นหาคำอธิษฐาน นักบุญ สถานที่…', pop: 'หน้ายอดนิยม', rec: 'การค้นหาล่าสุด', clear: 'ล้าง', none: 'ไม่พบผลลัพธ์สำหรับ “{q}”', help: 'ตรวจสอบการสะกดหรือลองคำที่สั้นลง', one: 'ผลลัพธ์: 1', many: 'ผลลัพธ์: {n}', close: 'ปิดการค้นหา', err: 'ขณะนี้ไม่สามารถค้นหาได้ โปรดลองอีกครั้ง', eng: 'ภาษาอังกฤษ' },
-    'zh-Hans': { open: '搜索', ph: '搜索祈祷文、圣人、地点……', pop: '热门页面', rec: '最近搜索', clear: '清除', none: '未找到“{q}”的结果', help: '请检查拼写，或尝试更短的词。', one: '结果：1', many: '结果：{n}', close: '关闭搜索', err: '搜索暂时不可用，请稍后再试。', eng: '英文' }
-  };
   var htmlLang = document.documentElement.getAttribute('lang') || 'en';
-  var loc = L[htmlLang] ? htmlLang : (L[htmlLang.split('-')[0]] ? htmlLang.split('-')[0] : 'en');
-  var T = L[loc];
+  var loc = 'en';
+  var T = null; // labels for this locale, loaded from search-index/labels.json before anything is shown
   var dir = document.documentElement.getAttribute('dir') || (loc === 'ar' ? 'rtl' : 'ltr');
   var INDEX_BASE = '/search-index/';
 
@@ -48,7 +32,16 @@
     }).then(function (rows) { return core.prepare(rows); }).catch(function (e) { delete cache[code]; throw e; });
     return cache[code];
   }
-  var indexLoc = loc;
+  var indexLoc = 'en';
+  function loadLabels() {
+    return fetch(INDEX_BASE + 'labels.json', { credentials: 'same-origin' }).then(function (r) {
+      if (!r.ok) throw new Error('labels ' + r.status);
+      return r.json();
+    }).then(function (all) {
+      loc = all[htmlLang] ? htmlLang : (all[htmlLang.split('-')[0]] ? htmlLang.split('-')[0] : 'en');
+      T = all[loc]; indexLoc = loc;
+    });
+  }
 
   // ---------- recent searches ----------
   var RK = 'sc-search-recent';
@@ -92,8 +85,8 @@
     input.addEventListener('input', run);
     input.addEventListener('keydown', onKey);
     root.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') { e.preventDefault(); close(); return; }
-      if (e.key === 'Tab') {
+      if (e.keyCode === 27) { e.preventDefault(); close(); return; }
+      if (e.keyCode === 9) {
         var f = [input, closeBtn];
         var i = f.indexOf(document.activeElement);
         if (e.shiftKey && i <= 0) { e.preventDefault(); closeBtn.focus(); }
@@ -114,9 +107,9 @@
   function onKey(e) {
     if (e.key === 'ArrowDown') { e.preventDefault(); if (results.length) setActive((active + 1) % results.length, true); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); if (results.length) setActive((active - 1 + results.length) % results.length, true); }
-    else if (e.key === 'Home' && results.length && input.selectionStart === 0 && input.selectionEnd === 0) { e.preventDefault(); setActive(0, true); }
-    else if (e.key === 'End' && results.length && input.selectionStart === input.value.length) { e.preventDefault(); setActive(results.length - 1, true); }
-    else if (e.key === 'Enter') {
+    else if (e.keyCode === 36 && results.length && input.selectionStart === 0 && input.selectionEnd === 0) { e.preventDefault(); setActive(0, true); }
+    else if (e.keyCode === 35 && results.length && input.selectionStart === input.value.length) { e.preventDefault(); setActive(results.length - 1, true); }
+    else if (e.keyCode === 13) {
       var a = listEl.querySelector('.scs-row[data-i="' + active + '"]');
       if (a) { e.preventDefault(); pushRecent(input.value); window.location.assign(a.getAttribute('href')); }
     }
@@ -251,7 +244,7 @@
   function lockScroll(on) { document.documentElement.classList.toggle('scs-lock', on); }
 
   function openSearch(prefill) {
-    if (open) return;
+    if (open || !T) return;
     build(); open = true;
     lastFocus = document.activeElement;
     root.hidden = false; lockScroll(true);
@@ -269,7 +262,7 @@
   function close() {
     if (!open) return; open = false;
     root.classList.remove('scs-open'); lockScroll(false);
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
     setTimeout(function () { if (!open) root.hidden = true; }, reduce ? 0 : 200);
     if (lastFocus && document.contains(lastFocus) && lastFocus.focus) lastFocus.focus({ preventScroll: true });
     else if (trigger) trigger.focus({ preventScroll: true });
@@ -277,7 +270,8 @@
 
   // ---------- header trigger ----------
   function mountTrigger() {
-    var host = document.querySelector('.topbar .nav') || document.querySelector('.masthead') || document.querySelector('header .site-shell') || document.querySelector('header > .shell') || document.querySelector('header');
+    var inside = function (outer, inner) { var o = document.querySelector(outer); return o && o.querySelector(inner); };
+    var host = inside('.topbar', '.nav') || document.querySelector('.masthead') || inside('header', '.site-shell') || inside('header', '.shell') || document.querySelector('header');
     if (!host || document.querySelector('.scs-trigger')) return;
     trigger = el('button', 'scs-trigger', { type: 'button', 'aria-label': T.open, 'aria-haspopup': 'dialog', title: T.open });
     trigger.innerHTML = ICON_SEARCH;
@@ -291,7 +285,7 @@
   }
 
   document.addEventListener('keydown', function (e) {
-    if (open) return;
+    if (open || !T) return;
     var t = e.target, tag = t && t.tagName;
     var typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable);
     if ((e.key === 'k' || e.key === 'K') && (e.metaKey || e.ctrlKey) && !e.altKey) { e.preventDefault(); openSearch(''); }
@@ -306,7 +300,11 @@
   // Mount once the stylesheet is applied, so the button never flashes unstyled.
   ready(function () {
     var css = document.querySelector('link[data-scs-css]');
-    if (css && !css.sheet) { css.addEventListener('load', mountTrigger, { once: true }); css.addEventListener('error', mountTrigger, { once: true }); }
-    else mountTrigger();
+    var styled = new Promise(function (res) {
+      if (!css || css.sheet) res();
+      else { css.addEventListener('load', res, { once: true }); css.addEventListener('error', res, { once: true }); }
+    });
+    // No labels, no trigger: the header stays exactly as it was if the files are unreachable.
+    Promise.all([loadLabels(), styled]).then(mountTrigger).catch(function () {});
   });
 })();

@@ -84,6 +84,13 @@ for (const [loc, rows] of Object.entries(byLocale)) {
     if (want.length !== have.length || want.some(u => !have.includes(u))) stale.push(`search-index/${loc}.json`);
   } else if (cur !== out) { stale.push(`search-index/${loc}.json`); await writeFile(file, out); }
 }
+// labels.json is hand-authored (all UI strings live there, never in search.js): every locale needs every key.
+expected.add('labels.json');
+try {
+  const labels = JSON.parse(await readFile(path.join(outDir, 'labels.json'), 'utf8'));
+  const keys = Object.keys(labels.en || {}).sort().join();
+  for (const loc of ['en', ...LOCALES]) if (!labels[loc] || Object.keys(labels[loc]).sort().join() !== keys) stale.push(`search-index/labels.json (locale ${loc} missing or keys differ)`);
+} catch { stale.push('search-index/labels.json (missing or invalid)'); }
 for (const f of await readdir(outDir)) if (!expected.has(f)) stale.push(`search-index/${f} (unexpected)`);
 const total = Object.values(byLocale).reduce((n, r) => n + r.length, 0);
 console.log(`search index: ${total} pages, ${Object.keys(byLocale).length} locales, ${skipped.length} sitemap URLs skipped${skipped.length ? ' (' + skipped.slice(0, 5).join(', ') + ')' : ''}; ${stale.length} ${check ? 'missing pages or out of coverage' : 'written'}.`);
