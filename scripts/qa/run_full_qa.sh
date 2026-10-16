@@ -222,3 +222,5 @@ qa_step node scripts/tests/stories_shelf_unicode.cjs
 # Stories-only keyed search data copy, with both-side hostile controls.
 qa_step python3 -m unittest discover -s scripts/qa -p test_stories_keyed_data.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_stories_zh_header.py
+# Quotes provenance: exact catalog, FAQ/metadata and attribution negative controls
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_quotes_attribution.py'
