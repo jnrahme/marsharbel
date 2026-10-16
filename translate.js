@@ -333,6 +333,23 @@
 
   }
 
+
+  // Site search (header trigger and overlay): search-core.js, search.js and search.css load once per page.
+  // Every page and generated locale family already runs this file, so this is the single seam.
+  function loadSiteSearch() {
+    if (window.__scSearchBoot || document.querySelector('script[src*="search.js"]')) return;
+    window.__scSearchBoot = true;
+    var v = '?v=20261015-1';
+    var css = document.createElement('link');
+    css.rel = 'stylesheet'; css.href = '/search.css' + v; css.setAttribute('data-scs-css', '');
+    document.head.appendChild(css);
+    ['/search-core.js', '/search.js'].forEach(function (src) {
+      var s = document.createElement('script');
+      s.src = src + v; s.async = false; // async=false keeps execution order: core, then ui
+      document.head.appendChild(s);
+    });
+  }
+
   // Language routing belongs to the authored same-page resolver.
   // Keep install/legal/SEO capabilities; never rewrite content or ordinary links.
   ensureSeoHeadAssets();
@@ -340,4 +357,5 @@
   registerServiceWorker();
   ensureLegalFooterLinks();
   setupInstallAppPrompt();
+  loadSiteSearch();
 })();
