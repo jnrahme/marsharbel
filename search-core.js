@@ -33,7 +33,7 @@
   function tokens(query) {
     var q = fold(query);
     var m = q.match(/[\p{L}\p{N}\p{M}]+/gu) || [];
-    var seen = {};
+    var seen = Object.create(null);
     return m.filter(function (t) { if (seen[t]) return false; seen[t] = 1; return true; });
   }
 

@@ -42,7 +42,7 @@
     "test:pages-sync": "node scripts/build-pages.mjs --check && node scripts/books/shelf.mjs --check",
     "qa:compare-served": "scripts/qa/compare-served.sh",
     "build:search-index": "node scripts/build-search-index.mjs",
-    "test:search": "node --test scripts/tests/search_core.test.mjs && node scripts/build-search-index.mjs --check"
+    "test:search": "node --test scripts/tests/search_core.test.mjs scripts/tests/search_index.test.mjs && node scripts/build-search-index.mjs --check"
   },
   "keywords": [],
   "author": "",

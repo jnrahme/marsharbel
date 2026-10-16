@@ -213,3 +213,5 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_saint_monogram.py
 qa_step npx playwright test tests/saint-of-day.spec.js --project=phone --project=laptop --workers=2
 qa_step npm run test:search
 
+qa_step python3 scripts/qa/test_search_source_contract.py
+qa_step npx playwright test tests/search-keyboard.spec.js --project=phone --project=laptop --workers=2

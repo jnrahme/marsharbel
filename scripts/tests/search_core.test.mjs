@@ -62,3 +62,13 @@ test('empty and punctuation-only queries return nothing', () => {
   assert.equal(core.search(idx, '').length, 0);
   assert.equal(core.search(idx, '  ?! ').length, 0);
 });
+
+test('reserved object-key words remain searchable tokens', () => {
+  for (const word of ['constructor', 'toString', '__proto__', 'hasOwnProperty']) {
+    const expected = core.fold(word).match(/[\p{L}\p{N}\p{M}]+/gu);
+    assert.deepEqual(core.tokens(word), expected);
+    assert.deepEqual(core.tokens(`${word} ${word}`), expected);
+    const docs = core.prepare([['/reserved', word, '', '', '', 0.5]]);
+    assert.equal(core.search(docs, word)[0].doc.url, '/reserved');
+  }
+});

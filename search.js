@@ -87,11 +87,17 @@
     root.addEventListener('keydown', function (e) {
       if (e.keyCode === 27) { e.preventDefault(); close(); return; }
       if (e.keyCode === 9) {
-        var f = [input, closeBtn];
+        // Recompute after each render: empty-state links and recent-search
+        // buttons are tabbable; combobox options keep tabindex=-1/arrow keys.
+        var f = Array.prototype.filter.call(panel.querySelectorAll('a[href],button,input,select,textarea,[tabindex]'), function (node) {
+          var style = window.getComputedStyle(node);
+          return node.tabIndex >= 0 && !node.matches(':disabled') && !node.closest('[hidden],[inert]') &&
+            node.getClientRects().length > 0 && style.visibility !== 'hidden' && style.visibility !== 'collapse';
+        });
         var i = f.indexOf(document.activeElement);
-        if (e.shiftKey && i <= 0) { e.preventDefault(); closeBtn.focus(); }
-        else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); input.focus(); }
-        else if (i === -1) { e.preventDefault(); input.focus(); }
+        if (!f.length) { e.preventDefault(); input.focus(); }
+        else if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
+        else if (!e.shiftKey && (i === f.length - 1 || i === -1)) { e.preventDefault(); f[0].focus(); }
       }
     });
     listEl.addEventListener('mousemove', function (e) {

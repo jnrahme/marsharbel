@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Builds search-index/<locale>.json from the pages listed in sitemap.xml (the indexable canonical set).
-// --check verifies coverage (every sitemap URL has a row), not byte equality of excerpts.
+// --check verifies URL coverage and exact excerpt fidelity against source HTML.
 // Row shape: [url, title, description, headings, body, priority]. Run: npm run build:search-index (--check in CI).
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -9,6 +9,8 @@ import path from 'node:path';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const check = process.argv.includes('--check');
 const BODY_MAX = 1600;
+// Exact canonical URLs only. Any exception requires an explicit reviewed entry.
+const ALLOWED_SKIPS = new Set([]);
 const LOCALES = ['ar', 'de', 'es', 'fr', 'hi', 'it', 'pl', 'pt', 'ru', 'th', 'zh-Hans'];
 
 const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', rsquo: '’', lsquo: '‘', ldquo: '“', rdquo: '”', ndash: '–', mdash: '—', hellip: '…', laquo: '«', raquo: '»' };
@@ -31,10 +33,15 @@ function localeOf(url) {
   return LOCALES.includes(seg) ? seg : 'en';
 }
 
-function extract(html) {
-  if (/<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html)) return null;
+export function extract(html) {
+  const metaTags = html.match(/<meta\b(?:[^>"']|"[^"]*"|'[^']*')*>/gi) || [];
+  const robots = metaTags.find(tag => /\bname\s*=\s*(["'])robots\1/i.test(tag)) || '';
+  if (/\bnoindex\b/i.test((robots.match(/\bcontent\s*=\s*(["'])([\s\S]*?)\1/i) || [])[2] || '')) return null;
   const title = squash((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '').replace(/\s*[|\u2013\u2014-]\s*(Saint Charbel|marsharbel\.com)\s*$/i, '');
-  const desc = squash(((html.match(/<meta[^>]+name=["']description["'][^>]*>/i) || [''])[0].match(/content=["']([^"']*)["']/i) || [])[1] || '');
+  // Match the opening quote, not either quote, so apostrophes and literal
+  // double quotes inside the opposite delimiter cannot truncate the value.
+  const description = metaTags.find(tag => /\bname\s*=\s*(["'])description\1/i.test(tag)) || '';
+  const desc = squash((description.match(/\bcontent\s*=\s*(["'])([\s\S]*?)\1/i) || [])[2] || '');
   let main = (html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i) || [])[1];
   if (!main) main = (html.match(/<body\b[^>]*>([\s\S]*)<\/body>/i) || [])[1] || '';
   main = main
@@ -48,6 +55,7 @@ function extract(html) {
   return { title, desc, heads: heads.join(' · ').slice(0, 600), body };
 }
 
+async function main() {
 const sitemap = await readFile(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const entries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(m => ({
   loc: (m[1].match(/<loc>([^<]+)<\/loc>/) || [])[1],
@@ -65,6 +73,12 @@ for (const e of entries) {
   (byLocale[localeOf(e.loc)] ||= []).push([u, x.title, x.desc, x.heads, x.body, e.pri]);
 }
 
+const unexpectedSkips = skipped.filter(url => !ALLOWED_SKIPS.has(url));
+if (unexpectedSkips.length) {
+  console.error('Unapproved sitemap skips: ' + unexpectedSkips.join(', '));
+  process.exitCode = 1;
+}
+
 const outDir = path.join(ROOT, 'search-index');
 await mkdir(outDir, { recursive: true });
 const stale = [];
@@ -76,12 +90,11 @@ for (const [loc, rows] of Object.entries(byLocale)) {
   expected.add(`${loc}.json`);
   const cur = existsSync(file) ? await readFile(file, 'utf8') : '';
   if (check) {
-    // Coverage check only: page text drifts with every edit and news cycle, so CI
-    // requires that each sitemap URL is present, not that excerpts are byte-identical.
-    let have = [];
-    try { have = JSON.parse(cur).map(r => r[0]); } catch { /* missing or corrupt */ }
-    const want = rows.map(r => r[0]);
-    if (want.length !== have.length || want.some(u => !have.includes(u))) stale.push(`search-index/${loc}.json`);
+    // Exact rows include title, description, headings, body and priority.
+    // Coverage alone cannot catch truncated or stale excerpts.
+    let have = null;
+    try { have = JSON.parse(cur); } catch { /* missing or corrupt */ }
+    if (JSON.stringify(have) !== out) stale.push(`search-index/${loc}.json`);
   } else if (cur !== out) { stale.push(`search-index/${loc}.json`); await writeFile(file, out); }
 }
 // labels.json is hand-authored (all UI strings live there, never in search.js): every locale needs every key.
@@ -93,6 +106,9 @@ try {
 } catch { stale.push('search-index/labels.json (missing or invalid)'); }
 for (const f of await readdir(outDir)) if (!expected.has(f)) stale.push(`search-index/${f} (unexpected)`);
 const total = Object.values(byLocale).reduce((n, r) => n + r.length, 0);
-console.log(`search index: ${total} pages, ${Object.keys(byLocale).length} locales, ${skipped.length} sitemap URLs skipped${skipped.length ? ' (' + skipped.slice(0, 5).join(', ') + ')' : ''}; ${stale.length} ${check ? 'missing pages or out of coverage' : 'written'}.`);
+console.log(`search index: ${total} pages, ${Object.keys(byLocale).length} locales, ${skipped.length} sitemap URLs skipped${skipped.length ? ' (' + skipped.slice(0, 5).join(', ') + ')' : ''}; ${stale.length} ${check ? 'stale excerpts or coverage mismatches' : 'written'}.`);
 if (stale.length) console.log(stale.join('\n'));
 if (check && stale.length) process.exitCode = 1;
+
+}
+if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(import.meta.url).pathname)) await main();

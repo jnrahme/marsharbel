@@ -147,7 +147,14 @@ def render(registry, catalog, code, template, topic=None):
         brand=t('site.brand'), site=registry['site'], schema=schema_text, skip=t('navigation.skip'),
         home=page_url(registry, code),
         chooseLanguage=t('navigation.chooseLanguage'), navigation=navigation(registry, code, topic),
-        homeLabel=t('navigation.home'), content=content, footer=t('site.footer'))
+        homeLabel=t('navigation.home'), content=content, footer=t('site.footer'),
+        # These surviving English short guides do not load translate.js. Keep
+        # their existing language control; load search directly at its owner.
+        searchBootstrap=('''<link rel="stylesheet" href="/search.css?v=20261015-1" data-scs-css="" />
+<script defer src="/search-core.js?v=20261015-1"></script>
+<script defer src="/search.js?v=20261015-1"></script>
+'''
+                         if code == 'en' and topic in ('annaya', 'biography', 'novena', 'rosary') else ''))
 
 
 def replace_block(text, name, content, begin='start'):

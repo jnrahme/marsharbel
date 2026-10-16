@@ -335,7 +335,7 @@
 
 
   // Site search (header trigger and overlay): search-core.js, search.js and search.css load once per page.
-  // Every page and generated locale family already runs this file, so this is the single seam.
+  // Most pages load this seam; English short-guide templates load the same search assets directly.
   function loadSiteSearch() {
     if (window.__scSearchBoot || document.querySelector('script[src*="search.js"]')) return;
     window.__scSearchBoot = true;
