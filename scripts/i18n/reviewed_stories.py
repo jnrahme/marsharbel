@@ -10,6 +10,8 @@ def stories_manifest(root, texts, manifest):
     path = root/'locales/stories-equivalence.json'
     if not path.exists():
         return manifest
+    if hashlib.sha256(path.read_bytes()).hexdigest() != '1548b0d229445fadd59b725da7d98e6e9e338b23d11dce9cfaaae8112ad02e6a':
+        raise ValueError('Stories accepted evidence table edited')
     record = json.loads(path.read_text())
     if record['reviewStatus'] != 'isolated-review-pass':
         raise ValueError('Stories isolated review not accepted')

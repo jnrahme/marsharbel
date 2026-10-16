@@ -24,6 +24,20 @@ class StoriesIntegrationTests(unittest.TestCase):
         self.assertEqual(set(self.record['variants']),set(CODES))
         self.assertEqual(self.record['releaseStatus'],'held')
 
+    def test_coherent_table_reseals_are_refused(self):
+        import hashlib
+        cases = [
+            lambda r:r['sourceFiles'].update({'locales/de/stories-master-copy.json':hashlib.sha256(b'edited German catalog').hexdigest()}),
+            lambda r:r['sourceFiles'].update({'templates/masters/stories.html':hashlib.sha256(b'edited frozen master').hexdigest()}),
+            lambda r:r['variants']['de'].update(bodySha256=hashlib.sha256(b'edited German MAIN').hexdigest()),
+        ]
+        for mutate in cases:
+            record=copy.deepcopy(self.record);mutate(record)
+            raw=json.dumps(record,ensure_ascii=False,indent=2).encode()+b'\n'
+            real=Path.read_bytes
+            with patch.object(Path,'read_bytes',lambda path:raw if path.name=='stories-equivalence.json' else real(path)), self.assertRaisesRegex(ValueError,'evidence table edited'):
+                stories_manifest(ROOT,{},self.base)
+
     def test_stories_capability_is_exact(self):
         cfg={'english':'/stories','master':'templates/masters/stories.html'}
         self.assertEqual(mirror_tab('pageMirrors','stories-master',cfg),'stories')
