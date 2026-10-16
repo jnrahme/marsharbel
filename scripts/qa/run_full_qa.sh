@@ -220,6 +220,7 @@ qa_step npx playwright test tests/search-keyboard.spec.js --project=phone --proj
 qa_step node scripts/tests/stories_shelf_unicode.cjs
 qa_step node scripts/tests/stories_resolver.cjs
 qa_step python3 -m unittest discover -s scripts/qa -p test_stories_integration.py
+qa_step python3 -m unittest discover -s scripts/qa -p test_stories_authored_header_delta.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_stories_header_twin_delta.py
 
 # Stories-only keyed search data copy, with both-side hostile controls.

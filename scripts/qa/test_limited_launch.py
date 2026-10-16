@@ -17,8 +17,17 @@ class LimitedLaunch(unittest.TestCase):
    self.assertEqual(locale_topics(self.r,lang),[])
    self.assertEqual(self.r['locales'][lang]['slugs'],{})
    families=[name for name,cfg in self.r['pageMirrors'].items() if lang in cfg['routes']]
-   self.assertEqual(families,{'hi':['film-premiere-master','history-master','saint-charbel-medal-master','travel-travel-master','music-master','help-me-pray-master'],'th':['film-premiere-master','history-master','saint-charbel-medal-master','travel-th-travel-master','music-master','help-me-pray-master']}[lang])
+   self.assertEqual(families,{'hi':['film-premiere-master','history-master','saint-charbel-medal-master','travel-travel-master','music-master','help-me-pray-master','stories-master'],'th':['film-premiere-master','history-master','saint-charbel-medal-master','travel-th-travel-master','music-master','help-me-pray-master','stories-master']}[lang])
    for subset in self.r['publicationSets'].values():self.assertNotIn(lang,subset)
+ def test_unclaimed_extra_family_still_refused(self):
+  import copy
+  for lang in ('hi','th'):
+   r=copy.deepcopy(self.r)
+   r['pageMirrors']['unclaimed-extra']={'english':'/stories','routes':{lang:'/'+lang+'/unclaimed'},'renderLocales':[lang]}
+   actual=[name for name,cfg in r['pageMirrors'].items() if lang in cfg['routes']]
+   expected=[name for name,cfg in self.r['pageMirrors'].items() if lang in cfg['routes']]
+   self.assertNotEqual(actual,expected)
+   self.assertEqual(actual,expected+['unclaimed-extra'])
  def test_visible_availability_and_nonuse_of_dormant_copy(self):
   for lang in ('hi','th'):
    home=BeautifulSoup(render_home(ROOT,self.r,lang),'html.parser')

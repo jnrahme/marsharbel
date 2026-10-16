@@ -1,0 +1,37 @@
+PR #837 independent additional ruling:15authored fixtures andHI/TH lists
+Reviewer: Independent Quality / Scrum reviewer, separate from integrator.
+October16,2026,18:32EDT
+Inspected head b030f9ea6920c751cfe1a0aa2af05115bb77d063 against stage194b3cb965173162e0890833013760ed6b4f0573.
+Disposition: ACCEPT a distinct, bounded href-only amendment for exactly15authored fixture files listed below. No new body/catalog review needed. NOT final implementation approval, CI clearance, merge, deploy or release.
+
+Evidence
+All19original-stage authored files independently match their existing frozen fixture SHA256. Exactly15current files differ; four English files are unchanged. All15have identical MAIN and identical bytes outside header. For each, replacing only its one exact header href /<locale>/stories with /stories restores the entire original file byte-for-byte. The integrator's15-file inventory and original/final hash receipts agree with these independent results. No qualifier removal occurs in this set. My earlier conditions mentioning removal were generic provisional conditions; it is NOT permitted for these15files.
+
+Exact new file/locale allowlist
+ar/travel.html | ar | old e8ec48df8137daff2c676ec1353d72e1414e6c7d17294eb6b518b2ed9bba621a | current 80a8dfc472f17f1b16a50996742211cb818c60c672643d90e97ac2e0d3671cd7
+fr/travel.html | fr | old efd85f077e68f2a3dc3d130ab6cfbdf4119b7f606d55ab61956b559fe7079b15 | current a24ef6e26e198234ce0c5b48bc5b2cb5951186d2cf26b7e7c9e9c9beaada90e6
+es/travel.html | es | old b6ffc9ab61033671504e0bbe9d2cb26575d5a62aa8ae5ce9cecab3b0106d64f1 | current c60e636f44760c23ba552f61fd65989fa16dc2bdd6a0ecd4b953e3216aab1011
+pt/travel.html | pt | old bf495cd94abcec614cd25507f95b6e335eb4e643f9dc472b4c434335a00ac518 | current 6958fd6aad320d419a0ce1cc21e4a2e8d91c74129480a6e283afee35fdca61e4
+it/travel.html | it | old 6e3176b8cedb048413e924db8d23c1de32c87c9a6c45c8a132ddc32a91ffd5ee | current 7fa9e8ffaa7f84a6a3d5a79f02f2eb81c9a7165d573ad42434bccc613a33107a
+pl/travel.html | pl | old 6049fb35373542830d201ac0e922209417d826b6d173d6117ab721fbdff5a7a6 | current e094245dabb9b669b12cfedd91edf88d74f8cb4e827cf4e9153497f86e7ff04e
+ar/qadisha-valley.html | ar | old e48c1826a152c40e94b3ea088e1560e0315b253a7425338b791c9cad0430f28e | current f14581c31f8b792ad8243a02149f80a8f226c39ed970521d2b89bb0a91a20c5a
+fr/vallee-qadisha.html | fr | old 56955c72d6406fe60a00a41f96876d585931efd9abc65098d4c074afbf1eb79b | current f53ec8a18ae4d8e9d56cda79d81b7f68e661c3a0f8bf160f6eb15ccfe83eb91d
+es/valle-qadisha.html | es | old 710c987b49a1c0bad9ea879cbf020a6b0d3b70a941e9d65f376cda227434d6d9 | current 91fa89d35640438f6509bd6b5b53e6cd01b5b57ed5dbaeca77428f2f09df9863
+ar/qannoubine-monastery.html | ar | old bcfd040939eede1fc1d432cb06f0212ddd0a0cccf8eb032e77f4bbeacbf5ccd4 | current 47d7ae828b0e23b273d1f0e8076797d8cb9656d15bef84c4e3ea23755ce93b3f
+fr/monastere-qannoubine.html | fr | old e50226b44741c648377c04873dd15a5ddd4761c0e00ca94a06a1bf59ffcaed87 | current f68abcefb47794cecd41117757077877e400c12a7d296ce7e3bb94e643fa7301
+es/monasterio-qannoubine.html | es | old 44e2c1f63f30630ac1fcd373bc9cab301e16939fe4a3f0150f07e011cd8b6743 | current 88359527f4f45b5c1b5f5645d954dfe334c2fa666f148cc816310b229e01eb0b
+ar/qozhaya-monastery.html | ar | old 5cd2bd973d2e45b16e8c6b80071413bdc5b4060c3197e05cb9ad3a3d065177d1 | current 9baf7057b4ba40425e01d841fe77bc96fc857ed436ed1b393bcc38725a10c146
+fr/monastere-qozhaya.html | fr | old a2a2dfb38c939be8214094ca92a5016200791436cf35688c5d59f6f6269b4e5b | current c793cbd95e795fc03bf450bdb9e76a53a831e0d1fd93688d5ba4bad8b9ff0acb
+es/monasterio-qozhaya.html | es | old aec80c3534e2a041cd958af7e0e53f6dbf0c72c53a3ec6e38855cfb5528c30da | current 9134b4709ee6272222d4bcc4122f42bda00e1b91cae0781e5a4e4d9cba53bd51
+
+Required implementation
+Keep scripts/qa/fixtures/travel-authored-heads-f6e0d947.json bytes, its fixed table digest dbdc2961a63e55ee6d0297523323d3ba77f7ff6bde83a7c65acbddce856258cb, all19original file hashes and sourceRevision unchanged. The test must still compare COMPLETE final output restored through an exact allowlisted inverse to each original hash. Do not update fixture hashes to current outputs, skip files, compare only MAIN, or permit arbitrary header normalization.
+This is a separate15-file amendment, not expansion of the existing25family/locale inverse. Code may share safe parsing primitives but must keep the two allowlists and their allowed shapes distinct. Here the only allowed edit is the one raw href scalar in the unique intended header Stories anchor. No qualifier/aria/hreflang/tag/label/attribute/order/spacing change is included. Exact original anchor and surrounding bytes must be recovered. Refuse wrong destination, locale, query/fragment, duplicate anchor, changed label, extra attr, another link, outside-header drift, modified original fixture or missing/unreviewed Stories destination. Require actual reviewed/rendered same-locale twin, not only an arbitrary registry claim. Run positive restoration for all15and hostile controls through the real gate; keep unchanged English4direct full-file checks.
+Unchanged files: travel.html,qadisha-valley.html,qannoubine-monastery.html,qozhaya-monastery.html.
+
+HI/TH expectation ruling
+ACCEPT appending exactly stories-master to both existing exact registered-family lists in test_limited_launch.test_only_claimed_launch_pages_registered. Preserve order/equality and every existing entry; preserve empty locale_topics, empty slugs, noHI/THpublicationSets membership, no-extra-family and visible-availability checks. Add a focused negative extra-family assertion if none covers it. This is the reviewed Stories scope being recorded, not permission for other dormant translations. Re-run affected tests on successor head.
+Search-index freshness: existing generator rebuild to include11new Stories rows is appropriate; retain current freshness and count assertions unchanged.
+
+Final state
+The authored15gate, limited-launch assertion and generated search freshness remain open until implementation is inspected and exact-head CI passes. Prior b030implementation PASS was explicitly scoped, not all-gates green. This ruling does not alter that distinction or release any hold. No source, fixture, hash, table, registry, release or schedule writes by reviewer.

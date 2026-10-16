@@ -20,3 +20,9 @@ Draft only. No merge, deploy, production journey, publication, spend, generation
 English news source/output remain byte-identical. AR news differs only in Stories header href and obsolete English-language marking; PR836 metadata and main body remain unchanged. Wider locale generated pages similarly change their Stories header links to preserve same-language discovery.
 
 Audience intent: families can find/filter the shelf in their language, without implying translated book/audio availability. No measured traffic or growth result is asserted.
+
+## Successor fixes after exact-head CI and independent review
+
+The first evidence implementation trusted resealable table rows. The accepted equivalence table is now pinned by its own fixed SHA256, with actual two-sided catalog/master/body reseals rejected. Chinese capability and RU output inventories were explicitly expanded only by the reviewed Stories scope, with negative family/master/route/home/topic controls.
+
+Current search generator output has421rows, with exactly11new locale Stories rows; count and freshness assertions remain unchanged. HI/TH family-list assertions append only stories-master. An independently scoped authored15raw-header-href inverse now restores each frozen full file byte-for-byte before the original19hash checks, preserving the fixture digest/all19oldhashes and leaving4ENfiles unchanged. All15real positives,120hostile mutations and15false original-hash controls pass; full actual19output test passes. This amendment is separate from the earlier25Travel tuple rule and remains subject to final independent implementation review.
