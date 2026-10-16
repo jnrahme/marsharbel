@@ -215,3 +215,6 @@ qa_step npm run test:search
 
 qa_step python3 scripts/qa/test_search_source_contract.py
 qa_step npx playwright test tests/search-keyboard.spec.js --project=phone --project=laptop --workers=2
+
+# Local shelf search must preserve non-Latin letters and vowel marks.
+qa_step node scripts/tests/stories_shelf_unicode.cjs
