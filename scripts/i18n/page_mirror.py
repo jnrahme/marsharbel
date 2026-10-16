@@ -199,7 +199,13 @@ def render_page(root,registry,lang,family,route,catalog=None):
         hub=family=='saint-charbel-prayers-master'
         rendered=share_head(rendered,root,lang,hub)
         master_text=share_head(master_text,root,'en',hub)
-    diff=check_pair(master_text,rendered,master_route,route, normalizers=('partial-home-disclosure',) if home_url(registry, lang) is None else ())
+    normalizers = ('partial-home-disclosure',) if home_url(registry, lang) is None else ()
+    context = None
+    if family == 'stories-master':
+        from i18n.stories_shelf_copy import MASTER_SHA256
+        normalizers += ('stories-keyed-data-copy',)
+        context = {'family': family, 'lang': lang, 'masterSha256': MASTER_SHA256}
+    diff=check_pair(master_text,rendered,master_route,route, normalizers=normalizers, context=context)
     if diff:raise ValueError(f'{family} {lang}: mirror structure diverged: {diff}')
     if lang in registry.get('limitedLaunchLocales', []):
         from i18n.prayer_runtime import share_head

@@ -41,8 +41,14 @@ def signature(text, route, normalizers=(), context=None):
 
 
 def check_pair(master, locale, master_route, locale_route, normalizers=(), context=None):
-    english = signature(master, master_route)
-    translated = signature(locale, locale_route, normalizers, context)
+    if 'stories-keyed-data-copy' in normalizers:
+        if not context:
+            raise ValueError('Stories copy comparison requires trusted context')
+        english = signature(master, master_route, ('stories-keyed-data-copy',), {**context, 'side': 'en'})
+        translated = signature(locale, locale_route, normalizers, {**context, 'side': 'locale'})
+    else:
+        english = signature(master, master_route)
+        translated = signature(locale, locale_route, normalizers, context)
     return [key for key in english if english[key] != translated[key]]
 
 def _strip_launch_annotations(soup):
@@ -118,4 +124,10 @@ NORMALIZERS = {'launch-availability-annotations': _strip_launch_annotations,
 
 # Normalizers that need the exact page identity (family+lang) to act; signature()
 # requires a context argument when one of these is requested.
-CONTEXT_NORMALIZERS = {'localized-source-links': _strip_localized_source_links}
+def _normalize_stories_keyed_data(soup, context):
+    from i18n.stories_shelf_copy import normalize_stories_data
+    return normalize_stories_data(soup, context)
+
+
+CONTEXT_NORMALIZERS = {'localized-source-links': _strip_localized_source_links,
+                       'stories-keyed-data-copy': _normalize_stories_keyed_data}
