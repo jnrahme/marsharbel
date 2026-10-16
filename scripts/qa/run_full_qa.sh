@@ -211,3 +211,5 @@ qa_step python3 -m unittest discover -s scripts/qa -p 'test_saint_of_day.py'
 qa_step node scripts/qa/test_saint_day_runtime.cjs
 qa_step python3 -m unittest discover -s scripts/qa -p test_saint_monogram.py
 qa_step npx playwright test tests/saint-of-day.spec.js --project=phone --project=laptop --workers=2
+qa_step npm run test:search
+
