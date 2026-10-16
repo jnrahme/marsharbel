@@ -224,3 +224,7 @@ qa_step python3 -m unittest discover -s scripts/qa -p test_stories_keyed_data.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_stories_zh_header.py
 # Quotes provenance: exact catalog, FAQ/metadata and attribution negative controls
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_quotes_attribution.py'
+
+# Existing Nader context: keyed projection, translations and hostile controls.
+qa_step python3 scripts/build_nader_context.py --check
+qa_step python3 -m unittest discover -s scripts/qa -p test_nader_context.py
