@@ -111,7 +111,9 @@ def validate_variant(root, family, code, variant, text, final=True, schema='scop
         raise ValueError('Candidate hash not actual prepared bytes')
     if final:
         from i18n.header_marking_delta import strip_for_locale
-        if without_ru(candidate,slug)!=without_ru(strip_for_locale(root,code,text),slug):raise ValueError('Post-review candidate drift')
+        from i18n.stories_header_twin_delta import inverse
+        amended = inverse(root,family,code,strip_for_locale(root,code,text),candidate)
+        if without_ru(candidate,slug)!=without_ru(amended,slug):raise ValueError('Post-review candidate drift')
     if digest(candidate)!=variant['bodySha256'] or digest(text)!=variant['bodySha256']:
         raise ValueError('Candidate/current main drift')
     if code=='en':
@@ -158,6 +160,8 @@ def review_pinned_locales(root):
 
 def validate_final_outputs(root, texts):
     """Final injection boundary: full-file continuity plus actual final main pins."""
+    from i18n.stories_header_twin_delta import set_outputs
+    set_outputs(texts)
     record=root/'locales/travel-equivalence.json'
     if not record.exists():return
     for family,group in json.loads(record.read_text())['groups'].items():

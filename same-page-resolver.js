@@ -72,6 +72,21 @@
         variant.sourceSha256 === page.sourceSha256 &&
         Array.isArray(variant.aliases) && variant.aliases.length === 0;
     }
+    if (page && variant && proof && proof.type === 'scoped-stories-variant') {
+      var storiesCodes = ['en','ar','fr','es','pt','it','de','pl','ru','hi','th','zh-Hans'];
+      var storiesCode = Object.keys(page.variants || {}).find(function(k){ return page.variants[k] === variant; });
+      return page.sourcePath === 'stories.html' && storiesCodes.includes(storiesCode) &&
+        storiesCodes.every(function(code) { var v=page.variants[code]; return v && v.path === (code === 'en' ? '/stories' : '/' + code + '/stories'); }) &&
+        Object.keys(page.variants).length === storiesCodes.length &&
+        variant.status === 'verified' && proof.state === 'isolated-review-pass' &&
+        proof.nativeReviewStatus === 'not-certified' &&
+        proof.masterSha256 === 'd8f15f97cd12c8f79d546a9e1d9b903de46635ec3e4277b67d9110394ebd1c13' &&
+        proof.evidenceSha256 === 'f5e57850e83cdf936e0c981fe6896ca49cea59b7df5aff6e405515fd2ddde304' &&
+        /^[a-f0-9]{40}$/.test(page.sourceRevision || '') &&
+        /^[a-f0-9]{64}$/.test(variant.contentSha256 || '') &&
+        proof.reviewedContentSha256 === variant.contentSha256 &&
+        variant.sourceSha256 === page.sourceSha256 && Array.isArray(variant.aliases) && variant.aliases.length === 0;
+    }
     if (page && variant && proof && proof.type === 'reviewed-history-master') {
       return page.sourcePath === 'history.html' && proof.family === 'history-master' &&
         variant.status === 'verified' && (proof.renderedReviewStatus === 'approved-history-source-correction-c476eada-9-pages-390-1280' ||

@@ -1,0 +1,91 @@
+TR006 Stories header-twin amendment: independent ruling
+October 16, 2026, 18:00 EDT
+Reviewer: Independent Quality / Scrum reviewer, separate from the integrator.
+Base inspected: stage 194b3cb965173162e0890833013760ed6b4f0573, preserving #836.
+Disposition: ACCEPT the bounded navigation amendment in principle for the exact 25 full-file-pinned variants below, WITHOUT a new body/catalog review. This is not approval of an unseen gate implementation, final PR, merge, deploy or release. Existing holds stand.
+
+Independent findings
+The submitted German Annaya files differ only at the header Kinderbücher anchor href, /stories -> /de/stories. Their hashes are:
+before b1903f21385d385ac51fc0faf2595a5a35a1e757e03797c998d64658a577cdaa
+after  9471a2a925e549da0711701ceda3b46af1e5726147f124844613711a13c690f4
+These submitted files already have ordinary English-destination marking stripped. They must not be mistaken for a complete final-output diff.
+
+I independently paired the unchanged current renderer with registry configurations excluding/including only the reviewed full Stories family. All 25 full-file-pinned locale variants change the Stories header destination, not just German Annaya. The exact 25 family/locale pairs agree with the integrator's submitted audit. MAIN remains identical in every paired output. In 24 cases the raw paired difference after the existing strict marking inverse is only href; Hindi Travel also removes the existing launch qualifier. No catalog was edited for this audit.
+
+Qualifier ruling
+DE (all 12 pages): removal of hreflang=en, its matching English-only aria-label and the exact trailing span.enc-language '(Englisch)' is acceptable ONLY on this newly localized Stories anchor. The existing strict marking inverse already accounts for that marking. Do not remove other English disclosures or aria attributes indiscriminately.
+RU (all 12 pages): href only. The reviewed Stories anchor has no English qualifier to remove.
+HI /hi/travel: remove only the exact trailing span.launch-english-qualifier containing ' (अंग्रेज़ी में)' on the Stories anchor as its href becomes /hi/stories. This is acceptable because the destination is now a Hindi shelf. Do not strip other launch qualifiers.
+This does not claim the books or audio are localized. The accepted shelf's intro/FAQ retain the English-reader and incomplete-local-audio disclosures.
+
+Exact full-file-pinned amendment inventory (25)
+/de/annaya-tour | annaya-tour-travel-master | de
+/ru/annaya-tour | annaya-tour-travel-master | ru
+/de/bekaa-kafra | bekaa-kafra-travel-master | de
+/ru/bekaa-kafra | bekaa-kafra-travel-master | ru
+/de/bkerke-maronite-patriarchate | bkerke-maronite-patriarchate-travel-master | de
+/ru/bkerke-maronite-patriarchate | bkerke-maronite-patriarchate-travel-master | ru
+/de/cedars-of-god-lebanon | cedars-of-god-lebanon-travel-master | de
+/ru/cedars-of-god-lebanon | cedars-of-god-lebanon-travel-master | ru
+/de/our-lady-of-lebanon-harissa | our-lady-of-lebanon-harissa-travel-master | de
+/ru/our-lady-of-lebanon-harissa | our-lady-of-lebanon-harissa-travel-master | ru
+/de/qadisha-valley | qadisha-valley-travel-master | de
+/ru/qadisha-valley | qadisha-valley-travel-master | ru
+/de/qannoubine-monastery | qannoubine-monastery-travel-master | de
+/ru/qannoubine-monastery | qannoubine-monastery-travel-master | ru
+/de/qozhaya-monastery | qozhaya-monastery-travel-master | de
+/ru/qozhaya-monastery | qozhaya-monastery-travel-master | ru
+/de/saint-charbel-hermitage | saint-charbel-hermitage-travel-master | de
+/ru/saint-charbel-hermitage | saint-charbel-hermitage-travel-master | ru
+/de/saint-charbel-places-lebanon | saint-charbel-places-lebanon-travel-master | de
+/ru/saint-charbel-places-lebanon | saint-charbel-places-lebanon-travel-master | ru
+/de/saint-charbel-trail | saint-charbel-trail-travel-master | de
+/ru/saint-charbel-trail | saint-charbel-trail-travel-master | ru
+/de/travel | travel-travel-master | de
+/ru/travel | travel-travel-master | ru
+/hi/travel | travel-travel-master | hi
+
+Other body/catalog-pinned Travel-equivalence pages examined (24)
+These also reroute the same header destination with unchanged MAIN. They are NOT additional full-file-pin exceptions and must not be added to a broad full-file bypass. Their existing body/catalog guards continue unchanged.
+/ar/22nd-of-the-month | twenty-second-master | ar
+/fr/22-du-mois | twenty-second-master | fr
+/es/el-22-de-cada-mes | twenty-second-master | es
+/pt/o-dia-22-do-mes | twenty-second-master | pt
+/it/il-22-del-mese | twenty-second-master | it
+/de/der-22-des-monats | twenty-second-master | de
+/pl/22-dnia-miesiaca | twenty-second-master | pl
+/ru/22-chislo-mesyaca | twenty-second-master | ru
+/ar/pilgrimage | pilgrimage-master | ar
+/fr/pelerinage | pilgrimage-master | fr
+/es/peregrinacion | pilgrimage-master | es
+/pt/peregrinacao | pilgrimage-master | pt
+/it/pellegrinaggio | pilgrimage-master | it
+/de/pilgerreise | pilgrimage-master | de
+/pl/pielgrzymka | pilgrimage-master | pl
+/ru/palomnichestvo | pilgrimage-master | ru
+/ar/annaya | annaya-master | ar
+/fr/annaya | annaya-master | fr
+/es/annaya | annaya-master | es
+/pt/annaya | annaya-master | pt
+/it/annaya | annaya-master | it
+/de/annaya | annaya-master | de
+/pl/annaya | annaya-master | pl
+/ru/annaya | annaya-master | ru
+
+Required fail-closed implementation boundary
+- Preserve the independently approved candidate hashes, body hashes, catalog hashes, original review-reference tables and provenance. No resealing, replacing pinned candidates, accepting new hashes, generic href stripping, or skipping the full-file check.
+- Add a separate narrowly named Stories header-twin delta check/inverse at the existing final-output boundary, scoped to exactly the 25 family/locale/file tuples above. Source candidate validation must still use the original exact approved bytes. Do not make a new general normalizer for all twins.
+- Only when the registered, rendered, reviewed Stories twin exists for that same locale may the amendment apply. The declaration alone is not final runtime availability proof. Final integration must also pass enabled-selector and reciprocal-journey tests.
+- Require one unique intended header anchor. Preserve its tag, original label, surrounding bytes, ordering and every unrelated attribute. Change only exact /stories to exact /<same-locale>/stories, plus the qualified removals named above. Refuse aliases, external URLs, queries/fragments, duplicates, other locales, other pages, new tags, new attributes or extra removals. An unchanged original page may retain original approval, but the integrated family must not retain a stale English Stories destination.
+- Invert the allowed delta to the approved candidate representation, then enforce the existing full-file equality/hash comparison. For DE use the existing strict marking inverse, not a broader span-removal rule. For HI reconstruct only the exact reviewed Stories qualifier when performing the inverse. Every other byte must still match the approved candidate.
+- Prove the gate on all 25 real outputs. Positive controls must cover DE marking removal, RU href-only and HI launch-qualifier removal. Negative controls must fail for changed MAIN, visible label, another header link, wrong locale/destination, extra attribute, query/fragment, duplicate anchor, outside-header change, unrelated qualifier removal, modified original candidate/hash/reference table/catalog, and an unrendered or unreviewed destination.
+- Keep normal build, fixpoint/freshness, all other content/pin gates and exact-head CI intact. Inspect final navigation at phone/desktop widths and exercise locale page -> Stories shelf plus language selection. No final visual/behavior approval is supplied by this narrow semantic ruling.
+
+Why no new body/catalog review
+The amendment restores same-language navigation using the already reviewed Stories destination. The rendered pairs preserve MAIN and every translated label; only a destination-language qualifier becomes obsolete. Reopening unchanged travel prose would not improve safety. The new narrow gate and final integration journeys, not a new translation batch, are the remaining work.
+
+Evidence and limits
+Independently inspected original/current renderer and pin boundaries on actual stage194b3cb9; paired 49 locale outputs in the Travel-equivalence inventory, all MAIN-identical. German submitted pair passes a diagnostic exact inverse with eight hostile byte mutations rejected (body, label, another href, wrong locale, query, extra attribute, duplicate anchor, outside-header insertion). This diagnostic is not a production gate implementation or a substitute for the required complete 25-output controls.
+Independent Annaya table SHA256 unchanged: 9a98af8a8c4691e6ff109cf0bd3f6d3a859596f327471c3bfee2a192c4ca3da2.
+Independent C0016 table SHA256 unchanged: fd6d60cf162bbb66041dafc7378fcf7dc619f5658102bbd190b778276b8e4a14.
+Inventory claim is scoped to Travel-equivalence records; this is not an exhaustive header-change claim about every other site family or their separate body-only guards. No production code, pin, review table or registry was changed. Only isolated local review configuration was used.

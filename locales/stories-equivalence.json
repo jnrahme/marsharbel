@@ -1,0 +1,97 @@
+{
+  "reviewStatus": "isolated-review-pass",
+  "releaseStatus": "held",
+  "sourceRevision": "6662ce5dc23a9f0962e0fba2aad14252fff2d1d5",
+  "masterSha256": "d8f15f97cd12c8f79d546a9e1d9b903de46635ec3e4277b67d9110394ebd1c13",
+  "verdictSha256": "f5e57850e83cdf936e0c981fe6896ca49cea59b7df5aff6e405515fd2ddde304",
+  "finalManifestSha256": "1c6cb58f081486bc1f5c65158ace2b81aa48ac45b373aa803b42f37c740ea481",
+  "sourceFiles": {
+    "locales/it/stories-master-copy.json": "5bf3a7ad0aa0102213af56381ce9f82bfe3125a27625a6d2ee382acf4d223c71",
+    "locales/it/stories-master-schema-bindings.json": "1b1a7bb01f56271b1dbef86e0c8b5c2c9727610e8ded1112cd36c190d67e2c28",
+    "locales/pt/stories-master-copy.json": "c4f28dfff1e8fba30b53eb961bfb9702138e9477249ab2ca2d5bcdf35c0171a6",
+    "locales/pt/stories-master-schema-bindings.json": "631191c7ca2dcdc075aad768988dff2fd4a845cb8e85dc2db6ac3b0877ae0cee",
+    "locales/ru/stories-master-copy.json": "f5f960513466f5192bc8cb67ff248272eb95959eadff259880b018d23d495f68",
+    "locales/ru/stories-master-schema-bindings.json": "0e35fc7ca95264b9648794b537ce2bb000cda5c9b812ed5a9d9b818ad0492d15",
+    "locales/fr/stories-master-copy.json": "6198a31c876e8e86a6b6f2c329a5e9072b0c34349a9b3efb879538e1bf0904fb",
+    "locales/fr/stories-master-schema-bindings.json": "3dc34ea148af76ab0e6010e99d985f26957df7bd5244dbe4271602bdf96c1724",
+    "locales/hi/stories-master-copy.json": "583e7a165bcf9f5e67c82fe36a084372a1c91bc4ad1e9a094b329d07432816bd",
+    "locales/hi/stories-master-schema-bindings.json": "ce4e9f9b4f91e37fb1a446c97aac685fd9ff98e02abcdfbddc6cea57de65bc93",
+    "locales/ar/stories-master-copy.json": "82b14d3e1ec18c903cdd70933da5809fc347a958a5f3a084ce446abf38b169cf",
+    "locales/ar/stories-master-schema-bindings.json": "a849dcf34a49f5657100f20acc19ec8005c5ba00f7c2f204ec0fed5c9f8d7665",
+    "locales/th/stories-master-copy.json": "a2fc0adc90bc7b8d806039de418013982e9b3f7d37a6f23ba2bc9c90751ef0a3",
+    "locales/th/stories-master-schema-bindings.json": "b1791a3d5c3e4beff9041e8882e0b5a934d1437944f6e0f25d8cea828e67176e",
+    "locales/zh-Hans/stories-master-copy.json": "6bec46313d0e28840458332b3ba29773212aa5f259ecfa04ab80fd146fd0caa6",
+    "locales/zh-Hans/stories-master-schema-bindings.json": "ea756bb848a70cb681359bd289063f40ee3e9c273b8195b1de9364fadd265378",
+    "locales/de/stories-master-copy.json": "ee8d2f76f6b5bd0f00cb85743bd39ab58a609e3313bc0c6ee1dd1ec796c75d4c",
+    "locales/de/stories-master-schema-bindings.json": "38b9c7c8ee176ed59d28db365e928ad16c056afeb2a206e6b40802e4a5a2a66c",
+    "locales/en/stories-master-copy.json": "8a778a00de2b5411ccc110513dad8e852796abaa7336342cf14e61426e658cd0",
+    "locales/en/stories-master-bindings.json": "b9780fd3fc43028b403ad74e8fb624b694a20196f17e75c1c138a8af1bcdcb6d",
+    "locales/es/stories-master-copy.json": "e8e401ecd1f7bc2bc98b23ce5fe8b282a91bc07eaff2745a20d1e472feb21f34",
+    "locales/es/stories-master-schema-bindings.json": "74368a43a5428b1c610c5d13df60510a74d4d6a392dbf621e1bd7317310c6f46",
+    "locales/pl/stories-master-copy.json": "181434b5402686c94c97f46bd041669ffedfc09d55aaf7ed70d748f3249a8b33",
+    "locales/pl/stories-master-schema-bindings.json": "d1ffbefffab0afb15c65e0e0cd5fd491d3a58600e8ee2df97d26242d7e564077",
+    "templates/masters/stories.html": "d8f15f97cd12c8f79d546a9e1d9b903de46635ec3e4277b67d9110394ebd1c13"
+  },
+  "variants": {
+    "en": {
+      "path": "/stories",
+      "file": "stories.html",
+      "bodySha256": "de4a67ead9ae7fda6d8de5ecdbd5d1f54331debc58d852408e341fab7e40a82c"
+    },
+    "ar": {
+      "path": "/ar/stories",
+      "file": "ar/stories.html",
+      "bodySha256": "9d5b11d0ae2572c3d73b41b4b5838c54db985e38361f5193598f30d9e1323487"
+    },
+    "fr": {
+      "path": "/fr/stories",
+      "file": "fr/stories.html",
+      "bodySha256": "2fcc6a629511ca7cfdd684290cfaba857ccec461c1f6f47211af054199c968b1"
+    },
+    "es": {
+      "path": "/es/stories",
+      "file": "es/stories.html",
+      "bodySha256": "9eb5b61ffc1a73a17eb9ef587cf4a0d1e1de2f50cd8126740573fca0169a0212"
+    },
+    "pt": {
+      "path": "/pt/stories",
+      "file": "pt/stories.html",
+      "bodySha256": "fcc7990ae43eb44c42539a3eb9eea4c4352af5e94f87342d7d5718a8479c2aae"
+    },
+    "it": {
+      "path": "/it/stories",
+      "file": "it/stories.html",
+      "bodySha256": "781c554ed2bf97181402dd8a83cfe42ef246056e7f07528ebb67c52e36d1672d"
+    },
+    "de": {
+      "path": "/de/stories",
+      "file": "de/stories.html",
+      "bodySha256": "89d68fecbecb7c860dff6fae311f6e82164a84afcb7883aa54426bfed09f6ddf"
+    },
+    "pl": {
+      "path": "/pl/stories",
+      "file": "pl/stories.html",
+      "bodySha256": "bec3f7ed6005fffa7e6de019abac4657384a2f741d9c6b30295d37e2dfb847e9"
+    },
+    "ru": {
+      "path": "/ru/stories",
+      "file": "ru/stories.html",
+      "bodySha256": "bd8bf7a29a61951cfca48997db4bd357d82913514efe4aaf0d22333e1bdc169e"
+    },
+    "hi": {
+      "path": "/hi/stories",
+      "file": "hi/stories.html",
+      "bodySha256": "5d5ae26281c401758398c3f789d984ff60df7b49b59a966cb671674631ccf523"
+    },
+    "th": {
+      "path": "/th/stories",
+      "file": "th/stories.html",
+      "bodySha256": "d03829230bc74e7872fcead6947f59029a96dd5fc3d2a2cadfc7f16f27197425"
+    },
+    "zh-Hans": {
+      "path": "/zh-Hans/stories",
+      "file": "zh-Hans/stories.html",
+      "bodySha256": "d9854cbf5b2d9e44df0a5618bd9e65ba22965762ce3dcb9e475973fd77a17bff"
+    }
+  }
+}

@@ -10,6 +10,9 @@ class AuthoredFinalHashTests(unittest.TestCase):
   spec=importlib.util.spec_from_file_location('authored_final_build',ROOT/'scripts/build-international.py')
   builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder)
   final=builder.outputs()
+  from i18n.stories_authored_header_delta import inverse
   for file,row in files.items():
-   with self.subTest(file=file):self.assertEqual(hashlib.sha256(final[ROOT/file].encode()).hexdigest(),row['fileSha256'])
+   with self.subTest(file=file):
+    restored=inverse(ROOT,file,final[ROOT/file],row['fileSha256'])
+    self.assertEqual(hashlib.sha256(restored.encode()).hexdigest(),row['fileSha256'])
 if __name__=='__main__':unittest.main()
