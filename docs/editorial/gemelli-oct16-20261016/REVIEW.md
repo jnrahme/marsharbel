@@ -19,3 +19,6 @@ Local checks:
 - Two production-only Arabic v3 fonts are absent locally, producing 404s on AR home/news. Exact live font URLs return 200 font/woff2. Live font decoding and rendered checks remain required after deployment.
 
 No main merge, automatic-promotion action, locale registry expansion, photo replacement or test weakening. Independent Scrum ruling, complete real CI, main-agent release decision, live byte/user-path/pixel verification and overwrite checks remain mandatory.
+
+## CI correction, 13:29 ET
+Exact-head CI on 2cbb8bf9 found omitted generated derivatives: feed.xml and 11 search-index locale excerpts. Existing feed and search generators were run without changes to assertions or build configuration. Feed check, five feed tests and search-index complete check now pass (410 pages, 12 locales, zero stale excerpts). This new head requires fresh independent review and full CI; the earlier review does not cover it automatically.
