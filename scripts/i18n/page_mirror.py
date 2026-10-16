@@ -170,6 +170,9 @@ def render_page(root,registry,lang,family,route,catalog=None):
                     path=urlsplit(item['item']).path
                     a=soup.select_one('header a[href="'+path+'"]') or soup.select_one('header a[href="'+twins.get(path, path)+'"]')
                     if a:item['name']=a.get_text(' ',strip=True)
+        # The news Article headline describes the same localized visible h1.
+        if family == 'news-master' and data.get('mainEntity', {}).get('@type') == 'Article':
+            data['mainEntity']['headline'] = soup.h1.get_text(' ', strip=True)
         if family.endswith('-travel-master'):
             translate_schema(data)
         if family.endswith('-travel-master'):

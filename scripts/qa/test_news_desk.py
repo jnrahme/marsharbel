@@ -130,6 +130,47 @@ class NewsDeskTests(unittest.TestCase):
 
 
 
+class NewsMetadataTests(unittest.TestCase):
+    # The desk's latest reviewed content revision is the October 16 Gemelli update.
+    REVISION = '2026-10-16'
+
+    def assert_news_metadata(self, html, lastmod):
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(html, 'html.parser')
+        page = next(json.loads(n.string) for n in soup.select('script[type="application/ld+json"]')
+                    if json.loads(n.string).get('@type') == 'WebPage')
+        self.assertEqual(page['dateModified'], self.REVISION)
+        self.assertEqual(lastmod, self.REVISION)
+        self.assertEqual(page['mainEntity']['headline'], soup.h1.get_text(' ', strip=True))
+        self.assertEqual(page['mainEntity']['datePublished'], '2026-09-20')
+
+    def test_en_ar_metadata_matches_reviewed_revision_and_visible_headline(self):
+        import xml.etree.ElementTree as ET
+        ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+        dates = {n.find('s:loc', ns).text: n.find('s:lastmod', ns).text
+                 for n in ET.parse(ROOT/'sitemap.xml').getroot()}
+        for file, url in [('news.html', 'https://marsharbel.com/news'),
+                          ('ar/news.html', 'https://marsharbel.com/ar/news')]:
+            with self.subTest(file=file):
+                self.assert_news_metadata((ROOT/file).read_text(), dates[url])
+
+    def test_old_webpage_date_is_rejected(self):
+        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-16"',
+                                                    '"dateModified": "2026-10-10"')
+        with self.assertRaises(AssertionError):
+            self.assert_news_metadata(html, self.REVISION)
+
+    def test_old_sitemap_date_is_rejected(self):
+        with self.assertRaises(AssertionError):
+            self.assert_news_metadata((ROOT/'news.html').read_text(), '2026-10-15')
+
+    def test_english_headline_on_arabic_page_is_rejected(self):
+        html = (ROOT/'ar/news.html').read_text().replace('"headline": "مار شربل في الأخبار"',
+                                                       '"headline": "Saint Charbel in the News"')
+        with self.assertRaises(AssertionError):
+            self.assert_news_metadata(html, self.REVISION)
+
+
 class NewsImageRecordTests(unittest.TestCase):
     def setUp(self):
         self.records = json.loads((ROOT/'locales/en/news-image-records.json').read_text())['slots']
