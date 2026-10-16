@@ -48,12 +48,15 @@ def assert_hreflang_reciprocity(case, en_path, ar_path, en_url, ar_url):
     case.assertIn(f'<link rel="alternate" hreflang="en" href="{en_url}"', ar)
 
 
-def assert_external_sources_mirrored(case, en_path, ar_path, count):
+def assert_external_sources_mirrored(case, en_path, ar_path, count, required=()):
     """The AR twin must offer the same external sources as the EN master."""
     en = external_page_hrefs((ROOT/en_path).read_text(encoding='utf8'))
     ar = external_page_hrefs((ROOT/ar_path).read_text(encoding='utf8'))
     case.assertEqual(en, ar)
     case.assertEqual(len(ar), count)
+    for url in required:
+        case.assertIn(url, en)
+        case.assertIn(url, ar)
 
 
 class CatalogTests(unittest.TestCase):
@@ -113,7 +116,21 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('ولم تعلنه الكنيسة عجيبة', ar)
         assert_hreflang_reciprocity(self, 'miracles/raymond-nader.html', 'ar/miracles/raymond-nader.html',
                                     'https://marsharbel.com/miracles/raymond-nader', 'https://marsharbel.com/ar/miracles/raymond-nader')
-        assert_external_sources_mirrored(self, 'miracles/raymond-nader.html', 'ar/miracles/raymond-nader.html', 2)
+        assert_external_sources_mirrored(self, 'miracles/raymond-nader.html', 'ar/miracles/raymond-nader.html', 3,
+                                         required=('https://www.familyofsaintsharbel.org/experiences.html',))
+
+    def test_nader_missing_experiences_source_fails_even_with_three_equal_links(self):
+        # Equal cardinality and EN/AR parity cannot substitute another source.
+        from unittest.mock import patch
+        required = 'https://www.familyofsaintsharbel.org/experiences.html'
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            links = ''.join(f'<a href="https://example.invalid/{n}">source</a>' for n in range(3))
+            for name in ('en.html', 'ar.html'):
+                (root/name).write_text(links, encoding='utf8')
+            with patch.dict(assert_external_sources_mirrored.__globals__, {'ROOT': root}):
+                with self.assertRaises(AssertionError):
+                    assert_external_sources_mirrored(self, 'en.html', 'ar.html', 3, required=(required,))
 
     def test_arabic_dafne_story_anchors_eparchy_statement_without_roman_approval(self):
         ar = (ROOT/'ar/miracles/dafne-gutierrez.html').read_text(encoding='utf8')
