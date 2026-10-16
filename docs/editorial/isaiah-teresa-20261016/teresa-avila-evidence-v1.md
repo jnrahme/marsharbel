@@ -1,0 +1,30 @@
+# Teresa of Avila v1 review packet
+## Reader promise and outcome
+Ages6-12 family read-aloud: Teresa learns prayer as friendship with Jesus, then makes room for that friendship in a community. Intended outcome: a child tries a brief honest prayer and an ordinary safe act of care. No childtesting, retention, watchtime, traffic or growthresult exists for this unpublished draft.
+
+## Sources read October16,2026
+Main biography and faith source: BenedictXVI, GeneralAudience2February2011, SaintTeresaofAvila:
+http://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110202.html
+Bible friendship passage: https://bible.usccb.org/bible/john/15 verses12-17.
+Original English paraphrase, not copied quotations, poem or a new Bibletranslation. Sourcechapterreferencesbelow locateprimaryLife/workspassages citedbyBenedict; fulloriginalSpanishworkwasnotread forthispacket.
+
+## Page-to-claim map
+1.1515AvilaSpain,largefamily,saintsreading,Godremainswhileworldchanges: audienceopening/Life1:4. Childquestionisnarrativeframingofsource-supporteddesireforGod, notclaimedliteralquote.
+2.Motherdeathabout12,turntoMaryLife1:7;Augustinianschoolandspiritualbooks,recollection: audiencebiography. Recollectiondefinitionexplainspracticewithoutinventingaspecificscene.
+3.Age20IncarnationCarmel,nameTeresaofJesus,illnessthreeyearslaterLife5:9. Nohealingpromise, noimitationofasceticism, no graphiccomadetail. Monasterydefinitionisplainexplanation; notclaimallmonasteriesareidentical.
+4.StruggletoliveGod'scallLife7:8;teachers/soundadvice/Churchfidelity: audiencesectiononherwritingsandrelationships. God'sinitiativeexplicitinthefriendshipteachingVida8:5/Aquinasdiscussion. No inventedprivatefear,motiveorconversation.
+5.Lent1554age39,woundedChriststatueLife9;deepeningprayer/Christcentrality: audienceLife10:1andspiritualitysections. Noexactthoughtsorinstantperfectconversionclaim.
+6.1562reformedCarmelAvila,bishopsupport;communitylove,evangelicalpoverty,humilityastruth: audiencefoundationandvirtuessections. Practicalexplanationsofpossessionsandimportanceareeditorialdefinitionsconsistentwiththosevirtues.
+7.17foundations;JohnofCross1568Duruelo,reformedmalecommunity: audiencebiography. TravelworkandwritinginferredonlyfromdocumentedfoundationactivitiesandBookofFoundations1573-1582,notinventedtripincidents.
+8.InteriorCastle1577,sevenroomsasinnerlifeimage;OurFathercommentary;deepprayerdoesnotabandonvocalprayer: audienceworksandprayersections. No literalcastleeventorclaimthatallchildrenmustprogressinsevensteps.
+9.Death1582AlbadeTormes;DoctorofChurch1970PaulVI: audiencebiography. Useyearonly: exactdeathdayrequiresGregoriantransitionexplanationandisnotneededforstory. Doctorasrecognizedteacherexplainedfromaudienceopening. Bookscontinuinginvitationisaneditoriallegacyreading,notimpactmetrics.
+10.John15:12-17friendship+lovingoneanotherreadtogether, verifiedUSCCBsourceabove. Prompts,homeactandshortprayertoJesusareoriginaleditorialinvitations, notTeresaquotations. Nochildsentaway/unsafeactivity.
+
+## Distinct illustration opportunities
+All are labeled imaginative devotional illustrations, not historical photographs.
+1.ChildTeresawithsaintbookandfamilyinAvila;2.adolescentwithMarydevotionalimage,griefgentlynotfuneraldrama;3.youngadultjoinsCarmelcommunity;4.adultTeresaquietlyreadingwithspiritualguidance,compositescenenotdocumentedmeeting;5.prayerbeforewoundedChriststatue,gentlecroptoavoidinjuryspectacle;6.newAvilacommunitysharedwork/prayer;7.laterfoundationjourneywithcompanions,notunsourceddangerincident;8.interiorsymboliccastleandwritingdesk,clearlymetaphorical;9.olderreaderwithTeresabookacrossgenerations,notdocumentedhistoricalhandover;10.modernfamilyquietprayerthenordinarykindness.
+Noartcalls, quotausage, audioattemptsorassetrightsadoption. Perioddress/appearance/settingneedresearchbeforeartlock.
+
+## Text verification and remaining holds
+Tenpages,918narratedwordsincludingreflection; no sentenceover22wordsunderroughpunctuationsplit. Chronological joins checked:birth/reading->motherloss/school->entry/illness->prayerstruggle->1554->1562->furtherfoundations->1577book->1582death/1970legacy->reflection. Headingsnotspoken. Nofabricateddialogue,nointeriorvoices,noquotedpoem,novisionsinvented.
+Textself-reviewisnotindependentPASSorread-aloud/earverification. Runtime,fullnarrationmatch,pronunciation,art andchildfeedbackunverified. Scriptonly,notfinishedbook. Independentfaith/editorialreviewrequiredbeforescriptlockandquota-safeproduction. ExistinglimitedsocialASRgate doesnotapply.
