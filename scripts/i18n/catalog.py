@@ -293,6 +293,9 @@ def validate_mirror_capabilities(root, registry):
     for group in ('authoredMirrors', 'pageMirrors', 'exactMirrors'):
         for name, family in registry.get(group, {}).items():
             routes = family.get('routes', {})
+            if group == 'pageMirrors' and name == 'stories-master':
+                if mirror_tab(group,name,family) != 'stories' or any(route != '/'+code+'/stories' for code,route in routes.items()):
+                    raise ValueError('Stories exact family/master/route capability differs')
             for code, route in routes.items():
                 if code not in registry['locales']:
                     raise ValueError(f'{name}: unknown route locale {code}')

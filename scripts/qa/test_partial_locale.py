@@ -250,7 +250,7 @@ class PartialLocaleTests(unittest.TestCase):
         self.assertIsNone(home_url(self.registry,'zz'))
         tabs=self.registry['locales']['zh-Hans']['capabilities']['mirrorTabs']
         if 'film' not in tabs:tabs.append('film')
-        self.assertEqual(tabs,['travel','film','prayers'])
+        self.assertEqual(tabs,['travel','film','prayers','stories'])
         self.registry['pageMirrors'][name]['routes']['zh-Hans']='/zh-Hans'+english
         self.registry['pageMirrors'][name]['renderLocales'].append('zh-Hans')
         validate_registry(self.registry)
