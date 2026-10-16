@@ -27,6 +27,7 @@
 .masthead>.scs-trigger,header .site-shell>.scs-trigger{margin-inline-start:0}
 
 /* Overlay */
+.scs-body::-webkit-scrollbar{inline-size:10px}.scs-body::-webkit-scrollbar-track{background:transparent}.scs-body::-webkit-scrollbar-thumb{background:rgba(243,237,227,.26);border-radius:10px;border:3px solid #1d1a17}
 html.scs-lock{overflow:hidden}
 .scs-root{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:flex-start;justify-content:center;
   padding:max(4.5rem,9vh) 1rem 1rem;font-family:'Manrope','Segoe UI',system-ui,sans-serif;color:#f3ede3}
@@ -49,7 +50,7 @@ html.scs-lock{overflow:hidden}
   border:0;background:transparent;color:#c7bdb0;cursor:pointer;touch-action:manipulation;transition:background-color .15s ease,color .15s ease}
 .scs-close svg{inline-size:1.1rem;block-size:1.1rem}
 @media (hover:hover){.scs-close:hover{background:rgba(243,237,227,.1);color:#f3ede3}}
-.scs-body{overflow-y:auto;overscroll-behavior:contain;padding:.4rem 0 .6rem;-webkit-overflow-scrolling:touch}
+.scs-body{scrollbar-width:thin;scrollbar-color:rgba(243,237,227,.3) transparent;overflow-y:auto;overscroll-behavior:contain;padding:.4rem 0 .6rem;-webkit-overflow-scrolling:touch}
 .scs-status{margin:.5rem 1.35rem .2rem;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:#8f8579;min-block-size:1em}
 .scs-sr{position:absolute;inline-size:1px;block-size:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .scs-list{list-style:none;margin:0;padding:.2rem .5rem}
