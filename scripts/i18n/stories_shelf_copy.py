@@ -2,6 +2,7 @@
 from pathlib import Path
 from collections import Counter
 import hashlib,json,re
+from html.parser import HTMLParser
 from bs4 import BeautifulSoup
 from i18n.catalog import read_json
 
@@ -10,6 +11,22 @@ MASTER_SHA256 = 'd8f15f97cd12c8f79d546a9e1d9b903de46635ec3e4277b67d9110394ebd1c1
 CONTRACT_SHA256 = 'b9780fd3fc43028b403ad74e8fb624b694a20196f17e75c1c138a8af1bcdcb6d'
 ENGLISH_COPY_SHA256 = '8a778a00de2b5411ccc110513dad8e852796abaa7336342cf14e61426e658cd0'
 DATA_COPY = {'data-keywords','data-one','data-many','data-match','data-none'}
+
+class _RawAttributeGuard(HTMLParser):
+    """Inspect tokenizer attribute lists before a DOM parser can discard duplicates."""
+    def handle_starttag(self, tag, attrs):
+        names = [name.lower() for name, value in attrs]
+        if len(names) != len(set(names)):
+            raise ValueError('Duplicate raw HTML attribute on ' + tag)
+
+    handle_startendtag = handle_starttag
+
+
+def reject_duplicate_attributes(text):
+    guard = _RawAttributeGuard(convert_charrefs=False)
+    guard.feed(text)
+    guard.close()
+
 
 def normalize_stories_data(soup, context):
     if context.get('family') != FAMILY or context.get('lang') not in ('ar','fr','es','pt','it','de','pl','ru','hi','th','zh-Hans') or context.get('side') not in ('en','locale') or context.get('masterSha256') != MASTER_SHA256:
@@ -30,10 +47,48 @@ def normalize_stories_data(soup, context):
     for key,value in copy.items():
         if not isinstance(value,str) or not value.strip() or re.search(r'<\s*/?\s*[A-Za-z!]',value) or set(re.findall(r'\{([A-Za-z]+)\}',value)) != set(re.findall(r'\{([A-Za-z]+)\}',english[key])):
             raise ValueError('Unsafe or placeholder-drifted Stories copy')
+    reject_duplicate_attributes(raw.decode('utf-8'))
     source = BeautifulSoup(raw, 'html.parser')
     bindings = [b for b in contract['bindings'] if b['kind'] == 'attribute' and b['attribute'] in DATA_COPY]
     if Counter(b['attribute'] for b in bindings) != Counter({'data-keywords':19,'data-one':1,'data-many':1,'data-match':1,'data-none':1}):
         raise ValueError('Stories exact data-copy set changed')
+    if soup.html is None or soup.html.get('lang', 'en') not in ('en', context['lang']):
+        raise ValueError('Stories document language disagrees with context')
+    # Main links have no registered locale twins in this family. Preserve all
+    # actual destinations; translated text and bound data are the only changes.
+    for attribute in DATA_COPY:
+        expected = source.main.select('[' + attribute + ']')
+        actual = soup.main.select('[' + attribute + ']') if soup.main else []
+        if len(actual) != len(expected):
+            raise ValueError('Unexpected Stories data-copy attribute location')
+    from urllib.parse import urljoin
+    def canonical(value):
+        return urljoin('https://marsharbel.com/stories', value)
+    twins = {}
+    registry_path = root / 'locales/registry.json'
+    if context['side'] == 'locale' and registry_path.exists():
+        from i18n.page_mirror import twin_routes
+        twins = twin_routes(read_json(registry_path), context['lang'])
+    for selector, attribute in (('main a[href]', 'href'), ('script[src]', 'src'),
+                                ('main[data-src-mp4], main [data-src-mp4]', 'data-src-mp4')):
+        originals = source.select(selector)
+        actuals = soup.select(selector)
+        if len(originals) != len(actuals):
+            raise ValueError('Stories protected destination count changed')
+        for original, actual in zip(originals, actuals):
+            value = original.get(attribute)
+            expected = {canonical(value)}
+            if attribute == 'href':
+                from urllib.parse import urlsplit, urlunsplit
+                parts = urlsplit(canonical(value))
+                if parts.netloc == 'marsharbel.com' and parts.path in twins:
+                    expected.add(urlunsplit((parts.scheme, parts.netloc, twins[parts.path], parts.query, parts.fragment)))
+            if canonical(actual.get(attribute)) not in expected:
+                raise ValueError('Stories protected destination changed')
+    def executable_scripts(document):
+        return [(canonical(node['src']) if node.has_attr('src') else None, node.get_text()) for node in document.select('script') if node.get('type') not in ('application/ld+json', 'application/json')]
+    if executable_scripts(soup) != executable_scripts(source):
+        raise ValueError('Stories executable script changed')
     pending=[]; seen=set()
     for binding in bindings:
         selector,attr = binding['selector'],binding['attribute']

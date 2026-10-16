@@ -236,6 +236,9 @@ def render_page(root,registry,lang,family,route,catalog=None):
         marked = apply_localized_source_links(marked, source_links)
     if gate:
         marked = mark_english_nav_hrefs(marked, root, lang)
+    if family == 'stories-master' and lang == 'zh-Hans':
+        from i18n.stories_zh_header import finish_stories_zh_header
+        marked = finish_stories_zh_header(marked, root, family, lang)
     return localize_travel_chrome(marked, registry, lang, family)
 
 

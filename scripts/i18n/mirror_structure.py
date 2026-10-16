@@ -19,6 +19,9 @@ def tree(node):
 
 
 def signature(text, route, normalizers=(), context=None):
+    if 'stories-keyed-data-copy' in normalizers:
+        from i18n.stories_shelf_copy import reject_duplicate_attributes
+        reject_duplicate_attributes(text)
     soup = BeautifulSoup(text, 'html.parser')
     for name in normalizers:
         if name in NORMALIZERS:

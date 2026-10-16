@@ -74,4 +74,87 @@ class StoriesDataCopy(unittest.TestCase):
                 with self.subTest(lang=lang,changed_file=str(target)),self.assertRaises(ValueError):self.compare(en,local,lang)
                 target.write_bytes(old)
 
+    def test_raw_duplicate_attributes_every_binding_side_order_locale(self):
+        from i18n.mirror_structure import INVARIANT
+        bindings=json.loads((self.root/'locales/en/stories-master-bindings.json').read_text())['bindings']
+        for lang in CODES:
+            en,local=self.texts(lang)
+            for side in ('en','locale'):
+                original=en if side=='en' else local
+                soup=BeautifulSoup(original,'html.parser')
+                cases=[(soup.select_one(b['selector']),b['attribute']) for b in bindings if b.get('attribute') in normalizer.DATA_COPY]
+                # Every other invariant, including attributes not present in the
+                # fixture, must be rejected as raw duplicates too.
+                cases += [(soup.main,attr) for attr in sorted(INVARIANT | {'href','src','data-src-mp4','data-unreviewed'})]
+                for node,attr in cases:
+                    clean=str(node)
+                    tag=clean.split('>',1)[0]+'>'
+                    if not node.has_attr(attr):
+                        node[attr]='original';clean=str(node);tag=clean.split('>',1)[0]+'>'
+                    for order in ('before','after'):
+                        with self.subTest(lang=lang,side=side,attr=attr,order=order):
+                            bad=(tag.replace('<'+node.name,'<'+node.name+' '+attr.upper()+'="ATTACK"',1) if order=='before' else tag[:-1]+' '+attr+'="ATTACK">')
+                            mutated=str(soup).replace(tag,bad,1)
+                            self.assertNotEqual(mutated,str(soup))
+                            self.assert_rejected(mutated if side=='en' else en,mutated if side=='locale' else local,lang)
+
+    def test_missing_context_keys_and_wrong_valid_language(self):
+        for lang in CODES:
+            en,local=self.texts(lang)
+            with self.subTest(lang=lang,missing_context=True),self.assertRaises(ValueError):
+                check_pair(en,local,'/stories','/stories',('stories-keyed-data-copy',))
+            wrong='fr' if lang!='fr' else 'ar'
+            with self.subTest(lang=lang,wrong_valid_language=wrong):
+                try:self.assertTrue(self.compare(en,local,wrong))
+                except (ValueError,KeyError,FileNotFoundError):pass
+            path=self.root/f'locales/{lang}/stories-master-copy.json';original=path.read_text();catalog=json.loads(original)
+            key=next(iter(catalog))
+            for variant in ('missing','empty'):
+                bad=dict(catalog)
+                if variant=='missing':bad.pop(key)
+                else:bad[key]=''
+                path.write_text(json.dumps(bad))
+                with self.subTest(lang=lang,key_case=variant):self.assert_rejected(en,local,lang)
+                path.write_text(original)
+
+    def test_binding_node_and_protected_destination_hostile_controls(self):
+        import copy
+        def duplicate(s):s.select_one('.promo-card').insert_after(copy.copy(s.select_one('.promo-card')))
+        def move(s):s.header.append(s.select_one('.promo-card').extract())
+        def swap(s):
+            a,b=s.select('.promo-card')[:2];holder=BeautifulSoup('<i></i>','html.parser').i;a.replace_with(holder);b.replace_with(a);holder.replace_with(b)
+        def wrongtag(s):s.select_one('.promo-card').name='div'
+        def extra(s):s.main['data-keywords']='unexpected'
+        def href(s):s.select_one('main a[href]')['href']='/ATTACK'
+        def script(s):s.select_one('script[src]')['src']='/ATTACK.js'
+        def inline_script(s):
+            node=s.new_tag('script');node.string='ATTACK()';s.body.append(node)
+        mutations=(duplicate,move,swap,wrongtag,extra,href,script,inline_script,
+                   lambda s:s.select_one('.promo-card').__setitem__('class',['ATTACK']),
+                   lambda s:s.select_one('.promo-card').__setitem__('id','ATTACK'),
+                   lambda s:s.main.__setitem__('data-src-mp4','/ATTACK.mp4'))
+        for lang in CODES:
+            en,local=self.texts(lang)
+            for mutate in mutations:
+                for side in ('en','locale'):
+                    with self.subTest(lang=lang,side=side,mutation=mutate.__name__):
+                        soup=BeautifulSoup(en if side=='en' else local,'html.parser');mutate(soup)
+                        self.assert_rejected(str(soup) if side=='en' else en,str(soup) if side=='locale' else local,lang)
+
+    def test_hostile_contract_binding_variants_fail_pinned_trust(self):
+        path=self.root/'locales/en/stories-master-bindings.json';original=path.read_text()
+        contract=json.loads(original)
+        def duplicate(c):c['bindings'].append(dict(c['bindings'][0]))
+        def moved(c):c['bindings'][0]['selector']='footer'
+        def swapped(c):c['bindings'][0]['key'],c['bindings'][1]['key']=c['bindings'][1]['key'],c['bindings'][0]['key']
+        def missing(c):c['bindings'][0].pop('key')
+        def empty(c):c['bindings'][0]['key']=''
+        for lang in CODES:
+            en,local=self.texts(lang)
+            for mutate in (duplicate,moved,swapped,missing,empty):
+                import copy
+                bad=copy.deepcopy(contract);mutate(bad);path.write_text(json.dumps(bad))
+                with self.subTest(lang=lang,binding=mutate.__name__):self.assert_rejected(en,local,lang)
+                path.write_text(original)
+
 if __name__=='__main__':unittest.main()
