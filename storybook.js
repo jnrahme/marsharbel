@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'augustine' ? 'augustine' : raw === 'marina' ? 'marina' : raw === 'maroun' ? 'maroun' : raw === 'sergius' ? 'sergius' : raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
+    return raw === 'longinus' ? 'longinus' : raw === 'augustine' ? 'augustine' : raw === 'marina' ? 'marina' : raw === 'maroun' ? 'maroun' : raw === 'sergius' ? 'sergius' : raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -94,6 +94,9 @@
     magdaleneLuke8: {"label": "USCCB: Luke 8, women accompanying Jesus", "url": "https://bible.usccb.org/bible/luke/8"},
     magdaleneJohn20: {"label": "USCCB: John 20, Mary and the risen Jesus", "url": "https://bible.usccb.org/bible/john/20"},
     magdaleneChurch2016: {"label": "Holy See: Mary Magdalene, apostle of the apostles", "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2016/06/10/160610c.html"},
+    longinusMark15: {label: "USCCB: Mark 15", url: "https://bible.usccb.org/bible/mark/15"},
+    longinusJohn19: {label: "USCCB: John 19", url: "https://bible.usccb.org/bible/john/19"},
+    longinusCalendar: {label: "2026 Eparchial Desk Calendar", url: "https://www.stmaron.org/s/2026-Eparchial-Desk-Calendar.pdf"},
     judeBenedict2006: {label: "Benedict XVI: Simon and Jude", url: "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20061011.html"},
     judeJohn14: {label: "USCCB: John 14 and identity note", url: "https://bible.usccb.org/bible/john/14"},
     judeLetter: {label: "USCCB: Letter of Jude", url: "https://bible.usccb.org/bible/jude/1"},
@@ -916,6 +919,7 @@
     maroun: { en: window.MAROUN_STORY_EN || [] },
     marina: { en: window.MARINA_STORY_EN || [] },
     augustine: { en: window.AUGUSTINE_STORY_EN || [] },
+    longinus: { en: window.LONGINUS_STORY_EN || [] },
     jude: { en: window.JUDE_STORY_EN || [] },
     peter: { en: window.PETER_STORY_EN || [] },
     hardini: { en: window.HARDINI_STORY_EN || [] }
@@ -983,6 +987,7 @@
   maroun: { en: [{ id: "directed-maroun", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-maroun/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   sergius: { en: [{ id: "directed-sergius", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-sergius-bacchus/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   magdalene: { en: [{ id: "directed-magdalene", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-magdalene/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  longinus: { en: [{ id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   jude: { en: [{ id: "directed-jude", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-jude/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   peter: { en: [{ id: 'kokoro-peter', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-peter/en-directed-r1' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   rafqa: { en: [
@@ -1077,6 +1082,7 @@
     <div class="scene-art scene-${scene}">
       <img class="scene-photo" src="${illustration || './gallery/charbel-portrait.jpg'}" alt="" fetchpriority="high" decoding="async" />
       <div class="scene-photo-overlay" aria-hidden="true"></div>
+      ${storyId === 'longinus' && index === 5 ? '<div id="longinus-accounts-caption"><div class="longinus-account-labels"><span>Mark: an unnamed centurion</span><span>John: an unnamed soldier</span></div><p>Tradition links these accounts with Longinus; Scripture does not name either man.</p></div>' : ''}
     </div>
   `;
 
@@ -1418,6 +1424,7 @@
       && el.art.querySelector(`.scene-art.scene-${page.scene}`);
     if (!sameScene) el.art.innerHTML = sceneMarkup(page.scene, illustration);
     renderEvidence(index, page);
+    if (storyId === "longinus") el.art.setAttribute("aria-hidden", index === 5 ? "false" : "true");
     el.art.setAttribute('data-scene', page.scene);
     el.prev.disabled = index === 0;
     el.next.disabled = index === pages.length - 1;
