@@ -27,7 +27,11 @@ MIRACLES_CAP_EN = ('At the tomb of Saint Charbel in Annaya, where pilgrims bring
                    'prayers and the monastery gathers the recorded miracles.')
 MIRACLES_CAP_DE = ('Am Grab des heiligen Charbel in Annaya, wo Pilger ihre Gebete und '
                    'Anliegen vorbringen und das Kloster die verzeichneten Wunder sammelt.')
-MIRACLES_ALT_DE = 'Pilger am Grab des heiligen Charbel in Annaya.'
+# scrum 2026-10-15 pilgrimage ruling applies to this photo too: the shipped
+# charbel-tomb-pilgrims.webp is an empty candlelit tomb chapel (no people), so
+# the intentional alt is the candlelit wording; the earlier pilgrims alt
+# described people absent from the frame.
+MIRACLES_ALT_DE = 'Die kerzenbeleuchtete Grabkapelle des heiligen Charbel in Annaya.'
 AERIAL_ALT_DE = 'Das Kloster St. Maron in Annaya aus der Luft, mit der Kirche und dem Berghang'
 
 NOV_CAP = ('The monastery of Saint Maron in Annaya, whose monks published the '
@@ -91,6 +95,48 @@ SHA_JOBS = [
 ]
 
 
+def validate_applied(job, catalog, new_sources):
+    """Narrow --check validation of an already-applied catalog.
+
+    Positive controls: every job.new_text source is bound exactly once to its
+    expected translation; changed attribute/top-alt values equal their
+    expected values. Negative controls: no slot carries a source the master
+    no longer has, no untranslated passthrough, retired image attribute keys
+    are gone.
+    """
+    problems = []
+    slots = catalog['slots']
+    for source, expected in job['new_text'].items():
+        matches = [s for s in slots.values() if s['source'] == source]
+        if len(matches) != 1:
+            problems.append(f"new_text source bound {len(matches)}x (want exactly 1): {source[:60]}")
+        elif matches[0]['text'] != expected:
+            problems.append(f"new_text translation mismatch for: {source[:60]}")
+        elif job['lang'] != 'en' and matches[0]['text'] == source:
+            problems.append(f"untranslated passthrough for: {source[:60]}")
+    for s in slots.values():
+        if s['source'] not in new_sources:
+            problems.append(f"slot source absent from master: {s['source'][:60]}")
+    attrs = catalog.get('attributes', {})
+    if job['old_img']:
+        old_keys = [k for k in attrs if job['old_img'] in k]
+        new_keys = [k for k in attrs if job['new_img'] in k]
+        if old_keys:
+            problems.append(f"retired image attribute key still present: {old_keys[0]}")
+        if not new_keys:
+            problems.append(f"replacement image attribute key missing ({job['new_img']})")
+        elif job['new_alt'] is not None:
+            for key in new_keys:
+                if attrs[key].get('alt') != job['new_alt']:
+                    problems.append(f"replacement attribute alt mismatch on {key}")
+    for sel, alt in job['alt_sets'].items():
+        if attrs.get(sel, {}).get('alt') != alt:
+            problems.append(f"alt_sets expected value mismatch on {sel}")
+    if job['top_alt'] is not None and catalog.get('alt') != job['top_alt']:
+        problems.append("top-level alt does not equal expected value")
+    return problems
+
+
 def refresh_exact(job, check=False):
     cat_p = ROOT / f"locales/{job['lang']}/{job['name']}-exact.json"
     catalog = json.loads(cat_p.read_text())
@@ -120,8 +166,12 @@ def refresh_exact(job, check=False):
              or any(attrs.get(sel, {}).get('alt') != alt for sel, alt in job['alt_sets'].items())
              or any(kind == 'new' for kind, _ in plan))
     if check:
-        ok = not stale
-        print(f"{job['lang']}/{job['name']}-exact: {'OK' if ok else 'NOT APPLIED'}")
+        problems = [] if stale else validate_applied(job, catalog, new_sources)
+        ok = not stale and not problems
+        status = 'OK' if ok else ('NOT APPLIED' if stale else 'INVALID')
+        print(f"{job['lang']}/{job['name']}-exact: {status}")
+        for problem in problems:
+            print(f"  - {problem}")
         return ok
     if not stale:
         print(f"{job['lang']}/{job['name']}-exact: already applied")
