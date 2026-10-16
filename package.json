@@ -40,7 +40,9 @@
     "i18n:test": "python3 -m unittest discover -s scripts/qa -p \"test_i18n.py\"",
     "build:pages": "node scripts/build-pages.mjs",
     "test:pages-sync": "node scripts/build-pages.mjs --check && node scripts/books/shelf.mjs --check",
-    "qa:compare-served": "scripts/qa/compare-served.sh"
+    "qa:compare-served": "scripts/qa/compare-served.sh",
+    "build:search-index": "node scripts/build-search-index.mjs",
+    "test:search": "node --test scripts/tests/search_core.test.mjs scripts/tests/search_index.test.mjs && node scripts/build-search-index.mjs --check"
   },
   "keywords": [],
   "author": "",
