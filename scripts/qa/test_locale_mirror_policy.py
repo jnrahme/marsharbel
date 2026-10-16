@@ -69,6 +69,9 @@ class LocaleMirrorPolicy(unittest.TestCase):
                 from i18n.localized_source_links import resolve_family
                 context={'family':resolve_family(self.registry,entry['master'],entry['route'],entry['locale']),
                          'lang':entry['locale']}
+                if 'stories-keyed-data-copy' in normalizers:
+                    from i18n.stories_policy_context import trusted_context
+                    context=trusted_context(ROOT,self.registry,entry)
             differences=check_pair((ROOT/entry['master']).read_text(),(ROOT/path).read_text(),entry['masterRoute'],entry['route'],normalizers,context)
             self.assertEqual(differences,[],f'{path}: divergence from {entry["master"]}')
 

@@ -1,0 +1,22 @@
+PR #837 Stories strict mirror-policy registration ruling
+Reviewer: Independent Quality / Scrum reviewer.
+October16,2026,18:42EDT
+Inspected basis: f9210389cdaaefc3dde33058be4bdfe4cfd82bdd.
+Disposition: ACCEPT the proposed exact11entry registration and narrowly scoped trusted-context adapter, subject to the conditions below. NOT final successor implementation approval or CI/release clearance.
+
+Register exactly ar,fr,es,pt,it,de,pl,ru,hi,th,zh-Hans Stories pages as strict: file <locale>/stories.html; route /<locale>/stories; master templates/masters/stories.html; masterRoute /stories; family stories-master. No exceptions, migration-debt, extracted-feature, wildcard coverage or removed prior entries. Preserve exact filesystem-to-policy membership equality.
+Use only the already reviewed normalizers actually required by the existing renderer/normalizer contract; Stories keyed-data normalization must remain present and unchanged. Do not introduce blanket attribute, script, link, DOM or text stripping. Preserve negative controls that enforce the194key/220binding contract and immutable accepted source data.
+
+Trusted context must be computed, not accepted from new policy scalars or candidate HTML:
+- Confirm exact policy file/locale/route/master/family identity against the Stories registry family, including that locale in renderLocales and its exact same-locale registered route.
+- Resolve family through the existing registered-family resolver, not by trusting entry.family alone.
+- Read exact frozen master bytes from the registered master path. Compute SHA256 and require equality to the existing i18n.stories_shelf_copy.MASTER_SHA256 constant d8f15f97cd12c8f79d546a9e1d9b903de46635ec3e4277b67d9110394ebd1c13.
+- Pass computed masterSha256 plus existing family/lang into check_pair; use the owning review root as needed by the existing normalizer. Do not copy a claimed hash from policy, bindings or rendered HTML as trusted context.
+- Keep the existing Stories normalizer code, both-side signature comparison and all current structural assertions unchanged. Other families must keep their existing adapter path/context.
+
+Proof required on successor
+All11real Stories entries must pass strict check_pair through the actual policy adapter. Negative controls must reject altered master bytes even when another file claims the old hash, wrong master path, family, locale/route, missing render membership, malformed/extra entry, missing context and localized keyed data/attributes/scripts drift. Keep the policy's exact-page inventory and no-exceptions assertions, and run full policy suite. A context adapter is appropriate; weakening the normalizer to accept absent masterSha256 is not.
+
+Reason
+The new files are missing from a mandatory explicit coverage inventory, not evidence of changed translation quality. The generic adapter supplies family/lang only, while the existing Stories normalizer intentionally requires a verified frozen-master hash. Supplying that hash from actual registered frozen bytes preserves its gate; deriving it from an assertion in the new entry would not.
+No old hashes/pins, source normalizers or existing policy assertions may be changed to admit this family. Review and registry preparation remain distinct from held public release. No mutation by reviewer.

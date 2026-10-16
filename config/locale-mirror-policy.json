@@ -3191,6 +3191,148 @@
         "partial-home-disclosure",
         "localized-source-links"
       ]
+    },
+    "ar/stories.html": {
+      "locale": "ar",
+      "route": "/ar/stories",
+      "master": "templates/masters/stories.html",
+      "masterRoute": "/stories",
+      "family": "stories-master",
+      "status": "strict",
+      "normalizers": [
+        "stories-keyed-data-copy",
+        "english-nav-disclosure",
+        "launch-availability-annotations"
+      ]
+    },
+    "fr/stories.html": {
+      "locale": "fr",
+      "route": "/fr/stories",
+      "master": "templates/masters/stories.html",
+      "masterRoute": "/stories",
+      "family": "stories-master",
+      "status": "strict",
+      "normalizers": [
+        "stories-keyed-data-copy",
+        "english-nav-disclosure",
+        "launch-availability-annotations"
+      ]
+    },
+    "es/stories.html": {
+      "locale": "es",
+      "route": "/es/stories",
+      "master": "templates/masters/stories.html",
+      "masterRoute": "/stories",
+      "family": "stories-master",
+      "status": "strict",
+      "normalizers": [
+        "stories-keyed-data-copy",
+        "english-nav-disclosure",
+        "launch-availability-annotations"
+      ]
+    },
+    "pt/stories.html": {
+      "locale": "pt",
+      "route": "/pt/stories",
+      "master": "templates/masters/stories.html",
+      "masterRoute": "/stories",
+      "family": "stories-master",
+      "status": "strict",
+      "normalizers": [
+        "stories-keyed-data-copy",
+        "english-nav-disclosure",
+        "launch-availability-annotations"
+      ]
+    },
+    "it/stories.html": {
+      "locale": "it",
+      "route": "/it/stories",
+      "master": "templates/masters/stories.html",
+      "masterRoute": "/stories",
+      "family": "stories-master",
+      "status": "strict",
+      "normalizers": [
+        "stories-keyed-data-copy",
+        "english-nav-disclosure",
+        "launch-availability-annotations"
+      ]
+    },
+    "de/stories.html": {
+      "locale": "de",
+      "route": "/de/stories",
+      "master": "templates/masters/stories.html",
+      "masterRoute": "/stories",
+      "family": "stories-master",
+      "status": "strict",
+      "normalizers": [
+        "stories-keyed-data-copy",
+        "english-nav-disclosure",
+        "launch-availability-annotations"
+      ]
+    },
+    "pl/stories.html": {
+      "locale": "pl",
+      "route": "/pl/stories",
+      "master": "templates/masters/stories.html",
+      "masterRoute": "/stories",
+      "family": "stories-master",
+      "status": "strict",
+      "normalizers": [
+        "stories-keyed-data-copy",
+        "english-nav-disclosure",
+        "launch-availability-annotations"
+      ]
+    },
+    "ru/stories.html": {
+      "locale": "ru",
+      "route": "/ru/stories",
+      "master": "templates/masters/stories.html",
+      "masterRoute": "/stories",
+      "family": "stories-master",
+      "status": "strict",
+      "normalizers": [
+        "stories-keyed-data-copy",
+        "english-nav-disclosure",
+        "launch-availability-annotations"
+      ]
+    },
+    "hi/stories.html": {
+      "locale": "hi",
+      "route": "/hi/stories",
+      "master": "templates/masters/stories.html",
+      "masterRoute": "/stories",
+      "family": "stories-master",
+      "status": "strict",
+      "normalizers": [
+        "stories-keyed-data-copy",
+        "english-nav-disclosure",
+        "launch-availability-annotations"
+      ]
+    },
+    "th/stories.html": {
+      "locale": "th",
+      "route": "/th/stories",
+      "master": "templates/masters/stories.html",
+      "masterRoute": "/stories",
+      "family": "stories-master",
+      "status": "strict",
+      "normalizers": [
+        "stories-keyed-data-copy",
+        "english-nav-disclosure",
+        "launch-availability-annotations"
+      ]
+    },
+    "zh-Hans/stories.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/stories",
+      "master": "templates/masters/stories.html",
+      "masterRoute": "/stories",
+      "family": "stories-master",
+      "status": "strict",
+      "normalizers": [
+        "stories-keyed-data-copy",
+        "english-nav-disclosure"
+      ]
     }
   }
 }
