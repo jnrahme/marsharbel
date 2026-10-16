@@ -1,0 +1,60 @@
+TR006 independent full-family written verdict
+
+Reviewer: Independent Quality / Scrum reviewer, separate from the locale producer.
+Review completed: October 16, 2026, 16:48 EDT.
+Written attachment and manifest reconciliation: October 16, 2026, 17:38 EDT.
+Disposition: PASS for the corrected isolated full-family catalog/renderer review.
+NOT release approval. Existing release, prayer-source and other scoped holds stand.
+
+Accepted artifact identity
+Base: 6662ce5dc23a9f0962e0fba2aad14252fff2d1d5 (#835).
+Frozen English master SHA256: d8f15f97cd12c8f79d546a9e1d9b903de46635ec3e4277b67d9110394ebd1c13.
+Original 16:25 archive SHA256: 4de8396c110802f0ca607e9da30ff1c22937fb1aef3ac18e84925abb187b67b2.
+Original SHA256.json digest: 0612255c0a135c4a7a705e9a13ebc4acf3fc456c65eb687bf0c467bc306ff18a.
+That original manifest accurately describes the old archive, NOT the final corrected composition.
+Accepted composition is that archive with only TH/HI/DE catalogs replaced by the accepted three-key delta and their three HTMLs replaced by the corrected 16:47 full-family renders. Top-level draft catalogs and exact-path integration input catalogs must both carry the replacements (9 file replacements total). The other eight locales are unchanged.
+The 16:46 partial-cluster HTMLs are rejected and superseded; no approval applies to them.
+
+Final reconciled manifest: TR006-FINAL-RECONCILED-MANIFEST-20261016.txt
+SHA256 of that .txt manifest: 1c6cb58f081486bc1f5c65158ace2b81aa48ac45b373aa803b42f37c740ea481
+Contains 108 final content records, recalculated from the reconciled local review composition, and the nine exact replacement mappings. Historical logs and summaries from 16:25 remain historical, not final-byte receipts. No new zip is asserted or assigned the old archive's hash.
+
+Scope and method
+Independently read all 194 catalog strings in all 11 locales against the frozen English master, including all 52 expanded chrome/footer keys. Checked 220 bindings per locale. Reproduced all original 11 HTML outputs byte-for-byte with the current renderer. Reviewed the three bounded terminology/grammar corrections, then independently reproduced final TH/HI/DE HTML and matched the producer's corrected files byte-for-byte. Each final candidate retains 13 hreflang alternates.
+
+Evidence results
+- 88 isolated per-locale normalizer method runs PASS, plus 7 Chinese header controls PASS. Current fixtures match integration inputs, rather than an older thin contract.
+- 1,716 isolated expanded-key rejection controls PASS: 52 keys x 3 invalid values x 11 locales.
+- 220 visible/attribute bindings per locale match the catalog.
+- Four visible FAQ Q&As per locale match their schema exactly.
+- All English-target header links have the reviewed English-language disclosure.
+- Real local browser coverage at 390/768/1280 across all 11 locales: 33 views, 627 title-query checks, no-match and clear checks; no new document overflow, broken images or page errors.
+- Actual pixels inspected for all 19 cards per locale, locale tops and footers, and all nine corrected TH/HI/DE dropdown views. Arabic actual production font bytes loaded and inspected. No new clipping or overlap blocker in this bounded change.
+- This is local browser verification, not physical-phone testing, live-production verification or native-speaker certification.
+
+Accepted copy changes
+TH Patriarchate: เบอร์เคและเขตอัครบิดรมารอไนต์
+HI Patriarchate: बकेरके और मारोनी प्राधिधर्माध्यक्षीय पीठ
+DE Lebanon: Der Libanon des heiligen Charbel
+Hindi title root and adjective are attested in Vatican News Hindi. The complete institutional phrase is editorial wording, not an official verbatim quotation. The earlier concern that the Hindi root itself was malformed was withdrawn after primary-source verification.
+
+Remaining release gates, not closed by this verdict
+Shared same-page route manifest/discovery wiring; English Stories reciprocity and language-entry reachability; exact integrated-head CI; post-deploy full-family journeys. In the reviewed isolated browser state, all 12 language options exist but 11 are disabled on every candidate, including English: only the current locale is enabled. Static alternates do not establish a connected runtime family. Existing shared header/composer redesign is separate.
+Book bodies remain English and localized narration is not available for every book. The localized intro/FAQ disclose this; this review does not count reader bodies or audio as translated.
+No merge, deploy, release, publish, spend, generation, schedule change or registry write was performed for this verdict or reconciliation.
+
+Audience benefit
+Families can understand and filter the Stories shelf in their language without being promised a translated reader or audio that is not present. Correct institutional labels preserve Church meaning. Clearer discovery is the intended benefit, not a measured traffic or growth claim.
+
+Final candidate HTML SHA256, by locale
+ar: 53762ab4053d196d1f3ff65eeeb333ae4ececf76a69263c960747896a81c2be2
+fr: 482ced732d524c287d16eeddd65adf37d4f4c0a4872a10b8f624754163fb3de3
+es: 6fcf6fc3c3f93e40da3789c3c5b995a1ad48fc46998607d495861d66e6e8f81e
+pt: ad616f3077ae3c3c979497c542e0b8761dca2f052719c6a5cdc2fe78099f71e8
+it: 434b1dfff74c8d328d48464436330f4a919d04e8c240c00ae1c38e1656f731e6
+de: 138f523e266e0e3cd36d326129484a997d102a06efe14d6efa1b048633f3c976
+pl: d5f7fc7a1199f8a1f0193bbab9c17d07dd9d17347023c0a797346f5101c9357f
+ru: 0de68b770cf831c4213ec92b213b25e22e342d2c4a4dd2992f78a3b9a44aa99d
+hi: 1f7656d27dee5fa0503063103ddb31122084aa284a34737856b1b50fa07aede5
+th: a39db65beafef4f12e6ca219f41663353a705508fe98d44a3fd9720e5c3fc9d8
+zh-Hans: 07713b2c0592825058e456f8cab7af17dc6ce56e0f76b0259151fb5c4b3fb74a

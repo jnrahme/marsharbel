@@ -288,7 +288,8 @@
         "mirrorTabs": [
           "travel",
           "film",
-          "prayers"
+          "prayers",
+          "stories"
         ],
         "runtime": true,
         "selectorCopy": true
@@ -1788,6 +1789,51 @@
       "renderLocales": [
         "ar"
       ]
+    },
+    "stories-master": {
+      "english": "/stories",
+      "routes": {
+        "ar": "/ar/stories",
+        "fr": "/fr/stories",
+        "es": "/es/stories",
+        "pt": "/pt/stories",
+        "it": "/it/stories",
+        "de": "/de/stories",
+        "pl": "/pl/stories",
+        "ru": "/ru/stories",
+        "hi": "/hi/stories",
+        "th": "/th/stories",
+        "zh-Hans": "/zh-Hans/stories"
+      },
+      "renderLocales": [
+        "ar",
+        "fr",
+        "es",
+        "pt",
+        "it",
+        "de",
+        "pl",
+        "ru",
+        "hi",
+        "th",
+        "zh-Hans"
+      ],
+      "discoveryRoutes": {
+        "en": "/stories",
+        "x-default": "/stories",
+        "ar": "/ar/stories",
+        "fr": "/fr/stories",
+        "es": "/es/stories",
+        "pt": "/pt/stories",
+        "it": "/it/stories",
+        "de": "/de/stories",
+        "pl": "/pl/stories",
+        "ru": "/ru/stories",
+        "hi": "/hi/stories",
+        "th": "/th/stories",
+        "zh-Hans": "/zh-Hans/stories"
+      },
+      "master": "templates/masters/stories.html"
     }
   },
   "limitedLaunchLocales": [

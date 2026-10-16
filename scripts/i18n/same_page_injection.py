@@ -186,6 +186,8 @@ def control_outputs(root, texts, manifest, copy):
     manifest = release_manifest(root,texts,manifest)
     from i18n.reviewed_prayers import prayer_manifest
     manifest = prayer_manifest(root,texts,manifest)
+    from i18n.reviewed_stories import stories_manifest
+    manifest = stories_manifest(root,texts,manifest)
     from i18n.ar2_equivalence import ar2_manifest
     manifest = ar2_manifest(root,texts,manifest)
     out={}

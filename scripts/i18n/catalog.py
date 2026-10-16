@@ -219,6 +219,8 @@ def mirror_tab(group, name, family):
         return 'history'
     if group == 'pageMirrors' and name in PRAYER_FAMILIES and family['english'] == PRAYER_FAMILIES[name][0]:
         return 'prayers'
+    if group == 'pageMirrors' and (name, family['english'], family.get('master', 'templates/masters/stories.html')) == ('stories-master', '/stories', 'templates/masters/stories.html'):
+        return 'stories'
     if family['english'] in TRAVEL_ROUTES:
         return 'travel'
     return None
@@ -239,7 +241,7 @@ def validate_capabilities(registry, code):
             raise ValueError(f'{code}: invalid {field} capability')
     if set(caps['topicGuides']) != set(locale_topics(registry, code)):
         raise ValueError(f'{code}: topic capability differs from publication')
-    if not set(caps['mirrorTabs']) <= {'travel', 'prayers', 'history', 'film'}:
+    if not set(caps['mirrorTabs']) <= {'travel', 'prayers', 'history', 'film', 'stories'}:
         raise ValueError(f'{code}: unknown mirror tab')
     membership = code in registry.get('homePublicationLocales', [])
     if caps['home'] != membership or (not caps['home'] and 'home' in config):

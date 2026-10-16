@@ -1,0 +1,3019 @@
+{
+  "scope": "focused local Stories outputs, not live/full-suite approval",
+  "views": 36,
+  "browserJourneys": 144,
+  "samePageSelectors": 1,
+  "enabledOptions": 12,
+  "alternatesPerRoute": 13,
+  "resourceAndPageErrors": 0,
+  "visualInspection": "all twelve phone top screenshots inspected in contact sheet; individual AR/DE phone and EN desktop inspected; full33-view pre-integration pixels already covered by accepted isolated verdict, no repeat catalog review",
+  "unverified": "full integrated page/desktop pixel walk, locale entry clicks, exact-head CI and independent final review; no live/release",
+  "failedAttempts": [
+    "nonexistent harness anchor",
+    "service worker local cache interference",
+    "batch killed at outer execution deadline"
+  ],
+  "news": "src/pages/news.html and EN news.html unchanged; AR news only Stories nav destination/disclosure changed, metadata/body unchanged",
+  "runs": [
+    {
+      "code": "en",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "ar",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "fr",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "es",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "en",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "ar",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "fr",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "es",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "en",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "ar",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "fr",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "es",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "pt",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "it",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "pt",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "it",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "pt",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "it",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "de",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "pl",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "de",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "pl",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "de",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "pl",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "ru",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "ru",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "ru",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "hi",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "th",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "zh-Hans",
+      "width": 390,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": [
+        {
+          "to": "en",
+          "path": "/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ar",
+          "path": "/ar/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "fr",
+          "path": "/fr/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "es",
+          "path": "/es/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pt",
+          "path": "/pt/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "it",
+          "path": "/it/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "de",
+          "path": "/de/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "pl",
+          "path": "/pl/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "ru",
+          "path": "/ru/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "hi",
+          "path": "/hi/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "th",
+          "path": "/th/stories",
+          "hash": "#shelf-lebanon"
+        },
+        {
+          "to": "zh-Hans",
+          "path": "/zh-Hans/stories",
+          "hash": "#shelf-lebanon"
+        }
+      ]
+    },
+    {
+      "code": "hi",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "th",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "zh-Hans",
+      "width": 768,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "hi",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "th",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    },
+    {
+      "code": "zh-Hans",
+      "width": 1280,
+      "selectors": 1,
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://marsharbel.com/stories"
+        },
+        {
+          "lang": "ar",
+          "href": "https://marsharbel.com/ar/stories"
+        },
+        {
+          "lang": "fr",
+          "href": "https://marsharbel.com/fr/stories"
+        },
+        {
+          "lang": "es",
+          "href": "https://marsharbel.com/es/stories"
+        },
+        {
+          "lang": "pt",
+          "href": "https://marsharbel.com/pt/stories"
+        },
+        {
+          "lang": "it",
+          "href": "https://marsharbel.com/it/stories"
+        },
+        {
+          "lang": "de",
+          "href": "https://marsharbel.com/de/stories"
+        },
+        {
+          "lang": "pl",
+          "href": "https://marsharbel.com/pl/stories"
+        },
+        {
+          "lang": "ru",
+          "href": "https://marsharbel.com/ru/stories"
+        },
+        {
+          "lang": "hi",
+          "href": "https://marsharbel.com/hi/stories"
+        },
+        {
+          "lang": "th",
+          "href": "https://marsharbel.com/th/stories"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://marsharbel.com/zh-Hans/stories"
+        }
+      ],
+      "overflow": false,
+      "errors": [],
+      "failed": [],
+      "journey": []
+    }
+  ]
+}

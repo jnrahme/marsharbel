@@ -45,6 +45,10 @@ def validate_variant(root,family,code,variant,text,final=True):
     # The committed file may already carry the exact English-destination header marking;
     # the reviewed candidate is the file with that marking stripped (strict inverse).
     candidate=strip_for_locale(root,code,(root/file).read_text());before=blob(root,base,file)
+    if code in ('de','ru'):
+        from i18n.stories_header_twin_delta import inverse
+        original = strip_for_locale(root,code,blob(root,'194b3cb965173162e0890833013760ed6b4f0573',file))
+        candidate = inverse(root,family,code,candidate,original)
     if sha(candidate)!=ev.get('candidateFileSha256') or sha(candidate)!=variant.get('candidateFileSha256'):raise ValueError('Annaya prepared candidate digest mismatch')
     if digest(candidate)!=ev.get('bodySha256') or digest(candidate)!=variant.get('bodySha256') or digest(text)!=digest(candidate):raise ValueError('Annaya candidate/current main drift')
     if remainder(before)!=remainder(candidate):raise ValueError('Annaya non-hero main changed')
@@ -52,7 +56,9 @@ def validate_variant(root,family,code,variant,text,final=True):
     if sha(master)!=ev.get('masterSha256'):raise ValueError('Annaya master drift')
     if final:
         from i18n.header_marking_delta import strip_for_locale
-        if sha(strip_for_locale(root,code,text))!=sha(candidate):raise ValueError('Annaya post-review full-file drift')
+        from i18n.stories_header_twin_delta import inverse
+        amended = inverse(root,family,code,strip_for_locale(root,code,text),candidate)
+        if sha(amended)!=sha(candidate):raise ValueError('Annaya post-review full-file drift')
     catalogs={f'locales/en/{family}-bindings.json',f'locales/{code}/{family}-copy.json'}
     # The shared EN row binds both families; each locale row binds its owner.
     if code=='en':catalogs={f'locales/en/{f}-{suffix}.json' for f in FAMILIES for suffix in ('bindings','copy')}
