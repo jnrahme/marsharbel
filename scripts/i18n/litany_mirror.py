@@ -1,3 +1,5 @@
+from i18n.encyclopedia_nav import finish_nav
+from i18n.shared_chrome import shared_header_chrome
 """Arabic litany mirror: preserve the English DOM and fail on untranslated master edits."""
 from bs4 import BeautifulSoup
 import json,re
@@ -42,6 +44,10 @@ def render_litany(root=ROOT):
     mirrors=read_json(root/'locales/registry.json').get('authoredMirrors',{})
     if 'chaplet' in mirrors and 'ar' in mirrors['chaplet']['routes']:
         mapped['saint-charbel-chaplet']=mirrors['chaplet']['routes']['ar']
+    # AR-2 body-link follow-up: prayer-library twin resolves from the registry.
+    prayer_library=read_json(root/'locales/registry.json')['pageMirrors']['prayer-library-master']['routes']['ar']
+    mapped['prayer-library']=prayer_library
+    mapped['prayer-library#find-a-prayer']=prayer_library+'#find-a-prayer'
     for a in soup.select('a[href]'):
         href=a['href'];path=href.removeprefix('./')
         if path in mapped:a['href']=mapped[path]
@@ -54,6 +60,7 @@ def render_litany(root=ROOT):
     en=read_json(root/'locales/en/mirrors/prayers.json');ar=read_json(root/'locales/ar/mirrors/prayers.json')
     chrome={v:ar[k] for k,v in en.items() if k.startswith('header.') and k in ar and isinstance(v,str)}
     chrome.update({'Saint Charbel':'مار شربل','Primary':'التنقل الرئيسي'})
+    chrome.update(shared_header_chrome(root,'ar'))
     for node in soup.select_one('header.topbar').find_all(string=True):
         old=str(node);key=old.strip()
         if key in chrome:node.replace_with(old.replace(key,chrome[key]))
@@ -63,4 +70,4 @@ def render_litany(root=ROOT):
     links='\n'.join(f'  <link rel="alternate" hreflang="{code}" href="https://marsharbel.com{route}" />' for code,route in [('x-default',config['english']),*config['routes'].items()])
     def alternates(text):
         return re.sub(r'<!-- hreflang:begin -->.*?<!-- hreflang:end -->','<!-- hreflang:begin -->\n'+links+'\n  <!-- hreflang:end -->',text,flags=re.S)
-    return {root/'ar/litany-of-saint-charbel.html':alternates(str(soup)),root/'litany-of-saint-charbel.html':alternates((root/'litany-of-saint-charbel.html').read_text())}
+    return {root/'ar/litany-of-saint-charbel.html':finish_nav(alternates(str(soup)),root,'ar'),root/'litany-of-saint-charbel.html':alternates((root/'litany-of-saint-charbel.html').read_text())}

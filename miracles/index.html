@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -34,11 +22,11 @@
   <meta property="og:title" content="Saint Charbel Miracles | Verified Reports & Testimonies" />
   <meta property="og:description" content="The latest Saint Charbel miracle reports and healings recorded at Annaya, clearly separated from the miracles formally recognized by the Catholic Church." />
   <meta property="og:url" content="https://marsharbel.com/miracles/" />
-  <meta property="og:image" content="https://marsharbel.com/media/annaya/annaya-entrance-pilgrims.webp" />
+  <meta property="og:image" content="https://marsharbel.com/media/annaya/charbel-tomb-pilgrims.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Saint Charbel Miracles | Verified Reports & Testimonies" />
   <meta name="twitter:description" content="The latest Saint Charbel miracle reports and healings recorded at Annaya, clearly separated from the miracles formally recognized by the Catholic Church." />
-  <meta name="twitter:image" content="https://marsharbel.com/media/annaya/annaya-entrance-pilgrims.webp" />
+  <meta name="twitter:image" content="https://marsharbel.com/media/annaya/charbel-tomb-pilgrims.webp" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -86,7 +74,7 @@
     "@type": "Article",
     "headline": "Documented Legacy, Living Testimony",
     "image": [
-      "https://marsharbel.com/media/annaya/annaya-entrance-pilgrims.webp"
+      "https://marsharbel.com/media/annaya/charbel-tomb-pilgrims.webp"
     ],
     "author": {
       "@type": "Organization",
@@ -146,10 +134,12 @@
   <link rel="preload" href="../media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/miracles/" />
-  <link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/miracles/" />
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/miracles/" />
+<link rel="alternate" hreflang="en" href="https://marsharbel.com/miracles/" />
+<link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/miracles/" />
+<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/miracles/" />
+<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/miracles/" />
 <!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -162,9 +152,9 @@
       <nav class="links" aria-label="Primary">
         <a href="../">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="../stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="../saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="../stories">Saint Storybooks</a>
+        <a href="../saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="../history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -172,11 +162,15 @@
         <div class="nav-sub">
         <a class="active" href="../miracles/" aria-current="page">Miracles & Reports</a>
         <a href="../miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="../news">Latest News</a>
         <a href="../testimonies">Letters</a>
         <a href="../voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="../saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="../saints">Saints</a>
+        <a href="../stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="../prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -200,8 +194,9 @@
         <a href="../become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="../visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="../travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="../travel">Travel</a>
         <a href="../visit-annaya">Visiting Annaya</a>
         <a href="../annaya-tour">Annaya Online Tour</a>
         <a href="../bekaa-kafra">Bekaa Kafra</a>
@@ -215,7 +210,14 @@
         <a href="../saint-charbel-hermitage">The Hermitage</a>
         <a href="../saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="../news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="../music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="../music">Music</a>
+        <a href="../videos">Video</a>
         <a href="../gallery">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
@@ -230,11 +232,12 @@
         recorded and reported miracles, and keeps them clearly separate from the miracles formally
         recognized by the Catholic Church.
       </p>
-      <figure class="hero-figure"><img src="../media/annaya/annaya-entrance-pilgrims.webp" alt="A pilgrim touching the statue of Saint Charbel at the monastery entrance in Annaya" width="1100" height="733" loading="lazy" /><figcaption>At the monastery entrance in Annaya: a pilgrim reaches up to Saint Charbel's statue, beneath the mural of the saint. Photograph: LLEW, <a href="https://commons.wikimedia.org/wiki/File:St_Charbel_Makhlouf_Annaya.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption></figure>
+      <figure class="hero-figure"><img src="../media/annaya/charbel-tomb-pilgrims.webp" alt="The candlelit tomb chapel of Saint Charbel in Annaya" width="1000" height="667" loading="lazy" /><figcaption>At the tomb of Saint Charbel in Annaya, where pilgrims bring their prayers and the monastery gathers the recorded miracles.</figcaption></figure>
       <div class="cta-row reveal">
         <a class='btn primary' href='../miracles/'>Miracles Overview</a>
         <a class='btn subtle' href='../testimonies'>Read Approved Letters</a>
       </div>
+      <figure class="scripture-quote"><blockquote><p>"Thou art the God that dost wonders. Thou hast made thy power known among the nations…"</p></blockquote><figcaption><cite>Psalm 76:15 (Douay-Rheims; Psalm 77:14 in modern numbering)</cite></figcaption><p class="scripture-note">The Psalm turns every wonder into praise of God. Read the reports below with that focus, and with the caveats they carry.</p></figure>
     </section>
 
     <section class="section" id="eucharistic-miracles" aria-labelledby="eucharistic-title">
@@ -434,6 +437,10 @@
     <section class="section">
       <h2 class="reveal">Latest Recorded and Reported Miracles</h2>
       <p class="section-sub reveal">Newest first. "Recorded at Annaya" means the monastery's registrar entered the case in its archive; it is not equivalent to formal Vatican recognition.</p>
+<!-- nader-reported-context:begin -->
+<p data-nader-reported-context>The Family of Saint Sharbel also publishes a collection of messages that Raymond Nader attributes to Saint Charbel in his reported spiritual experiences. These are presented here as reported experiences, not as the saint&#x27;s surviving writings or Church-recognized miracles.</p>
+<p><a href="https://www.familyofsaintsharbel.org/experiences.html" rel="noopener" target="_blank">Read the reported experiences and messages</a></p>
+<!-- nader-reported-context:end -->
       <div class="grid-2">
         <article class="card update reveal">
           <span class="tag ok">January 2026 &middot; Recorded at Annaya</span>
@@ -524,19 +531,26 @@
         </ul>
       </div>
     </section>
-  <!-- i18n-navigation:start -->
-<nav class="footer-locales" aria-label="Languages"><a href="/" hreflang="en" lang="en" dir="ltr">English</a> <span aria-hidden="true">-</span> <a href="/ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a> <span aria-hidden="true">-</span> <a href="/fr/" hreflang="fr" lang="fr" dir="ltr">Français</a> <span aria-hidden="true">-</span> <a href="/es/" hreflang="es" lang="es" dir="ltr">Español</a> <span aria-hidden="true">-</span> <a href="/pt/" hreflang="pt" lang="pt" dir="ltr">Português</a> <span aria-hidden="true">-</span> <a href="/it/" hreflang="it" lang="it" dir="ltr">Italiano</a> <span aria-hidden="true">-</span> <a href="/de/" hreflang="de" lang="de" dir="ltr">Deutsch</a> <span aria-hidden="true">-</span> <a href="/pl/" hreflang="pl" lang="pl" dir="ltr">Polski</a></nav>
-<!-- i18n-navigation:end -->
+  
   </main>
 
   <footer class="footer">
     <div class="site-shell">Miracles page updated September 20, 2026 with the latest recorded cases and verification-status caveats. Author: Please pray for the person who made this website.</div>
-  </footer>
+  <div class="site-shell">
+<!-- i18n-navigation:start -->
+<nav aria-label="Languages" class="footer-locales"><a dir="ltr" href="/" hreflang="en" lang="en">English</a> <span aria-hidden="true">-</span> <a dir="rtl" href="/ar/" hreflang="ar" lang="ar">العربية</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/fr/" hreflang="fr" lang="fr">Français</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/es/" hreflang="es" lang="es">Español</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/pt/" hreflang="pt" lang="pt">Português</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/it/" hreflang="it" lang="it">Italiano</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/de/" hreflang="de" lang="de">Deutsch</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/pl/" hreflang="pl" lang="pl">Polski</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/ru/" hreflang="ru" lang="ru">Русский</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a> <span aria-hidden="true">-</span> <a dir="ltr" href="/th/" hreflang="th" lang="th">ไทย</a></nav>
+<!-- i18n-navigation:end -->
+</div>
+</footer>
 
   <script defer src="../app.js"></script>
   <script defer src="../global-audio-player.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="../translate.js?v=20260922-1"></script>
   <script src="../nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

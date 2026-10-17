@@ -1,21 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -24,8 +13,8 @@
     <meta property="og:locale:alternate" content="it_IT" />
     <meta property="og:locale:alternate" content="de_DE" />
     <meta property="og:locale:alternate" content="pl_PL" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Padre Pio Story for Kids | Catholic Storybook</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Padre Pio Story for Kids | Catholic Storybook</title>
   <meta name="description" content="Read a child-friendly Padre Pio storybook for ages 5-12 with read-aloud narration, simple language, faith lessons, and an engaging guided experience." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/pio-story" />
@@ -145,30 +134,60 @@
   "isFamilyFriendly": true
 }
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20260922-1" />
-  <link rel="stylesheet" href="storybook.css" />
-  <link rel="stylesheet" href="storybook-joy.css" />
-  <!-- hreflang:begin -->
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/pio-story" />
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/pio-story" />
-  <!-- hreflang:end -->
+<link href="styles.css?v=20260922-1" rel="stylesheet"/>
+<link href="storybook.css" rel="stylesheet"/>
+<link href="storybook-joy.css" rel="stylesheet"/>
+<link href="storybook-stage.css" rel="stylesheet"/>
+<!-- hreflang:begin -->
+<link href="https://marsharbel.com/pio-story" hreflang="x-default" rel="alternate"/>
+<link href="https://marsharbel.com/pio-story" hreflang="en" rel="alternate"/>
+<!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body class="is-story-page" data-story="pio">
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="topbar">
-    <div class="site-shell nav">
-      <a class='brand' href='./'>
-        <span class="brand-mark">✦</span>
-        <span>Saint Charbel</span>
-      </a>
-      <nav class="links" aria-label="Primary">
+<header class="topbar">
+<div class="site-shell nav">
+<a class="brand" href="./">
+<span class="brand-mark">✦</span>
+<span>Saint Charbel</span>
+</a>
+<nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -176,11 +195,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -204,8 +227,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -219,258 +243,229 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
-      <div class="lang-switcher-slot" aria-hidden="true"></div>
-    </div>
-  </header>
-
-  <main id="main-content" class="site-shell storybook-page" tabindex="-1">
-    <section class="story-hero reveal">
-      <span class="kicker">A Book for Ages 5-12</span>
-      <h1>The Story of Padre Pio</h1>
-      <p>
-        A true story told in simple words: a boy from a small Italian town who learned to pray,
-        became a Capuchin friar, listened to people's sorrows for fifty years, and taught the world
-        to "pray, hope, and don't worry."
-      </p>
-    <p class="short-answer"><strong>Short answer:</strong> This read-aloud Padre Pio storybook for children ages 5 to 12 tells how Francesco Forgione of Pietrelcina learned to pray, became a Capuchin friar and priest, and spent more than fifty years at San Giovanni Rotondo listening to people's sorrows. It includes his counsel: pray, hope, and don't worry.</p>
+<div aria-hidden="true" class="lang-switcher-slot"></div>
+</div>
+</header>
+<main id="main-content" class="site-shell storybook-page" tabindex="-1">
+<section class="story-hero reveal">
+<span class="kicker">A Book for Ages 5-12</span>
+<h1>The Story of Padre Pio</h1>
+<p> A true story told in simple words: a boy from a small Italian town who learned to pray, became a Capuchin friar, listened to people's sorrows for fifty years, and taught the world to "pray, hope, and don't worry." </p>
+<p class="short-answer"><strong>Short answer:</strong> This read-aloud Padre Pio storybook for children ages 5 to 12 tells how Francesco Forgione of Pietrelcina learned to pray, became a Capuchin friar and priest, and spent more than fifty years at San Giovanni Rotondo listening to people's sorrows. It includes his counsel: pray, hope, and don't worry.</p>
 </section>
-
-    <section class="section">
-      <h2>Story Summary</h2>
-      <div class="card story">
-        <p>This read-aloud storybook tells children ages 5 to 12 the true story of Padre Pio: the boy Francesco Forgione from Pietrelcina who learned to pray, became a Capuchin friar and priest, and spent more than fifty years at San Giovanni Rotondo listening to people's sorrows. It tells, gently and honestly, of the wounds he bore, the hospital he built for the sick, and the counsel he left the world: pray, hope, and don't worry.</p>
-        <ul>
-          <li>For ages 5 to 12, with read-aloud narration on every page.</li>
-          <li>A 16-page storybook told in simple words.</li>
-          <li>Grounded in the documented record; the fuller adult account is on the <a href='st-padre-pio'>St Padre Pio</a> page.</li>
-          <li>Part of the <a href='stories'>Saint Storybooks</a> library.</li>
-        </ul>
-      </div>
-    </section>
-
-    <div id="story-resume-banner" class="story-resume-banner" hidden aria-live="polite">
-      <span id="story-resume-text">Continue from Page 2?</span>
-      <button id="story-resume-btn" class="btn subtle" type="button">Resume</button>
-      <button id="story-resume-dismiss" class="story-resume-dismiss" type="button" aria-label="Dismiss">✕</button>
-    </div>
-
-    <section class="storybook reveal" id="storybook" aria-label="Illustrated storybook">
-      <div class="storybook-controls">
-        <span class="story-reading-indicator" id="story-reading-indicator">
-          <span class="story-reading-dot"></span>
-          <span id="story-reading-label">Reading…</span>
-          <span class="story-elapsed" id="story-elapsed">0:00</span>
-        </span>
-        <label class="story-voice-pack" for="story-voice-pack">
+<section class="section">
+<h2>Story Summary</h2>
+<div class="card story"><p>This read-aloud storybook tells children ages 5 to 12 the true story of Padre Pio: the boy Francesco Forgione from Pietrelcina who learned to pray, became a Capuchin friar and priest, and spent more than fifty years at San Giovanni Rotondo listening to people's sorrows. It tells, gently and honestly, of the wounds he bore, the hospital he built for the sick, and the counsel he left the world: pray, hope, and don't worry.</p><ul><li>For ages 5 to 12, with read-aloud narration on every page.</li><li>A 16-page storybook told in simple words.</li><li>Grounded in the documented record; the fuller adult account is on the <a href='st-padre-pio'>St Padre Pio</a> page.</li><li>Part of the <a href='stories'>Saint Storybooks</a> library.</li></ul></div>
+</section>
+<div aria-live="polite" class="story-resume-banner" hidden id="story-resume-banner">
+<span id="story-resume-text">Continue from Page 2?</span>
+<button class="btn subtle" id="story-resume-btn" type="button">Resume</button>
+<button aria-label="Dismiss" class="story-resume-dismiss" id="story-resume-dismiss" type="button">✕</button>
+</div>
+<section aria-label="Illustrated storybook" class="storybook reveal" id="storybook">
+<div class="storybook-controls">
+<span class="story-reading-indicator" id="story-reading-indicator">
+<span class="story-reading-dot"></span>
+<span id="story-reading-label">Reading…</span>
+<span class="story-elapsed" id="story-elapsed">0:00</span>
+</span>
+<label class="story-voice-pack" for="story-voice-pack">
           Voice Pack
-          <select id="story-voice-pack" aria-label="Select story voice pack"></select>
-        </label>
-        <button id="story-prev" class="btn subtle" type="button" disabled aria-label="Previous page">Previous Page</button>
-        <button id="story-read" class="btn subtle" type="button">Read Aloud</button>
-        <button id="story-next" class="btn primary" type="button" aria-label="Next page">Next Page</button>
-      </div>
-
-      <details class="story-settings">
-        <summary aria-label="Story settings" title="Story settings"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></summary>
-        <div class="storybook-extras">
-        <button id="story-reader-toggle" class="story-reader-toggle" type="button" title="Toggle reader mode for easier reading">Reader Mode</button>
-        <label class="story-auto-continue" title="Automatically read next page when current page finishes">
-          <input type="checkbox" id="story-auto-continue" />
+          <select aria-label="Select story voice pack" id="story-voice-pack"></select>
+</label>
+<button aria-label="Previous page" class="btn subtle" disabled id="story-prev" type="button">Previous Page</button>
+<button class="btn subtle" id="story-read" type="button">Read Aloud</button>
+<button aria-label="Next page" class="btn primary" id="story-next" type="button">Next Page</button>
+</div>
+<details class="story-settings">
+<summary aria-label="Story settings" title="Story settings"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"></path></svg></summary>
+<div class="storybook-extras">
+<button class="story-reader-toggle" id="story-reader-toggle" title="Toggle reader mode for easier reading" type="button">Reader Mode</button>
+<label class="story-auto-continue" title="Automatically read next page when current page finishes">
+<input id="story-auto-continue" type="checkbox"/>
           Auto Continue
         </label>
-        <div class="story-rate-group" role="group" aria-label="Playback speed">
-          <button class="story-rate-btn" type="button" data-rate="0.7">Slow</button>
-          <button class="story-rate-btn is-active" type="button" data-rate="1">Normal</button>
-          <button class="story-rate-btn" type="button" data-rate="1.3">Fast</button>
-        </div>
-        </div>
-      </details>
-      <article class="storybook-panel">
-        <div class="storybook-illustration" id="story-illustration" aria-hidden="true"><div class="scene-art scene-birth"><img class="scene-photo" src="./media/storybook-pio/images/page-01.webp" alt="" fetchpriority="high" decoding="async" /><div class="scene-photo-overlay" aria-hidden="true"></div></div></div>
-        <div class="storybook-text">
-          <p class="storybook-step" id="story-step" aria-live="polite">Page 1 of 16</p>
-          <h2 id="story-title">Loading story...</h2>
-          <p id="story-body">Please wait while we open the storybook.</p>
-          <p class="storybook-prayer" id="story-prayer"></p>
-          <p class="storybook-heart" id="story-heart"></p>
-        </div>
-      </article>
-
-      <details class="story-evidence">
-        <summary id="story-evidence-title">Evidence for This Page</summary>
-        <ul id="story-evidence-list"></ul>
-      </details>
-    </section>
-
-    <section class="section reveal" id="storybook-film" aria-label="Storybook film">
-      <h2 class="section-title">Watch the Storybook Film</h2>
-      <p class="section-sub">
-        The whole story as a 7-minute animated film - then
-        <a href="#storybook">read the free storybook</a> page by page with read-aloud narration.
-      </p>
-      <div class="film-frame" style="position:relative;">
-        <video id="pio-film" controls playsinline preload="none"
-               poster="./media/storybook-pio/images/page-01.webp"
-               style="width:100%; border-radius:14px; border:1px solid rgba(211,178,110,.28); background:#000;">
-          <source src="./media/storybook-pio/pio-film-endcard.mp4" type="video/mp4" />
-          Your browser does not support video playback.
-        </video>
-        <span class="film-ai-badge" aria-label="AI-animated disclosure"
-              style="position:absolute; top:10px; left:10px; padding:3px 10px; border-radius:999px; font-size:0.72rem; letter-spacing:0.04em; background:rgba(20,16,10,.72); color:#e9d9ae; border:1px solid rgba(211,178,110,.45); pointer-events:none;">AI-animated film</span>
-      </div>
-      <p class="story-production-note" style="margin-top:0.9rem;">
-        This film is an AI-animated telling of the storybook: original composite scenes, not historical footage.
-        Narration by an openly licensed voice model.
-        <a href="#pio-film-transcript">Read the film transcript</a> (no timed captions yet).
-      </p>
-    </section>
-
-    <section class="section" id="pio-film-transcript">
-      <h2>Film Transcript</h2>
-      <p class="section-sub">A text version of the film for anyone who cannot hear it. It follows the storybook text the film is based on, page by page. The spoken wording may differ slightly. Timed captions are not available yet.</p>
-      <details class="card story">
-        <summary>Read the full transcript</summary>
-        <h3>Page 1: In Pietrelcina</h3>
-        <p>In the Italian town of Pietrelcina, Francesco grew up with his family. Long before crowds knew his name, he learned to pray. Prayer was not a trick for getting everything he wanted. It was a way to bring his whole life before God.</p>
-        <p>Little prayer: Jesus, teach me to pray like Francesco did.</p>
-        <p>Heart Moment: God loves us long before anyone knows our name.</p>
-        <h3>Page 2: A New Name</h3>
-        <p>Imagine the road out of his village on a winter morning. At sixteen, Francesco left home and entered the Capuchin friars. He received a new name: Brother Pio. The brothers followed Saint Francis, seeking a simple life of prayer, poverty, and service.</p>
-        <p>Little prayer: Jesus, help me follow You bravely, like Brother Pio.</p>
-        <p>Heart Moment: Following Jesus can mean leaving what is familiar.</p>
-        <h3>Page 3: A Quiet Promise</h3>
-        <p>A new name did not make his path easy. Picture a young friar in a plain brown habit, rising to pray while the village outside was still dark. There were no crowds to cheer him on. There was work to learn and a promise to keep, day after ordinary day. His new name marked the beginning of years of learning to give his life to God.</p>
-        <p>Little prayer: Jesus, help me keep my promises, even on hard days.</p>
-        <p>Heart Moment: Small faithful steps matter more than easy ones.</p>
-        <h3>Page 4: When the Body Is Weak</h3>
-        <p>He became a priest in 1910. But poor health interrupted his plans. For years, he stayed near his family while he recovered. When you are sick, even an ordinary day can feel long. It would be easy to think a life of service has to wait until you are strong. Brother Pio kept praying through those years.</p>
-        <p>Little prayer: Jesus, be close to everyone who is sick today.</p>
-        <p>Heart Moment: God works in us even when our bodies are weak.</p>
-        <h3>Page 5: Road to San Giovanni</h3>
-        <p>In 1916, he went to the friary at San Giovanni Rotondo. He would live there until his death. On the road to the friary, no one could have guessed how many footsteps would later follow his. Behind each pair of footsteps would be a person with a story. Some would come hoping for comfort. Others would come carrying regret.</p>
-        <p>Little prayer: Jesus, lead me where You want me to be.</p>
-        <p>Heart Moment: Sometimes God's plan is one long, quiet stay.</p>
-        <h3>Page 6: A Priest Who Listened</h3>
-        <p>The people came slowly at first, then in great numbers. Some were searching for a word of hope. Some wanted to turn away from things they had done wrong. Padre Pio spent long hours celebrating the Eucharist and hearing confessions. Imagine waiting in a line with a secret you are afraid to say aloud. What that person needed was not a spectacle.</p>
-        <p>Little prayer: Jesus, teach me to listen with love.</p>
-        <p>Heart Moment: Listening well is a way of loving.</p>
-        <h3>Page 7: A Place for Mercy</h3>
-        <p>They needed the mercy of Jesus, and a priest willing to listen. Padre Pio could be direct with people. The Church remembered the crowds who returned seeking forgiveness, even when facing the truth was hard. In the confessional, he did not offer a magic escape from consequences. He helped people repent, begin again, and trust God's mercy.</p>
-        <p>Little prayer: Jesus, thank You for Your mercy that never runs out.</p>
-        <p>Heart Moment: Mercy welcomes everyone, again and again.</p>
-        <h3>Page 8: One Person at a Time</h3>
-        <p>This was a daily work, repeated for years, one person at a time. Think of someone at the back of the line, afraid everyone will see their face. They wait, take a step, wait again. We cannot know what a particular visitor said. We do know why so many came: they hoped God had not stopped loving them. That hope is at the heart of the sacrament of forgiveness.</p>
-        <p>Little prayer: Jesus, help me love the person in front of me.</p>
-        <p>Heart Moment: Big love is built one small act at a time.</p>
-        <h3>Page 9: The Wounds and Questions</h3>
-        <p>He knew suffering from the inside too. He had lived with fragile health since he was young. In 1918, wounds appeared on his hands, feet, and side. They reminded people of the wounds of Jesus on the Cross. Padre Pio carried them for many years. The wounds drew attention, and they also brought questions.</p>
-        <p>Little prayer: Jesus, when I hurt, help me remember You understand.</p>
-        <p>Heart Moment: Jesus knows our pain from the inside.</p>
-        <h3>Page 10: The Closed Door</h3>
-        <p>Church authorities investigated, and for periods they restricted parts of his public ministry. He accepted the restrictions and obeyed his superiors. We do not need to pretend that the waiting or pain was easy. A closed door can feel especially heavy when you want to help. What can a person do when the work they love is taken away for a time? Padre Pio did what he still could. He prayed and waited, trusting God without pretending to understand every trial.</p>
-        <p>Little prayer: Jesus, give me patience when life feels unfair.</p>
-        <p>Heart Moment: Obedience and patience can be a quiet kind of courage.</p>
-        <h3>Page 11: Faith and the Cross</h3>
-        <p>When Christians speak about the Cross, they do not mean that pain is good by itself, or that someone who is sick should be left without help. Jesus met people in their suffering. Padre Pio's response to his own trials was to keep praying and to care for others. He saw Christ in poor and sick neighbors. His faith could not stay inside the walls of the chapel.</p>
-        <p>Little prayer: Jesus, help me carry my small crosses with love.</p>
-        <p>Heart Moment: Love can make hard things lighter.</p>
-        <h3>Page 12: A Hospital for the Sick</h3>
-        <p>So the friar whose own body hurt took part in building a place where other hurting people could be treated. Many people helped him. Together they founded the Home for the Relief of Suffering, a hospital in San Giovanni Rotondo. It opened in 1956. Think of the difference between telling a sick person, "I hope you get well," and helping make a bed, a doctor, and care available. The hospital was not a claim that prayer replaces medicine. It was a way to put love into action.</p>
-        <p>Little prayer: Jesus, bless everyone who cares for the sick.</p>
-        <p>Heart Moment: Our own hurts can teach us to heal others.</p>
-        <h3>Page 13: Prayer Together</h3>
-        <p>Padre Pio also encouraged prayer groups. People could pray together rather than carry every burden alone. Prayer and care belonged together in his life. At the hospital, someone could receive treatment. In a prayer group, someone could know they had not been forgotten. Neither act made suffering disappear on command. Both could tell a person, "You matter."</p>
-        <p>Little prayer: Jesus, teach my family to pray together.</p>
-        <p>Heart Moment: Praying with someone is sharing strength.</p>
-        <h3>Page 14: A Kindness a Child Can Do</h3>
-        <p>A child can understand this. When someone is alone, sitting beside them is a real gift. When someone is ill, bringing water or asking an adult for help can be a real act of love. Big kindness often begins with something small.</p>
-        <p>Little prayer: Jesus, show me someone who needs a friend today.</p>
-        <p>Heart Moment: Sitting beside someone is a real gift.</p>
-        <h3>Page 15: The Church Calls Him a Saint</h3>
-        <p>He died in 1968. Years later, the Church carefully examined his life and proclaimed him a saint in 2002. Pope John Paul the Second spoke of his long hours in the confessional, his prayer groups, and the hospital. He held prayer and charity together as the heart of Padre Pio's lesson.</p>
-        <p>Little prayer: Saint Pio, pray for us.</p>
-        <p>Heart Moment: Saints are ordinary people who kept saying yes to God.</p>
-        <h3>Page 16: Who Can You Help Today?</h3>
-        <p>You may never build a hospital. You may not know what to say when someone is hurting. Start smaller. Listen without rushing away. Ask if they need help. Pray for them, and do one useful, kind thing. If you have made a mistake, ask forgiveness and begin again. Padre Pio's life says that love for God grows when it becomes love for a neighbor. Today, who is one person you can notice and help?</p>
-        <p>Little prayer: Jesus, help me help someone today.</p>
-        <p>Heart Moment: Your kindness, however small, is part of God's story.</p>
-      </details>
-    </section>
-
-    <p class="story-production-note">AI-generated read-aloud narration. Illustrations are original composite scenes, not historical footage.</p>
-
-    <section class="section reveal">
-      <h2>What Young Hearts Can Learn</h2>
-      <div class="grid-2">
-        <article class="card story"><h3>Prayer First</h3><p>Padre Pio's whole day began and ended with prayer - everything else grew out of it.</p></article>
-        <article class="card story"><h3>Listening</h3><p>In the confessional he showed that truly listening to someone is a way of loving them.</p></article>
-        <article class="card story"><h3>Patience in Hard Times</h3><p>When he was misunderstood and restricted, he obeyed quietly and kept praying.</p></article>
-        <article class="card story"><h3>One Person at a Time</h3><p>He helped whoever stood in front of him - and built a hospital out of other people's pain.</p></article>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <h2>True Dates in the Story</h2>
-      <article class="card story">
-        <ul>
-          <li>May 25, 1887: Birth of Francesco Forgione (Padre Pio) in Pietrelcina, Italy.</li>
-          <li>1903: He enters the Capuchin novitiate at Morcone and receives the name Pio.</li>
-          <li>August 10, 1910: He is ordained a priest.</li>
-          <li>1916: He is assigned to the friary of San Giovanni Rotondo, his home for the rest of his life.</li>
-          <li>September 20, 1918: He receives the stigmata while praying after Mass.</li>
-          <li>1956: Casa Sollievo della Sofferenza, the hospital he founded, opens.</li>
-          <li>September 23, 1968: He dies in his cell at the friary.</li>
-          <li>May 2, 1999: Beatified by Pope John Paul II.</li>
-          <li>June 16, 2002: Canonized by Pope John Paul II. His feast day is September 23.</li>
-        </ul>
-        <p style="margin-top:0.8rem; opacity:0.88;">
-          Note: Some well-known details of Padre Pio's life (such as the exact moments of the stigmata) rest on his own
-          letters and witness testimony; the Church investigated his life for decades before canonizing him.
-        </p>
-      </article>
-    </section>
-
-    <section class="section reveal">
-      <h2>Research Basis</h2>
-      <article class="card story">
-        <ul>
-          <li><a href="https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20020616_padre-pio_en.html" target="_blank" rel="noopener">Vatican (Holy See): Biography of St. Pio of Pietrelcina (2002)</a></li>
-          <li><a href="https://www.vatican.va/content/john-paul-ii/en/homilies/2002/documents/hf_jp-ii_hom_20020616_padre-pio.html" target="_blank" rel="noopener">Vatican (John Paul II): Canonization homily (June 16, 2002)</a></li>
-          <li><a href="https://www.padrepio.org/" target="_blank" rel="noopener">National Centre for Padre Pio (Barto, PA): devotion and prayer resources</a></li>
-        </ul>
-        <p>For the full documented life, his prayers, and the pilgrimage to San Giovanni Rotondo, read <a href="st-padre-pio">St. Padre Pio</a>.</p>
-      </article>
-    </section>
-      <section class="section">
-      <h2>Frequently Asked Questions</h2>
-      <div class="card story">
-        <h3>Who is this storybook for?</h3>
-        <p>Children ages 5 to 12, reading on their own or listening with family. Every page has a Read Aloud button with gentle narration, so the book can be heard as well as read.</p>
-        <h3>Who was Padre Pio?</h3>
-        <p>A Capuchin friar from southern Italy (1887-1968) who heard confessions for up to sixteen hours a day, bore wounds like those of Christ for fifty years, and founded a hospital at San Giovanni Rotondo. The Church canonized him on June 16, 2002.</p>
-        <h3>Is the story true?</h3>
-        <p>Yes. It retells documented events of his life. The harder chapters, like the wounds he bore, are told honestly and gently, and the adult page separates what is documented from what is reported.</p>
-        <h3>What does "pray, hope, and don't worry" mean?</h3>
-        <p>It was Padre Pio's short counsel for anxious people: bring everything to God in prayer, trust Him with the outcome, and refuse to carry tomorrow's fear today.</p>
-      </div>
-    </section>
-  <section class="section">
+<div aria-label="Playback speed" class="story-rate-group" role="group">
+<button class="story-rate-btn" data-rate="0.7" type="button">Slow</button>
+<button class="story-rate-btn is-active" data-rate="1" type="button">Normal</button>
+<button class="story-rate-btn" data-rate="1.3" type="button">Fast</button>
+</div>
+</div>
+</details>
+<article class="storybook-panel">
+<div aria-hidden="true" class="storybook-illustration" id="story-illustration"><div class="scene-art scene-birth"><img alt="" class="scene-photo" decoding="async" fetchpriority="high" src="./media/storybook-pio/images/page-01.webp"/><div aria-hidden="true" class="scene-photo-overlay"></div></div></div>
+<div class="storybook-text">
+<p aria-live="polite" class="storybook-step" id="story-step">Page 1 of 16</p>
+<h2 id="story-title">Loading story...</h2>
+<p id="story-body">Please wait while we open the storybook.</p>
+<p class="storybook-prayer" id="story-prayer"></p>
+<p class="storybook-heart" id="story-heart"></p>
+</div>
+</article>
+<details class="story-evidence">
+<summary id="story-evidence-title">Evidence for This Page</summary>
+<ul id="story-evidence-list"></ul>
+</details>
+</section>
+<section class="section reveal" id="storybook-film" aria-label="Storybook film">
+<h2 class="section-title">Watch the Storybook Film</h2>
+<p class="section-sub"> The whole story as a 7-minute animated film - then <a href="#storybook">read the free storybook</a> page by page with read-aloud narration. </p>
+<div class="film-frame" style="position:relative;">
+<video id="pio-film" controls playsinline preload="none" poster="./media/storybook-pio/images/page-01.webp" style="width:100%; border-radius:14px; border:1px solid rgba(211,178,110,.28); background:#000;">
+<source src="./media/storybook-pio/pio-film-endcard.mp4" type="video/mp4" />
+Your browser does not support video playback.
+</video>
+<span class="film-ai-badge" aria-label="AI-animated disclosure" style="position:absolute; top:10px; left:10px; padding:3px 10px; border-radius:999px; font-size:0.72rem; letter-spacing:0.04em; background:rgba(20,16,10,.72); color:#e9d9ae; border:1px solid rgba(211,178,110,.45); pointer-events:none;">AI-animated film</span>
+</div>
+<p class="story-production-note" style="margin-top:0.9rem;"> This film is an AI-animated telling of the storybook: original composite scenes, not historical footage. Narration by an openly licensed voice model. <a href="#pio-film-transcript">Read the film transcript</a> (no timed captions yet). </p>
+</section>
+<section class="section" id="pio-film-transcript">
+<h2>Film Transcript</h2>
+<p class="section-sub">A text version of the film for anyone who cannot hear it. It follows the storybook text the film is based on, page by page. The spoken wording may differ slightly. Timed captions are not available yet.</p>
+<details class="card story">
+<summary>Read the full transcript</summary>
+<h3>Page 1: In Pietrelcina</h3>
+<p>In the Italian town of Pietrelcina, Francesco grew up with his family. Long before crowds knew his name, he learned to pray. Prayer was not a trick for getting everything he wanted. It was a way to bring his whole life before God.</p>
+<p>Little prayer: Jesus, teach me to pray like Francesco did.</p>
+<p>Heart Moment: God loves us long before anyone knows our name.</p>
+<h3>Page 2: A New Name</h3>
+<p>Imagine the road out of his village on a winter morning. At sixteen, Francesco left home and entered the Capuchin friars. He received a new name: Brother Pio. The brothers followed Saint Francis, seeking a simple life of prayer, poverty, and service.</p>
+<p>Little prayer: Jesus, help me follow You bravely, like Brother Pio.</p>
+<p>Heart Moment: Following Jesus can mean leaving what is familiar.</p>
+<h3>Page 3: A Quiet Promise</h3>
+<p>A new name did not make his path easy. Picture a young friar in a plain brown habit, rising to pray while the village outside was still dark. There were no crowds to cheer him on. There was work to learn and a promise to keep, day after ordinary day. His new name marked the beginning of years of learning to give his life to God.</p>
+<p>Little prayer: Jesus, help me keep my promises, even on hard days.</p>
+<p>Heart Moment: Small faithful steps matter more than easy ones.</p>
+<h3>Page 4: When the Body Is Weak</h3>
+<p>He became a priest in 1910. But poor health interrupted his plans. For years, he stayed near his family while he recovered. When you are sick, even an ordinary day can feel long. It would be easy to think a life of service has to wait until you are strong. Brother Pio kept praying through those years.</p>
+<p>Little prayer: Jesus, be close to everyone who is sick today.</p>
+<p>Heart Moment: God works in us even when our bodies are weak.</p>
+<h3>Page 5: Road to San Giovanni</h3>
+<p>In 1916, he went to the friary at San Giovanni Rotondo. He would live there until his death. On the road to the friary, no one could have guessed how many footsteps would later follow his. Behind each pair of footsteps would be a person with a story. Some would come hoping for comfort. Others would come carrying regret.</p>
+<p>Little prayer: Jesus, lead me where You want me to be.</p>
+<p>Heart Moment: Sometimes God's plan is one long, quiet stay.</p>
+<h3>Page 6: A Priest Who Listened</h3>
+<p>The people came slowly at first, then in great numbers. Some were searching for a word of hope. Some wanted to turn away from things they had done wrong. Padre Pio spent long hours celebrating the Eucharist and hearing confessions. Imagine waiting in a line with a secret you are afraid to say aloud. What that person needed was not a spectacle.</p>
+<p>Little prayer: Jesus, teach me to listen with love.</p>
+<p>Heart Moment: Listening well is a way of loving.</p>
+<h3>Page 7: A Place for Mercy</h3>
+<p>They needed the mercy of Jesus, and a priest willing to listen. Padre Pio could be direct with people. The Church remembered the crowds who returned seeking forgiveness, even when facing the truth was hard. In the confessional, he did not offer a magic escape from consequences. He helped people repent, begin again, and trust God's mercy.</p>
+<p>Little prayer: Jesus, thank You for Your mercy that never runs out.</p>
+<p>Heart Moment: Mercy welcomes everyone, again and again.</p>
+<h3>Page 8: One Person at a Time</h3>
+<p>This was a daily work, repeated for years, one person at a time. Think of someone at the back of the line, afraid everyone will see their face. They wait, take a step, wait again. We cannot know what a particular visitor said. We do know why so many came: they hoped God had not stopped loving them. That hope is at the heart of the sacrament of forgiveness.</p>
+<p>Little prayer: Jesus, help me love the person in front of me.</p>
+<p>Heart Moment: Big love is built one small act at a time.</p>
+<h3>Page 9: The Wounds and Questions</h3>
+<p>He knew suffering from the inside too. He had lived with fragile health since he was young. In 1918, wounds appeared on his hands, feet, and side. They reminded people of the wounds of Jesus on the Cross. Padre Pio carried them for many years. The wounds drew attention, and they also brought questions.</p>
+<p>Little prayer: Jesus, when I hurt, help me remember You understand.</p>
+<p>Heart Moment: Jesus knows our pain from the inside.</p>
+<h3>Page 10: The Closed Door</h3>
+<p>Church authorities investigated, and for periods they restricted parts of his public ministry. He accepted the restrictions and obeyed his superiors. We do not need to pretend that the waiting or pain was easy. A closed door can feel especially heavy when you want to help. What can a person do when the work they love is taken away for a time? Padre Pio did what he still could. He prayed and waited, trusting God without pretending to understand every trial.</p>
+<p>Little prayer: Jesus, give me patience when life feels unfair.</p>
+<p>Heart Moment: Obedience and patience can be a quiet kind of courage.</p>
+<h3>Page 11: Faith and the Cross</h3>
+<p>When Christians speak about the Cross, they do not mean that pain is good by itself, or that someone who is sick should be left without help. Jesus met people in their suffering. Padre Pio's response to his own trials was to keep praying and to care for others. He saw Christ in poor and sick neighbors. His faith could not stay inside the walls of the chapel.</p>
+<p>Little prayer: Jesus, help me carry my small crosses with love.</p>
+<p>Heart Moment: Love can make hard things lighter.</p>
+<h3>Page 12: A Hospital for the Sick</h3>
+<p>So the friar whose own body hurt took part in building a place where other hurting people could be treated. Many people helped him. Together they founded the Home for the Relief of Suffering, a hospital in San Giovanni Rotondo. It opened in 1956. Think of the difference between telling a sick person, &quot;I hope you get well,&quot; and helping make a bed, a doctor, and care available. The hospital was not a claim that prayer replaces medicine. It was a way to put love into action.</p>
+<p>Little prayer: Jesus, bless everyone who cares for the sick.</p>
+<p>Heart Moment: Our own hurts can teach us to heal others.</p>
+<h3>Page 13: Prayer Together</h3>
+<p>Padre Pio also encouraged prayer groups. People could pray together rather than carry every burden alone. Prayer and care belonged together in his life. At the hospital, someone could receive treatment. In a prayer group, someone could know they had not been forgotten. Neither act made suffering disappear on command. Both could tell a person, &quot;You matter.&quot;</p>
+<p>Little prayer: Jesus, teach my family to pray together.</p>
+<p>Heart Moment: Praying with someone is sharing strength.</p>
+<h3>Page 14: A Kindness a Child Can Do</h3>
+<p>A child can understand this. When someone is alone, sitting beside them is a real gift. When someone is ill, bringing water or asking an adult for help can be a real act of love. Big kindness often begins with something small.</p>
+<p>Little prayer: Jesus, show me someone who needs a friend today.</p>
+<p>Heart Moment: Sitting beside someone is a real gift.</p>
+<h3>Page 15: The Church Calls Him a Saint</h3>
+<p>He died in 1968. Years later, the Church carefully examined his life and proclaimed him a saint in 2002. Pope John Paul the Second spoke of his long hours in the confessional, his prayer groups, and the hospital. He held prayer and charity together as the heart of Padre Pio's lesson.</p>
+<p>Little prayer: Saint Pio, pray for us.</p>
+<p>Heart Moment: Saints are ordinary people who kept saying yes to God.</p>
+<h3>Page 16: Who Can You Help Today?</h3>
+<p>You may never build a hospital. You may not know what to say when someone is hurting. Start smaller. Listen without rushing away. Ask if they need help. Pray for them, and do one useful, kind thing. If you have made a mistake, ask forgiveness and begin again. Padre Pio's life says that love for God grows when it becomes love for a neighbor. Today, who is one person you can notice and help?</p>
+<p>Little prayer: Jesus, help me help someone today.</p>
+<p>Heart Moment: Your kindness, however small, is part of God's story.</p>
+</details>
+</section>
+<p class="story-production-note">AI-generated read-aloud narration. Illustrations are original composite scenes, not historical footage.</p>
+<section class="section reveal">
+<h2>What Young Hearts Can Learn</h2>
+<div class="grid-2">
+<article class="card story"><h3>Prayer First</h3><p>Padre Pio's whole day began and ended with prayer - everything else grew out of it.</p></article>
+<article class="card story"><h3>Listening</h3><p>In the confessional he showed that truly listening to someone is a way of loving them.</p></article>
+<article class="card story"><h3>Patience in Hard Times</h3><p>When he was misunderstood and restricted, he obeyed quietly and kept praying.</p></article>
+<article class="card story"><h3>One Person at a Time</h3><p>He helped whoever stood in front of him - and built a hospital out of other people's pain.</p></article>
+</div>
+</section>
+<section class="section saint-bio reveal" id="about-the-saint" aria-labelledby="saint-bio-title">
+<h2 id="saint-bio-title">About Saint Padre Pio</h2>
+<div class="saint-bio-grid">
+<dl class="saint-facts"><div><dt>Lived</dt><dd>1887-1968</dd></div><div><dt>Place</dt><dd>Pietrelcina and San Giovanni Rotondo, Italy</dd></div><div><dt>Status</dt><dd>Canonized June 16, 2002, by Pope John Paul II</dd></div><div><dt>Feast</dt><dd>September 23</dd></div></dl>
+<div class="saint-bio-text"><p>Francesco Forgione was born on May 25, 1887 in Pietrelcina, a farming village in southern Italy. At fifteen he entered the Capuchin novitiate and took the name Pio. He was ordained a priest on August 10, 1910. His health was poor, and in 1916 he was sent to San Giovanni Rotondo, where he stayed for the rest of his life.</p><p>He heard confessions for many hours a day, and people came from all over Italy and beyond. He founded a hospital, the Casa Sollievo della Sofferenza, and prayer groups that now exist worldwide. He bore the stigmata from September 20, 1918 until his death on September 23, 1968, and his counsel is often quoted: &quot;Pray, hope, and don't worry.&quot;</p><aside class='saint-key' aria-labelledby='saint-key-pio-story'><h3 id='saint-key-pio-story'>Key teaching</h3><p>Padre Pio gave his days to prayer, to hearing confessions and to the suffering. The hospital he founded is called the Home for the Relief of Suffering.</p></aside><p class='saint-bio-more'><a href='./st-padre-pio'>Read the full life of Saint Padre Pio <span aria-hidden='true'>&rarr;</span></a></p><p class='saint-bio-sources'>Sources: <a href='https://www.vatican.va/content/john-paul-ii/en/homilies/2002/documents/hf_jp-ii_hom_20020616_padre-pio.html' target='_blank' rel='noopener'>John Paul II: homily for the canonization of Padre Pio</a>.</p></div>
+</div>
+</section>
+<section class="section reveal">
+<h2>True Dates in the Story</h2>
+<article class="card story">
+<ul>
+<li>May 25, 1887: Birth of Francesco Forgione (Padre Pio) in Pietrelcina, Italy.</li>
+<li>1903: He enters the Capuchin novitiate at Morcone and receives the name Pio.</li>
+<li>August 10, 1910: He is ordained a priest.</li>
+<li>1916: He is assigned to the friary of San Giovanni Rotondo, his home for the rest of his life.</li>
+<li>September 20, 1918: He receives the stigmata while praying after Mass.</li>
+<li>1956: Casa Sollievo della Sofferenza, the hospital he founded, opens.</li>
+<li>September 23, 1968: He dies in his cell at the friary.</li>
+<li>May 2, 1999: Beatified by Pope John Paul II.</li>
+<li>June 16, 2002: Canonized by Pope John Paul II. His feast day is September 23.</li>
+</ul>
+<p style="margin-top:0.8rem; opacity:0.88;"> Note: Some well-known details of Padre Pio's life (such as the exact moments of the stigmata) rest on his own letters and witness testimony; the Church investigated his life for decades before canonizing him. </p>
+</article>
+</section>
+<section class="section reveal">
+<h2>Research Basis</h2>
+<article class="card story">
+<ul>
+<li><a href="https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20020616_padre-pio_en.html" target="_blank" rel="noopener">Vatican (Holy See): Biography of St. Pio of Pietrelcina (2002)</a></li>
+<li><a href="https://www.vatican.va/content/john-paul-ii/en/homilies/2002/documents/hf_jp-ii_hom_20020616_padre-pio.html" target="_blank" rel="noopener">Vatican (John Paul II): Canonization homily (June 16, 2002)</a></li>
+<li><a href="https://www.padrepio.org/" target="_blank" rel="noopener">National Centre for Padre Pio (Barto, PA): devotion and prayer resources</a></li>
+</ul>
+<p>For the full documented life, his prayers, and the pilgrimage to San Giovanni Rotondo, read <a href="st-padre-pio">St. Padre Pio</a>.</p>
+</article>
+</section>
+<section class="section">
+<h2>Frequently Asked Questions</h2>
+<div class="card story"><h3>Who is this storybook for?</h3><p>Children ages 5 to 12, reading on their own or listening with family. Every page has a Read Aloud button with gentle narration, so the book can be heard as well as read.</p><h3>Who was Padre Pio?</h3><p>A Capuchin friar from southern Italy (1887-1968) who heard confessions for up to sixteen hours a day, bore wounds like those of Christ for fifty years, and founded a hospital at San Giovanni Rotondo. The Church canonized him on June 16, 2002.</p><h3>Is the story true?</h3><p>Yes. It retells documented events of his life. The harder chapters, like the wounds he bore, are told honestly and gently, and the adult page separates what is documented from what is reported.</p><h3>What does "pray, hope, and don't worry" mean?</h3><p>It was Padre Pio's short counsel for anxious people: bring everything to God in prayer, trust Him with the outcome, and refuse to carry tomorrow's fear today.</p></div>
+</section>
+<section class="section">
 <h2>More Saint Storybooks for Children</h2>
 <div class="card story"><ul><li><a href="./jpii-story">John Paul II</a></li><li><a href="./jude-story">Saint Jude</a></li><li><a href="./magdalene-story">Mary Magdalene</a></li><li><a href="./stories">All saint storybooks for children</a></li></ul></div>
 </section>
 </main>
-
-  <footer class="footer">
+<footer class="footer">
     <div class="site-shell">Children's story page added September 26, 2026. Author: Please pray for the person who made this website.</div>
   </footer>
-
-  <script defer src="app.js"></script>
-  <script defer src="storybook.js"></script>
-  <script defer src="/locale-routes.js"></script>
-  <script defer src="translate.js?v=20260922-1"></script>
-  <script defer src="global-audio-player.js"></script>
-  <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="app.js"></script>
+<script defer src="storybook.js"></script>
+<script defer src="storybook-stage.js"></script>
+<script defer src="/locale-routes.js"></script>
+<script defer src="translate.js?v=20260922-1"></script>
+<script defer src="global-audio-player.js"></script>
+<script defer src="./nav.js?v=20260922-1"></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

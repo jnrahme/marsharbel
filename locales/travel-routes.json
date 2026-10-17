@@ -1,0 +1,70 @@
+{
+  "hub": "/travel",
+  "destinations": [
+    "/visit-annaya",
+    "/bekaa-kafra",
+    "/qadisha-valley",
+    "/qannoubine-monastery",
+    "/qozhaya-monastery",
+    "/saint-charbel-hermitage",
+    "/saint-charbel-trail",
+    "/saint-charbel-places-lebanon",
+    "/our-lady-of-lebanon-harissa",
+    "/cedars-of-god-lebanon",
+    "/bkerke-maronite-patriarchate",
+    "/saint-charbel-pilgrimage",
+    "/annaya-tour"
+  ],
+  "englishAliases": {
+    "/en/travel": "/travel",
+    "/en/visit-annaya": "/visit-annaya",
+    "/en/bekaa-kafra": "/bekaa-kafra",
+    "/en/qadisha-valley": "/qadisha-valley",
+    "/en/qannoubine-monastery": "/qannoubine-monastery",
+    "/en/qozhaya-monastery": "/qozhaya-monastery",
+    "/en/saint-charbel-hermitage": "/saint-charbel-hermitage",
+    "/en/saint-charbel-trail": "/saint-charbel-trail",
+    "/en/saint-charbel-places-lebanon": "/saint-charbel-places-lebanon",
+    "/en/our-lady-of-lebanon-harissa": "/our-lady-of-lebanon-harissa",
+    "/en/cedars-of-god-lebanon": "/cedars-of-god-lebanon",
+    "/en/bkerke-maronite-patriarchate": "/bkerke-maronite-patriarchate",
+    "/en/saint-charbel-pilgrimage": "/saint-charbel-pilgrimage",
+    "/en/annaya-tour": "/annaya-tour"
+  },
+  "groups": {
+    "annaya": [
+      "annaya",
+      "hermitage",
+      "places"
+    ],
+    "north": [
+      "bekaa",
+      "qadisha",
+      "qannoubine",
+      "qozhaya",
+      "cedars"
+    ],
+    "coast": [
+      "harissa",
+      "bkerke"
+    ],
+    "planning": [
+      "pilgrimage",
+      "trail"
+    ]
+  },
+  "routes": {
+    "annaya": "/visit-annaya",
+    "hermitage": "/saint-charbel-hermitage",
+    "places": "/saint-charbel-places-lebanon",
+    "bekaa": "/bekaa-kafra",
+    "qadisha": "/qadisha-valley",
+    "qannoubine": "/qannoubine-monastery",
+    "qozhaya": "/qozhaya-monastery",
+    "cedars": "/cedars-of-god-lebanon",
+    "harissa": "/our-lady-of-lebanon-harissa",
+    "bkerke": "/bkerke-maronite-patriarchate",
+    "pilgrimage": "/saint-charbel-pilgrimage",
+    "trail": "/saint-charbel-trail"
+  }
+}

@@ -10,7 +10,7 @@ Usage:
   python3 scripts/sitemap_lastmod.py --check  # fail if any value is stale
 """
 import argparse
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 import re
 import subprocess
@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://marsharbel.com"
 ENTRY = re.compile(r"<url>\s*<loc>([^<]+)</loc>(.*?)</url>", re.S)
 LASTMOD = re.compile(r"\s*<lastmod>([^<]*)</lastmod>")
+SKEW = timedelta(days=1)
 DATE = re.compile(r"\d{4}-\d{2}-\d{2}$")
 
 
@@ -82,7 +83,9 @@ def validate(root, text=None):
             except ValueError as error:
                 errors.append(f"sitemap.xml: {error}")
                 continue
-            if lastmod < changed:
+            # A PR is dated when written; its squash commit lands later, often across a
+            # UTC midnight. One day of skew is not staleness.
+            if date.fromisoformat(lastmod) < date.fromisoformat(changed) - SKEW:
                 errors.append(f"sitemap.xml: stale lastmod for {url}: {lastmod} < {changed}; "
                               "run python3 scripts/sitemap_lastmod.py")
     return errors

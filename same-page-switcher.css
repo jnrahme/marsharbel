@@ -1,0 +1,84 @@
+/* Shared availability layout for both article headers and static guide mastheads. */
+/* Persistent accessible description; contextual visible note never enlarges header. */
+.sc-language-feedback{position:fixed;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap}
+.sc-language-feedback.is-open{z-index:10000;width:min(320px,calc(100vw - 16px));height:auto;overflow:visible;clip:auto;clip-path:none;white-space:normal;padding:.65rem .8rem;border:1px solid #746a58;border-radius:8px;background:#221e1a;color:#f3ede3;font-size:.875rem;line-height:1.45;overflow-wrap:anywhere;box-shadow:0 4px 18px #0006}
+.sc-language-helper,.sc-language-status{display:block}
+.sc-language-helper:empty,.sc-language-status:empty{display:none}
+/* Refusal stays available to screen readers without a second visible helper. */
+.sc-language-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0}
+/* Allow long unavailable option labels to shrink within the masthead, including RTL. */
+.masthead .lang-switcher{display:flex;align-items:center;gap:.65rem;margin-block:1rem;max-inline-size:100%;min-inline-size:0}
+.masthead .lang-switcher select{font:inherit;font-size:1rem;min-height:2.75rem;max-width:100%;min-inline-size:0;flex-shrink:1;background:#221e1a;color:inherit;border:1px solid #746a58;padding:.4rem .6rem}
+nav.locale-nav a[aria-disabled="true"]{opacity:.75;cursor:default}
+.sc-unavailable-suffix{font-size:.875em;white-space:normal}
+nav.locale-nav a[aria-disabled="true"]{display:inline-block;max-width:100%;white-space:normal}
+/* Keep the shared compact phone chrome within its two navigation rows. */
+@media(max-width:640px){.topbar:has(#sc-language-switcher) .links{padding-block:0}.topbar:has(#sc-language-switcher) .links a,.topbar:has(#sc-language-switcher) .nav-group .nav-parent{padding-block:.25rem;line-height:1.2;min-height:24px;box-sizing:border-box}}
+
+/* A ready select replaces the expanded fallback nav, never before JS succeeds. */
+header nav.locale-nav[hidden]{display:none}
+/* Language and install controls retain usable targets as text grows or shrinks. */
+#sc-language-switcher{min-inline-size:0;max-inline-size:100%;block-size:auto}
+#sc-language-select,#sc-install-app-btn{min-block-size:44px;min-inline-size:44px;block-size:auto;box-sizing:border-box}
+#sc-install-app-btn{max-inline-size:100%;white-space:normal;overflow-wrap:anywhere;text-align:center;padding-block:.4rem;padding-inline:.7rem}
+/* Natural rows preserve compact chrome without starving the brand under text zoom. */
+.topbar:has(#sc-language-switcher) .nav{display:flex;flex-wrap:wrap;gap:.35rem .5rem;align-items:center}
+.topbar:has(#sc-language-switcher) .brand{order:0;flex:1 0 auto;max-inline-size:100%;white-space:normal;overflow-wrap:anywhere;min-inline-size:0}
+.topbar:has(#sc-language-switcher) #sc-install-app-btn{order:1;flex:0 1 auto;inline-size:auto;max-inline-size:100%;border-radius:1.4rem}
+.topbar:has(#sc-language-switcher) #sc-language-switcher{order:2;flex:0 1 auto;inline-size:fit-content;min-inline-size:0;max-inline-size:min(100%,calc(220px + 12rem))}
+.topbar:has(#sc-language-switcher) .links{order:3;flex:1 0 100%;min-inline-size:0}
+#sc-language-switcher select{inline-size:clamp(calc(8ch + 2rem),20vw,220px);max-inline-size:100%;min-inline-size:min(100%,calc(8ch + 2rem));text-overflow:ellipsis;text-align:start}
+@media(max-width:640px){
+ .topbar:has(#sc-language-switcher) .nav{row-gap:0;padding-block:.2rem}
+ .topbar:has(#sc-language-switcher) .brand{flex:1 1 auto}
+ .topbar:has(#sc-language-switcher) #sc-language-switcher{max-inline-size:100%;min-inline-size:min(100%,calc(8ch + 2rem));padding-block:0;border:0}
+ #sc-language-switcher select{inline-size:clamp(calc(8ch + 2rem),25vw,96px);max-inline-size:100%}
+ .topbar:has(#sc-language-switcher) .links{margin-block:0}
+}
+/* Install App control on localized pages: same pill the rest of the site
+   ships (styles.css .sc-install-app-btn), with the 44px design-bar touch
+   target. Scoped by lang so EN controls - already styled by
+   styles.css/home.css - stay pixel-identical to stage. Values are literal
+   because the generated international.css families do not define the
+   --theme-button* custom properties. This stylesheet loads last on every
+   same-page-control page, so the rule wins in both the styles.css and
+   international.css locale contexts. The label span carries the ellipsis:
+   text-overflow needs a real block container - anonymous flex items inside
+   the button clip centered text at both ends and never render the glyph.
+   min-width:0 lets button and span shrink below the label's natural width;
+   max-width keeps any label length on-page. */
+html:not([lang="en"]) .sc-install-app-btn{border:1px solid rgba(211,178,110,.42);background:linear-gradient(180deg,#ddd0bd,#bda98f);color:#2f220c;border-radius:999px;padding:.38rem .82rem;font-size:.8rem;font-weight:800;line-height:1;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:0;max-width:100%;overflow:hidden}
+html:not([lang="en"]) .sc-install-app-btn .sc-install-app-btn-label{display:block;min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+html:not([lang="en"]) .sc-install-app-btn:hover{filter:brightness(1.05)}
+html:not([lang="en"]) .sc-install-app-btn:focus-visible{outline:3px solid #dbc49a;outline-offset:2px}
+
+/* styles.css scales the same pill down responsively (.75rem at <=1240px,
+   .74rem at <=640px, .7rem at <=430px). This sheet loads after it, so the
+   flat .8rem above would flatten that scale wherever both sheets apply and
+   push compact headers over their row budget (PL travel 390px: 100.2 ->
+   143.7px, select forced onto its own row). Mirror the same steps so the
+   locale pill keeps the site's responsive metrics; the narrowest step comes
+   last so it wins at shared breakpoints. */
+@media(max-width:1240px){
+html:not([lang="en"]) .sc-install-app-btn{padding:.34rem .68rem;font-size:.75rem}
+}
+@media(max-width:640px){
+html:not([lang="en"]) .sc-install-app-btn{padding:.34rem .65rem;font-size:.74rem}
+}
+@media(max-width:430px){
+html:not([lang="en"]) .sc-install-app-btn{padding:.3rem .55rem;font-size:.7rem}
+}
+@media(max-width:360px){
+html:not([lang="en"]) .sc-install-app-btn{padding:.3rem .5rem}
+}
+
+/* The 44px control grows the compact two-row locale header past its 105px
+   cap (95.375 -> 107.375 at 390px). Take the space back from the
+   surrounding chrome - nav block padding and row gap - so compact
+   surfaces hold at about 100.2px with the control at full height.
+   Link min-height stays at the site-standard 24px: anything smaller
+   fails the WCAG 2.2 target-size floor (axe).
+   Locale-scoped: EN compact chrome keeps its stage layout. */
+@media(max-width:640px){
+html:not([lang="en"]) .topbar:has(#sc-language-switcher) .nav{padding-block:.2rem;row-gap:0}
+}

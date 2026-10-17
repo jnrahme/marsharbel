@@ -5,19 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Qadisha Valley: The Holy Valley Where Maronite Monks Hid for Centuries</title>
   <meta name="description" content="The Qadisha Valley sheltered Maronite monks and hermits for a thousand years. Its monasteries, hermitages, UNESCO status, and how to visit." />
@@ -32,10 +20,14 @@
   <meta property="og:locale:alternate" content="ar_AR" />
 <meta property="og:locale:alternate" content="es_ES" />
 <meta property="og:locale:alternate" content="fr_FR" />
-<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
 <meta property="og:locale:alternate" content="it_IT" />
 <meta property="og:locale:alternate" content="de_DE" />
 <meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:image" content="https://marsharbel.com/media/annaya/qadisha-valley-aerial.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Qadisha Valley: The Holy Valley Where Maronite Monks Hid for Centuries" />
@@ -52,7 +44,14 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "Saint Charbel",
-    "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"],
+    "alternateName": [
+      "Mar Charbel",
+      "Saint Charbel Makhlouf",
+      "Sharbel",
+      "St Charbel",
+      "Saint Sharbel",
+      "Charbel Makhlouf"
+    ],
     "url": "https://marsharbel.com/",
     "publisher": {
       "@type": "Organization",
@@ -72,6 +71,12 @@
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Travel",
+        "item": "https://marsharbel.com/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "The Qadisha Valley, Lebanon's Holy Valley",
         "item": "https://marsharbel.com/qadisha-valley"
       }
@@ -170,15 +175,19 @@
   <link rel="preload" href="/media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles.css?v=20260922-1" />
-  <link rel="stylesheet" href="/travel.css?v=20261002-1" />
+  <link rel="stylesheet" href="/travel.css?v=20261002-3" />
   <style>html[lang="ar"][data-authored-mirror="qadisha"] body{line-height:1.8}html[lang="ar"][data-authored-mirror="qadisha"] h1,html[lang="ar"][data-authored-mirror="qadisha"] h2,html[lang="ar"][data-authored-mirror="qadisha"] h3{line-height:1.35}html[lang="ar"][data-authored-mirror="qadisha"] .hero h1{max-width:16ch}</style>
   <!-- hreflang:begin -->
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qadisha-valley" />
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/qadisha-valley" />
-  <link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qadisha-valley" />
-  <link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/vallee-qadisha" />
-  <link rel="alternate" hreflang="es" href="https://marsharbel.com/es/valle-qadisha" />
   <!-- hreflang:end -->
+<link rel="alternate" hreflang="en" href="https://marsharbel.com/qadisha-valley" />
+<link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qadisha-valley" />
+<link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/vallee-qadisha" />
+<link rel="alternate" hreflang="es" href="https://marsharbel.com/es/valle-qadisha" />
+<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/qadisha-valley" />
+<link rel="alternate" hreflang="ru" href="https://marsharbel.com/ru/qadisha-valley" />
+<link rel="alternate" hreflang="zh-Hans" href="https://marsharbel.com/zh-Hans/qadisha-valley" />
+<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qadisha-valley" />
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body class="travel-page travel-destination">
   <header class="topbar">
@@ -187,9 +196,9 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -197,11 +206,15 @@
         <div class="nav-sub">
         <a href="./miracles">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -225,8 +238,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="active nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="active nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -237,13 +251,24 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
-        <a href="./gallery">Gallery</a>
+        <a href="./news">News</a>
+<div class="nav-group">
+<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="./music">Media<span aria-hidden="true" class="nav-chev"></span></a>
+<div class="nav-sub">
+<a href="./music">Music</a>
+<a href="./videos">Video</a>
+<a href="./gallery">Gallery</a>
+</div></div>
+
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="In this guide"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/travel">Travel</a><span aria-hidden="true">/</span><span aria-current="page">The Qadisha Valley, Lebanon&#x27;s Holy Valley</span></nav>
+<!-- i18n-travel-frame:end -->
     <section class="travel-hero">
       <figure class="travel-hero-image"><img src="/media/annaya/qadisha-valley-aerial.webp" alt="Aerial view over the Qadisha Valley near Qannoubine: steep green cliffs and a monastery tucked into the rock. Photo by Evan Williams, Wikimedia Commons" width="1200" height="899" fetchpriority="high" decoding="async" /><figcaption>The Qadisha Valley from above Qannoubine - monasteries still cling to its cliffs. Photo: Evan Williams, Wikimedia Commons (CC BY-SA 4.0).</figcaption></figure>
       <div class="travel-hero-copy"><h1>The Qadisha Valley, Lebanon's Holy Valley</h1><p>The Qadisha Valley - the Holy Valley - is the deep gorge in North Lebanon where Maronite monasticism took root: a thousand years of hermit caves and cliff-built monasteries, today a UNESCO World Heritage site together with the Cedars of God above its source.</p>
@@ -349,5 +374,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="/nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

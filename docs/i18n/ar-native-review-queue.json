@@ -1,0 +1,219 @@
+[
+  {
+    "route": "/ar/gallery",
+    "status": "agent-translated-native-not-certified",
+    "family": "gallery-master",
+    "copyFile": "locales/ar/gallery-master-copy.json",
+    "keyCount": 131,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN gallery page (AR-2 pilot, #737)",
+    "sourceUrls": [
+      "https://marsharbel.com/gallery"
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "route": "/ar/saints",
+    "status": "agent-translated-native-not-certified",
+    "family": "saints-master",
+    "copyFile": "locales/ar/saints-master-copy.json",
+    "keyCount": 282,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN saints page (AR-2 second territory, #739)",
+    "sourceUrls": [
+      "https://marsharbel.com/saints"
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "route": "/ar (shared chrome)",
+    "status": "agent-translated-native-not-certified",
+    "family": "chrome",
+    "copyFile": null,
+    "keyCount": null,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "AR-1 chrome labels: shared header/nav strings shipped with the first Arabic rollout and reused across the /ar mirror pages (header home, Saint Charbel, nav items)",
+    "sourceUrls": [
+      "https://marsharbel.com/ar"
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "route": "/ar/feedback",
+    "status": "agent-translated-native-not-certified",
+    "family": "feedback-master",
+    "copyFile": "locales/ar/feedback-master-copy.json",
+    "keyCount": 83,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN feedback form page (AR-2 third territory, forms PR)",
+    "sourceUrls": [
+      "https://marsharbel.com/feedback"
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "route": "/ar/submit-testimony",
+    "status": "agent-translated-native-not-certified",
+    "family": "submit-testimony-master",
+    "copyFile": "locales/ar/submit-testimony-master-copy.json",
+    "keyCount": 84,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN submit-testimony form page (AR-2 third territory, forms PR)",
+    "sourceUrls": [
+      "https://marsharbel.com/submit-testimony"
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "route": "/ar/voice-testimony",
+    "status": "agent-translated-native-not-certified",
+    "family": "voice-testimony-master",
+    "copyFile": "locales/ar/voice-testimony-master-copy.json",
+    "keyCount": 105,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN voice-testimony page incl. verbatim transcript keys (AR-2 third territory, forms PR)",
+    "sourceUrls": [
+      "https://marsharbel.com/voice-testimony"
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "route": "/ar/prayer-library",
+    "status": "agent-translated-native-not-certified",
+    "family": "prayer-library-master",
+    "copyFile": "locales/ar/prayer-library-master-copy.json",
+    "keyCount": 513,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN prayer-library page incl. liturgical prayer texts, placeholder attribute, and nav chrome (AR-2 fourth territory)",
+    "sourceUrls": [
+      "https://marsharbel.com/prayer-library"
+    ],
+    "checkedAt": "2026-10-12"
+  },
+  {
+    "route": "/ar/encyclopedia",
+    "status": "agent-translated-native-not-certified",
+    "family": "saint-charbel-encyclopedia-master",
+    "copyFile": "locales/ar/saint-charbel-encyclopedia-master-copy.json",
+    "keyCount": 123,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN Saint Charbel Encyclopedia hub page incl. meta, section headings, card copy and nav chrome; 123 keys (64 Arabic-only reuse, 59 fresh) (AR-2 fifth territory)",
+    "sourceUrls": [
+      "https://marsharbel.com/saint-charbel-encyclopedia"
+    ],
+    "checkedAt": "2026-10-12"
+  },
+  {
+    "route": "/ar/news",
+    "status": "agent-translated-native-not-certified",
+    "family": "news-master",
+    "copyFile": "locales/ar/news-master-copy.json",
+    "keyCount": 209,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN news desk page incl. meta, lead block, compact report-list rows, month bands, chip vocabulary, and footer; 137 keys (65 fresh in the PR 2 list rebuild incl. bands/chips/summaries, phrasing reused from approved AR where identical; chip Event rendered مناسبة and H2 آخر الأخبار flagged for native read) (AR-2 sixth territory, PR 2 rebuild); 2026-10-13: +7 keys for the Pope Leo Gemelli admission and Rosary rows (papal news PR 3). 2026-10-13 (pope surgery update): regenerated contract after film-text drift repair; +10 keys (2 pope rows rewritten post-event, IT bulletin + USCCB sources, chips Update/Prayer), -7 dead admission/announcement keys; 2 film keys rebound with unchanged AR text.",
+    "sourceUrls": [
+      "https://marsharbel.com/news"
+    ],
+    "checkedAt": "2026-10-13",
+    "flags": [
+      "pope Gemelli/Rosary rewrite + credits: 10 new keys agent-translated, others reuse previously approved AR"
+    ]
+  },
+  {
+    "route": "/ar/videos",
+    "status": "agent-translated-native-not-certified",
+    "family": "videos-master",
+    "copyFile": "locales/ar/videos-master-copy.json",
+    "keyCount": 320,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN videos hub page incl. meta, section headings, card copy, player fallback strings and FAQ; 320 keys (63 Arabic-only reuse, 257 fresh incl. 23 iframe title attributes) (AR-2 seventh territory)",
+    "sourceUrls": [
+      "https://marsharbel.com/videos"
+    ],
+    "checkedAt": "2026-10-12"
+  },
+  {
+    "route": "/ar/testimonies",
+    "status": "agent-translated-native-not-certified",
+    "family": "testimonies-master",
+    "copyFile": "locales/ar/testimonies-master-copy.json",
+    "keyCount": 299,
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "Keyed family mirror of the EN testimonies/letters page incl. meta, globe country names, testimony summaries (reported vs Church-recognized distinctions kept), video titles and UI; 299 keys (61 Arabic-only reuse, 238 fresh) (AR-2 eighth territory)",
+    "sourceUrls": [
+      "https://marsharbel.com/testimonies"
+    ],
+    "checkedAt": "2026-10-12"
+  },
+  {
+    "route": "/ar/rosary",
+    "status": "authored-native-not-certified",
+    "family": "AR-2 hand-authored twin",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "AR-2 hand-authored twin",
+    "sourceUrls": [
+      "https://marsharbel.com/rosary-intro"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ar/miracles/dafne-gutierrez",
+    "status": "authored-native-not-certified",
+    "family": "AR-2 hand-authored twin",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "AR-2 hand-authored twin",
+    "sourceUrls": [
+      "https://marsharbel.com/miracles/dafne-gutierrez"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ar/miracles/nohad-el-shami",
+    "status": "authored-native-not-certified",
+    "family": "AR-2 hand-authored twin",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "AR-2 hand-authored twin",
+    "sourceUrls": [
+      "https://marsharbel.com/miracles/nohad-el-shami"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ar/miracles/raymond-nader",
+    "status": "authored-native-not-certified",
+    "family": "AR-2 hand-authored twin",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "AR-2 hand-authored twin",
+    "sourceUrls": [
+      "https://marsharbel.com/miracles/raymond-nader"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ar/miracles/",
+    "status": "authored-native-not-certified",
+    "family": "AR-2 hand-authored twin",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native Arabic)",
+    "scope": "AR-2 hand-authored twin",
+    "sourceUrls": [
+      "https://marsharbel.com/miracles/"
+    ],
+    "checkedAt": "2026-10-13"
+  }
+]

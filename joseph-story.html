@@ -4,22 +4,10 @@
 <head>
 <meta charset="utf-8"/>
 <!-- Google tag (gtag.js) -->
-<script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+<script defer src="/analytics-init.js"></script>
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="ar_AR" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Saint Joseph Story for Kids | Catholic Storybook</title>
   <meta name="description" content="Ten illustrated pages retell the Gospel story of Saint Joseph: Nazareth, Bethlehem, seeking safety and family care. Read or listen together." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -118,15 +106,45 @@
   ]
 }
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <link as="font" crossorigin="" href="./media/fonts/cormorant-garamond-latin-v1.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="./media/fonts/manrope-latin-v1.woff2" rel="preload" type="font/woff2"/>
 <link href="styles.css?v=20260922-1" rel="stylesheet"/>
 <link href="storybook.css" rel="stylesheet"/>
 <link href="storybook-joy.css" rel="stylesheet"/>
+<link href="storybook-stage.css" rel="stylesheet"/>
 <!-- hreflang:begin -->
 <link href="https://marsharbel.com/joseph-story" hreflang="x-default" rel="alternate"/>
 <link href="https://marsharbel.com/joseph-story" hreflang="en" rel="alternate"/>
 <!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body class="is-story-page" data-story="joseph">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -139,9 +157,9 @@
 <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -149,11 +167,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -177,8 +199,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -192,7 +215,14 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
 <div aria-hidden="true" class="lang-switcher-slot"></div>
 </div>
@@ -263,6 +293,13 @@
 <h2 id="family-bible-reading">Read the Bible and pray together</h2>
 <div class="card story"><p>With a trusted adult, read <a href="https://bible.usccb.org/bible/luke/2">Luke 2:51-52</a>. Jesus returned to Nazareth and grew in his family. Talk about one small, safe way to help at home, with room for rest and play.</p></div>
 </section>
+<section class="section saint-bio reveal" id="about-the-saint" aria-labelledby="saint-bio-title">
+<h2 id="saint-bio-title">About Saint Joseph</h2>
+<div class="saint-bio-grid">
+<dl class="saint-facts"><div><dt>Lived</dt><dd>First century</dd></div><div><dt>Place</dt><dd>Nazareth and Bethlehem; the flight to Egypt</dd></div><div><dt>Status</dt><dd>Patron of the Universal Church, proclaimed by Pope Pius IX on December 8, 1870</dd></div><div><dt>Feast</dt><dd>March 19</dd></div></dl>
+<div class="saint-bio-text"><p>The Gospels of Matthew and Luke tell us what we know about Joseph. He was a carpenter of Nazareth, engaged to Mary. Matthew says he took Mary into his home after an angel spoke to him in a dream. He traveled with her to Bethlehem, where Jesus was born.</p><p>When Herod threatened the child, Joseph took the family to Egypt, and later settled in Nazareth. Luke tells of the family's yearly trip to Jerusalem and the day Jesus was found in the Temple. The Gospels do not record a single spoken word from Joseph. Pope Francis wrote in Patris Corde that his strength was in quiet, faithful care. The Church also keeps May 1 as the memorial of Saint Joseph the Worker.</p><aside class='saint-key' aria-labelledby='saint-key-joseph-story'><h3 id='saint-key-joseph-story'>Key teaching</h3><p>Joseph shows quiet obedience to God. The Gospels record no word he spoke, only what he did: he took Mary into his home, protected the child and worked to provide for them.</p></aside><p class='saint-bio-sources'>Sources: <a href='https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20201208_patris-corde.html' target='_blank' rel='noopener'>Pope Francis: Patris Corde</a>; <a href='https://bible.usccb.org/bible/matthew/1' target='_blank' rel='noopener'>Matthew 1</a>; <a href='https://bible.usccb.org/bible/luke/2' target='_blank' rel='noopener'>Luke 2</a>.</p></div>
+</div>
+</section>
 <section class="section reveal">
 <h2>About this story</h2>
 <article class="card story"><p>Illustrations are original imaginative composites, not records of private conversations, exact rooms or workshop routines. Gospel events are attributed to Matthew or Luke. Modern reflection scenes are not historical footage.</p><p>Children are not responsible for keeping a family safe, traveling alone or solving a missing-person emergency. Seek a safe place and trusted adult when threatened or separated. Ordinary help must fit the child's age, with room for rest and play. No dream warning or rescue is promised to readers.</p><h3>Sources</h3><p><a href="https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20201208_patris-corde.html">Pope Francis: Patris Corde</a></p><p><a href="https://bible.usccb.org/bible/matthew/1">Matthew 1-2</a></p><p><a href="https://bible.usccb.org/bible/luke/2">Luke 2</a></p></article>
@@ -282,9 +319,14 @@
 <script defer="" src="app.js"></script>
 <script defer="" src="joseph-story-data.js"></script>
 <script defer="" src="storybook.js"></script>
+<script defer="" src="storybook-stage.js"></script>
 <script defer="" src="/locale-routes.js"></script>
 <script defer="" src="translate.js?v=20260922-1"></script>
 <script defer="" src="global-audio-player.js"></script>
 <script defer="" src="./nav.js?v=20260922-1"></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

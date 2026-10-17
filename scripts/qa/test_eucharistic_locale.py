@@ -6,6 +6,11 @@ import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from i18n.catalog import read_json
 from i18n.tour_nav import tour_nav
+from i18n.travel_components import travel_frame
+from i18n.runtime_labels import ensure_runtime_labels
+from i18n.same_page_injection import inject_control
+from i18n.catalog import read_json as _read_json_fc
+def fc(t):return inject_control(t,ROOT,_read_json_fc(ROOT/'locales/same-page-manifest.pending.json'),_read_json_fc(ROOT/'locales/same-page-copy.json'))
 from i18n.metadata import published_locales
 from i18n.eucharistic_mirror import render_eucharistic,SLUGS
 
@@ -36,7 +41,7 @@ class EucharisticLocaleTests(unittest.TestCase):
             for slug in ('index',*SLUGS):
                 route=ROOT/lang/'miracles/eucharistic'/f'{slug}.html'
                 translated=outputs[route]
-                self.assertEqual(route.read_text(),tour_nav(translated,ROOT,lang),route)
+                self.assertEqual(route.read_text(),fc(ensure_runtime_labels(travel_frame(tour_nav(translated,ROOT,lang),ROOT,lang,'/'+lang+'/miracles/eucharistic/'+('' if slug=='index' else slug),read_json(ROOT/"locales/registry.json")),ROOT,lang,read_json(ROOT/"locales/registry.json"))),route)
                 source=(ROOT/'miracles/eucharistic'/f'{slug}.html').read_text()
                 a,b=Shape(source),Shape(translated)
                 self.assertEqual(a.tags,b.tags,(lang,slug))
@@ -47,7 +52,9 @@ class EucharisticLocaleTests(unittest.TestCase):
                     self.assertEqual(x['image'],y['image'])
                     self.assertEqual(y['inLanguage'],lang)
                     self.assertEqual(y['url'],'https://marsharbel.com/'+lang+'/miracles/eucharistic/'+('' if slug=='index' else slug))
-                self.assertEqual(translated.count('hreflang='),len(languages)+2)
+                from bs4 import BeautifulSoup
+                alternates=BeautifulSoup(translated,'html.parser').select('link[rel=alternate][hreflang]')
+                self.assertEqual(len(alternates),len(languages)+2)
                 if slug!='index':
                     self.assertEqual(len(catalog['stories'][slug]['sections']),3)
                     for field in ('image','credit','licenseurl','photo','source','source2'):
