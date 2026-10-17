@@ -1,0 +1,6 @@
+# Dated correction note to the Isaiah ENGLISH independent review file
+Date: Oct 17, 2026, ~6:40 PM ET. Issued by Content lane under Main's 6:33 PM instruction (owner review item 6). The reviewer's original file is held by Main and is NOT edited by me; this is a separate correction note.
+
+CORRECTION: wherever the Isaiah English independent review speaks of "all-locale mirrors" (or equivalent all-language story scope), that wording is STALE. It is superseded by the authenticated owner scope ruling of Oct 17, 2026, 6:08 PM EDT (Joey, WhatsApp 6:09:18 PM, relayed by Main 6:09:26 PM): STORY content production = ENGLISH AND ARABIC ONLY. All OTHER website pages remain fully translated into every required language (11 non-English shelf locales: ar, de, es, fr, hi, it, pl, pt, ru, th, zh-Hans). Existing other-language story assets are preserved (none exist beyond shelf/listing copy); no deletions, route changes, or hold releases are implied.
+
+EFFECT ON THE REVIEW: any acceptance conditioned on producing or maintaining story-body versions in languages other than English and Arabic should be read as out of scope; EN+AR is the complete story-language target. Other-page translation assignments (shelf, navigation, news, prayers) are unchanged and remain full-locale.
