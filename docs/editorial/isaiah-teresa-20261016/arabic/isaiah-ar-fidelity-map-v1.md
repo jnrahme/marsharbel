@@ -1,0 +1,18 @@
+# Isaiah AR body draft v1 - fidelity map vs EN script v1 and evidence pack
+AR draft sha256 b95a5b04ee9480b4aab829b37d2dcaf77da9d77f1c4ba51c8e4d927deaf51a6a
+EN source: isaiah-script-v1.md sha256 42886651ec99ea6f256ab8d82b0c60d4367e064976fc52c35770113c89b64e89
+Evidence: isaiah-evidence-v1.md sha256 f76a5c18c87e615462849093bdc4030a27458f9682fda3cf0e0dc144c750207a
+Method [I]: sentence-level Arabic translation (MSA, child read-aloud register), then per-page check against the evidence pack claim map. AR is original indirect retelling exactly like the EN: NO direct Bible quotation, no new translation of Scripture. Register terms matched to existing marsharbel.com Arabic pages [I]: القدس, الرب, الكتاب المقدس, الرجاء (locales/ar frequency check Oct 17).
+
+P1 (voice in Jerusalem) - Source: usccb.org Isaiah 6 + Vatican intro (8th c. BCE era). AR decisions: "Jerusalem" = القدس (site convention, not أورشليم); "kingdom of Judah" = مملكة يهوذا; vision labeled "رؤيا" twice as EN does. No invented feelings. Fidelity: full.
+P2 (seraphim/ember) - Source: Isaiah 6. AR: seraphim = السَّرافيم (Arabic Bible form); ember = جمرة; "unclean lips" rendered شفتيه غير الطاهرتين (paraphrase, NOT the Van Dyke wording نجس الشفتين, to stay non-quotation); doorway = مدخل الهيكل. Vision labeled again ("في الرؤيا لمست الجمرة فم إشعياء"). Fidelity: full.
+P3 (commission) - Source: Isaiah 6:8, indirect. AR keeps indirect question ("يسأل عمّن يحمل رسالته"), no quoted divine speech; heading «هأنذا» is unspoken page heading only. Prophet definition kept plain: نبيّ = شخص دُعي ليتكلّم برسالة الله. Fidelity: full.
+P4 (justice/neighbor) - Source: Isaiah 1:10-17. AR: orphans/widows = الأيتام والأرامل; "neighbor" = القريب (commandment register) here, جيران in P1/P10 everyday register - flagged for reviewer consistency ruling. Present-day application kept as application. Fidelity: full.
+P5 (Ahaz) - Source: Isaiah 7:1-9 + Vatican intro. AR: Ahaz = آحاز; Assyria = أشّور; water channel = قناة ماء; trembling simile preserved; no invented dialogue. Fidelity: full.
+P6 (Emmanuel) - Source: Isaiah 7:14 + footnote. AR: عِمَّانوئيل with gloss «اللهُ معنا» (meaning preserved; EN order "with us is God" rendered in natural Arabic order); near-historical meaning first, Christian reading explicitly named as what Christians hear later ("سمع المسيحيون"), no claim Isaiah said Jesus' name. Fidelity: full.
+P7 (Hezekiah/701) - Source: Vatican intro. AR: Hezekiah = حِزْقِيَّا; "701 before Jesus" = 701 قبل ميلاد يسوع (mirrors EN child register); deliverance told as particular event, NO universal protection promise ("لا تعني أنّ المؤمنين لا يواجهون الخسارة أبدًا"). Fidelity: full.
+P8 (shoot/peace) - Source: Isaiah 11:1-9. AR: shoot/stump = فرع فتي من جذع قديم; wolf/lamb/child imagery preserved; prophetic-picture label explicit ("هذه صور نبوية") + wild-animal safety line; Christological reading named ("يرى المسيحيون"). Fidelity: full.
+P9 (legacy) - Source: Vatican intro. AR: later disciples, no martyrdom, no death date, no exile episode, Isaiah 40-66 not ascribed to him personally - all preserved. Fidelity: full.
+P10 (reflection/prayer) - Source: editorial (Isa 6:8, 1:16-17 verified). AR: chapter/verse = الإصحاح/الآية; readings cited identically; prayer is original editorial text, translated as such; safety-shaped invitation (trusted grown-up) preserved. Fidelity: full.
+
+Known open items for the reviewer [P]: (1) القريب vs جار consistency ruling for "neighbor"; (2) هأنذا heading vs body paraphrase acceptable; (3) Western digits kept (701, 16, 17) matching site Arabic pages; (4) RTL layout of the assembled book page is untested - book page template is LTR English-only today [I].
