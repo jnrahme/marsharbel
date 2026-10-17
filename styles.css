@@ -2964,6 +2964,8 @@ a.card:active{transform:scale(.99);transition-duration:140ms}
 .hero-figure img.is-portrait{aspect-ratio:3/4;object-fit:cover;object-position:50% 8%}
 .hero-figure img.is-square-ish{aspect-ratio:auto;object-fit:contain}
 .prayer-page .hero-figure img:not(.is-portrait):not(.is-square-ish){aspect-ratio:16/10;object-fit:cover;object-position:50% 30%}
+/* Keyed prayers master ships the historic portrait without ratio classes (keyed pipeline does not add them): give it the portrait frame so the face keeps its headroom. Fixes /saint-charbel-prayers + locale twins. */
+.prayer-page .hero-figure img[src$="charbel-historic-photo.webp"]:not(.is-portrait):not(.is-square-ish){aspect-ratio:3/4;object-fit:cover;object-position:50% 8%}
 .prayer-page .prayer-grid:not(:has(>:nth-child(5))){grid-template-columns:minmax(0,1fr);max-width:46rem;gap:0}
 .prayer-page .prayer-grid:not(:has(>:nth-child(5)))>.prayer-card{padding:1.6rem 0 1.7rem 1.4rem;border:0;border-bottom:1px solid var(--theme-line-soft);border-left:2px solid rgba(211,178,110,.45);border-radius:0;background:none;box-shadow:none}
 .prayer-page .prayer-grid:not(:has(>:nth-child(5))) .prayer-card p{font-size:1.06rem;line-height:1.75;text-wrap:pretty}
