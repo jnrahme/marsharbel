@@ -28,7 +28,7 @@ ROW_ID = 'pope-leo-gemelli-discharge-2026-10-17'
 TITLE = 'Pope Leo to be discharged from Gemelli today'
 BODY = ("On his fifth day at Gemelli, Pope Leo XIV's doctors said morning blood tests and a chest X-ray "
         "confirm he is fit to leave hospital. The Holy See Press Office said he will be discharged Saturday "
-        "afternoon and return to the Vatican, after celebrating Mass in the hospital's 10th-floor chapel. "
+        "afternoon and return to the Vatican, after celebrating Mass in the room set aside for that purpose on the 10th floor. "
         "On Sunday he will lead the Angelus from the window of the papal apartment.")
 DATE_EN = 'October 17, 2026'
 CREDIT_EN = 'Vatican News: Pope Leo XIV to be discharged from hospital (October 17, 2026)'
@@ -101,7 +101,11 @@ def outputs(root=ROOT):
     if not already and shifted < 100:
         raise ValueError(f'expected ~181 credit selectors to shift, got {shifted}')
     row = f'#{ROW_ID} > div:nth-of-type(1)'
-    bindings += [] if already else [
+    row_sels = {f'{row} > h3:nth-of-type(1) > a:nth-of-type(1)', f'{row} > p:nth-of-type(1)',
+                f'{row} > p:nth-of-type(2) > span:nth-of-type(1)', f'{row} > p:nth-of-type(2) > time:nth-of-type(1)',
+                f'{CREDIT_SEL}(1) > span:nth-of-type(1)', f'{CREDIT_SEL}(1) > a:nth-of-type(1)'}
+    bindings = [b for b in bindings if b['selector'] not in row_sels]  # upsert: refresh row copy on re-run
+    bindings += [
         {'key': K_TITLE, 'selector': f'{row} > h3:nth-of-type(1) > a:nth-of-type(1)', 'source': TITLE, 'kind': 'text', 'nodeIndex': 0},
         {'key': K_SUMMARY, 'selector': f'{row} > p:nth-of-type(1)', 'source': BODY, 'kind': 'text', 'nodeIndex': 0},
         {'key': K_CHIP, 'selector': f'{row} > p:nth-of-type(2) > span:nth-of-type(1)', 'source': 'Update', 'kind': 'text', 'nodeIndex': 0},
