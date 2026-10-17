@@ -3043,6 +3043,9 @@ html[lang="de"][data-authored-mirror="miracles"] .section h2{hyphens:auto;overfl
 /* German history compounds must wrap within the phone table, not widen it. */
 html[lang="de"][data-authored-mirror="history-master"] .history-table th,
 html[lang="de"][data-authored-mirror="history-master"] .history-table td{hyphens:auto;overflow-wrap:anywhere}
+/* German history-master compounds ("Heiligsprechungsprozesse", "Premierenberichterstattung"
+   length class) overflow headings, prose and captions at 200% text; hyphenate and wrap. */
+html[lang="de"][data-authored-mirror="history-master"] :is(h1,h2,h3,h4,p,li,figcaption){hyphens:auto;overflow-wrap:anywhere}
 .history-next{columns:2;column-gap:2rem;padding-left:1.1rem}
 .history-next li{break-inside:avoid;margin:.3rem 0}
 .history-copy h3{margin-top:1.4rem}
@@ -3262,6 +3265,9 @@ main:has(.hero-figure img[src$="st-rafqa.webp"]) .cta-row .btn { padding-block: 
 .film-news-dates strong{font-size:clamp(1.1rem,2vw,1.5rem);line-height:1.4}
 .film-news-video{aspect-ratio:16/9;margin-block:1rem}
 .film-news-video iframe{width:100%;height:100%;border:0}
+/* German film-premiere h2 compounds ("Premierenberichterstattung") overflow
+   the heading box at 200% text; same wrap treatment as the de mirror h1/h2. */
+html[lang="de"] .film-news-article h2{hyphens:auto;overflow-wrap:anywhere}
 .film-locale-switcher{display:flex;flex-wrap:wrap;gap:.4rem .9rem;align-items:center;margin-block:1rem 1.5rem;font-size:.95rem}
 .film-locale-switcher a{color:var(--muted);text-decoration:none}
 .film-locale-switcher a:hover{color:var(--theme-accent)}
