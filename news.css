@@ -44,8 +44,11 @@
 
 /* Row: 96px thumbnail | text | arrow. Whole row is the tap target (stretched link);
    the share button sits above the overlay (z-index 3, set on .share-bar in styles.css). */
-.news-row{position:relative;display:grid;grid-template-columns:96px 1fr auto;gap:1rem;align-items:center;padding-block:1rem;transition:background-color .2s ease}
+.news-row{position:relative;display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:1rem;align-items:center;padding-block:1rem;transition:background-color .2s ease}
 .news-row:hover{background:#2C2621}
+/* 200% text: let the text track shrink below min-content and hyphenate long words instead of overflowing the row. */
+.news-row-text{min-width:0}
+.news-row-title,.news-row-summary{overflow-wrap:anywhere;hyphens:auto}
 .news-row-thumb{display:block;width:96px;height:96px;border-radius:10px;overflow:hidden;background:#171411}
 .news-row-thumb img{display:block;width:100%;height:100%;object-fit:cover}
 .news-row-thumb--tile img{object-fit:contain;padding:6px}
@@ -56,6 +59,9 @@
 .news-row-link::after{content:"";position:absolute;inset:0;z-index:1}
 .news-row-summary{margin:0;color:var(--theme-ink-soft);font-size:.98rem;line-height:1.45;max-width:68ch;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .news-row-meta{margin:.35rem 0 0;display:flex;align-items:center;gap:.5rem;font-size:.86rem;color:var(--theme-ink-soft)}
+/* 200% text: allow the meta row to wrap and the date to break instead of forcing the row wide. */
+.news-row-meta{flex-wrap:wrap}
+.news-row-meta time{min-width:0;overflow-wrap:anywhere}
 .news-row-arrow{position:relative;width:24px;height:24px;margin-inline:.25rem;color:var(--theme-accent);transition:transform .2s ease}
 .news-row-arrow::before{content:"";position:absolute;inset:6px;border-inline-end:2px solid currentColor;border-block-end:2px solid currentColor;transform:rotate(-45deg)}
 [dir="rtl"] .news-row-arrow::before{transform:rotate(135deg)}
@@ -69,7 +75,13 @@
 .news-row .share-status{position:absolute;inset-block-start:100%;inset-inline-end:0;background:var(--theme-surface);padding:.25rem .55rem;border-radius:8px;white-space:nowrap;font-size:.8rem}
 
 @media (max-width:520px){
-  .news-row{gap:.8rem;padding-block:.9rem}
+  /* Stack rows: at 200% text zoom the 96px thumb + arrow leave the text track
+     only ~50px - unreadable and overflowing. One column keeps every row readable. */
+  .news-row{grid-template-columns:minmax(0,1fr);gap:.6rem;padding-block:.9rem}
+  .news-row-thumb--empty{display:none}
+  .news-row-thumb{width:72px;height:72px}
+  .news-row .share-bar{position:static;transform:none;inset:auto}
+  .news-row-arrow{display:none}
   .news-row-title{font-size:1.18rem}
   .news-row-summary{font-size:.94rem}
 }
