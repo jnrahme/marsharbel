@@ -26,10 +26,10 @@ from i18n.make_bindings import slug
 
 ROW_ID = 'pope-leo-gemelli-discharge-2026-10-17'
 TITLE = 'Pope Leo discharged from Gemelli, back at the Vatican'
-BODY = ("Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon, five days after lung surgery, "
-        "and returned to the papal apartments in Vatican City. Before leaving, he celebrated Mass in the "
-        "hospital's 10th-floor chapel. On Sunday at noon he will lead the Angelus from the window of the "
-        "Apostolic Palace.")
+BODY = ("Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon following lung surgery "
+        "on Tuesday and returned to the papal apartments in Vatican City. Before leaving, he celebrated "
+        "Mass in the room set aside for that purpose on the 10th floor. On Sunday at noon he will lead "
+        "the Angelus from the window of the Apostolic Palace.")
 DATE_EN = 'October 17, 2026'
 CREDIT_EN = 'Vatican News: Pope Leo XIV returns to Vatican after being discharged from hospital (October 17, 2026)'
 HOME_CREDIT_EN = ('Pope Leo XIV was discharged from Gemelli on Saturday afternoon and is back at the '
