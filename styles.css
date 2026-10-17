@@ -2503,6 +2503,16 @@ main .grid-2>.card,main .grid-2>.story,main .grid-2>.practice,main .grid-2>.upda
     max-height: 62vh;
     overflow-y: auto;
   }
+
+  /* Panel spans the bar at this width; long locale link text must wrap
+     inside it instead of overflowing the page. The top-bar .links a
+     flex-shrink:0 would otherwise freeze dropdown items at max-content
+     (200% text, de "Enzyklopadie des heiligen Charbel" 429px). */
+  .nav-sub a {
+    white-space: normal;
+    flex-shrink: 1;
+    min-width: 0;
+  }
 }
 
 /* Nav alignment fix: one shared line for every item, all states */
@@ -3014,6 +3024,9 @@ a.card:active{transform:scale(.99);transition-duration:140ms}
 .enc-nav-item > .enc-language { font-size: .85em; opacity: .8; }
 /* German compound nouns stay intact within the exact miracle master heading. */
 html[lang="de"][data-authored-mirror="miracles"] .hero h1{max-width:20ch;hyphens:auto;overflow-wrap:anywhere;word-break:normal}
+/* Same for section headings on the German mirror: compounds like
+   "Heiligsprechung" and "Eucharistische" overflow the h2 box at 200% text. */
+html[lang="de"][data-authored-mirror="miracles"] .section h2{hyphens:auto;overflow-wrap:anywhere}
 .history-figure{margin:1.4rem 0;max-width:100%}
 .history-figure img{display:block;width:100%;height:auto;border-radius:12px}
 .history-figure-small{max-width:500px}
