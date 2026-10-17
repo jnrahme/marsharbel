@@ -299,6 +299,12 @@ h3 {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
   line-height: 0.95;
+  /* F1 heading family (run3 200%-text baseline run3-390-c088cf6c): long
+     unbreakable localized words overflow the 390px column at 200% text.
+     anywhere (not break-word) so grid/flex tracks sized by min-content can
+     shrink and the word actually wraps; matches the scoped #840/#841
+     treatment. Content and annotations are never hidden. */
+  overflow-wrap: anywhere;
 }
 
 .hero h1 {
