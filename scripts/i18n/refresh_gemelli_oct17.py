@@ -25,22 +25,22 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 from i18n.make_bindings import slug
 
 ROW_ID = 'pope-leo-gemelli-discharge-2026-10-17'
-TITLE = 'Pope Leo to be discharged from Gemelli today'
-BODY = ("On his fifth day at Gemelli, Pope Leo XIV's doctors said morning blood tests and a chest X-ray "
-        "confirm he is fit to leave hospital. The Holy See Press Office said he will be discharged Saturday "
-        "afternoon and return to the Vatican, after celebrating Mass in the room set aside for that purpose on the 10th floor. "
-        "On Sunday he will lead the Angelus from the window of the papal apartment.")
+TITLE = 'Pope Leo discharged from Gemelli, back at the Vatican'
+BODY = ("Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon, five days after lung surgery, "
+        "and returned to the papal apartments in Vatican City. Before leaving, he celebrated Mass in the "
+        "hospital's 10th-floor chapel. On Sunday at noon he will lead the Angelus from the window of the "
+        "Apostolic Palace.")
 DATE_EN = 'October 17, 2026'
-CREDIT_EN = 'Vatican News: Pope Leo XIV to be discharged from hospital (October 17, 2026)'
-HOME_CREDIT_EN = ('Doctors say morning tests confirm Pope Leo is fit to leave Gemelli; he will return to the '
-                  'Vatican this afternoon. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, '
+CREDIT_EN = 'Vatican News: Pope Leo XIV returns to Vatican after being discharged from hospital (October 17, 2026)'
+HOME_CREDIT_EN = ('Pope Leo XIV was discharged from Gemelli on Saturday afternoon and is back at the '
+                  'Vatican; on Sunday at noon he leads the Angelus. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, '
                   'Wikimedia Commons, CC BY-SA 3.0 IT; resized to WebP.')
 
 NEWS_PREFIX = 'news.latest-news.'
-K_TITLE = NEWS_PREFIX + slug(TITLE)
-K_SUMMARY = NEWS_PREFIX + slug(BODY)
+K_TITLE = NEWS_PREFIX + 'pope-leo-to-be-discharged-from-gemelli-today'  # stable key, refreshed value
+K_SUMMARY = NEWS_PREFIX + 'on-his-fifth-day-at-gemelli-pope-leo-xiv-s-doctors-said-morn'  # stable key, refreshed value
 K_DATE = NEWS_PREFIX + 'october-17-2026'
-K_CREDIT = NEWS_PREFIX + slug(CREDIT_EN)
+K_CREDIT = NEWS_PREFIX + 'vatican-news-pope-leo-xiv-to-be-discharged-from-hospital-oct'  # stable key, refreshed value
 K_CHIP = NEWS_PREFIX + 'update'
 
 HOME_KEYS = {  # stable keys, refreshed values
