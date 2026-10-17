@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 SLOT_ANCHORS = {
     'premiere': 'href="./charbel-film-premiere"',
-    'popeGemelli': 'href="./news#pope-leo-gemelli-prayer-2026-10-13"',
+    'popeGemelli': 'href="./news#pope-leo-gemelli-discharge-2026-10-17"',
     'popeRosary': 'href="./news#pope-leo-rosary-announcement-2026-10-13"',
     'emmitsburg': 'href="./news#emmitsburg-shrine-anniversary-2026-09"',
     'borik': 'href="./news#doctor-borik-interview-2026-09"',
