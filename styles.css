@@ -256,6 +256,7 @@ a {
 .hero {
   padding: 4rem 0 1.5rem;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.4rem;
 }
 
@@ -267,6 +268,7 @@ a {
 
 .hero-main {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.4rem;
 }
 
@@ -1704,7 +1706,7 @@ h3 {
   .hero-with-lent,
   .hero-grid,
   .grid-2 {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .photo-card {
@@ -3011,7 +3013,7 @@ a.card:active{transform:scale(.99);transition-duration:140ms}
 .nav-sub .enc-nav-item > a { display: inline; padding: 0; }
 .enc-nav-item > .enc-language { font-size: .85em; opacity: .8; }
 /* German compound nouns stay intact within the exact miracle master heading. */
-html[lang="de"][data-authored-mirror="miracles"] .hero h1{max-width:20ch;overflow-wrap:normal;word-break:normal}
+html[lang="de"][data-authored-mirror="miracles"] .hero h1{max-width:20ch;hyphens:auto;overflow-wrap:anywhere;word-break:normal}
 .history-figure{margin:1.4rem 0;max-width:100%}
 .history-figure img{display:block;width:100%;height:auto;border-radius:12px}
 .history-figure-small{max-width:500px}
