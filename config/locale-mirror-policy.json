@@ -3191,6 +3191,121 @@
         "partial-home-disclosure",
         "localized-source-links"
       ]
+    },
+    "hi/qadisha-valley.html": {
+      "locale": "hi",
+      "route": "/hi/qadisha-valley",
+      "master": "qadisha-valley.html",
+      "masterRoute": "/qadisha-valley",
+      "family": "qadisha-valley-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations"
+      ]
+    },
+    "th/qadisha-valley.html": {
+      "locale": "th",
+      "route": "/th/qadisha-valley",
+      "master": "qadisha-valley.html",
+      "masterRoute": "/qadisha-valley",
+      "family": "qadisha-valley-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "hi/qannoubine-monastery.html": {
+      "locale": "hi",
+      "route": "/hi/qannoubine-monastery",
+      "master": "qannoubine-monastery.html",
+      "masterRoute": "/qannoubine-monastery",
+      "family": "qannoubine-monastery-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations"
+      ]
+    },
+    "th/qannoubine-monastery.html": {
+      "locale": "th",
+      "route": "/th/qannoubine-monastery",
+      "master": "qannoubine-monastery.html",
+      "masterRoute": "/qannoubine-monastery",
+      "family": "qannoubine-monastery-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "hi/qozhaya-monastery.html": {
+      "locale": "hi",
+      "route": "/hi/qozhaya-monastery",
+      "master": "qozhaya-monastery.html",
+      "masterRoute": "/qozhaya-monastery",
+      "family": "qozhaya-monastery-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations"
+      ]
+    },
+    "th/qozhaya-monastery.html": {
+      "locale": "th",
+      "route": "/th/qozhaya-monastery",
+      "master": "qozhaya-monastery.html",
+      "masterRoute": "/qozhaya-monastery",
+      "family": "qozhaya-monastery-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "hi/bekaa-kafra.html": {
+      "locale": "hi",
+      "route": "/hi/bekaa-kafra",
+      "master": "bekaa-kafra.html",
+      "masterRoute": "/bekaa-kafra",
+      "family": "bekaa-kafra-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations"
+      ]
+    },
+    "th/bekaa-kafra.html": {
+      "locale": "th",
+      "route": "/th/bekaa-kafra",
+      "master": "bekaa-kafra.html",
+      "masterRoute": "/bekaa-kafra",
+      "family": "bekaa-kafra-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "hi/cedars-of-god-lebanon.html": {
+      "locale": "hi",
+      "route": "/hi/cedars-of-god-lebanon",
+      "master": "cedars-of-god-lebanon.html",
+      "masterRoute": "/cedars-of-god-lebanon",
+      "family": "cedars-of-god-lebanon-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations"
+      ]
+    },
+    "th/cedars-of-god-lebanon.html": {
+      "locale": "th",
+      "route": "/th/cedars-of-god-lebanon",
+      "master": "cedars-of-god-lebanon.html",
+      "masterRoute": "/cedars-of-god-lebanon",
+      "family": "cedars-of-god-lebanon-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
     }
   }
 }
