@@ -28,12 +28,17 @@ ROW_ID = 'pope-leo-gemelli-discharge-2026-10-17'
 TITLE = 'Pope Leo discharged from Gemelli, back at the Vatican'
 BODY = ("Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon following lung surgery "
         "on Tuesday and returned to the papal apartments in Vatican City. Before leaving, he celebrated "
-        "Mass in the room set aside for that purpose on the 10th floor. On Sunday at noon he will lead "
-        "the Angelus from the window of the Apostolic Palace.")
+        "Mass in the room set aside for that purpose on the 10th floor. On Sunday he prayed the midday "
+        "Angelus with thousands of faithful gathered in St Peter's Square - his first scheduled public "
+        "event since being discharged - thanking the doctors, nurses and staff of Gemelli and all who "
+        "prayed for him: 'I have truly felt your support.'")
 DATE_EN = 'October 17, 2026'
 CREDIT_EN = 'Vatican News: Pope Leo XIV returns to Vatican after being discharged from hospital (October 17, 2026)'
-HOME_CREDIT_EN = ('Pope Leo XIV was discharged from Gemelli on Saturday afternoon and is back at the '
-                  'Vatican; on Sunday at noon he leads the Angelus. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, '
+HOME_CREDIT_EN = ('Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon following lung surgery '
+                  'and returned to the Vatican. On Sunday he prayed the midday Angelus with thousands of faithful '
+                  "gathered in St Peter's Square - his first scheduled public event since being discharged - "
+                  'thanking the doctors, nurses and staff of Gemelli and all who prayed for him: '
+                  "'I have truly felt your support.' Context photo: Gemelli Hospital, Rome. Photo: Blackcat, "
                   'Wikimedia Commons, CC BY-SA 3.0 IT; resized to WebP.')
 
 NEWS_PREFIX = 'news.latest-news.'
