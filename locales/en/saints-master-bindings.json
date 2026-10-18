@@ -1,7 +1,7 @@
 {
  "version": 1,
  "master": "saints.html",
- "masterSha256": "0be73728417081d81ec041a7f28444c98361aec085b8616ffaf9040171b969e8",
+ "masterSha256": "cdcd082530f4ff8d9bbea8d7a1e46e91822a9be123571181fcee526ad53ba2fd",
  "sourceRevision": "unknown",
  "bindings": [
   {
@@ -764,6 +764,13 @@
    "key": "saints.main-shelf-lebanon-read-the-children-s-book-5",
    "selector": "#shelf-lebanon > div:nth-of-type(2) > article:nth-of-type(6) > p:nth-of-type(2) > a:nth-of-type(1)",
    "source": "Read the children's book",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saints.main-shelf-lebanon-pray-with-the-massabki-brothers",
+   "selector": "#shelf-lebanon > div:nth-of-type(2) > article:nth-of-type(6) > p:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Pray with the Massabki Brothers",
    "kind": "text",
    "nodeIndex": 0
   },
@@ -1839,11 +1846,25 @@
    "attribute": "alt"
   },
   {
+   "key": "saints.main-shelf-lebanon-pray-with-saint-marina-of-the-qadisha",
+   "selector": "#shelf-lebanon > div:nth-of-type(2) > article:nth-of-type(7) > p:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Pray with Saint Marina of the Qadisha",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
    "key": "saints.main-img-alt-view-from-ghazir-toward-the-capuchin",
    "selector": "#shelf-lebanon > div:nth-of-type(2) > article:nth-of-type(8) > figure:nth-of-type(1) > img:nth-of-type(1)",
    "source": "View from Ghazir toward the Capuchin convent, in an 1893 photograph by Andre Salles",
    "kind": "attribute",
    "attribute": "alt"
+  },
+  {
+   "key": "saints.main-shelf-lebanon-pray-with-blessed-abouna-yaacoub",
+   "selector": "#shelf-lebanon > div:nth-of-type(2) > article:nth-of-type(8) > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Pray with Blessed Abouna Yaacoub",
+   "kind": "text",
+   "nodeIndex": 0
   },
   {
    "key": "saints.main-img-alt-imaginative-illustration-of-joseph-working-at",
@@ -1895,11 +1916,25 @@
    "attribute": "alt"
   },
   {
+   "key": "saints.main-shelf-books-canticle-of-the-sun-the-prayer-of-st-francis",
+   "selector": "#shelf-books > div:nth-of-type(2) > article:nth-of-type(7) > p:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Canticle of the Sun - the prayer of St. Francis",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
    "key": "saints.main-img-alt-saint-anthony-of-padua-holding-a",
    "selector": "#shelf-books > div:nth-of-type(2) > article:nth-of-type(8) > figure:nth-of-type(1) > img:nth-of-type(1)",
    "source": "Saint Anthony of Padua holding a lily - El Greco",
    "kind": "attribute",
    "attribute": "alt"
+  },
+  {
+   "key": "saints.main-shelf-books-prayer-to-st-anthony-of-padua",
+   "selector": "#shelf-books > div:nth-of-type(2) > article:nth-of-type(8) > p:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Prayer to St. Anthony of Padua",
+   "kind": "text",
+   "nodeIndex": 0
   },
   {
    "key": "saints.main-img-alt-padre-pio-in-his-capuchin-habit",
@@ -1916,11 +1951,25 @@
    "attribute": "alt"
   },
   {
+   "key": "saints.main-shelf-books-totus-tuus-st-john-paul-ii-s-consecration-prayer",
+   "selector": "#shelf-books > div:nth-of-type(2) > article:nth-of-type(10) > p:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Totus Tuus - St. John Paul II's consecration prayer",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
    "key": "saints.main-img-alt-mother-teresa-in-her-white-sari",
    "selector": "#shelf-books > div:nth-of-type(2) > article:nth-of-type(11) > figure:nth-of-type(1) > img:nth-of-type(1)",
    "source": "Mother Teresa in her white sari with blue border, hands folded",
    "kind": "attribute",
    "attribute": "alt"
+  },
+  {
+   "key": "saints.main-shelf-books-the-prayer-mother-teresa-prayed-daily",
+   "selector": "#shelf-books > div:nth-of-type(2) > article:nth-of-type(11) > p:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "The prayer Mother Teresa prayed daily",
+   "kind": "text",
+   "nodeIndex": 0
   },
   {
    "key": "saints.main-img-alt-saint-augustine-in-his-study-botticelli-2",
@@ -1930,11 +1979,25 @@
    "attribute": "alt"
   },
   {
+   "key": "saints.main-shelf-world-prayers-of-st-augustine-of-hippo",
+   "selector": "#shelf-world > div:nth-of-type(2) > article:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Prayers of St. Augustine of Hippo",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
    "key": "saints.main-img-alt-gold-mosaic-of-saint-john-chrysostom",
    "selector": "#shelf-world > div:nth-of-type(2) > article:nth-of-type(2) > figure:nth-of-type(1) > img:nth-of-type(1)",
    "source": "Gold mosaic of Saint John Chrysostom, Hagia Sophia",
    "kind": "attribute",
    "attribute": "alt"
+  },
+  {
+   "key": "saints.main-shelf-world-the-prayer-of-st-john-chrysostom",
+   "selector": "#shelf-world > div:nth-of-type(2) > article:nth-of-type(2) > p:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "The prayer of St. John Chrysostom",
+   "kind": "text",
+   "nodeIndex": 0
   },
   {
    "key": "saints.main-img-alt-blessed-fulton-sheen-at-his-desk-2",
@@ -2087,6 +2150,7 @@
   "saints.main-shelf-lebanon-the-massabki-brothers-martyred-1860": "The Massabki Brothers (martyred 1860)",
   "saints.main-shelf-lebanon-francis-abdel-moati-and-raphael-three": "Francis, Abdel Moati and Raphael - three Maronite laymen of Damascus, martyred in 1860 for refusing to renounce their faith, and canonized by Pope Francis on October 20, 2024 as the first Maronite lay saints.",
   "saints.main-shelf-lebanon-read-the-children-s-book-5": "Read the children's book",
+  "saints.main-shelf-lebanon-pray-with-the-massabki-brothers": "Pray with the Massabki Brothers",
   "saints.main-shelf-lebanon-saint-of-the-qadisha": "Saint of the Qadisha",
   "saints.main-shelf-lebanon-saint-marina-of-the-qadisha": "Saint Marina of the Qadisha",
   "saints.main-shelf-lebanon-the-monastery-of-qannoubine-in-the": "The Monastery of Qannoubine in the Qadisha Valley, where Marina lived as the monk Marinos (CC0, Hussein Sabboury).",
@@ -2240,7 +2304,9 @@
   "saints.main-img-alt-photograph-of-st-rafqa-ill-and": "Photograph of St Rafqa, ill and being cared for at the monastery",
   "saints.main-img-alt-the-tomb-of-blessed-estephan-nehme-2": "The tomb of Blessed Estephan Nehme at the monastery of Kfifan",
   "saints.main-img-alt-the-church-of-the-monastery-of": "The church of the Monastery of Qannoubine, carved into the Qadisha Valley cliff",
+  "saints.main-shelf-lebanon-pray-with-saint-marina-of-the-qadisha": "Pray with Saint Marina of the Qadisha",
   "saints.main-img-alt-view-from-ghazir-toward-the-capuchin": "View from Ghazir toward the Capuchin convent, in an 1893 photograph by Andre Salles",
+  "saints.main-shelf-lebanon-pray-with-blessed-abouna-yaacoub": "Pray with Blessed Abouna Yaacoub",
   "saints.main-img-alt-imaginative-illustration-of-joseph-working-at": "Imaginative illustration of Joseph working at his carpenter bench in Nazareth",
   "saints.main-img-alt-imaginative-illustration-of-simon-and-andrew": "Imaginative illustration of Simon and Andrew mending fishing nets by the lake",
   "saints.main-img-alt-imaginative-illustration-of-mary-magdalene-beside": "Imaginative illustration of Mary Magdalene beside the lake in Galilee",
@@ -2248,12 +2314,18 @@
   "saints.main-img-alt-icon-of-two-saints-in-chain": "Icon of two saints in chain mail on horseback, one holding a banner with a cross and one a lance",
   "saints.main-img-alt-imaginative-illustration-of-the-martin-family": "Imaginative illustration of the Martin family gathered in a parlor in France",
   "saints.main-img-alt-saint-francis-of-assisi-the-1235": "Saint Francis of Assisi - the 1235 Berlinghieri panel",
+  "saints.main-shelf-books-canticle-of-the-sun-the-prayer-of-st-francis": "Canticle of the Sun - the prayer of St. Francis",
   "saints.main-img-alt-saint-anthony-of-padua-holding-a": "Saint Anthony of Padua holding a lily - El Greco",
+  "saints.main-shelf-books-prayer-to-st-anthony-of-padua": "Prayer to St. Anthony of Padua",
   "saints.main-img-alt-padre-pio-in-his-capuchin-habit": "Padre Pio in his Capuchin habit, hands folded",
   "saints.main-img-alt-pope-john-paul-ii-in-1979-2": "Pope John Paul II in 1979, smiling and raising his hand in blessing",
+  "saints.main-shelf-books-totus-tuus-st-john-paul-ii-s-consecration-prayer": "Totus Tuus - St. John Paul II's consecration prayer",
   "saints.main-img-alt-mother-teresa-in-her-white-sari": "Mother Teresa in her white sari with blue border, hands folded",
+  "saints.main-shelf-books-the-prayer-mother-teresa-prayed-daily": "The prayer Mother Teresa prayed daily",
   "saints.main-img-alt-saint-augustine-in-his-study-botticelli-2": "Saint Augustine in his study - Botticelli's 1480 fresco",
+  "saints.main-shelf-world-prayers-of-st-augustine-of-hippo": "Prayers of St. Augustine of Hippo",
   "saints.main-img-alt-gold-mosaic-of-saint-john-chrysostom": "Gold mosaic of Saint John Chrysostom, Hagia Sophia",
+  "saints.main-shelf-world-the-prayer-of-st-john-chrysostom": "The prayer of St. John Chrysostom",
   "saints.main-img-alt-blessed-fulton-sheen-at-his-desk-2": "Blessed Fulton Sheen at his desk in 1956",
   "saints.main-aria-saint-sections": "Saint sections",
   "saints.main-aria-pages-coming-soon": "Pages coming soon",
