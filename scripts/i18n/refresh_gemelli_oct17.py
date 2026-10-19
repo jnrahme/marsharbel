@@ -31,14 +31,16 @@ BODY = ("Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon
         "Mass in the room set aside for that purpose on the 10th floor. On Sunday he prayed the midday "
         "Angelus with thousands of faithful gathered in St Peter's Square - his first scheduled public "
         "event since being discharged - thanking the doctors, nurses and staff of Gemelli and all who "
-        "prayed for him: 'I have truly felt your support.'")
+        "prayed for him: 'I have truly felt your support.' "
+        "Vatican News reported on October 19 that the Holy See Press Office said he is continuing his recovery at the Vatican and will hold his weekly General Audience in St Peter's Square on Wednesday, October 21 (announced, not yet held).")
 DATE_EN = 'October 17, 2026'
 CREDIT_EN = 'Vatican News: Pope Leo XIV returns to Vatican after being discharged from hospital (October 17, 2026)'
 HOME_CREDIT_EN = ('Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon following lung surgery '
                   'and returned to the Vatican. On Sunday he prayed the midday Angelus with thousands of faithful '
                   "gathered in St Peter's Square - his first scheduled public event since being discharged - "
                   'thanking the doctors, nurses and staff of Gemelli and all who prayed for him: '
-                  "'I have truly felt your support.' Context photo: Gemelli Hospital, Rome. Photo: Blackcat, "
+                  "'I have truly felt your support.' "
+                  "Vatican News reported on October 19 that the Holy See Press Office said he is continuing his recovery at the Vatican and will hold his weekly General Audience in St Peter's Square on Wednesday, October 21 (announced, not yet held). Context photo: Gemelli Hospital, Rome. Photo: Blackcat, "
                   'Wikimedia Commons, CC BY-SA 3.0 IT; resized to WebP.')
 
 NEWS_PREFIX = 'news.latest-news.'
