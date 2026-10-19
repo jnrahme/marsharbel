@@ -42,7 +42,7 @@
 .monthly-prayer-text > p:not(.monthly-prayer-eyebrow) { font-size: .85rem; line-height: 1.95; }
 .monthly-prayer-text .monthly-prayer-pause { padding-left: 1rem; border-left: 2px solid var(--theme-accent); font-style: italic; color: var(--theme-ink-soft); }
 .monthly-prayer-text .monthly-prayer-note { font-size: .65rem !important; color: var(--theme-ink-soft); margin-top: 1.5rem; }
-.monthly-prayer-text > a { font-size: .72rem; }
+.monthly-prayer-text > a { font-size: .72rem; display: inline-flex; align-items: center; min-height: 24px; min-width: 24px; }
 .monthly-prayer-content a { text-decoration: underline; text-underline-offset: 3px; }
 .monthly-prayer-context { grid-column: 1 / -1; border-top: 1px solid var(--prayer-rule); padding-top: 1.25rem; margin: 0; font-size: .7rem; line-height: 1.8; color: var(--prayer-muted); }
 .monthly-prayer :is(a, summary):focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
