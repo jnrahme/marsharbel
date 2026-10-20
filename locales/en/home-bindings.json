@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "a19591aae6abfb7ccbaa80eb6ad7a2e5bc3ec6ac21fa991888e37418ad2a0efa",
+  "masterSha256": "c0de337c3f65b198f33178a2a9e15a8f5578690347da0715164d35bf954b2f88",
   "sourceRevision": "802b6e7c56a7634b99a24d8c8ccee051b8edca22",
   "bindings": [
     {
@@ -1608,76 +1608,6 @@
       "nodeIndex": 0
     },
     {
-      "key": "home.saintDay.2026-10-19.heading",
-      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-day-heading",
-      "source": "Saint of the Day",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-19.dateLabel",
-      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
-      "source": "19.10.2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-19.monogram",
-      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "S",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-19.dateShort",
-      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
-      "source": "19 Oct",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-19.calendar",
-      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "Roman calendar",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-19.name",
-      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
-      "source": "Saints John de Brebeuf, Isaac Jogues and Companions",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-19.story",
-      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Six French Jesuit priests, a Jesuit lay brother, and a layman carried the Gospel to the indigenous peoples of New France and gave their lives as martyrs. The Church remembers them as the Canadian Martyrs, the seed of the Church in North America.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-19.provenance",
-      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
-      "source": "Brief story based on Vatican News' saint of the day.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-19.infoCta",
-      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
-      "source": "Read about the Canadian Martyrs",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-19.sourceLabel",
-      "selector": "template[data-saint-date=\"2026-10-19\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
-      "source": "Feast source: Vatican News saints calendar",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
       "key": "home.saintDay.2026-10-20.heading",
       "selector": "template[data-saint-date=\"2026-10-20\"] #saint-day-heading",
       "source": "Saint of the Day",
@@ -1813,6 +1743,97 @@
     {
       "key": "home.saintDay.2026-10-21.sourceLabel",
       "selector": "template[data-saint-date=\"2026-10-21\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.heading",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "22.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.calendar",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Maronite calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.name",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint John Paul II",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.story",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Karol Wojtyła, born in 1920 in Wadowice, Poland, lost his mother at nine and his brother at twelve. During the German occupation he worked in a stone quarry and a chemical plant, then was ordained a priest in 1946. Elected pope in 1978, he cried out at his inaugural Mass on October 22: “Do not be afraid! Open wide the doors to Christ!” He died on April 2, 2005, was beatified in 2011 and declared a saint in 2014.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.provenance",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Vatican News' saint of the day.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saint John Paul II",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.bookAlt",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "A boy walking hand in hand with a man toward a church at sunset, in the children’s storybook",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "home.saintDay.2026-10-22.bookTitle",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Saint John Paul II: the illustrated story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.bookDek",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "source": "Read and listen together to the story of Karol Wojtyła.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.bookCredit",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3)",
+      "source": "Imaginative storybook illustration, not a historical portrait.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.bookCta",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > div:nth-of-type(2) > a:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(4)",
+      "source": "Open the children’s book",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-22.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-22\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Feast source: Eparchy of St. Maron liturgical calendar",
       "kind": "text",
       "nodeIndex": 0
@@ -2032,16 +2053,6 @@
     "home.latest-news.october-15-2026": "October 17, 2026",
     "home.latest-news.pope-leo-has-a-good-second-night-at-gemelli": "Pope Leo discharged from Gemelli, back at the Vatican",
     "home.latest-news.the-holy-see-says-pope-leo-had-a-good-second-hospital-night": "Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon following lung surgery and returned to the Vatican. On Sunday he prayed the midday Angelus with thousands of faithful gathered in St Peter's Square - his first scheduled public event since being discharged - thanking the doctors, nurses and staff of Gemelli and all who prayed for him: 'I have truly felt your support.' Vatican News reported on October 19 that the Holy See Press Office said he is continuing his recovery at the Vatican and will hold his weekly General Audience in St Peter's Square on Wednesday, October 21 (announced, not yet held). Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0 IT; resized to WebP.",
-    "home.saintDay.2026-10-19.heading": "Saint of the Day",
-    "home.saintDay.2026-10-19.dateLabel": "19.10.2026",
-    "home.saintDay.2026-10-19.monogram": "S",
-    "home.saintDay.2026-10-19.dateShort": "19 Oct",
-    "home.saintDay.2026-10-19.calendar": "Roman calendar",
-    "home.saintDay.2026-10-19.name": "Saints John de Brebeuf, Isaac Jogues and Companions",
-    "home.saintDay.2026-10-19.story": "Six French Jesuit priests, a Jesuit lay brother, and a layman carried the Gospel to the indigenous peoples of New France and gave their lives as martyrs. The Church remembers them as the Canadian Martyrs, the seed of the Church in North America.",
-    "home.saintDay.2026-10-19.provenance": "Brief story based on Vatican News' saint of the day.",
-    "home.saintDay.2026-10-19.infoCta": "Read about the Canadian Martyrs",
-    "home.saintDay.2026-10-19.sourceLabel": "Feast source: Vatican News saints calendar",
     "home.saintDay.2026-10-20.heading": "Saint of the Day",
     "home.saintDay.2026-10-20.dateLabel": "20.10.2026",
     "home.saintDay.2026-10-20.monogram": "S",
@@ -2061,6 +2072,19 @@
     "home.saintDay.2026-10-21.story": "Hilarion was born in Palestine to a pagan family and studied in Alexandria, where he became a Christian. Through Saint Anthony the Abbot he learned to love contemplative solitude, prayer and penance. He withdrew as a hermit to Maiumma, where he founded several monasteries and brought about conversions. He died in Paphos.",
     "home.saintDay.2026-10-21.provenance": "Brief story based on Vatican News' saint of the day (Spanish edition).",
     "home.saintDay.2026-10-21.infoCta": "Read about Saint Hilarion",
-    "home.saintDay.2026-10-21.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
+    "home.saintDay.2026-10-21.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
+    "home.saintDay.2026-10-22.heading": "Saint of the Day",
+    "home.saintDay.2026-10-22.dateLabel": "22.10.2026",
+    "home.saintDay.2026-10-22.calendar": "Maronite calendar",
+    "home.saintDay.2026-10-22.name": "Saint John Paul II",
+    "home.saintDay.2026-10-22.story": "Karol Wojtyła, born in 1920 in Wadowice, Poland, lost his mother at nine and his brother at twelve. During the German occupation he worked in a stone quarry and a chemical plant, then was ordained a priest in 1946. Elected pope in 1978, he cried out at his inaugural Mass on October 22: “Do not be afraid! Open wide the doors to Christ!” He died on April 2, 2005, was beatified in 2011 and declared a saint in 2014.",
+    "home.saintDay.2026-10-22.provenance": "Brief story based on Vatican News' saint of the day.",
+    "home.saintDay.2026-10-22.infoCta": "Read about Saint John Paul II",
+    "home.saintDay.2026-10-22.bookAlt": "A boy walking hand in hand with a man toward a church at sunset, in the children’s storybook",
+    "home.saintDay.2026-10-22.bookTitle": "Saint John Paul II: the illustrated story",
+    "home.saintDay.2026-10-22.bookDek": "Read and listen together to the story of Karol Wojtyła.",
+    "home.saintDay.2026-10-22.bookCredit": "Imaginative storybook illustration, not a historical portrait.",
+    "home.saintDay.2026-10-22.bookCta": "Open the children’s book",
+    "home.saintDay.2026-10-22.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
   }
 }
