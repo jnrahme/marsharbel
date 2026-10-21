@@ -49,6 +49,7 @@ K_SUMMARY = NEWS_PREFIX + 'on-his-fifth-day-at-gemelli-pope-leo-xiv-s-doctors-sa
 K_DATE = NEWS_PREFIX + 'october-17-2026'
 K_CREDIT = NEWS_PREFIX + 'vatican-news-pope-leo-xiv-to-be-discharged-from-hospital-oct'  # stable key, refreshed value
 K_CHIP = NEWS_PREFIX + 'update'
+K_SOURCE_LABEL = NEWS_PREFIX + 'source'
 
 HOME_KEYS = {  # stable keys, refreshed values
     'home.latest-news.pope-leo-has-a-good-second-night-at-gemelli': TITLE,
@@ -110,16 +111,20 @@ def outputs(root=ROOT):
     row = f'#{ROW_ID} > div:nth-of-type(1)'
     row_sels = {f'{row} > h3:nth-of-type(1) > a:nth-of-type(1)', f'{row} > p:nth-of-type(1)',
                 f'{row} > p:nth-of-type(2) > span:nth-of-type(1)', f'{row} > p:nth-of-type(2) > time:nth-of-type(1)',
-                f'{CREDIT_SEL}(1) > span:nth-of-type(1)', f'{CREDIT_SEL}(1) > a:nth-of-type(1)'}
-    bindings = [b for b in bindings if b['selector'] not in row_sels]  # upsert: refresh row copy on re-run
+                f'{CREDIT_SEL}(4) > span:nth-of-type(1)', f'{CREDIT_SEL}(4) > span:nth-of-type(2)', f'{CREDIT_SEL}(4) > a:nth-of-type(1)'}
+    aud_re = re.compile(rf'^{re.escape(CREDIT_SEL)}\([123]\) > (span:nth-of-type\([12]\)|a:nth-of-type\(1\))$')
+    aud = [b for b in bindings if aud_re.match(b['selector'])]  # audience credits (refresh_audience_credits_oct21.py) stay last
+    bindings = [b for b in bindings if b['selector'] not in row_sels and not aud_re.match(b['selector'])]  # upsert: refresh row copy on re-run
     bindings += [
         {'key': K_TITLE, 'selector': f'{row} > h3:nth-of-type(1) > a:nth-of-type(1)', 'source': TITLE, 'kind': 'text', 'nodeIndex': 0},
         {'key': K_SUMMARY, 'selector': f'{row} > p:nth-of-type(1)', 'source': BODY, 'kind': 'text', 'nodeIndex': 0},
         {'key': K_CHIP, 'selector': f'{row} > p:nth-of-type(2) > span:nth-of-type(1)', 'source': 'Update', 'kind': 'text', 'nodeIndex': 0},
         {'key': K_DATE, 'selector': f'{row} > p:nth-of-type(2) > time:nth-of-type(1)', 'source': DATE_EN, 'kind': 'text', 'nodeIndex': 0},
-        {'key': K_TITLE, 'selector': f'{CREDIT_SEL}(1) > span:nth-of-type(1)', 'source': TITLE, 'kind': 'text', 'nodeIndex': 0},
-        {'key': K_CREDIT, 'selector': f'{CREDIT_SEL}(1) > a:nth-of-type(1)', 'source': CREDIT_EN, 'kind': 'text', 'nodeIndex': 0},
+        {'key': K_TITLE, 'selector': f'{CREDIT_SEL}(4) > span:nth-of-type(1)', 'source': TITLE, 'kind': 'text', 'nodeIndex': 0},
+        {'key': K_SOURCE_LABEL, 'selector': f'{CREDIT_SEL}(4) > span:nth-of-type(2)', 'source': 'Source:', 'kind': 'text', 'nodeIndex': 0},
+        {'key': K_CREDIT, 'selector': f'{CREDIT_SEL}(4) > a:nth-of-type(1)', 'source': CREDIT_EN, 'kind': 'text', 'nodeIndex': 0},
     ]
+    bindings += aud
     verify_all(bindings, soup, 'news-master')
     contract['bindings'] = bindings
     copy = read_json(root / 'locales/en/news-master-copy.json')
