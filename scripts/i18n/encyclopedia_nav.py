@@ -14,7 +14,7 @@ MARKING_LOCALES=frozenset({'ar','de','ru','fr','es','it','pl','pt','hi','th'})
 # gated per locale by scrum ticket (de: pinned-twin marking 2026-10-13; ru follows
 # in its own PR). page_mirror skips pinned pairs unless the locale is listed here;
 # the pin reseal then runs as the non-author step on the diff.
-PINNED_MARKING_LOCALES=frozenset({'de'})
+PINNED_MARKING_LOCALES=frozenset({'de','ru'})
 
 
 def nav_twin_hrefs(registry, lang):
