@@ -32,7 +32,7 @@ BODY = ("Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon
         "Angelus with thousands of faithful gathered in St Peter's Square - his first scheduled public "
         "event since being discharged - thanking the doctors, nurses and staff of Gemelli and all who "
         "prayed for him: 'I have truly felt your support.' "
-        "Vatican News reported on October 19 that the Holy See Press Office said he is continuing his recovery at the Vatican and will hold his weekly General Audience in St Peter's Square on Wednesday, October 21 (announced, not yet held).")
+        "On Wednesday, October 21, he held his first weekly General Audience since the surgery in St Peter's Square, Vatican News reported; he thanked people for their prayers and spoke on marriage and the family in his catechesis on Gaudium et Spes. RTE and ANSA also reported on the audience.")
 DATE_EN = 'October 17, 2026'
 CREDIT_EN = 'Vatican News: Pope Leo XIV returns to Vatican after being discharged from hospital (October 17, 2026)'
 HOME_CREDIT_EN = ('Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon following lung surgery '
@@ -40,7 +40,7 @@ HOME_CREDIT_EN = ('Pope Leo XIV was discharged from Gemelli Hospital on Saturday
                   "gathered in St Peter's Square - his first scheduled public event since being discharged - "
                   'thanking the doctors, nurses and staff of Gemelli and all who prayed for him: '
                   "'I have truly felt your support.' "
-                  "Vatican News reported on October 19 that the Holy See Press Office said he is continuing his recovery at the Vatican and will hold his weekly General Audience in St Peter's Square on Wednesday, October 21 (announced, not yet held). Context photo: Gemelli Hospital, Rome. Photo: Blackcat, "
+                  "On Wednesday, October 21, he held his first weekly General Audience since the surgery in St Peter's Square, Vatican News reported; he thanked people for their prayers and spoke on marriage and the family in his catechesis on Gaudium et Spes. RTE and ANSA also reported on the audience. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, "
                   'Wikimedia Commons, CC BY-SA 3.0 IT; resized to WebP.')
 
 NEWS_PREFIX = 'news.latest-news.'
