@@ -5,6 +5,9 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.catalog import read_json,published_home_locales
+from i18n.encyclopedia_nav import MARKING_LOCALES,route_nav_hrefs,mark_english_nav_hrefs,strip_legacy_partial_nav_marks
+def mark_nav(t,lang):
+    return mark_english_nav_hrefs(route_nav_hrefs(strip_legacy_partial_nav_marks(t,ROOT,lang),ROOT,lang),ROOT,lang) if lang in MARKING_LOCALES else t
 from i18n.travel_mirror import render_travel
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
@@ -18,7 +21,7 @@ class TravelTests(unittest.TestCase):
   pages=render_travel(ROOT,registry)
   self.assertEqual(len(pages),len(registry['authoredMirrors']['travel']['routes']))
   for path,text in pages.items():
-   self.assertEqual(path.read_text(),fc(ensure_runtime_labels(compose_travel_clusters(ROOT,registry,{path:travel_frame(tour_nav(text,ROOT,'en' if path.parent==ROOT else path.parent.name),ROOT,'en' if path.parent==ROOT else path.parent.name,'/'+str(path.relative_to(ROOT)).removesuffix('.html'),registry)})[path],ROOT,'en' if path.parent==ROOT else path.parent.name,registry)))
+   self.assertEqual(path.read_text(),fc(ensure_runtime_labels(compose_travel_clusters(ROOT,registry,{path:mark_nav(travel_frame(tour_nav(text,ROOT,'en' if path.parent==ROOT else path.parent.name),ROOT,'en' if path.parent==ROOT else path.parent.name,'/'+str(path.relative_to(ROOT)).removesuffix('.html'),registry),'en' if path.parent==ROOT else path.parent.name)})[path],ROOT,'en' if path.parent==ROOT else path.parent.name,registry)))
    soup=BeautifulSoup(text,'html.parser')
    self.assertEqual(len(soup.select('main')),1)
    self.assertEqual(len(soup.select('a.skip-link')),1)

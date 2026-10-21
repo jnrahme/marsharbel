@@ -357,7 +357,14 @@ def outputs(root=ROOT):
                 route=route.removesuffix('index') if route.endswith('/index') else route
                 strict_page = any(route == cfg.get('routes', {}).get(code) and code in cfg.get('renderLocales', []) for cfg in registry.get('pageMirrors', {}).values())
                 strict_home = code in registry.get('homepageMirrors', {}).get('renderLocales', []) and route == home_url(registry, code)
-                result[path] = text if strict_home or strict_page else travel_frame(tour_nav(text,root,code),root,code,route,registry)
+                if strict_home or strict_page:
+                    result[path] = text
+                else:
+                    framed = travel_frame(tour_nav(text,root,code),root,code,route,registry)
+                    from i18n.encyclopedia_nav import MARKING_LOCALES as _ML, route_nav_hrefs as _rnh, mark_english_nav_hrefs as _menh, strip_legacy_partial_nav_marks as _slp
+                    if code in _ML:
+                        framed = _menh(_rnh(_slp(framed, root, code), root, code), root, code)
+                    result[path] = framed
     from i18n.travel_metadata import compose_travel_clusters
     result=compose_travel_clusters(root,registry,result)
     from i18n.generated_postprocess import postprocess_outputs
