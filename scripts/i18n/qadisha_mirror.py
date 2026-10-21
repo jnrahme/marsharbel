@@ -73,6 +73,8 @@ def render_qadisha(root=ROOT, registry=None):
             targets.update({page_url(registry, 'en', topic).rstrip('/') or '/': page_url(registry, code, topic)
                             for topic in registry['topics']
                             if 'en' in topic_locales(registry, topic) and code in topic_locales(registry, topic)})
+            # The brand link points home; locale pages send it to their own locale home.
+            targets['/']=registry['locales'][code]['home']
             text = re.sub(r'(<a\b[^>]*\bhref=["\'])(/[^"\']*)(["\'])',
                           lambda m: m[1] + targets.get(m[2].rstrip('/') or '/', m[2]) + m[3], text)
         if code == 'en':

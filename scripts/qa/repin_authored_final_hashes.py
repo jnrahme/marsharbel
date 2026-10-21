@@ -35,15 +35,22 @@ for file,row in data['files'].items():
     # from the same strip the pipeline applies (check_i18n_policy.py chain):
     # strip partials -> real twin routing -> exact English-destination marking
     # (stripped). All three touch <header> anchors only.
+    # Scrum-adjudicated extension (brand-href PR #861): the renderers retarget the
+    # header brand anchor to the locale home (targets['/'] = locale home). Allow
+    # exactly that one-anchor, one-attribute delta: apply the retarget to the old
+    # bytes and require strict equality against the new render; anything else
+    # falls through to the original strip/route/mark check or aborts with no write.
+    if old.count("class='brand' href='/'")==1 and old.replace("class='brand' href='/'","class='brand' href='/%s/'"%code)==new:
+        changed.append((file,row['fileSha256'],sha(new),'BRAND-RETARGET-ONLY'));continue
     expected=route_nav_hrefs(strip_legacy_partial_nav_marks(old,ROOT,code),ROOT,code)
-    if sha(strip_for_locale(ROOT,code,new))==sha(expected):changed.append((file,row['fileSha256'],sha(new)))
+    if sha(strip_for_locale(ROOT,code,new))==sha(expected):changed.append((file,row['fileSha256'],sha(new),'ROUTING-OR-MARKING-ONLY'))
     else:bad.append(file)
-for f,o,n in changed:print('ROUTING-OR-MARKING-ONLY',f,o[:12],'->',n[:12])
+for f,o,n,label in changed:print(label,f,o[:12],'->',n[:12])
 for f in bad:print('REJECTED (non-marking drift)',f)
 if bad:sys.exit(1)
 if '--write' in sys.argv and changed:
     text=raw.decode()
-    for f,o,n in changed:
+    for f,o,n,label in changed:
         assert text.count(o)==1;text=text.replace(o,n)
     FIX.write_text(text)
     t=TEST.read_text();old=hashlib.sha256(raw).hexdigest();assert t.count(old)==1
