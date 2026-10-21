@@ -25,9 +25,10 @@
 .monthly-prayer-rosary > span { float: right; }
 .monthly-prayer-rosary small { display: block; margin-top: .55rem; font-size: .63rem; font-weight: 500; color: var(--prayer-muted); }
 .monthly-prayer-rosary:hover { background: var(--prayer-rule); }
-.monthly-prayer-guide > summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.1rem 2.5rem; border-top: 1px solid var(--prayer-rule); font-size: .78rem; font-weight: 800; cursor: pointer; list-style: none; }
+.monthly-prayer-guide > summary { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.1rem 2.5rem; border-top: 1px solid var(--prayer-rule); font-size: .78rem; font-weight: 800; cursor: pointer; list-style: none; }
+.monthly-prayer-guide > summary > span:first-child { min-width: 0; }
 .monthly-prayer-guide > summary::-webkit-details-marker { display: none; }
-.monthly-prayer-toggle { font-size: 1.4rem; font-weight: 400; }
+.monthly-prayer-toggle { display: inline-flex; align-items: center; justify-content: center; width: 1em; height: 1em; flex: none; font-size: 1.4rem; font-weight: 400; }
 .monthly-prayer-guide[open] .monthly-prayer-toggle { transform: rotate(45deg); }
 .monthly-prayer-content { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; padding: 1rem 2.5rem 2rem; }
 .monthly-prayer-steps { padding-top: 1rem; }
