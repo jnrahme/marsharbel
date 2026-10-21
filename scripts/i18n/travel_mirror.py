@@ -30,6 +30,8 @@ def render_travel(root, registry):
             return values[key] if key in ('locale.alternates','locale.ogLocaleAlternates','locale.destinationDirectory') else escape(values[key],quote=True)
         text=SLOT.sub(replace,template)
         targets={cfg['english']:cfg['routes'][lang] for cfg in registry['authoredMirrors'].values() if lang in cfg['routes']}
+        # The brand link points home; locale pages send it to their own locale home.
+        targets['/']=registry['locales'][lang]['home']
         # AR-2 body-link follow-up (ar only): the visit-Annaya topic twin localizes too.
         if lang=='ar' and lang in topic_locales(registry,'annaya'):
             targets['/visit-annaya']=page_url(registry,'ar','annaya')

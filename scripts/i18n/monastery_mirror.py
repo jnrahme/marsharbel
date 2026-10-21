@@ -81,6 +81,8 @@ def render_monasteries(root=ROOT, registry=None):
                 targets.update({page_url(registry, 'en', topic).rstrip('/') or '/': page_url(registry, code, topic)
                                 for topic in registry['topics']
                                 if 'en' in topic_locales(registry, topic) and code in topic_locales(registry, topic)})
+                # The brand link points home; locale pages send it to their own locale home.
+                targets['/']=registry['locales'][code]['home']
                 text = re.sub(r'((?:href|src)=["\'])\./(?!/)([^"\']*)(["\'])', r'\1/\2\3', text)
                 text = text.replace('href="styles.css', 'href="/styles.css')
                 text = re.sub(r'(<a\b[^>]*\bhref=["\'])(/[^"\']*)(["\'])',
