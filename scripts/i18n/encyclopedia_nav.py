@@ -105,6 +105,49 @@ def finish_nav(text, root, lang):
     return route_nav_hrefs(disclose_nav(tour_nav(text, root, lang), root, lang), root, lang)
 
 
+def strip_legacy_partial_nav_marks(text, root, lang):
+    """Header-only: remove pre-launch partial English disclosures.
+
+    Early marking passes emitted hreflang="en" + aria-label without the visible
+    span.enc-language qualifier. That partial form fails the approved disclosure
+    pattern and, because twin routing and the marker both skip hreflang anchors,
+    it blocks routing to registered locale twins. Strip the two attributes from
+    exactly those anchors so routing and full marking apply; fully marked
+    anchors (span.enc-language present) and untouched links pass through.
+    Idempotent; no-op for English and non-marking locales.
+    """
+    if lang == 'en' or lang not in MARKING_LOCALES:
+        return text
+    m = re.search(r'<header\b[\s\S]*?</header>', text)
+    if not m:
+        return text
+    block = m[0]
+    def replace(mm):
+        el = mm[0]
+        open_tag = re.match(r'<a\b[^>]*>', el)[0]
+        if 'hreflang="en"' not in open_tag or 'enc-language' in el:
+            return el
+        new_open = re.sub(r'\s*hreflang="en"', '', open_tag, count=1)
+        new_open = re.sub(r'\s*aria-label="[^"]*"', '', new_open, count=1)
+        return new_open + el[len(open_tag):]
+    block = re.sub(r'<a\b[^>]*>[\s\S]*?</a>', replace, block)
+    # Legacy partial form B: the visible qualifier span was emitted AFTER the
+    # closing </a> instead of inside the anchor. Once the anchor itself is
+    # re-marked (or routed to a locale twin), that stray span double-marks the
+    # anchor or mislabels a twin as English. The approved pattern keeps the
+    # qualifier strictly inside its anchor, so any header span.enc-language
+    # outside an anchor is a partial-mark leftover and is removed.
+    anchor_spans = []
+    for a in re.finditer(r'<a\b[^>]*>[\s\S]*?</a>', block):
+        anchor_spans.append((a.start(), a.end()))
+    def stray(sm):
+        if any(lo <= sm.start() < hi for lo, hi in anchor_spans):
+            return sm[0]
+        return ''
+    block = re.sub(r'\s*<span class="enc-language">[^<]*</span>', stray, block)
+    return text[:m.start()] + block + text[m.end():]
+
+
 def mark_english_nav_hrefs(text, root, lang, label=True):
     """Header-only: mark links that still land on English with hreflang/aria + a visible qualifier.
 

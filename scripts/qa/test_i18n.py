@@ -12,6 +12,9 @@ from string import Template
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT/'scripts'))
 from i18n.catalog import load_catalog, locale_topics, read_json, page_url
+from i18n.encyclopedia_nav import MARKING_LOCALES,route_nav_hrefs,mark_english_nav_hrefs,strip_legacy_partial_nav_marks
+def mark_nav(t,lang):
+    return mark_english_nav_hrefs(route_nav_hrefs(strip_legacy_partial_nav_marks(t,ROOT,lang),ROOT,lang),ROOT,lang) if lang in MARKING_LOCALES else t
 from i18n.tour_nav import tour_nav
 from i18n.travel_components import travel_frame
 from i18n.runtime_labels import ensure_runtime_labels
@@ -170,7 +173,7 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('href="/ar/biography"', ar)
         self.assertIn('href="/ar/annaya"', ar)
         self.assertNotIn('href="/ar/saint-charbel-trail"', ar)
-        self.assertEqual(fc(travel_frame(tour_nav(pages[ROOT / 'qadisha-valley.html'], ROOT, 'en'),ROOT,'en','/qadisha-valley',read_json(ROOT/'locales/registry.json'))), (ROOT / 'qadisha-valley.html').read_text())
+        self.assertEqual(fc(mark_nav(travel_frame(tour_nav(pages[ROOT / 'qadisha-valley.html'], ROOT, 'en'),ROOT,'en','/qadisha-valley',read_json(ROOT/'locales/registry.json')),'en')), (ROOT / 'qadisha-valley.html').read_text())
         fr = pages[ROOT / 'fr/vallee-qadisha.html']
         self.assertEqual(Shape(fr).sections, Shape(en).sections)
         self.assertEqual(Shape(fr).images, Shape(en).images)
@@ -185,7 +188,7 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('"@type": "TouristAttraction"', fr)
         # fc composes after its input, but the generator composes BEFORE runtime labels;
         # the two orders are byte-visible, so this chain is written explicitly.
-        expected_fr = ensure_runtime_labels(compose_travel_clusters(ROOT,read_json(ROOT/'locales/registry.json'),{ROOT / 'fr/vallee-qadisha.html':travel_frame(tour_nav(fr,ROOT,'fr'),ROOT,'fr','/fr/vallee-qadisha',read_json(ROOT/'locales/registry.json'))})[ROOT / 'fr/vallee-qadisha.html'],ROOT,'fr',read_json(ROOT/'locales/registry.json'))
+        expected_fr = ensure_runtime_labels(compose_travel_clusters(ROOT,read_json(ROOT/'locales/registry.json'),{ROOT / 'fr/vallee-qadisha.html':mark_nav(travel_frame(tour_nav(fr,ROOT,'fr'),ROOT,'fr','/fr/vallee-qadisha',read_json(ROOT/'locales/registry.json')),'fr')})[ROOT / 'fr/vallee-qadisha.html'],ROOT,'fr',read_json(ROOT/'locales/registry.json'))
         self.assertEqual(inject_control(expected_fr,ROOT,read_json(ROOT/'locales/same-page-manifest.pending.json'),read_json(ROOT/'locales/same-page-copy.json')), (ROOT / 'fr/vallee-qadisha.html').read_text())
         es = pages[ROOT / 'es/valle-qadisha.html']
         self.assertEqual(Shape(es).sections, Shape(en).sections)
@@ -200,7 +203,7 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn('href="/es/saint-charbel-trail"', es)
         # fc composes after its input, but the generator composes BEFORE runtime labels;
         # the two orders are byte-visible, so this chain is written explicitly.
-        expected_es = ensure_runtime_labels(compose_travel_clusters(ROOT,read_json(ROOT/'locales/registry.json'),{ROOT / 'es/valle-qadisha.html':travel_frame(tour_nav(es,ROOT,'es'),ROOT,'es','/es/valle-qadisha',read_json(ROOT/'locales/registry.json'))})[ROOT / 'es/valle-qadisha.html'],ROOT,'es',read_json(ROOT/'locales/registry.json'))
+        expected_es = ensure_runtime_labels(compose_travel_clusters(ROOT,read_json(ROOT/'locales/registry.json'),{ROOT / 'es/valle-qadisha.html':mark_nav(travel_frame(tour_nav(es,ROOT,'es'),ROOT,'es','/es/valle-qadisha',read_json(ROOT/'locales/registry.json')),'es')})[ROOT / 'es/valle-qadisha.html'],ROOT,'es',read_json(ROOT/'locales/registry.json'))
         self.assertEqual(inject_control(expected_es,ROOT,read_json(ROOT/'locales/same-page-manifest.pending.json'),read_json(ROOT/'locales/same-page-copy.json')), (ROOT / 'es/valle-qadisha.html').read_text())
 
 
@@ -300,7 +303,7 @@ class CatalogTests(unittest.TestCase):
                 self.assertEqual([(q['name'], q['acceptedAnswer']['text']) for q in faq],
                                  [(catalog[f'faq.question{i}'], catalog[f'faq.text{i}']) for i in range(1,7)])
                 self.assertIn(f'href="{other_routes[code]}"', page)
-            self.assertEqual(fc(travel_frame(tour_nav(pages[ROOT/f'{name}-monastery.html'], ROOT, 'en'),ROOT,'en',f'/{name}-monastery',read_json(ROOT/'locales/registry.json'))), (ROOT/f'{name}-monastery.html').read_text())
+            self.assertEqual(fc(mark_nav(travel_frame(tour_nav(pages[ROOT/f'{name}-monastery.html'], ROOT, 'en'),ROOT,'en',f'/{name}-monastery',read_json(ROOT/'locales/registry.json')),'en')), (ROOT/f'{name}-monastery.html').read_text())
 
     def test_letters_catalog_does_not_hide_new_copy(self):
         catalog=read_json(ROOT/'locales/en/letters-display.json')['values']

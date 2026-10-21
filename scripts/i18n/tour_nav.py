@@ -7,7 +7,7 @@ def tour_nav(text, root, code):
     def header(match):
         markup=match[0]
         if not re.search(r'<nav\b[^>]*class=["\']links["\']',markup):return markup
-        existing=re.compile(r'\s*<a\b[^>]*href=["\'](?:\.\.?/|/)?annaya-tour["\'][^>]*>[^<]*</a>')
+        existing=re.compile(r'\s*<a\b[^>]*href=["\'](?:\.\.?/|/)?annaya-tour["\'][^>]*>[\s\S]*?</a>')
         if code not in ('en','ar'):
             return existing.sub('',markup)
         copy=read_json(root/f'locales/{code}/nav-tour.json');leaves(copy)

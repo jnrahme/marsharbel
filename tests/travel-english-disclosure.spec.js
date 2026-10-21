@@ -6,6 +6,12 @@ for(const lang of ['ar','fr','es','pt','it','de','pl']){
   for(const file of fs.readdirSync(lang).filter(f=>f.endsWith('.html'))){
     const html=fs.readFileSync(`${lang}/${file}`,'utf8');
     if(!/<body[^>]*class="[^"]*travel-page/.test(html)||!html.includes('enc-language'))continue;
+    // Negative control, file-side: only test pages whose Legacy group actually
+    // links the English encyclopedia. Fully twin-routed groups (e.g. /ar/*,
+    // whose nav-parent points at /ar/encyclopedia) have no English destination
+    // to disclose in this group; their enc-language marks live in other groups
+    // and a hard-coded EN locator would time out without testing anything.
+    if(!/class="nav-parent"[^>]*href="\/saint-charbel-encyclopedia"/.test(html))continue;
     const canonical=html.match(/<link\s+rel="canonical"\s+href="https:\/\/marsharbel.com([^"]+)"/);
     if(canonical)routes.push(canonical[1]);
   }

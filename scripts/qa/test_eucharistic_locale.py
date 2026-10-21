@@ -13,6 +13,9 @@ from i18n.catalog import read_json as _read_json_fc
 def fc(t):return inject_control(t,ROOT,_read_json_fc(ROOT/'locales/same-page-manifest.pending.json'),_read_json_fc(ROOT/'locales/same-page-copy.json'))
 from i18n.metadata import published_locales
 from i18n.eucharistic_mirror import render_eucharistic,SLUGS
+from i18n.encyclopedia_nav import MARKING_LOCALES,route_nav_hrefs,mark_english_nav_hrefs,strip_legacy_partial_nav_marks
+def mark_nav(t,lang):
+    return mark_english_nav_hrefs(route_nav_hrefs(strip_legacy_partial_nav_marks(t,ROOT,lang),ROOT,lang),ROOT,lang) if lang in MARKING_LOCALES else t
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -41,7 +44,7 @@ class EucharisticLocaleTests(unittest.TestCase):
             for slug in ('index',*SLUGS):
                 route=ROOT/lang/'miracles/eucharistic'/f'{slug}.html'
                 translated=outputs[route]
-                self.assertEqual(route.read_text(),fc(ensure_runtime_labels(travel_frame(tour_nav(translated,ROOT,lang),ROOT,lang,'/'+lang+'/miracles/eucharistic/'+('' if slug=='index' else slug),read_json(ROOT/"locales/registry.json")),ROOT,lang,read_json(ROOT/"locales/registry.json"))),route)
+                self.assertEqual(route.read_text(),fc(ensure_runtime_labels(mark_nav(travel_frame(tour_nav(translated,ROOT,lang),ROOT,lang,'/'+lang+'/miracles/eucharistic/'+('' if slug=='index' else slug),read_json(ROOT/"locales/registry.json")),lang),ROOT,lang,read_json(ROOT/"locales/registry.json"))),route)
                 source=(ROOT/'miracles/eucharistic'/f'{slug}.html').read_text()
                 a,b=Shape(source),Shape(translated)
                 self.assertEqual(a.tags,b.tags,(lang,slug))

@@ -15,7 +15,7 @@ try:
     from i18n.header_marking_delta import strip_for_locale  # merged with the pinned-page marking PR (#782)
 except ImportError:
     def strip_for_locale(root,code,text):return text  # no marking strip available: only routing deltas pass
-from i18n.encyclopedia_nav import route_nav_hrefs
+from i18n.encyclopedia_nav import route_nav_hrefs, strip_legacy_partial_nav_marks
 FIX=ROOT/'scripts/qa/fixtures/travel-authored-heads-f6e0d947.json';TEST=ROOT/'scripts/qa/test_travel_authored_final_hashes.py'
 sha=lambda t:hashlib.sha256(t.encode()).hexdigest()
 spec=importlib.util.spec_from_file_location('b',ROOT/'scripts/build-international.py');b=importlib.util.module_from_spec(spec);spec.loader.exec_module(b)
@@ -30,7 +30,12 @@ for file,row in data['files'].items():
     # plus exact English-destination marking (stripped). Both touch <header> anchors only.
     old=subprocess.run(['git','show','origin/stage:'+file],capture_output=True,cwd=ROOT).stdout.decode()
     if sha(old)!=row['fileSha256']:bad.append(file+' (origin/stage bytes != frozen hash)');continue
-    expected=route_nav_hrefs(old,ROOT,code)
+    # Legacy partial marks (hreflang+aria-label without the visible span, plus
+    # stray spans after </a>) block twin routing, so the allowed delta starts
+    # from the same strip the pipeline applies (check_i18n_policy.py chain):
+    # strip partials -> real twin routing -> exact English-destination marking
+    # (stripped). All three touch <header> anchors only.
+    expected=route_nav_hrefs(strip_legacy_partial_nav_marks(old,ROOT,code),ROOT,code)
     if sha(strip_for_locale(ROOT,code,new))==sha(expected):changed.append((file,row['fileSha256'],sha(new)))
     else:bad.append(file)
 for f,o,n in changed:print('ROUTING-OR-MARKING-ONLY',f,o[:12],'->',n[:12])
