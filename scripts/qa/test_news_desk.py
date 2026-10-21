@@ -133,8 +133,8 @@ class NewsDeskTests(unittest.TestCase):
 
 
 class NewsMetadataTests(unittest.TestCase):
-    # The desk's latest reviewed content revision is the October 19 Gemelli row update (General Audience announced).
-    REVISION = '2026-10-19'
+    # The desk's latest reviewed content revision is the October 21 Gemelli row update (General Audience held).
+    REVISION = '2026-10-21'
 
     def assert_news_metadata(self, html, lastmod):
         from bs4 import BeautifulSoup
@@ -157,7 +157,7 @@ class NewsMetadataTests(unittest.TestCase):
                 self.assert_news_metadata((ROOT/file).read_text(), dates[url])
 
     def test_old_webpage_date_is_rejected(self):
-        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-19"',
+        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-21"',
                                                     '"dateModified": "2026-10-10"')
         with self.assertRaises(AssertionError):
             self.assert_news_metadata(html, self.REVISION)
