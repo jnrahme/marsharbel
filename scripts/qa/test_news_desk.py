@@ -42,7 +42,7 @@ class NewsDeskTests(unittest.TestCase):
         self.assertIn('no screening sessions scheduled',article_text)
         self.assertIn('International release dates, streaming distribution and any English-dubbed version remain unconfirmed; VOX lists the film with Arabic audio and English subtitles',article_text)
         self.assertNotIn('English-language availability remain unconfirmed',article_text)
-        self.assertIn('Cinemacity Beirut lists an October 22 opening with no sessions yet',news)
+        self.assertIn('VOX Cinemas Lebanon lists Mar Charbel as Now Showing',news)
         self.assertNotIn('movie-poster-hero.webp',movie)
 
     def test_ministers_visit_card(self):
