@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "41cbd86e5e507a5d264f405e1b19b0d11cadad08428a93c2891a9d0f17d546be",
+  "masterSha256": "bbda86b35f0ac26a587c005362a96393d8946e984a897429924827a12dc9ab5d",
   "sourceRevision": "802b6e7c56a7634b99a24d8c8ccee051b8edca22",
   "bindings": [
     {
@@ -1837,6 +1837,216 @@
       "source": "Feast source: Eparchy of St. Maron liturgical calendar",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-25.heading",
+      "selector": "template[data-saint-date=\"2026-10-25\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-25.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-25\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "25.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-25.monogram",
+      "selector": "template[data-saint-date=\"2026-10-25\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "C",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-25.dateShort",
+      "selector": "template[data-saint-date=\"2026-10-25\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "25 Oct",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-25.calendar",
+      "selector": "template[data-saint-date=\"2026-10-25\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Maronite calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-25.name",
+      "selector": "template[data-saint-date=\"2026-10-25\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Chrysanthus and Saint Daria",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-25.story",
+      "selector": "template[data-saint-date=\"2026-10-25\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Chrysanthus and Daria were Roman martyrs buried on the Via Salaria Nova. Their tombs were publicly honored and their names appear in an early martyrology, so they were already venerated in Rome in the fourth century. A later legend says Chrysanthus was the son of a noble family of Alexandria who became a Christian in Rome, and that Daria, a Vestal, was won to the faith through him; it says both were stoned to death in a sandpit on the Via Salaria. The Catholic Encyclopedia notes that the surviving Acts have no historical value, but the martyrdom and the veneration of their tombs are certain.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-25.provenance",
+      "selector": "template[data-saint-date=\"2026-10-25\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on the Catholic Encyclopedia.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-25.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-25\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saints Chrysanthus and Daria",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-25.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-25\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-26.heading",
+      "selector": "template[data-saint-date=\"2026-10-26\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-26.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-26\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "26.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-26.monogram",
+      "selector": "template[data-saint-date=\"2026-10-26\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "D",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-26.dateShort",
+      "selector": "template[data-saint-date=\"2026-10-26\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "26 Oct",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-26.calendar",
+      "selector": "template[data-saint-date=\"2026-10-26\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Maronite calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-26.name",
+      "selector": "template[data-saint-date=\"2026-10-26\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Demetrius of Thessalonica",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-26.story",
+      "selector": "template[data-saint-date=\"2026-10-26\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Demetrius is remembered as a martyr and as the protector of the city of Thessalonica, in Greece. Catholic Online describes him as a deacon martyred at Sirmium and says early legends credit him with a military career. The Catholic Encyclopedia records that an oil said to work miracles flowed from his tomb. He was very popular in the Middle Ages.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-26.provenance",
+      "selector": "template[data-saint-date=\"2026-10-26\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Catholic Online and the Catholic Encyclopedia.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-26.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-26\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saint Demetrius",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-26.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-26\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-27.heading",
+      "selector": "template[data-saint-date=\"2026-10-27\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-27.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-27\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "27.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-27.monogram",
+      "selector": "template[data-saint-date=\"2026-10-27\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "C",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-27.dateShort",
+      "selector": "template[data-saint-date=\"2026-10-27\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "27 Oct",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-27.calendar",
+      "selector": "template[data-saint-date=\"2026-10-27\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Maronite calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-27.name",
+      "selector": "template[data-saint-date=\"2026-10-27\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Capitolina and Saint Erotheis",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-27.story",
+      "selector": "template[data-saint-date=\"2026-10-27\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Capitolina and her maidservant Erotheis were martyred in Cappadocia, in present-day Turkey. According to tradition, they died in the persecution under Emperor Diocletian, around 304. Their feast is kept on October 27 in the Catholic, Orthodox, Armenian and Syriac Orthodox calendars.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-27.provenance",
+      "selector": "template[data-saint-date=\"2026-10-27\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Catholic Online and the Ecumenical Saints Lexicon.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-27.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-27\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saint Capitolina",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-27.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-27\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -2085,6 +2295,36 @@
     "home.saintDay.2026-10-24.story": "Arethas was an elderly Christian leader in Najran, a town in South Arabia and a center of Christianity there. Around 523, a local ruler besieged Najran and promised amnesty if the town surrendered. Arethas warned the people, but they surrendered. Arethas and many others, including priests, deacons, monks and consecrated virgins, were put to death because they would not deny that Christ is God. The Church remembers Arethas and his companions as martyrs on October 24.",
     "home.saintDay.2026-10-24.provenance": "Brief story based on the New Catholic Encyclopedia, via Encyclopedia.com.",
     "home.saintDay.2026-10-24.infoCta": "Read about Saint Arethas and his companions",
-    "home.saintDay.2026-10-24.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
+    "home.saintDay.2026-10-24.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
+    "home.saintDay.2026-10-25.heading": "Saint of the Day",
+    "home.saintDay.2026-10-25.dateLabel": "25.10.2026",
+    "home.saintDay.2026-10-25.monogram": "C",
+    "home.saintDay.2026-10-25.dateShort": "25 Oct",
+    "home.saintDay.2026-10-25.calendar": "Maronite calendar",
+    "home.saintDay.2026-10-25.name": "Saint Chrysanthus and Saint Daria",
+    "home.saintDay.2026-10-25.story": "Chrysanthus and Daria were Roman martyrs buried on the Via Salaria Nova. Their tombs were publicly honored and their names appear in an early martyrology, so they were already venerated in Rome in the fourth century. A later legend says Chrysanthus was the son of a noble family of Alexandria who became a Christian in Rome, and that Daria, a Vestal, was won to the faith through him; it says both were stoned to death in a sandpit on the Via Salaria. The Catholic Encyclopedia notes that the surviving Acts have no historical value, but the martyrdom and the veneration of their tombs are certain.",
+    "home.saintDay.2026-10-25.provenance": "Brief story based on the Catholic Encyclopedia.",
+    "home.saintDay.2026-10-25.infoCta": "Read about Saints Chrysanthus and Daria",
+    "home.saintDay.2026-10-25.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
+    "home.saintDay.2026-10-26.heading": "Saint of the Day",
+    "home.saintDay.2026-10-26.dateLabel": "26.10.2026",
+    "home.saintDay.2026-10-26.monogram": "D",
+    "home.saintDay.2026-10-26.dateShort": "26 Oct",
+    "home.saintDay.2026-10-26.calendar": "Maronite calendar",
+    "home.saintDay.2026-10-26.name": "Saint Demetrius of Thessalonica",
+    "home.saintDay.2026-10-26.story": "Demetrius is remembered as a martyr and as the protector of the city of Thessalonica, in Greece. Catholic Online describes him as a deacon martyred at Sirmium and says early legends credit him with a military career. The Catholic Encyclopedia records that an oil said to work miracles flowed from his tomb. He was very popular in the Middle Ages.",
+    "home.saintDay.2026-10-26.provenance": "Brief story based on Catholic Online and the Catholic Encyclopedia.",
+    "home.saintDay.2026-10-26.infoCta": "Read about Saint Demetrius",
+    "home.saintDay.2026-10-26.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
+    "home.saintDay.2026-10-27.heading": "Saint of the Day",
+    "home.saintDay.2026-10-27.dateLabel": "27.10.2026",
+    "home.saintDay.2026-10-27.monogram": "C",
+    "home.saintDay.2026-10-27.dateShort": "27 Oct",
+    "home.saintDay.2026-10-27.calendar": "Maronite calendar",
+    "home.saintDay.2026-10-27.name": "Saint Capitolina and Saint Erotheis",
+    "home.saintDay.2026-10-27.story": "Capitolina and her maidservant Erotheis were martyred in Cappadocia, in present-day Turkey. According to tradition, they died in the persecution under Emperor Diocletian, around 304. Their feast is kept on October 27 in the Catholic, Orthodox, Armenian and Syriac Orthodox calendars.",
+    "home.saintDay.2026-10-27.provenance": "Brief story based on Catholic Online and the Ecumenical Saints Lexicon.",
+    "home.saintDay.2026-10-27.infoCta": "Read about Saint Capitolina",
+    "home.saintDay.2026-10-27.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
   }
 }
