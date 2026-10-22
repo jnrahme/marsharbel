@@ -12,7 +12,7 @@ NAMES / TERMS
 - حِزْقِيَّا (Ḥiz-qiy-YĀ) - Hezekiah. Final stress, geminated يّ.
 - أَشُّور (ʾAš-ŠŪR) - Assyria. Geminated شّ.
 - عِمَّانُوئِيل (ʿIm-mā-nū-ʾĪL) - Emmanuel. Four syllables, final stress; gloss «اللهُ مَعَنَا» (al-LĀ-hu ma-ʿa-NĀ).
-- جَمْرَة (ǦAM-ra) - ember. مِذْبَح (MIḎ-baḥ) - altar.
+- جَمْرَة (ǦAM-ra) - ember. مَذْبَح (MAḎ-baḥ) - altar.
 - نَبِيّ (na-BIYY) - prophet. رُؤْيَا (RUʾ-yā) - vision. سِفْر (SIFR) - biblical book. إِصْحَاح (ʾiṣ-ḤĀḤ) - chapter. آيَة (ʾĀ-ya) - verse.
 - يَا إِلٰهَ الرَّجَاء (yā ʾi-LĀ-ha r-ra-ǦĀʾ) - prayer opener "God of hope". الرجاء = Christian hope register (matches site Arabic [I]).
 
