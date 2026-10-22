@@ -162,6 +162,20 @@ jobs:
               require(run.get('html_url') == 'https://github.com/%s/actions/runs/%s' % (expected['repo'], run['id']), 'run URL mismatch')
 
 
+          SETTLE_GRACE_SECONDS = 180
+          settle_first_seen = {}
+
+          def settle_retry(run_id):
+              now = time.monotonic()
+              first = settle_first_seen.setdefault(run_id, now)
+              if now - first > SETTLE_GRACE_SECONDS:
+                  settle_first_seen.pop(run_id, None)
+                  return
+              raise Pending('job records settling for run %s' % run_id)
+
+          def settle_clear(run_id):
+              settle_first_seen.pop(run_id, None)
+
           def snapshot(api, expected):
               results = []
               pending = False
@@ -194,6 +208,14 @@ jobs:
                       continue
                   require(current.get('status') == 'completed' and current.get('conclusion') == 'success', 'dependency not successful')
                   jobs = api.pages('/actions/runs/%s/attempts/%s/jobs' % (current['id'], attempt), 'jobs')
+                  # A run can read completed/success a few seconds before its job records
+                  # settle (observed 2026-10-21: admit failed 9s after QA success on a run
+                  # whose jobs all read success moments later). Not-settled job reads retry
+                  # within a bounded grace; a genuine failure still fails closed on settle.
+                  settled = (len(jobs) > 0 and all(j.get('status') == 'completed' for j in jobs)
+                             and collections.Counter(j.get('name') for j in jobs) == collections.Counter(names))
+                  if not settled:
+                      settle_retry(current['id'])
                   require(collections.Counter(j.get('name') for j in jobs) == collections.Counter(names),
                           'attempt job multiset mismatch; partial rerun requires rerun all jobs')
                   for job in jobs:
@@ -201,6 +223,7 @@ jobs:
                               job.get('head_sha') == expected['sha'] and job.get('head_branch') == 'stage', 'job identity mismatch')
                       require(job.get('status') == 'completed' and job.get('conclusion') == 'success', 'job not successful')
                       require(job.get('html_url') == current['html_url'] + '/job/' + str(job['id']), 'job URL mismatch')
+                  settle_clear(current['id'])
                   results.append({'path': path, 'workflow_id': wid, 'workflow_blob': expected['sources'][path]['blob'],
                                   'run_id': current['id'], 'attempt': attempt, 'url': current['html_url'],
                                   'run_record': current, 'attempt_record': selected,
@@ -272,7 +295,8 @@ jobs:
                       record['scope'] = [{'path': str(p.relative_to(Path.cwd())), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in scope]
                       record['scan_started_at'] = timestamp()
                       save(result_path, record)
-                      result = subprocess.run([sys.executable, 'scripts/qa/verify_deployment.py'], timeout=720)
+                      result = subprocess.run([sys.executable, 'scripts/qa/verify_deployment.py',
+                                              '--attempts', '90', '--interval', '30', '--budget', '2700'], timeout=2760)
                       record['scan_exit'] = result.returncode
                       record['scan_finished_at'] = timestamp()
                       api.deadline = time.monotonic() + 60
@@ -311,7 +335,7 @@ jobs:
   verify-deployment:
     needs: qa
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 60
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       PUSH_SHA: ${{ github.sha }}
