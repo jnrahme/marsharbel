@@ -187,7 +187,7 @@ def json_assignment(text):
 def compare_json(file,old,new):
  prefix,a=json_assignment(old);other,b=json_assignment(new);assert prefix==other
  if file=='same-page-manifest.js':
-  assert len(a['pages'])==231 and len(SCOPED_KEYS)==12
+  assert len(a['pages'])==165 and len(SCOPED_KEYS)==12
   assert SCOPED_KEYS<=set(a['pages']);assert not SCOPED_KEYS&set(b['pages'])
   # Travel-4 (scrum re-pin 2026-10-12): the real manifest carries the 4 ar travel twins
   # inside the verified travel families with scoped-ar2-variant proofs, never as
@@ -205,10 +205,11 @@ def compare_json(file,old,new):
    assert list(variants)==['ar'] and variants['ar'].get('status')=='pending',key
    del b['pages'][key]
   hits['manifest-travel4-ar']+=4
-  # 219 = 231 real families - 12 travel-scoped; the 5 authored AR-2 pages (#769:
+  # 153 = 165 real families - 12 travel-scoped; the 5 authored AR-2 pages (#769:
   # rosary-intro, miracles hub, 3 stories) are production-only, absent from the
-  # synthetic overlay on both sides.
-  assert len(a['pages'])==len(b['pages'])==219
+  # synthetic overlay on both sides. (165: eucharistic certification v2 folded 66
+  # per-locale pending page rows into the 11 eucharistic families as variants.)
+  assert len(a['pages'])==len(b['pages'])==153
   assert b['aliases'].pop('zz')=='zz';assert b['languages'].pop()=='zz'
   extra={k:b['englishSources'].pop(k) for k in list(b['englishSources']) if k.startswith('/zz/')}
   assert len(extra)==19 and all(k=='/zz'+v.rstrip('/') for k,v in extra.items()),extra

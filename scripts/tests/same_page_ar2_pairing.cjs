@@ -34,7 +34,13 @@ test('all 28 AR-2 pairs present with exact pinned routes',()=>{
   assert.ok(page,'missing pair '+slug);
   assert.equal(page.variants.en.path,en,slug+' en path');
   assert.equal(page.variants.ar.path,ar,slug+' ar path');
-  assert.equal(Object.keys(page.variants).length,2,slug+' en+ar only');
+  if(slug.startsWith('eucharistic-')){
+   // Eucharistic certification v2 (PR #872): the 11 eucharistic families are
+   // certified en+ar+de+es+fr+it+pl+pt; en/ar keep the scoped-ar2-variant proof.
+   assert.deepEqual(Object.keys(page.variants).sort(),['ar','de','en','es','fr','it','pl','pt'],slug+' 8-locale certified');
+  }else{
+   assert.equal(Object.keys(page.variants).length,2,slug+' en+ar only');
+  }
  }});
 test('every variant passes the resolver gate with honest not-certified proof',()=>{
  for(const [slug] of TWINS){

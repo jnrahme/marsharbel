@@ -12,11 +12,13 @@ def scoped_provenance(root,text):
         raise ValueError('Unexpected manifest serialization')
     manifest=json.loads(text[len(PREFIX):-2])
     from i18n.ar2_equivalence import ar2_manifest, AR2
+    from i18n.reviewed_eucharistic import eucharistic_manifest
     actual_ar2={key for key,page in manifest['pages'].items() if any(v.get('proof',{}).get('type')==AR2 for v in page['variants'].values())}
     if actual_ar2:
-        # Mirror the control_outputs order (travel manifest first, then the ar2 emitter),
-        # then keep only families carrying ar2 proofs - the same predicate as actual_ar2.
-        chained=ar2_manifest(root,{}, travel_manifest(root,{}, {'pages':{}}))['pages']
+        # Mirror the control_outputs order (travel, then ar2, then the eucharistic
+        # certification that extends ar2 families), then keep only families carrying
+        # ar2 proofs - the same predicate as actual_ar2.
+        chained=eucharistic_manifest(root,{}, ar2_manifest(root,{}, travel_manifest(root,{}, {'pages':{}})))['pages']
         expected_ar2={key:page for key,page in chained.items() if any(v.get('proof',{}).get('type')==AR2 for v in page['variants'].values())}
         if actual_ar2!=set(expected_ar2):raise ValueError('Unknown scoped ar2 manifest family membership')
         for key in sorted(actual_ar2):
