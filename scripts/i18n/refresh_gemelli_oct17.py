@@ -32,7 +32,7 @@ BODY = ("Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon
         "Angelus with thousands of faithful gathered in St Peter's Square - his first scheduled public "
         "event since being discharged - thanking the doctors, nurses and staff of Gemelli and all who "
         "prayed for him: 'I have truly felt your support.' "
-        "On Wednesday, October 21, he held his first weekly General Audience since the surgery in St Peter's Square, Vatican News reported; he thanked people for their prayers and spoke on marriage and the family in his catechesis on Gaudium et Spes. RTE and ANSA also reported on the audience.")
+        "On Wednesday, October 21, he held his first weekly General Audience since the surgery in St Peter's Square, Vatican News reported; he thanked people for their prayers and spoke on marriage and the family in his catechesis on Gaudium et Spes. RTE and ANSA also reported on the audience. Vatican News also reported that, on the evening of October 21, his doctors, Dr Luigi Carbone and Professor Stefano Margaritora, issued a statement released by the Holy See Press Office: \"The final histopathology and molecular testing reports on the tissue removed during the Holy Father's surgery were issued today. The results confirmed that the tumor was a lung adenocarcinoma and that the disease was localized. A subsequent oncological assessment has confirmed that no further treatment is necessary.\"")
 DATE_EN = 'October 17, 2026'
 CREDIT_EN = 'Vatican News: Pope Leo XIV returns to Vatican after being discharged from hospital (October 17, 2026)'
 HOME_CREDIT_EN = ('Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon following lung surgery '
@@ -40,7 +40,7 @@ HOME_CREDIT_EN = ('Pope Leo XIV was discharged from Gemelli Hospital on Saturday
                   "gathered in St Peter's Square - his first scheduled public event since being discharged - "
                   'thanking the doctors, nurses and staff of Gemelli and all who prayed for him: '
                   "'I have truly felt your support.' "
-                  "On Wednesday, October 21, he held his first weekly General Audience since the surgery in St Peter's Square, Vatican News reported; he thanked people for their prayers and spoke on marriage and the family in his catechesis on Gaudium et Spes. RTE and ANSA also reported on the audience. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, "
+                  "On Wednesday, October 21, he held his first weekly General Audience since the surgery in St Peter's Square, Vatican News reported; he thanked people for their prayers and spoke on marriage and the family in his catechesis on Gaudium et Spes. RTE and ANSA also reported on the audience. Vatican News also reported that, on the evening of October 21, his doctors, Dr Luigi Carbone and Professor Stefano Margaritora, issued a statement released by the Holy See Press Office: \"The final histopathology and molecular testing reports on the tissue removed during the Holy Father's surgery were issued today. The results confirmed that the tumor was a lung adenocarcinoma and that the disease was localized. A subsequent oncological assessment has confirmed that no further treatment is necessary.\" Context photo: Gemelli Hospital, Rome. Photo: Blackcat, "
                   'Wikimedia Commons, CC BY-SA 3.0 IT; resized to WebP.')
 
 NEWS_PREFIX = 'news.latest-news.'
@@ -111,18 +111,18 @@ def outputs(root=ROOT):
     row = f'#{ROW_ID} > div:nth-of-type(1)'
     row_sels = {f'{row} > h3:nth-of-type(1) > a:nth-of-type(1)', f'{row} > p:nth-of-type(1)',
                 f'{row} > p:nth-of-type(2) > span:nth-of-type(1)', f'{row} > p:nth-of-type(2) > time:nth-of-type(1)',
-                f'{CREDIT_SEL}(4) > span:nth-of-type(1)', f'{CREDIT_SEL}(4) > span:nth-of-type(2)', f'{CREDIT_SEL}(4) > a:nth-of-type(1)'}
-    aud_re = re.compile(rf'^{re.escape(CREDIT_SEL)}\([123]\) > (span:nth-of-type\([12]\)|a:nth-of-type\(1\))$')
-    aud = [b for b in bindings if aud_re.match(b['selector'])]  # audience credits (refresh_audience_credits_oct21.py) stay last
+                f'{CREDIT_SEL}(5) > span:nth-of-type(1)', f'{CREDIT_SEL}(5) > span:nth-of-type(2)', f'{CREDIT_SEL}(5) > a:nth-of-type(1)'}
+    aud_re = re.compile(rf'^{re.escape(CREDIT_SEL)}\([1234]\) > (span:nth-of-type\([12]\)|a:nth-of-type\(1\))$')
+    aud = [b for b in bindings if aud_re.match(b['selector'])]  # audience (2-4) and doctors (1) credits stay last, in file order
     bindings = [b for b in bindings if b['selector'] not in row_sels and not aud_re.match(b['selector'])]  # upsert: refresh row copy on re-run
     bindings += [
         {'key': K_TITLE, 'selector': f'{row} > h3:nth-of-type(1) > a:nth-of-type(1)', 'source': TITLE, 'kind': 'text', 'nodeIndex': 0},
         {'key': K_SUMMARY, 'selector': f'{row} > p:nth-of-type(1)', 'source': BODY, 'kind': 'text', 'nodeIndex': 0},
         {'key': K_CHIP, 'selector': f'{row} > p:nth-of-type(2) > span:nth-of-type(1)', 'source': 'Update', 'kind': 'text', 'nodeIndex': 0},
         {'key': K_DATE, 'selector': f'{row} > p:nth-of-type(2) > time:nth-of-type(1)', 'source': DATE_EN, 'kind': 'text', 'nodeIndex': 0},
-        {'key': K_TITLE, 'selector': f'{CREDIT_SEL}(4) > span:nth-of-type(1)', 'source': TITLE, 'kind': 'text', 'nodeIndex': 0},
-        {'key': K_SOURCE_LABEL, 'selector': f'{CREDIT_SEL}(4) > span:nth-of-type(2)', 'source': 'Source:', 'kind': 'text', 'nodeIndex': 0},
-        {'key': K_CREDIT, 'selector': f'{CREDIT_SEL}(4) > a:nth-of-type(1)', 'source': CREDIT_EN, 'kind': 'text', 'nodeIndex': 0},
+        {'key': K_TITLE, 'selector': f'{CREDIT_SEL}(5) > span:nth-of-type(1)', 'source': TITLE, 'kind': 'text', 'nodeIndex': 0},
+        {'key': K_SOURCE_LABEL, 'selector': f'{CREDIT_SEL}(5) > span:nth-of-type(2)', 'source': 'Source:', 'kind': 'text', 'nodeIndex': 0},
+        {'key': K_CREDIT, 'selector': f'{CREDIT_SEL}(5) > a:nth-of-type(1)', 'source': CREDIT_EN, 'kind': 'text', 'nodeIndex': 0},
     ]
     bindings += aud
     verify_all(bindings, soup, 'news-master')
