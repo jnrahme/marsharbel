@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "bbda86b35f0ac26a587c005362a96393d8946e984a897429924827a12dc9ab5d",
+  "masterSha256": "4b420f37bbdced29fc790caa51cd0469cdaeea7da45cb397b7b89a04b0473eee",
   "sourceRevision": "802b6e7c56a7634b99a24d8c8ccee051b8edca22",
   "bindings": [
     {
@@ -2047,6 +2047,146 @@
       "source": "Feast source: Eparchy of St. Maron liturgical calendar",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-28.heading",
+      "selector": "template[data-saint-date=\"2026-10-28\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-28.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-28\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "28.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-28.monogram",
+      "selector": "template[data-saint-date=\"2026-10-28\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "T",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-28.dateShort",
+      "selector": "template[data-saint-date=\"2026-10-28\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "28 Oct",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-28.calendar",
+      "selector": "template[data-saint-date=\"2026-10-28\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Maronite calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-28.name",
+      "selector": "template[data-saint-date=\"2026-10-28\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Terence and Companions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-28.story",
+      "selector": "template[data-saint-date=\"2026-10-28\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Maronite calendar lists Terence and his companions on October 28. We have matched this entry to the group of martyrs Terence, Africanus, Pompeius and their companions, because the names fit; the calendar itself gives no details. According to Catholic Online, they were martyred in the persecution under Emperor Decius, and tradition says they were forced into a pit filled with serpents and stinging reptiles, and those who survived were beheaded. Catholic Online gives their feast as April 10, while the Orthodox Church in America lists Africanus, Terence, Maximus, Pompeius and others of Carthage on October 28.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-28.provenance",
+      "selector": "template[data-saint-date=\"2026-10-28\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Catholic Online. The date follows the Maronite calendar.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-28.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-28\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saint Terence and his companions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-28.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-28\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-29.heading",
+      "selector": "template[data-saint-date=\"2026-10-29\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-29.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-29\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "29.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-29.monogram",
+      "selector": "template[data-saint-date=\"2026-10-29\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "A",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-29.dateShort",
+      "selector": "template[data-saint-date=\"2026-10-29\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "29 Oct",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-29.calendar",
+      "selector": "template[data-saint-date=\"2026-10-29\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Maronite calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-29.name",
+      "selector": "template[data-saint-date=\"2026-10-29\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Anastasia of Rome",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-29.story",
+      "selector": "template[data-saint-date=\"2026-10-29\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "According to the Greek life of Saint Anastasia of Rome, she lost her parents at the age of three and was raised in Rome by an abbess named Sophia. During the persecution under Emperor Decius, the city prefect Probus had her arrested. She told him that Jesus Christ was her spouse, her riches and her life, and she was tortured and beheaded. This life was written long after her death, so the details come from tradition. Her feast is October 29 in the Orthodox and Byzantine Catholic calendars. She is not in the current Roman Martyrology, and she is a different saint from Anastasia of Sirmium, whose feast is December 25 in the West.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-29.provenance",
+      "selector": "template[data-saint-date=\"2026-10-29\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Saints Encyclopedia. The date follows the Maronite calendar.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-29.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-29\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saint Anastasia of Rome",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-29.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-29\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -2325,6 +2465,26 @@
     "home.saintDay.2026-10-27.story": "Capitolina and her maidservant Erotheis were martyred in Cappadocia, in present-day Turkey. According to tradition, they died in the persecution under Emperor Diocletian, around 304. Their feast is kept on October 27 in the Catholic, Orthodox, Armenian and Syriac Orthodox calendars.",
     "home.saintDay.2026-10-27.provenance": "Brief story based on Catholic Online and the Ecumenical Saints Lexicon.",
     "home.saintDay.2026-10-27.infoCta": "Read about Saint Capitolina",
-    "home.saintDay.2026-10-27.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
+    "home.saintDay.2026-10-27.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
+    "home.saintDay.2026-10-28.heading": "Saint of the Day",
+    "home.saintDay.2026-10-28.dateLabel": "28.10.2026",
+    "home.saintDay.2026-10-28.monogram": "T",
+    "home.saintDay.2026-10-28.dateShort": "28 Oct",
+    "home.saintDay.2026-10-28.calendar": "Maronite calendar",
+    "home.saintDay.2026-10-28.name": "Saint Terence and Companions",
+    "home.saintDay.2026-10-28.story": "The Maronite calendar lists Terence and his companions on October 28. We have matched this entry to the group of martyrs Terence, Africanus, Pompeius and their companions, because the names fit; the calendar itself gives no details. According to Catholic Online, they were martyred in the persecution under Emperor Decius, and tradition says they were forced into a pit filled with serpents and stinging reptiles, and those who survived were beheaded. Catholic Online gives their feast as April 10, while the Orthodox Church in America lists Africanus, Terence, Maximus, Pompeius and others of Carthage on October 28.",
+    "home.saintDay.2026-10-28.provenance": "Brief story based on Catholic Online. The date follows the Maronite calendar.",
+    "home.saintDay.2026-10-28.infoCta": "Read about Saint Terence and his companions",
+    "home.saintDay.2026-10-28.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
+    "home.saintDay.2026-10-29.heading": "Saint of the Day",
+    "home.saintDay.2026-10-29.dateLabel": "29.10.2026",
+    "home.saintDay.2026-10-29.monogram": "A",
+    "home.saintDay.2026-10-29.dateShort": "29 Oct",
+    "home.saintDay.2026-10-29.calendar": "Maronite calendar",
+    "home.saintDay.2026-10-29.name": "Saint Anastasia of Rome",
+    "home.saintDay.2026-10-29.story": "According to the Greek life of Saint Anastasia of Rome, she lost her parents at the age of three and was raised in Rome by an abbess named Sophia. During the persecution under Emperor Decius, the city prefect Probus had her arrested. She told him that Jesus Christ was her spouse, her riches and her life, and she was tortured and beheaded. This life was written long after her death, so the details come from tradition. Her feast is October 29 in the Orthodox and Byzantine Catholic calendars. She is not in the current Roman Martyrology, and she is a different saint from Anastasia of Sirmium, whose feast is December 25 in the West.",
+    "home.saintDay.2026-10-29.provenance": "Brief story based on Saints Encyclopedia. The date follows the Maronite calendar.",
+    "home.saintDay.2026-10-29.infoCta": "Read about Saint Anastasia of Rome",
+    "home.saintDay.2026-10-29.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
   }
 }
