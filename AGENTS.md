@@ -123,3 +123,10 @@ Joey asked the assistant to research authoritative sources and use best judgment
 ## SmartAssist
 
 When available, call `rag_search` before project-specific code, test, Git or architecture decisions. Use `apply_feedback_protocol` to persist user corrections and reusable rules. If SmartAssist is unconfigured, preserve the rule here and continue; do not install or configure it without a task reason.
+
+## Lane process pack (Joey approved 2026-10-02)
+
+- LARGE builds (backend, subscriptions, new systems, deploy/CI, site-wide design) fill the spec section of the PR template first. Routine content skips it. See `docs/engineering/process/spec-first.md`.
+- Every Joey correction is logged in `docs/engineering/corrections-log.md` the same day, and promoted here if general. See `docs/engineering/process/corrections-loop.md`.
+- Big features get an independent reviewer (not the builder) who posts the proof checklist on the PR before merge. See `independent-review.md`.
+- Long builds keep a `checkpoints/<build>.md` resume file. See `checkpoints.md`.
