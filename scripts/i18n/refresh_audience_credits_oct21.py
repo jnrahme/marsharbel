@@ -60,15 +60,19 @@ def outputs(root=ROOT):
                 shifted += 1
         if shifted < 100:
             raise ValueError(f'expected ~180 credit selectors to shift, got {shifted}')
-    mine = {f'{CREDIT_SEL}({i})' + s for i in (1, 2, 3) for s in (' > span:nth-of-type(1)', ' > span:nth-of-type(2)', ' > a:nth-of-type(1)')}
+    mine = {f'{CREDIT_SEL}({i})' + s for i in (2, 3, 4) for s in (' > span:nth-of-type(1)', ' > span:nth-of-type(2)', ' > a:nth-of-type(1)')}
     row = '#pope-leo-gemelli-discharge-2026-10-17 > div:nth-of-type(1)'
-    gem = [b for b in bindings if b['selector'].startswith(row) or b['selector'] in {f'{CREDIT_SEL}(4) > span:nth-of-type(1)', f'{CREDIT_SEL}(4) > span:nth-of-type(2)', f'{CREDIT_SEL}(4) > a:nth-of-type(1)'}]
+    gem = [b for b in bindings if b['selector'].startswith(row) or b['selector'] in {f'{CREDIT_SEL}(5) > span:nth-of-type(1)', f'{CREDIT_SEL}(5) > span:nth-of-type(2)', f'{CREDIT_SEL}(5) > a:nth-of-type(1)'}]
     gem_ids = {id(b) for b in gem}
-    bindings = [b for b in bindings if b['selector'] not in mine and id(b) not in gem_ids] + gem  # Gemelli row bindings keep their place before mine
-    for i, field in enumerate(FIELDS, start=1):
+    doc_re = re.compile(rf'^{re.escape(CREDIT_SEL)}\(1\) > (span:nth-of-type\([12]\)|a:nth-of-type\(1\))$')
+    doc = [b for b in bindings if doc_re.match(b['selector'])]  # doctors credit (refresh_doctors_credit_oct22.py) stays last
+    doc_ids = {id(b) for b in doc}
+    bindings = [b for b in bindings if b['selector'] not in mine and id(b) not in gem_ids and id(b) not in doc_ids] + gem  # Gemelli row bindings keep their place before mine
+    for i, field in enumerate(FIELDS, start=2):
         bindings.append({'key': K_TITLE, 'selector': f'{CREDIT_SEL}({i}) > span:nth-of-type(1)', 'source': TITLE, 'kind': 'text', 'nodeIndex': 0})
         bindings.append({'key': 'news.latest-news.source', 'selector': f'{CREDIT_SEL}({i}) > span:nth-of-type(2)', 'source': 'Source:', 'kind': 'text', 'nodeIndex': 0})
         bindings.append({'key': keys[field], 'selector': f'{CREDIT_SEL}({i}) > a:nth-of-type(1)', 'source': english[field], 'kind': 'text', 'nodeIndex': 0})
+    bindings += doc
     for b in bindings:
         nodes = soup.select(b['selector'])
         if len(nodes) != 1:
