@@ -91,10 +91,13 @@ def ar2_manifest(root,texts,manifest):
                     if len(vs)!=1 or vs[0].get('status')!='pending':
                         raise ValueError('AR-2 pairing would replace a non-pending family: '+other)
                     del out['pages'][other]
+            from i18n.keyed_master import strip_generated_locale_nav
+            # PR3: the marked generated locale-nav is a post-pin control artifact;
+            # the candidate pin always hashes the stripped bytes.
             family['variants']['ar']={'path':row['ar'],'aliases':[],'status':'verified','contentSha256':ar_digest,
                 'sourceSha256':family['sourceSha256'],
                 'proof':{'type':AR2,'state':'approved','scope':row['scope'],
-                         'candidateFileSha256':hashlib.sha256(ar_file.read_bytes()).hexdigest(),
+                         'candidateFileSha256':hashlib.sha256(strip_generated_locale_nav(ar_file.read_bytes())).hexdigest(),
                          'reviewedContentSha256':ar_digest,'nativeReviewStatus':row['nativeReviewStatus'],
                          'evidenceRef':row['evidenceRef']}}
             continue

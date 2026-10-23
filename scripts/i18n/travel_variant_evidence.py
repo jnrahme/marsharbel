@@ -111,7 +111,10 @@ def validate_variant(root, family, code, variant, text, final=True, schema='scop
         raise ValueError('Candidate hash not actual prepared bytes')
     if final:
         from i18n.header_marking_delta import strip_for_locale
-        if without_ru(candidate,slug)!=without_ru(strip_for_locale(root,code,text),slug):raise ValueError('Post-review candidate drift')
+        # PR3: the marked generated locale-nav is a post-pin control artifact;
+        # strip it before the full-file pin comparison (never re-pin for it).
+        from i18n.keyed_master import strip_static_fallback_text
+        if without_ru(candidate,slug)!=without_ru(strip_static_fallback_text(strip_for_locale(root,code,text)),slug):raise ValueError('Post-review candidate drift')
     if digest(candidate)!=variant['bodySha256'] or digest(text)!=variant['bodySha256']:
         raise ValueError('Candidate/current main drift')
     if code=='en':

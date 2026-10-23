@@ -826,3 +826,8 @@
 [wide-desktop] › travel-routing.spec.js › /qozhaya-monastery has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › travel-routing.spec.js › /visit-annaya has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › video-playback.spec.js › rejects spoofed origin/source, malformed payload and unknown error
+[small-phone] › international.spec.js › /es/peregrinacion keeps the footer fallback when the switcher script fails
+[small-phone] › international.spec.js › footer fallback handoff layout shift measured (failed-switcher)
+[tablet] › international.spec.js › /saint-charbel-pilgrimage generated footer fallback works without JavaScript
+[tablet] › international.spec.js › footer fallback handoff layout shift measured (fast)
+[wide-desktop] › international.spec.js › /saint-charbel-pilgrimage hides the footer fallback only after the enhanced select is ready

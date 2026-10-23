@@ -44,15 +44,21 @@ def validate_variant(root,family,code,variant,text,final=True):
     from i18n.header_marking_delta import strip_for_locale
     # The committed file may already carry the exact English-destination header marking;
     # the reviewed candidate is the file with that marking stripped (strict inverse).
-    candidate=strip_for_locale(root,code,(root/file).read_text());before=blob(root,base,file)
+    # PR3: the marked generated locale-nav is likewise stripped - a post-pin
+    # control artifact, never part of the reviewed candidate or its pins.
+    from i18n.keyed_master import strip_static_fallback_text
+    candidate=strip_static_fallback_text(strip_for_locale(root,code,(root/file).read_text()));before=blob(root,base,file)
     if sha(candidate)!=ev.get('candidateFileSha256') or sha(candidate)!=variant.get('candidateFileSha256'):raise ValueError('Annaya prepared candidate digest mismatch')
     if digest(candidate)!=ev.get('bodySha256') or digest(candidate)!=variant.get('bodySha256') or digest(text)!=digest(candidate):raise ValueError('Annaya candidate/current main drift')
     if remainder(before)!=remainder(candidate):raise ValueError('Annaya non-hero main changed')
-    master=(root/'annaya-tour.html').read_text()
+    master=strip_static_fallback_text((root/'annaya-tour.html').read_text())
     if sha(master)!=ev.get('masterSha256'):raise ValueError('Annaya master drift')
     if final:
         from i18n.header_marking_delta import strip_for_locale
-        if sha(strip_for_locale(root,code,text))!=sha(candidate):raise ValueError('Annaya post-review full-file drift')
+        # PR3: the marked generated locale-nav is a post-pin control artifact;
+        # strip it before the full-file pin comparison (never re-pin for it).
+        from i18n.keyed_master import strip_static_fallback_text
+        if sha(strip_static_fallback_text(strip_for_locale(root,code,text)))!=sha(candidate):raise ValueError('Annaya post-review full-file drift')
     catalogs={f'locales/en/{family}-bindings.json',f'locales/{code}/{family}-copy.json'}
     # The shared EN row binds both families; each locale row binds its owner.
     if code=='en':catalogs={f'locales/en/{f}-{suffix}.json' for f in FAMILIES for suffix in ('bindings','copy')}

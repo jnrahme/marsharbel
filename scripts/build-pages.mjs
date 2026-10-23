@@ -102,6 +102,10 @@ for (const file of await walk(SRC).catch(() => [])) {
   let current = null; try { current = await readFile(rel, 'utf8'); } catch {}
   // The no-JS static language fallback is added afterwards by scripts/build-same-page-control.py (checked there), so it is not part of this builder's output.
   if (current !== null) current = current.replace(/[ \t]*<noscript><nav[^>]*class="sc-static-language"[\s\S]*?<\/nav><\/noscript>\n?/, '');
+  // The marked generated locale-nav is likewise post-build composition added by
+  // scripts/build-same-page-control.py (checked there). Ignore exactly that
+  // owned marker-delimited block - nothing else - so authored drift still fails.
+  if (current !== null) current = current.replace(/[ \t]*<!-- i18n-locale-nav:start -->[\s\S]*?<!-- i18n-locale-nav:end -->\n?/, '');
   n++;
   if (current !== built) { stale.push(rel); if (!check) { await mkdir(path.dirname(rel) || '.', { recursive: true }); await writeFile(rel, built); } }
 }

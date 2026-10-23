@@ -17,6 +17,20 @@ nav.locale-nav a[aria-disabled="true"]{display:inline-block;max-width:100%;white
 
 /* A ready select replaces the expanded fallback nav, never before JS succeeds. */
 header nav.locale-nav[hidden]{display:none}
+/* PR3 no-JS fallback (design ruling v2 2026-10-23 - flat footer list replaces
+   details/summary after the measured CLS rejection): the marked generated nav
+   sits in the page-end footer and inherits the authored footer link language
+   (.footer a = gold on dark shells, --travel-accent on cream .travel-page,
+   underlined), upgraded to 44px targets like the design gate requires.
+   Hidden only after the enhanced select is ready, and never while focused
+   (same-page-switcher.js focus retention). */
+nav.locale-fallback[data-locale-fallback]{display:flex;flex-wrap:wrap;column-gap:.75rem;row-gap:.15rem;margin:0 0 1rem}
+nav.locale-fallback[data-locale-fallback][hidden]{display:none}
+nav.locale-fallback[data-locale-fallback]>span[aria-hidden="true"]{display:none}
+nav.locale-fallback[data-locale-fallback] a{display:inline-flex;align-items:center;min-block-size:44px;unicode-bidi:isolate}
+nav.locale-fallback[data-locale-fallback] a[aria-disabled="true"]{text-decoration:none;cursor:default;color:#9ea19b;opacity:1}
+.travel-page nav.locale-fallback[data-locale-fallback] a[aria-disabled="true"]{color:var(--travel-muted,#625749)}
+nav.locale-fallback[data-locale-fallback] .sc-language-helper{flex-basis:100%}
 /* Language and install controls retain usable targets as text grows or shrinks. */
 #sc-language-switcher{min-inline-size:0;max-inline-size:100%;block-size:auto}
 #sc-language-select,#sc-install-app-btn{min-block-size:44px;min-inline-size:44px;block-size:auto;box-sizing:border-box}

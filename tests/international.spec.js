@@ -1,6 +1,11 @@
 const {test, expect} = require('@playwright/test');
 const AxeBuilder = require('@axe-core/playwright').default;
 const registry = require('../locales/registry.json');
+const repoRoot = require('path').resolve(__dirname, '..');
+const {loadBuiltManifest, loadResolver, generatedNavEligibleRoutes} = require('../scripts/tests/same_page_contract.cjs');
+const samePageManifest = loadBuiltManifest(repoRoot);
+const samePageApi = loadResolver(repoRoot);
+const eligibleNavRoutes = generatedNavEligibleRoutes(samePageManifest);
 const languages = Object.keys(registry.locales);
 const homeLanguages=languages.filter(code=>registry.locales[code].home&&registry.locales[code].capabilities?.home!==false);
 const noHomeLanguages=languages.filter(code=>!homeLanguages.includes(code));
@@ -121,7 +126,50 @@ for (const route of ['/', ...new Set(Object.values(registry.topics).map(topic =>
     await expect(page.locator('#sc-language-select')).toHaveCount(1);
     await expect(page.locator('#sc-language-select')).toBeVisible();
     await expect(page.locator('.lang-switcher')).toHaveCount(1);
-    await expect(page.locator('.locale-navigation, .locale-nav')).toHaveCount(0);
+    await expect(page.locator('.locale-navigation')).toHaveCount(0);
+    // PR3: eligible same-page families carry exactly one marked generated
+    // no-JS fallback nav. With JS ready the select is the only VISIBLE control;
+    // the fallback stays in the DOM (hidden) as the crawlable/no-JS layer.
+    // Fallback presence, eligibility and exact twin link targets stay asserted.
+    const localeNavs = page.locator('nav.locale-nav');
+    const localeNavCount = await localeNavs.count();
+    expect(localeNavCount).toBeLessThanOrEqual(1);
+    const normalizedRoute = route.replace(/\/$/, '') || '/';
+    if (localeNavCount === 1) {
+      const fallback = localeNavs.first();
+      await expect(fallback).toHaveAttribute('data-i18n-generated', '');
+      await expect(fallback).toBeHidden();
+      expect(eligibleNavRoutes.has(normalizedRoute)).toBe(true);
+      const anchors = await fallback.locator('a[hreflang]').all();
+      expect(anchors.map(() => 0).length).toBe(samePageManifest.languages.length);
+      // Live layer: the switcher rewrites anchors against the live URL (preview
+      // origin, ?lang=en view). The DOM contract is resolver output for THAT
+      // SAME input - page.url() - never a fabricated production origin.
+      for (const anchor of anchors) {
+        const code = await anchor.getAttribute('hreflang');
+        const resolution = samePageApi.resolve(samePageManifest, page.url(), code, 'en');
+        if (resolution.available) {
+          expect(await anchor.getAttribute('href')).toBe(resolution.href);
+        } else {
+          expect(await anchor.getAttribute('href')).toBeNull();
+          expect(await anchor.getAttribute('aria-disabled')).toBe('true');
+        }
+      }
+      // Committed-bytes layer: the served no-JS fallback must keep exact
+      // production twin hrefs resolved from the canonical site URL.
+      const staticHtml = await (await page.request.get(normalizedRoute)).text();
+      const staticNav = staticHtml.match(/<nav\b[^>]*\bclass="[^"]*\blocale-nav\b[^"]*"[^>]*>[\s\S]*?<\/nav>/);
+      expect(staticNav, 'committed page carries the generated locale nav').not.toBeNull();
+      for (const m of staticNav[0].matchAll(/<a\b[^>]*\bhreflang="([^"]+)"[^>]*>/g)) {
+        const code = m[1];
+        const href = (m[0].match(/\bhref="([^"]*)"/) || [])[1] || null;
+        const resolution = samePageApi.resolve(samePageManifest, 'https://marsharbel.com' + normalizedRoute, code, 'en');
+        if (resolution.available) expect(href).toBe(resolution.href);
+        else expect(href).toBeNull();
+      }
+    } else {
+      expect(eligibleNavRoutes.has(normalizedRoute)).toBe(false);
+    }
     // P0: a crawlable locale bar may exist - at most one per page, one
     // canonical link per locale, and never parameter (?lang=) URLs. English
     // pages used to forbid footer locale links entirely; the bar is the
@@ -233,6 +281,149 @@ for (const [route,code] of [['/pt/novena','pt'],['/it/novena','it'],['/ru/novena
     await expect(page.locator('html')).toHaveAttribute('lang','en');
   } finally { await context.close(); }
 });
+
+// PR3 generated fallback v2 (design ruling 2026-10-23): a flat marked locale
+// list inside the page-end footer, on the 50 pages without authored
+// footer-locales. Works no-JS/failed/slow script, exact twin links at 44px,
+// hidden only after the enhanced select is ready, never while focused.
+for (const route of ['/saint-charbel-pilgrimage', '/es/peregrinacion', '/ar/pilgrimage']) {
+  test(`${route} generated footer fallback works without JavaScript`, async ({browser, baseURL}, testInfo) => {
+    const context = await browser.newContext({...testInfo.project.use, baseURL, javaScriptEnabled:false});
+    try {
+      const page = await context.newPage();
+      await page.goto(route);
+      const fallback = page.locator('[data-locale-fallback]');
+      await expect(fallback).toHaveCount(1);
+      await expect(fallback).toBeVisible();
+      // Lives inside the semantic page footer.
+      await expect(page.locator('footer [data-locale-fallback]')).toHaveCount(1);
+      // 44px targets on the locale links.
+      const first = fallback.locator('a[hreflang]').first();
+      expect((await first.boundingBox()).height).toBeGreaterThanOrEqual(44);
+      // Exact twin link targets (absolute production hrefs).
+      const en = fallback.locator('a[hreflang="en"]');
+      await expect(en).toHaveAttribute('href', /https:\/\/marsharbel\.com\/(saint-charbel-pilgrimage|ar\/pilgrimage|es\/peregrinacion)$/);
+      // Under-review locales: no href, not tabbable.
+      const disabled = fallback.locator('a[aria-disabled="true"]').first();
+      await expect(disabled).not.toHaveAttribute('href', /.*/);
+      await expect(disabled).toHaveAttribute('tabindex', '-1');
+    } finally { await context.close(); }
+  });
+
+  test(`${route} hides the footer fallback only after the enhanced select is ready`, async ({page, baseURL}) => {
+    await page.goto(baseURL+route);
+    await expect(page.locator('#sc-language-select')).toBeVisible();
+    await expect(page.locator('[data-locale-fallback]')).toBeHidden();
+    // Exactly one visible language control remains.
+    await expect(page.locator('#sc-language-select')).toHaveCount(1);
+  });
+
+  test(`${route} keeps the footer fallback when the switcher script fails`, async ({browser, baseURL}, testInfo) => {
+    const context = await browser.newContext({...testInfo.project.use, baseURL});
+    try {
+      await context.route('**/same-page-switcher.js', route_ => route_.abort());
+      const page = await context.newPage();
+      await page.goto(route);
+      const fallback = page.locator('[data-locale-fallback]');
+      await expect(fallback).toBeVisible();
+      await expect(page.locator('#sc-language-select')).toHaveCount(0);
+      // The twin links stay functional.
+      await expect(fallback.locator('a[hreflang="en"]')).toHaveAttribute('href', /marsharbel\.com/);
+      await expect(fallback.locator('a[aria-disabled="true"]').first()).not.toHaveAttribute('href', /.*/);
+    } finally { await context.close(); }
+  });
+}
+
+// Focus retention (design acceptance scope): with a delayed switcher, a user
+// already focused inside the footer fallback keeps it fully operable until the
+// in-flight interaction resolves or is abandoned; no forced focus or viewport
+// jump; afterwards exactly one control remains.
+test('focused footer fallback survives enhancement until blur', async ({browser, baseURL}, testInfo) => {
+  test.skip(testInfo.project.name !== 'phone', 'focus sequence measured on the phone project');
+  const context = await browser.newContext({...testInfo.project.use, baseURL});
+  try {
+    await context.route('**/same-page-switcher.js', async route_ => { await new Promise(res => setTimeout(res, 1500)); route_.continue(); });
+    const page = await context.newPage();
+    // Deferred scripts hold DOMContentLoaded while the switcher response is
+    // delayed, so commit + attach is the real pre-enhancement window.
+    await page.goto('/saint-charbel-pilgrimage', {waitUntil:'commit'});
+    const fallback = page.locator('[data-locale-fallback]');
+    await fallback.locator('a[hreflang="de"]').waitFor({state:'attached'});
+    await page.waitForFunction(() => {
+      const el = document.querySelector('[data-locale-fallback] a[hreflang="de"]');
+      if (!el || !document.querySelector('#sc-language-select') === false) return false;
+      el.focus();
+      return document.activeElement === el;
+    });
+    // Select becomes ready while focus is inside the fallback.
+    await expect(page.locator('#sc-language-select')).toBeVisible();
+    // No forced jump: focus stays on the link, fallback stays visible/operable.
+    await expect(fallback.locator('a[hreflang="de"]')).toBeFocused();
+    await expect(fallback).toBeVisible();
+    // Abandoning the interaction (blur) settles to exactly one control.
+    await page.evaluate(() => document.activeElement.blur());
+    await expect(fallback).toBeHidden();
+    await expect(page.locator('#sc-language-select')).toBeVisible();
+  } finally { await context.close(); }
+});
+
+// Eligibility boundary (exact inventory, Scrum-confirmed 50-set): the 47 pages
+// with authored footer-locales never gain the fallback; their authored bytes
+// are untouched. Homes and EN-only pending families stay clean as before.
+test('authored footer-locales guides never gain the generated fallback', async ({page, baseURL}) => {
+  for (const route of ['/saint-charbel-novena', '/es/novena', '/ar/novena']) {
+    await page.goto(baseURL+route);
+    await expect(page.locator('[data-locale-fallback]')).toHaveCount(0);
+    await expect(page.locator('footer nav.footer-locales')).toHaveCount(1);
+    await expect(page.locator('footer nav.footer-locales a[hreflang="ar"]')).toHaveAttribute('href', '/ar/');
+  }
+});
+
+// Layout-shift measurement of the footer fallback handoff: real
+// PerformanceObserver LayoutShift entries + session-window CLS, at the top of
+// the page AND scrolled near the footer, fast and delayed/failed switcher.
+// Metrics are attached for design adjudication - no pixel threshold gates CI.
+for (const scenario of [{name:'fast'},{name:'delayed-switcher',delayMs:2000},{name:'delayed-scrolled-footer',delayMs:2000,scroll:true},{name:'failed-switcher',fail:true}]) {
+  test(`footer fallback handoff layout shift measured (${scenario.name})`, async ({browser, baseURL}, testInfo) => {
+    test.skip(testInfo.project.name !== 'phone', 'measurement matrix runs on the phone project');
+    const context = await browser.newContext({...testInfo.project.use, baseURL});
+    try {
+      await context.addInitScript(() => {
+        window.__shifts = [];
+        new PerformanceObserver(list => {
+          for (const e of list.getEntries()) window.__shifts.push({value:e.value, hadRecentInput:e.hadRecentInput, time:e.startTime, sources:(e.sources||[]).map(s => s && s.node ? s.node.tagName : null)});
+        }).observe({type:'layout-shift', buffered:true});
+      });
+      if (scenario.fail) await context.route('**/same-page-switcher.js', route_ => route_.abort());
+      else if (scenario.delayMs) await context.route('**/same-page-switcher.js', async route_ => { await new Promise(res => setTimeout(res, scenario.delayMs)); route_.continue(); });
+      const page = await context.newPage();
+      await page.goto('/saint-charbel-pilgrimage', {waitUntil:'domcontentloaded'});
+      if (scenario.scroll) {
+        await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+        await page.waitForTimeout(300);
+      }
+      const fallback = page.locator('[data-locale-fallback]');
+      if (scenario.fail) {
+        await expect(fallback).toBeVisible();
+        await expect(page.locator('#sc-language-select')).toHaveCount(0);
+        await page.waitForTimeout(1500);
+      } else {
+        await expect(page.locator('#sc-language-select')).toBeVisible();
+        await expect(fallback).toBeHidden();
+        await page.waitForTimeout(600);
+      }
+      const shifts = await page.evaluate(() => window.__shifts);
+      const nonInput = shifts.filter(s => !s.hadRecentInput);
+      let sessionMax = 0, cur = 0, winStart = null, lastT = null;
+      for (const s of nonInput) {
+        if (winStart === null || s.time - lastT > 1000 || s.time - winStart > 5000) { sessionMax = Math.max(sessionMax, cur); cur = 0; winStart = s.time; }
+        cur += s.value; lastT = s.time;
+      }
+      sessionMax = Math.max(sessionMax, cur);
+      testInfo.attach('layout-shift-' + scenario.name, {body: JSON.stringify({scenario: scenario.name, page: '/saint-charbel-pilgrimage', viewport: '390x844', sessionWindowCLS: Number(sessionMax.toFixed(5)), totalNonInputCLS: Number(nonInput.reduce((a,s) => a + s.value, 0).toFixed(5)), entries: shifts}, null, 1)});
+    } finally { await context.close(); }
+  });
+}
 
 // Smallest supported phone: intrinsic option widths must not push RTL or LTR chrome out.
 for (const route of ['/ar/annaya', '/pt/annaya', '/it/annaya', '/en/annaya', '/']) {

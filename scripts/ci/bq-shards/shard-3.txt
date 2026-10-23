@@ -820,3 +820,15 @@
 [wide-desktop] › travel-routing.spec.js › /annaya-tour has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › travel-routing.spec.js › /en/annaya-tour redirects to its canonical root page
 [wide-desktop] › travel-routing.spec.js › /saint-charbel-trail has a real body, working resources, full-page accessibility and route landmarks
+[laptop] › international.spec.js › /ar/pilgrimage hides the footer fallback only after the enhanced select is ready
+[laptop] › international.spec.js › /es/peregrinacion keeps the footer fallback when the switcher script fails
+[laptop] › international.spec.js › authored footer-locales guides never gain the generated fallback
+[laptop] › international.spec.js › footer fallback handoff layout shift measured (failed-switcher)
+[phone] › international.spec.js › /es/peregrinacion generated footer fallback works without JavaScript
+[phone] › international.spec.js › authored footer-locales guides never gain the generated fallback
+[small-phone] › international.spec.js › /ar/pilgrimage generated footer fallback works without JavaScript
+[small-phone] › international.spec.js › /saint-charbel-pilgrimage keeps the footer fallback when the switcher script fails
+[tablet] › international.spec.js › /ar/pilgrimage hides the footer fallback only after the enhanced select is ready
+[tablet] › international.spec.js › authored footer-locales guides never gain the generated fallback
+[wide-desktop] › international.spec.js › /ar/pilgrimage keeps the footer fallback when the switcher script fails
+[wide-desktop] › international.spec.js › focused footer fallback survives enhancement until blur

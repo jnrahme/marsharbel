@@ -825,3 +825,10 @@
 [wide-desktop] › travel-routing.spec.js › /our-lady-of-lebanon-harissa has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › travel-routing.spec.js › /saint-charbel-hermitage has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › travel-routing.spec.js › /travel has a real body, working resources, full-page accessibility and route landmarks
+[phone] › international.spec.js › /saint-charbel-pilgrimage hides the footer fallback only after the enhanced select is ready
+[phone] › international.spec.js › footer fallback handoff layout shift measured (failed-switcher)
+[small-phone] › international.spec.js › /saint-charbel-pilgrimage generated footer fallback works without JavaScript
+[small-phone] › international.spec.js › footer fallback handoff layout shift measured (fast)
+[tablet] › international.spec.js › /saint-charbel-pilgrimage hides the footer fallback only after the enhanced select is ready
+[wide-desktop] › international.spec.js › /ar/pilgrimage generated footer fallback works without JavaScript
+[wide-desktop] › international.spec.js › /saint-charbel-pilgrimage keeps the footer fallback when the switcher script fails

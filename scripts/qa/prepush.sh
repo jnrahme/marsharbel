@@ -5,6 +5,12 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$ROOT"
 
+# sitemap_lastmod: on a branch, compare page bytes against the base ref so
+# transient commits that revert each other do not bump lastmod (squash parity).
+if git rev-parse --verify -q origin/stage >/dev/null; then
+  export SITEMAP_BASELINE=origin/stage
+fi
+
 step() { printf '\n[prepush] %s\n' "$1"; }
 
 step "generated pages are in sync with src/pages"

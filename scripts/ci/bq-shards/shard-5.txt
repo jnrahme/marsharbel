@@ -820,3 +820,15 @@
 [wide-desktop] › travel-routing.spec.js › /it/travel has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › travel-routing.spec.js › /saint-charbel-places-lebanon has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › video-playback.spec.js › restriction, unavailable and missing-referrer states are distinct and accessible
+[laptop] › international.spec.js › /es/peregrinacion generated footer fallback works without JavaScript
+[laptop] › international.spec.js › /saint-charbel-pilgrimage hides the footer fallback only after the enhanced select is ready
+[laptop] › international.spec.js › footer fallback handoff layout shift measured (delayed-scrolled-footer)
+[phone] › international.spec.js › /ar/pilgrimage generated footer fallback works without JavaScript
+[phone] › international.spec.js › /es/peregrinacion keeps the footer fallback when the switcher script fails
+[phone] › international.spec.js › footer fallback handoff layout shift measured (delayed-scrolled-footer)
+[small-phone] › international.spec.js › /ar/pilgrimage keeps the footer fallback when the switcher script fails
+[small-phone] › international.spec.js › focused footer fallback survives enhancement until blur
+[tablet] › international.spec.js › /es/peregrinacion generated footer fallback works without JavaScript
+[tablet] › international.spec.js › footer fallback handoff layout shift measured (delayed-scrolled-footer)
+[wide-desktop] › international.spec.js › /es/peregrinacion hides the footer fallback only after the enhanced select is ready
+[wide-desktop] › international.spec.js › footer fallback handoff layout shift measured (delayed-switcher)

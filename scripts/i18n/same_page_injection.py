@@ -6,10 +6,16 @@ Reviewed manifest and UI copy must be supplied by the integration gate.
 from bs4 import BeautifulSoup
 from html import escape
 import re,json,subprocess
+from urllib.parse import urlsplit
 from i18n.catalog import read_json, published_home_locales, home_url
 
 
 _english_source_cache = {}
+
+# Marker wrapping the generated no-JS same-page switcher (PR3). The control build
+# strips the whole marked block before master hashing and on deterministic
+# regeneration; keyed_master keeps the byte-identical twin of this pattern.
+GENERATED_LOCALE_NAV = re.compile(r'[ \t]*<!-- i18n-locale-nav:start -->[\s\S]*?<!-- i18n-locale-nav:end -->\n?')
 
 def with_english_sources(root, manifest):
     key = str(root)
@@ -106,6 +112,7 @@ def inject_control(text, root, manifest, copy):
     text=re.sub(r'<script\b[^>]*src=["\']/same-page-(?:manifest|copy|resolver|switcher)\.js["\'][^>]*></script>\s*','',text)
     text=re.sub(r'<link\b[^>]*id=["\']sc-language-css["\'][^>]*>\s*','',text)
     text=re.sub(r'[ \t]*<noscript><nav[^>]*class="sc-static-language"[\s\S]*?</nav></noscript>\n?','',text)
+    text=GENERATED_LOCALE_NAV.sub('',text)
     soup=BeautifulSoup(text,'html.parser')
     lang=soup.html.get('lang','en') if soup.html else 'en'
     if lang not in copy:raise ValueError('Missing reviewed selector copy '+lang)
@@ -135,6 +142,57 @@ def inject_control(text, root, manifest, copy):
         indent=text[line_start:main_open.start()]
         if indent.strip():line_start=main_open.start();indent=''
         text=text[:line_start]+indent+block+text[line_start:]
+    # PR3 design-gate ruling (whole equivalence families, EN+mirrors together):
+    # families with >=2 verified variants gain a generated same-page locale-nav.
+    # Exclusivity: ar2 keeps its noscript twin, the certified A1 family keeps its
+    # authored nav, homes keep footer-locales, EN-only pending families get
+    # nothing. No page may carry both controls; masters are never re-pinned -
+    # the marked block is stripped before hashing (keyed_master).
+    canonical_path=(urlsplit(href).path.rstrip('/') or '/')
+    family=None
+    for key,fam in manifest['pages'].items():
+        for variant in fam.get('variants',{}).values():
+            if (variant.get('path','').rstrip('/') or '/')==canonical_path:
+                family=(key,fam);break
+        if family:break
+    verified=[v for v in family[1].get('variants',{}).values() if v.get('status')=='verified'] if family else []
+    published_homes={(home_url(registry,code) or '/').rstrip('/') for code in published_home_locales(registry)}
+    if (family and not family[0].startswith('ar2-') and len(verified)>=2
+            and canonical_path not in published_homes
+            and 'class="locale-nav"' not in text
+            and 'sc-static-language' not in text
+            and not BeautifulSoup(text,'html.parser').select_one('nav.footer-locales')):
+        anchors=[]
+        for code in manifest['languages']:
+            cfg=registry['locales'][code]
+            current=' aria-current="page"' if code==lang else ''
+            # Design-gate: full native names from the locale registry (the A1
+            # precedent's intent), never the page-language copy table.
+            anchors.append('<a'+current+' dir="'+cfg['direction']+'" hreflang="'+code+'" lang="'+code+'">'
+                           +escape(cfg['nativeName'])+'</a>')
+        # Design ruling v2 (2026-10-23): the fallback is a flat marked locale
+        # list at the page-end footer - inline dash-separated links like the
+        # authored footer-locales language, but same-page twins with native
+        # names at 44px targets. No details/summary (measured CLS rejection),
+        # no inline script. JS hides it only once the enhanced select is ready,
+        # and never while focus is inside it (same-page-switcher.js).
+        pieces=[]
+        for i,a in enumerate(anchors):
+            if i:pieces.append('<span aria-hidden="true">-</span>')
+            pieces.append(a)
+        block=('<!-- i18n-locale-nav:start -->'+'\n<div class="site-shell">\n'
+               +'<nav aria-label="'+escape(copy[lang]['choose'])+'" class="locale-nav locale-fallback" data-locale-fallback="" data-i18n-generated="">'
+               +' '.join(pieces)+'\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n')
+        if text.count('</footer>')==1:
+            # Lives INSIDE the semantic footer, after authored footer content.
+            close=text.index('</footer>')
+            line_start=text.rfind('\n',0,close)+1
+            text=text[:line_start]+block+text[line_start:]
+        elif text.count('</main>')==1:
+            close=text.index('</main>')+len('</main>')
+            text=text[:close]+'\n'+block.rstrip('\n')+text[close:]
+        else:
+            raise ValueError('Generated locale-nav needs a footer or main element')
     # No-JS static choices must not retain guide/home substitutions.
     # Mutate only language nav blocks, never MAIN or ordinary editorial anchors.
     def static_nav(match):
@@ -152,17 +210,26 @@ def inject_control(text, root, manifest, copy):
             return str(nav)
         for helper in nav.select('.sc-language-helper'):helper.decompose()
         unavailable=False
+        # Generated navs (PR3) carry the design-gate's full native names +
+        # lang from the locale registry; authored navs (certified A1) keep the
+        # certified copy-table semantics byte-for-byte.
+        generated=nav.has_attr('data-i18n-generated')
         for a in nav.select('a[hreflang]'):
             code=a['hreflang'];choice=choices.get(code,{})
-            a.attrs.pop('lang',None)
-            a.string=copy[lang]['names'].get(code,code)
+            if generated:
+                a['lang']=code
+                label=registry['locales'][code]['nativeName']
+            else:
+                a.attrs.pop('lang',None)
+                label=copy[lang]['names'].get(code,code)
+            a.string=label
             if choice.get('available'):
                 a['href']=choice['href']
                 for attr in ('aria-disabled','tabindex','aria-label'):a.attrs.pop(attr,None)
             else:
                 unavailable=True
                 a.attrs.pop('href',None);a['aria-disabled']='true';a['tabindex']='-1'
-                a.string=copy[lang]['names'].get(code,code)+' ('+copy[lang]['suffix']+')'
+                a.string=label+' ('+copy[lang]['suffix']+')'
         if unavailable:
             helper=BeautifulSoup('<span class="sc-language-helper"></span>','html.parser').span
             helper.string=copy[lang]['helper'];nav.append(helper)
@@ -190,7 +257,11 @@ def inject_control(text, root, manifest, copy):
             for attr in ('aria-disabled','tabindex','aria-label','data-language-switch','style'):a.attrs.pop(attr,None)
         return str(nav)
     text=re.sub(r'<nav\b[^>]*class=["\']footer-locales["\'][\s\S]*?</nav>',footer_nav,text)
-    text=re.sub(r'<nav\b[^>]*class=["\']locale-nav["\'][\s\S]*?</nav>',static_nav,text)
+    # Boundary (Scrum scope ruling 2026-10-23): static_nav touches ONLY the
+    # certified A1 exact-class nav and PR3 generated navs (data-i18n-generated).
+    # Authored compound-class controls (film switcher and friends) stay bytes-
+    # untouched - generic class recognition must never rewrite authored chrome.
+    text=re.sub(r'<nav\b(?=[^>]*(?:\bdata-i18n-generated\b|class=["\']locale-nav["\']))[^>]*>[\s\S]*?</nav>',static_nav,text)
     text=text.replace('</head>','<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />\n</head>')
     scripts='\n'.join('<script defer src="/'+name+'"></script>' for name in ['same-page-manifest.js','same-page-copy.js','same-page-resolver.js','same-page-switcher.js'])
     if text.count('</body>')!=1:raise ValueError('Missing unique body end')

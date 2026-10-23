@@ -820,3 +820,15 @@
 [wide-desktop] › travel-routing.spec.js › /qannoubine-monastery has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › travel-routing.spec.js › /saint-charbel-pilgrimage has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › video-playback.spec.js › all 23 videos keep static original and relevant reading links without JavaScript
+[laptop] › international.spec.js › /ar/pilgrimage generated footer fallback works without JavaScript
+[laptop] › international.spec.js › /es/peregrinacion hides the footer fallback only after the enhanced select is ready
+[laptop] › international.spec.js › /saint-charbel-pilgrimage keeps the footer fallback when the switcher script fails
+[laptop] › international.spec.js › footer fallback handoff layout shift measured (delayed-switcher)
+[phone] › international.spec.js › /ar/pilgrimage keeps the footer fallback when the switcher script fails
+[phone] › international.spec.js › /saint-charbel-pilgrimage keeps the footer fallback when the switcher script fails
+[phone] › international.spec.js › footer fallback handoff layout shift measured (fast)
+[small-phone] › international.spec.js › /saint-charbel-pilgrimage hides the footer fallback only after the enhanced select is ready
+[tablet] › international.spec.js › /ar/pilgrimage generated footer fallback works without JavaScript
+[tablet] › international.spec.js › /saint-charbel-pilgrimage keeps the footer fallback when the switcher script fails
+[wide-desktop] › international.spec.js › /ar/pilgrimage hides the footer fallback only after the enhanced select is ready
+[wide-desktop] › international.spec.js › authored footer-locales guides never gain the generated fallback

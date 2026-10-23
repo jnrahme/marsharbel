@@ -22,6 +22,16 @@ done
 
 cd "${ROOT}"
 
+# PR runs: sitemap lastmod must equal the squash result. Pages byte-identical
+# to the PR base keep their base date; only true deltas bump. The generator and
+# checkers read SITEMAP_BASELINE (scripts/sitemap_lastmod.py).
+if [[ "${CI:-}" == "1" || "${CI:-}" == "true" ]] && [[ -n "${GITHUB_BASE_REF:-}" ]]; then
+  git fetch -q origin "+refs/heads/${GITHUB_BASE_REF}:refs/remotes/origin/${GITHUB_BASE_REF}" || true
+  if git rev-parse --verify -q "origin/${GITHUB_BASE_REF}" >/dev/null; then
+    export SITEMAP_BASELINE="origin/${GITHUB_BASE_REF}"
+  fi
+fi
+
 # --- sharding + timings (additive: with no flags this script behaves as before) ---
 # --shard K/N  run only the steps the checked-in duration manifest
 #   (scripts/qa/shard-manifest.tsv) assigns to shard K of N. Assignment is

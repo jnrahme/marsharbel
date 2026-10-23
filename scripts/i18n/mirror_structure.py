@@ -19,6 +19,10 @@ def tree(node):
 
 
 def signature(text, route, normalizers=(), context=None):
+    # PR3: the marked generated locale-nav is post-pin control chrome, never
+    # page structure - strip it symmetrically on both sides before comparing.
+    from i18n.keyed_master import strip_static_fallback_text
+    text = strip_static_fallback_text(text)
     if 'stories-keyed-data-copy' in normalizers:
         from i18n.stories_shelf_copy import reject_duplicate_attributes
         reject_duplicate_attributes(text)

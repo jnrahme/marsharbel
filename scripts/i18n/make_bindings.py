@@ -9,6 +9,9 @@ from pathlib import Path
 from bs4 import BeautifulSoup, NavigableString, Comment
 
 ROOT = Path(__file__).resolve().parents[2]
+# Both invocation contexts resolve the i18n package (keyed_master imports
+# i18n.catalog itself): package import and `python3 scripts/i18n/make_bindings.py`.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 ATTRS = ('alt', 'aria-label', 'title', 'placeholder')
 META = ('description', 'og:title', 'og:description', 'twitter:title', 'twitter:description')
 
@@ -41,6 +44,14 @@ def area(node, current):
 
 def build(master, family, prefix):
     raw = (ROOT / master).read_bytes()
+    # Scrum boundary ruling (2026-10-23): the marked generated locale-nav is
+    # composition, not authored master. Pin STRIPPED bytes so this producer and
+    # catalog.validate_mirror_capabilities share one narrow strip semantics.
+    # Refuse malformed (unpaired) generator markers instead of pinning them.
+    from i18n.keyed_master import strip_generated_locale_nav
+    raw = strip_generated_locale_nav(raw)
+    if b'i18n-locale-nav:start' in raw or b'i18n-locale-nav:end' in raw:
+        raise ValueError(f'{master}: malformed generated locale-nav markers')
     soup = BeautifulSoup(raw, 'html.parser')
     bindings, messages, taken = [], {}, {}
 

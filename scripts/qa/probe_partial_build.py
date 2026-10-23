@@ -386,12 +386,18 @@ try:
  with patch.object(sitemap_dates,'source_for',side_effect=ValueError('unexpected source failure')):
   try:sitemap_dates.generated_lastmod(T,'https://marsharbel.com/zz/history',{});raise AssertionError('swallowed source crash')
   except ValueError:pass
+ from i18n.keyed_master import strip_static_fallback_text
  for prod_file,old in production.items():
   file=prod_file.relative_to(R).as_posix();candidate=out[T/file]
   if file.endswith('.html'):
    normalized=strip_html_zz(candidate)
-   if file in review_frozen_files:fail_diff(file,without_header(old),without_header(normalized))
-   else:fail_diff(file,old,normalized)
+   # The marked generated locale-nav / noscript fallback are composition that
+   # reflects the synthetic language inventory (zz anchors). Compare production
+   # bytes minus exactly those owned blocks on BOTH sides; authored corruption
+   # outside them still diffs (negative below).
+   normalized=strip_static_fallback_text(normalized);old_stripped=strip_static_fallback_text(old)
+   if file in review_frozen_files:fail_diff(file,without_header(old_stripped),without_header(normalized))
+   else:fail_diff(file,old_stripped,normalized)
    if file=='travel.html':
     corrupted=candidate.replace('</main>','X</main>',1);assert corrupted!=candidate
     try:fail_diff(file,old,strip_html_zz(corrupted));raise AssertionError('accepted real candidate corruption')
