@@ -48,7 +48,7 @@ class StaticLanguageFallback(unittest.TestCase):
 
 if __name__=='__main__':unittest.main()
 
-GENERATED_NAV = re.compile(r'<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n(<nav aria-label="Choose language" class="locale-nav">[\s\S]*?</nav>)\n</div>\n<!-- i18n-locale-nav:end -->\n?')
+GENERATED_NAV = re.compile(r'<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n(<nav aria-label="[^"]*" class="locale-nav" data-i18n-generated="">[\s\S]*?</nav>)\n</div>\n<!-- i18n-locale-nav:end -->\n?')
 
 class GeneratedLocaleNav(unittest.TestCase):
     """PR3 four-way exclusivity: ar2 noscript twins, >=2-variant equivalence
@@ -80,7 +80,14 @@ class GeneratedLocaleNav(unittest.TestCase):
                 nav=BeautifulSoup(blocks[0],'html.parser').nav
                 linked={a['hreflang']:a for a in nav.select('a[hreflang]')}
                 self.assertEqual(set(linked),set(self.manifest['languages']),f.name+' lists every registered language')
+                registry=json.loads((ROOT/'locales/registry.json').read_text())
+                copy=json.loads((ROOT/'locales/same-page-copy.json').read_text())
+                self.assertEqual(nav.get('aria-label'),copy[lang]['choose'],f.name+' localized aria-label')
                 for code,a in linked.items():
+                    native=registry['locales'][code]['nativeName']
+                    expected=native if code in verified else native+' ('+copy[lang]['suffix']+')'
+                    self.assertEqual(a.get_text(),expected,f.name+' '+code+' must render the full native name')
+                    self.assertEqual(a.get('lang'),code,f.name+' '+code+' lang attribute')
                     if code in verified:
                         self.assertEqual(a.get('href'),'https://marsharbel.com'+verified[code]['path'],f.name+' '+code)
                         self.assertNotEqual(a.get('aria-disabled'),'true',f.name+' '+code)
@@ -114,6 +121,6 @@ class GeneratedLocaleNav(unittest.TestCase):
         self.assertIn('class="locale-nav"',authored)
         self.assertNotIn('i18n-locale-nav:start',authored,'A1 authored nav must stay unmarked')
         self.assertEqual(strip_static_fallback_text(authored),authored,'authored A1 nav bytes must never strip')
-        marked='<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n<nav aria-label="Choose language" class="locale-nav"><a hreflang="en">English</a>\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n'
+        marked='<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n<nav aria-label="Choose a language" class="locale-nav" data-i18n-generated=""><a hreflang="en" lang="en">English</a>\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n'
         self.assertEqual(strip_generated_locale_nav(('a\n'+marked+'b\n').encode()),b'a\nb\n','marked generated block must strip cleanly')
         self.assertEqual(strip_generated_locale_nav(b'plain bytes, no markers'),b'plain bytes, no markers')

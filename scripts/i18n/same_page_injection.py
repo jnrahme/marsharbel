@@ -165,10 +165,12 @@ def inject_control(text, root, manifest, copy):
         for code in manifest['languages']:
             cfg=registry['locales'][code]
             current=' aria-current="page"' if code==lang else ''
-            anchors.append('<a'+current+' dir="'+cfg['direction']+'" hreflang="'+code+'">'
-                           +escape(copy[lang]['names'].get(code,code))+'</a>')
+            # Design-gate: full native names from the locale registry (the A1
+            # precedent's intent), never the page-language copy table.
+            anchors.append('<a'+current+' dir="'+cfg['direction']+'" hreflang="'+code+'" lang="'+code+'">'
+                           +escape(cfg['nativeName'])+'</a>')
         block=('<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n'
-               '<nav aria-label="Choose language" class="locale-nav">'
+               '<nav aria-label="'+escape(copy[lang]['choose'])+'" class="locale-nav" data-i18n-generated="">'
                +'\n'.join(anchors)+'\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n')
         if text.count('</header>')==1:
             line_start=text.rfind('\n',0,text.index('</header>'))+1
@@ -195,17 +197,26 @@ def inject_control(text, root, manifest, copy):
             return str(nav)
         for helper in nav.select('.sc-language-helper'):helper.decompose()
         unavailable=False
+        # Generated navs (PR3) carry the design-gate's full native names +
+        # lang from the locale registry; authored navs (certified A1) keep the
+        # certified copy-table semantics byte-for-byte.
+        generated=nav.has_attr('data-i18n-generated')
         for a in nav.select('a[hreflang]'):
             code=a['hreflang'];choice=choices.get(code,{})
-            a.attrs.pop('lang',None)
-            a.string=copy[lang]['names'].get(code,code)
+            if generated:
+                a['lang']=code
+                label=registry['locales'][code]['nativeName']
+            else:
+                a.attrs.pop('lang',None)
+                label=copy[lang]['names'].get(code,code)
+            a.string=label
             if choice.get('available'):
                 a['href']=choice['href']
                 for attr in ('aria-disabled','tabindex','aria-label'):a.attrs.pop(attr,None)
             else:
                 unavailable=True
                 a.attrs.pop('href',None);a['aria-disabled']='true';a['tabindex']='-1'
-                a.string=copy[lang]['names'].get(code,code)+' ('+copy[lang]['suffix']+')'
+                a.string=label+' ('+copy[lang]['suffix']+')'
         if unavailable:
             helper=BeautifulSoup('<span class="sc-language-helper"></span>','html.parser').span
             helper.string=copy[lang]['helper'];nav.append(helper)
