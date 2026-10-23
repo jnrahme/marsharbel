@@ -103,3 +103,17 @@ class GeneratedLocaleNav(unittest.TestCase):
                 self.assertNotIn('i18n-locale-nav:start',text,str(f.relative_to(ROOT))+' outside the release carries the marked nav')
             if 'sc-static-language' in text:
                 self.assertNotIn('class="locale-nav"',text,str(f.relative_to(ROOT))+' carries both no-JS controls')
+
+    def test_authored_nav_and_content_never_strip(self):
+        """The marked-block stripper must leave authored bytes (A1 rosary nav and
+        all unmarked content) untouched; only generated markers strip."""
+        import sys
+        sys.path.insert(0,str(ROOT/'scripts'))
+        from i18n.keyed_master import strip_static_fallback_text, strip_generated_locale_nav
+        authored=(ROOT/'en/rosary.html').read_text()
+        self.assertIn('class="locale-nav"',authored)
+        self.assertNotIn('i18n-locale-nav:start',authored,'A1 authored nav must stay unmarked')
+        self.assertEqual(strip_static_fallback_text(authored),authored,'authored A1 nav bytes must never strip')
+        marked='<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n<nav aria-label="Choose language" class="locale-nav"><a hreflang="en">English</a>\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n'
+        self.assertEqual(strip_generated_locale_nav(('a\n'+marked+'b\n').encode()),b'a\nb\n','marked generated block must strip cleanly')
+        self.assertEqual(strip_generated_locale_nav(b'plain bytes, no markers'),b'plain bytes, no markers')

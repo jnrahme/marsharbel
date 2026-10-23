@@ -65,7 +65,10 @@ def travel_frame(text,root,code,route,registry):
     standalone=route==(home_url(registry, code) or '/') or (code in registry['topics']['annaya'].get('locales',[]) and route==page_url(registry,code,'annaya'))
     if route not in travel_routes(root,registry,code) and not standalone:return text
     # Standalone language-home/guide chrome keeps its existing single language control.
-    if 'class="locale-nav"' in text:
+    # PR3: probe for an AUTHORED control only - the marked generated locale-nav is a
+    # post-pin control artifact (stripped here, re-derived by the control build).
+    from i18n.keyed_master import strip_static_fallback_text
+    if 'class="locale-nav"' in strip_static_fallback_text(text):
         link=f'<a class="travel-hub-return" href="{hub}">{escape(copy["hubLabel"])}</a>'
         if 'class="travel-hub-return"' not in text:text=text.replace('</header>','<div class="shell" style="padding-block:.8rem">'+link+'</div></header>',1)
         return text
