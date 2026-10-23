@@ -89,7 +89,6 @@ class GeneratedNavNegatives(unittest.TestCase):
         self.assertTrue(any('suffix' in e for e in nav_semantics_errors(nav,'en',self.verified,self.manifest,self.registry,self.copy,'fixture')))
 
 
-if __name__=='__main__':unittest.main()
 
 GENERATED_NAV = re.compile(r'<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n(<nav aria-label="[^"]*" class="locale-nav locale-fallback"(?=[^>]*\bdata-i18n-generated\b)(?=[^>]*\bdata-locale-fallback\b)[^>]*>[\s\S]*?</nav>)\n</div>\n<!-- i18n-locale-nav:end -->\n?')
 
@@ -221,3 +220,6 @@ class GeneratedLocaleNav(unittest.TestCase):
         marked='<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n<nav aria-label="Choose a language" class="locale-nav locale-fallback" data-locale-fallback="" data-i18n-generated=""><a hreflang="en" lang="en">English</a>\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n'
         self.assertEqual(strip_generated_locale_nav(('a\n'+marked+'b\n').encode()),b'a\nb\n','marked generated block must strip cleanly')
         self.assertEqual(strip_generated_locale_nav(b'plain bytes, no markers'),b'plain bytes, no markers')
+
+
+if __name__=='__main__':unittest.main()
