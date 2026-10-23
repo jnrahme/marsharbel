@@ -1,10 +1,24 @@
 name: Search index daily regeneration
 
-# Ruling (Oct 21 21:57, option b): the deploy workflow cannot change served
-# bytes because Hostinger pulls stage, so the daily search-index refresh lands
-# through the merge train. This bot regenerates search-index/<locale>.json
-# from the committed site and keeps ONE reused draft PR open against stage;
-# the normal Scrum gate + green CI + GO merges it. It never merges anything.
+# Ruling (Main, Oct 15 2026 21:57 ET on #830, option b): the deploy workflow
+# cannot change served bytes because Hostinger pulls stage, so the daily
+# search-index refresh lands through the merge train. This bot regenerates
+# search-index/<locale>.json from the committed site and keeps ONE reused
+# draft PR open against stage; the normal Scrum gate + green CI + GO merges
+# it. It never merges anything.
+#
+# Head-CI path (verified, no new secrets/access): this workflow authenticates
+# with GITHUB_TOKEN. Per GitHub docs, GITHUB_TOKEN push events never start
+# workflows, but its pull_request opened/synchronize/reopened events DO create
+# runs in an approval-required (action_required) state - the same state the
+# promote PR #559's runs sit in today. A user with write access starts them
+# from the PR ("Approve workflows to run"); repo settings allow that
+# (default_workflow_permissions=write, can_approve_pull_request_reviews=true).
+# The approval click folds into the train's existing per-head human Scrum
+# gate: no head merges without a human review pass anyway. Stage branch
+# protection still requires qa, browser-quality and dead-code green on the
+# exact head before merge. Automatic (approval-free) head CI would need
+# PAT/App credentials - deliberately not introduced without approval.
 on:
   schedule:
     - cron: '17 6 * * *'
@@ -59,4 +73,4 @@ jobs:
           fi
           gh pr create --draft --base stage --head "$BRANCH" \
             --title "chore: daily search-index regeneration ($(date -u +%F))" \
-            --body "Automated daily regeneration of search-index/<locale>.json via node scripts/build-search-index.mjs (ruling Oct 21 21:57, option b). One PR is reused; its branch tracks the latest regeneration. Merges through the normal merge train (Scrum gate + green CI + GO); this bot never merges."
+            --body "Automated daily regeneration of search-index/<locale>.json via node scripts/build-search-index.mjs (ruling Oct 15 21:57 ET, option b). One PR is reused; its branch tracks the latest regeneration. Merges through the normal merge train (Scrum gate + green CI + GO); this bot never merges."
