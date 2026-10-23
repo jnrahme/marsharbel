@@ -6,7 +6,7 @@ Bindings: script content/books/veronica-giuliani-story/en.json @ e2441903a73a946
 
 ## Character and age lock (production choices, not a portrait claim)
 
-Veronica, born Orsola, Mercatello 1660 - Citta di Castello 1727. One imagined recognizable face: fair North-Italian complexion, soft rounded face, dark brown eyes, dark brown hair (hidden under wimple/veil once professed), gentle unglamorous features. Face develops through the ages below; no fixed face across pages, no recovered-portrait claim (no contemporary portrait is used as input).
+Veronica, born Orsola, Mercatello 1660 - Citta di Castello 1727. ONE consistent imagined recognizable face across all plates: fair North-Italian complexion, soft rounded face, dark brown eyes, dark brown hair (hidden under wimple/veil once professed), gentle unglamorous features - the same feature set, aging appropriately per plate below. No recovered-portrait claim (no contemporary portrait is used as input).
 - Plate 1: newborn infant.
 - Plate 2: age 7, child proportions, plain 17th-century Italian civilian dress.
 - Plate 3: age 14-16, adolescent proportions, plain civilian dress.
@@ -15,13 +15,13 @@ Veronica, born Orsola, Mercatello 1660 - Citta di Castello 1727. One imagined re
 - Plate 6: mid-40s to 50s, novice mistress.
 - Plate 7: early 50s at the desk (the Diary was written 1693-1727, ages 33-67; one mid-point plate).
 - Plate 8: late 50s, abbess.
-- Plate 9: 66-67, final illness.
+- Plate 9: age 66, final illness (she died at 66).
 - Plate 10: present-day reading family, NOT Veronica's family or era.
 Habit from plate 5 onward (Capuchin Poor Clare): loose dark brown habit with plain rope cord, white wimple, black veil, simple sandals; no jewelry, no embroidered ornament. Plates 1-4: plain period civilian clothing, muted earth tones.
 
 ## Shared prompt base (prefixed to every plate)
 
-Original warm painterly devotional storybook illustration for ages 6-12. Landscape 3:2. One clear focal action, readable faces/hands at phone size. Natural rich color and visible brush texture. No copied artist style. All compositions original. No text, letters, numbers, logo, watermark, label, photoreal documentary claim, film still, modern objects in historical scenes, graphic violence, gore, glamour or invented historical quotation. No reference photograph as input, tracing or cropping. Imagined faces are production choices, not recovered portraits. Time of day is artistic lighting, not a reported historical fact. Reader labels are UI metadata, never generated pixels.
+Original warm painterly devotional storybook illustration for ages 6-12. Landscape 3:2. One clear focal action, readable faces/hands at phone size; faces are never cropped by the frame. Natural rich color and visible brush texture. No copied artist style. All compositions original. No text, letters, numbers, logo, watermark, label, photoreal documentary claim, film still, modern objects in historical scenes, graphic violence, gore, glamour or invented historical quotation. No reference photograph as input, tracing or cropping. Imagined faces are production choices, not recovered portraits. Time of day is artistic lighting, not a reported historical fact. Reader labels are UI metadata, never generated pixels.
 
 ## Plate 1 - Mercatello, 1660 (p01)
 Era/place/subjects: 1660 Mercatello, modest stone home interior, green Italian valley through a small window. Newborn Orsola in her mother's arms, father beside, several young sisters around (children present because the scene calls for them).
@@ -55,9 +55,9 @@ Mandatory negatives: no ecstasy, no levitation, no visible supernatural event, n
 Reference basis and limit: p05 text (profession 1678); chapel interior generic, no documented church claim.
 
 ## Plate 6 - The teacher who prayed (p06)
-Era/place/subjects: chapter-room interior, Veronica mid-40s-50s seated teaching four to six young professed sisters, one open book, attentive faces.
+Era/place/subjects: chapter-room interior, Veronica mid-40s-50s seated teaching four to six novices (new sisters in formation), one open book, attentive faces.
 Composition/lighting: intimate teaching circle, soft window light.
-Mandatory negatives: no pile of mystical books (the text says she withheld them); no children (sisters are adults); no glowing mystical aura.
+Mandatory negatives: no pile of mystical books (the text says she withheld them); no children (novices are adults); no glowing mystical aura.
 Reference basis and limit: p06 text (34 years novice mistress); Benedict XVI audience for her teaching role.
 
 ## Plate 7 - Twenty-two thousand pages (p07)
@@ -73,7 +73,7 @@ Mandatory negatives: no modern pipes, machinery, helmets or tools; no comedy.
 Reference basis and limit: p08 text (abbess from 1716, water supply and enlargement works per New Advent/Treccani).
 
 ## Plate 9 - I have found Love (p09)
-Era/place/subjects: infirmary room, Veronica 66-67 resting on a simple bed, eyes gently open, faint peaceful smile, two or three sisters beside her, soft evening light, one small window.
+Era/place/subjects: infirmary room, Veronica age 66 resting on a simple bed, eyes gently open, faint peaceful smile, two or three sisters beside her, soft evening light, one small window.
 Composition/lighting: bedside intimacy, dusk light, peaceful.
 Mandatory negatives: no death pallor exaggeration, no weeping excess, no wounds, no angel figures, no light-beam cliche; reverent and calm.
 Reference basis and limit: p09 text (died July 9, 1727, age 66; last words quoted) - the quote stays in the page text, never in pixels.
@@ -91,7 +91,7 @@ Reference basis and limit: series convention (present-day readers plate, as in t
 4. No modern objects in historical plates 1-9; modern REQUIRED in plate 10 only.
 5. No wounds/blood/stigmata imagery anywhere (hard rule for this book).
 6. No copied-artist style, no photoreal documentary look; painterly warmth consistent with existing shelf books.
-7. Faces/hands readable at phone size; one clear focal action.
+7. Faces/hands readable at phone size and never cropped by the frame; one clear focal action.
 Rejected candidates never count as accepted; regenerate within the allocated budget only.
 
 ## Quota discipline
