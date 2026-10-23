@@ -1,5 +1,6 @@
 """Render homepages from the English master, never a separate locale layout."""
 import hashlib
+import os
 import json
 import re
 from urllib.parse import urljoin, urlsplit
@@ -130,6 +131,20 @@ def render_home(root, registry, lang, catalog=None):
         raise ValueError(f'Home {lang}: YouTube promo anchor missing or duplicated')
     if lang in topic_locales(registry, 'rosary'):
         promo[0]['href'] = page_url(registry, lang, 'rosary') + '#pray-along'
+    # Keep the hand-authored intro twin (same-page AR-2 pair, e.g. /ar/rosary)
+    # reachable from home after the promo retarget above: when the twin file
+    # exists and is not the guide page itself, add a promo link labelled with
+    # the twin's own H1 so no untranslated link text is invented.
+    twin_path = root / lang / 'rosary.html'
+    guide_file = root / (page_url(registry, lang, 'rosary').strip('/').replace('/', os.sep) + '.html') if lang in topic_locales(registry, 'rosary') else None
+    if twin_path.exists() and (guide_file is None or twin_path.resolve() != guide_file.resolve()):
+        twin_h1 = BeautifulSoup(twin_path.read_text(encoding='utf-8'), 'html.parser').find('h1').get_text(strip=True)
+        arrow = soup.new_tag('span', **{'aria-hidden': 'true'})
+        arrow.string = '\u2192'
+        twin_link = soup.new_tag('a', **{'class': 'promo-link intro-twin-link', 'href': '/' + lang + '/rosary'})
+        twin_link.string = twin_h1 + ' '
+        twin_link.append(arrow)
+        promo[0].insert_before(twin_link)
     for script in soup.select('script[type="application/ld+json"]'):
         data = json.loads(script.string)
         for item in data.get('@graph', []):
@@ -156,7 +171,7 @@ def render_home(root, registry, lang, catalog=None):
         node.string = json.dumps(data, ensure_ascii=False).replace('<', '\\u003c')
         soup.head.append(node)
     rendered = str(soup)
-    mismatches = check_pair(raw.decode('utf-8'), rendered, '/', route)
+    mismatches = check_pair(raw.decode('utf-8'), rendered, '/', route, normalizers=('home-intro-twin-link',))
     if mismatches:
         raise ValueError(f'Home {lang}: mirror structure diverged: {mismatches}')
     if lang in registry.get('limitedLaunchLocales', []):

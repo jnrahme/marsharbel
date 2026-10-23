@@ -121,7 +121,26 @@ def _strip_localized_source_links(soup, context):
     return strip_localized_source_links(soup, registry, context['family'], context['lang'])
 
 
-NORMALIZERS = {'launch-availability-annotations': _strip_launch_annotations,
+def _strip_home_intro_twin_link(soup):
+    """Remove the reviewed intro-twin promo link: keeps a hand-authored same-page
+    intro twin (e.g. /ar/rosary) reachable from the locale home after the YouTube
+    promo retargets to the guide. The label is the twin's own H1. Scoped and
+    fail-closed: only anchors carrying the authored marker class, exact shape."""
+    from bs4 import NavigableString
+    for anchor in list(soup.select('a.intro-twin-link')):
+        if anchor.name != 'a' or anchor.get('class') != ['promo-link', 'intro-twin-link']:
+            raise ValueError('Intro-twin link must be a promo-link anchor with the marker class')
+        spans = anchor.select(':scope > span')
+        if len(spans) != 1 or spans[0].get('aria-hidden') != 'true' or spans[0].get_text(strip=True) != '\u2192':
+            raise ValueError('Intro-twin link must end with one hidden arrow span')
+        texts = [c for c in anchor.contents if isinstance(c, NavigableString) and c.strip()]
+        if len(texts) != 1:
+            raise ValueError('Intro-twin link must carry one text label')
+        anchor.decompose()
+    return soup
+
+
+NORMALIZERS = {'home-intro-twin-link': _strip_home_intro_twin_link,'launch-availability-annotations': _strip_launch_annotations,
                'partial-home-disclosure': _strip_partial_home_disclosure,
                'english-nav-disclosure': _strip_english_nav_disclosure}
 

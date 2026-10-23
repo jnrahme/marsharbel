@@ -190,6 +190,8 @@ def control_outputs(root, texts, manifest, copy):
     manifest = ar2_manifest(root,texts,manifest)
     from i18n.reviewed_eucharistic import eucharistic_manifest
     manifest = eucharistic_manifest(root,texts,manifest)
+    from i18n.reviewed_rosary_guide import rosary_guide_manifest
+    manifest = rosary_guide_manifest(root,texts,manifest)
     out={}
     for path,text in texts.items():
         if path.suffix=='.html' and 'https://marsharbel.com/' in text:out[path]=inject_control(text,root,manifest,copy)
