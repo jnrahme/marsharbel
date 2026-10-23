@@ -201,8 +201,18 @@ jobs:
                   selected = api.get('/actions/runs/%s/attempts/%s' % (current['id'], attempt))
                   run_identity(selected, expected, wid, path)
                   require(selected['id'] == current['id'] and selected['run_attempt'] == attempt, 'attempt identity mismatch')
-                  require((selected.get('status'), selected.get('conclusion')) ==
-                          (current.get('status'), current.get('conclusion')), 'attempt changed during read')
+                  if (selected.get('status'), selected.get('conclusion')) != (current.get('status'), current.get('conclusion')):
+                      # A run legitimately transitions between the run read and the attempt
+                      # read (observed 2026-10-23T05:26:24Z on stage 4c0899cd: QA run
+                      # 39905156534 completed between the two reads; admission job
+                      # 120255315789 failed closed on a healthy pipeline). A mid-transition
+                      # pair retries through the SAME bounded per-run settle grace as
+                      # unsettled job records; once the allowance is exhausted the require
+                      # below still fails closed on the mismatched pair. Terminal failures
+                      # and stable identity mismatches keep their existing hard failures.
+                      settle_retry(current['id'])
+                      require((selected.get('status'), selected.get('conclusion')) ==
+                              (current.get('status'), current.get('conclusion')), 'attempt changed during read')
                   if current.get('status') in ('queued', 'in_progress', 'waiting', 'requested', 'pending'):
                       pending = True
                       continue

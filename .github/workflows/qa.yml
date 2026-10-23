@@ -152,6 +152,9 @@ jobs:
       - name: Shard manifest completeness
         run: bash scripts/ci/timed.sh "Shard manifest completeness" python3 -m unittest discover -s scripts/qa -p 'test_shard_manifest.py'
 
+      - name: Deploy admission tests
+        run: bash scripts/ci/timed.sh "Deploy admission tests" python3 -m unittest discover -s scripts/qa -p 'test_deploy_admission.py'
+
       # Instrumentation: per-step elapsed seconds for this job (the qa-gates
       # 4m21s -> 12m57s spike was unattributable without these), retrievable
       # via the artifacts API. Additive; never blocks the job.
