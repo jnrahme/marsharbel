@@ -50,16 +50,37 @@ function hreflangsOf(file) {
   return [...nav[0].matchAll(/hreflang="([^"]+)"/g)].map(m => m[1]);
 }
 
-/* PR3 generated locale-nav inventory, derived from the built manifest:
- * non-ar2 families with >=2 verified variants, excluding the certified A1
- * authored family. Mirrors scripts/qa/test_static_language_fallback.py
- * eligible(); the two must never drift apart. */
-function generatedNavEligibleRoutes(manifest) {
+/* PR3 generated locale-nav inventory, page-level, derived from the built
+ * manifest AND the built pages: non-ar2 families with >=2 verified variants,
+ * minus published homes and minus pages carrying authored locale chrome
+ * (exact class="locale-nav" nav, ar2 sc-static-language twin, or an authored
+ * nav.footer-locales - the 47 guides keep theirs). Mirrors
+ * scripts/i18n/same_page_injection.py control_outputs eligibility and
+ * scripts/qa/test_static_language_fallback.py eligible(); the three must
+ * never drift apart. */
+function generatedNavEligibleRoutes(manifest, root) {
+  root = root || repoRoot();
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'locales/registry.json'), 'utf8'));
+  const homes = new Set((registry.homePublicationLocales || [])
+    .map(code => ((registry.locales[code] || {}).home || '/').replace(/\/$/, '')));
+  const fileFor = (route) => {
+    const p = route.replace(/\/$/, '') || '/';
+    return path.join(root, p === '/' ? 'index.html' : p.replace(/^\//, '') + '.html');
+  };
   const routes = new Set();
   for (const [key, fam] of Object.entries(manifest.pages)) {
-    if (key.startsWith('ar2-') || key === 'rosary-guide-equivalence') continue;
+    if (key.startsWith('ar2-')) continue;
     const verified = Object.values(fam.variants || {}).filter(v => v.status === 'verified');
-    if (verified.length >= 2) for (const v of verified) routes.add(v.path.replace(/\/$/, '') || '/');
+    if (verified.length < 2) continue;
+    for (const v of verified) {
+      const route = (v.path || '/').replace(/\/$/, '') || '/';
+      if (homes.has(route)) continue;
+      const html = fs.readFileSync(fileFor(v.path), 'utf8');
+      if (html.includes('class="locale-nav"')) continue;
+      if (html.includes('sc-static-language')) continue;
+      if (/<nav\b[^>]*class="footer-locales"/.test(html)) continue;
+      routes.add(route);
+    }
   }
   return routes;
 }

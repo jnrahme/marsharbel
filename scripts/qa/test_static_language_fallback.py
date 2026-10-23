@@ -48,23 +48,42 @@ class StaticLanguageFallback(unittest.TestCase):
 
 if __name__=='__main__':unittest.main()
 
-GENERATED_NAV = re.compile(r'<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n(<nav aria-label="[^"]*" class="locale-nav" data-i18n-generated="">[\s\S]*?</nav>)\n</div>\n<!-- i18n-locale-nav:end -->\n?')
+GENERATED_NAV = re.compile(r'<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n(<nav aria-label="[^"]*" class="locale-nav locale-fallback"(?=[^>]*\bdata-i18n-generated\b)(?=[^>]*\bdata-locale-fallback\b)[^>]*>[\s\S]*?</nav>)\n</div>\n<!-- i18n-locale-nav:end -->\n?')
 
 class GeneratedLocaleNav(unittest.TestCase):
-    """PR3 four-way exclusivity: ar2 noscript twins, >=2-variant equivalence
-    families gain one marked generated locale-nav (EN+mirrors together), the
-    certified A1 family keeps its authored nav, everything else gets neither."""
+    """PR3 four-way exclusivity, page-level: ar2 noscript twins; the certified
+    A1 family keeps its authored nav; published homes keep footer-locales; the
+    47 authored-footer-locales guides keep their authored control; only the 50
+    verified-equivalence pages with no authored locale chrome gain the marked
+    generated footer fallback. Mirrors scripts/i18n/same_page_injection.py
+    control_outputs eligibility exactly; the two must never drift apart."""
 
     def setUp(self):
         text=(ROOT/'same-page-manifest.js').read_text()
         self.manifest=json.loads(text[len(PREFIX):].rstrip().rstrip(';'))
+        import sys
+        sys.path.insert(0,str(ROOT/'scripts'))
+        from i18n.catalog import published_home_locales, home_url
+        registry=json.loads((ROOT/'locales/registry.json').read_text())
+        self.homes={(home_url(registry,code) or '/').rstrip('/') for code in published_home_locales(registry)}
 
     def eligible(self):
         out={}
         for key,fam in self.manifest['pages'].items():
-            if key.startswith('ar2-') or key=='rosary-guide-equivalence':continue
+            if key.startswith('ar2-'):continue
             verified={l:v for l,v in fam.get('variants',{}).items() if v.get('status')=='verified'}
-            if len(verified)>=2:out[key]=verified
+            if len(verified)<2:continue
+            pages={}
+            for l,v in verified.items():
+                path=(v.get('path','').rstrip('/') or '/')
+                if path in self.homes:continue
+                text=route_file(v['path']).read_text()
+                if 'class="locale-nav"' in text:continue
+                if 'sc-static-language' in text:continue
+                from bs4 import BeautifulSoup
+                if BeautifulSoup(text,'html.parser').select_one('nav.footer-locales'):continue
+                pages[l]=v
+            if pages:out[key]=pages
         return out
 
     def test_whole_families_carry_one_marked_nav_with_exact_verified_hreflangs(self):
@@ -75,7 +94,7 @@ class GeneratedLocaleNav(unittest.TestCase):
                 blocks=GENERATED_NAV.findall(text)
                 self.assertEqual(len(blocks),1,f.name+' needs exactly one marked generated locale-nav')
                 self.assertNotIn('sc-static-language',text,f.name+' must not also carry the ar2 noscript twin')
-                self.assertLess(text.index('i18n-locale-nav:start'),text.index('</header>'),f.name)
+                self.assertLess(text.index('i18n-locale-nav:start'),text.index('</footer>'),f.name+' fallback lives inside the footer')
                 from bs4 import BeautifulSoup
                 nav=BeautifulSoup(blocks[0],'html.parser').nav
                 linked={a['hreflang']:a for a in nav.select('a[hreflang]')}
@@ -96,7 +115,8 @@ class GeneratedLocaleNav(unittest.TestCase):
                         self.assertEqual(a.get('aria-disabled'),'true',f.name+' '+code)
                     if code==lang:self.assertEqual(a.get('aria-current'),'page',f.name+' aria-current')
                     else:self.assertIsNone(a.get('aria-current'),f.name+' aria-current only on current')
-        self.assertEqual(len(self.eligible()),18,'exact current-stage eligible inventory (18 families, A1 excluded)')
+        total=sum(len(pages) for pages in self.eligible().values())
+        self.assertEqual(total,50,'exact authorized eligible inventory (50 zero-authored-chrome pages; 47 footer-locales guides excluded)')
         return seen
 
     def test_no_page_outside_the_release_carries_the_marked_nav(self):
@@ -109,7 +129,7 @@ class GeneratedLocaleNav(unittest.TestCase):
             if f not in eligible_files:
                 self.assertNotIn('i18n-locale-nav:start',text,str(f.relative_to(ROOT))+' outside the release carries the marked nav')
             if 'sc-static-language' in text:
-                self.assertNotIn('class="locale-nav"',text,str(f.relative_to(ROOT))+' carries both no-JS controls')
+                self.assertNotIn('i18n-locale-nav:start',text,str(f.relative_to(ROOT))+' carries both no-JS controls')
 
     def test_authored_nav_and_content_never_strip(self):
         """The marked-block stripper must leave authored bytes (A1 rosary nav and
@@ -121,6 +141,6 @@ class GeneratedLocaleNav(unittest.TestCase):
         self.assertIn('class="locale-nav"',authored)
         self.assertNotIn('i18n-locale-nav:start',authored,'A1 authored nav must stay unmarked')
         self.assertEqual(strip_static_fallback_text(authored),authored,'authored A1 nav bytes must never strip')
-        marked='<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n<nav aria-label="Choose a language" class="locale-nav" data-i18n-generated=""><a hreflang="en" lang="en">English</a>\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n'
+        marked='<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n<nav aria-label="Choose a language" class="locale-nav locale-fallback" data-locale-fallback="" data-i18n-generated=""><a hreflang="en" lang="en">English</a>\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n'
         self.assertEqual(strip_generated_locale_nav(('a\n'+marked+'b\n').encode()),b'a\nb\n','marked generated block must strip cleanly')
         self.assertEqual(strip_generated_locale_nav(b'plain bytes, no markers'),b'plain bytes, no markers')
