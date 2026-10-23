@@ -11,6 +11,11 @@ for(const route of ['/en/prayers','/en/biography','/en/novena','/en/rosary','/en
   const a=nav.locator(`a[hreflang="${lang}"]`);await expect(a).toHaveAttribute('href',home);await expect(a).toHaveText(names[lang]);await expect(a).not.toHaveAttribute('aria-disabled','true');await expect(a).not.toHaveAttribute('tabindex','-1');await expect(a).not.toHaveAttribute('data-language-switch');
  }
  await expect(nav.locator('.sc-unavailable-suffix,.sc-language-helper')).toHaveCount(0);
- if(js){await nav.scrollIntoViewIfNeeded();const before=page.url();expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('fr'))).toBe(false);expect(page.url()).toBe(before);await expect(nav.locator('a[hreflang=fr]')).toHaveAttribute('href','/fr/');expect((await new AxeBuilder({page}).include('nav.footer-locales').analyze()).violations).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:info.outputPath('footer.png')});await nav.locator('a[hreflang=fr]').click();await expect(page).toHaveURL(baseURL+'/fr/');await expect(page.locator('html')).toHaveAttribute('lang','fr');}
+ if(js){await nav.scrollIntoViewIfNeeded();const before=page.url();
+ if(route==='/en/rosary'){
+  // A1 certified rosary-guide family: /fr/chapelet is a live same-page twin of /en/rosary.
+  expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('fr'))).toBe(true);
+  await expect(page).toHaveURL(baseURL+'/fr/chapelet');await expect(page.locator('html')).toHaveAttribute('lang','fr');
+ }else{expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('fr'))).toBe(false);expect(page.url()).toBe(before);await expect(nav.locator('a[hreflang=fr]')).toHaveAttribute('href','/fr/');expect((await new AxeBuilder({page}).include('nav.footer-locales').analyze()).violations).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:info.outputPath('footer.png')});await nav.locator('a[hreflang=fr]').click();await expect(page).toHaveURL(baseURL+'/fr/');await expect(page.locator('html')).toHaveAttribute('lang','fr');}}
  await context.close();
 });

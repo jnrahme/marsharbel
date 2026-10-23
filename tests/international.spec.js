@@ -69,7 +69,20 @@ for (const [language, config] of Object.entries(registry.locales)) {
         const anchors = await page.locator('a[href^="#"]').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
         for (const anchor of anchors) await expect(page.locator(anchor)).toHaveCount(1);
         const published = topicLanguages(topic);
-        if (topic && topic !== 'biography' && !travelFor(language, topic) && !prayerFor(language,topic) && !(exactFor(topic)?.renderLocales || []).includes(language) && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers') && !(language === 'ar' && topic === 'feastDay')) {
+        if (topic === 'rosary' && ['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language)) {
+          // A1 certified rosary-guide family: all 8 twins are live, so the next-locale
+          // link must be an active exact link to the certified twin route; locales
+          // outside the certified family stay fail-closed.
+          const next = published[(published.indexOf(language) + 1) % published.length];
+          const target = page.locator(`header nav a[hreflang="${next}"]`).first();
+          await expect(target).not.toHaveAttribute('aria-disabled', 'true');
+          await expect(target).toHaveAttribute('href', registry.site + routeFor(next, topic));
+          for (const off of ['ru', 'hi', 'th']) {
+            const unavailable = page.locator(`header nav a[hreflang="${off}"]`).first();
+            await expect(unavailable).toHaveAttribute('aria-disabled', 'true');
+            await expect(unavailable).not.toHaveAttribute('href', /.+/);
+          }
+        } else if (topic && topic !== 'biography' && !travelFor(language, topic) && !prayerFor(language,topic) && !(exactFor(topic)?.renderLocales || []).includes(language) && published.length > 1 && !(['en', 'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'].includes(language) && topic === 'prayers') && !(language === 'ar' && topic === 'feastDay')) {
           const next = published[(published.indexOf(language) + 1) % published.length];
           // Same-page switching is fail-closed: every unpublished twin stays an unavailable, non-navigating link.
           const target = page.locator(`header nav a[hreflang="${next}"]`).first();
