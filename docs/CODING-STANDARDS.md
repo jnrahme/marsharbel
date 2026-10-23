@@ -67,6 +67,8 @@ Inside `qa`: page build sync; the contract tests under `scripts/qa/test_*.py`; s
 
 New pages need an entry in `locales/en/nav-legacy-copy.json` and at least one inbound link, or `dead-code` fails.
 
+Local browser evidence must run with `CI=1` (for example `CI=1 npx playwright test --config playwright.config.cjs ...`): `playwright.config.cjs` sets `reuseExistingServer: !process.env.CI`, so a plain local run silently attaches to any dev-server already on port 4173 and can serve stale bytes from another tree, producing vacuous green runs (2026-10-23 incident: local spec passes on a reused stale server while CI failed on the exact head). A local pass only counts when the served bytes are the exact head under test, which `CI=1` guarantees by spawning a fresh server.
+
 ## 5. What review owns
 
 No automatic check exists for these today.
