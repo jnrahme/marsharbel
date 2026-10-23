@@ -30,7 +30,8 @@ def render_exact(root, registry, lang, name, route, catalog=None):
         raise ValueError(f'{name}: unsafe reviewed locale route')
     for key in ('title', 'description', 'footer', 'translationNote'):
         leaves(catalog[key])
-    source = (root/master).read_bytes()
+    from i18n.keyed_master import strip_static_fallback
+    source = strip_static_fallback((root/master).read_bytes())
     if hashlib.sha256(source).hexdigest() != catalog['masterSha256']:
         raise ValueError(f'{name}: complete master digest changed; refresh reviewed catalog')
     soup = BeautifulSoup(source, 'html.parser')

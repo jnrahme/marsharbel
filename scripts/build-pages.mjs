@@ -100,6 +100,8 @@ for (const file of await walk(SRC).catch(() => [])) {
     built=composed.stdout;
   }
   let current = null; try { current = await readFile(rel, 'utf8'); } catch {}
+  // The no-JS static language fallback is added afterwards by scripts/build-same-page-control.py (checked there), so it is not part of this builder's output.
+  if (current !== null) current = current.replace(/[ \t]*<noscript><nav[^>]*class="sc-static-language"[\s\S]*?<\/nav><\/noscript>\n?/, '');
   n++;
   if (current !== built) { stale.push(rel); if (!check) { await mkdir(path.dirname(rel) || '.', { recursive: true }); await writeFile(rel, built); } }
 }

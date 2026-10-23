@@ -3,6 +3,7 @@ import unittest,sys,json,shutil,tempfile
 from pathlib import Path
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
+from i18n.keyed_master import strip_static_fallback_text as _sf, strip_static_fallback as _sfb
 from i18n.feast_mirror import render_feast
 from i18n.encyclopedia_nav import MARKING_LOCALES,route_nav_hrefs,mark_english_nav_hrefs,strip_legacy_partial_nav_marks
 def mark_nav(t,lang):
@@ -17,7 +18,7 @@ def fc(t):return inject_control(t,ROOT,_read_json_fc(ROOT/'locales/same-page-man
 class FeastMirrorTests(unittest.TestCase):
  def test_shape_and_provenance(self):
   en=BeautifulSoup((ROOT/'saint-charbel-feast-day.html').read_text(),'html.parser');text=render_feast(ROOT)[ROOT/'ar/feast-day.html'];ar=BeautifulSoup(text,'html.parser')
-  self.assertEqual(fc(ensure_runtime_labels(mark_nav(travel_frame(tour_nav(text,ROOT,'ar'),ROOT,'ar','/ar/feast-day',read_json(ROOT/'locales/registry.json')),'ar'),ROOT,'ar',read_json(ROOT/'locales/registry.json'))),(ROOT/'ar/feast-day.html').read_text())
+  self.assertEqual(fc(ensure_runtime_labels(mark_nav(travel_frame(tour_nav(text,ROOT,'ar'),ROOT,'ar','/ar/feast-day',read_json(ROOT/'locales/registry.json')),'ar'),ROOT,'ar',read_json(ROOT/'locales/registry.json'))),_sf((ROOT/'ar/feast-day.html').read_text()))
   self.assertEqual([n.name for n in en.select('main *')],[n.name for n in ar.select('main *:not(.enc-language)')])
   self.assertEqual(len(ar.select('main > section')),14)
   self.assertEqual(ar.html['dir'],'rtl');self.assertEqual(ar.html['lang'],'ar')

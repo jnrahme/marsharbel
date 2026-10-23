@@ -140,7 +140,8 @@ def validate_applied(job, catalog, new_sources):
 def refresh_exact(job, check=False):
     cat_p = ROOT / f"locales/{job['lang']}/{job['name']}-exact.json"
     catalog = json.loads(cat_p.read_text())
-    master_bytes = (ROOT / job.get('master', catalog['master'])).read_bytes()
+    from i18n.keyed_master import strip_static_fallback
+    master_bytes = strip_static_fallback((ROOT / job.get('master', catalog['master'])).read_bytes())
     new_sha = hashlib.sha256(master_bytes).hexdigest()
     soup = BeautifulSoup(master_bytes, 'html.parser')
     nodes = translatable_nodes(soup.main)
