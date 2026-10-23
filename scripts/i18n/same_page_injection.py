@@ -257,7 +257,11 @@ def inject_control(text, root, manifest, copy):
             for attr in ('aria-disabled','tabindex','aria-label','data-language-switch','style'):a.attrs.pop(attr,None)
         return str(nav)
     text=re.sub(r'<nav\b[^>]*class=["\']footer-locales["\'][\s\S]*?</nav>',footer_nav,text)
-    text=re.sub(r'<nav\b[^>]*class=["\'][^"\']*\blocale-nav\b[^"\']*["\'][\s\S]*?</nav>',static_nav,text)
+    # Boundary (Scrum scope ruling 2026-10-23): static_nav touches ONLY the
+    # certified A1 exact-class nav and PR3 generated navs (data-i18n-generated).
+    # Authored compound-class controls (film switcher and friends) stay bytes-
+    # untouched - generic class recognition must never rewrite authored chrome.
+    text=re.sub(r'<nav\b(?=[^>]*(?:\bdata-i18n-generated\b|class=["\']locale-nav["\']))[^>]*>[\s\S]*?</nav>',static_nav,text)
     text=text.replace('</head>','<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />\n</head>')
     scripts='\n'.join('<script defer src="/'+name+'"></script>' for name in ['same-page-manifest.js','same-page-copy.js','same-page-resolver.js','same-page-switcher.js'])
     if text.count('</body>')!=1:raise ValueError('Missing unique body end')

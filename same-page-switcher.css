@@ -28,7 +28,8 @@ nav.locale-fallback[data-locale-fallback]{display:flex;flex-wrap:wrap;column-gap
 nav.locale-fallback[data-locale-fallback][hidden]{display:none}
 nav.locale-fallback[data-locale-fallback]>span[aria-hidden="true"]{display:none}
 nav.locale-fallback[data-locale-fallback] a{display:inline-flex;align-items:center;min-block-size:44px;unicode-bidi:isolate}
-nav.locale-fallback[data-locale-fallback] a[aria-disabled="true"]{text-decoration:none;opacity:.75;cursor:default}
+nav.locale-fallback[data-locale-fallback] a[aria-disabled="true"]{text-decoration:none;cursor:default;color:#9ea19b;opacity:1}
+.travel-page nav.locale-fallback[data-locale-fallback] a[aria-disabled="true"]{color:var(--travel-muted,#625749)}
 nav.locale-fallback[data-locale-fallback] .sc-language-helper{flex-basis:100%}
 /* Language and install controls retain usable targets as text grows or shrinks. */
 #sc-language-switcher{min-inline-size:0;max-inline-size:100%;block-size:auto}
