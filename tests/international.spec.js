@@ -282,6 +282,110 @@ for (const [route,code] of [['/pt/novena','pt'],['/it/novena','it'],['/ru/novena
   } finally { await context.close(); }
 });
 
+// PR3 generated fallback: native closed details disclosure. Works no-JS (and on
+// failed/slow script), keyboard-operable, exact twin links; hidden only after
+// the enhanced select is actually ready (no residual summary).
+for (const route of ['/saint-charbel-novena', '/es/novena']) {
+  test(`${route} generated fallback disclosure works without JavaScript`, async ({browser, baseURL}, testInfo) => {
+    const context = await browser.newContext({...testInfo.project.use, baseURL, javaScriptEnabled:false});
+    try {
+      const page = await context.newPage();
+      await page.goto(route);
+      const wrapper = page.locator('[data-locale-fallback]');
+      await expect(wrapper).toHaveCount(1);
+      await expect(wrapper).not.toHaveAttribute('open', '');
+      const summary = wrapper.locator('summary');
+      await expect(summary).toBeVisible();
+      expect((await summary.boundingBox()).height).toBeGreaterThanOrEqual(44);
+      // Closed by default: the exact nav stays in the DOM for crawlers, hidden visually.
+      await expect(wrapper.locator('nav.locale-nav[data-i18n-generated]')).toBeHidden();
+      await summary.focus();
+      await page.keyboard.press('Enter');
+      await expect(wrapper).toHaveAttribute('open', '');
+      const nav = wrapper.locator('nav.locale-nav[data-i18n-generated]');
+      await expect(nav).toBeVisible();
+      // Exact twin link targets inside the disclosure.
+      await expect(nav.locator('a[hreflang="en"]')).toHaveAttribute('href', 'https://marsharbel.com/saint-charbel-novena');
+      await page.keyboard.press('Enter');
+      await expect(wrapper).not.toHaveAttribute('open', '');
+    } finally { await context.close(); }
+  });
+
+  test(`${route} hides the fallback only after the enhanced select is ready`, async ({page}) => {
+    await page.goto(route);
+    await expect(page.locator('#sc-language-select')).toBeVisible();
+    // JSready: single visible control, no residual summary or wrapper.
+    await expect(page.locator('[data-locale-fallback]')).toBeHidden();
+    await expect(page.locator('[data-locale-fallback] summary')).toBeHidden();
+    await expect(page.locator('.lang-switcher')).toHaveCount(1);
+  });
+
+  test(`${route} keeps the disclosure when the switcher script fails`, async ({browser, baseURL}, testInfo) => {
+    const context = await browser.newContext({...testInfo.project.use, baseURL});
+    try {
+      await context.route('**/same-page-switcher.js', route_ => route_.abort());
+      const page = await context.newPage();
+      await page.goto(route);
+      await expect(page.locator('#sc-language-select')).toHaveCount(0);
+      const wrapper = page.locator('[data-locale-fallback]');
+      await expect(wrapper).toBeVisible();
+      await wrapper.locator('summary').click();
+      await expect(wrapper.locator('nav.locale-nav[data-i18n-generated]')).toBeVisible();
+      // Keyed prayer still reachable with the disclosure present.
+      await page.locator('a[href="#day-9"]').first().click();
+      await expect(page.locator('#day-9')).toBeInViewport();
+    } finally { await context.close(); }
+  });
+}
+
+// Layout-shift measurement of the no-JS to JS handoff: real PerformanceObserver
+// LayoutShift entries + session-window CLS, fast and delayed/failed switcher,
+// control availability asserted throughout. Metrics are attached for design
+// adjudication - no self-selected pixel threshold gates this test.
+for (const scenario of [{name:'fast'},{name:'delayed-switcher',delayMs:2000},{name:'failed-switcher',fail:true}]) {
+  test(`fallback handoff layout shift measured (${scenario.name})`, async ({browser, baseURL}, testInfo) => {
+    test.skip(testInfo.project.name !== 'phone', 'measurement matrix runs on the phone project');
+    const context = await browser.newContext({...testInfo.project.use, baseURL});
+    try {
+      await context.addInitScript(() => {
+        window.__shifts = [];
+        new PerformanceObserver(list => {
+          for (const e of list.getEntries()) window.__shifts.push({value:e.value, hadRecentInput:e.hadRecentInput, time:e.startTime, sources:(e.sources||[]).map(s => s && s.node ? s.node.tagName : null)});
+        }).observe({type:'layout-shift', buffered:true});
+      });
+      if (scenario.fail) await context.route('**/same-page-switcher.js', route_ => route_.abort());
+      else if (scenario.delayMs) await context.route('**/same-page-switcher.js', async route_ => { await new Promise(res => setTimeout(res, scenario.delayMs)); route_.continue(); });
+      const page = await context.newPage();
+      await page.goto('/saint-charbel-novena', {waitUntil: scenario.fail ? 'load' : 'domcontentloaded'});
+      const wrapper = page.locator('[data-locale-fallback]');
+      if (scenario.fail) {
+        // Failed script: the disclosure stays continuously functional.
+        await expect(wrapper).toBeVisible();
+        await wrapper.locator('summary').click();
+        await expect(wrapper.locator('nav.locale-nav[data-i18n-generated]')).toBeVisible();
+        await expect(wrapper.locator('a[hreflang="en"]')).toHaveAttribute('href', 'https://marsharbel.com/saint-charbel-novena');
+        await expect(page.locator('#sc-language-select')).toHaveCount(0);
+        await page.waitForTimeout(1500);
+      } else {
+        // The disclosure is usable until the enhanced select is ready, then hidden.
+        await expect(page.locator('#sc-language-select')).toBeVisible();
+        await expect(wrapper).toBeHidden();
+        await page.waitForTimeout(600);
+      }
+      const shifts = await page.evaluate(() => window.__shifts);
+      // Session-window CLS: new window on >1s gap or >5s span; report the max window.
+      const nonInput = shifts.filter(s => !s.hadRecentInput);
+      let sessionMax = 0, cur = 0, winStart = null, lastT = null;
+      for (const s of nonInput) {
+        if (winStart === null || s.time - lastT > 1000 || s.time - winStart > 5000) { sessionMax = Math.max(sessionMax, cur); cur = 0; winStart = s.time; }
+        cur += s.value; lastT = s.time;
+      }
+      sessionMax = Math.max(sessionMax, cur);
+      testInfo.attach('layout-shift-' + scenario.name, {body: JSON.stringify({scenario: scenario.name, viewport: '390x844', sessionWindowCLS: Number(sessionMax.toFixed(5)), totalNonInputCLS: Number(nonInput.reduce((a,s) => a + s.value, 0).toFixed(5)), entries: shifts}, null, 1)});
+    } finally { await context.close(); }
+  });
+}
+
 // Smallest supported phone: intrinsic option widths must not push RTL or LTR chrome out.
 for (const route of ['/ar/annaya', '/pt/annaya', '/it/annaya', '/en/annaya', '/']) {
   test(`${route} language control fits inside its header at 320px`, async ({page}) => {
