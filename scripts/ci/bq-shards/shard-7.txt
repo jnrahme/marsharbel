@@ -823,8 +823,12 @@
 [wide-desktop] › travel-master.spec.js › pilgrimage-master zh-Hans renders cleanly with English access and no overflow
 [wide-desktop] › travel-master.spec.js › twenty-second-master it renders cleanly with English access and no overflow
 [wide-desktop] › travel-routing.spec.js › /en/qadisha-valley redirects to its canonical root page
-[phone] › international.spec.js › fallback handoff layout shift measured (failed-switcher)
-[small-phone] › international.spec.js › /saint-charbel-novena generated fallback disclosure works without JavaScript
-[tablet] › international.spec.js › /es/novena generated fallback disclosure works without JavaScript
-[tablet] › international.spec.js › fallback handoff layout shift measured (failed-switcher)
-[wide-desktop] › international.spec.js › fallback handoff layout shift measured (delayed-switcher)
+[phone] › international.spec.js › /ar/pilgrimage hides the footer fallback only after the enhanced select is ready
+[phone] › international.spec.js › /saint-charbel-pilgrimage generated footer fallback works without JavaScript
+[phone] › international.spec.js › footer fallback handoff layout shift measured (delayed-switcher)
+[small-phone] › international.spec.js › /es/peregrinacion hides the footer fallback only after the enhanced select is ready
+[small-phone] › international.spec.js › footer fallback handoff layout shift measured (delayed-switcher)
+[tablet] › international.spec.js › /es/peregrinacion keeps the footer fallback when the switcher script fails
+[tablet] › international.spec.js › footer fallback handoff layout shift measured (failed-switcher)
+[wide-desktop] › international.spec.js › /saint-charbel-pilgrimage generated footer fallback works without JavaScript
+[wide-desktop] › international.spec.js › footer fallback handoff layout shift measured (fast)

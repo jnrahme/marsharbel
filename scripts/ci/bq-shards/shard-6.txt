@@ -826,5 +826,9 @@
 [wide-desktop] › travel-routing.spec.js › /pl/travel has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › travel-routing.spec.js › /pt/travel has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › video-playback.spec.js › no remote API script, telemetry, private origin path, CSP edit or eager player
-[tablet] › international.spec.js › fallback handoff layout shift measured (delayed-switcher)
-[wide-desktop] › international.spec.js › /saint-charbel-novena keeps the disclosure when the switcher script fails
+[small-phone] › international.spec.js › /es/peregrinacion generated footer fallback works without JavaScript
+[small-phone] › international.spec.js › footer fallback handoff layout shift measured (delayed-scrolled-footer)
+[tablet] › international.spec.js › /es/peregrinacion hides the footer fallback only after the enhanced select is ready
+[tablet] › international.spec.js › footer fallback handoff layout shift measured (delayed-switcher)
+[wide-desktop] › international.spec.js › /es/peregrinacion keeps the footer fallback when the switcher script fails
+[wide-desktop] › international.spec.js › footer fallback handoff layout shift measured (failed-switcher)
