@@ -41,6 +41,10 @@ qa_report() {
   if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then
     { echo "### QA step timings (s)${SHARD_N:+ - shard ${SHARD_K}/${SHARD_N}}"; echo '```'; sort -rn "${QA_TIMES}"; echo '```'; } >> "${GITHUB_STEP_SUMMARY}"
   fi
+  # Stable ignored path so CI can upload the timings as a run artifact
+  # (step summaries are not retrievable via the Actions API).
+  mkdir -p tmp
+  cp "${QA_TIMES}" tmp/qa-step-timings.tsv
 }
 trap qa_report EXIT
 
