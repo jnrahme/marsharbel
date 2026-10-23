@@ -160,7 +160,8 @@ def inject_control(text, root, manifest, copy):
     if (family and not family[0].startswith('ar2-') and len(verified)>=2
             and canonical_path not in published_homes
             and 'class="locale-nav"' not in text
-            and 'sc-static-language' not in text):
+            and 'sc-static-language' not in text
+            and not BeautifulSoup(text,'html.parser').select_one('nav.footer-locales')):
         anchors=[]
         for code in manifest['languages']:
             cfg=registry['locales'][code]
@@ -169,33 +170,29 @@ def inject_control(text, root, manifest, copy):
             # precedent's intent), never the page-language copy table.
             anchors.append('<a'+current+' dir="'+cfg['direction']+'" hreflang="'+code+'" lang="'+code+'">'
                            +escape(cfg['nativeName'])+'</a>')
-        # Design ruling (2026-10-23): the fallback is a native CLOSED details/
-        # summary disclosure - works no-JS/failed/slow script, no inline script,
-        # no CLS from a collapsing 530px block. Summary carries the localized
-        # choose-language label + current native name at 44px; the exact nav is
-        # unchanged inside. JS hides the whole wrapper only once the enhanced
-        # select is ready (same-page-switcher.js).
-        summary=(escape(copy[lang]['choose'])+' · '+escape(registry['locales'][lang]['nativeName']))
-        block=('<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n'
-               '<details class="locale-fallback" data-locale-fallback="">\n'
-               '<summary dir="'+registry['locales'][lang]['direction']+'">'+summary+'</summary>\n'
-               '<nav aria-label="'+escape(copy[lang]['choose'])+'" class="locale-nav" data-i18n-generated="">'
-               +'\n'.join(anchors)+'\n</nav>\n</details>\n</div>\n<!-- i18n-locale-nav:end -->\n')
-        if text.count('</header>')==1:
-            # Scrum boundary ruling: the no-JS fallback lives OUTSIDE the sticky
-            # .topbar header in normal flow - with JavaScript disabled it stays
-            # visible, and inside the fixed subtree it intercepts pointer events
-            # over page content (BQ spec241 keyed-prayer clicks). Never overlay/
-            # fixed positioning for this block.
-            close_end=text.index('</header>')+len('</header>')
-            line_end=text.find('\n',close_end)
-            insert_at=(line_end+1) if line_end!=-1 else close_end
-            text=text[:insert_at]+block+text[insert_at:]
-        else:
-            main_open=re.search(r'<main\b',text)
-            if not main_open:raise ValueError('Generated locale-nav needs a header or main element')
-            line_start=text.rfind('\n',0,main_open.start())+1
+        # Design ruling v2 (2026-10-23): the fallback is a flat marked locale
+        # list at the page-end footer - inline dash-separated links like the
+        # authored footer-locales language, but same-page twins with native
+        # names at 44px targets. No details/summary (measured CLS rejection),
+        # no inline script. JS hides it only once the enhanced select is ready,
+        # and never while focus is inside it (same-page-switcher.js).
+        pieces=[]
+        for i,a in enumerate(anchors):
+            if i:pieces.append('<span aria-hidden="true">-</span>')
+            pieces.append(a)
+        block=('<!-- i18n-locale-nav:start -->'+'\n<div class="site-shell">\n'
+               +'<nav aria-label="'+escape(copy[lang]['choose'])+'" class="locale-nav locale-fallback" data-locale-fallback="" data-i18n-generated="">'
+               +' '.join(pieces)+'\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n')
+        if text.count('</footer>')==1:
+            # Lives INSIDE the semantic footer, after authored footer content.
+            close=text.index('</footer>')
+            line_start=text.rfind('\n',0,close)+1
             text=text[:line_start]+block+text[line_start:]
+        elif text.count('</main>')==1:
+            close=text.index('</main>')+len('</main>')
+            text=text[:close]+'\n'+block.rstrip('\n')+text[close:]
+        else:
+            raise ValueError('Generated locale-nav needs a footer or main element')
     # No-JS static choices must not retain guide/home substitutions.
     # Mutate only language nav blocks, never MAIN or ordinary editorial anchors.
     def static_nav(match):
@@ -260,7 +257,7 @@ def inject_control(text, root, manifest, copy):
             for attr in ('aria-disabled','tabindex','aria-label','data-language-switch','style'):a.attrs.pop(attr,None)
         return str(nav)
     text=re.sub(r'<nav\b[^>]*class=["\']footer-locales["\'][\s\S]*?</nav>',footer_nav,text)
-    text=re.sub(r'<nav\b[^>]*class=["\']locale-nav["\'][\s\S]*?</nav>',static_nav,text)
+    text=re.sub(r'<nav\b[^>]*class=["\'][^"\']*\blocale-nav\b[^"\']*["\'][\s\S]*?</nav>',static_nav,text)
     text=text.replace('</head>','<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />\n</head>')
     scripts='\n'.join('<script defer src="/'+name+'"></script>' for name in ['same-page-manifest.js','same-page-copy.js','same-page-resolver.js','same-page-switcher.js'])
     if text.count('</body>')!=1:raise ValueError('Missing unique body end')

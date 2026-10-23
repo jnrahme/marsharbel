@@ -17,30 +17,19 @@ nav.locale-nav a[aria-disabled="true"]{display:inline-block;max-width:100%;white
 
 /* A ready select replaces the expanded fallback nav, never before JS succeeds. */
 header nav.locale-nav[hidden]{display:none}
-/* Generated same-page fallback nav (PR3): shell-aligned via .site-shell,
-   vertical list, 44px targets. Explicit foreground on every state: the nav
-   lands on the dark translucent topbar (rgba(25,22,19,.9) over the cream
-   body, ~rgb(45,44,40)) of every scoped family; inherited page ink broke
-   contrast on all .travel-page families (#231d16 on ~#2d2c28 = 1.08:1).
-   #f3ede3 on that effective background measures ~12:1. Scoped to
-   [data-i18n-generated] so the certified A1 rosary-guide masthead nav keeps
-   its authored rendering untouched. */
-nav.locale-nav[data-i18n-generated]:not([hidden]){display:flex;flex-direction:column;align-items:flex-start;gap:.1rem;padding-block:.35rem;color:#f3ede3}
-nav.locale-nav[data-i18n-generated]:not([hidden]) a{min-block-size:44px;min-inline-size:44px;display:inline-flex;align-items:center;box-sizing:border-box;color:#f3ede3}
-nav.locale-nav[data-i18n-generated]:not([hidden]) a:hover,nav.locale-nav[data-i18n-generated]:not([hidden]) a:focus-visible{color:#ffffff}
-nav.locale-nav[data-i18n-generated]:not([hidden]) a[aria-disabled="true"]{color:#f3ede3;opacity:.75}
-nav.locale-nav[data-i18n-generated]:not([hidden]) .sc-language-helper{color:#f3ede3}
-
-/* PR3 no-JS fallback disclosure: native closed details in normal flow after the
-   sticky header (scrum/design ruling 2026-10-23). Foregrounds track the ACTUAL
-   surface - light on dark shell pages, travel ink on cream .travel-page bodies.
-   The wrapper hides only after the enhanced select is ready (JS handoff). */
-details.locale-fallback[data-locale-fallback]{margin-block:.35rem;color:#f3ede3}
-details.locale-fallback[data-locale-fallback][hidden]{display:none}
-details.locale-fallback[data-locale-fallback]>summary{min-block-size:44px;display:flex;align-items:center;box-sizing:border-box;cursor:pointer;color:#f3ede3;font:inherit}
-details.locale-fallback[data-locale-fallback]>summary:focus-visible{outline:2px solid currentColor;outline-offset:2px}
-.travel-page details.locale-fallback[data-locale-fallback],.travel-page details.locale-fallback[data-locale-fallback]>summary{color:var(--travel-ink,#231d16)}
-.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]),.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]) a,.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]) a:hover,.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]) a:focus-visible,.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]) a[aria-disabled="true"],.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]) .sc-language-helper{color:var(--travel-ink,#231d16)}
+/* PR3 no-JS fallback (design ruling v2 2026-10-23 - flat footer list replaces
+   details/summary after the measured CLS rejection): the marked generated nav
+   sits in the page-end footer and inherits the authored footer link language
+   (.footer a = gold on dark shells, --travel-accent on cream .travel-page,
+   underlined), upgraded to 44px targets like the design gate requires.
+   Hidden only after the enhanced select is ready, and never while focused
+   (same-page-switcher.js focus retention). */
+nav.locale-fallback[data-locale-fallback]{display:flex;flex-wrap:wrap;column-gap:.75rem;row-gap:.15rem;margin:0 0 1rem}
+nav.locale-fallback[data-locale-fallback][hidden]{display:none}
+nav.locale-fallback[data-locale-fallback]>span[aria-hidden="true"]{display:none}
+nav.locale-fallback[data-locale-fallback] a{display:inline-flex;align-items:center;min-block-size:44px;unicode-bidi:isolate}
+nav.locale-fallback[data-locale-fallback] a[aria-disabled="true"]{text-decoration:none;opacity:.75;cursor:default}
+nav.locale-fallback[data-locale-fallback] .sc-language-helper{flex-basis:100%}
 /* Language and install controls retain usable targets as text grows or shrinks. */
 #sc-language-switcher{min-inline-size:0;max-inline-size:100%;block-size:auto}
 #sc-language-select,#sc-install-app-btn{min-block-size:44px;min-inline-size:44px;block-size:auto;box-sizing:border-box}
