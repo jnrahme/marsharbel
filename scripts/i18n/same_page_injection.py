@@ -105,6 +105,7 @@ def inject_control(text, root, manifest, copy):
     # Deterministic rebuilding: remove only our generated control resources.
     text=re.sub(r'<script\b[^>]*src=["\']/same-page-(?:manifest|copy|resolver|switcher)\.js["\'][^>]*></script>\s*','',text)
     text=re.sub(r'<link\b[^>]*id=["\']sc-language-css["\'][^>]*>\s*','',text)
+    text=re.sub(r'[ \t]*<noscript><nav[^>]*class="sc-static-language"[\s\S]*?</nav></noscript>\n?','',text)
     soup=BeautifulSoup(text,'html.parser')
     lang=soup.html.get('lang','en') if soup.html else 'en'
     if lang not in copy:raise ValueError('Missing reviewed selector copy '+lang)
@@ -114,6 +115,26 @@ def inject_control(text, root, manifest, copy):
     # Use the JS resolver itself: no second, weaker availability predicate.
     driver="const fs=require('fs');const api=require(process.argv[1]);const d=JSON.parse(fs.readFileSync(0,'utf8'));let out={};for(const lang of d.manifest.languages)out[lang]=api.resolve(d.manifest,d.href,lang,d.actual);process.stdout.write(JSON.stringify(out));"
     choices=json.loads(subprocess.check_output(['node','-e',driver,str(root/'same-page-resolver.js')],input=json.dumps({'manifest':manifest,'href':href,'actual':lang}),text=True))
+    # No-JS fallback: a verified exact en<->ar twin gets one static link in server HTML,
+    # inside <noscript> so it never shows (or flashes) when the JS switcher runs. Only an
+    # exact verified twin qualifies; home/guide substitutions never get a static link.
+    fallback_target={'en':'ar','ar':'en'}.get(lang)
+    fallback=choices.get(fallback_target) if fallback_target else None
+    # Only recomputed AR-2 families qualify (resolver pageID ar2-*). Travel-scoped families
+    # carry authored final hashes and post-review candidate pins; changing their bytes
+    # needs its own re-seal. 'english-source' is how generated Arabic mirrors resolve to
+    # their English master; home/guide substitutions never qualify.
+    if fallback and fallback.get('available') and str(fallback.get('pageID','')).startswith('ar2-') and fallback.get('reason') in ('verified-twin','english-source') and fallback.get('href'):
+        target_cfg=registry['locales'][fallback_target]
+        native=copy[fallback_target]['names'][fallback_target]
+        block=('<noscript><nav class="sc-static-language" aria-label="'+escape(copy[lang]['language'])+'">'
+               '<a href="'+escape(fallback['href'])+'" hreflang="'+fallback_target+'" lang="'+fallback_target+'" dir="'+target_cfg['direction']+'">'+escape(native)+'</a></nav></noscript>\n')
+        main_open=re.search(r'<main\b',text)
+        if not main_open:raise ValueError('Static language fallback needs a main element')
+        line_start=text.rfind('\n',0,main_open.start())+1
+        indent=text[line_start:main_open.start()]
+        if indent.strip():line_start=main_open.start();indent=''
+        text=text[:line_start]+indent+block+text[line_start:]
     # No-JS static choices must not retain guide/home substitutions.
     # Mutate only language nav blocks, never MAIN or ordinary editorial anchors.
     def static_nav(match):

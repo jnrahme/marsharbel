@@ -196,7 +196,8 @@ def apply_family(job, check=False):
     en_bind_p = ROOT / f'locales/en/{fam}-bindings.json'
     en_copy = json.loads(en_copy_p.read_text())
     contract = json.loads(en_bind_p.read_text())
-    root_html = (ROOT / contract['master']).read_text(encoding='utf-8')
+    from i18n.keyed_master import strip_static_fallback_text, strip_static_fallback
+    root_html = strip_static_fallback_text((ROOT / contract['master']).read_text(encoding='utf-8'))
 
     # plan mutations
     drop_keys = set()
@@ -221,7 +222,7 @@ def apply_family(job, check=False):
             if not op.get('keep_key'):
                 drop_keys.add(op['key'])
 
-    master_sha = hashlib.sha256((ROOT / contract['master']).read_bytes()).hexdigest()
+    master_sha = hashlib.sha256(strip_static_fallback((ROOT / contract['master']).read_bytes())).hexdigest()
     stale = (contract.get('masterSha256') != master_sha
              or any(k in en_copy for k in drop_keys)
              or any(en_copy.get(k) != v for k, v in sets_en.items())

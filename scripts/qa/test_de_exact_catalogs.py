@@ -6,6 +6,7 @@ import sys
 import unittest
 from bs4 import BeautifulSoup
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from i18n.keyed_master import strip_static_fallback_text as _sf, strip_static_fallback as _sfb
 from i18n.catalog import ROOT, read_json, leaves
 from i18n.guarded_dom import translate_slots
 class GermanPreparedCatalogTests(unittest.TestCase):
@@ -14,7 +15,7 @@ class GermanPreparedCatalogTests(unittest.TestCase):
         # empty-slot checks are enforced by test_prayer_keyed_masters.
         for name in ['feast','miracles']:
             c=read_json(ROOT/f'locales/de/{name}-exact.json')
-            source=(ROOT/c['master']).read_bytes()
+            source=_sfb((ROOT/c['master']).read_bytes())
             self.assertEqual(hashlib.sha256(source).hexdigest(), c['masterSha256'])
             for slot in c['slots'].values(): leaves(slot)
             soup=BeautifulSoup(source,'html.parser')
