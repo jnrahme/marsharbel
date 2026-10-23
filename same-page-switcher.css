@@ -17,6 +17,11 @@ nav.locale-nav a[aria-disabled="true"]{display:inline-block;max-width:100%;white
 
 /* A ready select replaces the expanded fallback nav, never before JS succeeds. */
 header nav.locale-nav[hidden]{display:none}
+/* Generated same-page fallback nav on scoped master headers (PR3): shell-aligned via
+   .site-shell, vertical list, 44px targets. Scoped to .topbar so the certified
+   A1 rosary-guide masthead nav keeps its authored rendering untouched. */
+.topbar>.site-shell>nav.locale-nav:not([hidden]){display:flex;flex-direction:column;align-items:flex-start;gap:.1rem;padding-block:.35rem}
+.topbar>.site-shell>nav.locale-nav:not([hidden]) a{min-block-size:44px;min-inline-size:44px;display:inline-flex;align-items:center;box-sizing:border-box}
 /* Language and install controls retain usable targets as text grows or shrinks. */
 #sc-language-switcher{min-inline-size:0;max-inline-size:100%;block-size:auto}
 #sc-language-select,#sc-install-app-btn{min-block-size:44px;min-inline-size:44px;block-size:auto;box-sizing:border-box}

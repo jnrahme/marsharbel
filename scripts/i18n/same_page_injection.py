@@ -6,10 +6,16 @@ Reviewed manifest and UI copy must be supplied by the integration gate.
 from bs4 import BeautifulSoup
 from html import escape
 import re,json,subprocess
+from urllib.parse import urlsplit
 from i18n.catalog import read_json, published_home_locales, home_url
 
 
 _english_source_cache = {}
+
+# Marker wrapping the generated no-JS same-page switcher (PR3). The control build
+# strips the whole marked block before master hashing and on deterministic
+# regeneration; keyed_master keeps the byte-identical twin of this pattern.
+GENERATED_LOCALE_NAV = re.compile(r'[ \t]*<!-- i18n-locale-nav:start -->[\s\S]*?<!-- i18n-locale-nav:end -->\n?')
 
 def with_english_sources(root, manifest):
     key = str(root)
@@ -106,6 +112,7 @@ def inject_control(text, root, manifest, copy):
     text=re.sub(r'<script\b[^>]*src=["\']/same-page-(?:manifest|copy|resolver|switcher)\.js["\'][^>]*></script>\s*','',text)
     text=re.sub(r'<link\b[^>]*id=["\']sc-language-css["\'][^>]*>\s*','',text)
     text=re.sub(r'[ \t]*<noscript><nav[^>]*class="sc-static-language"[\s\S]*?</nav></noscript>\n?','',text)
+    text=GENERATED_LOCALE_NAV.sub('',text)
     soup=BeautifulSoup(text,'html.parser')
     lang=soup.html.get('lang','en') if soup.html else 'en'
     if lang not in copy:raise ValueError('Missing reviewed selector copy '+lang)
@@ -135,6 +142,42 @@ def inject_control(text, root, manifest, copy):
         indent=text[line_start:main_open.start()]
         if indent.strip():line_start=main_open.start();indent=''
         text=text[:line_start]+indent+block+text[line_start:]
+    # PR3 design-gate ruling (whole equivalence families, EN+mirrors together):
+    # families with >=2 verified variants gain a generated same-page locale-nav.
+    # Exclusivity: ar2 keeps its noscript twin, the certified A1 family keeps its
+    # authored nav, homes keep footer-locales, EN-only pending families get
+    # nothing. No page may carry both controls; masters are never re-pinned -
+    # the marked block is stripped before hashing (keyed_master).
+    canonical_path=(urlsplit(href).path.rstrip('/') or '/')
+    family=None
+    for key,fam in manifest['pages'].items():
+        for variant in fam.get('variants',{}).values():
+            if (variant.get('path','').rstrip('/') or '/')==canonical_path:
+                family=(key,fam);break
+        if family:break
+    verified=[v for v in family[1].get('variants',{}).values() if v.get('status')=='verified'] if family else []
+    published_homes={(home_url(registry,code) or '/').rstrip('/') for code in published_home_locales(registry)}
+    if (family and not family[0].startswith('ar2-') and len(verified)>=2
+            and canonical_path not in published_homes
+            and 'class="locale-nav"' not in text
+            and 'sc-static-language' not in text):
+        anchors=[]
+        for code in manifest['languages']:
+            cfg=registry['locales'][code]
+            current=' aria-current="page"' if code==lang else ''
+            anchors.append('<a'+current+' dir="'+cfg['direction']+'" hreflang="'+code+'">'
+                           +escape(copy[lang]['names'].get(code,code))+'</a>')
+        block=('<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n'
+               '<nav aria-label="Choose language" class="locale-nav">'
+               +'\n'.join(anchors)+'\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n')
+        if text.count('</header>')==1:
+            line_start=text.rfind('\n',0,text.index('</header>'))+1
+            text=text[:line_start]+block+text[line_start:]
+        else:
+            main_open=re.search(r'<main\b',text)
+            if not main_open:raise ValueError('Generated locale-nav needs a header or main element')
+            line_start=text.rfind('\n',0,main_open.start())+1
+            text=text[:line_start]+block+text[line_start:]
     # No-JS static choices must not retain guide/home substitutions.
     # Mutate only language nav blocks, never MAIN or ordinary editorial anchors.
     def static_nav(match):

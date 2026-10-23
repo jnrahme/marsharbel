@@ -358,7 +358,10 @@ def validate_mirror_capabilities(root, registry):
                 if not (root / pinned_source).is_file():
                     raise ValueError(f'{code}/{name}: missing pinned mirror master')
                 import hashlib
-                if contract['masterSha256'] != hashlib.sha256((root / pinned_source).read_bytes()).hexdigest():
+                # PR3: the marked generated locale-nav is a post-pin control
+                # artifact; master pins always compare stripped bytes.
+                from i18n.keyed_master import strip_generated_locale_nav
+                if contract['masterSha256'] != hashlib.sha256(strip_generated_locale_nav((root / pinned_source).read_bytes())).hexdigest():
                     raise ValueError(f'{code}/{name}: stale mirror master')
                 base = read_json(root / f'locales/en/{name}-copy.json')
                 local = read_json(root / f'locales/{code}/{name}-copy.json')

@@ -47,3 +47,59 @@ class StaticLanguageFallback(unittest.TestCase):
             self.assertNotIn('sc-static-language',route_file(v['path']).read_text())
 
 if __name__=='__main__':unittest.main()
+
+GENERATED_NAV = re.compile(r'<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n(<nav aria-label="Choose language" class="locale-nav">[\s\S]*?</nav>)\n</div>\n<!-- i18n-locale-nav:end -->\n?')
+
+class GeneratedLocaleNav(unittest.TestCase):
+    """PR3 four-way exclusivity: ar2 noscript twins, >=2-variant equivalence
+    families gain one marked generated locale-nav (EN+mirrors together), the
+    certified A1 family keeps its authored nav, everything else gets neither."""
+
+    def setUp(self):
+        text=(ROOT/'same-page-manifest.js').read_text()
+        self.manifest=json.loads(text[len(PREFIX):].rstrip().rstrip(';'))
+
+    def eligible(self):
+        out={}
+        for key,fam in self.manifest['pages'].items():
+            if key.startswith('ar2-') or key=='rosary-guide-equivalence':continue
+            verified={l:v for l,v in fam.get('variants',{}).items() if v.get('status')=='verified'}
+            if len(verified)>=2:out[key]=verified
+        return out
+
+    def test_whole_families_carry_one_marked_nav_with_exact_verified_hreflangs(self):
+        seen=set()
+        for key,verified in sorted(self.eligible().items()):
+            for lang,v in verified.items():
+                f=route_file(v['path']);text=f.read_text();seen.add(f)
+                blocks=GENERATED_NAV.findall(text)
+                self.assertEqual(len(blocks),1,f.name+' needs exactly one marked generated locale-nav')
+                self.assertNotIn('sc-static-language',text,f.name+' must not also carry the ar2 noscript twin')
+                self.assertLess(text.index('i18n-locale-nav:start'),text.index('</header>'),f.name)
+                from bs4 import BeautifulSoup
+                nav=BeautifulSoup(blocks[0],'html.parser').nav
+                linked={a['hreflang']:a for a in nav.select('a[hreflang]')}
+                self.assertEqual(set(linked),set(self.manifest['languages']),f.name+' lists every registered language')
+                for code,a in linked.items():
+                    if code in verified:
+                        self.assertEqual(a.get('href'),'https://marsharbel.com'+verified[code]['path'],f.name+' '+code)
+                        self.assertNotEqual(a.get('aria-disabled'),'true',f.name+' '+code)
+                    else:
+                        self.assertIsNone(a.get('href'),f.name+' unavailable '+code+' must never link')
+                        self.assertEqual(a.get('aria-disabled'),'true',f.name+' '+code)
+                    if code==lang:self.assertEqual(a.get('aria-current'),'page',f.name+' aria-current')
+                    else:self.assertIsNone(a.get('aria-current'),f.name+' aria-current only on current')
+        self.assertEqual(len(self.eligible()),18,'exact current-stage eligible inventory (18 families, A1 excluded)')
+        return seen
+
+    def test_no_page_outside_the_release_carries_the_marked_nav(self):
+        eligible_files=set()
+        for verified in self.eligible().values():
+            for v in verified.values():eligible_files.add(route_file(v['path']))
+        for f in ROOT.rglob('*.html'):
+            if any(p in {'node_modules','.git','src','templates','docs','test-results','playwright-report'} for p in f.relative_to(ROOT).parts):continue
+            text=f.read_text()
+            if f not in eligible_files:
+                self.assertNotIn('i18n-locale-nav:start',text,str(f.relative_to(ROOT))+' outside the release carries the marked nav')
+            if 'sc-static-language' in text:
+                self.assertNotIn('class="locale-nav"',text,str(f.relative_to(ROOT))+' carries both no-JS controls')
