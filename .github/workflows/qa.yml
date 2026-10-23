@@ -5,6 +5,7 @@ on:
     branches:
       - stage
       - main
+      - bot/search-index-daily  # bot pushes need push-triggered CI: GITHUB_TOKEN PR events do not start workflows
   pull_request:
 
 # Branch pushes with an open PR were running everything twice (push and pull_request).
