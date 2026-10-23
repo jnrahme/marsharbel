@@ -14,7 +14,16 @@ if (!fs.existsSync(input)) {
   process.exit(0);
 }
 
-const report = JSON.parse(fs.readFileSync(input, 'utf8'));
+let report;
+try {
+  report = JSON.parse(fs.readFileSync(input, 'utf8'));
+} catch (err) {
+  // Instrumentation must never fail the shard: a truncated/corrupt/unreadable
+  // report (e.g. an interrupted Playwright run) means timings are unavailable,
+  // not that tests failed. Report and exit 0; real test results stand.
+  console.log(`[pw-timings] report at ${input} unreadable or malformed, timings unavailable: ${err.message}`);
+  process.exit(0);
+}
 const rows = [];
 const walk = (suite) => {
   for (const spec of suite.specs || []) {
