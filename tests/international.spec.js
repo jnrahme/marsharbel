@@ -1,6 +1,11 @@
 const {test, expect} = require('@playwright/test');
 const AxeBuilder = require('@axe-core/playwright').default;
 const registry = require('../locales/registry.json');
+const repoRoot = require('path').resolve(__dirname, '..');
+const {loadBuiltManifest, loadResolver, generatedNavEligibleRoutes} = require('../scripts/tests/same_page_contract.cjs');
+const samePageManifest = loadBuiltManifest(repoRoot);
+const samePageApi = loadResolver(repoRoot);
+const eligibleNavRoutes = generatedNavEligibleRoutes(samePageManifest);
 const languages = Object.keys(registry.locales);
 const homeLanguages=languages.filter(code=>registry.locales[code].home&&registry.locales[code].capabilities?.home!==false);
 const noHomeLanguages=languages.filter(code=>!homeLanguages.includes(code));
@@ -121,7 +126,35 @@ for (const route of ['/', ...new Set(Object.values(registry.topics).map(topic =>
     await expect(page.locator('#sc-language-select')).toHaveCount(1);
     await expect(page.locator('#sc-language-select')).toBeVisible();
     await expect(page.locator('.lang-switcher')).toHaveCount(1);
-    await expect(page.locator('.locale-navigation, .locale-nav')).toHaveCount(0);
+    await expect(page.locator('.locale-navigation')).toHaveCount(0);
+    // PR3: eligible same-page families carry exactly one marked generated
+    // no-JS fallback nav. With JS ready the select is the only VISIBLE control;
+    // the fallback stays in the DOM (hidden) as the crawlable/no-JS layer.
+    // Fallback presence, eligibility and exact twin link targets stay asserted.
+    const localeNavs = page.locator('nav.locale-nav');
+    const localeNavCount = await localeNavs.count();
+    expect(localeNavCount).toBeLessThanOrEqual(1);
+    const normalizedRoute = route.replace(/\/$/, '') || '/';
+    if (localeNavCount === 1) {
+      const fallback = localeNavs.first();
+      await expect(fallback).toHaveAttribute('data-i18n-generated', '');
+      await expect(fallback).toBeHidden();
+      expect(eligibleNavRoutes.has(normalizedRoute)).toBe(true);
+      const anchors = await fallback.locator('a[hreflang]').all();
+      expect(anchors.map(() => 0).length).toBe(samePageManifest.languages.length);
+      for (const anchor of anchors) {
+        const code = await anchor.getAttribute('hreflang');
+        const resolution = samePageApi.resolve(samePageManifest, 'https://marsharbel.com' + normalizedRoute, code, 'en');
+        if (resolution.available) {
+          expect(await anchor.getAttribute('href')).toBe(resolution.href);
+        } else {
+          expect(await anchor.getAttribute('href')).toBeNull();
+          expect(await anchor.getAttribute('aria-disabled')).toBe('true');
+        }
+      }
+    } else {
+      expect(eligibleNavRoutes.has(normalizedRoute)).toBe(false);
+    }
     // P0: a crawlable locale bar may exist - at most one per page, one
     // canonical link per locale, and never parameter (?lang=) URLs. English
     // pages used to forbid footer locale links entirely; the bar is the
