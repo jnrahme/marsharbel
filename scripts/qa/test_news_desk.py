@@ -127,13 +127,47 @@ class NewsDeskTests(unittest.TestCase):
                 for href in en_links:
                     self.assertIn(href, credit_hrefs)
 
+    def test_ddf_venite_row_en_ar_parity(self):
+        from bs4 import BeautifulSoup
+        rid = 'ddf-venite-ad-me-2026-10-22'
+        primary = 'https://www.doctrinafidei.va/'
+        en_text = (ROOT/'news.html').read_text()
+        ar_text = (ROOT/'ar/news.html').read_text()
+        self.assertEqual(en_text.count(f'id="{rid}"'), 1)
+        self.assertEqual(ar_text.count(f'id="{rid}"'), 1)
+        en = BeautifulSoup(en_text, 'html.parser')
+        ar = BeautifulSoup(ar_text, 'html.parser')
+        en_row = en.select_one(f'article#{rid}')
+        ar_row = ar.select_one(f'article#{rid}')
+        self.assertIsNotNone(en_row)
+        self.assertIsNotNone(ar_row)
+        en_links = [a.get('href') for a in en_row.select('a')]
+        ar_links = [a.get('href') for a in ar_row.select('a')]
+        # Row href stays on the Dicastery announcement, and AR carries the same hrefs as EN.
+        self.assertTrue(en_links)
+        for href in en_links + ar_links:
+            self.assertIn(primary, href)
+        self.assertEqual(en_links, ar_links)
+        # Same chip class on both; EN chip text matches the ruling vocabulary.
+        self.assertIn('chip-announcement', en_row.select_one('.chip').get('class'))
+        self.assertIn('chip-announcement', ar_row.select_one('.chip').get('class'))
+        self.assertEqual(en_row.select_one('.chip').get_text(strip=True), 'Announcement')
+        # Considerations, not a doctrinal note, on both twins.
+        self.assertIn('not a doctrinal note', en_row.get_text(' '))
+        self.assertIn('ملاحظة عقائدية', ar_row.get_text(' '))
+        # The row href is cited in the credits list on both pages.
+        for soup in (en, ar):
+            credit_hrefs = [a.get('href') for a in soup.select('.news-credits-list a')]
+            for href in en_links:
+                self.assertIn(href, credit_hrefs)
+
     def test_unsupported_movie_headline_removed(self):
         self.assertNotIn('rolls out worldwide', (ROOT/'index.html').read_text())
 
 
 
 class NewsMetadataTests(unittest.TestCase):
-    # The desk's latest reviewed content revision is the October 22 Gemelli row update (doctors' statement).
+    # The desk's latest reviewed content revision is the October 22 DDF 'Venite ad Me' row addition (same date as the Gemelli doctors' update).
     REVISION = '2026-10-22'
 
     def assert_news_metadata(self, html, lastmod):
