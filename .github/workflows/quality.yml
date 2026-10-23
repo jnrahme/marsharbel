@@ -32,6 +32,24 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npx playwright test --config playwright.config.cjs --shard=${{ matrix.shard }}/8
+
+      # Instrumentation: built-in JSON reporter gives per-spec durations (the shard
+      # split is duration-blind today); summarized and uploaded so timings are
+      # retrievable via the artifacts API. Additive; never blocks the shard.
+      - name: Per-spec Playwright durations
+        if: always()
+        run: node scripts/ci/summarize_pw_results.mjs output/playwright/pw-results.json output/playwright/pw-spec-timings-${{ matrix.shard }}.tsv
+
+      - name: Upload Playwright timing artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pw-spec-timings-${{ matrix.shard }}
+          path: |
+            output/playwright/pw-results.json
+            output/playwright/pw-spec-timings-${{ matrix.shard }}.tsv
+          if-no-files-found: ignore
+
       - if: failure()
         uses: actions/upload-artifact@v4
         with:
