@@ -42,6 +42,8 @@ def render_locale(root, registry, code):
         qualifier = json.loads((root / f'locales/{code}/encyclopedia-trail.json').read_text())['englishQualifier']
         home_label += ' ' + html.escape(qualifier)
     # Shared serializer owns WebPage structure; no hand-added schema block.
+    norm = lambda v: ''.join(v.split())
+    assert norm(copy['premiere.body']) == norm(copy['premiere.bodyLead'] + ' ' + copy['premiere.saintName'] + ' ' + copy['premiere.bodyRest']), 'premiere body/parts drift'
     args = [copy['premiere.title'], copy['premiere.body'], url,
             common['navigation.home'], site + home, copy['premiere.title'], url]
     args = [json.dumps(v, ensure_ascii=False)[1:-1].replace('<', '\\u003c').replace('&', '\\u0026') for v in args]
