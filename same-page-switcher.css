@@ -82,3 +82,14 @@ html:not([lang="en"]) .sc-install-app-btn{padding:.3rem .5rem}
 @media(max-width:640px){
 html:not([lang="en"]) .topbar:has(#sc-language-switcher) .nav{padding-block:.2rem;row-gap:0}
 }
+
+/* No-JS static twin fallback (27 ar2 pairs): the generated noscript nav is
+   injected between header and main, outside .site-shell, so it inherits no
+   page inset and the link renders flush against the viewport edge. All 54
+   fallback pages (EN masters and AR twins) load /styles.css, whose shell is
+   width:min(1180px,100% - 2.4rem) at every viewport; give the nav the same
+   sizing so the link aligns with the page content in both LTR and RTL. The
+   link keeps the 44px target-size floor and stays a plain
+   keyboard-accessible anchor. */
+nav.sc-static-language{display:block;width:min(1180px,100% - 2.4rem);margin-inline:auto;padding-block:.5rem}
+nav.sc-static-language a{display:inline-flex;align-items:center;min-height:44px}
