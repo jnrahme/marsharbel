@@ -11,6 +11,7 @@ Usage:
 """
 import argparse
 from datetime import date, timedelta
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -47,11 +48,31 @@ def history_available(root):
         return False
 
 
-def last_changed(root, path):
-    """Author date (YYYY-MM-DD) of the last commit touching path; today if edited."""
+def blob_id(root, rev, relative):
+    try:
+        return git(root, "rev-parse", f"{rev}:{relative}")
+    except subprocess.CalledProcessError:
+        return None
+
+
+def last_changed(root, path, baseline=None):
+    """Author date (YYYY-MM-DD) of the last commit touching path; today if edited.
+
+    With an explicit baseline ref (the PR base), a page whose committed bytes
+    are identical at HEAD and at the baseline keeps the date its history had at
+    the baseline: transient branch commits that revert each other must not bump
+    lastmod for content the squash merge will not touch.
+    """
+    baseline = baseline or os.environ.get("SITEMAP_BASELINE") or None
     relative = str(path.relative_to(root))
     if git(root, "status", "--porcelain", "--", relative):
         return date.today().isoformat()
+    if baseline:
+        head_blob = blob_id(root, "HEAD", relative)
+        base_blob = blob_id(root, baseline, relative)
+        if head_blob is not None and head_blob == base_blob:
+            changed = git(root, "log", "-1", "--format=%as", baseline, "--", relative)
+            return changed or date.today().isoformat()
     changed = git(root, "log", "-1", "--format=%as", "--", relative)
     return changed or date.today().isoformat()
 
@@ -62,7 +83,7 @@ def entries(text):
         yield match, match.group(1), found.group(1) if found else None
 
 
-def validate(root, text=None):
+def validate(root, text=None, baseline=None):
     """Structural checks always; freshness checks only with full git history."""
     text = text if text is not None else (root / "sitemap.xml").read_text(encoding="utf-8")
     errors = []
@@ -79,7 +100,7 @@ def validate(root, text=None):
             errors.append(f"sitemap.xml: lastmod is in the future for {url}: {lastmod}")
         if fresh:
             try:
-                changed = last_changed(root, source_for(root, url))
+                changed = last_changed(root, source_for(root, url), baseline=baseline)
             except ValueError as error:
                 errors.append(f"sitemap.xml: {error}")
                 continue
@@ -91,13 +112,13 @@ def validate(root, text=None):
     return errors
 
 
-def update(root):
+def update(root, baseline=None):
     path = root / "sitemap.xml"
     text = path.read_text(encoding="utf-8")
 
     def replace(match):
         url, body = match.group(1), match.group(2)
-        changed = last_changed(root, source_for(root, url))
+        changed = last_changed(root, source_for(root, url), baseline=baseline)
         body = LASTMOD.sub("", body, count=1)
         return f"<url><loc>{url}</loc><lastmod>{changed}</lastmod>{body}</url>"
 
@@ -110,15 +131,18 @@ def update(root):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--baseline", default=None,
+                        help="Git ref of the PR base; pages byte-identical to it keep "
+                             "their baseline date (SITEMAP_BASELINE env var also works).")
     args = parser.parse_args()
     if not history_available(ROOT):
         sys.exit("Full git history is required (shallow clone detected); fetch with --unshallow.")
     if args.check:
-        errors = validate(ROOT)
+        errors = validate(ROOT, baseline=args.baseline)
         for error in errors:
             print(error, file=sys.stderr)
         sys.exit(1 if errors else 0)
-    print("sitemap.xml updated" if update(ROOT) else "sitemap.xml already current")
+    print("sitemap.xml updated" if update(ROOT, baseline=args.baseline) else "sitemap.xml already current")
 
 
 if __name__ == "__main__":
