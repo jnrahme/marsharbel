@@ -31,7 +31,12 @@ jobs:
       - run: node scripts/sync-navigation.mjs --check
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - run: npx playwright test --config playwright.config.cjs --shard=${{ matrix.shard }}/8
+      # Duration-balanced packing: each shard runs exactly the tests in its
+      # checked-in list. The completeness proof fails closed on any collection
+      # drift, so a renamed/added/removed test can never silently drop coverage.
+      # Revert by restoring --shard=${{ matrix.shard }}/8.
+      - run: node scripts/ci/check_bq_shard_lists.mjs
+      - run: npx playwright test --config playwright.config.cjs --test-list=scripts/ci/bq-shards/shard-${{ matrix.shard }}.txt
 
       # Instrumentation: built-in JSON reporter gives per-spec durations (the shard
       # split is duration-blind today); summarized and uploaded so timings are
