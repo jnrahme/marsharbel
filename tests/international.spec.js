@@ -142,15 +142,30 @@ for (const route of ['/', ...new Set(Object.values(registry.topics).map(topic =>
       expect(eligibleNavRoutes.has(normalizedRoute)).toBe(true);
       const anchors = await fallback.locator('a[hreflang]').all();
       expect(anchors.map(() => 0).length).toBe(samePageManifest.languages.length);
+      // Live layer: the switcher rewrites anchors against the live URL (preview
+      // origin, ?lang=en view). The DOM contract is resolver output for THAT
+      // SAME input - page.url() - never a fabricated production origin.
       for (const anchor of anchors) {
         const code = await anchor.getAttribute('hreflang');
-        const resolution = samePageApi.resolve(samePageManifest, 'https://marsharbel.com' + normalizedRoute, code, 'en');
+        const resolution = samePageApi.resolve(samePageManifest, page.url(), code, 'en');
         if (resolution.available) {
           expect(await anchor.getAttribute('href')).toBe(resolution.href);
         } else {
           expect(await anchor.getAttribute('href')).toBeNull();
           expect(await anchor.getAttribute('aria-disabled')).toBe('true');
         }
+      }
+      // Committed-bytes layer: the served no-JS fallback must keep exact
+      // production twin hrefs resolved from the canonical site URL.
+      const staticHtml = await (await page.request.get(normalizedRoute)).text();
+      const staticNav = staticHtml.match(/<nav\b[^>]*\bclass="[^"]*\blocale-nav\b[^"]*"[^>]*>[\s\S]*?<\/nav>/);
+      expect(staticNav, 'committed page carries the generated locale nav').not.toBeNull();
+      for (const m of staticNav[0].matchAll(/<a\b[^>]*\bhreflang="([^"]+)"[^>]*>/g)) {
+        const code = m[1];
+        const href = (m[0].match(/\bhref="([^"]*)"/) || [])[1] || null;
+        const resolution = samePageApi.resolve(samePageManifest, 'https://marsharbel.com' + normalizedRoute, code, 'en');
+        if (resolution.available) expect(href).toBe(resolution.href);
+        else expect(href).toBeNull();
       }
     } else {
       expect(eligibleNavRoutes.has(normalizedRoute)).toBe(false);

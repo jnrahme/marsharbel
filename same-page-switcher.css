@@ -30,6 +30,17 @@ nav.locale-nav[data-i18n-generated]:not([hidden]) a{min-block-size:44px;min-inli
 nav.locale-nav[data-i18n-generated]:not([hidden]) a:hover,nav.locale-nav[data-i18n-generated]:not([hidden]) a:focus-visible{color:#ffffff}
 nav.locale-nav[data-i18n-generated]:not([hidden]) a[aria-disabled="true"]{color:#f3ede3;opacity:.75}
 nav.locale-nav[data-i18n-generated]:not([hidden]) .sc-language-helper{color:#f3ede3}
+
+/* PR3 no-JS fallback disclosure: native closed details in normal flow after the
+   sticky header (scrum/design ruling 2026-10-23). Foregrounds track the ACTUAL
+   surface - light on dark shell pages, travel ink on cream .travel-page bodies.
+   The wrapper hides only after the enhanced select is ready (JS handoff). */
+details.locale-fallback[data-locale-fallback]{margin-block:.35rem;color:#f3ede3}
+details.locale-fallback[data-locale-fallback][hidden]{display:none}
+details.locale-fallback[data-locale-fallback]>summary{min-block-size:44px;display:flex;align-items:center;box-sizing:border-box;cursor:pointer;color:#f3ede3;font:inherit}
+details.locale-fallback[data-locale-fallback]>summary:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.travel-page details.locale-fallback[data-locale-fallback],.travel-page details.locale-fallback[data-locale-fallback]>summary{color:var(--travel-ink,#231d16)}
+.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]),.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]) a,.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]) a:hover,.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]) a:focus-visible,.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]) a[aria-disabled="true"],.travel-page nav.locale-nav[data-i18n-generated]:not([hidden]) .sc-language-helper{color:var(--travel-ink,#231d16)}
 /* Language and install controls retain usable targets as text grows or shrinks. */
 #sc-language-switcher{min-inline-size:0;max-inline-size:100%;block-size:auto}
 #sc-language-select,#sc-install-app-btn{min-block-size:44px;min-inline-size:44px;block-size:auto;box-sizing:border-box}

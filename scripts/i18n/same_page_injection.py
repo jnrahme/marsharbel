@@ -169,12 +169,28 @@ def inject_control(text, root, manifest, copy):
             # precedent's intent), never the page-language copy table.
             anchors.append('<a'+current+' dir="'+cfg['direction']+'" hreflang="'+code+'" lang="'+code+'">'
                            +escape(cfg['nativeName'])+'</a>')
+        # Design ruling (2026-10-23): the fallback is a native CLOSED details/
+        # summary disclosure - works no-JS/failed/slow script, no inline script,
+        # no CLS from a collapsing 530px block. Summary carries the localized
+        # choose-language label + current native name at 44px; the exact nav is
+        # unchanged inside. JS hides the whole wrapper only once the enhanced
+        # select is ready (same-page-switcher.js).
+        summary=(escape(copy[lang]['choose'])+' · '+escape(registry['locales'][lang]['nativeName']))
         block=('<!-- i18n-locale-nav:start -->\n<div class="site-shell">\n'
+               '<details class="locale-fallback" data-locale-fallback="">\n'
+               '<summary dir="'+registry['locales'][lang]['direction']+'">'+summary+'</summary>\n'
                '<nav aria-label="'+escape(copy[lang]['choose'])+'" class="locale-nav" data-i18n-generated="">'
-               +'\n'.join(anchors)+'\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n')
+               +'\n'.join(anchors)+'\n</nav>\n</details>\n</div>\n<!-- i18n-locale-nav:end -->\n')
         if text.count('</header>')==1:
-            line_start=text.rfind('\n',0,text.index('</header>'))+1
-            text=text[:line_start]+block+text[line_start:]
+            # Scrum boundary ruling: the no-JS fallback lives OUTSIDE the sticky
+            # .topbar header in normal flow - with JavaScript disabled it stays
+            # visible, and inside the fixed subtree it intercepts pointer events
+            # over page content (BQ spec241 keyed-prayer clicks). Never overlay/
+            # fixed positioning for this block.
+            close_end=text.index('</header>')+len('</header>')
+            line_end=text.find('\n',close_end)
+            insert_at=(line_end+1) if line_end!=-1 else close_end
+            text=text[:insert_at]+block+text[insert_at:]
         else:
             main_open=re.search(r'<main\b',text)
             if not main_open:raise ValueError('Generated locale-nav needs a header or main element')
