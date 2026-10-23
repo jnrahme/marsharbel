@@ -20,10 +20,13 @@ class GeneratedTravelAvailabilityTests(unittest.TestCase):
   # Travel-4 re-pin (scrum 2026-10-12): exactly these 4 families carry the additive ar
   # variant; the other 8 scoped slugs must stay en/de/ru - a mistaken ar there still fails.
   TRAVEL4={'travel','qadisha-valley','qannoubine-monastery','qozhaya-monastery'}
+  # Travel authored-mirror re-pin (A2, 2026-10-22): the travel family additionally
+  # carries exactly the 5 certified es/fr/it/pl/pt mirror variants; every other
+  # family's variant set is unchanged, and zh-Hans/th stay refused below.
   queries=[]
   for slug in sorted(SLUGS):
    page=scoped[slug+'-travel-master-equivalence']
-   self.assertEqual(set(page['variants']),{'en','de','ru','hi','ar'} if slug=='travel' else ({'en','de','ru','ar'} if slug in TRAVEL4 else {'en','de','ru'}))
+   self.assertEqual(set(page['variants']),{'en','de','ru','hi','ar','es','fr','it','pl','pt'} if slug=='travel' else ({'en','de','ru','ar'} if slug in TRAVEL4 else {'en','de','ru'}))
    self.assertNotIn('zh-Hans',page['variants']);self.assertNotIn('th',page['variants'])
    # Also call the real resolver: discoveryRoutes cannot silently widen proof.
    for code in ('zh-Hans','th'):

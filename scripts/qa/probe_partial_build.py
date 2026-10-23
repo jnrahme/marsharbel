@@ -64,7 +64,7 @@ PENDING_KEYS={
  'page-8b59e8d442e73c8a':'/saint-charbel-places-lebanon','page-4cb67ba7bdb9d9e3':'/saint-charbel-trail',
  'page-d858dcfecbd57093':'/travel',
 }
-from i18n import travel_metadata as tm,reviewed_travel as rt,travel_variant_evidence as ve
+from i18n import travel_metadata as tm,reviewed_travel as rt,travel_variant_evidence as ve,reviewed_travel_authored_mirror as ram
 from i18n.travel_scoped_delta import Tokens
 real_compose=tm.compose_travel_clusters;real_travel=rt.travel_manifest;real_final=ve.validate_final_outputs
 final_calls=[]
@@ -135,6 +135,16 @@ def synthetic_travel(root,texts,manifest):
  assert not SCOPED_KEYS & set(out['pages'])
  return out
 
+def synthetic_authored_mirror(root,texts,manifest):
+ # EXPLICIT synthetic-scope marker (Scrum ruling 2026-10-22): the counterfactual
+ # locale world omits the scoped travel families, so the authored-mirror merge
+ # has no family to inject into. The probe opts in by patching the producer out
+ # right here; the production producer stays strict and raises on a missing
+ # family. compare_json asserts the production manifest carries the 5 certified
+ # variants and excludes the synthetic-only pending rows below.
+ print('SYNTHETIC authored-mirror producer explicitly scoped out (no family in counterfactual)')
+ return manifest
+
 def observed_final(root,texts):
  count=sum(group.get('evidenceSchema') in ('scoped-variants-v1','annaya-hero-v1') for group in read_json(root/'locales/travel-equivalence.json')['groups'].values())
  final_calls.append(count);print('REAL FINAL VALIDATOR called; scoped records',count)
@@ -187,7 +197,7 @@ def json_assignment(text):
 def compare_json(file,old,new):
  prefix,a=json_assignment(old);other,b=json_assignment(new);assert prefix==other
  if file=='same-page-manifest.js':
-  assert len(a['pages'])==159 and len(SCOPED_KEYS)==12
+  assert len(a['pages'])==154 and len(SCOPED_KEYS)==12
   assert SCOPED_KEYS<=set(a['pages']);assert not SCOPED_KEYS&set(b['pages'])
   # Travel-4 (scrum re-pin 2026-10-12): the real manifest carries the 4 ar travel twins
   # inside the verified travel families with scoped-ar2-variant proofs, never as
@@ -197,6 +207,15 @@ def compare_json(file,old,new):
   for family in ('travel-travel-master-equivalence','qadisha-valley-travel-master-equivalence','qannoubine-monastery-travel-master-equivalence','qozhaya-monastery-travel-master-equivalence'):
    assert a['pages'][family]['variants'].get('ar',{}).get('proof',{}).get('type')=='scoped-ar2-variant',family
   assert not any(page.get('sourcePath') in ar_travel_sources for page in a['pages'].values())
+  # Travel authored-mirror (A2): the real manifest carries the 5 certified
+  # es/fr/it/pl/pt /travel twins inside travel-travel-master-equivalence with
+  # travel-authored-mirror proofs, never as standalone pages.
+  mirror_locales=('es','fr','it','pl','pt')
+  mirror_sources={loc+'/travel.html' for loc in mirror_locales}
+  mirror_fam=a['pages']['travel-travel-master-equivalence']['variants']
+  for loc in mirror_locales:
+   assert mirror_fam.get(loc,{}).get('proof',{}).get('type')=='travel-authored-mirror',loc
+  assert not any(page.get('sourcePath') in mirror_sources for page in a['pages'].values())
   for key in SCOPED_KEYS:del a['pages'][key]
   synthetic_only=sorted(key for key,page in b['pages'].items() if page.get('sourcePath') in ar_travel_sources)
   assert len(synthetic_only)==4,synthetic_only
@@ -204,12 +223,21 @@ def compare_json(file,old,new):
    variants=b['pages'][key]['variants']
    assert list(variants)==['ar'] and variants['ar'].get('status')=='pending',key
    del b['pages'][key]
+  # The synthetic overlay omits that scoped family, so the 5 mirror twins
+  # remain synthetic-only pending rows; exclude with the same proof-class treatment.
+  mirror_only=sorted(key for key,page in b['pages'].items() if page.get('sourcePath') in mirror_sources)
+  assert len(mirror_only)==5,mirror_only
+  for key in mirror_only:
+   variants=b['pages'][key]['variants']
+   assert len(variants)==1 and list(variants.values())[0].get('status')=='pending',key
+   del b['pages'][key]
+  hits['manifest-travel-mirror']+=5
   hits['manifest-travel4-ar']+=4
   # 153 = 165 real families - 12 travel-scoped; the 5 authored AR-2 pages (#769:
   # rosary-intro, miracles hub, 3 stories) are production-only, absent from the
   # synthetic overlay on both sides. (165: eucharistic certification v2 folded 66
   # per-locale pending page rows into the 11 eucharistic families as variants.)
-  assert len(a['pages'])==len(b['pages'])==147
+  assert len(a['pages'])==len(b['pages'])==142
   assert b['aliases'].pop('zz')=='zz';assert b['languages'].pop()=='zz'
   extra={k:b['englishSources'].pop(k) for k in list(b['englishSources']) if k.startswith('/zz/')}
   assert len(extra)==19 and all(k=='/zz'+v.rstrip('/') for k,v in extra.items()),extra
@@ -237,6 +265,16 @@ def compare_json(file,old,new):
    assert ar_route not in a['englishSources'],(ar_route,'real englishSources carries ar travel twin')
    assert b['englishSources'].get(ar_route)==en_route,(ar_route,'synthetic englishSources ar travel twin not identity')
   for ar_route in ar4:del b['englishSources'][ar_route]
+  # Travel authored-mirror (A2), same REVERSED direction and proof class: the
+  # real manifest resolves the 5 mirror twins via their family variants, so
+  # their englishSources keys never appear on the real side; the synthetic
+  # overlay carries them via its pending rows. EXACTLY these 5 keys.
+  mir5={'/'+loc+'/travel':'/travel' for loc in mirror_locales}
+  for route,en_route in mir5.items():
+   assert route not in a['englishSources'],(route,'real englishSources carries travel mirror twin')
+   assert b['englishSources'].get(route)==en_route,(route,'synthetic englishSources mirror twin not identity')
+  for route in mir5:del b['englishSources'][route]
+  hits['manifest-travel-mirror-sources']+=5
   hits['manifest-travel4-ar-sources']+=4
   hits['manifest-sources']+=12;print('MANIFEST proof excluded in synthetic only 12; legacy overlays real; compared 224')
   print('MANIFEST englishSources scoped self-routes excluded',len(scoped_routes),json.dumps(sorted(scoped_routes)))
@@ -302,7 +340,7 @@ try:
   try:load_catalog(T);raise AssertionError('accepted missing '+key)
   except ValueError:pass
   file.write_text(json.dumps(old))
- with patch.object(tm,'compose_travel_clusters',side_effect=prepare_fixture_heads),patch.object(rt,'travel_manifest',side_effect=synthetic_travel),patch.object(ve,'validate_final_outputs',side_effect=observed_final):
+ with patch.object(tm,'compose_travel_clusters',side_effect=prepare_fixture_heads),patch.object(rt,'travel_manifest',side_effect=synthetic_travel),patch.object(ve,'validate_final_outputs',side_effect=observed_final),patch.object(ram,'travel_authored_mirror_manifest',side_effect=synthetic_authored_mirror):
   out=b.outputs(T)
  zz=[p for p in out if p.relative_to(T).parts[0]=='zz' and p.suffix=='.html'];assert len(zz)==19,zz;assert T/'zz/index.html' not in out;assert 'zz' not in json.loads(out[T/'locale-routes.js'].split(' = ')[1].rstrip(';\n'))['homes'];print('PARTIAL FULL OUTPUT PASS',len(out),len(zz));assert not any('/eucharistic' in str(p) for p in zz);assert {T/('zz'+v[0]+'.html') for v in PRAYER_FAMILIES.values()} <= set(zz)
 

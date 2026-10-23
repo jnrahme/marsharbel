@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "gateStatus": "pending-final-qa",
+ "reviewBasis": "AI review under owner waiver 2026-10-22 16:23 EDT; scripted structural parity + keyed-content audit; NOT native-validated",
+ "groups": {
+  "travel-authored-mirror": {
+   "evidenceSchema": "authored-mirror-v1",
+   "sourceRevision": "19845304893719bcdee5864fb31fd3c3e043e386",
+   "enRoute": "/travel",
+   "variants": {
+    "es": {
+     "file": "es/travel.html",
+     "path": "/es/travel",
+     "bodySha256": "080c06c3cba9a3ba0ab54dd86dfd790ca8903240cf60fdc1392d315978b03b15",
+     "fileSha256": "634858bb2398933ccc789a2eda8b8edcafdaffaba8bac5aca21b1ebeb11d111c",
+     "catalog": "locales/es/travel.json",
+     "catalogSha256": "88b88aa8f9eb2059e7163e919843e336bd820d4e2ffd20151e55df3eeb878d74"
+    },
+    "fr": {
+     "file": "fr/travel.html",
+     "path": "/fr/travel",
+     "bodySha256": "9693f5966ae64e8a96e5de249c47af6299644c88537fab640c86ddb4edd5439c",
+     "fileSha256": "59b1dc93e89a9af0b7ced3f2c492ef102c1235b56b4eb9b024edb6b40da5d2ad",
+     "catalog": "locales/fr/travel.json",
+     "catalogSha256": "1bc630c3c8e987ab61502c841ac89f0b23227b4d1e322ed041809397d78663fc"
+    },
+    "it": {
+     "file": "it/travel.html",
+     "path": "/it/travel",
+     "bodySha256": "4799dadcf9ef86b96532580630750e55d81cbf0522802bf93c13ca15da91e98f",
+     "fileSha256": "1b3c8bfe3752a1bb143afe464c6122eb78c6fdc905e320db308780f79fc7f632",
+     "catalog": "locales/it/travel.json",
+     "catalogSha256": "a78365daff34ae91105a4aaeffca63b9cdbcb76ccf780c48749ba6ed19b3eb9f"
+    },
+    "pl": {
+     "file": "pl/travel.html",
+     "path": "/pl/travel",
+     "bodySha256": "098772935d52a07b776be43e86ef4cd8306125f62cb0a17d302984db7699f6ec",
+     "fileSha256": "c8b48f058171366af18e8bc32e47416ad89e344d1ac7e01255e8379759bbd704",
+     "catalog": "locales/pl/travel.json",
+     "catalogSha256": "3f68f20ec9a591ac4aab6e5a586d69033f061c25fd70ca57ad6174240ffd019f"
+    },
+    "pt": {
+     "file": "pt/travel.html",
+     "path": "/pt/travel",
+     "bodySha256": "6447216196ce821d5f9f0e4c15f562b619fbb1e046d5ae503418ee3cc454fa3b",
+     "fileSha256": "cf20cdd209caba838801e63f4be3b61c01a5db5c90a45c4ddb7ea92abea5b4d6",
+     "catalog": "locales/pt/travel.json",
+     "catalogSha256": "f8ed9ca2929499414e0b15e4ea03fa6e8b66bc8aa8d1e3be0b25ef77c5ab0fb4"
+    }
+   },
+   "family": "travel-travel-master-equivalence"
+  }
+ }
+}

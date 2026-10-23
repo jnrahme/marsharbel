@@ -188,6 +188,8 @@ def control_outputs(root, texts, manifest, copy):
     manifest = prayer_manifest(root,texts,manifest)
     from i18n.ar2_equivalence import ar2_manifest
     manifest = ar2_manifest(root,texts,manifest)
+    from i18n.reviewed_travel_authored_mirror import travel_authored_mirror_manifest
+    manifest = travel_authored_mirror_manifest(root,texts,manifest)
     from i18n.reviewed_eucharistic import eucharistic_manifest
     manifest = eucharistic_manifest(root,texts,manifest)
     from i18n.reviewed_rosary_guide import rosary_guide_manifest
