@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 
-SHARD_K=""; SHARD_N=""; SKIP_I18N_TEST=""
+SHARD_K=""; SHARD_N=""; SKIP_I18N_TEST=""; LIST_ONLY=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --ci) export CI=1 ;;
@@ -11,6 +11,10 @@ while [[ $# -gt 0 ]]; do
     # CI only: i18n:test runs as its own parallel job (i18n-test in qa.yml).
     # Local/unsharded runs omit this flag and still run it exactly once.
     --skip-i18n-test) SKIP_I18N_TEST=1 ;;
+    # Inventory mode: print "index<TAB>command" for every step the SAME code
+    # path would run (or consume), then exit. Used by the shard-manifest
+    # completeness check; never executes a step. Honors --skip-i18n-test.
+    --list-steps) LIST_ONLY=1 ;;
     *) echo "unknown arg: $1" >&2; exit 2 ;;
   esac
   shift
@@ -19,14 +23,48 @@ done
 cd "${ROOT}"
 
 # --- sharding + timings (additive: with no flags this script behaves as before) ---
-# --shard K/N  run only the steps whose index % N == K (steps are numbered in file order)
-# Every step is numbered exactly once, so the shards together cover every step.
+# --shard K/N  run only the steps the checked-in duration manifest
+#   (scripts/qa/shard-manifest.tsv) assigns to shard K of N. Assignment is
+#   duration-weighted (LPT from measured step times); the completeness of the
+#   manifest against THIS script's runtime expansion is enforced by
+#   scripts/qa/test_shard_manifest.py (a qa-gates CI step). Missing manifest,
+#   unknown index, or N mismatch fails closed - a step is never silently dropped.
+# --list-steps  print every step index+command this invocation would run or
+#   consume, in order, without executing anything. Combined with --shard K/N it
+#   prints exactly the steps shard K would run (same manifest lookup, same
+#   fail-closed errors), which is how the completeness gate proves selection.
+# With no flags the script runs every step in file order, as before.
 STEP_INDEX=0
 QA_TIMES="$(mktemp)"
+SHARD_MANIFEST="scripts/qa/shard-manifest.tsv"
 qa_step() {
   local idx=${STEP_INDEX}
   STEP_INDEX=$((STEP_INDEX + 1))
-  if [[ -n "${SHARD_N}" && $((idx % SHARD_N)) -ne ${SHARD_K} ]]; then
+  local assigned=""
+  if [[ -n "${SHARD_N}" ]]; then
+    if [[ ! -f "${SHARD_MANIFEST}" ]]; then
+      echo "shard manifest ${SHARD_MANIFEST} missing; refusing to run a partial suite" >&2
+      exit 1
+    fi
+    assigned=$(awk -F'\t' -v i="${idx}" '$1 == i {print $2; found=1} END {if (!found) exit 1}' "${SHARD_MANIFEST}") || {
+      echo "step index ${idx} not in ${SHARD_MANIFEST}; regenerate it (scripts/qa/build_shard_manifest.py)" >&2
+      exit 1
+    }
+    local manifest_n
+    manifest_n=$(awk -F'\t' '{print $2}' "${SHARD_MANIFEST}" | sort -n | tail -1)
+    manifest_n=$((manifest_n + 1))
+    if [[ "${SHARD_N}" -ne "${manifest_n}" ]]; then
+      echo "shard count ${SHARD_N} does not match manifest (${manifest_n}); refusing partial run" >&2
+      exit 1
+    fi
+  fi
+  if [[ -n "${LIST_ONLY}" ]]; then
+    if [[ -z "${SHARD_N}" || "${assigned}" -eq "${SHARD_K}" ]]; then
+      printf '%s\t%s\n' "${idx}" "$*"
+    fi
+    return 0
+  fi
+  if [[ -n "${SHARD_N}" && "${assigned}" -ne "${SHARD_K}" ]]; then
     return 0
   fi
   local start end
@@ -36,6 +74,9 @@ qa_step() {
   printf '%s\t%s\n' "$((end - start))" "[$idx] $*" >> "${QA_TIMES}"
 }
 qa_report() {
+  if [[ -n "${LIST_ONLY}" ]]; then
+    return 0
+  fi
   echo "[qa] step timings (seconds, slowest first):"
   sort -rn "${QA_TIMES}" | sed 's/^/  /'
   if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then

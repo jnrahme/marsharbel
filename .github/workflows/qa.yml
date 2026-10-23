@@ -149,6 +149,9 @@ jobs:
       - name: Clean-checkout page build is in sync
         run: bash scripts/ci/timed.sh "Clean-checkout page build --check" node scripts/build-pages.mjs --check
 
+      - name: Shard manifest completeness
+        run: bash scripts/ci/timed.sh "Shard manifest completeness" python3 -m unittest discover -s scripts/qa -p 'test_shard_manifest.py'
+
       # Instrumentation: per-step elapsed seconds for this job (the qa-gates
       # 4m21s -> 12m57s spike was unattributable without these), retrievable
       # via the artifacts API. Additive; never blocks the job.
