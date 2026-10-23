@@ -1,0 +1,21 @@
+# Longinus AR body draft v1 - fidelity map v1 vs EN master and source register
+(Oct 23 2026 ~7:10 AM ET. AR body draft v1 sha256 b911bbd2a4dd2a50d917200b306a532d5b51237ece19b4913129eb16bac785db.)
+EN source: longinus-story-data.js @ f877e19a37f7efa1e5fc34c0792c200a1bbc5138, file sha256 d98f269ff4ba685ae33af6b4ed4958971232147f05ceb6c9f8a91f423c1ced24. EN doctrine: APPROVED (Main, Oct 22).
+Method [I]: sentence-level Arabic translation (MSA, child read-aloud register, ages 6-12), per-page check against the EN text and its evidence register (USCCB Mark 15, USCCB John 19, 2026 Eparchial Desk Calendar). AR is original indirect retelling like the EN: NO direct Bible quotation. The centurion's declaration stays INDIRECT in AR ("قال إنّ يسوع كان حقًّا ابنَ الله"), mirroring the EN's indirect "He said that Jesus truly was the Son of God" - not the Gospel's direct wording.
+
+P1 (soldier near Jerusalem) - AR: قائد مئة for centurion (standard Arabic Gospel term); أورشليم (site convention, NOT القدس, matching the EN's "Jerusalem" in a Gospel-narrative register; note site convention uses القدس for the city in Isaiah - flagged OPEN-1). Scripture/tradition distinction preserved verbatim: "إنجيل مرقس لا يخبرنا باسمه" + "التقليد المسيحيّ يتذكّر... باسم القدّيس لونجينوس" + "بعض التقاليد يربطه بهذا الضابط". Fidelity: full.
+P2 (man on the cross) - الجلجثة for Golgotha; crucifixion described as عقوبة رومانيّة قاسية with the EN's deliberate non-graphic framing preserved ("لا نحتاج أن نتصوّر تفاصيلها المؤلمة"). Fidelity: full.
+P3 (people who stayed) - مريم المجدليّة، مريم أخرى، سالومة; "from a distance" = من بعيد; women's care preserved without embellishment. Fidelity: full.
+P4 (darkness) - noon/third hour kept; Psalm-cry reference kept indirect ("كلماتُه من صلاةٍ في سفر المزامير") with the EN's no-quotation rule; application sentences (bring questions to God / to someone who cares) preserved as application. Fidelity: full.
+P5 (voice at the cross) - حجاب الهيكل; "انشقّ من فوق إلى أسفل"; "أسلم يسوع روحَه" for "breathed his last" (standard Arabic Gospel phrasing); declaration INDIRECT per above; timing point preserved ("جاء بعد أن مات يسوع"). Fidelity: full.
+P6 (the name) - the two-threads distinction carried exactly: unnamed in Mark; John's spear account also unnamed; tradition names the spear soldier Longinus; some traditions identify him with the centurion. "علينا أن نُبقي هذين الخيطين واضحَين". Fidelity: full. This page is the book's core faith-accuracy claim.
+P7 (care after the cross) - يوسف الرامي (standard Arabic for Joseph of Arimathea); بيلاطس; the centurion's role in Pilate's confirmation preserved (Mark 15:44-45); قبر منحوت في الصخر. Fidelity: full.
+P8 (a story Christians keep) - التقويم المارونيّ يُعيّد له في السادس عشر من تشرين الأوّل (Maronite calendar, October 16 - matches the Eparchial Desk Calendar source); no martyrdom narrative invented (deliberate: sources in the EN register do not document his later life); intercession phrasing "يطلبون أن يصلّي من أجلهم". Fidelity: full.
+P9 (look again) - theological applications preserved one-for-one: no pretending suffering is good; faith with questions; the invitation to look again. Fidelity: full.
+P10 (reflection) - references rendered "مرقس 15: 33-39" and "يوحنا 19: 31-37" with Western digits and Arabic book names (Arabic Bible citation convention, differs from the Isaiah pilot's spelled-out style - flagged OPEN-2); trusted-grown-up safety shape preserved verbatim; closing prayer is original editorial text incl. "يا قدّيس لونجينوس، صلِّ لأجلنا. آمين." Fidelity: full.
+
+OPEN ITEMS for the independent reviewer (none resolved by me):
+OPEN-1: أورشليم (Gospel-narrative register, this book) vs القدس (Isaiah pilot + site convention) - cross-book consistency ruling.
+OPEN-2: Scripture citations with Western digits ("مرقس 15: 33-39") vs the Isaiah pilot's spelled-out Arabic words - one convention should win across books.
+OPEN-3: لونجينوس transliteration (vs لُنْجِين in some Arabic Christian sources) - the EN's "Longinus" mapped to the common Arabic form; reviewer to confirm the Maronite convention.
+OPEN-4: Assembled-book RTL render test pending (shared reader RTL already tested per RTL-RENDER-TEST-G3-20261023.md on the Isaiah branch; Isaiah/Longinus assemblies themselves untested).
