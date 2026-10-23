@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "charbel-film-premiere.html",
-  "masterSha256": "fee783a43097ae5e0b91f579147d590efc6ed6244a223f61440aeadb7c663a82",
+  "masterSha256": "43c2b7196755734aa508d5d20322c0dd0ab02c753a7abc681ad19876c37395d7",
   "sourceRevision": "888b9431",
   "bindings": [
     {
@@ -19,11 +19,25 @@
       "nodeIndex": 0
     },
     {
-      "key": "premiere.body",
+      "key": "premiere.bodyLead",
       "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(1)",
-      "source": "Charbel, the new feature film about Saint Charbel, held its special premiere on October 9 at BlackBox in Beirut Media Zone, according to Nidaa al-Watan's October 10 report. The film is a joint NMPRO and MTV production, directed by Nadim Mehanna and written by Claudia Marshalian, with Jerry Ghazal playing the young Charbel and Father Roukoz El Hajj portraying him later in life. Cinemacity lists a runtime of 130 minutes.",
+      "source": "Charbel, the new feature film about",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "premiere.saintName",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(1) a[href=\"/\"]",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.bodyRest",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(1)",
+      "source": ", held its special premiere on October 9 at BlackBox in Beirut Media Zone, according to Nidaa al-Watan's October 10 report. The film is a joint NMPRO and MTV production, directed by Nadim Mehanna and written by Claudia Marshalian, with Jerry Ghazal playing the young Charbel and Father Roukoz El Hajj portraying him later in life. Cinemacity lists a runtime of 130 minutes.",
+      "kind": "text",
+      "nodeIndex": 2
     },
     {
       "key": "premiere.release",
@@ -132,7 +146,6 @@
     }
   ],
   "messages": [
-    "premiere.body",
     "premiere.charitySource",
     "premiere.cinemaSource",
     "premiere.coverageLink",
@@ -147,6 +160,9 @@
     "premiere.title",
     "premiere.videoCaption",
     "premiere.videoLink",
-    "premiere.videoTitle"
+    "premiere.videoTitle",
+    "premiere.bodyLead",
+    "premiere.saintName",
+    "premiere.bodyRest"
   ]
 }
