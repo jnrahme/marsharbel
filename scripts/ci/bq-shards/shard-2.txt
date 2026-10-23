@@ -820,3 +820,11 @@
 [wide-desktop] › travel-routing.spec.js › /qannoubine-monastery has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › travel-routing.spec.js › /saint-charbel-pilgrimage has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › video-playback.spec.js › all 23 videos keep static original and relevant reading links without JavaScript
+[laptop] › international.spec.js › /es/novena generated fallback disclosure works without JavaScript
+[laptop] › international.spec.js › /saint-charbel-novena hides the fallback only after the enhanced select is ready
+[laptop] › international.spec.js › fallback handoff layout shift measured (fast)
+[phone] › international.spec.js › /saint-charbel-novena generated fallback disclosure works without JavaScript
+[phone] › international.spec.js › fallback handoff layout shift measured (fast)
+[small-phone] › international.spec.js › /saint-charbel-novena keeps the disclosure when the switcher script fails
+[tablet] › international.spec.js › /es/novena keeps the disclosure when the switcher script fails
+[wide-desktop] › international.spec.js › /es/novena hides the fallback only after the enhanced select is ready

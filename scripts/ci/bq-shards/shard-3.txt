@@ -820,3 +820,11 @@
 [wide-desktop] › travel-routing.spec.js › /annaya-tour has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › travel-routing.spec.js › /en/annaya-tour redirects to its canonical root page
 [wide-desktop] › travel-routing.spec.js › /saint-charbel-trail has a real body, working resources, full-page accessibility and route landmarks
+[laptop] › international.spec.js › /es/novena hides the fallback only after the enhanced select is ready
+[laptop] › international.spec.js › /saint-charbel-novena keeps the disclosure when the switcher script fails
+[phone] › international.spec.js › /es/novena generated fallback disclosure works without JavaScript
+[phone] › international.spec.js › /saint-charbel-novena hides the fallback only after the enhanced select is ready
+[small-phone] › international.spec.js › /es/novena generated fallback disclosure works without JavaScript
+[small-phone] › international.spec.js › fallback handoff layout shift measured (delayed-switcher)
+[tablet] › international.spec.js › /saint-charbel-novena generated fallback disclosure works without JavaScript
+[wide-desktop] › international.spec.js › /es/novena keeps the disclosure when the switcher script fails

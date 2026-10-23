@@ -820,3 +820,11 @@
 [wide-desktop] › travel-routing.spec.js › /en/saint-charbel-trail redirects to its canonical root page
 [wide-desktop] › travel-routing.spec.js › /en/travel redirects to its canonical root page
 [wide-desktop] › travel-routing.spec.js › /es/monasterio-qannoubine has a real body, working resources, full-page accessibility and route landmarks
+[laptop] › international.spec.js › /es/novena keeps the disclosure when the switcher script fails
+[laptop] › international.spec.js › fallback handoff layout shift measured (delayed-switcher)
+[phone] › international.spec.js › /es/novena hides the fallback only after the enhanced select is ready
+[phone] › international.spec.js › /saint-charbel-novena keeps the disclosure when the switcher script fails
+[small-phone] › international.spec.js › /es/novena hides the fallback only after the enhanced select is ready
+[small-phone] › international.spec.js › fallback handoff layout shift measured (failed-switcher)
+[tablet] › international.spec.js › /saint-charbel-novena hides the fallback only after the enhanced select is ready
+[wide-desktop] › international.spec.js › /saint-charbel-novena generated fallback disclosure works without JavaScript
