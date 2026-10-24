@@ -1,0 +1,161 @@
+{
+  "units": [
+    {
+      "key": "ar-nicene_creed-01",
+      "kind": "creed_chunk_1",
+      "text": "نؤمن بإله واحد، آب ضابط الكلّ، خالق السماء والأرض، كلّ ما يُرى وما لا يُرى.",
+      "text_sha256": "44f497afecba619513c29c6700ffa6cc6e96920ee0f7a40c0befbd935c508e77",
+      "source_binding": "canonical_chunk_recovered_verbatim_from_studio_manifest (Oct 23 09:21:33 dump record)",
+      "flags": [
+        "CANONICAL: hash reproduces 44f497af... - use for identity comparison"
+      ],
+      "audio_filename": "ar-nicene_creed-01.wav",
+      "audio_sha256": "63b337030e44178f3a0598a95343ec8cd1d0e34d00c0cdf6a6911b1753ab52bc"
+    },
+    {
+      "key": "ar-nicene_creed-02-corrected",
+      "kind": "creed_chunk_2",
+      "text": "وبربٍّ واحد يسوع المسيح، ابن الله الوحيد، المولود من الآب قبل كلّ الدهور، إله من إله، نور من نور، إله حقّ من إله حقّ، مولود غير مخلوق، مساوٍ للآب في الجوهر، الذي به كان كلّ شيء.",
+      "text_sha256": "8dc552d434c95f8383fdd67871789c11a3d16f035c73b1d9e1503cd727d7117d",
+      "source_binding": "canonical_corrected_per_Oct_23_ruling; correction direction witnessed live by peregabriel Maronite mass page (الذي به كان كل شيء, no قبل)",
+      "flags": [
+        "canonical hash 8dc552d4... reproduces; الوحيد confirmed by Seminary + peregabriel witnesses (ear question on published Oct 20 audio remains studio-side)"
+      ],
+      "audio_filename": "ar-nicene_creed-02-corrected.wav",
+      "audio_sha256": "eac90339abf6cd1d4753b9dbdd12a1fddc9cec2a031ac6fb052924266419ff5f"
+    },
+    {
+      "key": "ar-nicene_creed-03-candidate",
+      "kind": "creed_chunk_3",
+      "text": "الذي من أجلنا نحن البشر، ومن أجل خلاصنا، نزل من السماء، وتجسّد من الروح القدس، ومن مريم العذراء، وصار إنساناً.",
+      "text_sha256": "60de7a069c92feb640c3cb999365f50f66a86db55e71ae68e69c5de2ce4ff338",
+      "source_binding": "seminary_verbatim",
+      "flags": [
+        "FRESH candidate - canonical creed chunks beyond 01/02 unrecovered with the 53-key file; sentence-style chunking mirrors canonical 01/02 pattern"
+      ],
+      "audio_filename": "ar-nicene_creed-03-candidate.wav",
+      "audio_sha256": "3ee42dbe243c3b4b8cb0124030128045eb951ccb1d4a6a753e998bbfce7dd970"
+    },
+    {
+      "key": "ar-nicene_creed-04-candidate",
+      "kind": "creed_chunk_4",
+      "text": "وصُلب عنّا على عهد بيلاطس البنطي، تألّم ومات وقُبر وقام في اليوم الثالث، كما جاء في الكتب.",
+      "text_sha256": "365c16bf56b3f224a098150f5962ec625f8bbaead6fe7247dc7ff3b1fe262615",
+      "source_binding": "seminary_verbatim",
+      "flags": [
+        "FRESH candidate"
+      ],
+      "audio_filename": "ar-nicene_creed-04-candidate.wav",
+      "audio_sha256": "7f7321623279f8f1fd0320a3634bc77409e3ec419349a27e4f131230c23ae453"
+    },
+    {
+      "key": "ar-nicene_creed-05-candidate",
+      "kind": "creed_chunk_5",
+      "text": "وصعد إلى السماء، وجلس عن يمين الله الآب، وأيضاً سيأتي بمجدٍ عظيم، ليدين الأحياء والأموات، الذي لا فناء لملكه.",
+      "text_sha256": "b868af37d41d7daaf174a2e347a827c162d996d16723ea84e9f6d7a8a9a4decb",
+      "source_binding": "seminary_verbatim",
+      "flags": [
+        "FRESH candidate"
+      ],
+      "audio_filename": "ar-nicene_creed-05-candidate.wav",
+      "audio_sha256": "5ef731c6d76155cc86929f3673ffbf0d9c019c961d43314a2f400379ea2e078f"
+    },
+    {
+      "key": "ar-nicene_creed-06-candidate",
+      "kind": "creed_chunk_6",
+      "text": "ونؤمن بالروح القدس، الربّ المحيي، المنبثق من الآب والأبن، الذي هو مع الآب والأبن، يُسجد له ويُمجّد، الناطق بالأنبياء والرسل، وبكنيسة واحدة، جامعة، مقدّسة، رسوليّة.",
+      "text_sha256": "a9a5f5407db2cfd2d196e077179bc2c355e67c33d1018b7ccbd0d0b5415f41e8",
+      "source_binding": "seminary_verbatim",
+      "flags": [
+        "FRESH candidate"
+      ],
+      "audio_filename": "ar-nicene_creed-06-candidate.wav",
+      "audio_sha256": "6b1ecb9af52a30b9bf37e9d1fecbd064cd7bfef508d2f1fc41eea42e2e2e6601"
+    },
+    {
+      "key": "ar-nicene_creed-07-candidate",
+      "kind": "creed_chunk_7",
+      "text": "ونعترف بمعموديّة واحدة، لمغفرة الخطايا، ونترجّى قيامة الموتى والحياة في الدهر الآتي، آمين.",
+      "text_sha256": "9939e3aa85034262722a09abf94b33917d4a34b191959304844c4be1bfab5831",
+      "source_binding": "seminary_verbatim",
+      "flags": [
+        "FRESH candidate"
+      ],
+      "audio_filename": "ar-nicene_creed-07-candidate.wav",
+      "audio_sha256": "0ff3c92e3d6d6a278cf4379e6dda9941d1a8b2905398387f2892867ed0f032a3"
+    },
+    {
+      "key": "ar-glory_be",
+      "kind": "glory_be",
+      "text": "المجد للآب والأبن والروح القدس، كما كان في البدء والآن وعلى الدوام وإلى دهر الداهرين، آمين.",
+      "source_binding": "seminary_verbatim",
+      "flags": [],
+      "text_sha256": "4b6327695e38451383be64943fde965a40f3ee4a85750d718062426006151276",
+      "audio_filename": "ar-glory_be.wav",
+      "audio_sha256": "6e1beaba19829a837f6d4a9c94122816373f614114316f7a46e982b740ef9ab0"
+    },
+    {
+      "key": "ar-hail_mary",
+      "kind": "hail_mary",
+      "text": "السلام عليكِ يا مريم، يا ممتلئة نعمة، الربّ معكِ، مباركة أنتِ في النساء، ومباركة ثمرة بطنك سيّدنا يسوع المسيح. يا قدّيسة مريم يا والدة الله، صلّي لأجلنا نحن الخطأة، الآن وفي ساعة موتنا، آمين.",
+      "source_binding": "seminary_content_match_normalized_owner_selected_video1_form",
+      "flags": [
+        "matches owner-selected video-1 form ومباركة ثمرة بطنك سيّدنا يسوع المسيح; period added before يا قدّيسة (Seminary runs on); orthography variants exist (سيّدنا/سيدنا, feminine endings) - confirm byte form against published AR audio",
+        "period before يا قدّيسة added by content desk (Seminary runs the clauses on) - disclosed normalization, NOT byte-verbatim"
+      ],
+      "text_sha256": "d7e2400228cd62f18cd0decdba39bf058e651c0b009f088447dfc6901d3e85b0",
+      "audio_filename": "ar-hail_mary.wav",
+      "audio_sha256": "0aeff5d07309e1cb6d5539d00370455d36b2b3db217854e5a87f68778532fc1f"
+    },
+    {
+      "key": "ar-intention-faith",
+      "kind": "intention",
+      "text": "لأجل نموّ الإيمان.",
+      "text_sha256": "999b5ea0632a3c46437cb7a1ceda9ea5e7999ab7d451cc7596e08e429fbe3df3",
+      "source_binding": "prior_chain_wording + en_mirror (EN: For an increase in faith.)",
+      "flags": [
+        "prior actual wording evidence (AR donor audit); authored devotional intention, not a canonical prayer; same sanctioned EN-mirror basis as the meditations"
+      ],
+      "audio_filename": "ar-intention-faith.wav",
+      "audio_sha256": "26b8516e3f167512df1b13f33752e1d846a867826f1d26a1f10fe116f9927115"
+    },
+    {
+      "key": "ar-intention-hope",
+      "kind": "intention",
+      "text": "لأجل نموّ الرجاء.",
+      "text_sha256": "7dde1b7767d28916afeaf5b2cd973b51628fdf0adc4656aa11cce3ca364f62c4",
+      "source_binding": "prior_chain_wording + en_mirror (EN: For an increase in hope.)",
+      "flags": [
+        "same basis"
+      ],
+      "audio_filename": "ar-intention-hope.wav",
+      "audio_sha256": "b8f6adcda59fa3f939639649ad2abf8b77cf612b3919c6afd1f2f4d347edf53b"
+    },
+    {
+      "key": "ar-intention-charity",
+      "kind": "intention",
+      "text": "لأجل نموّ المحبة.",
+      "text_sha256": "dec27f0a1a0250f13b1d4b2d3a7cbf3d759bae53c1942ad3c621eebe6b5bcb14",
+      "source_binding": "prior_chain_wording + en_mirror (EN: For an increase in charity.)",
+      "flags": [
+        "same basis"
+      ],
+      "audio_filename": "ar-intention-charity.wav",
+      "audio_sha256": "2b081107e041eec1634ddeec3fc4c57bae9fc69d841fbd9ecda0c5f41c1e151b"
+    },
+    {
+      "key": "ar-fatima",
+      "kind": "fatima",
+      "text": "يا يسوع الحبيب، إغفر لنا خطايانا، نجّنا من نار جهنم، وخذ إلى السماء جميع النفوس، خصوصاً تلك التي بأكثر حاجة إلى رحمتك، آمين.",
+      "source_binding": "seminary_verbatim",
+      "flags": [
+        "Seminary page also carries a والمطهر variant in some decade instances (5 occurrences, non-glorious sections); one canonical form must be chosen - studio published-audio recovery decides"
+      ],
+      "text_sha256": "5b14ee1f6229b1c6872e5254886aab4e422b734b146af5f62583fadb18a7c755",
+      "audio_filename": "ar-fatima.wav",
+      "audio_sha256": "f2c27d324e123b26131f4e6b00996d23c13f65a07db6fba77236e6ccc83cdbb6"
+    }
+  ],
+  "status": "generated audio unverified; no release clearance",
+  "voice": "Achird"
+}
