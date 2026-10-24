@@ -3,13 +3,23 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
+from i18n.keyed_master import strip_static_fallback_text as _sf, strip_static_fallback as _sfb
 from i18n.litany_mirror import render_litany
+from i18n.encyclopedia_nav import MARKING_LOCALES,route_nav_hrefs,mark_english_nav_hrefs,strip_legacy_partial_nav_marks
+def mark_nav(t,lang):
+    return mark_english_nav_hrefs(route_nav_hrefs(strip_legacy_partial_nav_marks(t,ROOT,lang),ROOT,lang),ROOT,lang) if lang in MARKING_LOCALES else t
 from i18n.tour_nav import tour_nav
+from i18n.travel_components import travel_frame
+from i18n.runtime_labels import ensure_runtime_labels
+from i18n.catalog import read_json
+from i18n.same_page_injection import inject_control
+from i18n.catalog import read_json as _read_json_fc
+def fc(t):return inject_control(t,ROOT,_read_json_fc(ROOT/'locales/same-page-manifest.pending.json'),_read_json_fc(ROOT/'locales/same-page-copy.json'))
 class LitanyMirrorTests(unittest.TestCase):
     def test_structure_prayer_and_schema(self):
         en=BeautifulSoup((ROOT/'litany-of-saint-charbel.html').read_text(),'html.parser')
         ar=BeautifulSoup(render_litany(ROOT)[ROOT/'ar/litany-of-saint-charbel.html'],'html.parser')
-        self.assertEqual(tour_nav(render_litany(ROOT)[ROOT/'ar/litany-of-saint-charbel.html'],ROOT,'ar'),(ROOT/'ar/litany-of-saint-charbel.html').read_text())
+        self.assertEqual(fc(ensure_runtime_labels(mark_nav(travel_frame(tour_nav(render_litany(ROOT)[ROOT/'ar/litany-of-saint-charbel.html'],ROOT,'ar'),ROOT,'ar','/ar/litany-of-saint-charbel',read_json(ROOT/'locales/registry.json')),'ar'),ROOT,'ar',read_json(ROOT/'locales/registry.json'))),_sf((ROOT/'ar/litany-of-saint-charbel.html').read_text()))
         self.assertEqual([n.name for n in en.select('main *')],[n.name for n in ar.select('main *')])
         self.assertEqual(len(ar.select('main > section')),8)
         invocations=ar.select('#the-litany .story p')[1]

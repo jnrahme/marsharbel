@@ -1,9 +1,19 @@
-(() => {
+(async () => {
   'use strict';
 
   const section = document.getElementById('monthly-prayer');
   if (!section) return;
 
+  const config = document.getElementById('sc-home-labels');
+  const labels = config ? JSON.parse(config.textContent) : await fetch('/locales/en/home-copy.json').then(response => {
+    if (!response.ok) throw new Error('HOME_CATALOG_UNAVAILABLE');
+    return response.json();
+  });
+  const message = key => {
+    const value = labels['home.runtime.monthly.' + key];
+    if (typeof value !== 'string') throw new Error('HOME_MESSAGE_MISSING:' + key);
+    return value;
+  };
   const guide = section.querySelector('details');
   const status = section.querySelector('[data-prayer-status]');
   const timing = section.querySelector('[data-prayer-timing]');
@@ -21,16 +31,16 @@
     const active = day === 21 || day === 22;
     section.classList.toggle('is-prayer-day', active);
     guide.open = active;
-    status.textContent = active ? 'We are united in prayer today' : 'Our monthly invitation';
+    status.textContent = active ? message('active') : message('invitation');
 
     if (active) {
       timing.textContent = day === 21
-        ? 'Today, we prepare our hearts. Tomorrow, we gather in prayer.'
-        : 'Today is our monthly day of prayer. Bring your heart to Christ.';
+        ? message('prepare')
+        : message('today');
     } else {
       const nextGathering = new Date(now.getFullYear(), now.getMonth() + (day > 22 ? 1 : 0), 21);
-      const month = new Intl.DateTimeFormat(document.documentElement.lang || 'en', { month: 'long' }).format(nextGathering);
-      timing.textContent = `Our next gathering: ${month} 21 & 22. Begin preparing in prayer today.`;
+      const month = new Intl.DateTimeFormat(document.documentElement.lang || 'en', { day: 'numeric', month: 'long' }).formatToParts(nextGathering).find(part => part.type === 'month').value;
+      timing.textContent = message('next').replace('{month}', month);
     }
   }
 

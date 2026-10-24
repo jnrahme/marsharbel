@@ -1,0 +1,12 @@
+(function () {
+  if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
+  var tag = document.createElement('script');
+  tag.async = true;
+  tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
+  document.head.appendChild(tag);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  if (window.__MARSHARBEL_QA__) window.gtag('set', { traffic_type: 'internal' });
+  window.gtag('config', 'G-CJX1M0VFKP');
+})();

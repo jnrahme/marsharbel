@@ -9,13 +9,32 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
+    return raw === 'augustine' ? 'augustine' : raw === 'marina' ? 'marina' : raw === 'maroun' ? 'maroun' : raw === 'sergius' ? 'sergius' : raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
   };
   const storyId = getStoryId();
 
   const selectedLang = getLangCode();
   const contentLang = selectedLang === 'ar' ? 'ar' : selectedLang === 'fr' ? 'fr' : 'en';
   const isRtl = contentLang === 'ar';
+
+  // The Settings control may share the shelf-link row (see storybook-stage.css) only when the
+  // row truly fits both controls. Measure the effective width in root-em units so text zoom
+  // (which grows both controls) closes the window and the static stacked fallback keeps them
+  // collision-free at any zoom level.
+  const settingsRowFit = () => {
+    const rootEm = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    // Never lift Settings while the resume banner owns the shelf row: the absolutely
+    // positioned control would land on the banner's Resume button (CI: peter-story at 390).
+    const banner = document.getElementById('story-resume-banner');
+    const resumeShown = banner && !banner.hidden;
+    document.body.classList.toggle('st-settings-row', !resumeShown && window.innerWidth >= 20 * rootEm && window.innerWidth <= 820);
+  };
+  settingsRowFit();
+  window.addEventListener('resize', settingsRowFit);
+  // Re-check when the root font size can change without a resize: injected style rules
+  // (accessibility tooling, tests) or runtime html style/class changes.
+  new MutationObserver(settingsRowFit).observe(document.documentElement, { attributes: true, attributeFilter: ['style', 'class'] });
+  if (document.head) new MutationObserver(settingsRowFit).observe(document.head, { childList: true, subtree: true });
 
   const COPY = {
     en: {
@@ -57,6 +76,18 @@
   };
 
   const EVIDENCE_SOURCES = {
+    sergiusPsalm133: {label: "USCCB: Psalm 133", url: "https://bible.usccb.org/bible/psalms/133"},
+    sergiusPassion: {label: "The Passion of Saints Serge and Bacchus (English translation)", url: "http://www.geocities.ws/mervatiskandercoptic/Synex/01/78Serge_Bacchus.htm"},
+    sergiusCE: {label: "Catholic Encyclopedia: Sergius and Bacchus", url: "https://www.newadvent.org/cathen/13728a.htm"},
+    marounTheodoret: {label: "Theodoret of Cyrrhus, Religious History 16 (translation by Fr Yuhanna Azize)", url: "https://www.fryuhanna.com/2026/01/28/maronite-history-st-theodoret-on-st-maroun/"},
+    marounChrysostom: {label: "John Chrysostom, Letter 36 to Maron (Roman Letters)", url: "https://romanletters.org/letters/chrysostom/36/"},
+    augBenedict: {label: "Benedict XVI, general audience on Saint Augustine, 9 January 2008", url: "http://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html"},
+    augConfessions: {label: "Augustine, Confessions, books 2 and 8 (translation at New Advent)", url: "https://www.newadvent.org/fathers/110108.htm"},
+    augJeremiah: {label: "Douay-Rheims: Jeremias (Jeremiah) 29:13", url: "https://drbo.org/drl/chapter/28029.htm"},
+    marinaMari: {label: "Marina the Monk (Maronite Research Institute, Journal of Maronite Studies, July 2000)", url: "http://www.maronite-institute.org/MARI/JMS/july00/Saint_Marina_The_Monk.htm"},
+    marinaWikipedia: {label: "Marina the Monk (Wikipedia)", url: "https://en.wikipedia.org/wiki/Marina_the_Monk"},
+    marinaSamuel: {label: "Douay-Rheims: 1 Kings (1 Samuel) 16:7", url: "https://www.drbo.org/chapter/09016.htm"},
+    marounPsalm92: {label: "USCCB: Psalm 92", url: "https://bible.usccb.org/bible/psalms/92"},
     magdaleneJohn19: {"label": "USCCB: John 19, Mary beside the cross", "url": "https://bible.usccb.org/bible/john/19"},
     magdaleneMatthew27: {"label": "USCCB: Matthew 27, burial and stone", "url": "https://bible.usccb.org/bible/matthew/27"},
     magdaleneVaticanNews: {"label": "Vatican News: Mary Magdalene, disciple of the Lord", "url": "https://www.vaticannews.va/en/saints/07/22/st--mary-magdalene--disciple-of-the-lord-.html"},
@@ -91,6 +122,7 @@
     hardiniSchool: { label: 'Holy See (Nimatullah beatification profile, 1998, Portuguese)', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19980510_kassab_po.html' },
     hardiniHomily: { label: 'Holy See (John Paul II canonization homily, 2004)', url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2004/documents/hf_jp-ii_hom_20040516_canonizations.html' },
     rafqaVatican: { label: 'Holy See (Saint Rafqa biography, 2001)', url: 'https://www.vatican.va/news_services/liturgy/documents/ns_lit_doc_20010610_rafqa-choboq_en.html' },
+    rafqaMatthew25: { label: 'USCCB: Matthew 25', url: 'https://bible.usccb.org/bible/matthew/25' },
     rafqaConvent: { label: 'Saint Rafqa Monastery (history of Jrabta)', url: 'https://www.rafqa.com/Convent-Saint-Rafqa' },
     rafqaCanonization: { label: 'Holy See (canonization homily, 2001)', url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2001/documents/hf_jp-ii_hom_20010610_canonizzazione.html' },
     teresaVatican: {
@@ -880,6 +912,10 @@
     rafqa: { en: window.RAFQA_STORY_EN || [] },
     'charbel-v2': { en: window.CHARBEL_V2_STORY_EN || [] },
     magdalene: { en: window.MAGDALENE_STORY_EN || [] },
+    sergius: { en: window.SERGIUS_STORY_EN || [] },
+    maroun: { en: window.MAROUN_STORY_EN || [] },
+    marina: { en: window.MARINA_STORY_EN || [] },
+    augustine: { en: window.AUGUSTINE_STORY_EN || [] },
     jude: { en: window.JUDE_STORY_EN || [] },
     peter: { en: window.PETER_STORY_EN || [] },
     hardini: { en: window.HARDINI_STORY_EN || [] }
@@ -942,6 +978,10 @@
       { id: 'kokoro-hardini', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-hardini/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ] },
+  augustine: { en: [{ id: "directed-augustine", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-augustine/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  marina: { en: [{ id: "directed-marina", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-marina/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  maroun: { en: [{ id: "directed-maroun", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-maroun/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  sergius: { en: [{ id: "directed-sergius", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-sergius-bacchus/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   magdalene: { en: [{ id: "directed-magdalene", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-magdalene/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   jude: { en: [{ id: "directed-jude", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-jude/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   peter: { en: [{ id: 'kokoro-peter', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-peter/en-directed-r1' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
@@ -1256,7 +1296,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'magdalene' ? 'directed-magdalene' : storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : storyId === 'charbel-v2' ? 'kokoro-charbel-v2' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'augustine' ? 'directed-augustine' : storyId === 'marina' ? 'directed-marina' : storyId === 'maroun' ? 'directed-maroun' : storyId === 'sergius' ? 'directed-sergius' : storyId === 'magdalene' ? 'directed-magdalene' : storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : storyId === 'charbel-v2' ? 'kokoro-charbel-v2' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
@@ -1345,15 +1385,21 @@
     }
   };
 
-  const animatePageTurn = () => {
-    if (window.matchMedia(['(prefers-reduced-motion:', 'reduce)'].join(' ')).matches) return;
-    el.panel.classList.remove('is-turning');
-    window.requestAnimationFrame(() => {
-      el.panel.classList.add('is-turning');
-    });
+  let pageTurnAnimation = null;
+  let lastRenderedIndex = 0;
+  const animatePageTurn = direction => {
+    pageTurnAnimation?.cancel();
+    const art = el.art.querySelector('.scene-art');
+    if (!art || !direction || window.matchMedia(['(prefers-reduced-motion:', 'reduce)'].join(' ')).matches) return;
+    // One bounded hinge explains the new page. Never move the art during reading.
+    art.style.transformOrigin = [direction > 0 ? 'left' : 'right', 'center'].join(' ');
+    pageTurnAnimation = art.animate([
+      { transform: `rotateY(${direction > 0 ? -4 : 4}deg)`, opacity: .86 },
+      { transform: 'rotateY(0deg)', opacity: 1 }
+    ], { duration: 240, easing: 'cubic-bezier(.23, 1, .32, 1)' });
   };
 
-  const render = () => {
+  const render = (withMotion = true) => {
     const page = pages[index];
     const illustration = page.illustration || SCENE_IMAGES[page.scene] || './gallery/charbel-portrait.jpg';
     const stepText = `${UI.pagePrefix} ${index + 1} ${UI.pageConnector} ${pages.length}`;
@@ -1377,7 +1423,8 @@
     el.next.disabled = index === pages.length - 1;
     writeLastPage(index);
     syncAudioContext({ playing: false, paused: false, completed: false });
-    animatePageTurn();
+    animatePageTurn(withMotion ? Math.sign(index - lastRenderedIndex) : 0);
+    lastRenderedIndex = index;
   };
 
   const getClipUrl = page => {
@@ -1500,13 +1547,13 @@
     window.speechSynthesis.speak(utterance);
   };
 
-  const movePage = direction => {
+  const movePage = (direction, withMotion = true) => {
     const wasReading = reading;
     stopReading();
     const nextIndex = Math.max(0, Math.min(pages.length - 1, index + direction));
     if (nextIndex === index) return;
     index = nextIndex;
-    render();
+    render(withMotion);
     scrollToReader();
     if (wasReading) {
       syncAudioContext({ playing: true, paused: false, completed: false });
@@ -1541,10 +1588,10 @@
       return;
     }
     if (event.key === 'ArrowRight') {
-      movePage(isRtl ? -1 : 1);
+      movePage(isRtl ? -1 : 1, false);
     }
     if (event.key === 'ArrowLeft') {
-      movePage(isRtl ? 1 : -1);
+      movePage(isRtl ? 1 : -1, false);
     }
   });
 
@@ -1614,14 +1661,16 @@
       if (banner && bannerText && bannerBtn) {
         bannerText.textContent = `Continue from ${UI.pagePrefix} ${lastPage + 1}?`;
         banner.hidden = false;
+        settingsRowFit();
         bannerBtn.addEventListener('click', () => {
           index = lastPage;
           render();
           scrollToReader();
           banner.hidden = true;
+          settingsRowFit();
         });
         if (bannerDismiss) {
-          bannerDismiss.addEventListener('click', () => { banner.hidden = true; });
+          bannerDismiss.addEventListener('click', () => { banner.hidden = true; settingsRowFit(); });
         }
       }
     }

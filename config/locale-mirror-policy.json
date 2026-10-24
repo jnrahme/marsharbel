@@ -1,0 +1,3245 @@
+{
+  "version": 1,
+  "policy": "Explicit migration debt, never intentional exceptions. Strictness turns on per rebuilt family.",
+  "exceptions": {},
+  "pages": {
+    "ar/22nd-of-the-month.html": {
+      "locale": "ar",
+      "route": "/ar/22nd-of-the-month",
+      "master": "22nd-of-the-month.html",
+      "masterRoute": "/22nd-of-the-month",
+      "family": "twenty-second-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/all-saints.html": {
+      "locale": "ar",
+      "route": "/ar/all-saints",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ar/annaya.html": {
+      "locale": "ar",
+      "route": "/ar/annaya",
+      "master": "visit-annaya.html",
+      "masterRoute": "/visit-annaya",
+      "family": "annaya-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/biography.html": {
+      "locale": "ar",
+      "route": "/ar/biography",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/charbel-film-premiere.html": {
+      "locale": "ar",
+      "route": "/ar/charbel-film-premiere",
+      "master": "charbel-film-premiere.html",
+      "masterRoute": "/charbel-film-premiere",
+      "family": "film-premiere-master",
+      "status": "extracted-feature"
+    },
+    "ar/feast-day.html": {
+      "locale": "ar",
+      "route": "/ar/feast-day",
+      "master": "saint-charbel-feast-day.html",
+      "masterRoute": "/saint-charbel-feast-day",
+      "family": "saint-charbel-feast-day",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/help-me-pray.html": {
+      "locale": "ar",
+      "route": "/ar/help-me-pray",
+      "master": "help-me-pray.html",
+      "masterRoute": "/help-me-pray",
+      "family": "help-me-pray-master",
+      "status": "strict"
+    },
+    "ar/index.html": {
+      "locale": "ar",
+      "route": "/ar/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure",
+        "home-intro-twin-link"
+      ],
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/litany-of-saint-charbel.html": {
+      "locale": "ar",
+      "route": "/ar/litany-of-saint-charbel",
+      "master": "litany-of-saint-charbel.html",
+      "masterRoute": "/litany-of-saint-charbel",
+      "family": "litany-of-saint-charbel",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/dafne-gutierrez.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/dafne-gutierrez",
+      "master": "miracles/dafne-gutierrez.html",
+      "masterRoute": "/miracles/dafne-gutierrez",
+      "family": "miracles-dafne-gutierrez",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/eucharistic/amsterdam.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/eucharistic/amsterdam",
+      "master": "miracles/eucharistic/amsterdam.html",
+      "masterRoute": "/miracles/eucharistic/amsterdam",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/eucharistic/bolsena-orvieto.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/eucharistic/bolsena-orvieto",
+      "master": "miracles/eucharistic/bolsena-orvieto.html",
+      "masterRoute": "/miracles/eucharistic/bolsena-orvieto",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/eucharistic/faverney.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/eucharistic/faverney",
+      "master": "miracles/eucharistic/faverney.html",
+      "masterRoute": "/miracles/eucharistic/faverney",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/eucharistic/index.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/eucharistic/",
+      "master": "miracles/eucharistic/index.html",
+      "masterRoute": "/miracles/eucharistic/",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/eucharistic/ivorra.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/eucharistic/ivorra",
+      "master": "miracles/eucharistic/ivorra.html",
+      "masterRoute": "/miracles/eucharistic/ivorra",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/eucharistic/lanciano.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/eucharistic/lanciano",
+      "master": "miracles/eucharistic/lanciano.html",
+      "masterRoute": "/miracles/eucharistic/lanciano",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/eucharistic/legnica.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/eucharistic/legnica",
+      "master": "miracles/eucharistic/legnica.html",
+      "masterRoute": "/miracles/eucharistic/legnica",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/eucharistic/ludbreg.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/eucharistic/ludbreg",
+      "master": "miracles/eucharistic/ludbreg.html",
+      "masterRoute": "/miracles/eucharistic/ludbreg",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/eucharistic/santarem.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/eucharistic/santarem",
+      "master": "miracles/eucharistic/santarem.html",
+      "masterRoute": "/miracles/eucharistic/santarem",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/eucharistic/siena.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/eucharistic/siena",
+      "master": "miracles/eucharistic/siena.html",
+      "masterRoute": "/miracles/eucharistic/siena",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/eucharistic/sokolka.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/eucharistic/sokolka",
+      "master": "miracles/eucharistic/sokolka.html",
+      "masterRoute": "/miracles/eucharistic/sokolka",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/index.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/",
+      "master": "miracles/index.html",
+      "masterRoute": "/miracles/",
+      "family": "miracles",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/nohad-el-shami.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/nohad-el-shami",
+      "master": "miracles/nohad-el-shami.html",
+      "masterRoute": "/miracles/nohad-el-shami",
+      "family": "miracles-nohad-el-shami",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/miracles/raymond-nader.html": {
+      "locale": "ar",
+      "route": "/ar/miracles/raymond-nader",
+      "master": "miracles/raymond-nader.html",
+      "masterRoute": "/miracles/raymond-nader",
+      "family": "miracles-raymond-nader",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/novena.html": {
+      "locale": "ar",
+      "route": "/ar/novena",
+      "master": "saint-charbel-novena.html",
+      "masterRoute": "/saint-charbel-novena",
+      "family": "saint-charbel-novena",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/prayers.html": {
+      "locale": "ar",
+      "route": "/ar/prayers",
+      "master": "saint-charbel-prayers.html",
+      "masterRoute": "/saint-charbel-prayers",
+      "family": "saint-charbel-prayers",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/qadisha-valley.html": {
+      "locale": "ar",
+      "route": "/ar/qadisha-valley",
+      "master": "qadisha-valley.html",
+      "masterRoute": "/qadisha-valley",
+      "family": "qadisha-valley",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/qannoubine-monastery.html": {
+      "locale": "ar",
+      "route": "/ar/qannoubine-monastery",
+      "master": "qannoubine-monastery.html",
+      "masterRoute": "/qannoubine-monastery",
+      "family": "qannoubine-monastery",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/qozhaya-monastery.html": {
+      "locale": "ar",
+      "route": "/ar/qozhaya-monastery",
+      "master": "qozhaya-monastery.html",
+      "masterRoute": "/qozhaya-monastery",
+      "family": "qozhaya-monastery",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/rosary.html": {
+      "locale": "ar",
+      "route": "/ar/rosary",
+      "master": "rosary-intro.html",
+      "masterRoute": "/rosary-intro",
+      "family": "rosary-intro",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/saint-charbel-chaplet.html": {
+      "locale": "ar",
+      "route": "/ar/saint-charbel-chaplet",
+      "master": "saint-charbel-chaplet.html",
+      "masterRoute": "/saint-charbel-chaplet",
+      "family": "saint-charbel-chaplet",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/travel.html": {
+      "locale": "ar",
+      "route": "/ar/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/allerheiligen.html": {
+      "locale": "de",
+      "route": "/de/allerheiligen",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "es/todos-los-santos.html": {
+      "locale": "es",
+      "route": "/es/todos-los-santos",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "fr/annaya.html": {
+      "locale": "fr",
+      "route": "/fr/annaya",
+      "master": "visit-annaya.html",
+      "masterRoute": "/visit-annaya",
+      "family": "annaya-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "fr/biographie.html": {
+      "locale": "fr",
+      "route": "/fr/biographie",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "fr/chapelet.html": {
+      "locale": "fr",
+      "route": "/fr/chapelet",
+      "master": "rosary-intro.html",
+      "masterRoute": "/rosary-intro",
+      "family": "rosary-intro",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/index.html": {
+      "locale": "fr",
+      "route": "/fr/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "fr/miracles/eucharistic/amsterdam.html": {
+      "locale": "fr",
+      "route": "/fr/miracles/eucharistic/amsterdam",
+      "master": "miracles/eucharistic/amsterdam.html",
+      "masterRoute": "/miracles/eucharistic/amsterdam",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/miracles/eucharistic/bolsena-orvieto.html": {
+      "locale": "fr",
+      "route": "/fr/miracles/eucharistic/bolsena-orvieto",
+      "master": "miracles/eucharistic/bolsena-orvieto.html",
+      "masterRoute": "/miracles/eucharistic/bolsena-orvieto",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/miracles/eucharistic/faverney.html": {
+      "locale": "fr",
+      "route": "/fr/miracles/eucharistic/faverney",
+      "master": "miracles/eucharistic/faverney.html",
+      "masterRoute": "/miracles/eucharistic/faverney",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/miracles/eucharistic/index.html": {
+      "locale": "fr",
+      "route": "/fr/miracles/eucharistic/",
+      "master": "miracles/eucharistic/index.html",
+      "masterRoute": "/miracles/eucharistic/",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/miracles/eucharistic/ivorra.html": {
+      "locale": "fr",
+      "route": "/fr/miracles/eucharistic/ivorra",
+      "master": "miracles/eucharistic/ivorra.html",
+      "masterRoute": "/miracles/eucharistic/ivorra",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/miracles/eucharistic/lanciano.html": {
+      "locale": "fr",
+      "route": "/fr/miracles/eucharistic/lanciano",
+      "master": "miracles/eucharistic/lanciano.html",
+      "masterRoute": "/miracles/eucharistic/lanciano",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/miracles/eucharistic/legnica.html": {
+      "locale": "fr",
+      "route": "/fr/miracles/eucharistic/legnica",
+      "master": "miracles/eucharistic/legnica.html",
+      "masterRoute": "/miracles/eucharistic/legnica",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/miracles/eucharistic/ludbreg.html": {
+      "locale": "fr",
+      "route": "/fr/miracles/eucharistic/ludbreg",
+      "master": "miracles/eucharistic/ludbreg.html",
+      "masterRoute": "/miracles/eucharistic/ludbreg",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/miracles/eucharistic/santarem.html": {
+      "locale": "fr",
+      "route": "/fr/miracles/eucharistic/santarem",
+      "master": "miracles/eucharistic/santarem.html",
+      "masterRoute": "/miracles/eucharistic/santarem",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/miracles/eucharistic/siena.html": {
+      "locale": "fr",
+      "route": "/fr/miracles/eucharistic/siena",
+      "master": "miracles/eucharistic/siena.html",
+      "masterRoute": "/miracles/eucharistic/siena",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/miracles/eucharistic/sokolka.html": {
+      "locale": "fr",
+      "route": "/fr/miracles/eucharistic/sokolka",
+      "master": "miracles/eucharistic/sokolka.html",
+      "masterRoute": "/miracles/eucharistic/sokolka",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/monastere-qannoubine.html": {
+      "locale": "fr",
+      "route": "/fr/monastere-qannoubine",
+      "master": "qannoubine-monastery.html",
+      "masterRoute": "/qannoubine-monastery",
+      "family": "qannoubine-monastery",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/monastere-qozhaya.html": {
+      "locale": "fr",
+      "route": "/fr/monastere-qozhaya",
+      "master": "qozhaya-monastery.html",
+      "masterRoute": "/qozhaya-monastery",
+      "family": "qozhaya-monastery",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/neuvaine.html": {
+      "locale": "fr",
+      "route": "/fr/neuvaine",
+      "master": "saint-charbel-novena.html",
+      "masterRoute": "/saint-charbel-novena",
+      "family": "saint-charbel-novena",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/prieres.html": {
+      "locale": "fr",
+      "route": "/fr/prieres",
+      "master": "saint-charbel-prayers.html",
+      "masterRoute": "/saint-charbel-prayers",
+      "family": "saint-charbel-prayers",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/toussaint.html": {
+      "locale": "fr",
+      "route": "/fr/toussaint",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "fr/travel.html": {
+      "locale": "fr",
+      "route": "/fr/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "fr/vallee-qadisha.html": {
+      "locale": "fr",
+      "route": "/fr/vallee-qadisha",
+      "master": "qadisha-valley.html",
+      "masterRoute": "/qadisha-valley",
+      "family": "qadisha-valley",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/annaya.html": {
+      "locale": "es",
+      "route": "/es/annaya",
+      "master": "visit-annaya.html",
+      "masterRoute": "/visit-annaya",
+      "family": "annaya-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "es/biografia.html": {
+      "locale": "es",
+      "route": "/es/biografia",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "es/charbel-film-premiere.html": {
+      "locale": "es",
+      "route": "/es/charbel-film-premiere",
+      "master": "charbel-film-premiere.html",
+      "masterRoute": "/charbel-film-premiere",
+      "family": "film-premiere-master",
+      "status": "extracted-feature"
+    },
+    "es/fiesta.html": {
+      "locale": "es",
+      "route": "/es/fiesta",
+      "master": "saint-charbel-feast-day.html",
+      "masterRoute": "/saint-charbel-feast-day",
+      "family": "saint-charbel-feast-day",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/help-me-pray.html": {
+      "locale": "es",
+      "route": "/es/help-me-pray",
+      "master": "help-me-pray.html",
+      "masterRoute": "/help-me-pray",
+      "family": "help-me-pray-master",
+      "status": "strict"
+    },
+    "es/index.html": {
+      "locale": "es",
+      "route": "/es/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "es/miracles/eucharistic/amsterdam.html": {
+      "locale": "es",
+      "route": "/es/miracles/eucharistic/amsterdam",
+      "master": "miracles/eucharistic/amsterdam.html",
+      "masterRoute": "/miracles/eucharistic/amsterdam",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/miracles/eucharistic/bolsena-orvieto.html": {
+      "locale": "es",
+      "route": "/es/miracles/eucharistic/bolsena-orvieto",
+      "master": "miracles/eucharistic/bolsena-orvieto.html",
+      "masterRoute": "/miracles/eucharistic/bolsena-orvieto",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/miracles/eucharistic/faverney.html": {
+      "locale": "es",
+      "route": "/es/miracles/eucharistic/faverney",
+      "master": "miracles/eucharistic/faverney.html",
+      "masterRoute": "/miracles/eucharistic/faverney",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/miracles/eucharistic/index.html": {
+      "locale": "es",
+      "route": "/es/miracles/eucharistic/",
+      "master": "miracles/eucharistic/index.html",
+      "masterRoute": "/miracles/eucharistic/",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/miracles/eucharistic/ivorra.html": {
+      "locale": "es",
+      "route": "/es/miracles/eucharistic/ivorra",
+      "master": "miracles/eucharistic/ivorra.html",
+      "masterRoute": "/miracles/eucharistic/ivorra",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/miracles/eucharistic/lanciano.html": {
+      "locale": "es",
+      "route": "/es/miracles/eucharistic/lanciano",
+      "master": "miracles/eucharistic/lanciano.html",
+      "masterRoute": "/miracles/eucharistic/lanciano",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/miracles/eucharistic/legnica.html": {
+      "locale": "es",
+      "route": "/es/miracles/eucharistic/legnica",
+      "master": "miracles/eucharistic/legnica.html",
+      "masterRoute": "/miracles/eucharistic/legnica",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/miracles/eucharistic/ludbreg.html": {
+      "locale": "es",
+      "route": "/es/miracles/eucharistic/ludbreg",
+      "master": "miracles/eucharistic/ludbreg.html",
+      "masterRoute": "/miracles/eucharistic/ludbreg",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/miracles/eucharistic/santarem.html": {
+      "locale": "es",
+      "route": "/es/miracles/eucharistic/santarem",
+      "master": "miracles/eucharistic/santarem.html",
+      "masterRoute": "/miracles/eucharistic/santarem",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/miracles/eucharistic/siena.html": {
+      "locale": "es",
+      "route": "/es/miracles/eucharistic/siena",
+      "master": "miracles/eucharistic/siena.html",
+      "masterRoute": "/miracles/eucharistic/siena",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/miracles/eucharistic/sokolka.html": {
+      "locale": "es",
+      "route": "/es/miracles/eucharistic/sokolka",
+      "master": "miracles/eucharistic/sokolka.html",
+      "masterRoute": "/miracles/eucharistic/sokolka",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/monasterio-qannoubine.html": {
+      "locale": "es",
+      "route": "/es/monasterio-qannoubine",
+      "master": "qannoubine-monastery.html",
+      "masterRoute": "/qannoubine-monastery",
+      "family": "qannoubine-monastery",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/monasterio-qozhaya.html": {
+      "locale": "es",
+      "route": "/es/monasterio-qozhaya",
+      "master": "qozhaya-monastery.html",
+      "masterRoute": "/qozhaya-monastery",
+      "family": "qozhaya-monastery",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/novena.html": {
+      "locale": "es",
+      "route": "/es/novena",
+      "master": "saint-charbel-novena.html",
+      "masterRoute": "/saint-charbel-novena",
+      "family": "saint-charbel-novena",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/oraciones.html": {
+      "locale": "es",
+      "route": "/es/oraciones",
+      "master": "saint-charbel-prayers.html",
+      "masterRoute": "/saint-charbel-prayers",
+      "family": "saint-charbel-prayers",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/rosario.html": {
+      "locale": "es",
+      "route": "/es/rosario",
+      "master": "rosary-intro.html",
+      "masterRoute": "/rosary-intro",
+      "family": "rosary-intro",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/travel.html": {
+      "locale": "es",
+      "route": "/es/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "es/valle-qadisha.html": {
+      "locale": "es",
+      "route": "/es/valle-qadisha",
+      "master": "qadisha-valley.html",
+      "masterRoute": "/qadisha-valley",
+      "family": "qadisha-valley",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/tutti-i-santi.html": {
+      "locale": "it",
+      "route": "/it/tutti-i-santi",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pl/wszystkich-swietych.html": {
+      "locale": "pl",
+      "route": "/pl/wszystkich-swietych",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pt/annaya.html": {
+      "locale": "pt",
+      "route": "/pt/annaya",
+      "master": "visit-annaya.html",
+      "masterRoute": "/visit-annaya",
+      "family": "annaya-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pt/biografia.html": {
+      "locale": "pt",
+      "route": "/pt/biografia",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pt/charbel-film-premiere.html": {
+      "locale": "pt",
+      "route": "/pt/charbel-film-premiere",
+      "master": "charbel-film-premiere.html",
+      "masterRoute": "/charbel-film-premiere",
+      "family": "film-premiere-master",
+      "status": "extracted-feature"
+    },
+    "pt/festa.html": {
+      "locale": "pt",
+      "route": "/pt/festa",
+      "master": "saint-charbel-feast-day.html",
+      "masterRoute": "/saint-charbel-feast-day",
+      "family": "saint-charbel-feast-day",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/help-me-pray.html": {
+      "locale": "pt",
+      "route": "/pt/help-me-pray",
+      "master": "help-me-pray.html",
+      "masterRoute": "/help-me-pray",
+      "family": "help-me-pray-master",
+      "status": "strict"
+    },
+    "pt/index.html": {
+      "locale": "pt",
+      "route": "/pt/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pt/miracles/eucharistic/amsterdam.html": {
+      "locale": "pt",
+      "route": "/pt/miracles/eucharistic/amsterdam",
+      "master": "miracles/eucharistic/amsterdam.html",
+      "masterRoute": "/miracles/eucharistic/amsterdam",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/miracles/eucharistic/bolsena-orvieto.html": {
+      "locale": "pt",
+      "route": "/pt/miracles/eucharistic/bolsena-orvieto",
+      "master": "miracles/eucharistic/bolsena-orvieto.html",
+      "masterRoute": "/miracles/eucharistic/bolsena-orvieto",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/miracles/eucharistic/faverney.html": {
+      "locale": "pt",
+      "route": "/pt/miracles/eucharistic/faverney",
+      "master": "miracles/eucharistic/faverney.html",
+      "masterRoute": "/miracles/eucharistic/faverney",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/miracles/eucharistic/index.html": {
+      "locale": "pt",
+      "route": "/pt/miracles/eucharistic/",
+      "master": "miracles/eucharistic/index.html",
+      "masterRoute": "/miracles/eucharistic/",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/miracles/eucharistic/ivorra.html": {
+      "locale": "pt",
+      "route": "/pt/miracles/eucharistic/ivorra",
+      "master": "miracles/eucharistic/ivorra.html",
+      "masterRoute": "/miracles/eucharistic/ivorra",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/miracles/eucharistic/lanciano.html": {
+      "locale": "pt",
+      "route": "/pt/miracles/eucharistic/lanciano",
+      "master": "miracles/eucharistic/lanciano.html",
+      "masterRoute": "/miracles/eucharistic/lanciano",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/miracles/eucharistic/legnica.html": {
+      "locale": "pt",
+      "route": "/pt/miracles/eucharistic/legnica",
+      "master": "miracles/eucharistic/legnica.html",
+      "masterRoute": "/miracles/eucharistic/legnica",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/miracles/eucharistic/ludbreg.html": {
+      "locale": "pt",
+      "route": "/pt/miracles/eucharistic/ludbreg",
+      "master": "miracles/eucharistic/ludbreg.html",
+      "masterRoute": "/miracles/eucharistic/ludbreg",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/miracles/eucharistic/santarem.html": {
+      "locale": "pt",
+      "route": "/pt/miracles/eucharistic/santarem",
+      "master": "miracles/eucharistic/santarem.html",
+      "masterRoute": "/miracles/eucharistic/santarem",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/miracles/eucharistic/siena.html": {
+      "locale": "pt",
+      "route": "/pt/miracles/eucharistic/siena",
+      "master": "miracles/eucharistic/siena.html",
+      "masterRoute": "/miracles/eucharistic/siena",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/miracles/eucharistic/sokolka.html": {
+      "locale": "pt",
+      "route": "/pt/miracles/eucharistic/sokolka",
+      "master": "miracles/eucharistic/sokolka.html",
+      "masterRoute": "/miracles/eucharistic/sokolka",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/novena.html": {
+      "locale": "pt",
+      "route": "/pt/novena",
+      "master": "saint-charbel-novena.html",
+      "masterRoute": "/saint-charbel-novena",
+      "family": "saint-charbel-novena",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/oracoes.html": {
+      "locale": "pt",
+      "route": "/pt/oracoes",
+      "master": "saint-charbel-prayers.html",
+      "masterRoute": "/saint-charbel-prayers",
+      "family": "saint-charbel-prayers",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/rosario.html": {
+      "locale": "pt",
+      "route": "/pt/rosario",
+      "master": "rosary-intro.html",
+      "masterRoute": "/rosary-intro",
+      "family": "rosary-intro",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pt/todos-os-santos.html": {
+      "locale": "pt",
+      "route": "/pt/todos-os-santos",
+      "master": "all-saints-and-all-souls.html",
+      "masterRoute": "/all-saints-and-all-souls",
+      "family": "all-saints-and-all-souls-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pt/travel.html": {
+      "locale": "pt",
+      "route": "/pt/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/annaya.html": {
+      "locale": "it",
+      "route": "/it/annaya",
+      "master": "visit-annaya.html",
+      "masterRoute": "/visit-annaya",
+      "family": "annaya-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "it/biografia.html": {
+      "locale": "it",
+      "route": "/it/biografia",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "it/charbel-film-premiere.html": {
+      "locale": "it",
+      "route": "/it/charbel-film-premiere",
+      "master": "charbel-film-premiere.html",
+      "masterRoute": "/charbel-film-premiere",
+      "family": "film-premiere-master",
+      "status": "extracted-feature"
+    },
+    "it/help-me-pray.html": {
+      "locale": "it",
+      "route": "/it/help-me-pray",
+      "master": "help-me-pray.html",
+      "masterRoute": "/help-me-pray",
+      "family": "help-me-pray-master",
+      "status": "strict"
+    },
+    "it/index.html": {
+      "locale": "it",
+      "route": "/it/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "it/miracles/eucharistic/amsterdam.html": {
+      "locale": "it",
+      "route": "/it/miracles/eucharistic/amsterdam",
+      "master": "miracles/eucharistic/amsterdam.html",
+      "masterRoute": "/miracles/eucharistic/amsterdam",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/miracles/eucharistic/bolsena-orvieto.html": {
+      "locale": "it",
+      "route": "/it/miracles/eucharistic/bolsena-orvieto",
+      "master": "miracles/eucharistic/bolsena-orvieto.html",
+      "masterRoute": "/miracles/eucharistic/bolsena-orvieto",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/miracles/eucharistic/faverney.html": {
+      "locale": "it",
+      "route": "/it/miracles/eucharistic/faverney",
+      "master": "miracles/eucharistic/faverney.html",
+      "masterRoute": "/miracles/eucharistic/faverney",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/miracles/eucharistic/index.html": {
+      "locale": "it",
+      "route": "/it/miracles/eucharistic/",
+      "master": "miracles/eucharistic/index.html",
+      "masterRoute": "/miracles/eucharistic/",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/miracles/eucharistic/ivorra.html": {
+      "locale": "it",
+      "route": "/it/miracles/eucharistic/ivorra",
+      "master": "miracles/eucharistic/ivorra.html",
+      "masterRoute": "/miracles/eucharistic/ivorra",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/miracles/eucharistic/lanciano.html": {
+      "locale": "it",
+      "route": "/it/miracles/eucharistic/lanciano",
+      "master": "miracles/eucharistic/lanciano.html",
+      "masterRoute": "/miracles/eucharistic/lanciano",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/miracles/eucharistic/legnica.html": {
+      "locale": "it",
+      "route": "/it/miracles/eucharistic/legnica",
+      "master": "miracles/eucharistic/legnica.html",
+      "masterRoute": "/miracles/eucharistic/legnica",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/miracles/eucharistic/ludbreg.html": {
+      "locale": "it",
+      "route": "/it/miracles/eucharistic/ludbreg",
+      "master": "miracles/eucharistic/ludbreg.html",
+      "masterRoute": "/miracles/eucharistic/ludbreg",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/miracles/eucharistic/santarem.html": {
+      "locale": "it",
+      "route": "/it/miracles/eucharistic/santarem",
+      "master": "miracles/eucharistic/santarem.html",
+      "masterRoute": "/miracles/eucharistic/santarem",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/miracles/eucharistic/siena.html": {
+      "locale": "it",
+      "route": "/it/miracles/eucharistic/siena",
+      "master": "miracles/eucharistic/siena.html",
+      "masterRoute": "/miracles/eucharistic/siena",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/miracles/eucharistic/sokolka.html": {
+      "locale": "it",
+      "route": "/it/miracles/eucharistic/sokolka",
+      "master": "miracles/eucharistic/sokolka.html",
+      "masterRoute": "/miracles/eucharistic/sokolka",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/novena.html": {
+      "locale": "it",
+      "route": "/it/novena",
+      "master": "saint-charbel-novena.html",
+      "masterRoute": "/saint-charbel-novena",
+      "family": "saint-charbel-novena",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/preghiere.html": {
+      "locale": "it",
+      "route": "/it/preghiere",
+      "master": "saint-charbel-prayers.html",
+      "masterRoute": "/saint-charbel-prayers",
+      "family": "saint-charbel-prayers",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/rosario.html": {
+      "locale": "it",
+      "route": "/it/rosario",
+      "master": "rosary-intro.html",
+      "masterRoute": "/rosary-intro",
+      "family": "rosary-intro",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "it/travel.html": {
+      "locale": "it",
+      "route": "/it/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/annaya.html": {
+      "locale": "de",
+      "route": "/de/annaya",
+      "master": "visit-annaya.html",
+      "masterRoute": "/visit-annaya",
+      "family": "annaya-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/biografie.html": {
+      "locale": "de",
+      "route": "/de/biografie",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/gebete.html": {
+      "locale": "de",
+      "route": "/de/gebete",
+      "master": "saint-charbel-prayers.html",
+      "masterRoute": "/saint-charbel-prayers",
+      "family": "saint-charbel-prayers",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/gedenktag.html": {
+      "locale": "de",
+      "route": "/de/gedenktag",
+      "master": "saint-charbel-feast-day.html",
+      "masterRoute": "/saint-charbel-feast-day",
+      "family": "saint-charbel-feast-day",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/help-me-pray.html": {
+      "locale": "de",
+      "route": "/de/help-me-pray",
+      "master": "help-me-pray.html",
+      "masterRoute": "/help-me-pray",
+      "family": "help-me-pray-master",
+      "status": "strict"
+    },
+    "de/index.html": {
+      "locale": "de",
+      "route": "/de/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/eucharistic/amsterdam.html": {
+      "locale": "de",
+      "route": "/de/miracles/eucharistic/amsterdam",
+      "master": "miracles/eucharistic/amsterdam.html",
+      "masterRoute": "/miracles/eucharistic/amsterdam",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/eucharistic/bolsena-orvieto.html": {
+      "locale": "de",
+      "route": "/de/miracles/eucharistic/bolsena-orvieto",
+      "master": "miracles/eucharistic/bolsena-orvieto.html",
+      "masterRoute": "/miracles/eucharistic/bolsena-orvieto",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/eucharistic/faverney.html": {
+      "locale": "de",
+      "route": "/de/miracles/eucharistic/faverney",
+      "master": "miracles/eucharistic/faverney.html",
+      "masterRoute": "/miracles/eucharistic/faverney",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/eucharistic/index.html": {
+      "locale": "de",
+      "route": "/de/miracles/eucharistic/",
+      "master": "miracles/eucharistic/index.html",
+      "masterRoute": "/miracles/eucharistic/",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/eucharistic/ivorra.html": {
+      "locale": "de",
+      "route": "/de/miracles/eucharistic/ivorra",
+      "master": "miracles/eucharistic/ivorra.html",
+      "masterRoute": "/miracles/eucharistic/ivorra",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/eucharistic/lanciano.html": {
+      "locale": "de",
+      "route": "/de/miracles/eucharistic/lanciano",
+      "master": "miracles/eucharistic/lanciano.html",
+      "masterRoute": "/miracles/eucharistic/lanciano",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/eucharistic/legnica.html": {
+      "locale": "de",
+      "route": "/de/miracles/eucharistic/legnica",
+      "master": "miracles/eucharistic/legnica.html",
+      "masterRoute": "/miracles/eucharistic/legnica",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/eucharistic/ludbreg.html": {
+      "locale": "de",
+      "route": "/de/miracles/eucharistic/ludbreg",
+      "master": "miracles/eucharistic/ludbreg.html",
+      "masterRoute": "/miracles/eucharistic/ludbreg",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/eucharistic/santarem.html": {
+      "locale": "de",
+      "route": "/de/miracles/eucharistic/santarem",
+      "master": "miracles/eucharistic/santarem.html",
+      "masterRoute": "/miracles/eucharistic/santarem",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/eucharistic/siena.html": {
+      "locale": "de",
+      "route": "/de/miracles/eucharistic/siena",
+      "master": "miracles/eucharistic/siena.html",
+      "masterRoute": "/miracles/eucharistic/siena",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/eucharistic/sokolka.html": {
+      "locale": "de",
+      "route": "/de/miracles/eucharistic/sokolka",
+      "master": "miracles/eucharistic/sokolka.html",
+      "masterRoute": "/miracles/eucharistic/sokolka",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/miracles/index.html": {
+      "locale": "de",
+      "route": "/de/miracles/",
+      "master": "miracles/index.html",
+      "masterRoute": "/miracles/",
+      "family": "miracles",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/novene.html": {
+      "locale": "de",
+      "route": "/de/novene",
+      "master": "saint-charbel-novena.html",
+      "masterRoute": "/saint-charbel-novena",
+      "family": "saint-charbel-novena",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/rosary-guide.html": {
+      "locale": "ar",
+      "route": "/ar/rosary-guide",
+      "master": "rosary-intro.html",
+      "masterRoute": "/rosary-intro",
+      "family": "rosary-intro",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/rosenkranz.html": {
+      "locale": "de",
+      "route": "/de/rosenkranz",
+      "master": "rosary-intro.html",
+      "masterRoute": "/rosary-intro",
+      "family": "rosary-intro",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "de/travel.html": {
+      "locale": "de",
+      "route": "/de/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pl/annaya.html": {
+      "locale": "pl",
+      "route": "/pl/annaya",
+      "master": "visit-annaya.html",
+      "masterRoute": "/visit-annaya",
+      "family": "annaya-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pl/biografia.html": {
+      "locale": "pl",
+      "route": "/pl/biografia",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pl/index.html": {
+      "locale": "pl",
+      "route": "/pl/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pl/miracles/eucharistic/amsterdam.html": {
+      "locale": "pl",
+      "route": "/pl/miracles/eucharistic/amsterdam",
+      "master": "miracles/eucharistic/amsterdam.html",
+      "masterRoute": "/miracles/eucharistic/amsterdam",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/miracles/eucharistic/bolsena-orvieto.html": {
+      "locale": "pl",
+      "route": "/pl/miracles/eucharistic/bolsena-orvieto",
+      "master": "miracles/eucharistic/bolsena-orvieto.html",
+      "masterRoute": "/miracles/eucharistic/bolsena-orvieto",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/miracles/eucharistic/faverney.html": {
+      "locale": "pl",
+      "route": "/pl/miracles/eucharistic/faverney",
+      "master": "miracles/eucharistic/faverney.html",
+      "masterRoute": "/miracles/eucharistic/faverney",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/miracles/eucharistic/index.html": {
+      "locale": "pl",
+      "route": "/pl/miracles/eucharistic/",
+      "master": "miracles/eucharistic/index.html",
+      "masterRoute": "/miracles/eucharistic/",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/miracles/eucharistic/ivorra.html": {
+      "locale": "pl",
+      "route": "/pl/miracles/eucharistic/ivorra",
+      "master": "miracles/eucharistic/ivorra.html",
+      "masterRoute": "/miracles/eucharistic/ivorra",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/miracles/eucharistic/lanciano.html": {
+      "locale": "pl",
+      "route": "/pl/miracles/eucharistic/lanciano",
+      "master": "miracles/eucharistic/lanciano.html",
+      "masterRoute": "/miracles/eucharistic/lanciano",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/miracles/eucharistic/legnica.html": {
+      "locale": "pl",
+      "route": "/pl/miracles/eucharistic/legnica",
+      "master": "miracles/eucharistic/legnica.html",
+      "masterRoute": "/miracles/eucharistic/legnica",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/miracles/eucharistic/ludbreg.html": {
+      "locale": "pl",
+      "route": "/pl/miracles/eucharistic/ludbreg",
+      "master": "miracles/eucharistic/ludbreg.html",
+      "masterRoute": "/miracles/eucharistic/ludbreg",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/miracles/eucharistic/santarem.html": {
+      "locale": "pl",
+      "route": "/pl/miracles/eucharistic/santarem",
+      "master": "miracles/eucharistic/santarem.html",
+      "masterRoute": "/miracles/eucharistic/santarem",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/miracles/eucharistic/siena.html": {
+      "locale": "pl",
+      "route": "/pl/miracles/eucharistic/siena",
+      "master": "miracles/eucharistic/siena.html",
+      "masterRoute": "/miracles/eucharistic/siena",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/miracles/eucharistic/sokolka.html": {
+      "locale": "pl",
+      "route": "/pl/miracles/eucharistic/sokolka",
+      "master": "miracles/eucharistic/sokolka.html",
+      "masterRoute": "/miracles/eucharistic/sokolka",
+      "family": "eucharistic",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/modlitwy.html": {
+      "locale": "pl",
+      "route": "/pl/modlitwy",
+      "master": "saint-charbel-prayers.html",
+      "masterRoute": "/saint-charbel-prayers",
+      "family": "saint-charbel-prayers",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/nowenna.html": {
+      "locale": "pl",
+      "route": "/pl/nowenna",
+      "master": "saint-charbel-novena.html",
+      "masterRoute": "/saint-charbel-novena",
+      "family": "saint-charbel-novena",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/rozaniec.html": {
+      "locale": "pl",
+      "route": "/pl/rozaniec",
+      "master": "rosary-intro.html",
+      "masterRoute": "/rosary-intro",
+      "family": "rosary-intro",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "pl/travel.html": {
+      "locale": "pl",
+      "route": "/pl/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel",
+      "status": "migration-debt",
+      "baseMainParity": true,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ru/biography.html": {
+      "locale": "ru",
+      "route": "/ru/biography",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ru/index.html": {
+      "locale": "ru",
+      "route": "/ru/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ],
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/pilgrimage.html": {
+      "locale": "ar",
+      "route": "/ar/pilgrimage",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "saint-charbel-pilgrimage.html",
+      "masterRoute": "/saint-charbel-pilgrimage",
+      "family": "pilgrimage-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/der-22-des-monats.html": {
+      "locale": "de",
+      "route": "/de/der-22-des-monats",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "22nd-of-the-month.html",
+      "masterRoute": "/22nd-of-the-month",
+      "family": "twenty-second-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/pilgerreise.html": {
+      "locale": "de",
+      "route": "/de/pilgerreise",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "saint-charbel-pilgrimage.html",
+      "masterRoute": "/saint-charbel-pilgrimage",
+      "family": "pilgrimage-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "es/el-22-de-cada-mes.html": {
+      "locale": "es",
+      "route": "/es/el-22-de-cada-mes",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "22nd-of-the-month.html",
+      "masterRoute": "/22nd-of-the-month",
+      "family": "twenty-second-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "es/peregrinacion.html": {
+      "locale": "es",
+      "route": "/es/peregrinacion",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "saint-charbel-pilgrimage.html",
+      "masterRoute": "/saint-charbel-pilgrimage",
+      "family": "pilgrimage-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "fr/22-du-mois.html": {
+      "locale": "fr",
+      "route": "/fr/22-du-mois",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "22nd-of-the-month.html",
+      "masterRoute": "/22nd-of-the-month",
+      "family": "twenty-second-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "fr/charbel-film-premiere.html": {
+      "locale": "fr",
+      "route": "/fr/charbel-film-premiere",
+      "master": "charbel-film-premiere.html",
+      "masterRoute": "/charbel-film-premiere",
+      "family": "film-premiere-master",
+      "status": "extracted-feature"
+    },
+    "fr/help-me-pray.html": {
+      "locale": "fr",
+      "route": "/fr/help-me-pray",
+      "master": "help-me-pray.html",
+      "masterRoute": "/help-me-pray",
+      "family": "help-me-pray-master",
+      "status": "strict"
+    },
+    "fr/pelerinage.html": {
+      "locale": "fr",
+      "route": "/fr/pelerinage",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "saint-charbel-pilgrimage.html",
+      "masterRoute": "/saint-charbel-pilgrimage",
+      "family": "pilgrimage-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "it/il-22-del-mese.html": {
+      "locale": "it",
+      "route": "/it/il-22-del-mese",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "22nd-of-the-month.html",
+      "masterRoute": "/22nd-of-the-month",
+      "family": "twenty-second-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "it/pellegrinaggio.html": {
+      "locale": "it",
+      "route": "/it/pellegrinaggio",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "saint-charbel-pilgrimage.html",
+      "masterRoute": "/saint-charbel-pilgrimage",
+      "family": "pilgrimage-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pl/22-dnia-miesiaca.html": {
+      "locale": "pl",
+      "route": "/pl/22-dnia-miesiaca",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "22nd-of-the-month.html",
+      "masterRoute": "/22nd-of-the-month",
+      "family": "twenty-second-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pl/charbel-film-premiere.html": {
+      "locale": "pl",
+      "route": "/pl/charbel-film-premiere",
+      "master": "charbel-film-premiere.html",
+      "masterRoute": "/charbel-film-premiere",
+      "family": "film-premiere-master",
+      "status": "extracted-feature"
+    },
+    "pl/help-me-pray.html": {
+      "locale": "pl",
+      "route": "/pl/help-me-pray",
+      "master": "help-me-pray.html",
+      "masterRoute": "/help-me-pray",
+      "family": "help-me-pray-master",
+      "status": "strict"
+    },
+    "pl/pielgrzymka.html": {
+      "locale": "pl",
+      "route": "/pl/pielgrzymka",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "saint-charbel-pilgrimage.html",
+      "masterRoute": "/saint-charbel-pilgrimage",
+      "family": "pilgrimage-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pt/o-dia-22-do-mes.html": {
+      "locale": "pt",
+      "route": "/pt/o-dia-22-do-mes",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "22nd-of-the-month.html",
+      "masterRoute": "/22nd-of-the-month",
+      "family": "twenty-second-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "pt/peregrinacao.html": {
+      "locale": "pt",
+      "route": "/pt/peregrinacao",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "saint-charbel-pilgrimage.html",
+      "masterRoute": "/saint-charbel-pilgrimage",
+      "family": "pilgrimage-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/22-chislo-mesyaca.html": {
+      "locale": "ru",
+      "route": "/ru/22-chislo-mesyaca",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "22nd-of-the-month.html",
+      "masterRoute": "/22nd-of-the-month",
+      "family": "twenty-second-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/annaya.html": {
+      "locale": "ru",
+      "route": "/ru/annaya",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "visit-annaya.html",
+      "masterRoute": "/visit-annaya",
+      "family": "annaya-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/palomnichestvo.html": {
+      "locale": "ru",
+      "route": "/ru/palomnichestvo",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31",
+      "master": "saint-charbel-pilgrimage.html",
+      "masterRoute": "/saint-charbel-pilgrimage",
+      "family": "pilgrimage-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/molitvy.html": {
+      "locale": "ru",
+      "route": "/ru/molitvy",
+      "master": "saint-charbel-prayers.html",
+      "masterRoute": "/saint-charbel-prayers",
+      "family": "saint-charbel-prayers",
+      "status": "migration-debt"
+    },
+    "ru/novena.html": {
+      "locale": "ru",
+      "route": "/ru/novena",
+      "master": "saint-charbel-novena.html",
+      "masterRoute": "/saint-charbel-novena",
+      "family": "saint-charbel-novena",
+      "status": "migration-debt"
+    },
+    "hi/charbel-film-premiere.html": {
+      "locale": "hi",
+      "route": "/hi/charbel-film-premiere",
+      "master": "charbel-film-premiere.html",
+      "masterRoute": "/charbel-film-premiere",
+      "family": "film-premiere-master",
+      "status": "extracted-feature"
+    },
+    "hi/help-me-pray.html": {
+      "locale": "hi",
+      "route": "/hi/help-me-pray",
+      "master": "help-me-pray.html",
+      "masterRoute": "/help-me-pray",
+      "family": "help-me-pray-master",
+      "status": "strict"
+    },
+    "hi/index.html": {
+      "locale": "hi",
+      "route": "/hi/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "6c3a34486830eef06dc6eda2290aca91687c5cc0",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "hi/history.html": {
+      "locale": "hi",
+      "route": "/hi/history",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "6c3a34486830eef06dc6eda2290aca91687c5cc0",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "hi/travel.html": {
+      "locale": "hi",
+      "route": "/hi/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations"
+      ]
+    },
+    "th/charbel-film-premiere.html": {
+      "locale": "th",
+      "route": "/th/charbel-film-premiere",
+      "master": "charbel-film-premiere.html",
+      "masterRoute": "/charbel-film-premiere",
+      "family": "film-premiere-master",
+      "status": "extracted-feature"
+    },
+    "th/help-me-pray.html": {
+      "locale": "th",
+      "route": "/th/help-me-pray",
+      "master": "help-me-pray.html",
+      "masterRoute": "/help-me-pray",
+      "family": "help-me-pray-master",
+      "status": "strict"
+    },
+    "th/index.html": {
+      "locale": "th",
+      "route": "/th/",
+      "master": "index.html",
+      "masterRoute": "/",
+      "family": "home",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "6c3a34486830eef06dc6eda2290aca91687c5cc0",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "th/travel.html": {
+      "locale": "th",
+      "route": "/th/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel-th-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "th/history.html": {
+      "locale": "th",
+      "route": "/th/history",
+      "master": "history.html",
+      "masterRoute": "/history",
+      "family": "history-master",
+      "status": "strict",
+      "baseMainParity": false,
+      "baseCssParity": false,
+      "baseImagesParity": false,
+      "baseRevision": "6c3a34486830eef06dc6eda2290aca91687c5cc0",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "zh-Hans/pilgrimage.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/pilgrimage",
+      "master": "saint-charbel-pilgrimage.html",
+      "masterRoute": "/saint-charbel-pilgrimage",
+      "family": "pilgrimage-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "de/our-lady-of-lebanon-harissa.html": {
+      "locale": "de",
+      "route": "/de/our-lady-of-lebanon-harissa",
+      "master": "our-lady-of-lebanon-harissa.html",
+      "masterRoute": "/our-lady-of-lebanon-harissa",
+      "family": "our-lady-of-lebanon-harissa-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/bekaa-kafra.html": {
+      "locale": "de",
+      "route": "/de/bekaa-kafra",
+      "master": "bekaa-kafra.html",
+      "masterRoute": "/bekaa-kafra",
+      "family": "bekaa-kafra-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/qozhaya-monastery.html": {
+      "locale": "de",
+      "route": "/de/qozhaya-monastery",
+      "master": "qozhaya-monastery.html",
+      "masterRoute": "/qozhaya-monastery",
+      "family": "qozhaya-monastery-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/bkerke-maronite-patriarchate.html": {
+      "locale": "de",
+      "route": "/de/bkerke-maronite-patriarchate",
+      "master": "bkerke-maronite-patriarchate.html",
+      "masterRoute": "/bkerke-maronite-patriarchate",
+      "family": "bkerke-maronite-patriarchate-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/annaya-tour.html": {
+      "locale": "de",
+      "route": "/de/annaya-tour",
+      "master": "annaya-tour.html",
+      "masterRoute": "/annaya-tour",
+      "family": "annaya-tour-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/saint-charbel-trail.html": {
+      "locale": "de",
+      "route": "/de/saint-charbel-trail",
+      "master": "saint-charbel-trail.html",
+      "masterRoute": "/saint-charbel-trail",
+      "family": "saint-charbel-trail-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/saint-charbel-places-lebanon.html": {
+      "locale": "de",
+      "route": "/de/saint-charbel-places-lebanon",
+      "master": "saint-charbel-places-lebanon.html",
+      "masterRoute": "/saint-charbel-places-lebanon",
+      "family": "saint-charbel-places-lebanon-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/qannoubine-monastery.html": {
+      "locale": "de",
+      "route": "/de/qannoubine-monastery",
+      "master": "qannoubine-monastery.html",
+      "masterRoute": "/qannoubine-monastery",
+      "family": "qannoubine-monastery-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/cedars-of-god-lebanon.html": {
+      "locale": "de",
+      "route": "/de/cedars-of-god-lebanon",
+      "master": "cedars-of-god-lebanon.html",
+      "masterRoute": "/cedars-of-god-lebanon",
+      "family": "cedars-of-god-lebanon-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/charbel-film-premiere.html": {
+      "locale": "de",
+      "route": "/de/charbel-film-premiere",
+      "master": "charbel-film-premiere.html",
+      "masterRoute": "/charbel-film-premiere",
+      "family": "film-premiere-master",
+      "status": "extracted-feature"
+    },
+    "de/qadisha-valley.html": {
+      "locale": "de",
+      "route": "/de/qadisha-valley",
+      "master": "qadisha-valley.html",
+      "masterRoute": "/qadisha-valley",
+      "family": "qadisha-valley-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "de/saint-charbel-hermitage.html": {
+      "locale": "de",
+      "route": "/de/saint-charbel-hermitage",
+      "master": "saint-charbel-hermitage.html",
+      "masterRoute": "/saint-charbel-hermitage",
+      "family": "saint-charbel-hermitage-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "zh-Hans/our-lady-of-lebanon-harissa.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/our-lady-of-lebanon-harissa",
+      "master": "our-lady-of-lebanon-harissa.html",
+      "masterRoute": "/our-lady-of-lebanon-harissa",
+      "family": "our-lady-of-lebanon-harissa-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/saint-charbel-places-lebanon.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/saint-charbel-places-lebanon",
+      "master": "saint-charbel-places-lebanon.html",
+      "masterRoute": "/saint-charbel-places-lebanon",
+      "family": "saint-charbel-places-lebanon-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/annaya-tour.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/annaya-tour",
+      "master": "annaya-tour.html",
+      "masterRoute": "/annaya-tour",
+      "family": "annaya-tour-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/qannoubine-monastery.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/qannoubine-monastery",
+      "master": "qannoubine-monastery.html",
+      "masterRoute": "/qannoubine-monastery",
+      "family": "qannoubine-monastery-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/cedars-of-god-lebanon.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/cedars-of-god-lebanon",
+      "master": "cedars-of-god-lebanon.html",
+      "masterRoute": "/cedars-of-god-lebanon",
+      "family": "cedars-of-god-lebanon-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/qadisha-valley.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/qadisha-valley",
+      "master": "qadisha-valley.html",
+      "masterRoute": "/qadisha-valley",
+      "family": "qadisha-valley-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/travel.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/bekaa-kafra.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/bekaa-kafra",
+      "master": "bekaa-kafra.html",
+      "masterRoute": "/bekaa-kafra",
+      "family": "bekaa-kafra-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/qozhaya-monastery.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/qozhaya-monastery",
+      "master": "qozhaya-monastery.html",
+      "masterRoute": "/qozhaya-monastery",
+      "family": "qozhaya-monastery-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/bkerke-maronite-patriarchate.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/bkerke-maronite-patriarchate",
+      "master": "bkerke-maronite-patriarchate.html",
+      "masterRoute": "/bkerke-maronite-patriarchate",
+      "family": "bkerke-maronite-patriarchate-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/charbel-film-premiere.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/charbel-film-premiere",
+      "master": "charbel-film-premiere.html",
+      "masterRoute": "/charbel-film-premiere",
+      "family": "film-premiere-master",
+      "status": "extracted-feature"
+    },
+    "zh-Hans/visit-annaya.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/visit-annaya",
+      "master": "visit-annaya.html",
+      "masterRoute": "/visit-annaya",
+      "family": "visit-annaya-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/saint-charbel-hermitage.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/saint-charbel-hermitage",
+      "master": "saint-charbel-hermitage.html",
+      "masterRoute": "/saint-charbel-hermitage",
+      "family": "saint-charbel-hermitage-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "zh-Hans/saint-charbel-trail.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/saint-charbel-trail",
+      "master": "saint-charbel-trail.html",
+      "masterRoute": "/saint-charbel-trail",
+      "family": "saint-charbel-trail-zh-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "partial-home-disclosure"
+      ]
+    },
+    "ar/music.html": {
+      "locale": "ar",
+      "route": "/ar/music",
+      "master": "music.html",
+      "masterRoute": "/music",
+      "family": "music-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "fr/music.html": {
+      "locale": "fr",
+      "route": "/fr/music",
+      "master": "music.html",
+      "masterRoute": "/music",
+      "family": "music-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "es/music.html": {
+      "locale": "es",
+      "route": "/es/music",
+      "master": "music.html",
+      "masterRoute": "/music",
+      "family": "music-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "pt/music.html": {
+      "locale": "pt",
+      "route": "/pt/music",
+      "master": "music.html",
+      "masterRoute": "/music",
+      "family": "music-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "it/music.html": {
+      "locale": "it",
+      "route": "/it/music",
+      "master": "music.html",
+      "masterRoute": "/music",
+      "family": "music-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "de/music.html": {
+      "locale": "de",
+      "route": "/de/music",
+      "master": "music.html",
+      "masterRoute": "/music",
+      "family": "music-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure",
+        "launch-availability-annotations"
+      ]
+    },
+    "pl/music.html": {
+      "locale": "pl",
+      "route": "/pl/music",
+      "master": "music.html",
+      "masterRoute": "/music",
+      "family": "music-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "hi/music.html": {
+      "locale": "hi",
+      "route": "/hi/music",
+      "master": "music.html",
+      "masterRoute": "/music",
+      "family": "music-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "th/music.html": {
+      "locale": "th",
+      "route": "/th/music",
+      "master": "music.html",
+      "masterRoute": "/music",
+      "family": "music-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/travel.html": {
+      "locale": "ru",
+      "route": "/ru/travel",
+      "master": "travel.html",
+      "masterRoute": "/travel",
+      "family": "travel-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/saint-charbel-places-lebanon.html": {
+      "locale": "ru",
+      "route": "/ru/saint-charbel-places-lebanon",
+      "master": "saint-charbel-places-lebanon.html",
+      "masterRoute": "/saint-charbel-places-lebanon",
+      "family": "saint-charbel-places-lebanon-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/annaya-tour.html": {
+      "locale": "ru",
+      "route": "/ru/annaya-tour",
+      "master": "annaya-tour.html",
+      "masterRoute": "/annaya-tour",
+      "family": "annaya-tour-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/bekaa-kafra.html": {
+      "locale": "ru",
+      "route": "/ru/bekaa-kafra",
+      "master": "bekaa-kafra.html",
+      "masterRoute": "/bekaa-kafra",
+      "family": "bekaa-kafra-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/bkerke-maronite-patriarchate.html": {
+      "locale": "ru",
+      "route": "/ru/bkerke-maronite-patriarchate",
+      "master": "bkerke-maronite-patriarchate.html",
+      "masterRoute": "/bkerke-maronite-patriarchate",
+      "family": "bkerke-maronite-patriarchate-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/cedars-of-god-lebanon.html": {
+      "locale": "ru",
+      "route": "/ru/cedars-of-god-lebanon",
+      "master": "cedars-of-god-lebanon.html",
+      "masterRoute": "/cedars-of-god-lebanon",
+      "family": "cedars-of-god-lebanon-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/charbel-film-premiere.html": {
+      "locale": "ru",
+      "route": "/ru/charbel-film-premiere",
+      "master": "charbel-film-premiere.html",
+      "masterRoute": "/charbel-film-premiere",
+      "family": "film-premiere-master",
+      "status": "extracted-feature"
+    },
+    "ru/help-me-pray.html": {
+      "locale": "ru",
+      "route": "/ru/help-me-pray",
+      "master": "help-me-pray.html",
+      "masterRoute": "/help-me-pray",
+      "family": "help-me-pray-master",
+      "status": "strict"
+    },
+    "ru/our-lady-of-lebanon-harissa.html": {
+      "locale": "ru",
+      "route": "/ru/our-lady-of-lebanon-harissa",
+      "master": "our-lady-of-lebanon-harissa.html",
+      "masterRoute": "/our-lady-of-lebanon-harissa",
+      "family": "our-lady-of-lebanon-harissa-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/qadisha-valley.html": {
+      "locale": "ru",
+      "route": "/ru/qadisha-valley",
+      "master": "qadisha-valley.html",
+      "masterRoute": "/qadisha-valley",
+      "family": "qadisha-valley-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/qannoubine-monastery.html": {
+      "locale": "ru",
+      "route": "/ru/qannoubine-monastery",
+      "master": "qannoubine-monastery.html",
+      "masterRoute": "/qannoubine-monastery",
+      "family": "qannoubine-monastery-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/qozhaya-monastery.html": {
+      "locale": "ru",
+      "route": "/ru/qozhaya-monastery",
+      "master": "qozhaya-monastery.html",
+      "masterRoute": "/qozhaya-monastery",
+      "family": "qozhaya-monastery-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/saint-charbel-hermitage.html": {
+      "locale": "ru",
+      "route": "/ru/saint-charbel-hermitage",
+      "master": "saint-charbel-hermitage.html",
+      "masterRoute": "/saint-charbel-hermitage",
+      "family": "saint-charbel-hermitage-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ru/saint-charbel-trail.html": {
+      "locale": "ru",
+      "route": "/ru/saint-charbel-trail",
+      "master": "saint-charbel-trail.html",
+      "masterRoute": "/saint-charbel-trail",
+      "family": "saint-charbel-trail-travel-master",
+      "status": "strict",
+      "normalizers": [
+        "english-nav-disclosure"
+      ]
+    },
+    "ar/gallery.html": {
+      "locale": "ar",
+      "route": "/ar/gallery",
+      "master": "gallery.html",
+      "masterRoute": "/gallery",
+      "family": "gallery-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/saints.html": {
+      "locale": "ar",
+      "route": "/ar/saints",
+      "master": "saints.html",
+      "masterRoute": "/saints",
+      "family": "saints-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "908aa9ba40c6b9aafc7ef29a7e43b3ff3c02ac7b"
+    },
+    "ar/feedback.html": {
+      "locale": "ar",
+      "route": "/ar/feedback",
+      "master": "feedback.html",
+      "masterRoute": "/feedback",
+      "family": "feedback-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/submit-testimony.html": {
+      "locale": "ar",
+      "route": "/ar/submit-testimony",
+      "master": "submit-testimony.html",
+      "masterRoute": "/submit-testimony",
+      "family": "submit-testimony-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/voice-testimony.html": {
+      "locale": "ar",
+      "route": "/ar/voice-testimony",
+      "master": "voice-testimony.html",
+      "masterRoute": "/voice-testimony",
+      "family": "voice-testimony-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/prayer-library.html": {
+      "locale": "ar",
+      "route": "/ar/prayer-library",
+      "master": "prayer-library.html",
+      "masterRoute": "/prayer-library",
+      "family": "prayer-library-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/encyclopedia.html": {
+      "locale": "ar",
+      "route": "/ar/encyclopedia",
+      "master": "saint-charbel-encyclopedia.html",
+      "masterRoute": "/saint-charbel-encyclopedia",
+      "family": "saint-charbel-encyclopedia-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/news.html": {
+      "locale": "ar",
+      "route": "/ar/news",
+      "master": "news.html",
+      "masterRoute": "/news",
+      "family": "news-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/videos.html": {
+      "locale": "ar",
+      "route": "/ar/videos",
+      "master": "videos.html",
+      "masterRoute": "/videos",
+      "family": "videos-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/testimonies.html": {
+      "locale": "ar",
+      "route": "/ar/testimonies",
+      "master": "testimonies.html",
+      "masterRoute": "/testimonies",
+      "family": "testimonies-master",
+      "status": "migration-debt",
+      "baseMainParity": false,
+      "baseCssParity": true,
+      "baseImagesParity": true,
+      "baseRevision": "08b77ee39338e371acbc59631ed9c6ded6a87d31"
+    },
+    "ar/saint-charbel-medal.html": {
+      "locale": "ar",
+      "route": "/ar/saint-charbel-medal",
+      "master": "saint-charbel-medal.html",
+      "masterRoute": "/saint-charbel-medal",
+      "family": "saint-charbel-medal-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure",
+        "localized-source-links"
+      ]
+    },
+    "de/saint-charbel-medal.html": {
+      "locale": "de",
+      "route": "/de/saint-charbel-medal",
+      "master": "saint-charbel-medal.html",
+      "masterRoute": "/saint-charbel-medal",
+      "family": "saint-charbel-medal-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure",
+        "localized-source-links"
+      ]
+    },
+    "es/saint-charbel-medal.html": {
+      "locale": "es",
+      "route": "/es/saint-charbel-medal",
+      "master": "saint-charbel-medal.html",
+      "masterRoute": "/saint-charbel-medal",
+      "family": "saint-charbel-medal-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure",
+        "localized-source-links"
+      ]
+    },
+    "fr/saint-charbel-medal.html": {
+      "locale": "fr",
+      "route": "/fr/saint-charbel-medal",
+      "master": "saint-charbel-medal.html",
+      "masterRoute": "/saint-charbel-medal",
+      "family": "saint-charbel-medal-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure",
+        "localized-source-links"
+      ]
+    },
+    "hi/saint-charbel-medal.html": {
+      "locale": "hi",
+      "route": "/hi/saint-charbel-medal",
+      "master": "saint-charbel-medal.html",
+      "masterRoute": "/saint-charbel-medal",
+      "family": "saint-charbel-medal-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure"
+      ]
+    },
+    "it/saint-charbel-medal.html": {
+      "locale": "it",
+      "route": "/it/saint-charbel-medal",
+      "master": "saint-charbel-medal.html",
+      "masterRoute": "/saint-charbel-medal",
+      "family": "saint-charbel-medal-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure",
+        "localized-source-links"
+      ]
+    },
+    "pl/saint-charbel-medal.html": {
+      "locale": "pl",
+      "route": "/pl/saint-charbel-medal",
+      "master": "saint-charbel-medal.html",
+      "masterRoute": "/saint-charbel-medal",
+      "family": "saint-charbel-medal-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure",
+        "localized-source-links"
+      ]
+    },
+    "pt/saint-charbel-medal.html": {
+      "locale": "pt",
+      "route": "/pt/saint-charbel-medal",
+      "master": "saint-charbel-medal.html",
+      "masterRoute": "/saint-charbel-medal",
+      "family": "saint-charbel-medal-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure",
+        "localized-source-links"
+      ]
+    },
+    "ru/saint-charbel-medal.html": {
+      "locale": "ru",
+      "route": "/ru/saint-charbel-medal",
+      "master": "saint-charbel-medal.html",
+      "masterRoute": "/saint-charbel-medal",
+      "family": "saint-charbel-medal-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure",
+        "localized-source-links"
+      ]
+    },
+    "th/saint-charbel-medal.html": {
+      "locale": "th",
+      "route": "/th/saint-charbel-medal",
+      "master": "saint-charbel-medal.html",
+      "masterRoute": "/saint-charbel-medal",
+      "family": "saint-charbel-medal-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure",
+        "localized-source-links"
+      ]
+    },
+    "zh-Hans/saint-charbel-medal.html": {
+      "locale": "zh-Hans",
+      "route": "/zh-Hans/saint-charbel-medal",
+      "master": "saint-charbel-medal.html",
+      "masterRoute": "/saint-charbel-medal",
+      "family": "saint-charbel-medal-master",
+      "status": "strict",
+      "normalizers": [
+        "launch-availability-annotations",
+        "english-nav-disclosure",
+        "partial-home-disclosure",
+        "localized-source-links"
+      ]
+    }
+  }
+}

@@ -7,3 +7,7 @@ verify_jwt = false
 [functions.screen-testimonies]
 # Protected with a separate scheduler secret, then restricted worker sign-in.
 verify_jwt = false
+
+[functions.check-worker-heartbeats]
+# Protected with a separate scheduler secret; ops-only alerts, no PII.
+verify_jwt = false
