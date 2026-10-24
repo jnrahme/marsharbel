@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "2229735845e488b85f9afa7358bb99e2860c4aa2661bf51070ef7891d96c35c5",
+  "masterSha256": "8b96187ab49aa2b9731c069c59a51c4f9f1b8311eeb8a6db2b9fde7e011fd168",
   "sourceRevision": "802b6e7c56a7634b99a24d8c8ccee051b8edca22",
   "bindings": [
     {
@@ -1608,76 +1608,6 @@
       "nodeIndex": 0
     },
     {
-      "key": "home.saintDay.2026-10-23.heading",
-      "selector": "template[data-saint-date=\"2026-10-23\"] #saint-day-heading",
-      "source": "Saint of the Day",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-23.dateLabel",
-      "selector": "template[data-saint-date=\"2026-10-23\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
-      "source": "23.10.2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-23.monogram",
-      "selector": "template[data-saint-date=\"2026-10-23\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "I",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-23.dateShort",
-      "selector": "template[data-saint-date=\"2026-10-23\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
-      "source": "23 Oct",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-23.calendar",
-      "selector": "template[data-saint-date=\"2026-10-23\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "Maronite calendar",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-23.name",
-      "selector": "template[data-saint-date=\"2026-10-23\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
-      "source": "Saint Ignatius of Constantinople",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-23.story",
-      "selector": "template[data-saint-date=\"2026-10-23\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Ignatius, born Nicetas about 799, was the son of Emperor Michael I. After his father was deposed he was shut in a monastery, where he embraced the religious life and became an abbot. In 847 he became Patriarch of Constantinople. He refused to help force the empress Theodora into a convent and rebuked the Caesar Bardas for repudiating his wife, and Bardas had him sent into exile. Restored in 867, he served about ten more years and died on October 23, 877.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-23.provenance",
-      "selector": "template[data-saint-date=\"2026-10-23\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
-      "source": "Brief story based on the Catholic Encyclopedia.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-23.infoCta",
-      "selector": "template[data-saint-date=\"2026-10-23\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
-      "source": "Read about Saint Ignatius",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-23.sourceLabel",
-      "selector": "template[data-saint-date=\"2026-10-23\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
-      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
       "key": "home.saintDay.2026-10-24.heading",
       "selector": "template[data-saint-date=\"2026-10-24\"] #saint-day-heading",
       "source": "Saint of the Day",
@@ -2166,6 +2096,76 @@
       "source": "Feast source: Eparchy of St. Maron liturgical calendar",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-31.heading",
+      "selector": "template[data-saint-date=\"2026-10-31\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-31.dateLabel",
+      "selector": "template[data-saint-date=\"2026-10-31\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "31.10.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-31.monogram",
+      "selector": "template[data-saint-date=\"2026-10-31\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "E",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-31.dateShort",
+      "selector": "template[data-saint-date=\"2026-10-31\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "31 Oct",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-31.calendar",
+      "selector": "template[data-saint-date=\"2026-10-31\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Maronite calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-31.name",
+      "selector": "template[data-saint-date=\"2026-10-31\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Epimachus of Pelusium",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-31.story",
+      "selector": "template[data-saint-date=\"2026-10-31\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Maronite calendar lists Saint Epimachus on October 31 without details. We have matched this entry to the martyr Epimachus of Pelusium, because the name and the date fit: the Orthodox calendar keeps the Martyr Epimachus of Pelusium, who suffered in Alexandria, on October 31. The Roman Martyrology also keeps Saint Epimachus of Pelusium on October 31: as is handed down, during the persecution of Emperor Decius he saw that the prefect was forcing Christians to sacrifice to idols, tried to overthrow the altar, and was arrested, tortured and finally beheaded by the sword. According to his traditional life, Epimachus lived as an ascetic on Mount Pelusium in Egypt, working as a weaver with his companions Theodore and Callinicos. When he heard that the governor was torturing Christians, he went to El-Bakroug, destroyed some pagan idols and declared that he too was a Christian. He was tortured on the wheel and then beheaded. The Coptic Orthodox Church keeps his feast on 14 Pashons.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-31.provenance",
+      "selector": "template[data-saint-date=\"2026-10-31\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Wikipedia, the Orthodox calendar at Basilica.ro and the Roman Martyrology (2004). The date follows the Maronite calendar.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-31.infoCta",
+      "selector": "template[data-saint-date=\"2026-10-31\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saint Epimachus",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-10-31.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-10-31\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -2382,16 +2382,6 @@
     "home.latest-news.october-15-2026": "October 17, 2026",
     "home.latest-news.pope-leo-has-a-good-second-night-at-gemelli": "Pope Leo discharged from Gemelli, back at the Vatican",
     "home.latest-news.the-holy-see-says-pope-leo-had-a-good-second-hospital-night": "Pope Leo XIV was discharged from Gemelli Hospital on Saturday afternoon following lung surgery and returned to the Vatican. On Sunday he prayed the midday Angelus with thousands of faithful gathered in St Peter's Square - his first scheduled public event since being discharged - thanking the doctors, nurses and staff of Gemelli and all who prayed for him: 'I have truly felt your support.' On Wednesday, October 21, he held his first weekly General Audience since the surgery in St Peter's Square, Vatican News reported; he thanked people for their prayers and spoke on marriage and the family in his catechesis on Gaudium et Spes. RTE and ANSA also reported on the audience. Vatican News also reported that, on the evening of October 21, his doctors, Dr Luigi Carbone and Professor Stefano Margaritora, issued a statement released by the Holy See Press Office: \"The final histopathology and molecular testing reports on the tissue removed during the Holy Father's surgery were issued today. The results confirmed that the tumor was a lung adenocarcinoma and that the disease was localized. A subsequent oncological assessment has confirmed that no further treatment is necessary.\" Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0 IT; resized to WebP.",
-    "home.saintDay.2026-10-23.heading": "Saint of the Day",
-    "home.saintDay.2026-10-23.dateLabel": "23.10.2026",
-    "home.saintDay.2026-10-23.monogram": "I",
-    "home.saintDay.2026-10-23.dateShort": "23 Oct",
-    "home.saintDay.2026-10-23.calendar": "Maronite calendar",
-    "home.saintDay.2026-10-23.name": "Saint Ignatius of Constantinople",
-    "home.saintDay.2026-10-23.story": "Ignatius, born Nicetas about 799, was the son of Emperor Michael I. After his father was deposed he was shut in a monastery, where he embraced the religious life and became an abbot. In 847 he became Patriarch of Constantinople. He refused to help force the empress Theodora into a convent and rebuked the Caesar Bardas for repudiating his wife, and Bardas had him sent into exile. Restored in 867, he served about ten more years and died on October 23, 877.",
-    "home.saintDay.2026-10-23.provenance": "Brief story based on the Catholic Encyclopedia.",
-    "home.saintDay.2026-10-23.infoCta": "Read about Saint Ignatius",
-    "home.saintDay.2026-10-23.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
     "home.saintDay.2026-10-24.heading": "Saint of the Day",
     "home.saintDay.2026-10-24.dateLabel": "24.10.2026",
     "home.saintDay.2026-10-24.monogram": "A",
@@ -2461,6 +2451,16 @@
     "home.saintDay.2026-10-30.story": "Macarius was Bishop of Jerusalem from about 312 until his death, which came before the Council of Tyre in 335. He was one of the bishops whom Saint Alexander of Alexandria warned against the teaching of Arius, and at the Council of Nicaea in 325 his name appears first among the bishops of Palestine who subscribed. The chronicler Theophanes relates that after the council the emperor Constantine ordered Macarius to search for the sites of the Resurrection and the Passion and for the True Cross; the Catholic Encyclopedia notes that excavations in Jerusalem began very soon after the council, seemingly under his direction. The Maronite calendar keeps his feast on October 30.",
     "home.saintDay.2026-10-30.provenance": "Brief story based on the Catholic Encyclopedia (New Advent). The date follows the Maronite calendar.",
     "home.saintDay.2026-10-30.infoCta": "Read about Saint Macarius",
-    "home.saintDay.2026-10-30.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
+    "home.saintDay.2026-10-30.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
+    "home.saintDay.2026-10-31.heading": "Saint of the Day",
+    "home.saintDay.2026-10-31.dateLabel": "31.10.2026",
+    "home.saintDay.2026-10-31.monogram": "E",
+    "home.saintDay.2026-10-31.dateShort": "31 Oct",
+    "home.saintDay.2026-10-31.calendar": "Maronite calendar",
+    "home.saintDay.2026-10-31.name": "Saint Epimachus of Pelusium",
+    "home.saintDay.2026-10-31.story": "The Maronite calendar lists Saint Epimachus on October 31 without details. We have matched this entry to the martyr Epimachus of Pelusium, because the name and the date fit: the Orthodox calendar keeps the Martyr Epimachus of Pelusium, who suffered in Alexandria, on October 31. The Roman Martyrology also keeps Saint Epimachus of Pelusium on October 31: as is handed down, during the persecution of Emperor Decius he saw that the prefect was forcing Christians to sacrifice to idols, tried to overthrow the altar, and was arrested, tortured and finally beheaded by the sword. According to his traditional life, Epimachus lived as an ascetic on Mount Pelusium in Egypt, working as a weaver with his companions Theodore and Callinicos. When he heard that the governor was torturing Christians, he went to El-Bakroug, destroyed some pagan idols and declared that he too was a Christian. He was tortured on the wheel and then beheaded. The Coptic Orthodox Church keeps his feast on 14 Pashons.",
+    "home.saintDay.2026-10-31.provenance": "Brief story based on Wikipedia, the Orthodox calendar at Basilica.ro and the Roman Martyrology (2004). The date follows the Maronite calendar.",
+    "home.saintDay.2026-10-31.infoCta": "Read about Saint Epimachus",
+    "home.saintDay.2026-10-31.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
   }
 }
