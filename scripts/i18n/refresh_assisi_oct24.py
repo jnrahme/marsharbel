@@ -8,7 +8,8 @@ masterSha256 values. Every selector in both families is re-resolved against
 the built pages and must return exactly one node whose rendered value equals
 the binding source; any drift aborts the write. Locale values come from the
 reviewed packet locales/assisi-oct24-translations.json (agent-translated,
-native review waived by the owner).
+native review pending - same status as the gemelli-oct17 and audience-oct21
+packets).
 
 Usage: python3 scripts/i18n/refresh_assisi_oct24.py [--check]
 """
