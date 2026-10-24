@@ -75,7 +75,7 @@ class NewsDeskTests(unittest.TestCase):
             if ident.startswith('emmitsburg'):
                 self.assertIn('./news#'+ident, (ROOT/'index.html').read_text())
         index = (ROOT/'index.html').read_text()
-        for ident in ['pope-leo-gemelli-discharge-2026-10-17','pope-leo-rosary-announcement-2026-10-13']:
+        for ident in ['pope-leo-assisi-cancel-2026-10-23','pope-leo-rosary-announcement-2026-10-13']:
             self.assertIn('./news#'+ident, index)
         self.assertIn('https://stsharbelelpaso.org/',text)
         self.assertIn('https://www.familyofsaintsharbel.org/our-news',text)
@@ -90,6 +90,7 @@ class NewsDeskTests(unittest.TestCase):
     def test_papal_rows_en_ar_parity(self):
         from bs4 import BeautifulSoup
         expected = {
+            'pope-leo-assisi-cancel-2026-10-23': ('chip-update', 'Update'),
             'pope-leo-gemelli-prayer-2026-10-13': ('chip-update', 'Update'),
             'pope-leo-gemelli-discharge-2026-10-17': ('chip-update', 'Update'),
             'pope-leo-rosary-announcement-2026-10-13': ('chip-event', 'Prayer'),
@@ -109,6 +110,7 @@ class NewsDeskTests(unittest.TestCase):
             ar_links = [a.get('href') for a in ar_row.select('a')]
             # Row hrefs stay on the row's cited primary source, and AR carries the same hrefs as EN.
             domains = {
+                'pope-leo-assisi-cancel-2026-10-23': 'https://www.vaticannews.va/',
                 'pope-leo-gemelli-prayer-2026-10-13': 'https://www.vaticannews.va/',
                 'pope-leo-gemelli-discharge-2026-10-17': 'https://www.vaticannews.va/',
                 'pope-leo-rosary-announcement-2026-10-13': 'https://www.usccb.org/',
@@ -167,8 +169,8 @@ class NewsDeskTests(unittest.TestCase):
 
 
 class NewsMetadataTests(unittest.TestCase):
-    # The desk's latest reviewed content revision is the October 22 DDF 'Venite ad Me' row addition (same date as the Gemelli doctors' update).
-    REVISION = '2026-10-22'
+    # The desk's latest reviewed content revision is the October 24 Assisi-cancellation row addition (announced October 23; integrated October 24).
+    REVISION = '2026-10-24'
 
     def assert_news_metadata(self, html, lastmod):
         from bs4 import BeautifulSoup
@@ -191,7 +193,7 @@ class NewsMetadataTests(unittest.TestCase):
                 self.assert_news_metadata((ROOT/file).read_text(), dates[url])
 
     def test_old_webpage_date_is_rejected(self):
-        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-22"',
+        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-24"',
                                                     '"dateModified": "2026-10-10"')
         with self.assertRaises(AssertionError):
             self.assert_news_metadata(html, self.REVISION)
