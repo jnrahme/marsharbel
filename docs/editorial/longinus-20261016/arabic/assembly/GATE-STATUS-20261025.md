@@ -6,3 +6,6 @@ Preserved report longinus-ar-rtl-gate-verification-20261025.md (sha256 f448caa05
 - R5 pairing sub-claim ("RTL mirroring keeps caption-plate pairing correct") is UNDER MAIN CHALLENGE from actual pixels (fixed bitmap positions vs RTL-reversed labels); design rechecking. The original wording is preserved unedited; the corrected finding record will be dated and appended, no history rewrite.
 - R2/R3/R4 + D2 residuals: template-localization gaps, measured, carried.
 No shared reader/production edits authorized; a scoped private harness repair proposal follows the final corrected finding record.
+
+## Correction record (2026-10-25 07:49 ET)
+REVISED report longinus-ar-rtl-gate-verification-REVISED-20261025.md (sha256 a032086722b645f8183619e42da9ba4a5591fdc079119fa8a04f7ba72c5dd42d) + bundle (sha256 7299c8fc446c40eb7acc82413fdf002d9a468f0844fefb733b877655d22d48c7) REPLACE the original's claim record. The original's R5 pairing sub-claim is RETRACTED in the revised report; R7 (caption identity) CONFIRMED blocking: baked bitmap left=Mark/right=John byte-identical EN/AR (bitmap sha 64d0dd6a...), RTL row reverses the caption labels, so AR labels attach to the wrong figures. EN unaffected. BLOCKING set: R1, R6, R7. Bounded accepted: binding/body/plates/clearance only. Original files retained as retracted history.
