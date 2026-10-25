@@ -1,0 +1,5 @@
+Oct 19 donor body tail measurement (oct19-joyful-body-16k.wav, 16kHz mono):
+- Last ASR speech segment ends: 1948.82s ("Subscribe to support the channel, and help us create more prayers like this." at 1944.94-1948.82)
+- silencedetect (noise=-45dB, d=2s) over 1948.8->2027.16: silence 1948.81 -> 2027.16 (78.35s continuous)
+- Per-13s-window RMS at 1962/1975/1988/2001/2014: -inf (digital zero); 1949 window: -93.06 dB (fade residue)
+- Conclusion: trailing 78.35s is measured digital silence. No trim proposed. Original and measured boundary preserved (splice 17.935s, body 2027.162s).

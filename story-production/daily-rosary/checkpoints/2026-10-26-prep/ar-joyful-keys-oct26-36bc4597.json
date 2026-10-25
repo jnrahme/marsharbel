@@ -1,0 +1,864 @@
+{
+ "manifest": "ar-joyful-key-candidates-oct26",
+ "compiled_by": "main-lane executor (content desk fallback, same sanctioned basis as glorious v5.1)",
+ "label": "agent-translated, native review pending",
+ "status": "CANDIDATES - exact keys/independent words source gate required BEFORE any mint; published AR Oct 17 joyful audio is evidence of prior wording, these candidates fill missing words only",
+ "date": "2026-10-26 (Monday) - JOYFUL under locked normal rotation (Monday/Saturday; Seminary-confirmed الاثنين والسبت)",
+ "sources": {
+  "seminary_rosary_page": "https://seminairemaronite.org/%d8%b5%d9%84%d8%a7%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d8%a8%d8%ad%d8%a9-%d8%a7%d9%84%d9%88%d8%b1%d8%af%d9%8a%d9%91%d8%a9/",
+  "en_repo_reference": "branch studio/rosary-year-factory scripts/en/joyful-body-unique-texts.json",
+  "accessed": "2026-10-24 ~23:04 ET"
+ },
+ "joyful_family_units": [
+  {
+   "key": "joyful-announcement",
+   "kind": "announcement",
+   "text": "نصلّي اليوم أسرار الفرح.",
+   "text_sha256": "0ca301861402187f2a4da7c3675005b043704be706eba1503f0748a00f0848b7",
+   "source_binding": "en_mirrored_authored; family name Seminary-verified",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful-announcement",
+   "mirrored_from_en_sha256": "9d9e2032a3cd4731215fa182b0cd3109902d30bfa8b88bfd73abefa9107aef7d",
+   "flags": [
+    "EN: Today we pray the Joyful Mysteries."
+   ]
+  },
+  {
+   "key": "joyful_1-announcement",
+   "kind": "mystery_announcement",
+   "text": "السرّ الأوّل من أسرار الفرح: البشارة. ثمرة هذا السرّ: التواضع.",
+   "text_sha256": "64864be9020f93f12747a7e8ca8b785230c0ae2de6a4921d1d5294447ba9cbd1",
+   "source_binding": "seminary_content_match_normalized_not_byte_verbatim",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-announcement",
+   "mirrored_from_en_sha256": "66e7007a42f14005124389b0d238d6c97e8eade2c6d9d74973b97a1e47ac1122",
+   "flags": [
+    "content matches Seminary row (ordinal+label+fruit); punctuation/diacritics normalized (trailing period stripped, whitespace collapsed, row-1 السرّ shadda normalized) - NOT byte-verbatim"
+   ]
+  },
+  {
+   "key": "joyful_2-announcement",
+   "kind": "mystery_announcement",
+   "text": "السرّ الثاني من أسرار الفرح: الزيارة. ثمرة هذا السرّ: محبّة القريب.",
+   "text_sha256": "1b65a8287e44446f34faea8f16048b912b729c8bbfd6704484c775cf46bb67ec",
+   "source_binding": "seminary_content_match_normalized_not_byte_verbatim",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-announcement",
+   "mirrored_from_en_sha256": "ef9e2083c1d0f8fc970ecf75c22a0c742a7a401a877c401effa6979e91aeb16b",
+   "flags": [
+    "content matches Seminary row (ordinal+label+fruit); punctuation/diacritics normalized (trailing period stripped, whitespace collapsed, row-1 السرّ shadda normalized) - NOT byte-verbatim"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_3-announcement",
+   "kind": "mystery_announcement",
+   "text": "السرّ الثالث من أسرار الفرح: الميلاد. ثمرة هذا السرّ: التجرّد.",
+   "text_sha256": "230fe45db428fcbf1e9afff3423f301ca20be0dfe936a4c751be0c3f87767b27",
+   "source_binding": "seminary_content_match_normalized_not_byte_verbatim",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-announcement",
+   "mirrored_from_en_sha256": "9d75565d86b5deab47a58395eb84f2395aea5de6334cca6a4cdd81909afc56ed",
+   "flags": [
+    "content matches Seminary row (ordinal+label+fruit); punctuation/diacritics normalized (trailing period stripped, whitespace collapsed, row-1 السرّ shadda normalized) - NOT byte-verbatim"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_4-announcement",
+   "kind": "mystery_announcement",
+   "text": "السرّ الرابع من أسرار الفرح: تقدمة يسوع إلى الهيكل. ثمرة هذا السرّ: الطهارة.",
+   "text_sha256": "ba40777d27e1e0dcd46778a1f60aa13857107575ed93a78e455a4171a22fe35c",
+   "source_binding": "seminary_content_match_normalized_not_byte_verbatim",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-announcement",
+   "mirrored_from_en_sha256": "d87f237fc80c9d2fe86e5b2a88dabc7be33e3a148f6e7c179ae16bbfc0449a46",
+   "flags": [
+    "content matches Seminary row (ordinal+label+fruit); punctuation/diacritics normalized (trailing period stripped, whitespace collapsed, row-1 السرّ shadda normalized) - NOT byte-verbatim"
+   ]
+  },
+  {
+   "key": "joyful_5-announcement",
+   "kind": "mystery_announcement",
+   "text": "السرّ الخامس من أسرار الفرح: وجود يسوع في الهيكل. ثمرة هذا السرّ: الطاعة.",
+   "text_sha256": "701a28660b1a16ff27f7fb3b754dec710d2b282d61ddf90bba426fd2b90eaebd",
+   "source_binding": "seminary_content_match_normalized_not_byte_verbatim",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-announcement",
+   "mirrored_from_en_sha256": "24808c451ff3885f04ae79faf11cc600db775c2f0db679928cfd0ab3f85ecd8f",
+   "flags": [
+    "content matches Seminary row (ordinal+label+fruit); punctuation/diacritics normalized (trailing period stripped, whitespace collapsed, row-1 السرّ shadda normalized) - NOT byte-verbatim"
+   ]
+  },
+  {
+   "key": "joyful_1-intro",
+   "kind": "mystery_intro",
+   "text": "تأمّل الملاك جبرائيل يأتي إلى مريم في الناصرة. يبشّرها بأنّها ستلد يسوع، ابن العليّ. ومريم تقبل بحرّية دعوة الله.",
+   "text_sha256": "3f535b5670c111b899e9e1888f461c0821b9fe8cf7581a120936ef73624dfaff",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "Gospel paraphrase/devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-intro",
+   "mirrored_from_en_sha256": "76e20702dfbbb0f102dd6af726ddb7ec0ddc8ad3f39b387fd209a52e20e9083a",
+   "flags": [
+    "published AR Oct 17 joyful audio exists - studio audio recovery is evidence of prior actual wording; these are candidates for any missing words, words gate decides conflicts"
+   ],
+   "source_scripture": "Luke 1:26-38"
+  },
+  {
+   "key": "joyful_1-bead-1",
+   "kind": "meditation",
+   "text": "تأمّل الناصرة عند الفجر، وغرفة بسيطة هادئة.",
+   "text_sha256": "eff9606301dd8ebf37dd9a10b7515512c4a3f5c6705ffc71c78c629b5f850349",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-bead-1",
+   "mirrored_from_en_sha256": "0cee6f7c0c4f062b948ec499584fd2140a516d198615b47355a12b3912b569a8",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:26-38"
+  },
+  {
+   "key": "joyful_1-bead-2",
+   "kind": "meditation",
+   "text": "تأمّل مريم في الصلاة، مصغية بقلب سلاميّ.",
+   "text_sha256": "fe64d049434f44b19754b07265ab4f203860adf45b5b40b3fb277c6a4a5ba9e7",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-bead-2",
+   "mirrored_from_en_sha256": "17c9af115908c382dfb6c61e6ce90adbd073ad8f519c1fa8deb497f42a27ee74",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:26-38"
+  },
+  {
+   "key": "joyful_1-bead-3",
+   "kind": "meditation",
+   "text": "تأمّل جبرائيل يقف أمام مريم حاملاً رسالة من الله.",
+   "text_sha256": "05867bc925ca43e7d23c552f2a515a3c90d7e617edc7ba05aa627334e248bcbd",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-bead-3",
+   "mirrored_from_en_sha256": "e74d2366f09fe5dd5708aa3f0bc9726458584532dc0407ae01e3e99ff6e488e0",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:26-38"
+  },
+  {
+   "key": "joyful_1-bead-4",
+   "kind": "meditation",
+   "text": "تأمّل مريم تصغي وجبرائيل يبشّرها بأنّها ستلد المخلّص.",
+   "text_sha256": "a3bc46380d23afb811138bccb401823d6a722b7da17c89fc0d369950f3c64808",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-bead-4",
+   "mirrored_from_en_sha256": "3c1415d1dbc4a623d1b1dcb7061f2ce13707c78e5437eea51fafa526c4a0c593",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:26-38"
+  },
+  {
+   "key": "joyful_1-bead-5",
+   "kind": "meditation",
+   "text": "تأمّل مريم تتوقّف بدهشة وتسأل كيف يكون هذا.",
+   "text_sha256": "02af274c9211d220b64f27826d97d9ee51673aca74340c97aeb5e23bb51ee82d",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-bead-5",
+   "mirrored_from_en_sha256": "cea4d52fc2f1afd514fc928f69288615fc19623daa5683511c99e1fbf5722f00",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:26-38"
+  },
+  {
+   "key": "joyful_1-bead-6",
+   "kind": "meditation",
+   "text": "تأمّل الروح القدس يظلّل مريم.",
+   "text_sha256": "23cba48b005b7dfa996f788736e4a5fd8599a4722c0084f59adafc5a659bca7f",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-bead-6",
+   "mirrored_from_en_sha256": "4f0bcfde2945995282c4b9115764829f3084380c80ff6a82048c053b661088d1",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:26-38"
+  },
+  {
+   "key": "joyful_1-bead-7",
+   "kind": "meditation",
+   "text": "تأمّل مريم تستعدّ بحرّية لتقول نعم لله.",
+   "text_sha256": "fc771add6a2493713297fa3d3813ba0ce2364595f7ee8a807f22e90edad16550",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-bead-7",
+   "mirrored_from_en_sha256": "35cb0566302abec67444bdc517dede0465000a10577259decaab5b83956bfc42",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:26-38"
+  },
+  {
+   "key": "joyful_1-bead-8",
+   "kind": "meditation",
+   "text": "تأمّل مريم تقبل بحرّية دعوة الله لتصبح أمّ يسوع.",
+   "text_sha256": "2a6ffa2cff46f498715eb66b3a9648fab08c1e40bee1ad6bc52cd2965920e416",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-bead-8",
+   "mirrored_from_en_sha256": "daea6f6abb1e84d86284fa36c2ccd24b89f931e592712f76865b0976f935cf61",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:26-38"
+  },
+  {
+   "key": "joyful_1-bead-9",
+   "kind": "meditation",
+   "text": "تأمّل ابن الله يصير طفلاً في أحشاء مريم.",
+   "text_sha256": "18da74d66e9f4e31b83853ef7a8ce131844d5e2c6fc623585735cd86adb973ad",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-bead-9",
+   "mirrored_from_en_sha256": "485ae2342453a0dc6000653eeaf043f2ff11241cf0700e3943108f45280b5aed",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:26-38"
+  },
+  {
+   "key": "joyful_1-bead-10",
+   "kind": "meditation",
+   "text": "تأمّل مريم تبقى في الغرفة الهادئة بعد مغادرة الملاك.",
+   "text_sha256": "623dbecae3e5ea6c2045de18a75524878f6a61454d61ea39b20390bb70bcdbfa",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_1-bead-10",
+   "mirrored_from_en_sha256": "3fb2078a16a11668edc0156c68a47b8bf9c2782bacb67112780abcb9a633c398",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:26-38"
+  },
+  {
+   "key": "joyful_2-intro",
+   "kind": "mystery_intro",
+   "text": "تأمّل مريم تزور أليصابات. تفرح أليصابات، ويرتكض الجنين في بطنها فرحاً. وتسبّح مريم الله على رحمته.",
+   "text_sha256": "c1e66227604a5be2794acfb758fc893751e49e0e9db6c2139a13803cd4497839",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "Gospel paraphrase/devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-intro",
+   "mirrored_from_en_sha256": "5d6db1373f5be65dd1f35ad6db4dc4552cb8658b4f2ff2bce6ce468f6bbbb0aa",
+   "flags": [
+    "published AR Oct 17 joyful audio exists - studio audio recovery is evidence of prior actual wording; these are candidates for any missing words, words gate decides conflicts"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_2-bead-1",
+   "kind": "meditation",
+   "text": "تأمّل مريم تنطلق من الناصرة لزيارة أليصابات.",
+   "text_sha256": "5d7e10c98ba83072dbfcc560f7fb173de9a2672f93996f013d7a6d605e7d74c5",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-bead-1",
+   "mirrored_from_en_sha256": "0fbeba87b0deef97666d5f5b05b1549efa9f06d815826d23dbc4667a9af9f58f",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_2-bead-2",
+   "kind": "meditation",
+   "text": "تأمّل مريم تعبر التلال نحو بيت أليصابات.",
+   "text_sha256": "a626b760e6cc59f13a527fddf01e555070699212f9707fda1a22606effbb8a55",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-bead-2",
+   "mirrored_from_en_sha256": "6465c68d691243ff37c0f265090b3161774f7fa36b34d3c33f633e3c5488eb1e",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_2-bead-3",
+   "kind": "meditation",
+   "text": "تأمّل مريم تدخل البيت وتسلّم على أليصابات.",
+   "text_sha256": "520356f3c490a87c77932eb007de635d121065734b3bea69cd362c9ed6beaaf0",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-bead-3",
+   "mirrored_from_en_sha256": "1669dfddab7ac84d3fef31b21af14e0a35599030c4ab9f265653fc9e5b18a825",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_2-bead-4",
+   "kind": "meditation",
+   "text": "تأمّل يوحنا يرتكض في بطن أليصابات عند سلام مريم.",
+   "text_sha256": "c1c6ec6b6215e7dfb492c21d0f725d7e52febd686e1fe6a4157385e23f2d25ed",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-bead-4",
+   "mirrored_from_en_sha256": "52096d094a4289713738768cdf1f529df1c06d41e10703a3140fa6a977d911e9",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_2-bead-5",
+   "kind": "meditation",
+   "text": "تأمّل أليصابات ترحّب بمريم وتبارك الطفل الذي تحمله.",
+   "text_sha256": "e952cf45cba9d4bfe423538c8a5bd4b39c9df94224cda914ec16caf1bec7a463",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-bead-5",
+   "mirrored_from_en_sha256": "daa55d1209ecc88186f92105105ef66239f871548dbbcef3d5edf4a529a67b29",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_2-bead-6",
+   "kind": "meditation",
+   "text": "تأمّل مريم تسبّح الله في نشيد التعظيم.",
+   "text_sha256": "5535d2130c086ca2be4fede053ef8554dd88f30f447da06effdb2e262c5e925a",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-bead-6",
+   "mirrored_from_en_sha256": "a674f29ca0281df6251cc7f8e17ec3ea3f6a1914edcfebf2142b12aff8c92c5f",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_2-bead-7",
+   "kind": "meditation",
+   "text": "تأمّل مريم تبقى إلى جانب أليصابات في أشهر الانتظار.",
+   "text_sha256": "e67463e9bd2a8834ae0d6b23a0b4491fd40da451c0062a88ffc9dd3df72404d3",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-bead-7",
+   "mirrored_from_en_sha256": "b358905fa348393458008bd14701898d0285ce2c2ccb20d7ef8953532fed296d",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_2-bead-8",
+   "kind": "meditation",
+   "text": "تأمّل مريم تساعد في أعمال البيت اليوميّة.",
+   "text_sha256": "a12fb359bdd874d4df2a88a717e51c39a1585cfe4213a285aae0308542d16bf4",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-bead-8",
+   "mirrored_from_en_sha256": "1ef9cb3947b8bec0c0c277e2ce782c59bf3361b541de13711a190b097be20846",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_2-bead-9",
+   "kind": "meditation",
+   "text": "تأمّل الأمّين تتقاسمان لحظات النهار الهادئة.",
+   "text_sha256": "0d54772e44300ffc409d1ec81fc6b003b1e8b5039e8e0bd69f72a5aa4ffbcb6e",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-bead-9",
+   "mirrored_from_en_sha256": "c9b52228a21d9425a13bdfc810833c743a73a6bf14eb9e17a72af9951de2b44e",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_2-bead-10",
+   "kind": "meditation",
+   "text": "تأمّل مريم تعود إلى بيتها بعد الزيارة.",
+   "text_sha256": "ba0eddf81e6cf92cdbbadb8cd0923020acf75151eb57471d466b3730c163caf8",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_2-bead-10",
+   "mirrored_from_en_sha256": "899b850d738f0f3028f3aae40f8114bb051201689178700c12ae77db440e133b",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 1:39-56"
+  },
+  {
+   "key": "joyful_3-intro",
+   "kind": "mystery_intro",
+   "text": "تأمّل مريم ويوسف في بيت لحم. يولد يسوع ويُضجع في المذود. ويسمع الرعاة بشرى الملائكة فيأتون ليجدوه.",
+   "text_sha256": "10b45c59be89294c35cd49518e284eb82d319cfd484f29317eb5393327d8ba01",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "Gospel paraphrase/devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-intro",
+   "mirrored_from_en_sha256": "cc8c38889ce7006791e95b6af4550078feb457d93c13c8f9984d081f8f4a9834",
+   "flags": [
+    "published AR Oct 17 joyful audio exists - studio audio recovery is evidence of prior actual wording; these are candidates for any missing words, words gate decides conflicts"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_3-bead-1",
+   "kind": "meditation",
+   "text": "تأمّل مريم ويوسف يصلان إلى بيت لحم.",
+   "text_sha256": "0a67595e2f9e1aa369ddf61454c2666cb424a355375980124a80ec492e2b9255",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-bead-1",
+   "mirrored_from_en_sha256": "e59ac758933a48d66aa63bb3b88ea00efee01454a7d3a94a81ae2ba8b5d9be9f",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_3-bead-2",
+   "kind": "meditation",
+   "text": "تأمّل مريم ويوسف لا يجدان موضعاً في النُزُل.",
+   "text_sha256": "5082b9c1343e88c00279610ad27ed8aeb4c996a6c371088b8849122f32bad40c",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-bead-2",
+   "mirrored_from_en_sha256": "43fc4dd4d11d569b0e19c876d56155b722fba1983f8d8a8b37f1eecf1399835c",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_3-bead-3",
+   "kind": "meditation",
+   "text": "تأمّل المكان المتواضع حيث ستلد مريم.",
+   "text_sha256": "f3a57aab670448e04e8934dc891f7019eb531ab6297baf3177d9c1427d0fd5e8",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-bead-3",
+   "mirrored_from_en_sha256": "29d3b96ba0602ddcf0b65b4d136fa6b8efcfd4dbc142cbc8e043454a51518646",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_3-bead-4",
+   "kind": "meditation",
+   "text": "تأمّل الطفل يسوع المولود مقمّطاً في القماط.",
+   "text_sha256": "e60cb4a04672b44d6cad41e83fa05da3d9f3789defa86ac208624f0f1e69907b",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-bead-4",
+   "mirrored_from_en_sha256": "45d2a5a98c2d1b0b73836c8e2dbfd1e9ecf9164ea23d4fa2665f021fe2ba20ce",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_3-bead-5",
+   "kind": "meditation",
+   "text": "تأمّل مريم تضع يسوع بلطف في المذود.",
+   "text_sha256": "71cefd8362b94575fb3013d18d15a670f45469f5f52f32db66774ee20e628feb",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-bead-5",
+   "mirrored_from_en_sha256": "74f3e3916b923ff3f36398f7fec44eff2cd5709510001f4b7fa03482b3ebe122",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_3-bead-6",
+   "kind": "meditation",
+   "text": "تأمّل الرعاة في الليل يسمعون بشارة الملاك.",
+   "text_sha256": "f0b1d107d1b723da4586d388017b4be8b4967adf804092156fe4b33d1c0a3b10",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-bead-6",
+   "mirrored_from_en_sha256": "4b5881868279c487fdca3dd9aed42c994a4871b67e9143184818ab7fa4b2d20e",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_3-bead-7",
+   "kind": "meditation",
+   "text": "تأمّل الرعاة يأتون لرؤية الطفل.",
+   "text_sha256": "1e08e07ca75da2544c6a75c35819f153ec44f35cb0d7812b6f377ea59b4db3b4",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-bead-7",
+   "mirrored_from_en_sha256": "5b4b69c2c1bfc3d9be9227371d0079dba0bdb2a9a5fe9b179b59f474d2114e54",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_3-bead-8",
+   "kind": "meditation",
+   "text": "تأمّل مريم ويوسف يرحّبان بالرعاة عند المذود.",
+   "text_sha256": "1ca476028e1a98e3c2fcfee6005365f3e9968f78e451bbee14d7e1d7a8539618",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-bead-8",
+   "mirrored_from_en_sha256": "6076eb311e417dbf7ce5e58412145283c8cc14eb1acd33daacbe8a8acc655882",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_3-bead-9",
+   "kind": "meditation",
+   "text": "تأمّل الرعاة يسجدون أمام الطفل.",
+   "text_sha256": "2bb8b1a51eacbe33e95b0ac21b8626b4f85e8b1fa41c85043c70785e71ca5b36",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-bead-9",
+   "mirrored_from_en_sha256": "b7ead898f73b0b3ef7d24bbdd86759705f375dc2f5963c08f3577b92613411f9",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_3-bead-10",
+   "kind": "meditation",
+   "text": "تأمّل مريم تحفظ هذه الأمور في قلبها.",
+   "text_sha256": "54f41a7e112eafbf0267d8805b87f4eeafcd5414ccdb3e06f8326c1031406026",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_3-bead-10",
+   "mirrored_from_en_sha256": "8caae232f754b7fb4acb395a9808545ef179e16278d2f48a1733d9feb8a886d4",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:1-20"
+  },
+  {
+   "key": "joyful_4-intro",
+   "kind": "mystery_intro",
+   "text": "تأمّل مريم ويوسف يصعدان بيسوع إلى الهيكل. يأخذ شمعون الطفل ويسبّح الله. وحنة تشكر وتخبر عنه المنتظرين الفداء.",
+   "text_sha256": "eefd5966726a6b24126d4677654cb89f63b51ff22a08ef4aa2ffa9345d144e0a",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "Gospel paraphrase/devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-intro",
+   "mirrored_from_en_sha256": "66a4dbeb520e3322e7b033c3a7d7358b159642a0f9a67ad7f3dc795c8b3f970d",
+   "flags": [
+    "published AR Oct 17 joyful audio exists - studio audio recovery is evidence of prior actual wording; these are candidates for any missing words, words gate decides conflicts"
+   ],
+   "source_scripture": "Luke 2:22-38"
+  },
+  {
+   "key": "joyful_4-bead-1",
+   "kind": "meditation",
+   "text": "تأمّل مريم ويوسف يدخلان بيسوع إلى الهيكل.",
+   "text_sha256": "ae0fb4e9b83a6b02a6a7d61d345044f0510b5107c528339df129134f396ee20a",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-bead-1",
+   "mirrored_from_en_sha256": "9659536786356c8b808f65cf14a5b184017c49a92375402ede43ad175b9f9834",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:22-38"
+  },
+  {
+   "key": "joyful_4-bead-2",
+   "kind": "meditation",
+   "text": "تأمّل مريم ويوسف يقدّمان قربانهما المتواضع.",
+   "text_sha256": "594c6bc3726345211528ba9bb06b46a8946af468c3400beefc8929196581c2b9",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-bead-2",
+   "mirrored_from_en_sha256": "7eb30259d9bce8d1c9c3a07a751272d0185fd2436158dc9b8f7b6ed079bb94d3",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:22-38"
+  },
+  {
+   "key": "joyful_4-bead-3",
+   "kind": "meditation",
+   "text": "تأمّل شمعون يأخذ الطفل بين ذراعيه.",
+   "text_sha256": "65a48ce39e787f1c12fb67a9d39cf53c7741875bdc74ab05ee9b38919b4f1118",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-bead-3",
+   "mirrored_from_en_sha256": "05a96df2357d90f136e9968cc4de8ef004ccd158d7945707ba793df8234a84d5",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:22-38"
+  },
+  {
+   "key": "joyful_4-bead-4",
+   "kind": "meditation",
+   "text": "تأمّل شمعون يسبّح الله على الخلاص الذي انتظر رؤيته.",
+   "text_sha256": "8f436181401678e5a3cffa2833e3aa26daffcb7ac2bbc2cb3368950c31974a07",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-bead-4",
+   "mirrored_from_en_sha256": "627bb6e9ddebacb9958534c8cd783057c0f528746b91ab4c1e5a9d760611de2c",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:22-38"
+  },
+  {
+   "key": "joyful_4-bead-5",
+   "kind": "meditation",
+   "text": "تأمّل مريم تصغي وشمعون يتكلّم عن الألم الآتي.",
+   "text_sha256": "353d2fad826f5fa0089dabe0fb433b58c01f1f310b224063b4b6417be0a4c184",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-bead-5",
+   "mirrored_from_en_sha256": "f55f64bae8869a09a93f3c085af1e5cf1991515c97798aa732779bfa93c43610",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:22-38"
+  },
+  {
+   "key": "joyful_4-bead-6",
+   "kind": "meditation",
+   "text": "تأمّل مريم تضمّ يسوع إليها وهي تسمع كلام شمعون.",
+   "text_sha256": "f5b22c212e102c052791266148c7b5090ff6541ee03a04b512aed1985fad1507",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-bead-6",
+   "mirrored_from_en_sha256": "344c50ed0351c58da4cc9f5dae345bd1172949c033d3e68ecc7b5c654cfd4a5d",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:22-38"
+  },
+  {
+   "key": "joyful_4-bead-7",
+   "kind": "meditation",
+   "text": "تأمّل حنّة تشكر وتخبر عن الطفل.",
+   "text_sha256": "dc4585b2f4269f81fcea8cd23e1acbdf06828fa80bab380f4f52e817a0af7262",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-bead-7",
+   "mirrored_from_en_sha256": "42f94709e7fcdd55c543d95ee78156fcef7617a4bed73ef83e8138adcff9b9d8",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:22-38"
+  },
+  {
+   "key": "joyful_4-bead-8",
+   "kind": "meditation",
+   "text": "تأمّل العائلة واقفة معاً في الهيكل.",
+   "text_sha256": "6c9067b3ef2fbc7fc142713f788487bba44a45b83fa91a8fd4bd1ecd902e482f",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-bead-8",
+   "mirrored_from_en_sha256": "a6bcb423f8f01b3c64da9014415c83704eedcd309210eb942541674b0c90e589",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:22-38"
+  },
+  {
+   "key": "joyful_4-bead-9",
+   "kind": "meditation",
+   "text": "تأمّل مريم ويوسف يغادران الهيكل مع يسوع.",
+   "text_sha256": "35ee5166b6b5ca7c7c2f014fcffbea2bd5e096367d98a56f6500b997a5aff3b5",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-bead-9",
+   "mirrored_from_en_sha256": "03944e20590b810908ab5f2d4b898b1b157e0cd835700f4e4ab409f152e6f092",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:22-38"
+  },
+  {
+   "key": "joyful_4-bead-10",
+   "kind": "meditation",
+   "text": "تأمّل العائلة تعود إلى حياتها اليوميّة في الناصرة.",
+   "text_sha256": "94669d633bbd9ac588648bf32a17c609a8ac8d3b52b93d62e6888e2fdb30a395",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_4-bead-10",
+   "mirrored_from_en_sha256": "c551cd0df0fb5c526d020610437302948ea2e9c17e37e45b90537292026b0eb9",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:22-38"
+  },
+  {
+   "key": "joyful_5-intro",
+   "kind": "mystery_intro",
+   "text": "تأمّل مريم ويوسف يبحثان عن يسوع في أورشليم. بعد ثلاثة أيام يجدانه في الهيكل، يصغي إلى المعلّمين ويسألهم. ويعود معهما إلى الناصرة.",
+   "text_sha256": "31f66646932d8176e5dca117e39b8dc5bdbec97e2ccb6a060880518bd0aa11bd",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "Gospel paraphrase/devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-intro",
+   "mirrored_from_en_sha256": "fddecc1a30b41ba8557c8c53f9fa0f6466ff26f6b07f725b3004d0d8818a16ff",
+   "flags": [
+    "published AR Oct 17 joyful audio exists - studio audio recovery is evidence of prior actual wording; these are candidates for any missing words, words gate decides conflicts"
+   ],
+   "source_scripture": "Luke 2:40-51"
+  },
+  {
+   "key": "joyful_5-bead-1",
+   "kind": "meditation",
+   "text": "تأمّل مريم ويوسف يبدآن رحلة العودة من أورشليم.",
+   "text_sha256": "b0725df6958fdb0a5ed71a08068648ba9df386602fb2c7287be731db2bd788e6",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-bead-1",
+   "mirrored_from_en_sha256": "a3b8199f99b8a5f7cc87efb1bdd015609be783cf991c6f5eb5da9286b170fb11",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:40-51"
+  },
+  {
+   "key": "joyful_5-bead-2",
+   "kind": "meditation",
+   "text": "تأمّل مريم ويوسف يكتشفان أنّ يسوع ليس مع المسافرين.",
+   "text_sha256": "8bd62c7854e06d0603a48c95d24cdb54858664bf9d7d7e83c11d0c2e335f2578",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-bead-2",
+   "mirrored_from_en_sha256": "955aba660f055c7512860619a88443c9182bf35dfb53a0accd2efc87a86fa17c",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:40-51"
+  },
+  {
+   "key": "joyful_5-bead-3",
+   "kind": "meditation",
+   "text": "تأمّل مريم ويوسف يرجعان إلى أورشليم بحثاً عنه.",
+   "text_sha256": "9251f28e976ef6b5dfb4cd9123306bcc00a9463f47464caa4961ffa421b67153",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-bead-3",
+   "mirrored_from_en_sha256": "8166ed782b9ee6f36af636eeef44cb3dfb9d1bd39f7c69ca7fc6c95f2925d0f1",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:40-51"
+  },
+  {
+   "key": "joyful_5-bead-4",
+   "kind": "meditation",
+   "text": "تأمّل أيام البحث القلقة عن يسوع.",
+   "text_sha256": "2fce0765779d55d221e6208dc92fa1cd1cabb5172679ed843215410ee686a784",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-bead-4",
+   "mirrored_from_en_sha256": "2da40690783d15d78213423ff7896e8b3e4411926473bad394cd80423c87b883",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:40-51"
+  },
+  {
+   "key": "joyful_5-bead-5",
+   "kind": "meditation",
+   "text": "تأمّل يسوع جالساً بين المعلّمين في الهيكل.",
+   "text_sha256": "a49a3d3e1c8ca716fa76972a208795778873ee667da0fef882850849e45bbac2",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-bead-5",
+   "mirrored_from_en_sha256": "5735ee3627a776fa2dfc5e501bb01155f78106c1ccf63c306e8e2d4c31408ffe",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:40-51"
+  },
+  {
+   "key": "joyful_5-bead-6",
+   "kind": "meditation",
+   "text": "تأمّل مريم تكلّم يسوع بعد البحث الطويل.",
+   "text_sha256": "8fb3385c34ec3c70eed4fd139f4338d2b80a2486d57798c3de5f5ff1071848b3",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-bead-6",
+   "mirrored_from_en_sha256": "01e378603c2e513d9255c9aa2aa47e8341d0136878b7cd2e3f9c117a88ce51ac",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:40-51"
+  },
+  {
+   "key": "joyful_5-bead-7",
+   "kind": "meditation",
+   "text": "تأمّل يسوع يتكلّم عن بيت أبيه.",
+   "text_sha256": "5f438b8d9218803b636715968cd415d84ef28ee7cb8cdc132d2849bd6c71e515",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-bead-7",
+   "mirrored_from_en_sha256": "d350f92ecb59c635b10cb0b857df5f03d04c1d276133f59297c5bae58e5455fd",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:40-51"
+  },
+  {
+   "key": "joyful_5-bead-8",
+   "kind": "meditation",
+   "text": "تأمّل يسوع يعود إلى الناصرة مع مريم ويوسف.",
+   "text_sha256": "e40faee017769ff25bfa0191a3a63c92248aea8bb2b0baf2727fb88fc85acbe2",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-bead-8",
+   "mirrored_from_en_sha256": "67205f356637a81a76e8a04c65c14864d0dbc8893eb07ca0e184979345738dab",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:40-51"
+  },
+  {
+   "key": "joyful_5-bead-9",
+   "kind": "meditation",
+   "text": "تأمّل مريم تحفظ كلامه في قلبها.",
+   "text_sha256": "3d6ff9efab7f2bb76675a9ea87dee9efe8d92606c6e294235d004a33f2a3c1c2",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-bead-9",
+   "mirrored_from_en_sha256": "0ac2fb527c3a420bf8c7c6fd287e16d3809549e6893095f02c237dda700fb35b",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:40-51"
+  },
+  {
+   "key": "joyful_5-bead-10",
+   "kind": "meditation",
+   "text": "تأمّل يسوع يعيش مع عائلته في الناصرة.",
+   "text_sha256": "c0e9d8e6dd457f9364bc3ec37eb4a6197e4ecc8f86f913270b9a8668ed7b4bc2",
+   "source_binding": "en_mirrored_authored_devotional_distinct_from_source_exact_prayers",
+   "claim_type": "authored devotional visualization;not quotation",
+   "mirrored_from_en_key": "joyful_5-bead-10",
+   "mirrored_from_en_sha256": "efdf0e50c2ec6b5934ee48bfe02b8df8fb7b74717435d93d84598a97241ac867",
+   "flags": [
+    "same candidate basis"
+   ],
+   "source_scripture": "Luke 2:40-51"
+  }
+ ]
+}

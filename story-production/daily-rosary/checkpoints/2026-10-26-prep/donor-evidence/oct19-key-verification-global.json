@@ -1,0 +1,324 @@
+{
+ "caveats": [
+  "Scores are recognizer evidence (faster-whisper base ASR + fuzzy text alignment), not proof of verbatim audio.",
+  "UNRESOLVED spoken-word differences with recognizer evidence only: joyful_1-announcement (ASR 'enunciation' vs expected 'Annunciation'); joyful_4-bead-3 (ASR 'simian' vs expected 'Simeon').",
+  "joyful_1-bead-9: full-body ASR pass garbled the ~430s segment; targeted base+small probes at 424-448s both returned 'Picture the Son of God becoming a child in Mary's womb.' - recognizer evidence only, not confirmed verbatim.",
+  "Full donor audio quality remains unverified; a copied public donor is not self-validating.",
+  "Tail measurement: last speech ends 1948.82s; 1948.81->2027.16s measured digital silence (silencedetect -45dB/2s, per-window RMS -inf). No trim proposed; original preserved at measured boundary 17.935s splice, 2027.162s body."
+ ],
+ "method": "whisper base EN full-body transcript (272 segments) + per-key global fuzzy window search (difflib quick_ratio, normalized lowercase alpha)",
+ "donor": {
+  "video_id": "6VTvjDk6x-k",
+  "episode": "Daily Rosary | Monday, October 19, 2026 | Joyful Mysteries",
+  "oembed_verified": "2026-10-24 23:05 ET",
+  "body_splice_s": 17.935,
+  "body_duration_s": 2027.162
+ },
+ "results": [
+  {
+   "key": "joyful-announcement",
+   "score": 1.0,
+   "at_s": 0.0
+  },
+  {
+   "key": "joyful_1-announcement",
+   "score": 0.8,
+   "at_s": 162.9
+  },
+  {
+   "key": "joyful_1-intro",
+   "score": 1.0,
+   "at_s": 178.8
+  },
+  {
+   "key": "joyful_1-bead-1",
+   "score": 1.0,
+   "at_s": 218.5
+  },
+  {
+   "key": "joyful_1-bead-2",
+   "score": 1.0,
+   "at_s": 245.5
+  },
+  {
+   "key": "joyful_1-bead-3",
+   "score": 1.0,
+   "at_s": 272.3
+  },
+  {
+   "key": "joyful_1-bead-4",
+   "score": 1.0,
+   "at_s": 299.3
+  },
+  {
+   "key": "joyful_1-bead-5",
+   "score": 0.909,
+   "at_s": 327.2
+  },
+  {
+   "key": "joyful_1-bead-6",
+   "score": 1.0,
+   "at_s": 354.2
+  },
+  {
+   "key": "joyful_1-bead-7",
+   "score": 1.0,
+   "at_s": 380.3
+  },
+  {
+   "key": "joyful_1-bead-8",
+   "score": 1.0,
+   "at_s": 406.0
+  },
+  {
+   "key": "joyful_1-bead-9",
+   "score": 0.455,
+   "at_s": 3.5
+  },
+  {
+   "key": "joyful_1-bead-10",
+   "score": 1.0,
+   "at_s": 459.8
+  },
+  {
+   "key": "joyful_2-announcement",
+   "score": 1.0,
+   "at_s": 516.1
+  },
+  {
+   "key": "joyful_2-intro",
+   "score": 1.0,
+   "at_s": 521.5
+  },
+  {
+   "key": "joyful_2-bead-1",
+   "score": 1.0,
+   "at_s": 558.8
+  },
+  {
+   "key": "joyful_2-bead-2",
+   "score": 1.0,
+   "at_s": 585.1
+  },
+  {
+   "key": "joyful_2-bead-3",
+   "score": 1.0,
+   "at_s": 610.1
+  },
+  {
+   "key": "joyful_2-bead-4",
+   "score": 1.0,
+   "at_s": 637.1
+  },
+  {
+   "key": "joyful_2-bead-5",
+   "score": 1.0,
+   "at_s": 664.1
+  },
+  {
+   "key": "joyful_2-bead-6",
+   "score": 1.0,
+   "at_s": 691.1
+  },
+  {
+   "key": "joyful_2-bead-7",
+   "score": 1.0,
+   "at_s": 716.1
+  },
+  {
+   "key": "joyful_2-bead-8",
+   "score": 1.0,
+   "at_s": 742.1
+  },
+  {
+   "key": "joyful_2-bead-9",
+   "score": 1.0,
+   "at_s": 768.1
+  },
+  {
+   "key": "joyful_2-bead-10",
+   "score": 1.0,
+   "at_s": 794.1
+  },
+  {
+   "key": "joyful_3-announcement",
+   "score": 1.0,
+   "at_s": 845.5
+  },
+  {
+   "key": "joyful_3-intro",
+   "score": 1.0,
+   "at_s": 845.5
+  },
+  {
+   "key": "joyful_3-bead-1",
+   "score": 1.0,
+   "at_s": 889.3
+  },
+  {
+   "key": "joyful_3-bead-2",
+   "score": 1.0,
+   "at_s": 914.6
+  },
+  {
+   "key": "joyful_3-bead-3",
+   "score": 1.0,
+   "at_s": 941.0
+  },
+  {
+   "key": "joyful_3-bead-4",
+   "score": 1.0,
+   "at_s": 966.5
+  },
+  {
+   "key": "joyful_3-bead-5",
+   "score": 1.0,
+   "at_s": 992.6
+  },
+  {
+   "key": "joyful_3-bead-6",
+   "score": 1.0,
+   "at_s": 1018.6
+  },
+  {
+   "key": "joyful_3-bead-7",
+   "score": 1.0,
+   "at_s": 1045.1
+  },
+  {
+   "key": "joyful_3-bead-8",
+   "score": 1.0,
+   "at_s": 1070.4
+  },
+  {
+   "key": "joyful_3-bead-9",
+   "score": 1.0,
+   "at_s": 1097.0
+  },
+  {
+   "key": "joyful_3-bead-10",
+   "score": 1.0,
+   "at_s": 1122.4
+  },
+  {
+   "key": "joyful_4-announcement",
+   "score": 1.0,
+   "at_s": 1180.6
+  },
+  {
+   "key": "joyful_4-intro",
+   "score": 0.926,
+   "at_s": 1180.6
+  },
+  {
+   "key": "joyful_4-bead-1",
+   "score": 1.0,
+   "at_s": 1226.2
+  },
+  {
+   "key": "joyful_4-bead-2",
+   "score": 1.0,
+   "at_s": 1246.9
+  },
+  {
+   "key": "joyful_4-bead-3",
+   "score": 0.875,
+   "at_s": 1278.3
+  },
+  {
+   "key": "joyful_4-bead-4",
+   "score": 0.917,
+   "at_s": 1304.6
+  },
+  {
+   "key": "joyful_4-bead-5",
+   "score": 0.9,
+   "at_s": 1327.2
+  },
+  {
+   "key": "joyful_4-bead-6",
+   "score": 0.9,
+   "at_s": 1353.7
+  },
+  {
+   "key": "joyful_4-bead-7",
+   "score": 1.0,
+   "at_s": 1381.2
+  },
+  {
+   "key": "joyful_4-bead-8",
+   "score": 1.0,
+   "at_s": 1406.9
+  },
+  {
+   "key": "joyful_4-bead-9",
+   "score": 1.0,
+   "at_s": 1432.7
+  },
+  {
+   "key": "joyful_4-bead-10",
+   "score": 1.0,
+   "at_s": 1459.5
+  },
+  {
+   "key": "joyful_5-announcement",
+   "score": 1.0,
+   "at_s": 1519.3
+  },
+  {
+   "key": "joyful_5-intro",
+   "score": 1.0,
+   "at_s": 1519.3
+  },
+  {
+   "key": "joyful_5-bead-1",
+   "score": 1.0,
+   "at_s": 1562.1
+  },
+  {
+   "key": "joyful_5-bead-2",
+   "score": 1.0,
+   "at_s": 1589.4
+  },
+  {
+   "key": "joyful_5-bead-3",
+   "score": 1.0,
+   "at_s": 1617.0
+  },
+  {
+   "key": "joyful_5-bead-4",
+   "score": 1.0,
+   "at_s": 1647.1
+  },
+  {
+   "key": "joyful_5-bead-5",
+   "score": 1.0,
+   "at_s": 1672.6
+  },
+  {
+   "key": "joyful_5-bead-6",
+   "score": 1.0,
+   "at_s": 1698.1
+  },
+  {
+   "key": "joyful_5-bead-7",
+   "score": 1.0,
+   "at_s": 1724.5
+  },
+  {
+   "key": "joyful_5-bead-8",
+   "score": 1.0,
+   "at_s": 1749.7
+  },
+  {
+   "key": "joyful_5-bead-9",
+   "score": 1.0,
+   "at_s": 1776.2
+  },
+  {
+   "key": "joyful_5-bead-10",
+   "score": 1.0,
+   "at_s": 1801.8
+  }
+ ]
+}
