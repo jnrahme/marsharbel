@@ -24,8 +24,8 @@ P8 (a story Christians keep) - CHANGED, matched. Maronite October 16 kept; no ma
 P9 (look again) - unchanged from v1. Applications one-for-one. Fidelity: full.
 P10 (reflection) - unchanged from v1. Citations "مرقس 15: 33-39" / "يوحنا 19: 31-37" (OPEN-2 stands); trusted-grown-up shape verbatim; closing prayer unchanged. Fidelity: full.
 
-OPEN ITEMS for the independent reviewer (carried from v1, none resolved by me):
-OPEN-1: أورشليم (Gospel-narrative register, this book) vs القدس (Isaiah pilot + site convention) - cross-book consistency ruling.
-OPEN-2: Scripture citations with Western digits vs the Isaiah pilot's spelled-out Arabic words - one convention should win across books.
-OPEN-3: لونجينوس transliteration (vs لُنْجِين in some Arabic Christian sources) - reviewer to confirm the Maronite convention.
-OPEN-4: Assembled-book RTL render test pending (shared reader RTL already tested per RTL-RENDER-TEST-G3-20261023.md on the Isaiah branch; Isaiah/Longinus assemblies themselves untested).
+OPEN ITEMS (corrected 2026-10-25 07:32 ET against addendum v1.1 rulings of 2026-10-23, file longinus-ar-review-addendum-v1.1-20261023.md on this branch - the v1/v2 "carried open" listing was stale documentation, not a text defect):
+OPEN-1: RULED 2026-10-23 - retain أورشليم for Gospel-narrative register; no forced rewrite of Isaiah's القدس; register difference is not a faith defect.
+OPEN-2: RULED 2026-10-23 - Western-digit citations valid for DISPLAY; future read-aloud must spell natural spoken book/chapter/verse forms in the pronunciation manifest (owed at the future voice pass, not a v2 defect).
+OPEN-3: RULED 2026-10-23 - لونجينوس accepted as the site form (attestations in the addendum); NOT to be called the official synaxarion form; the unverified liturgical-book caveat stands.
+OPEN-4: GENUINELY OPEN - assembled-book RTL render test pending (shared reader RTL tested per RTL-RENDER-TEST-G3-20261023.md on the Isaiah branch; Isaiah/Longinus assemblies themselves untested).

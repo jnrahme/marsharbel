@@ -43,7 +43,7 @@ F4, F1, F2, F5 ACCEPTED for a reversible EN candidate (not final production), ap
 
 ## Net effect
 - Narrated words: 865 -> approximately 843 (still inside the 750-1,000 envelope).
-- Sentence starts: no repeated "Mark tells us" openings remain; no new repeated starts introduced.
+- Sentence starts: no repeated "Mark tells us" openings remain; no new repeated starts introduced. [CORRECTION 2026-10-25 07:32 ET: this guarantee proved FALSE for the applied candidate - the F1 fix introduced a P5 "Then...Then" repeated start within four sentences, mirrored in AR P5 "ثمّ...ثمّ"; also a P3 "Jesus...Jesus" micro echo across sentences 1-2. Found by the fresh independent TEXT review (18/20), reported as findings, deliberately NOT polished without review. Record corrected; text unchanged.]
 - Pages touched: 1, 3, 4, 5, 6, 8. Pages 2, 7, 9, 10 untouched (p10 reflection block, including the approved prayer with saint-intercession distinction, is untouched).
 - Reversibility: each change is an independent before/after pair; any subset can be accepted or rejected without affecting the others. Application, if accepted, is one data.js edit + re-pin, then the AR matched revision through its own gate.
 
