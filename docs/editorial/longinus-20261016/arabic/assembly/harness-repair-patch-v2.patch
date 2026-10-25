@@ -1,0 +1,58 @@
+LONGINUS AR PRIVATE HARNESS REPAIR PATCH v2 (2026-10-25 ~07:52 ET)
+Scope (Main 07:50 ruling): R1 + R7 repair candidates, PRIVATE HARNESS storybook.js copy ONLY (local,
+uncommitted, applied by the gate harness over a pristine checkout; production/shared reader untouched).
+R6 EXCLUDED - wording returned to independent locale review before any apply. No series-wide fallback fix.
+No image flip; bitmap untouched. No audio/integration/release.
+
+=== HUNK 1 (R7) - storybook.js, sceneMarkup, storyId longinus index 5 caption block (~line 1085)
+Physical order pinned LTR on the row; each AR label individually dir="rtl" for correct shaping/bidi
+isolation; baked bitmap (left=Mark centurion, right=John spear soldier) unchanged. AR caption strings are
+CANDIDATES pending independent fidelity review (new words, Scripture/tradition boundary preserved:
+linking attributed to tradition; both men unnamed in Scripture).
+
+--- sceneMarkup old
+      ${storyId === 'longinus' && index === 5 ? '<div id="longinus-accounts-caption"><div class="longinus-account-labels"><span>Mark: an unnamed centurion</span><span>John: an unnamed soldier</span></div><p>Tradition links these accounts with Longinus; Scripture does not name either man.</p></div>' : ''}
++++ sceneMarkup new (harness; contentLang==='ar' branch)
+      ${storyId === 'longinus' && index === 5 ? (contentLang === 'ar'
+        ? '<div id="longinus-accounts-caption"><div class="longinus-account-labels" dir="ltr"><span dir="rtl">مرقس: قائد مئة لا اسم له</span><span dir="rtl">يوحنا: جنديٌّ لا اسم له</span></div><p dir="rtl">يربط التقليد هذين الخبرين بلونجينوس؛ أمّا الكتاب المقدّس فلا يذكر اسمَ أيٍّ منهما.</p></div>'
+        : '<div id="longinus-accounts-caption"><div class="longinus-account-labels"><span>Mark: an unnamed centurion</span><span>John: an unnamed soldier</span></div><p>Tradition links these accounts with Longinus; Scripture does not name either man.</p></div>') : ''}
+
+Reverification owed by design: AR p6 at 390/1440 - label centers measured (Mark-label cx LEFT half,
+John-label cx RIGHT half) against bitmap halves; EN p6 frame byte-compared to the accepted EN leg.
+
+=== HUNK 2 (R1) - storybook.js, getEvidenceForPage (~line 1048), LONGINUS HARNESS ONLY
+Guard reordered so page.evidence is honored for any contentLang; the generic non-EN fallback remains
+ONLY for pages carrying no evidence. Shared-reader series fallback behavior NOT changed.
+
+--- old
+  const getEvidenceForPage = (_pageIndex, page) => {
+    if (contentLang !== 'en') {
+      return [
+        {
+          type: 'documented',
+          claim: UI.evidenceFallback,
+          sources: ['vaticanBeatification1965', 'vaticanCanonization1977']
+        }
+      ];
+    }
+    if (Array.isArray(page.evidence) && page.evidence.length) {
++++ new (harness)
+  const getEvidenceForPage = (_pageIndex, page) => {
+    if (Array.isArray(page.evidence) && page.evidence.length) {
+      return page.evidence; // LONGINUS-RTL-HARNESS: honored for every contentLang
+    }
+    if (contentLang !== 'en') {
+      return [
+        {
+          type: 'documented',
+          claim: UI.evidenceFallback,
+          sources: ['vaticanBeatification1965', 'vaticanCanonization1977']
+        }
+      ];
+    }
+    if (false) { // harness: original en-branch page.evidence check hoisted above
++++ (remainder unchanged: evidencePreset branch + pastoralApplication default)
+
+Reverification owed by design: AR p1/p5/p10 evidence panels render the assembled type labels + claim +
+the three longinus* sources; EN evidence frames byte-compared to the accepted EN leg; a no-evidence
+non-EN page (if any in harness scope) still shows the generic fallback.
