@@ -42,3 +42,6 @@ Producer (locale lane) reconstructs: adjudication first from actual transcript/a
 2. Contents reproduce the recorded structure (36-file amiracle+healingV2 set; anxiety set + adjudication note) per the 2026-10-23 05:14 evidence index.
 3. No claim of byte identity to the lost originals; fresh sha256 recorded alongside original hashes above.
 4. Closed-reference preservation only; gate stays closed; never merge.
+
+## Reconstruction intake log
+- 2026-10-25 06:48 EDT: b1-c1-ar-clause-adjudication-RECONSTRUCTION-20261025.md received via Main (producer locale lane). Fresh sha256 8abbecc6aa73e9fb793ddf7880adc40afd94df01794a16718a6982846314115d verified against received bytes by content lane. NEW RECONSTRUCTION label present; no byte-identity claim. EN/AR petition-after values independently cross-checked byte-equal against stage f2d9cd0d catalogs (locales/en + locales/ar saint-charbel-novena-master-copy.json). Adjudication remains OPEN; Main review pending; no clause ruling or R3 gate change. Superseding zips (amiracle+healingV2, anxiety) still rebuilding at producer.
