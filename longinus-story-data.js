@@ -1,7 +1,7 @@
 window.LONGINUS_STORY_EN = [
   {
     "title": "A soldier near Jerusalem",
-    "body": "In the first century, outside Jerusalem, a Roman officer stood near the cross of Jesus. He was a centurion, a leader of soldiers. The Gospel of Mark does not tell us his name. Christian tradition remembers a soldier at the cross as Saint Longinus. Some traditions link him with this officer.\n\nMuch of his life is unknown to us. But the Gospels preserve something extraordinary from that day: an officer watched Jesus die, and spoke about who Jesus was. His words have travelled far beyond that hillside.",
+    "body": "In the first century, outside Jerusalem, a Roman officer stood near the cross of Jesus. He was a centurion, a leader of soldiers. The Gospel of Mark does not tell us his name. Christian tradition remembers a soldier at the cross as Saint Longinus. Some traditions link him with this officer.\n\nMuch of his life is unknown to us. But the Gospels preserve something extraordinary from that day: an officer watched Jesus die, and spoke about who Jesus was. His words have traveled far beyond that hillside.",
     "prayer": "",
     "heart": "",
     "scene": "birth",
@@ -43,7 +43,7 @@ window.LONGINUS_STORY_EN = [
   },
   {
     "title": "People who stayed",
-    "body": "Jesus was not forgotten. Mark tells us that women who had followed and cared for him were watching from a distance. He names Mary Magdalene, another Mary, and Salome. They had come with him to Jerusalem.\n\nThey had followed Jesus along roads and through villages. Now they could not take away his suffering. Still, the Gospel remembers them beside this part of his story. Jesus had friends, and they were there.",
+    "body": "Jesus was not forgotten. Women who had followed and cared for Jesus were watching from a distance. Mark names Mary Magdalene, another Mary, and Salome. They had come with him to Jerusalem.\n\nThey had followed Jesus along roads and through villages. Now they could not take away his suffering. Still, the Gospel remembers them beside this part of his story. Jesus had friends, and they were there.",
     "prayer": "",
     "heart": "",
     "scene": "birth",
@@ -64,7 +64,7 @@ window.LONGINUS_STORY_EN = [
   },
   {
     "title": "Darkness over the land",
-    "body": "At noon, darkness came over the land. Mark tells us that it lasted until three in the afternoon. Then Jesus cried out to God. His words came from a prayer in the Psalms, a prayer that begins in deep distress.\n\nJesus did not hide suffering behind easy words. When we read this part of his story, we can bring our own difficult questions to God. We can also bring them to someone who cares for us. The officer was still there, facing Jesus.",
+    "body": "At noon, darkness came over the land. The Gospel says it lasted until three in the afternoon. Then Jesus cried out to God. His words came from a prayer in the Psalms, a prayer that begins in deep distress.\n\nJesus did not hide suffering behind easy words. We can bring our own difficult questions to God. The officer was still there, facing Jesus.",
     "prayer": "",
     "heart": "",
     "scene": "birth",
@@ -85,7 +85,7 @@ window.LONGINUS_STORY_EN = [
   },
   {
     "title": "A voice at the cross",
-    "body": "Jesus gave a loud cry and died. Mark tells us that the great curtain in the Temple was torn from top to bottom. The officer saw how Jesus breathed his last.\n\nThen the centurion spoke. He said that Jesus truly was the Son of God. A Roman soldier had recognized Jesus at a place of suffering. People had challenged Jesus to show his power by coming down. The centurion's declaration came after Jesus had died.",
+    "body": "Jesus gave a loud cry and died. Then the great curtain in the Temple was torn from top to bottom. The officer saw how Jesus breathed his last.\n\nThen the centurion spoke. He said that Jesus truly was the Son of God. A Roman soldier had recognized Jesus at a place of suffering. People had challenged Jesus to show his power by coming down. The centurion's declaration came after Jesus had died.",
     "prayer": "",
     "heart": "",
     "scene": "birth",
@@ -148,7 +148,7 @@ window.LONGINUS_STORY_EN = [
   },
   {
     "title": "A story Christians keep",
-    "body": "Long after that day, Christians continued to remember Longinus. The Maronite calendar commemorates him on October 16. Churches have pictured him as a soldier beside the cross, and Christians ask him to pray for them.\n\nHis image points back to the cross. The Roman officer's words are read in churches, heard at home and carried in prayer. We do not know every step of Longinus's life. We remember him with the story of Jesus, and with the faith that has handed his name to us.",
+    "body": "Long after that day, Christians continued to remember Longinus. The Maronite calendar commemorates him on October 16. Churches have pictured him as a soldier beside the cross, and Christians ask him to pray for them.\n\nHis image points back to the cross. The Roman officer's words are read in churches, heard at home and carried in prayer. We remember him with the story of Jesus, and with the faith that has handed his name to us.",
     "prayer": "",
     "heart": "",
     "scene": "birth",
