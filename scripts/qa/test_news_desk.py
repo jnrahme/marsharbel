@@ -75,7 +75,7 @@ class NewsDeskTests(unittest.TestCase):
             if ident.startswith('emmitsburg'):
                 self.assertIn('./news#'+ident, (ROOT/'index.html').read_text())
         index = (ROOT/'index.html').read_text()
-        for ident in ['pope-leo-assisi-cancel-2026-10-23','pope-leo-rosary-announcement-2026-10-13']:
+        for ident in ['pope-leo-assisi-cancel-2026-10-23','massabki-centenary-aqoura-2026-10-25']:
             self.assertIn('./news#'+ident, index)
         self.assertIn('https://stsharbelelpaso.org/',text)
         self.assertIn('https://www.familyofsaintsharbel.org/our-news',text)
