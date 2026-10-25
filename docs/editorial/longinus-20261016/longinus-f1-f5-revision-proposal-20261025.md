@@ -6,7 +6,7 @@
 
 **AR consequence (not part of this proposal's application):** any accepted EN change on pages 1, 3, 4, 5, 6, 8 requires a matched AR revision of docs/editorial/longinus-20261016/arabic/longinus-ar-body-draft-v1.md through the same bounded G1/G2 acceptance route, with the fidelity map and pronunciation sheet re-pinned. AR text is NOT auto-derived here.
 
-**Audio consequence (stated, not hidden):** pages 1, 3, 4, 5, 6, 8 each have an existing EN mp3 whose text correspondence is already UNVERIFIED (audio script snapshot ad4f53c3 unrecovered; no ear review ever done; ASR not a substitute). Applying any change below makes the changed sentences definitively out of sync with the recorded mp3s. This proposal does not destroy a verified binding (none exists), but it must never be represented as preserving audio sync. Audio remains HELD; no regeneration is requested or authorized.
+**Audio consequence (stated, not hidden):** pages 1, 3, 4, 5, 6, 8 each have an existing EN mp3 whose text correspondence is UNVERIFIED (audio script snapshot ad4f53c3 unrecovered; no ear review ever done; ASR not a substitute). Applying any change below creates a FRESH audio-match requirement for each touched page: its mp3 would need verification (or eventual replacement under a future authorized audio pass) against the new text. The OLD text/audio correspondence remains unresolved unless actually compared - this proposal neither establishes nor worsens it, and must never be represented as preserving audio sync. Audio remains HELD; no regeneration is requested or authorized.
 
 ## F4 - copyedit (p1), lowest risk
 - BEFORE: "His words have travelled far beyond that hillside."
