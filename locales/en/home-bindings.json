@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "8cccaee344b5338dfa4022e69c54b109d9058ed36deb24e3873c198338db02db",
+  "masterSha256": "c25cf69b3a57f3ecbe3925a2eb8c68b323f164295df1fda425cd6f641e12b261",
   "sourceRevision": "802b6e7c56a7634b99a24d8c8ccee051b8edca22",
   "bindings": [
     {
@@ -1608,76 +1608,6 @@
       "nodeIndex": 0
     },
     {
-      "key": "home.saintDay.2026-10-24.heading",
-      "selector": "template[data-saint-date=\"2026-10-24\"] #saint-day-heading",
-      "source": "Saint of the Day",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-24.dateLabel",
-      "selector": "template[data-saint-date=\"2026-10-24\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
-      "source": "24.10.2026",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-24.monogram",
-      "selector": "template[data-saint-date=\"2026-10-24\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "A",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-24.dateShort",
-      "selector": "template[data-saint-date=\"2026-10-24\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
-      "source": "24 Oct",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-24.calendar",
-      "selector": "template[data-saint-date=\"2026-10-24\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "Maronite calendar",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-24.name",
-      "selector": "template[data-saint-date=\"2026-10-24\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
-      "source": "Saint Arethas and Companions",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-24.story",
-      "selector": "template[data-saint-date=\"2026-10-24\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
-      "source": "Arethas was an elderly Christian leader in Najran, a town in South Arabia and a center of Christianity there. Around 523, a local ruler besieged Najran and promised amnesty if the town surrendered. Arethas warned the people, but they surrendered. Arethas and many others, including priests, deacons, monks and consecrated virgins, were put to death because they would not deny that Christ is God. The Church remembers Arethas and his companions as martyrs on October 24.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-24.provenance",
-      "selector": "template[data-saint-date=\"2026-10-24\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
-      "source": "Brief story based on the New Catholic Encyclopedia, via Encyclopedia.com.",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-24.infoCta",
-      "selector": "template[data-saint-date=\"2026-10-24\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
-      "source": "Read about Saint Arethas and his companions",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "home.saintDay.2026-10-24.sourceLabel",
-      "selector": "template[data-saint-date=\"2026-10-24\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
-      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
       "key": "home.saintDay.2026-10-25.heading",
       "selector": "template[data-saint-date=\"2026-10-25\"] #saint-day-heading",
       "source": "Saint of the Day",
@@ -2166,6 +2096,76 @@
       "source": "Feast source: Eparchy of St. Maron liturgical calendar",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-01.heading",
+      "selector": "template[data-saint-date=\"2026-11-01\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-01.dateLabel",
+      "selector": "template[data-saint-date=\"2026-11-01\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "01.11.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-01.monogram",
+      "selector": "template[data-saint-date=\"2026-11-01\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "S",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-01.dateShort",
+      "selector": "template[data-saint-date=\"2026-11-01\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "1 Nov",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-01.calendar",
+      "selector": "template[data-saint-date=\"2026-11-01\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Maronite calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-01.name",
+      "selector": "template[data-saint-date=\"2026-11-01\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saints Cosmas and Damian",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-01.story",
+      "selector": "template[data-saint-date=\"2026-11-01\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Maronite calendar lists Saints Cosmas and Damian, martyrs, on November 1 without details. On name and date this entry fits the Byzantine feast of the Unmercenary Physicians Cosmas and Damian, kept on November 1. According to their traditional life, the twin brothers were raised in Christian piety in Asia Minor by their mother, Saint Theodota. Trained as physicians, they healed illnesses of body and soul by the power of prayer and never accepted payment, following the Lord's command, 'Freely have you received, freely give.' The brothers reposed in peace and were buried together at Thereman. The Orthodox Church distinguishes three pairs of saints named Cosmas and Damian; the Western Church keeps the better-known martyr twins on September 26.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-01.provenance",
+      "selector": "template[data-saint-date=\"2026-11-01\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Brief story based on Wikipedia and the Orthodox Church in America. The date follows the Maronite calendar.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-01.infoCta",
+      "selector": "template[data-saint-date=\"2026-11-01\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read about Saints Cosmas and Damian",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-01.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-11-01\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -2382,16 +2382,6 @@
     "home.latest-news.october-15-2026": "October 23, 2026",
     "home.latest-news.pope-leo-has-a-good-second-night-at-gemelli": "Pope Leo XIV cancels Assisi peace-meeting visit on doctors' advice",
     "home.latest-news.the-holy-see-says-pope-leo-had-a-good-second-hospital-night": "Pope Leo XIV will not take part in the \"Unarmed and Disarming Peace\" meeting in Assisi on October 27, the Holy See Press Office announced on Friday. His doctors, Dr Luigi Carbone and Professor Stefano Margaritora, advised against the planned helicopter journey so soon after his October 13 thoracic surgery, and a scheduled follow-up chest X-ray confirmed that his postoperative recovery is progressing very well. The Pope will send a message expressing his closeness to the organizers, religious leaders and guests taking part. The St. Egidio Community meeting (October 25-27) marks the 40th anniversary of the World Day of Prayer for Peace convened by Saint John Paul II in Assisi in 1986. Context photo: Gemelli Hospital, Rome. Photo: Blackcat, Wikimedia Commons, CC BY-SA 3.0 IT; resized to WebP.",
-    "home.saintDay.2026-10-24.heading": "Saint of the Day",
-    "home.saintDay.2026-10-24.dateLabel": "24.10.2026",
-    "home.saintDay.2026-10-24.monogram": "A",
-    "home.saintDay.2026-10-24.dateShort": "24 Oct",
-    "home.saintDay.2026-10-24.calendar": "Maronite calendar",
-    "home.saintDay.2026-10-24.name": "Saint Arethas and Companions",
-    "home.saintDay.2026-10-24.story": "Arethas was an elderly Christian leader in Najran, a town in South Arabia and a center of Christianity there. Around 523, a local ruler besieged Najran and promised amnesty if the town surrendered. Arethas warned the people, but they surrendered. Arethas and many others, including priests, deacons, monks and consecrated virgins, were put to death because they would not deny that Christ is God. The Church remembers Arethas and his companions as martyrs on October 24.",
-    "home.saintDay.2026-10-24.provenance": "Brief story based on the New Catholic Encyclopedia, via Encyclopedia.com.",
-    "home.saintDay.2026-10-24.infoCta": "Read about Saint Arethas and his companions",
-    "home.saintDay.2026-10-24.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
     "home.saintDay.2026-10-25.heading": "Saint of the Day",
     "home.saintDay.2026-10-25.dateLabel": "25.10.2026",
     "home.saintDay.2026-10-25.monogram": "C",
@@ -2461,6 +2451,16 @@
     "home.saintDay.2026-10-31.story": "The Maronite calendar lists Saint Epimachus on October 31 without details. We have matched this entry to the martyr Epimachus of Pelusium, because the name and the date fit: the Orthodox calendar keeps the Martyr Epimachus of Pelusium, who suffered in Alexandria, on October 31. The Roman Martyrology also keeps Saint Epimachus of Pelusium on October 31: as is handed down, during the persecution of Emperor Decius he saw that the prefect was forcing Christians to sacrifice to idols, tried to overthrow the altar, and was arrested, tortured and finally beheaded by the sword. According to his traditional life, Epimachus lived as an ascetic on Mount Pelusium in Egypt, working as a weaver with his companions Theodore and Callinicos. When he heard that the governor was torturing Christians, he went to El-Bakroug, destroyed some pagan idols and declared that he too was a Christian. He was tortured on the wheel and then beheaded. The Coptic Orthodox Church keeps his feast on 14 Pashons.",
     "home.saintDay.2026-10-31.provenance": "Brief story based on Wikipedia, the Orthodox calendar at Basilica.ro and the Roman Martyrology (2004). The date follows the Maronite calendar.",
     "home.saintDay.2026-10-31.infoCta": "Read about Saint Epimachus",
-    "home.saintDay.2026-10-31.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
+    "home.saintDay.2026-10-31.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
+    "home.saintDay.2026-11-01.heading": "Saint of the Day",
+    "home.saintDay.2026-11-01.dateLabel": "01.11.2026",
+    "home.saintDay.2026-11-01.monogram": "S",
+    "home.saintDay.2026-11-01.dateShort": "1 Nov",
+    "home.saintDay.2026-11-01.calendar": "Maronite calendar",
+    "home.saintDay.2026-11-01.name": "Saints Cosmas and Damian",
+    "home.saintDay.2026-11-01.story": "The Maronite calendar lists Saints Cosmas and Damian, martyrs, on November 1 without details. On name and date this entry fits the Byzantine feast of the Unmercenary Physicians Cosmas and Damian, kept on November 1. According to their traditional life, the twin brothers were raised in Christian piety in Asia Minor by their mother, Saint Theodota. Trained as physicians, they healed illnesses of body and soul by the power of prayer and never accepted payment, following the Lord's command, 'Freely have you received, freely give.' The brothers reposed in peace and were buried together at Thereman. The Orthodox Church distinguishes three pairs of saints named Cosmas and Damian; the Western Church keeps the better-known martyr twins on September 26.",
+    "home.saintDay.2026-11-01.provenance": "Brief story based on Wikipedia and the Orthodox Church in America. The date follows the Maronite calendar.",
+    "home.saintDay.2026-11-01.infoCta": "Read about Saints Cosmas and Damian",
+    "home.saintDay.2026-11-01.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
   }
 }
