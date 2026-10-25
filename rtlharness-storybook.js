@@ -1,0 +1,1687 @@
+(() => {
+  const getLangCode = () => {
+    const params = new URLSearchParams(window.location.search);
+    return (params.get('lang') || 'en').toLowerCase();
+  };
+
+  const getStoryId = () => {
+    const params = new URLSearchParams(window.location.search);
+    const fromQuery = (params.get('story') || '').toLowerCase();
+    const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
+    const raw = fromQuery || fromBody;
+    return raw === 'longinus' ? 'longinus' : raw === 'augustine' ? 'augustine' : raw === 'marina' ? 'marina' : raw === 'maroun' ? 'maroun' : raw === 'sergius' ? 'sergius' : raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
+  };
+  const storyId = getStoryId();
+
+  const selectedLang = getLangCode();
+  const contentLang = selectedLang === 'ar' ? 'ar' : selectedLang === 'fr' ? 'fr' : 'en';
+  const isRtl = contentLang === 'ar';
+
+  // The Settings control may share the shelf-link row (see storybook-stage.css) only when the
+  // row truly fits both controls. Measure the effective width in root-em units so text zoom
+  // (which grows both controls) closes the window and the static stacked fallback keeps them
+  // collision-free at any zoom level.
+  const settingsRowFit = () => {
+    const rootEm = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    // Never lift Settings while the resume banner owns the shelf row: the absolutely
+    // positioned control would land on the banner's Resume button (CI: peter-story at 390).
+    const banner = document.getElementById('story-resume-banner');
+    const resumeShown = banner && !banner.hidden;
+    document.body.classList.toggle('st-settings-row', !resumeShown && window.innerWidth >= 20 * rootEm && window.innerWidth <= 820);
+  };
+  settingsRowFit();
+  window.addEventListener('resize', settingsRowFit);
+  // Re-check when the root font size can change without a resize: injected style rules
+  // (accessibility tooling, tests) or runtime html style/class changes.
+  new MutationObserver(settingsRowFit).observe(document.documentElement, { attributes: true, attributeFilter: ['style', 'class'] });
+  if (document.head) new MutationObserver(settingsRowFit).observe(document.head, { childList: true, subtree: true });
+
+  const COPY = {
+    en: {
+      pagePrefix: 'Page',
+      pageConnector: 'of',
+      read: 'Read Aloud',
+      stop: 'Stop Reading',
+      paused: 'Resume',
+      prev: 'Previous Page',
+      next: 'Next Page',
+      fallbackMessage: 'Please wait while we open the storybook.',
+      evidenceTitle: 'Evidence for This Page',
+      evidenceFallback: 'General source basis for this page.'
+    },
+    ar: {
+      pagePrefix: 'الصفحة',
+      pageConnector: 'من',
+      read: 'استمع',
+      stop: 'إيقاف القراءة',
+      paused: 'استئناف',
+      prev: 'الصفحة السابقة',
+      next: 'الصفحة التالية',
+      fallbackMessage: 'يرجى الانتظار بينما نفتح كتاب القصة.',
+      evidenceTitle: 'الأدلة لهذه الصفحة',
+      evidenceFallback: 'مصادر عامة لهذه الصفحة.'
+    },
+    fr: {
+      pagePrefix: 'Page',
+      pageConnector: 'sur',
+      read: 'Lire à voix haute',
+      stop: 'Arrêter la lecture',
+      paused: 'Reprendre',
+      prev: 'Page précédente',
+      next: 'Page suivante',
+      fallbackMessage: "Veuillez patienter pendant l'ouverture du livre.",
+      evidenceTitle: 'Sources de cette page',
+      evidenceFallback: 'Sources générales pour cette page.'
+    }
+  };
+
+  const EVIDENCE_SOURCES = {
+    sergiusPsalm133: {label: "USCCB: Psalm 133", url: "https://bible.usccb.org/bible/psalms/133"},
+    sergiusPassion: {label: "The Passion of Saints Serge and Bacchus (English translation)", url: "http://www.geocities.ws/mervatiskandercoptic/Synex/01/78Serge_Bacchus.htm"},
+    sergiusCE: {label: "Catholic Encyclopedia: Sergius and Bacchus", url: "https://www.newadvent.org/cathen/13728a.htm"},
+    marounTheodoret: {label: "Theodoret of Cyrrhus, Religious History 16 (translation by Fr Yuhanna Azize)", url: "https://www.fryuhanna.com/2026/01/28/maronite-history-st-theodoret-on-st-maroun/"},
+    marounChrysostom: {label: "John Chrysostom, Letter 36 to Maron (Roman Letters)", url: "https://romanletters.org/letters/chrysostom/36/"},
+    augBenedict: {label: "Benedict XVI, general audience on Saint Augustine, 9 January 2008", url: "http://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html"},
+    augConfessions: {label: "Augustine, Confessions, books 2 and 8 (translation at New Advent)", url: "https://www.newadvent.org/fathers/110108.htm"},
+    augJeremiah: {label: "Douay-Rheims: Jeremias (Jeremiah) 29:13", url: "https://drbo.org/drl/chapter/28029.htm"},
+    marinaMari: {label: "Marina the Monk (Maronite Research Institute, Journal of Maronite Studies, July 2000)", url: "http://www.maronite-institute.org/MARI/JMS/july00/Saint_Marina_The_Monk.htm"},
+    marinaWikipedia: {label: "Marina the Monk (Wikipedia)", url: "https://en.wikipedia.org/wiki/Marina_the_Monk"},
+    marinaSamuel: {label: "Douay-Rheims: 1 Kings (1 Samuel) 16:7", url: "https://www.drbo.org/chapter/09016.htm"},
+    marounPsalm92: {label: "USCCB: Psalm 92", url: "https://bible.usccb.org/bible/psalms/92"},
+    magdaleneJohn19: {"label": "USCCB: John 19, Mary beside the cross", "url": "https://bible.usccb.org/bible/john/19"},
+    magdaleneMatthew27: {"label": "USCCB: Matthew 27, burial and stone", "url": "https://bible.usccb.org/bible/matthew/27"},
+    magdaleneVaticanNews: {"label": "Vatican News: Mary Magdalene, disciple of the Lord", "url": "https://www.vaticannews.va/en/saints/07/22/st--mary-magdalene--disciple-of-the-lord-.html"},
+    magdaleneLuke8: {"label": "USCCB: Luke 8, women accompanying Jesus", "url": "https://bible.usccb.org/bible/luke/8"},
+    magdaleneJohn20: {"label": "USCCB: John 20, Mary and the risen Jesus", "url": "https://bible.usccb.org/bible/john/20"},
+    magdaleneChurch2016: {"label": "Holy See: Mary Magdalene, apostle of the apostles", "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2016/06/10/160610c.html"},
+    longinusMark15: {label: "USCCB: Mark 15", url: "https://bible.usccb.org/bible/mark/15"},
+    longinusJohn19: {label: "USCCB: John 19", url: "https://bible.usccb.org/bible/john/19"},
+    longinusCalendar: {label: "2026 Eparchial Desk Calendar", url: "https://www.stmaron.org/s/2026-Eparchial-Desk-Calendar.pdf"},
+    judeBenedict2006: {label: "Benedict XVI: Simon and Jude", url: "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20061011.html"},
+    judeJohn14: {label: "USCCB: John 14 and identity note", url: "https://bible.usccb.org/bible/john/14"},
+    judeLetter: {label: "USCCB: Letter of Jude", url: "https://bible.usccb.org/bible/jude/1"},
+    francisMatthew: {label: 'Matthew 5:9', url: 'https://bible.usccb.org/bible/matthew/5'},
+    francisBirds: {label: 'Franciscan Media: St. Francis and the Birds', url: 'https://www.franciscanmedia.org/st-anthony-messenger/st-francis-and-the-birds/'},
+    josephLetter: {label: 'Pope Francis: Patris Corde', url: 'https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20201208_patris-corde.html'},
+    josephMatthew: {label: 'Matthew 1-2', url: 'https://bible.usccb.org/bible/matthew/1'},
+    josephLuke: {label: 'Luke 2', url: 'https://bible.usccb.org/bible/luke/2'},
+    anthonyLife: {label: 'Benedict XVI: Saint Anthony of Padua', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100210.html'},
+    anthonyFrancis: {label: 'Benedict XVI: Saint Francis of Assisi', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100127.html'},
+    anthonyBible: {label: 'James 1:22', url: 'https://bible.usccb.org/bible/james/1?13='},
+    thereseLife: {label: 'Holy See: The Life of Saint Therese of Lisieux', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19101997_stherese_en.html'},
+    thereseTrust: {label: 'Pope Francis: C est la confiance', url: 'https://www.vatican.va/content/francesco/en/apost_exhortations/documents/20231015-santateresa-delbambinogesu.html'},
+    thereseBible: {label: 'John 15:12', url: 'https://bible.usccb.org/bible/john/15'},
+    peterJerome: { label: 'Jerome, On Illustrious Men, chapter 1 (ancient tradition)', url: 'https://www.newadvent.org/fathers/2708.htm' },
+    peterBenedict2006a: { label: 'Holy See (Benedict XVI audience, 17 May 2006)', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060517.html' },
+    peterBenedict2006b: { label: 'Holy See (Benedict XVI audience, 24 May 2006)', url: 'https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060524.html' },
+    bibleActs2: { label: 'NABRE, Acts 2 (USCCB)', url: 'https://bible.usccb.org/bible/acts/2' },
+    bibleActs12: { label: 'NABRE, Acts 12 (USCCB)', url: 'https://bible.usccb.org/bible/acts/12' },
+    eusebiusHE3: { label: 'Eusebius, Church History 3 (via New Advent)', url: 'https://www.newadvent.org/fathers/250103.htm' },
+    stPeterNecropolis: { label: 'Fabbrica di San Pietro (Holy See), The Necropolis', url: 'https://www.basilicasanpietro.va/en/san-pietro/the-necropolis' },
+    massabkiDecree: {label: 'Holy See decree, 23 May 2024', url: 'https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/05/23/240523b.html'},
+    massabkiOFM: {label: 'Order of Friars Minor: The Holy Martyrs of Damascus', url: 'https://ofm.org/en/the-holy-martyrs-of-damascus.html'},
+    massabkiHomily: {label: 'Pope Francis canonization homily, 20 October 2024', url: 'https://www.vatican.va/content/francesco/en/homilies/2024/documents/20241020-omelia-canonizzazione.html'},
+    hardiniVatican: { label: 'Holy See (Nimatullah biography, 2004)', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20040516_al-hardini_en.html' },
+    hardiniSchool: { label: 'Holy See (Nimatullah beatification profile, 1998, Portuguese)', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19980510_kassab_po.html' },
+    hardiniHomily: { label: 'Holy See (John Paul II canonization homily, 2004)', url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2004/documents/hf_jp-ii_hom_20040516_canonizations.html' },
+    rafqaVatican: { label: 'Holy See (Saint Rafqa biography, 2001)', url: 'https://www.vatican.va/news_services/liturgy/documents/ns_lit_doc_20010610_rafqa-choboq_en.html' },
+    rafqaMatthew25: { label: 'USCCB: Matthew 25', url: 'https://bible.usccb.org/bible/matthew/25' },
+    rafqaConvent: { label: 'Saint Rafqa Monastery (history of Jrabta)', url: 'https://www.rafqa.com/Convent-Saint-Rafqa' },
+    rafqaCanonization: { label: 'Holy See (canonization homily, 2001)', url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2001/documents/hf_jp-ii_hom_20010610_canonizzazione.html' },
+    teresaVatican: {
+      label: 'Holy See (Mother Teresa biography, 2003)',
+      url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20031019_madre-teresa_en.html'
+    },
+    teresaCommunity: {
+      label: 'Missionaries of Charity (Our Foundress)',
+      url: 'https://missionariesofcharity.org/about-us/mother-teresa/'
+    },
+    teresaNobel: {
+      label: 'Nobel Prize (1979 biographical record)',
+      url: 'https://www.nobelprize.org/prizes/peace/1979/teresa/biographical/'
+    },
+    teresaCanonization: {
+      label: 'Holy See (canonization homily, 2016)',
+      url: 'https://www.vatican.va/content/francesco/en/homilies/2016/documents/papa-francesco_20160904_omelia-canonizzazione-madre-teresa.html'
+    },
+    vaticanPioBiography: {
+      label: 'Vatican (Holy See, biography of St. Pio of Pietrelcina, 2002)',
+      url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20020616_padre-pio_en.html'
+    },
+    vaticanPioCanonization: {
+      label: 'Vatican (John Paul II, canonization homily, June 16, 2002)',
+      url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2002/documents/hf_jp-ii_hom_20020616_padre-pio.html'
+    },
+    vaticanJPIIBiography: {
+      label: 'Vatican (Holy See, canonization biographical profile of John Paul II, 2014)',
+      url: 'https://www.vatican.va/special/canonizzazione-27042014/documents/biografia_gpii_canonizzazione_en.html'
+    },
+    vaticanJPIIInaugural: {
+      label: 'Vatican (John Paul II, inaugural homily, October 22, 1978)',
+      url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/1978/documents/hf_jp-ii_hom_19781022_inizio-pontificato.html'
+    },
+    vaticanJPIIWYD: {
+      label: 'Vatican (Holy See, World Youth Day chronology)',
+      url: 'https://www.vatican.va/gmg/documents/gmg_chronicle-wyd_20020325_en.html'
+    },
+    domjp2Family: {
+      label: 'Wadowice Family Home Museum (the Wojtyla family)',
+      url: 'https://domjp2.pl/en/the-wojtyla-family'
+    },
+    vaticanBeatification1965: {
+      label: 'Vatican (Paul VI, Beatification, Dec 5, 1965)',
+      url: 'https://www.vatican.va/content/paul-vi/fr/speeches/1965/documents/hf_p-vi_spe_19651205_charbel-makhlouf.html'
+    },
+    vaticanCanonization1977: {
+      label: 'Vatican (Paul VI, Canonization, Oct 9, 1977)',
+      url: 'https://www.vatican.va/content/paul-vi/fr/homilies/1977/documents/hf_p-vi_hom_19771009.html'
+    },
+    annayaArchive: {
+      label: 'Monastery of Saint Maron (Annaya archive source)',
+      url: 'https://web.archive.org/web/20160304235515/http://www.saintcharbel-annaya.com/home.php?lgid=0'
+    },
+    wikiBio: {
+      label: 'Biography Cross-Check',
+      url: 'https://en.wikipedia.org/wiki/Charbel_Makhlouf'
+    },
+    catholicSaints: {
+      label: 'Devotional Tradition Source',
+      url: 'https://catholicsaints.info/saint-charbel-makhlouf/'
+    }
+  };
+
+  const EVIDENCE_PRESETS = {
+    earlyLife: [
+      {
+        type: 'documented',
+        claim: 'Early life milestones in Bekaa Kafra and family context are documented in monastic and biographical records.',
+        sources: ['annayaArchive', 'wikiBio']
+      }
+    ],
+    vocationFormation: [
+      {
+        type: 'documented',
+        claim: 'The Vatican canonization homily gives the structured formation path: Mayfouk, Annaya, Kfifan, ordination in 1859.',
+        sources: ['vaticanCanonization1977']
+      }
+    ],
+    monasticYears: [
+      {
+        type: 'documented',
+        claim: 'The Vatican text states 16 years of community life and 23 years of hermitage life before his death.',
+        sources: ['vaticanCanonization1977']
+      }
+    ],
+    waterLampTradition: [
+      {
+        type: 'tradition',
+        claim: 'This page presents a monastic tradition account, not a formal miracle used as canonical proof by the Church.',
+        sources: ['annayaArchive', 'catholicSaints']
+      }
+    ],
+    deathAndAfter: [
+      {
+        type: 'documented',
+        claim: 'Death date, growth of devotion, and canonical process context are supported by Vatican and monastic historical records.',
+        sources: ['vaticanCanonization1977', 'annayaArchive']
+      }
+    ],
+    beatificationCanonization: [
+      {
+        type: 'documented',
+        claim: 'Beatification (Dec 5, 1965) and canonization (Oct 9, 1977) are official Church acts by Pope Paul VI.',
+        sources: ['vaticanBeatification1965', 'vaticanCanonization1977']
+      }
+    ],
+    nohadTestimony: [
+      {
+        type: 'testimony',
+        claim: 'Nohad El Shami (1993) is a widely known post-canonization testimony in Charbel devotion.',
+        sources: ['annayaArchive', 'wikiBio']
+      }
+    ],
+    pastoralApplication: [
+      {
+        type: 'pastoral',
+        claim: 'This page is pastoral guidance based on Saint Charbel’s documented life and witness.',
+        sources: ['vaticanBeatification1965', 'vaticanCanonization1977']
+      }
+    ]
+  };
+
+  const STORIES = {
+    en: [
+      {
+        title: 'A Child in the Mountains',
+        body: 'Youssef Antoun Makhlouf was born on May 8, 1828, in Bekaa Kafra, Lebanon, and was baptized a few days later according to Maronite custom. He grew up in a mountain village where faith, work, and prayer shaped daily life.',
+        prayer: 'Little prayer: Jesus, thank You for my home and my family.',
+        heart: 'Heart Moment: God begins great stories in humble places.',
+        scene: 'birth',
+        evidencePreset: 'earlyLife',
+        illustration: './media/storybook/images/event-01.webp',
+        audio: 'page-01.mp3'
+      },
+      {
+        title: 'He Lost His Father Young',
+        body: 'As Pope Paul VI recalled at beatification, he lost his father very early in life. This sorrow did not harden him; it helped form a deep dependence on God.',
+        prayer: 'Little prayer: Lord, stay close when life feels heavy.',
+        heart: 'Heart Moment: Pain can become a doorway to deeper faith.',
+        scene: 'birth',
+        evidencePreset: 'earlyLife',
+        illustration: './media/storybook/images/event-02.webp',
+        audio: 'page-02.mp3'
+      },
+      {
+        title: 'He Chose Silence and Prayer',
+        body: 'As a boy, he loved silent prayer and often withdrew to quiet places to be with God. From childhood, he learned that listening is part of loving.',
+        prayer: 'Little prayer: Jesus, teach me to listen in silence.',
+        heart: 'Heart Moment: A quiet heart can hear God clearly.',
+        scene: 'birth',
+        evidencePreset: 'earlyLife',
+        illustration: './media/storybook/images/event-03.webp',
+        audio: 'page-03.mp3'
+      },
+      {
+        title: 'Witnesses Who Formed Him',
+        body: 'His mother taught him to pray with trust, and local monastic witnesses helped shape his imagination for holiness. From early years, he saw that a life close to God was possible.',
+        prayer: 'Little prayer: Lord, place good examples in my life.',
+        heart: 'Heart Moment: Holy examples can change a child forever.',
+        scene: 'birth',
+        evidencePreset: 'earlyLife',
+        illustration: './media/storybook/images/birth.webp',
+        audio: 'page-04.mp3'
+      },
+      {
+        title: 'Entering Monastic Life (1851)',
+        body: 'At age 23, he left home in 1851 to enter the Lebanese Maronite Order. Following the pattern recalled by Pope Paul VI, his formation began at Our Lady of Mayfouk and continued at Saint Maron of Annaya.',
+        prayer: 'Little prayer: Lord, give me courage to follow You.',
+        heart: 'Heart Moment: Holiness begins with a brave yes.',
+        scene: 'vocation',
+        evidencePreset: 'vocationFormation',
+        illustration: './media/storybook/images/event-04.webp',
+        audio: 'page-05.mp3'
+      },
+      {
+        title: 'Name, Vows, and a Costly Yes',
+        body: 'He took the name Charbel and made solemn monastic vows in 1853: obedience, poverty, and chastity. Maronite biographies recount the pain of family separation, including his mother’s visit and her blessing that God would make him a saint.',
+        prayer: 'Little prayer: Jesus, make my heart faithful and pure.',
+        heart: 'Heart Moment: True love sometimes asks for tears and sacrifice.',
+        scene: 'vocation',
+        evidencePreset: 'vocationFormation',
+        illustration: './media/storybook/images/vocation.webp',
+        audio: 'page-06.mp3'
+      },
+      {
+        title: 'Studies at Kfifan',
+        body: 'After profession, he studied theology at Saint Cyprian of Kfifan. These years formed his mind and heart in Scripture, liturgy, and monastic discipline.',
+        prayer: 'Little prayer: Lord, guide my mind and my heart.',
+        heart: 'Heart Moment: Truth studied with humility becomes wisdom.',
+        scene: 'priest',
+        evidencePreset: 'vocationFormation',
+        illustration: './media/storybook/images/event-06.webp',
+        audio: 'page-07.mp3'
+      },
+      {
+        title: 'Ordained Priest in 1859',
+        body: 'He was ordained a Maronite priest on July 23, 1859, and returned to Annaya. From then on, the Eucharist and adoration stood at the center of his life.',
+        prayer: 'Little prayer: Lord, help me honor You in prayer.',
+        heart: 'Heart Moment: At the altar, his whole heart belonged to God.',
+        scene: 'priest',
+        evidencePreset: 'vocationFormation',
+        illustration: './media/storybook/images/priest.webp',
+        audio: 'page-08.mp3'
+      },
+      {
+        title: 'Sixteen Years of Community Life',
+        body: 'From 1859 to 1875, he lived 16 years of community monastic life at Annaya. He combined contemplation and manual labor, showing that ordinary duties can be holy.',
+        prayer: 'Little prayer: Jesus, bless the work of my hands.',
+        heart: 'Heart Moment: Ordinary work can become extraordinary love.',
+        scene: 'priest',
+        evidencePreset: 'monasticYears',
+        illustration: './media/storybook/images/event-07.webp',
+        audio: 'page-09.mp3'
+      },
+      {
+        title: 'He Ordered His Whole Day Around God',
+        body: 'Saint Charbel did not pray only when he felt like it. He prayed faithfully at fixed times, day after day, because love needs commitment. He let prayer guide his work, his speech, and his choices.',
+        prayer: 'Little prayer: Lord, help me be faithful, not just emotional.',
+        heart: 'Heart Moment: Steady faithfulness makes a strong heart.',
+        scene: 'priest',
+        evidencePreset: 'monasticYears',
+        illustration: './media/storybook/images/event-09.webp',
+        audio: 'page-10.mp3'
+      },
+      {
+        title: 'Traditional Account: The Water Lamp',
+        body: 'According to cherished monastic tradition, when Father Charbel was an adult monk and his hermitage request was being discerned, a brother gave him a lamp filled with water instead of oil. He lit it and it burned; this was remembered as an early sign in his lifetime.',
+        prayer: 'Little prayer: Lord, increase my trust in You.',
+        heart: 'Heart Moment: God honors humble faith, even when others mock it.',
+        scene: 'hermit',
+        evidencePreset: 'waterLampTradition',
+        illustration: './media/storybook/images/hermit.webp',
+        audio: 'page-11.mp3'
+      },
+      {
+        title: 'Hermitage Life (From 1875)',
+        body: 'In 1875, he received permission to live at the hermitage of Saints Peter and Paul near Annaya. He spent about 23 years there in solitude, prayer, penance, and manual labor until his death.',
+        prayer: 'Little prayer: Lord, teach me to love a simple life.',
+        heart: 'Heart Moment: Hidden faithfulness shines in God’s eyes.',
+        scene: 'hermit',
+        evidencePreset: 'monasticYears',
+        illustration: './media/storybook/images/event-08.webp',
+        audio: 'page-12.mp3'
+      },
+      {
+        title: 'He Worked the Land in Silence',
+        body: 'At the hermitage, he lived very simply and worked with his hands. In that hidden life, labor and prayer stayed together. Even growing food became an offering to God.',
+        prayer: 'Little prayer: Jesus, make my work an act of love.',
+        heart: 'Heart Moment: Holiness can grow in fields, kitchens, and classrooms.',
+        scene: 'hermit',
+        evidencePreset: 'monasticYears',
+        illustration: './media/storybook/images/event-20.webp',
+        audio: 'page-13.mp3'
+      },
+      {
+        title: 'Prayer, Penance, and Simplicity',
+        body: 'His life was marked by long prayer, silence, fasting, and self-denial. He was very serious about staying away from sin: he guarded his eyes, words, and choices, and avoided anything that pulled his heart away from God. He practiced asceticism not to be admired, but to remain pure and faithful.',
+        prayer: 'Little prayer: Jesus, keep my heart clean and close to You.',
+        heart: 'Heart Moment: Holiness grows when we say no to sin and yes to love.',
+        scene: 'hermit',
+        evidencePreset: 'monasticYears',
+        illustration: './media/storybook/images/event-09.webp',
+        audio: 'page-14.mp3'
+      },
+      {
+        title: 'He Fled Sin with Determination',
+        body: 'Saint Charbel knew that sin harms the heart. He guarded his senses, avoided empty talk, and examined his conscience seriously so his love for God would stay undivided.',
+        prayer: 'Little prayer: Lord, guard my eyes, words, and choices.',
+        heart: 'Heart Moment: Purity is love that protects what is holy.',
+        scene: 'hermit',
+        evidencePreset: 'monasticYears',
+        illustration: './media/storybook/images/event-09.webp',
+        audio: 'page-15.mp3'
+      },
+      {
+        title: 'A Holy Death (December 24, 1898)',
+        body: 'In December 1898, he became gravely ill during the Divine Liturgy and died on Christmas Eve, December 24, 1898. He finished life as he lived it: near the Eucharist, faithful to the end.',
+        prayer: 'Little prayer: Lord, keep me faithful every day.',
+        heart: 'Heart Moment: True love for God perseveres to the end.',
+        scene: 'passing',
+        evidencePreset: 'deathAndAfter',
+        illustration: './media/storybook/images/event-10.webp',
+        audio: 'page-16.mp3'
+      },
+      {
+        title: 'Pilgrims and Hope',
+        body: 'After his death, many people came to pray at his tomb in Annaya, asking his intercession. People from different backgrounds found hope, peace, and healing.',
+        prayer: 'Little prayer: Jesus, comfort all who suffer.',
+        heart: 'Heart Moment: One hidden life can touch the whole world.',
+        scene: 'healing',
+        evidencePreset: 'deathAndAfter',
+        illustration: './media/storybook/images/event-13.webp',
+        audio: 'page-17.mp3'
+      },
+      {
+        title: 'Lights Reported at His Tomb',
+        body: 'In the years after his burial, people in Annaya reported unusual lights around his tomb. These reports stirred many hearts to return to prayer.',
+        prayer: 'Little prayer: Jesus, shine Your light in our darkness.',
+        heart: 'Heart Moment: God can use small signs to wake up sleeping hearts.',
+        scene: 'healing',
+        evidencePreset: 'deathAndAfter',
+        illustration: './media/storybook/images/event-14.webp',
+        audio: 'page-18.mp3'
+      },
+      {
+        title: 'Remarkable Signs at the Tomb',
+        body: 'When his tomb was opened, witnesses reported unusual signs, including notable preservation and fluid at the body. Monastery and church authorities documented these reports carefully over time.',
+        prayer: 'Little prayer: Lord, lead me to truth and deeper faith.',
+        heart: 'Heart Moment: Signs are invitations to return to God.',
+        scene: 'healing',
+        evidencePreset: 'deathAndAfter',
+        illustration: './media/storybook/images/event-15.webp',
+        audio: 'page-19.mp3'
+      },
+      {
+        title: 'His Cause Was Studied Carefully',
+        body: 'The Church did not rush. Witnesses, records, and medical facts were examined carefully over time before declaring anything miraculous.',
+        prayer: 'Little prayer: Lord, teach me faith with honesty.',
+        heart: 'Heart Moment: Truth and faith walk together.',
+        scene: 'healing',
+        evidencePreset: 'deathAndAfter',
+        illustration: './media/storybook/images/healing.webp',
+        audio: 'page-20.mp3'
+      },
+      {
+        title: 'Miracles for Beatification',
+        body: 'For beatification, healings attributed to his intercession were investigated and recognized by the Church after strict medical and theological review.',
+        prayer: 'Little prayer: Jesus, visit the sick with mercy.',
+        heart: 'Heart Moment: The Lord hears cries from hospital rooms and homes.',
+        scene: 'healing',
+        evidencePreset: 'beatificationCanonization',
+        illustration: './media/storybook/images/event-16.webp',
+        audio: 'page-21.mp3'
+      },
+      {
+        title: 'Miracle for Canonization',
+        body: 'For canonization, the Church recognized an additional miracle in his cause after strict review. Only then was his sainthood proclaimed for the universal Church.',
+        prayer: 'Little prayer: Lord, increase our trust in Your power.',
+        heart: 'Heart Moment: Miracles point us to God, not to ourselves.',
+        scene: 'legacy',
+        evidencePreset: 'beatificationCanonization',
+        illustration: './media/storybook/images/event-17.webp',
+        audio: 'page-22.mp3'
+      },
+      {
+        title: 'The Healing of Nohad El Shami (1993)',
+        body: 'One of the most famous post-canonization testimonies is the healing of Nohad El Shami in 1993 after severe paralysis. Her testimony spread widely and moved many people to repentance and prayer.',
+        prayer: 'Little prayer: Jesus, heal body, mind, and soul.',
+        heart: 'Heart Moment: The biggest miracle is returning to God with a changed heart.',
+        scene: 'healing',
+        evidencePreset: 'nohadTestimony',
+        illustration: './media/storybook/images/event-18.webp',
+        audio: 'page-23.mp3'
+      },
+      {
+        title: 'A Saint for Many Nations',
+        body: 'Today, people from many countries and backgrounds come to Annaya. Saint Charbel’s life of prayer, sacrifice, and purity still calls people toward mercy.',
+        prayer: 'Little prayer: Jesus, unite all hearts in peace.',
+        heart: 'Heart Moment: Holiness gathers people who would never meet otherwise.',
+        scene: 'unity',
+        evidencePreset: 'deathAndAfter',
+        illustration: './media/storybook/images/event-19.webp',
+        audio: 'page-24.mp3'
+      },
+      {
+        title: 'His Holiness Was Simple and Real',
+        body: 'He did not become a saint by one dramatic event. He became a saint by daily fidelity: prayer, work, sacrifice, humility, and love, repeated for many years.',
+        prayer: 'Little prayer: Jesus, help me be faithful in little things.',
+        heart: 'Heart Moment: Repeated small yeses become a holy life.',
+        scene: 'unity',
+        evidencePreset: 'pastoralApplication',
+        illustration: './media/storybook/images/event-20.webp',
+        audio: 'page-25.mp3'
+      },
+      {
+        title: 'Beatified and Canonized',
+        body: 'Pope Paul VI beatified him on December 5, 1965, and canonized him on October 9, 1977. Saint Charbel’s message remains clear for children and adults: pray deeply, live simply, work honestly, and trust Jesus.',
+        prayer: 'Little prayer: Saint Charbel, pray for us.',
+        heart: 'Heart Moment: Saints are made by faithful love, one day at a time.',
+        scene: 'legacy',
+        evidencePreset: 'beatificationCanonization',
+        illustration: './media/storybook/images/event-21.webp',
+        audio: 'page-26.mp3'
+      },
+      {
+        title: 'How We Can Live Like Him Today',
+        body: 'You can begin now: pray each day, tell the truth, help at home, forgive quickly, and turn away from sin. Saint Charbel shows that holiness is possible for ordinary people who love God sincerely.',
+        prayer: 'Little prayer: Jesus, teach me to live with a faithful heart.',
+        heart: 'Heart Moment: Your everyday choices can become a path to sainthood.',
+        scene: 'legacy',
+        evidencePreset: 'pastoralApplication',
+        illustration: './media/storybook/images/event-22.webp',
+        audio: 'page-27.mp3'
+      }
+    ],
+    ar: [
+      {
+        title: 'صبي في الجبال',
+        body: 'وُلد يوسف أنطون مخلوف في 8 مايو 1828 في بقاعكفرا بلبنان. ومنذ صغره كان يحب الصلاة والهدوء ومساعدة الناس.',
+        prayer: 'صلاة صغيرة: يا يسوع، علّمني أن أجد وقتاً هادئاً معك.',
+        scene: 'birth'
+      },
+      {
+        title: 'اختار الدير',
+        body: 'عندما بلغ الثالثة والعشرين، ترك بيته ودخل دير مار مارون في عنايا سنة 1851. وهناك أخذ اسم شربل وقدّم حياته لله بالكامل.',
+        prayer: 'صلاة صغيرة: يا رب، ساعدني أن أختار الطريق الذي يقودني إليك.',
+        scene: 'vocation'
+      },
+      {
+        title: 'كاهن المذبح',
+        body: 'تعلّم وخدم ورُسم كاهناً سنة 1859. وكان الناس يرون تواضعه ومحبة قلبه للقربان واهتمامه بكل من يطلب الصلاة.',
+        prayer: 'صلاة صغيرة: يا يسوع، اجعل قلبي متواضعاً وأميناً.',
+        scene: 'priest'
+      },
+      {
+        title: 'ثلاثة وأربعون عاماً في الحياة الرهبانية',
+        body: 'عاش القديس شربل 43 سنة راهباً. وفي سنة 1875 انتقل إلى محبسة قريبة، فعاش بالصوم والعمل والصمت والصلاة العميقة.',
+        prayer: 'صلاة صغيرة: يا الله، علّمني السلام وسط ضجيج الحياة.',
+        scene: 'hermit'
+      },
+      {
+        title: 'قداسه الأخير',
+        body: 'في ديسمبر 1898 اشتد عليه المرض أثناء خدمة القداس الإلهي، ثم انتقل إلى بيت الآب في 24 ديسمبر 1898. وتحدّث الناس سريعاً عن قداسته وسلامه.',
+        prayer: 'صلاة صغيرة: يا رب، ساعدني أن أبقى قريباً منك كل يوم.',
+        scene: 'passing'
+      },
+      {
+        title: 'رجاء وشفاء',
+        body: 'بدأ الزوّار يأتون من أماكن كثيرة إلى ضريحه. والكنيسة تدرس الأعاجيب بدقة، وكانت الأعاجيب المعترف بها جزءاً من مسيرته نحو إعلان القداسة.',
+        prayer: 'صلاة صغيرة: يا يسوع، امنح المتألّمين تعزية وشفاء.',
+        scene: 'healing'
+      },
+      {
+        title: 'قديس للوحدة في المسيح',
+        body: 'يلهم القديس شربل مسيحيين في العالم كله، وحتى أشخاصاً من تقاليد مختلفة يبحثون عن الله. حياته تشير إلى التوبة والرحمة والمحبة.',
+        prayer: 'صلاة صغيرة: يا يسوع، وحّد قلوبنا في محبتك.',
+        scene: 'unity'
+      },
+      {
+        title: 'قديس للكنيسة كلها',
+        body: 'أعلنه البابا بولس السادس طوباوياً في 5 ديسمبر 1965 وقديساً في 9 أكتوبر 1977. وما زالت رسالته تنير القلوب: صلاة عميقة ومحبة واسعة وثقة بيسوع.',
+        prayer: 'صلاة صغيرة: يا مار شربل، صلِّ لأجلنا.',
+        scene: 'legacy'
+      }
+    ],
+    fr: [
+      {
+        title: 'Un garçon des montagnes',
+        body: 'Youssef Antoun Makhlouf est né le 8 mai 1828 à Bkaakafra, au Liban. Enfant, il aimait la prière, le silence et le service des autres.',
+        prayer: 'Petite prière : Jésus, aide-moi à trouver des moments de silence avec Toi.',
+        scene: 'birth'
+      },
+      {
+        title: 'Il choisit le monastère',
+        body: "À 23 ans, il quitte sa maison et entre au monastère Saint-Maron d'Annaya en 1851. Il y prend le nom de Charbel et se donne entièrement à Dieu.",
+        prayer: 'Petite prière : Seigneur, aide-moi à choisir ce qui me conduit vers Toi.',
+        scene: 'vocation'
+      },
+      {
+        title: "Prêtre de l'autel",
+        body: 'Après ses années de formation, il est ordonné prêtre en 1859. Les gens voyaient sa profonde humilité et son amour de la Sainte Eucharistie.',
+        prayer: 'Petite prière : Jésus, rends mon cœur humble et fidèle.',
+        scene: 'priest'
+      },
+      {
+        title: 'Quarante-trois ans de vie monastique',
+        body: "Saint Charbel a vécu 43 ans comme moine. En 1875, il part à l'ermitage voisin et mène une vie de jeûne, de travail, de silence et de prière.",
+        prayer: 'Petite prière : Mon Dieu, apprends-moi la paix quand tout est bruyant.',
+        scene: 'hermit'
+      },
+      {
+        title: 'Sa dernière messe',
+        body: 'En décembre 1898, il tombe gravement malade pendant la liturgie, puis meurt le 24 décembre 1898. Très vite, les fidèles parlent de sa sainteté.',
+        prayer: 'Petite prière : Seigneur, garde-moi près de Toi chaque jour.',
+        scene: 'passing'
+      },
+      {
+        title: 'Espérance et guérisons',
+        body: "Des pèlerins de nombreux pays visitent son tombeau. L'Église étudie les miracles avec sérieux, et des guérisons reconnues ont soutenu sa cause.",
+        prayer: 'Petite prière : Jésus, apporte consolation et guérison aux personnes qui souffrent.',
+        scene: 'healing'
+      },
+      {
+        title: "Un saint pour l'unité dans le Christ",
+        body: "Saint Charbel inspire des chrétiens du monde entier, ainsi que des personnes d'autres traditions. Sa vie appelle à la conversion, à la miséricorde et à l'amour.",
+        prayer: 'Petite prière : Jésus, unis nos cœurs dans Ton amour.',
+        scene: 'unity'
+      },
+      {
+        title: "Canonisé pour l'Église universelle",
+        body: 'Le pape Paul VI le béatifie le 5 décembre 1965 et le canonise le 9 octobre 1977. Son message reste vivant : prier profondément, aimer largement, faire confiance à Jésus.',
+        prayer: 'Petite prière : Saint Charbel, prie pour nous.',
+        scene: 'legacy'
+      }
+    ]
+  };
+
+
+  const PIO_STORY_EN = [
+      {
+        title: 'In Pietrelcina',
+        body: 'In the Italian town of Pietrelcina, Francesco grew up with his family. Long before crowds knew his name, he learned to pray. Prayer was not a trick for getting everything he wanted. It was a way to bring his whole life before God.',
+        prayer: 'Little prayer: Jesus, teach me to pray like Francesco did.',
+        heart: 'Heart Moment: God loves us long before anyone knows our name.',
+        scene: 'birth',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-01.webp',
+        audio: 'page-01.mp3'
+      },
+      {
+        title: 'A New Name',
+        body: 'Imagine the road out of his village on a winter morning. At sixteen, Francesco left home and entered the Capuchin friars. He received a new name: Brother Pio. The brothers followed Saint Francis, seeking a simple life of prayer, poverty, and service.',
+        prayer: 'Little prayer: Jesus, help me follow You bravely, like Brother Pio.',
+        heart: 'Heart Moment: Following Jesus can mean leaving what is familiar.',
+        scene: 'vocation',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-02.webp',
+        audio: 'page-02.mp3'
+      },
+      {
+        title: 'A Quiet Promise',
+        body: 'A new name did not make his path easy. Picture a young friar in a plain brown habit, rising to pray while the village outside was still dark. There were no crowds to cheer him on. There was work to learn and a promise to keep, day after ordinary day. His new name marked the beginning of years of learning to give his life to God.',
+        prayer: 'Little prayer: Jesus, help me keep my promises, even on hard days.',
+        heart: 'Heart Moment: Small faithful steps matter more than easy ones.',
+        scene: 'vocation',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-03.webp',
+        audio: 'page-03.mp3'
+      },
+      {
+        title: 'When the Body Is Weak',
+        body: 'He became a priest in 1910. But poor health interrupted his plans. For years, he stayed near his family while he recovered. When you are sick, even an ordinary day can feel long. It would be easy to think a life of service has to wait until you are strong. Brother Pio kept praying through those years.',
+        prayer: 'Little prayer: Jesus, be close to everyone who is sick today.',
+        heart: 'Heart Moment: God works in us even when our bodies are weak.',
+        scene: 'priest',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-04.webp',
+        audio: 'page-04.mp3'
+      },
+      {
+        title: 'Road to San Giovanni',
+        body: 'In 1916, he went to the friary at San Giovanni Rotondo. He would live there until his death. On the road to the friary, no one could have guessed how many footsteps would later follow his. Behind each pair of footsteps would be a person with a story. Some would come hoping for comfort. Others would come carrying regret.',
+        prayer: 'Little prayer: Jesus, lead me where You want me to be.',
+        heart: 'Heart Moment: Sometimes God\'s plan is one long, quiet stay.',
+        scene: 'hermit',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-05.webp',
+        audio: 'page-05.mp3'
+      },
+      {
+        title: 'A Priest Who Listened',
+        body: 'The people came slowly at first, then in great numbers. Some were searching for a word of hope. Some wanted to turn away from things they had done wrong. Padre Pio spent long hours celebrating the Eucharist and hearing confessions. Imagine waiting in a line with a secret you are afraid to say aloud. What that person needed was not a spectacle.',
+        prayer: 'Little prayer: Jesus, teach me to listen with love.',
+        heart: 'Heart Moment: Listening well is a way of loving.',
+        scene: 'priest',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-06.webp',
+        audio: 'page-06.mp3'
+      },
+      {
+        title: 'A Place for Mercy',
+        body: 'They needed the mercy of Jesus, and a priest willing to listen. Padre Pio could be direct with people. The Church remembered the crowds who returned seeking forgiveness, even when facing the truth was hard. In the confessional, he did not offer a magic escape from consequences. He helped people repent, begin again, and trust God\'s mercy.',
+        prayer: 'Little prayer: Jesus, thank You for Your mercy that never runs out.',
+        heart: 'Heart Moment: Mercy welcomes everyone, again and again.',
+        scene: 'priest',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-07.webp',
+        audio: 'page-07.mp3'
+      },
+      {
+        title: 'One Person at a Time',
+        body: 'This was a daily work, repeated for years, one person at a time. Think of someone at the back of the line, afraid everyone will see their face. They wait, take a step, wait again. We cannot know what a particular visitor said. We do know why so many came: they hoped God had not stopped loving them. That hope is at the heart of the sacrament of forgiveness.',
+        prayer: 'Little prayer: Jesus, help me love the person in front of me.',
+        heart: 'Heart Moment: Big love is built one small act at a time.',
+        scene: 'priest',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-08.webp',
+        audio: 'page-08.mp3'
+      },
+      {
+        title: 'The Wounds and Questions',
+        body: 'He knew suffering from the inside too. He had lived with fragile health since he was young. In 1918, wounds appeared on his hands, feet, and side. They reminded people of the wounds of Jesus on the Cross. Padre Pio carried them for many years. The wounds drew attention, and they also brought questions.',
+        prayer: 'Little prayer: Jesus, when I hurt, help me remember You understand.',
+        heart: 'Heart Moment: Jesus knows our pain from the inside.',
+        scene: 'hermit',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-09.webp',
+        audio: 'page-09.mp3'
+      },
+      {
+        title: 'The Closed Door',
+        body: 'Church authorities investigated, and for periods they restricted parts of his public ministry. He accepted the restrictions and obeyed his superiors. We do not need to pretend that the waiting or pain was easy. A closed door can feel especially heavy when you want to help. What can a person do when the work they love is taken away for a time? Padre Pio did what he still could. He prayed and waited, trusting God without pretending to understand every trial.',
+        prayer: 'Little prayer: Jesus, give me patience when life feels unfair.',
+        heart: 'Heart Moment: Obedience and patience can be a quiet kind of courage.',
+        scene: 'hermit',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-10.webp',
+        audio: 'page-10.mp3'
+      },
+      {
+        title: 'Faith and the Cross',
+        body: 'When Christians speak about the Cross, they do not mean that pain is good by itself, or that someone who is sick should be left without help. Jesus met people in their suffering. Padre Pio\'s response to his own trials was to keep praying and to care for others. He saw Christ in poor and sick neighbors. His faith could not stay inside the walls of the chapel.',
+        prayer: 'Little prayer: Jesus, help me carry my small crosses with love.',
+        heart: 'Heart Moment: Love can make hard things lighter.',
+        scene: 'hermit',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-11.webp',
+        audio: 'page-11.mp3'
+      },
+      {
+        title: 'A Hospital for the Sick',
+        body: 'So the friar whose own body hurt took part in building a place where other hurting people could be treated. Many people helped him. Together they founded the Home for the Relief of Suffering, a hospital in San Giovanni Rotondo. It opened in 1956. Think of the difference between telling a sick person, "I hope you get well," and helping make a bed, a doctor, and care available. The hospital was not a claim that prayer replaces medicine. It was a way to put love into action.',
+        prayer: 'Little prayer: Jesus, bless everyone who cares for the sick.',
+        heart: 'Heart Moment: Our own hurts can teach us to heal others.',
+        scene: 'healing',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-12.webp',
+        audio: 'page-12.mp3'
+      },
+      {
+        title: 'Prayer Together',
+        body: 'Padre Pio also encouraged prayer groups. People could pray together rather than carry every burden alone. Prayer and care belonged together in his life. At the hospital, someone could receive treatment. In a prayer group, someone could know they had not been forgotten. Neither act made suffering disappear on command. Both could tell a person, "You matter."',
+        prayer: 'Little prayer: Jesus, teach my family to pray together.',
+        heart: 'Heart Moment: Praying with someone is sharing strength.',
+        scene: 'unity',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-13.webp',
+        audio: 'page-13.mp3'
+      },
+      {
+        title: 'A Kindness a Child Can Do',
+        body: 'A child can understand this. When someone is alone, sitting beside them is a real gift. When someone is ill, bringing water or asking an adult for help can be a real act of love. Big kindness often begins with something small.',
+        prayer: 'Little prayer: Jesus, show me someone who needs a friend today.',
+        heart: 'Heart Moment: Sitting beside someone is a real gift.',
+        scene: 'unity',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-14.webp',
+        audio: 'page-14.mp3'
+      },
+      {
+        title: 'The Church Calls Him a Saint',
+        body: 'He died in 1968. Years later, the Church carefully examined his life and proclaimed him a saint in 2002. Pope John Paul the Second spoke of his long hours in the confessional, his prayer groups, and the hospital. He held prayer and charity together as the heart of Padre Pio\'s lesson.',
+        prayer: 'Little prayer: Saint Pio, pray for us.',
+        heart: 'Heart Moment: Saints are ordinary people who kept saying yes to God.',
+        scene: 'legacy',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of St. Pio of Pietrelcina.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-15.webp',
+        audio: 'page-15.mp3'
+      },
+      {
+        title: 'Who Can You Help Today?',
+        body: 'You may never build a hospital. You may not know what to say when someone is hurting. Start smaller. Listen without rushing away. Ask if they need help. Pray for them, and do one useful, kind thing. If you have made a mistake, ask forgiveness and begin again. Padre Pio\'s life says that love for God grows when it becomes love for a neighbor. Today, who is one person you can notice and help?',
+        prayer: 'Little prayer: Jesus, help me help someone today.',
+        heart: 'Heart Moment: Your kindness, however small, is part of God\'s story.',
+        scene: 'legacy',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Padre Pio.', sources: ['vaticanPioBiography', 'vaticanPioCanonization'] }],
+        illustration: './media/storybook-pio/images/page-16.webp',
+        audio: 'page-16.mp3'
+      }
+  ];
+
+
+  const JPII_STORY_EN = [
+      {
+        title: 'A Boy in Wadowice',
+        body: 'In a Polish town called Wadowice, a boy named Karol grew up among ordinary streets, neighbors, and church bells. At home, his family and friends called him Lolek. Long before the world would call him Pope John Paul the Second, he was a child learning that love matters most when life is hard.',
+        prayer: 'Little prayer: Jesus, bless my family and everyone on my street.',
+        heart: 'Heart Moment: God knows our name long before the world does.',
+        scene: 'birth',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography', 'domjp2Family'] }],
+        illustration: './media/storybook-jpii/images/page-01.webp',
+        audio: 'page-01.mp3'
+      },
+      {
+        title: 'A Family That Prayed',
+        body: 'His mother died when he was only eight. He went on growing up with his father and his older brother Edmund. Then Edmund, who had become a doctor, died too. When someone you love is gone, even a familiar street can seem changed. Karol\'s father stayed close. Karol saw him kneel to pray, and he too learned to keep praying. The sorrow did not tell him what his whole life would become. It was one part of the road he had to walk.',
+        prayer: 'Little prayer: Jesus, hold close everyone who is missing someone they love.',
+        heart: 'Heart Moment: Sadness is part of the road, not the end of it.',
+        scene: 'birth',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography', 'domjp2Family'] }],
+        illustration: './media/storybook-jpii/images/page-02.webp',
+        audio: 'page-02.mp3'
+      },
+      {
+        title: 'A City in War',
+        body: 'As a young man, he loved learning and the theater. He began university in Krakow. Then, in 1939, Nazi forces invaded Poland and closed the university. Imagine a classroom whose doors suddenly close, and a city where speaking freely can become dangerous. Karol worked in a stone quarry and later in a chemical factory. Hard work helped him earn a living. It also kept him from being deported to Germany.',
+        prayer: 'Little prayer: Jesus, protect every child whose home is touched by war.',
+        heart: 'Heart Moment: Closed doors cannot close a person\'s heart.',
+        scene: 'vocation',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-03.webp',
+        audio: 'page-03.mp3'
+      },
+      {
+        title: 'Stories Kept Alive',
+        body: 'In those fearful years, he and friends helped organize a theater that had to remain hidden. Why tell stories when the world feels so dark? Because people are more than the fear surrounding them. Karol learned that human words, courage, and faith could be protected even when many other things were taken away.',
+        prayer: 'Little prayer: Jesus, give me courage when the world feels dark.',
+        heart: 'Heart Moment: People are bigger than the fear around them.',
+        scene: 'vocation',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-04.webp',
+        audio: 'page-04.mp3'
+      },
+      {
+        title: 'A Hidden Calling',
+        body: 'His father died in 1941. Karol knew what it was to lose his family one person at a time. The next year, feeling called to serve God as a priest, he began studying in a secret seminary in Krakow. A seminary is a school for future priests. This one had to meet quietly because the occupying forces had closed so much of public life. Choosing that path was not a promise that nothing frightening would happen. It was a choice to follow Christ amid uncertainty.',
+        prayer: 'Little prayer: Jesus, help me hear what You are calling me to be.',
+        heart: 'Heart Moment: Following Christ is a brave choice, not an easy one.',
+        scene: 'vocation',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-05.webp',
+        audio: 'page-05.mp3'
+      },
+      {
+        title: 'A Priest for Others',
+        body: 'After the war, Karol was ordained a priest in 1946. He listened to people, studied theology, and taught. He spent time helping students and families. His path led from priest to bishop, and then to archbishop of Krakow. In the Church\'s Second Vatican Council, he helped with work on how the Church should speak about human dignity and the life of the world.',
+        prayer: 'Little prayer: Jesus, bless our priests and teachers.',
+        heart: 'Heart Moment: Listening and helping is real work for God.',
+        scene: 'priest',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-06.webp',
+        audio: 'page-06.mp3'
+      },
+      {
+        title: 'Do Not Be Afraid',
+        body: 'In 1978, the cardinals chose him to be Pope. He took the name John Paul the Second. Think of how far the road had gone: from a boy in Wadowice, through grief and war, to the great square in Rome. At the beginning of his ministry, he asked people not to be afraid and to open their lives to Christ. This was not a man saying he had never felt fear. He had known enough of it to speak about courage with weight.',
+        prayer: 'Little prayer: Jesus, when I am afraid, help me open the door to You.',
+        heart: 'Heart Moment: Courage is not having no fear - it is walking through it.',
+        scene: 'priest',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography', 'vaticanJPIIInaugural'] }],
+        illustration: './media/storybook-jpii/images/page-07.webp',
+        audio: 'page-07.mp3'
+      },
+      {
+        title: 'Young Hearts Together',
+        body: 'As pope, he traveled from country to country. He spoke to many people who had never seen a pope before, and he asked young people to take their faith seriously. He began World Youth Day, where young people from many places could pray and discover that the Church was much larger than one neighborhood or one country. His own life had taught him to look at every person as someone worthy of respect.',
+        prayer: 'Little prayer: Jesus, help me make friends who love You too.',
+        heart: 'Heart Moment: The Church is bigger than our neighborhood.',
+        scene: 'unity',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography', 'vaticanJPIIWYD'] }],
+        illustration: './media/storybook-jpii/images/page-08.webp',
+        audio: 'page-08.mp3'
+      },
+      {
+        title: 'The Choice to Forgive',
+        body: 'Then came a terrible day in Saint Peter\'s Square in 1981. A man shot and seriously wounded the pope. Doctors cared for him, and he spent a long time recovering. There was nothing holy about the attack. The remarkable part of the story came afterward: John Paul forgave the man who had hurt him. Forgiveness did not mean pretending the harm had not happened. It meant refusing to let hatred have the final word.',
+        prayer: 'Little prayer: Jesus, help me forgive someone who has hurt me.',
+        heart: 'Heart Moment: Forgiving does not say the hurt was fine - it says hatred does not win.',
+        scene: 'healing',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-09.webp',
+        audio: 'page-09.mp3'
+      },
+      {
+        title: 'The Long Road Home',
+        body: 'In later years, the pope\'s body grew weaker. The man who had traveled so widely and spoken to enormous crowds could not do everything he once did. People saw that even a leader who encourages others needs care, patience, and prayer. He died in 2005. In 2014, the Church proclaimed him a saint.',
+        prayer: 'Little prayer: Saint John Paul, pray for us.',
+        heart: 'Heart Moment: Saints are people who kept saying yes to God.',
+        scene: 'legacy',
+        evidence: [{ type: 'documented', claim: 'This page retells documented events from the life of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-10.webp',
+        audio: 'page-10.mp3'
+      },
+      {
+        title: 'One Brave Step',
+        body: 'What does his story leave with you? You do not have to be fearless before you do good. You do not have to be strong every day. When life changes suddenly, you can ask God for courage, reach for someone who needs help, and choose not to answer hurt with more hurt. The boy from Wadowice kept walking through grief and danger, and kept opening his heart to Christ. What is one brave and loving step you can take today?',
+        prayer: 'Little prayer: Jesus, show me one brave and loving step I can take today.',
+        heart: 'Heart Moment: You do not have to be fearless to do good.',
+        scene: 'legacy',
+        evidence: [{ type: 'pastoral', claim: 'This page offers pastoral guidance for children, drawn from the documented life and teaching of Saint John Paul II.', sources: ['vaticanJPIIBiography'] }],
+        illustration: './media/storybook-jpii/images/page-11.webp',
+        audio: 'page-11.mp3'
+      }
+  ];
+
+  const STORY_PAGES = {
+    francis: { en: window.FRANCIS_STORY_EN || [] },
+    joseph: { en: window.JOSEPH_STORY_EN || [] },
+    anthony: { en: window.ANTHONY_STORY_EN || [] },
+    therese: { en: window.THERESE_STORY_EN || [] },
+    charbel: STORIES,
+    massabki: { en: window.MASSABKI_STORY_EN || [] },
+    pio: { en: PIO_STORY_EN },
+    jpii: { en: JPII_STORY_EN },
+    teresa: { en: window.MOTHER_TERESA_STORY_EN || [] },
+    rafqa: { en: window.RAFQA_STORY_EN || [] },
+    'charbel-v2': { en: window.CHARBEL_V2_STORY_EN || [] },
+    magdalene: { en: window.MAGDALENE_STORY_EN || [] },
+    sergius: { en: window.SERGIUS_STORY_EN || [] },
+    maroun: { en: window.MAROUN_STORY_EN || [] },
+    marina: { en: window.MARINA_STORY_EN || [] },
+    augustine: { en: window.AUGUSTINE_STORY_EN || [] },
+    longinus: { en: window.LONGINUS_STORY_EN || [], ar: window.LONGINUS_STORY_AR || [] },
+    jude: { en: window.JUDE_STORY_EN || [] },
+    peter: { en: window.PETER_STORY_EN || [] },
+    hardini: { en: window.HARDINI_STORY_EN || [] }
+  };
+  const UI = COPY[contentLang];
+  const storyPages = STORY_PAGES[storyId] || STORY_PAGES.charbel;
+  const pages = storyPages[contentLang] || storyPages.en;
+  const AUDIO_BASE = {
+    en: './media/storybook/en',
+    ar: './media/storybook/ar',
+    fr: './media/storybook/fr'
+  };
+  const SCENE_IMAGE_BASE = './media/storybook/images';
+  const SCENE_IMAGES = {
+    birth: `${SCENE_IMAGE_BASE}/birth.png`,
+    vocation: `${SCENE_IMAGE_BASE}/vocation.png`,
+    priest: `${SCENE_IMAGE_BASE}/priest.png`,
+    hermit: `${SCENE_IMAGE_BASE}/hermit.png`,
+    passing: `${SCENE_IMAGE_BASE}/passing.png`,
+    healing: `${SCENE_IMAGE_BASE}/healing.png`,
+    unity: `${SCENE_IMAGE_BASE}/unity.png`,
+    legacy: `${SCENE_IMAGE_BASE}/legacy.png`
+  };
+  const VOICE_PACK_STORAGE_KEY = storyId === 'charbel' ? `storybook_voice_pack_${contentLang}` : `storybook_voice_pack_${storyId}_${contentLang}`;
+  const BROWSER_VOICE_PREF_KEY = 'rosary_audio_voice_pref';
+  const VOICE_PACKS = {
+  francis: { en: [{ id: 'directed-francis', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-francis/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  joseph: { en: [{ id: 'directed-joseph', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-joseph/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  anthony: { en: [{ id: 'directed-anthony', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-anthony/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  therese: { en: [{ id: 'directed-therese-v2', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-therese/en-directed-v2' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  massabki: { en: [{ id: 'kokoro-massabki', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-massabki/en' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  charbel: {
+    en: [
+      { id: 'elevenlabs-charbel', label: 'ElevenLabs Story Voice (Recommended)', type: 'clips', base: './media/storybook/en-elevenlabs' },
+      { id: 'studio-british', label: 'Studio British', type: 'clips', base: './media/storybook/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ],
+    ar: [
+      { id: 'studio-ar', label: 'Studio Arabic (Recommended)', type: 'clips', base: './media/storybook/ar' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ],
+    fr: [
+      { id: 'studio-fr', label: 'Studio French (Recommended)', type: 'clips', base: './media/storybook/fr' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ]
+  },
+  pio: {
+    en: [
+      { id: 'kokoro-pio', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-pio/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ]
+  },
+  jpii: {
+    en: [
+      { id: 'kokoro-jpii', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-jpii/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ]
+  },
+  hardini: { en: [
+      { id: 'kokoro-hardini', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-hardini/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ] },
+  augustine: { en: [{ id: "directed-augustine", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-augustine/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  marina: { en: [{ id: "directed-marina", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-marina/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  maroun: { en: [{ id: "directed-maroun", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-maroun/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  sergius: { en: [{ id: "directed-sergius", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-sergius-bacchus/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  magdalene: { en: [{ id: "directed-magdalene", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-magdalene/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  longinus: { en: [{ id: "directed-longinus", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-longinus/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  jude: { en: [{ id: "directed-jude", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-jude/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  peter: { en: [{ id: 'kokoro-peter', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-peter/en-directed-r1' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  rafqa: { en: [
+      { id: 'kokoro-rafqa', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-rafqa/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ] },
+  'charbel-v2': { en: [
+      { id: 'kokoro-charbel-v2', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-charbel-v2/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ] },
+  teresa: {
+    en: [
+      { id: 'kokoro-teresa', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-teresa/en' },
+      { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
+    ]
+  }
+};
+
+  const el = {
+    panel: document.querySelector('.storybook-panel'),
+    frame: document.querySelector('.storybook'),
+    step: document.getElementById('story-step'),
+    title: document.getElementById('story-title'),
+    body: document.getElementById('story-body'),
+    prayer: document.getElementById('story-prayer'),
+    heart: document.getElementById('story-heart'),
+    art: document.getElementById('story-illustration'),
+    evidenceTitle: document.getElementById('story-evidence-title'),
+    evidenceList: document.getElementById('story-evidence-list'),
+    pack: document.getElementById('story-voice-pack'),
+    prev: document.getElementById('story-prev'),
+    next: document.getElementById('story-next'),
+    read: document.getElementById('story-read'),
+    autoContinue: document.getElementById('story-auto-continue'),
+    readingIndicator: document.getElementById('story-reading-indicator'),
+    readingLabel: document.getElementById('story-reading-label'),
+    elapsed: document.getElementById('story-elapsed'),
+    rateBtns: document.querySelectorAll('.story-rate-btn')
+  };
+
+  if (!el.step || !el.title || !el.body || !el.prayer || !el.heart || !el.art || !el.evidenceTitle || !el.evidenceList || !el.pack || !el.prev || !el.next || !el.read || !el.panel || !el.frame) {
+    return;
+  }
+
+  const updateUiLabels = () => {
+    el.prev.textContent = UI.prev;
+    el.next.textContent = UI.next;
+    el.read.textContent = UI.read;
+    el.evidenceTitle.textContent = UI.evidenceTitle;
+  };
+
+  const linkMarkup = sourceId => {
+    const source = EVIDENCE_SOURCES[sourceId];
+    if (!source) return '';
+    return `<a href="${source.url}" target="_blank" rel="noopener">${source.label}</a>`;
+  };
+
+  const getEvidenceForPage = (_pageIndex, page) => {
+    if (Array.isArray(page.evidence) && page.evidence.length) {
+      return page.evidence; // LONGINUS-RTL-HARNESS: honored for every contentLang
+    }
+    if (contentLang !== 'en') {
+      return [
+        {
+          type: 'documented',
+          claim: UI.evidenceFallback,
+          sources: ['vaticanBeatification1965', 'vaticanCanonization1977']
+        }
+      ];
+    }
+    if (page.evidencePreset && EVIDENCE_PRESETS[page.evidencePreset]) {
+      return EVIDENCE_PRESETS[page.evidencePreset];
+    }
+    return EVIDENCE_PRESETS.pastoralApplication;
+  };
+
+  const renderEvidence = (pageIndex, page) => {
+    const items = getEvidenceForPage(pageIndex, page);
+    el.evidenceList.innerHTML = items.map(item => {
+      const sourceLinks = (item.sources || []).map(linkMarkup).filter(Boolean).join(' | ');
+      return `
+        <li>
+          <span class="story-evidence-type">${item.type}</span>
+          ${item.claim}
+          <span class="story-evidence-links">${sourceLinks}</span>
+        </li>
+      `;
+    }).join('');
+  };
+
+  const sceneMarkup = (scene, illustration) => `
+    <div class="scene-art scene-${scene}">
+      <img class="scene-photo" src="${illustration || './gallery/charbel-portrait.jpg'}" alt="" fetchpriority="high" decoding="async" />
+      <div class="scene-photo-overlay" aria-hidden="true"></div>
+      ${storyId === 'longinus' && index === 5 ? (contentLang === 'ar' ? '<div id="longinus-accounts-caption"><div class="longinus-account-labels" dir="ltr"><span dir="rtl">مرقس: قائد مئة لا اسم له</span><span dir="rtl">يوحنا: جنديٌّ لا اسم له</span></div><p dir="rtl">يربط التقليد هذين الخبرين بلونجينوس؛ أمّا الكتاب المقدّس فلا يذكر اسمَ أيٍّ منهما.</p></div>' : '<div id="longinus-accounts-caption"><div class="longinus-account-labels"><span>Mark: an unnamed centurion</span><span>John: an unnamed soldier</span></div><p>Tradition links these accounts with Longinus; Scripture does not name either man.</p></div>') : ''}
+    </div>
+  `;
+
+  let index = 0;
+  let reading = false;
+  let paused = false;
+  let activeUtterance = null;
+  let activeClip = null;
+  let availableVoicePacks = [];
+  let activeVoicePack = null;
+  const clipAvailability = new Map();
+  let playbackRate = 1;
+  let readingStartTime = 0;
+  let elapsedTimer = null;
+
+  const AUTO_CONTINUE_KEY = 'storybook_auto_continue';
+  const READER_MODE_KEY = 'storybook_reader_mode';
+  const LAST_PAGE_KEY = storyId === 'charbel' ? 'storybook_last_page' : `storybook_last_page_${storyId}`;
+  const readAutoContinuePref = () => {
+    try { return localStorage.getItem(AUTO_CONTINUE_KEY) !== 'false'; } catch (_) { return true; }
+  };
+  const writeAutoContinuePref = val => {
+    try { localStorage.setItem(AUTO_CONTINUE_KEY, String(val)); } catch (_) { /* no-op */ }
+  };
+  const readReaderModePref = () => {
+    try { return localStorage.getItem(READER_MODE_KEY) === 'true'; } catch (_) { return false; }
+  };
+  const writeReaderModePref = val => {
+    try { localStorage.setItem(READER_MODE_KEY, String(val)); } catch (_) { /* no-op */ }
+  };
+  const readLastPage = () => {
+    try { return parseInt(localStorage.getItem(LAST_PAGE_KEY), 10) || 0; } catch (_) { return 0; }
+  };
+  const writeLastPage = idx => {
+    try { localStorage.setItem(LAST_PAGE_KEY, String(idx)); } catch (_) { /* no-op */ }
+  };
+  if (el.autoContinue) {
+    el.autoContinue.checked = readAutoContinuePref();
+    el.autoContinue.addEventListener('change', () => writeAutoContinuePref(el.autoContinue.checked));
+  }
+
+  // Reader mode toggle
+  const readerToggle = document.getElementById('story-reader-toggle');
+  const applyReaderMode = on => {
+    if (el.frame) el.frame.classList.toggle('is-reader-mode', on);
+    if (readerToggle) readerToggle.textContent = on ? 'Reader Mode: On' : 'Reader Mode';
+    writeReaderModePref(on);
+  };
+  if (readerToggle) {
+    applyReaderMode(readReaderModePref());
+    readerToggle.addEventListener('click', () => {
+      const next = !el.frame?.classList.contains('is-reader-mode');
+      applyReaderMode(next);
+    });
+  }
+
+  const formatElapsed = ms => {
+    const s = Math.floor(ms / 1000);
+    const m = Math.floor(s / 60);
+    return `${m}:${String(s % 60).padStart(2, '0')}`;
+  };
+
+  const startElapsedTimer = () => {
+    readingStartTime = Date.now();
+    clearInterval(elapsedTimer);
+    if (el.elapsed) {
+      el.elapsed.textContent = '0:00';
+      elapsedTimer = setInterval(() => {
+        el.elapsed.textContent = formatElapsed(Date.now() - readingStartTime);
+      }, 500);
+    }
+  };
+
+  const stopElapsedTimer = () => {
+    clearInterval(elapsedTimer);
+    elapsedTimer = null;
+  };
+
+  const setReadingVisual = (active, isPaused) => {
+    const textEl = el.body.closest('.storybook-text');
+    if (el.readingIndicator) {
+      el.readingIndicator.classList.toggle('is-active', active && !isPaused);
+      el.readingIndicator.classList.toggle('is-paused', active && isPaused);
+      if (el.readingLabel) {
+        el.readingLabel.textContent = isPaused ? 'Paused' : 'Reading…';
+      }
+    }
+    if (textEl) {
+      textEl.classList.toggle('is-reading', active && !isPaused);
+    }
+  };
+  const pageIndicator = idx => `${UI.pagePrefix} ${idx + 1} ${UI.pageConnector} ${pages.length}`;
+  const storyUiFlags = {
+    showBack: true,
+    showToggle: true,
+    showSkip: true,
+    showOpen: false,
+    showAutoPrayer: false,
+    showNext: false,
+    showCountdown: false,
+    showSubtitle: true,
+    showProgress: true,
+    showVoiceSelect: false,
+    prevSelector: '#story-prev',
+    nextSelector: '#story-next',
+    openHref: window.location.href
+  };
+
+  const syncAudioContext = extra => {
+    const page = pages[index];
+    if (!page || !window.RosaryAudioContext?.set) {
+      return;
+    }
+    const text = `${page.title}. ${page.body} ${page.prayer} ${page.heart || ''}`.trim();
+    window.RosaryAudioContext.set({
+      source: 'storybook',
+      mode: 'storybook',
+      title: page.title,
+      subtitle: pageIndicator(index),
+      stage: 'Storybook',
+      url: window.location.href,
+      text,
+      estimatedDurationMs: Math.max(3000, Math.round((text.trim().split(/\s+/).length / 130) * 60000)),
+      ui: storyUiFlags,
+      voicePack: activeVoicePack?.id || null,
+      ...extra
+    });
+  };
+
+  const readVoicePackPref = () => {
+    try {
+      return localStorage.getItem(VOICE_PACK_STORAGE_KEY) || '';
+    } catch (_) {
+      return '';
+    }
+  };
+
+  const selectPreferredBrowserVoice = () => {
+    if (!('speechSynthesis' in window)) {
+      return null;
+    }
+    const voices = window.speechSynthesis.getVoices() || [];
+    if (!voices.length) {
+      return null;
+    }
+
+    try {
+      const pref = JSON.parse(localStorage.getItem(BROWSER_VOICE_PREF_KEY) || '{}');
+      if (pref?.name) {
+        const match = voices.find(voice => voice.name === pref.name && (!pref.lang || voice.lang === pref.lang));
+        if (match) {
+          return match;
+        }
+      }
+    } catch (_) {
+      // no-op
+    }
+
+    const normalized = voices.map(voice => ({
+      voice,
+      name: (voice.name || '').toLowerCase(),
+      lang: (voice.lang || '').toLowerCase()
+    }));
+
+    const preferred = normalized.find(item =>
+      item.name.includes('google uk english female') || item.name.includes('uk english female')
+    );
+    if (preferred) return preferred.voice;
+
+    const enGbFemale = normalized.find(item =>
+      item.lang.startsWith('en-gb') && (item.name.includes('female') || item.name.includes('woman'))
+    );
+    if (enGbFemale) return enGbFemale.voice;
+
+    const enGbAny = normalized.find(item => item.lang.startsWith('en-gb'));
+    if (enGbAny) return enGbAny.voice;
+
+    const enAny = normalized.find(item => item.lang.startsWith('en'));
+    return (enAny && enAny.voice) || voices[0];
+  };
+
+  const writeVoicePackPref = packId => {
+    try {
+      localStorage.setItem(VOICE_PACK_STORAGE_KEY, packId);
+    } catch (_) {
+      // no-op
+    }
+  };
+
+  const getBaseVoicePacks = () => (VOICE_PACKS[storyId] || VOICE_PACKS.charbel)[contentLang] || (VOICE_PACKS[storyId] || VOICE_PACKS.charbel).en;
+  const isLocalFilePreview = () => window.location.protocol === 'file:';
+
+  const resolveVoicePacks = async () => {
+    const candidates = getBaseVoicePacks();
+    const checks = await Promise.all(candidates.map(async (pack) => {
+      if (pack.type === 'browser') {
+        return 'speechSynthesis' in window;
+      }
+      if (!pages.every(page => Boolean(page.audio))) {
+        return false;
+      }
+      const probeUrl = `${pack.base}/page-01.mp3`;
+      return checkClipAvailability(probeUrl);
+    }));
+    availableVoicePacks = candidates.filter((_, idx) => checks[idx]);
+    if (!availableVoicePacks.length) {
+      availableVoicePacks = [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }];
+    }
+  };
+
+  const setActiveVoicePack = packId => {
+    const selected = availableVoicePacks.find(pack => pack.id === packId);
+    activeVoicePack = selected || availableVoicePacks[0] || null;
+    if (activeVoicePack) {
+      writeVoicePackPref(activeVoicePack.id);
+    }
+  };
+
+  const getPreferredInitialVoicePack = () => {
+    const recommendedId = storyId === 'augustine' ? 'directed-augustine' : storyId === 'marina' ? 'directed-marina' : storyId === 'maroun' ? 'directed-maroun' : storyId === 'sergius' ? 'directed-sergius' : storyId === 'magdalene' ? 'directed-magdalene' : storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : storyId === 'charbel-v2' ? 'kokoro-charbel-v2' : 'elevenlabs-charbel';
+    const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
+    if (contentLang === 'en' && recommended) {
+      return recommended.id;
+    }
+    return readVoicePackPref();
+  };
+
+  const renderVoicePackSelect = () => {
+    el.pack.innerHTML = '';
+    availableVoicePacks.forEach(pack => {
+      const option = document.createElement('option');
+      option.value = pack.id;
+      option.textContent = pack.label;
+      if (activeVoicePack && pack.id === activeVoicePack.id) {
+        option.selected = true;
+      }
+      el.pack.appendChild(option);
+    });
+    if (availableVoicePacks.length <= 1) {
+      el.pack.disabled = true;
+    }
+  };
+
+  const stopReading = () => {
+    if (activeClip) {
+      activeClip.pause();
+      activeClip.currentTime = 0;
+      activeClip = null;
+    }
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    reading = false;
+    paused = false;
+    activeUtterance = null;
+    el.read.textContent = UI.read;
+    setReadingVisual(false, false);
+    stopElapsedTimer();
+    syncAudioContext({ playing: false, paused: false, completed: false });
+  };
+
+  // Shared reader geometry: header and control heights vary with viewport and text size.
+  const book = el.panel.closest('.storybook');
+  const controls = book.querySelector('.storybook-controls');
+  const updateReaderInsets = () => {
+    const headerHeight = document.querySelector('.topbar')?.getBoundingClientRect().height || 0;
+    document.documentElement.style.setProperty('--story-header-height', `${headerHeight}px`);
+    document.documentElement.style.setProperty('--story-controls-height', `${controls.getBoundingClientRect().height}px`);
+  };
+  const readerResize = new ResizeObserver(updateReaderInsets);
+  readerResize.observe(controls);
+  const readerHeader = document.querySelector('.topbar');
+  if (readerHeader) readerResize.observe(readerHeader);
+  updateReaderInsets();
+  // Reference summaries must not displace the actual illustrated book on entry.
+  const precedingSections = [];
+  for (let node = book.previousElementSibling; node && !node.classList.contains('story-hero'); node = node.previousElementSibling) {
+    if (node.matches('section.section')) precedingSections.unshift(node);
+  }
+  let afterBook = book;
+  for (const section of precedingSections) { afterBook.after(section); afterBook = section; }
+  const scrollToReader = () => {
+    updateReaderInsets();
+    const inset = readerHeader?.getBoundingClientRect().height || 0;
+    const target = window.scrollY + el.panel.getBoundingClientRect().top - inset - controls.getBoundingClientRect().height - 12;
+    window.scrollTo({top:Math.max(0,target), behavior:window.matchMedia(['(prefers-reduced-motion:', ' reduce)'].join('')).matches ? 'instant' : 'smooth'});
+  };
+
+  const onPageReadingFinished = () => {
+    reading = false;
+    paused = false;
+    activeClip = null;
+    activeUtterance = null;
+    el.read.textContent = UI.read;
+    setReadingVisual(false, false);
+    stopElapsedTimer();
+    syncAudioContext({ playing: false, paused: false, completed: false });
+
+    if (el.autoContinue?.checked && index < pages.length - 1) {
+      setTimeout(() => {
+        index++;
+        render();
+        scrollToReader();
+        setTimeout(() => readCurrentPage(), 220);
+      }, 300);
+    }
+  };
+
+  let pageTurnAnimation = null;
+  let lastRenderedIndex = 0;
+  const animatePageTurn = direction => {
+    pageTurnAnimation?.cancel();
+    const art = el.art.querySelector('.scene-art');
+    if (!art || !direction || window.matchMedia(['(prefers-reduced-motion:', 'reduce)'].join(' ')).matches) return;
+    // One bounded hinge explains the new page. Never move the art during reading.
+    art.style.transformOrigin = [direction > 0 ? 'left' : 'right', 'center'].join(' ');
+    pageTurnAnimation = art.animate([
+      { transform: `rotateY(${direction > 0 ? -4 : 4}deg)`, opacity: .86 },
+      { transform: 'rotateY(0deg)', opacity: 1 }
+    ], { duration: 240, easing: 'cubic-bezier(.23, 1, .32, 1)' });
+  };
+
+  const render = (withMotion = true) => {
+    const page = pages[index];
+    const illustration = page.illustration || SCENE_IMAGES[page.scene] || './gallery/charbel-portrait.jpg';
+    const stepText = `${UI.pagePrefix} ${index + 1} ${UI.pageConnector} ${pages.length}`;
+    el.step.textContent = stepText;
+    el.title.textContent = page.title;
+    el.body.textContent = page.body;
+    el.body.classList.toggle('is-reflection', Boolean(page.reflection));
+    el.panel.classList.toggle('is-reflection-page', Boolean(page.reflection));
+    el.prayer.textContent = page.prayer;
+    el.heart.textContent = page.heart || '';
+    el.heart.hidden = !page.heart;
+    // Keep the server-rendered first scene when it already shows this page's
+    // art; replacing it would repaint the LCP image for no visual change.
+    const currentPhoto = el.art.querySelector('.scene-photo');
+    const sameScene = currentPhoto && currentPhoto.getAttribute('src') === illustration
+      && el.art.querySelector(`.scene-art.scene-${page.scene}`);
+    if (!sameScene) el.art.innerHTML = sceneMarkup(page.scene, illustration);
+    renderEvidence(index, page);
+    if (storyId === "longinus") el.art.setAttribute("aria-hidden", index === 5 ? "false" : "true");
+    el.art.setAttribute('data-scene', page.scene);
+    el.prev.disabled = index === 0;
+    el.next.disabled = index === pages.length - 1;
+    writeLastPage(index);
+    syncAudioContext({ playing: false, paused: false, completed: false });
+    animatePageTurn(withMotion ? Math.sign(index - lastRenderedIndex) : 0);
+    lastRenderedIndex = index;
+  };
+
+  const getClipUrl = page => {
+    if (!page.audio || !activeVoicePack || activeVoicePack.type !== 'clips') return null;
+    return `${activeVoicePack.base}/${page.audio}`;
+  };
+
+  const checkClipAvailability = async clipUrl => {
+    if (!clipUrl) return false;
+    if (isLocalFilePreview()) {
+      clipAvailability.set(clipUrl, true);
+      return true;
+    }
+    if (clipAvailability.has(clipUrl)) {
+      return clipAvailability.get(clipUrl);
+    }
+    try {
+      const response = await fetch(clipUrl, { method: 'HEAD' });
+      const ok = response.ok;
+      clipAvailability.set(clipUrl, ok);
+      return ok;
+    } catch (_) {
+      clipAvailability.set(clipUrl, false);
+      return false;
+    }
+  };
+
+  const readCurrentPage = async () => {
+    // Pause if currently playing
+    if (reading && !paused) {
+      if (activeClip) {
+        activeClip.pause();
+        paused = true;
+        el.read.textContent = UI.paused;
+        setReadingVisual(true, true);
+        syncAudioContext({ playing: false, paused: true });
+        return;
+      }
+      if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+        window.speechSynthesis.pause();
+        paused = true;
+        el.read.textContent = UI.paused;
+        setReadingVisual(true, true);
+        syncAudioContext({ playing: false, paused: true });
+        return;
+      }
+      stopReading();
+      return;
+    }
+
+    // Resume from pause
+    if (reading && paused) {
+      if (activeClip) {
+        activeClip.play();
+        paused = false;
+        el.read.textContent = UI.stop;
+        setReadingVisual(true, false);
+        syncAudioContext({ playing: true, paused: false });
+        return;
+      }
+      if ('speechSynthesis' in window && window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        paused = false;
+        el.read.textContent = UI.stop;
+        setReadingVisual(true, false);
+        syncAudioContext({ playing: true, paused: false });
+        return;
+      }
+      // Can't resume, just stop
+      stopReading();
+      return;
+    }
+
+    const page = pages[index];
+    const clipUrl = getClipUrl(page);
+    const hasClip = await checkClipAvailability(clipUrl);
+
+    stopReading();
+
+    if (hasClip && clipUrl) {
+      try {
+        const clip = new Audio(clipUrl);
+        clip.playbackRate = playbackRate;
+        clip.onended = () => onPageReadingFinished();
+        clip.onerror = () => onPageReadingFinished();
+        activeClip = clip;
+        reading = true;
+        paused = false;
+        el.read.textContent = UI.stop;
+        setReadingVisual(true, false);
+        startElapsedTimer();
+        syncAudioContext({ mode: 'prerendered', playing: true, paused: false, completed: false, startedAt: Date.now() });
+        await clip.play();
+        return;
+      } catch (_) {
+        activeClip = null;
+      }
+    }
+
+    if (!('speechSynthesis' in window)) {
+      return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(`${page.title}. ${page.body} ${page.prayer} ${page.heart || ''}`.trim());
+    utterance.rate = 0.92 * playbackRate;
+    utterance.pitch = 1.02;
+    utterance.volume = 0.98;
+    utterance.lang = contentLang === 'ar' ? 'ar-LB' : contentLang === 'fr' ? 'fr-FR' : 'en-US';
+    utterance.voice = selectPreferredBrowserVoice();
+    utterance.onend = () => onPageReadingFinished();
+    utterance.onerror = () => onPageReadingFinished();
+
+    reading = true;
+    paused = false;
+    activeUtterance = utterance;
+    el.read.textContent = UI.stop;
+    setReadingVisual(true, false);
+    startElapsedTimer();
+    syncAudioContext({ mode: 'speech', playing: true, paused: false, completed: false, startedAt: Date.now() });
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const movePage = (direction, withMotion = true) => {
+    const wasReading = reading;
+    stopReading();
+    const nextIndex = Math.max(0, Math.min(pages.length - 1, index + direction));
+    if (nextIndex === index) return;
+    index = nextIndex;
+    render(withMotion);
+    scrollToReader();
+    if (wasReading) {
+      syncAudioContext({ playing: true, paused: false, completed: false });
+      readCurrentPage();
+    }
+  };
+
+  el.prev.addEventListener('click', () => movePage(-1));
+  el.next.addEventListener('click', () => movePage(1));
+  el.read.addEventListener('click', readCurrentPage);
+  el.pack.addEventListener('change', () => {
+    setActiveVoicePack(el.pack.value);
+    stopReading();
+    syncAudioContext({ voicePack: activeVoicePack?.id || null });
+  });
+
+  // Rate controls
+  el.rateBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const rate = parseFloat(btn.dataset.rate);
+      if (isNaN(rate)) return;
+      playbackRate = rate;
+      el.rateBtns.forEach(b => b.classList.toggle('is-active', b === btn));
+      if (activeClip) {
+        activeClip.playbackRate = playbackRate;
+      }
+    });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(event.target.tagName)) {
+      return;
+    }
+    if (event.key === 'ArrowRight') {
+      movePage(isRtl ? -1 : 1, false);
+    }
+    if (event.key === 'ArrowLeft') {
+      movePage(isRtl ? 1 : -1, false);
+    }
+  });
+
+  window.addEventListener('beforeunload', stopReading);
+  window.addEventListener('rosary-audio-close', stopReading);
+
+  window.RosaryNarrationController = {
+    togglePause: () => readCurrentPage(),
+    stop: () => stopReading(),
+    next: () => movePage(isRtl ? -1 : 1),
+    previous: () => movePage(isRtl ? 1 : -1)
+  };
+
+  if (isRtl) {
+    el.frame.classList.add('is-rtl');
+    el.frame.setAttribute('dir', 'rtl');
+  } else {
+    el.frame.setAttribute('dir', 'ltr');
+  }
+
+  if (!pages || !pages.length) {
+    el.body.textContent = UI.fallbackMessage;
+    return;
+  }
+
+  const init = async () => {
+    try {
+      const response = await fetch(`./locales/${contentLang}/storybook.json`);
+      if (response.ok) {
+        const messages = await response.json();
+        UI.read = messages.listen;
+        // One direct route back to the shelf; keep the existing site nav and reader controls.
+        const hero = document.querySelector('.story-hero');
+        if (hero && !hero.querySelector('.story-shelf-link')) {
+          const shelfLink = document.createElement('a');
+          shelfLink.className = 'story-shelf-link';
+          shelfLink.href = './stories';
+          shelfLink.textContent = messages.allStories;
+          hero.appendChild(shelfLink);
+        }
+        const summary = document.querySelector(['.story-settings', 'summary'].join(' '));
+        if (summary) { summary.setAttribute('aria-label', messages.settings); summary.title = messages.settings; const label = document.createElement('span'); label.textContent = messages.settingsShort; summary.appendChild(label); }
+        const notes = document.querySelectorAll('.story-production-note');
+        notes.forEach(note => {
+          if (!note.closest('#storybook-film') && !note.hasAttribute('data-story-specific-disclosure')) {
+            note.textContent = messages.disclosure;
+          }
+        });
+      }
+    } catch (_) { /* Legacy strings remain usable when previewed offline. */ }
+    // Read last page BEFORE first render (which overwrites it with 0)
+    const savedLastPage = readLastPage();
+
+    await resolveVoicePacks();
+    setActiveVoicePack(getPreferredInitialVoicePack());
+    renderVoicePackSelect();
+    updateUiLabels();
+    render();
+
+    // Resume reading banner
+    const lastPage = savedLastPage;
+    if (lastPage > 0 && lastPage < pages.length) {
+      const banner = document.getElementById('story-resume-banner');
+      const bannerText = document.getElementById('story-resume-text');
+      const bannerBtn = document.getElementById('story-resume-btn');
+      const bannerDismiss = document.getElementById('story-resume-dismiss');
+      if (banner && bannerText && bannerBtn) {
+        bannerText.textContent = `Continue from ${UI.pagePrefix} ${lastPage + 1}?`;
+        banner.hidden = false;
+        settingsRowFit();
+        bannerBtn.addEventListener('click', () => {
+          index = lastPage;
+          render();
+          scrollToReader();
+          banner.hidden = true;
+          settingsRowFit();
+        });
+        if (bannerDismiss) {
+          bannerDismiss.addEventListener('click', () => { banner.hidden = true; settingsRowFit(); });
+        }
+      }
+    }
+  };
+
+  init();
+})();
