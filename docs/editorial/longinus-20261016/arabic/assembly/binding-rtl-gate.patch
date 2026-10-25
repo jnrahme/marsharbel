@@ -1,0 +1,10 @@
+--- a/storybook.js
++++ b/storybook.js
+@@ story map (line ~922)
+-    longinus: { en: window.LONGINUS_STORY_EN || [] },
++    longinus: { en: window.LONGINUS_STORY_EN || [], ar: window.LONGINUS_STORY_AR || [] },
+--- a/longinus-story.html  (RTL GATE HARNESS COPY ONLY - never edit the pinned html 2382382e...)
++++ b/rtl-gate/longinus-story-rtl-gate.html
+@@ after <script defer src="longinus-story-data.js"></script> (line ~265)
++    <script defer src="docs/editorial/longinus-20261016/arabic/assembly/longinus-story-ar-data.js"></script>
++    <!-- serve repo root; open rtl-gate/longinus-story-rtl-gate.html?story=longinus&lang=ar -->
