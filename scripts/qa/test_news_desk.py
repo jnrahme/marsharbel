@@ -80,6 +80,16 @@ class NewsDeskTests(unittest.TestCase):
         self.assertIn('dark beard with a grey center streak', gallery)
         self.assertIn('not independent verification', gallery)
 
+    def test_news_generator_owns_source_and_served_blocks(self):
+        import re
+        outputs = news_desk.outputs()
+        for file, marker in [('index.html', 'news-home'), ('news.html', 'news-desk')]:
+            source = ROOT/'src/pages'/file
+            self.assertIn(source, outputs)
+            pattern = rf'<!-- i18n-{marker}:start -->.*?<!-- i18n-{marker}:end -->'
+            self.assertEqual(re.search(pattern, outputs[source], re.S).group(),
+                             re.search(pattern, outputs[ROOT/file], re.S).group())
+
     def test_generated_output_fresh(self):
         for path, text in news_desk.outputs().items():
             self.assertEqual(path.read_text(), text, str(path))

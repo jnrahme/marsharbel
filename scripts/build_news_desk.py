@@ -110,6 +110,17 @@ def outputs(root=ROOT):
         text = re.sub(r'(<!-- news-copy:([^:]+):start -->).*?(<!-- news-copy:\2:end -->)',
                       lambda m: m[1] + html.escape(copy[m[2]], quote=True) + m[3], text, flags=re.S)
         result[root / file] = text
+        # Keep the authored source block in sync too. build-pages.mjs composes
+        # these sources on clean checkouts; root-only updates are discarded.
+        source_path = root / 'src/pages' / file
+        if source_path.is_file():
+            source = source_path.read_text()
+            source, count = re.subn(pattern, lambda m: m[1] + '\n' + content + '\n' + m[2], source, flags=re.S)
+            if count != 1:
+                raise ValueError(f'{source_path}: expected exactly one {marker} block')
+            source = re.sub(r'(<!-- news-copy:([^:]+):start -->).*?(<!-- news-copy:\2:end -->)',
+                            lambda m: m[1] + html.escape(copy[m[2]], quote=True) + m[3], source, flags=re.S)
+            result[source_path] = source
     return result
 
 def main():
