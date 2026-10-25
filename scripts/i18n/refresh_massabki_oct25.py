@@ -57,23 +57,25 @@ def outputs(root=ROOT):
     registry = read_json(root / 'locales/registry.json')
     packet = read_json(root / 'locales/massabki-oct25-translations.json')
     english = read_json(root / 'locales/en/news-desk.json')
-    if set(packet) != {'ar'} or any(len(v) != 6 for v in packet.values()):
-        raise ValueError('Expected the reviewed Arabic-only, six-value packet')
+    if set(packet) != {'ar'} or any(len(v) != 7 for v in packet.values()):
+        raise ValueError('Expected the reviewed Arabic-only, seven-value packet')
     TITLE = english['massabkiCentenary.title']
     BODY = english['massabkiCentenary.summary']
     DATE_EN = english['massabkiCentenary.date']
     CREDIT_ELNASHRA = english['massabkiCentenary.elnashraSource']
     CREDIT_NOURSAT = english['massabkiCentenary.noursatSource']
     CREDIT_JBEIL = english['massabkiCentenary.jbeilSource']
+    CREDIT_EPARCHY = english['massabkiCentenary.eparchySource']
     K_TITLE = NEWS_PREFIX + slug(TITLE)
     K_SUMMARY = NEWS_PREFIX + slug(BODY)
     K_DATE = NEWS_PREFIX + slug(DATE_EN)
     K_CREDIT_ELNASHRA = NEWS_PREFIX + slug(CREDIT_ELNASHRA)
     K_CREDIT_NOURSAT = NEWS_PREFIX + slug(CREDIT_NOURSAT)
     K_CREDIT_JBEIL = NEWS_PREFIX + slug(CREDIT_JBEIL)
+    K_CREDIT_EPARCHY = NEWS_PREFIX + slug(CREDIT_EPARCHY)
     NEWS_COPY_KEYS = {'massabkiCentenary.title': K_TITLE, 'massabkiCentenary.summary': K_SUMMARY,
                       'massabkiCentenary.date': K_DATE, 'massabkiCentenary.elnashraSource': K_CREDIT_ELNASHRA,
-                      'massabkiCentenary.noursatSource': K_CREDIT_NOURSAT, 'massabkiCentenary.jbeilSource': K_CREDIT_JBEIL}
+                      'massabkiCentenary.noursatSource': K_CREDIT_NOURSAT, 'massabkiCentenary.jbeilSource': K_CREDIT_JBEIL, 'massabkiCentenary.eparchySource': K_CREDIT_EPARCHY}
     result = {}
 
     # ---- news-master ----
@@ -98,7 +100,7 @@ def outputs(root=ROOT):
                 f'{row} > p:nth-of-type(2) > span:nth-of-type(1)', f'{row} > p:nth-of-type(2) > time:nth-of-type(1)',
                 f'{CREDIT_SEL}(1) > span:nth-of-type(1)', f'{CREDIT_SEL}(1) > span:nth-of-type(2)',
                 f'{CREDIT_SEL}(1) > a:nth-of-type(1)', f'{CREDIT_SEL}(1) > a:nth-of-type(2)',
-                f'{CREDIT_SEL}(1) > a:nth-of-type(3)'}
+                f'{CREDIT_SEL}(1) > a:nth-of-type(3)', f'{CREDIT_SEL}(1) > a:nth-of-type(4)'}
     bindings = [b for b in bindings if b['selector'] not in row_sels]  # upsert: refresh row copy on re-run
     bindings += [
         {'key': K_TITLE, 'selector': f'{row} > h3:nth-of-type(1) > a:nth-of-type(1)', 'source': TITLE, 'kind': 'text', 'nodeIndex': 0},
@@ -110,6 +112,7 @@ def outputs(root=ROOT):
         {'key': K_CREDIT_ELNASHRA, 'selector': f'{CREDIT_SEL}(1) > a:nth-of-type(1)', 'source': CREDIT_ELNASHRA, 'kind': 'text', 'nodeIndex': 0},
         {'key': K_CREDIT_NOURSAT, 'selector': f'{CREDIT_SEL}(1) > a:nth-of-type(2)', 'source': CREDIT_NOURSAT, 'kind': 'text', 'nodeIndex': 0},
         {'key': K_CREDIT_JBEIL, 'selector': f'{CREDIT_SEL}(1) > a:nth-of-type(3)', 'source': CREDIT_JBEIL, 'kind': 'text', 'nodeIndex': 0},
+        {'key': K_CREDIT_EPARCHY, 'selector': f'{CREDIT_SEL}(1) > a:nth-of-type(4)', 'source': CREDIT_EPARCHY, 'kind': 'text', 'nodeIndex': 0},
     ]
     verify_all(bindings, soup, 'news-master')
     contract['bindings'] = bindings

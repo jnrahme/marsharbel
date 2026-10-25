@@ -8,6 +8,21 @@ news_desk = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(news_desk)
 
 class NewsDeskTests(unittest.TestCase):
+    def test_massabki_priority_is_maronite_and_mayor_is_paraphrased(self):
+        from bs4 import BeautifulSoup
+        source = 'https://maronite.org.au/news/three-brothers-become-first-maronite-laymen-to-be-canonised/'
+        en = json.loads((ROOT/'locales/en/news-desk.json').read_text())
+        self.assertIn('first Maronite laymen to be canonized', en['massabkiCentenary.summary'])
+        self.assertNotIn('modern canonical norms', en['massabkiCentenary.summary'])
+        self.assertNotIn('"a religious and national celebration', en['massabkiCentenary.summary'])
+        for path in ['news.html', 'ar/news.html']:
+            soup = BeautifulSoup((ROOT/path).read_text(), 'html.parser')
+            self.assertIsNotNone(soup.select_one('a[href="'+source+'"]'))
+        packet = json.loads((ROOT/'locales/massabki-oct25-home-translations.json').read_text())
+        self.assertIn('علمانيين موارنة', packet['ar']['popeRosary.homeCredit'])
+        self.assertIn('beatyfikacji braci Massabkich', packet['pl']['popeRosary.homeTitle'])
+        self.assertNotIn('błogosławieństwa', packet['pl']['popeRosary.homeTitle'])
+
     def test_el_paso_is_archived_not_upcoming(self):
         text=(ROOT/'news.html').read_text()
         self.assertNotIn('Upcoming parish festival',text)
