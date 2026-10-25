@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "news.html",
-  "masterSha256": "e33ec9a84df3375f1025a33484da0343e626a51dc27a1bc90435e16df77e6d0c",
+  "masterSha256": "8aca5668111ade12cb38f4844fbbb441284eb9701e00de119b15d8b240b8c1e0",
   "sourceRevision": "764dd3d",
   "bindings": [
     {
@@ -1182,64 +1182,36 @@
     },
     {
       "key": "news.latest-news.vatican-doctrinal-dicastery-publishes-venite-ad-me-on-handin",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > span:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > span:nth-of-type(1)",
       "source": "Vatican Doctrinal Dicastery Publishes 'Venite ad Me' on Handing On the Faith",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.sources",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > span:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > span:nth-of-type(2)",
       "source": "Sources:",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.dicastery-for-the-doctrine-of-the-faith-venite-ad-me-publica",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
       "source": "Dicastery for the Doctrine of the Faith: 'Venite ad Me' publication announcement (October 22, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
       "source": "·",
       "kind": "text",
       "nodeIndex": 5
     },
     {
       "key": "news.latest-news.vatican-news-doctrine-of-the-faith-returning-to-the-kerygma",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(2)",
       "source": "Vatican News: Doctrine of the Faith - returning to the kerygma amid crisis in passing on faith (October 22, 2026)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
-      "source": ".",
-      "kind": "text",
-      "nodeIndex": 7
-    },
-    {
-      "key": "news.latest-news.pope-leo-to-be-discharged-from-gemelli-today",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > span:nth-of-type(1)",
-      "source": "Pope Leo discharged from Gemelli, back at the Vatican",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.source",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > span:nth-of-type(2)",
-      "source": "Source:",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.vatican-news-pope-leo-xiv-s-doctors-confirm-no-further-treat",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
-      "source": "Vatican News: Pope Leo XIV's doctors confirm 'no further treatment is necessary' (October 21, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1248,7 +1220,7 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 5
+      "nodeIndex": 7
     },
     {
       "key": "news.latest-news.pope-leo-to-be-discharged-from-gemelli-today",
@@ -1265,9 +1237,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.vatican-news-general-audience-on-family-and-marriage-october",
+      "key": "news.latest-news.vatican-news-pope-leo-xiv-s-doctors-confirm-no-further-treat",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
-      "source": "Vatican News: General Audience on family and marriage (October 21, 2026)",
+      "source": "Vatican News: Pope Leo XIV's doctors confirm 'no further treatment is necessary' (October 21, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1293,9 +1265,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.rte-first-general-audience-since-surgery-october-21-2026",
+      "key": "news.latest-news.vatican-news-general-audience-on-family-and-marriage-october",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
-      "source": "RTE: First general audience since surgery (October 21, 2026)",
+      "source": "Vatican News: General Audience on family and marriage (October 21, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1321,9 +1293,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.ansa-pope-leo-xiv-in-st-peter-s-square-for-general-audience",
+      "key": "news.latest-news.rte-first-general-audience-since-surgery-october-21-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6) > a:nth-of-type(1)",
-      "source": "ANSA: Pope Leo XIV in St Peter's Square for general audience (October 21, 2026)",
+      "source": "RTE: First general audience since surgery (October 21, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1349,9 +1321,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.vatican-news-pope-leo-xiv-to-be-discharged-from-hospital-oct",
+      "key": "news.latest-news.ansa-pope-leo-xiv-in-st-peter-s-square-for-general-audience",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(1)",
-      "source": "Vatican News: Pope Leo XIV returns to Vatican after being discharged from hospital (October 17, 2026)",
+      "source": "ANSA: Pope Leo XIV in St Peter's Square for general audience (October 21, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1363,9 +1335,9 @@
       "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.pope-leo-has-a-good-second-night-at-gemelli",
+      "key": "news.latest-news.pope-leo-to-be-discharged-from-gemelli-today",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(8) > span:nth-of-type(1)",
-      "source": "Pope Leo shows steady improvement at Gemelli",
+      "source": "Pope Leo discharged from Gemelli, back at the Vatican",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1377,9 +1349,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.vatican-news-second-night-recovery-update-october-15-2026",
+      "key": "news.latest-news.vatican-news-pope-leo-xiv-to-be-discharged-from-hospital-oct",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(8) > a:nth-of-type(1)",
-      "source": "Vatican News: Day-four recovery update (October 16, 2026)",
+      "source": "Vatican News: Pope Leo XIV returns to Vatican after being discharged from hospital (October 17, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1405,9 +1377,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.lbc-lebanon-s-president-wishes-pope-leo-xiv-a-speedy-recover",
+      "key": "news.latest-news.vatican-news-second-night-recovery-update-october-15-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(9) > a:nth-of-type(1)",
-      "source": "LBC: Lebanon's president wishes Pope Leo XIV a speedy recovery (October 14, 2026)",
+      "source": "Vatican News: Day-four recovery update (October 16, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1433,9 +1405,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.vatican-news-in-italian-detailed-holy-see-bulletin-october-1",
+      "key": "news.latest-news.lbc-lebanon-s-president-wishes-pope-leo-xiv-a-speedy-recover",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(10) > a:nth-of-type(1)",
-      "source": "Vatican News in Italian: detailed Holy See bulletin (October 13, 2026)",
+      "source": "LBC: Lebanon's president wishes Pope Leo XIV a speedy recovery (October 14, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1447,9 +1419,9 @@
       "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.catholics-pray-for-pope-leo-at-gemelli",
+      "key": "news.latest-news.pope-leo-has-a-good-second-night-at-gemelli",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(11) > span:nth-of-type(1)",
-      "source": "Catholics Pray for Pope Leo at Gemelli",
+      "source": "Pope Leo shows steady improvement at Gemelli",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1461,9 +1433,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.vatican-news-catholics-gather-to-pray-the-rosary-for-pope-le",
+      "key": "news.latest-news.vatican-news-in-italian-detailed-holy-see-bulletin-october-1",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(11) > a:nth-of-type(1)",
-      "source": "Vatican News: Catholics gather to pray the Rosary for Pope Leo (October 13, 2026)",
+      "source": "Vatican News in Italian: detailed Holy See bulletin (October 13, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1489,9 +1461,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.usccb-catholic-news-service-october-13-2026",
+      "key": "news.latest-news.vatican-news-catholics-gather-to-pray-the-rosary-for-pope-le",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(12) > a:nth-of-type(1)",
-      "source": "USCCB / Catholic News Service, October 13, 2026",
+      "source": "Vatican News: Catholics gather to pray the Rosary for Pope Leo (October 13, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1503,79 +1475,23 @@
       "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.charbel-premieres-in-beirut",
+      "key": "news.latest-news.catholics-pray-for-pope-leo-at-gemelli",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13) > span:nth-of-type(1)",
-      "source": "Charbel Premieres in Beirut",
+      "source": "Catholics Pray for Pope Leo at Gemelli",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.sources",
+      "key": "news.latest-news.source",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13) > span:nth-of-type(2)",
-      "source": "Sources:",
+      "source": "Source:",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.nidaa-al-watan-premiere-report-and-interview-with-nadim-meha",
+      "key": "news.latest-news.usccb-catholic-news-service-october-13-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13) > a:nth-of-type(1)",
-      "source": "Nidaa al-Watan: premiere report and interview with Nadim Mehanna (October 10, Arabic)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 5
-    },
-    {
-      "key": "news.latest-news.lebtalks-launch-patronage-mtv-broadcast-and-planned-lebanese",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13) > a:nth-of-type(2)",
-      "source": "Lebtalks: launch, patronage, MTV broadcast and planned Lebanese release (October 9, Arabic)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 7
-    },
-    {
-      "key": "news.latest-news.cinemacity-beirut-october-22-opening-listing",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13) > a:nth-of-type(3)",
-      "source": "Cinemacity Beirut: October 22 opening listing",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 9
-    },
-    {
-      "key": "news.latest-news.l-orient-le-jour-october-12-charity-screening-for-anta-akhi",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13) > a:nth-of-type(4)",
-      "source": "L'Orient-Le Jour: October 12 charity screening for Anta Akhi (October 8, French)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 11
-    },
-    {
-      "key": "news.latest-news.watch-mtv-s-october-9-premiere-coverage",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13) > a:nth-of-type(5)",
-      "source": "Watch MTV's October 9 premiere coverage",
+      "source": "USCCB / Catholic News Service, October 13, 2026",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1584,26 +1500,12 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 13
+      "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.photo",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13) > span:nth-of-type(3)",
-      "source": "Photo:",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.official-film-poster-mtv-nmpro-promotional-artwork-not-a-sce",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(13)",
-      "source": "Official film poster, MTV/NMPRO. Promotional artwork, not a scene photograph.",
-      "kind": "text",
-      "nodeIndex": 15
-    },
-    {
-      "key": "news.latest-news.mar-charbel-listed-for-october-22-opening-in-beirut",
+      "key": "news.latest-news.charbel-premieres-in-beirut",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14) > span:nth-of-type(1)",
-      "source": "Mar Charbel Now Showing at VOX Cinemas Lebanon",
+      "source": "Charbel Premieres in Beirut",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1615,179 +1517,207 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.vox-city-centre-beirut-listed-october-21-sessions",
+      "key": "news.latest-news.nidaa-al-watan-premiere-report-and-interview-with-nadim-meha",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14) > a:nth-of-type(1)",
+      "source": "Nidaa al-Watan: premiere report and interview with Nadim Mehanna (October 10, Arabic)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14)",
+      "source": "·",
+      "kind": "text",
+      "nodeIndex": 5
+    },
+    {
+      "key": "news.latest-news.lebtalks-launch-patronage-mtv-broadcast-and-planned-lebanese",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14) > a:nth-of-type(2)",
+      "source": "Lebtalks: launch, patronage, MTV broadcast and planned Lebanese release (October 9, Arabic)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14)",
+      "source": "·",
+      "kind": "text",
+      "nodeIndex": 7
+    },
+    {
+      "key": "news.latest-news.cinemacity-beirut-october-22-opening-listing",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14) > a:nth-of-type(3)",
+      "source": "Cinemacity Beirut: October 22 opening listing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14)",
+      "source": "·",
+      "kind": "text",
+      "nodeIndex": 9
+    },
+    {
+      "key": "news.latest-news.l-orient-le-jour-october-12-charity-screening-for-anta-akhi",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14) > a:nth-of-type(4)",
+      "source": "L'Orient-Le Jour: October 12 charity screening for Anta Akhi (October 8, French)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14)",
+      "source": "·",
+      "kind": "text",
+      "nodeIndex": 11
+    },
+    {
+      "key": "news.latest-news.watch-mtv-s-october-9-premiere-coverage",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14) > a:nth-of-type(5)",
+      "source": "Watch MTV's October 9 premiere coverage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 13
+    },
+    {
+      "key": "news.latest-news.photo",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14) > span:nth-of-type(3)",
+      "source": "Photo:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.official-film-poster-mtv-nmpro-promotional-artwork-not-a-sce",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14)",
+      "source": "Official film poster, MTV/NMPRO. Promotional artwork, not a scene photograph.",
+      "kind": "text",
+      "nodeIndex": 15
+    },
+    {
+      "key": "news.latest-news.mar-charbel-listed-for-october-22-opening-in-beirut",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15) > span:nth-of-type(1)",
+      "source": "Mar Charbel Now Showing at VOX Cinemas Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.sources",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15) > span:nth-of-type(2)",
+      "source": "Sources:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.vox-city-centre-beirut-listed-october-21-sessions",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15) > a:nth-of-type(1)",
       "source": "VOX Cinemas Lebanon: Now Showing, release date October 21 (checked October 22)",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15)",
       "source": "·",
       "kind": "text",
       "nodeIndex": 5
     },
     {
       "key": "news.latest-news.cinemacity-beirut-october-22-opening-listing-no-sessions",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14) > a:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15) > a:nth-of-type(2)",
       "source": "Cinemacity Beirut: October 22 film listing",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15)",
       "source": "·",
       "kind": "text",
       "nodeIndex": 7
     },
     {
       "key": "news.latest-news.lebanon24-october-5-report-arabic",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14) > a:nth-of-type(3)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15) > a:nth-of-type(3)",
       "source": "Lebanon24: October 5 report (Arabic)",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.text",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(14)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15)",
       "source": ".",
       "kind": "text",
       "nodeIndex": 9
     },
     {
       "key": "news.latest-news.from-the-historic-photograph-to-a-new-saint-charbel-art-seri",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15) > span:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16) > span:nth-of-type(1)",
       "source": "From the Historic Photograph to a New Saint Charbel Art Series",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.photo",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15) > span:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16) > span:nth-of-type(2)",
       "source": "Photo:",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.the-historic-reference-photograph-not-an-ai-rendition-photog",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16)",
       "source": "The historic reference photograph, not an AI rendition. Photographer unknown; public domain according to Wikimedia Commons.",
       "kind": "text",
       "nodeIndex": 3
     },
     {
       "key": "news.latest-news.image-source",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15) > a:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16) > a:nth-of-type(1)",
       "source": "Image source",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.text",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(15)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16)",
       "source": ".",
       "kind": "text",
       "nodeIndex": 5
     },
     {
       "key": "news.latest-news.lebanese-and-jordanian-ministers-visit-saint-charbel-s-pilgr",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16) > span:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17) > span:nth-of-type(1)",
       "source": "Lebanese and Jordanian Ministers Visit Saint Charbel's Pilgrimage Sites",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.source",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16) > span:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17) > span:nth-of-type(2)",
       "source": "Source:",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.national-news-agency-ministers-visit-qozhaya-bqaa-kafra-and",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16) > a:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17) > a:nth-of-type(1)",
       "source": "National News Agency: ministers visit Qozhaya, Bqaa Kafra and Annaya (October 3, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.text",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16)",
-      "source": ".",
-      "kind": "text",
-      "nodeIndex": 5
-    },
-    {
-      "key": "news.latest-news.photo",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16) > span:nth-of-type(3)",
-      "source": "Photo:",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.qozhaya-monastery-archival-venue-context-not-the-ministers-v",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16)",
-      "source": "Qozhaya monastery, archival venue context, not the ministers' visit. Photo: Yellaban, public domain.",
-      "kind": "text",
-      "nodeIndex": 7
-    },
-    {
-      "key": "news.latest-news.image-source",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16) > a:nth-of-type(2)",
-      "source": "Image source",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(16)",
-      "source": ".",
-      "kind": "text",
-      "nodeIndex": 9
-    },
-    {
-      "key": "news.latest-news.el-paso-parish-announced-an-october-3-4-lebanese-festival",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17) > span:nth-of-type(1)",
-      "source": "El Paso Parish Announced an October 3-4 Lebanese Festival",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.sources",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17) > span:nth-of-type(2)",
-      "source": "Sources:",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.parish-announcement-saint-sharbel-maronite-catholic-mission",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17) > a:nth-of-type(1)",
-      "source": "Parish announcement: Saint Sharbel Maronite Catholic Mission",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 5
-    },
-    {
-      "key": "news.latest-news.ktsm-interview-with-parish-representatives-september-30-2026",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17) > a:nth-of-type(2)",
-      "source": "KTSM interview with parish representatives (September 30, 2026)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 7
+      "nodeIndex": 5
     },
     {
       "key": "news.latest-news.photo",
@@ -1797,30 +1727,16 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.lebanese-food-in-barcelona-2021-illustrative-not-the-el-paso",
+      "key": "news.latest-news.qozhaya-monastery-archival-venue-context-not-the-ministers-v",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17)",
-      "source": "Lebanese food in Barcelona, 2021. Illustrative, not the El Paso event. Photo: El Mono Español, CC BY-SA 4.0; resized to WebP.",
+      "source": "Qozhaya monastery, archival venue context, not the ministers' visit. Photo: Yellaban, public domain.",
       "kind": "text",
-      "nodeIndex": 9
+      "nodeIndex": 7
     },
     {
       "key": "news.latest-news.image-source",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17) > a:nth-of-type(3)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17) > a:nth-of-type(2)",
       "source": "Image source",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 11
-    },
-    {
-      "key": "news.latest-news.cc-by-sa-4-0",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17) > a:nth-of-type(4)",
-      "source": "CC BY-SA 4.0",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1829,12 +1745,12 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(17)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 13
+      "nodeIndex": 9
     },
     {
-      "key": "news.latest-news.saint-charbel-s-formation-monastery-receives-relics-from-rom",
+      "key": "news.latest-news.el-paso-parish-announced-an-october-3-4-lebanese-festival",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18) > span:nth-of-type(1)",
-      "source": "Saint Charbel's Formation Monastery Receives Relics from Rome",
+      "source": "El Paso Parish Announced an October 3-4 Lebanese Festival",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1846,9 +1762,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.mtv-lebanon-relic-reception-at-kfifan-october-2-2026-arabic",
+      "key": "news.latest-news.parish-announcement-saint-sharbel-maronite-catholic-mission",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18) > a:nth-of-type(1)",
-      "source": "MTV Lebanon: relic reception at Kfifan (October 2, 2026, Arabic)",
+      "source": "Parish announcement: Saint Sharbel Maronite Catholic Mission",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1860,23 +1776,9 @@
       "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.maronites-church-directory-saints-cyprian-and-justina-monast",
+      "key": "news.latest-news.ktsm-interview-with-parish-representatives-september-30-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18) > a:nth-of-type(2)",
-      "source": "Maronites Church directory: Saints Cyprian and Justina monastery, Kfifan",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 7
-    },
-    {
-      "key": "news.latest-news.saint-sharbel-maronite-catholic-church-formation-at-kfifan",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18) > a:nth-of-type(3)",
-      "source": "Saint Sharbel Maronite Catholic Church: formation at Kfifan",
+      "source": "KTSM interview with parish representatives (September 30, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1885,7 +1787,7 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 9
+      "nodeIndex": 7
     },
     {
       "key": "news.latest-news.photo",
@@ -1895,15 +1797,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.kfifan-monastery-2012-venue-context-not-the-relic-reception",
+      "key": "news.latest-news.lebanese-food-in-barcelona-2021-illustrative-not-the-el-paso",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18)",
-      "source": "Kfifan monastery, 2012. Venue context, not the relic reception. Photo: Evilscaught, CC BY 3.0; WebP conversion.",
+      "source": "Lebanese food in Barcelona, 2021. Illustrative, not the El Paso event. Photo: El Mono Español, CC BY-SA 4.0; resized to WebP.",
       "kind": "text",
-      "nodeIndex": 11
+      "nodeIndex": 9
     },
     {
       "key": "news.latest-news.image-source",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18) > a:nth-of-type(4)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18) > a:nth-of-type(3)",
       "source": "Image source",
       "kind": "text",
       "nodeIndex": 0
@@ -1913,12 +1815,12 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18)",
       "source": "·",
       "kind": "text",
-      "nodeIndex": 13
+      "nodeIndex": 11
     },
     {
-      "key": "news.latest-news.cc-by-3-0",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18) > a:nth-of-type(5)",
-      "source": "CC BY 3.0",
+      "key": "news.latest-news.cc-by-sa-4-0",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18) > a:nth-of-type(4)",
+      "source": "CC BY-SA 4.0",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1927,12 +1829,12 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(18)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 15
+      "nodeIndex": 13
     },
     {
-      "key": "news.latest-news.beirut-cathedral-consecrates-an-altar-to-blessed-patriarchs",
+      "key": "news.latest-news.saint-charbel-s-formation-monastery-receives-relics-from-rom",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(19) > span:nth-of-type(1)",
-      "source": "Beirut Cathedral Consecrates an Altar to Blessed Patriarchs Douaihy and Hoayek",
+      "source": "Saint Charbel's Formation Monastery Receives Relics from Rome",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1944,9 +1846,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.national-news-agency-president-aoun-attends-the-mass-septemb",
+      "key": "news.latest-news.mtv-lebanon-relic-reception-at-kfifan-october-2-2026-arabic",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(19) > a:nth-of-type(1)",
-      "source": "National News Agency: President Aoun attends the Mass (September 27, 2026)",
+      "source": "MTV Lebanon: relic reception at Kfifan (October 2, 2026, Arabic)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1958,9 +1860,9 @@
       "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.an-nahar-the-consecration-and-homily-september-27-2026",
+      "key": "news.latest-news.maronites-church-directory-saints-cyprian-and-justina-monast",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(19) > a:nth-of-type(2)",
-      "source": "An-Nahar: the consecration and homily (September 27, 2026)",
+      "source": "Maronites Church directory: Saints Cyprian and Justina monastery, Kfifan",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1972,9 +1874,9 @@
       "nodeIndex": 7
     },
     {
-      "key": "news.latest-news.l-orient-today-relics-placed-in-the-cathedral-altar-septembe",
+      "key": "news.latest-news.saint-sharbel-maronite-catholic-church-formation-at-kfifan",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(19) > a:nth-of-type(3)",
-      "source": "L'Orient Today: relics placed in the cathedral altar (September 27, 2026)",
+      "source": "Saint Sharbel Maronite Catholic Church: formation at Kfifan",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -1993,9 +1895,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.saint-george-maronite-cathedral-left-and-the-mohammad-al-ami",
+      "key": "news.latest-news.kfifan-monastery-2012-venue-context-not-the-relic-reception",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(19)",
-      "source": "Saint George Maronite Cathedral (left) and the Mohammad Al-Amin Mosque, downtown Beirut, 2009. Venue context, not the consecration Mass. Photo: Lebnen18, CC BY-SA 3.0; WebP conversion.",
+      "source": "Kfifan monastery, 2012. Venue context, not the relic reception. Photo: Evilscaught, CC BY 3.0; WebP conversion.",
       "kind": "text",
       "nodeIndex": 11
     },
@@ -2014,9 +1916,9 @@
       "nodeIndex": 13
     },
     {
-      "key": "news.latest-news.cc-by-sa-3-0",
+      "key": "news.latest-news.cc-by-3-0",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(19) > a:nth-of-type(5)",
-      "source": "CC BY-SA 3.0",
+      "source": "CC BY 3.0",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2028,9 +1930,9 @@
       "nodeIndex": 15
     },
     {
-      "key": "news.latest-news.three-priests-martyred-at-monte-sole-beatified-in-bologna",
+      "key": "news.latest-news.beirut-cathedral-consecrates-an-altar-to-blessed-patriarchs",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20) > span:nth-of-type(1)",
-      "source": "Three Priests Martyred at Monte Sole Beatified in Bologna",
+      "source": "Beirut Cathedral Consecrates an Altar to Blessed Patriarchs Douaihy and Hoayek",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2042,9 +1944,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.dehonians-may-4-2026",
+      "key": "news.latest-news.national-news-agency-president-aoun-attends-the-mass-septemb",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20) > a:nth-of-type(1)",
-      "source": "Dehonians (May 4, 2026)",
+      "source": "National News Agency: President Aoun attends the Mass (September 27, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2056,9 +1958,9 @@
       "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.vatican-news-november-21-2025",
+      "key": "news.latest-news.an-nahar-the-consecration-and-homily-september-27-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20) > a:nth-of-type(2)",
-      "source": "Vatican News (November 21, 2025)",
+      "source": "An-Nahar: the consecration and homily (September 27, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2070,23 +1972,9 @@
       "nodeIndex": 7
     },
     {
-      "key": "news.latest-news.diocese-of-bologna-september-11-2026",
+      "key": "news.latest-news.l-orient-today-relics-placed-in-the-cathedral-altar-septembe",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20) > a:nth-of-type(3)",
-      "source": "Diocese of Bologna (September 11, 2026)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 9
-    },
-    {
-      "key": "news.latest-news.vatican-news-september-27-2026-italian",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20) > a:nth-of-type(4)",
-      "source": "Vatican News (September 27, 2026, Italian)",
+      "source": "L'Orient Today: relics placed in the cathedral altar (September 27, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2095,7 +1983,7 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 11
+      "nodeIndex": 9
     },
     {
       "key": "news.latest-news.photo",
@@ -2105,86 +1993,86 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.inside-the-sacrario-the-memorial-to-the-fallen-at-marzabotto",
+      "key": "news.latest-news.saint-george-maronite-cathedral-left-and-the-mohammad-al-ami",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20)",
-      "source": "Inside the sacrario, the memorial to the fallen at Marzabotto on the Monte Sole ridge. Photograph: Gianni Careddu,",
+      "source": "Saint George Maronite Cathedral (left) and the Mohammad Al-Amin Mosque, downtown Beirut, 2009. Venue context, not the consecration Mass. Photo: Lebnen18, CC BY-SA 3.0; WebP conversion.",
+      "kind": "text",
+      "nodeIndex": 11
+    },
+    {
+      "key": "news.latest-news.image-source",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20) > a:nth-of-type(4)",
+      "source": "Image source",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20)",
+      "source": "·",
       "kind": "text",
       "nodeIndex": 13
     },
     {
-      "key": "news.latest-news.via-wikimedia-commons",
+      "key": "news.latest-news.cc-by-sa-3-0",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20) > a:nth-of-type(5)",
-      "source": "via Wikimedia Commons",
+      "source": "CC BY-SA 3.0",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.text-3",
+      "key": "news.latest-news.text",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20)",
-      "source": ",",
+      "source": ".",
       "kind": "text",
       "nodeIndex": 15
     },
     {
-      "key": "news.latest-news.cc-by-sa-4-0",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20) > a:nth-of-type(6)",
-      "source": "CC BY-SA 4.0",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(20)",
-      "source": ".",
-      "kind": "text",
-      "nodeIndex": 17
-    },
-    {
-      "key": "news.latest-news.emmitsburg-celebrates-nine-years-of-saint-sharbel-s-shrine",
+      "key": "news.latest-news.three-priests-martyred-at-monte-sole-beatified-in-bologna",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > span:nth-of-type(1)",
-      "source": "Emmitsburg Celebrates Nine Years of Saint Sharbel's Shrine",
+      "source": "Three Priests Martyred at Monte Sole Beatified in Bologna",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.source",
+      "key": "news.latest-news.sources",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > span:nth-of-type(2)",
-      "source": "Source:",
+      "source": "Sources:",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.family-of-saint-sharbel-usa-anniversary-account-september-30",
+      "key": "news.latest-news.dehonians-may-4-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > a:nth-of-type(1)",
-      "source": "Family of Saint Sharbel USA: anniversary account (September 30, 2026)",
+      "source": "Dehonians (May 4, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.text",
+      "key": "news.latest-news.text-2",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21)",
-      "source": ".",
+      "source": "·",
       "kind": "text",
       "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.photo",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > span:nth-of-type(3)",
-      "source": "Photo:",
+      "key": "news.latest-news.vatican-news-november-21-2025",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > a:nth-of-type(2)",
+      "source": "Vatican News (November 21, 2025)",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.national-shrine-grotto-emmitsburg-2015-venue-context-not-the",
+      "key": "news.latest-news.text-2",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21)",
-      "source": "National Shrine Grotto, Emmitsburg, 2015. Venue context, not the 2026 celebration. Photo: Bohemian Baltimore, CC BY-SA 4.0; resized to WebP.",
+      "source": "·",
       "kind": "text",
       "nodeIndex": 7
     },
     {
-      "key": "news.latest-news.image-source",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > a:nth-of-type(2)",
-      "source": "Image source",
+      "key": "news.latest-news.diocese-of-bologna-september-11-2026",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > a:nth-of-type(3)",
+      "source": "Diocese of Bologna (September 11, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2196,9 +2084,9 @@
       "nodeIndex": 9
     },
     {
-      "key": "news.latest-news.cc-by-sa-4-0",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > a:nth-of-type(3)",
-      "source": "CC BY-SA 4.0",
+      "key": "news.latest-news.vatican-news-september-27-2026-italian",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > a:nth-of-type(4)",
+      "source": "Vatican News (September 27, 2026, Italian)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2210,37 +2098,65 @@
       "nodeIndex": 11
     },
     {
-      "key": "news.latest-news.prayer-walk-from-byblos-to-annaya-for-south-lebanon-s-christ",
+      "key": "news.latest-news.photo",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > span:nth-of-type(3)",
+      "source": "Photo:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.inside-the-sacrario-the-memorial-to-the-fallen-at-marzabotto",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21)",
+      "source": "Inside the sacrario, the memorial to the fallen at Marzabotto on the Monte Sole ridge. Photograph: Gianni Careddu,",
+      "kind": "text",
+      "nodeIndex": 13
+    },
+    {
+      "key": "news.latest-news.via-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > a:nth-of-type(5)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-3",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 15
+    },
+    {
+      "key": "news.latest-news.cc-by-sa-4-0",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21) > a:nth-of-type(6)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(21)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 17
+    },
+    {
+      "key": "news.latest-news.emmitsburg-celebrates-nine-years-of-saint-sharbel-s-shrine",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(22) > span:nth-of-type(1)",
-      "source": "Prayer Walk from Byblos to Annaya for South Lebanon's Christians",
+      "source": "Emmitsburg Celebrates Nine Years of Saint Sharbel's Shrine",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.sources",
+      "key": "news.latest-news.source",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(22) > span:nth-of-type(2)",
-      "source": "Sources:",
+      "source": "Source:",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.catholic-world-report-ewtn-news-september-20-2026",
+      "key": "news.latest-news.family-of-saint-sharbel-usa-anniversary-account-september-30",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(22) > a:nth-of-type(1)",
-      "source": "Catholic World Report / EWTN News (September 20, 2026)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(22)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 5
-    },
-    {
-      "key": "news.latest-news.aci-mena-september-27-2026-arabic",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(22) > a:nth-of-type(2)",
-      "source": "ACI MENA (September 27, 2026, Arabic)",
+      "source": "Family of Saint Sharbel USA: anniversary account (September 30, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2249,7 +2165,7 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(22)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 7
+      "nodeIndex": 5
     },
     {
       "key": "news.latest-news.photo",
@@ -2259,16 +2175,44 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.at-the-monastery-entrance-in-annaya-where-the-walk-ends-a-pi",
+      "key": "news.latest-news.national-shrine-grotto-emmitsburg-2015-venue-context-not-the",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(22)",
-      "source": "The monastery church entrance in Annaya at dusk, where the walk ends.",
+      "source": "National Shrine Grotto, Emmitsburg, 2015. Venue context, not the 2026 celebration. Photo: Bohemian Baltimore, CC BY-SA 4.0; resized to WebP.",
+      "kind": "text",
+      "nodeIndex": 7
+    },
+    {
+      "key": "news.latest-news.image-source",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(22) > a:nth-of-type(2)",
+      "source": "Image source",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(22)",
+      "source": "·",
       "kind": "text",
       "nodeIndex": 9
     },
     {
-      "key": "news.latest-news.fulton-sheen-beatified-in-saint-louis-before-50-000",
+      "key": "news.latest-news.cc-by-sa-4-0",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(22) > a:nth-of-type(3)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(22)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 11
+    },
+    {
+      "key": "news.latest-news.prayer-walk-from-byblos-to-annaya-for-south-lebanon-s-christ",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(23) > span:nth-of-type(1)",
-      "source": "Fulton Sheen Beatified in Saint Louis Before 50,000",
+      "source": "Prayer Walk from Byblos to Annaya for South Lebanon's Christians",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2280,9 +2224,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.vatican-news-september-23-2026",
+      "key": "news.latest-news.catholic-world-report-ewtn-news-september-20-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(23) > a:nth-of-type(1)",
-      "source": "Vatican News (September 23, 2026)",
+      "source": "Catholic World Report / EWTN News (September 20, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2294,9 +2238,9 @@
       "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.catholic-register-osv-news-september-24-2026",
+      "key": "news.latest-news.aci-mena-september-27-2026-arabic",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(23) > a:nth-of-type(2)",
-      "source": "Catholic Register / OSV News (September 24, 2026)",
+      "source": "ACI MENA (September 27, 2026, Arabic)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2315,30 +2259,44 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.blessed-fulton-sheen-at-his-desk-in-1956-at-the-height-of-hi",
+      "key": "news.latest-news.at-the-monastery-entrance-in-annaya-where-the-walk-ends-a-pi",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(23)",
-      "source": "Blessed Fulton Sheen at his desk in 1956, at the height of his television years.",
+      "source": "The monastery church entrance in Annaya at dusk, where the walk ends.",
       "kind": "text",
       "nodeIndex": 9
     },
     {
-      "key": "news.latest-news.the-doctor-who-investigated-a-st-charbel-healing-speaks",
+      "key": "news.latest-news.fulton-sheen-beatified-in-saint-louis-before-50-000",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(24) > span:nth-of-type(1)",
-      "source": "The Doctor Who Investigated a St. Charbel Healing Speaks",
+      "source": "Fulton Sheen Beatified in Saint Louis Before 50,000",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.source",
+      "key": "news.latest-news.sources",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(24) > span:nth-of-type(2)",
-      "source": "Source:",
+      "source": "Sources:",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.zeale-news-interview-september-10-2026",
+      "key": "news.latest-news.vatican-news-september-23-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(24) > a:nth-of-type(1)",
-      "source": "Zeale News interview (September 10, 2026)",
+      "source": "Vatican News (September 23, 2026)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(24)",
+      "source": "·",
+      "kind": "text",
+      "nodeIndex": 5
+    },
+    {
+      "key": "news.latest-news.catholic-register-osv-news-september-24-2026",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(24) > a:nth-of-type(2)",
+      "source": "Catholic Register / OSV News (September 24, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2347,7 +2305,7 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(24)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 5
+      "nodeIndex": 7
     },
     {
       "key": "news.latest-news.photo",
@@ -2357,16 +2315,16 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.saint-charbel-makhlouf-1828-1898-the-hermit-of-annaya-tradit",
+      "key": "news.latest-news.blessed-fulton-sheen-at-his-desk-in-1956-at-the-height-of-hi",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(24)",
-      "source": "Saint Charbel Makhlouf (1828-1898), the hermit of Annaya. Traditional portrait.",
+      "source": "Blessed Fulton Sheen at his desk in 1956, at the height of his television years.",
       "kind": "text",
-      "nodeIndex": 7
+      "nodeIndex": 9
     },
     {
-      "key": "news.latest-news.american-priest-walks-the-st-charbel-trail",
+      "key": "news.latest-news.the-doctor-who-investigated-a-st-charbel-healing-speaks",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(25) > span:nth-of-type(1)",
-      "source": "American Priest Walks the St. Charbel Trail",
+      "source": "The Doctor Who Investigated a St. Charbel Healing Speaks",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2378,9 +2336,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.catholic-world-report-ewtn-news-august-23-2026",
+      "key": "news.latest-news.zeale-news-interview-september-10-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(25) > a:nth-of-type(1)",
-      "source": "Catholic World Report / EWTN News (August 23, 2026)",
+      "source": "Zeale News interview (September 10, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2399,72 +2357,30 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.pilgrims-on-the-saint-charbel-trail-photo-courtesy-of-father",
+      "key": "news.latest-news.saint-charbel-makhlouf-1828-1898-the-hermit-of-annaya-tradit",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(25)",
-      "source": "Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC.",
+      "source": "Saint Charbel Makhlouf (1828-1898), the hermit of Annaya. Traditional portrait.",
       "kind": "text",
       "nodeIndex": 7
     },
     {
-      "key": "news.latest-news.maronite-patriarch-elias-hoayek-beatified-at-dimane",
+      "key": "news.latest-news.american-priest-walks-the-st-charbel-trail",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26) > span:nth-of-type(1)",
-      "source": "Maronite Patriarch Elias Hoayek Beatified at Dimane",
+      "source": "American Priest Walks the St. Charbel Trail",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.sources",
+      "key": "news.latest-news.source",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26) > span:nth-of-type(2)",
-      "source": "Sources:",
+      "source": "Source:",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.vatican-news-july-26-2026",
+      "key": "news.latest-news.catholic-world-report-ewtn-news-august-23-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26) > a:nth-of-type(1)",
-      "source": "Vatican News (July 26, 2026)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 5
-    },
-    {
-      "key": "news.latest-news.vatican-news-in-italian-july-25-2026",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26) > a:nth-of-type(2)",
-      "source": "Vatican News, in Italian (July 25, 2026)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 7
-    },
-    {
-      "key": "news.latest-news.vatican-news-may-22-2026",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26) > a:nth-of-type(3)",
-      "source": "Vatican News (May 22, 2026)",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.text-2",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26)",
-      "source": "·",
-      "kind": "text",
-      "nodeIndex": 9
-    },
-    {
-      "key": "news.latest-news.holy-see-press-office-bulletin-may-22-2026-italian",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26) > a:nth-of-type(4)",
-      "source": "Holy See Press Office bulletin (May 22, 2026, Italian)",
+      "source": "Catholic World Report / EWTN News (August 23, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2473,26 +2389,82 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 11
+      "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.hundreds-honor-st-charbel-at-revesby-feast",
+      "key": "news.latest-news.photo",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26) > span:nth-of-type(3)",
+      "source": "Photo:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.pilgrims-on-the-saint-charbel-trail-photo-courtesy-of-father",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(26)",
+      "source": "Pilgrims on the Saint Charbel Trail. Photo courtesy of Father Michael Sliney, LC.",
+      "kind": "text",
+      "nodeIndex": 7
+    },
+    {
+      "key": "news.latest-news.maronite-patriarch-elias-hoayek-beatified-at-dimane",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(27) > span:nth-of-type(1)",
-      "source": "Hundreds Honor St. Charbel at Revesby Feast",
+      "source": "Maronite Patriarch Elias Hoayek Beatified at Dimane",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.source",
+      "key": "news.latest-news.sources",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(27) > span:nth-of-type(2)",
-      "source": "Source:",
+      "source": "Sources:",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.the-catholic-weekly-july-20-2026",
+      "key": "news.latest-news.vatican-news-july-26-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(27) > a:nth-of-type(1)",
-      "source": "The Catholic Weekly (July 20, 2026)",
+      "source": "Vatican News (July 26, 2026)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(27)",
+      "source": "·",
+      "kind": "text",
+      "nodeIndex": 5
+    },
+    {
+      "key": "news.latest-news.vatican-news-in-italian-july-25-2026",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(27) > a:nth-of-type(2)",
+      "source": "Vatican News, in Italian (July 25, 2026)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(27)",
+      "source": "·",
+      "kind": "text",
+      "nodeIndex": 7
+    },
+    {
+      "key": "news.latest-news.vatican-news-may-22-2026",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(27) > a:nth-of-type(3)",
+      "source": "Vatican News (May 22, 2026)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text-2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(27)",
+      "source": "·",
+      "kind": "text",
+      "nodeIndex": 9
+    },
+    {
+      "key": "news.latest-news.holy-see-press-office-bulletin-may-22-2026-italian",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(27) > a:nth-of-type(4)",
+      "source": "Holy See Press Office bulletin (May 22, 2026, Italian)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2501,12 +2473,12 @@
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(27)",
       "source": ".",
       "kind": "text",
-      "nodeIndex": 5
+      "nodeIndex": 11
     },
     {
-      "key": "news.latest-news.st-charbel-s-pilgrim-relic-visits-cebu",
+      "key": "news.latest-news.hundreds-honor-st-charbel-at-revesby-feast",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(28) > span:nth-of-type(1)",
-      "source": "St. Charbel's Pilgrim Relic Visits Cebu",
+      "source": "Hundreds Honor St. Charbel at Revesby Feast",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2518,9 +2490,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.archdiocese-of-cebu-june-29-2026",
+      "key": "news.latest-news.the-catholic-weekly-july-20-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(28) > a:nth-of-type(1)",
-      "source": "Archdiocese of Cebu (June 29, 2026)",
+      "source": "The Catholic Weekly (July 20, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2532,23 +2504,9 @@
       "nodeIndex": 5
     },
     {
-      "key": "news.latest-news.photo",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(28) > span:nth-of-type(3)",
-      "source": "Photo:",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "news.latest-news.the-vigil-lamp-at-saint-charbel-s-tomb-in-annaya-from-which",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(28)",
-      "source": "The tomb of Saint Charbel at Annaya, from which the pilgrim relic travels.",
-      "kind": "text",
-      "nodeIndex": 7
-    },
-    {
-      "key": "news.latest-news.two-new-miracles-reported-in-early-2026",
+      "key": "news.latest-news.st-charbel-s-pilgrim-relic-visits-cebu",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(29) > span:nth-of-type(1)",
-      "source": "Two New Miracles Reported in Early 2026",
+      "source": "St. Charbel's Pilgrim Relic Visits Cebu",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2560,9 +2518,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.catholic-world-report-ewtn-news-january-28-2026",
+      "key": "news.latest-news.archdiocese-of-cebu-june-29-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(29) > a:nth-of-type(1)",
-      "source": "Catholic World Report / EWTN News (January 28, 2026)",
+      "source": "Archdiocese of Cebu (June 29, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2581,16 +2539,16 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.the-monastery-of-saint-maron-in-annaya-which-keeps-the-regis",
+      "key": "news.latest-news.the-vigil-lamp-at-saint-charbel-s-tomb-in-annaya-from-which",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(29)",
-      "source": "The Monastery of Saint Maron in Annaya from above by day, which keeps the register of reported miracles.",
+      "source": "The tomb of Saint Charbel at Annaya, from which the pilgrim relic travels.",
       "kind": "text",
       "nodeIndex": 7
     },
     {
-      "key": "news.latest-news.first-papal-visit-to-saint-charbel-s-tomb",
+      "key": "news.latest-news.two-new-miracles-reported-in-early-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(30) > span:nth-of-type(1)",
-      "source": "First Papal Visit to Saint Charbel's Tomb",
+      "source": "Two New Miracles Reported in Early 2026",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2602,9 +2560,9 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.official-vatican-text-december-1-2025",
+      "key": "news.latest-news.catholic-world-report-ewtn-news-january-28-2026",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(30) > a:nth-of-type(1)",
-      "source": "Official Vatican text (December 1, 2025)",
+      "source": "Catholic World Report / EWTN News (January 28, 2026)",
       "kind": "text",
       "nodeIndex": 0
     },
@@ -2623,8 +2581,50 @@
       "nodeIndex": 0
     },
     {
-      "key": "news.latest-news.pope-leo-xiv-praying-at-the-tomb-of-saint-charbel-in-annaya",
+      "key": "news.latest-news.the-monastery-of-saint-maron-in-annaya-which-keeps-the-regis",
       "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(30)",
+      "source": "The Monastery of Saint Maron in Annaya from above by day, which keeps the register of reported miracles.",
+      "kind": "text",
+      "nodeIndex": 7
+    },
+    {
+      "key": "news.latest-news.first-papal-visit-to-saint-charbel-s-tomb",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(31) > span:nth-of-type(1)",
+      "source": "First Papal Visit to Saint Charbel's Tomb",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.source",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(31) > span:nth-of-type(2)",
+      "source": "Source:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.official-vatican-text-december-1-2025",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(31) > a:nth-of-type(1)",
+      "source": "Official Vatican text (December 1, 2025)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.text",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(31)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 5
+    },
+    {
+      "key": "news.latest-news.photo",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(31) > span:nth-of-type(3)",
+      "source": "Photo:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.pope-leo-xiv-praying-at-the-tomb-of-saint-charbel-in-annaya",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(31)",
       "source": "Pope Leo XIV praying at the tomb of Saint Charbel in Annaya. Photo: Vatican Media / Vatican News.",
       "kind": "text",
       "nodeIndex": 7
@@ -2694,22 +2694,92 @@
     },
     {
       "key": "news.latest-news.pope-leo-xiv-cancels-assisi-peace-meeting-visit-on-doctors-a",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > span:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > span:nth-of-type(1)",
       "source": "Pope Leo XIV cancels Assisi peace-meeting visit on doctors' advice",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.source",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > span:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > span:nth-of-type(2)",
       "source": "Source:",
       "kind": "text",
       "nodeIndex": 0
     },
     {
       "key": "news.latest-news.vatican-news-pope-leo-will-not-make-assisi-visit-to-aid-reco",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
       "source": "Vatican News: Pope Leo will not make Assisi visit to aid recovery after surgery (October 23, 2026)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.al-rahi-celebrates-mass-in-al-aqoura-for-first-centenary-of",
+      "selector": "#massabki-centenary-aqoura-2026-10-25 > div:nth-of-type(1) > h3:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Al-Rahi celebrates Mass in Al-Aqoura for first centenary of Massabki brothers' beatification",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.maronite-patriarch-bechara-al-rahi-celebrated-the-divine-lit",
+      "selector": "#massabki-centenary-aqoura-2026-10-25 > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Maronite Patriarch Bechara al-Rahi celebrated the Divine Liturgy in Al-Aqoura on Sunday for the first centenary of the beatification of the Massabki brothers. \"The Massabki gave their lives for Christ, and their family traces its roots to the town of Al-Aqoura, and this town today takes them back and takes back their memory,\" he said, adding that \"their holiness did not begin at the hour of martyrdom but appeared in their faith, their prayer and their love of doing good.\" Beatified by Pope Pius XI on October 10, 1926, the brothers Francis, Abdel Moati and Raphael were canonized by Pope Francis on October 20, 2024, the first Maronite laymen to be canonized; they were martyred in Damascus on the night of July 9-10, 1860, and belonged to the Maronite Eparchy of Damascus. Al-Aqoura mayor Boutros Mehanna had announced that the Patriarch would preside at Mar Girgis Cathedral, describing it as a religious and national celebration affirming the holiness of the town, region and Lebanon.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.update",
+      "selector": "#massabki-centenary-aqoura-2026-10-25 > div:nth-of-type(1) > p:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Update",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.october-25-2026",
+      "selector": "#massabki-centenary-aqoura-2026-10-25 > div:nth-of-type(1) > p:nth-of-type(2) > time:nth-of-type(1)",
+      "source": "October 25, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.al-rahi-celebrates-mass-in-al-aqoura-for-first-centenary-of",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Al-Rahi celebrates Mass in Al-Aqoura for first centenary of Massabki brothers' beatification",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.sources",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Sources:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.elnashra-al-rahi-at-the-first-centenary-mass-for-the-beatifi",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Elnashra: Al-Rahi at the first-centenary Mass for the beatification of the holy martyrs the Massabki (October 25, 2026, Arabic)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.noursat-al-rahi-asks-the-intercession-of-the-massabki-for-le",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Noursat: Al-Rahi asks the intercession of the Massabki for Lebanon, the East and the world (October 24, 2024, Arabic)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.jbeil-today-al-aqoura-mayor-announces-the-first-centenary-vi",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Jbeil Today: Al-Aqoura mayor announces the first-centenary visit (October 24, 2026, Arabic)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.maronite-eparchy-three-brothers-become-first-maronite-laymen",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > details:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Maronite Eparchy: Three brothers become first Maronite laymen to be canonised (Bishop Antoine Charbel Tarabay, October 25, 2024)",
       "kind": "text",
       "nodeIndex": 0
     }
@@ -2943,6 +3013,13 @@
     "news.latest-news.pope-leo-xiv-cancels-assisi-peace-meeting-visit-on-doctors-a": "Pope Leo XIV cancels Assisi peace-meeting visit on doctors' advice",
     "news.latest-news.the-holy-see-press-office-announced-on-friday-that-pope-leo": "The Holy See Press Office announced on Friday that Pope Leo XIV will not take part in the \"Unarmed and Disarming Peace\" meeting in Assisi on October 27. His doctors, Dr Luigi Carbone and Professor Stefano Margaritora, advised against the planned helicopter journey so soon after his October 13 thoracic surgery, and a scheduled follow-up chest X-ray confirmed that his postoperative recovery is progressing very well. The Pope will send a message expressing his closeness to the organizers, religious leaders and guests taking part. The St. Egidio Community meeting (October 25-27) marks the 40th anniversary of the World Day of Prayer for Peace convened by Saint John Paul II in Assisi in 1986, bringing together 384 representatives from 53 countries. Reuters reports the Vatican has not said whether the Pope's scheduled November 6-17 trip to Uruguay, Argentina and Peru will go ahead.",
     "news.latest-news.october-23-2026": "October 23, 2026",
-    "news.latest-news.vatican-news-pope-leo-will-not-make-assisi-visit-to-aid-reco": "Vatican News: Pope Leo will not make Assisi visit to aid recovery after surgery (October 23, 2026)"
+    "news.latest-news.vatican-news-pope-leo-will-not-make-assisi-visit-to-aid-reco": "Vatican News: Pope Leo will not make Assisi visit to aid recovery after surgery (October 23, 2026)",
+    "news.latest-news.al-rahi-celebrates-mass-in-al-aqoura-for-first-centenary-of": "Al-Rahi celebrates Mass in Al-Aqoura for first centenary of Massabki brothers' beatification",
+    "news.latest-news.maronite-patriarch-bechara-al-rahi-celebrated-the-divine-lit": "Maronite Patriarch Bechara al-Rahi celebrated the Divine Liturgy in Al-Aqoura on Sunday for the first centenary of the beatification of the Massabki brothers. \"The Massabki gave their lives for Christ, and their family traces its roots to the town of Al-Aqoura, and this town today takes them back and takes back their memory,\" he said, adding that \"their holiness did not begin at the hour of martyrdom but appeared in their faith, their prayer and their love of doing good.\" Beatified by Pope Pius XI on October 10, 1926, the brothers Francis, Abdel Moati and Raphael were canonized by Pope Francis on October 20, 2024, the first Maronite laymen to be canonized; they were martyred in Damascus on the night of July 9-10, 1860, and belonged to the Maronite Eparchy of Damascus. Al-Aqoura mayor Boutros Mehanna had announced that the Patriarch would preside at Mar Girgis Cathedral, describing it as a religious and national celebration affirming the holiness of the town, region and Lebanon.",
+    "news.latest-news.october-25-2026": "October 25, 2026",
+    "news.latest-news.elnashra-al-rahi-at-the-first-centenary-mass-for-the-beatifi": "Elnashra: Al-Rahi at the first-centenary Mass for the beatification of the holy martyrs the Massabki (October 25, 2026, Arabic)",
+    "news.latest-news.noursat-al-rahi-asks-the-intercession-of-the-massabki-for-le": "Noursat: Al-Rahi asks the intercession of the Massabki for Lebanon, the East and the world (October 24, 2024, Arabic)",
+    "news.latest-news.jbeil-today-al-aqoura-mayor-announces-the-first-centenary-vi": "Jbeil Today: Al-Aqoura mayor announces the first-centenary visit (October 24, 2026, Arabic)",
+    "news.latest-news.maronite-eparchy-three-brothers-become-first-maronite-laymen": "Maronite Eparchy: Three brothers become first Maronite laymen to be canonised (Bishop Antoine Charbel Tarabay, October 25, 2024)"
   }
 }

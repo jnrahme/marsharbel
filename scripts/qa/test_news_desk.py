@@ -8,6 +8,21 @@ news_desk = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(news_desk)
 
 class NewsDeskTests(unittest.TestCase):
+    def test_massabki_priority_is_maronite_and_mayor_is_paraphrased(self):
+        from bs4 import BeautifulSoup
+        source = 'https://maronite.org.au/news/three-brothers-become-first-maronite-laymen-to-be-canonised/'
+        en = json.loads((ROOT/'locales/en/news-desk.json').read_text())
+        self.assertIn('first Maronite laymen to be canonized', en['massabkiCentenary.summary'])
+        self.assertNotIn('modern canonical norms', en['massabkiCentenary.summary'])
+        self.assertNotIn('"a religious and national celebration', en['massabkiCentenary.summary'])
+        for path in ['news.html', 'ar/news.html']:
+            soup = BeautifulSoup((ROOT/path).read_text(), 'html.parser')
+            self.assertIsNotNone(soup.select_one('a[href="'+source+'"]'))
+        packet = json.loads((ROOT/'locales/massabki-oct25-home-translations.json').read_text())
+        self.assertIn('علمانيين موارنة', packet['ar']['popeRosary.homeCredit'])
+        self.assertIn('beatyfikacji braci Massabkich', packet['pl']['popeRosary.homeTitle'])
+        self.assertNotIn('błogosławieństwa', packet['pl']['popeRosary.homeTitle'])
+
     def test_el_paso_is_archived_not_upcoming(self):
         text=(ROOT/'news.html').read_text()
         self.assertNotIn('Upcoming parish festival',text)
@@ -65,6 +80,16 @@ class NewsDeskTests(unittest.TestCase):
         self.assertIn('dark beard with a grey center streak', gallery)
         self.assertIn('not independent verification', gallery)
 
+    def test_news_generator_owns_source_and_served_blocks(self):
+        import re
+        outputs = news_desk.outputs()
+        for file, marker in [('index.html', 'news-home'), ('news.html', 'news-desk')]:
+            source = ROOT/'src/pages'/file
+            self.assertIn(source, outputs)
+            pattern = rf'<!-- i18n-{marker}:start -->.*?<!-- i18n-{marker}:end -->'
+            self.assertEqual(re.search(pattern, outputs[source], re.S).group(),
+                             re.search(pattern, outputs[ROOT/file], re.S).group())
+
     def test_generated_output_fresh(self):
         for path, text in news_desk.outputs().items():
             self.assertEqual(path.read_text(), text, str(path))
@@ -75,7 +100,7 @@ class NewsDeskTests(unittest.TestCase):
             if ident.startswith('emmitsburg'):
                 self.assertIn('./news#'+ident, (ROOT/'index.html').read_text())
         index = (ROOT/'index.html').read_text()
-        for ident in ['pope-leo-assisi-cancel-2026-10-23','pope-leo-rosary-announcement-2026-10-13']:
+        for ident in ['pope-leo-assisi-cancel-2026-10-23','massabki-centenary-aqoura-2026-10-25']:
             self.assertIn('./news#'+ident, index)
         self.assertIn('https://stsharbelelpaso.org/',text)
         self.assertIn('https://www.familyofsaintsharbel.org/our-news',text)
@@ -163,14 +188,47 @@ class NewsDeskTests(unittest.TestCase):
             for href in en_links:
                 self.assertIn(href, credit_hrefs)
 
+    def test_massabki_row_en_ar_parity(self):
+        from bs4 import BeautifulSoup
+        rid = 'massabki-centenary-aqoura-2026-10-25'
+        en_text = (ROOT/'news.html').read_text()
+        ar_text = (ROOT/'ar/news.html').read_text()
+        self.assertEqual(en_text.count(f'id="{rid}"'), 1)
+        self.assertEqual(ar_text.count(f'id="{rid}"'), 1)
+        en = BeautifulSoup(en_text, 'html.parser')
+        ar = BeautifulSoup(ar_text, 'html.parser')
+        en_row = en.select_one(f'article#{rid}')
+        ar_row = ar.select_one(f'article#{rid}')
+        self.assertIsNotNone(en_row)
+        self.assertIsNotNone(ar_row)
+        en_links = [a.get('href') for a in en_row.select('a')]
+        ar_links = [a.get('href') for a in ar_row.select('a')]
+        # The row href is the cited post-event primary source, identical on both twins.
+        self.assertEqual(en_links, ['https://www.elnashra.com/news/show/1806076'])
+        self.assertEqual(en_links, ar_links)
+        # Same chip class and ruling vocabulary on both twins.
+        self.assertIn('chip-update', en_row.select_one('.chip').get('class'))
+        self.assertIn('chip-update', ar_row.select_one('.chip').get('class'))
+        self.assertEqual(en_row.select_one('.chip').get_text(strip=True), 'Update')
+        self.assertEqual(en_row.select_one('time').get('datetime'), '2026-10-25')
+        # Outcome wording stays distinct from the pre-event mayoral announcement.
+        self.assertIn('had announced', en_row.get_text(' '))
+        # All three cited sources appear in the credits list on both pages.
+        for soup in (en, ar):
+            credit_hrefs = [a.get('href') for a in soup.select('.news-credits-list a')]
+            for href in ['https://www.elnashra.com/news/show/1806076',
+                         'https://noursat.tv/6371/',
+                         'https://jbeiltoday.com/news/170288']:
+                self.assertIn(href, credit_hrefs)
+
     def test_unsupported_movie_headline_removed(self):
         self.assertNotIn('rolls out worldwide', (ROOT/'index.html').read_text())
 
 
 
 class NewsMetadataTests(unittest.TestCase):
-    # The desk's latest reviewed content revision is the October 24 Assisi-cancellation row addition (announced October 23; integrated October 24).
-    REVISION = '2026-10-24'
+    # The desk's latest reviewed content revision is the October 25 Massabki-centenary row addition (Mass celebrated October 25; integrated October 25).
+    REVISION = '2026-10-25'
 
     def assert_news_metadata(self, html, lastmod):
         from bs4 import BeautifulSoup
@@ -193,7 +251,7 @@ class NewsMetadataTests(unittest.TestCase):
                 self.assert_news_metadata((ROOT/file).read_text(), dates[url])
 
     def test_old_webpage_date_is_rejected(self):
-        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-24"',
+        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-25"',
                                                     '"dateModified": "2026-10-10"')
         with self.assertRaises(AssertionError):
             self.assert_news_metadata(html, self.REVISION)
