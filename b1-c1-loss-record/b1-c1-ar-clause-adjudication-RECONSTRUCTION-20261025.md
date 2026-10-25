@@ -46,3 +46,8 @@ Other locales (petition-after, same key): fr='. Amen.' es='. Amén.'
 - B1 content rulings recovered verbatim: /tmp/b1-rulings-recovered.md (chat_events 2026-10-22 19:37:20-19:45:00 EDT).
 - Affected packet keys: miracle.invBefore/invPlaceholder/invAfter in locales/ar/mirrors/saint-charbel-prayer-for-a-miracle.json;
   FAQ a1Quote is built from petition-before only (unaffected by the clause).
+
+---
+
+## RULING (2026-10-25 07:11 EDT, Main relaying Scrum independent source check)
+Scrum independent source check: the recognized monastery AR day-1 petition-after carries the glory-of-God/good-of-my-soul clause; the recognized EN form does not; the existing stage bytes are faithful to each recognized form. MAIN RULING: preserve attested quotations; no clause added or deleted. This is an explicit LIMITED source-quotation exception - it does NOT reinterpret the owner EN-mirror rule as "each locale has its own source"; the 7-other-locale byte check is not recognized-source verification. No changed copy or translation approved. C1 packets remain closed reference: no certification, reseal, integration, or release. Durable Scrum report requested by Main for preservation with this record - PENDING RECEIPT (to be preserved verbatim when it arrives). R3 home grep: no actual dependency accepted; any optional R3 candidate stands on its own merit, not C1.
