@@ -106,7 +106,7 @@ window.LONGINUS_STORY_EN = [
   },
   {
     "title": "The name Christians remember",
-    "body": "The officer is unnamed in Mark. In John's Gospel, another account tells of a soldier opening Jesus' side with a spear after Jesus had died. John does not give that soldier a name either.\n\nChristian tradition calls the soldier with the spear Longinus. Some Christian traditions also identify him with the centurion who spoke at the cross. We should keep those threads clear. Scripture gives us the Gospel accounts. Tradition gives us the name by which this saint is remembered.",
+    "body": "The officer is unnamed in Mark. In John's Gospel, another account tells of a soldier opening Jesus' side with a spear after Jesus had died. John does not give that soldier a name either.\n\nChristian tradition calls the soldier with the spear Longinus. Some traditions also identify him with the centurion who spoke at the cross. Scripture tells us what happened. Tradition gives us the saint's name.",
     "prayer": "",
     "heart": "",
     "scene": "birth",
