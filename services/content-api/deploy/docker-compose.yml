@@ -1,0 +1,22 @@
+# Isolated container for api.marsharbel.com. Binds to loopback only; Caddy proxies to it.
+services:
+  marsharbel-content-api:
+    image: node:22-alpine
+    container_name: marsharbel-content-api
+    working_dir: /app
+    command: ["node", "server.mjs"]
+    restart: unless-stopped
+    user: "node"
+    read_only: false
+    environment:
+      HOST: 0.0.0.0
+      PORT: "8787"
+      DATA_DIR: /data
+      ADMIN_TOKEN_FILE: /run/secrets/capi_admin
+    ports: ["127.0.0.1:8787:8787"]
+    volumes:
+      - ./app:/app:ro
+      - ./data:/data
+    mem_limit: 128m
+    cpus: 0.25
+    security_opt: ["no-new-privileges:true"]
