@@ -95,4 +95,21 @@ assert.equal((await as('anon',{},'select * from testimony_publications where id=
 for(let i=0;i<8;i++)assert.ok((await guestSubmit('guest '+i)).id);
 assert.equal((await guestSubmit('guest capped')).error,'rate_limited');
 console.log('Guest SQL checks passed: private server-only intake, duplicate/burst limits, audited moderator review, stale-decision rejection, publication and unpublish.');
+// Restore moderator MFA at the database layer: aal2 is required, password-only (aal1) sessions are denied.
+await db.exec(await readFile('supabase/migrations/202610030001_restore_moderator_aal2.sql','utf8'));
+const aal1Moderator = claims(ids[10], 'moderator', 'aal1');
+const aal2Moderator = claims(ids[10], 'moderator', 'aal2');
+assert.equal((await as('authenticated',aal1Moderator,'select testimony_is_moderator() allowed')).rows[0].allowed,false);
+assert.equal((await as('authenticated',aal2Moderator,'select testimony_is_moderator() allowed')).rows[0].allowed,true);
+assert.equal((await as('authenticated',member,'select testimony_is_moderator() allowed')).rows[0].allowed,false);
+assert.equal((await as('authenticated',claims(ids[10],'member','aal2'),'select testimony_is_moderator() allowed')).rows[0].allowed,false);
+await assert.rejects(()=>as('authenticated',aal1Moderator,'select testimony_set_controls(true,true,false)'),/moderator_mfa_required/);
+await assert.rejects(()=>as('authenticated',aal1Moderator,"select testimony_moderate($1,1,'approve')",[guestId]),/moderator_mfa_required/);
+assert.equal((await as('authenticated',aal1Moderator,'select * from testimony_audit')).rows.length,0);
+assert.equal((await as('authenticated',aal1Moderator,'select * from testimony_controls')).rows.length,0);
+await as('authenticated',aal2Moderator,'select testimony_set_controls(true,true,false)');
+assert.ok((await as('authenticated',aal2Moderator,'select * from testimony_audit')).rows.length>0);
+await assert.rejects(()=>as('anon',{},'select * from testimony_audit'),/permission denied/);
+await assert.rejects(()=>as('anon',{},'select testimony_set_controls(true,true,true)'),/permission denied/);
+console.log('Moderator MFA SQL checks passed: aal1 and anonymous denied on RPCs and tables, aal2 moderator allowed.');
 await db.close();console.log('Testimony SQL: authorization, private/public separation, quotas, human approval, stale edits, withdrawal, reports, worker isolation, retention, and pause checks passed.');
