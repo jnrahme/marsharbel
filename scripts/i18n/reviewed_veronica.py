@@ -11,12 +11,27 @@ from bs4 import BeautifulSoup
 from i18n.reviewed_history import digest
 
 
+# Fail-closed scoped artifact scope: on approved merge the FULL required key
+# set must be present - an empty or partial artifacts map never merges.
+_VERONICA_LOCALES=['en','ar','de','es','fr','hi','it','pl','pt','ru','th','zh-Hans']
+REQUIRED_ARTIFACT_KEYS=frozenset(
+    ['content/books/veronica-giuliani-story/book.json','storybook.js','storybook-stage.js',
+     'storybook.css','storybook-joy.css','storybook-stage.css',
+     'veronica-giuliani-story-data.js','veronica-giuliani-story-i18n-data.js']
+    +[f'content/books/veronica-giuliani-story/{c}.json' for c in _VERONICA_LOCALES]
+    +[f'locales/{c}/veronica-story-ui.json' for c in _VERONICA_LOCALES]
+    +[f'media/storybook-veronica/images/page-{n:02d}.webp' for n in range(1,11)])
+
+
 def veronica_manifest(root,texts,manifest):
     path=root/'locales/veronica-equivalence.json'
     if not path.exists():return manifest
     record=json.loads(path.read_text())
     if record.get('gateStatus')!='approved':return manifest
-    for rel, pin in record.get('artifacts', {}).items():
+    artifacts=record.get('artifacts') or {}
+    missing=sorted(REQUIRED_ARTIFACT_KEYS-artifacts.keys())
+    if missing:raise ValueError('Veronica equivalence artifacts missing required keys: '+', '.join(missing))
+    for rel, pin in artifacts.items():
         if hashlib.sha256((root/rel).read_bytes()).hexdigest()!=pin:
             raise ValueError('Veronica scoped artifact drift: '+rel)
     variants=record['variants']
