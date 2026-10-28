@@ -186,6 +186,16 @@ def check(root=ROOT):
     saint_bios_catalog = read_json(saint_bios_path)['values'] if saint_bios_path.exists() else {}
     shelf_path = root/'locales/en/stories-shelf-copy.json'
     shelf_catalog = read_json(shelf_path)['values'] if shelf_path.exists() else {}
+    # The Veronica shelf card copy lives in the pinned book catalog, not in the shelf
+    # template. The shelf generator's byte-exact --check is the wired gate proving
+    # stories.html is its exact output; only those catalog strings are allowed here.
+    veronica_en_path = root/'content/books/veronica-giuliani-story/en.json'
+    if veronica_en_path.exists():
+        subprocess.run(['node', str(root/'scripts/books/shelf.mjs'), '--check'], check=True, cwd=root, capture_output=True)
+        _ve = read_json(veronica_en_path)
+        _card = shelf_catalog.setdefault('stories.html', {})
+        for _s in (_ve.get('coverAlt'), _ve.get('title'), _ve.get('linkLabel'), _ve.get('summary')):
+            if _s: _card[_s] = _card.get(_s, 0) + 1
     jude_path = root/'locales/en/jude-story-copy.json'
     jude_catalog = read_json(jude_path)['values'] if jude_path.exists() else {}
     rosary_book_joyful_path = root/'locales/en/rosary-book-joyful-copy.json'

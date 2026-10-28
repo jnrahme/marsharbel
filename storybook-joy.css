@@ -436,3 +436,11 @@ body.is-story-page[data-story="veronica"] .story-evidence h3 {
 body.is-story-page[data-story="veronica"] .story-evidence-links {
   opacity: 1;
 }
+body.is-story-page[data-story="veronica"] .story-evidence summary,
+body.is-story-page[data-story="veronica"] .storybook > .story-evidence summary {
+  color: #49382a;
+}
+body.is-story-page[data-story="veronica"] .story-evidence-links a,
+body.is-story-page[data-story="veronica"] .storybook > .story-evidence .story-evidence-links a {
+  color: #754719;
+}
