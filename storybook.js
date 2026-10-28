@@ -31,9 +31,6 @@
     th: { global: 'VERONICA_STORY_TH', voice: 'th-TH' },
     'zh-Hans': { global: 'VERONICA_STORY_ZH_HANS', voice: 'zh-CN' }
   };
-  // Honest English qualifier for the return-to-shelf control on non-EN editions (the shelf
-  // itself is English-only). Strings reuse the site's own per-locale englishQualifier values.
-  const VERONICA_SHELF_EN_QUALIFIER = { ar: '(بالإنجليزية)', fr: '(en anglais)' };
   const resolveVeronicaLang = (id, queryLang, docLang) => {
     if (id !== 'veronica') return null;
     // Case-insensitive lookup (?lang= arrives lowercased; document lang may be zh-Hans),
@@ -110,8 +107,8 @@
   };
 
   const EVIDENCE_SOURCES = {
-    veronicaBenedict: {label: "Benedict XVI, General Audience on Saint Veronica Giuliani (15 December 2010)", url: "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101215.html"},
-    veronicaNewAdvent: {label: "Catholic Encyclopedia (1912), \"St. Veronica Giuliani\"", url: "https://www.newadvent.org/cathen/15363a.htm"},
+    veronicaBenedict: {label: null, url: "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101215.html"},
+    veronicaNewAdvent: {label: null, url: "https://www.newadvent.org/cathen/15363a.htm"},
     veronicaTreccani: {label: "Enciclopedia Treccani, \"Veronica Giuliani, santa\"", url: "https://www.treccani.it/enciclopedia/santa-veronica-giuliani/"},
     romansUsccb8: {label: "Romans 8:38-39 (USCCB, New American Bible)", url: "https://bible.usccb.org/bible/romans/8"},
     sergiusPsalm133: {label: "USCCB: Psalm 133", url: "https://bible.usccb.org/bible/psalms/133"},
@@ -1080,7 +1077,8 @@
   const linkMarkup = sourceId => {
     const source = EVIDENCE_SOURCES[sourceId];
     if (!source) return '';
-    return `<a href="${source.url}" target="_blank" rel="noopener">${source.label}</a>`;
+    const label = (storyId === 'veronica' && UI.sources && UI.sources[sourceId]) || source.label || source.url;
+    return `<a href="${source.url}" target="_blank" rel="noopener">${label}</a>`;
   };
 
   const getEvidenceForPage = (_pageIndex, page) => {
@@ -1165,7 +1163,7 @@
   const readerToggle = document.getElementById('story-reader-toggle');
   const applyReaderMode = on => {
     if (el.frame) el.frame.classList.toggle('is-reader-mode', on);
-    if (readerToggle) readerToggle.textContent = on ? 'Reader Mode: On' : 'Reader Mode';
+    if (readerToggle) readerToggle.textContent = storyId === 'veronica' ? (on ? (UI.readerModeOn || UI.readerMode || 'Reader Mode: On') : (UI.readerMode || 'Reader Mode')) : (on ? 'Reader Mode: On' : 'Reader Mode');
     writeReaderModePref(on);
   };
   if (readerToggle) {
@@ -1667,9 +1665,11 @@
     try {
       // Veronica editions whose strings are not in the inline COPY set read them from the
       // per-locale catalog file; the inline en/ar/fr path is unchanged.
-      if (storyId === 'veronica' && !COPY[contentLang]) {
+      if (storyId === 'veronica') {
         const uiResponse = await fetch(`/locales/${contentLang}/veronica-story-ui.json`);
-        if (uiResponse.ok) Object.assign(UI, await uiResponse.json());
+        // Catalog strings arrive after first paint, so re-apply the reader-mode label
+        // from the merged UI once the per-locale file has landed.
+        if (uiResponse.ok) { Object.assign(UI, await uiResponse.json()); applyReaderMode(readReaderModePref()); }
       }
       const response = await fetch(`/locales/${contentLang}/storybook.json`);
       if (response.ok) {
@@ -1685,7 +1685,7 @@
           shelfLink.href = storyId === 'veronica' && contentLang !== 'en' ? `/stories?lang=${encodeURIComponent(contentLang.toLowerCase())}` : '/stories';
           shelfLink.textContent = messages.allStories
             + (storyId === 'veronica' && contentLang !== 'en'
-              ? ' ' + (UI.shelfEnglishQualifier || VERONICA_SHELF_EN_QUALIFIER[contentLang] || '')
+              ? ' ' + (UI.shelfEnglishQualifier || '')
               : '');
           hero.appendChild(shelfLink);
         }
