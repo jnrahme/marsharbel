@@ -17,6 +17,17 @@ const VOICE = block('VOICE_PACKS');
 const legacy = { charbel: block('STORIES').en, pio: block('PIO_STORY_EN'), jpii: block('JPII_STORY_EN') };
 const files = { francis: 'francis-story-data.js', joseph: 'joseph-story-data.js', anthony: 'anthony-story-data.js', therese: 'therese-story-data.js', massabki: 'massabki-story-data.js', teresa: 'mother-teresa-story-data.js', rafqa: 'rafqa-story-data.js', 'charbel-v2': 'charbel-v2-story-data.js', magdalene: 'magdalene-story-data.js', sergius: 'sergius-bacchus-story-data.js', maroun: 'maroun-story-data.js', jude: 'jude-story-data.js', marina: 'marina-story-data.js', peter: 'peter-story-data.js', hardini: 'hardini-story-data.js', augustine: 'augustine-story-data.js', veronica: 'veronica-giuliani-story-data.js' };
 for (const [id, f] of Object.entries(files)) { const w = {}; vm.runInNewContext(read(f), { window: w }); legacy[id] = Object.values(w)[0]; }
+// Veronica localized editions: per-locale globals from the pinned EN/AR file and the
+// generated i18n file, keyed as veronica:<locale> for per-locale feed comparison.
+{
+  const w = {};
+  vm.runInNewContext(read('veronica-giuliani-story-data.js'), { window: w });
+  vm.runInNewContext(read('veronica-giuliani-story-i18n-data.js'), { window: w });
+  for (const [k, v] of Object.entries(w)) {
+    const loc = k === 'VERONICA_STORY_ZH_HANS' ? 'zh-Hans' : k.replace('VERONICA_STORY_', '').toLowerCase();
+    legacy[`veronica:${loc}`] = v;
+  }
+}
 // Audio comparison factored out so the self-test can prove it is not vacuous.
 function audioExpected(base, srcPage) {
   return base === null && !srcPage.audio ? '' : `${base}/${srcPage.audio}`;
@@ -43,9 +54,10 @@ selfTest();
 const manifest = JSON.parse(read('api/v1/manifest.json'));
 let pages = 0, bad = 0;
 for (const mb of manifest.books) {
-  const book = JSON.parse(read(`api/v1/books/${mb.slug}/en.json`));
+  for (const feedLocale of (mb.locales || ['en'])) {
+  const book = JSON.parse(read(`api/v1/books/${mb.slug}/${feedLocale}.json`));
   const sid = JSON.parse(read(`content/books/${mb.slug}/book.json`)).legacyStoryId;
-  const src = legacy[sid];
+  const src = legacy[feedLocale === 'en' ? sid : `${sid}:${feedLocale}`] || legacy[sid];
   if (src.length !== book.pages.length) { console.error(`${mb.slug}: page count ${src.length} vs ${book.pages.length}`); bad++; continue; }
   const clips = VOICE[sid].en.find(v => v.type === 'clips');
   const base = clips ? clips.base.replace(/^\.\//, '') : null;
@@ -56,6 +68,7 @@ for (const mb of manifest.books) {
     chk(p.illustration.replace(/^\.\//, ''), book.assets[g.image].path, 'image');
     chk(audioExpected(base, p), audioActual(book, g), 'audio');
   });
+  }
 }
 console.log(`roundtrip: ${manifest.books.length} books, ${pages} pages, ${bad} differences`);
 process.exit(bad ? 1 : 0);

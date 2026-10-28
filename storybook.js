@@ -14,7 +14,35 @@
   const storyId = getStoryId();
 
   const selectedLang = getLangCode();
-  const contentLang = selectedLang === 'ar' ? 'ar' : selectedLang === 'fr' ? 'fr' : 'en';
+  // Veronica-only locale contract: this book ships a localized edition for every active
+  // locale. Every other story keeps the legacy ar/fr query-param behavior below, because
+  // resolveVeronicaLang returns null for any other storyId.
+  const VERONICA_I18N = {
+    en: { global: 'VERONICA_STORY_EN', voice: 'en-US' },
+    ar: { global: 'VERONICA_STORY_AR', voice: 'ar-LB' },
+    fr: { global: 'VERONICA_STORY_FR', voice: 'fr-FR' },
+    es: { global: 'VERONICA_STORY_ES', voice: 'es-ES' },
+    pt: { global: 'VERONICA_STORY_PT', voice: 'pt-PT' },
+    it: { global: 'VERONICA_STORY_IT', voice: 'it-IT' },
+    de: { global: 'VERONICA_STORY_DE', voice: 'de-DE' },
+    pl: { global: 'VERONICA_STORY_PL', voice: 'pl-PL' },
+    ru: { global: 'VERONICA_STORY_RU', voice: 'ru-RU' },
+    hi: { global: 'VERONICA_STORY_HI', voice: 'hi-IN' },
+    th: { global: 'VERONICA_STORY_TH', voice: 'th-TH' },
+    'zh-Hans': { global: 'VERONICA_STORY_ZH_HANS', voice: 'zh-CN' }
+  };
+  const resolveVeronicaLang = (id, queryLang, docLang) => {
+    if (id !== 'veronica') return null;
+    // Case-insensitive lookup (?lang= arrives lowercased; document lang may be zh-Hans),
+    // returning the canonical contract key so catalog paths and voices stay exact.
+    const byLower = lang => Object.keys(VERONICA_I18N).find(k => k.toLowerCase() === String(lang || '').toLowerCase());
+    // An explicit ?lang= choice wins; otherwise the page's own document locale; else English.
+    return byLower(queryLang) && String(queryLang).toLowerCase() !== 'en' ? byLower(queryLang)
+      : byLower(docLang) ? byLower(docLang)
+      : byLower(queryLang) ? byLower(queryLang) : 'en';
+  };
+  const veronicaLang = resolveVeronicaLang(storyId, selectedLang, document.documentElement.lang);
+  const contentLang = veronicaLang || (selectedLang === 'ar' ? 'ar' : selectedLang === 'fr' ? 'fr' : 'en');
   const isRtl = contentLang === 'ar';
 
   // The Settings control may share the shelf-link row (see storybook-stage.css) only when the
@@ -923,9 +951,10 @@
     jude: { en: window.JUDE_STORY_EN || [] },
     peter: { en: window.PETER_STORY_EN || [] },
     hardini: { en: window.HARDINI_STORY_EN || [] },
-    veronica: { en: window.VERONICA_STORY_EN || [], ar: window.VERONICA_STORY_AR || [] }
+    veronica: Object.fromEntries(Object.entries(VERONICA_I18N).map(([lang, cfg]) => [lang, window[cfg.global] || []]))
   };
-  const UI = COPY[contentLang];
+  // Veronica editions outside the inline set load their strings from the locale catalog in init().
+  const UI = COPY[contentLang] || COPY.en;
   const storyPages = STORY_PAGES[storyId] || STORY_PAGES.charbel;
   const pages = storyPages[contentLang] || storyPages.en;
   const AUDIO_BASE = {
@@ -1538,7 +1567,7 @@
     utterance.rate = 0.92 * playbackRate;
     utterance.pitch = 1.02;
     utterance.volume = 0.98;
-    utterance.lang = contentLang === 'ar' ? 'ar-LB' : contentLang === 'fr' ? 'fr-FR' : 'en-US';
+    utterance.lang = veronicaLang ? VERONICA_I18N[veronicaLang].voice : (contentLang === 'ar' ? 'ar-LB' : contentLang === 'fr' ? 'fr-FR' : 'en-US');
     utterance.voice = selectPreferredBrowserVoice();
     utterance.onend = () => onPageReadingFinished();
     utterance.onerror = () => onPageReadingFinished();
@@ -1625,6 +1654,12 @@
 
   const init = async () => {
     try {
+      // Veronica editions whose strings are not in the inline COPY set read them from the
+      // per-locale catalog file; the inline en/ar/fr path is unchanged.
+      if (storyId === 'veronica' && !COPY[contentLang]) {
+        const uiResponse = await fetch(`./locales/${contentLang}/veronica-story-ui.json`);
+        if (uiResponse.ok) Object.assign(UI, await uiResponse.json());
+      }
       const response = await fetch(`./locales/${contentLang}/storybook.json`);
       if (response.ok) {
         const messages = await response.json();
