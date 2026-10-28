@@ -1313,7 +1313,7 @@
       if (!pages.every(page => Boolean(page.audio))) {
         return false;
       }
-      const probeUrl = `${pack.base}/page-01.mp3`;
+      const probeUrl = absUrl(`${pack.base}/page-01.mp3`);
       return checkClipAvailability(probeUrl);
     }));
     availableVoicePacks = candidates.filter((_, idx) => checks[idx]);
@@ -1434,9 +1434,12 @@
     ], { duration: 240, easing: 'cubic-bezier(.23, 1, .32, 1)' });
   };
 
+  // Locale twins live under /<lang>/, so relative asset paths must resolve from the site root.
+  const absUrl = p => (typeof p === 'string' && p.startsWith('./') ? '/' + p.slice(2) : p);
+
   const render = (withMotion = true) => {
     const page = pages[index];
-    const illustration = page.illustration || SCENE_IMAGES[page.scene] || './gallery/charbel-portrait.jpg';
+    const illustration = absUrl(page.illustration || SCENE_IMAGES[page.scene] || './gallery/charbel-portrait.jpg');
     const stepText = `${UI.pagePrefix} ${index + 1} ${UI.pageConnector} ${pages.length}`;
     el.step.textContent = stepText;
     el.title.textContent = page.title;
@@ -1464,7 +1467,7 @@
 
   const getClipUrl = page => {
     if (!page.audio || !activeVoicePack || activeVoicePack.type !== 'clips') return null;
-    return `${activeVoicePack.base}/${page.audio}`;
+    return absUrl(`${activeVoicePack.base}/${page.audio}`);
   };
 
   const checkClipAvailability = async clipUrl => {
@@ -1657,10 +1660,10 @@
       // Veronica editions whose strings are not in the inline COPY set read them from the
       // per-locale catalog file; the inline en/ar/fr path is unchanged.
       if (storyId === 'veronica' && !COPY[contentLang]) {
-        const uiResponse = await fetch(`./locales/${contentLang}/veronica-story-ui.json`);
+        const uiResponse = await fetch(`/locales/${contentLang}/veronica-story-ui.json`);
         if (uiResponse.ok) Object.assign(UI, await uiResponse.json());
       }
-      const response = await fetch(`./locales/${contentLang}/storybook.json`);
+      const response = await fetch(`/locales/${contentLang}/storybook.json`);
       if (response.ok) {
         const messages = await response.json();
         UI.read = messages.listen;
