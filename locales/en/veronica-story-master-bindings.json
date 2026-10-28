@@ -1,0 +1,1000 @@
+{
+  "version": 1,
+  "master": "veronica-giuliani-story.html",
+  "masterSha256": "97fbf7a056c7263cf2a8713d187d3996ce5dd5a3e0f02c1db618432db3617d5b",
+  "sourceRevision": "df5d8701",
+  "bindings": [
+    {
+      "key": "veronica.metadata.title-saint-veronica-giuliani-story-for-kids-catholic-storyb",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Saint Veronica Giuliani Story for Kids | Catholic Storybook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.metadata.description-saint-veronica-giuliani-storybook-for-children-a",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Saint Veronica Giuliani storybook for children: a sourced ten-page illustrated read-aloud about the Capuchin Poor Clare mystic, her Diary, and her practical love.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "veronica.metadata.og-title-saint-veronica-giuliani-story-for-kids-catholic-sto",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Saint Veronica Giuliani Story for Kids | Catholic Storybook",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "veronica.metadata.og-description-saint-veronica-giuliani-storybook-for-childre",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Saint Veronica Giuliani storybook for children: a sourced ten-page illustrated read-aloud about the Capuchin Poor Clare mystic, her Diary, and her practical love.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "veronica.metadata.twitter-title-saint-veronica-giuliani-story-for-kids-catholi",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Saint Veronica Giuliani Story for Kids | Catholic Storybook",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "veronica.metadata.twitter-description-saint-veronica-giuliani-storybook-for-ch",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Saint Veronica Giuliani storybook for children: a sourced ten-page illustrated read-aloud about the Capuchin Poor Clare mystic, her Diary, and her practical love.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "veronica.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "veronica.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.body.a-book-for-ages-5-12",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "A Book for Ages 5-12",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.the-story-of-saint-veronica-giuliani",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "The Story of Saint Veronica Giuliani",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.a-true-story-told-in-simple-words-the-girl-from-mercatello-w",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A true story told in simple words: the girl from Mercatello who became a Poor Clare sister, wrote a Diary of 22,000 pages, and showed that love is something you build.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.short-answer",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Short answer:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.this-read-aloud-saint-veronica-giuliani-storybook-for-childr",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "This read-aloud Saint Veronica Giuliani storybook for children ages 5 to 12 tells how Orsola of Mercatello became Sister Veronica of Città di Castello, a Capuchin Poor Clare who spent fifty years in one monastery, guided new sisters for thirty-four years, wrote a Diary of about 22,000 handwritten pages, and served as abbess, even laying water pipes for her sisters.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.continue-from-page-2",
+      "selector": "#story-resume-text",
+      "source": "Continue from Page 2?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.resume",
+      "selector": "#story-resume-btn",
+      "source": "Resume",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.accessibility.dismiss",
+      "selector": "#story-resume-dismiss",
+      "source": "Dismiss",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.text",
+      "selector": "#story-resume-dismiss",
+      "source": "✕",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.accessibility.illustrated-storybook",
+      "selector": "#main-content > section:nth-of-type(2)",
+      "source": "Illustrated storybook",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.reading",
+      "selector": "#story-reading-label",
+      "source": "Reading…",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.0-00",
+      "selector": "#story-elapsed",
+      "source": "0:00",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.voice-pack",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Voice Pack",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.accessibility.select-story-voice-pack",
+      "selector": "#story-voice-pack",
+      "source": "Select story voice pack",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "veronica.accessibility.previous-page",
+      "selector": "#story-prev",
+      "source": "Previous page",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.previous-page",
+      "selector": "#story-prev",
+      "source": "Previous Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.read-aloud",
+      "selector": "#story-read",
+      "source": "Read Aloud",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.accessibility.next-page",
+      "selector": "#story-next",
+      "source": "Next page",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.next-page",
+      "selector": "#story-next",
+      "source": "Next Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.accessibility.story-settings",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "Story settings",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.story-settings",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "Story settings",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.toggle-reader-mode-for-easier-reading",
+      "selector": "#story-reader-toggle",
+      "source": "Toggle reader mode for easier reading",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.reader-mode",
+      "selector": "#story-reader-toggle",
+      "source": "Reader Mode",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.automatically-read-next-page-when-current-page-finishes",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Automatically read next page when current page finishes",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.auto-continue",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Auto Continue",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "veronica.accessibility.playback-speed",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Playback speed",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.slow",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "source": "Slow",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.normal",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+      "source": "Normal",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.fast",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)",
+      "source": "Fast",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.the-story-of-saint-veron.page-1-of-10",
+      "selector": "#story-step",
+      "source": "Page 1 of 10",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.loading-story.loading-story",
+      "selector": "#story-title",
+      "source": "Loading story...",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.loading-story.please-wait-while-we-open-the-storybook",
+      "selector": "#story-body",
+      "source": "Please wait while we open the storybook.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.loading-story.evidence-for-this-page",
+      "selector": "#story-evidence-title",
+      "source": "Evidence for This Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr",
+      "selector": "#main-content > p:nth-of-type(1)",
+      "source": "Read aloud in the browser with your device voice; studio narration is not available yet. Illustrations are original composite scenes, not historical footage.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-saint-veronica-giu.about-saint-veronica-giuliani",
+      "selector": "#saint-bio-title",
+      "source": "About Saint Veronica Giuliani",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-saint-veronica-giu.lived",
+      "selector": "#about-the-saint > div:nth-of-type(1) > dl:nth-of-type(1) > div:nth-of-type(1) > dt:nth-of-type(1)",
+      "source": "Lived",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-saint-veronica-giu.1660-1727",
+      "selector": "#about-the-saint > div:nth-of-type(1) > dl:nth-of-type(1) > div:nth-of-type(1) > dd:nth-of-type(1)",
+      "source": "1660-1727",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-saint-veronica-giu.place",
+      "selector": "#about-the-saint > div:nth-of-type(1) > dl:nth-of-type(1) > div:nth-of-type(2) > dt:nth-of-type(1)",
+      "source": "Place",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-saint-veronica-giu.mercatello-then-citt-di-castello-italy",
+      "selector": "#about-the-saint > div:nth-of-type(1) > dl:nth-of-type(1) > div:nth-of-type(2) > dd:nth-of-type(1)",
+      "source": "Mercatello, then Città di Castello, Italy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-saint-veronica-giu.status",
+      "selector": "#about-the-saint > div:nth-of-type(1) > dl:nth-of-type(1) > div:nth-of-type(3) > dt:nth-of-type(1)",
+      "source": "Status",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-saint-veronica-giu.canonized-may-26-1839-by-pope-gregory-xvi",
+      "selector": "#about-the-saint > div:nth-of-type(1) > dl:nth-of-type(1) > div:nth-of-type(3) > dd:nth-of-type(1)",
+      "source": "Canonized May 26, 1839, by Pope Gregory XVI",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-saint-veronica-giu.feast",
+      "selector": "#about-the-saint > div:nth-of-type(1) > dl:nth-of-type(1) > div:nth-of-type(4) > dt:nth-of-type(1)",
+      "source": "Feast",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-saint-veronica-giu.july-9",
+      "selector": "#about-the-saint > div:nth-of-type(1) > dl:nth-of-type(1) > div:nth-of-type(4) > dd:nth-of-type(1)",
+      "source": "July 9",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-saint-veronica-giu.orsola-giuliani-was-born-on-december-27-1660-in-mercatello-i",
+      "selector": "#about-the-saint > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Orsola Giuliani was born on December 27, 1660, in Mercatello, in Italy's Metauro Valley. At seventeen she entered the monastery of the Capuchin Poor Clares in Città di Castello and received the name Veronica, meaning \"true image.\" She spent fifty years there: thirty-four as novice mistress, and from 1716 as abbess. On obedience she wrote a Diary of about 22,000 handwritten pages. She died on July 9, 1727, and was canonized by Pope Gregory XVI in 1839.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-this-story.about-this-story",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "About this story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-this-story.these-scenes-are-imaginative-illustrations-not-historical-fo",
+      "selector": "#main-content > section:nth-of-type(4) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "These scenes are imaginative illustrations, not historical footage. The mystical experiences are presented as the Church's old records and Veronica's own Diary report them, not as events other people watched. Veronica's life was unusual. We never hurt our bodies to show love. We show love by praying, helping and being kind. The final page is a narrated \"Points of reflection\" invitation to pray for someone in need.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-this-story.sources",
+      "selector": "#main-content > section:nth-of-type(4) > article:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Sources:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-this-story.benedict-xvi-general-audience-of-15-december-2010",
+      "selector": "#main-content > section:nth-of-type(4) > article:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Benedict XVI, General Audience of 15 December 2010",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-this-story.the",
+      "selector": "#main-content > section:nth-of-type(4) > article:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ", the",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "veronica.about-this-story.catholic-encyclopedia",
+      "selector": "#main-content > section:nth-of-type(4) > article:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Catholic Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-this-story.and-the",
+      "selector": "#main-content > section:nth-of-type(4) > article:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ", and the",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "veronica.about-this-story.enciclopedia-treccani",
+      "selector": "#main-content > section:nth-of-type(4) > article:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(3)",
+      "source": "Enciclopedia Treccani",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.about-this-story.text",
+      "selector": "#main-content > section:nth-of-type(4) > article:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "veronica.frequently-asked-questio.frequently-asked-questions",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.frequently-asked-questio.who-was-saint-veronica-giuliani",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Who was Saint Veronica Giuliani?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.frequently-asked-questio.born-orsola-giuliani-in-mercatello-italy-in-1660-she-became",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Born Orsola Giuliani in Mercatello, Italy, in 1660, she became a Capuchin Poor Clare sister in Città di Castello, took the name Veronica, and spent fifty years in that monastery. She wrote a Diary of about 22,000 pages and was canonized in 1839. Her feast day is July 9.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.frequently-asked-questio.who-is-this-storybook-for",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "Who is this storybook for?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.frequently-asked-questio.children-ages-5-to-12-reading-on-their-own-or-listening-with",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Children ages 5 to 12, reading on their own or listening with family. The last page offers a question, a Bible passage, a small action and a prayer to share.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.more-saint-storybooks-fo.more-saint-storybooks-for-children",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "More Saint Storybooks for Children",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.more-saint-storybooks-fo.saint-francis-of-assisi",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Francis of Assisi",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.more-saint-storybooks-fo.saint-pio-of-pietrelcina",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Pio of Pietrelcina",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.more-saint-storybooks-fo.saint-th-r-se-of-lisieux",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saint Thérèse of Lisieux",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.more-saint-storybooks-fo.all-saint-storybooks-for-children",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "All saint storybooks for children",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "veronica.footer.a-storybook-for-children-author-please-pray-for-the-person-w",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "A storybook for children. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "veronica.metadata.title-saint-veronica-giuliani-story-for-kids-catholic-storyb": "Saint Veronica Giuliani Story for Kids | Catholic Storybook",
+    "veronica.metadata.description-saint-veronica-giuliani-storybook-for-children-a": "Saint Veronica Giuliani storybook for children: a sourced ten-page illustrated read-aloud about the Capuchin Poor Clare mystic, her Diary, and her practical love.",
+    "veronica.metadata.og-title-saint-veronica-giuliani-story-for-kids-catholic-sto": "Saint Veronica Giuliani Story for Kids | Catholic Storybook",
+    "veronica.metadata.og-description-saint-veronica-giuliani-storybook-for-childre": "Saint Veronica Giuliani storybook for children: a sourced ten-page illustrated read-aloud about the Capuchin Poor Clare mystic, her Diary, and her practical love.",
+    "veronica.metadata.twitter-title-saint-veronica-giuliani-story-for-kids-catholi": "Saint Veronica Giuliani Story for Kids | Catholic Storybook",
+    "veronica.metadata.twitter-description-saint-veronica-giuliani-storybook-for-ch": "Saint Veronica Giuliani storybook for children: a sourced ten-page illustrated read-aloud about the Capuchin Poor Clare mystic, her Diary, and her practical love.",
+    "veronica.body.skip-to-main-content": "Skip to main content",
+    "veronica.header.text": "✦",
+    "veronica.header.saint-charbel": "Saint Charbel",
+    "veronica.accessibility.primary": "Primary",
+    "veronica.header.home": "Home",
+    "veronica.header.legacy": "Legacy",
+    "veronica.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "veronica.header.full-history": "Full History",
+    "veronica.header.miracles": "Miracles",
+    "veronica.header.miracles-reports": "Miracles & Reports",
+    "veronica.header.eucharistic-miracles": "Eucharistic Miracles",
+    "veronica.header.letters": "Letters",
+    "veronica.header.voice-testimony": "Voice Testimony",
+    "veronica.header.saints": "Saints",
+    "veronica.header.children-s-books": "Children's Books",
+    "veronica.header.prayer": "Prayer",
+    "veronica.header.prayer-library": "Prayer Library",
+    "veronica.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "veronica.header.prayer-for-the-sick": "Prayer for the Sick",
+    "veronica.header.prayer-for-healing": "Prayer for Healing",
+    "veronica.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "veronica.header.prayer-for-depression": "Prayer for Depression",
+    "veronica.header.prayer-for-students": "Prayer for Students",
+    "veronica.header.prayer-for-addiction": "Prayer for Addiction",
+    "veronica.header.prayer-for-family": "Prayer for Family",
+    "veronica.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "veronica.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "veronica.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "veronica.header.saint-charbel-novena": "Saint Charbel Novena",
+    "veronica.header.feast-day": "Feast Day",
+    "veronica.header.rosary-guide": "Rosary Guide",
+    "veronica.header.rosary-minibook": "Rosary Minibook",
+    "veronica.header.mystery-meditation": "Mystery Meditation",
+    "veronica.header.become-like-him": "Become Like Him",
+    "veronica.header.travel": "Travel",
+    "veronica.header.visiting-annaya": "Visiting Annaya",
+    "veronica.header.annaya-online-tour": "Annaya Online Tour",
+    "veronica.header.bekaa-kafra": "Bekaa Kafra",
+    "veronica.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "veronica.header.the-cedars-of-god": "the Cedars of God",
+    "veronica.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "veronica.header.qadisha-valley": "Qadisha Valley",
+    "veronica.header.qannoubine-monastery": "Qannoubine Monastery",
+    "veronica.header.qozhaya-monastery": "Qozhaya Monastery",
+    "veronica.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "veronica.header.the-hermitage": "The Hermitage",
+    "veronica.header.saint-charbel-trail": "Saint Charbel Trail",
+    "veronica.header.news": "News",
+    "veronica.header.media": "Media",
+    "veronica.header.music": "Music",
+    "veronica.header.video": "Video",
+    "veronica.header.gallery": "Gallery",
+    "veronica.body.a-book-for-ages-5-12": "A Book for Ages 5-12",
+    "veronica.the-story-of-saint-veron.the-story-of-saint-veronica-giuliani": "The Story of Saint Veronica Giuliani",
+    "veronica.the-story-of-saint-veron.a-true-story-told-in-simple-words-the-girl-from-mercatello-w": "A true story told in simple words: the girl from Mercatello who became a Poor Clare sister, wrote a Diary of 22,000 pages, and showed that love is something you build.",
+    "veronica.the-story-of-saint-veron.short-answer": "Short answer:",
+    "veronica.the-story-of-saint-veron.this-read-aloud-saint-veronica-giuliani-storybook-for-childr": "This read-aloud Saint Veronica Giuliani storybook for children ages 5 to 12 tells how Orsola of Mercatello became Sister Veronica of Città di Castello, a Capuchin Poor Clare who spent fifty years in one monastery, guided new sisters for thirty-four years, wrote a Diary of about 22,000 handwritten pages, and served as abbess, even laying water pipes for her sisters.",
+    "veronica.the-story-of-saint-veron.continue-from-page-2": "Continue from Page 2?",
+    "veronica.the-story-of-saint-veron.resume": "Resume",
+    "veronica.accessibility.dismiss": "Dismiss",
+    "veronica.the-story-of-saint-veron.text": "✕",
+    "veronica.accessibility.illustrated-storybook": "Illustrated storybook",
+    "veronica.the-story-of-saint-veron.reading": "Reading…",
+    "veronica.the-story-of-saint-veron.0-00": "0:00",
+    "veronica.the-story-of-saint-veron.voice-pack": "Voice Pack",
+    "veronica.accessibility.select-story-voice-pack": "Select story voice pack",
+    "veronica.accessibility.previous-page": "Previous page",
+    "veronica.the-story-of-saint-veron.previous-page": "Previous Page",
+    "veronica.the-story-of-saint-veron.read-aloud": "Read Aloud",
+    "veronica.accessibility.next-page": "Next page",
+    "veronica.the-story-of-saint-veron.next-page": "Next Page",
+    "veronica.accessibility.story-settings": "Story settings",
+    "veronica.the-story-of-saint-veron.story-settings": "Story settings",
+    "veronica.the-story-of-saint-veron.toggle-reader-mode-for-easier-reading": "Toggle reader mode for easier reading",
+    "veronica.the-story-of-saint-veron.reader-mode": "Reader Mode",
+    "veronica.the-story-of-saint-veron.automatically-read-next-page-when-current-page-finishes": "Automatically read next page when current page finishes",
+    "veronica.the-story-of-saint-veron.auto-continue": "Auto Continue",
+    "veronica.accessibility.playback-speed": "Playback speed",
+    "veronica.the-story-of-saint-veron.slow": "Slow",
+    "veronica.the-story-of-saint-veron.normal": "Normal",
+    "veronica.the-story-of-saint-veron.fast": "Fast",
+    "veronica.the-story-of-saint-veron.page-1-of-10": "Page 1 of 10",
+    "veronica.loading-story.loading-story": "Loading story...",
+    "veronica.loading-story.please-wait-while-we-open-the-storybook": "Please wait while we open the storybook.",
+    "veronica.loading-story.evidence-for-this-page": "Evidence for This Page",
+    "veronica.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr": "Read aloud in the browser with your device voice; studio narration is not available yet. Illustrations are original composite scenes, not historical footage.",
+    "veronica.about-saint-veronica-giu.about-saint-veronica-giuliani": "About Saint Veronica Giuliani",
+    "veronica.about-saint-veronica-giu.lived": "Lived",
+    "veronica.about-saint-veronica-giu.1660-1727": "1660-1727",
+    "veronica.about-saint-veronica-giu.place": "Place",
+    "veronica.about-saint-veronica-giu.mercatello-then-citt-di-castello-italy": "Mercatello, then Città di Castello, Italy",
+    "veronica.about-saint-veronica-giu.status": "Status",
+    "veronica.about-saint-veronica-giu.canonized-may-26-1839-by-pope-gregory-xvi": "Canonized May 26, 1839, by Pope Gregory XVI",
+    "veronica.about-saint-veronica-giu.feast": "Feast",
+    "veronica.about-saint-veronica-giu.july-9": "July 9",
+    "veronica.about-saint-veronica-giu.orsola-giuliani-was-born-on-december-27-1660-in-mercatello-i": "Orsola Giuliani was born on December 27, 1660, in Mercatello, in Italy's Metauro Valley. At seventeen she entered the monastery of the Capuchin Poor Clares in Città di Castello and received the name Veronica, meaning \"true image.\" She spent fifty years there: thirty-four as novice mistress, and from 1716 as abbess. On obedience she wrote a Diary of about 22,000 handwritten pages. She died on July 9, 1727, and was canonized by Pope Gregory XVI in 1839.",
+    "veronica.about-this-story.about-this-story": "About this story",
+    "veronica.about-this-story.these-scenes-are-imaginative-illustrations-not-historical-fo": "These scenes are imaginative illustrations, not historical footage. The mystical experiences are presented as the Church's old records and Veronica's own Diary report them, not as events other people watched. Veronica's life was unusual. We never hurt our bodies to show love. We show love by praying, helping and being kind. The final page is a narrated \"Points of reflection\" invitation to pray for someone in need.",
+    "veronica.about-this-story.sources": "Sources:",
+    "veronica.about-this-story.benedict-xvi-general-audience-of-15-december-2010": "Benedict XVI, General Audience of 15 December 2010",
+    "veronica.about-this-story.the": ", the",
+    "veronica.about-this-story.catholic-encyclopedia": "Catholic Encyclopedia",
+    "veronica.about-this-story.and-the": ", and the",
+    "veronica.about-this-story.enciclopedia-treccani": "Enciclopedia Treccani",
+    "veronica.about-this-story.text": ".",
+    "veronica.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+    "veronica.frequently-asked-questio.who-was-saint-veronica-giuliani": "Who was Saint Veronica Giuliani?",
+    "veronica.frequently-asked-questio.born-orsola-giuliani-in-mercatello-italy-in-1660-she-became": "Born Orsola Giuliani in Mercatello, Italy, in 1660, she became a Capuchin Poor Clare sister in Città di Castello, took the name Veronica, and spent fifty years in that monastery. She wrote a Diary of about 22,000 pages and was canonized in 1839. Her feast day is July 9.",
+    "veronica.frequently-asked-questio.who-is-this-storybook-for": "Who is this storybook for?",
+    "veronica.frequently-asked-questio.children-ages-5-to-12-reading-on-their-own-or-listening-with": "Children ages 5 to 12, reading on their own or listening with family. The last page offers a question, a Bible passage, a small action and a prayer to share.",
+    "veronica.more-saint-storybooks-fo.more-saint-storybooks-for-children": "More Saint Storybooks for Children",
+    "veronica.more-saint-storybooks-fo.saint-francis-of-assisi": "Saint Francis of Assisi",
+    "veronica.more-saint-storybooks-fo.saint-pio-of-pietrelcina": "Saint Pio of Pietrelcina",
+    "veronica.more-saint-storybooks-fo.saint-th-r-se-of-lisieux": "Saint Thérèse of Lisieux",
+    "veronica.more-saint-storybooks-fo.all-saint-storybooks-for-children": "All saint storybooks for children",
+    "veronica.footer.a-storybook-for-children-author-please-pray-for-the-person-w": "A storybook for children. Author: Please pray for the person who made this website."
+  }
+}
