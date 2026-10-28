@@ -187,7 +187,20 @@ def json_assignment(text):
 def compare_json(file,old,new):
  prefix,a=json_assignment(old);other,b=json_assignment(new);assert prefix==other
  if file=='same-page-manifest.js':
-  assert len(a['pages'])==159 and len(SCOPED_KEYS)==12
+  # Veronica family (PR #896): exactly one new production family, bound by
+  # source, per-locale route and proof shape - present and identical on the
+  # real and synthetic sides, never excluded from comparison.
+  VK='veronica-story-master-equivalence'
+  for side in (a,b):
+   v=side['pages'].get(VK)
+   assert v and v.get('sourcePath')=='veronica-giuliani-story.html',VK
+   assert set(v['variants'])=={'en','ar','fr','es','pt','it','de','pl','ru','hi','th','zh-Hans'},VK
+   for lang,variant in v['variants'].items():
+    proof=variant.get('proof',{})
+    assert variant.get('path')==('/veronica-giuliani-story' if lang=='en' else '/'+lang+'/veronica-giuliani-story'),(VK,lang)
+    assert variant.get('status')=='verified' and proof.get('contentReviewMode')=='model-only' and proof.get('nativeReviewStatus')=='not-certified' and proof.get('scope')=='enabled-tests-only',(VK,lang)
+  assert a['pages'][VK]==b['pages'][VK],VK
+  assert len(a['pages'])==160 and len(SCOPED_KEYS)==12
   assert SCOPED_KEYS<=set(a['pages']);assert not SCOPED_KEYS&set(b['pages'])
   # Travel-4 (scrum re-pin 2026-10-12): the real manifest carries the 4 ar travel twins
   # inside the verified travel families with scoped-ar2-variant proofs, never as
@@ -209,7 +222,8 @@ def compare_json(file,old,new):
   # rosary-intro, miracles hub, 3 stories) are production-only, absent from the
   # synthetic overlay on both sides. (165: eucharistic certification v2 folded 66
   # per-locale pending page rows into the 11 eucharistic families as variants.)
-  assert len(a['pages'])==len(b['pages'])==147
+  # 148 = 160 real families (incl. the bound veronica family above) - 12 travel-scoped.
+  assert len(a['pages'])==len(b['pages'])==148
   assert b['aliases'].pop('zz')=='zz';assert b['languages'].pop()=='zz'
   extra={k:b['englishSources'].pop(k) for k in list(b['englishSources']) if k.startswith('/zz/')}
   assert len(extra)==19 and all(k=='/zz'+v.rstrip('/') for k,v in extra.items()),extra
