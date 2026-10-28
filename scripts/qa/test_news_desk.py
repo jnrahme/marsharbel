@@ -100,7 +100,7 @@ class NewsDeskTests(unittest.TestCase):
             if ident.startswith('emmitsburg'):
                 self.assertIn('./news#'+ident, (ROOT/'index.html').read_text())
         index = (ROOT/'index.html').read_text()
-        for ident in ['pope-leo-assisi-cancel-2026-10-23','massabki-centenary-aqoura-2026-10-25']:
+        for ident in ['pope-leo-assisi-cancel-2026-10-23','mary-mediterranean-harissa-2026-10-28']:
             self.assertIn('./news#'+ident, index)
         self.assertIn('https://stsharbelelpaso.org/',text)
         self.assertIn('https://www.familyofsaintsharbel.org/our-news',text)
@@ -188,6 +188,37 @@ class NewsDeskTests(unittest.TestCase):
             for href in en_links:
                 self.assertIn(href, credit_hrefs)
 
+
+    def test_marian_meeting_row_en_ar_parity(self):
+        from bs4 import BeautifulSoup
+        rid = 'mary-mediterranean-harissa-2026-10-28'
+        en_text = (ROOT/'news.html').read_text()
+        ar_text = (ROOT/'ar/news.html').read_text()
+        self.assertEqual(en_text.count(f'id="{rid}"'), 1)
+        self.assertEqual(ar_text.count(f'id="{rid}"'), 1)
+        en = BeautifulSoup(en_text, 'html.parser')
+        ar = BeautifulSoup(ar_text, 'html.parser')
+        en_row = en.select_one(f'article#{rid}')
+        ar_row = ar.select_one(f'article#{rid}')
+        self.assertIsNotNone(en_row)
+        self.assertIsNotNone(ar_row)
+        url = 'https://www.vaticannews.va/en/pope/news/2026-10/pope-rediscover-in-mary-the-path-to-peace.html'
+        en_links = [a.get('href') for a in en_row.select('a')]
+        ar_links = [a.get('href') for a in ar_row.select('a')]
+        self.assertEqual(en_links, [url])
+        self.assertEqual(en_links, ar_links)
+        self.assertIn('chip-update', en_row.select_one('.chip').get('class'))
+        self.assertIn('chip-update', ar_row.select_one('.chip').get('class'))
+        self.assertEqual(en_row.select_one('time').get('datetime'), '2026-10-28')
+        # Message only, signed by Cardinal Parolin: no papal-attendance claim on either twin.
+        self.assertIn('Parolin', en_row.get_text(' '))
+        self.assertIn('بارولين', ar_row.get_text(' '))
+        self.assertIn('Harissa', en_row.get_text(' '))
+        self.assertIn('حريصا', ar_row.get_text(' '))
+        for soup in (en, ar):
+            credit_hrefs = [a.get('href') for a in soup.select('.news-credits-list a')]
+            self.assertIn(url, credit_hrefs)
+
     def test_massabki_row_en_ar_parity(self):
         from bs4 import BeautifulSoup
         rid = 'massabki-centenary-aqoura-2026-10-25'
@@ -227,8 +258,8 @@ class NewsDeskTests(unittest.TestCase):
 
 
 class NewsMetadataTests(unittest.TestCase):
-    # The desk's latest reviewed content revision is the October 25 Massabki-centenary row addition (Mass celebrated October 25; integrated October 25).
-    REVISION = '2026-10-25'
+    # The desk's latest reviewed content revision is the October 28 Marian-meeting row addition (message sent October 28; integrated October 28).
+    REVISION = '2026-10-28'
 
     def assert_news_metadata(self, html, lastmod):
         from bs4 import BeautifulSoup
@@ -251,7 +282,7 @@ class NewsMetadataTests(unittest.TestCase):
                 self.assert_news_metadata((ROOT/file).read_text(), dates[url])
 
     def test_old_webpage_date_is_rejected(self):
-        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-25"',
+        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-28"',
                                                     '"dateModified": "2026-10-10"')
         with self.assertRaises(AssertionError):
             self.assert_news_metadata(html, self.REVISION)
