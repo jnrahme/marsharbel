@@ -64,7 +64,7 @@
 // mirrors content/books/veronica-giuliani-story/book.json (locales, minus en).
 (function () {
   const VERONICA_TWIN_LOCALES = { ar: 'ar', fr: 'fr', es: 'es', pt: 'pt', it: 'it', de: 'de', pl: 'pl', ru: 'ru', hi: 'hi', th: 'th', 'zh-hans': 'zh-Hans' };
-  const lang = (new URLSearchParams(window.location.search).get('lang') || '').toLowerCase();
+  const lang = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
   const route = VERONICA_TWIN_LOCALES[lang];
   if (!route) return;
   const card = document.querySelector('article[data-keywords^="veronica giuliani"] .promo-link');
