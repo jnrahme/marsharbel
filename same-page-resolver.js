@@ -127,7 +127,7 @@
       proof.keyedTextComplete === true && proof.mediaParity === true && proof.linkParity === true &&
       typeof proof.editorialReview === 'string' && !!proof.editorialReview &&
       typeof proof.renderedReview === 'string' && !!proof.renderedReview &&
-      typeof proof.receipt === 'string' && !!proof.receipt &&
+      /^[a-f0-9]{64}$/.test(proof.receiptSha256 || '') &&
       /^[a-f0-9]{64}$/.test(proof.reviewedContentSha256 || '') &&
       proof.reviewedContentSha256 === variant.contentSha256);
   }

@@ -63,6 +63,6 @@ def veronica_manifest(root,texts,manifest):
         for el in soup.main.select('[id]'):page['anchorIDs'].setdefault(el['id'],{})[lang]=el['id']
         # Honest model-only proof: only actually-tested parities asserted;
         # no nativeSampleReview - model-only approval is not native review.
-        page['variants'][lang]={'path':v['path'],'aliases':[],'status':'verified','contentSha256':v['bodySha256'],'sourceSha256':page['sourceSha256'],'proof':{'contentReviewMode':'model-only','nativeReviewStatus':'not-certified','scope':'enabled-tests-only','keyedTextComplete':True,'mediaParity':True,'linkParity':True,'editorialReview':hashlib.sha256(json.dumps(review['reviews'],sort_keys=True).encode()).hexdigest(),'renderedReview':hashlib.sha256(json.dumps(review,sort_keys=True).encode()).hexdigest(),'receipt':review['evidence'],'reviewedContentSha256':v['bodySha256']}}
+        page['variants'][lang]={'path':v['path'],'aliases':[],'status':'verified','contentSha256':v['bodySha256'],'sourceSha256':page['sourceSha256'],'proof':{'contentReviewMode':'model-only','nativeReviewStatus':'not-certified','scope':'enabled-tests-only','keyedTextComplete':True,'mediaParity':True,'linkParity':True,'editorialReview':hashlib.sha256(json.dumps(review['reviews'],sort_keys=True).encode()).hexdigest(),'renderedReview':hashlib.sha256(json.dumps(review,sort_keys=True).encode()).hexdigest(),'receiptSha256':hashlib.sha256(review['evidence'].encode()).hexdigest(),'reviewedContentSha256':v['bodySha256']}}
     out['pages']['veronica-story-master-equivalence']=page
     return out
