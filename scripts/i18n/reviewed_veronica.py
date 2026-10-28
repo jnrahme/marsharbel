@@ -16,6 +16,9 @@ def veronica_manifest(root,texts,manifest):
     if not path.exists():return manifest
     record=json.loads(path.read_text())
     if record.get('gateStatus')!='approved':return manifest
+    for rel, pin in record.get('artifacts', {}).items():
+        if hashlib.sha256((root/rel).read_bytes()).hexdigest()!=pin:
+            raise ValueError('Veronica scoped artifact drift: '+rel)
     variants=record['variants']
     for lang,v in variants.items():
         file=root/v['file'];text=texts.get(file,file.read_text())
