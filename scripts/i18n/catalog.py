@@ -210,11 +210,14 @@ PRAYER_FAMILIES = {
 
 HISTORY_FAMILY = ('history-master', '/history', 'history.html')
 FILM_FAMILY = ('film-premiere-master', '/charbel-film-premiere', 'charbel-film-premiere.html')
+VERONICA_STORY_FAMILY = ('veronica-story-master', '/veronica-giuliani-story', 'veronica-giuliani-story.html')
 
 
 def mirror_tab(group, name, family):
     if group == 'pageMirrors' and (name, family['english'], family.get('master')) == FILM_FAMILY:
         return 'film'
+    if group == 'pageMirrors' and (name, family['english'], family.get('master')) == VERONICA_STORY_FAMILY:
+        return 'stories'
     if group == 'pageMirrors' and (name, family['english']) == HISTORY_FAMILY[:2]:
         return 'history'
     if group == 'pageMirrors' and name in PRAYER_FAMILIES and family['english'] == PRAYER_FAMILIES[name][0]:
@@ -239,7 +242,7 @@ def validate_capabilities(registry, code):
             raise ValueError(f'{code}: invalid {field} capability')
     if set(caps['topicGuides']) != set(locale_topics(registry, code)):
         raise ValueError(f'{code}: topic capability differs from publication')
-    if not set(caps['mirrorTabs']) <= {'travel', 'prayers', 'history', 'film'}:
+    if not set(caps['mirrorTabs']) <= {'travel', 'prayers', 'history', 'film', 'stories'}:
         raise ValueError(f'{code}: unknown mirror tab')
     membership = code in registry.get('homePublicationLocales', [])
     if caps['home'] != membership or (not caps['home'] and 'home' in config):

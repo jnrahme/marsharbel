@@ -28,6 +28,16 @@ def veronica_manifest(root,texts,manifest):
     if not path.exists():return manifest
     record=json.loads(path.read_text())
     if record.get('gateStatus')!='approved':return manifest
+    review=record.get('reviewRecord') or {}
+    langs=set(record.get('variants') or {})
+    if (record.get('renderedReviewStatus')!='approved'
+            or review.get('renderedReviewStatus')!='approved'
+            or review.get('contentReviewMode')!='model-only'
+            or review.get('nativeReviewStatus')!='not-certified'
+            or review.get('scope')!='enabled-tests-only'
+            or set(review.get('reviews') or {})!=langs
+            or any(v!='approved' for v in review.get('reviews',{}).values())):
+        raise ValueError('Veronica integrated review record incomplete')
     artifacts=record.get('artifacts') or {}
     missing=sorted(REQUIRED_ARTIFACT_KEYS-artifacts.keys())
     if missing:raise ValueError('Veronica equivalence artifacts missing required keys: '+', '.join(missing))
@@ -43,11 +53,13 @@ def veronica_manifest(root,texts,manifest):
     out=json.loads(json.dumps(manifest));paths={v['path'] for v in variants.values()}
     for key in list(out['pages']):
         if any(v['path'] in paths for v in out['pages'][key]['variants'].values()):del out['pages'][key]
-    page={'sourcePath':variants['en']['file'],'sourceRevision':record['sourceRevision'],'sourceSha256':variants['en']['bodySha256'],'anchorIDs':{},'variants':{}}
+    page={'sourcePath':variants['en']['file'],'sourceRevision':record['sourceRevision'],'sourceSha256':variants['en']['bodySha256'],'anchorIDs':{},'variants':{},'reviewScope':'veronica-model-only-enabled-tests'}
     for lang,v in variants.items():
         file=root/v['file']
         soup=BeautifulSoup(texts.get(file,file.read_text()),'html.parser')
         for el in soup.main.select('[id]'):page['anchorIDs'].setdefault(el['id'],{})[lang]=el['id']
-        page['variants'][lang]={'path':v['path'],'aliases':[],'status':'verified','contentSha256':v['bodySha256'],'sourceSha256':page['sourceSha256'],'proof':{'type':'reviewed-veronica-master','family':'veronica-story-master','renderedReviewStatus':record['renderedReviewStatus'],'reviewedContentSha256':v['bodySha256']}}
+        # Honest model-only proof: only actually-tested parities asserted;
+        # no nativeSampleReview - model-only approval is not native review.
+        page['variants'][lang]={'path':v['path'],'aliases':[],'status':'verified','contentSha256':v['bodySha256'],'sourceSha256':page['sourceSha256'],'proof':{'contentReviewMode':'model-only','nativeReviewStatus':'not-certified','scope':'enabled-tests-only','keyedTextComplete':True,'mediaParity':True,'linkParity':True,'editorialReview':hashlib.sha256(json.dumps(review['reviews'],sort_keys=True).encode()).hexdigest(),'renderedReview':hashlib.sha256(json.dumps(review,sort_keys=True).encode()).hexdigest(),'receipt':review['evidence']}}
     out['pages']['veronica-story-master-equivalence']=page
     return out

@@ -1,8 +1,8 @@
 {
  "schema": "reviewed-equivalence-v1",
  "family": "veronica-story-master",
- "gateStatus": "candidate",
- "renderedReviewStatus": "candidate",
+ "gateStatus": "approved",
+ "renderedReviewStatus": "approved",
  "sourceRevision": "5cce33d69ea42d00afe0ba5d3721fa9e21e783a9",
  "variants": {
   "en": {
@@ -131,5 +131,35 @@
   "media/storybook-veronica/images/page-10.webp": "c76e4124901a2805bc4ee1690c4fb05809345942e8f1cbea26391a1a3918cc93",
   "storybook-stage.js": "7ef90d0546adf99a1ff5bafee01871e44f3a8274d22d8c1ee8ea8d20c9bfacd1",
   "storybook-stage.css": "ef43039066b1e3e39de0310a535d737ae05fc3464be1bf1f7a61892fe0201de8"
+ },
+ "reviewRecord": {
+  "reviewer": "Scrum (independent review, relayed by Main)",
+  "scopeHead": "68d58be34a199ba9cbb977760c1e12fc1cc31459",
+  "renderedReviewStatus": "approved",
+  "checks": [
+   "120 phone pages exact body/title/no overflow/0 JS errors",
+   "10 art pins unchanged",
+   "19 legacy API unchanged",
+   "required-key negative fixtures fail closed",
+   "policy/build/books/SEO/sync/25-locale tests PASS"
+  ],
+  "evidence": "Main relay 2026-10-28 09:31:38 EDT: Scrum independent actual-68d58be3 scope approval; enabled tests only, not release/fullQA/CI/publication",
+  "reviews": {
+   "en": "approved",
+   "ar": "approved",
+   "de": "approved",
+   "es": "approved",
+   "fr": "approved",
+   "hi": "approved",
+   "it": "approved",
+   "pl": "approved",
+   "pt": "approved",
+   "ru": "approved",
+   "th": "approved",
+   "zh-Hans": "approved"
+  },
+  "contentReviewMode": "model-only",
+  "nativeReviewStatus": "not-certified",
+  "scope": "enabled-tests-only"
  }
 }
