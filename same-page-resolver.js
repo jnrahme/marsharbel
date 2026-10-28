@@ -108,13 +108,15 @@
       typeof proof.nativeSampleReview === 'string' && !!proof.nativeSampleReview &&
       typeof proof.renderedReview === 'string' && !!proof.renderedReview);
   }
-  var VERONICA_MODEL_ONLY_ROUTES = {'/veronica-giuliani-story':1,'/ar/veronica-giuliani-story':1,'/de/veronica-giuliani-story':1,'/es/veronica-giuliani-story':1,'/fr/veronica-giuliani-story':1,'/hi/veronica-giuliani-story':1,'/it/veronica-giuliani-story':1,'/pl/veronica-giuliani-story':1,'/pt/veronica-giuliani-story':1,'/ru/veronica-giuliani-story':1,'/th/veronica-giuliani-story':1,'/zh-Hans/veronica-giuliani-story':1};
+  var VERONICA_MODEL_ONLY_ROUTES = {'en':'/veronica-giuliani-story','ar':'/ar/veronica-giuliani-story','de':'/de/veronica-giuliani-story','es':'/es/veronica-giuliani-story','fr':'/fr/veronica-giuliani-story','hi':'/hi/veronica-giuliani-story','it':'/it/veronica-giuliani-story','pl':'/pl/veronica-giuliani-story','pt':'/pt/veronica-giuliani-story','ru':'/ru/veronica-giuliani-story','th':'/th/veronica-giuliani-story','zh-Hans':'/zh-Hans/veronica-giuliani-story'};
   // Narrow Veronica model-only branch: scope-approved for enabled tests only.
   // Asserts pins + only actually-tested parities; never native-language certification.
-  function verifiedModelOnly(page, variant) {
+  function verifiedModelOnly(page, variant, lang) {
     var proof = variant && variant.proof;
     return !!(page && variant && page.reviewScope === 'veronica-model-only-enabled-tests' &&
-      variant.status === 'verified' && VERONICA_MODEL_ONLY_ROUTES[pathKey(variant.path || '')] &&
+      page.sourcePath === 'veronica-giuliani-story.html' &&
+      variant.status === 'verified' && VERONICA_MODEL_ONLY_ROUTES[lang] === pathKey(variant.path || '') &&
+      Array.isArray(variant.aliases) && variant.aliases.length === 0 &&
       /^[a-f0-9]{64}$/.test(page.sourceSha256 || '') &&
       /^[a-f0-9]{40}$/.test(page.sourceRevision || '') &&
       /^[a-f0-9]{64}$/.test(variant.contentSha256 || '') &&
@@ -125,9 +127,11 @@
       proof.keyedTextComplete === true && proof.mediaParity === true && proof.linkParity === true &&
       typeof proof.editorialReview === 'string' && !!proof.editorialReview &&
       typeof proof.renderedReview === 'string' && !!proof.renderedReview &&
-      typeof proof.receipt === 'string' && !!proof.receipt);
+      typeof proof.receipt === 'string' && !!proof.receipt &&
+      /^[a-f0-9]{64}$/.test(proof.reviewedContentSha256 || '') &&
+      proof.reviewedContentSha256 === variant.contentSha256);
   }
-  function verifiedEither(page, variant) { return verified(page, variant) || verifiedModelOnly(page, variant); }
+  function verifiedEither(page, variant, lang) { return verified(page, variant) || verifiedModelOnly(page, variant, lang); }
   function resolve(manifest, href, requested, actualLanguage) {
     var url = new URL(href), current = locate(manifest, url.pathname);
     var language = current ? current.language : actualLanguage;
@@ -161,7 +165,7 @@
     if (!current || !(manifest.languages || []).includes(requested)) return result;
     var target = current.page.variants[requested];
     if (!travelIdentity(current.page,current.variant,language) || !travelIdentity(current.page,target,requested) ||
-        !verifiedEither(current.page, current.variant) || !verifiedEither(current.page, target)) return result;
+        !verifiedEither(current.page, current.variant, language) || !verifiedEither(current.page, target, requested)) return result;
     if (url.hash) {
       var key;
       try { key = decodeURIComponent(url.hash.slice(1)); } catch (_) { return result; }
