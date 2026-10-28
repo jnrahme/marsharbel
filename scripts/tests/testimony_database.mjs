@@ -93,6 +93,29 @@ assert.equal((await as('anon',{},'select * from testimony_publications where id=
 await as('authenticated',passwordModerator,"select testimony_moderate($1,3,'unpublish','Remove synthetic guest verification story')",[guestId]);
 assert.equal((await as('anon',{},'select * from testimony_publications where id=$1',[guestId])).rows.length,0);
 for(let i=0;i<8;i++)assert.ok((await guestSubmit('guest '+i)).id);
-assert.equal((await guestSubmit('guest capped')).error,'rate_limited');
+// Guest burst budget is keyed by UTC minute ('intake:guest-minute:YYYYMMDDHH24MI'), so
+// wall-clock attempts can straddle a minute rollover and flake the cap assertion. Pin the
+// window deterministically: inside one transaction PostgreSQL now() stays fixed, so every
+// attempt below lands in the same minute bucket regardless of real time.
+await db.query('begin');
+await db.query(`delete from public.testimony_budgets where bucket like 'intake:guest-minute:%'`);
+const minuteKey=async()=> (await db.query(`select 'intake:guest-minute:'||to_char(now() at time zone 'UTC','YYYYMMDDHH24MI') k`)).rows[0].k;
+const burstKey=await minuteKey();
+// Ten distinct attempts in the same fixed minute are all accepted...
+for(let i=0;i<10;i++)assert.ok((await guestSubmit('burst '+i)).id);
+// ...and the counter actually reached ten (increment coverage, not just threshold).
+assert.equal((await db.query('select used from public.testimony_budgets where bucket=$1',[burstKey])).rows[0].used,10);
+// The eleventh attempt in the same fixed minute is rate limited...
+assert.equal((await guestSubmit('burst capped')).error,'rate_limited');
+// ...and the capped bucket history is preserved: the rejected attempt still consumed budget.
+assert.equal((await db.query('select used from public.testimony_budgets where bucket=$1',[burstKey])).rows[0].used,11);
+// Reset: without touching that capped history, a distinct minute key is an independent window -
+// an earlier-minute bucket at the cap does not limit a fresh minute's budget.
+await db.query(`insert into public.testimony_budgets(bucket,period,used) values
+ ('intake:guest-minute:'||to_char(now() at time zone 'UTC' - interval '2 minutes','YYYYMMDDHH24MI'),(now() at time zone 'UTC' - interval '2 minutes')::date,10)
+ on conflict(bucket,period) do update set used=10`);
+assert.equal((await db.query(`select public.testimony_budget('intake:guest-minute:'||to_char(now() at time zone 'UTC' - interval '1 minute','YYYYMMDDHH24MI'),10) ok`)).rows[0].ok,true);
+assert.equal(await minuteKey(),burstKey);
+await db.query('commit');
 console.log('Guest SQL checks passed: private server-only intake, duplicate/burst limits, audited moderator review, stale-decision rejection, publication and unpublish.');
 await db.close();console.log('Testimony SQL: authorization, private/public separation, quotas, human approval, stale edits, withdrawal, reports, worker isolation, retention, and pause checks passed.');
