@@ -2,11 +2,11 @@
 // Agent-translated editions (review: agent-translated); EN/AR live in veronica-giuliani-story-data.js.
 window.VERONICA_STORY_FR = [
  {
+  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "title": "Mercatello, 1660",
   "body": "En l'année 1660, à Mercatello, une petite ville d'une vallée verte d'Italie, une petite fille est née. Ses parents, Francesco et Benedetta, l'ont appelée Orsola. Elle était la plus jeune de sept sœurs. Trois de ces sœurs deviendraient aussi religieuses. Personne n'aurait pu deviner, ce jour-là, ce que deviendrait cette benjamine. Mais Dieu avait un plan pour elle. Et des années plus tard, Orsola recevrait un nouveau nom : Veronica. Cela signifie « image vraie ».",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "scene": "birth",
   "audio": "",
   "reflection": false,
@@ -21,11 +21,11 @@ window.VERONICA_STORY_FR = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "title": "Un souhait grandit à Plaisance",
   "body": "Quand Orsola avait sept ans, sa maman est morte. Son papa a trouvé du travail dans une ville appelée Plaisance, et la famille a déménagé avec lui. Une vieille histoire raconte que, toute petite déjà, Orsola partageait sa nourriture avec les enfants pauvres. Et à Plaisance, elle a commencé à sentir grandir dans son cœur un souhait : offrir toute sa vie à Jésus.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -41,11 +41,11 @@ window.VERONICA_STORY_FR = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "title": "Les autres projets de son père",
   "body": "Un souhait comme celui-là peut être difficile à suivre. Le père d'Orsola avait d'autres projets pour elle. Il voulait la marier, et il a trouvé des jeunes gens qui espéraient devenir son mari. Mais le cœur d'Orsola était tourné vers une autre maison : un couvent, où des sœurs vivent simplement et prient ensemble. Elle a attendu. Elle a espéré. Et finalement, son père a dit oui.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -60,11 +60,11 @@ window.VERONICA_STORY_FR = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "title": "Un nouveau nom",
   "body": "En 1677, à dix-sept ans, Orsola a franchi la porte d'un monastère de Città di Castello. Un monastère est un lieu où des sœurs prient, travaillent et vivent proches de Dieu. Orsola était désormais une sœur clarisse capucine, et elle a reçu son nouveau nom : Veronica. Elle allait rester dans ce seul monastère pendant cinquante ans.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -80,11 +80,11 @@ window.VERONICA_STORY_FR = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "title": "Elle est restée",
   "body": "Les premières années n'ont pas été faciles. Parfois, Veronica était tentée de tout quitter et de retourner au monde dehors. Elle est restée. Un an plus tard, en 1678, elle s'est tenue devant ses sœurs et a prononcé ses promesses solennelles : toute sa vie, donnée à Dieu. Elle comptait bien la tenir.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -100,11 +100,11 @@ window.VERONICA_STORY_FR = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "title": "La maîtresse qui priait",
   "body": "Veronica ne faisait pas que prier. Pendant trente-quatre ans, elle a été la sœur qui formait les nouvelles sœurs. Elle les guidait avec sagesse et prudence. Elle ne les laissait même pas lire des livres mystiques. Elle a aussi écrit de nombreuses lettres et des poèmes. Et elle priait pour des gens qu'elle ne rencontrerait jamais : pour le Pape, pour les prêtres, pour tous ceux dans le besoin. « Souffrir avec joie, a-t-elle écrit, est la clé de l'amour. » Petit à petit, ceux qui la guidaient ont vu que sa prière était hors du commun.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -120,11 +120,11 @@ window.VERONICA_STORY_FR = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "title": "Vingt-deux mille pages",
   "body": "Alors, en 1693, un prêtre et son évêque ont demandé à Veronica de tout écrire : toute sa vie avec Dieu. Elle a obéi. Jour après jour, année après année, elle a écrit pendant trente-quatre ans, environ 22 000 pages, tout à la main, sans une seule rature. Nous l'appelons son Journal. Elle y a écrit sa prière, et combien elle se sentait proche de Jésus. Les anciens registres de l'Église disent aussi que, d'une manière que personne ne peut expliquer entièrement, elle a partagé sa souffrance. Mais Veronica n'a jamais écrit sur la douleur pour en être fière. Elle a écrit sur l'amour.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -140,11 +140,11 @@ window.VERONICA_STORY_FR = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "title": "L'abbesse et les conduites d'eau",
   "body": "Les années ont passé. En 1716, les sœurs l'ont choisie comme abbesse, la responsable du monastère. Et les sœurs n'ont cessé de la réélire jusqu'à la fin de sa vie. Elle a mis sa nouvelle charge au service des choses de tous les jours. Le monastère n'avait jamais eu de vraie arrivée d'eau, alors elle a fait poser des conduites pour amener l'eau. Elle a aussi fait agrandir le couvent. Pour Veronica, l'amour n'était pas seulement quelque chose qu'on ressent. C'est quelque chose qu'on construit.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -160,11 +160,11 @@ window.VERONICA_STORY_FR = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "title": "J'ai trouvé l'Amour",
   "body": "Veronica est tombée très malade. Après une longue maladie, elle est morte le 9 juillet 1727. Elle avait soixante-six ans. Ses dernières paroles furent : « J'ai trouvé l'Amour, l'Amour s'est laissé voir ! ... Dites-le à tout le monde, dites-le à tout le monde ! » En 1839, l'Église l'a déclarée sainte. Sa fête est le 9 juillet, le jour où elle est rentrée à la maison de Dieu. Orsola était devenue Veronica : une image vraie de l'amour qu'elle avait suivi toute sa vie.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "scene": "passing",
   "audio": "",
   "reflection": false,
@@ -181,11 +181,11 @@ window.VERONICA_STORY_FR = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "title": "Points de réflexion",
   "body": "Qu'est-ce qui a été le plus dur pour Veronica, à ton avis ? Attendre pour entrer au monastère ? Rester quand c'était difficile ? Ou prier pour des gens qu'elle n'avait jamais rencontrés ? Avec un adulte, lis la lettre aux Romains, chapitre 8, versets 38 et 39. Avec les mots de ce livre : rien dans toute la création ne peut nous séparer de l'amour de Dieu. Aujourd'hui, prie doucement pour une personne qui est triste ou lointaine. Et si toi-même tu te sens triste un jour, parle à un adulte de confiance. Dieu, merci de nous aimer. Aide-nous à aimer les autres comme Veronica l'a fait. Sainte Veronica, prie pour nous. Amen.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "scene": "legacy",
   "audio": "",
   "reflection": true,
@@ -203,11 +203,11 @@ window.VERONICA_STORY_FR = [
 
 window.VERONICA_STORY_ES = [
  {
+  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "title": "Mercatello, 1660",
   "body": "En el año 1660, en Mercatello, un pueblecito de un valle verde de Italia, nació una niña. Sus padres, Francesco y Benedetta, la llamaron Orsola. Era la menor de siete hermanas. Tres de aquellas hermanas también llegarían a ser monjas. Nadie podría haber imaginado, aquel día, en quién se convertiría la hermana pequeña. Pero Dios tenía un plan para ella. Y años después, Orsola recibiría un nombre nuevo: Verónica. Significa \"imagen verdadera\".",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "scene": "birth",
   "audio": "",
   "reflection": false,
@@ -222,11 +222,11 @@ window.VERONICA_STORY_ES = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "title": "Un deseo crece en Piacenza",
   "body": "Cuando Orsola tenía siete años, su mamá murió. Su papá encontró trabajo nuevo en una ciudad llamada Piacenza, y la familia se mudó allí con él. Cuenta una historia antigua que, siendo todavía muy pequeña, Orsola compartía su comida con los niños pobres. Y en Piacenza empezó a sentir que algo crecía en su corazón: el deseo de entregar toda su vida a Jesús.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -242,11 +242,11 @@ window.VERONICA_STORY_ES = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "title": "Los otros planes de su padre",
   "body": "Un deseo así puede ser difícil de seguir. El padre de Orsola tenía otros planes para ella. Quería que se casara, y buscó jóvenes que esperaban ser su esposo. Pero el corazón de Orsola estaba puesto en un hogar distinto: un convento, donde las hermanas viven con sencillez y rezan juntas. Ella esperó. Ella confió. Y al fin, su padre dijo que sí.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -261,11 +261,11 @@ window.VERONICA_STORY_ES = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "title": "Un nombre nuevo",
   "body": "En 1677, con diecisiete años, Orsola cruzó la puerta de un monasterio de Città di Castello. Un monasterio es un lugar donde las hermanas rezan, trabajan y viven cerca de Dios. Orsola era ahora una hermana clarisa capuchina, y recibió su nombre nuevo: Verónica. Se quedaría en ese único monasterio durante cincuenta años.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -281,11 +281,11 @@ window.VERONICA_STORY_ES = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "title": "Ella se quedó",
   "body": "Los primeros años no fueron fáciles. A veces Verónica sentía la tentación de dejarlo todo y volver al mundo de afuera. Ella se quedó. Un año después, en 1678, se puso delante de sus hermanas e hizo sus promesas solemnes: toda su vida, entregada a Dios. Y pensaba cumplirla.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -301,11 +301,11 @@ window.VERONICA_STORY_ES = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "title": "La maestra que rezaba",
   "body": "Verónica no solo rezaba. Durante treinta y cuatro años fue la hermana que enseñaba a las hermanas nuevas. Las guiaba con sabiduría y cuidado. Ni siquiera les permitía leer libros místicos. También escribió muchas cartas y poemas. Y rezaba por personas que nunca conocería: por el Papa, por los sacerdotes, por todos los necesitados. \"Sufrir con alegría, escribió, es la llave del amor.\" Poco a poco, quienes la guiaban vieron que su oración era algo fuera de lo común.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -321,11 +321,11 @@ window.VERONICA_STORY_ES = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "title": "Veintidós mil páginas",
   "body": "Así que en 1693, un sacerdote y su obispo le pidieron a Verónica que lo escribiera todo: toda su vida con Dios. Ella obedeció. Día tras día, año tras año, escribió durante treinta y cuatro años, unas 22.000 páginas, todo a mano, sin un solo tachón. Lo llamamos su Diario. En él escribió sobre su oración y sobre lo cerca que se sentía de Jesús. Los antiguos registros de la Iglesia dicen también que, de un modo que nadie puede explicar del todo, ella compartió su sufrimiento. Pero Verónica nunca escribió sobre el dolor para sentirse orgullosa. Ella escribió sobre el amor.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -341,11 +341,11 @@ window.VERONICA_STORY_ES = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "title": "La abadesa y las tuberías de agua",
   "body": "Pasaron los años. En 1716, las hermanas la eligieron abadesa, la responsable del monasterio. Y las hermanas siguieron eligiéndola por el resto de su vida. Ella usó su nuevo cargo para las cosas de cada día. El monasterio nunca había tenido una buena llegada de agua, así que mandó instalar tuberías para traerla. También hizo ampliar el convento. Para Verónica, el amor no era solo algo que se siente. Es algo que se construye.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -361,11 +361,11 @@ window.VERONICA_STORY_ES = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "title": "He encontrado el Amor",
   "body": "Verónica se puso muy enferma. Después de una larga enfermedad, murió el 9 de julio de 1727. Tenía sesenta y seis años. Sus últimas palabras fueron: \"¡He encontrado el Amor, el Amor se ha dejado ver! ... ¡Díganlo a todos, díganlo a todos!\" En 1839, la Iglesia la declaró santa. Su fiesta es el 9 de julio, el día en que volvió a la casa de Dios. Orsola se había convertido en Verónica: una imagen verdadera del amor que había seguido toda su vida.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "scene": "passing",
   "audio": "",
   "reflection": false,
@@ -382,11 +382,11 @@ window.VERONICA_STORY_ES = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "title": "Puntos de reflexión",
   "body": "¿Qué crees que fue lo más difícil para Verónica? ¿Esperar para entrar al monasterio? ¿Quedarse cuando era duro? ¿O rezar por personas que nunca había conocido? Con un adulto, lee la carta a los Romanos, capítulo 8, versículos 38 y 39. Con las palabras de este libro: nada en toda la creación puede separarnos del amor de Dios. Hoy, reza en silencio por una persona que esté triste o lejos. Y si algún día tú te sientes triste, cuéntaselo a un adulto de confianza. Dios, gracias por amarnos. Ayúdanos a amar a los demás como lo hizo Verónica. Santa Verónica, ruega por nosotros. Amén.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "scene": "legacy",
   "audio": "",
   "reflection": true,
@@ -404,11 +404,11 @@ window.VERONICA_STORY_ES = [
 
 window.VERONICA_STORY_PT = [
  {
+  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "title": "Mercatello, 1660",
   "body": "No ano de 1660, em Mercatello, uma vila pequena num vale verde de Itália, nasceu uma menina. Os pais, Francesco e Benedetta, deram-lhe o nome de Orsola. Era a mais nova de sete irmãs. Três dessas irmãs também viriam a ser freiras. Ninguém podia adivinhar, naquele dia, o que aquela irmã mais nova viria a ser. Mas Deus tinha um plano para ela. E anos depois, Orsola receberia um nome novo: Verónica. Significa \"imagem verdadeira\".",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "scene": "birth",
   "audio": "",
   "reflection": false,
@@ -423,11 +423,11 @@ window.VERONICA_STORY_PT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "title": "Um desejo cresce em Piacenza",
   "body": "Quando Orsola tinha sete anos, a mãe morreu. O pai encontrou trabalho novo numa cidade chamada Piacenza, e a família mudou-se com ele. Conta uma história antiga que, ainda muito pequena, Orsola partilhava a sua comida com as crianças pobres. E em Piacenza ela começou a sentir algo a crescer no coração: o desejo de dar toda a sua vida a Jesus.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -443,11 +443,11 @@ window.VERONICA_STORY_PT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "title": "Os outros planos do pai",
   "body": "Um desejo assim pode ser difícil de seguir. O pai de Orsola tinha outros planos para ela. Queria que ela se casasse, e encontrou jovens que esperavam ser seu marido. Mas o coração de Orsola estava voltado para outra casa: um convento, onde as irmãs vivem com simplicidade e rezam juntas. Ela esperou. Ela confiou. E, por fim, o pai disse que sim.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -462,11 +462,11 @@ window.VERONICA_STORY_PT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "title": "Um nome novo",
   "body": "Em 1677, com dezassete anos, Orsola atravessou a porta de um mosteiro em Città di Castello. Um mosteiro é um lugar onde as irmãs rezam, trabalham e vivem perto de Deus. Orsola era agora uma irmã clarissa capuchinha, e recebeu o seu nome novo: Verónica. Ficaria naquele único mosteiro durante cinquenta anos.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -482,11 +482,11 @@ window.VERONICA_STORY_PT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "title": "Ela ficou",
   "body": "Os primeiros anos não foram fáceis. Às vezes Verónica era tentada a deixar tudo e voltar para o mundo lá fora. Ela ficou. Um ano depois, em 1678, pôs-se diante das irmãs e fez as suas promessas solenes: toda a sua vida, entregue a Deus. E tencionava cumpri-la.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -502,11 +502,11 @@ window.VERONICA_STORY_PT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "title": "A mestra que rezava",
   "body": "Verónica não só rezava. Durante trinta e quatro anos foi a irmã que ensinava as noviças. Orientava-as com sabedoria e cuidado. Nem sequer as deixava ler livros místicos. Também escreveu muitas cartas e poemas. E rezava por pessoas que nunca conheceria: pelo Papa, pelos sacerdotes, por todos os necessitados. \"Sofrer com alegria, escreveu, é a chave do amor.\" Pouco a pouco, quem a orientava viu que a sua oração era algo fora do comum.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -522,11 +522,11 @@ window.VERONICA_STORY_PT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "title": "Vinte e duas mil páginas",
   "body": "Então, em 1693, um sacerdote e o seu bispo disseram a Verónica para escrever tudo: toda a sua vida com Deus. Ela obedeceu. Dia após dia, ano após ano, escreveu durante trinta e quatro anos, cerca de 22.000 páginas, tudo à mão, sem um único risco. Chamamos-lhe o seu Diário. Nele escreveu sobre a sua oração e sobre o quanto se sentia perto de Jesus. Os registos antigos da Igreja dizem também que, de um modo que ninguém consegue explicar totalmente, ela partilhou do sofrimento dele. Mas Verónica nunca escreveu sobre a dor para se orgulhar dela. Ela escreveu sobre o amor.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -542,11 +542,11 @@ window.VERONICA_STORY_PT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "title": "A abadessa e os canos de água",
   "body": "Os anos passaram. Em 1716, as irmãs escolheram-na como abadessa, a responsável do mosteiro. E as irmãs continuaram a escolhê-la para o resto da vida. Ela usou o novo cargo para as coisas do dia a dia. O mosteiro nunca tivera um verdadeiro abastecimento de água, por isso ela mandou assentar canos para a trazer. Também mandou ampliar o convento. Para Verónica, o amor não era só algo que se sente. É algo que se constrói.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -562,11 +562,11 @@ window.VERONICA_STORY_PT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "title": "Encontrei o Amor",
   "body": "Verónica ficou muito doente. Depois de uma longa doença, morreu a 9 de julho de 1727. Tinha sessenta e seis anos. As suas últimas palavras foram: \"Encontrei o Amor, o Amor deixou-se ver! ... Digam-no a todos, digam-no a todos!\" Em 1839, a Igreja declarou-a santa. A sua festa é a 9 de julho, o dia em que voltou para a casa de Deus. Orsola tinha-se tornado Verónica: uma imagem verdadeira do amor que seguira durante toda a vida.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "scene": "passing",
   "audio": "",
   "reflection": false,
@@ -583,11 +583,11 @@ window.VERONICA_STORY_PT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "title": "Pontos de reflexão",
   "body": "O que achas que foi mais difícil para Verónica? Esperar para entrar no mosteiro? Ficar quando era difícil? Ou rezar por pessoas que nunca tinha conhecido? Com um adulto, lê a carta aos Romanos, capítulo 8, versículos 38 e 39. Nas palavras deste livro: nada em toda a criação nos pode separar do amor de Deus. Hoje, reza em silêncio por uma pessoa que esteja triste ou longe. E se um dia te sentires triste, conta a um adulto de confiança. Deus, obrigado por nos amares. Ajuda-nos a amar os outros como Verónica fez. Santa Verónica, rogai por nós. Amém.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "scene": "legacy",
   "audio": "",
   "reflection": true,
@@ -605,11 +605,11 @@ window.VERONICA_STORY_PT = [
 
 window.VERONICA_STORY_IT = [
  {
+  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "title": "Mercatello, 1660",
   "body": "Nell'anno 1660, a Mercatello, un paesino in una verde valle d'Italia, nacque una bambina. I suoi genitori, Francesco e Benedetta, la chiamarono Orsola. Era la più piccola di sette sorelle. Tre di quelle sorelle sarebbero diventate anche loro suore. Nessuno poteva immaginare, quel giorno, cosa sarebbe diventata la sorellina più piccola. Ma Dio aveva un piano per lei. E anni dopo, Orsola avrebbe ricevuto un nome nuovo: Veronica. Significa \"vera immagine\".",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "scene": "birth",
   "audio": "",
   "reflection": false,
@@ -624,11 +624,11 @@ window.VERONICA_STORY_IT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "title": "Un desiderio cresce a Piacenza",
   "body": "Quando Orsola aveva sette anni, la sua mamma morì. Il papà trovò un nuovo lavoro in una città chiamata Piacenza, e la famiglia si trasferì lì con lui. Una storia antica racconta che, già da bambina, Orsola divideva il suo cibo con i bambini poveri. E a Piacenza cominciò a sentire qualcosa che cresceva nel suo cuore: il desiderio di donare tutta la sua vita a Gesù.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -644,11 +644,11 @@ window.VERONICA_STORY_IT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "title": "Gli altri progetti del papà",
   "body": "Un desiderio così può essere difficile da seguire. Il papà di Orsola aveva altri progetti per lei. Voleva che si sposasse, e trovò dei giovani che speravano di diventare suo marito. Ma il cuore di Orsola era rivolto a una casa diversa: un convento, dove le suore vivono semplicemente e pregano insieme. Lei aspettò. Lei sperò. E alla fine, il papà disse di sì.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -663,11 +663,11 @@ window.VERONICA_STORY_IT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "title": "Un nome nuovo",
   "body": "Nel 1677, a diciassette anni, Orsola varcò la porta di un monastero di Città di Castello. Un monastero è un luogo dove le suore pregano, lavorano e vivono vicino a Dio. Orsola era ora una suora clarissa cappuccina, e ricevette il suo nome nuovo: Veronica. Sarebbe rimasta in quell'unico monastero per cinquant'anni.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -683,11 +683,11 @@ window.VERONICA_STORY_IT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "title": "Lei restò",
   "body": "I primi anni non furono facili. A volte Veronica era tentata di lasciare tutto e tornare al mondo di fuori. Lei restò. Un anno dopo, nel 1678, si presentò davanti alle sue sorelle e fece le sue promesse solenni: tutta la sua vita, donata a Dio. E intendeva mantenerla.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -703,11 +703,11 @@ window.VERONICA_STORY_IT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "title": "La maestra che pregava",
   "body": "Veronica non si limitava a pregare. Per trentaquattro anni fu la suora che formava le nuove suore. Le guidava con saggezza e attenzione. Non permetteva loro nemmeno di leggere libri mistici. Scrisse anche molte lettere e poesie. E pregava per persone che non avrebbe mai incontrato: per il Papa, per i sacerdoti, per tutti quelli nel bisogno. \"Soffrire con gioia, scrisse, è la chiave dell'amore.\" A poco a poco, chi la guidava vide che la sua preghiera era qualcosa di fuori dal comune.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -723,11 +723,11 @@ window.VERONICA_STORY_IT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "title": "Ventiduemila pagine",
   "body": "Così nel 1693 un sacerdote e il suo vescovo dissero a Veronica di scrivere tutto: tutta la sua vita con Dio. Lei obbedì. Giorno dopo giorno, anno dopo anno, scrisse per trentaquattro anni, circa 22.000 pagine, tutte a mano, senza una cancellatura. Lo chiamiamo il suo Diario. Vi scrisse della sua preghiera e di quanto si sentisse vicina a Gesù. I registri antichi della Chiesa dicono anche che, in un modo che nessuno può spiegare pienamente, lei condivise la sua sofferenza. Ma Veronica non scrisse mai del dolore per esserne orgogliosa. Lei scrisse dell'amore.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -743,11 +743,11 @@ window.VERONICA_STORY_IT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "title": "La badessa e le tubature dell'acqua",
   "body": "Gli anni passarono. Nel 1716 le suore la scelsero come badessa, la responsabile del monastero. E le suore continuarono a sceglierla per il resto della sua vita. Lei usò il suo nuovo incarico per le cose di ogni giorno. Il monastero non aveva mai avuto una vera fornitura d'acqua, così fece posare delle tubature per portarla. Fece anche ingrandire il convento. Per Veronica, l'amore non era solo qualcosa che si sente. È qualcosa che si costruisce.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -763,11 +763,11 @@ window.VERONICA_STORY_IT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "title": "Ho trovato l'Amore",
   "body": "Veronica si ammalò gravemente. Dopo una lunga malattia, morì il 9 luglio 1727. Aveva sessantasei anni. Le sue ultime parole furono: \"Ho trovato l'Amore, l'Amore si è lasciato vedere! ... Ditelo a tutti, ditelo a tutti!\" Nel 1839 la Chiesa la dichiarò santa. La sua festa è il 9 luglio, il giorno in cui tornò alla casa di Dio. Orsola era diventata Veronica: una vera immagine dell'amore che aveva seguito per tutta la vita.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "scene": "passing",
   "audio": "",
   "reflection": false,
@@ -784,11 +784,11 @@ window.VERONICA_STORY_IT = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "title": "Punti di riflessione",
   "body": "Secondo te, cosa è stato più difficile per Veronica? Aspettare di entrare in monastero? Restare quando era dura? O pregare per persone che non aveva mai incontrato? Con un adulto, leggi la lettera ai Romani, capitolo 8, versetti 38 e 39. Con le parole di questo libro: niente in tutta la creazione può separarci dall'amore di Dio. Oggi, prega in silenzio per una persona triste o lontana. E se un giorno ti senti triste, parla con un adulto di fiducia. Dio, grazie perché ci ami. Aiutaci ad amare gli altri come ha fatto Veronica. Santa Veronica, prega per noi. Amen.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "scene": "legacy",
   "audio": "",
   "reflection": true,
@@ -806,11 +806,11 @@ window.VERONICA_STORY_IT = [
 
 window.VERONICA_STORY_DE = [
  {
+  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "title": "Mercatello, 1660",
   "body": "Im Jahr 1660 wurde in Mercatello, einem kleinen Ort in einem grünen Tal in Italien, ein Mädchen geboren. Ihre Eltern, Francesco und Benedetta, nannten sie Orsola. Sie war die jüngste von sieben Schwestern. Drei dieser Schwestern sollten ebenfalls Nonnen werden. Niemand hätte an diesem Tag ahnen können, was aus der jüngsten Schwester einmal werden würde. Aber Gott hatte einen Plan für sie. Und Jahre später sollte Orsola einen neuen Namen erhalten: Veronika. Er bedeutet \"wahres Abbild\".",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "scene": "birth",
   "audio": "",
   "reflection": false,
@@ -825,11 +825,11 @@ window.VERONICA_STORY_DE = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "title": "Ein Wunsch wächst in Piacenza",
   "body": "Als Orsola sieben Jahre alt war, starb ihre Mutter. Ihr Vater fand eine neue Arbeit in einer Stadt namens Piacenza, und die Familie zog mit ihm dorthin. Eine alte Geschichte erzählt, dass Orsola schon als kleines Mädchen ihr Essen mit armen Kindern teilte. Und in Piacenza begann sie, etwas in ihrem Herzen wachsen zu spüren: den Wunsch, ihr ganzes Leben Jesus zu schenken.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -845,11 +845,11 @@ window.VERONICA_STORY_DE = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "title": "Die anderen Pläne ihres Vaters",
   "body": "Einem solchen Wunsch zu folgen kann schwer sein. Orsolas Vater hatte andere Pläne für sie. Er wollte, dass sie heiratet, und er fand junge Männer, die sich erhofften, ihr Mann zu werden. Aber Orsolas Herz hing an einem anderen Zuhause: einem Kloster, wo Schwestern einfach leben und gemeinsam beten. Sie wartete. Sie hoffte. Und schließlich sagte ihr Vater ja.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -864,11 +864,11 @@ window.VERONICA_STORY_DE = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "title": "Ein neuer Name",
   "body": "Im Jahr 1677, mit siebzehn Jahren, trat Orsola durch die Tür eines Klosters in Città di Castello. Ein Kloster ist ein Ort, an dem Schwestern beten, arbeiten und nahe bei Gott leben. Orsola war nun eine kapuzinische Klarissenschwester, und sie erhielt ihren neuen Namen: Veronika. Sie sollte fünfzig Jahre in diesem einen Kloster bleiben.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -884,11 +884,11 @@ window.VERONICA_STORY_DE = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "title": "Sie blieb",
   "body": "Die ersten Jahre waren nicht leicht. Manchmal war Veronika versucht, alles hinzuwerfen und in die Welt draußen zurückzukehren. Sie blieb. Ein Jahr später, 1678, trat sie vor ihre Schwestern und legte ihre feierlichen Gelübde ab: ihr ganzes Leben, Gott geschenkt. Und sie war entschlossen, es zu halten.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -904,11 +904,11 @@ window.VERONICA_STORY_DE = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "title": "Die Lehrerin, die betete",
   "body": "Veronika betete nicht nur. Vierunddreißig Jahre lang war sie die Schwester, die die neuen Schwestern unterwies. Sie leitete sie weise und umsichtig an. Sie ließ sie nicht einmal mystische Bücher lesen. Sie schrieb auch viele Briefe und Gedichte. Und sie betete für Menschen, die sie nie treffen würde: für den Papst, für die Priester, für alle in Not. \"Mit Freude leiden, schrieb sie, ist der Schlüssel zur Liebe.\" Nach und nach erkannten ihre geistlichen Begleiter, dass ihr Gebet etwas Außergewöhnliches war.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -924,11 +924,11 @@ window.VERONICA_STORY_DE = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "title": "Zweiundzwanzigtausend Seiten",
   "body": "Und so sagten 1693 ein Priester und ihr Bischof zu Veronika, sie solle alles aufschreiben: ihr ganzes Leben mit Gott. Sie gehorchte. Tag für Tag, Jahr für Jahr schrieb sie vierunddreißig Jahre lang, etwa 22.000 Seiten, alles von Hand, ohne eine einzige Streichung. Wir nennen es ihr Tagebuch. Darin schrieb sie über ihr Gebet und darüber, wie nahe sie sich Jesus fühlte. Die alten Aufzeichnungen der Kirche sagen auch, dass sie auf eine Weise, die niemand vollständig erklären kann, an seinem Leiden teilhatte. Aber Veronika schrieb nie über den Schmerz, um stolz darauf zu sein. Sie schrieb über die Liebe.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -944,11 +944,11 @@ window.VERONICA_STORY_DE = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "title": "Die Äbtissin und die Wasserleitungen",
   "body": "Die Jahre vergingen. 1716 wählten die Schwestern sie zur Äbtissin, zur Leiterin des Klosters. Und die Schwestern sollten sie für den Rest ihres Lebens immer wieder wählen. Sie stellte ihr neues Amt in den Dienst der alltäglichen Dinge. Das Kloster hatte nie eine richtige Wasserversorgung gehabt, also ließ sie Leitungen verlegen, um das Wasser hereinzubringen. Sie ließ das Kloster auch vergrößern. Für Veronika war Liebe nicht nur etwas, das man fühlt. Sie ist etwas, das man baut.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -964,11 +964,11 @@ window.VERONICA_STORY_DE = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "title": "Ich habe die Liebe gefunden",
   "body": "Veronika wurde sehr krank. Nach langer Krankheit starb sie am 9. Juli 1727. Sie war sechsundsechzig Jahre alt. Ihre letzten Worte waren: \"Ich habe die Liebe gefunden, die Liebe hat sich sehen lassen! ... Sagt es allen, sagt es allen!\" Im Jahr 1839 erklärte die Kirche sie zur Heiligen. Ihr Festtag ist der 9. Juli, der Tag, an dem sie heim zu Gott ging. Orsola war Veronika geworden: ein wahres Abbild der Liebe, der sie ihr ganzes Leben lang gefolgt war.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "scene": "passing",
   "audio": "",
   "reflection": false,
@@ -985,11 +985,11 @@ window.VERONICA_STORY_DE = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "title": "Punkte zum Nachdenken",
   "body": "Was war deiner Meinung nach das Schwerste für Veronika? Das Warten auf den Eintritt ins Kloster? Das Bleiben, als es schwer war? Oder das Beten für Menschen, die sie nie getroffen hatte? Lies mit einem Erwachsenen den Römerbrief, Kapitel 8, Verse 38 und 39. Mit den Worten dieses Buches: Nichts in der ganzen Schöpfung kann uns von der Liebe Gottes trennen. Bete heute still für einen Menschen, der traurig oder weit weg ist. Und wenn du selbst einmal traurig bist, sag es einem Erwachsenen, dem du vertraust. Gott, danke, dass du uns liebst. Hilf uns, andere so zu lieben, wie Veronika es getan hat. Heilige Veronika, bitte für uns. Amen.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "scene": "legacy",
   "audio": "",
   "reflection": true,
@@ -1007,11 +1007,11 @@ window.VERONICA_STORY_DE = [
 
 window.VERONICA_STORY_PL = [
  {
+  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "title": "Mercatello, 1660",
   "body": "W roku 1660 w Mercatello, miasteczku w zielonej dolinie Włoch, urodziła się dziewczynka. Jej rodzice, Francesco i Benedetta, nadali jej imię Orsola. Była najmłodszą z siedmiu sióstr. Trzy z tych sióstr także miały zostać zakonnicami. Nikt nie mógł tego dnia przewidzieć, kim stanie się najmłodsza siostra. Ale Bóg miał dla niej plan. I lata później Orsola otrzymała nowe imię: Weronika. Oznacza ono \"prawdziwy obraz\".",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "scene": "birth",
   "audio": "",
   "reflection": false,
@@ -1026,11 +1026,11 @@ window.VERONICA_STORY_PL = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "title": "Pragnienie rośnie w Piacenzie",
   "body": "Kiedy Orsola miała siedem lat, jej mama zmarła. Tatko znalazł nową pracę w mieście o nazwie Piacenza i rodzina przeprowadziła się tam z nim. Stara opowieść mówi, że już jako mała dziewczynka Orsola dzieliła się jedzeniem z biednymi dziećmi. A w Piacenzy zaczęła czuć, jak w jej sercu rośnie pragnienie: oddać całe życie Jezusowi.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1046,11 +1046,11 @@ window.VERONICA_STORY_PL = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "title": "Inne plany taty",
   "body": "Za takim pragnieniem może być trudno podążyć. Tatko Orsoli miał dla niej inne plany. Chciał, żeby wyszła za mąż, i znajdował młodzieńców, którzy mieli nadzieję zostać jej mężem. Ale serce Orsoli było przywiązane do innego domu: do klasztoru, gdzie siostry żyją prosto i modlą się razem. Czekała. Ufała. I w końcu tatko powiedział tak.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1065,11 +1065,11 @@ window.VERONICA_STORY_PL = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "title": "Nowe imię",
   "body": "W 1677 roku, mając siedemnaście lat, Orsola przekroczyła próg klasztoru w Città di Castello. Klasztor to miejsce, w którym siostry modlą się, pracują i żyją blisko Boga. Orsola została siostrą klaryską kapucynką i otrzymała nowe imię: Weronika. Miała pozostać w tym jednym klasztorze przez pięćdziesiąt lat.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1085,11 +1085,11 @@ window.VERONICA_STORY_PL = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "title": "Została",
   "body": "Pierwsze lata nie były łatwe. Czasami Weronika była kuszona, by wszystko porzucić i wrócić do świata na zewnątrz. Została. Rok później, w 1678 roku, stanęła przed siostrami i złożyła uroczyste śluby: całe jej życie, oddane Bogu. I zamierzała go dotrzymać.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1105,11 +1105,11 @@ window.VERONICA_STORY_PL = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "title": "Nauczycielka, która się modliła",
   "body": "Weronika nie tylko się modliła. Przez trzydzieści cztery lata była siostrą, która uczyła nowe siostry. Prowadziła je mądrze i troskliwie. Nie pozwalała im nawet czytać książek mistycznych. Pisała też wiele listów i wierszy. I modliła się za ludzi, których nigdy nie miała spotkać: za papieża, za kapłanów, za wszystkich w potrzebie. \"Cierpieć z radością - pisała - to klucz do miłości.\" Stopniowo ci, którzy ją prowadzili, dostrzegli, że jej modlitwa jest czymś niezwykłym.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1125,11 +1125,11 @@ window.VERONICA_STORY_PL = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "title": "Dwadzieścia dwa tysiące stron",
   "body": "Więc w 1693 roku pewien kapłan i jej biskup powiedzieli Weronice, by wszystko spisała: całe swoje życie z Bogiem. Była posłuszna. Dzień po dniu, rok po roku pisała przez trzydzieści cztery lata, około 22 000 stron, wszystko ręcznie, bez jednego skreślenia. Nazywamy to jej Dziennikiem. Spisała w nim swoją modlitwę i to, jak blisko czuła się Jezusa. Dawne zapiski Kościoła mówią także, że w sposób, którego nikt nie potrafi w pełni wytłumaczyć, uczestniczyła w Jego cierpieniu. Ale Weronika nigdy nie pisała o bólu, by się nim szczycić. Pisała o miłości.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1145,11 +1145,11 @@ window.VERONICA_STORY_PL = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "title": "Opatka i rury wodociągowe",
   "body": "Mijały lata. W 1716 roku siostry wybrały ją na opatkę, przełożoną klasztoru. I siostry wybierały ją wciąż na nowo aż do końca jej życia. Ona wykorzystała swoją nową posługę do codziennych spraw. Klasztor nigdy nie miał porządnego doprowadzenia wody, więc kazała położyć rury, by ją sprowadzić. Kazała też powiększyć klasztor. Dla Weroniki miłość nie była tylko czymś, co się czuje. To coś, co się buduje.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1165,11 +1165,11 @@ window.VERONICA_STORY_PL = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "title": "Znalazłam Miłość",
   "body": "Weronika bardzo zachorowała. Po długiej chorobie zmarła 9 lipca 1727 roku. Miała sześćdziesiąt sześć lat. Jej ostatnie słowa brzmiały: \"Znalazłam Miłość, Miłość dała się zobaczyć! ... Powiedzcie o tym wszystkim, powiedzcie wszystkim!\" W 1839 roku Kościół ogłosił ją świętą. Jej święto przypada 9 lipca, w dzień, gdy odeszła do domu Boga. Orsola stała się Weroniką: prawdziwym obrazem miłości, za którą podążała przez całe życie.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "scene": "passing",
   "audio": "",
   "reflection": false,
@@ -1186,11 +1186,11 @@ window.VERONICA_STORY_PL = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "title": "Punkty do refleksji",
   "body": "Co twoim zdaniem było najtrudniejsze dla Weroniki? Czekanie na wejście do klasztoru? Zostanie, kiedy było ciężko? A może modlitwa za ludzi, których nigdy nie spotkała? Z dorosłym przeczytaj List do Rzymian, rozdział 8, wersety 38 i 39. Słowami tej książeczki: nic w całym stworzeniu nie może nas odłączyć od miłości Boga. Dzisiaj cicho pomódl się za jedną osobę, która jest smutna lub daleko. A jeśli kiedyś sam poczujesz smutek, powiedz o tym zaufanemu dorosłemu. Boże, dziękujemy, że nas kochasz. Pomóż nam kochać innych tak, jak czyniła to Weronika. Święta Weroniko, módl się za nami. Amen.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "scene": "legacy",
   "audio": "",
   "reflection": true,
@@ -1208,11 +1208,11 @@ window.VERONICA_STORY_PL = [
 
 window.VERONICA_STORY_RU = [
  {
+  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "title": "Меркателло, 1660",
   "body": "В 1660 году в Меркателло, маленьком городке в зелёной долине Италии, родилась девочка. Её родители, Франческо и Бенедетта, назвали её Орсолой. Она была младшей из семи сестёр. Трое из этих сестёр тоже станут монахинями. Никто не мог в тот день догадаться, кем станет младшая сестра. Но у Бога был для неё план. И годы спустя Орсола получит новое имя: Вероника. Оно означает «истинный образ».",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "scene": "birth",
   "audio": "",
   "reflection": false,
@@ -1227,11 +1227,11 @@ window.VERONICA_STORY_RU = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "title": "Желание растёт в Пьяченце",
   "body": "Когда Орсоле было семь лет, её мама умерла. Папа нашёл новую работу в городе под названием Пьяченца, и семья переехала туда вместе с ним. Старое предание говорит, что ещё маленькой девочкой Орсола делилась едой с бедными детьми. А в Пьяченце она начала чувствовать, как в её сердце растёт желание: посвятить всю свою жизнь Иисусу.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1247,11 +1247,11 @@ window.VERONICA_STORY_RU = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "title": "Другие планы отца",
   "body": "За таким желанием бывает нелегко следовать. У отца Орсолы были другие планы на неё. Он хотел выдать её замуж и находил молодых людей, которые надеялись стать её мужем. Но сердце Орсолы тянулось к другому дому: к монастырю, где сёстры живут просто и молятся вместе. Она ждала. Она надеялась. И наконец отец сказал «да».",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1266,11 +1266,11 @@ window.VERONICA_STORY_RU = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "title": "Новое имя",
   "body": "В 1677 году, в семнадцать лет, Орсола переступила порог монастыря в Читта-ди-Кастелло. Монастырь - это место, где сёстры молятся, трудятся и живут рядом с Богом. Орсола стала сестрой бедных кларисс-капуцинок и получила новое имя: Вероника. Ей предстояло прожить в этом единственном монастыре пятьдесят лет.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1286,11 +1286,11 @@ window.VERONICA_STORY_RU = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "title": "Она осталась",
   "body": "Первые годы были нелёгкими. Иногда Веронику тянуло всё бросить и вернуться в мир за стенами монастыря. Она осталась. Год спустя, в 1678 году, она встала перед сёстрами и произнесла торжественные обеты: вся её жизнь, отданная Богу. И она собиралась их сдержать.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1306,11 +1306,11 @@ window.VERONICA_STORY_RU = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "title": "Наставница, которая молилась",
   "body": "Вероника не только молилась. Тридцать четыре года она была сестрой, которая учила новых сестёр. Она руководила ими мудро и заботливо. Она не позволяла им даже читать мистические книги. Она также писала много писем и стихов. И она молилась за людей, которых никогда не встретит: за папу римского, за священников, за всех нуждающихся. «Страдать с радостью, - писала она, - это ключ к любви». Постепенно те, кто руководил ею, увидели, что её молитва - нечто необыкновенное.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1326,11 +1326,11 @@ window.VERONICA_STORY_RU = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "title": "Двадцать две тысячи страниц",
   "body": "И вот в 1693 году один священник и её епископ велели Веронике записать всё: всю её жизнь с Богом. Она послушалась. День за днём, год за годом она писала тридцать четыре года, около 22 000 страниц, всё от руки, без единого зачёркивания. Мы называем это её Дневником. В нём она писала о своей молитве и о том, как близко чувствовала Иисуса. Старинные записи Церкви говорят также, что способом, который никто не может полностью объяснить, она причастилась к Его страданиям. Но Вероника никогда не писала о боли, чтобы гордиться ею. Она писала о любви.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1346,11 +1346,11 @@ window.VERONICA_STORY_RU = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "title": "Настоятельница и водопровод",
   "body": "Проходили годы. В 1716 году сёстры выбрали её настоятельницей монастыря. И сёстры продолжали выбирать её до конца её жизни. Она использовала новое послушание для повседневных дел. В монастыре никогда не было настоящего водоснабжения, и она велела проложить трубы, чтобы провести воду. Она также велела расширить монастырь. Для Вероники любовь была не только тем, что чувствуют. Это то, что строят.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1366,11 +1366,11 @@ window.VERONICA_STORY_RU = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "title": "Я нашла Любовь",
   "body": "Вероника тяжело заболела. После долгой болезни она умерла 9 июля 1727 года. Ей было шестьдесят шесть лет. Её последние слова были: «Я нашла Любовь, Любовь дала увидеть Себя! ... Расскажите всем об этом, расскажите всем!» В 1839 году Церковь провозгласила её святой. День её памяти - 9 июля, день, когда она ушла домой к Богу. Орсола стала Вероникой: истинным образом любви, за которой она следовала всю свою жизнь.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "scene": "passing",
   "audio": "",
   "reflection": false,
@@ -1387,11 +1387,11 @@ window.VERONICA_STORY_RU = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "title": "Вопросы для размышления",
   "body": "Как ты думаешь, что было самым трудным для Вероники? Ждать входа в монастырь? Оставаться, когда было тяжело? Или молиться за людей, которых она никогда не встречала? Вместе со взрослым прочитай Послание к Римлянам, главу 8, стихи 38 и 39. Словами этой книги: ничто во всём творении не может отделить нас от любви Бога. Сегодня тихо помолись за одного человека, который грустит или далеко. А если однажды загрустишь ты сам, расскажи взрослому, которому доверяешь. Боже, спасибо, что любишь нас. Помоги нам любить других так, как это делала Вероника. Святая Вероника, молись о нас. Аминь.",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "scene": "legacy",
   "audio": "",
   "reflection": true,
@@ -1409,11 +1409,11 @@ window.VERONICA_STORY_RU = [
 
 window.VERONICA_STORY_HI = [
  {
+  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "title": "मेरकातेल्लो, 1660",
   "body": "सन् 1660 में, इटली की एक हरी-भरी घाटी में बसे छोटे-से शहर मेरकातेल्लो में एक बच्ची का जन्म हुआ। उसके माता-पिता, फ्रांसेस्को और बेनेडेता, ने उसका नाम ओर्सोला रखा। वे सात बहनों में सबसे छोटी थीं। उन बहनों में से तीन भी बाद में बहनें (नन) बनीं। उस दिन कोई भी अंदाज़ा नहीं लगा सकता था कि सबसे छोटी बहन क्या बनेगी। लेकिन परमेश्वर की उसके लिए एक योजना थी। और वर्षों बाद, ओर्सोला को एक नया नाम मिला: वेरोनिका। इसका अर्थ है \"सच्ची छवि\"।",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "scene": "birth",
   "audio": "",
   "reflection": false,
@@ -1428,11 +1428,11 @@ window.VERONICA_STORY_HI = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "title": "पियाछेन्ज़ा में बढ़ती इच्छा",
   "body": "जब ओर्सोला सात साल की थीं, तब उनकी माँ का निधन हो गया। उनके पिता को पियाछेन्ज़ा नाम के शहर में नया काम मिला, और परिवार उनके साथ वहाँ चला गया। एक पुरानी कहानी कहती है कि बहुत छोटी होते हुए भी ओर्सोला अपना खाना गरीब बच्चों के साथ बाँटती थीं। और पियाछेन्ज़ा में उन्होंने अपने हृदय में कुछ बढ़ता महसूस किया: अपना पूरा जीवन यीशु को देने की इच्छा।",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1448,11 +1448,11 @@ window.VERONICA_STORY_HI = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "title": "पिता की दूसरी योजनाएँ",
   "body": "ऐसी इच्छा का पालन करना कठिन हो सकता है। ओर्सोला के पिता की उनके लिए दूसरी योजनाएँ थीं। वे चाहते थे कि उनका विवाह हो जाए, और उन्होंने ऐसे युवक ढूँढ़े जो उनके पति बनने की आशा रखते थे। लेकिन ओर्सोला का हृदय किसी दूसरे घर में लगा था: एक मठ में, जहाँ बहनें सादगी से रहती हैं और साथ प्रार्थना करती हैं। वे प्रतीक्षा करती रहीं। वे आशा रखती रहीं। और अंत में, उनके पिता ने हाँ कह दी।",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1467,11 +1467,11 @@ window.VERONICA_STORY_HI = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "title": "नया नाम",
   "body": "सन् 1677 में, सत्रह वर्ष की आयु में, ओर्सोला चित्ता दी कास्तेल्लो के एक मठ के द्वार से भीतर गईं। मठ एक ऐसी जगह है जहाँ बहनें प्रार्थना करती हैं, काम करती हैं और परमेश्वर के निकट रहती हैं। ओर्सोला अब कैपुचीन पुअर क्लेयर बहन थीं, और उन्हें उनका नया नाम मिला: वेरोनिका। वे उसी एक मठ में पचास वर्ष तक रहने वाली थीं।",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1487,11 +1487,11 @@ window.VERONICA_STORY_HI = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "title": "वे रुकी रहीं",
   "body": "शुरुआती वर्ष आसान नहीं थे। कभी-कभी वेरोनिका को लगता कि सब छोड़कर बाहर की दुनिया में लौट जाएँ। वे रुकी रहीं। एक वर्ष बाद, 1678 में, वे अपनी बहनों के सामने खड़ी हुईं और अपनी गंभीर प्रतिज्ञाएँ लीं: उनका पूरा जीवन, परमेश्वर को समर्पित। और वे इसे निभाने वाली थीं।",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1507,11 +1507,11 @@ window.VERONICA_STORY_HI = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "title": "प्रार्थना करने वाली शिक्षिका",
   "body": "वेरोनिका केवल प्रार्थना ही नहीं करती थीं। चौंतीस वर्षों तक वे वह बहन रहीं जो नई बहनों को सिखाती थीं। वे उनका बुद्धिमानी और सावधानी से मार्गदर्शन करती थीं। वे उन्हें रहस्यवादी किताबें तक पढ़ने नहीं देती थीं। उन्होंने कई पत्र और कविताएँ भी लिखीं। और वे उन लोगों के लिए प्रार्थना करती थीं जिनसे वे कभी नहीं मिलेंगी: पोप के लिए, पुजारियों के लिए, हर ज़रूरतमंद के लिए। \"आनंद के साथ कष्ट सहना, उन्होंने लिखा, प्रेम की कुंजी है।\" धीरे-धीरे, उनके मार्गदर्शकों ने देखा कि उनकी प्रार्थना कुछ असाधारण थी।",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1527,11 +1527,11 @@ window.VERONICA_STORY_HI = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "title": "बाईस हज़ार पृष्ठ",
   "body": "इसलिए सन् 1693 में, एक पुजारी और उनके बिशप ने वेरोनिका से कहा कि वे सब कुछ लिख दें: परमेश्वर के साथ उनका पूरा जीवन। वे आज्ञाकारी रहीं। दिन-ब-दिन, वर्ष-ब-वर्ष, उन्होंने चौंतीस वर्षों तक लिखा, लगभग 22,000 पृष्ठ, सब हाथ से, बिना एक भी कट-पीट के। हम इसे उनकी डायरी कहते हैं। इसमें उन्होंने अपनी प्रार्थना के बारे में लिखा, और यह भी कि वे यीशु के कितने निकट अनुभव करती थीं। चर्च के पुराने अभिलेख यह भी कहते हैं कि, एक ऐसी रीति से जिसे कोई पूरी तरह समझा नहीं सकता, वे उसके दुःख में सहभागी हुईं। लेकिन वेरोनिका ने कभी भी दर्द के बारे में घमंड के लिए नहीं लिखा। उन्होंने प्रेम के बारे में लिखा।",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1547,11 +1547,11 @@ window.VERONICA_STORY_HI = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "title": "मठाधीशिन और पानी के पाइप",
   "body": "वर्ष बीतते गए। सन् 1716 में, बहनों ने उन्हें मठाधीशिन चुना, मठ की अगुवाई करने वाली। और बहनें उन्हें जीवन भर चुनती रहीं। उन्होंने अपने नए पद का उपयोग रोज़मर्रा की बातों में किया। मठ में कभी भी पानी की उचित व्यवस्था नहीं थी, इसलिए उन्होंने पानी लाने के लिए पाइप बिछवाए। उन्होंने मठ को बड़ा भी करवाया। वेरोनिका के लिए प्रेम केवल महसूस करने की बात नहीं थी। यह वह है जिसे बनाया जाता है।",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1567,11 +1567,11 @@ window.VERONICA_STORY_HI = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "title": "मैंने प्रेम को पा लिया",
   "body": "वेरोनिका बहुत बीमार हो गईं। एक लंबी बीमारी के बाद, उनका निधन 9 जुलाई 1727 को हुआ। वे छियासठ वर्ष की थीं। उनके अंतिम शब्द थे: \"मैंने प्रेम को पा लिया, प्रेम ने स्वयं को दिखा लिया है! ... इसे सबसे कहो, सबसे कहो!\" सन् 1839 में, चर्च ने उन्हें संत घोषित किया। उनका पर्व-दिन 9 जुलाई है, वह दिन जब वे परमेश्वर के घर चली गईं। ओर्सोला, वेरोनिका बन चुकी थी: उस प्रेम की सच्ची छवि, जिसका पालन उन्होंने जीवन भर किया।",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "scene": "passing",
   "audio": "",
   "reflection": false,
@@ -1588,11 +1588,11 @@ window.VERONICA_STORY_HI = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "title": "मनन के बिंदु",
   "body": "तुम्हारे विचार में वेरोनिका के लिए सबसे कठिन क्या रहा? मठ में प्रवेश की प्रतीक्षा? कठिन समय में टिके रहना? या उन लोगों के लिए प्रार्थना जिनसे वे कभी नहीं मिलीं? किसी बड़े के साथ, रोमीयों के नाम पत्र का अध्याय 8, पद 38 और 39 पढ़ो। इस पुस्तक के शब्दों में: सारी सृष्टि में कुछ भी हमें परमेश्वर के प्रेम से अलग नहीं कर सकता। आज, किसी एक उदास या दूर रहने वाले व्यक्ति के लिए चुपचाप प्रार्थना करो। और अगर कभी तुम स्वयं उदास महसूस करो, तो किसी भरोसेमंद बड़े को बताओ। हे परमेश्वर, हमें प्रेम करने के लिए धन्यवाद। हमें दूसरों से वैसा प्रेम करने में मदद करो जैसा वेरोनिका ने किया। संत वेरोनिका, हमारे लिए प्रार्थना कर। आमीन।",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "scene": "legacy",
   "audio": "",
   "reflection": true,
@@ -1610,11 +1610,11 @@ window.VERONICA_STORY_HI = [
 
 window.VERONICA_STORY_TH = [
  {
+  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "title": "เมร์กาเตลโล ค.ศ. 1660",
   "body": "ในปี ค.ศ. 1660 ที่เมร์กาเตลโล เมืองเล็ก ๆ ในหุบเขาสีเขียวของอิตาลี มีเด็กหญิงคนหนึ่งเกิดมา พ่อและแม่ของเธอคือฟรานเชสโกและเบเนเด็ตตา ตั้งชื่อให้เธอว่า ออร์โซลา เธอเป็นลูกคนสุดท้องในพี่น้องผู้หญิงเจ็ดคน พี่น้องสามคนในหมู่นั้นจะได้เป็นแม่ชีในภายหลังเช่นกัน ไม่มีใครเดาได้ในวันนั้นว่าเด็กคนเล็กคนนี้จะกลายเป็นใคร แต่พระเจ้ามีแผนสำหรับเธอ และหลายปีต่อมา ออร์โซลาจะได้รับชื่อใหม่ว่า เวโรนิกา ซึ่งแปลว่า \"ภาพที่แท้จริง\"",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "scene": "birth",
   "audio": "",
   "reflection": false,
@@ -1629,11 +1629,11 @@ window.VERONICA_STORY_TH = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "title": "ความปรารถนางอกงามที่ปิอาเชนซา",
   "body": "เมื่อออร์โซลาอายุเจ็ดขวบ แม่ของเธอเสียชีวิต พ่อของเธอได้งานใหม่ในเมืองที่ชื่อปิอาเชนซา ครอบครัวจึงย้ายไปอยู่ที่นั่นด้วยกัน เรื่องเก่าเล่าว่า แม้ตอนยังเป็นเด็กเล็ก ออร์โซลาก็แบ่งอาหารของตัวเองให้เด็กยากจน และในปิอาเชนซา เธอเริ่มรู้สึกถึงบางอย่างที่งอกงามในหัวใจ: ความปรารถนาที่จะถวายชีวิตทั้งหมดให้แด่พระเยซู",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1649,11 +1649,11 @@ window.VERONICA_STORY_TH = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "title": "แผนอื่นของพ่อ",
   "body": "ความปรารถนาเช่นนี้อาจทำตามได้ยาก พ่อของออร์โซลามีแผนอื่นให้เธอ ท่านอยากให้เธอแต่งงาน และหาหนุ่ม ๆ ที่หวังจะเป็นสามีของเธอ แต่หัวใจของออร์โซลาผูกพันกับบ้านอีกหลังหนึ่ง: อาราม ที่ซึ่งเหล่าแม่ชีใช้ชีวิตเรียบง่ายและภาวนาร่วมกัน เธอรอคอย เธอมีความหวัง และในที่สุด พ่อของเธอก็ตอบตกลง",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1668,11 +1668,11 @@ window.VERONICA_STORY_TH = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "title": "ชื่อใหม่",
   "body": "ในปี ค.ศ. 1677 เมื่อออร์โซลาอายุสิบเจ็ดปี เธอก้าวผ่านประตูของอารามแห่งหนึ่งในชิตตา ดี กัสเตลโล อารามคือสถานที่ที่เหล่าแม่ชีภาวนา ทำงาน และอยู่ใกล้ชิดพระเจ้า ออร์โซลาได้เป็นแม่ชีคณะคาปูชินแพวร์แคลร์ และได้รับชื่อใหม่ว่า เวโรนิกา เธอจะอยู่ในอารามแห่งเดียวนั้นนานห้าสิบปี",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1688,11 +1688,11 @@ window.VERONICA_STORY_TH = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "title": "เธออยู่ต่อ",
   "body": "ปีแรก ๆ ไม่ง่ายเลย บางครั้งเวโรนิกาก็ถูกล่อลวงให้ทิ้งทุกอย่างและกลับไปสู่โลกภายนอก แต่เธออยู่ต่อ หนึ่งปีต่อมา ในปี ค.ศ. 1678 เธอยืนต่อหน้าพวกพี่น้องและประกาศคำมั่นสัญญาอันศักดิ์สิทธิ์: ทั้งชีวิตของเธอถวายแด่พระเจ้า และเธอตั้งใจจะรักษาคำสัญญานั้น",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1708,11 +1708,11 @@ window.VERONICA_STORY_TH = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "title": "ครูผู้ภาวนา",
   "body": "เวโรนิกาไม่ได้ทำเพียงภาวนาเท่านั้น ตลอดสามสิบสี่ปี เธอเป็นแม่ชีผู้สอนแม่ชีรุ่นใหม่ เธอนำทางพวกเขาด้วยสติปัญญาและความรอบคอบ เธอไม่ยอมให้พวกเขาอ่านหนังสือลึกลับด้วยซ้ำ เธอยังเขียนจดหมายและบทกวีมากมาย และเธอภาวนาเพื่อผู้คนที่เธอจะไม่มีวันได้พบ: เพื่อพระสันตะปาปา เพื่อบรรดาพระสงฆ์ เพื่อทุกคนที่ขัดสน \"ทนทุกข์ด้วยความชื่นชม\" เธอเขียนไว้ \"คือกุญแจสู่ความรัก\" ทีละน้อย ผู้ที่นำทางเธอก็เห็นว่าการภาวนาของเธอเป็นเรื่องเหนือธรรมดา",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1728,11 +1728,11 @@ window.VERONICA_STORY_TH = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "title": "สองหมื่นสองพันหน้า",
   "body": "ดังนั้นในปี ค.ศ. 1693 พระสงฆ์องค์หนึ่งและพระสังฆราชของเธอจึงบอกให้เวโรนิกาเขียนทุกอย่างลงไป: ทั้งชีวิตของเธอกับพระเจ้า เธอก็เชื่อฟัง วันแล้ววันเล่า ปีแล้วปีเล่า เธอเขียนตลอดสามสิบสี่ปี ราว 22,000 หน้า ทั้งหมดด้วยลายมือ โดยไม่มีการขีดฆ่าเลยแม้แต่ครั้งเดียว เราเรียกมันว่า ไดอารี่ของเธอ ในนั้นเธอเขียนเกี่ยวกับการภาวนาของเธอ และเกี่ยวกับความใกล้ชิดที่เธอรู้สึกต่อพระเยซู บันทึกเก่าของคริสตจักรยังบอกด้วยว่า ในลักษณะที่ไม่มีใครอธิบายได้อย่างครบถ้วน เธอได้มีส่วนร่วมในความทุกข์ทรมานของพระองค์ แต่เวโรนิกาไม่เคยเขียนเรื่องความเจ็บปวดเพื่อภาคภูมิใจในสิ่งนั้น เธอเขียนเรื่องความรัก",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1748,11 +1748,11 @@ window.VERONICA_STORY_TH = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "title": "หัวหน้าแม่ชีกับท่อน้ำ",
   "body": "หลายปีผ่านไป ในปี ค.ศ. 1716 เหล่าแม่ชีเลือกเธอเป็นหัวหน้าแม่ชี ผู้นำของอาราม และพวกพี่น้องก็เลือกเธอเรื่อยมาจนสิ้นชีวิต เธอใช้ตำแหน่งใหม่เพื่อเรื่องประจำวัน อารามไม่เคยมีระบบน้ำที่ดีมาก่อน เธอจึงให้วางท่อเพื่อนำน้ำเข้ามา เธอยังให้ขยายอารามให้ใหญ่ขึ้นด้วย สำหรับเวโรนิกา ความรักไม่ใช่เพียงสิ่งที่รู้สึก แต่เป็นสิ่งที่สร้างขึ้น",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1768,11 +1768,11 @@ window.VERONICA_STORY_TH = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "title": "ข้าได้พบความรักแล้ว",
   "body": "เวโรนิกาป่วยหนักมาก หลังจากเจ็บป่วยนาน เธอเสียชีวิตในวันที่ 9 กรกฎาคม ค.ศ. 1727 เธออายุหกสิบหกปี คำสุดท้ายของเธอคือ: \"ข้าได้พบความรักแล้ว ความรักได้ให้เห็นตัวพระองค์แล้ว! ... จงบอกทุกคนเถิด บอกทุกคนเถิด!\" ในปี ค.ศ. 1839 คริสตจักรประกาศให้เธอเป็นนักบุญ วันฉลองของเธอคือ 9 กรกฎาคม วันที่เธอกลับบ้านสู่พระเจ้า ออร์โซลาได้กลายเป็นเวโรนิกา: ภาพที่แท้จริงของความรักที่เธอติดตามมาตลอดชีวิต",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "scene": "passing",
   "audio": "",
   "reflection": false,
@@ -1789,11 +1789,11 @@ window.VERONICA_STORY_TH = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "title": "ประเด็นไตร่ตรอง",
   "body": "เธอคิดว่าอะไรยากที่สุดสำหรับเวโรนิกา? การรอคอยที่จะเข้าอาราม? การอยู่ต่อเมื่อมันยาก? หรือการภาวนาเพื่อผู้คนที่เธอไม่เคยพบ? กับผู้ใหญ่ อ่านจดหมายถึงชาวโรม บทที่ 8 ข้อ 38 และ 39 ตามถ้อยคำของหนังสือเล่มนี้: ไม่มีสิ่งใดในปฐพีทั้งมวลที่จะแยกเราออกจากความรักของพระเจ้าได้ วันนี้ จงภาวนาอย่างเงียบ ๆ เพื่อคนหนึ่งคนที่เศร้าหรืออยู่ไกล และถ้าเธอรู้สึกเศร้าเอง จงบอกผู้ใหญ่ที่เชื่อถือได้ ข้าแต่พระเจ้า ขอขอบพระคุณที่ทรงรักเรา โปรดช่วยเราให้รักผู้อื่นอย่างที่เวโรนิกาได้ทำ นักบุญเวโรนิกา โปรดภาวนาเพื่อเรา อาเมน",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "scene": "legacy",
   "audio": "",
   "reflection": true,
@@ -1811,11 +1811,11 @@ window.VERONICA_STORY_TH = [
 
 window.VERONICA_STORY_ZH_HANS = [
  {
+  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "title": "梅尔卡泰洛，1660年",
   "body": "公元1660年，在意大利绿色山谷中的小镇梅尔卡泰洛，一个女婴出生了。她的父母方济各和本妮黛塔给她取名奥尔索拉。她是七个姐妹中最小的一个。这些姐妹中有三个后来也成为了修女。那一天，谁也猜不到这个最小的妹妹将来会成为什么样的人。但天主为她有一个计划。多年以后，奥尔索拉将得到一个新名字：韦罗尼加。意思是\"真实的肖像\"。",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-01.webp",
   "scene": "birth",
   "audio": "",
   "reflection": false,
@@ -1830,11 +1830,11 @@ window.VERONICA_STORY_ZH_HANS = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "title": "愿望在皮亚琴察生长",
   "body": "奥尔索拉七岁时，妈妈去世了。爸爸在一座叫皮亚琴察的城市找到了新工作，全家随他搬到了那里。一个古老的故事说，奥尔索拉还是个小女孩时，就把自己的食物分给穷孩子们。在皮亚琴察，她开始感觉到心里有一样东西在生长：一个愿望，把自己的一生完全献给耶稣。",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-02.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1850,11 +1850,11 @@ window.VERONICA_STORY_ZH_HANS = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "title": "父亲另外的打算",
   "body": "这样的愿望要追随并不容易。奥尔索拉的父亲对她另有打算。他想让她出嫁，还找来希望做她丈夫的年轻人。但奥尔索拉的心牵挂着另一个家：修道院，在那里修女们生活简朴、一起祈祷。她等待着。她怀着希望。终于，父亲答应了。",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-03.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1869,11 +1869,11 @@ window.VERONICA_STORY_ZH_HANS = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "title": "新名字",
   "body": "1677年，十七岁的奥尔索拉走进了卡斯泰洛城一座修道院的大门。修道院是修女们祈祷、工作、亲近天主生活的地方。奥尔索拉成为了一名加布遣贫穷佳兰修女会的修女，并得到了她的新名字：韦罗尼加。她将在这同一座修道院里度过五十年。",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-04.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1889,11 +1889,11 @@ window.VERONICA_STORY_ZH_HANS = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "title": "她留下了",
   "body": "最初的几年并不容易。有时韦罗尼加也受到诱惑，想放弃一切，回到外面的世界。她留下了。一年后，1678年，她站在修女们面前，许下庄严的誓愿：把一生献给天主。她是打算信守这个誓愿的。",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-05.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1909,11 +1909,11 @@ window.VERONICA_STORY_ZH_HANS = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "title": "祈祷的老师",
   "body": "韦罗尼加不只是祈祷。三十四年间，她是教导新修女的修女。她智慧而细心地引导她们，甚至不让她们读神秘学的书。她还写了许多书信和诗歌。她也为自己永远不会见面的人祈祷：为教宗、为神父们、为每一个有需要的人。\"带着喜乐受苦，\"她写道，\"是爱的钥匙。\"渐渐地，指导她的人们看出，她的祈祷非同寻常。",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-06.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1929,11 +1929,11 @@ window.VERONICA_STORY_ZH_HANS = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "title": "两万两千页",
   "body": "于是1693年，一位神父和她的主教吩咐韦罗尼加把一切都写下来：她与天主一起的整个生命。她服从了。日复一日，年复一年，她写了三十四年，约22,000页，全部手写，没有一处涂改。我们称之为她的《日记》。在日记中，她写下自己的祈祷，以及她感到与耶稣多么亲近。教会的古老记录还说，以一种无人能完全解释的方式，她分担了祂的痛苦。但韦罗尼加写痛苦从来不是为引以为傲。她写的是爱。",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-07.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1949,11 +1949,11 @@ window.VERONICA_STORY_ZH_HANS = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "title": "院长嬷嬷和水管",
   "body": "岁月流逝。1716年，修女们选她做院长，修道院的负责人。而且修女们一生都不断选她连任。她把新的职责用在日常的事情上。修道院从来没有过像样的供水，她就命人铺设水管把水引进来。她还命人扩建了修道院。对韦罗尼加来说，爱不只是心里感受到的东西。爱是亲手建造出来的。",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-08.webp",
   "scene": "vocation",
   "audio": "",
   "reflection": false,
@@ -1969,11 +1969,11 @@ window.VERONICA_STORY_ZH_HANS = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "title": "我找到了爱",
   "body": "韦罗尼加病得很重。久病之后，她于1727年7月9日去世，享年六十六岁。她最后的话是：\"我找到了爱，爱让自己被看见了！……告诉大家，告诉大家！\"1839年，教会册封她为圣人。她的瞻礼日是7月9日，就是她回归天家的日子。奥尔索拉成为了韦罗尼加：她一生追随的爱的真实肖像。",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-09.webp",
   "scene": "passing",
   "audio": "",
   "reflection": false,
@@ -1990,11 +1990,11 @@ window.VERONICA_STORY_ZH_HANS = [
   ]
  },
  {
+  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "title": "反思要点",
   "body": "你觉得对韦罗尼加来说最难的是什么？是等待进入修道院？是艰难时的坚持？还是为从未见过的人祈祷？和大人一起读罗马书第8章38和39节。用这本书的话说：整个受造界中，没有什么能使我们与天主的爱隔绝。今天，安静地为一位伤心或远方的人祈祷。如果你自己感到难过，就告诉一位你信任的大人。天主，感谢你爱我们。求你帮助我们像韦罗尼加那样去爱别人。圣女韦罗尼加，请为我们祈祷。阿们。",
   "prayer": "",
   "heart": "",
-  "illustration": "./media/storybook-veronica/images/page-10.webp",
   "scene": "legacy",
   "audio": "",
   "reflection": true,

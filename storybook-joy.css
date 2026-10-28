@@ -421,3 +421,18 @@ body.is-story-page .saint-bio-text, body.is-story-page .saint-facts { overflow-w
 body.is-story-page .saint-bio .saint-key { margin: 0 0 1.2rem; padding: 1rem 1.2rem; max-width: 62ch; background: rgba(214, 170, 98, .1); border: 1px solid rgba(214, 170, 98, .35); border-inline-start: 4px solid #e3bd7a; border-radius: 14px; }
 body.is-story-page .saint-bio .saint-key h3 { margin: 0 0 .35rem; font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #e3bd7a; }
 body.is-story-page .saint-bio .saint-key p { margin: 0; font-size: 1.05rem; line-height: 1.65; color: #f4e9d8; }
+
+/* Veronica-only: under the dark base sheet the evidence panel keeps the base gradient,
+   which leaves this theme's dark claim text on a dark panel. Give the panel the same
+   light surface as the surrounding storybook cards. Scoped by data-story so the 19
+   legacy storybooks keep their exact rendering. */
+body.is-story-page[data-story="veronica"] .story-evidence {
+  background: #fffaf0;
+  border-color: #d5b98a;
+}
+body.is-story-page[data-story="veronica"] .story-evidence h3 {
+  color: #38291d;
+}
+body.is-story-page[data-story="veronica"] .story-evidence-links {
+  opacity: 1;
+}

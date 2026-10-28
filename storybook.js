@@ -107,10 +107,10 @@
   };
 
   const EVIDENCE_SOURCES = {
-    veronicaBenedict: {label: null, url: "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101215.html"},
-    veronicaNewAdvent: {label: null, url: "https://www.newadvent.org/cathen/15363a.htm"},
-    veronicaTreccani: {label: "Enciclopedia Treccani, \"Veronica Giuliani, santa\"", url: "https://www.treccani.it/enciclopedia/santa-veronica-giuliani/"},
-    romansUsccb8: {label: "Romans 8:38-39 (USCCB, New American Bible)", url: "https://bible.usccb.org/bible/romans/8"},
+    veronicaBenedict: {label: null, lang: 'en', url: "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101215.html"},
+    veronicaNewAdvent: {label: null, lang: 'en', url: "https://www.newadvent.org/cathen/15363a.htm"},
+    veronicaTreccani: {label: null, lang: 'it', url: "https://www.treccani.it/enciclopedia/santa-veronica-giuliani/"},
+    romansUsccb8: {label: null, lang: 'en', url: "https://bible.usccb.org/bible/romans/8"},
     sergiusPsalm133: {label: "USCCB: Psalm 133", url: "https://bible.usccb.org/bible/psalms/133"},
     sergiusPassion: {label: "The Passion of Saints Serge and Bacchus (English translation)", url: "http://www.geocities.ws/mervatiskandercoptic/Synex/01/78Serge_Bacchus.htm"},
     sergiusCE: {label: "Catholic Encyclopedia: Sergius and Bacchus", url: "https://www.newadvent.org/cathen/13728a.htm"},
@@ -1077,7 +1077,11 @@
   const linkMarkup = sourceId => {
     const source = EVIDENCE_SOURCES[sourceId];
     if (!source) return '';
-    const label = (storyId === 'veronica' && UI.sources && UI.sources[sourceId]) || source.label || source.url;
+    let label = (storyId === 'veronica' && UI.sources && UI.sources[sourceId]) || source.label || source.url;
+    if (storyId === 'veronica' && source.lang && source.lang !== contentLang) {
+      const q = source.lang === 'it' ? UI.sourceItalianQualifier : UI.shelfEnglishQualifier;
+      if (q) label += ' ' + q;
+    }
     return `<a href="${source.url}" target="_blank" rel="noopener">${label}</a>`;
   };
 
@@ -1106,7 +1110,7 @@
       const sourceLinks = (item.sources || []).map(linkMarkup).filter(Boolean).join(' | ');
       return `
         <li>
-          <span class="story-evidence-type">${item.type}</span>
+          <span class="story-evidence-type">${(storyId === 'veronica' && UI.evidenceTypes && UI.evidenceTypes[item.type]) || item.type}</span>
           ${item.claim}
           <span class="story-evidence-links">${sourceLinks}</span>
         </li>
