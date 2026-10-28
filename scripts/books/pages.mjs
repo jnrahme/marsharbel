@@ -92,7 +92,7 @@ function derive(f) {
     ogLocale: f.ogLocales === 'all' ? '  {{> head-og-locales}}' : (f.ogLocales || []).map((l, i) => i === 0 ? `<meta property="og:locale" content="${l}" />` : `<meta property="og:locale:alternate" content="${l}" />`).join('\n'),
     pageCount: String(pages ? pages.length : f.pageCount), disclosureAttr: f.specificDisclosure ? ' data-story-specific-disclosure=""' : '', footerFragment: f.footerFragment || 'footer-credit-b',
     summary: f.summaryHtml ?? '', family: f.familyReadingHtml ?? '', about: f.aboutHtml ?? '', faqArgs: hasFaq ? faqArgs(f.faq) : '',
-    faqCard: hasFaq ? faqCard(f.faq) : '', related: f.related ? relList(f.related) : '', footer: f.footerCredit, dataFile: f.dataFile ?? '',
+    faqCard: hasFaq ? faqCard(f.faq) : '', related: f.related ? relList(f.related) : '', footer: f.footerCredit, dataFile: f.dataFile ?? '', dataFileExtra: (f.dataFileExtra || []).map(x => '\n<script defer="" src="' + x + '"></script>').join(''),
     fontPreloads: f.fontPreloadsFragment ? '  {{> head-font-preloads}}' : `<link as="font" crossorigin="" href="./media/fonts/cormorant-garamond-latin-v1.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="./media/fonts/manrope-latin-v1.woff2" rel="preload" type="font/woff2"/>`,
     productionNote: f.productionNote === null ? '' : (f.productionNote ?? DEFAULT_NOTE),
@@ -166,7 +166,8 @@ function extract(html) {
     ...(datesM ? { dates: { heading: datesM[1], items: [...datesM[2].matchAll(/<li>(.*?)<\/li>/g)].map(m => m[1]), ...(datesM[3] ? { noteHtml: datesM[3] } : {}) } } : {}),
     ...(researchM ? { research: { heading: researchM[1], items: [...researchM[2].matchAll(/<li>(.*?)<\/li>/g)].map(m => m[1]), ...(researchM[3] ? { tailHtml: researchM[3] } : {}) } } : {}),
     ...(filmM ? { film: { ...(lv ? { videoLd: (([n, d, th, cu, ud, dur, lang]) => ({ name: n, description: d, thumbnail: th, contentUrl: cu, uploadDate: ud, duration: dur, inLanguage: lang }))(tokens(lv)) } : {}), heading: filmM[1], subHtml: filmM[2], videoId: filmM[3], poster: filmM[4], src: filmM[5], badgeLabel: filmM[6], noteHtml: filmM[7], ...(trM ? { transcript: { sectionId: trM[1], heading: trM[2], subHtml: trM[3], summary: trM[4] } } : {}) } } : {}),
-    dataFile: (/<script defer(?:="")? src="([\w-]+-data\.js)"/.exec(c) || [])[1] ?? null
+    dataFile: (/<script defer(?:="")? src="([\w-]+-data\.js)"/.exec(c) || [])[1] ?? null,
+    ...((extra => extra.length ? { dataFileExtra: extra } : {})([...c.matchAll(/<script defer(?:="")? src="([\w-]+-data\.js)"/g)].slice(1).map(m => m[1])))
   };
   if (hs[4] !== `${SITE}/${out.firstImage}`) out.ogImage = hs[4];
   if (lw[5] !== out.seoDescription) out.descLd = lw[5];
