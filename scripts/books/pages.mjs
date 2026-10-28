@@ -13,6 +13,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const R = (...p) => path.join(ROOT, ...p);
 const mode = process.argv[2] || '--check';
 const TEMPLATE = fs.readFileSync(R('templates/books/story-page.html'), 'utf8');
+const REGISTRY = JSON.parse(fs.readFileSync(R('locales/registry.json'), 'utf8'));
 const SITE = 'https://marsharbel.com';
 const q = s => '"' + s.replace(/(?<!\\)"/g, '\\"') + '"'; // partial args are inserted verbatim (build-pages does no unescaping); inner quotes must stay backslash-escaped
 const faqArgs = pairs => pairs.flatMap(p => [q(p.q), q(p.ldA ?? p.a)]).join(' ');
@@ -108,6 +109,16 @@ function render(f) {
   const on = { ogLocale: !!(f.ogLocales && f.ogLocales.length), preLine: !!f.reflectionPreLine, summary: f.summaryHtml != null, family: f.familyReadingHtml != null, dataFile: !!f.dataFile, saintBio: !!f.saintBio, faq: !!(f.faq && f.faq.length), faqSection: !!(f.faq && f.faq.length), related: !!f.related, about: f.aboutHtml != null, productionNote: f.productionNote !== null, videoLd: !!f.film?.videoLd, film: !!f.film, learn: !!f.learn, dates: !!f.dates, research: !!f.research };
   let t = TEMPLATE.replace(/<!--opt:(\w+)-->([\s\S]*?)<!--\/opt:\1-->/g, (_, k, body) => on[k] ? body : '');
   t = t.replace(/@@(\w+)@@/g, (_, k) => { if (!(k in d)) throw new Error('template slot ' + k); return d[k]; });
+  // Mirrored families (locales/registry.json pageMirrors) publish the full locale
+  // alternate set; single-locale books keep the template's self-referential pair.
+  const mirror = Object.values(REGISTRY.pageMirrors || {}).find(m => m.master === f.slug + '.html');
+  if (mirror) {
+    const en = typeof mirror.english === 'string' ? mirror.english : mirror.english.route;
+    const lines = ['  <!-- hreflang:begin -->', `  <link rel="alternate" hreflang="en" href="${SITE}${en}" />`,
+      ...Object.keys(REGISTRY.locales).filter(c => c !== 'en').map(c => `  <link rel="alternate" hreflang="${c}" href="${SITE}${mirror.routes[c]}" />`),
+      `  <link rel="alternate" hreflang="x-default" href="${SITE}${en}" />`, '<!-- hreflang:end -->'];
+    t = t.replace(/<!-- hreflang:begin -->[\s\S]*?<!-- hreflang:end -->/, lines.join('\n'));
+  }
   for (const a of f.bareAttrs || []) t = t.split(` ${a}=""`).join(` ${a}`); // legacy pages write boolean attributes bare
   return t;
 }
