@@ -1672,7 +1672,7 @@
         if (hero && !hero.querySelector('.story-shelf-link')) {
           const shelfLink = document.createElement('a');
           shelfLink.className = 'story-shelf-link';
-          shelfLink.href = './stories';
+          shelfLink.href = '/stories';
           shelfLink.textContent = messages.allStories;
           hero.appendChild(shelfLink);
         }
