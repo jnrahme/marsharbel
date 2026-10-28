@@ -31,6 +31,9 @@
     th: { global: 'VERONICA_STORY_TH', voice: 'th-TH' },
     'zh-Hans': { global: 'VERONICA_STORY_ZH_HANS', voice: 'zh-CN' }
   };
+  // Honest English qualifier for the return-to-shelf control on non-EN editions (the shelf
+  // itself is English-only). Strings reuse the site's own per-locale englishQualifier values.
+  const VERONICA_SHELF_EN_QUALIFIER = { ar: '(بالإنجليزية)', fr: '(en anglais)' };
   const resolveVeronicaLang = (id, queryLang, docLang) => {
     if (id !== 'veronica') return null;
     // Case-insensitive lookup (?lang= arrives lowercased; document lang may be zh-Hans),
@@ -1680,7 +1683,10 @@
           // The shelf is English-only; the locale hint lets its Veronica card route back to
           // this edition. Legacy books keep the plain /stories return.
           shelfLink.href = storyId === 'veronica' && contentLang !== 'en' ? `/stories?lang=${encodeURIComponent(contentLang.toLowerCase())}` : '/stories';
-          shelfLink.textContent = messages.allStories;
+          shelfLink.textContent = messages.allStories
+            + (storyId === 'veronica' && contentLang !== 'en'
+              ? ' ' + (UI.shelfEnglishQualifier || VERONICA_SHELF_EN_QUALIFIER[contentLang] || '')
+              : '');
           hero.appendChild(shelfLink);
         }
         const summary = document.querySelector(['.story-settings', 'summary'].join(' '));
