@@ -219,6 +219,63 @@ class NewsDeskTests(unittest.TestCase):
             credit_hrefs = [a.get('href') for a in soup.select('.news-credits-list a')]
             self.assertIn(url, credit_hrefs)
 
+    def test_ukraine_ceasefire_row_en_ar_parity(self):
+        from bs4 import BeautifulSoup
+        rid = 'ukraine-oleshky-ceasefire-2026-10-28'
+        en_text = (ROOT/'news.html').read_text()
+        ar_text = (ROOT/'ar/news.html').read_text()
+        self.assertEqual(en_text.count(f'id="{rid}"'), 1)
+        self.assertEqual(ar_text.count(f'id="{rid}"'), 1)
+        en = BeautifulSoup(en_text, 'html.parser')
+        ar = BeautifulSoup(ar_text, 'html.parser')
+        en_row = en.select_one(f'article#{rid}')
+        ar_row = ar.select_one(f'article#{rid}')
+        self.assertIsNotNone(en_row)
+        self.assertIsNotNone(ar_row)
+        url = 'https://www.vaticannews.va/en/world/news/2026-10/pope-leo-s-appeals-help-bring-ceasefire-to-southern-ukraine.html'
+        en_links = [a.get('href') for a in en_row.select('a')]
+        ar_links = [a.get('href') for a in ar_row.select('a')]
+        self.assertEqual(en_links, [url])
+        self.assertEqual(en_links, ar_links)
+        self.assertIn('chip-update', en_row.select_one('.chip').get('class'))
+        self.assertIn('chip-update', ar_row.select_one('.chip').get('class'))
+        self.assertEqual(en_row.select_one('time').get('datetime'), '2026-10-28')
+        # Local humanitarian respite only: no nationwide-ceasefire or sole-causation claim.
+        self.assertIn('Oleshky', en_row.get_text(' '))
+        self.assertIn('أوليشكي', ar_row.get_text(' '))
+        self.assertNotIn('nationwide', en_row.get_text(' ').lower())
+        for soup in (en, ar):
+            credit_hrefs = [a.get('href') for a in soup.select('.news-credits-list a')]
+            self.assertIn(url, credit_hrefs)
+
+    def test_acn_report_row_en_ar_parity(self):
+        from bs4 import BeautifulSoup
+        rid = 'acn-persecuted-forgotten-2026-10-27'
+        en_text = (ROOT/'news.html').read_text()
+        ar_text = (ROOT/'ar/news.html').read_text()
+        self.assertEqual(en_text.count(f'id="{rid}"'), 1)
+        self.assertEqual(ar_text.count(f'id="{rid}"'), 1)
+        en = BeautifulSoup(en_text, 'html.parser')
+        ar = BeautifulSoup(ar_text, 'html.parser')
+        en_row = en.select_one(f'article#{rid}')
+        ar_row = ar.select_one(f'article#{rid}')
+        self.assertIsNotNone(en_row)
+        self.assertIsNotNone(ar_row)
+        url = 'https://acninternational.org/christian-persecution-worsens-in-much-of-the-world-according-to-new-acn-report/'
+        en_links = [a.get('href') for a in en_row.select('a')]
+        ar_links = [a.get('href') for a in ar_row.select('a')]
+        self.assertEqual(en_links, [url])
+        self.assertEqual(en_links, ar_links)
+        self.assertIn('chip-update', en_row.select_one('.chip').get('class'))
+        self.assertIn('chip-update', ar_row.select_one('.chip').get('class'))
+        self.assertEqual(en_row.select_one('time').get('datetime'), '2026-10-27')
+        # Bounded finding: 55 percent of the 18 countries examined, not all countries.
+        self.assertIn('18 countries examined', en_row.get_text(' '))
+        self.assertIn('الثمانية عشر', ar_row.get_text(' '))
+        for soup in (en, ar):
+            credit_hrefs = [a.get('href') for a in soup.select('.news-credits-list a')]
+            self.assertIn(url, credit_hrefs)
+
     def test_massabki_row_en_ar_parity(self):
         from bs4 import BeautifulSoup
         rid = 'massabki-centenary-aqoura-2026-10-25'
