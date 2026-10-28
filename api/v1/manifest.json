@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "contentVersion": "af9b1aa4ac0679ff",
+ "contentVersion": "7db8131043228599",
  "apiBase": "/api/v1",
  "media": {
   "base": "https://marsharbel.com/",
@@ -377,6 +377,24 @@
      "path": "/api/v1/books/mother-teresa-story/en.json",
      "sha256": "e3005c7fa3c40b378560802d5e785fa822cedb5bc462db9b5ca034e6e00b172c",
      "bytes": 19060
+    }
+   }
+  },
+  {
+   "id": "bk-veronica-giuliani",
+   "slug": "veronica-giuliani-story",
+   "access": "public",
+   "status": "published",
+   "order": 20,
+   "shelf": "centuries",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/veronica-giuliani-story/en.json",
+     "sha256": "fe7c2d2573f6af5ba95e84056167e4a965e4705e103bb6a82d4cd4bc6ac4a834",
+     "bytes": 14789
     }
    }
   }
