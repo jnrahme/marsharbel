@@ -68,7 +68,13 @@ for (const b of books) {
         id: p.id, index: p.index, kind: p.kind, scene: p.scene, access: p.access,
         title: x.title, body: x.body, prayer: x.prayer || null, heart: x.heart || null,
         image: p.image, imageAlt: x.alt || null, audio: aud,
-        evidence: (p.evidence || []).map(e => ({ type: e.type, claim: e.claim, sources: e.sources || [] }))
+        evidence: (p.evidence || []).map((e, ei) => {
+          // Veronica only: project the locale catalog's translated claim onto the pinned
+          // type/sources structure. AR's catalog claims are byte-identical to the pin, so the
+          // AR feed is unchanged; books without evidenceClaims keep the book.json claim.
+          const localized = b.slug === 'veronica-giuliani-story' ? ((t.evidenceClaims || {})[p.id] || [])[ei] : null;
+          return { type: e.type, claim: localized || e.claim, sources: e.sources || [] };
+        })
       };
     });
     const srcIds = new Set(pages.flatMap(p => p ? p.evidence.flatMap(e => e.sources) : []));

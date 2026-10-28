@@ -36,10 +36,13 @@
     // Case-insensitive lookup (?lang= arrives lowercased; document lang may be zh-Hans),
     // returning the canonical contract key so catalog paths and voices stay exact.
     const byLower = lang => Object.keys(VERONICA_I18N).find(k => k.toLowerCase() === String(lang || '').toLowerCase());
-    // An explicit ?lang= choice wins; otherwise the page's own document locale; else English.
-    return byLower(queryLang) && String(queryLang).toLowerCase() !== 'en' ? byLower(queryLang)
-      : byLower(docLang) ? byLower(docLang)
-      : byLower(queryLang) ? byLower(queryLang) : 'en';
+    // docLang-first: a rendered twin's own locale always wins, so a stale ?lang= query on a
+    // twin URL cannot hijack the edition. The EN host page (docLang en) still honors an
+    // explicit ?lang= choice; anything unrecognized falls back to the document, then English.
+    const q = byLower(queryLang);
+    const d = byLower(docLang);
+    if (d && d !== 'en') return d;
+    return q || d || 'en';
   };
   const veronicaLang = resolveVeronicaLang(storyId, selectedLang, document.documentElement.lang);
   const contentLang = veronicaLang || (selectedLang === 'ar' ? 'ar' : selectedLang === 'fr' ? 'fr' : 'en');
@@ -954,7 +957,9 @@
     veronica: Object.fromEntries(Object.entries(VERONICA_I18N).map(([lang, cfg]) => [lang, window[cfg.global] || []]))
   };
   // Veronica editions outside the inline set load their strings from the locale catalog in init().
-  const UI = COPY[contentLang] || COPY.en;
+  // Veronica gets its own UI object: the per-locale fetch below assigns into UI, and a shared
+  // reference would write localized strings into the shared COPY table (COPY.en for 9 locales).
+  const UI = storyId === 'veronica' ? Object.assign({}, COPY[contentLang] || COPY.en) : (COPY[contentLang] || COPY.en);
   const storyPages = STORY_PAGES[storyId] || STORY_PAGES.charbel;
   const pages = storyPages[contentLang] || storyPages.en;
   const AUDIO_BASE = {
@@ -1672,7 +1677,9 @@
         if (hero && !hero.querySelector('.story-shelf-link')) {
           const shelfLink = document.createElement('a');
           shelfLink.className = 'story-shelf-link';
-          shelfLink.href = '/stories';
+          // The shelf is English-only; the locale hint lets its Veronica card route back to
+          // this edition. Legacy books keep the plain /stories return.
+          shelfLink.href = storyId === 'veronica' && contentLang !== 'en' ? `/stories?lang=${encodeURIComponent(contentLang.toLowerCase())}` : '/stories';
           shelfLink.textContent = messages.allStories;
           hero.appendChild(shelfLink);
         }
