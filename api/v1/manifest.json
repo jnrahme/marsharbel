@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "contentVersion": "af9b1aa4ac0679ff",
+ "contentVersion": "2bf1a7a6cd7f624f",
  "apiBase": "/api/v1",
  "media": {
   "base": "https://marsharbel.com/",
@@ -19,7 +19,18 @@
   "subscriber"
  ],
  "locales": [
-  "en"
+  "ar",
+  "de",
+  "en",
+  "es",
+  "fr",
+  "hi",
+  "it",
+  "pl",
+  "pt",
+  "ru",
+  "th",
+  "zh-Hans"
  ],
  "uiLocales": [
   "ar",
@@ -33,7 +44,18 @@
  ],
  "indexes": {
   "books": {
-   "en": "/api/v1/books.en.json"
+   "en": "/api/v1/books.en.json",
+   "ar": "/api/v1/books.ar.json",
+   "fr": "/api/v1/books.fr.json",
+   "es": "/api/v1/books.es.json",
+   "pt": "/api/v1/books.pt.json",
+   "it": "/api/v1/books.it.json",
+   "de": "/api/v1/books.de.json",
+   "pl": "/api/v1/books.pl.json",
+   "ru": "/api/v1/books.ru.json",
+   "hi": "/api/v1/books.hi.json",
+   "th": "/api/v1/books.th.json",
+   "zh-Hans": "/api/v1/books.zh-Hans.json"
   },
   "shelves": "/api/v1/shelves.json"
  },
@@ -377,6 +399,90 @@
      "path": "/api/v1/books/mother-teresa-story/en.json",
      "sha256": "e3005c7fa3c40b378560802d5e785fa822cedb5bc462db9b5ca034e6e00b172c",
      "bytes": 19060
+    }
+   }
+  },
+  {
+   "id": "bk-veronica-giuliani",
+   "slug": "veronica-giuliani-story",
+   "access": "public",
+   "status": "published",
+   "order": 20,
+   "shelf": "centuries",
+   "locales": [
+    "en",
+    "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl",
+    "ru",
+    "hi",
+    "th",
+    "zh-Hans"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/veronica-giuliani-story/en.json",
+     "sha256": "fe7c2d2573f6af5ba95e84056167e4a965e4705e103bb6a82d4cd4bc6ac4a834",
+     "bytes": 14789
+    },
+    "ar": {
+     "path": "/api/v1/books/veronica-giuliani-story/ar.json",
+     "sha256": "62de656eb3531ca03ba66b544ae2da81d9904523329092b21104623da8edae30",
+     "bytes": 17416
+    },
+    "fr": {
+     "path": "/api/v1/books/veronica-giuliani-story/fr.json",
+     "sha256": "9806d898ce080e29d2388480a69dfccc9effaf295f40d959bf521fdde01b6119",
+     "bytes": 15919
+    },
+    "es": {
+     "path": "/api/v1/books/veronica-giuliani-story/es.json",
+     "sha256": "c33be95b007d91872322d1b27dfe5d2aba9efcbfd8720d245990020bea2636fc",
+     "bytes": 15360
+    },
+    "pt": {
+     "path": "/api/v1/books/veronica-giuliani-story/pt.json",
+     "sha256": "baeadfe09996ac3853ff24cdd0818dc2884cc86ef20ba009ba738e75a9d3af85",
+     "bytes": 15343
+    },
+    "it": {
+     "path": "/api/v1/books/veronica-giuliani-story/it.json",
+     "sha256": "34a6837a94323a49fcc93fabf960e4950278e4b191fe57499108ce4fe4d229ec",
+     "bytes": 15178
+    },
+    "de": {
+     "path": "/api/v1/books/veronica-giuliani-story/de.json",
+     "sha256": "5d85b25e04992d3426f0cd6aeef342f980e172504cb8fff746e1bbbff530fca3",
+     "bytes": 15873
+    },
+    "pl": {
+     "path": "/api/v1/books/veronica-giuliani-story/pl.json",
+     "sha256": "fa3fcd85972d54560094c6ea698d8b8e29d58fad46400eb9c4824d5603607434",
+     "bytes": 15435
+    },
+    "ru": {
+     "path": "/api/v1/books/veronica-giuliani-story/ru.json",
+     "sha256": "7fca339beb57a998643b8b858cf41d5499243caf7e865d3c68be084dced4ee64",
+     "bytes": 19689
+    },
+    "hi": {
+     "path": "/api/v1/books/veronica-giuliani-story/hi.json",
+     "sha256": "ef66bcf16a9ceea95306c0c86d32c31da0bc7236573aa9db3269852b9178d62a",
+     "bytes": 23655
+    },
+    "th": {
+     "path": "/api/v1/books/veronica-giuliani-story/th.json",
+     "sha256": "94a16c91d76527086b103f2b6cc4cc5cf7cff5638b4f7127271e3137933a0540",
+     "bytes": 24711
+    },
+    "zh-Hans": {
+     "path": "/api/v1/books/veronica-giuliani-story/zh-Hans.json",
+     "sha256": "5337e7c432b12a6e852ad4d93991bf758ff1abd804c118b80cfe5bbf21f3f7af",
+     "bytes": 14661
     }
    }
   }

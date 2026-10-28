@@ -1,573 +1,1818 @@
 {
-  "version": 1,
-  "defaultLocale": "en",
-  "site": "https://marsharbel.com",
-  "locales": {
-    "en": {
-      "nativeName": "English",
-      "direction": "ltr",
-      "home": "/",
-      "slugs": {
-        "biography": "biography",
-        "prayers": "prayers",
-        "novena": "novena",
-        "rosary": "rosary",
-        "annaya": "annaya"
-      },
-      "ogLocale": "en_US",
-      "selectorAliases": [],
-      "capabilities": {
-        "home": true,
-        "topicGuides": [
-          "biography",
-          "prayers",
-          "novena",
-          "rosary",
-          "annaya"
-        ],
-        "mirrorTabs": [],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    },
-    "ar": {
-      "nativeName": "العربية",
-      "direction": "rtl",
-      "home": "/ar/",
-      "slugs": {
-        "biography": "biography",
-        "prayers": "prayers",
-        "novena": "novena",
-        "annaya": "annaya",
-        "feastDay": "feast-day",
-        "twentySecond": "22nd-of-the-month",
-        "rosary": "rosary-guide"
-      },
-      "ogLocale": "ar_AR",
-      "selectorAliases": [],
-      "capabilities": {
-        "home": true,
-        "topicGuides": [
-          "biography",
-          "prayers",
-          "novena",
-          "annaya",
-          "feastDay",
-          "twentySecond",
-          "rosary"
-        ],
-        "mirrorTabs": [],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    },
-    "fr": {
-      "nativeName": "Français",
-      "direction": "ltr",
-      "home": "/fr/",
-      "slugs": {
-        "biography": "biographie",
-        "prayers": "prieres",
-        "novena": "neuvaine",
-        "rosary": "chapelet",
-        "annaya": "annaya"
-      },
-      "ogLocale": "fr_FR",
-      "selectorAliases": [],
-      "capabilities": {
-        "home": true,
-        "topicGuides": [
-          "biography",
-          "prayers",
-          "novena",
-          "rosary",
-          "annaya"
-        ],
-        "mirrorTabs": [],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    },
-    "es": {
-      "nativeName": "Español",
-      "direction": "ltr",
-      "home": "/es/",
-      "slugs": {
-        "biography": "biografia",
-        "prayers": "oraciones",
-        "novena": "novena",
-        "rosary": "rosario",
-        "annaya": "annaya",
-        "feastDay": "fiesta"
-      },
-      "ogLocale": "es_ES",
-      "selectorAliases": [],
-      "capabilities": {
-        "home": true,
-        "topicGuides": [
-          "biography",
-          "prayers",
-          "novena",
-          "rosary",
-          "annaya",
-          "feastDay"
-        ],
-        "mirrorTabs": [],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    },
-    "pt": {
-      "nativeName": "Português",
-      "direction": "ltr",
-      "home": "/pt/",
-      "slugs": {
-        "biography": "biografia",
-        "prayers": "oracoes",
-        "novena": "novena",
-        "rosary": "rosario",
-        "annaya": "annaya",
-        "feastDay": "festa"
-      },
-      "ogLocale": "pt_BR",
-      "selectorAliases": [],
-      "capabilities": {
-        "home": true,
-        "topicGuides": [
-          "biography",
-          "prayers",
-          "novena",
-          "rosary",
-          "annaya",
-          "feastDay"
-        ],
-        "mirrorTabs": [],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    },
-    "it": {
-      "nativeName": "Italiano",
-      "direction": "ltr",
-      "home": "/it/",
-      "slugs": {
-        "biography": "biografia",
-        "prayers": "preghiere",
-        "novena": "novena",
-        "rosary": "rosario",
-        "annaya": "annaya"
-      },
-      "ogLocale": "it_IT",
-      "selectorAliases": [],
-      "capabilities": {
-        "home": true,
-        "topicGuides": [
-          "biography",
-          "prayers",
-          "novena",
-          "rosary",
-          "annaya"
-        ],
-        "mirrorTabs": [],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    },
-    "de": {
-      "nativeName": "Deutsch",
-      "direction": "ltr",
-      "home": "/de/",
-      "slugs": {
-        "biography": "biografie",
-        "prayers": "gebete",
-        "novena": "novene",
-        "rosary": "rosenkranz",
-        "annaya": "annaya"
-      },
-      "ogLocale": "de_DE",
-      "selectorAliases": [],
-      "capabilities": {
-        "home": true,
-        "topicGuides": [
-          "biography",
-          "prayers",
-          "novena",
-          "rosary",
-          "annaya"
-        ],
-        "mirrorTabs": [
-          "travel"
-        ],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    },
-    "pl": {
-      "nativeName": "Polski",
-      "direction": "ltr",
-      "home": "/pl/",
-      "slugs": {
-        "biography": "biografia",
-        "prayers": "modlitwy",
-        "novena": "nowenna",
-        "rosary": "rozaniec",
-        "annaya": "annaya"
-      },
-      "ogLocale": "pl_PL",
-      "selectorAliases": [],
-      "capabilities": {
-        "home": true,
-        "topicGuides": [
-          "biography",
-          "prayers",
-          "novena",
-          "rosary",
-          "annaya"
-        ],
-        "mirrorTabs": [],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    },
-    "ru": {
-      "nativeName": "Русский",
-      "direction": "ltr",
-      "home": "/ru/",
-      "slugs": {
-        "biography": "biography"
-      },
-      "ogLocale": "ru_RU",
-      "selectorAliases": [],
-      "capabilities": {
-        "home": true,
-        "topicGuides": [
-          "biography"
-        ],
-        "mirrorTabs": [],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    },
-    "hi": {
-      "nativeName": "हिन्दी",
-      "direction": "ltr",
-      "home": "/hi/",
-      "slugs": {},
-      "ogLocale": "hi_IN",
-      "selectorAliases": [],
-      "capabilities": {
-        "home": true,
-        "topicGuides": [],
-        "mirrorTabs": [],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    },
-    "th": {
-      "nativeName": "ไทย",
-      "direction": "ltr",
-      "home": "/th/",
-      "slugs": {},
-      "ogLocale": "th_TH",
-      "selectorAliases": [],
-      "capabilities": {
-        "home": true,
-        "topicGuides": [],
-        "mirrorTabs": [],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    },
-    "zh-Hans": {
-      "nativeName": "简体中文",
-      "direction": "ltr",
-      "ogLocale": "zh_CN",
-      "selectorAliases": [],
-      "slugs": {},
-      "capabilities": {
-        "home": false,
-        "topicGuides": [],
-        "mirrorTabs": [
-          "travel",
-          "film",
-          "prayers"
-        ],
-        "runtime": true,
-        "selectorCopy": true
-      }
-    }
-  },
-  "authoredMirrors": {
-    "qadisha": {
-      "english": "/qadisha-valley",
-      "routes": {
-        "en": "/qadisha-valley",
-        "ar": "/ar/qadisha-valley",
-        "fr": "/fr/vallee-qadisha",
-        "es": "/es/valle-qadisha"
-      }
-    },
-    "qannoubine": {
-      "english": "/qannoubine-monastery",
-      "routes": {
-        "en": "/qannoubine-monastery",
-        "ar": "/ar/qannoubine-monastery",
-        "fr": "/fr/monastere-qannoubine",
-        "es": "/es/monasterio-qannoubine"
-      }
-    },
-    "qozhaya": {
-      "english": "/qozhaya-monastery",
-      "routes": {
-        "en": "/qozhaya-monastery",
-        "ar": "/ar/qozhaya-monastery",
-        "fr": "/fr/monastere-qozhaya",
-        "es": "/es/monasterio-qozhaya"
-      }
-    },
-    "litany": {
-      "english": "/litany-of-saint-charbel",
-      "routes": {
-        "en": "/litany-of-saint-charbel",
-        "ar": "/ar/litany-of-saint-charbel"
-      }
-    },
-    "chaplet": {
-      "english": "/saint-charbel-chaplet",
-      "routes": {
-        "en": "/saint-charbel-chaplet",
-        "ar": "/ar/saint-charbel-chaplet"
-      }
-    },
-    "travel": {
-      "english": "/travel",
-      "routes": {
-        "en": "/travel",
-        "ar": "/ar/travel",
-        "fr": "/fr/travel",
-        "es": "/es/travel",
-        "pt": "/pt/travel",
-        "it": "/it/travel",
-        "pl": "/pl/travel"
-      }
-    }
-  },
-  "topics": {
-    "biography": {
-      "sections": [
-        "origins",
-        "vocation",
-        "hermitage",
-        "recognition",
-        "dailyLife",
-        "family"
-      ],
-      "relatedEnglish": "/history",
-      "sources": [
-        "biography",
-        "canonization",
-        "hermitage"
-      ],
-      "locales": [
-        "en",
-        "ar",
-        "fr",
-        "es",
-        "pt",
-        "it",
-        "de",
-        "pl",
-        "ru"
-      ]
-    },
-    "prayers": {
-      "sections": [
-        "begin",
-        "daily",
-        "illness",
-        "familyPeace",
-        "thanks",
-        "after"
-      ],
-      "relatedEnglish": "/saint-charbel-prayers",
-      "sources": [
-        "canonization"
-      ],
-      "locales": [
-        "en",
-        "ar",
-        "fr",
-        "es",
-        "pt",
-        "it",
-        "de",
-        "pl"
-      ]
-    },
-    "novena": {
-      "sections": [
-        "rhythm",
-        "commonPrayer",
-        "day1",
-        "day2",
-        "day3",
-        "day4",
-        "day5",
-        "day6",
-        "day7",
-        "day8",
-        "day9"
-      ],
-      "relatedEnglish": "/saint-charbel-novena",
-      "sources": [
-        "novena",
-        "monastery"
-      ],
-      "locales": [
-        "en",
-        "ar",
-        "fr",
-        "es",
-        "pt",
-        "it",
-        "de",
-        "pl"
-      ]
-    },
-    "rosary": {
-      "sections": [
-        "opening",
-        "decade",
-        "joyful",
-        "luminous",
-        "sorrowful",
-        "glorious",
-        "finish"
-      ],
-      "relatedEnglish": "/rosary-intro",
-      "sources": [
-        "rosary",
-        "rosaryPrayers"
-      ],
-      "locales": [
-        "en",
-        "fr",
-        "es",
-        "pt",
-        "it",
-        "de",
-        "pl",
-        "ar"
-      ]
-    },
-    "annaya": {
-      "sections": [
-        "places",
-        "beforeTravel",
-        "prepare",
-        "respect",
-        "atHome",
-        "celebrations"
-      ],
-      "relatedEnglish": "/visit-annaya",
-      "sources": [
-        "monastery",
-        "hermitage"
-      ],
-      "locales": [
-        "en",
-        "ar",
-        "fr",
-        "es",
-        "pt",
-        "it",
-        "de",
-        "pl"
-      ]
-    },
-    "feastDay": {
-      "sections": [
-        "twoDates",
-        "upcoming",
-        "december",
-        "annaya",
-        "atHome",
-        "dayTwentyTwo"
-      ],
-      "relatedEnglish": "/saint-charbel-feast-day",
-      "sources": [
-        "generalCalendar",
-        "monastery"
-      ],
-      "locales": [
-        "ar",
-        "es",
-        "pt"
-      ]
-    },
-    "twentySecond": {
-      "sections": [
-        "origin",
-        "annaya",
-        "atHome",
-        "notFeast",
-        "healing"
-      ],
-      "relatedEnglish": "/22nd-of-the-month",
-      "sources": [
-        "cnewaMonthly",
-        "monastery"
-      ],
-      "locales": [
-        "ar"
-      ]
-    }
-  },
-  "sources": {
-    "biography": "https://saintcharbel.com/saint-charbel-biography/",
-    "canonization": "https://www.vatican.va/content/paul-vi/fr/homilies/1977/documents/hf_p-vi_hom_19771009.html",
-    "hermitage": "https://saintcharbel.com/the-hermitage/",
-    "monastery": "https://saintcharbel.com/",
-    "novena": "https://saintcharbel.com/novena-of-saint-charbel-en/",
-    "rosary": "https://www.vatican.va/special/rosary/documents/misteri_fr.html",
-    "rosaryPrayers": "https://www.vaticannews.va/fr/priere/rosaire.html",
-    "generalCalendar": "https://www.usccb.org/resources/2024cal.pdf",
-    "cnewaMonthly": "https://cnewa.org/magazine/lebanons-beloved-saint/",
-    "monasteryArabicBio": "https://saintcharbel.com/ar/saint-charbel-biography-arabic/",
-    "canonizationHomily": "https://www.vatican.va/content/paul-vi/fr/homilies/1977/documents/hf_p-vi_hom_19771009.html",
-    "registerDafne": "https://www.ncregister.com/news/phoenix-mother-st-charbel-cured-my-blindness",
-    "raymondAccount": "https://www.familyofsaintsharbel.org/experiences-blog/raymond-naders-experience-with-saint-sharbel",
-    "maroniteParishMiracles": "https://www.sharbel.org/st-sharbel",
-    "maroniteVoiceDafne": "https://www.catholicsun.org/2018/01/29/she-came-and-prayed-asking-st-sharbel-to-cure-her/",
-    "catholicWorldRaymond": "https://www.catholicworldreport.com/2019/01/28/lebanese-man-finds-hand-of-providence-in-mystical-experience/"
-  },
-  "publicationSets": {
-    "prayers": [
-      "en",
-      "ar",
-      "fr",
-      "es",
-      "pt",
-      "it",
-      "de",
-      "pl"
+ "version": 1,
+ "defaultLocale": "en",
+ "site": "https://marsharbel.com",
+ "locales": {
+  "en": {
+   "nativeName": "English",
+   "direction": "ltr",
+   "home": "/",
+   "slugs": {
+    "biography": "biography",
+    "prayers": "prayers",
+    "novena": "novena",
+    "rosary": "rosary",
+    "annaya": "annaya"
+   },
+   "ogLocale": "en_US",
+   "selectorAliases": [],
+   "capabilities": {
+    "home": true,
+    "topicGuides": [
+     "biography",
+     "prayers",
+     "novena",
+     "rosary",
+     "annaya"
     ],
-    "eucharistic": [
-      "en",
-      "ar",
-      "fr",
-      "es",
-      "pt",
-      "it",
-      "de",
-      "pl"
-    ]
+    "mirrorTabs": [],
+    "runtime": true,
+    "selectorCopy": true
+   }
   },
-  "ogLocaleOrder": [
+  "ar": {
+   "nativeName": "العربية",
+   "direction": "rtl",
+   "home": "/ar/",
+   "slugs": {
+    "biography": "biography",
+    "prayers": "prayers",
+    "novena": "novena",
+    "annaya": "annaya",
+    "feastDay": "feast-day",
+    "twentySecond": "22nd-of-the-month",
+    "rosary": "rosary-guide"
+   },
+   "ogLocale": "ar_AR",
+   "selectorAliases": [],
+   "capabilities": {
+    "home": true,
+    "topicGuides": [
+     "biography",
+     "prayers",
+     "novena",
+     "annaya",
+     "feastDay",
+     "twentySecond",
+     "rosary"
+    ],
+    "mirrorTabs": [],
+    "runtime": true,
+    "selectorCopy": true
+   }
+  },
+  "fr": {
+   "nativeName": "Français",
+   "direction": "ltr",
+   "home": "/fr/",
+   "slugs": {
+    "biography": "biographie",
+    "prayers": "prieres",
+    "novena": "neuvaine",
+    "rosary": "chapelet",
+    "annaya": "annaya"
+   },
+   "ogLocale": "fr_FR",
+   "selectorAliases": [],
+   "capabilities": {
+    "home": true,
+    "topicGuides": [
+     "biography",
+     "prayers",
+     "novena",
+     "rosary",
+     "annaya"
+    ],
+    "mirrorTabs": [],
+    "runtime": true,
+    "selectorCopy": true
+   }
+  },
+  "es": {
+   "nativeName": "Español",
+   "direction": "ltr",
+   "home": "/es/",
+   "slugs": {
+    "biography": "biografia",
+    "prayers": "oraciones",
+    "novena": "novena",
+    "rosary": "rosario",
+    "annaya": "annaya",
+    "feastDay": "fiesta"
+   },
+   "ogLocale": "es_ES",
+   "selectorAliases": [],
+   "capabilities": {
+    "home": true,
+    "topicGuides": [
+     "biography",
+     "prayers",
+     "novena",
+     "rosary",
+     "annaya",
+     "feastDay"
+    ],
+    "mirrorTabs": [],
+    "runtime": true,
+    "selectorCopy": true
+   }
+  },
+  "pt": {
+   "nativeName": "Português",
+   "direction": "ltr",
+   "home": "/pt/",
+   "slugs": {
+    "biography": "biografia",
+    "prayers": "oracoes",
+    "novena": "novena",
+    "rosary": "rosario",
+    "annaya": "annaya",
+    "feastDay": "festa"
+   },
+   "ogLocale": "pt_BR",
+   "selectorAliases": [],
+   "capabilities": {
+    "home": true,
+    "topicGuides": [
+     "biography",
+     "prayers",
+     "novena",
+     "rosary",
+     "annaya",
+     "feastDay"
+    ],
+    "mirrorTabs": [],
+    "runtime": true,
+    "selectorCopy": true
+   }
+  },
+  "it": {
+   "nativeName": "Italiano",
+   "direction": "ltr",
+   "home": "/it/",
+   "slugs": {
+    "biography": "biografia",
+    "prayers": "preghiere",
+    "novena": "novena",
+    "rosary": "rosario",
+    "annaya": "annaya"
+   },
+   "ogLocale": "it_IT",
+   "selectorAliases": [],
+   "capabilities": {
+    "home": true,
+    "topicGuides": [
+     "biography",
+     "prayers",
+     "novena",
+     "rosary",
+     "annaya"
+    ],
+    "mirrorTabs": [],
+    "runtime": true,
+    "selectorCopy": true
+   }
+  },
+  "de": {
+   "nativeName": "Deutsch",
+   "direction": "ltr",
+   "home": "/de/",
+   "slugs": {
+    "biography": "biografie",
+    "prayers": "gebete",
+    "novena": "novene",
+    "rosary": "rosenkranz",
+    "annaya": "annaya"
+   },
+   "ogLocale": "de_DE",
+   "selectorAliases": [],
+   "capabilities": {
+    "home": true,
+    "topicGuides": [
+     "biography",
+     "prayers",
+     "novena",
+     "rosary",
+     "annaya"
+    ],
+    "mirrorTabs": [
+     "travel"
+    ],
+    "runtime": true,
+    "selectorCopy": true
+   }
+  },
+  "pl": {
+   "nativeName": "Polski",
+   "direction": "ltr",
+   "home": "/pl/",
+   "slugs": {
+    "biography": "biografia",
+    "prayers": "modlitwy",
+    "novena": "nowenna",
+    "rosary": "rozaniec",
+    "annaya": "annaya"
+   },
+   "ogLocale": "pl_PL",
+   "selectorAliases": [],
+   "capabilities": {
+    "home": true,
+    "topicGuides": [
+     "biography",
+     "prayers",
+     "novena",
+     "rosary",
+     "annaya"
+    ],
+    "mirrorTabs": [],
+    "runtime": true,
+    "selectorCopy": true
+   }
+  },
+  "ru": {
+   "nativeName": "Русский",
+   "direction": "ltr",
+   "home": "/ru/",
+   "slugs": {
+    "biography": "biography"
+   },
+   "ogLocale": "ru_RU",
+   "selectorAliases": [],
+   "capabilities": {
+    "home": true,
+    "topicGuides": [
+     "biography"
+    ],
+    "mirrorTabs": [],
+    "runtime": true,
+    "selectorCopy": true
+   }
+  },
+  "hi": {
+   "nativeName": "हिन्दी",
+   "direction": "ltr",
+   "home": "/hi/",
+   "slugs": {},
+   "ogLocale": "hi_IN",
+   "selectorAliases": [],
+   "capabilities": {
+    "home": true,
+    "topicGuides": [],
+    "mirrorTabs": [],
+    "runtime": true,
+    "selectorCopy": true
+   }
+  },
+  "th": {
+   "nativeName": "ไทย",
+   "direction": "ltr",
+   "home": "/th/",
+   "slugs": {},
+   "ogLocale": "th_TH",
+   "selectorAliases": [],
+   "capabilities": {
+    "home": true,
+    "topicGuides": [],
+    "mirrorTabs": [],
+    "runtime": true,
+    "selectorCopy": true
+   }
+  },
+  "zh-Hans": {
+   "nativeName": "简体中文",
+   "direction": "ltr",
+   "ogLocale": "zh_CN",
+   "selectorAliases": [],
+   "slugs": {},
+   "capabilities": {
+    "home": false,
+    "topicGuides": [],
+    "mirrorTabs": [
+     "travel",
+     "film",
+     "prayers",
+     "stories"
+    ],
+    "runtime": true,
+    "selectorCopy": true
+   }
+  }
+ },
+ "authoredMirrors": {
+  "qadisha": {
+   "english": "/qadisha-valley",
+   "routes": {
+    "en": "/qadisha-valley",
+    "ar": "/ar/qadisha-valley",
+    "fr": "/fr/vallee-qadisha",
+    "es": "/es/valle-qadisha"
+   }
+  },
+  "qannoubine": {
+   "english": "/qannoubine-monastery",
+   "routes": {
+    "en": "/qannoubine-monastery",
+    "ar": "/ar/qannoubine-monastery",
+    "fr": "/fr/monastere-qannoubine",
+    "es": "/es/monasterio-qannoubine"
+   }
+  },
+  "qozhaya": {
+   "english": "/qozhaya-monastery",
+   "routes": {
+    "en": "/qozhaya-monastery",
+    "ar": "/ar/qozhaya-monastery",
+    "fr": "/fr/monastere-qozhaya",
+    "es": "/es/monasterio-qozhaya"
+   }
+  },
+  "litany": {
+   "english": "/litany-of-saint-charbel",
+   "routes": {
+    "en": "/litany-of-saint-charbel",
+    "ar": "/ar/litany-of-saint-charbel"
+   }
+  },
+  "chaplet": {
+   "english": "/saint-charbel-chaplet",
+   "routes": {
+    "en": "/saint-charbel-chaplet",
+    "ar": "/ar/saint-charbel-chaplet"
+   }
+  },
+  "travel": {
+   "english": "/travel",
+   "routes": {
+    "en": "/travel",
+    "ar": "/ar/travel",
+    "fr": "/fr/travel",
+    "es": "/es/travel",
+    "pt": "/pt/travel",
+    "it": "/it/travel",
+    "pl": "/pl/travel"
+   }
+  }
+ },
+ "topics": {
+  "biography": {
+   "sections": [
+    "origins",
+    "vocation",
+    "hermitage",
+    "recognition",
+    "dailyLife",
+    "family"
+   ],
+   "relatedEnglish": "/history",
+   "sources": [
+    "biography",
+    "canonization",
+    "hermitage"
+   ],
+   "locales": [
     "en",
     "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl",
+    "ru"
+   ]
+  },
+  "prayers": {
+   "sections": [
+    "begin",
+    "daily",
+    "illness",
+    "familyPeace",
+    "thanks",
+    "after"
+   ],
+   "relatedEnglish": "/saint-charbel-prayers",
+   "sources": [
+    "canonization"
+   ],
+   "locales": [
+    "en",
+    "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl"
+   ]
+  },
+  "novena": {
+   "sections": [
+    "rhythm",
+    "commonPrayer",
+    "day1",
+    "day2",
+    "day3",
+    "day4",
+    "day5",
+    "day6",
+    "day7",
+    "day8",
+    "day9"
+   ],
+   "relatedEnglish": "/saint-charbel-novena",
+   "sources": [
+    "novena",
+    "monastery"
+   ],
+   "locales": [
+    "en",
+    "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl"
+   ]
+  },
+  "rosary": {
+   "sections": [
+    "opening",
+    "decade",
+    "joyful",
+    "luminous",
+    "sorrowful",
+    "glorious",
+    "finish"
+   ],
+   "relatedEnglish": "/rosary-intro",
+   "sources": [
+    "rosary",
+    "rosaryPrayers"
+   ],
+   "locales": [
+    "en",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl",
+    "ar"
+   ]
+  },
+  "annaya": {
+   "sections": [
+    "places",
+    "beforeTravel",
+    "prepare",
+    "respect",
+    "atHome",
+    "celebrations"
+   ],
+   "relatedEnglish": "/visit-annaya",
+   "sources": [
+    "monastery",
+    "hermitage"
+   ],
+   "locales": [
+    "en",
+    "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl"
+   ]
+  },
+  "feastDay": {
+   "sections": [
+    "twoDates",
+    "upcoming",
+    "december",
+    "annaya",
+    "atHome",
+    "dayTwentyTwo"
+   ],
+   "relatedEnglish": "/saint-charbel-feast-day",
+   "sources": [
+    "generalCalendar",
+    "monastery"
+   ],
+   "locales": [
+    "ar",
+    "es",
+    "pt"
+   ]
+  },
+  "twentySecond": {
+   "sections": [
+    "origin",
+    "annaya",
+    "atHome",
+    "notFeast",
+    "healing"
+   ],
+   "relatedEnglish": "/22nd-of-the-month",
+   "sources": [
+    "cnewaMonthly",
+    "monastery"
+   ],
+   "locales": [
+    "ar"
+   ]
+  }
+ },
+ "sources": {
+  "biography": "https://saintcharbel.com/saint-charbel-biography/",
+  "canonization": "https://www.vatican.va/content/paul-vi/fr/homilies/1977/documents/hf_p-vi_hom_19771009.html",
+  "hermitage": "https://saintcharbel.com/the-hermitage/",
+  "monastery": "https://saintcharbel.com/",
+  "novena": "https://saintcharbel.com/novena-of-saint-charbel-en/",
+  "rosary": "https://www.vatican.va/special/rosary/documents/misteri_fr.html",
+  "rosaryPrayers": "https://www.vaticannews.va/fr/priere/rosaire.html",
+  "generalCalendar": "https://www.usccb.org/resources/2024cal.pdf",
+  "cnewaMonthly": "https://cnewa.org/magazine/lebanons-beloved-saint/",
+  "monasteryArabicBio": "https://saintcharbel.com/ar/saint-charbel-biography-arabic/",
+  "canonizationHomily": "https://www.vatican.va/content/paul-vi/fr/homilies/1977/documents/hf_p-vi_hom_19771009.html",
+  "registerDafne": "https://www.ncregister.com/news/phoenix-mother-st-charbel-cured-my-blindness",
+  "raymondAccount": "https://www.familyofsaintsharbel.org/experiences-blog/raymond-naders-experience-with-saint-sharbel",
+  "maroniteParishMiracles": "https://www.sharbel.org/st-sharbel",
+  "maroniteVoiceDafne": "https://www.catholicsun.org/2018/01/29/she-came-and-prayed-asking-st-sharbel-to-cure-her/",
+  "catholicWorldRaymond": "https://www.catholicworldreport.com/2019/01/28/lebanese-man-finds-hand-of-providence-in-mystical-experience/"
+ },
+ "publicationSets": {
+  "prayers": [
+   "en",
+   "ar",
+   "fr",
+   "es",
+   "pt",
+   "it",
+   "de",
+   "pl"
+  ],
+  "eucharistic": [
+   "en",
+   "ar",
+   "fr",
+   "es",
+   "pt",
+   "it",
+   "de",
+   "pl"
+  ]
+ },
+ "ogLocaleOrder": [
+  "en",
+  "ar",
+  "es",
+  "fr",
+  "pt",
+  "it",
+  "de",
+  "pl",
+  "ru",
+  "hi",
+  "th",
+  "zh-Hans"
+ ],
+ "domMirrors": {
+  "feast": {
+   "english": "/saint-charbel-feast-day",
+   "routes": {
+    "ar": "/ar/feast-day"
+   },
+   "catalog": "feast-mirror.json"
+  }
+ },
+ "exactMirrors": {
+  "biography": {
+   "english": "/history",
+   "routes": {
+    "en": "/history",
+    "de": "/de/biografie",
+    "ru": "/ru/biography"
+   },
+   "renderLocales": []
+  },
+  "novena": {
+   "english": "/saint-charbel-novena",
+   "routes": {
+    "en": "/saint-charbel-novena",
+    "de": "/de/novene"
+   },
+   "renderLocales": []
+  },
+  "feast": {
+   "english": "/saint-charbel-feast-day",
+   "routes": {
+    "en": "/saint-charbel-feast-day",
+    "ar": "/ar/feast-day",
+    "es": "/es/fiesta",
+    "pt": "/pt/festa",
+    "de": "/de/gedenktag"
+   },
+   "renderLocales": [
+    "de"
+   ]
+  },
+  "miracles": {
+   "english": "/miracles/",
+   "routes": {
+    "en": "/miracles/",
+    "de": "/de/miracles/",
+    "ar": "/ar/miracles/"
+   },
+   "renderLocales": [
+    "de"
+   ]
+  },
+  "nohad-story": {
+   "english": "/miracles/nohad-el-shami",
+   "routes": {
+    "en": "/miracles/nohad-el-shami",
+    "ar": "/ar/miracles/nohad-el-shami"
+   },
+   "renderLocales": []
+  },
+  "dafne-story": {
+   "english": "/miracles/dafne-gutierrez",
+   "routes": {
+    "en": "/miracles/dafne-gutierrez",
+    "ar": "/ar/miracles/dafne-gutierrez"
+   },
+   "renderLocales": []
+  },
+  "raymond-story": {
+   "english": "/miracles/raymond-nader",
+   "routes": {
+    "en": "/miracles/raymond-nader",
+    "ar": "/ar/miracles/raymond-nader"
+   },
+   "renderLocales": []
+  },
+  "rosary-intro": {
+   "english": "/rosary-intro",
+   "routes": {
+    "en": "/rosary-intro",
+    "ar": "/ar/rosary"
+   },
+   "renderLocales": []
+  }
+ },
+ "homepageMirrors": {
+  "master": "index.html",
+  "renderLocales": [
+   "ar",
+   "fr",
+   "es",
+   "pt",
+   "it",
+   "de",
+   "pl",
+   "ru",
+   "hi",
+   "th"
+  ]
+ },
+ "pageMirrors": {
+  "film-premiere-master": {
+   "master": "charbel-film-premiere.html",
+   "english": "/charbel-film-premiere",
+   "routes": {
+    "ar": "/ar/charbel-film-premiere",
+    "de": "/de/charbel-film-premiere",
+    "es": "/es/charbel-film-premiere",
+    "fr": "/fr/charbel-film-premiere",
+    "hi": "/hi/charbel-film-premiere",
+    "it": "/it/charbel-film-premiere",
+    "pl": "/pl/charbel-film-premiere",
+    "pt": "/pt/charbel-film-premiere",
+    "ru": "/ru/charbel-film-premiere",
+    "th": "/th/charbel-film-premiere",
+    "zh-Hans": "/zh-Hans/charbel-film-premiere"
+   },
+   "renderLocales": [
+    "ar",
+    "de",
     "es",
     "fr",
+    "hi",
+    "it",
+    "pl",
+    "pt",
+    "ru",
+    "th",
+    "zh-Hans"
+   ]
+  },
+  "history-master": {
+   "master": "history.html",
+   "english": "/history",
+   "routes": {
+    "ar": "/ar/biography",
+    "fr": "/fr/biographie",
+    "es": "/es/biografia",
+    "pt": "/pt/biografia",
+    "it": "/it/biografia",
+    "de": "/de/biografie",
+    "pl": "/pl/biografia",
+    "ru": "/ru/biography",
+    "hi": "/hi/history",
+    "th": "/th/history"
+   },
+   "renderLocales": [
+    "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl",
+    "ru",
+    "hi",
+    "th"
+   ]
+  },
+  "annaya-master": {
+   "master": "visit-annaya.html",
+   "english": "/visit-annaya",
+   "routes": {
+    "ar": "/ar/annaya",
+    "fr": "/fr/annaya",
+    "es": "/es/annaya",
+    "pt": "/pt/annaya",
+    "it": "/it/annaya",
+    "de": "/de/annaya",
+    "pl": "/pl/annaya",
+    "ru": "/ru/annaya"
+   },
+   "renderLocales": [
+    "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/visit-annaya",
+    "ar": "/ar/annaya",
+    "fr": "/fr/annaya",
+    "es": "/es/annaya",
+    "pt": "/pt/annaya",
+    "it": "/it/annaya",
+    "de": "/de/annaya",
+    "pl": "/pl/annaya",
+    "ru": "/ru/annaya",
+    "zh-Hans": "/zh-Hans/visit-annaya",
+    "x-default": "/visit-annaya"
+   }
+  },
+  "twenty-second-master": {
+   "master": "22nd-of-the-month.html",
+   "english": "/22nd-of-the-month",
+   "routes": {
+    "ar": "/ar/22nd-of-the-month",
+    "fr": "/fr/22-du-mois",
+    "es": "/es/el-22-de-cada-mes",
+    "pt": "/pt/o-dia-22-do-mes",
+    "it": "/it/il-22-del-mese",
+    "de": "/de/der-22-des-monats",
+    "pl": "/pl/22-dnia-miesiaca",
+    "ru": "/ru/22-chislo-mesyaca"
+   },
+   "renderLocales": [
+    "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl",
+    "ru"
+   ]
+  },
+  "pilgrimage-master": {
+   "master": "saint-charbel-pilgrimage.html",
+   "english": "/saint-charbel-pilgrimage",
+   "routes": {
+    "ar": "/ar/pilgrimage",
+    "fr": "/fr/pelerinage",
+    "es": "/es/peregrinacion",
+    "pt": "/pt/peregrinacao",
+    "it": "/it/pellegrinaggio",
+    "de": "/de/pilgerreise",
+    "pl": "/pl/pielgrzymka",
+    "ru": "/ru/palomnichestvo",
+    "zh-Hans": "/zh-Hans/pilgrimage"
+   },
+   "renderLocales": [
+    "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl",
+    "ru",
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/saint-charbel-pilgrimage",
+    "ar": "/ar/pilgrimage",
+    "fr": "/fr/pelerinage",
+    "es": "/es/peregrinacion",
+    "pt": "/pt/peregrinacao",
+    "it": "/it/pellegrinaggio",
+    "de": "/de/pilgerreise",
+    "pl": "/pl/pielgrzymka",
+    "ru": "/ru/palomnichestvo",
+    "zh-Hans": "/zh-Hans/pilgrimage",
+    "x-default": "/saint-charbel-pilgrimage"
+   }
+  },
+  "saint-charbel-prayers-master": {
+   "master": "saint-charbel-prayers.html",
+   "english": "/saint-charbel-prayers",
+   "routes": {
+    "ar": "/ar/prayers",
+    "de": "/de/gebete",
+    "fr": "/fr/prieres",
+    "ru": "/ru/molitvy",
+    "pt": "/pt/oracoes",
+    "it": "/it/preghiere",
+    "pl": "/pl/modlitwy",
+    "es": "/es/oraciones"
+   },
+   "renderLocales": [
+    "ar",
+    "de",
+    "fr",
+    "ru",
+    "pt",
+    "it",
+    "pl",
+    "es"
+   ],
+   "discoveryRoutes": {
+    "en": "/saint-charbel-prayers",
+    "ar": "/ar/prayers",
+    "fr": "/fr/prieres",
+    "es": "/es/oraciones",
+    "pt": "/pt/oracoes",
+    "it": "/it/preghiere",
+    "de": "/de/gebete",
+    "pl": "/pl/modlitwy",
+    "ru": "/ru/molitvy",
+    "x-default": "/saint-charbel-prayers"
+   }
+  },
+  "saint-charbel-novena-master": {
+   "master": "saint-charbel-novena.html",
+   "english": "/saint-charbel-novena",
+   "routes": {
+    "ar": "/ar/novena",
+    "de": "/de/novene",
+    "fr": "/fr/neuvaine",
+    "ru": "/ru/novena",
+    "pt": "/pt/novena",
+    "it": "/it/novena",
+    "pl": "/pl/nowenna",
+    "es": "/es/novena"
+   },
+   "renderLocales": [
+    "ar",
+    "de",
+    "fr",
+    "ru",
+    "pt",
+    "it",
+    "pl",
+    "es"
+   ],
+   "discoveryRoutes": {
+    "en": "/saint-charbel-novena",
+    "ar": "/ar/novena",
+    "fr": "/fr/neuvaine",
+    "de": "/de/novene",
+    "ru": "/ru/novena",
+    "x-default": "/saint-charbel-novena",
+    "pt": "/pt/novena",
+    "it": "/it/novena",
+    "pl": "/pl/nowenna",
+    "es": "/es/novena"
+   }
+  },
+  "saint-charbel-medal-master": {
+   "master": "saint-charbel-medal.html",
+   "english": "/saint-charbel-medal",
+   "routes": {
+    "ar": "/ar/saint-charbel-medal",
+    "de": "/de/saint-charbel-medal",
+    "es": "/es/saint-charbel-medal",
+    "fr": "/fr/saint-charbel-medal",
+    "hi": "/hi/saint-charbel-medal",
+    "it": "/it/saint-charbel-medal",
+    "pl": "/pl/saint-charbel-medal",
+    "pt": "/pt/saint-charbel-medal",
+    "ru": "/ru/saint-charbel-medal",
+    "th": "/th/saint-charbel-medal",
+    "zh-Hans": "/zh-Hans/saint-charbel-medal"
+   },
+   "renderLocales": [
+    "ar",
+    "de",
+    "es",
+    "fr",
+    "hi",
+    "it",
+    "pl",
+    "pt",
+    "ru",
+    "th",
+    "zh-Hans"
+   ],
+   "sourceLinks": {
+    "ar": {
+     "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/catechism_ar/parte2_nn1066-1690.pdf"
+    },
+    "de": {
+     "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/catechism_ge/p2s2c4a1_ge.htm"
+    },
+    "es": {
+     "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/catechism_sp/p2s2c4a1_sp.html"
+    },
+    "fr": {
+     "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/FRA0013/__P52.HTM"
+    },
+    "it": {
+     "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/catechism_it/p2s2c4a1_it.htm"
+    },
+    "pl": {
+     "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.intratext.com/IXT/POL0073/_P60.HTM"
+    },
+    "pt": {
+     "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/cathechism_po/index_new/p2s2cap4_1667-1690_po.html"
+    },
+    "ru": {
+     "https://www.usccb.org/catechism/pt2sect2chpt4": "https://yakovkrotov.com/acts/20/2vatican/1667.html"
+    },
+    "th": {
+     "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.thaicatechesis.com/ccc/part-two/section-two/chapter-4-other-liturgical-celebrations"
+    },
+    "zh-Hans": {
+     "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/chinese/ccc/29_1667-1690_ccc_zh.pdf"
+    }
+   }
+  },
+  "our-lady-of-lebanon-harissa-travel-master": {
+   "master": "our-lady-of-lebanon-harissa.html",
+   "english": "/our-lady-of-lebanon-harissa",
+   "routes": {
+    "de": "/de/our-lady-of-lebanon-harissa",
+    "ru": "/ru/our-lady-of-lebanon-harissa"
+   },
+   "renderLocales": [
+    "de",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/our-lady-of-lebanon-harissa",
+    "de": "/de/our-lady-of-lebanon-harissa",
+    "zh-Hans": "/zh-Hans/our-lady-of-lebanon-harissa",
+    "ru": "/ru/our-lady-of-lebanon-harissa",
+    "x-default": "/our-lady-of-lebanon-harissa"
+   }
+  },
+  "bekaa-kafra-travel-master": {
+   "master": "bekaa-kafra.html",
+   "english": "/bekaa-kafra",
+   "routes": {
+    "de": "/de/bekaa-kafra",
+    "ru": "/ru/bekaa-kafra"
+   },
+   "renderLocales": [
+    "de",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/bekaa-kafra",
+    "de": "/de/bekaa-kafra",
+    "zh-Hans": "/zh-Hans/bekaa-kafra",
+    "ru": "/ru/bekaa-kafra",
+    "x-default": "/bekaa-kafra"
+   }
+  },
+  "qozhaya-monastery-travel-master": {
+   "master": "qozhaya-monastery.html",
+   "english": "/qozhaya-monastery",
+   "routes": {
+    "de": "/de/qozhaya-monastery",
+    "ru": "/ru/qozhaya-monastery"
+   },
+   "renderLocales": [
+    "de",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/qozhaya-monastery",
+    "ar": "/ar/qozhaya-monastery",
+    "fr": "/fr/monastere-qozhaya",
+    "es": "/es/monasterio-qozhaya",
+    "de": "/de/qozhaya-monastery",
+    "zh-Hans": "/zh-Hans/qozhaya-monastery",
+    "ru": "/ru/qozhaya-monastery",
+    "x-default": "/qozhaya-monastery"
+   }
+  },
+  "bkerke-maronite-patriarchate-travel-master": {
+   "master": "bkerke-maronite-patriarchate.html",
+   "english": "/bkerke-maronite-patriarchate",
+   "routes": {
+    "de": "/de/bkerke-maronite-patriarchate",
+    "ru": "/ru/bkerke-maronite-patriarchate"
+   },
+   "renderLocales": [
+    "de",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/bkerke-maronite-patriarchate",
+    "de": "/de/bkerke-maronite-patriarchate",
+    "zh-Hans": "/zh-Hans/bkerke-maronite-patriarchate",
+    "ru": "/ru/bkerke-maronite-patriarchate",
+    "x-default": "/bkerke-maronite-patriarchate"
+   }
+  },
+  "annaya-tour-travel-master": {
+   "master": "annaya-tour.html",
+   "english": "/annaya-tour",
+   "routes": {
+    "de": "/de/annaya-tour",
+    "ru": "/ru/annaya-tour"
+   },
+   "renderLocales": [
+    "de",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/annaya-tour",
+    "de": "/de/annaya-tour",
+    "zh-Hans": "/zh-Hans/annaya-tour",
+    "ru": "/ru/annaya-tour",
+    "x-default": "/annaya-tour"
+   }
+  },
+  "saint-charbel-trail-travel-master": {
+   "master": "saint-charbel-trail.html",
+   "english": "/saint-charbel-trail",
+   "routes": {
+    "de": "/de/saint-charbel-trail",
+    "ru": "/ru/saint-charbel-trail"
+   },
+   "renderLocales": [
+    "de",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/saint-charbel-trail",
+    "de": "/de/saint-charbel-trail",
+    "zh-Hans": "/zh-Hans/saint-charbel-trail",
+    "ru": "/ru/saint-charbel-trail",
+    "x-default": "/saint-charbel-trail"
+   }
+  },
+  "saint-charbel-places-lebanon-travel-master": {
+   "master": "saint-charbel-places-lebanon.html",
+   "english": "/saint-charbel-places-lebanon",
+   "routes": {
+    "de": "/de/saint-charbel-places-lebanon",
+    "ru": "/ru/saint-charbel-places-lebanon"
+   },
+   "renderLocales": [
+    "de",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/saint-charbel-places-lebanon",
+    "de": "/de/saint-charbel-places-lebanon",
+    "zh-Hans": "/zh-Hans/saint-charbel-places-lebanon",
+    "ru": "/ru/saint-charbel-places-lebanon",
+    "x-default": "/saint-charbel-places-lebanon"
+   }
+  },
+  "qannoubine-monastery-travel-master": {
+   "master": "qannoubine-monastery.html",
+   "english": "/qannoubine-monastery",
+   "routes": {
+    "de": "/de/qannoubine-monastery",
+    "ru": "/ru/qannoubine-monastery"
+   },
+   "renderLocales": [
+    "de",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/qannoubine-monastery",
+    "ar": "/ar/qannoubine-monastery",
+    "fr": "/fr/monastere-qannoubine",
+    "es": "/es/monasterio-qannoubine",
+    "de": "/de/qannoubine-monastery",
+    "zh-Hans": "/zh-Hans/qannoubine-monastery",
+    "ru": "/ru/qannoubine-monastery",
+    "x-default": "/qannoubine-monastery"
+   }
+  },
+  "travel-travel-master": {
+   "master": "travel.html",
+   "english": "/travel",
+   "routes": {
+    "de": "/de/travel",
+    "hi": "/hi/travel",
+    "ru": "/ru/travel"
+   },
+   "renderLocales": [
+    "de",
+    "hi",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/travel",
+    "ar": "/ar/travel",
+    "fr": "/fr/travel",
+    "es": "/es/travel",
+    "pt": "/pt/travel",
+    "it": "/it/travel",
+    "pl": "/pl/travel",
+    "de": "/de/travel",
+    "zh-Hans": "/zh-Hans/travel",
+    "ru": "/ru/travel",
+    "x-default": "/travel",
+    "hi": "/hi/travel",
+    "th": "/th/travel"
+   }
+  },
+  "cedars-of-god-lebanon-travel-master": {
+   "master": "cedars-of-god-lebanon.html",
+   "english": "/cedars-of-god-lebanon",
+   "routes": {
+    "de": "/de/cedars-of-god-lebanon",
+    "ru": "/ru/cedars-of-god-lebanon"
+   },
+   "renderLocales": [
+    "de",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/cedars-of-god-lebanon",
+    "de": "/de/cedars-of-god-lebanon",
+    "zh-Hans": "/zh-Hans/cedars-of-god-lebanon",
+    "ru": "/ru/cedars-of-god-lebanon",
+    "x-default": "/cedars-of-god-lebanon"
+   }
+  },
+  "qadisha-valley-travel-master": {
+   "master": "qadisha-valley.html",
+   "english": "/qadisha-valley",
+   "routes": {
+    "de": "/de/qadisha-valley",
+    "ru": "/ru/qadisha-valley"
+   },
+   "renderLocales": [
+    "de",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/qadisha-valley",
+    "ar": "/ar/qadisha-valley",
+    "fr": "/fr/vallee-qadisha",
+    "es": "/es/valle-qadisha",
+    "de": "/de/qadisha-valley",
+    "zh-Hans": "/zh-Hans/qadisha-valley",
+    "ru": "/ru/qadisha-valley",
+    "x-default": "/qadisha-valley"
+   }
+  },
+  "saint-charbel-hermitage-travel-master": {
+   "master": "saint-charbel-hermitage.html",
+   "english": "/saint-charbel-hermitage",
+   "routes": {
+    "de": "/de/saint-charbel-hermitage",
+    "ru": "/ru/saint-charbel-hermitage"
+   },
+   "renderLocales": [
+    "de",
+    "ru"
+   ],
+   "discoveryRoutes": {
+    "en": "/saint-charbel-hermitage",
+    "de": "/de/saint-charbel-hermitage",
+    "zh-Hans": "/zh-Hans/saint-charbel-hermitage",
+    "ru": "/ru/saint-charbel-hermitage",
+    "x-default": "/saint-charbel-hermitage"
+   }
+  },
+  "our-lady-of-lebanon-harissa-zh-travel-master": {
+   "master": "our-lady-of-lebanon-harissa.html",
+   "english": "/our-lady-of-lebanon-harissa",
+   "routes": {
+    "zh-Hans": "/zh-Hans/our-lady-of-lebanon-harissa"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/our-lady-of-lebanon-harissa",
+    "de": "/de/our-lady-of-lebanon-harissa",
+    "zh-Hans": "/zh-Hans/our-lady-of-lebanon-harissa",
+    "ru": "/ru/our-lady-of-lebanon-harissa",
+    "x-default": "/our-lady-of-lebanon-harissa"
+   }
+  },
+  "saint-charbel-places-lebanon-zh-travel-master": {
+   "master": "saint-charbel-places-lebanon.html",
+   "english": "/saint-charbel-places-lebanon",
+   "routes": {
+    "zh-Hans": "/zh-Hans/saint-charbel-places-lebanon"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/saint-charbel-places-lebanon",
+    "de": "/de/saint-charbel-places-lebanon",
+    "zh-Hans": "/zh-Hans/saint-charbel-places-lebanon",
+    "ru": "/ru/saint-charbel-places-lebanon",
+    "x-default": "/saint-charbel-places-lebanon"
+   }
+  },
+  "annaya-tour-zh-travel-master": {
+   "master": "annaya-tour.html",
+   "english": "/annaya-tour",
+   "routes": {
+    "zh-Hans": "/zh-Hans/annaya-tour"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/annaya-tour",
+    "de": "/de/annaya-tour",
+    "zh-Hans": "/zh-Hans/annaya-tour",
+    "ru": "/ru/annaya-tour",
+    "x-default": "/annaya-tour"
+   }
+  },
+  "qannoubine-monastery-zh-travel-master": {
+   "master": "qannoubine-monastery.html",
+   "english": "/qannoubine-monastery",
+   "routes": {
+    "zh-Hans": "/zh-Hans/qannoubine-monastery"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/qannoubine-monastery",
+    "ar": "/ar/qannoubine-monastery",
+    "fr": "/fr/monastere-qannoubine",
+    "es": "/es/monasterio-qannoubine",
+    "de": "/de/qannoubine-monastery",
+    "zh-Hans": "/zh-Hans/qannoubine-monastery",
+    "ru": "/ru/qannoubine-monastery",
+    "x-default": "/qannoubine-monastery"
+   }
+  },
+  "cedars-of-god-lebanon-zh-travel-master": {
+   "master": "cedars-of-god-lebanon.html",
+   "english": "/cedars-of-god-lebanon",
+   "routes": {
+    "zh-Hans": "/zh-Hans/cedars-of-god-lebanon"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/cedars-of-god-lebanon",
+    "de": "/de/cedars-of-god-lebanon",
+    "zh-Hans": "/zh-Hans/cedars-of-god-lebanon",
+    "ru": "/ru/cedars-of-god-lebanon",
+    "x-default": "/cedars-of-god-lebanon"
+   }
+  },
+  "qadisha-valley-zh-travel-master": {
+   "master": "qadisha-valley.html",
+   "english": "/qadisha-valley",
+   "routes": {
+    "zh-Hans": "/zh-Hans/qadisha-valley"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/qadisha-valley",
+    "ar": "/ar/qadisha-valley",
+    "fr": "/fr/vallee-qadisha",
+    "es": "/es/valle-qadisha",
+    "de": "/de/qadisha-valley",
+    "zh-Hans": "/zh-Hans/qadisha-valley",
+    "ru": "/ru/qadisha-valley",
+    "x-default": "/qadisha-valley"
+   }
+  },
+  "travel-zh-travel-master": {
+   "master": "travel.html",
+   "english": "/travel",
+   "routes": {
+    "zh-Hans": "/zh-Hans/travel"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/travel",
+    "ar": "/ar/travel",
+    "fr": "/fr/travel",
+    "es": "/es/travel",
+    "pt": "/pt/travel",
+    "it": "/it/travel",
+    "pl": "/pl/travel",
+    "de": "/de/travel",
+    "zh-Hans": "/zh-Hans/travel",
+    "ru": "/ru/travel",
+    "x-default": "/travel",
+    "hi": "/hi/travel",
+    "th": "/th/travel"
+   }
+  },
+  "travel-th-travel-master": {
+   "master": "travel.html",
+   "english": "/travel",
+   "routes": {
+    "th": "/th/travel"
+   },
+   "renderLocales": [
+    "th"
+   ],
+   "discoveryRoutes": {
+    "en": "/travel",
+    "ar": "/ar/travel",
+    "fr": "/fr/travel",
+    "es": "/es/travel",
+    "pt": "/pt/travel",
+    "it": "/it/travel",
+    "pl": "/pl/travel",
+    "de": "/de/travel",
+    "zh-Hans": "/zh-Hans/travel",
+    "ru": "/ru/travel",
+    "x-default": "/travel",
+    "hi": "/hi/travel",
+    "th": "/th/travel"
+   }
+  },
+  "bekaa-kafra-zh-travel-master": {
+   "master": "bekaa-kafra.html",
+   "english": "/bekaa-kafra",
+   "routes": {
+    "zh-Hans": "/zh-Hans/bekaa-kafra"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/bekaa-kafra",
+    "de": "/de/bekaa-kafra",
+    "zh-Hans": "/zh-Hans/bekaa-kafra",
+    "ru": "/ru/bekaa-kafra",
+    "x-default": "/bekaa-kafra"
+   }
+  },
+  "qozhaya-monastery-zh-travel-master": {
+   "master": "qozhaya-monastery.html",
+   "english": "/qozhaya-monastery",
+   "routes": {
+    "zh-Hans": "/zh-Hans/qozhaya-monastery"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/qozhaya-monastery",
+    "ar": "/ar/qozhaya-monastery",
+    "fr": "/fr/monastere-qozhaya",
+    "es": "/es/monasterio-qozhaya",
+    "de": "/de/qozhaya-monastery",
+    "zh-Hans": "/zh-Hans/qozhaya-monastery",
+    "ru": "/ru/qozhaya-monastery",
+    "x-default": "/qozhaya-monastery"
+   }
+  },
+  "bkerke-maronite-patriarchate-zh-travel-master": {
+   "master": "bkerke-maronite-patriarchate.html",
+   "english": "/bkerke-maronite-patriarchate",
+   "routes": {
+    "zh-Hans": "/zh-Hans/bkerke-maronite-patriarchate"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/bkerke-maronite-patriarchate",
+    "de": "/de/bkerke-maronite-patriarchate",
+    "zh-Hans": "/zh-Hans/bkerke-maronite-patriarchate",
+    "ru": "/ru/bkerke-maronite-patriarchate",
+    "x-default": "/bkerke-maronite-patriarchate"
+   }
+  },
+  "visit-annaya-zh-travel-master": {
+   "master": "visit-annaya.html",
+   "english": "/visit-annaya",
+   "routes": {
+    "zh-Hans": "/zh-Hans/visit-annaya"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/visit-annaya",
+    "ar": "/ar/annaya",
+    "fr": "/fr/annaya",
+    "es": "/es/annaya",
+    "pt": "/pt/annaya",
+    "it": "/it/annaya",
+    "de": "/de/annaya",
+    "pl": "/pl/annaya",
+    "ru": "/ru/annaya",
+    "zh-Hans": "/zh-Hans/visit-annaya",
+    "x-default": "/visit-annaya"
+   }
+  },
+  "saint-charbel-hermitage-zh-travel-master": {
+   "master": "saint-charbel-hermitage.html",
+   "english": "/saint-charbel-hermitage",
+   "routes": {
+    "zh-Hans": "/zh-Hans/saint-charbel-hermitage"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/saint-charbel-hermitage",
+    "de": "/de/saint-charbel-hermitage",
+    "zh-Hans": "/zh-Hans/saint-charbel-hermitage",
+    "ru": "/ru/saint-charbel-hermitage",
+    "x-default": "/saint-charbel-hermitage"
+   }
+  },
+  "saint-charbel-trail-zh-travel-master": {
+   "master": "saint-charbel-trail.html",
+   "english": "/saint-charbel-trail",
+   "routes": {
+    "zh-Hans": "/zh-Hans/saint-charbel-trail"
+   },
+   "renderLocales": [
+    "zh-Hans"
+   ],
+   "discoveryRoutes": {
+    "en": "/saint-charbel-trail",
+    "de": "/de/saint-charbel-trail",
+    "zh-Hans": "/zh-Hans/saint-charbel-trail",
+    "ru": "/ru/saint-charbel-trail",
+    "x-default": "/saint-charbel-trail"
+   }
+  },
+  "feedback": {
+   "master": "feedback.html",
+   "english": "/feedback",
+   "routes": {
+    "ar": "/ar/feedback",
+    "fr": "/fr/feedback",
+    "es": "/es/feedback",
+    "pt": "/pt/feedback",
+    "it": "/it/feedback",
+    "de": "/de/feedback",
+    "pl": "/pl/feedback",
+    "ru": "/ru/feedback"
+   },
+   "renderLocales": []
+  },
+  "feedback-review": {
+   "master": "feedback-review.html",
+   "english": "/feedback-review",
+   "routes": {
+    "ar": "/ar/feedback-review",
+    "fr": "/fr/feedback-review",
+    "es": "/es/feedback-review",
+    "pt": "/pt/feedback-review",
+    "it": "/it/feedback-review",
+    "de": "/de/feedback-review",
+    "pl": "/pl/feedback-review",
+    "ru": "/ru/feedback-review"
+   },
+   "renderLocales": []
+  },
+  "daily-prayer": {
+   "master": "daily-prayer.html",
+   "english": "/daily-prayer",
+   "routes": {
+    "ar": "/ar/daily-prayer",
+    "fr": "/fr/daily-prayer",
+    "es": "/es/daily-prayer",
+    "pt": "/pt/daily-prayer",
+    "it": "/it/daily-prayer",
+    "de": "/de/daily-prayer",
+    "pl": "/pl/daily-prayer",
+    "ru": "/ru/daily-prayer"
+   },
+   "renderLocales": []
+  },
+  "daily-prayer-result": {
+   "master": "daily-prayer-result.html",
+   "english": "/daily-prayer-result",
+   "routes": {
+    "ar": "/ar/daily-prayer-result",
+    "fr": "/fr/daily-prayer-result",
+    "es": "/es/daily-prayer-result",
+    "pt": "/pt/daily-prayer-result",
+    "it": "/it/daily-prayer-result",
+    "de": "/de/daily-prayer-result",
+    "pl": "/pl/daily-prayer-result",
+    "ru": "/ru/daily-prayer-result"
+   },
+   "renderLocales": []
+  },
+  "daily-prayer-admin": {
+   "master": "daily-prayer-admin.html",
+   "english": "/daily-prayer-admin",
+   "routes": {
+    "ar": "/ar/daily-prayer-admin",
+    "fr": "/fr/daily-prayer-admin",
+    "es": "/es/daily-prayer-admin",
+    "pt": "/pt/daily-prayer-admin",
+    "it": "/it/daily-prayer-admin",
+    "de": "/de/daily-prayer-admin",
+    "pl": "/pl/daily-prayer-admin",
+    "ru": "/ru/daily-prayer-admin"
+   },
+   "renderLocales": []
+  },
+  "music-master": {
+   "master": "music.html",
+   "english": "/music",
+   "routes": {
+    "ar": "/ar/music",
+    "fr": "/fr/music",
+    "es": "/es/music",
+    "pt": "/pt/music",
+    "it": "/it/music",
+    "de": "/de/music",
+    "pl": "/pl/music",
+    "hi": "/hi/music",
+    "th": "/th/music"
+   },
+   "renderLocales": [
+    "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl",
+    "hi",
+    "th"
+   ],
+   "discoveryRoutes": {
+    "en": "/music",
+    "ar": "/ar/music",
+    "fr": "/fr/music",
+    "es": "/es/music",
+    "pt": "/pt/music",
+    "it": "/it/music",
+    "de": "/de/music",
+    "pl": "/pl/music",
+    "hi": "/hi/music",
+    "th": "/th/music",
+    "x-default": "/music"
+   }
+  },
+  "all-saints-and-all-souls-master": {
+   "master": "all-saints-and-all-souls.html",
+   "english": "/all-saints-and-all-souls",
+   "routes": {
+    "ar": "/ar/all-saints",
+    "de": "/de/allerheiligen",
+    "fr": "/fr/toussaint",
+    "pt": "/pt/todos-os-santos",
+    "it": "/it/tutti-i-santi",
+    "pl": "/pl/wszystkich-swietych",
+    "es": "/es/todos-los-santos"
+   },
+   "renderLocales": [
+    "ar",
+    "de",
+    "fr",
+    "pt",
+    "it",
+    "pl",
+    "es"
+   ],
+   "discoveryRoutes": {
+    "en": "/all-saints-and-all-souls",
+    "ar": "/ar/all-saints",
+    "fr": "/fr/toussaint",
+    "es": "/es/todos-los-santos",
+    "pt": "/pt/todos-os-santos",
+    "it": "/it/tutti-i-santi",
+    "de": "/de/allerheiligen",
+    "pl": "/pl/wszystkich-swietych",
+    "x-default": "/all-saints-and-all-souls"
+   }
+  },
+  "help-me-pray-master": {
+   "master": "help-me-pray.html",
+   "english": "/help-me-pray",
+   "routes": {
+    "ar": "/ar/help-me-pray",
+    "de": "/de/help-me-pray",
+    "es": "/es/help-me-pray",
+    "fr": "/fr/help-me-pray",
+    "hi": "/hi/help-me-pray",
+    "it": "/it/help-me-pray",
+    "pl": "/pl/help-me-pray",
+    "pt": "/pt/help-me-pray",
+    "ru": "/ru/help-me-pray",
+    "th": "/th/help-me-pray"
+   },
+   "renderLocales": [
+    "ar",
+    "de",
+    "es",
+    "fr",
+    "hi",
+    "it",
+    "pl",
+    "pt",
+    "ru",
+    "th"
+   ],
+   "sitemapHeld": [
+    "ar",
+    "de",
+    "es",
+    "fr",
+    "hi",
+    "it",
+    "pl",
+    "pt",
+    "ru",
+    "th"
+   ],
+   "discoveryRoutes": {
+    "en": "/help-me-pray",
+    "ar": "/ar/help-me-pray",
+    "de": "/de/help-me-pray",
+    "es": "/es/help-me-pray",
+    "fr": "/fr/help-me-pray",
+    "hi": "/hi/help-me-pray",
+    "it": "/it/help-me-pray",
+    "pl": "/pl/help-me-pray",
+    "pt": "/pt/help-me-pray",
+    "ru": "/ru/help-me-pray",
+    "th": "/th/help-me-pray",
+    "x-default": "/help-me-pray"
+   }
+  },
+  "gallery-master": {
+   "master": "gallery.html",
+   "english": "/gallery",
+   "routes": {
+    "ar": "/ar/gallery"
+   },
+   "renderLocales": [
+    "ar"
+   ]
+  },
+  "saints-master": {
+   "master": "saints.html",
+   "english": "/saints",
+   "routes": {
+    "ar": "/ar/saints"
+   },
+   "renderLocales": [
+    "ar"
+   ]
+  },
+  "feedback-master": {
+   "master": "feedback.html",
+   "english": "/feedback",
+   "routes": {
+    "ar": "/ar/feedback"
+   },
+   "renderLocales": [
+    "ar"
+   ],
+   "sitemapHeld": [
+    "ar"
+   ]
+  },
+  "submit-testimony-master": {
+   "master": "submit-testimony.html",
+   "english": "/submit-testimony",
+   "routes": {
+    "ar": "/ar/submit-testimony"
+   },
+   "renderLocales": [
+    "ar"
+   ],
+   "sitemapHeld": [
+    "ar"
+   ]
+  },
+  "voice-testimony-master": {
+   "master": "voice-testimony.html",
+   "english": "/voice-testimony",
+   "routes": {
+    "ar": "/ar/voice-testimony"
+   },
+   "renderLocales": [
+    "ar"
+   ]
+  },
+  "prayer-library-master": {
+   "master": "prayer-library.html",
+   "english": "/prayer-library",
+   "routes": {
+    "ar": "/ar/prayer-library"
+   },
+   "renderLocales": [
+    "ar"
+   ]
+  },
+  "testimonies-master": {
+   "master": "testimonies.html",
+   "english": "/testimonies",
+   "routes": {
+    "ar": "/ar/testimonies"
+   },
+   "renderLocales": [
+    "ar"
+   ]
+  },
+  "videos-master": {
+   "master": "videos.html",
+   "english": "/videos",
+   "routes": {
+    "ar": "/ar/videos"
+   },
+   "renderLocales": [
+    "ar"
+   ]
+  },
+  "news-master": {
+   "master": "news.html",
+   "english": "/news",
+   "routes": {
+    "ar": "/ar/news"
+   },
+   "renderLocales": [
+    "ar"
+   ]
+  },
+  "saint-charbel-encyclopedia-master": {
+   "master": "saint-charbel-encyclopedia.html",
+   "english": "/saint-charbel-encyclopedia",
+   "routes": {
+    "ar": "/ar/encyclopedia"
+   },
+   "renderLocales": [
+    "ar"
+   ]
+  },
+  "veronica-story-master": {
+   "master": "veronica-giuliani-story.html",
+   "english": "/veronica-giuliani-story",
+   "routes": {
+    "ar": "/ar/veronica-giuliani-story",
+    "fr": "/fr/veronica-giuliani-story",
+    "es": "/es/veronica-giuliani-story",
+    "pt": "/pt/veronica-giuliani-story",
+    "it": "/it/veronica-giuliani-story",
+    "de": "/de/veronica-giuliani-story",
+    "pl": "/pl/veronica-giuliani-story",
+    "ru": "/ru/veronica-giuliani-story",
+    "hi": "/hi/veronica-giuliani-story",
+    "th": "/th/veronica-giuliani-story",
+    "zh-Hans": "/zh-Hans/veronica-giuliani-story"
+   },
+   "renderLocales": [
+    "ar",
+    "fr",
+    "es",
     "pt",
     "it",
     "de",
@@ -576,1243 +1821,29 @@
     "hi",
     "th",
     "zh-Hans"
-  ],
-  "domMirrors": {
-    "feast": {
-      "english": "/saint-charbel-feast-day",
-      "routes": {
-        "ar": "/ar/feast-day"
-      },
-      "catalog": "feast-mirror.json"
-    }
-  },
-  "exactMirrors": {
-    "biography": {
-      "english": "/history",
-      "routes": {
-        "en": "/history",
-        "de": "/de/biografie",
-        "ru": "/ru/biography"
-      },
-      "renderLocales": []
-    },
-    "novena": {
-      "english": "/saint-charbel-novena",
-      "routes": {
-        "en": "/saint-charbel-novena",
-        "de": "/de/novene"
-      },
-      "renderLocales": []
-    },
-    "feast": {
-      "english": "/saint-charbel-feast-day",
-      "routes": {
-        "en": "/saint-charbel-feast-day",
-        "ar": "/ar/feast-day",
-        "es": "/es/fiesta",
-        "pt": "/pt/festa",
-        "de": "/de/gedenktag"
-      },
-      "renderLocales": [
-        "de"
-      ]
-    },
-    "miracles": {
-      "english": "/miracles/",
-      "routes": {
-        "en": "/miracles/",
-        "de": "/de/miracles/",
-        "ar": "/ar/miracles/"
-      },
-      "renderLocales": [
-        "de"
-      ]
-    },
-    "nohad-story": {
-      "english": "/miracles/nohad-el-shami",
-      "routes": {
-        "en": "/miracles/nohad-el-shami",
-        "ar": "/ar/miracles/nohad-el-shami"
-      },
-      "renderLocales": []
-    },
-    "dafne-story": {
-      "english": "/miracles/dafne-gutierrez",
-      "routes": {
-        "en": "/miracles/dafne-gutierrez",
-        "ar": "/ar/miracles/dafne-gutierrez"
-      },
-      "renderLocales": []
-    },
-    "raymond-story": {
-      "english": "/miracles/raymond-nader",
-      "routes": {
-        "en": "/miracles/raymond-nader",
-        "ar": "/ar/miracles/raymond-nader"
-      },
-      "renderLocales": []
-    },
-    "rosary-intro": {
-      "english": "/rosary-intro",
-      "routes": {
-        "en": "/rosary-intro",
-        "ar": "/ar/rosary"
-      },
-      "renderLocales": []
-    }
-  },
-  "homepageMirrors": {
-    "master": "index.html",
-    "renderLocales": [
-      "ar",
-      "fr",
-      "es",
-      "pt",
-      "it",
-      "de",
-      "pl",
-      "ru",
-      "hi",
-      "th"
-    ]
-  },
-  "pageMirrors": {
-    "film-premiere-master": {
-      "master": "charbel-film-premiere.html",
-      "english": "/charbel-film-premiere",
-      "routes": {
-        "ar": "/ar/charbel-film-premiere",
-        "de": "/de/charbel-film-premiere",
-        "es": "/es/charbel-film-premiere",
-        "fr": "/fr/charbel-film-premiere",
-        "hi": "/hi/charbel-film-premiere",
-        "it": "/it/charbel-film-premiere",
-        "pl": "/pl/charbel-film-premiere",
-        "pt": "/pt/charbel-film-premiere",
-        "ru": "/ru/charbel-film-premiere",
-        "th": "/th/charbel-film-premiere",
-        "zh-Hans": "/zh-Hans/charbel-film-premiere"
-      },
-      "renderLocales": [
-        "ar",
-        "de",
-        "es",
-        "fr",
-        "hi",
-        "it",
-        "pl",
-        "pt",
-        "ru",
-        "th",
-        "zh-Hans"
-      ]
-    },
-    "history-master": {
-      "master": "history.html",
-      "english": "/history",
-      "routes": {
-        "ar": "/ar/biography",
-        "fr": "/fr/biographie",
-        "es": "/es/biografia",
-        "pt": "/pt/biografia",
-        "it": "/it/biografia",
-        "de": "/de/biografie",
-        "pl": "/pl/biografia",
-        "ru": "/ru/biography",
-        "hi": "/hi/history",
-        "th": "/th/history"
-      },
-      "renderLocales": [
-        "ar",
-        "fr",
-        "es",
-        "pt",
-        "it",
-        "de",
-        "pl",
-        "ru",
-        "hi",
-        "th"
-      ]
-    },
-    "annaya-master": {
-      "master": "visit-annaya.html",
-      "english": "/visit-annaya",
-      "routes": {
-        "ar": "/ar/annaya",
-        "fr": "/fr/annaya",
-        "es": "/es/annaya",
-        "pt": "/pt/annaya",
-        "it": "/it/annaya",
-        "de": "/de/annaya",
-        "pl": "/pl/annaya",
-        "ru": "/ru/annaya"
-      },
-      "renderLocales": [
-        "ar",
-        "fr",
-        "es",
-        "pt",
-        "it",
-        "de",
-        "pl",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/visit-annaya",
-        "ar": "/ar/annaya",
-        "fr": "/fr/annaya",
-        "es": "/es/annaya",
-        "pt": "/pt/annaya",
-        "it": "/it/annaya",
-        "de": "/de/annaya",
-        "pl": "/pl/annaya",
-        "ru": "/ru/annaya",
-        "zh-Hans": "/zh-Hans/visit-annaya",
-        "x-default": "/visit-annaya"
-      }
-    },
-    "twenty-second-master": {
-      "master": "22nd-of-the-month.html",
-      "english": "/22nd-of-the-month",
-      "routes": {
-        "ar": "/ar/22nd-of-the-month",
-        "fr": "/fr/22-du-mois",
-        "es": "/es/el-22-de-cada-mes",
-        "pt": "/pt/o-dia-22-do-mes",
-        "it": "/it/il-22-del-mese",
-        "de": "/de/der-22-des-monats",
-        "pl": "/pl/22-dnia-miesiaca",
-        "ru": "/ru/22-chislo-mesyaca"
-      },
-      "renderLocales": [
-        "ar",
-        "fr",
-        "es",
-        "pt",
-        "it",
-        "de",
-        "pl",
-        "ru"
-      ]
-    },
-    "pilgrimage-master": {
-      "master": "saint-charbel-pilgrimage.html",
-      "english": "/saint-charbel-pilgrimage",
-      "routes": {
-        "ar": "/ar/pilgrimage",
-        "fr": "/fr/pelerinage",
-        "es": "/es/peregrinacion",
-        "pt": "/pt/peregrinacao",
-        "it": "/it/pellegrinaggio",
-        "de": "/de/pilgerreise",
-        "pl": "/pl/pielgrzymka",
-        "ru": "/ru/palomnichestvo",
-        "zh-Hans": "/zh-Hans/pilgrimage"
-      },
-      "renderLocales": [
-        "ar",
-        "fr",
-        "es",
-        "pt",
-        "it",
-        "de",
-        "pl",
-        "ru",
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/saint-charbel-pilgrimage",
-        "ar": "/ar/pilgrimage",
-        "fr": "/fr/pelerinage",
-        "es": "/es/peregrinacion",
-        "pt": "/pt/peregrinacao",
-        "it": "/it/pellegrinaggio",
-        "de": "/de/pilgerreise",
-        "pl": "/pl/pielgrzymka",
-        "ru": "/ru/palomnichestvo",
-        "zh-Hans": "/zh-Hans/pilgrimage",
-        "x-default": "/saint-charbel-pilgrimage"
-      }
-    },
-    "saint-charbel-prayers-master": {
-      "master": "saint-charbel-prayers.html",
-      "english": "/saint-charbel-prayers",
-      "routes": {
-        "ar": "/ar/prayers",
-        "de": "/de/gebete",
-        "fr": "/fr/prieres",
-        "ru": "/ru/molitvy",
-        "pt": "/pt/oracoes",
-        "it": "/it/preghiere",
-        "pl": "/pl/modlitwy",
-        "es": "/es/oraciones"
-      },
-      "renderLocales": [
-        "ar",
-        "de",
-        "fr",
-        "ru",
-        "pt",
-        "it",
-        "pl",
-        "es"
-      ],
-      "discoveryRoutes": {
-        "en": "/saint-charbel-prayers",
-        "ar": "/ar/prayers",
-        "fr": "/fr/prieres",
-        "es": "/es/oraciones",
-        "pt": "/pt/oracoes",
-        "it": "/it/preghiere",
-        "de": "/de/gebete",
-        "pl": "/pl/modlitwy",
-        "ru": "/ru/molitvy",
-        "x-default": "/saint-charbel-prayers"
-      }
-    },
-    "saint-charbel-novena-master": {
-      "master": "saint-charbel-novena.html",
-      "english": "/saint-charbel-novena",
-      "routes": {
-        "ar": "/ar/novena",
-        "de": "/de/novene",
-        "fr": "/fr/neuvaine",
-        "ru": "/ru/novena",
-        "pt": "/pt/novena",
-        "it": "/it/novena",
-        "pl": "/pl/nowenna",
-        "es": "/es/novena"
-      },
-      "renderLocales": [
-        "ar",
-        "de",
-        "fr",
-        "ru",
-        "pt",
-        "it",
-        "pl",
-        "es"
-      ],
-      "discoveryRoutes": {
-        "en": "/saint-charbel-novena",
-        "ar": "/ar/novena",
-        "fr": "/fr/neuvaine",
-        "de": "/de/novene",
-        "ru": "/ru/novena",
-        "x-default": "/saint-charbel-novena",
-        "pt": "/pt/novena",
-        "it": "/it/novena",
-        "pl": "/pl/nowenna",
-        "es": "/es/novena"
-      }
-    },
-    "saint-charbel-medal-master": {
-      "master": "saint-charbel-medal.html",
-      "english": "/saint-charbel-medal",
-      "routes": {
-        "ar": "/ar/saint-charbel-medal",
-        "de": "/de/saint-charbel-medal",
-        "es": "/es/saint-charbel-medal",
-        "fr": "/fr/saint-charbel-medal",
-        "hi": "/hi/saint-charbel-medal",
-        "it": "/it/saint-charbel-medal",
-        "pl": "/pl/saint-charbel-medal",
-        "pt": "/pt/saint-charbel-medal",
-        "ru": "/ru/saint-charbel-medal",
-        "th": "/th/saint-charbel-medal",
-        "zh-Hans": "/zh-Hans/saint-charbel-medal"
-      },
-      "renderLocales": [
-        "ar",
-        "de",
-        "es",
-        "fr",
-        "hi",
-        "it",
-        "pl",
-        "pt",
-        "ru",
-        "th",
-        "zh-Hans"
-      ],
-      "sourceLinks": {
-        "ar": {
-          "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/catechism_ar/parte2_nn1066-1690.pdf"
-        },
-        "de": {
-          "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/catechism_ge/p2s2c4a1_ge.htm"
-        },
-        "es": {
-          "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/catechism_sp/p2s2c4a1_sp.html"
-        },
-        "fr": {
-          "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/FRA0013/__P52.HTM"
-        },
-        "it": {
-          "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/catechism_it/p2s2c4a1_it.htm"
-        },
-        "pl": {
-          "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.intratext.com/IXT/POL0073/_P60.HTM"
-        },
-        "pt": {
-          "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/archive/cathechism_po/index_new/p2s2cap4_1667-1690_po.html"
-        },
-        "ru": {
-          "https://www.usccb.org/catechism/pt2sect2chpt4": "https://yakovkrotov.com/acts/20/2vatican/1667.html"
-        },
-        "th": {
-          "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.thaicatechesis.com/ccc/part-two/section-two/chapter-4-other-liturgical-celebrations"
-        },
-        "zh-Hans": {
-          "https://www.usccb.org/catechism/pt2sect2chpt4": "https://www.vatican.va/chinese/ccc/29_1667-1690_ccc_zh.pdf"
-        }
-      }
-    },
-    "our-lady-of-lebanon-harissa-travel-master": {
-      "master": "our-lady-of-lebanon-harissa.html",
-      "english": "/our-lady-of-lebanon-harissa",
-      "routes": {
-        "de": "/de/our-lady-of-lebanon-harissa",
-        "ru": "/ru/our-lady-of-lebanon-harissa"
-      },
-      "renderLocales": [
-        "de",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/our-lady-of-lebanon-harissa",
-        "de": "/de/our-lady-of-lebanon-harissa",
-        "zh-Hans": "/zh-Hans/our-lady-of-lebanon-harissa",
-        "ru": "/ru/our-lady-of-lebanon-harissa",
-        "x-default": "/our-lady-of-lebanon-harissa"
-      }
-    },
-    "bekaa-kafra-travel-master": {
-      "master": "bekaa-kafra.html",
-      "english": "/bekaa-kafra",
-      "routes": {
-        "de": "/de/bekaa-kafra",
-        "ru": "/ru/bekaa-kafra"
-      },
-      "renderLocales": [
-        "de",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/bekaa-kafra",
-        "de": "/de/bekaa-kafra",
-        "zh-Hans": "/zh-Hans/bekaa-kafra",
-        "ru": "/ru/bekaa-kafra",
-        "x-default": "/bekaa-kafra"
-      }
-    },
-    "qozhaya-monastery-travel-master": {
-      "master": "qozhaya-monastery.html",
-      "english": "/qozhaya-monastery",
-      "routes": {
-        "de": "/de/qozhaya-monastery",
-        "ru": "/ru/qozhaya-monastery"
-      },
-      "renderLocales": [
-        "de",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/qozhaya-monastery",
-        "ar": "/ar/qozhaya-monastery",
-        "fr": "/fr/monastere-qozhaya",
-        "es": "/es/monasterio-qozhaya",
-        "de": "/de/qozhaya-monastery",
-        "zh-Hans": "/zh-Hans/qozhaya-monastery",
-        "ru": "/ru/qozhaya-monastery",
-        "x-default": "/qozhaya-monastery"
-      }
-    },
-    "bkerke-maronite-patriarchate-travel-master": {
-      "master": "bkerke-maronite-patriarchate.html",
-      "english": "/bkerke-maronite-patriarchate",
-      "routes": {
-        "de": "/de/bkerke-maronite-patriarchate",
-        "ru": "/ru/bkerke-maronite-patriarchate"
-      },
-      "renderLocales": [
-        "de",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/bkerke-maronite-patriarchate",
-        "de": "/de/bkerke-maronite-patriarchate",
-        "zh-Hans": "/zh-Hans/bkerke-maronite-patriarchate",
-        "ru": "/ru/bkerke-maronite-patriarchate",
-        "x-default": "/bkerke-maronite-patriarchate"
-      }
-    },
-    "annaya-tour-travel-master": {
-      "master": "annaya-tour.html",
-      "english": "/annaya-tour",
-      "routes": {
-        "de": "/de/annaya-tour",
-        "ru": "/ru/annaya-tour"
-      },
-      "renderLocales": [
-        "de",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/annaya-tour",
-        "de": "/de/annaya-tour",
-        "zh-Hans": "/zh-Hans/annaya-tour",
-        "ru": "/ru/annaya-tour",
-        "x-default": "/annaya-tour"
-      }
-    },
-    "saint-charbel-trail-travel-master": {
-      "master": "saint-charbel-trail.html",
-      "english": "/saint-charbel-trail",
-      "routes": {
-        "de": "/de/saint-charbel-trail",
-        "ru": "/ru/saint-charbel-trail"
-      },
-      "renderLocales": [
-        "de",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/saint-charbel-trail",
-        "de": "/de/saint-charbel-trail",
-        "zh-Hans": "/zh-Hans/saint-charbel-trail",
-        "ru": "/ru/saint-charbel-trail",
-        "x-default": "/saint-charbel-trail"
-      }
-    },
-    "saint-charbel-places-lebanon-travel-master": {
-      "master": "saint-charbel-places-lebanon.html",
-      "english": "/saint-charbel-places-lebanon",
-      "routes": {
-        "de": "/de/saint-charbel-places-lebanon",
-        "ru": "/ru/saint-charbel-places-lebanon"
-      },
-      "renderLocales": [
-        "de",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/saint-charbel-places-lebanon",
-        "de": "/de/saint-charbel-places-lebanon",
-        "zh-Hans": "/zh-Hans/saint-charbel-places-lebanon",
-        "ru": "/ru/saint-charbel-places-lebanon",
-        "x-default": "/saint-charbel-places-lebanon"
-      }
-    },
-    "qannoubine-monastery-travel-master": {
-      "master": "qannoubine-monastery.html",
-      "english": "/qannoubine-monastery",
-      "routes": {
-        "de": "/de/qannoubine-monastery",
-        "ru": "/ru/qannoubine-monastery"
-      },
-      "renderLocales": [
-        "de",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/qannoubine-monastery",
-        "ar": "/ar/qannoubine-monastery",
-        "fr": "/fr/monastere-qannoubine",
-        "es": "/es/monasterio-qannoubine",
-        "de": "/de/qannoubine-monastery",
-        "zh-Hans": "/zh-Hans/qannoubine-monastery",
-        "ru": "/ru/qannoubine-monastery",
-        "x-default": "/qannoubine-monastery"
-      }
-    },
-    "travel-travel-master": {
-      "master": "travel.html",
-      "english": "/travel",
-      "routes": {
-        "de": "/de/travel",
-        "hi": "/hi/travel",
-        "ru": "/ru/travel"
-      },
-      "renderLocales": [
-        "de",
-        "hi",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/travel",
-        "ar": "/ar/travel",
-        "fr": "/fr/travel",
-        "es": "/es/travel",
-        "pt": "/pt/travel",
-        "it": "/it/travel",
-        "pl": "/pl/travel",
-        "de": "/de/travel",
-        "zh-Hans": "/zh-Hans/travel",
-        "ru": "/ru/travel",
-        "x-default": "/travel",
-        "hi": "/hi/travel",
-        "th": "/th/travel"
-      }
-    },
-    "cedars-of-god-lebanon-travel-master": {
-      "master": "cedars-of-god-lebanon.html",
-      "english": "/cedars-of-god-lebanon",
-      "routes": {
-        "de": "/de/cedars-of-god-lebanon",
-        "ru": "/ru/cedars-of-god-lebanon"
-      },
-      "renderLocales": [
-        "de",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/cedars-of-god-lebanon",
-        "de": "/de/cedars-of-god-lebanon",
-        "zh-Hans": "/zh-Hans/cedars-of-god-lebanon",
-        "ru": "/ru/cedars-of-god-lebanon",
-        "x-default": "/cedars-of-god-lebanon"
-      }
-    },
-    "qadisha-valley-travel-master": {
-      "master": "qadisha-valley.html",
-      "english": "/qadisha-valley",
-      "routes": {
-        "de": "/de/qadisha-valley",
-        "ru": "/ru/qadisha-valley"
-      },
-      "renderLocales": [
-        "de",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/qadisha-valley",
-        "ar": "/ar/qadisha-valley",
-        "fr": "/fr/vallee-qadisha",
-        "es": "/es/valle-qadisha",
-        "de": "/de/qadisha-valley",
-        "zh-Hans": "/zh-Hans/qadisha-valley",
-        "ru": "/ru/qadisha-valley",
-        "x-default": "/qadisha-valley"
-      }
-    },
-    "saint-charbel-hermitage-travel-master": {
-      "master": "saint-charbel-hermitage.html",
-      "english": "/saint-charbel-hermitage",
-      "routes": {
-        "de": "/de/saint-charbel-hermitage",
-        "ru": "/ru/saint-charbel-hermitage"
-      },
-      "renderLocales": [
-        "de",
-        "ru"
-      ],
-      "discoveryRoutes": {
-        "en": "/saint-charbel-hermitage",
-        "de": "/de/saint-charbel-hermitage",
-        "zh-Hans": "/zh-Hans/saint-charbel-hermitage",
-        "ru": "/ru/saint-charbel-hermitage",
-        "x-default": "/saint-charbel-hermitage"
-      }
-    },
-    "our-lady-of-lebanon-harissa-zh-travel-master": {
-      "master": "our-lady-of-lebanon-harissa.html",
-      "english": "/our-lady-of-lebanon-harissa",
-      "routes": {
-        "zh-Hans": "/zh-Hans/our-lady-of-lebanon-harissa"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/our-lady-of-lebanon-harissa",
-        "de": "/de/our-lady-of-lebanon-harissa",
-        "zh-Hans": "/zh-Hans/our-lady-of-lebanon-harissa",
-        "ru": "/ru/our-lady-of-lebanon-harissa",
-        "x-default": "/our-lady-of-lebanon-harissa"
-      }
-    },
-    "saint-charbel-places-lebanon-zh-travel-master": {
-      "master": "saint-charbel-places-lebanon.html",
-      "english": "/saint-charbel-places-lebanon",
-      "routes": {
-        "zh-Hans": "/zh-Hans/saint-charbel-places-lebanon"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/saint-charbel-places-lebanon",
-        "de": "/de/saint-charbel-places-lebanon",
-        "zh-Hans": "/zh-Hans/saint-charbel-places-lebanon",
-        "ru": "/ru/saint-charbel-places-lebanon",
-        "x-default": "/saint-charbel-places-lebanon"
-      }
-    },
-    "annaya-tour-zh-travel-master": {
-      "master": "annaya-tour.html",
-      "english": "/annaya-tour",
-      "routes": {
-        "zh-Hans": "/zh-Hans/annaya-tour"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/annaya-tour",
-        "de": "/de/annaya-tour",
-        "zh-Hans": "/zh-Hans/annaya-tour",
-        "ru": "/ru/annaya-tour",
-        "x-default": "/annaya-tour"
-      }
-    },
-    "qannoubine-monastery-zh-travel-master": {
-      "master": "qannoubine-monastery.html",
-      "english": "/qannoubine-monastery",
-      "routes": {
-        "zh-Hans": "/zh-Hans/qannoubine-monastery"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/qannoubine-monastery",
-        "ar": "/ar/qannoubine-monastery",
-        "fr": "/fr/monastere-qannoubine",
-        "es": "/es/monasterio-qannoubine",
-        "de": "/de/qannoubine-monastery",
-        "zh-Hans": "/zh-Hans/qannoubine-monastery",
-        "ru": "/ru/qannoubine-monastery",
-        "x-default": "/qannoubine-monastery"
-      }
-    },
-    "cedars-of-god-lebanon-zh-travel-master": {
-      "master": "cedars-of-god-lebanon.html",
-      "english": "/cedars-of-god-lebanon",
-      "routes": {
-        "zh-Hans": "/zh-Hans/cedars-of-god-lebanon"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/cedars-of-god-lebanon",
-        "de": "/de/cedars-of-god-lebanon",
-        "zh-Hans": "/zh-Hans/cedars-of-god-lebanon",
-        "ru": "/ru/cedars-of-god-lebanon",
-        "x-default": "/cedars-of-god-lebanon"
-      }
-    },
-    "qadisha-valley-zh-travel-master": {
-      "master": "qadisha-valley.html",
-      "english": "/qadisha-valley",
-      "routes": {
-        "zh-Hans": "/zh-Hans/qadisha-valley"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/qadisha-valley",
-        "ar": "/ar/qadisha-valley",
-        "fr": "/fr/vallee-qadisha",
-        "es": "/es/valle-qadisha",
-        "de": "/de/qadisha-valley",
-        "zh-Hans": "/zh-Hans/qadisha-valley",
-        "ru": "/ru/qadisha-valley",
-        "x-default": "/qadisha-valley"
-      }
-    },
-    "travel-zh-travel-master": {
-      "master": "travel.html",
-      "english": "/travel",
-      "routes": {
-        "zh-Hans": "/zh-Hans/travel"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/travel",
-        "ar": "/ar/travel",
-        "fr": "/fr/travel",
-        "es": "/es/travel",
-        "pt": "/pt/travel",
-        "it": "/it/travel",
-        "pl": "/pl/travel",
-        "de": "/de/travel",
-        "zh-Hans": "/zh-Hans/travel",
-        "ru": "/ru/travel",
-        "x-default": "/travel",
-        "hi": "/hi/travel",
-        "th": "/th/travel"
-      }
-    },
-    "travel-th-travel-master": {
-      "master": "travel.html",
-      "english": "/travel",
-      "routes": {
-        "th": "/th/travel"
-      },
-      "renderLocales": [
-        "th"
-      ],
-      "discoveryRoutes": {
-        "en": "/travel",
-        "ar": "/ar/travel",
-        "fr": "/fr/travel",
-        "es": "/es/travel",
-        "pt": "/pt/travel",
-        "it": "/it/travel",
-        "pl": "/pl/travel",
-        "de": "/de/travel",
-        "zh-Hans": "/zh-Hans/travel",
-        "ru": "/ru/travel",
-        "x-default": "/travel",
-        "hi": "/hi/travel",
-        "th": "/th/travel"
-      }
-    },
-    "bekaa-kafra-zh-travel-master": {
-      "master": "bekaa-kafra.html",
-      "english": "/bekaa-kafra",
-      "routes": {
-        "zh-Hans": "/zh-Hans/bekaa-kafra"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/bekaa-kafra",
-        "de": "/de/bekaa-kafra",
-        "zh-Hans": "/zh-Hans/bekaa-kafra",
-        "ru": "/ru/bekaa-kafra",
-        "x-default": "/bekaa-kafra"
-      }
-    },
-    "qozhaya-monastery-zh-travel-master": {
-      "master": "qozhaya-monastery.html",
-      "english": "/qozhaya-monastery",
-      "routes": {
-        "zh-Hans": "/zh-Hans/qozhaya-monastery"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/qozhaya-monastery",
-        "ar": "/ar/qozhaya-monastery",
-        "fr": "/fr/monastere-qozhaya",
-        "es": "/es/monasterio-qozhaya",
-        "de": "/de/qozhaya-monastery",
-        "zh-Hans": "/zh-Hans/qozhaya-monastery",
-        "ru": "/ru/qozhaya-monastery",
-        "x-default": "/qozhaya-monastery"
-      }
-    },
-    "bkerke-maronite-patriarchate-zh-travel-master": {
-      "master": "bkerke-maronite-patriarchate.html",
-      "english": "/bkerke-maronite-patriarchate",
-      "routes": {
-        "zh-Hans": "/zh-Hans/bkerke-maronite-patriarchate"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/bkerke-maronite-patriarchate",
-        "de": "/de/bkerke-maronite-patriarchate",
-        "zh-Hans": "/zh-Hans/bkerke-maronite-patriarchate",
-        "ru": "/ru/bkerke-maronite-patriarchate",
-        "x-default": "/bkerke-maronite-patriarchate"
-      }
-    },
-    "visit-annaya-zh-travel-master": {
-      "master": "visit-annaya.html",
-      "english": "/visit-annaya",
-      "routes": {
-        "zh-Hans": "/zh-Hans/visit-annaya"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/visit-annaya",
-        "ar": "/ar/annaya",
-        "fr": "/fr/annaya",
-        "es": "/es/annaya",
-        "pt": "/pt/annaya",
-        "it": "/it/annaya",
-        "de": "/de/annaya",
-        "pl": "/pl/annaya",
-        "ru": "/ru/annaya",
-        "zh-Hans": "/zh-Hans/visit-annaya",
-        "x-default": "/visit-annaya"
-      }
-    },
-    "saint-charbel-hermitage-zh-travel-master": {
-      "master": "saint-charbel-hermitage.html",
-      "english": "/saint-charbel-hermitage",
-      "routes": {
-        "zh-Hans": "/zh-Hans/saint-charbel-hermitage"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/saint-charbel-hermitage",
-        "de": "/de/saint-charbel-hermitage",
-        "zh-Hans": "/zh-Hans/saint-charbel-hermitage",
-        "ru": "/ru/saint-charbel-hermitage",
-        "x-default": "/saint-charbel-hermitage"
-      }
-    },
-    "saint-charbel-trail-zh-travel-master": {
-      "master": "saint-charbel-trail.html",
-      "english": "/saint-charbel-trail",
-      "routes": {
-        "zh-Hans": "/zh-Hans/saint-charbel-trail"
-      },
-      "renderLocales": [
-        "zh-Hans"
-      ],
-      "discoveryRoutes": {
-        "en": "/saint-charbel-trail",
-        "de": "/de/saint-charbel-trail",
-        "zh-Hans": "/zh-Hans/saint-charbel-trail",
-        "ru": "/ru/saint-charbel-trail",
-        "x-default": "/saint-charbel-trail"
-      }
-    },
-    "feedback": {
-      "master": "feedback.html",
-      "english": "/feedback",
-      "routes": {
-        "ar": "/ar/feedback",
-        "fr": "/fr/feedback",
-        "es": "/es/feedback",
-        "pt": "/pt/feedback",
-        "it": "/it/feedback",
-        "de": "/de/feedback",
-        "pl": "/pl/feedback",
-        "ru": "/ru/feedback"
-      },
-      "renderLocales": []
-    },
-    "feedback-review": {
-      "master": "feedback-review.html",
-      "english": "/feedback-review",
-      "routes": {
-        "ar": "/ar/feedback-review",
-        "fr": "/fr/feedback-review",
-        "es": "/es/feedback-review",
-        "pt": "/pt/feedback-review",
-        "it": "/it/feedback-review",
-        "de": "/de/feedback-review",
-        "pl": "/pl/feedback-review",
-        "ru": "/ru/feedback-review"
-      },
-      "renderLocales": []
-    },
-    "daily-prayer": {
-      "master": "daily-prayer.html",
-      "english": "/daily-prayer",
-      "routes": {
-        "ar": "/ar/daily-prayer",
-        "fr": "/fr/daily-prayer",
-        "es": "/es/daily-prayer",
-        "pt": "/pt/daily-prayer",
-        "it": "/it/daily-prayer",
-        "de": "/de/daily-prayer",
-        "pl": "/pl/daily-prayer",
-        "ru": "/ru/daily-prayer"
-      },
-      "renderLocales": []
-    },
-    "daily-prayer-result": {
-      "master": "daily-prayer-result.html",
-      "english": "/daily-prayer-result",
-      "routes": {
-        "ar": "/ar/daily-prayer-result",
-        "fr": "/fr/daily-prayer-result",
-        "es": "/es/daily-prayer-result",
-        "pt": "/pt/daily-prayer-result",
-        "it": "/it/daily-prayer-result",
-        "de": "/de/daily-prayer-result",
-        "pl": "/pl/daily-prayer-result",
-        "ru": "/ru/daily-prayer-result"
-      },
-      "renderLocales": []
-    },
-    "daily-prayer-admin": {
-      "master": "daily-prayer-admin.html",
-      "english": "/daily-prayer-admin",
-      "routes": {
-        "ar": "/ar/daily-prayer-admin",
-        "fr": "/fr/daily-prayer-admin",
-        "es": "/es/daily-prayer-admin",
-        "pt": "/pt/daily-prayer-admin",
-        "it": "/it/daily-prayer-admin",
-        "de": "/de/daily-prayer-admin",
-        "pl": "/pl/daily-prayer-admin",
-        "ru": "/ru/daily-prayer-admin"
-      },
-      "renderLocales": []
-    },
-    "music-master": {
-      "master": "music.html",
-      "english": "/music",
-      "routes": {
-        "ar": "/ar/music",
-        "fr": "/fr/music",
-        "es": "/es/music",
-        "pt": "/pt/music",
-        "it": "/it/music",
-        "de": "/de/music",
-        "pl": "/pl/music",
-        "hi": "/hi/music",
-        "th": "/th/music"
-      },
-      "renderLocales": [
-        "ar",
-        "fr",
-        "es",
-        "pt",
-        "it",
-        "de",
-        "pl",
-        "hi",
-        "th"
-      ],
-      "discoveryRoutes": {
-        "en": "/music",
-        "ar": "/ar/music",
-        "fr": "/fr/music",
-        "es": "/es/music",
-        "pt": "/pt/music",
-        "it": "/it/music",
-        "de": "/de/music",
-        "pl": "/pl/music",
-        "hi": "/hi/music",
-        "th": "/th/music",
-        "x-default": "/music"
-      }
-    },
-    "all-saints-and-all-souls-master": {
-      "master": "all-saints-and-all-souls.html",
-      "english": "/all-saints-and-all-souls",
-      "routes": {
-        "ar": "/ar/all-saints",
-        "de": "/de/allerheiligen",
-        "fr": "/fr/toussaint",
-        "pt": "/pt/todos-os-santos",
-        "it": "/it/tutti-i-santi",
-        "pl": "/pl/wszystkich-swietych",
-        "es": "/es/todos-los-santos"
-      },
-      "renderLocales": [
-        "ar",
-        "de",
-        "fr",
-        "pt",
-        "it",
-        "pl",
-        "es"
-      ],
-      "discoveryRoutes": {
-        "en": "/all-saints-and-all-souls",
-        "ar": "/ar/all-saints",
-        "fr": "/fr/toussaint",
-        "es": "/es/todos-los-santos",
-        "pt": "/pt/todos-os-santos",
-        "it": "/it/tutti-i-santi",
-        "de": "/de/allerheiligen",
-        "pl": "/pl/wszystkich-swietych",
-        "x-default": "/all-saints-and-all-souls"
-      }
-    },
-    "help-me-pray-master": {
-      "master": "help-me-pray.html",
-      "english": "/help-me-pray",
-      "routes": {
-        "ar": "/ar/help-me-pray",
-        "de": "/de/help-me-pray",
-        "es": "/es/help-me-pray",
-        "fr": "/fr/help-me-pray",
-        "hi": "/hi/help-me-pray",
-        "it": "/it/help-me-pray",
-        "pl": "/pl/help-me-pray",
-        "pt": "/pt/help-me-pray",
-        "ru": "/ru/help-me-pray",
-        "th": "/th/help-me-pray"
-      },
-      "renderLocales": [
-        "ar",
-        "de",
-        "es",
-        "fr",
-        "hi",
-        "it",
-        "pl",
-        "pt",
-        "ru",
-        "th"
-      ],
-      "sitemapHeld": [
-        "ar",
-        "de",
-        "es",
-        "fr",
-        "hi",
-        "it",
-        "pl",
-        "pt",
-        "ru",
-        "th"
-      ],
-      "discoveryRoutes": {
-        "en": "/help-me-pray",
-        "ar": "/ar/help-me-pray",
-        "de": "/de/help-me-pray",
-        "es": "/es/help-me-pray",
-        "fr": "/fr/help-me-pray",
-        "hi": "/hi/help-me-pray",
-        "it": "/it/help-me-pray",
-        "pl": "/pl/help-me-pray",
-        "pt": "/pt/help-me-pray",
-        "ru": "/ru/help-me-pray",
-        "th": "/th/help-me-pray",
-        "x-default": "/help-me-pray"
-      }
-    },
-    "gallery-master": {
-      "master": "gallery.html",
-      "english": "/gallery",
-      "routes": {
-        "ar": "/ar/gallery"
-      },
-      "renderLocales": [
-        "ar"
-      ]
-    },
-    "saints-master": {
-      "master": "saints.html",
-      "english": "/saints",
-      "routes": {
-        "ar": "/ar/saints"
-      },
-      "renderLocales": [
-        "ar"
-      ]
-    },
-    "feedback-master": {
-      "master": "feedback.html",
-      "english": "/feedback",
-      "routes": {
-        "ar": "/ar/feedback"
-      },
-      "renderLocales": [
-        "ar"
-      ],
-      "sitemapHeld": [
-        "ar"
-      ]
-    },
-    "submit-testimony-master": {
-      "master": "submit-testimony.html",
-      "english": "/submit-testimony",
-      "routes": {
-        "ar": "/ar/submit-testimony"
-      },
-      "renderLocales": [
-        "ar"
-      ],
-      "sitemapHeld": [
-        "ar"
-      ]
-    },
-    "voice-testimony-master": {
-      "master": "voice-testimony.html",
-      "english": "/voice-testimony",
-      "routes": {
-        "ar": "/ar/voice-testimony"
-      },
-      "renderLocales": [
-        "ar"
-      ]
-    },
-    "prayer-library-master": {
-      "master": "prayer-library.html",
-      "english": "/prayer-library",
-      "routes": {
-        "ar": "/ar/prayer-library"
-      },
-      "renderLocales": [
-        "ar"
-      ]
-    },
-    "testimonies-master": {
-      "master": "testimonies.html",
-      "english": "/testimonies",
-      "routes": {
-        "ar": "/ar/testimonies"
-      },
-      "renderLocales": [
-        "ar"
-      ]
-    },
-    "videos-master": {
-      "master": "videos.html",
-      "english": "/videos",
-      "routes": {
-        "ar": "/ar/videos"
-      },
-      "renderLocales": [
-        "ar"
-      ]
-    },
-    "news-master": {
-      "master": "news.html",
-      "english": "/news",
-      "routes": {
-        "ar": "/ar/news"
-      },
-      "renderLocales": [
-        "ar"
-      ]
-    },
-    "saint-charbel-encyclopedia-master": {
-      "master": "saint-charbel-encyclopedia.html",
-      "english": "/saint-charbel-encyclopedia",
-      "routes": {
-        "ar": "/ar/encyclopedia"
-      },
-      "renderLocales": [
-        "ar"
-      ]
-    }
-  },
-  "limitedLaunchLocales": [
-    "hi",
-    "th"
-  ],
-  "homePublicationLocales": [
-    "en",
-    "ar",
-    "fr",
-    "es",
-    "pt",
-    "it",
-    "de",
-    "pl",
-    "ru",
-    "hi",
-    "th"
-  ],
-  "travelPreviousRoutes": {
-    "de": {
-      "/travel": "/de/travel"
-    }
+   ]
   }
+ },
+ "limitedLaunchLocales": [
+  "hi",
+  "th"
+ ],
+ "homePublicationLocales": [
+  "en",
+  "ar",
+  "fr",
+  "es",
+  "pt",
+  "it",
+  "de",
+  "pl",
+  "ru",
+  "hi",
+  "th"
+ ],
+ "travelPreviousRoutes": {
+  "de": {
+   "/travel": "/de/travel"
+  }
+ }
 }

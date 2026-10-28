@@ -111,8 +111,14 @@ def snapshot(root=ROOT):
     if copy_path.exists():
         expected='window.SC_SAME_PAGE_COPY = '+json.dumps(read_json(copy_path),ensure_ascii=False,separators=(',',':'))+';\n'
         if (root/'same-page-copy.js').read_text()!=expected:raise ValueError('same-page-copy.js differs from UI catalog')
+    # The Veronica story data files are generated from the pinned catalogs by
+    # scripts/books/build-veronica-i18n-data.mjs; its byte-exact --check is the wired
+    # gate that earns their exclusion, same precedent as same-page-copy.js above.
+    veronica_generated = ('veronica-giuliani-story-data.js', 'veronica-giuliani-story-i18n-data.js')
+    if all((root / name).exists() for name in veronica_generated):
+        subprocess.run(['node', str(root / 'scripts/books/build-veronica-i18n-data.mjs'), '--check'], check=True, cwd=root, capture_output=True)
     for path in sorted(root.glob('*.js')):
-        if (path.name == 'same-page-copy.js' and copy_path.exists()) or path.name in ('locale-routes.js', 'eucharistic.js') or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()):
+        if (path.name == 'same-page-copy.js' and copy_path.exists()) or path.name in ('locale-routes.js', 'eucharistic.js') or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()) or (path.name in veronica_generated and all((root / name).exists() for name in veronica_generated)):
             continue
         values = json.loads(subprocess.check_output(['node', str(root/'scripts/i18n/extract-js-text.mjs'), str(path)],text=True))
         counter=Counter(values)
@@ -180,6 +186,16 @@ def check(root=ROOT):
     saint_bios_catalog = read_json(saint_bios_path)['values'] if saint_bios_path.exists() else {}
     shelf_path = root/'locales/en/stories-shelf-copy.json'
     shelf_catalog = read_json(shelf_path)['values'] if shelf_path.exists() else {}
+    # The Veronica shelf card copy lives in the pinned book catalog, not in the shelf
+    # template. The shelf generator's byte-exact --check is the wired gate proving
+    # stories.html is its exact output; only those catalog strings are allowed here.
+    veronica_en_path = root/'content/books/veronica-giuliani-story/en.json'
+    if veronica_en_path.exists():
+        subprocess.run(['node', str(root/'scripts/books/shelf.mjs'), '--check'], check=True, cwd=root, capture_output=True)
+        _ve = read_json(veronica_en_path)
+        _card = shelf_catalog.setdefault('stories.html', {})
+        for _s in (_ve.get('coverAlt'), _ve.get('title'), _ve.get('linkLabel'), _ve.get('summary')):
+            if _s: _card[_s] = _card.get(_s, 0) + 1
     jude_path = root/'locales/en/jude-story-copy.json'
     jude_catalog = read_json(jude_path)['values'] if jude_path.exists() else {}
     rosary_book_joyful_path = root/'locales/en/rosary-book-joyful-copy.json'

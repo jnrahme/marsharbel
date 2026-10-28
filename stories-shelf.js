@@ -57,3 +57,16 @@
   var q = new URLSearchParams(location.search).get('q');
   if (q) { input.value = q; apply(); }
 })();
+
+// Veronica card locale routing: the shelf itself is English-only, but the Veronica book has
+// per-locale editions. A ?lang=<locale> hint (set by the reader's return link) routes the
+// Veronica card to that locale edition; anything unrecognized keeps the EN route. Locale list
+// mirrors content/books/veronica-giuliani-story/book.json (locales, minus en).
+(function () {
+  const VERONICA_TWIN_LOCALES = { ar: 'ar', fr: 'fr', es: 'es', pt: 'pt', it: 'it', de: 'de', pl: 'pl', ru: 'ru', hi: 'hi', th: 'th', 'zh-hans': 'zh-Hans' };
+  const lang = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+  const route = VERONICA_TWIN_LOCALES[lang];
+  if (!route) return;
+  const card = document.querySelector('article[data-keywords^="veronica giuliani"] .promo-link');
+  if (card) card.href = '/' + route + '/veronica-giuliani-story';
+})();

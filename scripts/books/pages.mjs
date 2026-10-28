@@ -13,6 +13,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const R = (...p) => path.join(ROOT, ...p);
 const mode = process.argv[2] || '--check';
 const TEMPLATE = fs.readFileSync(R('templates/books/story-page.html'), 'utf8');
+const REGISTRY = JSON.parse(fs.readFileSync(R('locales/registry.json'), 'utf8'));
 const SITE = 'https://marsharbel.com';
 const q = s => '"' + s.replace(/(?<!\\)"/g, '\\"') + '"'; // partial args are inserted verbatim (build-pages does no unescaping); inner quotes must stay backslash-escaped
 const faqArgs = pairs => pairs.flatMap(p => [q(p.q), q(p.ldA ?? p.a)]).join(' ');
@@ -92,7 +93,7 @@ function derive(f) {
     ogLocale: f.ogLocales === 'all' ? '  {{> head-og-locales}}' : (f.ogLocales || []).map((l, i) => i === 0 ? `<meta property="og:locale" content="${l}" />` : `<meta property="og:locale:alternate" content="${l}" />`).join('\n'),
     pageCount: String(pages ? pages.length : f.pageCount), disclosureAttr: f.specificDisclosure ? ' data-story-specific-disclosure=""' : '', footerFragment: f.footerFragment || 'footer-credit-b',
     summary: f.summaryHtml ?? '', family: f.familyReadingHtml ?? '', about: f.aboutHtml ?? '', faqArgs: hasFaq ? faqArgs(f.faq) : '',
-    faqCard: hasFaq ? faqCard(f.faq) : '', related: f.related ? relList(f.related) : '', footer: f.footerCredit, dataFile: f.dataFile ?? '',
+    faqCard: hasFaq ? faqCard(f.faq) : '', related: f.related ? relList(f.related) : '', footer: f.footerCredit, dataFile: f.dataFile ?? '', dataFileExtra: (f.dataFileExtra || []).map(x => '\n<script defer="" src="' + x + '"></script>').join(''),
     fontPreloads: f.fontPreloadsFragment ? '  {{> head-font-preloads}}' : `<link as="font" crossorigin="" href="./media/fonts/cormorant-garamond-latin-v1.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="./media/fonts/manrope-latin-v1.woff2" rel="preload" type="font/woff2"/>`,
     productionNote: f.productionNote === null ? '' : (f.productionNote ?? DEFAULT_NOTE),
@@ -108,6 +109,16 @@ function render(f) {
   const on = { ogLocale: !!(f.ogLocales && f.ogLocales.length), preLine: !!f.reflectionPreLine, summary: f.summaryHtml != null, family: f.familyReadingHtml != null, dataFile: !!f.dataFile, saintBio: !!f.saintBio, faq: !!(f.faq && f.faq.length), faqSection: !!(f.faq && f.faq.length), related: !!f.related, about: f.aboutHtml != null, productionNote: f.productionNote !== null, videoLd: !!f.film?.videoLd, film: !!f.film, learn: !!f.learn, dates: !!f.dates, research: !!f.research };
   let t = TEMPLATE.replace(/<!--opt:(\w+)-->([\s\S]*?)<!--\/opt:\1-->/g, (_, k, body) => on[k] ? body : '');
   t = t.replace(/@@(\w+)@@/g, (_, k) => { if (!(k in d)) throw new Error('template slot ' + k); return d[k]; });
+  // Mirrored families (locales/registry.json pageMirrors) publish the full locale
+  // alternate set; single-locale books keep the template's self-referential pair.
+  const mirror = Object.values(REGISTRY.pageMirrors || {}).find(m => m.master === f.slug + '.html');
+  if (mirror) {
+    const en = typeof mirror.english === 'string' ? mirror.english : mirror.english.route;
+    const lines = ['  <!-- hreflang:begin -->', `  <link rel="alternate" hreflang="en" href="${SITE}${en}" />`,
+      ...Object.keys(REGISTRY.locales).filter(c => c !== 'en').map(c => `  <link rel="alternate" hreflang="${c}" href="${SITE}${mirror.routes[c]}" />`),
+      `  <link rel="alternate" hreflang="x-default" href="${SITE}${en}" />`, '<!-- hreflang:end -->'];
+    t = t.replace(/<!-- hreflang:begin -->[\s\S]*?<!-- hreflang:end -->/, lines.join('\n'));
+  }
   for (const a of f.bareAttrs || []) t = t.split(` ${a}=""`).join(` ${a}`); // legacy pages write boolean attributes bare
   return t;
 }
@@ -166,7 +177,8 @@ function extract(html) {
     ...(datesM ? { dates: { heading: datesM[1], items: [...datesM[2].matchAll(/<li>(.*?)<\/li>/g)].map(m => m[1]), ...(datesM[3] ? { noteHtml: datesM[3] } : {}) } } : {}),
     ...(researchM ? { research: { heading: researchM[1], items: [...researchM[2].matchAll(/<li>(.*?)<\/li>/g)].map(m => m[1]), ...(researchM[3] ? { tailHtml: researchM[3] } : {}) } } : {}),
     ...(filmM ? { film: { ...(lv ? { videoLd: (([n, d, th, cu, ud, dur, lang]) => ({ name: n, description: d, thumbnail: th, contentUrl: cu, uploadDate: ud, duration: dur, inLanguage: lang }))(tokens(lv)) } : {}), heading: filmM[1], subHtml: filmM[2], videoId: filmM[3], poster: filmM[4], src: filmM[5], badgeLabel: filmM[6], noteHtml: filmM[7], ...(trM ? { transcript: { sectionId: trM[1], heading: trM[2], subHtml: trM[3], summary: trM[4] } } : {}) } } : {}),
-    dataFile: (/<script defer(?:="")? src="([\w-]+-data\.js)"/.exec(c) || [])[1] ?? null
+    dataFile: (/<script defer(?:="")? src="([\w-]+-data\.js)"/.exec(c) || [])[1] ?? null,
+    ...((extra => extra.length ? { dataFileExtra: extra } : {})([...c.matchAll(/<script defer(?:="")? src="([\w-]+-data\.js)"/g)].slice(1).map(m => m[1])))
   };
   if (hs[4] !== `${SITE}/${out.firstImage}`) out.ogImage = hs[4];
   if (lw[5] !== out.seoDescription) out.descLd = lw[5];

@@ -170,7 +170,7 @@ body.is-story-page .story-hero .story-shelf-link:hover{background:rgba(255,236,1
 body.is-story-page .story-hero .story-shelf-link:focus-visible{outline:3px solid #f3d79c}
 @media (max-width:820px){
   body.is-story-page .storybook-controls{background:linear-gradient(180deg,rgba(14,9,6,0),rgba(14,9,6,.96) 28%,#0e0906)}
-  body.is-story-page section.storybook{padding-bottom:1.2rem}
+  body.is-story-page section.storybook{padding-bottom:calc(8.5rem + env(safe-area-inset-bottom))}
 }
 body.is-story-page .storybook.is-rtl .storybook-text .storybook-step::after{background:linear-gradient(270deg,#b98a45,transparent)}
 /* RTL pages: no decorative drop cap. Arabic script does not take one, and English text on an RTL page must stay intact. */
@@ -317,6 +317,9 @@ body.is-story-page .storybook>details.story-settings{position:static;align-self:
 /* phone: lift Settings onto the shelf-link row. The link is the hero's last child; its row sits ~2.9rem above the book section at 320-820px. Section-anchored rem offset so text zoom moves it with the book, and an em-bounded media window (18em-51.25em) that closes under font zoom - below 18em effective width the static fallback keeps the two stacked so they can never collide. */
 @media (max-width:820px){
   body.is-story-page.st-settings-row .storybook>details.story-settings{position:absolute;inset-inline-end:1rem;top:-2.94rem;margin:0}
+  /* Veronica: localized shelf labels can be wide (e.g. Arabic), so the lift can collide;
+     keep Settings in the static stacked fallback for this book only (legacy books unchanged). */
+  body.is-story-page[data-story="veronica"].st-settings-row .storybook>details.story-settings{position:static;inset-inline-end:auto;top:auto;margin:0 .2rem}
   /* open panel takes the full row below the hero (its flow position), so it never overlaps the shelf link */
   body.is-story-page.st-settings-row .storybook>details.story-settings[open]{position:static;inset-inline-end:auto;top:auto;margin:0 .2rem}
 }

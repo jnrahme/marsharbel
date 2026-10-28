@@ -55,10 +55,13 @@ class HeadFragmentTest(unittest.TestCase):
         # saint-charbel-medal.html (the 11-locale medal guide) intentionally
         # contributes one head-social, one head-og-locales and one
         # head-font-preloads inclusion; these counts track that page.
+        # veronica-giuliani-story.html adds one head-social and one
+        # head-font-preloads inclusion (its og:locale set is explicit in
+        # page.json, so head-og-locales is unchanged).
         self.assertEqual(counts, {
             'head-og-locales': 95,  # 94 + saint-charbel-medal.html
-            'head-social': 117,  # 116 + saint-charbel-medal.html
-            'head-font-preloads': 84,  # 83 + saint-charbel-medal.html
+            'head-social': 118,  # 116 + saint-charbel-medal.html + veronica-giuliani-story.html
+            'head-font-preloads': 85,  # 83 + saint-charbel-medal.html + veronica-giuliani-story.html
             'head-font-preloads-legacy': 17,
         })
 
