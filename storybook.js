@@ -923,7 +923,7 @@
     jude: { en: window.JUDE_STORY_EN || [] },
     peter: { en: window.PETER_STORY_EN || [] },
     hardini: { en: window.HARDINI_STORY_EN || [] },
-    veronica: { en: window.VERONICA_STORY_EN || [] }
+    veronica: { en: window.VERONICA_STORY_EN || [], ar: window.VERONICA_STORY_AR || [] }
   };
   const UI = COPY[contentLang];
   const storyPages = STORY_PAGES[storyId] || STORY_PAGES.charbel;
@@ -1047,6 +1047,9 @@
   };
 
   const getEvidenceForPage = (_pageIndex, page) => {
+    if (Array.isArray(page.evidence) && page.evidence.length) {
+      return page.evidence;
+    }
     if (contentLang !== 'en') {
       return [
         {
@@ -1055,9 +1058,6 @@
           sources: ['vaticanBeatification1965', 'vaticanCanonization1977']
         }
       ];
-    }
-    if (Array.isArray(page.evidence) && page.evidence.length) {
-      return page.evidence;
     }
     if (page.evidencePreset && EVIDENCE_PRESETS[page.evidencePreset]) {
       return EVIDENCE_PRESETS[page.evidencePreset];

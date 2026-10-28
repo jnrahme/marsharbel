@@ -198,3 +198,204 @@ window.VERONICA_STORY_EN = [
     ]
   }
 ];
+
+window.VERONICA_STORY_AR = [
+  {
+    "illustration": "./media/storybook-veronica/images/page-01.webp",
+    "title": "ميركاتيلّو، 1660",
+    "body": "في سنة 1660، في ميركاتيلّو، بلدةٍ صغيرةٍ في وادٍ أخضرَ في إيطاليا، وُلدت طفلة. سمّاها والداها، فرانشيسكو وبينيديتّا، أورسولا. كانت أصغرَ سبعِ أخوات. وثلاثٌ من تلك الأخوات سيصبحنَ راهباتٍ أيضًا. لم يكن أحدٌ يستطيع أن يخمّن، في ذلك اليوم، ما ستصير إليه هذه الأختُ الصغرى. لكنّ الله كانت له خطّةٌ لها. وبعد سنوات، ستحمل أورسولا اسمًا جديدًا: فيرونيكا. ومعناه «الصورة الحقيقيّة».",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original child-friendly retelling of documented events; traditions and reported mystical experiences are identified in the story.",
+        "sources": [
+          "veronicaBenedict"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-veronica/images/page-02.webp",
+    "title": "أمنيةٌ تنمو في بياتشينزا",
+    "body": "لمّا بلغت أورسولا سبعَ سنوات، ماتت أمّها. وجد أبوها عملًا جديدًا في مدينةٍ اسمها بياتشينزا، فانتقلت العائلة معه إلى هناك. وتحكي قصّةٌ قديمة أنّ أورسولا، وهي ما زالت طفلةً صغيرة، كانت تتقاسم طعامَها مع الأطفال الفقراء. وفي بياتشينزا، بدأت تشعر بشيءٍ ينمو في قلبها: أمنيةٌ أن تهب حياتَها كلَّها ليسوع.",
+    "prayer": "",
+    "heart": "",
+    "scene": "vocation",
+    "audio": "",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original child-friendly retelling of documented events; traditions and reported mystical experiences are identified in the story.",
+        "sources": [
+          "veronicaBenedict",
+          "veronicaNewAdvent"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-veronica/images/page-03.webp",
+    "title": "خططُ أبيها الأخرى",
+    "body": "أمنيةٌ كهذه قد يصعُب اتّباعُها. كان لأبي أورسولا خططٌ أخرى لها. أراد لها أن تتزوّج، ووجد شبانًا يرجون أن يكون أحدُهم زوجَها. أمّا قلبُ أورسولا فكان معلّقًا ببيتٍ مختلف: ديرٌ تعيش فيه الأخواتُ ببساطةٍ ويصلّينَ معًا. انتظرت. ورجَت. وأخيرًا، قال أبوها نعم.",
+    "prayer": "",
+    "heart": "",
+    "scene": "vocation",
+    "audio": "",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original child-friendly retelling of documented events; traditions and reported mystical experiences are identified in the story.",
+        "sources": [
+          "veronicaNewAdvent"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-veronica/images/page-04.webp",
+    "title": "اسمٌ جديد",
+    "body": "في سنة 1677، وعمرُ أورسولا سبعَ عشرةَ سنة، عبرت بابَ ديرٍ في تشيتّا دي كاستيلّو. الديرُ مكانٌ تصلّي فيه الأخواتُ وتعملْنَ ويعِشْنَ قريباتٍ من الله. صارت أورسولا راهبةً كلاريسيّةً كبوتشينيّة، وأُعطيت اسمَها الجديد: فيرونيكا. وستبقى في ذلك الدير الواحد خمسين سنة.",
+    "prayer": "",
+    "heart": "",
+    "scene": "vocation",
+    "audio": "",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original child-friendly retelling of documented events; traditions and reported mystical experiences are identified in the story.",
+        "sources": [
+          "veronicaBenedict",
+          "veronicaNewAdvent"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-veronica/images/page-05.webp",
+    "title": "بقِيَت",
+    "body": "السنوات الأولى لم تكن سهلة. أحيانًا جُرِّبت فيرونيكا بأن تترك كلَّ شيءٍ وتعود إلى العالم الخارج. لكنّها بقِيَت. وبعد سنةٍ واحدة، في 1678، وقفت أمام أخواتها وأعلنت نذورَها الاحتفاليّة: حياتُها كلُّها، مَهبورةٌ لله. وكانت تعني أن تفي بها.",
+    "prayer": "",
+    "heart": "",
+    "scene": "vocation",
+    "audio": "",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original child-friendly retelling of documented events; traditions and reported mystical experiences are identified in the story.",
+        "sources": [
+          "veronicaBenedict",
+          "veronicaNewAdvent"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-veronica/images/page-06.webp",
+    "title": "المعلِّمة التي تصلّي",
+    "body": "فيرونيكا لم تكن تصلّي فحسب. لأربعٍ وثلاثين سنة، كانت الأختَ التي تعلِّم الأخواتِ الجدد. كانت تقودهُنّ بحكمةٍ وانتباه، حتّى إنّها لم تكن تدعهُنّ يقرأنَ كتبَ الروحانيّات العالية. وكتبت أيضًا رسائلَ كثيرةً وقصائد. وكانت تصلّي من أجل أناسٍ لن يلتقيهم أبدًا: من أجل البابا، ومن أجل الكهنة، ومن أجل كلِّ محتاج. «أن نتألّم بفرح»، كتبت، «هو مفتاحُ المحبّة». وقليلًا قليلًا، رأى الذين يرشدونها أنّ صلاتها شيءٌ خارجٌ عن المعتاد.",
+    "prayer": "",
+    "heart": "",
+    "scene": "vocation",
+    "audio": "",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original child-friendly retelling of documented events; traditions and reported mystical experiences are identified in the story.",
+        "sources": [
+          "veronicaBenedict",
+          "veronicaNewAdvent"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-veronica/images/page-07.webp",
+    "title": "اثنان وعشرون ألف صفحة",
+    "body": "ففي سنة 1693، طلب إليها كاهنٌ وأسقفُها أن تكتب كلَّ شيء: حياتَها كلَّها مع الله. فأطاعت. يومًا بعد يوم، وسنةً بعد سنة، كتبت أربعًا وثلاثين سنة، نحو 22000 صفحة، كلُّها بخطّ اليد، من دون شطبٍ واحد. نحن نسمّيها «يوميّاتها». فيها كتبت عن صلاتها، وعن قُربها من يسوع. وتقول سجلّاتُ الكنيسة القديمة أيضًا إنّها، بطريقةٍ لا يستطيع أحدٌ أن يشرحها تمامًا، شاركت في آلامه. لكنّ فيرونيكا لم تكتب عن الألم قطُّ لتفتخر به. كتبت عن المحبّة.",
+    "prayer": "",
+    "heart": "",
+    "scene": "vocation",
+    "audio": "",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original child-friendly retelling of documented events; traditions and reported mystical experiences are identified in the story.",
+        "sources": [
+          "veronicaBenedict",
+          "veronicaTreccani"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-veronica/images/page-08.webp",
+    "title": "رئيسةُ الدير وأنابيبُ الماء",
+    "body": "مرّت السنون. في سنة 1716، اختارتها الأخواتُ رئيسةً للدير، أي قائدةَ الدير. وستظلّ الأخواتُ يخترْنَها ما بقِيَت من حياتها. استعملت وظيفتَها الجديدة لأمورٍ يوميّة. لم يكن في الدير قطُّ إمدادُ ماءٍ منتظم، فمدّت أنابيبَ لإيصال الماء إليه. ووسّعت الديرَ أيضًا. بالنسبة إلى فيرونيكا، المحبّةُ ليست شيئًا تشعر به فحسب. المحبّةُ شيءٌ تبنيه.",
+    "prayer": "",
+    "heart": "",
+    "scene": "vocation",
+    "audio": "",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original child-friendly retelling of documented events; traditions and reported mystical experiences are identified in the story.",
+        "sources": [
+          "veronicaBenedict",
+          "veronicaNewAdvent"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-veronica/images/page-09.webp",
+    "title": "وجدتُ المحبّة",
+    "body": "مرضت فيرونيكا مرضًا شديدًا. وبعد مرضٍ طويل، ماتت في التاسع من تمّوز سنة 1727، وعمرُها ستٌّ وستّون سنة. كلماتُها الأخيرة كانت: «لقد وجدتُ المحبّة، المحبّة جعلت نفسها مرئيّة!... أخبروا الجميع، أخبروا الجميع!». وفي سنة 1839، أعلنتها الكنيسة قدّيسة. عيدُها في التاسع من تمّوز، يومَ رجعت إلى بيت الله. أورسولا صارت فيرونيكا: صورةً حقيقيّةً للمحبّة التي تبِعتها طوال حياتها.",
+    "prayer": "",
+    "heart": "",
+    "scene": "passing",
+    "audio": "",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original child-friendly retelling of documented events; traditions and reported mystical experiences are identified in the story.",
+        "sources": [
+          "veronicaBenedict",
+          "veronicaNewAdvent",
+          "veronicaTreccani"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-veronica/images/page-10.webp",
+    "title": "نقاط للتأمّل",
+    "body": "ما الذي تظنّ أنّه كان الأصعبَ على فيرونيكا؟ أن تنتظر دخولَ الدير؟ أن تبقى حين صعُب الأمر؟ أم أن تصلّي من أجل أناسٍ لم تلتقِهم قطّ؟ مع أحد الوالدين أو شخصٍ بالغٍ موثوق، اقرأوا رسالة بولس إلى أهل رومية، الإصحاح 8، الآيتين 38-39. بكلمات هذا الكتاب: لا شيء في الخليقة كلِّها يستطيع أن يفصلنا عن محبّة الله. اليوم، صلّوا بهدوءٍ من أجل شخصٍ واحدٍ حزينٍ أو بعيد. وإن شعرتَ أنت بالحزن يومًا، فأخبر شخصًا بالغًا موثوقًا. اللهمّ، نشكرك لأنّك تحبّنا. ساعدنا أن نحبَّ الآخرين كما أحبّت فيرونيكا. يا قدّيسة فيرونيكا، صلّي لأجلنا. آمين.",
+    "prayer": "",
+    "heart": "",
+    "scene": "legacy",
+    "audio": "",
+    "reflection": true,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "The reading named is Romans 8:38-39; the reflection questions, action and prayer are original editorial text.",
+        "sources": [
+          "romansUsccb8"
+        ]
+      }
+    ]
+  }
+];
