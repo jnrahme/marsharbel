@@ -47,7 +47,9 @@
 .news-row{position:relative;display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:1rem;align-items:center;padding-block:1rem;transition:background-color .2s ease}
 .news-row:hover{background:#2C2621}
 /* 200% text: let the text track shrink below min-content and hyphenate long words instead of overflowing the row. */
-.news-row-text{min-width:0}
+/* Reserve the floating 44px share button's column so clamped title/summary lines never run under it
+   (button spans 44-88px from the row's inline-end; the arrow column ends 48px in, so 40px + 12px gap). */
+.news-row-text{min-width:0;padding-inline-end:3.25rem}
 .news-row-title,.news-row-summary{overflow-wrap:anywhere;hyphens:auto}
 .news-row-thumb{display:block;width:96px;height:96px;border-radius:10px;overflow:hidden;background:#171411}
 .news-row-thumb img{display:block;width:100%;height:100%;object-fit:cover}
@@ -78,6 +80,7 @@
   /* Stack rows: at 200% text zoom the 96px thumb + arrow leave the text track
      only ~50px - unreadable and overflowing. One column keeps every row readable. */
   .news-row{grid-template-columns:minmax(0,1fr);gap:.6rem;padding-block:.9rem}
+  .news-row-text{padding-inline-end:0}
   .news-row-thumb--empty{display:none}
   .news-row-thumb{width:72px;height:72px}
   .news-row .share-bar{position:static;transform:none;inset:auto}
