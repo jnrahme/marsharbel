@@ -3415,3 +3415,9 @@ img.home-saint-plate-img{display:block;width:100%;height:100%;object-fit:cover;o
 :lang(ar) .home-saint-day .home-news-head h2{overflow-wrap:anywhere}
 :lang(ar) .home-saint-info .home-news-title,:lang(ar) .home-saint-book .home-news-title{font-size:1.55rem;overflow-wrap:anywhere}
 }
+
+/* Text-only liturgical commemorations have no saint portrait, initial or halo placeholder. */
+.home-saint-day>a.home-saint-info.home-saint-info--text{display:flex;flex-direction:column;padding:clamp(1.25rem,3vw,2rem);gap:.8rem}
+.home-saint-day>a.home-saint-info.home-saint-info--text::before{content:none}
+.home-saint-day>a.home-saint-info.home-saint-info--text>*{margin:0}
+.home-saint-day>a.home-saint-info.home-saint-info--text>.home-news-meta:last-child{padding-block:.5rem 0}
