@@ -337,6 +337,67 @@ class NewsDeskTests(unittest.TestCase):
             credit_hrefs = [a.get('href') for a in soup.select('.news-credits-list a')]
             self.assertIn(url, credit_hrefs)
 
+    def test_almoner_zaporizhzhia_row_en_ar_parity(self):
+        from bs4 import BeautifulSoup
+        rid = 'almoner-zaporizhzhia-poltava-2026-10-30'
+        en_text = (ROOT/'news.html').read_text()
+        ar_text = (ROOT/'ar/news.html').read_text()
+        self.assertEqual(en_text.count(f'id="{rid}"'), 1)
+        self.assertEqual(ar_text.count(f'id="{rid}"'), 1)
+        en = BeautifulSoup(en_text, 'html.parser')
+        ar = BeautifulSoup(ar_text, 'html.parser')
+        en_row = en.select_one(f'article#{rid}')
+        ar_row = ar.select_one(f'article#{rid}')
+        self.assertIsNotNone(en_row)
+        self.assertIsNotNone(ar_row)
+        url = 'https://www.vaticannews.va/en/vatican-city/news/2026-10/papal-almoner-pope-charity-ukraine-30-october-2026.html'
+        en_links = [a.get('href') for a in en_row.select('a')]
+        ar_links = [a.get('href') for a in ar_row.select('a')]
+        self.assertEqual(en_links, [url])
+        self.assertEqual(en_links, ar_links)
+        self.assertIn('chip-update', en_row.select_one('.chip').get('class'))
+        self.assertIn('chip-update', ar_row.select_one('.chip').get('class'))
+        self.assertEqual(en_row.select_one('time').get('datetime'), '2026-10-30')
+        # Bounded finding: only Zaporizhzhia and Poltava confirmed; completion not claimed.
+        self.assertIn('does not confirm', en_row.get_text(' '))
+        self.assertIn('Zaporizhzhia and Poltava', en_row.get_text(' '))
+        self.assertNotIn('completed', en_row.get_text(' '))
+        self.assertNotIn('concluded', en_row.get_text(' '))
+        # Separate figures kept distinct: ~2,000 at the reported distribution, ~10,000 weekly.
+        self.assertIn('2,000', en_row.get_text(' '))
+        self.assertIn('10,000', en_row.get_text(' '))
+        for soup in (en, ar):
+            credit_hrefs = [a.get('href') for a in soup.select('.news-credits-list a')]
+            self.assertIn(url, credit_hrefs)
+
+    def test_pope_leo_ai_row_en_ar_parity(self):
+        from bs4 import BeautifulSoup
+        rid = 'pope-leo-ai-address-2026-10-30'
+        en_text = (ROOT/'news.html').read_text()
+        ar_text = (ROOT/'ar/news.html').read_text()
+        self.assertEqual(en_text.count(f'id="{rid}"'), 1)
+        self.assertEqual(ar_text.count(f'id="{rid}"'), 1)
+        en = BeautifulSoup(en_text, 'html.parser')
+        ar = BeautifulSoup(ar_text, 'html.parser')
+        en_row = en.select_one(f'article#{rid}')
+        ar_row = ar.select_one(f'article#{rid}')
+        self.assertIsNotNone(en_row)
+        self.assertIsNotNone(ar_row)
+        url = 'https://www.vaticannews.va/en/pope/news/2026-10/pope-ai-decisions-affecting-human-life-must-never-be-delegated.html'
+        en_links = [a.get('href') for a in en_row.select('a')]
+        ar_links = [a.get('href') for a in ar_row.select('a')]
+        self.assertEqual(en_links, [url])
+        self.assertEqual(en_links, ar_links)
+        self.assertIn('chip-update', en_row.select_one('.chip').get('class'))
+        self.assertIn('chip-update', ar_row.select_one('.chip').get('class'))
+        self.assertEqual(en_row.select_one('time').get('datetime'), '2026-10-30')
+        # Bounded finding: an address, not a new encyclical or binding regulation.
+        self.assertIn('not a new encyclical or a binding regulation', en_row.get_text(' '))
+        self.assertIn('Magnifica Humanitas', en_row.get_text(' '))
+        for soup in (en, ar):
+            credit_hrefs = [a.get('href') for a in soup.select('.news-credits-list a')]
+            self.assertIn(url, credit_hrefs)
+
     def test_massabki_row_en_ar_parity(self):
         from bs4 import BeautifulSoup
         rid = 'massabki-centenary-aqoura-2026-10-25'
@@ -376,8 +437,8 @@ class NewsDeskTests(unittest.TestCase):
 
 
 class NewsMetadataTests(unittest.TestCase):
-    # The desk's latest reviewed content revision is the October 29 almoner-Kyiv and Spain-telegram row additions (intake October 29; integrated October 29).
-    REVISION = '2026-10-29'
+    # The desk's latest reviewed content revision is the October 30 almoner-Zaporizhzhia/Poltava follow-up and AI-address row additions (intake October 30; integrated October 30).
+    REVISION = '2026-10-30'
 
     def assert_news_metadata(self, html, lastmod):
         from bs4 import BeautifulSoup
@@ -400,7 +461,7 @@ class NewsMetadataTests(unittest.TestCase):
                 self.assert_news_metadata((ROOT/file).read_text(), dates[url])
 
     def test_old_webpage_date_is_rejected(self):
-        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-29"',
+        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-30"',
                                                     '"dateModified": "2026-10-10"')
         with self.assertRaises(AssertionError):
             self.assert_news_metadata(html, self.REVISION)
