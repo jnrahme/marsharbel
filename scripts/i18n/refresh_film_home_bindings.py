@@ -2,7 +2,7 @@
 Executor only: python3 scripts/i18n/refresh_film_home_bindings.py [--check]
 Never blanket-regenerates reviewed bindings or changes other source values.
 """
-import argparse,hashlib,json,re,subprocess
+import argparse,hashlib,json,re
 from pathlib import Path
 from bs4 import BeautifulSoup,NavigableString
 ROOT=Path(__file__).resolve().parents[2]
@@ -73,7 +73,8 @@ def outputs(root=ROOT):
   key='home.latest-news.premiere.'+name;bindings.append({'key':key,'selector':selector(nodes[0]),'source':source,'kind':'text','nodeIndex':0});copy[key]=source
  if len(bindings)!=201 or len(moved)!=20:raise ValueError('Unexpected binding/moved counts: '+str((len(bindings),len(moved))))
  for key in REMOVE:copy.pop(key)
- contract.update(bindings=bindings,messages=copy,masterSha256=hashlib.sha256(raw).hexdigest(),sourceRevision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip())
+ contract.pop('sourceRevision', None)  # drop legacy HEAD pin (squash-safe provenance)
+ contract.update(bindings=bindings,messages=copy,masterSha256=hashlib.sha256(raw).hexdigest())
  result={p:contract,root/'locales/en/home-copy.json':copy}
  for code in LOCALES:
   path=root/f'locales/{code}/home-copy.json';catalog=json.loads(path.read_text())

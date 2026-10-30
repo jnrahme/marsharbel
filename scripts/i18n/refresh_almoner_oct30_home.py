@@ -8,14 +8,14 @@ a:nth-of-type index therefore shifts +1. This script re-resolves EVERY
 (tie-break: longest common selector-segment suffix, which keeps the
 details/ul archive entries distinct from the row copies), adds the three new
 row bindings (date/title/credit; values from locales/en/news-desk.json
-almonerFollowup.*), re-pins masterSha256/sourceRevision, and inserts the
+almonerFollowup.*), re-pins masterSha256, and inserts the
 locale values from the reviewed packet
 locales/almoner-oct30-home-translations.json (agent-translated, native review
 pending - same status as the film-home and earlier home packets).
 Executor only: python3 scripts/i18n/refresh_almoner_oct30_home.py [--check]
 Never blanket-regenerates reviewed bindings or changes other source values.
 """
-import argparse, hashlib, json, re, subprocess, sys
+import argparse, hashlib, json, re, sys
 from pathlib import Path
 from bs4 import BeautifulSoup, NavigableString
 
@@ -136,24 +136,17 @@ def outputs(root=ROOT):
         for field, key in new_keys.items():
             copy_en[key] = new_values[field]
 
-    head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
-    # Provenance rule: sourceRevision records the revision the contract was
-    # pinned against. A stored revision that is an ancestor of HEAD remains
-    # valid provenance, so regeneration keeps it - this makes --check
-    # reproducible on committed artifacts without post-commit mutation or a
-    # self-referential HEAD pin. A missing or non-ancestor revision is reset
-    # to HEAD, which fails --check until the refresh is re-applied.
-    rev = contract.get('sourceRevision')
-    ancestor = False
-    if rev:
-        try:
-            subprocess.check_output(['git', 'merge-base', '--is-ancestor', rev, 'HEAD'], cwd=root, stderr=subprocess.DEVNULL)
-            ancestor = True
-        except subprocess.CalledProcessError:
-            ancestor = False
+    # Provenance rule: the contract carries content-derived evidence only -
+    # masterSha256 over the built index.html plus the fully regenerated
+    # bindings/messages/catalogs, which --check compares byte-for-byte.
+    # Provenance for a pin lives in commit history, never in the file: a
+    # stored revision pin is HEAD-dependent and breaks reproducibility when
+    # a squash merge orphans the pinned commit (PR #901 integrated QA).
+    # --check consults no git metadata, so it is reproducible on the
+    # committed artifact after any merge, rebase, squash, or shallow clone.
+    contract.pop('sourceRevision', None)
     contract.update(bindings=bindings, messages=copy_en,
-                    masterSha256=hashlib.sha256(raw).hexdigest(),
-                    sourceRevision=rev if ancestor else head)
+                    masterSha256=hashlib.sha256(raw).hexdigest())
     result = {hp: contract, root / 'locales/en/home-copy.json': copy_en}
     for code in LOCALES:
         path = root / f'locales/{code}/home-copy.json'
