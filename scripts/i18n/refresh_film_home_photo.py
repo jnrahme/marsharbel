@@ -1,5 +1,5 @@
 """Non-author executor adds exactly two contextual film-photo bindings (201->203)."""
-import hashlib,json,subprocess
+import hashlib,json
 from pathlib import Path
 from bs4 import BeautifulSoup,NavigableString
 ROOT=Path(__file__).resolve().parents[2]
@@ -34,7 +34,8 @@ def outputs(root=ROOT):
   if keys is None:keys=set(j)
   if set(j)!=keys or len(values)!=2 or not all(isinstance(v,str)and v.strip() for v in values):raise ValueError('Catalog mismatch '+code)
   j.update({'home.latest-news.premiere.photoAlt':values[0],'home.latest-news.premiere.photoCaption':values[1]});result[p]=j
- contract.update(bindings=bindings,messages=result[root/'locales/en/home-copy.json'],masterSha256=hashlib.sha256(raw).hexdigest(),sourceRevision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip());result[root/'locales/en/home-bindings.json']=contract
+ contract.pop('sourceRevision', None)  # drop legacy HEAD pin (squash-safe provenance)
+ contract.update(bindings=bindings,messages=result[root/'locales/en/home-copy.json'],masterSha256=hashlib.sha256(raw).hexdigest());result[root/'locales/en/home-bindings.json']=contract
  return {p:json.dumps(j,ensure_ascii=False,indent=2)+'\n'for p,j in result.items()}
 if __name__=='__main__':
  for p,t in outputs().items():p.write_text(t)

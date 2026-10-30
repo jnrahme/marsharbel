@@ -1,5 +1,5 @@
 """C-0080 non-author executor re-pin after Borik caption value change (203->203, one source value)."""
-import hashlib,json,subprocess
+import hashlib,json
 from pathlib import Path
 from bs4 import BeautifulSoup,NavigableString
 ROOT=Path(__file__).resolve().parents[2]
@@ -23,7 +23,8 @@ def outputs(root=ROOT):
  if changed!=1:raise ValueError('Unexpected delta '+str(changed))
  messages=json.loads((root/'locales/en/home-copy.json').read_text())
  if messages[KEY]!=NEW_EN:raise ValueError('Catalog mismatch')
- contract.update(bindings=bindings,messages=messages,masterSha256=hashlib.sha256(raw).hexdigest(),sourceRevision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip())
+ contract.pop('sourceRevision', None)  # drop legacy HEAD pin (squash-safe provenance)
+ contract.update(bindings=bindings,messages=messages,masterSha256=hashlib.sha256(raw).hexdigest())
  return {root/'locales/en/home-bindings.json':json.dumps(contract,ensure_ascii=False,indent=2)+'\n'}
 if __name__=='__main__':
  for p,t in outputs().items():p.write_text(t)

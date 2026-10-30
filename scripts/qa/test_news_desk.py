@@ -117,8 +117,11 @@ class NewsDeskTests(unittest.TestCase):
 
 
     def test_almoner_home_refresh_check_reproducible(self):
-        # REVISION 2026-10-30: refresh --check must be green on the committed
-        # artifact (ancestor sourceRevision is valid provenance, not drift).
+        # REVISION 2026-10-30 (PR #901 repair): refresh --check must be green
+        # on the committed artifact. The contract carries content-derived
+        # evidence only (masterSha256 + fully regenerated bindings/catalogs);
+        # provenance lives in commit history, never in a stored git revision,
+        # so a squash merge cannot break reproducibility.
         import subprocess, sys
         r = subprocess.run([sys.executable, str(ROOT / 'scripts/i18n/refresh_almoner_oct30_home.py'), '--check'],
                            capture_output=True, text=True)
@@ -446,6 +449,94 @@ class NewsDeskTests(unittest.TestCase):
     def test_unsupported_movie_headline_removed(self):
         self.assertNotIn('rolls out worldwide', (ROOT/'index.html').read_text())
 
+
+
+class AlmonerRefreshSandboxTests(unittest.TestCase):
+    """PR #901 regression: the almoner home refresh --check must be
+    reproducible with no git metadata present (squash merge, shallow clone,
+    exported tarball) and must still fail on real content drift."""
+    SCRIPT = 'scripts/i18n/refresh_almoner_oct30_home.py'
+
+    @classmethod
+    def setUpClass(cls):
+        import shutil, tempfile
+        cls.tmp = tempfile.TemporaryDirectory(prefix='almoner-check-')
+        cls.sandbox = Path(cls.tmp.name)
+        shutil.copytree(ROOT / 'scripts' / 'i18n', cls.sandbox / 'scripts' / 'i18n')
+        shutil.copytree(ROOT / 'locales', cls.sandbox / 'locales')
+        shutil.copy2(ROOT / 'index.html', cls.sandbox / 'index.html')
+        # Deliberately no .git: a stored sourceRevision pin would fail here.
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def run_check(self):
+        import subprocess, sys
+        return subprocess.run([sys.executable, self.SCRIPT, '--check'],
+                              cwd=self.sandbox, capture_output=True, text=True)
+
+    def reset(self, rel):
+        import shutil
+        shutil.copy2(ROOT / rel, self.sandbox / rel)
+
+    def assert_drift_detected(self, rel, mutate, signatures=('Needs refresh',)):
+        # Drift must fail the check. Contract-file drift surfaces as a soft
+        # 'Needs refresh' diff; drift that breaks a binding guard surfaces as
+        # a hard validation error. Both are detection; accept the listed
+        # signatures but require a non-zero exit.
+        self.reset(rel)
+        try:
+            mutate(self.sandbox / rel)
+            r = self.run_check()
+            out = r.stdout + r.stderr
+            self.assertNotEqual(r.returncode, 0, out[-500:])
+            self.assertTrue(any(s in out for s in signatures), out[-500:])
+        finally:
+            self.reset(rel)
+
+    def test_contract_carries_no_git_revision_pin(self):
+        contract = json.loads((ROOT / 'locales/en/home-bindings.json').read_text())
+        self.assertNotIn('sourceRevision', contract)
+
+    def test_check_reproducible_without_git_metadata(self):
+        first = self.run_check()
+        self.assertEqual(first.returncode, 0, (first.stdout + first.stderr)[-500:])
+        second = self.run_check()
+        self.assertEqual(second.returncode, 0, (second.stdout + second.stderr)[-500:])
+
+    def test_check_fails_on_catalog_value_drift(self):
+        def mutate(path):
+            data = json.loads(path.read_text())
+            key = sorted(data)[0]
+            data[key] = data[key] + ' DRIFT'
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+        self.assert_drift_detected('locales/en/home-copy.json', mutate)
+
+    def test_check_fails_on_binding_source_drift(self):
+        def mutate(path):
+            data = json.loads(path.read_text())
+            data['bindings'][0]['source'] = data['bindings'][0]['source'] + 'x'
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+        self.assert_drift_detected('locales/en/home-bindings.json', mutate,
+                                   ('Unrelated source drift', 'Needs refresh'))
+
+    def test_check_fails_on_binding_selector_drift(self):
+        def mutate(path):
+            data = json.loads(path.read_text())
+            # Valid CSS that matches no node: exercises the selector gate.
+            data['bindings'][0]['selector'] = data['bindings'][0]['selector'] + ' > spanx'
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+        self.assert_drift_detected('locales/en/home-bindings.json', mutate,
+                                   ('Unrelated binding selector changed', 'Needs refresh'))
+
+    def test_check_fails_on_master_byte_drift(self):
+        def mutate(path):
+            raw = path.read_bytes()
+            assert raw.count(b'St Charbel') >= 1
+            path.write_bytes(raw.replace(b'St Charbel', b'St Charbel!', 1))
+        self.assert_drift_detected('index.html', mutate,
+                                   ('drift', 'Needs refresh'))
 
 
 class NewsMetadataTests(unittest.TestCase):
