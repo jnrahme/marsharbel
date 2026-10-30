@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -34,11 +22,11 @@
   <meta property="og:title" content="How Did Saint Charbel Die? | His Last Days, 1898" />
   <meta property="og:description" content="How did Saint Charbel die? He was struck by a stroke during Mass on December 16, 1898, and died eight days later, on Christmas Eve, at Annaya." />
   <meta property="og:url" content="https://marsharbel.com/how-did-saint-charbel-die" />
-  <meta property="og:image" content="https://marsharbel.com/media/annaya/charbel-tomb.webp" />
+  <meta property="og:image" content="https://marsharbel.com/media/annaya/charbel-tomb-chapel.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How Did Saint Charbel Die? | His Last Days, 1898" />
   <meta name="twitter:description" content="How did Saint Charbel die? He was struck by a stroke during Mass on December 16, 1898, and died eight days later, on Christmas Eve, at Annaya." />
-  <meta name="twitter:image" content="https://marsharbel.com/media/annaya/charbel-tomb.webp" />
+  <meta name="twitter:image" content="https://marsharbel.com/media/annaya/charbel-tomb-chapel.webp" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,7 +73,7 @@
     "@type": "Article",
     "headline": "How Did Saint Charbel Die?",
     "image": [
-      "https://marsharbel.com/media/annaya/charbel-tomb.webp"
+      "https://marsharbel.com/media/annaya/charbel-tomb-chapel.webp"
     ],
     "author": {
       "@type": "Organization",
@@ -127,7 +115,7 @@
       "name": "Where did Saint Charbel die?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "At the monastery of Saint Maron in Annaya, in the Batroun district of North Lebanon - the monastery below the hermitage where he had lived for twenty-three years."
+        "text": "At the monastery of Saint Maron in Annaya, in the Jbeil (Byblos) district of North Lebanon - the monastery below the hermitage where he had lived for twenty-three years."
       }
     },
     {
@@ -156,6 +144,7 @@
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/how-did-saint-charbel-die" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/how-did-saint-charbel-die" />
   <!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -165,9 +154,9 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -175,11 +164,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -203,8 +196,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -218,7 +212,14 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
@@ -229,12 +230,13 @@
       <span class="kicker">His Last Days</span>
       <h1>How Did Saint Charbel Die?</h1>
       <p><strong>Saint Charbel died on the night of December 24, 1898 - Christmas Eve - at the monastery of Annaya, aged seventy.</strong> Eight days earlier, on December 16, he had been struck by a sudden illness, recorded as a stroke, while celebrating Mass. He spent his last days as he had lived: in prayer, without complaint.</p>
-      <figure class="hero-figure"><img src="./media/annaya/charbel-tomb.webp" alt="The tomb of Saint Charbel in the monastery church at Annaya, with his portrait and a vigil lamp" width="1280" height="720" loading="lazy" /><figcaption>Saint Charbel died at Annaya on December 24, 1898; his tomb is in the monastery church. Photograph: LLEW, <a href="https://commons.wikimedia.org/wiki/File:Charbel_Makhlouf_grave.JPG" target="_blank" rel="noopener">via Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption></figure>
+      <figure class="hero-figure"><img src="./media/annaya/charbel-tomb-chapel.webp" alt="The tomb chapel in the monastery church at Annaya, benches facing Saint Charbel's tomb" width="1000" height="667" loading="lazy" /><figcaption>Saint Charbel died at Annaya on December 24, 1898; his tomb is in the monastery church.</figcaption></figure>
       <div class="cta-row">
         <a class='btn subtle' href='./saint-charbel-tomb'>What Happened After</a>
         <a class='btn subtle' href='./history'>His Full Life</a>
         <a class='btn subtle' href='./saint-charbel-feast-day'>His Feast Day</a>
       </div>
+    <p class="enc-trail">Part of the <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>. Read <a href="./history">the full story of his life</a> or browse all topics.</p>
     </section>
 
     <section class="section">
@@ -280,7 +282,7 @@
         <h3>What did Saint Charbel die of?</h3>
         <p>A sudden illness recorded as a stroke, which struck him during Mass on December 16, 1898. He died eight days later.</p>
         <h3>Where did Saint Charbel die?</h3>
-        <p>At the monastery of Saint Maron in Annaya, in the Batroun district of North Lebanon - the monastery below the hermitage where he had lived for twenty-three years.</p>
+        <p>At the monastery of Saint Maron in Annaya, in the Jbeil (Byblos) district of North Lebanon - the monastery below the hermitage where he had lived for twenty-three years.</p>
         <h3>How old was Saint Charbel when he died?</h3>
         <p>Seventy. He was born on May 8, 1828, in Bekaa Kafra, and died on December 24, 1898.</p>
         <h3>What happened to Saint Charbel's body after he died?</h3>
@@ -308,5 +310,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

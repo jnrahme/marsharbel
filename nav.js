@@ -26,6 +26,27 @@
     var parent = g.querySelector('.nav-parent');
     if (!parent) return;
 
+    // Keep an opened dropdown inside the viewport (large text can wrap the nav so a menu lands near either edge).
+    var fitMenu = function () {
+      var sub = g.querySelector('.nav-sub');
+      if (!sub || window.innerWidth <= 820) return;
+      sub.style.left = '';
+      sub.style.right = '';
+      sub.style.maxHeight = '';
+      var r = sub.getBoundingClientRect();
+      var pad = 8;
+      // Tall menus (large text) scroll inside themselves instead of running off the bottom of the viewport.
+      var room = window.innerHeight - r.top - pad;
+      if (room > 120 && r.height > room) sub.style.maxHeight = room + 'px';
+      if (r.width > window.innerWidth - pad * 2) return;
+      var shift = 0;
+      if (r.right > window.innerWidth - pad) shift = window.innerWidth - pad - r.right;
+      if (r.left + shift < pad) shift = pad - r.left;
+      if (shift) sub.style.left = shift + 'px';
+    };
+    g.addEventListener('mouseenter', fitMenu);
+    g.addEventListener('focusin', fitMenu);
+    g.addEventListener('click', function () { setTimeout(fitMenu, 0); });
     g.addEventListener('mouseenter', function () {
       if (!coarse()) {
         document.documentElement.classList.remove('nav-suppress');

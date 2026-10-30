@@ -1,0 +1,1130 @@
+{
+  "version": 1,
+  "master": "our-lady-of-lebanon-harissa.html",
+  "masterSha256": "4a638b85457bbc2fa31791360075f97f0e5ec3c84e96b1f2c90a157776132b6a",
+  "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
+  "bindings": [
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Harissa: Our Lady of Lebanon Shrine, History and How to Visit",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Harissa, the shrine of Our Lady of Lebanon above Jounieh: its 1908 statue, the basilica, the cable car, and how to visit.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.header.skipLink",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.brand.mark",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.siteBrand",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.primaryLabel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "travel.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.fullHistory",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.miraclesAndReports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.eucharisticMiracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.voiceTestimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.childrenBooks",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerLibrary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.findAPrayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForTheSick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForHealing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAnxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForDepression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForStudents",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAddiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForFamily",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForPregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.prayerForAMiracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.currentPrayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.feastDay",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.rosaryGuide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.rosaryMinibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.mysteryMeditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.becomeLikeHim",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.places",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.places",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.visitingAnnaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.annayaTour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.bekaaKafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.cedars",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.bkerke",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qadishaValley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qannoubineMonastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.qozhayaMonastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.placesLebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node53",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "In this guide",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "travel.shared.node54",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node55",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node56",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.shared.node57",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "/",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.heading1",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Harissa: Our Lady of Lebanon Above the Bay of Jounieh",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.images.alt1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The statue of Our Lady of Lebanon at Harissa above the bay of Jounieh",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "travel.hero.caption1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "Our Lady of Lebanon at Harissa, above the bay of Jounieh. Photograph: Paul Saad,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.captionLink1",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.caption2",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.hero.captionLink2",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.caption3",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ". Resized and converted to WebP.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.hero.kicker",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Places of Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.heading1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Harissa: Our Lady of Lebanon Above the Bay of Jounieh",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.text1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Harissa is the hilltop shrine of Our Lady of Lebanon, about 26 kilometers north of Beirut, above the Bay of Jounieh. A white bronze statue of Mary, 8.5 meters tall, was inaugurated there on May 3, 1908, and a large basilica stands beside it. Christians and Muslims both come to pray.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link1",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Plan a Pilgrimage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link2",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visit Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.hero.link3",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "The Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.heading1",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "Where Harissa Is and What the Name Means",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.text1a",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The shrine stands about 650 meters above sea level on a hill over the Bay of Jounieh, in the Kesrwan district of Mount Lebanon, 26 kilometers north of Beirut. It sits close to",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.link1",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Bkerke",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section1.text1b",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", the seat of the Maronite Patriarchate. The sanctuary belongs to the Maronite Patriarchate and the Holy See, and has been run since its foundation by the Congregation of Lebanese Maronite Missionaries.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section1.text2",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Some historians trace the name Harissa to an old Semitic word for a sharp edge, which fits the steep-sided hill. The villagers called the hill \"Roueiss.\"",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section2.heading1",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "How the Shrine Began",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section2.text1",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "In 1904, on the fiftieth anniversary of Pope Pius IX's declaration of the dogma of the Immaculate Conception, Maronite Patriarch Elias Hoayek and the Apostolic Nuncio decided to raise a lasting monument to Mary. The shrine was named Our Lady of Lebanon. The landowner sold the hilltop to the Patriarchate for the symbolic sum of fifty Ottoman pounds, and the foundation stone was laid in October 1904.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section2.text2",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Work stopped for a time, partly because builders feared the site could not carry so large a monument. It resumed in 1906 and 1907 under the Patriarch and a new Apostolic Nuncio, with changes to the plan. The bronze statue was cast in Lyon, France, and shipped to Beirut in 1906. Because the statue was so large, the Ottoman authorities had to approve it by decree. The governor of Mount Lebanon telegraphed Istanbul, and approval came back within hours - a turn of events the shrine's own history calls almost miraculous.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section2.text3",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "The shrine and the statue were inaugurated on May 3, 1908, the first Sunday of May. At the end of the Mass the Patriarch led a procession with the icon of the Virgin and declared the first Sunday of May the annual feast of Our Lady of Lebanon. The shrine and statue cost about 50,000 gold French francs, given by believers.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.heading1",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "The Statue",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section3.text1",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The statue of Our Lady of Lebanon is made of bronze in seven sections, painted white. It stands 8.5 meters high and weighs 15 tons, on a stone base 20 meters high shaped like a tree trunk. A staircase of 104 steps leads up to the top of the statue.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.heading1",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "The Basilica",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text1",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "As crowds grew, the shrine decided in the 1960s to build a larger church. Patriarch Paul-Pierre Meouchy laid the foundation stone on May 31, 1970. The basilica is 115 meters long and 67 meters wide, and its dome rises 62 meters. Its shape is described as a cross between a Lebanese cedar and a Phoenician ship. A glass window 20 meters wide and 42 meters high behind the altar looks out on the original sanctuary and the statue.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.text2",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Pope John Paul II visited the basilica on May 10, 1997. The building was renovated and rededicated on July 16, 2013, when Lebanon was consecrated to the heart of the Virgin Mary.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.images.alt2",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The modern Our Lady of Lebanon Basilica at Harissa, with its fan of concrete ribs and a tall glass front",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "travel.section4.caption1",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The Our Lady of Lebanon Basilica at Harissa. Photograph: Choinowski,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.captionLink1",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "via Wikimedia Commons",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.caption2",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ",",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section4.captionLink2",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "CC BY-SA 4.0",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section4.caption3",
+      "selector": "#main-content > section:nth-of-type(5) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": ". Resized and converted to WebP.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section5.heading1",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "A Shrine for Christians and Muslims",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section5.text1",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Mary is honored in both Christianity and Islam, and Harissa draws pilgrims from both. Muslims are a familiar sight among the pilgrims, and the shrine hosts Christian-Muslim dialogue meetings. The feast of the Annunciation, March 25, has been a national holiday in Lebanon since 2010, kept by Christians and Muslims alike.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.heading1",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "Saint Charbel and Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.text1a",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Harissa and Annaya are the two best-known places of pilgrimage in Lebanon, and many pilgrims visit both on one trip - see our",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.link1",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "pilgrimage guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.text1b",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "for a three-day plan. The planned",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section6.link2",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.text1c",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "is meant to run from the northern mountains to Harissa.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section6.text2a",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "During his visit to the shrine on December 1, 2025, Pope Leo XIV spoke to Lebanon's bishops, priests, religious and pastoral workers. He named the \"silent cave in which Saint Charbel prayed before the image of the Mother of God\" and \"the presence of the Shrine of Harissa, a symbol of unity for the entire Lebanese people\" as symbols of the tenacity of Lebanon's faith. For the saint's own life, see",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.link3",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Charbel's story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.text2b",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ", and for the Marian patroness of Lebanon,",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "travel.section6.link4",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "Saint Charbel as patron saint",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section6.text2c",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "travel.section7.heading1",
+      "selector": "#main-content > section:nth-of-type(8) > h2:nth-of-type(1)",
+      "source": "Visiting Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.text1",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The classic way up is the Téléférique, the cable car from the seaside road of Haret Sakher in Jounieh, 16 kilometers north of Beirut. A one-way ride is about 9 minutes over 1.6 kilometers to the Harissa station, at about 530 meters. From there a funicular carries visitors up to the sanctuary, and the ticket price covers both. You can also reach the shrine by road.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section7.text2",
+      "selector": "#main-content > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Opening hours change with the season and maintenance, so check the Téléférique's own page before you travel. The feast of Our Lady of Lebanon is kept on the first Sunday of May, and many ceremonies are held at the basilica through May, the month of Mary.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.heading1",
+      "selector": "#main-content > section:nth-of-type(9) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question1",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "What is Harissa?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text1",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A hilltop Marian shrine about 26 kilometers north of Beirut, above the Bay of Jounieh. It holds a white bronze statue of Our Lady of Lebanon, inaugurated on May 3, 1908, and a large basilica built from 1970.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question2",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "How tall is the statue of Our Lady of Lebanon at Harissa?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text2",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The bronze statue is 8.5 meters high and weighs 15 tons. It stands on a 20-meter stone base.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question3",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > h3:nth-of-type(3)",
+      "source": "How do you get to Harissa?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text3",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "By the Téléférique cable car from Jounieh (about 9 minutes), then a funicular to the sanctuary, or by road. Check current opening hours before you go.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question4",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > h3:nth-of-type(4)",
+      "source": "When is the feast of Our Lady of Lebanon?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text4",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "source": "On the first Sunday of May. Patriarch Hoayek declared it at the shrine's inauguration on May 3, 1908.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.question5",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > h3:nth-of-type(5)",
+      "source": "Do Muslims visit Harissa?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.faq.text5",
+      "selector": "#main-content > section:nth-of-type(9) > div:nth-of-type(1) > p:nth-of-type(5)",
+      "source": "Yes. Muslims are among the pilgrims, and the shrine hosts Christian-Muslim dialogue meetings. March 25, the feast of the Annunciation, is a national holiday in Lebanon.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.heading1",
+      "selector": "#main-content > section:nth-of-type(10) > h2:nth-of-type(1)",
+      "source": "More Places in Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.link1",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.text1",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ";",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "travel.section8.link2",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.text2",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 3
+    },
+    {
+      "key": "travel.section8.link3",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.section8.text3",
+      "selector": "#main-content > section:nth-of-type(10) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "connects the places in his life.",
+      "kind": "text",
+      "nodeIndex": 5
+    },
+    {
+      "key": "travel.sources.heading1",
+      "selector": "#main-content > section:nth-of-type(11) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link1",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Shrine of Our Lady of Lebanon (official): history and information - the founding, the 1908 inauguration, statue and basilica details",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link2",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Shrine of Our Lady of Lebanon (official): about us - administration, basilica, statue dimensions, John Paul II's 1997 visit, 2013 rededication",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link3",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Pope Leo XIV in Lebanon (official visit site), November 27, 2025: the shrine, its history and its Christian-Muslim dialogue",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link4",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "The Holy See: Pope Leo XIV's address at the Shrine of Our Lady of Lebanon, Harissa, December 1, 2025",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link5",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Téléférique Lebanon: location, ride length, elevation, tickets and opening hours",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.sources.link6",
+      "selector": "#main-content > section:nth-of-type(11) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Catholic News Service via CNEWA, March 25, 2010: the Annunciation as a national holiday, Muslim pilgrims at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.footer.credit",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Harissa. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.siteBrand",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(14)",
+      "source": "Saint Charbel",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Harissa: Our Lady of Lebanon Shrine, History and How to Visit",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Harissa, the shrine of Our Lady of Lebanon above Jounieh: its 1908 statue, the basilica, the cable car, and how to visit.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.title",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Harissa: Our Lady of Lebanon Shrine, History and How to Visit",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.meta.description",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Harissa, the shrine of Our Lady of Lebanon above Jounieh: its 1908 statue, the basilica, the cable car, and how to visit.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "travel.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "travel.meta.title": "Harissa: Our Lady of Lebanon Shrine, History and How to Visit",
+    "travel.meta.description": "Harissa, the shrine of Our Lady of Lebanon above Jounieh: its 1908 statue, the basilica, the cable car, and how to visit.",
+    "travel.header.skipLink": "Skip to main content",
+    "travel.brand.mark": "✦",
+    "travel.header.siteBrand": "Saint Charbel",
+    "travel.header.primaryLabel": "Primary",
+    "travel.header.home": "Home",
+    "travel.header.legacy": "Legacy",
+    "travel.header.encyclopedia": "Saint Charbel Encyclopedia",
+    "travel.header.fullHistory": "Full History",
+    "travel.header.miracles": "Miracles",
+    "travel.header.miraclesAndReports": "Miracles & Reports",
+    "travel.header.eucharisticMiracles": "Eucharistic Miracles",
+    "travel.header.letters": "Letters",
+    "travel.header.voiceTestimony": "Voice Testimony",
+    "travel.header.saints": "Saints",
+    "travel.header.childrenBooks": "Children's Books",
+    "travel.header.prayer": "Prayer",
+    "travel.header.prayerLibrary": "Prayer Library",
+    "travel.header.findAPrayer": "Find a Prayer by Intention",
+    "travel.header.prayerForTheSick": "Prayer for the Sick",
+    "travel.header.prayerForHealing": "Prayer for Healing",
+    "travel.header.prayerForAnxiety": "Prayer for Anxiety",
+    "travel.header.prayerForDepression": "Prayer for Depression",
+    "travel.header.prayerForStudents": "Prayer for Students",
+    "travel.header.prayerForAddiction": "Prayer for Addiction",
+    "travel.header.prayerForFamily": "Prayer for Family",
+    "travel.header.prayerForPregnancy": "Prayer for Pregnancy",
+    "travel.header.prayerForAMiracle": "Prayer for a Miracle",
+    "travel.header.currentPrayers": "Saint Charbel Prayers",
+    "travel.header.novena": "Saint Charbel Novena",
+    "travel.header.feastDay": "Feast Day",
+    "travel.header.rosaryGuide": "Rosary Guide",
+    "travel.header.rosaryMinibook": "Rosary Minibook",
+    "travel.header.mysteryMeditation": "Mystery Meditation",
+    "travel.header.becomeLikeHim": "Become Like Him",
+    "travel.header.places": "Travel",
+    "travel.header.visitingAnnaya": "Visiting Annaya",
+    "travel.header.annayaTour": "Annaya Online Tour",
+    "travel.header.bekaaKafra": "Bekaa Kafra",
+    "travel.header.harissa": "Our Lady of Lebanon at Harissa",
+    "travel.header.cedars": "the Cedars of God",
+    "travel.header.bkerke": "Bkerke and the Maronite Patriarchate",
+    "travel.header.qadishaValley": "Qadisha Valley",
+    "travel.header.qannoubineMonastery": "Qannoubine Monastery",
+    "travel.header.qozhayaMonastery": "Qozhaya Monastery",
+    "travel.header.placesLebanon": "Saint Charbel's Lebanon",
+    "travel.header.hermitage": "The Hermitage",
+    "travel.header.trail": "Saint Charbel Trail",
+    "travel.header.news": "News",
+    "travel.shared.node53": "In this guide",
+    "travel.shared.node54": "Home",
+    "travel.shared.node55": "/",
+    "travel.shared.node56": "Travel",
+    "travel.shared.node57": "/",
+    "travel.hero.heading1": "Harissa: Our Lady of Lebanon Above the Bay of Jounieh",
+    "travel.images.alt1": "The statue of Our Lady of Lebanon at Harissa above the bay of Jounieh",
+    "travel.hero.caption1": "Our Lady of Lebanon at Harissa, above the bay of Jounieh. Photograph: Paul Saad,",
+    "travel.hero.captionLink1": "via Wikimedia Commons",
+    "travel.hero.caption2": ",",
+    "travel.hero.captionLink2": "CC BY-SA 4.0",
+    "travel.hero.caption3": ". Resized and converted to WebP.",
+    "travel.hero.kicker": "Places of Lebanon",
+    "travel.hero.text1": "Harissa is the hilltop shrine of Our Lady of Lebanon, about 26 kilometers north of Beirut, above the Bay of Jounieh. A white bronze statue of Mary, 8.5 meters tall, was inaugurated there on May 3, 1908, and a large basilica stands beside it. Christians and Muslims both come to pray.",
+    "travel.hero.link1": "Plan a Pilgrimage",
+    "travel.hero.link2": "Visit Annaya",
+    "travel.hero.link3": "The Saint Charbel Trail",
+    "travel.section1.heading1": "Where Harissa Is and What the Name Means",
+    "travel.section1.text1a": "The shrine stands about 650 meters above sea level on a hill over the Bay of Jounieh, in the Kesrwan district of Mount Lebanon, 26 kilometers north of Beirut. It sits close to",
+    "travel.section1.link1": "Bkerke",
+    "travel.section1.text1b": ", the seat of the Maronite Patriarchate. The sanctuary belongs to the Maronite Patriarchate and the Holy See, and has been run since its foundation by the Congregation of Lebanese Maronite Missionaries.",
+    "travel.section1.text2": "Some historians trace the name Harissa to an old Semitic word for a sharp edge, which fits the steep-sided hill. The villagers called the hill \"Roueiss.\"",
+    "travel.section2.heading1": "How the Shrine Began",
+    "travel.section2.text1": "In 1904, on the fiftieth anniversary of Pope Pius IX's declaration of the dogma of the Immaculate Conception, Maronite Patriarch Elias Hoayek and the Apostolic Nuncio decided to raise a lasting monument to Mary. The shrine was named Our Lady of Lebanon. The landowner sold the hilltop to the Patriarchate for the symbolic sum of fifty Ottoman pounds, and the foundation stone was laid in October 1904.",
+    "travel.section2.text2": "Work stopped for a time, partly because builders feared the site could not carry so large a monument. It resumed in 1906 and 1907 under the Patriarch and a new Apostolic Nuncio, with changes to the plan. The bronze statue was cast in Lyon, France, and shipped to Beirut in 1906. Because the statue was so large, the Ottoman authorities had to approve it by decree. The governor of Mount Lebanon telegraphed Istanbul, and approval came back within hours - a turn of events the shrine's own history calls almost miraculous.",
+    "travel.section2.text3": "The shrine and the statue were inaugurated on May 3, 1908, the first Sunday of May. At the end of the Mass the Patriarch led a procession with the icon of the Virgin and declared the first Sunday of May the annual feast of Our Lady of Lebanon. The shrine and statue cost about 50,000 gold French francs, given by believers.",
+    "travel.section3.heading1": "The Statue",
+    "travel.section3.text1": "The statue of Our Lady of Lebanon is made of bronze in seven sections, painted white. It stands 8.5 meters high and weighs 15 tons, on a stone base 20 meters high shaped like a tree trunk. A staircase of 104 steps leads up to the top of the statue.",
+    "travel.section4.heading1": "The Basilica",
+    "travel.section4.text1": "As crowds grew, the shrine decided in the 1960s to build a larger church. Patriarch Paul-Pierre Meouchy laid the foundation stone on May 31, 1970. The basilica is 115 meters long and 67 meters wide, and its dome rises 62 meters. Its shape is described as a cross between a Lebanese cedar and a Phoenician ship. A glass window 20 meters wide and 42 meters high behind the altar looks out on the original sanctuary and the statue.",
+    "travel.section4.text2": "Pope John Paul II visited the basilica on May 10, 1997. The building was renovated and rededicated on July 16, 2013, when Lebanon was consecrated to the heart of the Virgin Mary.",
+    "travel.images.alt2": "The modern Our Lady of Lebanon Basilica at Harissa, with its fan of concrete ribs and a tall glass front",
+    "travel.section4.caption1": "The Our Lady of Lebanon Basilica at Harissa. Photograph: Choinowski,",
+    "travel.section4.captionLink1": "via Wikimedia Commons",
+    "travel.section4.caption2": ",",
+    "travel.section4.captionLink2": "CC BY-SA 4.0",
+    "travel.section4.caption3": ". Resized and converted to WebP.",
+    "travel.section5.heading1": "A Shrine for Christians and Muslims",
+    "travel.section5.text1": "Mary is honored in both Christianity and Islam, and Harissa draws pilgrims from both. Muslims are a familiar sight among the pilgrims, and the shrine hosts Christian-Muslim dialogue meetings. The feast of the Annunciation, March 25, has been a national holiday in Lebanon since 2010, kept by Christians and Muslims alike.",
+    "travel.section6.heading1": "Saint Charbel and Harissa",
+    "travel.section6.text1a": "Harissa and Annaya are the two best-known places of pilgrimage in Lebanon, and many pilgrims visit both on one trip - see our",
+    "travel.section6.link1": "pilgrimage guide",
+    "travel.section6.text1b": "for a three-day plan. The planned",
+    "travel.section6.link2": "Saint Charbel Trail",
+    "travel.section6.text1c": "is meant to run from the northern mountains to Harissa.",
+    "travel.section6.text2a": "During his visit to the shrine on December 1, 2025, Pope Leo XIV spoke to Lebanon's bishops, priests, religious and pastoral workers. He named the \"silent cave in which Saint Charbel prayed before the image of the Mother of God\" and \"the presence of the Shrine of Harissa, a symbol of unity for the entire Lebanese people\" as symbols of the tenacity of Lebanon's faith. For the saint's own life, see",
+    "travel.section6.link3": "Charbel's story",
+    "travel.section6.text2b": ", and for the Marian patroness of Lebanon,",
+    "travel.section6.link4": "Saint Charbel as patron saint",
+    "travel.section6.text2c": ".",
+    "travel.section7.heading1": "Visiting Harissa",
+    "travel.section7.text1": "The classic way up is the Téléférique, the cable car from the seaside road of Haret Sakher in Jounieh, 16 kilometers north of Beirut. A one-way ride is about 9 minutes over 1.6 kilometers to the Harissa station, at about 530 meters. From there a funicular carries visitors up to the sanctuary, and the ticket price covers both. You can also reach the shrine by road.",
+    "travel.section7.text2": "Opening hours change with the season and maintenance, so check the Téléférique's own page before you travel. The feast of Our Lady of Lebanon is kept on the first Sunday of May, and many ceremonies are held at the basilica through May, the month of Mary.",
+    "travel.faq.heading1": "Frequently Asked Questions",
+    "travel.faq.question1": "What is Harissa?",
+    "travel.faq.text1": "A hilltop Marian shrine about 26 kilometers north of Beirut, above the Bay of Jounieh. It holds a white bronze statue of Our Lady of Lebanon, inaugurated on May 3, 1908, and a large basilica built from 1970.",
+    "travel.faq.question2": "How tall is the statue of Our Lady of Lebanon at Harissa?",
+    "travel.faq.text2": "The bronze statue is 8.5 meters high and weighs 15 tons. It stands on a 20-meter stone base.",
+    "travel.faq.question3": "How do you get to Harissa?",
+    "travel.faq.text3": "By the Téléférique cable car from Jounieh (about 9 minutes), then a funicular to the sanctuary, or by road. Check current opening hours before you go.",
+    "travel.faq.question4": "When is the feast of Our Lady of Lebanon?",
+    "travel.faq.text4": "On the first Sunday of May. Patriarch Hoayek declared it at the shrine's inauguration on May 3, 1908.",
+    "travel.faq.question5": "Do Muslims visit Harissa?",
+    "travel.faq.text5": "Yes. Muslims are among the pilgrims, and the shrine hosts Christian-Muslim dialogue meetings. March 25, the feast of the Annunciation, is a national holiday in Lebanon.",
+    "travel.section8.heading1": "More Places in Lebanon",
+    "travel.section8.link1": "the Cedars of God",
+    "travel.section8.text1": ";",
+    "travel.section8.link2": "Bkerke and the Maronite Patriarchate",
+    "travel.section8.text2": ".",
+    "travel.section8.link3": "Saint Charbel's Lebanon",
+    "travel.section8.text3": "connects the places in his life.",
+    "travel.sources.heading1": "Sources",
+    "travel.sources.link1": "Shrine of Our Lady of Lebanon (official): history and information - the founding, the 1908 inauguration, statue and basilica details",
+    "travel.sources.link2": "Shrine of Our Lady of Lebanon (official): about us - administration, basilica, statue dimensions, John Paul II's 1997 visit, 2013 rededication",
+    "travel.sources.link3": "Pope Leo XIV in Lebanon (official visit site), November 27, 2025: the shrine, its history and its Christian-Muslim dialogue",
+    "travel.sources.link4": "The Holy See: Pope Leo XIV's address at the Shrine of Our Lady of Lebanon, Harissa, December 1, 2025",
+    "travel.sources.link5": "Téléférique Lebanon: location, ride length, elevation, tickets and opening hours",
+    "travel.sources.link6": "Catholic News Service via CNEWA, March 25, 2010: the Annunciation as a national holiday, Muslim pilgrims at Harissa",
+    "travel.footer.credit": "Harissa. Author: Please pray for the person who made this website.",
+    "travel.header.media": "Media",
+    "travel.header.music": "Music",
+    "travel.header.video": "Video",
+    "travel.header.gallery": "Gallery"
+  }
+}

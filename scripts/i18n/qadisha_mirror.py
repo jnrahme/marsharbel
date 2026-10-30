@@ -1,3 +1,4 @@
+from i18n.encyclopedia_nav import finish_nav
 """Render the corrected Qadisha master and published locale mirrors from one template."""
 from i18n.metadata import og_locales, published_locales
 
@@ -72,9 +73,11 @@ def render_qadisha(root=ROOT, registry=None):
             targets.update({page_url(registry, 'en', topic).rstrip('/') or '/': page_url(registry, code, topic)
                             for topic in registry['topics']
                             if 'en' in topic_locales(registry, topic) and code in topic_locales(registry, topic)})
+            # The brand link points home; locale pages send it to their own locale home.
+            targets['/']=registry['locales'][code]['home']
             text = re.sub(r'(<a\b[^>]*\bhref=["\'])(/[^"\']*)(["\'])',
                           lambda m: m[1] + targets.get(m[2].rstrip('/') or '/', m[2]) + m[3], text)
         if code == 'en':
             text = text.replace('  <script defer src="/app.js">', '  <script defer src="app.js">').replace('  <script defer src="/translate.js?', '  <script defer src="translate.js?')
-        result[root / (route.lstrip('/') + '.html')] = text
+        result[root / (route.lstrip('/') + '.html')] = finish_nav(text,root,code)
     return result

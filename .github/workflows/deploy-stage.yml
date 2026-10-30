@@ -5,50 +5,414 @@ on:
     branches:
       - stage
 
+# Keep cancellation: obsolete stage work must never earn a newer SHA's receipt.
 concurrency:
   group: hostinger-stage
   cancel-in-progress: true
 
+# Uses only the token's existing read capability. No permission expansion.
 jobs:
   qa:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PUSH_SHA: ${{ github.sha }}
     steps:
-      - name: Checkout
+      - name: Checkout exact pushed version
         uses: actions/checkout@v4
         with:
-          # Full history: sitemap lastmod is checked against each page's git history.
+          ref: ${{ github.sha }}
           fetch-depth: 0
 
-      - name: Test deployment verification
-        run: python3 -m unittest discover -s scripts/qa -p 'test_verify_deployment.py'
+      - name: Admit existing exact-SHA QA and Browser quality
+        run: |
+          mkdir -p "$RUNNER_TEMP/stage-admission"
+          cat > "$RUNNER_TEMP/stage-admission/admission.py" <<'ADMISSION_PY'
+          """Fail-closed admission for this stage push; no publication on stale evidence."""
+          import collections
+          import datetime
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import re
+          import subprocess
+          import sys
+          import time
+          from urllib.parse import urlencode
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+          WORKFLOW_IDS = {'.github/workflows/qa.yml': 241818046, '.github/workflows/quality.yml': 361787853}
+          WORKFLOWS = {
+              '.github/workflows/qa.yml': ['qa-shard (%s/8)' % k for k in range(8)] + ['qa-gates', 'i18n-test', 'qa'],
+              '.github/workflows/quality.yml': ['browser-quality-shard (%s)' % k for k in range(1, 9)] + ['browser-quality'],
+          }
+          SOURCE_PATHS = list(WORKFLOWS) + ['.github/workflows/deploy-stage.yml', 'scripts/qa/run_full_qa.sh', 'scripts/qa/verify_deployment.py']
+
+          class Closed(Exception):
+              pass
+
+          class Pending(Closed):
+              pass
+
+          class Superseded(Closed):
+              pass
+
+
+          def require(condition, reason):
+              if not condition:
+                  raise Closed(reason)
+
+
+          def positive(value):
+              return type(value) is int and value > 0
+
+
+          def timestamp():
+              return datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+
+          def git(*args):
+              return subprocess.check_output(['git', *args], text=True, timeout=10).strip()
+
+
+          class API:
+              def __init__(self, repo, deadline):
+                  self.repo, self.deadline = repo, deadline
+
+              def get(self, path):
+                  require(path.startswith('/') and '\n' not in path and '"' not in path, 'invalid API path')
+                  remaining = min(15, self.deadline - time.monotonic())
+                  require(remaining > 0, 'API deadline exhausted')
+                  token = os.environ['GH_TOKEN']
+                  require('\n' not in token and '"' not in token, 'invalid read token')
+                  config = '\n'.join([
+                      'silent', 'show-error', 'fail', 'connect-timeout = 5',
+                      'max-time = %s' % remaining,
+                      'url = "https://api.github.com/repos/%s%s"' % (self.repo, path),
+                      'header = "Accept: application/vnd.github+json"',
+                      'header = "X-GitHub-Api-Version: 2022-11-28"',
+                      'header = "Authorization: Bearer %s"' % token,
+                  ])
+                  try:
+                      result = subprocess.run(['curl', '--config', '-'], input=config, text=True,
+                                              capture_output=True, timeout=remaining + 1)
+                      require(result.returncode == 0, 'GitHub read API failed: ' + path)
+                      return json.loads(result.stdout)
+                  except (ValueError, subprocess.TimeoutExpired):
+                      raise Closed('GitHub read API malformed response or timeout: ' + path)
+
+              def pages(self, path, key):
+                  records, seen, expected = [], set(), None
+                  for page in range(1, 11):
+                      join = '&' if '?' in path else '?'
+                      result = self.get(path + join + urlencode({'per_page': 100, 'page': page}))
+                      total, rows = result.get('total_count'), result.get(key)
+                      require(type(total) is int and 0 <= total < 1000, 'missing count or 1000-result truncation')
+                      require(isinstance(rows, list) and len(rows) <= 100, 'malformed result page')
+                      if expected is None:
+                          expected = total
+                      require(total == expected, 'pagination changed during read')
+                      for row in rows:
+                          require(isinstance(row, dict) and positive(row.get('id')), 'malformed record ID')
+                          require(row['id'] not in seen, 'duplicate/conflicting API record')
+                          seen.add(row['id'])
+                          records.append(row)
+                      require(len(records) <= expected, 'page exceeds declared total')
+                      if len(records) == expected:
+                          return records
+                      require(len(rows) == 100, 'partial page or missing records')
+                  raise Closed('pagination limit exceeded')
+
+
+          def source_identity(api, repo, sha):
+              require(git('rev-parse', 'HEAD') == sha, 'checkout is not the push SHA')
+              commit = api.get('/commits/' + sha)
+              require(commit.get('sha') == sha, 'commit API SHA mismatch')
+              tree = git('rev-parse', 'HEAD^{tree}')
+              require(commit.get('commit', {}).get('tree', {}).get('sha') == tree, 'commit tree mismatch')
+              sources = {}
+              for path in SOURCE_PATHS:
+                  blob = git('rev-parse', sha + ':' + path)
+                  require(git('hash-object', path) == blob, 'checkout source blob mismatch: ' + path)
+                  sources[path] = {'blob': blob, 'sha256': hashlib.sha256(Path(path).read_bytes()).hexdigest()}
+              return {'repo': repo, 'sha': sha, 'tree': tree, 'sources': sources}
+
+
+          def current_stage(api, sha):
+              head = api.get('/git/ref/heads/stage').get('object', {}).get('sha')
+              require(isinstance(head, str) and re.fullmatch('[0-9a-f]{40}', head), 'unreadable stage SHA')
+              if head != sha:
+                  comparison = api.get('/compare/' + sha + '...' + head)
+                  if comparison.get('status') == 'ahead' and type(comparison.get('ahead_by')) is int and comparison['ahead_by'] > 0:
+                      raise Superseded('newer stage SHA confirmed: ' + head)
+                  raise Closed('stage changed but not proven newer: ' + head)
+
+
+          def run_identity(run, expected, workflow_id, path):
+              require(isinstance(run, dict), 'malformed run')
+              require(positive(run.get('id')) and positive(run.get('run_attempt')), 'missing run/attempt')
+              require(run.get('workflow_id') == workflow_id and run.get('path') == path, 'workflow ID/path mismatch')
+              require(run.get('repository', {}).get('full_name') == expected['repo'] and
+                      run.get('head_repository', {}).get('full_name') == expected['repo'], 'repository/head repository mismatch')
+              require(run.get('head_sha') == expected['sha'] and run.get('head_branch') == 'stage' and
+                      run.get('event') == 'push', 'run SHA/branch/event mismatch')
+              require(run.get('head_commit', {}).get('id') == expected['sha'] and
+                      run.get('head_commit', {}).get('tree_id') == expected['tree'], 'run commit/tree mismatch')
+              require(run.get('html_url') == 'https://github.com/%s/actions/runs/%s' % (expected['repo'], run['id']), 'run URL mismatch')
+
+
+          SETTLE_GRACE_SECONDS = 600
+          settle_first_seen = {}
+
+          def settle_retry(run_id):
+              now = time.monotonic()
+              first = settle_first_seen.setdefault(run_id, now)
+              if now - first > SETTLE_GRACE_SECONDS:
+                  settle_first_seen.pop(run_id, None)
+                  return
+              raise Pending('job records settling for run %s' % run_id)
+
+          def settle_clear(run_id):
+              settle_first_seen.pop(run_id, None)
+
+          def snapshot(api, expected):
+              results = []
+              pending = False
+              for path, names in WORKFLOWS.items():
+                  workflow = api.get('/actions/workflows/' + path.rsplit('/', 1)[1])
+                  wid = workflow.get('id')
+                  require(wid == WORKFLOW_IDS[path] and workflow.get('path') == path and workflow.get('state') == 'active', 'wrong/inactive workflow')
+                  runs = api.pages('/actions/workflows/%s/runs?' % wid + urlencode({'head_sha': expected['sha']}), 'workflow_runs')
+                  # Do not success-filter. PR/main/foreign records never qualify as stage runs.
+                  matching = [r for r in runs if r.get('event') == 'push' and r.get('head_branch') == 'stage']
+                  if not matching:
+                      pending = True
+                      continue
+                  for run in matching:
+                      run_identity(run, expected, wid, path)
+                  latest = max(matching, key=lambda r: r['id'])
+                  # Read current run first: old successful attempts must never hide reruns.
+                  current = api.get('/actions/runs/%s' % latest['id'])
+                  run_identity(current, expected, wid, path)
+                  require(current['id'] == latest['id'], 'current run ID differs from selected latest run')
+                  require(current['run_attempt'] >= latest['run_attempt'], 'attempt moved backwards')
+                  attempt = current['run_attempt']
+                  selected = api.get('/actions/runs/%s/attempts/%s' % (current['id'], attempt))
+                  run_identity(selected, expected, wid, path)
+                  require(selected['id'] == current['id'] and selected['run_attempt'] == attempt, 'attempt identity mismatch')
+                  if (selected.get('status'), selected.get('conclusion')) != (current.get('status'), current.get('conclusion')):
+                      # A run legitimately transitions between the run read and the attempt
+                      # read (observed 2026-10-23T05:26:24Z on stage 4c0899cd: QA run
+                      # 39905156534 completed between the two reads; admission job
+                      # 120255315789 failed closed on a healthy pipeline). A mid-transition
+                      # pair retries through the SAME bounded per-run settle grace as
+                      # unsettled job records; once the allowance is exhausted the require
+                      # below still fails closed on the mismatched pair. Terminal failures
+                      # and stable identity mismatches keep their existing hard failures.
+                      settle_retry(current['id'])
+                      require((selected.get('status'), selected.get('conclusion')) ==
+                              (current.get('status'), current.get('conclusion')), 'attempt changed during read')
+                  if current.get('status') in ('queued', 'in_progress', 'waiting', 'requested', 'pending'):
+                      pending = True
+                      continue
+                  require(current.get('status') == 'completed' and current.get('conclusion') == 'success', 'dependency not successful')
+                  jobs = api.pages('/actions/runs/%s/attempts/%s/jobs' % (current['id'], attempt), 'jobs')
+                  # A run can read completed/success a few seconds before its job records
+                  # settle (observed 2026-10-21: admit failed 9s after QA success on a run
+                  # whose jobs all read success moments later). Not-settled job reads retry
+                  # within a bounded grace; a genuine failure still fails closed on settle.
+                  settled = (len(jobs) > 0 and all(j.get('status') == 'completed' for j in jobs)
+                             and collections.Counter(j.get('name') for j in jobs) == collections.Counter(names))
+                  if not settled:
+                      settle_retry(current['id'])
+                  require(collections.Counter(j.get('name') for j in jobs) == collections.Counter(names),
+                          'attempt job multiset mismatch; partial rerun requires rerun all jobs')
+                  for job in jobs:
+                      require(job.get('run_id') == current['id'] and job.get('run_attempt') == attempt and
+                              job.get('head_sha') == expected['sha'] and job.get('head_branch') == 'stage', 'job identity mismatch')
+                      require(job.get('status') == 'completed' and job.get('conclusion') == 'success', 'job not successful')
+                      require(job.get('html_url') == current['html_url'] + '/job/' + str(job['id']), 'job URL mismatch')
+                  settle_clear(current['id'])
+                  results.append({'path': path, 'workflow_id': wid, 'workflow_blob': expected['sources'][path]['blob'],
+                                  'run_id': current['id'], 'attempt': attempt, 'url': current['html_url'],
+                                  'run_record': current, 'attempt_record': selected,
+                                  'jobs': sorted(jobs, key=lambda j: j['id'])})
+              if pending:
+                  raise Pending('waiting for exact stage-push QA and Browser quality')
+              return results
+
+
+          def dependency_identity(results):
+              # Identity-fields-only projection: run/attempt/job identities plus their
+              # settled conclusions. Raw run/attempt records carry mutable API metadata
+              # (updated_at, timestamps) that legitimately changes between reads and must
+              # not fail the stability compare (observed 2026-10-22, run 39804564299).
+              return [{'path': r['path'], 'workflow_id': r['workflow_id'], 'workflow_blob': r['workflow_blob'],
+                       'run_id': r['run_id'], 'attempt': r['attempt'],
+                       'jobs': [{'id': j['id'], 'name': j['name'], 'conclusion': j.get('conclusion')}
+                                for j in r['jobs']]} for r in results]
+
+
+          def stable(api, expected):
+              # A run ID/attempt change even to success is new evidence, never an in-place
+              # mutation of the admitted record. Two reads close ordinary selection races.
+              first = snapshot(api, expected)
+              second = snapshot(api, expected)
+              require(dependency_identity(first) == dependency_identity(second), 'dependency run/attempt/jobs changed during admission')
+              return first
+
+
+          def save(path, record):
+              Path(path).write_text(json.dumps(record, indent=2) + '\n')
+
+
+          def main(mode, directory):
+              out = Path(directory)
+              out.mkdir(parents=True, exist_ok=True)
+              repo, sha = os.environ['GITHUB_REPOSITORY'], os.environ['PUSH_SHA']
+              require(re.fullmatch('[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repo), 'invalid repository')
+              require(re.fullmatch('[0-9a-f]{40}', sha), 'invalid push SHA')
+              record = {'observed_at': timestamp(), 'publication': 'unverified', 'run_id': os.environ['GITHUB_RUN_ID'],
+                        'run_attempt': os.environ['GITHUB_RUN_ATTEMPT'], 'sha': sha, 'repo': repo}
+              result_path = out / ('admission.json' if mode == 'wait' else 'publication.json')
+              try:
+                  # Admission stays fail-closed: 3300s is headroom above the
+                  # 45-minute qa-shard job timeout (qa.yml), not a removed gate -
+                  # a shard using its full timeout plus queue/aggregate overhead
+                  # must still fit inside the admission window. 3300 (55 min)
+                  # reserves ~5 min of this job's 60-minute timeout for checkout
+                  # and receipt/evidence upload after the helper returns.
+                  deadline = time.monotonic() + (3300 if mode == 'wait' else 60)
+                  api = API(repo, deadline)
+                  expected = source_identity(api, repo, sha)
+                  record['identity'] = expected
+                  if mode == 'wait':
+                      while True:
+                          current_stage(api, sha)
+                          try:
+                              record['dependencies'] = stable(api, expected)
+                              break
+                          except Pending as error:
+                              print(str(error), flush=True)
+                              require(time.monotonic() + 30 < deadline, '55-minute admission deadline exhausted')
+                              time.sleep(30)
+                      current_stage(api, sha)
+                      record['admission'] = 'success'
+                      record['admitted_at'] = timestamp()
+                  elif mode == 'scan':
+                      admitted = json.loads((out / 'admission.json').read_text())
+                      require(admitted.get('admission') == 'success' and admitted.get('identity') == expected and
+                              admitted.get('run_id') == record['run_id'] and admitted.get('run_attempt') == record['run_attempt'],
+                              'admission artifact identity mismatch')
+                      current_stage(api, sha)
+                      require(dependency_identity(stable(api, expected)) == dependency_identity(admitted['dependencies']), 'dependencies changed before scan')
+                      current_stage(api, sha)
+                      record['dependencies'] = admitted['dependencies']
+                      # Reuse the existing selector, record EXACT scope and unchanged verifier.
+                      sys.path.insert(0, str(Path('scripts/qa').resolve()))
+                      from verify_deployment import frontend_files
+                      scope = frontend_files(Path.cwd())
+                      record['scope'] = [{'path': str(p.relative_to(Path.cwd())), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in scope]
+                      record['scan_started_at'] = timestamp()
+                      save(result_path, record)
+                      result = subprocess.run([sys.executable, 'scripts/qa/verify_deployment.py',
+                                              '--attempts', '90', '--interval', '30', '--budget', '2700'], timeout=2760)
+                      record['scan_exit'] = result.returncode
+                      record['scan_finished_at'] = timestamp()
+                      api.deadline = time.monotonic() + 60
+                      current_stage(api, sha)
+                      require(dependency_identity(stable(api, expected)) == dependency_identity(admitted['dependencies']), 'dependencies changed after scan')
+                      current_stage(api, sha)
+                      require(result.returncode == 0, 'bounded verifier failed')
+                      record['publication'] = 'verified-existing-scope'
+                  else:
+                      raise Closed('unknown mode')
+                  save(result_path, record)
+                  print(json.dumps({'sha': sha, 'admission': record.get('admission'), 'publication': record['publication']}), flush=True)
+                  return 0
+              except Exception as error:
+                  record['publication'] = 'superseded/unverified' if isinstance(error, Superseded) else 'unverified'
+                  record['error'] = str(error)
+                  record['recorded_at'] = timestamp()
+                  save(result_path, record)
+                  summary_path = os.environ.get('GITHUB_STEP_SUMMARY')
+                  if summary_path:
+                      with open(summary_path, 'a') as summary:
+                          summary.write('### Stage admission: %s\n\n- sha: `%s`\n- error: `%s`\n' %
+                                        (record['publication'], sha, str(error)))
+                  print(record['publication'] + ': ' + str(error), flush=True)
+                  return 1
+
+
+          if __name__ == '__main__':
+              sys.exit(main(sys.argv[1], sys.argv[2]))
+          ADMISSION_PY
+          python3 "$RUNNER_TEMP/stage-admission/admission.py" wait "$RUNNER_TEMP/stage-admission"
+
+      - name: Preserve immutable admission evidence
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright browser dependencies
-        run: npx playwright install --with-deps chromium
-
-      - name: Install Python dependencies
-        run: pip install beautifulsoup4
-
-      - name: Run QA suite
-        run: npm run qa:ci
+          name: stage-admission-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/stage-admission/
+          if-no-files-found: error
 
   verify-deployment:
     needs: qa
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PUSH_SHA: ${{ github.sha }}
     steps:
-      - name: Checkout pushed version
+      - name: Checkout exact admitted version
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      # This artifact comes only from this workflow run/attempt, never a PR or
+      # an admitted QA/browser run. Check its code against this exact workflow.
+      - name: Read this run's immutable admission
+        uses: actions/download-artifact@v4
+        with:
+          name: stage-admission-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/stage-admission/
+
+      - name: Validate helper against exact workflow source
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          text = Path('.github/workflows/deploy-stage.yml').read_text()
+          start = "cat > \"$RUNNER_TEMP/stage-admission/admission.py\" <<'ADMISSION_PY'\n"
+          block = text.split(start, 1)[1].split('          ADMISSION_PY\n', 1)[0]
+          expected = ''.join(line[10:] + '\n' for line in block.splitlines())
+          actual = Path(os.environ['RUNNER_TEMP'], 'stage-admission/admission.py').read_text()
+          if actual != expected:
+              raise SystemExit('admission helper differs from exact workflow source')
+          PY
 
       - name: Verify Hostinger serves this frontend
-        run: python3 scripts/qa/verify_deployment.py
+        run: python3 "$RUNNER_TEMP/stage-admission/admission.py" scan "$RUNNER_TEMP/stage-admission"
+
+      - name: Preserve per-commit publication observation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage-publication-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/stage-admission/*.json
+          if-no-files-found: error
+
+      - name: Summarize without relabeling cancellations
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          path = Path(os.environ['RUNNER_TEMP'], 'stage-admission/publication.json')
+          state = json.loads(path.read_text())['publication'] if path.exists() else 'unverified (no final record)'
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('Push SHA: `' + os.environ['PUSH_SHA'] + '`\n\nPublication: ' + state + '\n')
+          PY

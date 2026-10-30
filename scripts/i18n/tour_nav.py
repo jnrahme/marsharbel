@@ -7,7 +7,7 @@ def tour_nav(text, root, code):
     def header(match):
         markup=match[0]
         if not re.search(r'<nav\b[^>]*class=["\']links["\']',markup):return markup
-        existing=re.compile(r'\s*<a\b[^>]*href=["\'](?:\.\.?/|/)?annaya-tour["\'][^>]*>[^<]*</a>')
+        existing=re.compile(r'\s*<a\b[^>]*href=["\'](?:\.\.?/|/)?annaya-tour["\'][^>]*>[\s\S]*?</a>')
         if code not in ('en','ar'):
             return existing.sub('',markup)
         copy=read_json(root/f'locales/{code}/nav-tour.json');leaves(copy)
@@ -18,6 +18,8 @@ def tour_nav(text, root, code):
         markup=existing.sub('',markup)
         matches=[m for m in visit.finditer(markup) if 'aria-haspopup' not in m[0]]
         found=matches[0];prefix=found[1].removesuffix('visit-annaya') if code=='en' else '/'
-        new=f'\n        <a href="{prefix}annaya-tour">{escape(copy["header.annayaTour"])}</a>'
+        current=' class="active"' if re.search(r'<link rel="canonical" href="https://marsharbel.com/annaya-tour"',text) else ''
+        aria=' aria-current="page"' if current else ''
+        new=f'\n        <a{current} href="{prefix}annaya-tour"{aria}>{escape(copy["header.annayaTour"])}</a>'
         return markup[:found.end()]+new+markup[found.end():]
     return re.sub(r'<header\b[\s\S]*?</header>',header,text,count=1)

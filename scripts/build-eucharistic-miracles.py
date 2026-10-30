@@ -38,7 +38,8 @@ def head(title, desc, url, image, bread):
     alternates += f'<link rel="alternate" hreflang="x-default" href="{url}">'
     return f'''<!doctype html>
 <html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"><!-- Google tag (gtag.js) -->
+<script defer src="/analytics-init.js"></script><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)} | Saint Charbel</title><meta name="description" content="{e(desc,quote=True)}">
 <meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url,quote=True)}">{alternates}
 <meta property="og:type" content="article"><meta property="og:site_name" content="Saint Charbel"><meta property="og:title" content="{e(title,quote=True)}"><meta property="og:description" content="{e(desc,quote=True)}"><meta property="og:url" content="{e(url,quote=True)}"><meta property="og:image" content="{e(image,quote=True)}">
@@ -61,7 +62,7 @@ def scripts():
 cards='\n'.join(f'''<a class="euch-card" href="./{key}"><span class="euch-card-photo">{img(s)}</span><span class="euch-card-copy"><small>{e(s['place'])} · {e(s['era'])}</small><strong>{e(s['title'])}</strong><span>{e(s['lead'])}</span><em>{e(H['browse'])} &rarr;</em></span></a>''' for key,s in STORIES.items())
 filters=''.join(f'<a href="#story-{e(k)}">{e(s["place"])}</a>' for k,s in STORIES.items())
 card_rows=''.join(f'<div id="story-{e(k)}" data-country="{e(s["place"].split(", ")[-1],quote=True)}">'+card+'</div>' for (k,s),card in zip(STORIES.items(),cards.split('\n')))
-hub=f'''{head(H['title'],H['intro'],BASE,'https://marsharbel.com/media/eucharistic-miracles/lanciano.webp', BREAD+[(H['title'],BASE)])}<a class="skip-link" href="#main-content">Skip to main content</a>{HEADER}
+hub=f'''{head(H['title'],H.get('description') or H['intro'],BASE,'https://marsharbel.com/media/eucharistic-miracles/lanciano.webp', BREAD+[(H['title'],BASE)])}<a class="skip-link" href="#main-content">Skip to main content</a>{HEADER}
 <main id="main-content" class="euch-shell" tabindex="-1">
 <section class="euch-hero"><div class="euch-hero-art" aria-hidden="true"></div><div class="euch-hero-content"><p class="euch-eyebrow">{e(H['eyebrow'])}</p><h1>{e(H['title'])}</h1><p class="euch-lead">{e(H['intro'])}</p><a class="euch-action" href="#journey">{e(H['atlasTitle'])} <span aria-hidden="true">↓</span></a></div><span class="euch-hero-caption">{e(STORIES['lanciano']['alt'])} · <a href="{e(STORIES['lanciano']['photo'],quote=True)}">{e(STORIES['lanciano']['credit'])}</a>, <a href="{e(STORIES['lanciano']['licenseurl'],quote=True)}">{e(STORIES['lanciano']['license'])}</a></span></section>
 <section class="euch-intro"><div><p class="euch-eyebrow">{e(H['eyebrow'])}</p><h2>{e(H['carloTitle'])}</h2></div><p>{e(H['carloText'])} <a href="https://www.carloacutis.com/en/association/mostra-miracoli-eucaristici">{e(H['carloSource'])}</a> · <a href="https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/09/07/250907a.html">{e(H['canonizationSource'])}</a></p></section>
@@ -74,11 +75,13 @@ for key,s in STORIES.items():
     title=s['title'];url=BASE+key;image='https://marsharbel.com/media/eucharistic-miracles/'+s['image']
     further_source = f'<p><a href="{e(s["source2"],quote=True)}">{e(s["source2Label"])}</a></p>' if s.get('source2') else ''
     sections=''.join(f'<section class="euch-chapter"><p class="euch-eyebrow">0{i}</p><h2>{e(t)}</h2><p>{e(text)}</p></section>' for i,(t,text) in enumerate(s['sections'],1))
-    story=f'''{head(title,s['lead'],url,image,BREAD+[(H['title'],BASE),(title,url)])}<a class="skip-link" href="#main-content">Skip to main content</a>{HEADER}
+    story=f'''{head(title,s.get('description') or s['lead'],url,image,BREAD+[(H['title'],BASE),(title,url)])}<a class="skip-link" href="#main-content">Skip to main content</a>{HEADER}
 <main id="main-content" class="euch-shell euch-story" tabindex="-1"><a href="./" class="euch-back">← {e(H['back'])}</a><header class="euch-story-head"><p class="euch-eyebrow">{e(s['label'])} · {e(s['place'])} · {e(s['era'])}</p><h1>{e(title)}</h1><p class="euch-lead">{e(s['lead'])}</p></header>
 <figure class="euch-feature-photo">{img(s,True)}<figcaption>{e(s['alt'])}. {e(H['photo'])}: {e(s['credit'])}, <a href="{e(s['licenseurl'],quote=True)}">{e(s['license'])}</a>; resized to WebP for this site. <a href="{e(s['photo'],quote=True)}">{e(H['originalPhoto'])}</a>.</figcaption></figure>
 <div class="euch-story-body">{sections}<aside class="euch-reflection"><h2>{e(H['reflection'])}</h2><p>{e(s['reflection'])}</p></aside><section class="euch-sources"><h2>{e(H['sources'])}</h2><p><a href="{e(s['source'],quote=True)}">{e(s['sourceLabel'])}</a></p>{further_source}<p>{e(H['updated'])}. {e(H['note'])}</p></section><a href="./" class="euch-back">← {e(H['back'])}</a></div></main>{FOOTER}{scripts()}</body></html>'''
     outputs[DEST/(key+'.html')] = story
+from i18n.same_page_injection import control_outputs
+outputs.update(control_outputs(ROOT,outputs,json.loads((ROOT/'locales/same-page-manifest.pending.json').read_text()),json.loads((ROOT/'locales/same-page-copy.json').read_text())))
 if '--check' in sys.argv:
     stale=[str(path.relative_to(ROOT)) for path, rendered in outputs.items() if not path.exists() or path.read_text()!=rendered]
     if stale: raise SystemExit('Stale Eucharistic pages: '+', '.join(stale))

@@ -1,0 +1,851 @@
+# BQ shard 5/8 - regenerated 2026-10-30 from playwright --list collection on candidate head 81dad10b (count-balanced; saint-of-day window identities changed with the 2026-11-02 manifest)
+# Format: playwright --test-list. Regenerate weekly or on completeness-check failure.
+[small-phone] › accessibility-gate.spec.js › a11y gate /saints
+[small-phone] › accessibility-gate.spec.js › a11y gate /mystery-meditation
+[small-phone] › accessibility-gate.spec.js › a11y gate /st-rafqa
+[small-phone] › accessibility-gate.spec.js › a11y gate /fr/
+[small-phone] › accessibility-gate.spec.js › a11y gate /pl/
+[small-phone] › accessibility-gate.spec.js › prayer finder announces result count politely
+[phone] › accessibility-gate.spec.js › a11y gate /saint-charbel-novena
+[phone] › accessibility-gate.spec.js › a11y gate /videos
+[phone] › accessibility-gate.spec.js › a11y gate /terms-of-service
+[phone] › accessibility-gate.spec.js › a11y gate /it/preghiere
+[phone] › accessibility-gate.spec.js › a11y gate /en/prayers
+[tablet] › accessibility-gate.spec.js › a11y gate /history
+[tablet] › accessibility-gate.spec.js › a11y gate /saint-charbel-feast-day
+[tablet] › accessibility-gate.spec.js › a11y gate /submit-testimony
+[tablet] › accessibility-gate.spec.js › a11y gate /ar/prayers
+[tablet] › accessibility-gate.spec.js › a11y gate /de/gebete
+[tablet] › accessibility-gate.spec.js › every checkbox and radio is at least 24px (WCAG 2.5.8)
+[laptop] › accessibility-gate.spec.js › a11y gate /prayer-library
+[laptop] › accessibility-gate.spec.js › a11y gate /gallery
+[laptop] › accessibility-gate.spec.js › a11y gate /pio-story
+[laptop] › accessibility-gate.spec.js › a11y gate /es/
+[laptop] › accessibility-gate.spec.js › a11y gate /pl/modlitwy
+[wide-desktop] › accessibility-gate.spec.js › a11y gate /
+[wide-desktop] › accessibility-gate.spec.js › a11y gate /litany-of-saint-charbel
+[wide-desktop] › accessibility-gate.spec.js › a11y gate /miracles/
+[wide-desktop] › accessibility-gate.spec.js › a11y gate /accessibility
+[wide-desktop] › accessibility-gate.spec.js › a11y gate /it/novena
+[wide-desktop] › accessibility-gate.spec.js › a11y gate /en/novena
+[small-phone] › accessibility-sitemap.spec.js › axe /saint-charbel-relics
+[small-phone] › accessibility-sitemap.spec.js › axe /become-like-charbel
+[small-phone] › accessibility-sitemap.spec.js › axe /mysteries/joyful-4
+[small-phone] › accessibility-sitemap.spec.js › axe /mysteries/sorrowful-2
+[small-phone] › accessibility-sitemap.spec.js › axe /mysteries/glorious-5
+[small-phone] › accessibility-sitemap.spec.js › axe /mother-teresa-story
+[small-phone] › accessibility-sitemap.spec.js › axe /saint-charbel-oil
+[small-phone] › accessibility-sitemap.spec.js › axe /saint-charbel-places-lebanon
+[small-phone] › accessibility-sitemap.spec.js › axe /qozhaya-monastery
+[small-phone] › accessibility-sitemap.spec.js › axe /saint-charbel-prayer-for-anxiety
+[small-phone] › accessibility-sitemap.spec.js › axe /st-anthony-of-padua-prayer
+[small-phone] › accessibility-sitemap.spec.js › axe /st-john-paul-ii-prayer
+[small-phone] › accessibility-sitemap.spec.js › axe /miracles/eucharistic/legnica
+[small-phone] › accessibility-sitemap.spec.js › axe /anthony-story
+[small-phone] › accessibility-sitemap.spec.js › axe /jude-story
+[small-phone] › accessibility-sitemap.spec.js › axe /travel
+[small-phone] › accessibility-sitemap.spec.js › axe /ar/annaya
+[small-phone] › accessibility-sitemap.spec.js › axe /es/biografia
+[small-phone] › accessibility-sitemap.spec.js › axe /ar/miracles/eucharistic/lanciano
+[small-phone] › accessibility-sitemap.spec.js › axe /ar/miracles/eucharistic/ivorra
+[small-phone] › accessibility-sitemap.spec.js › axe /fr/miracles/eucharistic/legnica
+[small-phone] › accessibility-sitemap.spec.js › axe /es/miracles/eucharistic/siena
+[small-phone] › accessibility-sitemap.spec.js › axe /ar/charbel-film-premiere
+[small-phone] › accessibility-sitemap.spec.js › axe /th/history
+[small-phone] › accessibility-sitemap.spec.js › axe /ru/palomnichestvo
+[small-phone] › accessibility-sitemap.spec.js › axe /ru/saint-charbel-medal
+[small-phone] › accessibility-sitemap.spec.js › axe /ru/saint-charbel-trail
+[small-phone] › accessibility-sitemap.spec.js › axe /zh-Hans/our-lady-of-lebanon-harissa
+[small-phone] › accessibility-sitemap.spec.js › axe /zh-Hans/bekaa-kafra
+[small-phone] › accessibility-sitemap.spec.js › axe /es/music
+[small-phone] › accessibility-sitemap.spec.js › axe /ar/voice-testimony
+[small-phone] › accessibility-sitemap.spec.js › axe /es/veronica-giuliani-story
+[small-phone] › accessibility-sitemap.spec.js › axe /ar/qannoubine-monastery
+[small-phone] › accessibility-sitemap.spec.js › axe /ar/travel
+[phone] › accessibility-sitemap.spec.js › axe /jpii-story
+[phone] › accessibility-sitemap.spec.js › axe /miracles/latest-register-entries
+[phone] › accessibility-sitemap.spec.js › axe /mysteries/joyful-1
+[phone] › accessibility-sitemap.spec.js › axe /mysteries/luminous-4
+[phone] › accessibility-sitemap.spec.js › axe /mysteries/glorious-2
+[phone] › accessibility-sitemap.spec.js › axe /st-john-paul-ii
+[phone] › accessibility-sitemap.spec.js › axe /st-anthony-of-padua
+[phone] › accessibility-sitemap.spec.js › axe /saint-charbel-movie
+[phone] › accessibility-sitemap.spec.js › axe /bekaa-tour
+[phone] › accessibility-sitemap.spec.js › axe /abouna-yaacoub
+[phone] › accessibility-sitemap.spec.js › axe /saint-charbel-prayer-for-a-miracle
+[phone] › accessibility-sitemap.spec.js › axe /saint-marina-qadisha-prayer
+[phone] › accessibility-sitemap.spec.js › axe /miracles/eucharistic/siena
+[phone] › accessibility-sitemap.spec.js › axe /peter-story
+[phone] › accessibility-sitemap.spec.js › axe /cedars-of-god-lebanon
+[phone] › accessibility-sitemap.spec.js › axe /marina-story
+[phone] › accessibility-sitemap.spec.js › axe /th/
+[phone] › accessibility-sitemap.spec.js › axe /fr/neuvaine
+[phone] › accessibility-sitemap.spec.js › axe /es/fiesta
+[phone] › accessibility-sitemap.spec.js › axe /ar/miracles/eucharistic/legnica
+[phone] › accessibility-sitemap.spec.js › axe /fr/miracles/eucharistic/siena
+[phone] › accessibility-sitemap.spec.js › axe /es/miracles/eucharistic/
+[phone] › accessibility-sitemap.spec.js › axe /es/miracles/eucharistic/amsterdam
+[phone] › accessibility-sitemap.spec.js › axe /th/charbel-film-premiere
+[phone] › accessibility-sitemap.spec.js › axe /ar/pilgrimage
+[phone] › accessibility-sitemap.spec.js › axe /es/saint-charbel-medal
+[phone] › accessibility-sitemap.spec.js › axe /ru/qozhaya-monastery
+[phone] › accessibility-sitemap.spec.js › axe /ru/cedars-of-god-lebanon
+[phone] › accessibility-sitemap.spec.js › axe /zh-Hans/qadisha-valley
+[phone] › accessibility-sitemap.spec.js › axe /zh-Hans/saint-charbel-trail
+[phone] › accessibility-sitemap.spec.js › axe /es/todos-los-santos
+[phone] › accessibility-sitemap.spec.js › axe /ar/encyclopedia
+[phone] › accessibility-sitemap.spec.js › axe /ar/qadisha-valley
+[phone] › accessibility-sitemap.spec.js › axe /es/monasterio-qozhaya
+[phone] › accessibility-sitemap.spec.js › axe /ar/miracles/dafne-gutierrez
+[tablet] › accessibility-sitemap.spec.js › axe /miracles/dafne-gutierrez
+[tablet] › accessibility-sitemap.spec.js › axe /rosary-prayer-coach
+[tablet] › accessibility-sitemap.spec.js › axe /mysteries/luminous-1
+[tablet] › accessibility-sitemap.spec.js › axe /mysteries/sorrowful-4
+[tablet] › accessibility-sitemap.spec.js › axe /all-saints-and-all-souls
+[tablet] › accessibility-sitemap.spec.js › axe /st-augustine-of-hippo
+[tablet] › accessibility-sitemap.spec.js › axe /saint-charbel-tomb
+[tablet] › accessibility-sitemap.spec.js › axe /saint-charbel-canonization
+[tablet] › accessibility-sitemap.spec.js › axe /massabki-brothers
+[tablet] › accessibility-sitemap.spec.js › axe /saint-charbel-prayer-for-addiction
+[tablet] › accessibility-sitemap.spec.js › axe /st-francis-of-assisi-prayer
+[tablet] › accessibility-sitemap.spec.js › axe /miracles/eucharistic/
+[tablet] › accessibility-sitemap.spec.js › axe /miracles/eucharistic/amsterdam
+[tablet] › accessibility-sitemap.spec.js › axe /francis-story
+[tablet] › accessibility-sitemap.spec.js › axe /sergius-bacchus-story
+[tablet] › accessibility-sitemap.spec.js › axe /charbel-film-premiere
+[tablet] › accessibility-sitemap.spec.js › axe /ar/22nd-of-the-month
+[tablet] › accessibility-sitemap.spec.js › axe /es/novena
+[tablet] › accessibility-sitemap.spec.js › axe /ar/miracles/eucharistic/siena
+[tablet] › accessibility-sitemap.spec.js › axe /fr/miracles/eucharistic/
+[tablet] › accessibility-sitemap.spec.js › axe /fr/miracles/eucharistic/amsterdam
+[tablet] › accessibility-sitemap.spec.js › axe /es/miracles/eucharistic/sokolka
+[tablet] › accessibility-sitemap.spec.js › axe /fr/charbel-film-premiere
+[tablet] › accessibility-sitemap.spec.js › axe /fr/22-du-mois
+[tablet] › accessibility-sitemap.spec.js › axe /ru/molitvy
+[tablet] › accessibility-sitemap.spec.js › axe /zh-Hans/saint-charbel-medal
+[tablet] › accessibility-sitemap.spec.js › axe /ru/qannoubine-monastery
+[tablet] › accessibility-sitemap.spec.js › axe /zh-Hans/annaya-tour
+[tablet] › accessibility-sitemap.spec.js › axe /zh-Hans/bkerke-maronite-patriarchate
+[tablet] › accessibility-sitemap.spec.js › axe /th/music
+[tablet] › accessibility-sitemap.spec.js › axe /ar/testimonies
+[tablet] › accessibility-sitemap.spec.js › axe /hi/veronica-giuliani-story
+[tablet] › accessibility-sitemap.spec.js › axe /es/monasterio-qannoubine
+[tablet] › accessibility-sitemap.spec.js › axe /es/travel
+[laptop] › accessibility-sitemap.spec.js › axe /saint-charbel-hermitage
+[laptop] › accessibility-sitemap.spec.js › axe /music
+[laptop] › accessibility-sitemap.spec.js › axe /mysteries/joyful-3
+[laptop] › accessibility-sitemap.spec.js › axe /mysteries/sorrowful-1
+[laptop] › accessibility-sitemap.spec.js › axe /mysteries/glorious-4
+[laptop] › accessibility-sitemap.spec.js › axe /rafqa-story
+[laptop] › accessibility-sitemap.spec.js › axe /saint-charbel-trail
+[laptop] › accessibility-sitemap.spec.js › axe /saint-charbel-quotes
+[laptop] › accessibility-sitemap.spec.js › axe /qannoubine-monastery
+[laptop] › accessibility-sitemap.spec.js › axe /maronite-history
+[laptop] › accessibility-sitemap.spec.js › axe /saint-charbel-prayer-for-the-sick
+[laptop] › accessibility-sitemap.spec.js › axe /abouna-yaacoub-prayer
+[laptop] › accessibility-sitemap.spec.js › axe /miracles/eucharistic/sokolka
+[laptop] › accessibility-sitemap.spec.js › axe /therese-story
+[laptop] › accessibility-sitemap.spec.js › axe /saint-charbel
+[laptop] › accessibility-sitemap.spec.js › axe /charbel-story-v2
+[laptop] › accessibility-sitemap.spec.js › axe /ar/rosary-guide
+[laptop] › accessibility-sitemap.spec.js › axe /fr/annaya
+[laptop] › accessibility-sitemap.spec.js › axe /ar/miracles/eucharistic/
+[laptop] › accessibility-sitemap.spec.js › axe /ar/miracles/eucharistic/amsterdam
+[laptop] › accessibility-sitemap.spec.js › axe /fr/miracles/eucharistic/sokolka
+[laptop] › accessibility-sitemap.spec.js › axe /es/miracles/eucharistic/bolsena-orvieto
+[laptop] › accessibility-sitemap.spec.js › axe /es/miracles/eucharistic/faverney
+[laptop] › accessibility-sitemap.spec.js › axe /hi/history
+[laptop] › accessibility-sitemap.spec.js › axe /es/peregrinacion
+[laptop] › accessibility-sitemap.spec.js › axe /hi/saint-charbel-medal
+[laptop] › accessibility-sitemap.spec.js › axe /ru/annaya-tour
+[laptop] › accessibility-sitemap.spec.js › axe /ru/saint-charbel-hermitage
+[laptop] › accessibility-sitemap.spec.js › axe /th/travel
+[laptop] › accessibility-sitemap.spec.js › axe /fr/music
+[laptop] › accessibility-sitemap.spec.js › axe /ar/saints
+[laptop] › accessibility-sitemap.spec.js › axe /fr/veronica-giuliani-story
+[laptop] › accessibility-sitemap.spec.js › axe /es/valle-qadisha
+[laptop] › accessibility-sitemap.spec.js › axe /ar/saint-charbel-chaplet
+[laptop] › accessibility-sitemap.spec.js › axe /ar/rosary
+[wide-desktop] › accessibility-sitemap.spec.js › axe /miracles/raymond-nader
+[wide-desktop] › accessibility-sitemap.spec.js › axe /voice-testimony
+[wide-desktop] › accessibility-sitemap.spec.js › axe /mysteries/luminous-3
+[wide-desktop] › accessibility-sitemap.spec.js › axe /mysteries/glorious-1
+[wide-desktop] › accessibility-sitemap.spec.js › axe /st-padre-pio
+[wide-desktop] › accessibility-sitemap.spec.js › axe /st-francis-of-assisi
+[wide-desktop] › accessibility-sitemap.spec.js › axe /saint-charbel-patron-saint
+[wide-desktop] › accessibility-sitemap.spec.js › axe /annaya-tour
+[wide-desktop] › accessibility-sitemap.spec.js › axe /st-sarkis-bakhos
+[wide-desktop] › accessibility-sitemap.spec.js › axe /saint-charbel-prayer-for-students
+[wide-desktop] › accessibility-sitemap.spec.js › axe /st-teresa-of-calcutta-prayer
+[wide-desktop] › accessibility-sitemap.spec.js › axe /miracles/eucharistic/bolsena-orvieto
+[wide-desktop] › accessibility-sitemap.spec.js › axe /miracles/eucharistic/ivorra
+[wide-desktop] › accessibility-sitemap.spec.js › axe /our-lady-of-lebanon-harissa
+[wide-desktop] › accessibility-sitemap.spec.js › axe /veronica-giuliani-story
+[wide-desktop] › accessibility-sitemap.spec.js › axe /hi/
+[wide-desktop] › accessibility-sitemap.spec.js › axe /fr/prieres
+[wide-desktop] › accessibility-sitemap.spec.js › axe /es/annaya
+[wide-desktop] › accessibility-sitemap.spec.js › axe /ar/miracles/eucharistic/sokolka
+[wide-desktop] › accessibility-sitemap.spec.js › axe /fr/miracles/eucharistic/bolsena-orvieto
+[wide-desktop] › accessibility-sitemap.spec.js › axe /fr/miracles/eucharistic/faverney
+[wide-desktop] › accessibility-sitemap.spec.js › axe /es/miracles/eucharistic/ludbreg
+[wide-desktop] › accessibility-sitemap.spec.js › axe /ru/charbel-film-premiere
+[wide-desktop] › accessibility-sitemap.spec.js › axe /ru/22-chislo-mesyaca
+[wide-desktop] › accessibility-sitemap.spec.js › axe /ar/saint-charbel-medal
+[wide-desktop] › accessibility-sitemap.spec.js › axe /ru/bekaa-kafra
+[wide-desktop] › accessibility-sitemap.spec.js › axe /ru/travel
+[wide-desktop] › accessibility-sitemap.spec.js › axe /zh-Hans/cedars-of-god-lebanon
+[wide-desktop] › accessibility-sitemap.spec.js › axe /zh-Hans/saint-charbel-hermitage
+[wide-desktop] › accessibility-sitemap.spec.js › axe /fr/toussaint
+[wide-desktop] › accessibility-sitemap.spec.js › axe /ar/news
+[wide-desktop] › accessibility-sitemap.spec.js › axe /zh-Hans/veronica-giuliani-story
+[wide-desktop] › accessibility-sitemap.spec.js › axe /fr/monastere-qozhaya
+[wide-desktop] › accessibility-sitemap.spec.js › axe /ar/miracles/nohad-el-shami
+[small-phone] › contrast-gradient-gate.spec.js › gradient contrast /accessibility
+[phone] › contrast-gradient-gate.spec.js › gradient contrast /voice-testimony
+[tablet] › contrast-gradient-gate.spec.js › gradient contrast /prayer-library
+[wide-desktop] › contrast-gradient-gate.spec.js › gradient contrast /story
+[small-phone] › element-collision.spec.js › language controls en 390 100% german-expanded
+[small-phone] › element-collision.spec.js › language controls en 768 100% german-expanded
+[small-phone] › element-collision.spec.js › language controls en 1100 100% german-expanded
+[small-phone] › element-collision.spec.js › language controls en 1280 100% german-expanded
+[small-phone] › element-collision.spec.js › language controls de 390 100% german-expanded
+[small-phone] › element-collision.spec.js › language controls de 768 100% german-expanded
+[small-phone] › element-collision.spec.js › language controls de 1100 100% german-expanded
+[small-phone] › element-collision.spec.js › language controls de 1280 100% german-expanded
+[small-phone] › element-collision.spec.js › language controls ar 390 100% german-expanded
+[small-phone] › element-collision.spec.js › language controls ar 768 100% german-expanded
+[small-phone] › element-collision.spec.js › language controls ar 1100 100% german-expanded
+[small-phone] › element-collision.spec.js › language controls ar 1280 100% german-expanded
+[small-phone] › element-collision.spec.js › language name readable en 768 200%
+[phone] › element-collision.spec.js › language controls en 390 100% german-expanded
+[phone] › element-collision.spec.js › language controls en 768 100% german-expanded
+[phone] › element-collision.spec.js › language controls en 1100 100% german-expanded
+[phone] › element-collision.spec.js › language controls en 1280 100% german-expanded
+[phone] › element-collision.spec.js › language controls de 390 100% german-expanded
+[phone] › element-collision.spec.js › language controls de 768 100% german-expanded
+[phone] › element-collision.spec.js › language controls de 1100 100% german-expanded
+[phone] › element-collision.spec.js › language controls de 1280 100% german-expanded
+[phone] › element-collision.spec.js › language controls ar 390 100% german-expanded
+[phone] › element-collision.spec.js › language controls ar 768 100% german-expanded
+[phone] › element-collision.spec.js › language controls ar 1100 100% german-expanded
+[phone] › element-collision.spec.js › language controls ar 1280 100% german-expanded
+[phone] › element-collision.spec.js › language name readable en 768 200%
+[tablet] › element-collision.spec.js › language controls en 390 100% german-expanded
+[tablet] › element-collision.spec.js › language controls en 768 100% german-expanded
+[tablet] › element-collision.spec.js › language controls en 1100 100% german-expanded
+[tablet] › element-collision.spec.js › language controls en 1280 100% german-expanded
+[tablet] › element-collision.spec.js › language controls de 390 100% german-expanded
+[tablet] › element-collision.spec.js › language controls de 768 100% german-expanded
+[tablet] › element-collision.spec.js › language controls de 1100 100% german-expanded
+[tablet] › element-collision.spec.js › language controls de 1280 100% german-expanded
+[tablet] › element-collision.spec.js › language controls ar 390 100% german-expanded
+[tablet] › element-collision.spec.js › language controls ar 768 100% german-expanded
+[tablet] › element-collision.spec.js › language controls ar 1100 100% german-expanded
+[tablet] › element-collision.spec.js › language controls ar 1280 100% german-expanded
+[tablet] › element-collision.spec.js › language name readable en 768 200%
+[laptop] › element-collision.spec.js › language controls en 390 100% german-expanded
+[laptop] › element-collision.spec.js › language controls en 768 100% german-expanded
+[laptop] › element-collision.spec.js › language controls en 1100 100% german-expanded
+[laptop] › element-collision.spec.js › language controls en 1280 100% german-expanded
+[laptop] › element-collision.spec.js › language controls de 390 100% german-expanded
+[laptop] › element-collision.spec.js › language controls de 768 100% german-expanded
+[laptop] › element-collision.spec.js › language controls de 1100 100% german-expanded
+[laptop] › element-collision.spec.js › language controls de 1280 100% german-expanded
+[laptop] › element-collision.spec.js › language controls ar 390 100% german-expanded
+[laptop] › element-collision.spec.js › language controls ar 768 100% german-expanded
+[laptop] › element-collision.spec.js › language controls ar 1100 100% german-expanded
+[laptop] › element-collision.spec.js › language controls ar 1280 100% german-expanded
+[laptop] › element-collision.spec.js › language name readable en 768 200%
+[wide-desktop] › element-collision.spec.js › language controls en 390 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language controls en 768 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language controls en 1100 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language controls en 1280 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language controls de 390 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language controls de 768 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language controls de 1100 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language controls de 1280 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language controls ar 390 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language controls ar 768 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language controls ar 1100 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language controls ar 1280 100% german-expanded
+[wide-desktop] › element-collision.spec.js › language name readable en 768 200%
+[small-phone] › english-guide-footer.spec.js › /en/prayers footer section navigation, JS=false
+[small-phone] › english-guide-footer.spec.js › /en/annaya footer section navigation, JS=false
+[phone] › english-guide-footer.spec.js › /en/rosary footer section navigation, JS=false
+[tablet] › english-guide-footer.spec.js › /en/novena footer section navigation, JS=false
+[laptop] › english-guide-footer.spec.js › /en/biography footer section navigation, JS=false
+[wide-desktop] › english-guide-footer.spec.js › /en/prayers footer section navigation, JS=false
+[wide-desktop] › english-guide-footer.spec.js › /en/annaya footer section navigation, JS=false
+[phone] › follow-us.spec.js › follow-us cards /ar/
+[tablet] › follow-us.spec.js › follow-us no horizontal overflow / 200% text 390px
+[laptop] › follow-us.spec.js › follow-us no horizontal overflow /ar/ 200% text 390px
+[small-phone] › footer-locale-navigation.spec.js › / footer section navigation, JS=false
+[small-phone] › footer-locale-navigation.spec.js › /de/biografie footer section navigation, JS=false
+[small-phone] › footer-locale-navigation.spec.js › /visit-annaya footer section navigation, JS=false
+[phone] › footer-locale-navigation.spec.js › /history footer section navigation, JS=false
+[phone] › footer-locale-navigation.spec.js › /de/novene footer section navigation, JS=false
+[phone] › footer-locale-navigation.spec.js › /22nd-of-the-month footer section navigation, JS=false
+[tablet] › footer-locale-navigation.spec.js › /saint-charbel-novena footer section navigation, JS=false
+[tablet] › footer-locale-navigation.spec.js › /de/miracles/ footer section navigation, JS=false
+[tablet] › footer-locale-navigation.spec.js › /rosary-intro footer section navigation, JS=false
+[laptop] › footer-locale-navigation.spec.js › /miracles/ footer section navigation, JS=false
+[laptop] › footer-locale-navigation.spec.js › /saint-charbel-prayers footer section navigation, JS=false
+[wide-desktop] › footer-locale-navigation.spec.js › / footer section navigation, JS=false
+[wide-desktop] › footer-locale-navigation.spec.js › /de/biografie footer section navigation, JS=false
+[wide-desktop] › footer-locale-navigation.spec.js › /visit-annaya footer section navigation, JS=false
+[laptop] › gallery-historic-photo.spec.js › gallery historic photograph is credited, opens, and wraps to the first image
+[phone] › german-exact-publication.spec.js › /de/gedenktag: complete German page, honest language control and localized chrome
+[laptop] › german-exact-publication.spec.js › /de/gedenktag: complete German page, honest language control and localized chrome
+[phone] › german-history-rewrite.spec.js › complete German history rewrite at 390
+[small-phone] › header-text-scale.spec.js › header at 200% text / 900px
+[small-phone] › header-text-scale.spec.js › header at 200% text /prayer-library 1280px
+[phone] › header-text-scale.spec.js › header at 200% text /prayer-library 900px
+[tablet] › header-text-scale.spec.js › header at 200% text /story 1100px
+[laptop] › header-text-scale.spec.js › header at 200% text / 1280px
+[wide-desktop] › header-text-scale.spec.js › header at 200% text / 900px
+[wide-desktop] › header-text-scale.spec.js › header at 200% text /prayer-library 1280px
+[small-phone] › history-master.spec.js › fr full history has complete joins, English access and decoded images
+[small-phone] › history-master.spec.js › th full history has complete joins, English access and decoded images
+[phone] › history-master.spec.js › ru full history has complete joins, English access and decoded images
+[tablet] › history-master.spec.js › de full history has complete joins, English access and decoded images
+[laptop] › history-master.spec.js › pt full history has complete joins, English access and decoded images
+[wide-desktop] › history-master.spec.js › fr full history has complete joins, English access and decoded images
+[wide-desktop] › history-master.spec.js › th full history has complete joins, English access and decoded images
+[small-phone] › home-text-zoom-overflow.spec.js › home blocks at 200% text /de/ 1280px
+[phone] › home-text-zoom-overflow.spec.js › home blocks at 200% text / 1280px
+[phone] › home-text-zoom-overflow.spec.js › home blocks at 200% text /ar/ 1280px
+[tablet] › home-text-zoom-overflow.spec.js › home blocks at 200% text /de/ 1280px
+[laptop] › home-text-zoom-overflow.spec.js › home blocks at 200% text / 1280px
+[laptop] › home-text-zoom-overflow.spec.js › home blocks at 200% text /ar/ 1280px
+[wide-desktop] › home-text-zoom-overflow.spec.js › home blocks at 200% text /de/ 1280px
+[small-phone] › international.spec.js › /en/rosary reads and switches language without JavaScript
+[small-phone] › international.spec.js › /ar/annaya reads and switches language without JavaScript
+[small-phone] › international.spec.js › /fr/neuvaine reads and switches language without JavaScript
+[small-phone] › international.spec.js › /es/novena reads and switches language without JavaScript
+[small-phone] › international.spec.js › /pt/oracoes reads and switches language without JavaScript
+[small-phone] › international.spec.js › /it/biografia reads and switches language without JavaScript
+[small-phone] › international.spec.js › /de/biografie reads and switches language without JavaScript
+[small-phone] › international.spec.js › /pl/biografia reads and switches language without JavaScript
+[small-phone] › international.spec.js › /ru/biography reads and switches language without JavaScript
+[small-phone] › international.spec.js › /history keeps one top language selector without duplicate menus
+[small-phone] › international.spec.js › English directory hub selector routes Arabic to its published twin, other locales stay unpublished
+[small-phone] › international.spec.js › es homepage offers every shipped homepage
+[small-phone] › international.spec.js › /pt/novena keeps keyed prayer and language fallback readable without JavaScript
+[small-phone] › international.spec.js › /es/peregrinacion generated footer fallback works without JavaScript
+[small-phone] › international.spec.js › footer fallback handoff layout shift measured (fast)
+[small-phone] › international.spec.js › / language control fits inside its header at 320px
+[phone] › international.spec.js › /ar/biography reads and switches language without JavaScript
+[phone] › international.spec.js › language selector keeps ar reading guide unavailable until published
+[phone] › international.spec.js › language selector keeps fr reading guide unavailable until published
+[phone] › international.spec.js › es prayer guide accessibility
+[phone] › international.spec.js › /pt/festa reads and switches language without JavaScript
+[phone] › international.spec.js › /it/annaya reads and switches language without JavaScript
+[phone] › international.spec.js › /de/annaya reads and switches language without JavaScript
+[phone] › international.spec.js › /pl/annaya reads and switches language without JavaScript
+[phone] › international.spec.js › /th/ reads and switches language without JavaScript
+[phone] › international.spec.js › /visit-annaya keeps one top language selector without duplicate menus
+[phone] › international.spec.js › /ar/22nd-of-the-month always offers its English source
+[phone] › international.spec.js › pl homepage offers every shipped homepage
+[phone] › international.spec.js › /es/novena keeps keyed prayer and language fallback readable without JavaScript
+[phone] › international.spec.js › /ar/pilgrimage hides the footer fallback only after the enhanced select is ready
+[phone] › international.spec.js › /ar/annaya language control fits inside its header at 320px
+[tablet] › international.spec.js › /en/rosary reads and switches language without JavaScript
+[tablet] › international.spec.js › /ar/annaya reads and switches language without JavaScript
+[tablet] › international.spec.js › /fr/neuvaine reads and switches language without JavaScript
+[tablet] › international.spec.js › /es/novena reads and switches language without JavaScript
+[tablet] › international.spec.js › /pt/oracoes reads and switches language without JavaScript
+[tablet] › international.spec.js › /it/biografia reads and switches language without JavaScript
+[tablet] › international.spec.js › /de/biografie reads and switches language without JavaScript
+[tablet] › international.spec.js › /pl/biografia reads and switches language without JavaScript
+[tablet] › international.spec.js › /ru/biography reads and switches language without JavaScript
+[tablet] › international.spec.js › /history keeps one top language selector without duplicate menus
+[tablet] › international.spec.js › English directory hub selector routes Arabic to its published twin, other locales stay unpublished
+[tablet] › international.spec.js › es homepage offers every shipped homepage
+[tablet] › international.spec.js › /pt/novena keeps keyed prayer and language fallback readable without JavaScript
+[tablet] › international.spec.js › /es/peregrinacion generated footer fallback works without JavaScript
+[tablet] › international.spec.js › footer fallback handoff layout shift measured (fast)
+[tablet] › international.spec.js › / language control fits inside its header at 320px
+[laptop] › international.spec.js › /ar/biography reads and switches language without JavaScript
+[laptop] › international.spec.js › language selector keeps ar reading guide unavailable until published
+[laptop] › international.spec.js › language selector keeps fr reading guide unavailable until published
+[laptop] › international.spec.js › es prayer guide accessibility
+[laptop] › international.spec.js › /pt/festa reads and switches language without JavaScript
+[laptop] › international.spec.js › /it/annaya reads and switches language without JavaScript
+[laptop] › international.spec.js › /de/annaya reads and switches language without JavaScript
+[laptop] › international.spec.js › /pl/annaya reads and switches language without JavaScript
+[laptop] › international.spec.js › /th/ reads and switches language without JavaScript
+[laptop] › international.spec.js › /visit-annaya keeps one top language selector without duplicate menus
+[laptop] › international.spec.js › /ar/22nd-of-the-month always offers its English source
+[laptop] › international.spec.js › pl homepage offers every shipped homepage
+[laptop] › international.spec.js › /es/novena keeps keyed prayer and language fallback readable without JavaScript
+[laptop] › international.spec.js › /ar/pilgrimage hides the footer fallback only after the enhanced select is ready
+[laptop] › international.spec.js › /ar/annaya language control fits inside its header at 320px
+[wide-desktop] › international.spec.js › /en/rosary reads and switches language without JavaScript
+[wide-desktop] › international.spec.js › /ar/annaya reads and switches language without JavaScript
+[wide-desktop] › international.spec.js › /fr/neuvaine reads and switches language without JavaScript
+[wide-desktop] › international.spec.js › /es/novena reads and switches language without JavaScript
+[wide-desktop] › international.spec.js › /pt/oracoes reads and switches language without JavaScript
+[wide-desktop] › international.spec.js › /it/biografia reads and switches language without JavaScript
+[wide-desktop] › international.spec.js › /de/biografie reads and switches language without JavaScript
+[wide-desktop] › international.spec.js › /pl/biografia reads and switches language without JavaScript
+[wide-desktop] › international.spec.js › /ru/biography reads and switches language without JavaScript
+[wide-desktop] › international.spec.js › /history keeps one top language selector without duplicate menus
+[wide-desktop] › international.spec.js › English directory hub selector routes Arabic to its published twin, other locales stay unpublished
+[wide-desktop] › international.spec.js › es homepage offers every shipped homepage
+[wide-desktop] › international.spec.js › /pt/novena keeps keyed prayer and language fallback readable without JavaScript
+[wide-desktop] › international.spec.js › /es/peregrinacion generated footer fallback works without JavaScript
+[wide-desktop] › international.spec.js › footer fallback handoff layout shift measured (fast)
+[wide-desktop] › international.spec.js › / language control fits inside its header at 320px
+[small-phone] › language-persistence.spec.js › pl explicit choice persists across reviewed navigation
+[small-phone] › language-persistence.spec.js › fr saved explicit choice routes an English internal history link to its reviewed twin
+[phone] › language-persistence.spec.js › en explicit choice persists across reviewed navigation
+[phone] › language-persistence.spec.js › ru explicit choice persists across reviewed navigation
+[phone] › language-persistence.spec.js › es saved explicit choice routes an English internal history link to its reviewed twin
+[tablet] › language-persistence.spec.js › ar explicit choice persists across reviewed navigation
+[tablet] › language-persistence.spec.js › hi explicit choice persists across reviewed navigation
+[tablet] › language-persistence.spec.js › pt saved explicit choice routes an English internal history link to its reviewed twin
+[laptop] › language-persistence.spec.js › fr explicit choice persists across reviewed navigation
+[laptop] › language-persistence.spec.js › th explicit choice persists across reviewed navigation
+[laptop] › language-persistence.spec.js › it saved explicit choice routes an English internal history link to its reviewed twin
+[wide-desktop] › language-persistence.spec.js › es explicit choice persists across reviewed navigation
+[wide-desktop] › language-persistence.spec.js › hi honest English fallback retains choice and later returns to localized history
+[wide-desktop] › language-persistence.spec.js › pl saved explicit choice routes an English internal history link to its reviewed twin
+[phone] › limited-launch.spec.js › hi home launch truth
+[laptop] › limited-launch.spec.js › hi home launch truth
+[small-phone] › locale-home-navigation.spec.js › /ar/ native section navigation JS=true
+[tablet] › locale-home-navigation.spec.js › /ar/ native section navigation JS=true
+[wide-desktop] › locale-home-navigation.spec.js › /ar/ native section navigation JS=true
+[small-phone] › locale-preference-routing.spec.js › paired Arabic twin is offered but never auto-redirects a saved preference
+[small-phone] › locale-preference-routing.spec.js › an explicit English prayer master URL stays on the full master
+[phone] › locale-preference-routing.spec.js › /news leaves English copy and LTR on legacy route despite an Arabic preference
+[tablet] › locale-preference-routing.spec.js › /fr/vallee-qadisha remains in its authored language with a conflicting saved preference
+[tablet] › locale-preference-routing.spec.js › a story does not substitute its pending Arabic identity
+[laptop] › locale-preference-routing.spec.js › language query preserves English URL, query, fragment and content
+[wide-desktop] › locale-preference-routing.spec.js › /ar/qannoubine-monastery remains in its authored language with a conflicting saved preference
+[wide-desktop] › locale-preference-routing.spec.js › /bekaa-kafra leaves English copy and LTR on legacy route despite an Arabic preference
+[phone] › massabki-story.spec.js › shelf reaches Massabki reader, sources and family safety stay visible
+[phone] › miracles-english-escape.spec.js › Arabic miracles keeps pending locales honest and English source clickable
+[small-phone] › monastery-mirrors.spec.js › /ar/qozhaya-monastery preserves the monastery structure, images, FAQ and SEO
+[tablet] › monastery-mirrors.spec.js › /qannoubine-monastery preserves the monastery structure, images, FAQ and SEO
+[laptop] › monastery-mirrors.spec.js › qannoubine-monastery offers English source and refuses unverified non-family switches
+[wide-desktop] › monastery-mirrors.spec.js › /ar/qozhaya-monastery preserves the monastery structure, images, FAQ and SEO
+[small-phone] › monthly-prayer.spec.js › updates when the local day changes
+[phone] › monthly-prayer.spec.js › monthly invitation on 2028-02-29T12:00:00
+[tablet] › monthly-prayer.spec.js › monthly invitation on 2026-12-31T12:00:00
+[laptop] › monthly-prayer.spec.js › monthly invitation on 2026-09-23T12:00:00
+[wide-desktop] › monthly-prayer.spec.js › monthly invitation on 2026-09-22T12:00:00
+[small-phone] › navigation-consistency.spec.js › abouna-yaacoub-prayer.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › become-like-charbel.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › daily-prayer-admin.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › history.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › marina-story.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › mystery-meditation.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › qannoubine-monastery.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › saint-charbel-canonization.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › saint-charbel-novena.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › saint-charbel-prayer-for-depression.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › saint-charbel-tomb.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › shop.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › st-francis-of-assisi.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › st-rafqa.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › testimonies.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › mysteries/glorious-1.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › mysteries/joyful-4.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › mysteries/sorrowful-2.html: shared menu fits and opens/closes
+[small-phone] › navigation-consistency.spec.js › miracles/eucharistic/ivorra.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › abouna-yaacoub-prayer.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › become-like-charbel.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › daily-prayer-admin.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › history.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › marina-story.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › mystery-meditation.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › qannoubine-monastery.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › saint-charbel-canonization.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › saint-charbel-novena.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › saint-charbel-prayer-for-depression.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › saint-charbel-tomb.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › shop.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › st-francis-of-assisi.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › st-rafqa.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › testimonies.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › mysteries/glorious-1.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › mysteries/joyful-4.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › mysteries/sorrowful-2.html: shared menu fits and opens/closes
+[phone] › navigation-consistency.spec.js › miracles/eucharistic/ivorra.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › abouna-yaacoub-prayer.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › become-like-charbel.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › daily-prayer-admin.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › history.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › marina-story.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › mystery-meditation.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › qannoubine-monastery.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › saint-charbel-canonization.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › saint-charbel-novena.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › saint-charbel-prayer-for-depression.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › saint-charbel-tomb.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › shop.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › st-francis-of-assisi.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › st-rafqa.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › testimonies.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › mysteries/glorious-1.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › mysteries/joyful-4.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › mysteries/sorrowful-2.html: shared menu fits and opens/closes
+[tablet] › navigation-consistency.spec.js › miracles/eucharistic/ivorra.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › abouna-yaacoub-prayer.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › become-like-charbel.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › daily-prayer-admin.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › history.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › marina-story.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › mystery-meditation.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › qannoubine-monastery.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › saint-charbel-canonization.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › saint-charbel-novena.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › saint-charbel-prayer-for-depression.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › saint-charbel-tomb.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › shop.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › st-francis-of-assisi.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › st-rafqa.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › testimonies.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › mysteries/glorious-1.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › mysteries/joyful-4.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › mysteries/sorrowful-2.html: shared menu fits and opens/closes
+[laptop] › navigation-consistency.spec.js › miracles/eucharistic/ivorra.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › abouna-yaacoub-prayer.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › become-like-charbel.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › daily-prayer-admin.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › history.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › marina-story.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › mystery-meditation.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › qannoubine-monastery.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › saint-charbel-canonization.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › saint-charbel-novena.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › saint-charbel-prayer-for-depression.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › saint-charbel-tomb.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › shop.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › st-francis-of-assisi.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › st-rafqa.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › testimonies.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › mysteries/glorious-1.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › mysteries/joyful-4.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › mysteries/sorrowful-2.html: shared menu fits and opens/closes
+[wide-desktop] › navigation-consistency.spec.js › miracles/eucharistic/ivorra.html: shared menu fits and opens/closes
+[small-phone] › prayer-equivalence.spec.js › /ar/prayers prayer selection respects gated exact twins
+[small-phone] › prayer-equivalence.spec.js › /saint-charbel-novena prayer selection respects gated exact twins
+[small-phone] › prayer-equivalence.spec.js › /es/novena prayer selection respects gated exact twins
+[phone] › prayer-equivalence.spec.js › /pl/modlitwy prayer selection respects gated exact twins
+[phone] › prayer-equivalence.spec.js › /it/novena prayer selection respects gated exact twins
+[tablet] › prayer-equivalence.spec.js › /pt/oracoes prayer selection respects gated exact twins
+[tablet] › prayer-equivalence.spec.js › /ru/novena prayer selection respects gated exact twins
+[laptop] › prayer-equivalence.spec.js › /fr/prieres prayer selection respects gated exact twins
+[laptop] › prayer-equivalence.spec.js › /de/novene prayer selection respects gated exact twins
+[wide-desktop] › prayer-equivalence.spec.js › /ar/prayers prayer selection respects gated exact twins
+[wide-desktop] › prayer-equivalence.spec.js › /saint-charbel-novena prayer selection respects gated exact twins
+[wide-desktop] › prayer-equivalence.spec.js › /es/novena prayer selection respects gated exact twins
+[small-phone] › prayer-keyed-masters.spec.js › /fr/prieres full keyed master 390px
+[small-phone] › prayer-keyed-masters.spec.js › /it/preghiere full keyed master 320px
+[small-phone] › prayer-keyed-masters.spec.js › /es/oraciones full keyed master 1280px
+[small-phone] › prayer-keyed-masters.spec.js › /fr/neuvaine full keyed master 390px
+[small-phone] › prayer-keyed-masters.spec.js › /it/novena full keyed master 320px
+[small-phone] › prayer-keyed-masters.spec.js › /es/novena full keyed master 1280px
+[phone] › prayer-keyed-masters.spec.js › /fr/prieres full keyed master 390px
+[phone] › prayer-keyed-masters.spec.js › /it/preghiere full keyed master 320px
+[phone] › prayer-keyed-masters.spec.js › /es/oraciones full keyed master 1280px
+[phone] › prayer-keyed-masters.spec.js › /fr/neuvaine full keyed master 390px
+[phone] › prayer-keyed-masters.spec.js › /it/novena full keyed master 320px
+[phone] › prayer-keyed-masters.spec.js › /es/novena full keyed master 1280px
+[tablet] › prayer-keyed-masters.spec.js › /fr/prieres full keyed master 390px
+[tablet] › prayer-keyed-masters.spec.js › /it/preghiere full keyed master 320px
+[tablet] › prayer-keyed-masters.spec.js › /es/oraciones full keyed master 1280px
+[tablet] › prayer-keyed-masters.spec.js › /fr/neuvaine full keyed master 390px
+[tablet] › prayer-keyed-masters.spec.js › /it/novena full keyed master 320px
+[tablet] › prayer-keyed-masters.spec.js › /es/novena full keyed master 1280px
+[laptop] › prayer-keyed-masters.spec.js › /fr/prieres full keyed master 390px
+[laptop] › prayer-keyed-masters.spec.js › /it/preghiere full keyed master 320px
+[laptop] › prayer-keyed-masters.spec.js › /es/oraciones full keyed master 1280px
+[laptop] › prayer-keyed-masters.spec.js › /fr/neuvaine full keyed master 390px
+[laptop] › prayer-keyed-masters.spec.js › /it/novena full keyed master 320px
+[laptop] › prayer-keyed-masters.spec.js › /es/novena full keyed master 1280px
+[wide-desktop] › prayer-keyed-masters.spec.js › /fr/prieres full keyed master 390px
+[wide-desktop] › prayer-keyed-masters.spec.js › /it/preghiere full keyed master 320px
+[wide-desktop] › prayer-keyed-masters.spec.js › /es/oraciones full keyed master 1280px
+[wide-desktop] › prayer-keyed-masters.spec.js › /fr/neuvaine full keyed master 390px
+[wide-desktop] › prayer-keyed-masters.spec.js › /it/novena full keyed master 320px
+[wide-desktop] › prayer-keyed-masters.spec.js › /es/novena full keyed master 1280px
+[phone] › prayer-library.spec.js › every prayer card carries the five required fact fields
+[tablet] › prayer-library.spec.js › promises carry Church-status labels and no guaranteed-outcome language
+[laptop] › prayer-library.spec.js › scripture quotes name their public-domain translation
+[small-phone] › prayer-mirror.spec.js › /en/prayers prayers mirror stays readable and complete
+[small-phone] › prayer-mirror.spec.js › /ru/molitvy prayers mirror stays readable and complete
+[small-phone] › prayer-mirror.spec.js › /pl/modlitwy keeps authored prayer copy and refuses pending twins
+[phone] › prayer-mirror.spec.js › /it/preghiere prayers mirror stays readable and complete
+[phone] › prayer-mirror.spec.js › /pt/oracoes keeps authored prayer copy and refuses pending twins
+[tablet] › prayer-mirror.spec.js › /fr/prieres prayers mirror stays readable and complete
+[tablet] › prayer-mirror.spec.js › /ar/prayers keeps authored prayer copy and refuses pending twins
+[laptop] › prayer-mirror.spec.js › /saint-charbel-prayers prayers mirror stays readable and complete
+[laptop] › prayer-mirror.spec.js › /pl/modlitwy prayers mirror stays readable and complete
+[laptop] › prayer-mirror.spec.js › /de/gebete keeps authored prayer copy and refuses pending twins
+[wide-desktop] › prayer-mirror.spec.js › /pt/oracoes prayers mirror stays readable and complete
+[wide-desktop] › prayer-mirror.spec.js › /es/oraciones keeps authored prayer copy and refuses pending twins
+[small-phone] › prayer-share-runtime.spec.js › /ar/prayers reviewed share labels render and work
+[small-phone] › prayer-share-runtime.spec.js › /pt/oracoes reviewed share labels render and work
+[phone] › prayer-share-runtime.spec.js › /saint-charbel-prayers reviewed share labels render and work
+[phone] › prayer-share-runtime.spec.js › /ru/molitvy reviewed share labels render and work
+[phone] › prayer-share-runtime.spec.js › /es/oraciones reviewed share labels render and work
+[tablet] › prayer-share-runtime.spec.js › /fr/prieres reviewed share labels render and work
+[tablet] › prayer-share-runtime.spec.js › /pl/modlitwy reviewed share labels render and work
+[laptop] › prayer-share-runtime.spec.js › /de/gebete reviewed share labels render and work
+[laptop] › prayer-share-runtime.spec.js › /it/preghiere reviewed share labels render and work
+[wide-desktop] › prayer-share-runtime.spec.js › /ar/prayers reviewed share labels render and work
+[wide-desktop] › prayer-share-runtime.spec.js › /pt/oracoes reviewed share labels render and work
+[small-phone] › qadisha-french-mirror.spec.js › /qadisha-valley retains Qadisha content and the single language selector
+[phone] › qadisha-french-mirror.spec.js › fr Qadisha keeps authored language and offers English while refusing pending non-English
+[laptop] › qadisha-french-mirror.spec.js › /ar/qadisha-valley retains Qadisha content and the single language selector
+[wide-desktop] › qadisha-french-mirror.spec.js › French Qadisha links to real localized guides and preserves unpublished English routes
+[phone] › qadisha-mirror.spec.js › Arabic Qadisha has functioning nav and local authored links
+[laptop] › qadisha-mirror.spec.js › Arabic Qadisha has functioning nav and local authored links
+[small-phone] › qadisha-spanish-mirror.spec.js › /es/valle-qadisha retains the same visible structure, images and reciprocal cluster
+[phone] › qadisha-spanish-mirror.spec.js › Spanish Qadisha links to real Spanish guides and English-only places
+[laptop] › qadisha-spanish-mirror.spec.js › /ar/qadisha-valley retains the same visible structure, images and reciprocal cluster
+[wide-desktop] › qadisha-spanish-mirror.spec.js › /es/valle-qadisha retains the same visible structure, images and reciprocal cluster
+[phone] › rosary-bead-teacher.spec.js › no-WebGL and reduced-motion preserve practice
+[laptop] › rosary-bead-teacher.spec.js › no-WebGL and reduced-motion preserve practice
+[small-phone] › russian-first-slice.spec.js › /ru/biography: Cyrillic, loaded assets, usable links and no horizontal overflow
+[phone] › russian-first-slice.spec.js › /ru/novena: all registered choices and page-specific HI/TH refusal
+[laptop] › russian-first-slice.spec.js › /ru/annaya: all registered choices and page-specific HI/TH refusal
+[small-phone] › saint-of-day.spec.js › saint date and axe / 2026-10-25
+[small-phone] › saint-of-day.spec.js › saint date and axe / 2026-11-02
+[small-phone] › saint-of-day.spec.js › saint date and axe /ar/ 2026-10-31
+[small-phone] › saint-of-day.spec.js › saint date and axe /hi/ 2026-10-29
+[small-phone] › saint-of-day.spec.js › saint date and axe /th/ 2026-10-27
+[small-phone] › saint-of-day.spec.js › saint no-JS remains absent
+[small-phone] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-10-29
+[small-phone] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-11-02
+[phone] › saint-of-day.spec.js › saint date and axe / 2026-11-01
+[phone] › saint-of-day.spec.js › saint date and axe /ar/ 2026-10-30
+[phone] › saint-of-day.spec.js › saint date and axe /hi/ 2026-10-28
+[phone] › saint-of-day.spec.js › saint date and axe /th/ 2026-10-26
+[phone] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-03
+[phone] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-10-29
+[phone] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-02
+[tablet] › saint-of-day.spec.js › saint date and axe / 2026-10-31
+[tablet] › saint-of-day.spec.js › saint date and axe /ar/ 2026-10-29
+[tablet] › saint-of-day.spec.js › saint date and axe /hi/ 2026-10-27
+[tablet] › saint-of-day.spec.js › saint date and axe /th/ 2026-10-25
+[tablet] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-02
+[tablet] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-10-28
+[tablet] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-11-01
+[laptop] › saint-of-day.spec.js › saint date and axe / 2026-10-30
+[laptop] › saint-of-day.spec.js › saint date and axe /ar/ 2026-10-28
+[laptop] › saint-of-day.spec.js › saint date and axe /hi/ 2026-10-26
+[laptop] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-03
+[laptop] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-01
+[laptop] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-10-28
+[laptop] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-01
+[wide-desktop] › saint-of-day.spec.js › saint date and axe / 2026-10-29
+[wide-desktop] › saint-of-day.spec.js › saint date and axe /ar/ 2026-10-27
+[wide-desktop] › saint-of-day.spec.js › saint date and axe /hi/ 2026-10-25
+[wide-desktop] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-02
+[wide-desktop] › saint-of-day.spec.js › saint date and axe /th/ 2026-10-31
+[wide-desktop] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-10-27
+[wide-desktop] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-10-31
+[small-phone] › same-page-compact-helper.spec.js › /travel at 390 keeps compact header without blanket unavailable helper
+[phone] › same-page-compact-helper.spec.js › /travel at 390 keeps compact header without blanket unavailable helper
+[tablet] › same-page-compact-helper.spec.js › /travel at 390 keeps compact header without blanket unavailable helper
+[laptop] › same-page-compact-helper.spec.js › /travel at 390 keeps compact header without blanket unavailable helper
+[wide-desktop] › same-page-compact-helper.spec.js › /travel at 390 keeps compact header without blanket unavailable helper
+[small-phone] › search-keyboard.spec.js › empty search popular links tab in DOM order and return focus /ar/
+[phone] › search-keyboard.spec.js › recent search and clear work with keyboard /
+[phone] › search-keyboard.spec.js › English short guide search boots /en/rosary
+[tablet] › search-keyboard.spec.js › English short guide search boots /en/biography
+[laptop] › search-keyboard.spec.js › result combobox keeps arrow navigation and excludes options from Tab /ar/
+[wide-desktop] › search-keyboard.spec.js › empty search popular links tab in DOM order and return focus /ar/
+[phone] › site-quality.spec.js › /index.html › renders without overflow, broken images, console errors, or serious accessibility issues
+[wide-desktop] › site-quality.spec.js › /story.html › renders without overflow, broken images, console errors, or serious accessibility issues
+[tablet] › site-quality.spec.js › /gallery.html › renders without overflow, broken images, console errors, or serious accessibility issues
+[small-phone] › site-quality.spec.js › /saint-charbel-feast-day.html › renders without overflow, broken images, console errors, or serious accessibility issues
+[laptop] › site-quality.spec.js › /visit-annaya.html › renders without overflow, broken images, console errors, or serious accessibility issues
+[phone] › site-quality.spec.js › /miracles/ › renders without overflow, broken images, console errors, or serious accessibility issues
+[wide-desktop] › site-quality.spec.js › /miracles/eucharistic/ › renders without overflow, broken images, console errors, or serious accessibility issues
+[tablet] › site-quality.spec.js › /miracles/eucharistic/bolsena-orvieto › renders without overflow, broken images, console errors, or serious accessibility issues
+[small-phone] › site-quality.spec.js › /miracles/eucharistic/santarem › renders without overflow, broken images, console errors, or serious accessibility issues
+[laptop] › site-quality.spec.js › /miracles/eucharistic/sokolka › renders without overflow, broken images, console errors, or serious accessibility issues
+[small-phone] › source-safeguards.spec.js › de source-first safeguards stay readable
+[phone] › source-safeguards.spec.js › fr source-first safeguards stay readable
+[phone] › source-safeguards.spec.js › th source-first safeguards stay readable
+[tablet] › source-safeguards.spec.js › de source-first safeguards stay readable
+[laptop] › source-safeguards.spec.js › fr source-first safeguards stay readable
+[laptop] › source-safeguards.spec.js › th source-first safeguards stay readable
+[wide-desktop] › source-safeguards.spec.js › de source-first safeguards stay readable
+[small-phone] › storybook-art-frame.spec.js › story art stays centered at 360
+[small-phone] › storybook-art-frame.spec.js › maroun-story art stays centered at 360
+[small-phone] › storybook-art-frame.spec.js › magdalene-story art stays centered at 360
+[small-phone] › storybook-art-frame.spec.js › francis-story art stays centered at 360
+[small-phone] › storybook-art-frame.spec.js › pio-story art stays centered at 360
+[phone] › storybook-art-frame.spec.js › charbel-story-v2 art stays centered at 1280
+[phone] › storybook-art-frame.spec.js › marina-story art stays centered at 1280
+[phone] › storybook-art-frame.spec.js › peter-story art stays centered at 1280
+[phone] › storybook-art-frame.spec.js › sergius-bacchus-story art stays centered at 1280
+[phone] › storybook-art-frame.spec.js › therese-story art stays centered at 1280
+[tablet] › storybook-art-frame.spec.js › charbel-story-v2 art stays centered at 360
+[tablet] › storybook-art-frame.spec.js › marina-story art stays centered at 360
+[tablet] › storybook-art-frame.spec.js › peter-story art stays centered at 360
+[tablet] › storybook-art-frame.spec.js › sergius-bacchus-story art stays centered at 360
+[tablet] › storybook-art-frame.spec.js › therese-story art stays centered at 360
+[tablet] › storybook-art-frame.spec.js › page hinge is bounded, interruptible, and skipped for keyboard / reduced motion
+[laptop] › storybook-art-frame.spec.js › hardini-story art stays centered at 1280
+[laptop] › storybook-art-frame.spec.js › joseph-story art stays centered at 1280
+[laptop] › storybook-art-frame.spec.js › augustine-story art stays centered at 1280
+[laptop] › storybook-art-frame.spec.js › veronica-giuliani-story art stays centered at 1280
+[laptop] › storybook-art-frame.spec.js › mother-teresa-story art stays centered at 1280
+[wide-desktop] › storybook-art-frame.spec.js › hardini-story art stays centered at 360
+[wide-desktop] › storybook-art-frame.spec.js › joseph-story art stays centered at 360
+[wide-desktop] › storybook-art-frame.spec.js › augustine-story art stays centered at 360
+[wide-desktop] › storybook-art-frame.spec.js › veronica-giuliani-story art stays centered at 360
+[wide-desktop] › storybook-art-frame.spec.js › mother-teresa-story art stays centered at 360
+[small-phone] › storybook-collisions.spec.js › reader elements do not collide at 1920 100% en
+[small-phone] › storybook-collisions.spec.js › reader elements do not collide at 768 100% ?lang=ar
+[small-phone] › storybook-collisions.spec.js › reader elements do not collide at 1100 200% ?lang=ar
+[phone] › storybook-collisions.spec.js › reader elements do not collide at 1920 100% en
+[phone] › storybook-collisions.spec.js › reader elements do not collide at 768 100% ?lang=ar
+[phone] › storybook-collisions.spec.js › reader elements do not collide at 1100 200% ?lang=ar
+[tablet] › storybook-collisions.spec.js › reader elements do not collide at 1920 100% en
+[tablet] › storybook-collisions.spec.js › reader elements do not collide at 768 100% ?lang=ar
+[tablet] › storybook-collisions.spec.js › reader elements do not collide at 1100 200% ?lang=ar
+[laptop] › storybook-collisions.spec.js › reader elements do not collide at 1920 100% en
+[laptop] › storybook-collisions.spec.js › reader elements do not collide at 768 100% ?lang=ar
+[laptop] › storybook-collisions.spec.js › reader elements do not collide at 1100 200% ?lang=ar
+[wide-desktop] › storybook-collisions.spec.js › reader elements do not collide at 1920 100% en
+[wide-desktop] › storybook-collisions.spec.js › reader elements do not collide at 768 100% ?lang=ar
+[wide-desktop] › storybook-collisions.spec.js › reader elements do not collide at 1100 200% ?lang=ar
+[small-phone] › storybook-page-flip.spec.js › page flip runs on desktop
+[phone] › storybook-page-flip.spec.js › page flip runs on tablet portrait
+[tablet] › storybook-page-flip.spec.js › page flip runs on tablet landscape
+[laptop] › storybook-page-flip.spec.js › page flip runs on phone
+[wide-desktop] › storybook-page-flip.spec.js › reduced motion: no leaf
+[small-phone] › storybook-responsive-layout.spec.js › marina-story: usable reader at 768
+[small-phone] › storybook-responsive-layout.spec.js › magdalene-story: usable reader at 768
+[small-phone] › storybook-responsive-layout.spec.js › pio-story: usable reader at 768
+[small-phone] › storybook-responsive-layout.spec.js › mother-teresa-story: usable reader at 768
+[small-phone] › storybook-responsive-layout.spec.js › hardini-story: usable reader at 768
+[small-phone] › storybook-responsive-layout.spec.js › massabki-story: usable reader at 768
+[phone] › storybook-responsive-layout.spec.js › augustine-story: usable reader at 768
+[phone] › storybook-responsive-layout.spec.js › maroun-story: usable reader at 768
+[phone] › storybook-responsive-layout.spec.js › story: usable reader at 768
+[phone] › storybook-responsive-layout.spec.js › jpii-story: usable reader at 768
+[phone] › storybook-responsive-layout.spec.js › rafqa-story: usable reader at 768
+[phone] › storybook-responsive-layout.spec.js › peter-story: usable reader at 768
+[phone] › storybook-responsive-layout.spec.js › resume and AutoContinue keep controls visible at 768
+[tablet] › storybook-responsive-layout.spec.js › marina-story: usable reader at 768
+[tablet] › storybook-responsive-layout.spec.js › magdalene-story: usable reader at 768
+[tablet] › storybook-responsive-layout.spec.js › pio-story: usable reader at 768
+[tablet] › storybook-responsive-layout.spec.js › mother-teresa-story: usable reader at 768
+[tablet] › storybook-responsive-layout.spec.js › hardini-story: usable reader at 768
+[tablet] › storybook-responsive-layout.spec.js › massabki-story: usable reader at 768
+[laptop] › storybook-responsive-layout.spec.js › augustine-story: usable reader at 768
+[laptop] › storybook-responsive-layout.spec.js › maroun-story: usable reader at 768
+[laptop] › storybook-responsive-layout.spec.js › story: usable reader at 768
+[laptop] › storybook-responsive-layout.spec.js › jpii-story: usable reader at 768
+[laptop] › storybook-responsive-layout.spec.js › rafqa-story: usable reader at 768
+[laptop] › storybook-responsive-layout.spec.js › peter-story: usable reader at 768
+[laptop] › storybook-responsive-layout.spec.js › resume and AutoContinue keep controls visible at 768
+[wide-desktop] › storybook-responsive-layout.spec.js › marina-story: usable reader at 768
+[wide-desktop] › storybook-responsive-layout.spec.js › magdalene-story: usable reader at 768
+[wide-desktop] › storybook-responsive-layout.spec.js › pio-story: usable reader at 768
+[wide-desktop] › storybook-responsive-layout.spec.js › mother-teresa-story: usable reader at 768
+[wide-desktop] › storybook-responsive-layout.spec.js › hardini-story: usable reader at 768
+[wide-desktop] › storybook-responsive-layout.spec.js › massabki-story: usable reader at 768
+[small-phone] › testimony-quality.spec.js › /testimony-review.html is fail-closed, responsive, and accessible
+[small-phone] › testimony-quality.spec.js › admin client script gates the panel on the moderator role and MFA
+[phone] › testimony-quality.spec.js › submit page states guest access and adults-only policy
+[tablet] › testimony-quality.spec.js › /testimony-review.html is fail-closed, responsive, and accessible
+[tablet] › testimony-quality.spec.js › admin client script gates the panel on the moderator role and MFA
+[laptop] › testimony-quality.spec.js › submit page states guest access and adults-only policy
+[wide-desktop] › testimony-quality.spec.js › /testimony-review.html is fail-closed, responsive, and accessible
+[wide-desktop] › testimony-quality.spec.js › admin client script gates the panel on the moderator role and MFA
+[small-phone] › travel-english-disclosure.spec.js › /es/monasterio-qozhaya: open Legacy discloses English destinations visibly
+[phone] › travel-english-disclosure.spec.js › /fr/travel: open Legacy discloses English destinations visibly
+[phone] › travel-english-disclosure.spec.js › /pl/travel: open Legacy discloses English destinations visibly
+[tablet] › travel-english-disclosure.spec.js › /es/valle-qadisha: open Legacy discloses English destinations visibly
+[laptop] › travel-english-disclosure.spec.js › /es/monasterio-qannoubine: open Legacy discloses English destinations visibly
+[wide-desktop] › travel-english-disclosure.spec.js › /fr/monastere-qozhaya: open Legacy discloses English destinations visibly
+[wide-desktop] › travel-english-disclosure.spec.js › /it/travel: open Legacy discloses English destinations visibly
+[small-phone] › travel-equivalence.spec.js › annaya-master pl retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[small-phone] › travel-equivalence.spec.js › twenty-second-master pl retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[small-phone] › travel-equivalence.spec.js › pilgrimage-master pl retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[small-phone] › travel-equivalence.spec.js › partial ZH selector shows its actual language: annaya-tour-zh-travel-master
+[small-phone] › travel-equivalence.spec.js › partial ZH selector shows its actual language: visit-annaya-zh-travel-master
+[phone] › travel-equivalence.spec.js › annaya-master it retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[phone] › travel-equivalence.spec.js › twenty-second-master it retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[phone] › travel-equivalence.spec.js › pilgrimage-master it retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[phone] › travel-equivalence.spec.js › partial ZH selector shows its actual language: our-lady-of-lebanon-harissa-zh-travel-master
+[phone] › travel-equivalence.spec.js › partial ZH selector shows its actual language: qozhaya-monastery-zh-travel-master
+[tablet] › travel-equivalence.spec.js › annaya-master es retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[tablet] › travel-equivalence.spec.js › twenty-second-master es retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[tablet] › travel-equivalence.spec.js › pilgrimage-master es retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[tablet] › travel-equivalence.spec.js › partial ZH selector shows its actual language: pilgrimage-master
+[tablet] › travel-equivalence.spec.js › partial ZH selector shows its actual language: travel-zh-travel-master
+[laptop] › travel-equivalence.spec.js › annaya-master ar retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[laptop] › travel-equivalence.spec.js › twenty-second-master ar retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[laptop] › travel-equivalence.spec.js › pilgrimage-master ar retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[laptop] › travel-equivalence.spec.js › published Polish prayer translation navigates to its keyed twin
+[laptop] › travel-equivalence.spec.js › partial ZH selector shows its actual language: cedars-of-god-lebanon-zh-travel-master
+[laptop] › travel-equivalence.spec.js › partial ZH selector shows its actual language: saint-charbel-trail-zh-travel-master
+[wide-desktop] › travel-equivalence.spec.js › annaya-master pl retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[wide-desktop] › travel-equivalence.spec.js › twenty-second-master pl retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[wide-desktop] › travel-equivalence.spec.js › pilgrimage-master pl retains reviewed choices and refuses unlocalized HI/TH and switches to reviewed FR then EN
+[wide-desktop] › travel-equivalence.spec.js › partial ZH selector shows its actual language: annaya-tour-zh-travel-master
+[wide-desktop] › travel-equivalence.spec.js › partial ZH selector shows its actual language: visit-annaya-zh-travel-master
+[small-phone] › travel-hub.spec.js › /pt/travel has usable photos, authored copy and one selector
+[small-phone] › travel-hub.spec.js › Travel page navigation dropdown links stay readable on the dark panel
+[phone] › travel-hub.spec.js › /pl/travel has usable photos, authored copy and one selector
+[tablet] › travel-hub.spec.js › /fr/travel has usable photos, authored copy and one selector
+[tablet] › travel-hub.spec.js › /qadisha-valley has whole-page accessible contrast including footer
+[laptop] › travel-hub.spec.js › /it/travel has usable photos, authored copy and one selector
+[wide-desktop] › travel-hub.spec.js › /travel has usable photos, authored copy and one selector
+[wide-desktop] › travel-hub.spec.js › Travel selector offers only the verified Arabic, German, Russian and Hindi twins
+[small-phone] › travel-master.spec.js › annaya-master pt renders cleanly with English access and no overflow
+[small-phone] › travel-master.spec.js › twenty-second-master pt renders cleanly with English access and no overflow
+[small-phone] › travel-master.spec.js › pilgrimage-master pt renders cleanly with English access and no overflow
+[phone] › travel-master.spec.js › annaya-master es renders cleanly with English access and no overflow
+[phone] › travel-master.spec.js › twenty-second-master es renders cleanly with English access and no overflow
+[phone] › travel-master.spec.js › pilgrimage-master es renders cleanly with English access and no overflow
+[tablet] › travel-master.spec.js › annaya-master fr renders cleanly with English access and no overflow
+[tablet] › travel-master.spec.js › twenty-second-master fr renders cleanly with English access and no overflow
+[tablet] › travel-master.spec.js › pilgrimage-master fr renders cleanly with English access and no overflow
+[laptop] › travel-master.spec.js › annaya-master ar renders cleanly with English access and no overflow
+[laptop] › travel-master.spec.js › twenty-second-master ar renders cleanly with English access and no overflow
+[laptop] › travel-master.spec.js › pilgrimage-master ar renders cleanly with English access and no overflow
+[laptop] › travel-master.spec.js › pilgrimage-master zh-Hans renders cleanly with English access and no overflow
+[wide-desktop] › travel-master.spec.js › annaya-master ru renders cleanly with English access and no overflow
+[wide-desktop] › travel-master.spec.js › twenty-second-master ru renders cleanly with English access and no overflow
+[wide-desktop] › travel-master.spec.js › pilgrimage-master ru renders cleanly with English access and no overflow
+[small-phone] › travel-routing.spec.js › /saint-charbel-hermitage has a real body, working resources, full-page accessibility and route landmarks
+[small-phone] › travel-routing.spec.js › /ar/travel has a real body, working resources, full-page accessibility and route landmarks
+[small-phone] › travel-routing.spec.js › /es/valle-qadisha has a real body, working resources, full-page accessibility and route landmarks
+[small-phone] › travel-routing.spec.js › /en/visit-annaya redirects to its canonical root page
+[small-phone] › travel-routing.spec.js › /en/our-lady-of-lebanon-harissa redirects to its canonical root page
+[phone] › travel-routing.spec.js › /visit-annaya has a real body, working resources, full-page accessibility and route landmarks
+[phone] › travel-routing.spec.js › /our-lady-of-lebanon-harissa has a real body, working resources, full-page accessibility and route landmarks
+[phone] › travel-routing.spec.js › /pt/travel has a real body, working resources, full-page accessibility and route landmarks
+[phone] › travel-routing.spec.js › /es/monasterio-qannoubine has a real body, working resources, full-page accessibility and route landmarks
+[phone] › travel-routing.spec.js › /en/qannoubine-monastery redirects to its canonical root page
+[phone] › travel-routing.spec.js › /en/saint-charbel-pilgrimage redirects to its canonical root page
+[tablet] › travel-routing.spec.js › /qannoubine-monastery has a real body, working resources, full-page accessibility and route landmarks
+[tablet] › travel-routing.spec.js › /saint-charbel-pilgrimage has a real body, working resources, full-page accessibility and route landmarks
+[tablet] › travel-routing.spec.js › /ar/qadisha-valley has a real body, working resources, full-page accessibility and route landmarks
+[tablet] › travel-routing.spec.js › /es/monasterio-qozhaya has a real body, working resources, full-page accessibility and route landmarks
+[tablet] › travel-routing.spec.js › /en/saint-charbel-trail redirects to its canonical root page
+[tablet] › travel-routing.spec.js › /ar/annaya has a direct localized Travel route and preserves its language control
+[laptop] › travel-routing.spec.js › /saint-charbel-trail has a real body, working resources, full-page accessibility and route landmarks
+[laptop] › travel-routing.spec.js › /fr/travel has a real body, working resources, full-page accessibility and route landmarks
+[laptop] › travel-routing.spec.js › /ar/qannoubine-monastery has a real body, working resources, full-page accessibility and route landmarks
+[laptop] › travel-routing.spec.js › /en/bekaa-kafra redirects to its canonical root page
+[laptop] › travel-routing.spec.js › /en/cedars-of-god-lebanon redirects to its canonical root page
+[wide-desktop] › travel-routing.spec.js › /bekaa-kafra has a real body, working resources, full-page accessibility and route landmarks
+[wide-desktop] › travel-routing.spec.js › /cedars-of-god-lebanon has a real body, working resources, full-page accessibility and route landmarks
+[wide-desktop] › travel-routing.spec.js › /it/travel has a real body, working resources, full-page accessibility and route landmarks
+[wide-desktop] › travel-routing.spec.js › /ar/qozhaya-monastery has a real body, working resources, full-page accessibility and route landmarks
+[wide-desktop] › travel-routing.spec.js › /en/qozhaya-monastery redirects to its canonical root page
+[wide-desktop] › travel-routing.spec.js › /en/annaya-tour redirects to its canonical root page
+[phone] › video-playback.spec.js › restriction, unavailable and missing-referrer states are distinct and accessible
+[laptop] › video-playback.spec.js › restriction, unavailable and missing-referrer states are distinct and accessible

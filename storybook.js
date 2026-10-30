@@ -9,13 +9,63 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
+    return raw === 'veronica' ? 'veronica' : raw === 'augustine' ? 'augustine' : raw === 'marina' ? 'marina' : raw === 'maroun' ? 'maroun' : raw === 'sergius' ? 'sergius' : raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
   };
   const storyId = getStoryId();
 
   const selectedLang = getLangCode();
-  const contentLang = selectedLang === 'ar' ? 'ar' : selectedLang === 'fr' ? 'fr' : 'en';
+  // Veronica-only locale contract: this book ships a localized edition for every active
+  // locale. Every other story keeps the legacy ar/fr query-param behavior below, because
+  // resolveVeronicaLang returns null for any other storyId.
+  const VERONICA_I18N = {
+    en: { global: 'VERONICA_STORY_EN', voice: 'en-US' },
+    ar: { global: 'VERONICA_STORY_AR', voice: 'ar-LB' },
+    fr: { global: 'VERONICA_STORY_FR', voice: 'fr-FR' },
+    es: { global: 'VERONICA_STORY_ES', voice: 'es-ES' },
+    pt: { global: 'VERONICA_STORY_PT', voice: 'pt-PT' },
+    it: { global: 'VERONICA_STORY_IT', voice: 'it-IT' },
+    de: { global: 'VERONICA_STORY_DE', voice: 'de-DE' },
+    pl: { global: 'VERONICA_STORY_PL', voice: 'pl-PL' },
+    ru: { global: 'VERONICA_STORY_RU', voice: 'ru-RU' },
+    hi: { global: 'VERONICA_STORY_HI', voice: 'hi-IN' },
+    th: { global: 'VERONICA_STORY_TH', voice: 'th-TH' },
+    'zh-Hans': { global: 'VERONICA_STORY_ZH_HANS', voice: 'zh-CN' }
+  };
+  const resolveVeronicaLang = (id, queryLang, docLang) => {
+    if (id !== 'veronica') return null;
+    // Case-insensitive lookup (?lang= arrives lowercased; document lang may be zh-Hans),
+    // returning the canonical contract key so catalog paths and voices stay exact.
+    const byLower = lang => Object.keys(VERONICA_I18N).find(k => k.toLowerCase() === String(lang || '').toLowerCase());
+    // docLang-first: a rendered twin's own locale always wins, so a stale ?lang= query on a
+    // twin URL cannot hijack the edition. The EN host page (docLang en) still honors an
+    // explicit ?lang= choice; anything unrecognized falls back to the document, then English.
+    const q = byLower(queryLang);
+    const d = byLower(docLang);
+    if (d && d !== 'en') return d;
+    return q || d || 'en';
+  };
+  const veronicaLang = resolveVeronicaLang(storyId, selectedLang, document.documentElement.lang);
+  const contentLang = veronicaLang || (selectedLang === 'ar' ? 'ar' : selectedLang === 'fr' ? 'fr' : 'en');
   const isRtl = contentLang === 'ar';
+
+  // The Settings control may share the shelf-link row (see storybook-stage.css) only when the
+  // row truly fits both controls. Measure the effective width in root-em units so text zoom
+  // (which grows both controls) closes the window and the static stacked fallback keeps them
+  // collision-free at any zoom level.
+  const settingsRowFit = () => {
+    const rootEm = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    // Never lift Settings while the resume banner owns the shelf row: the absolutely
+    // positioned control would land on the banner's Resume button (CI: peter-story at 390).
+    const banner = document.getElementById('story-resume-banner');
+    const resumeShown = banner && !banner.hidden;
+    document.body.classList.toggle('st-settings-row', !resumeShown && window.innerWidth >= 20 * rootEm && window.innerWidth <= 820);
+  };
+  settingsRowFit();
+  window.addEventListener('resize', settingsRowFit);
+  // Re-check when the root font size can change without a resize: injected style rules
+  // (accessibility tooling, tests) or runtime html style/class changes.
+  new MutationObserver(settingsRowFit).observe(document.documentElement, { attributes: true, attributeFilter: ['style', 'class'] });
+  if (document.head) new MutationObserver(settingsRowFit).observe(document.head, { childList: true, subtree: true });
 
   const COPY = {
     en: {
@@ -57,6 +107,22 @@
   };
 
   const EVIDENCE_SOURCES = {
+    veronicaBenedict: {label: null, lang: 'en', url: "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101215.html"},
+    veronicaNewAdvent: {label: null, lang: 'en', url: "https://www.newadvent.org/cathen/15363a.htm"},
+    veronicaTreccani: {label: null, lang: 'it', url: "https://www.treccani.it/enciclopedia/santa-veronica-giuliani/"},
+    romansUsccb8: {label: null, lang: 'en', url: "https://bible.usccb.org/bible/romans/8"},
+    sergiusPsalm133: {label: "USCCB: Psalm 133", url: "https://bible.usccb.org/bible/psalms/133"},
+    sergiusPassion: {label: "The Passion of Saints Serge and Bacchus (English translation)", url: "http://www.geocities.ws/mervatiskandercoptic/Synex/01/78Serge_Bacchus.htm"},
+    sergiusCE: {label: "Catholic Encyclopedia: Sergius and Bacchus", url: "https://www.newadvent.org/cathen/13728a.htm"},
+    marounTheodoret: {label: "Theodoret of Cyrrhus, Religious History 16 (translation by Fr Yuhanna Azize)", url: "https://www.fryuhanna.com/2026/01/28/maronite-history-st-theodoret-on-st-maroun/"},
+    marounChrysostom: {label: "John Chrysostom, Letter 36 to Maron (Roman Letters)", url: "https://romanletters.org/letters/chrysostom/36/"},
+    augBenedict: {label: "Benedict XVI, general audience on Saint Augustine, 9 January 2008", url: "http://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html"},
+    augConfessions: {label: "Augustine, Confessions, books 2 and 8 (translation at New Advent)", url: "https://www.newadvent.org/fathers/110108.htm"},
+    augJeremiah: {label: "Douay-Rheims: Jeremias (Jeremiah) 29:13", url: "https://drbo.org/drl/chapter/28029.htm"},
+    marinaMari: {label: "Marina the Monk (Maronite Research Institute, Journal of Maronite Studies, July 2000)", url: "http://www.maronite-institute.org/MARI/JMS/july00/Saint_Marina_The_Monk.htm"},
+    marinaWikipedia: {label: "Marina the Monk (Wikipedia)", url: "https://en.wikipedia.org/wiki/Marina_the_Monk"},
+    marinaSamuel: {label: "Douay-Rheims: 1 Kings (1 Samuel) 16:7", url: "https://www.drbo.org/chapter/09016.htm"},
+    marounPsalm92: {label: "USCCB: Psalm 92", url: "https://bible.usccb.org/bible/psalms/92"},
     magdaleneJohn19: {"label": "USCCB: John 19, Mary beside the cross", "url": "https://bible.usccb.org/bible/john/19"},
     magdaleneMatthew27: {"label": "USCCB: Matthew 27, burial and stone", "url": "https://bible.usccb.org/bible/matthew/27"},
     magdaleneVaticanNews: {"label": "Vatican News: Mary Magdalene, disciple of the Lord", "url": "https://www.vaticannews.va/en/saints/07/22/st--mary-magdalene--disciple-of-the-lord-.html"},
@@ -91,6 +157,7 @@
     hardiniSchool: { label: 'Holy See (Nimatullah beatification profile, 1998, Portuguese)', url: 'https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19980510_kassab_po.html' },
     hardiniHomily: { label: 'Holy See (John Paul II canonization homily, 2004)', url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2004/documents/hf_jp-ii_hom_20040516_canonizations.html' },
     rafqaVatican: { label: 'Holy See (Saint Rafqa biography, 2001)', url: 'https://www.vatican.va/news_services/liturgy/documents/ns_lit_doc_20010610_rafqa-choboq_en.html' },
+    rafqaMatthew25: { label: 'USCCB: Matthew 25', url: 'https://bible.usccb.org/bible/matthew/25' },
     rafqaConvent: { label: 'Saint Rafqa Monastery (history of Jrabta)', url: 'https://www.rafqa.com/Convent-Saint-Rafqa' },
     rafqaCanonization: { label: 'Holy See (canonization homily, 2001)', url: 'https://www.vatican.va/content/john-paul-ii/en/homilies/2001/documents/hf_jp-ii_hom_20010610_canonizzazione.html' },
     teresaVatican: {
@@ -880,11 +947,19 @@
     rafqa: { en: window.RAFQA_STORY_EN || [] },
     'charbel-v2': { en: window.CHARBEL_V2_STORY_EN || [] },
     magdalene: { en: window.MAGDALENE_STORY_EN || [] },
+    sergius: { en: window.SERGIUS_STORY_EN || [] },
+    maroun: { en: window.MAROUN_STORY_EN || [] },
+    marina: { en: window.MARINA_STORY_EN || [] },
+    augustine: { en: window.AUGUSTINE_STORY_EN || [] },
     jude: { en: window.JUDE_STORY_EN || [] },
     peter: { en: window.PETER_STORY_EN || [] },
-    hardini: { en: window.HARDINI_STORY_EN || [] }
+    hardini: { en: window.HARDINI_STORY_EN || [] },
+    veronica: Object.fromEntries(Object.entries(VERONICA_I18N).map(([lang, cfg]) => [lang, window[cfg.global] || []]))
   };
-  const UI = COPY[contentLang];
+  // Veronica editions outside the inline set load their strings from the locale catalog in init().
+  // Veronica gets its own UI object: the per-locale fetch below assigns into UI, and a shared
+  // reference would write localized strings into the shared COPY table (COPY.en for 9 locales).
+  const UI = storyId === 'veronica' ? Object.assign({}, COPY[contentLang] || COPY.en) : (COPY[contentLang] || COPY.en);
   const storyPages = STORY_PAGES[storyId] || STORY_PAGES.charbel;
   const pages = storyPages[contentLang] || storyPages.en;
   const AUDIO_BASE = {
@@ -942,7 +1017,12 @@
       { id: 'kokoro-hardini', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-hardini/en' },
       { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }
     ] },
+  augustine: { en: [{ id: "directed-augustine", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-augustine/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  marina: { en: [{ id: "directed-marina", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-marina/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  maroun: { en: [{ id: "directed-maroun", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-maroun/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  sergius: { en: [{ id: "directed-sergius", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-sergius-bacchus/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   magdalene: { en: [{ id: "directed-magdalene", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-magdalene/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
+  veronica: { en: [{ id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   jude: { en: [{ id: "directed-jude", label: "Story Voice (Recommended)", type: "clips", base: "./media/storybook-jude/en" }, { id: "browser", label: "Browser Voice (Device)", type: "browser" }] },
   peter: { en: [{ id: 'kokoro-peter', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-peter/en-directed-r1' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   rafqa: { en: [
@@ -997,10 +1077,18 @@
   const linkMarkup = sourceId => {
     const source = EVIDENCE_SOURCES[sourceId];
     if (!source) return '';
-    return `<a href="${source.url}" target="_blank" rel="noopener">${source.label}</a>`;
+    let label = (storyId === 'veronica' && UI.sources && UI.sources[sourceId]) || source.label || source.url;
+    if (storyId === 'veronica' && source.lang && source.lang !== contentLang) {
+      const q = source.lang === 'it' ? UI.sourceItalianQualifier : UI.shelfEnglishQualifier;
+      if (q) label += ' ' + q;
+    }
+    return `<a href="${source.url}" target="_blank" rel="noopener">${label}</a>`;
   };
 
   const getEvidenceForPage = (_pageIndex, page) => {
+    if (Array.isArray(page.evidence) && page.evidence.length) {
+      return page.evidence;
+    }
     if (contentLang !== 'en') {
       return [
         {
@@ -1009,9 +1097,6 @@
           sources: ['vaticanBeatification1965', 'vaticanCanonization1977']
         }
       ];
-    }
-    if (Array.isArray(page.evidence) && page.evidence.length) {
-      return page.evidence;
     }
     if (page.evidencePreset && EVIDENCE_PRESETS[page.evidencePreset]) {
       return EVIDENCE_PRESETS[page.evidencePreset];
@@ -1025,7 +1110,7 @@
       const sourceLinks = (item.sources || []).map(linkMarkup).filter(Boolean).join(' | ');
       return `
         <li>
-          <span class="story-evidence-type">${item.type}</span>
+          <span class="story-evidence-type">${(storyId === 'veronica' && UI.evidenceTypes && UI.evidenceTypes[item.type]) || item.type}</span>
           ${item.claim}
           <span class="story-evidence-links">${sourceLinks}</span>
         </li>
@@ -1082,7 +1167,7 @@
   const readerToggle = document.getElementById('story-reader-toggle');
   const applyReaderMode = on => {
     if (el.frame) el.frame.classList.toggle('is-reader-mode', on);
-    if (readerToggle) readerToggle.textContent = on ? 'Reader Mode: On' : 'Reader Mode';
+    if (readerToggle) readerToggle.textContent = storyId === 'veronica' ? (on ? (UI.readerModeOn || UI.readerMode || 'Reader Mode: On') : (UI.readerMode || 'Reader Mode')) : (on ? 'Reader Mode: On' : 'Reader Mode');
     writeReaderModePref(on);
   };
   if (readerToggle) {
@@ -1238,7 +1323,7 @@
       if (!pages.every(page => Boolean(page.audio))) {
         return false;
       }
-      const probeUrl = `${pack.base}/page-01.mp3`;
+      const probeUrl = absUrl(`${pack.base}/page-01.mp3`);
       return checkClipAvailability(probeUrl);
     }));
     availableVoicePacks = candidates.filter((_, idx) => checks[idx]);
@@ -1256,7 +1341,7 @@
   };
 
   const getPreferredInitialVoicePack = () => {
-    const recommendedId = storyId === 'magdalene' ? 'directed-magdalene' : storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : storyId === 'charbel-v2' ? 'kokoro-charbel-v2' : 'elevenlabs-charbel';
+    const recommendedId = storyId === 'veronica' ? 'browser' : storyId === 'augustine' ? 'directed-augustine' : storyId === 'marina' ? 'directed-marina' : storyId === 'maroun' ? 'directed-maroun' : storyId === 'sergius' ? 'directed-sergius' : storyId === 'magdalene' ? 'directed-magdalene' : storyId === 'jude' ? 'directed-jude' : storyId === 'francis' ? 'directed-francis' : storyId === 'joseph' ? 'directed-joseph' : storyId === 'anthony' ? 'directed-anthony' : storyId === 'therese' ? 'directed-therese-v2' : storyId === 'massabki' ? 'kokoro-massabki' : storyId === 'peter' ? 'kokoro-peter' : storyId === 'pio' ? 'kokoro-pio' : storyId === 'jpii' ? 'kokoro-jpii' : storyId === 'teresa' ? 'kokoro-teresa' : storyId === 'rafqa' ? 'kokoro-rafqa' : storyId === 'hardini' ? 'kokoro-hardini' : storyId === 'charbel-v2' ? 'kokoro-charbel-v2' : 'elevenlabs-charbel';
     const recommended = availableVoicePacks.find(pack => pack.id === recommendedId);
     if (contentLang === 'en' && recommended) {
       return recommended.id;
@@ -1345,17 +1430,26 @@
     }
   };
 
-  const animatePageTurn = () => {
-    if (window.matchMedia(['(prefers-reduced-motion:', 'reduce)'].join(' ')).matches) return;
-    el.panel.classList.remove('is-turning');
-    window.requestAnimationFrame(() => {
-      el.panel.classList.add('is-turning');
-    });
+  let pageTurnAnimation = null;
+  let lastRenderedIndex = 0;
+  const animatePageTurn = direction => {
+    pageTurnAnimation?.cancel();
+    const art = el.art.querySelector('.scene-art');
+    if (!art || !direction || window.matchMedia(['(prefers-reduced-motion:', 'reduce)'].join(' ')).matches) return;
+    // One bounded hinge explains the new page. Never move the art during reading.
+    art.style.transformOrigin = [direction > 0 ? 'left' : 'right', 'center'].join(' ');
+    pageTurnAnimation = art.animate([
+      { transform: `rotateY(${direction > 0 ? -4 : 4}deg)`, opacity: .86 },
+      { transform: 'rotateY(0deg)', opacity: 1 }
+    ], { duration: 240, easing: 'cubic-bezier(.23, 1, .32, 1)' });
   };
 
-  const render = () => {
+  // Locale twins live under /<lang>/, so relative asset paths must resolve from the site root.
+  const absUrl = p => (typeof p === 'string' && p.startsWith('./') ? '/' + p.slice(2) : p);
+
+  const render = (withMotion = true) => {
     const page = pages[index];
-    const illustration = page.illustration || SCENE_IMAGES[page.scene] || './gallery/charbel-portrait.jpg';
+    const illustration = absUrl(page.illustration || SCENE_IMAGES[page.scene] || './gallery/charbel-portrait.jpg');
     const stepText = `${UI.pagePrefix} ${index + 1} ${UI.pageConnector} ${pages.length}`;
     el.step.textContent = stepText;
     el.title.textContent = page.title;
@@ -1377,12 +1471,13 @@
     el.next.disabled = index === pages.length - 1;
     writeLastPage(index);
     syncAudioContext({ playing: false, paused: false, completed: false });
-    animatePageTurn();
+    animatePageTurn(withMotion ? Math.sign(index - lastRenderedIndex) : 0);
+    lastRenderedIndex = index;
   };
 
   const getClipUrl = page => {
     if (!page.audio || !activeVoicePack || activeVoicePack.type !== 'clips') return null;
-    return `${activeVoicePack.base}/${page.audio}`;
+    return absUrl(`${activeVoicePack.base}/${page.audio}`);
   };
 
   const checkClipAvailability = async clipUrl => {
@@ -1485,7 +1580,7 @@
     utterance.rate = 0.92 * playbackRate;
     utterance.pitch = 1.02;
     utterance.volume = 0.98;
-    utterance.lang = contentLang === 'ar' ? 'ar-LB' : contentLang === 'fr' ? 'fr-FR' : 'en-US';
+    utterance.lang = veronicaLang ? VERONICA_I18N[veronicaLang].voice : (contentLang === 'ar' ? 'ar-LB' : contentLang === 'fr' ? 'fr-FR' : 'en-US');
     utterance.voice = selectPreferredBrowserVoice();
     utterance.onend = () => onPageReadingFinished();
     utterance.onerror = () => onPageReadingFinished();
@@ -1500,13 +1595,13 @@
     window.speechSynthesis.speak(utterance);
   };
 
-  const movePage = direction => {
+  const movePage = (direction, withMotion = true) => {
     const wasReading = reading;
     stopReading();
     const nextIndex = Math.max(0, Math.min(pages.length - 1, index + direction));
     if (nextIndex === index) return;
     index = nextIndex;
-    render();
+    render(withMotion);
     scrollToReader();
     if (wasReading) {
       syncAudioContext({ playing: true, paused: false, completed: false });
@@ -1541,10 +1636,10 @@
       return;
     }
     if (event.key === 'ArrowRight') {
-      movePage(isRtl ? -1 : 1);
+      movePage(isRtl ? -1 : 1, false);
     }
     if (event.key === 'ArrowLeft') {
-      movePage(isRtl ? 1 : -1);
+      movePage(isRtl ? 1 : -1, false);
     }
   });
 
@@ -1572,7 +1667,15 @@
 
   const init = async () => {
     try {
-      const response = await fetch(`./locales/${contentLang}/storybook.json`);
+      // Veronica editions whose strings are not in the inline COPY set read them from the
+      // per-locale catalog file; the inline en/ar/fr path is unchanged.
+      if (storyId === 'veronica') {
+        const uiResponse = await fetch(`/locales/${contentLang}/veronica-story-ui.json`);
+        // Catalog strings arrive after first paint, so re-apply the reader-mode label
+        // from the merged UI once the per-locale file has landed.
+        if (uiResponse.ok) { Object.assign(UI, await uiResponse.json()); applyReaderMode(readReaderModePref()); }
+      }
+      const response = await fetch(`/locales/${contentLang}/storybook.json`);
       if (response.ok) {
         const messages = await response.json();
         UI.read = messages.listen;
@@ -1581,8 +1684,13 @@
         if (hero && !hero.querySelector('.story-shelf-link')) {
           const shelfLink = document.createElement('a');
           shelfLink.className = 'story-shelf-link';
-          shelfLink.href = './stories';
-          shelfLink.textContent = messages.allStories;
+          // The shelf is English-only; the locale hint lets its Veronica card route back to
+          // this edition. Legacy books keep the plain /stories return.
+          shelfLink.href = storyId === 'veronica' && contentLang !== 'en' ? `/stories?lang=${encodeURIComponent(contentLang.toLowerCase())}` : '/stories';
+          shelfLink.textContent = messages.allStories
+            + (storyId === 'veronica' && contentLang !== 'en'
+              ? ' ' + (UI.shelfEnglishQualifier || '')
+              : '');
           hero.appendChild(shelfLink);
         }
         const summary = document.querySelector(['.story-settings', 'summary'].join(' '));
@@ -1614,14 +1722,16 @@
       if (banner && bannerText && bannerBtn) {
         bannerText.textContent = `Continue from ${UI.pagePrefix} ${lastPage + 1}?`;
         banner.hidden = false;
+        settingsRowFit();
         bannerBtn.addEventListener('click', () => {
           index = lastPage;
           render();
           scrollToReader();
           banner.hidden = true;
+          settingsRowFit();
         });
         if (bannerDismiss) {
-          bannerDismiss.addEventListener('click', () => { banner.hidden = true; });
+          bannerDismiss.addEventListener('click', () => { banner.hidden = true; settingsRowFit(); });
         }
       }
     }

@@ -4,19 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <!-- Google tag (gtag.js) -->
-<script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+<script defer="" src="/analytics-init.js"></script>
 <meta content="ar_AR" property="og:locale"/>
 <meta content="en_US" property="og:locale:alternate"/>
 <meta content="es_ES" property="og:locale:alternate"/>
@@ -161,8 +149,11 @@
 <link href="https://marsharbel.com/ar/feast-day" hreflang="ar" rel="alternate"/>
 <link href="https://marsharbel.com/es/fiesta" hreflang="es" rel="alternate"/>
 <link href="https://marsharbel.com/pt/festa" hreflang="pt" rel="alternate"/>
+<link href="https://marsharbel.com/de/gedenktag" hreflang="de" rel="alternate"/>
 <link href="https://marsharbel.com/saint-charbel-feast-day" hreflang="x-default" rel="alternate"/>
 <!-- hreflang:end -->
+<script id="sc-runtime-labels" type="application/json">{"language.label": "اللغة", "language.popular": "الأكثر استخدامًا", "language.all": "جميع اللغات (A-Z)", "install.label": "ثبّت التطبيق", "install.link": "اضغط هنا لتثبيت هذا التطبيق", "install.ios": "على iPhone في Safari: اضغط على \"مشاركة\"، ثم على \"إضافة إلى الشاشة الرئيسية\".", "install.browser": "إذا لم تظهر نافذة، افتح قائمة المتصفح واختر \"تثبيت التطبيق\" أو \"إضافة إلى الشاشة الرئيسية\".", "footer.privacy": "سياسة الخصوصية (بالإنكليزية)", "footer.terms": "شروط الاستخدام (بالإنكليزية)", "footer.accessibility": "إمكانية الوصول (بالإنكليزية)", "language.choose": "اختر اللغة", "nativeNames": {"en": "English", "ar": "العربية", "fr": "Français", "es": "Español", "pt": "Português", "it": "Italiano", "de": "Deutsch", "pl": "Polski", "ru": "Русский", "hi": "हिन्दी", "th": "ไทย", "zh-Hans": "简体中文"}}</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
 <a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
@@ -170,66 +161,79 @@
 <div class="site-shell nav">
 <a class="brand" href="/ar/"><span class="brand-mark">✦</span><span>مار شربل</span></a>
 <nav aria-label="التنقل الرئيسي" class="links">
-<a href="/">الرئيسية</a>
+<a href="/ar/">الرئيسية</a>
 <div class="nav-group">
-<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/stories">القصة<span aria-hidden="true" class="nav-chev"></span></a>
+<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/ar/encyclopedia">الإرث الروحي<span aria-hidden="true" class="nav-chev"></span></a>
 <div class="nav-sub">
-<a href="/stories">قصص القديسين</a>
+<a href="/ar/encyclopedia">موسوعة مار شربل</a>
 <a href="/ar/biography">السيرة الكاملة</a>
 </div></div>
 <div class="nav-group">
-<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/miracles/">العجائب<span aria-hidden="true" class="nav-chev"></span></a>
+<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/ar/miracles/">العجائب<span aria-hidden="true" class="nav-chev"></span></a>
 <div class="nav-sub">
-<a href="/miracles/">العجائب والشهادات</a>
-<a href="/miracles/eucharistic/">عجائب القربان المقدس</a>
-<a href="/news">آخر الأخبار</a>
-<a href="/testimonies">الرسائل</a>
-<a href="/voice-testimony">شهادات صوتية</a>
+<a href="/ar/miracles/">العجائب والشهادات</a>
+<a href="/ar/miracles/eucharistic/">عجائب القربان المقدس</a>
+<a href="/ar/testimonies">الرسائل</a>
+<a href="/ar/voice-testimony">شهادات صوتية</a>
 </div></div>
-<a href="/saints">القديسون</a>
 <div class="nav-group">
-<a aria-expanded="false" aria-haspopup="true" class="active nav-parent" href="/prayer-library">الصلاة<span aria-hidden="true" class="nav-chev"></span></a>
+<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/ar/saints">القديسون<span aria-hidden="true" class="nav-chev"></span></a>
 <div class="nav-sub">
-<a href="/prayer-library">مكتبة الصلاة</a>
-<a href="/prayer-library#find-a-prayer">ابحث عن صلاة حسب النية</a>
-<a href="/saint-charbel-prayer-for-the-sick">صلاة من أجل المرضى</a>
-<a href="/saint-charbel-prayer-for-healing">صلاة من أجل الشفاء</a>
-<a href="/saint-charbel-prayer-for-anxiety">صلاة في وقت القلق</a>
-<a href="/saint-charbel-prayer-for-depression">صلاة في زمن الاكتئاب</a>
-<a href="/saint-charbel-prayer-for-students">صلاة من أجل الطلاب</a>
-<a href="/saint-charbel-prayer-for-addiction">صلاة من أجل التحرر من الإدمان</a>
-<a href="/saint-charbel-prayer-for-family">صلاة من أجل العائلة</a>
-<a href="/saint-charbel-prayer-for-pregnancy">صلاة من أجل الحامل</a>
-<a href="/saint-charbel-prayer-for-a-miracle">صلاة من أجل معجزة</a>
+<a href="/ar/saints">القديسون</a>
+<a hreflang="en" aria-label="كتب للأطفال (بالإنجليزية)" href="/stories">كتب للأطفال <span class="enc-language">(بالإنجليزية)</span></a>
+</div></div>
+<div class="nav-group">
+<a aria-expanded="false" aria-haspopup="true" class="active nav-parent" href="/ar/prayer-library">الصلاة<span aria-hidden="true" class="nav-chev"></span></a>
+<div class="nav-sub">
+<a href="/ar/prayer-library">مكتبة الصلاة</a>
+<a href="/ar/prayer-library#find-a-prayer">ابحث عن صلاة حسب النية</a>
+<a hreflang="en" aria-label="صلاة من أجل المرضى (بالإنجليزية)" href="/saint-charbel-prayer-for-the-sick">صلاة من أجل المرضى <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="صلاة من أجل الشفاء (بالإنجليزية)" href="/saint-charbel-prayer-for-healing">صلاة من أجل الشفاء <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="صلاة في وقت القلق (بالإنجليزية)" href="/saint-charbel-prayer-for-anxiety">صلاة في وقت القلق <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="صلاة في زمن الاكتئاب (بالإنجليزية)" href="/saint-charbel-prayer-for-depression">صلاة في زمن الاكتئاب <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="صلاة من أجل الطلاب (بالإنجليزية)" href="/saint-charbel-prayer-for-students">صلاة من أجل الطلاب <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="صلاة من أجل التحرر من الإدمان (بالإنجليزية)" href="/saint-charbel-prayer-for-addiction">صلاة من أجل التحرر من الإدمان <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="صلاة من أجل العائلة (بالإنجليزية)" href="/saint-charbel-prayer-for-family">صلاة من أجل العائلة <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="صلاة من أجل الحامل (بالإنجليزية)" href="/saint-charbel-prayer-for-pregnancy">صلاة من أجل الحامل <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="صلاة من أجل معجزة (بالإنجليزية)" href="/saint-charbel-prayer-for-a-miracle">صلاة من أجل معجزة <span class="enc-language">(بالإنجليزية)</span></a>
 <a href="/ar/prayers">صلوات مار شربل</a>
 <a href="/ar/novena">تساعية مار شربل</a>
 <a aria-current="page" class="active" href="/ar/feast-day">عيد مار شربل</a>
-<a href="/rosary-visual-guide">دليل المسبحة الوردية</a>
-<a href="/rosary-minibook">كتيّب المسبحة</a>
-<a href="/mystery-meditation">التأمل في الأسرار</a>
-<a href="/become-like-charbel">الاقتداء به</a>
+<a hreflang="en" aria-label="دليل المسبحة الوردية (بالإنجليزية)" href="/rosary-visual-guide">دليل المسبحة الوردية <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="كتيّب المسبحة (بالإنجليزية)" href="/rosary-minibook">كتيّب المسبحة <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="التأمل في الأسرار (بالإنجليزية)" href="/mystery-meditation">التأمل في الأسرار <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="الاقتداء به (بالإنجليزية)" href="/become-like-charbel">الاقتداء به <span class="enc-language">(بالإنجليزية)</span></a>
 </div></div>
 <div class="nav-group">
-<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/ar/annaya">السفر<span aria-hidden="true" class="nav-chev"></span></a>
+<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/ar/travel">السفر<span aria-hidden="true" class="nav-chev"></span></a>
 <div class="nav-sub">
+        <a href="/ar/travel">السفر</a>
 <a href="/ar/annaya">زيارة عنايا</a>
-        <a href="/annaya-tour">جولة افتراضية في عنايا</a>
-<a href="/bekaa-kafra">بقاع كفرا</a>
-<a href="/our-lady-of-lebanon-harissa">سيدة لبنان في حريصا</a>
-<a href="/cedars-of-god-lebanon">أرز الرب</a>
-<a href="/bkerke-maronite-patriarchate">بكركي والبطريركية المارونية</a>
-<a href="/qadisha-valley">وادي قاديشا</a>
-<a href="/qannoubine-monastery">دير قنوبين</a>
-<a href="/qozhaya-monastery">دير قزحيا</a>
-<a href="/saint-charbel-places-lebanon">لبنان مار شربل</a>
-<a href="/saint-charbel-hermitage">المحبسة</a>
-<a href="/saint-charbel-trail">درب مار شربل</a>
+        <a hreflang="en" aria-label="جولة افتراضية في عنايا (بالإنجليزية)" href="/annaya-tour">جولة افتراضية في عنايا <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="بقاع كفرا (بالإنجليزية)" href="/bekaa-kafra">بقاع كفرا <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="سيدة لبنان في حريصا (بالإنجليزية)" href="/our-lady-of-lebanon-harissa">سيدة لبنان في حريصا <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="أرز الرب (بالإنجليزية)" href="/cedars-of-god-lebanon">أرز الرب <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="بكركي والبطريركية المارونية (بالإنجليزية)" href="/bkerke-maronite-patriarchate">بكركي والبطريركية المارونية <span class="enc-language">(بالإنجليزية)</span></a>
+<a href="/ar/qadisha-valley">وادي قاديشا</a>
+<a href="/ar/qannoubine-monastery">دير قنوبين</a>
+<a href="/ar/qozhaya-monastery">دير قزحيا</a>
+<a hreflang="en" aria-label="لبنان مار شربل (بالإنجليزية)" href="/saint-charbel-places-lebanon">لبنان مار شربل <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="المحبسة (بالإنجليزية)" href="/saint-charbel-hermitage">المحبسة <span class="enc-language">(بالإنجليزية)</span></a>
+<a hreflang="en" aria-label="درب مار شربل (بالإنجليزية)" href="/saint-charbel-trail">درب مار شربل <span class="enc-language">(بالإنجليزية)</span></a>
 </div></div>
-<a href="/gallery">معرض الصور</a>
+<a href="/ar/news">الأخبار</a>
+<div class="nav-group">
+<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/ar/music">وسائط<span aria-hidden="true" class="nav-chev"></span></a>
+<div class="nav-sub">
+<a href="/ar/music">موسيقى</a>
+<a href="/ar/videos">فيديو</a>
+<a href="/ar/gallery">معرض الصور</a>
+</div></div>
 </nav>
 <div aria-hidden="true" class="lang-switcher-slot"></div>
 </div>
 </header>
+<noscript><nav class="sc-static-language" aria-label="اللغة"><a href="https://marsharbel.com/saint-charbel-feast-day" hreflang="en" lang="en" dir="ltr">English</a></nav></noscript>
 <main class="site-shell" id="main-content" tabindex="-1">
 <section class="hero">
 <span class="kicker">الأحد الثالث من تموز · ٢٤ تموز</span>
@@ -239,8 +243,9 @@
 <div class="cta-row">
 <a class="btn subtle" href="/ar/novena">صلّ التساعية قبل العيد</a>
 <a class="btn subtle" href="/ar/miracles/">العجائب والتقارير</a>
-<a class="btn subtle" href="/prayer-library">مكتبة الصلاة الكاملة</a>
+<a class="btn subtle" href="/ar/prayer-library">مكتبة الصلاة الكاملة</a>
 </div>
+<p class="enc-trail">جزء من <a aria-label="موسوعة مار شربل (بالإنجليزية)" href="/ar/encyclopedia" hreflang="en">موسوعة مار شربل</a> <span class="enc-language">(بالإنجليزية)</span>. اقرأ <a aria-label="قصة حياته كاملة (بالإنجليزية)" href="/ar/biography" hreflang="en">قصة حياته كاملة</a> <span class="enc-language">(بالإنجليزية)</span> أو تصفّح جميع المواضيع.</p>
 </section>
 <section class="section">
 <h2>موعدان لعيد واحد</h2>
@@ -372,5 +377,9 @@
 <script defer="" src="/locale-routes.js"></script>
 <script defer="" src="/translate.js?v=20260922-1"></script>
 <script defer="" src="/nav.js?v=20260922-1"></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

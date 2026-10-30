@@ -1,0 +1,297 @@
+"""Inject the same resolver/control in runtime and static generated pages.
+
+This preparation is explicit: pending variants stay unavailable without JS too.
+Reviewed manifest and UI copy must be supplied by the integration gate.
+"""
+from bs4 import BeautifulSoup
+from html import escape
+import re,json,subprocess
+from urllib.parse import urlsplit
+from i18n.catalog import read_json, published_home_locales, home_url
+
+
+_english_source_cache = {}
+
+# Marker wrapping the generated no-JS same-page switcher (PR3). The control build
+# strips the whole marked block before master hashing and on deterministic
+# regeneration; keyed_master keeps the byte-identical twin of this pattern.
+GENERATED_LOCALE_NAV = re.compile(r'[ \t]*<!-- i18n-locale-nav:start -->[\s\S]*?<!-- i18n-locale-nav:end -->\n?')
+
+def with_english_sources(root, manifest):
+    key = str(root)
+    if key in _english_source_cache:
+        return _english_source_cache[key]
+    result = dict(manifest)
+    sources = {}
+    for item in manifest['pages'].values():
+        path = root / item['sourcePath']
+        if not path.exists():
+            continue
+        page = BeautifulSoup(path.read_text(), 'html.parser')
+        canonical = page.select_one('link[rel=canonical]')
+        english = page.select_one('link[rel=alternate][hreflang=en]')
+        if canonical and english:
+            from urllib.parse import urlsplit
+            target = urlsplit(english['href'])
+            if target.netloc == 'marsharbel.com' and target.scheme == 'https':
+                sources[urlsplit(canonical['href']).path.rstrip('/') or '/'] = target.path
+    registry = read_json(root/'locales/registry.json')
+    # Topics may have an English source without an EN hreflang twin. This
+    # enables only the English escape route, never a translated-equivalence grant.
+    reviewed_paths = {variant['path'].rstrip('/')
+        for family in manifest.get('pages', {}).values()
+        for variant in family.get('variants', {}).values()
+        if variant.get('status') == 'verified'}
+    for topic, cfg in registry.get('topics', {}).items():
+        english = cfg.get('relatedEnglish')
+        if not english:
+            continue
+        target = root / english.strip('/')
+        target = target / 'index.html' if english.endswith('/') else target.with_suffix('.html')
+        if not target.is_file():
+            raise ValueError('Missing declared English source: '+english)
+        for code in cfg.get('locales', []):
+            slug = registry['locales'][code]['slugs'].get(topic)
+            if not slug:
+                continue
+            route = '/'+code+'/'+slug
+            local = root / route.strip('/')
+            local = local / 'index.html' if route.endswith('/') else local.with_suffix('.html')
+            if local.is_file() and route.rstrip('/') not in reviewed_paths:
+                sources.setdefault(route.rstrip('/'), english)
+    # Newly generated full-master routes need the source escape before files exist.
+    for cfg in registry.get('pageMirrors', {}).values():
+        english=cfg['english']
+        target=root/english.strip('/')
+        target=target/'index.html' if english.endswith('/') else target.with_suffix('.html')
+        if not target.is_file():raise ValueError('Missing declared English master: '+english)
+        for code in cfg.get('renderLocales', []):
+            route=cfg['routes'][code]
+            if code!='en':sources.setdefault(route.rstrip('/'),english)
+    result['englishSources'] = sources
+    # Registered partial locales belong in the selector, without inventing homes or proofs.
+    result['languages'] = list(registry['locales'])
+    result['aliases'] = {alias.lower():code for code,cfg in registry['locales'].items() for alias in [code,*cfg.get('selectorAliases',[])]}
+    result['publishedHomes'] = {code: home_url(registry, code) for code in published_home_locales(registry)}
+    _english_source_cache[key] = result
+    return result
+
+def place_footer_navigation(text):
+    """Move existing managed locale navigation to the semantic page-end footer."""
+    soup=BeautifulSoup(text,'html.parser')
+    bars=soup.select('nav.footer-locales')
+    if not bars:return text
+    if len(bars)!=1:raise ValueError('Expected one footer language bar')
+    if bars[0].find_parent('footer'):return text
+    pattern=r'<!-- i18n-navigation:start -->[\s\S]*?<!-- i18n-navigation:end -->'
+    match=re.search(pattern,text)
+    if not match:
+        match=re.search(r'<nav\b[^>]*class=["\']footer-locales["\'][\s\S]*?</nav>',text)
+    if not match:raise ValueError('Cannot locate misplaced footer language bar')
+    block=match[0];text=text[:match.start()].rstrip(' \t')+text[match.end():]
+    container='<div class="site-shell">\n'+block+'\n</div>\n'
+    if '</footer>' in text:
+        return text.replace('</footer>',container+'</footer>',1)
+    if text.count('</main>')!=1:raise ValueError('Missing unique page end for locale footer')
+    return text.replace('</main>','</main>\n<footer class="footer">\n'+container+'</footer>',1)
+
+def inject_control(text, root, manifest, copy):
+    manifest = with_english_sources(root, manifest)
+    # English guide routes are live destinations, including the legacy prayer redirect.
+    page=BeautifulSoup(text,'html.parser')
+    canonical=page.select_one('link[rel=canonical]')
+    registry=read_json(root/'locales/registry.json')
+    english_guides={registry['site']+'/en/'+slug for slug in registry['locales']['en']['slugs'].values()}
+    if canonical and canonical.get('href') in english_guides and not page.select_one('nav.footer-locales'):
+        if '</footer>' not in text:raise ValueError('English guide missing semantic footer')
+        links=' '.join('<a href="'+escape(cfg['home'])+'" hreflang="'+code+'" lang="'+code+'" dir="'+cfg['direction']+'">'+escape(cfg['nativeName'])+'</a>' for code,cfg in registry['locales'].items() if code in published_home_locales(registry))
+        block='<nav class="footer-locales" aria-label="Languages">'+links+'</nav>'
+        text=text.replace('</footer>',block+'\n</footer>',1)
+    text=place_footer_navigation(text)
+    # Deterministic rebuilding: remove only our generated control resources.
+    text=re.sub(r'<script\b[^>]*src=["\']/same-page-(?:manifest|copy|resolver|switcher)\.js["\'][^>]*></script>\s*','',text)
+    text=re.sub(r'<link\b[^>]*id=["\']sc-language-css["\'][^>]*>\s*','',text)
+    text=re.sub(r'[ \t]*<noscript><nav[^>]*class="sc-static-language"[\s\S]*?</nav></noscript>\n?','',text)
+    text=GENERATED_LOCALE_NAV.sub('',text)
+    soup=BeautifulSoup(text,'html.parser')
+    lang=soup.html.get('lang','en') if soup.html else 'en'
+    if lang not in copy:raise ValueError('Missing reviewed selector copy '+lang)
+    canonical=soup.select_one('link[rel=canonical]')
+    if not canonical:raise ValueError('Language control requires canonical identity')
+    href=canonical['href']
+    # Use the JS resolver itself: no second, weaker availability predicate.
+    driver="const fs=require('fs');const api=require(process.argv[1]);const d=JSON.parse(fs.readFileSync(0,'utf8'));let out={};for(const lang of d.manifest.languages)out[lang]=api.resolve(d.manifest,d.href,lang,d.actual);process.stdout.write(JSON.stringify(out));"
+    choices=json.loads(subprocess.check_output(['node','-e',driver,str(root/'same-page-resolver.js')],input=json.dumps({'manifest':manifest,'href':href,'actual':lang}),text=True))
+    # No-JS fallback: a verified exact en<->ar twin gets one static link in server HTML,
+    # inside <noscript> so it never shows (or flashes) when the JS switcher runs. Only an
+    # exact verified twin qualifies; home/guide substitutions never get a static link.
+    fallback_target={'en':'ar','ar':'en'}.get(lang)
+    fallback=choices.get(fallback_target) if fallback_target else None
+    # Only recomputed AR-2 families qualify (resolver pageID ar2-*). Travel-scoped families
+    # carry authored final hashes and post-review candidate pins; changing their bytes
+    # needs its own re-seal. 'english-source' is how generated Arabic mirrors resolve to
+    # their English master; home/guide substitutions never qualify.
+    if fallback and fallback.get('available') and str(fallback.get('pageID','')).startswith('ar2-') and fallback.get('reason') in ('verified-twin','english-source') and fallback.get('href'):
+        target_cfg=registry['locales'][fallback_target]
+        native=copy[fallback_target]['names'][fallback_target]
+        block=('<noscript><nav class="sc-static-language" aria-label="'+escape(copy[lang]['language'])+'">'
+               '<a href="'+escape(fallback['href'])+'" hreflang="'+fallback_target+'" lang="'+fallback_target+'" dir="'+target_cfg['direction']+'">'+escape(native)+'</a></nav></noscript>\n')
+        main_open=re.search(r'<main\b',text)
+        if not main_open:raise ValueError('Static language fallback needs a main element')
+        line_start=text.rfind('\n',0,main_open.start())+1
+        indent=text[line_start:main_open.start()]
+        if indent.strip():line_start=main_open.start();indent=''
+        text=text[:line_start]+indent+block+text[line_start:]
+    # PR3 design-gate ruling (whole equivalence families, EN+mirrors together):
+    # families with >=2 verified variants gain a generated same-page locale-nav.
+    # Exclusivity: ar2 keeps its noscript twin, the certified A1 family keeps its
+    # authored nav, homes keep footer-locales, EN-only pending families get
+    # nothing. No page may carry both controls; masters are never re-pinned -
+    # the marked block is stripped before hashing (keyed_master).
+    canonical_path=(urlsplit(href).path.rstrip('/') or '/')
+    family=None
+    for key,fam in manifest['pages'].items():
+        for variant in fam.get('variants',{}).values():
+            if (variant.get('path','').rstrip('/') or '/')==canonical_path:
+                family=(key,fam);break
+        if family:break
+    verified=[v for v in family[1].get('variants',{}).values() if v.get('status')=='verified'] if family else []
+    published_homes={(home_url(registry,code) or '/').rstrip('/') for code in published_home_locales(registry)}
+    if (family and not family[0].startswith('ar2-') and len(verified)>=2
+            and canonical_path not in published_homes
+            and 'class="locale-nav"' not in text
+            and 'sc-static-language' not in text
+            and not BeautifulSoup(text,'html.parser').select_one('nav.footer-locales')):
+        anchors=[]
+        for code in manifest['languages']:
+            cfg=registry['locales'][code]
+            current=' aria-current="page"' if code==lang else ''
+            # Design-gate: full native names from the locale registry (the A1
+            # precedent's intent), never the page-language copy table.
+            anchors.append('<a'+current+' dir="'+cfg['direction']+'" hreflang="'+code+'" lang="'+code+'">'
+                           +escape(cfg['nativeName'])+'</a>')
+        # Design ruling v2 (2026-10-23): the fallback is a flat marked locale
+        # list at the page-end footer - inline dash-separated links like the
+        # authored footer-locales language, but same-page twins with native
+        # names at 44px targets. No details/summary (measured CLS rejection),
+        # no inline script. JS hides it only once the enhanced select is ready,
+        # and never while focus is inside it (same-page-switcher.js).
+        pieces=[]
+        for i,a in enumerate(anchors):
+            if i:pieces.append('<span aria-hidden="true">-</span>')
+            pieces.append(a)
+        block=('<!-- i18n-locale-nav:start -->'+'\n<div class="site-shell">\n'
+               +'<nav aria-label="'+escape(copy[lang]['choose'])+'" class="locale-nav locale-fallback" data-locale-fallback="" data-i18n-generated="">'
+               +' '.join(pieces)+'\n</nav>\n</div>\n<!-- i18n-locale-nav:end -->\n')
+        if text.count('</footer>')==1:
+            # Lives INSIDE the semantic footer, after authored footer content.
+            close=text.index('</footer>')
+            line_start=text.rfind('\n',0,close)+1
+            text=text[:line_start]+block+text[line_start:]
+        elif text.count('</main>')==1:
+            close=text.index('</main>')+len('</main>')
+            text=text[:close]+'\n'+block.rstrip('\n')+text[close:]
+        else:
+            raise ValueError('Generated locale-nav needs a footer or main element')
+    # No-JS static choices must not retain guide/home substitutions.
+    # Mutate only language nav blocks, never MAIN or ordinary editorial anchors.
+    def static_nav(match):
+        nav=BeautifulSoup(match[0],'html.parser').nav
+        registry=read_json(root/'locales/registry.json')
+        home=home_url(registry,lang)
+        if home is not None and href.rstrip('/') == (registry['site']+home).rstrip('/'):
+            nav['data-locale-section-navigation']=''
+            for helper in nav.select('.sc-language-helper,.sc-unavailable-suffix'):helper.decompose()
+            for a in nav.select('a[hreflang]'):
+                code=a['hreflang'];cfg=registry['locales'][code]
+                a['href']=cfg['home'];a['lang']=code;a['dir']=cfg['direction'];a.string=cfg['nativeName']
+                for attr in ('aria-disabled','tabindex','aria-label','data-language-switch'):a.attrs.pop(attr,None)
+            nav.attrs.pop('aria-describedby',None)
+            return str(nav)
+        for helper in nav.select('.sc-language-helper'):helper.decompose()
+        unavailable=False
+        # Generated navs (PR3) carry the design-gate's full native names +
+        # lang from the locale registry; authored navs (certified A1) keep the
+        # certified copy-table semantics byte-for-byte.
+        generated=nav.has_attr('data-i18n-generated')
+        for a in nav.select('a[hreflang]'):
+            code=a['hreflang'];choice=choices.get(code,{})
+            if generated:
+                a['lang']=code
+                label=registry['locales'][code]['nativeName']
+            else:
+                a.attrs.pop('lang',None)
+                label=copy[lang]['names'].get(code,code)
+            a.string=label
+            if choice.get('available'):
+                a['href']=choice['href']
+                for attr in ('aria-disabled','tabindex','aria-label'):a.attrs.pop(attr,None)
+            else:
+                unavailable=True
+                a.attrs.pop('href',None);a['aria-disabled']='true';a['tabindex']='-1'
+                a.string=label+' ('+copy[lang]['suffix']+')'
+        if unavailable:
+            helper=BeautifulSoup('<span class="sc-language-helper"></span>','html.parser').span
+            helper.string=copy[lang]['helper'];nav.append(helper)
+        return str(nav)
+    # Footer language links are locale-section navigation, never exact-page choices.
+    def footer_nav(match):
+        nav=BeautifulSoup(match[0],'html.parser').nav
+        homes={code:registry['locales'][code] for code in published_home_locales(registry)}
+        nav.attrs.pop('aria-describedby',None)
+        nav.clear()
+        for code,cfg in homes.items():
+            if nav.contents:
+                nav.append(' ')
+                separator=BeautifulSoup('<span aria-hidden="true">-</span>','html.parser').span
+                nav.append(separator);nav.append(' ')
+            link=BeautifulSoup('<a></a>','html.parser').a
+            link['hreflang']=code;nav.append(link)
+        for a in nav.select('a[hreflang]'):
+            code=a['hreflang']
+            if code not in homes:raise ValueError('Unregistered footer locale '+code)
+            a['href']=homes[code]['home']
+            a.string=homes[code]['nativeName']
+            a['lang']=code
+            a['dir']=homes[code]['direction']
+            for attr in ('aria-disabled','tabindex','aria-label','data-language-switch','style'):a.attrs.pop(attr,None)
+        return str(nav)
+    text=re.sub(r'<nav\b[^>]*class=["\']footer-locales["\'][\s\S]*?</nav>',footer_nav,text)
+    # Boundary (Scrum scope ruling 2026-10-23): static_nav touches ONLY the
+    # certified A1 exact-class nav and PR3 generated navs (data-i18n-generated).
+    # Authored compound-class controls (film switcher and friends) stay bytes-
+    # untouched - generic class recognition must never rewrite authored chrome.
+    text=re.sub(r'<nav\b(?=[^>]*(?:\bdata-i18n-generated\b|class=["\']locale-nav["\']))[^>]*>[\s\S]*?</nav>',static_nav,text)
+    text=text.replace('</head>','<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />\n</head>')
+    scripts='\n'.join('<script defer src="/'+name+'"></script>' for name in ['same-page-manifest.js','same-page-copy.js','same-page-resolver.js','same-page-switcher.js'])
+    if text.count('</body>')!=1:raise ValueError('Missing unique body end')
+    return text.replace('</body>',scripts+'\n</body>')
+
+
+def control_outputs(root, texts, manifest, copy):
+    import json
+    from i18n.reviewed_history import history_manifest
+    manifest = history_manifest(root,texts,manifest)
+    from i18n.reviewed_travel import travel_manifest
+    manifest = travel_manifest(root,texts,manifest)
+    from i18n.travel_release import release_manifest
+    manifest = release_manifest(root,texts,manifest)
+    from i18n.reviewed_prayers import prayer_manifest
+    manifest = prayer_manifest(root,texts,manifest)
+    from i18n.ar2_equivalence import ar2_manifest
+    manifest = ar2_manifest(root,texts,manifest)
+    from i18n.reviewed_eucharistic import eucharistic_manifest
+    manifest = eucharistic_manifest(root,texts,manifest)
+    from i18n.reviewed_rosary_guide import rosary_guide_manifest
+    manifest = rosary_guide_manifest(root,texts,manifest)
+    from i18n.reviewed_veronica import veronica_manifest
+    manifest = veronica_manifest(root,texts,manifest)
+    out={}
+    for path,text in texts.items():
+        if path.suffix=='.html' and 'https://marsharbel.com/' in text:out[path]=inject_control(text,root,manifest,copy)
+    from i18n.travel_variant_evidence import validate_final_outputs
+    validate_final_outputs(root,out)
+    manifest = with_english_sources(root, manifest)
+    out[root/'same-page-manifest.js']='window.SC_SAME_PAGE_MANIFEST = '+json.dumps(manifest,ensure_ascii=False,separators=(',',':'))+';\n'
+    out[root/'same-page-copy.js']='window.SC_SAME_PAGE_COPY = '+json.dumps(copy,ensure_ascii=False,separators=(',',':'))+';\n'
+    return out

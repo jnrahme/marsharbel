@@ -1,4 +1,6 @@
+from i18n.encyclopedia_nav import finish_nav
 """Render reviewed prayer locale pages from one DOM skeleton and strict text slots."""
+from i18n.devotion_guidance import load_guidance, render_lead
 from i18n.metadata import og_locales, published_locales
 
 def og_alternates(code, registry=None):
@@ -16,12 +18,12 @@ SITE = 'https://marsharbel.com'
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def render_mirrors(root=ROOT, registry=None):
+def render_mirrors(root=ROOT, registry=None, retired_routes=()):
     """Return rendered prayer pages without writes; fail on missing or extra text."""
     if registry is None:
         registry = read_json(root / 'locales/registry.json')
     template = (root / 'templates/mirrors/prayers.html').read_text(encoding='utf-8')
-    expected = set(SLOT.findall(template)) - {'locale.code', 'locale.direction', 'locale.canonical', 'locale.alternates', 'locale.currentRoute', 'locale.prayerLibraryUrl', 'locale.homeUrl', 'locale.robotsContent', 'locale.ogLocale', 'locale.ogLocaleAlternates'}
+    expected = set(SLOT.findall(template)) - {'locale.code', 'locale.direction', 'locale.canonical', 'locale.alternates', 'locale.currentRoute', 'locale.prayerLibraryUrl', 'locale.homeUrl', 'locale.robotsContent', 'locale.ogLocale', 'locale.ogLocaleAlternates', 'locale.prayerLinks'}
     if template.count('{{') != len(SLOT.findall(template)) or template.count('}}') != len(SLOT.findall(template)):
         raise ValueError('Prayer mirror: invalid slot syntax')
     result = {}
@@ -42,6 +44,7 @@ def render_mirrors(root=ROOT, registry=None):
         if set(catalog) != expected:
             raise ValueError(f'Prayer mirror {code} slot mismatch: missing {sorted(expected - set(catalog))}; extra {sorted(set(catalog) - expected)}')
     for code, catalog, path in [('en', catalogs['en'], english_path), *routes]:
+        if path in retired_routes: continue
         # The mirror catalogs are separate from the legacy short-guide catalogs.
         leaves(catalog)
         is_english_master = path == english_path
@@ -59,7 +62,10 @@ def render_mirrors(root=ROOT, registry=None):
                                    for lang, url in language_urls.items())
         page_text = {**catalog, **({'meta.title': guide_meta['title'], 'meta.description': guide_meta['description']}
                                     if path == english_guide_path else {})}
-        tokens = {**page_text, 'locale.code': code, 'locale.direction': registry['locales'][code]['direction'],
+        prayer_links = '\n'.join(
+            f'          <li><a class="locale-prayer-link" href="{page_url(registry, lang, "prayers")}" hreflang="{lang}" lang="{lang}" dir="{registry["locales"][lang]["direction"]}">{escape(catalogs[lang]["meta.title"].split(" | ")[0])}</a></li>'
+            for lang in mirror_locales if lang != code)
+        tokens = {**page_text, 'locale.prayerLinks': prayer_links, 'locale.code': code, 'locale.direction': registry['locales'][code]['direction'],
                   'locale.robotsContent': 'noindex' if is_english_master else 'index,follow,max-image-preview:large',
                   'locale.canonical': canonical, 'locale.alternates': alternates,
                   'locale.currentRoute': registry['topics']['prayers']['relatedEnglish'] if is_english_master else page_url(registry, code, 'prayers'),
@@ -69,7 +75,7 @@ def render_mirrors(root=ROOT, registry=None):
             key = match.group(1)
             if key not in tokens:
                 raise ValueError(f'Prayer mirror: missing {key}')
-            if key in ('locale.alternates', 'locale.ogLocaleAlternates'):
+            if key in ('locale.alternates', 'locale.ogLocaleAlternates', 'locale.prayerLinks'):
                 return tokens[key]
             if key.startswith('locale.'):
                 return escape(tokens[key], quote=True)
@@ -112,7 +118,13 @@ def render_mirrors(root=ROOT, registry=None):
             if nav_match:
                 block = nav_match.group(0)
                 text = text.replace(block, re.sub(r'(<a\b[^>]*\bhref=["\'])\./([^"\']*)(["\'])', r'\1/\2\3', block))
-        result[path] = text
+        guidance = load_guidance(root, code, 'prayers')
+        if guidance:
+            marker = '    <section class="section">'
+            if text.count(marker) < 1:
+                raise ValueError('Prayer guidance insertion target missing')
+            text = text.replace(marker, render_lead(guidance) + '\n' + marker, 1)
+        result[path] = finish_nav(text,root,code)
     return result
 
 

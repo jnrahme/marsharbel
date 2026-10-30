@@ -1,0 +1,490 @@
+{
+ "schema": 1,
+ "contentVersion": "2bf1a7a6cd7f624f",
+ "apiBase": "/api/v1",
+ "media": {
+  "base": "https://marsharbel.com/",
+  "access": {
+   "public": {
+    "mode": "direct"
+   },
+   "subscriber": {
+    "mode": "unconfigured",
+    "resolver": null
+   }
+  }
+ },
+ "tiers": [
+  "public",
+  "subscriber"
+ ],
+ "locales": [
+  "ar",
+  "de",
+  "en",
+  "es",
+  "fr",
+  "hi",
+  "it",
+  "pl",
+  "pt",
+  "ru",
+  "th",
+  "zh-Hans"
+ ],
+ "uiLocales": [
+  "ar",
+  "de",
+  "en",
+  "es",
+  "fr",
+  "it",
+  "pl",
+  "pt"
+ ],
+ "indexes": {
+  "books": {
+   "en": "/api/v1/books.en.json",
+   "ar": "/api/v1/books.ar.json",
+   "fr": "/api/v1/books.fr.json",
+   "es": "/api/v1/books.es.json",
+   "pt": "/api/v1/books.pt.json",
+   "it": "/api/v1/books.it.json",
+   "de": "/api/v1/books.de.json",
+   "pl": "/api/v1/books.pl.json",
+   "ru": "/api/v1/books.ru.json",
+   "hi": "/api/v1/books.hi.json",
+   "th": "/api/v1/books.th.json",
+   "zh-Hans": "/api/v1/books.zh-Hans.json"
+  },
+  "shelves": "/api/v1/shelves.json"
+ },
+ "books": [
+  {
+   "id": "bk-charbel-story-v2",
+   "slug": "charbel-story-v2",
+   "access": "public",
+   "status": "published",
+   "order": 1,
+   "shelf": "lebanon",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/charbel-story-v2/en.json",
+     "sha256": "f57edc8fbd84d06bbefc971f00a3c0725fdcd21b6af2d9fcdd6b0ff935d7c2df",
+     "bytes": 20154
+    }
+   }
+  },
+  {
+   "id": "bk-charbel-classic",
+   "slug": "story",
+   "access": "public",
+   "status": "published",
+   "order": 2,
+   "shelf": "lebanon",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/story/en.json",
+     "sha256": "13333b4e4d6e384a5c0e2aff5d843c40e235f31ff7ffd1e662746782df4043e0",
+     "bytes": 42336
+    }
+   }
+  },
+  {
+   "id": "bk-rafqa",
+   "slug": "rafqa-story",
+   "access": "public",
+   "status": "published",
+   "order": 3,
+   "shelf": "lebanon",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/rafqa-story/en.json",
+     "sha256": "dd556ae24d9a57baeec6c96c88894d7f30da503859ee4b8b6afaac94a11ce96f",
+     "bytes": 17734
+    }
+   }
+  },
+  {
+   "id": "bk-hardini",
+   "slug": "hardini-story",
+   "access": "public",
+   "status": "published",
+   "order": 4,
+   "shelf": "lebanon",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/hardini-story/en.json",
+     "sha256": "9b59c283f251d1a863d3616a9dab83d215e9b3aaaadd6b9b055d7974f228e5e6",
+     "bytes": 20129
+    }
+   }
+  },
+  {
+   "id": "bk-marina",
+   "slug": "marina-story",
+   "access": "public",
+   "status": "published",
+   "order": 5,
+   "shelf": "lebanon",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/marina-story/en.json",
+     "sha256": "3f80954913c26833b250d6accf90688111ce5f07c7f233d2c11f8287af74d899",
+     "bytes": 17419
+    }
+   }
+  },
+  {
+   "id": "bk-maroun",
+   "slug": "maroun-story",
+   "access": "public",
+   "status": "published",
+   "order": 6,
+   "shelf": "lebanon",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/maroun-story/en.json",
+     "sha256": "6c666ec25b33f83cf36c309e48e28dc432e8a3e0b007a93896adadc87d43d639",
+     "bytes": 18047
+    }
+   }
+  },
+  {
+   "id": "bk-massabki",
+   "slug": "massabki-story",
+   "access": "public",
+   "status": "published",
+   "order": 7,
+   "shelf": "lebanon",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/massabki-story/en.json",
+     "sha256": "7b541c5f7ece76fcf90294117707c87a8022ed4fb6dfec86617cf3424d9fd63d",
+     "bytes": 17087
+    }
+   }
+  },
+  {
+   "id": "bk-joseph",
+   "slug": "joseph-story",
+   "access": "public",
+   "status": "published",
+   "order": 8,
+   "shelf": "jesus",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/joseph-story/en.json",
+     "sha256": "af9d7e00f867770799548a5662f6c6937b8619cde670b37c4c1ce9583a6db114",
+     "bytes": 16745
+    }
+   }
+  },
+  {
+   "id": "bk-peter",
+   "slug": "peter-story",
+   "access": "public",
+   "status": "published",
+   "order": 9,
+   "shelf": "jesus",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/peter-story/en.json",
+     "sha256": "c349fef8b4450fe735404e8916e4d5a6570e22a6b512bb376a1e145921b62a8e",
+     "bytes": 20531
+    }
+   }
+  },
+  {
+   "id": "bk-magdalene",
+   "slug": "magdalene-story",
+   "access": "public",
+   "status": "published",
+   "order": 10,
+   "shelf": "jesus",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/magdalene-story/en.json",
+     "sha256": "9f2abcd5b46db2bd74232ea51ab56102a74150521aa01c4c81306e772690b38e",
+     "bytes": 17248
+    }
+   }
+  },
+  {
+   "id": "bk-jude",
+   "slug": "jude-story",
+   "access": "public",
+   "status": "published",
+   "order": 11,
+   "shelf": "jesus",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/jude-story/en.json",
+     "sha256": "ca4a4ad55061abe832acc429a1a600b4f16c67b750b95956df46253133fd5eb5",
+     "bytes": 15948
+    }
+   }
+  },
+  {
+   "id": "bk-augustine",
+   "slug": "augustine-story",
+   "access": "public",
+   "status": "published",
+   "order": 12,
+   "shelf": "centuries",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/augustine-story/en.json",
+     "sha256": "5dc6522e42f0bd24e0ee1b50ad1b8f76778db84365f80cf7c1cb6c45d2331525",
+     "bytes": 17293
+    }
+   }
+  },
+  {
+   "id": "bk-sergius-bacchus",
+   "slug": "sergius-bacchus-story",
+   "access": "public",
+   "status": "published",
+   "order": 13,
+   "shelf": "centuries",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/sergius-bacchus-story/en.json",
+     "sha256": "55562a5f7d86b7134457d6a10922350cdd9ae2aa667a0d2dd02b0d18539139e4",
+     "bytes": 18723
+    }
+   }
+  },
+  {
+   "id": "bk-francis",
+   "slug": "francis-story",
+   "access": "public",
+   "status": "published",
+   "order": 14,
+   "shelf": "centuries",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/francis-story/en.json",
+     "sha256": "2e5b8f14e80ab44f76943d1a6387251cdc2a38cb8b629ecc83d0d8d84f6621d1",
+     "bytes": 16828
+    }
+   }
+  },
+  {
+   "id": "bk-anthony",
+   "slug": "anthony-story",
+   "access": "public",
+   "status": "published",
+   "order": 15,
+   "shelf": "centuries",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/anthony-story/en.json",
+     "sha256": "21de3b3dad6b7d4ccbb963dafb84cc4ad89a56b1f9819405364ea2e8973668ed",
+     "bytes": 17317
+    }
+   }
+  },
+  {
+   "id": "bk-therese",
+   "slug": "therese-story",
+   "access": "public",
+   "status": "published",
+   "order": 16,
+   "shelf": "modern",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/therese-story/en.json",
+     "sha256": "627b5bc9fa0e031958cbb583900cd2f27a1cd01982576e089517c375faee8555",
+     "bytes": 17136
+    }
+   }
+  },
+  {
+   "id": "bk-pio",
+   "slug": "pio-story",
+   "access": "public",
+   "status": "published",
+   "order": 17,
+   "shelf": "modern",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/pio-story/en.json",
+     "sha256": "b5edf6559c3f0a0ed950c02dfa734fee72d669feae9622bd31cbc397de7f27a8",
+     "bytes": 26766
+    }
+   }
+  },
+  {
+   "id": "bk-jpii",
+   "slug": "jpii-story",
+   "access": "public",
+   "status": "published",
+   "order": 18,
+   "shelf": "modern",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/jpii-story/en.json",
+     "sha256": "b306cc4026c19ff2c43190d873bd69c162780eb68a33faefd64838d6e14fbc18",
+     "bytes": 19471
+    }
+   }
+  },
+  {
+   "id": "bk-mother-teresa",
+   "slug": "mother-teresa-story",
+   "access": "public",
+   "status": "published",
+   "order": 19,
+   "shelf": "modern",
+   "locales": [
+    "en"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/mother-teresa-story/en.json",
+     "sha256": "e3005c7fa3c40b378560802d5e785fa822cedb5bc462db9b5ca034e6e00b172c",
+     "bytes": 19060
+    }
+   }
+  },
+  {
+   "id": "bk-veronica-giuliani",
+   "slug": "veronica-giuliani-story",
+   "access": "public",
+   "status": "published",
+   "order": 20,
+   "shelf": "centuries",
+   "locales": [
+    "en",
+    "ar",
+    "fr",
+    "es",
+    "pt",
+    "it",
+    "de",
+    "pl",
+    "ru",
+    "hi",
+    "th",
+    "zh-Hans"
+   ],
+   "files": {
+    "en": {
+     "path": "/api/v1/books/veronica-giuliani-story/en.json",
+     "sha256": "fe7c2d2573f6af5ba95e84056167e4a965e4705e103bb6a82d4cd4bc6ac4a834",
+     "bytes": 14789
+    },
+    "ar": {
+     "path": "/api/v1/books/veronica-giuliani-story/ar.json",
+     "sha256": "62de656eb3531ca03ba66b544ae2da81d9904523329092b21104623da8edae30",
+     "bytes": 17416
+    },
+    "fr": {
+     "path": "/api/v1/books/veronica-giuliani-story/fr.json",
+     "sha256": "9806d898ce080e29d2388480a69dfccc9effaf295f40d959bf521fdde01b6119",
+     "bytes": 15919
+    },
+    "es": {
+     "path": "/api/v1/books/veronica-giuliani-story/es.json",
+     "sha256": "c33be95b007d91872322d1b27dfe5d2aba9efcbfd8720d245990020bea2636fc",
+     "bytes": 15360
+    },
+    "pt": {
+     "path": "/api/v1/books/veronica-giuliani-story/pt.json",
+     "sha256": "baeadfe09996ac3853ff24cdd0818dc2884cc86ef20ba009ba738e75a9d3af85",
+     "bytes": 15343
+    },
+    "it": {
+     "path": "/api/v1/books/veronica-giuliani-story/it.json",
+     "sha256": "34a6837a94323a49fcc93fabf960e4950278e4b191fe57499108ce4fe4d229ec",
+     "bytes": 15178
+    },
+    "de": {
+     "path": "/api/v1/books/veronica-giuliani-story/de.json",
+     "sha256": "5d85b25e04992d3426f0cd6aeef342f980e172504cb8fff746e1bbbff530fca3",
+     "bytes": 15873
+    },
+    "pl": {
+     "path": "/api/v1/books/veronica-giuliani-story/pl.json",
+     "sha256": "fa3fcd85972d54560094c6ea698d8b8e29d58fad46400eb9c4824d5603607434",
+     "bytes": 15435
+    },
+    "ru": {
+     "path": "/api/v1/books/veronica-giuliani-story/ru.json",
+     "sha256": "7fca339beb57a998643b8b858cf41d5499243caf7e865d3c68be084dced4ee64",
+     "bytes": 19689
+    },
+    "hi": {
+     "path": "/api/v1/books/veronica-giuliani-story/hi.json",
+     "sha256": "ef66bcf16a9ceea95306c0c86d32c31da0bc7236573aa9db3269852b9178d62a",
+     "bytes": 23655
+    },
+    "th": {
+     "path": "/api/v1/books/veronica-giuliani-story/th.json",
+     "sha256": "94a16c91d76527086b103f2b6cc4cc5cf7cff5638b4f7127271e3137933a0540",
+     "bytes": 24711
+    },
+    "zh-Hans": {
+     "path": "/api/v1/books/veronica-giuliani-story/zh-Hans.json",
+     "sha256": "5337e7c432b12a6e852ad4d93991bf758ff1abd804c118b80cfe5bbf21f3f7af",
+     "bytes": 14661
+    }
+   }
+  }
+ ]
+}

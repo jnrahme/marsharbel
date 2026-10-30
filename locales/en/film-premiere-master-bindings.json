@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "master": "charbel-film-premiere.html",
+  "masterSha256": "43c2b7196755734aa508d5d20322c0dd0ab02c753a7abc681ad19876c37395d7",
+  "sourceRevision": "888b9431",
+  "bindings": [
+    {
+      "key": "premiere.date",
+      "selector": "article#charbel-premiere-release-2026-10 span.tag",
+      "source": "October 9 premiere · Reported October 10, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.title",
+      "selector": "article#charbel-premiere-release-2026-10 h1",
+      "source": "Charbel Premieres in Beirut; Cinema Dates Differ - VOX October 21, Cinemacity October 22",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.bodyLead",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(1)",
+      "source": "Charbel, the new feature film about",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.saintName",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(1) a[href=\"/\"]",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.bodyRest",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(1)",
+      "source": ", held its special premiere on October 9 at BlackBox in Beirut Media Zone, according to Nidaa al-Watan's October 10 report. The film is a joint NMPRO and MTV production, directed by Nadim Mehanna and written by Claudia Marshalian, with Jerry Ghazal playing the young Charbel and Father Roukoz El Hajj portraying him later in life. Cinemacity lists a runtime of 130 minutes.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "premiere.release",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(2)",
+      "source": "Lebtalks reported that the October 9 launch was under President Joseph Aoun's patronage and would be broadcast on MTV, with a nationwide Lebanese theatrical rollout planned from October 22. Cinema dates can differ by cinema: VOX City Centre Beirut lists October 21 sessions (Standard 7:00 and 7:30pm, GOLD 7:30pm; Arabic audio with English subtitles), while Cinemacity Beirut lists Thursday, October 22 as its opening date with no screening sessions scheduled yet. A listed session is a cinema listing, not a seat guarantee - check your cinema. The completed premiere and the upcoming public cinema opening are different milestones.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.scope",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(3)",
+      "source": "An October 8 announcement scheduled a separate charity screening for October 12 at ABC Achrafieh in support of Anta Akhi. We have not verified a post-event report. International release dates, streaming distribution and any English-dubbed version remain unconfirmed; VOX lists the film with Arabic audio and English subtitles.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.charitySource",
+      "selector": "article#charbel-premiere-release-2026-10 a[href^=\"https://www.lorientlejour.com/\"]",
+      "source": "L'Orient-Le Jour: October 12 charity screening for Anta Akhi (October 8, French)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.source",
+      "selector": "article#charbel-premiere-release-2026-10 a[href^=\"https://www.nidaalwatan.com/\"]",
+      "source": "Nidaa al-Watan: premiere report and interview with Nadim Mehanna (October 10, Arabic)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.launchSource",
+      "selector": "article#charbel-premiere-release-2026-10 a[href^=\"https://lebtalks.com/\"]",
+      "source": "Lebtalks: launch, patronage, MTV broadcast and planned Lebanese release (October 9, Arabic)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.cinemaSource",
+      "selector": "article#charbel-premiere-release-2026-10 a[href^=\"https://www.cinemacitybeirut.com/\"]",
+      "source": "Cinemacity Beirut: October 22 opening listing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.videoTitle",
+      "selector": "article#charbel-premiere-release-2026-10 h2",
+      "source": "Watch the Film Trailer and Premiere Coverage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.videoCaption",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(5)",
+      "source": "NMPRO Arts: official Charbel film trailer, in Arabic, 2 minutes 25 seconds. This is a trailer, not a recording of the premiere.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.videoLink",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(5) a[href^=\"https://www.youtube.com/\"]",
+      "source": "Watch the official trailer on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.coverageLink",
+      "selector": "article#charbel-premiere-release-2026-10 a[href^=\"https://www.mtv.com.lb/\"]",
+      "source": "Watch MTV's October 9 premiere coverage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.coverageNote",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(6)",
+      "source": ". MTV's launch report includes an attached video from the premiere. A YouTube recording of the premiere has not yet been verified.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "premiere.videoCaption",
+      "selector": "article#charbel-premiere-release-2026-10 .film-news-video iframe",
+      "source": "NMPRO Arts: official Charbel film trailer, in Arabic, 2 minutes 25 seconds. This is a trailer, not a recording of the premiere.",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "premiere.medalNote",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(7)",
+      "source": "After the film - the medal many pilgrims carry, and how to have one blessed:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.medalLink",
+      "selector": "article#charbel-premiere-release-2026-10 p:nth-of-type(7) a:nth-of-type(1)",
+      "source": "Saint Charbel medal",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "premiere.voxSource",
+      "selector": "article#charbel-premiere-release-2026-10 a[href^=\"https://lbn.voxcinemas.com\"]",
+      "source": "VOX City Centre Beirut: listed October 21 sessions",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": [
+    "premiere.charitySource",
+    "premiere.cinemaSource",
+    "premiere.coverageLink",
+    "premiere.coverageNote",
+    "premiere.date",
+    "premiere.launchSource",
+    "premiere.medalLink",
+    "premiere.medalNote",
+    "premiere.release",
+    "premiere.scope",
+    "premiere.source",
+    "premiere.title",
+    "premiere.videoCaption",
+    "premiere.videoLink",
+    "premiere.videoTitle",
+    "premiere.bodyLead",
+    "premiere.saintName",
+    "premiere.bodyRest"
+  ]
+}

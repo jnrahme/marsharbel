@@ -1,0 +1,155 @@
+# step_index<TAB>shard<TAB>est_seconds<TAB>command - duration-weighted (LPT) from CI step
+# timings (stage run 39899491377), reconciled with the technical lane manifest 2026-10-23.
+# Packing weights cover the 148-step CI runtime inventory only. Slot 62 (npm run i18n:test)
+# is consumed-but-unexecuted under --skip-i18n-test: it runs only in non-skip (local) mode,
+# so its seconds are excluded from CI load predictions; it is pinned to the lightest bin.
+# run_full_qa.sh --shard K/N fails closed if this file is missing, incomplete, or N differs.
+0	1	0	python3 -m unittest discover -s scripts/qa -p test_new_page_locales.py
+1	1	0	python3 -m unittest discover -s scripts/qa -p test_private_preview_gate.py
+2	3	1	python3 -m unittest discover -s scripts/qa -p test_rosary_book_joyful_catalog.py
+3	1	0	python3 -m unittest discover -s scripts/qa -p test_dead_code_private_preview.py
+4	4	3	python3 -m unittest discover -s scripts/qa -p test_partial_locale.py
+5	2	134	python3 scripts/qa/probe_partial_build.py
+6	6	1	python3 -m unittest discover -s scripts/qa -p test_travel_metadata.py
+7	3	5	python3 scripts/qa/test_travel_release.py
+8	1	0	python3 -m unittest discover -s scripts/qa -p test_media_nav_repin.py
+9	1	0	python3 -m unittest discover -s scripts/qa -p test_history_nav_repin.py
+10	1	0	python3 -m unittest discover -s scripts/qa -p test_ru_travel_repin.py
+11	5	1	python3 -m unittest discover -s scripts/qa -p test_travel_scoped_delta.py
+12	1	0	python3 -m unittest discover -s scripts/qa -p test_travel_parallel_repin.py
+13	1	0	python3 -m unittest discover -s scripts/qa -p test_travel_metadata_attribute_order.py
+14	1	0	python3 -m unittest discover -s scripts/qa -p test_provenance_stage_reachable.py
+15	1	0	python3 -m unittest discover -s scripts/qa -p test_travel_metadata_splice.py
+16	6	74	python3 -m unittest discover -s scripts/qa -p test_travel_authored_final_hashes.py
+17	7	1	python3 -m unittest discover -s scripts/qa -p test_page_mirror_ru_whitespace.py
+18	1	0	python3 -m unittest discover -s scripts/qa -p test_travel_variant_evidence.py
+19	7	2	python3 scripts/qa/test_header_marking_delta.py
+20	1	0	python3 -m unittest discover -s scripts/qa -p test_travel_generated_availability.py
+21	6	1	python3 -m unittest discover -s scripts/qa -p test_generated_sitemap_dates.py
+22	1	0	python3 -m unittest discover -s scripts/qa -p test_manifest_provenance_policy.py
+23	1	0	node scripts/tests/scoped_travel_resolver.cjs
+24	5	1	python3 -m unittest discover -s scripts/qa -p test_ru_nav_alignment_repin.py
+25	1	0	python3 -m unittest discover -s scripts/qa -p test_ru_travel_chrome.py
+26	4	1	python3 -m unittest discover -s scripts/qa -p test_travel_media_bindings_prepare.py
+27	1	0	python3 -m unittest discover -s scripts/qa -p test_retired_novena_nav_repin.py
+28	1	0	python3 -m unittest discover -s scripts/qa -p test_fr_header_marking.py
+29	1	0	python3 -m unittest discover -s scripts/qa -p test_es_header_marking.py
+30	1	0	python3 -m unittest discover -s scripts/qa -p test_it_header_marking.py
+31	1	0	python3 -m unittest discover -s scripts/qa -p test_pl_header_marking.py
+32	1	0	python3 -m unittest discover -s scripts/qa -p test_pt_header_marking.py
+33	1	0	python3 -m unittest discover -s scripts/qa -p test_hi_header_marking.py
+34	1	0	python3 -m unittest discover -s scripts/qa -p test_th_header_marking.py
+35	3	42	npx playwright test tests/element-collision.spec.js --project=laptop --workers=2
+36	6	4	python3 scripts/qa/test_travel_equivalence.py
+37	1	0	node scripts/tests/travel_equivalence.cjs
+38	1	0	node scripts/tests/travel_release_proof.cjs
+39	5	38	npx playwright test tests/travel-equivalence.spec.js --project=phone --project=laptop --workers=2
+40	4	5	npx playwright test tests/miracles-english-escape.spec.js --project=phone --project=laptop --workers=2
+41	2	40	python3 scripts/qa/test_prayer_keyed_masters.py
+42	1	0	python3 scripts/qa/test_prayer_equivalence.py
+43	5	79	npx playwright test tests/prayer-equivalence.spec.js --project=phone --project=laptop --workers=2
+44	4	24	npx playwright test tests/prayer-share-runtime.spec.js --project=phone --project=laptop --workers=2
+45	4	97	npx playwright test tests/prayer-keyed-masters.spec.js --project=laptop --workers=2
+46	1	0	python3 -m unittest discover -s scripts/qa -p test_source_safeguards.py
+47	1	3	python3 scripts/qa/test_new_master_english_escape.py
+48	1	0	python3 scripts/qa/test_exact_source_inputs.py
+49	6	2	python3 scripts/qa/test_limited_launch.py
+50	1	23	bash -o pipefail -c npx playwright test tests/limited-launch.spec.js tests/hindi-travel-hub.spec.js --project=phone --project=laptop --workers=2 2>&1 | tee tmp/shard7-playwright.txt
+51	1	0	python3 scripts/qa/test_source_copy_keys.py
+52	2	14	python3 scripts/qa/check_travel_routes.py
+53	2	3	python3 scripts/qa/test_travel.py
+54	7	72	npx playwright test tests/travel-routing.spec.js tests/travel-hub.spec.js --project=phone --project=laptop --workers=4
+55	1	0	node scripts/tests/video-fallback.mjs
+56	6	22	npx playwright test tests/video-playback.spec.js --project=phone --project=laptop --workers=2
+57	4	2	node scripts/qa/test_analytics_hostname.cjs
+58	1	0	python3 -m unittest discover -s scripts/qa -p test_security_headers.py
+59	1	0	node scripts/build-home-css.mjs --check
+60	7	64	npm run i18n:check
+61	7	11	python3 scripts/build-eucharistic-miracles.py --check
+62	1	171	npm run i18n:test
+63	4	52	npx playwright test tests/language-persistence.spec.js tests/locale-preference-routing.spec.js --project=phone --project=laptop --workers=2
+64	2	1	python3 scripts/qa/test_annaya_tier3_check.py
+65	2	2	python3 scripts/qa/test_chaplet_mirror.py
+66	1	0	python3 scripts/qa/test_de_exact_catalogs.py
+67	1	1	python3 scripts/qa/test_encyclopedia_trail.py
+68	1	0	python3 scripts/qa/test_error_document.py
+69	7	1	python3 scripts/qa/test_exact_master.py
+70	1	0	python3 scripts/qa/test_exact_wiring.py
+71	1	2	python3 scripts/qa/test_feast_mirror.py
+72	6	5	python3 scripts/qa/test_footer_navigation.py
+73	1	0	python3 scripts/qa/test_head_fragments.py
+74	4	1	python3 scripts/qa/test_jsonld_serializer.py
+75	1	3	bash -o pipefail -c python3 -m unittest -v scripts.qa.test_litany_mirror 2>&1 | tee tmp/litany.txt
+76	2	1	python3 scripts/qa/test_locale_foundation.py
+77	1	0	python3 scripts/qa/test_locale_home_navigation.py
+78	5	56	python3 scripts/qa/test_prayer_mirror.py
+79	1	0	python3 scripts/qa/test_saint_pillars.py
+80	1	1	python3 scripts/qa/test_tour_nav.py
+81	1	0	python3 scripts/qa/check_spec_paths.py
+82	1	0	python3 -m unittest discover -s scripts/qa -p test_spec_paths.py
+83	2	6	python3 scripts/qa/check_seo.py
+84	3	15	python3 -m unittest discover -s scripts/qa -p test_seo.py
+85	1	0	python3 -m unittest discover -s scripts/qa -p test_answer_faq_parity.py
+86	1	0	python3 scripts/build_news_desk.py --check
+87	1	0	python3 -m unittest discover -s scripts/qa -p test_news_desk.py
+88	1	0	python3 scripts/build_feeds.py --check
+89	1	0	python3 scripts/build_news_thumbs.py --check
+90	1	0	python3 -m unittest discover -s scripts/qa -p test_feeds.py
+91	1	0	node scripts/build-testimony-baseline.mjs --check
+92	1	0	node scripts/tests/testimony_static.mjs
+93	1	6	npm run test:testimony-security
+94	3	99	npm run test:site-smoke
+95	7	6	env PORT=4189 bash scripts/tests/run_eucharistic_collection.sh
+96	1	0	python3 -m unittest discover -s scripts/qa -p test_rosary_bead_copy.py
+97	1	0	python3 -m unittest discover -s scripts/qa -p test_mystery_art.py
+98	1	0	python3 scripts/qa/test_private_directories.py
+99	5	11	npx playwright test tests/rosary-bead-teacher.spec.js --project=small-phone --project=phone --project=laptop --workers=2
+100	5	19	npm run test:rosary-smoke
+101	5	3	npm run test:rosary-menu
+102	3	3	npm run test:rosary-end-rules
+103	7	3	npm run test:rosary-prayer-behavior
+104	5	2	npm run test:rosary-intro-cta
+105	4	19	npm run test:rosary-ui-regression
+106	6	29	npm run test:story-floating-player
+107	6	64	npm run test:checklist
+108	5	7	python3 -m unittest discover -s scripts/qa -p test_eucharistic_locale.py
+109	6	16	python3 -m unittest discover -s scripts/qa -p test_home_mirror.py
+110	7	1	python3 -m unittest discover -s scripts/qa -p test_mirror_structure.py
+111	1	0	python3 -m unittest discover -s scripts/qa -p test_shared_nav_references.py
+112	4	14	python3 -m unittest discover -s scripts/qa -p test_locale_mirror_policy.py
+113	6	1	python3 -m unittest discover -s scripts/qa -p test_film_master_family.py
+114	1	0	python3 -m unittest discover -s scripts/qa -p test_localized_source_links.py
+115	5	5	python3 -m unittest discover -s scripts/qa -p test_history_master_mirror.py
+116	3	5	python3 -m unittest discover -s scripts/qa -p test_travel_page_mirrors.py
+117	1	0	python3 -m unittest discover -s scripts/qa -p test_annaya_hero_evidence.py
+118	1	0	python3 -m unittest discover -s scripts/qa -p test_annaya_tour_hero_prepare.py
+119	1	0	node scripts/tests/history_equivalence.cjs
+120	7	21	npx playwright test tests/history-master.spec.js --project=phone --project=laptop --workers=2
+121	1	17	npx playwright test tests/travel-master.spec.js --project=phone --project=laptop --workers=2
+122	3	27	env PORT=4197 bash scripts/tests/run_eucharistic_locales.sh
+123	3	22	env PORT=4198 bash scripts/tests/run_hero_figure_crop.sh
+124	1	0	npm run books:check
+125	1	0	node scripts/tests/same_page_resolver.cjs
+126	7	5	node scripts/tests/nav_legacy_combined.cjs
+127	3	2	node scripts/tests/same_page_enabled_navigation.cjs
+128	1	0	node scripts/tests/same_page_contract.cjs
+129	1	0	node scripts/tests/same_page_static_verified.cjs
+130	1	0	node scripts/tests/same_page_ar2_pairing.cjs
+131	6	3	node scripts/tests/locale_identity.mjs
+132	4	3	node scripts/tests/same_page_integrated_visual.cjs
+133	2	3	node scripts/tests/same_page_real_preview.cjs
+134	1	0	node scripts/tests/same_page_switcher.cjs
+135	7	35	node scripts/tests/same_page_exhaustive_preview.cjs
+136	4	1	python3 -m unittest discover -s scripts/qa -p test_saint_of_day.py
+137	1	0	node scripts/qa/test_saint_day_runtime.cjs
+138	1	0	python3 -m unittest discover -s scripts/qa -p test_saint_monogram.py
+139	1	165	npx playwright test tests/saint-of-day.spec.js --project=phone --project=laptop --workers=2
+140	3	1	npm run test:search
+141	2	1	python3 scripts/qa/test_search_source_contract.py
+142	2	17	npx playwright test tests/search-keyboard.spec.js --project=phone --project=laptop --workers=2
+143	1	0	node scripts/tests/stories_shelf_unicode.cjs
+144	0	272	python3 -m unittest discover -s scripts/qa -p test_stories_keyed_data.py
+145	1	1	python3 -m unittest discover -s scripts/qa -p test_stories_zh_header.py
+146	1	0	python3 -m unittest discover -s scripts/qa -p test_quotes_attribution.py
+147	1	0	python3 scripts/build_nader_context.py --check
+148	1	0	python3 -m unittest discover -s scripts/qa -p test_nader_context.py
