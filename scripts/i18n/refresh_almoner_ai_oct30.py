@@ -1,13 +1,13 @@
 """Bind the October 30 almoner-Zaporizhzhia/Poltava follow-up and Pope Leo AI-address rows.
 
 Adds the two new row bindings to news-master (id-anchored selectors are stable),
-prepends the almoner credit entry at position 1 and inserts the Spain credit
+prepends the almoner credit entry at position 1 and inserts the AI-address credit
 entry at position 2 (every existing credit positional selector shifts +2,
 editorial order preserved), and re-pins
 the news-master masterSha256. Every selector is re-resolved against the built
 page and must return exactly one node whose rendered value equals the binding
 source; any drift aborts the write. The locale values come from the reviewed
-packet locales/ukraine-acn-oct28-translations.json (agent-translated, native
+packet locales/almoner-ai-oct30-translations.json (agent-translated, native
 review pending - same status as the ukraine-acn-oct28, marian-oct28, massabki-oct25,
 assisi-oct24, gemelli-oct17 and audience-oct21 packets).
 

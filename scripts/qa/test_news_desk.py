@@ -108,9 +108,21 @@ class NewsDeskTests(unittest.TestCase):
         text = (ROOT/'index.html').read_text()
         self.assertEqual(text.count('class="home-news-lead home-news-lead--film"'), 1)
         self.assertEqual(text.count('class="home-news-row"'), 5)
+        # REVISION 2026-10-30: text-only almoner supporting row (no photo, rights-safe)
+        self.assertEqual(text.count('class="home-news-row home-news-row--text"'), 1)
+        self.assertIn('class="home-news-row home-news-row--text" href="./news#almoner-zaporizhzhia-poltava-2026-10-30"', text)
         self.assertNotIn('news-rotator.js', text)
         self.assertIn('class="home-news-lead home-news-lead--film" href="./charbel-film-premiere"', text)
         self.assertNotIn('el-paso-lebanese-festival-2026-10', text)
+
+
+    def test_almoner_home_refresh_check_reproducible(self):
+        # REVISION 2026-10-30: refresh --check must be green on the committed
+        # artifact (ancestor sourceRevision is valid provenance, not drift).
+        import subprocess, sys
+        r = subprocess.run([sys.executable, str(ROOT / 'scripts/i18n/refresh_almoner_oct30_home.py'), '--check'],
+                           capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, (r.stdout + r.stderr)[-500:])
 
     def test_papal_rows_en_ar_parity(self):
         from bs4 import BeautifulSoup
