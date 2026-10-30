@@ -2843,6 +2843,7 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { font-family: 'Noto 
 .home-news-dek{color:var(--theme-ink-soft);line-height:1.55}
 .home-news-rows{display:grid;align-content:start;min-width:0}
 .home-news-row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:1rem;align-items:start;padding:1rem 0;border-bottom:1px solid var(--theme-line-soft)}
+.home-news-row.home-news-row--text{grid-template-columns:minmax(0,1fr)}
 .home-news-row:first-child{padding-top:0}
 .home-news-row .home-news-photo{aspect-ratio:1;border-radius:4px}
 .home-news-row .home-news-title{font-size:1.3rem;line-height:1.15}
