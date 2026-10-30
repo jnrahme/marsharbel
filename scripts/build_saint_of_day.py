@@ -13,7 +13,7 @@ from zoneinfo import ZoneInfo
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 from i18n.saint_plate import plate_fields,saint_image_rejection
-REQUIRED=('saint','calendar','infoUrl','sources','translationStatus')
+REQUIRED=('calendar','infoUrl','sources','translationStatus')
 def load(root):
     manifest=json.loads((root/'locales/saint-of-day.json').read_text())
     entries=manifest['entries']
@@ -23,7 +23,12 @@ def load(root):
     if dates and (dates[-1]-dates[0]).days>7: raise ValueError('saint window spans more than 7 days')
     copy=json.loads((root/'locales/en/saint-of-day.json').read_text())
     for d,entry in entries.items():
-        missing=[k for k in REQUIRED if not entry.get(k)]
+        kind=entry.get('kind','saint')
+        if kind not in ('saint','commemoration'): raise ValueError(f'saint unit {d} has unknown kind: {kind}')
+        identity='commemoration' if kind=='commemoration' else 'saint'
+        missing=[k for k in (*REQUIRED,identity) if not entry.get(k)]
+        if kind=='commemoration' and any(entry.get(k) for k in ('saint','bookUrl','bookImage','saintImage')):
+            raise ValueError(f'commemoration unit {d} must be text-only, without saint identity, book or art')
         if missing: raise ValueError(f'saint unit {d} missing sourced fields: {missing}')
         has_url,has_img=bool(entry.get('bookUrl')),bool(entry.get('bookImage'))
         explicit_none='book' in entry and entry['book'] is None
@@ -47,7 +52,9 @@ def output(root=ROOT):
     for d in sorted(manifest['entries']):
         entry=manifest['entries'][d]
         values={**entry,**copy[d],'date':d,'dateLabel':date.fromisoformat(d).strftime('%d.%m.%Y'),'calendarUrl':entry['sources'][0]}
-        if entry.get('bookUrl'):
+        if entry.get('kind')=='commemoration':
+            template=solo.replace('home-saint-info"', 'home-saint-info home-saint-info--text"')
+        elif entry.get('bookUrl'):
             template=pair
         elif entry.get('saintImage') and saint_image_rejection(entry) is None:
             template=image

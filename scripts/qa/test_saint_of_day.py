@@ -91,6 +91,23 @@ class SaintDayBookContract(unittest.TestCase):
    self.assertIn('home-saint-plate',text,'solo card with derivable name renders the monogram plate')
    self.assertIn('data-saint-key="monogram">N<',text,'initial derived from the English name')
    self.assertIn('data-saint-key="dateShort">15 Oct<',text)
+ def test_commemoration_is_text_only_without_saint_identity(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   e=self._entry(kind='commemoration',commemoration='Faithful Departed',book=None);del e['saint']
+   p=self._root(tmp,e,self._copy(heading='Commemoration',name='Commemoration of the Faithful Departed'))
+   _,text=mod.output(p)
+   self.assertNotIn('home-saint-plate',text);self.assertNotIn('home-saint-pair',text);self.assertNotIn('<img',text)
+   self.assertIn('Commemoration of the Faithful Departed',text);self.assertIn('home-saint-info--text',text)
+ def test_commemoration_rejects_invented_saint_book_or_art(self):
+  for extra in ({'saint':'invented'},{'bookUrl':'/x','bookImage':'/x.jpg'},{'saintImage':'/x.jpg'}):
+   with tempfile.TemporaryDirectory() as tmp:
+    e=self._entry(kind='commemoration',commemoration='Faithful Departed',book=None);del e['saint'];e.update(extra)
+    with self.assertRaises(ValueError):mod.output(self._root(tmp,e,self._copy()))
+ def test_unknown_kind_and_missing_commemoration_rejected(self):
+  for kind in ('commemoration','unexpected'):
+   with tempfile.TemporaryDirectory() as tmp:
+    e=self._entry(kind=kind,book=None);del e['saint']
+    with self.assertRaises(ValueError):mod.output(self._root(tmp,e,self._copy()))
  def test_underivable_name_falls_back_to_halo(self):
   with tempfile.TemporaryDirectory() as tmp:
    p=self._root(tmp,self._entry(**{'book':None}),self._copy(name='!!!'))

@@ -46,7 +46,7 @@ def outputs(root=ROOT):
   if section is None:raise ValueError('Saint unit absent '+d)
   messages=dict(packs[d]);messages['dateLabel']=date_type.fromisoformat(d).strftime('%d.%m.%Y')
   entry=manifest['entries'][d]
-  if not entry.get('bookUrl') and not entry.get('saintImage'):
+  if entry.get('kind')!='commemoration' and not entry.get('bookUrl') and not entry.get('saintImage'):
    fields=plate_fields(messages.get('name',''),'en',d,override=messages.get('monogram'))
    if fields:messages.update(fields)
   for n in section.select('[data-saint-key],[data-saint-alt],[data-saint-generated-date]'):
@@ -68,7 +68,7 @@ def outputs(root=ROOT):
   for d in dates:
    messages=dict(pack[d]);messages['dateLabel']=date_type.fromisoformat(d).strftime('%d.%m.%Y')
    entry=manifest['entries'][d]
-   if not entry.get('bookUrl') and not entry.get('saintImage'):
+   if entry.get('kind')!='commemoration' and not entry.get('bookUrl') and not entry.get('saintImage'):
     en_fields=plate_fields(packs[d].get('name',''),'en',d,override=packs[d].get('monogram'))
     if en_fields is not None:
      fields=plate_fields(messages.get('name',''),lang,d,override=messages.get('monogram'))
