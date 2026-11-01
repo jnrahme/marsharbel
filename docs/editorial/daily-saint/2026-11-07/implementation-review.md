@@ -24,4 +24,3 @@ The current candidate was reconstructed 2026-11-01 on stage 7961151d as NEW comm
 
 Gates actually run on the reconstructed head 2026-11-01: build_saint_of_day; build-pages --pages=index.html (0 written after the Nov 5 correction - EN unchanged); refresh_saint_home_bindings; build-international x2 to fixpoint plus --check PASS ("Localization checked: 12 languages, 45 guides, 11 language homepages."); build-home-css 59927 bytes; check_i18n_policy PASS; test_saint_of_day OK; test_home_mirror OK; sitemap_lastmod delta committed. Nov 1/2 templates verified byte-identical to stage on all 11 homepages; Nov 5 neutralization verified present in all 10 locale mirrors.
 
-
