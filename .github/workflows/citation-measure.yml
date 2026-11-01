@@ -1,0 +1,43 @@
+name: Citation measurement (temporary)
+on:
+  pull_request:
+    branches: [stage]
+permissions:
+  contents: read
+jobs:
+  citation-measure:
+    if: github.event.pull_request.number == 905 && github.head_ref == 'citation-T17-stage'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: pip install beautifulsoup4
+      - name: Bind candidate and measure real citation controls
+        shell: bash
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          git show -s --format='candidate=%H tree=%T'
+          sha256sum package-lock.json scripts/qa/check_citation_amendment.py scripts/i18n/citation_amendment.py
+          start=$(date +%s)
+          set +e
+          python3 -u scripts/qa/check_citation_amendment.py 2>&1 | tee citation-measure.log
+          code=${PIPESTATUS[0]}
+          set -e
+          elapsed=$(( $(date +%s) - start ))
+          printf 'exit=%s elapsed_seconds=%s head=%s\n' "$code" "$elapsed" "$EXPECTED_HEAD"
+          if [ "$code" -eq 0 ]; then
+            printf '%s\t[6] python3 scripts/qa/check_citation_amendment.py\n' "$elapsed" | tee citation-measure.tsv
+          fi
+          exit "$code"
