@@ -8,6 +8,7 @@ Rows prove structural parity only: nativeReviewStatus stays not-certified.
 import hashlib,json,re
 from bs4 import BeautifulSoup
 from i18n.reviewed_history import digest
+from i18n import citation_amendment
 
 EVIDENCE='locales/ar2-pairing-evidence.json'
 AR2='scoped-ar2-variant'
@@ -117,10 +118,17 @@ def ar2_manifest(root,texts,manifest):
             soup=BeautifulSoup(text,'html.parser')
             for el in soup.main.select('[id]'):
                 page['anchorIDs'].setdefault(el['id'],{})[code]=el['id']
-            page['variants'][code]={'path':route,'aliases':[],'status':'verified','contentSha256':dig,'sourceSha256':en_digest,
-                'proof':{'type':AR2,'state':'approved','scope':row['scope'],
-                         'candidateFileSha256':hashlib.sha256(file.read_bytes()).hexdigest(),
-                         'reviewedContentSha256':dig,'nativeReviewStatus':row['nativeReviewStatus'],
-                         'evidenceRef':row['evidenceRef']}}
+            cand=hashlib.sha256(file.read_bytes()).hexdigest()
+            add=citation_amendment.ar2_addendum(root,slug,code,dig,cand)
+            if add and citation_amendment.proof_mode(root)!='git':
+                # Citation-covered ar2 page in an editable export: no verified claim.
+                page['variants'][code]=citation_amendment.export_variant(route,dig,en_digest)
+            else:
+                page['variants'][code]={'path':route,'aliases':[],'status':'verified','contentSha256':dig,'sourceSha256':en_digest,
+                    'proof':{'type':AR2,'state':'approved','scope':row['scope'],
+                             'candidateFileSha256':cand,
+                             'reviewedContentSha256':dig,'nativeReviewStatus':row['nativeReviewStatus'],
+                             'evidenceRef':row['evidenceRef']}}
+            if add:page['variants'][code]['proof']['citationAmendment']=add
         out['pages']['ar2-'+slug+'-equivalence']=page
     return out
