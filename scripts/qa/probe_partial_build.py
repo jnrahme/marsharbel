@@ -6,6 +6,7 @@ from pathlib import Path
 R=Path(__file__).resolve().parents[2];sys.path.insert(0,str(R/'scripts'))
 from i18n.catalog import read_json,load_catalog,PRAYER_FAMILIES
 from i18n.make_bindings import build
+from i18n.citation_amendment import EXPORT_CONTRACT
 # Production proof runs first on the real git-backed root. No fixture patches.
 spec=importlib.util.spec_from_file_location('production_probe_builder',R/'scripts/build-international.py')
 production_builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(production_builder)
@@ -184,6 +185,21 @@ def strip_html_zz(text):
 def json_assignment(text):
  prefix,body=text.split(' = ',1);return prefix,json.loads(body.rstrip().removesuffix(';'))
 
+def pin_segregated_pair(va,vb,expected,key,lang):
+ # Real side must equal the committed git-mode manifest variant EXACTLY: the
+ # whole approved production proof, every field, no drift tolerated (T16).
+ assert va==expected,(key,lang,'real side drifted from committed production manifest')
+ # Synthetic side: EXACT allowed proof keys and whole-contract equality - no
+ # injected fields, no prefix or truncated contract.
+ proof=vb.get('proof',{})
+ assert set(proof)=={'type','exportContract','citationAmendment'},(key,lang,'synthetic proof keys',sorted(proof))
+ assert proof['type']=='unverified-export',(key,lang,'synthetic proof type')
+ assert proof['exportContract']==EXPORT_CONTRACT,(key,lang,'export contract not whole-equal')
+ assert proof['citationAmendment']==expected['proof'].get('citationAmendment'),(key,lang,'addendum differs')
+ assert vb.get('status')=='unverified-export',(key,lang,'synthetic status')
+ for f in ('path','contentSha256','sourceSha256','aliases'):
+  assert vb.get(f)==expected.get(f),(key,lang,f)
+
 def compare_json(file,old,new):
  prefix,a=json_assignment(old);other,b=json_assignment(new);assert prefix==other
  if file=='same-page-manifest.js':
@@ -218,6 +234,40 @@ def compare_json(file,old,new):
    assert list(variants)==['ar'] and variants['ar'].get('status')=='pending',key
    del b['pages'][key]
   hits['manifest-travel4-ar']+=4
+  # Citation-segregated families (T13, exact boundary T16): citation-covered pages
+  # build in the synthetic world WITHOUT .git, where the trust boundary emits only
+  # 'unverified-export' variants, while the real git-mode build carries the reviewed
+  # payload. The real variant must equal the committed production manifest variant
+  # EXACTLY (whole approved proof, no field drift); the synthetic proof must carry
+  # EXACTLY the allowed keys with whole-contract equality. Only then are status and
+  # proof stripped for the byte compare of the remainder.
+  _sidecar=json.loads((R/'locales/citation-amendment-2026-11.json').read_text())
+  _cov={fam+'-equivalence' for fam in _sidecar['families'] if fam!='ar2'}
+  _cov|={'ar2-'+slug+'-equivalence' for slug in _sidecar['families']['ar2']['pages']}
+  _cov-=set(SCOPED_KEYS)
+  assert len(_cov)>=2,_cov
+  _cmt=json.loads((lambda t:t[t.index('{'):t.rindex('}')+1])((R/'same-page-manifest.js').read_text()))['pages']
+  # NEGATIVE oracle escapes (T16): each reproduced escape must be rejected by the pin.
+  _k=sorted(_cov)[0];_l=sorted(_cmt[_k]['variants'])[0]
+  _ea=copy.deepcopy(_cmt[_k]['variants'][_l]);_eb=copy.deepcopy(b['pages'][_k]['variants'][_l])
+  _bad=copy.deepcopy(_ea);_bad['proof']['renderedReviewStatus']='UNREVIEWED'
+  try:pin_segregated_pair(_bad,_eb,_ea,_k,_l);raise SystemExit('ESCAPE ACCEPTED: corrupted real proof field')
+  except AssertionError:print('NEGATIVE corrupted real proof field rejected')
+  _bad=copy.deepcopy(_eb);_bad['proof']['state']='approved'
+  try:pin_segregated_pair(_ea,_bad,_ea,_k,_l);raise SystemExit('ESCAPE ACCEPTED: injected synthetic proof field')
+  except AssertionError:print('NEGATIVE injected synthetic proof field rejected')
+  _bad=copy.deepcopy(_eb);_bad['proof']['exportContract']=_bad['proof']['exportContract'][:40]
+  try:pin_segregated_pair(_ea,_bad,_ea,_k,_l);raise SystemExit('ESCAPE ACCEPTED: prefix export contract')
+  except AssertionError:print('NEGATIVE prefix export contract rejected')
+  for key in sorted(_cov):
+   pa,pb=a['pages'].get(key),b['pages'].get(key)
+   assert pa and pb,('citation-covered page missing',key)
+   assert set(pa['variants'])==set(pb['variants'])==set(_cmt[key]['variants']),('variant set differs',key)
+   for lang in pa['variants']:
+    va,vb=pa['variants'][lang],pb['variants'][lang]
+    pin_segregated_pair(va,vb,_cmt[key]['variants'][lang],key,lang)
+    va.pop('status');va.pop('proof');vb.pop('status');vb.pop('proof')
+   hits['manifest-citation-segregated']+=len(pa['variants'])
   # 153 = 165 real families - 12 travel-scoped; the 5 authored AR-2 pages (#769:
   # rosary-intro, miracles hub, 3 stories) are production-only, absent from the
   # synthetic overlay on both sides. (165: eucharistic certification v2 folded 66
@@ -264,6 +314,27 @@ def compare_json(file,old,new):
    if 'zz' in row:assert row.pop('zz')=='/zz'+english;count+=1
   assert count==19;hits['routing']+=count
  else:raise AssertionError('Unbound generated JS diff: '+file)
+ if a!=b and file=='same-page-manifest.js':
+  import json as _j
+  for k in sorted(set(a)|set(b)):
+   if k=='pages':continue
+   if a.get(k)!=b.get(k):
+    if isinstance(a.get(k),dict) and isinstance(b.get(k),dict):
+     ka,kb=a[k],b[k]
+     only_a=sorted(x for x in ka if x not in kb);only_b=sorted(x for x in kb if x not in ka)
+     valdiff=sorted((x,ka[x],kb[x]) for x in ka if x in kb and ka[x]!=kb[x])
+     print('DIFF top',k,'only_a',only_a[:10],'only_b',only_b[:10],'valdiff',valdiff[:10])
+    else:print('DIFF top',k,':',str(a.get(k))[:160],' VS ',str(b.get(k))[:160])
+  shown=0
+  for pk in sorted(set(a.get('pages',{}))|set(b.get('pages',{}))):
+   if a['pages'].get(pk)!=b['pages'].get(pk):
+    print('DIFF page',pk)
+    ka,kb=a['pages'].get(pk) or {},b['pages'].get(pk) or {}
+    for f in sorted(set(ka)|set(kb)):
+     if ka.get(f)!=kb.get(f):
+      print('  field',f,':',_j.dumps(ka.get(f))[:220],' VS ',_j.dumps(kb.get(f))[:220])
+    shown+=1
+    if shown>=3:break
  assert a==b,(file,'Non-zz JSON difference')
 
 # Review-frozen (family, locale) pairs from the REAL root, captured before the
