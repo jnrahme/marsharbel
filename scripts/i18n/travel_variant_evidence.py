@@ -94,6 +94,7 @@ def isolated_en_ru(text, slug):
 
 
 def validate_variant(root, family, code, variant, text, final=True, schema='scoped-variants-v1'):
+    from i18n import citation_amendment
     if schema=='annaya-hero-v1':
         from i18n.annaya_hero_evidence import validate_variant as validate_annaya
         return validate_annaya(root,family,code,variant,text,final)
@@ -114,9 +115,24 @@ def validate_variant(root, family, code, variant, text, final=True, schema='scop
         # PR3: the marked generated locale-nav is a post-pin control artifact;
         # strip it before the full-file pin comparison (never re-pin for it).
         from i18n.keyed_master import strip_static_fallback_text
-        if without_ru(candidate,slug)!=without_ru(strip_static_fallback_text(strip_for_locale(root,code,text)),slug):raise ValueError('Post-review candidate drift')
-    if digest(candidate)!=variant['bodySha256'] or digest(text)!=variant['bodySha256']:
-        raise ValueError('Candidate/current main drift')
+        # Citation-source correction: compare the CURRENT candidate bytes (new C blob
+        # when an amendment covers this variant) against current text through the SAME
+        # existing header/static-fallback/RU normalizers; historical blob otherwise.
+        cb=citation_amendment.current_candidate_bytes(root,family,code)
+        if cb is not None:
+            # C blob is a committed (nav-marked) page: run it through the SAME existing
+            # header/static-fallback/RU normalizers as the current text before comparing.
+            continuity=without_ru(strip_static_fallback_text(strip_for_locale(root,code,cb.decode())),slug)
+        else:
+            continuity=without_ru(candidate,slug)
+        if continuity!=without_ru(strip_static_fallback_text(strip_for_locale(root,code,text)),slug):raise ValueError('Post-review candidate drift')
+    # Split pin check (never a both-or): the historical prepared candidate must still
+    # match the pinned OLD body; current text must match the EFFECTIVE pin (new C body
+    # when amended, old otherwise).
+    if digest(candidate)!=variant['bodySha256']:
+        raise ValueError('Historical prepared candidate no longer matches pinned body')
+    if digest(text)!=citation_amendment.effective_body(root,family,code,variant['bodySha256']):
+        raise ValueError('Current main no longer matches effective pinned body')
     if code=='en':
         if evidence.get('state')!='carried' or evidence.get('scope')!='stage bytes carried; no new review':raise ValueError('EN must be carried')
         if isolated_en_ru(blob(root,STAGE,file),slug)!=isolated_en_ru(candidate,slug):raise ValueError('Carried stage drift')
@@ -135,10 +151,18 @@ def validate_variant(root, family, code, variant, text, final=True, schema='scop
             if evidence['scope']!=SCOPED:raise ValueError('Wrong chrome review scope')
             label_delta(blob(root,STAGE,file),candidate,code,slug)
     if evidence.get('nativeReviewStatus')!='not-certified':raise ValueError('False native certification')
-    return {'type':'scoped-travel-variant','state':evidence['state'],
+    effective=citation_amendment.effective_body(root,family,code,variant['bodySha256'])
+    proof={'type':'scoped-travel-variant','state':evidence['state'],
             'scope':evidence['scope'],'candidateFileSha256':sha(candidate),
-            'reviewedContentSha256':variant['bodySha256'],'nativeReviewStatus':'not-certified',
+            'reviewedContentSha256':effective,'nativeReviewStatus':'not-certified',
             'evidenceRef':evidence.get('renderedReview','stage-'+STAGE)}
+    add=citation_amendment.addendum(root,family,code,effective)
+    if add and citation_amendment.proof_mode(root)!='git':
+        # Citation-covered family in an editable export: withhold the scoped-review
+        # vocabulary; the caller lowers status to match (no verified resolution).
+        proof={'type':'unverified-export','exportContract':citation_amendment.EXPORT_CONTRACT}
+    if add:proof['citationAmendment']=add
+    return proof
 
 
 def review_pinned_locales(root):
