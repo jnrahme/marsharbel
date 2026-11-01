@@ -1,0 +1,399 @@
+{
+ "kind": "citation-source-correction",
+ "status": "proposed-technical-candidate",
+ "note": "PROPOSED data only. Authority comes solely from external exact-head review; this record authenticates nothing.",
+ "base": "7961151d3d8663e5e97e6f9f2f4aa73215b95468",
+ "candidate": {
+  "commit": "69a74a3d4d011b7893467bcf4f051b6f52076724",
+  "tree": "0b21be27e66279a3ad557377cc83ac0e8c6a6f9e"
+ },
+ "table": {
+  "path": "locales/citation-maintenance/2026-11-dead-source-urls.json",
+  "sha256": "44381a7e88d7f35397569d19d050b10c1920126d500aba85ae44bcb7ec1d33bf"
+ },
+ "derivedPins": [
+  {
+   "file": "locales/de/biography-exact.json",
+   "field": "masterSha256",
+   "oldSha256": "75e0f73e5bcf6734b1f9a42a13fb89e984780d57d0003ac2cace3d55b782a74a",
+   "newSha256": "286c9548484e158f2b53bf4c16e239d36bb7f6d08014a5d241b05212b6d1d080",
+   "master": "templates/masters/history-exact.html"
+  },
+  {
+   "file": "locales/de/feast-exact.json",
+   "field": "masterSha256",
+   "oldSha256": "4688117dd378619f9c5b3e98d6e0938db989f2f5dc50ab0306a88884b5763ea6",
+   "newSha256": "dc49738da7efc7f3b66e365ae589644b9578e4c39d103c8caa735a7efc3f4ee2",
+   "master": "saint-charbel-feast-day.html"
+  },
+  {
+   "file": "locales/en/history-master-bindings.json",
+   "field": "masterSha256",
+   "oldSha256": "31bdc7500390d28e7b7d26e502921779e97f95876e1d8d875646b5463f4d098b",
+   "newSha256": "14f4d6991b80d74b14d09338809b51038a86601c36cbe051ca0fe17d7bbd6fcf",
+   "master": "history.html"
+  },
+  {
+   "file": "locales/en/saint-charbel-places-lebanon-travel-master-bindings.json",
+   "field": "masterSha256",
+   "oldSha256": "67400107780b70f8f8b8d0175134ad110b89a849a5637200b6171adbb7216ec5",
+   "newSha256": "47310750f775971435e39635a6791f1051884c77a3b9c9b146f2fd55e14b7fe0",
+   "master": "saint-charbel-places-lebanon.html"
+  },
+  {
+   "file": "locales/en/saint-charbel-places-lebanon-zh-travel-master-bindings.json",
+   "field": "masterSha256",
+   "oldSha256": "67400107780b70f8f8b8d0175134ad110b89a849a5637200b6171adbb7216ec5",
+   "newSha256": "47310750f775971435e39635a6791f1051884c77a3b9c9b146f2fd55e14b7fe0",
+   "master": "saint-charbel-places-lebanon.html"
+  },
+  {
+   "file": "locales/en/saint-charbel-prayers-master-bindings.json",
+   "field": "masterSha256",
+   "oldSha256": "fc72f4d098f7ea58e6e5873855bc3fd86da580646a45d596846cc051974a8b77",
+   "newSha256": "ed1ff07bac6db214ccff4c381fd4dd027552dd805b9664c21306e2f1cd71c5b8",
+   "master": "templates/masters/saint-charbel-prayers.html"
+  },
+  {
+   "file": "locales/prayer-metadata-contract.json",
+   "entry": "saint-charbel-prayers.html",
+   "field": "mainSha256",
+   "oldSha256": "697191267c7b496d074dc569cefa84d397122197ab6112524b33faa7dc6b8cfa",
+   "newSha256": "42922d7e117539a1f7ae51475454cadbb010a6ca9bae888e47c1ccfb678b8f50",
+   "master": "saint-charbel-prayers.html"
+  },
+  {
+   "file": "locales/prayer-metadata-contract.json",
+   "entry": "en/prayers.html",
+   "field": "mainSha256",
+   "oldSha256": "be3ec195342fa69f5e3801a0ab2e7e9fbbbd012fc7cac69d187fe66101702117",
+   "newSha256": "af448b4d53f3dc3a73c83b7be77c7de44bd3f5e11df8edb934493e953c4c7273",
+   "master": "en/prayers.html"
+  }
+ ],
+ "families": {
+  "history-master": {
+   "record": "locales/history-equivalence.json",
+   "variants": {
+    "en": {
+     "file": "history.html",
+     "oldBodySha256": "78ac664c2773648cd4443f06a75ee681b522f6f7f27a4a5a94c42e271da84906",
+     "newBodySha256": "41337d67e7a7f24db04e3bc2380694ec73c987551b29dcf498bb9009589fdb7c",
+     "candidateBlobSha1AtC": "4e56758fc5fdb255140d7b7d2f96ea8aa1ee8f62"
+    },
+    "ar": {
+     "file": "ar/biography.html",
+     "oldBodySha256": "132361398510c8f3c880bc07d9a367c1bf1b917e0069dda1c703b6e844411a87",
+     "newBodySha256": "06121fb86eb9c74923e5547572b3caf3e33c9dab4e7cd01fac2de274c439cd29",
+     "catalog": {
+      "path": "locales/ar/history-master-copy.json",
+      "sha256Unchanged": "f2d7fc57ec4b0c4ecaa980354965d807cefeb64544adf85fa4eb0937ff63d5d9",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "5e0ad4583af96df32c1ea3a7d513bd02a3b9e30f"
+    },
+    "fr": {
+     "file": "fr/biographie.html",
+     "oldBodySha256": "3de3f5eb64a1828c6df1e0f8fc393450e9edb553c9809d370209968160d22987",
+     "newBodySha256": "357551932fe15928c7214cbe314c7ccbe170b3af90c453c390c1de5e0ba88051",
+     "catalog": {
+      "path": "locales/fr/history-master-copy.json",
+      "sha256Unchanged": "6fc9f23e421e254aee58ab6533f80e2218dadbed51c45fd3735b961e1b59fc86",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "ed46392871f16871a6f44606aacc896ff782baae"
+    },
+    "es": {
+     "file": "es/biografia.html",
+     "oldBodySha256": "effb703229aa79e4de9f611e5986a7589ad6a8e492b7175fd75162023090fa49",
+     "newBodySha256": "f8529c8a18eaaec0967e26814deeca8603fa1ef7aa9eb2bdade8abe9414df073",
+     "catalog": {
+      "path": "locales/es/history-master-copy.json",
+      "sha256Unchanged": "c2740c5b0bc7ef6cff726d67a2a2e00f3ba0d0a2636ce1500fd82a02ab4eca11",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "30b9473045a8db65b66456acc5ea2f049a26cf05"
+    },
+    "pt": {
+     "file": "pt/biografia.html",
+     "oldBodySha256": "513dc1a04cda4650dca5acd0c88d09eeb662345c1dc531f7319fc6c3bfe47d6f",
+     "newBodySha256": "fb86d1e1aee55fffd8e5853697e6eac9d00be43e5d2454673a446d4b6f38304d",
+     "catalog": {
+      "path": "locales/pt/history-master-copy.json",
+      "sha256Unchanged": "58552b8712b40b392b01dfdd4bd89fed41e42adc71561ba14c8030485a1d640b",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "e9a73639292fa79e652b09ed6ad55700000b943b"
+    },
+    "it": {
+     "file": "it/biografia.html",
+     "oldBodySha256": "dacdd522e7447b9383e934f6330825824185b0f7db90bab42288cee7ed71d2ac",
+     "newBodySha256": "d81b3f508d5ff3052ebeb8f34e7d90a44df590642fa9226865aedd90ce3d53a3",
+     "catalog": {
+      "path": "locales/it/history-master-copy.json",
+      "sha256Unchanged": "aea2a3909efa53d85e53f35b12a114fc91066063fd4d9e3984e3853209e80d37",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "573ad4c4452e2aafe28a649b3c1343d647fff78c"
+    },
+    "de": {
+     "file": "de/biografie.html",
+     "oldBodySha256": "88638f8e424d768c6b9f3ed94b9bbd4e1a7fc4a33f2ab220fb2617f5c372996b",
+     "newBodySha256": "041f0cd04ae5c9e4128821131ad184ce10cfd244e34c719adac23d54651f7f44",
+     "catalog": {
+      "path": "locales/de/history-master-copy.json",
+      "sha256Unchanged": "c41f13046c86f48ea03073bc53617b5c3df9a40389b38fbd26d7894e6f712f5f",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "2b99d7382032e22d9d32af1936b10c5ef2c43bc5"
+    },
+    "pl": {
+     "file": "pl/biografia.html",
+     "oldBodySha256": "8d85cd6de3e2317af4b41ff81dfb64034ab82dbb088407edebe292b3e83f4c14",
+     "newBodySha256": "68d46b743d07806ee368767d4353ba770b4b6d9a51e0fedcfab3fb45a0c4b847",
+     "catalog": {
+      "path": "locales/pl/history-master-copy.json",
+      "sha256Unchanged": "f3d4d8a1a606c1a827e7b8567025aabdfdc9dd55950934a1e1a5b585ad94023e",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "90f3b4265e299f83ea3e0a027ac9a18f3d418c76"
+    },
+    "ru": {
+     "file": "ru/biography.html",
+     "oldBodySha256": "b02310cb820bb861e9d634a9a92e7d14edb14fbb7ded2e3c6d0d03808053b4b7",
+     "newBodySha256": "fc35fba067a3faf70474d39db0253bf43449190e34ffe802980c4b811843d254",
+     "catalog": {
+      "path": "locales/ru/history-master-copy.json",
+      "sha256Unchanged": "bd2cf89822a7201bf25e33259a210e1b28cdcf499711f91215ae54b6acfabf1a",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "377b6022ac76d724020b5f16a21891265e953963"
+    },
+    "hi": {
+     "file": "hi/history.html",
+     "oldBodySha256": "f9c540586a99ba27fa0a74509d4cdb68c4e85e7258f037239f49855a2b746513",
+     "newBodySha256": "ac0c1f596b2ef839a2f4fb8752c763c079c67f833c584b2fe933a28ee7906a02",
+     "catalog": {
+      "path": "locales/hi/history-master-copy.json",
+      "sha256Unchanged": "d084172511019232f9795e9e33e968a4d94d1a8c97d0a99d96e29c25a5ff6b78",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "12b3151acd8cda86eb02bb197e0ce2594079e390"
+    },
+    "th": {
+     "file": "th/history.html",
+     "oldBodySha256": "08971891618f57c5cdc7222149c116576374c4067c82ad3469ab1c94bae2a9f1",
+     "newBodySha256": "b0e51317c8549da65c72e88dc4c209aa810cfe92d2b438d8593d6d8dabfe897d",
+     "catalog": {
+      "path": "locales/th/history-master-copy.json",
+      "sha256Unchanged": "c6bd66955f34893266b1424d6d252059256c946ab80e7d36f4e0efff36ed7046",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "8114780c55dc00fe4fa300187226584d5e17a75e"
+    }
+   }
+  },
+  "saint-charbel-prayers-master": {
+   "record": "locales/prayer-equivalence.json",
+   "variants": {
+    "en": {
+     "file": "saint-charbel-prayers.html",
+     "oldBodySha256": "e42a1aa08b7ef10e238f6ae0944bfec0d23832a192c5c23644e56e03510fd1a6",
+     "newBodySha256": "4cd994869e9c38ab517865121774309acb754cbed59547e46be833764da977c3",
+     "candidateBlobSha1AtC": "481e27869da5d9c132b94474f76db8ff3211897f"
+    },
+    "ar": {
+     "file": "ar/prayers.html",
+     "oldBodySha256": "f0b0801e5eb119a7dee7fc3a4b1da38e0c36126cce352cd7beedda0040a18506",
+     "newBodySha256": "14ad0d06ec61bdc615500adb2959093f26fc3eca3d24a88d457fed37340ab1c6",
+     "catalog": {
+      "path": "locales/ar/saint-charbel-prayers-master-copy.json",
+      "sha256Unchanged": "33d8f9c29375d4a6c1ae3ea15e5e61ff668e822327ea163ebe2a879bedb43286",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "51b1164d23c12877d4b80d4df4ce2e1274a0b22e"
+    },
+    "de": {
+     "file": "de/gebete.html",
+     "oldBodySha256": "905c257d8b8a97916ca0e0a00d02c783a94288893fa51860da230f80832d477b",
+     "newBodySha256": "c19dfb0f83c5ac8b16928fb7eeeeb6df2ead801431f8dedc0730ef7746b515f6",
+     "catalog": {
+      "path": "locales/de/saint-charbel-prayers-master-copy.json",
+      "sha256Unchanged": "50974dd3d3055a3c03169f6fc53a2ae5ada265956da7da2593c1824aeedf5777",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "bae33e0feb78e9b1c6fab5b6ab48fdd9e852cad3"
+    },
+    "fr": {
+     "file": "fr/prieres.html",
+     "oldBodySha256": "22a1d507f9df19d959ea73500ab6179709d7aa46c5f2d7d6fa96785e13c08acc",
+     "newBodySha256": "c32471b514903ed56ae83d38079b90d3a71bcd3446ff6ebc193d81bf8ce462b1",
+     "catalog": {
+      "path": "locales/fr/saint-charbel-prayers-master-copy.json",
+      "sha256Unchanged": "32a77c52f745abe8d7471da10b4bf0de26857df4bb91fb20052d1e208a5c10dc",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "293c6b582c0746072da75bab82eec55801621315"
+    },
+    "ru": {
+     "file": "ru/molitvy.html",
+     "oldBodySha256": "9fa0062eea4957a760ad4e370a0bc5d7331acf42bfd1f31144e54d93b1ff8619",
+     "newBodySha256": "35ce98dc89475ce546c845e1296a25fa8dd7b73603003d6d0db9527a8816fa9e",
+     "catalog": {
+      "path": "locales/ru/saint-charbel-prayers-master-copy.json",
+      "sha256Unchanged": "dedc82f6ab1fe55e5107222758ca7d0d97a649bf7e8b181f66012ed6c2d1fed3",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "5b67448fe6365a8d7d1dc37a7969eaf43c3e2f70"
+    },
+    "pt": {
+     "file": "pt/oracoes.html",
+     "oldBodySha256": "bee77ce4a65149dfad272eca11a9a40943ffc712cb88dbaf0938d1bc87c7766b",
+     "newBodySha256": "ac4b907e0bea0d7223a9613a0ce828ab67be2607f481dc80a7dec1ebae638092",
+     "catalog": {
+      "path": "locales/pt/saint-charbel-prayers-master-copy.json",
+      "sha256Unchanged": "014e4f50d9ffab9c3ac55ba103ad3a498c4888eaf26342ed41c2f92518cca4aa",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "755c197ed2b8b70dc92d00ac0780036565cacf6c"
+    },
+    "it": {
+     "file": "it/preghiere.html",
+     "oldBodySha256": "9186fa9edbce93078253dc027d8fc7c1e7ace39f356f29db02160665b6cf61b1",
+     "newBodySha256": "ffa7c28c125108a0a9d290ee84383f567aa9c547581ac0e977e2b1440ddec58e",
+     "catalog": {
+      "path": "locales/it/saint-charbel-prayers-master-copy.json",
+      "sha256Unchanged": "523f05f126a4c53ba520c2eedfa4b38f7fa36b3dfdcdd6d40d985f64559ae957",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "b35e93416c07fc137bd645aead8845e5bfb95608"
+    },
+    "pl": {
+     "file": "pl/modlitwy.html",
+     "oldBodySha256": "4c7c8827825dfab6c5ca3f3f8f0fe949c7a48869650e37c36b940d197f90ce2a",
+     "newBodySha256": "2658a47948bdadcc74c5c38194b71c25885d1f64fbb437b84de7c27a3064661c",
+     "catalog": {
+      "path": "locales/pl/saint-charbel-prayers-master-copy.json",
+      "sha256Unchanged": "e761e5adfdfa5788e388036c8f73df918c45223c6a479b2d6016e314b90aa92d",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "4a38cdf0ba0f2091f0dfeba1ca9752a057ffebcf"
+    },
+    "es": {
+     "file": "es/oraciones.html",
+     "oldBodySha256": "1a6fad6f806203a29774cfff38fa2c2a681c14d528da9ee857f82922f072c6cb",
+     "newBodySha256": "3cc2d123ddaf83798580d5b7020082cb79065bed5a1739a6faf8bf306fa22ccc",
+     "catalog": {
+      "path": "locales/es/saint-charbel-prayers-master-copy.json",
+      "sha256Unchanged": "5ad8381f46f02220c0ab26cda9444a88dfaf9740023020d55b6175f08fd18e18",
+      "verifiedEqual": true
+     },
+     "candidateBlobSha1AtC": "93813e6f970a57feccca9a7cf8519e852274ce80"
+    }
+   }
+  },
+  "saint-charbel-places-lebanon-travel-master": {
+   "record": "locales/travel-equivalence.json",
+   "variants": {
+    "en": {
+     "file": "saint-charbel-places-lebanon.html",
+     "oldBodySha256": "7045d6d84ef80188c971f766887384e48ab5f16675ce8a3f20216aec6efb5a43",
+     "newBodySha256": "79b8197293af92da2109d488c5658022958904de36f91fa95646774f3a7fdd7d",
+     "historicalCandidateFileSha256": "67400107780b70f8f8b8d0175134ad110b89a849a5637200b6171adbb7216ec5",
+     "historicalPreparedRevision": "19845304893719bcdee5864fb31fd3c3e043e386",
+     "candidateBlobSha1AtC": "98f355b48634e6a981b2289f8eb4c6b44760897c",
+     "inheritedScope": "stage bytes carried; no new review",
+     "catalog": null
+    },
+    "de": {
+     "file": "de/saint-charbel-places-lebanon.html",
+     "oldBodySha256": "8323faad60db9ebb42c9dff0162e1d67480959f5680090d17affc7f8743b1f42",
+     "newBodySha256": "fa8b2baf973733743d53b15f8f74609430bc8ef8d3f518768eddb6e1b03b2935",
+     "historicalCandidateFileSha256": "4e9711e93eefb1168974d63e4a277fa813e180ee020bb35fb34b9a4537f309e9",
+     "historicalPreparedRevision": "19845304893719bcdee5864fb31fd3c3e043e386",
+     "candidateBlobSha1AtC": "b1c68ce32922b6d24f42c229e4e77f7c9097f5d7",
+     "inheritedScope": "chrome-label delta only (Media group values), body main hash unchanged from the pinned stage commit.",
+     "catalog": {
+      "path": "locales/de/saint-charbel-places-lebanon-travel-master-copy.json",
+      "sha256Unchanged": "92e9f4c0675312aeab69c42269cc2c86965791448db61a13a99bf746216503ad",
+      "verifiedEqual": true
+     }
+    },
+    "ru": {
+     "file": "ru/saint-charbel-places-lebanon.html",
+     "oldBodySha256": "24984200a0852b3d4238194e681ebcc0f2fe6da939b4132a2d842350e88504c1",
+     "newBodySha256": "895d7cfa78fd2be1791462bd35f346454fada824bf67fea6b2bc5030bc563f06",
+     "historicalCandidateFileSha256": "c069a10de17ce2db1ff6a8fbf2e6634421a6b61fd9042c1ffe6394d1f5cde171",
+     "historicalPreparedRevision": "19845304893719bcdee5864fb31fd3c3e043e386",
+     "candidateBlobSha1AtC": "b5aca85c414036e9e7ac7a5061a1cb5939712b2d",
+     "inheritedScope": "RU composed body and final chrome rendered review; writer-only equivalent serialization verified",
+     "catalog": {
+      "path": "locales/ru/saint-charbel-places-lebanon-travel-master-copy.json",
+      "sha256Unchanged": "de29f87b64feedb1b78733881677042a799e7a3573c2697c8f31d0d14be07a10",
+      "verifiedEqual": true
+     }
+    }
+   }
+  },
+  "ar2": {
+   "record": "locales/ar2-pairing-evidence.json",
+   "pages": {
+    "feast-day": {
+     "en": {
+      "route": "/saint-charbel-feast-day",
+      "file": "saint-charbel-feast-day.html",
+      "newDigest": "a347f7b54ff169eb969e58fe6d26900912cdd46a9e7a26a15295e40b5c0ae063",
+      "newCandidateFileSha256": "40303fa4bb21fa23d10d5b92c279488fb8bad2c02f2272f5f40f60ffdf8ec965",
+      "candidateBlobSha1AtC": "c5c1c66dc1dee40b160a3fb8923b5d30415977d8",
+      "historicalDigest": "8df3c5a4bf06481e3be6849bb5b1e560aa5935245ae37d5685feef58fa2906ea"
+     },
+     "ar": {
+      "route": "/ar/feast-day",
+      "file": "ar/feast-day.html",
+      "newDigest": "72ee3b14213ff1ee6869517ef13a30a1cd4d1221d48d650f39c82acebdff8b5c",
+      "newCandidateFileSha256": "c381d6f4fca9628d0dd11e75a775b6f0d1442f89828bb45972d30dfd51e7a407",
+      "candidateBlobSha1AtC": "e3ec58858f35c73e6525cdf634c11c643f2ee590",
+      "historicalDigest": "2fadf6bed1283c150c279cf84941132b9cd30e57a63e20382748d87c57970884"
+     },
+     "inheritedScope": "ar-legacy-twin-scripted-parity",
+     "inheritedEvidenceRef": "PR #91; scripted structural parity audit 2026-10-12; not a line review",
+     "nativeReviewStatus": "not-certified",
+     "inheritedSourceRevision": "8b8711c776d9b3d4ccbd2a29ddc665474cde5e19"
+    },
+    "chaplet": {
+     "en": {
+      "route": "/saint-charbel-chaplet",
+      "file": "saint-charbel-chaplet.html",
+      "newDigest": "f2cc9699ce49c363e574e188c917b327427bf210117489199e9d3e8aae4a8b7d",
+      "newCandidateFileSha256": "633e765d3071cff8291ec4958deda23e2e3728fec597f623f766566485723eb4",
+      "candidateBlobSha1AtC": "f7cf9bb0da3cb051332a0073bc2313b57b490195",
+      "historicalDigest": "31aff40c9975e41df70f254ed81ef78f36f9973e8e076de5b719b0a512a8b55d"
+     },
+     "ar": {
+      "route": "/ar/saint-charbel-chaplet",
+      "file": "ar/saint-charbel-chaplet.html",
+      "newDigest": "64ebf842c83648cb9612d7f78eaf09497bbcfb73f60756b05bd95319d0bb473c",
+      "newCandidateFileSha256": "0baa0b7edd9798c4b245a8fbb8f85b39b82b064739b5d4f68905032463ccc3a6",
+      "candidateBlobSha1AtC": "e7a096f5fd08209629430b737bd4ccf10634e7fe",
+      "historicalDigest": "9132e9b917d34f289e31ad00e83f4d37f525f3188fa01d592a11d0adf6c1053e"
+     },
+     "inheritedScope": "ar-legacy-twin-scripted-parity",
+     "inheritedEvidenceRef": "PR #369 (generator mirror); scripted structural parity audit 2026-10-12; not a line review",
+     "nativeReviewStatus": "not-certified",
+     "inheritedSourceRevision": "8b8711c776d9b3d4ccbd2a29ddc665474cde5e19"
+    }
+   }
+  }
+ },
+ "addendumText": "new source-href correction only; no fresh translation/prayer/art/audio/native/whole-book certification",
+ "excludedFindings": [
+  {
+   "pinFile": "locales/ru/biography-exact.json",
+   "note": "pre-existing drift (old pin != base formula); excluded, bytes == base, scope unsettled"
+  },
+  {
+   "pinFile": "locales/de/novena-exact.json",
+   "note": "pre-existing latent drift; untouched"
+  }
+ ]
+}
