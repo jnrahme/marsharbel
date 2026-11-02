@@ -38,10 +38,13 @@ def with_english_sources(root, manifest):
     registry = read_json(root/'locales/registry.json')
     # Topics may have an English source without an EN hreflang twin. This
     # enables only the English escape route, never a translated-equivalence grant.
+    # 'unverified-export' variants are real built pages (deterministic export builds,
+    # review claims withheld): their routes HAVE same-page homes, so they count for the
+    # escape-route exclusion exactly like verified ones. Git-mode builds are unchanged.
     reviewed_paths = {variant['path'].rstrip('/')
         for family in manifest.get('pages', {}).values()
         for variant in family.get('variants', {}).values()
-        if variant.get('status') == 'verified'}
+        if variant.get('status') in ('verified', 'unverified-export')}
     for topic, cfg in registry.get('topics', {}).items():
         english = cfg.get('relatedEnglish')
         if not english:
@@ -155,7 +158,8 @@ def inject_control(text, root, manifest, copy):
             if (variant.get('path','').rstrip('/') or '/')==canonical_path:
                 family=(key,fam);break
         if family:break
-    verified=[v for v in family[1].get('variants',{}).values() if v.get('status')=='verified'] if family else []
+    # Twin existence, not review status: segregated export variants are real twins too.
+    verified=[v for v in family[1].get('variants',{}).values() if v.get('status') in ('verified','unverified-export')] if family else []
     published_homes={(home_url(registry,code) or '/').rstrip('/') for code in published_home_locales(registry)}
     if (family and not family[0].startswith('ar2-') and len(verified)>=2
             and canonical_path not in published_homes

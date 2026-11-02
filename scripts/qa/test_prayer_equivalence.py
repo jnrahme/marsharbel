@@ -1,7 +1,8 @@
 """Prayer promotion stays closed until final QA and rejects content drift."""
-import json,shutil,sys,tempfile,unittest
+import json,shutil,subprocess,sys,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
+from i18n import citation_amendment
 from i18n.reviewed_prayers import prayer_manifest
 class PrayerEquivalence(unittest.TestCase):
  def test_pending_gate_is_noop(self):
@@ -13,10 +14,21 @@ class PrayerEquivalence(unittest.TestCase):
    self.assertIs(prayer_manifest(ROOT,{},marker),marker)
  def test_review_and_body_and_catalog_checks(self):
   record=json.loads((ROOT/'locales/prayer-equivalence.json').read_text())
+  sidecar=citation_amendment.load(ROOT)
   with tempfile.TemporaryDirectory()as temp:
    root=Path(temp)
-   for file in ('locales/prayer-review-record.json',*[v['file']for g in record['groups'].values()for v in g['variants'].values()],*[v['catalog']for g in record['groups'].values()for v in g['variants'].values()if 'catalog'in v]):
+   for file in ('locales/prayer-review-record.json',*[v['catalog']for g in record['groups'].values()for v in g['variants'].values()if 'catalog'in v]):
     dst=root/file;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/file,dst)
+   for group,g in record['groups'].items():
+    for lang,v in g['variants'].items():
+     dst=root/v['file'];dst.parent.mkdir(parents=True,exist_ok=True)
+     entry=sidecar['families'].get(group,{}).get('variants',{}).get(lang) if sidecar else None
+     if entry and entry['oldBodySha256']==v['bodySha256']:
+      # The synthetic root carries no sidecar, so the guard compares bodies against the
+      # historical pins: seed citation-amended files with their sidecar-bound historical
+      # base bytes. Current bytes carry the amendment and drift against the unchanged pins.
+      dst.write_bytes(subprocess.check_output(['git','-C',str(ROOT),'show',sidecar['base']+':'+v['file']]))
+     else:shutil.copyfile(ROOT/v['file'],dst)
    record['gateStatus']='approved';(root/'locales/prayer-equivalence.json').write_text(json.dumps(record))
    m=prayer_manifest(root,{}, {'pages':{}})
    self.assertEqual(len(m['pages']),2)

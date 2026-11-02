@@ -105,6 +105,7 @@ qa_step python3 -m unittest discover -s scripts/qa -p 'test_rosary_book_joyful_c
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_dead_code_private_preview.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_partial_locale.py'
 qa_step python3 scripts/qa/probe_partial_build.py
+qa_step python3 scripts/qa/check_citation_amendment.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata.py
 qa_step python3 scripts/qa/test_travel_release.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_media_nav_repin.py
