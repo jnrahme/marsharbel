@@ -14,7 +14,9 @@ _MEMO={}
 _TOOL_FILES=('scripts/i18n/citation_amendment.py','scripts/i18n/reviewed_history.py',
     'scripts/i18n/reviewed_prayers.py','scripts/i18n/reviewed_travel.py',
     'scripts/i18n/travel_variant_evidence.py','scripts/i18n/ar2_equivalence.py',
-    'scripts/i18n/keyed_master.py','scripts/i18n/reviewed_travel.py')
+    'scripts/i18n/keyed_master.py','scripts/i18n/reviewed_travel.py',
+    'scripts/i18n/citation_history.py',
+    'locales/citation-maintenance/candidate-C2.bundle.b64')
 _RECORD_FILES=('locales/history-equivalence.json','locales/prayer-equivalence.json',
     'locales/travel-equivalence.json','locales/ar2-pairing-evidence.json')
 
@@ -149,6 +151,13 @@ def prove(root):
     # tooling bytes, and the current bytes of every record/catalog/covered-content file.
     # A cached receipt is reused only when ALL of these are unchanged.
     git=_git_mode(root)
+    if git:
+        # Hydrate the reviewed C2 objects (offline, hash-bound) before any object lookup,
+        # so native checkouts and file:// clones that lack the unadvertised candidate
+        # commit still run the full proof. Loader+artifact are proof inputs (memo/W0).
+        sys.path.insert(0,str(Path(root)/'scripts'))
+        from i18n.citation_history import ensure_history
+        ensure_history(root,s)
     key=(root,_sh(root,'rev-parse','HEAD') if git else '<no-git>',
          hashlib.sha256((Path(root)/SIDECAR).read_bytes()).hexdigest(),
          hashlib.sha256((Path(root)/s['table']['path']).read_bytes()).hexdigest(),
