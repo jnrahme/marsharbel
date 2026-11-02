@@ -108,9 +108,12 @@ class NewsDeskTests(unittest.TestCase):
         text = (ROOT/'index.html').read_text()
         self.assertEqual(text.count('class="home-news-lead home-news-lead--film"'), 1)
         self.assertEqual(text.count('class="home-news-row"'), 5)
-        # REVISION 2026-10-30: text-only almoner supporting row (no photo, rights-safe)
-        self.assertEqual(text.count('class="home-news-row home-news-row--text"'), 1)
+        # REVISION 2026-11-02: Nahariya text-led row leads; text-only almoner
+        # supporting row (no photo, rights-safe) stays second.
+        self.assertEqual(text.count('class="home-news-row home-news-row--text"'), 2)
+        self.assertIn('class="home-news-row home-news-row--text" href="./news#nahariya-maronite-hall-vandalism-2026-11-01"', text)
         self.assertIn('class="home-news-row home-news-row--text" href="./news#almoner-zaporizhzhia-poltava-2026-10-30"', text)
+        self.assertLess(text.index('nahariya-maronite-hall-vandalism-2026-11-01'), text.index('almoner-zaporizhzhia-poltava-2026-10-30'))
         self.assertNotIn('news-rotator.js', text)
         self.assertIn('class="home-news-lead home-news-lead--film" href="./charbel-film-premiere"', text)
         self.assertNotIn('el-paso-lebanese-festival-2026-10', text)
@@ -540,8 +543,8 @@ class AlmonerRefreshSandboxTests(unittest.TestCase):
 
 
 class NewsMetadataTests(unittest.TestCase):
-    # The desk's latest reviewed content revision is the October 30 almoner-Zaporizhzhia/Poltava follow-up and AI-address row additions (intake October 30; integrated October 30).
-    REVISION = '2026-10-30'
+    # The desk's latest reviewed content revision is the November 1-2 Nahariya Maronite prayer-hall vandalism row (intake November 2; integrated November 2).
+    REVISION = '2026-11-02'
 
     def assert_news_metadata(self, html, lastmod):
         from bs4 import BeautifulSoup
@@ -564,7 +567,7 @@ class NewsMetadataTests(unittest.TestCase):
                 self.assert_news_metadata((ROOT/file).read_text(), dates[url])
 
     def test_old_webpage_date_is_rejected(self):
-        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-30"',
+        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-11-02"',
                                                     '"dateModified": "2026-10-10"')
         with self.assertRaises(AssertionError):
             self.assert_news_metadata(html, self.REVISION)
@@ -579,6 +582,32 @@ class NewsMetadataTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             self.assert_news_metadata(html, self.REVISION)
 
+
+    def test_nahariya_row_keeps_bounded_claims(self):
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup((ROOT/'news.html').read_text(), 'html.parser')
+        card = soup.find('article', id='nahariya-maronite-hall-vandalism-2026-11-01')
+        self.assertIsNotNone(card)
+        text = card.get_text(' ', strip=True)
+        self.assertIn('municipal prayer hall', text)
+        self.assertIn('motives remain unknown', text)
+        self.assertIn('reported by Vatican News', text)
+        self.assertIn('Saints Peter and Paul prayer hall', text)
+        self.assertIn('Archbishop Moussa El-Hage', text)
+        for inflated in ('relic', 'historic church', 'hate crime', 'arrest'):
+            self.assertNotIn(inflated, text.lower())
+        link = card.find('a', href=True)
+        self.assertIsNotNone(link)
+        self.assertEqual(link['href'], 'https://www.vaticannews.va/en/world/news/2026-11/archeparchy-of-haifa-condemns-attack-on-prayer-hall-in-nahariya.html')
+        self.assertIn('told Ynet', text)
+        details = soup.find('details', class_='news-credits')
+        li = details.find('li')
+        hrefs = [a['href'] for a in li.find_all('a', href=True)]
+        self.assertEqual(hrefs, [
+            'https://www.vaticannews.va/en/world/news/2026-11/archeparchy-of-haifa-condemns-attack-on-prayer-hall-in-nahariya.html',
+            'https://www.jpost.com/israel-news/article-913519',
+            'https://www.ynetnews.com/article/syfkzphpme',
+        ])
 
 class NewsImageRecordTests(unittest.TestCase):
     def setUp(self):
