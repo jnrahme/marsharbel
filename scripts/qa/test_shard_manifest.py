@@ -49,17 +49,20 @@ class ShardManifestCompleteness(unittest.TestCase):
         cls.manifest = manifest_rows()
 
     def test_runtime_expansion_shape(self):
-        # 149 slots in file order, indices dense 0..148.
+        # 150 slots in file order, indices dense 0..149.
         self.assertEqual(sorted(self.full), list(range(len(self.full))))
-        self.assertEqual(len(self.full), 149)
+        self.assertEqual(len(self.full), 150)
         # Under --skip-i18n-test exactly one slot is consumed but unexecuted,
         # and it is the i18n:test slot.
         consumed = sorted(set(self.full) - set(self.skip))
         self.assertEqual(len(consumed), 1)
         self.assertEqual(self.full[consumed[0]], 'npm run i18n:test')
-        self.assertEqual(len(self.skip), 148)
+        self.assertEqual(len(self.skip), 149)
         # The 17-item mirror loop is present in the expansion (order-sensitive):
         # litany_mirror runs through its pipefail wrapper, not a bare unittest call.
+        # The citation gate is present exactly once, by exact command identity.
+        citation = [c for c in self.full.values() if c == 'python3 scripts/qa/check_citation_amendment.py']
+        self.assertEqual(len(citation), 1)
         litany = [c for c in self.full.values() if 'litany' in c]
         self.assertEqual(len(litany), 1)
         self.assertIn('pipefail', litany[0])
