@@ -61,8 +61,8 @@ def main():
         sp=Path(d)/ca.SIDECAR;tp=Path(d)/s['table']['path']
         side=json.loads(sp.read_text());tab=json.loads(tp.read_text())
         mutate(d,side,tab)
-        sp.write_text(json.dumps(side,indent=1,ensure_ascii=False))
-        tp.write_text(json.dumps(tab,indent=1,ensure_ascii=False))
+        sp.write_text(json.dumps(side,indent=1,ensure_ascii=False)+'\n')
+        tp.write_text(json.dumps(tab,indent=1,ensure_ascii=False)+'\n')
         commit_all(d,'tamper fixture')
         return d,side
 
@@ -76,9 +76,9 @@ def main():
       ('C6 table sha mismatch','table sha mismatch',
        lambda d,side,tab:side['table'].__setitem__('sha256','0'*64)),
       ('C7 occurrence-count drift','occurrence drift',
-       lambda d,side,tab:(tab[0].__setitem__('occurrences',tab[0]['occurrences']+1),side['table'].__setitem__('sha256',hashlib.sha256(json.dumps(tab,indent=1,ensure_ascii=False).encode()).hexdigest()))),
+       lambda d,side,tab:(tab[0].__setitem__('occurrences',tab[0]['occurrences']+1),side['table'].__setitem__('sha256',hashlib.sha256((json.dumps(tab,indent=1,ensure_ascii=False)+'\n').encode()).hexdigest()))),
       ('C8 non-byte-exact replacement','reconstruction != committed candidate',
-       lambda d,side,tab:(tab[0].__setitem__('replace',tab[0]['replace']+'X'),side['table'].__setitem__('sha256',hashlib.sha256(json.dumps(tab,indent=1,ensure_ascii=False).encode()).hexdigest()))),
+       lambda d,side,tab:(tab[0].__setitem__('replace',tab[0]['replace']+'X'),side['table'].__setitem__('sha256',hashlib.sha256((json.dumps(tab,indent=1,ensure_ascii=False)+'\n').encode()).hexdigest()))),
       ('C9 altered nested amendment blob id','nested amendment blob id mismatch',
        lambda d,side,tab:side['families']['history-master']['variants']['en'].__setitem__('candidateBlobSha1AtC','0'*40)),
       ('C10 historical (old) digest inconsistency','sidecar rewrites history record',
@@ -367,6 +367,12 @@ def main():
                     bad.append(key+'/'+code+':'+str(v.get('status'))+','+str(v.get('proof',{}).get('type')))
         record('C36 every export caller withholds verified/reviewed claims',not bad,('; '.join(bad[:3])) if bad else 'builders: '+','.join(ran))
     finally:shutil.rmtree(ex,ignore_errors=True)
+
+    # Hydration controls execute inside the citation step itself: same command, same
+    # 150-slot inventory identity - no new slot, no displacement, and the step's
+    # measured duration honestly covers both suites (measured means measured).
+    from qa import test_citation_history as _th
+    _th.run(record,expect_reject)
 
     fails=[n for n,ok,_ in RESULTS if not ok]
     print(f'\n{len(RESULTS)-len(fails)}/{len(RESULTS)} controls pass'+('' if not fails else ' — FAILURES: '+','.join(fails)))
