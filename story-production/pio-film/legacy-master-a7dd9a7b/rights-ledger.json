@@ -1,0 +1,76 @@
+{
+  "master": {
+    "url": "https://marsharbel.com/media/storybook-pio/pio-film-endcard.mp4",
+    "sha256": "a7dd9a7b7d3db0f5f96dc753500d7d3909d260b66151c7b9c68a6e524b33602a",
+    "bytes": 124664121,
+    "seconds": 453.374
+  },
+  "assets": [
+    {
+      "type": "anchor illustrations",
+      "status": "original generation and reference-only derivation recovered",
+      "names": [
+        "pio-story-master",
+        "pio-story-friar",
+        "pio-story-listening",
+        "pio-story-hospital",
+        "pio-family-prayer",
+        "pio-fragile-health",
+        "pio-san-giovanni",
+        "pio-eucharist",
+        "pio-restriction-prayer",
+        "pio-prayer-groups",
+        "pio-lesson-child"
+      ],
+      "evidence": "Production records dated 2026-09-25 22:34-22:55 show original generation followed by edits using only preceding original references. Sixteen page exports reused these originals. No third-party photograph references observed. Exact original generation receipts and per-file original hashes not recovered.",
+      "repo_record": "https://github.com/jnrahme/marsharbel/blob/93de999b94da6f89c25cbe38dba123e1ae2deb80/docs/seo/bot-log/2026-09-26-pio-storybook.md"
+    },
+    {
+      "type": "AI motion",
+      "status": "LTX production recovered for anchor accents; most shots are still-art pans/fades",
+      "source": "https://huggingface.co/Lightricks/LTX-Video/blob/main/LTX-Video-Open-Weights-License-0.X.txt",
+      "conditions": "Express intelligible machine-generated disclosure required. Model commercial threshold: annual revenue at least $10M requires different paid license. Output ownership clause does not clear unrelated third-party inputs. Exact checkpoint and space revision not recovered."
+    },
+    {
+      "type": "voice",
+      "status": "Kokoro am_michael narration recovered",
+      "source": "https://huggingface.co/hexgrad/Kokoro-82M",
+      "license": "Apache-licensed model weights; not a cloned historical Pio voice"
+    },
+    {
+      "type": "ambience",
+      "status": "original synthetic wind production recovered",
+      "evidence": "2026-09-28 01:19 production command synthesizes brown-noise low-pass slow-swell wind. No separately licensed music track established. Do not label music rights cleared."
+    },
+    {
+      "type": "historical sources",
+      "sources": [
+        "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20020616_padre-pio_en.html",
+        "https://www.vatican.va/content/john-paul-ii/en/homilies/2002/documents/hf_jp-ii_hom_20020616_padre-pio.html"
+      ]
+    }
+  ],
+  "qa": {
+    "verified": "Master hash; full audio transcript read; 25-second visual samples and actual endcard pixels; -16.2 LUFS, true peak -1.4 dBFS.",
+    "not_verified": "Continuous full-speed audiovisual watch/listen, local pronunciation, every moving-frame artifact, exact shot-by-shot current master provenance."
+  },
+  "metadata": {
+    "title": "The Story of Saint Pio (Padre Pio) - Animated Storybook for Kids",
+    "title_verdict": "accurate format and audience",
+    "made_for_kids": true,
+    "audience_source": "https://support.google.com/youtube/answer/9528076",
+    "description_fix": "Add explicit AI-animated original illustrative scenes and synthetic narration disclosure; use the verified book link https://marsharbel.com/pio-story."
+  },
+  "exception": "Coordinator requested a legacy exception from new real-footage defaults and accepted sampled frames/full transcript. This does not establish a full-watch completion or the owner authority for publishing.",
+  "provenance_note": "Recovered supporting ledger from independent Quality report 2026-10-11 16:07, not current sign-off or permission.",
+  "reconstruction_date": "2026-10-12",
+  "not_release_authority": true,
+  "remaining_gaps": [
+    "Exact original generation receipts and hashes",
+    "Exact LTX checkpoint and Space revision at generation",
+    "Raw LTX output file hashes and chain of custody",
+    "Full moving-shot narration/visual review",
+    "Continuous1xwatch/listen",
+    "Original voice model revision and original takes hashes"
+  ]
+}

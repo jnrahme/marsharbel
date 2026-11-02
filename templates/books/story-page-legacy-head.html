@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+{{> analytics}}
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>@@title@@</title>
+  <meta name="description" content="@@desc@@" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="@@url@@" />
+  {{> head-social "website" "@@title@@" "@@desc@@" "@@url@@" "@@ogImage@@" "@@title@@" "@@desc@@" "@@ogImage@@"}}
+  {{> ld-webpage-audience "en" "Children and families" "@@ageMin@@" "@@ageMax@@" "@@title@@" "@@descLd@@" "@@url@@" "Home" "https://marsharbel.com/" "@@h1@@" "@@url@@"}}
+  {{> ld-faq @@faqArgs@@}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link as="font" crossorigin="" href="./media/fonts/cormorant-garamond-latin-v1.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="./media/fonts/manrope-latin-v1.woff2" rel="preload" type="font/woff2"/>
+<link href="styles.css?v=20260922-1" rel="stylesheet"/>
+<link href="storybook.css" rel="stylesheet"/>
+<link href="storybook-joy.css" rel="stylesheet"/>
+<link href="storybook-stage.css" rel="stylesheet"/>
+<!-- hreflang:begin -->
+<link href="@@url@@" hreflang="x-default" rel="alternate"/>
+<link href="@@url@@" hreflang="en" rel="alternate"/>
+<!-- hreflang:end -->
+</head>
+<body class="is-story-page" data-story="@@storyId@@">
+  {{> skip-link}}
+{{> header-open-3}}{{> primary-nav}}{{> header-close-2}}
+<main id="main-content" class="site-shell storybook-page" tabindex="-1">
+<section class="story-hero reveal">
+<span class="kicker">A Book for Ages 6-12</span>
+<h1>@@h1@@</h1>
+<p>@@intro@@</p>
+<p class="short-answer"><strong>Short answer:</strong> @@short@@</p>
+</section>
+<section class="section">
+<h2>Story Summary</h2>
+<div class="card story">@@summary@@</div>
+</section>
+<div aria-live="polite" class="story-resume-banner" hidden="" id="story-resume-banner">
+<span id="story-resume-text">Continue from Page 2?</span>
+<button class="btn subtle" id="story-resume-btn" type="button">Resume</button>
+<button aria-label="Dismiss" class="story-resume-dismiss" id="story-resume-dismiss" type="button">✕</button>
+</div>
+<section aria-label="Illustrated storybook" class="storybook reveal">
+<div class="storybook-controls">
+<span class="story-reading-indicator" id="story-reading-indicator">
+<span class="story-reading-dot"></span>
+<span id="story-reading-label">Reading…</span>
+<span class="story-elapsed" id="story-elapsed">0:00</span>
+</span>
+<label class="story-voice-pack" for="story-voice-pack">
+          Voice Pack
+          <select aria-label="Select story voice pack" id="story-voice-pack"></select>
+</label>
+<button aria-label="Previous page" class="btn subtle" disabled="" id="story-prev" type="button">Previous Page</button>
+<button class="btn subtle" id="story-read" type="button">Read Aloud</button>
+<button aria-label="Next page" class="btn primary" id="story-next" type="button">Next Page</button>
+</div>
+<details class="story-settings">
+<summary aria-label="Story settings" title="Story settings"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"></path></svg></summary>
+<div class="storybook-extras">
+<button class="story-reader-toggle" id="story-reader-toggle" title="Toggle reader mode for easier reading" type="button">Reader Mode</button>
+<label class="story-auto-continue" title="Automatically read next page when current page finishes">
+<input id="story-auto-continue" type="checkbox"/>
+          Auto Continue
+        </label>
+<div aria-label="Playback speed" class="story-rate-group" role="group">
+<button class="story-rate-btn" data-rate="0.7" type="button">Slow</button>
+<button class="story-rate-btn is-active" data-rate="1" type="button">Normal</button>
+<button class="story-rate-btn" data-rate="1.3" type="button">Fast</button>
+</div>
+</div>
+</details>
+<article class="storybook-panel">
+<div aria-hidden="true" class="storybook-illustration" id="story-illustration"><div class="scene-art scene-@@firstScene@@"><img alt="" class="scene-photo" decoding="async" fetchpriority="high" src="@@firstImage@@"/><div aria-hidden="true" class="scene-photo-overlay"></div></div></div>
+<div class="storybook-text">
+<p aria-live="polite" class="storybook-step" id="story-step">Page 1 of 10</p>
+<h2 id="story-title">Loading story...</h2>
+<p id="story-body">Please wait while we open the storybook.</p>
+<p class="storybook-prayer" id="story-prayer"></p>
+<p class="storybook-heart" id="story-heart"></p>
+</div>
+</article>
+<details class="story-evidence">
+<summary id="story-evidence-title">Evidence for This Page</summary>
+<ul id="story-evidence-list"></ul>
+</details>
+</section>
+<p class="story-production-note">AI-generated read-aloud narration. Illustrations are original composite scenes, not historical footage.</p>
+<section class="section" aria-labelledby="family-bible-reading">
+<h2 id="family-bible-reading">Read the Bible and pray together</h2>
+<div class="card story">@@family@@</div>
+</section>
+<section class="section reveal">
+<h2>About this story</h2>
+<article class="card story">@@about@@</article>
+</section>
+<section class="section">
+<h2>Frequently Asked Questions</h2>
+<div class="card story">@@faqCard@@</div>
+</section>
+<section class="section">
+<h2>More Saint Storybooks for Children</h2>
+<div class="card story"><ul>@@related@@</ul></div>
+</section>
+</main>
+{{> footer-credit-b "@@footer@@"}}
+<script defer="" src="app.js"></script>
+<script defer="" src="@@dataFile@@"></script>
+<script defer="" src="storybook.js"></script>
+<script defer="" src="storybook-stage.js"></script>
+<script defer="" src="/locale-routes.js"></script>
+<script defer="" src="translate.js?v=20260922-1"></script>
+<script defer="" src="global-audio-player.js"></script>
+<script defer="" src="./nav.js?v=20260922-1"></script>
+</body>
+</html>

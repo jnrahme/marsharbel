@@ -20,14 +20,16 @@ for (const route of ['/qadisha-valley', '/ar/qadisha-valley', '/fr/vallee-qadish
   });
 }
 
-test('Spanish Qadisha switches from English and back without runtime translation', async ({page}) => {
-  await page.goto('/qadisha-valley?lang=en');
-  await page.locator('#sc-language-select').selectOption('es');
-  await expect(page).toHaveURL(/\/es\/valle-qadisha$/);
+test('es Qadisha keeps authored language and offers English while refusing pending non-English', async ({page}) => {
+  await page.goto('/es/valle-qadisha?lang=en');
   await expect(page.locator('h1')).toHaveText(catalog['hero.heading1']);
-  await expect(page.locator('html')).toHaveAttribute('lang', 'es');
-  await page.locator('#sc-language-select').selectOption('en');
-  await expect(page).toHaveURL(/\/qadisha-valley$/);
+  await expect(page.locator('html')).toHaveAttribute('lang','es');
+  await expect(page.locator('#sc-language-select option[value="en"]')).toBeEnabled();
+  const before=await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}));
+  expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('de'))).toBe(false);
+  expect(await page.evaluate(()=>({url:location.href,main:document.querySelector('main').innerHTML,lang:document.documentElement.lang}))).toEqual(before);
+  await page.reload();await expect(page.locator('h1')).toHaveText(catalog['hero.heading1']);
+  await page.selectOption('#sc-language-select','en');await expect(page).toHaveURL(/\/qadisha-valley$/);await expect(page.locator('html')).toHaveAttribute('lang','en');
 });
 
 test('Spanish Qadisha links to real Spanish guides and English-only places', async ({page}) => {

@@ -40,3 +40,72 @@
   };
   document.head.appendChild(script);
 })();
+
+/*
+ * Catalog preview. Renders store/catalog.json as a gallery. While the
+ * catalog status is "preview" or checkout is disabled, cards never expose a
+ * buy path: no prices, no links out, no cart.
+ */
+(() => {
+  const grid = document.getElementById('souvenir-catalog');
+  if (!grid) return;
+  const el = (tag, cls, text) => {
+    const node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text) node.textContent = text;
+    return node;
+  };
+  fetch('/store/catalog.json', { credentials: 'omit' })
+    .then(res => (res.ok ? res.json() : Promise.reject(new Error('catalog'))))
+    .then(catalog => {
+      const live = catalog.status === 'live' && catalog.checkout && catalog.checkout.enabled;
+      const cards = catalog.products.map(product => {
+        const card = el('article', 'souvenir-card');
+        const frame = el('div', 'souvenir-card-frame');
+        const img = document.createElement('img');
+        img.src = product.art;
+        img.alt = product.alt;
+        img.loading = 'eager';
+        img.decoding = 'async';
+        frame.append(img);
+        const body = el('div', 'souvenir-card-body');
+        body.append(el('span', 'kicker', product.kind));
+        body.append(el('h3', '', product.title));
+        body.append(el('p', '', product.blurb));
+        const foot = el('div', 'souvenir-card-foot');
+        if (live && product.checkoutUrl && product.priceCents != null) {
+          const buy = el('a', '', catalog.labels.order);
+          buy.classList.add('btn', 'primary');
+          buy.href = product.checkoutUrl;
+          buy.rel = 'noopener';
+          foot.append(el('span', 'souvenir-price', '$' + (product.priceCents / 100).toFixed(2)), buy);
+        } else {
+          foot.append(el('span', 'souvenir-pill', catalog.labels.preview));
+        }
+        body.append(foot);
+        card.append(frame, body);
+        return card;
+      });
+      grid.replaceChildren(...cards);
+      grid.hidden = false;
+    })
+    .catch(() => { grid.hidden = true; });
+
+  const fine = window.matchMedia(['(hover:hover)', '(pointer:fine)'].join(' and ')).matches;
+  const calm = window.matchMedia('(prefers-reduced-motion:' + 'reduce)').matches;
+  if (fine && !calm) {
+    grid.addEventListener('pointermove', event => {
+      const card = event.target.closest('.souvenir-card');
+      if (!card) return;
+      const r = card.getBoundingClientRect();
+      const x = (event.clientX - r.left) / r.width - 0.5;
+      const y = (event.clientY - r.top) / r.height - 0.5;
+      card.style.setProperty('--tilt-x', (y * -6).toFixed(2) + 'deg');
+      card.style.setProperty('--tilt-y', (x * 8).toFixed(2) + 'deg');
+    });
+    grid.addEventListener('pointerout', event => {
+      const card = event.target.closest('.souvenir-card');
+      if (card) { card.style.removeProperty('--tilt-x'); card.style.removeProperty('--tilt-y'); }
+    });
+  }
+})();

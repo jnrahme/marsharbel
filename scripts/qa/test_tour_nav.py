@@ -10,3 +10,5 @@ class TourNav(unittest.TestCase):
   for code,label in [('en','Annaya Online Tour'),('ar','جولة افتراضية في عنايا')]:
    s=BeautifulSoup(tour_nav(text,ROOT,code),'html.parser');self.assertEqual(s.header.select('a')[1].get_text(),label);self.assertEqual(str(s.main),'<main><p>unchanged</p></main>')
   self.assertEqual(tour_nav(text,ROOT,'de'),text)
+
+if __name__=='__main__':unittest.main()

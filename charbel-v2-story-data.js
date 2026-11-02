@@ -61,7 +61,7 @@ window.CHARBEL_V2_STORY_EN = [
     ]
   },
   {
-    "illustration": "./media/storybook-charbel-v2/images/page-04.webp",
+    "illustration": "./media/storybook-charbel-v2/images/page-04-v2.webp",
     "title": "Learning with a Holy Teacher",
     "body": "After his vows, Charbel was sent to study at the monastery of Saints Cyprian and Justina in Kfifan. His teacher there was a wise and humble monk named Nimatullah al-Hardini, who would one day become a saint himself. Charbel studied Scripture, the liturgy, and the teachings of the Church with a quiet and listening heart. He was known as a student who worked hard, obeyed cheerfully, and spoke little. A holy teacher was helping to shape a holy student.",
     "prayer": "",
@@ -81,7 +81,7 @@ window.CHARBEL_V2_STORY_EN = [
     ]
   },
   {
-    "illustration": "./media/storybook-charbel-v2/images/page-05.webp",
+    "illustration": "./media/storybook-charbel-v2/images/page-05-v2.webp",
     "title": "Father Charbel",
     "body": "On July 23, 1859, Charbel was ordained a priest, and he returned to Annaya as Father Charbel. For sixteen years he shared the daily life of his brother monks: their work in the fields, their simple meals, and their long hours of prayer. He rose in the dark for the first prayers of the day, and he gave his whole heart to the holy Mass. His brothers saw a man who was always obedient, always gentle, and always close to God. The hidden years were making him ready.",
     "prayer": "",
@@ -100,7 +100,7 @@ window.CHARBEL_V2_STORY_EN = [
     ]
   },
   {
-    "illustration": "./media/storybook-charbel-v2/images/page-06.webp",
+    "illustration": "./media/storybook-charbel-v2/images/page-06-v2.webp",
     "title": "The Little Hermitage",
     "body": "In February 1875, Father Charbel received permission for something he had desired for a long time. He moved up the mountain to a tiny hermitage named for Saints Peter and Paul, where a few hermits lived in silence and simplicity. There he prayed deep into the night, fasted, and worked with his hands in the fields. He owned almost nothing, and he asked for nothing. For twenty-three years, that little hermitage was his whole world, and God was his whole life.",
     "prayer": "",
@@ -120,7 +120,7 @@ window.CHARBEL_V2_STORY_EN = [
     ]
   },
   {
-    "illustration": "./media/storybook-charbel-v2/images/page-07.webp",
+    "illustration": "./media/storybook-charbel-v2/images/page-07-v2.webp",
     "title": "A Story They Tell: The Lamp",
     "body": "The monks of Annaya lovingly tell a story from those quiet years. One night, they say, someone playfully filled Father Charbel's lamp with water instead of oil, and the lamp went on shining all the same. This is a tradition, a story handed down with love, not one of the miracles the Church examined when it made him a saint. Still, it tells us something true about how his brothers saw him. They believed God was near to this gentle man, and his light did not go out.",
     "prayer": "",

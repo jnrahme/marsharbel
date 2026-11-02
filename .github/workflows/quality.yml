@@ -3,13 +3,25 @@ name: Browser quality
 on:
   push:
     branches:
-      - "**"
+      - stage
+      - main
   pull_request:
 
+# Branch pushes with an open PR were running everything twice (push and pull_request).
+# PR branches are covered by pull_request; stage and main by push. A new push to a PR
+# cancels that PR's stale run; runs on stage and main are never cancelled.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
-  browser-quality:
+  browser-quality-shard:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4, 5, 6, 7, 8]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -19,12 +31,45 @@ jobs:
       - run: node scripts/sync-navigation.mjs --check
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - run: npm run quality
+      # Duration-balanced packing: each shard runs exactly the tests in its
+      # checked-in list. The completeness proof fails closed on any collection
+      # drift, so a renamed/added/removed test can never silently drop coverage.
+      # Revert by restoring --shard=${{ matrix.shard }}/8.
+      - run: node scripts/ci/check_bq_shard_lists.mjs
+      - run: npx playwright test --config playwright.config.cjs --test-list=scripts/ci/bq-shards/shard-${{ matrix.shard }}.txt
+
+      # Instrumentation: built-in JSON reporter gives per-spec durations (the shard
+      # split is duration-blind today); summarized and uploaded so timings are
+      # retrievable via the artifacts API. Additive; never blocks the shard.
+      - name: Per-spec Playwright durations
+        if: always()
+        run: node scripts/ci/summarize_pw_results.mjs output/playwright/pw-results.json output/playwright/pw-spec-timings-${{ matrix.shard }}.tsv
+
+      - name: Upload Playwright timing artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pw-spec-timings-${{ matrix.shard }}
+          path: |
+            output/playwright/pw-results.json
+            output/playwright/pw-spec-timings-${{ matrix.shard }}.tsv
+          if-no-files-found: ignore
+
       - if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: browser-quality-artifacts
+          name: browser-quality-artifacts-${{ matrix.shard }}
           path: |
             playwright-report/
             test-results/
           if-no-files-found: ignore
+
+  # Required status check. Keeps the exact name "browser-quality" and fails unless every shard passed.
+  browser-quality:
+    if: ${{ always() && !cancelled() }}
+    needs: browser-quality-shard
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "shards: ${{ needs.browser-quality-shard.result }}"
+          test "${{ needs.browser-quality-shard.result }}" = "success"

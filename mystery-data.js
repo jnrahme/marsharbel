@@ -4,8 +4,11 @@ window.ROSARY_MYSTERIES =
     "title": "First Joyful Mystery - The Annunciation",
     "day": "Monday / Saturday",
     "fruit": "Humility and surrender to God.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.998302f5.j1_1.jpg",
-    "imageCredit": "Image source: Rosary Center (Joyful Mysteries page).",
+    "image": "/media/mysteries/j1.webp",
+    "imageWidth": 1200,
+    "imageHeight": 1451,
+    "imageCredit": "Painting: Bartolomé Esteban Murillo, Annunciation (c.1660). Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:La_anunciaci%C3%B3n_(Murillo,_h._1660).jpg",
     "steps": [
       "See Nazareth at dawn; the room is quiet and simple.",
       "Picture Mary at prayer, attentive and peaceful before God.",
@@ -22,6 +25,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Premier mystère joyeux - L'Annonciation",
         "fruit": "Humilité et abandon à Dieu.",
+        "imageCredit": "Peinture : Bartolomé Esteban Murillo, L'Annonciation (v. 1660). Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Nazareth à l'aube; la chambre est calme et simple.",
           "Imaginez Marie en prière, attentive et paisible devant Dieu.",
@@ -38,6 +42,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "سر الفرح الأول – البشارة",
         "fruit": "التواضع والاستسلام لله.",
+        "imageCredit": "لوحة: Bartolomé Esteban Murillo، البشارة (نحو 1660). ملك عام، عبر Wikimedia Commons",
         "steps": [
           "انظر الناصرة عند الفجر؛ الغرفة هادئة وبسيطة.",
           "تصور مريم وهي تصلي، منتبهة ومسالمة أمام الله.",
@@ -57,8 +62,11 @@ window.ROSARY_MYSTERIES =
     "title": "Second Joyful Mystery - The Visitation",
     "day": "Monday / Saturday",
     "fruit": "Charity and joyful service.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.837f418e.j2.jpg",
-    "imageCredit": "Image source: Rosary Center (Joyful Mysteries page).",
+    "image": "/media/mysteries/j2.webp",
+    "imageWidth": 1200,
+    "imageHeight": 1254,
+    "imageCredit": "Painting: Domenico Ghirlandaio, Visitation (Louvre). Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Visitation_by_Domenico_Ghirlandaio.jpg",
     "steps": [
       "See Mary leaving Nazareth quickly to serve Elizabeth.",
       "Walk with her through the hill country in trust.",
@@ -75,6 +83,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Deuxième mystère joyeux - La Visitation",
         "fruit": "Charité et service joyeux.",
+        "imageCredit": "Peinture : Domenico Ghirlandaio, La Visitation (Louvre). Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Marie quitter rapidement Nazareth pour servir Elizabeth.",
           "Marchez avec elle à travers les collines en toute confiance.",
@@ -91,6 +100,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "سر الفرح الثاني – الزيارة",
         "fruit": "خدمة خيرية ومبهجة.",
+        "imageCredit": "لوحة: Domenico Ghirlandaio، الزيارة (اللوفر). ملك عام، عبر Wikimedia Commons",
         "steps": [
           "انظر مريم تغادر الناصرة سريعًا لتخدم أليصابات.",
           "المشي معها عبر التلال في الثقة.",
@@ -110,8 +120,11 @@ window.ROSARY_MYSTERIES =
     "title": "Third Joyful Mystery - The Nativity",
     "day": "Monday / Saturday",
     "fruit": "Detachment and holy poverty.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.37e0427f.j3.jpg",
-    "imageCredit": "Image source: Rosary Center (Joyful Mysteries page).",
+    "image": "/media/mysteries/j3.webp",
+    "imageWidth": 1200,
+    "imageHeight": 888,
+    "imageCredit": "Painting: Gerard van Honthorst, Adoration of the Child (Uffizi). Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Gherardo_delle_Notti_o_Gheritt_van_Hontorst_-_Adorazione_del_Bambino_-_Google_Art_Project.jpg",
     "steps": [
       "See Joseph and Mary arriving in Bethlehem at night.",
       "Feel the disappointment of finding no room in the inn.",
@@ -128,6 +141,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Troisième mystère joyeux - La Nativité",
         "fruit": "Détachement et sainte pauvreté.",
+        "imageCredit": "Peinture : Gerard van Honthorst, L'Adoration de l'Enfant (Offices). Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Joseph et Marie arriver à Bethléem la nuit.",
           "Ressentez la déception de ne trouver aucune place à l'auberge.",
@@ -144,6 +158,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "سر الفرح الثالث – الميلاد",
         "fruit": "الانفصال والفقر المقدس.",
+        "imageCredit": "لوحة: Gerard van Honthorst، سجود الرعاة للطفل (أوفيتزي). ملك عام، عبر Wikimedia Commons",
         "steps": [
           "شاهد وصول يوسف ومريم إلى بيت لحم ليلاً.",
           "تشعر بخيبة الأمل لعدم العثور على غرفة في النزل.",
@@ -163,8 +178,11 @@ window.ROSARY_MYSTERIES =
     "title": "Fourth Joyful Mystery - The Presentation",
     "day": "Monday / Saturday",
     "fruit": "Obedience and self-offering.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.3c367702.j4.jpg",
-    "imageCredit": "Image source: Rosary Center (Joyful Mysteries page).",
+    "image": "/media/mysteries/j4.webp",
+    "imageWidth": 1000,
+    "imageHeight": 790,
+    "imageCredit": "Painting: Andrea Mantegna, The Presentation. Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Andrea_Mantegna_-_The_Presentation_-_Google_Art_Project.jpg",
     "steps": [
       "See Mary and Joseph bring Jesus into the Temple.",
       "Watch them fulfill the law with humble obedience.",
@@ -181,6 +199,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Quatrième mystère joyeux - La présentation",
         "fruit": "Obéissance et offrande de soi.",
+        "imageCredit": "Peinture : Andrea Mantegna, La Présentation au Temple. Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Marie et Joseph amener Jésus dans le Temple.",
           "Regardez-les accomplir la loi avec une humble obéissance.",
@@ -197,6 +216,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "سر الفرح الرابع – التقديم",
         "fruit": "الطاعة وتقديم الذات.",
+        "imageCredit": "لوحة: Andrea Mantegna، تقدمة يسوع إلى الهيكل. ملك عام، عبر Wikimedia Commons",
         "steps": [
           "شاهد مريم ويوسف يحضران يسوع إلى الهيكل.",
           "شاهدهم وهم ينفذون القانون بالطاعة المتواضعة.",
@@ -216,8 +236,11 @@ window.ROSARY_MYSTERIES =
     "title": "Fifth Joyful Mystery - Finding Jesus in the Temple",
     "day": "Monday / Saturday",
     "fruit": "Perseverance in seeking Christ.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.fda7fccb.j5.jpg",
-    "imageCredit": "Image source: Rosary Center (Joyful Mysteries page).",
+    "image": "/media/mysteries/j5.webp",
+    "imageWidth": 1000,
+    "imageHeight": 802,
+    "imageCredit": "Painting: Albrecht Dürer, Jesus among the Doctors. Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Jesus_among_the_Doctors_-_Google_Art_Project.jpg",
     "steps": [
       "See Mary and Joseph begin the journey home from Jerusalem.",
       "Feel their shock when Jesus is not among the travelers.",
@@ -234,6 +257,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Cinquième mystère joyeux – Trouver Jésus dans le Temple",
         "fruit": "Persévérance dans la recherche du Christ.",
+        "imageCredit": "Peinture : Albrecht Dürer, Jésus parmi les docteurs. Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Marie et Joseph commencer le voyage de retour depuis Jérusalem.",
           "Ressentez leur choc lorsque Jésus n'est pas parmi les voyageurs.",
@@ -250,6 +274,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "سر الفرح الخامس – العثور على يسوع في الهيكل",
         "fruit": "المثابرة في طلب المسيح.",
+        "imageCredit": "لوحة: Albrecht Dürer، يسوع بين المعلمين. ملك عام، عبر Wikimedia Commons",
         "steps": [
           "شاهد مريم ويوسف يبدأان رحلة العودة إلى بيتهما من أورشليم.",
           "اشعر بصدمتهم عندما لم يكن يسوع بين المسافرين.",
@@ -269,8 +294,11 @@ window.ROSARY_MYSTERIES =
     "title": "First Sorrowful Mystery - The Agony in the Garden",
     "day": "Tuesday / Friday",
     "fruit": "Conformity to the Father's will.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.4bc0bc10.s1.jpg",
-    "imageCredit": "Image source: Rosary Center (Sorrowful Mysteries page).",
+    "image": "/media/mysteries/s1.webp",
+    "imageWidth": 1000,
+    "imageHeight": 1198,
+    "imageCredit": "Painting: Carl Bloch, Christ in Gethsemane. Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Gethsemane_Carl_Bloch.jpg",
     "steps": [
       "See Jesus enter Gethsemane after the Last Supper.",
       "Watch Him ask the disciples to stay and pray.",
@@ -287,6 +315,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Premier mystère douloureux - L'agonie dans le jardin",
         "fruit": "Conformité à la volonté du Père.",
+        "imageCredit": "Peinture : Carl Bloch, Le Christ à Gethsémané. Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Jésus entrer à Gethsémani après la Dernière Cène.",
           "Regardez-le demander aux disciples de rester et de prier.",
@@ -303,6 +332,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "اللغز الحزين الأول - العذاب في الحديقة",
         "fruit": "امتثالاً لإرادة الآب.",
+        "imageCredit": "لوحة: Carl Bloch، المسيح في الجثسيماني. ملك عام، عبر Wikimedia Commons",
         "steps": [
           "شاهد دخول يسوع إلى جثسيماني بعد العشاء الأخير.",
           "شاهده وهو يطلب من تلاميذه أن يبقوا ويصلوا.",
@@ -322,8 +352,11 @@ window.ROSARY_MYSTERIES =
     "title": "Second Sorrowful Mystery - The Scourging at the Pillar",
     "day": "Tuesday / Friday",
     "fruit": "Purity and healing from sin.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.ec6f8275.s2.jpg",
-    "imageCredit": "Image source: Rosary Center (Sorrowful Mysteries page).",
+    "image": "/media/mysteries/s2.webp",
+    "imageWidth": 1200,
+    "imageHeight": 1717,
+    "imageCredit": "Painting: William-Adolphe Bouguereau, Flagellation. Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:William-Adolphe_Bouguereau_(1825-1905)_-_The_Flagellation_of_Our_Lord_Jesus_Christ_(1880).jpg",
     "steps": [
       "See Jesus handed over, innocent yet condemned.",
       "Watch Him bound to the pillar without resistance.",
@@ -340,6 +373,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Deuxième mystère douloureux - La flagellation du pilier",
         "fruit": "Pureté et guérison du péché.",
+        "imageCredit": "Peinture : William-Adolphe Bouguereau, La Flagellation. Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Jésus livré, innocent mais condamné.",
           "Regardez-le attaché au pilier sans résistance.",
@@ -356,6 +390,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "اللغز الحزين الثاني - الجلد عند العمود",
         "fruit": "الطهارة والشفاء من الذنوب.",
+        "imageCredit": "لوحة: William-Adolphe Bouguereau، الجلد. ملك عام، عبر Wikimedia Commons",
         "steps": [
           "انظروا يسوع يُسلَّم بريئًا ولكنه مُدان.",
           "شاهده مقيدًا بالعمود دون مقاومة.",
@@ -375,8 +410,11 @@ window.ROSARY_MYSTERIES =
     "title": "Third Sorrowful Mystery - The Crowning with Thorns",
     "day": "Tuesday / Friday",
     "fruit": "Moral courage and humility.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.a299eef8.s3.jpg",
-    "imageCredit": "Image source: Rosary Center (Sorrowful Mysteries page).",
+    "image": "/media/mysteries/s3.webp",
+    "imageWidth": 1200,
+    "imageHeight": 1860,
+    "imageCredit": "Painting: Titian, Crowning with Thorns (Alte Pinakothek). Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:The_Crowning_with_Thorns_by_Titian_-_Alte_Pinakothek_-_Munich_-_Germany_2017.jpg",
     "steps": [
       "See soldiers mock Jesus as a false king.",
       "Watch them press thorns into His sacred head.",
@@ -393,6 +431,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Troisième mystère douloureux - Le couronnement d'épines",
         "fruit": "Courage moral et humilité.",
+        "imageCredit": "Peinture : Titian, Le Couronnement d'épines (Alte Pinakothek). Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez les soldats se moquer de Jésus en le qualifiant de faux roi.",
           "Regardez-les enfoncer des épines dans sa tête sacrée.",
@@ -409,6 +448,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "السر الحزين الثالث – التتويج بالشوك",
         "fruit": "الشجاعة الأخلاقية والتواضع.",
+        "imageCredit": "لوحة: Titian، التتويج بالشوك (ألته بيناكوثيك). ملك عام، عبر Wikimedia Commons",
         "steps": [
           "شاهد الجنود يسخرون من يسوع باعتباره ملكًا كاذبًا.",
           "شاهدهم وهم يغرسون الشوك في رأسه المقدس.",
@@ -428,8 +468,11 @@ window.ROSARY_MYSTERIES =
     "title": "Fourth Sorrowful Mystery - The Carrying of the Cross",
     "day": "Tuesday / Friday",
     "fruit": "Patience and faithful endurance.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.4359a605.s4.jpg",
-    "imageCredit": "Image source: Rosary Center (Sorrowful Mysteries page).",
+    "image": "/media/mysteries/s4.webp",
+    "imageWidth": 1000,
+    "imageHeight": 1385,
+    "imageCredit": "Painting: El Greco, Christ Carrying the Cross (MET). CC0, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Christ_Carrying_the_Cross_MET_DT714.jpg",
     "steps": [
       "See Jesus receive the heavy cross on wounded shoulders.",
       "Walk the road to Calvary through dust and insults.",
@@ -446,6 +489,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Quatrième mystère douloureux - Le portement de croix",
         "fruit": "Patience et endurance fidèle.",
+        "imageCredit": "Peinture : El Greco, Le Portement de croix (MET). CC0, via Wikimedia Commons",
         "steps": [
           "Voyez Jésus recevoir la lourde croix sur les épaules blessées.",
           "Parcourez le chemin du Calvaire à travers la poussière et les insultes.",
@@ -462,6 +506,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "سر الحزن الرابع – حمل الصليب",
         "fruit": "الصبر والتحمل المؤمن.",
+        "imageCredit": "لوحة: El Greco، حمل الصليب (متحف المتروبوليتان). CC0، عبر Wikimedia Commons",
         "steps": [
           "انظر إلى يسوع وهو يتلقى الصليب الثقيل على أكتاف مجروحة.",
           "سر في طريق الجلجثة وسط الغبار والإهانات.",
@@ -481,8 +526,11 @@ window.ROSARY_MYSTERIES =
     "title": "Fifth Sorrowful Mystery - The Crucifixion",
     "day": "Tuesday / Friday",
     "fruit": "Self-giving love and repentance.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.d9104fdb.s5.jpg",
-    "imageCredit": "Image source: Rosary Center (Sorrowful Mysteries page).",
+    "image": "/media/mysteries/s5.webp",
+    "imageWidth": 1200,
+    "imageHeight": 1789,
+    "imageCredit": "Painting: Diego Velázquez, Christ Crucified (Prado). Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Cristo_crucificado.jpg",
     "steps": [
       "See Jesus stripped and nailed to the Cross.",
       "Hear His prayer: Father, forgive them.",
@@ -499,6 +547,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Cinquième mystère douloureux - La Crucifixion",
         "fruit": "Amour désintéressé et repentir.",
+        "imageCredit": "Peinture : Diego Velázquez, Le Christ crucifié (Prado). Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Jésus dépouillé et cloué sur la croix.",
           "Écoutez sa prière : Père, pardonne-leur.",
@@ -515,6 +564,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "السر الحزين الخامس – الصلب",
         "fruit": "حب الذات والتوبة.",
+        "imageCredit": "لوحة: Diego Velázquez، المسيح مصلوبًا (برادو). ملك عام، عبر Wikimedia Commons",
         "steps": [
           "انظر إلى يسوع وهو مُعرّى ومسمّر على الصليب.",
           "استمع إلى صلاته: يا أبتاه، اغفر لهم.",
@@ -534,8 +584,11 @@ window.ROSARY_MYSTERIES =
     "title": "First Glorious Mystery - The Resurrection",
     "day": "Wednesday / Sunday",
     "fruit": "Faith and new life.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.ce4349f0.g1.jpg",
-    "imageCredit": "Image source: Rosary Center (Glorious Mysteries page).",
+    "image": "/media/mysteries/g1.webp",
+    "imageWidth": 1000,
+    "imageHeight": 1400,
+    "imageCredit": "Painting: Carl Heinrich Bloch, The Resurrection. Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Carl_Heinrich_Bloch_-_The_Resurrection.jpg",
     "steps": [
       "See dawn breaking over the sealed tomb.",
       "Feel the earth tremble as the stone is moved.",
@@ -552,6 +605,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Premier mystère glorieux - La Résurrection",
         "fruit": "Foi et nouvelle vie.",
+        "imageCredit": "Peinture : Carl Heinrich Bloch, La Résurrection. Domaine public, via Wikimedia Commons",
         "steps": [
           "Voir l'aube se lever sur le tombeau scellé.",
           "Sentez la terre trembler lorsque la pierre est déplacée.",
@@ -568,6 +622,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "السر المجيد الأول – القيامة",
         "fruit": "الإيمان والحياة الجديدة.",
+        "imageCredit": "لوحة: Carl Heinrich Bloch، القيامة. ملك عام، عبر Wikimedia Commons",
         "steps": [
           "شاهد بزوغ الفجر فوق القبر المختوم.",
           "يشعر الأرض ترتعش كما يتم تحريك الحجر.",
@@ -587,8 +642,11 @@ window.ROSARY_MYSTERIES =
     "title": "Second Glorious Mystery - The Ascension",
     "day": "Wednesday / Sunday",
     "fruit": "Hope and heavenly desire.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.2335c046.g2.jpg",
-    "imageCredit": "Image source: Rosary Center (Glorious Mysteries page).",
+    "image": "/media/mysteries/g2.webp",
+    "imageWidth": 1000,
+    "imageHeight": 1357,
+    "imageCredit": "Painting: Rembrandt, Ascension (Alte Pinakothek). Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_The_Ascension_1636_Oil_on_canvas_Alte_Pinakothek_Munich_Germany.jpg",
     "steps": [
       "See Jesus gather the disciples on the mount.",
       "Hear His final command to preach the Gospel.",
@@ -605,6 +663,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Deuxième mystère glorieux - L'Ascension",
         "fruit": "Espoir et désir céleste.",
+        "imageCredit": "Peinture : Rembrandt, L'Ascension (Alte Pinakothek). Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Jésus rassembler les disciples sur la montagne.",
           "Écoutez son dernier commandement de prêcher l’Évangile.",
@@ -621,6 +680,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "السر الثاني المجيد – الصعود",
         "fruit": "الأمل والرغبة السماوية.",
+        "imageCredit": "لوحة: Rembrandt، الصعود (ألته بيناكوثيك). ملك عام، عبر Wikimedia Commons",
         "steps": [
           "انظر يسوع يجمع تلاميذه على الجبل.",
           "استمع إلى وصيته الأخيرة للتبشير بالإنجيل.",
@@ -640,8 +700,11 @@ window.ROSARY_MYSTERIES =
     "title": "Third Glorious Mystery - The Descent of the Holy Spirit",
     "day": "Wednesday / Sunday",
     "fruit": "Wisdom and apostolic boldness.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.733975e7.g3.jpg",
-    "imageCredit": "Image source: Rosary Center (Glorious Mysteries page).",
+    "image": "/media/mysteries/g3.webp",
+    "imageWidth": 700,
+    "imageHeight": 1520,
+    "imageCredit": "Painting: El Greco, Pentecost (Prado). Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Pentecost%C3%A9s_(El_Greco,_c._1600)_Prado.jpg",
     "steps": [
       "See Mary and the apostles gathered in prayer.",
       "Feel the waiting of Pentecost morning.",
@@ -658,6 +721,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Troisième mystère glorieux - La descente du Saint-Esprit",
         "fruit": "Sagesse et audace apostolique.",
+        "imageCredit": "Peinture : El Greco, La Pentecôte (Prado). Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Marie et les apôtres réunis en prière.",
           "Ressentez l'attente du matin de la Pentecôte.",
@@ -674,6 +738,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "السر الثالث المجيد – نزول الروح القدس",
         "fruit": "الحكمة والجرأة الرسولية.",
+        "imageCredit": "لوحة: El Greco، العنصرة (برادو). ملك عام، عبر Wikimedia Commons",
         "steps": [
           "انظر إلى مريم والرسل مجتمعين في الصلاة.",
           "اشعر بانتظار صباح العنصرة.",
@@ -693,8 +758,11 @@ window.ROSARY_MYSTERIES =
     "title": "Fourth Glorious Mystery - The Assumption of Mary",
     "day": "Wednesday / Sunday",
     "fruit": "Devotion to Mary and purity of heart.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.2688b114.g4.jpg",
-    "imageCredit": "Image source: Rosary Center (Glorious Mysteries page).",
+    "image": "/media/mysteries/g4.webp",
+    "imageWidth": 1000,
+    "imageHeight": 1708,
+    "imageCredit": "Painting: Titian, Assumption (Frari), detail crop. Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Basilica_di_Santa_Maria_Gloriosa_dei_Frari_-_The_Assumption.JPG",
     "steps": [
       "Contemplate Mary at the completion of earthly life.",
       "See her taken body and soul into heavenly glory.",
@@ -711,6 +779,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Quatrième mystère glorieux - L'Assomption de Marie",
         "fruit": "Dévotion à Marie et pureté du cœur.",
+        "imageCredit": "Peinture : Titian, L'Assomption (Frari), détail recadré. Domaine public, via Wikimedia Commons",
         "steps": [
           "Contemplez Marie à la fin de la vie terrestre.",
           "Voyez-la emmenée corps et âme dans la gloire céleste.",
@@ -727,6 +796,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "السر الرابع المجيد – صعود مريم العذراء",
         "fruit": "التكريس لمريم وطهارة القلب.",
+        "imageCredit": "لوحة: Titian، انتقال مريم إلى السماء (فراري)، مقتطف مقصوص. ملك عام، عبر Wikimedia Commons",
         "steps": [
           "تأمل في مريم عند انتهاء الحياة الأرضية.",
           "شاهدها وهي تأخذ جسدها وروحها إلى المجد السماوي.",
@@ -746,8 +816,11 @@ window.ROSARY_MYSTERIES =
     "title": "Fifth Glorious Mystery - The Coronation of Mary",
     "day": "Wednesday / Sunday",
     "fruit": "Perseverance and trust in Mary's intercession.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.df527d11.g5.jpg",
-    "imageCredit": "Image source: Rosary Center (Glorious Mysteries page).",
+    "image": "/media/mysteries/g5.webp",
+    "imageWidth": 800,
+    "imageHeight": 1065,
+    "imageCredit": "Painting: Diego Velázquez, Coronation of the Virgin (Prado). Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg",
     "steps": [
       "See Mary welcomed by the Trinity in heavenly joy.",
       "Contemplate her crowned as Queen in service and love.",
@@ -764,6 +837,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Cinquième Mystère Glorieux - Le Couronnement de Marie",
         "fruit": "Persévérance et confiance dans l'intercession de Marie.",
+        "imageCredit": "Peinture : Diego Velázquez, Le Couronnement de la Vierge (Prado). Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Marie accueillie par la Trinité dans une joie céleste.",
           "Contemplez-la couronnée reine du service et de l'amour.",
@@ -780,6 +854,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "السر المجيد الخامس – تتويج مريم",
         "fruit": "المثابرة والثقة في شفاعة مريم.",
+        "imageCredit": "لوحة: Diego Velázquez، تتويج العذراء (برادو). ملك عام، عبر Wikimedia Commons",
         "steps": [
           "انظروا إلى مريم استقبلها الثالوث في الفرح السماوي.",
           "تأملها متوجة ملكة في الخدمة والمحبة.",
@@ -799,8 +874,11 @@ window.ROSARY_MYSTERIES =
     "title": "First Luminous Mystery - The Baptism of the Lord",
     "day": "Thursday",
     "fruit": "Openness to the Holy Spirit.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.3585d53f.l1.jpg",
-    "imageCredit": "Image source: Rosary Center (Luminous Mysteries page).",
+    "image": "/media/mysteries/l1.webp",
+    "imageWidth": 800,
+    "imageHeight": 1149,
+    "imageCredit": "Painting: Piero della Francesca, Baptism of Christ (NG London). Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Piero_della_Francesca_-_Battesimo_di_Cristo_(National_Gallery,_London).jpg",
     "steps": [
       "John is baptizing in the Jordan, proclaiming a baptism of repentance.",
       "Watch John baptize Him in humility.",
@@ -817,6 +895,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Premier Mystère Lumineux - Le Baptême du Seigneur",
         "fruit": "Ouverture au Saint-Esprit.",
+        "imageCredit": "Peinture : Piero della Francesca, Le Baptême du Christ (National Gallery, Londres). Domaine public, via Wikimedia Commons",
         "steps": [
           "Jean baptise dans le Jourdain, proclamant un baptême de repentance.",
           "Regardez Jean le baptiser avec humilité.",
@@ -833,6 +912,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "السر المضيئ الأول – معمودية الرب",
         "fruit": "الانفتاح على الروح القدس.",
+        "imageCredit": "لوحة: Piero della Francesca، عماد المسيح (المعرض الوطني، لندن). ملك عام، عبر Wikimedia Commons",
         "steps": [
           "ويوحنا يعمد في نهر الأردن ويعلن معمودية التوبة.",
           "شاهد يوحنا وهو يعمده بالتواضع.",
@@ -852,8 +932,11 @@ window.ROSARY_MYSTERIES =
     "title": "Second Luminous Mystery - The Wedding at Cana",
     "day": "Thursday",
     "fruit": "Trust in Jesus through Mary.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.c2f3ba5f.l2_1.jpg",
-    "imageCredit": "Image source: Rosary Center (Luminous Mysteries page).",
+    "image": "/media/mysteries/l2.webp",
+    "imageWidth": 1000,
+    "imageHeight": 670,
+    "imageCredit": "Painting: Paolo Veronese, Wedding at Cana. Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Paolo_Veronese_-_The_Wedding_at_Cana_-_Google_Arts_%26_Culture.jpg",
     "steps": [
       "See Jesus, Mary, and disciples at the wedding feast.",
       "Notice the quiet crisis: the wine has run out.",
@@ -870,6 +953,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Deuxième mystère lumineux - Les Noces de Cana",
         "fruit": "Faites confiance à Jésus à travers Marie.",
+        "imageCredit": "Peinture : Paolo Veronese, Les Noces de Cana. Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Jésus, Marie et ses disciples au festin de noces.",
           "Remarquez la crise tranquille : le vin est épuisé.",
@@ -886,6 +970,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "اللغز المضيء الثاني – عرس قانا",
         "fruit": "ثق بيسوع من خلال مريم.",
+        "imageCredit": "لوحة: Paolo Veronese، عرس قانا. ملك عام، عبر Wikimedia Commons",
         "steps": [
           "انظر يسوع ومريم والتلاميذ في وليمة العرس.",
           "لاحظ الأزمة الهادئة: لقد نفد النبيذ.",
@@ -905,8 +990,11 @@ window.ROSARY_MYSTERIES =
     "title": "Third Luminous Mystery - Proclamation of the Kingdom",
     "day": "Thursday",
     "fruit": "Conversion and Christian witness.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.5087ecfe.l3.jpg",
-    "imageCredit": "Image source: Rosary Center (Luminous Mysteries page).",
+    "image": "/media/mysteries/l3.webp",
+    "imageWidth": 1200,
+    "imageHeight": 1346,
+    "imageCredit": "Painting: Carl Bloch, Sermon on the Mount. Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg",
     "steps": [
       "See Jesus walking through towns announcing the kingdom.",
       "Hear His call: repent and believe the Good News.",
@@ -923,6 +1011,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Troisième mystère lumineux – Proclamation du Royaume",
         "fruit": "Conversion et témoignage chrétien.",
+        "imageCredit": "Peinture : Carl Bloch, Le Sermon sur la montagne. Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Jésus marchant dans les villes pour annoncer le royaume.",
           "Écoutez son appel : repentez-vous et croyez à la Bonne Nouvelle.",
@@ -939,6 +1028,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "السر المضيء الثالث – إعلان الملكوت",
         "fruit": "التحويل والشهادة المسيحية.",
+        "imageCredit": "لوحة: Carl Bloch، العظة على الجبل. ملك عام، عبر Wikimedia Commons",
         "steps": [
           "شاهد يسوع يسير في المدن وهو يعلن الملكوت.",
           "اسمعوا دعوته: توبوا وآمنوا بالبشارة.",
@@ -958,8 +1048,11 @@ window.ROSARY_MYSTERIES =
     "title": "Fourth Luminous Mystery - The Transfiguration",
     "day": "Thursday",
     "fruit": "Desire for holiness and spiritual courage.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.a6940dbb.l4.jpg",
-    "imageCredit": "Image source: Rosary Center (Luminous Mysteries page).",
+    "image": "/media/mysteries/l4.webp",
+    "imageWidth": 800,
+    "imageHeight": 1206,
+    "imageCredit": "Painting: Raphael, Transfiguration. Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Transfiguration_Raphael.jpg",
     "steps": [
       "See Jesus lead Peter, James, and John up the mountain.",
       "Watch His face shine with divine glory.",
@@ -976,6 +1069,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Quatrième mystère lumineux - La Transfiguration",
         "fruit": "Désir de sainteté et de courage spirituel.",
+        "imageCredit": "Peinture : Raphael, La Transfiguration. Domaine public, via Wikimedia Commons",
         "steps": [
           "Voyez Jésus conduire Pierre, Jacques et Jean sur la montagne.",
           "Regardez son visage briller de gloire divine.",
@@ -992,6 +1086,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "السر الرابع المنير – التجلي",
         "fruit": "الرغبة في القداسة والشجاعة الروحية.",
+        "imageCredit": "لوحة: Raphael، التجلي. ملك عام، عبر Wikimedia Commons",
         "steps": [
           "انظر يسوع يقود بطرس ويعقوب ويوحنا إلى أعلى الجبل.",
           "شاهد وجهه يشرق بالمجد الإلهي.",
@@ -1011,8 +1106,11 @@ window.ROSARY_MYSTERIES =
     "title": "Fifth Luminous Mystery - Institution of the Eucharist",
     "day": "Thursday",
     "fruit": "Love of the Eucharist and sacrificial union.",
-    "image": "https://www.rosarycenter.org/client_media/crops/Default.b0609251.l5.jpg",
-    "imageCredit": "Image source: Rosary Center (Luminous Mysteries page).",
+    "image": "/media/mysteries/l5.webp",
+    "imageWidth": 1200,
+    "imageHeight": 758,
+    "imageCredit": "Painting: Juan de Juanes, Last Supper. Public domain, via Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Joan_de_Joanes_-_The_Last_Supper_-_WGA12058.jpg",
     "steps": [
       "Enter the Upper Room with Jesus and the apostles.",
       "See Him take bread, bless, break, and give it.",
@@ -1029,6 +1127,7 @@ window.ROSARY_MYSTERIES =
       "fr": {
         "title": "Cinquième Mystère Lumineux - Institution de l'Eucharistie",
         "fruit": "Amour de l'Eucharistie et union sacrificielle.",
+        "imageCredit": "Peinture : Juan de Juanes, La Cène. Domaine public, via Wikimedia Commons",
         "steps": [
           "Entrez dans le Cénacle avec Jésus et les apôtres.",
           "Voyez-le prendre du pain, le bénir, le rompre et le donner.",
@@ -1045,6 +1144,7 @@ window.ROSARY_MYSTERIES =
       "ar": {
         "title": "السر المضيئ الخامس – تأسيس القربان المقدس",
         "fruit": "محبة الإفخارستيا والاتحاد المضحي.",
+        "imageCredit": "لوحة: Juan de Juanes، العشاء الأخير. ملك عام، عبر Wikimedia Commons",
         "steps": [
           "ادخل العلية مع يسوع والرسل.",
           "أراه يأخذ الخبز ويبارك ويكسر ويعطي.",

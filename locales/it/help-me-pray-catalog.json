@@ -1,0 +1,276 @@
+{
+ "schema": 2,
+ "locale": "it",
+ "direction": "ltr",
+ "publicationContract": {
+  "missingLocaleOrKey": "fail-build",
+  "englishFallback": false,
+  "pendingPrayerTextInBrowserData": false,
+  "privateReviewNoticeInBrowserData": false
+ },
+ "page": {
+  "title": "Aiutami a pregare",
+  "intro": "Scegli ciò che porti con te oggi. Trova un piccolo passo verso la preghiera, con fonti e limiti chiari.",
+  "needsHeading": "Che cosa ti porta qui?",
+  "boundaryHeading": "La preghiera e l'aiuto di cui hai bisogno",
+  "boundaryCopy": "Questa guida offre consigli devozionali, non un sacramento, una diagnosi o una promessa di guarigione. Per la confessione o la direzione spirituale personale, parla con un sacerdote. Continua le cure mediche e cerca aiuto locale urgente in una crisi.",
+  "privacyCopy": "Non serve inserire il tuo nome, l'intenzione di preghiera o dati personali per usare questa guida.",
+  "pendingNotice": "Le schede contrassegnate In revisione non sono pronte all'uso. Il testo della preghiera e l'azione Inizia non sono disponibili."
+ },
+ "needs": {
+  "restart": "Iniziare o tornare alla preghiera",
+  "family": "Famiglia",
+  "illness": "Malattia",
+  "gratitude": "Gratitudine",
+  "discouragement": "Scoraggiamento nella preghiera",
+  "maronite": "Capire la preghiera maronita"
+ },
+ "ui": {
+  "inReview": "In revisione",
+  "practicalAnswer": "Un piccolo passo",
+  "why": "Perché può aiutare",
+  "source": "Fonte",
+  "practiceType": "Pratica",
+  "boundary": "Da ricordare",
+  "backToNeeds": "Torna ai bisogni",
+  "noResults": "Nessuna scheda corrisponde a questa scelta.",
+  "notReady": "Questa scheda attende una revisione. Il testo della preghiera e l'azione Inizia non sono disponibili.",
+  "begin": "Inizia",
+  "close": "Chiudi",
+  "readMore": "Leggi la fonte"
+ },
+ "cards": {
+  "illness-01": {
+   "need": "illness",
+   "copy": {
+    "question": "Sto pregando per una persona malata. Da dove comincio?",
+    "practicalAnswer": "Presenta questa persona a Dio e chiedi forza, pace e guarigione.\nPrega lentamente la Preghiera per i malati, insieme alle cure di cui ha bisogno.\nLa preghiera non garantisce un risultato.",
+    "why": "PARAFRASI (spiegazione editoriale): La preghiera cristiana ci invita a restare con Dio nella difficoltà; non è un modo per controllare il risultato. CCC 2734.",
+    "source.publisher": "Santa Sede / Catechismo della Chiesa Cattolica",
+    "source.section": "CCC 2734",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico. La preghiera non sostituisce le cure mediche.",
+    "prayerTarget.heading": "Preghiera per i malati",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "illness-02": {
+   "need": "illness",
+   "copy": {
+    "question": "Pregare per intercessione di san Charbel garantisce la guarigione?",
+    "practicalAnswer": "No. Chiedi l'intercessione di san Charbel e affida la persona a Dio senza promettere una guarigione.\nLa preghiera non garantisce un risultato.\nIn caso di malattia grave, chiedi a un sacerdote dell'Unzione degli infermi e continua le cure mediche.",
+    "why": "PARAFRASI: Il CCC 1532 descrive il recupero della salute attraverso l'Unzione degli infermi solo quando serve alla salvezza della persona. Questa guida offre una devozione privata, non quel sacramento, e non promette la guarigione.",
+    "source.publisher": "Santa Sede / Catechismo della Chiesa Cattolica",
+    "source.section": "CCC 1532, effetti dell'Unzione degli infermi",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico. Questa guida non diagnostica malattie né amministra un sacramento.",
+    "prayerTarget.heading": "Preghiera per i malati",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/in_brief.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-01": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "Non prego da un po'. Come posso ricominciare?",
+    "practicalAnswer": "Comincia con un Padre nostro, lentamente, senza cercare di recuperare ogni giorno saltato.\nScegli un momento breve e regolare per tornare domani; porta a Dio le tue vere preoccupazioni.",
+    "why": "PARAFRASI (spiegazione editoriale): Orari fissi aiutano la preghiera a entrare nella vita. Questo piccolo primo passo è un consiglio pratico, non una regola prescritta dalla Chiesa. CCC 2697.",
+    "source.publisher": "Santa Sede / Catechismo della Chiesa Cattolica",
+    "source.section": "CCC 2697",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico. Per la confessione o una direzione spirituale personale, rivolgiti a un sacerdote.",
+    "prayerTarget.heading": "Padre nostro",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-01": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "La mia preghiera sembra senza risposta. Dio mi ha ignorato?",
+    "practicalAnswer": "Di' sinceramente a Dio che aspettare è difficile; non devi nascondere la tua delusione.\nContinua a portargli il tuo bisogno senza fare del risultato richiesto una prova del suo amore.\nQuesta guida non può spiegare perché sia avvenuta una particolare perdita o un ritardo.",
+    "why": "PARAFRASI (spiegazione editoriale): Il Catechismo riconosce la supplica senza risposta come una vera difficoltà, non come un motivo per far vergognare chi prega. CCC 2734-2741, soprattutto 2739.",
+    "source.publisher": "Santa Sede / Catechismo della Chiesa Cattolica",
+    "source.section": "CCC 2739, in CCC 2734-2741",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico. Non vengono offerte profezie, spiegazioni dei disegni nascosti di Dio o promesse di risultati.",
+    "prayerTarget.heading": "Preghiera generale d'intercessione",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-02": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "Devo smettere di pregare se non cambia nulla?",
+    "practicalAnswer": "Prova una breve preghiera a cui puoi tornare, anche quando ti senti scoraggiato.\nChiedi aiuto per restare vicino a Cristo e porta la tua difficoltà a un sacerdote se hai bisogno di una guida personale.",
+    "why": "PARAFRASI (spiegazione editoriale): La perseveranza comincia con la grazia e una nostra risposta; la difficoltà non dimostra che la tua preghiera sia fallita. CCC 2725, da leggere insieme a 2734-2741.",
+    "source.publisher": "Santa Sede / Catechismo della Chiesa Cattolica",
+    "source.section": "CCC 2725",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico. La preghiera non sostituisce l'assistenza in una crisi di salute mentale.",
+    "prayerTarget.heading": "Nella sofferenza",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-01": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "Come pregano i maroniti ogni giorno?",
+    "practicalAnswer": "Puoi iniziare un ritmo quotidiano con un Padre nostro al mattino o alla sera.\nPer l'Ufficio Divino maronita, chiedi alla tua parrocchia quale Ordo eparchiale si applica.\nLa preghiera devozionale proposta qui è un punto di partenza, non un sostituto dell'Ufficio.",
+    "why": "PARAFRASI: L'Eparchia di San Maron di Brooklyn pubblica l'Ordo dell'Ufficio Divino per il 2025-2026. Il libro allegato ne indica l'uso nell'Eparchia di Nostra Signora del Libano di Los Angeles secondo il rito siriaco maronita. Chiedi alla tua parrocchia come usare l'Ufficio; questa guida non sceglie i testi di oggi.",
+    "source.publisher": "Eparchia di San Maron di Brooklyn",
+    "source.section": "Circolare 25.117, Ordo dell'Ufficio 2025-2026; pagine 1-2 dell'Ordo allegato",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico. Non è l'Ufficio di oggi. L'Ordo 2025-2026 è una risorsa datata, non un'edizione più recente verificata. Chiedi alla tua parrocchia quale Ordo eparchiale si applica.",
+    "prayerTarget.heading": "Padre nostro",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [
+    "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+    "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her"
+   ],
+   "beginEnabled": false
+  },
+  "family-01": {
+   "need": "family",
+   "copy": {
+    "question": "Come può la nostra famiglia cominciare a pregare insieme?",
+    "practicalAnswer": "Scegli un momento tranquillo e invita la tua famiglia a una breve preghiera comune.\nComincia con la Preghiera per le famiglie; lascia a ciascuno spazio per nominare un bisogno, senza pressioni.",
+    "why": "PARAFRASI (spiegazione editoriale): La famiglia può essere un luogo dove si impara a pregare con pazienza. Una breve preghiera comune è un inizio pratico, non una forma obbligatoria. CCC 2685.",
+    "source.publisher": "Santa Sede / Catechismo della Chiesa Cattolica",
+    "source.section": "CCC 2685",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico.",
+    "prayerTarget.heading": "Preghiera per le famiglie",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "family-02": {
+   "need": "family",
+   "copy": {
+    "question": "Posso pregare per la mia famiglia se non prega con me?",
+    "practicalAnswer": "Sì. Presenta la tua famiglia a Dio anche se preghi da solo.\nChiedi l'intercessione di san Charbel e lascia che la tua preghiera sostenga una cura paziente e amorevole, invece di fare pressione sugli altri.",
+    "why": "PARAFRASI (spiegazione editoriale): La Chiesa insegna che si può chiedere l'intercessione dei santi per noi stessi e per gli altri. Questo non promette un particolare esito familiare. CCC 2683.",
+    "source.publisher": "Santa Sede / Catechismo della Chiesa Cattolica",
+    "source.section": "CCC 2683",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico. La preghiera non ti obbliga a restare in una situazione pericolosa né giustifica il male subito.",
+    "prayerTarget.heading": "Preghiera per le famiglie",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "gratitude-01": {
+   "need": "gratitude",
+   "copy": {
+    "question": "Come posso ringraziare Dio per qualcosa di buono?",
+    "practicalAnswer": "Nomina il dono che hai ricevuto e ringrazia Dio con parole tue.\nPoi prega lentamente il Gloria al Padre, lasciando che il tuo grazie diventi lode.",
+    "why": "PARAFRASI (spiegazione editoriale): Il ringraziamento può portare gli eventi quotidiani nella preghiera. CCC 2638.",
+    "source.publisher": "Santa Sede / Catechismo della Chiesa Cattolica",
+    "source.section": "CCC 2638",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico.",
+    "prayerTarget.heading": "Gloria al Padre",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_one/article_3/iv_prayer_of_thanksgiving.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-02": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "E se non so cosa dire?",
+    "practicalAnswer": "Puoi cominciare con il Padre nostro invece di cercare parole impressionanti.\nLeggilo lentamente; fermati quando una richiesta esprime ciò che porti nel cuore.",
+    "why": "PARAFRASI: Gesù sconsiglia la preghiera basata sull'accumulare parole e insegna che il Padre conosce già i nostri bisogni. Matteo 6:7-8.",
+    "source.publisher": "Conferenza dei Vescovi Cattolici degli Stati Uniti (NABRE)",
+    "source.section": "Matteo 6:7-8 (consultato nella NABRE; solo parafrasi originale)",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico.",
+    "prayerTarget.heading": "Padre nostro",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/matthew/6",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-02": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "Una preghiera a san Charbel è la stessa cosa della Divina Liturgia?",
+    "practicalAnswer": "Spiegazione editoriale: questa guida offre le preghiere del sito a san Charbel per la devozione privata, non come testi liturgici maroniti approvati.\nLa Divina Liturgia è il culto eucaristico della Chiesa; prega ora il Gloria al Padre e usa la guida dell'eparchia per conoscere il culto con la tua parrocchia.",
+    "why": "PARAFRASI: L'eparchia descrive la preghiera eucaristica come rivolta al Padre, al Figlio e allo Spirito Santo. Questo sostiene la presentazione della Divina Liturgia, non lo status delle preghiere di questo sito. L'etichetta devozionale è una classificazione editoriale di questa guida, non una certificazione dell'eparchia. Guida alla Divina Liturgia maronita, Servizio dell'Eucaristia - L'Anafora.",
+    "source.publisher": "Eparchia di San Maron di Brooklyn",
+    "source.section": "Guida alla Divina Liturgia maronita, Servizio dell'Eucaristia - L'Anafora",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico. Le domande sulla confessione o sulla partecipazione ai sacramenti vanno rivolte a un sacerdote.",
+    "prayerTarget.heading": "Gloria al Padre",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://www.stmaron.org/liturgy-guide",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false,
+   "sourceAuthor": "Chorbishop Seely Beggiani"
+  },
+  "gratitude-02": {
+   "need": "gratitude",
+   "copy": {
+    "question": "Posso rendere grazie quando la vita è difficile?",
+    "practicalAnswer": "Sì, ma non devi fingere che il dolore sia buono o nasconderlo a Dio.\nNomina un dono che puoi accogliere sinceramente oggi, poi porta a lui anche la tua sofferenza.",
+    "why": "PARAFRASI: Paolo invita i credenti a ringraziare Dio in ogni situazione come parte della vita in Cristo. Questo consiglio non chiede a nessuno di lodare il male subito. 1 Tessalonicesi 5:18.",
+    "source.publisher": "Conferenza dei Vescovi Cattolici degli Stati Uniti (NABRE)",
+    "source.section": "1 Tessalonicesi 5:18 (consultato nella NABRE; solo parafrasi originale)",
+    "source.label": "PARAFRASI",
+    "practiceType": "Preghiera devozionale",
+    "boundaryNote": "Per la confessione, un bisogno medico o una crisi, parla con un sacerdote o un medico. La gratitudine non significa accettare abusi, rifiutare cure o evitare di chiedere aiuto.",
+    "prayerTarget.heading": "Gloria al Padre",
+    "prayerTarget.type": "Preghiera devozionale"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/1thessalonians/5",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  }
+ }
+}

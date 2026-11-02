@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -26,25 +14,25 @@
     <meta property="og:locale:alternate" content="pl_PL" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>St. Augustine of Hippo | The Restless Heart, Doctor of the Church</title>
-  <meta name="description" content="St. Augustine of Hippo (354-430): from a restless young teacher to the most influential theologian of the Western Church - his conversion in a Milan garden, the Confessions, his mother Monica's prayers, his teaching in his own words, and where to watch his story." />
+  <meta name="description" content="St. Augustine of Hippo (354-430): from restless young teacher to the West's most influential theologian - Monica's tears and the Confessions." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/st-augustine-of-hippo" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Saint Charbel" />
   <meta property="og:title" content="St. Augustine of Hippo | The Restless Heart, Doctor of the Church" />
-  <meta property="og:description" content="St. Augustine of Hippo (354-430): from a restless young teacher to the most influential theologian of the Western Church - his conversion in a Milan garden, the Confessions, his mother Monica's prayers, his teaching in his own words, and where to watch his story." />
+  <meta property="og:description" content="St. Augustine of Hippo (354-430): from restless young teacher to the West's most influential theologian - Monica's tears and the Confessions." />
   <meta property="og:url" content="https://marsharbel.com/st-augustine-of-hippo" />
   <meta property="og:image" content="https://marsharbel.com/media/saints/st-augustine-of-hippo.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="St. Augustine of Hippo | The Restless Heart, Doctor of the Church" />
-  <meta name="twitter:description" content="St. Augustine of Hippo (354-430): from a restless young teacher to the most influential theologian of the Western Church - his conversion in a Milan garden, the Confessions, his mother Monica's prayers, his teaching in his own words, and where to watch his story." />
+  <meta name="twitter:description" content="St. Augustine of Hippo (354-430): from restless young teacher to the West's most influential theologian - Monica's tears and the Confessions." />
   <meta name="twitter:image" content="https://marsharbel.com/media/saints/st-augustine-of-hippo.webp" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "St. Augustine of Hippo | The Restless Heart, Doctor of the Church",
-  "description": "St. Augustine of Hippo (354-430): from a restless young teacher to the most influential theologian of the Western Church - his conversion in a Milan garden, the Confessions, his mother Monica's prayers, his teaching in his own words, and where to watch his story.",
+  "description": "St. Augustine of Hippo (354-430): from restless young teacher to the West's most influential theologian - Monica's tears and the Confessions.",
   "url": "https://marsharbel.com/st-augustine-of-hippo",
   "isPartOf": {
     "@type": "WebSite",
@@ -106,7 +94,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "St. Augustine of Hippo",
-  "description": "St. Augustine of Hippo (354-430): from a restless young teacher to the most influential theologian of the Western Church - his conversion in a Milan garden, the Confessions, his mother Monica's prayers, his teaching in his own words, and where to watch his story.",
+  "description": "St. Augustine of Hippo (354-430): from restless young teacher to the West's most influential theologian - Monica's tears and the Confessions.",
   "url": "https://marsharbel.com/st-augustine-of-hippo"
 }
   </script>
@@ -160,11 +148,12 @@
   </script>
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20260922-1" />
+  <link rel="stylesheet" href="styles.css?v=20261013-face-crop-1" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/st-augustine-of-hippo" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/st-augustine-of-hippo" />
   <!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -174,9 +163,9 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -184,11 +173,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -212,8 +205,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -227,7 +221,14 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
@@ -238,10 +239,11 @@
       <span class="kicker">Doctor of the Church - Feast August 28</span>
       <h1>St. Augustine of Hippo</h1>
       <p>A restless young professor who ran from God across the Mediterranean and found him in a Milan garden, with a child's voice singing "take and read." He became a bishop in a North African port city and wrote the two books that shaped the Western mind - the Confessions and the City of God. He is a saint of the universal Church and one of its Doctors, and this page is his story, his teaching in his own words, and where to watch his life told well.</p>
-      <figure class="hero-figure"><img src="./media/saints/st-augustine-of-hippo.webp" alt="Saint Augustine in his study, reading - Botticelli's 1480 fresco" width="1080" height="1660" loading="lazy" /><figcaption>Saint Augustine in his study - Botticelli's 1480 fresco in the church of Ognissanti, Florence. Public domain, <a href="https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_050.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>.</figcaption></figure>
+      <figure class="hero-figure"><img src="./media/saints/st-augustine-of-hippo.webp" alt="Saint Augustine in his study, reading - Botticelli's 1480 fresco" width="1080" height="1660" loading="lazy" class="is-portrait"/><figcaption>Saint Augustine in his study - Botticelli's 1480 fresco in the church of Ognissanti, Florence. Public domain, <a href="https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_050.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>.</figcaption></figure>
       <div class="cta-row">
         <a class='btn subtle' href='saints'>Saints &amp; Blesseds</a>
         <a class='btn subtle' href='#watch-augustine'>Watch His Story</a>
+        <a class='btn subtle' href='st-augustine-of-hippo-prayer'>Pray with Saint Augustine</a>
         <a class='btn subtle' href='en/prayers'>Pray with Saint Charbel</a>
       </div>
     </section>
@@ -271,7 +273,7 @@
         <p>The Confessions, written around 397-400, invented a genre: a man telling God the truth about himself. Its first page gives the human condition its most famous sentence - "You have made us for yourself, O Lord, and our heart is restless until it rests in you" - and its tenth book remembers his baptism with the cry, "Late have I loved you, beauty so old and so new, late have I loved you." It is not the story of a man who found religion; it is the story of being found.</p>
         <p>The City of God, written across fourteen years as Rome's world staggered, argued that history is two cities interwoven - one built by love of self, one by love of God - and that no earthly collapse can destroy the second. With On the Trinity, hundreds of sermons, and a mountain of letters, his surviving works run past five million words, more than any other ancient writer's. His own biographer Possidius marveled that one man could write so much; every Western theologian after him, Catholic and Protestant alike, works in his shadow.</p>
       </div>
-      <figure class="hero-figure"><img src="./media/saints/st-augustine-of-hippo-seghers.webp" alt="Saint Augustine as a bishop writing, from a series on the Four Doctors of the Western Church" width="1000" height="803" loading="lazy" /><figcaption>Augustine the writing bishop - from a series on the Four Doctors of the Western Church attributed to Gerard Seghers. Public domain, <a href="https://commons.wikimedia.org/wiki/File:Gerard_Seghers_(attr)_-_The_Four_Doctors_of_the_Western_Church,_Saint_Augustine_of_Hippo_(354%E2%80%93430).jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>.</figcaption></figure>
+      <figure class="hero-figure"><img src="./media/saints/st-augustine-of-hippo-seghers.webp" alt="Saint Augustine as a bishop writing, from a series on the Four Doctors of the Western Church" width="1000" height="803" loading="lazy" class="is-square-ish"/><figcaption>Augustine the writing bishop - from a series on the Four Doctors of the Western Church attributed to Gerard Seghers. Public domain, <a href="https://commons.wikimedia.org/wiki/File:Gerard_Seghers_(attr)_-_The_Four_Doctors_of_the_Western_Church,_Saint_Augustine_of_Hippo_(354%E2%80%93430).jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>.</figcaption></figure>
     </section>
 
     <section class="section">
@@ -347,5 +349,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

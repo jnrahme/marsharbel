@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "renderedReviewStatus": "approved",
+  "catalogApplication": "Copied byte-identically from supplied reviewed application pack a9f41639. This is not identity to earlier producer catalogs.",
+  "catalogChanges": [
+    {
+      "locale": "de",
+      "family": "saint-charbel-prayers-master",
+      "key": "saint-charbel-prayers.how-this-collection-is-l.the-rosary-core-prayers-apostles-creed-our-father-hail-mary",
+      "change": "Dropped (Gotteslob) per German reviewer suggestion accepted in supplied application pack; differs from producer catalog 5ff85681.",
+      "source": "Parent message October 6 2026 00:47:41 EDT"
+    }
+  ],
+  "reviews": {
+    "de": {
+      "status": "approved",
+      "source": "Parent October 6 2026 00:47:41 EDT",
+      "scope": "Real routes at390/1280, language/assets/geometry/headings/a11y and fail-closed switching"
+    },
+    "ar": {
+      "status": "approved",
+      "source": "Parent October 6 2026 00:48:21 EDT",
+      "scope": "Real routes320/390/1280 RTL, placeholder, assets and English fallback"
+    },
+    "fr": {
+      "status": "approved",
+      "source": "Parent October 6 2026 00:48:30 EDT",
+      "scope": "Real routes390/1280 language/pixels/a11y, no blockers"
+    },
+    "ru": {
+      "status": "approved",
+      "source": "Independent RU faith/native/rendered review, verdict file ru-review-verdict-v2-final-2abaaa2f.md relayed by main Oct 6 2026 7:15 PM EDT; key parity 160/160 and 198/198 diffed",
+      "scope": "Prayers hub and novena catalogs, full-length renders mirror EN; interactions covered by activation QA gate"
+    },
+    "pt": {
+      "status": "approved",
+      "source": "Parent final catalog verdict October 6 2026 18:57:46 EDT; recovery carry-over October 6 2026 19:14:23 EDT based on exact SHA256 match",
+      "scope": "Independent faith/native-quality review APPROVED the pt prayer-hub, novena and share catalogs (pt-BR with liturgical vós), verifying traditional texts against vatican.va and fatima.pt.",
+      "renderedReviewStatus": "approved",
+      "renderedReviewSource": "Parent October 6 2026 19:12:29 EDT relays independent preview review at390/1280: share, anchors and switcher verified; recovery carry-over19:14:23 based on exact catalog SHA256 match."
+    },
+    "it": {
+      "status": "approved",
+      "scope": "COPY ONLY: Italian hub160/novena198/share14 key faith and native-quality review, corrected Rosary collect applied exactly. No independent rendered-preview verdict.",
+      "source": "Independent Italian review seat agent-01M49PFNDWG89S96A5MDT8CGW7 v2 verdict Oct6 19:02:14 EDT, required collect relayed by parent19:03:45; original evidence recovered and relayed Oct7 00:23:56 EDT.",
+      "copyReviewStatus": "approved",
+      "renderedReviewStatus": "pending",
+      "finalQAStatus": "pending",
+      "releaseGate": "Merge lane must pass complete CI on exact final PR head and fresh production390/1280 render/switch/share/no-JS, byte and overwrite proof before reporting shipped."
+    },
+    "pl": {
+      "status": "approved",
+      "source": "Parent relay of independent reviewer re-verdict, October 6 2026 7:34 PM EDT",
+      "scope": "v2 Polish catalogs text fixes, structure, share and anchors at 390/1366. Not final activation: calendar insertion and activation switcher recheck still required.",
+      "copyReviewStatus": "approved",
+      "renderedReviewStatus": "pending",
+      "finalQAStatus": "pending",
+      "releaseGate": "Complete merge-lane CI and fresh production render/switch/share/no-JS and byte proof on exact final head; separate source-first July28 clarification remains queued."
+    },
+    "es": {
+      "status": "approved",
+      "source": "Parent October 6 2026 7:31:59 PM EDT relaying independent review seat v2 verdict (patch sha256 ba9df554...3184ddb)",
+      "scope": "es hub + novena keyed catalogs, real routes 320/390/1280, four copy fixes verified, runtime and share checks",
+      "copyReviewStatus": "approved",
+      "renderedReviewStatus": "pending",
+      "finalQAStatus": "pending",
+      "releaseGate": "Complete merge-lane CI and fresh production render/switch/share/no-JS and byte proof on exact final head; separate source-first July28 clarification remains queued."
+    }
+  },
+  "catalogHashes": {
+    "locales/ar/saint-charbel-novena-master-copy.json": "b4e73f2462106f103f1eb8f505fb2666ef7c266a30db839c7dc23d75c06eb871",
+    "locales/ar/saint-charbel-prayers-master-copy.json": "87da3513660d4c5f05e7727ccea7da2854654944eebe783800800f21df554b91",
+    "locales/de/saint-charbel-novena-master-copy.json": "cbbaac2fb6d7f5ca2a9f8eb3192421bd27c0d2d0bc82a27fbc07898c3b8853b1",
+    "locales/de/saint-charbel-prayers-master-copy.json": "51ceddbfe09179a5cb19b2e5fad3c55153756fc0706b7a41d850c952d669d868",
+    "locales/fr/saint-charbel-novena-master-copy.json": "29ef56341843920daebf26cafa4727013f0d40c2ecdb932cd190f7a426fb601d",
+    "locales/fr/saint-charbel-prayers-master-copy.json": "7610f2d38362517116227c9436c600efd1e2d945ba1d3c79d06a9f9eec255496",
+    "locales/ru/saint-charbel-novena-master-copy.json": "21df4b7bbdf016e810d72a913a4b953b9ee5d655d35df9b6d04e7eeac407f4a0",
+    "locales/ru/saint-charbel-prayers-master-copy.json": "7b1de44a0e799bffd3fa24028ef42293bbf7e23c4032c9f3a720a8559f582ab9"
+  },
+  "nextBatchBacklog": [
+    "Arabic hub H2 numeral style",
+    "Arabic novena H1 shadda consistency",
+    "French self-chip hiding requires shared structure change",
+    "French mid-sentence Citations capitalization"
+  ],
+  "shareRuntimeReview": {
+    "status": "approved",
+    "source": "Reviewed ar/fr pair supplied by parent October6 01:19:58 EDT; head-runtime scope ruling01:20:33 EDT",
+    "catalogHashes": {
+      "en": "b81287ff7055ca6d68764544855decd4e19a9a7038d4d1404b8b8bf1c1717884",
+      "ar": "e4e50aba0a0ba66a5ccc98c6135ef3c4fc2af874de2483acea6a7965c3f89b54",
+      "de": "ac216def9453aef82ce0fcf84c4d459ba9a109975b025d100b07eb9bc769b5c6",
+      "fr": "21f731e6b06bac7d2ea438ae2c8b55c2368ef0c26de5a92a3212f19ec70a01d8",
+      "ru": "2b6d5a0947b45db338fc4a7d6129b59495a8c13c16b44c249ea97e92fdf35716"
+    },
+    "renderedReviewSource": "Parent October6 2026 01:38:55 EDT: independent fixed-point and 16 functional runs approved; runtime byte-identical"
+  },
+  "routingDeltaReview": {
+    "status": "approved",
+    "source": "Parent October6 2026 03:59:03 EDT",
+    "scope": "16 page runs (8 routes x 2 widths); all-direction exact-twin switching with anchors; hreflang reciprocity within the full-master clusters.",
+    "caveats": [
+      "Refusals driven only for es/pl; pt/it/ru shown disabled but not driven.",
+      "Scroll position after landing was not measured.",
+      "Pre-existing non-reciprocal es/pt/it/pl novena hreflang cluster points at /en/novena; noted as parked."
+    ]
+  },
+  "sourceCorrectionReview": {
+    "copyReviewStatus": "approved",
+    "renderedReviewStatus": "pending",
+    "finalQAStatus": "pending",
+    "provenance": "Parent Oct6 19:27:12 EN approval,19:30:47 all10 locale deltas complete. This source-first union applies EN+8 currently published locales. HI/TH remain held.",
+    "scope": "Two home slots and one calendar-slot addition only. Merge lane owns full CI + fresh production render proof."
+  }
+}

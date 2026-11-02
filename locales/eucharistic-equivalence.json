@@ -1,0 +1,679 @@
+{
+ "version": 1,
+ "gateStatus": "approved",
+ "family": "eucharistic-miracles",
+ "repinNote": "bodySha256 pins the rendered main digest; catalogSha256 pins catalog bytes; drift fails closed in reviewed_eucharistic.eucharistic_manifest",
+ "groups": {
+  "eucharistic-hub": {
+   "sourceRevision": "3ca2a45614185015873d7a5617e1c675132b28d8",
+   "catalogReview": "eucharistic-hub: locale catalogs shape-equal to English; provenance fields byte-equal (renderer validate()); no blank strings",
+   "renderedReview": "eucharistic-hub: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity, schemaParity, anchorParity, interactionParity across ar/de/es/fr/it/pl/pt",
+   "variants": {
+    "en": {
+     "file": "miracles/eucharistic/index.html",
+     "path": "/miracles/eucharistic/",
+     "bodySha256": "02241045cc59f71b41f267cf270e89558543267a678069f35345c5a99457d0ea"
+    },
+    "ar": {
+     "file": "ar/miracles/eucharistic/index.html",
+     "path": "/ar/miracles/eucharistic/",
+     "bodySha256": "b2e1f2eb1c78e33b4ef9158e3aa7ba300829323465deb9eb4068f1d52e579889",
+     "catalog": "locales/ar/eucharistic-miracles.json",
+     "catalogSha256": "4639136e67837958e9e5c451da165c2ce40956160d33f6306eba374b33222bbf"
+    },
+    "de": {
+     "file": "de/miracles/eucharistic/index.html",
+     "path": "/de/miracles/eucharistic/",
+     "bodySha256": "ab8d4699622f8a5b217d8a53bfb6c83a29ea13aadbed67a229ae9d5b0a39ef01",
+     "catalog": "locales/de/eucharistic-miracles.json",
+     "catalogSha256": "591deb33feeb7f7bdcae1d98a2a758f3cb02f3d335b135f2d9e4d4e25b7977f3"
+    },
+    "es": {
+     "file": "es/miracles/eucharistic/index.html",
+     "path": "/es/miracles/eucharistic/",
+     "bodySha256": "c0ea8427bd2ea4235f0040c811a63b39a5790e8bf3013985cca398a899ebad95",
+     "catalog": "locales/es/eucharistic-miracles.json",
+     "catalogSha256": "14c2526d4234a7fe70e6f766339c31993c830feaf853c424533d0e9626b250f4"
+    },
+    "fr": {
+     "file": "fr/miracles/eucharistic/index.html",
+     "path": "/fr/miracles/eucharistic/",
+     "bodySha256": "b49d657493f084296a40d9c2e1a0f34371acf2cdda0655e17b718bf5e2799626",
+     "catalog": "locales/fr/eucharistic-miracles.json",
+     "catalogSha256": "e712ea60ee90370739a0b1abf3a1b61a3fd13481683d15067ff0d6e60baae8ae"
+    },
+    "it": {
+     "file": "it/miracles/eucharistic/index.html",
+     "path": "/it/miracles/eucharistic/",
+     "bodySha256": "f6f1085a945e4a6c66de4c18ae8b38f97cec19dc04cd794c148d1cd934c14c9c",
+     "catalog": "locales/it/eucharistic-miracles.json",
+     "catalogSha256": "b230ef698a10d48fa1fad2918787f4af609170eac71485c206006d88c6f395ac"
+    },
+    "pl": {
+     "file": "pl/miracles/eucharistic/index.html",
+     "path": "/pl/miracles/eucharistic/",
+     "bodySha256": "c5e4d1bf88a231bf4b1558d04d8418c16cfdc3968081fd05bf5fc98b8a3744e3",
+     "catalog": "locales/pl/eucharistic-miracles.json",
+     "catalogSha256": "a0271831fbf7f19755c9d8b984285865cfaaed34ab2e639e3c636b38271ca05b"
+    },
+    "pt": {
+     "file": "pt/miracles/eucharistic/index.html",
+     "path": "/pt/miracles/eucharistic/",
+     "bodySha256": "a24926aae4dc34c5f73a6a5a8f68bb702e8befc4228a515053a717dca22fd5cf",
+     "catalog": "locales/pt/eucharistic-miracles.json",
+     "catalogSha256": "85909ae9f018f03a817f996704eef3911732f525f21519f813be19d9fd9316ca"
+    }
+   }
+  },
+  "eucharistic-lanciano": {
+   "sourceRevision": "3ca2a45614185015873d7a5617e1c675132b28d8",
+   "catalogReview": "eucharistic-lanciano: locale catalogs shape-equal to English; provenance fields byte-equal (renderer validate()); no blank strings",
+   "renderedReview": "eucharistic-lanciano: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity, schemaParity, anchorParity, interactionParity across ar/de/es/fr/it/pl/pt",
+   "variants": {
+    "en": {
+     "file": "miracles/eucharistic/lanciano.html",
+     "path": "/miracles/eucharistic/lanciano",
+     "bodySha256": "ce8541970cd6b3224ae64fc73cc78e236031d4116530210918737de04410a310"
+    },
+    "ar": {
+     "file": "ar/miracles/eucharistic/lanciano.html",
+     "path": "/ar/miracles/eucharistic/lanciano",
+     "bodySha256": "66f6c6c5ed6cfde44847a110b589a53e6c8ece395fc7e194bae050d5f1be0565",
+     "catalog": "locales/ar/eucharistic-miracles.json",
+     "catalogSha256": "4639136e67837958e9e5c451da165c2ce40956160d33f6306eba374b33222bbf"
+    },
+    "de": {
+     "file": "de/miracles/eucharistic/lanciano.html",
+     "path": "/de/miracles/eucharistic/lanciano",
+     "bodySha256": "05897f45c3497f705bec69a12805ea99ba5e556240d4756de406639d1180f5c0",
+     "catalog": "locales/de/eucharistic-miracles.json",
+     "catalogSha256": "591deb33feeb7f7bdcae1d98a2a758f3cb02f3d335b135f2d9e4d4e25b7977f3"
+    },
+    "es": {
+     "file": "es/miracles/eucharistic/lanciano.html",
+     "path": "/es/miracles/eucharistic/lanciano",
+     "bodySha256": "f325a6e7f2f2fa07a50ecbb496ea2f8d8fb6635ea4467f251efd56593dff574f",
+     "catalog": "locales/es/eucharistic-miracles.json",
+     "catalogSha256": "14c2526d4234a7fe70e6f766339c31993c830feaf853c424533d0e9626b250f4"
+    },
+    "fr": {
+     "file": "fr/miracles/eucharistic/lanciano.html",
+     "path": "/fr/miracles/eucharistic/lanciano",
+     "bodySha256": "08c3dfac425922bbad7b9608b5a3b3d1d991c82a16c1919cc69b0086342a35f1",
+     "catalog": "locales/fr/eucharistic-miracles.json",
+     "catalogSha256": "e712ea60ee90370739a0b1abf3a1b61a3fd13481683d15067ff0d6e60baae8ae"
+    },
+    "it": {
+     "file": "it/miracles/eucharistic/lanciano.html",
+     "path": "/it/miracles/eucharistic/lanciano",
+     "bodySha256": "bb09fb918056d7e4393f844da1110a032c6de77a3cd636460d99e6ab12271298",
+     "catalog": "locales/it/eucharistic-miracles.json",
+     "catalogSha256": "b230ef698a10d48fa1fad2918787f4af609170eac71485c206006d88c6f395ac"
+    },
+    "pl": {
+     "file": "pl/miracles/eucharistic/lanciano.html",
+     "path": "/pl/miracles/eucharistic/lanciano",
+     "bodySha256": "67225757bb4c5eebf889040581eeb12972c51acf1ba946b0aaaa6b6befc2714a",
+     "catalog": "locales/pl/eucharistic-miracles.json",
+     "catalogSha256": "a0271831fbf7f19755c9d8b984285865cfaaed34ab2e639e3c636b38271ca05b"
+    },
+    "pt": {
+     "file": "pt/miracles/eucharistic/lanciano.html",
+     "path": "/pt/miracles/eucharistic/lanciano",
+     "bodySha256": "9772544109e54542d66a7ed53f60d58a4edaabfb0f3678cbc0f39b983742ef77",
+     "catalog": "locales/pt/eucharistic-miracles.json",
+     "catalogSha256": "85909ae9f018f03a817f996704eef3911732f525f21519f813be19d9fd9316ca"
+    }
+   }
+  },
+  "eucharistic-bolsena-orvieto": {
+   "sourceRevision": "3ca2a45614185015873d7a5617e1c675132b28d8",
+   "catalogReview": "eucharistic-bolsena-orvieto: locale catalogs shape-equal to English; provenance fields byte-equal (renderer validate()); no blank strings",
+   "renderedReview": "eucharistic-bolsena-orvieto: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity, schemaParity, anchorParity, interactionParity across ar/de/es/fr/it/pl/pt",
+   "variants": {
+    "en": {
+     "file": "miracles/eucharistic/bolsena-orvieto.html",
+     "path": "/miracles/eucharistic/bolsena-orvieto",
+     "bodySha256": "297a8dd0468502170c83dfe385df3fdc625a61483479ea6d5509de7296d6cf78"
+    },
+    "ar": {
+     "file": "ar/miracles/eucharistic/bolsena-orvieto.html",
+     "path": "/ar/miracles/eucharistic/bolsena-orvieto",
+     "bodySha256": "9ea3ae680773b9cab91027991d0a048da83e952854f92567eaf5519c2a68c9ff",
+     "catalog": "locales/ar/eucharistic-miracles.json",
+     "catalogSha256": "4639136e67837958e9e5c451da165c2ce40956160d33f6306eba374b33222bbf"
+    },
+    "de": {
+     "file": "de/miracles/eucharistic/bolsena-orvieto.html",
+     "path": "/de/miracles/eucharistic/bolsena-orvieto",
+     "bodySha256": "538a6152d8f657990c70a138ed4ca2cfaece5ceeeb57305fbbcb1390dae268be",
+     "catalog": "locales/de/eucharistic-miracles.json",
+     "catalogSha256": "591deb33feeb7f7bdcae1d98a2a758f3cb02f3d335b135f2d9e4d4e25b7977f3"
+    },
+    "es": {
+     "file": "es/miracles/eucharistic/bolsena-orvieto.html",
+     "path": "/es/miracles/eucharistic/bolsena-orvieto",
+     "bodySha256": "dad92a146fa22082c5075f95f34e316ebcf3f81bb460d3d5090ef1d04fb0b5b4",
+     "catalog": "locales/es/eucharistic-miracles.json",
+     "catalogSha256": "14c2526d4234a7fe70e6f766339c31993c830feaf853c424533d0e9626b250f4"
+    },
+    "fr": {
+     "file": "fr/miracles/eucharistic/bolsena-orvieto.html",
+     "path": "/fr/miracles/eucharistic/bolsena-orvieto",
+     "bodySha256": "06908fa8a7aec4ef71992e0e1ded5db60244ac44f8755ff944f733830dc30fde",
+     "catalog": "locales/fr/eucharistic-miracles.json",
+     "catalogSha256": "e712ea60ee90370739a0b1abf3a1b61a3fd13481683d15067ff0d6e60baae8ae"
+    },
+    "it": {
+     "file": "it/miracles/eucharistic/bolsena-orvieto.html",
+     "path": "/it/miracles/eucharistic/bolsena-orvieto",
+     "bodySha256": "4f4a318bdd3b790941f66a7ccb606cb6e295f89fac2c4a76c9bd8f52c48cf2a5",
+     "catalog": "locales/it/eucharistic-miracles.json",
+     "catalogSha256": "b230ef698a10d48fa1fad2918787f4af609170eac71485c206006d88c6f395ac"
+    },
+    "pl": {
+     "file": "pl/miracles/eucharistic/bolsena-orvieto.html",
+     "path": "/pl/miracles/eucharistic/bolsena-orvieto",
+     "bodySha256": "7a136f491bec4d43c52a83299e508ae639dbe45ccbbe38f6268432902514e3fc",
+     "catalog": "locales/pl/eucharistic-miracles.json",
+     "catalogSha256": "a0271831fbf7f19755c9d8b984285865cfaaed34ab2e639e3c636b38271ca05b"
+    },
+    "pt": {
+     "file": "pt/miracles/eucharistic/bolsena-orvieto.html",
+     "path": "/pt/miracles/eucharistic/bolsena-orvieto",
+     "bodySha256": "6e8580aac89cda28102cdb579610a7d769d446580a5ed5000978581647cfbbe7",
+     "catalog": "locales/pt/eucharistic-miracles.json",
+     "catalogSha256": "85909ae9f018f03a817f996704eef3911732f525f21519f813be19d9fd9316ca"
+    }
+   }
+  },
+  "eucharistic-siena": {
+   "sourceRevision": "3ca2a45614185015873d7a5617e1c675132b28d8",
+   "catalogReview": "eucharistic-siena: locale catalogs shape-equal to English; provenance fields byte-equal (renderer validate()); no blank strings",
+   "renderedReview": "eucharistic-siena: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity, schemaParity, anchorParity, interactionParity across ar/de/es/fr/it/pl/pt",
+   "variants": {
+    "en": {
+     "file": "miracles/eucharistic/siena.html",
+     "path": "/miracles/eucharistic/siena",
+     "bodySha256": "13d0c659299841823db757f81fdeb9dedb5bc629d014abb8871df6832a39acf8"
+    },
+    "ar": {
+     "file": "ar/miracles/eucharistic/siena.html",
+     "path": "/ar/miracles/eucharistic/siena",
+     "bodySha256": "528cb64106b5f110cc550ffff2ac18ba1de5cd8311c9cb34cf387d84ad329769",
+     "catalog": "locales/ar/eucharistic-miracles.json",
+     "catalogSha256": "4639136e67837958e9e5c451da165c2ce40956160d33f6306eba374b33222bbf"
+    },
+    "de": {
+     "file": "de/miracles/eucharistic/siena.html",
+     "path": "/de/miracles/eucharistic/siena",
+     "bodySha256": "d51f0e9a760c8333aeb7448997518ddd022a704d1a93138764467e8a4928c5e6",
+     "catalog": "locales/de/eucharistic-miracles.json",
+     "catalogSha256": "591deb33feeb7f7bdcae1d98a2a758f3cb02f3d335b135f2d9e4d4e25b7977f3"
+    },
+    "es": {
+     "file": "es/miracles/eucharistic/siena.html",
+     "path": "/es/miracles/eucharistic/siena",
+     "bodySha256": "9686c433d960d2b37c44ee836830a48eacc38e7a3b374dd043f5599140b65fcc",
+     "catalog": "locales/es/eucharistic-miracles.json",
+     "catalogSha256": "14c2526d4234a7fe70e6f766339c31993c830feaf853c424533d0e9626b250f4"
+    },
+    "fr": {
+     "file": "fr/miracles/eucharistic/siena.html",
+     "path": "/fr/miracles/eucharistic/siena",
+     "bodySha256": "bfb6f6e0c2ac2920bd8626bad6a527ffff777ad5fa3ae4441d617275f28d2bb9",
+     "catalog": "locales/fr/eucharistic-miracles.json",
+     "catalogSha256": "e712ea60ee90370739a0b1abf3a1b61a3fd13481683d15067ff0d6e60baae8ae"
+    },
+    "it": {
+     "file": "it/miracles/eucharistic/siena.html",
+     "path": "/it/miracles/eucharistic/siena",
+     "bodySha256": "4c3caeea24b3cef4476a46d33ad43ebb380fb3950449cebf2bd569fb6a15a0cf",
+     "catalog": "locales/it/eucharistic-miracles.json",
+     "catalogSha256": "b230ef698a10d48fa1fad2918787f4af609170eac71485c206006d88c6f395ac"
+    },
+    "pl": {
+     "file": "pl/miracles/eucharistic/siena.html",
+     "path": "/pl/miracles/eucharistic/siena",
+     "bodySha256": "8ec4cc46e194c5c8a9a687c7992c8e91b6984637ffa9f0666c02291462ad2d8b",
+     "catalog": "locales/pl/eucharistic-miracles.json",
+     "catalogSha256": "a0271831fbf7f19755c9d8b984285865cfaaed34ab2e639e3c636b38271ca05b"
+    },
+    "pt": {
+     "file": "pt/miracles/eucharistic/siena.html",
+     "path": "/pt/miracles/eucharistic/siena",
+     "bodySha256": "625e9ec1938b0560df5aab7ab9555862f8a9d8510bc45d68849ae14cc27258e8",
+     "catalog": "locales/pt/eucharistic-miracles.json",
+     "catalogSha256": "85909ae9f018f03a817f996704eef3911732f525f21519f813be19d9fd9316ca"
+    }
+   }
+  },
+  "eucharistic-santarem": {
+   "sourceRevision": "3ca2a45614185015873d7a5617e1c675132b28d8",
+   "catalogReview": "eucharistic-santarem: locale catalogs shape-equal to English; provenance fields byte-equal (renderer validate()); no blank strings",
+   "renderedReview": "eucharistic-santarem: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity, schemaParity, anchorParity, interactionParity across ar/de/es/fr/it/pl/pt",
+   "variants": {
+    "en": {
+     "file": "miracles/eucharistic/santarem.html",
+     "path": "/miracles/eucharistic/santarem",
+     "bodySha256": "fdb44206679f60916b3e35e5042a5c9710708fb32fe592c883fa1fbef7c3781f"
+    },
+    "ar": {
+     "file": "ar/miracles/eucharistic/santarem.html",
+     "path": "/ar/miracles/eucharistic/santarem",
+     "bodySha256": "8b7f4b0b7c9fac44a840634aefe912db05981a6fa21b38e39d006a0d5803dfe8",
+     "catalog": "locales/ar/eucharistic-miracles.json",
+     "catalogSha256": "4639136e67837958e9e5c451da165c2ce40956160d33f6306eba374b33222bbf"
+    },
+    "de": {
+     "file": "de/miracles/eucharistic/santarem.html",
+     "path": "/de/miracles/eucharistic/santarem",
+     "bodySha256": "d0feef40b5130dc140c93ad29a4edebf66cbb303962d7ea570446971f37a3230",
+     "catalog": "locales/de/eucharistic-miracles.json",
+     "catalogSha256": "591deb33feeb7f7bdcae1d98a2a758f3cb02f3d335b135f2d9e4d4e25b7977f3"
+    },
+    "es": {
+     "file": "es/miracles/eucharistic/santarem.html",
+     "path": "/es/miracles/eucharistic/santarem",
+     "bodySha256": "9014c34bf5dc7dd6a619f27294f64ec79b94cb16c26f526dd25ec706094a1733",
+     "catalog": "locales/es/eucharistic-miracles.json",
+     "catalogSha256": "14c2526d4234a7fe70e6f766339c31993c830feaf853c424533d0e9626b250f4"
+    },
+    "fr": {
+     "file": "fr/miracles/eucharistic/santarem.html",
+     "path": "/fr/miracles/eucharistic/santarem",
+     "bodySha256": "a90ea7d7e44667f79a474ceff284515218649dcb185dc6983fd3f984467c7ebe",
+     "catalog": "locales/fr/eucharistic-miracles.json",
+     "catalogSha256": "e712ea60ee90370739a0b1abf3a1b61a3fd13481683d15067ff0d6e60baae8ae"
+    },
+    "it": {
+     "file": "it/miracles/eucharistic/santarem.html",
+     "path": "/it/miracles/eucharistic/santarem",
+     "bodySha256": "52b19a522b11f55ba5669861b0d65ec6fc236af40c4374fa609a5568880dff05",
+     "catalog": "locales/it/eucharistic-miracles.json",
+     "catalogSha256": "b230ef698a10d48fa1fad2918787f4af609170eac71485c206006d88c6f395ac"
+    },
+    "pl": {
+     "file": "pl/miracles/eucharistic/santarem.html",
+     "path": "/pl/miracles/eucharistic/santarem",
+     "bodySha256": "16a17fcd9ffd445379bff89d795e8b881dafc327472c754939942a80e72563f5",
+     "catalog": "locales/pl/eucharistic-miracles.json",
+     "catalogSha256": "a0271831fbf7f19755c9d8b984285865cfaaed34ab2e639e3c636b38271ca05b"
+    },
+    "pt": {
+     "file": "pt/miracles/eucharistic/santarem.html",
+     "path": "/pt/miracles/eucharistic/santarem",
+     "bodySha256": "a05586ba41a3e2de95cf5d040138ca685932520f4cf5bd19f998c4c7076c6462",
+     "catalog": "locales/pt/eucharistic-miracles.json",
+     "catalogSha256": "85909ae9f018f03a817f996704eef3911732f525f21519f813be19d9fd9316ca"
+    }
+   }
+  },
+  "eucharistic-sokolka": {
+   "sourceRevision": "3ca2a45614185015873d7a5617e1c675132b28d8",
+   "catalogReview": "eucharistic-sokolka: locale catalogs shape-equal to English; provenance fields byte-equal (renderer validate()); no blank strings",
+   "renderedReview": "eucharistic-sokolka: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity, schemaParity, anchorParity, interactionParity across ar/de/es/fr/it/pl/pt",
+   "variants": {
+    "en": {
+     "file": "miracles/eucharistic/sokolka.html",
+     "path": "/miracles/eucharistic/sokolka",
+     "bodySha256": "1c04b1c34ba6bf44c5d31458ad76cd62659a53e640b3e64595ea5ce1258ba2c5"
+    },
+    "ar": {
+     "file": "ar/miracles/eucharistic/sokolka.html",
+     "path": "/ar/miracles/eucharistic/sokolka",
+     "bodySha256": "e6d25ccce6dd446245290119e58d700c88b0cd1ced40b5e925a385966294f08b",
+     "catalog": "locales/ar/eucharistic-miracles.json",
+     "catalogSha256": "4639136e67837958e9e5c451da165c2ce40956160d33f6306eba374b33222bbf"
+    },
+    "de": {
+     "file": "de/miracles/eucharistic/sokolka.html",
+     "path": "/de/miracles/eucharistic/sokolka",
+     "bodySha256": "c495f6470c938eff7c89b987d2312687950cccaaccbf34755c391d18ca1c18a8",
+     "catalog": "locales/de/eucharistic-miracles.json",
+     "catalogSha256": "591deb33feeb7f7bdcae1d98a2a758f3cb02f3d335b135f2d9e4d4e25b7977f3"
+    },
+    "es": {
+     "file": "es/miracles/eucharistic/sokolka.html",
+     "path": "/es/miracles/eucharistic/sokolka",
+     "bodySha256": "9433c7e492bc185f9dccf0ec438c005ec68eed9a7b1c226171ca60489afc8354",
+     "catalog": "locales/es/eucharistic-miracles.json",
+     "catalogSha256": "14c2526d4234a7fe70e6f766339c31993c830feaf853c424533d0e9626b250f4"
+    },
+    "fr": {
+     "file": "fr/miracles/eucharistic/sokolka.html",
+     "path": "/fr/miracles/eucharistic/sokolka",
+     "bodySha256": "3162e3f6e4d4da993a04b4f42b866686e3f497f0cb27c71a9f0184faff6df0cb",
+     "catalog": "locales/fr/eucharistic-miracles.json",
+     "catalogSha256": "e712ea60ee90370739a0b1abf3a1b61a3fd13481683d15067ff0d6e60baae8ae"
+    },
+    "it": {
+     "file": "it/miracles/eucharistic/sokolka.html",
+     "path": "/it/miracles/eucharistic/sokolka",
+     "bodySha256": "be279b762c436cf6f50289c85f84016366c72b4eed17097db2501be668a26699",
+     "catalog": "locales/it/eucharistic-miracles.json",
+     "catalogSha256": "b230ef698a10d48fa1fad2918787f4af609170eac71485c206006d88c6f395ac"
+    },
+    "pl": {
+     "file": "pl/miracles/eucharistic/sokolka.html",
+     "path": "/pl/miracles/eucharistic/sokolka",
+     "bodySha256": "1ed691420fc0be4308854b81efb1509ebc3c1b6924757c19e5c7f11c1ef3e759",
+     "catalog": "locales/pl/eucharistic-miracles.json",
+     "catalogSha256": "a0271831fbf7f19755c9d8b984285865cfaaed34ab2e639e3c636b38271ca05b"
+    },
+    "pt": {
+     "file": "pt/miracles/eucharistic/sokolka.html",
+     "path": "/pt/miracles/eucharistic/sokolka",
+     "bodySha256": "e09b3e3e9f21b9f51a268f07e063be25c3279b49d710398e267174a8071bb5c9",
+     "catalog": "locales/pt/eucharistic-miracles.json",
+     "catalogSha256": "85909ae9f018f03a817f996704eef3911732f525f21519f813be19d9fd9316ca"
+    }
+   }
+  },
+  "eucharistic-legnica": {
+   "sourceRevision": "3ca2a45614185015873d7a5617e1c675132b28d8",
+   "catalogReview": "eucharistic-legnica: locale catalogs shape-equal to English; provenance fields byte-equal (renderer validate()); no blank strings",
+   "renderedReview": "eucharistic-legnica: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity, schemaParity, anchorParity, interactionParity across ar/de/es/fr/it/pl/pt",
+   "variants": {
+    "en": {
+     "file": "miracles/eucharistic/legnica.html",
+     "path": "/miracles/eucharistic/legnica",
+     "bodySha256": "30a187454623d72b88c56bb583e1ba5aca9595f0e7d46946ffc8e48da26c774a"
+    },
+    "ar": {
+     "file": "ar/miracles/eucharistic/legnica.html",
+     "path": "/ar/miracles/eucharistic/legnica",
+     "bodySha256": "cbe28667d732c8670fd4b944f14e78126617b79d6f1ffb94d4b862cfee44764e",
+     "catalog": "locales/ar/eucharistic-miracles.json",
+     "catalogSha256": "4639136e67837958e9e5c451da165c2ce40956160d33f6306eba374b33222bbf"
+    },
+    "de": {
+     "file": "de/miracles/eucharistic/legnica.html",
+     "path": "/de/miracles/eucharistic/legnica",
+     "bodySha256": "ddbd8d5c194083725b2996d2f1fe4674423ae9fc7c6db75fd0f22c209a990a22",
+     "catalog": "locales/de/eucharistic-miracles.json",
+     "catalogSha256": "591deb33feeb7f7bdcae1d98a2a758f3cb02f3d335b135f2d9e4d4e25b7977f3"
+    },
+    "es": {
+     "file": "es/miracles/eucharistic/legnica.html",
+     "path": "/es/miracles/eucharistic/legnica",
+     "bodySha256": "af768e7d4cc966c417e0637349a6b1881b1d359b0d76f5ccac6286851a416d00",
+     "catalog": "locales/es/eucharistic-miracles.json",
+     "catalogSha256": "14c2526d4234a7fe70e6f766339c31993c830feaf853c424533d0e9626b250f4"
+    },
+    "fr": {
+     "file": "fr/miracles/eucharistic/legnica.html",
+     "path": "/fr/miracles/eucharistic/legnica",
+     "bodySha256": "ef4e18e1e9f27b36f5ff76db07b4aeb2565725014d8975bd6fd375e49bc475b4",
+     "catalog": "locales/fr/eucharistic-miracles.json",
+     "catalogSha256": "e712ea60ee90370739a0b1abf3a1b61a3fd13481683d15067ff0d6e60baae8ae"
+    },
+    "it": {
+     "file": "it/miracles/eucharistic/legnica.html",
+     "path": "/it/miracles/eucharistic/legnica",
+     "bodySha256": "2d32f2313bf7b9fd1ebf07153c381e3c96c726c971cc46b3530b56bed6e62959",
+     "catalog": "locales/it/eucharistic-miracles.json",
+     "catalogSha256": "b230ef698a10d48fa1fad2918787f4af609170eac71485c206006d88c6f395ac"
+    },
+    "pl": {
+     "file": "pl/miracles/eucharistic/legnica.html",
+     "path": "/pl/miracles/eucharistic/legnica",
+     "bodySha256": "42020ca4ab56a548f0b0602f5ce901e685617f3b2dce200e888696daeef5fb13",
+     "catalog": "locales/pl/eucharistic-miracles.json",
+     "catalogSha256": "a0271831fbf7f19755c9d8b984285865cfaaed34ab2e639e3c636b38271ca05b"
+    },
+    "pt": {
+     "file": "pt/miracles/eucharistic/legnica.html",
+     "path": "/pt/miracles/eucharistic/legnica",
+     "bodySha256": "e963842c62627a85716c62490967eb0a7111c189efcb8f3dfb89097727aa3073",
+     "catalog": "locales/pt/eucharistic-miracles.json",
+     "catalogSha256": "85909ae9f018f03a817f996704eef3911732f525f21519f813be19d9fd9316ca"
+    }
+   }
+  },
+  "eucharistic-ludbreg": {
+   "sourceRevision": "3ca2a45614185015873d7a5617e1c675132b28d8",
+   "catalogReview": "eucharistic-ludbreg: locale catalogs shape-equal to English; provenance fields byte-equal (renderer validate()); no blank strings",
+   "renderedReview": "eucharistic-ludbreg: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity, schemaParity, anchorParity, interactionParity across ar/de/es/fr/it/pl/pt",
+   "variants": {
+    "en": {
+     "file": "miracles/eucharistic/ludbreg.html",
+     "path": "/miracles/eucharistic/ludbreg",
+     "bodySha256": "1d16d522636a9e849dc44d5740192ba3978e03fe39daf76ac327434fce1897c3"
+    },
+    "ar": {
+     "file": "ar/miracles/eucharistic/ludbreg.html",
+     "path": "/ar/miracles/eucharistic/ludbreg",
+     "bodySha256": "c38d4c103422a3aec6dce6a9a022a8cfbde234b716ec44f554c33d4f274aa75d",
+     "catalog": "locales/ar/eucharistic-miracles.json",
+     "catalogSha256": "4639136e67837958e9e5c451da165c2ce40956160d33f6306eba374b33222bbf"
+    },
+    "de": {
+     "file": "de/miracles/eucharistic/ludbreg.html",
+     "path": "/de/miracles/eucharistic/ludbreg",
+     "bodySha256": "05411ca55c79498a3fb55eb25530839f687f1074a09b04ede0225d62a0a731d3",
+     "catalog": "locales/de/eucharistic-miracles.json",
+     "catalogSha256": "591deb33feeb7f7bdcae1d98a2a758f3cb02f3d335b135f2d9e4d4e25b7977f3"
+    },
+    "es": {
+     "file": "es/miracles/eucharistic/ludbreg.html",
+     "path": "/es/miracles/eucharistic/ludbreg",
+     "bodySha256": "c42deb22ae6aa5df894171f719ed697bdab1250b56df7dc3a0b9bab6b45d2526",
+     "catalog": "locales/es/eucharistic-miracles.json",
+     "catalogSha256": "14c2526d4234a7fe70e6f766339c31993c830feaf853c424533d0e9626b250f4"
+    },
+    "fr": {
+     "file": "fr/miracles/eucharistic/ludbreg.html",
+     "path": "/fr/miracles/eucharistic/ludbreg",
+     "bodySha256": "f0442c6cddeea801535e1742a0f1e43f56f5cba5bd3bd5964ac644bc6e36b209",
+     "catalog": "locales/fr/eucharistic-miracles.json",
+     "catalogSha256": "e712ea60ee90370739a0b1abf3a1b61a3fd13481683d15067ff0d6e60baae8ae"
+    },
+    "it": {
+     "file": "it/miracles/eucharistic/ludbreg.html",
+     "path": "/it/miracles/eucharistic/ludbreg",
+     "bodySha256": "8f8405b3cfcfc40700b257720760441232cea82f7057a919ec75da4ddd10fbca",
+     "catalog": "locales/it/eucharistic-miracles.json",
+     "catalogSha256": "b230ef698a10d48fa1fad2918787f4af609170eac71485c206006d88c6f395ac"
+    },
+    "pl": {
+     "file": "pl/miracles/eucharistic/ludbreg.html",
+     "path": "/pl/miracles/eucharistic/ludbreg",
+     "bodySha256": "046f4ff87e581c58d8fedd7924e0cc568d10e354e70183d43c430fe846a144af",
+     "catalog": "locales/pl/eucharistic-miracles.json",
+     "catalogSha256": "a0271831fbf7f19755c9d8b984285865cfaaed34ab2e639e3c636b38271ca05b"
+    },
+    "pt": {
+     "file": "pt/miracles/eucharistic/ludbreg.html",
+     "path": "/pt/miracles/eucharistic/ludbreg",
+     "bodySha256": "30bb6830a5654ff05321256724492d2388cc7636341ca956764417874b414ca3",
+     "catalog": "locales/pt/eucharistic-miracles.json",
+     "catalogSha256": "85909ae9f018f03a817f996704eef3911732f525f21519f813be19d9fd9316ca"
+    }
+   }
+  },
+  "eucharistic-amsterdam": {
+   "sourceRevision": "3ca2a45614185015873d7a5617e1c675132b28d8",
+   "catalogReview": "eucharistic-amsterdam: locale catalogs shape-equal to English; provenance fields byte-equal (renderer validate()); no blank strings",
+   "renderedReview": "eucharistic-amsterdam: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity, schemaParity, anchorParity, interactionParity across ar/de/es/fr/it/pl/pt",
+   "variants": {
+    "en": {
+     "file": "miracles/eucharistic/amsterdam.html",
+     "path": "/miracles/eucharistic/amsterdam",
+     "bodySha256": "367423a37a324540d78d109f49a764d9530c8daace7540aa3d8188dd71c3609c"
+    },
+    "ar": {
+     "file": "ar/miracles/eucharistic/amsterdam.html",
+     "path": "/ar/miracles/eucharistic/amsterdam",
+     "bodySha256": "1d1eb17ff90be502205fce83ff592ea5cf85bd47a5df22b145c5d580751262b7",
+     "catalog": "locales/ar/eucharistic-miracles.json",
+     "catalogSha256": "4639136e67837958e9e5c451da165c2ce40956160d33f6306eba374b33222bbf"
+    },
+    "de": {
+     "file": "de/miracles/eucharistic/amsterdam.html",
+     "path": "/de/miracles/eucharistic/amsterdam",
+     "bodySha256": "ec4fb5a30b8dfbc566b40d870f697f3701cbdba63d3ee863e143a2c5678bc5e6",
+     "catalog": "locales/de/eucharistic-miracles.json",
+     "catalogSha256": "591deb33feeb7f7bdcae1d98a2a758f3cb02f3d335b135f2d9e4d4e25b7977f3"
+    },
+    "es": {
+     "file": "es/miracles/eucharistic/amsterdam.html",
+     "path": "/es/miracles/eucharistic/amsterdam",
+     "bodySha256": "5d78c6030f623704fc187ab7ef8290b21f050860cfc226a63e5a4a3030a32691",
+     "catalog": "locales/es/eucharistic-miracles.json",
+     "catalogSha256": "14c2526d4234a7fe70e6f766339c31993c830feaf853c424533d0e9626b250f4"
+    },
+    "fr": {
+     "file": "fr/miracles/eucharistic/amsterdam.html",
+     "path": "/fr/miracles/eucharistic/amsterdam",
+     "bodySha256": "e0660f7bb3cbc7796175c5e742567049fe520e9d0c5680ce94e76e268569c7a2",
+     "catalog": "locales/fr/eucharistic-miracles.json",
+     "catalogSha256": "e712ea60ee90370739a0b1abf3a1b61a3fd13481683d15067ff0d6e60baae8ae"
+    },
+    "it": {
+     "file": "it/miracles/eucharistic/amsterdam.html",
+     "path": "/it/miracles/eucharistic/amsterdam",
+     "bodySha256": "86659ac8bcb3629cee2e7dbbfa38d55d40dd1430f33f51e1f6afce3f50bafe42",
+     "catalog": "locales/it/eucharistic-miracles.json",
+     "catalogSha256": "b230ef698a10d48fa1fad2918787f4af609170eac71485c206006d88c6f395ac"
+    },
+    "pl": {
+     "file": "pl/miracles/eucharistic/amsterdam.html",
+     "path": "/pl/miracles/eucharistic/amsterdam",
+     "bodySha256": "1f8dca8b82bcfdd448ea66d03aa05dab41cb0248cb8c9b0eccf65b53eb6e7cc0",
+     "catalog": "locales/pl/eucharistic-miracles.json",
+     "catalogSha256": "a0271831fbf7f19755c9d8b984285865cfaaed34ab2e639e3c636b38271ca05b"
+    },
+    "pt": {
+     "file": "pt/miracles/eucharistic/amsterdam.html",
+     "path": "/pt/miracles/eucharistic/amsterdam",
+     "bodySha256": "58d83756488d30cb96a901220c77908e4cad4be18ef1ad69bc1a5a6006c75a8a",
+     "catalog": "locales/pt/eucharistic-miracles.json",
+     "catalogSha256": "85909ae9f018f03a817f996704eef3911732f525f21519f813be19d9fd9316ca"
+    }
+   }
+  },
+  "eucharistic-ivorra": {
+   "sourceRevision": "3ca2a45614185015873d7a5617e1c675132b28d8",
+   "catalogReview": "eucharistic-ivorra: locale catalogs shape-equal to English; provenance fields byte-equal (renderer validate()); no blank strings",
+   "renderedReview": "eucharistic-ivorra: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity, schemaParity, anchorParity, interactionParity across ar/de/es/fr/it/pl/pt",
+   "variants": {
+    "en": {
+     "file": "miracles/eucharistic/ivorra.html",
+     "path": "/miracles/eucharistic/ivorra",
+     "bodySha256": "750774b66c67ab6148aaf832ac3c169624e9ee39e88a0369540ca33bf553bc72"
+    },
+    "ar": {
+     "file": "ar/miracles/eucharistic/ivorra.html",
+     "path": "/ar/miracles/eucharistic/ivorra",
+     "bodySha256": "a999e45a635eab6b1642f81f32316406c23eabf0d90c99d594a69da41b3b4098",
+     "catalog": "locales/ar/eucharistic-miracles.json",
+     "catalogSha256": "4639136e67837958e9e5c451da165c2ce40956160d33f6306eba374b33222bbf"
+    },
+    "de": {
+     "file": "de/miracles/eucharistic/ivorra.html",
+     "path": "/de/miracles/eucharistic/ivorra",
+     "bodySha256": "3a71d493fa9b403fb4bd0ea0ef451fb3318fbda29e434be7ad8bb4956d11e2a8",
+     "catalog": "locales/de/eucharistic-miracles.json",
+     "catalogSha256": "591deb33feeb7f7bdcae1d98a2a758f3cb02f3d335b135f2d9e4d4e25b7977f3"
+    },
+    "es": {
+     "file": "es/miracles/eucharistic/ivorra.html",
+     "path": "/es/miracles/eucharistic/ivorra",
+     "bodySha256": "8c6638c4986d3913bc3bd334b185f5adba7a90313ac61b24b3cc765e931c5516",
+     "catalog": "locales/es/eucharistic-miracles.json",
+     "catalogSha256": "14c2526d4234a7fe70e6f766339c31993c830feaf853c424533d0e9626b250f4"
+    },
+    "fr": {
+     "file": "fr/miracles/eucharistic/ivorra.html",
+     "path": "/fr/miracles/eucharistic/ivorra",
+     "bodySha256": "d2159fafd8725c93e7341a4224171ca732c150ffe0a60118c7b23880dbb09451",
+     "catalog": "locales/fr/eucharistic-miracles.json",
+     "catalogSha256": "e712ea60ee90370739a0b1abf3a1b61a3fd13481683d15067ff0d6e60baae8ae"
+    },
+    "it": {
+     "file": "it/miracles/eucharistic/ivorra.html",
+     "path": "/it/miracles/eucharistic/ivorra",
+     "bodySha256": "0a42140e1d293078d7d226952fd1e199f19b93ab6383d6a9ea3d648f039674e5",
+     "catalog": "locales/it/eucharistic-miracles.json",
+     "catalogSha256": "b230ef698a10d48fa1fad2918787f4af609170eac71485c206006d88c6f395ac"
+    },
+    "pl": {
+     "file": "pl/miracles/eucharistic/ivorra.html",
+     "path": "/pl/miracles/eucharistic/ivorra",
+     "bodySha256": "220f21bce46ed3c9af16389dc1875bd60163c9610e378b1f84c944390fb10138",
+     "catalog": "locales/pl/eucharistic-miracles.json",
+     "catalogSha256": "a0271831fbf7f19755c9d8b984285865cfaaed34ab2e639e3c636b38271ca05b"
+    },
+    "pt": {
+     "file": "pt/miracles/eucharistic/ivorra.html",
+     "path": "/pt/miracles/eucharistic/ivorra",
+     "bodySha256": "5785136928287e2021fe1d0ba4f16dd22983f8336bd8db2c3819044cc316d150",
+     "catalog": "locales/pt/eucharistic-miracles.json",
+     "catalogSha256": "85909ae9f018f03a817f996704eef3911732f525f21519f813be19d9fd9316ca"
+    }
+   }
+  },
+  "eucharistic-faverney": {
+   "sourceRevision": "3ca2a45614185015873d7a5617e1c675132b28d8",
+   "catalogReview": "eucharistic-faverney: locale catalogs shape-equal to English; provenance fields byte-equal (renderer validate()); no blank strings",
+   "renderedReview": "eucharistic-faverney: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity, schemaParity, anchorParity, interactionParity across ar/de/es/fr/it/pl/pt",
+   "variants": {
+    "en": {
+     "file": "miracles/eucharistic/faverney.html",
+     "path": "/miracles/eucharistic/faverney",
+     "bodySha256": "88841af5864b3d517c2a831f4952a894dbbf2fd276e86f4613ce494690ccaf41"
+    },
+    "ar": {
+     "file": "ar/miracles/eucharistic/faverney.html",
+     "path": "/ar/miracles/eucharistic/faverney",
+     "bodySha256": "bee908b5f91d905056c96624ccddbf48247d42ffa8b6432a2a494c14a908265c",
+     "catalog": "locales/ar/eucharistic-miracles.json",
+     "catalogSha256": "4639136e67837958e9e5c451da165c2ce40956160d33f6306eba374b33222bbf"
+    },
+    "de": {
+     "file": "de/miracles/eucharistic/faverney.html",
+     "path": "/de/miracles/eucharistic/faverney",
+     "bodySha256": "f8e4df6b849e255378fad4514d6c2d648678e2ac36002e261c8c67d2bb549987",
+     "catalog": "locales/de/eucharistic-miracles.json",
+     "catalogSha256": "591deb33feeb7f7bdcae1d98a2a758f3cb02f3d335b135f2d9e4d4e25b7977f3"
+    },
+    "es": {
+     "file": "es/miracles/eucharistic/faverney.html",
+     "path": "/es/miracles/eucharistic/faverney",
+     "bodySha256": "5f7f9f95691b8c12ce2680b7a6af8a335bcc1e886b8acd53e6357865f34a1af6",
+     "catalog": "locales/es/eucharistic-miracles.json",
+     "catalogSha256": "14c2526d4234a7fe70e6f766339c31993c830feaf853c424533d0e9626b250f4"
+    },
+    "fr": {
+     "file": "fr/miracles/eucharistic/faverney.html",
+     "path": "/fr/miracles/eucharistic/faverney",
+     "bodySha256": "58a04da439f1653fc0ec9a97b8a2066c9c24b7a03aa07c793e54591a81329bbd",
+     "catalog": "locales/fr/eucharistic-miracles.json",
+     "catalogSha256": "e712ea60ee90370739a0b1abf3a1b61a3fd13481683d15067ff0d6e60baae8ae"
+    },
+    "it": {
+     "file": "it/miracles/eucharistic/faverney.html",
+     "path": "/it/miracles/eucharistic/faverney",
+     "bodySha256": "173b57c55b39aaddf0371634ababa4284c735d6928b6cbb35459f8c1fa8b1304",
+     "catalog": "locales/it/eucharistic-miracles.json",
+     "catalogSha256": "b230ef698a10d48fa1fad2918787f4af609170eac71485c206006d88c6f395ac"
+    },
+    "pl": {
+     "file": "pl/miracles/eucharistic/faverney.html",
+     "path": "/pl/miracles/eucharistic/faverney",
+     "bodySha256": "7e7fc16354ca98e67fb60ad169ccab67c4dabaed7f9383fed34fbc797edcd703",
+     "catalog": "locales/pl/eucharistic-miracles.json",
+     "catalogSha256": "a0271831fbf7f19755c9d8b984285865cfaaed34ab2e639e3c636b38271ca05b"
+    },
+    "pt": {
+     "file": "pt/miracles/eucharistic/faverney.html",
+     "path": "/pt/miracles/eucharistic/faverney",
+     "bodySha256": "5b1451195e6d067192da0cb3c9bb54c0007dfd38622931095dff85dd3486b3af",
+     "catalog": "locales/pt/eucharistic-miracles.json",
+     "catalogSha256": "85909ae9f018f03a817f996704eef3911732f525f21519f813be19d9fd9316ca"
+    }
+   }
+  }
+ }
+}

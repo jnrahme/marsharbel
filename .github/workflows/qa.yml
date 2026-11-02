@@ -3,13 +3,30 @@ name: QA
 on:
   push:
     branches:
-      - "**"
+      - stage
+      - main
   pull_request:
 
+# Branch pushes with an open PR were running everything twice (push and pull_request).
+# PR branches are covered by pull_request; stage and main by push. A new push to a PR
+# cancels that PR's stale run; runs on stage and main are never cancelled.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
-  qa:
+  qa-shard:
+    name: qa-shard (${{ matrix.shard }}/8)
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # 45: shard 5/8 flaked on a green tree (stage QA run 38824388383,
+    # 2026-10-15): attempt 1 cancelled after 30m22s (23:34:31Z -> 00:04:53Z)
+    # at this job timeout; attempt 2 succeeded in 5m14s. A marginal timeout
+    # that flakes once will flake again; 45 gives headroom without masking hangs.
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
 
     steps:
       - name: Checkout
@@ -17,9 +34,6 @@ jobs:
         with:
           # Full history: sitemap lastmod is checked against each page's git history.
           fetch-depth: 0
-
-      - name: Test deployment verification
-        run: python3 -m unittest discover -s scripts/qa -p 'test_verify_deployment.py'
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -30,22 +44,204 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright browser dependencies
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Playwright browser
+        if: steps.pw-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps chromium
+
+      - name: Install Playwright system dependencies (browser cache hit)
+        if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
 
       - name: Install Python dependencies
         run: pip install beautifulsoup4
 
-      - name: Run QA suite
-        run: npm run qa:ci
+      - name: Run QA suite shard
+        run: bash scripts/qa/run_full_qa.sh --ci --shard ${{ matrix.shard }}/8 --skip-i18n-test
+
+      # Instrumentation: per-step seconds, retrievable via the artifacts API
+      # (GITHUB_STEP_SUMMARY is not API-readable). Additive; never blocks the shard.
+      - name: Upload step timings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-step-timings-${{ matrix.shard }}
+          path: tmp/qa-step-timings.tsv
+          if-no-files-found: ignore
 
       - name: Upload debug artifacts
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: qa-debug-artifacts
+          name: qa-debug-artifacts-${{ matrix.shard }}
           path: |
             tmp/
             test-results/
             output/playwright/
           if-no-files-found: ignore
+
+  # Runs the gates that used to be shard-0-only steps, in parallel with qa-shard.
+  # Not a required check by itself: "qa" below needs it and fails if it fails.
+  qa-gates:
+    name: qa-gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CI_TIMINGS_FILE: tmp/ci-timings-qa-gates.tsv
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Full history: sitemap lastmod is checked against each page's git history.
+          fetch-depth: 0
+
+      - name: Test deployment verification
+        run: bash scripts/ci/timed.sh "Test deployment verification" python3 -m unittest discover -s scripts/qa -p 'test_verify_deployment.py'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: bash scripts/ci/timed.sh "Install dependencies (npm ci)" npm ci
+
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Playwright browser
+        if: steps.pw-cache.outputs.cache-hit != 'true'
+        run: bash scripts/ci/timed.sh "Install Playwright browser" npx playwright install --with-deps chromium
+
+      - name: Install Playwright system dependencies (browser cache hit)
+        if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: bash scripts/ci/timed.sh "Install Playwright system dependencies (cache hit)" npx playwright install-deps chromium
+
+      - name: Install Python dependencies
+        run: bash scripts/ci/timed.sh "Install Python dependencies (pip)" pip install beautifulsoup4
+
+      # These gates are not part of run_full_qa.sh. They run once, in parallel with the shards.
+      - name: New-page locale key gate tests
+        run: bash scripts/ci/timed.sh "New-page locale key gate tests" python3 -m unittest discover -s scripts/qa -p 'test_new_page_locales.py'
+
+      - name: New-page locale key coverage (PR base)
+        if: github.event_name == 'pull_request'
+        env:
+          LOCALE_GATE_BASE: ${{ github.event.pull_request.base.sha }}
+        run: bash scripts/ci/timed.sh "New-page locale key coverage (PR base)" python3 scripts/qa/check_new_page_locales.py --base "$LOCALE_GATE_BASE"
+
+      - name: Russian first-slice publication and browser guards
+        run: |
+          bash scripts/ci/timed.sh "Russian first-slice unit tests" python3 -m unittest discover -s scripts/qa -p 'test_russian_slice.py'
+          bash scripts/ci/timed.sh "Russian first-slice playwright guards" npx playwright test tests/russian-first-slice.spec.js --project=small-phone --project=phone --project=laptop --workers=2
+
+      - name: Clean-checkout page build is in sync
+        run: bash scripts/ci/timed.sh "Clean-checkout page build --check" node scripts/build-pages.mjs --check
+
+      - name: Shard manifest completeness
+        run: bash scripts/ci/timed.sh "Shard manifest completeness" python3 -m unittest discover -s scripts/qa -p 'test_shard_manifest.py'
+
+      - name: Deploy admission tests
+        run: bash scripts/ci/timed.sh "Deploy admission tests" python3 -m unittest discover -s scripts/qa -p 'test_deploy_admission.py'
+
+      # Instrumentation: per-step elapsed seconds for this job (the qa-gates
+      # 4m21s -> 12m57s spike was unattributable without these), retrievable
+      # via the artifacts API. Additive; never blocks the job.
+      - name: Step timings summary
+        if: always()
+        run: bash scripts/ci/print_timings.sh "qa-gates step timings"
+
+      - name: Upload step timings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-gates-step-timings
+          path: tmp/ci-timings-qa-gates.tsv
+          if-no-files-found: ignore
+
+      - name: Upload debug artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-gates-debug-artifacts
+          path: |
+            tmp/
+            test-results/
+            output/playwright/
+          if-no-files-found: ignore
+
+  # i18n:test (python unittest, 34 tests, ~258s) was the longest single step in
+  # shard 3. It now runs as its own parallel job and is skipped in the CI shard invocation (--skip-i18n-test); local run_full_qa.sh still runs it.
+  i18n-test:
+    name: i18n-test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CI_TIMINGS_FILE: tmp/ci-timings-i18n-test.tsv
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: bash scripts/ci/timed.sh "Install dependencies (npm ci)" npm ci
+
+      - name: Install Python dependencies
+        run: bash scripts/ci/timed.sh "Install Python dependencies (pip)" pip install beautifulsoup4
+
+      - name: i18n unit tests
+        run: bash scripts/ci/timed.sh "i18n unit tests (npm run i18n:test)" npm run i18n:test
+
+      - name: Step timings summary
+        if: always()
+        run: bash scripts/ci/print_timings.sh "i18n-test step timings"
+
+      - name: Upload step timings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: i18n-test-step-timings
+          path: tmp/ci-timings-i18n-test.tsv
+          if-no-files-found: ignore
+
+      - name: Upload debug artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: i18n-test-debug-artifacts
+          path: |
+            tmp/
+            test-results/
+          if-no-files-found: ignore
+
+  # Required status check. Keeps the exact name "qa" and fails unless every shard passed.
+  qa:
+    if: ${{ always() && !cancelled() }}
+    needs: [qa-shard, qa-gates, i18n-test]
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "shards: ${{ needs.qa-shard.result }}"
+          echo "gates: ${{ needs.qa-gates.result }}"
+          echo "i18n-test: ${{ needs.i18n-test.result }}"
+          test "${{ needs.qa-shard.result }}" = "success"
+          test "${{ needs.qa-gates.result }}" = "success"
+          test "${{ needs.i18n-test.result }}" = "success"

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "feature": "help-me-pray",
+  "locale": "ru",
+  "reviewedTextSha256": {
+    "our-father": "30ba7b67418b1e3c8f615a84679432708613dc22f0e93cbe4d071f1a95b72bb1",
+    "glory-be": "297336af67eed4988df6d28da78150b12fc6f4e68df226a8ebb2d5b5294927ca"
+  },
+  "reviewType": "internal-faith-and-version",
+  "verdict": "PASS",
+  "findings": "Selected RU wording matches the published Catholic usage sources at the recorded URLs; exact reviewed text hashes above; bounded faith/version PASS, not exclusive national/Missal-edition certification.",
+  "sourceURLs": [
+    "https://cathmos.ru/instrukcziya-rozhdestvenskie-prazdniki-v-krugu-semi/",
+    "https://cathmos.ru/ekumenicheskoe-bogosluzhenie-slova-bozhiya-24/"
+  ],
+  "reviewerRole": "independent Quality Trust Risk",
+  "reviewedAt": "2026-10-11",
+  "nativeCertified": false,
+  "nativeReviewStatus": "not-reviewed",
+  "scopeLimits": "not a Missal edition certification, native certification, reuse licence or release approval; earlier RU commissioned text SUPERSEDED by standard-translation instruction",
+  "activationApproved": false,
+  "integrationArtifactSha256": "483e11f2f9679b056f364463b11e5697baa5671627a6673c5477725fe964cf2e",
+  "reviewedArtifactSha256": "e61f864382c3ab6e7d9a245034ab83cf2090323c3825d66cf973711698bf7099",
+  "contentFindings": [
+    {
+      "date": "2026-10-11",
+      "attributedTo": "content",
+      "finding": "Staging rehash: all 8 landed RU/HI/TH/ZH rows independently rehashed 8/8 and byte-located in integration artifact 483e11f2f9679b056f364463b11e5697baa5671627a6673c5477725fe964cf2e; RU OF 30ba7b67...2bb1 and RU GB 297336af...27ca recomputed from the landed rows in locales/ru/help-me-pray-prayers.json."
+    }
+  ]
+}

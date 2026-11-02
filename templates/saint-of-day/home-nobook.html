@@ -1,0 +1,13 @@
+<template data-saint-date="${date}" data-saint-after="main > .home-news">
+<section class="home-news home-saint-day" id="saint-of-the-day" aria-labelledby="saint-day-heading" data-saint-date="${date}">
+  <div class="home-news-head"><h2 id="saint-day-heading" data-saint-key="heading">${heading}</h2><time datetime="${date}" data-saint-generated-date="dateLabel">${dateLabel}</time></div>
+  <a class="home-news-lead home-saint-info" href="${infoUrl}">
+    <span class="home-news-meta" data-saint-key="calendar">${calendar}</span>
+    <h3 class="home-news-title" data-saint-key="name">${name}</h3>
+    <p class="home-news-dek" data-saint-key="story">${story}</p>
+    <span class="home-news-credit" data-saint-key="provenance">${provenance}</span>
+    <span class="home-news-meta" data-saint-key="infoCta">${infoCta}</span>
+  </a>
+  <p class="home-saint-source"><a href="${calendarUrl}" data-saint-key="sourceLabel">${sourceLabel}</a></p>
+</section>
+</template>

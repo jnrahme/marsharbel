@@ -1,0 +1,202 @@
+window.SERGIUS_STORY_EN = [
+  {
+    "illustration": "./media/storybook-sergius-bacchus/images/page-01.webp",
+    "title": "Two Friends in the Emperor's Court",
+    "body": "About the year 300, in the Roman Empire, two friends named Sergius and Bacchus served as officers in the emperor's guard. The old account of their lives tells us they were brave, and the emperor trusted them. But there was something the emperor did not know. Sergius and Bacchus were Christians. They loved Jesus, and they loved each other like brothers. They liked to sing a psalm together: how good it is when brothers live together as one.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-01.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of the sourced account; imaginative composites and reported or legendary details are named in the story.",
+        "sources": [
+          "sergiusPassion",
+          "sergiusCE"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-sergius-bacchus/images/page-02.webp",
+    "title": "Standing Outside the Temple",
+    "body": "Some men in the court grew jealous, and they told the emperor the secret. The emperor did not believe them. So he made a plan. He would take his officers into the temple of the god Zeus, and everyone would offer a sacrifice. When the emperor looked around, Sergius and Bacchus were missing. They were standing outside, praying quietly. They would not worship a false god, not even to please the most powerful man in the world.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-02.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of the sourced account; imaginative composites and reported or legendary details are named in the story.",
+        "sources": [
+          "sergiusPassion",
+          "sergiusCE"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-sergius-bacchus/images/page-03.webp",
+    "title": "A Hard Answer",
+    "body": "The emperor called them in, and he asked them to come to the altar. Sergius and Bacchus gave him an honest answer. They said they would serve him in every way they could. But their true King was in heaven, and they could not give him a place that belonged only to God. The emperor was furious. He took away their belts and their uniforms and their gold chains. Then he made them walk through the city streets in clothes meant to shame them.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-03.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of the sourced account; imaginative composites and reported or legendary details are named in the story.",
+        "sources": [
+          "sergiusPassion",
+          "sergiusCE"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-sergius-bacchus/images/page-04.webp",
+    "title": "Singing in the Marketplace",
+    "body": "The old account says that Sergius and Bacchus did not hang their heads. As they walked, the crowds could hear them singing. They sang a psalm that says, even in the darkest valley, I will fear no evil, for you are with me. They were being laughed at, and they were praying. At the palace, the emperor was still angry. So he sent them far away, to the east, to a fortress where an old friend of Sergius was in charge.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-04.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of the sourced account; imaginative composites and reported or legendary details are named in the story.",
+        "sources": [
+          "sergiusPassion",
+          "sergiusCE"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-sergius-bacchus/images/page-05.webp",
+    "title": "The Long Road East",
+    "body": "They were chained, and they traveled from city to city for many days. Their servants chose to go with them. The old account tells that at an inn one night, an angel appeared and told them to take courage. In the morning they set out again, and they sang as they walked. At last they reached the fortress of Barbalissos, near the Euphrates river, on the edge of the empire. Their old friend Antiochus was the commander there.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-05.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of the sourced account; imaginative composites and reported or legendary details are named in the story.",
+        "sources": [
+          "sergiusPassion",
+          "sergiusCE"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-sergius-bacchus/images/page-06.webp",
+    "title": "A Friend Who Pleaded",
+    "body": "Antiochus owed his job to Sergius, and he reminded him of it. He urged both men to change their minds. He promised them their old rank back, and more. All they had to do was offer one sacrifice. But Sergius and Bacchus said no. They asked what good it would do to gain the whole world and lose their souls. Antiochus had been their friend. Now he had to choose between them and the emperor's order. He chose the order.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-06.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of the sourced account; imaginative composites and reported or legendary details are named in the story.",
+        "sources": [
+          "sergiusPassion",
+          "sergiusCE"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-sergius-bacchus/images/page-07.webp",
+    "title": "The Day Bacchus Died",
+    "body": "The old account says Bacchus was beaten with whips, and that he died from his wounds. Some monks who lived in caves nearby buried him with care. Sergius grieved. That night, the old account says, Bacchus appeared to him with a shining face, and told him not to be sad. They were still joined, Bacchus said, and they would meet again. We cannot know how it happened. But we know that Sergius kept going, and that he kept going for his friend too.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-07.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of the sourced account; imaginative composites and reported or legendary details are named in the story.",
+        "sources": [
+          "sergiusPassion",
+          "sergiusCE"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-sergius-bacchus/images/page-08.webp",
+    "title": "The Road to Resafa",
+    "body": "Sergius was taken to a city called Resafa, in the desert in Syria. The old account tells that he, too, was put to death there for his faith, a few days after Bacchus. We do not need to dwell on the hard parts. What matters is that Sergius stayed true to Jesus until the end. Christians buried him at Resafa. Soon people began to visit his grave to pray. It was the start of a very long story that nobody in that town could have imagined.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-08.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of the sourced account; imaginative composites and reported or legendary details are named in the story.",
+        "sources": [
+          "sergiusPassion",
+          "sergiusCE"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-sergius-bacchus/images/page-09.webp",
+    "title": "A City Named for a Soldier",
+    "body": "Within a few decades, the city of Resafa was given a new name, Sergiopolis, which means City of Sergius. Pilgrims came from far away. Churches were built for the two friends in Syria, in Constantinople, and in Rome. Soldiers in the army asked for their prayers. In many languages, Christians called them Mar Sarkis and Bakhos. Their feast day is on the seventh of October. Two officers who once stood outside a temple are remembered around the world.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-09.mp3",
+    "reflection": false,
+    "evidence": [
+      {
+        "type": "documented",
+        "claim": "An original retelling of the sourced account; imaginative composites and reported or legendary details are named in the story.",
+        "sources": [
+          "sergiusPassion",
+          "sergiusCE"
+        ]
+      }
+    ]
+  },
+  {
+    "illustration": "./media/storybook-sergius-bacchus/images/page-10.webp",
+    "title": "Points of reflection",
+    "body": "Here is something to wonder about. Sergius and Bacchus stood outside the temple together. Who is a friend that helps you do the right thing?\n\nWould you like to read the psalm they loved to sing? It is Psalm one hundred thirty-three, verse one: \"How good and how pleasant it is when brothers dwell together as one!\" Real friends help each other stay close to God.\n\nThis week, try one small brave thing. If a friend is being left out, sit next to them. And if someone asks you to do something wrong, say no kindly, and tell a trusted grown-up.\n\nA little prayer: God, thank you for the gift of friends. Help me to be a friend who is honest and kind, and help me to be brave when it is hard. Saints Sergius and Bacchus, pray for us. Amen.",
+    "prayer": "",
+    "heart": "",
+    "scene": "birth",
+    "audio": "page-10.mp3",
+    "reflection": true,
+    "evidence": [
+      {
+        "type": "pastoral",
+        "claim": "This page offers pastoral guidance for children, drawn from the documented life of the saint.",
+        "sources": [
+          "sergiusPsalm133",
+          "sergiusPassion"
+        ]
+      }
+    ]
+  }
+]
