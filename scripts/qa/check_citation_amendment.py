@@ -8,6 +8,7 @@ import hashlib, json, os, re, subprocess, sys, tempfile, shutil
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from i18n import citation_amendment as ca
+from i18n import citation_history as ch
 
 RESULTS=[]
 def record(name,ok,detail=''):
@@ -98,6 +99,10 @@ def main():
     # every proof input hold; the tamper must then reach the reconstruction branch.
     d=fresh_clone(root)
     try:
+        # Native-faithful fixture prep: file:// clones carry only ref-reachable objects,
+        # and the loader's unbundle import is deliberately unreachable (N9), so the reviewed
+        # C2 graph must be hydrated INTO the clone before any direct C read below.
+        ch.ensure_history(d,ca.load(d))
         head0=subprocess.check_output(['git','-C',d,'rev-parse','HEAD']).decode().strip()
         table_now=json.loads((Path(d)/s['table']['path']).read_text())
         finite=sorted({e['path'] for e in table_now}|{e['file'] for e in s['derivedPins']})
