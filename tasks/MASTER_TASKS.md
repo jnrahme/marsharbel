@@ -223,3 +223,13 @@ Task: one block per task.
 - Acceptance: each merged, closed or re-owned
 - Branch/PR: #765 #757 #559 #504 #502
 - Evidence/notes: -
+
+## T-023 [READY] i18n: stale-master check unreachable for generic pageMirrors families
+
+- Description: The catalog stale-master gate (scripts/i18n/catalog.py) only fires when mirror_tab() returns a tab - today film/history/prayers/travel only. The 16 tab-None pageMirrors families (feedback, feedback-review, daily-prayer x3, music-master, all-saints-and-all-souls-master, help-me-pray-master, gallery/saints/submit-testimony/voice-testimony/prayer-library/testimonies/videos/news/saint-charbel-encyclopedia masters) are structurally pin-unvalidated; drift like #741's feedback miss passes CI silently. Census 2026-10-13 (all 50 binding files): feedback was the only stale pin, re-pinned in #792. Scrum spec (2026-10-13): extend validation to a generic tab for pageMirrors (NOT review-only hygiene); scrum reviews gate code as non-author; mutation proof for at least 3 families (stale pin must go red); census run reporting any still-stale family BEFORE the gate lands.
+- Priority: P1 (below the merge train: #788 multi-date follow-up, ar leftover, de finish_nav; above the es/it/pl/pt locale drops)
+- Assigned: merge train, review scrum (non-author)
+- Dependencies: -
+- Acceptance: generic tab validation in catalog.py; mutation proof red for 3+ families; pre-landing census clean; CI 22/22
+- Branch/PR: -
+- Evidence/notes: finding + census in #792 PR body
