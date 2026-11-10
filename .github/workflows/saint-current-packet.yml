@@ -13,12 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: fix/qa-parser-compat-nov10
+          ref: stage
           fetch-depth: 0
       - name: Clean current stage and parser compatibility prerequisite
         run: |
           test -z "$(git status --porcelain)"
-          test "$(git rev-parse HEAD)" = 8da48c6673b67313eb4a93763398acc1c925b0f7
+          test "$(git rev-parse HEAD)" = af91297e9e17eff8ca692d97e7470c528fbd8b38
           grep -Fx 'soupsieve==2.10' scripts/qa/requirements.txt
           git rev-parse HEAD HEAD^{tree}
       - uses: actions/setup-node@v4
@@ -46,6 +46,7 @@ jobs:
           node scripts/build-pages.mjs --pages=index.html
           python3 scripts/i18n/refresh_saint_home_bindings.py
           python3 scripts/i18n/refresh_saint_home_bindings.py --check
+          python3 scripts/build-international.py
           python3 scripts/build-international.py
           python3 scripts/build-international.py --check
           python3 scripts/sitemap_lastmod.py
