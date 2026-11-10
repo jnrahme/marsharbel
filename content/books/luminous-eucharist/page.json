@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "template": "story-page",
+  "slug": "luminous-eucharist",
+  "storyId": "luminous-eucharist",
+  "seoTitle": "Fifth Luminous Mystery: The Institution of the Eucharist | Rosary Book",
+  "seoDescription": "A read-aloud decade book for children on the Fifth Luminous Mystery, the Institution of the Eucharist: the story, the Gospel, the decade prayers, and a reflection.",
+  "firstImage": "media/mysteries/l5.webp",
+  "firstScene": "legacy",
+  "ageMin": 6,
+  "ageMax": 12,
+  "h1": "The Institution of the Eucharist: Fifth Luminous Mystery",
+  "intro": "A little read-aloud book for one decade of the Rosary: The Institution of the Eucharist.",
+  "shortAnswer": "This book walks children through the Fifth Luminous Mystery, the Institution of the Eucharist: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on love of the Eucharist and sacrificial union.",
+  "summaryHtml": null,
+  "familyReadingHtml": null,
+  "aboutHtml": "<p>Painting: Juan de Juanes, Last Supper. Public domain, via Wikimedia Commons. <a href=\"https://commons.wikimedia.org/wiki/File:Joan_de_Joanes_-_The_Last_Supper_-_WGA12058.jpg\">Image source (Wikimedia Commons)</a>.</p><p>The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and \u2026 marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Thursday.</p>",
+  "faq": [
+    {
+      "q": "What is the Fifth Luminous Mystery?",
+      "a": "The Institution of the Eucharist. At the Last Supper, Jesus took bread, blessed it, broke it, and said: This is my body. This mystery is traditionally prayed on Thursday, and its fruit is love of the Eucharist and sacrificial union."
+    },
+    {
+      "q": "How do you pray this decade with children?",
+      "a": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer."
+    }
+  ],
+  "related": [
+    {
+      "href": "./luminous-transfiguration",
+      "label": "The Transfiguration"
+    },
+    {
+      "href": "./sorrowful-agony-garden",
+      "label": "The Agony in the Garden"
+    },
+    {
+      "href": "./stories",
+      "label": "All storybooks"
+    }
+  ],
+  "productionNote": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+  "footerCredit": "A Rosary decade book for children.",
+  "ogLocales": [
+    "en_US"
+  ],
+  "dataFile": "luminous-eucharist-story-data.js",
+  "specificDisclosure": true,
+  "dataFileExtra": [
+    "luminous-eucharist-story-i18n-data.js"
+  ],
+  "storyJs": "storybook-rosary.js",
+  "stageJs": "storybook-rosary-stage.js",
+  "extraCss": [
+    "storybook-rosary.css"
+  ]
+}

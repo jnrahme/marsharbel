@@ -1,0 +1,132 @@
+{
+ "schema": 1,
+ "id": "bk-sorrowful-scourging",
+ "slug": "sorrowful-scourging",
+ "legacyStoryId": "sorrowful-scourging",
+ "pageUrl": "/sorrowful-scourging",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 32,
+ "ageRange": "6-12",
+ "locales": [
+  "en",
+  "ar",
+  "de",
+  "es",
+  "fr",
+  "hi",
+  "it",
+  "pl",
+  "pt",
+  "ru",
+  "th",
+  "zh-Hans"
+ ],
+ "cover": "bk-sorrowful-scourging-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-sorrowful-scourging-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-scourging-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-scourging-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-scourging-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-scourging-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-scourging-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-scourging-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-scourging-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: William-Adolphe Bouguereau, Flagellation. Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:William-Adolphe_Bouguereau_(1825-1905)_-_The_Flagellation_of_Our_Lord_Jesus_Christ_(1880).jpg"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-sorrowful-scourging-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/s2.webp",
+   "mime": "image/webp",
+   "bytes": 75832,
+   "sha256": "8f4f62ccde515289e73aa01321bb13c2afd0a9b360bb837476ca8783a549b310",
+   "access": "public",
+   "width": 1200,
+   "height": 1717
+  }
+ ]
+}

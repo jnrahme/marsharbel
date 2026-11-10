@@ -117,8 +117,15 @@ def snapshot(root=ROOT):
     veronica_generated = ('veronica-giuliani-story-data.js', 'veronica-giuliani-story-i18n-data.js')
     if all((root / name).exists() for name in veronica_generated):
         subprocess.run(['node', str(root / 'scripts/books/build-veronica-i18n-data.mjs'), '--check'], check=True, cwd=root, capture_output=True)
+    # The Rosary mystery i18n data files are generated from the localized catalogs by
+    # scripts/books/build-rosary-i18n-data.mjs; its byte-exact --check is the wired gate that
+    # earns their exclusion (same precedent as the Veronica files above). The English
+    # <slug>-story-data.js wording is covered by locales/en/rosary-mysteries-copy.json.
+    rosary_generated = tuple(sorted(p.name for p in root.glob('*-story-i18n-data.js') if p.name != 'veronica-giuliani-story-i18n-data.js'))
+    if rosary_generated:
+        subprocess.run(['node', str(root / 'scripts/books/build-rosary-i18n-data.mjs'), '--check'], check=True, cwd=root, capture_output=True)
     for path in sorted(root.glob('*.js')):
-        if (path.name == 'same-page-copy.js' and copy_path.exists()) or path.name in ('locale-routes.js', 'eucharistic.js') or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()) or (path.name in veronica_generated and all((root / name).exists() for name in veronica_generated)):
+        if (path.name == 'same-page-copy.js' and copy_path.exists()) or path.name in ('locale-routes.js', 'eucharistic.js') or (path.name == 'testimonies-copy.js' and (root / 'locales/en/testimonies.json').exists()) or (path.name in veronica_generated and all((root / name).exists() for name in veronica_generated)) or path.name in rosary_generated:
             continue
         values = json.loads(subprocess.check_output(['node', str(root/'scripts/i18n/extract-js-text.mjs'), str(path)],text=True))
         counter=Counter(values)
@@ -204,6 +211,8 @@ def check(root=ROOT):
     peter_catalog = read_json(peter_path)['values'] if peter_path.exists() else {}
     francis_path = root/'locales/en/francis-story-copy.json'
     francis_catalog = read_json(francis_path)['values'] if francis_path.exists() else {}
+    rosary_mysteries_path = root/'locales/en/rosary-mysteries-copy.json'
+    rosary_mysteries_catalog = read_json(rosary_mysteries_path)['values'] if rosary_mysteries_path.exists() else {}
     answer_path = root/'locales/en/feast-novena-answer-copy.json'
     answer_catalog = read_json(answer_path)['values'] if answer_path.exists() else {}
     joseph_path = root/'locales/en/joseph-story-copy.json'
@@ -251,7 +260,10 @@ def check(root=ROOT):
         if _family!='history-master' and _copy.exists():
             master_catalogs[_cfg['master']]=Counter(read_json(_copy).values())
     for file, values in snapshot(root).items():
-        additions = Counter(values) - Counter(baseline.get(file, {}))
+        lfile = 'storybook.js' if file == 'storybook-rosary.js' else file
+        # The rosary story runtime is a fork of the pinned storybook.js: it may carry no more
+        # wording than that file's existing baseline.
+        additions = Counter(values) - Counter(baseline.get(lfile, {}))
         if file == 'videos.html':
             # Exact fragment output is checked by build-pages --check; never expand the legacy baseline.
             additions -= Counter({v: 23 for v in read_json(root/'locales/en/video-playback.json').values()})
@@ -289,55 +301,59 @@ def check(root=ROOT):
         # Newly edited English legacy pages are catalog-backed, not added to
         # the frozen legacy baseline. The per-file counts prevent a second
         # unreviewed occurrence from being silently accepted.
-        additions -= master_catalogs.get(file, Counter())
-        additions -= Counter(maroun_catalog.get(file, {}))
-        additions -= Counter(augustine_catalog.get(file, {}))
-        additions -= Counter(marina_catalog.get(file, {}))
-        additions -= Counter(annaya_catalog.get(file, {}))
-        additions -= Counter(annaya_batch1_catalog.get(file, {}))
-        additions -= Counter(sergius_catalog.get(file, {}))
-        additions -= Counter(magdalene_catalog.get(file, {}))
-        additions -= Counter(jude_catalog.get(file, {}))
-        additions -= Counter(rosary_book_joyful_catalog.get(file, {}))
-        additions -= Counter(peter_catalog.get(file, {}))
-        additions -= Counter(therese_catalog.get(file, {}))
-        additions -= Counter(anthony_catalog.get(file, {}))
-        additions -= Counter(joseph_catalog.get(file, {}))
-        additions -= Counter(answer_catalog.get(file, {}))
-        additions -= Counter(francis_catalog.get(file, {}))
-        additions -= Counter(massabki_catalog.get(file, {}))
-        additions -= Counter(jpii_story_catalog.get(file, {}))
-        additions -= Counter(story_copy_catalog.get(file, {}))
-        additions -= Counter(display_catalog.get(file, {}))
-        additions -= Counter(accessibility_catalog.get(file, {}))
-        additions -= Counter(aeo_catalog.get(file, {}))
-        additions -= Counter(shelf_catalog.get(file, {}))
-        additions -= Counter(saint_bios_catalog.get(file, {}))
-        additions -= Counter(pillar_catalog.get(file, {}))
-        additions -= Counter(a11y_catalog.get(file, {}))
-        additions -= Counter(scripture_catalog.get(file, {}))
-        stale_scripture = Counter(scripture_catalog.get(file, {})) - Counter(values)
+        additions -= master_catalogs.get(lfile, Counter())
+        additions -= Counter(maroun_catalog.get(lfile, {}))
+        additions -= Counter(augustine_catalog.get(lfile, {}))
+        additions -= Counter(marina_catalog.get(lfile, {}))
+        additions -= Counter(annaya_catalog.get(lfile, {}))
+        additions -= Counter(annaya_batch1_catalog.get(lfile, {}))
+        additions -= Counter(sergius_catalog.get(lfile, {}))
+        additions -= Counter(magdalene_catalog.get(lfile, {}))
+        additions -= Counter(jude_catalog.get(lfile, {}))
+        additions -= Counter(rosary_book_joyful_catalog.get(lfile, {}))
+        additions -= Counter(peter_catalog.get(lfile, {}))
+        additions -= Counter(therese_catalog.get(lfile, {}))
+        additions -= Counter(anthony_catalog.get(lfile, {}))
+        additions -= Counter(joseph_catalog.get(lfile, {}))
+        additions -= Counter(answer_catalog.get(lfile, {}))
+        additions -= Counter(francis_catalog.get(lfile, {}))
+        additions -= Counter(rosary_mysteries_catalog.get(lfile, {}))
+        additions -= Counter(massabki_catalog.get(lfile, {}))
+        additions -= Counter(jpii_story_catalog.get(lfile, {}))
+        additions -= Counter(story_copy_catalog.get(lfile, {}))
+        additions -= Counter(display_catalog.get(lfile, {}))
+        additions -= Counter(accessibility_catalog.get(lfile, {}))
+        additions -= Counter(aeo_catalog.get(lfile, {}))
+        additions -= Counter(shelf_catalog.get(lfile, {}))
+        additions -= Counter(saint_bios_catalog.get(lfile, {}))
+        additions -= Counter(pillar_catalog.get(lfile, {}))
+        additions -= Counter(a11y_catalog.get(lfile, {}))
+        additions -= Counter(scripture_catalog.get(lfile, {}))
+        stale_scripture = Counter(scripture_catalog.get(lfile, {})) - Counter(values)
         if stale_scripture:
             errors.append(f'{file}: scripture-copy catalog entries missing from the page: {sorted(stale_scripture)[:3]}')
-        stale_rosary_book_joyful = Counter(rosary_book_joyful_catalog.get(file, {})) - Counter(values)
+        stale_rosary_mysteries = Counter(rosary_mysteries_catalog.get(lfile, {})) - Counter(values)
+        if stale_rosary_mysteries:
+            errors.append(f'{file}: rosary-mysteries-copy catalog entries missing from the page: {sorted(stale_rosary_mysteries)[:3]}')
+        stale_rosary_book_joyful = Counter(rosary_book_joyful_catalog.get(lfile, {})) - Counter(values)
         if stale_rosary_book_joyful:
             errors.append(f'{file}: rosary-book-joyful-copy catalog entries missing from the page: {sorted(stale_rosary_book_joyful)[:3]}')
         if file == 'miracles/index.html':
             euch_entry = read_json(root/'locales/en/eucharistic-miracles.json')['hub']
             additions -= Counter({euch_entry[key]: 1 for key in ('charbelEntryTitle','charbelEntryIntro','charbelEntryAction','charbelEntryCredit','charbelEntryAlt','charbelEntryPhotoSource','charbelEntryLicense','charbelEntryLicenseText','eyebrow')})
             additions -= Counter({',': 1, '.': 1})
-        if file in ('story.html','pio-story.html','jpii-story.html'):
+        if lfile in ('story.html','pio-story.html','jpii-story.html'):
             additions -= Counter({'Story settings': 2})
             if file != 'story.html': additions -= Counter({storybook_catalog['disclosure']: 1})
-        if file == 'storybook.js': additions -= Counter({read_json(root/'locales/en/pio-story-copy.json')['firstPage']: 1})
-        if file in ('mother-teresa-story.html','rafqa-story.html','hardini-story.html','charbel-story-v2.html'):
+        if lfile == 'storybook.js': additions -= Counter({read_json(root/'locales/en/pio-story-copy.json')['firstPage']: 1})
+        if lfile in ('mother-teresa-story.html','rafqa-story.html','hardini-story.html','charbel-story-v2.html'):
             additions -= Counter({'Story settings': 2, storybook_catalog['disclosure']: 1})
-        additions -= Counter(teresa_catalog.get(file, {}))
-        additions -= Counter(rafqa_catalog.get(file, {}))
-        additions -= Counter(hardini_catalog.get(file, {}))
-        additions -= Counter(pio_film_catalog.get(file, {}))
+        additions -= Counter(teresa_catalog.get(lfile, {}))
+        additions -= Counter(rafqa_catalog.get(lfile, {}))
+        additions -= Counter(hardini_catalog.get(lfile, {}))
+        additions -= Counter(pio_film_catalog.get(lfile, {}))
         additions -= film_shell_wording(root,file)
-        additions -= Counter(charbel_v2_catalog.get(file, {}))
+        additions -= Counter(charbel_v2_catalog.get(lfile, {}))
         if additions:
             errors.append(f'{file}: new hardcoded wording; move it to locales/: {list(additions)[:3]}')
     for path in (root/'templates/international').glob('*.html'):
