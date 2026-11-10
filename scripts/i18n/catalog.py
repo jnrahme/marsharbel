@@ -222,6 +222,8 @@ def mirror_tab(group, name, family):
         return 'history'
     if group == 'pageMirrors' and name in PRAYER_FAMILIES and family['english'] == PRAYER_FAMILIES[name][0]:
         return 'prayers'
+    if group == 'pageMirrors' and re.fullmatch(r'/(?:joyful|luminous|sorrowful|glorious)-[a-z-]+', family['english']) and name == family['english'][1:] + '-master':
+        return 'stories'
     if family['english'] in TRAVEL_ROUTES:
         return 'travel'
     return None

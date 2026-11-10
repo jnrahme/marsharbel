@@ -1,0 +1,882 @@
+{
+ "version": 1,
+ "master": "glorious-coronation.html",
+ "masterSha256": "ed80228a0b732cbfab26c3a860d2c93a65407bcdd53ccabda3ffe71f6e925eb3",
+ "sourceRevision": "cf1cf38e",
+ "bindings": [
+  {
+   "key": "glorious-coronation.metadata.title-fifth-glorious-mystery-the-coronation-of-mary-rosary-b",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+   "source": "Fifth Glorious Mystery: The Coronation of Mary | Rosary Book",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.metadata.description-a-read-aloud-decade-book-for-children-on-the-fif",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(4)",
+   "source": "A read-aloud decade book for children on the Fifth Glorious Mystery, the Coronation of Mary: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "glorious-coronation.metadata.og-title-fifth-glorious-mystery-the-coronation-of-mary-rosar",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+   "source": "Fifth Glorious Mystery: The Coronation of Mary | Rosary Book",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "glorious-coronation.metadata.og-description-a-read-aloud-decade-book-for-children-on-the",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(9)",
+   "source": "A read-aloud decade book for children on the Fifth Glorious Mystery, the Coronation of Mary: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "glorious-coronation.metadata.twitter-title-fifth-glorious-mystery-the-coronation-of-mary",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
+   "source": "Fifth Glorious Mystery: The Coronation of Mary | Rosary Book",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "glorious-coronation.metadata.twitter-description-a-read-aloud-decade-book-for-children-on",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(14)",
+   "source": "A read-aloud decade book for children on the Fifth Glorious Mystery, the Coronation of Mary: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "glorious-coronation.body.skip-to-main-content",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Skip to main content",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.text",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "✦",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.saint-charbel",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+   "source": "Saint Charbel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.accessibility.primary",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+   "source": "Primary",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-coronation.header.home",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Home",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.legacy",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Legacy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.saint-charbel-encyclopedia",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Charbel Encyclopedia",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.full-history",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Full History",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.miracles",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.miracles-reports",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Miracles & Reports",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.eucharistic-miracles",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Eucharistic Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.letters",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Letters",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.voice-testimony",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Voice Testimony",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.saints",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.saints-2",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.children-s-books",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Children's Books",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.prayer",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+   "source": "Prayer",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.prayer-library",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Prayer Library",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.find-a-prayer-by-intention",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Find a Prayer by Intention",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.prayer-for-the-sick",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Prayer for the Sick",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.prayer-for-healing",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Prayer for Healing",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.prayer-for-anxiety",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Prayer for Anxiety",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.prayer-for-depression",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "Prayer for Depression",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.prayer-for-students",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Prayer for Students",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.prayer-for-addiction",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Prayer for Addiction",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.prayer-for-family",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Prayer for Family",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.prayer-for-pregnancy",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Prayer for Pregnancy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.prayer-for-a-miracle",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Prayer for a Miracle",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.saint-charbel-prayers",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "Saint Charbel Prayers",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.saint-charbel-novena",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Novena",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.feast-day",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+   "source": "Feast Day",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.rosary-guide",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+   "source": "Rosary Guide",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.rosary-minibook",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+   "source": "Rosary Minibook",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.mystery-meditation",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+   "source": "Mystery Meditation",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.become-like-him",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+   "source": "Become Like Him",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.travel",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.travel-2",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.visiting-annaya",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Visiting Annaya",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.annaya-online-tour",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Annaya Online Tour",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.bekaa-kafra",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Bekaa Kafra",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.our-lady-of-lebanon-at-harissa",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Our Lady of Lebanon at Harissa",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.the-cedars-of-god",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "the Cedars of God",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.bkerke-and-the-maronite-patriarchate",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Bkerke and the Maronite Patriarchate",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.qadisha-valley",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Qadisha Valley",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.qannoubine-monastery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Qannoubine Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.qozhaya-monastery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Qozhaya Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.saint-charbel-s-lebanon",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Saint Charbel's Lebanon",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.the-hermitage",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "The Hermitage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.saint-charbel-trail",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Trail",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.news",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "News",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.media",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+   "source": "Media",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.music",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Music",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.video",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Video",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.header.gallery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Gallery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.body.a-book-for-ages-6-12",
+   "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "A Book for Ages 6-12",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.the-coronation-of-mary-fifth-glorious-mystery",
+   "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+   "source": "The Coronation of Mary: Fifth Glorious Mystery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-co",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "A little read-aloud book for one decade of the Rosary: The Coronation of Mary.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.short-answer",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+   "source": "Short answer:",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.this-book-walks-children-through-the-fifth-glorious-mystery",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "This book walks children through the Fifth Glorious Mystery, the Coronation of Mary: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on perseverance and trust in Mary's intercession.",
+   "kind": "text",
+   "nodeIndex": 1
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.continue-from-page-2",
+   "selector": "#story-resume-text",
+   "source": "Continue from Page 2?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.resume",
+   "selector": "#story-resume-btn",
+   "source": "Resume",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.accessibility.dismiss",
+   "selector": "#story-resume-dismiss",
+   "source": "Dismiss",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.text",
+   "selector": "#story-resume-dismiss",
+   "source": "✕",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.accessibility.illustrated-storybook",
+   "selector": "#main-content > section:nth-of-type(2)",
+   "source": "Illustrated storybook",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.reading",
+   "selector": "#story-reading-label",
+   "source": "Reading…",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.0-00",
+   "selector": "#story-elapsed",
+   "source": "0:00",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.voice-pack",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Voice Pack",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.accessibility.select-story-voice-pack",
+   "selector": "#story-voice-pack",
+   "source": "Select story voice pack",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-coronation.accessibility.previous-page",
+   "selector": "#story-prev",
+   "source": "Previous page",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.previous-page",
+   "selector": "#story-prev",
+   "source": "Previous Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.read-aloud",
+   "selector": "#story-read",
+   "source": "Read Aloud",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.accessibility.next-page",
+   "selector": "#story-next",
+   "source": "Next page",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.next-page",
+   "selector": "#story-next",
+   "source": "Next Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.accessibility.story-settings",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+   "source": "Story settings",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.story-settings",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+   "source": "Story settings",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.toggle-reader-mode-for-easier-reading",
+   "selector": "#story-reader-toggle",
+   "source": "Toggle reader mode for easier reading",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.reader-mode",
+   "selector": "#story-reader-toggle",
+   "source": "Reader Mode",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.automatically-read-next-page-when-current-page-finishes",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Automatically read next page when current page finishes",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.auto-continue",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Auto Continue",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "glorious-coronation.accessibility.playback-speed",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "Playback speed",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.slow",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "source": "Slow",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.normal",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+   "source": "Normal",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.fast",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)",
+   "source": "Fast",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.the-coronation-of-mary-f.page-1-of-4",
+   "selector": "#story-step",
+   "source": "Page 1 of 4",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.loading-story.loading-story",
+   "selector": "#story-title",
+   "source": "Loading story...",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.loading-story.please-wait-while-we-open-the-storybook",
+   "selector": "#story-body",
+   "source": "Please wait while we open the storybook.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.loading-story.evidence-for-this-page",
+   "selector": "#story-evidence-title",
+   "source": "Evidence for This Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr",
+   "selector": "#main-content > p:nth-of-type(1)",
+   "source": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.about-this-story.about-this-story",
+   "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+   "source": "About this story",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.about-this-story.painting-diego-vel-zquez-coronation-of-the-virgin-prado-publ",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "Painting: Diego Velázquez, Coronation of the Virgin (Prado). Public domain, via Wikimedia Commons.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.about-this-story.image-source-wikimedia-commons",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Image source (Wikimedia Commons)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.about-this-story.text",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+   "source": ".",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "glorious-coronation.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Wednesday / Sunday.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.about-this-story.the-crown-of-twelve-stars-in-revelation-12-is-the-traditiona",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(3)",
+   "source": "The crown of twelve stars in Revelation 12 is the traditional Scripture sign for this mystery; the Church celebrates Mary as Queen of heaven and earth.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.frequently-asked-questio.frequently-asked-questions",
+   "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+   "source": "Frequently Asked Questions",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.frequently-asked-questio.what-is-the-fifth-glorious-mystery",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(1)",
+   "source": "What is the Fifth Glorious Mystery?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.frequently-asked-questio.the-coronation-of-mary-in-heaven-jesus-crowned-his-mother-as",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "The Coronation of Mary. In heaven, Jesus crowned his mother as Queen of heaven and earth. This mystery is traditionally prayed on Wednesday / Sunday, and its fruit is perseverance and trust in Mary's intercession.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.frequently-asked-questio.how-do-you-pray-this-decade-with-children",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(2)",
+   "source": "How do you pray this decade with children?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.more-saint-storybooks-fo.more-saint-storybooks-for-children",
+   "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+   "source": "More Saint Storybooks for Children",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.more-saint-storybooks-fo.the-assumption-of-mary",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "The Assumption of Mary",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.more-saint-storybooks-fo.all-storybooks",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "All storybooks",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-coronation.footer.a-rosary-decade-book-for-children-author-please-pray-for-the",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "A Rosary decade book for children. Author: Please pray for the person who made this website.",
+   "kind": "text",
+   "nodeIndex": 0
+  }
+ ],
+ "messages": {
+  "glorious-coronation.metadata.title-fifth-glorious-mystery-the-coronation-of-mary-rosary-b": "Fifth Glorious Mystery: The Coronation of Mary | Rosary Book",
+  "glorious-coronation.metadata.description-a-read-aloud-decade-book-for-children-on-the-fif": "A read-aloud decade book for children on the Fifth Glorious Mystery, the Coronation of Mary: the story, the Gospel, the decade prayers, and a reflection.",
+  "glorious-coronation.metadata.og-title-fifth-glorious-mystery-the-coronation-of-mary-rosar": "Fifth Glorious Mystery: The Coronation of Mary | Rosary Book",
+  "glorious-coronation.metadata.og-description-a-read-aloud-decade-book-for-children-on-the": "A read-aloud decade book for children on the Fifth Glorious Mystery, the Coronation of Mary: the story, the Gospel, the decade prayers, and a reflection.",
+  "glorious-coronation.metadata.twitter-title-fifth-glorious-mystery-the-coronation-of-mary": "Fifth Glorious Mystery: The Coronation of Mary | Rosary Book",
+  "glorious-coronation.metadata.twitter-description-a-read-aloud-decade-book-for-children-on": "A read-aloud decade book for children on the Fifth Glorious Mystery, the Coronation of Mary: the story, the Gospel, the decade prayers, and a reflection.",
+  "glorious-coronation.body.skip-to-main-content": "Skip to main content",
+  "glorious-coronation.header.text": "✦",
+  "glorious-coronation.header.saint-charbel": "Saint Charbel",
+  "glorious-coronation.accessibility.primary": "Primary",
+  "glorious-coronation.header.home": "Home",
+  "glorious-coronation.header.legacy": "Legacy",
+  "glorious-coronation.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+  "glorious-coronation.header.full-history": "Full History",
+  "glorious-coronation.header.miracles": "Miracles",
+  "glorious-coronation.header.miracles-reports": "Miracles & Reports",
+  "glorious-coronation.header.eucharistic-miracles": "Eucharistic Miracles",
+  "glorious-coronation.header.letters": "Letters",
+  "glorious-coronation.header.voice-testimony": "Voice Testimony",
+  "glorious-coronation.header.saints": "Saints",
+  "glorious-coronation.header.children-s-books": "Children's Books",
+  "glorious-coronation.header.prayer": "Prayer",
+  "glorious-coronation.header.prayer-library": "Prayer Library",
+  "glorious-coronation.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+  "glorious-coronation.header.prayer-for-the-sick": "Prayer for the Sick",
+  "glorious-coronation.header.prayer-for-healing": "Prayer for Healing",
+  "glorious-coronation.header.prayer-for-anxiety": "Prayer for Anxiety",
+  "glorious-coronation.header.prayer-for-depression": "Prayer for Depression",
+  "glorious-coronation.header.prayer-for-students": "Prayer for Students",
+  "glorious-coronation.header.prayer-for-addiction": "Prayer for Addiction",
+  "glorious-coronation.header.prayer-for-family": "Prayer for Family",
+  "glorious-coronation.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+  "glorious-coronation.header.prayer-for-a-miracle": "Prayer for a Miracle",
+  "glorious-coronation.header.saint-charbel-prayers": "Saint Charbel Prayers",
+  "glorious-coronation.header.saint-charbel-novena": "Saint Charbel Novena",
+  "glorious-coronation.header.feast-day": "Feast Day",
+  "glorious-coronation.header.rosary-guide": "Rosary Guide",
+  "glorious-coronation.header.rosary-minibook": "Rosary Minibook",
+  "glorious-coronation.header.mystery-meditation": "Mystery Meditation",
+  "glorious-coronation.header.become-like-him": "Become Like Him",
+  "glorious-coronation.header.travel": "Travel",
+  "glorious-coronation.header.visiting-annaya": "Visiting Annaya",
+  "glorious-coronation.header.annaya-online-tour": "Annaya Online Tour",
+  "glorious-coronation.header.bekaa-kafra": "Bekaa Kafra",
+  "glorious-coronation.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+  "glorious-coronation.header.the-cedars-of-god": "the Cedars of God",
+  "glorious-coronation.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+  "glorious-coronation.header.qadisha-valley": "Qadisha Valley",
+  "glorious-coronation.header.qannoubine-monastery": "Qannoubine Monastery",
+  "glorious-coronation.header.qozhaya-monastery": "Qozhaya Monastery",
+  "glorious-coronation.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+  "glorious-coronation.header.the-hermitage": "The Hermitage",
+  "glorious-coronation.header.saint-charbel-trail": "Saint Charbel Trail",
+  "glorious-coronation.header.news": "News",
+  "glorious-coronation.header.media": "Media",
+  "glorious-coronation.header.music": "Music",
+  "glorious-coronation.header.video": "Video",
+  "glorious-coronation.header.gallery": "Gallery",
+  "glorious-coronation.body.a-book-for-ages-6-12": "A Book for Ages 6-12",
+  "glorious-coronation.the-coronation-of-mary-f.the-coronation-of-mary-fifth-glorious-mystery": "The Coronation of Mary: Fifth Glorious Mystery",
+  "glorious-coronation.the-coronation-of-mary-f.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-co": "A little read-aloud book for one decade of the Rosary: The Coronation of Mary.",
+  "glorious-coronation.the-coronation-of-mary-f.short-answer": "Short answer:",
+  "glorious-coronation.the-coronation-of-mary-f.this-book-walks-children-through-the-fifth-glorious-mystery": "This book walks children through the Fifth Glorious Mystery, the Coronation of Mary: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on perseverance and trust in Mary's intercession.",
+  "glorious-coronation.the-coronation-of-mary-f.continue-from-page-2": "Continue from Page 2?",
+  "glorious-coronation.the-coronation-of-mary-f.resume": "Resume",
+  "glorious-coronation.accessibility.dismiss": "Dismiss",
+  "glorious-coronation.the-coronation-of-mary-f.text": "✕",
+  "glorious-coronation.accessibility.illustrated-storybook": "Illustrated storybook",
+  "glorious-coronation.the-coronation-of-mary-f.reading": "Reading…",
+  "glorious-coronation.the-coronation-of-mary-f.0-00": "0:00",
+  "glorious-coronation.the-coronation-of-mary-f.voice-pack": "Voice Pack",
+  "glorious-coronation.accessibility.select-story-voice-pack": "Select story voice pack",
+  "glorious-coronation.accessibility.previous-page": "Previous page",
+  "glorious-coronation.the-coronation-of-mary-f.previous-page": "Previous Page",
+  "glorious-coronation.the-coronation-of-mary-f.read-aloud": "Read Aloud",
+  "glorious-coronation.accessibility.next-page": "Next page",
+  "glorious-coronation.the-coronation-of-mary-f.next-page": "Next Page",
+  "glorious-coronation.accessibility.story-settings": "Story settings",
+  "glorious-coronation.the-coronation-of-mary-f.story-settings": "Story settings",
+  "glorious-coronation.the-coronation-of-mary-f.toggle-reader-mode-for-easier-reading": "Toggle reader mode for easier reading",
+  "glorious-coronation.the-coronation-of-mary-f.reader-mode": "Reader Mode",
+  "glorious-coronation.the-coronation-of-mary-f.automatically-read-next-page-when-current-page-finishes": "Automatically read next page when current page finishes",
+  "glorious-coronation.the-coronation-of-mary-f.auto-continue": "Auto Continue",
+  "glorious-coronation.accessibility.playback-speed": "Playback speed",
+  "glorious-coronation.the-coronation-of-mary-f.slow": "Slow",
+  "glorious-coronation.the-coronation-of-mary-f.normal": "Normal",
+  "glorious-coronation.the-coronation-of-mary-f.fast": "Fast",
+  "glorious-coronation.the-coronation-of-mary-f.page-1-of-4": "Page 1 of 4",
+  "glorious-coronation.loading-story.loading-story": "Loading story...",
+  "glorious-coronation.loading-story.please-wait-while-we-open-the-storybook": "Please wait while we open the storybook.",
+  "glorious-coronation.loading-story.evidence-for-this-page": "Evidence for This Page",
+  "glorious-coronation.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+  "glorious-coronation.about-this-story.about-this-story": "About this story",
+  "glorious-coronation.about-this-story.painting-diego-vel-zquez-coronation-of-the-virgin-prado-publ": "Painting: Diego Velázquez, Coronation of the Virgin (Prado). Public domain, via Wikimedia Commons.",
+  "glorious-coronation.about-this-story.image-source-wikimedia-commons": "Image source (Wikimedia Commons)",
+  "glorious-coronation.about-this-story.text": ".",
+  "glorious-coronation.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Wednesday / Sunday.",
+  "glorious-coronation.about-this-story.the-crown-of-twelve-stars-in-revelation-12-is-the-traditiona": "The crown of twelve stars in Revelation 12 is the traditional Scripture sign for this mystery; the Church celebrates Mary as Queen of heaven and earth.",
+  "glorious-coronation.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+  "glorious-coronation.frequently-asked-questio.what-is-the-fifth-glorious-mystery": "What is the Fifth Glorious Mystery?",
+  "glorious-coronation.frequently-asked-questio.the-coronation-of-mary-in-heaven-jesus-crowned-his-mother-as": "The Coronation of Mary. In heaven, Jesus crowned his mother as Queen of heaven and earth. This mystery is traditionally prayed on Wednesday / Sunday, and its fruit is perseverance and trust in Mary's intercession.",
+  "glorious-coronation.frequently-asked-questio.how-do-you-pray-this-decade-with-children": "How do you pray this decade with children?",
+  "glorious-coronation.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+  "glorious-coronation.more-saint-storybooks-fo.more-saint-storybooks-for-children": "More Saint Storybooks for Children",
+  "glorious-coronation.more-saint-storybooks-fo.the-assumption-of-mary": "The Assumption of Mary",
+  "glorious-coronation.more-saint-storybooks-fo.all-storybooks": "All storybooks",
+  "glorious-coronation.footer.a-rosary-decade-book-for-children-author-please-pray-for-the": "A Rosary decade book for children. Author: Please pray for the person who made this website.",
+  "glorious-coronation.header.saints-2": "Saints",
+  "glorious-coronation.header.travel-2": "Travel"
+ }
+}

@@ -1,0 +1,4 @@
+/* Rosary mystery books: additive rules on top of the pinned storybook-stage.css. */
+body.is-story-page .storybook-text #story-body{white-space:pre-line}
+/* Localized (non-EN) editions: shelf labels are wider, so Settings stays in the static stacked fallback so the two can never collide (RTL and enlarged text included). */
+html:not([lang="en"]) body.is-story-page.st-settings-row .storybook>details.story-settings{position:static;inset-inline-end:auto;top:auto;margin:0 .2rem}

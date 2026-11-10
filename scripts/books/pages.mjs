@@ -93,7 +93,7 @@ function derive(f) {
     ogLocale: f.ogLocales === 'all' ? '  {{> head-og-locales}}' : (f.ogLocales || []).map((l, i) => i === 0 ? `<meta property="og:locale" content="${l}" />` : `<meta property="og:locale:alternate" content="${l}" />`).join('\n'),
     pageCount: String(pages ? pages.length : f.pageCount), disclosureAttr: f.specificDisclosure ? ' data-story-specific-disclosure=""' : '', footerFragment: f.footerFragment || 'footer-credit-b',
     summary: f.summaryHtml ?? '', family: f.familyReadingHtml ?? '', about: f.aboutHtml ?? '', faqArgs: hasFaq ? faqArgs(f.faq) : '',
-    faqCard: hasFaq ? faqCard(f.faq) : '', related: f.related ? relList(f.related) : '', footer: f.footerCredit, dataFile: f.dataFile ?? '', dataFileExtra: (f.dataFileExtra || []).map(x => '\n<script defer="" src="' + x + '"></script>').join(''),
+    faqCard: hasFaq ? faqCard(f.faq) : '', related: f.related ? relList(f.related) : '', footer: f.footerCredit, storyJs: f.storyJs ?? 'storybook.js', stageJs: f.stageJs ?? 'storybook-stage.js', extraCss: (f.extraCss || []).map(x => '\n<link href="' + x + '" rel="stylesheet"/>').join(''), dataFile: f.dataFile ?? '', dataFileExtra: (f.dataFileExtra || []).map(x => '\n<script defer="" src="' + x + '"></script>').join(''),
     fontPreloads: f.fontPreloadsFragment ? '  {{> head-font-preloads}}' : `<link as="font" crossorigin="" href="./media/fonts/cormorant-garamond-latin-v1.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="./media/fonts/manrope-latin-v1.woff2" rel="preload" type="font/woff2"/>`,
     productionNote: f.productionNote === null ? '' : (f.productionNote ?? DEFAULT_NOTE),

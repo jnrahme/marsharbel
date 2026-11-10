@@ -1,0 +1,882 @@
+{
+ "version": 1,
+ "master": "joyful-nativity.html",
+ "masterSha256": "b4a2ac7939f617a74f1d3026364811f5bd5f9d4c9c25be17cc37081c86af2a41",
+ "sourceRevision": "cf1cf38e",
+ "bindings": [
+  {
+   "key": "joyful-nativity.metadata.title-third-joyful-mystery-the-nativity-rosary-book",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+   "source": "Third Joyful Mystery: The Nativity | Rosary Book",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.metadata.description-a-read-aloud-decade-book-for-children-on-the-thi",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(4)",
+   "source": "A read-aloud decade book for children on the Third Joyful Mystery, the Nativity: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "joyful-nativity.metadata.og-title-third-joyful-mystery-the-nativity-rosary-book",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+   "source": "Third Joyful Mystery: The Nativity | Rosary Book",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "joyful-nativity.metadata.og-description-a-read-aloud-decade-book-for-children-on-the",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(9)",
+   "source": "A read-aloud decade book for children on the Third Joyful Mystery, the Nativity: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "joyful-nativity.metadata.twitter-title-third-joyful-mystery-the-nativity-rosary-book",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
+   "source": "Third Joyful Mystery: The Nativity | Rosary Book",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "joyful-nativity.metadata.twitter-description-a-read-aloud-decade-book-for-children-on",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(14)",
+   "source": "A read-aloud decade book for children on the Third Joyful Mystery, the Nativity: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "joyful-nativity.body.skip-to-main-content",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Skip to main content",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.text",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "✦",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.saint-charbel",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+   "source": "Saint Charbel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.accessibility.primary",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+   "source": "Primary",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "joyful-nativity.header.home",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Home",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.legacy",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Legacy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.saint-charbel-encyclopedia",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Charbel Encyclopedia",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.full-history",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Full History",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.miracles",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.miracles-reports",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Miracles & Reports",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.eucharistic-miracles",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Eucharistic Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.letters",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Letters",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.voice-testimony",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Voice Testimony",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.saints",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.saints-2",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.children-s-books",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Children's Books",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.prayer",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+   "source": "Prayer",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.prayer-library",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Prayer Library",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.find-a-prayer-by-intention",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Find a Prayer by Intention",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.prayer-for-the-sick",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Prayer for the Sick",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.prayer-for-healing",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Prayer for Healing",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.prayer-for-anxiety",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Prayer for Anxiety",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.prayer-for-depression",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "Prayer for Depression",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.prayer-for-students",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Prayer for Students",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.prayer-for-addiction",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Prayer for Addiction",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.prayer-for-family",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Prayer for Family",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.prayer-for-pregnancy",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Prayer for Pregnancy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.prayer-for-a-miracle",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Prayer for a Miracle",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.saint-charbel-prayers",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "Saint Charbel Prayers",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.saint-charbel-novena",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Novena",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.feast-day",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+   "source": "Feast Day",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.rosary-guide",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+   "source": "Rosary Guide",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.rosary-minibook",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+   "source": "Rosary Minibook",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.mystery-meditation",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+   "source": "Mystery Meditation",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.become-like-him",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+   "source": "Become Like Him",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.travel",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.travel-2",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.visiting-annaya",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Visiting Annaya",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.annaya-online-tour",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Annaya Online Tour",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.bekaa-kafra",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Bekaa Kafra",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.our-lady-of-lebanon-at-harissa",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Our Lady of Lebanon at Harissa",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.the-cedars-of-god",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "the Cedars of God",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.bkerke-and-the-maronite-patriarchate",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Bkerke and the Maronite Patriarchate",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.qadisha-valley",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Qadisha Valley",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.qannoubine-monastery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Qannoubine Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.qozhaya-monastery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Qozhaya Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.saint-charbel-s-lebanon",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Saint Charbel's Lebanon",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.the-hermitage",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "The Hermitage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.saint-charbel-trail",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Trail",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.news",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "News",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.media",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+   "source": "Media",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.music",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Music",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.video",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Video",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.header.gallery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Gallery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.body.a-book-for-ages-6-12",
+   "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "A Book for Ages 6-12",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.the-nativity-third-joyful-mystery",
+   "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+   "source": "The Nativity: Third Joyful Mystery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-na",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "A little read-aloud book for one decade of the Rosary: The Nativity.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.short-answer",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+   "source": "Short answer:",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.this-book-walks-children-through-the-third-joyful-mystery-th",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "This book walks children through the Third Joyful Mystery, the Nativity: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on detachment and holy poverty.",
+   "kind": "text",
+   "nodeIndex": 1
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.continue-from-page-2",
+   "selector": "#story-resume-text",
+   "source": "Continue from Page 2?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.resume",
+   "selector": "#story-resume-btn",
+   "source": "Resume",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.accessibility.dismiss",
+   "selector": "#story-resume-dismiss",
+   "source": "Dismiss",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.text",
+   "selector": "#story-resume-dismiss",
+   "source": "✕",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.accessibility.illustrated-storybook",
+   "selector": "#main-content > section:nth-of-type(2)",
+   "source": "Illustrated storybook",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.reading",
+   "selector": "#story-reading-label",
+   "source": "Reading…",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.0-00",
+   "selector": "#story-elapsed",
+   "source": "0:00",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.voice-pack",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Voice Pack",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.accessibility.select-story-voice-pack",
+   "selector": "#story-voice-pack",
+   "source": "Select story voice pack",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "joyful-nativity.accessibility.previous-page",
+   "selector": "#story-prev",
+   "source": "Previous page",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.previous-page",
+   "selector": "#story-prev",
+   "source": "Previous Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.read-aloud",
+   "selector": "#story-read",
+   "source": "Read Aloud",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.accessibility.next-page",
+   "selector": "#story-next",
+   "source": "Next page",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.next-page",
+   "selector": "#story-next",
+   "source": "Next Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.accessibility.story-settings",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+   "source": "Story settings",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.story-settings",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+   "source": "Story settings",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.toggle-reader-mode-for-easier-reading",
+   "selector": "#story-reader-toggle",
+   "source": "Toggle reader mode for easier reading",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.reader-mode",
+   "selector": "#story-reader-toggle",
+   "source": "Reader Mode",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.automatically-read-next-page-when-current-page-finishes",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Automatically read next page when current page finishes",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.auto-continue",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Auto Continue",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "joyful-nativity.accessibility.playback-speed",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "Playback speed",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.slow",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "source": "Slow",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.normal",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+   "source": "Normal",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.fast",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)",
+   "source": "Fast",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.the-nativity-third-joyfu.page-1-of-4",
+   "selector": "#story-step",
+   "source": "Page 1 of 4",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.loading-story.loading-story",
+   "selector": "#story-title",
+   "source": "Loading story...",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.loading-story.please-wait-while-we-open-the-storybook",
+   "selector": "#story-body",
+   "source": "Please wait while we open the storybook.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.loading-story.evidence-for-this-page",
+   "selector": "#story-evidence-title",
+   "source": "Evidence for This Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr",
+   "selector": "#main-content > p:nth-of-type(1)",
+   "source": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.about-this-story.about-this-story",
+   "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+   "source": "About this story",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.about-this-story.painting-gerard-van-honthorst-adoration-of-the-child-uffizi",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "Painting: Gerard van Honthorst, Adoration of the Child (Uffizi). Public domain, via Wikimedia Commons.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.about-this-story.image-source-wikimedia-commons",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Image source (Wikimedia Commons)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.about-this-story.text",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+   "source": ".",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "joyful-nativity.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Monday / Saturday.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.frequently-asked-questio.frequently-asked-questions",
+   "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+   "source": "Frequently Asked Questions",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.frequently-asked-questio.what-is-the-third-joyful-mystery",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(1)",
+   "source": "What is the Third Joyful Mystery?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.frequently-asked-questio.the-nativity-in-bethlehem-there-was-no-room-at-the-inn-so-je",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "The Nativity. In Bethlehem there was no room at the inn, so Jesus was born in a stable and laid in a manger. This mystery is traditionally prayed on Monday / Saturday, and its fruit is detachment and holy poverty.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.frequently-asked-questio.how-do-you-pray-this-decade-with-children",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(2)",
+   "source": "How do you pray this decade with children?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.more-saint-storybooks-fo.more-saint-storybooks-for-children",
+   "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+   "source": "More Saint Storybooks for Children",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.more-saint-storybooks-fo.the-visitation",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "The Visitation",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.more-saint-storybooks-fo.the-presentation-in-the-temple",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "The Presentation in the Temple",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.more-saint-storybooks-fo.all-storybooks",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "All storybooks",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "joyful-nativity.footer.a-rosary-decade-book-for-children-author-please-pray-for-the",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "A Rosary decade book for children. Author: Please pray for the person who made this website.",
+   "kind": "text",
+   "nodeIndex": 0
+  }
+ ],
+ "messages": {
+  "joyful-nativity.metadata.title-third-joyful-mystery-the-nativity-rosary-book": "Third Joyful Mystery: The Nativity | Rosary Book",
+  "joyful-nativity.metadata.description-a-read-aloud-decade-book-for-children-on-the-thi": "A read-aloud decade book for children on the Third Joyful Mystery, the Nativity: the story, the Gospel, the decade prayers, and a reflection.",
+  "joyful-nativity.metadata.og-title-third-joyful-mystery-the-nativity-rosary-book": "Third Joyful Mystery: The Nativity | Rosary Book",
+  "joyful-nativity.metadata.og-description-a-read-aloud-decade-book-for-children-on-the": "A read-aloud decade book for children on the Third Joyful Mystery, the Nativity: the story, the Gospel, the decade prayers, and a reflection.",
+  "joyful-nativity.metadata.twitter-title-third-joyful-mystery-the-nativity-rosary-book": "Third Joyful Mystery: The Nativity | Rosary Book",
+  "joyful-nativity.metadata.twitter-description-a-read-aloud-decade-book-for-children-on": "A read-aloud decade book for children on the Third Joyful Mystery, the Nativity: the story, the Gospel, the decade prayers, and a reflection.",
+  "joyful-nativity.body.skip-to-main-content": "Skip to main content",
+  "joyful-nativity.header.text": "✦",
+  "joyful-nativity.header.saint-charbel": "Saint Charbel",
+  "joyful-nativity.accessibility.primary": "Primary",
+  "joyful-nativity.header.home": "Home",
+  "joyful-nativity.header.legacy": "Legacy",
+  "joyful-nativity.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+  "joyful-nativity.header.full-history": "Full History",
+  "joyful-nativity.header.miracles": "Miracles",
+  "joyful-nativity.header.miracles-reports": "Miracles & Reports",
+  "joyful-nativity.header.eucharistic-miracles": "Eucharistic Miracles",
+  "joyful-nativity.header.letters": "Letters",
+  "joyful-nativity.header.voice-testimony": "Voice Testimony",
+  "joyful-nativity.header.saints": "Saints",
+  "joyful-nativity.header.children-s-books": "Children's Books",
+  "joyful-nativity.header.prayer": "Prayer",
+  "joyful-nativity.header.prayer-library": "Prayer Library",
+  "joyful-nativity.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+  "joyful-nativity.header.prayer-for-the-sick": "Prayer for the Sick",
+  "joyful-nativity.header.prayer-for-healing": "Prayer for Healing",
+  "joyful-nativity.header.prayer-for-anxiety": "Prayer for Anxiety",
+  "joyful-nativity.header.prayer-for-depression": "Prayer for Depression",
+  "joyful-nativity.header.prayer-for-students": "Prayer for Students",
+  "joyful-nativity.header.prayer-for-addiction": "Prayer for Addiction",
+  "joyful-nativity.header.prayer-for-family": "Prayer for Family",
+  "joyful-nativity.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+  "joyful-nativity.header.prayer-for-a-miracle": "Prayer for a Miracle",
+  "joyful-nativity.header.saint-charbel-prayers": "Saint Charbel Prayers",
+  "joyful-nativity.header.saint-charbel-novena": "Saint Charbel Novena",
+  "joyful-nativity.header.feast-day": "Feast Day",
+  "joyful-nativity.header.rosary-guide": "Rosary Guide",
+  "joyful-nativity.header.rosary-minibook": "Rosary Minibook",
+  "joyful-nativity.header.mystery-meditation": "Mystery Meditation",
+  "joyful-nativity.header.become-like-him": "Become Like Him",
+  "joyful-nativity.header.travel": "Travel",
+  "joyful-nativity.header.visiting-annaya": "Visiting Annaya",
+  "joyful-nativity.header.annaya-online-tour": "Annaya Online Tour",
+  "joyful-nativity.header.bekaa-kafra": "Bekaa Kafra",
+  "joyful-nativity.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+  "joyful-nativity.header.the-cedars-of-god": "the Cedars of God",
+  "joyful-nativity.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+  "joyful-nativity.header.qadisha-valley": "Qadisha Valley",
+  "joyful-nativity.header.qannoubine-monastery": "Qannoubine Monastery",
+  "joyful-nativity.header.qozhaya-monastery": "Qozhaya Monastery",
+  "joyful-nativity.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+  "joyful-nativity.header.the-hermitage": "The Hermitage",
+  "joyful-nativity.header.saint-charbel-trail": "Saint Charbel Trail",
+  "joyful-nativity.header.news": "News",
+  "joyful-nativity.header.media": "Media",
+  "joyful-nativity.header.music": "Music",
+  "joyful-nativity.header.video": "Video",
+  "joyful-nativity.header.gallery": "Gallery",
+  "joyful-nativity.body.a-book-for-ages-6-12": "A Book for Ages 6-12",
+  "joyful-nativity.the-nativity-third-joyfu.the-nativity-third-joyful-mystery": "The Nativity: Third Joyful Mystery",
+  "joyful-nativity.the-nativity-third-joyfu.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-na": "A little read-aloud book for one decade of the Rosary: The Nativity.",
+  "joyful-nativity.the-nativity-third-joyfu.short-answer": "Short answer:",
+  "joyful-nativity.the-nativity-third-joyfu.this-book-walks-children-through-the-third-joyful-mystery-th": "This book walks children through the Third Joyful Mystery, the Nativity: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on detachment and holy poverty.",
+  "joyful-nativity.the-nativity-third-joyfu.continue-from-page-2": "Continue from Page 2?",
+  "joyful-nativity.the-nativity-third-joyfu.resume": "Resume",
+  "joyful-nativity.accessibility.dismiss": "Dismiss",
+  "joyful-nativity.the-nativity-third-joyfu.text": "✕",
+  "joyful-nativity.accessibility.illustrated-storybook": "Illustrated storybook",
+  "joyful-nativity.the-nativity-third-joyfu.reading": "Reading…",
+  "joyful-nativity.the-nativity-third-joyfu.0-00": "0:00",
+  "joyful-nativity.the-nativity-third-joyfu.voice-pack": "Voice Pack",
+  "joyful-nativity.accessibility.select-story-voice-pack": "Select story voice pack",
+  "joyful-nativity.accessibility.previous-page": "Previous page",
+  "joyful-nativity.the-nativity-third-joyfu.previous-page": "Previous Page",
+  "joyful-nativity.the-nativity-third-joyfu.read-aloud": "Read Aloud",
+  "joyful-nativity.accessibility.next-page": "Next page",
+  "joyful-nativity.the-nativity-third-joyfu.next-page": "Next Page",
+  "joyful-nativity.accessibility.story-settings": "Story settings",
+  "joyful-nativity.the-nativity-third-joyfu.story-settings": "Story settings",
+  "joyful-nativity.the-nativity-third-joyfu.toggle-reader-mode-for-easier-reading": "Toggle reader mode for easier reading",
+  "joyful-nativity.the-nativity-third-joyfu.reader-mode": "Reader Mode",
+  "joyful-nativity.the-nativity-third-joyfu.automatically-read-next-page-when-current-page-finishes": "Automatically read next page when current page finishes",
+  "joyful-nativity.the-nativity-third-joyfu.auto-continue": "Auto Continue",
+  "joyful-nativity.accessibility.playback-speed": "Playback speed",
+  "joyful-nativity.the-nativity-third-joyfu.slow": "Slow",
+  "joyful-nativity.the-nativity-third-joyfu.normal": "Normal",
+  "joyful-nativity.the-nativity-third-joyfu.fast": "Fast",
+  "joyful-nativity.the-nativity-third-joyfu.page-1-of-4": "Page 1 of 4",
+  "joyful-nativity.loading-story.loading-story": "Loading story...",
+  "joyful-nativity.loading-story.please-wait-while-we-open-the-storybook": "Please wait while we open the storybook.",
+  "joyful-nativity.loading-story.evidence-for-this-page": "Evidence for This Page",
+  "joyful-nativity.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+  "joyful-nativity.about-this-story.about-this-story": "About this story",
+  "joyful-nativity.about-this-story.painting-gerard-van-honthorst-adoration-of-the-child-uffizi": "Painting: Gerard van Honthorst, Adoration of the Child (Uffizi). Public domain, via Wikimedia Commons.",
+  "joyful-nativity.about-this-story.image-source-wikimedia-commons": "Image source (Wikimedia Commons)",
+  "joyful-nativity.about-this-story.text": ".",
+  "joyful-nativity.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Monday / Saturday.",
+  "joyful-nativity.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+  "joyful-nativity.frequently-asked-questio.what-is-the-third-joyful-mystery": "What is the Third Joyful Mystery?",
+  "joyful-nativity.frequently-asked-questio.the-nativity-in-bethlehem-there-was-no-room-at-the-inn-so-je": "The Nativity. In Bethlehem there was no room at the inn, so Jesus was born in a stable and laid in a manger. This mystery is traditionally prayed on Monday / Saturday, and its fruit is detachment and holy poverty.",
+  "joyful-nativity.frequently-asked-questio.how-do-you-pray-this-decade-with-children": "How do you pray this decade with children?",
+  "joyful-nativity.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+  "joyful-nativity.more-saint-storybooks-fo.more-saint-storybooks-for-children": "More Saint Storybooks for Children",
+  "joyful-nativity.more-saint-storybooks-fo.the-visitation": "The Visitation",
+  "joyful-nativity.more-saint-storybooks-fo.the-presentation-in-the-temple": "The Presentation in the Temple",
+  "joyful-nativity.more-saint-storybooks-fo.all-storybooks": "All storybooks",
+  "joyful-nativity.footer.a-rosary-decade-book-for-children-author-please-pray-for-the": "A Rosary decade book for children. Author: Please pray for the person who made this website.",
+  "joyful-nativity.header.saints-2": "Saints",
+  "joyful-nativity.header.travel-2": "Travel"
+ }
+}

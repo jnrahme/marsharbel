@@ -1,0 +1,136 @@
+{
+ "schema": 1,
+ "id": "bk-glorious-coronation",
+ "slug": "glorious-coronation",
+ "legacyStoryId": "glorious-coronation",
+ "pageUrl": "/glorious-coronation",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 40,
+ "ageRange": "6-12",
+ "locales": [
+  "en",
+  "ar",
+  "de",
+  "es",
+  "fr",
+  "hi",
+  "it",
+  "pl",
+  "pt",
+  "ru",
+  "th",
+  "zh-Hans"
+ ],
+ "cover": "bk-glorious-coronation-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-glorious-coronation-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-coronation-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-glorious-coronation-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-coronation-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-glorious-coronation-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-coronation-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-glorious-coronation-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-coronation-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: Diego Velázquez, Coronation of the Virgin (Prado). Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg"
+  },
+  "piusXII": {
+   "label": "Pope Pius XII, Munificentissimus Deus (1950)",
+   "url": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-glorious-coronation-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/g5.webp",
+   "mime": "image/webp",
+   "bytes": 82294,
+   "sha256": "b9d4795f5cc38856dadd8fb9aec4d5010fa325371c16d1f7b23b9330e000c352",
+   "access": "public",
+   "width": 800,
+   "height": 1065
+  }
+ ]
+}
