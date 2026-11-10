@@ -1,0 +1,52 @@
+name: Isolated rosary packet review
+on:
+  push:
+    branches: [recovery/nov10-write-route]
+    paths: [.github/workflows/branch-packet.yml]
+permissions:
+  contents: write
+jobs:
+  apply-and-review:
+    if: github.repository == 'jnrahme/marsharbel' && github.ref == 'refs/heads/recovery/nov10-write-route'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Verify and apply exact candidate packet
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = recovery/nov10-write-route
+          test "$(git ls-remote origin refs/heads/stage | cut -f1)" = cf1cf38ee9203f91b68a502625659d63a94d4a24
+          cat rosary-packet-01.b64 rosary-packet-02.b64 | base64 -d | xz -dc > /tmp/rosary-v2.patch
+          packet=/tmp/rosary-v2.patch
+          echo "25ae0f3f6305187c37f84b7c49e5221246820f228fe42d24bff816f0a5c4b5fd  $packet" | sha256sum --check
+          git apply --check "$packet"
+          git apply "$packet"
+          rm rosary-packet-01.b64 rosary-packet-02.b64
+          rm -f .github/workflows/.github/workflows/branch-packet.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Apply exact rosary candidate v2 for review only'
+          git push origin HEAD:refs/heads/recovery/nov10-write-route
+          git rev-parse HEAD
+      - run: npm ci
+      - run: pip install beautifulsoup4
+      - run: npx playwright install --with-deps chromium
+      - name: Full i18n policy verdict
+        run: python3 scripts/qa/check_i18n_policy.py
+      - name: Full source page build verdict
+        if: always()
+        run: node scripts/build-pages.mjs --check
+      - name: Real new-page locale gate
+        if: always()
+        run: python3 scripts/qa/check_new_page_locales.py --base cf1cf38ee9203f91b68a502625659d63a94d4a24
+      - name: Book API generated output
+        if: always()
+        run: node scripts/books/build-api.mjs --check
