@@ -31,7 +31,19 @@ jobs:
           git apply /tmp/shards.patch
           python3 scripts/qa/check_i18n_policy.py
           node scripts/build-pages.mjs --check
-          test -z "$(git diff --name-only | grep -v '^scripts/ci/bq-shards/shard-[1-8]\.txt$' || true)"
+          git diff --name-only > /tmp/actual-paths
+          cat > /tmp/expected-paths <<'PATHS'
+          locales/en/movie-status-copy.json
+          locales/en/prayer-pages-copy.json
+          saint-charbel-movie.html
+          saint-charbel-oil.html
+          saint-charbel-prayer-for-healing.html
+          scripts/qa/test_jsonld_serializer.py
+          src/pages/saint-charbel-movie.html
+          src/pages/saint-charbel-oil.html
+          src/pages/saint-charbel-prayer-for-healing.html
+          PATHS
+          diff -u /tmp/expected-paths /tmp/actual-paths
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git checkout -b review/movie-oil-nov10
