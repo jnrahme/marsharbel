@@ -123,3 +123,12 @@ Joey asked the assistant to research authoritative sources and use best judgment
 ## SmartAssist
 
 When available, call `rag_search` before project-specific code, test, Git or architecture decisions. Use `apply_feedback_protocol` to persist user corrections and reusable rules. If SmartAssist is unconfigured, preserve the rule here and continue; do not install or configure it without a task reason.
+
+## QA parser reproducibility (2026-11-10)
+
+Install Python QA dependencies with `pip install -r scripts/qa/requirements.txt`,
+not unbounded `pip install beautifulsoup4`. SoupSieve 4.0 changed document-wide
+selectors to stop at inert `<template>` boundaries. Current generators and
+immutable historical citation validators require the reviewed 2.10 behavior.
+Keep their source and evidence unchanged. Dependency upgrades need explicit
+compatibility tests, including the historical chain and current saint bindings.

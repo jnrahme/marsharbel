@@ -5,6 +5,13 @@ ROOT=Path(__file__).resolve().parents[2]
 spec=importlib.util.spec_from_file_location('saintbuild',ROOT/'scripts/build_saint_of_day.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
 def manifest():return json.loads((ROOT/'locales/saint-of-day.json').read_text())
 class SaintDay(unittest.TestCase):
+ def test_qa_parser_reaches_reviewed_inert_template_bindings(self):
+  # This selector shape also exists in immutable historical citation proofs.
+  # Never rewrite those proofs to accommodate a changed dependency default.
+  from bs4 import BeautifulSoup
+  s=BeautifulSoup('<template data-saint-date="2026-10-26"><h2 id="saint-day-heading">Saint of the Day</h2></template>','html.parser')
+  self.assertEqual(len(s.select('template[data-saint-date="2026-10-26"] #saint-day-heading')),1,
+                   'Install scripts/qa/requirements.txt; template selector semantics changed')
  def test_source_fresh(self):
   p,text=mod.output();self.assertEqual(p.read_text(),text)
  def test_locales_have_same_keys(self):

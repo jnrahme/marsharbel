@@ -1,0 +1,6 @@
+# Preserve the selector semantics required by current and immutable historical QA.
+# SoupSieve 4.0 stops document selectors at template boundaries. These generators
+# intentionally bind reviewed inert template content before browser mounting.
+# https://facelessuser.github.io/soupsieve/about/changelog/#40
+beautifulsoup4==4.15.0
+soupsieve==2.10
