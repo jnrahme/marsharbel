@@ -1,4 +1,4 @@
-name: Rosary v6 isolated final candidate
+name: Rosary v8 rebase and full review gates
 on:
   push:
     branches: [recovery/nov10-write-route]
@@ -6,45 +6,76 @@ on:
 permissions:
   contents: write
 jobs:
-  final-candidate:
-    if: github.repository == 'jnrahme/marsharbel' && github.ref == 'refs/heads/recovery/nov10-write-route'
+  candidate:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Exact packet and fresh production base custody
+      - name: Packet custody and current stage rebase
         run: |
           set -euo pipefail
-          cat rosary-v6-*.b64 | base64 -d | xz -dc > /tmp/rosary-v6.patch
-          echo '0fad67134e73777ae88cd26630a4e1f1bae396040b268bf495d453a42ff16de0  /tmp/rosary-v6.patch' | sha256sum --check
+          cat rosary-v8-*.b64 | base64 -d | xz -dc > /tmp/rosary-v8.patch
+          echo '6100b2727228aa768347e65cff019a8541c11f364b8a03377778c6067698a7c4  /tmp/rosary-v8.patch' | sha256sum --check
           git fetch origin stage
-          test "$(git rev-parse FETCH_HEAD)" = af91297e9e17eff8ca692d97e7470c528fbd8b38
-          git checkout -b review/rosary-v6-nov10 af91297e9e17eff8ca692d97e7470c528fbd8b38
+          test "$(git rev-parse FETCH_HEAD)" = 8023f924125ddc41b5cf6f843bef4f695c671535
+          git checkout -b review/rosary-v8-nov10 8023f924125ddc41b5cf6f843bef4f695c671535
           test -z "$(git status --porcelain)"
-          git apply --check /tmp/rosary-v6.patch
-          git apply /tmp/rosary-v6.patch
+          cp sitemap.xml /tmp/current-sitemap.xml
+          git show cf1cf38ee9203f91b68a502625659d63a94d4a24:sitemap.xml > sitemap.xml
+          git apply --include=sitemap.xml /tmp/rosary-v8.patch
+          cp sitemap.xml /tmp/packet-sitemap.xml
+          cp /tmp/current-sitemap.xml sitemap.xml
+          git apply --exclude='locales/*/saint-of-day.json' --exclude='locales/saint-of-day.json' --exclude='same-page-manifest.js' --exclude='search-index/*.json' --exclude='sitemap.xml' /tmp/rosary-v8.patch
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          current=Path('sitemap.xml').read_text()
+          packet=Path('/tmp/packet-sitemap.xml').read_text()
+          entries=re.findall(r'<url>.*?</url>',packet,re.S)
+          urls=set(re.findall(r'<loc>(.*?)</loc>',current))
+          additions=[e for e in entries if re.search(r'<loc>(.*?)</loc>',e).group(1) not in urls]
+          assert len(additions)==240, len(additions)
+          Path('sitemap.xml').write_text(current.replace('</urlset>','\n'.join(additions)+'\n</urlset>'))
+          PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
-          git commit -m 'content: illustrated Rosary mystery books and reviewed locale readers'
-          git rev-parse HEAD HEAD^{tree}
-          git push origin HEAD:refs/heads/review/rosary-v6-nov10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: npm ci
       - run: pip install -r scripts/qa/requirements.txt
       - run: npx playwright install --with-deps chromium
+      - name: Normal generators to fixpoint
+        run: |
+          set -euo pipefail
+          node scripts/books/pages.mjs build
+          node scripts/books/shelf.mjs build
+          node scripts/build-pages.mjs
+          python3 scripts/build-international.py
+          python3 scripts/build-international.py
+          node scripts/books/build-api.mjs
+          node scripts/build-search-index.mjs
+          python3 scripts/sitemap_lastmod.py --baseline 8023f924125ddc41b5cf6f843bef4f695c671535
+          git add -A
+          git commit -m 'content: localized Rosary decade books on current stage'
+          git rev-parse HEAD HEAD^{tree}
       - name: Real new-page locale gate
-        run: python3 scripts/qa/check_new_page_locales.py --base af91297e9e17eff8ca692d97e7470c528fbd8b38
-      - name: Full unchanged i18n policy
-        run: python3 scripts/qa/check_i18n_policy.py
-      - name: Source and generated API and shelf
+        run: python3 scripts/qa/check_new_page_locales.py --base 8023f924125ddc41b5cf6f843bef4f695c671535
+      - name: Full international and policy gates
+        run: |
+          set -euo pipefail
+          python3 scripts/build-international.py --check
+          python3 scripts/qa/check_i18n_policy.py
+      - name: Source API shelf search and SEO freshness
         if: always()
         run: |
+          set -euo pipefail
           node scripts/build-pages.mjs --check
-          node scripts/books/build-api.mjs --check
-          node scripts/books/shelf.mjs --check
+          npm run books:check
+          node scripts/build-search-index.mjs --check
+          python3 scripts/sitemap_lastmod.py --check --baseline 8023f924125ddc41b5cf6f843bef4f695c671535
           git diff --exit-code
+      - name: Publish review branch only after gates
+        run: git push origin HEAD:refs/heads/review/rosary-v8-nov10
