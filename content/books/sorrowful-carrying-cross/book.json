@@ -1,0 +1,121 @@
+{
+ "schema": 1,
+ "id": "bk-sorrowful-carrying-cross",
+ "slug": "sorrowful-carrying-cross",
+ "legacyStoryId": "sorrowful-carrying-cross",
+ "pageUrl": "/sorrowful-carrying-cross",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 34,
+ "ageRange": "6-12",
+ "locales": [
+  "en"
+ ],
+ "cover": "bk-sorrowful-carrying-cross-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-sorrowful-carrying-cross-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-carrying-cross-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-carrying-cross-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-carrying-cross-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-carrying-cross-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-carrying-cross-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-carrying-cross-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-carrying-cross-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: El Greco, Christ Carrying the Cross (MET). CC0, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Christ_Carrying_the_Cross_MET_DT714.jpg"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-sorrowful-carrying-cross-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/s4.webp",
+   "mime": "image/webp",
+   "bytes": 81024,
+   "sha256": "2cec1c576d25a3e831214038926747993cafe238dc8f85d807943b4b82437ee9",
+   "access": "public",
+   "width": 1000,
+   "height": 1385
+  }
+ ]
+}

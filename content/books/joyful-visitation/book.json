@@ -1,0 +1,121 @@
+{
+ "schema": 1,
+ "id": "bk-joyful-visitation",
+ "slug": "joyful-visitation",
+ "legacyStoryId": "joyful-visitation",
+ "pageUrl": "/joyful-visitation",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 22,
+ "ageRange": "6-12",
+ "locales": [
+  "en"
+ ],
+ "cover": "bk-joyful-visitation-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-joyful-visitation-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-joyful-visitation-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-joyful-visitation-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-joyful-visitation-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-joyful-visitation-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-joyful-visitation-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-joyful-visitation-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-joyful-visitation-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: Domenico Ghirlandaio, Visitation (Louvre). Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Visitation_by_Domenico_Ghirlandaio.jpg"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-joyful-visitation-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/j2.webp",
+   "mime": "image/webp",
+   "bytes": 71460,
+   "sha256": "fcdf5c05f54cde7975bdab1ded1aeba32bed8ac278fb8edd76f50cc9dd7cbf00",
+   "access": "public",
+   "width": 1200,
+   "height": 1254
+  }
+ ]
+}

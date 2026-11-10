@@ -210,6 +210,15 @@ body.is-story-page .storybook-controls {
   border-bottom: 1px solid #d5b98a;
 }
 body.is-story-page .storybook-panel { scroll-margin-top: calc(var(--story-header-height, 7rem) + var(--story-controls-height, 7rem) + 12px); }
+/* Rosary decade books carry long prayer pages; a sticky bar would ride over
+   the prayer text while scrolling, so their controls stay in normal flow. */
+body.is-story-page[data-story^="joyful-"] .storybook-controls,
+body.is-story-page[data-story^="luminous-"] .storybook-controls,
+body.is-story-page[data-story^="sorrowful-"] .storybook-controls,
+body.is-story-page[data-story^="glorious-"] .storybook-controls {
+  position: relative;
+  top: auto;
+}
 /* One illustration mount for every book. The image keeps its own ratio instead
    of borrowing the height of the copy column or a hard-coded scene rectangle. */
 body.is-story-page .storybook-panel {

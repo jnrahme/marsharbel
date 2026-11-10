@@ -9,7 +9,7 @@
     const fromQuery = (params.get('story') || '').toLowerCase();
     const fromBody = (document.body && document.body.dataset ? (document.body.dataset.story || '') : '').toLowerCase();
     const raw = fromQuery || fromBody;
-    return raw === 'veronica' ? 'veronica' : raw === 'augustine' ? 'augustine' : raw === 'marina' ? 'marina' : raw === 'maroun' ? 'maroun' : raw === 'sergius' ? 'sergius' : raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : 'charbel';
+    return raw === 'veronica' ? 'veronica' : raw === 'augustine' ? 'augustine' : raw === 'marina' ? 'marina' : raw === 'maroun' ? 'maroun' : raw === 'sergius' ? 'sergius' : raw === 'magdalene' ? 'magdalene' : raw === 'jude' ? 'jude' : raw === 'francis' ? 'francis' : raw === 'joseph' ? 'joseph' : raw === 'anthony' ? 'anthony' : raw === 'therese' ? 'therese' : raw === 'massabki' ? 'massabki' : raw === 'peter' ? 'peter' : raw === 'pio' ? 'pio' : raw === 'jpii' ? 'jpii' : raw === 'teresa' ? 'teresa' : raw === 'rafqa' ? 'rafqa' : raw === 'hardini' ? 'hardini' : raw === 'charbel-v2' ? 'charbel-v2' : raw === 'joyful-annunciation' ? 'joyful-annunciation' : raw === 'joyful-visitation' ? 'joyful-visitation' : raw === 'joyful-nativity' ? 'joyful-nativity' : raw === 'joyful-presentation' ? 'joyful-presentation' : raw === 'joyful-finding-temple' ? 'joyful-finding-temple' : raw === 'luminous-baptism' ? 'luminous-baptism' : raw === 'luminous-cana' ? 'luminous-cana' : raw === 'luminous-proclamation' ? 'luminous-proclamation' : raw === 'luminous-transfiguration' ? 'luminous-transfiguration' : raw === 'luminous-eucharist' ? 'luminous-eucharist' : raw === 'sorrowful-agony-garden' ? 'sorrowful-agony-garden' : raw === 'sorrowful-scourging' ? 'sorrowful-scourging' : raw === 'sorrowful-crowning-thorns' ? 'sorrowful-crowning-thorns' : raw === 'sorrowful-carrying-cross' ? 'sorrowful-carrying-cross' : raw === 'sorrowful-crucifixion' ? 'sorrowful-crucifixion' : raw === 'glorious-resurrection' ? 'glorious-resurrection' : raw === 'glorious-ascension' ? 'glorious-ascension' : raw === 'glorious-pentecost' ? 'glorious-pentecost' : raw === 'glorious-assumption' ? 'glorious-assumption' : raw === 'glorious-coronation' ? 'glorious-coronation' : 'charbel';
   };
   const storyId = getStoryId();
 
@@ -954,6 +954,26 @@
     jude: { en: window.JUDE_STORY_EN || [] },
     peter: { en: window.PETER_STORY_EN || [] },
     hardini: { en: window.HARDINI_STORY_EN || [] },
+    'joyful-annunciation': { en: window.JOYFUL_ANNUNCIATION_STORY_EN || [] },
+    'joyful-visitation': { en: window.JOYFUL_VISITATION_STORY_EN || [] },
+    'joyful-nativity': { en: window.JOYFUL_NATIVITY_STORY_EN || [] },
+    'joyful-presentation': { en: window.JOYFUL_PRESENTATION_STORY_EN || [] },
+    'joyful-finding-temple': { en: window.JOYFUL_FINDING_TEMPLE_STORY_EN || [] },
+    'luminous-baptism': { en: window.LUMINOUS_BAPTISM_STORY_EN || [] },
+    'luminous-cana': { en: window.LUMINOUS_CANA_STORY_EN || [] },
+    'luminous-proclamation': { en: window.LUMINOUS_PROCLAMATION_STORY_EN || [] },
+    'luminous-transfiguration': { en: window.LUMINOUS_TRANSFIGURATION_STORY_EN || [] },
+    'luminous-eucharist': { en: window.LUMINOUS_EUCHARIST_STORY_EN || [] },
+    'sorrowful-agony-garden': { en: window.SORROWFUL_AGONY_GARDEN_STORY_EN || [] },
+    'sorrowful-scourging': { en: window.SORROWFUL_SCOURGING_STORY_EN || [] },
+    'sorrowful-crowning-thorns': { en: window.SORROWFUL_CROWNING_THORNS_STORY_EN || [] },
+    'sorrowful-carrying-cross': { en: window.SORROWFUL_CARRYING_CROSS_STORY_EN || [] },
+    'sorrowful-crucifixion': { en: window.SORROWFUL_CRUCIFIXION_STORY_EN || [] },
+    'glorious-resurrection': { en: window.GLORIOUS_RESURRECTION_STORY_EN || [] },
+    'glorious-ascension': { en: window.GLORIOUS_ASCENSION_STORY_EN || [] },
+    'glorious-pentecost': { en: window.GLORIOUS_PENTECOST_STORY_EN || [] },
+    'glorious-assumption': { en: window.GLORIOUS_ASSUMPTION_STORY_EN || [] },
+    'glorious-coronation': { en: window.GLORIOUS_CORONATION_STORY_EN || [] },
     veronica: Object.fromEntries(Object.entries(VERONICA_I18N).map(([lang, cfg]) => [lang, window[cfg.global] || []]))
   };
   // Veronica editions outside the inline set load their strings from the locale catalog in init().
@@ -981,6 +1001,26 @@
   const VOICE_PACK_STORAGE_KEY = storyId === 'charbel' ? `storybook_voice_pack_${contentLang}` : `storybook_voice_pack_${storyId}_${contentLang}`;
   const BROWSER_VOICE_PREF_KEY = 'rosary_audio_voice_pref';
   const VOICE_PACKS = {
+  'joyful-annunciation': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'joyful-visitation': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'joyful-nativity': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'joyful-presentation': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'joyful-finding-temple': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'luminous-baptism': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'luminous-cana': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'luminous-proclamation': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'luminous-transfiguration': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'luminous-eucharist': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'sorrowful-agony-garden': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'sorrowful-scourging': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'sorrowful-crowning-thorns': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'sorrowful-carrying-cross': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'sorrowful-crucifixion': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'glorious-resurrection': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'glorious-ascension': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'glorious-pentecost': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'glorious-assumption': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
+  'glorious-coronation': { en: [{ id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   francis: { en: [{ id: 'directed-francis', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-francis/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   joseph: { en: [{ id: 'directed-joseph', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-joseph/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },
   anthony: { en: [{ id: 'directed-anthony', label: 'Story Voice (Recommended)', type: 'clips', base: './media/storybook-anthony/en-directed' }, { id: 'browser', label: 'Browser Voice (Device)', type: 'browser' }] },

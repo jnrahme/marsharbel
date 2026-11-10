@@ -204,6 +204,8 @@ def check(root=ROOT):
     peter_catalog = read_json(peter_path)['values'] if peter_path.exists() else {}
     francis_path = root/'locales/en/francis-story-copy.json'
     francis_catalog = read_json(francis_path)['values'] if francis_path.exists() else {}
+    rosary_mysteries_path = root/'locales/en/rosary-mysteries-copy.json'
+    rosary_mysteries_catalog = read_json(rosary_mysteries_path)['values'] if rosary_mysteries_path.exists() else {}
     answer_path = root/'locales/en/feast-novena-answer-copy.json'
     answer_catalog = read_json(answer_path)['values'] if answer_path.exists() else {}
     joseph_path = root/'locales/en/joseph-story-copy.json'
@@ -305,6 +307,7 @@ def check(root=ROOT):
         additions -= Counter(joseph_catalog.get(file, {}))
         additions -= Counter(answer_catalog.get(file, {}))
         additions -= Counter(francis_catalog.get(file, {}))
+        additions -= Counter(rosary_mysteries_catalog.get(file, {}))
         additions -= Counter(massabki_catalog.get(file, {}))
         additions -= Counter(jpii_story_catalog.get(file, {}))
         additions -= Counter(story_copy_catalog.get(file, {}))
@@ -319,6 +322,9 @@ def check(root=ROOT):
         stale_scripture = Counter(scripture_catalog.get(file, {})) - Counter(values)
         if stale_scripture:
             errors.append(f'{file}: scripture-copy catalog entries missing from the page: {sorted(stale_scripture)[:3]}')
+        stale_rosary_mysteries = Counter(rosary_mysteries_catalog.get(file, {})) - Counter(values)
+        if stale_rosary_mysteries:
+            errors.append(f'{file}: rosary-mysteries-copy catalog entries missing from the page: {sorted(stale_rosary_mysteries)[:3]}')
         stale_rosary_book_joyful = Counter(rosary_book_joyful_catalog.get(file, {})) - Counter(values)
         if stale_rosary_book_joyful:
             errors.append(f'{file}: rosary-book-joyful-copy catalog entries missing from the page: {sorted(stale_rosary_book_joyful)[:3]}')

@@ -1,0 +1,121 @@
+{
+ "schema": 1,
+ "id": "bk-luminous-baptism",
+ "slug": "luminous-baptism",
+ "legacyStoryId": "luminous-baptism",
+ "pageUrl": "/luminous-baptism",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 26,
+ "ageRange": "6-12",
+ "locales": [
+  "en"
+ ],
+ "cover": "bk-luminous-baptism-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-luminous-baptism-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-baptism-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-luminous-baptism-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-baptism-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-luminous-baptism-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-baptism-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-luminous-baptism-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-baptism-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: Piero della Francesca, Baptism of Christ (NG London). Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Piero_della_Francesca_-_Battesimo_di_Cristo_(National_Gallery,_London).jpg"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-luminous-baptism-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/l1.webp",
+   "mime": "image/webp",
+   "bytes": 79042,
+   "sha256": "6587f9ec00fda9ba1a80f17cc171d718207ccd37a602f01f321ad91c1f8fd842",
+   "access": "public",
+   "width": 800,
+   "height": 1149
+  }
+ ]
+}

@@ -1,0 +1,121 @@
+{
+ "schema": 1,
+ "id": "bk-sorrowful-crowning-thorns",
+ "slug": "sorrowful-crowning-thorns",
+ "legacyStoryId": "sorrowful-crowning-thorns",
+ "pageUrl": "/sorrowful-crowning-thorns",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 33,
+ "ageRange": "6-12",
+ "locales": [
+  "en"
+ ],
+ "cover": "bk-sorrowful-crowning-thorns-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-sorrowful-crowning-thorns-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-crowning-thorns-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-crowning-thorns-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-crowning-thorns-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-crowning-thorns-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-crowning-thorns-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-crowning-thorns-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-crowning-thorns-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: Titian, Crowning with Thorns (Alte Pinakothek). Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:The_Crowning_with_Thorns_by_Titian_-_Alte_Pinakothek_-_Munich_-_Germany_2017.jpg"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-sorrowful-crowning-thorns-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/s3.webp",
+   "mime": "image/webp",
+   "bytes": 81202,
+   "sha256": "a363afcdc40848bbc1f443dd9f674730304858e3877f130bbba438d37b7fe7d9",
+   "access": "public",
+   "width": 1200,
+   "height": 1860
+  }
+ ]
+}

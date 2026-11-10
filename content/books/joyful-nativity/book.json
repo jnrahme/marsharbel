@@ -1,0 +1,121 @@
+{
+ "schema": 1,
+ "id": "bk-joyful-nativity",
+ "slug": "joyful-nativity",
+ "legacyStoryId": "joyful-nativity",
+ "pageUrl": "/joyful-nativity",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 23,
+ "ageRange": "6-12",
+ "locales": [
+  "en"
+ ],
+ "cover": "bk-joyful-nativity-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-joyful-nativity-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-joyful-nativity-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-joyful-nativity-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-joyful-nativity-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-joyful-nativity-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-joyful-nativity-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-joyful-nativity-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-joyful-nativity-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: Gerard van Honthorst, Adoration of the Child (Uffizi). Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Gherardo_delle_Notti_o_Gheritt_van_Hontorst_-_Adorazione_del_Bambino_-_Google_Art_Project.jpg"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-joyful-nativity-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/j3.webp",
+   "mime": "image/webp",
+   "bytes": 61152,
+   "sha256": "e544249243ba1b33175c1057b8b2c2b90a1d332c27159b760867581b3457a1dd",
+   "access": "public",
+   "width": 1200,
+   "height": 888
+  }
+ ]
+}

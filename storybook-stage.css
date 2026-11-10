@@ -62,7 +62,7 @@ body.is-story-page .storybook-text{
 body.is-story-page .storybook-text h2{color:#2a1b10;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.1}
 body.is-story-page .storybook-text .storybook-step{color:#8a5f2b;letter-spacing:.2em;font-size:.72rem;text-transform:uppercase;display:flex;align-items:center;gap:.7rem}
 body.is-story-page .storybook-text .storybook-step::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,#b98a45,transparent)}
-body.is-story-page .storybook-text #story-body{color:#3a2b1e;font-size:clamp(1.05rem,1.45vw,1.28rem);line-height:1.75;text-wrap:pretty}
+body.is-story-page .storybook-text #story-body{color:#3a2b1e;font-size:clamp(1.05rem,1.45vw,1.28rem);line-height:1.75;text-wrap:pretty;white-space:pre-line}
 body.is-story-page .storybook-text #story-body:not(.is-reflection)::first-letter{
   font-family:"Cormorant Garamond",Georgia,serif;float:left;font-size:3.6em;line-height:.8;padding:.06em .1em 0 0;color:#9a6a2c;font-weight:600}
 body.is-story-page .storybook-prayer,body.is-story-page .storybook-heart{color:#6a4a26}

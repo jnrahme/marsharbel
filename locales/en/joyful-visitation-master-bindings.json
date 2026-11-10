@@ -1,0 +1,880 @@
+{
+  "version": 1,
+  "master": "joyful-visitation.html",
+  "masterSha256": "6ed6abbd6e36733ad698b1ed31a7bbcb1fd42a218b3e85e64fb4b869b37d0379",
+  "sourceRevision": "cf1cf38e",
+  "bindings": [
+    {
+      "key": "joyful-visitation.metadata.title-second-joyful-mystery-the-visitation-rosary-book",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Second Joyful Mystery: The Visitation | Rosary Book",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.metadata.description-a-read-aloud-decade-book-for-children-on-the-sec",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(4)",
+      "source": "A read-aloud decade book for children on the Second Joyful Mystery, the Visitation: the story, the Gospel, the decade prayers, and a reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "joyful-visitation.metadata.og-title-second-joyful-mystery-the-visitation-rosary-book",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+      "source": "Second Joyful Mystery: The Visitation | Rosary Book",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "joyful-visitation.metadata.og-description-a-read-aloud-decade-book-for-children-on-the",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(9)",
+      "source": "A read-aloud decade book for children on the Second Joyful Mystery, the Visitation: the story, the Gospel, the decade prayers, and a reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "joyful-visitation.metadata.twitter-title-second-joyful-mystery-the-visitation-rosary-bo",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
+      "source": "Second Joyful Mystery: The Visitation | Rosary Book",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "joyful-visitation.metadata.twitter-description-a-read-aloud-decade-book-for-children-on",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(14)",
+      "source": "A read-aloud decade book for children on the Second Joyful Mystery, the Visitation: the story, the Gospel, the decade prayers, and a reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "joyful-visitation.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "joyful-visitation.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.body.a-book-for-ages-6-12",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "A Book for Ages 6-12",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.the-visitation-second-joyful-mystery",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "The Visitation: Second Joyful Mystery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-vi",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A little read-aloud book for one decade of the Rosary: The Visitation.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.short-answer",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Short answer:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.this-book-walks-children-through-the-second-joyful-mystery-t",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "This book walks children through the Second Joyful Mystery, the Visitation: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on charity and joyful service.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.continue-from-page-2",
+      "selector": "#story-resume-text",
+      "source": "Continue from Page 2?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.resume",
+      "selector": "#story-resume-btn",
+      "source": "Resume",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.accessibility.dismiss",
+      "selector": "#story-resume-dismiss",
+      "source": "Dismiss",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.text",
+      "selector": "#story-resume-dismiss",
+      "source": "✕",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.accessibility.illustrated-storybook",
+      "selector": "#main-content > section:nth-of-type(2)",
+      "source": "Illustrated storybook",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.reading",
+      "selector": "#story-reading-label",
+      "source": "Reading…",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.0-00",
+      "selector": "#story-elapsed",
+      "source": "0:00",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.voice-pack",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Voice Pack",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.accessibility.select-story-voice-pack",
+      "selector": "#story-voice-pack",
+      "source": "Select story voice pack",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "joyful-visitation.accessibility.previous-page",
+      "selector": "#story-prev",
+      "source": "Previous page",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.previous-page",
+      "selector": "#story-prev",
+      "source": "Previous Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.read-aloud",
+      "selector": "#story-read",
+      "source": "Read Aloud",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.accessibility.next-page",
+      "selector": "#story-next",
+      "source": "Next page",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.next-page",
+      "selector": "#story-next",
+      "source": "Next Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.accessibility.story-settings",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "Story settings",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.story-settings",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "Story settings",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.toggle-reader-mode-for-easier-reading",
+      "selector": "#story-reader-toggle",
+      "source": "Toggle reader mode for easier reading",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.reader-mode",
+      "selector": "#story-reader-toggle",
+      "source": "Reader Mode",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.automatically-read-next-page-when-current-page-finishes",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Automatically read next page when current page finishes",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.auto-continue",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Auto Continue",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "joyful-visitation.accessibility.playback-speed",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Playback speed",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.slow",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "source": "Slow",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.normal",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+      "source": "Normal",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.fast",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)",
+      "source": "Fast",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.the-visitation-second-jo.page-1-of-4",
+      "selector": "#story-step",
+      "source": "Page 1 of 4",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.loading-story.loading-story",
+      "selector": "#story-title",
+      "source": "Loading story...",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.loading-story.please-wait-while-we-open-the-storybook",
+      "selector": "#story-body",
+      "source": "Please wait while we open the storybook.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.loading-story.evidence-for-this-page",
+      "selector": "#story-evidence-title",
+      "source": "Evidence for This Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr",
+      "selector": "#main-content > p:nth-of-type(1)",
+      "source": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.about-this-story.about-this-story",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "About this story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.about-this-story.painting-domenico-ghirlandaio-visitation-louvre-public-domai",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Painting: Domenico Ghirlandaio, Visitation (Louvre). Public domain, via Wikimedia Commons.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.about-this-story.image-source-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Image source (Wikimedia Commons)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.about-this-story.text",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "joyful-visitation.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Monday / Saturday.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.frequently-asked-questio.frequently-asked-questions",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.frequently-asked-questio.what-is-the-second-joyful-mystery",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "What is the Second Joyful Mystery?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.frequently-asked-questio.the-visitation-mary-went-quickly-through-the-hill-country-to",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Visitation. Mary went quickly through the hill country to help her cousin Elizabeth, who was expecting a baby. This mystery is traditionally prayed on Monday / Saturday, and its fruit is charity and joyful service.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.frequently-asked-questio.how-do-you-pray-this-decade-with-children",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "How do you pray this decade with children?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.more-saint-storybooks-fo.more-saint-storybooks-for-children",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "More Saint Storybooks for Children",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.more-saint-storybooks-fo.the-annunciation",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "The Annunciation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.more-saint-storybooks-fo.the-nativity",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "The Nativity",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.more-saint-storybooks-fo.all-storybooks",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "All storybooks",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "joyful-visitation.footer.a-rosary-decade-book-for-children-author-please-pray-for-the",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "A Rosary decade book for children. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "joyful-visitation.metadata.title-second-joyful-mystery-the-visitation-rosary-book": "Second Joyful Mystery: The Visitation | Rosary Book",
+    "joyful-visitation.metadata.description-a-read-aloud-decade-book-for-children-on-the-sec": "A read-aloud decade book for children on the Second Joyful Mystery, the Visitation: the story, the Gospel, the decade prayers, and a reflection.",
+    "joyful-visitation.metadata.og-title-second-joyful-mystery-the-visitation-rosary-book": "Second Joyful Mystery: The Visitation | Rosary Book",
+    "joyful-visitation.metadata.og-description-a-read-aloud-decade-book-for-children-on-the": "A read-aloud decade book for children on the Second Joyful Mystery, the Visitation: the story, the Gospel, the decade prayers, and a reflection.",
+    "joyful-visitation.metadata.twitter-title-second-joyful-mystery-the-visitation-rosary-bo": "Second Joyful Mystery: The Visitation | Rosary Book",
+    "joyful-visitation.metadata.twitter-description-a-read-aloud-decade-book-for-children-on": "A read-aloud decade book for children on the Second Joyful Mystery, the Visitation: the story, the Gospel, the decade prayers, and a reflection.",
+    "joyful-visitation.body.skip-to-main-content": "Skip to main content",
+    "joyful-visitation.header.text": "✦",
+    "joyful-visitation.header.saint-charbel": "Saint Charbel",
+    "joyful-visitation.accessibility.primary": "Primary",
+    "joyful-visitation.header.home": "Home",
+    "joyful-visitation.header.legacy": "Legacy",
+    "joyful-visitation.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "joyful-visitation.header.full-history": "Full History",
+    "joyful-visitation.header.miracles": "Miracles",
+    "joyful-visitation.header.miracles-reports": "Miracles & Reports",
+    "joyful-visitation.header.eucharistic-miracles": "Eucharistic Miracles",
+    "joyful-visitation.header.letters": "Letters",
+    "joyful-visitation.header.voice-testimony": "Voice Testimony",
+    "joyful-visitation.header.saints": "Saints",
+    "joyful-visitation.header.children-s-books": "Children's Books",
+    "joyful-visitation.header.prayer": "Prayer",
+    "joyful-visitation.header.prayer-library": "Prayer Library",
+    "joyful-visitation.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "joyful-visitation.header.prayer-for-the-sick": "Prayer for the Sick",
+    "joyful-visitation.header.prayer-for-healing": "Prayer for Healing",
+    "joyful-visitation.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "joyful-visitation.header.prayer-for-depression": "Prayer for Depression",
+    "joyful-visitation.header.prayer-for-students": "Prayer for Students",
+    "joyful-visitation.header.prayer-for-addiction": "Prayer for Addiction",
+    "joyful-visitation.header.prayer-for-family": "Prayer for Family",
+    "joyful-visitation.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "joyful-visitation.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "joyful-visitation.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "joyful-visitation.header.saint-charbel-novena": "Saint Charbel Novena",
+    "joyful-visitation.header.feast-day": "Feast Day",
+    "joyful-visitation.header.rosary-guide": "Rosary Guide",
+    "joyful-visitation.header.rosary-minibook": "Rosary Minibook",
+    "joyful-visitation.header.mystery-meditation": "Mystery Meditation",
+    "joyful-visitation.header.become-like-him": "Become Like Him",
+    "joyful-visitation.header.travel": "Travel",
+    "joyful-visitation.header.visiting-annaya": "Visiting Annaya",
+    "joyful-visitation.header.annaya-online-tour": "Annaya Online Tour",
+    "joyful-visitation.header.bekaa-kafra": "Bekaa Kafra",
+    "joyful-visitation.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "joyful-visitation.header.the-cedars-of-god": "the Cedars of God",
+    "joyful-visitation.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "joyful-visitation.header.qadisha-valley": "Qadisha Valley",
+    "joyful-visitation.header.qannoubine-monastery": "Qannoubine Monastery",
+    "joyful-visitation.header.qozhaya-monastery": "Qozhaya Monastery",
+    "joyful-visitation.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "joyful-visitation.header.the-hermitage": "The Hermitage",
+    "joyful-visitation.header.saint-charbel-trail": "Saint Charbel Trail",
+    "joyful-visitation.header.news": "News",
+    "joyful-visitation.header.media": "Media",
+    "joyful-visitation.header.music": "Music",
+    "joyful-visitation.header.video": "Video",
+    "joyful-visitation.header.gallery": "Gallery",
+    "joyful-visitation.body.a-book-for-ages-6-12": "A Book for Ages 6-12",
+    "joyful-visitation.the-visitation-second-jo.the-visitation-second-joyful-mystery": "The Visitation: Second Joyful Mystery",
+    "joyful-visitation.the-visitation-second-jo.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-vi": "A little read-aloud book for one decade of the Rosary: The Visitation.",
+    "joyful-visitation.the-visitation-second-jo.short-answer": "Short answer:",
+    "joyful-visitation.the-visitation-second-jo.this-book-walks-children-through-the-second-joyful-mystery-t": "This book walks children through the Second Joyful Mystery, the Visitation: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on charity and joyful service.",
+    "joyful-visitation.the-visitation-second-jo.continue-from-page-2": "Continue from Page 2?",
+    "joyful-visitation.the-visitation-second-jo.resume": "Resume",
+    "joyful-visitation.accessibility.dismiss": "Dismiss",
+    "joyful-visitation.the-visitation-second-jo.text": "✕",
+    "joyful-visitation.accessibility.illustrated-storybook": "Illustrated storybook",
+    "joyful-visitation.the-visitation-second-jo.reading": "Reading…",
+    "joyful-visitation.the-visitation-second-jo.0-00": "0:00",
+    "joyful-visitation.the-visitation-second-jo.voice-pack": "Voice Pack",
+    "joyful-visitation.accessibility.select-story-voice-pack": "Select story voice pack",
+    "joyful-visitation.accessibility.previous-page": "Previous page",
+    "joyful-visitation.the-visitation-second-jo.previous-page": "Previous Page",
+    "joyful-visitation.the-visitation-second-jo.read-aloud": "Read Aloud",
+    "joyful-visitation.accessibility.next-page": "Next page",
+    "joyful-visitation.the-visitation-second-jo.next-page": "Next Page",
+    "joyful-visitation.accessibility.story-settings": "Story settings",
+    "joyful-visitation.the-visitation-second-jo.story-settings": "Story settings",
+    "joyful-visitation.the-visitation-second-jo.toggle-reader-mode-for-easier-reading": "Toggle reader mode for easier reading",
+    "joyful-visitation.the-visitation-second-jo.reader-mode": "Reader Mode",
+    "joyful-visitation.the-visitation-second-jo.automatically-read-next-page-when-current-page-finishes": "Automatically read next page when current page finishes",
+    "joyful-visitation.the-visitation-second-jo.auto-continue": "Auto Continue",
+    "joyful-visitation.accessibility.playback-speed": "Playback speed",
+    "joyful-visitation.the-visitation-second-jo.slow": "Slow",
+    "joyful-visitation.the-visitation-second-jo.normal": "Normal",
+    "joyful-visitation.the-visitation-second-jo.fast": "Fast",
+    "joyful-visitation.the-visitation-second-jo.page-1-of-4": "Page 1 of 4",
+    "joyful-visitation.loading-story.loading-story": "Loading story...",
+    "joyful-visitation.loading-story.please-wait-while-we-open-the-storybook": "Please wait while we open the storybook.",
+    "joyful-visitation.loading-story.evidence-for-this-page": "Evidence for This Page",
+    "joyful-visitation.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+    "joyful-visitation.about-this-story.about-this-story": "About this story",
+    "joyful-visitation.about-this-story.painting-domenico-ghirlandaio-visitation-louvre-public-domai": "Painting: Domenico Ghirlandaio, Visitation (Louvre). Public domain, via Wikimedia Commons.",
+    "joyful-visitation.about-this-story.image-source-wikimedia-commons": "Image source (Wikimedia Commons)",
+    "joyful-visitation.about-this-story.text": ".",
+    "joyful-visitation.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Monday / Saturday.",
+    "joyful-visitation.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+    "joyful-visitation.frequently-asked-questio.what-is-the-second-joyful-mystery": "What is the Second Joyful Mystery?",
+    "joyful-visitation.frequently-asked-questio.the-visitation-mary-went-quickly-through-the-hill-country-to": "The Visitation. Mary went quickly through the hill country to help her cousin Elizabeth, who was expecting a baby. This mystery is traditionally prayed on Monday / Saturday, and its fruit is charity and joyful service.",
+    "joyful-visitation.frequently-asked-questio.how-do-you-pray-this-decade-with-children": "How do you pray this decade with children?",
+    "joyful-visitation.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+    "joyful-visitation.more-saint-storybooks-fo.more-saint-storybooks-for-children": "More Saint Storybooks for Children",
+    "joyful-visitation.more-saint-storybooks-fo.the-annunciation": "The Annunciation",
+    "joyful-visitation.more-saint-storybooks-fo.the-nativity": "The Nativity",
+    "joyful-visitation.more-saint-storybooks-fo.all-storybooks": "All storybooks",
+    "joyful-visitation.footer.a-rosary-decade-book-for-children-author-please-pray-for-the": "A Rosary decade book for children. Author: Please pray for the person who made this website."
+  }
+}

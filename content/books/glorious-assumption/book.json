@@ -1,0 +1,125 @@
+{
+ "schema": 1,
+ "id": "bk-glorious-assumption",
+ "slug": "glorious-assumption",
+ "legacyStoryId": "glorious-assumption",
+ "pageUrl": "/glorious-assumption",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 39,
+ "ageRange": "6-12",
+ "locales": [
+  "en"
+ ],
+ "cover": "bk-glorious-assumption-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-glorious-assumption-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-assumption-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-glorious-assumption-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-assumption-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-glorious-assumption-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-assumption-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-glorious-assumption-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-assumption-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: Titian, Assumption (Frari), detail crop. Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Basilica_di_Santa_Maria_Gloriosa_dei_Frari_-_The_Assumption.JPG"
+  },
+  "piusXII": {
+   "label": "Pope Pius XII, Munificentissimus Deus (1950)",
+   "url": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-glorious-assumption-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/g4.webp",
+   "mime": "image/webp",
+   "bytes": 78186,
+   "sha256": "680578116b9b895a32373e103d5ae1f1fe56c141e635ad6aef28667276174a95",
+   "access": "public",
+   "width": 1000,
+   "height": 1708
+  }
+ ]
+}
