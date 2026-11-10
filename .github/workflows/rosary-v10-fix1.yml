@@ -1,0 +1,92 @@
+name: rosary-v10-fix1
+# One-shot fix pack for PR #909 (review/rosary-v10-nov10): applies the reviewed
+# fix patch (RU/HI/TH/ZH strip, og:image pins, mirror-policy registration,
+# head-fragment census, bq-shard regen, hreflang/locale-routes consistency),
+# regenerates the rosary i18n data files, runs the affected-gate battery, and
+# pushes to the review branch only when every gate is green.
+on:
+  push:
+    branches: [recovery/nov10-write-route]
+    paths: [.github/workflows/rosary-v10-fix1.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout writer branch (patch source)
+        uses: actions/checkout@v4
+        with:
+          ref: recovery/nov10-write-route
+          path: writer
+
+      - name: Verify fix patch integrity
+        run: |
+          echo "8b634f92f361d4e0a05b0988afb9856fa7032e08f63c009e559ca783b31136c3  writer/v10-fix1.patch" | sha256sum -c -
+          cp writer/v10-fix1.patch /tmp/rosary-v10-fix1.patch
+
+      - name: Checkout review branch
+        uses: actions/checkout@v4
+        with:
+          ref: review/rosary-v10-nov10
+          fetch-depth: 0
+          path: repo
+
+      - name: Record pre-fix head
+        run: |
+          cd repo
+          git rev-parse HEAD | tee /tmp/pre-fix-head.txt
+          test "$(git rev-parse HEAD)" = "791d71c28e7fdce034de03abede53ddc56948c4e"
+
+      - name: Apply fix pack
+        run: |
+          cd repo
+          git apply --verbose /tmp/rosary-v10-fix1.patch
+          git status --short | head -5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: repo/package-lock.json
+
+      - name: Install dependencies
+        working-directory: repo
+        run: |
+          npm ci
+          pip install -r scripts/qa/requirements.txt
+
+      - name: Regenerate rosary i18n data files
+        working-directory: repo
+        run: node scripts/books/build-rosary-i18n-data.mjs
+
+      - name: Gate battery
+        working-directory: repo
+        run: |
+          set -e
+          python3 -m unittest discover -s scripts/qa -p test_russian_slice.py
+          python3 scripts/qa/test_limited_launch.py
+          python3 -m unittest discover -s scripts/qa -p test_locale_mirror_policy.py
+          python3 scripts/qa/test_head_fragments.py
+          python3 -m unittest discover -s scripts/qa -p test_seo.py
+          python3 -m unittest discover -s scripts/qa -p test_new_page_locales.py
+          python3 scripts/qa/check_new_page_locales.py --base 8023f924125ddc41b5cf6f843bef4f695c671535
+          npm run books:check
+          npm run test:pages-sync
+          npm run test:search
+          node scripts/ci/check_bq_shard_lists.mjs
+
+      - name: Commit and push fix
+        working-directory: repo
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "ci: land Rosary v10 review fixes - strip RU/HI/TH/ZH book pages (bounded slices + faith holds), ship EN+ar/de/es/fr/it/pl/pt; og:image pins for 20 pages; locale-mirror-policy registration; head-fragment census; bq-shard regen; hreflang/locale-routes consistency"
+          git push origin HEAD:review/rosary-v10-nov10
+          git rev-parse HEAD
