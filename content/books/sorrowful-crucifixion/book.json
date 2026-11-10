@@ -1,0 +1,132 @@
+{
+ "schema": 1,
+ "id": "bk-sorrowful-crucifixion",
+ "slug": "sorrowful-crucifixion",
+ "legacyStoryId": "sorrowful-crucifixion",
+ "pageUrl": "/sorrowful-crucifixion",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 35,
+ "ageRange": "6-12",
+ "locales": [
+  "en",
+  "ar",
+  "de",
+  "es",
+  "fr",
+  "hi",
+  "it",
+  "pl",
+  "pt",
+  "ru",
+  "th",
+  "zh-Hans"
+ ],
+ "cover": "bk-sorrowful-crucifixion-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-sorrowful-crucifixion-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-crucifixion-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-crucifixion-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-crucifixion-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-crucifixion-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-crucifixion-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-crucifixion-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-crucifixion-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: Diego Velázquez, Christ Crucified (Prado). Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Cristo_crucificado.jpg"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-sorrowful-crucifixion-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/s5.webp",
+   "mime": "image/webp",
+   "bytes": 59628,
+   "sha256": "e5cdfc1de7bfbc59acab65d61340c32a965923eecb99f24d5415611f0b93e90f",
+   "access": "public",
+   "width": 1200,
+   "height": 1789
+  }
+ ]
+}
