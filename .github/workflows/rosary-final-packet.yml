@@ -1,0 +1,50 @@
+name: Rosary v6 isolated final candidate
+on:
+  push:
+    branches: [recovery/nov10-write-route]
+    paths: [.github/workflows/rosary-final-packet.yml]
+permissions:
+  contents: write
+jobs:
+  final-candidate:
+    if: github.repository == 'jnrahme/marsharbel' && github.ref == 'refs/heads/recovery/nov10-write-route'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Exact packet and fresh production base custody
+        run: |
+          set -euo pipefail
+          cat rosary-v6-*.b64 | base64 -d | xz -dc > /tmp/rosary-v6.patch
+          echo '0fad67134e73777ae88cd26630a4e1f1bae396040b268bf495d453a42ff16de0  /tmp/rosary-v6.patch' | sha256sum --check
+          git fetch origin stage
+          test "$(git rev-parse FETCH_HEAD)" = af91297e9e17eff8ca692d97e7470c528fbd8b38
+          git checkout -b review/rosary-v6-nov10 af91297e9e17eff8ca692d97e7470c528fbd8b38
+          test -z "$(git status --porcelain)"
+          git apply --check /tmp/rosary-v6.patch
+          git apply /tmp/rosary-v6.patch
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'content: illustrated Rosary mystery books and reviewed locale readers'
+          git rev-parse HEAD HEAD^{tree}
+          git push origin HEAD:refs/heads/review/rosary-v6-nov10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: pip install -r scripts/qa/requirements.txt
+      - run: npx playwright install --with-deps chromium
+      - name: Real new-page locale gate
+        run: python3 scripts/qa/check_new_page_locales.py --base af91297e9e17eff8ca692d97e7470c528fbd8b38
+      - name: Full unchanged i18n policy
+        run: python3 scripts/qa/check_i18n_policy.py
+      - name: Source and generated API and shelf
+        if: always()
+        run: |
+          node scripts/build-pages.mjs --check
+          node scripts/books/build-api.mjs --check
+          node scripts/books/shelf.mjs --check
+          git diff --exit-code
