@@ -60,7 +60,7 @@ jobs:
         run: npx playwright install-deps chromium
 
       - name: Install Python dependencies
-        run: pip install beautifulsoup4
+        run: pip install -r scripts/qa/requirements.txt
 
       - name: Run QA suite shard
         run: bash scripts/qa/run_full_qa.sh --ci --shard ${{ matrix.shard }}/8 --skip-i18n-test
@@ -129,7 +129,7 @@ jobs:
         run: bash scripts/ci/timed.sh "Install Playwright system dependencies (cache hit)" npx playwright install-deps chromium
 
       - name: Install Python dependencies
-        run: bash scripts/ci/timed.sh "Install Python dependencies (pip)" pip install beautifulsoup4
+        run: bash scripts/ci/timed.sh "Install Python dependencies (pip)" pip install -r scripts/qa/requirements.txt
 
       # These gates are not part of run_full_qa.sh. They run once, in parallel with the shards.
       - name: New-page locale key gate tests
@@ -205,7 +205,7 @@ jobs:
         run: bash scripts/ci/timed.sh "Install dependencies (npm ci)" npm ci
 
       - name: Install Python dependencies
-        run: bash scripts/ci/timed.sh "Install Python dependencies (pip)" pip install beautifulsoup4
+        run: bash scripts/ci/timed.sh "Install Python dependencies (pip)" pip install -r scripts/qa/requirements.txt
 
       - name: i18n unit tests
         run: bash scripts/ci/timed.sh "i18n unit tests (npm run i18n:test)" npm run i18n:test
