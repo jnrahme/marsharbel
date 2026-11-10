@@ -15,7 +15,7 @@ function block(name) {
 }
 const VOICE = block('VOICE_PACKS');
 const legacy = { charbel: block('STORIES').en, pio: block('PIO_STORY_EN'), jpii: block('JPII_STORY_EN') };
-const files = { francis: 'francis-story-data.js', joseph: 'joseph-story-data.js', anthony: 'anthony-story-data.js', therese: 'therese-story-data.js', massabki: 'massabki-story-data.js', teresa: 'mother-teresa-story-data.js', rafqa: 'rafqa-story-data.js', 'charbel-v2': 'charbel-v2-story-data.js', magdalene: 'magdalene-story-data.js', sergius: 'sergius-bacchus-story-data.js', maroun: 'maroun-story-data.js', jude: 'jude-story-data.js', marina: 'marina-story-data.js', peter: 'peter-story-data.js', hardini: 'hardini-story-data.js', augustine: 'augustine-story-data.js', veronica: 'veronica-giuliani-story-data.js' };
+const files = { francis: 'francis-story-data.js', joseph: 'joseph-story-data.js', anthony: 'anthony-story-data.js', therese: 'therese-story-data.js', massabki: 'massabki-story-data.js', teresa: 'mother-teresa-story-data.js', rafqa: 'rafqa-story-data.js', 'charbel-v2': 'charbel-v2-story-data.js', magdalene: 'magdalene-story-data.js', sergius: 'sergius-bacchus-story-data.js', maroun: 'maroun-story-data.js', jude: 'jude-story-data.js', marina: 'marina-story-data.js', peter: 'peter-story-data.js', hardini: 'hardini-story-data.js', augustine: 'augustine-story-data.js', veronica: 'veronica-giuliani-story-data.js', 'joyful-annunciation': 'joyful-annunciation-story-data.js', 'joyful-visitation': 'joyful-visitation-story-data.js', 'joyful-nativity': 'joyful-nativity-story-data.js', 'joyful-presentation': 'joyful-presentation-story-data.js', 'joyful-finding-temple': 'joyful-finding-temple-story-data.js', 'luminous-baptism': 'luminous-baptism-story-data.js', 'luminous-cana': 'luminous-cana-story-data.js', 'luminous-proclamation': 'luminous-proclamation-story-data.js', 'luminous-transfiguration': 'luminous-transfiguration-story-data.js', 'luminous-eucharist': 'luminous-eucharist-story-data.js', 'sorrowful-agony-garden': 'sorrowful-agony-garden-story-data.js', 'sorrowful-scourging': 'sorrowful-scourging-story-data.js', 'sorrowful-crowning-thorns': 'sorrowful-crowning-thorns-story-data.js', 'sorrowful-carrying-cross': 'sorrowful-carrying-cross-story-data.js', 'sorrowful-crucifixion': 'sorrowful-crucifixion-story-data.js', 'glorious-resurrection': 'glorious-resurrection-story-data.js', 'glorious-ascension': 'glorious-ascension-story-data.js', 'glorious-pentecost': 'glorious-pentecost-story-data.js', 'glorious-assumption': 'glorious-assumption-story-data.js', 'glorious-coronation': 'glorious-coronation-story-data.js' };
 for (const [id, f] of Object.entries(files)) { const w = {}; vm.runInNewContext(read(f), { window: w }); legacy[id] = Object.values(w)[0]; }
 // Veronica localized editions: per-locale globals from the pinned EN/AR file and the
 // generated i18n file, keyed as veronica:<locale> for per-locale feed comparison.
@@ -26,6 +26,20 @@ for (const [id, f] of Object.entries(files)) { const w = {}; vm.runInNewContext(
   for (const [k, v] of Object.entries(w)) {
     const loc = k === 'VERONICA_STORY_ZH_HANS' ? 'zh-Hans' : k.replace('VERONICA_STORY_', '').toLowerCase();
     legacy[`veronica:${loc}`] = v;
+  }
+}
+// Rosary mysteries localized editions: per-locale globals from each generated
+// <slug>-story-i18n-data.js, keyed as <slug>:<locale> for per-locale feed comparison.
+{
+  const rosary = Object.keys(files).filter(s => /^(joyful|luminous|sorrowful|glorious)-/.test(s));
+  for (const slug of rosary) {
+    const w = {};
+    vm.runInNewContext(read(`${slug}-story-i18n-data.js`), { window: w });
+    const prefix = slug.replace(/-/g, '_').toUpperCase() + '_STORY_';
+    for (const [k, v] of Object.entries(w)) {
+      const loc = k === `${prefix}ZH_HANS` ? 'zh-Hans' : k.slice(prefix.length).toLowerCase();
+      legacy[`${slug}:${loc}`] = v;
+    }
   }
 }
 // Audio comparison factored out so the self-test can prove it is not vacuous.

@@ -1,0 +1,880 @@
+{
+  "version": 1,
+  "master": "glorious-pentecost.html",
+  "masterSha256": "75f354dd7195cfeec339024fc57d3a27389a43095e3a99670bcd66c093cb2b58",
+  "sourceRevision": "cf1cf38e",
+  "bindings": [
+    {
+      "key": "glorious-pentecost.metadata.title-third-glorious-mystery-the-descent-of-the-holy-spirit",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Third Glorious Mystery: The Descent of the Holy Spirit | Rosary Book",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.metadata.description-a-read-aloud-decade-book-for-children-on-the-thi",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(4)",
+      "source": "A read-aloud decade book for children on the Third Glorious Mystery, the Descent of the Holy Spirit: the story, the Gospel, the decade prayers, and a reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "glorious-pentecost.metadata.og-title-third-glorious-mystery-the-descent-of-the-holy-spir",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+      "source": "Third Glorious Mystery: The Descent of the Holy Spirit | Rosary Book",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "glorious-pentecost.metadata.og-description-a-read-aloud-decade-book-for-children-on-the",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(9)",
+      "source": "A read-aloud decade book for children on the Third Glorious Mystery, the Descent of the Holy Spirit: the story, the Gospel, the decade prayers, and a reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "glorious-pentecost.metadata.twitter-title-third-glorious-mystery-the-descent-of-the-holy",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
+      "source": "Third Glorious Mystery: The Descent of the Holy Spirit | Rosary Book",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "glorious-pentecost.metadata.twitter-description-a-read-aloud-decade-book-for-children-on",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(14)",
+      "source": "A read-aloud decade book for children on the Third Glorious Mystery, the Descent of the Holy Spirit: the story, the Gospel, the decade prayers, and a reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "glorious-pentecost.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "glorious-pentecost.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.body.a-book-for-ages-6-12",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "A Book for Ages 6-12",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.the-descent-of-the-holy-spirit-third-glorious-mystery",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "The Descent of the Holy Spirit: Third Glorious Mystery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-de",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A little read-aloud book for one decade of the Rosary: The Descent of the Holy Spirit.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.short-answer",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Short answer:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.this-book-walks-children-through-the-third-glorious-mystery",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "This book walks children through the Third Glorious Mystery, the Descent of the Holy Spirit: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on wisdom and apostolic boldness.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.continue-from-page-2",
+      "selector": "#story-resume-text",
+      "source": "Continue from Page 2?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.resume",
+      "selector": "#story-resume-btn",
+      "source": "Resume",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.accessibility.dismiss",
+      "selector": "#story-resume-dismiss",
+      "source": "Dismiss",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.text",
+      "selector": "#story-resume-dismiss",
+      "source": "✕",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.accessibility.illustrated-storybook",
+      "selector": "#main-content > section:nth-of-type(2)",
+      "source": "Illustrated storybook",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.reading",
+      "selector": "#story-reading-label",
+      "source": "Reading…",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.0-00",
+      "selector": "#story-elapsed",
+      "source": "0:00",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.voice-pack",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Voice Pack",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.accessibility.select-story-voice-pack",
+      "selector": "#story-voice-pack",
+      "source": "Select story voice pack",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "glorious-pentecost.accessibility.previous-page",
+      "selector": "#story-prev",
+      "source": "Previous page",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.previous-page",
+      "selector": "#story-prev",
+      "source": "Previous Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.read-aloud",
+      "selector": "#story-read",
+      "source": "Read Aloud",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.accessibility.next-page",
+      "selector": "#story-next",
+      "source": "Next page",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.next-page",
+      "selector": "#story-next",
+      "source": "Next Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.accessibility.story-settings",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "Story settings",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.story-settings",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "Story settings",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.toggle-reader-mode-for-easier-reading",
+      "selector": "#story-reader-toggle",
+      "source": "Toggle reader mode for easier reading",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.reader-mode",
+      "selector": "#story-reader-toggle",
+      "source": "Reader Mode",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.automatically-read-next-page-when-current-page-finishes",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Automatically read next page when current page finishes",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.auto-continue",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Auto Continue",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "glorious-pentecost.accessibility.playback-speed",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Playback speed",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.slow",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "source": "Slow",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.normal",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+      "source": "Normal",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.fast",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)",
+      "source": "Fast",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.the-descent-of-the-holy.page-1-of-4",
+      "selector": "#story-step",
+      "source": "Page 1 of 4",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.loading-story.loading-story",
+      "selector": "#story-title",
+      "source": "Loading story...",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.loading-story.please-wait-while-we-open-the-storybook",
+      "selector": "#story-body",
+      "source": "Please wait while we open the storybook.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.loading-story.evidence-for-this-page",
+      "selector": "#story-evidence-title",
+      "source": "Evidence for This Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr",
+      "selector": "#main-content > p:nth-of-type(1)",
+      "source": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.about-this-story.about-this-story",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "About this story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.about-this-story.painting-el-greco-pentecost-prado-public-domain-via-wikimedi",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Painting: El Greco, Pentecost (Prado). Public domain, via Wikimedia Commons.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.about-this-story.image-source-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Image source (Wikimedia Commons)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.about-this-story.text",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "glorious-pentecost.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Wednesday / Sunday.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.frequently-asked-questio.frequently-asked-questions",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.frequently-asked-questio.what-is-the-third-glorious-mystery",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "What is the Third Glorious Mystery?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.frequently-asked-questio.the-descent-of-the-holy-spirit-the-apostles-were-gathered-wi",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Descent of the Holy Spirit. The apostles were gathered with Mary when a sound like a mighty wind filled the house, and tongues of fire rested on each of them. This mystery is traditionally prayed on Wednesday / Sunday, and its fruit is wisdom and apostolic boldness.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.frequently-asked-questio.how-do-you-pray-this-decade-with-children",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "How do you pray this decade with children?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.more-saint-storybooks-fo.more-saint-storybooks-for-children",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "More Saint Storybooks for Children",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.more-saint-storybooks-fo.the-ascension",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "The Ascension",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.more-saint-storybooks-fo.the-assumption-of-mary",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "The Assumption of Mary",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.more-saint-storybooks-fo.all-storybooks",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "All storybooks",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "glorious-pentecost.footer.a-rosary-decade-book-for-children-author-please-pray-for-the",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "A Rosary decade book for children. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "glorious-pentecost.metadata.title-third-glorious-mystery-the-descent-of-the-holy-spirit": "Third Glorious Mystery: The Descent of the Holy Spirit | Rosary Book",
+    "glorious-pentecost.metadata.description-a-read-aloud-decade-book-for-children-on-the-thi": "A read-aloud decade book for children on the Third Glorious Mystery, the Descent of the Holy Spirit: the story, the Gospel, the decade prayers, and a reflection.",
+    "glorious-pentecost.metadata.og-title-third-glorious-mystery-the-descent-of-the-holy-spir": "Third Glorious Mystery: The Descent of the Holy Spirit | Rosary Book",
+    "glorious-pentecost.metadata.og-description-a-read-aloud-decade-book-for-children-on-the": "A read-aloud decade book for children on the Third Glorious Mystery, the Descent of the Holy Spirit: the story, the Gospel, the decade prayers, and a reflection.",
+    "glorious-pentecost.metadata.twitter-title-third-glorious-mystery-the-descent-of-the-holy": "Third Glorious Mystery: The Descent of the Holy Spirit | Rosary Book",
+    "glorious-pentecost.metadata.twitter-description-a-read-aloud-decade-book-for-children-on": "A read-aloud decade book for children on the Third Glorious Mystery, the Descent of the Holy Spirit: the story, the Gospel, the decade prayers, and a reflection.",
+    "glorious-pentecost.body.skip-to-main-content": "Skip to main content",
+    "glorious-pentecost.header.text": "✦",
+    "glorious-pentecost.header.saint-charbel": "Saint Charbel",
+    "glorious-pentecost.accessibility.primary": "Primary",
+    "glorious-pentecost.header.home": "Home",
+    "glorious-pentecost.header.legacy": "Legacy",
+    "glorious-pentecost.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "glorious-pentecost.header.full-history": "Full History",
+    "glorious-pentecost.header.miracles": "Miracles",
+    "glorious-pentecost.header.miracles-reports": "Miracles & Reports",
+    "glorious-pentecost.header.eucharistic-miracles": "Eucharistic Miracles",
+    "glorious-pentecost.header.letters": "Letters",
+    "glorious-pentecost.header.voice-testimony": "Voice Testimony",
+    "glorious-pentecost.header.saints": "Saints",
+    "glorious-pentecost.header.children-s-books": "Children's Books",
+    "glorious-pentecost.header.prayer": "Prayer",
+    "glorious-pentecost.header.prayer-library": "Prayer Library",
+    "glorious-pentecost.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "glorious-pentecost.header.prayer-for-the-sick": "Prayer for the Sick",
+    "glorious-pentecost.header.prayer-for-healing": "Prayer for Healing",
+    "glorious-pentecost.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "glorious-pentecost.header.prayer-for-depression": "Prayer for Depression",
+    "glorious-pentecost.header.prayer-for-students": "Prayer for Students",
+    "glorious-pentecost.header.prayer-for-addiction": "Prayer for Addiction",
+    "glorious-pentecost.header.prayer-for-family": "Prayer for Family",
+    "glorious-pentecost.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "glorious-pentecost.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "glorious-pentecost.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "glorious-pentecost.header.saint-charbel-novena": "Saint Charbel Novena",
+    "glorious-pentecost.header.feast-day": "Feast Day",
+    "glorious-pentecost.header.rosary-guide": "Rosary Guide",
+    "glorious-pentecost.header.rosary-minibook": "Rosary Minibook",
+    "glorious-pentecost.header.mystery-meditation": "Mystery Meditation",
+    "glorious-pentecost.header.become-like-him": "Become Like Him",
+    "glorious-pentecost.header.travel": "Travel",
+    "glorious-pentecost.header.visiting-annaya": "Visiting Annaya",
+    "glorious-pentecost.header.annaya-online-tour": "Annaya Online Tour",
+    "glorious-pentecost.header.bekaa-kafra": "Bekaa Kafra",
+    "glorious-pentecost.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "glorious-pentecost.header.the-cedars-of-god": "the Cedars of God",
+    "glorious-pentecost.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "glorious-pentecost.header.qadisha-valley": "Qadisha Valley",
+    "glorious-pentecost.header.qannoubine-monastery": "Qannoubine Monastery",
+    "glorious-pentecost.header.qozhaya-monastery": "Qozhaya Monastery",
+    "glorious-pentecost.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "glorious-pentecost.header.the-hermitage": "The Hermitage",
+    "glorious-pentecost.header.saint-charbel-trail": "Saint Charbel Trail",
+    "glorious-pentecost.header.news": "News",
+    "glorious-pentecost.header.media": "Media",
+    "glorious-pentecost.header.music": "Music",
+    "glorious-pentecost.header.video": "Video",
+    "glorious-pentecost.header.gallery": "Gallery",
+    "glorious-pentecost.body.a-book-for-ages-6-12": "A Book for Ages 6-12",
+    "glorious-pentecost.the-descent-of-the-holy.the-descent-of-the-holy-spirit-third-glorious-mystery": "The Descent of the Holy Spirit: Third Glorious Mystery",
+    "glorious-pentecost.the-descent-of-the-holy.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-de": "A little read-aloud book for one decade of the Rosary: The Descent of the Holy Spirit.",
+    "glorious-pentecost.the-descent-of-the-holy.short-answer": "Short answer:",
+    "glorious-pentecost.the-descent-of-the-holy.this-book-walks-children-through-the-third-glorious-mystery": "This book walks children through the Third Glorious Mystery, the Descent of the Holy Spirit: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on wisdom and apostolic boldness.",
+    "glorious-pentecost.the-descent-of-the-holy.continue-from-page-2": "Continue from Page 2?",
+    "glorious-pentecost.the-descent-of-the-holy.resume": "Resume",
+    "glorious-pentecost.accessibility.dismiss": "Dismiss",
+    "glorious-pentecost.the-descent-of-the-holy.text": "✕",
+    "glorious-pentecost.accessibility.illustrated-storybook": "Illustrated storybook",
+    "glorious-pentecost.the-descent-of-the-holy.reading": "Reading…",
+    "glorious-pentecost.the-descent-of-the-holy.0-00": "0:00",
+    "glorious-pentecost.the-descent-of-the-holy.voice-pack": "Voice Pack",
+    "glorious-pentecost.accessibility.select-story-voice-pack": "Select story voice pack",
+    "glorious-pentecost.accessibility.previous-page": "Previous page",
+    "glorious-pentecost.the-descent-of-the-holy.previous-page": "Previous Page",
+    "glorious-pentecost.the-descent-of-the-holy.read-aloud": "Read Aloud",
+    "glorious-pentecost.accessibility.next-page": "Next page",
+    "glorious-pentecost.the-descent-of-the-holy.next-page": "Next Page",
+    "glorious-pentecost.accessibility.story-settings": "Story settings",
+    "glorious-pentecost.the-descent-of-the-holy.story-settings": "Story settings",
+    "glorious-pentecost.the-descent-of-the-holy.toggle-reader-mode-for-easier-reading": "Toggle reader mode for easier reading",
+    "glorious-pentecost.the-descent-of-the-holy.reader-mode": "Reader Mode",
+    "glorious-pentecost.the-descent-of-the-holy.automatically-read-next-page-when-current-page-finishes": "Automatically read next page when current page finishes",
+    "glorious-pentecost.the-descent-of-the-holy.auto-continue": "Auto Continue",
+    "glorious-pentecost.accessibility.playback-speed": "Playback speed",
+    "glorious-pentecost.the-descent-of-the-holy.slow": "Slow",
+    "glorious-pentecost.the-descent-of-the-holy.normal": "Normal",
+    "glorious-pentecost.the-descent-of-the-holy.fast": "Fast",
+    "glorious-pentecost.the-descent-of-the-holy.page-1-of-4": "Page 1 of 4",
+    "glorious-pentecost.loading-story.loading-story": "Loading story...",
+    "glorious-pentecost.loading-story.please-wait-while-we-open-the-storybook": "Please wait while we open the storybook.",
+    "glorious-pentecost.loading-story.evidence-for-this-page": "Evidence for This Page",
+    "glorious-pentecost.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+    "glorious-pentecost.about-this-story.about-this-story": "About this story",
+    "glorious-pentecost.about-this-story.painting-el-greco-pentecost-prado-public-domain-via-wikimedi": "Painting: El Greco, Pentecost (Prado). Public domain, via Wikimedia Commons.",
+    "glorious-pentecost.about-this-story.image-source-wikimedia-commons": "Image source (Wikimedia Commons)",
+    "glorious-pentecost.about-this-story.text": ".",
+    "glorious-pentecost.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Wednesday / Sunday.",
+    "glorious-pentecost.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+    "glorious-pentecost.frequently-asked-questio.what-is-the-third-glorious-mystery": "What is the Third Glorious Mystery?",
+    "glorious-pentecost.frequently-asked-questio.the-descent-of-the-holy-spirit-the-apostles-were-gathered-wi": "The Descent of the Holy Spirit. The apostles were gathered with Mary when a sound like a mighty wind filled the house, and tongues of fire rested on each of them. This mystery is traditionally prayed on Wednesday / Sunday, and its fruit is wisdom and apostolic boldness.",
+    "glorious-pentecost.frequently-asked-questio.how-do-you-pray-this-decade-with-children": "How do you pray this decade with children?",
+    "glorious-pentecost.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+    "glorious-pentecost.more-saint-storybooks-fo.more-saint-storybooks-for-children": "More Saint Storybooks for Children",
+    "glorious-pentecost.more-saint-storybooks-fo.the-ascension": "The Ascension",
+    "glorious-pentecost.more-saint-storybooks-fo.the-assumption-of-mary": "The Assumption of Mary",
+    "glorious-pentecost.more-saint-storybooks-fo.all-storybooks": "All storybooks",
+    "glorious-pentecost.footer.a-rosary-decade-book-for-children-author-please-pray-for-the": "A Rosary decade book for children. Author: Please pray for the person who made this website."
+  }
+}

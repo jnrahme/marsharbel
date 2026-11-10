@@ -1,0 +1,880 @@
+{
+  "version": 1,
+  "master": "sorrowful-scourging.html",
+  "masterSha256": "b2646eedc7d298f77b6908b4ad2985ee625afd79b675c411f494f7b0caea3c54",
+  "sourceRevision": "cf1cf38e",
+  "bindings": [
+    {
+      "key": "sorrowful-scourging.metadata.title-second-sorrowful-mystery-the-scourging-at-the-pillar-r",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Second Sorrowful Mystery: The Scourging at the Pillar | Rosary Book",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.metadata.description-a-read-aloud-decade-book-for-children-on-the-sec",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(4)",
+      "source": "A read-aloud decade book for children on the Second Sorrowful Mystery, the Scourging at the Pillar: the story, the Gospel, the decade prayers, and a reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "sorrowful-scourging.metadata.og-title-second-sorrowful-mystery-the-scourging-at-the-pilla",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+      "source": "Second Sorrowful Mystery: The Scourging at the Pillar | Rosary Book",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "sorrowful-scourging.metadata.og-description-a-read-aloud-decade-book-for-children-on-the",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(9)",
+      "source": "A read-aloud decade book for children on the Second Sorrowful Mystery, the Scourging at the Pillar: the story, the Gospel, the decade prayers, and a reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "sorrowful-scourging.metadata.twitter-title-second-sorrowful-mystery-the-scourging-at-the",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
+      "source": "Second Sorrowful Mystery: The Scourging at the Pillar | Rosary Book",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "sorrowful-scourging.metadata.twitter-description-a-read-aloud-decade-book-for-children-on",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(14)",
+      "source": "A read-aloud decade book for children on the Second Sorrowful Mystery, the Scourging at the Pillar: the story, the Gospel, the decade prayers, and a reflection.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "sorrowful-scourging.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "sorrowful-scourging.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.body.a-book-for-ages-6-12",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "A Book for Ages 6-12",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.the-scourging-at-the-pillar-second-sorrowful-mystery",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "The Scourging at the Pillar: Second Sorrowful Mystery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-sc",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A little read-aloud book for one decade of the Rosary: The Scourging at the Pillar.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.short-answer",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "Short answer:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.this-book-walks-children-through-the-second-sorrowful-myster",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "This book walks children through the Second Sorrowful Mystery, the Scourging at the Pillar: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on purity and healing from sin.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.continue-from-page-2",
+      "selector": "#story-resume-text",
+      "source": "Continue from Page 2?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.resume",
+      "selector": "#story-resume-btn",
+      "source": "Resume",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.accessibility.dismiss",
+      "selector": "#story-resume-dismiss",
+      "source": "Dismiss",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.text",
+      "selector": "#story-resume-dismiss",
+      "source": "✕",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.accessibility.illustrated-storybook",
+      "selector": "#main-content > section:nth-of-type(2)",
+      "source": "Illustrated storybook",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.reading",
+      "selector": "#story-reading-label",
+      "source": "Reading…",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.0-00",
+      "selector": "#story-elapsed",
+      "source": "0:00",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.voice-pack",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Voice Pack",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.accessibility.select-story-voice-pack",
+      "selector": "#story-voice-pack",
+      "source": "Select story voice pack",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "sorrowful-scourging.accessibility.previous-page",
+      "selector": "#story-prev",
+      "source": "Previous page",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.previous-page",
+      "selector": "#story-prev",
+      "source": "Previous Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.read-aloud",
+      "selector": "#story-read",
+      "source": "Read Aloud",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.accessibility.next-page",
+      "selector": "#story-next",
+      "source": "Next page",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.next-page",
+      "selector": "#story-next",
+      "source": "Next Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.accessibility.story-settings",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "Story settings",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.story-settings",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "Story settings",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.toggle-reader-mode-for-easier-reading",
+      "selector": "#story-reader-toggle",
+      "source": "Toggle reader mode for easier reading",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.reader-mode",
+      "selector": "#story-reader-toggle",
+      "source": "Reader Mode",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.automatically-read-next-page-when-current-page-finishes",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Automatically read next page when current page finishes",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.auto-continue",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Auto Continue",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "sorrowful-scourging.accessibility.playback-speed",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Playback speed",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.slow",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "source": "Slow",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.normal",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+      "source": "Normal",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.fast",
+      "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)",
+      "source": "Fast",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.the-scourging-at-the-pil.page-1-of-4",
+      "selector": "#story-step",
+      "source": "Page 1 of 4",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.loading-story.loading-story",
+      "selector": "#story-title",
+      "source": "Loading story...",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.loading-story.please-wait-while-we-open-the-storybook",
+      "selector": "#story-body",
+      "source": "Please wait while we open the storybook.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.loading-story.evidence-for-this-page",
+      "selector": "#story-evidence-title",
+      "source": "Evidence for This Page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr",
+      "selector": "#main-content > p:nth-of-type(1)",
+      "source": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.about-this-story.about-this-story",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "About this story",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.about-this-story.painting-william-adolphe-bouguereau-flagellation-public-doma",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Painting: William-Adolphe Bouguereau, Flagellation. Public domain, via Wikimedia Commons.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.about-this-story.image-source-wikimedia-commons",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Image source (Wikimedia Commons)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.about-this-story.text",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "sorrowful-scourging.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh",
+      "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Tuesday / Friday.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.frequently-asked-questio.frequently-asked-questions",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "Frequently Asked Questions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.frequently-asked-questio.what-is-the-second-sorrowful-mystery",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "What is the Second Sorrowful Mystery?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.frequently-asked-questio.the-scourging-at-the-pillar-jesus-was-bound-to-a-pillar-and",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Scourging at the Pillar. Jesus was bound to a pillar and scourged, though he had done nothing wrong. This mystery is traditionally prayed on Tuesday / Friday, and its fruit is purity and healing from sin.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.frequently-asked-questio.how-do-you-pray-this-decade-with-children",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(2)",
+      "source": "How do you pray this decade with children?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.more-saint-storybooks-fo.more-saint-storybooks-for-children",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "More Saint Storybooks for Children",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.more-saint-storybooks-fo.the-agony-in-the-garden",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "The Agony in the Garden",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.more-saint-storybooks-fo.the-crowning-with-thorns",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "The Crowning with Thorns",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.more-saint-storybooks-fo.all-storybooks",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "All storybooks",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "sorrowful-scourging.footer.a-rosary-decade-book-for-children-author-please-pray-for-the",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "A Rosary decade book for children. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "sorrowful-scourging.metadata.title-second-sorrowful-mystery-the-scourging-at-the-pillar-r": "Second Sorrowful Mystery: The Scourging at the Pillar | Rosary Book",
+    "sorrowful-scourging.metadata.description-a-read-aloud-decade-book-for-children-on-the-sec": "A read-aloud decade book for children on the Second Sorrowful Mystery, the Scourging at the Pillar: the story, the Gospel, the decade prayers, and a reflection.",
+    "sorrowful-scourging.metadata.og-title-second-sorrowful-mystery-the-scourging-at-the-pilla": "Second Sorrowful Mystery: The Scourging at the Pillar | Rosary Book",
+    "sorrowful-scourging.metadata.og-description-a-read-aloud-decade-book-for-children-on-the": "A read-aloud decade book for children on the Second Sorrowful Mystery, the Scourging at the Pillar: the story, the Gospel, the decade prayers, and a reflection.",
+    "sorrowful-scourging.metadata.twitter-title-second-sorrowful-mystery-the-scourging-at-the": "Second Sorrowful Mystery: The Scourging at the Pillar | Rosary Book",
+    "sorrowful-scourging.metadata.twitter-description-a-read-aloud-decade-book-for-children-on": "A read-aloud decade book for children on the Second Sorrowful Mystery, the Scourging at the Pillar: the story, the Gospel, the decade prayers, and a reflection.",
+    "sorrowful-scourging.body.skip-to-main-content": "Skip to main content",
+    "sorrowful-scourging.header.text": "✦",
+    "sorrowful-scourging.header.saint-charbel": "Saint Charbel",
+    "sorrowful-scourging.accessibility.primary": "Primary",
+    "sorrowful-scourging.header.home": "Home",
+    "sorrowful-scourging.header.legacy": "Legacy",
+    "sorrowful-scourging.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "sorrowful-scourging.header.full-history": "Full History",
+    "sorrowful-scourging.header.miracles": "Miracles",
+    "sorrowful-scourging.header.miracles-reports": "Miracles & Reports",
+    "sorrowful-scourging.header.eucharistic-miracles": "Eucharistic Miracles",
+    "sorrowful-scourging.header.letters": "Letters",
+    "sorrowful-scourging.header.voice-testimony": "Voice Testimony",
+    "sorrowful-scourging.header.saints": "Saints",
+    "sorrowful-scourging.header.children-s-books": "Children's Books",
+    "sorrowful-scourging.header.prayer": "Prayer",
+    "sorrowful-scourging.header.prayer-library": "Prayer Library",
+    "sorrowful-scourging.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "sorrowful-scourging.header.prayer-for-the-sick": "Prayer for the Sick",
+    "sorrowful-scourging.header.prayer-for-healing": "Prayer for Healing",
+    "sorrowful-scourging.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "sorrowful-scourging.header.prayer-for-depression": "Prayer for Depression",
+    "sorrowful-scourging.header.prayer-for-students": "Prayer for Students",
+    "sorrowful-scourging.header.prayer-for-addiction": "Prayer for Addiction",
+    "sorrowful-scourging.header.prayer-for-family": "Prayer for Family",
+    "sorrowful-scourging.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "sorrowful-scourging.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "sorrowful-scourging.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "sorrowful-scourging.header.saint-charbel-novena": "Saint Charbel Novena",
+    "sorrowful-scourging.header.feast-day": "Feast Day",
+    "sorrowful-scourging.header.rosary-guide": "Rosary Guide",
+    "sorrowful-scourging.header.rosary-minibook": "Rosary Minibook",
+    "sorrowful-scourging.header.mystery-meditation": "Mystery Meditation",
+    "sorrowful-scourging.header.become-like-him": "Become Like Him",
+    "sorrowful-scourging.header.travel": "Travel",
+    "sorrowful-scourging.header.visiting-annaya": "Visiting Annaya",
+    "sorrowful-scourging.header.annaya-online-tour": "Annaya Online Tour",
+    "sorrowful-scourging.header.bekaa-kafra": "Bekaa Kafra",
+    "sorrowful-scourging.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "sorrowful-scourging.header.the-cedars-of-god": "the Cedars of God",
+    "sorrowful-scourging.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "sorrowful-scourging.header.qadisha-valley": "Qadisha Valley",
+    "sorrowful-scourging.header.qannoubine-monastery": "Qannoubine Monastery",
+    "sorrowful-scourging.header.qozhaya-monastery": "Qozhaya Monastery",
+    "sorrowful-scourging.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "sorrowful-scourging.header.the-hermitage": "The Hermitage",
+    "sorrowful-scourging.header.saint-charbel-trail": "Saint Charbel Trail",
+    "sorrowful-scourging.header.news": "News",
+    "sorrowful-scourging.header.media": "Media",
+    "sorrowful-scourging.header.music": "Music",
+    "sorrowful-scourging.header.video": "Video",
+    "sorrowful-scourging.header.gallery": "Gallery",
+    "sorrowful-scourging.body.a-book-for-ages-6-12": "A Book for Ages 6-12",
+    "sorrowful-scourging.the-scourging-at-the-pil.the-scourging-at-the-pillar-second-sorrowful-mystery": "The Scourging at the Pillar: Second Sorrowful Mystery",
+    "sorrowful-scourging.the-scourging-at-the-pil.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-sc": "A little read-aloud book for one decade of the Rosary: The Scourging at the Pillar.",
+    "sorrowful-scourging.the-scourging-at-the-pil.short-answer": "Short answer:",
+    "sorrowful-scourging.the-scourging-at-the-pil.this-book-walks-children-through-the-second-sorrowful-myster": "This book walks children through the Second Sorrowful Mystery, the Scourging at the Pillar: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on purity and healing from sin.",
+    "sorrowful-scourging.the-scourging-at-the-pil.continue-from-page-2": "Continue from Page 2?",
+    "sorrowful-scourging.the-scourging-at-the-pil.resume": "Resume",
+    "sorrowful-scourging.accessibility.dismiss": "Dismiss",
+    "sorrowful-scourging.the-scourging-at-the-pil.text": "✕",
+    "sorrowful-scourging.accessibility.illustrated-storybook": "Illustrated storybook",
+    "sorrowful-scourging.the-scourging-at-the-pil.reading": "Reading…",
+    "sorrowful-scourging.the-scourging-at-the-pil.0-00": "0:00",
+    "sorrowful-scourging.the-scourging-at-the-pil.voice-pack": "Voice Pack",
+    "sorrowful-scourging.accessibility.select-story-voice-pack": "Select story voice pack",
+    "sorrowful-scourging.accessibility.previous-page": "Previous page",
+    "sorrowful-scourging.the-scourging-at-the-pil.previous-page": "Previous Page",
+    "sorrowful-scourging.the-scourging-at-the-pil.read-aloud": "Read Aloud",
+    "sorrowful-scourging.accessibility.next-page": "Next page",
+    "sorrowful-scourging.the-scourging-at-the-pil.next-page": "Next Page",
+    "sorrowful-scourging.accessibility.story-settings": "Story settings",
+    "sorrowful-scourging.the-scourging-at-the-pil.story-settings": "Story settings",
+    "sorrowful-scourging.the-scourging-at-the-pil.toggle-reader-mode-for-easier-reading": "Toggle reader mode for easier reading",
+    "sorrowful-scourging.the-scourging-at-the-pil.reader-mode": "Reader Mode",
+    "sorrowful-scourging.the-scourging-at-the-pil.automatically-read-next-page-when-current-page-finishes": "Automatically read next page when current page finishes",
+    "sorrowful-scourging.the-scourging-at-the-pil.auto-continue": "Auto Continue",
+    "sorrowful-scourging.accessibility.playback-speed": "Playback speed",
+    "sorrowful-scourging.the-scourging-at-the-pil.slow": "Slow",
+    "sorrowful-scourging.the-scourging-at-the-pil.normal": "Normal",
+    "sorrowful-scourging.the-scourging-at-the-pil.fast": "Fast",
+    "sorrowful-scourging.the-scourging-at-the-pil.page-1-of-4": "Page 1 of 4",
+    "sorrowful-scourging.loading-story.loading-story": "Loading story...",
+    "sorrowful-scourging.loading-story.please-wait-while-we-open-the-storybook": "Please wait while we open the storybook.",
+    "sorrowful-scourging.loading-story.evidence-for-this-page": "Evidence for This Page",
+    "sorrowful-scourging.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+    "sorrowful-scourging.about-this-story.about-this-story": "About this story",
+    "sorrowful-scourging.about-this-story.painting-william-adolphe-bouguereau-flagellation-public-doma": "Painting: William-Adolphe Bouguereau, Flagellation. Public domain, via Wikimedia Commons.",
+    "sorrowful-scourging.about-this-story.image-source-wikimedia-commons": "Image source (Wikimedia Commons)",
+    "sorrowful-scourging.about-this-story.text": ".",
+    "sorrowful-scourging.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Tuesday / Friday.",
+    "sorrowful-scourging.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+    "sorrowful-scourging.frequently-asked-questio.what-is-the-second-sorrowful-mystery": "What is the Second Sorrowful Mystery?",
+    "sorrowful-scourging.frequently-asked-questio.the-scourging-at-the-pillar-jesus-was-bound-to-a-pillar-and": "The Scourging at the Pillar. Jesus was bound to a pillar and scourged, though he had done nothing wrong. This mystery is traditionally prayed on Tuesday / Friday, and its fruit is purity and healing from sin.",
+    "sorrowful-scourging.frequently-asked-questio.how-do-you-pray-this-decade-with-children": "How do you pray this decade with children?",
+    "sorrowful-scourging.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+    "sorrowful-scourging.more-saint-storybooks-fo.more-saint-storybooks-for-children": "More Saint Storybooks for Children",
+    "sorrowful-scourging.more-saint-storybooks-fo.the-agony-in-the-garden": "The Agony in the Garden",
+    "sorrowful-scourging.more-saint-storybooks-fo.the-crowning-with-thorns": "The Crowning with Thorns",
+    "sorrowful-scourging.more-saint-storybooks-fo.all-storybooks": "All storybooks",
+    "sorrowful-scourging.footer.a-rosary-decade-book-for-children-author-please-pray-for-the": "A Rosary decade book for children. Author: Please pray for the person who made this website."
+  }
+}

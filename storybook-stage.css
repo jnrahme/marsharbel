@@ -62,7 +62,7 @@ body.is-story-page .storybook-text{
 body.is-story-page .storybook-text h2{color:#2a1b10;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.1}
 body.is-story-page .storybook-text .storybook-step{color:#8a5f2b;letter-spacing:.2em;font-size:.72rem;text-transform:uppercase;display:flex;align-items:center;gap:.7rem}
 body.is-story-page .storybook-text .storybook-step::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,#b98a45,transparent)}
-body.is-story-page .storybook-text #story-body{color:#3a2b1e;font-size:clamp(1.05rem,1.45vw,1.28rem);line-height:1.75;text-wrap:pretty}
+body.is-story-page .storybook-text #story-body{color:#3a2b1e;font-size:clamp(1.05rem,1.45vw,1.28rem);line-height:1.75;text-wrap:pretty;white-space:pre-line}
 body.is-story-page .storybook-text #story-body:not(.is-reflection)::first-letter{
   font-family:"Cormorant Garamond",Georgia,serif;float:left;font-size:3.6em;line-height:.8;padding:.06em .1em 0 0;color:#9a6a2c;font-weight:600}
 body.is-story-page .storybook-prayer,body.is-story-page .storybook-heart{color:#6a4a26}
@@ -320,6 +320,8 @@ body.is-story-page .storybook>details.story-settings{position:static;align-self:
   /* Veronica: localized shelf labels can be wide (e.g. Arabic), so the lift can collide;
      keep Settings in the static stacked fallback for this book only (legacy books unchanged). */
   body.is-story-page[data-story="veronica"].st-settings-row .storybook>details.story-settings{position:static;inset-inline-end:auto;top:auto;margin:0 .2rem}
+  /* Localized (non-EN) editions: shelf labels are wider, so Settings stays in the static stacked fallback so the two can never collide (RTL and enlarged text included). */
+  html:not([lang="en"]) body.is-story-page.st-settings-row .storybook>details.story-settings{position:static;inset-inline-end:auto;top:auto;margin:0 .2rem}
   /* open panel takes the full row below the hero (its flow position), so it never overlaps the shelf link */
   body.is-story-page.st-settings-row .storybook>details.story-settings[open]{position:static;inset-inline-end:auto;top:auto;margin:0 .2rem}
 }

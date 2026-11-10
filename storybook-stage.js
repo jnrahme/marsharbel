@@ -49,7 +49,7 @@
   var shelfPromise = null, nextCard = null;
   function loadShelf() {
     if (!shelfPromise) {
-      shelfPromise = fetch('./stories', { credentials: 'same-origin' }).then(function (r) { return r.ok ? r : fetch('./stories.html'); }).then(function (r) { return r.ok ? r.text() : ''; })
+      shelfPromise = fetch('/stories', { credentials: 'same-origin' }).then(function (r) { return r.ok ? r : fetch('/stories.html'); }).then(function (r) { return r.ok ? r.text() : ''; })
         .then(function (html) {
           if (!html) return [];
           var doc = new DOMParser().parseFromString(html, 'text/html');
@@ -58,7 +58,7 @@
             var sec = card.closest('.shelf-section'), head = sec && sec.querySelector('h3');
             if (!a || !img || !h || !card.closest('.shelf-section')) return null;
             return { slug: a.getAttribute('href').replace(/^\.\//, '').replace(/\.html$/, '').split(/[?#]/)[0],
-              href: new URL(a.getAttribute('href'), location.href).href, cover: new URL(img.getAttribute('src'), location.href).href,
+              href: new URL(a.getAttribute('href'), location.origin + '/').href, cover: new URL(img.getAttribute('src'), location.origin + '/').href,
               title: h.textContent.trim(), blurb: p ? p.textContent.trim() : '', shelf: head ? head.textContent.trim() : '' };
           }).filter(Boolean);
         }).catch(function () { return []; });
