@@ -1,4 +1,4 @@
-name: Rosary v8 rebase and full review gates
+name: Rosary v9 rebase and full review gates
 on:
   push:
     branches: [recovery/nov10-write-route]
@@ -20,7 +20,7 @@ jobs:
           echo '6100b2727228aa768347e65cff019a8541c11f364b8a03377778c6067698a7c4  /tmp/rosary-v8.patch' | sha256sum --check
           git fetch origin stage
           test "$(git rev-parse FETCH_HEAD)" = 8023f924125ddc41b5cf6f843bef4f695c671535
-          git checkout -b review/rosary-v8-nov10 8023f924125ddc41b5cf6f843bef4f695c671535
+          git checkout -b review/rosary-v9-nov10 8023f924125ddc41b5cf6f843bef4f695c671535
           test -z "$(git status --porcelain)"
           cp sitemap.xml /tmp/current-sitemap.xml
           git show cf1cf38ee9203f91b68a502625659d63a94d4a24:sitemap.xml > sitemap.xml
@@ -39,6 +39,10 @@ jobs:
           assert len(additions)==240, len(additions)
           Path('sitemap.xml').write_text(current.replace('</urlset>','\n'.join(additions)+'\n</urlset>'))
           PY
+          git restore --source=8023f924125ddc41b5cf6f843bef4f695c671535 scripts/qa/check_i18n_policy.py scripts/qa/test_i18n.py
+          echo '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' | base64 -d | gzip -dc > /tmp/v9-qa.patch
+          echo '2c2d9585c5d41c8e4ec69c62800394b5182e8cf3b5d503977207e375c75f15dd  /tmp/v9-qa.patch' | sha256sum --check
+          git apply /tmp/v9-qa.patch
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
       - uses: actions/setup-node@v4
@@ -61,6 +65,8 @@ jobs:
           git add -A
           git commit -m 'content: localized Rosary decade books on current stage'
           git rev-parse HEAD HEAD^{tree}
+      - name: Negative generated-file scope tests
+        run: PYTHONPATH=scripts/qa python3 -m unittest scripts.qa.test_i18n.RosaryGeneratedExemptionTests
       - name: Real new-page locale gate
         run: python3 scripts/qa/check_new_page_locales.py --base 8023f924125ddc41b5cf6f843bef4f695c671535
       - name: Full international and policy gates
@@ -78,4 +84,4 @@ jobs:
           python3 scripts/sitemap_lastmod.py --check --baseline 8023f924125ddc41b5cf6f843bef4f695c671535
           git diff --exit-code
       - name: Publish review branch only after gates
-        run: git push origin HEAD:refs/heads/review/rosary-v8-nov10
+        run: git push origin HEAD:refs/heads/review/rosary-v9-nov10
