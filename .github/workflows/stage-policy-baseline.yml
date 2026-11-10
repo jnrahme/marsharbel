@@ -1,0 +1,31 @@
+name: Plain stage full policy baseline
+on:
+  push:
+    branches: [recovery/nov10-write-route]
+    paths: [.github/workflows/stage-policy-baseline.yml]
+permissions:
+  contents: read
+jobs:
+  plain-stage-policy:
+    if: github.repository == 'jnrahme/marsharbel' && github.ref == 'refs/heads/recovery/nov10-write-route'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cf1cf38ee9203f91b68a502625659d63a94d4a24
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify plain stage custody
+        run: |
+          test "$(git rev-parse HEAD)" = cf1cf38ee9203f91b68a502625659d63a94d4a24
+          test -z "$(git status --porcelain)"
+          git rev-parse HEAD HEAD^{tree}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: pip install beautifulsoup4
+      - run: npx playwright install --with-deps chromium
+      - name: Plain stage full i18n policy verdict
+        run: python3 scripts/qa/check_i18n_policy.py
