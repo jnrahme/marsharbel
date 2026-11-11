@@ -58,7 +58,8 @@ for (const file of readdirSync('src/pages').filter(f => f.endsWith('.html'))) {
     longTail++;
   }
 }
-assert.equal(longTail, 35);
+// MAR-168: the premiere page now uses the existing modified-date serializer.
+assert.equal(longTail, 36);
 assert.throws(() => renderWebPageAudience([]), /needs language/);
 const audienceArgs = ['en', 'Children', '6', '12', 'n', 'd', 'u', 'Home', '/'];
 for (const ages of [['12', '6'], ['-1', '12'], ['6.5', '12'], ['6', 'NaN'], ['06', '12']]) {
