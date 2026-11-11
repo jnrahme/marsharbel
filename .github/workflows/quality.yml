@@ -1,78 +1,95 @@
 name: Browser quality
+
+on:
+  push:
+    branches:
+      - stage
+      - main
+  pull_request:
+
+# Branch pushes with an open PR were running everything twice (push and pull_request).
+# PR branches are covered by pull_request; stage and main by push. A new push to a PR
+# cancels that PR's stale run; runs on stage and main are never cancelled.
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   browser-quality-shard:
     runs-on: ubuntu-24.04
-    timeout-minutes: 40
-    strategy:
-      fail-fast: false
-      matrix:
-        shard:
-        - 1
-        - 2
-        - 3
-        - 4
-        - 5
-        - 6
-        - 7
-        - 8
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: npm
-    - run: node scripts/sync-navigation.mjs --check
-    - run: npm ci
-    - name: Verify pinned preinstalled Chromium and system dependencies
-      run: "node - <<'JS'\nconst fs = require('node:fs');\nconst { chromium } = require('@playwright/test');\nif (require('@playwright/test/package.json').version !== '1.63.0') throw new Error('Playwright image/package version mismatch');\nif (!fs.existsSync(chromium.executablePath())) throw new Error('Preinstalled Chromium missing');\n(async () => {\n  const browser = await chromium.launch({ headless: true });\n  const page = await browser.newPage();\n  await page.setContent('<html><body>Browser dependency probe</body></html>');\n  if (await page.textContent('body') !== 'Browser dependency probe') throw new Error('Browser launch/render failed');\n  await browser.close();\n})().catch(error => { console.error(error); process.exit(1); });\nJS"
-    - run: node scripts/ci/check_bq_shard_lists.mjs
-    - run: npx playwright test --config playwright.config.cjs --test-list=scripts/ci/bq-shards/shard-${{ matrix.shard }}.txt
-    - name: Per-spec Playwright durations
-      if: always()
-      run: node scripts/ci/summarize_pw_results.mjs output/playwright/pw-results.json output/playwright/pw-spec-timings-${{ matrix.shard }}.tsv
-    - name: Upload Playwright timing artifacts
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: pw-spec-timings-${{ matrix.shard }}
-        path: 'output/playwright/pw-results.json
-
-          output/playwright/pw-spec-timings-${{ matrix.shard }}.tsv
-
-          '
-        if-no-files-found: ignore
-    - if: failure()
-      uses: actions/upload-artifact@v4
-      with:
-        name: browser-quality-artifacts-${{ matrix.shard }}
-        path: 'playwright-report/
-
-          test-results/
-
-          '
-        if-no-files-found: ignore
     container:
       image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27
       options: --ipc=host --init
     defaults:
       run:
         shell: bash
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4, 5, 6, 7, 8]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: node scripts/sync-navigation.mjs --check
+      - run: npm ci
+      - name: Verify pinned preinstalled Chromium and system dependencies
+        run: |
+          node - <<'JS'
+          const fs = require('node:fs');
+          const { chromium } = require('@playwright/test');
+          if (require('@playwright/test/package.json').version !== '1.63.0') throw new Error('Playwright image/package version mismatch');
+          if (!fs.existsSync(chromium.executablePath())) throw new Error('Preinstalled Chromium missing');
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const page = await browser.newPage();
+            await page.setContent('<html><body>Browser dependency probe</body></html>');
+            if (await page.textContent('body') !== 'Browser dependency probe') throw new Error('Browser launch/render failed');
+            await browser.close();
+          })().catch(error => { console.error(error); process.exit(1); });
+          JS
+      # Duration-balanced packing: each shard runs exactly the tests in its
+      # checked-in list. The completeness proof fails closed on any collection
+      # drift, so a renamed/added/removed test can never silently drop coverage.
+      # Revert by restoring --shard=${{ matrix.shard }}/8.
+      - run: node scripts/ci/check_bq_shard_lists.mjs
+      - run: npx playwright test --config playwright.config.cjs --test-list=scripts/ci/bq-shards/shard-${{ matrix.shard }}.txt
+
+      # Instrumentation: built-in JSON reporter gives per-spec durations (the shard
+      # split is duration-blind today); summarized and uploaded so timings are
+      # retrievable via the artifacts API. Additive; never blocks the shard.
+      - name: Per-spec Playwright durations
+        if: always()
+        run: node scripts/ci/summarize_pw_results.mjs output/playwright/pw-results.json output/playwright/pw-spec-timings-${{ matrix.shard }}.tsv
+
+      - name: Upload Playwright timing artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pw-spec-timings-${{ matrix.shard }}
+          path: |
+            output/playwright/pw-results.json
+            output/playwright/pw-spec-timings-${{ matrix.shard }}.tsv
+          if-no-files-found: ignore
+
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-quality-artifacts-${{ matrix.shard }}
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+
+  # Required status check. Keeps the exact name "browser-quality" and fails unless every shard passed.
   browser-quality:
     if: ${{ always() && !cancelled() }}
     needs: browser-quality-shard
     runs-on: ubuntu-24.04
     steps:
-    - run: 'echo "shards: ${{ needs.browser-quality-shard.result }}"
-
-        test "${{ needs.browser-quality-shard.result }}" = "success"
-
-        '
-'on':
-  push:
-    branches:
-    - stage
-    - main
-  pull_request: null
+      - run: |
+          echo "shards: ${{ needs.browser-quality-shard.result }}"
+          test "${{ needs.browser-quality-shard.result }}" = "success"
