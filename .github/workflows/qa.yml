@@ -17,7 +17,7 @@ concurrency:
 jobs:
   qa-shard:
     name: qa-shard (${{ matrix.shard }}/8)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     # 45: shard 5/8 flaked on a green tree (stage QA run 38824388383,
     # 2026-10-15): attempt 1 cancelled after 30m22s (23:34:31Z -> 00:04:53Z)
     # at this job timeout; attempt 2 succeeded in 5m14s. A marginal timeout
@@ -90,7 +90,7 @@ jobs:
   # Not a required check by itself: "qa" below needs it and fails if it fails.
   qa-gates:
     name: qa-gates
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     env:
       CI_TIMINGS_FILE: tmp/ci-timings-qa-gates.tsv
@@ -185,7 +185,7 @@ jobs:
   # shard 3. It now runs as its own parallel job and is skipped in the CI shard invocation (--skip-i18n-test); local run_full_qa.sh still runs it.
   i18n-test:
     name: i18n-test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     env:
       CI_TIMINGS_FILE: tmp/ci-timings-i18n-test.tsv
@@ -236,7 +236,7 @@ jobs:
   qa:
     if: ${{ always() && !cancelled() }}
     needs: [qa-shard, qa-gates, i18n-test]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - run: |
           echo "shards: ${{ needs.qa-shard.result }}"
