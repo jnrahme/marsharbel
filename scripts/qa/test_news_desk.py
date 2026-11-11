@@ -774,7 +774,7 @@ class NovemberRecoveryTests(unittest.TestCase):
                 rec=pack[name];row=soup.select_one('#'+rec['id'])
                 self.assertIsNotNone(row)
                 self.assertEqual(row.select_one('time')['datetime'],rec['date'])
-                self.assertEqual(row.select_one('.news-row-title a')['href'],rec['url'])
+                self.assertEqual((soup.select_one('#credit-'+rec['id']+' > a') if name == 'apecl' else row.select_one('.news-row-title a'))['href'],rec['url'])
                 self.assertEqual(len(row.select('img')),0)
                 self.assertEqual(row.select_one('.news-row-summary').get_text(),rec['ar' if filename.startswith('ar/') else 'en']['summary'])
         self.assertIn('not a final statement',pack['apecl']['en']['summary'])
@@ -789,7 +789,8 @@ class NovemberRecoveryTests(unittest.TestCase):
             soup=BeautifulSoup(file.read_text(),'html.parser')
             row=soup.select_one('#latest-news a.home-news-row--text')
             self.assertEqual(row['href'].split('#')[-1],pack['apecl']['id'])
-            self.assertEqual(row.select_one('.home-news-title').get_text(),pack['home'][code][1])
+            updated=json.loads((ROOT/'locales/bkerke-nov11-reviewed-translations.json').read_text())
+            self.assertEqual(row.select_one('.home-news-title').get_text(),updated['home'][code][1])
             self.assertEqual(len(row.select('img,a')),0)
 
     def test_unlicensed_source_images_never_embedded(self):
@@ -798,6 +799,44 @@ class NovemberRecoveryTests(unittest.TestCase):
         for n in BeautifulSoup(text,'html.parser').select('img[src]'):
             self.assertNotIn('apecl.org',n['src'])
             self.assertNotIn('nahariya',n['src'])
+
+
+class BkerkeNovember11Tests(unittest.TestCase):
+    def test_labeled_update_preserves_opening_and_both_source_records(self):
+        from bs4 import BeautifulSoup
+        old=json.loads((ROOT/'locales/news-recovery-nov10-translations.json').read_text())
+        pack=json.loads((ROOT/'locales/bkerke-nov11-reviewed-translations.json').read_text())
+        for code,path in [('en','news.html'),('ar','ar/news.html')]:
+            soup=BeautifulSoup((ROOT/path).read_text(),'html.parser')
+            row=soup.select_one('#'+pack['id']);credit=soup.select_one('#credit-'+pack['id'])
+            self.assertEqual(row.select_one('time')['datetime'],old['apecl']['date'])
+            paragraphs=row.select('.news-row-summary,.news-row-update')
+            self.assertEqual(len(paragraphs),2)
+            self.assertEqual(paragraphs[0].get_text(),old['apecl'][code]['summary'])
+            self.assertEqual(paragraphs[1].select_one('strong').get_text(),pack['archive'][code]['update-label'])
+            self.assertEqual(paragraphs[1].select_one('span').get_text(),pack['archive'][code]['update-summary'])
+            self.assertEqual(row.select_one('.news-row-title a')['href'],pack['primary'])
+            self.assertEqual(credit.select('a')[0]['href'],old['apecl']['url'])
+            self.assertEqual(credit.select('a')[1]['href'],pack['primary'])
+            self.assertEqual(credit.select('a')[2]['href'],pack['secondary'])
+            self.assertFalse(row.select('img'))
+        english=pack['archive']['en']['update-summary']
+        for expected in ['decided on November 11 to form','Alma al-Shaab','Qauzah','Debel','Rmeich','Ain Ebel','Yaroun','Lebanese state','Holy See','international bodies','not confirmation of new funding or delivered aid','expected on November 13']:
+            self.assertIn(expected,english)
+
+    def test_all_registered_home_values_are_reviewed_and_match(self):
+        from bs4 import BeautifulSoup
+        pack=json.loads((ROOT/'locales/bkerke-nov11-reviewed-translations.json').read_text())
+        reg=json.loads((ROOT/'locales/registry.json').read_text())
+        expected={'en',*reg['homepageMirrors']['renderLocales']}
+        self.assertEqual(set(pack['home']),expected)
+        for code in expected:
+            soup=BeautifulSoup((ROOT/('index.html' if code=='en' else code+'/index.html')).read_text(),'html.parser')
+            row=soup.select_one('#latest-news a.home-news-row--text')
+            actual=[row.select_one('.'+cls).get_text() for cls in ['home-news-meta','home-news-title','home-news-credit']]
+            self.assertEqual(actual,pack['home'][code])
+            self.assertEqual(row['href'].split('#')[-1],pack['id'])
+            self.assertFalse(row.select('img,a'))
 
 if __name__ == '__main__':
     unittest.main()
