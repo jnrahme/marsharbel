@@ -16,7 +16,13 @@ concurrency:
 
 jobs:
   browser-quality-shard:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27
+      options: --ipc=host --init
+    defaults:
+      run:
+        shell: bash
     timeout-minutes: 40
     strategy:
       fail-fast: false
@@ -30,7 +36,21 @@ jobs:
           cache: npm
       - run: node scripts/sync-navigation.mjs --check
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - name: Verify pinned preinstalled Chromium and system dependencies
+        run: |
+          node - <<'JS'
+          const fs = require('node:fs');
+          const { chromium } = require('@playwright/test');
+          if (require('@playwright/test/package.json').version !== '1.63.0') throw new Error('Playwright image/package version mismatch');
+          if (!fs.existsSync(chromium.executablePath())) throw new Error('Preinstalled Chromium missing');
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const page = await browser.newPage();
+            await page.setContent('<html><body>Browser dependency probe</body></html>');
+            if (await page.textContent('body') !== 'Browser dependency probe') throw new Error('Browser launch/render failed');
+            await browser.close();
+          })().catch(error => { console.error(error); process.exit(1); });
+          JS
       # Duration-balanced packing: each shard runs exactly the tests in its
       # checked-in list. The completeness proof fails closed on any collection
       # drift, so a renamed/added/removed test can never silently drop coverage.
@@ -68,7 +88,7 @@ jobs:
   browser-quality:
     if: ${{ always() && !cancelled() }}
     needs: browser-quality-shard
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - run: |
           echo "shards: ${{ needs.browser-quality-shard.result }}"
