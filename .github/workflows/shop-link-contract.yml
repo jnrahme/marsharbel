@@ -33,7 +33,9 @@ jobs:
         run: |
           set -euo pipefail
           git show "$BASE_SHA:scripts/build-pages.mjs" > scripts/.shop-base-build.mjs
+          mv partials/fragments/shop-link.html /tmp/shop-link-fragment.html
           node scripts/.shop-base-build.mjs
+          mv /tmp/shop-link-fragment.html partials/fragments/shop-link.html
           python3 - <<'PY'
           import hashlib,json,subprocess
           from pathlib import Path
