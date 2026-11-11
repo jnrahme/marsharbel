@@ -7,6 +7,11 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from i18n import manifest_policy as m
 from i18n import citation_amendment as ca
 class ManifestPolicyTests(unittest.TestCase):
+ # These fixtures contain only Travel families. Isolate the unrelated Rosary
+ # evidence lookup, while real Rosary controls run unpatched in their own suite.
+ def setUp(self):
+  rosary=patch.object(m,'rosary_books_provenance',return_value=Counter())
+  rosary.start();self.addCleanup(rosary.stop)
  # Synthetic Travel-only fixtures: citation lookup is isolated (ca.load -> None) so the
  # unit covers Travel provenance only. The REAL citation validator against the REAL
  # sidecar and production manifest is covered by ProductionCitationProvenance below -

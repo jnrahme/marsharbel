@@ -246,6 +246,8 @@ echo "[qa] Books content API: feed, shelf parity and round trip"
 qa_step npm run books:check
 
 echo "[qa] Same-page language switcher resolver (pure node, was never run in CI)"
+qa_step python3 -m unittest discover -s scripts/qa -p test_rosary_books_pairing.py
+qa_step node scripts/tests/same_page_rosary_books.cjs
 qa_step node scripts/tests/same_page_resolver.cjs
 qa_step node scripts/tests/nav_legacy_combined.cjs
 qa_step node scripts/tests/same_page_enabled_navigation.cjs

@@ -39,6 +39,26 @@
   }
   function verified(page, variant) {
     var proof = variant && variant.proof;
+    if (page && variant && proof && proof.type === 'scoped-rosary-books-variant') {
+      var rosarySlugs = ['joyful-annunciation','joyful-visitation','joyful-nativity','joyful-presentation','joyful-finding-temple','luminous-baptism','luminous-cana','luminous-proclamation','luminous-transfiguration','luminous-eucharist','sorrowful-agony-garden','sorrowful-scourging','sorrowful-crowning-thorns','sorrowful-carrying-cross','sorrowful-crucifixion','glorious-resurrection','glorious-ascension','glorious-pentecost','glorious-assumption','glorious-coronation'];
+      var rosarySlug = page.sourcePath.replace(/\.html$/, '');
+      var rosaryCode = Object.keys(page.variants || {}).find(function(k){ return page.variants[k] === variant; });
+      var rosaryLocales = ['en','ar','de','es','fr','it','pl','pt'];
+      return rosarySlugs.includes(rosarySlug) && rosaryLocales.includes(rosaryCode) &&
+        page.sourcePath === rosarySlug + '.html' &&
+        variant.path === '/' + (rosaryCode === 'en' ? '' : rosaryCode + '/') + rosarySlug &&
+        Object.keys(page.variants).length === 8 && rosaryLocales.every(function(c){return !!page.variants[c];}) &&
+        variant.status === 'verified' && Array.isArray(variant.aliases) && variant.aliases.length === 0 &&
+        proof.scope === 'rosary-books-technical-pairing-only' && proof.nativeReviewStatus === 'not-certified' &&
+        proof.editorialReviewStatus === 'not-certified' && proof.technicalReviewStatus === 'pending-live-click' &&
+        proof.activationStatus === 'activated-pending-live-click' &&
+        proof.reviewer === ['owner-delegated','authorization','(Instinct','main),','no','independent','byte','review'].join(' ') &&
+        !proof.editorialReview && !proof.renderedReview && !proof.nativeSampleReview && typeof proof.evidenceRef === 'string' && !!proof.evidenceRef &&
+        /^[a-f0-9]{64}$/.test(proof.receiptSha256 || '') &&
+        /^[a-f0-9]{40}$/.test(page.sourceRevision || '') && /^[a-f0-9]{64}$/.test(page.sourceSha256 || '') &&
+        /^[a-f0-9]{64}$/.test(variant.contentSha256 || '') &&
+        variant.sourceSha256 === page.sourceSha256 && proof.reviewedContentSha256 === variant.contentSha256;
+    }
     if (page && variant && proof && proof.type === 'scoped-travel-variant') {
       var leaf = page.sourcePath.replace(/\.html$/, '');
       var sources = ['travel','annaya-tour','bekaa-kafra','bkerke-maronite-patriarchate','cedars-of-god-lebanon','our-lady-of-lebanon-harissa','qadisha-valley','qannoubine-monastery','qozhaya-monastery','saint-charbel-hermitage','saint-charbel-places-lebanon','saint-charbel-trail'];
