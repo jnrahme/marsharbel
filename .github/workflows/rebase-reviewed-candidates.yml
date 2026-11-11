@@ -13,19 +13,19 @@ jobs:
         with:
           fetch-depth: 0
           ref: stage
-      - name: Merge only reviewed infrastructure into exact candidate heads
+      - name: Merge verified current stage into hidden-shop candidate
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD)" = 149c79ca3aa6a4ca71355a28aa9891bf62b250ef
+          test "$(git rev-parse HEAD)" = fdcd0efcf60ee970cbf4bc4eb8e4d36a1e48f6d8
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          for pair in 'review/film-freshness-nov11:25ac8e8060bc0d4acee406857717f162e23c7529' 'feat/hidden-shop-link-scaffold:bd44770f3c052727f876ead93e97e6462b068475'; do
+          for pair in 'feat/hidden-shop-link-scaffold:189dac8563964eaaa04675a7af7975d8ef3f3f00'; do
             branch=${pair%:*}; expected=${pair##*:}
             git fetch origin "$branch"
             test "$(git rev-parse FETCH_HEAD)" = "$expected"
             git checkout -B candidate FETCH_HEAD
-            git merge --no-edit 149c79ca3aa6a4ca71355a28aa9891bf62b250ef
-            git merge-base --is-ancestor 149c79ca3aa6a4ca71355a28aa9891bf62b250ef HEAD
+            git merge --no-edit fdcd0efcf60ee970cbf4bc4eb8e4d36a1e48f6d8
+            git merge-base --is-ancestor fdcd0efcf60ee970cbf4bc4eb8e4d36a1e48f6d8 HEAD
             git push origin HEAD:refs/heads/$branch
             git rev-parse HEAD
           done
