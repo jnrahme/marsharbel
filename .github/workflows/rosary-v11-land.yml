@@ -1,0 +1,94 @@
+name: rosary-v11-land
+# One-shot lander for the verified Rosary v11 respin onto review/rosary-v10-nov10
+# (PR #909). Applies the verified v11 delta (squashed commit on top of the v10
+# head, ancestry preserved, fast-forward), regenerates nothing (the respin tree
+# is final), re-runs the full gate battery against the committed tree, and
+# pushes only when every gate is green.
+on:
+  push:
+    branches: [recovery/nov10-write-route]
+    paths: [.github/workflows/rosary-v11-land.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  land:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout writer branch (patch source)
+        uses: actions/checkout@v4
+        with:
+          ref: recovery/nov10-write-route
+          path: writer
+
+      - name: Verify and unpack v11 delta patch
+        run: |
+          echo "6a2c70ef16e221c5655d953e01c347c329cbf5c29c00790f7f3ff0ae6dc52c43  writer/v11-delta.patch.gz.b64" | sha256sum -c -
+          base64 -d writer/v11-delta.patch.gz.b64 | gunzip > /tmp/v11-delta.patch
+          echo "2d9ce8fecb1b3cca94117f68cae1d63645d0a4762dafb83a55b83df0e2585199  /tmp/v11-delta.patch" | sha256sum -c -
+
+      - name: Checkout review branch
+        uses: actions/checkout@v4
+        with:
+          ref: review/rosary-v10-nov10
+          fetch-depth: 0
+          path: repo
+
+      - name: Record pre-land head
+        run: |
+          cd repo
+          git rev-parse HEAD | tee /tmp/pre-land-head.txt
+          test "$(git rev-parse HEAD)" = "791d71c28e7fdce034de03abede53ddc56948c4e"
+
+      - name: Apply v11 delta
+        run: |
+          cd repo
+          git apply --verbose /tmp/v11-delta.patch
+          git status --short | head -5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: repo/package-lock.json
+
+      - name: Install dependencies
+        working-directory: repo
+        run: |
+          npm ci
+          pip install -r scripts/qa/requirements.txt
+
+      - name: Commit v11 land
+        working-directory: repo
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "content: Rosary v11 respin - ship EN+ar/de/es/fr/it/pl/pt decade books; strip RU/HI/TH/ZH pages (bounded slices + faith holds, catalogs kept as contract data); hreflang limited to shipped locales; og:image pins; locale-mirror registration; head census; bq shard regen"
+
+      - name: Gate battery
+        working-directory: repo
+        run: |
+          set -e
+          python3 -m unittest discover -s scripts/qa -p test_russian_slice.py
+          python3 scripts/qa/test_limited_launch.py
+          python3 -m unittest discover -s scripts/qa -p test_locale_mirror_policy.py
+          python3 scripts/qa/test_head_fragments.py
+          python3 -m unittest discover -s scripts/qa -p test_seo.py
+          python3 -m unittest discover -s scripts/qa -p test_new_page_locales.py
+          python3 scripts/qa/check_new_page_locales.py --base 8023f924125ddc41b5cf6f843bef4f695c671535
+          npm run books:check
+          npm run test:pages-sync
+          npm run test:search
+          node scripts/ci/check_bq_shard_lists.mjs
+
+      - name: Push v11 land
+        working-directory: repo
+        run: |
+          set -e
+          git push origin HEAD:review/rosary-v10-nov10
+          git rev-parse HEAD
