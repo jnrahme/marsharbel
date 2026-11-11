@@ -1,0 +1,123 @@
+name: rosary-v11-regen
+# One-shot runner-side REGENERATION lander for review/rosary-v10-nov10 (PR #909),
+# ruled by Main 2026-11-10 20:11 EST (option B). PR CI on 745f66c7 failed
+# i18n-test + qa-shard(4/8): committed ar/joyful-annunciation.html is stale vs
+# the tree's own scripts/build-international.py. The runner is the authoritative
+# renderer (pinned scripts/qa/requirements.txt env), so the runner regenerates,
+# and ONLY generator-produced bytes for localized rosary page files are
+# committed. Guards (Main ruling): the exact changed-file list is surfaced in
+# the log BEFORE any commit; if regeneration touches an EN master, any page
+# outside the localized rosary set, any pin/evidence/bindings/policy file, any
+# untracked or deleted path, or an unexpectedly large set (>140 files), the job
+# stops WITHOUT pushing. Full gate battery runs commit-first; push only on green.
+on:
+  push:
+    branches: [recovery/nov10-write-route]
+    paths: [.github/workflows/rosary-v11-regen.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout review branch
+        uses: actions/checkout@v4
+        with:
+          ref: review/rosary-v10-nov10
+          fetch-depth: 0
+          path: repo
+
+      - name: Assert expected head
+        run: |
+          cd repo
+          git rev-parse HEAD | tee /tmp/pre-regen-head.txt
+          test "$(git rev-parse HEAD)" = "745f66c7943974b35af015a2ba905c170dd08d1b"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: repo/package-lock.json
+
+      - name: Install dependencies (pinned QA env)
+        working-directory: repo
+        run: |
+          npm ci
+          pip install -r scripts/qa/requirements.txt
+
+      - name: Regenerate international outputs
+        working-directory: repo
+        run: python3 scripts/build-international.py
+
+      - name: Scope guard - localized rosary pages only
+        working-directory: repo
+        run: |
+          set -e
+          echo '=== CHANGED-FILE LIST (regen delta) ==='
+          git status --porcelain
+          echo '=== END LIST ==='
+          mapfile -t paths < <(git status --porcelain | sed 's/^...//')
+          if [ "${#paths[@]}" -eq 0 ]; then
+            echo 'GUARD FAIL: regeneration produced zero changes, but CI proved drift exists'
+            exit 1
+          fi
+          if [ "${#paths[@]}" -gt 140 ]; then
+            echo "GUARD FAIL: ${#paths[@]} files changed - larger than the shipped rosary page set (140)"
+            exit 1
+          fi
+          allowed='^(ar|fr|es|pt|it|de|pl)/(joyful|luminous|sorrowful|glorious)-[a-z-]+\.html$'
+          for p in "${paths[@]}"; do
+            if ! [[ "$p" =~ $allowed ]]; then
+              echo "GUARD FAIL: out-of-scope path regenerated: $p"
+              exit 1
+            fi
+          done
+          # Deletions are out of scope: every changed path must still exist.
+          for p in "${paths[@]}"; do
+            if [ ! -f "$p" ]; then
+              echo "GUARD FAIL: regeneration deleted $p"
+              exit 1
+            fi
+          done
+          echo "GUARD PASS: ${#paths[@]} localized rosary page file(s) regenerated"
+          printf '%s\n' "${paths[@]}" > /tmp/regen-paths.txt
+
+      - name: Commit regenerated pages (scoped)
+        working-directory: repo
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          while IFS= read -r p; do git add -- "$p"; done < /tmp/regen-paths.txt
+          git commit -m "fix: regenerate stale localized rosary pages via build-international (CI drift class: ar/joyful-annunciation et al.)"
+
+      - name: Gate battery
+        working-directory: repo
+        run: |
+          set -e
+          python3 scripts/qa/probe_partial_build.py
+          npm run i18n:test
+          python3 scripts/build-international.py --check
+          python3 -m unittest discover -s scripts/qa -p test_russian_slice.py
+          python3 scripts/qa/test_limited_launch.py
+          python3 -m unittest discover -s scripts/qa -p test_locale_mirror_policy.py
+          python3 scripts/qa/test_head_fragments.py
+          python3 -m unittest discover -s scripts/qa -p test_seo.py
+          python3 -m unittest discover -s scripts/qa -p test_new_page_locales.py
+          python3 scripts/qa/check_new_page_locales.py --base 8023f924125ddc41b5cf6f843bef4f695c671535
+          npm run books:check
+          npm run test:pages-sync
+          npm run test:search
+          node scripts/ci/check_bq_shard_lists.mjs
+
+      - name: Push regenerated head
+        working-directory: repo
+        run: |
+          set -e
+          git push origin HEAD:review/rosary-v10-nov10
+          git rev-parse HEAD
