@@ -7,9 +7,12 @@ import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { renderWebPage, renderWebPageArticle, renderWebPageAudience, renderFaq } from './lib/jsonld.mjs';
+import { shopLinkConfig, composeShopLink } from './lib/shop-link.mjs';
 import { renderPrimaryNav } from './lib/primary-nav.mjs';
 import { renderVideoFallback } from './lib/video-fallback.mjs';
 const videoCopy = JSON.parse(await readFile('locales/en/video-playback.json', 'utf8'));
+const shopConfig = shopLinkConfig(process.env);
+const shopCopy = shopConfig ? JSON.parse(await readFile('locales/en/shop-link-copy.json', 'utf8')).copy : null;
 const check = process.argv.includes('--check');
 const selected = process.argv.find(arg => arg.startsWith('--pages='))?.slice(8).split(',');
 const SRC = 'src/pages', FRAG = 'partials/fragments';
@@ -48,7 +51,7 @@ async function catalog(name) {
   if (!catalogs.has(name)) catalogs.set(name, JSON.parse(await readFile(`locales/en/${name}-copy.json`, 'utf8')).copy);
   return catalogs.get(name);
 }
-const used = new Set(); let stale = [], n = 0;
+const used = new Set(['shop-link']); let stale = [], n = 0;
 for (const file of await walk(SRC).catch(() => [])) {
   const rel = path.relative(SRC, file);
   if (selected && !selected.includes(rel)) continue;
@@ -79,6 +82,7 @@ for (const file of await walk(SRC).catch(() => [])) {
     // Arguments are inserted verbatim (no unescaping) so JSON/HTML escapes survive byte for byte.
     return indent + frags[name].replace(/\{\{(\d+|text)\}\}/g, (_m, k) => args[(k === 'text' ? 1 : Number(k)) - 1]);
   });
+  built = composeShopLink(built, shopConfig, frags['shop-link'], shopCopy);
   // Hero-figure ratio classes (design-director face-crop spec): fixed-box
   // layouts key off the image's own ratio, read from the width/height attrs.
   // Portrait art gets is-portrait, near-square gets is-square-ish; landscape
