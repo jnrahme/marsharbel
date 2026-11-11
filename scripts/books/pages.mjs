@@ -115,7 +115,7 @@ function render(f) {
   if (mirror) {
     const en = typeof mirror.english === 'string' ? mirror.english : mirror.english.route;
     const lines = ['  <!-- hreflang:begin -->', `  <link rel="alternate" hreflang="en" href="${SITE}${en}" />`,
-      ...Object.keys(REGISTRY.locales).filter(c => c !== 'en').map(c => `  <link rel="alternate" hreflang="${c}" href="${SITE}${mirror.routes[c]}" />`),
+      ...Object.keys(REGISTRY.locales).filter(c => c !== 'en' && mirror.routes[c]).map(c => `  <link rel="alternate" hreflang="${c}" href="${SITE}${mirror.routes[c]}" />`),
       `  <link rel="alternate" hreflang="x-default" href="${SITE}${en}" />`, '<!-- hreflang:end -->'];
     t = t.replace(/<!-- hreflang:begin -->[\s\S]*?<!-- hreflang:end -->/, lines.join('\n'));
   }

@@ -7,8 +7,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..');
-const LOCALES = ['ar', 'de', 'es', 'fr', 'hi', 'it', 'pl', 'pt', 'ru', 'th', 'zh-Hans'];
-const GLOB = { ar: 'AR', de: 'DE', es: 'ES', fr: 'FR', hi: 'HI', it: 'IT', pl: 'PL', pt: 'PT', ru: 'RU', th: 'TH', 'zh-Hans': 'ZH_HANS' };
+const LOCALES = ['ar', 'de', 'es', 'fr', 'it', 'pl', 'pt'];
+const GLOB = { ar: 'AR', de: 'DE', es: 'ES', fr: 'FR', it: 'IT', pl: 'PL', pt: 'PT' };
 export const ROSARY_SLUGS = ['joyful-annunciation', 'joyful-visitation', 'joyful-nativity', 'joyful-presentation', 'joyful-finding-temple', 'luminous-baptism', 'luminous-cana', 'luminous-proclamation', 'luminous-transfiguration', 'luminous-eucharist', 'sorrowful-agony-garden', 'sorrowful-scourging', 'sorrowful-crowning-thorns', 'sorrowful-carrying-cross', 'sorrowful-crucifixion', 'glorious-resurrection', 'glorious-ascension', 'glorious-pentecost', 'glorious-assumption', 'glorious-coronation'];
 const readJson = f => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 const check = process.argv.includes('--check');
