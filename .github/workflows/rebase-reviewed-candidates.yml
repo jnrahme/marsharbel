@@ -16,16 +16,16 @@ jobs:
       - name: Merge verified current stage into hidden-shop candidate
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD)" = fdcd0efcf60ee970cbf4bc4eb8e4d36a1e48f6d8
+          test "$(git rev-parse HEAD)" = d490cf873b51ffa26bdf82ebacb118df90172524
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          for pair in 'feat/hidden-shop-link-scaffold:189dac8563964eaaa04675a7af7975d8ef3f3f00'; do
+          for pair in 'feat/hidden-shop-link-scaffold:a02705191591f65c0a78482e5a6f2264efa6f153'; do
             branch=${pair%:*}; expected=${pair##*:}
             git fetch origin "$branch"
             test "$(git rev-parse FETCH_HEAD)" = "$expected"
             git checkout -B candidate FETCH_HEAD
-            git merge --no-edit fdcd0efcf60ee970cbf4bc4eb8e4d36a1e48f6d8
-            git merge-base --is-ancestor fdcd0efcf60ee970cbf4bc4eb8e4d36a1e48f6d8 HEAD
+            git merge --no-edit d490cf873b51ffa26bdf82ebacb118df90172524
+            git merge-base --is-ancestor d490cf873b51ffa26bdf82ebacb118df90172524 HEAD
             git push origin HEAD:refs/heads/$branch
             git rev-parse HEAD
           done
