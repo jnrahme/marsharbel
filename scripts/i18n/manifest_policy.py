@@ -37,7 +37,7 @@ def scoped_provenance(root,text):
         for variant in page['variants'].values():
             # annaya-hero-v1 scope is a non-prose token, never extracted as display text.
             if key!='annaya-tour-travel-master-equivalence':scopes[variant['proof']['scope']]+=1
-    return scopes+citation_provenance(root,manifest)
+    return scopes+citation_provenance(root,manifest)+rosary_books_provenance(root,manifest)
 
 
 import re as _re
@@ -112,3 +112,24 @@ def manifest_text_counter(root,text,values):
     counter=Counter(values);provenance=scoped_provenance(root,text)
     if provenance-counter:raise ValueError('Manifest provenance missing from JS extractor')
     return counter-provenance
+
+
+def rosary_books_provenance(root, manifest):
+    """Exclude only exact non-display reviewer metadata after full source rebuild."""
+    from i18n.reviewed_rosary_books import rosary_books_manifest
+    expected = rosary_books_manifest(root, {}, {'pages': {}})['pages']
+    actual = {key for key, page in manifest['pages'].items()
+              if any(v.get('proof', {}).get('type') == 'scoped-rosary-books-variant'
+                     for v in page['variants'].values())}
+    if actual != set(expected):
+        raise ValueError('Rosary provenance family membership differs')
+    scopes = Counter()
+    for key in sorted(expected):
+        page = manifest['pages'][key]
+        if page != expected[key]:
+            raise ValueError('Rosary provenance differs from validated locale evidence: ' + key)
+        for variant in page['variants'].values():
+            reviewer = variant['proof']['reviewer']
+            if _extracted_prose(reviewer):
+                scopes[reviewer] += 1
+    return scopes
