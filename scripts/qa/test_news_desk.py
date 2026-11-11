@@ -109,7 +109,7 @@ class NewsDeskTests(unittest.TestCase):
         self.assertEqual(text.count('class="home-news-lead home-news-lead--film"'), 1)
         self.assertEqual(text.count('class="home-news-row"'), 5)
         # REVISION 2026-10-30: text-only almoner supporting row (no photo, rights-safe)
-        self.assertEqual(text.count('class="home-news-row home-news-row--text"'), 1)
+        self.assertEqual(text.count('class="home-news-row home-news-row--text"'), 2)
         self.assertIn('class="home-news-row home-news-row--text" href="./news#almoner-zaporizhzhia-poltava-2026-10-30"', text)
         self.assertNotIn('news-rotator.js', text)
         self.assertIn('class="home-news-lead home-news-lead--film" href="./charbel-film-premiere"', text)
@@ -540,8 +540,11 @@ class AlmonerRefreshSandboxTests(unittest.TestCase):
 
 
 class NewsMetadataTests(unittest.TestCase):
-    # The desk's latest reviewed content revision is the October 30 almoner-Zaporizhzhia/Poltava follow-up and AI-address row additions (intake October 30; integrated October 30).
-    REVISION = '2026-10-30'
+    # November recovery adds source-dated Nov9 APECL and Nov2 Nahariya entries.
+    REVISION = '2026-11-10'
+    # Authored content revision and actual regenerated sitemap day are distinct.
+    # Keep both exact; the sitemap generator's one-day skew is not a backdate.
+    SITEMAP_REVISION = '2026-11-11'
 
     def assert_news_metadata(self, html, lastmod):
         from bs4 import BeautifulSoup
@@ -549,7 +552,7 @@ class NewsMetadataTests(unittest.TestCase):
         page = next(json.loads(n.string) for n in soup.select('script[type="application/ld+json"]')
                     if json.loads(n.string).get('@type') == 'WebPage')
         self.assertEqual(page['dateModified'], self.REVISION)
-        self.assertEqual(lastmod, self.REVISION)
+        self.assertEqual(lastmod, self.SITEMAP_REVISION)
         self.assertEqual(page['mainEntity']['headline'], soup.h1.get_text(' ', strip=True))
         self.assertEqual(page['mainEntity']['datePublished'], '2026-09-20')
 
@@ -564,20 +567,29 @@ class NewsMetadataTests(unittest.TestCase):
                 self.assert_news_metadata((ROOT/file).read_text(), dates[url])
 
     def test_old_webpage_date_is_rejected(self):
-        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-10-30"',
+        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-11-10"',
                                                     '"dateModified": "2026-10-10"')
         with self.assertRaises(AssertionError):
-            self.assert_news_metadata(html, self.REVISION)
+            self.assert_news_metadata(html, self.SITEMAP_REVISION)
 
     def test_old_sitemap_date_is_rejected(self):
         with self.assertRaises(AssertionError):
             self.assert_news_metadata((ROOT/'news.html').read_text(), '2026-10-15')
 
+    def test_sitemap_older_than_allowed_skew_is_rejected(self):
+        from datetime import date, timedelta
+        spec = importlib.util.spec_from_file_location('sitemap_lastmod', ROOT/'scripts/sitemap_lastmod.py')
+        sitemap = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(sitemap)
+        stale = (date.fromisoformat(self.SITEMAP_REVISION) - sitemap.SKEW - timedelta(days=1)).isoformat()
+        with self.assertRaises(AssertionError):
+            self.assert_news_metadata((ROOT/'news.html').read_text(), stale)
+
     def test_english_headline_on_arabic_page_is_rejected(self):
         html = (ROOT/'ar/news.html').read_text().replace('"headline": "مار شربل في الأخبار"',
                                                        '"headline": "Saint Charbel in the News"')
         with self.assertRaises(AssertionError):
-            self.assert_news_metadata(html, self.REVISION)
+            self.assert_news_metadata(html, self.SITEMAP_REVISION)
 
 
 class NewsImageRecordTests(unittest.TestCase):
@@ -744,6 +756,42 @@ class NewsImageRecordTests(unittest.TestCase):
             if 'Gemelli' in alt or 'Rosary' in alt:
                 self.assertIn(alt.replace('&amp;', '&'), refresh.replace('&amp;', '&'))
 
+
+
+class NovemberRecoveryTests(unittest.TestCase):
+    def test_source_dates_and_church_response_bounds(self):
+        from bs4 import BeautifulSoup
+        pack=json.loads((ROOT/'locales/news-recovery-nov10-translations.json').read_text())
+        for filename in ('news.html','ar/news.html'):
+            soup=BeautifulSoup((ROOT/filename).read_text(),'html.parser')
+            for name in ('apecl','nahariya'):
+                rec=pack[name];row=soup.select_one('#'+rec['id'])
+                self.assertIsNotNone(row)
+                self.assertEqual(row.select_one('time')['datetime'],rec['date'])
+                self.assertEqual(row.select_one('.news-row-title a')['href'],rec['url'])
+                self.assertEqual(len(row.select('img')),0)
+                self.assertEqual(row.select_one('.news-row-summary').get_text(),rec['ar' if filename.startswith('ar/') else 'en']['summary'])
+        self.assertIn('not a final statement',pack['apecl']['en']['summary'])
+        self.assertIn('no investigation outcome',pack['nahariya']['en']['summary'])
+
+    def test_home_teaser_whole_card_and_registered_locales(self):
+        from bs4 import BeautifulSoup
+        pack=json.loads((ROOT/'locales/news-recovery-nov10-translations.json').read_text())
+        reg=json.loads((ROOT/'locales/registry.json').read_text())
+        for code in ('en',*reg['homepageMirrors']['renderLocales']):
+            file=ROOT/('index.html' if code=='en' else code+'/index.html')
+            soup=BeautifulSoup(file.read_text(),'html.parser')
+            row=soup.select_one('#latest-news a.home-news-row--text')
+            self.assertEqual(row['href'].split('#')[-1],pack['apecl']['id'])
+            self.assertEqual(row.select_one('.home-news-title').get_text(),pack['home'][code][1])
+            self.assertEqual(len(row.select('img,a')),0)
+
+    def test_unlicensed_source_images_never_embedded(self):
+        text='\n'.join((ROOT/p).read_text() for p in ('index.html','news.html','ar/index.html','ar/news.html'))
+        from bs4 import BeautifulSoup
+        for n in BeautifulSoup(text,'html.parser').select('img[src]'):
+            self.assertNotIn('apecl.org',n['src'])
+            self.assertNotIn('nahariya',n['src'])
 
 if __name__ == '__main__':
     unittest.main()

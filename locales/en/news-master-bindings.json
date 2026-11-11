@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "news.html",
-  "masterSha256": "6a404d7e03b5650b2efeaf106985690da69d9254f5fb9a0c31441dba1f0b1799",
+  "masterSha256": "3886c7284044f086e0510366a5a74b9382c09b21e3568e63cc2479627aa7ce91",
   "sourceRevision": "764dd3d",
   "bindings": [
     {
@@ -503,7 +503,7 @@
     },
     {
       "key": "news.latest-news.october-2026",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
       "source": "October 2026",
       "kind": "text",
       "nodeIndex": 0
@@ -797,7 +797,7 @@
     },
     {
       "key": "news.latest-news.september-2026",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(3)",
       "source": "September 2026",
       "kind": "text",
       "nodeIndex": 0
@@ -972,7 +972,7 @@
     },
     {
       "key": "news.latest-news.august-2026",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(4)",
       "source": "August 2026",
       "kind": "text",
       "nodeIndex": 0
@@ -1007,7 +1007,7 @@
     },
     {
       "key": "news.latest-news.july-2026",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(4)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(5)",
       "source": "July 2026",
       "kind": "text",
       "nodeIndex": 0
@@ -1070,7 +1070,7 @@
     },
     {
       "key": "news.latest-news.june-2026",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(5)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(6)",
       "source": "June 2026",
       "kind": "text",
       "nodeIndex": 0
@@ -1105,7 +1105,7 @@
     },
     {
       "key": "news.latest-news.january-2026",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(6)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(7)",
       "source": "January 2026",
       "kind": "text",
       "nodeIndex": 0
@@ -1140,7 +1140,7 @@
     },
     {
       "key": "news.latest-news.december-2025",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(7)",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(8)",
       "source": "December 2025",
       "kind": "text",
       "nodeIndex": 0
@@ -3125,6 +3125,111 @@
       "source": "Vatican News: Pope on AI: Decisions affecting human life must never be delegated (October 30, 2026)",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.source",
+      "selector": "#credit-apecl-bkerke-solidarity-2026-11-09 > span:nth-of-type(2)",
+      "source": "Source:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.source",
+      "selector": "#credit-nahariya-prayer-hall-response-2026-11-02 > span:nth-of-type(2)",
+      "source": "Source:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.november-2026",
+      "selector": "#news-band-nov2026",
+      "source": "November 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.apecl.title",
+      "selector": "#apecl-bkerke-solidarity-2026-11-09 > div:nth-of-type(1) > h3:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Lebanon's Catholic bishops open Bkerke session with call for solidarity",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.apecl.summary",
+      "selector": "#apecl-bkerke-solidarity-2026-11-09 > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Lebanon's Catholic patriarchs and bishops opened their 59th ordinary session at Bkerke on November 9. According to the Council's official opening statement, Cardinal Bechara Boutros Al-Rai called for practical solidarity with Christian villages in southern Lebanon, support for the two bishops of Tyre and their priests, and continued help for schools and families. The session is scheduled to continue through November 13. This is an opening-session appeal, not a final statement or confirmation of newly funded projects or delivered aid.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.apecl.date",
+      "selector": "#apecl-bkerke-solidarity-2026-11-09 > div:nth-of-type(1) > p:nth-of-type(2) > time:nth-of-type(1)",
+      "source": "November 9, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.apecl.chip",
+      "selector": "#apecl-bkerke-solidarity-2026-11-09 > div:nth-of-type(1) > p:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Church appeal",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.apecl.title",
+      "selector": "#credit-apecl-bkerke-solidarity-2026-11-09 > span:nth-of-type(1)",
+      "source": "Lebanon's Catholic bishops open Bkerke session with call for solidarity",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.apecl.source",
+      "selector": "#credit-apecl-bkerke-solidarity-2026-11-09 > a:nth-of-type(1)",
+      "source": "Council of Catholic Patriarchs and Bishops in Lebanon: opening statement (Arabic; updated November 10)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.nahariya.title",
+      "selector": "#nahariya-prayer-hall-response-2026-11-02 > div:nth-of-type(1) > h3:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Haifa Maronite archeparchy calls for protection after Nahariya vandalism",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.nahariya.summary",
+      "selector": "#nahariya-prayer-hall-response-2026-11-02 > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The Maronite Archeparchy of Haifa called for an investigation and protection of its Saints Peter and Paul prayer hall in Nahariya after religious images and statues were damaged on November 1. Vatican News, reporting Archbishop Moussa El-Hage's statement on November 2, said those responsible were unidentified. The community said it would continue praying there and rejected responding to vandalism with hatred. The statement does not establish the perpetrators' identity or motive; no investigation outcome is reported here.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.nahariya.date",
+      "selector": "#nahariya-prayer-hall-response-2026-11-02 > div:nth-of-type(1) > p:nth-of-type(2) > time:nth-of-type(1)",
+      "source": "November 2, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.nahariya.chip",
+      "selector": "#nahariya-prayer-hall-response-2026-11-02 > div:nth-of-type(1) > p:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Church response",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.nahariya.title",
+      "selector": "#credit-nahariya-prayer-hall-response-2026-11-02 > span:nth-of-type(1)",
+      "source": "Haifa Maronite archeparchy calls for protection after Nahariya vandalism",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.recovery.nahariya.source",
+      "selector": "#credit-nahariya-prayer-hall-response-2026-11-02 > a:nth-of-type(1)",
+      "source": "Vatican News: report on the Maronite Archeparchy of Haifa's statement, November 2",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -3388,6 +3493,17 @@
     "news.latest-news.vatican-news-pope-s-charity-reaches-children-waiting-alone-i": "Vatican News: Pope's charity reaches children waiting alone in line for bread in Ukraine (October 30, 2026)",
     "news.latest-news.pope-leo-on-ai-decisions-affecting-human-life-must-never-be": "Pope Leo on AI: decisions affecting human life must never be delegated",
     "news.latest-news.addressing-the-meeting-the-future-of-ai-a-dialogue-between-t": "Addressing the meeting 'The Future of AI: A Dialogue Between the Vatican and the Scientific World on the Developments and Applications of Intelligent Technologies', jointly organized by the Pontifical Academy for Life and the Future of Life Institute, Pope Leo XIV said decisions affecting human life, freedom and the use of force must always remain subject to effective, informed and responsible human oversight, Vatican News reports. Recalling his encyclical Magnifica Humanitas, he called for shared standards, independent oversight and clear accountability, and encouraged the states meeting in Geneva in November to take steps to ban lethal autonomous weapons. The address is not a new encyclical or a binding regulation.",
-    "news.latest-news.vatican-news-pope-on-ai-decisions-affecting-human-life-must": "Vatican News: Pope on AI: Decisions affecting human life must never be delegated (October 30, 2026)"
+    "news.latest-news.vatican-news-pope-on-ai-decisions-affecting-human-life-must": "Vatican News: Pope on AI: Decisions affecting human life must never be delegated (October 30, 2026)",
+    "news.recovery.november-2026": "November 2026",
+    "news.recovery.apecl.title": "Lebanon's Catholic bishops open Bkerke session with call for solidarity",
+    "news.recovery.apecl.summary": "Lebanon's Catholic patriarchs and bishops opened their 59th ordinary session at Bkerke on November 9. According to the Council's official opening statement, Cardinal Bechara Boutros Al-Rai called for practical solidarity with Christian villages in southern Lebanon, support for the two bishops of Tyre and their priests, and continued help for schools and families. The session is scheduled to continue through November 13. This is an opening-session appeal, not a final statement or confirmation of newly funded projects or delivered aid.",
+    "news.recovery.apecl.date": "November 9, 2026",
+    "news.recovery.apecl.chip": "Church appeal",
+    "news.recovery.apecl.source": "Council of Catholic Patriarchs and Bishops in Lebanon: opening statement (Arabic; updated November 10)",
+    "news.recovery.nahariya.title": "Haifa Maronite archeparchy calls for protection after Nahariya vandalism",
+    "news.recovery.nahariya.summary": "The Maronite Archeparchy of Haifa called for an investigation and protection of its Saints Peter and Paul prayer hall in Nahariya after religious images and statues were damaged on November 1. Vatican News, reporting Archbishop Moussa El-Hage's statement on November 2, said those responsible were unidentified. The community said it would continue praying there and rejected responding to vandalism with hatred. The statement does not establish the perpetrators' identity or motive; no investigation outcome is reported here.",
+    "news.recovery.nahariya.date": "November 2, 2026",
+    "news.recovery.nahariya.chip": "Church response",
+    "news.recovery.nahariya.source": "Vatican News: report on the Maronite Archeparchy of Haifa's statement, November 2"
   }
 }
