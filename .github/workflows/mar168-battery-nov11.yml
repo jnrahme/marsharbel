@@ -94,6 +94,8 @@ jobs:
       with:
         ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
         fetch-depth: 0
+    - name: Allow only this container workspace for Git
+      run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
     - uses: actions/setup-python@v5
       with:
         python-version: '3.12'
@@ -152,6 +154,8 @@ jobs:
       with:
         ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
         fetch-depth: 0
+    - name: Allow only this container workspace for Git
+      run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
     - uses: actions/setup-python@v5
       with:
         python-version: '3.12'
