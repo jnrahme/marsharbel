@@ -94,6 +94,9 @@ jobs:
       with:
         ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
         fetch-depth: 0
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
     - uses: actions/download-artifact@v4
       with:
         name: mar168-regenerated-review
@@ -126,9 +129,6 @@ jobs:
       with:
         node-version: 20
         cache: npm
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
     - run: npm ci
     - run: pip install -r scripts/qa/requirements.txt
     - name: Verify pinned preinstalled Chromium and system dependencies
@@ -152,6 +152,9 @@ jobs:
       with:
         ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
         fetch-depth: 0
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
     - uses: actions/download-artifact@v4
       with:
         name: mar168-regenerated-review
@@ -184,9 +187,6 @@ jobs:
       with:
         node-version: 20
         cache: npm
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
     - run: npm ci
     - run: pip install -r scripts/qa/requirements.txt
     - name: Verify pinned preinstalled Chromium and system dependencies
