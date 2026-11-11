@@ -1,0 +1,31 @@
+name: Integrate reviewed candidates with green infrastructure
+on:
+  push:
+    branches: [recovery/nov10-write-route]
+    paths: [.github/workflows/rebase-reviewed-candidates.yml]
+permissions:
+  contents: write
+jobs:
+  integrate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: stage
+      - name: Merge only reviewed infrastructure into exact candidate heads
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = 149c79ca3aa6a4ca71355a28aa9891bf62b250ef
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for pair in 'review/film-freshness-nov11:25ac8e8060bc0d4acee406857717f162e23c7529' 'feat/hidden-shop-link-scaffold:bd44770f3c052727f876ead93e97e6462b068475'; do
+            branch=${pair%:*}; expected=${pair##*:}
+            git fetch origin "$branch"
+            test "$(git rev-parse FETCH_HEAD)" = "$expected"
+            git checkout -B candidate FETCH_HEAD
+            git merge --no-edit 149c79ca3aa6a4ca71355a28aa9891bf62b250ef
+            git merge-base --is-ancestor 149c79ca3aa6a4ca71355a28aa9891bf62b250ef HEAD
+            git push origin HEAD:refs/heads/$branch
+            git rev-parse HEAD
+          done
