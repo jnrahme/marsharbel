@@ -1,0 +1,289 @@
+name: bkerke-battery-nov11
+'on':
+  push:
+    branches:
+    - recovery/nov10-write-route
+    paths:
+    - .github/workflows/bkerke-battery-nov11.yml
+permissions:
+  contents: write
+  actions: read
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
+        fetch-depth: 0
+    - uses: actions/download-artifact@v4
+      with:
+        name: bkerke-regenerated
+        path: /tmp
+        run-id: 43066624357
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Verify exact normally regenerated packet
+      run: echo '92714483d012f2939bc0c2c08779694e8e7e4f547523c5730ae1136aa410bb1d  /tmp/bkerke-regenerated.patch' | sha256sum -c -
+    - uses: actions/upload-artifact@v4
+      with:
+        name: bkerke-regenerated
+        path: /tmp/bkerke-regenerated.patch
+  qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        shard:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
+        fetch-depth: 0
+    - name: Allow only this container workspace for Git
+      run: 'git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+        '
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - uses: actions/download-artifact@v4
+      with:
+        name: mar168-regenerated-review
+        path: /tmp
+    - name: Apply exact reviewed candidate and commit before gates
+      run: 'set -euo pipefail
+
+        echo ''92714483d012f2939bc0c2c08779694e8e7e4f547523c5730ae1136aa410bb1d  /tmp/bkerke-regenerated.patch'' | sha256sum -c -
+
+        git apply /tmp/bkerke-regenerated.patch
+
+        git add -A
+
+        python3 - <<''GUARD''
+
+        import subprocess
+
+        assert subprocess.check_output([''git'',''diff'',''--cached'',''--name-only''],text=True).splitlines()==[''ar/index.html'', ''ar/news.html'', ''de/index.html'', ''es/index.html'', ''feed.xml'', ''fr/index.html'', ''hi/index.html'', ''index.html'', ''it/index.html'', ''locales/ar/home-copy.json'', ''locales/ar/news-master-copy.json'', ''locales/bkerke-nov11-reviewed-translations.json'', ''locales/de/home-copy.json'', ''locales/en/home-bindings.json'', ''locales/en/home-copy.json'', ''locales/en/news-desk.json'', ''locales/en/news-master-bindings.json'', ''locales/en/news-master-copy.json'', ''locales/es/home-copy.json'', ''locales/fr/home-copy.json'', ''locales/hi/home-copy.json'', ''locales/it/home-copy.json'', ''locales/pl/home-copy.json'', ''locales/pt/home-copy.json'', ''locales/ru/home-copy.json'', ''locales/th/home-copy.json'', ''news.html'', ''pl/index.html'', ''pt/index.html'', ''ru/index.html'', ''same-page-manifest.js'', ''scripts/qa/test_news_desk.py'', ''search-index/ar.json'', ''search-index/de.json'', ''search-index/en.json'', ''search-index/es.json'', ''search-index/fr.json'', ''search-index/hi.json'', ''search-index/it.json'', ''search-index/pl.json'', ''search-index/pt.json'', ''search-index/ru.json'', ''search-index/th.json'', ''src/pages/index.html'', ''src/pages/news.html'', ''templates/news-desk/cards.html'', ''th/index.html'']
+
+        GUARD
+
+        git config user.name ''github-actions[bot]''
+
+        git config user.email ''41898282+github-actions[bot]@users.noreply.github.com''
+
+        git commit -m ''content: refresh dated Charbel film availability''
+
+        '
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: npm
+    - run: 'npm ci
+
+        '
+    - run: 'python3 -m pip install -r scripts/qa/requirements.txt
+
+        '
+    - name: Verify pinned preinstalled Chromium and system dependencies
+      run: "node - <<'JS'\nconst fs = require('node:fs');\nconst { chromium } = require('@playwright/test');\nif (require('@playwright/test/package.json').version !== '1.63.0') throw new Error('Playwright image/package version mismatch');\nif (!fs.existsSync(chromium.executablePath())) throw new Error('Preinstalled Chromium missing');\n(async () => {\n  const browser = await chromium.launch({ headless: true });\n  const page = await browser.newPage();\n  await page.setContent('<html><body>Browser dependency probe</body></html>');\n  if (await page.textContent('body') !== 'Browser dependency probe') throw new Error('Browser launch/render failed');\n  await browser.close();\n})().catch(error => { console.error(error); process.exit(1); });\nJS\n"
+    - run: 'bash scripts/qa/run_full_qa.sh --ci --shard ${{ matrix.shard }}/8 --skip-i18n-test
+
+        '
+      env:
+        CI: '1'
+    needs:
+    - prepare
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27
+      options: --ipc=host --init
+    defaults:
+      run:
+        shell: bash
+  gates:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
+        fetch-depth: 0
+    - name: Allow only this container workspace for Git
+      run: 'git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+        '
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - uses: actions/download-artifact@v4
+      with:
+        name: mar168-regenerated-review
+        path: /tmp
+    - name: Apply exact reviewed candidate and commit before gates
+      run: 'set -euo pipefail
+
+        echo ''92714483d012f2939bc0c2c08779694e8e7e4f547523c5730ae1136aa410bb1d  /tmp/bkerke-regenerated.patch'' | sha256sum -c -
+
+        git apply /tmp/bkerke-regenerated.patch
+
+        git add -A
+
+        python3 - <<''GUARD''
+
+        import subprocess
+
+        assert subprocess.check_output([''git'',''diff'',''--cached'',''--name-only''],text=True).splitlines()==[''ar/index.html'', ''ar/news.html'', ''de/index.html'', ''es/index.html'', ''feed.xml'', ''fr/index.html'', ''hi/index.html'', ''index.html'', ''it/index.html'', ''locales/ar/home-copy.json'', ''locales/ar/news-master-copy.json'', ''locales/bkerke-nov11-reviewed-translations.json'', ''locales/de/home-copy.json'', ''locales/en/home-bindings.json'', ''locales/en/home-copy.json'', ''locales/en/news-desk.json'', ''locales/en/news-master-bindings.json'', ''locales/en/news-master-copy.json'', ''locales/es/home-copy.json'', ''locales/fr/home-copy.json'', ''locales/hi/home-copy.json'', ''locales/it/home-copy.json'', ''locales/pl/home-copy.json'', ''locales/pt/home-copy.json'', ''locales/ru/home-copy.json'', ''locales/th/home-copy.json'', ''news.html'', ''pl/index.html'', ''pt/index.html'', ''ru/index.html'', ''same-page-manifest.js'', ''scripts/qa/test_news_desk.py'', ''search-index/ar.json'', ''search-index/de.json'', ''search-index/en.json'', ''search-index/es.json'', ''search-index/fr.json'', ''search-index/hi.json'', ''search-index/it.json'', ''search-index/pl.json'', ''search-index/pt.json'', ''search-index/ru.json'', ''search-index/th.json'', ''src/pages/index.html'', ''src/pages/news.html'', ''templates/news-desk/cards.html'', ''th/index.html'']
+
+        GUARD
+
+        git config user.name ''github-actions[bot]''
+
+        git config user.email ''41898282+github-actions[bot]@users.noreply.github.com''
+
+        git commit -m ''content: refresh dated Charbel film availability''
+
+        '
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: npm
+    - run: 'npm ci
+
+        '
+    - run: 'python3 -m pip install -r scripts/qa/requirements.txt
+
+        '
+    - name: Verify pinned preinstalled Chromium and system dependencies
+      run: "node - <<'JS'\nconst fs = require('node:fs');\nconst { chromium } = require('@playwright/test');\nif (require('@playwright/test/package.json').version !== '1.63.0') throw new Error('Playwright image/package version mismatch');\nif (!fs.existsSync(chromium.executablePath())) throw new Error('Preinstalled Chromium missing');\n(async () => {\n  const browser = await chromium.launch({ headless: true });\n  const page = await browser.newPage();\n  await page.setContent('<html><body>Browser dependency probe</body></html>');\n  if (await page.textContent('body') !== 'Browser dependency probe') throw new Error('Browser launch/render failed');\n  await browser.close();\n})().catch(error => { console.error(error); process.exit(1); });\nJS\n"
+    - name: Extra gates and exact scoped preview
+      env:
+        CI: '1'
+      run: 'set -e
+
+        python3 -m unittest discover -s scripts/qa -p test_verify_deployment.py
+
+        python3 -m unittest discover -s scripts/qa -p test_new_page_locales.py
+
+        python3 -m unittest discover -s scripts/qa -p test_russian_slice.py
+
+        npx playwright test tests/russian-first-slice.spec.js --project=small-phone --project=phone --project=laptop --workers=2
+
+        python3 -m unittest discover -s scripts/qa -p test_shard_manifest.py
+
+        python3 -m unittest discover -s scripts/qa -p test_deploy_admission.py
+
+        npm run i18n:test
+
+        python3 scripts/build-international.py --check
+
+        python3 scripts/books/build-rosary-control.py --check
+
+        python3 -m unittest discover -s scripts/qa -p test_rosary_books_pairing.py
+
+        python3 -m unittest discover -s scripts/qa -p test_rosary_guide_certification.py
+
+        node scripts/tests/same_page_rosary_books.cjs
+
+        node scripts/tests/same_page_ar2_pairing.cjs
+
+        node scripts/tests/same_page_resolver.cjs
+
+        node scripts/tests/same_page_enabled_navigation.cjs
+
+        node scripts/build-pages.mjs --check
+
+        python3 scripts/qa/check_new_page_locales.py --base 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
+
+        node scripts/ci/check_bq_shard_lists.mjs
+
+        mkdir -p /downloads && chmod 777 /downloads
+
+
+
+        python3 -m unittest scripts.qa.test_film_master_family
+
+        python3 -m unittest scripts.qa.test_shard_manifest
+
+        python3 scripts/qa/test_film_master_family.py
+
+        python3 scripts/qa/test_shard_manifest.py
+
+        python3 scripts/sitemap_lastmod.py --check
+
+        python3 scripts/build_feeds.py --check
+
+        node scripts/build-search-index.mjs --check
+
+
+        python3 -m unittest scripts.qa.test_news_desk
+
+        python3 scripts/qa/test_news_desk.py
+
+        '
+    needs:
+    - prepare
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27
+      options: --ipc=host --init
+    defaults:
+      run:
+        shell: bash
+  publish:
+    needs:
+    - qa
+    - gates
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
+        fetch-depth: 0
+    - uses: actions/download-artifact@v4
+      with:
+        name: mar168-regenerated-review
+        path: /tmp
+    - name: Apply exact reviewed candidate and commit before gates
+      run: 'set -euo pipefail
+
+        echo ''92714483d012f2939bc0c2c08779694e8e7e4f547523c5730ae1136aa410bb1d  /tmp/bkerke-regenerated.patch'' | sha256sum -c -
+
+        git apply /tmp/bkerke-regenerated.patch
+
+        git add -A
+
+        python3 - <<''GUARD''
+
+        import subprocess
+
+        assert subprocess.check_output([''git'',''diff'',''--cached'',''--name-only''],text=True).splitlines()==[''ar/index.html'', ''ar/news.html'', ''de/index.html'', ''es/index.html'', ''feed.xml'', ''fr/index.html'', ''hi/index.html'', ''index.html'', ''it/index.html'', ''locales/ar/home-copy.json'', ''locales/ar/news-master-copy.json'', ''locales/bkerke-nov11-reviewed-translations.json'', ''locales/de/home-copy.json'', ''locales/en/home-bindings.json'', ''locales/en/home-copy.json'', ''locales/en/news-desk.json'', ''locales/en/news-master-bindings.json'', ''locales/en/news-master-copy.json'', ''locales/es/home-copy.json'', ''locales/fr/home-copy.json'', ''locales/hi/home-copy.json'', ''locales/it/home-copy.json'', ''locales/pl/home-copy.json'', ''locales/pt/home-copy.json'', ''locales/ru/home-copy.json'', ''locales/th/home-copy.json'', ''news.html'', ''pl/index.html'', ''pt/index.html'', ''ru/index.html'', ''same-page-manifest.js'', ''scripts/qa/test_news_desk.py'', ''search-index/ar.json'', ''search-index/de.json'', ''search-index/en.json'', ''search-index/es.json'', ''search-index/fr.json'', ''search-index/hi.json'', ''search-index/it.json'', ''search-index/pl.json'', ''search-index/pt.json'', ''search-index/ru.json'', ''search-index/th.json'', ''src/pages/index.html'', ''src/pages/news.html'', ''templates/news-desk/cards.html'', ''th/index.html'']
+
+        GUARD
+
+        git config user.name ''github-actions[bot]''
+
+        git config user.email ''41898282+github-actions[bot]@users.noreply.github.com''
+
+        git commit -m ''content: refresh dated Charbel film availability''
+
+        '
+    - name: Push only exact green candidate on unchanged stage, never merge
+      run: 'set -euo pipefail
+
+        test "$(git ls-remote origin refs/heads/stage | cut -f1)" = ''7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5''
+
+        test -z "$(git ls-remote origin refs/heads/review/bkerke-update-nov11)"
+
+        git push origin HEAD:refs/heads/review/bkerke-update-nov11
+
+        git rev-parse HEAD
+
+        '
