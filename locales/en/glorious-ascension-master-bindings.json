@@ -1,0 +1,882 @@
+{
+ "version": 1,
+ "master": "glorious-ascension.html",
+ "masterSha256": "df18ece2997b7340352d3cdb0829cca1c668e74785894ed4433d2cdabf5c1318",
+ "sourceRevision": "cf1cf38e",
+ "bindings": [
+  {
+   "key": "glorious-ascension.metadata.title-second-glorious-mystery-the-ascension-rosary-book",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+   "source": "Second Glorious Mystery: The Ascension | Rosary Book",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.metadata.description-a-read-aloud-decade-book-for-children-on-the-sec",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(4)",
+   "source": "A read-aloud decade book for children on the Second Glorious Mystery, the Ascension: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "glorious-ascension.metadata.og-title-second-glorious-mystery-the-ascension-rosary-book",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+   "source": "Second Glorious Mystery: The Ascension | Rosary Book",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "glorious-ascension.metadata.og-description-a-read-aloud-decade-book-for-children-on-the",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(9)",
+   "source": "A read-aloud decade book for children on the Second Glorious Mystery, the Ascension: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "glorious-ascension.metadata.twitter-title-second-glorious-mystery-the-ascension-rosary-b",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
+   "source": "Second Glorious Mystery: The Ascension | Rosary Book",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "glorious-ascension.metadata.twitter-description-a-read-aloud-decade-book-for-children-on",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(14)",
+   "source": "A read-aloud decade book for children on the Second Glorious Mystery, the Ascension: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "glorious-ascension.body.skip-to-main-content",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Skip to main content",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.text",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "✦",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.saint-charbel",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+   "source": "Saint Charbel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.accessibility.primary",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+   "source": "Primary",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-ascension.header.home",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Home",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.legacy",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Legacy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.saint-charbel-encyclopedia",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Charbel Encyclopedia",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.full-history",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Full History",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.miracles",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.miracles-reports",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Miracles & Reports",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.eucharistic-miracles",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Eucharistic Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.letters",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Letters",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.voice-testimony",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Voice Testimony",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.saints",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.saints-2",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.children-s-books",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Children's Books",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.prayer",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+   "source": "Prayer",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.prayer-library",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Prayer Library",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.find-a-prayer-by-intention",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Find a Prayer by Intention",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.prayer-for-the-sick",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Prayer for the Sick",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.prayer-for-healing",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Prayer for Healing",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.prayer-for-anxiety",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Prayer for Anxiety",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.prayer-for-depression",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "Prayer for Depression",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.prayer-for-students",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Prayer for Students",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.prayer-for-addiction",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Prayer for Addiction",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.prayer-for-family",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Prayer for Family",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.prayer-for-pregnancy",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Prayer for Pregnancy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.prayer-for-a-miracle",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Prayer for a Miracle",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.saint-charbel-prayers",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "Saint Charbel Prayers",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.saint-charbel-novena",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Novena",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.feast-day",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+   "source": "Feast Day",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.rosary-guide",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+   "source": "Rosary Guide",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.rosary-minibook",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+   "source": "Rosary Minibook",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.mystery-meditation",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+   "source": "Mystery Meditation",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.become-like-him",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+   "source": "Become Like Him",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.travel",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.travel-2",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.visiting-annaya",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Visiting Annaya",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.annaya-online-tour",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Annaya Online Tour",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.bekaa-kafra",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Bekaa Kafra",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.our-lady-of-lebanon-at-harissa",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Our Lady of Lebanon at Harissa",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.the-cedars-of-god",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "the Cedars of God",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.bkerke-and-the-maronite-patriarchate",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Bkerke and the Maronite Patriarchate",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.qadisha-valley",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Qadisha Valley",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.qannoubine-monastery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Qannoubine Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.qozhaya-monastery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Qozhaya Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.saint-charbel-s-lebanon",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Saint Charbel's Lebanon",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.the-hermitage",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "The Hermitage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.saint-charbel-trail",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Trail",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.news",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "News",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.media",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+   "source": "Media",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.music",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Music",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.video",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Video",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.header.gallery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Gallery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.body.a-book-for-ages-6-12",
+   "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "A Book for Ages 6-12",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.the-ascension-second-glorious-mystery",
+   "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+   "source": "The Ascension: Second Glorious Mystery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-as",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "A little read-aloud book for one decade of the Rosary: The Ascension.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.short-answer",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+   "source": "Short answer:",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.this-book-walks-children-through-the-second-glorious-mystery",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "This book walks children through the Second Glorious Mystery, the Ascension: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on hope and heavenly desire.",
+   "kind": "text",
+   "nodeIndex": 1
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.continue-from-page-2",
+   "selector": "#story-resume-text",
+   "source": "Continue from Page 2?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.resume",
+   "selector": "#story-resume-btn",
+   "source": "Resume",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.accessibility.dismiss",
+   "selector": "#story-resume-dismiss",
+   "source": "Dismiss",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.text",
+   "selector": "#story-resume-dismiss",
+   "source": "✕",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.accessibility.illustrated-storybook",
+   "selector": "#main-content > section:nth-of-type(2)",
+   "source": "Illustrated storybook",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.reading",
+   "selector": "#story-reading-label",
+   "source": "Reading…",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.0-00",
+   "selector": "#story-elapsed",
+   "source": "0:00",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.voice-pack",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Voice Pack",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.accessibility.select-story-voice-pack",
+   "selector": "#story-voice-pack",
+   "source": "Select story voice pack",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-ascension.accessibility.previous-page",
+   "selector": "#story-prev",
+   "source": "Previous page",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.previous-page",
+   "selector": "#story-prev",
+   "source": "Previous Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.read-aloud",
+   "selector": "#story-read",
+   "source": "Read Aloud",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.accessibility.next-page",
+   "selector": "#story-next",
+   "source": "Next page",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.next-page",
+   "selector": "#story-next",
+   "source": "Next Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.accessibility.story-settings",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+   "source": "Story settings",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.story-settings",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+   "source": "Story settings",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.toggle-reader-mode-for-easier-reading",
+   "selector": "#story-reader-toggle",
+   "source": "Toggle reader mode for easier reading",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.reader-mode",
+   "selector": "#story-reader-toggle",
+   "source": "Reader Mode",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.automatically-read-next-page-when-current-page-finishes",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Automatically read next page when current page finishes",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.auto-continue",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Auto Continue",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "glorious-ascension.accessibility.playback-speed",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "Playback speed",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.slow",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "source": "Slow",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.normal",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+   "source": "Normal",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.fast",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)",
+   "source": "Fast",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.the-ascension-second-glo.page-1-of-4",
+   "selector": "#story-step",
+   "source": "Page 1 of 4",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.loading-story.loading-story",
+   "selector": "#story-title",
+   "source": "Loading story...",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.loading-story.please-wait-while-we-open-the-storybook",
+   "selector": "#story-body",
+   "source": "Please wait while we open the storybook.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.loading-story.evidence-for-this-page",
+   "selector": "#story-evidence-title",
+   "source": "Evidence for This Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr",
+   "selector": "#main-content > p:nth-of-type(1)",
+   "source": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.about-this-story.about-this-story",
+   "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+   "source": "About this story",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.about-this-story.painting-rembrandt-ascension-alte-pinakothek-public-domain-v",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "Painting: Rembrandt, Ascension (Alte Pinakothek). Public domain, via Wikimedia Commons.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.about-this-story.image-source-wikimedia-commons",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Image source (Wikimedia Commons)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.about-this-story.text",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+   "source": ".",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "glorious-ascension.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Wednesday / Sunday.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.frequently-asked-questio.frequently-asked-questions",
+   "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+   "source": "Frequently Asked Questions",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.frequently-asked-questio.what-is-the-second-glorious-mystery",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(1)",
+   "source": "What is the Second Glorious Mystery?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.frequently-asked-questio.the-ascension-forty-days-after-he-rose-jesus-blessed-his-fri",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "The Ascension. Forty days after he rose, Jesus blessed his friends and was raised up to heaven, where a cloud received him from their sight. This mystery is traditionally prayed on Wednesday / Sunday, and its fruit is hope and heavenly desire.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.frequently-asked-questio.how-do-you-pray-this-decade-with-children",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(2)",
+   "source": "How do you pray this decade with children?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.more-saint-storybooks-fo.more-saint-storybooks-for-children",
+   "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+   "source": "More Saint Storybooks for Children",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.more-saint-storybooks-fo.the-resurrection",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "The Resurrection",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.more-saint-storybooks-fo.the-descent-of-the-holy-spirit",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "The Descent of the Holy Spirit",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.more-saint-storybooks-fo.all-storybooks",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "All storybooks",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "glorious-ascension.footer.a-rosary-decade-book-for-children-author-please-pray-for-the",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "A Rosary decade book for children. Author: Please pray for the person who made this website.",
+   "kind": "text",
+   "nodeIndex": 0
+  }
+ ],
+ "messages": {
+  "glorious-ascension.metadata.title-second-glorious-mystery-the-ascension-rosary-book": "Second Glorious Mystery: The Ascension | Rosary Book",
+  "glorious-ascension.metadata.description-a-read-aloud-decade-book-for-children-on-the-sec": "A read-aloud decade book for children on the Second Glorious Mystery, the Ascension: the story, the Gospel, the decade prayers, and a reflection.",
+  "glorious-ascension.metadata.og-title-second-glorious-mystery-the-ascension-rosary-book": "Second Glorious Mystery: The Ascension | Rosary Book",
+  "glorious-ascension.metadata.og-description-a-read-aloud-decade-book-for-children-on-the": "A read-aloud decade book for children on the Second Glorious Mystery, the Ascension: the story, the Gospel, the decade prayers, and a reflection.",
+  "glorious-ascension.metadata.twitter-title-second-glorious-mystery-the-ascension-rosary-b": "Second Glorious Mystery: The Ascension | Rosary Book",
+  "glorious-ascension.metadata.twitter-description-a-read-aloud-decade-book-for-children-on": "A read-aloud decade book for children on the Second Glorious Mystery, the Ascension: the story, the Gospel, the decade prayers, and a reflection.",
+  "glorious-ascension.body.skip-to-main-content": "Skip to main content",
+  "glorious-ascension.header.text": "✦",
+  "glorious-ascension.header.saint-charbel": "Saint Charbel",
+  "glorious-ascension.accessibility.primary": "Primary",
+  "glorious-ascension.header.home": "Home",
+  "glorious-ascension.header.legacy": "Legacy",
+  "glorious-ascension.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+  "glorious-ascension.header.full-history": "Full History",
+  "glorious-ascension.header.miracles": "Miracles",
+  "glorious-ascension.header.miracles-reports": "Miracles & Reports",
+  "glorious-ascension.header.eucharistic-miracles": "Eucharistic Miracles",
+  "glorious-ascension.header.letters": "Letters",
+  "glorious-ascension.header.voice-testimony": "Voice Testimony",
+  "glorious-ascension.header.saints": "Saints",
+  "glorious-ascension.header.children-s-books": "Children's Books",
+  "glorious-ascension.header.prayer": "Prayer",
+  "glorious-ascension.header.prayer-library": "Prayer Library",
+  "glorious-ascension.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+  "glorious-ascension.header.prayer-for-the-sick": "Prayer for the Sick",
+  "glorious-ascension.header.prayer-for-healing": "Prayer for Healing",
+  "glorious-ascension.header.prayer-for-anxiety": "Prayer for Anxiety",
+  "glorious-ascension.header.prayer-for-depression": "Prayer for Depression",
+  "glorious-ascension.header.prayer-for-students": "Prayer for Students",
+  "glorious-ascension.header.prayer-for-addiction": "Prayer for Addiction",
+  "glorious-ascension.header.prayer-for-family": "Prayer for Family",
+  "glorious-ascension.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+  "glorious-ascension.header.prayer-for-a-miracle": "Prayer for a Miracle",
+  "glorious-ascension.header.saint-charbel-prayers": "Saint Charbel Prayers",
+  "glorious-ascension.header.saint-charbel-novena": "Saint Charbel Novena",
+  "glorious-ascension.header.feast-day": "Feast Day",
+  "glorious-ascension.header.rosary-guide": "Rosary Guide",
+  "glorious-ascension.header.rosary-minibook": "Rosary Minibook",
+  "glorious-ascension.header.mystery-meditation": "Mystery Meditation",
+  "glorious-ascension.header.become-like-him": "Become Like Him",
+  "glorious-ascension.header.travel": "Travel",
+  "glorious-ascension.header.visiting-annaya": "Visiting Annaya",
+  "glorious-ascension.header.annaya-online-tour": "Annaya Online Tour",
+  "glorious-ascension.header.bekaa-kafra": "Bekaa Kafra",
+  "glorious-ascension.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+  "glorious-ascension.header.the-cedars-of-god": "the Cedars of God",
+  "glorious-ascension.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+  "glorious-ascension.header.qadisha-valley": "Qadisha Valley",
+  "glorious-ascension.header.qannoubine-monastery": "Qannoubine Monastery",
+  "glorious-ascension.header.qozhaya-monastery": "Qozhaya Monastery",
+  "glorious-ascension.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+  "glorious-ascension.header.the-hermitage": "The Hermitage",
+  "glorious-ascension.header.saint-charbel-trail": "Saint Charbel Trail",
+  "glorious-ascension.header.news": "News",
+  "glorious-ascension.header.media": "Media",
+  "glorious-ascension.header.music": "Music",
+  "glorious-ascension.header.video": "Video",
+  "glorious-ascension.header.gallery": "Gallery",
+  "glorious-ascension.body.a-book-for-ages-6-12": "A Book for Ages 6-12",
+  "glorious-ascension.the-ascension-second-glo.the-ascension-second-glorious-mystery": "The Ascension: Second Glorious Mystery",
+  "glorious-ascension.the-ascension-second-glo.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-as": "A little read-aloud book for one decade of the Rosary: The Ascension.",
+  "glorious-ascension.the-ascension-second-glo.short-answer": "Short answer:",
+  "glorious-ascension.the-ascension-second-glo.this-book-walks-children-through-the-second-glorious-mystery": "This book walks children through the Second Glorious Mystery, the Ascension: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on hope and heavenly desire.",
+  "glorious-ascension.the-ascension-second-glo.continue-from-page-2": "Continue from Page 2?",
+  "glorious-ascension.the-ascension-second-glo.resume": "Resume",
+  "glorious-ascension.accessibility.dismiss": "Dismiss",
+  "glorious-ascension.the-ascension-second-glo.text": "✕",
+  "glorious-ascension.accessibility.illustrated-storybook": "Illustrated storybook",
+  "glorious-ascension.the-ascension-second-glo.reading": "Reading…",
+  "glorious-ascension.the-ascension-second-glo.0-00": "0:00",
+  "glorious-ascension.the-ascension-second-glo.voice-pack": "Voice Pack",
+  "glorious-ascension.accessibility.select-story-voice-pack": "Select story voice pack",
+  "glorious-ascension.accessibility.previous-page": "Previous page",
+  "glorious-ascension.the-ascension-second-glo.previous-page": "Previous Page",
+  "glorious-ascension.the-ascension-second-glo.read-aloud": "Read Aloud",
+  "glorious-ascension.accessibility.next-page": "Next page",
+  "glorious-ascension.the-ascension-second-glo.next-page": "Next Page",
+  "glorious-ascension.accessibility.story-settings": "Story settings",
+  "glorious-ascension.the-ascension-second-glo.story-settings": "Story settings",
+  "glorious-ascension.the-ascension-second-glo.toggle-reader-mode-for-easier-reading": "Toggle reader mode for easier reading",
+  "glorious-ascension.the-ascension-second-glo.reader-mode": "Reader Mode",
+  "glorious-ascension.the-ascension-second-glo.automatically-read-next-page-when-current-page-finishes": "Automatically read next page when current page finishes",
+  "glorious-ascension.the-ascension-second-glo.auto-continue": "Auto Continue",
+  "glorious-ascension.accessibility.playback-speed": "Playback speed",
+  "glorious-ascension.the-ascension-second-glo.slow": "Slow",
+  "glorious-ascension.the-ascension-second-glo.normal": "Normal",
+  "glorious-ascension.the-ascension-second-glo.fast": "Fast",
+  "glorious-ascension.the-ascension-second-glo.page-1-of-4": "Page 1 of 4",
+  "glorious-ascension.loading-story.loading-story": "Loading story...",
+  "glorious-ascension.loading-story.please-wait-while-we-open-the-storybook": "Please wait while we open the storybook.",
+  "glorious-ascension.loading-story.evidence-for-this-page": "Evidence for This Page",
+  "glorious-ascension.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+  "glorious-ascension.about-this-story.about-this-story": "About this story",
+  "glorious-ascension.about-this-story.painting-rembrandt-ascension-alte-pinakothek-public-domain-v": "Painting: Rembrandt, Ascension (Alte Pinakothek). Public domain, via Wikimedia Commons.",
+  "glorious-ascension.about-this-story.image-source-wikimedia-commons": "Image source (Wikimedia Commons)",
+  "glorious-ascension.about-this-story.text": ".",
+  "glorious-ascension.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Wednesday / Sunday.",
+  "glorious-ascension.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+  "glorious-ascension.frequently-asked-questio.what-is-the-second-glorious-mystery": "What is the Second Glorious Mystery?",
+  "glorious-ascension.frequently-asked-questio.the-ascension-forty-days-after-he-rose-jesus-blessed-his-fri": "The Ascension. Forty days after he rose, Jesus blessed his friends and was raised up to heaven, where a cloud received him from their sight. This mystery is traditionally prayed on Wednesday / Sunday, and its fruit is hope and heavenly desire.",
+  "glorious-ascension.frequently-asked-questio.how-do-you-pray-this-decade-with-children": "How do you pray this decade with children?",
+  "glorious-ascension.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+  "glorious-ascension.more-saint-storybooks-fo.more-saint-storybooks-for-children": "More Saint Storybooks for Children",
+  "glorious-ascension.more-saint-storybooks-fo.the-resurrection": "The Resurrection",
+  "glorious-ascension.more-saint-storybooks-fo.the-descent-of-the-holy-spirit": "The Descent of the Holy Spirit",
+  "glorious-ascension.more-saint-storybooks-fo.all-storybooks": "All storybooks",
+  "glorious-ascension.footer.a-rosary-decade-book-for-children-author-please-pray-for-the": "A Rosary decade book for children. Author: Please pray for the person who made this website.",
+  "glorious-ascension.header.saints-2": "Saints",
+  "glorious-ascension.header.travel-2": "Travel"
+ }
+}

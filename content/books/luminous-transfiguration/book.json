@@ -1,0 +1,128 @@
+{
+ "schema": 1,
+ "id": "bk-luminous-transfiguration",
+ "slug": "luminous-transfiguration",
+ "legacyStoryId": "luminous-transfiguration",
+ "pageUrl": "/luminous-transfiguration",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 29,
+ "ageRange": "6-12",
+ "locales": [
+  "en",
+  "ar",
+  "de",
+  "es",
+  "fr",
+  "it",
+  "pl",
+  "pt"
+ ],
+ "cover": "bk-luminous-transfiguration-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-luminous-transfiguration-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-transfiguration-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-luminous-transfiguration-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-transfiguration-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-luminous-transfiguration-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-transfiguration-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-luminous-transfiguration-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-transfiguration-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: Raphael, Transfiguration. Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Transfiguration_Raphael.jpg"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-luminous-transfiguration-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/l4.webp",
+   "mime": "image/webp",
+   "bytes": 78458,
+   "sha256": "c9b2eceef4d6510f3d62ec19114554286cd64fd0a821a088bbb37016c80ad791",
+   "access": "public",
+   "width": 800,
+   "height": 1206
+  }
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "schema": 1,
+ "id": "bk-luminous-eucharist",
+ "slug": "luminous-eucharist",
+ "legacyStoryId": "luminous-eucharist",
+ "pageUrl": "/luminous-eucharist",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 30,
+ "ageRange": "6-12",
+ "locales": [
+  "en",
+  "ar",
+  "de",
+  "es",
+  "fr",
+  "it",
+  "pl",
+  "pt"
+ ],
+ "cover": "bk-luminous-eucharist-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-luminous-eucharist-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-eucharist-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-luminous-eucharist-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-eucharist-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-luminous-eucharist-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-eucharist-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-luminous-eucharist-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-luminous-eucharist-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: Juan de Juanes, Last Supper. Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Joan_de_Joanes_-_The_Last_Supper_-_WGA12058.jpg"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-luminous-eucharist-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/l5.webp",
+   "mime": "image/webp",
+   "bytes": 78592,
+   "sha256": "7c19ccbf69375e1680cc2a5d4569ff127dd15a20a080ebcbffb56be09d0139dc",
+   "access": "public",
+   "width": 1200,
+   "height": 758
+  }
+ ]
+}

@@ -307,6 +307,46 @@ def og_image_for(path: Path, html: str = "") -> str:
         return f"{SITE}/gallery/charbel-window-og-1200x630.jpg"
     if path.name == "stories.html":
         return f"{SITE}/media/storybook/images/event-01.webp"
+    if path.name == "glorious-ascension.html":
+        return f"{SITE}/media/mysteries/g2.webp"
+    if path.name == "glorious-assumption.html":
+        return f"{SITE}/media/mysteries/g4.webp"
+    if path.name == "glorious-coronation.html":
+        return f"{SITE}/media/mysteries/g5.webp"
+    if path.name == "glorious-pentecost.html":
+        return f"{SITE}/media/mysteries/g3.webp"
+    if path.name == "glorious-resurrection.html":
+        return f"{SITE}/media/mysteries/g1.webp"
+    if path.name == "joyful-annunciation.html":
+        return f"{SITE}/media/mysteries/j1.webp"
+    if path.name == "joyful-finding-temple.html":
+        return f"{SITE}/media/mysteries/j5.webp"
+    if path.name == "joyful-nativity.html":
+        return f"{SITE}/media/mysteries/j3.webp"
+    if path.name == "joyful-presentation.html":
+        return f"{SITE}/media/mysteries/j4.webp"
+    if path.name == "joyful-visitation.html":
+        return f"{SITE}/media/mysteries/j2.webp"
+    if path.name == "luminous-baptism.html":
+        return f"{SITE}/media/mysteries/l1.webp"
+    if path.name == "luminous-cana.html":
+        return f"{SITE}/media/mysteries/l2.webp"
+    if path.name == "luminous-eucharist.html":
+        return f"{SITE}/media/mysteries/l5.webp"
+    if path.name == "luminous-proclamation.html":
+        return f"{SITE}/media/mysteries/l3.webp"
+    if path.name == "luminous-transfiguration.html":
+        return f"{SITE}/media/mysteries/l4.webp"
+    if path.name == "sorrowful-agony-garden.html":
+        return f"{SITE}/media/mysteries/s1.webp"
+    if path.name == "sorrowful-carrying-cross.html":
+        return f"{SITE}/media/mysteries/s4.webp"
+    if path.name == "sorrowful-crowning-thorns.html":
+        return f"{SITE}/media/mysteries/s3.webp"
+    if path.name == "sorrowful-crucifixion.html":
+        return f"{SITE}/media/mysteries/s5.webp"
+    if path.name == "sorrowful-scourging.html":
+        return f"{SITE}/media/mysteries/s2.webp"
     return hero_image(path, html) or DEFAULT_IMAGE
 
 

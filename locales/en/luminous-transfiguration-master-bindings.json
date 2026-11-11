@@ -1,0 +1,882 @@
+{
+ "version": 1,
+ "master": "luminous-transfiguration.html",
+ "masterSha256": "c944a8cbe6f6bdbe8530e1a6c2d93ef9efb9353e2fde2f1acd38367f25900b44",
+ "sourceRevision": "cf1cf38e",
+ "bindings": [
+  {
+   "key": "luminous-transfiguration.metadata.title-fourth-luminous-mystery-the-transfiguration-rosary-boo",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+   "source": "Fourth Luminous Mystery: The Transfiguration | Rosary Book",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.metadata.description-a-read-aloud-decade-book-for-children-on-the-fou",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(4)",
+   "source": "A read-aloud decade book for children on the Fourth Luminous Mystery, the Transfiguration: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "luminous-transfiguration.metadata.og-title-fourth-luminous-mystery-the-transfiguration-rosary",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+   "source": "Fourth Luminous Mystery: The Transfiguration | Rosary Book",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "luminous-transfiguration.metadata.og-description-a-read-aloud-decade-book-for-children-on-the",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(9)",
+   "source": "A read-aloud decade book for children on the Fourth Luminous Mystery, the Transfiguration: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "luminous-transfiguration.metadata.twitter-title-fourth-luminous-mystery-the-transfiguration-ro",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
+   "source": "Fourth Luminous Mystery: The Transfiguration | Rosary Book",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "luminous-transfiguration.metadata.twitter-description-a-read-aloud-decade-book-for-children-on",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(14)",
+   "source": "A read-aloud decade book for children on the Fourth Luminous Mystery, the Transfiguration: the story, the Gospel, the decade prayers, and a reflection.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "luminous-transfiguration.body.skip-to-main-content",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Skip to main content",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.text",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "✦",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.saint-charbel",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+   "source": "Saint Charbel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.accessibility.primary",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+   "source": "Primary",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "luminous-transfiguration.header.home",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Home",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.legacy",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Legacy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.saint-charbel-encyclopedia",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Charbel Encyclopedia",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.full-history",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Full History",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.miracles",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.miracles-reports",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Miracles & Reports",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.eucharistic-miracles",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Eucharistic Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.letters",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Letters",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.voice-testimony",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Voice Testimony",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.saints",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.saints-2",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.children-s-books",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Children's Books",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.prayer",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+   "source": "Prayer",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.prayer-library",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Prayer Library",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.find-a-prayer-by-intention",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Find a Prayer by Intention",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.prayer-for-the-sick",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Prayer for the Sick",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.prayer-for-healing",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Prayer for Healing",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.prayer-for-anxiety",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Prayer for Anxiety",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.prayer-for-depression",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "Prayer for Depression",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.prayer-for-students",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Prayer for Students",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.prayer-for-addiction",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Prayer for Addiction",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.prayer-for-family",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Prayer for Family",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.prayer-for-pregnancy",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Prayer for Pregnancy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.prayer-for-a-miracle",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Prayer for a Miracle",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.saint-charbel-prayers",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "Saint Charbel Prayers",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.saint-charbel-novena",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Novena",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.feast-day",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+   "source": "Feast Day",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.rosary-guide",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+   "source": "Rosary Guide",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.rosary-minibook",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+   "source": "Rosary Minibook",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.mystery-meditation",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+   "source": "Mystery Meditation",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.become-like-him",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+   "source": "Become Like Him",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.travel",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.travel-2",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.visiting-annaya",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Visiting Annaya",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.annaya-online-tour",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Annaya Online Tour",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.bekaa-kafra",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Bekaa Kafra",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.our-lady-of-lebanon-at-harissa",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Our Lady of Lebanon at Harissa",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.the-cedars-of-god",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "the Cedars of God",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.bkerke-and-the-maronite-patriarchate",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Bkerke and the Maronite Patriarchate",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.qadisha-valley",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Qadisha Valley",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.qannoubine-monastery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Qannoubine Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.qozhaya-monastery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Qozhaya Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.saint-charbel-s-lebanon",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Saint Charbel's Lebanon",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.the-hermitage",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "The Hermitage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.saint-charbel-trail",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Trail",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.news",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "News",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.media",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+   "source": "Media",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.music",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Music",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.video",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Video",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.header.gallery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Gallery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.body.a-book-for-ages-6-12",
+   "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "A Book for Ages 6-12",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.the-transfiguration-fourth-luminous-mystery",
+   "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+   "source": "The Transfiguration: Fourth Luminous Mystery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-tr",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "A little read-aloud book for one decade of the Rosary: The Transfiguration.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.short-answer",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+   "source": "Short answer:",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.this-book-walks-children-through-the-fourth-luminous-mystery",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "This book walks children through the Fourth Luminous Mystery, the Transfiguration: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on desire for holiness and spiritual courage.",
+   "kind": "text",
+   "nodeIndex": 1
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.continue-from-page-2",
+   "selector": "#story-resume-text",
+   "source": "Continue from Page 2?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.resume",
+   "selector": "#story-resume-btn",
+   "source": "Resume",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.accessibility.dismiss",
+   "selector": "#story-resume-dismiss",
+   "source": "Dismiss",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.text",
+   "selector": "#story-resume-dismiss",
+   "source": "✕",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.accessibility.illustrated-storybook",
+   "selector": "#main-content > section:nth-of-type(2)",
+   "source": "Illustrated storybook",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.reading",
+   "selector": "#story-reading-label",
+   "source": "Reading…",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.0-00",
+   "selector": "#story-elapsed",
+   "source": "0:00",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.voice-pack",
+   "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Voice Pack",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.accessibility.select-story-voice-pack",
+   "selector": "#story-voice-pack",
+   "source": "Select story voice pack",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "luminous-transfiguration.accessibility.previous-page",
+   "selector": "#story-prev",
+   "source": "Previous page",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.previous-page",
+   "selector": "#story-prev",
+   "source": "Previous Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.read-aloud",
+   "selector": "#story-read",
+   "source": "Read Aloud",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.accessibility.next-page",
+   "selector": "#story-next",
+   "source": "Next page",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.next-page",
+   "selector": "#story-next",
+   "source": "Next Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.accessibility.story-settings",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+   "source": "Story settings",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.story-settings",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > summary:nth-of-type(1)",
+   "source": "Story settings",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.toggle-reader-mode-for-easier-reading",
+   "selector": "#story-reader-toggle",
+   "source": "Toggle reader mode for easier reading",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.reader-mode",
+   "selector": "#story-reader-toggle",
+   "source": "Reader Mode",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.automatically-read-next-page-when-current-page-finishes",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Automatically read next page when current page finishes",
+   "kind": "attribute",
+   "attribute": "title"
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.auto-continue",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > label:nth-of-type(1)",
+   "source": "Auto Continue",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "luminous-transfiguration.accessibility.playback-speed",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "Playback speed",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.slow",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "source": "Slow",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.normal",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+   "source": "Normal",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.fast",
+   "selector": "#main-content > section:nth-of-type(2) > details:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)",
+   "source": "Fast",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.the-transfiguration-four.page-1-of-4",
+   "selector": "#story-step",
+   "source": "Page 1 of 4",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.loading-story.loading-story",
+   "selector": "#story-title",
+   "source": "Loading story...",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.loading-story.please-wait-while-we-open-the-storybook",
+   "selector": "#story-body",
+   "source": "Please wait while we open the storybook.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.loading-story.evidence-for-this-page",
+   "selector": "#story-evidence-title",
+   "source": "Evidence for This Page",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr",
+   "selector": "#main-content > p:nth-of-type(1)",
+   "source": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.about-this-story.about-this-story",
+   "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+   "source": "About this story",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.about-this-story.painting-raphael-transfiguration-public-domain-via-wikimedia",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "Painting: Raphael, Transfiguration. Public domain, via Wikimedia Commons.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.about-this-story.image-source-wikimedia-commons",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Image source (Wikimedia Commons)",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.about-this-story.text",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(1)",
+   "source": ".",
+   "kind": "text",
+   "nodeIndex": 2
+  },
+  {
+   "key": "luminous-transfiguration.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh",
+   "selector": "#main-content > section:nth-of-type(3) > article:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Thursday.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.frequently-asked-questio.frequently-asked-questions",
+   "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+   "source": "Frequently Asked Questions",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.frequently-asked-questio.what-is-the-fourth-luminous-mystery",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(1)",
+   "source": "What is the Fourth Luminous Mystery?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.frequently-asked-questio.the-transfiguration-on-a-high-mountain-jesus-face-shone-like",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "The Transfiguration. On a high mountain, Jesus' face shone like the sun and his clothes became white as snow, while Moses and Elijah talked with him. This mystery is traditionally prayed on Thursday, and its fruit is desire for holiness and spiritual courage.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.frequently-asked-questio.how-do-you-pray-this-decade-with-children",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > h3:nth-of-type(2)",
+   "source": "How do you pray this decade with children?",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath",
+   "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2)",
+   "source": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.more-saint-storybooks-fo.more-saint-storybooks-for-children",
+   "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+   "source": "More Saint Storybooks for Children",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.more-saint-storybooks-fo.the-proclamation-of-the-kingdom",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "The Proclamation of the Kingdom",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.more-saint-storybooks-fo.the-institution-of-the-eucharist",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "The Institution of the Eucharist",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.more-saint-storybooks-fo.all-storybooks",
+   "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "All storybooks",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "luminous-transfiguration.footer.a-rosary-decade-book-for-children-author-please-pray-for-the",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "A Rosary decade book for children. Author: Please pray for the person who made this website.",
+   "kind": "text",
+   "nodeIndex": 0
+  }
+ ],
+ "messages": {
+  "luminous-transfiguration.metadata.title-fourth-luminous-mystery-the-transfiguration-rosary-boo": "Fourth Luminous Mystery: The Transfiguration | Rosary Book",
+  "luminous-transfiguration.metadata.description-a-read-aloud-decade-book-for-children-on-the-fou": "A read-aloud decade book for children on the Fourth Luminous Mystery, the Transfiguration: the story, the Gospel, the decade prayers, and a reflection.",
+  "luminous-transfiguration.metadata.og-title-fourth-luminous-mystery-the-transfiguration-rosary": "Fourth Luminous Mystery: The Transfiguration | Rosary Book",
+  "luminous-transfiguration.metadata.og-description-a-read-aloud-decade-book-for-children-on-the": "A read-aloud decade book for children on the Fourth Luminous Mystery, the Transfiguration: the story, the Gospel, the decade prayers, and a reflection.",
+  "luminous-transfiguration.metadata.twitter-title-fourth-luminous-mystery-the-transfiguration-ro": "Fourth Luminous Mystery: The Transfiguration | Rosary Book",
+  "luminous-transfiguration.metadata.twitter-description-a-read-aloud-decade-book-for-children-on": "A read-aloud decade book for children on the Fourth Luminous Mystery, the Transfiguration: the story, the Gospel, the decade prayers, and a reflection.",
+  "luminous-transfiguration.body.skip-to-main-content": "Skip to main content",
+  "luminous-transfiguration.header.text": "✦",
+  "luminous-transfiguration.header.saint-charbel": "Saint Charbel",
+  "luminous-transfiguration.accessibility.primary": "Primary",
+  "luminous-transfiguration.header.home": "Home",
+  "luminous-transfiguration.header.legacy": "Legacy",
+  "luminous-transfiguration.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+  "luminous-transfiguration.header.full-history": "Full History",
+  "luminous-transfiguration.header.miracles": "Miracles",
+  "luminous-transfiguration.header.miracles-reports": "Miracles & Reports",
+  "luminous-transfiguration.header.eucharistic-miracles": "Eucharistic Miracles",
+  "luminous-transfiguration.header.letters": "Letters",
+  "luminous-transfiguration.header.voice-testimony": "Voice Testimony",
+  "luminous-transfiguration.header.saints": "Saints",
+  "luminous-transfiguration.header.children-s-books": "Children's Books",
+  "luminous-transfiguration.header.prayer": "Prayer",
+  "luminous-transfiguration.header.prayer-library": "Prayer Library",
+  "luminous-transfiguration.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+  "luminous-transfiguration.header.prayer-for-the-sick": "Prayer for the Sick",
+  "luminous-transfiguration.header.prayer-for-healing": "Prayer for Healing",
+  "luminous-transfiguration.header.prayer-for-anxiety": "Prayer for Anxiety",
+  "luminous-transfiguration.header.prayer-for-depression": "Prayer for Depression",
+  "luminous-transfiguration.header.prayer-for-students": "Prayer for Students",
+  "luminous-transfiguration.header.prayer-for-addiction": "Prayer for Addiction",
+  "luminous-transfiguration.header.prayer-for-family": "Prayer for Family",
+  "luminous-transfiguration.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+  "luminous-transfiguration.header.prayer-for-a-miracle": "Prayer for a Miracle",
+  "luminous-transfiguration.header.saint-charbel-prayers": "Saint Charbel Prayers",
+  "luminous-transfiguration.header.saint-charbel-novena": "Saint Charbel Novena",
+  "luminous-transfiguration.header.feast-day": "Feast Day",
+  "luminous-transfiguration.header.rosary-guide": "Rosary Guide",
+  "luminous-transfiguration.header.rosary-minibook": "Rosary Minibook",
+  "luminous-transfiguration.header.mystery-meditation": "Mystery Meditation",
+  "luminous-transfiguration.header.become-like-him": "Become Like Him",
+  "luminous-transfiguration.header.travel": "Travel",
+  "luminous-transfiguration.header.visiting-annaya": "Visiting Annaya",
+  "luminous-transfiguration.header.annaya-online-tour": "Annaya Online Tour",
+  "luminous-transfiguration.header.bekaa-kafra": "Bekaa Kafra",
+  "luminous-transfiguration.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+  "luminous-transfiguration.header.the-cedars-of-god": "the Cedars of God",
+  "luminous-transfiguration.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+  "luminous-transfiguration.header.qadisha-valley": "Qadisha Valley",
+  "luminous-transfiguration.header.qannoubine-monastery": "Qannoubine Monastery",
+  "luminous-transfiguration.header.qozhaya-monastery": "Qozhaya Monastery",
+  "luminous-transfiguration.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+  "luminous-transfiguration.header.the-hermitage": "The Hermitage",
+  "luminous-transfiguration.header.saint-charbel-trail": "Saint Charbel Trail",
+  "luminous-transfiguration.header.news": "News",
+  "luminous-transfiguration.header.media": "Media",
+  "luminous-transfiguration.header.music": "Music",
+  "luminous-transfiguration.header.video": "Video",
+  "luminous-transfiguration.header.gallery": "Gallery",
+  "luminous-transfiguration.body.a-book-for-ages-6-12": "A Book for Ages 6-12",
+  "luminous-transfiguration.the-transfiguration-four.the-transfiguration-fourth-luminous-mystery": "The Transfiguration: Fourth Luminous Mystery",
+  "luminous-transfiguration.the-transfiguration-four.a-little-read-aloud-book-for-one-decade-of-the-rosary-the-tr": "A little read-aloud book for one decade of the Rosary: The Transfiguration.",
+  "luminous-transfiguration.the-transfiguration-four.short-answer": "Short answer:",
+  "luminous-transfiguration.the-transfiguration-four.this-book-walks-children-through-the-fourth-luminous-mystery": "This book walks children through the Fourth Luminous Mystery, the Transfiguration: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on desire for holiness and spiritual courage.",
+  "luminous-transfiguration.the-transfiguration-four.continue-from-page-2": "Continue from Page 2?",
+  "luminous-transfiguration.the-transfiguration-four.resume": "Resume",
+  "luminous-transfiguration.accessibility.dismiss": "Dismiss",
+  "luminous-transfiguration.the-transfiguration-four.text": "✕",
+  "luminous-transfiguration.accessibility.illustrated-storybook": "Illustrated storybook",
+  "luminous-transfiguration.the-transfiguration-four.reading": "Reading…",
+  "luminous-transfiguration.the-transfiguration-four.0-00": "0:00",
+  "luminous-transfiguration.the-transfiguration-four.voice-pack": "Voice Pack",
+  "luminous-transfiguration.accessibility.select-story-voice-pack": "Select story voice pack",
+  "luminous-transfiguration.accessibility.previous-page": "Previous page",
+  "luminous-transfiguration.the-transfiguration-four.previous-page": "Previous Page",
+  "luminous-transfiguration.the-transfiguration-four.read-aloud": "Read Aloud",
+  "luminous-transfiguration.accessibility.next-page": "Next page",
+  "luminous-transfiguration.the-transfiguration-four.next-page": "Next Page",
+  "luminous-transfiguration.accessibility.story-settings": "Story settings",
+  "luminous-transfiguration.the-transfiguration-four.story-settings": "Story settings",
+  "luminous-transfiguration.the-transfiguration-four.toggle-reader-mode-for-easier-reading": "Toggle reader mode for easier reading",
+  "luminous-transfiguration.the-transfiguration-four.reader-mode": "Reader Mode",
+  "luminous-transfiguration.the-transfiguration-four.automatically-read-next-page-when-current-page-finishes": "Automatically read next page when current page finishes",
+  "luminous-transfiguration.the-transfiguration-four.auto-continue": "Auto Continue",
+  "luminous-transfiguration.accessibility.playback-speed": "Playback speed",
+  "luminous-transfiguration.the-transfiguration-four.slow": "Slow",
+  "luminous-transfiguration.the-transfiguration-four.normal": "Normal",
+  "luminous-transfiguration.the-transfiguration-four.fast": "Fast",
+  "luminous-transfiguration.the-transfiguration-four.page-1-of-4": "Page 1 of 4",
+  "luminous-transfiguration.loading-story.loading-story": "Loading story...",
+  "luminous-transfiguration.loading-story.please-wait-while-we-open-the-storybook": "Please wait while we open the storybook.",
+  "luminous-transfiguration.loading-story.evidence-for-this-page": "Evidence for This Page",
+  "luminous-transfiguration.loading-story.read-aloud-in-the-browser-with-your-device-voice-studio-narr": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+  "luminous-transfiguration.about-this-story.about-this-story": "About this story",
+  "luminous-transfiguration.about-this-story.painting-raphael-transfiguration-public-domain-via-wikimedia": "Painting: Raphael, Transfiguration. Public domain, via Wikimedia Commons.",
+  "luminous-transfiguration.about-this-story.image-source-wikimedia-commons": "Image source (Wikimedia Commons)",
+  "luminous-transfiguration.about-this-story.text": ".",
+  "luminous-transfiguration.about-this-story.the-gospel-passage-is-quoted-word-for-word-from-the-douay-rh": "The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and … marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Thursday.",
+  "luminous-transfiguration.frequently-asked-questio.frequently-asked-questions": "Frequently Asked Questions",
+  "luminous-transfiguration.frequently-asked-questio.what-is-the-fourth-luminous-mystery": "What is the Fourth Luminous Mystery?",
+  "luminous-transfiguration.frequently-asked-questio.the-transfiguration-on-a-high-mountain-jesus-face-shone-like": "The Transfiguration. On a high mountain, Jesus' face shone like the sun and his clothes became white as snow, while Moses and Elijah talked with him. This mystery is traditionally prayed on Thursday, and its fruit is desire for holiness and spiritual courage.",
+  "luminous-transfiguration.frequently-asked-questio.how-do-you-pray-this-decade-with-children": "How do you pray this decade with children?",
+  "luminous-transfiguration.frequently-asked-questio.read-one-page-at-a-time-on-the-decade-page-pray-the-our-fath": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer.",
+  "luminous-transfiguration.more-saint-storybooks-fo.more-saint-storybooks-for-children": "More Saint Storybooks for Children",
+  "luminous-transfiguration.more-saint-storybooks-fo.the-proclamation-of-the-kingdom": "The Proclamation of the Kingdom",
+  "luminous-transfiguration.more-saint-storybooks-fo.the-institution-of-the-eucharist": "The Institution of the Eucharist",
+  "luminous-transfiguration.more-saint-storybooks-fo.all-storybooks": "All storybooks",
+  "luminous-transfiguration.footer.a-rosary-decade-book-for-children-author-please-pray-for-the": "A Rosary decade book for children. Author: Please pray for the person who made this website.",
+  "luminous-transfiguration.header.saints-2": "Saints",
+  "luminous-transfiguration.header.travel-2": "Travel"
+ }
+}

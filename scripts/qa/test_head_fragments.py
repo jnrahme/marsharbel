@@ -60,7 +60,7 @@ class HeadFragmentTest(unittest.TestCase):
         # page.json, so head-og-locales is unchanged).
         self.assertEqual(counts, {
             'head-og-locales': 95,  # 94 + saint-charbel-medal.html
-            'head-social': 118,  # 116 + saint-charbel-medal.html + veronica-giuliani-story.html
+            'head-social': 138,  # 116 + saint-charbel-medal.html + veronica-giuliani-story.html + 20 Rosary mystery book pages
             'head-font-preloads': 85,  # 83 + saint-charbel-medal.html + veronica-giuliani-story.html
             'head-font-preloads-legacy': 17,
         })

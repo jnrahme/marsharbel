@@ -27,7 +27,7 @@ def fc(t):
     path=ROOT/(canonical.lstrip('/')+'.html')
     t=compose_travel_clusters(ROOT,_read_json_fc(ROOT/'locales/registry.json'),{path:t})[path]
     return inject_control(t,ROOT,_read_json_fc(ROOT/'locales/same-page-manifest.pending.json'),_read_json_fc(ROOT/'locales/same-page-copy.json'))
-from check_i18n_policy import check, extract_html
+from check_i18n_policy import check, extract_html, rosary_generated_names
 
 spec = importlib.util.spec_from_file_location('international_builder', ROOT/'scripts/build-international.py')
 builder = importlib.util.module_from_spec(spec)
@@ -60,6 +60,25 @@ def assert_external_sources_mirrored(case, en_path, ar_path, count, required=())
     for url in required:
         case.assertIn(url, en)
         case.assertIn(url, ar)
+
+
+class RosaryGeneratedExemptionTests(unittest.TestCase):
+    def test_exemption_is_exactly_the_generator_slugs(self):
+        import tempfile, pathlib
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            (root/'scripts/books').mkdir(parents=True)
+            (root/'scripts/books/build-rosary-i18n-data.mjs').write_text("export const ROSARY_SLUGS = ['joyful-annunciation', 'glorious-coronation'];\n")
+            for name in ('joyful-annunciation-story-i18n-data.js', 'unrelated-story-i18n-data.js', 'joyful-other-story-i18n-data.js'):
+                (root/name).write_text('window.X = [];')
+            self.assertEqual(rosary_generated_names(root), ('joyful-annunciation-story-i18n-data.js',))
+
+    def test_no_generator_means_no_exemption(self):
+        import tempfile, pathlib
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            (root/'any-story-i18n-data.js').write_text('window.X = [];')
+            self.assertEqual(rosary_generated_names(root), ())
 
 
 class CatalogTests(unittest.TestCase):
