@@ -130,7 +130,7 @@ jobs:
         node-version: 20
         cache: npm
     - run: npm ci
-    - run: pip install -r scripts/qa/requirements.txt
+    - run: python3 -m pip install -r scripts/qa/requirements.txt
     - name: Verify pinned preinstalled Chromium and system dependencies
       run: "node - <<'JS'\nconst fs = require('node:fs');\nconst { chromium } = require('@playwright/test');\nif (require('@playwright/test/package.json').version !== '1.63.0') throw new Error('Playwright image/package version mismatch');\nif (!fs.existsSync(chromium.executablePath())) throw new Error('Preinstalled Chromium missing');\n(async () => {\n  const browser = await chromium.launch({ headless: true });\n  const page = await browser.newPage();\n  await page.setContent('<html><body>Browser dependency probe</body></html>');\n  if (await page.textContent('body') !== 'Browser dependency probe') throw new Error('Browser launch/render failed');\n  await browser.close();\n})().catch(error => { console.error(error); process.exit(1); });\nJS"
     - run: bash scripts/qa/run_full_qa.sh --ci --shard ${{ matrix.shard }}/8 --skip-i18n-test
@@ -188,7 +188,7 @@ jobs:
         node-version: 20
         cache: npm
     - run: npm ci
-    - run: pip install -r scripts/qa/requirements.txt
+    - run: python3 -m pip install -r scripts/qa/requirements.txt
     - name: Verify pinned preinstalled Chromium and system dependencies
       run: "node - <<'JS'\nconst fs = require('node:fs');\nconst { chromium } = require('@playwright/test');\nif (require('@playwright/test/package.json').version !== '1.63.0') throw new Error('Playwright image/package version mismatch');\nif (!fs.existsSync(chromium.executablePath())) throw new Error('Preinstalled Chromium missing');\n(async () => {\n  const browser = await chromium.launch({ headless: true });\n  const page = await browser.newPage();\n  await page.setContent('<html><body>Browser dependency probe</body></html>');\n  if (await page.textContent('body') !== 'Browser dependency probe') throw new Error('Browser launch/render failed');\n  await browser.close();\n})().catch(error => { console.error(error); process.exit(1); });\nJS"
     - name: Extra gates and exact scoped preview
