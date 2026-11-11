@@ -15,16 +15,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
+        ref: 149c79ca3aa6a4ca71355a28aa9891bf62b250ef
         fetch-depth: 0
     - uses: actions/download-artifact@v4
       with:
         name: bkerke-regenerated
         path: /tmp
-        run-id: 43066624357
+        run-id: 43074367924
         github-token: ${{ secrets.GITHUB_TOKEN }}
     - name: Verify exact normally regenerated packet
-      run: echo '92714483d012f2939bc0c2c08779694e8e7e4f547523c5730ae1136aa410bb1d  /tmp/bkerke-regenerated.patch' | sha256sum -c -
+      run: echo 'adb0992d2537bc380b7c6adcb789cd16bbed4b7725267ef2817580ef6360af0f  /tmp/bkerke-regenerated.patch' | sha256sum -c -
     - uses: actions/upload-artifact@v4
       with:
         name: bkerke-regenerated
@@ -47,7 +47,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
+        ref: 149c79ca3aa6a4ca71355a28aa9891bf62b250ef
         fetch-depth: 0
     - name: Allow only this container workspace for Git
       run: 'git config --global --add safe.directory "$GITHUB_WORKSPACE"
@@ -63,7 +63,7 @@ jobs:
     - name: Apply exact reviewed candidate and commit before gates
       run: 'set -euo pipefail
 
-        echo ''92714483d012f2939bc0c2c08779694e8e7e4f547523c5730ae1136aa410bb1d  /tmp/bkerke-regenerated.patch'' | sha256sum -c -
+        echo ''adb0992d2537bc380b7c6adcb789cd16bbed4b7725267ef2817580ef6360af0f  /tmp/bkerke-regenerated.patch'' | sha256sum -c -
 
         git apply /tmp/bkerke-regenerated.patch
 
@@ -115,7 +115,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
+        ref: 149c79ca3aa6a4ca71355a28aa9891bf62b250ef
         fetch-depth: 0
     - name: Allow only this container workspace for Git
       run: 'git config --global --add safe.directory "$GITHUB_WORKSPACE"
@@ -131,7 +131,7 @@ jobs:
     - name: Apply exact reviewed candidate and commit before gates
       run: 'set -euo pipefail
 
-        echo ''92714483d012f2939bc0c2c08779694e8e7e4f547523c5730ae1136aa410bb1d  /tmp/bkerke-regenerated.patch'' | sha256sum -c -
+        echo ''adb0992d2537bc380b7c6adcb789cd16bbed4b7725267ef2817580ef6360af0f  /tmp/bkerke-regenerated.patch'' | sha256sum -c -
 
         git apply /tmp/bkerke-regenerated.patch
 
@@ -201,7 +201,7 @@ jobs:
 
         node scripts/build-pages.mjs --check
 
-        python3 scripts/qa/check_new_page_locales.py --base 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
+        python3 scripts/qa/check_new_page_locales.py --base 149c79ca3aa6a4ca71355a28aa9891bf62b250ef
 
         node scripts/ci/check_bq_shard_lists.mjs
 
@@ -245,7 +245,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        ref: 7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5
+        ref: 149c79ca3aa6a4ca71355a28aa9891bf62b250ef
         fetch-depth: 0
     - uses: actions/download-artifact@v4
       with:
@@ -254,7 +254,7 @@ jobs:
     - name: Apply exact reviewed candidate and commit before gates
       run: 'set -euo pipefail
 
-        echo ''92714483d012f2939bc0c2c08779694e8e7e4f547523c5730ae1136aa410bb1d  /tmp/bkerke-regenerated.patch'' | sha256sum -c -
+        echo ''adb0992d2537bc380b7c6adcb789cd16bbed4b7725267ef2817580ef6360af0f  /tmp/bkerke-regenerated.patch'' | sha256sum -c -
 
         git apply /tmp/bkerke-regenerated.patch
 
@@ -278,11 +278,11 @@ jobs:
     - name: Push only exact green candidate on unchanged stage, never merge
       run: 'set -euo pipefail
 
-        test "$(git ls-remote origin refs/heads/stage | cut -f1)" = ''7f7f48618aa354e0fbe4e87fd0438fb9ae1f95b5''
+        test "$(git ls-remote origin refs/heads/stage | cut -f1)" = ''149c79ca3aa6a4ca71355a28aa9891bf62b250ef''
 
-        test -z "$(git ls-remote origin refs/heads/review/bkerke-update-nov11)"
+        test -z "$(git ls-remote origin refs/heads/review/bkerke-update-nov11-final)"
 
-        git push origin HEAD:refs/heads/review/bkerke-update-nov11
+        git push origin HEAD:refs/heads/review/bkerke-update-nov11-final
 
         git rev-parse HEAD
 
