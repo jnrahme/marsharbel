@@ -32,3 +32,7 @@ PYTHONPATH=scripts python3 scripts/i18n/rosary_successor_adapter.py \
 6. Live reader/API/switcher and phone/desktop/RTL/long-text/200% verification after deploy, followed by cache overwrite checks.
 
 No EN-first live release. RU/HI/TH/ZH scope holds remain. No new recorded audio, illustration or spending. Existing paintings are retained, not advertised as a new illustrated edition; rights and actual scene placement still need the release review.
+
+## Metadata supersession
+
+Metadata field packet v2 supersedes the integration-spec-v1 production note for all8 locales. The offline adapter always loads v2, not the old speech/public-domain claims. Arabic metadata v2 remains a draft requiring independent recheck. No rights or browser speech verification is inherited from old catalogs.

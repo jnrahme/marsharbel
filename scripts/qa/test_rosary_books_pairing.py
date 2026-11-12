@@ -214,6 +214,14 @@ class RosarySuccessorAdapter(unittest.TestCase):
         self.assertTrue(all(p['kind'] in ('story', 'reflection') for p in book['pages']))
         self.assertTrue(all(not p['audio'] for p in book['pages']))
 
+    def test_v2_metadata_supersedes_unverified_production_claims(self):
+        self.build()
+        note = json.loads((self.output / 'notes/joyful-annunciation.json').read_text())
+        self.assertEqual(note['metadata']['production_note'],
+                         'Studio narration is not yet available for this edition.')
+        self.assertNotIn('public-domain', note['metadata']['production_note'])
+        self.assertNotIn('device voice', note['metadata']['production_note'])
+
     def test_changed_manuscript_fails(self):
         self.master += b' '
         with self.assertRaisesRegex(ValueError, 'manuscript bytes'):

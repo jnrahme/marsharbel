@@ -1,0 +1,1102 @@
+{
+  "locale": "ar",
+  "master_sha256": "2ad25dd88b617e6fa374d36d56784caac44b5d73b6ac39617fa9eab9f7737421",
+  "status": "Revised metadata draft v2; independent scoped recheck required. Not native certification.",
+  "scope": "Metadata, titles, alt text, existing related-link labels and supplemental disclosures. Global navigation/reader controls use existing shared locale catalogs, not replacements here.",
+  "common": {
+    "read_together": "نقرأ ونصلّي معًا",
+    "adult_notes_heading": "ملاحظات للكبار ومصادر النص",
+    "sources_heading": "المصادر",
+    "mystery_kicker": "أسرار المسبحة الوردية",
+    "all_storybooks": "جميع كتب القصص",
+    "painting_credit_label": "اللوحة ومصدرها",
+    "source_link_label": "مصدر الصورة",
+    "retelling_disclosure": "هذا سرد قصصي مستند إلى النصوص المذكورة، وليس ترجمة جديدة للكتاب المقدّس. الاقتباسات المباشرة مبيّنة بمصادرها.",
+    "painting_disclosure": "تُستخدم اللوحة نفسها في صفحات هذا الإصدار النصّي. وهي تصوير فنّي وليست سجلًّا مصوّرًا للأحداث. يُراجَع مصدره وحقوق استخدامه قبل النشر.",
+    "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+    "prayer_instruction_once": "تُصلّى مرة واحدة.",
+    "prayer_instruction_ten": "تُصلّى عشر مرات مع التأمّل في هذا السرّ.",
+    "reading_faq_question": "كيف نقرأ هذا الكتاب ونصلّي مع الأطفال؟",
+    "reading_faq_answer": "اقرؤوا القصة معًا، ثم توقّفوا للتأمّل. صلّوا الأبانا مرة واحدة، والسلام عليكِ يا مريم عشر مرات، والمجد للآب مرة واحدة.",
+    "doctrine_note": "في سرَّي الانتقال والتتويج، يستند التأمّل إلى الكتاب المقدّس وتعليم الكنيسة، ولا يقدّم وصفًا لشاهد عيان عن السماء."
+  },
+  "books": [
+    {
+      "slug": "joyful-annunciation",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "«نعم» في الناصرة",
+        "h1": "«نعم» في الناصرة",
+        "mystery_subtitle": "البشارة، السرّ الأول من أسرار الفرح",
+        "seo_title": "«نعم» في الناصرة | البشارة | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن البشارة. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن البشارة. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن البشارة. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة البشارة، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الأول من أسرار الفرح",
+        "cover_alt": "لوحة البشارة لموريلّو: الملاك جبرائيل راكع أمام مريم التي ترفع نظرها عن الصلاة.",
+        "page_alt": {
+          "bk-joyful-annunciation-flow-greeting": "لوحة البشارة لموريلّو: الملاك جبرائيل راكع أمام مريم التي ترفع نظرها عن الصلاة.",
+          "bk-joyful-annunciation-flow-promise": "لوحة البشارة لموريلّو: الملاك جبرائيل راكع أمام مريم التي ترفع نظرها عن الصلاة.",
+          "bk-joyful-annunciation-flow-elizabeth": "لوحة البشارة لموريلّو: الملاك جبرائيل راكع أمام مريم التي ترفع نظرها عن الصلاة.",
+          "bk-joyful-annunciation-flow-yes": "لوحة البشارة لموريلّو: الملاك جبرائيل راكع أمام مريم التي ترفع نظرها عن الصلاة.",
+          "bk-joyful-annunciation-flow-reflection": "لوحة البشارة لموريلّو: الملاك جبرائيل راكع أمام مريم التي ترفع نظرها عن الصلاة.",
+          "bk-joyful-annunciation-flow-our-father": "لوحة البشارة لموريلّو: الملاك جبرائيل راكع أمام مريم التي ترفع نظرها عن الصلاة.",
+          "bk-joyful-annunciation-flow-hail-mary": "لوحة البشارة لموريلّو: الملاك جبرائيل راكع أمام مريم التي ترفع نظرها عن الصلاة.",
+          "bk-joyful-annunciation-flow-glory-be": "لوحة البشارة لموريلّو: الملاك جبرائيل راكع أمام مريم التي ترفع نظرها عن الصلاة."
+        },
+        "movement_titles": {
+          "bk-joyful-annunciation-flow-greeting": "زائر في الناصرة",
+          "bk-joyful-annunciation-flow-promise": "الوعد والسؤال",
+          "bk-joyful-annunciation-flow-elizabeth": "خبر أليصابات",
+          "bk-joyful-annunciation-flow-yes": "مريم تجيب",
+          "bk-joyful-annunciation-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-joyful-annunciation-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-joyful-annunciation-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-joyful-annunciation-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./joyful-visitation": "زيارة مريم لأليصابات",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/joyful-annunciation",
+        "painting_asset_id": "bk-joyful-annunciation-img-painting"
+      }
+    },
+    {
+      "slug": "joyful-visitation",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "تحية عند الباب",
+        "h1": "تحية عند الباب",
+        "mystery_subtitle": "زيارة مريم لأليصابات، السرّ الثاني من أسرار الفرح",
+        "seo_title": "تحية عند الباب | زيارة مريم لأليصابات | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن زيارة مريم لأليصابات. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن زيارة مريم لأليصابات. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن زيارة مريم لأليصابات. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة زيارة مريم لأليصابات، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الثاني من أسرار الفرح",
+        "cover_alt": "لوحة الزيارة لغيرلاندايو: مريم وأليصابات تتعانقان بفرح.",
+        "page_alt": {
+          "bk-joyful-visitation-flow-journey": "لوحة الزيارة لغيرلاندايو: مريم وأليصابات تتعانقان بفرح.",
+          "bk-joyful-visitation-flow-welcome": "لوحة الزيارة لغيرلاندايو: مريم وأليصابات تتعانقان بفرح.",
+          "bk-joyful-visitation-flow-praise": "لوحة الزيارة لغيرلاندايو: مريم وأليصابات تتعانقان بفرح.",
+          "bk-joyful-visitation-flow-home": "لوحة الزيارة لغيرلاندايو: مريم وأليصابات تتعانقان بفرح.",
+          "bk-joyful-visitation-flow-reflection": "لوحة الزيارة لغيرلاندايو: مريم وأليصابات تتعانقان بفرح.",
+          "bk-joyful-visitation-flow-our-father": "لوحة الزيارة لغيرلاندايو: مريم وأليصابات تتعانقان بفرح.",
+          "bk-joyful-visitation-flow-hail-mary": "لوحة الزيارة لغيرلاندايو: مريم وأليصابات تتعانقان بفرح.",
+          "bk-joyful-visitation-flow-glory-be": "لوحة الزيارة لغيرلاندايو: مريم وأليصابات تتعانقان بفرح."
+        },
+        "movement_titles": {
+          "bk-joyful-visitation-flow-journey": "إلى الجبال",
+          "bk-joyful-visitation-flow-welcome": "أليصابات تستقبل مريم",
+          "bk-joyful-visitation-flow-praise": "مريم تسبّح الله",
+          "bk-joyful-visitation-flow-home": "العودة إلى البيت",
+          "bk-joyful-visitation-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-joyful-visitation-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-joyful-visitation-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-joyful-visitation-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./joyful-annunciation": "البشارة",
+          "./joyful-nativity": "ميلاد يسوع",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/joyful-visitation",
+        "painting_asset_id": "bk-joyful-visitation-img-painting"
+      }
+    },
+    {
+      "slug": "joyful-nativity",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "الطفل في المذود",
+        "h1": "الطفل في المذود",
+        "mystery_subtitle": "ميلاد يسوع، السرّ الثالث من أسرار الفرح",
+        "seo_title": "الطفل في المذود | ميلاد يسوع | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن ميلاد يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن ميلاد يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن ميلاد يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة ميلاد يسوع، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الثالث من أسرار الفرح",
+        "cover_alt": "لوحة الميلاد لفان هونتهورست: الطفل يسوع مضيء في المذود ومريم تسجد له.",
+        "page_alt": {
+          "bk-joyful-nativity-flow-bethlehem": "لوحة الميلاد لفان هونتهورست: الطفل يسوع مضيء في المذود ومريم تسجد له.",
+          "bk-joyful-nativity-flow-shepherds": "لوحة الميلاد لفان هونتهورست: الطفل يسوع مضيء في المذود ومريم تسجد له.",
+          "bk-joyful-nativity-flow-manger": "لوحة الميلاد لفان هونتهورست: الطفل يسوع مضيء في المذود ومريم تسجد له.",
+          "bk-joyful-nativity-flow-return": "لوحة الميلاد لفان هونتهورست: الطفل يسوع مضيء في المذود ومريم تسجد له.",
+          "bk-joyful-nativity-flow-reflection": "لوحة الميلاد لفان هونتهورست: الطفل يسوع مضيء في المذود ومريم تسجد له.",
+          "bk-joyful-nativity-flow-our-father": "لوحة الميلاد لفان هونتهورست: الطفل يسوع مضيء في المذود ومريم تسجد له.",
+          "bk-joyful-nativity-flow-hail-mary": "لوحة الميلاد لفان هونتهورست: الطفل يسوع مضيء في المذود ومريم تسجد له.",
+          "bk-joyful-nativity-flow-glory-be": "لوحة الميلاد لفان هونتهورست: الطفل يسوع مضيء في المذود ومريم تسجد له."
+        },
+        "movement_titles": {
+          "bk-joyful-nativity-flow-bethlehem": "الطفل في بيت لحم",
+          "bk-joyful-nativity-flow-shepherds": "خبر للرعاة",
+          "bk-joyful-nativity-flow-manger": "يجدون الطفل",
+          "bk-joyful-nativity-flow-return": "خبر يحملونه معهم",
+          "bk-joyful-nativity-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-joyful-nativity-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-joyful-nativity-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-joyful-nativity-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./joyful-visitation": "زيارة مريم لأليصابات",
+          "./joyful-presentation": "تقدمة يسوع في الهيكل",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/joyful-nativity",
+        "painting_asset_id": "bk-joyful-nativity-img-painting"
+      }
+    },
+    {
+      "slug": "joyful-presentation",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "بين ذراعي سمعان",
+        "h1": "بين ذراعي سمعان",
+        "mystery_subtitle": "تقدمة يسوع في الهيكل، السرّ الرابع من أسرار الفرح",
+        "seo_title": "بين ذراعي سمعان | تقدمة يسوع في الهيكل | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن تقدمة يسوع في الهيكل. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن تقدمة يسوع في الهيكل. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن تقدمة يسوع في الهيكل. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة تقدمة يسوع في الهيكل، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الرابع من أسرار الفرح",
+        "cover_alt": "لوحة التقدمة لمانتينيا: مريم تحمل الطفل يسوع فوق مذبح الهيكل.",
+        "page_alt": {
+          "bk-joyful-presentation-flow-waiting": "لوحة التقدمة لمانتينيا: مريم تحمل الطفل يسوع فوق مذبح الهيكل.",
+          "bk-joyful-presentation-flow-simeon": "لوحة التقدمة لمانتينيا: مريم تحمل الطفل يسوع فوق مذبح الهيكل.",
+          "bk-joyful-presentation-flow-sorrow": "لوحة التقدمة لمانتينيا: مريم تحمل الطفل يسوع فوق مذبح الهيكل.",
+          "bk-joyful-presentation-flow-anna": "لوحة التقدمة لمانتينيا: مريم تحمل الطفل يسوع فوق مذبح الهيكل.",
+          "bk-joyful-presentation-flow-reflection": "لوحة التقدمة لمانتينيا: مريم تحمل الطفل يسوع فوق مذبح الهيكل.",
+          "bk-joyful-presentation-flow-our-father": "لوحة التقدمة لمانتينيا: مريم تحمل الطفل يسوع فوق مذبح الهيكل.",
+          "bk-joyful-presentation-flow-hail-mary": "لوحة التقدمة لمانتينيا: مريم تحمل الطفل يسوع فوق مذبح الهيكل.",
+          "bk-joyful-presentation-flow-glory-be": "لوحة التقدمة لمانتينيا: مريم تحمل الطفل يسوع فوق مذبح الهيكل."
+        },
+        "movement_titles": {
+          "bk-joyful-presentation-flow-waiting": "زيارة ووعد",
+          "bk-joyful-presentation-flow-simeon": "بين ذراعي سمعان",
+          "bk-joyful-presentation-flow-sorrow": "كلمات فرح وحزن",
+          "bk-joyful-presentation-flow-anna": "حنّة تشكر الله",
+          "bk-joyful-presentation-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-joyful-presentation-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-joyful-presentation-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-joyful-presentation-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./joyful-nativity": "ميلاد يسوع",
+          "./joyful-finding-temple": "وجود يسوع في الهيكل",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/joyful-presentation",
+        "painting_asset_id": "bk-joyful-presentation-img-painting"
+      }
+    },
+    {
+      "slug": "joyful-finding-temple",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "طريق العودة",
+        "h1": "طريق العودة",
+        "mystery_subtitle": "وجود يسوع في الهيكل، السرّ الخامس من أسرار الفرح",
+        "seo_title": "طريق العودة | وجود يسوع في الهيكل | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن وجود يسوع في الهيكل. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن وجود يسوع في الهيكل. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن وجود يسوع في الهيكل. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة وجود يسوع في الهيكل، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الخامس من أسرار الفرح",
+        "cover_alt": "لوحة يسوع بين العلماء لدورر: يسوع في الثانية عشرة يعلّم في الهيكل.",
+        "page_alt": {
+          "bk-joyful-finding-temple-flow-departure": "لوحة يسوع بين العلماء لدورر: يسوع في الثانية عشرة يعلّم في الهيكل.",
+          "bk-joyful-finding-temple-flow-search": "لوحة يسوع بين العلماء لدورر: يسوع في الثانية عشرة يعلّم في الهيكل.",
+          "bk-joyful-finding-temple-flow-question": "لوحة يسوع بين العلماء لدورر: يسوع في الثانية عشرة يعلّم في الهيكل.",
+          "bk-joyful-finding-temple-flow-home": "لوحة يسوع بين العلماء لدورر: يسوع في الثانية عشرة يعلّم في الهيكل.",
+          "bk-joyful-finding-temple-flow-reflection": "لوحة يسوع بين العلماء لدورر: يسوع في الثانية عشرة يعلّم في الهيكل.",
+          "bk-joyful-finding-temple-flow-our-father": "لوحة يسوع بين العلماء لدورر: يسوع في الثانية عشرة يعلّم في الهيكل.",
+          "bk-joyful-finding-temple-flow-hail-mary": "لوحة يسوع بين العلماء لدورر: يسوع في الثانية عشرة يعلّم في الهيكل.",
+          "bk-joyful-finding-temple-flow-glory-be": "لوحة يسوع بين العلماء لدورر: يسوع في الثانية عشرة يعلّم في الهيكل."
+        },
+        "movement_titles": {
+          "bk-joyful-finding-temple-flow-departure": "تبدأ العودة إلى البيت",
+          "bk-joyful-finding-temple-flow-search": "الرجوع إلى أورشليم",
+          "bk-joyful-finding-temple-flow-question": "سؤال في الهيكل",
+          "bk-joyful-finding-temple-flow-home": "معًا من جديد",
+          "bk-joyful-finding-temple-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-joyful-finding-temple-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-joyful-finding-temple-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-joyful-finding-temple-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./joyful-presentation": "تقدمة يسوع في الهيكل",
+          "./luminous-baptism": "معمودية يسوع",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/joyful-finding-temple",
+        "painting_asset_id": "bk-joyful-finding-temple-img-painting"
+      }
+    },
+    {
+      "slug": "luminous-baptism",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "عند النهر",
+        "h1": "عند النهر",
+        "mystery_subtitle": "معمودية يسوع، السرّ الأول من أسرار النور",
+        "seo_title": "عند النهر | معمودية يسوع | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن معمودية يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن معمودية يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن معمودية يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة معمودية يسوع، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الأول من أسرار النور",
+        "cover_alt": "لوحة المعمودية لبييرو ديلا فرانشيسكا: يوحنا يسكب الماء على يسوع والحمامة تهبط.",
+        "page_alt": {
+          "bk-luminous-baptism-flow-john": "لوحة المعمودية لبييرو ديلا فرانشيسكا: يوحنا يسكب الماء على يسوع والحمامة تهبط.",
+          "bk-luminous-baptism-flow-water": "لوحة المعمودية لبييرو ديلا فرانشيسكا: يوحنا يسكب الماء على يسوع والحمامة تهبط.",
+          "bk-luminous-baptism-flow-voice": "لوحة المعمودية لبييرو ديلا فرانشيسكا: يوحنا يسكب الماء على يسوع والحمامة تهبط.",
+          "bk-luminous-baptism-flow-beginning": "لوحة المعمودية لبييرو ديلا فرانشيسكا: يوحنا يسكب الماء على يسوع والحمامة تهبط.",
+          "bk-luminous-baptism-flow-reflection": "لوحة المعمودية لبييرو ديلا فرانشيسكا: يوحنا يسكب الماء على يسوع والحمامة تهبط.",
+          "bk-luminous-baptism-flow-our-father": "لوحة المعمودية لبييرو ديلا فرانشيسكا: يوحنا يسكب الماء على يسوع والحمامة تهبط.",
+          "bk-luminous-baptism-flow-hail-mary": "لوحة المعمودية لبييرو ديلا فرانشيسكا: يوحنا يسكب الماء على يسوع والحمامة تهبط.",
+          "bk-luminous-baptism-flow-glory-be": "لوحة المعمودية لبييرو ديلا فرانشيسكا: يوحنا يسكب الماء على يسوع والحمامة تهبط."
+        },
+        "movement_titles": {
+          "bk-luminous-baptism-flow-john": "يسوع يأتي إلى يوحنا",
+          "bk-luminous-baptism-flow-water": "إلى الماء",
+          "bk-luminous-baptism-flow-voice": "الصوت من السماء",
+          "bk-luminous-baptism-flow-beginning": "الابن الحبيب",
+          "bk-luminous-baptism-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-luminous-baptism-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-luminous-baptism-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-luminous-baptism-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./joyful-finding-temple": "وجود يسوع في الهيكل",
+          "./luminous-cana": "عرس قانا",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/luminous-baptism",
+        "painting_asset_id": "bk-luminous-baptism-img-painting"
+      }
+    },
+    {
+      "slug": "luminous-cana",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "مملوءة حتى الحافة",
+        "h1": "مملوءة حتى الحافة",
+        "mystery_subtitle": "عرس قانا، السرّ الثاني من أسرار النور",
+        "seo_title": "مملوءة حتى الحافة | عرس قانا | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن عرس قانا. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن عرس قانا. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن عرس قانا. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة عرس قانا، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الثاني من أسرار النور",
+        "cover_alt": "لوحة عرس قانا لفيرونيزي: يسوع ومريم في وليمة العرس.",
+        "page_alt": {
+          "bk-luminous-cana-flow-need": "لوحة عرس قانا لفيرونيزي: يسوع ومريم في وليمة العرس.",
+          "bk-luminous-cana-flow-jars": "لوحة عرس قانا لفيرونيزي: يسوع ومريم في وليمة العرس.",
+          "bk-luminous-cana-flow-wine": "لوحة عرس قانا لفيرونيزي: يسوع ومريم في وليمة العرس.",
+          "bk-luminous-cana-flow-sign": "لوحة عرس قانا لفيرونيزي: يسوع ومريم في وليمة العرس.",
+          "bk-luminous-cana-flow-reflection": "لوحة عرس قانا لفيرونيزي: يسوع ومريم في وليمة العرس.",
+          "bk-luminous-cana-flow-our-father": "لوحة عرس قانا لفيرونيزي: يسوع ومريم في وليمة العرس.",
+          "bk-luminous-cana-flow-hail-mary": "لوحة عرس قانا لفيرونيزي: يسوع ومريم في وليمة العرس.",
+          "bk-luminous-cana-flow-glory-be": "لوحة عرس قانا لفيرونيزي: يسوع ومريم في وليمة العرس."
+        },
+        "movement_titles": {
+          "bk-luminous-cana-flow-need": "حاجة في العرس",
+          "bk-luminous-cana-flow-jars": "الخدم يملأون الأجران",
+          "bk-luminous-cana-flow-wine": "الخمر الجيدة",
+          "bk-luminous-cana-flow-sign": "تلاميذه يمضون معه",
+          "bk-luminous-cana-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-luminous-cana-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-luminous-cana-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-luminous-cana-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./luminous-baptism": "معمودية يسوع",
+          "./luminous-proclamation": "إعلان ملكوت الله",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/luminous-cana",
+        "painting_asset_id": "bk-luminous-cana-img-painting"
+      }
+    },
+    {
+      "slug": "luminous-proclamation",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "أبعد من باب واحد",
+        "h1": "أبعد من باب واحد",
+        "mystery_subtitle": "إعلان ملكوت الله، السرّ الثالث من أسرار النور",
+        "seo_title": "أبعد من باب واحد | إعلان ملكوت الله | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن إعلان ملكوت الله. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن إعلان ملكوت الله. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن إعلان ملكوت الله. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة إعلان ملكوت الله، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الثالث من أسرار النور",
+        "cover_alt": "لوحة عظة الجبل لبلوخ: يسوع يعلن ملكوت الله.",
+        "page_alt": {
+          "bk-luminous-proclamation-flow-kingdom": "لوحة عظة الجبل لبلوخ: يسوع يعلن ملكوت الله.",
+          "bk-luminous-proclamation-flow-call": "لوحة عظة الجبل لبلوخ: يسوع يعلن ملكوت الله.",
+          "bk-luminous-proclamation-flow-capernaum": "لوحة عظة الجبل لبلوخ: يسوع يعلن ملكوت الله.",
+          "bk-luminous-proclamation-flow-doorway": "لوحة عظة الجبل لبلوخ: يسوع يعلن ملكوت الله.",
+          "bk-luminous-proclamation-flow-towns": "لوحة عظة الجبل لبلوخ: يسوع يعلن ملكوت الله.",
+          "bk-luminous-proclamation-flow-reflection": "لوحة عظة الجبل لبلوخ: يسوع يعلن ملكوت الله.",
+          "bk-luminous-proclamation-flow-our-father": "لوحة عظة الجبل لبلوخ: يسوع يعلن ملكوت الله.",
+          "bk-luminous-proclamation-flow-hail-mary": "لوحة عظة الجبل لبلوخ: يسوع يعلن ملكوت الله.",
+          "bk-luminous-proclamation-flow-glory-be": "لوحة عظة الجبل لبلوخ: يسوع يعلن ملكوت الله."
+        },
+        "movement_titles": {
+          "bk-luminous-proclamation-flow-kingdom": "بشرى في الجليل",
+          "bk-luminous-proclamation-flow-call": "عند الماء",
+          "bk-luminous-proclamation-flow-capernaum": "في مجمع وبيت",
+          "bk-luminous-proclamation-flow-doorway": "الجمع والمكان الهادئ",
+          "bk-luminous-proclamation-flow-towns": "مدن أخرى تنتظر",
+          "bk-luminous-proclamation-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-luminous-proclamation-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-luminous-proclamation-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-luminous-proclamation-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./luminous-cana": "عرس قانا",
+          "./luminous-transfiguration": "تجلّي يسوع",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/luminous-proclamation",
+        "painting_asset_id": "bk-luminous-proclamation-img-painting"
+      }
+    },
+    {
+      "slug": "luminous-transfiguration",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "يسوع وحده",
+        "h1": "يسوع وحده",
+        "mystery_subtitle": "تجلّي يسوع، السرّ الرابع من أسرار النور",
+        "seo_title": "يسوع وحده | تجلّي يسوع | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن تجلّي يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن تجلّي يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن تجلّي يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة تجلّي يسوع، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الرابع من أسرار النور",
+        "cover_alt": "لوحة التجلّي لرافائيل: يسوع يسطع بالنور بين موسى وإيليا.",
+        "page_alt": {
+          "bk-luminous-transfiguration-flow-mountain": "لوحة التجلّي لرافائيل: يسوع يسطع بالنور بين موسى وإيليا.",
+          "bk-luminous-transfiguration-flow-prophets": "لوحة التجلّي لرافائيل: يسوع يسطع بالنور بين موسى وإيليا.",
+          "bk-luminous-transfiguration-flow-voice": "لوحة التجلّي لرافائيل: يسوع يسطع بالنور بين موسى وإيليا.",
+          "bk-luminous-transfiguration-flow-descent": "لوحة التجلّي لرافائيل: يسوع يسطع بالنور بين موسى وإيليا.",
+          "bk-luminous-transfiguration-flow-touch": "لوحة التجلّي لرافائيل: يسوع يسطع بالنور بين موسى وإيليا.",
+          "bk-luminous-transfiguration-flow-reflection": "لوحة التجلّي لرافائيل: يسوع يسطع بالنور بين موسى وإيليا.",
+          "bk-luminous-transfiguration-flow-our-father": "لوحة التجلّي لرافائيل: يسوع يسطع بالنور بين موسى وإيليا.",
+          "bk-luminous-transfiguration-flow-hail-mary": "لوحة التجلّي لرافائيل: يسوع يسطع بالنور بين موسى وإيليا.",
+          "bk-luminous-transfiguration-flow-glory-be": "لوحة التجلّي لرافائيل: يسوع يسطع بالنور بين موسى وإيليا."
+        },
+        "movement_titles": {
+          "bk-luminous-transfiguration-flow-mountain": "صعود الجبل",
+          "bk-luminous-transfiguration-flow-prophets": "موسى وإيليا",
+          "bk-luminous-transfiguration-flow-voice": "له اسمعوا",
+          "bk-luminous-transfiguration-flow-descent": "نزول الجبل",
+          "bk-luminous-transfiguration-flow-touch": "النور واللمسة",
+          "bk-luminous-transfiguration-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-luminous-transfiguration-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-luminous-transfiguration-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-luminous-transfiguration-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./luminous-proclamation": "إعلان ملكوت الله",
+          "./luminous-eucharist": "تأسيس سرّ الإفخارستيا",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/luminous-transfiguration",
+        "painting_asset_id": "bk-luminous-transfiguration-img-painting"
+      }
+    },
+    {
+      "slug": "luminous-eucharist",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "مُعطى على المائدة",
+        "h1": "مُعطى على المائدة",
+        "mystery_subtitle": "تأسيس سرّ الإفخارستيا، السرّ الخامس من أسرار النور",
+        "seo_title": "مُعطى على المائدة | تأسيس سرّ الإفخارستيا | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن تأسيس سرّ الإفخارستيا. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن تأسيس سرّ الإفخارستيا. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن تأسيس سرّ الإفخارستيا. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة تأسيس سرّ الإفخارستيا، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الخامس من أسرار النور",
+        "cover_alt": "لوحة العشاء الأخير لخوانيس: يسوع يقدّم الخبز والكأس لرسله.",
+        "page_alt": {
+          "bk-luminous-eucharist-flow-table": "لوحة العشاء الأخير لخوانيس: يسوع يقدّم الخبز والكأس لرسله.",
+          "bk-luminous-eucharist-flow-bread": "لوحة العشاء الأخير لخوانيس: يسوع يقدّم الخبز والكأس لرسله.",
+          "bk-luminous-eucharist-flow-chalice": "لوحة العشاء الأخير لخوانيس: يسوع يقدّم الخبز والكأس لرسله.",
+          "bk-luminous-eucharist-flow-night": "لوحة العشاء الأخير لخوانيس: يسوع يقدّم الخبز والكأس لرسله.",
+          "bk-luminous-eucharist-flow-reflection": "لوحة العشاء الأخير لخوانيس: يسوع يقدّم الخبز والكأس لرسله.",
+          "bk-luminous-eucharist-flow-our-father": "لوحة العشاء الأخير لخوانيس: يسوع يقدّم الخبز والكأس لرسله.",
+          "bk-luminous-eucharist-flow-hail-mary": "لوحة العشاء الأخير لخوانيس: يسوع يقدّم الخبز والكأس لرسله.",
+          "bk-luminous-eucharist-flow-glory-be": "لوحة العشاء الأخير لخوانيس: يسوع يقدّم الخبز والكأس لرسله."
+        },
+        "movement_titles": {
+          "bk-luminous-eucharist-flow-table": "معًا حول المائدة",
+          "bk-luminous-eucharist-flow-bread": "الخبز الذي يعطيه",
+          "bk-luminous-eucharist-flow-chalice": "الكأس التي يعطيها",
+          "bk-luminous-eucharist-flow-night": "الخروج إلى الليل",
+          "bk-luminous-eucharist-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-luminous-eucharist-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-luminous-eucharist-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-luminous-eucharist-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./luminous-transfiguration": "تجلّي يسوع",
+          "./sorrowful-agony-garden": "نزاع يسوع في بستان الزيتون",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/luminous-eucharist",
+        "painting_asset_id": "bk-luminous-eucharist-img-painting"
+      }
+    },
+    {
+      "slug": "sorrowful-agony-garden",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "امكث معي",
+        "h1": "امكث معي",
+        "mystery_subtitle": "نزاع يسوع في بستان الزيتون، السرّ الأول من أسرار الحزن",
+        "seo_title": "امكث معي | نزاع يسوع في بستان الزيتون | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن نزاع يسوع في بستان الزيتون. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن نزاع يسوع في بستان الزيتون. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن نزاع يسوع في بستان الزيتون. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة نزاع يسوع في بستان الزيتون، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الأول من أسرار الحزن",
+        "cover_alt": "لوحة النزاع في البستان لكارل بلوخ: ملاك يعزّي يسوع وهو يصلّي.",
+        "page_alt": {
+          "bk-sorrowful-agony-garden-flow-garden": "لوحة النزاع في البستان لكارل بلوخ: ملاك يعزّي يسوع وهو يصلّي.",
+          "bk-sorrowful-agony-garden-flow-prayer": "لوحة النزاع في البستان لكارل بلوخ: ملاك يعزّي يسوع وهو يصلّي.",
+          "bk-sorrowful-agony-garden-flow-again": "لوحة النزاع في البستان لكارل بلوخ: ملاك يعزّي يسوع وهو يصلّي.",
+          "bk-sorrowful-agony-garden-flow-arrest": "لوحة النزاع في البستان لكارل بلوخ: ملاك يعزّي يسوع وهو يصلّي.",
+          "bk-sorrowful-agony-garden-flow-trust": "لوحة النزاع في البستان لكارل بلوخ: ملاك يعزّي يسوع وهو يصلّي.",
+          "bk-sorrowful-agony-garden-flow-reflection": "لوحة النزاع في البستان لكارل بلوخ: ملاك يعزّي يسوع وهو يصلّي.",
+          "bk-sorrowful-agony-garden-flow-our-father": "لوحة النزاع في البستان لكارل بلوخ: ملاك يعزّي يسوع وهو يصلّي.",
+          "bk-sorrowful-agony-garden-flow-hail-mary": "لوحة النزاع في البستان لكارل بلوخ: ملاك يعزّي يسوع وهو يصلّي.",
+          "bk-sorrowful-agony-garden-flow-glory-be": "لوحة النزاع في البستان لكارل بلوخ: ملاك يعزّي يسوع وهو يصلّي."
+        },
+        "movement_titles": {
+          "bk-sorrowful-agony-garden-flow-garden": "ابقوا معي",
+          "bk-sorrowful-agony-garden-flow-prayer": "الصلاة والأصدقاء النائمون",
+          "bk-sorrowful-agony-garden-flow-again": "يصلّي من جديد",
+          "bk-sorrowful-agony-garden-flow-arrest": "حانت الساعة",
+          "bk-sorrowful-agony-garden-flow-trust": "حزن يرفعه إلى الآب",
+          "bk-sorrowful-agony-garden-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-sorrowful-agony-garden-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-sorrowful-agony-garden-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-sorrowful-agony-garden-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./luminous-eucharist": "تأسيس سرّ الإفخارستيا",
+          "./sorrowful-scourging": "جلد يسوع",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/sorrowful-agony-garden",
+        "painting_asset_id": "bk-sorrowful-agony-garden-img-painting"
+      }
+    },
+    {
+      "slug": "sorrowful-scourging",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "أمام الوالي",
+        "h1": "أمام الوالي",
+        "mystery_subtitle": "جلد يسوع، السرّ الثاني من أسرار الحزن",
+        "seo_title": "أمام الوالي | جلد يسوع | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن جلد يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن جلد يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن جلد يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة جلد يسوع، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الثاني من أسرار الحزن",
+        "cover_alt": "لوحة الجلد لبوغيرو: يسوع يُجلد عند العمود.",
+        "page_alt": {
+          "bk-sorrowful-scourging-flow-governor": "لوحة الجلد لبوغيرو: يسوع يُجلد عند العمود.",
+          "bk-sorrowful-scourging-flow-punishment": "لوحة الجلد لبوغيرو: يسوع يُجلد عند العمود.",
+          "bk-sorrowful-scourging-flow-power": "لوحة الجلد لبوغيرو: يسوع يُجلد عند العمود.",
+          "bk-sorrowful-scourging-flow-handed-over": "لوحة الجلد لبوغيرو: يسوع يُجلد عند العمود.",
+          "bk-sorrowful-scourging-flow-reflection": "لوحة الجلد لبوغيرو: يسوع يُجلد عند العمود.",
+          "bk-sorrowful-scourging-flow-our-father": "لوحة الجلد لبوغيرو: يسوع يُجلد عند العمود.",
+          "bk-sorrowful-scourging-flow-hail-mary": "لوحة الجلد لبوغيرو: يسوع يُجلد عند العمود.",
+          "bk-sorrowful-scourging-flow-glory-be": "لوحة الجلد لبوغيرو: يسوع يُجلد عند العمود."
+        },
+        "movement_titles": {
+          "bk-sorrowful-scourging-flow-governor": "أمام بيلاطس",
+          "bk-sorrowful-scourging-flow-punishment": "يسوع يتألّم",
+          "bk-sorrowful-scourging-flow-power": "سلطة الوالي",
+          "bk-sorrowful-scourging-flow-handed-over": "يسوع يُقاد بعيدًا",
+          "bk-sorrowful-scourging-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-sorrowful-scourging-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-sorrowful-scourging-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-sorrowful-scourging-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./sorrowful-agony-garden": "نزاع يسوع في بستان الزيتون",
+          "./sorrowful-crowning-thorns": "تتويج يسوع بإكليل الشوك",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/sorrowful-scourging",
+        "painting_asset_id": "bk-sorrowful-scourging-img-painting"
+      }
+    },
+    {
+      "slug": "sorrowful-crowning-thorns",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "ملك سخروا منه",
+        "h1": "ملك سخروا منه",
+        "mystery_subtitle": "تتويج يسوع بإكليل الشوك، السرّ الثالث من أسرار الحزن",
+        "seo_title": "ملك سخروا منه | تتويج يسوع بإكليل الشوك | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن تتويج يسوع بإكليل الشوك. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن تتويج يسوع بإكليل الشوك. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن تتويج يسوع بإكليل الشوك. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة تتويج يسوع بإكليل الشوك، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الثالث من أسرار الحزن",
+        "cover_alt": "لوحة التتويج بالشوك لتيتيان: جنود يضغطون إكليل الشوك على رأس يسوع.",
+        "page_alt": {
+          "bk-sorrowful-crowning-thorns-flow-kingdom": "لوحة التتويج بالشوك لتيتيان: جنود يضغطون إكليل الشوك على رأس يسوع.",
+          "bk-sorrowful-crowning-thorns-flow-crown": "لوحة التتويج بالشوك لتيتيان: جنود يضغطون إكليل الشوك على رأس يسوع.",
+          "bk-sorrowful-crowning-thorns-flow-mockery": "لوحة التتويج بالشوك لتيتيان: جنود يضغطون إكليل الشوك على رأس يسوع.",
+          "bk-sorrowful-crowning-thorns-flow-departure": "لوحة التتويج بالشوك لتيتيان: جنود يضغطون إكليل الشوك على رأس يسوع.",
+          "bk-sorrowful-crowning-thorns-flow-reflection": "لوحة التتويج بالشوك لتيتيان: جنود يضغطون إكليل الشوك على رأس يسوع.",
+          "bk-sorrowful-crowning-thorns-flow-our-father": "لوحة التتويج بالشوك لتيتيان: جنود يضغطون إكليل الشوك على رأس يسوع.",
+          "bk-sorrowful-crowning-thorns-flow-hail-mary": "لوحة التتويج بالشوك لتيتيان: جنود يضغطون إكليل الشوك على رأس يسوع.",
+          "bk-sorrowful-crowning-thorns-flow-glory-be": "لوحة التتويج بالشوك لتيتيان: جنود يضغطون إكليل الشوك على رأس يسوع."
+        },
+        "movement_titles": {
+          "bk-sorrowful-crowning-thorns-flow-kingdom": "بيلاطس يسأل عن ملك",
+          "bk-sorrowful-crowning-thorns-flow-crown": "الرداء والإكليل",
+          "bk-sorrowful-crowning-thorns-flow-mockery": "تحية قاسية",
+          "bk-sorrowful-crowning-thorns-flow-departure": "أمام الناس ثم إلى الخارج",
+          "bk-sorrowful-crowning-thorns-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-sorrowful-crowning-thorns-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-sorrowful-crowning-thorns-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-sorrowful-crowning-thorns-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./sorrowful-scourging": "جلد يسوع",
+          "./sorrowful-carrying-cross": "حمل يسوع الصليب",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/sorrowful-crowning-thorns",
+        "painting_asset_id": "bk-sorrowful-crowning-thorns-img-painting"
+      }
+    },
+    {
+      "slug": "sorrowful-carrying-cross",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "رجل يحمل الصليب خلف يسوع",
+        "h1": "رجل يحمل الصليب خلف يسوع",
+        "mystery_subtitle": "حمل يسوع الصليب، السرّ الرابع من أسرار الحزن",
+        "seo_title": "رجل يحمل الصليب خلف يسوع | حمل يسوع الصليب | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن حمل يسوع الصليب. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن حمل يسوع الصليب. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن حمل يسوع الصليب. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة حمل يسوع الصليب، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الرابع من أسرار الحزن",
+        "cover_alt": "لوحة المسيح حاملًا الصليب لإل غريكو: يسوع منحنٍ تحت ثقل الصليب.",
+        "page_alt": {
+          "bk-sorrowful-carrying-cross-flow-cross": "لوحة المسيح حاملًا الصليب لإل غريكو: يسوع منحنٍ تحت ثقل الصليب.",
+          "bk-sorrowful-carrying-cross-flow-simon": "لوحة المسيح حاملًا الصليب لإل غريكو: يسوع منحنٍ تحت ثقل الصليب.",
+          "bk-sorrowful-carrying-cross-flow-women": "لوحة المسيح حاملًا الصليب لإل غريكو: يسوع منحنٍ تحت ثقل الصليب.",
+          "bk-sorrowful-carrying-cross-flow-arrival": "لوحة المسيح حاملًا الصليب لإل غريكو: يسوع منحنٍ تحت ثقل الصليب.",
+          "bk-sorrowful-carrying-cross-flow-reflection": "لوحة المسيح حاملًا الصليب لإل غريكو: يسوع منحنٍ تحت ثقل الصليب.",
+          "bk-sorrowful-carrying-cross-flow-our-father": "لوحة المسيح حاملًا الصليب لإل غريكو: يسوع منحنٍ تحت ثقل الصليب.",
+          "bk-sorrowful-carrying-cross-flow-hail-mary": "لوحة المسيح حاملًا الصليب لإل غريكو: يسوع منحنٍ تحت ثقل الصليب.",
+          "bk-sorrowful-carrying-cross-flow-glory-be": "لوحة المسيح حاملًا الصليب لإل غريكو: يسوع منحنٍ تحت ثقل الصليب."
+        },
+        "movement_titles": {
+          "bk-sorrowful-carrying-cross-flow-cross": "الخروج نحو الجلجلة",
+          "bk-sorrowful-carrying-cross-flow-simon": "سمعان يحمل خلفه",
+          "bk-sorrowful-carrying-cross-flow-women": "يسوع يخاطب النساء",
+          "bk-sorrowful-carrying-cross-flow-arrival": "الطريق يبلغ الجلجلة",
+          "bk-sorrowful-carrying-cross-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-sorrowful-carrying-cross-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-sorrowful-carrying-cross-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-sorrowful-carrying-cross-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./sorrowful-crowning-thorns": "تتويج يسوع بإكليل الشوك",
+          "./sorrowful-crucifixion": "صلب يسوع وموته",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/sorrowful-carrying-cross",
+        "painting_asset_id": "bk-sorrowful-carrying-cross-img-painting"
+      }
+    },
+    {
+      "slug": "sorrowful-crucifixion",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "محبة بجانب الصليب",
+        "h1": "محبة بجانب الصليب",
+        "mystery_subtitle": "صلب يسوع وموته، السرّ الخامس من أسرار الحزن",
+        "seo_title": "محبة بجانب الصليب | صلب يسوع وموته | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن صلب يسوع وموته. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن صلب يسوع وموته. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن صلب يسوع وموته. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة صلب يسوع وموته، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الخامس من أسرار الحزن",
+        "cover_alt": "لوحة الصلب لفيلاسكيز: يسوع معلّق على الصليب.",
+        "page_alt": {
+          "bk-sorrowful-crucifixion-flow-near-cross": "لوحة الصلب لفيلاسكيز: يسوع معلّق على الصليب.",
+          "bk-sorrowful-crucifixion-flow-care": "لوحة الصلب لفيلاسكيز: يسوع معلّق على الصليب.",
+          "bk-sorrowful-crucifixion-flow-death": "لوحة الصلب لفيلاسكيز: يسوع معلّق على الصليب.",
+          "bk-sorrowful-crucifixion-flow-tomb": "لوحة الصلب لفيلاسكيز: يسوع معلّق على الصليب.",
+          "bk-sorrowful-crucifixion-flow-reflection": "لوحة الصلب لفيلاسكيز: يسوع معلّق على الصليب.",
+          "bk-sorrowful-crucifixion-flow-our-father": "لوحة الصلب لفيلاسكيز: يسوع معلّق على الصليب.",
+          "bk-sorrowful-crucifixion-flow-hail-mary": "لوحة الصلب لفيلاسكيز: يسوع معلّق على الصليب.",
+          "bk-sorrowful-crucifixion-flow-glory-be": "لوحة الصلب لفيلاسكيز: يسوع معلّق على الصليب."
+        },
+        "movement_titles": {
+          "bk-sorrowful-crucifixion-flow-near-cross": "بجانب الصليب",
+          "bk-sorrowful-crucifixion-flow-care": "الأم والتلميذ",
+          "bk-sorrowful-crucifixion-flow-death": "يسوع يموت",
+          "bk-sorrowful-crucifixion-flow-tomb": "القبر في البستان",
+          "bk-sorrowful-crucifixion-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-sorrowful-crucifixion-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-sorrowful-crucifixion-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-sorrowful-crucifixion-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./sorrowful-carrying-cross": "حمل يسوع الصليب",
+          "./glorious-resurrection": "قيامة يسوع",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/sorrowful-crucifixion",
+        "painting_asset_id": "bk-sorrowful-crucifixion-img-painting"
+      }
+    },
+    {
+      "slug": "glorious-resurrection",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "الطريق مبتعدًا عن القبر",
+        "h1": "الطريق مبتعدًا عن القبر",
+        "mystery_subtitle": "قيامة يسوع، السرّ الأول من أسرار المجد",
+        "seo_title": "الطريق مبتعدًا عن القبر | قيامة يسوع | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن قيامة يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن قيامة يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن قيامة يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة قيامة يسوع، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الأول من أسرار المجد",
+        "cover_alt": "لوحة القيامة لبلوخ: يسوع القائم من الموت يظهر مشرقًا فوق القبر الفارغ.",
+        "page_alt": {
+          "bk-glorious-resurrection-flow-tomb": "لوحة القيامة لبلوخ: يسوع القائم من الموت يظهر مشرقًا فوق القبر الفارغ.",
+          "bk-glorious-resurrection-flow-angel": "لوحة القيامة لبلوخ: يسوع القائم من الموت يظهر مشرقًا فوق القبر الفارغ.",
+          "bk-glorious-resurrection-flow-sent": "لوحة القيامة لبلوخ: يسوع القائم من الموت يظهر مشرقًا فوق القبر الفارغ.",
+          "bk-glorious-resurrection-flow-meeting": "لوحة القيامة لبلوخ: يسوع القائم من الموت يظهر مشرقًا فوق القبر الفارغ.",
+          "bk-glorious-resurrection-flow-life": "لوحة القيامة لبلوخ: يسوع القائم من الموت يظهر مشرقًا فوق القبر الفارغ.",
+          "bk-glorious-resurrection-flow-reflection": "لوحة القيامة لبلوخ: يسوع القائم من الموت يظهر مشرقًا فوق القبر الفارغ.",
+          "bk-glorious-resurrection-flow-our-father": "لوحة القيامة لبلوخ: يسوع القائم من الموت يظهر مشرقًا فوق القبر الفارغ.",
+          "bk-glorious-resurrection-flow-hail-mary": "لوحة القيامة لبلوخ: يسوع القائم من الموت يظهر مشرقًا فوق القبر الفارغ.",
+          "bk-glorious-resurrection-flow-glory-be": "لوحة القيامة لبلوخ: يسوع القائم من الموت يظهر مشرقًا فوق القبر الفارغ."
+        },
+        "movement_titles": {
+          "bk-glorious-resurrection-flow-tomb": "العودة إلى القبر",
+          "bk-glorious-resurrection-flow-angel": "رسالة الملاك",
+          "bk-glorious-resurrection-flow-sent": "خبر يحملنه",
+          "bk-glorious-resurrection-flow-meeting": "يسوع يلتقي بهنّ",
+          "bk-glorious-resurrection-flow-life": "الطريق من القبر",
+          "bk-glorious-resurrection-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-glorious-resurrection-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-glorious-resurrection-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-glorious-resurrection-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./sorrowful-crucifixion": "صلب يسوع وموته",
+          "./glorious-ascension": "صعود يسوع إلى السماء",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/glorious-resurrection",
+        "painting_asset_id": "bk-glorious-resurrection-img-painting"
+      }
+    },
+    {
+      "slug": "glorious-ascension",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "البركة التي حملوها إلى البيت",
+        "h1": "البركة التي حملوها إلى البيت",
+        "mystery_subtitle": "صعود يسوع إلى السماء، السرّ الثاني من أسرار المجد",
+        "seo_title": "البركة التي حملوها إلى البيت | صعود يسوع إلى السماء | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن صعود يسوع إلى السماء. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن صعود يسوع إلى السماء. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن صعود يسوع إلى السماء. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة صعود يسوع إلى السماء، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الثاني من أسرار المجد",
+        "cover_alt": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون.",
+        "page_alt": {
+          "bk-glorious-ascension-flow-meal": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون.",
+          "bk-glorious-ascension-flow-promise": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون.",
+          "bk-glorious-ascension-flow-blessing": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون.",
+          "bk-glorious-ascension-flow-cloud": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون.",
+          "bk-glorious-ascension-flow-return-promise": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون.",
+          "bk-glorious-ascension-flow-joy": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون.",
+          "bk-glorious-ascension-flow-community": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون.",
+          "bk-glorious-ascension-flow-reflection": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون.",
+          "bk-glorious-ascension-flow-our-father": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون.",
+          "bk-glorious-ascension-flow-hail-mary": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون.",
+          "bk-glorious-ascension-flow-glory-be": "لوحة الصعود لرمبرانت: يسوع يرتفع إلى السماء والرسل يشاهدون."
+        },
+        "movement_titles": {
+          "bk-glorious-ascension-flow-meal": "وجبة مع صديقهم",
+          "bk-glorious-ascension-flow-promise": "وعد ومهمة",
+          "bk-glorious-ascension-flow-blessing": "اليدان اللتان باركتاهم",
+          "bk-glorious-ascension-flow-cloud": "بعيدًا عن أنظارهم",
+          "bk-glorious-ascension-flow-return-promise": "سيأتي من جديد",
+          "bk-glorious-ascension-flow-joy": "فرح في طريق العودة",
+          "bk-glorious-ascension-flow-community": "لا ينتظرون وحدهم",
+          "bk-glorious-ascension-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-glorious-ascension-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-glorious-ascension-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-glorious-ascension-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./glorious-resurrection": "قيامة يسوع",
+          "./glorious-pentecost": "حلول الروح القدس",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/glorious-ascension",
+        "painting_asset_id": "bk-glorious-ascension-img-painting"
+      }
+    },
+    {
+      "slug": "glorious-pentecost",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "مفهومًا بلغاتهم",
+        "h1": "مفهومًا بلغاتهم",
+        "mystery_subtitle": "حلول الروح القدس، السرّ الثالث من أسرار المجد",
+        "seo_title": "مفهومًا بلغاتهم | حلول الروح القدس | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن حلول الروح القدس. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن حلول الروح القدس. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن حلول الروح القدس. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة حلول الروح القدس، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الثالث من أسرار المجد",
+        "cover_alt": "لوحة العنصرة لإل غريكو: الروح القدس ينزل كالنار على مريم والرسل.",
+        "page_alt": {
+          "bk-glorious-pentecost-flow-promise": "لوحة العنصرة لإل غريكو: الروح القدس ينزل كالنار على مريم والرسل.",
+          "bk-glorious-pentecost-flow-languages": "لوحة العنصرة لإل غريكو: الروح القدس ينزل كالنار على مريم والرسل.",
+          "bk-glorious-pentecost-flow-crowd": "لوحة العنصرة لإل غريكو: الروح القدس ينزل كالنار على مريم والرسل.",
+          "bk-glorious-pentecost-flow-peter": "لوحة العنصرة لإل غريكو: الروح القدس ينزل كالنار على مريم والرسل.",
+          "bk-glorious-pentecost-flow-community": "لوحة العنصرة لإل غريكو: الروح القدس ينزل كالنار على مريم والرسل.",
+          "bk-glorious-pentecost-flow-reflection": "لوحة العنصرة لإل غريكو: الروح القدس ينزل كالنار على مريم والرسل.",
+          "bk-glorious-pentecost-flow-our-father": "لوحة العنصرة لإل غريكو: الروح القدس ينزل كالنار على مريم والرسل.",
+          "bk-glorious-pentecost-flow-hail-mary": "لوحة العنصرة لإل غريكو: الروح القدس ينزل كالنار على مريم والرسل.",
+          "bk-glorious-pentecost-flow-glory-be": "لوحة العنصرة لإل غريكو: الروح القدس ينزل كالنار على مريم والرسل."
+        },
+        "movement_titles": {
+          "bk-glorious-pentecost-flow-promise": "انتظار الوعد",
+          "bk-glorious-pentecost-flow-languages": "كلّ يسمع بلغته",
+          "bk-glorious-pentecost-flow-crowd": "جمع لديه أسئلة",
+          "bk-glorious-pentecost-flow-peter": "بطرس يتحدّث عن يسوع",
+          "bk-glorious-pentecost-flow-community": "جماعة تنمو",
+          "bk-glorious-pentecost-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-glorious-pentecost-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-glorious-pentecost-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-glorious-pentecost-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./glorious-ascension": "صعود يسوع إلى السماء",
+          "./glorious-assumption": "انتقال مريم إلى السماء",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/glorious-pentecost",
+        "painting_asset_id": "bk-glorious-pentecost-img-painting"
+      }
+    },
+    {
+      "slug": "glorious-assumption",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "رجاؤها كان في ابنها",
+        "h1": "رجاؤها كان في ابنها",
+        "mystery_subtitle": "انتقال مريم إلى السماء، السرّ الرابع من أسرار المجد",
+        "seo_title": "رجاؤها كان في ابنها | انتقال مريم إلى السماء | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن انتقال مريم إلى السماء. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن انتقال مريم إلى السماء. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن انتقال مريم إلى السماء. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة انتقال مريم إلى السماء، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الرابع من أسرار المجد",
+        "cover_alt": "لوحة الانتقال لتيتيان: مريم تُرفع إلى مجد السماء.",
+        "page_alt": {
+          "bk-glorious-assumption-flow-promise": "لوحة الانتقال لتيتيان: مريم تُرفع إلى مجد السماء.",
+          "bk-glorious-assumption-flow-community": "لوحة الانتقال لتيتيان: مريم تُرفع إلى مجد السماء.",
+          "bk-glorious-assumption-flow-glory": "لوحة الانتقال لتيتيان: مريم تُرفع إلى مجد السماء.",
+          "bk-glorious-assumption-flow-hope": "لوحة الانتقال لتيتيان: مريم تُرفع إلى مجد السماء.",
+          "bk-glorious-assumption-flow-reflection": "لوحة الانتقال لتيتيان: مريم تُرفع إلى مجد السماء.",
+          "bk-glorious-assumption-flow-our-father": "لوحة الانتقال لتيتيان: مريم تُرفع إلى مجد السماء.",
+          "bk-glorious-assumption-flow-hail-mary": "لوحة الانتقال لتيتيان: مريم تُرفع إلى مجد السماء.",
+          "bk-glorious-assumption-flow-glory-be": "لوحة الانتقال لتيتيان: مريم تُرفع إلى مجد السماء."
+        },
+        "movement_titles": {
+          "bk-glorious-assumption-flow-promise": "أم يسوع",
+          "bk-glorious-assumption-flow-community": "عند الصليب ثم في الصلاة",
+          "bk-glorious-assumption-flow-glory": "مرفوعة بالجسد والنفس",
+          "bk-glorious-assumption-flow-hope": "رجاؤها في ابنها",
+          "bk-glorious-assumption-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-glorious-assumption-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-glorious-assumption-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-glorious-assumption-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./glorious-pentecost": "حلول الروح القدس",
+          "./glorious-coronation": "تتويج مريم ملكةً للسماء والأرض",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث.",
+          "doctrine": "في سرَّي الانتقال والتتويج، يستند التأمّل إلى الكتاب المقدّس وتعليم الكنيسة، ولا يقدّم وصفًا لشاهد عيان عن السماء."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/glorious-assumption",
+        "painting_asset_id": "bk-glorious-assumption-img-painting"
+      }
+    },
+    {
+      "slug": "glorious-coronation",
+      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "fields": {
+        "reader_title": "الأم التي تدل على يسوع",
+        "h1": "الأم التي تدل على يسوع",
+        "mystery_subtitle": "تتويج مريم ملكةً للسماء والأرض، السرّ الخامس من أسرار المجد",
+        "seo_title": "الأم التي تدل على يسوع | تتويج مريم ملكةً للسماء والأرض | كتاب للمسبحة الوردية",
+        "seo_description": "قراءة قصصية للعائلة عن تتويج مريم ملكةً للسماء والأرض. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "قراءة قصصية للعائلة عن تتويج مريم ملكةً للسماء والأرض. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "قراءة قصصية للعائلة عن تتويج مريم ملكةً للسماء والأرض. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نقرأ قصة تتويج مريم ملكةً للسماء والأرض، ثم نتأمّل ونصلّي معًا.",
+        "kicker": "أسرار المسبحة الوردية",
+        "link_label": "صلّوا السرّ الخامس من أسرار المجد",
+        "cover_alt": "لوحة التتويج لفيلاسكيز: الثالوث يكلّل مريم ملكةً للسماء.",
+        "page_alt": {
+          "bk-glorious-coronation-flow-cana": "لوحة التتويج لفيلاسكيز: الثالوث يكلّل مريم ملكةً للسماء.",
+          "bk-glorious-coronation-flow-servant": "لوحة التتويج لفيلاسكيز: الثالوث يكلّل مريم ملكةً للسماء.",
+          "bk-glorious-coronation-flow-queen": "لوحة التتويج لفيلاسكيز: الثالوث يكلّل مريم ملكةً للسماء.",
+          "bk-glorious-coronation-flow-jesus": "لوحة التتويج لفيلاسكيز: الثالوث يكلّل مريم ملكةً للسماء.",
+          "bk-glorious-coronation-flow-reflection": "لوحة التتويج لفيلاسكيز: الثالوث يكلّل مريم ملكةً للسماء.",
+          "bk-glorious-coronation-flow-our-father": "لوحة التتويج لفيلاسكيز: الثالوث يكلّل مريم ملكةً للسماء.",
+          "bk-glorious-coronation-flow-hail-mary": "لوحة التتويج لفيلاسكيز: الثالوث يكلّل مريم ملكةً للسماء.",
+          "bk-glorious-coronation-flow-glory-be": "لوحة التتويج لفيلاسكيز: الثالوث يكلّل مريم ملكةً للسماء."
+        },
+        "movement_titles": {
+          "bk-glorious-coronation-flow-cana": "مريم في قانا",
+          "bk-glorious-coronation-flow-servant": "أمة الرب",
+          "bk-glorious-coronation-flow-queen": "مكرّمة مع ابنها",
+          "bk-glorious-coronation-flow-jesus": "الأم التي تدلّنا على يسوع",
+          "bk-glorious-coronation-flow-reflection": "نقرأ ونصلّي معًا",
+          "bk-glorious-coronation-flow-our-father": "الأبانا (الصلاة الربانية)",
+          "bk-glorious-coronation-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
+          "bk-glorious-coronation-flow-glory-be": "المجد للآب"
+        },
+        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "related_labels": {
+          "./glorious-assumption": "انتقال مريم إلى السماء",
+          "./stories": "جميع كتب القصص"
+        },
+        "evidence_claims": {
+          "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
+          "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
+          "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
+          "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث.",
+          "doctrine": "في سرَّي الانتقال والتتويج، يستند التأمّل إلى الكتاب المقدّس وتعليم الكنيسة، ولا يقدّم وصفًا لشاهد عيان عن السماء."
+        }
+      },
+      "retained_machine_fields": {
+        "canonical_route": "/glorious-coronation",
+        "painting_asset_id": "bk-glorious-coronation-img-painting"
+      }
+    }
+  ],
+  "rights_note": "Arabic Scripture edition identification and reuse terms remain UNVERIFIED. No Jesuit1876-81 public-domain claim is adopted. Art source and use rights require checks before release."
+}

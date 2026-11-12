@@ -1,0 +1,1131 @@
+{
+  "master_sha256": "2ad25dd88b617e6fa374d36d56784caac44b5d73b6ac39617fa9eab9f7737421",
+  "locales": [
+    "de",
+    "es",
+    "fr",
+    "it",
+    "pl",
+    "pt"
+  ],
+  "instructions": [
+    "Translate all named user-visible fields, including summaries/SEO/alt and movement titles. Preserve machine IDs/routes/source URLs.",
+    "Existing global nav/reader controls remain from shared catalogs. Supply changes only if needed, never introduce EN fallback.",
+    "Metadata and newly authored movement titles are not covered by v3 narrative pass. Independent copy/locale review required.",
+    "Do not claim included Fatima prayer, recorded narration, new illustrations or complete direct Gospel page.",
+    "Evidence labels must distinguish retelling, direct quote, doctrine, prayers, art. A source ID is not translated. Exact locale Scripture/prayer proof must come from the translation evidence, not a blanket claim.",
+    "Do not assert browser read-aloud works without tested support. Do not assert public-domain painting or Bible edition status without verified rights. The only current production note says studio narration is not yet available.",
+    "Painting evidence wording must remain pending source/use-rights review. No claim of rights clearance is inherited from an existing catalog."
+  ],
+  "common_english": {
+    "adult_notes_heading": "Grown-up notes and sources",
+    "sources_heading": "Sources",
+    "retelling_disclosure": "An authored retelling based on the cited passages, not a new Bible translation. Direct quotations are identified by source.",
+    "painting_disclosure": "The same retained painting appears throughout this text-only edition. It is an artistic depiction, not visual eyewitness evidence.",
+    "reading_faq_question": "How do we read and pray with children?",
+    "reading_faq_answer": "Read the story together, then pause for reflection. Pray Our Father once, Hail Mary ten times and Glory Be once."
+  },
+  "books": [
+    {
+      "slug": "joyful-annunciation",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "A yes in Nazareth",
+        "h1": "A yes in Nazareth",
+        "mystery_subtitle": "The Annunciation: First Joyful Mystery",
+        "seo_title": "A yes in Nazareth | The Annunciation: First Joyful Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Annunciation: First Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Annunciation: First Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Annunciation: First Joyful Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the First Joyful Mystery",
+        "short_answer": "A flowing family read-aloud on The Annunciation: First Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/joyful-annunciation",
+        "related": [
+          {
+            "href": "./joyful-visitation",
+            "label": "The Visitation"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Murillo's painting of the Annunciation: the angel Gabriel kneels before Mary, who looks up from her prayer.",
+      "page_title_sources": {
+        "bk-joyful-annunciation-flow-greeting": "A visitor in Nazareth",
+        "bk-joyful-annunciation-flow-promise": "The promise and the question",
+        "bk-joyful-annunciation-flow-elizabeth": "News of Elizabeth",
+        "bk-joyful-annunciation-flow-yes": "Mary answers",
+        "bk-joyful-annunciation-flow-reflection": "Read and pray together",
+        "bk-joyful-annunciation-flow-our-father": "Our Father",
+        "bk-joyful-annunciation-flow-hail-mary": "Hail Mary",
+        "bk-joyful-annunciation-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "joyful-visitation",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "A greeting at the door",
+        "h1": "A greeting at the door",
+        "mystery_subtitle": "The Visitation: Second Joyful Mystery",
+        "seo_title": "A greeting at the door | The Visitation: Second Joyful Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Visitation: Second Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Visitation: Second Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Visitation: Second Joyful Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Second Joyful Mystery",
+        "short_answer": "A flowing family read-aloud on The Visitation: Second Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/joyful-visitation",
+        "related": [
+          {
+            "href": "./joyful-annunciation",
+            "label": "The Annunciation"
+          },
+          {
+            "href": "./joyful-nativity",
+            "label": "The Nativity"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Ghirlandaio's painting of the Visitation: Mary and Elizabeth embrace with joy.",
+      "page_title_sources": {
+        "bk-joyful-visitation-flow-journey": "Into the hill country",
+        "bk-joyful-visitation-flow-welcome": "Elizabeth welcomes Mary",
+        "bk-joyful-visitation-flow-praise": "Mary praises God",
+        "bk-joyful-visitation-flow-home": "The journey home",
+        "bk-joyful-visitation-flow-reflection": "Read and pray together",
+        "bk-joyful-visitation-flow-our-father": "Our Father",
+        "bk-joyful-visitation-flow-hail-mary": "Hail Mary",
+        "bk-joyful-visitation-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "joyful-nativity",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "The child in the manger",
+        "h1": "The child in the manger",
+        "mystery_subtitle": "The Nativity: Third Joyful Mystery",
+        "seo_title": "The child in the manger | The Nativity: Third Joyful Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Nativity: Third Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Nativity: Third Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Nativity: Third Joyful Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Third Joyful Mystery",
+        "short_answer": "A flowing family read-aloud on The Nativity: Third Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/joyful-nativity",
+        "related": [
+          {
+            "href": "./joyful-visitation",
+            "label": "The Visitation"
+          },
+          {
+            "href": "./joyful-presentation",
+            "label": "The Presentation in the Temple"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Van Honthorst's painting of the Nativity: the newborn Jesus shines in the manger as Mary adores him.",
+      "page_title_sources": {
+        "bk-joyful-nativity-flow-bethlehem": "The child in Bethlehem",
+        "bk-joyful-nativity-flow-shepherds": "News for the shepherds",
+        "bk-joyful-nativity-flow-manger": "They find the child",
+        "bk-joyful-nativity-flow-return": "News carried home",
+        "bk-joyful-nativity-flow-reflection": "Read and pray together",
+        "bk-joyful-nativity-flow-our-father": "Our Father",
+        "bk-joyful-nativity-flow-hail-mary": "Hail Mary",
+        "bk-joyful-nativity-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "joyful-presentation",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "Held in Simeon's arms",
+        "h1": "Held in Simeon's arms",
+        "mystery_subtitle": "The Presentation in the Temple: Fourth Joyful Mystery",
+        "seo_title": "Held in Simeon's arms | The Presentation in the Temple: Fourth Joyful Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Presentation in the Temple: Fourth Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Presentation in the Temple: Fourth Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Presentation in the Temple: Fourth Joyful Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Fourth Joyful Mystery",
+        "short_answer": "A flowing family read-aloud on The Presentation in the Temple: Fourth Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/joyful-presentation",
+        "related": [
+          {
+            "href": "./joyful-nativity",
+            "label": "The Nativity"
+          },
+          {
+            "href": "./joyful-finding-temple",
+            "label": "The Finding of Jesus in the Temple"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Mantegna's painting of the Presentation: Mary holds the child Jesus over the Temple altar.",
+      "page_title_sources": {
+        "bk-joyful-presentation-flow-waiting": "A visit and a promise",
+        "bk-joyful-presentation-flow-simeon": "Held in Simeon's arms",
+        "bk-joyful-presentation-flow-sorrow": "Words of joy and sorrow",
+        "bk-joyful-presentation-flow-anna": "Anna gives thanks",
+        "bk-joyful-presentation-flow-reflection": "Read and pray together",
+        "bk-joyful-presentation-flow-our-father": "Our Father",
+        "bk-joyful-presentation-flow-hail-mary": "Hail Mary",
+        "bk-joyful-presentation-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "joyful-finding-temple",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "The journey back",
+        "h1": "The journey back",
+        "mystery_subtitle": "The Finding of Jesus in the Temple: Fifth Joyful Mystery",
+        "seo_title": "The journey back | The Finding of Jesus in the Temple: Fifth Joyful Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Finding of Jesus in the Temple: Fifth Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Finding of Jesus in the Temple: Fifth Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Finding of Jesus in the Temple: Fifth Joyful Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Fifth Joyful Mystery",
+        "short_answer": "A flowing family read-aloud on The Finding of Jesus in the Temple: Fifth Joyful Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/joyful-finding-temple",
+        "related": [
+          {
+            "href": "./joyful-presentation",
+            "label": "The Presentation in the Temple"
+          },
+          {
+            "href": "./luminous-baptism",
+            "label": "The Baptism of the Lord"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Dürer's painting of Jesus among the doctors: the twelve-year-old Jesus teaches in the Temple.",
+      "page_title_sources": {
+        "bk-joyful-finding-temple-flow-departure": "The journey home begins",
+        "bk-joyful-finding-temple-flow-search": "Back to Jerusalem",
+        "bk-joyful-finding-temple-flow-question": "A question in the Temple",
+        "bk-joyful-finding-temple-flow-home": "Together again",
+        "bk-joyful-finding-temple-flow-reflection": "Read and pray together",
+        "bk-joyful-finding-temple-flow-our-father": "Our Father",
+        "bk-joyful-finding-temple-flow-hail-mary": "Hail Mary",
+        "bk-joyful-finding-temple-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "luminous-baptism",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "At the river",
+        "h1": "At the river",
+        "mystery_subtitle": "The Baptism of the Lord: First Luminous Mystery",
+        "seo_title": "At the river | The Baptism of the Lord: First Luminous Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Baptism of the Lord: First Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Baptism of the Lord: First Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Baptism of the Lord: First Luminous Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the First Luminous Mystery",
+        "short_answer": "A flowing family read-aloud on The Baptism of the Lord: First Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/luminous-baptism",
+        "related": [
+          {
+            "href": "./joyful-finding-temple",
+            "label": "The Finding of Jesus in the Temple"
+          },
+          {
+            "href": "./luminous-cana",
+            "label": "The Wedding at Cana"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Piero della Francesca's painting of the Baptism: John pours water over Jesus as the dove descends.",
+      "page_title_sources": {
+        "bk-luminous-baptism-flow-john": "Jesus comes to John",
+        "bk-luminous-baptism-flow-water": "Into the water",
+        "bk-luminous-baptism-flow-voice": "The voice from heaven",
+        "bk-luminous-baptism-flow-beginning": "The beloved Son",
+        "bk-luminous-baptism-flow-reflection": "Read and pray together",
+        "bk-luminous-baptism-flow-our-father": "Our Father",
+        "bk-luminous-baptism-flow-hail-mary": "Hail Mary",
+        "bk-luminous-baptism-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "luminous-cana",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "Filled to the brim",
+        "h1": "Filled to the brim",
+        "mystery_subtitle": "The Wedding at Cana: Second Luminous Mystery",
+        "seo_title": "Filled to the brim | The Wedding at Cana: Second Luminous Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Wedding at Cana: Second Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Wedding at Cana: Second Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Wedding at Cana: Second Luminous Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Second Luminous Mystery",
+        "short_answer": "A flowing family read-aloud on The Wedding at Cana: Second Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/luminous-cana",
+        "related": [
+          {
+            "href": "./luminous-baptism",
+            "label": "The Baptism of the Lord"
+          },
+          {
+            "href": "./luminous-proclamation",
+            "label": "The Proclamation of the Kingdom"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Veronese's painting of the Wedding at Cana: Jesus and Mary at the wedding feast.",
+      "page_title_sources": {
+        "bk-luminous-cana-flow-need": "A need at the wedding",
+        "bk-luminous-cana-flow-jars": "The servants fill the jars",
+        "bk-luminous-cana-flow-wine": "The good wine",
+        "bk-luminous-cana-flow-sign": "His disciples go with him",
+        "bk-luminous-cana-flow-reflection": "Read and pray together",
+        "bk-luminous-cana-flow-our-father": "Our Father",
+        "bk-luminous-cana-flow-hail-mary": "Hail Mary",
+        "bk-luminous-cana-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "luminous-proclamation",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "Beyond one doorway",
+        "h1": "Beyond one doorway",
+        "mystery_subtitle": "The Proclamation of the Kingdom: Third Luminous Mystery",
+        "seo_title": "Beyond one doorway | The Proclamation of the Kingdom: Third Luminous Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Proclamation of the Kingdom: Third Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Proclamation of the Kingdom: Third Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Proclamation of the Kingdom: Third Luminous Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Third Luminous Mystery",
+        "short_answer": "A flowing family read-aloud on The Proclamation of the Kingdom: Third Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/luminous-proclamation",
+        "related": [
+          {
+            "href": "./luminous-cana",
+            "label": "The Wedding at Cana"
+          },
+          {
+            "href": "./luminous-transfiguration",
+            "label": "The Transfiguration"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Bloch's painting of the Sermon on the Mount: Jesus preaches the kingdom of God.",
+      "page_title_sources": {
+        "bk-luminous-proclamation-flow-kingdom": "Good news in Galilee",
+        "bk-luminous-proclamation-flow-call": "Beside the water",
+        "bk-luminous-proclamation-flow-capernaum": "In a synagogue and a home",
+        "bk-luminous-proclamation-flow-doorway": "The crowd and the quiet place",
+        "bk-luminous-proclamation-flow-towns": "Other towns are waiting",
+        "bk-luminous-proclamation-flow-reflection": "Read and pray together",
+        "bk-luminous-proclamation-flow-our-father": "Our Father",
+        "bk-luminous-proclamation-flow-hail-mary": "Hail Mary",
+        "bk-luminous-proclamation-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "luminous-transfiguration",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "Only Jesus",
+        "h1": "Only Jesus",
+        "mystery_subtitle": "The Transfiguration: Fourth Luminous Mystery",
+        "seo_title": "Only Jesus | The Transfiguration: Fourth Luminous Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Transfiguration: Fourth Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Transfiguration: Fourth Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Transfiguration: Fourth Luminous Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Fourth Luminous Mystery",
+        "short_answer": "A flowing family read-aloud on The Transfiguration: Fourth Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/luminous-transfiguration",
+        "related": [
+          {
+            "href": "./luminous-proclamation",
+            "label": "The Proclamation of the Kingdom"
+          },
+          {
+            "href": "./luminous-eucharist",
+            "label": "The Institution of the Eucharist"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Raphael's painting of the Transfiguration: Jesus shines with light between Moses and Elijah.",
+      "page_title_sources": {
+        "bk-luminous-transfiguration-flow-mountain": "Up the mountain",
+        "bk-luminous-transfiguration-flow-prophets": "Moses and Elijah",
+        "bk-luminous-transfiguration-flow-voice": "Hear his Son",
+        "bk-luminous-transfiguration-flow-descent": "Down the mountain",
+        "bk-luminous-transfiguration-flow-touch": "The brightness and the touch",
+        "bk-luminous-transfiguration-flow-reflection": "Read and pray together",
+        "bk-luminous-transfiguration-flow-our-father": "Our Father",
+        "bk-luminous-transfiguration-flow-hail-mary": "Hail Mary",
+        "bk-luminous-transfiguration-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "luminous-eucharist",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "Given at the table",
+        "h1": "Given at the table",
+        "mystery_subtitle": "The Institution of the Eucharist: Fifth Luminous Mystery",
+        "seo_title": "Given at the table | The Institution of the Eucharist: Fifth Luminous Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Institution of the Eucharist: Fifth Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Institution of the Eucharist: Fifth Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Institution of the Eucharist: Fifth Luminous Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Fifth Luminous Mystery",
+        "short_answer": "A flowing family read-aloud on The Institution of the Eucharist: Fifth Luminous Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/luminous-eucharist",
+        "related": [
+          {
+            "href": "./luminous-transfiguration",
+            "label": "The Transfiguration"
+          },
+          {
+            "href": "./sorrowful-agony-garden",
+            "label": "The Agony in the Garden"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Juanes's painting of the Last Supper: Jesus gives the bread and chalice to his apostles.",
+      "page_title_sources": {
+        "bk-luminous-eucharist-flow-table": "Together at the table",
+        "bk-luminous-eucharist-flow-bread": "The bread he gives",
+        "bk-luminous-eucharist-flow-chalice": "The chalice he gives",
+        "bk-luminous-eucharist-flow-night": "Into the night",
+        "bk-luminous-eucharist-flow-reflection": "Read and pray together",
+        "bk-luminous-eucharist-flow-our-father": "Our Father",
+        "bk-luminous-eucharist-flow-hail-mary": "Hail Mary",
+        "bk-luminous-eucharist-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "sorrowful-agony-garden",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "Stay with me",
+        "h1": "Stay with me",
+        "mystery_subtitle": "The Agony in the Garden: First Sorrowful Mystery",
+        "seo_title": "Stay with me | The Agony in the Garden: First Sorrowful Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Agony in the Garden: First Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Agony in the Garden: First Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Agony in the Garden: First Sorrowful Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the First Sorrowful Mystery",
+        "short_answer": "A flowing family read-aloud on The Agony in the Garden: First Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/sorrowful-agony-garden",
+        "related": [
+          {
+            "href": "./luminous-eucharist",
+            "label": "The Institution of the Eucharist"
+          },
+          {
+            "href": "./sorrowful-scourging",
+            "label": "The Scourging at the Pillar"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Carl Bloch's painting of the Agony in the Garden: an angel comforts Jesus as he prays.",
+      "page_title_sources": {
+        "bk-sorrowful-agony-garden-flow-garden": "Stay with me",
+        "bk-sorrowful-agony-garden-flow-prayer": "Prayer and sleeping friends",
+        "bk-sorrowful-agony-garden-flow-again": "Again he prays",
+        "bk-sorrowful-agony-garden-flow-arrest": "The hour has come",
+        "bk-sorrowful-agony-garden-flow-trust": "Sorrow brought to the Father",
+        "bk-sorrowful-agony-garden-flow-reflection": "Read and pray together",
+        "bk-sorrowful-agony-garden-flow-our-father": "Our Father",
+        "bk-sorrowful-agony-garden-flow-hail-mary": "Hail Mary",
+        "bk-sorrowful-agony-garden-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "sorrowful-scourging",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "Before the governor",
+        "h1": "Before the governor",
+        "mystery_subtitle": "The Scourging at the Pillar: Second Sorrowful Mystery",
+        "seo_title": "Before the governor | The Scourging at the Pillar: Second Sorrowful Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Scourging at the Pillar: Second Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Scourging at the Pillar: Second Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Scourging at the Pillar: Second Sorrowful Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Second Sorrowful Mystery",
+        "short_answer": "A flowing family read-aloud on The Scourging at the Pillar: Second Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/sorrowful-scourging",
+        "related": [
+          {
+            "href": "./sorrowful-agony-garden",
+            "label": "The Agony in the Garden"
+          },
+          {
+            "href": "./sorrowful-crowning-thorns",
+            "label": "The Crowning with Thorns"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Bouguereau's painting of the Flagellation: Jesus is scourged at the pillar.",
+      "page_title_sources": {
+        "bk-sorrowful-scourging-flow-governor": "Before Pilate",
+        "bk-sorrowful-scourging-flow-punishment": "Jesus is hurt",
+        "bk-sorrowful-scourging-flow-power": "The governor's power",
+        "bk-sorrowful-scourging-flow-handed-over": "Jesus is led away",
+        "bk-sorrowful-scourging-flow-reflection": "Read and pray together",
+        "bk-sorrowful-scourging-flow-our-father": "Our Father",
+        "bk-sorrowful-scourging-flow-hail-mary": "Hail Mary",
+        "bk-sorrowful-scourging-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "sorrowful-crowning-thorns",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "A king they mocked",
+        "h1": "A king they mocked",
+        "mystery_subtitle": "The Crowning with Thorns: Third Sorrowful Mystery",
+        "seo_title": "A king they mocked | The Crowning with Thorns: Third Sorrowful Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Crowning with Thorns: Third Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Crowning with Thorns: Third Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Crowning with Thorns: Third Sorrowful Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Third Sorrowful Mystery",
+        "short_answer": "A flowing family read-aloud on The Crowning with Thorns: Third Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/sorrowful-crowning-thorns",
+        "related": [
+          {
+            "href": "./sorrowful-scourging",
+            "label": "The Scourging at the Pillar"
+          },
+          {
+            "href": "./sorrowful-carrying-cross",
+            "label": "The Carrying of the Cross"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Titian's painting of the Crowning with Thorns: soldiers press a crown of thorns onto Jesus' head.",
+      "page_title_sources": {
+        "bk-sorrowful-crowning-thorns-flow-kingdom": "Pilate asks about a king",
+        "bk-sorrowful-crowning-thorns-flow-crown": "The cloak and the crown",
+        "bk-sorrowful-crowning-thorns-flow-mockery": "A cruel greeting",
+        "bk-sorrowful-crowning-thorns-flow-departure": "Before the people, then led away",
+        "bk-sorrowful-crowning-thorns-flow-reflection": "Read and pray together",
+        "bk-sorrowful-crowning-thorns-flow-our-father": "Our Father",
+        "bk-sorrowful-crowning-thorns-flow-hail-mary": "Hail Mary",
+        "bk-sorrowful-crowning-thorns-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "sorrowful-carrying-cross",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "Someone carried after him",
+        "h1": "Someone carried after him",
+        "mystery_subtitle": "The Carrying of the Cross: Fourth Sorrowful Mystery",
+        "seo_title": "Someone carried after him | The Carrying of the Cross: Fourth Sorrowful Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Carrying of the Cross: Fourth Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Carrying of the Cross: Fourth Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Carrying of the Cross: Fourth Sorrowful Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Fourth Sorrowful Mystery",
+        "short_answer": "A flowing family read-aloud on The Carrying of the Cross: Fourth Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/sorrowful-carrying-cross",
+        "related": [
+          {
+            "href": "./sorrowful-crowning-thorns",
+            "label": "The Crowning with Thorns"
+          },
+          {
+            "href": "./sorrowful-crucifixion",
+            "label": "The Crucifixion"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "El Greco's painting of Christ Carrying the Cross: Jesus bows under the weight of the cross.",
+      "page_title_sources": {
+        "bk-sorrowful-carrying-cross-flow-cross": "Out toward Calvary",
+        "bk-sorrowful-carrying-cross-flow-simon": "Simon carries behind him",
+        "bk-sorrowful-carrying-cross-flow-women": "Jesus speaks to the women",
+        "bk-sorrowful-carrying-cross-flow-arrival": "The road reaches Calvary",
+        "bk-sorrowful-carrying-cross-flow-reflection": "Read and pray together",
+        "bk-sorrowful-carrying-cross-flow-our-father": "Our Father",
+        "bk-sorrowful-carrying-cross-flow-hail-mary": "Hail Mary",
+        "bk-sorrowful-carrying-cross-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "sorrowful-crucifixion",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "Love beside the cross",
+        "h1": "Love beside the cross",
+        "mystery_subtitle": "The Crucifixion: Fifth Sorrowful Mystery",
+        "seo_title": "Love beside the cross | The Crucifixion: Fifth Sorrowful Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Crucifixion: Fifth Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Crucifixion: Fifth Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Crucifixion: Fifth Sorrowful Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Fifth Sorrowful Mystery",
+        "short_answer": "A flowing family read-aloud on The Crucifixion: Fifth Sorrowful Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/sorrowful-crucifixion",
+        "related": [
+          {
+            "href": "./sorrowful-carrying-cross",
+            "label": "The Carrying of the Cross"
+          },
+          {
+            "href": "./glorious-resurrection",
+            "label": "The Resurrection"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Velázquez's painting of the Crucifixion: Jesus hangs on the cross.",
+      "page_title_sources": {
+        "bk-sorrowful-crucifixion-flow-near-cross": "Beside the cross",
+        "bk-sorrowful-crucifixion-flow-care": "Mother and disciple",
+        "bk-sorrowful-crucifixion-flow-death": "Jesus dies",
+        "bk-sorrowful-crucifixion-flow-tomb": "The garden tomb",
+        "bk-sorrowful-crucifixion-flow-reflection": "Read and pray together",
+        "bk-sorrowful-crucifixion-flow-our-father": "Our Father",
+        "bk-sorrowful-crucifixion-flow-hail-mary": "Hail Mary",
+        "bk-sorrowful-crucifixion-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "glorious-resurrection",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "The way away from the tomb",
+        "h1": "The way away from the tomb",
+        "mystery_subtitle": "The Resurrection: First Glorious Mystery",
+        "seo_title": "The way away from the tomb | The Resurrection: First Glorious Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Resurrection: First Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Resurrection: First Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Resurrection: First Glorious Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the First Glorious Mystery",
+        "short_answer": "A flowing family read-aloud on The Resurrection: First Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/glorious-resurrection",
+        "related": [
+          {
+            "href": "./sorrowful-crucifixion",
+            "label": "The Crucifixion"
+          },
+          {
+            "href": "./glorious-ascension",
+            "label": "The Ascension"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Bloch's painting of the Resurrection: the risen Jesus stands radiant above the empty tomb.",
+      "page_title_sources": {
+        "bk-glorious-resurrection-flow-tomb": "Back to the tomb",
+        "bk-glorious-resurrection-flow-angel": "The angel's message",
+        "bk-glorious-resurrection-flow-sent": "News to carry",
+        "bk-glorious-resurrection-flow-meeting": "Jesus meets them",
+        "bk-glorious-resurrection-flow-life": "The road away",
+        "bk-glorious-resurrection-flow-reflection": "Read and pray together",
+        "bk-glorious-resurrection-flow-our-father": "Our Father",
+        "bk-glorious-resurrection-flow-hail-mary": "Hail Mary",
+        "bk-glorious-resurrection-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "glorious-ascension",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "The blessing they carried home",
+        "h1": "The blessing they carried home",
+        "mystery_subtitle": "The Ascension: Second Glorious Mystery",
+        "seo_title": "The blessing they carried home | The Ascension: Second Glorious Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Ascension: Second Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Ascension: Second Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Ascension: Second Glorious Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Second Glorious Mystery",
+        "short_answer": "A flowing family read-aloud on The Ascension: Second Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/glorious-ascension",
+        "related": [
+          {
+            "href": "./glorious-resurrection",
+            "label": "The Resurrection"
+          },
+          {
+            "href": "./glorious-pentecost",
+            "label": "The Descent of the Holy Spirit"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Rembrandt's painting of the Ascension: Jesus is raised to heaven as the apostles watch.",
+      "page_title_sources": {
+        "bk-glorious-ascension-flow-meal": "A meal with their friend",
+        "bk-glorious-ascension-flow-promise": "A promise and a task",
+        "bk-glorious-ascension-flow-blessing": "The hands that blessed them",
+        "bk-glorious-ascension-flow-cloud": "Beyond their sight",
+        "bk-glorious-ascension-flow-return-promise": "He will come again",
+        "bk-glorious-ascension-flow-joy": "Joy on the way home",
+        "bk-glorious-ascension-flow-community": "Not waiting alone",
+        "bk-glorious-ascension-flow-reflection": "Carry a little hope with you",
+        "bk-glorious-ascension-flow-our-father": "Our Father",
+        "bk-glorious-ascension-flow-hail-mary": "Hail Mary",
+        "bk-glorious-ascension-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "glorious-pentecost",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "Heard in their own languages",
+        "h1": "Heard in their own languages",
+        "mystery_subtitle": "The Descent of the Holy Spirit: Third Glorious Mystery",
+        "seo_title": "Heard in their own languages | The Descent of the Holy Spirit: Third Glorious Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Descent of the Holy Spirit: Third Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Descent of the Holy Spirit: Third Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Descent of the Holy Spirit: Third Glorious Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Third Glorious Mystery",
+        "short_answer": "A flowing family read-aloud on The Descent of the Holy Spirit: Third Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/glorious-pentecost",
+        "related": [
+          {
+            "href": "./glorious-ascension",
+            "label": "The Ascension"
+          },
+          {
+            "href": "./glorious-assumption",
+            "label": "The Assumption of Mary"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "El Greco's painting of Pentecost: the Holy Spirit descends like fire on Mary and the apostles.",
+      "page_title_sources": {
+        "bk-glorious-pentecost-flow-promise": "Waiting for the promise",
+        "bk-glorious-pentecost-flow-languages": "Each hears in their own language",
+        "bk-glorious-pentecost-flow-crowd": "A crowd with questions",
+        "bk-glorious-pentecost-flow-peter": "Peter speaks of Jesus",
+        "bk-glorious-pentecost-flow-community": "A community grows",
+        "bk-glorious-pentecost-flow-reflection": "Read and pray together",
+        "bk-glorious-pentecost-flow-our-father": "Our Father",
+        "bk-glorious-pentecost-flow-hail-mary": "Hail Mary",
+        "bk-glorious-pentecost-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "glorious-assumption",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "Her hope was in her Son",
+        "h1": "Her hope was in her Son",
+        "mystery_subtitle": "The Assumption of Mary: Fourth Glorious Mystery",
+        "seo_title": "Her hope was in her Son | The Assumption of Mary: Fourth Glorious Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Assumption of Mary: Fourth Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Assumption of Mary: Fourth Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Assumption of Mary: Fourth Glorious Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Fourth Glorious Mystery",
+        "short_answer": "A flowing family read-aloud on The Assumption of Mary: Fourth Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/glorious-assumption",
+        "related": [
+          {
+            "href": "./glorious-pentecost",
+            "label": "The Descent of the Holy Spirit"
+          },
+          {
+            "href": "./glorious-coronation",
+            "label": "The Coronation of Mary"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Titian's painting of the Assumption: Mary is raised into the glory of heaven.",
+      "page_title_sources": {
+        "bk-glorious-assumption-flow-promise": "The mother of Jesus",
+        "bk-glorious-assumption-flow-community": "Near the cross, then in prayer",
+        "bk-glorious-assumption-flow-glory": "Taken up body and soul",
+        "bk-glorious-assumption-flow-hope": "Her hope was in her Son",
+        "bk-glorious-assumption-flow-reflection": "Read and pray together",
+        "bk-glorious-assumption-flow-our-father": "Our Father",
+        "bk-glorious-assumption-flow-hail-mary": "Hail Mary",
+        "bk-glorious-assumption-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    },
+    {
+      "slug": "glorious-coronation",
+      "metadata_source": {
+        "status": "New metadata/navigation titles need independent copy check; narrative paragraphs unchanged from approved v3.",
+        "reader_title": "The mother who points to Jesus",
+        "h1": "The mother who points to Jesus",
+        "mystery_subtitle": "The Coronation of Mary: Fifth Glorious Mystery",
+        "seo_title": "The mother who points to Jesus | The Coronation of Mary: Fifth Glorious Mystery | Rosary Book",
+        "seo_description": "A flowing family read-aloud on The Coronation of Mary: Fifth Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "summary": "A flowing family read-aloud on The Coronation of Mary: Fifth Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "intro": "Read The Coronation of Mary: Fifth Glorious Mystery as a story, then reflect and pray together.",
+        "kicker": "Mysteries of the Rosary",
+        "link_label": "Pray the Fifth Glorious Mystery",
+        "short_answer": "A flowing family read-aloud on The Coronation of Mary: Fifth Glorious Mystery. Read the story, reflect together, then pray the decade.",
+        "production_note": "Studio narration is not yet available for this edition.",
+        "about_policy": "Preserve exact artist/source records. Painting source and use rights must be reviewed before publication. No verified public-domain claim is supplied by this packet. No separate full-Gospel page or Fatima-prayer inclusion is claimed.",
+        "faq_policy": "Keep verified mystery/day facts. Reading instruction becomes story, reflection, Our Father once, Hail Mary ten times, Glory Be once. Do not say Fatima prayer is included.",
+        "canonical_route": "/glorious-coronation",
+        "related": [
+          {
+            "href": "./glorious-assumption",
+            "label": "The Assumption of Mary"
+          },
+          {
+            "href": "./stories",
+            "label": "All storybooks"
+          }
+        ],
+        "nav_policy": "No new routes or globals; keep existing shelf order and all8 switcher twins. Localize every user-facing field, not just paragraph bodies."
+      },
+      "cover_alt_source": "Velázquez's painting of the Coronation: the Trinity crowns Mary as Queen of heaven.",
+      "page_title_sources": {
+        "bk-glorious-coronation-flow-cana": "Mary at Cana",
+        "bk-glorious-coronation-flow-servant": "The Lord's servant",
+        "bk-glorious-coronation-flow-queen": "Honored with her Son",
+        "bk-glorious-coronation-flow-jesus": "The mother who points to Jesus",
+        "bk-glorious-coronation-flow-reflection": "Read and pray together",
+        "bk-glorious-coronation-flow-our-father": "Our Father",
+        "bk-glorious-coronation-flow-hail-mary": "Hail Mary",
+        "bk-glorious-coronation-flow-glory-be": "Glory be to the Father"
+      },
+      "required_extra_fields": [
+        "all page alt values, matching retained painting",
+        "related label for every existing related href",
+        "source-marked retelling, doctrine, prayer and painting evidence claims",
+        "localized painting credit but exact original artist/title/license/source URLs preserved",
+        "reading FAQ question/answer: story then reflection then OurFather1/HailMary10/Gloria1; no included Fatima claim"
+      ],
+      "translation": null,
+      "review": null
+    }
+  ],
+  "version": "v2-corrected-disclosures"
+}

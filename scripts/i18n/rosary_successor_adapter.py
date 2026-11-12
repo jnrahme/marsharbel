@@ -27,9 +27,17 @@ def build_successor(root, spec, master_bytes, output):
     originals = {b['slug']: b for b in master['books']}
     if len(spec['books']) != 20 or set(books) != set(SLUGS):
         raise ValueError('Successor book membership drift')
+    # v2 explicitly supersedes the old speech/public-domain production claims.
+    metadata_packet = json.loads((root / 'docs/rosary-successor/locale-metadata-field-packet-v2.json').read_text())
+    if metadata_packet.get('version') != 'v2-corrected-disclosures' or metadata_packet.get('master_sha256') != MASTER_SHA256:
+        raise ValueError('Metadata successor version/source mismatch')
+    metadata = {b['slug']: b['metadata_source'] for b in metadata_packet['books']}
+    if set(metadata) != set(SLUGS):
+        raise ValueError('Metadata successor membership drift')
     staged = {}
     for slug in SLUGS:
-        plan, original = books[slug], originals[slug]
+        plan, original = copy.deepcopy(books[slug]), originals[slug]
+        plan['metadata'] = metadata[slug]
         current = json.loads((root / f'content/books/{slug}/book.json').read_text())
         current_en = json.loads((root / f'content/books/{slug}/en.json').read_text())
         pages = plan['reader_pages']
