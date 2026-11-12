@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "status": "Authored locale copy candidates. All8 language checks and actual rendered disclosure/child-suitability QA required. No native certification.",
+  "version": 2,
+  "status": "Previously reviewed5 note/label fields with ES chapter correction; NEW generic disclosure strings require independent locale check.",
   "treatment": "Scourging/Crowning/Crucifixion use a neutral locally authored ornament plate for covers and all reading pages. Historical painting at most once in initially closed grown-up details after reader, with content note before reveal. Plate is not an event illustration. No generation or spending.",
   "display": "Parent note visible before the closed disclosure; painting never automatically displayed. Proclamation/Agony notes visible beside retained art and in the sources area. Apply in all8 locales.",
   "locales": {
@@ -9,62 +9,83 @@
       "reveal_label": "View the historical painting",
       "proclamation_note": "The illustration shows the Sermon on the Mount. This story follows Mark 1 in Galilee and Capernaum; the painting does not depict every scene narrated here.",
       "agony_note": "The illustration includes an angel comforting Jesus. Our story follows Matthew 26, which does not describe that angel. The painting is an artistic interpretation, not an additional event in this retelling.",
-      "neutral_plate_alt": "A quiet decorative ornament, not a depiction of the Passion."
+      "neutral_plate_alt": "A quiet decorative ornament, not a depiction of the Passion.",
+      "generic_illustration_disclosure": "The illustrations are artistic depictions, not eyewitness images."
     },
     "ar": {
       "content_note": "للكبار: تُظهر هذه اللوحة عنفًا ضدّ يسوع. يمكنكم القراءة والصلاة مع الرسم الهادئ أعلاه من دون فتحها.",
       "reveal_label": "عرض اللوحة التاريخية",
       "proclamation_note": "تُظهر اللوحة عظة الجبل. تتبع هذه القصة أحداث إنجيل مرقس، الفصل الأول، في الجليل وكفرناحوم؛ ولا تصوّر اللوحة كلّ مشاهد القصة.",
       "agony_note": "تُظهر اللوحة ملاكًا يعزّي يسوع. تتبع قصتنا إنجيل متى، الفصل السادس والعشرين، الذي لا يذكر ذلك الملاك. اللوحة تصوير فنّي، وليست حدثًا إضافيًّا في هذا السرد.",
-      "neutral_plate_alt": "زخرفة هادئة لا تصوّر أحداث آلام المسيح."
+      "neutral_plate_alt": "زخرفة هادئة لا تصوّر أحداث آلام المسيح.",
+      "generic_illustration_disclosure": "الصور تصوير فنّي، وليست صورًا لشهود عيان."
     },
     "de": {
       "content_note": "Für Erwachsene: Dieses Gemälde zeigt Gewalt gegen Jesus. Sie können mit dem ruhigen Bild oben lesen und beten, ohne das Gemälde zu öffnen.",
       "reveal_label": "Das historische Gemälde ansehen",
       "proclamation_note": "Die Illustration zeigt die Bergpredigt. Diese Geschichte folgt Markus 1 in Galiläa und Kafarnaum; das Gemälde zeigt nicht jede hier erzählte Szene.",
       "agony_note": "Die Illustration zeigt einen Engel, der Jesus tröstet. Unsere Geschichte folgt Matthäus 26, wo dieser Engel nicht beschrieben wird. Das Gemälde ist eine künstlerische Deutung, kein zusätzliches Ereignis in dieser Nacherzählung.",
-      "neutral_plate_alt": "Ein ruhiges dekoratives Ornament, keine Darstellung der Passion."
+      "neutral_plate_alt": "Ein ruhiges dekoratives Ornament, keine Darstellung der Passion.",
+      "generic_illustration_disclosure": "Die Illustrationen sind künstlerische Darstellungen, keine Augenzeugenbilder."
     },
     "es": {
       "content_note": "Para los adultos: esta pintura muestra violencia contra Jesús. Pueden leer y rezar con la imagen serena de arriba sin abrirla.",
       "reveal_label": "Ver la pintura histórica",
-      "proclamation_note": "La ilustración muestra el Sermón de la Montaña. Este relato sigue Marcos 1 en Galilea y Cafarnaún; la pintura no representa todas las escenas narradas aquí.",
+      "proclamation_note": "La ilustración muestra el Sermón de la Montaña. Este relato sigue el primer capítulo del Evangelio de Marcos en Galilea y Cafarnaún; la pintura no representa todas las escenas narradas aquí.",
       "agony_note": "La ilustración incluye un ángel que consuela a Jesús. Nuestro relato sigue Mateo 26, que no describe a ese ángel. La pintura es una interpretación artística, no un acontecimiento adicional de este relato.",
-      "neutral_plate_alt": "Un adorno decorativo sereno, no una representación de la Pasión."
+      "neutral_plate_alt": "Un adorno decorativo sereno, no una representación de la Pasión.",
+      "generic_illustration_disclosure": "Las ilustraciones son representaciones artísticas, no imágenes de testigos presenciales."
     },
     "fr": {
       "content_note": "Pour les adultes : ce tableau montre des violences envers Jésus. Vous pouvez lire et prier avec l'image paisible ci-dessus sans l'ouvrir.",
       "reveal_label": "Voir le tableau historique",
       "proclamation_note": "L'illustration montre le Sermon sur la montagne. Ce récit suit Marc 1 en Galilée et à Capharnaüm ; le tableau ne représente pas toutes les scènes racontées ici.",
       "agony_note": "L'illustration montre un ange qui réconforte Jésus. Notre récit suit Matthieu 26, qui ne décrit pas cet ange. Le tableau est une interprétation artistique, et non un événement supplémentaire dans ce récit.",
-      "neutral_plate_alt": "Un motif décoratif paisible, sans représentation de la Passion."
+      "neutral_plate_alt": "Un motif décoratif paisible, sans représentation de la Passion.",
+      "generic_illustration_disclosure": "Les illustrations sont des représentations artistiques, et non des images de témoins oculaires."
     },
     "it": {
       "content_note": "Per gli adulti: questo dipinto mostra violenza contro Gesù. Potete leggere e pregare con l'immagine serena qui sopra senza aprirlo.",
       "reveal_label": "Vedi il dipinto storico",
       "proclamation_note": "L'illustrazione mostra il Discorso della montagna. Questo racconto segue Marco 1 in Galilea e a Cafarnao; il dipinto non raffigura ogni scena narrata qui.",
       "agony_note": "L'illustrazione include un angelo che conforta Gesù. Il nostro racconto segue Matteo 26, che non descrive quell'angelo. Il dipinto è un'interpretazione artistica, non un episodio aggiuntivo di questo racconto.",
-      "neutral_plate_alt": "Un motivo decorativo sereno, non una raffigurazione della Passione."
+      "neutral_plate_alt": "Un motivo decorativo sereno, non una raffigurazione della Passione.",
+      "generic_illustration_disclosure": "Le illustrazioni sono rappresentazioni artistiche, non immagini di testimoni oculari."
     },
     "pl": {
       "content_note": "Dla dorosłych: ten obraz przedstawia przemoc wobec Jezusa. Możecie czytać i modlić się przy spokojnej ilustracji powyżej, nie otwierając go.",
       "reveal_label": "Zobacz obraz historyczny",
       "proclamation_note": "Ilustracja przedstawia Kazanie na Górze. Ta opowieść opiera się na pierwszym rozdziale Ewangelii według św. Marka i rozgrywa się w Galilei oraz Kafarnaum; obraz nie przedstawia każdej opowiedzianej tu sceny.",
       "agony_note": "Ilustracja przedstawia anioła pocieszającego Jezusa. Nasza opowieść opiera się na rozdziale 26 Ewangelii według św. Mateusza, który nie opisuje tego anioła. Obraz jest interpretacją artystyczną, a nie dodatkowym wydarzeniem w tej opowieści.",
-      "neutral_plate_alt": "Spokojny motyw dekoracyjny, nie przedstawienie Męki Pańskiej."
+      "neutral_plate_alt": "Spokojny motyw dekoracyjny, nie przedstawienie Męki Pańskiej.",
+      "generic_illustration_disclosure": "Ilustracje są przedstawieniami artystycznymi, a nie obrazami naocznych świadków."
     },
     "pt": {
       "content_note": "Para os adultos: esta pintura mostra violência contra Jesus. Podem ler e rezar com a imagem serena acima sem a abrir.",
       "reveal_label": "Ver a pintura histórica",
       "proclamation_note": "A ilustração mostra o Sermão da Montanha. Esta história segue Marcos 1 na Galileia e em Cafarnaum; a pintura não representa todas as cenas aqui narradas.",
       "agony_note": "A ilustração inclui um anjo que conforta Jesus. A nossa história segue Mateus 26, que não descreve esse anjo. A pintura é uma interpretação artística, não um acontecimento adicional desta narrativa.",
-      "neutral_plate_alt": "Um ornamento decorativo sereno, não uma representação da Paixão."
+      "neutral_plate_alt": "Um ornamento decorativo sereno, não uma representação da Paixão.",
+      "generic_illustration_disclosure": "As ilustrações são representações artísticas, não imagens de testemunhas presenciais."
     }
   },
   "machine_bindings": {
-    "content_note": ["sorrowful-scourging", "sorrowful-crowning-thorns", "sorrowful-crucifixion"],
-    "reveal_label": ["sorrowful-scourging", "sorrowful-crowning-thorns", "sorrowful-crucifixion"],
-    "proclamation_note": ["luminous-proclamation"],
-    "agony_note": ["sorrowful-agony-garden"]
-  }
+    "content_note": [
+      "sorrowful-scourging",
+      "sorrowful-crowning-thorns",
+      "sorrowful-crucifixion"
+    ],
+    "reveal_label": [
+      "sorrowful-scourging",
+      "sorrowful-crowning-thorns",
+      "sorrowful-crucifixion"
+    ],
+    "proclamation_note": [
+      "luminous-proclamation"
+    ],
+    "agony_note": [
+      "sorrowful-agony-garden"
+    ]
+  },
+  "layout_invariant": "The neutral ornament must be physically above the grown-up note in every viewport including RTL, because the copy says above. Historical painting initially closed. No same-painting-throughout wording survives."
 }
