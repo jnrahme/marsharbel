@@ -1,7 +1,7 @@
 {
   "locale": "ar",
   "master_sha256": "2ad25dd88b617e6fa374d36d56784caac44b5d73b6ac39617fa9eab9f7737421",
-  "status": "Revised metadata draft v2; independent scoped recheck required. Not native certification.",
+  "status": "Arabic metadata v4, pending independent scoped recheck, no native or art certification",
   "scope": "Metadata, titles, alt text, existing related-link labels and supplemental disclosures. Global navigation/reader controls use existing shared locale catalogs, not replacements here.",
   "common": {
     "read_together": "نقرأ ونصلّي معًا",
@@ -13,7 +13,7 @@
     "source_link_label": "مصدر الصورة",
     "retelling_disclosure": "هذا سرد قصصي مستند إلى النصوص المذكورة، وليس ترجمة جديدة للكتاب المقدّس. الاقتباسات المباشرة مبيّنة بمصادرها.",
     "painting_disclosure": "تُستخدم اللوحة نفسها في صفحات هذا الإصدار النصّي. وهي تصوير فنّي وليست سجلًّا مصوّرًا للأحداث. يُراجَع مصدره وحقوق استخدامه قبل النشر.",
-    "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+    "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
     "prayer_instruction_once": "تُصلّى مرة واحدة.",
     "prayer_instruction_ten": "تُصلّى عشر مرات مع التأمّل في هذا السرّ.",
     "reading_faq_question": "كيف نقرأ هذا الكتاب ونصلّي مع الأطفال؟",
@@ -23,7 +23,7 @@
   "books": [
     {
       "slug": "joyful-annunciation",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "«نعم» في الناصرة",
         "h1": "«نعم» في الناصرة",
@@ -56,7 +56,7 @@
           "bk-joyful-annunciation-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-joyful-annunciation-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./joyful-visitation": "زيارة مريم لأليصابات",
           "./stories": "جميع كتب القصص"
@@ -75,7 +75,7 @@
     },
     {
       "slug": "joyful-visitation",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "تحية عند الباب",
         "h1": "تحية عند الباب",
@@ -108,7 +108,7 @@
           "bk-joyful-visitation-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-joyful-visitation-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./joyful-annunciation": "البشارة",
           "./joyful-nativity": "ميلاد يسوع",
@@ -128,7 +128,7 @@
     },
     {
       "slug": "joyful-nativity",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "الطفل في المذود",
         "h1": "الطفل في المذود",
@@ -161,7 +161,7 @@
           "bk-joyful-nativity-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-joyful-nativity-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./joyful-visitation": "زيارة مريم لأليصابات",
           "./joyful-presentation": "تقدمة يسوع في الهيكل",
@@ -181,7 +181,7 @@
     },
     {
       "slug": "joyful-presentation",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "بين ذراعي سمعان",
         "h1": "بين ذراعي سمعان",
@@ -214,7 +214,7 @@
           "bk-joyful-presentation-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-joyful-presentation-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./joyful-nativity": "ميلاد يسوع",
           "./joyful-finding-temple": "وجود يسوع في الهيكل",
@@ -234,7 +234,7 @@
     },
     {
       "slug": "joyful-finding-temple",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "طريق العودة",
         "h1": "طريق العودة",
@@ -267,7 +267,7 @@
           "bk-joyful-finding-temple-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-joyful-finding-temple-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./joyful-presentation": "تقدمة يسوع في الهيكل",
           "./luminous-baptism": "معمودية يسوع",
@@ -287,7 +287,7 @@
     },
     {
       "slug": "luminous-baptism",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "عند النهر",
         "h1": "عند النهر",
@@ -320,7 +320,7 @@
           "bk-luminous-baptism-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-luminous-baptism-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./joyful-finding-temple": "وجود يسوع في الهيكل",
           "./luminous-cana": "عرس قانا",
@@ -340,7 +340,7 @@
     },
     {
       "slug": "luminous-cana",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "مملوءة حتى الحافة",
         "h1": "مملوءة حتى الحافة",
@@ -373,7 +373,7 @@
           "bk-luminous-cana-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-luminous-cana-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./luminous-baptism": "معمودية يسوع",
           "./luminous-proclamation": "إعلان ملكوت الله",
@@ -393,7 +393,7 @@
     },
     {
       "slug": "luminous-proclamation",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "أبعد من باب واحد",
         "h1": "أبعد من باب واحد",
@@ -428,7 +428,7 @@
           "bk-luminous-proclamation-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-luminous-proclamation-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./luminous-cana": "عرس قانا",
           "./luminous-transfiguration": "تجلّي يسوع",
@@ -448,7 +448,7 @@
     },
     {
       "slug": "luminous-transfiguration",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "يسوع وحده",
         "h1": "يسوع وحده",
@@ -483,7 +483,7 @@
           "bk-luminous-transfiguration-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-luminous-transfiguration-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./luminous-proclamation": "إعلان ملكوت الله",
           "./luminous-eucharist": "تأسيس سرّ الإفخارستيا",
@@ -503,7 +503,7 @@
     },
     {
       "slug": "luminous-eucharist",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "مُعطى على المائدة",
         "h1": "مُعطى على المائدة",
@@ -536,7 +536,7 @@
           "bk-luminous-eucharist-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-luminous-eucharist-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./luminous-transfiguration": "تجلّي يسوع",
           "./sorrowful-agony-garden": "نزاع يسوع في بستان الزيتون",
@@ -556,7 +556,7 @@
     },
     {
       "slug": "sorrowful-agony-garden",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "امكث معي",
         "h1": "امكث معي",
@@ -591,7 +591,7 @@
           "bk-sorrowful-agony-garden-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-sorrowful-agony-garden-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./luminous-eucharist": "تأسيس سرّ الإفخارستيا",
           "./sorrowful-scourging": "جلد يسوع",
@@ -611,7 +611,7 @@
     },
     {
       "slug": "sorrowful-scourging",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "أمام الوالي",
         "h1": "أمام الوالي",
@@ -644,7 +644,7 @@
           "bk-sorrowful-scourging-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-sorrowful-scourging-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./sorrowful-agony-garden": "نزاع يسوع في بستان الزيتون",
           "./sorrowful-crowning-thorns": "تتويج يسوع بإكليل الشوك",
@@ -664,7 +664,7 @@
     },
     {
       "slug": "sorrowful-crowning-thorns",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "ملك سخروا منه",
         "h1": "ملك سخروا منه",
@@ -697,7 +697,7 @@
           "bk-sorrowful-crowning-thorns-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-sorrowful-crowning-thorns-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./sorrowful-scourging": "جلد يسوع",
           "./sorrowful-carrying-cross": "حمل يسوع الصليب",
@@ -717,7 +717,7 @@
     },
     {
       "slug": "sorrowful-carrying-cross",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "رجل يحمل الصليب خلف يسوع",
         "h1": "رجل يحمل الصليب خلف يسوع",
@@ -742,7 +742,7 @@
         },
         "movement_titles": {
           "bk-sorrowful-carrying-cross-flow-cross": "الخروج نحو الجلجلة",
-          "bk-sorrowful-carrying-cross-flow-simon": "سمعان يحمل خلفه",
+          "bk-sorrowful-carrying-cross-flow-simon": "سمعان يحمل الصليب خلف يسوع",
           "bk-sorrowful-carrying-cross-flow-women": "يسوع يخاطب النساء",
           "bk-sorrowful-carrying-cross-flow-arrival": "الطريق يبلغ الجلجلة",
           "bk-sorrowful-carrying-cross-flow-reflection": "نقرأ ونصلّي معًا",
@@ -750,7 +750,7 @@
           "bk-sorrowful-carrying-cross-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-sorrowful-carrying-cross-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./sorrowful-crowning-thorns": "تتويج يسوع بإكليل الشوك",
           "./sorrowful-crucifixion": "صلب يسوع وموته",
@@ -770,7 +770,7 @@
     },
     {
       "slug": "sorrowful-crucifixion",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "محبة بجانب الصليب",
         "h1": "محبة بجانب الصليب",
@@ -803,7 +803,7 @@
           "bk-sorrowful-crucifixion-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-sorrowful-crucifixion-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./sorrowful-carrying-cross": "حمل يسوع الصليب",
           "./glorious-resurrection": "قيامة يسوع",
@@ -823,12 +823,12 @@
     },
     {
       "slug": "glorious-resurrection",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
-        "reader_title": "الطريق مبتعدًا عن القبر",
-        "h1": "الطريق مبتعدًا عن القبر",
+        "reader_title": "الطريق بعيدًا عن القبر",
+        "h1": "الطريق بعيدًا عن القبر",
         "mystery_subtitle": "قيامة يسوع، السرّ الأول من أسرار المجد",
-        "seo_title": "الطريق مبتعدًا عن القبر | قيامة يسوع | كتاب للمسبحة الوردية",
+        "seo_title": "الطريق بعيدًا عن القبر | قيامة يسوع | كتاب للمسبحة الوردية",
         "seo_description": "قراءة قصصية للعائلة عن قيامة يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
         "summary": "قراءة قصصية للعائلة عن قيامة يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
         "short_answer": "قراءة قصصية للعائلة عن قيامة يسوع. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
@@ -850,15 +850,15 @@
         "movement_titles": {
           "bk-glorious-resurrection-flow-tomb": "العودة إلى القبر",
           "bk-glorious-resurrection-flow-angel": "رسالة الملاك",
-          "bk-glorious-resurrection-flow-sent": "خبر يحملنه",
-          "bk-glorious-resurrection-flow-meeting": "يسوع يلتقي بهنّ",
+          "bk-glorious-resurrection-flow-sent": "خبر تحملانه",
+          "bk-glorious-resurrection-flow-meeting": "يسوع يلتقي بهما",
           "bk-glorious-resurrection-flow-life": "الطريق من القبر",
           "bk-glorious-resurrection-flow-reflection": "نقرأ ونصلّي معًا",
           "bk-glorious-resurrection-flow-our-father": "الأبانا (الصلاة الربانية)",
           "bk-glorious-resurrection-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-glorious-resurrection-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./sorrowful-crucifixion": "صلب يسوع وموته",
           "./glorious-ascension": "صعود يسوع إلى السماء",
@@ -878,7 +878,7 @@
     },
     {
       "slug": "glorious-ascension",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "البركة التي حملوها إلى البيت",
         "h1": "البركة التي حملوها إلى البيت",
@@ -917,7 +917,7 @@
           "bk-glorious-ascension-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-glorious-ascension-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./glorious-resurrection": "قيامة يسوع",
           "./glorious-pentecost": "حلول الروح القدس",
@@ -937,12 +937,12 @@
     },
     {
       "slug": "glorious-pentecost",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
-        "reader_title": "مفهومًا بلغاتهم",
-        "h1": "مفهومًا بلغاتهم",
+        "reader_title": "سمعوا بلغاتهم",
+        "h1": "سمعوا بلغاتهم",
         "mystery_subtitle": "حلول الروح القدس، السرّ الثالث من أسرار المجد",
-        "seo_title": "مفهومًا بلغاتهم | حلول الروح القدس | كتاب للمسبحة الوردية",
+        "seo_title": "سمعوا بلغاتهم | حلول الروح القدس | كتاب للمسبحة الوردية",
         "seo_description": "قراءة قصصية للعائلة عن حلول الروح القدس. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
         "summary": "قراءة قصصية للعائلة عن حلول الروح القدس. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
         "short_answer": "قراءة قصصية للعائلة عن حلول الروح القدس. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
@@ -972,7 +972,7 @@
           "bk-glorious-pentecost-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-glorious-pentecost-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./glorious-ascension": "صعود يسوع إلى السماء",
           "./glorious-assumption": "انتقال مريم إلى السماء",
@@ -992,16 +992,16 @@
     },
     {
       "slug": "glorious-assumption",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "رجاؤها كان في ابنها",
         "h1": "رجاؤها كان في ابنها",
         "mystery_subtitle": "انتقال مريم إلى السماء، السرّ الرابع من أسرار المجد",
         "seo_title": "رجاؤها كان في ابنها | انتقال مريم إلى السماء | كتاب للمسبحة الوردية",
-        "seo_description": "قراءة قصصية للعائلة عن انتقال مريم إلى السماء. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
-        "summary": "قراءة قصصية للعائلة عن انتقال مريم إلى السماء. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
-        "short_answer": "قراءة قصصية للعائلة عن انتقال مريم إلى السماء. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
-        "intro": "نقرأ قصة انتقال مريم إلى السماء، ثم نتأمّل ونصلّي معًا.",
+        "seo_description": "تأمّل قصصي وإيماني للعائلة في انتقال مريم إلى السماء، مستند إلى الكتاب المقدّس وتعليم الكنيسة. نتأمّل معًا ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "تأمّل قصصي وإيماني للعائلة في انتقال مريم إلى السماء، مستند إلى الكتاب المقدّس وتعليم الكنيسة. نتأمّل معًا ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "تأمّل قصصي وإيماني للعائلة في انتقال مريم إلى السماء، مستند إلى الكتاب المقدّس وتعليم الكنيسة. نتأمّل معًا ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نتأمّل في انتقال مريم إلى السماء، ثم نصلّي معًا.",
         "kicker": "أسرار المسبحة الوردية",
         "link_label": "صلّوا السرّ الرابع من أسرار المجد",
         "cover_alt": "لوحة الانتقال لتيتيان: مريم تُرفع إلى مجد السماء.",
@@ -1018,14 +1018,14 @@
         "movement_titles": {
           "bk-glorious-assumption-flow-promise": "أم يسوع",
           "bk-glorious-assumption-flow-community": "عند الصليب ثم في الصلاة",
-          "bk-glorious-assumption-flow-glory": "مرفوعة بالجسد والنفس",
+          "bk-glorious-assumption-flow-glory": "منتقلة بالنفس والجسد إلى المجد السماوي",
           "bk-glorious-assumption-flow-hope": "رجاؤها في ابنها",
           "bk-glorious-assumption-flow-reflection": "نقرأ ونصلّي معًا",
           "bk-glorious-assumption-flow-our-father": "الأبانا (الصلاة الربانية)",
           "bk-glorious-assumption-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-glorious-assumption-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./glorious-pentecost": "حلول الروح القدس",
           "./glorious-coronation": "تتويج مريم ملكةً للسماء والأرض",
@@ -1037,7 +1037,9 @@
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
           "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث.",
           "doctrine": "في سرَّي الانتقال والتتويج، يستند التأمّل إلى الكتاب المقدّس وتعليم الكنيسة، ولا يقدّم وصفًا لشاهد عيان عن السماء."
-        }
+        },
+        "doctrine_disclosure": "في سرَّي الانتقال والتتويج، يستند التأمّل إلى الكتاب المقدّس وتعليم الكنيسة، ولا يقدّم وصفًا لشاهد عيان عن السماء.",
+        "doctrine_disclosure_display": "Visible below reader alongside sources; not only metadata or hidden JSON."
       },
       "retained_machine_fields": {
         "canonical_route": "/glorious-assumption",
@@ -1046,16 +1048,16 @@
     },
     {
       "slug": "glorious-coronation",
-      "status": "Metadata v2 draft, awaiting full per-book repair list and scoped reviewer recheck",
+      "status": "Metadata v4: full reviewer global/book-specific repairs applied; pending independent scoped recheck",
       "fields": {
         "reader_title": "الأم التي تدل على يسوع",
         "h1": "الأم التي تدل على يسوع",
         "mystery_subtitle": "تتويج مريم ملكةً للسماء والأرض، السرّ الخامس من أسرار المجد",
         "seo_title": "الأم التي تدل على يسوع | تتويج مريم ملكةً للسماء والأرض | كتاب للمسبحة الوردية",
-        "seo_description": "قراءة قصصية للعائلة عن تتويج مريم ملكةً للسماء والأرض. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
-        "summary": "قراءة قصصية للعائلة عن تتويج مريم ملكةً للسماء والأرض. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
-        "short_answer": "قراءة قصصية للعائلة عن تتويج مريم ملكةً للسماء والأرض. نقرأ القصة، ونتأمّل معًا، ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
-        "intro": "نقرأ قصة تتويج مريم ملكةً للسماء والأرض، ثم نتأمّل ونصلّي معًا.",
+        "seo_description": "تأمّل قصصي وإيماني للعائلة في تكريم مريم ملكةً للسماء والأرض، مستند إلى الكتاب المقدّس وتعليم الكنيسة. نتأمّل معًا ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "summary": "تأمّل قصصي وإيماني للعائلة في تكريم مريم ملكةً للسماء والأرض، مستند إلى الكتاب المقدّس وتعليم الكنيسة. نتأمّل معًا ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "short_answer": "تأمّل قصصي وإيماني للعائلة في تكريم مريم ملكةً للسماء والأرض، مستند إلى الكتاب المقدّس وتعليم الكنيسة. نتأمّل معًا ثم نصلّي سرًّا من أسرار المسبحة الوردية.",
+        "intro": "نتأمّل في تكريم مريم ملكةً للسماء والأرض، ثم نصلّي معًا.",
         "kicker": "أسرار المسبحة الوردية",
         "link_label": "صلّوا السرّ الخامس من أسرار المجد",
         "cover_alt": "لوحة التتويج لفيلاسكيز: الثالوث يكلّل مريم ملكةً للسماء.",
@@ -1079,7 +1081,7 @@
           "bk-glorious-coronation-flow-hail-mary": "السلام عليكِ يا مريم (السلام الملائكي)",
           "bk-glorious-coronation-flow-glory-be": "المجد للآب"
         },
-        "production_note": "لا يتوفّر تسجيل استوديو لهذا الإصدار بعد.",
+        "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
         "related_labels": {
           "./glorious-assumption": "انتقال مريم إلى السماء",
           "./stories": "جميع كتب القصص"
@@ -1090,7 +1092,9 @@
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
           "painting": "لوحة دينية يُراجَع مصدره وحقوق استخدامه قبل النشر. ليست صورة تاريخية للحدث.",
           "doctrine": "في سرَّي الانتقال والتتويج، يستند التأمّل إلى الكتاب المقدّس وتعليم الكنيسة، ولا يقدّم وصفًا لشاهد عيان عن السماء."
-        }
+        },
+        "doctrine_disclosure": "في سرَّي الانتقال والتتويج، يستند التأمّل إلى الكتاب المقدّس وتعليم الكنيسة، ولا يقدّم وصفًا لشاهد عيان عن السماء.",
+        "doctrine_disclosure_display": "Visible below reader alongside sources; not only metadata or hidden JSON."
       },
       "retained_machine_fields": {
         "canonical_route": "/glorious-coronation",
@@ -1098,5 +1102,11 @@
       }
     }
   ],
-  "rights_note": "Arabic Scripture edition identification and reuse terms remain UNVERIFIED. No Jesuit1876-81 public-domain claim is adopted. Art source and use rights require checks before release."
+  "rights_note": "Arabic Scripture edition identification and reuse terms remain UNVERIFIED. No Jesuit1876-81 public-domain claim is adopted. Art source and use rights require checks before release.",
+  "art_verification_required": [
+    "Every inherited painting description needs pixel verification against real retained asset.",
+    "Presentation: فوق مذبح الهيكل",
+    "Carrying: يسوع منحنٍ تحت ثقل الصليب",
+    "Coronation: الثالوث يكلّل مريم"
+  ]
 }
