@@ -222,6 +222,24 @@ class RosarySuccessorAdapter(unittest.TestCase):
         self.assertNotIn('public-domain', note['metadata']['production_note'])
         self.assertNotIn('device voice', note['metadata']['production_note'])
 
+    def test_passion_originals_absent_from_all_automatic_assets(self):
+        from i18n.rosary_successor_adapter import PASSION_SLUGS
+        self.build()
+        for slug in PASSION_SLUGS:
+            book = json.loads((self.output / f'content/books/{slug}/book.json').read_text())
+            self.assertEqual(len(book['assets']), 1)
+            self.assertTrue(book['cover'].endswith('-img-prayer-ornament'))
+            self.assertTrue(all(p['image'] == book['cover'] for p in book['pages']))
+            self.assertEqual(book['assets'][0]['path'], 'media/mysteries/neutral-prayer-plate.svg')
+            self.assertNotIn(slug + '-img-painting', json.dumps(book))
+            for page in book['pages']:
+                self.assertEqual(page['audio'], {})
+        plate = self.output / 'media/mysteries/neutral-prayer-plate.svg'
+        self.assertTrue(plate.is_file())
+        import xml.etree.ElementTree as ET
+        element = ET.fromstring(plate.read_text())
+        self.assertFalse(any(e.tag.split('}')[-1] in ('script', 'image', 'foreignObject', 'animate') for e in element.iter()))
+
     def test_changed_manuscript_fails(self):
         self.master += b' '
         with self.assertRaisesRegex(ValueError, 'manuscript bytes'):

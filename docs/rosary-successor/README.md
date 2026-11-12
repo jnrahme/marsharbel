@@ -35,4 +35,4 @@ No EN-first live release. RU/HI/TH/ZH scope holds remain. No new recorded audio,
 
 ## Metadata supersession
 
-Metadata field packet v2 supersedes the integration-spec-v1 production note for all8 locales. The offline adapter always loads v2, not the old speech/public-domain claims. Arabic metadata v4 supersedes earlier drafts and remains a draft requiring independent recheck. No rights or browser speech verification is inherited from old catalogs.
+Metadata field packet v2 supersedes the integration-spec-v1 production note for all8 locales. The offline adapter always loads v2, not the old speech/public-domain claims. Arabic metadata v5 supersedes earlier drafts and remains a draft requiring independent recheck. No rights or browser speech verification is inherited from old catalogs.

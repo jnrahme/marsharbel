@@ -11,6 +11,8 @@ import re
 
 from i18n.reviewed_rosary_books import SLUGS
 
+PASSION_SLUGS = {'sorrowful-scourging', 'sorrowful-crowning-thorns', 'sorrowful-crucifixion'}
+
 MASTER_SHA256 = '2ad25dd88b617e6fa374d36d56784caac44b5d73b6ac39617fa9eab9f7737421'
 
 
@@ -34,6 +36,9 @@ def build_successor(root, spec, master_bytes, output):
     metadata = {b['slug']: b['metadata_source'] for b in metadata_packet['books']}
     if set(metadata) != set(SLUGS):
         raise ValueError('Metadata successor membership drift')
+    illustration_notes = json.loads((root / 'docs/rosary-successor/illustration-notes-all8.json').read_text())
+    if set(illustration_notes['locales']) != set(('en','ar','de','es','fr','it','pl','pt')):
+        raise ValueError('Illustration note locale coverage drift')
     staged = {}
     for slug in SLUGS:
         plan, original = copy.deepcopy(books[slug]), originals[slug]
@@ -86,6 +91,19 @@ def build_successor(root, spec, master_bytes, output):
         # Validate every book before writing any output.
         book = copy.deepcopy(current)
         book['status'] = 'draft'
+        if slug in PASSION_SLUGS:
+            plate = root / 'docs/rosary-successor/neutral-prayer-plate.svg'
+            safe_id = 'bk-' + slug + '-img-prayer-ornament'
+            book['cover'] = safe_id
+            # Omit original art from automatic API/assets entirely while rights are open.
+            book['assets'] = [{'id': safe_id, 'kind': 'image',
+                'path': 'media/mysteries/neutral-prayer-plate.svg',
+                'mime': 'image/svg+xml', 'bytes': plate.stat().st_size,
+                'sha256': hashlib.sha256(plate.read_bytes()).hexdigest(),
+                'access': 'public', 'width': 960, 'height': 1200}]
+            for page in pages:
+                page['image'] = safe_id
+
         book['pages'] = [{'id': p['id'], 'index': p['index'],
             # Existing reader supports story/reflection, not a prayer enum.
             'kind': 'reflection' if p['role'] == 'reflection' else 'story',
@@ -94,10 +112,15 @@ def build_successor(root, spec, master_bytes, output):
         en = copy.deepcopy(current_en)
         en.update(review='pending-metadata-layout-review',
                   title=plan['metadata']['reader_title'], summary=plan['metadata']['summary'])
+        alt = current_en['coverAlt']
+        if slug in PASSION_SLUGS:
+            # Proposed new wording requires independent copy + locale review.
+            alt = illustration_notes['locales']['en']['neutral_plate_alt']
+            en['coverAlt'] = alt
         en['pages'] = [{'id': p['id'], 'title': p['title'],
             'body': '\n\n'.join(p['paragraphs']),
             'prayer': p.get('instruction', ''), 'heart': '',
-            'alt': current_en['coverAlt']} for p in pages]
+            'alt': alt} for p in pages]
         staged[f'content/books/{slug}/book.json'] = book
         staged[f'content/books/{slug}/en.json'] = en
         staged[f'notes/{slug}.json'] = {
@@ -110,8 +133,11 @@ def build_successor(root, spec, master_bytes, output):
         dest = output / relative
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(json.dumps(value, ensure_ascii=False, indent=1) + '\n')
+    plate_dest = output / 'media/mysteries/neutral-prayer-plate.svg'
+    plate_dest.parent.mkdir(parents=True, exist_ok=True)
+    plate_dest.write_bytes((root / 'docs/rosary-successor/neutral-prayer-plate.svg').read_bytes())
     return {'books': len(books), 'pages': sum(b['page_count'] for b in books.values()),
-            'activationStatus': 'unpublished', 'files': len(staged)}
+            'activationStatus': 'unpublished', 'files': len(staged) + 1}
 
 
 if __name__ == '__main__':

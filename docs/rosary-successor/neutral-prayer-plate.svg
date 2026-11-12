@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1200" viewBox="0 0 960 1200">
+  <defs>
+    <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#f7edd7"/><stop offset="1" stop-color="#e9d9b8"/></linearGradient>
+    <linearGradient id="wood" x2="1" y2="1"><stop stop-color="#73543b"/><stop offset="1" stop-color="#443329"/></linearGradient>
+  </defs>
+  <rect width="960" height="1200" fill="url(#paper)"/>
+  <rect x="54" y="54" width="852" height="1092" rx="300" fill="none" stroke="#ad8a59" stroke-width="2"/>
+  <rect x="70" y="70" width="820" height="1060" rx="288" fill="none" stroke="#ad8a59" stroke-opacity=".35"/>
+  <path d="M480 300v460M365 435h230" fill="none" stroke="#ad8a59" stroke-width="58" stroke-linecap="round" opacity=".17" transform="translate(0 10)"/>
+  <path d="M480 300v460M365 435h230" fill="none" stroke="url(#wood)" stroke-width="46" stroke-linecap="round"/>
+  <path d="M480 310v440M375 435h210" fill="none" stroke="#ad8a59" stroke-width="2" opacity=".65"/>
+  <path d="M405 850q75 28 150 0M425 875q55 20 110 0" fill="none" stroke="#ad8a59" stroke-width="2" stroke-linecap="round"/>
+</svg>
