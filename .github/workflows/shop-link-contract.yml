@@ -2,13 +2,6 @@ name: Hidden shop flag contract
 on:
   pull_request:
     branches: [stage]
-    paths:
-      - 'scripts/build-pages.mjs'
-      - 'scripts/lib/shop-link.mjs'
-      - 'scripts/tests/shop_link.mjs'
-      - 'partials/fragments/shop-link.html'
-      - 'locales/en/shop-link-copy.json'
-      - '.github/workflows/shop-link-contract.yml'
 permissions:
   contents: read
 jobs:
@@ -26,7 +19,7 @@ jobs:
           node-version: '22'
       - run: npm ci
       - run: pip install -r scripts/qa/requirements.txt
-      - run: node --test scripts/tests/shop_link.mjs
+      - run: npm run test:hidden-store
       - name: Compare ordinary baseline and candidate builder bytes with flag OFF
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}

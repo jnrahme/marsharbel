@@ -18,3 +18,22 @@ This is NOT activation-ready for locales. Before activation: translate the label
 
 ## Rollback
 Keep the flag absent/off. Revert this PR if needed. No content or existing served page needs reverting because the committed default-off output is unchanged.
+
+## Hidden /store workshop release gate
+`npm run test:hidden-store` checks the workshop's robots `noindex,nofollow`,
+all sitemap omissions, inbound HTML links (including shared nav/footer sources),
+disabled shop flag, the three named product/price pairs, and targeted payment and
+credential regressions. Hostile synthetic controls exercise the validator. Missing
+`store.html` or `store/index.html` fails closed; combine the test/quality PR with
+`feat/hidden-store-page` before merge. No competing stub is provided.
+
+Keep robots.txt crawlable: a Disallow can prevent crawlers seeing noindex and can
+still leave a URL indexed without content. Existing named AI crawler groups also
+allow `/`; a wildcard-only Disallow would not consistently apply. Noindex plus
+sitemap and inbound-link omission is the primary hiding policy. This is obscurity,
+not authentication; never put private data or Shopify passwords in served files.
+
+The existing secret-free shop-link workflow now runs on every stage PR, including
+page-only changes. Its flag-off baseline/candidate build comparison and the pure
+composition byte-identity tests protect ordinary HTML. These checks do not replace
+rendered desktop/phone review of the implementation or the full merge gate.
