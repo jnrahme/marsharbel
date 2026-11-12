@@ -35,4 +35,12 @@ No EN-first live release. RU/HI/TH/ZH scope holds remain. No new recorded audio,
 
 ## Metadata supersession
 
-Metadata field packet v2 supersedes the integration-spec-v1 production note for all8 locales. The offline adapter always loads v2, not the old speech/public-domain claims. Arabic metadata v6 supersedes earlier drafts and remains a draft requiring independent recheck. No rights or browser speech verification is inherited from old catalogs.
+Metadata field packet v2 supersedes the integration-spec-v1 production note for all8 locales. The offline adapter always loads v2, not the old speech/public-domain claims. Arabic metadata v7 supersedes earlier drafts and remains a draft requiring independent recheck. No rights or browser speech verification is inherited from old catalogs.
+
+## All8 offline assembly, November 11 21:25
+
+Exact received locale packets are preserved in `locale-candidates/*.json`, with SHA256s in `locale-candidates.json`. ES selects the Torres Amat alternative 051fda4e; Jerusalén is fallback only. The text-only 20/20 scope reported by Main is not native certification, render/rights approval, or release authority. See `rights-register-nov11.md` for independent holds.
+
+`PYTHONPATH=scripts python3 scripts/i18n/rosary_successor_locales.py --output /tmp/rosary-all8-new` builds 20 canonical draft structures and 160 exact-language editions (1344 page states) outside runtime, plus per-locale notes. Semantic paragraph mapping preserves the source movements and prayer order. Extra Italian Marian adult notes and Polish Eucharist note are retained. Positive allowlists exclude internal review/painting evidence at projection, tested for every locale. No historical pairing evidence is resealed and no activation receipt is manufactured.
+
+This is reproducible canonical input assembly, NOT finished reader/API/static-page integration. Existing live/runtime books are untouched. Generated shell, catalog/shelf/API plumbing, final technical pairing, full native gates and independent final rendering still remain before any PR or release. No PR is authorized yet. No merge under the relay-style auto-merge instruction pending direct owner confirmation.

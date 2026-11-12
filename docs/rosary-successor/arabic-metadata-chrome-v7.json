@@ -1,7 +1,7 @@
 {
   "locale": "ar",
   "master_sha256": "2ad25dd88b617e6fa374d36d56784caac44b5d73b6ac39617fa9eab9f7737421",
-  "status": "Metadata v6 updates common disclosure only; new common wording requires scoped check, previously passed fields unchanged.",
+  "status": "Metadata v7: reviewer-exact disclosure applied; pending-rights wording removed from public copy and retained as internal gate. Other passed fields unchanged.",
   "scope": "Metadata, titles, alt text, existing related-link labels and supplemental disclosures. Global navigation/reader controls use existing shared locale catalogs, not replacements here.",
   "common": {
     "read_together": "نقرأ ونصلّي معًا",
@@ -12,7 +12,7 @@
     "painting_credit_label": "اللوحة ومصدرها",
     "source_link_label": "مصدر الصورة",
     "retelling_disclosure": "هذا سرد قصصي مستند إلى النصوص المذكورة، وليس ترجمة جديدة للكتاب المقدّس. الاقتباسات المباشرة مبيّنة بمصادرها.",
-    "painting_disclosure": "الصور تصوير فنّي، وليست صورًا لشهود عيان. يُراجَع مصدر اللوحة وحقوق استخدامها قبل النشر.",
+    "painting_disclosure": "الصور تصوير فنّي، وليست شهادة عيان على الأحداث.",
     "production_note": "لم يُنتَج لهذا الإصدار تسجيل صوتي بعد.",
     "prayer_instruction_once": "تُصلّى مرة واحدة.",
     "prayer_instruction_ten": "تُصلّى عشر مرات مع التأمّل في هذا السرّ.",
@@ -65,13 +65,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/joyful-annunciation",
         "painting_asset_id": "bk-joyful-annunciation-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "joyful-visitation",
@@ -118,13 +119,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/joyful-visitation",
         "painting_asset_id": "bk-joyful-visitation-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "joyful-nativity",
@@ -171,13 +173,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/joyful-nativity",
         "painting_asset_id": "bk-joyful-nativity-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "joyful-presentation",
@@ -224,13 +227,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/joyful-presentation",
         "painting_asset_id": "bk-joyful-presentation-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "joyful-finding-temple",
@@ -277,13 +281,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/joyful-finding-temple",
         "painting_asset_id": "bk-joyful-finding-temple-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "luminous-baptism",
@@ -330,13 +335,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/luminous-baptism",
         "painting_asset_id": "bk-luminous-baptism-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "luminous-cana",
@@ -383,13 +389,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/luminous-cana",
         "painting_asset_id": "bk-luminous-cana-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "luminous-proclamation",
@@ -438,13 +445,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/luminous-proclamation",
         "painting_asset_id": "bk-luminous-proclamation-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "luminous-transfiguration",
@@ -493,13 +501,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/luminous-transfiguration",
         "painting_asset_id": "bk-luminous-transfiguration-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "luminous-eucharist",
@@ -546,13 +555,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/luminous-eucharist",
         "painting_asset_id": "bk-luminous-eucharist-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "sorrowful-agony-garden",
@@ -601,13 +611,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/sorrowful-agony-garden",
         "painting_asset_id": "bk-sorrowful-agony-garden-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "sorrowful-scourging",
@@ -654,13 +665,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/sorrowful-scourging",
         "painting_asset_id": "bk-sorrowful-scourging-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "sorrowful-crowning-thorns",
@@ -707,13 +719,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/sorrowful-crowning-thorns",
         "painting_asset_id": "bk-sorrowful-crowning-thorns-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "sorrowful-carrying-cross",
@@ -760,13 +773,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/sorrowful-carrying-cross",
         "painting_asset_id": "bk-sorrowful-carrying-cross-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "sorrowful-crucifixion",
@@ -813,13 +827,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/sorrowful-crucifixion",
         "painting_asset_id": "bk-sorrowful-crucifixion-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "glorious-resurrection",
@@ -868,13 +883,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/glorious-resurrection",
         "painting_asset_id": "bk-glorious-resurrection-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "glorious-ascension",
@@ -927,13 +943,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/glorious-ascension",
         "painting_asset_id": "bk-glorious-ascension-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "glorious-pentecost",
@@ -982,13 +999,14 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث."
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها."
         }
       },
       "retained_machine_fields": {
         "canonical_route": "/glorious-pentecost",
         "painting_asset_id": "bk-glorious-pentecost-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "glorious-assumption",
@@ -1035,7 +1053,7 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث.",
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها.",
           "doctrine": "في سرَّي الانتقال والتتويج، يستند التأمّل إلى الكتاب المقدّس وتعليم الكنيسة، ولا يقدّم وصفًا لشاهد عيان عن السماء."
         },
         "doctrine_disclosure": "في سرَّي الانتقال والتتويج، يستند التأمّل إلى الكتاب المقدّس وتعليم الكنيسة، ولا يقدّم وصفًا لشاهد عيان عن السماء.",
@@ -1044,7 +1062,8 @@
       "retained_machine_fields": {
         "canonical_route": "/glorious-assumption",
         "painting_asset_id": "bk-glorious-assumption-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     },
     {
       "slug": "glorious-coronation",
@@ -1090,7 +1109,7 @@
           "retelling": "سرد قصصي من تأليفنا مستند إلى المقاطع المذكورة؛ الكلام غير المقتبس صراحةً منقول بالمعنى.",
           "direct_quotes": "الاقتباسات الكتابية المباشرة تحتاج إلى مطابقة النسخة العربية المحدّدة في سجلّ المصادر؛ لا تُسمّى الصياغة بالمعنى اقتباسًا حرفيًّا.",
           "prayers": "تُستخدم نصوص الصلوات الكاثوليكية العربية المبيّنة في سجلّ مصادر هذا الإصدار.",
-          "painting": "لوحة دينية يُراجَع مصدرها وحقوق استخدامها قبل النشر. ليست صورة تاريخية للحدث.",
+          "painting": "تصوير فنّي للأحداث، وليس شهادة عيان عليها.",
           "doctrine": "في سرَّي الانتقال والتتويج، يستند التأمّل إلى الكتاب المقدّس وتعليم الكنيسة، ولا يقدّم وصفًا لشاهد عيان عن السماء."
         },
         "doctrine_disclosure": "في سرَّي الانتقال والتتويج، يستند التأمّل إلى الكتاب المقدّس وتعليم الكنيسة، ولا يقدّم وصفًا لشاهد عيان عن السماء.",
@@ -1099,7 +1118,8 @@
       "retained_machine_fields": {
         "canonical_route": "/glorious-coronation",
         "painting_asset_id": "bk-glorious-coronation-img-painting"
-      }
+      },
+      "internal_rights_check": "Original source and reuse rights unresolved until verified before release. Do not display internal pending-rights evidence text."
     }
   ],
   "rights_note": "Arabic Scripture edition identification and reuse terms remain UNVERIFIED. No Jesuit1876-81 public-domain claim is adopted. Art source and use rights require checks before release.",

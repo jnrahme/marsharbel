@@ -16,6 +16,41 @@ PASSION_SLUGS = {'sorrowful-scourging', 'sorrowful-crowning-thorns', 'sorrowful-
 MASTER_SHA256 = '2ad25dd88b617e6fa374d36d56784caac44b5d73b6ac39617fa9eab9f7737421'
 
 
+PUBLIC_NOTE_FIELDS = frozenset(('content_note', 'reveal_label', 'proclamation_note',
+    'agony_note', 'neutral_plate_alt', 'generic_illustration_disclosure'))
+
+
+def public_illustration_notes(packet, locale, slug, include_historical_art=False):
+    """Positive projection, never copy internal review/rights keys to readers."""
+    source = packet['locales'][locale]
+    if not source.get('generic_illustration_disclosure'):
+        raise ValueError('Missing generic illustration disclosure')
+    result = {key: source[key] for key in
+              ('generic_illustration_disclosure', 'neutral_plate_alt')}
+    for key in ('proclamation_note', 'agony_note'):
+        if slug in packet.get('machine_bindings', {}).get(key, []):
+            result[key] = source[key]
+    # Do not claim there is an optional painting when it is omitted for rights.
+    if include_historical_art and slug in PASSION_SLUGS:
+        for key in ('content_note', 'reveal_label'):
+            result[key] = source[key]
+    return result
+
+
+PUBLIC_METADATA_FIELDS = frozenset(('reader_title', 'h1', 'mystery_subtitle',
+    'seo_title', 'seo_description', 'summary', 'short_answer', 'intro', 'kicker',
+    'link_label', 'production_note', 'canonical_route', 'related'))
+
+
+def public_metadata(source):
+    """Projection owns the boundary, regardless of INTERNO or other markers."""
+    result = {key: source[key] for key in PUBLIC_METADATA_FIELDS if key in source}
+    if 'related' in result:
+        result['related'] = [{'href': item['href'], 'label': item['label']}
+                             for item in result['related']]
+    return result
+
+
 def build_successor(root, spec, master_bytes, output):
     root, output = root.resolve(), output.resolve()
     if output == root or output.is_relative_to(root):
@@ -125,8 +160,9 @@ def build_successor(root, spec, master_bytes, output):
         staged[f'content/books/{slug}/en.json'] = en
         staged[f'notes/{slug}.json'] = {
             'status': 'unpublished-layout-and-metadata-review-required',
-            'grownUpNotes': plan['grown_up_notes'], 'metadata': plan['metadata'],
-            'evidenceStatus': 'source-and-localized-claims-not-yet-mapped'}
+            'grownUpNotes': plan['grown_up_notes'], 'metadata': public_metadata(plan['metadata']),
+            'evidenceStatus': 'source-and-localized-claims-not-yet-mapped',
+            'publicIllustrationNotes': public_illustration_notes(illustration_notes, 'en', slug)}
     if output.exists() and any(output.iterdir()):
         raise ValueError('Refusing to overwrite an existing successor staging directory')
     for relative, value in staged.items():

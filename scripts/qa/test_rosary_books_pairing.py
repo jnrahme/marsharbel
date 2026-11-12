@@ -240,6 +240,30 @@ class RosarySuccessorAdapter(unittest.TestCase):
         element = ET.fromstring(plate.read_text())
         self.assertFalse(any(e.tag.split('}')[-1] in ('script', 'image', 'foreignObject', 'animate') for e in element.iter()))
 
+    def test_public_note_projection_excludes_internal_rights_and_absent_reveal(self):
+        from i18n.rosary_successor_adapter import public_illustration_notes
+        packet = json.loads((ROOT / 'docs/rosary-successor/illustration-notes-all8.json').read_text())
+        for code in LOCALES:
+            packet['locales'][code]['internal_rights_check'] = 'MUST NEVER SHIP'
+            for slug in SLUGS:
+                result = public_illustration_notes(packet, code, slug)
+                self.assertNotIn('internal_rights_check', result)
+                self.assertNotIn('MUST NEVER SHIP', json.dumps(result))
+                self.assertNotIn('content_note', result)
+                self.assertNotIn('reveal_label', result)
+                self.assertEqual('proclamation_note' in result, slug == 'luminous-proclamation')
+                self.assertEqual('agony_note' in result, slug == 'sorrowful-agony-garden')
+
+    def test_metadata_projection_never_trusts_internal_label(self):
+        from i18n.rosary_successor_adapter import public_metadata
+        source = {'h1': 'Public title', 'painting_evidence': 'INTERNO rights pending',
+            'internal_rights_check': 'pending', 'review': 'approved-looking metadata',
+            'integrator_policy_fields_untranslated': {'x': 'private'},
+            'related': [{'href': './stories', 'label': 'Stories', 'painting_evidence': 'private'}]}
+        result = public_metadata(source)
+        self.assertEqual(result, {'h1': 'Public title',
+            'related': [{'href': './stories', 'label': 'Stories'}]})
+
     def test_changed_manuscript_fails(self):
         self.master += b' '
         with self.assertRaisesRegex(ValueError, 'manuscript bytes'):
@@ -273,6 +297,58 @@ class RosarySuccessorAdapter(unittest.TestCase):
         self.build()
         with self.assertRaisesRegex(ValueError, 'Refusing to overwrite'):
             self.build()
+
+class RosarySuccessorAllLocales(unittest.TestCase):
+    def test_all8_assembly_and_internal_fields_never_project(self):
+        import tempfile
+        from i18n.rosary_successor_locales import build_all_locales, project_locale
+        from i18n.rosary_successor_adapter import public_metadata
+        base = ROOT / 'docs/rosary-successor'
+        originals = {b['slug']: b for b in json.loads((base/'twenty-en-candidates-v3.json').read_text())['books']}
+        plans = {b['slug']: b for b in json.loads((base/'integration-spec-v1.json').read_text())['books']}
+        notes = json.loads((base/'illustration-notes-all8.json').read_text())
+        sentinel = 'PRIVATE FIELD MUST NEVER REACH READER'
+        # EN and every other locale test both nested and top-level policy fields.
+        for code in LOCALES:
+            with self.subTest(locale=code):
+                metadata = {'h1': 'Public', 'internal_review_fields': {'painting_evidence': sentinel},
+                    'painting_evidence': sentinel, 'internal_rights_check': sentinel}
+                self.assertNotIn(sentinel, json.dumps(public_metadata(metadata)))
+                if code == 'en':
+                    continue
+                packet = json.loads((base/f'locale-candidates/{code}.json').read_text())
+                for candidate in packet['books']:
+                    candidate['internal_review_fields'] = {'painting_evidence': sentinel}
+                    candidate['translation']['internal_review_fields'] = {'painting_evidence': sentinel}
+                    meta = candidate.get('metadata_translation', candidate['translation'].get('metadata'))
+                    meta['internal_review_fields'] = {'painting_evidence': sentinel}
+                    meta['painting_evidence'] = sentinel
+                    slug = candidate['slug']
+                    current = json.loads((ROOT/f'content/books/{slug}/{code}.json').read_text())
+                    result = project_locale(packet, originals[slug], plans[slug],
+                        {'pages':plans[slug]['reader_pages']}, current, notes)
+                    serialized = json.dumps(result)
+                    self.assertNotIn(sentinel, serialized)
+                    self.assertNotIn('internal_review_fields', serialized)
+                    self.assertNotIn('painting_evidence', serialized)
+        with tempfile.TemporaryDirectory() as temp:
+            output = Path(temp)/'all8'
+            result = build_all_locales(ROOT, output)
+            self.assertEqual(result['editions'], 160)
+            self.assertEqual(result['pageStates'], 1344)
+            self.assertEqual(result['releaseRightsStatus'], 'held')
+            self.assertEqual(len(list(output.glob('content/books/*/*.json'))), 180)
+            for slug in SLUGS:
+                book = json.loads((output/f'content/books/{slug}/book.json').read_text())
+                self.assertEqual(book['status'], 'draft')
+                for code in LOCALES:
+                    text = json.loads((output/f'content/books/{slug}/{code}.json').read_text())
+                    self.assertEqual([p['id'] for p in text['pages']], [p['id'] for p in book['pages']])
+                    self.assertTrue(all(p['body'].strip() for p in text['pages']))
+            with self.assertRaisesRegex(ValueError, 'overwrite'):
+                build_all_locales(ROOT, output)
+        with self.assertRaisesRegex(ValueError, 'outside runtime'):
+            build_all_locales(ROOT, ROOT/'content')
 
 if __name__ == '__main__':
     unittest.main()
