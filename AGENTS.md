@@ -132,3 +132,12 @@ selectors to stop at inert `<template>` boundaries. Current generators and
 immutable historical citation validators require the reviewed 2.10 behavior.
 Keep their source and evidence unchanged. Dependency upgrades need explicit
 compatibility tests, including the historical chain and current saint bindings.
+
+## Hidden /store workshop (2026-11-11)
+
+The `/store` workshop is intentionally undiscoverable: require `noindex,nofollow`,
+exclude it from every sitemap and public navigation/link source, keep
+`SHOP_LINK_ENABLED` off, and prohibit payment forms/integrations or credentials.
+Run `npm run test:hidden-store`; missing implementation fails closed. Keep robots
+crawlable so crawlers can read noindex. This is not access control. A hidden
+workshop must not gain inbound links merely to satisfy the general dead-code rule.
