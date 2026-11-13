@@ -1,4 +1,4 @@
-name: Bkerke November13 final-statement draft
+name: Rebase Saint918 onto reviewed stage
 on:
   push:
     branches: [recovery/nov10-write-route]
@@ -6,74 +6,25 @@ on:
 permissions:
   contents: write
 jobs:
-  prepare:
+  refresh:
     runs-on: ubuntu-24.04
-    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 27bd696bb081920d7bf0ef36a3760b43d3486f5a
+          ref: content/saint-nov12-19-reviewed
           fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: npm
-      - run: npm ci --ignore-scripts --no-audit --no-fund && pip install -r scripts/qa/requirements.txt
-      - name: Generate exact news draft without publishing
+      - name: Rebase exact held head onto exact current stage
         run: |
           set -euo pipefail
+          test "$(git rev-parse HEAD)" = '5c60f1b662739048ad3d15cfbf34bae16ba251b5'
           test "$(git ls-remote origin refs/heads/stage | cut -f1)" = '0a48a5c838016556be3e31608462d2c4c10b009b'
-          test "$(git ls-remote origin refs/heads/content/bkerke-nov12-reviewed | cut -f1)" = '27bd696bb081920d7bf0ef36a3760b43d3486f5a'
-          python3 - <<'PYDATA'
-          import base64,gzip,hashlib
-          from pathlib import Path
-          data=gzip.decompress(base64.b64decode('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'))
-          assert hashlib.sha256(data).hexdigest()=='69c6485f279f8855fef4e9ef455a60704a9cb83eacfdc0f28dc3bb2a1650d6f4'
-          Path('/tmp/news.patch').write_bytes(data)
-          PYDATA
+          git fetch origin stage
           git config user.name 'jnrahme'
           git config user.email 'jnrahme@users.noreply.github.com'
-          git checkout -b content/bkerke-nov13-checkpoint
-          git apply /tmp/news.patch
-          git add -u
-          git commit -m 'Append Nov13 final statement reproduced by MTV and LBCI; preserve Bkerke history'
-          python3 scripts/build_news_desk.py
-          node scripts/build-pages.mjs
-          python3 scripts/build-international.py
-          python3 scripts/build-international.py
-          python3 scripts/build_feeds.py
-          node scripts/build-search-index.mjs
-          python3 scripts/sitemap_lastmod.py --baseline 30ce682bc81258d04bc47e9e74dd906f1cfad431
+          git rebase 0a48a5c838016556be3e31608462d2c4c10b009b
+          git merge-base --is-ancestor 0a48a5c838016556be3e31608462d2c4c10b009b HEAD
           git diff --check
-          git status --short
-          git add -u
-          if ! git diff --cached --quiet; then git commit -m 'Regenerate final-statement Arabic archive and derived outputs'; fi
-          git diff --name-only 27bd696bb081920d7bf0ef36a3760b43d3486f5a..HEAD > /tmp/news-files.txt
-          git diff --binary --full-index 27bd696bb081920d7bf0ef36a3760b43d3486f5a..HEAD > /tmp/news-final.patch
-          git rev-parse HEAD HEAD^{tree} > /tmp/news-version.txt
-          test "$(git ls-remote origin refs/heads/content/bkerke-nov12-reviewed | cut -f1)" = '27bd696bb081920d7bf0ef36a3760b43d3486f5a'
-          git push origin HEAD:refs/heads/content/bkerke-nov12-reviewed
-      - name: Exact-head freshness and policy gates
-        run: |
-          set -euo pipefail
-          python3 scripts/build-international.py --check
-          python3 scripts/qa/check_seo.py
-          python3 scripts/qa/check_i18n_policy.py
-          node scripts/sync-navigation.mjs --check
-          python3 -m unittest discover -s scripts/qa -p test_news_desk.py
-          python3 -m unittest discover -s scripts/qa -p test_feeds.py
-          node scripts/build-search-index.mjs --check
-          node scripts/build-pages.mjs --check
-          python3 scripts/build_feeds.py --check
-          python3 scripts/sitemap_lastmod.py --check --baseline 30ce682bc81258d04bc47e9e74dd906f1cfad431
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: bkerke-nov12-candidate
-          path: |
-            /tmp/news-final.patch
-            /tmp/news-files.txt
-            /tmp/news-version.txt
+          git rev-parse HEAD HEAD^{tree}
+          git diff --name-only 0a48a5c838016556be3e31608462d2c4c10b009b..HEAD
+          test "$(git ls-remote origin refs/heads/stage | cut -f1)" = '0a48a5c838016556be3e31608462d2c4c10b009b'
+          git push --force-with-lease=refs/heads/content/saint-nov12-19-reviewed:5c60f1b662739048ad3d15cfbf34bae16ba251b5 origin HEAD:refs/heads/content/saint-nov12-19-reviewed
