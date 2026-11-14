@@ -30,6 +30,7 @@ jobs:
           git config user.email 'jnrahme@users.noreply.github.com'
           git checkout -b release/news920-union
           git checkout f2354f51a124dc5734d40201351459a99fa571cc -- ar/news.html locales/ar/news-master-copy.json locales/en/news-desk.json locales/en/news-master-bindings.json locales/en/news-master-copy.json news.html scripts/qa/test_news_desk.py search-index/ar.json src/pages/news.html templates/news-desk/cards.html
+          sed -i "s/SITEMAP_REVISION = '2026-11-13'/SITEMAP_REVISION = '2026-11-14'/" scripts/qa/test_news_desk.py
           git add -u
           git commit -m 'Integrate reviewed Nov12-13 Bkerke archive onto released Saint window'
           python3 scripts/build-international.py
