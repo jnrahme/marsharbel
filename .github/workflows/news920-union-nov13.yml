@@ -1,0 +1,47 @@
+name: Integrate reviewed920 onto released918
+on:
+  push:
+    branches: [recovery/nov10-write-route]
+    paths: [.github/workflows/news920-union-nov13.yml]
+permissions:
+  contents: write
+jobs:
+  integrate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 3591774472bff4eda7faea80d4336cd0446e6e00
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci --ignore-scripts --no-audit --no-fund && pip install -r scripts/qa/requirements.txt
+      - name: Preserve final reviewed news delta and regenerate shared output
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/stage | cut -f1)" = '3591774472bff4eda7faea80d4336cd0446e6e00'
+          test "$(git ls-remote origin refs/heads/content/bkerke-nov12-reviewed | cut -f1)" = 'f2354f51a124dc5734d40201351459a99fa571cc'
+          git config user.name 'jnrahme'
+          git config user.email 'jnrahme@users.noreply.github.com'
+          git checkout -b release/news920-union
+          git checkout f2354f51a124dc5734d40201351459a99fa571cc -- ar/news.html locales/ar/news-master-copy.json locales/en/news-desk.json locales/en/news-master-bindings.json locales/en/news-master-copy.json news.html scripts/qa/test_news_desk.py search-index/ar.json src/pages/news.html templates/news-desk/cards.html
+          git add -u
+          git commit -m 'Integrate reviewed Nov12-13 Bkerke archive onto released Saint window'
+          python3 scripts/build-international.py
+          python3 scripts/build-international.py
+          python3 scripts/sitemap_lastmod.py --baseline 3591774472bff4eda7faea80d4336cd0446e6e00
+          git add -u
+          if ! git diff --cached --quiet; then git commit -m 'Regenerate shared manifest and news sitemap preserving saint window'; fi
+          python3 -m unittest discover -s scripts/qa -p test_news_desk.py
+          python3 scripts/qa/test_news_desk.py
+          python3 scripts/build-international.py --check
+          git diff --check
+          git diff --name-only 3591774472bff4eda7faea80d4336cd0446e6e00..HEAD
+          git rev-parse HEAD HEAD^{tree}
+          test "$(git ls-remote origin refs/heads/stage | cut -f1)" = '3591774472bff4eda7faea80d4336cd0446e6e00'
+          git push --force-with-lease=refs/heads/content/bkerke-nov12-reviewed:f2354f51a124dc5734d40201351459a99fa571cc origin HEAD:refs/heads/content/bkerke-nov12-reviewed
