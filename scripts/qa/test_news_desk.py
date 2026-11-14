@@ -8,6 +8,46 @@ news_desk = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(news_desk)
 
 class NewsDeskTests(unittest.TestCase):
+    def test_bkerke_nov13_final_statement_has_precise_attribution_and_no_delivery_claim(self):
+        from bs4 import BeautifulSoup
+        for path, attribution, initiative, caveat in [
+            ('news.html', 'reproduced by MTV and LBCI', 'Catholic dioceses and religious orders', 'no funding total or confirmation of newly delivered aid'),
+            ('ar/news.html', 'كما نشرته إم تي في وإل بي سي آي', 'الأبرشيات والرهبانيات الكاثوليكية', 'ولا يحدّد البيان مبلغًا للتمويل أو يؤكّد تسليم مساعدات جديدة'),
+        ]:
+            soup = BeautifulSoup((ROOT/path).read_text(), 'html.parser')
+            row = soup.select_one('#apecl-bkerke-solidarity-2026-11-09')
+            updates = row.select('.news-row-update')
+            self.assertEqual(len(updates), 3)
+            self.assertIn('13', updates[2].strong.get_text())
+            for expected in (attribution, initiative, caveat):
+                self.assertIn(expected, updates[2].get_text(' '))
+            self.assertNotIn('still expected', row.get_text())
+            self.assertNotIn('ولا يزال صدور البيان الختامي', row.get_text())
+            self.assertEqual(row.select_one('time')['datetime'], '2026-11-09')
+            self.assertFalse(row.select('img'))
+            credit = soup.select_one('#credit-apecl-bkerke-solidarity-2026-11-09')
+            self.assertIsNotNone(credit.select_one('a[href="https://www.mtv.com.lb/news/1757989"]'))
+            self.assertTrue(any('/967804/' in a['href'] and a['href'].endswith('/ar') for a in credit.select('a[href]')))
+
+    def test_bkerke_nov12_update_preserves_history_and_bounds_claim(self):
+        from bs4 import BeautifulSoup
+        for path, election, caveat in [
+            ('news.html', 'Bishop Elias Nassar', 'not new funding or delivered aid'),
+            ('ar/news.html', 'المطران إلياس نصار', 'وليس تمويلًا جديدًا أو تسليم مساعدات'),
+        ]:
+            soup = BeautifulSoup((ROOT/path).read_text(), 'html.parser')
+            row = soup.select_one('#apecl-bkerke-solidarity-2026-11-09')
+            updates = row.select('.news-row-update')
+            self.assertEqual(len(updates), 3)
+            self.assertIn('11', updates[0].strong.get_text())
+            self.assertIn('12', updates[1].strong.get_text())
+            self.assertIn(election, updates[1].get_text(' '))
+            self.assertIn(caveat, updates[1].get_text(' '))
+            self.assertEqual(row.select_one('time')['datetime'], '2026-11-09')
+            self.assertEqual(len(row.select('img')), 0)
+            credit = soup.select_one('#credit-apecl-bkerke-solidarity-2026-11-09')
+            self.assertTrue(any('12' in a.get_text() and a['href'].startswith('https://apecl.org/') for a in credit.select('a[href]')))
+
     def test_massabki_priority_is_maronite_and_mayor_is_paraphrased(self):
         from bs4 import BeautifulSoup
         source = 'https://maronite.org.au/news/three-brothers-become-first-maronite-laymen-to-be-canonised/'
@@ -550,7 +590,7 @@ class NewsMetadataTests(unittest.TestCase):
     REVISION = '2026-11-10'
     # Authored content revision and actual regenerated sitemap day are distinct.
     # Keep both exact; the sitemap generator's one-day skew is not a backdate.
-    SITEMAP_REVISION = '2026-11-11'
+    SITEMAP_REVISION = '2026-11-14'
 
     def assert_news_metadata(self, html, lastmod):
         from bs4 import BeautifulSoup
@@ -811,14 +851,18 @@ class BkerkeNovember11Tests(unittest.TestCase):
             row=soup.select_one('#'+pack['id']);credit=soup.select_one('#credit-'+pack['id'])
             self.assertEqual(row.select_one('time')['datetime'],old['apecl']['date'])
             paragraphs=row.select('.news-row-summary,.news-row-update')
-            self.assertEqual(len(paragraphs),2)
+            self.assertEqual(len(paragraphs),4)
             self.assertEqual(paragraphs[0].get_text(),old['apecl'][code]['summary'])
             self.assertEqual(paragraphs[1].select_one('strong').get_text(),pack['archive'][code]['update-label'])
-            self.assertEqual(paragraphs[1].select_one('span').get_text(),pack['archive'][code]['update-summary'])
+            obsolete = {
+                'en': " The session's final statement is still expected on November 13.",
+                'ar': ' ولا يزال صدور البيان الختامي للدورة متوقّعًا في 13 تشرين الثاني.'
+            }
+            self.assertEqual(paragraphs[1].select_one('span').get_text(),pack['archive'][code]['update-summary'].removesuffix(obsolete[code]))
             self.assertEqual(row.select_one('.news-row-title a')['href'],pack['primary'])
             self.assertEqual(credit.select('a')[0]['href'],old['apecl']['url'])
             self.assertEqual(credit.select('a')[1]['href'],pack['primary'])
-            self.assertEqual(credit.select('a')[2]['href'],pack['secondary'])
+            self.assertEqual(credit.select('a')[5]['href'],pack['secondary'])
             self.assertFalse(row.select('img'))
         english=pack['archive']['en']['update-summary']
         for expected in ['decided on November 11 to form','Alma al-Shaab','Qauzah','Debel','Rmeich','Ain Ebel','Yaroun','Lebanese state','Holy See','international bodies','not confirmation of new funding or delivered aid','expected on November 13']:
