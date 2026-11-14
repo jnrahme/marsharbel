@@ -1,4 +1,4 @@
-# BQ shard 2/8 - regenerated 2026-11-10 from playwright --list collection on candidate head 791d71c2 (count-balanced; Rosary v10 fix1: 160 pages, shipped locale set EN+ar/de/es/fr/it/pl/pt)
+# BQ shard 2/8 - regenerated 2026-11-10 from playwright --list collection on candidate head 791d71c2 (count-balanced; Rosary v10 fix1: 160 pages, shipped locale set EN+ar/de/es/fr/it/pl/pt); Saint Nov12-19 clock identities refreshed2026-11-12, unrelated assignments preserved
 [laptop] › accessibility-gate.spec.js › a11y gate /accessibility
 [laptop] › accessibility-gate.spec.js › a11y gate /en/novena
 [laptop] › accessibility-gate.spec.js › a11y gate /it/preghiere
@@ -134,11 +134,6 @@
 [laptop] › qadisha-french-mirror.spec.js › /fr/vallee-qadisha retains Qadisha content and the single language selector
 [laptop] › qadisha-spanish-mirror.spec.js › /ar/qadisha-valley retains the same visible structure, images and reciprocal cluster
 [laptop] › rosary-bead-teacher.spec.js › poster-first teaching, keyboard activation and whole decade
-[laptop] › saint-of-day.spec.js › saint date and axe / 2026-11-10
-[laptop] › saint-of-day.spec.js › saint date and axe /ar/ 2026-11-11
-[laptop] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-12
-[laptop] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-13
-[laptop] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-14
 [laptop] › same-page-compact-helper.spec.js › /history at 1440 keeps compact header without blanket unavailable helper
 [laptop] › search-keyboard.spec.js › English short guide search boots /en/novena
 [laptop] › site-quality.spec.js › /22nd-of-the-month.html › renders without overflow, broken images, console errors, or serious accessibility issues
@@ -314,11 +309,6 @@
 [phone] › qadisha-french-mirror.spec.js › /ar/qadisha-valley retains Qadisha content and the single language selector
 [phone] › qadisha-mirror.spec.js › ar Qadisha keeps authored language and offers English while refusing unverified non-English
 [phone] › rosary-bead-teacher.spec.js › no-WebGL and reduced-motion preserve practice
-[phone] › saint-of-day.spec.js › saint date and axe / 2026-11-09
-[phone] › saint-of-day.spec.js › saint date and axe /ar/ 2026-11-10
-[phone] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-11
-[phone] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-12
-[phone] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-13
 [phone] › same-page-compact-helper.spec.js › / at 390 keeps compact header without blanket unavailable helper
 [phone] › search-keyboard.spec.js › English short guide search boots /en/biography
 [phone] › search-keyboard.spec.js › result combobox keeps arrow navigation and excludes options from Tab /ar/
@@ -495,10 +485,6 @@
 [small-phone] › qadisha-mirror.spec.js › Arabic Qadisha has functioning nav and local authored links
 [small-phone] › rosary-bead-teacher.spec.js › enlarged text remains readable with keyboard-scrollable diagram
 [small-phone] › russian-first-slice.spec.js › /ru/novena: all registered choices and page-specific HI/TH refusal
-[small-phone] › saint-of-day.spec.js › saint date and axe /ar/ 2026-11-09
-[small-phone] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-10
-[small-phone] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-11
-[small-phone] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-12
 [small-phone] › same-page-compact-helper.spec.js › / at 1440 keeps compact header without blanket unavailable helper
 [small-phone] › search-keyboard.spec.js › English short guide search boots /en/annaya
 [small-phone] › search-keyboard.spec.js › result combobox keeps arrow navigation and excludes options from Tab /
@@ -676,11 +662,6 @@
 [tablet] › qadisha-mirror.spec.js › /qadisha-valley keeps the reviewed sections and images
 [tablet] › qadisha-spanish-mirror.spec.js › es Qadisha keeps authored language and offers English while refusing pending non-English
 [tablet] › russian-first-slice.spec.js › /ru/molitvy: all registered choices and page-specific HI/TH refusal
-[tablet] › saint-of-day.spec.js › saint date and axe / 2026-11-15
-[tablet] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-09
-[tablet] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-10
-[tablet] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-11
-[tablet] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-11-14
 [tablet] › same-page-compact-helper.spec.js › /travel at 390 keeps compact header without blanket unavailable helper
 [tablet] › search-keyboard.spec.js › recent search and clear work with keyboard /ar/
 [tablet] › site-quality.spec.js › /miracles/eucharistic/bolsena-orvieto › renders without overflow, broken images, console errors, or serious accessibility issues
@@ -856,11 +837,6 @@
 [wide-desktop] › qadisha-mirror.spec.js › /ar/qadisha-valley keeps the reviewed sections and images
 [wide-desktop] › qadisha-spanish-mirror.spec.js › Spanish Qadisha links to real Spanish guides and English-only places
 [wide-desktop] › russian-first-slice.spec.js › /ru/biography: Cyrillic, loaded assets, usable links and no horizontal overflow
-[wide-desktop] › saint-of-day.spec.js › saint date and axe / 2026-11-14
-[wide-desktop] › saint-of-day.spec.js › saint date and axe /ar/ 2026-11-15
-[wide-desktop] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-09
-[wide-desktop] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-10
-[wide-desktop] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-11-13
 [wide-desktop] › same-page-compact-helper.spec.js › /travel at 1440 keeps compact header without blanket unavailable helper
 [wide-desktop] › search-keyboard.spec.js › recent search and clear work with keyboard /
 [wide-desktop] › site-quality.spec.js › /miracles/eucharistic/ › renders without overflow, broken images, console errors, or serious accessibility issues
@@ -901,3 +877,39 @@
 [wide-desktop] › travel-routing.spec.js › /fr/monastere-qozhaya has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › travel-routing.spec.js › /qannoubine-monastery has a real body, working resources, full-page accessibility and route landmarks
 [wide-desktop] › video-playback.spec.js › all 23 videos keep static original and relevant reading links without JavaScript
+[small-phone] › saint-of-day.spec.js › saint date and axe / 2026-11-12
+[small-phone] › saint-of-day.spec.js › saint date and axe / 2026-11-20
+[small-phone] › saint-of-day.spec.js › saint date and axe /ar/ 2026-11-18
+[small-phone] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-16
+[small-phone] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-14
+[small-phone] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-12
+[small-phone] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-16
+[phone] › saint-of-day.spec.js › saint date and axe / 2026-11-11
+[phone] › saint-of-day.spec.js › saint date and axe / 2026-11-19
+[phone] › saint-of-day.spec.js › saint date and axe /ar/ 2026-11-17
+[phone] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-15
+[phone] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-13
+[phone] › saint-of-day.spec.js › saint no-JS remains absent
+[phone] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-11-15
+[phone] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-11-19
+[tablet] › saint-of-day.spec.js › saint date and axe / 2026-11-18
+[tablet] › saint-of-day.spec.js › saint date and axe /ar/ 2026-11-16
+[tablet] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-14
+[tablet] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-12
+[tablet] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-20
+[tablet] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-15
+[tablet] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-19
+[laptop] › saint-of-day.spec.js › saint date and axe / 2026-11-17
+[laptop] › saint-of-day.spec.js › saint date and axe /ar/ 2026-11-15
+[laptop] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-13
+[laptop] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-11
+[laptop] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-19
+[laptop] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-11-14
+[laptop] › saint-of-day.spec.js › saint no-book 390px 200% /ar/ 2026-11-18
+[wide-desktop] › saint-of-day.spec.js › saint date and axe / 2026-11-16
+[wide-desktop] › saint-of-day.spec.js › saint date and axe /ar/ 2026-11-14
+[wide-desktop] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-12
+[wide-desktop] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-20
+[wide-desktop] › saint-of-day.spec.js › saint date and axe /th/ 2026-11-18
+[wide-desktop] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-14
+[wide-desktop] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-18
