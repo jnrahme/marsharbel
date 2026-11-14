@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -26,25 +14,25 @@
     <meta property="og:locale:alternate" content="pl_PL" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>St. Francis of Assisi | Il Poverello, Founder of the Friars Minor</title>
-  <meta name="description" content="St. Francis of Assisi (1181/1182-1226): the rich kid of Assisi who kissed a leper, heard Christ from the San Damiano cross, rebuilt the Church in poverty, met the Sultan, received the stigmata, and sang the Canticle of the Creatures - his story, his own words, and where to watch his life." />
+  <meta name="description" content="St. Francis of Assisi (1181/1182-1226): the rich kid of Assisi who kissed a leper, met the Sultan, and received the stigmata - his story and words." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/st-francis-of-assisi" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Saint Charbel" />
   <meta property="og:title" content="St. Francis of Assisi | Il Poverello, Founder of the Friars Minor" />
-  <meta property="og:description" content="St. Francis of Assisi (1181/1182-1226): the rich kid of Assisi who kissed a leper, heard Christ from the San Damiano cross, rebuilt the Church in poverty, met the Sultan, received the stigmata, and sang the Canticle of the Creatures - his story, his own words, and where to watch his life." />
+  <meta property="og:description" content="St. Francis of Assisi (1181/1182-1226): the rich kid of Assisi who kissed a leper, met the Sultan, and received the stigmata - his story and words." />
   <meta property="og:url" content="https://marsharbel.com/st-francis-of-assisi" />
   <meta property="og:image" content="https://marsharbel.com/media/saints/st-francis-of-assisi.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="St. Francis of Assisi | Il Poverello, Founder of the Friars Minor" />
-  <meta name="twitter:description" content="St. Francis of Assisi (1181/1182-1226): the rich kid of Assisi who kissed a leper, heard Christ from the San Damiano cross, rebuilt the Church in poverty, met the Sultan, received the stigmata, and sang the Canticle of the Creatures - his story, his own words, and where to watch his life." />
+  <meta name="twitter:description" content="St. Francis of Assisi (1181/1182-1226): the rich kid of Assisi who kissed a leper, met the Sultan, and received the stigmata - his story and words." />
   <meta name="twitter:image" content="https://marsharbel.com/media/saints/st-francis-of-assisi.webp" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "St. Francis of Assisi | Il Poverello, Founder of the Friars Minor",
-  "description": "St. Francis of Assisi (1181/1182-1226): the rich kid of Assisi who kissed a leper, heard Christ from the San Damiano cross, rebuilt the Church in poverty, met the Sultan, received the stigmata, and sang the Canticle of the Creatures - his story, his own words, and where to watch his life.",
+  "description": "St. Francis of Assisi (1181/1182-1226): the rich kid of Assisi who kissed a leper, met the Sultan, and received the stigmata - his story and words.",
   "url": "https://marsharbel.com/st-francis-of-assisi",
   "isPartOf": {
     "@type": "WebSite",
@@ -106,7 +94,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "St. Francis of Assisi",
-  "description": "St. Francis of Assisi (1181/1182-1226): the rich kid of Assisi who kissed a leper, heard Christ from the San Damiano cross, rebuilt the Church in poverty, met the Sultan, received the stigmata, and sang the Canticle of the Creatures - his story, his own words, and where to watch his life.",
+  "description": "St. Francis of Assisi (1181/1182-1226): the rich kid of Assisi who kissed a leper, met the Sultan, and received the stigmata - his story and words.",
   "url": "https://marsharbel.com/st-francis-of-assisi"
 }
   </script>
@@ -160,11 +148,12 @@
   </script>
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20260922-1" />
+  <link rel="stylesheet" href="styles.css?v=20261013-face-crop-1" />
   <!-- hreflang:begin -->
   <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/st-francis-of-assisi" />
   <link rel="alternate" hreflang="en" href="https://marsharbel.com/st-francis-of-assisi" />
   <!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -174,9 +163,9 @@
       <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -184,11 +173,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -212,8 +205,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -227,7 +221,14 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
@@ -238,10 +239,11 @@
       <span class="kicker">Founder of the Friars Minor - Feast October 4</span>
       <h1>St. Francis of Assisi</h1>
       <p>A cloth merchant's son who wanted to be a knight and ended up the poor man of Assisi - il Poverello. He kissed a leper, heard Christ speak from the San Damiano cross, rebuilt the Church in poverty, walked into the Sultan's camp to talk rather than fight, received the stigmata on a mountain, and near the end, almost blind, sang the Canticle of the Creatures. He is the most imitated saint in Christian history, and this page is his story, his teaching in his own words, and where to watch his life told well.</p>
-      <figure class="hero-figure"><img src="./media/saints/st-francis-of-assisi.webp" alt="Saint Francis of Assisi, full-length, surrounded by scenes of his life - the 1235 panel by Bonaventura Berlinghieri" width="900" height="1228" loading="lazy" /><figcaption>The earliest painted portrait of Francis - Bonaventura Berlinghieri's 1235 panel, painted nine years after his death, with scenes of his life around him. <a href="https://commons.wikimedia.org/wiki/File:Bonaventura_Berlinghieri,_San_Francesco_e_storie_della_sua_vita,_1235,_01.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption></figure>
+      <figure class="hero-figure"><img src="./media/saints/st-francis-of-assisi.webp" alt="Saint Francis of Assisi, full-length, surrounded by scenes of his life - the 1235 panel by Bonaventura Berlinghieri" width="900" height="1228" loading="lazy" class="is-portrait"/><figcaption>The earliest painted portrait of Francis - Bonaventura Berlinghieri's 1235 panel, painted nine years after his death, with scenes of his life around him. <a href="https://commons.wikimedia.org/wiki/File:Bonaventura_Berlinghieri,_San_Francesco_e_storie_della_sua_vita,_1235,_01.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption></figure>
       <div class="cta-row">
         <a class='btn subtle' href='saints'>Saints &amp; Blesseds</a>
         <a class='btn subtle' href='#watch-francis'>Watch His Story</a>
+        <a class='btn subtle' href='st-francis-of-assisi-prayer'>Pray with Saint Francis</a>
         <a class='btn subtle' href='en/prayers'>Pray with Saint Charbel</a>
       </div>
     </section>
@@ -271,7 +273,7 @@
         <p>Francis never set out to found an order; he set out to live the Gospel "without gloss" - as it is, in all its radicality. What he built grew around that: friars with nothing, preaching repentance and peace, owning not even the roofs over their heads. Within a decade the movement had spread across Europe and to Morocco, and his spiritual sons went on to guard the Christian holy places - the Franciscan Custody of the Holy Land still serves them today.</p>
         <p>His genius was to make holiness look like joy. He called every creature brother and sister - sun, moon, wind, water, fire, even Sister Death - not as poetry about nature but as family life with God the Father of all. Eight centuries later the Church still reaches for his voice: Pope Francis took the title of his encyclical on care for creation, <em>Laudato Si'</em>, from the first words of Francis's Canticle.</p>
       </div>
-      <figure class="hero-figure"><img src="./media/saints/st-francis-of-assisi-sultan.webp" alt="Giotto's fresco of Saint Francis before the Sultan - Francis stands at the left, gesturing, while a fire burns at the center" width="924" height="1001" loading="lazy" /><figcaption>Francis before the Sultan - Giotto's fresco of the 1219 meeting at Damietta. Public domain, <a href="https://commons.wikimedia.org/wiki/File:Giotto_di_Bondone_-_Legend_of_St_Francis_-_11._St_Francis_before_the_Sultan_(Trial_by_Fire)_-_WGA09132.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>.</figcaption></figure>
+      <figure class="hero-figure"><img src="./media/saints/st-francis-of-assisi-sultan.webp" alt="Giotto's fresco of Saint Francis before the Sultan - Francis stands at the left, gesturing, while a fire burns at the center" width="924" height="1001" loading="lazy" class="is-square-ish"/><figcaption>Francis before the Sultan - Giotto's fresco of the 1219 meeting at Damietta. Public domain, <a href="https://commons.wikimedia.org/wiki/File:Giotto_di_Bondone_-_Legend_of_St_Francis_-_11._St_Francis_before_the_Sultan_(Trial_by_Fire)_-_WGA09132.jpg" target="_blank" rel="noopener">via Wikimedia Commons</a>.</figcaption></figure>
     </section>
 
     <section class="section">
@@ -348,5 +350,9 @@
   <script defer src="/locale-routes.js"></script>
   <script defer src="translate.js?v=20260922-1"></script>
   <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

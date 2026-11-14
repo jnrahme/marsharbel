@@ -1,0 +1,128 @@
+{
+ "schema": 1,
+ "id": "bk-glorious-ascension",
+ "slug": "glorious-ascension",
+ "legacyStoryId": "glorious-ascension",
+ "pageUrl": "/glorious-ascension",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 37,
+ "ageRange": "6-12",
+ "locales": [
+  "en",
+  "ar",
+  "de",
+  "es",
+  "fr",
+  "it",
+  "pl",
+  "pt"
+ ],
+ "cover": "bk-glorious-ascension-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-glorious-ascension-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-ascension-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-glorious-ascension-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-ascension-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-glorious-ascension-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-ascension-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-glorious-ascension-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-glorious-ascension-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: Rembrandt, Ascension (Alte Pinakothek). Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Rembrandt_The_Ascension_1636_Oil_on_canvas_Alte_Pinakothek_Munich_Germany.jpg"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-glorious-ascension-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/g2.webp",
+   "mime": "image/webp",
+   "bytes": 77462,
+   "sha256": "cbdea9d1bc430376f5a8bc75c7db622aced17e443a9e7ff0a6a87679c545ecab",
+   "access": "public",
+   "width": 1000,
+   "height": 1357
+  }
+ ]
+}

@@ -1,17 +1,22 @@
+from i18n.encyclopedia_nav import finish_nav
+from i18n.shared_chrome import shared_header_chrome
 """Generate the Arabic Chaplet from the current English master and keyed copy."""
 from bs4 import BeautifulSoup
 from pathlib import Path
 import json
-from i18n.catalog import ROOT, read_json
+from i18n.catalog import ROOT, read_json, page_url
 
 EN = '/saint-charbel-chaplet'
 AR = '/ar/saint-charbel-chaplet'
 SITE = 'https://marsharbel.com'
 
 
+LEGACY_CHROME_MAP={'saint-charbel-novena','./saint-charbel-novena','visit-annaya','22nd-of-the-month','saint-charbel-feast-day','./en/prayers'}
+
+
 def render_chaplet(root=ROOT):
     catalog = read_json(root/'locales/ar/chaplet.json')
-    required = {'hero.kicker','hero.title','hero.intro','hero.caption',*(f'hero.action{i}' for i in range(1,4)),
+    required = {'metadata.description','hero.kicker','hero.title','hero.intro','hero.caption',*(f'hero.action{i}' for i in range(1,4)),
                 'what.title','what.body1before','what.link','what.body1after','what.body2',
                 'steps.title','steps.intro','prayers.title','prayers.fatherTitle','prayers.father',
                 'prayers.fatherContext','prayers.gracesTitle','prayers.graces','when.title',
@@ -42,8 +47,11 @@ def render_chaplet(root=ROOT):
             node.string=catalog[keys[2*i+1]]
             tag.append(node)
         tag.append(catalog[keys[-1]])
+    # The complete, reviewed shared trail catalog is mandatory. No English fallback.
+    from i18n.encyclopedia_trail import apply_trail
+    apply_trail(soup, root, 'ar', '/history')
     # Keep the English layout, DOM structure, all media and links. Only replace text nodes.
-    for selector,key in [('main .hero .kicker','hero.kicker'),('main h1','hero.title'),('main .hero > p','hero.intro'),
+    for selector,key in [('main .hero .kicker','hero.kicker'),('main h1','hero.title'),('main .hero > p:not(.enc-trail)','hero.intro'),
                          ('main .hero figcaption','hero.caption'),('main .section:nth-of-type(2) h2','what.title'),
                          ('main .section:nth-of-type(3) h2','steps.title'),('main .section:nth-of-type(3) .section-sub','steps.intro'),
                          ('main .section:nth-of-type(4) h2','prayers.title'),('main .section:nth-of-type(5) h2','when.title'),
@@ -76,7 +84,7 @@ def render_chaplet(root=ROOT):
     one('main .hero img')['alt']='الصورة التقليدية لمار شربل مخلوف مرتديًا قلنسوة الرهبان'
     # Head copy and FAQ schema from the same keyed source; leave English photo provenance untouched.
     title=catalog['hero.title']+' | طريقة صلاة مسبحة مار شربل'
-    description=catalog['hero.intro']
+    description=catalog['metadata.description']
     soup.title.string=title
     for selector,value in [('meta[name="description"]',description),('meta[property="og:title"]',title),
                            ('meta[property="og:description"]',description),('meta[name="twitter:title"]',title),
@@ -100,13 +108,23 @@ def render_chaplet(root=ROOT):
     for tag,obj in zip(schemas,(article,faq_schema)):
         tag.string=json.dumps(obj,ensure_ascii=False,indent=2).replace('<','\\u003c')
     # Absolute internal paths prevent /ar/ relative resolution errors. Map only authored destinations.
+    # AR-2 body-link follow-up: twin destinations resolve from the registry.
+    registry=read_json(root/'locales/registry.json')
+    prayer_library=registry['pageMirrors']['prayer-library-master']['routes']['ar']
+    encyclopedia=registry['pageMirrors']['saint-charbel-encyclopedia-master']['routes']['ar']
+    biography=page_url(registry,'ar','biography')
     mapped={'saint-charbel-novena':'/ar/novena','./saint-charbel-novena':'/ar/novena',
-            'prayer-library':'/prayer-library','./prayer-library#find-a-prayer':'/prayer-library#find-a-prayer',
+            'prayer-library':prayer_library,'./prayer-library':prayer_library,
+            'prayer-library#find-a-prayer':prayer_library+'#find-a-prayer','./prayer-library#find-a-prayer':prayer_library+'#find-a-prayer',
+            'saint-charbel-encyclopedia':encyclopedia,'./saint-charbel-encyclopedia':encyclopedia,
+            'history':biography,'./history':biography,
             'visit-annaya':'/ar/annaya','22nd-of-the-month':'/ar/22nd-of-the-month',
             'saint-charbel-feast-day':'/ar/feast-day','./en/prayers':'/ar/prayers'}
     for a in soup.select('a[href]'):
         href=a['href']
-        if href in mapped:a['href']=mapped[href]
+        # Header/footer chrome is routed by finish_nav; the twin mapping is body-only.
+        if href in mapped and a.find_parent(['header','footer','nav']) is None:a['href']=mapped[href]
+        elif href in mapped and href in LEGACY_CHROME_MAP:a['href']=mapped[href]
         elif href.startswith('./'):a['href']='/'+href[2:]
     for tag in soup.select('script[src],link[href],img[src]'):
         attr='src' if tag.has_attr('src') else 'href';url=tag[attr]
@@ -118,6 +136,7 @@ def render_chaplet(root=ROOT):
     chrome={value:arabic_header[key] for key,value in english_header.items()
             if key.startswith('header.') and key in arabic_header and isinstance(value,str)}
     chrome.update({'Saint Charbel':'مار شربل','Primary':'التنقل الرئيسي'})
+    chrome.update(shared_header_chrome(root,'ar'))
     for node in one('header.topbar').find_all(string=True):
         original=str(node)
         stripped=original.strip()
@@ -128,4 +147,4 @@ def render_chaplet(root=ROOT):
     article['breadcrumb']['itemListElement'][1]['name']='الصلاة'
     schemas[0].string=json.dumps(article,ensure_ascii=False,indent=2).replace('<','\\u003c')
     footer=one('footer .site-shell');footer.string=catalog['hero.title']+'. الكاتب: صلّ من أجل من أنشأ هذا الموقع.'
-    return {root/'ar/saint-charbel-chaplet.html':str(soup)}
+    return {root/'ar/saint-charbel-chaplet.html':finish_nav(str(soup),root,'ar')}

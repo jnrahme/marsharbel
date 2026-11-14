@@ -1,0 +1,276 @@
+{
+ "schema": 2,
+ "locale": "zh-Hans",
+ "direction": "ltr",
+ "publicationContract": {
+  "missingLocaleOrKey": "fail-build",
+  "englishFallback": false,
+  "pendingPrayerTextInBrowserData": false,
+  "privateReviewNoticeInBrowserData": false
+ },
+ "page": {
+  "title": "帮助我祈祷",
+  "intro": "选择今天心中的重担。找到迈向祈祷的一小步，并了解来源和明确的界限。",
+  "needsHeading": "你为什么来到这里？",
+  "boundaryHeading": "祈祷和你需要的帮助",
+  "boundaryCopy": "本指南提供敬礼建议，不是圣事、诊断或痊愈的许诺。关于告解或个人灵修指导，请向神父咨询。继续接受医疗照护，在危机中立即寻求当地帮助。",
+  "privacyCopy": "使用本指南，无需填写姓名、祈祷意向或个人资料。",
+  "pendingNotice": "标有审核中的卡片尚未准备好使用，其祈祷文和开始操作不可用。"
+ },
+ "needs": {
+  "restart": "开始或重新祈祷",
+  "family": "家庭",
+  "illness": "疾病",
+  "gratitude": "感恩",
+  "discouragement": "祈祷中的气馁",
+  "maronite": "了解马龙尼礼祈祷"
+ },
+ "ui": {
+  "inReview": "审核中",
+  "practicalAnswer": "一小步",
+  "why": "为什么可能有帮助",
+  "source": "来源",
+  "practiceType": "实践",
+  "boundary": "请记住",
+  "backToNeeds": "返回需要",
+  "noResults": "没有符合此选择的卡片。",
+  "notReady": "本卡片等待审核，祈祷文和开始操作不可用。",
+  "begin": "开始",
+  "close": "关闭",
+  "readMore": "阅读来源"
+ },
+ "cards": {
+  "illness-01": {
+   "need": "illness",
+   "copy": {
+    "question": "我在为病人祈祷，该从哪里开始？",
+    "practicalAnswer": "把这位病人呈献给天主，祈求力量、平安和痊愈。\n在继续必要照护的同时，慢慢诵念为病人祈祷。\n祈祷并不保证任何结果。",
+    "why": "意译（编辑说明）：基督徒祈祷邀请我们在困难中与天主同在，并不是控制结果的方法。《天主教教理》2734。",
+    "source.publisher": "圣座 / 天主教教理",
+    "source.section": "《天主教教理》 2734",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。祈祷不能代替医疗照护。",
+    "prayerTarget.heading": "为病人祈祷",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "illness-02": {
+   "need": "illness",
+   "copy": {
+    "question": "藉圣夏贝尔的转祷祈祷，能保证痊愈吗？",
+    "practicalAnswer": "不能。请圣夏贝尔转祷，把病人托付给天主，不要许诺治愈。\n祈祷并不保证任何结果。\n如有重病，请向神父询问病人傅油圣事，并继续接受医疗照护。",
+    "why": "意译：《天主教教理》1532指出，病人傅油圣事带来身体健康的恢复，须以有益于病人的得救为条件。本指南提供个人敬礼，不是该圣事，也不许诺痊愈。",
+    "source.publisher": "圣座 / 天主教教理",
+    "source.section": "《天主教教理》 1532, 病人傅油圣事的效果",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。本指南不诊断疾病，也不施行圣事。",
+    "prayerTarget.heading": "为病人祈祷",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/in_brief.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-01": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "我已经很久没有祈祷了，怎样重新开始？",
+    "practicalAnswer": "先慢慢诵念一次天主经，不必试图补回每一个没有祈祷的日子。\n选择一个简短、固定的时间，明天再回来；把真实的忧虑带到天主面前。",
+    "why": "意译（编辑说明）：固定的时间有助于使祈祷成为生活的一部分。这一小步是实际建议，不是教会规定的规则。《天主教教理》2697。",
+    "source.publisher": "圣座 / 天主教教理",
+    "source.section": "《天主教教理》 2697",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。如希望办告解或接受个人灵修指导，请向神父咨询。",
+    "prayerTarget.heading": "天主经",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-01": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "我的祈祷似乎没有回应，天主忽略了我吗？",
+    "practicalAnswer": "诚实地告诉天主，等待很困难；不必隐藏失望。\n继续把需要带到祂面前，不要把所求的结果当作检验祂爱的标准。\n本指南不能解释某一次失去或迟延为何发生。",
+    "why": "意译（编辑说明）：《天主教教理》把没有回应的祈求视为真实的困难，而不是羞辱祈祷者的理由。《天主教教理》2734-2741，特别是2739。",
+    "source.publisher": "圣座 / 天主教教理",
+    "source.section": "《天主教教理》 2739, 在其中 《天主教教理》 2734-2741",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。这里不提供预言，不解释天主隐秘的旨意，也不许诺结果。",
+    "prayerTarget.heading": "一般代祷",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-02": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "如果什么都没有改变，我该停止祈祷吗？",
+    "practicalAnswer": "尝试一段简短的祈祷，即使气馁时也能再次诵念。\n求助以保持亲近基督；如需要个人指导，请把困难告诉神父。",
+    "why": "意译（编辑说明）：坚持始于恩宠和我们的回应；困难并不证明祈祷失败。《天主教教理》2725，结合2734-2741阅读。",
+    "source.publisher": "圣座 / 天主教教理",
+    "source.section": "《天主教教理》 2725",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。在心理健康危机中，祈祷不能代替专业照护。",
+    "prayerTarget.heading": "在苦难中",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-01": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "马龙尼礼教友每天怎样祈祷？",
+    "practicalAnswer": "可以从早上或晚上诵念一次天主经开始，建立日常节奏。\n关于马龙尼礼日课，请向堂区询问适用哪个教区的日课次序书。\n这里提供的敬礼祈祷是起点，不能代替日课。",
+    "why": "意译：布鲁克林圣马龙教区发布了2025-2026年日课次序书。所附书籍说明，其用途是在洛杉矶黎巴嫩圣母教区按照叙利亚马龙尼礼使用。请向堂区询问如何使用日课；本指南不选择今日经文。",
+    "source.publisher": "布鲁克林圣马龙教区",
+    "source.section": "通告25.117，2025-2026年日课次序书；所附次序书第1-2页",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。这不是今日的日课。2025-2026年次序书是有日期的资料，并非经核实的最新版本。请向堂区询问适用哪个教区的次序书。",
+    "prayerTarget.heading": "天主经",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [
+    "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+    "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her"
+   ],
+   "beginEnabled": false
+  },
+  "family-01": {
+   "need": "family",
+   "copy": {
+    "question": "我们的家庭怎样开始一起祈祷？",
+    "practicalAnswer": "选择一个安静的时刻，邀请家人一起作一次简短祈祷。\n从为家庭祈祷开始；让每个人都能说出需要，不施加压力。",
+    "why": "意译（编辑说明）：家庭可以成为耐心学习祈祷的地方。简短的共同祈祷是实际起点，不是强制形式。《天主教教理》2685。",
+    "source.publisher": "圣座 / 天主教教理",
+    "source.section": "《天主教教理》 2685",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。",
+    "prayerTarget.heading": "为家庭祈祷",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "family-02": {
+   "need": "family",
+   "copy": {
+    "question": "如果家人不和我一起祈祷，我还能为他们祈祷吗？",
+    "practicalAnswer": "可以。即使独自祈祷，也可把家人呈献给天主。\n请圣夏贝尔转祷，让祈祷支持耐心而有爱的照顾，而不是向他人施压。",
+    "why": "意译（编辑说明）：教会教导，我们可以为自己和他人寻求圣人的转祷。这并不许诺家庭会得到某一种结果。《天主教教理》2683。",
+    "source.publisher": "圣座 / 天主教教理",
+    "source.section": "《天主教教理》 2683",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。祈祷不要求你留在不安全的处境，也不能为伤害开脱。",
+    "prayerTarget.heading": "为家庭祈祷",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "gratitude-01": {
+   "need": "gratitude",
+   "copy": {
+    "question": "我怎样为美好的事感谢天主？",
+    "practicalAnswer": "说出你得到的恩赐，用自己的话感谢天主。\n然后慢慢诵念圣三光荣经，让感谢成为赞美。",
+    "why": "意译（编辑说明）：感恩可以把日常生活的事件带入祈祷。《天主教教理》2638。",
+    "source.publisher": "圣座 / 天主教教理",
+    "source.section": "《天主教教理》 2638",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。",
+    "prayerTarget.heading": "圣三光荣经",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_one/article_3/iv_prayer_of_thanksgiving.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-02": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "如果我不知道该说什么呢？",
+    "practicalAnswer": "可以从天主经开始，不必寻找华丽的词句。\n慢慢阅读；当某项祈求表达你心里的重担时，停下来。",
+    "why": "意译：耶稣不鼓励依赖堆积言语的祈祷，并教导天父已经知道我们的需要。玛窦福音6:7-8。",
+    "source.publisher": "美国天主教主教团（NABRE）",
+    "source.section": "玛窦福音6:7-8（参考NABRE；仅原创意译）",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。",
+    "prayerTarget.heading": "天主经",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/matthew/6",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-02": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "向圣夏贝尔祈祷，和神圣礼仪是一回事吗？",
+    "practicalAnswer": "编辑说明：本指南提供网站上的圣夏贝尔祈祷，作为个人敬礼，而不是获批准的马龙尼礼礼仪经文。\n神圣礼仪是教会的圣体敬拜；现在可诵念圣三光荣经，并使用教区指南，与堂区一起了解礼仪敬拜。",
+    "why": "意译：教区把圣体祈祷描述为向圣父、圣子和圣神所作的祈祷。这支持对神圣礼仪的说明，并不确认本网站祈祷文的地位。敬礼这一称呼是本指南的编辑分类，不是教区认证。《马龙尼礼神圣礼仪指南》，圣体礼 - 感恩祭祷文。",
+    "source.publisher": "布鲁克林圣马龙教区",
+    "source.section": "马龙尼礼神圣礼仪指南，圣体礼 - 感恩祭祷文",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。告解或参与圣事的问题应向神父咨询。",
+    "prayerTarget.heading": "圣三光荣经",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://www.stmaron.org/liturgy-guide",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false,
+   "sourceAuthor": "Chorbishop Seely Beggiani"
+  },
+  "gratitude-02": {
+   "need": "gratitude",
+   "copy": {
+    "question": "生活困难时，我还能感恩吗？",
+    "practicalAnswer": "可以，但你不必假装痛苦是好的，也不必向天主隐藏痛苦。\n说出今天能真诚接受的一项恩赐，然后也把苦难带到祂面前。",
+    "why": "意译：保禄呼吁信徒在各种处境中感谢天主，把它作为在基督内生活的一部分。本建议不要求任何人赞美伤害。得撒洛尼前书5:18。",
+    "source.publisher": "美国天主教主教团（NABRE）",
+    "source.section": "得撒洛尼前书5:18（参考NABRE；仅原创意译）",
+    "source.label": "意译",
+    "practiceType": "敬礼祈祷",
+    "boundaryNote": "关于告解、医疗需要或危机，请向神父或医生求助。感恩不等于接受虐待、拒绝治疗或不寻求帮助。",
+    "prayerTarget.heading": "圣三光荣经",
+    "prayerTarget.type": "敬礼祈祷"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/1thessalonians/5",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  }
+ }
+}

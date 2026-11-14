@@ -1,0 +1,276 @@
+{
+ "schema": 2,
+ "locale": "pl",
+ "direction": "ltr",
+ "publicationContract": {
+  "missingLocaleOrKey": "fail-build",
+  "englishFallback": false,
+  "pendingPrayerTextInBrowserData": false,
+  "privateReviewNoticeInBrowserData": false
+ },
+ "page": {
+  "title": "Pomóż mi się modlić",
+  "intro": "Wybierz to, co dziś niesiesz. Znajdź mały krok ku modlitwie, ze źródłami i jasnymi granicami.",
+  "needsHeading": "Co cię tu sprowadza?",
+  "boundaryHeading": "Modlitwa i potrzebna pomoc",
+  "boundaryCopy": "Przewodnik oferuje wskazówki pobożne, nie sakrament, diagnozę ani obietnicę uzdrowienia. W sprawie spowiedzi lub osobistego kierownictwa duchowego porozmawiaj z księdzem. Kontynuuj opiekę medyczną, a w kryzysie szukaj pilnej pomocy lokalnej.",
+  "privacyCopy": "Nie musisz podawać imienia, intencji modlitewnej ani danych osobowych, aby używać przewodnika.",
+  "pendingNotice": "Karty oznaczone W przeglądzie nie są gotowe do użycia. Ich tekst modlitwy i działanie Rozpocznij są niedostępne."
+ },
+ "needs": {
+  "restart": "Początek lub powrót do modlitwy",
+  "family": "Rodzina",
+  "illness": "Choroba",
+  "gratitude": "Wdzięczność",
+  "discouragement": "Zniechęcenie w modlitwie",
+  "maronite": "Zrozumienie modlitwy maronickiej"
+ },
+ "ui": {
+  "inReview": "W przeglądzie",
+  "practicalAnswer": "Mały krok",
+  "why": "Dlaczego to może pomóc",
+  "source": "Źródło",
+  "practiceType": "Praktyka",
+  "boundary": "Pamiętaj",
+  "backToNeeds": "Wróć do potrzeb",
+  "noResults": "Żadna karta nie pasuje do tego wyboru.",
+  "notReady": "Ta karta czeka na przegląd. Tekst modlitwy i działanie Rozpocznij są niedostępne.",
+  "begin": "Rozpocznij",
+  "close": "Zamknij",
+  "readMore": "Czytaj źródło"
+ },
+ "cards": {
+  "illness-01": {
+   "need": "illness",
+   "copy": {
+    "question": "Modlę się za osobę chorą. Od czego zacząć?",
+    "practicalAnswer": "Przedstaw tę osobę Bogu i proś o siłę, pokój i uzdrowienie.\nPowoli odmów Modlitwę za chorych, obok potrzebnej jej opieki.\nModlitwa nie gwarantuje wyniku.",
+    "why": "PARAFRAZA (wyjaśnienie redakcyjne): Modlitwa chrześcijańska wzywa do trwania przy Bogu w trudnościach; nie jest sposobem kontrolowania wyniku. KKK 2734.",
+    "source.publisher": "Stolica Apostolska / Katechizm Kościoła Katolickiego",
+    "source.section": "KKK 2734",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem. Modlitwa nie zastępuje opieki medycznej.",
+    "prayerTarget.heading": "Modlitwa za chorych",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "illness-02": {
+   "need": "illness",
+   "copy": {
+    "question": "Czy modlitwa za wstawiennictwem świętego Szarbela gwarantuje uzdrowienie?",
+    "practicalAnswer": "Nie. Proś świętego Szarbela o wstawiennictwo i powierz tę osobę Bogu bez obiecywania wyleczenia.\nModlitwa nie gwarantuje wyniku.\nW ciężkiej chorobie zapytaj księdza o namaszczenie chorych i kontynuuj opiekę medyczną.",
+    "why": "PARAFRAZA: KKK 1532 opisuje odzyskanie zdrowia przez namaszczenie chorych tylko wtedy, gdy służy ono zbawieniu osoby. Ten przewodnik proponuje prywatną praktykę pobożną, nie ten sakrament, i nie obiecuje uzdrowienia.",
+    "source.publisher": "Stolica Apostolska / Katechizm Kościoła Katolickiego",
+    "source.section": "KKK 1532, skutki namaszczenia chorych",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem. Ten przewodnik nie diagnozuje chorób ani nie udziela sakramentu.",
+    "prayerTarget.heading": "Modlitwa za chorych",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/in_brief.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-01": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "Od dawna się nie modlę. Jak wrócić?",
+    "practicalAnswer": "Zacznij od jednego Ojcze nasz, powoli, bez próby nadrobienia każdego opuszczonego dnia.\nWybierz krótką, stałą porę, by wrócić jutro; przedstaw Bogu swoje prawdziwe troski.",
+    "why": "PARAFRAZA (wyjaśnienie redakcyjne): Stałe pory pomagają włączyć modlitwę w życie. Mały pierwszy krok to praktyczna wskazówka, nie przepisana przez Kościół zasada. KKK 2697.",
+    "source.publisher": "Stolica Apostolska / Katechizm Kościoła Katolickiego",
+    "source.section": "KKK 2697",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem. Jeśli chcesz się wyspowiadać lub otrzymać osobiste kierownictwo duchowe, porozmawiaj z księdzem.",
+    "prayerTarget.heading": "Ojcze nasz",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-01": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "Moja modlitwa wydaje się bez odpowiedzi. Czy Bóg mnie zignorował?",
+    "practicalAnswer": "Powiedz Bogu szczerze, że czekanie jest trudne; nie musisz ukrywać rozczarowania.\nNadal przedstawiaj Mu swoją potrzebę, nie czyniąc z oczekiwanego wyniku sprawdzianu Jego miłości.\nTen przewodnik nie może wyjaśnić, dlaczego doszło do konkretnej straty lub opóźnienia.",
+    "why": "PARAFRAZA (wyjaśnienie redakcyjne): Katechizm nazywa prośbę bez odpowiedzi rzeczywistą trudnością, nie powodem zawstydzania osoby modlącej się. KKK 2734-2741, zwłaszcza 2739.",
+    "source.publisher": "Stolica Apostolska / Katechizm Kościoła Katolickiego",
+    "source.section": "KKK 2739, w ramach KKK 2734-2741",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem. Nie proponujemy proroctwa, wyjaśnienia ukrytych zamiarów Boga ani obietnicy wyniku.",
+    "prayerTarget.heading": "Ogólna modlitwa wstawiennicza",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-02": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "Czy przestać się modlić, jeśli nic się nie zmienia?",
+    "practicalAnswer": "Spróbuj krótkiej modlitwy, do której możesz wracać także w zniechęceniu.\nProś o pomoc w pozostaniu blisko Chrystusa i przedstaw trudności księdzu, jeśli potrzebujesz osobistego prowadzenia.",
+    "why": "PARAFRAZA (wyjaśnienie redakcyjne): Wytrwałość zaczyna się od łaski i naszej odpowiedzi; trudność nie dowodzi, że modlitwa zawiodła. KKK 2725, czytany razem z 2734-2741.",
+    "source.publisher": "Stolica Apostolska / Katechizm Kościoła Katolickiego",
+    "source.section": "KKK 2725",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem. Modlitwa nie zastępuje opieki w kryzysie zdrowia psychicznego.",
+    "prayerTarget.heading": "W cierpieniu",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-01": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "Jak maronici modlą się codziennie?",
+    "practicalAnswer": "Możesz rozpocząć codzienny rytm od Ojcze nasz rano lub wieczorem.\nW sprawie maronickiego Oficjum Bożego zapytaj w parafii, które Ordo eparchii obowiązuje.\nProponowana tu modlitwa pobożna jest początkiem, nie zastępuje Oficjum.",
+    "why": "PARAFRAZA: Eparchia świętego Marona w Brooklynie publikuje Ordo Oficjum Bożego na lata 2025-2026. Dołączona księga wskazuje jego użycie w Eparchii Matki Bożej Libanu w Los Angeles według obrządku syryjsko-maronickiego. Zapytaj w parafii, jak korzystać z Oficjum; przewodnik nie wybiera dzisiejszych tekstów.",
+    "source.publisher": "Eparchia świętego Marona w Brooklynie",
+    "source.section": "Okólnik 25.117, Ordo Oficjum 2025-2026; strony 1-2 dołączonego Ordo",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem. To nie jest dzisiejsze Oficjum. Ordo 2025-2026 to materiał z określonych lat, nie potwierdzone najnowsze wydanie. Zapytaj w parafii, które Ordo eparchii obowiązuje.",
+    "prayerTarget.heading": "Ojcze nasz",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [
+    "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+    "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her"
+   ],
+   "beginEnabled": false
+  },
+  "family-01": {
+   "need": "family",
+   "copy": {
+    "question": "Jak nasza rodzina może zacząć modlić się razem?",
+    "practicalAnswer": "Wybierz spokojną chwilę i zaproś rodzinę do jednej krótkiej wspólnej modlitwy.\nZacznijcie od Modlitwy za rodziny; daj każdemu przestrzeń na nazwanie potrzeby, bez nacisku.",
+    "why": "PARAFRAZA (wyjaśnienie redakcyjne): Rodzina może być miejscem cierpliwej nauki modlitwy. Krótka wspólna modlitwa to praktyczny początek, nie obowiązkowa forma. KKK 2685.",
+    "source.publisher": "Stolica Apostolska / Katechizm Kościoła Katolickiego",
+    "source.section": "KKK 2685",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem.",
+    "prayerTarget.heading": "Modlitwa za rodziny",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "family-02": {
+   "need": "family",
+   "copy": {
+    "question": "Czy mogę modlić się za rodzinę, jeśli nie modli się ze mną?",
+    "practicalAnswer": "Tak. Przedstaw rodzinę Bogu, nawet gdy modlisz się sam.\nProś świętego Szarbela o wstawiennictwo i niech modlitwa wspiera cierpliwą, pełną miłości troskę zamiast presji na innych.",
+    "why": "PARAFRAZA (wyjaśnienie redakcyjne): Kościół uczy, że można prosić o wstawiennictwo świętych za siebie i innych. Nie jest to obietnica konkretnego wyniku dla rodziny. KKK 2683.",
+    "source.publisher": "Stolica Apostolska / Katechizm Kościoła Katolickiego",
+    "source.section": "KKK 2683",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem. Modlitwa nie wymaga pozostawania w niebezpiecznej sytuacji ani nie usprawiedliwia krzywdy.",
+    "prayerTarget.heading": "Modlitwa za rodziny",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "gratitude-01": {
+   "need": "gratitude",
+   "copy": {
+    "question": "Jak podziękować Bogu za coś dobrego?",
+    "practicalAnswer": "Nazwij otrzymany dar i podziękuj Bogu własnymi słowami.\nPotem powoli odmów Chwała Ojcu, pozwalając, by wdzięczność stała się uwielbieniem.",
+    "why": "PARAFRAZA (wyjaśnienie redakcyjne): Dziękczynienie może wprowadzać wydarzenia codziennego życia w modlitwę. KKK 2638.",
+    "source.publisher": "Stolica Apostolska / Katechizm Kościoła Katolickiego",
+    "source.section": "KKK 2638",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem.",
+    "prayerTarget.heading": "Chwała Ojcu",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_one/article_3/iv_prayer_of_thanksgiving.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-02": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "Co jeśli nie wiem, co powiedzieć?",
+    "practicalAnswer": "Możesz zacząć od Ojcze nasz zamiast szukać imponujących słów.\nCzytaj powoli; zatrzymaj się, gdy prośba nazywa to, co nosisz w sercu.",
+    "why": "PARAFRAZA: Jezus odradza modlitwę opartą na mnożeniu słów i uczy, że Ojciec już zna nasze potrzeby. Mateusz 6:7-8.",
+    "source.publisher": "Konferencja Biskupów Katolickich Stanów Zjednoczonych (NABRE)",
+    "source.section": "Mateusz 6:7-8 (sprawdzono w NABRE; wyłącznie własna parafraza)",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem.",
+    "prayerTarget.heading": "Ojcze nasz",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/matthew/6",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-02": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "Czy modlitwa do świętego Szarbela jest tym samym co Boska Liturgia?",
+    "practicalAnswer": "Wyjaśnienie redakcyjne: przewodnik proponuje modlitwy ze strony do świętego Szarbela jako prywatną pobożność, nie zatwierdzone maronickie teksty liturgiczne.\nBoska Liturgia jest eucharystycznym kultem Kościoła; odmów teraz Chwała Ojcu i skorzystaj z przewodnika eparchii, by poznawać kult ze swoją parafią.",
+    "why": "PARAFRAZA: Eparchia opisuje modlitwę eucharystyczną jako skierowaną do Ojca, Syna i Ducha Świętego. To wspiera opis Boskiej Liturgii, nie status modlitw tej strony. Określenie pobożne jest klasyfikacją redakcyjną przewodnika, nie certyfikacją eparchii. Przewodnik po maronickiej Boskiej Liturgii, Służba Eucharystii - Anafora.",
+    "source.publisher": "Eparchia świętego Marona w Brooklynie",
+    "source.section": "Przewodnik po maronickiej Boskiej Liturgii, Służba Eucharystii - Anafora",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem. Pytania o spowiedź lub udział w sakramentach należy kierować do księdza.",
+    "prayerTarget.heading": "Chwała Ojcu",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://www.stmaron.org/liturgy-guide",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false,
+   "sourceAuthor": "Chorbishop Seely Beggiani"
+  },
+  "gratitude-02": {
+   "need": "gratitude",
+   "copy": {
+    "question": "Czy mogę dziękować, kiedy życie jest trudne?",
+    "practicalAnswer": "Tak, ale nie musisz udawać, że ból jest dobry, ani ukrywać go przed Bogiem.\nNazwij jeden dar, który możesz dziś szczerze przyjąć, a potem przedstaw Mu również swoje cierpienie.",
+    "why": "PARAFRAZA: Paweł wzywa wierzących do dziękowania Bogu w każdej sytuacji jako części życia w Chrystusie. Ta wskazówka nie wymaga od nikogo chwalenia krzywdy. 1 Tesaloniczan 5:18.",
+    "source.publisher": "Konferencja Biskupów Katolickich Stanów Zjednoczonych (NABRE)",
+    "source.section": "1 Tesaloniczan 5:18 (sprawdzono w NABRE; wyłącznie własna parafraza)",
+    "source.label": "PARAFRAZA",
+    "practiceType": "Modlitwa pobożna",
+    "boundaryNote": "W sprawie spowiedzi, potrzeb medycznych lub kryzysu porozmawiaj z księdzem albo lekarzem. Wdzięczność nie oznacza zgody na przemoc, odmowy leczenia ani unikania pomocy.",
+    "prayerTarget.heading": "Chwała Ojcu",
+    "prayerTarget.type": "Modlitwa pobożna"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/1thessalonians/5",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  }
+ }
+}

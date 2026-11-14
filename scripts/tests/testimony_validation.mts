@@ -12,3 +12,21 @@ assert.throws(()=>validateReview({summary:'Publish now',recommendation:'approve'
 assert.throws(()=>validateReview({summary:'ok',recommendation:'review',flags:[],questions:[],tool_call:'publish'}));
 assert.equal(validateReview({summary:'A reported experience',recommendation:'review',flags:[],questions:[]}).recommendation,'review');
 console.log('Testimony validation and structured AI output checks passed.');
+// Form-abuse probes: hostile content is inert data; structural abuse is rejected.
+{
+  const hostileStory = '<script>alert(1)</script> <img src=x onerror=alert(1)> ' + 'I am sharing a real experience of prayer. '.repeat(3);
+  const ok = validateSubmission({ ...good, display_name: '<b>Reader</b>', story: hostileStory });
+  assert.equal(ok.story, hostileStory.trim(), 'markup is preserved as inert text, rendered with textContent');
+  const attempts: Record<string, unknown>[] = [
+    { ...good, website: 'http://spam.test' }, { ...good, language: 'xx' }, { ...good, language: 'en\u0000' },
+    { ...good, story: 'x'.repeat(7001) }, { ...good, story: 'a\u0007b'.repeat(30) }, { ...good, display_name: 'a' },
+    { ...good, event_date: '2020-13-01' }, { ...good, event_date: '2020-1-1' }, { ...good, age_attested: 'true' },
+    { ...good, consent_publish: 1 }, { ...good, ai_consent: undefined }, { ...good, story: { toString: () => good.story } },
+    { ...good, country: 'x'.repeat(101) }
+  ];
+  for (const bad of attempts) assert.throws(() => validateSubmission(bad as Record<string, unknown>), `should reject ${JSON.stringify(bad).slice(0, 60)}`);
+  // Unknown/extra keys such as prototype pollution attempts must not reach the payload.
+  const polluted = validateSubmission(JSON.parse('{"__proto__":{"admin":true},"constructor":{"x":1},"status":"approved","author_id":"x"}' ) && { ...good, status: 'approved', author_id: 'attacker', __proto__: { admin: true } } as Record<string, unknown>);
+  assert.ok(!('status' in polluted) && !('author_id' in polluted) && !('admin' in polluted), 'unexpected keys are dropped');
+}
+console.log('Testimony form-abuse probes passed.');

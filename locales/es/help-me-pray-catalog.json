@@ -1,0 +1,276 @@
+{
+ "schema": 2,
+ "locale": "es",
+ "direction": "ltr",
+ "publicationContract": {
+  "missingLocaleOrKey": "fail-build",
+  "englishFallback": false,
+  "pendingPrayerTextInBrowserData": false,
+  "privateReviewNoticeInBrowserData": false
+ },
+ "page": {
+  "title": "Ayúdame a rezar",
+  "intro": "Elige lo que llevas contigo hoy. Encuentra un pequeño paso hacia la oración, con fuentes y límites claros.",
+  "needsHeading": "¿Qué te trae aquí?",
+  "boundaryHeading": "La oración y la ayuda que necesitas",
+  "boundaryCopy": "Esta guía ofrece orientación devocional, no un sacramento, un diagnóstico ni una promesa de sanación. Para la confesión o el acompañamiento espiritual personal, habla con un sacerdote. Continúa recibiendo atención médica y busca ayuda local urgente en una crisis.",
+  "privacyCopy": "No necesitas introducir tu nombre, intención de oración ni datos personales para utilizar esta guía.",
+  "pendingNotice": "Las tarjetas marcadas En revisión no están listas para usar. Su texto de oración y la acción Comenzar no están disponibles."
+ },
+ "needs": {
+  "restart": "Empezar o volver a rezar",
+  "family": "Familia",
+  "illness": "Enfermedad",
+  "gratitude": "Gratitud",
+  "discouragement": "Desánimo en la oración",
+  "maronite": "Comprender la oración maronita"
+ },
+ "ui": {
+  "inReview": "En revisión",
+  "practicalAnswer": "Un pequeño paso",
+  "why": "Por qué puede ayudar",
+  "source": "Fuente",
+  "practiceType": "Práctica",
+  "boundary": "Ten en cuenta",
+  "backToNeeds": "Volver a las necesidades",
+  "noResults": "Ninguna tarjeta coincide con esta elección.",
+  "notReady": "Esta tarjeta está pendiente de revisión. El texto de oración y la acción Comenzar no están disponibles.",
+  "begin": "Comenzar",
+  "close": "Cerrar",
+  "readMore": "Leer la fuente"
+ },
+ "cards": {
+  "illness-01": {
+   "need": "illness",
+   "copy": {
+    "question": "Estoy rezando por una persona enferma. ¿Por dónde empiezo?",
+    "practicalAnswer": "Presenta a esta persona ante Dios y pide fuerza, paz y sanación.\nReza despacio la Oración por los enfermos, junto con la atención que necesita.\nLa oración no garantiza ningún resultado.",
+    "why": "PARÁFRASIS (explicación editorial): La oración cristiana nos llama a permanecer con Dios en las dificultades; no es una manera de controlar el resultado. CIC 2734.",
+    "source.publisher": "Santa Sede / Catecismo de la Iglesia Católica",
+    "source.section": "CIC 2734",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico. La oración no sustituye la atención médica.",
+    "prayerTarget.heading": "Oración por los enfermos",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "illness-02": {
+   "need": "illness",
+   "copy": {
+    "question": "¿Rezar por la intercesión de san Charbel garantiza la sanación?",
+    "practicalAnswer": "No. Pide la intercesión de san Charbel y confía la persona a Dios sin prometer una curación.\nLa oración no garantiza ningún resultado.\nAnte una enfermedad grave, pregunta a un sacerdote por la Unción de los enfermos y continúa la atención médica.",
+    "why": "PARÁFRASIS: El CIC 1532 describe la recuperación de la salud por la Unción de los enfermos solo cuando sirve a la salvación de la persona. Esta guía ofrece una devoción privada, no ese sacramento, y no promete sanación.",
+    "source.publisher": "Santa Sede / Catecismo de la Iglesia Católica",
+    "source.section": "CIC 1532, efectos de la Unción de los enfermos",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico. Esta guía no diagnostica enfermedades ni administra un sacramento.",
+    "prayerTarget.heading": "Oración por los enfermos",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/in_brief.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-01": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "Hace tiempo que no rezo. ¿Cómo vuelvo?",
+    "practicalAnswer": "Empieza con un Padrenuestro, despacio, sin intentar compensar todos los días que faltaste.\nElige un momento breve y habitual para volver mañana; presenta tus preocupaciones reales a Dios.",
+    "why": "PARÁFRASIS (explicación editorial): Los momentos fijos ayudan a integrar la oración en la vida. Este pequeño primer paso es una orientación práctica, no una norma prescrita por la Iglesia. CIC 2697.",
+    "source.publisher": "Santa Sede / Catecismo de la Iglesia Católica",
+    "source.section": "CIC 2697",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico. Si deseas confesarte o recibir acompañamiento espiritual personal, habla con un sacerdote.",
+    "prayerTarget.heading": "Padrenuestro",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-01": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "Mi oración parece no tener respuesta. ¿Dios me ha ignorado?",
+    "practicalAnswer": "Dile a Dios con sinceridad que esperar es difícil; no tienes que esconder tu decepción.\nSigue presentándole tu necesidad sin convertir el resultado que pides en una prueba de su amor.\nEsta guía no puede explicar por qué ha ocurrido una pérdida o una demora concreta.",
+    "why": "PARÁFRASIS (explicación editorial): El Catecismo reconoce la petición sin respuesta como una dificultad real, no como motivo para avergonzar a quien reza. CIC 2734-2741, especialmente 2739.",
+    "source.publisher": "Santa Sede / Catecismo de la Iglesia Católica",
+    "source.section": "CIC 2739, dentro de CIC 2734-2741",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico. No se ofrece ninguna profecía, explicación de los designios ocultos de Dios ni promesa de resultados.",
+    "prayerTarget.heading": "Oración general de intercesión",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-02": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "¿Debería dejar de rezar si nada cambia?",
+    "practicalAnswer": "Prueba una oración breve a la que puedas volver, incluso cuando te sientas desanimado.\nPide ayuda para permanecer cerca de Cristo y comparte tu dificultad con un sacerdote si necesitas orientación personal.",
+    "why": "PARÁFRASIS (explicación editorial): La perseverancia comienza con la gracia y nuestra respuesta; la dificultad no demuestra que tu oración haya fracasado. CIC 2725, leído junto con 2734-2741.",
+    "source.publisher": "Santa Sede / Catecismo de la Iglesia Católica",
+    "source.section": "CIC 2725",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico. La oración no sustituye la atención en una crisis de salud mental.",
+    "prayerTarget.heading": "En el sufrimiento",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-01": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "¿Cómo rezan los maronitas cada día?",
+    "practicalAnswer": "Puedes iniciar un ritmo diario con un Padrenuestro por la mañana o por la tarde.\nPara el Oficio Divino maronita, pregunta en tu parroquia qué Ordo de la eparquía corresponde.\nLa oración devocional que se ofrece aquí es un punto de partida, no un sustituto del Oficio.",
+    "why": "PARÁFRASIS: La Eparquía de San Marón de Brooklyn publica el Ordo del Oficio Divino para 2025-2026. El libro adjunto indica su uso en la Eparquía de Nuestra Señora del Líbano de Los Ángeles según el rito siríaco maronita. Pregunta en tu parroquia cómo usar el Oficio; esta guía no selecciona los textos del día.",
+    "source.publisher": "Eparquía de San Marón de Brooklyn",
+    "source.section": "Circular 25.117, Ordo del Oficio 2025-2026; páginas 1-2 del Ordo adjunto",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico. Este no es el Oficio de hoy. El Ordo 2025-2026 es un recurso fechado, no una edición más reciente verificada. Pregunta en tu parroquia qué Ordo de la eparquía corresponde.",
+    "prayerTarget.heading": "Padrenuestro",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [
+    "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+    "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her"
+   ],
+   "beginEnabled": false
+  },
+  "family-01": {
+   "need": "family",
+   "copy": {
+    "question": "¿Cómo podemos empezar a rezar en familia?",
+    "practicalAnswer": "Elige un momento tranquilo e invita a tu familia a rezar juntos una oración breve.\nEmpieza con la Oración por las familias; permite que cada persona nombre una necesidad, sin presiones.",
+    "why": "PARÁFRASIS (explicación editorial): La familia puede ser un lugar donde se aprende a rezar con paciencia. Una oración breve compartida es un comienzo práctico, no una forma obligatoria. CIC 2685.",
+    "source.publisher": "Santa Sede / Catecismo de la Iglesia Católica",
+    "source.section": "CIC 2685",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico.",
+    "prayerTarget.heading": "Oración por las familias",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "family-02": {
+   "need": "family",
+   "copy": {
+    "question": "¿Puedo rezar por mi familia si no reza conmigo?",
+    "practicalAnswer": "Sí. Presenta tu familia a Dios aunque reces a solas.\nPide la intercesión de san Charbel y deja que tu oración sostenga un cuidado paciente y amoroso, en lugar de presionar a los demás.",
+    "why": "PARÁFRASIS (explicación editorial): La Iglesia enseña que podemos pedir la intercesión de los santos por nosotros y por otras personas. Esto no promete un resultado familiar concreto. CIC 2683.",
+    "source.publisher": "Santa Sede / Catecismo de la Iglesia Católica",
+    "source.section": "CIC 2683",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico. La oración no te obliga a permanecer en una situación insegura ni justifica el daño.",
+    "prayerTarget.heading": "Oración por las familias",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "gratitude-01": {
+   "need": "gratitude",
+   "copy": {
+    "question": "¿Cómo puedo agradecer a Dios algo bueno?",
+    "practicalAnswer": "Nombra el don que has recibido y dale gracias a Dios con tus propias palabras.\nDespués reza despacio el Gloria, dejando que tu agradecimiento se convierta en alabanza.",
+    "why": "PARÁFRASIS (explicación editorial): La acción de gracias puede llevar los acontecimientos de la vida diaria a la oración. CIC 2638.",
+    "source.publisher": "Santa Sede / Catecismo de la Iglesia Católica",
+    "source.section": "CIC 2638",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico.",
+    "prayerTarget.heading": "Gloria",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_one/article_3/iv_prayer_of_thanksgiving.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-02": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "¿Y si no sé qué decir?",
+    "practicalAnswer": "Puedes empezar con el Padrenuestro en vez de buscar palabras impresionantes.\nLéelo despacio; detente cuando una petición exprese lo que llevas dentro.",
+    "why": "PARÁFRASIS: Jesús desaconseja una oración basada en acumular palabras y enseña que el Padre ya conoce nuestras necesidades. Mateo 6:7-8.",
+    "source.publisher": "Conferencia de Obispos Católicos de Estados Unidos (NABRE)",
+    "source.section": "Mateo 6:7-8 (consultado en NABRE; solo paráfrasis original)",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico.",
+    "prayerTarget.heading": "Padrenuestro",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/matthew/6",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-02": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "¿Una oración a san Charbel es lo mismo que la Divina Liturgia?",
+    "practicalAnswer": "Explicación editorial: esta guía ofrece las oraciones del sitio a san Charbel para la devoción privada, no como textos litúrgicos maronitas aprobados.\nLa Divina Liturgia es el culto eucarístico de la Iglesia; reza ahora el Gloria y utiliza la guía de la eparquía para conocer el culto con tu parroquia.",
+    "why": "PARÁFRASIS: La eparquía describe la oración eucarística como dirigida al Padre, al Hijo y al Espíritu Santo. Esto fundamenta la descripción de la Divina Liturgia, no el estatus de las oraciones de este sitio. La etiqueta devocional es una clasificación editorial de esta guía, no una certificación de la eparquía. Guía de la Divina Liturgia maronita, Servicio de la Eucaristía - La Anáfora.",
+    "source.publisher": "Eparquía de San Marón de Brooklyn",
+    "source.section": "Guía de la Divina Liturgia maronita, Servicio de la Eucaristía - La Anáfora",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico. Las preguntas sobre la confesión o la participación en los sacramentos corresponden a un sacerdote.",
+    "prayerTarget.heading": "Gloria",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://www.stmaron.org/liturgy-guide",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false,
+   "sourceAuthor": "Chorbishop Seely Beggiani"
+  },
+  "gratitude-02": {
+   "need": "gratitude",
+   "copy": {
+    "question": "¿Puedo dar gracias cuando la vida es difícil?",
+    "practicalAnswer": "Sí, pero no tienes que fingir que el dolor es bueno ni ocultárselo a Dios.\nNombra un don que puedas recibir sinceramente hoy y después preséntale también tu sufrimiento.",
+    "why": "PARÁFRASIS: Pablo invita a los creyentes a dar gracias a Dios en toda situación como parte de la vida en Cristo. Esta orientación no pide a nadie que alabe el daño sufrido. 1 Tesalonicenses 5:18.",
+    "source.publisher": "Conferencia de Obispos Católicos de Estados Unidos (NABRE)",
+    "source.section": "1 Tesalonicenses 5:18 (consultado en NABRE; solo paráfrasis original)",
+    "source.label": "PARÁFRASIS",
+    "practiceType": "Oración devocional",
+    "boundaryNote": "Para la confesión, una necesidad médica o una crisis, habla con un sacerdote o un médico. La gratitud no significa aceptar abusos, rechazar tratamiento ni evitar pedir ayuda.",
+    "prayerTarget.heading": "Gloria",
+    "prayerTarget.type": "Oración devocional"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/1thessalonians/5",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  }
+ }
+}

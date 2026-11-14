@@ -1,3 +1,5 @@
+from i18n.encyclopedia_nav import finish_nav
+from i18n.shared_chrome import shared_header_chrome
 """Locale-agnostic feast mirror: preserve the English DOM and fail on untranslated master edits."""
 from i18n.metadata import og_locales
 from i18n.catalog import page_url, topic_locales
@@ -15,8 +17,10 @@ def render_feast_locale(root=ROOT, lang='ar', registry=None):
     skip=soup.select_one('.skip-link')
     if skip is not None: skip.string=read_json(root/f'locales/{lang}/common.json')['navigation.skip']
     translate_slots(soup.main, copy['slots'], 'Feast')
+    from i18n.encyclopedia_trail import apply_trail
+    apply_trail(soup, root, lang, '/history')
     soup.html['lang']=lang;soup.html['dir']=registry['locales'][lang]['direction'];soup.html['data-authored-mirror']='feast'
-    title=copy['title'];description=soup.select_one('main .hero > p').get_text(' ',strip=True);url=registry['site']+config['routes'][lang]
+    title=copy['title'];description=soup.select_one('main .hero > p:not(.enc-trail)').get_text(' ',strip=True);url=registry['site']+config['routes'][lang]
     soup.title.string=title
     for selector,value in [('meta[name=description]',description),('meta[property="og:title"]',title),('meta[property="og:description"]',description),('meta[name="twitter:title"]',title),('meta[name="twitter:description"]',description),('meta[property="og:url"]',url)]:soup.select_one(selector)['content']=value
     soup.select_one('link[rel=canonical]')['href']=url
@@ -52,13 +56,29 @@ def render_feast_locale(root=ROOT, lang='ar', registry=None):
     for mirror in registry.get('domMirrors',{}).values():
         if lang in mirror['routes']:
             mapped[mirror['english'].strip('/')] = mirror['routes'][lang]
+    for mirror in registry.get('exactMirrors',{}).values():
+        if lang in mirror['routes']:
+            mapped[mirror['english'].strip('/')] = mirror['routes'][lang]
     # Prayer master redirects into this legacy guide cluster.
     if lang in topic_locales(registry, 'prayers'):
         mapped['en/prayers'] = page_url(registry, lang, 'prayers')
+    # AR-2 body-link follow-up (ar only): page-mirror twins join the map;
+    # localizedLinks below still gates every entry.
+    if lang=='ar':
+        for mirror in registry.get('pageMirrors',{}).values():
+            if lang in mirror.get('routes',{}):
+                mapped[mirror['english'].strip('/')]=mirror['routes'][lang]
     mapped={key:value for key,value in mapped.items() if key in copy['localizedLinks']}
+    # Absolute body hrefs keep their leading slash; match those too (ar only).
+    # Body-only: header/footer chrome is routed by finish_nav, never here.
+    body_only={}
+    if lang=='ar':
+        body_only={'/'+key:value for key,value in mapped.items()}
     for a in soup.select('a[href]'):
         href=a['href'];path=href.removeprefix('./')
-        if path in mapped:a['href']=mapped[path]
+        in_chrome=a.find_parent(['header','footer','nav']) is not None
+        if href in body_only and not in_chrome:a['href']=body_only[href];continue
+        if path in mapped and not (in_chrome and lang=='ar' and path in ('prayer-library','saint-charbel-encyclopedia')):a['href']=mapped[path]
         elif href.startswith('./'):a['href']='/'+path
         elif not href.startswith(('/','#','https://','http://')):a['href']='/'+href
     for tag in soup.select('script[src],link[href],img[src]'):
@@ -67,13 +87,14 @@ def render_feast_locale(root=ROOT, lang='ar', registry=None):
         elif not href.startswith(('/','#','https://','http://')):tag[attr]='/'+href
     en=read_json(root/'locales/en/mirrors/prayers.json');local=read_json(root/f'locales/{lang}/mirrors/prayers.json')
     chrome={v:local[k] for k,v in en.items() if k.startswith('header.') and k in local and isinstance(v,str)}
+    chrome.update(shared_header_chrome(root,lang))
     chrome.update(copy.get('chrome',{}))
     for node in soup.select_one('header.topbar').find_all(string=True):
         old=str(node);key=old.strip()
         if key in chrome:node.replace_with(old.replace(key,chrome[key]))
     soup.select_one('header nav')['aria-label']=copy['primaryLabel'];soup.select_one('header a.brand')['href']=registry['locales'][lang]['home']
     soup.select_one('footer .site-shell').string=copy['footer']
-    return {root/(config['routes'][lang].lstrip('/')+'.html'):str(soup)}
+    return {root/(config['routes'][lang].lstrip('/')+'.html'):finish_nav(str(soup),root,lang)}
 
 
 def render_feast(root=ROOT):

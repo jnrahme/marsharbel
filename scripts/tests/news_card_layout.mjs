@@ -14,7 +14,7 @@ try {
     assert.equal(await page.locator('#latest-news .home-news-lead').count(),1);
     const rows=await page.locator('#latest-news .home-news-row').count();
     assert.ok(rows>=3,'at least three headline rows');
-    const lead=await page.locator('.home-news-lead .home-news-photo img').boundingBox();
+    const lead=await page.locator('#latest-news .home-news-lead .home-news-photo img').boundingBox();
     assert.ok(lead.width >= (width<=820?300:500));
     assert.ok(lead.height >= 180);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
@@ -22,11 +22,20 @@ try {
     for(const item of await links.all()){
       const href=await item.getAttribute('href');
       assert.ok(href && new URL(href,base).pathname.length > 1);
-      assert.ok(await item.locator('img').getAttribute('alt'));
       assert.ok((await item.locator('.home-news-title').innerText()).trim().length>0);
       const box=await item.boundingBox();
-      const imgBox=await item.locator('img').boundingBox();
-      assert.ok(box.height>=imgBox.height,'whole item is the link, photo inside it');
+      const isTextOnly=await item.evaluate(el=>el.classList.contains('home-news-row--text'));
+      const imgCount=await item.locator('img').count();
+      if(isTextOnly){
+        assert.equal(imgCount,0,'text-only row must not carry a photo');
+        const copyBox=await item.locator('.home-news-copy').boundingBox();
+        assert.ok(copyBox.width >= box.width*0.9,'text-only row copy uses the available row width');
+      } else {
+        assert.ok(imgCount>=1,'photo row/lead carries a photo');
+        assert.ok(await item.locator('img').getAttribute('alt'));
+        const imgBox=await item.locator('img').boundingBox();
+        assert.ok(box.height>=imgBox.height,'whole item is the link, photo inside it');
+      }
     }
     assert.ok(await page.locator('#latest-news .home-news-all').getAttribute('href'));
     await page.close();

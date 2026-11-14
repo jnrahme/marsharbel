@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />

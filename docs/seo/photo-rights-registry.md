@@ -30,6 +30,11 @@ figcaption. New images: add a record here in the same batch.
   Rafqa, Jrabta, Lebanon. Author: unknown.
 - License: public domain (published before 1930; Lebanon Law 75/1999 expiry). Verified 2026-09-25.
 
+### st-sarkis-bakhos.webp (689x1000, 131KB)
+- Subject: Sts Sergius and Bacchus as mounted warrior saints, icon, Saint Catherine's Monastery, Mount Sinai, second half of the 13th century.
+- Source: Wikimedia Commons, File:Saint Sergius and Saint Bacchus, from Saint Catherine Monastery, Mount Sinai, second half of the 13th century.jpg. Author: 13th-century painter.
+- License: public domain (Commons: Public domain). Verified 2026-10-05.
+
 ### blessed-fulton-sheen.webp (873x693, 48KB)
 - Subject: Blessed Fulton Sheen at his desk, 1956 (real photograph).
 - Source: Wikimedia Commons, File:Bishop Fulton J. Sheen 1956.JPG
@@ -43,6 +48,12 @@ figcaption. New images: add a record here in the same batch.
 - Subject: Saint Charbel Makhlouf - the traditional hooded portrait.
 - Already in use sitewide (og:image default, canonization pages). Same
   caption reused on /saints.
+- Provenance unknown; first committed 2026-03-05 (initial commit f84b3573 holds
+  this 906x667 portrait at two paths, saint-charbel.jpg and
+  gallery/charbel-portrait.jpg - byte-identical files, no source recorded; this
+  WebP derivative added 2026-09-24 in fe086a68). Caption makes no license claim
+  (C-0080, 2026-10-10: removed the unsupported "public domain" clause from the
+  homepage caption (EN + 10 locales)).
 
 ## media/annaya/ (added 2026-09-25, photo pass batch 4 - prayer-intention pages)
 
@@ -129,23 +140,30 @@ figcaption. New images: add a record here in the same batch.
 
 ## Reused as /news card headers (2026-09-25 news restructure)
 
-### media/annaya/annaya-entrance-pilgrims.webp (1100x733) - byblos-annaya-prayer-walk card
+### media/annaya/annaya-entrance-pilgrims.webp (1100x733) - byblos-annaya-prayer-walk card - SUPERSEDED in those slots 2026-10-15
 - Source: Wikimedia Commons, File:St Charbel Makhlouf Annaya.jpg, author LLEW, CC BY-SA 4.0 (verified 2026-09-25 via Commons API, see bot-log 2026-09-25-photo-p1-b1).
+- 2026-10-15: replaced by the owner-granted media/annaya/annaya-church-dusk-entrance.webp on the byblos-annaya-prayer-walk card and the homepage Latest News trail row (Batch 1 owner-granted set below). Miracles hero and social meta swapped to the owner-granted set 2026-10-15 (Batch 1); no live references remain.
 
-### media/annaya/annaya-monastery.webp (1100x618) - new-miracles-reported card
+### media/annaya/annaya-monastery.webp (1100x618) - new-miracles-reported card - SUPERSEDED in that slot 2026-10-15
 - Source: Wikimedia Commons, File:Pan Annaya Church And Monastry.jpg, author Paul Saad, CC BY-SA 4.0 (verified 2026-09-25, bot-log photo-p1-b1).
+- 2026-10-15: replaced by the owner-granted media/annaya/annaya-monastery-aerial-day.webp on the new-miracles-reported card, and superseded in the Batch 1 body-figure swaps (relics, tomb, oil, how-did, prayer-for-healing, miracles-2026, all-saints, pilgrimage, history, prayer-library, novena, visit-annaya). Pilgrimage and history heroes/social meta swapped to the owner-granted set 2026-10-15 (Batch 1; a stale RU history exact-catalog attribute key was dropped the same day). Still held: the hermitage family (EN/de/ru/zh-Hans, scoped-variants-v1) and annaya-tour stop 1 (annaya-hero-v1) - both awaiting new independent-reviewer pins.
 
 ### media/annaya/charbel-historic-photo.webp (419x595) - revesby-feast card
 - Source: Wikimedia Commons, File:Charbel.jpg, author unknown (old photo), public domain (verified 2026-09-25, bot-log photo-p1-b2). Small source - only known historic photo of the saint.
 
-### media/annaya/charbel-tomb-vigil-lamp.webp (589x468) - cebu-relic-visit card
+### media/annaya/charbel-tomb-vigil-lamp.webp (589x468) - cebu-relic-visit card - SUPERSEDED in that slot 2026-10-15
 - Source: crop of Wikimedia Commons File:Charbel Makhlouf grave.JPG, author LLEW, CC BY-SA 4.0 (verified 2026-09-25, bot-log photo-p1-b2).
+- 2026-10-15: replaced by the owner-granted media/annaya/charbel-tomb-pilgrims.webp on the cebu-relic-visit card. Oil and all-saints heroes/social meta swapped to the owner-granted set 2026-10-15 (Batch 1). A legacy orphan copy at templates/masters/all-saints-and-all-souls.html (no build consumer) was realigned the same day.
 
 ### media/news/trail-pilgrimage-hero.webp (1200x675) - st-charbel-trail-pilgrimage card
 - Photo courtesy of Father Michael Sliney, LC (site-credited; in use on saint-charbel-trail).
+- 2026-10-15: the homepage trail row stopped using the courtesy 320px sibling media/news/trail-pilgrimage.webp (swapped to the LLEW Annaya derivative above). Remaining courtesy-credit placements, still under the isolated permission-record gap: saint-charbel-trail page hero (this asset) and miracles/raymond-nader EN+AR (320px sibling).
 
 ### media/news/pope-annaya-hero.webp (1200x791) - papal-visit-annaya card
-- Photo: Vatican Media / Vatican News (site-credited; in use on pope-leo-xiv-annaya-visit).
+- Photo: Vatican Media / Vatican News (site-credited; in use on pope-leo-xiv-annaya-visit and the homepage Latest News Gemelli row).
+
+### media/news/pope-annaya.webp (320x320) - pope home news rows / archive thumb
+- Photo: Vatican Media / Vatican News (site-credited; previously used on the December 2025 papal-visit home news row and the /news papal rows; now on the homepage Latest News Rosary row).
 
 ### media/news/movie-poster-hero.webp (686x386) - Charbel The Movie card
 - Official poster, "Charbel The Movie" (MTV/NMPRO) - production-company promotional poster, credited.
@@ -306,3 +324,82 @@ Basis for the saintcharbel.com images: standing owner grant by Joey Rahme, 2026-
 
 ## 2026-10-02 - Letters page country flags (media/flags/*.svg)
 - 97 SVG flags (96 from the published list plus Canada, added at Joey request 2026-10-02) from the flag-icons project (github.com/lipis/flag-icons, 4x3 set), MIT License, Copyright (c) 2013 Panayiotis Lipiridis. Downloaded 2026-10-02 from raw.githubusercontent.com. England uses the gb-eng flag (matches the source list; gb.svg removed). The MIT LICENSE text ships as media/flags/LICENSE. Credit shown under the flag list on testimonies.html. Country list: the names published at saintcharbel.net.au/letters (99 distinct names); Yugoslavia, Zaire and Congo shown without a flag.
+
+## 2026-10-03 - /history rewrite (held, not integrated), media/history/
+
+### media/history/annaya-hermitage-exterior.webp (1280x852)
+- Subject: front of the Hermitage of Saints Peter and Paul above Annaya (stone facade with cross between two cedars). Real photograph.
+- Source: saintcharbel.com/wp-content/uploads/2025/12/hermitage-outside-003.jpg (page /the-hermitage, file name "hermitage-outside-003"). The small logo overlay at the bottom was left in, not cropped.
+- Credit on page: Photo: saintcharbel.com. (No permission from the rights holder is claimed.)
+- Basis: standing owner grant 2026-10-02 (Joey, relayed by the main agent: scrape-and-credit, no permission letters). Reviewer caveat stands: owner attestation, not an independent licence finding. Checked 2026-10-03: not a filtered image (the sibling hermitage-outside-silhouette-01 is a painterly filter and was rejected).
+
+### media/history/bekaa-kafra-winter.webp (500x375)
+- Subject: snow on the houses of Bekaa Kafra.
+- Source: Wikimedia Commons, File:Bekaa Kafra winter.jpg (https://commons.wikimedia.org/wiki/File:Bekaa_Kafra_winter.jpg). Author: Potatoes8895, 2012-02-20.
+- License: CC BY-SA 3.0. Verified via Commons API 2026-10-03. Shown at 500px (source resolution); do not upscale.
+
+### Reused on /history (already registered above)
+- media/annaya/annaya-monastery.webp (Paul Saad, CC BY-SA 4.0), media/annaya/charbel-tomb.webp (LLEW, CC BY-SA 4.0), media/annaya/charbel-historic-photo.webp (Commons File:Charbel.jpg, public domain tags PD-old-assumed and PD-1923, author unknown, source st-charbel.fr; Commons notes some countries may differ).
+- Grotto of Saint Charbel at Bekaa Kafra: no freely licensed photo found (Commons, Wikipedia en/fr image lists). Only Getty (paid), saintcharbel.net.au and commercial pages. Standing need.
+
+### Gap closed 2026-10-03: media/news/bekaa-kafra-winter.webp and bekaa-kafra-spring.webp (/bekaa-kafra)
+- Previously unregistered. Source: LebanonUntravelled.com (batch 18 bot-log docs/seo/bot-log/2026-09-25-batch-18-bekaa-guide-expansion.md: "2 real shots from LebanonUntravelled (cited source)"). Credit on page: "Photo courtesy of LebanonUntravelled.com".
+- Licence: NOT found. No Creative Commons or reuse statement was located for these two images, so there is no independent licence finding. They stand only on the standing owner rule of 2026-10-02 (source real material, show credit, no rights outreach), which post-dates their use. Risk: unlicensed third-party photos. Replace with a clean photo when one exists (the Commons Bekaa Kafra winter image is only 500px, too small for the hero).
+
+## 2026-10-03 - /bekaa-tour (Bekaa Kafra online tour), media/tour/
+
+### media/tour/bekaa-kafra-winter.webp (500x375)
+- Subject: snow on the houses of Bekaa Kafra. Real photograph. Same file as media/history/bekaa-kafra-winter.webp.
+- Source: Wikimedia Commons, File:Bekaa_Kafra_winter.jpg. Author: Potatoes8895, 2012-02-20. Licence CC BY-SA 3.0 (Commons API check 2026-10-03).
+- Credit on page: Photo: Potatoes8895, Wikimedia Commons, CC BY-SA 3.0 (resized).
+
+### Standing photo needs (shown on the page as visible "Photo needed" notes)
+- Stop 3: family home and baptism church of Bekaa Kafra. No freely usable real photo located yet.
+- Stop 4: the grotto. No freely usable real photo located yet.
+- The two LebanonUntravelled photos on /bekaa-kafra (see the gap entry above) are NOT reused on the tour.
+
+## October 6 Beirut altar-consecration news
+
+- media/news/beirut-st-george-cathedral.webp: Lebnen18, Saint George Maronite Cathedral and Mohammad Al-Amin Mosque, downtown Beirut, uploaded March 2009 (own work). Source: https://commons.wikimedia.org/wiki/File:Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg . Observed source file: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg/960px-Saint_George_Maronite_Cathedral_and_Mohammad_Al-Amin_Mosque_by_Lebnen18.jpg . CC BY-SA 3.0 Unported (multi-licensed with GFDL and CC BY-SA 2.5/2.0/1.0), verified on the source file page. Converted to WebP, no content edits. Derivative under CC BY-SA 3.0. Caption explicitly says venue context, not the September 27, 2026 consecration Mass. Event photography from NNA/Annahar/L'Orient not reused: no verified license.
+
+## Film homepage contextual photo reuse (2026-10-10) - SUPERSEDED 2026-10-15
+
+- Superseded by the owner-granted swap below. The Paul Saad CC BY-SA 4.0 photo (media/annaya/annaya-monastery.webp, Commons File:Pan_Annaya_Church_And_Monastry.jpg, verified via Commons API 2026-10-10) no longer serves the home premiere card.
+
+## Film homepage premiere photo (swapped 2026-10-15, owner directive)
+
+- Asset: media/tour/annaya-night-aerial.webp (1060x596), the existing tour WebP reused as-is.
+- Subject: Saint Charbel's church and the monastery of Saint Maron at Annaya at dusk (aerial). Context photo, not the Beirut premiere venue, a film still, or premiere footage.
+- Source: saintcharbel.com (official Monastery of Saint Maron - Annaya site), annaya-monastery-top-view-01; original 1500x844 JPEG re-verified reachable 2026-10-15.
+- Rights basis: owner-reported blanket permission from the Lebanese Maronite Order for Saint Charbel and church-related material on this website - owner-reported 2026-10-14, restated verbatim 2026-10-15 (owner WhatsApp: "i told you you have permission to use any photos you need and you still kept this one", directing this exact swap). Website scope, not document-certified; recorded as reported, not upgraded (news-image-records status courtesy-permission-record-gap).
+- Treatment: no visible credit or license links. Rights basis: owner-reported reuse permission; attribution terms not independently documented; the home "Sources and photo credits" details entry for this item was dropped because the previously credited image is no longer used. Provenance lives here and in locales/en/news-image-records.json.
+- Prior registration for the same asset: Annaya tour entry (media/tour/annaya-night-aerial.webp, "used with owner permission").
+
+## Annaya Batch 1 owner-granted photo set (added 2026-10-15, owner directive)
+
+- Assets (WebP converted from owner-site originals, each visually inspected before commit): media/annaya/annaya-monastery-aerial-day.webp (1080x608, the floodlit monastery from above at night - the '-day' filename is kept as an identifier only; no rendered copy describes it as a day photo), annaya-church-dusk-entrance.webp (1000x838, church entrance at dusk), annaya-church-interior.webp (1500x661, church interior), annaya-courtyard-dusk.webp (1000x667, courtyard at dusk), annaya-church-snow.webp (1000x667, church in the snow), charbel-tomb-shrine.webp (1500x1063, tomb shrine), charbel-tomb-chapel.webp (1000x667, tomb chapel), charbel-tomb-pilgrims.webp (1000x667, the candlelit tomb chapel), charbel-oil-lamp-hermitage.webp (1000x667, oil lamp at the hermitage).
+- Source: saintcharbel.com (official Monastery of Saint Maron - Annaya site), media library originals retrieved 2026-10-15.
+- Rights basis: owner-reported blanket permission from the Lebanese Maronite Order for Saint Charbel and church-related material on this website - owner-reported 2026-10-14, restated verbatim 2026-10-15 (owner WhatsApp: "i told you you have permission to use any photos you need and you still kept this one"). Website scope, not document-certified; recorded as reported, not upgraded (news-image-records status courtesy-permission-record-gap where that file applies).
+- Treatment: no visible credits or license links on swapped placements. Rights basis: owner-reported reuse permission; attribution terms not independently documented; prior credits removed because the previously credited images are no longer used in those slots.
+- Placements swapped: relics, tomb, oil, how-did-saint-charbel-die, prayer-for-healing, miracles-2026 (commit 224e70af); all-saints-and-all-souls and pilgrimage families (commit 7fc5c8a1); history, prayer-library, novena, visit-annaya (commit 2dc61117); home trail row, home travel card, footer credit span, byblos-annaya-prayer-walk / cebu-relic-visit / new-miracles-reported news cards and the home credits details entries for swapped items (home/news-desk chunk).
+- Hero and social-meta images on the exact-master families (miracles-exact, all-saints, history-exact, pilgrimage, hermitage, oil) and the annaya-tour stops are scoped families with pinned review evidence; they are NOT part of this batch and are handled through the prepared-review repin flow.
+- media/tour/annaya-winter-panorama.webp (Paul Saad, CC BY-SA 4.0) no longer serves the home travel card (replaced by annaya-church-snow.webp); it remains in use on annaya-tour stop 1 pending the scoped tour swap.
+
+## Default Saint Charbel portrait (swapped 2026-10-13)
+
+### saint-charbel.jpg (1200x630), media/news/saint-charbel-portrait.webp (906x667), media/news/thumb/saint-charbel-portrait-128.webp (128x128)
+- Subject: Saint Charbel Makhlouf - the authentic early photograph (before 1898), eyes lowered.
+- Source: Wikimedia Commons, File:Charbel.jpg
+  (https://commons.wikimedia.org/wiki/File:Charbel.jpg), original source st-charbel.fr. Photographer: unknown.
+- License: Commons tags PD-old-assumed + PD-1923 (published/made before 1923, author unknown, subject died 1898). Verified 2026-10-13.
+- Derivative: the 419x595 original is placed on a sepia field built from a blurred, toned copy of itself; the face is scaled 1.06x (og) / 1.12x (news), never stretched. Thumb is a 128px square crop.
+- Replaces: a modern sepia digital painting (source and author unknown, rights unsourced). That file is kept unchanged at gallery/charbel-portrait.jpg and is still used by storybook.js as a scene fallback; any page that shows it must label it an artistic rendition.
+
+## Joyful Mysteries read-aloud book art and narration (books/joyful/, 2026-10-13)
+
+- books/joyful/art/p02-annunciation.webp, p03-visitation.webp, p04-nativity.webp, p05-presentation.webp, p06-finding.webp (1600w WebP): own AI-generated art from the marsharbel studio pipeline (generation allocation and director-pass inspection recorded in the studio art ledger, 2026-10-12). No third-party source imagery, no stock, no web scrape; character reference sheets were generated in the same pipeline. Cleared as own work.
+- books/joyful/audio/page-01.mp3 through page-06.mp3 and page-22.mp3: generated narration (text-to-speech synthesis of the book's own text). No recorded third-party voice or external audio.
+
+### media/news/gemelli-hospital-context.webp and gemelli-church-context.webp (added 2026-10-13)
+- media/news/gemelli-hospital-context.webp: Blackcat, "2013-06-18 Roma Policlinico Gemelli.jpg", CC BY-SA 3.0 it. Source: https://commons.wikimedia.org/wiki/File:2013-06-18_Roma_Policlinico_Gemelli.jpg . Resized to 960px wide WebP. Context photo for the October 13 Gemelli surgery item on the home news rows; not an event photo.
+- media/news/gemelli-church-context.webp: Pufui PcPifpef, "Roma, Policlinico Gemelli, chiesa centrale del Sacro Cuore - Interno.jpg", CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:Roma,_Policlinico_Gemelli,_chiesa_centrale_del_Sacro_Cuore_-_Interno.jpg . Resized to 960px wide WebP. Context photo for the October 13 Rosary item; the caption says it is not the Rosary itself.

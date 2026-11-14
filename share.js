@@ -1,6 +1,15 @@
 (() => {
   const script = document.currentScript;
   const mode = (script && script.dataset.shareMode) || 'page';
+  const locale = document.documentElement.lang || 'en';
+  const labelNode = document.getElementById('sc-share-labels');
+  const labels = labelNode ? JSON.parse(labelNode.textContent) : null;
+  const tr = (key, fallback, values = {}) => {
+    if (locale !== 'en' && (!labels || typeof labels[key] !== 'string')) throw new Error(key);
+    const text = labels ? labels[key] : fallback;
+    return text.replace(/\{(title|target)\}/g, (_, name) => values[name] || '');
+  };
+  if (locale !== 'en' && !labels) return; // Never inject English fallback on locale pages.
   const canonical = document.querySelector('link[rel="canonical"]');
   const baseUrl = canonical ? canonical.href : location.origin + location.pathname;
   const pageTitle = (document.querySelector('meta[property="og:title"]')?.content || document.title || '').split('|')[0].trim();
@@ -104,14 +113,14 @@
     const bar = document.createElement('div');
     bar.className = 'share-bar';
     bar.setAttribute('role', 'group');
-    bar.setAttribute('aria-label', 'Share: ' + title);
+    bar.setAttribute('aria-label', tr('share.group.aria', 'Share: {title}', {title}));
 
     const panelId = 'share-menu-' + (++menuCount);
     const trigger = document.createElement('button');
     trigger.type = 'button';
     trigger.className = 'btn subtle share-trigger';
-    setIcon(trigger, 'native', 'Share');
-    trigger.setAttribute('aria-label', 'Share ' + title);
+    setIcon(trigger, 'native', tr('share.label', 'Share'));
+    trigger.setAttribute('aria-label', tr('share.trigger.aria', 'Share {title}', {title}));
     trigger.setAttribute('aria-haspopup', 'true');
     trigger.setAttribute('aria-expanded', 'false');
     trigger.setAttribute('aria-controls', panelId);
@@ -125,7 +134,7 @@
     panel.id = panelId;
     panel.hidden = true;
     panel.setAttribute('role', 'dialog');
-    panel.setAttribute('aria-label', 'Share: ' + title);
+    panel.setAttribute('aria-label', tr('share.group.aria', 'Share: {title}', {title}));
     const grip = document.createElement('span');
     grip.className = 'share-grip';
     grip.setAttribute('aria-hidden', 'true');
@@ -140,14 +149,14 @@
       const native = document.createElement('button');
       native.type = 'button';
       native.className = 'share-native-row';
-      setIcon(native, 'native', 'Share');
-      native.setAttribute('aria-label', 'Share ' + title + ' with another app');
+      setIcon(native, 'native', tr('share.label', 'Share'));
+      native.setAttribute('aria-label', tr('share.native.aria', 'Share {title} with another app', {title}));
       native.addEventListener('click', async () => {
         closeMenu(false);
         try {
           await navigator.share({ title, text: title, url: urlFor(hash, 'native') });
         } catch (error) {
-          if (error && error.name !== 'AbortError') status.textContent = 'Sharing was not available. Use a link below.';
+          if (error && error.name !== 'AbortError') status.textContent = tr('share.status.failed', 'Sharing was not available. Use a link below.');
         }
       });
       panel.appendChild(native);
@@ -159,13 +168,13 @@
     targets.forEach(target => {
       const a = document.createElement('a');
       a.className = 'share-btn share-' + target.id;
-      setIcon(a, target.id, target.label);
+      setIcon(a, target.id, target.id === 'email' ? tr('share.target.email.label', 'Email') : target.label);
       a.href = target.href(urlFor(hash, target.id), title, media);
       if (target.id !== 'viber' && target.id !== 'email') {
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
       }
-      a.setAttribute('aria-label', 'Share ' + title + ' on ' + target.label);
+      a.setAttribute('aria-label', tr(target.id === 'email' ? 'share.target.email.aria' : 'share.target.aria', target.id === 'email' ? 'Share {title} by email' : 'Share {title} on {target}', {title, target:target.label}));
       a.addEventListener('click', () => setTimeout(() => closeMenu(false), 0));
       grid.appendChild(a);
     });
@@ -173,16 +182,16 @@
     const copy = document.createElement('button');
     copy.type = 'button';
     copy.className = 'share-btn share-copy';
-    setIcon(copy, 'copy', 'Copy link');
-    copy.setAttribute('aria-label', 'Copy link to ' + title);
+    setIcon(copy, 'copy', tr('share.copy.label', 'Copy link'));
+    copy.setAttribute('aria-label', tr('share.copy.aria', 'Copy link to {title}', {title}));
     copy.addEventListener('click', async () => {
       const link = urlFor(hash, 'copy');
       closeMenu(true);
       try {
         await navigator.clipboard.writeText(link);
-        status.textContent = 'Link copied. Paste it into Instagram or any app.';
+        status.textContent = tr('share.status.copied', 'Link copied. Paste it into Instagram or any app.');
       } catch (error) {
-        window.prompt('Copy this link:', link);
+        window.prompt(tr('share.prompt.copy', 'Copy this link:'), link);
       }
     });
     grid.appendChild(copy);
@@ -227,7 +236,7 @@
         const img = card.querySelector('img');
         const link = card.querySelector('.gallery-item');
         const caption = clean(card.querySelector('figcaption')?.textContent).split(/(?<=\.)\s/)[0];
-        const title = (caption || clean(img?.alt) || 'Saint Charbel gallery image').slice(0, 140);
+        const title = (caption || clean(img?.alt) || tr('share.fallbackTitle.gallery', 'Saint Charbel gallery image')).slice(0, 140);
         card.id = card.id || 'gallery-image-' + (index + 1);
         const src = link ? new URL(link.getAttribute('href'), location.href).href : ogImage;
         const imageUrl = src.startsWith(location.origin) ? 'https://marsharbel.com' + new URL(src).pathname : src;

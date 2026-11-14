@@ -1,0 +1,704 @@
+{
+  "version": 1,
+  "master": "daily-prayer-admin.html",
+  "masterSha256": "06ad9a3916bb773b681f7ef1d2610c937e524efd3ef2ecb3b6a8f6beed62cd0e",
+  "sourceRevision": "95efd9e7",
+  "bindings": [
+    {
+      "key": "daily-prayer-admin.metadata.title-saint-charbel-daily-prayer-admin",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Saint Charbel | Daily Prayer Admin",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.metadata.description-moderator-dashboard-for-the-daily-prayer-subscri",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(3)",
+      "source": "Moderator dashboard for the daily prayer subscription on marsharbel.com.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "daily-prayer-admin.metadata.og-title-saint-charbel-daily-prayer-admin",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(7)",
+      "source": "Saint Charbel | Daily Prayer Admin",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "daily-prayer-admin.metadata.og-description-moderator-dashboard-for-the-daily-prayer-subs",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+      "source": "Moderator dashboard for the daily prayer subscription on marsharbel.com.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "daily-prayer-admin.metadata.twitter-title-saint-charbel-daily-prayer-admin",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(12)",
+      "source": "Saint Charbel | Daily Prayer Admin",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "daily-prayer-admin.metadata.twitter-description-moderator-dashboard-for-the-daily-prayer",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
+      "source": "Moderator dashboard for the daily prayer subscription on marsharbel.com.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "daily-prayer-admin.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "daily-prayer-admin.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.body.admin",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Admin",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.daily-prayer-dashboard",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Daily Prayer Dashboard",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.see-who-receives-the-daily-prayer-watch-each-morning-s-send",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "See who receives the daily prayer, watch each morning's send, and control the switch. Nothing here is published.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.moderator-access-only",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Moderator access only.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.only-the-site-moderator-can-read-the-subscriber-list-sign-in",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Only the site moderator can read the subscriber list. Sign in with your email, password, and human verification. Changes are recorded in the admin audit history.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.remember-this-browser",
+      "selector": "#main-content > section:nth-of-type(2) > article:nth-of-type(1) > label:nth-of-type(1)",
+      "source": "Remember this browser",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.keep-your-verified-admin-session-on-this-browser-until-you-s",
+      "selector": "#admin-remember-help",
+      "source": "Keep your verified admin session on this browser until you sign out or the session ends. Use only on your own device. Your password is not saved.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.admin-email",
+      "selector": "#admin-login-form > label:nth-of-type(1)",
+      "source": "Admin email",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.password",
+      "selector": "#admin-login-form > label:nth-of-type(2)",
+      "source": "Password",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.login",
+      "selector": "#admin-login-form > div:nth-of-type(2) > button:nth-of-type(1)",
+      "source": "Login",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.scan-this-qr-code-in-your-authenticator-app-keep-its-secret",
+      "selector": "#mfa-enrollment > p:nth-of-type(1)",
+      "source": "Scan this QR code in your authenticator app. Keep its secret private.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.accessibility.authenticator-enrollment-qr-code",
+      "selector": "#mfa-qr",
+      "source": "Authenticator enrollment QR code",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.authenticator-code",
+      "selector": "#admin-mfa-form > label:nth-of-type(1)",
+      "source": "Authenticator code",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.verify-authenticator",
+      "selector": "#admin-mfa-form > button:nth-of-type(1)",
+      "source": "Verify authenticator",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.forget-this-browser-and-sign-out",
+      "selector": "#admin-logout-btn",
+      "source": "Forget this browser and sign out",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-prayer-dashboard.refresh-dashboard",
+      "selector": "#refresh-dashboard",
+      "source": "Refresh dashboard",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscribers.subscribers",
+      "selector": "#admin-panel > h2:nth-of-type(1)",
+      "source": "Subscribers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.daily-send.daily-send",
+      "selector": "#admin-panel > h2:nth-of-type(2)",
+      "source": "Daily send",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.subscriber-list",
+      "selector": "#admin-panel > h2:nth-of-type(3)",
+      "source": "Subscriber list",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.status",
+      "selector": "#admin-panel > div:nth-of-type(4) > label:nth-of-type(1)",
+      "source": "Status",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.confirmed",
+      "selector": "#list-status > option:nth-of-type(1)",
+      "source": "Confirmed",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.pending",
+      "selector": "#list-status > option:nth-of-type(2)",
+      "source": "Pending",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.unsubscribed",
+      "selector": "#list-status > option:nth-of-type(3)",
+      "source": "Unsubscribed",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.bounced",
+      "selector": "#list-status > option:nth-of-type(4)",
+      "source": "Bounced",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.complained",
+      "selector": "#list-status > option:nth-of-type(5)",
+      "source": "Complained",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.all",
+      "selector": "#list-status > option:nth-of-type(6)",
+      "source": "All",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.newer",
+      "selector": "#list-prev",
+      "source": "Newer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.older",
+      "selector": "#list-next",
+      "source": "Older",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.recent-send-log",
+      "selector": "#admin-panel > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "Recent send log",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.subscriber-list.admin-audit-history",
+      "selector": "#admin-panel > details:nth-of-type(2) > summary:nth-of-type(1)",
+      "source": "Admin audit history",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer-admin.footer.admin-moderation-only-author-please-pray-for-the-person-who",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Admin moderation only. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "daily-prayer-admin.metadata.title-saint-charbel-daily-prayer-admin": "Saint Charbel | Daily Prayer Admin",
+    "daily-prayer-admin.metadata.description-moderator-dashboard-for-the-daily-prayer-subscri": "Moderator dashboard for the daily prayer subscription on marsharbel.com.",
+    "daily-prayer-admin.metadata.og-title-saint-charbel-daily-prayer-admin": "Saint Charbel | Daily Prayer Admin",
+    "daily-prayer-admin.metadata.og-description-moderator-dashboard-for-the-daily-prayer-subs": "Moderator dashboard for the daily prayer subscription on marsharbel.com.",
+    "daily-prayer-admin.metadata.twitter-title-saint-charbel-daily-prayer-admin": "Saint Charbel | Daily Prayer Admin",
+    "daily-prayer-admin.metadata.twitter-description-moderator-dashboard-for-the-daily-prayer": "Moderator dashboard for the daily prayer subscription on marsharbel.com.",
+    "daily-prayer-admin.body.skip-to-main-content": "Skip to main content",
+    "daily-prayer-admin.header.text": "✦",
+    "daily-prayer-admin.header.saint-charbel": "Saint Charbel",
+    "daily-prayer-admin.accessibility.primary": "Primary",
+    "daily-prayer-admin.header.home": "Home",
+    "daily-prayer-admin.header.legacy": "Legacy",
+    "daily-prayer-admin.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "daily-prayer-admin.header.full-history": "Full History",
+    "daily-prayer-admin.header.miracles": "Miracles",
+    "daily-prayer-admin.header.miracles-reports": "Miracles & Reports",
+    "daily-prayer-admin.header.eucharistic-miracles": "Eucharistic Miracles",
+    "daily-prayer-admin.header.letters": "Letters",
+    "daily-prayer-admin.header.voice-testimony": "Voice Testimony",
+    "daily-prayer-admin.header.saints": "Saints",
+    "daily-prayer-admin.header.children-s-books": "Children's Books",
+    "daily-prayer-admin.header.prayer": "Prayer",
+    "daily-prayer-admin.header.prayer-library": "Prayer Library",
+    "daily-prayer-admin.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "daily-prayer-admin.header.prayer-for-the-sick": "Prayer for the Sick",
+    "daily-prayer-admin.header.prayer-for-healing": "Prayer for Healing",
+    "daily-prayer-admin.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "daily-prayer-admin.header.prayer-for-depression": "Prayer for Depression",
+    "daily-prayer-admin.header.prayer-for-students": "Prayer for Students",
+    "daily-prayer-admin.header.prayer-for-addiction": "Prayer for Addiction",
+    "daily-prayer-admin.header.prayer-for-family": "Prayer for Family",
+    "daily-prayer-admin.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "daily-prayer-admin.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "daily-prayer-admin.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "daily-prayer-admin.header.saint-charbel-novena": "Saint Charbel Novena",
+    "daily-prayer-admin.header.feast-day": "Feast Day",
+    "daily-prayer-admin.header.rosary-guide": "Rosary Guide",
+    "daily-prayer-admin.header.rosary-minibook": "Rosary Minibook",
+    "daily-prayer-admin.header.mystery-meditation": "Mystery Meditation",
+    "daily-prayer-admin.header.become-like-him": "Become Like Him",
+    "daily-prayer-admin.header.travel": "Travel",
+    "daily-prayer-admin.header.visiting-annaya": "Visiting Annaya",
+    "daily-prayer-admin.header.annaya-online-tour": "Annaya Online Tour",
+    "daily-prayer-admin.header.bekaa-kafra": "Bekaa Kafra",
+    "daily-prayer-admin.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "daily-prayer-admin.header.the-cedars-of-god": "the Cedars of God",
+    "daily-prayer-admin.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "daily-prayer-admin.header.qadisha-valley": "Qadisha Valley",
+    "daily-prayer-admin.header.qannoubine-monastery": "Qannoubine Monastery",
+    "daily-prayer-admin.header.qozhaya-monastery": "Qozhaya Monastery",
+    "daily-prayer-admin.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "daily-prayer-admin.header.the-hermitage": "The Hermitage",
+    "daily-prayer-admin.header.saint-charbel-trail": "Saint Charbel Trail",
+    "daily-prayer-admin.header.news": "News",
+    "daily-prayer-admin.body.admin": "Admin",
+    "daily-prayer-admin.daily-prayer-dashboard.daily-prayer-dashboard": "Daily Prayer Dashboard",
+    "daily-prayer-admin.daily-prayer-dashboard.see-who-receives-the-daily-prayer-watch-each-morning-s-send": "See who receives the daily prayer, watch each morning's send, and control the switch. Nothing here is published.",
+    "daily-prayer-admin.daily-prayer-dashboard.moderator-access-only": "Moderator access only.",
+    "daily-prayer-admin.daily-prayer-dashboard.only-the-site-moderator-can-read-the-subscriber-list-sign-in": "Only the site moderator can read the subscriber list. Sign in with your email, password, and human verification. Changes are recorded in the admin audit history.",
+    "daily-prayer-admin.daily-prayer-dashboard.remember-this-browser": "Remember this browser",
+    "daily-prayer-admin.daily-prayer-dashboard.keep-your-verified-admin-session-on-this-browser-until-you-s": "Keep your verified admin session on this browser until you sign out or the session ends. Use only on your own device. Your password is not saved.",
+    "daily-prayer-admin.daily-prayer-dashboard.admin-email": "Admin email",
+    "daily-prayer-admin.daily-prayer-dashboard.password": "Password",
+    "daily-prayer-admin.daily-prayer-dashboard.login": "Login",
+    "daily-prayer-admin.daily-prayer-dashboard.scan-this-qr-code-in-your-authenticator-app-keep-its-secret": "Scan this QR code in your authenticator app. Keep its secret private.",
+    "daily-prayer-admin.accessibility.authenticator-enrollment-qr-code": "Authenticator enrollment QR code",
+    "daily-prayer-admin.daily-prayer-dashboard.authenticator-code": "Authenticator code",
+    "daily-prayer-admin.daily-prayer-dashboard.verify-authenticator": "Verify authenticator",
+    "daily-prayer-admin.daily-prayer-dashboard.forget-this-browser-and-sign-out": "Forget this browser and sign out",
+    "daily-prayer-admin.daily-prayer-dashboard.refresh-dashboard": "Refresh dashboard",
+    "daily-prayer-admin.subscribers.subscribers": "Subscribers",
+    "daily-prayer-admin.daily-send.daily-send": "Daily send",
+    "daily-prayer-admin.subscriber-list.subscriber-list": "Subscriber list",
+    "daily-prayer-admin.subscriber-list.status": "Status",
+    "daily-prayer-admin.subscriber-list.confirmed": "Confirmed",
+    "daily-prayer-admin.subscriber-list.pending": "Pending",
+    "daily-prayer-admin.subscriber-list.unsubscribed": "Unsubscribed",
+    "daily-prayer-admin.subscriber-list.bounced": "Bounced",
+    "daily-prayer-admin.subscriber-list.complained": "Complained",
+    "daily-prayer-admin.subscriber-list.all": "All",
+    "daily-prayer-admin.subscriber-list.newer": "Newer",
+    "daily-prayer-admin.subscriber-list.older": "Older",
+    "daily-prayer-admin.subscriber-list.recent-send-log": "Recent send log",
+    "daily-prayer-admin.subscriber-list.admin-audit-history": "Admin audit history",
+    "daily-prayer-admin.footer.admin-moderation-only-author-please-pray-for-the-person-who": "Admin moderation only. Author: Please pray for the person who made this website."
+  }
+}

@@ -1,0 +1,17 @@
+const{test,expect}=require('@playwright/test');
+const{default:AxeBuilder}=require('@axe-core/playwright');
+for(const route of ['/','/history','/saint-charbel-novena','/miracles/','/de/biografie','/de/novene','/de/miracles/','/saint-charbel-prayers','/visit-annaya','/22nd-of-the-month','/rosary-intro'])for(const js of [true,false])test(`${route} footer section navigation, JS=${js}`,async({browser,baseURL},info)=>{
+ const context=await browser.newContext({javaScriptEnabled:js,viewport:{width:info.project.name==='phone'?390:1440,height:900}});
+ const page=await context.newPage();await page.route('**/*',r=>new URL(r.request().url()).origin===new URL(baseURL).origin?r.continue():r.abort());
+ await page.goto(baseURL+route,{waitUntil:'domcontentloaded'});
+ const nav=page.locator('footer nav.footer-locales');await expect(nav).toHaveCount(1);await expect(page.locator('main nav.footer-locales')).toHaveCount(0);
+ const names={en:'English',ar:'العربية',fr:'Français',es:'Español',pt:'Português',it:'Italiano',de:'Deutsch',pl:'Polski'};
+ const homes={en:'/',ar:'/ar/',fr:'/fr/',es:'/es/',pt:'/pt/',it:'/it/',de:'/de/',pl:'/pl/'};
+ for(const [lang,home]of Object.entries(homes)){
+  const a=nav.locator(`a[hreflang="${lang}"]`);await expect(a).toHaveAttribute('href',home);await expect(a).toHaveText(names[lang]);await expect(a).not.toHaveAttribute('aria-disabled','true');await expect(a).not.toHaveAttribute('tabindex','-1');await expect(a).not.toHaveAttribute('data-language-switch');
+ }
+ await expect(nav.locator('.sc-unavailable-suffix,.sc-language-helper')).toHaveCount(0);
+ if(js){const enabledTargets={'/history':'/fr/biographie','/de/biografie':'/fr/biographie','/visit-annaya':'/fr/annaya','/22nd-of-the-month':'/fr/22-du-mois','/saint-charbel-prayers':'/fr/prieres','/saint-charbel-novena':'/fr/neuvaine','/de/novene':'/fr/neuvaine'};if(enabledTargets[route]){await expect(page.locator('#sc-language-select option[value=fr]')).toBeEnabled();await page.selectOption('#sc-language-select','fr');await expect(page).toHaveURL(baseURL+enabledTargets[route]);await page.goto(baseURL+route);}
+ await nav.scrollIntoViewIfNeeded();const before=page.url();if(route!=='/'&&!enabledTargets[route]){expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('fr'))).toBe(false);expect(page.url()).toBe(before);}else await expect(page.locator('#sc-language-select option[value=fr]')).toBeEnabled();await expect(nav.locator('a[hreflang=fr]')).toHaveAttribute('href','/fr/');expect((await new AxeBuilder({page}).include('nav.footer-locales').analyze()).violations).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:info.outputPath('footer.png')});await nav.locator('a[hreflang=fr]').click();await expect(page).toHaveURL(baseURL+'/fr/');await expect(page.locator('html')).toHaveAttribute('lang','fr');}
+ await context.close();
+});

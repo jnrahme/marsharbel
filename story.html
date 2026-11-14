@@ -1,21 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script defer src="/analytics-init.js"></script>
   <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AR" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -24,8 +13,8 @@
     <meta property="og:locale:alternate" content="it_IT" />
     <meta property="og:locale:alternate" content="de_DE" />
     <meta property="og:locale:alternate" content="pl_PL" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saint Charbel Story for Kids | Catholic Storybook</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Saint Charbel Story for Kids | Catholic Storybook</title>
   <meta name="description" content="Read a child-friendly Saint Charbel storybook for ages 5-12 with simple language, faith lessons, and an engaging guided experience." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://marsharbel.com/story" />
@@ -131,30 +120,60 @@
   ]
 }
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <link rel="preload" href="./media/fonts/cormorant-garamond-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="./media/fonts/manrope-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20260922-1" />
-  <link rel="stylesheet" href="storybook.css" />
-  <link rel="stylesheet" href="storybook-joy.css" />
-  <!-- hreflang:begin -->
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/story" />
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/story" />
-  <!-- hreflang:end -->
+<link href="styles.css?v=20260922-1" rel="stylesheet"/>
+<link href="storybook.css" rel="stylesheet"/>
+<link href="storybook-joy.css" rel="stylesheet"/>
+<link href="storybook-stage.css" rel="stylesheet"/>
+<!-- hreflang:begin -->
+<link href="https://marsharbel.com/story" hreflang="x-default" rel="alternate"/>
+<link href="https://marsharbel.com/story" hreflang="en" rel="alternate"/>
+<!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body class="is-story-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="topbar">
-    <div class="site-shell nav">
-      <a class='brand' href='./'>
-        <span class="brand-mark">✦</span>
-        <span>Saint Charbel</span>
-      </a>
-      <nav class="links" aria-label="Primary">
+<header class="topbar">
+<div class="site-shell nav">
+<a class="brand" href="./">
+<span class="brand-mark">✦</span>
+<span>Saint Charbel</span>
+</a>
+<nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -162,11 +181,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -190,8 +213,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -205,161 +229,146 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
-      <div class="lang-switcher-slot" aria-hidden="true"></div>
-    </div>
-  </header>
-
-  <main id="main-content" class="site-shell storybook-page" tabindex="-1">
-    <section class="story-hero reveal">
-      <span class="kicker">A Book for Ages 5-12</span>
-      <h1>The Gentle Light of Saint Charbel</h1>
-      <p>
-        A true story told in simple words: a boy from Lebanon who loved Jesus deeply, became a monk,
-        lived in silence, and inspired hope and healing for people from many places and backgrounds.
-      </p>
-    <p class="short-answer"><strong>Short answer:</strong> This is a read-aloud Saint Charbel storybook for children ages 5 to 12, told in simple words. It follows the boy from Bekaa Kafra who became a monk in 1851, a priest in 1859 and the hermit of Annaya, and closes with his death in 1898 and his canonization in 1977.</p>
+<div aria-hidden="true" class="lang-switcher-slot"></div>
+</div>
+</header>
+<main id="main-content" class="site-shell storybook-page" tabindex="-1">
+<section class="story-hero reveal">
+<span class="kicker">A Book for Ages 5-12</span>
+<h1>The Gentle Light of Saint Charbel</h1>
+<p> A true story told in simple words: a boy from Lebanon who loved Jesus deeply, became a monk, lived in silence, and inspired hope and healing for people from many places and backgrounds. </p>
+<p class="short-answer"><strong>Short answer:</strong> This is a read-aloud Saint Charbel storybook for children ages 5 to 12, told in simple words. It follows the boy from Bekaa Kafra who became a monk in 1851, a priest in 1859 and the hermit of Annaya, and closes with his death in 1898 and his canonization in 1977.</p>
 </section>
-
-    <section class="section">
-      <h2>Story Summary</h2>
-      <div class="card story">
-        <p>This read-aloud storybook tells the true story of Saint Charbel Makhlouf for children ages 5 to 12. It follows the boy from Bekaa Kafra who lost his father young, chose a life of silence and prayer, became a monk in 1851 and a priest in 1859, and lived his last twenty-three years as the hermit of Annaya. It closes with his death in 1898 and his canonization in 1977, and it shows, in simple words, why people around the world still ask for his prayers.</p>
-        <ul>
-          <li>For ages 5 to 12, with read-aloud narration on every page.</li>
-          <li>A 27-page storybook told in simple words.</li>
-          <li>Retells documented events; where the telling carries a traditional account, such as the water lamp, the book says so.</li>
-          <li>Part of the <a href='stories'>Saint Storybooks</a> library.</li>
-        </ul>
-      </div>
-    </section>
-
-    <div id="story-resume-banner" class="story-resume-banner" hidden aria-live="polite">
-      <span id="story-resume-text">Continue from Page 2?</span>
-      <button id="story-resume-btn" class="btn subtle" type="button">Resume</button>
-      <button id="story-resume-dismiss" class="story-resume-dismiss" type="button" aria-label="Dismiss">✕</button>
-    </div>
-
-    <section class="storybook reveal" aria-label="Illustrated storybook">
-      <div class="storybook-controls">
-        <span class="story-reading-indicator" id="story-reading-indicator">
-          <span class="story-reading-dot"></span>
-          <span id="story-reading-label">Reading…</span>
-          <span class="story-elapsed" id="story-elapsed">0:00</span>
-        </span>
-        <label class="story-voice-pack" for="story-voice-pack">
+<section class="section">
+<h2>Story Summary</h2>
+<div class="card story"><p>This read-aloud storybook tells the true story of Saint Charbel Makhlouf for children ages 5 to 12. It follows the boy from Bekaa Kafra who lost his father young, chose a life of silence and prayer, became a monk in 1851 and a priest in 1859, and lived his last twenty-three years as the hermit of Annaya. It closes with his death in 1898 and his canonization in 1977, and it shows, in simple words, why people around the world still ask for his prayers.</p><ul><li>For ages 5 to 12, with read-aloud narration on every page.</li><li>A 27-page storybook told in simple words.</li><li>Retells documented events; where the telling carries a traditional account, such as the water lamp, the book says so.</li><li>Part of the <a href='stories'>Saint Storybooks</a> library.</li></ul></div>
+</section>
+<div aria-live="polite" class="story-resume-banner" hidden id="story-resume-banner">
+<span id="story-resume-text">Continue from Page 2?</span>
+<button class="btn subtle" id="story-resume-btn" type="button">Resume</button>
+<button aria-label="Dismiss" class="story-resume-dismiss" id="story-resume-dismiss" type="button">✕</button>
+</div>
+<section aria-label="Illustrated storybook" class="storybook reveal">
+<div class="storybook-controls">
+<span class="story-reading-indicator" id="story-reading-indicator">
+<span class="story-reading-dot"></span>
+<span id="story-reading-label">Reading…</span>
+<span class="story-elapsed" id="story-elapsed">0:00</span>
+</span>
+<label class="story-voice-pack" for="story-voice-pack">
           Voice Pack
-          <select id="story-voice-pack" aria-label="Select story voice pack"></select>
-        </label>
-        <button id="story-prev" class="btn subtle" type="button" disabled aria-label="Previous page">Previous Page</button>
-        <button id="story-read" class="btn subtle" type="button">Read Aloud</button>
-        <button id="story-next" class="btn primary" type="button" aria-label="Next page">Next Page</button>
-      </div>
-
-      <details class="story-settings">
-        <summary aria-label="Story settings" title="Story settings"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></summary>
-        <div class="storybook-extras">
-        <button id="story-reader-toggle" class="story-reader-toggle" type="button" title="Toggle reader mode for easier reading">Reader Mode</button>
-        <label class="story-auto-continue" title="Automatically read next page when current page finishes">
-          <input type="checkbox" id="story-auto-continue" />
+          <select aria-label="Select story voice pack" id="story-voice-pack"></select>
+</label>
+<button aria-label="Previous page" class="btn subtle" disabled id="story-prev" type="button">Previous Page</button>
+<button class="btn subtle" id="story-read" type="button">Read Aloud</button>
+<button aria-label="Next page" class="btn primary" id="story-next" type="button">Next Page</button>
+</div>
+<details class="story-settings">
+<summary aria-label="Story settings" title="Story settings"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"></path></svg></summary>
+<div class="storybook-extras">
+<button class="story-reader-toggle" id="story-reader-toggle" title="Toggle reader mode for easier reading" type="button">Reader Mode</button>
+<label class="story-auto-continue" title="Automatically read next page when current page finishes">
+<input id="story-auto-continue" type="checkbox"/>
           Auto Continue
         </label>
-        <div class="story-rate-group" role="group" aria-label="Playback speed">
-          <button class="story-rate-btn" type="button" data-rate="0.7">Slow</button>
-          <button class="story-rate-btn is-active" type="button" data-rate="1">Normal</button>
-          <button class="story-rate-btn" type="button" data-rate="1.3">Fast</button>
-        </div>
-        </div>
-      </details>
-      <article class="storybook-panel">
-        <div class="storybook-illustration" id="story-illustration" aria-hidden="true"><div class="scene-art scene-birth"><img class="scene-photo" src="./media/storybook/images/event-01.webp" alt="" fetchpriority="high" decoding="async" /><div class="scene-photo-overlay" aria-hidden="true"></div></div></div>
-        <div class="storybook-text">
-          <p class="storybook-step" id="story-step" aria-live="polite">Page 1 of 8</p>
-          <h2 id="story-title">Loading story...</h2>
-          <p id="story-body">Please wait while we open the storybook.</p>
-          <p class="storybook-prayer" id="story-prayer"></p>
-          <p class="storybook-heart" id="story-heart"></p>
-        </div>
-      </article>
-
-      <details class="story-evidence">
-        <summary id="story-evidence-title">Evidence for This Page</summary>
-        <ul id="story-evidence-list"></ul>
-      </details>
-    </section>
-
-    <section class="section reveal">
-      <h2>What Young Hearts Can Learn</h2>
-      <div class="grid-2">
-        <article class="card story"><h3>Prayer First</h3><p>Saint Charbel shows that real strength comes from daily prayer, not from noise or fame.</p></article>
-        <article class="card story"><h3>Simple Work</h3><p>He worked with his hands, cared for the land, and offered ordinary tasks to God.</p></article>
-        <article class="card story"><h3>Hidden Sacrifice</h3><p>He fasted, lived simply, and gave up comfort so his heart could belong fully to Jesus.</p></article>
-        <article class="card story"><h3>Mercy for All</h3><p>His life still brings comfort, healing, and hope to people of every place and background.</p></article>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <h2>True Dates in the Story</h2>
-      <article class="card story">
-        <ul>
-          <li>May 8, 1828: Birth of Youssef Antoun Makhlouf (Saint Charbel) in Bekaa Kafra, Lebanon.</li>
-          <li>1851: At age 23, he enters the Lebanese Maronite Order (formation at Mayfouk, then Annaya).</li>
-          <li>1853: He makes his monastic vows and receives the name Charbel.</li>
-          <li>July 23, 1859: He is ordained a Maronite priest.</li>
-          <li>1859-1875: He lives 16 years in monastic community life at Annaya.</li>
-          <li>1875: He begins hermitage life near Annaya, where he remains about 23 years.</li>
-          <li>December 24, 1898: He dies after falling gravely ill during the Divine Liturgy in December 1898.</li>
-          <li>December 5, 1965: Beatified by Pope Paul VI.</li>
-          <li>October 9, 1977: Canonized by Pope Paul VI.</li>
-          <li>1993: The widely known healing testimony of Nohad El Shami is reported at Annaya.</li>
-        </ul>
-        <p style="margin-top:0.8rem; opacity:0.88;">
-          Note: Some beloved stories (such as the water-lamp event) are presented as monastic tradition and devotional memory,
-          while canonization itself depends on the Church's formal investigation process.
-        </p>
-      </article>
-    </section>
-
-    <section class="section reveal">
-      <h2>Research Basis</h2>
-      <article class="card story">
-        <ul>
-          <li><a href="https://www.vatican.va/content/paul-vi/fr/speeches/1965/documents/hf_p-vi_spe_19651205_charbel-makhlouf.html" target="_blank" rel="noopener">Vatican (Paul VI): Beatification address for Charbel Makhlouf (December 5, 1965)</a></li>
-          <li><a href="https://www.vatican.va/content/paul-vi/fr/homilies/1977/documents/hf_p-vi_hom_19771009.html" target="_blank" rel="noopener">Vatican (Paul VI): Canonization homily (October 9, 1977)</a></li>
-          <li><a href="https://web.archive.org/web/20160304235515/http://www.saintcharbel-annaya.com/home.php?lgid=0" target="_blank" rel="noopener">Monastery of Saint Maron (Annaya): archived biography source</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Charbel_Makhlouf" target="_blank" rel="noopener">Biographical cross-check (secondary)</a></li>
-        </ul>
-      </article>
-    </section>
-      <section class="section">
-      <h2>Frequently Asked Questions</h2>
-      <div class="card story">
-        <h3>Who is this storybook for?</h3>
-        <p>Children ages 5 to 12, reading on their own or listening with family. Every page has a Read Aloud button with gentle narration, so the book can be heard as well as read.</p>
-        <h3>Is the story of Saint Charbel true?</h3>
-        <p>Yes. The storybook retells documented events of his life - his birth in Bekaa Kafra in 1828, his years as a monk and hermit, and his death in 1898. Where the book shares a traditional account, such as the water lamp, it names it as a traditional account.</p>
-        <h3>What is Saint Charbel known for?</h3>
-        <p>He was a Lebanese monk and the hermit of Annaya, remembered for a hidden life of prayer and for the healings linked to his intercession after his death. The Church canonized him on October 9, 1977.</p>
-        <h3>How long is the story?</h3>
-        <p>The storybook has 27 pages. You can move through them with the Previous and Next buttons.</p>
-      </div>
-    </section>
-  <section class="section">
+<div aria-label="Playback speed" class="story-rate-group" role="group">
+<button class="story-rate-btn" data-rate="0.7" type="button">Slow</button>
+<button class="story-rate-btn is-active" data-rate="1" type="button">Normal</button>
+<button class="story-rate-btn" data-rate="1.3" type="button">Fast</button>
+</div>
+</div>
+</details>
+<article class="storybook-panel">
+<div aria-hidden="true" class="storybook-illustration" id="story-illustration"><div class="scene-art scene-birth"><img alt="" class="scene-photo" decoding="async" fetchpriority="high" src="./media/storybook/images/event-01.webp"/><div aria-hidden="true" class="scene-photo-overlay"></div></div></div>
+<div class="storybook-text">
+<p aria-live="polite" class="storybook-step" id="story-step">Page 1 of 27</p>
+<h2 id="story-title">Loading story...</h2>
+<p id="story-body">Please wait while we open the storybook.</p>
+<p class="storybook-prayer" id="story-prayer"></p>
+<p class="storybook-heart" id="story-heart"></p>
+</div>
+</article>
+<details class="story-evidence">
+<summary id="story-evidence-title">Evidence for This Page</summary>
+<ul id="story-evidence-list"></ul>
+</details>
+</section>
+<section class="section reveal">
+<h2>What Young Hearts Can Learn</h2>
+<div class="grid-2">
+<article class="card story"><h3>Prayer First</h3><p>Saint Charbel shows that real strength comes from daily prayer, not from noise or fame.</p></article>
+<article class="card story"><h3>Simple Work</h3><p>He worked with his hands, cared for the land, and offered ordinary tasks to God.</p></article>
+<article class="card story"><h3>Hidden Sacrifice</h3><p>He fasted, lived simply, and gave up comfort so his heart could belong fully to Jesus.</p></article>
+<article class="card story"><h3>Mercy for All</h3><p>His life still brings comfort, healing, and hope to people of every place and background.</p></article>
+</div>
+</section>
+<section class="section saint-bio reveal" id="about-the-saint" aria-labelledby="saint-bio-title">
+<h2 id="saint-bio-title">About Saint Charbel Makhlouf</h2>
+<div class="saint-bio-grid">
+<dl class="saint-facts"><div><dt>Lived</dt><dd>1828-1898</dd></div><div><dt>Place</dt><dd>Bekaa Kafra and Annaya, Lebanon</dd></div><div><dt>Status</dt><dd>Canonized October 9, 1977, by Pope Paul VI</dd></div><div><dt>Feast</dt><dd>July 24 (Roman calendar); third Sunday of July (Maronite calendar)</dd></div></dl>
+<div class="saint-bio-text"><p>Youssef Makhlouf was a farmer's son from the mountain village of Bekaa Kafra in North Lebanon. His father died when he was three. At 23 he left home to become a monk of the Lebanese Maronite Order and took the name Charbel. He was ordained a priest on July 23, 1859.</p><p>For many years he lived in the community at the Monastery of Saint Maron at Annaya. From 1875 he lived as a hermit nearby, in prayer, fasting and manual work. He died on December 24, 1898, eight days after he was taken ill while celebrating Mass. Crowds came to his tomb afterward, Christians and Muslims alike. Pope Paul VI beatified him in 1965 and canonized him in 1977.</p><aside class='saint-key' aria-labelledby='saint-key-story'><h3 id='saint-key-story'>Key teaching</h3><p>Charbel taught by how he lived rather than by what he said: a hidden life of prayer, fasting and manual work, centered on the Mass. People of every faith still come to his tomb to ask for his prayers.</p></aside><p class='saint-bio-more'><a href='./saint-charbel'>Read the full life of Saint Charbel <span aria-hidden='true'>&rarr;</span></a></p><p class='saint-bio-sources'>Sources: <a href='https://vaticanstate.va/en/state-and-government/general-informations/saint-of-the-day/2303-july-24-saint-charbel-makhlouf.html' target='_blank' rel='noopener'>Vatican City State: Saint of the day, July 24</a>.</p></div>
+</div>
+</section>
+<section class="section reveal">
+<h2>True Dates in the Story</h2>
+<article class="card story">
+<ul>
+<li>May 8, 1828: Birth of Youssef Antoun Makhlouf (Saint Charbel) in Bekaa Kafra, Lebanon.</li>
+<li>1851: At age 23, he enters the Lebanese Maronite Order (formation at Mayfouk, then Annaya).</li>
+<li>1853: He makes his monastic vows and receives the name Charbel.</li>
+<li>July 23, 1859: He is ordained a Maronite priest.</li>
+<li>1859-1875: He lives 16 years in monastic community life at Annaya.</li>
+<li>1875: He begins hermitage life near Annaya, where he remains about 23 years.</li>
+<li>December 24, 1898: He dies after falling gravely ill during the Divine Liturgy in December 1898.</li>
+<li>December 5, 1965: Beatified by Pope Paul VI.</li>
+<li>October 9, 1977: Canonized by Pope Paul VI.</li>
+<li>1993: The widely known healing testimony of Nohad El Shami is reported at Annaya.</li>
+</ul>
+<p style="margin-top:0.8rem; opacity:0.88;"> Note: Some beloved stories (such as the water-lamp event) are presented as monastic tradition and devotional memory, while canonization itself depends on the Church's formal investigation process. </p>
+</article>
+</section>
+<section class="section reveal">
+<h2>Research Basis</h2>
+<article class="card story">
+<ul>
+<li><a href="https://www.vatican.va/content/paul-vi/fr/speeches/1965/documents/hf_p-vi_spe_19651205_charbel-makhlouf.html" target="_blank" rel="noopener">Vatican (Paul VI): Beatification address for Charbel Makhlouf (December 5, 1965)</a></li>
+<li><a href="https://www.vatican.va/content/paul-vi/fr/homilies/1977/documents/hf_p-vi_hom_19771009.html" target="_blank" rel="noopener">Vatican (Paul VI): Canonization homily (October 9, 1977)</a></li>
+<li><a href="https://web.archive.org/web/20160304235515/http://www.saintcharbel-annaya.com/home.php?lgid=0" target="_blank" rel="noopener">Monastery of Saint Maron (Annaya): archived biography source</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Charbel_Makhlouf" target="_blank" rel="noopener">Biographical cross-check (secondary)</a></li>
+</ul>
+</article>
+</section>
+<section class="section">
+<h2>Frequently Asked Questions</h2>
+<div class="card story"><h3>Who is this storybook for?</h3><p>Children ages 5 to 12, reading on their own or listening with family. Every page has a Read Aloud button with gentle narration, so the book can be heard as well as read.</p><h3>Is the story of Saint Charbel true?</h3><p>Yes. The storybook retells documented events of his life - his birth in Bekaa Kafra in 1828, his years as a monk and hermit, and his death in 1898. Where the book shares a traditional account, such as the water lamp, it names it as a traditional account.</p><h3>What is Saint Charbel known for?</h3><p>He was a Lebanese monk and the hermit of Annaya, remembered for a hidden life of prayer and for the healings linked to his intercession after his death. The Church canonized him on October 9, 1977.</p><h3>How long is the story?</h3><p>The storybook has 27 pages. You can move through them with the Previous and Next buttons.</p></div>
+</section>
+<section class="section">
 <h2>More Saint Storybooks for Children</h2>
 <div class="card story"><ul><li><a href="./charbel-story-v2">Saint Charbel (new edition)</a></li><li><a href="./therese-story">Saint Therese</a></li><li><a href="./francis-story">Saint Francis of Assisi</a></li><li><a href="./stories">All saint storybooks for children</a></li></ul></div>
 </section>
 </main>
-
-  <footer class="footer">
+<footer class="footer">
     <div class="site-shell">Children's story page added March 2, 2026. Author: Please pray for the person who made this website.</div>
   </footer>
-
-  <script defer src="app.js"></script>
-  <script defer src="storybook.js"></script>
-  <script defer src="/locale-routes.js"></script>
-  <script defer src="translate.js?v=20260922-1"></script>
-  <script defer src="global-audio-player.js"></script>
-  <script src="./nav.js?v=20260922-1" defer></script>
+<script defer src="app.js"></script>
+<script defer src="storybook.js"></script>
+<script defer src="storybook-stage.js"></script>
+<script defer src="/locale-routes.js"></script>
+<script defer src="translate.js?v=20260922-1"></script>
+<script defer src="global-audio-player.js"></script>
+<script defer src="./nav.js?v=20260922-1"></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

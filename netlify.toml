@@ -1,8 +1,6 @@
-[[redirects]]
-from = "/.netlify/functions/submit-testimony"
-to = "https://YOUR_PROJECT.supabase.co/functions/v1/submit-testimony"
-status = 200
-force = true
+# PREVIEW-ONLY. Production is served by Hostinger from .htaccess (see the security headers there).
+# This file only shapes Netlify PR preview deploys (.github/workflows/pr-preview.yml).
+# Do not rely on it for production behavior.
 [[headers]]
 for = "/*"
 [headers.values]
@@ -16,7 +14,7 @@ Cache-Control = "no-store"
 X-Content-Type-Options = "nosniff"
 Referrer-Policy = "strict-origin-when-cross-origin"
 Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-Content-Security-Policy = "default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://cdn.jsdelivr.net; frame-src https://challenges.cloudflare.com https://www.youtube-nocookie.com; connect-src 'self' https://YOUR_PROJECT.supabase.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+Content-Security-Policy = "default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://cdn.jsdelivr.net; frame-src https://challenges.cloudflare.com https://www.youtube-nocookie.com; connect-src 'self' https://alxccoizzksyitxvqhpv.supabase.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
 [[headers]]
 for = "/testimony-review.html"
 [headers.values]
