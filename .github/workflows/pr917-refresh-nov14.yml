@@ -1,0 +1,36 @@
+name: Refresh authorized PR917 onto current stage
+on:
+  push:
+    branches: [recovery/nov10-write-route]
+    paths: [.github/workflows/pr917-refresh-nov14.yml]
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/mar170-novena-anchor
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebase exact reviewed href patch and regenerate sitemap
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = '4d074d0d6028e726697710947e844e8e3b2e6b5d'
+          test "$(git ls-remote origin refs/heads/stage | cut -f1)" = '2c7c25599a644b846198e7bd981b9e2e373f7a81'
+          git fetch origin stage
+          git config user.name 'jnrahme'
+          git config user.email 'jnrahme@users.noreply.github.com'
+          git rebase 2c7c25599a644b846198e7bd981b9e2e373f7a81
+          python3 scripts/sitemap_lastmod.py --baseline 2c7c25599a644b846198e7bd981b9e2e373f7a81
+          git add sitemap.xml
+          if ! git diff --cached --quiet; then git commit -m 'Regenerate healing sitemap date after authorized rebase'; fi
+          git merge-base --is-ancestor 2c7c25599a644b846198e7bd981b9e2e373f7a81 HEAD
+          git diff --check
+          git diff --stat 2c7c25599a644b846198e7bd981b9e2e373f7a81..HEAD
+          git rev-parse HEAD HEAD^{tree}
+          test "$(git ls-remote origin refs/heads/stage | cut -f1)" = '2c7c25599a644b846198e7bd981b9e2e373f7a81'
+          git push --force-with-lease=refs/heads/content/mar170-novena-anchor:4d074d0d6028e726697710947e844e8e3b2e6b5d origin HEAD:refs/heads/content/mar170-novena-anchor
