@@ -176,6 +176,8 @@ class ProtectedStoreVerification(DeploymentVerificationTest):
             "/store/": (403, None),
         }
         routes = self.routes
+        self.preserve_nonce = {route: True for route in routes}
+        preserve_nonce = self.preserve_nonce
 
         class StoreHandler(QuietHandler):
             def do_GET(handler):
@@ -185,7 +187,7 @@ class ProtectedStoreVerification(DeploymentVerificationTest):
                 status, target = routes[path]
                 handler.send_response(status)
                 if target is not None:
-                    handler.send_header("Location", target + ("?" + query if query else ""))
+                    handler.send_header("Location", target + ("?" + query if query and preserve_nonce[path] else ""))
                 handler.end_headers()
 
         self.server.RequestHandlerClass = partial(StoreHandler, directory=str(self.live))
@@ -207,12 +209,28 @@ class ProtectedStoreVerification(DeploymentVerificationTest):
             self.routes[route] = original
 
     def test_wrong_or_external_redirect_fails(self):
-        for target in ("/shop", "https://example.invalid/store", "/store/?unreviewed=1"):
-            with self.subTest(target=target):
-                self.routes["/store"] = (301, target)
-                result = self.run_check()
-                self.assertEqual(result.returncode, 1, result.stdout)
-                self.assertIn("unexpected redirect target", result.stdout)
+        for route in ("/store.html", "/store"):
+            original = self.routes[route]
+            for target in ("/shop", "https://example.invalid/store", "/store/?unreviewed=1"):
+                with self.subTest(route=route, target=target):
+                    self.routes[route] = (301, target)
+                    result = self.run_check()
+                    self.assertEqual(result.returncode, 1, result.stdout)
+                    self.assertIn("unexpected redirect target", result.stdout)
+            self.routes[route] = original
+
+    def test_lost_or_changed_nonce_fails_on_either_redirect(self):
+        for route in ("/store.html", "/store"):
+            original = self.routes[route]
+            for suffix in ("", "?deployment-check=changed"):
+                with self.subTest(route=route, suffix=suffix):
+                    self.preserve_nonce[route] = False
+                    self.routes[route] = (301, original[1] + suffix)
+                    result = self.run_check()
+                    self.assertEqual(result.returncode, 1, result.stdout)
+                    self.assertIn("unexpected redirect target", result.stdout)
+            self.routes[route] = original
+            self.preserve_nonce[route] = True
 
     def test_hidden_source_or_flag_regression_fails(self):
         source = self.root / "store.html"
