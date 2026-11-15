@@ -160,6 +160,71 @@ class DeploymentVerificationTest(unittest.TestCase):
 
 
 
+class ProtectedStoreVerification(DeploymentVerificationTest):
+    """A local server models the exact blocked production route, including query."""
+
+    def setUp(self):
+        super().setUp()
+        from test_hidden_store import PRODUCTS
+        source = '<meta name="robots" content="noindex,nofollow">' + ''.join(
+            f'<h2>{title}</h2><p>${price}</p>' for title, price in PRODUCTS)
+        (self.root / "store.html").write_text(source)
+        (self.root / "store").mkdir()
+        self.routes = {
+            "/store.html": (301, "/store"),
+            "/store": (301, "/store/"),
+            "/store/": (403, None),
+        }
+        routes = self.routes
+
+        class StoreHandler(QuietHandler):
+            def do_GET(handler):
+                path, _, query = handler.path.partition("?")
+                if path not in routes:
+                    return super().do_GET()
+                status, target = routes[path]
+                handler.send_response(status)
+                if target is not None:
+                    handler.send_header("Location", target + ("?" + query if query else ""))
+                handler.end_headers()
+
+        self.server.RequestHandlerClass = partial(StoreHandler, directory=str(self.live))
+
+    def test_protected_store_contract_and_honest_receipt(self):
+        result = self.run_check()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Verified 4 live frontend files match the checkout; store.html separately", result.stdout)
+        self.assertIn("not a byte-match or publication claim", result.stdout)
+
+    def test_public_store_or_unexpected_status_fails(self):
+        for route in self.routes:
+            original = self.routes[route]
+            for status in (200, 302, 404, 500):
+                with self.subTest(route=route, status=status):
+                    self.routes[route] = (status, None)
+                    result = self.run_check()
+                    self.assertEqual(result.returncode, 1, result.stdout)
+            self.routes[route] = original
+
+    def test_wrong_or_external_redirect_fails(self):
+        for target in ("/shop", "https://example.invalid/store", "/store/?unreviewed=1"):
+            with self.subTest(target=target):
+                self.routes["/store"] = (301, target)
+                result = self.run_check()
+                self.assertEqual(result.returncode, 1, result.stdout)
+                self.assertIn("unexpected redirect target", result.stdout)
+
+    def test_hidden_source_or_flag_regression_fails(self):
+        source = self.root / "store.html"
+        original = source.read_text()
+        source.write_text(original.replace("noindex", "index"))
+        self.assertEqual(self.run_check().returncode, 1)
+        source.write_text(original)
+        with unittest.mock.patch.dict("os.environ", {"SHOP_LINK_ENABLED": "1"}):
+            self.assertEqual(self.run_check().returncode, 1)
+
+
+
 # ---------------------------------------------------------------------------
 # Bounded-execution controls for the retry/budget machinery (run 38685876119):
 # stalled/slow-body workers, mid-attempt budget, queued cancellation, majority
