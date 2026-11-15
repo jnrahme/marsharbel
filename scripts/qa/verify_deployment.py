@@ -2,6 +2,7 @@
 """Verify public frontend files against this checkout, not just HTTP success."""
 
 import re
+import os
 import argparse
 import json
 import struct
@@ -11,7 +12,7 @@ import threading
 from pathlib import Path
 import time
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote
+from urllib.parse import quote, urljoin
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 
@@ -126,6 +127,41 @@ def public_path(relative):
     return relative
 
 
+def verify_protected_store(root, base_url, nonce, socket_timeout):
+    """Verify the deliberately unavailable workshop, never expose or skip it.
+
+    store/ holds catalog data and shadows store.html on Apache. Keep the exact
+    existing same-origin 301 chain ending in 403, rather than following arbitrary
+    redirects or treating a public workshop as a successful deployment.
+    """
+    from test_hidden_store import page_errors
+
+    if os.environ.get("SHOP_LINK_ENABLED") == "1":
+        return "store.html: SHOP_LINK_ENABLED must remain off"
+    if not (root / "store").is_dir() or page_errors((root / "store.html").read_text()):
+        return "store.html: hidden workshop source contract failed"
+    base = base_url.rstrip("/")
+    routes = (("store.html", 301, "store"), ("store", 301, "store/"),
+              ("store/", 403, None))
+    for route, expected_status, target in routes:
+        url = f"{base}/{route}?deployment-check={nonce}"
+        request = Request(url, headers={"Cache-Control": "no-cache",
+                                       "User-Agent": "Marsharbel-Deployment-Check/1.0"})
+        try:
+            with OPENER.open(request, timeout=socket_timeout) as response:
+                return f"store.html: protected route {route} unexpectedly served HTTP {response.status}"
+        except HTTPError as error:
+            if error.code != expected_status:
+                return f"store.html: protected route {route} expected {expected_status}, got {error.code}"
+            if target is not None:
+                expected_url = f"{base}/{target}?deployment-check={nonce}"
+                if urljoin(url, error.headers.get("Location", "")) != expected_url:
+                    return f"store.html: protected route {route} has unexpected redirect target"
+        except (URLError, TimeoutError, OSError) as error:
+            return f"store.html: protected route {route}: {error}"
+    return None
+
+
 def verify_file(root, path, base_url, nonce, request_budget=45, socket_timeout=15):
     """Verify one file with a TOTAL wall-time bound, not just socket-operation timeouts.
 
@@ -135,6 +171,8 @@ def verify_file(root, path, base_url, nonce, request_budget=45, socket_timeout=1
     request_budget + one socket timeout, whatever the server does.
     """
     relative = path.relative_to(root).as_posix()
+    if relative == "store.html":
+        return verify_protected_store(root, base_url, nonce, socket_timeout)
     url = f"{base_url.rstrip('/')}/{quote(public_path(relative))}?deployment-check={nonce}"
     request = Request(url, headers={"Cache-Control": "no-cache",
                                    "User-Agent": "Marsharbel-Deployment-Check/1.0"})
@@ -284,7 +322,12 @@ def main():
             tasks.put(None)
         last_errors = errors
         if not errors and stopped is None:
-            print(f"Verified {len(files)} live frontend files match the checkout.", flush=True)
+            if root / "store.html" in files:
+                print(f"Verified {len(files) - 1} live frontend files match the checkout; "
+                      "store.html separately satisfies the protected 301/301/403 route contract "
+                      "(not a byte-match or publication claim).", flush=True)
+            else:
+                print(f"Verified {len(files)} live frontend files match the checkout.", flush=True)
             return 0
         print(f"Attempt {attempt}/{args.attempts}: {len(errors)} files not verified", flush=True)
         for error in errors:
