@@ -22,6 +22,24 @@
     return window.matchMedia('(hover: none)').matches || window.innerWidth <= 820;
   }
 
+  function returnFrameFocus(g) {
+    var active = document.activeElement;
+    if (active && active.tagName === 'IFRAME') {
+      g.querySelector('.nav-parent').focus({ preventScroll: true });
+    }
+  }
+
+  // A late-loading embed can take focus while a desktop menu is already
+  // hovered. Recover only while the pointer is in the header, never while
+  // the visitor is interacting with the player itself.
+  window.addEventListener('blur', function () {
+    window.setTimeout(function () {
+      if (coarse()) return;
+      var hovered = groups.find(function (g) { return g.matches(':hover'); });
+      if (hovered) returnFrameFocus(hovered);
+    }, 0);
+  });
+
   groups.forEach(function (g) {
     var parent = g.querySelector('.nav-parent');
     if (!parent) return;
@@ -50,6 +68,9 @@
     g.addEventListener('mouseenter', function () {
       if (!coarse()) {
         document.documentElement.classList.remove('nav-suppress');
+        // An embedded player can hold keyboard focus after loading. Hovering
+        // the header must return Escape/Tab to this document, not the frame.
+        returnFrameFocus(g);
         parent.setAttribute('aria-expanded', 'true');
       }
     });
