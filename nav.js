@@ -29,14 +29,22 @@
     }
   }
 
-  // A late-loading embed can take focus while a desktop menu is already
+  // A late-loading embed can take focus while a header menu is already
   // hovered. Recover only while the pointer is in the header, never while
   // the visitor is interacting with the player itself.
   window.addEventListener('blur', function () {
+    var hovered = groups.find(function (g) { return g.matches(':hover'); });
+    if (!hovered) return;
+    // Wait for the browser to finish entering the frame's focus context.
+    // Focusing during blur can update activeElement without moving keys.
     window.setTimeout(function () {
-      if (coarse()) return;
-      var hovered = groups.find(function (g) { return g.matches(':hover'); });
-      if (hovered) returnFrameFocus(hovered);
+      if (!hovered.matches(':hover')) return;
+      var parent = hovered.querySelector('.nav-parent');
+      var active = document.activeElement;
+      if (!document.hasFocus() || (active && active.tagName === 'IFRAME')) {
+        parent.blur();
+        parent.focus({ preventScroll: true });
+      }
     }, 0);
   });
 
