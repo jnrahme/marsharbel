@@ -22,7 +22,10 @@ for (const file of paths) {
       frame.title = 'Keyboard focus regression fixture';
       frame.srcdoc = '<button>Player control</button>';
       frame.style.cssText = 'position:fixed;bottom:0;right:0;width:1px;height:1px';
-      document.body.append(frame);
+      const beforeFrame = document.createElement('button');
+      beforeFrame.id = 'nav-before-frame-regression';
+      beforeFrame.textContent = 'Before player';
+      document.body.append(beforeFrame, frame);
     });
     for (const label of ['Legacy', 'Miracles', 'Saints', 'Prayer', 'Travel', 'Media']) {
       const parent = nav.locator('.nav-parent').filter({hasText:label});
@@ -49,6 +52,17 @@ for (const file of paths) {
       await page.mouse.move(0, 500);
       await page.locator('#nav-frame-focus-regression').focus();
       await expect(page.locator('#nav-frame-focus-regression')).toBeFocused();
+      if (!(await page.evaluate(() => matchMedia('(hover: none)').matches || innerWidth<=820))) {
+        const parent = nav.locator('.nav-parent').filter({hasText:'Legacy'});
+        await parent.hover();
+        await page.locator('#nav-before-frame-regression').focus();
+        // The cursor stays on the header, but Tab gives keyboard intent
+        // priority over a late-frame focus-recovery handler.
+        await page.keyboard.press('Tab');
+        await expect(page.locator('#nav-frame-focus-regression')).toBeFocused();
+        await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+        await expect(page.locator('#nav-frame-focus-regression')).toBeFocused();
+      }
     }
   });
 }
