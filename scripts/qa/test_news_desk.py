@@ -587,10 +587,10 @@ class AlmonerRefreshSandboxTests(unittest.TestCase):
 
 class NewsMetadataTests(unittest.TestCase):
     # November recovery adds source-dated Nov9 APECL and Nov2 Nahariya entries.
-    REVISION = '2026-11-10'
+    REVISION = '2026-11-17'
     # Authored content revision and actual regenerated sitemap day are distinct.
     # Keep both exact; the sitemap generator's one-day skew is not a backdate.
-    SITEMAP_REVISION = '2026-11-14'
+    SITEMAP_REVISION = '2026-11-17'
 
     def assert_news_metadata(self, html, lastmod):
         from bs4 import BeautifulSoup
@@ -613,7 +613,7 @@ class NewsMetadataTests(unittest.TestCase):
                 self.assert_news_metadata((ROOT/file).read_text(), dates[url])
 
     def test_old_webpage_date_is_rejected(self):
-        html = (ROOT/'news.html').read_text().replace('"dateModified": "2026-11-10"',
+        html = (ROOT/'news.html').read_text().replace('"dateModified": "'+self.REVISION+'"',
                                                     '"dateModified": "2026-10-10"')
         with self.assertRaises(AssertionError):
             self.assert_news_metadata(html, self.SITEMAP_REVISION)
