@@ -155,7 +155,7 @@ class NewsDeskTests(unittest.TestCase):
         self.assertEqual(text.count('class="home-news-lead home-news-lead--film"'), 1)
         self.assertEqual(text.count('class="home-news-row"'), 5)
         # REVISION 2026-10-30: text-only almoner supporting row (no photo, rights-safe)
-        self.assertEqual(text.count('class="home-news-row home-news-row--text"'), 2)
+        self.assertEqual(text.count('class="home-news-row home-news-row--text"'), 3)
         self.assertIn('class="home-news-row home-news-row--text" href="./news#almoner-zaporizhzhia-poltava-2026-10-30"', text)
         self.assertNotIn('news-rotator.js', text)
         self.assertIn('class="home-news-lead home-news-lead--film" href="./charbel-film-premiere"', text)
@@ -827,7 +827,7 @@ class NovemberRecoveryTests(unittest.TestCase):
         for code in ('en',*reg['homepageMirrors']['renderLocales']):
             file=ROOT/('index.html' if code=='en' else code+'/index.html')
             soup=BeautifulSoup(file.read_text(),'html.parser')
-            row=soup.select_one('#latest-news a.home-news-row--text')
+            row=soup.select_one('#latest-news a.home-news-row--text[href$="#apecl-bkerke-solidarity-2026-11-09"]')
             self.assertEqual(row['href'].split('#')[-1],pack['apecl']['id'])
             updated=json.loads((ROOT/'locales/bkerke-nov11-reviewed-translations.json').read_text())
             self.assertEqual(row.select_one('.home-news-title').get_text(),updated['home'][code][1])
@@ -876,11 +876,39 @@ class BkerkeNovember11Tests(unittest.TestCase):
         self.assertEqual(set(pack['home']),expected)
         for code in expected:
             soup=BeautifulSoup((ROOT/('index.html' if code=='en' else code+'/index.html')).read_text(),'html.parser')
-            row=soup.select_one('#latest-news a.home-news-row--text')
+            row=soup.select_one('#latest-news a.home-news-row--text[href$="#apecl-bkerke-solidarity-2026-11-09"]')
             actual=[row.select_one('.'+cls).get_text() for cls in ['home-news-meta','home-news-title','home-news-credit']]
             self.assertEqual(actual,pack['home'][code])
             self.assertEqual(row['href'].split('#')[-1],pack['id'])
             self.assertFalse(row.select('img,a'))
+
+class ParisStatueTests(unittest.TestCase):
+    def test_archive_and_all_registered_home_values(self):
+        from bs4 import BeautifulSoup
+        pack=json.loads((ROOT/'locales/paris-statue-nov15-intake.json').read_text())
+        reg=json.loads((ROOT/'locales/registry.json').read_text())
+        ident=pack['id']
+        self.assertEqual(reg['pageMirrors']['news-master']['renderLocales'],['ar'])
+        self.assertEqual(set(reg['homepageMirrors']['renderLocales']),{'ar','fr','es','pt','it','de','pl','ru','hi','th'})
+        for code in ('en','ar'):
+            soup=BeautifulSoup((ROOT/('news.html' if code=='en' else 'ar/news.html')).read_text(),'html.parser')
+            row=soup.select_one('#'+ident)
+            for key,css in [('title','.news-row-title a'),('summary','.news-row-summary'),('date','time'),('chip','.chip')]:
+                self.assertEqual(row.select_one(css).get_text(),pack['archive'][code][key])
+            self.assertEqual(row.select_one('time')['datetime'],pack['eventDate'])
+            self.assertEqual(row.select_one('a')['href'],pack['sourceUrl'])
+            self.assertFalse(row.select('img'))
+            credit=soup.select_one('#credit-'+ident+' a')
+            self.assertEqual(credit['href'],pack['sourceUrl'])
+            self.assertEqual(credit.get_text(),pack['archive'][code]['source'])
+        for code in ('en',*reg['homepageMirrors']['renderLocales']):
+            soup=BeautifulSoup((ROOT/('index.html' if code=='en' else code+'/index.html')).read_text(),'html.parser')
+            row=soup.select_one('#latest-news a.home-news-row--text')
+            self.assertEqual(row['href'].split('#')[-1],ident)
+            for key,css in [('title','.home-news-title'),('date','.home-news-meta'),('credit','.home-news-credit')]:
+                self.assertEqual(row.select_one(css).get_text(),pack['home'][code][key])
+            self.assertFalse(row.select('img,a'))
+            self.assertIn('charbel-film-premiere',soup.select_one('#latest-news .home-news-lead')['href'])
 
 if __name__ == '__main__':
     unittest.main()
