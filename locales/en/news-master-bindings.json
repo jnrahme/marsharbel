@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "news.html",
-  "masterSha256": "1a6d297de9b45f005fac76a6005c003f587427972fb757fd8f2dc2c69d4a6761",
+  "masterSha256": "77e7be0606e1abf4a23dfec418c37ef7b6d1adf7dfd7ce7e0689dfb84cccb744",
   "sourceRevision": "764dd3d",
   "bindings": [
     {
@@ -3300,6 +3300,55 @@
       "source": "The Council's final statement, reproduced by LBCI, November 13, 2026.",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "news.latest-news.source",
+      "selector": "#credit-paris-chaillot-charbel-statue-2026-11-15 > span:nth-of-type(2)",
+      "source": "Source:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.paris-statue.title",
+      "selector": "#paris-chaillot-charbel-statue-2026-11-15 > div:nth-of-type(1) > h3:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel statue installed and blessed at Paris church",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.paris-statue.summary",
+      "selector": "#paris-chaillot-charbel-statue-2026-11-15 > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A statue of Saint Charbel was installed and blessed at Saint-Pierre-de-Chaillot in Paris on November 15, 2026. Archbishop Maroun Ammar, Maronite Archbishop of Sidon, presided at the Maronite Mass, Aleteia reports. The statue was donated by Phoenix - Semeurs de Paix and made by sculptor Bertrand Chevallier-Chantepie. The parish already had an image of Saint Charbel; the new statue gives the devotion a lasting place in the church.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.paris-statue.date",
+      "selector": "#paris-chaillot-charbel-statue-2026-11-15 > div:nth-of-type(1) > p:nth-of-type(2) > time:nth-of-type(1)",
+      "source": "November 15, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.paris-statue.chip",
+      "selector": "#paris-chaillot-charbel-statue-2026-11-15 > div:nth-of-type(1) > p:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Statue blessing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.paris-statue.title",
+      "selector": "#credit-paris-chaillot-charbel-statue-2026-11-15 > span:nth-of-type(1)",
+      "source": "Saint Charbel statue installed and blessed at Paris church",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "news.paris-statue.source",
+      "selector": "#credit-paris-chaillot-charbel-statue-2026-11-15 > a:nth-of-type(1)",
+      "source": "Aleteia: installation and blessing at Saint-Pierre-de-Chaillot (November 15, 2026)",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -3584,6 +3633,11 @@
     "news.recovery.apecl.update-nov13-label": "Update November 13, 2026",
     "news.recovery.apecl.update-nov13-summary": "In its final statement, reproduced by MTV and LBCI, the Council announced a solidarity initiative involving Catholic dioceses and religious orders to meet urgent humanitarian needs in southern border villages. It confirmed a special episcopal committee chaired by Bishop Elias Nassar, including bishops from the dioceses concerned and representatives of men's and women's religious orders working in the south. The committee is to coordinate assistance and mobilize support. The statement gives no funding total or confirmation of newly delivered aid.",
     "news.recovery.apecl.update-nov13-source-mtv": "The Council's final statement, reproduced by MTV, November 13, 2026.",
-    "news.recovery.apecl.update-nov13-source-lbci": "The Council's final statement, reproduced by LBCI, November 13, 2026."
+    "news.recovery.apecl.update-nov13-source-lbci": "The Council's final statement, reproduced by LBCI, November 13, 2026.",
+    "news.paris-statue.title": "Saint Charbel statue installed and blessed at Paris church",
+    "news.paris-statue.summary": "A statue of Saint Charbel was installed and blessed at Saint-Pierre-de-Chaillot in Paris on November 15, 2026. Archbishop Maroun Ammar, Maronite Archbishop of Sidon, presided at the Maronite Mass, Aleteia reports. The statue was donated by Phoenix - Semeurs de Paix and made by sculptor Bertrand Chevallier-Chantepie. The parish already had an image of Saint Charbel; the new statue gives the devotion a lasting place in the church.",
+    "news.paris-statue.date": "November 15, 2026",
+    "news.paris-statue.chip": "Statue blessing",
+    "news.paris-statue.source": "Aleteia: installation and blessing at Saint-Pierre-de-Chaillot (November 15, 2026)"
   }
 }
