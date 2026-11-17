@@ -61,7 +61,7 @@ def outputs(root=ROOT):
             for field,_ in additions:cat[prefix+field]=pack[section][code][field]
             if set(cat)!=set(en):raise ValueError('Locale keys differ '+code)
             result[p]=cat
-    return {p:json.dumps(v,ensure_ascii=False,indent=2)+'\n' for p,v in result.items()}
+    return {p:(json.dumps(v,ensure_ascii=False,separators=(',',':')) if p.name.endswith('-bindings.json') else json.dumps(v,ensure_ascii=False,indent=2))+'\n' for p,v in result.items()}
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser();ap.add_argument('--check',action='store_true');a=ap.parse_args()
