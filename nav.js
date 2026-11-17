@@ -22,6 +22,39 @@
     return window.matchMedia('(hover: none)').matches || window.innerWidth <= 820;
   }
 
+  var lastPointerMove = 0;
+  var tabNavigation = false;
+
+  function pointerOwnsHeader() {
+    return !tabNavigation && !document.hidden && Date.now() - lastPointerMove < 2000;
+  }
+
+  function returnFrameFocus(g) {
+    var active = document.activeElement;
+    if (active && active.tagName === 'IFRAME') {
+      g.querySelector('.nav-parent').focus({ preventScroll: true });
+    }
+  }
+
+  // A late-loading embed can take focus while a header menu is already
+  // hovered. Recover only while the pointer is in the header, never while
+  // the visitor is interacting with the player itself.
+  window.addEventListener('blur', function () {
+    var hovered = groups.find(function (g) { return g.matches(':hover'); });
+    if (!hovered || !pointerOwnsHeader()) return;
+    // Wait for the browser to finish entering the frame's focus context.
+    // Focusing during blur can update activeElement without moving keys.
+    window.setTimeout(function () {
+      if (!hovered.matches(':hover') || !pointerOwnsHeader()) return;
+      var parent = hovered.querySelector('.nav-parent');
+      var active = document.activeElement;
+      if (active && active.tagName === 'IFRAME') {
+        parent.blur();
+        parent.focus({ preventScroll: true });
+      }
+    }, 0);
+  });
+
   groups.forEach(function (g) {
     var parent = g.querySelector('.nav-parent');
     if (!parent) return;
@@ -48,8 +81,13 @@
     g.addEventListener('focusin', fitMenu);
     g.addEventListener('click', function () { setTimeout(fitMenu, 0); });
     g.addEventListener('mouseenter', function () {
+      lastPointerMove = Date.now();
+      tabNavigation = false;
       if (!coarse()) {
         document.documentElement.classList.remove('nav-suppress');
+        // An embedded player can hold keyboard focus after loading. Hovering
+        // the header must return Escape/Tab to this document, not the frame.
+        returnFrameFocus(g);
         parent.setAttribute('aria-expanded', 'true');
       }
     });
@@ -91,7 +129,10 @@
   });
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Tab') document.documentElement.classList.remove('nav-suppress');
+    if (e.key === 'Tab') {
+      tabNavigation = true;
+      document.documentElement.classList.remove('nav-suppress');
+    }
     if (e.key === 'Escape') {
       var focusedGroup = document.activeElement.closest('.nav-group');
       document.documentElement.classList.add('nav-suppress');
@@ -117,6 +158,8 @@
     }, 180);
   }, { passive: true });
   document.addEventListener('mousemove', function () {
+    lastPointerMove = Date.now();
+    tabNavigation = false;
     document.documentElement.classList.remove('nav-suppress');
     if (!coarse()) groups.forEach(function (g) {
       var parent = g.querySelector('.nav-parent');
