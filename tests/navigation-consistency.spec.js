@@ -35,10 +35,10 @@ for (const file of paths) {
       const clipped = await group.locator('.nav-sub').evaluate(el=> {const r=el.getBoundingClientRect();return r.left < -1 || r.right > innerWidth+1;});
       expect(clipped).toBe(false);
       if (frameFocusCase && label === 'Legacy' && !(await page.evaluate(() => matchMedia('(hover: none)').matches || innerWidth<=820))) {
-        await expect.poll(() => page.evaluate(() => document.activeElement.tagName)).not.toBe('IFRAME');
+        await expect.poll(() => page.evaluate(() => document.hasFocus() && document.activeElement.tagName !== 'IFRAME')).toBe(true);
         // Also cover an embed stealing focus after the menu has opened.
         await page.locator('#nav-frame-focus-regression').focus();
-        await expect.poll(() => page.evaluate(() => document.activeElement.tagName)).not.toBe('IFRAME');
+        await expect.poll(() => page.evaluate(() => document.hasFocus() && document.activeElement.tagName !== 'IFRAME')).toBe(true);
       }
       await page.keyboard.press('Escape');
       await expect(group.locator('.nav-sub')).toBeHidden();
