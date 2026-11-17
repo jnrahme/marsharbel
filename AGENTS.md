@@ -40,6 +40,10 @@ Run the full gate before merging, in this order, and inspect the results:
 
 Re-run the FULL gate after any edit, in gate order. Do not claim perfect SEO, guaranteed rankings, or worldwide field performance from structural tests alone.
 
+## Embedded-player focus and header menus
+
+Remote player interstitials may focus a cross-origin iframe during load. When header interaction reclaims focus, verify `document.hasFocus()` and real Escape delivery, not only `activeElement`: focusing during the frame blur event can change the latter without moving keyboard events back. Keep player focus usable after leaving the header, and cover both initial and late frame focus in the navigation regression suite.
+
 ## Secrets
 
 No passwords, tokens, keys, or credentials in the repo - ever. The repo is public. Do not commit personal analytics exports or local artifacts either.
