@@ -1,0 +1,84 @@
+name: Search index daily regeneration
+
+# Ruling (Main, Oct 15 2026 21:57 ET on #830, option b): the deploy workflow
+# cannot change served bytes because Hostinger pulls stage, so the daily
+# search-index refresh lands through the merge train. This bot regenerates
+# search-index/<locale>.json from the committed site and keeps ONE reused
+# draft PR open against stage; the normal Scrum gate + green CI + GO merges
+# it. It never merges anything.
+#
+# Head-CI state (explicitly blocked automation, no expansion implemented):
+# this workflow uses GITHUB_TOKEN with contents:write + pull-requests:write
+# only. Per the GitHub Actions docs, its pull_request opened/synchronize/
+# reopened events create runs in an approval-required (action_required)
+# state - the same state promote PR #559's runs sit in today - and nothing
+# in this workflow approves them. The regeneration PR therefore arrives as a
+# draft with CI awaiting approval; the merge train's existing gates see that
+# state in the open. Merging stays with the normal Scrum gate + GO.
+#
+# Unapproved candidate approval paths (design only, NOT implemented):
+# a) a user with repo write access clicks "Approve workflows to run" on each
+#    bot PR head - no new access, one manual step per drift day;
+# b) an already-existing owner credential approves the runs via
+#    POST /actions/runs/<id>/approve - owner-identity act, needs explicit
+#    authorization;
+# c) this workflow self-approves with actions:write - held as unapproved
+#    permission/security behavior expansion;
+# d) workflow_dispatch-triggered QA runs - documented to run from
+#    GITHUB_TOKEN, but needs actions:write plus additive triggers on the QA
+#    workflows and races PR-event checks under identical names.
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: search-index-daily
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: stage
+          fetch-depth: 0
+
+      - name: Regenerate search indexes
+        run: node scripts/build-search-index.mjs
+
+      # Fail closed: a regeneration that does not pass its own --check never
+      # reaches a PR. The merge train re-runs the same check in CI.
+      - name: Verify regenerated indexes
+        run: node scripts/build-search-index.mjs --check
+
+      - name: Create or update the single regeneration PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- search-index/; then
+            echo "Search index already current; nothing to PR."
+            exit 0
+          fi
+          BRANCH="bot/search-index-daily"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add search-index/
+          git commit -m "chore: daily search-index regeneration $(date -u +%F)"
+          git push --force origin "HEAD:refs/heads/$BRANCH"
+          OPEN=$(gh pr list --base stage --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$OPEN" ]; then
+            echo "Regeneration PR #$OPEN already open; branch updated to the latest regeneration."
+            exit 0
+          fi
+          gh pr create --draft --base stage --head "$BRANCH" \
+            --title "chore: daily search-index regeneration ($(date -u +%F))" \
+            --body "Automated daily regeneration of search-index/<locale>.json via node scripts/build-search-index.mjs (ruling Oct 15 21:57 ET, option b). One PR is reused; its branch tracks the latest regeneration. Merges through the normal merge train (Scrum gate + green CI + GO); this bot never merges."
