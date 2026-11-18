@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "a8dbcd2c742ddbd250867cc03592d5ffb0ed655b0e151e123c0a3e2d588a0ab9",
+  "masterSha256": "10bf6395d134006cef459ec7deaf738603b04615e6cfa77b8ddd84ab4611203c",
   "bindings": [
     {
       "key": "home.header.saint-charbel",
@@ -1649,6 +1649,27 @@
       "nodeIndex": 0
     },
     {
+      "key": "home.paris-statue.date",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "November 15, 2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.paris-statue.title",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel statue blessed at Saint-Pierre-de-Chaillot in Paris",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.paris-statue.credit",
+      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Archbishop Maroun Ammar presided at the Maronite Mass. Aleteia reports the statue's installation and blessing on November 15.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
       "key": "home.saintDay.2026-11-17.heading",
       "selector": "template[data-saint-date=\"2026-11-17\"] #saint-day-heading",
       "source": "Saint of the Day",
@@ -1999,23 +2020,72 @@
       "nodeIndex": 0
     },
     {
-      "key": "home.paris-statue.date",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(1)",
-      "source": "November 15, 2026",
+      "key": "home.saintDay.2026-11-22.heading",
+      "selector": "template[data-saint-date=\"2026-11-22\"] #saint-day-heading",
+      "source": "Saint of the Day",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "home.paris-statue.title",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(2)",
-      "source": "Saint Charbel statue blessed at Saint-Pierre-de-Chaillot in Paris",
+      "key": "home.saintDay.2026-11-22.dateLabel",
+      "selector": "template[data-saint-date=\"2026-11-22\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "22.11.2026",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "home.paris-statue.credit",
-      "selector": "#latest-news > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(3)",
-      "source": "Archbishop Maroun Ammar presided at the Maronite Mass. Aleteia reports the statue's installation and blessing on November 15.",
+      "key": "home.saintDay.2026-11-22.monogram",
+      "selector": "template[data-saint-date=\"2026-11-22\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "A",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-22.dateShort",
+      "selector": "template[data-saint-date=\"2026-11-22\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "22 Nov",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-22.calendar",
+      "selector": "template[data-saint-date=\"2026-11-22\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Maronite calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-22.name",
+      "selector": "template[data-saint-date=\"2026-11-22\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Announcement to the Virgin Mary",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-22.story",
+      "selector": "template[data-saint-date=\"2026-11-22\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "On November 22, 2026, the Maronite calendar celebrates the Announcement to the Virgin Mary and remembers Saints Joachim and Anne, Mary's parents. In Luke's Gospel, the angel Gabriel tells Mary that she will bear Jesus, the Son of God. Mary asks how this will happen, hears that the Holy Spirit will come upon her, and freely accepts God's word. The names Joachim and Anne come from Christian tradition, not from the canonical Gospels.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-22.provenance",
+      "selector": "template[data-saint-date=\"2026-11-22\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Gospel account: Luke 1:26-38. Joachim and Anne: Christian tradition, as explained by Vatican News. The date follows the 2026 Maronite calendar.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-22.infoCta",
+      "selector": "template[data-saint-date=\"2026-11-22\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read the Gospel account of the Announcement to Mary",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-22.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-11-22\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
       "kind": "text",
       "nodeIndex": 0
     }
@@ -2240,6 +2310,9 @@
     "home.news-recovery.apecl.date": "November 11, 2026",
     "home.news-recovery.apecl.title": "Catholic bishops decide to form committee for southern border villages",
     "home.news-recovery.apecl.credit": "Following the villages' appeal, the Council decided to form a committee covering five border villages and Yaroun. Its mandate is follow-up with Lebanese authorities, the Holy See and international bodies; no new funding or aid delivery is confirmed.",
+    "home.paris-statue.date": "November 15, 2026",
+    "home.paris-statue.title": "Saint Charbel statue blessed at Saint-Pierre-de-Chaillot in Paris",
+    "home.paris-statue.credit": "Archbishop Maroun Ammar presided at the Maronite Mass. Aleteia reports the statue's installation and blessing on November 15.",
     "home.saintDay.2026-11-17.heading": "Saint of the Day",
     "home.saintDay.2026-11-17.dateLabel": "17.11.2026",
     "home.saintDay.2026-11-17.monogram": "G",
@@ -2290,8 +2363,15 @@
     "home.saintDay.2026-11-21.provenance": "Brief account based on Vatican News. The date follows the Maronite calendar.",
     "home.saintDay.2026-11-21.infoCta": "Read about Presentation of the Virgin Mary in the Temple",
     "home.saintDay.2026-11-21.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
-    "home.paris-statue.date": "November 15, 2026",
-    "home.paris-statue.title": "Saint Charbel statue blessed at Saint-Pierre-de-Chaillot in Paris",
-    "home.paris-statue.credit": "Archbishop Maroun Ammar presided at the Maronite Mass. Aleteia reports the statue's installation and blessing on November 15."
+    "home.saintDay.2026-11-22.heading": "Saint of the Day",
+    "home.saintDay.2026-11-22.dateLabel": "22.11.2026",
+    "home.saintDay.2026-11-22.monogram": "A",
+    "home.saintDay.2026-11-22.dateShort": "22 Nov",
+    "home.saintDay.2026-11-22.calendar": "Maronite calendar",
+    "home.saintDay.2026-11-22.name": "Announcement to the Virgin Mary",
+    "home.saintDay.2026-11-22.story": "On November 22, 2026, the Maronite calendar celebrates the Announcement to the Virgin Mary and remembers Saints Joachim and Anne, Mary's parents. In Luke's Gospel, the angel Gabriel tells Mary that she will bear Jesus, the Son of God. Mary asks how this will happen, hears that the Holy Spirit will come upon her, and freely accepts God's word. The names Joachim and Anne come from Christian tradition, not from the canonical Gospels.",
+    "home.saintDay.2026-11-22.provenance": "Gospel account: Luke 1:26-38. Joachim and Anne: Christian tradition, as explained by Vatican News. The date follows the 2026 Maronite calendar.",
+    "home.saintDay.2026-11-22.infoCta": "Read the Gospel account of the Announcement to Mary",
+    "home.saintDay.2026-11-22.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
   }
 }
