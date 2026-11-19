@@ -464,8 +464,44 @@ if not PHASE7_DONE:
     sh(['ffmpeg','-y','-v','error','-loop','1','-framerate','20','-t',f'{OFF:.3f}','-i','cards/intro.png',
         '-vf','scale=640:360','-r','20','-c:v','libx264','-preset','fast','-b:v','250k','-maxrate','350k','-bufsize','700k',
         '-pix_fmt','yuv420p','-an','vintro.mp4'])
-    sh(['ffmpeg','-y','-v','error','-ss',f'{donor_start:.3f}','-to',f'{donor_speech_end:.3f}','-i',donor,'-map','0:v',
-        '-r','20','-c:v','libx264','-preset','fast','-b:v','24k','-maxrate','30k','-bufsize','60k','-pix_fmt','yuv420p','-an','vbody.mp4'])
+    if pack.get('donor_layout') == 'legacy':
+        # audio-only donor: assemble the body from THIS build's rendered cards - donor frames are
+        # never used, so the fresh INTENT/art/credit cards are what the viewer actually sees.
+        # chunked concat-filter assembly: ~24 cards per chunk (memory-bounded: each -loop 1
+        # input holds a decoder queue, so 140+ inputs in one graph OOMs). Chunk encodes are
+        # lossless (qp 0); the final pass joins chunks with the concat filter (frame-exact)
+        # at the body bitrate. Frame counts are cumulative-boundary exact (boundary k =
+        # round((t_k-OFF)*20)), so quantization never accumulates and audio stays in sync.
+        cumf = lambda t: int(round((t - OFF) * 20))
+        CH = 24
+        chunks = []
+        for ci in range(0, len(ev), CH):
+            grp = list(range(ci, min(ci + CH, len(ev))))
+            args = ['ffmpeg','-y','-v','error']
+            parts = []; labels = []
+            for j, i in enumerate(grp):
+                end = ev[i+1][0] if i+1 < len(ev) else SPEECH_END
+                nf = max(1, cumf(end) - cumf(ev[i][0]))
+                args += ['-loop','1','-framerate','20','-i',f'cards/c{i:03d}.png']
+                parts.append(f'[{j}:v]scale=640:360,trim=end_frame={nf},setpts=PTS-STARTPTS[s{j}]')
+                labels.append(f'[s{j}]')
+            fc = ';'.join(parts) + ';' + ''.join(labels) + f'concat=n={len(labels)}:v=1:a=0[v]'
+            sh(args + ['-filter_complex', fc, '-map','[v]','-r','20','-c:v','libx264','-preset','fast',
+                       '-qp','0','-pix_fmt','yuv420p','-an', f'vchunk{ci//CH:02d}.mp4'])
+            chunks.append(f'vchunk{ci//CH:02d}.mp4')
+        args = ['ffmpeg','-y','-v','error']
+        for cn in chunks: args += ['-i', cn]
+        fc = ''.join(f'[{k}:v]' for k in range(len(chunks))) + f'concat=n={len(chunks)}:v=1:a=0[v]'
+        sh(args + ['-filter_complex', fc, '-map','[v]','-r','20','-c:v','libx264','-preset','fast',
+                   '-b:v','24k','-maxrate','30k','-bufsize','60k','-pix_fmt','yuv420p','-an','vbody.mp4'])
+        vb = ffprobe_duration('vbody.mp4')
+        assert abs(vb - (SPEECH_END - OFF)) < 0.3, f'legacy vbody {vb:.3f}s != body span {SPEECH_END - OFF:.3f}s'
+        print(f'legacy donor_layout: vbody assembled from {len(ev)} fresh cards ({vb:.3f}s) - donor frames unused')
+        VBODY_SRC = 'fresh cards (legacy donor_layout)'
+    else:
+        sh(['ffmpeg','-y','-v','error','-ss',f'{donor_start:.3f}','-to',f'{donor_speech_end:.3f}','-i',donor,'-map','0:v',
+            '-r','20','-c:v','libx264','-preset','fast','-b:v','24k','-maxrate','30k','-bufsize','60k','-pix_fmt','yuv420p','-an','vbody.mp4'])
+        VBODY_SRC = 'donor video span'
     # credits are ALWAYS fresh-encoded from this build's rendered cards (donor credit pixels may predate the current ledger)
     for i in range(5):
         sh(['ffmpeg','-y','-v','error','-loop','1','-framerate','20','-t',f'{CCS:.3f}','-i',f'cards/cr{i}.png',
@@ -497,12 +533,13 @@ if not PHASE7_DONE:
 
 
     json.dump({'fingerprint': FINGERPRINT, 'master_sha256': sha256(master), 'fmap': fmap, 'nccs': nccs,
-               'overflow': overflow, 'cr_bottoms': cr_bottoms, 'att': att},
+               'overflow': overflow, 'cr_bottoms': cr_bottoms, 'att': att, 'vbody_source': VBODY_SRC},
               open('phase7-state.json','w'))
     open('phase7.ok','w').write('ok\n')
 else:
     _st = json.load(open('phase7-state.json'))
     fmap, nccs, overflow, cr_bottoms, att = _st['fmap'], _st['nccs'], _st['overflow'], _st['cr_bottoms'], _st['att']
+    VBODY_SRC = _st.get('vbody_source', 'donor video span')
     print('RESUME: phases 4-7 skipped (phase7.ok + master present)')
 # 8. QA battery
 r = subprocess.run(['ffmpeg','-v','error','-xerror','-i',master,'-f','null','-'],capture_output=True,text=True)
@@ -542,7 +579,7 @@ open(f'description-{a.date}.txt','w').write(desc)
 json.dump({'film': master[:-4], 'offset_intro_s': round(OFF,3), 'donor_sha256': pack['donor_sha256'],
   'donor_audio_interval_film': list(pack['donor_audio_interval']), 'speech_end_body_s': round(SPEECH_END-OFF,3),
   'credits_s': CREDITS_S, 'body_end_s': round(BODY_END-OFF,3), 'film_total_s': round(BODY_END,3),
-  'built_by': 'rosary-factory build_day.py', 'events': fmap}, open(f'film-time-map-{a.date}.json','w'), indent=1)
+  'built_by': 'rosary-factory build_day.py', 'vbody_source': VBODY_SRC, 'events': fmap}, open(f'film-time-map-{a.date}.json','w'), indent=1)
 manifest = {'date': a.date, 'weekday': d.strftime('%A'), 'lang': a.lang, 'mystery': mystery,
   'fingerprint': FINGERPRINT, 'saint_check': a.saint_check,
   'saint': a.saint_name, 'vatican_news': vn_url, 'vn_entry': vn_entry, 'vn_headline': headline,
