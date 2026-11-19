@@ -54,8 +54,10 @@ def fetch_saint(mm, dd):
     if headline:
         headline = re.sub(r'\s+(History|Tradition|Legend)\b.*$', '', headline).strip()
         headline = re.sub(r'[\s,]+St\.?$', '', headline).strip().rstrip(',:;')
+    # dated entries ONLY for the requested month/day: a valid-looking link to another
+    # date's saint page never qualifies for this build's date
     entries = [(h, re.sub(r'<[^>]+>', '', tx).strip()) for h, tx in
-               re.findall(r'<a[^>]+href="(/en/saints/\d{2}/\d{2}/[^"#?]+\.html)"[^>]*>(.*?)</a>', html, re.S)]
+               re.findall(rf'<a[^>]+href="(/en/saints/{mm}/{dd}/[^"#?]+\.html)"[^>]*>(.*?)</a>', html, re.S)]
     return url, headline, entries, t
 
 # Reviewed name-variant equivalences (e.g. VN 'Elisabeth' = spoken 'Elizabeth').
@@ -83,45 +85,6 @@ def h1_matches(h1, saint_name):
         return False
     got = set(saint_tokens(h1))
     return want.issubset(got)
-
-def probe_detail(mm, dd, saint_name, index_text):
-    words = re.findall(r'[a-z]+', saint_name.lower())
-    if words and words[0] in ('saint','st'):
-        prefixes, words = ['st--','st-','saint-'], words[1:]
-    elif words and words[0] in ('blessed','bl','b'):
-        prefixes, words = ['b--','b-','bl--','blessed-'], words[1:]
-    else:
-        prefixes = ['']
-    base = '-'.join(words)
-    nostop = '-'.join(w for w in words if w not in ('of','the','and'))
-    cands = [p + base for p in prefixes]
-    if nostop != base:
-        cands += [p + nostop for p in prefixes]
-    # identity gate 1: the locked saint's distinctive tokens must appear on the day's
-    # index page (binds the saint to this date)
-    idx_tokens = set(saint_tokens(index_text)) if index_text else set()
-    want = set(saint_tokens(saint_name))
-    if not want or not want.issubset(idx_tokens):
-        return None
-    def fetch_slug(slug):
-        url = f'{VN_BASE}/en/saints/{mm}/{dd}/{slug}.html'
-        try:
-            req = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36'})
-            body = urllib.request.urlopen(req, timeout=15).read().decode('utf-8','ignore')
-        except Exception:
-            return url, None
-        m1 = re.search(r'<h1[^>]*>(.*?)</h1>', body, re.S)
-        page_h1 = re.sub(r'<[^>]+>', '', m1.group(1)).strip() if m1 else ''
-        return url, page_h1
-    import concurrent.futures
-    with concurrent.futures.ThreadPoolExecutor(max_workers=len(cands) or 1) as ex:
-        results = list(ex.map(fetch_slug, cands))
-    for url, page_h1 in results:
-        # identity gate 2: the page's own H1 must match the locked saint name
-        # (rejects wrong-but-real saint pages and generic 200s)
-        if page_h1 and h1_matches(page_h1, saint_name):
-            return url
-    return None
 
 ap = argparse.ArgumentParser()
 ap.add_argument('--date', required=True)
@@ -224,12 +187,12 @@ else:
         except Exception:
             pass  # detail page unreachable: the dated-entry binding stands on its own
     else:
-        # markup-change fallback: no dated entries parsed. Old gated probe path: the saint's
-        # tokens must appear on the flattened index, then slug probes with the H1 identity gate.
-        if not want or not want.issubset(set(saint_tokens(vn_index_text))):
-            raise SystemExit(f'SAINT MISMATCH: {a.saint_name!r} does not verify on the Vatican News saint index '
-              f'for {mm}/{dd} ({vn_index}). Refusing to build - re-lock the saint at the minting checkpoint.')
-        vn_url = probe_detail(mm, dd, a.saint_name, vn_index_text) or vn_index
+        # NO whole-page token fallback: a page-wide token-subset test can assemble a saint
+        # from unrelated words. With no parseable dated entry, fail closed.
+        raise SystemExit(f'SAINT CHECK FAILED: no parseable dated entries on the Vatican News saint index '
+          f'for {mm}/{dd} ({vn_index}). The index markup changed or the fetch was intercepted. '
+          'Refusing to build: repair the dated-entry parser (fetch_saint) or re-lock the saint '
+          'with a separately reviewed dated lock at the minting checkpoint.')
 print('Vatican News:', vn_url, '| index:', vn_index, '| entry:', vn_entry); print('headline:', headline)
 
 # 3. load pack map, rebase
