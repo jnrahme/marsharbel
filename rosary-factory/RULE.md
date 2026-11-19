@@ -123,3 +123,12 @@ rosary-factory/
    index fallback); duration gate added; --resume bound to an input fingerprint (was: marker
    file only); non-en locales fail closed; REVIEWED_VARIANTS entries are dated locks with
    evidence; offline negative tests in tests/negative_tests.py.
+
+10. v6 amendments (2026-11-19, re-review): the fingerprint binds ALL build-affecting bytes -
+    pack.json, film-time-map.json, art-ledger.json, description-template.txt, donor/art pins,
+    ask/attenuate/saint-check options, intro WAV+text, date, saint, and the code - and the
+    saved master must match the master hash recorded at build time (a replaced master refuses
+    resume). The saint gate binds ONE dated index entry (no cross-entry token mixtures) and
+    re-checks the entry page's H1; the matched entry is recorded in the manifest.
+    bootstrap_packs.py uses a documented --from-dir adapter boundary (proven) or plain-HTTPS
+    Drive fetches (not execution-proven; the sha pins catch interstitials).
