@@ -217,7 +217,108 @@ run(AUTO + ['--saint-name', 'Saint Other Beta'], 'no parseable dated entries', '
 PAGES[b'/en/saints/11/21.html'] = WRONG_DATE
 PAGES[b'/en/saints/11/20/st--other.html'] = H1_OTHER
 run(AUTO + ['--saint-name', 'Saint Other'], 'SAINT MISMATCH', 'saint-wrong-date-link-refused', env_extra=MOCK)
+# C4. h2-heading repair: name in the section heading, anchor text generic ('Read all...') -
+# the dated entry must still bind (live VN 11/12 page shape)
+H2_STYLE = b'''<html><body>
+<section><div><h2>Saint Other of Somewhere, Hermit</h2></div>
+<div><p>story text</p>
+<a href="/en/saints/11/21/st--other.html">Read all...</a></div></section>
+</body></html>'''
+PAGES[b'/en/saints/11/21.html'] = H2_STYLE
+out = run(AUTO + ['--saint-name', 'Saint Other'], None, 'saint-h2-heading-repair', env_extra=MOCK)
+if out is not None and 'SAINT MISMATCH' in out:
+    fails.append(f'saint-h2-heading-repair: wrongly refused: {out[-200:]}')
+    print('FAIL saint-h2-heading-repair: refused at the saint gate')
+elif out is not None:
+    print('pass saint-h2-heading-repair (gate passed; build later refused on synthetic-pack grounds as expected)')
+# C5. h2 repair must not loosen the gate: wrong saint name in the h2 still refuses
+H2_WRONG = b'''<html><body>
+<section><div><h2>Saint Someone Else</h2></div>
+<div><a href="/en/saints/11/21/st--other.html">Read all...</a></div></section>
+</body></html>'''
+PAGES[b'/en/saints/11/21.html'] = H2_WRONG
+run(AUTO + ['--saint-name', 'Saint Other'], 'SAINT MISMATCH', 'saint-h2-wrong-name-refused', env_extra=MOCK)
 srv.shutdown()
+
+
+# C6. legacy donor_layout: the body must assemble from THIS build's fresh cards, never donor
+# frames. Red-toned donor + dark factory cards: a mid-body master frame must NOT be donor red.
+import glob as _glob
+DONOR_RED = os.path.join(pd, 'donor.mp4')
+WAV_TONE = os.path.join(tmp, 'intro-tone.wav')
+subprocess.run(['ffmpeg','-y','-v','error','-f','lavfi','-i','color=c=red:s=640x360:r=20:d=3',
+                '-f','lavfi','-i','sine=frequency=440:sample_rate=44100','-af','volume=0.06',
+                '-t','3','-pix_fmt','yuv420p', DONOR_RED], check=True)
+subprocess.run(['ffmpeg','-y','-v','error','-f','lavfi','-i','sine=frequency=440:sample_rate=44100',
+                '-af','volume=0.06','-t','1', WAV_TONE], check=True)
+wav_tone_sha = sha256(WAV_TONE)
+pack['donor_layout'] = 'legacy'; pack['donor_sha256'] = sha256(DONOR_RED)
+pack['credits_mode'] = 'ledger_credit_copy'
+json.dump({'artworks': [{'slot': f'joyful_{i}', 'title': f'T{i}', 'artist': 'A',
+                         'work': 'W', 'source_url': f'https://example.test/{i}'} for i in range(1, 6)],
+           'credit_copy': {'cards': {f'joyful_{i}': f'A. W. Reproduction: src {i}. https://example.test/{i} Note: rights may differ elsewhere.'
+                                     for i in range(1, 6)}}}, open(LEDGER_JSON, 'w'))
+json.dump({'events': [{'film_start': 0.0, 'kind': 'intro', 'param': None, 'source_key': 'intro',
+                       'text': TEXT}]
+           + [{'film_start': round(1.0 + i * 0.3, 3), 'kind': 'HM', 'param': [0, i + 1],
+               'source_key': k, 'text': 'x'} for i, k in enumerate(PRAYERS)]
+           + [{'film_start': 3.7, 'kind': 'VR', 'param': None, 'source_key': 'vr', 'text': 'V x'}]},
+          open(MAP_JSON, 'w'))
+save_pack(pack)
+leg_out = os.path.join(tmp, 'out-legacy')
+r6 = subprocess.run([sys.executable, BUILD, '--date','2026-11-21','--lang','en','--packs-dir',packs,
+    '--intro-wav',WAV_TONE,'--intro-sha256',wav_tone_sha,'--intro-text',TEXT,'--intro-text-sha256',text_sha,
+    '--saint-name','Saint Test','--saint-check','off','--outdir',leg_out],
+    capture_output=True, text=True, cwd=ROOT, timeout=300)
+o6 = r6.stdout + r6.stderr
+if r6.returncode != 0:
+    fails.append(f'legacy-fresh-body: build failed: {o6[-300:]}'); print(f'FAIL legacy-fresh-body: {o6[-200:]}')
+elif 'vbody assembled from' not in o6:
+    fails.append('legacy-fresh-body: fresh-assembly proof line missing'); print('FAIL legacy-fresh-body: no proof line')
+else:
+    m6 = _glob.glob(os.path.join(leg_out, 'master-*.mp4'))[0]
+    fr6 = os.path.join(tmp, 'legframe.png')
+    subprocess.run(['ffmpeg','-y','-v','error','-ss','2.5','-i',m6,'-frames:v','1',fr6], check=True)
+    import numpy as _np
+    fr = _np.asarray(Image.open(fr6).convert('RGB'), dtype=float)
+    rmean = fr[..., 0].mean()
+    if rmean > 60 and rmean > 2 * max(fr[..., 1].mean(), fr[..., 2].mean()):
+        fails.append('legacy-fresh-body: mid-body frame is donor red - fresh cards not in the output')
+        print('FAIL legacy-fresh-body: donor pixels in master')
+    else:
+        mftm = json.load(open(os.path.join(leg_out, 'film-time-map-2026-11-21.json')))
+        if mftm.get('vbody_source') != 'fresh cards (legacy donor_layout)':
+            fails.append(f'legacy-fresh-body: manifest vbody_source={mftm.get("vbody_source")!r}')
+            print('FAIL legacy-fresh-body: manifest not recorded')
+        else:
+            print('pass legacy-fresh-body')
+
+# C7. luminous pack statics: exact per-art credit_copy wired, Cana not Commons-mislabeled
+_lp = json.load(open(os.path.join(ROOT, 'packs', 'en', 'luminous', 'pack.json')))
+_ll = json.load(open(os.path.join(ROOT, 'packs', 'en', 'luminous', 'art-ledger.json')))
+_cc = _ll.get('credit_copy', {}).get('cards', {})
+_ok = (_lp.get('credits_mode') == 'ledger_credit_copy'
+       and all(a['slot'] in _cc and a['source_url'] in _cc[a['slot']] for a in _ll['artworks'])
+       and all('rights may differ elsewhere' in _cc[a['slot']] for a in _ll['artworks']))
+_cana = _cc.get('luminous_2', '')
+_ok = _ok and 'Google Arts & Culture' in _cana and 'RMN-Grand Palais' in _cana and 'Wikimedia Commons' not in _cana
+if _ok: print('pass luminous-credit-copy')
+else:
+    fails.append('luminous-credit-copy: pack mode/credit_copy/cana wiring wrong'); print('FAIL luminous-credit-copy')
+
+# C8. ledger_credit_copy mode refuses when a slot's copy is missing
+json.dump({'artworks': [{'slot': 'joyful_1', 'title': 't', 'artist': 'a', 'work': 'w', 'source_url': 'u'}],
+           'credit_copy': {'cards': {}}}, open(LEDGER_JSON, 'w'))
+run(BASE + ['--outdir', os.path.join(tmp, 'out-cc')], 'missing credit_copy', 'credit-copy-missing-refused')
+
+# C9. description write normalizes to exactly one trailing newline (byte-identity vs the
+# published artifact: YouTube keeps a single trailing \n; the template emits \n\n)
+_src = open(os.path.join(ROOT, 'build_day.py')).read()
+if "write(desc.rstrip('\\n') + '\\n')" in _src:
+    print('pass description-single-trailing-newline')
+else:
+    fails.append('description-single-trailing-newline: writer must emit exactly one trailing newline')
+    print('FAIL description-single-trailing-newline')
 
 print()
 if fails:

@@ -39,8 +39,17 @@ folders on Drive are `en-<date>-release` (anyone-reader) with master + descripti
 - art g5 sha256: dec94cc1f5d93e4673b478dce6567470cab7100d2938b48a6ce4d96d34e19e53
 
 ## en/luminous
-- NOT STAGED yet. Donor candidate: EN50 master Drive 1WPMVr09UpQEojrhEzUtdPYCP01KyLxkq
-  sha256 2ab815c96a7f4c6b55477ababdafc290eb8389960a27b0806304a0694f5e8f5e (folder 18EIWHU0RTSzew8kM6r1ceAvnXGN5fdcL).
+- STAGED 2026-11-19. Donor: EN43 master-en-nov12-luminous.mp4 Drive 1fdcCl7yaURTfpO9nQI1AiS66u9-Dz89B
+  sha256 1c9c453b50cd819e7665fe896cfbca8ab625f5ae804adee44fc58ca82d3445cd (published generation).
+  AUDIO donor only: EN43 predates the factory card layout, so the pack sets donor_layout=legacy
+  (frame NCC vs donor printed, not asserted). Art = the exact art-d1..d5 PNGs from the EN43
+  release folder (sha-pinned below). Map converted from film-time-map-nov12.json old-generation
+  kinds; texts from luminous-body-unique-texts-v3-1.json.
+- art g1 sha256: dc57a1b3d61a190c8ced451831bc31f8d5b656a1d2745bd3b0e9cb220331133a
+- art g2 sha256: 819a0d5bafe58e3d0c06635dd173e02ab2690e0ead41db321525ad09d724bf2f
+- art g3 sha256: ebd6f9c2b3517b78c880dbfc319190661dbc7385a7e03db8c713947871632c10
+- art g4 sha256: 371b07e9b2b4632b3db8c5c77f73a953c959f14388366d9f9b969cd900c43c71
+- art g5 sha256: e9bc482565eaa9bdcaa769005f3500ea898c04f22850e670c5947654a0ac0c82
 
 ## ar/* (Arabic) - UNBUILT
 - The factory has no RTL card renderer and no Arabic texts; build_day.py refuses --lang ar.
