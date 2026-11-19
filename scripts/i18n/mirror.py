@@ -48,7 +48,7 @@ def render_mirrors(root=ROOT, registry=None, retired_routes=()):
         # The mirror catalogs are separate from the legacy short-guide catalogs.
         leaves(catalog)
         is_english_master = path == english_path
-        canonical = SITE + (registry['topics']['prayers']['relatedEnglish'] if is_english_master else page_url(registry, code, 'prayers'))
+        canonical = SITE + (registry['topics']['prayers']['relatedEnglish'] if is_english_master or path == english_guide_path else page_url(registry, code, 'prayers'))
         # Keep the original cluster and ordering byte-for-byte. The builder owns
         # managed hreflang on English and all other guides.
         if is_english_master:
@@ -60,6 +60,10 @@ def render_mirrors(root=ROOT, registry=None, retired_routes=()):
             language_urls['x-default'] = language_urls['en']
             alternates = '\n'.join(f'<link rel="alternate" hreflang="{lang}" href="{url}" />'
                                    for lang, url in language_urls.items())
+        if path == english_guide_path:
+            discovery = registry['pageMirrors']['saint-charbel-prayers-master']['discoveryRoutes']
+            alternates = '\n'.join(f'<link rel="alternate" hreflang="{lang}" href="{SITE}{route}" />'
+                                   for lang, route in discovery.items())
         page_text = {**catalog, **({'meta.title': guide_meta['title'], 'meta.description': guide_meta['description']}
                                     if path == english_guide_path else {})}
         prayer_links = '\n'.join(

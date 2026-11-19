@@ -42,7 +42,9 @@ class PrayerKeyedMasters(unittest.TestCase):
     if family=='saint-charbel-prayers-master' and route in [cfg['english'],*cfg['routes'].values()]:
      self.assertFalse(any('noindex' in n.get('content','') for n in soup.select('meta[name=robots]')))
   legacy=BeautifulSoup(outputs[ROOT/'en/prayers.html'],'html.parser')
-  self.assertEqual({n['hreflang']:n['href']for n in legacy.select('head link[hreflang]')},{c:r['site']+'/en/prayers'for c in ('en','x-default')})
+  self.assertEqual({n['hreflang']:n['href']for n in legacy.select('head link[hreflang]')},
+                   {code:r['site']+route for code,route in r['pageMirrors']['saint-charbel-prayers-master']['discoveryRoutes'].items()})
+  self.assertEqual(legacy.select_one('link[rel=canonical]')['href'],r['site']+'/saint-charbel-prayers')
  def test_retired_writers_leave_remaining_locales(self):
   from i18n.mirror import render_mirrors
   r=read_json(ROOT/'locales/registry.json')

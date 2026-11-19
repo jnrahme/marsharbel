@@ -192,14 +192,15 @@ class PrayerMirrorTests(unittest.TestCase):
         for prayer in ('creed','ourFather','hailMary','glory','fatima','queen','closing'):
             self.assertIn(read_json(ROOT/'locales/fr/mirrors/prayers.json')[f'rosary.{prayer}Prayer'], french)
 
-    def test_english_static_guide_uses_master_structure_and_own_canonical(self):
+    def test_english_static_guide_uses_master_structure_and_survivor_canonical(self):
         pages = render_mirrors(ROOT)
         guide = pages[ROOT/'en/prayers.html']
         master = pages[ROOT/'saint-charbel-prayers.html']
         self.assertEqual(Shape(guide).nodes, Shape(master).nodes)
         self.assertEqual(Shape(guide).images, Shape(master).images)
-        self.assertIn('href="https://marsharbel.com/en/prayers"', guide)
-        self.assertIn('"url": "https://marsharbel.com/en/prayers"', guide)
+        self.assertIn('href="https://marsharbel.com/saint-charbel-prayers"', guide)
+        self.assertIn('"url": "https://marsharbel.com/saint-charbel-prayers"', guide)
+        self.assertNotIn('href="https://marsharbel.com/en/prayers"', guide)
         self.assertNotEqual(read_json(ROOT/'locales/en/mirrors/prayers-guide.json')['title'],
                             read_json(ROOT/'locales/en/mirrors/prayers.json')['meta.title'])
 

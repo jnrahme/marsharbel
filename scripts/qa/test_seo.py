@@ -107,6 +107,33 @@ class SeoRegressionTests(unittest.TestCase):
             self.assertIn('media/eucharistic-miracles/', text)
         self.assertEqual(check(self.root)[0], [])
 
+    def test_prayer_duplicate_has_one_canonical_identity(self):
+        from i18n.canonical_aliases import CANONICAL_ALIASES
+        self.assertEqual(CANONICAL_ALIASES, {'/en/prayers': '/saint-charbel-prayers'})
+        alias = self.root/'en/prayers.html'
+        page = alias.read_text()
+        self.assertIn('https://marsharbel.com/saint-charbel-prayers', page)
+        errors, _ = check(self.root)
+        self.assertEqual(errors, [])
+        # A self-canonical regression on the explicitly retired duplicate fails.
+        alias.write_text(page.replace('https://marsharbel.com/saint-charbel-prayers',
+                                      'https://marsharbel.com/en/prayers'))
+        self.assertTrue(any('canonical' in e for e in check(self.root)[0]))
+
+    def test_unrelated_crosscanonical_is_rejected(self):
+        page = self.root/'en/biography.html'
+        page.write_text(page.read_text().replace('https://marsharbel.com/en/biography',
+                                                'https://marsharbel.com/history'))
+        self.assertTrue(any('canonical' in e for e in check(self.root)[0]))
+
+    def test_prayer_survivor_noindex_is_rejected(self):
+        page = self.root/'saint-charbel-prayers.html'
+        html = page.read_text().replace('<head>', '<head><meta name="robots" content="noindex">', 1)
+        # Replace existing robots too, otherwise the parser keeps the last one.
+        html = re.sub(r'(<meta\b[^>]*name=["\']robots["\'][^>]*content=["\'])[^"\']+', r'\1noindex', html)
+        page.write_text(html)
+        self.assertTrue(check(self.root)[0])
+
     def test_missing_sitemap_entry_fails(self):
         path = self.root / "sitemap.xml"
         path.write_text(re.sub(r"  <url><loc>https://marsharbel.com/saint-charbel-novena</loc>.*?</url>\n",

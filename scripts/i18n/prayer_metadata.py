@@ -29,7 +29,14 @@ def compose_prayer_clusters(root, registry, texts, source_inputs=False):
                 text=share_head(text,root,lang,family=='saint-charbel-prayers-master')
             texts[file]=text
         if family=='saint-charbel-prayers-master' and (not source_inputs or root/'en/prayers.html' in texts):
-            file=root/'en/prayers.html';text=texts.get(file,file.read_text());end=text.index('</head>');head=re.sub(r'<link\b[^>]*\bhreflang=["\'][^>]*>\s*','',text[:end]);texts[file]=head+'<link rel="alternate" hreflang="en" href="'+registry['site']+'/en/prayers" />\n<link rel="alternate" hreflang="x-default" href="'+registry['site']+'/en/prayers" />\n'+text[end:]
+            file = root/'en/prayers.html'
+            text = texts.get(file, file.read_text())
+            end = text.index('</head>')
+            head = re.sub(r'<link\b[^>]*\bhreflang=["\'][^>]*>\s*', '', text[:end])
+            # The English reading guide repeats the same prayer collection.
+            # Consolidate discovery without changing any frozen article body.
+            head = head.replace(registry['site']+'/en/prayers', registry['site']+cfg['english'])
+            texts[file] = head+links+'\n'+text[end:]
     contract=root/'locales/prayer-metadata-contract.json'
     if contract.exists():
         for file,proof in json.loads(contract.read_text())['files'].items():

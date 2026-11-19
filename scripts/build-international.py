@@ -301,6 +301,8 @@ def outputs(root=ROOT):
         en_film=registry['site']+registry['pageMirrors']['film-premiere-master']['english']
         if '<loc>'+en_film+'</loc>' not in text:
             generated.append(en_film)
+    from i18n.canonical_aliases import CANONICAL_ALIASES
+    generated = [url for url in generated if url.removeprefix(registry['site']) not in CANONICAL_ALIASES]
     def entry(url):
         from i18n.sitemap_dates import generated_lastmod
         changed=generated_lastmod(root,url,lastmods)

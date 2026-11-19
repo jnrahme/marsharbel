@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SITE = "https://marsharbel.com"
 sys.path.insert(0, str(ROOT / "scripts"))
 from i18n.catalog import public_html_files
+from i18n.canonical_aliases import CANONICAL_ALIASES
 from sitemap_lastmod import validate as validate_lastmod
 
 
@@ -90,6 +91,7 @@ def check(root):
         errors.append("sitemap.xml: duplicate URLs")
     expected = set()
     pages = {}
+    alias_pages = {}
     titles = {}
     for path in public_html_files(root):
         page = Page(path.read_text(encoding="utf-8"))
@@ -106,8 +108,13 @@ def check(root):
             canonical = SITE + ("/" if directory == "." else f"/{directory}/")
         else:
             canonical = SITE + "/" + relative_path.with_suffix("").as_posix()
-        expected.add(canonical)
-        pages[canonical] = page
+        alias_target = CANONICAL_ALIASES.get(urlsplit(canonical).path)
+        if alias_target:
+            alias_pages[canonical] = page
+            canonical = SITE + alias_target
+        else:
+            expected.add(canonical)
+            pages[canonical] = page
         # Local scripts load deferred so they never block first paint. Pages
         # with inline scripts that depend on execution order are exempt.
         mirrored_sync = {route.lstrip("/") + ".html" for family, cfg in json.loads((root / "locales/registry.json").read_text()).get("pageMirrors", {}).items()
@@ -154,6 +161,12 @@ def check(root):
                 json.loads(schema)
             except ValueError:
                 errors.append(f"{path.name}: invalid JSON-LD")
+    for url, page in alias_pages.items():
+        survivor = SITE + CANONICAL_ALIASES[urlsplit(url).path]
+        if survivor not in pages:
+            errors.append(f'{url}: canonical survivor is not indexable: {survivor}')
+        elif page.alternates != pages[survivor].alternates:
+            errors.append(f'{url}: duplicate must share the survivor language cluster')
     for url, page in pages.items():
         for language, alternate in page.alternates.items():
             if alternate not in pages:
