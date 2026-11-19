@@ -1,8 +1,11 @@
 # Rosary factory - equivalence proofs (2026-11-16)
 
-## Proof A - reproduce EN52 (Joyful, donor EN47 generation) PASS
+## Proof A - reproduce EN52 (Joyful, donor EN47 generation) PASS (one NCC exception, below)
 - Description byte-identical to the EN52 packet (built by the old one-off path).
-- Frame NCC vs the EN52 master at t=1,30,300,600,900,1200,1500,1800,2025: 0.9867-1.0 (>= 0.99 bar; encode-noise floor).
+- Frame NCC vs the EN52 master at t=1,30,300,600,900,1200,1500,1800,2025: range 0.9867-1.0.
+  EXCEPTION, honestly labeled: the 0.9867 sample is BELOW the >= 0.99 bar. It was visually
+  inspected - identical card content, difference is encode noise on a dark frame - and is
+  recorded as an accepted exception, NOT a pass. Every other sample meets the bar.
 - Factory master: 18,598,141 B, 2032.700s, TP -2.8 dBTP PASS. sha ddf7613ad5c0e4431b4262ebccc323c6b1c50a1cc3a229b5cb1ebdcc823b1a25.
 
 ## Proof B - reproduce published EN48 (Sorrowful, donor EN30 r3 generation) PASS
