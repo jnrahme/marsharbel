@@ -217,6 +217,27 @@ run(AUTO + ['--saint-name', 'Saint Other Beta'], 'no parseable dated entries', '
 PAGES[b'/en/saints/11/21.html'] = WRONG_DATE
 PAGES[b'/en/saints/11/20/st--other.html'] = H1_OTHER
 run(AUTO + ['--saint-name', 'Saint Other'], 'SAINT MISMATCH', 'saint-wrong-date-link-refused', env_extra=MOCK)
+# C4. h2-heading repair: name in the section heading, anchor text generic ('Read all...') -
+# the dated entry must still bind (live VN 11/12 page shape)
+H2_STYLE = b'''<html><body>
+<section><div><h2>Saint Other of Somewhere, Hermit</h2></div>
+<div><p>story text</p>
+<a href="/en/saints/11/21/st--other.html">Read all...</a></div></section>
+</body></html>'''
+PAGES[b'/en/saints/11/21.html'] = H2_STYLE
+out = run(AUTO + ['--saint-name', 'Saint Other'], None, 'saint-h2-heading-repair', env_extra=MOCK)
+if out is not None and 'SAINT MISMATCH' in out:
+    fails.append(f'saint-h2-heading-repair: wrongly refused: {out[-200:]}')
+    print('FAIL saint-h2-heading-repair: refused at the saint gate')
+elif out is not None:
+    print('pass saint-h2-heading-repair (gate passed; build later refused on synthetic-pack grounds as expected)')
+# C5. h2 repair must not loosen the gate: wrong saint name in the h2 still refuses
+H2_WRONG = b'''<html><body>
+<section><div><h2>Saint Someone Else</h2></div>
+<div><a href="/en/saints/11/21/st--other.html">Read all...</a></div></section>
+</body></html>'''
+PAGES[b'/en/saints/11/21.html'] = H2_WRONG
+run(AUTO + ['--saint-name', 'Saint Other'], 'SAINT MISMATCH', 'saint-h2-wrong-name-refused', env_extra=MOCK)
 srv.shutdown()
 
 print()
