@@ -169,10 +169,11 @@ INDEX = b'''<html><body>
 </body></html>'''
 H1_OTHER = b'<html><body><h1>Saint Other</h1></body></html>'
 H1_BETA = b'<html><body><h1>Blessed Beta</h1></body></html>'
+PAGES = {b'/en/saints/11/21.html': INDEX, b'/en/saints/11/21/st--other.html': H1_OTHER,
+         b'/en/saints/11/21/b--beta.html': H1_BETA}
 class H(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
-        body = {b'/en/saints/11/21.html': INDEX, b'/en/saints/11/21/st--other.html': H1_OTHER,
-                b'/en/saints/11/21/b--beta.html': H1_BETA}.get(self.path.encode())
+        body = PAGES.get(self.path.encode())
         if body is None: self.send_response(404); self.end_headers(); return
         self.send_response(200); self.send_header('Content-Type', 'text/html'); self.end_headers()
         self.wfile.write(body)
@@ -193,6 +194,29 @@ if out is not None and 'SAINT MISMATCH' in out:
     print('FAIL saint-correct-binding: refused at the saint gate')
 elif out is not None:
     print('pass saint-correct-binding (gate passed; build later refused on synthetic-pack grounds as expected)')
+
+# C. round-4 gates: no whole-page fallback, date-filtered entry hrefs
+NO_ANCHORS = b'''<html><body>
+<p>Saint Other of Somewhere, hermit, is remembered today</p>
+</body></html>'''
+NO_ANCHORS_MIX = b'''<html><body>
+<p>Saint Other of Somewhere</p><p>Blessed Beta of Elsewhere</p>
+</body></html>'''
+WRONG_DATE = b'''<html><body>
+<a href="/en/saints/11/21/b--beta.html">Blessed Beta</a>
+<a href="/en/saints/11/20/st--other.html">Saint Other</a>
+</body></html>'''
+# C1. no parseable dated entry: plain-text words on the page must NOT qualify (old fallback removed)
+PAGES[b'/en/saints/11/21.html'] = NO_ANCHORS
+run(AUTO + ['--saint-name', 'Saint Other'], 'no parseable dated entries', 'saint-no-entry-fallback-removed', env_extra=MOCK)
+# C2. cross-entry token mixture in the no-anchor branch: still refuses closed
+PAGES[b'/en/saints/11/21.html'] = NO_ANCHORS_MIX
+run(AUTO + ['--saint-name', 'Saint Other Beta'], 'no parseable dated entries', 'saint-no-entry-mixture-refused', env_extra=MOCK)
+# C3. wrong-date link: a valid-looking /en/saints/11/20/ link on the 11/21 index never qualifies,
+# even when its own page carries a matching H1
+PAGES[b'/en/saints/11/21.html'] = WRONG_DATE
+PAGES[b'/en/saints/11/20/st--other.html'] = H1_OTHER
+run(AUTO + ['--saint-name', 'Saint Other'], 'SAINT MISMATCH', 'saint-wrong-date-link-refused', env_extra=MOCK)
 srv.shutdown()
 
 print()
