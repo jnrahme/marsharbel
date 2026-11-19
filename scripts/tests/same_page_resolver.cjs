@@ -49,7 +49,7 @@ console.log('English escape reviewed anchors preserved; unknown/malformed/pendin
   assert.equal(result.href,'https://marsharbel.com/travel?campaign=entry');
   assert.equal(resolve(entry,'https://marsharbel.com'+path,'fr','zh-Hans').available,false);
  }
- for(const path of ['/zh-Hans/not-a-page','/zh-Hans-extra/','/zh-Hans/index.php','/zh-hans/'])
+ for(const path of ['/zh-Hans/not-a-page','/zh-Hans-extra/','/zh-Hans/index.php','/zh-hans/','/zh-Hans.html','/zh-Hans/index/'])
   assert.equal(resolve(entry,'https://marsharbel.com'+path,'en','zh-Hans').available,false);
  assert.equal(resolve(entry,'https://marsharbel.com/zh-Hans/travel?lang=zh-Hans&campaign=entry#planning','en','zh-Hans').href,'https://marsharbel.com/travel?campaign=entry');
  const missing=structuredClone(entry);delete missing.englishSources['/zh-Hans/travel'];
