@@ -40,8 +40,10 @@ def ffprobe_duration(p):
                        capture_output=True, text=True, check=True)
     return float(r.stdout.strip())
 
+VN_BASE = os.environ.get('RF_VN_BASE', 'https://www.vaticannews.va').rstrip('/')
+
 def fetch_saint(mm, dd):
-    url = f'https://www.vaticannews.va/en/saints/{mm}/{dd}.html'
+    url = f'{VN_BASE}/en/saints/{mm}/{dd}.html'
     req = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36'})
     html = urllib.request.urlopen(req, timeout=30).read().decode('utf-8','ignore')
     details = []
@@ -52,7 +54,9 @@ def fetch_saint(mm, dd):
     if headline:
         headline = re.sub(r'\s+(History|Tradition|Legend)\b.*$', '', headline).strip()
         headline = re.sub(r'[\s,]+St\.?$', '', headline).strip().rstrip(',:;')
-    return url, headline, details, t
+    entries = [(h, re.sub(r'<[^>]+>', '', tx).strip()) for h, tx in
+               re.findall(r'<a[^>]+href="(/en/saints/\d{2}/\d{2}/[^"#?]+\.html)"[^>]*>(.*?)</a>', html, re.S)]
+    return url, headline, entries, t
 
 # Reviewed name-variant equivalences (e.g. VN 'Elisabeth' = spoken 'Elizabeth').
 # Entries are added ONLY at the minting checkpoint after a review of the specific date's
@@ -100,7 +104,7 @@ def probe_detail(mm, dd, saint_name, index_text):
     if not want or not want.issubset(idx_tokens):
         return None
     def fetch_slug(slug):
-        url = f'https://www.vaticannews.va/en/saints/{mm}/{dd}/{slug}.html'
+        url = f'{VN_BASE}/en/saints/{mm}/{dd}/{slug}.html'
         try:
             req = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36'})
             body = urllib.request.urlopen(req, timeout=15).read().decode('utf-8','ignore')
@@ -135,6 +139,12 @@ ap.add_argument('--resume', action='store_true', help='skip phases 4-7 when the 
 ap.add_argument('--saint-check', default='auto', choices=['auto','off'], help='auto: verify the locked saint LIVE against Vatican News (production). off: offline/test only, recorded in the manifest')
 a = ap.parse_args()
 
+for _k, _v in REVIEWED_VARIANTS.items():
+    if not (isinstance(_v, dict) and _v.get('as') and _v.get('locked') and _v.get('evidence')):
+        raise SystemExit(f'REVIEWED_VARIANTS[{_k!r}] must be a dated lock with evidence: '
+          '{"as": <spoken token>, "locked": "YYYY-MM-DD", "evidence": <what was compared>}')
+    datetime.date.fromisoformat(_v['locked'])
+
 if a.lang != 'en':
     raise SystemExit(f'locale {a.lang!r} is NOT BUILT: the factory currently builds English only. '
       'The AR lane has no RTL card renderer and no Arabic texts yet (see RULE.md, "Staging a new pack" item 6). '
@@ -163,10 +173,17 @@ print(f'intro wav OK {ws[:12]} duration {OFF:.3f}')
 # build fingerprint: binds every per-day input + pack pins + this code. --resume reuses a
 # saved master ONLY when the fingerprint matches exactly.
 CODE_SHA = sha256(os.path.abspath(__file__))
+# every byte that can change the film: per-day inputs, ALL pack config/map/ledger/template
+# files (not just the binary pins), the rendering options, and this code.
 FINGERPRINT = hashlib.sha256(json.dumps({
   'date': a.date, 'lang': a.lang, 'mystery': mystery, 'saint_name': a.saint_name,
+  'ask': a.ask, 'attenuate_db': a.attenuate_db, 'saint_check': a.saint_check,
   'intro_wav_sha256': ws, 'intro_text_sha256': a.intro_text_sha256,
   'donor_sha256': pack['donor_sha256'], 'art_shas': pack['art_shas'],
+  'pack_json_sha256': sha256(os.path.join(packdir, 'pack.json')),
+  'map_sha256': sha256(os.path.join(packdir, 'film-time-map.json')),
+  'ledger_sha256': sha256(os.path.join(packdir, 'art-ledger.json')),
+  'desc_template_sha256': sha256(os.path.join(packdir, pack.get('description_template', 'description-template.txt'))),
   'code_sha256': CODE_SHA}, sort_keys=True).encode('utf-8')).hexdigest()
 print('fingerprint', FINGERPRINT[:16])
 
@@ -174,17 +191,46 @@ print('fingerprint', FINGERPRINT[:16])
 # this date. A mismatch refuses the build - never fall back silently. When the saint is
 # verified on the index but has no detail page, the description links the index.
 mm = f'{d.month:02d}'; dd = f'{d.day:02d}'
+vn_entry = None
 if a.saint_check == 'off':
-    vn_index = headline = vn_url = None; vn_details = []
+    vn_index = headline = vn_url = None
     print('saint-check OFF: live Vatican News verification skipped (offline/test mode; recorded in manifest)')
 else:
-    vn_index, headline, vn_details, vn_index_text = fetch_saint(mm, dd)
+    vn_index, headline, vn_entries, vn_index_text = fetch_saint(mm, dd)
     want = set(saint_tokens(a.saint_name))
-    if not want or not want.issubset(set(saint_tokens(vn_index_text))):
-        raise SystemExit(f'SAINT MISMATCH: {a.saint_name!r} does not verify on the Vatican News saint index '
-          f'for {mm}/{dd} ({vn_index}). Refusing to build - re-lock the saint at the minting checkpoint.')
-    vn_url = probe_detail(mm, dd, a.saint_name, vn_index_text) or vn_index
-print('Vatican News:', vn_url, '| index:', vn_index, '| detail slugs:', vn_details); print('headline:', headline)
+    if vn_entries:
+        # bind ONE dated entry: the saint's distinctive tokens must all live in a single
+        # index entry - never assembled across entries (a cross-entry mixture is a wrong saint).
+        matches = [(h, t) for h, t in vn_entries if want and want.issubset(set(saint_tokens(t)))]
+        if not matches:
+            raise SystemExit(f'SAINT MISMATCH: {a.saint_name!r} matches no single dated entry on the '
+              f'Vatican News saint index for {mm}/{dd} ({vn_index}). Entries present: '
+              f'{[t for _, t in vn_entries][:8]}. Refusing to build - re-lock the saint at the minting checkpoint.')
+        matches.sort(key=lambda m: len(set(saint_tokens(m[1]))))  # tightest entry wins
+        href, entry_text = matches[0]
+        vn_entry = {'text': entry_text, 'href': href}
+        vn_url = f'{VN_BASE}{href}'
+        # identity re-check: the entry page's own H1 must match the locked saint
+        try:
+            _req = urllib.request.Request(vn_url, headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36'})
+            _body = urllib.request.urlopen(_req, timeout=15).read().decode('utf-8', 'ignore')
+            _m1 = re.search(r'<h1[^>]*>(.*?)</h1>', _body, re.S)
+            _h1 = re.sub(r'<[^>]+>', '', _m1.group(1)).strip() if _m1 else ''
+            if not h1_matches(_h1, a.saint_name):
+                raise SystemExit(f'SAINT MISMATCH: the dated entry page H1 {_h1!r} does not match '
+                  f'{a.saint_name!r} ({vn_url}). Wrong-but-real page - refusing to build.')
+        except SystemExit:
+            raise
+        except Exception:
+            pass  # detail page unreachable: the dated-entry binding stands on its own
+    else:
+        # markup-change fallback: no dated entries parsed. Old gated probe path: the saint's
+        # tokens must appear on the flattened index, then slug probes with the H1 identity gate.
+        if not want or not want.issubset(set(saint_tokens(vn_index_text))):
+            raise SystemExit(f'SAINT MISMATCH: {a.saint_name!r} does not verify on the Vatican News saint index '
+              f'for {mm}/{dd} ({vn_index}). Refusing to build - re-lock the saint at the minting checkpoint.')
+        vn_url = probe_detail(mm, dd, a.saint_name, vn_index_text) or vn_index
+print('Vatican News:', vn_url, '| index:', vn_index, '| entry:', vn_entry); print('headline:', headline)
 
 # 3. load pack map, rebase
 m = json.load(open(os.path.join(packdir, 'film-time-map.json')))
@@ -301,8 +347,13 @@ if a.resume and os.path.exists('phase7.ok') and os.path.exists(master) and os.pa
     if _saved.get('fingerprint') != FINGERPRINT:
         raise SystemExit('RESUME REFUSED: the saved phase-7 state was built from different inputs '
           f'(saved fingerprint {_saved.get("fingerprint","<none>")[:12]} != current {FINGERPRINT[:12]}; '
-          'intro WAV/text, pack pins, saint, date or code changed). Delete phase7.ok and the saved master '
-          'to rebuild from scratch.')
+          'intro WAV/text, any pack file, options, saint, date or code changed). Delete phase7.ok '
+          'and the saved master to rebuild from scratch.')
+    _msha = _saved.get('master_sha256')
+    if not _msha or sha256(master) != _msha:
+        raise SystemExit('RESUME REFUSED: the saved master bytes do not match the master hash recorded '
+          'at build time (replaced, truncated or tampered master). Delete phase7.ok and the saved '
+          'master to rebuild from scratch.')
     PHASE7_DONE = True
 if not PHASE7_DONE:
     # 4. events -> cards
@@ -456,7 +507,8 @@ if not PHASE7_DONE:
         '-c:v','copy','-c:a','copy','-movflags','+faststart',master])
 
 
-    json.dump({'fingerprint': FINGERPRINT, 'fmap': fmap, 'nccs': nccs, 'overflow': overflow, 'cr_bottoms': cr_bottoms, 'att': att},
+    json.dump({'fingerprint': FINGERPRINT, 'master_sha256': sha256(master), 'fmap': fmap, 'nccs': nccs,
+               'overflow': overflow, 'cr_bottoms': cr_bottoms, 'att': att},
               open('phase7-state.json','w'))
     open('phase7.ok','w').write('ok\n')
 else:
@@ -504,7 +556,7 @@ json.dump({'film': master[:-4], 'offset_intro_s': round(OFF,3), 'donor_sha256': 
   'built_by': 'rosary-factory build_day.py', 'events': fmap}, open(f'film-time-map-{a.date}.json','w'), indent=1)
 manifest = {'date': a.date, 'weekday': d.strftime('%A'), 'lang': a.lang, 'mystery': mystery,
   'fingerprint': FINGERPRINT, 'saint_check': a.saint_check,
-  'saint': a.saint_name, 'vatican_news': vn_url, 'vn_headline': headline,
+  'saint': a.saint_name, 'vatican_news': vn_url, 'vn_entry': vn_entry, 'vn_headline': headline,
   'intro_wav_sha256': ws, 'intro_text': spoken, 'intro_dur_s': round(OFF,3),
   'donor_sha256': pack['donor_sha256'], 'art_shas': pack['art_shas'],
   'master': master, 'master_sha256': msha, 'master_bytes': msize, 'duration_s': round(dur,3),
