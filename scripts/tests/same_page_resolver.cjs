@@ -39,3 +39,24 @@ manifest.pages.history.variants.ar.status='pending';
 assert.equal(resolve(manifest,'https://marsharbel.com/ar/full-history#chronologie','en','ar').href,'https://marsharbel.com/history');
 manifest.pages.history.variants.ar.status='verified';
 console.log('English escape reviewed anchors preserved; unknown/malformed/pending fragments cleared PASS');
+
+// Chinese directory entry is an Apache alias of travel, not a published home.
+{
+ const entry={version:1,languages:['en','zh-Hans','fr'],pages:{},englishSources:{'/zh-Hans/travel':'/travel'},publishedHomes:{en:'/',fr:'/fr/'}};
+ for(const path of ['/zh-Hans/','/zh-Hans/index','/zh-Hans/index.html']){
+  const result=resolve(entry,'https://marsharbel.com'+path+'?lang=zh-Hans&campaign=entry#planning','en','zh-Hans');
+  assert.equal(result.available,true);assert.equal(result.reason,'english-source');
+  assert.equal(result.href,'https://marsharbel.com/travel?campaign=entry');
+  assert.equal(resolve(entry,'https://marsharbel.com'+path,'fr','zh-Hans').available,false);
+ }
+ for(const path of ['/zh-Hans/not-a-page','/zh-Hans-extra/','/zh-Hans/index.php','/zh-hans/'])
+  assert.equal(resolve(entry,'https://marsharbel.com'+path,'en','zh-Hans').available,false);
+ assert.equal(resolve(entry,'https://marsharbel.com/zh-Hans/travel?lang=zh-Hans&campaign=entry#planning','en','zh-Hans').href,'https://marsharbel.com/travel?campaign=entry');
+ const missing=structuredClone(entry);delete missing.englishSources['/zh-Hans/travel'];
+ assert.equal(resolve(missing,'https://marsharbel.com/zh-Hans/','en','zh-Hans').available,false);
+ const wrong=structuredClone(entry);wrong.englishSources['/zh-Hans/travel']='/history';
+ assert.equal(resolve(wrong,'https://marsharbel.com/zh-Hans/','en','zh-Hans').available,false);
+ assert.equal(locate(entry,'/zh-Hans/'),null);
+ assert.equal(Object.hasOwn(entry.publishedHomes,'zh-Hans'),false);
+ console.log('Chinese entry aliases reuse travel English-source escape only; negative controls PASS');
+}

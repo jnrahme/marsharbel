@@ -165,7 +165,13 @@
       result.reason = 'published-home'; return result;
     }
     // English is the source escape route, not a claim of translated equivalence.
-    var english = manifest && manifest.englishSources && manifest.englishSources[pathKey(url.pathname)];
+    var sourcePath = pathKey(url.pathname);
+    // Apache serves the existing Chinese travel entry at these directory aliases.
+    // Reuse only its established English-source route, never a locale homepage
+    // or an unreviewed twin. pathKey folds index and index.html to the directory.
+    if (sourcePath === '/zh-Hans' && manifest && manifest.englishSources &&
+        manifest.englishSources['/zh-Hans/travel'] === '/travel') sourcePath = '/zh-Hans/travel';
+    var english = manifest && manifest.englishSources && manifest.englishSources[sourcePath];
     if (requested === 'en' && english) {
       var sourceHash = '';
       var englishTarget = current && current.page.variants.en;
