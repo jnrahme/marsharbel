@@ -311,6 +311,15 @@ json.dump({'artworks': [{'slot': 'joyful_1', 'title': 't', 'artist': 'a', 'work'
            'credit_copy': {'cards': {}}}, open(LEDGER_JSON, 'w'))
 run(BASE + ['--outdir', os.path.join(tmp, 'out-cc')], 'missing credit_copy', 'credit-copy-missing-refused')
 
+# C9. description write normalizes to exactly one trailing newline (byte-identity vs the
+# published artifact: YouTube keeps a single trailing \n; the template emits \n\n)
+_src = open(os.path.join(ROOT, 'build_day.py')).read()
+if "write(desc.rstrip('\\n') + '\\n')" in _src:
+    print('pass description-single-trailing-newline')
+else:
+    fails.append('description-single-trailing-newline: writer must emit exactly one trailing newline')
+    print('FAIL description-single-trailing-newline')
+
 print()
 if fails:
     print('NEGATIVE TESTS FAILED:'); [print(' -', f) for f in fails]; sys.exit(1)
