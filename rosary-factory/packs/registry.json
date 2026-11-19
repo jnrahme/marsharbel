@@ -108,7 +108,7 @@
    "status": "TO STAGE - donor candidate EN50 master Drive 1WPMVr09UpQEojrhEzUtdPYCP01KyLxkq (sha 2ab815c9..., en-2026-11-19-release folder 18EIWHU0RTSzew8kM6r1ceAvnXGN5fdcL); follow RULE.md 'Staging a new pack'"
   },
   "ar/*": {
-   "status": "PENDING - AR daily production on owner hold (MAR-65); the Nov 16 2026 AR Joyful exception (archive folder 13lHJffVCSyWxkL1zGj0wQm480J7OF_BC) is the pack source when the owner opens the AR lane. RTL card renderer required (see ar-prayalong-release 1IhbQT8oN7pGeoZNNI669PE5onQnJcNuY for the Arabic card style)."
+   "status": "UNBUILT - the factory has no RTL card renderer and no Arabic texts, and build_day.py refuses --lang ar. Opening the lane is new work: Arabic texts, RTL rendering (Noto Sans Arabic, right-aligned; reference: the ar-prayalong-release card style 1IhbQT8oN7pGeoZNNI669PE5onQnJcNuY), then ar/* packs staged per RULE \"Staging a new pack\". The Nov 16 2026 AR Joyful artifact (folder 13lHJffVCSyWxkL1zGj0wQm480J7OF_BC) is UNDER HOLD (MAR-65): never release it, and it is NOT eligible as a pack source - an artifact-scoped hold does not lift when a lane opens."
   }
  }
 }
