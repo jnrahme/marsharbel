@@ -42,6 +42,10 @@ folders on Drive are `en-<date>-release` (anyone-reader) with master + descripti
 - NOT STAGED yet. Donor candidate: EN50 master Drive 1WPMVr09UpQEojrhEzUtdPYCP01KyLxkq
   sha256 2ab815c96a7f4c6b55477ababdafc290eb8389960a27b0806304a0694f5e8f5e (folder 18EIWHU0RTSzew8kM6r1ceAvnXGN5fdcL).
 
-## ar/* (Arabic)
-- On owner hold (MAR-65, todo-01M5MDJ59KKR9PE0152SEEFTAM). Needs the RTL card renderer
-  (Noto Sans Arabic, right-aligned; reference: ar-prayalong-release card style).
+## ar/* (Arabic) - UNBUILT
+- The factory has no RTL card renderer and no Arabic texts; build_day.py refuses --lang ar.
+  Opening the lane is new work: Arabic texts, RTL rendering (Noto Sans Arabic, right-aligned;
+  reference: ar-prayalong-release card style), then packs staged per RULE.
+- MAR-65 is an ARTIFACT-scoped hold on exactly one artifact: the Nov 16 2026 AR Joyful release
+  (folder 13lHJffVCSyWxkL1zGj0wQm480J7OF_BC) - never release it. It is NOT eligible as a pack
+  source; the hold does not lift when the lane opens.
