@@ -124,6 +124,16 @@ rosary-factory/
    file only); non-en locales fail closed; REVIEWED_VARIANTS entries are dated locks with
    evidence; offline negative tests in tests/negative_tests.py.
 
+10. v7 amendments (2026-11-19, luminous staging): new card kind INTENT (opening intentions:
+    'For an increase in faith/hope/charity.'); art files may be .jpg or .png (sha-pinned either
+    way); pack field donor_layout=legacy marks an audio-only donor whose frames predate the
+    factory card layout - frame NCC vs donor is printed for the record, not asserted, and the
+    pack note must say why. Saint-index parser repair: older VN index pages carry the saint's
+    name in the section <h2> with a generic 'Read all...' anchor - the dated entry binds the
+    nearest preceding heading; mocked tests cover the repair and its refusal side.
+    Description {VN_URL} fills with the stable saints DAY-INDEX page (EN43 and EN48-54
+    convention); the exact bound entry page is recorded in the manifest instead.
+
 10. v6 amendments (2026-11-19, re-review): the fingerprint binds ALL build-affecting bytes -
     pack.json, film-time-map.json, art-ledger.json, description-template.txt, donor/art pins,
     ask/attenuate/saint-check options, intro WAV+text, date, saint, and the code - and the
