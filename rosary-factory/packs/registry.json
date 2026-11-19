@@ -105,7 +105,34 @@
    }
   },
   "en/luminous": {
-   "status": "TO STAGE - donor candidate EN50 master Drive 1WPMVr09UpQEojrhEzUtdPYCP01KyLxkq (sha 2ab815c9..., en-2026-11-19-release folder 18EIWHU0RTSzew8kM6r1ceAvnXGN5fdcL); follow RULE.md 'Staging a new pack'"
+   "status": "STAGED 2026-11-19 (PR pending). Donor: EN43 master-en-nov12-luminous.mp4 (published generation), AUDIO donor only - EN43 predates the factory card layout (pack donor_layout=legacy). Proof: 2026-11-12 build with the EN43 intro audio extracted from the master; description byte-identical to the published description-nov12.txt; frame NCC vs donor not asserted (layout mismatch, printed for the record).",
+   "donor": {
+    "drive_id": "1fdcCl7yaURTfpO9nQI1AiS66u9-Dz89B",
+    "sha256": "1c9c453b50cd819e7665fe896cfbca8ab625f5ae804adee44fc58ca82d3445cd",
+    "name": "master-en-nov12-luminous.mp4 (EN43 published generation)"
+   },
+   "art": {
+    "g1": {
+     "drive_id": "1byehP7_DD-88ebLDbA6jq4E-0Nmwx1ff",
+     "sha256": "dc57a1b3d61a190c8ced451831bc31f8d5b656a1d2745bd3b0e9cb220331133a"
+    },
+    "g2": {
+     "drive_id": "1WUnRR708geEb9Cwq-mPadF9-Su72pjH4",
+     "sha256": "819a0d5bafe58e3d0c06635dd173e02ab2690e0ead41db321525ad09d724bf2f"
+    },
+    "g3": {
+     "drive_id": "18CYOOag6UeLsI1pwD9iZuxfsKvJkJ50R",
+     "sha256": "ebd6f9c2b3517b78c880dbfc319190661dbc7385a7e03db8c713947871632c10"
+    },
+    "g4": {
+     "drive_id": "1fhHB8YFmmy6pJVpc2sdIg_dkl3JiGxwU",
+     "sha256": "371b07e9b2b4632b3db8c5c77f73a953c959f14388366d9f9b969cd900c43c71"
+    },
+    "g5": {
+     "drive_id": "1CZkl8pTuDDqWLkx2TspyvWJET6MTIrR6",
+     "sha256": "e9bc482565eaa9bdcaa769005f3500ea898c04f22850e670c5947654a0ac0c82"
+    }
+   }
   },
   "ar/*": {
    "status": "UNBUILT - the factory has no RTL card renderer and no Arabic texts, and build_day.py refuses --lang ar. Opening the lane is new work: Arabic texts, RTL rendering (Noto Sans Arabic, right-aligned; reference: the ar-prayalong-release card style 1IhbQT8oN7pGeoZNNI669PE5onQnJcNuY), then ar/* packs staged per RULE \"Staging a new pack\". The Nov 16 2026 AR Joyful artifact (folder 13lHJffVCSyWxkL1zGj0wQm480J7OF_BC) is UNDER HOLD (MAR-65): never release it, and it is NOT eligible as a pack source - an artifact-scoped hold does not lift when a lane opens."
