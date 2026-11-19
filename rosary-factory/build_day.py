@@ -56,8 +56,23 @@ def fetch_saint(mm, dd):
         headline = re.sub(r'[\s,]+St\.?$', '', headline).strip().rstrip(',:;')
     # dated entries ONLY for the requested month/day: a valid-looking link to another
     # date's saint page never qualifies for this build's date
-    entries = [(h, re.sub(r'<[^>]+>', '', tx).strip()) for h, tx in
-               re.findall(rf'<a[^>]+href="(/en/saints/{mm}/{dd}/[^"#?]+\.html)"[^>]*>(.*?)</a>', html, re.S)]
+    anchors = [(m.start(), m.group(1), re.sub(r'<[^>]+>', '', m.group(2)).strip()) for m in
+               re.finditer(rf'<a[^>]+href="(/en/saints/{mm}/{dd}/[^"#?]+\.html)"[^>]*>(.*?)</a>', html, re.S)]
+    # older index pages put the saint's name in the section <h2> and leave the anchor text
+    # generic ('Read all...'): bind the nearest preceding heading instead (parser repair
+    # 2026-11-19, EN43 proof build on the live 11/12 page)
+    GENERIC = {'', 'read all...', 'read all', 'read more...', 'read more'}
+    if any(t.lower() in GENERIC for _, _, t in anchors):
+        h2s = [(m.start(), re.sub(r'<[^>]+>', '', m.group(1)).strip()) for m in
+               re.finditer(r'<h2[^>]*>(.*?)</h2>', html, re.S)]
+        entries = []
+        for pos, h, t in anchors:
+            if t.lower() in GENERIC:
+                prior = [x for x in h2s if x[0] < pos]
+                t = prior[-1][1] if prior else t
+            entries.append((h, t))
+    else:
+        entries = [(h, t) for _, h, t in anchors]
     return url, headline, entries, t
 
 # Reviewed name-variant equivalences (e.g. VN 'Elisabeth' = spoken 'Elizabeth').
@@ -125,8 +140,13 @@ print(f'== rosary-factory build_day: {a.date} ({d.strftime("%A")}) {a.lang}/{mys
 donor = os.path.join(packdir, pack['donor_file'])
 ds = sha256(donor); assert ds == pack['donor_sha256'], f'donor sha mismatch {ds}'
 print('donor sha OK', ds[:12])
+def art_path(n):
+    for ext in ('.jpg', '.png'):
+        p = os.path.join(packdir, 'art', f'{n}{ext}')
+        if os.path.exists(p): return p
+    return os.path.join(packdir, 'art', f'{n}.jpg')  # missing: let sha256() raise
 for n, expect in pack['art_shas'].items():
-    p = os.path.join(packdir, 'art', f'{n}.jpg'); s = sha256(p)
+    s = sha256(art_path(n))
     assert s == expect, f'art {n} sha mismatch {s}'
 print('art shas OK 5/5')
 ws = sha256(a.intro_wav); assert ws == a.intro_sha256, f'intro wav sha mismatch {ws}'
@@ -240,7 +260,7 @@ def wrap(s, font, width, dr, hard=False):
             else: cur=t
     if cur: out.append(cur)
     return out
-ART = {n: Image.open(os.path.join(packdir,'art',f'g{n}.jpg')).convert('RGB') for n in (1,2,3,4,5)}
+ART = {n: Image.open(art_path(f'g{n}')).convert('RGB') for n in (1,2,3,4,5)}
 overflow = []
 def card(label, title, decade, meditation, prayer_label, prayer_text, dots, cid='?'):
     im=Image.new('RGB',(1280,720),BG); dr=ImageDraw.Draw(im)
@@ -357,6 +377,7 @@ if not PHASE7_DONE:
         elif kind in prayers:
             lb,tx=prayers[kind]; dn=p if isinstance(p,int) and p else None
             c=card(LBL if dn else 'THE '+LBL,titles.get(dn) if dn else None,dn,cur_med.get(dn) if dn else None,lb,tx,(10 if (dn and kind in('GB','FATIMA')) else (0 if dn else None)),cid)
+        elif kind=='INTENT': c=card('THE '+LBL,None,None,None,'Intention',src.get('text'),None,cid)
         elif kind=='THANKS': c=card('THE '+LBL,None,None,None,None,THANKS_T,None,cid)
         else: raise SystemExit(f'unhandled kind {kind}')
         path=f'cards/{cid}.png'; c.save(path)
@@ -432,7 +453,12 @@ if not PHASE7_DONE:
         v = ncc(card_img, donor_frame(donor_t))
         nccs.append((kind, f'c{i:03d}', round(v,4)))
     print('NCC samples:', nccs)
-    assert all(v >= 0.99 for _,_,v in nccs), 'NCC below 0.99 - card content mismatch vs donor'
+    if pack.get('donor_layout') == 'legacy':
+        # the donor predates the factory card layout: its frames are not a visual reference
+        # (audio-only donor). Samples are printed for the record, not asserted.
+        print('NCC vs donor NOT asserted: pack donor_layout=legacy (donor predates the factory card layout)')
+    else:
+        assert all(v >= 0.99 for _,_,v in nccs), 'NCC below 0.99 - card content mismatch vs donor'
 
     # 7. assemble: fresh intro segment + donor body span + audio (single AAC encode w/ attenuation)
     sh(['ffmpeg','-y','-v','error','-loop','1','-framerate','20','-t',f'{OFF:.3f}','-i','cards/intro.png',
@@ -509,7 +535,7 @@ tpl = open(os.path.join(packdir, pack['description_template'])).read()
 desc = tpl.replace('{DATE_LONG}', d.strftime('%A, ') + f'{MONTHS[d.month-1]} {d.day}, {d.year}') \
           .replace('{SAINT}', a.saint_name).replace('{ASK}', a.ask) \
           .replace('{CHAPTERS}', '\n'.join(f'{t} {l}' for t,l in chap)) \
-          .replace('{VN_URL}', vn_url or '(saint source not verified - saint-check off)')
+          .replace('{VN_URL}', vn_index or vn_url or '(saint source not verified - saint-check off)')  # description links the stable day index (EN43/EN52-54 convention); the exact bound entry page is recorded in the manifest
 open(f'description-{a.date}.txt','w').write(desc)
 
 # 10. time map + ledger note + manifest
