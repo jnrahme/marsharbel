@@ -55,8 +55,10 @@ def fetch_saint(mm, dd):
     return url, headline, details, t
 
 # Reviewed name-variant equivalences (e.g. VN 'Elisabeth' = spoken 'Elizabeth').
-# Entries are added ONLY at the minting checkpoint after a human/agent review of the
-# specific date's pages. Never auto-derive variants.
+# Entries are added ONLY at the minting checkpoint after a review of the specific date's
+# pages. Never auto-derive variants. Each entry is a dated lock with its evidence:
+#   REVIEWED_VARIANTS = {'elisabeth': {'as': 'elizabeth', 'locked': '2026-11-19',
+#                                      'evidence': 'VN 11/19 index headline vs article body H1'}}
 REVIEWED_VARIANTS = {}
 SAINT_TITLES = {'saint','st','blessed','bl','b','v','of','the','and','virgin','martyr','martyrs',
                 'pope','abbot','abbess','bishop','confessor','apostle','evangelist','founder',
@@ -65,7 +67,8 @@ SAINT_TITLES = {'saint','st','blessed','bl','b','v','of','the','and','virgin','m
 def saint_tokens(name):
     toks = []
     for w in re.findall(r'[a-z]+', name.lower()):
-        w = REVIEWED_VARIANTS.get(w, w)
+        v = REVIEWED_VARIANTS.get(w)
+        if v: w = v['as']
         if w not in SAINT_TITLES and len(w) >= 2:
             toks.append(w)
     return toks
@@ -128,8 +131,14 @@ ap.add_argument('--ask', default='their', choices=['her','his','their'])
 ap.add_argument('--packs-dir', default=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'packs'))
 ap.add_argument('--outdir', required=True)
 ap.add_argument('--attenuate-db', type=float, default=None, help='override; default auto from measured mix peak')
-ap.add_argument('--resume', action='store_true', help='skip phases 4-7 when phase-7 marker and all artifacts exist (sandbox-timeout recovery)')
+ap.add_argument('--resume', action='store_true', help='skip phases 4-7 when the phase-7 marker exists AND the saved input fingerprint matches (sandbox-timeout recovery)')
+ap.add_argument('--saint-check', default='auto', choices=['auto','off'], help='auto: verify the locked saint LIVE against Vatican News (production). off: offline/test only, recorded in the manifest')
 a = ap.parse_args()
+
+if a.lang != 'en':
+    raise SystemExit(f'locale {a.lang!r} is NOT BUILT: the factory currently builds English only. '
+      'The AR lane has no RTL card renderer and no Arabic texts yet (see RULE.md, "Staging a new pack" item 6). '
+      'Failing closed instead of producing a wrong-language build.')
 
 d = datetime.date.fromisoformat(a.date)
 mystery = ROT[d.weekday()]
@@ -151,10 +160,30 @@ ws = sha256(a.intro_wav); assert ws == a.intro_sha256, f'intro wav sha mismatch 
 OFF = ffprobe_duration(a.intro_wav)
 print(f'intro wav OK {ws[:12]} duration {OFF:.3f}')
 
-# 2. saint live check (advisory; --saint-name is the confirmed spoken form)
+# build fingerprint: binds every per-day input + pack pins + this code. --resume reuses a
+# saved master ONLY when the fingerprint matches exactly.
+CODE_SHA = sha256(os.path.abspath(__file__))
+FINGERPRINT = hashlib.sha256(json.dumps({
+  'date': a.date, 'lang': a.lang, 'mystery': mystery, 'saint_name': a.saint_name,
+  'intro_wav_sha256': ws, 'intro_text_sha256': a.intro_text_sha256,
+  'donor_sha256': pack['donor_sha256'], 'art_shas': pack['art_shas'],
+  'code_sha256': CODE_SHA}, sort_keys=True).encode('utf-8')).hexdigest()
+print('fingerprint', FINGERPRINT[:16])
+
+# 2. saint live check: the locked saint MUST verify against the live Vatican News index for
+# this date. A mismatch refuses the build - never fall back silently. When the saint is
+# verified on the index but has no detail page, the description links the index.
 mm = f'{d.month:02d}'; dd = f'{d.day:02d}'
-vn_index, headline, vn_details, vn_index_text = fetch_saint(mm, dd)
-vn_url = probe_detail(mm, dd, a.saint_name, vn_index_text) or vn_index
+if a.saint_check == 'off':
+    vn_index = headline = vn_url = None; vn_details = []
+    print('saint-check OFF: live Vatican News verification skipped (offline/test mode; recorded in manifest)')
+else:
+    vn_index, headline, vn_details, vn_index_text = fetch_saint(mm, dd)
+    want = set(saint_tokens(a.saint_name))
+    if not want or not want.issubset(set(saint_tokens(vn_index_text))):
+        raise SystemExit(f'SAINT MISMATCH: {a.saint_name!r} does not verify on the Vatican News saint index '
+          f'for {mm}/{dd} ({vn_index}). Refusing to build - re-lock the saint at the minting checkpoint.')
+    vn_url = probe_detail(mm, dd, a.saint_name, vn_index_text) or vn_index
 print('Vatican News:', vn_url, '| index:', vn_index, '| detail slugs:', vn_details); print('headline:', headline)
 
 # 3. load pack map, rebase
@@ -207,7 +236,11 @@ overflow = []
 def card(label, title, decade, meditation, prayer_label, prayer_text, dots, cid='?'):
     im=Image.new('RGB',(1280,720),BG); dr=ImageDraw.Draw(im)
     dr.text((48,26),label,font=f(20),fill=MUTE)
-    if title: dr.text((48,56),title,font=f(38,True),fill=IVORY)
+    if title:
+        if dr.textlength(title,font=f(38,True)) > 1184:
+            raise SystemExit(f'TITLE OVERFLOW on card {cid}: {title!r} is wider than 1184px at the title font. '
+              'Fix the pack title - never ship an overflowing card.')
+        dr.text((48,56),title,font=f(38,True),fill=IVORY)
     dr.line((48,112,1232,112),fill=LINE)
     if decade:
         ar=ART[decade].copy(); ar.thumbnail((418,540)); im.paste(ar,(48+(418-ar.width)//2,132+(540-ar.height)//2))
@@ -231,7 +264,9 @@ def card(label, title, decade, meditation, prayer_label, prayer_text, dots, cid=
         dr.text((x,y),prayer_label,font=f(22),fill=GOLD); y+=ll
     if prayer_text:
         for ln in wrap(prayer_text,f(pf),w,dr): dr.text((x,y),ln,font=f(pf),fill=DIM); y+=pl
-    if y>646: overflow.append((cid,label,title,y,round(scale,2)))
+    if y>646:
+        raise SystemExit(f'BODY OVERFLOW on card {cid} ({label} / {title}): text bottom {y}px > 646px '
+          f'(scale {scale:.2f}, floor 0.76). Shorten the pack text - never ship an overflowing card.')
     if dots is not None:
         for i in range(10):
             cx=x+i*30; cy=664
@@ -246,15 +281,29 @@ spoken = a.intro_text
 def intro_card():
     im=Image.new('RGB',(1280,720),BG); dr=ImageDraw.Draw(im)
     dr.text((48,26),date_line,font=f(20),fill=MUTE)
+    if dr.textlength(a.saint_name,font=f(38,True)) > 1184:
+        raise SystemExit(f'SAINT-TITLE OVERFLOW on the intro card: {a.saint_name!r} is wider than 1184px. '
+          'Use the confirmed SHORT spoken form.')
     dr.text((48,56),a.saint_name,font=f(38,True),fill=IVORY)
     dr.line((48,112,1232,112),fill=LINE)
     y=150
     for ln in wrap(spoken,f(29),1140,dr): dr.text((48,y),ln,font=f(29),fill=IVORY); y+=38
+    if y > 646:
+        raise SystemExit(f'INTRO OVERFLOW: the minted intro text bottoms at {y}px > 646px. '
+          'Re-mint a shorter intro - never ship an overflowing card.')
     return im
 
 import glob
 master = f'master-{a.lang}-{a.date}-{mystery}.mp4'
-PHASE7_DONE = a.resume and os.path.exists('phase7.ok') and os.path.exists(master)
+PHASE7_DONE = False
+if a.resume and os.path.exists('phase7.ok') and os.path.exists(master) and os.path.exists('phase7-state.json'):
+    _saved = json.load(open('phase7-state.json'))
+    if _saved.get('fingerprint') != FINGERPRINT:
+        raise SystemExit('RESUME REFUSED: the saved phase-7 state was built from different inputs '
+          f'(saved fingerprint {_saved.get("fingerprint","<none>")[:12]} != current {FINGERPRINT[:12]}; '
+          'intro WAV/text, pack pins, saint, date or code changed). Delete phase7.ok and the saved master '
+          'to rebuild from scratch.')
+    PHASE7_DONE = True
 if not PHASE7_DONE:
     # 4. events -> cards
     ev=[]
@@ -407,7 +456,7 @@ if not PHASE7_DONE:
         '-c:v','copy','-c:a','copy','-movflags','+faststart',master])
 
 
-    json.dump({'fmap': fmap, 'nccs': nccs, 'overflow': overflow, 'cr_bottoms': cr_bottoms, 'att': att},
+    json.dump({'fingerprint': FINGERPRINT, 'fmap': fmap, 'nccs': nccs, 'overflow': overflow, 'cr_bottoms': cr_bottoms, 'att': att},
               open('phase7-state.json','w'))
     open('phase7.ok','w').write('ok\n')
 else:
@@ -418,6 +467,8 @@ else:
 r = subprocess.run(['ffmpeg','-v','error','-xerror','-i',master,'-f','null','-'],capture_output=True,text=True)
 assert r.returncode == 0, 'decode errors: '+r.stderr[:400]
 dur = ffprobe_duration(master)
+EXPECTED_DUR = BODY_END
+assert abs(dur - EXPECTED_DUR) < 0.5, f'DURATION MISMATCH: master {dur:.3f}s vs expected {EXPECTED_DUR:.3f}s (intro {OFF:.3f}s + body span + credits {CREDITS_S:.3f}s)'
 r = subprocess.run(['ffmpeg','-i',master,'-map','0:a','-af','volumedetect,ebur128=peak=true','-f','null','-'],capture_output=True,text=True)
 mean = float(re.findall(r'mean_volume: (-?[\d.]+) dB', r.stderr)[-1])
 mx = float(re.findall(r'max_volume: (-?[\d.]+) dB', r.stderr)[-1])
@@ -442,7 +493,8 @@ for sel, lab in pack['chapters']:
 tpl = open(os.path.join(packdir, pack['description_template'])).read()
 desc = tpl.replace('{DATE_LONG}', d.strftime('%A, ') + f'{MONTHS[d.month-1]} {d.day}, {d.year}') \
           .replace('{SAINT}', a.saint_name).replace('{ASK}', a.ask) \
-          .replace('{CHAPTERS}', '\n'.join(f'{t} {l}' for t,l in chap)).replace('{VN_URL}', vn_url)
+          .replace('{CHAPTERS}', '\n'.join(f'{t} {l}' for t,l in chap)) \
+          .replace('{VN_URL}', vn_url or '(saint source not verified - saint-check off)')
 open(f'description-{a.date}.txt','w').write(desc)
 
 # 10. time map + ledger note + manifest
@@ -451,6 +503,7 @@ json.dump({'film': master[:-4], 'offset_intro_s': round(OFF,3), 'donor_sha256': 
   'credits_s': CREDITS_S, 'body_end_s': round(BODY_END-OFF,3), 'film_total_s': round(BODY_END,3),
   'built_by': 'rosary-factory build_day.py', 'events': fmap}, open(f'film-time-map-{a.date}.json','w'), indent=1)
 manifest = {'date': a.date, 'weekday': d.strftime('%A'), 'lang': a.lang, 'mystery': mystery,
+  'fingerprint': FINGERPRINT, 'saint_check': a.saint_check,
   'saint': a.saint_name, 'vatican_news': vn_url, 'vn_headline': headline,
   'intro_wav_sha256': ws, 'intro_text': spoken, 'intro_dur_s': round(OFF,3),
   'donor_sha256': pack['donor_sha256'], 'art_shas': pack['art_shas'],
