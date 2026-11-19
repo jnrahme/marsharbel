@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Offline negative tests for build_day.py's hard gates. No network: every run passes
---saint-check off and uses a tiny synthetic pack built in a temp dir.
+"""Offline negative tests for build_day.py's hard gates. Two modes, both offline:
 
-Every case must make the build FAIL with the expected refusal. A passing build is a test
-failure. Run from the factory root:  python3 tests/negative_tests.py
+A. Gate refusals with --saint-check off and a tiny synthetic pack in a temp dir.
+B. Saint-lock tests against a MOCKED Vatican News served by a local HTTP server
+   (RF_VN_BASE override): wrong-but-real saints and cross-entry token mixtures must
+   refuse; a correctly bound dated entry must pass the saint gate.
+
+Every case must make the build FAIL with the expected refusal (or, for B3, must NOT fail
+at the saint gate). A passing build is a test failure.
+Run from the factory root:  python3 tests/negative_tests.py
 """
-import hashlib, json, os, subprocess, sys, tempfile
+import hashlib, json, os, subprocess, sys, tempfile, threading
 from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -19,32 +24,28 @@ def sha256(p):
         for b in iter(lambda: f.read(1 << 20), b''): h.update(b)
     return h.hexdigest()
 
-def fingerprint(date, saint, wav_sha, text_sha, pack):
-    return hashlib.sha256(json.dumps({
-        'date': date, 'lang': 'en', 'mystery': 'joyful', 'saint_name': saint,
-        'intro_wav_sha256': wav_sha, 'intro_text_sha256': text_sha,
-        'donor_sha256': pack['donor_sha256'], 'art_shas': pack['art_shas'],
-        'code_sha256': sha256(BUILD)}, sort_keys=True).encode()).hexdigest()
-
-def run(args, expect, name):
+def run(args, expect, name, env_extra=None):
+    env = dict(os.environ); env.update(env_extra or {})
     r = subprocess.run([sys.executable, BUILD] + args, capture_output=True, text=True,
-                       cwd=ROOT, timeout=300)
+                       cwd=ROOT, timeout=300, env=env)
     out = r.stdout + r.stderr
     if r.returncode == 0:
-        fails.append(f'{name}: build PASSED, expected refusal'); print(f'FAIL {name}: build passed'); return
-    if expect not in out:
+        fails.append(f'{name}: build PASSED, expected refusal'); print(f'FAIL {name}: build passed'); return None
+    if expect and expect not in out:
         fails.append(f'{name}: refused but without {expect!r}: {out[-300:]}')
-        print(f'FAIL {name}: wrong refusal: {out[-200:]}'); return
-    print(f'pass {name}')
+        print(f'FAIL {name}: wrong refusal: {out[-200:]}'); return None
+    print(f'pass {name}'); return out
 
 tmp = tempfile.mkdtemp(prefix='rf-negtest-')
 packs = os.path.join(tmp, 'packs'); pd = os.path.join(packs, 'en', 'joyful')
 os.makedirs(os.path.join(pd, 'art'))
 DONOR = os.path.join(pd, 'donor.mp4')
 WAV = os.path.join(tmp, 'intro.wav')
-subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', '-i', 'color=c=black:s=640x360:r=20:d=3',
-                '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono', '-t', '3', '-pix_fmt', 'yuv420p',
-                DONOR], check=True)
+def make_donor(color):
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', '-i', f'color=c={color}:s=640x360:r=20:d=3',
+                    '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono', '-t', '3', '-pix_fmt', 'yuv420p',
+                    DONOR], check=True)
+make_donor('black')
 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono',
                 '-t', '1', WAV], check=True)
 art_shas = {}
@@ -64,10 +65,14 @@ pack = {'donor_file': 'donor.mp4', 'donor_sha256': sha256(DONOR),
         'vr_style': 'split', 'vr_r_fallback': 'Amen.', 'thanks_text': 'Thank you.',
         'credits_mode': 'commons_lines', 'art_shas': art_shas, 'chapters': [],
         'description_template': 'description-template.txt'}
-def save_pack(pk): json.dump(pk, open(os.path.join(pd, 'pack.json'), 'w'))
+PACK_JSON = os.path.join(pd, 'pack.json')
+MAP_JSON = os.path.join(pd, 'film-time-map.json')
+LEDGER_JSON = os.path.join(pd, 'art-ledger.json')
+DESC_TXT = os.path.join(pd, 'description-template.txt')
+def save_pack(pk): json.dump(pk, open(PACK_JSON, 'w'))
 save_pack(pack)
-open(os.path.join(pd, 'description-template.txt'), 'w').write('{DATE_LONG} {SAINT} {ASK}\n{CHAPTERS}\n{VN_URL}\n')
-json.dump({'artworks': []}, open(os.path.join(pd, 'art-ledger.json'), 'w'))
+open(DESC_TXT, 'w').write('{DATE_LONG} {SAINT} {ASK}\n{CHAPTERS}\n{VN_URL}\n')
+json.dump({'artworks': []}, open(LEDGER_JSON, 'w'))
 PRAYERS = ['our_father', 'hail_mary', 'glory_be', 'fatima', 'apostles_creed',
            'hail_holy_queen', 'let_us_pray', 'rosary_concluding_prayer']
 def write_map(extra):
@@ -75,8 +80,18 @@ def write_map(extra):
            'source_key': k, 'text': 'x'} for i, k in enumerate(PRAYERS)]
     ev.append({'film_start': 0.20, 'kind': 'VR', 'param': None, 'source_key': 'vr', 'text': 'V x'})
     ev += extra
-    json.dump({'events': ev}, open(os.path.join(pd, 'film-time-map.json'), 'w'))
+    json.dump({'events': ev}, open(MAP_JSON, 'w'))
 write_map([])
+
+def fingerprint(saint='Saint Test', wsha=wav_sha, tsha=text_sha):
+    return hashlib.sha256(json.dumps({
+        'date': '2026-11-21', 'lang': 'en', 'mystery': 'joyful', 'saint_name': saint,
+        'ask': 'their', 'attenuate_db': None, 'saint_check': 'off',
+        'intro_wav_sha256': wsha, 'intro_text_sha256': tsha,
+        'donor_sha256': pack['donor_sha256'], 'art_shas': pack['art_shas'],
+        'pack_json_sha256': sha256(PACK_JSON), 'map_sha256': sha256(MAP_JSON),
+        'ledger_sha256': sha256(LEDGER_JSON), 'desc_template_sha256': sha256(DESC_TXT),
+        'code_sha256': sha256(BUILD)}, sort_keys=True).encode()).hexdigest()
 
 BASE = ['--date', '2026-11-21', '--lang', 'en', '--packs-dir', packs,
         '--intro-wav', WAV, '--intro-sha256', wav_sha,
@@ -84,60 +99,101 @@ BASE = ['--date', '2026-11-21', '--lang', 'en', '--packs-dir', packs,
         '--saint-name', 'Saint Test', '--saint-check', 'off',
         '--outdir', os.path.join(tmp, 'out0')]
 
-# 1. locale refusal: AR (or any non-en) must fail closed
+# A1. locale refusal: AR (or any non-en) must fail closed
 run(['ar' if a == 'en' else a for a in BASE], 'NOT BUILT', 'locale-refusal-ar')
 
-# 2. intro-text sha mismatch (text/sha pair inconsistent)
-run(BASE[:-5] + ['--saint-name', 'Saint Test', '--saint-check', 'off'] if False else
-    [x if x != text_sha else '0' * 64 for x in BASE], 'intro text sha mismatch', 'intro-text-sha-mismatch')
+# A2. intro-text sha mismatch
+run([x if x != text_sha else '0' * 64 for x in BASE], 'intro text sha mismatch', 'intro-text-sha-mismatch')
 
-# resume fixture: matching saved fingerprint + phase7.ok + a wrong-length master
+# resume fixture: matching saved fingerprint + recorded master hash + phase7.ok + master
 outdir = os.path.join(tmp, 'out'); os.makedirs(outdir, exist_ok=True)
-fp = fingerprint('2026-11-21', 'Saint Test', wav_sha, text_sha, pack)
-json.dump({'fingerprint': fp, 'fmap': [], 'nccs': [], 'overflow': [], 'cr_bottoms': [], 'att': 0.0},
-          open(os.path.join(outdir, 'phase7-state.json'), 'w'))
-open(os.path.join(outdir, 'phase7.ok'), 'w').write('ok\n')
 MASTER = os.path.join(outdir, 'master-en-2026-11-21-joyful.mp4')
-def fake_master(secs):
-    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', '-i', f'color=c=black:s=640x360:r=20:d={secs}',
+def fake_master(secs, color='navy'):
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', '-i', f'color=c={color}:s=640x360:r=20:d={secs}',
                     '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono', '-t', str(secs), '-pix_fmt', 'yuv420p',
                     '-c:a', 'aac', MASTER], check=True)
-fake_master(2)
+def save_state():
+    json.dump({'fingerprint': fingerprint(), 'master_sha256': sha256(MASTER),
+               'fmap': [], 'nccs': [], 'overflow': [], 'cr_bottoms': [], 'att': 0.0},
+              open(os.path.join(outdir, 'phase7-state.json'), 'w'))
+    open(os.path.join(outdir, 'phase7.ok'), 'w').write('ok\n')
+fake_master(2); save_state()
 
-# 3a. resume with changed saint -> refused
+# A3. resume refusals: changed saint / changed intro / changed donor / map mutation /
+#     ledger mutation / config mutation / replaced master
 run(BASE + ['--outdir', outdir, '--resume', '--saint-name', 'Saint Changed'], 'RESUME REFUSED', 'resume-changed-saint')
-# 3b. resume with changed intro (consistent text+sha pair, so only the fingerprint catches it)
+env = dict(os.environ)
 r = subprocess.run([sys.executable, BUILD] + BASE + ['--outdir', outdir, '--resume',
-        '--intro-text', TEXT2, '--intro-text-sha256', text2_sha],
-        capture_output=True, text=True, cwd=ROOT, timeout=300)
+        '--intro-text', TEXT2, '--intro-text-sha256', text2_sha], capture_output=True, text=True, cwd=ROOT, timeout=300)
 out = r.stdout + r.stderr
 if r.returncode != 0 and 'RESUME REFUSED' in out: print('pass resume-changed-intro')
 else: fails.append(f'resume-changed-intro: {out[-200:]}'); print(f'FAIL resume-changed-intro: {out[-200:]}')
-# 3c. resume with changed pack (re-encoded donor, pins re-pointed so only the fingerprint catches it)
-subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', '-i', 'color=c=white:s=640x360:r=20:d=3',
-                '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono', '-t', '3', '-pix_fmt', 'yuv420p', DONOR], check=True)
-pack_changed = dict(pack); pack_changed['donor_sha256'] = sha256(DONOR)
-save_pack(pack_changed)
-run(BASE + ['--outdir', outdir, '--resume'], 'RESUME REFUSED', 'resume-changed-pack')
-save_pack(pack)  # restore (donor file differs now, so restore donor too)
-subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', '-i', 'color=c=black:s=640x360:r=20:d=3',
-                '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono', '-t', '3', '-pix_fmt', 'yuv420p', DONOR], check=True)
-pack['donor_sha256'] = sha256(DONOR)
-save_pack(pack)
-# donor bytes changed under the same logical pack -> fingerprint fixture is stale; rebuild fixture
-fp = fingerprint('2026-11-21', 'Saint Test', wav_sha, text_sha, pack)
-json.dump({'fingerprint': fp, 'fmap': [], 'nccs': [], 'overflow': [], 'cr_bottoms': [], 'att': 0.0},
-          open(os.path.join(outdir, 'phase7-state.json'), 'w'))
 
-# 4. duration mismatch: resume accepted (fingerprint matches), master is 1s vs expected ~4.5s
-fake_master(1)
+make_donor('white'); pack['donor_sha256'] = sha256(DONOR); save_pack(pack)
+run(BASE + ['--outdir', outdir, '--resume'], 'RESUME REFUSED', 'resume-changed-pack-donor')
+make_donor('black'); pack['donor_sha256'] = sha256(DONOR); save_pack(pack); save_state()
+
+_ev = json.load(open(MAP_JSON)); _ev['events'][0]['text'] = 'tampered'
+json.dump(_ev, open(MAP_JSON, 'w'))
+run(BASE + ['--outdir', outdir, '--resume'], 'RESUME REFUSED', 'resume-changed-map')
+write_map([]); save_state()
+
+json.dump({'artworks': [{'tampered': True}]}, open(LEDGER_JSON, 'w'))
+run(BASE + ['--outdir', outdir, '--resume'], 'RESUME REFUSED', 'resume-changed-ledger')
+json.dump({'artworks': []}, open(LEDGER_JSON, 'w')); save_state()
+
+pack['label'] = 'TAMPERED LABEL'; save_pack(pack)
+run(BASE + ['--outdir', outdir, '--resume'], 'RESUME REFUSED', 'resume-changed-config')
+pack['label'] = 'JOYFUL MYSTERIES'; save_pack(pack); save_state()
+
+fake_master(2, color='red')  # same length class, different bytes
+run(BASE + ['--outdir', outdir, '--resume'], 'RESUME REFUSED', 'resume-replaced-master')
+
+# A4. duration mismatch: resume accepted (fingerprint + master hash match), wrong length
+fake_master(1); save_state()
 run(BASE + ['--outdir', outdir, '--resume'], 'DURATION MISMATCH', 'duration-mismatch')
 
-# 5. body overflow: a meditation far too long must hard-fail, never ship
+# A5. body overflow: a meditation far too long must hard-fail, never ship
 write_map([{'film_start': 0.30, 'kind': 'ANN', 'param': 1, 'source_key': 'ann1', 'text': None},
            {'film_start': 0.31, 'kind': 'MED', 'param': ['intro', 1], 'source_key': 'med1',
             'text': 'word ' * 900}])
 run(BASE + ['--outdir', os.path.join(tmp, 'out2')], 'BODY OVERFLOW', 'body-overflow')
+write_map([])
+
+# B. saint lock against a mocked Vatican News
+import http.server, socketserver
+INDEX = b'''<html><body>
+<a href="/en/saints/11/21/st--other.html">Saint Other</a>
+<a href="/en/saints/11/21/b--beta.html">Blessed Beta</a>
+<p>journey of faith. Saint Other of Somewhere, hermit</p>
+</body></html>'''
+H1_OTHER = b'<html><body><h1>Saint Other</h1></body></html>'
+H1_BETA = b'<html><body><h1>Blessed Beta</h1></body></html>'
+class H(http.server.BaseHTTPRequestHandler):
+    def do_GET(self):
+        body = {b'/en/saints/11/21.html': INDEX, b'/en/saints/11/21/st--other.html': H1_OTHER,
+                b'/en/saints/11/21/b--beta.html': H1_BETA}.get(self.path.encode())
+        if body is None: self.send_response(404); self.end_headers(); return
+        self.send_response(200); self.send_header('Content-Type', 'text/html'); self.end_headers()
+        self.wfile.write(body)
+    def log_message(self, *a): pass
+srv = socketserver.TCPServer(('127.0.0.1', 0), H)
+threading.Thread(target=srv.serve_forever, daemon=True).start()
+MOCK = {'RF_VN_BASE': f'http://127.0.0.1:{srv.server_address[1]}'}
+AUTO = [x for x in BASE if x not in ('off', '--saint-check')]  # saint-check auto (default), mocked base
+
+# B1. wrong-but-real: saint not among the dated entries must refuse even though the index loads
+run(AUTO + ['--saint-name', 'Saint Test'], 'SAINT MISMATCH', 'saint-wrong-but-real', env_extra=MOCK)
+# B2. cross-entry mixture: tokens spread across two different entries must refuse
+run(AUTO + ['--saint-name', 'Saint Other Beta'], 'SAINT MISMATCH', 'saint-cross-entry-mixture', env_extra=MOCK)
+# B3. correct binding: the dated entry matches; the build must get PAST the saint gate
+out = run(AUTO + ['--saint-name', 'Saint Other'], None, 'saint-correct-binding', env_extra=MOCK)
+if out is not None and 'SAINT MISMATCH' in out:
+    fails.append(f'saint-correct-binding: wrongly refused: {out[-200:]}')
+    print('FAIL saint-correct-binding: refused at the saint gate')
+elif out is not None:
+    print('pass saint-correct-binding (gate passed; build later refused on synthetic-pack grounds as expected)')
+srv.shutdown()
 
 print()
 if fails:
