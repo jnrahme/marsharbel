@@ -133,6 +133,15 @@ rosary-factory/
     nearest preceding heading; mocked tests cover the repair and its refusal side.
     Description {VN_URL} fills with the stable saints DAY-INDEX page (EN43 and EN48-54
     convention); the exact bound entry page is recorded in the manifest instead.
+11. v8 amendments (2026-11-19, review round 1 on PR #932): in legacy donor_layout the body
+    video assembles from THIS build's rendered cards - chunked concat-filter, cumulative
+    frame-boundary exact, lossless chunks joined at body bitrate; donor frames are never
+    used and the manifest records vbody_source. The luminous pack credits_mode is
+    ledger_credit_copy: every artwork's card copy is exact per-art text held in the ledger
+    (source_url verbatim inside it, reproduction source and PD-Art/jurisdiction note
+    included - the Cana card credits Google Arts & Culture / Louvre-RMN, never a Commons
+    boilerplate). Tests: legacy-fresh-body (red-donor pixel proof), luminous-credit-copy
+    statics, credit-copy-missing refusal.
 
 10. v6 amendments (2026-11-19, re-review): the fingerprint binds ALL build-affecting bytes -
     pack.json, film-time-map.json, art-ledger.json, description-template.txt, donor/art pins,
