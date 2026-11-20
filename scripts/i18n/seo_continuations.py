@@ -297,11 +297,30 @@ def git(root, *args):
     return subprocess.check_output(['git', '-C', str(root), *args], stderr=subprocess.DEVNULL)
 
 
+
+def require_regular_inputs(root, paths):
+    """Recheck path identity on EVERY proof call, including warm-memo hits."""
+    root = Path(root)
+    for path in paths:
+        file = root / path
+        if not file.is_file() or file.is_symlink():
+            raise ValueError('continuation: nonregular proof input ' + path)
+        for parent in file.parents:
+            if parent.is_symlink():
+                raise ValueError('continuation: symlink proof parent ' + path)
+            if parent == root:
+                break
+        if not file.resolve().is_relative_to(root.resolve()):
+            raise ValueError('continuation: escaped proof input ' + path)
+
+
 def verify_receipt(root):
     """Full current native tree binding. No editable-export or stale-memo pass."""
     root = Path(root)
-    if not (root / RECEIPT).is_file():
+    receipt = root / RECEIPT
+    if not receipt.exists() and not receipt.is_symlink():
         return {}
+    require_regular_inputs(root, [RECEIPT, MODULE])
     data = json.loads((root / RECEIPT).read_bytes())
     if not isinstance(data, dict) or set(data) != {'version', 'baseCommit', 'files'} or data['version'] != 1:
         raise ValueError('continuation: bad receipt schema')

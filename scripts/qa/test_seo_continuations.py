@@ -242,11 +242,11 @@ class OwningGuards(unittest.TestCase):
                        check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         self.base = subprocess.check_output(['git', '-C', str(self.tmp), 'rev-parse', 'HEAD']).decode().strip()
         self.paths = ('history.html', 'templates/masters/history-exact.html',
-                      'saint-charbel-prayers.html', 'saint-charbel-chaplet.html', 'ar/saint-charbel-chaplet.html')
+                      'saint-charbel-prayers.html', 'en/prayers.html', 'saint-charbel-chaplet.html', 'ar/saint-charbel-chaplet.html')
         self.before = {}; self.after = {}; rows = {}
         for path in self.paths:
             raw = (self.tmp / path).read_bytes()
-            ops = ['prayers-robots'] if path == 'saint-charbel-prayers.html' else ['prayers-href', 'faq-remove', 'article-add']
+            ops = list(sc.CLASSES) if path == 'saint-charbel-prayers.html' else ['prayers-href', 'faq-remove', 'article-add']
             changed = sc.derive(path, raw, ops)
             self.before[path] = raw; self.after[path] = changed
             (self.tmp / path).write_bytes(changed)
@@ -292,6 +292,47 @@ class OwningGuards(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'without fixed continuation'):
             self.ca.prove(self.tmp)
         (self.tmp / sc.RECEIPT).write_bytes(raw)
+
+    def test_warm_memo_rejects_same_bytes_symlinks_and_parent_symlinks(self):
+        self.ca.prove(self.tmp)
+        for path in ('history.html', sc.RECEIPT, sc.MODULE):
+            file = self.tmp / path
+            raw = file.read_bytes()
+            target = self.tmp / 'same-bytes-fixture'
+            target.write_bytes(raw)
+            file.unlink(); file.symlink_to(target)
+            try:
+                with self.assertRaisesRegex(ValueError, 'nonregular'):
+                    self.ca.prove(self.tmp)
+            finally:
+                file.unlink(); file.write_bytes(raw); target.unlink()
+        # An unchanged child under a symlinked ancestor is equally unsafe.
+        for directory in ('ar', 'locales', 'scripts/i18n'):
+            parent = self.tmp / directory
+            target = parent.with_name(parent.name + '-same-bytes-fixture')
+            parent.rename(target); parent.symlink_to(target, target_is_directory=True)
+            try:
+                with self.assertRaisesRegex(ValueError, 'symlink proof parent'):
+                    self.ca.prove(self.tmp)
+            finally:
+                parent.unlink(); target.rename(parent)
+
+    def test_winner_operations_coexist_and_frozen_prayer_composer_accepts_continued_body(self):
+        from i18n.prayer_metadata import compose_prayer_clusters
+        registry = json.loads((self.tmp / 'locales/registry.json').read_text())
+        winner = self.after['saint-charbel-prayers.html'].decode()
+        self.assertIn(sc.ROBOT_VALUE, winner)
+        self.assertEqual(sc.derive('saint-charbel-prayers.html', winner.encode(), list(sc.CLASSES)), winner.encode())
+        self.assertNotEqual(self.before['en/prayers.html'], self.after['en/prayers.html'])
+        result = compose_prayer_clusters(self.tmp, registry, {})
+        for path in ('saint-charbel-prayers.html', 'en/prayers.html'):
+            import re
+            self.assertEqual(re.search(r'<main\b[\s\S]*?</main>', result[self.tmp / path])[0],
+                             re.search(r'<main\b[\s\S]*?</main>', self.after[path].decode())[0])
+        altered = dict(result)
+        altered[self.tmp / 'en/prayers.html'] = altered[self.tmp / 'en/prayers.html'].replace('<main', '<main data-unapproved="yes"', 1)
+        with self.assertRaisesRegex(ValueError, 'frozen body'):
+            compose_prayer_clusters(self.tmp, registry, altered)
 
     def test_original_master_formulas_and_localized_final_operations(self):
         from i18n.catalog import read_json

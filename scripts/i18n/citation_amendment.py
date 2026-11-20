@@ -178,7 +178,10 @@ def prove(root):
     git=_git_mode(root)
     from i18n import seo_continuations as sc
     receipt=Path(root)/sc.RECEIPT
-    if receipt.exists() and not git:
+    has_receipt=receipt.exists() or receipt.is_symlink()
+    sc.require_regular_inputs(root, [SIDECAR,s['table']['path'],*_TOOL_FILES,*_input_paths(s)]
+                              + ([sc.RECEIPT] if has_receipt else []))
+    if has_receipt and not git:
         raise ValueError('citation: SEO continuation requires native git proof; export rejected')
     if git:
         # Hydrate the reviewed C2 objects (offline, hash-bound) before any object lookup,
