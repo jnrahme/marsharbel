@@ -20,6 +20,21 @@ class MB16HomeContinuation(unittest.TestCase):
             for form in (None,'sorted','generator'):
                 for alt in ((False,True)if path=='index.html'else(False,)):
                     self.assertEqual(m.verify_delta(path,raw,m.derive(path,raw,form,alt)),raw)
+    def test_actual_generator_and_control_serializers(self):
+        import importlib.util
+        from i18n.same_page_injection import inject_control
+        spec=importlib.util.spec_from_file_location('mb16_serializer_builder',ROOT/'scripts/build-international.py')
+        builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder)
+        registry=json.loads((ROOT/'locales/registry.json').read_text())
+        manifest=json.loads((ROOT/'same-page-manifest.js').read_text().removeprefix('window.SC_SAME_PAGE_MANIFEST = ').rstrip(';\n'))
+        copy=json.loads((ROOT/'locales/same-page-copy.json').read_text())
+        for path,raw in self.originals.items():
+            text=builder.replace_block(raw.decode(),'i18n-navigation',builder.footer_locale_bar(registry))
+            if path=='index.html':text=builder.replace_block(text,'i18n-alternates',builder.alternate_links(registry))
+            self.assertEqual(m.verify_delta(path,raw,text.encode()),raw)
+            final=inject_control(text,ROOT,manifest,copy)
+            self.assertEqual(m.verify_delta(path,raw,final.encode()),raw)
+
     def test_outside_and_inside_mutations_reject_regardless_of_hash(self):
         for path,raw in self.originals.items():
             good=m.derive(path,raw,'sorted',path=='index.html')
