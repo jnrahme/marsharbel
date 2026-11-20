@@ -17,7 +17,7 @@ _TOOL_FILES=('scripts/i18n/citation_amendment.py','scripts/i18n/reviewed_history
     'scripts/i18n/keyed_master.py','scripts/i18n/reviewed_travel.py',
     'scripts/i18n/citation_history.py','scripts/i18n/seo_continuations.py',
     'scripts/i18n/exact_master.py','scripts/i18n/prayer_metadata.py',
-    'scripts/i18n/generated_postprocess.py',
+    'scripts/i18n/generated_postprocess.py','scripts/i18n/structured_data.py','scripts/inject-same-page-stdin.py',
     'locales/citation-maintenance/candidate-C2.bundle.b64')
 _RECORD_FILES=('locales/history-equivalence.json','locales/prayer-equivalence.json',
     'locales/travel-equivalence.json','locales/ar2-pairing-evidence.json')
