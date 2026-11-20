@@ -2933,8 +2933,8 @@ a.card:active{transform:scale(.99);transition-duration:140ms}
 :where(.btn,.links a,.footer a,a.card):focus-visible{outline:2px solid var(--gold,#d8c6a6);outline-offset:3px;border-radius:6px}
 @media (prefers-reduced-motion:reduce){.btn,.links a,.footer a,a.card{transition:none}.btn:active,a.card:active,a.card:hover{transform:none}}
 
-/* Shell v2: compact phone header (brand, install and language share one row) */
-@media (max-width:640px){
+/* Shell v2: compact phone header (brand, install and language share one row). Covers 641-740px (foldables) too: the legacy max-width:740px block used to stack the header one control per row there. */
+@media (max-width:740px){
 .nav{display:grid;flex-direction:row;align-items:center;gap:0;min-height:0;grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"brand install lang" "links links links";column-gap:.5rem;row-gap:.15rem;padding:.4rem 0 .3rem}
 .brand{gap:.5rem;font-size:1.05rem;min-width:0}
 .brand-mark{width:30px;height:30px;font-size:.8rem;flex:none}
