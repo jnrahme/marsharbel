@@ -29,6 +29,20 @@ class SeoRegressionTests(unittest.TestCase):
             if not target.exists() and path.name != ".git":
                 target.symlink_to(path, target_is_directory=path.is_dir())
 
+    def test_current_vatican_charbel_citation_links(self):
+        old_slug = '2303-july-24-saint-charbel-makhlouf.html'
+        current = ('https://vaticanstate.va/en/component/content/article/'
+                   'july-24-saint-charbel-makhlouf.html?Itemid=216&catid=51')
+        from bs4 import BeautifulSoup
+        changed = []
+        for path in public_html_files(ROOT):
+            soup = BeautifulSoup(path.read_text(), 'html.parser')
+            hrefs = [a.get('href', '') for a in soup.select('a[href]')]
+            self.assertFalse(any(old_slug in href for href in hrefs), str(path))
+            if current in hrefs:
+                changed.append(path)
+        self.assertGreaterEqual(len(changed), 14)
+
     def test_misplaced_rosary_aliases_redirect_before_html_cleanup(self):
         config = (ROOT / '.htaccess').read_text()
         rule = next(line for line in config.splitlines()
