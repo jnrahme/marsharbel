@@ -23,6 +23,11 @@ class HomeOwnerIntegration(unittest.TestCase):
         try:
          subprocess.run(['git','clone','--quiet','--shared',str(ROOT),str(T)],check=True)
          originals={p:m.git(T,'show',m.BASE+':'+p)for p in m.PATHS}
+         # Fixture must create the old-HEAD state explicitly even when the
+         # production branch already contains generated new footer outputs.
+         for p,raw in originals.items():(T/p).write_bytes(raw)
+         subprocess.run(['git','-C',str(T),'add','--',*sorted(m.PATHS)],check=True)
+         subprocess.run(['git','-C',str(T),'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','--quiet','--allow-empty','-m','prepare explicit old home fixture HEAD'],check=True)
          for p,raw in originals.items():(T/p).write_bytes(m.derive(p,raw,'sorted',p=='index.html'))
          # Catalog reconstruction is BUILD-ONLY while generated disk differs
          # from HEAD. It must never qualify citation evidence in that state.

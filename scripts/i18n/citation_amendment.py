@@ -19,6 +19,7 @@ _TOOL_FILES=('scripts/i18n/citation_amendment.py','scripts/i18n/reviewed_history
     'scripts/i18n/exact_master.py','scripts/i18n/prayer_metadata.py',
     'scripts/i18n/generated_postprocess.py',
     'scripts/i18n/mb16_home_continuation.py','locales/mb16-home-continuation.json',
+    'scripts/i18n/mb16_citation_home.py','locales/mb16-citation-home.json',
     'scripts/build-international.py','scripts/i18n/same_page_injection.py','locales/registry.json',
     'locales/citation-maintenance/candidate-C2.bundle.b64')
 _RECORD_FILES=('locales/history-equivalence.json','locales/prayer-equivalence.json',
@@ -406,7 +407,8 @@ def _prove_fresh(root,s):
     continued=sc.verify_receipt(root)
     for rel in sorted(tpaths | set(dfiles) | set(sc.ALLOWED_PATHS)):
         from i18n.mb16_home_continuation import preimage as home_preimage
-        current=home_preimage(root,rel,(Path(root)/rel).read_bytes())
+        from i18n.mb16_citation_home import preimage as citation_home_preimage
+        current=citation_home_preimage(root,rel,home_preimage(root,rel,(Path(root)/rel).read_bytes()))
         expected=_blob(root,C,rel)
         if rel in continued:
             if continued[rel]!=expected:raise ValueError('citation: continuation preimage != C2 '+rel)
