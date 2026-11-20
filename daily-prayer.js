@@ -86,6 +86,7 @@
         throw new Error(response.status >= 500 ? fallback : result?.message || fallback);
       }
       if (result?.accepted !== true) throw new Error('Subscribing could not be confirmed. Please try again later.');
+      window.MarGrowth?.event('daily_prayer_signup');
       submitted = true; touched.clear(); form.reset();
       status(message, 'Almost there - check your inbox and tap the confirmation link to start receiving the daily prayer. If you already subscribed, there is nothing new to do.');
     } catch (error) {
