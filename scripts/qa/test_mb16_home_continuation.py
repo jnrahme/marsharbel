@@ -77,6 +77,20 @@ class MB16HomeContinuation(unittest.TestCase):
         for key,p in [('registrySha256','locales/registry.json'),('generatorSha256','scripts/build-international.py'),('controlSha256','scripts/i18n/same_page_injection.py')]:record[key]=m.sha((root/p).read_bytes())
         (root/m.RECORD).write_text(json.dumps(record));git('add','.');git('commit','-qm','record')
         return temp,root,git,base
+    def test_native_every_proof_input_symlink_and_parent_symlink_rejected(self):
+        temp,root,git,base=self.native_fixture()
+        try:
+            path='visit-annaya.html';raw=self.originals[path];good=m.derive(path,raw,'sorted')
+            with patch.object(m,'BASE',base):
+                for rel in [m.RECORD,m.MODULE,'locales/registry.json','scripts/build-international.py','scripts/i18n/same_page_injection.py',path]:
+                    file=root/rel;payload=file.read_bytes();target=root/'same-bytes';target.write_bytes(payload)
+                    file.unlink();file.symlink_to(target)
+                    with self.assertRaisesRegex(ValueError,'nonregular'):m.preimage(root,path,good)
+                    file.unlink();file.write_bytes(payload);target.unlink()
+                parent=root/'scripts/i18n';parent.rename(root/'i18n-held');parent.symlink_to(root/'i18n-held',target_is_directory=True)
+                with self.assertRaisesRegex(ValueError,'symlink proof parent'):m.preimage(root,path,good)
+        finally:temp.cleanup()
+
     def test_native_binding_no_memo_and_symlink_and_export(self):
         temp,root,git,base=self.native_fixture()
         try:

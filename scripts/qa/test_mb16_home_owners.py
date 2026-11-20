@@ -50,6 +50,16 @@ class HomeOwnerIntegration(unittest.TestCase):
           try:ca.prove(T);raise AssertionError('outside drift accepted')
           except ValueError:ok('warm citation outside mutation rejected')
           victim.write_bytes(good)
+          for rel in (m.RECORD,m.MODULE,'locales/registry.json'):
+           file=T/rel;payload=file.read_bytes();ca.prove(T)
+           file.write_bytes(payload+b' ')
+           try:ca.prove(T);raise AssertionError('warm proof input tamper accepted '+rel)
+           except ValueError:ok('warm citation proof input tamper rejected '+rel)
+           file.write_bytes(payload)
+          file=T/m.MODULE;payload=file.read_bytes();target=T/'same-module';target.write_bytes(payload);file.unlink();file.symlink_to(target)
+          try:ca.prove(T);raise AssertionError('warm module symlink accepted')
+          except ValueError:ok('warm citation same-byte module symlink rejected')
+          file.unlink();file.write_bytes(payload);target.unlink()
          print(json.dumps({'passed':results,'fullHistoricalLeg':'PENDING, not run in this bounded test'},indent=2),flush=True)
         finally:shutil.rmtree(T,ignore_errors=True)
 
