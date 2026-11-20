@@ -15,7 +15,8 @@ class GermanPreparedCatalogTests(unittest.TestCase):
         # empty-slot checks are enforced by test_prayer_keyed_masters.
         for name in ['feast','miracles']:
             c=read_json(ROOT/f'locales/de/{name}-exact.json')
-            source=_sfb((ROOT/c['master']).read_bytes())
+            from i18n.seo_continuations import pinned_preimage
+            source=_sfb(pinned_preimage(ROOT,c['master'],(ROOT/c['master']).read_bytes()))
             self.assertEqual(hashlib.sha256(source).hexdigest(), c['masterSha256'])
             for slot in c['slots'].values(): leaves(slot)
             soup=BeautifulSoup(source,'html.parser')

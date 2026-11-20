@@ -10,7 +10,8 @@ class ExactSourceInputs(unittest.TestCase):
   for name in ('miracles','biography'):
    c=json.loads((ROOT/f'locales/de/{name}-exact.json').read_text())
    self.assertTrue(c['master'].startswith('templates/masters/'))
-   raw=(ROOT/c['master']).read_bytes()
+   from i18n.seo_continuations import pinned_preimage
+   raw=pinned_preimage(ROOT,c['master'],(ROOT/c['master']).read_bytes())
    self.assertEqual(hashlib.sha256(raw).hexdigest(),c['masterSha256'])
    soup=BeautifulSoup(raw,'html.parser');before=[(n.name,n.attrs.copy())for n in soup.select('main *')]
    translate_slots(soup.main,c['slots'],name)
