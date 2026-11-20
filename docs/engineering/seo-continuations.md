@@ -20,7 +20,7 @@ records and the B-to-C2 proof must remain intact.
 - Binds receipt, module and affected content to native HEAD and current disk.
   Missing objects, symlinks, dirty inputs and editable exports fail closed.
 - Does not cache a proof. No stale-memo acceptance exists in this foundation.
-- Adds 31 positive and negative controls to the existing citation CI command,
+- Adds 34 positive and negative controls to the existing citation CI command,
   without adding or displacing a shard-inventory slot.
 
 The foundation PR stays inactive. This dependent integration wires the owning guards but adds no receipt or content changes. Original records, artifacts and pins remain unchanged. No FAQ or prayers page change is claimed by this integration alone.
@@ -68,9 +68,9 @@ approved value. Redirects, sitemaps and llms.txt remain owning content work.
 
 ## Verification
 
-- Direct invocation: `python3 scripts/qa/test_seo_continuations.py`, 31 tests.
+- Direct invocation: `python3 scripts/qa/test_seo_continuations.py`, 34 tests.
 - Module invocation: `python3 -m unittest scripts.qa.test_seo_continuations`,
-  the same 31 tests.
+  the same 34 tests.
 - CI wrapper: `python3 scripts/qa/check_citation_amendment.py`, calls these
   controls inside its existing slot, after the original controls.
 
@@ -109,3 +109,12 @@ No receipt is active yet. The dependent FAQ/prayers changes still need complete
 source generation, output parity, URL behavior, live verification and independent
 exact-head review. Any missing owning path remains a blocker, never a reason to
 refresh or disable a pin.
+
+
+Accuracy review correction: file content hashes alone cannot establish path
+identity. Every citation proof call now checks regular-file and parent-directory
+identity before its memo lookup, including unchanged-byte content, receipt and
+module symlink swaps. Controls cover these swaps after a warm pass and symlinked
+ar, locales and scripts/i18n directories. Additional controls combine all four
+real effects in a synthetic winner and exercise the frozen-prayer composer with
+a continued en/prayers body, including rejection of generated body drift.

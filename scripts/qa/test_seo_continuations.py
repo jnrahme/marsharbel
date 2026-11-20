@@ -122,6 +122,23 @@ class FixedDeltas(unittest.TestCase):
         self.assertEqual(len(sc.Spans(after).scripts), 1)
         self.assertIn('\\u003c/script\\u003e', after)
 
+    def test_winner_combines_all_four_real_changes_without_losing_visible_qa(self):
+        before = self.article_fixture().replace('<main>Visible text</main>',
+            '<main><h2>Question?</h2><p>Answer.</p><a href="/en/prayers#faith">Prayer</a></main>')
+        before = before.replace('</head>', '<meta name="robots" content="noindex">'
+            '<script type="application/ld+json">{"@type":"FAQPage","mainEntity":[]}</script></head>')
+        # This is a synthetic winner with all four effects present, not a
+        # claim that the current production winner needs all four effects.
+        before = before.replace('https://marsharbel.com/history', 'https://marsharbel.com/saint-charbel-prayers')
+        after = self.verify(before, list(sc.CLASSES), path='saint-charbel-prayers.html')
+        self.assertNotIn('FAQPage', after)
+        self.assertNotIn('noindex', after)
+        self.assertIn('href="/saint-charbel-prayers#faith"', after)
+        self.assertIn(sc.ROBOT_VALUE, after)
+        self.assertIn('"@type": "Article"', after)
+        self.assertIn('<h2>Question?</h2><p>Answer.</p>', after)
+        self.assertEqual(sc.derive('saint-charbel-prayers.html', after.encode(), list(sc.CLASSES)), after.encode())
+
     def test_existing_article_not_replaced(self):
         before = self.article_fixture().replace('</head>', '<script type="application/ld+json">{"@type":"Article","headline":"Existing"}</script></head>')
         self.assertEqual(sc.derive('history.html', before.encode(), ['article-add']).decode(), before)
