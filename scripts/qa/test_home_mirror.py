@@ -19,6 +19,21 @@ class HomeMirrorTests(unittest.TestCase):
         for _, _, key in PRAYER_DISCLOSURE_CONTROLS:
             self.copy[key] += ' ' + qualifier
 
+    def test_chinese_home_routes_published_travel_and_discloses_english_once(self):
+        from i18n.page_mirror import twin_routes
+        rendered = BeautifulSoup(render_home(ROOT, self.registry, 'zh-Hans'), 'html.parser')
+        qualifier = json.loads((ROOT/'locales/zh-Hans/encyclopedia-trail.json').read_text())['englishQualifier']
+        twins = twin_routes(self.registry, 'zh-Hans')
+        for anchor in rendered.select('header a[href]'):
+            href = anchor['href']
+            self.assertNotIn(href.rstrip('/') or '/', {key for key,value in twins.items() if key != value})
+            if href.startswith('/') and not href.startswith('/zh-Hans/'):
+                self.assertEqual(anchor.get('hreflang'), 'en')
+                self.assertEqual(anchor.get_text().count(qualifier), 1)
+                self.assertEqual(len(anchor.select('span.enc-language')), 1)
+        for slug in ('visit-annaya','annaya-tour','bekaa-kafra','our-lady-of-lebanon-harissa','cedars-of-god-lebanon','bkerke-maronite-patriarchate','qadisha-valley','qannoubine-monastery','qozhaya-monastery','saint-charbel-places-lebanon','saint-charbel-hermitage','saint-charbel-trail'):
+            self.assertIsNotNone(rendered.select_one(f'header a[href="/zh-Hans/{slug}"]'))
+
     def test_main_structure_and_asset_paths_preserved(self):
         # English copy is an explicit test fixture, never a published locale.
         rendered = BeautifulSoup(render_home(ROOT, self.registry, 'de', self.copy), 'html.parser')
@@ -40,7 +55,7 @@ class HomeMirrorTests(unittest.TestCase):
         self.assertEqual(rendered.select_one('meta[property="og:locale"]')['content'],'de_DE')
         self.assertEqual({n['hreflang']:n['href'] for n in rendered.select('link[hreflang]')},
             {**{code:self.registry['site']+self.registry['locales'][code]['home'] for code in published_home_locales(self.registry)},'x-default':self.registry['site']+'/'})
-        self.assertIsNone(rendered.select_one('link[hreflang="zh-Hans"]'))
+        self.assertEqual(rendered.select_one('link[hreflang="zh-Hans"]')['href'],'https://marsharbel.com/zh-Hans/')
         graph=json.loads(rendered.select_one('script[type="application/ld+json"]').string)['@graph']
         page=next(item for item in graph if item['@type']=='WebPage')
         self.assertEqual((page['name'],page['url'],page['inLanguage']),('Lokaler Seitentitel','https://marsharbel.com/de/','de'))

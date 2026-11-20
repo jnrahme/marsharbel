@@ -166,12 +166,6 @@
     }
     // English is the source escape route, not a claim of translated equivalence.
     var sourcePath = pathKey(url.pathname);
-    // Apache serves the existing Chinese travel entry at these directory aliases.
-    // Reuse only its established English-source route, never a locale homepage
-    // or an unreviewed twin. Keep the accepted URL spellings finite and exact.
-    if (['/zh-Hans', '/zh-Hans/', '/zh-Hans/index', '/zh-Hans/index.html'].includes(url.pathname) &&
-        manifest && manifest.englishSources &&
-        manifest.englishSources['/zh-Hans/travel'] === '/travel') sourcePath = '/zh-Hans/travel';
     var english = manifest && manifest.englishSources && manifest.englishSources[sourcePath];
     if (requested === 'en' && english) {
       var sourceHash = '';
@@ -191,6 +185,16 @@
     }
     if (!current || !(manifest.languages || []).includes(requested)) return result;
     var target = current.page.variants[requested];
+    // Explicit MB-20261119-16 handoff, not a translated-equivalence claim.
+    // Only these English-only pages may fall back to a published locale home.
+    if (language === 'en' &&
+        ['saint-charbel-movie.html', 'saint-charbel-oil.html'].includes(current.page.sourcePath) &&
+        pathKey(url.pathname) === '/' + current.page.sourcePath.replace(/\.html$/, '') &&
+        homes[requested] && !verifiedEither(current.page, target, requested)) {
+      url.pathname = homes[requested]; url.searchParams.delete('lang'); url.hash = '';
+      result.available = true; result.href = url.toString(); result.contentLanguage = requested;
+      result.reason = 'published-home-fallback'; return result;
+    }
     if (!travelIdentity(current.page,current.variant,language) || !travelIdentity(current.page,target,requested) ||
         !verifiedEither(current.page, current.variant, language) || !verifiedEither(current.page, target, requested)) return result;
     if (url.hash) {

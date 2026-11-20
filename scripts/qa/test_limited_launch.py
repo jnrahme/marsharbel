@@ -59,8 +59,8 @@ class LimitedLaunch(unittest.TestCase):
    cfg['routes']['zh-Hans']='/zh-Hans'+english
    cfg['renderLocales'].append('zh-Hans')
   validate_registry(self.r)
-  self.assertIsNone(home_url(self.r,'zh-Hans'))
-  self.assertNotIn('zh-Hans',self.r['homepageMirrors']['renderLocales'])
+  self.assertEqual(home_url(self.r,'zh-Hans'),'/zh-Hans/')
+  self.assertIn('zh-Hans',self.r['homepageMirrors']['renderLocales'])
   for values in self.r['publicationSets'].values():self.assertNotIn('zh-Hans',values)
   self.assertEqual(locale_topics(self.r,'zh-Hans'),[])
   self.assertNotIn('zh-Hans',self.r.get('limitedLaunchLocales',[]))
@@ -68,8 +68,8 @@ class LimitedLaunch(unittest.TestCase):
   self.r['locales']['zh-Hans']['capabilities']['mirrorTabs'].append('history')
   cfg=self.r['pageMirrors']['history-master'];cfg['routes']['zh-Hans']='/zh-Hans/history';cfg['renderLocales'].append('zh-Hans')
   validate_registry(self.r)
-  self.assertIsNone(home_url(self.r,'zh-Hans'))
-  self.assertNotIn('zh-Hans',self.r['homepageMirrors']['renderLocales'])
+  self.assertEqual(home_url(self.r,'zh-Hans'),'/zh-Hans/')
+  self.assertIn('zh-Hans',self.r['homepageMirrors']['renderLocales'])
   self.assertEqual(locale_topics(self.r,'zh-Hans'),[])
  def test_existing_locale_identity_and_pt_br_preserved(self):
   self.assertEqual(self.r['locales']['pt']['ogLocale'],'pt_BR')

@@ -28,7 +28,7 @@ class RussianSliceTests(unittest.TestCase):
    s=BeautifulSoup((ROOT/p).read_text(),'html.parser');self.assertEqual({x['hreflang']:x['href']for x in s.select('head link[hreflang]')},expected)
   r=read_json(ROOT/'locales/registry.json');homes={code:r['locales'][code]for code in published_home_locales(r)}
   expected={code:r['site']+cfg['home']for code,cfg in homes.items()};expected['x-default']=r['site']+'/'
-  self.assertNotIn('zh-Hans',homes);self.assertFalse((ROOT/'zh-Hans/index.html').exists())
+  self.assertIn('zh-Hans',homes);self.assertTrue((ROOT/'zh-Hans/index.html').exists())
   for code,cfg in homes.items():
    s=BeautifulSoup((ROOT/('index.html'if code=='en'else code+'/index.html')).read_text(),'html.parser');self.assertEqual({x['hreflang']:x['href']for x in s.select('head link[hreflang]')},expected)
  def test_pending_only_and_no_placeholder_destinations(self):

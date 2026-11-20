@@ -254,7 +254,7 @@ class PartialLocaleTests(unittest.TestCase):
         self.registry['pageMirrors'][name]['routes']['zh-Hans']='/zh-Hans'+english
         self.registry['pageMirrors'][name]['renderLocales'].append('zh-Hans')
         validate_registry(self.registry)
-        self.assertIsNone(home_url(self.registry,'zh-Hans'))
+        self.assertEqual(home_url(self.registry,'zh-Hans'),'/zh-Hans/')
         self.assertEqual(self.registry['locales']['zh-Hans']['capabilities']['topicGuides'],[])
         self.assertEqual(self.registry['locales']['zz']['capabilities']['topicGuides'],[])
 
@@ -295,6 +295,7 @@ class PartialLocaleTests(unittest.TestCase):
     def test_traditional_chinese_never_aliases_simplified(self):
         cfg=self.registry['locales'].pop('zz')
         cfg['ogLocale']='zh_CN';cfg['selectorAliases']=['zh-TW']
+        cfg['home']='/zh-Hans/';cfg['capabilities']['home']=True
         self.registry['locales']['zh-Hans']=cfg
         self.registry['ogLocaleOrder']=[c for c in self.registry['ogLocaleOrder'] if c!='zz']
         if 'zh-Hans' not in self.registry['ogLocaleOrder']:self.registry['ogLocaleOrder'].append('zh-Hans')
@@ -315,7 +316,7 @@ class PartialLocaleTests(unittest.TestCase):
         self.assertEqual(result['languages'], list(read_json(ROOT / 'locales/registry.json')['locales']))
         self.assertIn('zh-Hans', result['languages'])
         self.assertEqual(result['aliases']['zh-hans'], 'zh-Hans')
-        self.assertNotIn('zh-Hans', result['publishedHomes'])
+        self.assertEqual(result['publishedHomes']['zh-Hans'], '/zh-Hans/')
         self.assertEqual(result['pages'], seed['pages'])
 
     def test_existing_homes_unchanged(self):
