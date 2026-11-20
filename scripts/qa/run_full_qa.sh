@@ -159,7 +159,7 @@ qa_step python3 scripts/qa/test_travel.py
 qa_step npx playwright test tests/travel-routing.spec.js tests/travel-hub.spec.js --project=phone --project=laptop --workers=4
 qa_step node scripts/tests/video-fallback.mjs
 qa_step npx playwright test tests/video-playback.spec.js --project=phone --project=laptop --workers=2
-qa_step node scripts/qa/test_analytics_hostname.cjs
+qa_step bash -c 'node scripts/qa/test_analytics_hostname.cjs && node --test scripts/tests/growth_events.test.mjs && npx playwright test tests/growth-events.spec.js tests/growth-published-smoke.spec.js --project=phone --project=laptop --workers=2'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_security_headers.py'
 
 qa_step node scripts/build-home-css.mjs --check

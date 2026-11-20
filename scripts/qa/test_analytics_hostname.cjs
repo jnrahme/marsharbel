@@ -15,7 +15,7 @@ for(const file of files){
   const snippets=refs?[fs.readFileSync('analytics-init.js','utf8')]:[];
   for(const snippet of snippets){checked++;for(const host of ['marsharbel.com','www.marsharbel.com','localhost','127.0.0.1','pr-410--marsharbel-preview.netlify.app','marsharbel-preview.surge.sh','evil.marsharbel.com','marsharbel.com.evil.test','']){
     const loaded=[];const window={};
-    vm.runInNewContext(snippet,{window,location:{hostname:host},document:{createElement:()=>({}),head:{appendChild:t=>loaded.push(t)}}});
+    vm.runInNewContext(snippet,{window,location:{hostname:host},document:{addEventListener:()=>{},createElement:()=>({}),head:{appendChild:t=>loaded.push(t)}}});
     const production=['marsharbel.com','www.marsharbel.com'].includes(host);
     assert.equal(loaded.length,production?1:0,`${file}: ${host} loader`);
     assert.equal(window.dataLayer?.length||0,production?2:0,`${file}: ${host} events`);
@@ -24,7 +24,7 @@ for(const file of files){
     assert(![...(window.dataLayer||[])].some(a=>JSON.stringify([...a]).includes('traffic_type')),`${file}: ${host} reader leaks traffic_type`);
     for(const marker of [{kind:'monitoring',runner:'seo-technical-monitoring'},true]){
       const qaLoaded=[];const qaWindow={__MARSHARBEL_QA__:marker};
-      vm.runInNewContext(snippet,{window:qaWindow,location:{hostname:host},document:{createElement:()=>({}),head:{appendChild:t=>qaLoaded.push(t)}}});
+      vm.runInNewContext(snippet,{window:qaWindow,location:{hostname:host},document:{addEventListener:()=>{},createElement:()=>({}),head:{appendChild:t=>qaLoaded.push(t)}}});
       const events=[...(qaWindow.dataLayer||[])].map(a=>[...a]);
       if(production){
         assert.equal(events.length,3,`${file}: ${host} QA events`);
