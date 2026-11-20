@@ -25,6 +25,7 @@ if canonical:
  file=root/(route.lstrip('/')+'.html')
  text=compose_travel_clusters(root,registry,{file:text},source_inputs=True).get(file,text)
 from i18n.structured_data import normalize
+text=inject_control(text,root,manifest,copy)
 if canonical:
  text=normalize(route.lstrip('/')+'.html',text)
-sys.stdout.write(inject_control(text,root,manifest,copy))
+sys.stdout.write(text)
