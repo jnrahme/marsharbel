@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "10bf6395d134006cef459ec7deaf738603b04615e6cfa77b8ddd84ab4611203c",
+  "masterSha256": "b22b1ffa0d196f98a2177a7f24969b3f1815c14b2f42741e6d00a04bafb6bbce",
   "bindings": [
     {
       "key": "home.header.saint-charbel",
@@ -2088,6 +2088,76 @@
       "source": "Feast source: Eparchy of St. Maron liturgical calendar",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-23.heading",
+      "selector": "template[data-saint-date=\"2026-11-23\"] #saint-day-heading",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-23.dateLabel",
+      "selector": "template[data-saint-date=\"2026-11-23\"] #saint-of-the-day > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "23.11.2026",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-23.monogram",
+      "selector": "template[data-saint-date=\"2026-11-23\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "S",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-23.dateShort",
+      "selector": "template[data-saint-date=\"2026-11-23\"] #saint-of-the-day > a:nth-of-type(1) > div:nth-of-type(1) > time:nth-of-type(1)",
+      "source": "23 Nov",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-23.calendar",
+      "selector": "template[data-saint-date=\"2026-11-23\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Maronite calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-23.name",
+      "selector": "template[data-saint-date=\"2026-11-23\"] #saint-of-the-day > a:nth-of-type(1) > h3:nth-of-type(1)",
+      "source": "Saint Sassine, Bishop of Cyzicus",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-23.story",
+      "selector": "template[data-saint-date=\"2026-11-23\"] #saint-of-the-day > a:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "On November 23, 2026, the Maronite calendar remembers Saint Sassine, Bishop of Cyzicus, honored as a martyr. Cyzicus was a city on the Sea of Marmara in what is now Turkey. During the persecution of the emperor Diocletian, Sassine was tortured for confessing Christ; one early account says he was tied behind a horse to be dragged through the streets until death. Sassine is the Maronite rendering of the name Sisinnius.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-23.provenance",
+      "selector": "template[data-saint-date=\"2026-11-23\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Identity and witness: Orthodox Church in America synaxarion entry for Sisinius of Cyzicus, commemorated November 23, and the Maronite Synaxarion of the Antiochian Maronite Rite (Kaslik, 1996). The date and the naming Bishop of Cyzicus, Martyr, follow the 2026 Eparchy of St. Maron liturgical calendar.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-23.infoCta",
+      "selector": "template[data-saint-date=\"2026-11-23\"] #saint-of-the-day > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Read the Gospel proclaimed on Saint Sassine's day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.saintDay.2026-11-23.sourceLabel",
+      "selector": "template[data-saint-date=\"2026-11-23\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Feast source: Eparchy of St. Maron liturgical calendar",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -2372,6 +2442,16 @@
     "home.saintDay.2026-11-22.story": "On November 22, 2026, the Maronite calendar celebrates the Announcement to the Virgin Mary and remembers Saints Joachim and Anne, Mary's parents. In Luke's Gospel, the angel Gabriel tells Mary that she will bear Jesus, the Son of God. Mary asks how this will happen, hears that the Holy Spirit will come upon her, and freely accepts God's word. The names Joachim and Anne come from Christian tradition, not from the canonical Gospels.",
     "home.saintDay.2026-11-22.provenance": "Gospel account: Luke 1:26-38. Joachim and Anne: Christian tradition, as explained by Vatican News. The date follows the 2026 Maronite calendar.",
     "home.saintDay.2026-11-22.infoCta": "Read the Gospel account of the Announcement to Mary",
-    "home.saintDay.2026-11-22.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
+    "home.saintDay.2026-11-22.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar",
+    "home.saintDay.2026-11-23.heading": "Saint of the Day",
+    "home.saintDay.2026-11-23.dateLabel": "23.11.2026",
+    "home.saintDay.2026-11-23.monogram": "S",
+    "home.saintDay.2026-11-23.dateShort": "23 Nov",
+    "home.saintDay.2026-11-23.calendar": "Maronite calendar",
+    "home.saintDay.2026-11-23.name": "Saint Sassine, Bishop of Cyzicus",
+    "home.saintDay.2026-11-23.story": "On November 23, 2026, the Maronite calendar remembers Saint Sassine, Bishop of Cyzicus, honored as a martyr. Cyzicus was a city on the Sea of Marmara in what is now Turkey. During the persecution of the emperor Diocletian, Sassine was tortured for confessing Christ; one early account says he was tied behind a horse to be dragged through the streets until death. Sassine is the Maronite rendering of the name Sisinnius.",
+    "home.saintDay.2026-11-23.provenance": "Identity and witness: Orthodox Church in America synaxarion entry for Sisinius of Cyzicus, commemorated November 23, and the Maronite Synaxarion of the Antiochian Maronite Rite (Kaslik, 1996). The date and the naming Bishop of Cyzicus, Martyr, follow the 2026 Eparchy of St. Maron liturgical calendar.",
+    "home.saintDay.2026-11-23.infoCta": "Read the Gospel proclaimed on Saint Sassine's day",
+    "home.saintDay.2026-11-23.sourceLabel": "Feast source: Eparchy of St. Maron liturgical calendar"
   }
 }

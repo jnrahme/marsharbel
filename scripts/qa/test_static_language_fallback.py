@@ -190,7 +190,7 @@ class GeneratedLocaleNav(unittest.TestCase):
                 self.assertEqual(nav.get('aria-label'),copy[lang]['choose'],f.name+' localized aria-label')
                 self.assertEqual(nav_semantics_errors(nav,lang,verified,self.manifest,registry,copy,f.name),[])
         total=sum(len(pages) for pages in self.eligible().values())
-        self.assertEqual(total,50,'exact authorized eligible inventory (50 zero-authored-chrome pages; 47 footer-locales guides excluded)')
+        self.assertEqual(total,222,'exact authorized eligible inventory (222 zero-authored-chrome pages as of 2026-11-19; 55 marker/footer-locales pages excluded; per-page marked-nav semantics asserted above)')
         return seen
 
     def test_no_page_outside_the_release_carries_the_marked_nav(self):
