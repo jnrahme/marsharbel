@@ -186,6 +186,24 @@ def prayers_robots(path, text):
     return replace_spans(text, edits)
 
 
+def require_plain_faq(data):
+    """Only the observed plain FAQ vocabulary is deletable, never nested nodes."""
+    allowed = {'@context', '@type', 'mainEntity', 'inLanguage', 'description', 'url'}
+    if (set(data) - allowed or not {'@type', 'mainEntity'} <= set(data)
+            or data['@type'] != 'FAQPage'
+            or any(not isinstance(value, str) for key, value in data.items() if key != 'mainEntity')
+            or not isinstance(data['mainEntity'], list)):
+        raise ValueError('continuation: mixed FAQ graph or unsupported root shape')
+    for question in data['mainEntity']:
+        if (not isinstance(question, dict) or set(question) != {'@type', 'name', 'acceptedAnswer'}
+                or question['@type'] != 'Question' or not isinstance(question['name'], str)):
+            raise ValueError('continuation: mixed FAQ graph or unsupported Question shape')
+        answer = question['acceptedAnswer']
+        if (not isinstance(answer, dict) or set(answer) != {'@type', 'text'}
+                or answer['@type'] != 'Answer' or not isinstance(answer['text'], str)):
+            raise ValueError('continuation: mixed FAQ graph or unsupported Answer shape')
+
+
 def faq_remove(path, text):
     edits = []
     for start, end, body_start, body_end, attrs in Spans(text).scripts:
@@ -199,6 +217,7 @@ def faq_remove(path, text):
         # graphs fail closed until separately designed and reviewed, never drop
         # a graph containing Article, breadcrumbs or other structured data.
         if isinstance(data, dict) and data.get('@type') == 'FAQPage' and '@graph' not in data:
+            require_plain_faq(data)
             edits.append((start, end, ''))
         elif 'FAQPage' in json.dumps(data, ensure_ascii=False):
             raise ValueError('continuation: mixed FAQ graph not supported')

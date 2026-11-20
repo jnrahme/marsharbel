@@ -73,6 +73,30 @@ class FixedDeltas(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'mixed FAQ graph'):
                 sc.derive('history.html', ('<script type="application/ld+json">'+json.dumps(data)+'</script>').encode(), ['faq-remove'])
 
+    def test_faq_nested_nonfaq_and_extra_shapes_fail_closed(self):
+        plain = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
+            {'@type': 'Question', 'name': 'Question?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Answer.'}}]}
+        bad = []
+        for kind in ('Article', 'WebPage', 'BreadcrumbList'):
+            row = copy.deepcopy(plain); row['about'] = {'@type': kind}; bad.append(row)
+            row = copy.deepcopy(plain); row['mainEntity'][0]['about'] = {'@type': kind}; bad.append(row)
+            row = copy.deepcopy(plain); row['mainEntity'][0]['acceptedAnswer']['about'] = {'@type': kind}; bad.append(row)
+            row = copy.deepcopy(plain); row['description'] = {'@type': kind}; bad.append(row)
+        row = copy.deepcopy(plain); row['extra'] = 'scalar'; bad.append(row)
+        row = copy.deepcopy(plain); row['@type'] = ['FAQPage', 'WebPage']; bad.append(row)
+        row = copy.deepcopy(plain); row['mainEntity'][0]['acceptedAnswer']['text'] = {'@type': 'Article'}; bad.append(row)
+        for data in bad:
+            raw = ('<script type="APPLICATION/LD+JSON">'+json.dumps(data)+'</script>').encode()
+            with self.subTest(data=data):
+                with self.assertRaisesRegex(ValueError, 'mixed FAQ graph'):
+                    sc.derive('history.html', raw, ['faq-remove'])
+                with self.assertRaises(ValueError):
+                    sc.verify_delta('history.html', raw, b'', {'operations': ['faq-remove'], 'beforeSha256': sc.sha(raw), 'afterSha256': sc.sha(b'')})
+        raw = '<script type="APPLICATION/LD+JSON">'+json.dumps(plain)+'</script>'
+        self.assertEqual(sc.derive('history.html', (raw+'\n'+raw).encode(), ['faq-remove']), b'\n')
+        with self.assertRaisesRegex(ValueError, 'overlapping edits'):
+            sc.derive('history.html', (raw+raw).encode(), ['faq-remove'])
+
     def test_malformed_json_and_unclosed_script_rejected(self):
         for raw in ('<script type="application/ld+json">bad</script>', '<script type="application/ld+json">{}'):
             with self.assertRaises(ValueError):
