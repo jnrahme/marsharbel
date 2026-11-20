@@ -270,7 +270,7 @@ class OwningGuards(unittest.TestCase):
             rows[path] = {'beforeSha256': sc.sha(raw), 'afterSha256': sc.sha(changed), 'operations': ops}
         (self.tmp / sc.RECEIPT).write_text(json.dumps({'version': 1, 'baseCommit': self.base, 'files': rows}))
         subprocess.run(['git', '-C', str(self.tmp), 'add', *self.paths, sc.RECEIPT], check=True)
-        subprocess.run(['git', '-C', str(self.tmp), 'commit', '-qm', 'temporary fixed SEO integration fixture'], check=True)
+        subprocess.run(['git', '-C', str(self.tmp), '-c', 'user.name=SEO fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-qm', 'temporary fixed SEO integration fixture'], check=True)
         self.history = patch.object(ca, '_historical_leg', return_value={'isolatedCurrentLegUnitFixture': True})
         self.history.start()
 
@@ -387,7 +387,7 @@ def run_into(record):
     suite.run(result)
     errors = {str(test): detail for test, detail in result.errors + result.failures}
     record('SC finite SEO continuation controls', result.wasSuccessful(),
-           str(result.testsRun) + ' tests; ' + '; '.join(errors)[:300])
+           str(result.testsRun) + ' tests; ' + '; '.join(str(test) + ': ' + detail.strip().splitlines()[-1] for test, detail in errors.items())[:1600])
 
 
 if __name__ == '__main__':
