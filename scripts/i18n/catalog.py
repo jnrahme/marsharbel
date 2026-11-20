@@ -366,7 +366,8 @@ def validate_mirror_capabilities(root, registry):
                 # PR3: the marked generated locale-nav is a post-pin control
                 # artifact; master pins always compare stripped bytes.
                 from i18n.keyed_master import strip_generated_locale_nav
-                stripped_master = strip_generated_locale_nav((root / pinned_source).read_bytes())
+                from i18n.mb16_home_continuation import preimage as home_preimage
+                stripped_master = strip_generated_locale_nav(home_preimage(root, pinned_source, (root / pinned_source).read_bytes()))
                 if b'i18n-locale-nav:start' in stripped_master or b'i18n-locale-nav:end' in stripped_master:
                     raise ValueError(f'{code}/{name}: malformed generated locale-nav markers in pinned master')
                 if contract['masterSha256'] != hashlib.sha256(stripped_master).hexdigest():

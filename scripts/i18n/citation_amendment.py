@@ -18,6 +18,8 @@ _TOOL_FILES=('scripts/i18n/citation_amendment.py','scripts/i18n/reviewed_history
     'scripts/i18n/citation_history.py','scripts/i18n/seo_continuations.py',
     'scripts/i18n/exact_master.py','scripts/i18n/prayer_metadata.py',
     'scripts/i18n/generated_postprocess.py',
+    'scripts/i18n/mb16_home_continuation.py','locales/mb16-home-continuation.json',
+    'scripts/build-international.py','scripts/i18n/same_page_injection.py','locales/registry.json',
     'locales/citation-maintenance/candidate-C2.bundle.b64')
 _RECORD_FILES=('locales/history-equivalence.json','locales/prayer-equivalence.json',
     'locales/travel-equivalence.json','locales/ar2-pairing-evidence.json')
@@ -181,7 +183,7 @@ def prove(root):
     has_receipt=receipt.exists() or receipt.is_symlink()
     sc.require_regular_inputs(root, [SIDECAR,s['table']['path'],*_TOOL_FILES,*_input_paths(s)]
                               + ([sc.RECEIPT] if has_receipt else []))
-    if has_receipt and not git:
+    if (has_receipt or (Path(root)/'locales/mb16-home-continuation.json').exists()) and not git:
         raise ValueError('citation: SEO continuation requires native git proof; export rejected')
     if git:
         # Hydrate the reviewed C2 objects (offline, hash-bound) before any object lookup,
@@ -307,7 +309,8 @@ def _prove_fresh(root,s):
     continuation_inputs=[sc.RECEIPT] if (Path(root)/sc.RECEIPT).exists() else []
     for rel in [SIDECAR,table_path]+list(_TOOL_FILES)+_input_paths(s)+continuation_inputs:
         disk=(Path(root)/rel).read_bytes()
-        if _blob(root,head,rel)!=disk:raise ValueError('citation: worktree proof input diverges from head '+rel)
+        from i18n.mb16_home_continuation import preimage as home_preimage
+        if home_preimage(root,rel,_blob(root,head,rel))!=home_preimage(root,rel,disk):raise ValueError('citation: worktree proof input diverges from head '+rel)
     # finite changed set
     tpaths={e['path'] for e in table}
     dfiles=sorted({e['file'] for e in s['derivedPins']})
@@ -403,7 +406,8 @@ def _prove_fresh(root,s):
     # full-file difference can hide behind a historical proof or refreshed hash.
     continued=sc.verify_receipt(root)
     for rel in sorted(tpaths | set(dfiles) | set(sc.ALLOWED_PATHS)):
-        current=(Path(root)/rel).read_bytes()
+        from i18n.mb16_home_continuation import preimage as home_preimage
+        current=home_preimage(root,rel,(Path(root)/rel).read_bytes())
         expected=_blob(root,C,rel)
         if rel in continued:
             if continued[rel]!=expected:raise ValueError('citation: continuation preimage != C2 '+rel)
