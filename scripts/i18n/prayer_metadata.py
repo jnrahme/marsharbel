@@ -2,6 +2,8 @@
 import re, json, hashlib
 
 def compose_prayer_clusters(root, registry, texts, source_inputs=False):
+    from i18n.seo_continuations import continue_outputs
+    texts=continue_outputs(root,texts)
     for family in ('saint-charbel-prayers-master','saint-charbel-novena-master'):
         cfg=registry.get('pageMirrors',{}).get(family)
         if not cfg:continue
@@ -36,6 +38,12 @@ def compose_prayer_clusters(root, registry, texts, source_inputs=False):
             if source_inputs and root/file not in texts: continue
             text=texts.get(root/file,(root/file).read_text())
             body=re.search(r'<main\b[\s\S]*?</main>',text)[0]
-            if hashlib.sha256(body.encode()).hexdigest()!=proof['mainSha256']:
+            from i18n.seo_continuations import pinned_preimage
+            raw=(root/file).read_bytes()
+            original=pinned_preimage(root,file,raw)
+            expected_body=re.search(rb'<main\b[\s\S]*?</main>',original)[0]
+            # Generated text must still match the continued disk main exactly.
+            current_body=re.search(rb'<main\b[\s\S]*?</main>',raw)[0]
+            if body.encode()!=current_body or hashlib.sha256(expected_body).hexdigest()!=proof['mainSha256']:
                 raise ValueError('Prayer metadata refresh changed frozen body: '+file)
     return texts

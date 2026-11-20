@@ -17,7 +17,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 
 RECEIPT = 'locales/seo-continuations.json'
 MODULE = 'scripts/i18n/seo_continuations.py'
-CLASSES = ('prayers-href', 'prayers-robots', 'faq-remove')
+CLASSES = ('prayers-href', 'prayers-robots', 'faq-remove', 'article-add')
 WINNER = '/saint-charbel-prayers'
 ROBOT_VALUE = 'index,follow,max-image-preview:large'
 # Literal finite membership, independently reviewed with this module.
@@ -81,6 +81,8 @@ class Spans(HTMLParser):
         self.text = text
         self.lines = [0]
         self.lines.extend(m.end() for m in re.finditer('\n', text))
+        self.inert = [m.span(2) for m in re.finditer(
+            r'<(script|style|textarea|title)\b[^>]*>([\s\S]*?)</\1\s*>', text, re.I)]
         self.tags = []
         self.scripts = []
         self.script_start = None
@@ -95,6 +97,8 @@ class Spans(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         start = self.source_offset()
+        if any(a <= start < b for a, b in self.inert):
+            return
         raw = self.get_starttag_text()
         row = (tag, start, start + len(raw), attrs)
         self.tags.append(row)
@@ -137,11 +141,7 @@ def attrs_dict(attrs):
 
 def prayers_href(path, text):
     edits = []
-    inert = [m.span() for m in re.finditer(
-        r'<(script|style|textarea|title)\b[^>]*>[\s\S]*?</\1\s*>', text, re.I)]
     for tag, start, end, attrs in Spans(text).tags:
-        if any(start < b and end > a for a, b in inert):
-            continue
         if tag != 'a':
             continue
         attr = attrs_dict(attrs)
@@ -186,6 +186,24 @@ def prayers_robots(path, text):
     return replace_spans(text, edits)
 
 
+def require_plain_faq(data):
+    """Only the observed plain FAQ vocabulary is deletable, never nested nodes."""
+    allowed = {'@context', '@type', 'mainEntity', 'inLanguage', 'description', 'url'}
+    if (set(data) - allowed or not {'@type', 'mainEntity'} <= set(data)
+            or data['@type'] != 'FAQPage'
+            or any(not isinstance(value, str) for key, value in data.items() if key != 'mainEntity')
+            or not isinstance(data['mainEntity'], list)):
+        raise ValueError('continuation: mixed FAQ graph or unsupported root shape')
+    for question in data['mainEntity']:
+        if (not isinstance(question, dict) or set(question) != {'@type', 'name', 'acceptedAnswer'}
+                or question['@type'] != 'Question' or not isinstance(question['name'], str)):
+            raise ValueError('continuation: mixed FAQ graph or unsupported Question shape')
+        answer = question['acceptedAnswer']
+        if (not isinstance(answer, dict) or set(answer) != {'@type', 'text'}
+                or answer['@type'] != 'Answer' or not isinstance(answer['text'], str)):
+            raise ValueError('continuation: mixed FAQ graph or unsupported Answer shape')
+
+
 def faq_remove(path, text):
     edits = []
     for start, end, body_start, body_end, attrs in Spans(text).scripts:
@@ -199,10 +217,68 @@ def faq_remove(path, text):
         # graphs fail closed until separately designed and reviewed, never drop
         # a graph containing Article, breadcrumbs or other structured data.
         if isinstance(data, dict) and data.get('@type') == 'FAQPage' and '@graph' not in data:
+            require_plain_faq(data)
             edits.append((start, end, ''))
         elif 'FAQPage' in json.dumps(data, ensure_ascii=False):
             raise ValueError('continuation: mixed FAQ graph not supported')
     return replace_spans(text, edits)
+
+
+
+def article_add(path, text):
+    """Minimal Article from existing page metadata, no invented dates or author."""
+    parsed = Spans(text)
+    types = set()
+    for _, _, body_start, body_end, attrs in parsed.scripts:
+        if attrs_dict(attrs).get('type', '').lower() != 'application/ld+json':
+            continue
+        try:
+            data = json.loads(text[body_start:body_end])
+        except ValueError as error:
+            raise ValueError('continuation: malformed JSON-LD') from error
+        def visit(node):
+            if isinstance(node, dict):
+                kind = node.get('@type', [])
+                types.update([kind] if isinstance(kind, str) else kind)
+                for value in node.values():
+                    visit(value)
+            elif isinstance(node, list):
+                for value in node:
+                    visit(value)
+        visit(data)
+    if 'Article' in types:
+        return text
+    canonicals, titles, descriptions, languages, images, heads = [], [], [], [], [], []
+    for tag, start, end, attrs in parsed.tags:
+        a = attrs_dict(attrs)
+        if tag == 'head':
+            heads.append(start)
+        if tag == 'html' and a.get('lang'):
+            languages.append(a['lang'])
+        if tag == 'link' and 'canonical' in a.get('rel', '').split():
+            canonicals.append(a.get('href'))
+        if tag == 'meta':
+            if a.get('property') == 'og:title':
+                titles.append(a.get('content'))
+            if a.get('name') == 'description':
+                descriptions.append(a.get('content'))
+            if a.get('property') == 'og:image':
+                images.append(a.get('content'))
+    if (any(len(items) != 1 or not items[0] for items in (canonicals, titles, descriptions, languages, heads))
+            or len(images) > 1 or text.count('</head>') != 1):
+        raise ValueError('continuation: missing or ambiguous Article metadata')
+    canonical = urlsplit(canonicals[0])
+    if canonical.scheme != 'https' or canonical.netloc != 'marsharbel.com' or canonical.query or canonical.fragment:
+        raise ValueError('continuation: invalid Article canonical')
+    data = {'@context': 'https://schema.org', '@type': 'Article',
+            '@id': canonicals[0] + '#article', 'mainEntityOfPage': canonicals[0],
+            'headline': titles[0], 'description': descriptions[0], 'inLanguage': languages[0]}
+    if images:
+        data['image'] = images[0]
+    # Metadata is data, even inside a script. Escape closing-tag characters.
+    payload = json.dumps(data, ensure_ascii=False, indent=2).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
+    close = text.index('</head>')
+    return text[:close] + '<script type="application/ld+json">\n' + payload + '\n</script>\n' + text[close:]
 
 
 def derive(path, before, operations):
@@ -216,7 +292,7 @@ def derive(path, before, operations):
     text = before.decode('utf-8')
     for op in operations:
         text = {'prayers-href': prayers_href, 'prayers-robots': prayers_robots,
-                'faq-remove': faq_remove}[op](path, text)
+                'faq-remove': faq_remove, 'article-add': article_add}[op](path, text)
     return text.encode('utf-8')
 
 
@@ -240,11 +316,30 @@ def git(root, *args):
     return subprocess.check_output(['git', '-C', str(root), *args], stderr=subprocess.DEVNULL)
 
 
+
+def require_regular_inputs(root, paths):
+    """Recheck path identity on EVERY proof call, including warm-memo hits."""
+    root = Path(root)
+    for path in paths:
+        file = root / path
+        if not file.is_file() or file.is_symlink():
+            raise ValueError('continuation: nonregular proof input ' + path)
+        for parent in file.parents:
+            if parent.is_symlink():
+                raise ValueError('continuation: symlink proof parent ' + path)
+            if parent == root:
+                break
+        if not file.resolve().is_relative_to(root.resolve()):
+            raise ValueError('continuation: escaped proof input ' + path)
+
+
 def verify_receipt(root):
     """Full current native tree binding. No editable-export or stale-memo pass."""
     root = Path(root)
-    if not (root / RECEIPT).is_file():
+    receipt = root / RECEIPT
+    if not receipt.exists() and not receipt.is_symlink():
         return {}
+    require_regular_inputs(root, [RECEIPT, MODULE])
     data = json.loads((root / RECEIPT).read_bytes())
     if not isinstance(data, dict) or set(data) != {'version', 'baseCommit', 'files'} or data['version'] != 1:
         raise ValueError('continuation: bad receipt schema')
@@ -298,3 +393,22 @@ def pinned_preimage(root, path, current):
     if current != (Path(root) / path).read_bytes():
         raise ValueError('continuation: caller bytes differ from verified candidate')
     return rows[path]
+
+
+def continue_outputs(root, texts):
+    """Reapply fixed operations AFTER locale metadata is composed.
+
+    Master renderers use original pinned preimages, not continued English schema.
+    This prevents an English Article headline leaking into translated output.
+    Final owning guards and stale-output checks still validate the result.
+    """
+    verified = verify_receipt(root)
+    if not verified:
+        return texts
+    rows = json.loads((Path(root) / RECEIPT).read_bytes())['files']
+    out = dict(texts)
+    for file, text in texts.items():
+        rel = Path(file).relative_to(root).as_posix()
+        if rel in verified:
+            out[file] = derive(rel, text.encode(), rows[rel]['operations']).decode()
+    return out

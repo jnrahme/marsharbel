@@ -49,8 +49,11 @@ def resolve_binding_value(root, family, lang, binding, copy):
 
 def apply_keyed_master(root, family, lang, catalog=None):
     contract = read_json(root / f'locales/en/{family}-bindings.json')
-    raw = strip_static_fallback((root / contract['master']).read_bytes())
-    if hashlib.sha256(raw).hexdigest() != contract['masterSha256']:
+    from i18n.seo_continuations import pinned_preimage
+    current = (root / contract['master']).read_bytes()
+    original = pinned_preimage(root, contract['master'], current)
+    raw = strip_static_fallback(original)
+    if hashlib.sha256(strip_static_fallback(original)).hexdigest() != contract['masterSha256']:
         raise ValueError(f'{family} master changed: update bindings and reviewed locale catalogs')
     english = read_json(root / f'locales/en/{family}-copy.json')
     copy = catalog if catalog is not None else read_json(root / f'locales/{lang}/{family}-copy.json')
