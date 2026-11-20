@@ -279,10 +279,11 @@ class OwningGuards(unittest.TestCase):
 
     def test_warm_memo_rejects_content_receipt_and_catalog_tampering(self):
         self.ca.prove(self.tmp)
-        for path in ('history.html', sc.RECEIPT, 'locales/de/history-copy.json'):
+        sidecar=self.ca.load(self.tmp)
+        catalog=sidecar['families']['history-master']['variants']['de']['catalog']['path']
+        for path in ('history.html', sc.RECEIPT, catalog):
             file = self.tmp / path
-            if not file.exists():
-                continue
+            self.assertTrue(file.exists(), path)
             raw = file.read_bytes(); file.write_bytes(raw + b' ')
             with self.assertRaises(ValueError):
                 self.ca.prove(self.tmp)
