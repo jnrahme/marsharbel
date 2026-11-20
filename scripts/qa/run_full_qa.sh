@@ -246,6 +246,10 @@ qa_step env PORT=4198 bash scripts/tests/run_hero_figure_crop.sh
 echo "[qa] Books content API: feed, shelf parity and round trip"
 qa_step npm run books:check
 
+echo "[qa] Content layer: schema validation"
+qa_step python3 scripts/qa/check_content_schemas.py
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_content_schemas.py'
+
 echo "[qa] Same-page language switcher resolver (pure node, was never run in CI)"
 qa_step python3 -m unittest discover -s scripts/qa -p test_rosary_books_pairing.py
 qa_step node scripts/tests/same_page_rosary_books.cjs
