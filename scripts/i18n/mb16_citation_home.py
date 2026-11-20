@@ -3,6 +3,7 @@
 This is reconstruction only. citation prove retains raw HEAD == disk W0.
 """
 import json
+import re
 from pathlib import Path
 import subprocess
 from i18n import mb16_home_continuation as home
@@ -35,6 +36,25 @@ TRAVEL_EDITS = (
      '"position": 1, "name": "首页", "item": "https://marsharbel.com/zh-Hans/"', 1),
 )
 
+def footer_span(path, raw):
+    if path != 'en/prayers.html':
+        return home.span(raw, b'i18n-navigation', b'footer')
+    # This historical guide has an EMPTY marked block in main and one actual
+    # unmarked footer nav. Preserve the empty block exactly, never relocate it.
+    empty=b'<!-- i18n-navigation:start -->\n\n<!-- i18n-navigation:end -->'
+    if raw.count(empty)!=1 or raw.count(b'<!-- i18n-navigation:start -->')!=1 or raw.count(b'<!-- i18n-navigation:end -->')!=1:
+        raise ValueError('MB16 citation: English guide empty markers drift')
+    matches=list(re.finditer(rb'<nav aria-label="Languages" class="footer-locales">[\s\S]*?</nav>',raw))
+    if len(matches)!=1:raise ValueError('MB16 citation: English guide footer nav count')
+    a,z=matches[0].span()
+    if raw.rfind(b'<footer',0,a)<0 or raw.find(b'</footer>',a)<z:
+        raise ValueError('MB16 citation: English guide footer nav moved')
+    return a,z
+
+def footer_block(path, homes):
+    value=home.footer(homes).replace(b'aria-label="Languages"', ('aria-label="'+LABELS[path]+'"').encode())
+    return value.split(b'\n')[1] if path=='en/prayers.html' else value
+
 def derive(path, original):
     if path not in PATHS:
         raise ValueError('MB16 citation: path outside finite inventory')
@@ -44,9 +64,9 @@ def derive(path, original):
                 raise ValueError('MB16 citation: travel occurrence drift')
             original = original.replace(before.encode(), after.encode())
         return original
-    a, z = home.span(original, b'i18n-navigation', b'footer')
-    old = home.footer(home.HOMES).replace(b'aria-label="Languages"', ('aria-label="'+LABELS[path]+'"').encode())
-    new = home.footer(home.HOMES+(home.CHINESE,)).replace(b'aria-label="Languages"', ('aria-label="'+LABELS[path]+'"').encode())
+    a, z = footer_span(path, original)
+    old = footer_block(path, home.HOMES)
+    new = footer_block(path, home.HOMES+(home.CHINESE,))
     if original[a:z] != old:
         raise ValueError('MB16 citation: old locale footer differs from explicit serializer')
     return original[:a]+new+original[z:]
@@ -59,8 +79,8 @@ def verify_delta(path, original, candidate):
 def has_old_home(path, raw):
     if path == TRAVEL:
         return all(raw.count(before.encode()) == count for before, _, count in TRAVEL_EDITS)
-    a, z = home.span(raw, b'i18n-navigation', b'footer')
-    old = home.footer(home.HOMES).replace(b'aria-label="Languages"', ('aria-label="'+LABELS[path]+'"').encode())
+    a, z = footer_span(path, raw)
+    old = footer_block(path, home.HOMES)
     return raw[a:z] == old
 
 def preimage(root, path, current):

@@ -25,7 +25,7 @@ class CitationHomeDeltas(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'outside fixed home delta'):
                     m.verify_delta(path, original, changed)
             if path != m.TRAVEL:
-                a,z=h.span(candidate,b'i18n-navigation',b'footer')
+                a,z=m.footer_span(path,candidate)
                 block=candidate[a:z]
                 for changed in (candidate+block,candidate.replace(block,b'',1),block+candidate.replace(block,b'',1),
                                 candidate.replace('简体中文'.encode(),b'Changed',1),
