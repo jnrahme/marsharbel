@@ -306,5 +306,36 @@ class SeoRegressionTests(unittest.TestCase):
         self.assertFalse([b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "Article"])
 
 
+
+
+class FaqSchemaPolicyTests(unittest.TestCase):
+    def test_no_public_faq_schema_and_replacement_types(self):
+        import json
+        import xml.etree.ElementTree as ET
+        from html.parser import HTMLParser
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[2]
+        ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
+        for node in ET.parse(root / 'sitemap.xml').iter(ns + 'loc'):
+            route = node.text.removeprefix('https://marsharbel.com/')
+            path = route + 'index.html' if not route or route.endswith('/') else route + '.html'
+            text = (root / path).read_text()
+            self.assertNotIn('"@type": "FAQPage"', text, path)
+            self.assertNotIn('"@type":"FAQPage"', text, path)
+        import sys
+        sys.path.insert(0, str(root / 'scripts'))
+        from i18n.structured_data import normalize
+        before = '<html lang="en"><head><link rel="canonical" href="https://marsharbel.com/history"><meta property="og:title" content="History"><meta name="description" content="Existing description"></head><body><p>Question? Answer.</p><script type="application/ld+json">{"@type":"FAQPage","mainEntity":[]}</script><script type="application/ld+json">{"@type":"BreadcrumbList","itemListElement":[]}</script></body></html>'
+        result = normalize('history.html', before)
+        self.assertIn('<p>Question? Answer.</p>', result)
+        self.assertNotIn('FAQPage', result)
+        self.assertIn('"@type": "Article"', result)
+        self.assertIn('"@type":"BreadcrumbList"', result)
+        self.assertEqual(normalize('history.html', result), result)
+        self.assertNotIn('datePublished', result)
+        self.assertNotIn('author', result)
+        with self.assertRaisesRegex(ValueError, 'mixed FAQ graph'):
+            normalize('history.html', before.replace('{"@type":"FAQPage","mainEntity":[]}', '{"@graph":[{"@type":"FAQPage"},{"@type":"Article"}]}'))
+
 if __name__ == "__main__":
     unittest.main()
