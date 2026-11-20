@@ -111,7 +111,14 @@ def run(record,expect_reject):
         finite=sorted({e['path'] for e in tab}|{e['file'] for e in sd['derivedPins']})
         changed=sorted(_git(d,'diff','--name-only',ch.REVIEWED_B,ch.REVIEWED_C).split('\n'))
         ok=ok and changed==finite and len(changed)==44
-        ok=ok and all(_git(d,'rev-parse',ch.REVIEWED_C+':'+f)==_git(d,'rev-parse','HEAD:'+f) for f in finite)
+        # Historical graph proof remains unchanged. Current blobs may differ
+        # only through the fixed native continuation and its actual C2 preimage.
+        from i18n import seo_continuations as sc
+        continued=sc.verify_receipt(Path(d))
+        for f in finite:
+            historical=subprocess.check_output(['git','-C',d,'show',ch.REVIEWED_C+':'+f])
+            current=(Path(d)/f).read_bytes()
+            ok=ok and ((continued[f]==historical) if f in continued else current==historical)
         record('N1 native-only hydration yields exact reviewed C2 graph',ok,'changed files: '+str(len(changed)))
 
         # N11 warm object store never masks artifact tampering (hydrated above).

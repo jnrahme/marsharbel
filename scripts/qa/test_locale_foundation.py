@@ -35,6 +35,29 @@ class FoundationTests(unittest.TestCase):
         self.assertNotIn('<loc>https://marsharbel.com/zh-Hans/</loc>', sitemap)
         self.assertNotIn('/zh-Hans/miracles/eucharistic', sitemap)
 
+    def test_partial_chinese_directory_serves_existing_entry_without_redirect(self):
+        import re
+        rules = (ROOT/'.htaccess').read_text()
+        entry = r'RewriteRule ^zh-Hans(?:/(?:index(?:\.html)?)?)?$ /zh-Hans/travel.html [END]'
+        self.assertEqual(rules.count(entry), 1)
+        self.assertLess(rules.index(entry), rules.index('# i18n-routes:start'))
+        pattern = re.compile(r'^zh-Hans(?:/(?:index(?:\.html)?)?)?$')
+        for path in ('zh-Hans', 'zh-Hans/', 'zh-Hans/index', 'zh-Hans/index.html'):
+            self.assertIsNotNone(pattern.fullmatch(path))
+        for path in ('zh-Hans/travel', 'zh-Hans/other', 'zh-Hans-extra', 'ar/'):
+            self.assertIsNone(pattern.fullmatch(path))
+        page = BeautifulSoup((ROOT/'zh-Hans/travel.html').read_text(), 'html.parser')
+        self.assertEqual(page.html['lang'], 'zh-Hans')
+        self.assertEqual(page.select_one('link[rel=canonical]')['href'],
+                         'https://marsharbel.com/zh-Hans/travel')
+        self.assertEqual(page.select_one('meta[property="og:url"]')['content'],
+                         'https://marsharbel.com/zh-Hans/travel')
+        self.assertNotIn('noindex', page.select_one('meta[name=robots]')['content'])
+        # The directory entry does not publish a new home, translate copy,
+        # change authentication or invent an additional sitemap identity.
+        self.assertNotIn('home', self.registry['locales']['zh-Hans'])
+        self.assertFalse((ROOT/'zh-Hans/index.html').exists())
+
     def test_missing_runtime_catalog_fails_closed(self):
         import shutil, tempfile
         from i18n.catalog import load_catalog as real_load_catalog

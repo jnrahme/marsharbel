@@ -25,7 +25,9 @@ class PrayerKeyedMasters(unittest.TestCase):
   import hashlib,re
   contract=read_json(ROOT/'locales/prayer-metadata-contract.json')
   for file,proof in contract['files'].items():
-   body=re.search(r'<main\b[\s\S]*?</main>',(ROOT/file).read_text())[0]
+   from i18n.seo_continuations import pinned_preimage
+   original=pinned_preimage(ROOT,file,(ROOT/file).read_bytes()).decode()
+   body=re.search(r'<main\b[\s\S]*?</main>',original)[0]
    self.assertEqual(hashlib.sha256(body.encode()).hexdigest(),proof['mainSha256'],file)
  def test_metadata_reciprocity_and_indexability(self):
   from bs4 import BeautifulSoup
