@@ -380,6 +380,17 @@ def main():
     _th.run(record,expect_reject)
     from qa import test_seo_continuations as _sc
     _sc.run_into(record)
+    # MB16 continuation controls belong to the same native citation gate.
+    # Keep the existing shard inventory unchanged, as the foundation controls
+    # above do; no new slots or silently displaced release tests.
+    import unittest
+    from qa import test_mb16_home_continuation, test_mb16_home_owners
+    from qa import test_mb16_citation_home, test_mb16_film_home
+    for module in (test_mb16_home_continuation, test_mb16_home_owners,
+                   test_mb16_citation_home, test_mb16_film_home):
+        suite=unittest.defaultTestLoader.loadTestsFromModule(module)
+        result=unittest.TextTestRunner(verbosity=1).run(suite)
+        record(module.__name__,result.wasSuccessful(),str(result.testsRun)+' controls')
 
     fails=[n for n,ok,_ in RESULTS if not ok]
     print(f'\n{len(RESULTS)-len(fails)}/{len(RESULTS)} controls pass'+('' if not fails else ' — FAILURES: '+','.join(fails)))
