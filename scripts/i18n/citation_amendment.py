@@ -15,7 +15,8 @@ _TOOL_FILES=('scripts/i18n/citation_amendment.py','scripts/i18n/reviewed_history
     'scripts/i18n/reviewed_prayers.py','scripts/i18n/reviewed_travel.py',
     'scripts/i18n/travel_variant_evidence.py','scripts/i18n/ar2_equivalence.py',
     'scripts/i18n/keyed_master.py','scripts/i18n/reviewed_travel.py',
-    'scripts/i18n/citation_history.py',
+    'scripts/i18n/citation_history.py','scripts/i18n/seo_continuations.py',
+    'scripts/i18n/exact_master.py','scripts/i18n/prayer_metadata.py',
     'locales/citation-maintenance/candidate-C2.bundle.b64')
 _RECORD_FILES=('locales/history-equivalence.json','locales/prayer-equivalence.json',
     'locales/travel-equivalence.json','locales/ar2-pairing-evidence.json')
@@ -77,7 +78,10 @@ def addendum(root,family,code,current_digest):
     if e.get('inheritedScope'):out['inheritedScope']=e['inheritedScope']
     if e.get('historicalCandidateFileSha256'):out['historicalCandidateFileSha256']=e['historicalCandidateFileSha256']
     if e.get('historicalPreparedRevision'):out['historicalPreparedRevision']=e['historicalPreparedRevision']
-    if current_digest!=e['newBodySha256']:raise ValueError('citation amendment: digest mismatch '+family+' '+code)
+    if current_digest!=_effective_candidate_body(root,e):raise ValueError('citation amendment: digest mismatch '+family+' '+code)
+    if e['file'] in prove(root).get('continuationPaths',[]):
+        out['seoContinuation']={'historicalC2BodySha256':e['newBodySha256'],
+            'currentBodySha256':current_digest,'scope':'fixed technical SEO delta only; no new content review'}
     return out
 
 def effective_body(root,family,code,old_sha):
@@ -86,7 +90,13 @@ def effective_body(root,family,code,old_sha):
     if old_sha!=e['oldBodySha256']:
         raise ValueError('citation amendment: guard-passed historical pin != sidecar historical pin '+family+' '+code)
     prove(root)
-    return e['newBodySha256']
+    return _effective_candidate_body(root,e)
+
+def _effective_candidate_body(root,e):
+    paths=prove(root).get('continuationPaths',[])
+    if e['file'] not in paths:return e['newBodySha256']
+    from i18n.reviewed_history import digest
+    return digest((Path(root)/e['file']).read_text())
 
 def effective_catalog(root,family,code,old_sha):
     e=match(root,family,code)
@@ -104,21 +114,33 @@ def current_candidate_bytes(root,family,code):
     b=_blob(root,load(root)['candidate']['commit'],e['file'])
     if b is None or _sh(root,'rev-parse',f"{load(root)['candidate']['commit']}:{e['file']}")!=e['candidateBlobSha1AtC']:
         raise ValueError('citation amendment: candidate blob unavailable/mismatch')
+    if e['file'] in prove(root).get('continuationPaths',[]):
+        return (Path(root)/e['file']).read_bytes()
     return b
 
 def ar2_addendum(root,slug,code,current_digest,current_candidate_sha):
     row=match_ar2(root,slug,code)
     if not row:return None
     prove(root)
-    if current_digest!=row['newDigest'] or current_candidate_sha!=row['newCandidateFileSha256']:
+    continued=row['file'] in prove(root).get('continuationPaths',[])
+    from i18n.reviewed_history import digest
+    raw=(Path(root)/row['file']).read_bytes() if continued else None
+    expected_digest=digest(raw.decode()) if continued else row['newDigest']
+    expected_sha=hashlib.sha256(raw).hexdigest() if continued else row['newCandidateFileSha256']
+    if current_digest!=expected_digest or current_candidate_sha!=expected_sha:
         raise ValueError('citation amendment: ar2 digest mismatch '+slug+' '+code)
     s=load(root)
     pg=s['families']['ar2']['pages'][slug]
-    return {'type':'citation-source-correction','sourceC':s['candidate']['commit'],
+    out={'type':'citation-source-correction','sourceC':s['candidate']['commit'],
             'candidateBlobSha1':row['candidateBlobSha1AtC'],'newBodySha256':row['newDigest'],
             'historicalBodySha256':row['historicalDigest'],'tableSha256':s['table']['sha256'],
             'scope':s['addendumText'],
             'inheritedScope':pg['inheritedScope'],'inheritedSourceRevision':pg['inheritedSourceRevision']}
+    if continued:
+        out['seoContinuation']={'historicalC2BodySha256':row['newDigest'],
+            'currentBodySha256':current_digest,'currentCandidateFileSha256':current_candidate_sha,
+            'scope':'fixed technical SEO delta only; no new content review'}
+    return out
 
 # ---------- full proof ----------
 def _hash_files(root,rels):
@@ -142,6 +164,8 @@ def _input_paths(s):
     # so they are proof inputs and must key the memo (warm-memo tamper control C30b).
     for e in s.get('derivedPins',[]):
         rels.append(e['file']);rels.append(e['master'])
+    from i18n.seo_continuations import ALLOWED_PATHS
+    rels.extend(ALLOWED_PATHS)
     return sorted(set(rels))
 
 def prove(root):
@@ -151,6 +175,10 @@ def prove(root):
     # tooling bytes, and the current bytes of every record/catalog/covered-content file.
     # A cached receipt is reused only when ALL of these are unchanged.
     git=_git_mode(root)
+    from i18n import seo_continuations as sc
+    receipt=Path(root)/sc.RECEIPT
+    if receipt.exists() and not git:
+        raise ValueError('citation: SEO continuation requires native git proof; export rejected')
     if git:
         # Hydrate the reviewed C2 objects (offline, hash-bound) before any object lookup,
         # so native checkouts and file:// clones that lack the unadvertised candidate
@@ -162,7 +190,8 @@ def prove(root):
          hashlib.sha256((Path(root)/SIDECAR).read_bytes()).hexdigest(),
          hashlib.sha256((Path(root)/s['table']['path']).read_bytes()).hexdigest(),
          _hash_files(root,_TOOL_FILES),
-         _hash_files(root,_input_paths(s)))
+         _hash_files(root,_input_paths(s)),
+         receipt.read_bytes() if receipt.exists() else b'<no-continuation>')
     if key in _MEMO:return _MEMO[key]
     receipts=_prove_fresh(root,s) if git else _prove_degraded(root,s)
     _MEMO[key]=receipts
@@ -270,7 +299,9 @@ def _prove_fresh(root,s):
     if _sh(root,'rev-parse',C+'^{tree}')!=s['candidate']['tree']:raise ValueError('citation: C tree mismatch')
     # W0 worktree fidelity: every proof input's disk bytes must equal its HEAD blob
     head=_sh(root,'rev-parse','HEAD')
-    for rel in [SIDECAR,table_path]+list(_TOOL_FILES)+_input_paths(s):
+    from i18n import seo_continuations as sc
+    continuation_inputs=[sc.RECEIPT] if (Path(root)/sc.RECEIPT).exists() else []
+    for rel in [SIDECAR,table_path]+list(_TOOL_FILES)+_input_paths(s)+continuation_inputs:
         disk=(Path(root)/rel).read_bytes()
         if _blob(root,head,rel)!=disk:raise ValueError('citation: worktree proof input diverges from head '+rel)
     # finite changed set
@@ -364,9 +395,19 @@ def _prove_fresh(root,s):
             if digest(cb.decode())!=row['newDigest']:raise ValueError('citation: ar2 digest not actual C bytes '+slug+' '+code)
             bb=_blob(root,B,row['file'])
             if digest(bb.decode())!=row['historicalDigest']:raise ValueError('citation: ar2 historical digest not actual B bytes '+slug+' '+code)
+    # Current state is a separate leg from immutable B-to-C2. No current
+    # full-file difference can hide behind a historical proof or refreshed hash.
+    continued=sc.verify_receipt(root)
+    for rel in sorted(tpaths | set(dfiles) | set(sc.ALLOWED_PATHS)):
+        current=(Path(root)/rel).read_bytes()
+        expected=_blob(root,C,rel)
+        if rel in continued:
+            if continued[rel]!=expected:raise ValueError('citation: continuation preimage != C2 '+rel)
+        elif current!=expected:
+            raise ValueError('citation: current finite input differs from C2 without fixed continuation '+rel)
     # historical chain execution, isolated clean B, this process once
     hist=_historical_leg(root,B)
-    return {'base':B,'candidate':C,'head':head,'tableSha256':s['table']['sha256'],'historicalLeg':hist,
+    return {'base':B,'candidate':C,'head':head,'continuationPaths':sorted(continued),'tableSha256':s['table']['sha256'],'historicalLeg':hist,
             'note':'TECHNICAL CANDIDATE PROOF ONLY - not acceptance'}
 
 # Raw-text elements and comments are masked before tag attribution; occurrences must be
