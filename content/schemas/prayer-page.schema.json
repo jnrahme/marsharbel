@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Prayer page",
+  "description": "One prayer page record. Every prayer states its purpose, how and when to pray it, its sourcing, and an honest promise status (Church-attested vs devotional tradition vs none).",
+  "type": "object",
+  "required": ["slug", "title", "path", "purpose", "source", "promiseStatus"],
+  "additionalProperties": false,
+  "properties": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "title": { "type": "string", "minLength": 1 },
+    "path": { "type": "string", "pattern": "^/" },
+    "locale": { "type": "string", "pattern": "^[a-z]{2}(-[A-Za-z]{2,5})?$" },
+    "purpose": { "type": "string", "minLength": 1 },
+    "howToPray": { "type": "string" },
+    "when": { "type": "string" },
+    "source": { "type": "string", "minLength": 1 },
+    "promiseStatus": { "enum": ["church-attested", "devotional-tradition", "none"] },
+    "promise": { "type": ["string", "null"] }
+  }
+}
