@@ -27,6 +27,20 @@ class MB16HomeContinuation(unittest.TestCase):
                 forged={'sha256':m.sha(changed)}
                 self.assertEqual(forged['sha256'],hashlib.sha256(changed).hexdigest())
                 with self.assertRaises(ValueError):m.verify_delta(path,raw,changed)
+    def test_no_delta_passthrough_is_not_outside_edit_normalization(self):
+        temp,root,git,base=self.native_fixture()
+        try:
+            path='history.html';raw=self.originals[path]
+            outside=raw.replace(b'<main',b'<main data-unreviewed="1"',1)
+            (root/path).write_bytes(outside);git('add','.');git('commit','-qm','outside fixture')
+            with patch.object(m,'BASE',base):
+                self.assertEqual(m.preimage(root,path,outside),outside)
+                self.assertNotEqual(m.sha(m.preimage(root,path,outside)),m.sha(raw))
+                mixed=m.derive(path,outside,'sorted')
+                (root/path).write_bytes(mixed)
+                with self.assertRaises(ValueError):m.preimage(root,path,mixed)
+        finally:temp.cleanup()
+
     def test_marker_and_alternate_negatives(self):
         raw=self.originals['index.html'];good=m.derive('index.html',raw,'sorted',True)
         a,z=m.span(good,b'i18n-navigation',b'footer');block=good[a:z]

@@ -70,6 +70,14 @@ def verify_delta(path, original, current):
             if current==derive(path,original,form,alternate):return original
     raise ValueError('MB16: candidate differs outside exact generated home blocks')
 
+def old_home_blocks(path, raw):
+    a,z=span(raw,b'i18n-navigation',b'footer')
+    if raw[a:z]!=footer(HOMES):return False
+    if path=='index.html':
+        a,z=span(raw,b'i18n-alternates',b'head')
+        if raw[a:z]!=alternates(HOMES):return False
+    return True
+
 def git(root,*args):
     return subprocess.check_output(['git','-C',str(root),*args],stderr=subprocess.DEVNULL)
 
@@ -99,9 +107,17 @@ def preimage(root,path,current):
         if observed!=expected:raise ValueError('MB16: registry home identities drift')
         original=git(root,'show',BASE+':'+path)
         if sha(original)!=record['paths'][path]:raise ValueError('MB16: original fixed-base hash drift')
-        # HEAD, disk and caller must each be exact legal old/new states.
-        verify_delta(path,original,git(root,'show',head+':'+path))
-        verify_delta(path,original,(root/path).read_bytes())
+        committed=git(root,'show',head+':'+path)
+        disk=(root/path).read_bytes()
+        # No MB16 change is not a proof grant. Leave every byte intact for the
+        # owning pin / independently activated continuation to judge. This does
+        # not normalize away FAQ, schema, prayer, metadata or content edits.
+        if all(old_home_blocks(path,raw) for raw in (committed,disk,current)):
+            return current
+        # Once ANY home block changes, the complete fixed-base delta must hold
+        # independently for HEAD, disk and caller. Mixed continuations fail.
+        verify_delta(path,original,committed)
+        verify_delta(path,original,disk)
         return verify_delta(path,original,current)
     except (subprocess.CalledProcessError,OSError) as error:
         raise ValueError('MB16: native proof unavailable; exports cannot qualify continued bytes') from error
