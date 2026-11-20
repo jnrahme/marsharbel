@@ -73,12 +73,12 @@ class SeoRegressionTests(unittest.TestCase):
             generator.update_file(path)
             second = path.read_text()
             self.assertEqual(first, second)
-            self.assertEqual(len(re.findall(r'"@type"\s*:\s*"FAQPage"', second)), 1)
+            self.assertEqual(len(re.findall(r'"@type"\s*:\s*"FAQPage"', second)), 0)
             generated = [json.loads(block) for block in re.findall(
                 r'<script type="application/ld\+json">([\s\S]*?)</script>', second)]
             entities = [block for graph in generated for block in graph.get("@graph", [graph])]
-            faq = next(block for block in entities if block.get("@type") == "FAQPage")
-            self.assertEqual(len(faq["mainEntity"]), 4)
+            self.assertFalse([block for block in entities if block.get("@type") == "FAQPage"])
+            self.assertEqual(len(generator.faq_pairs(second)), 4)
         finally:
             generator.ROOT = original_root
 
@@ -94,9 +94,8 @@ class SeoRegressionTests(unittest.TestCase):
                 r'<script type="application/ld\+json">([\s\S]*?)</script>', html)]
             entities = [entity for block in blocks for entity in block.get("@graph", [block])]
             faqs = [entity for entity in entities if entity.get("@type") == "FAQPage"]
-            self.assertEqual(len(faqs), 1, filename)
-            actual = [(q["name"], q["acceptedAnswer"]["text"]) for q in faqs[0]["mainEntity"]]
-            self.assertEqual(actual, generator.faq_pairs(html), filename)
+            self.assertEqual(faqs, [], filename)
+            self.assertTrue(generator.faq_pairs(html), filename)
 
     def test_repository_metadata(self):
         self.assertEqual(check(self.root)[0], [])
@@ -303,7 +302,7 @@ class SeoRegressionTests(unittest.TestCase):
         history_webpages = [b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "WebPage"]
         self.assertTrue(history_webpages)
         self.assertNotIn("mainEntity", history_webpages[0])
-        self.assertFalse([b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "Article"])
+        self.assertEqual(len([b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "Article"]), 1)
 
 
 

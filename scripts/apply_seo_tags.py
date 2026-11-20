@@ -415,19 +415,8 @@ def faq_pairs(html: str) -> list[tuple[str, str]]:
 
 
 def faq_schema(html: str) -> dict | None:
-    """FAQPage entity for pages with an FAQ section and no FAQPage block yet.
-
-    An existing FAQPage block (authored or previously generated) always wins:
-    the generator never duplicates or rewrites it."""
-    if re.search(r'"@type"\s*:\s*"FAQPage"', html):
-        return None
-    pairs = faq_pairs(html)
-    if not pairs:
-        return None
-    return {"@type": "FAQPage", "mainEntity": [
-        {"@type": "Question", "name": question,
-         "acceptedAnswer": {"@type": "Answer", "text": answer}}
-        for question, answer in pairs]}
+    """FAQ remains visible, but the site no longer emits FAQPage markup."""
+    return None
 
 
 def places_stems() -> set[str]:
@@ -633,7 +622,7 @@ def update_file(path: Path) -> bool:
     breadcrumb = breadcrumb_for(path, title) if "noindex" not in robots and not authored_breadcrumb else None
     standalone = []
     if not has_graph_page and "noindex" not in robots:
-        for block in (faq_schema(html2), tourist_schema(path, html, url, title, description, image),
+        for block in (tourist_schema(path, html, url, title, description, image),
                       person_schema(path, html, url, title, description)):
             if block:
                 standalone.append(block)
