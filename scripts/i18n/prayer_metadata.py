@@ -2,6 +2,8 @@
 import re, json, hashlib
 
 def compose_prayer_clusters(root, registry, texts, source_inputs=False):
+    from i18n.seo_continuations import continue_outputs
+    texts=continue_outputs(root,texts)
     for family in ('saint-charbel-prayers-master','saint-charbel-novena-master'):
         cfg=registry.get('pageMirrors',{}).get(family)
         if not cfg:continue

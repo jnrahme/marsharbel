@@ -355,3 +355,22 @@ def pinned_preimage(root, path, current):
     if current != (Path(root) / path).read_bytes():
         raise ValueError('continuation: caller bytes differ from verified candidate')
     return rows[path]
+
+
+def continue_outputs(root, texts):
+    """Reapply fixed operations AFTER locale metadata is composed.
+
+    Master renderers use original pinned preimages, not continued English schema.
+    This prevents an English Article headline leaking into translated output.
+    Final owning guards and stale-output checks still validate the result.
+    """
+    verified = verify_receipt(root)
+    if not verified:
+        return texts
+    rows = json.loads((Path(root) / RECEIPT).read_bytes())['files']
+    out = dict(texts)
+    for file, text in texts.items():
+        rel = Path(file).relative_to(root).as_posix()
+        if rel in verified:
+            out[file] = derive(rel, text.encode(), rows[rel]['operations']).decode()
+    return out

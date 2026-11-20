@@ -34,7 +34,7 @@ def render_exact(root, registry, lang, name, route, catalog=None):
     from i18n.seo_continuations import pinned_preimage
     current = (root/master).read_bytes()
     original = pinned_preimage(root, master.as_posix(), current)
-    source = strip_static_fallback(current)
+    source = strip_static_fallback(original)
     if hashlib.sha256(strip_static_fallback(original)).hexdigest() != catalog['masterSha256']:
         raise ValueError(f'{name}: complete master digest changed; refresh reviewed catalog')
     soup = BeautifulSoup(source, 'html.parser')

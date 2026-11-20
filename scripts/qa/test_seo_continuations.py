@@ -230,6 +230,98 @@ class NativeBinding(unittest.TestCase):
             sc.verify_receipt(self.root)
 
 
+
+class OwningGuards(unittest.TestCase):
+    """Current-leg integration only. The original wrapper runs the real
+    historical chain separately, without this test's expensive-leg fixture."""
+    def setUp(self):
+        from i18n import citation_amendment as ca
+        self.ca = ca
+        self.tmp = Path(tempfile.mkdtemp(prefix='seo-owner-guards-'))
+        subprocess.run(['git', '-C', str(ROOT), 'worktree', 'add', '--detach', str(self.tmp), 'HEAD'],
+                       check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        self.base = subprocess.check_output(['git', '-C', str(self.tmp), 'rev-parse', 'HEAD']).decode().strip()
+        self.paths = ('history.html', 'templates/masters/history-exact.html',
+                      'saint-charbel-prayers.html', 'saint-charbel-chaplet.html', 'ar/saint-charbel-chaplet.html')
+        self.before = {}; self.after = {}; rows = {}
+        for path in self.paths:
+            raw = (self.tmp / path).read_bytes()
+            ops = ['prayers-robots'] if path == 'saint-charbel-prayers.html' else ['prayers-href', 'faq-remove', 'article-add']
+            changed = sc.derive(path, raw, ops)
+            self.before[path] = raw; self.after[path] = changed
+            (self.tmp / path).write_bytes(changed)
+            rows[path] = {'beforeSha256': sc.sha(raw), 'afterSha256': sc.sha(changed), 'operations': ops}
+        (self.tmp / sc.RECEIPT).write_text(json.dumps({'version': 1, 'baseCommit': self.base, 'files': rows}))
+        subprocess.run(['git', '-C', str(self.tmp), 'add', *self.paths, sc.RECEIPT], check=True)
+        subprocess.run(['git', '-C', str(self.tmp), 'commit', '-qm', 'temporary fixed SEO integration fixture'], check=True)
+        self.history = patch.object(ca, '_historical_leg', return_value={'isolatedCurrentLegUnitFixture': True})
+        self.history.start()
+
+    def tearDown(self):
+        self.history.stop()
+        subprocess.run(['git', '-C', str(ROOT), 'worktree', 'remove', '--force', str(self.tmp)],
+                       check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    def test_effective_bodies_candidates_and_original_pin_bindings(self):
+        from i18n.reviewed_history import digest
+        proof = self.ca.prove(self.tmp)
+        self.assertEqual(set(proof['continuationPaths']), set(self.paths))
+        original = json.loads((self.tmp / 'locales/history-equivalence.json').read_text())['variants']['en']['bodySha256']
+        effective = self.ca.effective_body(self.tmp, 'history-master', 'en', original)
+        self.assertEqual(effective, digest(self.after['history.html'].decode()))
+        self.assertIn('seoContinuation', self.ca.addendum(self.tmp, 'history-master', 'en', effective))
+        self.assertEqual(self.ca.current_candidate_bytes(self.tmp, 'history-master', 'en'), self.after['history.html'])
+        with self.assertRaisesRegex(ValueError, 'historical pin'):
+            self.ca.effective_body(self.tmp, 'history-master', 'en', '0' * 64)
+        raw = self.after['ar/saint-charbel-chaplet.html']
+        add = self.ca.ar2_addendum(self.tmp, 'chaplet', 'ar', digest(raw.decode()), sc.sha(raw))
+        self.assertIn('seoContinuation', add)
+
+    def test_warm_memo_rejects_content_receipt_and_catalog_tampering(self):
+        self.ca.prove(self.tmp)
+        for path in ('history.html', sc.RECEIPT, 'locales/de/history-copy.json'):
+            file = self.tmp / path
+            if not file.exists():
+                continue
+            raw = file.read_bytes(); file.write_bytes(raw + b' ')
+            with self.assertRaises(ValueError):
+                self.ca.prove(self.tmp)
+            file.write_bytes(raw)
+        raw = (self.tmp / sc.RECEIPT).read_bytes(); (self.tmp / sc.RECEIPT).unlink()
+        with self.assertRaisesRegex(ValueError, 'without fixed continuation'):
+            self.ca.prove(self.tmp)
+        (self.tmp / sc.RECEIPT).write_bytes(raw)
+
+    def test_original_master_formulas_and_localized_final_operations(self):
+        from i18n.catalog import read_json
+        from i18n.keyed_master import apply_keyed_master, strip_static_fallback
+        from i18n.exact_master import render_exact
+        raw, _, _ = apply_keyed_master(self.tmp, 'history-master', 'en')
+        self.assertEqual(raw, strip_static_fallback(self.before['history.html']))
+        registry = read_json(self.tmp / 'locales/registry.json')
+        route = registry['exactMirrors']['biography']['routes']['de']
+        text = render_exact(self.tmp, registry, 'de', 'biography', route)
+        # No English Article is inherited from the continued master. The
+        # final operation gets the LOCALIZED output's own metadata instead.
+        self.assertIn('FAQPage', text)
+        localized = sc.derive('de/biografie.html', text.encode(), ['faq-remove', 'article-add']).decode()
+        parsed = sc.Spans(localized)
+        articles = [json.loads(localized[bs:be]) for _, _, bs, be, attrs in parsed.scripts
+                    if sc.attrs_dict(attrs).get('type') == 'application/ld+json'
+                    and json.loads(localized[bs:be]).get('@type') == 'Article']
+        self.assertEqual(len(articles), 1)
+        self.assertEqual(articles[0]['inLanguage'], 'de')
+        self.assertEqual(articles[0]['mainEntityOfPage'], 'https://marsharbel.com' + route)
+
+    def test_editable_export_with_receipt_cannot_emit_reviewed_claims(self):
+        marker = self.tmp / '.git'; original = marker.read_bytes(); marker.unlink()
+        try:
+            with self.assertRaisesRegex(ValueError, 'export rejected'):
+                self.ca.prove(self.tmp)
+        finally:
+            marker.write_bytes(original)
+
+
 def run_into(record):
     suite = unittest.defaultTestLoader.loadTestsFromModule(sys.modules[__name__])
     result = unittest.TestResult()
