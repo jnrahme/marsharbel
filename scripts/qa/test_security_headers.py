@@ -58,6 +58,31 @@ class SecurityHeaderTests(unittest.TestCase):
         self.assertIn('Header always set X-Robots-Tag "noindex, follow"', result)
         self.assertIn('Header always set Referrer-Policy "no-referrer"', result)
 
+    def test_prayer_public_page_has_no_admin_entry_link(self):
+        from bs4 import BeautifulSoup
+        for name in ('daily-prayer.html', 'src/pages/daily-prayer.html'):
+            soup = BeautifulSoup((ROOT / name).read_text(), 'html.parser')
+            self.assertFalse(any('daily-prayer-admin' in a.get('href', '')
+                                 for a in soup.select('a[href]')), name)
+
+    def test_prayer_admin_reads_require_server_moderator_guard(self):
+        files = ('202610080001_daily_prayer_subscription.sql',
+                 '202610080002_prayer_admin.sql')
+        sql = '\n'.join((ROOT / 'supabase/migrations' / name).read_text() for name in files)
+        reads = ('prayer_subscriber_stats', 'prayer_subscriber_list',
+                 'prayer_admin_controls', 'prayer_admin_issues',
+                 'prayer_admin_send_log', 'prayer_admin_audit_list')
+        for name in reads:
+            block = re.search(r'create or replace function public\.' + name +
+                              r'\([^$]*\$\$(.*?)\$\$;', sql, re.S)
+            self.assertIsNotNone(block, name)
+            self.assertIn('perform public.testimony_require_moderator();', block[1], name)
+            self.assertLess(block[1].index('testimony_require_moderator'),
+                            block[1].find('select'), name)
+        guard = (ROOT / 'supabase/migrations/202609220001_protected_testimonies.sql').read_text()
+        self.assertIn("auth.jwt()->'app_metadata'->>'role','')='moderator'", guard)
+        self.assertIn("auth.jwt()->>'aal','')='aal2'", guard)
+
     def test_supabase_cdn_integrity(self):
         for filename in ('account.html', 'submit-testimony.html', 'testimonies.html', 'testimony-review.html'):
             text = (ROOT / filename).read_text()
