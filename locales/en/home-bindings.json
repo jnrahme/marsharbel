@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "10bf6395d134006cef459ec7deaf738603b04615e6cfa77b8ddd84ab4611203c",
+  "masterSha256": "699cc37c056a561ec7ec982fdd8780841d56430afea0978b1a2fe7830f4787fd",
   "bindings": [
     {
       "key": "home.header.saint-charbel",
@@ -1240,7 +1240,7 @@
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
       "source": "Last updated: March 2, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website.",
       "kind": "text",
-      "nodeIndex": 5
+      "nodeIndex": 7
     },
     {
       "key": "home.accessibility.primary",
@@ -2086,6 +2086,13 @@
       "key": "home.saintDay.2026-11-22.sourceLabel",
       "selector": "template[data-saint-date=\"2026-11-22\"] #saint-of-the-day > p:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Feast source: Eparchy of St. Maron liturgical calendar",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.footer.daily-prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Daily prayer",
       "kind": "text",
       "nodeIndex": 0
     }
