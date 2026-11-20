@@ -1,6 +1,9 @@
 """Finite MB16 generated footer and index-only home-alternate preimages.
 
 No memo, no editable-export qualification, no pin refresh, no generic stripping.
+This is BUILD-ONLY reconstruction, not native evidence qualification. It permits
+an exact generated candidate before commit. Citation prove independently requires
+raw native HEAD == disk for every proof input before it can qualify evidence.
 Callers still compare the reconstructed bytes to their original owning pin.
 """
 import hashlib

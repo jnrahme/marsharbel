@@ -24,7 +24,24 @@ class HomeOwnerIntegration(unittest.TestCase):
          subprocess.run(['git','clone','--quiet','--shared',str(ROOT),str(T)],check=True)
          originals={p:m.git(T,'show',m.BASE+':'+p)for p in m.PATHS}
          for p,raw in originals.items():(T/p).write_bytes(m.derive(p,raw,'sorted',p=='index.html'))
-         registry=load_catalog(T)[0];ok('catalog with all seven generated footer masters + combined index')
+         # Catalog reconstruction is BUILD-ONLY while generated disk differs
+         # from HEAD. It must never qualify citation evidence in that state.
+         registry=load_catalog(T)[0];ok('build-only catalog continuation before generated commit')
+         ca._MEMO.clear()
+         try:ca.prove(T);raise AssertionError('old HEAD + new disk qualified native evidence')
+         except ValueError as error:
+          assert 'worktree proof input diverges from head' in str(error),str(error)
+          ok('native rejects old HEAD + valid new disk')
+         subprocess.run(['git','-C',str(T),'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','add','--',*sorted(m.PATHS)],check=True)
+         subprocess.run(['git','-C',str(T),'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','--quiet','-m','commit generated fixture before native proof'],check=True)
+         (T/'history.html').write_bytes(originals['history.html'])
+         ca._MEMO.clear()
+         try:ca.prove(T);raise AssertionError('new HEAD + old disk qualified native evidence')
+         except ValueError as error:
+          assert 'worktree proof input diverges from head' in str(error),str(error)
+          ok('native rejects new HEAD + valid old disk')
+         (T/'history.html').write_bytes(m.derive('history.html',originals['history.html'],'sorted'))
+         registry=load_catalog(T)[0];ok('catalog with committed seven-master generated candidate')
          for family in ('annaya-master','visit-annaya-zh-travel-master','twenty-second-master','history-master','saint-charbel-novena-master','saint-charbel-prayers-master','home'):
           apply_keyed_master(T,family,'en');ok('original keyed pin '+family)
          for code,name in [('ru','biography'),('de','novena')]:

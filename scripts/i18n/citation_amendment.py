@@ -309,8 +309,7 @@ def _prove_fresh(root,s):
     continuation_inputs=[sc.RECEIPT] if (Path(root)/sc.RECEIPT).exists() else []
     for rel in [SIDECAR,table_path]+list(_TOOL_FILES)+_input_paths(s)+continuation_inputs:
         disk=(Path(root)/rel).read_bytes()
-        from i18n.mb16_home_continuation import preimage as home_preimage
-        if home_preimage(root,rel,_blob(root,head,rel))!=home_preimage(root,rel,disk):raise ValueError('citation: worktree proof input diverges from head '+rel)
+        if _blob(root,head,rel)!=disk:raise ValueError('citation: worktree proof input diverges from head '+rel)
     # finite changed set
     tpaths={e['path'] for e in table}
     dfiles=sorted({e['file'] for e in s['derivedPins']})
