@@ -107,6 +107,7 @@ qa_step python3 -m unittest discover -s scripts/qa -p 'test_partial_locale.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_mb16_home_continuation.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_mb16_home_owners.py'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_mb16_citation_home.py'
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_mb16_film_home.py'
 qa_step python3 scripts/qa/probe_partial_build.py
 qa_step python3 scripts/qa/check_citation_amendment.py
 qa_step python3 -m unittest discover -s scripts/qa -p test_travel_metadata.py

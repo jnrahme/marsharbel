@@ -234,7 +234,12 @@ class PartialLocaleTests(unittest.TestCase):
         for cfg in self.registry['pageMirrors'].values():
             other_master=cfg.get('master')
             if other_master and (ROOT/other_master).is_file() and not (root/other_master).exists():
-                target=root/other_master;target.parent.mkdir(parents=True,exist_ok=True);target.symlink_to(ROOT/other_master)
+                # This synthetic film-capability export fixture owns no native
+                # proof context. Copy the verified pinned preimage, never a
+                # symlink to a post-generation continued production master.
+                from i18n.seo_continuations import pinned_preimage
+                original=pinned_preimage(ROOT,other_master,(ROOT/other_master).read_bytes())
+                target=root/other_master;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(original)
         return root,reader
 
     def test_exact_film_partial_grant_without_home_or_topics(self):
