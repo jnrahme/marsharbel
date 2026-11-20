@@ -8,8 +8,8 @@ records and the B-to-C2 proof must remain intact.
 
 ## What this change does
 
-- Adds three fixed operations: internal prayer anchor href replacement,
-  winner-only robots metadata, standalone FAQPage JSON-LD removal.
+- Adds four fixed operations: internal prayer anchor href replacement,
+  winner-only robots metadata, standalone FAQPage JSON-LD removal and minimal Article addition from existing metadata.
 - Restricts receipts to a literal set of 37 HTML inputs already covered by the
   citation table or its derived master inputs. Unknown paths and arbitrary
   replacement instructions are rejected.
@@ -20,7 +20,7 @@ records and the B-to-C2 proof must remain intact.
 - Binds receipt, module and affected content to native HEAD and current disk.
   Missing objects, symlinks, dirty inputs and editable exports fail closed.
 - Does not cache a proof. No stale-memo acceptance exists in this foundation.
-- Adds 23 positive and negative controls to the existing citation CI command,
+- Adds 27 positive and negative controls to the existing citation CI command,
   without adding or displacing a shard-inventory slot.
 
 No receipt is added. No page, generator, historical record, historical artifact,
@@ -61,8 +61,7 @@ that unchanged preimage. It must not replace the baseline with the first patch.
 FAQ removal only supports complete standalone FAQPage script blocks. A mixed
 JSON-LD graph is rejected, never dropped or reserialized. If a pinned mixed graph
 exists, a new exact fixed graph transform must be designed and independently
-reviewed. Article and BreadcrumbList additions are outside this operation and
-must be evaluated separately where a pinned file needs them.
+reviewed. The separate article-add operation creates a minimal Article from the existing canonical, og:title, description, language and optional og:image. It invents no dates or author and leaves an existing Article unchanged. All pinned FAQ inputs already have BreadcrumbList, so no pinned breadcrumb addition is needed. The content patch still must add breadcrumbs to the one unpinned page lacking them through its owning serializer.
 
 Prayer href replacement changes only real quoted `a[href]` values resolving to
 the three retired aliases on marsharbel.com. Text, comments, scripts, raw-text
@@ -73,9 +72,9 @@ approved value. Redirects, sitemaps and llms.txt remain owning content work.
 
 ## Verification
 
-- Direct invocation: `python3 scripts/qa/test_seo_continuations.py`, 23 tests.
+- Direct invocation: `python3 scripts/qa/test_seo_continuations.py`, 27 tests.
 - Module invocation: `python3 -m unittest scripts.qa.test_seo_continuations`,
-  the same 23 tests.
+  the same 27 tests.
 - CI wrapper: `python3 scripts/qa/check_citation_amendment.py`, calls these
   controls inside its existing slot, after the original controls.
 

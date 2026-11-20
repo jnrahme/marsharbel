@@ -89,6 +89,43 @@ class FixedDeltas(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'duplicate robots'):
             sc.derive('saint-charbel-prayers.html', b'<head><meta name="robots" content="noindex"><meta name="robots" content="index"></head>', ['prayers-robots'])
 
+    def article_fixture(self):
+        return ('<html lang="en"><head><link rel="canonical" href="https://marsharbel.com/history">'
+                '<meta property="og:title" content="History &amp; faith">'
+                '<meta name="description" content="Existing description">'
+                '<meta property="og:image" content="https://marsharbel.com/image.jpg">'
+                '</head><body><main>Visible text</main></body></html>')
+
+    def test_article_uses_only_existing_metadata_and_is_idempotent(self):
+        before = self.article_fixture()
+        after = self.verify(before, ['article-add'])
+        parsed = sc.Spans(after)
+        data = json.loads(after[parsed.scripts[0][2]:parsed.scripts[0][3]])
+        self.assertEqual(data['headline'], 'History & faith')
+        self.assertEqual(data['mainEntityOfPage'], 'https://marsharbel.com/history')
+        self.assertNotIn('datePublished', data)
+        self.assertNotIn('author', data)
+        self.assertIn('<main>Visible text</main>', after)
+        self.assertEqual(sc.derive('history.html', after.encode(), ['article-add']).decode(), after)
+
+    def test_article_missing_duplicate_or_external_metadata_rejected(self):
+        before = self.article_fixture()
+        for raw in (before.replace('<meta name="description" content="Existing description">', ''),
+                    before.replace('</head>', '<meta name="description" content="Other"></head>'),
+                    before.replace('https://marsharbel.com/history', 'https://example.test/history')):
+            with self.assertRaises(ValueError):
+                sc.derive('history.html', raw.encode(), ['article-add'])
+
+    def test_article_metadata_cannot_close_script(self):
+        before = self.article_fixture().replace('History &amp; faith', '&lt;/script&gt;&lt;script&gt;bad')
+        after = self.verify(before, ['article-add'])
+        self.assertEqual(len(sc.Spans(after).scripts), 1)
+        self.assertIn('\\u003c/script\\u003e', after)
+
+    def test_existing_article_not_replaced(self):
+        before = self.article_fixture().replace('</head>', '<script type="application/ld+json">{"@type":"Article","headline":"Existing"}</script></head>')
+        self.assertEqual(sc.derive('history.html', before.encode(), ['article-add']).decode(), before)
+
     def test_arbitrary_receipt_fields_rejected(self):
         before = b'<a href="/en/prayers">X</a>'
         after = sc.derive('history.html', before, ['prayers-href'])

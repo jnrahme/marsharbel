@@ -17,7 +17,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 
 RECEIPT = 'locales/seo-continuations.json'
 MODULE = 'scripts/i18n/seo_continuations.py'
-CLASSES = ('prayers-href', 'prayers-robots', 'faq-remove')
+CLASSES = ('prayers-href', 'prayers-robots', 'faq-remove', 'article-add')
 WINNER = '/saint-charbel-prayers'
 ROBOT_VALUE = 'index,follow,max-image-preview:large'
 # Literal finite membership, independently reviewed with this module.
@@ -81,6 +81,8 @@ class Spans(HTMLParser):
         self.text = text
         self.lines = [0]
         self.lines.extend(m.end() for m in re.finditer('\n', text))
+        self.inert = [m.span(2) for m in re.finditer(
+            r'<(script|style|textarea|title)\b[^>]*>([\s\S]*?)</\1\s*>', text, re.I)]
         self.tags = []
         self.scripts = []
         self.script_start = None
@@ -95,6 +97,8 @@ class Spans(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         start = self.source_offset()
+        if any(a <= start < b for a, b in self.inert):
+            return
         raw = self.get_starttag_text()
         row = (tag, start, start + len(raw), attrs)
         self.tags.append(row)
@@ -137,11 +141,7 @@ def attrs_dict(attrs):
 
 def prayers_href(path, text):
     edits = []
-    inert = [m.span() for m in re.finditer(
-        r'<(script|style|textarea|title)\b[^>]*>[\s\S]*?</\1\s*>', text, re.I)]
     for tag, start, end, attrs in Spans(text).tags:
-        if any(start < b and end > a for a, b in inert):
-            continue
         if tag != 'a':
             continue
         attr = attrs_dict(attrs)
@@ -205,6 +205,63 @@ def faq_remove(path, text):
     return replace_spans(text, edits)
 
 
+
+def article_add(path, text):
+    """Minimal Article from existing page metadata, no invented dates or author."""
+    parsed = Spans(text)
+    types = set()
+    for _, _, body_start, body_end, attrs in parsed.scripts:
+        if attrs_dict(attrs).get('type', '').lower() != 'application/ld+json':
+            continue
+        try:
+            data = json.loads(text[body_start:body_end])
+        except ValueError as error:
+            raise ValueError('continuation: malformed JSON-LD') from error
+        def visit(node):
+            if isinstance(node, dict):
+                kind = node.get('@type', [])
+                types.update([kind] if isinstance(kind, str) else kind)
+                for value in node.values():
+                    visit(value)
+            elif isinstance(node, list):
+                for value in node:
+                    visit(value)
+        visit(data)
+    if 'Article' in types:
+        return text
+    canonicals, titles, descriptions, languages, images, heads = [], [], [], [], [], []
+    for tag, start, end, attrs in parsed.tags:
+        a = attrs_dict(attrs)
+        if tag == 'head':
+            heads.append(start)
+        if tag == 'html' and a.get('lang'):
+            languages.append(a['lang'])
+        if tag == 'link' and 'canonical' in a.get('rel', '').split():
+            canonicals.append(a.get('href'))
+        if tag == 'meta':
+            if a.get('property') == 'og:title':
+                titles.append(a.get('content'))
+            if a.get('name') == 'description':
+                descriptions.append(a.get('content'))
+            if a.get('property') == 'og:image':
+                images.append(a.get('content'))
+    if (any(len(items) != 1 or not items[0] for items in (canonicals, titles, descriptions, languages, heads))
+            or len(images) > 1 or text.count('</head>') != 1):
+        raise ValueError('continuation: missing or ambiguous Article metadata')
+    canonical = urlsplit(canonicals[0])
+    if canonical.scheme != 'https' or canonical.netloc != 'marsharbel.com' or canonical.query or canonical.fragment:
+        raise ValueError('continuation: invalid Article canonical')
+    data = {'@context': 'https://schema.org', '@type': 'Article',
+            '@id': canonicals[0] + '#article', 'mainEntityOfPage': canonicals[0],
+            'headline': titles[0], 'description': descriptions[0], 'inLanguage': languages[0]}
+    if images:
+        data['image'] = images[0]
+    # Metadata is data, even inside a script. Escape closing-tag characters.
+    payload = json.dumps(data, ensure_ascii=False, indent=2).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
+    close = text.index('</head>')
+    return text[:close] + '<script type="application/ld+json">\n' + payload + '\n</script>\n' + text[close:]
+
+
 def derive(path, before, operations):
     safe_path(path)
     if (not isinstance(operations, list) or not operations
@@ -216,7 +273,7 @@ def derive(path, before, operations):
     text = before.decode('utf-8')
     for op in operations:
         text = {'prayers-href': prayers_href, 'prayers-robots': prayers_robots,
-                'faq-remove': faq_remove}[op](path, text)
+                'faq-remove': faq_remove, 'article-add': article_add}[op](path, text)
     return text.encode('utf-8')
 
 
