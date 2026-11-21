@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "881b43f6d148e6ff20af9ab3028a942660eef18888459e944cd494651aeb4cd0",
+  "masterSha256": "607efe77bbe781d0ab665978a0955f2f00c8e91a615d69ddad63c71c531c220a",
   "bindings": [
     {
       "key": "home.saintDay.2026-11-17.heading",
@@ -3612,6 +3612,13 @@
       "key": "home.footer.text-5-2",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(11)",
       "source": "ไทย",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.footer.daily-prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Daily prayer",
       "kind": "text",
       "nodeIndex": 0
     }
