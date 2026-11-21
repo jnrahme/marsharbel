@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "saint-charbel-medal.html",
-  "masterSha256": "6b663d34d593f6829eb33b3358e3c5318bcdfac7033138a9142c14e10144fb5f",
+  "masterSha256": "918f7eb48023418766e6dc3227991bac5433f783b7620abc785f435ddf2bf191",
   "sourceRevision": "0d651496",
   "bindings": [
     {
@@ -152,8 +152,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "saint-charbel-medal.header.children-s-books",
+      "key": "saint-charbel-medal.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

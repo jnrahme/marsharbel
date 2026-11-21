@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "testimonies.html",
-  "masterSha256": "4b8b96cbc9af72430d0492a23699a636dd51d9331f23982bc0fa3c028408cf05",
+  "masterSha256": "d913847a0e2297ee3ab93f83b32e0d7e12c5acfddbf9b0bc6d7e1c0df1658524",
   "sourceRevision": "9399bc01",
   "bindings": [
     {
@@ -131,8 +131,15 @@
       "nodeIndex": 0
     },
     {
+      "key": "testimonies.header-a-saint-of-the-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
       "key": "testimonies.header-a-children-s-books",
-      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

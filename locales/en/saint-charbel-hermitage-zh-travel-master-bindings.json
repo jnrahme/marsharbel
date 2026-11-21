@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "saint-charbel-hermitage.html",
-  "masterSha256": "bb98f6e085148ba3311d5374165faf0b1243b24aa7fc61e6b3f0fdd0dc3d3114",
+  "masterSha256": "e62a8b75ff8d9a3084c536bc0b83d5b14a4e263878555aff64a31cdda2549a40",
   "sourceRevision": "1be64cf5",
   "bindings": [
     {
@@ -152,8 +152,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "saint-charbel-hermitage.header.children-s-books",
+      "key": "saint-charbel-hermitage.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-hermitage.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

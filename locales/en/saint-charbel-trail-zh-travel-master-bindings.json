@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "saint-charbel-trail.html",
-  "masterSha256": "35233a99909a91fdf561d9b3266a3836a306dc1881bb2ae093c5ace42c743324",
+  "masterSha256": "8fd93d509bd7952f2fceb9dfee346c732f625115256669a56e3d4bc28e9d0bee",
   "sourceRevision": "1be64cf5",
   "bindings": [
     {
@@ -152,8 +152,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "saint-charbel-trail.header.children-s-books",
+      "key": "saint-charbel-trail.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-trail.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

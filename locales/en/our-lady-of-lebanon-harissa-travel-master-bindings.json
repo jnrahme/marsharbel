@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "our-lady-of-lebanon-harissa.html",
-  "masterSha256": "4a638b85457bbc2fa31791360075f97f0e5ec3c84e96b1f2c90a157776132b6a",
+  "masterSha256": "3c4e91d3d4f02cb0821352fba8b6cf7aac6a0246d41b895ef1bf3ef64bf27491",
   "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
   "bindings": [
     {
@@ -124,8 +124,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "travel.header.childrenBooks",
+      "key": "travel.header.saintOfTheDay",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.childrenBooks",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

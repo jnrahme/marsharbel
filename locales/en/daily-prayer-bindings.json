@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "daily-prayer.html",
-  "masterSha256": "22a9d5a242f513b6d3892130bffcadd3f829688ca68bb41472eef102cd8feb95",
+  "masterSha256": "4e7593f2f2b646b7f264246ad704f1880d5539bffae460d3b9422ad3cb81ff71",
   "sourceRevision": "d51852d0",
   "bindings": [
     {
@@ -152,8 +152,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "daily-prayer.header.children-s-books",
+      "key": "daily-prayer.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "daily-prayer.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

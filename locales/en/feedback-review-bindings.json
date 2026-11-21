@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "feedback-review.html",
-  "masterSha256": "a69a5a9731561f937349a9bebc0c873f3ce162d65d4e70ae0114e8df33dd29f2",
+  "masterSha256": "fdfdcf7748d6718f57ea65488985ad5187f50557b3c5c2ddc6181cd1c8922c1d",
   "sourceRevision": "38d13c38",
   "bindings": [
     {
@@ -152,8 +152,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "feedback-review.header.children-s-books",
+      "key": "feedback-review.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "feedback-review.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

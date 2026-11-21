@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "bekaa-kafra.html",
-  "masterSha256": "fdc2e9aa0b6eddc0d1d90624dcd6ceb59c51cf26f2926f292de5cf49c5aba46c",
+  "masterSha256": "8c3f480060bf107fefaea58e240f94c5c5835c3514c802dabde8d20efe1eef28",
   "sourceRevision": "1be64cf5d8172ce51770f64d9b99a0a6d9e6f7a2",
   "bindings": [
     {
@@ -124,8 +124,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "travel.header.childrenBooks",
+      "key": "travel.header.saintOfTheDay",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "travel.header.childrenBooks",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

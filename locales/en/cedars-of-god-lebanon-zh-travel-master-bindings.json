@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "cedars-of-god-lebanon.html",
-  "masterSha256": "989ea61aa8d7f9dbf7b4b7f6262a66902c3fc034fef4be13b22473cf375b9bbb",
+  "masterSha256": "2cc0ed11e2b69c74d18fe43e87cdf700fad30b6ebb0e9c5f75fdb321f3f023f6",
   "sourceRevision": "1be64cf5",
   "bindings": [
     {
@@ -152,8 +152,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "cedars-of-god-lebanon.header.children-s-books",
+      "key": "cedars-of-god-lebanon.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "cedars-of-god-lebanon.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

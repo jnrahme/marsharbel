@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "607efe77bbe781d0ab665978a0955f2f00c8e91a615d69ddad63c71c531c220a",
+  "masterSha256": "7ba4486997fb9e8dce1fa9ad1b57a30a36f7af01f2629adde2f860abfe354827",
   "bindings": [
     {
       "key": "home.saintDay.2026-11-17.heading",
@@ -1436,7 +1436,7 @@
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
       "source": "Last updated: March 2, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website.",
       "kind": "text",
-      "nodeIndex": 7
+      "nodeIndex": 9
     },
     {
       "key": "home.accessibility.primary",
@@ -1810,8 +1810,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "home.header.children-s-books",
+      "key": "home.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0
@@ -3619,6 +3626,20 @@
       "key": "home.footer.daily-prayer",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
       "source": "Daily prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.saint-of-the-day",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > nav:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.footer.saint-of-the-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
       "kind": "text",
       "nodeIndex": 0
     }

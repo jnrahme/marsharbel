@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "22nd-of-the-month.html",
-  "masterSha256": "b8d63a9640164cfc56cdb555de97a0e4952b8b37c21df33141e5fd9307e40e88",
+  "masterSha256": "1ca68f9a7ee2cef3d0547bd825d87f37c477d49dba40e2f679b961bdfdb85185",
   "sourceRevision": "c8616c9a",
   "bindings": [
     {
@@ -152,8 +152,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "twentysecond.header.children-s-books",
+      "key": "twentysecond.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "twentysecond.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

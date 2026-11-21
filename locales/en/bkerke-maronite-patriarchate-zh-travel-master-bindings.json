@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "bkerke-maronite-patriarchate.html",
-  "masterSha256": "83a6ab4f4e60a3173b2bdba5f7b107702988c5c58285513f3ada379223538ff6",
+  "masterSha256": "3c8a9b65268599ec437684fe4ba000a1fb87667c1b5e2eb327b98013064732e5",
   "sourceRevision": "1be64cf5",
   "bindings": [
     {
@@ -152,8 +152,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "bkerke-maronite-patriarchate.header.children-s-books",
+      "key": "bkerke-maronite-patriarchate.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "bkerke-maronite-patriarchate.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

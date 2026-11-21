@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "history.html",
-  "masterSha256": "14f4d6991b80d74b14d09338809b51038a86601c36cbe051ca0fe17d7bbd6fcf",
+  "masterSha256": "458dbecf64beabe440e4c9b3c9e77f2afdca192f9292f8b23b5dab8e6034f0a6",
   "sourceRevision": "817a009",
   "bindings": [
     {
@@ -89,8 +89,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "history.header.children-s-books",
+      "key": "history.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "history.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

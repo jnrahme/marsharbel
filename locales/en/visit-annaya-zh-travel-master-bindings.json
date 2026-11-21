@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "visit-annaya.html",
-  "masterSha256": "9b540329ef4fd69974761a8c8799e661c0381aeb84b0389f5e75e449657c5f2f",
+  "masterSha256": "afa59b4dfdbaf9c45f8628dd16f8657ceac4bf52d377561545777aea87d95409",
   "sourceRevision": "1be64cf5",
   "bindings": [
     {
@@ -152,8 +152,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "visit-annaya.header.children-s-books",
+      "key": "visit-annaya.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "visit-annaya.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

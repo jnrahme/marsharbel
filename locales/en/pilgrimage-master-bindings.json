@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "saint-charbel-pilgrimage.html",
-  "masterSha256": "37de0d832cf3b8e091d4b8a437c5e9686aa04f42b1cb6a5a2abc92ffca8845e0",
+  "masterSha256": "7b64957a3696b71b4d26cf85f4405d576d2a577832e64af111b4fac1be0b5a2e",
   "sourceRevision": "d99a0f11",
   "bindings": [
     {
@@ -152,8 +152,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "pilgrimage.header.children-s-books",
+      "key": "pilgrimage.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "pilgrimage.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0

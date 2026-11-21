@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "music.html",
-  "masterSha256": "61b31750022e7d31aa2e60341020c71527e6bdffa6c09caa8fbb32b9b3816c76",
+  "masterSha256": "bd421758d7a57aecf6ec8599f482ea919b5a85d0502cde5df98a612311c67326",
   "sourceRevision": "d620e8bb",
   "bindings": [
     {
@@ -152,8 +152,15 @@
       "nodeIndex": 0
     },
     {
-      "key": "music.header.children-s-books",
+      "key": "music.header.saint-of-the-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(3)",
       "source": "Children's Books",
       "kind": "text",
       "nodeIndex": 0
