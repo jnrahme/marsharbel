@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "charbel-film-premiere.html",
-  "masterSha256": "1de920cc7c4482f00c43cb4d6298a62daf14accd9233a85a9da597c5f9654226",
+  "masterSha256": "cd495bb8be123851f6fc85d636b4b9ef099c836a956dde828a2ef80af828379a",
   "bindings": [
     {
       "key": "premiere.date",
@@ -140,6 +140,20 @@
       "key": "premiere.voxSource",
       "selector": "article#charbel-premiere-release-2026-10 a[href^=\"https://lbn.voxcinemas.com\"]",
       "source": "VOX City Centre Beirut: release date and current sessions",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "film-premiere.daily-prayer.lead",
+      "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(8)",
+      "source": "After the premiere, keep Saint Charbel in the morning:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "film-premiere.daily-prayer.link",
+      "selector": "#charbel-premiere-release-2026-10 > p:nth-of-type(8) > a:nth-of-type(1)",
+      "source": "a short prayer, the day's rosary and a prayer to Saint Charbel, by email",
       "kind": "text",
       "nodeIndex": 0
     }
