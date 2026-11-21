@@ -378,6 +378,8 @@ def main():
     # measured duration honestly covers both suites (measured means measured).
     from qa import test_citation_history as _th
     _th.run(record,expect_reject)
+    from qa import test_seo_continuations as _sc
+    _sc.run_into(record)
 
     fails=[n for n,ok,_ in RESULTS if not ok]
     print(f'\n{len(RESULTS)-len(fails)}/{len(RESULTS)} controls pass'+('' if not fails else ' — FAILURES: '+','.join(fails)))

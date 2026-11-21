@@ -49,19 +49,21 @@ class ShardManifestCompleteness(unittest.TestCase):
         cls.manifest = manifest_rows()
 
     def test_runtime_expansion_shape(self):
-        # 153 slots in file order, indices dense 0..152.
+        # 155 slots in file order, indices dense 0..154.
         self.assertEqual(sorted(self.full), list(range(len(self.full))))
-        self.assertEqual(len(self.full), 153)
+        self.assertEqual(len(self.full), 155)
         # Under --skip-i18n-test exactly one slot is consumed but unexecuted,
         # and it is the i18n:test slot.
         consumed = sorted(set(self.full) - set(self.skip))
         self.assertEqual(len(consumed), 1)
         self.assertEqual(self.full[consumed[0]], 'npm run i18n:test')
-        self.assertEqual(len(self.skip), 152)
+        self.assertEqual(len(self.skip), 154)
         for command in (
             'python3 -m unittest discover -s scripts/qa -p test_film_freshness_nov11.py',
             'python3 -m unittest discover -s scripts/qa -p test_rosary_books_pairing.py',
             'node scripts/tests/same_page_rosary_books.cjs',
+            'python3 scripts/qa/check_content_schemas.py',
+            'python3 -m unittest discover -s scripts/qa -p test_content_schemas.py',
         ):
             self.assertEqual(list(self.full.values()).count(command), 1)
             self.assertEqual(list(self.skip.values()).count(command), 1)

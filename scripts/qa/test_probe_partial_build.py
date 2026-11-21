@@ -34,7 +34,9 @@ class ProbePartialBuildNegativeControls(unittest.TestCase):
         try:
             subprocess.run(['git','worktree','add','--detach',str(work),'HEAD'],cwd=REPO,check=True,capture_output=True,text=True)
             inject(work,snippet)
-            run=subprocess.run([sys.executable,'scripts/qa/probe_partial_build.py'],cwd=work,capture_output=True,text=True,timeout=900)
+            # timeout raised 900 -> 1800 on 2026-11-20: the probe's wall time grew with the site
+            # (measured 1137s for a full run after ~50 new pages); 900s predates that growth (#766).
+            run=subprocess.run([sys.executable,'scripts/qa/probe_partial_build.py'],cwd=work,capture_output=True,text=True,timeout=1800)
             self.assertNotEqual(run.returncode,0,'probe accepted a mutated synthetic render:\n'+run.stdout[-2000:])
             self.assertIn('Unexpected synthetic production diff: '+expect_file,run.stdout+run.stderr,
                           'failure did not come from the synthetic comparison for '+expect_file+':\n'+(run.stdout+run.stderr)[-2000:])

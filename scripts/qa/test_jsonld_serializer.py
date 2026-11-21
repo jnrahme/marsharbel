@@ -59,7 +59,8 @@ for (const file of readdirSync('src/pages').filter(f => f.endsWith('.html'))) {
   }
 }
 // MAR-168: the premiere page now uses the existing modified-date serializer.
-assert.equal(longTail, 36);
+// saint-of-the-day.html (archive page) adds one ld-webpage-article-modified invocation.
+assert.equal(longTail, 37);
 assert.throws(() => renderWebPageAudience([]), /needs language/);
 const audienceArgs = ['en', 'Children', '6', '12', 'n', 'd', 'u', 'Home', '/'];
 for (const ages of [['12', '6'], ['-1', '12'], ['6.5', '12'], ['6', 'NaN'], ['06', '12']]) {

@@ -590,15 +590,21 @@ class NewsMetadataTests(unittest.TestCase):
     REVISION = '2026-11-17'
     # Authored content revision and actual regenerated sitemap day are distinct.
     # Keep both exact; the sitemap generator's one-day skew is not a backdate.
-    SITEMAP_REVISION = '2026-11-17'
+    SITEMAP_REVISION = '2026-11-19'
+    # The EN page's same-page-control noscript nav lands after the AR mirror's
+    # last content rebuild, so the pair's sitemap days differ until the next
+    # shared regeneration.
+    AR_SITEMAP_REVISION = '2026-11-17'
 
-    def assert_news_metadata(self, html, lastmod):
+    def assert_news_metadata(self, html, lastmod, revision=None):
+        if revision is None:
+            revision = self.SITEMAP_REVISION
         from bs4 import BeautifulSoup
         soup = BeautifulSoup(html, 'html.parser')
         page = next(json.loads(n.string) for n in soup.select('script[type="application/ld+json"]')
                     if json.loads(n.string).get('@type') == 'WebPage')
         self.assertEqual(page['dateModified'], self.REVISION)
-        self.assertEqual(lastmod, self.SITEMAP_REVISION)
+        self.assertEqual(lastmod, revision)
         self.assertEqual(page['mainEntity']['headline'], soup.h1.get_text(' ', strip=True))
         self.assertEqual(page['mainEntity']['datePublished'], '2026-09-20')
 
@@ -607,10 +613,12 @@ class NewsMetadataTests(unittest.TestCase):
         ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
         dates = {n.find('s:loc', ns).text: n.find('s:lastmod', ns).text
                  for n in ET.parse(ROOT/'sitemap.xml').getroot()}
+        revisions = {'news.html': self.SITEMAP_REVISION,
+                     'ar/news.html': self.AR_SITEMAP_REVISION}
         for file, url in [('news.html', 'https://marsharbel.com/news'),
                           ('ar/news.html', 'https://marsharbel.com/ar/news')]:
             with self.subTest(file=file):
-                self.assert_news_metadata((ROOT/file).read_text(), dates[url])
+                self.assert_news_metadata((ROOT/file).read_text(), dates[url], revisions[file])
 
     def test_old_webpage_date_is_rejected(self):
         html = (ROOT/'news.html').read_text().replace('"dateModified": "'+self.REVISION+'"',

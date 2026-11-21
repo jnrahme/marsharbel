@@ -1,0 +1,1863 @@
+{
+ "film": "master-en-nov12-luminous",
+ "offset_intro_s": 8.92,
+ "donor_sha256": "1c9c453b50cd819e7665fe896cfbca8ab625f5ae804adee44fc58ca82d3445cd",
+ "donor_audio_interval_film": [
+  8.92,
+  1976.42
+ ],
+ "speech_end_body_s": 1967.5,
+ "credits_s": 65.285,
+ "body_end_s": 2032.785,
+ "film_total_s": 2041.705,
+ "note": "Converted 2026-11-19 from film-time-map-nov12.json (EN43 old-generation kinds) to factory kinds: creed_p1+creed_p2 merged to one CREED, dialogue_1/2 -> VR/VRR, intent_* -> INTENT, prompt_*/paired_* -> MED bead/HM, support_card -> THANKS. Timings unchanged. source_sha256 = sha256 of the inline text (luminous pack convention). Texts from luminous-body-unique-texts-v3-1.json (rstrip sha256 87d33ffd8271d677... per the EN43 map inputs pin).",
+ "events": [
+  {
+   "card": "intro.png",
+   "film_start": 0.0,
+   "film_end": 8.92,
+   "kind": "intro",
+   "source": "rosary-factory build_day (text-only, fresh)",
+   "param": null
+  },
+  {
+   "card": "c000.png",
+   "film_start": 8.92,
+   "film_end": 11.47,
+   "kind": "FAM",
+   "source_key": "luminous-announcement",
+   "text": "Today we pray the Luminous Mysteries.",
+   "source_sha256": "31ae0810052cd24eec6721e10f3136c418214028b67833e6e66a817ef657a517",
+   "param": null
+  },
+  {
+   "card": "c001.png",
+   "film_start": 11.47,
+   "film_end": 20.47,
+   "kind": "SOC",
+   "source_key": "start",
+   "text": "Let us pray together. In the name of the Father, and of the Son, and of the Holy Spirit. Amen.",
+   "source_sha256": "58d8bbab8ed4b53fe91ade2d201f0b84a9d4142237360f3a2d25a216cbdd7b41",
+   "param": null
+  },
+  {
+   "card": "c002.png",
+   "film_start": 20.47,
+   "film_end": 68.97,
+   "kind": "CREED",
+   "source_key": "apostles_creed",
+   "text": "I believe in God, the Father almighty, Creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried; he descended into hell; on the third day he rose again from the dead; he ascended into heaven, and is seated at the right hand of God the Father almighty; from there he will come to judge the living and the dead. I believe in the Holy Spirit, the holy catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.",
+   "source_sha256": "28c638d6defabf250cc018c5d859ce8bd19f9598f7818d13f9eb398854b8993b",
+   "param": null
+  },
+  {
+   "card": "c004.png",
+   "film_start": 68.97,
+   "film_end": 93.97,
+   "kind": "OF",
+   "source_key": "our_father",
+   "text": "Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.",
+   "source_sha256": "1f64f84550654ba641e70b70e5ca7006ec974a168de400696471af0c663cccb8",
+   "param": null
+  },
+  {
+   "card": "c005.png",
+   "film_start": 93.97,
+   "film_end": 96.97,
+   "kind": "INTENT",
+   "source_key": "intent_faith",
+   "text": "For an increase in faith.",
+   "source_sha256": "47db68fe93ba51879894a2432ae78ae52733093e930db7cb1d76fe612e527472",
+   "param": null
+  },
+  {
+   "card": "c006.png",
+   "film_start": 96.97,
+   "film_end": 117.97,
+   "kind": "HM",
+   "param": [
+    0,
+    1
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c007.png",
+   "film_start": 117.97,
+   "film_end": 120.47,
+   "kind": "INTENT",
+   "source_key": "intent_hope",
+   "text": "For an increase in hope.",
+   "source_sha256": "b3aed27f54c00674f21f2a495e4eed1467aaeb23889ae86df6208d04ad1756b4",
+   "param": null
+  },
+  {
+   "card": "c008.png",
+   "film_start": 120.47,
+   "film_end": 141.47,
+   "kind": "HM",
+   "param": [
+    0,
+    2
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c009.png",
+   "film_start": 141.47,
+   "film_end": 143.97,
+   "kind": "INTENT",
+   "source_key": "intent_charity",
+   "text": "For an increase in charity.",
+   "source_sha256": "13384c78135f36c261e425f012091a3bf6ff98de106c204b84a914148fd431a5",
+   "param": null
+  },
+  {
+   "card": "c010.png",
+   "film_start": 143.97,
+   "film_end": 164.97,
+   "kind": "HM",
+   "param": [
+    0,
+    3
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c011.png",
+   "film_start": 164.97,
+   "film_end": 181.15,
+   "kind": "GB",
+   "source_key": "glory_be",
+   "text": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+   "source_sha256": "cb7f862a66ec0ba3398924642483cc2bb93e8f0e73d306c305626113f9fd782b",
+   "param": null
+  },
+  {
+   "card": "c012.png",
+   "film_start": 181.15,
+   "film_end": 186.82,
+   "kind": "ANN",
+   "param": 1,
+   "source_key": "luminous_1-announcement",
+   "text": "First Luminous Mystery. The Baptism of the Lord.",
+   "source_sha256": "1c5b730ad94aa7db026922a1fc723a2b71d058d10043d55133653b0d91e25be0"
+  },
+  {
+   "card": "c013.png",
+   "film_start": 186.82,
+   "film_end": 202.97,
+   "kind": "MED",
+   "param": [
+    "intro",
+    1
+   ],
+   "source_key": "luminous_1-intro",
+   "text": "Picture Jesus coming to the Jordan to be baptized by John. As he rises from the water, the Spirit descends like a dove. The Father reveals Jesus as his beloved Son.",
+   "source_sha256": "e731cc5739022ff2d1a259583f2410ae26f5a1801c4df356f133c1adb15ee812"
+  },
+  {
+   "card": "c014.png",
+   "film_start": 202.97,
+   "film_end": 227.97,
+   "kind": "OF",
+   "param": 1,
+   "source_key": "our_father",
+   "text": "Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.",
+   "source_sha256": "1f64f84550654ba641e70b70e5ca7006ec974a168de400696471af0c663cccb8"
+  },
+  {
+   "card": "c015.png",
+   "film_start": 227.97,
+   "film_end": 234.34,
+   "kind": "MED",
+   "param": [
+    "bead",
+    1,
+    1
+   ],
+   "source_key": "luminous_1-bead-1",
+   "text": "Picture John standing in the Jordan as people come to be baptized.",
+   "source_sha256": "ae8527c732885690859d2d2771b87e24a9e8d3ff8e2e661246611812b7342382"
+  },
+  {
+   "card": "c016.png",
+   "film_start": 234.34,
+   "film_end": 254.97,
+   "kind": "HM",
+   "param": [
+    1,
+    1
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c017.png",
+   "film_start": 254.97,
+   "film_end": 261.56,
+   "kind": "MED",
+   "param": [
+    "bead",
+    1,
+    2
+   ],
+   "source_key": "luminous_1-bead-2",
+   "text": "Picture Jesus entering the river to receive baptism from John.",
+   "source_sha256": "f4e1e72786f7803462f93524ee85ebecaf09c7cd18702126dd8618b74329b053"
+  },
+  {
+   "card": "c018.png",
+   "film_start": 261.56,
+   "film_end": 281.97,
+   "kind": "HM",
+   "param": [
+    1,
+    2
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c019.png",
+   "film_start": 281.97,
+   "film_end": 286.36,
+   "kind": "MED",
+   "param": [
+    "bead",
+    1,
+    3
+   ],
+   "source_key": "luminous_1-bead-3",
+   "text": "Picture the heavens opening above Jesus.",
+   "source_sha256": "bd9f9a598906fd5de47af1bf32fa6d211938fbb970d48275489774b8266dd307"
+  },
+  {
+   "card": "c020.png",
+   "film_start": 286.36,
+   "film_end": 306.97,
+   "kind": "HM",
+   "param": [
+    1,
+    3
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c021.png",
+   "film_start": 306.97,
+   "film_end": 314.44,
+   "kind": "MED",
+   "param": [
+    "bead",
+    1,
+    4
+   ],
+   "source_key": "luminous_1-bead-4",
+   "text": "Picture Jesus hearing the Father's declaration that He is His beloved Son.",
+   "source_sha256": "3421b366c5de369d3c6dc2ab413fff1662ea2fd14d5b9e327210583d9f77a349"
+  },
+  {
+   "card": "c022.png",
+   "film_start": 314.44,
+   "film_end": 334.97,
+   "kind": "HM",
+   "param": [
+    1,
+    4
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c023.png",
+   "film_start": 334.97,
+   "film_end": 339.94,
+   "kind": "MED",
+   "param": [
+    "bead",
+    1,
+    5
+   ],
+   "source_key": "luminous_1-bead-5",
+   "text": "Picture the Spirit descending like a dove.",
+   "source_sha256": "c9e19bc7f203d131454727a7aff9e814b653df6b9a505bf44ec373d7e8273604"
+  },
+  {
+   "card": "c024.png",
+   "film_start": 339.94,
+   "film_end": 360.47,
+   "kind": "HM",
+   "param": [
+    1,
+    5
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c025.png",
+   "film_start": 360.47,
+   "film_end": 366.0,
+   "kind": "MED",
+   "param": [
+    "bead",
+    1,
+    6
+   ],
+   "source_key": "luminous_1-bead-6",
+   "text": "Picture Jesus standing in the waters of the Jordan.",
+   "source_sha256": "6e920fd4f99124afbc618889660acea51c124e5b6d03d669eabdb7f90188365f"
+  },
+  {
+   "card": "c026.png",
+   "film_start": 366.0,
+   "film_end": 386.47,
+   "kind": "HM",
+   "param": [
+    1,
+    6
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c027.png",
+   "film_start": 386.47,
+   "film_end": 391.87,
+   "kind": "MED",
+   "param": [
+    "bead",
+    1,
+    7
+   ],
+   "source_key": "luminous_1-bead-7",
+   "text": "Picture the river flowing around Jesus and John.",
+   "source_sha256": "5023f765a5820ed8ead960110bd49bba81ba8edfe35daa2dbabf8346281608b6"
+  },
+  {
+   "card": "c028.png",
+   "film_start": 391.87,
+   "film_end": 412.47,
+   "kind": "HM",
+   "param": [
+    1,
+    7
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c029.png",
+   "film_start": 412.47,
+   "film_end": 418.04,
+   "kind": "MED",
+   "param": [
+    "bead",
+    1,
+    8
+   ],
+   "source_key": "luminous_1-bead-8",
+   "text": "Picture John witnessing what God reveals at the river.",
+   "source_sha256": "974e6bc58b69d5af11015bed86ef3b31a84f8277585156204e301d98609205e9"
+  },
+  {
+   "card": "c030.png",
+   "film_start": 418.04,
+   "film_end": 438.47,
+   "kind": "HM",
+   "param": [
+    1,
+    8
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c031.png",
+   "film_start": 438.47,
+   "film_end": 443.3,
+   "kind": "MED",
+   "param": [
+    "bead",
+    1,
+    9
+   ],
+   "source_key": "luminous_1-bead-9",
+   "text": "Picture those nearby looking toward Jesus.",
+   "source_sha256": "b51d819a048615da6efa1730b1e43782449097d8f2257b9acdf86c3e160599d1"
+  },
+  {
+   "card": "c032.png",
+   "film_start": 443.3,
+   "film_end": 463.97,
+   "kind": "HM",
+   "param": [
+    1,
+    9
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c033.png",
+   "film_start": 463.97,
+   "film_end": 469.94,
+   "kind": "MED",
+   "param": [
+    "bead",
+    1,
+    10
+   ],
+   "source_key": "luminous_1-bead-10",
+   "text": "Picture Jesus leaving the river to begin His public ministry.",
+   "source_sha256": "ddf5d29bf23284f0bd69a82820ed620f8a9d9f7f7a287dd8837547b7da9911a1"
+  },
+  {
+   "card": "c034.png",
+   "film_start": 469.94,
+   "film_end": 490.47,
+   "kind": "HM",
+   "param": [
+    1,
+    10
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c035.png",
+   "film_start": 490.47,
+   "film_end": 506.26,
+   "kind": "GB",
+   "param": 1,
+   "source_key": "glory_be",
+   "text": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+   "source_sha256": "cb7f862a66ec0ba3398924642483cc2bb93e8f0e73d306c305626113f9fd782b"
+  },
+  {
+   "card": "c036.png",
+   "film_start": 506.26,
+   "film_end": 519.97,
+   "kind": "FATIMA",
+   "param": 1,
+   "source_key": "fatima",
+   "text": "O my Jesus, forgive us our sins, save us from the fires of hell; lead all souls to Heaven, especially those who have most need of your mercy.",
+   "source_sha256": "07cc60ead2e46c37fa8c52fea822225228904152d12d6ca5244b6914d63f1e82"
+  },
+  {
+   "card": "c037.png",
+   "film_start": 519.97,
+   "film_end": 525.39,
+   "kind": "ANN",
+   "param": 2,
+   "source_key": "luminous_2-announcement",
+   "text": "Second Luminous Mystery. The Wedding at Cana.",
+   "source_sha256": "b5c0e34b5c04090ed06a1cc50243fe777ffae06fda3a7bbc537c262302f53f76"
+  },
+  {
+   "card": "c038.png",
+   "film_start": 525.39,
+   "film_end": 540.47,
+   "kind": "MED",
+   "param": [
+    "intro",
+    2
+   ],
+   "source_key": "luminous_2-intro",
+   "text": "Picture the wedding feast at Cana. Mary brings the need for wine to Jesus and tells the servants to obey him. Jesus changes water into wine, and his disciples believe in him.",
+   "source_sha256": "06a55c1b3e4c3247fdc57d4d80986810402af8fd809851b85aee923fc18df8fa"
+  },
+  {
+   "card": "c039.png",
+   "film_start": 540.47,
+   "film_end": 565.47,
+   "kind": "OF",
+   "param": 2,
+   "source_key": "our_father",
+   "text": "Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.",
+   "source_sha256": "1f64f84550654ba641e70b70e5ca7006ec974a168de400696471af0c663cccb8"
+  },
+  {
+   "card": "c040.png",
+   "film_start": 565.47,
+   "film_end": 571.56,
+   "kind": "MED",
+   "param": [
+    "bead",
+    2,
+    1
+   ],
+   "source_key": "luminous_2-bead-1",
+   "text": "Picture Jesus, Mary, and the disciples at the wedding feast.",
+   "source_sha256": "91fee489bae2d99c81d9efd97e62373ca5381b318f318867eae2d7f4c73cacc1"
+  },
+  {
+   "card": "c041.png",
+   "film_start": 571.56,
+   "film_end": 592.47,
+   "kind": "HM",
+   "param": [
+    2,
+    1
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c042.png",
+   "film_start": 592.47,
+   "film_end": 597.28,
+   "kind": "MED",
+   "param": [
+    "bead",
+    2,
+    2
+   ],
+   "source_key": "luminous_2-bead-2",
+   "text": "Picture the servants realizing the wine has run out.",
+   "source_sha256": "64540ae21aea1056781b6c2ff40a45e259a8d799abcdf40cf313f8972fd662c6"
+  },
+  {
+   "card": "c043.png",
+   "film_start": 597.28,
+   "film_end": 617.97,
+   "kind": "HM",
+   "param": [
+    2,
+    2
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c044.png",
+   "film_start": 617.97,
+   "film_end": 622.92,
+   "kind": "MED",
+   "param": [
+    "bead",
+    2,
+    3
+   ],
+   "source_key": "luminous_2-bead-3",
+   "text": "Picture Mary bringing the need to Jesus.",
+   "source_sha256": "8ad62c2a105cae3ca852af10b8b91ee15113dd12f78388ae00c1dda0f97d5ef3"
+  },
+  {
+   "card": "c045.png",
+   "film_start": 622.92,
+   "film_end": 643.47,
+   "kind": "HM",
+   "param": [
+    2,
+    3
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c046.png",
+   "film_start": 643.47,
+   "film_end": 649.84,
+   "kind": "MED",
+   "param": [
+    "bead",
+    2,
+    4
+   ],
+   "source_key": "luminous_2-bead-4",
+   "text": "Picture Mary telling the servants to do whatever Jesus tells them.",
+   "source_sha256": "08b223759967413565efa4b92229d85ceec8975886fe00bf22404b766ad511f7"
+  },
+  {
+   "card": "c047.png",
+   "film_start": 649.84,
+   "film_end": 670.47,
+   "kind": "HM",
+   "param": [
+    2,
+    4
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c048.png",
+   "film_start": 670.47,
+   "film_end": 675.36,
+   "kind": "MED",
+   "param": [
+    "bead",
+    2,
+    5
+   ],
+   "source_key": "luminous_2-bead-5",
+   "text": "Picture the servants filling the stone jars with water.",
+   "source_sha256": "2a9dbef8f9b8d0c49231783e8aa39505efaf16c9efb415debd2683a8f0e770e5"
+  },
+  {
+   "card": "c049.png",
+   "film_start": 675.36,
+   "film_end": 695.97,
+   "kind": "HM",
+   "param": [
+    2,
+    5
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c050.png",
+   "film_start": 695.97,
+   "film_end": 701.35,
+   "kind": "MED",
+   "param": [
+    "bead",
+    2,
+    6
+   ],
+   "source_key": "luminous_2-bead-6",
+   "text": "Picture the servants drawing from the jars at Jesus's instruction.",
+   "source_sha256": "c7b98f3ec98682dbaeafef38e9b72443c3dfcb26cf7d33cf8cb954ec7abbc5c0"
+  },
+  {
+   "card": "c051.png",
+   "film_start": 701.35,
+   "film_end": 722.47,
+   "kind": "HM",
+   "param": [
+    2,
+    6
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c052.png",
+   "film_start": 722.47,
+   "film_end": 727.48,
+   "kind": "MED",
+   "param": [
+    "bead",
+    2,
+    7
+   ],
+   "source_key": "luminous_2-bead-7",
+   "text": "Picture the steward tasting the wine with surprise.",
+   "source_sha256": "0436523f629185d4ba2467c7a259e2736ba1c030f80eb0205ff53b98d00c3f4b"
+  },
+  {
+   "card": "c053.png",
+   "film_start": 727.48,
+   "film_end": 747.97,
+   "kind": "HM",
+   "param": [
+    2,
+    7
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c054.png",
+   "film_start": 747.97,
+   "film_end": 753.52,
+   "kind": "MED",
+   "param": [
+    "bead",
+    2,
+    8
+   ],
+   "source_key": "luminous_2-bead-8",
+   "text": "Picture the wedding guests receiving the generous gift.",
+   "source_sha256": "457141af39dcc97c22c03be0c64349d08ffad99bfd2859ce056f8de8d444fdc9"
+  },
+  {
+   "card": "c055.png",
+   "film_start": 753.52,
+   "film_end": 774.47,
+   "kind": "HM",
+   "param": [
+    2,
+    8
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c056.png",
+   "film_start": 774.47,
+   "film_end": 779.8,
+   "kind": "MED",
+   "param": [
+    "bead",
+    2,
+    9
+   ],
+   "source_key": "luminous_2-bead-9",
+   "text": "Picture the disciples watching this sign with growing faith.",
+   "source_sha256": "7bcf185d82d73e567a3894d694f580b0687fc0782955dd3c1d3f86a1647c49e3"
+  },
+  {
+   "card": "c057.png",
+   "film_start": 779.8,
+   "film_end": 800.47,
+   "kind": "HM",
+   "param": [
+    2,
+    9
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c058.png",
+   "film_start": 800.47,
+   "film_end": 806.84,
+   "kind": "MED",
+   "param": [
+    "bead",
+    2,
+    10
+   ],
+   "source_key": "luminous_2-bead-10",
+   "text": "Picture the feast continuing as the disciples remain close to Jesus.",
+   "source_sha256": "694de8fac02b986558940e9ac482e04cd566b9b7458df915887dd0ae2e0f5da3"
+  },
+  {
+   "card": "c059.png",
+   "film_start": 806.84,
+   "film_end": 827.47,
+   "kind": "HM",
+   "param": [
+    2,
+    10
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c060.png",
+   "film_start": 827.47,
+   "film_end": 843.16,
+   "kind": "GB",
+   "param": 2,
+   "source_key": "glory_be",
+   "text": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+   "source_sha256": "cb7f862a66ec0ba3398924642483cc2bb93e8f0e73d306c305626113f9fd782b"
+  },
+  {
+   "card": "c061.png",
+   "film_start": 843.16,
+   "film_end": 856.97,
+   "kind": "FATIMA",
+   "param": 2,
+   "source_key": "fatima",
+   "text": "O my Jesus, forgive us our sins, save us from the fires of hell; lead all souls to Heaven, especially those who have most need of your mercy.",
+   "source_sha256": "07cc60ead2e46c37fa8c52fea822225228904152d12d6ca5244b6914d63f1e82"
+  },
+  {
+   "card": "c062.png",
+   "film_start": 856.97,
+   "film_end": 862.49,
+   "kind": "ANN",
+   "param": 3,
+   "source_key": "luminous_3-announcement",
+   "text": "Third Luminous Mystery. Proclamation of the Kingdom.",
+   "source_sha256": "c3c1f7faea75545b266ebd44d52c854c5695aac1fa412fe423c94c1c14b4ab70"
+  },
+  {
+   "card": "c063.png",
+   "film_start": 862.49,
+   "film_end": 877.97,
+   "kind": "MED",
+   "param": [
+    "intro",
+    3
+   ],
+   "source_key": "luminous_3-intro",
+   "text": "Picture Jesus proclaiming the kingdom of God. He calls people to repentance and faith, forgives sins, and heals the sick. His mercy invites us to a new life.",
+   "source_sha256": "dd025be34ec3c624e870af8d41cd32d1a58892a2eb44d9807e19e741c6df4978"
+  },
+  {
+   "card": "c064.png",
+   "film_start": 877.97,
+   "film_end": 902.97,
+   "kind": "OF",
+   "param": 3,
+   "source_key": "our_father",
+   "text": "Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.",
+   "source_sha256": "1f64f84550654ba641e70b70e5ca7006ec974a168de400696471af0c663cccb8"
+  },
+  {
+   "card": "c065.png",
+   "film_start": 902.97,
+   "film_end": 909.46,
+   "kind": "MED",
+   "param": [
+    "bead",
+    3,
+    1
+   ],
+   "source_key": "luminous_3-bead-1",
+   "text": "Picture Jesus walking through towns and announcing God's kingdom.",
+   "source_sha256": "0d018061d025bbae4a2a2162654230f5db216f38faaf91841ab5bb45f13f0907"
+  },
+  {
+   "card": "c066.png",
+   "film_start": 909.46,
+   "film_end": 929.97,
+   "kind": "HM",
+   "param": [
+    3,
+    1
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c067.png",
+   "film_start": 929.97,
+   "film_end": 936.42,
+   "kind": "MED",
+   "param": [
+    "bead",
+    3,
+    2
+   ],
+   "source_key": "luminous_3-bead-2",
+   "text": "Picture people gathering to hear His call to repent and believe.",
+   "source_sha256": "b776b439c108ce9c7de3bd271de0ea4fc414ec43b982f9a9fafc911372ca11e1"
+  },
+  {
+   "card": "c068.png",
+   "film_start": 936.42,
+   "film_end": 956.97,
+   "kind": "HM",
+   "param": [
+    3,
+    2
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c069.png",
+   "film_start": 956.97,
+   "film_end": 963.0,
+   "kind": "MED",
+   "param": [
+    "bead",
+    3,
+    3
+   ],
+   "source_key": "luminous_3-bead-3",
+   "text": "Picture Jesus welcoming the sick and forgiving sinners.",
+   "source_sha256": "ea22e5966539a7afc8bc7b7322c69e7930b5e84e698b92669d0a7a428f1496df"
+  },
+  {
+   "card": "c070.png",
+   "film_start": 963.0,
+   "film_end": 983.47,
+   "kind": "HM",
+   "param": [
+    3,
+    3
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c071.png",
+   "film_start": 983.47,
+   "film_end": 987.98,
+   "kind": "MED",
+   "param": [
+    "bead",
+    3,
+    4
+   ],
+   "source_key": "luminous_3-bead-4",
+   "text": "Picture the crowd listening to the Beatitudes.",
+   "source_sha256": "37057a71154deeffce86344328d4ea5fc190a00dc217759458b2ff8958da4763"
+  },
+  {
+   "card": "c072.png",
+   "film_start": 987.98,
+   "film_end": 1008.47,
+   "kind": "HM",
+   "param": [
+    3,
+    4
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c073.png",
+   "film_start": 1008.47,
+   "film_end": 1014.9,
+   "kind": "MED",
+   "param": [
+    "bead",
+    3,
+    5
+   ],
+   "source_key": "luminous_3-bead-5",
+   "text": "Picture Jesus welcoming children and those others overlook.",
+   "source_sha256": "ed9592a5e5a56360ef6bcbe477d1dcce185f9b62c267d3e8ab3036f51cdbacfb"
+  },
+  {
+   "card": "c074.png",
+   "film_start": 1014.9,
+   "film_end": 1035.47,
+   "kind": "HM",
+   "param": [
+    3,
+    5
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c075.png",
+   "film_start": 1035.47,
+   "film_end": 1041.78,
+   "kind": "MED",
+   "param": [
+    "bead",
+    3,
+    6
+   ],
+   "source_key": "luminous_3-bead-6",
+   "text": "Picture Jesus teaching His listeners to love their enemies and pray for them.",
+   "source_sha256": "5ec325650dd55800168a826228b2f303d228a4e203a38bea319160cbff526cec"
+  },
+  {
+   "card": "c076.png",
+   "film_start": 1041.78,
+   "film_end": 1062.47,
+   "kind": "HM",
+   "param": [
+    3,
+    6
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c077.png",
+   "film_start": 1062.47,
+   "film_end": 1069.0,
+   "kind": "MED",
+   "param": [
+    "bead",
+    3,
+    7
+   ],
+   "source_key": "luminous_3-bead-7",
+   "text": "Picture people listening as Jesus calls them to a new way of life.",
+   "source_sha256": "87a41bc271e9aa707b3a52b7f4d9db45d9f83cc7821c75fd9a9cd13a924fbda6"
+  },
+  {
+   "card": "c078.png",
+   "film_start": 1069.0,
+   "film_end": 1089.47,
+   "kind": "HM",
+   "param": [
+    3,
+    7
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c079.png",
+   "film_start": 1089.47,
+   "film_end": 1094.82,
+   "kind": "MED",
+   "param": [
+    "bead",
+    3,
+    8
+   ],
+   "source_key": "luminous_3-bead-8",
+   "text": "Picture a listener pausing to consider Jesus's words.",
+   "source_sha256": "0c82735e41f5ad9b13c6538e56ee665f5194efa3322d2b2cbf0265166d1a1427"
+  },
+  {
+   "card": "c080.png",
+   "film_start": 1094.82,
+   "film_end": 1115.47,
+   "kind": "HM",
+   "param": [
+    3,
+    8
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c081.png",
+   "film_start": 1115.47,
+   "film_end": 1121.56,
+   "kind": "MED",
+   "param": [
+    "bead",
+    3,
+    9
+   ],
+   "source_key": "luminous_3-bead-9",
+   "text": "Picture those on the edge of the crowd drawing nearer to hear Him.",
+   "source_sha256": "02b574706c573a059519d7a31f348a660e3877d820f93be276c3f5053c8022b1"
+  },
+  {
+   "card": "c082.png",
+   "film_start": 1121.56,
+   "film_end": 1141.97,
+   "kind": "HM",
+   "param": [
+    3,
+    9
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c083.png",
+   "film_start": 1141.97,
+   "film_end": 1147.56,
+   "kind": "MED",
+   "param": [
+    "bead",
+    3,
+    10
+   ],
+   "source_key": "luminous_3-bead-10",
+   "text": "Picture Jesus continuing along the road with His disciples.",
+   "source_sha256": "b367f6ad1d53c7181e3a3307d3eb5e1c68d13cf21d6d30315c86407c8c7fa9e3"
+  },
+  {
+   "card": "c084.png",
+   "film_start": 1147.56,
+   "film_end": 1167.97,
+   "kind": "HM",
+   "param": [
+    3,
+    10
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c085.png",
+   "film_start": 1167.97,
+   "film_end": 1183.58,
+   "kind": "GB",
+   "param": 3,
+   "source_key": "glory_be",
+   "text": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+   "source_sha256": "cb7f862a66ec0ba3398924642483cc2bb93e8f0e73d306c305626113f9fd782b"
+  },
+  {
+   "card": "c086.png",
+   "film_start": 1183.58,
+   "film_end": 1197.47,
+   "kind": "FATIMA",
+   "param": 3,
+   "source_key": "fatima",
+   "text": "O my Jesus, forgive us our sins, save us from the fires of hell; lead all souls to Heaven, especially those who have most need of your mercy.",
+   "source_sha256": "07cc60ead2e46c37fa8c52fea822225228904152d12d6ca5244b6914d63f1e82"
+  },
+  {
+   "card": "c087.png",
+   "film_start": 1197.47,
+   "film_end": 1203.09,
+   "kind": "ANN",
+   "param": 4,
+   "source_key": "luminous_4-announcement",
+   "text": "Fourth Luminous Mystery. The Transfiguration.",
+   "source_sha256": "d7a7656c9b3fd053ee098a03a97e14d92ba94294a47c4c41d4a57f7077fac399"
+  },
+  {
+   "card": "c088.png",
+   "film_start": 1203.09,
+   "film_end": 1218.97,
+   "kind": "MED",
+   "param": [
+    "intro",
+    4
+   ],
+   "source_key": "luminous_4-intro",
+   "text": "Picture Jesus on the mountain with Peter, James, and John. His face shines, and Moses and Elijah appear with him. The Father calls the disciples to listen to his beloved Son.",
+   "source_sha256": "d4397df34d706e4cd7bd38bd2163ae8448593367957e32505dd671bd08e7f596"
+  },
+  {
+   "card": "c089.png",
+   "film_start": 1218.97,
+   "film_end": 1244.47,
+   "kind": "OF",
+   "param": 4,
+   "source_key": "our_father",
+   "text": "Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.",
+   "source_sha256": "1f64f84550654ba641e70b70e5ca7006ec974a168de400696471af0c663cccb8"
+  },
+  {
+   "card": "c090.png",
+   "film_start": 1244.47,
+   "film_end": 1251.32,
+   "kind": "MED",
+   "param": [
+    "bead",
+    4,
+    1
+   ],
+   "source_key": "luminous_4-bead-1",
+   "text": "Picture Jesus leading Peter, James, and John up the mountain.",
+   "source_sha256": "9713c028de633d5e4f8b0af126e778774b195177a3c48c21c0fa2a11d43d598c"
+  },
+  {
+   "card": "c091.png",
+   "film_start": 1251.32,
+   "film_end": 1271.97,
+   "kind": "HM",
+   "param": [
+    4,
+    1
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c092.png",
+   "film_start": 1271.97,
+   "film_end": 1277.54,
+   "kind": "MED",
+   "param": [
+    "bead",
+    4,
+    2
+   ],
+   "source_key": "luminous_4-bead-2",
+   "text": "Picture His face shining like the sun.",
+   "source_sha256": "5891cae404c89614e1d9d565a4f911f79f15fb4254ff6f7b41fa4780e4987083"
+  },
+  {
+   "card": "c093.png",
+   "film_start": 1277.54,
+   "film_end": 1297.97,
+   "kind": "HM",
+   "param": [
+    4,
+    2
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c094.png",
+   "film_start": 1297.97,
+   "film_end": 1302.44,
+   "kind": "MED",
+   "param": [
+    "bead",
+    4,
+    3
+   ],
+   "source_key": "luminous_4-bead-3",
+   "text": "Picture His clothes becoming white as light.",
+   "source_sha256": "664ced672fb2851b871469a5ebeedcdb7bd66ee769eafe194d66409ddc26f796"
+  },
+  {
+   "card": "c095.png",
+   "film_start": 1302.44,
+   "film_end": 1322.97,
+   "kind": "HM",
+   "param": [
+    4,
+    3
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c096.png",
+   "film_start": 1322.97,
+   "film_end": 1328.88,
+   "kind": "MED",
+   "param": [
+    "bead",
+    4,
+    4
+   ],
+   "source_key": "luminous_4-bead-4",
+   "text": "Picture Moses and Elijah beside Jesus, speaking with Him.",
+   "source_sha256": "a9f06bd442cd660ffd80e2cb6192234deb460802a011c21b8874f46feb55fd87"
+  },
+  {
+   "card": "c097.png",
+   "film_start": 1328.88,
+   "film_end": 1349.97,
+   "kind": "HM",
+   "param": [
+    4,
+    4
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c098.png",
+   "film_start": 1349.97,
+   "film_end": 1355.52,
+   "kind": "MED",
+   "param": [
+    "bead",
+    4,
+    5
+   ],
+   "source_key": "luminous_4-bead-5",
+   "text": "Picture Peter seeing this glory and wanting to stay on the mountain.",
+   "source_sha256": "a640954fdf1e9a439c06ceea341ef61173fda84efce5b192046dba80c98500df"
+  },
+  {
+   "card": "c099.png",
+   "film_start": 1355.52,
+   "film_end": 1376.47,
+   "kind": "HM",
+   "param": [
+    4,
+    5
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c100.png",
+   "film_start": 1376.47,
+   "film_end": 1382.54,
+   "kind": "MED",
+   "param": [
+    "bead",
+    4,
+    6
+   ],
+   "source_key": "luminous_4-bead-6",
+   "text": "Picture the disciples hearing the Father call them to listen to Jesus.",
+   "source_sha256": "95f3553d51389f75cea513cb361066d3091bb68bc4058735c759ff98a65bb0aa"
+  },
+  {
+   "card": "c101.png",
+   "film_start": 1382.54,
+   "film_end": 1402.97,
+   "kind": "HM",
+   "param": [
+    4,
+    6
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c102.png",
+   "film_start": 1402.97,
+   "film_end": 1407.82,
+   "kind": "MED",
+   "param": [
+    "bead",
+    4,
+    7
+   ],
+   "source_key": "luminous_4-bead-7",
+   "text": "Picture the disciples falling to the ground in awe.",
+   "source_sha256": "4a08e481c628d65a367d0d5583f75398cbd213ea3fe0f1dd4121bf6f08399b27"
+  },
+  {
+   "card": "c103.png",
+   "film_start": 1407.82,
+   "film_end": 1428.97,
+   "kind": "HM",
+   "param": [
+    4,
+    7
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c104.png",
+   "film_start": 1428.97,
+   "film_end": 1434.56,
+   "kind": "MED",
+   "param": [
+    "bead",
+    4,
+    8
+   ],
+   "source_key": "luminous_4-bead-8",
+   "text": "Picture Jesus reassuring the disciples as they rise from the ground.",
+   "source_sha256": "32b6ace4fcec353b95abaab990869631f224daa3e4593360cc84716c21126a69"
+  },
+  {
+   "card": "c105.png",
+   "film_start": 1434.56,
+   "film_end": 1455.47,
+   "kind": "HM",
+   "param": [
+    4,
+    8
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c106.png",
+   "film_start": 1455.47,
+   "film_end": 1461.32,
+   "kind": "MED",
+   "param": [
+    "bead",
+    4,
+    9
+   ],
+   "source_key": "luminous_4-bead-9",
+   "text": "Picture the disciples rising, with Jesus beside them.",
+   "source_sha256": "18c1781539e5d6052f75497f85abedde2c233f2b2ea1275f356cfd7053bfdb9e"
+  },
+  {
+   "card": "c107.png",
+   "film_start": 1461.32,
+   "film_end": 1481.97,
+   "kind": "HM",
+   "param": [
+    4,
+    9
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c108.png",
+   "film_start": 1481.97,
+   "film_end": 1489.28,
+   "kind": "MED",
+   "param": [
+    "bead",
+    4,
+    10
+   ],
+   "source_key": "luminous_4-bead-10",
+   "text": "Picture them walking down the mountain with Jesus, carrying this memory into the road ahead.",
+   "source_sha256": "654c8b7be5da94d77f7c093fedc6e3b92c881ba4b4241f6d44aca5568a19f5e4"
+  },
+  {
+   "card": "c109.png",
+   "film_start": 1489.28,
+   "film_end": 1509.97,
+   "kind": "HM",
+   "param": [
+    4,
+    10
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c110.png",
+   "film_start": 1509.97,
+   "film_end": 1525.6,
+   "kind": "GB",
+   "param": 4,
+   "source_key": "glory_be",
+   "text": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+   "source_sha256": "cb7f862a66ec0ba3398924642483cc2bb93e8f0e73d306c305626113f9fd782b"
+  },
+  {
+   "card": "c111.png",
+   "film_start": 1525.6,
+   "film_end": 1539.47,
+   "kind": "FATIMA",
+   "param": 4,
+   "source_key": "fatima",
+   "text": "O my Jesus, forgive us our sins, save us from the fires of hell; lead all souls to Heaven, especially those who have most need of your mercy.",
+   "source_sha256": "07cc60ead2e46c37fa8c52fea822225228904152d12d6ca5244b6914d63f1e82"
+  },
+  {
+   "card": "c112.png",
+   "film_start": 1539.47,
+   "film_end": 1545.8,
+   "kind": "ANN",
+   "param": 5,
+   "source_key": "luminous_5-announcement",
+   "text": "Fifth Luminous Mystery. Institution of the Eucharist.",
+   "source_sha256": "1a2028788b12033f12ca1f9563fef7bc756bd62bde4ca4081395ac6717f62f2c"
+  },
+  {
+   "card": "c113.png",
+   "film_start": 1545.8,
+   "film_end": 1560.47,
+   "kind": "MED",
+   "param": [
+    "intro",
+    5
+   ],
+   "source_key": "luminous_5-intro",
+   "text": "Picture Jesus at the Last Supper with his disciples. He gives them bread and wine as his Body and Blood. In the Eucharist, he gives the Church his abiding presence.",
+   "source_sha256": "7468e4b06d939e7137d590b04b2afb20f6795ad22f353f285493fe48ce0d4bd0"
+  },
+  {
+   "card": "c114.png",
+   "film_start": 1560.47,
+   "film_end": 1585.47,
+   "kind": "OF",
+   "param": 5,
+   "source_key": "our_father",
+   "text": "Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.",
+   "source_sha256": "1f64f84550654ba641e70b70e5ca7006ec974a168de400696471af0c663cccb8"
+  },
+  {
+   "card": "c115.png",
+   "film_start": 1585.47,
+   "film_end": 1590.54,
+   "kind": "MED",
+   "param": [
+    "bead",
+    5,
+    1
+   ],
+   "source_key": "luminous_5-bead-1",
+   "text": "Picture Jesus and the apostles gathered in the Upper Room.",
+   "source_sha256": "592e66bc0d402ec440b99f622fb8585ca6b915174bf572edf0122b6297a8d6db"
+  },
+  {
+   "card": "c116.png",
+   "film_start": 1590.54,
+   "film_end": 1611.47,
+   "kind": "HM",
+   "param": [
+    5,
+    1
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c117.png",
+   "film_start": 1611.47,
+   "film_end": 1618.9,
+   "kind": "MED",
+   "param": [
+    "bead",
+    5,
+    2
+   ],
+   "source_key": "luminous_5-bead-2",
+   "text": "Picture Jesus taking bread, blessing it, breaking it, and giving it to them.",
+   "source_sha256": "e0a259fdc79e7d751b15447b04d01254146e186f415c767ef3347561118add6e"
+  },
+  {
+   "card": "c118.png",
+   "film_start": 1618.9,
+   "film_end": 1639.47,
+   "kind": "HM",
+   "param": [
+    5,
+    2
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c119.png",
+   "film_start": 1639.47,
+   "film_end": 1646.04,
+   "kind": "MED",
+   "param": [
+    "bead",
+    5,
+    3
+   ],
+   "source_key": "luminous_5-bead-3",
+   "text": "Picture Jesus giving the bread to his disciples as his Body.",
+   "source_sha256": "4f3afb4237e3fd4b541de2b0afddc42ad0f4e6caa2a90aed98b264f9cec6dd5d"
+  },
+  {
+   "card": "c120.png",
+   "film_start": 1646.04,
+   "film_end": 1666.47,
+   "kind": "HM",
+   "param": [
+    5,
+    3
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c121.png",
+   "film_start": 1666.47,
+   "film_end": 1671.86,
+   "kind": "MED",
+   "param": [
+    "bead",
+    5,
+    4
+   ],
+   "source_key": "luminous_5-bead-4",
+   "text": "Picture Jesus taking the cup and offering it to the apostles.",
+   "source_sha256": "e684bdd32edcd75ac76f184510bc77b7523455574494a80c3ddbc50c0ebed6da"
+  },
+  {
+   "card": "c122.png",
+   "film_start": 1671.86,
+   "film_end": 1692.47,
+   "kind": "HM",
+   "param": [
+    5,
+    4
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c123.png",
+   "film_start": 1692.47,
+   "film_end": 1699.84,
+   "kind": "MED",
+   "param": [
+    "bead",
+    5,
+    5
+   ],
+   "source_key": "luminous_5-bead-5",
+   "text": "Picture the apostles listening as Jesus speaks of His Blood, poured out for many.",
+   "source_sha256": "7e2df7cf561e07edcbd861daa00e9af0532683d62d04e0deb12ab37d0bed88ad"
+  },
+  {
+   "card": "c124.png",
+   "film_start": 1699.84,
+   "film_end": 1720.97,
+   "kind": "HM",
+   "param": [
+    5,
+    5
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c125.png",
+   "film_start": 1720.97,
+   "film_end": 1725.78,
+   "kind": "MED",
+   "param": [
+    "bead",
+    5,
+    6
+   ],
+   "source_key": "luminous_5-bead-6",
+   "text": "Picture the bread and cup on the table before Jesus.",
+   "source_sha256": "44627f9e02250b63e725a65510b31b850c93ea498f6ef1a1db4c483c7958308f"
+  },
+  {
+   "card": "c126.png",
+   "film_start": 1725.78,
+   "film_end": 1746.47,
+   "kind": "HM",
+   "param": [
+    5,
+    6
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c127.png",
+   "film_start": 1746.47,
+   "film_end": 1751.34,
+   "kind": "MED",
+   "param": [
+    "bead",
+    5,
+    7
+   ],
+   "source_key": "luminous_5-bead-7",
+   "text": "Picture the apostles receiving what Jesus gives them.",
+   "source_sha256": "1204f402cf7ae6b99e080753adf19493f29023f8d939214d167a091cc2a28894"
+  },
+  {
+   "card": "c128.png",
+   "film_start": 1751.34,
+   "film_end": 1772.47,
+   "kind": "HM",
+   "param": [
+    5,
+    7
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c129.png",
+   "film_start": 1772.47,
+   "film_end": 1777.54,
+   "kind": "MED",
+   "param": [
+    "bead",
+    5,
+    8
+   ],
+   "source_key": "luminous_5-bead-8",
+   "text": "Picture Jesus serving those gathered around Him.",
+   "source_sha256": "f6f5c823b5b1e1b6979c0a5c2023fd3c3f6ce9d8bff13084dbeed26bb5e8fe34"
+  },
+  {
+   "card": "c130.png",
+   "film_start": 1777.54,
+   "film_end": 1797.97,
+   "kind": "HM",
+   "param": [
+    5,
+    8
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c131.png",
+   "film_start": 1797.97,
+   "film_end": 1802.84,
+   "kind": "MED",
+   "param": [
+    "bead",
+    5,
+    9
+   ],
+   "source_key": "luminous_5-bead-9",
+   "text": "Picture the apostles staying close to Jesus at the table.",
+   "source_sha256": "11d7226dc55f2e4ec3bd14cc26be5f54b51fcd8ab37a4a2f5e64fd1a49281559"
+  },
+  {
+   "card": "c132.png",
+   "film_start": 1802.84,
+   "film_end": 1823.97,
+   "kind": "HM",
+   "param": [
+    5,
+    9
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c133.png",
+   "film_start": 1823.97,
+   "film_end": 1830.36,
+   "kind": "MED",
+   "param": [
+    "bead",
+    5,
+    10
+   ],
+   "source_key": "luminous_5-bead-10",
+   "text": "Picture Jesus calling His disciples to remember Him in this gift.",
+   "source_sha256": "fc8a4fb98f111286753c4e6f189517c741c3d485470621e78aedc964e1776b3b"
+  },
+  {
+   "card": "c134.png",
+   "film_start": 1830.36,
+   "film_end": 1850.97,
+   "kind": "HM",
+   "param": [
+    5,
+    10
+   ],
+   "source_key": "hail_mary",
+   "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "source_sha256": "36b9fa30c76337d75536a01c76cdfe13d998d9b953ce8c975fa1ba4df46c2680"
+  },
+  {
+   "card": "c135.png",
+   "film_start": 1850.97,
+   "film_end": 1866.66,
+   "kind": "GB",
+   "param": 5,
+   "source_key": "glory_be",
+   "text": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+   "source_sha256": "cb7f862a66ec0ba3398924642483cc2bb93e8f0e73d306c305626113f9fd782b"
+  },
+  {
+   "card": "c136.png",
+   "film_start": 1866.66,
+   "film_end": 1880.47,
+   "kind": "FATIMA",
+   "param": 5,
+   "source_key": "fatima",
+   "text": "O my Jesus, forgive us our sins, save us from the fires of hell; lead all souls to Heaven, especially those who have most need of your mercy.",
+   "source_sha256": "07cc60ead2e46c37fa8c52fea822225228904152d12d6ca5244b6914d63f1e82"
+  },
+  {
+   "card": "c137.png",
+   "film_start": 1880.47,
+   "film_end": 1915.47,
+   "kind": "HHQ",
+   "source_key": "hail_holy_queen",
+   "text": "Hail, Holy Queen, Mother of mercy, our life, our sweetness, and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us, and after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary.",
+   "source_sha256": "55e800f9c6ac2ab9607586eec749b0725d134421b76237553c30e09ede1ba454",
+   "param": null
+  },
+  {
+   "card": "c138.png",
+   "film_start": 1915.47,
+   "film_end": 1919.05,
+   "kind": "VR",
+   "source_key": "dialogue_pray_for_us",
+   "text": "Pray for us, O holy Mother of God.",
+   "source_sha256": "ca1ead6378ebf319e27141713cee745b69bd60f35220849c1439d79d91e6d7ee",
+   "param": null
+  },
+  {
+   "card": "c139.png",
+   "film_start": 1919.05,
+   "film_end": 1923.97,
+   "kind": "VRR",
+   "source_key": "dialogue_worthy",
+   "text": "That we may be made worthy of the promises of Christ.",
+   "source_sha256": "67c7db160905e57f7d9f0db4dacce7d8bbf776a9b685a0964726c102fd12b42f",
+   "param": null
+  },
+  {
+   "card": "c140.png",
+   "film_start": 1923.97,
+   "film_end": 1925.97,
+   "kind": "LETPRAY",
+   "source_key": "let_us_pray",
+   "text": "Let us pray.",
+   "source_sha256": "5788e6d65d17a1c9ec5ae3c40f535736840ac79cfeee6329692fc256f44b5f54",
+   "param": null
+  },
+  {
+   "card": "c141.png",
+   "film_start": 1925.97,
+   "film_end": 1956.47,
+   "kind": "CONCL",
+   "source_key": "rosary_concluding_prayer",
+   "text": "O God, whose Only Begotten Son, by his life, Death, and Resurrection, has purchased for us the rewards of eternal life, grant, we beseech thee, that while meditating on these mysteries of the most holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen.",
+   "source_sha256": "e9c92564e9b9e3af922111bd8218d45191650962966440e57677e971af8243e8",
+   "param": null
+  },
+  {
+   "card": "c142.png",
+   "film_start": 1956.47,
+   "film_end": 1966.47,
+   "kind": "SOC",
+   "source_key": "closing",
+   "text": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen.",
+   "source_sha256": "4acafb408bdcfc950a6a53d62273068ada8d338f1cc982fc0a70240d6d385f65",
+   "param": null
+  },
+  {
+   "card": "c143.png",
+   "film_start": 1966.47,
+   "film_end": 1976.42,
+   "kind": "THANKS",
+   "source_key": "support",
+   "text": "Thank you for praying with us. Subscribe to support the channel and help us create more prayers like this.",
+   "source_sha256": "317e20cb9b79d98a837852497793298b4febe289fa254f972cd4519527e6a7c0",
+   "param": null
+  },
+  {
+   "card": "cr0.png",
+   "film_start": 1976.42,
+   "film_end": 1989.477,
+   "kind": "CREDIT",
+   "param": 0
+  },
+  {
+   "card": "cr1.png",
+   "film_start": 1989.477,
+   "film_end": 2002.534,
+   "kind": "CREDIT",
+   "param": 1
+  },
+  {
+   "card": "cr2.png",
+   "film_start": 2002.534,
+   "film_end": 2015.591,
+   "kind": "CREDIT",
+   "param": 2
+  },
+  {
+   "card": "cr3.png",
+   "film_start": 2015.591,
+   "film_end": 2028.648,
+   "kind": "CREDIT",
+   "param": 3
+  },
+  {
+   "card": "cr4.png",
+   "film_start": 2028.648,
+   "film_end": 2041.705,
+   "kind": "CREDIT",
+   "param": 4
+  }
+ ]
+}
