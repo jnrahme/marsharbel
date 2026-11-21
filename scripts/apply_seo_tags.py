@@ -507,14 +507,16 @@ def strip_old_seo(html: str) -> str:
     for p in patterns:
         html = re.sub(p, "", html, flags=re.I)
 
-    # Remove only standalone generated WebPage blocks. Preserve authored graphs,
-    # WebSite, BreadcrumbList, and other structured data.
+    # Remove only standalone generated WebPage and FAQPage blocks. Preserve
+    # authored graphs, WebSite, BreadcrumbList, and other structured data.
+    # FAQPage is dropped because the site no longer emits FAQ markup; the
+    # visible FAQ copy on the page is untouched.
     def remove_webpage(match):
         try:
             data = json.loads(match.group(1))
         except ValueError:
             return match.group(0)
-        return "" if isinstance(data, dict) and data.get("@type") == "WebPage" else match.group(0)
+        return "" if isinstance(data, dict) and data.get("@type") in ("WebPage", "FAQPage") else match.group(0)
 
     html = re.sub(r'\n\s*<script type="application/ld\+json">([\s\S]*?)</script>', remove_webpage, html, flags=re.I)
     return html
