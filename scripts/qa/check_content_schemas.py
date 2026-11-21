@@ -44,6 +44,15 @@ TYPE_CHECKS = {
 }
 
 
+def pattern_matches(pattern, value):
+    # JSON Schema pattern follows JS regex semantics; Python's "$" also matches
+    # before a trailing newline, so fully-anchored patterns must use fullmatch
+    # to reject trailing junk exactly as a JS validator would.
+    if pattern.startswith("^") and pattern.endswith("$"):
+        return re.fullmatch(pattern[1:-1], value) is not None
+    return re.search(pattern, value) is not None
+
+
 def validate(value, schema, path, errors):
     """Append human-readable violations for value against schema to errors."""
     expected = schema.get("type")
@@ -62,7 +71,7 @@ def validate(value, schema, path, errors):
         return
 
     if isinstance(value, str):
-        if "pattern" in schema and not re.search(schema["pattern"], value):
+        if "pattern" in schema and not pattern_matches(schema["pattern"], value):
             errors.append(f"{path}: {value!r} does not match pattern {schema['pattern']!r}")
         if "minLength" in schema and len(value) < schema["minLength"]:
             errors.append(f"{path}: shorter than minLength {schema['minLength']}")
