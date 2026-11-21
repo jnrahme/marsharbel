@@ -20,7 +20,7 @@ records and the B-to-C2 proof must remain intact.
 - Binds receipt, module and affected content to native HEAD and current disk.
   Missing objects, symlinks, dirty inputs and editable exports fail closed.
 - Does not cache a proof. No stale-memo acceptance exists in this foundation.
-- Adds 34 positive and negative controls to the existing citation CI command,
+- Adds 35 positive and negative controls to the existing citation CI command,
   without adding or displacing a shard-inventory slot.
 
 The foundation PR stays inactive. This dependent integration wires the owning guards but adds no receipt or content changes. Original records, artifacts and pins remain unchanged. No FAQ or prayers page change is claimed by this integration alone.
@@ -68,9 +68,9 @@ approved value. Redirects, sitemaps and llms.txt remain owning content work.
 
 ## Verification
 
-- Direct invocation: `python3 scripts/qa/test_seo_continuations.py`, 34 tests.
+- Direct invocation: `python3 scripts/qa/test_seo_continuations.py`, 35 tests.
 - Module invocation: `python3 -m unittest scripts.qa.test_seo_continuations`,
-  the same 34 tests.
+  the same 35 tests.
 - CI wrapper: `python3 scripts/qa/check_citation_amendment.py`, calls these
   controls inside its existing slot, after the original controls.
 
