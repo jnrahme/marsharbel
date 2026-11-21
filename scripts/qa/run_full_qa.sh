@@ -250,6 +250,10 @@ echo "[qa] Content layer: schema validation"
 qa_step python3 scripts/qa/check_content_schemas.py
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_content_schemas.py'
 
+echo "[qa] Content layer: rosary episodes page build"
+qa_step python3 scripts/build_rosary_episodes.py --check
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_rosary_episodes_build.py'
+
 echo "[qa] Same-page language switcher resolver (pure node, was never run in CI)"
 qa_step python3 -m unittest discover -s scripts/qa -p test_rosary_books_pairing.py
 qa_step node scripts/tests/same_page_rosary_books.cjs

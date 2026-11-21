@@ -206,6 +206,14 @@ class SchemaDocumentTests(unittest.TestCase):
         self.assertIsInstance(data.get("episodes"), list)
         self.assertGreaterEqual(len(data["episodes"]), 1)
 
+    def test_anchored_pattern_rejects_trailing_newline(self):
+        # Python's "$" matches before a trailing newline; JS (JSON Schema)
+        # semantics must not let a newline-suffixed value through.
+        self.assertTrue(gate.pattern_matches("^[A-Za-z0-9_-]{11}$", "KBLRatggtPo"))
+        self.assertFalse(gate.pattern_matches("^[A-Za-z0-9_-]{11}$", "KBLRatggtPo\n"))
+        self.assertFalse(gate.pattern_matches("^[a-z]{2}$", "en\n"))
+        self.assertTrue(gate.pattern_matches("Charbel", "Saint Charbel"))
+
 
 if __name__ == "__main__":
     unittest.main()
