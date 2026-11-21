@@ -28,7 +28,8 @@ def render_chaplet(root=ROOT):
                 *(f'steps.{i}.{part}' for i in range(1,7) for part in ('title','before','strong','after'))}
     if set(catalog) != required or any(not isinstance(v,str) or not v.strip() or '<' in v for v in catalog.values()):
         raise ValueError('Arabic chaplet catalog missing/extra/unsafe values')
-    soup = BeautifulSoup((root/'saint-charbel-chaplet.html').read_text(), 'html.parser')
+    from i18n.seo_continuations import pinned_preimage
+    soup = BeautifulSoup(pinned_preimage(root, 'saint-charbel-chaplet.html', (root/'saint-charbel-chaplet.html').read_bytes()).decode(), 'html.parser')
     skip=soup.select_one('.skip-link')
     if skip is not None: skip.string=read_json(root/'locales/ar/common.json')['navigation.skip']
     soup.html['lang']='ar';soup.html['dir']='rtl';soup.html['data-authored-mirror']='chaplet'
