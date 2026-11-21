@@ -81,7 +81,11 @@ if __name__=='__main__':
     if a.prune:
         print('Pruned expired saint units:',prune() or 'none');raise SystemExit
     path,text=output()
+    from build_saint_day_archive import output as archive_output
+    apath,atext=archive_output()
     if a.check:
         if path.read_text()!=text:raise SystemExit('Saint of the Day output stale')
-    else:path.write_text(text)
+        if apath.read_text()!=atext:raise SystemExit('Saint of the Day archive output stale')
+    else:
+        path.write_text(text);apath.write_text(atext)
     print('Saint of the Day source checked' if a.check else 'Saint of the Day source built')

@@ -1,0 +1,787 @@
+{
+ "version": 1,
+ "master": "saint-of-the-day.html",
+ "masterSha256": "456cf24edee10e2e079eedd9495c6c3064ce4a62a5df58837242fdbcc602b112",
+ "sourceRevision": "a69fd203",
+ "bindings": [
+  {
+   "key": "saintDay.metadata.title-saint-of-the-day-archive-daily-saints-readings-sources",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+   "source": "Saint of the Day Archive | Daily Saints, Readings & Sources",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.metadata.description-the-saint-of-the-day-archive-each-day-s-saint-or",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+   "source": "The Saint of the Day archive: each day's saint or commemoration from the Maronite calendar, with the Gospel reading, a short story and dated sources.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "saintDay.metadata.og-title-saint-of-the-day-archive-daily-saints-readings-sour",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+   "source": "Saint of the Day Archive | Daily Saints, Readings & Sources",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "saintDay.metadata.og-description-the-saint-of-the-day-archive-each-day-s-saint",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+   "source": "The Saint of the Day archive: each day's saint or commemoration from the Maronite calendar, with the Gospel reading, a short story and dated sources.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "saintDay.metadata.twitter-title-saint-of-the-day-archive-daily-saints-readings",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+   "source": "Saint of the Day Archive | Daily Saints, Readings & Sources",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "saintDay.metadata.twitter-description-the-saint-of-the-day-archive-each-day-s",
+   "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+   "source": "The Saint of the Day archive: each day's saint or commemoration from the Maronite calendar, with the Gospel reading, a short story and dated sources.",
+   "kind": "attribute",
+   "attribute": "content"
+  },
+  {
+   "key": "saintDay.body.skip-to-main-content",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Skip to main content",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.text",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "✦",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.saint-charbel",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+   "source": "Saint Charbel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.accessibility.primary",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+   "source": "Primary",
+   "kind": "attribute",
+   "attribute": "aria-label"
+  },
+  {
+   "key": "saintDay.header.home",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Home",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.legacy",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Legacy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.saint-charbel-encyclopedia",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Charbel Encyclopedia",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.full-history",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Full History",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.miracles",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "source": "Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.miracles-reports",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Miracles & Reports",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.eucharistic-miracles",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Eucharistic Miracles",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.letters",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Letters",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.voice-testimony",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Voice Testimony",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.saints",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.saints-2",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.children-s-books",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Children's Books",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.prayer",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+   "source": "Prayer",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.prayer-library",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Prayer Library",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.find-a-prayer-by-intention",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Find a Prayer by Intention",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.prayer-for-the-sick",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Prayer for the Sick",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.prayer-for-healing",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Prayer for Healing",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.prayer-for-anxiety",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Prayer for Anxiety",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.prayer-for-depression",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "Prayer for Depression",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.prayer-for-students",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Prayer for Students",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.prayer-for-addiction",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Prayer for Addiction",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.prayer-for-family",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Prayer for Family",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.prayer-for-pregnancy",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Prayer for Pregnancy",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.prayer-for-a-miracle",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Prayer for a Miracle",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.saint-charbel-prayers",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "Saint Charbel Prayers",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.saint-charbel-novena",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Novena",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.feast-day",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+   "source": "Feast Day",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.rosary-guide",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+   "source": "Rosary Guide",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.rosary-minibook",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+   "source": "Rosary Minibook",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.mystery-meditation",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+   "source": "Mystery Meditation",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.become-like-him",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+   "source": "Become Like Him",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.travel",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.travel",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Travel",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.visiting-annaya",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Visiting Annaya",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.annaya-online-tour",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Annaya Online Tour",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.bekaa-kafra",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "source": "Bekaa Kafra",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.our-lady-of-lebanon-at-harissa",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "source": "Our Lady of Lebanon at Harissa",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.the-cedars-of-god",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "source": "the Cedars of God",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.bkerke-and-the-maronite-patriarchate",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+   "source": "Bkerke and the Maronite Patriarchate",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.qadisha-valley",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+   "source": "Qadisha Valley",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.qannoubine-monastery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+   "source": "Qannoubine Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.qozhaya-monastery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+   "source": "Qozhaya Monastery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.saint-charbel-s-lebanon",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+   "source": "Saint Charbel's Lebanon",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.the-hermitage",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+   "source": "The Hermitage",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.saint-charbel-trail",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+   "source": "Saint Charbel Trail",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.news",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "News",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.media",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+   "source": "Media",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.music",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Music",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.video",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "source": "Video",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.header.gallery",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "source": "Gallery",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.body.daily-saint",
+   "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Daily Saint",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.saint-of-the-day.saint-of-the-day",
+   "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+   "source": "Saint of the Day",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.saint-of-the-day.each-day-s-saint-or-commemoration-with-its-reading-and-sourc",
+   "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "Each day's saint or commemoration, with its reading and sources.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.this-week-s-saints",
+   "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+   "source": "This week's saints",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.the-same-dated-cards-shown-on-the-homepage-kept-here-as-an-a",
+   "selector": "#main-content > section:nth-of-type(2) > p:nth-of-type(1)",
+   "source": "The same dated cards shown on the homepage, kept here as an archive. Dates follow the 2026 Maronite calendar; each entry links its Gospel reading and lists its sources.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.17-11-2026",
+   "selector": "#saint-day-2026-11-17 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "17.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.maronite-calendar",
+   "selector": "#saint-day-2026-11-17 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.saint-gregory-the-wonderworker",
+   "selector": "#saint-day-2026-11-17 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Gregory the Wonderworker",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.the-maronite-calendar-remembers-saint-gregory-the-wonderwork",
+   "selector": "#saint-day-2026-11-17 > p:nth-of-type(2)",
+   "source": "The Maronite calendar remembers Saint Gregory the Wonderworker on November 17. Born into a non-Christian family, Gregory encountered the Christian teacher Origen, studied with him and received baptism. He later became bishop of Neocaesarea, preaching the Gospel and guiding his community through persecution. The title Wonderworker reflects the miracles attributed to him in Christian tradition.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.read-about-saint-gregory-the-wonderworker",
+   "selector": "#saint-day-2026-11-17 > a:nth-of-type(1)",
+   "source": "Read about Saint Gregory the Wonderworker",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.18-11-2026",
+   "selector": "#saint-day-2026-11-18 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "18.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.maronite-calendar",
+   "selector": "#saint-day-2026-11-18 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.saint-romanos-the-martyr",
+   "selector": "#saint-day-2026-11-18 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Romanos the Martyr",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.the-maronite-calendar-remembers-saint-romanos-on-november-18",
+   "selector": "#saint-day-2026-11-18 > p:nth-of-type(2)",
+   "source": "The Maronite calendar remembers Saint Romanos on November 18. A deacon from Caesarea in Palestine, Romanos was living in Antioch when Christians faced persecution. He encouraged the faithful to remain steadfast and publicly confessed his faith in Christ. Arrested and imprisoned, he suffered martyrdom rather than deny that faith.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.read-about-saint-romanos-the-martyr",
+   "selector": "#saint-day-2026-11-18 > a:nth-of-type(1)",
+   "source": "Read about Saint Romanos the Martyr",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.19-11-2026",
+   "selector": "#saint-day-2026-11-19 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "19.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.maronite-calendar",
+   "selector": "#saint-day-2026-11-19 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.pope-saint-pontian",
+   "selector": "#saint-day-2026-11-19 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Pope Saint Pontian",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.the-maronite-calendar-remembers-pope-saint-pontian-on-novemb",
+   "selector": "#saint-day-2026-11-19 > p:nth-of-type(2)",
+   "source": "The Maronite calendar remembers Pope Saint Pontian on November 19. Pontian led the Church of Rome from the year 230. During persecution he was exiled to Sardinia, where he resigned his office. He died in exile in 235 and was honored in Rome as a martyr.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.read-about-pope-saint-pontian",
+   "selector": "#saint-day-2026-11-19 > a:nth-of-type(1)",
+   "source": "Read about Pope Saint Pontian",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.20-11-2026",
+   "selector": "#saint-day-2026-11-20 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "20.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.maronite-calendar",
+   "selector": "#saint-day-2026-11-20 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.saint-gregory-of-the-decapolis",
+   "selector": "#saint-day-2026-11-20 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Gregory of the Decapolis",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.the-maronite-calendar-remembers-saint-gregory-of-the-decapol",
+   "selector": "#saint-day-2026-11-20 > p:nth-of-type(2)",
+   "source": "The Maronite calendar remembers Saint Gregory of the Decapolis on November 20. Drawn to prayer and the Scriptures from his youth, Gregory became a monk and traveled through the Mediterranean world. During the struggle over holy icons, he defended their veneration and encouraged Christians who faced persecution. His life is remembered for prayer, teaching and perseverance.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.read-about-saint-gregory-of-the-decapolis",
+   "selector": "#saint-day-2026-11-20 > a:nth-of-type(1)",
+   "source": "Read about Saint Gregory of the Decapolis",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.21-11-2026",
+   "selector": "#saint-day-2026-11-21 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "21.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.maronite-calendar",
+   "selector": "#saint-day-2026-11-21 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.presentation-of-the-virgin-mary-in-the-temple",
+   "selector": "#saint-day-2026-11-21 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Presentation of the Virgin Mary in the Temple",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.the-maronite-calendar-celebrates-the-presentation-of-the-vir",
+   "selector": "#saint-day-2026-11-21 > p:nth-of-type(2)",
+   "source": "The Maronite calendar celebrates the Presentation of the Virgin Mary in the Temple on November 21. The story of Mary's childhood dedication comes from early Christian tradition, not from the canonical Gospels. The feast invites Christians to contemplate Mary's gift of herself to God and her readiness to hear and follow his word.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.read-about-presentation-of-the-virgin-mary-in-the-temple",
+   "selector": "#saint-day-2026-11-21 > a:nth-of-type(1)",
+   "source": "Read about Presentation of the Virgin Mary in the Temple",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.22-11-2026",
+   "selector": "#saint-day-2026-11-22 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "22.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.maronite-calendar",
+   "selector": "#saint-day-2026-11-22 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.announcement-to-the-virgin-mary",
+   "selector": "#saint-day-2026-11-22 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Announcement to the Virgin Mary",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.on-november-22-2026-the-maronite-calendar-celebrates-the-ann",
+   "selector": "#saint-day-2026-11-22 > p:nth-of-type(2)",
+   "source": "On November 22, 2026, the Maronite calendar celebrates the Announcement to the Virgin Mary and remembers Saints Joachim and Anne, Mary's parents. In Luke's Gospel, the angel Gabriel tells Mary that she will bear Jesus, the Son of God. Mary asks how this will happen, hears that the Holy Spirit will come upon her, and freely accepts God's word. The names Joachim and Anne come from Christian tradition, not from the canonical Gospels.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.this-week-s-saints.read-the-gospel-account-of-the-announcement-to-mary",
+   "selector": "#saint-day-2026-11-22 > a:nth-of-type(1)",
+   "source": "Read the Gospel account of the Announcement to Mary",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.editorial-standard.editorial-standard",
+   "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+   "source": "Editorial Standard",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.editorial-standard.every-entry-names-its-calendar-and-links-the-sources-behind",
+   "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+   "source": "Every entry names its calendar and links the sources behind it, including the Gospel reading. Where traditions differ on a saint's title or dates, the card says so instead of choosing silently. If a source corrects or withdraws an account, this page is updated to match.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.footer.last-updated-november-19-2026-built-for-marsharbel-com-autho",
+   "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+   "source": "Last updated: November 19, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website.",
+   "kind": "text",
+   "nodeIndex": 0
+  }
+ ],
+ "messages": {
+  "saintDay.metadata.title-saint-of-the-day-archive-daily-saints-readings-sources": "Saint of the Day Archive | Daily Saints, Readings & Sources",
+  "saintDay.metadata.description-the-saint-of-the-day-archive-each-day-s-saint-or": "The Saint of the Day archive: each day's saint or commemoration from the Maronite calendar, with the Gospel reading, a short story and dated sources.",
+  "saintDay.metadata.og-title-saint-of-the-day-archive-daily-saints-readings-sour": "Saint of the Day Archive | Daily Saints, Readings & Sources",
+  "saintDay.metadata.og-description-the-saint-of-the-day-archive-each-day-s-saint": "The Saint of the Day archive: each day's saint or commemoration from the Maronite calendar, with the Gospel reading, a short story and dated sources.",
+  "saintDay.metadata.twitter-title-saint-of-the-day-archive-daily-saints-readings": "Saint of the Day Archive | Daily Saints, Readings & Sources",
+  "saintDay.metadata.twitter-description-the-saint-of-the-day-archive-each-day-s": "The Saint of the Day archive: each day's saint or commemoration from the Maronite calendar, with the Gospel reading, a short story and dated sources.",
+  "saintDay.body.skip-to-main-content": "Skip to main content",
+  "saintDay.header.text": "✦",
+  "saintDay.header.saint-charbel": "Saint Charbel",
+  "saintDay.accessibility.primary": "Primary",
+  "saintDay.header.home": "Home",
+  "saintDay.header.legacy": "Legacy",
+  "saintDay.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+  "saintDay.header.full-history": "Full History",
+  "saintDay.header.miracles": "Miracles",
+  "saintDay.header.miracles-reports": "Miracles & Reports",
+  "saintDay.header.eucharistic-miracles": "Eucharistic Miracles",
+  "saintDay.header.letters": "Letters",
+  "saintDay.header.voice-testimony": "Voice Testimony",
+  "saintDay.header.saints": "Saints",
+  "saintDay.header.children-s-books": "Children's Books",
+  "saintDay.header.prayer": "Prayer",
+  "saintDay.header.prayer-library": "Prayer Library",
+  "saintDay.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+  "saintDay.header.prayer-for-the-sick": "Prayer for the Sick",
+  "saintDay.header.prayer-for-healing": "Prayer for Healing",
+  "saintDay.header.prayer-for-anxiety": "Prayer for Anxiety",
+  "saintDay.header.prayer-for-depression": "Prayer for Depression",
+  "saintDay.header.prayer-for-students": "Prayer for Students",
+  "saintDay.header.prayer-for-addiction": "Prayer for Addiction",
+  "saintDay.header.prayer-for-family": "Prayer for Family",
+  "saintDay.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+  "saintDay.header.prayer-for-a-miracle": "Prayer for a Miracle",
+  "saintDay.header.saint-charbel-prayers": "Saint Charbel Prayers",
+  "saintDay.header.saint-charbel-novena": "Saint Charbel Novena",
+  "saintDay.header.feast-day": "Feast Day",
+  "saintDay.header.rosary-guide": "Rosary Guide",
+  "saintDay.header.rosary-minibook": "Rosary Minibook",
+  "saintDay.header.mystery-meditation": "Mystery Meditation",
+  "saintDay.header.become-like-him": "Become Like Him",
+  "saintDay.header.travel": "Travel",
+  "saintDay.header.visiting-annaya": "Visiting Annaya",
+  "saintDay.header.annaya-online-tour": "Annaya Online Tour",
+  "saintDay.header.bekaa-kafra": "Bekaa Kafra",
+  "saintDay.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+  "saintDay.header.the-cedars-of-god": "the Cedars of God",
+  "saintDay.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+  "saintDay.header.qadisha-valley": "Qadisha Valley",
+  "saintDay.header.qannoubine-monastery": "Qannoubine Monastery",
+  "saintDay.header.qozhaya-monastery": "Qozhaya Monastery",
+  "saintDay.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+  "saintDay.header.the-hermitage": "The Hermitage",
+  "saintDay.header.saint-charbel-trail": "Saint Charbel Trail",
+  "saintDay.header.news": "News",
+  "saintDay.header.media": "Media",
+  "saintDay.header.music": "Music",
+  "saintDay.header.video": "Video",
+  "saintDay.header.gallery": "Gallery",
+  "saintDay.body.daily-saint": "Daily Saint",
+  "saintDay.saint-of-the-day.saint-of-the-day": "Saint of the Day",
+  "saintDay.saint-of-the-day.each-day-s-saint-or-commemoration-with-its-reading-and-sourc": "Each day's saint or commemoration, with its reading and sources.",
+  "saintDay.this-week-s-saints.this-week-s-saints": "This week's saints",
+  "saintDay.this-week-s-saints.the-same-dated-cards-shown-on-the-homepage-kept-here-as-an-a": "The same dated cards shown on the homepage, kept here as an archive. Dates follow the 2026 Maronite calendar; each entry links its Gospel reading and lists its sources.",
+  "saintDay.this-week-s-saints.17-11-2026": "17.11.2026",
+  "saintDay.this-week-s-saints.maronite-calendar": "Maronite calendar",
+  "saintDay.this-week-s-saints.saint-gregory-the-wonderworker": "Saint Gregory the Wonderworker",
+  "saintDay.this-week-s-saints.the-maronite-calendar-remembers-saint-gregory-the-wonderwork": "The Maronite calendar remembers Saint Gregory the Wonderworker on November 17. Born into a non-Christian family, Gregory encountered the Christian teacher Origen, studied with him and received baptism. He later became bishop of Neocaesarea, preaching the Gospel and guiding his community through persecution. The title Wonderworker reflects the miracles attributed to him in Christian tradition.",
+  "saintDay.this-week-s-saints.read-about-saint-gregory-the-wonderworker": "Read about Saint Gregory the Wonderworker",
+  "saintDay.this-week-s-saints.18-11-2026": "18.11.2026",
+  "saintDay.this-week-s-saints.saint-romanos-the-martyr": "Saint Romanos the Martyr",
+  "saintDay.this-week-s-saints.the-maronite-calendar-remembers-saint-romanos-on-november-18": "The Maronite calendar remembers Saint Romanos on November 18. A deacon from Caesarea in Palestine, Romanos was living in Antioch when Christians faced persecution. He encouraged the faithful to remain steadfast and publicly confessed his faith in Christ. Arrested and imprisoned, he suffered martyrdom rather than deny that faith.",
+  "saintDay.this-week-s-saints.read-about-saint-romanos-the-martyr": "Read about Saint Romanos the Martyr",
+  "saintDay.this-week-s-saints.19-11-2026": "19.11.2026",
+  "saintDay.this-week-s-saints.pope-saint-pontian": "Pope Saint Pontian",
+  "saintDay.this-week-s-saints.the-maronite-calendar-remembers-pope-saint-pontian-on-novemb": "The Maronite calendar remembers Pope Saint Pontian on November 19. Pontian led the Church of Rome from the year 230. During persecution he was exiled to Sardinia, where he resigned his office. He died in exile in 235 and was honored in Rome as a martyr.",
+  "saintDay.this-week-s-saints.read-about-pope-saint-pontian": "Read about Pope Saint Pontian",
+  "saintDay.this-week-s-saints.20-11-2026": "20.11.2026",
+  "saintDay.this-week-s-saints.saint-gregory-of-the-decapolis": "Saint Gregory of the Decapolis",
+  "saintDay.this-week-s-saints.the-maronite-calendar-remembers-saint-gregory-of-the-decapol": "The Maronite calendar remembers Saint Gregory of the Decapolis on November 20. Drawn to prayer and the Scriptures from his youth, Gregory became a monk and traveled through the Mediterranean world. During the struggle over holy icons, he defended their veneration and encouraged Christians who faced persecution. His life is remembered for prayer, teaching and perseverance.",
+  "saintDay.this-week-s-saints.read-about-saint-gregory-of-the-decapolis": "Read about Saint Gregory of the Decapolis",
+  "saintDay.this-week-s-saints.21-11-2026": "21.11.2026",
+  "saintDay.this-week-s-saints.presentation-of-the-virgin-mary-in-the-temple": "Presentation of the Virgin Mary in the Temple",
+  "saintDay.this-week-s-saints.the-maronite-calendar-celebrates-the-presentation-of-the-vir": "The Maronite calendar celebrates the Presentation of the Virgin Mary in the Temple on November 21. The story of Mary's childhood dedication comes from early Christian tradition, not from the canonical Gospels. The feast invites Christians to contemplate Mary's gift of herself to God and her readiness to hear and follow his word.",
+  "saintDay.this-week-s-saints.read-about-presentation-of-the-virgin-mary-in-the-temple": "Read about Presentation of the Virgin Mary in the Temple",
+  "saintDay.this-week-s-saints.22-11-2026": "22.11.2026",
+  "saintDay.this-week-s-saints.announcement-to-the-virgin-mary": "Announcement to the Virgin Mary",
+  "saintDay.this-week-s-saints.on-november-22-2026-the-maronite-calendar-celebrates-the-ann": "On November 22, 2026, the Maronite calendar celebrates the Announcement to the Virgin Mary and remembers Saints Joachim and Anne, Mary's parents. In Luke's Gospel, the angel Gabriel tells Mary that she will bear Jesus, the Son of God. Mary asks how this will happen, hears that the Holy Spirit will come upon her, and freely accepts God's word. The names Joachim and Anne come from Christian tradition, not from the canonical Gospels.",
+  "saintDay.this-week-s-saints.read-the-gospel-account-of-the-announcement-to-mary": "Read the Gospel account of the Announcement to Mary",
+  "saintDay.editorial-standard.editorial-standard": "Editorial Standard",
+  "saintDay.editorial-standard.every-entry-names-its-calendar-and-links-the-sources-behind": "Every entry names its calendar and links the sources behind it, including the Gospel reading. Where traditions differ on a saint's title or dates, the card says so instead of choosing silently. If a source corrects or withdraws an account, this page is updated to match.",
+  "saintDay.footer.last-updated-november-19-2026-built-for-marsharbel-com-autho": "Last updated: November 19, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website."
+ }
+}
