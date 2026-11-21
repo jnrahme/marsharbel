@@ -9,6 +9,12 @@ permissions:
   contents: write
   pull-requests: write
 
+# One reusable promotion PR: the branch is fixed and is moved to the current stage tip
+# on every stage push, so the open PR updates in place instead of a new PR per push.
+concurrency:
+  group: promote-stage-to-main
+  cancel-in-progress: false
+
 jobs:
   create-pr:
     runs-on: ubuntu-latest
@@ -19,20 +25,26 @@ jobs:
           ref: stage
           fetch-depth: 0
 
-      - name: Create promote branch and PR
+      - name: Create or update the single promote PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          BRANCH="promote/stage-to-main"
           if git diff --quiet origin/main...HEAD; then
             echo "Stage already matches main; no promotion PR is needed."
             exit 0
           fi
 
-          BRANCH="promote/stage-to-main-$(date +%Y%m%d-%H%M%S)"
-          git checkout -b "$BRANCH"
-          git push origin "$BRANCH"
+          git push --force origin "HEAD:refs/heads/$BRANCH"
+
+          OPEN=$(gh pr list --base main --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$OPEN" ]; then
+            echo "Promote PR #$OPEN already open; branch updated to the current stage tip."
+            exit 0
+          fi
+
           gh pr create \
             --base main \
             --head "$BRANCH" \
             --title "Promote stage → main" \
-            --body "Automated PR to sync stage into main after deployment."
+            --body "Automated PR to sync stage into main after deployment. One PR is reused; its branch tracks the stage tip."

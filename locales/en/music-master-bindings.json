@@ -1,0 +1,2455 @@
+{
+  "version": 1,
+  "master": "music.html",
+  "masterSha256": "61b31750022e7d31aa2e60341020c71527e6bdffa6c09caa8fbb32b9b3816c76",
+  "sourceRevision": "d620e8bb",
+  "bindings": [
+    {
+      "key": "music.metadata.title-saint-charbel-music-lebanese-maronite-hymns",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Saint Charbel Music: Lebanese Maronite Hymns",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.metadata.description-listen-to-authentic-lebanese-maronite-hymns-to-s",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "Listen to authentic Lebanese Maronite hymns to Saint Charbel, each credited to its source, with the official album or catalog linked where one exists.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "music.metadata.og-title-saint-charbel-music-lebanese-maronite-hymns",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Saint Charbel Music: Lebanese Maronite Hymns",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "music.metadata.og-description-listen-to-authentic-lebanese-maronite-hymns-t",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "Listen to authentic Lebanese Maronite hymns to Saint Charbel, each credited to its source, with the official album or catalog linked where one exists.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "music.metadata.twitter-title-saint-charbel-music-lebanese-maronite-hymns",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Saint Charbel Music: Lebanese Maronite Hymns",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "music.metadata.twitter-description-listen-to-authentic-lebanese-maronite-hy",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "Listen to authentic Lebanese Maronite hymns to Saint Charbel, each credited to its source, with the official album or catalog linked where one exists.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "music.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.accessibility.media",
+      "selector": "#main-content > nav:nth-of-type(1)",
+      "source": "Media",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.body.media",
+      "selector": "#main-content > nav:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.body.music",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.body.video",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.body.gallery",
+      "selector": "#main-content > nav:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.body.music",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.hymns-to-saint-charbel.hymns-to-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Hymns to Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.hymns-to-saint-charbel.the-hymns-lebanese-maronites-sing-to-saint-charbel-from-the",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "The hymns Lebanese Maronites sing to Saint Charbel, from the procession at Annaya to Majida El Roumi's album, each credited to its source.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.songs-and-hymns",
+      "selector": "#songs-heading",
+      "source": "Songs and Hymns",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.authentic-lebanese-and-maronite-hymns-to-saint-charbel-tap-a",
+      "selector": "#songs > p:nth-of-type(1)",
+      "source": "Authentic Lebanese and Maronite hymns to Saint Charbel. Tap a track to play it, and the next one follows on its own. Where a recording is a fan upload rather than the artist's own, the credit says so and links the official source.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.saint-charbel-hymn-player",
+      "selector": "#playlist-player",
+      "source": "Saint Charbel hymn player",
+      "kind": "attribute",
+      "attribute": "title"
+    },
+    {
+      "key": "music.songs-and-hymns.now-playing",
+      "selector": "#songs > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "Now playing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text",
+      "selector": "#songs > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > h3:nth-of-type(1)",
+      "source": "يا غافي وعيونك",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ya-ghafi-w-3younak",
+      "selector": "#songs > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2)",
+      "source": "Ya Ghafi w 3younak",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.majida-el-roumi",
+      "selector": "#songs > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(3)",
+      "source": "Majida El Roumi,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.taranim-majidah-official-album",
+      "selector": "#songs > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Taranim Majidah (official album)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.video-via-youtube-bshara-shammas",
+      "selector": "#songs > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(3)",
+      "source": ". Video via YouTube (Bshara Shammas).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.songs-and-hymns.alternate-version-st-ephrem",
+      "selector": "#songs > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(3) > a:nth-of-type(2)",
+      "source": "Alternate version (St Ephrem)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-2",
+      "selector": "#songs > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(3)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "music.songs-and-hymns.previous",
+      "selector": "#songs > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(5) > button:nth-of-type(1)",
+      "source": "Previous",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.next",
+      "selector": "#songs > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(5) > button:nth-of-type(2)",
+      "source": "Next",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.open-on-youtube",
+      "selector": "#songs > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Open on YouTube",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.accessibility.playlist",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1)",
+      "source": "Playlist",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.accessibility.play-ya-ghafi-w-3younak",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > button:nth-of-type(1)",
+      "source": "Play Ya Ghafi w 3younak",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.1",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "1",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "يا غافي وعيونك",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ya-ghafi-w-3younak",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Ya Ghafi w 3younak",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.majida-el-roumi",
+      "selector": "#credit-HCjH5gaB3qI",
+      "source": "Majida El Roumi,",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.taranim-majidah-official-album",
+      "selector": "#credit-HCjH5gaB3qI > a:nth-of-type(1)",
+      "source": "Taranim Majidah (official album)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.video-via-youtube-bshara-shammas",
+      "selector": "#credit-HCjH5gaB3qI",
+      "source": ". Video via YouTube (Bshara Shammas).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.songs-and-hymns.alternate-version-st-ephrem",
+      "selector": "#credit-HCjH5gaB3qI > a:nth-of-type(2)",
+      "source": "Alternate version (St Ephrem)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-2",
+      "selector": "#credit-HCjH5gaB3qI",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "music.accessibility.play-ziyyah-al-qiddis-charbel",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2) > button:nth-of-type(1)",
+      "source": "Play Ziyyah al-Qiddis Charbel",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.2",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "2",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-3",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "زيّاح القديس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ziyyah-al-qiddis-charbel",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Ziyyah al-Qiddis Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.words-fr-raphael-matar-old-maronite-melody",
+      "selector": "#credit-YPX4nvSXdWE",
+      "source": "Words Fr Raphael Matar, old Maronite melody (",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-hymn-catalog",
+      "selector": "#credit-YPX4nvSXdWE > a:nth-of-type(1)",
+      "source": "Lebanese Maronite Order hymn catalog",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.video-via-youtube-sylvia-sass",
+      "selector": "#credit-YPX4nvSXdWE",
+      "source": "). Video via YouTube (Sylvia Sass).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-st-charbel-video-and-song",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3) > button:nth-of-type(1)",
+      "source": "Play St Charbel video and song",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.3",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "3",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-4",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "أغنية وفيديو القديس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.st-charbel-video-and-song",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "St Charbel video and song",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.shrine-channel",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3) > button:nth-of-type(1) > span:nth-of-type(4)",
+      "source": "Shrine channel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.from-the-official-channel-of-the-st-charbel-shrine-saintchar",
+      "selector": "#credit-yViee7O5i6g",
+      "source": "From the official channel of the St Charbel shrine (saintcharbel.net.au), Australia. Video via YouTube (Saint Charbel).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.accessibility.play-ya-oum-allah",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(4) > button:nth-of-type(1)",
+      "source": "Play Ya Oum Allah",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.4",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(4) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "4",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-5",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(4) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "يا أم الله",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ya-oum-allah",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(4) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Ya Oum Allah",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.our-lady",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(4) > button:nth-of-type(1) > span:nth-of-type(4)",
+      "source": "Our Lady",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.sung-by-fairouz-video-via-youtube-na3na3sarsar",
+      "selector": "#credit-SrKPP4FU8fE",
+      "source": "Sung by Fairouz. Video via YouTube (na3na3sarsar).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.accessibility.play-ya-charbel-salli-aanna",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(5) > button:nth-of-type(1)",
+      "source": "Play Ya Charbel salli aanna",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.5",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(5) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "5",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-6",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(5) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "يا شربل صلّي عنّا",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ya-charbel-salli-aanna",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(5) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Ya Charbel salli aanna",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.words-fr-raphael-matar-tune-fr-youssef-al-achkar-2008",
+      "selector": "#credit-CS7Eb7iZD7c",
+      "source": "Words Fr Raphael Matar, tune Fr Youssef Al-Achkar, 2008 (",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-hymn-catalog",
+      "selector": "#credit-CS7Eb7iZD7c > a:nth-of-type(1)",
+      "source": "Lebanese Maronite Order hymn catalog",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.video-via-youtube-nashat-alhaddad",
+      "selector": "#credit-CS7Eb7iZD7c",
+      "source": "). Video via YouTube (Nashat Alhaddad).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-ila-qimam-al-ruh",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(6) > button:nth-of-type(1)",
+      "source": "Play Ila qimam al-ruh",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.6",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(6) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "6",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-7",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(6) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "إلى قمم الروح - زيّاح مار شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ila-qimam-al-ruh",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(6) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Ila qimam al-ruh",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.procession-hymn-to-the-tune-mariam-srourak-maronite-traditio",
+      "selector": "#credit-ay0p3ig3GM8",
+      "source": "Procession hymn to the tune \"Mariam Srourak\", Maronite tradition. Video via YouTube (Mario Haber).",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.official-album",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(7) > span:nth-of-type(1)",
+      "source": "Official album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(7) > span:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-2022-22-tracks-in-album-order",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(7) > span:nth-of-type(2)",
+      "source": "Lebanese Maronite Order, 2022. 22 tracks, in album order.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.also-on-spotify",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(7) > span:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Also on Spotify",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-2",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(7) > span:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(8) > button:nth-of-type(1)",
+      "source": "Play أجراس",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.7",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(8) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "7",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-9",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(8) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "أجراس",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ajras-bells-1-14",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(8) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Ajras · Bells · 1:14",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-1",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-1 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-1-of-22-video-via-youtube-lebanese-maronite-order-topi",
+      "selector": "#credit-olm-1",
+      "source": ", track 1 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-2",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(9) > button:nth-of-type(1)",
+      "source": "Play دفق النّور من مثوى",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.8",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(9) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "8",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-10",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(9) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "دفق النّور من مثوى",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.daffq-an-nour-min-mathwa-light-poured-from-the-tomb-2-53",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(9) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Daffq an-nour min mathwa · Light poured from the tomb · 2:53",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-2",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-2 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-2-of-22-video-via-youtube-lebanese-maronite-order-topi",
+      "selector": "#credit-olm-2",
+      "source": ", track 2 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-3",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(10) > button:nth-of-type(1)",
+      "source": "Play أجفان الضّياء",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.9",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(10) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "9",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-11",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(10) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "أجفان الضّياء",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ajfan-ad-diya-eyelids-of-light-1-49",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(10) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Ajfan ad-diya · Eyelids of light · 1:49",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-3",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-3 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-3-of-22-video-via-youtube-lebanese-maronite-order-topi",
+      "selector": "#credit-olm-3",
+      "source": ", track 3 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-4",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(11) > button:nth-of-type(1)",
+      "source": "Play لتقم صلاتي",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.10",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(11) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "10",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-12",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(11) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "لتقم صلاتي",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.li-taqum-salati-let-my-prayer-rise-2-57",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(11) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Li-taqum salati · Let my prayer rise · 2:57",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-4",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-4 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-4-of-22-video-via-youtube-lebanese-maronite-order-topi",
+      "selector": "#credit-olm-4",
+      "source": ", track 4 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-5",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(12) > button:nth-of-type(1)",
+      "source": "Play إنّ كلمتَكَ مصباحٌ لِخُطاي",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.11",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(12) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "11",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-13",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(12) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "إنّ كلمتَكَ مصباحٌ لِخُطاي",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.inna-kalimataka-misbah-li-khutaya-your-word-is-a-lamp-to-my",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(12) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Inna kalimataka misbah li-khutaya · Your word is a lamp to my feet · 2:22",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-5",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-5 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-5-of-22-video-via-youtube-lebanese-maronite-order-topi",
+      "selector": "#credit-olm-5",
+      "source": ", track 5 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-6",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(13) > button:nth-of-type(1)",
+      "source": "Play شوك عدن",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.12",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(13) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "12",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-14",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(13) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "شوك عدن",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.shawk-adn-thorns-of-eden-2-43",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(13) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Shawk Adn · Thorns of Eden · 2:43",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-6",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-6 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-6-of-22-video-via-youtube-lebanese-maronite-order-topi",
+      "selector": "#credit-olm-6",
+      "source": ", track 6 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-7",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(14) > button:nth-of-type(1)",
+      "source": "Play ثروة الدنيا",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.13",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(14) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "13",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-15",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(14) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "ثروة الدنيا",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.tharwat-ad-dunya-the-wealth-of-the-world-2-00",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(14) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Tharwat ad-dunya · The wealth of the world · 2:00",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-7",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-7 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-7-of-22-video-via-youtube-lebanese-maronite-order-topi",
+      "selector": "#credit-olm-7",
+      "source": ", track 7 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-8",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(15) > button:nth-of-type(1)",
+      "source": "Play بيعة الله سرّي (شربل)",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.14",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(15) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "14",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-16",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(15) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "بيعة الله سرّي (شربل)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.bi-at-allah-sirri-charbel-god-s-church-is-my-secret-1-18",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(15) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Bi'at Allah sirri (Charbel) · God's church is my secret · 1:18",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-8",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-8 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-8-of-22-video-via-youtube-lebanese-maronite-order-topi",
+      "selector": "#credit-olm-8",
+      "source": ", track 8 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-9",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(16) > button:nth-of-type(1)",
+      "source": "Play صلِّ عنّا يا شربل",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.15",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(16) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "15",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-17",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(16) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "صلِّ عنّا يا شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.salli-anna-ya-charbel-pray-for-us-charbel-2-58",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(16) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Salli anna ya Charbel · Pray for us, Charbel · 2:58",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-9",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-9 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-9-of-22-video-via-youtube-lebanese-maronite-order-topi",
+      "selector": "#credit-olm-9",
+      "source": ", track 9 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-10",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(17) > button:nth-of-type(1)",
+      "source": "Play ما أبهى وجه الفادي",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.16",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(17) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "16",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-18",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(17) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "ما أبهى وجه الفادي",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ma-abha-wajh-al-fadi-how-radiant-the-redeemer-s-face-2-42",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(17) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Ma abha wajh al-fadi · How radiant the Redeemer's face · 2:42",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-10",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-10 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-10-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-10",
+      "source": ", track 10 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-11",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(18) > button:nth-of-type(1)",
+      "source": "Play يحيي اللّيل شربل",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.17",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(18) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "17",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-19",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(18) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "يحيي اللّيل شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.yuhyi-al-layl-charbel-charbel-keeps-the-night-vigil-2-00",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(18) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Yuhyi al-layl Charbel · Charbel keeps the night vigil · 2:00",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-11",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-11 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-11-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-11",
+      "source": ", track 11 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-12",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(19) > button:nth-of-type(1)",
+      "source": "Play شربل البرّ الكاهن",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.18",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(19) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "18",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-20",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(19) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "شربل البرّ الكاهن",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.charbel-al-barr-al-kahin-charbel-the-righteous-priest-1-03",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(19) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Charbel al-barr al-kahin · Charbel, the righteous priest · 1:03",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-12",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-12 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-12-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-12",
+      "source": ", track 12 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-13",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(20) > button:nth-of-type(1)",
+      "source": "Play يا عنّايا غنّي الشّكر",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.19",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(20) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "19",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-21",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(20) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "يا عنّايا غنّي الشّكر",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ya-annaya-ghanni-ash-shukr-o-annaya-sing-thanks-2-32",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(20) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Ya Annaya ghanni ash-shukr · O Annaya, sing thanks · 2:32",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-13",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-13 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-13-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-13",
+      "source": ", track 13 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-14",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(21) > button:nth-of-type(1)",
+      "source": "Play لابس اللّيل",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.20",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(21) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "20",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-22",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(21) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "لابس اللّيل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.labis-al-layl-clothed-in-the-night-1-45",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(21) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Labis al-layl · Clothed in the night · 1:45",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-14",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-14 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-14-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-14",
+      "source": ", track 14 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-15",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(22) > button:nth-of-type(1)",
+      "source": "Play في ذكرى القدّيسين",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.21",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(22) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "21",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-23",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(22) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "في ذكرى القدّيسين",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.fi-dhikra-al-qiddisin-in-memory-of-the-saints-1-13",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(22) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Fi dhikra al-qiddisin · In memory of the saints · 1:13",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-15",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-15 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-15-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-15",
+      "source": ", track 15 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-2-2",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(23) > button:nth-of-type(1)",
+      "source": "Play 2صلِّ عنّا يا شربل",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.22",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(23) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "22",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.2-2",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(23) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "2صلِّ عنّا يا شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.salli-anna-ya-charbel-pray-for-us-charbel-second-setting-2-1",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(23) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Salli anna ya Charbel · Pray for us, Charbel (second setting) · 2:13",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-16",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-16 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-16-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-16",
+      "source": ", track 16 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-16",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(24) > button:nth-of-type(1)",
+      "source": "Play الصدّيق كالنخل يزهر",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.23",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(24) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "23",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-24",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(24) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "الصدّيق كالنخل يزهر",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.as-siddiq-ka-n-nakhl-yuzhir-the-righteous-flourish-like-the",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(24) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "As-siddiq ka-n-nakhl yuzhir · The righteous flourish like the palm · 1:09",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-17",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-17 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-17-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-17",
+      "source": ", track 17 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-17",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(25) > button:nth-of-type(1)",
+      "source": "Play طلبة القديس شربل",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.24",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(25) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "24",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-25",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(25) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "طلبة القديس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.talbat-al-qiddis-charbel-litany-of-saint-charbel-3-30",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(25) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Talbat al-Qiddis Charbel · Litany of Saint Charbel · 3:30",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-18",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-18 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-18-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-18",
+      "source": ", track 18 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-18",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(26) > button:nth-of-type(1)",
+      "source": "Play إلى قمم الروح",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.25",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(26) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "25",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-26",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(26) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "إلى قمم الروح",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ila-qimam-ar-ruh-to-the-summits-of-the-spirit-2-31",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(26) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Ila qimam ar-ruh · To the summits of the spirit · 2:31",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-19",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-19 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-19-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-19",
+      "source": ", track 19 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-19",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(27) > button:nth-of-type(1)",
+      "source": "Play لابس اللّيل ٢",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.26",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(27) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "26",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-22",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(27) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "لابس اللّيل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.labis-al-layl-clothed-in-the-night-second-setting-1-51",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(27) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Labis al-layl · Clothed in the night (second setting) · 1:51",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-20",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-20 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-20-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-20",
+      "source": ", track 20 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-20",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(28) > button:nth-of-type(1)",
+      "source": "Play زيّاح مار شربل",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.27",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(28) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "27",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-27",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(28) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "زيّاح مار شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ziyyah-mar-charbel-procession-of-mar-charbel-4-30",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(28) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Ziyyah Mar Charbel · Procession of Mar Charbel · 4:30",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-21",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-21 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-21-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-21",
+      "source": ", track 21 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.accessibility.play-21",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(29) > button:nth-of-type(1)",
+      "source": "Play سلكت إلى الله",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "music.songs-and-hymns.28",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(29) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "28",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-28",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(29) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "سلكت إلى الله",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.salakt-ila-allah-i-walked-to-god-2-27",
+      "selector": "#songs > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(29) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "source": "Salakt ila Allah · I walked to God · 2:27",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album",
+      "selector": "#credit-olm-22",
+      "source": "Lebanese Maronite Order, from the official 2022 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-8",
+      "selector": "#credit-olm-22 > span:nth-of-type(1)",
+      "source": "متعيد القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.track-22-of-22-video-via-youtube-lebanese-maronite-order-top",
+      "selector": "#credit-olm-22",
+      "source": ", track 22 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "music.songs-and-hymns.more-hymns-to-saint-charbel",
+      "selector": "#songs > h3:nth-of-type(1)",
+      "source": "More hymns to Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.these-hymns-stream-from-their-official-source-and-are-not-in",
+      "selector": "#songs > p:nth-of-type(2)",
+      "source": "These hymns stream from their official source and are not in the player above. Each link opens the source.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-29",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "من دير عنّايا المشهور",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.the-signature-hymn-of-annaya-arabic-french-english",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "The signature hymn of Annaya (Arabic, French, English)",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-2008-album",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Lebanese Maronite Order, 2008 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-30",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "حسّاية صلاة مساء القدّيس شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.evening-prayer-of-saint-charbel",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Evening prayer of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order-2008-album",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Lebanese Maronite Order, 2008 album",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-31",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "قدّموا لله مجدًا",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.qaddimu-li-llah-majdan",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Qaddimu li-llah majdan",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Lebanese Maronite Order",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-32",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "شربل في عنّايا",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.charbel-fi-annaya",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Charbel fi Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Lebanese Maronite Order",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-33",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "بين الأرض والسماء",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.bayna-al-ard-wa-al-sama",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Bayna al-ard wa al-sama",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.lebanese-maronite-order",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Lebanese Maronite Order",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.ya-mar-charbel",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(6) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Ya mar charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.miled-tarabay-french-and-arabic",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(6) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Miled Tarabay, French and Arabic",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.spotify",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(6) > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Spotify",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.text-34",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "مار شربل",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.nawal-el-zoghbi-album-men-mar-charbel",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Nawal El Zoghbi, album \"Men Mar Charbel\"",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.anghami",
+      "selector": "#songs > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(1) > span:nth-of-type(3)",
+      "source": "Anghami",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.questions-about-the-music",
+      "selector": "#music-faq-h",
+      "source": "Questions about the music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.what-is-on-this-page",
+      "selector": "#songs > section:nth-of-type(1) > details:nth-of-type(1) > summary:nth-of-type(1)",
+      "source": "What is on this page?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.authentic-lebanese-maronite-hymns-to-saint-charbel-each-cred",
+      "selector": "#songs > section:nth-of-type(1) > details:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Authentic Lebanese Maronite hymns to Saint Charbel, each credited to its source, with the official album or catalog linked where one exists.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.are-the-songs-hosted-on-this-site",
+      "selector": "#songs > section:nth-of-type(1) > details:nth-of-type(2) > summary:nth-of-type(1)",
+      "source": "Are the songs hosted on this site?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.no-they-are-embedded-from-youtube-through-the-youtube-nocook",
+      "selector": "#songs > section:nth-of-type(1) > details:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "No. They are embedded from YouTube through the youtube-nocookie player, using YouTube's privacy-enhanced embed mode.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.where-do-the-hymns-come-from",
+      "selector": "#songs > section:nth-of-type(1) > details:nth-of-type(3) > summary:nth-of-type(1)",
+      "source": "Where do the hymns come from?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.songs-and-hymns.from-the-lebanese-maronite-order-s-official-album-and-hymn-c",
+      "selector": "#songs > section:nth-of-type(1) > details:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "From the Lebanese Maronite Order's official album and hymn catalog, the shrine's own channel, and recordings sung by Lebanese artists. Each track names its source.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "music.footer.saint-charbel-music-author-please-pray-for-the-person-who-ma",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Saint Charbel music. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "music.metadata.title-saint-charbel-music-lebanese-maronite-hymns": "Saint Charbel Music: Lebanese Maronite Hymns",
+    "music.metadata.description-listen-to-authentic-lebanese-maronite-hymns-to-s": "Listen to authentic Lebanese Maronite hymns to Saint Charbel, each credited to its source, with the official album or catalog linked where one exists.",
+    "music.metadata.og-title-saint-charbel-music-lebanese-maronite-hymns": "Saint Charbel Music: Lebanese Maronite Hymns",
+    "music.metadata.og-description-listen-to-authentic-lebanese-maronite-hymns-t": "Listen to authentic Lebanese Maronite hymns to Saint Charbel, each credited to its source, with the official album or catalog linked where one exists.",
+    "music.metadata.twitter-title-saint-charbel-music-lebanese-maronite-hymns": "Saint Charbel Music: Lebanese Maronite Hymns",
+    "music.metadata.twitter-description-listen-to-authentic-lebanese-maronite-hy": "Listen to authentic Lebanese Maronite hymns to Saint Charbel, each credited to its source, with the official album or catalog linked where one exists.",
+    "music.body.skip-to-main-content": "Skip to main content",
+    "music.header.text": "✦",
+    "music.header.saint-charbel": "Saint Charbel",
+    "music.accessibility.primary": "Primary",
+    "music.header.home": "Home",
+    "music.header.legacy": "Legacy",
+    "music.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "music.header.full-history": "Full History",
+    "music.header.miracles": "Miracles",
+    "music.header.miracles-reports": "Miracles & Reports",
+    "music.header.eucharistic-miracles": "Eucharistic Miracles",
+    "music.header.letters": "Letters",
+    "music.header.voice-testimony": "Voice Testimony",
+    "music.header.saints": "Saints",
+    "music.header.children-s-books": "Children's Books",
+    "music.header.prayer": "Prayer",
+    "music.header.prayer-library": "Prayer Library",
+    "music.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "music.header.prayer-for-the-sick": "Prayer for the Sick",
+    "music.header.prayer-for-healing": "Prayer for Healing",
+    "music.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "music.header.prayer-for-depression": "Prayer for Depression",
+    "music.header.prayer-for-students": "Prayer for Students",
+    "music.header.prayer-for-addiction": "Prayer for Addiction",
+    "music.header.prayer-for-family": "Prayer for Family",
+    "music.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "music.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "music.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "music.header.saint-charbel-novena": "Saint Charbel Novena",
+    "music.header.feast-day": "Feast Day",
+    "music.header.rosary-guide": "Rosary Guide",
+    "music.header.rosary-minibook": "Rosary Minibook",
+    "music.header.mystery-meditation": "Mystery Meditation",
+    "music.header.become-like-him": "Become Like Him",
+    "music.header.travel": "Travel",
+    "music.header.visiting-annaya": "Visiting Annaya",
+    "music.header.annaya-online-tour": "Annaya Online Tour",
+    "music.header.bekaa-kafra": "Bekaa Kafra",
+    "music.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "music.header.the-cedars-of-god": "the Cedars of God",
+    "music.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "music.header.qadisha-valley": "Qadisha Valley",
+    "music.header.qannoubine-monastery": "Qannoubine Monastery",
+    "music.header.qozhaya-monastery": "Qozhaya Monastery",
+    "music.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "music.header.the-hermitage": "The Hermitage",
+    "music.header.saint-charbel-trail": "Saint Charbel Trail",
+    "music.header.news": "News",
+    "music.header.media": "Media",
+    "music.header.music": "Music",
+    "music.header.video": "Video",
+    "music.header.gallery": "Gallery",
+    "music.accessibility.media": "Media",
+    "music.body.media": "Media",
+    "music.body.music": "Music",
+    "music.body.video": "Video",
+    "music.body.gallery": "Gallery",
+    "music.hymns-to-saint-charbel.hymns-to-saint-charbel": "Hymns to Saint Charbel",
+    "music.hymns-to-saint-charbel.the-hymns-lebanese-maronites-sing-to-saint-charbel-from-the": "The hymns Lebanese Maronites sing to Saint Charbel, from the procession at Annaya to Majida El Roumi's album, each credited to its source.",
+    "music.songs-and-hymns.songs-and-hymns": "Songs and Hymns",
+    "music.songs-and-hymns.authentic-lebanese-and-maronite-hymns-to-saint-charbel-tap-a": "Authentic Lebanese and Maronite hymns to Saint Charbel. Tap a track to play it, and the next one follows on its own. Where a recording is a fan upload rather than the artist's own, the credit says so and links the official source.",
+    "music.songs-and-hymns.saint-charbel-hymn-player": "Saint Charbel hymn player",
+    "music.songs-and-hymns.now-playing": "Now playing",
+    "music.songs-and-hymns.text": "يا غافي وعيونك",
+    "music.songs-and-hymns.ya-ghafi-w-3younak": "Ya Ghafi w 3younak",
+    "music.songs-and-hymns.majida-el-roumi": "Majida El Roumi,",
+    "music.songs-and-hymns.taranim-majidah-official-album": "Taranim Majidah (official album)",
+    "music.songs-and-hymns.video-via-youtube-bshara-shammas": ". Video via YouTube (Bshara Shammas).",
+    "music.songs-and-hymns.alternate-version-st-ephrem": "Alternate version (St Ephrem)",
+    "music.songs-and-hymns.text-2": ".",
+    "music.songs-and-hymns.previous": "Previous",
+    "music.songs-and-hymns.next": "Next",
+    "music.songs-and-hymns.open-on-youtube": "Open on YouTube",
+    "music.accessibility.playlist": "Playlist",
+    "music.accessibility.play-ya-ghafi-w-3younak": "Play Ya Ghafi w 3younak",
+    "music.songs-and-hymns.1": "1",
+    "music.accessibility.play-ziyyah-al-qiddis-charbel": "Play Ziyyah al-Qiddis Charbel",
+    "music.songs-and-hymns.2": "2",
+    "music.songs-and-hymns.text-3": "زيّاح القديس شربل",
+    "music.songs-and-hymns.ziyyah-al-qiddis-charbel": "Ziyyah al-Qiddis Charbel",
+    "music.songs-and-hymns.words-fr-raphael-matar-old-maronite-melody": "Words Fr Raphael Matar, old Maronite melody (",
+    "music.songs-and-hymns.lebanese-maronite-order-hymn-catalog": "Lebanese Maronite Order hymn catalog",
+    "music.songs-and-hymns.video-via-youtube-sylvia-sass": "). Video via YouTube (Sylvia Sass).",
+    "music.accessibility.play-st-charbel-video-and-song": "Play St Charbel video and song",
+    "music.songs-and-hymns.3": "3",
+    "music.songs-and-hymns.text-4": "أغنية وفيديو القديس شربل",
+    "music.songs-and-hymns.st-charbel-video-and-song": "St Charbel video and song",
+    "music.songs-and-hymns.shrine-channel": "Shrine channel",
+    "music.songs-and-hymns.from-the-official-channel-of-the-st-charbel-shrine-saintchar": "From the official channel of the St Charbel shrine (saintcharbel.net.au), Australia. Video via YouTube (Saint Charbel).",
+    "music.accessibility.play-ya-oum-allah": "Play Ya Oum Allah",
+    "music.songs-and-hymns.4": "4",
+    "music.songs-and-hymns.text-5": "يا أم الله",
+    "music.songs-and-hymns.ya-oum-allah": "Ya Oum Allah",
+    "music.songs-and-hymns.our-lady": "Our Lady",
+    "music.songs-and-hymns.sung-by-fairouz-video-via-youtube-na3na3sarsar": "Sung by Fairouz. Video via YouTube (na3na3sarsar).",
+    "music.accessibility.play-ya-charbel-salli-aanna": "Play Ya Charbel salli aanna",
+    "music.songs-and-hymns.5": "5",
+    "music.songs-and-hymns.text-6": "يا شربل صلّي عنّا",
+    "music.songs-and-hymns.ya-charbel-salli-aanna": "Ya Charbel salli aanna",
+    "music.songs-and-hymns.words-fr-raphael-matar-tune-fr-youssef-al-achkar-2008": "Words Fr Raphael Matar, tune Fr Youssef Al-Achkar, 2008 (",
+    "music.songs-and-hymns.video-via-youtube-nashat-alhaddad": "). Video via YouTube (Nashat Alhaddad).",
+    "music.accessibility.play-ila-qimam-al-ruh": "Play Ila qimam al-ruh",
+    "music.songs-and-hymns.6": "6",
+    "music.songs-and-hymns.text-7": "إلى قمم الروح - زيّاح مار شربل",
+    "music.songs-and-hymns.ila-qimam-al-ruh": "Ila qimam al-ruh",
+    "music.songs-and-hymns.procession-hymn-to-the-tune-mariam-srourak-maronite-traditio": "Procession hymn to the tune \"Mariam Srourak\", Maronite tradition. Video via YouTube (Mario Haber).",
+    "music.songs-and-hymns.official-album": "Official album",
+    "music.songs-and-hymns.text-8": "متعيد القدّيس شربل",
+    "music.songs-and-hymns.lebanese-maronite-order-2022-22-tracks-in-album-order": "Lebanese Maronite Order, 2022. 22 tracks, in album order.",
+    "music.songs-and-hymns.also-on-spotify": "Also on Spotify",
+    "music.accessibility.play": "Play أجراس",
+    "music.songs-and-hymns.7": "7",
+    "music.songs-and-hymns.text-9": "أجراس",
+    "music.songs-and-hymns.ajras-bells-1-14": "Ajras · Bells · 1:14",
+    "music.songs-and-hymns.lebanese-maronite-order-from-the-official-2022-album": "Lebanese Maronite Order, from the official 2022 album",
+    "music.songs-and-hymns.track-1-of-22-video-via-youtube-lebanese-maronite-order-topi": ", track 1 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-2": "Play دفق النّور من مثوى",
+    "music.songs-and-hymns.8": "8",
+    "music.songs-and-hymns.text-10": "دفق النّور من مثوى",
+    "music.songs-and-hymns.daffq-an-nour-min-mathwa-light-poured-from-the-tomb-2-53": "Daffq an-nour min mathwa · Light poured from the tomb · 2:53",
+    "music.songs-and-hymns.track-2-of-22-video-via-youtube-lebanese-maronite-order-topi": ", track 2 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-3": "Play أجفان الضّياء",
+    "music.songs-and-hymns.9": "9",
+    "music.songs-and-hymns.text-11": "أجفان الضّياء",
+    "music.songs-and-hymns.ajfan-ad-diya-eyelids-of-light-1-49": "Ajfan ad-diya · Eyelids of light · 1:49",
+    "music.songs-and-hymns.track-3-of-22-video-via-youtube-lebanese-maronite-order-topi": ", track 3 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-4": "Play لتقم صلاتي",
+    "music.songs-and-hymns.10": "10",
+    "music.songs-and-hymns.text-12": "لتقم صلاتي",
+    "music.songs-and-hymns.li-taqum-salati-let-my-prayer-rise-2-57": "Li-taqum salati · Let my prayer rise · 2:57",
+    "music.songs-and-hymns.track-4-of-22-video-via-youtube-lebanese-maronite-order-topi": ", track 4 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-5": "Play إنّ كلمتَكَ مصباحٌ لِخُطاي",
+    "music.songs-and-hymns.11": "11",
+    "music.songs-and-hymns.text-13": "إنّ كلمتَكَ مصباحٌ لِخُطاي",
+    "music.songs-and-hymns.inna-kalimataka-misbah-li-khutaya-your-word-is-a-lamp-to-my": "Inna kalimataka misbah li-khutaya · Your word is a lamp to my feet · 2:22",
+    "music.songs-and-hymns.track-5-of-22-video-via-youtube-lebanese-maronite-order-topi": ", track 5 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-6": "Play شوك عدن",
+    "music.songs-and-hymns.12": "12",
+    "music.songs-and-hymns.text-14": "شوك عدن",
+    "music.songs-and-hymns.shawk-adn-thorns-of-eden-2-43": "Shawk Adn · Thorns of Eden · 2:43",
+    "music.songs-and-hymns.track-6-of-22-video-via-youtube-lebanese-maronite-order-topi": ", track 6 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-7": "Play ثروة الدنيا",
+    "music.songs-and-hymns.13": "13",
+    "music.songs-and-hymns.text-15": "ثروة الدنيا",
+    "music.songs-and-hymns.tharwat-ad-dunya-the-wealth-of-the-world-2-00": "Tharwat ad-dunya · The wealth of the world · 2:00",
+    "music.songs-and-hymns.track-7-of-22-video-via-youtube-lebanese-maronite-order-topi": ", track 7 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-8": "Play بيعة الله سرّي (شربل)",
+    "music.songs-and-hymns.14": "14",
+    "music.songs-and-hymns.text-16": "بيعة الله سرّي (شربل)",
+    "music.songs-and-hymns.bi-at-allah-sirri-charbel-god-s-church-is-my-secret-1-18": "Bi'at Allah sirri (Charbel) · God's church is my secret · 1:18",
+    "music.songs-and-hymns.track-8-of-22-video-via-youtube-lebanese-maronite-order-topi": ", track 8 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-9": "Play صلِّ عنّا يا شربل",
+    "music.songs-and-hymns.15": "15",
+    "music.songs-and-hymns.text-17": "صلِّ عنّا يا شربل",
+    "music.songs-and-hymns.salli-anna-ya-charbel-pray-for-us-charbel-2-58": "Salli anna ya Charbel · Pray for us, Charbel · 2:58",
+    "music.songs-and-hymns.track-9-of-22-video-via-youtube-lebanese-maronite-order-topi": ", track 9 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-10": "Play ما أبهى وجه الفادي",
+    "music.songs-and-hymns.16": "16",
+    "music.songs-and-hymns.text-18": "ما أبهى وجه الفادي",
+    "music.songs-and-hymns.ma-abha-wajh-al-fadi-how-radiant-the-redeemer-s-face-2-42": "Ma abha wajh al-fadi · How radiant the Redeemer's face · 2:42",
+    "music.songs-and-hymns.track-10-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 10 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-11": "Play يحيي اللّيل شربل",
+    "music.songs-and-hymns.17": "17",
+    "music.songs-and-hymns.text-19": "يحيي اللّيل شربل",
+    "music.songs-and-hymns.yuhyi-al-layl-charbel-charbel-keeps-the-night-vigil-2-00": "Yuhyi al-layl Charbel · Charbel keeps the night vigil · 2:00",
+    "music.songs-and-hymns.track-11-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 11 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-12": "Play شربل البرّ الكاهن",
+    "music.songs-and-hymns.18": "18",
+    "music.songs-and-hymns.text-20": "شربل البرّ الكاهن",
+    "music.songs-and-hymns.charbel-al-barr-al-kahin-charbel-the-righteous-priest-1-03": "Charbel al-barr al-kahin · Charbel, the righteous priest · 1:03",
+    "music.songs-and-hymns.track-12-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 12 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-13": "Play يا عنّايا غنّي الشّكر",
+    "music.songs-and-hymns.19": "19",
+    "music.songs-and-hymns.text-21": "يا عنّايا غنّي الشّكر",
+    "music.songs-and-hymns.ya-annaya-ghanni-ash-shukr-o-annaya-sing-thanks-2-32": "Ya Annaya ghanni ash-shukr · O Annaya, sing thanks · 2:32",
+    "music.songs-and-hymns.track-13-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 13 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-14": "Play لابس اللّيل",
+    "music.songs-and-hymns.20": "20",
+    "music.songs-and-hymns.text-22": "لابس اللّيل",
+    "music.songs-and-hymns.labis-al-layl-clothed-in-the-night-1-45": "Labis al-layl · Clothed in the night · 1:45",
+    "music.songs-and-hymns.track-14-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 14 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-15": "Play في ذكرى القدّيسين",
+    "music.songs-and-hymns.21": "21",
+    "music.songs-and-hymns.text-23": "في ذكرى القدّيسين",
+    "music.songs-and-hymns.fi-dhikra-al-qiddisin-in-memory-of-the-saints-1-13": "Fi dhikra al-qiddisin · In memory of the saints · 1:13",
+    "music.songs-and-hymns.track-15-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 15 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-2-2": "Play 2صلِّ عنّا يا شربل",
+    "music.songs-and-hymns.22": "22",
+    "music.songs-and-hymns.2-2": "2صلِّ عنّا يا شربل",
+    "music.songs-and-hymns.salli-anna-ya-charbel-pray-for-us-charbel-second-setting-2-1": "Salli anna ya Charbel · Pray for us, Charbel (second setting) · 2:13",
+    "music.songs-and-hymns.track-16-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 16 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-16": "Play الصدّيق كالنخل يزهر",
+    "music.songs-and-hymns.23": "23",
+    "music.songs-and-hymns.text-24": "الصدّيق كالنخل يزهر",
+    "music.songs-and-hymns.as-siddiq-ka-n-nakhl-yuzhir-the-righteous-flourish-like-the": "As-siddiq ka-n-nakhl yuzhir · The righteous flourish like the palm · 1:09",
+    "music.songs-and-hymns.track-17-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 17 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-17": "Play طلبة القديس شربل",
+    "music.songs-and-hymns.24": "24",
+    "music.songs-and-hymns.text-25": "طلبة القديس شربل",
+    "music.songs-and-hymns.talbat-al-qiddis-charbel-litany-of-saint-charbel-3-30": "Talbat al-Qiddis Charbel · Litany of Saint Charbel · 3:30",
+    "music.songs-and-hymns.track-18-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 18 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-18": "Play إلى قمم الروح",
+    "music.songs-and-hymns.25": "25",
+    "music.songs-and-hymns.text-26": "إلى قمم الروح",
+    "music.songs-and-hymns.ila-qimam-ar-ruh-to-the-summits-of-the-spirit-2-31": "Ila qimam ar-ruh · To the summits of the spirit · 2:31",
+    "music.songs-and-hymns.track-19-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 19 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-19": "Play لابس اللّيل ٢",
+    "music.songs-and-hymns.26": "26",
+    "music.songs-and-hymns.labis-al-layl-clothed-in-the-night-second-setting-1-51": "Labis al-layl · Clothed in the night (second setting) · 1:51",
+    "music.songs-and-hymns.track-20-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 20 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-20": "Play زيّاح مار شربل",
+    "music.songs-and-hymns.27": "27",
+    "music.songs-and-hymns.text-27": "زيّاح مار شربل",
+    "music.songs-and-hymns.ziyyah-mar-charbel-procession-of-mar-charbel-4-30": "Ziyyah Mar Charbel · Procession of Mar Charbel · 4:30",
+    "music.songs-and-hymns.track-21-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 21 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.accessibility.play-21": "Play سلكت إلى الله",
+    "music.songs-and-hymns.28": "28",
+    "music.songs-and-hymns.text-28": "سلكت إلى الله",
+    "music.songs-and-hymns.salakt-ila-allah-i-walked-to-god-2-27": "Salakt ila Allah · I walked to God · 2:27",
+    "music.songs-and-hymns.track-22-of-22-video-via-youtube-lebanese-maronite-order-top": ", track 22 of 22. Video via YouTube (Lebanese Maronite Order - Topic).",
+    "music.songs-and-hymns.more-hymns-to-saint-charbel": "More hymns to Saint Charbel",
+    "music.songs-and-hymns.these-hymns-stream-from-their-official-source-and-are-not-in": "These hymns stream from their official source and are not in the player above. Each link opens the source.",
+    "music.songs-and-hymns.text-29": "من دير عنّايا المشهور",
+    "music.songs-and-hymns.the-signature-hymn-of-annaya-arabic-french-english": "The signature hymn of Annaya (Arabic, French, English)",
+    "music.songs-and-hymns.lebanese-maronite-order-2008-album": "Lebanese Maronite Order, 2008 album",
+    "music.songs-and-hymns.text-30": "حسّاية صلاة مساء القدّيس شربل",
+    "music.songs-and-hymns.evening-prayer-of-saint-charbel": "Evening prayer of Saint Charbel",
+    "music.songs-and-hymns.text-31": "قدّموا لله مجدًا",
+    "music.songs-and-hymns.qaddimu-li-llah-majdan": "Qaddimu li-llah majdan",
+    "music.songs-and-hymns.lebanese-maronite-order": "Lebanese Maronite Order",
+    "music.songs-and-hymns.text-32": "شربل في عنّايا",
+    "music.songs-and-hymns.charbel-fi-annaya": "Charbel fi Annaya",
+    "music.songs-and-hymns.text-33": "بين الأرض والسماء",
+    "music.songs-and-hymns.bayna-al-ard-wa-al-sama": "Bayna al-ard wa al-sama",
+    "music.songs-and-hymns.ya-mar-charbel": "Ya mar charbel",
+    "music.songs-and-hymns.miled-tarabay-french-and-arabic": "Miled Tarabay, French and Arabic",
+    "music.songs-and-hymns.spotify": "Spotify",
+    "music.songs-and-hymns.text-34": "مار شربل",
+    "music.songs-and-hymns.nawal-el-zoghbi-album-men-mar-charbel": "Nawal El Zoghbi, album \"Men Mar Charbel\"",
+    "music.songs-and-hymns.anghami": "Anghami",
+    "music.songs-and-hymns.questions-about-the-music": "Questions about the music",
+    "music.songs-and-hymns.what-is-on-this-page": "What is on this page?",
+    "music.songs-and-hymns.authentic-lebanese-maronite-hymns-to-saint-charbel-each-cred": "Authentic Lebanese Maronite hymns to Saint Charbel, each credited to its source, with the official album or catalog linked where one exists.",
+    "music.songs-and-hymns.are-the-songs-hosted-on-this-site": "Are the songs hosted on this site?",
+    "music.songs-and-hymns.no-they-are-embedded-from-youtube-through-the-youtube-nocook": "No. They are embedded from YouTube through the youtube-nocookie player, using YouTube's privacy-enhanced embed mode.",
+    "music.songs-and-hymns.where-do-the-hymns-come-from": "Where do the hymns come from?",
+    "music.songs-and-hymns.from-the-lebanese-maronite-order-s-official-album-and-hymn-c": "From the Lebanese Maronite Order's official album and hymn catalog, the shrine's own channel, and recordings sung by Lebanese artists. Each track names its source.",
+    "music.footer.saint-charbel-music-author-please-pray-for-the-person-who-ma": "Saint Charbel music. Author: Please pray for the person who made this website."
+  }
+}

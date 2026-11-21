@@ -117,6 +117,7 @@
         throw new Error(response.status >= 500 ? fallback : result?.message || fallback);
       }
       if (result?.accepted !== true || !result.reference) throw new Error('Submission could not be confirmed. Keep your text and try again later.');
+      window.MarGrowth?.event('testimony_submit');
       submitted = true; touched.clear(); form.reset();
       try { sessionStorage.removeItem('saint_charbel_letter_draft'); } catch { /* no stored draft */ }
       status(message, `Letter sent. Your story is private and pending review. Save this reference: ${result.reference}`);

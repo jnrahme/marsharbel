@@ -10,21 +10,59 @@ for (const file of paths) {
     await page.goto('/' + file, { waitUntil: 'domcontentloaded' });
     const nav = page.locator('.topbar nav.links');
     await expect(nav).toHaveAttribute('aria-label', 'Primary');
-    await expect(nav.locator(':scope > a, :scope > .nav-group > .nav-parent')).toHaveText(['Home', 'Story', 'Miracles', 'Saints', 'Prayer', 'Travel', 'Gallery']);
+    await expect(nav.locator(':scope > a, :scope > .nav-group > .nav-parent')).toHaveText(['Home', 'Legacy', 'Miracles', 'Saints', 'Prayer', 'Travel', 'News', 'Media']);
     const outside = await nav.evaluate(el => [...el.querySelectorAll(':scope > a, :scope > .nav-group > .nav-parent')].filter(a => { const r=a.getBoundingClientRect(); return r.left < -1 || r.right > innerWidth+1; }).map(a=>a.textContent));
     expect(outside).toEqual([]);
-    for (const label of ['Story', 'Miracles', 'Prayer', 'Travel']) {
+    // Remote player error interstitials can focus their own frame. Keep the
+    // frame boundary deterministic without relying on YouTube's current UI.
+    const frameFocusCase = ['music.html', 'videos.html', 'st-augustine-of-hippo.html'].includes(file);
+    if (frameFocusCase) await page.evaluate(() => {
+      const frame = document.createElement('iframe');
+      frame.id = 'nav-frame-focus-regression';
+      frame.title = 'Keyboard focus regression fixture';
+      frame.srcdoc = '<button>Player control</button>';
+      frame.style.cssText = 'position:fixed;bottom:0;right:0;width:1px;height:1px';
+      const beforeFrame = document.createElement('button');
+      beforeFrame.id = 'nav-before-frame-regression';
+      beforeFrame.textContent = 'Before player';
+      document.body.append(beforeFrame, frame);
+    });
+    for (const label of ['Legacy', 'Miracles', 'Saints', 'Prayer', 'Travel', 'Media']) {
       const parent = nav.locator('.nav-parent').filter({hasText:label});
       const group = nav.locator('.nav-group').filter({has:page.locator('.nav-parent').filter({hasText:label})});
+      if (frameFocusCase && label === 'Legacy') await page.locator('#nav-frame-focus-regression').focus();
       if (await page.evaluate(() => matchMedia('(hover: none)').matches || innerWidth<=820)) await parent.click();
       else await parent.hover();
       await expect(group.locator('.nav-sub')).toBeVisible();
       await expect(parent).toHaveAttribute('aria-expanded', 'true');
       const clipped = await group.locator('.nav-sub').evaluate(el=> {const r=el.getBoundingClientRect();return r.left < -1 || r.right > innerWidth+1;});
       expect(clipped).toBe(false);
+      if (frameFocusCase && label === 'Legacy' && !(await page.evaluate(() => matchMedia('(hover: none)').matches || innerWidth<=820))) {
+        await expect.poll(() => page.evaluate(() => document.hasFocus() && document.activeElement.tagName !== 'IFRAME')).toBe(true);
+        // Also cover an embed stealing focus after the menu has opened.
+        await page.locator('#nav-frame-focus-regression').focus();
+        await expect.poll(() => page.evaluate(() => document.hasFocus() && document.activeElement.tagName !== 'IFRAME')).toBe(true);
+      }
       await page.keyboard.press('Escape');
       await expect(group.locator('.nav-sub')).toBeHidden();
       await expect(parent).toHaveAttribute('aria-expanded','false');
+    }
+    if (frameFocusCase) {
+      // Returning to the player outside the header must never trap focus.
+      await page.mouse.move(0, 500);
+      await page.locator('#nav-frame-focus-regression').focus();
+      await expect(page.locator('#nav-frame-focus-regression')).toBeFocused();
+      if (!(await page.evaluate(() => matchMedia('(hover: none)').matches || innerWidth<=820))) {
+        const parent = nav.locator('.nav-parent').filter({hasText:'Legacy'});
+        await parent.hover();
+        await page.locator('#nav-before-frame-regression').focus();
+        // The cursor stays on the header, but Tab gives keyboard intent
+        // priority over a late-frame focus-recovery handler.
+        await page.keyboard.press('Tab');
+        await expect(page.locator('#nav-frame-focus-regression')).toBeFocused();
+        await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+        await expect(page.locator('#nav-frame-focus-regression')).toBeFocused();
+      }
     }
   });
 }

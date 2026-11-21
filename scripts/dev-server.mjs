@@ -78,6 +78,12 @@ createServer(async (req, res) => {
     pathname = pathname.slice(0, -1);
   }
 
+  // Production serves the Arabic webfonts from untracked -v3 names (PR #278, Hostinger snapshot
+  // shadows tracked paths). Locally the same bytes live at the tracked -v2 names.
+  if (/^\/media\/fonts\/noto-(sans|naskh)-arabic-arabic-v3\.woff2$/.test(pathname) && !(await isFile(join(ROOT, pathname)))) {
+    pathname = pathname.replace('-v3.woff2', '-v2.woff2');
+  }
+
   const filePath = join(ROOT, pathname);
 
   if (await isFile(filePath)) {
@@ -92,6 +98,13 @@ createServer(async (req, res) => {
     return serve(req, res, join(ROOT, 'gallery.html'));
   }
 
+  // Mirror the production /en alias rule without shadowing authored /en guides.
+  if (/^\/en\/[a-z0-9-]+(?:\.html)?\/?$/.test(pathname) && !(await isFile(filePath + '.html')) && !(await isFile(filePath))) {
+    const target = pathname.replace(/^\/en/, '').replace(/\.html\/?$/, '').replace(/\/$/, '');
+    if (await isFile(join(ROOT, target + '.html'))) {
+      res.writeHead(301, { Location: target + url.search }); res.end(); return;
+    }
+  }
   const htmlPath = filePath + '.html';
   if (!extname(pathname) && await isFile(htmlPath)) {
     return serve(req, res, htmlPath);

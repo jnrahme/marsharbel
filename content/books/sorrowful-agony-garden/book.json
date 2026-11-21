@@ -1,0 +1,128 @@
+{
+ "schema": 1,
+ "id": "bk-sorrowful-agony-garden",
+ "slug": "sorrowful-agony-garden",
+ "legacyStoryId": "sorrowful-agony-garden",
+ "pageUrl": "/sorrowful-agony-garden",
+ "status": "published",
+ "access": "public",
+ "shelf": "mysteries",
+ "order": 31,
+ "ageRange": "6-12",
+ "locales": [
+  "en",
+  "ar",
+  "de",
+  "es",
+  "fr",
+  "it",
+  "pl",
+  "pt"
+ ],
+ "cover": "bk-sorrowful-agony-garden-img-painting",
+ "voices": {
+  "en": []
+ },
+ "pages": [
+  {
+   "id": "bk-sorrowful-agony-garden-p01",
+   "index": 1,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-agony-garden-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original child-friendly meditation on the mystery; the mystery and its traditional day follow the standard Rosary order.",
+     "sources": [
+      "rosaryUsccb",
+      "paintingWikimedia"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-agony-garden-p02",
+   "index": 2,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-agony-garden-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "Scripture quotation reproduced word for word from the Douay-Rheims 1899 American Edition (public domain); verse numbers omitted for reading aloud and ellipses mark skipped verses.",
+     "sources": [
+      "draEbible"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-agony-garden-p03",
+   "index": 3,
+   "kind": "story",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-agony-garden-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "documented",
+     "claim": "The Our Father, Hail Mary, Glory Be and Fatima prayers use the standard formulas printed across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bk-sorrowful-agony-garden-p04",
+   "index": 4,
+   "kind": "reflection",
+   "scene": "legacy",
+   "access": "public",
+   "image": "bk-sorrowful-agony-garden-img-painting",
+   "audio": {},
+   "evidence": [
+    {
+     "type": "pastoral",
+     "claim": "Original reflection and closing prayer; the fruit of the mystery follows the traditional list used across this site.",
+     "sources": [
+      "rosaryUsccb"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "draEbible": {
+   "label": "Douay-Rheims Bible, 1899 American Edition (public domain), via ebible.org",
+   "url": "https://ebible.org/engDRA/"
+  },
+  "rosaryUsccb": {
+   "label": "USCCB, \"How to Pray the Rosary\"",
+   "url": "https://www.usccb.org/how-to-pray-the-rosary"
+  },
+  "paintingWikimedia": {
+   "label": "Painting: Carl Bloch, Christ in Gethsemane. Public domain, via Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Gethsemane_Carl_Bloch.jpg"
+  }
+ },
+ "assets": [
+  {
+   "id": "bk-sorrowful-agony-garden-img-painting",
+   "kind": "image",
+   "path": "media/mysteries/s1.webp",
+   "mime": "image/webp",
+   "bytes": 78802,
+   "sha256": "39c5d2cff4af4f69842e84c562642f7780bec634921aa6368b93e544489ba0c5",
+   "access": "public",
+   "width": 1000,
+   "height": 1198
+  }
+ ]
+}

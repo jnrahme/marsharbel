@@ -12,3 +12,11 @@ Font filenames are versioned. If font bytes change, use new filenames to avoid s
 | Noto Sans Arabic | 100-900 (variable) | arabic | noto-sans-arabic-arabic-v2.woff2 | Google Fonts (notosansarabic v33) | OFL 1.1 (noto-sans-arabic-OFL.txt) |
 
 Note: the Arabic webfonts are SERVED from untracked -v3 filenames (media/fonts/*-v3.woff2, deployed via TUS only) because the Hostinger git-integration snapshot layer shadows tracked woff2 paths with 0-byte/404 entries in some regions (v1/v2 incident, 2026-09-26). Canonical bytes remain tracked at the -v2 paths.
+
+## Hindi/Thai home and history launch (Oct 7, 2026)
+
+Self-hosted variable faces, unchanged upstream bytes from Google Fonts, SIL OFL1.1.
+- Noto Serif Devanagari: https://github.com/google/fonts/tree/main/ofl/notoserifdevanagari
+- Noto Serif Thai: https://github.com/google/fonts/tree/main/ofl/notoserifthai
+- Downloaded from the API-returned raw URLs; respective OFL files stored beside them.
+- Scope: Hindi/Thai only. No existing locale font selection changes.

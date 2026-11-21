@@ -40,6 +40,10 @@ Run the full gate before merging, in this order, and inspect the results:
 
 Re-run the FULL gate after any edit, in gate order. Do not claim perfect SEO, guaranteed rankings, or worldwide field performance from structural tests alone.
 
+## Embedded-player focus and header menus
+
+Remote player interstitials may focus a cross-origin iframe during load. When header interaction reclaims focus, verify `document.hasFocus()` and real Escape delivery, not only `activeElement`: focusing during the frame blur event can change the latter without moving keyboard events back. Keep player focus usable after leaving the header, and cover both initial and late frame focus in the navigation regression suite.
+
 ## Secrets
 
 No passwords, tokens, keys, or credentials in the repo - ever. The repo is public. Do not commit personal analytics exports or local artifacts either.
@@ -123,3 +127,21 @@ Joey asked the assistant to research authoritative sources and use best judgment
 ## SmartAssist
 
 When available, call `rag_search` before project-specific code, test, Git or architecture decisions. Use `apply_feedback_protocol` to persist user corrections and reusable rules. If SmartAssist is unconfigured, preserve the rule here and continue; do not install or configure it without a task reason.
+
+## QA parser reproducibility (2026-11-10)
+
+Install Python QA dependencies with `pip install -r scripts/qa/requirements.txt`,
+not unbounded `pip install beautifulsoup4`. SoupSieve 4.0 changed document-wide
+selectors to stop at inert `<template>` boundaries. Current generators and
+immutable historical citation validators require the reviewed 2.10 behavior.
+Keep their source and evidence unchanged. Dependency upgrades need explicit
+compatibility tests, including the historical chain and current saint bindings.
+
+## Hidden /store workshop (2026-11-11)
+
+The `/store` workshop is intentionally undiscoverable: require `noindex,nofollow`,
+exclude it from every sitemap and public navigation/link source, keep
+`SHOP_LINK_ENABLED` off, and prohibit payment forms/integrations or credentials.
+Run `npm run test:hidden-store`; missing implementation fails closed. Keep robots
+crawlable so crawlers can read noindex. This is not access control. A hidden
+workshop must not gain inbound links merely to satisfy the general dead-code rule.

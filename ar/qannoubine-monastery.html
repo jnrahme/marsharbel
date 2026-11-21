@@ -3,19 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
-  <script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+  <script defer src="/analytics-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>دير قنوبين: مقرّ البطاركة الموارنة في الوادي المقدس</title>
   <meta name="description" content="تعرّف إلى دير قنوبين المنحوت في صخر وادي قاديشا، مقرّ البطاركة الموارنة من القرن الخامس عشر إلى القرن التاسع عشر، وجدارياته ومغارة القديسة مارينا والراهبات المقيمات فيه وطريق الوصول سيرًا." />
@@ -30,10 +18,14 @@
   <meta property="og:locale:alternate" content="en_US" />
 <meta property="og:locale:alternate" content="es_ES" />
 <meta property="og:locale:alternate" content="fr_FR" />
-<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
 <meta property="og:locale:alternate" content="it_IT" />
 <meta property="og:locale:alternate" content="de_DE" />
 <meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:image" content="https://marsharbel.com/media/annaya/qannoubine-church.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="دير قنوبين: مقرّ البطاركة الموارنة في الوادي المقدس" />
@@ -50,7 +42,14 @@
   "isPartOf": {
     "@type": "WebSite",
     "name": "مار شربل",
-    "alternateName": ["Mar Charbel", "Saint Charbel Makhlouf", "Sharbel", "St Charbel", "Saint Sharbel", "Charbel Makhlouf"],
+    "alternateName": [
+      "Mar Charbel",
+      "Saint Charbel Makhlouf",
+      "Sharbel",
+      "St Charbel",
+      "Saint Sharbel",
+      "Charbel Makhlouf"
+    ],
     "url": "https://marsharbel.com/",
     "publisher": {
       "@type": "Organization",
@@ -65,11 +64,17 @@
         "@type": "ListItem",
         "position": 1,
         "name": "الرئيسية",
-        "item": "https://marsharbel.com/"
+        "item": "https://marsharbel.com/ar/"
       },
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "السفر",
+        "item": "https://marsharbel.com/ar/travel"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "قنوبين، دير البطاركة الحصين",
         "item": "https://marsharbel.com/ar/qannoubine-monastery"
       }
@@ -168,79 +173,101 @@
   <link rel="preload" href="/media/fonts/manrope-latin-v1.woff2" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles.css?v=20260922-1" />
   <!-- hreflang:begin -->
-  <link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qannoubine-monastery" />
-  <link rel="alternate" hreflang="en" href="https://marsharbel.com/qannoubine-monastery" />
-  <link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qannoubine-monastery" />
-  <link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/monastere-qannoubine" />
-  <link rel="alternate" hreflang="es" href="https://marsharbel.com/es/monasterio-qannoubine" />
   <!-- hreflang:end -->
+<link rel="stylesheet" href="/travel.css?v=20261002-3" />
+<link rel="alternate" hreflang="en" href="https://marsharbel.com/qannoubine-monastery" />
+<link rel="alternate" hreflang="ar" href="https://marsharbel.com/ar/qannoubine-monastery" />
+<link rel="alternate" hreflang="fr" href="https://marsharbel.com/fr/monastere-qannoubine" />
+<link rel="alternate" hreflang="es" href="https://marsharbel.com/es/monasterio-qannoubine" />
+<link rel="alternate" hreflang="de" href="https://marsharbel.com/de/qannoubine-monastery" />
+<link rel="alternate" hreflang="ru" href="https://marsharbel.com/ru/qannoubine-monastery" />
+<link rel="alternate" hreflang="zh-Hans" href="https://marsharbel.com/zh-Hans/qannoubine-monastery" />
+<link rel="alternate" hreflang="x-default" href="https://marsharbel.com/qannoubine-monastery" />
+<script id="sc-runtime-labels" type="application/json">{"language.label": "اللغة", "language.popular": "الأكثر استخدامًا", "language.all": "جميع اللغات (A-Z)", "install.label": "ثبّت التطبيق", "install.link": "اضغط هنا لتثبيت هذا التطبيق", "install.ios": "على iPhone في Safari: اضغط على \"مشاركة\"، ثم على \"إضافة إلى الشاشة الرئيسية\".", "install.browser": "إذا لم تظهر نافذة، افتح قائمة المتصفح واختر \"تثبيت التطبيق\" أو \"إضافة إلى الشاشة الرئيسية\".", "footer.privacy": "سياسة الخصوصية (بالإنكليزية)", "footer.terms": "شروط الاستخدام (بالإنكليزية)", "footer.accessibility": "إمكانية الوصول (بالإنكليزية)", "language.choose": "اختر اللغة", "nativeNames": {"en": "English", "ar": "العربية", "fr": "Français", "es": "Español", "pt": "Português", "it": "Italiano", "de": "Deutsch", "pl": "Polski", "ru": "Русский", "hi": "हिन्दी", "th": "ไทย", "zh-Hans": "简体中文"}}</script>
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
-<body>
+<body class="travel-page travel-destination">
   <a class="skip-link" href="#main-content">انتقل إلى المحتوى الرئيسي</a>
   <header class="topbar">
     <div class="site-shell nav">
-      <a class='brand' href='/'><span class="brand-mark">✦</span><span>مار شربل</span></a>
+      <a class='brand' href='/ar/'><span class="brand-mark">✦</span><span>مار شربل</span></a>
       <nav class="links" aria-label="القائمة الرئيسية">
-        <a href="/">الرئيسية</a>
+        <a href="/ar/">الرئيسية</a>
         <div class="nav-group">
-        <a class="nav-parent" href="/stories" aria-haspopup="true" aria-expanded="false">القصة<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="/ar/encyclopedia" aria-haspopup="true" aria-expanded="false">الإرث الروحي<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="/stories">قصص القديسين</a>
+        <a href="/ar/encyclopedia">موسوعة مار شربل</a>
         <a href="/ar/biography">السيرة الكاملة</a>
         </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="/ar/miracles/" aria-haspopup="true" aria-expanded="false">العجائب<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
         <a href="/ar/miracles/">العجائب والشهادات</a>
-        <a href="/miracles/eucharistic/">عجائب القربان المقدس</a>
-        <a href="/news">آخر الأخبار</a>
-        <a href="/testimonies">الرسائل</a>
-        <a href="/voice-testimony">شهادات صوتية</a>
+        <a href="/ar/miracles/eucharistic/">عجائب القربان المقدس</a>
+        <a href="/ar/testimonies">الرسائل</a>
+        <a href="/ar/voice-testimony">شهادات صوتية</a>
         </div></div>
-        <a href="/saints">القديسون</a>
         <div class="nav-group">
-        <a class="nav-parent" href="/prayer-library" aria-haspopup="true" aria-expanded="false">الصلاة<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="/ar/saints" aria-haspopup="true" aria-expanded="false">القديسون<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="/prayer-library">مكتبة الصلاة</a>
-        <a href="/prayer-library#find-a-prayer">ابحث عن صلاة بحسب النيّة</a>
-        <a href="/saint-charbel-prayer-for-the-sick">صلاة من أجل المرضى</a>
-        <a href="/saint-charbel-prayer-for-healing">صلاة من أجل الشفاء</a>
-        <a href="/saint-charbel-prayer-for-anxiety">صلاة عند القلق</a>
-        <a href="/saint-charbel-prayer-for-depression">صلاة عند الحزن</a>
-        <a href="/saint-charbel-prayer-for-students">صلاة للطلاب</a>
-        <a href="/saint-charbel-prayer-for-addiction">صلاة عند الإدمان</a>
-        <a href="/saint-charbel-prayer-for-family">صلاة للعائلة</a>
-        <a href="/saint-charbel-prayer-for-pregnancy">صلاة من أجل الحمل</a>
-        <a href="/saint-charbel-prayer-for-a-miracle">صلاة لطلب عجيبة</a>
+        <a href="/ar/saints">القديسون</a>
+        <a hreflang="en" aria-label="كتب للأطفال (بالإنجليزية)" href="/stories">كتب للأطفال <span class="enc-language">(بالإنجليزية)</span></a>
+        </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="/ar/prayer-library" aria-haspopup="true" aria-expanded="false">الصلاة<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="/ar/prayer-library">مكتبة الصلاة</a>
+        <a href="/ar/prayer-library#find-a-prayer">ابحث عن صلاة بحسب النيّة</a>
+        <a hreflang="en" aria-label="صلاة من أجل المرضى (بالإنجليزية)" href="/saint-charbel-prayer-for-the-sick">صلاة من أجل المرضى <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="صلاة من أجل الشفاء (بالإنجليزية)" href="/saint-charbel-prayer-for-healing">صلاة من أجل الشفاء <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="صلاة عند القلق (بالإنجليزية)" href="/saint-charbel-prayer-for-anxiety">صلاة عند القلق <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="صلاة عند الحزن (بالإنجليزية)" href="/saint-charbel-prayer-for-depression">صلاة عند الحزن <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="صلاة للطلاب (بالإنجليزية)" href="/saint-charbel-prayer-for-students">صلاة للطلاب <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="صلاة عند الإدمان (بالإنجليزية)" href="/saint-charbel-prayer-for-addiction">صلاة عند الإدمان <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="صلاة للعائلة (بالإنجليزية)" href="/saint-charbel-prayer-for-family">صلاة للعائلة <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="صلاة من أجل الحمل (بالإنجليزية)" href="/saint-charbel-prayer-for-pregnancy">صلاة من أجل الحمل <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="صلاة لطلب عجيبة (بالإنجليزية)" href="/saint-charbel-prayer-for-a-miracle">صلاة لطلب عجيبة <span class="enc-language">(بالإنجليزية)</span></a>
         <a href="/ar/prayers">صلوات مار شربل</a>
         <a href="/ar/novena">تساعية مار شربل</a>
         <a href="/ar/feast-day">عيد مار شربل</a>
-        <a href="/rosary-visual-guide">دليل المسبحة الوردية</a>
-        <a href="/rosary-minibook">كتيّب المسبحة</a>
-        <a href="/mystery-meditation">التأمل في الأسرار</a>
-        <a href="/become-like-charbel">الاقتداء به</a>
+        <a hreflang="en" aria-label="دليل المسبحة الوردية (بالإنجليزية)" href="/rosary-visual-guide">دليل المسبحة الوردية <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="كتيّب المسبحة (بالإنجليزية)" href="/rosary-minibook">كتيّب المسبحة <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="التأمل في الأسرار (بالإنجليزية)" href="/mystery-meditation">التأمل في الأسرار <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="الاقتداء به (بالإنجليزية)" href="/become-like-charbel">الاقتداء به <span class="enc-language">(بالإنجليزية)</span></a>
         </div></div>
         <div class="nav-group">
-        <a class="active nav-parent" href="/ar/annaya" aria-haspopup="true" aria-expanded="false">السفر مع مار شربل<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="active nav-parent" href="/ar/travel" aria-haspopup="true" aria-expanded="false">السفر<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="/ar/travel">السفر</a>
         <a href="/ar/annaya">زيارة عنايا</a>
-        <a href="/annaya-tour">جولة افتراضية في عنايا</a>
-        <a href="/bekaa-kafra">بقاعكفرا</a>
+        <a hreflang="en" aria-label="جولة افتراضية في عنايا (بالإنجليزية)" href="/annaya-tour">جولة افتراضية في عنايا <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="بقاعكفرا (بالإنجليزية)" href="/bekaa-kafra">بقاعكفرا <span class="enc-language">(بالإنجليزية)</span></a>
         <a href="/ar/qadisha-valley">وادي قاديشا</a>
-        <a class="active" href="/ar/qannoubine-monastery" aria-current="page">دير قنوبين</a>
+        <a class="active" aria-current="page" href="/ar/qannoubine-monastery">دير قنوبين</a>
         <a href="/ar/qozhaya-monastery">دير قزحيا</a>
-        <a href="/saint-charbel-places-lebanon">لبنان مار شربل</a>
-        <a href="/saint-charbel-hermitage">المحبسة</a>
-        <a href="/saint-charbel-trail">درب مار شربل</a>
+        <a hreflang="en" aria-label="لبنان مار شربل (بالإنجليزية)" href="/saint-charbel-places-lebanon">لبنان مار شربل <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="المحبسة (بالإنجليزية)" href="/saint-charbel-hermitage">المحبسة <span class="enc-language">(بالإنجليزية)</span></a>
+        <a hreflang="en" aria-label="درب مار شربل (بالإنجليزية)" href="/saint-charbel-trail">درب مار شربل <span class="enc-language">(بالإنجليزية)</span></a>
         </div></div>
-        <a href="/gallery">معرض الصور</a>
+        <a href="/ar/news">الأخبار</a>
+<div class="nav-group">
+<a aria-expanded="false" aria-haspopup="true" class="nav-parent" href="/ar/music">Media<span aria-hidden="true" class="nav-chev"></span></a>
+<div class="nav-sub">
+<a href="/ar/music">Music</a>
+<a href="/ar/videos">Video</a>
+<a href="/ar/gallery">معرض الصور</a>
+</div></div>
+
         </nav>
       <div class="lang-switcher-slot" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main-content" class="site-shell" tabindex="-1">
-    <section class="hero">
+<!-- i18n-travel-frame:start -->
+<nav class="travel-breadcrumb" aria-label="في هذا الدليل"><a href="/ar/">الرئيسية</a><span aria-hidden="true">/</span><a href="/ar/travel">السفر</a><span aria-hidden="true">/</span><span aria-current="page">قنوبين، دير البطاركة الحصين</span></nav>
+<!-- i18n-travel-frame:end -->
+    <section class="hero travel-split-hero"><figure class="hero-figure"><img src="/media/annaya/qannoubine-church.webp" alt="كنيسة دير قنوبين الحجرية تحت سماء مشرقة وخلفها جروف وادي قاديشا. تصوير حسين صبوري، ويكيميديا كومنز" width="1100" height="733" loading="eager" fetchpriority="high" /><figcaption>كنيسة قنوبين الحجرية وخلفها الوادي. تصوير: حسين صبوري، <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">ويكيميديا كومنز</a> (CC0).</figcaption></figure><div class="travel-summary">
       <span class="kicker">أماكن مار شربل</span>
       <h1>قنوبين، دير البطاركة الحصين</h1>
       <p>دير قنوبين، المبني جزئيًا في الصخر في وادي قاديشا، كان حصنًا ومقرًا للبطاركة الموارنة من القرن الخامس عشر إلى القرن التاسع عشر. تعتني به اليوم جماعة صغيرة من الراهبات.</p>
@@ -250,8 +277,8 @@
         <a class='btn subtle' href='/ar/qozhaya-monastery'>دير قزحيا</a>
         <a class='btn subtle' href='/saint-charbel-trail'>درب مار شربل</a>
       </div>
-      <figure class="hero-figure"><img src="/media/annaya/qannoubine-church.webp" alt="كنيسة دير قنوبين الحجرية تحت سماء مشرقة وخلفها جروف وادي قاديشا. تصوير حسين صبوري، ويكيميديا كومنز" width="1100" height="733" loading="lazy" /><figcaption>كنيسة قنوبين الحجرية وخلفها الوادي. تصوير: حسين صبوري، <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">ويكيميديا كومنز</a> (CC0).</figcaption></figure>
-    </section>
+
+</div></section>
 
     <section class="section">
       <h2>الدير الذي حمل اسم الدير</h2>
@@ -333,11 +360,21 @@
 
   <footer class="footer">
     <div class="site-shell">دير قنوبين. الكاتب: صلّوا من أجل من أنشأ هذا الموقع.</div>
+<!-- i18n-locale-nav:start -->
+<div class="site-shell">
+<nav aria-label="اختر اللغة" class="locale-nav locale-fallback" data-i18n-generated="" data-locale-fallback=""><a dir="ltr" href="https://marsharbel.com/qannoubine-monastery" hreflang="en" lang="en">English</a> <span aria-hidden="true">-</span> <a aria-current="page" dir="rtl" href="https://marsharbel.com/ar/qannoubine-monastery" hreflang="ar" lang="ar">العربية</a> <span aria-hidden="true">-</span> <a aria-disabled="true" dir="ltr" hreflang="fr" lang="fr" tabindex="-1">Français (قيد المراجعة)</a> <span aria-hidden="true">-</span> <a aria-disabled="true" dir="ltr" hreflang="es" lang="es" tabindex="-1">Español (قيد المراجعة)</a> <span aria-hidden="true">-</span> <a aria-disabled="true" dir="ltr" hreflang="pt" lang="pt" tabindex="-1">Português (قيد المراجعة)</a> <span aria-hidden="true">-</span> <a aria-disabled="true" dir="ltr" hreflang="it" lang="it" tabindex="-1">Italiano (قيد المراجعة)</a> <span aria-hidden="true">-</span> <a dir="ltr" href="https://marsharbel.com/de/qannoubine-monastery" hreflang="de" lang="de">Deutsch</a> <span aria-hidden="true">-</span> <a aria-disabled="true" dir="ltr" hreflang="pl" lang="pl" tabindex="-1">Polski (قيد المراجعة)</a> <span aria-hidden="true">-</span> <a dir="ltr" href="https://marsharbel.com/ru/qannoubine-monastery" hreflang="ru" lang="ru">Русский</a> <span aria-hidden="true">-</span> <a aria-disabled="true" dir="ltr" hreflang="hi" lang="hi" tabindex="-1">हिन्दी (قيد المراجعة)</a> <span aria-hidden="true">-</span> <a aria-disabled="true" dir="ltr" hreflang="th" lang="th" tabindex="-1">ไทย (قيد المراجعة)</a> <span aria-hidden="true">-</span> <a aria-disabled="true" dir="ltr" hreflang="zh-Hans" lang="zh-Hans" tabindex="-1">简体中文 (قيد المراجعة)</a>
+<span class="sc-language-helper">بعض ترجمات هذه الصفحة قيد المراجعة.</span></nav>
+</div>
+<!-- i18n-locale-nav:end -->
   </footer>
 
   <script defer src="/app.js"></script>
   <script defer src="/locale-routes.js"></script>
   <script defer src="/translate.js?v=20260922-1"></script>
   <script src="/nav.js?v=20260922-1" defer></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

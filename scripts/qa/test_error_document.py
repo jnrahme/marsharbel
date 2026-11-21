@@ -35,6 +35,6 @@ if args.base_url:
             assert response.headers.get('Permissions-Policy')
             assert response.headers.get('Content-Security-Policy-Report-Only')
             if args.base_url.startswith('https:'):
-                assert response.headers.get('Strict-Transport-Security') == 'max-age=86400'
+                assert response.headers.get('Strict-Transport-Security') == 'max-age=31536000'
             print('PASS', path, response.code, 'custom body + security/cache/index headers')
 print('PASS custom error document contract')

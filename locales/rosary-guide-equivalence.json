@@ -1,0 +1,69 @@
+{
+ "version": 1,
+ "gateStatus": "approved",
+ "family": "rosary-guide",
+ "repinNote": "bodySha256 pins the rendered main digest; catalogSha256 pins the pages.json rosary subtree (canonical JSON); drift fails closed in reviewed_rosary_guide.rosary_guide_manifest",
+ "groups": {
+  "rosary-guide": {
+   "sourceRevision": "3763e61a6f708676789b550adc5e8545a2b88022",
+   "catalogReview": "rosary-guide: locale pages.json rosary subtrees shape-equal to English; no blank strings; prayer-name and mystery-name forms per the certified locale catalogs",
+   "renderedReview": "rosary-guide: scripted parity audit 2026-10-22 - keyedTextComplete, mediaParity, linkParity (slug-normalized), schemaParity, anchorParity, interactionParity across de/es/fr/it/pl/pt/ar; ar variant reviewed under owner waiver 2026-10-22 16:23 EDT (AI review, not native-validated; doctrine verdict via parent)",
+   "variants": {
+    "en": {
+     "file": "en/rosary.html",
+     "path": "/en/rosary",
+     "bodySha256": "e0b80918979994c29049bd305ae7169e913bc00b46ec44aac5bfc07832edd578"
+    },
+    "de": {
+     "file": "de/rosenkranz.html",
+     "path": "/de/rosenkranz",
+     "bodySha256": "32643cf5c69a160a08b5df1f33bfb228eb7950c421ec0fcc89cd6a0cb539551d",
+     "catalog": "locales/de/pages.json#rosary",
+     "catalogSha256": "c58a923e15ca69b5e2a91e1a4ecbf7c1fae18ec7c9548e04a7ad670d7275d89d"
+    },
+    "es": {
+     "file": "es/rosario.html",
+     "path": "/es/rosario",
+     "bodySha256": "3603a11f8debfbe9678caab4182262d110edced8a73f5fd6fe7c759b141dcb3b",
+     "catalog": "locales/es/pages.json#rosary",
+     "catalogSha256": "e73dcb9380596fd768b61603603c546dd4c660859f94fd6f7e26cceb9b416555"
+    },
+    "fr": {
+     "file": "fr/chapelet.html",
+     "path": "/fr/chapelet",
+     "bodySha256": "a5c2af7ce75833e9b60ad97575356ad7c84905aeebe808da08d38f2ac9b0193a",
+     "catalog": "locales/fr/pages.json#rosary",
+     "catalogSha256": "271d78f8acb7766846790d5048fdec9c91fe066cc0807783467d33d2f4ee67b6"
+    },
+    "it": {
+     "file": "it/rosario.html",
+     "path": "/it/rosario",
+     "bodySha256": "5ab21208f6f1dd4a6db5e6820c63742312f993279494fe779eb73836b7cf3fd5",
+     "catalog": "locales/it/pages.json#rosary",
+     "catalogSha256": "647942c5ea97e2bdfa4cb1be8829c1c3f779a195ba298e607e138418905d1d53"
+    },
+    "pl": {
+     "file": "pl/rozaniec.html",
+     "path": "/pl/rozaniec",
+     "bodySha256": "6bb3381385eab87d794c9440ff5cab0f8ac3d5d21b68569a1c5a80e1fa8c7380",
+     "catalog": "locales/pl/pages.json#rosary",
+     "catalogSha256": "837207b37f19f209c0dbb2e0889c2a3f5b115c434d34ed4b1d81b41a6619288a"
+    },
+    "pt": {
+     "file": "pt/rosario.html",
+     "path": "/pt/rosario",
+     "bodySha256": "0c4f8a7f0a285de690ec390910278bbd5c042b8406f5e4b1545f0bce33b90836",
+     "catalog": "locales/pt/pages.json#rosary",
+     "catalogSha256": "225f97c896fafd85bacefa299f1a0919ee232d9e302bd7babcde7c335bd47808"
+    },
+    "ar": {
+     "file": "ar/rosary-guide.html",
+     "path": "/ar/rosary-guide",
+     "bodySha256": "333907c204bde549459a99944c252872444a86f911787abea75296d48b551e60",
+     "catalog": "locales/ar/pages.json#rosary",
+     "catalogSha256": "697087b67668d9ad8315d2b492867a65d05153533ec94262517c694b32343f17"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Language page metadata",
+  "description": "One locale's page metadata, mirroring its entry in locales/registry.json so the registry stays the source of truth the record is generated from.",
+  "type": "object",
+  "required": ["locale", "nativeName", "direction", "home", "ogLocale", "slugs"],
+  "additionalProperties": false,
+  "properties": {
+    "locale": { "type": "string", "pattern": "^[a-z]{2}(-[A-Za-z]{2,5})?$" },
+    "nativeName": { "type": "string", "minLength": 1 },
+    "direction": { "enum": ["ltr", "rtl"] },
+    "home": { "type": "string", "pattern": "^/" },
+    "ogLocale": { "type": "string", "pattern": "^[a-z]{2}_[A-Z]{2}$" },
+    "slugs": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" }
+    },
+    "topicGuides": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" } }
+  }
+}

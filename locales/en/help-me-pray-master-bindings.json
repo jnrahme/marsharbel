@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "master": "help-me-pray.html",
+  "masterSha256": "8fc55d532a685516216a72f44652be55202ac6c53d1fdddfab621c1cd50688f6",
+  "sourceRevision": "1e50d1e6",
+  "bindings": [
+    {
+      "key": "help-me-pray.metadata.title-help-me-pray",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Help Me Pray",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.metadata.description-choose-what-you-are-carrying-today-find-a-small",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(3)",
+      "source": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "help-me-pray.metadata.og-title-help-me-pray",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(7)",
+      "source": "Help Me Pray",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "help-me-pray.metadata.og-description-choose-what-you-are-carrying-today-find-a-sma",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+      "source": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "help-me-pray.help-me-pray.help-me-pray",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Help Me Pray",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.help-me-pray.choose-what-you-are-carrying-today-find-a-small-step-toward",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.help-me-pray.cards-marked-in-review-are-not-ready-to-use-their-prayer-tex",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Cards marked \"In review\" are not ready to use. Their prayer text and Begin action are unavailable.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.what-brings-you-here.what-brings-you-here",
+      "selector": "#needs-heading",
+      "source": "What brings you here?",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.what-brings-you-here.beginning-or-returning-to-prayer",
+      "selector": "#hmp-nav > button:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Beginning or returning to prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.what-brings-you-here.family",
+      "selector": "#hmp-nav > button:nth-of-type(2) > span:nth-of-type(1)",
+      "source": "Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.what-brings-you-here.illness",
+      "selector": "#hmp-nav > button:nth-of-type(3) > span:nth-of-type(1)",
+      "source": "Illness",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.what-brings-you-here.gratitude",
+      "selector": "#hmp-nav > button:nth-of-type(4) > span:nth-of-type(1)",
+      "source": "Gratitude",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.what-brings-you-here.discouragement-in-prayer",
+      "selector": "#hmp-nav > button:nth-of-type(5) > span:nth-of-type(1)",
+      "source": "Discouragement in prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.what-brings-you-here.understanding-maronite-prayer",
+      "selector": "#hmp-nav > button:nth-of-type(6) > span:nth-of-type(1)",
+      "source": "Understanding Maronite prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.what-brings-you-here.cards-marked-in-review-are-not-ready-to-use-their-prayer-tex",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > noscript:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Cards marked \"In review\" are not ready to use. Their prayer text and Begin action are unavailable.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.prayer-and-the-help-you.prayer-and-the-help-you-need",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > h2:nth-of-type(1)",
+      "source": "Prayer and the help you need",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.prayer-and-the-help-you.this-guide-offers-devotional-guidance-not-a-sacrament-diagno",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "This guide offers devotional guidance, not a sacrament, diagnosis, or promise of healing. For confession or personal spiritual direction, speak with a priest. Keep receiving medical care, and seek urgent local help in a crisis.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "help-me-pray.prayer-and-the-help-you.you-do-not-need-to-enter-your-name-prayer-intention-or-perso",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "You do not need to enter your name, prayer intention, or personal details to use this guide.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "help-me-pray.metadata.title-help-me-pray": "Help Me Pray",
+    "help-me-pray.metadata.description-choose-what-you-are-carrying-today-find-a-small": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
+    "help-me-pray.metadata.og-title-help-me-pray": "Help Me Pray",
+    "help-me-pray.metadata.og-description-choose-what-you-are-carrying-today-find-a-sma": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
+    "help-me-pray.help-me-pray.help-me-pray": "Help Me Pray",
+    "help-me-pray.help-me-pray.choose-what-you-are-carrying-today-find-a-small-step-toward": "Choose what you are carrying today. Find a small step toward prayer, with sources and clear limits.",
+    "help-me-pray.help-me-pray.cards-marked-in-review-are-not-ready-to-use-their-prayer-tex": "Cards marked \"In review\" are not ready to use. Their prayer text and Begin action are unavailable.",
+    "help-me-pray.what-brings-you-here.what-brings-you-here": "What brings you here?",
+    "help-me-pray.what-brings-you-here.beginning-or-returning-to-prayer": "Beginning or returning to prayer",
+    "help-me-pray.what-brings-you-here.family": "Family",
+    "help-me-pray.what-brings-you-here.illness": "Illness",
+    "help-me-pray.what-brings-you-here.gratitude": "Gratitude",
+    "help-me-pray.what-brings-you-here.discouragement-in-prayer": "Discouragement in prayer",
+    "help-me-pray.what-brings-you-here.understanding-maronite-prayer": "Understanding Maronite prayer",
+    "help-me-pray.what-brings-you-here.cards-marked-in-review-are-not-ready-to-use-their-prayer-tex": "Cards marked \"In review\" are not ready to use. Their prayer text and Begin action are unavailable.",
+    "help-me-pray.prayer-and-the-help-you.prayer-and-the-help-you-need": "Prayer and the help you need",
+    "help-me-pray.prayer-and-the-help-you.this-guide-offers-devotional-guidance-not-a-sacrament-diagno": "This guide offers devotional guidance, not a sacrament, diagnosis, or promise of healing. For confession or personal spiritual direction, speak with a priest. Keep receiving medical care, and seek urgent local help in a crisis.",
+    "help-me-pray.prayer-and-the-help-you.you-do-not-need-to-enter-your-name-prayer-intention-or-perso": "You do not need to enter your name, prayer intention, or personal details to use this guide."
+  }
+}

@@ -1,6 +1,13 @@
-(function () {
+(async function () {
   const form = document.getElementById('home-letter-form');
   if (!form) return;
+  const config = document.getElementById('sc-home-labels');
+  const labels = config ? JSON.parse(config.textContent) : await fetch('/locales/en/home-copy.json').then(response => {
+    if (!response.ok) throw new Error('HOME_CATALOG_UNAVAILABLE');
+    return response.json();
+  });
+  const storageError = labels['home.runtime.letter.storageError'];
+  if (typeof storageError !== 'string') throw new Error('HOME_LETTER_STORAGE_KEY_MISSING');
   const draft = document.getElementById('home-letter-draft');
   const error = document.getElementById('home-letter-error');
   try {
@@ -19,9 +26,9 @@
     if (!form.reportValidity()) return;
     try {
       sessionStorage.setItem('saint_charbel_letter_draft', draft.value);
-      window.location.assign('./submit-testimony');
+      window.location.assign('/submit-testimony');
     } catch {
-      error.textContent = 'This browser could not carry your letter to the next page. Keep a copy before continuing.';
+      error.textContent = storageError;
       error.hidden = false;
     }
   });

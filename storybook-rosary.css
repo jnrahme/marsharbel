@@ -1,0 +1,27 @@
+/* Rosary mystery books: additive rules on top of the pinned storybook-stage.css. */
+body.is-story-page .storybook-text #story-body{white-space:pre-line}
+/* Localized (non-EN) editions: shelf labels are wider, so Settings stays in the static stacked fallback so the two can never collide (RTL and enlarged text included). */
+html:not([lang="en"]) body.is-story-page.st-settings-row .storybook>details.story-settings{position:static;inset-inline-end:auto;top:auto;margin:0 .2rem}
+/* Rosary decade books carry long prayer pages (page 3 is taller than a phone or laptop
+   viewport), so a sticky dock would ride over the prayer text: the controls stay in normal
+   flow under the page, and the reserved dock padding goes away. */
+body.is-story-page[data-story^="joyful-"] .storybook-controls,
+body.is-story-page[data-story^="luminous-"] .storybook-controls,
+body.is-story-page[data-story^="sorrowful-"] .storybook-controls,
+body.is-story-page[data-story^="glorious-"] .storybook-controls {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  z-index: auto;
+}
+@media (max-width: 820px) {
+  body.is-story-page[data-story^="joyful-"] section.storybook,
+  body.is-story-page[data-story^="luminous-"] section.storybook,
+  body.is-story-page[data-story^="sorrowful-"] section.storybook,
+  body.is-story-page[data-story^="glorious-"] section.storybook { padding-bottom: 1.5rem; }
+  /* The page-turn leaf is wider than a phone column; clip it so it cannot widen the document. */
+  body.is-story-page[data-story^="joyful-"] .storybook-panel,
+  body.is-story-page[data-story^="luminous-"] .storybook-panel,
+  body.is-story-page[data-story^="sorrowful-"] .storybook-panel,
+  body.is-story-page[data-story^="glorious-"] .storybook-panel { overflow-x: clip; }
+}

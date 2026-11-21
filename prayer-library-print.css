@@ -1,0 +1,31 @@
+/* Print layout for /prayer-library. Loaded with media="print", so it never touches the screen view. */
+@page { size: auto; margin: 16mm 15mm; }
+@media print {
+  html, body { background: #fff !important; color: #111 !important; font-size: 11pt; }
+  body { font-family: Georgia, "Times New Roman", serif; line-height: 1.45; }
+  .skip-link, .topbar, .lang-switcher-slot, .share-bar, .cta-row, .hero-figure,
+  .prayer-page #find-a-prayer, .prayer-page .finder, .footer-locales { display: none !important; }
+  .prayer-page .section:has(> .finder) { display: none !important; }
+  .prayer-page, .footer .site-shell { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+  .prayer-page *, .footer * { background: transparent !important; box-shadow: none !important; text-shadow: none !important; color: #111 !important; border-color: #999 !important; animation: none !important; transition: none !important; }
+  .prayer-page .hero { padding: 0 0 6mm; border-bottom: 1px solid #999; }
+  .prayer-page .kicker { font-size: 9pt; letter-spacing: .08em; text-transform: uppercase; }
+  .prayer-page h1 { font-size: 22pt; line-height: 1.15; margin: 2mm 0 3mm; }
+  .prayer-page h2 { font-size: 15pt; margin: 8mm 0 3mm; break-after: avoid; page-break-after: avoid; }
+  .prayer-page h3 { font-size: 12.5pt; margin: 0 0 2mm; break-after: avoid; page-break-after: avoid; }
+  .prayer-page p, .prayer-page dd, .prayer-page dt, .prayer-page li { orphans: 3; widows: 3; max-width: none; }
+  .prayer-page .section { padding: 0; border: 0; }
+  .prayer-grid, .grid-2 { display: block !important; }
+  .prayer-card, .prayer-page .card { display: block; padding: 0 0 4mm !important; margin: 0 0 5mm !important; border: 0 !important; border-bottom: 1px solid #bbb !important; border-radius: 0 !important; break-inside: avoid-page; page-break-inside: avoid; }
+  .prayer-facts { margin: 2mm 0 0; font-size: 10pt; }
+  .prayer-facts dt { font-weight: 700; margin-top: 1.5mm; break-after: avoid; page-break-after: avoid; }
+  .prayer-facts dd { margin: 0; }
+  blockquote, figure.scripture-quote { break-inside: avoid; margin: 3mm 0; }
+  a { text-decoration: none; }
+  .prayer-page .section:last-of-type a[href^="./"]::after { content: ""; }
+  .footer { padding: 4mm 0 0; border-top: 1px solid #999; font-size: 9pt; }
+}
+@media print {
+  .prayer-page h1, .prayer-page .hero p, .prayer-page blockquote, .prayer-page figure.scripture-quote { max-width: none !important; width: auto !important; }
+  .prayer-card p { font-size: 11.5pt !important; line-height: 1.5 !important; }
+}

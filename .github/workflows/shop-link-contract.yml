@@ -1,0 +1,46 @@
+name: Hidden shop flag contract
+on:
+  pull_request:
+    branches: [stage]
+permissions:
+  contents: read
+jobs:
+  disabled-byte-identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      SHOP_LINK_ENABLED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: pip install -r scripts/qa/requirements.txt
+      - run: npm run test:hidden-store
+      - name: Compare ordinary baseline and candidate builder bytes with flag OFF
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          git show "$BASE_SHA:scripts/build-pages.mjs" > scripts/.shop-base-build.mjs
+          mv partials/fragments/shop-link.html /tmp/shop-link-fragment.html
+          node scripts/.shop-base-build.mjs
+          mv /tmp/shop-link-fragment.html partials/fragments/shop-link.html
+          python3 - <<'PY'
+          import hashlib,json,subprocess
+          from pathlib import Path
+          files=subprocess.check_output(['git','ls-files','*.html'],text=True).splitlines()
+          Path('/tmp/shop-base-hashes.json').write_text(json.dumps({p:hashlib.sha256(Path(p).read_bytes()).hexdigest() for p in files}))
+          PY
+          node scripts/build-pages.mjs
+          python3 - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          before=json.loads(Path('/tmp/shop-base-hashes.json').read_text())
+          changed=[p for p,digest in before.items() if hashlib.sha256(Path(p).read_bytes()).hexdigest()!=digest]
+          assert not changed, changed
+          print(f'PASS: {len(before)} HTML files byte-identical to ordinary baseline build, flag OFF')
+          PY

@@ -1,0 +1,912 @@
+{
+  "version": 1,
+  "master": "saint-charbel-medal.html",
+  "masterSha256": "6b663d34d593f6829eb33b3358e3c5318bcdfac7033138a9142c14e10144fb5f",
+  "sourceRevision": "0d651496",
+  "bindings": [
+    {
+      "key": "saint-charbel-medal.metadata.title-saint-charbel-medal-meaning-blessing-how-to-wear-it",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Saint Charbel Medal: Meaning, Blessing & How to Wear It",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.metadata.description-the-saint-charbel-medal-what-it-depicts-what-the",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "source": "The Saint Charbel medal: what it depicts, what the Church means when she calls it a sacramental, how to have a medal blessed, and how to wear it in a life of prayer.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-medal.metadata.og-title-saint-charbel-medal-meaning-blessing-how-to-wear-it",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "source": "Saint Charbel Medal: Meaning, Blessing & How to Wear It",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-medal.metadata.og-description-the-saint-charbel-medal-what-it-depicts-what",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "source": "The Saint Charbel medal: what it depicts, what the Church means when she calls it a sacramental, how to have a medal blessed, and how to wear it in a life of prayer.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-medal.metadata.twitter-title-saint-charbel-medal-meaning-blessing-how-to-we",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "source": "Saint Charbel Medal: Meaning, Blessing & How to Wear It",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-medal.metadata.twitter-description-the-saint-charbel-medal-what-it-depicts",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "source": "The Saint Charbel medal: what it depicts, what the Church means when she calls it a sacramental, how to have a medal blessed, and how to wear it in a life of prayer.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "saint-charbel-medal.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "saint-charbel-medal.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.body.devotion",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Devotion",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.saint-charbel-medal-mean.saint-charbel-medal-meaning-blessing-and-how-to-wear-it",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Saint Charbel Medal: Meaning, Blessing, and How to Wear It",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.saint-charbel-medal-mean.a-small-medal-of-the-hermit-of-annaya-travels-far-on-a-chain",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A small medal of the hermit of Annaya travels far: on a chain, in a wallet, by a hospital bed. Here is what it depicts, what the Church says such an object is - and is not - and how to use it well in a life of prayer.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.accessibility.saint-charbel-makhlouf-the-traditional-hooded-portrait",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "Saint Charbel Makhlouf, the traditional hooded portrait",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "saint-charbel-medal.saint-charbel-medal-mean.the-traditional-portrait-of-saint-charbel-the-same-hooded-bo",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The traditional portrait of Saint Charbel - the same hooded, bowed figure most medals carry.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.saint-charbel-medal-mean.what-it-depicts",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "What It Depicts",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.saint-charbel-medal-mean.having-it-blessed",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Having It Blessed",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.saint-charbel-medal-mean.the-chaplet",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "The Chaplet",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.saint-charbel-medal-mean.part-of-the",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Part of the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.saint-charbel-medal-mean.saint-charbel-encyclopedia",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.saint-charbel-medal-mean.new-to-his-story-read",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ". New to his story? Read",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-medal.saint-charbel-medal-mean.the-life-of-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "the life of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.saint-charbel-medal-mean.text",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-medal.what-the-medal-depicts.what-the-medal-depicts",
+      "selector": "#what-it-depicts > h2:nth-of-type(1)",
+      "source": "What the Medal Depicts",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.what-the-medal-depicts.nearly-every-saint-charbel-medal-shows-the-same-man-a-bearde",
+      "selector": "#what-it-depicts > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Nearly every Saint Charbel medal shows the same man: a bearded monk in the black habit and hood of the Lebanese Maronite Order, his head bowed or his eyes lowered in prayer. The likeness comes from the traditional portrait of Saint Charbel Makhlouf (1828-1898), the hermit who spent twenty-three years above the Monastery of Saint Maron in Annaya, Lebanon, and whom the Church canonized in 1977.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.what-the-medal-depicts.the-lowered-eyes-are-the-point-they-recall-the-hidden-life-h",
+      "selector": "#what-it-depicts > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The lowered eyes are the point. They recall the hidden life he chose - silence, fasting, and long night prayer before the Blessed Sacrament - rather than any public achievement. Some medals add a monastic staff, the monastery of Annaya, or his tomb; others pair him with Saint Rafqa or with Our Lady of Lebanon on the reverse. The details vary; the bowed hermit does not.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.what-the-church-calls-an.what-the-church-calls-an-object-like-this",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "What the Church Calls an Object Like This",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.what-the-church-calls-an.the-catechism-gives-this-category-a-precise-name-and-a-preci",
+      "selector": "#main-content > section:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "The Catechism gives this category a precise name - and a precise limit.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.what-the-church-calls-an.a-medal-of-a-saint-is-a",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "A medal of a saint is a",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.what-the-church-calls-an.sacramental",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "sacramental",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.what-the-church-calls-an.the-catechism-teaches-holy-mother-church-has-moreover-instit",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ". The Catechism teaches: \"Holy Mother Church has, moreover, instituted sacramentals. These are sacred signs which bear a resemblance to the sacraments. They signify effects, particularly of a spiritual nature, which are obtained through the intercession of the Church\" (CCC 1667). Medals appear by name among the Church's forms of popular devotion (CCC 1674).",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-medal.what-the-church-calls-an.a-sacramental-is",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "A sacramental is",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.what-the-church-calls-an.not-a-sacrament",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "source": "not a sacrament",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.what-the-church-calls-an.the-seven-sacraments-baptism-the-eucharist-the-anointing-of",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ". The seven sacraments - Baptism, the Eucharist, the Anointing of the Sick among them - were instituted by Christ and confer grace. Sacramentals work differently: they \"do not confer the grace of the Holy Spirit in the way that the sacraments do, but by the Church's prayer, they prepare us to receive grace and dispose us to cooperate with it\" (CCC 1670). The same is true of",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-medal.what-the-church-calls-an.saint-charbel-oil",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Saint Charbel oil",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.what-the-church-calls-an.and-of-a-blessed-rosary-the-object-has-no-power-of-its-own-w",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "and of a blessed rosary: the object has no power of its own. What matters is the prayer it accompanies and the God to whom that prayer is addressed.",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-medal.what-the-church-calls-an.that-is-why-the-medal-is-not-a-talisman-it-promises-no-prote",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "source": "That is why the medal is not a talisman. It promises no protection, no healing, and no outcome, and the Church asks exactly this of her devotions: that they lead to Christ and never harden into superstition. A medal worn with faith is a small sermon; a medal worn as a charm is only metal.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-have-a-medal-bles.how-to-have-a-medal-blessed",
+      "selector": "#blessing > h2:nth-of-type(1)",
+      "source": "How to Have a Medal Blessed",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-have-a-medal-bles.ask-any-priest-or-deacon-after-sunday-mass-is-the-usual-mome",
+      "selector": "#blessing > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Ask any priest or deacon - after Sunday Mass is the usual moment, and most are glad to do it. Blessings of devotional objects belong to the ordained ministry (CCC 1669), and the Church's liturgical books provide an order for blessing religious articles such as medals, rosaries, and images. The rite is short: a prayer asking that those who use the object in faith be drawn closer to God, usually with the sign of the cross.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-have-a-medal-bles.once-blessed-treat-the-medal-as-a-sacramental-with-ordinary",
+      "selector": "#blessing > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Once blessed, treat the medal as a sacramental: with ordinary respect, the way you would treat a blessed rosary or a Bible. If it breaks or wears out, the custom is to bury it or return it to a parish rather than throw it in the trash - not because the metal is magic, but because what the Church has blessed is set apart for prayer.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.how-to-wear-it-and-when-people-reach-for-it",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "How to Wear It, and When People Reach for It",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.there-is-no-rule-only-what-serves-prayer-many-wear-the-medal",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "There is no rule, only what serves prayer. Many wear the medal on a chain. Many more meet it first on the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.chaplet-of-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "chaplet of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.which-itself-opens-on-a-medal-of-the-saint-before-the-red-wh",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", which itself opens on a medal of the saint before the red, white, and blue beads. Others keep one in a wallet, on a keyring, or by the bed of someone who is ill.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.the-moments-people-reach-for-it-are-consistent-illness-their",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "The moments people reach for it are consistent: illness - their own or someone they love - hospitals, surgery, travel, exams, and the",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.22nd-of-each-month",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "22nd of each month",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.the-monthly-remembrance-of-saint-charbel-kept-by-devotees-ar",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ", the monthly remembrance of Saint Charbel kept by devotees around the world. A simple",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.saint-charbel-pray-for-us",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "Saint Charbel, pray for us",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.is-enough-those-who-want-a-fuller-prayer-will-find-the",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "is enough; those who want a fuller prayer will find the",
+      "kind": "text",
+      "nodeIndex": 4
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.novena",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2)",
+      "source": "novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.and-the-prayer-to-obtain-graces-in-the",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "and the Prayer to Obtain Graces in the",
+      "kind": "text",
+      "nodeIndex": 6
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.prayer-library",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(3)",
+      "source": "prayer library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.how-to-wear-it-and-when.text",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": ".",
+      "kind": "text",
+      "nodeIndex": 8
+    },
+    {
+      "key": "saint-charbel-medal.sources.sources",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.sources.catechism-of-the-catholic-church-part-two-section-two-chapte",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Catechism of the Catholic Church, Part Two, Section Two, Chapter Four (USCCB): sacramentals, CCC 1667-1679 - the definitions and limits quoted above, and medals named among forms of popular piety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.sources.the-life-of-saint-charbel",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "The life of Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.sources.dates-the-hermitage-at-annaya-and-the-1977-canonization-behi",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2)",
+      "source": "- dates, the hermitage at Annaya, and the 1977 canonization behind the portrait",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "saint-charbel-medal.sources.saint-charbel-chaplet",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saint Charbel chaplet",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.sources.the-beads-that-open-on-the-saint-s-medal-and-the-prayers-sai",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3)",
+      "source": "- the beads that open on the saint's medal, and the prayers said on it",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "saint-charbel-medal.sources.saint-charbel-oil",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Saint Charbel oil",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.sources.the-companion-sacramental-from-the-tomb-at-annaya-with-the-s",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4)",
+      "source": "- the companion sacramental from the tomb at Annaya, with the same Church teaching applied",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "saint-charbel-medal.sources.quotation-source-the-catechism-quotations-above-follow-the-o",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5)",
+      "source": "Quotation source: the Catechism quotations above follow the official English translation (USCCB), linked at the top of this list.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "saint-charbel-medal.footer.saint-charbel-medal-author-please-pray-for-the-person-who-ma",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Saint Charbel medal. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "saint-charbel-medal.metadata.title-saint-charbel-medal-meaning-blessing-how-to-wear-it": "Saint Charbel Medal: Meaning, Blessing & How to Wear It",
+    "saint-charbel-medal.metadata.description-the-saint-charbel-medal-what-it-depicts-what-the": "The Saint Charbel medal: what it depicts, what the Church means when she calls it a sacramental, how to have a medal blessed, and how to wear it in a life of prayer.",
+    "saint-charbel-medal.metadata.og-title-saint-charbel-medal-meaning-blessing-how-to-wear-it": "Saint Charbel Medal: Meaning, Blessing & How to Wear It",
+    "saint-charbel-medal.metadata.og-description-the-saint-charbel-medal-what-it-depicts-what": "The Saint Charbel medal: what it depicts, what the Church means when she calls it a sacramental, how to have a medal blessed, and how to wear it in a life of prayer.",
+    "saint-charbel-medal.metadata.twitter-title-saint-charbel-medal-meaning-blessing-how-to-we": "Saint Charbel Medal: Meaning, Blessing & How to Wear It",
+    "saint-charbel-medal.metadata.twitter-description-the-saint-charbel-medal-what-it-depicts": "The Saint Charbel medal: what it depicts, what the Church means when she calls it a sacramental, how to have a medal blessed, and how to wear it in a life of prayer.",
+    "saint-charbel-medal.body.skip-to-main-content": "Skip to main content",
+    "saint-charbel-medal.header.text": "✦",
+    "saint-charbel-medal.header.saint-charbel": "Saint Charbel",
+    "saint-charbel-medal.accessibility.primary": "Primary",
+    "saint-charbel-medal.header.home": "Home",
+    "saint-charbel-medal.header.legacy": "Legacy",
+    "saint-charbel-medal.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "saint-charbel-medal.header.full-history": "Full History",
+    "saint-charbel-medal.header.miracles": "Miracles",
+    "saint-charbel-medal.header.miracles-reports": "Miracles & Reports",
+    "saint-charbel-medal.header.eucharistic-miracles": "Eucharistic Miracles",
+    "saint-charbel-medal.header.letters": "Letters",
+    "saint-charbel-medal.header.voice-testimony": "Voice Testimony",
+    "saint-charbel-medal.header.saints": "Saints",
+    "saint-charbel-medal.header.children-s-books": "Children's Books",
+    "saint-charbel-medal.header.prayer": "Prayer",
+    "saint-charbel-medal.header.prayer-library": "Prayer Library",
+    "saint-charbel-medal.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "saint-charbel-medal.header.prayer-for-the-sick": "Prayer for the Sick",
+    "saint-charbel-medal.header.prayer-for-healing": "Prayer for Healing",
+    "saint-charbel-medal.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "saint-charbel-medal.header.prayer-for-depression": "Prayer for Depression",
+    "saint-charbel-medal.header.prayer-for-students": "Prayer for Students",
+    "saint-charbel-medal.header.prayer-for-addiction": "Prayer for Addiction",
+    "saint-charbel-medal.header.prayer-for-family": "Prayer for Family",
+    "saint-charbel-medal.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "saint-charbel-medal.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "saint-charbel-medal.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "saint-charbel-medal.header.saint-charbel-novena": "Saint Charbel Novena",
+    "saint-charbel-medal.header.feast-day": "Feast Day",
+    "saint-charbel-medal.header.rosary-guide": "Rosary Guide",
+    "saint-charbel-medal.header.rosary-minibook": "Rosary Minibook",
+    "saint-charbel-medal.header.mystery-meditation": "Mystery Meditation",
+    "saint-charbel-medal.header.become-like-him": "Become Like Him",
+    "saint-charbel-medal.header.travel": "Travel",
+    "saint-charbel-medal.header.visiting-annaya": "Visiting Annaya",
+    "saint-charbel-medal.header.annaya-online-tour": "Annaya Online Tour",
+    "saint-charbel-medal.header.bekaa-kafra": "Bekaa Kafra",
+    "saint-charbel-medal.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "saint-charbel-medal.header.the-cedars-of-god": "the Cedars of God",
+    "saint-charbel-medal.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "saint-charbel-medal.header.qadisha-valley": "Qadisha Valley",
+    "saint-charbel-medal.header.qannoubine-monastery": "Qannoubine Monastery",
+    "saint-charbel-medal.header.qozhaya-monastery": "Qozhaya Monastery",
+    "saint-charbel-medal.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "saint-charbel-medal.header.the-hermitage": "The Hermitage",
+    "saint-charbel-medal.header.saint-charbel-trail": "Saint Charbel Trail",
+    "saint-charbel-medal.header.news": "News",
+    "saint-charbel-medal.header.media": "Media",
+    "saint-charbel-medal.header.music": "Music",
+    "saint-charbel-medal.header.video": "Video",
+    "saint-charbel-medal.header.gallery": "Gallery",
+    "saint-charbel-medal.body.devotion": "Devotion",
+    "saint-charbel-medal.saint-charbel-medal-mean.saint-charbel-medal-meaning-blessing-and-how-to-wear-it": "Saint Charbel Medal: Meaning, Blessing, and How to Wear It",
+    "saint-charbel-medal.saint-charbel-medal-mean.a-small-medal-of-the-hermit-of-annaya-travels-far-on-a-chain": "A small medal of the hermit of Annaya travels far: on a chain, in a wallet, by a hospital bed. Here is what it depicts, what the Church says such an object is - and is not - and how to use it well in a life of prayer.",
+    "saint-charbel-medal.accessibility.saint-charbel-makhlouf-the-traditional-hooded-portrait": "Saint Charbel Makhlouf, the traditional hooded portrait",
+    "saint-charbel-medal.saint-charbel-medal-mean.the-traditional-portrait-of-saint-charbel-the-same-hooded-bo": "The traditional portrait of Saint Charbel - the same hooded, bowed figure most medals carry.",
+    "saint-charbel-medal.saint-charbel-medal-mean.what-it-depicts": "What It Depicts",
+    "saint-charbel-medal.saint-charbel-medal-mean.having-it-blessed": "Having It Blessed",
+    "saint-charbel-medal.saint-charbel-medal-mean.the-chaplet": "The Chaplet",
+    "saint-charbel-medal.saint-charbel-medal-mean.part-of-the": "Part of the",
+    "saint-charbel-medal.saint-charbel-medal-mean.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "saint-charbel-medal.saint-charbel-medal-mean.new-to-his-story-read": ". New to his story? Read",
+    "saint-charbel-medal.saint-charbel-medal-mean.the-life-of-saint-charbel": "the life of Saint Charbel",
+    "saint-charbel-medal.saint-charbel-medal-mean.text": ".",
+    "saint-charbel-medal.what-the-medal-depicts.what-the-medal-depicts": "What the Medal Depicts",
+    "saint-charbel-medal.what-the-medal-depicts.nearly-every-saint-charbel-medal-shows-the-same-man-a-bearde": "Nearly every Saint Charbel medal shows the same man: a bearded monk in the black habit and hood of the Lebanese Maronite Order, his head bowed or his eyes lowered in prayer. The likeness comes from the traditional portrait of Saint Charbel Makhlouf (1828-1898), the hermit who spent twenty-three years above the Monastery of Saint Maron in Annaya, Lebanon, and whom the Church canonized in 1977.",
+    "saint-charbel-medal.what-the-medal-depicts.the-lowered-eyes-are-the-point-they-recall-the-hidden-life-h": "The lowered eyes are the point. They recall the hidden life he chose - silence, fasting, and long night prayer before the Blessed Sacrament - rather than any public achievement. Some medals add a monastic staff, the monastery of Annaya, or his tomb; others pair him with Saint Rafqa or with Our Lady of Lebanon on the reverse. The details vary; the bowed hermit does not.",
+    "saint-charbel-medal.what-the-church-calls-an.what-the-church-calls-an-object-like-this": "What the Church Calls an Object Like This",
+    "saint-charbel-medal.what-the-church-calls-an.the-catechism-gives-this-category-a-precise-name-and-a-preci": "The Catechism gives this category a precise name - and a precise limit.",
+    "saint-charbel-medal.what-the-church-calls-an.a-medal-of-a-saint-is-a": "A medal of a saint is a",
+    "saint-charbel-medal.what-the-church-calls-an.sacramental": "sacramental",
+    "saint-charbel-medal.what-the-church-calls-an.the-catechism-teaches-holy-mother-church-has-moreover-instit": ". The Catechism teaches: \"Holy Mother Church has, moreover, instituted sacramentals. These are sacred signs which bear a resemblance to the sacraments. They signify effects, particularly of a spiritual nature, which are obtained through the intercession of the Church\" (CCC 1667). Medals appear by name among the Church's forms of popular devotion (CCC 1674).",
+    "saint-charbel-medal.what-the-church-calls-an.a-sacramental-is": "A sacramental is",
+    "saint-charbel-medal.what-the-church-calls-an.not-a-sacrament": "not a sacrament",
+    "saint-charbel-medal.what-the-church-calls-an.the-seven-sacraments-baptism-the-eucharist-the-anointing-of": ". The seven sacraments - Baptism, the Eucharist, the Anointing of the Sick among them - were instituted by Christ and confer grace. Sacramentals work differently: they \"do not confer the grace of the Holy Spirit in the way that the sacraments do, but by the Church's prayer, they prepare us to receive grace and dispose us to cooperate with it\" (CCC 1670). The same is true of",
+    "saint-charbel-medal.what-the-church-calls-an.saint-charbel-oil": "Saint Charbel oil",
+    "saint-charbel-medal.what-the-church-calls-an.and-of-a-blessed-rosary-the-object-has-no-power-of-its-own-w": "and of a blessed rosary: the object has no power of its own. What matters is the prayer it accompanies and the God to whom that prayer is addressed.",
+    "saint-charbel-medal.what-the-church-calls-an.that-is-why-the-medal-is-not-a-talisman-it-promises-no-prote": "That is why the medal is not a talisman. It promises no protection, no healing, and no outcome, and the Church asks exactly this of her devotions: that they lead to Christ and never harden into superstition. A medal worn with faith is a small sermon; a medal worn as a charm is only metal.",
+    "saint-charbel-medal.how-to-have-a-medal-bles.how-to-have-a-medal-blessed": "How to Have a Medal Blessed",
+    "saint-charbel-medal.how-to-have-a-medal-bles.ask-any-priest-or-deacon-after-sunday-mass-is-the-usual-mome": "Ask any priest or deacon - after Sunday Mass is the usual moment, and most are glad to do it. Blessings of devotional objects belong to the ordained ministry (CCC 1669), and the Church's liturgical books provide an order for blessing religious articles such as medals, rosaries, and images. The rite is short: a prayer asking that those who use the object in faith be drawn closer to God, usually with the sign of the cross.",
+    "saint-charbel-medal.how-to-have-a-medal-bles.once-blessed-treat-the-medal-as-a-sacramental-with-ordinary": "Once blessed, treat the medal as a sacramental: with ordinary respect, the way you would treat a blessed rosary or a Bible. If it breaks or wears out, the custom is to bury it or return it to a parish rather than throw it in the trash - not because the metal is magic, but because what the Church has blessed is set apart for prayer.",
+    "saint-charbel-medal.how-to-wear-it-and-when.how-to-wear-it-and-when-people-reach-for-it": "How to Wear It, and When People Reach for It",
+    "saint-charbel-medal.how-to-wear-it-and-when.there-is-no-rule-only-what-serves-prayer-many-wear-the-medal": "There is no rule, only what serves prayer. Many wear the medal on a chain. Many more meet it first on the",
+    "saint-charbel-medal.how-to-wear-it-and-when.chaplet-of-saint-charbel": "chaplet of Saint Charbel",
+    "saint-charbel-medal.how-to-wear-it-and-when.which-itself-opens-on-a-medal-of-the-saint-before-the-red-wh": ", which itself opens on a medal of the saint before the red, white, and blue beads. Others keep one in a wallet, on a keyring, or by the bed of someone who is ill.",
+    "saint-charbel-medal.how-to-wear-it-and-when.the-moments-people-reach-for-it-are-consistent-illness-their": "The moments people reach for it are consistent: illness - their own or someone they love - hospitals, surgery, travel, exams, and the",
+    "saint-charbel-medal.how-to-wear-it-and-when.22nd-of-each-month": "22nd of each month",
+    "saint-charbel-medal.how-to-wear-it-and-when.the-monthly-remembrance-of-saint-charbel-kept-by-devotees-ar": ", the monthly remembrance of Saint Charbel kept by devotees around the world. A simple",
+    "saint-charbel-medal.how-to-wear-it-and-when.saint-charbel-pray-for-us": "Saint Charbel, pray for us",
+    "saint-charbel-medal.how-to-wear-it-and-when.is-enough-those-who-want-a-fuller-prayer-will-find-the": "is enough; those who want a fuller prayer will find the",
+    "saint-charbel-medal.how-to-wear-it-and-when.novena": "novena",
+    "saint-charbel-medal.how-to-wear-it-and-when.and-the-prayer-to-obtain-graces-in-the": "and the Prayer to Obtain Graces in the",
+    "saint-charbel-medal.how-to-wear-it-and-when.prayer-library": "prayer library",
+    "saint-charbel-medal.how-to-wear-it-and-when.text": ".",
+    "saint-charbel-medal.sources.sources": "Sources",
+    "saint-charbel-medal.sources.catechism-of-the-catholic-church-part-two-section-two-chapte": "Catechism of the Catholic Church, Part Two, Section Two, Chapter Four (USCCB): sacramentals, CCC 1667-1679 - the definitions and limits quoted above, and medals named among forms of popular piety",
+    "saint-charbel-medal.sources.the-life-of-saint-charbel": "The life of Saint Charbel",
+    "saint-charbel-medal.sources.dates-the-hermitage-at-annaya-and-the-1977-canonization-behi": "- dates, the hermitage at Annaya, and the 1977 canonization behind the portrait",
+    "saint-charbel-medal.sources.saint-charbel-chaplet": "Saint Charbel chaplet",
+    "saint-charbel-medal.sources.the-beads-that-open-on-the-saint-s-medal-and-the-prayers-sai": "- the beads that open on the saint's medal, and the prayers said on it",
+    "saint-charbel-medal.sources.saint-charbel-oil": "Saint Charbel oil",
+    "saint-charbel-medal.sources.the-companion-sacramental-from-the-tomb-at-annaya-with-the-s": "- the companion sacramental from the tomb at Annaya, with the same Church teaching applied",
+    "saint-charbel-medal.sources.quotation-source-the-catechism-quotations-above-follow-the-o": "Quotation source: the Catechism quotations above follow the official English translation (USCCB), linked at the top of this list.",
+    "saint-charbel-medal.footer.saint-charbel-medal-author-please-pray-for-the-person-who-ma": "Saint Charbel medal. Author: Please pray for the person who made this website."
+  }
+}

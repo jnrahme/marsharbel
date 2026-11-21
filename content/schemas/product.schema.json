@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product",
+  "description": "One souvenir product record. Mirrors the live launch catalog shape in store/catalog.json so migration is a data move, not a remodel. Prices and checkout URLs stay null until real provider costs are approved.",
+  "type": "object",
+  "required": ["id", "kind", "title", "blurb", "art", "alt", "priceCents", "checkoutUrl"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "kind": { "enum": ["apparel", "home", "accessory", "print"] },
+    "title": { "type": "string", "minLength": 1 },
+    "blurb": { "type": "string", "minLength": 1 },
+    "art": { "type": "string", "pattern": "^/" },
+    "alt": { "type": "string", "minLength": 1 },
+    "printify": {
+      "type": "object",
+      "required": ["blueprintHint", "verify"],
+      "additionalProperties": false,
+      "properties": {
+        "blueprintHint": { "type": "string", "minLength": 1 },
+        "verify": { "type": "boolean" }
+      }
+    },
+    "priceCents": { "type": ["integer", "null"], "minimum": 0 },
+    "checkoutUrl": { "type": ["string", "null"] }
+  }
+}
