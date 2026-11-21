@@ -20,7 +20,7 @@ records and the B-to-C2 proof must remain intact.
 - Binds receipt, module and affected content to native HEAD and current disk.
   Missing objects, symlinks, dirty inputs and editable exports fail closed.
 - Does not cache a proof. No stale-memo acceptance exists in this foundation.
-- Adds 35 positive and negative controls to the existing citation CI command,
+- Adds 34 positive and negative controls to the existing citation CI command,
   without adding or displacing a shard-inventory slot.
 
 The foundation PR stays inactive. This dependent integration wires the owning guards but adds no receipt or content changes. Original records, artifacts and pins remain unchanged. No FAQ or prayers page change is claimed by this integration alone.
@@ -68,9 +68,9 @@ approved value. Redirects, sitemaps and llms.txt remain owning content work.
 
 ## Verification
 
-- Direct invocation: `python3 scripts/qa/test_seo_continuations.py`, 35 tests.
+- Direct invocation: `python3 scripts/qa/test_seo_continuations.py`, 34 tests.
 - Module invocation: `python3 -m unittest scripts.qa.test_seo_continuations`,
-  the same 35 tests.
+  the same 34 tests.
 - CI wrapper: `python3 scripts/qa/check_citation_amendment.py`, calls these
   controls inside its existing slot, after the original controls.
 
@@ -118,3 +118,20 @@ module symlink swaps. Controls cover these swaps after a warm pass and symlinked
 ar, locales and scripts/i18n directories. Additional controls combine all four
 real effects in a synthetic winner and exercise the frozen-prayer composer with
 a continued en/prayers body, including rejection of generated body drift.
+
+## Narrowed FAQ generator step (2026-11-20)
+
+This change stops the legacy SEO generator (`scripts/apply_seo_tags.py`) from
+recreating FAQPage JSON-LD when it next regenerates a page, and adds
+`scripts/i18n/structured_data.py`, the unwired normalize transform (standalone
+FAQPage removal plus minimal Article from existing metadata) with
+fixture-level policy tests. It changes no public page bytes and wires nothing
+into the build postprocess.
+
+Page-level activation is NOT done here. The earlier dependent branch stripped
+FAQ schema from 359 pages, but only 16 of them carry C2-bound continuation
+receipts; the other 343 have no proof path (no C2-era preimage exists) and
+broke keyed-master pins. Those 343 were restored to stage bytes. The 16-file
+receipt also needs re-issue: the rebase onto current stage cut its baseCommit
+ancestry, and re-binding belongs to the citation-amendment review lane. Until
+both are redone with full review, live pages keep their FAQPage schema.

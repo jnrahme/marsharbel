@@ -24,7 +24,5 @@ def postprocess_outputs(root, registry, catalogs, result):
             result[path] = ensure_runtime_labels(text, root, code, registry)
     from i18n.seo_continuations import continue_outputs
     result=continue_outputs(root,result)
-    from i18n.structured_data import normalize_outputs
     result.update(control_outputs(root,{path:text for path,text in result.items() if path.suffix=='.html'},manifest,control_copy))
-    result=normalize_outputs(root,result)
     return result

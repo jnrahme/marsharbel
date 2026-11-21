@@ -302,26 +302,17 @@ class SeoRegressionTests(unittest.TestCase):
         history_webpages = [b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "WebPage"]
         self.assertTrue(history_webpages)
         self.assertNotIn("mainEntity", history_webpages[0])
-        self.assertEqual(len([b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "Article"]), 1)
+        self.assertFalse([b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "Article"])
+
 
 
 
 
 class FaqSchemaPolicyTests(unittest.TestCase):
-    def test_no_public_faq_schema_and_replacement_types(self):
-        import json
-        import xml.etree.ElementTree as ET
-        from html.parser import HTMLParser
+    def test_normalize_removes_faq_keeps_visible_and_other_blocks(self):
+        import sys
         from pathlib import Path
         root = Path(__file__).resolve().parents[2]
-        ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
-        for node in ET.parse(root / 'sitemap.xml').iter(ns + 'loc'):
-            route = node.text.removeprefix('https://marsharbel.com/')
-            path = route + 'index.html' if not route or route.endswith('/') else route + '.html'
-            text = (root / path).read_text()
-            self.assertNotIn('"@type": "FAQPage"', text, path)
-            self.assertNotIn('"@type":"FAQPage"', text, path)
-        import sys
         sys.path.insert(0, str(root / 'scripts'))
         from i18n.structured_data import normalize
         before = '<html lang="en"><head><link rel="canonical" href="https://marsharbel.com/history"><meta property="og:title" content="History"><meta name="description" content="Existing description"></head><body><p>Question? Answer.</p><script type="application/ld+json">{"@type":"FAQPage","mainEntity":[]}</script><script type="application/ld+json">{"@type":"BreadcrumbList","itemListElement":[]}</script></body></html>'
