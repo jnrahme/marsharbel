@@ -73,12 +73,12 @@ class SeoRegressionTests(unittest.TestCase):
             generator.update_file(path)
             second = path.read_text()
             self.assertEqual(first, second)
-            self.assertEqual(len(re.findall(r'"@type"\s*:\s*"FAQPage"', second)), 1)
+            self.assertEqual(len(re.findall(r'"@type"\s*:\s*"FAQPage"', second)), 0)
             generated = [json.loads(block) for block in re.findall(
                 r'<script type="application/ld\+json">([\s\S]*?)</script>', second)]
             entities = [block for graph in generated for block in graph.get("@graph", [graph])]
-            faq = next(block for block in entities if block.get("@type") == "FAQPage")
-            self.assertEqual(len(faq["mainEntity"]), 4)
+            self.assertFalse([block for block in entities if block.get("@type") == "FAQPage"])
+            self.assertEqual(len(generator.faq_pairs(second)), 4)
         finally:
             generator.ROOT = original_root
 
@@ -178,8 +178,20 @@ class SeoRegressionTests(unittest.TestCase):
             if path.is_symlink():
                 continue
             before = path.read_text()
-            self.assertFalse(generator.update_file(path), f"{path.name} drifts from generator output")
-            self.assertEqual(path.read_text(), before)
+            if generator.update_file(path):
+                # The generator now drops standalone FAQPage blocks; until the
+                # managed pages are regenerated that is the only allowed drift.
+                import json as _json
+                def without_faq(text):
+                    def drop(match):
+                        try:
+                            data = _json.loads(match.group(1))
+                        except ValueError:
+                            return match.group(0)
+                        return "" if isinstance(data, dict) and data.get("@type") == "FAQPage" else match.group(0)
+                    return re.sub(r'\n\s*<script type="application/ld\+json">([\s\S]*?)</script>', drop, text, flags=re.I)
+                self.assertEqual(path.read_text(), without_faq(before),
+                                 f"{path.name} drifts from generator output beyond FAQPage removal")
 
     def test_breadcrumbs_follow_navigation_and_point_at_sitemap_urls(self):
         sitemap = (self.root / "sitemap.xml").read_text()
@@ -305,6 +317,28 @@ class SeoRegressionTests(unittest.TestCase):
         self.assertNotIn("mainEntity", history_webpages[0])
         self.assertFalse([b for b in history_blocks if isinstance(b, dict) and b.get("@type") == "Article"])
 
+
+
+
+
+class FaqSchemaPolicyTests(unittest.TestCase):
+    def test_normalize_removes_faq_keeps_visible_and_other_blocks(self):
+        import sys
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[2]
+        sys.path.insert(0, str(root / 'scripts'))
+        from i18n.structured_data import normalize
+        before = '<html lang="en"><head><link rel="canonical" href="https://marsharbel.com/history"><meta property="og:title" content="History"><meta name="description" content="Existing description"></head><body><p>Question? Answer.</p><script type="application/ld+json">{"@type":"FAQPage","mainEntity":[]}</script><script type="application/ld+json">{"@type":"BreadcrumbList","itemListElement":[]}</script></body></html>'
+        result = normalize('history.html', before)
+        self.assertIn('<p>Question? Answer.</p>', result)
+        self.assertNotIn('FAQPage', result)
+        self.assertIn('"@type": "Article"', result)
+        self.assertIn('"@type":"BreadcrumbList"', result)
+        self.assertEqual(normalize('history.html', result), result)
+        self.assertNotIn('datePublished', result)
+        self.assertNotIn('author', result)
+        with self.assertRaisesRegex(ValueError, 'mixed FAQ graph'):
+            normalize('history.html', before.replace('{"@type":"FAQPage","mainEntity":[]}', '{"@graph":[{"@type":"FAQPage"},{"@type":"Article"}]}'))
 
 if __name__ == "__main__":
     unittest.main()
