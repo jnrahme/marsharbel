@@ -155,6 +155,7 @@
         closeMenu(false);
         try {
           await navigator.share({ title, text: title, url: urlFor(hash, 'native') });
+          window.MarGrowth?.event('share', 'native');
         } catch (error) {
           if (error && error.name !== 'AbortError') status.textContent = tr('share.status.failed', 'Sharing was not available. Use a link below.');
         }
@@ -175,7 +176,10 @@
         a.rel = 'noopener noreferrer';
       }
       a.setAttribute('aria-label', tr(target.id === 'email' ? 'share.target.email.aria' : 'share.target.aria', target.id === 'email' ? 'Share {title} by email' : 'Share {title} on {target}', {title, target:target.label}));
-      a.addEventListener('click', () => setTimeout(() => closeMenu(false), 0));
+      a.addEventListener('click', () => {
+        window.MarGrowth?.event('share', target.id);
+        setTimeout(() => closeMenu(false), 0);
+      });
       grid.appendChild(a);
     });
 
@@ -189,6 +193,7 @@
       closeMenu(true);
       try {
         await navigator.clipboard.writeText(link);
+        window.MarGrowth?.event('share', 'copy');
         status.textContent = tr('share.status.copied', 'Link copied. Paste it into Instagram or any app.');
       } catch (error) {
         window.prompt(tr('share.prompt.copy', 'Copy this link:'), link);

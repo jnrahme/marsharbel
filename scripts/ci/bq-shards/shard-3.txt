@@ -918,3 +918,26 @@
 [phone] › saint-of-day-archive-layout.spec.js › archive rows no in-grid overlap /ar/saint-of-the-day 768px
 [laptop] › saint-of-day-archive-layout.spec.js › archive rows no in-grid overlap /saint-of-the-day 390px
 [wide-desktop] › saint-of-day-archive-layout.spec.js › archive rows no in-grid overlap /saint-of-the-day 1440px
+[small-phone] › growth-events.spec.js › local daily-prayer counts accepted once, rejects failure and duplicate in-flight submissions
+[tablet] › growth-events.spec.js › local daily-prayer counts accepted once, rejects failure and duplicate in-flight submissions
+[wide-desktop] › growth-events.spec.js › local daily-prayer counts accepted once, rejects failure and duplicate in-flight submissions
+[small-phone] › growth-published-smoke.spec.js › growth regression fr home /fr/
+[small-phone] › growth-published-smoke.spec.js › growth regression pt prayer /pt/oracoes
+[small-phone] › growth-published-smoke.spec.js › growth regression pl saint /pl/biografia
+[small-phone] › growth-published-smoke.spec.js › growth regression th saint /th/history
+[phone] › growth-published-smoke.spec.js › growth regression fr saint /fr/biographie
+[phone] › growth-published-smoke.spec.js › growth regression it home /it/
+[phone] › growth-published-smoke.spec.js › growth regression pl prayer /pl/modlitwy
+[tablet] › growth-published-smoke.spec.js › growth regression en home /
+[tablet] › growth-published-smoke.spec.js › growth regression fr prayer /fr/prieres
+[tablet] › growth-published-smoke.spec.js › growth regression it saint /it/biografia
+[tablet] › growth-published-smoke.spec.js › growth regression ru home /ru/
+[laptop] › growth-published-smoke.spec.js › growth regression en saint /history
+[laptop] › growth-published-smoke.spec.js › growth regression es home /es/
+[laptop] › growth-published-smoke.spec.js › growth regression it prayer /it/preghiere
+[laptop] › growth-published-smoke.spec.js › growth regression ru saint /ru/biography
+[wide-desktop] › growth-published-smoke.spec.js › growth regression en prayer /saint-charbel-prayers
+[wide-desktop] › growth-published-smoke.spec.js › growth regression es saint /es/biografia
+[wide-desktop] › growth-published-smoke.spec.js › growth regression de home /de/
+[wide-desktop] › growth-published-smoke.spec.js › growth regression ru prayer /ru/molitvy
+# Nov20: growth-events + growth-published-smoke identities appended (175 total, round-robin on stage lists), prior assignments preserved

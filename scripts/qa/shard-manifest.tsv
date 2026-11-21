@@ -66,7 +66,7 @@
 12	6	1	python3 -m unittest discover -s scripts/qa -p test_travel_scoped_delta.py
 17	6	74	python3 -m unittest discover -s scripts/qa -p test_travel_authored_final_hashes.py
 54	6	3	python3 scripts/qa/test_travel.py
-58	6	2	node scripts/qa/test_analytics_hostname.cjs
+58	6	2	bash -c node scripts/qa/test_analytics_hostname.cjs && node --test scripts/tests/growth_events.test.mjs && npx playwright test tests/growth-events.spec.js tests/growth-published-smoke.spec.js --project=phone --project=laptop --workers=2
 64	6	52	npx playwright test tests/language-persistence.spec.js tests/locale-preference-routing.spec.js --project=phone --project=laptop --workers=2
 68	6	1	python3 scripts/qa/test_encyclopedia_trail.py
 95	6	99	npm run test:site-smoke
