@@ -2,6 +2,8 @@
 
 Read this file before touching the repo. It is the standing rulebook for every agent and contributor. **Update it whenever a new hard rule or lesson lands** - an unrecorded lesson will be re-learned the expensive way.
 
+**Every agent must read [`docs/LESSONS.md`](docs/LESSONS.md) before working, and must append new mistakes and corrections to it.** That file is the shared rules and mistakes log. Its source of truth is the vault (`jnrahme/joey-projects-vault`, `Projects/Marsharbel/LESSONS.md`). This engineering rulebook does not replace it.
+
 ## The golden rule: rendered review before done (Joey, 2026-09-27)
 
 Nothing merges, deploys, or is reported done without a real rendered review: open the affected pages in a browser and visually inspect them on desktop AND phone. CI green is a precondition, never the gate. HTTP 200 and test-only verification proved insufficient - a hub once shipped unstyled while returning 200.
