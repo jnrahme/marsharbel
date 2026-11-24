@@ -84,6 +84,45 @@ def old_home_blocks(path, raw):
 def git(root,*args):
     return subprocess.check_output(['git','-C',str(root),*args],stderr=subprocess.DEVNULL)
 
+def reconstruct(path, current):
+    """Invert only the finite footer and index-alternate delta.
+
+    This is not a native proof. A git-less export still cannot approve any
+    other byte; verify_delta rejects everything outside those spans.
+    """
+    if path not in PATHS:
+        return current
+    if old_home_blocks(path, current):
+        return current
+    a, z = span(current, b'i18n-navigation', b'footer')
+    block = current[a:z]
+    restored = None
+    for form in ('sorted', 'generator'):
+        if block == footer(HOMES + (CHINESE,), form == 'sorted'):
+            restored = current[:a] + footer(HOMES) + current[z:]
+            break
+    if restored is None:
+        raise ValueError('MB16: candidate differs outside exact generated home blocks')
+    if path == 'index.html':
+        a, z = span(restored, b'i18n-alternates', b'head')
+        alt = restored[a:z]
+        if alt == alternates(HOMES + (CHINESE,)):
+            restored = restored[:a] + alternates(HOMES) + restored[z:]
+        elif alt != alternates(HOMES):
+            raise ValueError('MB16: candidate differs outside exact generated home blocks')
+    if verify_delta(path, restored, current) != restored:
+        raise ValueError('MB16: candidate differs outside exact generated home blocks')
+    return restored
+
+def build_preimage(root, path, current):
+    """Native proof when git can bind HEAD; exact reconstruction otherwise."""
+    try:
+        return preimage(root, path, current)
+    except ValueError as error:
+        if 'native proof unavailable' not in str(error):
+            raise
+        return reconstruct(path, current)
+
 def preimage(root,path,current):
     if path not in PATHS:return current
     root=Path(root)

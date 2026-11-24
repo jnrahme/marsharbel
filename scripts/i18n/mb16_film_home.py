@@ -24,6 +24,27 @@ def verify_delta(original,candidate):
         raise ValueError('MB16 film: bytes outside exact shell-home delta')
     return original
 
+def reconstruct(current):
+    """Invert only the three exact premiere shell edits. Not a native proof."""
+    trial = current
+    for before, after in reversed(EDITS):
+        after_b, before_b = after.encode(), before.encode()
+        if trial.count(after_b) == 1 and before_b not in trial:
+            trial = trial.replace(after_b, before_b, 1)
+        elif trial.count(before_b) != 1:
+            raise ValueError('MB16 film: bytes outside exact shell-home delta')
+    return verify_delta(trial, current)
+
+def build_preimage(root, path, current):
+    try:
+        return preimage(root, path, current)
+    except ValueError as error:
+        if 'native proof unavailable' not in str(error):
+            raise
+        if path != PATH:
+            return current
+        return reconstruct(current)
+
 def preimage(root,path,current):
     if path!=PATH:return current
     root=Path(root)
