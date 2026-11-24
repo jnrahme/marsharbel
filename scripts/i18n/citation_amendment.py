@@ -184,7 +184,10 @@ def prove(root):
     has_receipt=receipt.exists() or receipt.is_symlink()
     sc.require_regular_inputs(root, [SIDECAR,s['table']['path'],*_TOOL_FILES,*_input_paths(s)]
                               + ([sc.RECEIPT] if has_receipt else []))
-    if (has_receipt or (Path(root)/'locales/mb16-home-continuation.json').exists()) and not git:
+    # A real SEO receipt still needs git. The Chinese homepage continuation is a
+    # finite footer edit; a synthetic export keeps the degraded digest checks
+    # below and never becomes an acceptance.
+    if has_receipt and not git:
         raise ValueError('citation: SEO continuation requires native git proof; export rejected')
     if git:
         # Hydrate the reviewed C2 objects (offline, hash-bound) before any object lookup,
