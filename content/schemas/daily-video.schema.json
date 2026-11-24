@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Daily video episode",
+  "description": "One daily rosary (or other daily) video episode. Registry file: content/rosary/episodes.json.",
+  "type": "object",
+  "required": ["date", "mystery", "language", "youtubeId", "title"],
+  "additionalProperties": false,
+  "properties": {
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "mystery": { "enum": ["joyful", "sorrowful", "glorious", "luminous"] },
+    "language": { "type": "string", "pattern": "^[a-z]{2}(-[A-Za-z]{2,5})?$" },
+    "youtubeId": { "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "saint": { "type": "string" },
+    "transcriptExcerpt": { "type": "string" }
+  }
+}

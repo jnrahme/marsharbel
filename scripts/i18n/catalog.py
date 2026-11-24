@@ -211,12 +211,15 @@ PRAYER_FAMILIES = {
 HISTORY_FAMILY = ('history-master', '/history', 'history.html')
 FILM_FAMILY = ('film-premiere-master', '/charbel-film-premiere', 'charbel-film-premiere.html')
 VERONICA_STORY_FAMILY = ('veronica-story-master', '/veronica-giuliani-story', 'veronica-giuliani-story.html')
+SAINT_OF_THE_DAY_FAMILY = ('saint-of-the-day-master', '/saint-of-the-day', 'saint-of-the-day.html')
 
 
 def mirror_tab(group, name, family):
     if group == 'pageMirrors' and (name, family['english'], family.get('master')) == FILM_FAMILY:
         return 'film'
     if group == 'pageMirrors' and (name, family['english'], family.get('master')) == VERONICA_STORY_FAMILY:
+        return 'stories'
+    if group == 'pageMirrors' and (name, family['english'], family.get('master')) == SAINT_OF_THE_DAY_FAMILY:
         return 'stories'
     if group == 'pageMirrors' and (name, family['english']) == HISTORY_FAMILY[:2]:
         return 'history'

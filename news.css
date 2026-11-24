@@ -46,6 +46,14 @@
    the share button sits above the overlay (z-index 3, set on .share-bar in styles.css). */
 .news-row{position:relative;display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:1rem;align-items:center;padding-block:1rem;transition:background-color .2s ease}
 .news-row:hover{background:#2C2621}
+/* Saint of the Day archive rows: thumb-less dated cards reuse the .news-row shell but not its
+   thumb/text/arrow columns. Stack their four children in one column so titles never overlap
+   summaries and the Read button never lands in the 96px thumb lane; the inline-end padding keeps
+   the absolutely-positioned share button clear of the text. */
+.news-row:has(> .news-lead-cta){grid-template-columns:minmax(0,1fr);gap:.45rem;align-items:start}
+.news-row:has(> .news-lead-cta) .share-bar{position:static;transform:none;justify-self:end;margin:0;padding:0}
+.news-row:has(> .news-lead-cta) .news-lead-cta{justify-self:start}
+[dir="rtl"] .news-row:has(> .news-lead-cta) .news-lead-cta{justify-self:end}
 /* 200% text: let the text track shrink below min-content and hyphenate long words instead of overflowing the row. */
 /* Reserve the floating 44px share button's column so clamped title/summary lines never run under it
    (button spans 44-88px from the row's inline-end; the arrow column ends 48px in, so 40px + 12px gap). */

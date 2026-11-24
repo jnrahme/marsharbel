@@ -60,10 +60,12 @@ class HeadFragmentTest(unittest.TestCase):
         # page.json, so head-og-locales is unchanged).
         # store.html (hidden product workshop page) adds one
         # head-font-preloads inclusion.
+        # saint-of-the-day.html (archive page) adds one head-social, one
+        # head-og-locales and one head-font-preloads inclusion.
         self.assertEqual(counts, {
-            'head-og-locales': 95,  # 94 + saint-charbel-medal.html
-            'head-social': 138,  # 116 + saint-charbel-medal.html + veronica-giuliani-story.html + 20 Rosary mystery book pages
-            'head-font-preloads': 86,  # 83 + saint-charbel-medal.html + veronica-giuliani-story.html + store.html
+            'head-og-locales': 96,  # 94 + saint-charbel-medal.html + saint-of-the-day.html
+            'head-social': 139,  # 116 + saint-charbel-medal.html + veronica-giuliani-story.html + 20 Rosary mystery book pages + saint-of-the-day.html
+            'head-font-preloads': 87,  # 83 + saint-charbel-medal.html + veronica-giuliani-story.html + store.html + saint-of-the-day.html
             'head-font-preloads-legacy': 17,
         })
 

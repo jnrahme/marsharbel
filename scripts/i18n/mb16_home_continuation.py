@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 import subprocess
 
-BASE = '1b958dc41380400c5737587dad75c7154df063f1'
+BASE = '607e3a679e8bcf61bb60153686baafb87835e44c'
 RECORD = 'locales/mb16-home-continuation.json'
 MODULE = 'scripts/i18n/mb16_home_continuation.py'
 PATHS = frozenset({'index.html','history.html','visit-annaya.html','22nd-of-the-month.html',

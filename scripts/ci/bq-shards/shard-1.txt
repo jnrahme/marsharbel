@@ -908,3 +908,37 @@
 [phone] › saint-of-day.spec.js › saint date and axe /hi/ 2026-11-24
 [small-phone] › saint-of-day.spec.js › saint no-book 390px 200% / 2026-11-23
 [wide-desktop] › saint-of-day.spec.js › saint date and axe / 2026-11-24
+[laptop] › accessibility-sitemap.spec.js › axe /ar/saint-of-the-day
+[laptop] › navigation-consistency.spec.js › saint-of-the-day.html: shared menu fits and opens/closes
+[phone] › accessibility-sitemap.spec.js › axe /th/saint-of-the-day
+[small-phone] › accessibility-sitemap.spec.js › axe /ru/saint-of-the-day
+[tablet] › accessibility-sitemap.spec.js › axe /fr/saint-of-the-day
+[wide-desktop] › accessibility-sitemap.spec.js › axe /ar/saint-of-the-day
+[wide-desktop] › navigation-consistency.spec.js › saint-of-the-day.html: shared menu fits and opens/closes
+[small-phone] › saint-of-day-archive-layout.spec.js › archive rows no in-grid overlap /saint-of-the-day 390px
+[phone] › saint-of-day-archive-layout.spec.js › archive rows no in-grid overlap /saint-of-the-day 1440px
+[tablet] › saint-of-day-archive-layout.spec.js › archive rows no in-grid overlap /ar/saint-of-the-day 768px
+[wide-desktop] › saint-of-day-archive-layout.spec.js › archive rows no in-grid overlap /saint-of-the-day 390px
+[small-phone] › growth-events.spec.js › local browser sends one sanitized native/copy event only after success
+[tablet] › growth-events.spec.js › local browser sends one sanitized native/copy event only after success
+[wide-desktop] › growth-events.spec.js › local browser sends one sanitized native/copy event only after success
+[small-phone] › growth-published-smoke.spec.js › growth regression ar saint /ar/biography
+[small-phone] › growth-published-smoke.spec.js › growth regression pt home /pt/
+[small-phone] › growth-published-smoke.spec.js › growth regression de prayer /de/gebete
+[small-phone] › growth-published-smoke.spec.js › growth regression hi saint /hi/history
+[phone] › growth-published-smoke.spec.js › growth regression ar prayer /ar/prayers
+[phone] › growth-published-smoke.spec.js › growth regression pt saint /pt/biografia
+[phone] › growth-published-smoke.spec.js › growth regression pl home /pl/
+[phone] › growth-published-smoke.spec.js › growth regression th home /th/
+[tablet] › growth-published-smoke.spec.js › growth regression fr home /fr/
+[tablet] › growth-published-smoke.spec.js › growth regression pt prayer /pt/oracoes
+[tablet] › growth-published-smoke.spec.js › growth regression pl saint /pl/biografia
+[tablet] › growth-published-smoke.spec.js › growth regression th saint /th/history
+[laptop] › growth-published-smoke.spec.js › growth regression fr saint /fr/biographie
+[laptop] › growth-published-smoke.spec.js › growth regression it home /it/
+[laptop] › growth-published-smoke.spec.js › growth regression pl prayer /pl/modlitwy
+[wide-desktop] › growth-published-smoke.spec.js › growth regression en home /
+[wide-desktop] › growth-published-smoke.spec.js › growth regression fr prayer /fr/prieres
+[wide-desktop] › growth-published-smoke.spec.js › growth regression it saint /it/biografia
+[wide-desktop] › growth-published-smoke.spec.js › growth regression ru home /ru/
+# Nov20: growth-events + growth-published-smoke identities appended (175 total, round-robin on stage lists), prior assignments preserved

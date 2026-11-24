@@ -159,7 +159,7 @@ qa_step python3 scripts/qa/test_travel.py
 qa_step npx playwright test tests/travel-routing.spec.js tests/travel-hub.spec.js --project=phone --project=laptop --workers=4
 qa_step node scripts/tests/video-fallback.mjs
 qa_step npx playwright test tests/video-playback.spec.js --project=phone --project=laptop --workers=2
-qa_step node scripts/qa/test_analytics_hostname.cjs
+qa_step bash -c 'node scripts/qa/test_analytics_hostname.cjs && node --test scripts/tests/growth_events.test.mjs && npx playwright test tests/growth-events.spec.js tests/growth-published-smoke.spec.js --project=phone --project=laptop --workers=2'
 qa_step python3 -m unittest discover -s scripts/qa -p 'test_security_headers.py'
 
 qa_step node scripts/build-home-css.mjs --check
@@ -245,6 +245,10 @@ qa_step env PORT=4198 bash scripts/tests/run_hero_figure_crop.sh
 
 echo "[qa] Books content API: feed, shelf parity and round trip"
 qa_step npm run books:check
+
+echo "[qa] Content layer: schema validation"
+qa_step python3 scripts/qa/check_content_schemas.py
+qa_step python3 -m unittest discover -s scripts/qa -p 'test_content_schemas.py'
 
 echo "[qa] Same-page language switcher resolver (pure node, was never run in CI)"
 qa_step python3 -m unittest discover -s scripts/qa -p test_rosary_books_pairing.py

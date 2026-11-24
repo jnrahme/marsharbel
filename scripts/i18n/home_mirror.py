@@ -20,6 +20,8 @@ PRAYER_DISCLOSURE_CONTROLS = (
     ('a.home-hero-cta2', '/mystery-meditation', 'home.home-cinematic-hero.pray-today-s-rosary'),
     ('a.promo-link[href="/mystery-meditation"]', '/mystery-meditation', 'home.section.start-today-s-meditation'),
     ('a.promo-link[href="/story"]', '/story', 'home.section.open-the-storybook'),
+    ('footer a[href="/daily-prayer"]', '/daily-prayer', 'home.footer.daily-prayer'),
+    ('nav.home-hero-quick a[href="/daily-prayer"]', '/daily-prayer', 'home.home-cinematic-hero.daily-prayer'),
 )
 
 
@@ -114,6 +116,9 @@ def render_home(root, registry, lang, catalog=None):
         twins['/en/prayers'] = twins['/saint-charbel-prayers']
     if lang in registry.get('publicationSets', {}).get('eucharistic', []):
         twins['/miracles/eucharistic'] = f'/{lang}/miracles/eucharistic/'
+    saint_day = registry.get('pageMirrors', {}).get('saint-of-the-day-master')
+    if saint_day and lang in saint_day.get('renderLocales', []):
+        twins['/saint-of-the-day'] = saint_day['routes'][lang]
     for a in soup.select('a[href]'):
         if a.has_attr('hreflang'): continue
         parts = urlsplit(a['href'])
@@ -121,7 +126,9 @@ def render_home(root, registry, lang, catalog=None):
             a['href'] = twins[parts.path.rstrip('/')] + ('?' + parts.query if parts.query else '') + ('#' + parts.fragment if parts.fragment else '')
     if lang in PRAYER_DISCLOSURE_LOCALES:
         for english in {href for _, href, _ in PRAYER_DISCLOSURE_CONTROLS}:
-            if any(lang in cfg.get('routes', {}) for cfg in registry.get('pageMirrors', {}).values()
+            # A twin with reserved routes but an empty renderLocales is planned,
+            # not shipped: only a rendered twin forces the handoff review.
+            if any(lang in cfg.get('renderLocales', []) for cfg in registry.get('pageMirrors', {}).values()
                    if cfg.get('english') == english):
                 raise ValueError(f'Home {lang}: prayer twin now exists; review the English handoff')
         qualifier = read_json(root / f'locales/{lang}/encyclopedia-trail.json')['englishQualifier']
