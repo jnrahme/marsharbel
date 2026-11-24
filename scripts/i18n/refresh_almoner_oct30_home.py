@@ -145,8 +145,13 @@ def outputs(root=ROOT):
     # --check consults no git metadata, so it is reproducible on the
     # committed artifact after any merge, rebase, squash, or shallow clone.
     contract.pop('sourceRevision', None)
+    # The homepage pin is the pre-continuation bytes. A fixed Chinese
+    # language-list addition must not look like a new master.
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    from i18n.seo_continuations import pinned_preimage
+    pinned = pinned_preimage(root, 'index.html', raw)
     contract.update(bindings=bindings, messages=copy_en,
-                    masterSha256=hashlib.sha256(raw).hexdigest())
+                    masterSha256=hashlib.sha256(pinned).hexdigest())
     result = {hp: contract, root / 'locales/en/home-copy.json': copy_en}
     for code in LOCALES:
         path = root / f'locales/{code}/home-copy.json'
