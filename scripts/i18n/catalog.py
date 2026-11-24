@@ -370,10 +370,17 @@ def validate_mirror_capabilities(root, registry):
                 # artifact; master pins always compare stripped bytes.
                 from i18n.keyed_master import strip_generated_locale_nav
                 from i18n.mb16_home_continuation import build_preimage as home_preimage
-                stripped_master = strip_generated_locale_nav(home_preimage(root, pinned_source, (root / pinned_source).read_bytes()))
-                if b'i18n-locale-nav:start' in stripped_master or b'i18n-locale-nav:end' in stripped_master:
-                    raise ValueError(f'{code}/{name}: malformed generated locale-nav markers in pinned master')
-                if contract['masterSha256'] != hashlib.sha256(stripped_master).hexdigest():
+                raw_master = (root / pinned_source).read_bytes()
+                # A reviewed pin is the pre-continuation page. A synthetic fixture
+                # hashes the file it copied, footer included. Either hash is current.
+                stripped_forms = (
+                    strip_generated_locale_nav(raw_master),
+                    strip_generated_locale_nav(home_preimage(root, pinned_source, raw_master)),
+                )
+                for stripped_master in stripped_forms:
+                    if b'i18n-locale-nav:start' in stripped_master or b'i18n-locale-nav:end' in stripped_master:
+                        raise ValueError(f'{code}/{name}: malformed generated locale-nav markers in pinned master')
+                if contract['masterSha256'] not in {hashlib.sha256(stripped).hexdigest() for stripped in stripped_forms}:
                     raise ValueError(f'{code}/{name}: stale mirror master')
                 base = read_json(root / f'locales/en/{name}-copy.json')
                 local = read_json(root / f'locales/{code}/{name}-copy.json')
