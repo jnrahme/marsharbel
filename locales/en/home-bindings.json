@@ -1,7 +1,7 @@
 {
   "version": 1,
   "master": "index.html",
-  "masterSha256": "881b43f6d148e6ff20af9ab3028a942660eef18888459e944cd494651aeb4cd0",
+  "masterSha256": "610534ce10d796c1bccfde53b2669bfd2806813fb50a11558e45d4716357e352",
   "bindings": [
     {
       "key": "home.saintDay.2026-11-17.heading",
@@ -1436,7 +1436,7 @@
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
       "source": "Last updated: March 2, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website.",
       "kind": "text",
-      "nodeIndex": 5
+      "nodeIndex": 9
     },
     {
       "key": "home.accessibility.primary",
@@ -3614,6 +3614,34 @@
       "source": "ไทย",
       "kind": "text",
       "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.saint-of-the-day",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > nav:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.home-cinematic-hero.daily-prayer",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(3) > nav:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Daily prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.footer.daily-prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Daily prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "home.footer.saint-of-the-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint of the Day",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -4121,6 +4149,10 @@
     "home.runtime.monthly.invitation": "Our monthly invitation",
     "home.runtime.monthly.next": "Our next gathering: {month} 21 & 22. Begin preparing in prayer today.",
     "home.runtime.monthly.prepare": "Today, we prepare our hearts. Tomorrow, we gather in prayer.",
-    "home.runtime.monthly.today": "Today is our monthly day of prayer. Bring your heart to Christ."
+    "home.runtime.monthly.today": "Today is our monthly day of prayer. Bring your heart to Christ.",
+    "home.footer.daily-prayer": "Daily prayer",
+    "home.home-cinematic-hero.daily-prayer": "Daily prayer",
+    "home.footer.saint-of-the-day": "Saint of the Day",
+    "home.home-cinematic-hero.saint-of-the-day": "Saint of the Day"
   }
 }
