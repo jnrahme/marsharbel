@@ -148,17 +148,21 @@ def strip_legacy_partial_nav_marks(text, root, lang):
     return text[:m.start()] + block + text[m.end():]
 
 
-def mark_english_nav_hrefs(text, root, lang, label=True):
-    """Header-only: mark links that still land on English with hreflang/aria + a visible qualifier.
+def mark_english_nav_hrefs(text, root, lang, label=True, region='header'):
+    """Mark links that still land on English with hreflang/aria + a visible qualifier.
 
     Runs after twin routing; anything left unrouted has no registered twin. Adds
     hreflang="en" and an aria-label carrying the localized English qualifier, plus
     (when label=True) a visible <span class="enc-language"> qualifier inside the
-    anchor so the destination language is never a surprise. Idempotent per build.
+    anchor so the destination language is never a surprise. A label that already
+    says the page is English, including a news card's 英文报道, keeps that wording
+    and only gains hreflang. Idempotent per build. region is header or main.
     """
     if lang == 'en':
         return text
-    m = re.search(r'<header\b[\s\S]*?</header>', text)
+    if region not in ('header', 'main'):
+        raise ValueError('English-link marking region must be header or main')
+    m = re.search(r'<' + region + r'\b[\s\S]*?</' + region + r'>', text)
     if not m:
         return text
     from urllib.parse import urlsplit
@@ -180,9 +184,11 @@ def mark_english_nav_hrefs(text, root, lang, label=True):
         # launch) instead of double-annotating the same link.
         body = re.sub(r' ?<span class="launch-english-qualifier">[\s\S]*?</span>', '', body)
         visible = unescape(re.sub(r'<[^>]+>', '', body)).strip()
+        already = qualifier in visible or '英文' in visible
+        aria = visible if already else (visible + ' ' + qualifier).strip()
         clean = pre.strip()
-        new_attrs = (' ' + clean if clean else '') + f' hreflang="en" aria-label="{escape(visible + " " + qualifier, quote=True)}"'
-        new_body = body + (f' <span class="enc-language">{escape(qualifier)}</span>' if label else '')
+        new_attrs = (' ' + clean if clean else '') + f' hreflang="en" aria-label="{escape(aria, quote=True)}"'
+        new_body = body + (f' <span class="enc-language">{escape(qualifier)}</span>' if label and not already else '')
         return '<a' + new_attrs + f' href="{href}"' + post + '>' + new_body + '</a>'
     block = re.sub(r'<a\b([^>]*?)href="([^"]*)"([^>]*)>([\s\S]*?)</a>', replace, block)
     return text[:m.start()] + block + text[m.end():]

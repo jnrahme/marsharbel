@@ -203,9 +203,11 @@ def render_home(root, registry, lang, catalog=None):
     from i18n.ru_travel_chrome import localize_travel_chrome
     from i18n.encyclopedia_nav import route_and_mark_nav
     if lang == 'zh-Hans':
-        # Home-only disclosure. Do not alter pinned Chinese travel-family bytes.
+        # Home-only disclosure. Header and the article body both name an English
+        # destination. Do not alter pinned Chinese travel-family bytes.
         from i18n.encyclopedia_nav import mark_english_nav_hrefs
         rendered = mark_english_nav_hrefs(rendered, root, lang)
+        rendered = mark_english_nav_hrefs(rendered, root, lang, region='main')
     return localize_travel_chrome(route_and_mark_nav(rendered, root, lang), registry, lang, 'home')
 
 

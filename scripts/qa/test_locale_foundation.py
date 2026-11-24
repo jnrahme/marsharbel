@@ -37,6 +37,12 @@ class FoundationTests(unittest.TestCase):
         page = BeautifulSoup((ROOT/'zh-Hans/travel.html').read_text(), 'html.parser')
         self.assertEqual(page.select_one('link[rel=canonical]')['href'], 'https://marsharbel.com/zh-Hans/travel')
         self.assertNotIn('noindex', page.select_one('meta[name=robots]')['content'])
+        prayers = home.select_one('nav.home-hero-quick a[href="/prayer-library"]')
+        self.assertIn('（英语）', prayers.get_text())
+        self.assertEqual(prayers.get('hreflang'), 'en')
+        saint = home.select_one('nav.home-hero-quick a[href="/zh-Hans/saint-of-the-day"]')
+        self.assertNotIn('英语', saint.get_text())
+        self.assertIsNone(saint.get('hreflang'))
 
     def test_missing_runtime_catalog_fails_closed(self):
         import shutil, tempfile
