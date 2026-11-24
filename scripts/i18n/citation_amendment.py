@@ -272,6 +272,7 @@ def _prove_degraded(root,s):
     # Derived-pin closure over current bytes: same owning formulas as R3, current tree.
     sys.path.insert(0,str(Path(root)/'scripts'))
     from i18n.keyed_master import strip_static_fallback
+    from i18n.mb16_home_continuation import build_preimage
     by_file={}
     for e in s['derivedPins']:by_file.setdefault(e['file'],[]).append(e)
     for rel,entries in by_file.items():
@@ -279,7 +280,8 @@ def _prove_degraded(root,s):
         for e in entries:
             m=e['master']
             if rel.endswith('-bindings.json') or rel.endswith('-exact.json'):
-                if e['newSha256']!=hashlib.sha256(strip_static_fallback((Path(root)/m).read_bytes())).hexdigest():raise ValueError('citation: degraded new pin != owning formula '+rel)
+                mastered=build_preimage(root,m,(Path(root)/m).read_bytes())
+                if e['newSha256']!=hashlib.sha256(strip_static_fallback(mastered)).hexdigest():raise ValueError('citation: degraded new pin != owning formula '+rel)
                 if cc[e['field']]!=e['newSha256']:raise ValueError('citation: degraded pin field mismatch '+rel)
             else:
                 def msha(x):return hashlib.sha256(re.search(rb'<main\b[\s\S]*?</main>',x)[0]).hexdigest()
