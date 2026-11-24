@@ -11,6 +11,12 @@
       "owner": "Claude (feat/hidden-store-page), routed via Joey",
       "reason": "Hidden /store product workshop for building real Shopify listings (Saint Charbel Classic T-Shirt, Winter Chapel Mug, Organic Tote Bag) for Joey's review. No checkout, no payments, no Shopify password or API keys. English-only; not linked, not indexed, not published. Promotion to a public shop requires deleting this entry, Joey's explicit approval, and either the full 7-locale keyed mirror or an explicit English-only decision in the same PR.",
       "handoff": "Joey request 2026-11-12: build a hidden /store page to build products on. docs/specs/hidden-store-page.md records the release hold. Uses the same private-preview gate (noindex + this allowlist + isolation assertions) as rosary-book-joyful.html."
+    },
+    {
+      "page": "rosary-episodes.html",
+      "owner": "architecture lane (content API), routed via Main",
+      "reason": "PR 1B build-time reader proof: hidden daily-rosary video index generated from content/rosary/episodes.json by scripts/build_rosary_episodes.py. English-only; not linked, not indexed, not published. Promotion to public requires deleting this entry and shipping the public video index (nav, sitemap, keyed locale mirrors, VideoObject) in the same PR per the architecture plan.",
+      "handoff": "Architecture plan PR 1B (Joey's go 2026-11-20: code and plan, hosting/auth/DNS held). First build-time reader of the content layer; zero public-surface change."
     }
   ]
 }
