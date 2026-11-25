@@ -119,7 +119,11 @@ def build_preimage(root, path, current):
     try:
         return preimage(root, path, current)
     except ValueError as error:
-        if 'native proof unavailable' not in str(error):
+        message = str(error)
+        # A locale-catalog fixture copies masters but not this proof module.
+        # A missing module is not a symlink attack; only the exact footer
+        # delta may be rebuilt. preimage() itself still rejects symlinks.
+        if 'native proof unavailable' not in message and not message.startswith('continuation: nonregular proof input '):
             raise
         return reconstruct(path, current)
 

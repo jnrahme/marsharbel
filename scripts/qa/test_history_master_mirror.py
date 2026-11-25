@@ -9,7 +9,8 @@ from i18n.mirror_structure import check_pair
 class HistoryMirrors(unittest.TestCase):
  def setUp(self):self.r=json.loads((ROOT/'locales/registry.json').read_text())
  def test_all_eight_full_masters_and_localized_schema(self):
-  master=(ROOT/'history.html').read_text()
+  from i18n.mb16_home_continuation import reconstruct
+  master=reconstruct('history.html',(ROOT/'history.html').read_bytes()).decode()
   for lang,route in self.r['pageMirrors']['history-master']['routes'].items():
    text=render_page(ROOT,self.r,lang,'history-master',route);s=BeautifulSoup(text,'html.parser')
    parity=BeautifulSoup(text,'html.parser')

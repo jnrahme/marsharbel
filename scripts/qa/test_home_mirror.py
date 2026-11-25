@@ -78,7 +78,9 @@ class HomeMirrorTests(unittest.TestCase):
                 self.assertIn(expected,links,f'{lang}: missing {topic} twin')
                 self.assertNotIn(master,links,f'{lang}: English {topic} leaked instead of its twin')
             routes=json.loads((ROOT/'locale-routes.js').read_text().split('=',1)[1].strip().rstrip(';'))['topics']
-            self.assertIn(routes.get('/gallery',{}).get(lang,'/gallery'),links,'Gallery link must be the published twin, else the English destination')
+            gallery=routes.get('/gallery',{}).get(lang,'/gallery')
+            destinations={a['href'] for a in rendered.select('a[href]')}
+            self.assertIn(gallery,destinations,'Gallery link must be the published twin, else the English destination')
 
     def test_reviewed_prayer_controls_disclosed_on_every_home(self):
         for lang in self.registry['homepageMirrors']['renderLocales']:

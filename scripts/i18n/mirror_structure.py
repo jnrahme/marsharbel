@@ -86,15 +86,13 @@ def _strip_partial_home_disclosure(soup):
 
 
 def _strip_english_nav_disclosure(soup):
-    """Remove reviewed English-destination disclosure marks added inside the shared
-    header on locale pages (hreflang/aria-label plus one visible qualifier span).
-    Scoped: only inside <header>; validates the full reviewed shape and raises on
-    any deviation, so an unexpected header change still fails the gate."""
+    """Remove reviewed English-destination disclosure marks (hreflang/aria-label
+    plus one visible qualifier span). Header marks are on every locale page.
+    The Chinese homepage also marks English links in the article. Validates the
+    reviewed shape and raises on any deviation."""
     from bs4 import NavigableString
-    header = soup.header
-    if header is None:
-        return soup
-    for hint in header.select('span.enc-language'):
+    regions = [node for node in (soup.header, soup.main) if node is not None]
+    for hint in [hint for region in regions for hint in region.select('span.enc-language')]:
         anchor = hint.parent
         if anchor.name != 'a' or anchor.get('hreflang') != 'en':
             raise ValueError('English nav disclosure must sit on an hreflang="en" anchor')
@@ -105,7 +103,8 @@ def _strip_english_nav_disclosure(soup):
             raise ValueError('English nav disclosure must be one text-only qualifier')
         qualifier = str(hint.contents[0]).strip()
         visible = ''.join(text for text in anchor.find_all(string=True) if text.find_parent('span', class_='enc-language') is None).strip()
-        if not qualifier or not visible or anchor.get('aria-label') != visible + ' ' + qualifier:
+        expected = (visible + ' ' + qualifier).strip()
+        if not qualifier or anchor.get('aria-label') != expected or (not visible and expected != qualifier):
             raise ValueError('English nav disclosure qualifier/accessible label mismatch')
         hint.decompose()
     return soup
