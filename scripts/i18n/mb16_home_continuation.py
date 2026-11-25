@@ -114,6 +114,18 @@ def reconstruct(path, current):
         raise ValueError('MB16: candidate differs outside exact generated home blocks')
     return restored
 
+def continue_published_footer(path, raw):
+    """Reapply the finite Chinese language-list edit after a preimage render."""
+    if path not in PATHS or not isinstance(raw, (bytes, bytearray)):
+        return raw
+    try:
+        a, z = span(raw, b'i18n-navigation', b'footer')
+    except ValueError:
+        return raw
+    if raw[a:z] != footer(HOMES):
+        return raw
+    return raw[:a] + footer(HOMES + (CHINESE,), True) + raw[z:]
+
 def build_preimage(root, path, current):
     """Native proof when git can bind HEAD; exact reconstruction otherwise."""
     try:

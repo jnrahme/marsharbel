@@ -208,7 +208,9 @@ def render_home(root, registry, lang, catalog=None):
         from i18n.encyclopedia_nav import mark_english_nav_hrefs
         rendered = mark_english_nav_hrefs(rendered, root, lang)
         rendered = mark_english_nav_hrefs(rendered, root, lang, region='main')
-    return localize_travel_chrome(route_and_mark_nav(rendered, root, lang), registry, lang, 'home')
+    rendered = localize_travel_chrome(route_and_mark_nav(rendered, root, lang), registry, lang, 'home')
+    from i18n.mb16_home_continuation import continue_published_footer
+    return continue_published_footer('index.html', rendered.encode()).decode()
 
 
 def render_home_set(root, registry):

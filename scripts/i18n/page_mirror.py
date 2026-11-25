@@ -242,7 +242,11 @@ def render_page(root,registry,lang,family,route,catalog=None):
     if family == 'stories-master' and lang == 'zh-Hans':
         from i18n.stories_zh_header import finish_stories_zh_header
         marked = finish_stories_zh_header(marked, root, family, lang)
-    return localize_travel_chrome(marked, registry, lang, family)
+    marked = localize_travel_chrome(marked, registry, lang, family)
+    from i18n.mb16_home_continuation import PATHS, continue_published_footer
+    if source in PATHS:
+        marked = continue_published_footer(source, marked.encode()).decode()
+    return marked
 
 
 def render_page_set(root,registry):
