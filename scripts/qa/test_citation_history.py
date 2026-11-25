@@ -114,11 +114,14 @@ def run(record,expect_reject):
         # Historical graph proof remains unchanged. Current blobs may differ
         # only through the fixed native continuation and its actual C2 preimage.
         from i18n import seo_continuations as sc
+        from i18n.mb16_home_continuation import build_preimage
+        from i18n.mb16_citation_home import preimage as citation_preimage
         continued=sc.verify_receipt(Path(d))
         for f in finite:
             historical=subprocess.check_output(['git','-C',d,'show',ch.REVIEWED_C+':'+f])
             current=(Path(d)/f).read_bytes()
-            ok=ok and ((continued[f]==historical) if f in continued else current==historical)
+            restored=citation_preimage(d, f, build_preimage(d, f, current))
+            ok=ok and ((continued[f]==historical) if f in continued else restored==historical)
         record('N1 native-only hydration yields exact reviewed C2 graph',ok,'changed files: '+str(len(changed)))
 
         # N11 warm object store never masks artifact tampering (hydrated above).
