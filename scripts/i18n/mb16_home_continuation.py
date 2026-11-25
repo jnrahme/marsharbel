@@ -128,13 +128,11 @@ def continue_published_footer(path, raw):
         a = z = None
     if a is not None and raw[a:z] == footer(HOMES):
         return raw[:a] + footer(HOMES + (CHINESE,), True) + raw[z:]
-    if b'href="/zh-Hans/"' in raw:
-        return raw
     start = raw.find(b'class="footer-locales"')
     if start < 0:
         return raw
     end = raw.find(b'</nav>', start)
-    if end < 0:
+    if end < 0 or b'href="/zh-Hans/"' in raw[start:end]:
         return raw
     link = ' <span aria-hidden="true">-</span> <a dir="ltr" href="/zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>'.encode()
     return raw[:end] + link + raw[end:]
