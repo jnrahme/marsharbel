@@ -185,6 +185,12 @@ def preimage(root,path,current):
             return current
         # Once ANY home block changes, the complete fixed-base delta must hold
         # independently for HEAD, disk and caller. Mixed continuations fail.
+        if path == 'index.html':
+            from i18n.mb16_saint_home import restore, reapply
+            verify_delta(path, original, restore(root, original, committed, head))
+            verify_delta(path, original, restore(root, original, disk))
+            verify_delta(path, original, restore(root, original, current))
+            return reapply(original, current)
         verify_delta(path,original,committed)
         verify_delta(path,original,disk)
         return verify_delta(path,original,current)
