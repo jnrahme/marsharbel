@@ -15,7 +15,7 @@ HEADER_NAV_LABELS = {'Media': 'navigation.media', 'Music': 'navigation.music', '
 
 # Only the reviewed home hero, meditation promo, and storybook promo. Other English
 # links retain their existing behavior and markup.
-PRAYER_DISCLOSURE_LOCALES = frozenset({'ar', 'de', 'es', 'fr', 'hi', 'it', 'pl', 'pt', 'ru', 'th'})
+PRAYER_DISCLOSURE_LOCALES = frozenset({'ar', 'de', 'es', 'fr', 'hi', 'it', 'pl', 'pt', 'ru', 'th', 'zh-Hans'})
 PRAYER_DISCLOSURE_CONTROLS = (
     ('a.home-hero-cta2', '/mystery-meditation', 'home.home-cinematic-hero.pray-today-s-rosary'),
     ('a.promo-link[href="/mystery-meditation"]', '/mystery-meditation', 'home.section.start-today-s-meditation'),
@@ -91,6 +91,10 @@ def render_home(root, registry, lang, catalog=None):
     for cfg in registry.get('pageMirrors', {}).values():
         if lang in cfg['routes'] and (lang in registry.get('limitedLaunchLocales', []) or cfg['english'] == '/travel' or (lang == 'ar' and lang in cfg.get('renderLocales', []))):
             twins[cfg['english'].rstrip('/')] = cfg['routes'][lang]
+    # MB16 Chinese home links use every published twin, including Travel.
+    if lang == 'zh-Hans':
+        from i18n.page_mirror import twin_routes
+        twins.update(twin_routes(registry, lang))
     # The reviewed film lead points at the EN canonical page on the master home;
     # repoint it to the released locale article wherever the strict family renders.
     film = registry.get('pageMirrors', {}).get('film-premiere-master')
@@ -198,7 +202,15 @@ def render_home(root, registry, lang, catalog=None):
                           lambda match: '        ' + match[2], rendered)
     from i18n.ru_travel_chrome import localize_travel_chrome
     from i18n.encyclopedia_nav import route_and_mark_nav
-    return localize_travel_chrome(route_and_mark_nav(rendered, root, lang), registry, lang, 'home')
+    if lang == 'zh-Hans':
+        # Home-only disclosure. Header and the article body both name an English
+        # destination. Do not alter pinned Chinese travel-family bytes.
+        from i18n.encyclopedia_nav import mark_english_nav_hrefs
+        rendered = mark_english_nav_hrefs(rendered, root, lang)
+        rendered = mark_english_nav_hrefs(rendered, root, lang, region='main')
+    rendered = localize_travel_chrome(route_and_mark_nav(rendered, root, lang), registry, lang, 'home')
+    from i18n.mb16_home_continuation import continue_published_footer
+    return continue_published_footer('index.html', rendered.encode()).decode()
 
 
 def render_home_set(root, registry):

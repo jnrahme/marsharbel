@@ -387,6 +387,8 @@ def verify_receipt(root):
 
 def pinned_preimage(root, path, current):
     """Caller MUST compare result to its old pin; this proves no approval."""
+    from i18n.mb16_home_continuation import build_preimage as home_preimage
+    current = home_preimage(root, path, current)
     rows = verify_receipt(root)
     if path not in rows:
         return current

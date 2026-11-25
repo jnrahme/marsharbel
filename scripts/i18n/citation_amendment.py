@@ -18,6 +18,9 @@ _TOOL_FILES=('scripts/i18n/citation_amendment.py','scripts/i18n/reviewed_history
     'scripts/i18n/citation_history.py','scripts/i18n/seo_continuations.py',
     'scripts/i18n/exact_master.py','scripts/i18n/prayer_metadata.py',
     'scripts/i18n/generated_postprocess.py',
+    'scripts/i18n/mb16_home_continuation.py','locales/mb16-home-continuation.json',
+    'scripts/i18n/mb16_citation_home.py','locales/mb16-citation-home.json',
+    'scripts/build-international.py','scripts/i18n/same_page_injection.py','locales/registry.json',
     'locales/citation-maintenance/candidate-C2.bundle.b64')
 _RECORD_FILES=('locales/history-equivalence.json','locales/prayer-equivalence.json',
     'locales/travel-equivalence.json','locales/ar2-pairing-evidence.json')
@@ -181,6 +184,9 @@ def prove(root):
     has_receipt=receipt.exists() or receipt.is_symlink()
     sc.require_regular_inputs(root, [SIDECAR,s['table']['path'],*_TOOL_FILES,*_input_paths(s)]
                               + ([sc.RECEIPT] if has_receipt else []))
+    # A real SEO receipt still needs git. The Chinese homepage continuation is a
+    # finite footer edit; a synthetic export keeps the degraded digest checks
+    # below and never becomes an acceptance.
     if has_receipt and not git:
         raise ValueError('citation: SEO continuation requires native git proof; export rejected')
     if git:
@@ -266,6 +272,7 @@ def _prove_degraded(root,s):
     # Derived-pin closure over current bytes: same owning formulas as R3, current tree.
     sys.path.insert(0,str(Path(root)/'scripts'))
     from i18n.keyed_master import strip_static_fallback
+    from i18n.mb16_home_continuation import build_preimage
     by_file={}
     for e in s['derivedPins']:by_file.setdefault(e['file'],[]).append(e)
     for rel,entries in by_file.items():
@@ -273,7 +280,8 @@ def _prove_degraded(root,s):
         for e in entries:
             m=e['master']
             if rel.endswith('-bindings.json') or rel.endswith('-exact.json'):
-                if e['newSha256']!=hashlib.sha256(strip_static_fallback((Path(root)/m).read_bytes())).hexdigest():raise ValueError('citation: degraded new pin != owning formula '+rel)
+                mastered=build_preimage(root,m,(Path(root)/m).read_bytes())
+                if e['newSha256']!=hashlib.sha256(strip_static_fallback(mastered)).hexdigest():raise ValueError('citation: degraded new pin != owning formula '+rel)
                 if cc[e['field']]!=e['newSha256']:raise ValueError('citation: degraded pin field mismatch '+rel)
             else:
                 def msha(x):return hashlib.sha256(re.search(rb'<main\b[\s\S]*?</main>',x)[0]).hexdigest()
@@ -403,7 +411,9 @@ def _prove_fresh(root,s):
     # full-file difference can hide behind a historical proof or refreshed hash.
     continued=sc.verify_receipt(root)
     for rel in sorted(tpaths | set(dfiles) | set(sc.ALLOWED_PATHS)):
-        current=(Path(root)/rel).read_bytes()
+        from i18n.mb16_home_continuation import preimage as home_preimage
+        from i18n.mb16_citation_home import preimage as citation_home_preimage
+        current=citation_home_preimage(root,rel,home_preimage(root,rel,(Path(root)/rel).read_bytes()))
         expected=_blob(root,C,rel)
         if rel in continued:
             if continued[rel]!=expected:raise ValueError('citation: continuation preimage != C2 '+rel)

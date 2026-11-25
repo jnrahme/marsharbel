@@ -29,6 +29,7 @@ def twin_routes(registry,lang,page_families=True):
 def render_page(root,registry,lang,family,route,catalog=None):
     raw,soup,copy=apply_keyed_master(root,family,lang,catalog)
     source=read_json(root/f'locales/en/{family}-bindings.json')['master']
+    master_file=source
     master_route=registry['pageMirrors'][family].get('english','/' + source.removesuffix('.html'))
     prefix=next(iter(copy)).split('.')[0]
     # The reviewed history bytes are pinned, so history keeps its reviewed links.
@@ -242,7 +243,11 @@ def render_page(root,registry,lang,family,route,catalog=None):
     if family == 'stories-master' and lang == 'zh-Hans':
         from i18n.stories_zh_header import finish_stories_zh_header
         marked = finish_stories_zh_header(marked, root, family, lang)
-    return localize_travel_chrome(marked, registry, lang, family)
+    marked = localize_travel_chrome(marked, registry, lang, family)
+    from i18n.mb16_home_continuation import PATHS, continue_published_footer
+    if master_file in PATHS:
+        marked = continue_published_footer(master_file, marked.encode()).decode()
+    return marked
 
 
 def render_page_set(root,registry):

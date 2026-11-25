@@ -79,7 +79,9 @@ def validate_family(root):
         if len(soup.select('h1'))!=1 or len(soup.select('main article'))!=1:raise ValueError('film: standalone article shape mismatch '+code)
         _,keyed,_=apply_keyed_master(root,FAMILY,code)
         if str(one(soup,'main > article.film-news-article'))!=str(one(keyed,'main > article.film-news-article')):raise ValueError('film: article differs from keyed output '+code)
-        if contract['shellSha256'][code]!=shell_digest(text,route):raise ValueError('film: independent final shell drift '+code)
+        from i18n.mb16_film_home import build_preimage as home_shell_preimage
+        original_shell=home_shell_preimage(root,file,text.encode()).decode()
+        if contract['shellSha256'][code]!=shell_digest(original_shell,route):raise ValueError('film: independent final shell drift '+code)
         switcher=soup.select('nav.film-locale-switcher a[href][hreflang]')
         if len(switcher)!=12 or {a['hreflang']:a['href'] for a in switcher}!=routes:raise ValueError('film: crawlable 12-locale switcher required '+code)
     validate_discovery(root,registry,routes)

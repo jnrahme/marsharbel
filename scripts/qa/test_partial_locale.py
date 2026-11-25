@@ -234,7 +234,12 @@ class PartialLocaleTests(unittest.TestCase):
         for cfg in self.registry['pageMirrors'].values():
             other_master=cfg.get('master')
             if other_master and (ROOT/other_master).is_file() and not (root/other_master).exists():
-                target=root/other_master;target.parent.mkdir(parents=True,exist_ok=True);target.symlink_to(ROOT/other_master)
+                # This synthetic film-capability export fixture owns no native
+                # proof context. Copy the verified pinned preimage, never a
+                # symlink to a post-generation continued production master.
+                from i18n.seo_continuations import pinned_preimage
+                original=pinned_preimage(ROOT,other_master,(ROOT/other_master).read_bytes())
+                target=root/other_master;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(original)
         return root,reader
 
     def test_exact_film_partial_grant_without_home_or_topics(self):
@@ -254,7 +259,7 @@ class PartialLocaleTests(unittest.TestCase):
         self.registry['pageMirrors'][name]['routes']['zh-Hans']='/zh-Hans'+english
         self.registry['pageMirrors'][name]['renderLocales'].append('zh-Hans')
         validate_registry(self.registry)
-        self.assertIsNone(home_url(self.registry,'zh-Hans'))
+        self.assertEqual(home_url(self.registry,'zh-Hans'),'/zh-Hans/')
         self.assertEqual(self.registry['locales']['zh-Hans']['capabilities']['topicGuides'],[])
         self.assertEqual(self.registry['locales']['zz']['capabilities']['topicGuides'],[])
 
@@ -295,6 +300,7 @@ class PartialLocaleTests(unittest.TestCase):
     def test_traditional_chinese_never_aliases_simplified(self):
         cfg=self.registry['locales'].pop('zz')
         cfg['ogLocale']='zh_CN';cfg['selectorAliases']=['zh-TW']
+        cfg['home']='/zh-Hans/';cfg['capabilities']['home']=True
         self.registry['locales']['zh-Hans']=cfg
         self.registry['ogLocaleOrder']=[c for c in self.registry['ogLocaleOrder'] if c!='zz']
         if 'zh-Hans' not in self.registry['ogLocaleOrder']:self.registry['ogLocaleOrder'].append('zh-Hans')
@@ -315,7 +321,7 @@ class PartialLocaleTests(unittest.TestCase):
         self.assertEqual(result['languages'], list(read_json(ROOT / 'locales/registry.json')['locales']))
         self.assertIn('zh-Hans', result['languages'])
         self.assertEqual(result['aliases']['zh-hans'], 'zh-Hans')
-        self.assertNotIn('zh-Hans', result['publishedHomes'])
+        self.assertEqual(result['publishedHomes']['zh-Hans'], '/zh-Hans/')
         self.assertEqual(result['pages'], seed['pages'])
 
     def test_existing_homes_unchanged(self):

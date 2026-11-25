@@ -139,7 +139,7 @@
 [laptop] › site-quality.spec.js › /index.html › renders without overflow, broken images, console errors, or serious accessibility issues
 [laptop] › site-quality.spec.js › /rosary-visual-guide.html › renders without overflow, broken images, console errors, or serious accessibility issues
 [laptop] › source-safeguards.spec.js › es source-first safeguards stay readable
-[laptop] › source-safeguards.spec.js › zh-Hans does not invent a safeguard home or novena
+[laptop] › source-safeguards.spec.js › zh-Hans source-first safeguards stay readable
 [laptop] › storybook-art-frame.spec.js › francis-story art stays centered at 360
 [laptop] › storybook-art-frame.spec.js › jude-story art stays centered at 360
 [laptop] › storybook-art-frame.spec.js › massabki-story art stays centered at 360
@@ -791,7 +791,8 @@
 [wide-desktop] › international.spec.js › th homepage offers every shipped homepage
 [wide-desktop] › language-persistence.spec.js › es saved explicit choice routes an English internal history link to its reviewed twin
 [wide-desktop] › language-persistence.spec.js › pl explicit choice persists across reviewed navigation
-[wide-desktop] › language-persistence.spec.js › zh-Hans absent home refuses without changing URL or preference
+[wide-desktop] › language-persistence.spec.js › zh-Hans explicit choice persists across reviewed navigation
+[wide-desktop] › accessibility-sitemap.spec.js › axe /zh-Hans/
 [wide-desktop] › locale-home-navigation.spec.js › /fr/ native section navigation JS=true
 [wide-desktop] › locale-preference-routing.spec.js › an explicit English prayer master URL stays on the full master
 [wide-desktop] › miracles-english-escape.spec.js › Arabic miracles keeps pending locales honest and English source clickable
@@ -941,3 +942,30 @@
 [wide-desktop] › growth-published-smoke.spec.js › growth regression de saint /de/biografie
 [wide-desktop] › growth-published-smoke.spec.js › growth regression hi home /hi/
 # Nov20: growth-events + growth-published-smoke identities appended (175 total, round-robin on stage lists), prior assignments preserved
+[laptop] › mb16-language-selector.spec.js › MB16 /saint-charbel-movie ar navigates to published home
+[laptop] › mb16-language-selector.spec.js › MB16 /saint-charbel-movie ru navigates to published home
+[laptop] › mb16-language-selector.spec.js › MB16 /saint-charbel-oil it navigates to published home
+[laptop] › mb16-language-selector.spec.js › MB16 home de offers all published homes
+[laptop] › mb16-language-selector.spec.js › MB16 home ru offers all published homes
+[phone] › growth-published-smoke.spec.js › growth regression zh-Hans home /zh-Hans/
+[phone] › mb16-language-selector.spec.js › MB16 /saint-charbel-movie it navigates to published home
+[phone] › mb16-language-selector.spec.js › MB16 /saint-charbel-oil es navigates to published home
+[phone] › mb16-language-selector.spec.js › MB16 /saint-charbel-oil zh-Hans navigates to published home
+[phone] › mb16-language-selector.spec.js › MB16 home it offers all published homes
+[phone] › mb16-language-selector.spec.js › MB16 prayer twin /fr/prieres
+[small-phone] › mb16-language-selector.spec.js › MB16 /saint-charbel-movie es navigates to published home
+[small-phone] › mb16-language-selector.spec.js › MB16 /saint-charbel-movie zh-Hans navigates to published home
+[small-phone] › mb16-language-selector.spec.js › MB16 /saint-charbel-oil pt navigates to published home
+[small-phone] › mb16-language-selector.spec.js › MB16 home es offers all published homes
+[small-phone] › mb16-language-selector.spec.js › MB16 home zh-Hans offers all published homes
+[tablet] › international.spec.js › zh-Hans homepage offers every shipped homepage
+[tablet] › mb16-language-selector.spec.js › MB16 /saint-charbel-movie pt navigates to published home
+[tablet] › mb16-language-selector.spec.js › MB16 /saint-charbel-oil hi navigates to published home
+[tablet] › mb16-language-selector.spec.js › MB16 home ar offers all published homes
+[tablet] › mb16-language-selector.spec.js › MB16 home pt offers all published homes
+[tablet] › mb16-language-selector.spec.js › MB16 prayer twin /saint-charbel-prayers
+[wide-desktop] › mb16-language-selector.spec.js › MB16 /saint-charbel-movie hi navigates to published home
+[wide-desktop] › mb16-language-selector.spec.js › MB16 /saint-charbel-oil de navigates to published home
+[wide-desktop] › mb16-language-selector.spec.js › MB16 /saint-charbel-oil th navigates to published home
+[wide-desktop] › mb16-language-selector.spec.js › MB16 home hi offers all published homes
+[wide-desktop] › mb16-language-selector.spec.js › MB16 prayer twin /es/oraciones

@@ -22,6 +22,6 @@ for(const [family,cfg] of Object.entries(registry.pageMirrors).filter(([_,cfg])=
   await expect(select).toHaveValue('zh-Hans');
   await expect(select.locator('option:checked')).toHaveText('简体中文');
   await expect(select.locator('option[value="zh-Hans"]')).toBeEnabled();
-  expect(await page.evaluate(()=>window.SC_SAME_PAGE_MANIFEST.publishedHomes['zh-Hans'])).toBeUndefined();
+  expect(await page.evaluate(()=>window.SC_SAME_PAGE_MANIFEST.publishedHomes['zh-Hans'])).toBe('/zh-Hans/');
  });
 }

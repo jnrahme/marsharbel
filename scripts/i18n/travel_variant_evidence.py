@@ -125,7 +125,9 @@ def validate_variant(root, family, code, variant, text, final=True, schema='scop
             continuity=without_ru(strip_static_fallback_text(strip_for_locale(root,code,cb.decode())),slug)
         else:
             continuity=without_ru(candidate,slug)
-        if continuity!=without_ru(strip_static_fallback_text(strip_for_locale(root,code,text)),slug):raise ValueError('Post-review candidate drift')
+        from i18n.mb16_home_continuation import preimage as home_preimage
+        reviewed_text=home_preimage(root,file,text.encode()).decode()
+        if continuity!=without_ru(strip_static_fallback_text(strip_for_locale(root,code,reviewed_text)),slug):raise ValueError('Post-review candidate drift')
     # Split pin check (never a both-or): the historical prepared candidate must still
     # match the pinned OLD body; current text must match the EFFECTIVE pin (new C body
     # when amended, old otherwise).

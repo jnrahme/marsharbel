@@ -6,7 +6,12 @@ for(const code of Object.keys(registry.locales).filter(c=>registry.locales[c].ho
  await expect(page.locator('#sc-language-select')).toHaveValue(code);
  await expect(page.locator('html')).toHaveAttribute('lang',code);
  expect(await page.evaluate(()=>localStorage.getItem('sc_last_explicit_language'))).toBe(code);
- const link=page.locator('main a[href="/history"], main a[href="./history"], main a[href="'+(registry.pageMirrors['history-master'].routes[code]||'/history')+'"]').first();
+ const history=registry.pageMirrors['history-master'].routes[code]||(code==='en'?'/history':'');
+ const followed=history||(registry.pageMirrors['saint-of-the-day-master'].routes[code]||'');
+ if(!followed)throw new Error(code+' has a home but no reviewed page to follow');
+ const link=history
+  ? page.locator('main a[href="/history"], main a[href="./history"], main a[href="'+history+'"]').first()
+  : page.locator('main a[href="'+followed+'"]').first();
  await link.scrollIntoViewIfNeeded();await link.click();
  await expect(page.locator('html')).toHaveAttribute('lang',code);
  expect(await page.evaluate(()=>localStorage.getItem('sc_last_explicit_language'))).toBe(code);

@@ -52,8 +52,16 @@ def apply_keyed_master(root, family, lang, catalog=None):
     from i18n.seo_continuations import pinned_preimage
     current = (root / contract['master']).read_bytes()
     original = pinned_preimage(root, contract['master'], current)
-    raw = strip_static_fallback(original)
-    if hashlib.sha256(strip_static_fallback(original)).hexdigest() != contract['masterSha256']:
+    pinned = strip_static_fallback(original)
+    disk = strip_static_fallback(current)
+    digest = hashlib.sha256
+    # Reviewed pins hash the pre-continuation page. A fixture that hashes the
+    # copied file, Chinese footer included, still matches that file.
+    if digest(pinned).hexdigest() == contract['masterSha256']:
+        raw = pinned
+    elif digest(disk).hexdigest() == contract['masterSha256']:
+        raw = disk
+    else:
         raise ValueError(f'{family} master changed: update bindings and reviewed locale catalogs')
     english = read_json(root / f'locales/en/{family}-copy.json')
     copy = catalog if catalog is not None else read_json(root / f'locales/{lang}/{family}-copy.json')

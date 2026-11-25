@@ -281,6 +281,14 @@ class OwningGuards(unittest.TestCase):
         self.tmp = Path(tempfile.mkdtemp(prefix='seo-owner-guards-'))
         subprocess.run(['git', '-C', str(ROOT), 'worktree', 'add', '--detach', str(self.tmp), 'HEAD'],
                        check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # This fixture isolates the four original SEO operations, not a mixed
+        # MB16 + future SEO release. Establish an explicit original-C2 home
+        # state even when production HEAD already carries MB16 output.
+        from i18n import mb16_home_continuation as mh, mb16_citation_home as mc
+        for path in sorted(mh.PATHS | mc.PATHS):
+            (self.tmp/path).write_bytes(mh.git(self.tmp,'show',mh.BASE+':'+path))
+        subprocess.run(['git','-C',str(self.tmp),'add','--',*sorted(mh.PATHS | mc.PATHS)],check=True)
+        subprocess.run(['git','-C',str(self.tmp),'-c','user.name=SEO fixture','-c','user.email=fixture@example.invalid','commit','--quiet','--allow-empty','-m','prepare isolated pre-MB16 continuation fixture'],check=True)
         self.base = subprocess.check_output(['git', '-C', str(self.tmp), 'rev-parse', 'HEAD']).decode().strip()
         self.paths = ('history.html', 'templates/masters/history-exact.html',
                       'saint-charbel-prayers.html', 'en/prayers.html', 'saint-charbel-chaplet.html', 'ar/saint-charbel-chaplet.html')

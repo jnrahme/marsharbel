@@ -20,11 +20,11 @@ for(const code of Object.keys(registry.locales).filter(code=>registry.locales[co
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await page.screenshot({path:info.outputPath(code+'-calendar.png')});
  }else{
-  // Limited-launch locale (home/history only): the registry must honestly advertise
-  // no localized novena route, and the English master must carry the visit.
-  expect(registry.limitedLaunchLocales).toContain(code);
+  // No localized novena. hi/th are the limited-launch homes; zh-Hans is a full
+  // home that still has no novena twin. The English novena stays English.
   expect(novena.routes[code]).toBeUndefined();
   expect(novena.discoveryRoutes[code]).toBeUndefined();
+  if(code!=='zh-Hans')expect(registry.limitedLaunchLocales).toContain(code);
   const response=await page.goto(novena.english);
   expect(response.ok()).toBe(true);
   await expect(page.locator('html')).toHaveAttribute('lang','en');

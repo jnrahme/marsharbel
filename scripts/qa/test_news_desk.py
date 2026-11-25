@@ -897,7 +897,7 @@ class ParisStatueTests(unittest.TestCase):
         reg=json.loads((ROOT/'locales/registry.json').read_text())
         ident=pack['id']
         self.assertEqual(reg['pageMirrors']['news-master']['renderLocales'],['ar'])
-        self.assertEqual(set(reg['homepageMirrors']['renderLocales']),{'ar','fr','es','pt','it','de','pl','ru','hi','th'})
+        self.assertEqual(set(reg['homepageMirrors']['renderLocales']),{'ar','fr','es','pt','it','de','pl','ru','hi','th','zh-Hans'})
         for code in ('en','ar'):
             soup=BeautifulSoup((ROOT/('news.html' if code=='en' else 'ar/news.html')).read_text(),'html.parser')
             row=soup.select_one('#'+ident)

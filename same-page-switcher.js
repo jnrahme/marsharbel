@@ -71,7 +71,7 @@
   if(url.origin!==location.origin||!/^https?:$/.test(url.protocol)||url.searchParams.get('lang')==='en'||a.getAttribute('lang')==='en')return;
   var target=api.locate(manifest,url.pathname),targetLanguage=target?target.language:'en';
   var result=api.resolve(manifest,url.href,preferred,targetLanguage);
-  if(result.available&&result.href!==url.href){e.preventDefault();location.assign(result.href);}
+  if(result.available&&result.reason!=='published-home-fallback'&&result.href!==url.href){e.preventDefault();location.assign(result.href);}
  });
  window.SC_LANGUAGE_SWITCH={request:request,actualLanguage:actual};
  // Back/forward restores the page's own language; no preference redirect runs.

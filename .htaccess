@@ -47,17 +47,12 @@ RewriteRule ^prayers(?:\.html)?/?$ /en/prayers [R=301,L]
 # Reviewed full prayer masters must remain served at their declared identities.
 # /en/prayers canonical adoption requires a separate head-cluster migration.
 
-# Simplified Chinese is a published-mirrors-only locale, not a full home.
-# Its existing directory has no index, so serve the reviewed travel entry
-# internally. Keep the travel canonical, publication sets and access rules.
-RewriteRule ^zh-Hans(?:/(?:index(?:\.html)?)?)?$ /zh-Hans/travel.html [END]
-
 # Language hubs are directory indexes with canonical trailing slashes.
 # i18n-routes:start
 RewriteRule ^en/?$ / [R=301,L]
-RewriteRule ^(ar|fr|es|pt|it|de|pl|ru|hi|th)/index(?:\.html)?$ /$1/ [R=301,L]
-RewriteRule ^(ar|fr|es|pt|it|de|pl|ru|hi|th)\.html$ /$1/ [R=301,L]
-RewriteRule ^(ar|fr|es|pt|it|de|pl|ru|hi|th)$ /$1/ [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl|ru|hi|th|zh-Hans)/index(?:\.html)?$ /$1/ [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl|ru|hi|th|zh-Hans)\.html$ /$1/ [R=301,L]
+RewriteRule ^(ar|fr|es|pt|it|de|pl|ru|hi|th|zh-Hans)$ /$1/ [R=301,L]
 # i18n-routes:end
 
 # The miracles hub is a directory index; /miracles/index(.html) must not serve a duplicate page.
