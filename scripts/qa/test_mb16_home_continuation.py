@@ -65,6 +65,90 @@ class MB16HomeContinuation(unittest.TestCase):
         for changed in cases:
             with self.assertRaises(ValueError):m.verify_delta('index.html',raw,changed)
         with self.assertRaises(ValueError):m.derive('history.html',self.originals['history.html'],add_alternate=True)
+    def test_exact_generated_saint_composition_and_fail_closed(self):
+        from i18n import mb16_saint_home as saint
+        import shutil
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for rel in [saint.MODULE, *saint.INPUTS]:
+                target = root / rel
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(ROOT / rel, target)
+            # A new finite test date, with existing fixture copy. No claim of
+            # reviewed editorial content is made by this generator proof.
+            manifest = json.loads((root / 'locales/saint-of-day.json').read_text())
+            copy_path = root / 'locales/en/saint-of-day.json'
+            copies = json.loads(copy_path.read_text())
+            old = sorted(manifest['entries'])[0]
+            manifest['entries'] = {'2026-11-25': manifest['entries'][old]}
+            copies = {'2026-11-25': copies[old]}
+            (root / 'locales/saint-of-day.json').write_text(json.dumps(manifest))
+            copy_path.write_text(json.dumps(copies))
+            original = self.originals['index.html']
+            good = m.derive('index.html', original, 'sorted', True)
+            a, z = saint.span(good)
+            candidate = good[:a] + saint.generated_block(root) + good[z:]
+            restored = saint.restore(root, original, candidate)
+            self.assertEqual(m.verify_delta('index.html', original, restored), original)
+            pinned = saint.reapply(original, candidate)
+            self.assertNotEqual(pinned, original)
+            self.assertEqual(saint.reapply(restored, candidate), candidate)
+            for bad in (candidate.replace(b'<main', b'<main data-drift="1"', 1),
+                        candidate.replace(b'href="/zh-Hans/"', b'href="/foreign/"', 1)):
+                with self.assertRaises(ValueError):
+                    m.verify_delta('index.html', original, saint.restore(root, original, bad))
+            for bad in (candidate.replace(b'data-saint-date="2026-11-25"', b'data-saint-date="2026-11-26"', 1),
+                        candidate + saint.START, candidate.replace(saint.END, b'', 1),
+                        candidate.replace(b'<!-- saint-of-day:start -->', b'', 1)):
+                with self.assertRaises(ValueError): saint.restore(root, original, bad)
+            template = root / 'templates/saint-of-day/home.html'
+            raw = template.read_bytes()
+            template.write_bytes(raw + b' ')
+            with self.assertRaisesRegex(ValueError, 'fixed generator/template changed'):
+                saint.restore(root, original, candidate)
+            template.write_bytes(raw)
+            template.rename(template.with_suffix('.held'))
+            template.symlink_to(template.with_suffix('.held'))
+            with self.assertRaisesRegex(ValueError, 'nonregular'):
+                saint.restore(root, original, candidate)
+
+    def test_native_saint_snapshots_and_build_candidate(self):
+        from i18n import mb16_saint_home as saint
+        import shutil
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            subprocess.run(['git', 'clone', '--quiet', '--shared', str(ROOT), str(root)], check=True)
+            def git(*args):
+                return subprocess.check_output(['git', '-C', str(root), '-c', 'user.name=Fixture',
+                    '-c', 'user.email=fixture@example.invalid', *args], stderr=subprocess.PIPE)
+            # Generate a new data-only pack in a native tree before committing.
+            path = root / 'locales/saint-of-day.json'
+            manifest = json.loads(path.read_text())
+            old = sorted(manifest['entries'])[0]
+            manifest['entries'] = {'2026-11-25': manifest['entries'][old]}
+            path.write_text(json.dumps(manifest))
+            path = root / 'locales/en/saint-of-day.json'
+            copies = json.loads(path.read_text())
+            path.write_text(json.dumps({'2026-11-25': copies[old]}))
+            raw = (root / 'index.html').read_bytes()
+            a, z = saint.span(raw)
+            candidate = raw[:a] + saint.generated_block(root) + raw[z:]
+            (root / 'index.html').write_bytes(candidate)
+            pinned = m.preimage(root, 'index.html', candidate)
+            self.assertEqual(saint.span(pinned)[0], saint.span(self.originals['index.html'])[0])
+            self.assertIn(b'2026-11-25', pinned)
+            git('add', 'index.html', 'locales/saint-of-day.json', 'locales/en/saint-of-day.json')
+            git('commit', '-qm', 'native generated saint fixture')
+            self.assertEqual(m.preimage(root, 'index.html', candidate), pinned)
+            wrong = candidate.replace(b'data-saint-date="2026-11-25"', b'data-saint-date="2026-11-26"', 1)
+            (root / 'index.html').write_bytes(wrong)
+            with self.assertRaises(ValueError): m.preimage(root, 'index.html', wrong)
+            (root / 'index.html').write_bytes(candidate)
+            control = root / saint.MODULE
+            control.write_bytes(control.read_bytes() + b' ')
+            with self.assertRaisesRegex(ValueError, 'module differs from native HEAD'):
+                m.preimage(root, 'index.html', candidate)
+
     def native_fixture(self):
         temp=tempfile.TemporaryDirectory();root=Path(temp.name)
         def git(*args):return subprocess.check_output(['git','-C',str(root),'-c','user.name=Fixture','-c','user.email=fixture@example.invalid',*args],stderr=subprocess.PIPE)

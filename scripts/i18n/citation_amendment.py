@@ -19,6 +19,11 @@ _TOOL_FILES=('scripts/i18n/citation_amendment.py','scripts/i18n/reviewed_history
     'scripts/i18n/exact_master.py','scripts/i18n/prayer_metadata.py',
     'scripts/i18n/generated_postprocess.py',
     'scripts/i18n/mb16_home_continuation.py','locales/mb16-home-continuation.json',
+    'scripts/i18n/mb16_saint_home.py',
+    'scripts/build_saint_of_day.py','scripts/i18n/saint_plate.py',
+    'templates/saint-of-day/home.html','templates/saint-of-day/home-nobook.html',
+    'templates/saint-of-day/home-nobook-mono.html','templates/saint-of-day/home-nobook-image.html',
+    'locales/saint-of-day.json','locales/en/saint-of-day.json','src/pages/index.html',
     'scripts/i18n/mb16_citation_home.py','locales/mb16-citation-home.json',
     'scripts/build-international.py','scripts/i18n/same_page_injection.py','locales/registry.json',
     'locales/citation-maintenance/candidate-C2.bundle.b64')
