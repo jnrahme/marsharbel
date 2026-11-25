@@ -115,16 +115,29 @@ def reconstruct(path, current):
     return restored
 
 def continue_published_footer(path, raw):
-    """Reapply the finite Chinese language-list edit after a preimage render."""
+    """Reapply the finite Chinese language-list edit after a preimage render.
+
+    The English serializer is byte-exact. A translated footer keeps its own
+    language name on the nav and only gains the missing 简体中文 link.
+    """
     if path not in PATHS or not isinstance(raw, (bytes, bytearray)):
         return raw
     try:
         a, z = span(raw, b'i18n-navigation', b'footer')
     except ValueError:
+        a = z = None
+    if a is not None and raw[a:z] == footer(HOMES):
+        return raw[:a] + footer(HOMES + (CHINESE,), True) + raw[z:]
+    if b'href="/zh-Hans/"' in raw:
         return raw
-    if raw[a:z] != footer(HOMES):
+    start = raw.find(b'class="footer-locales"')
+    if start < 0:
         return raw
-    return raw[:a] + footer(HOMES + (CHINESE,), True) + raw[z:]
+    end = raw.find(b'</nav>', start)
+    if end < 0:
+        return raw
+    link = ' <span aria-hidden="true">-</span> <a dir="ltr" href="/zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>'.encode()
+    return raw[:end] + link + raw[end:]
 
 def build_preimage(root, path, current):
     """Native proof when git can bind HEAD; exact reconstruction otherwise."""
