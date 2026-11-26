@@ -32,6 +32,11 @@ jobs:
           ref: stage
           fetch-depth: 0
 
+      - name: Install Python dependencies (pip)
+        # build_feeds.py imports bs4 (scripts/qa/requirements.txt); the QA jobs
+        # install the same file, so versions stay pinned identically.
+        run: python3 -m pip install -r scripts/qa/requirements.txt
+
       - name: Regenerate derived files
         run: |
           python3 scripts/sitemap_lastmod.py
