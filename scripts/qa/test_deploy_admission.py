@@ -186,5 +186,69 @@ class AdmissionSnapshot(unittest.TestCase):
             self.adm.snapshot(api, expected())
 
 
+class ApiRetry(unittest.TestCase):
+    """Q-002: API.get retries transient curl/JSON failures, bounded and fail-closed."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.adm = load_admission()
+
+    def make_api(self, script):
+        import os, time as real_time
+        calls = []
+
+        class Result:
+            def __init__(self, rc, out):
+                self.returncode, self.stdout = rc, out
+
+        def fake_run(cmd, **kw):
+            index = min(len(calls), len(script) - 1)
+            rc, out = script[index]
+            calls.append(index)
+            return Result(rc, out)
+
+        os.environ['GH_TOKEN'] = 'test-token'
+        api = self.adm.API('owner/repo', real_time.monotonic() + 60)
+        return api, calls, fake_run
+
+    def run_with(self, script):
+        from unittest import mock
+        api, calls, fake_run = self.make_api(script)
+        run_patch = mock.patch.object(self.adm.subprocess, 'run', fake_run)
+        sleep_patch = mock.patch.object(self.adm.time, 'sleep', lambda s: None)
+        run_patch.start()
+        sleep_patch.start()
+        self.addCleanup(run_patch.stop)
+        self.addCleanup(sleep_patch.stop)
+        return api, calls
+
+    def test_recovers_after_transient_curl_failure(self):
+        api, calls = self.run_with([(22, ''), (0, '{"ok": true}')])
+        self.assertEqual(api.get('/x'), {'ok': True})
+        self.assertEqual(len(calls), 2)
+
+    def test_recovers_after_malformed_json(self):
+        api, calls = self.run_with([(0, 'not json'), (0, '{"ok": 1}')])
+        self.assertEqual(api.get('/x'), {'ok': 1})
+        self.assertEqual(len(calls), 2)
+
+    def test_persistent_failure_is_bounded_and_closed(self):
+        api, calls = self.run_with([(7, '')] * 6)
+        with self.assertRaises(self.adm.Closed) as ctx:
+            api.get('/x')
+        self.assertEqual(len(calls), self.adm.API.RETRIES)
+        self.assertIn('attempts', str(ctx.exception))
+
+    def test_deadline_exhaustion_is_not_retried(self):
+        import os, time as real_time
+        from unittest import mock
+        api, calls, fake_run = self.make_api([(0, '{"ok": 1}')])
+        api.deadline = real_time.monotonic() - 1
+        with mock.patch.object(self.adm.subprocess, 'run', fake_run):
+            with self.assertRaises(self.adm.Closed):
+                api.get('/x')
+        self.assertEqual(len(calls), 0)
+
+
 if __name__ == '__main__':
     unittest.main()
