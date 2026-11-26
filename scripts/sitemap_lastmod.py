@@ -62,8 +62,18 @@ def last_changed(root, path, baseline=None):
     are identical at HEAD and at the baseline keeps the date its history had at
     the baseline: transient branch commits that revert each other must not bump
     lastmod for content the squash merge will not touch.
+
+    With SITEMAP_SQUASH_BASE set (stage/main push runs, where HEAD is a squash
+    merge dated merge-day), freshness is measured as of that pre-merge ref: the
+    committed sitemap can only carry PR-authored dates, which the squash
+    rewrite no longer records (the 2026-11-25 shard-5 red series). The PR-time
+    baseline check above is the real gate; the post-merge regeneration workflow
+    then bumps lastmod to the true merge date. A page first added by the merge
+    has no date at the pre-merge ref, so None is returned and the freshness
+    check skips it here (the PR run already verified it).
     """
     baseline = baseline or os.environ.get("SITEMAP_BASELINE") or None
+    squash_base = os.environ.get("SITEMAP_SQUASH_BASE") or None
     relative = str(path.relative_to(root))
     if git(root, "status", "--porcelain", "--", relative):
         return date.today().isoformat()
@@ -73,6 +83,8 @@ def last_changed(root, path, baseline=None):
         if head_blob is not None and head_blob == base_blob:
             changed = git(root, "log", "-1", "--format=%as", baseline, "--", relative)
             return changed or date.today().isoformat()
+    if squash_base:
+        return git(root, "log", "-1", "--format=%as", squash_base, "--", relative) or None
     changed = git(root, "log", "-1", "--format=%as", "--", relative)
     return changed or date.today().isoformat()
 
@@ -104,6 +116,10 @@ def validate(root, text=None, baseline=None):
             except ValueError as error:
                 errors.append(f"sitemap.xml: {error}")
                 continue
+            if changed is None:
+                # Squash-base mode only: page first added by this merge. The PR
+                # run verified its lastmod; nothing pre-merge to compare against.
+                continue
             # A PR is dated when written; its squash commit lands later, often across a
             # UTC midnight. One day of skew is not staleness.
             if date.fromisoformat(lastmod) < date.fromisoformat(changed) - SKEW:
@@ -119,6 +135,9 @@ def update(root, baseline=None):
     def replace(match):
         url, body = match.group(1), match.group(2)
         changed = last_changed(root, source_for(root, url), baseline=baseline)
+        if changed is None:
+            # Squash-base mode never runs the generator; guard anyway.
+            raise SystemExit("sitemap_lastmod.py update does not support SITEMAP_SQUASH_BASE mode")
         body = LASTMOD.sub("", body, count=1)
         return f"<url><loc>{url}</loc><lastmod>{changed}</lastmod>{body}</url>"
 
