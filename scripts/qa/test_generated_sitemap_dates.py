@@ -69,4 +69,45 @@ class SitemapLastmodBaselineTests(unittest.TestCase):
      self.assertEqual(lm.last_changed(root,source), '2026-10-23')
      self.assertEqual(git.call_args.args,(root,'log','-1','--format=%as','--',self.REL))
 
+class SitemapLastmodSquashBaseTests(unittest.TestCase):
+ """Stage-push mode: freshness measured as of the pre-merge ref (SITEMAP_SQUASH_BASE)."""
+ REL='history.html'
+ def _patch(self,values):
+  return patch.object(lm,'git',side_effect=values)
+ def test_existing_page_uses_premerge_date(self):
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);source=root/self.REL
+   with patch.dict('os.environ',{'SITEMAP_SQUASH_BASE':'HEAD^'},clear=True):
+    with self._patch(['','2026-11-20']) as git:
+     self.assertEqual(lm.last_changed(root,source),'2026-11-20')
+     self.assertEqual(git.call_args.args,(root,'log','-1','--format=%as','HEAD^','--',self.REL))
+ def test_page_new_in_merge_returns_none(self):
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);source=root/'zh-Hans/index.html'
+   with patch.dict('os.environ',{'SITEMAP_SQUASH_BASE':'HEAD^'},clear=True):
+    with self._patch(['','']):
+     self.assertIsNone(lm.last_changed(root,source))
+ def test_dirty_file_still_today_in_squash_mode(self):
+  from datetime import date
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);source=root/self.REL
+   with patch.dict('os.environ',{'SITEMAP_SQUASH_BASE':'HEAD^'},clear=True):
+    with self._patch([' M '+self.REL]):
+     self.assertEqual(lm.last_changed(root,source),date.today().isoformat())
+ def test_explicit_baseline_wins_over_squash_base(self):
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);source=root/self.REL
+   with patch.dict('os.environ',{'SITEMAP_SQUASH_BASE':'HEAD^'},clear=True):
+    # status(clean), rev-parse HEAD:blob, rev-parse base:blob(same), log at baseline
+    with self._patch(['','blobAAA','blobAAA','2026-11-19']) as git:
+     self.assertEqual(lm.last_changed(root,source,baseline='origin/stage'),'2026-11-19')
+     self.assertEqual(git.call_args.args,(root,'log','-1','--format=%as','origin/stage','--',self.REL))
+ def test_validate_skips_freshness_for_page_new_in_merge(self):
+  sm='<urlset><url><loc>https://marsharbel.com/zh-Hans/</loc><lastmod>2026-11-19</lastmod></url></urlset>'
+  src=ROOT/'zh-Hans/index.html'
+  with patch.dict('os.environ',{'SITEMAP_SQUASH_BASE':'HEAD^'},clear=True):
+   with patch.object(lm,'history_available',return_value=True),patch.object(lm,'source_for',return_value=src):
+    with patch.object(lm,'git',side_effect=['','']):
+     self.assertEqual(lm.validate(ROOT,text=sm),[])
+
 if __name__=='__main__':unittest.main()
