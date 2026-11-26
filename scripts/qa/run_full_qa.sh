@@ -32,6 +32,18 @@ if [[ "${CI:-}" == "1" || "${CI:-}" == "true" ]] && [[ -n "${GITHUB_BASE_REF:-}"
   fi
 fi
 
+# Stage/main push runs: HEAD is a squash merge dated merge-day, but the
+# committed sitemap can only carry PR-authored dates (the 2026-11-25 shard-5
+# red series after #941). With no PR base ref, measure sitemap freshness as of
+# the pre-merge HEAD^ instead; pages first added by the merge skip freshness
+# here (the PR run verified them). The post-merge regeneration workflow then
+# bumps lastmod to the true merge date.
+if [[ -z "${SITEMAP_BASELINE:-}" ]] && [[ "${CI:-}" == "1" || "${CI:-}" == "true" ]] && [[ "${GITHUB_EVENT_NAME:-}" == "push" ]]; then
+  if git rev-parse --verify -q 'HEAD^' >/dev/null; then
+    export SITEMAP_SQUASH_BASE="HEAD^"
+  fi
+fi
+
 # --- sharding + timings (additive: with no flags this script behaves as before) ---
 # --shard K/N  run only the steps the checked-in duration manifest
 #   (scripts/qa/shard-manifest.tsv) assigns to shard K of N. Assignment is
