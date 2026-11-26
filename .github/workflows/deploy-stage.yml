@@ -76,12 +76,30 @@ jobs:
               return subprocess.check_output(['git', *args], text=True, timeout=10).strip()
 
 
+          class Transient(Exception):
+              pass
+
           class API:
+              RETRIES = 3
+
               def __init__(self, repo, deadline):
                   self.repo, self.deadline = repo, deadline
 
               def get(self, path):
                   require(path.startswith('/') and '\n' not in path and '"' not in path, 'invalid API path')
+                  last = None
+                  for attempt in range(self.RETRIES):
+                      try:
+                          return self._get_once(path)
+                      except Transient as error:
+                          last = error
+                          headroom = self.deadline - time.monotonic() - 1
+                          if headroom <= 0:
+                              break
+                          time.sleep(min(1.5 * (attempt + 1), 4, headroom))
+                  raise Closed('GitHub read API failed after %s attempts: %s' % (self.RETRIES, last))
+
+              def _get_once(self, path):
                   remaining = min(15, self.deadline - time.monotonic())
                   require(remaining > 0, 'API deadline exhausted')
                   token = os.environ['GH_TOKEN']
@@ -97,10 +115,11 @@ jobs:
                   try:
                       result = subprocess.run(['curl', '--config', '-'], input=config, text=True,
                                               capture_output=True, timeout=remaining + 1)
-                      require(result.returncode == 0, 'GitHub read API failed: ' + path)
+                      if result.returncode != 0:
+                          raise Transient('curl exit %s: %s' % (result.returncode, path))
                       return json.loads(result.stdout)
                   except (ValueError, subprocess.TimeoutExpired):
-                      raise Closed('GitHub read API malformed response or timeout: ' + path)
+                      raise Transient('malformed response or timeout: ' + path)
 
               def pages(self, path, key):
                   records, seen, expected = [], set(), None
