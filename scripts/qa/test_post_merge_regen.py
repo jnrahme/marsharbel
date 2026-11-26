@@ -45,6 +45,13 @@ class TriggerAndSafety(unittest.TestCase):
 
 
 class Regeneration(unittest.TestCase):
+    def test_dependencies_installed_before_generators(self):
+        # build_feeds.py imports bs4; without the pip step the job dies with
+        # ModuleNotFoundError (observed on stage runs 45745102691+45745157000).
+        install = WF.index("pip install -r scripts/qa/requirements.txt")
+        regen = WF.index("Regenerate derived files")
+        self.assertLess(install, regen)
+
     def test_every_generated_file_has_a_generator_step(self):
         regen = WF.split("Regenerate derived files", 1)[1]
         for generator in GENERATORS:
