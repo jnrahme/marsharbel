@@ -73,7 +73,11 @@ def last_changed(root, path, baseline=None):
     check skips it here (the PR run already verified it).
     """
     baseline = baseline or os.environ.get("SITEMAP_BASELINE") or None
-    squash_base = os.environ.get("SITEMAP_SQUASH_BASE") or None
+    # Squash mode only applies when no baseline ref is in play: the PR-time
+    # baseline check is the real gate, and a caller that already resolved a
+    # baseline must not have its branch-history call rewritten to the
+    # pre-merge ref (shard-2 red on 2026-11-25, test mocks with falsy blobs).
+    squash_base = None if baseline else (os.environ.get("SITEMAP_SQUASH_BASE") or None)
     relative = str(path.relative_to(root))
     if git(root, "status", "--porcelain", "--", relative):
         return date.today().isoformat()
