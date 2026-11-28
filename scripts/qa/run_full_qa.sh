@@ -4,6 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 python3 "$ROOT/scripts/qa/test_secret_prayers_en_release.py"
 python3 "$ROOT/scripts/qa/test_secret_prayers_ar_fr_release.py"
+python3 "$ROOT/scripts/qa/test_secret_prayer_pairing.py"
 
 SHARD_K=""; SHARD_N=""; SKIP_I18N_TEST=""; LIST_ONLY=""
 while [[ $# -gt 0 ]]; do

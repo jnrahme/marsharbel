@@ -151,7 +151,25 @@
       /^[a-f0-9]{64}$/.test(proof.reviewedContentSha256 || '') &&
       proof.reviewedContentSha256 === variant.contentSha256);
   }
-  function verifiedEither(page, variant, lang) { return verified(page, variant) || verifiedModelOnly(page, variant, lang); }
+  function technicallyPairedSecretPrayer(page, variant, lang) {
+    var slugs = ['powerful-secret-prayers','mary-who-goes-ahead-prayer','lebanese-mountain-prayers','terco-da-batalha'];
+    var codes = ['en','ar','fr'];
+    var slug = page && String(page.sourcePath || '').replace(/\.html$/, '');
+    var proof = variant && variant.proof;
+    return !!(slugs.includes(slug) && codes.includes(lang) && page.sourcePath === slug + '.html' &&
+      Object.keys(page.variants || {}).length === 3 && codes.every(function(c){return !!page.variants[c];}) &&
+      variant.path === '/' + (lang === 'en' ? '' : lang + '/') + slug &&
+      variant.status === 'technically-paired' && Array.isArray(variant.aliases) && !variant.aliases.length &&
+      /^[a-f0-9]{40}$/.test(page.sourceRevision || '') && /^[a-f0-9]{64}$/.test(page.sourceSha256 || '') &&
+      variant.sourceSha256 === page.sourceSha256 && /^[a-f0-9]{64}$/.test(variant.contentSha256 || '') &&
+      proof && proof.type === 'secret-prayer-technical-pairing' &&
+      proof.scope === 'four-secret-prayer-families-en-ar-fr-technical-only' &&
+      proof.nativeReviewStatus === 'not-certified' && proof.editorialReviewStatus === 'not-certified' &&
+      !proof.nativeSampleReview && !proof.editorialReview && !proof.renderedReview &&
+      proof.bodySha256 === variant.contentSha256 && /^[a-f0-9]{64}$/.test(proof.catalogSha256 || '') &&
+      /^[a-f0-9]{64}$/.test(proof.bindingsSha256 || ''));
+  }
+  function verifiedEither(page, variant, lang) { return verified(page, variant) || verifiedModelOnly(page, variant, lang) || technicallyPairedSecretPrayer(page, variant, lang); }
   function resolve(manifest, href, requested, actualLanguage) {
     var url = new URL(href), current = locate(manifest, url.pathname);
     var language = current ? current.language : actualLanguage;
