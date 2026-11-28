@@ -38,3 +38,22 @@ def registry_preimage(root, raw):
     if hashlib.sha256(original).hexdigest() != ORIGINAL_SHA256:
         raise ValueError('Secret registry changed outside four explicit additions')
     return original
+
+CONTROL_ORIGINAL_SHA256 = 'f6d16e222042e1e073d7fad852f297a2882d90be6e0cce82d1978c94bba23ace'
+CONTROL_ADDITION = b'    from i18n.secret_prayer_pairing import secret_prayer_manifest\n    manifest = secret_prayer_manifest(root,texts,manifest)\n'
+
+def control_preimage(root, raw):
+    """Invert only the two-line finite pairing call, keeping original MB16 pin."""
+    if hashlib.sha256(raw).hexdigest() == CONTROL_ORIGINAL_SHA256:
+        return raw
+    from qa.secret_prayers_ar_fr_policy import load
+    if load(Path(root)) is None:
+        raise ValueError('Secret control continuation requires fixed release record')
+    anchor = b'    out={}\n    for path,text in texts.items():'
+    target = CONTROL_ADDITION + anchor
+    if raw.count(target) != 1 or raw.count(CONTROL_ADDITION) != 1:
+        raise ValueError('Secret control continuation location/count differs')
+    original = raw.replace(target, anchor, 1)
+    if hashlib.sha256(original).hexdigest() != CONTROL_ORIGINAL_SHA256:
+        raise ValueError('Secret control changed outside explicit pairing call')
+    return original

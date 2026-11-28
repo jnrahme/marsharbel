@@ -173,6 +173,9 @@ def preimage(root,path,current):
             if rel=='locales/registry.json':
                 from i18n.secret_prayers_registry_continuation import registry_preimage
                 bound=registry_preimage(root,bound)
+            if rel=='scripts/i18n/same_page_injection.py':
+                from i18n.secret_prayers_registry_continuation import control_preimage
+                bound=control_preimage(root,bound)
             if sha(bound)!=record.get(key):raise ValueError('MB16: generator/registry binding differs '+rel)
         registry=json.loads((root/'locales/registry.json').read_bytes())
         expected=list(HOMES)+( [CHINESE] )
