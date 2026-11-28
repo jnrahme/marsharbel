@@ -169,7 +169,11 @@ def preimage(root,path,current):
         for rel in inputs[:-1]:
             if (root/rel).read_bytes()!=git(root,'show',head+':'+rel):raise ValueError('MB16: proof input differs from native HEAD '+rel)
         for rel,key in [('locales/registry.json','registrySha256'),('scripts/build-international.py','generatorSha256'),('scripts/i18n/same_page_injection.py','controlSha256')]:
-            if sha((root/rel).read_bytes())!=record.get(key):raise ValueError('MB16: generator/registry binding differs '+rel)
+            bound=(root/rel).read_bytes()
+            if rel=='locales/registry.json':
+                from i18n.secret_prayers_registry_continuation import registry_preimage
+                bound=registry_preimage(root,bound)
+            if sha(bound)!=record.get(key):raise ValueError('MB16: generator/registry binding differs '+rel)
         registry=json.loads((root/'locales/registry.json').read_bytes())
         expected=list(HOMES)+( [CHINESE] )
         observed=[(c,registry['locales'][c]['home'],registry['locales'][c]['nativeName'],registry['locales'][c]['direction'])for c in registry['homePublicationLocales']]

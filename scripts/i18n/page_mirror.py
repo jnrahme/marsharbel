@@ -67,8 +67,10 @@ def render_page(root,registry,lang,family,route,catalog=None):
     soup.select_one('meta[property="og:url"]')['content']=canonical
     soup.select_one('meta[property="og:locale"]')['content']=og_locales(registry)[lang]
     for node in soup.select('meta[property="og:locale:alternate"]'):node.decompose()
+    secret_families={s+'-master' for s in ('powerful-secret-prayers','mary-who-goes-ahead-prayer','lebanese-mountain-prayers','terco-da-batalha')}
+    discovery_codes=registry['pageMirrors'][family].get('discoveryRoutes') if family in secret_families else None
     for code,value in og_locales(registry).items():
-        if code!=lang:soup.head.append(soup.new_tag('meta',property='og:locale:alternate',content=value))
+        if code!=lang and (discovery_codes is None or code in discovery_codes):soup.head.append(soup.new_tag('meta',property='og:locale:alternate',content=value))
     clusters=registry['pageMirrors'][family].get('discoveryRoutes',{'en':master_route,**registry['pageMirrors'][family]['routes'],'x-default':master_route})
     source_links=soup.select('link[hreflang]')
     from i18n.travel_variant_evidence import SLUGS
@@ -164,7 +166,13 @@ def render_page(root,registry,lang,family,route,catalog=None):
             if data.get('@type')=='Person':data['name']=copy[prefix+'.header.saint-charbel']
             if 'breadcrumb' in data:
                 items=data['breadcrumb']['itemListElement']
-                items[0].update(name=copy[prefix+'.header.home'],item=registry['site']+(home_url(registry, lang) or '/'))
+                home_label=copy.get(prefix+'.header.home')
+                if family=='terco-da-batalha-master':
+                    home_anchor=soup.select_one('header nav a[href="'+(home_url(registry,lang) or '/')+'"]')
+                    if home_anchor is None:raise ValueError('Terco localized home label missing')
+                    home_label=home_anchor.get_text(' ',strip=True)
+                if home_label is None:raise ValueError('Localized breadcrumb Home missing')
+                items[0].update(name=home_label,item=registry['site']+(home_url(registry, lang) or '/'))
                 items[-1].update(name=soup.h1.get_text(' ',strip=True),item=canonical)
                 # Intermediate navigation label is translated in the same header.
                 for item in items[1:-1]:
