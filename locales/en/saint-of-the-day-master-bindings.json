@@ -1,8 +1,8 @@
 {
  "version": 1,
  "master": "saint-of-the-day.html",
- "masterSha256": "456cf24edee10e2e079eedd9495c6c3064ce4a62a5df58837242fdbcc602b112",
- "sourceRevision": "a69fd203",
+ "masterSha256": "78e6107489b2a415e9809a1b18f5bd0650392b8e641acf727a8ce80aa91f9db9",
+ "sourceRevision": "50d333e6",
  "bindings": [
   {
    "key": "saintDay.metadata.title-saint-of-the-day-archive-daily-saints-readings-sources",
@@ -670,6 +670,258 @@
    "nodeIndex": 0
   },
   {
+   "key": "saintDay.archive.2026-11-23.date",
+   "selector": "#saint-day-2026-11-23 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "23.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-23.calendar",
+   "selector": "#saint-day-2026-11-23 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-23.name",
+   "selector": "#saint-day-2026-11-23 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Sassine, Bishop of Cyzicus",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-23.story",
+   "selector": "#saint-day-2026-11-23 > p:nth-of-type(2)",
+   "source": "On November 23, 2026, the Maronite calendar remembers Saint Sassine, Bishop of Cyzicus, honored as a martyr. Cyzicus was a city on the Sea of Marmara in what is now Turkey. During the persecution of the emperor Diocletian, Sassine was tortured for confessing Christ; one early account says he was tied behind a horse to be dragged through the streets until death. Sassine is the Maronite rendering of the name Sisinnius.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-23.provenance",
+   "selector": "#saint-day-2026-11-23 > p:nth-of-type(3)",
+   "source": "Identity and witness: Orthodox Church in America synaxarion entry for Sisinius of Cyzicus, commemorated November 23, and the Maronite Synaxarion of the Antiochian Maronite Rite (Kaslik, 1996). The date and the naming Bishop of Cyzicus, Martyr, follow the 2026 Eparchy of St. Maron liturgical calendar.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-23.infoCta",
+   "selector": "#saint-day-2026-11-23 > a:nth-of-type(1)",
+   "source": "Read the Gospel proclaimed on Saint Sassine's day",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-24.date",
+   "selector": "#saint-day-2026-11-24 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "24.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-24.calendar",
+   "selector": "#saint-day-2026-11-24 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-24.name",
+   "selector": "#saint-day-2026-11-24 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Catherine of Alexandria",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-24.story",
+   "selector": "#saint-day-2026-11-24 > p:nth-of-type(2)",
+   "source": "On November 24, the Maronite calendar remembers Saint Catherine of Alexandria, martyr. Later tradition portrays her as a learned young Christian who defended her faith before an emperor and whose witness led philosophers to Christ. Remembered for remaining faithful even unto death, she invites us to seek wisdom and courage in Jesus.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-24.provenance",
+   "selector": "#saint-day-2026-11-24 > p:nth-of-type(3)",
+   "source": "Brief account based on the Catholic Encyclopedia and Franciscan Media, distinguishing later legend from established history. The date follows the 2026 Maronite calendar; the Roman calendar remembers Catherine on November 25.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-24.infoCta",
+   "selector": "#saint-day-2026-11-24 > a:nth-of-type(1)",
+   "source": "Read about Saint Catherine of Alexandria",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-25.date",
+   "selector": "#saint-day-2026-11-25 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "25.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-25.calendar",
+   "selector": "#saint-day-2026-11-25 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-25.name",
+   "selector": "#saint-day-2026-11-25 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Pope Saint Clement I",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-25.story",
+   "selector": "#saint-day-2026-11-25 > p:nth-of-type(2)",
+   "source": "On November 25, the Maronite calendar remembers Pope Saint Clement I, an early bishop of Rome. In his letter to the Christians of Corinth, he calls them away from quarrels and toward repentance, humility and peace. His words invite us to seek mercy in Christ and to forgive one another.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-25.provenance",
+   "selector": "#saint-day-2026-11-25 > p:nth-of-type(3)",
+   "source": "Original summary of Clement’s letter to the Corinthians, published by the Vatican. The date follows the 2026 Maronite calendar; the Roman calendar remembers Clement on November 23.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-25.infoCta",
+   "selector": "#saint-day-2026-11-25 > a:nth-of-type(1)",
+   "source": "Read Saint Clement’s letter",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-26.date",
+   "selector": "#saint-day-2026-11-26 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "26.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-26.calendar",
+   "selector": "#saint-day-2026-11-26 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-26.name",
+   "selector": "#saint-day-2026-11-26 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Peter of Alexandria",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-26.story",
+   "selector": "#saint-day-2026-11-26 > p:nth-of-type(2)",
+   "source": "On November 26, the Maronite calendar remembers Saint Peter of Alexandria, bishop and martyr. He led the Church of Alexandria during persecution and died as a martyr in 311. His witness invites us to remain faithful to Christ in hardship.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-26.provenance",
+   "selector": "#saint-day-2026-11-26 > p:nth-of-type(3)",
+   "source": "Brief account based on the Catholic Encyclopedia. The date follows the 2026 Maronite calendar.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-26.infoCta",
+   "selector": "#saint-day-2026-11-26 > a:nth-of-type(1)",
+   "source": "Read about Saint Peter of Alexandria",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-27.date",
+   "selector": "#saint-day-2026-11-27 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "27.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-27.calendar",
+   "selector": "#saint-day-2026-11-27 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-27.name",
+   "selector": "#saint-day-2026-11-27 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint James Intercisus",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-27.story",
+   "selector": "#saint-day-2026-11-27 > p:nth-of-type(2)",
+   "source": "According to his traditional life, James was a Christian at the Persian court who turned away from his faith, then repented after an appeal from his family. He later confessed Christ and was killed for his faith. His memory invites us to return to God and begin again.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-27.provenance",
+   "selector": "#saint-day-2026-11-27 > p:nth-of-type(3)",
+   "source": "Summary of the traditional life published by the Orthodox Church in America. The date follows the 2026 Maronite calendar.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-27.infoCta",
+   "selector": "#saint-day-2026-11-27 > a:nth-of-type(1)",
+   "source": "Learn more",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-28.date",
+   "selector": "#saint-day-2026-11-28 > p:nth-of-type(1) > time:nth-of-type(1)",
+   "source": "28.11.2026",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-28.calendar",
+   "selector": "#saint-day-2026-11-28 > p:nth-of-type(1) > span:nth-of-type(1)",
+   "source": "Maronite calendar",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-28.name",
+   "selector": "#saint-day-2026-11-28 > h3:nth-of-type(1) > a:nth-of-type(1)",
+   "source": "Saint Stephen the Younger",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-28.story",
+   "selector": "#saint-day-2026-11-28 > p:nth-of-type(2)",
+   "source": "Stephen was a monk remembered for defending the veneration of holy icons during the eighth-century controversy. His traditional life tells of imprisonment and of encouraging fellow prisoners in prayer. He is honored as a martyr.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-28.provenance",
+   "selector": "#saint-day-2026-11-28 > p:nth-of-type(3)",
+   "source": "Summary of the traditional life published by the Orthodox Church in America. The date follows the 2026 Maronite calendar.",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
+   "key": "saintDay.archive.2026-11-28.infoCta",
+   "selector": "#saint-day-2026-11-28 > a:nth-of-type(1)",
+   "source": "Learn more",
+   "kind": "text",
+   "nodeIndex": 0
+  },
+  {
    "key": "saintDay.editorial-standard.editorial-standard",
    "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
    "source": "Editorial Standard",
@@ -782,6 +1034,43 @@
   "saintDay.this-week-s-saints.read-the-gospel-account-of-the-announcement-to-mary": "Read the Gospel account of the Announcement to Mary",
   "saintDay.editorial-standard.editorial-standard": "Editorial Standard",
   "saintDay.editorial-standard.every-entry-names-its-calendar-and-links-the-sources-behind": "Every entry names its calendar and links the sources behind it, including the Gospel reading. Where traditions differ on a saint's title or dates, the card says so instead of choosing silently. If a source corrects or withdraws an account, this page is updated to match.",
-  "saintDay.footer.last-updated-november-19-2026-built-for-marsharbel-com-autho": "Last updated: November 19, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website."
+  "saintDay.footer.last-updated-november-19-2026-built-for-marsharbel-com-autho": "Last updated: November 19, 2026. Built for marsharbel.com. Author: Please pray for the person who made this website.",
+  "saintDay.header.saints-2": "Saints",
+  "saintDay.archive.2026-11-23.date": "23.11.2026",
+  "saintDay.archive.2026-11-23.calendar": "Maronite calendar",
+  "saintDay.archive.2026-11-23.name": "Saint Sassine, Bishop of Cyzicus",
+  "saintDay.archive.2026-11-23.story": "On November 23, 2026, the Maronite calendar remembers Saint Sassine, Bishop of Cyzicus, honored as a martyr. Cyzicus was a city on the Sea of Marmara in what is now Turkey. During the persecution of the emperor Diocletian, Sassine was tortured for confessing Christ; one early account says he was tied behind a horse to be dragged through the streets until death. Sassine is the Maronite rendering of the name Sisinnius.",
+  "saintDay.archive.2026-11-23.provenance": "Identity and witness: Orthodox Church in America synaxarion entry for Sisinius of Cyzicus, commemorated November 23, and the Maronite Synaxarion of the Antiochian Maronite Rite (Kaslik, 1996). The date and the naming Bishop of Cyzicus, Martyr, follow the 2026 Eparchy of St. Maron liturgical calendar.",
+  "saintDay.archive.2026-11-23.infoCta": "Read the Gospel proclaimed on Saint Sassine's day",
+  "saintDay.archive.2026-11-24.date": "24.11.2026",
+  "saintDay.archive.2026-11-24.calendar": "Maronite calendar",
+  "saintDay.archive.2026-11-24.name": "Saint Catherine of Alexandria",
+  "saintDay.archive.2026-11-24.story": "On November 24, the Maronite calendar remembers Saint Catherine of Alexandria, martyr. Later tradition portrays her as a learned young Christian who defended her faith before an emperor and whose witness led philosophers to Christ. Remembered for remaining faithful even unto death, she invites us to seek wisdom and courage in Jesus.",
+  "saintDay.archive.2026-11-24.provenance": "Brief account based on the Catholic Encyclopedia and Franciscan Media, distinguishing later legend from established history. The date follows the 2026 Maronite calendar; the Roman calendar remembers Catherine on November 25.",
+  "saintDay.archive.2026-11-24.infoCta": "Read about Saint Catherine of Alexandria",
+  "saintDay.archive.2026-11-25.date": "25.11.2026",
+  "saintDay.archive.2026-11-25.calendar": "Maronite calendar",
+  "saintDay.archive.2026-11-25.name": "Pope Saint Clement I",
+  "saintDay.archive.2026-11-25.story": "On November 25, the Maronite calendar remembers Pope Saint Clement I, an early bishop of Rome. In his letter to the Christians of Corinth, he calls them away from quarrels and toward repentance, humility and peace. His words invite us to seek mercy in Christ and to forgive one another.",
+  "saintDay.archive.2026-11-25.provenance": "Original summary of Clement’s letter to the Corinthians, published by the Vatican. The date follows the 2026 Maronite calendar; the Roman calendar remembers Clement on November 23.",
+  "saintDay.archive.2026-11-25.infoCta": "Read Saint Clement’s letter",
+  "saintDay.archive.2026-11-26.date": "26.11.2026",
+  "saintDay.archive.2026-11-26.calendar": "Maronite calendar",
+  "saintDay.archive.2026-11-26.name": "Saint Peter of Alexandria",
+  "saintDay.archive.2026-11-26.story": "On November 26, the Maronite calendar remembers Saint Peter of Alexandria, bishop and martyr. He led the Church of Alexandria during persecution and died as a martyr in 311. His witness invites us to remain faithful to Christ in hardship.",
+  "saintDay.archive.2026-11-26.provenance": "Brief account based on the Catholic Encyclopedia. The date follows the 2026 Maronite calendar.",
+  "saintDay.archive.2026-11-26.infoCta": "Read about Saint Peter of Alexandria",
+  "saintDay.archive.2026-11-27.date": "27.11.2026",
+  "saintDay.archive.2026-11-27.calendar": "Maronite calendar",
+  "saintDay.archive.2026-11-27.name": "Saint James Intercisus",
+  "saintDay.archive.2026-11-27.story": "According to his traditional life, James was a Christian at the Persian court who turned away from his faith, then repented after an appeal from his family. He later confessed Christ and was killed for his faith. His memory invites us to return to God and begin again.",
+  "saintDay.archive.2026-11-27.provenance": "Summary of the traditional life published by the Orthodox Church in America. The date follows the 2026 Maronite calendar.",
+  "saintDay.archive.2026-11-27.infoCta": "Learn more",
+  "saintDay.archive.2026-11-28.date": "28.11.2026",
+  "saintDay.archive.2026-11-28.calendar": "Maronite calendar",
+  "saintDay.archive.2026-11-28.name": "Saint Stephen the Younger",
+  "saintDay.archive.2026-11-28.story": "Stephen was a monk remembered for defending the veneration of holy icons during the eighth-century controversy. His traditional life tells of imprisonment and of encouraging fellow prisoners in prayer. He is honored as a martyr.",
+  "saintDay.archive.2026-11-28.provenance": "Summary of the traditional life published by the Orthodox Church in America. The date follows the 2026 Maronite calendar.",
+  "saintDay.archive.2026-11-28.infoCta": "Learn more"
  }
 }

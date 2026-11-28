@@ -307,3 +307,6 @@ qa_step python3 -m unittest discover -s scripts/qa -p 'test_quotes_attribution.p
 # Existing Nader context: keyed projection, translations and hostile controls.
 qa_step python3 scripts/build_nader_context.py --check
 qa_step python3 -m unittest discover -s scripts/qa -p test_nader_context.py
+
+qa_step python3 scripts/build_saint_day_archive.py --check
+qa_step python3 -m unittest discover -s scripts/qa -p test_saint_archive_history.py
