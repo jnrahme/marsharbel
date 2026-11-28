@@ -41,8 +41,8 @@ RewriteRule ^(?:mysteries|miracles(?:/eucharistic)?)/rosary-visual-guide(?:\.htm
 RewriteRule ^rosary(?:\.html)?/?$ /rosary-visual-guide [R=301,L]
 RewriteRule ^the-22nd-of-the-month(?:\.html)?/?$ /22nd-of-the-month [R=301,L]
 
-# /prayers has no root file. The English prayers hub is the published guide.
-RewriteRule ^prayers(?:\.html)?/?$ /en/prayers [R=301,L]
+# /prayers has no root file. Send the alias to the full prayer collection.
+RewriteRule ^prayers(?:\.html)?/?$ /saint-charbel-prayers [R=301,L]
 
 # Reviewed full prayer masters must remain served at their declared identities.
 # /en/prayers canonical adoption requires a separate head-cluster migration.

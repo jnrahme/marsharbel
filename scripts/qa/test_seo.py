@@ -81,19 +81,22 @@ class SeoRegressionTests(unittest.TestCase):
         self.assertNotIn('QSD', flags)
         self.assertTrue((ROOT / 'rosary-visual-guide.html').is_file())
 
-    def test_bare_prayers_alias_redirects_to_english_hub(self):
+    def test_bare_prayers_alias_redirects_to_full_prayer_collection(self):
         config = (ROOT / '.htaccess').read_text()
         rule = next(line for line in config.splitlines()
                     if line.startswith('RewriteRule ^prayers(?:'))
         _, pattern, target, flags = rule.split()
-        self.assertEqual(target, '/en/prayers')
+        self.assertEqual(target, '/saint-charbel-prayers')
         self.assertEqual(flags, '[R=301,L]')
         self.assertLess(config.index(rule), config.index('# Redirect direct ".html"'))
         for path in ('prayers', 'prayers/', 'prayers.html', 'prayers.html/'):
             self.assertIsNotNone(re.fullmatch(pattern, path), path)
         for path in ('en/prayers', 'prayers-extra', 'ar/prayers', 'saint-charbel-prayers'):
             self.assertIsNone(re.fullmatch(pattern, path), path)
+        self.assertTrue((ROOT / 'saint-charbel-prayers.html').is_file())
         self.assertTrue((ROOT / 'en/prayers.html').is_file())
+        self.assertNotIn('?', target)
+        self.assertNotIn('QSD', flags)
         self.assertFalse((ROOT / 'prayers.html').exists())
 
     def test_generated_faq_survives_a_second_generator_pass(self):
