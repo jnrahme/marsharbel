@@ -147,6 +147,14 @@ class SecretARFR(unittest.TestCase):
                     self.assertEqual(len(soup.select('article.prayer-card')),3)
                     self.assertNotIn('Salve Rainha',text)
 
+    def test_original_portuguese_slots_match_source_exact_english(self):
+        english=json.loads((ROOT/'locales/en/terco-da-batalha-master-copy.json').read_bytes())
+        for code in ('ar','fr'):
+            copy=json.loads((ROOT/('locales/'+code+'/terco-da-batalha-master-copy.json')).read_bytes())
+            for n in (77,80,83,86,91,95,99):
+                key='terco.source-exact.'+str(n)
+                self.assertEqual(copy[key],english[key])
+
     def test_all_eight_keyed_catalogs(self):
         from i18n.keyed_master import apply_keyed_master
         for code in ('ar', 'fr'):
