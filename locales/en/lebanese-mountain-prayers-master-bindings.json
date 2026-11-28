@@ -5,28 +5,28 @@
   "sourceRevision": "Reconstructed from original archived sources and exact approved corrections; fresh review required",
   "bindings": [
     {
-      "key": "lebanese-mountain-prayers.metadata.twitter-title-daily-prayers-from-the-lebanese-mountains-akou",
+      "key": "lebanese-mountain-prayers.metadata.title-daily-prayers-from-the-lebanese-mountains-akoura-tanno",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
       "source": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "lebanese-mountain-prayers.metadata.twitter-description-traditional-lebanese-popular-prayers-fro",
+      "key": "lebanese-mountain-prayers.metadata.description-traditional-lebanese-popular-prayers-from-the-mo",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(3)",
       "source": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
       "kind": "attribute",
       "attribute": "content"
     },
     {
-      "key": "lebanese-mountain-prayers.metadata.twitter-title-daily-prayers-from-the-lebanese-mountains-akou",
+      "key": "lebanese-mountain-prayers.metadata.og-title-daily-prayers-from-the-lebanese-mountains-akoura-ta",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(7)",
       "source": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
       "kind": "attribute",
       "attribute": "content"
     },
     {
-      "key": "lebanese-mountain-prayers.metadata.twitter-description-traditional-lebanese-popular-prayers-fro",
+      "key": "lebanese-mountain-prayers.metadata.og-description-traditional-lebanese-popular-prayers-from-the",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
       "source": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
       "kind": "attribute",
@@ -243,7 +243,7 @@
       "nodeIndex": 0
     },
     {
-      "key": "lebanese-mountain-prayers.keep-praying.saint-charbel-prayers",
+      "key": "lebanese-mountain-prayers.header.saint-charbel-prayers",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
       "source": "Saint Charbel Prayers",
       "kind": "text",
@@ -741,6 +741,10 @@
     }
   ],
   "messages": {
+    "lebanese-mountain-prayers.metadata.title-daily-prayers-from-the-lebanese-mountains-akoura-tanno": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
+    "lebanese-mountain-prayers.metadata.description-traditional-lebanese-popular-prayers-from-the-mo": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
+    "lebanese-mountain-prayers.metadata.og-title-daily-prayers-from-the-lebanese-mountains-akoura-ta": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
+    "lebanese-mountain-prayers.metadata.og-description-traditional-lebanese-popular-prayers-from-the": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
     "lebanese-mountain-prayers.metadata.twitter-title-daily-prayers-from-the-lebanese-mountains-akou": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
     "lebanese-mountain-prayers.metadata.twitter-description-traditional-lebanese-popular-prayers-fro": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
     "lebanese-mountain-prayers.body.skip-to-main-content": "Skip to main content",
@@ -770,7 +774,7 @@
     "lebanese-mountain-prayers.header.prayer-for-family": "Prayer for Family",
     "lebanese-mountain-prayers.header.prayer-for-pregnancy": "Prayer for Pregnancy",
     "lebanese-mountain-prayers.header.prayer-for-a-miracle": "Prayer for a Miracle",
-    "lebanese-mountain-prayers.keep-praying.saint-charbel-prayers": "Saint Charbel Prayers",
+    "lebanese-mountain-prayers.header.saint-charbel-prayers": "Saint Charbel Prayers",
     "lebanese-mountain-prayers.header.saint-charbel-novena": "Saint Charbel Novena",
     "lebanese-mountain-prayers.header.feast-day": "Feast Day",
     "lebanese-mountain-prayers.header.rosary-guide": "Rosary Guide",
@@ -831,6 +835,7 @@
     "lebanese-mountain-prayers.keep-praying.keep-praying": "Keep Praying",
     "lebanese-mountain-prayers.keep-praying.these-mountains-gave-the-church-saint-charbel-walk-further-i": "These mountains gave the Church Saint Charbel. Walk further into their prayer.",
     "lebanese-mountain-prayers.keep-praying.the-qadisha-valley": "The Qadisha Valley",
+    "lebanese-mountain-prayers.keep-praying.saint-charbel-prayers": "Saint Charbel Prayers",
     "lebanese-mountain-prayers.keep-praying.the-nine-day-novena": "The Nine-Day Novena",
     "lebanese-mountain-prayers.sources.sources": "Sources",
     "lebanese-mountain-prayers.sources.anthony-el-hachem-facebook-reel-the-original-share-of-these": "Anthony El Hachem, Facebook reel - the original share of these prayers",
