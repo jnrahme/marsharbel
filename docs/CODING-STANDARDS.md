@@ -59,6 +59,23 @@ Existing pages are not retroactively blocked. The gate
 checks key completeness, not native-language quality or approval to publish.
 Existing structural, editorial, browser and independent review gates still apply.
 
+### Four saint books: English-first native-review hold (November 28, 2026)
+
+The user approved a narrow exception for `/lucy-story`, `/george-story`,
+`/catherine-story`, and `/nicholas-story` only. Configuration lives in
+`locales/english-first-saint-books.json`. Each route still needs its canonical
+book registration, one keyed English page family, complete English bindings
+and a current master hash. The exception removes only the required non-English
+copy catalogs while native review is pending. It does not waive listen-through,
+art, accessibility, source, registration, independent review or green CI gates.
+
+No non-English hreflang, mirror route/render registration, sitemap entry or stub
+page may be created for these four books during the hold. The gate checks those
+conditions even when a held book is not in the added-file list. All other new
+pages keep the full required-language rule. Adding another route to the
+exception fails its exact-scope validation. Native-reviewed locale releases
+need their own explicit change and ordinary publication gates.
+
 ## 4. What CI enforces automatically
 
 Required checks: `qa` (`npm run qa:ci`, which runs the sections of `scripts/qa/run_full_qa.sh`), `browser-quality` (8-shard Playwright), `dead-code` (`scripts/qa/dead_code_check.sh`: unreferenced JS and images, orphan HTML pages with no inbound link, stale versioned JS).

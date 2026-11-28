@@ -12,6 +12,7 @@ import subprocess
 import sys
 from pathlib import Path
 from bs4 import BeautifulSoup, Comment, NavigableString, Doctype, Declaration
+from english_first_saint_books import load as load_english_first, isolation_errors as english_first_errors
 
 ROOT = Path(__file__).resolve().parents[2]
 REQUIRED = {'ar', 'fr', 'es', 'pt', 'it', 'de', 'pl'}
@@ -184,6 +185,10 @@ def check(root, added, base_registry):
     errors = []
     checked = []
     previews = load_private_previews(root)
+    english_first = load_english_first(root)
+    for held_page in english_first:
+        if (root / held_page).is_file():
+            errors.extend(english_first_errors(root, held_page, registry))
     # Isolation is asserted for every allowlisted page on every run, so a later
     # unrelated PR cannot quietly link or index a preview.
     for preview_page in previews:
@@ -203,7 +208,7 @@ def check(root, added, base_registry):
             # requirement only while the full isolation contract holds.
             errors.extend(private_preview_errors(root, page))
             continue
-        errors.extend(check_page(root, page, registry, required_locales(base_registry)))
+        errors.extend(check_page(root, page, registry, set() if page in english_first else required_locales(base_registry)))
     return checked, errors
 
 

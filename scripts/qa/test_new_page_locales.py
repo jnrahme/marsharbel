@@ -38,6 +38,61 @@ class NewPageLocales(unittest.TestCase):
     def errors(self, added=None, base=None):
         return check(self.root, added or ['new-page.html'], base or self.registry)[1]
 
+    def enable_english_first(self):
+        from english_first_saint_books import PAGES, APPROVAL
+        self.write('locales/english-first-saint-books.json', {'schema': 1, 'approvalMessageId': APPROVAL, 'until': 'native-review', 'pages': PAGES})
+        original = (self.root/'new-page.html').read_text()
+        (self.root/'lucy-story.html').write_text(original.replace('<html>', '<html lang="en">'))
+        self.registry['pageMirrors']['fixture']['master'] = 'lucy-story.html'
+        self.write('locales/registry.json', self.registry)
+        self.contract['master'] = 'lucy-story.html'
+        self.contract['masterSha256'] = hashlib.sha256((self.root/'lucy-story.html').read_bytes()).hexdigest()
+        self.write('locales/en/fixture-bindings.json', self.contract)
+        self.write('content/books/lucy-story/book.json', {'id': 'bk-lucy', 'pageUrl': '/lucy-story', 'locales': ['en']})
+        for code in self.registry['locales']:
+            if code != 'en': (self.root/f'locales/{code}/fixture-copy.json').unlink()
+
+    def test_exact_english_first_passes_with_full_english_keys(self):
+        self.enable_english_first()
+        self.assertEqual(self.errors(['lucy-story.html']), [])
+
+    def test_english_first_does_not_exempt_other_routes(self):
+        self.enable_english_first()
+        self.assertTrue(self.errors(['new-page.html']))
+
+    def test_english_first_cannot_expand_routes(self):
+        self.enable_english_first()
+        path = self.root/'locales/english-first-saint-books.json'
+        data = json.loads(path.read_text()); data['pages']['michael-story.html'] = 'bk-michael'
+        self.write(str(path.relative_to(self.root)), data)
+        with self.assertRaisesRegex(ValueError, 'four approved routes'): self.errors(['lucy-story.html'])
+
+    def test_english_first_keeps_binding_coverage(self):
+        self.enable_english_first()
+        self.contract['bindings'].pop()
+        self.write('locales/en/fixture-bindings.json', self.contract)
+        self.write('locales/en/fixture-copy.json', {'page.title':'Title'})
+        self.assertTrue(any('unkeyed master text' in e for e in self.errors(['lucy-story.html'])))
+
+    def test_english_first_rejects_hreflang(self):
+        self.enable_english_first()
+        path = self.root/'lucy-story.html'; path.write_text(path.read_text().replace('</head>', '<link hreflang="ar" href="/ar/lucy-story"/></head>'))
+        self.assertTrue(any('hreflang' in e for e in self.errors(['lucy-story.html'])))
+
+    def test_english_first_rejects_stub_and_sitemap(self):
+        self.enable_english_first()
+        path=self.root/'ar/lucy-story.html'; path.parent.mkdir(); path.write_text('<html lang="ar"></html>')
+        (self.root/'sitemap.xml').write_text('<url><loc>https://marsharbel.com/ar/lucy-story</loc></url>')
+        errors=self.errors(['lucy-story.html'])
+        self.assertTrue(any('stub/page' in e for e in errors))
+        self.assertTrue(any('sitemap entry' in e for e in errors))
+
+    def test_english_first_rejects_render_registration(self):
+        self.enable_english_first()
+        self.registry['pageMirrors']['fixture'].update(routes={'ar':'/ar/lucy-story'},renderLocales=['ar'])
+        self.write('locales/registry.json',self.registry)
+        self.assertTrue(any('route/render' in e for e in self.errors(['lucy-story.html'])))
+
     def test_complete_catalogs_pass(self):
         self.assertEqual(self.errors(), [])
 
