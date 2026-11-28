@@ -6,7 +6,8 @@ class SecretEN(unittest.TestCase):
  def test_candidate_isolation(self):self.assertEqual(errors(R),[])
  def test_policy_scope(self):self.assertEqual(set(load(R)['pages']),{s+'.html'for s in SLUGS})
  def fixture(self):
-  t=tempfile.TemporaryDirectory();self.addCleanup(t.cleanup);r=Path(t.name);(r/'locales').mkdir();shutil.copyfile(R/RECORD,r/RECORD);return r
+  from test_secret_prayers_ar_fr_release import SecretARFR
+  case=SecretARFR();r=case.fixture();self.addCleanup(case.doCleanups);return r
  def test_each_foreign_sitemap_url_rejected(self):
   for code in load(R)['heldLocales']:
    for slug in SLUGS:
