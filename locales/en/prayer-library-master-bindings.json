@@ -1,8 +1,8 @@
 {
   "version": 1,
   "master": "prayer-library.html",
-  "masterSha256": "44b35641423bf2b69c1a0b0796a75946544324f695337caf18daedea60f2e67d",
-  "sourceRevision": "unknown",
+  "masterSha256": "4e483b649434a78e2cf4157166448093603b0e106595922869726f0ac53b6318",
+  "sourceRevision": "Reconstructed original three-key discovery card; fresh review required",
   "bindings": [
     {
       "key": "prayer-library.title",
@@ -3580,6 +3580,27 @@
       "source": "sick, anxiety, students, family, miracle, rosary...",
       "kind": "attribute",
       "attribute": "placeholder"
+    },
+    {
+      "key": "prayer-library.main-prayer-finder-grid-prayer-page-20",
+      "selector": "#prayer-finder-grid > article:nth-of-type(20) > span:nth-of-type(1)",
+      "source": "Prayer page",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "prayer-library.main-prayer-finder-grid-powerful-secret-prayers",
+      "selector": "#prayer-finder-grid > article:nth-of-type(20) > h3:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Powerful Secret Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "prayer-library.main-prayer-finder-grid-a-small-library-of-loved",
+      "selector": "#prayer-finder-grid > article:nth-of-type(20) > p:nth-of-type(1)",
+      "source": "A small library of loved devotions - Mary Who Goes Ahead, prayers from the Lebanese mountains, and Brazil's Rosary of Battle - each with its text, its source, and an honest label.",
+      "kind": "text",
+      "nodeIndex": 0
     }
   ],
   "messages": {
@@ -4093,6 +4114,9 @@
     "prayer-library.header.home": "Home",
     "prayer-library.header.saint-charbel": "Saint Charbel",
     "prayer-library.main-find-a-prayer-sick-anxiety-students-family-miracle": "sick, anxiety, students, family, miracle, rosary...",
-    "prayer-library.main-img-alt-inside-the-monastery-church-at-annaya": "Inside the monastery church at Annaya"
+    "prayer-library.main-img-alt-inside-the-monastery-church-at-annaya": "Inside the monastery church at Annaya",
+    "prayer-library.main-prayer-finder-grid-prayer-page-20": "Prayer page",
+    "prayer-library.main-prayer-finder-grid-powerful-secret-prayers": "Powerful Secret Prayers",
+    "prayer-library.main-prayer-finder-grid-a-small-library-of-loved": "A small library of loved devotions - Mary Who Goes Ahead, prayers from the Lebanese mountains, and Brazil's Rosary of Battle - each with its text, its source, and an honest label."
   }
 }
