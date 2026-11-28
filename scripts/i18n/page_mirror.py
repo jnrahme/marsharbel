@@ -67,8 +67,10 @@ def render_page(root,registry,lang,family,route,catalog=None):
     soup.select_one('meta[property="og:url"]')['content']=canonical
     soup.select_one('meta[property="og:locale"]')['content']=og_locales(registry)[lang]
     for node in soup.select('meta[property="og:locale:alternate"]'):node.decompose()
+    secret_families={s+'-master' for s in ('powerful-secret-prayers','mary-who-goes-ahead-prayer','lebanese-mountain-prayers','terco-da-batalha')}
+    discovery_codes=registry['pageMirrors'][family].get('discoveryRoutes') if family in secret_families else None
     for code,value in og_locales(registry).items():
-        if code!=lang:soup.head.append(soup.new_tag('meta',property='og:locale:alternate',content=value))
+        if code!=lang and (discovery_codes is None or code in discovery_codes):soup.head.append(soup.new_tag('meta',property='og:locale:alternate',content=value))
     clusters=registry['pageMirrors'][family].get('discoveryRoutes',{'en':master_route,**registry['pageMirrors'][family]['routes'],'x-default':master_route})
     source_links=soup.select('link[hreflang]')
     from i18n.travel_variant_evidence import SLUGS
@@ -164,7 +166,13 @@ def render_page(root,registry,lang,family,route,catalog=None):
             if data.get('@type')=='Person':data['name']=copy[prefix+'.header.saint-charbel']
             if 'breadcrumb' in data:
                 items=data['breadcrumb']['itemListElement']
-                items[0].update(name=copy[prefix+'.header.home'],item=registry['site']+(home_url(registry, lang) or '/'))
+                home_label=copy.get(prefix+'.header.home')
+                if family=='terco-da-batalha-master':
+                    home_anchor=soup.select_one('header nav a[href="'+(home_url(registry,lang) or '/')+'"]')
+                    if home_anchor is None:raise ValueError('Terco localized home label missing')
+                    home_label=home_anchor.get_text(' ',strip=True)
+                if home_label is None:raise ValueError('Localized breadcrumb Home missing')
+                items[0].update(name=home_label,item=registry['site']+(home_url(registry, lang) or '/'))
                 items[-1].update(name=soup.h1.get_text(' ',strip=True),item=canonical)
                 # Intermediate navigation label is translated in the same header.
                 for item in items[1:-1]:
@@ -195,7 +203,20 @@ def render_page(root,registry,lang,family,route,catalog=None):
         # embedded Latin names, mottoes and license codes within Arabic prose.
         for text in list(soup.main.find_all(string=True)):
             if isinstance(text, Comment) or text.parent.name in ('script','style'): continue
-            isolated = re.sub(r'[A-Za-z][A-Za-z0-9]*(?:[ .:/\-][A-Za-z0-9]+)*', lambda m: '\u2068' + m[0] + '\u2069', str(text))
+            # Finite creator credits include accented Latin letters, punctuation
+            # and handles. Keep each complete credit in one LTR isolate rather
+            # than letting the legacy ASCII word matcher split it apart.
+            credits = {
+                'terco-da-batalha-master': ('Adrines Kölln, Católica (@adrineskolln)',),
+                'mary-who-goes-ahead-prayer-master': ('Catholic Prayer (@catholicprayerofc)',),
+                'lebanese-mountain-prayers-master': ('Anthony El Hachem',),
+            }.get(family, ())
+            credit = next((c for c in credits if c in str(text)), None)
+            if credit:
+                before, after = str(text).split(credit, 1)
+                isolated = before + '\u2066' + credit + '\u2069' + after
+            else:
+                isolated = re.sub(r'[A-Za-z][A-Za-z0-9]*(?:[ .:/\-][A-Za-z0-9]+)*', lambda m: '\u2068' + m[0] + '\u2069', str(text))
             if isolated != str(text): text.replace_with(isolated)
     rendered=str(soup);master_text=raw.decode('utf-8')
     if family in ('saint-charbel-prayers-master','saint-charbel-novena-master'):

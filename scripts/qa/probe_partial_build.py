@@ -200,6 +200,31 @@ def pin_segregated_pair(va,vb,expected,key,lang):
  for f in ('path','contentSha256','sourceSha256','aliases'):
   assert vb.get(f)==expected.get(f),(key,lang,f)
 
+SECRET_PRAYER_KEYS=frozenset({
+ 'secret-prayer-powerful-secret-prayers',
+ 'secret-prayer-mary-who-goes-ahead-prayer',
+ 'secret-prayer-lebanese-mountain-prayers',
+ 'secret-prayer-terco-da-batalha',
+})
+
+def pin_secret_prayer_inventory(pages,expected):
+ # Exact four identities stay compared in both worlds, never masked or removed.
+ assert {k for k in pages if k.startswith('secret-prayer-')}==SECRET_PRAYER_KEYS
+ assert set(expected)==SECRET_PRAYER_KEYS
+ for key in SECRET_PRAYER_KEYS:
+  page=pages[key];slug=key.removeprefix('secret-prayer-')
+  assert page['sourcePath']==slug+'.html'
+  assert set(page['variants'])=={'en','ar','fr'}
+  for lang,variant in page['variants'].items():
+   assert variant['path']=='/'+('' if lang=='en' else lang+'/')+slug
+   assert variant['status']=='technically-paired'
+   proof=variant['proof']
+   assert set(proof)=={'type','scope','nativeReviewStatus','editorialReviewStatus','bodySha256','catalogSha256','bindingsSha256'}
+   assert proof['type']=='secret-prayer-technical-pairing'
+   assert proof['scope']=='four-secret-prayer-families-en-ar-fr-technical-only'
+   assert proof['nativeReviewStatus']==proof['editorialReviewStatus']=='not-certified'
+  assert page==expected[key],('Secret prayer whole-object drift',key)
+
 def compare_json(file,old,new):
  prefix,a=json_assignment(old);other,b=json_assignment(new);assert prefix==other
  if file=='same-page-manifest.js':
@@ -404,7 +429,14 @@ def compare_json(file,old,new):
   })
   assert len(prior_keys)==160 and len(rosary_keys)==20
   assert not prior_keys & rosary_keys
-  assert set(a['pages'])==prior_keys | rosary_keys
+  from i18n.secret_prayer_pairing import secret_prayer_manifest
+  secret_expected=secret_prayer_manifest(R,{}, {'pages':{}})['pages']
+  committed=json_assignment((R/'same-page-manifest.js').read_text())[1]['pages']
+  for key in SECRET_PRAYER_KEYS:
+   assert committed[key]==secret_expected[key],('Secret committed proof drift',key)
+  for side in (a,b):pin_secret_prayer_inventory(side['pages'],secret_expected)
+  assert not SECRET_PRAYER_KEYS & (prior_keys | rosary_keys)
+  assert set(a['pages'])==prior_keys | rosary_keys | SECRET_PRAYER_KEYS
   assert len(SCOPED_KEYS)==12
   assert SCOPED_KEYS<=set(a['pages']);assert not SCOPED_KEYS&set(b['pages'])
   # Travel-4 (scrum re-pin 2026-10-12): the real manifest carries the 4 ar travel twins
@@ -459,7 +491,7 @@ def compare_json(file,old,new):
    hits['manifest-citation-segregated']+=len(pa['variants'])
   # Both sides retain exactly the same frozen inventory plus authorized rosary
   # families after removing only the 12 explicitly scoped Travel families.
-  expected_remaining=(prior_keys | rosary_keys) - SCOPED_KEYS
+  expected_remaining=(prior_keys | rosary_keys | SECRET_PRAYER_KEYS) - SCOPED_KEYS
   assert set(a['pages'])==set(b['pages'])==expected_remaining
   assert b['aliases'].pop('zz')=='zz';assert b['languages'].pop()=='zz'
   extra={k:b['englishSources'].pop(k) for k in list(b['englishSources']) if k.startswith('/zz/')}

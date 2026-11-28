@@ -155,6 +155,8 @@ class MB16HomeContinuation(unittest.TestCase):
         git('init','-q')
         files={p:raw for p,raw in self.originals.items()}
         for p in [m.MODULE,'scripts/build-international.py','scripts/i18n/same_page_injection.py','locales/registry.json']:files[p]=(ROOT/p).read_bytes()
+        from i18n.secret_prayers_registry_continuation import registry_preimage
+        files['locales/registry.json']=registry_preimage(ROOT,files['locales/registry.json'])
         for p,raw in files.items():(root/p).parent.mkdir(parents=True,exist_ok=True);(root/p).write_bytes(raw)
         git('add','.');git('commit','-qm','base');base=git('rev-parse','HEAD').decode().strip()
         record=json.loads((ROOT/m.RECORD).read_bytes());record['base']=base
