@@ -93,6 +93,22 @@ class NewPageLocales(unittest.TestCase):
         self.write('locales/registry.json',self.registry)
         self.assertTrue(any('route/render' in e for e in self.errors(['lucy-story.html'])))
 
+    def test_english_first_rejects_unregistered_language_stub(self):
+        self.enable_english_first()
+        path=self.root/'zz/lucy-story.html'; path.parent.mkdir(); path.write_text('<html lang="zz"></html>')
+        self.assertTrue(any('stub/page' in e for e in self.errors(['lucy-story.html'])))
+
+    def test_english_first_rejects_stub_without_english_master_on_unrelated_update(self):
+        self.enable_english_first()
+        (self.root/'lucy-story.html').unlink()
+        path=self.root/'ar/lucy-story.html'; path.parent.mkdir(); path.write_text('<html lang="ar"></html>')
+        self.assertTrue(any('stub/page' in e for e in self.errors(['src/pages/unrelated.html'])))
+
+    def test_english_first_allows_unbuilt_book_without_locale_outputs(self):
+        self.enable_english_first()
+        (self.root/'lucy-story.html').unlink()
+        self.assertEqual(self.errors(['src/pages/unrelated.html']), [])
+
     def test_complete_catalogs_pass(self):
         self.assertEqual(self.errors(), [])
 

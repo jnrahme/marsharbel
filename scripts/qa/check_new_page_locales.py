@@ -187,8 +187,7 @@ def check(root, added, base_registry):
     previews = load_private_previews(root)
     english_first = load_english_first(root)
     for held_page in english_first:
-        if (root / held_page).is_file():
-            errors.extend(english_first_errors(root, held_page, registry))
+        errors.extend(english_first_errors(root, held_page, registry))
     # Isolation is asserted for every allowlisted page on every run, so a later
     # unrelated PR cannot quietly link or index a preview.
     for preview_page in previews:
