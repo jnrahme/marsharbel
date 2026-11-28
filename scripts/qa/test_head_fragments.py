@@ -20,12 +20,32 @@ def resolve_copy(source):
     return re.sub(r'\{\{copy ([a-z0-9-]+) ([a-zA-Z0-9.-]+)\}\}', replace, source)
 
 
+SECRET_HEAD_PAGES=frozenset({
+    'powerful-secret-prayers.html', 'mary-who-goes-ahead-prayer.html',
+    'lebanese-mountain-prayers.html', 'terco-da-batalha.html',
+})
+
+def assert_secret_head_inventory(rows):
+    assert set(rows)==SECRET_HEAD_PAGES, 'Secret head page inventory differs'
+    for page,names in rows.items():
+        assert sorted(names)==['head-font-preloads','head-social'], (page,names)
+
 class HeadFragmentTest(unittest.TestCase):
     def test_copy_resolution_escapes_like_builder_and_rejects_missing_keys(self):
         with patch.object(Path, 'read_text', return_value=json.dumps({'copy': {'sample': 'A & <B> "C"'}})):
             self.assertEqual(resolve_copy('{{copy sample sample}}'), 'A &amp; &lt;B&gt; &quot;C&quot;')
             with self.assertRaises(KeyError):
                 resolve_copy('{{copy sample missing}}')
+
+    def test_secret_inventory_rejects_missing_duplicate_and_fifth_page(self):
+        rows={page:['head-social','head-font-preloads'] for page in SECRET_HEAD_PAGES}
+        assert_secret_head_inventory(rows)
+        missing=dict(rows);missing.pop(next(iter(rows)))
+        duplicate={page:list(names) for page,names in rows.items()}
+        duplicate[next(iter(rows))].append('head-social')
+        fifth=dict(rows);fifth['foreign.html']=['head-social','head-font-preloads']
+        for bad in (missing,duplicate,fifth):
+            with self.assertRaises(AssertionError):assert_secret_head_inventory(bad)
 
     def test_changed_fragment_is_still_rejected(self):
         original = Path.read_text
@@ -40,6 +60,7 @@ class HeadFragmentTest(unittest.TestCase):
 
     def test_head_fragments_match_served_bytes(self):
         counts = {}
+        secret_counts = {}
         for source in (ROOT / 'src/pages').rglob('*.html'):
             served = (ROOT / source.relative_to(ROOT / 'src/pages')).read_text()
             for marker in re.finditer(
@@ -51,7 +72,11 @@ class HeadFragmentTest(unittest.TestCase):
                 fragment = (ROOT / 'partials/fragments' / (name + '.html')).read_text().removesuffix('\n')
                 rendered = re.sub(r'\{\{(\d+)\}\}', lambda m: args[int(m[1]) - 1], fragment)
                 self.assertIn('  ' + rendered, served, f'{source.name}: {name} changed bytes')
-                counts[name] = counts.get(name, 0) + 1
+                if source.relative_to(ROOT / 'src/pages').as_posix() in SECRET_HEAD_PAGES:
+                    secret_counts.setdefault(source.name, []).append(name)
+                else:
+                    counts[name] = counts.get(name, 0) + 1
+        assert_secret_head_inventory(secret_counts)
         # saint-charbel-medal.html (the 11-locale medal guide) intentionally
         # contributes one head-social, one head-og-locales and one
         # head-font-preloads inclusion; these counts track that page.
@@ -64,8 +89,8 @@ class HeadFragmentTest(unittest.TestCase):
         # head-og-locales and one head-font-preloads inclusion.
         self.assertEqual(counts, {
             'head-og-locales': 96,  # 94 + saint-charbel-medal.html + saint-of-the-day.html
-            'head-social': 143,  # 116 + saint-charbel-medal.html + veronica-giuliani-story.html + 20 Rosary mystery book pages + saint-of-the-day.html
-            'head-font-preloads': 91,  # 83 + saint-charbel-medal.html + veronica-giuliani-story.html + store.html + saint-of-the-day.html
+            'head-social': 139,  # 116 + saint-charbel-medal.html + veronica-giuliani-story.html + 20 Rosary mystery book pages + saint-of-the-day.html
+            'head-font-preloads': 87,  # 83 + saint-charbel-medal.html + veronica-giuliani-story.html + store.html + saint-of-the-day.html
             'head-font-preloads-legacy': 17,
         })
 
