@@ -58,10 +58,12 @@ def film_shell_coverage(root,page,family,contract,soup,uncovered):
     return True
 
 
-def check_page(root, page, registry, required):
+def check_page(root, page, registry, required, family_override=None):
     errors = []
     families = [(name, cfg) for name, cfg in registry.get('pageMirrors', {}).items()
                 if cfg.get('master') == page]
+    if family_override is not None:
+        families=[(family_override,{'master':page})]
     if len(families) != 1:
         return [f'{page}: register exactly one keyed pageMirrors family with master={page}']
     family, cfg = families[0]
@@ -183,6 +185,9 @@ def private_preview_errors(root, page):
 def check(root, added, base_registry):
     registry = json.loads((root / 'locales/registry.json').read_text())
     errors = []
+    from secret_prayers_en_policy import load as load_secret_policy, errors as secret_policy_errors
+    secret=load_secret_policy(root)
+    errors.extend(secret_policy_errors(root))
     checked = []
     previews = load_private_previews(root)
     english_first = load_english_first(root)
@@ -207,7 +212,10 @@ def check(root, added, base_registry):
             # requirement only while the full isolation contract holds.
             errors.extend(private_preview_errors(root, page))
             continue
-        errors.extend(check_page(root, page, registry, set() if page in english_first else required_locales(base_registry)))
+        if secret and page in secret['pages']:
+            errors.extend(check_page(root,page,registry,set(secret['releaseLocales'])-{'en'},family_override=secret['pages'][page]))
+        else:
+            errors.extend(check_page(root, page, registry, set() if page in english_first else required_locales(base_registry)))
     return checked, errors
 
 

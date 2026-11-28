@@ -292,6 +292,8 @@ def control_outputs(root, texts, manifest, copy):
     manifest = veronica_manifest(root,texts,manifest)
     from i18n.reviewed_rosary_books import rosary_books_manifest
     manifest = rosary_books_manifest(root,texts,manifest)
+    from i18n.secret_prayer_pairing import secret_prayer_manifest
+    manifest = secret_prayer_manifest(root,texts,manifest)
     out={}
     for path,text in texts.items():
         if path.suffix=='.html' and 'https://marsharbel.com/' in text:out[path]=inject_control(text,root,manifest,copy)
