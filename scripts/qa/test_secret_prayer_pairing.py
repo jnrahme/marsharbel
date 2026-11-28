@@ -31,6 +31,30 @@ class SecretPairing(unittest.TestCase):
    for code in LANGUAGES:
     catalog=json.loads((ROOT/f'locales/{code}/{slug}-master-copy.json').read_text())
     self.assertEqual(set(keys),set(catalog),(slug,code))
+ def test_synthetic_inventory_exact_four_and_corruption_controls(self):
+  # Load only the pure inventory checker, not the expensive top-level probe.
+  import ast
+  tree=ast.parse((ROOT/'scripts/qa/probe_partial_build.py').read_text())
+  nodes=[n for n in tree.body if (isinstance(n,ast.FunctionDef) and n.name=='pin_secret_prayer_inventory') or (isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='SECRET_PRAYER_KEYS' for t in n.targets))]
+  namespace={}
+  exec(compile(ast.Module(body=nodes,type_ignores=[]),'<inventory-check>','exec'),namespace)
+  check=namespace['pin_secret_prayer_inventory']
+  expected=secret_prayer_manifest(ROOT,{}, {'pages':{}})['pages']
+  check(copy.deepcopy(expected),expected)
+  bad=copy.deepcopy(expected);bad['secret-prayer-fifth']=copy.deepcopy(next(iter(expected.values())))
+  with self.assertRaises(AssertionError):check(bad,expected)
+  key=sorted(expected)[0]
+  for lang in LANGUAGES:
+   for field in ('path','contentSha256','sourceSha256','status'):
+    bad=copy.deepcopy(expected);bad[key]['variants'][lang][field]='CORRUPT'
+    with self.assertRaises(AssertionError):check(bad,expected)
+   for field in ('type','scope','nativeReviewStatus','editorialReviewStatus','bodySha256','catalogSha256','bindingsSha256'):
+    bad=copy.deepcopy(expected);bad[key]['variants'][lang]['proof'][field]='CORRUPT'
+    with self.assertRaises(AssertionError):check(bad,expected)
+  bad=copy.deepcopy(expected);bad[key]['sourcePath']='foreign.html'
+  with self.assertRaises(AssertionError):check(bad,expected)
+  bad=copy.deepcopy(expected);bad[key]['variants']['de']=copy.deepcopy(bad[key]['variants']['en'])
+  with self.assertRaises(AssertionError):check(bad,expected)
  def test_existing_reviewed_family_not_replaced(self):
   manifest={'pages':{'existing':{'variants':{'en':{'path':'/powerful-secret-prayers','status':'verified'}}}}}
   with self.assertRaises(ValueError):secret_prayer_manifest(ROOT,{},manifest)
