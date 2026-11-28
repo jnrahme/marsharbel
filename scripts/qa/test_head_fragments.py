@@ -64,8 +64,8 @@ class HeadFragmentTest(unittest.TestCase):
         # head-og-locales and one head-font-preloads inclusion.
         self.assertEqual(counts, {
             'head-og-locales': 96,  # 94 + saint-charbel-medal.html + saint-of-the-day.html
-            'head-social': 139,  # 116 + saint-charbel-medal.html + veronica-giuliani-story.html + 20 Rosary mystery book pages + saint-of-the-day.html
-            'head-font-preloads': 87,  # 83 + saint-charbel-medal.html + veronica-giuliani-story.html + store.html + saint-of-the-day.html
+            'head-social': 143,  # 116 + saint-charbel-medal.html + veronica-giuliani-story.html + 20 Rosary mystery book pages + saint-of-the-day.html
+            'head-font-preloads': 91,  # 83 + saint-charbel-medal.html + veronica-giuliani-story.html + store.html + saint-of-the-day.html
             'head-font-preloads-legacy': 17,
         })
 
