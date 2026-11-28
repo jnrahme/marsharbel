@@ -29,6 +29,24 @@ class SeoRegressionTests(unittest.TestCase):
             if not target.exists() and path.name != ".git":
                 target.symlink_to(path, target_is_directory=path.is_dir())
 
+    def test_secret_prayer_sitemap_registration_is_scoped_and_idempotent(self):
+        from unittest.mock import patch
+        spec = importlib.util.spec_from_file_location('secret_sitemap', ROOT / 'scripts/register-secret-prayer-sitemap.py')
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        original = (self.root / 'sitemap.xml').read_text()
+        for slug in ('powerful-secret-prayers', 'mary-who-goes-ahead-prayer', 'lebanese-mountain-prayers', 'terco-da-batalha'):
+            original = re.sub(r'\s*<url>\s*<loc>https://marsharbel.com/' + slug + r'</loc>.*?</url>', '', original, flags=re.S)
+        (self.root / 'sitemap.xml').write_text(original)
+        with patch.object(module, 'last_changed', return_value='2026-11-27'):
+            first = module.outputs(self.root)
+            self.assertEqual(first.count('<url>'), original.count('<url>') + 4)
+            for slug in ('powerful-secret-prayers', 'mary-who-goes-ahead-prayer', 'lebanese-mountain-prayers', 'terco-da-batalha'):
+                self.assertEqual(first.count('<loc>https://marsharbel.com/' + slug + '</loc>'), 1)
+            self.assertNotIn('<loc>https://marsharbel.com/feedback-review</loc>', first)
+            (self.root / 'sitemap.xml').write_text(first)
+            self.assertEqual(module.outputs(self.root), first)
+
     def test_current_vatican_charbel_citation_links(self):
         old_slug = '2303-july-24-saint-charbel-makhlouf.html'
         current = ('https://vaticanstate.va/en/component/content/article/'
