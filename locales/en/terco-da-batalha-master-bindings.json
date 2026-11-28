@@ -1,934 +1,922 @@
 {
   "version": 1,
   "master": "terco-da-batalha.html",
-  "masterSha256": "c42c897645252aa45f115f47d78db1eca7775e6e005c49a4f8dc2d3a30e3bdd1",
-  "sourceRevision": "50d333e6",
+  "masterSha256": "702d9347f532645bf72eef00303b9eb5643ececbc07ee44e067b8ccabeade417",
+  "sourceRevision": "Reconstructed source-exact, fresh review required",
   "bindings": [
     {
-      "key": "terco-da-batalha.metadata.title-ter-o-da-batalha-the-rosary-of-battle-portuguese-text",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Terço da Batalha (The Rosary of Battle) | Portuguese Text & How to Pray",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.0"
     },
     {
-      "key": "terco-da-batalha.metadata.description-the-ter-o-da-batalha-a-modern-popular-brazilian",
-      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(3)",
+      "kind": "attribute",
+      "attribute": "content",
       "source": "The Terço da Batalha, a modern popular Brazilian devotion prayed on a standard rosary - not the official Dominican Rosary. Portuguese text with labeled translations, step-by-step guide, source credit, and an honest label.",
-      "kind": "attribute",
-      "attribute": "content"
+      "key": "terco.source-exact.1"
     },
     {
-      "key": "terco-da-batalha.metadata.og-title-terco-da-batalha-the-rosary-of-battle-portuguese-te",
-      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(7)",
+      "kind": "attribute",
+      "attribute": "content",
       "source": "Terco da Batalha (The Rosary of Battle) | Portuguese Text & How to Pray",
-      "kind": "attribute",
-      "attribute": "content"
+      "key": "terco.source-exact.2"
     },
     {
-      "key": "terco-da-batalha.metadata.og-description-the-terco-da-batalha-a-modern-popular-brazili",
-      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+      "kind": "attribute",
+      "attribute": "content",
       "source": "The Terco da Batalha, a modern popular Brazilian devotion prayed on a standard rosary. Portuguese text with labeled translations, step-by-step guide, source credit, and an honest label.",
-      "kind": "attribute",
-      "attribute": "content"
+      "key": "terco.source-exact.3"
     },
     {
-      "key": "terco-da-batalha.metadata.twitter-title-terco-da-batalha-the-rosary-of-battle-portugue",
-      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(12)",
+      "kind": "attribute",
+      "attribute": "content",
       "source": "Terco da Batalha (The Rosary of Battle) | Portuguese Text & How to Pray",
-      "kind": "attribute",
-      "attribute": "content"
+      "key": "terco.source-exact.4"
     },
     {
-      "key": "terco-da-batalha.metadata.twitter-description-the-terco-da-batalha-a-modern-popular-br",
-      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
+      "kind": "attribute",
+      "attribute": "content",
       "source": "The Terco da Batalha, a modern popular Brazilian devotion prayed on a standard rosary. Portuguese text with labeled translations, step-by-step guide, source credit, and an honest label.",
-      "kind": "attribute",
-      "attribute": "content"
+      "key": "terco.source-exact.5"
     },
     {
-      "key": "terco-da-batalha.body.skip-to-main-content",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Skip to main content",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.6"
     },
     {
-      "key": "terco-da-batalha.header.text",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "✦",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.7"
     },
     {
-      "key": "terco-da-batalha.header.saint-charbel",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Saint Charbel",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.8"
     },
     {
-      "key": "terco-da-batalha.accessibility.primary",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "kind": "attribute",
+      "attribute": "aria-label",
       "source": "Primary",
-      "kind": "attribute",
-      "attribute": "aria-label"
+      "key": "terco.source-exact.9"
     },
     {
-      "key": "terco-da-batalha.header.home",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Home",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.10"
     },
     {
-      "key": "terco-da-batalha.header.legacy",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Legacy",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.11"
     },
     {
-      "key": "terco-da-batalha.header.saint-charbel-encyclopedia",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Saint Charbel Encyclopedia",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.12"
     },
     {
-      "key": "terco-da-batalha.header.full-history",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Full History",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.13"
     },
     {
-      "key": "terco-da-batalha.header.miracles",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Miracles",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.14"
     },
     {
-      "key": "terco-da-batalha.header.miracles-reports",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Miracles & Reports",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.15"
     },
     {
-      "key": "terco-da-batalha.header.eucharistic-miracles",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Eucharistic Miracles",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.16"
     },
     {
-      "key": "terco-da-batalha.header.letters",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Letters",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.17"
     },
     {
-      "key": "terco-da-batalha.header.voice-testimony",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Voice Testimony",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.18"
     },
     {
-      "key": "terco-da-batalha.header.saints",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
-      "source": "Saints",
       "kind": "text",
-      "nodeIndex": 0
+      "nodeIndex": 0,
+      "source": "Saints",
+      "key": "terco.source-exact.19"
     },
     {
-      "key": "terco-da-batalha.header.saints",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Saints",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.20"
     },
     {
-      "key": "terco-da-batalha.header.children-s-books",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Children's Books",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.21"
     },
     {
-      "key": "terco-da-batalha.header.prayer",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Prayer",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.22"
     },
     {
-      "key": "terco-da-batalha.header.prayer-library",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Prayer Library",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.23"
     },
     {
-      "key": "terco-da-batalha.header.find-a-prayer-by-intention",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Find a Prayer by Intention",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.24"
     },
     {
-      "key": "terco-da-batalha.header.prayer-for-the-sick",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Prayer for the Sick",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.25"
     },
     {
-      "key": "terco-da-batalha.header.prayer-for-healing",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Prayer for Healing",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.26"
     },
     {
-      "key": "terco-da-batalha.header.prayer-for-anxiety",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Prayer for Anxiety",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.27"
     },
     {
-      "key": "terco-da-batalha.header.prayer-for-depression",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Prayer for Depression",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.28"
     },
     {
-      "key": "terco-da-batalha.header.prayer-for-students",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Prayer for Students",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.29"
     },
     {
-      "key": "terco-da-batalha.header.prayer-for-addiction",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Prayer for Addiction",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.30"
     },
     {
-      "key": "terco-da-batalha.header.prayer-for-family",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Prayer for Family",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.31"
     },
     {
-      "key": "terco-da-batalha.header.prayer-for-pregnancy",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Prayer for Pregnancy",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.32"
     },
     {
-      "key": "terco-da-batalha.header.prayer-for-a-miracle",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Prayer for a Miracle",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.33"
     },
     {
-      "key": "terco-da-batalha.header.saint-charbel-prayers",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Saint Charbel Prayers",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.34"
     },
     {
-      "key": "terco-da-batalha.header.saint-charbel-novena",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Saint Charbel Novena",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.35"
     },
     {
-      "key": "terco-da-batalha.header.feast-day",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Feast Day",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.36"
     },
     {
-      "key": "terco-da-batalha.header.rosary-guide",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Rosary Guide",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.37"
     },
     {
-      "key": "terco-da-batalha.header.rosary-minibook",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Rosary Minibook",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.38"
     },
     {
-      "key": "terco-da-batalha.header.mystery-meditation",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Mystery Meditation",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.39"
     },
     {
-      "key": "terco-da-batalha.header.become-like-him",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Become Like Him",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.40"
     },
     {
-      "key": "terco-da-batalha.header.travel",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
-      "source": "Travel",
       "kind": "text",
-      "nodeIndex": 0
+      "nodeIndex": 0,
+      "source": "Travel",
+      "key": "terco.source-exact.41"
     },
     {
-      "key": "terco-da-batalha.header.travel",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Travel",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.42"
     },
     {
-      "key": "terco-da-batalha.header.visiting-annaya",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Visiting Annaya",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.43"
     },
     {
-      "key": "terco-da-batalha.header.annaya-online-tour",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Annaya Online Tour",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.44"
     },
     {
-      "key": "terco-da-batalha.header.bekaa-kafra",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Bekaa Kafra",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.45"
     },
     {
-      "key": "terco-da-batalha.header.our-lady-of-lebanon-at-harissa",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Our Lady of Lebanon at Harissa",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.46"
     },
     {
-      "key": "terco-da-batalha.header.the-cedars-of-god",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "the Cedars of God",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.47"
     },
     {
-      "key": "terco-da-batalha.header.bkerke-and-the-maronite-patriarchate",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Bkerke and the Maronite Patriarchate",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.48"
     },
     {
-      "key": "terco-da-batalha.header.qadisha-valley",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Qadisha Valley",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.49"
     },
     {
-      "key": "terco-da-batalha.header.qannoubine-monastery",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Qannoubine Monastery",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.50"
     },
     {
-      "key": "terco-da-batalha.header.qozhaya-monastery",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Qozhaya Monastery",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.51"
     },
     {
-      "key": "terco-da-batalha.header.saint-charbel-s-lebanon",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Saint Charbel's Lebanon",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.52"
     },
     {
-      "key": "terco-da-batalha.header.the-hermitage",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "The Hermitage",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.53"
     },
     {
-      "key": "terco-da-batalha.header.saint-charbel-trail",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Saint Charbel Trail",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.54"
     },
     {
-      "key": "terco-da-batalha.header.news",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "News",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.55"
     },
     {
-      "key": "terco-da-batalha.header.media",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Media",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.56"
     },
     {
-      "key": "terco-da-batalha.header.music",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Music",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.57"
     },
     {
-      "key": "terco-da-batalha.header.video",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Video",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.58"
     },
     {
-      "key": "terco-da-batalha.header.gallery",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Gallery",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.59"
     },
     {
-      "key": "terco-da-batalha.body.modern-brazilian-devotion",
-      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > span:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Modern Brazilian Devotion",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.60"
     },
     {
-      "key": "terco-da-batalha.ter-o-da-batalha-the-ros.ter-o-da-batalha-the-rosary-of-battle",
-      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Terço da Batalha (The Rosary of Battle)",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.61"
     },
     {
-      "key": "terco-da-batalha.ter-o-da-batalha-the-ros.a-modern-popular-brazilian-devotion-for-the-struggles-people",
-      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "A modern popular Brazilian devotion for the struggles people actually face - illness, temptation, fear, the long fight for a family or a livelihood. It is prayed on a standard rosary, in plain Portuguese words that ask God for strength and courage, and it ends with the Salve Rainha, the Hail Holy Queen.",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.62"
     },
     {
-      "key": "terco-da-batalha.accessibility.a-rosary-resting-in-open-hands",
-      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
-      "source": "A rosary resting in open hands",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
       "kind": "attribute",
-      "attribute": "alt"
+      "attribute": "alt",
+      "source": "A rosary resting in open hands",
+      "key": "terco.source-exact.63"
     },
     {
-      "key": "terco-da-batalha.ter-o-da-batalha-the-ros.the-ter-o-da-batalha-is-prayed-on-an-ordinary-rosary-large-b",
-      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "The Terço da Batalha is prayed on an ordinary rosary - large beads, small beads, and the cross.",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.64"
     },
     {
-      "key": "terco-da-batalha.ter-o-da-batalha-the-ros.watch-the-source-reel",
-      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Watch the source reel",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.65"
     },
     {
-      "key": "terco-da-batalha.ter-o-da-batalha-the-ros.powerful-secret-prayers",
-      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Powerful Secret Prayers",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.66"
     },
     {
-      "key": "terco-da-batalha.ter-o-da-batalha-the-ros.full-prayer-library",
-      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Full Prayer Library",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.67"
     },
     {
-      "key": "terco-da-batalha.what-this-devotion-is-an.what-this-devotion-is-and-what-it-is-not",
-      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "What This Devotion Is - and What It Is Not",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.68"
     },
     {
-      "key": "terco-da-batalha.what-this-devotion-is-an.the-ter-o-da-batalha-is-a-modern-popular-devotion-from-brazi",
-      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "The Terço da Batalha is a modern popular devotion from Brazil, shared by",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.69"
     },
     {
-      "key": "terco-da-batalha.what-this-devotion-is-an.adrines-k-lln-cat-lica-adrineskolln",
-      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Adrines Kölln, Católica (@adrineskolln)",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.70"
     },
     {
-      "key": "terco-da-batalha.what-this-devotion-is-an.it-is-not-the-official-dominican-rosary-and-it-is-not-an-off",
-      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 2,
       "source": ". It is not the official Dominican Rosary, and it is not an official liturgical text of the Church. Popular devotions like this one are the people's way of praying their struggles - legitimate and loved, but they carry no promise of guaranteed results. God remains free; we remain askers.",
-      "kind": "text",
-      "nodeIndex": 2
+      "key": "terco.source-exact.71"
     },
     {
-      "key": "terco-da-batalha.what-this-devotion-is-an.the-portuguese-text-below-is-the-source-of-truth-for-this-pa",
-      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "The Portuguese text below is the source of truth for this page. Every translation is labeled as a translation, and the wording follows the version shared in the source - older variants of this devotion use different lines, and we do not mix them in.",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.72"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.how-to-pray-it",
-      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "How to Pray It",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.73"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.you-need-only-an-ordinary-rosary-and-the-intention-you-are-c",
-      "selector": "#main-content > section:nth-of-type(3) > p:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > p:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "You need only an ordinary rosary and the intention you are carrying.",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.74"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.hold-the-struggle-in-mind-invite-your-guardian-angel-to-figh",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1)",
-      "source": "Hold the struggle in mind. Invite your guardian angel to fight with you.",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(1)",
       "kind": "text",
-      "nodeIndex": 0
+      "nodeIndex": 0,
+      "source": "Hold the struggle in mind. Invite your guardian angel to pray with you.",
+      "key": "terco.source-exact.75"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.pray-the-sign-of-the-cross-the-creed-one-our-father-and-thre",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2)",
-      "source": "Pray the Sign of the Cross, the Creed, one Our Father, and three Hail Marys (standard texts).",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2)",
       "kind": "text",
-      "nodeIndex": 0
+      "nodeIndex": 0,
+      "source": "Pray the Sign of the Cross:",
+      "key": "terco.source-exact.76"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.on-the-large-beads-pray",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2) > span:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
+      "source": "Pelo sinal da Santa Cruz, livrai-nos, Deus nosso Senhor, dos nossos inimigos. Em nome do Pai, do Filho e do Espírito Santo. Amém.",
+      "key": "terco.source-exact.77"
+    },
+    {
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 2,
+      "source": "Then pray the Creed, one Our Father, and three Hail Marys (standard texts).",
+      "key": "terco.source-exact.78"
+    },
+    {
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "On the large beads, pray:",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.79"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.deus-do-c-u-me-d-for-as",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3) > em:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3) > em:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "\"Deus do céu, me dê forças...\"",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.80"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.god-of-heaven-give-me-strength",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(3)",
+      "kind": "text",
+      "nodeIndex": 2,
       "source": "(God of heaven, give me strength...)",
-      "kind": "text",
-      "nodeIndex": 2
+      "key": "terco.source-exact.81"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.on-the-small-beads-pray",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(4)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(4)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "On the small beads, pray:",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.82"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.cruz-sagrada-seja-a-minha-luz",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(4) > em:nth-of-type(1)",
-      "source": "\"Cruz sagrada seja a minha luz.\"",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(4) > em:nth-of-type(1)",
       "kind": "text",
-      "nodeIndex": 0
+      "nodeIndex": 0,
+      "source": "\"Eu hei de vencer. Jesus Cristo me ama e me resgata com Seu poder!\"",
+      "key": "terco.source-exact.83"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.holy-cross-be-my-light",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(4)",
-      "source": "(Holy Cross, be my light.)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(4)",
       "kind": "text",
-      "nodeIndex": 2
+      "nodeIndex": 2,
+      "source": "(I shall win. Jesus Christ loves me and rescues me with His power.) on each of the ten small beads.",
+      "key": "terco.source-exact.84"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.close-with",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(5)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(5)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Close with",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.85"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.eu-hei-de-vencer-esta-batalha",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(5) > em:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(5) > em:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "\"Eu hei de vencer esta batalha...\"",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.86"
     },
     {
-      "key": "terco-da-batalha.how-to-pray-it.i-shall-win-this-battle-three-times-ending-with-the-salve-ra",
-      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(5)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > ol:nth-of-type(1) > li:nth-of-type(5)",
+      "kind": "text",
+      "nodeIndex": 2,
       "source": "(I shall win this battle...) three times, ending with the Salve Rainha (Hail Holy Queen).",
-      "kind": "text",
-      "nodeIndex": 2
+      "key": "terco.source-exact.87"
     },
     {
-      "key": "terco-da-batalha.the-prayers.the-prayers",
-      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "The Prayers",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.88"
     },
     {
-      "key": "terco-da-batalha.the-prayers.the-original-portuguese-first-as-it-was-shared-then-a-labele",
-      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > p:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "The original Portuguese first, as it was shared, then a labeled translation.",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.89"
     },
     {
-      "key": "terco-da-batalha.the-prayers.on-the-large-beads",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > h3:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "On the Large Beads",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.90"
     },
     {
-      "key": "terco-da-batalha.the-prayers.deus-do-c-u-me-d-for-as-jesus-cristo-me-d-o-poder-do-bem-nos",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Deus do céu, me dê forças. Jesus Cristo, me dê o poder do bem. Nossa Senhora, me dê coragem para esta luta eu vencer. Sem morrer, sem adoecer, sem muito me abater. Deus pode, Deus quer, esta batalha eu hei de vencer.",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.91"
     },
     {
-      "key": "terco-da-batalha.the-prayers.translation",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Translation:",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.92"
     },
     {
-      "key": "terco-da-batalha.the-prayers.god-of-heaven-give-me-strength-jesus-christ-give-me-the-powe",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2)",
-      "source": "God of heaven, give me strength. Jesus Christ, give me the power of good. Our Lady, give me courage to win this fight. Without dying, without falling ill, without being greatly cast down. God can, God wills it - this battle I shall win.",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2)",
       "kind": "text",
-      "nodeIndex": 1
+      "nodeIndex": 1,
+      "source": "God of heaven, give me strength. Jesus Christ, give me courage to win this fight, without dying, without going mad, without being too beaten down. God can, God wants. This battle I shall win.",
+      "key": "terco.source-exact.93"
     },
     {
-      "key": "terco-da-batalha.the-prayers.on-the-small-beads",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "On the Small Beads",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.94"
     },
     {
-      "key": "terco-da-batalha.the-prayers.cruz-sagrada-seja-a-minha-luz",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
-      "source": "Cruz sagrada seja a minha luz.",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
       "kind": "text",
-      "nodeIndex": 0
+      "nodeIndex": 0,
+      "source": "Eu hei de vencer. Jesus Cristo me ama e me resgata com Seu poder!",
+      "key": "terco.source-exact.95"
     },
     {
-      "key": "terco-da-batalha.the-prayers.translation",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Translation:",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.96"
     },
     {
-      "key": "terco-da-batalha.the-prayers.holy-cross-be-my-light",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(2)",
-      "source": "Holy Cross, be my light.",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(2)",
       "kind": "text",
-      "nodeIndex": 1
+      "nodeIndex": 1,
+      "source": "I shall win. Jesus Christ loves me and rescues me with His power.",
+      "key": "terco.source-exact.97"
     },
     {
-      "key": "terco-da-batalha.the-prayers.the-closing-prayed-three-times",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > h3:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > h3:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "The Closing, Prayed Three Times",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.98"
     },
     {
-      "key": "terco-da-batalha.the-prayers.eu-hei-de-vencer-esta-batalha-em-nome-do-pai-em-nome-do-filh",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
-      "source": "Eu hei de vencer esta batalha em nome do Pai, em nome do Filho e em nome do Espírito Santo. Amém.",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
       "kind": "text",
-      "nodeIndex": 0
+      "nodeIndex": 0,
+      "source": "A vitória é nossa pelo sangue de Jesus! Amém.",
+      "key": "terco.source-exact.99"
     },
     {
-      "key": "terco-da-batalha.the-prayers.translation",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Translation:",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.100"
     },
     {
-      "key": "terco-da-batalha.the-prayers.i-shall-win-this-battle-in-the-name-of-the-father-in-the-nam",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(2)",
-      "source": "I shall win this battle in the name of the Father, in the name of the Son, and in the name of the Holy Spirit. Amen.",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(2)",
       "kind": "text",
-      "nodeIndex": 1
+      "nodeIndex": 1,
+      "source": "Victory is ours by the blood of Jesus!",
+      "key": "terco.source-exact.101"
     },
     {
-      "key": "terco-da-batalha.the-prayers.the-ending",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(4) > h3:nth-of-type(1)",
-      "source": "The Ending",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(5) > h2:nth-of-type(1)",
       "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "terco-da-batalha.the-prayers.the-devotion-ends-with-the-salve-rainha-the-hail-holy-queen",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
-      "source": "The devotion ends with the Salve Rainha - the Hail Holy Queen, the traditional closing prayer of the Rosary. Pray it in its standard form; you will find it in our",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "terco-da-batalha.the-prayers.saint-charbel-prayers",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1) > a:nth-of-type(1)",
-      "source": "Saint Charbel prayers",
-      "kind": "text",
-      "nodeIndex": 0
-    },
-    {
-      "key": "terco-da-batalha.the-prayers.and-any-rosary-booklet",
-      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
-      "source": "and any Rosary booklet.",
-      "kind": "text",
-      "nodeIndex": 2
-    },
-    {
-      "key": "terco-da-batalha.where-it-comes-from.where-it-comes-from",
-      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "nodeIndex": 0,
       "source": "Where It Comes From",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.102"
     },
     {
-      "key": "terco-da-batalha.where-it-comes-from.the-ter-o-da-batalha-was-shared-by",
-      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "The Terço da Batalha was shared by",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.103"
     },
     {
-      "key": "terco-da-batalha.where-it-comes-from.adrines-k-lln-cat-lica-adrineskolln-on-instagram",
-      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Adrines Kölln, Católica (@adrineskolln) on Instagram",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.104"
     },
     {
-      "key": "terco-da-batalha.where-it-comes-from.and-we-link-her-original-rather-than-re-uploading-it-brazil",
-      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": ", and we link her original rather than re-uploading it. Brazil's Catholic devotion has a long tradition of \"battle rosaries\" and prayer campaigns; this is its newest popular form.",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
       "kind": "text",
-      "nodeIndex": 2
+      "nodeIndex": 2,
+      "source": ", and we link her original rather than re-uploading it. This page identifies the shared version without claiming an established history for this particular form.",
+      "key": "terco.source-exact.105"
     },
     {
-      "key": "terco-da-batalha.keep-praying.keep-praying",
-      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Keep Praying",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.106"
     },
     {
-      "key": "terco-da-batalha.keep-praying.a-battle-prayer-is-strongest-inside-the-ordinary-life-of-pra",
-      "selector": "#main-content > section:nth-of-type(6) > p:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(6) > p:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "A battle prayer is strongest inside the ordinary life of prayer. The Rosary is the Church's own school for it.",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.107"
     },
     {
-      "key": "terco-da-batalha.keep-praying.introduction-to-the-rosary",
-      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Introduction to the Rosary",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.108"
     },
     {
-      "key": "terco-da-batalha.keep-praying.how-to-pray-the-rosary",
-      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "How to Pray the Rosary",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.109"
     },
     {
-      "key": "terco-da-batalha.keep-praying.the-nine-day-novena",
-      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "The Nine-Day Novena",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.110"
     },
     {
-      "key": "terco-da-batalha.sources.sources",
-      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Sources",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.111"
     },
     {
-      "key": "terco-da-batalha.sources.adrines-k-lln-cat-lica-adrineskolln-instagram-reel-the-origi",
-      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "kind": "text",
+      "nodeIndex": 0,
       "source": "Adrines Kölln, Católica (@adrineskolln), Instagram reel - the original share of this devotion",
-      "kind": "text",
-      "nodeIndex": 0
+      "key": "terco.source-exact.112"
     },
     {
-      "key": "terco-da-batalha.footer.ter-o-da-batalha-honestly-labeled-author-please-pray-for-the",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
-      "source": "Terço da Batalha, honestly labeled. Author: Please pray for the person who made this website.",
       "kind": "text",
-      "nodeIndex": 0
+      "nodeIndex": 0,
+      "source": "Terço da Batalha, honestly labeled. Author: Please pray for the person who made this website.",
+      "key": "terco.source-exact.113"
     }
   ],
   "messages": {
-    "terco-da-batalha.metadata.title-ter-o-da-batalha-the-rosary-of-battle-portuguese-text": "Terço da Batalha (The Rosary of Battle) | Portuguese Text & How to Pray",
-    "terco-da-batalha.metadata.description-the-ter-o-da-batalha-a-modern-popular-brazilian": "The Terço da Batalha, a modern popular Brazilian devotion prayed on a standard rosary - not the official Dominican Rosary. Portuguese text with labeled translations, step-by-step guide, source credit, and an honest label.",
-    "terco-da-batalha.metadata.og-title-terco-da-batalha-the-rosary-of-battle-portuguese-te": "Terco da Batalha (The Rosary of Battle) | Portuguese Text & How to Pray",
-    "terco-da-batalha.metadata.og-description-the-terco-da-batalha-a-modern-popular-brazili": "The Terco da Batalha, a modern popular Brazilian devotion prayed on a standard rosary. Portuguese text with labeled translations, step-by-step guide, source credit, and an honest label.",
-    "terco-da-batalha.metadata.twitter-title-terco-da-batalha-the-rosary-of-battle-portugue": "Terco da Batalha (The Rosary of Battle) | Portuguese Text & How to Pray",
-    "terco-da-batalha.metadata.twitter-description-the-terco-da-batalha-a-modern-popular-br": "The Terco da Batalha, a modern popular Brazilian devotion prayed on a standard rosary. Portuguese text with labeled translations, step-by-step guide, source credit, and an honest label.",
-    "terco-da-batalha.body.skip-to-main-content": "Skip to main content",
-    "terco-da-batalha.header.text": "✦",
-    "terco-da-batalha.header.saint-charbel": "Saint Charbel",
-    "terco-da-batalha.accessibility.primary": "Primary",
-    "terco-da-batalha.header.home": "Home",
-    "terco-da-batalha.header.legacy": "Legacy",
-    "terco-da-batalha.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
-    "terco-da-batalha.header.full-history": "Full History",
-    "terco-da-batalha.header.miracles": "Miracles",
-    "terco-da-batalha.header.miracles-reports": "Miracles & Reports",
-    "terco-da-batalha.header.eucharistic-miracles": "Eucharistic Miracles",
-    "terco-da-batalha.header.letters": "Letters",
-    "terco-da-batalha.header.voice-testimony": "Voice Testimony",
-    "terco-da-batalha.header.saints": "Saints",
-    "terco-da-batalha.header.children-s-books": "Children's Books",
-    "terco-da-batalha.header.prayer": "Prayer",
-    "terco-da-batalha.header.prayer-library": "Prayer Library",
-    "terco-da-batalha.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
-    "terco-da-batalha.header.prayer-for-the-sick": "Prayer for the Sick",
-    "terco-da-batalha.header.prayer-for-healing": "Prayer for Healing",
-    "terco-da-batalha.header.prayer-for-anxiety": "Prayer for Anxiety",
-    "terco-da-batalha.header.prayer-for-depression": "Prayer for Depression",
-    "terco-da-batalha.header.prayer-for-students": "Prayer for Students",
-    "terco-da-batalha.header.prayer-for-addiction": "Prayer for Addiction",
-    "terco-da-batalha.header.prayer-for-family": "Prayer for Family",
-    "terco-da-batalha.header.prayer-for-pregnancy": "Prayer for Pregnancy",
-    "terco-da-batalha.header.prayer-for-a-miracle": "Prayer for a Miracle",
-    "terco-da-batalha.header.saint-charbel-prayers": "Saint Charbel Prayers",
-    "terco-da-batalha.header.saint-charbel-novena": "Saint Charbel Novena",
-    "terco-da-batalha.header.feast-day": "Feast Day",
-    "terco-da-batalha.header.rosary-guide": "Rosary Guide",
-    "terco-da-batalha.header.rosary-minibook": "Rosary Minibook",
-    "terco-da-batalha.header.mystery-meditation": "Mystery Meditation",
-    "terco-da-batalha.header.become-like-him": "Become Like Him",
-    "terco-da-batalha.header.travel": "Travel",
-    "terco-da-batalha.header.visiting-annaya": "Visiting Annaya",
-    "terco-da-batalha.header.annaya-online-tour": "Annaya Online Tour",
-    "terco-da-batalha.header.bekaa-kafra": "Bekaa Kafra",
-    "terco-da-batalha.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
-    "terco-da-batalha.header.the-cedars-of-god": "the Cedars of God",
-    "terco-da-batalha.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
-    "terco-da-batalha.header.qadisha-valley": "Qadisha Valley",
-    "terco-da-batalha.header.qannoubine-monastery": "Qannoubine Monastery",
-    "terco-da-batalha.header.qozhaya-monastery": "Qozhaya Monastery",
-    "terco-da-batalha.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
-    "terco-da-batalha.header.the-hermitage": "The Hermitage",
-    "terco-da-batalha.header.saint-charbel-trail": "Saint Charbel Trail",
-    "terco-da-batalha.header.news": "News",
-    "terco-da-batalha.header.media": "Media",
-    "terco-da-batalha.header.music": "Music",
-    "terco-da-batalha.header.video": "Video",
-    "terco-da-batalha.header.gallery": "Gallery",
-    "terco-da-batalha.body.modern-brazilian-devotion": "Modern Brazilian Devotion",
-    "terco-da-batalha.ter-o-da-batalha-the-ros.ter-o-da-batalha-the-rosary-of-battle": "Terço da Batalha (The Rosary of Battle)",
-    "terco-da-batalha.ter-o-da-batalha-the-ros.a-modern-popular-brazilian-devotion-for-the-struggles-people": "A modern popular Brazilian devotion for the struggles people actually face - illness, temptation, fear, the long fight for a family or a livelihood. It is prayed on a standard rosary, in plain Portuguese words that ask God for strength and courage, and it ends with the Salve Rainha, the Hail Holy Queen.",
-    "terco-da-batalha.accessibility.a-rosary-resting-in-open-hands": "A rosary resting in open hands",
-    "terco-da-batalha.ter-o-da-batalha-the-ros.the-ter-o-da-batalha-is-prayed-on-an-ordinary-rosary-large-b": "The Terço da Batalha is prayed on an ordinary rosary - large beads, small beads, and the cross.",
-    "terco-da-batalha.ter-o-da-batalha-the-ros.watch-the-source-reel": "Watch the source reel",
-    "terco-da-batalha.ter-o-da-batalha-the-ros.powerful-secret-prayers": "Powerful Secret Prayers",
-    "terco-da-batalha.ter-o-da-batalha-the-ros.full-prayer-library": "Full Prayer Library",
-    "terco-da-batalha.what-this-devotion-is-an.what-this-devotion-is-and-what-it-is-not": "What This Devotion Is - and What It Is Not",
-    "terco-da-batalha.what-this-devotion-is-an.the-ter-o-da-batalha-is-a-modern-popular-devotion-from-brazi": "The Terço da Batalha is a modern popular devotion from Brazil, shared by",
-    "terco-da-batalha.what-this-devotion-is-an.adrines-k-lln-cat-lica-adrineskolln": "Adrines Kölln, Católica (@adrineskolln)",
-    "terco-da-batalha.what-this-devotion-is-an.it-is-not-the-official-dominican-rosary-and-it-is-not-an-off": ". It is not the official Dominican Rosary, and it is not an official liturgical text of the Church. Popular devotions like this one are the people's way of praying their struggles - legitimate and loved, but they carry no promise of guaranteed results. God remains free; we remain askers.",
-    "terco-da-batalha.what-this-devotion-is-an.the-portuguese-text-below-is-the-source-of-truth-for-this-pa": "The Portuguese text below is the source of truth for this page. Every translation is labeled as a translation, and the wording follows the version shared in the source - older variants of this devotion use different lines, and we do not mix them in.",
-    "terco-da-batalha.how-to-pray-it.how-to-pray-it": "How to Pray It",
-    "terco-da-batalha.how-to-pray-it.you-need-only-an-ordinary-rosary-and-the-intention-you-are-c": "You need only an ordinary rosary and the intention you are carrying.",
-    "terco-da-batalha.how-to-pray-it.hold-the-struggle-in-mind-invite-your-guardian-angel-to-figh": "Hold the struggle in mind. Invite your guardian angel to fight with you.",
-    "terco-da-batalha.how-to-pray-it.pray-the-sign-of-the-cross-the-creed-one-our-father-and-thre": "Pray the Sign of the Cross, the Creed, one Our Father, and three Hail Marys (standard texts).",
-    "terco-da-batalha.how-to-pray-it.on-the-large-beads-pray": "On the large beads, pray:",
-    "terco-da-batalha.how-to-pray-it.deus-do-c-u-me-d-for-as": "\"Deus do céu, me dê forças...\"",
-    "terco-da-batalha.how-to-pray-it.god-of-heaven-give-me-strength": "(God of heaven, give me strength...)",
-    "terco-da-batalha.how-to-pray-it.on-the-small-beads-pray": "On the small beads, pray:",
-    "terco-da-batalha.how-to-pray-it.cruz-sagrada-seja-a-minha-luz": "\"Cruz sagrada seja a minha luz.\"",
-    "terco-da-batalha.how-to-pray-it.holy-cross-be-my-light": "(Holy Cross, be my light.)",
-    "terco-da-batalha.how-to-pray-it.close-with": "Close with",
-    "terco-da-batalha.how-to-pray-it.eu-hei-de-vencer-esta-batalha": "\"Eu hei de vencer esta batalha...\"",
-    "terco-da-batalha.how-to-pray-it.i-shall-win-this-battle-three-times-ending-with-the-salve-ra": "(I shall win this battle...) three times, ending with the Salve Rainha (Hail Holy Queen).",
-    "terco-da-batalha.the-prayers.the-prayers": "The Prayers",
-    "terco-da-batalha.the-prayers.the-original-portuguese-first-as-it-was-shared-then-a-labele": "The original Portuguese first, as it was shared, then a labeled translation.",
-    "terco-da-batalha.the-prayers.on-the-large-beads": "On the Large Beads",
-    "terco-da-batalha.the-prayers.deus-do-c-u-me-d-for-as-jesus-cristo-me-d-o-poder-do-bem-nos": "Deus do céu, me dê forças. Jesus Cristo, me dê o poder do bem. Nossa Senhora, me dê coragem para esta luta eu vencer. Sem morrer, sem adoecer, sem muito me abater. Deus pode, Deus quer, esta batalha eu hei de vencer.",
-    "terco-da-batalha.the-prayers.translation": "Translation:",
-    "terco-da-batalha.the-prayers.god-of-heaven-give-me-strength-jesus-christ-give-me-the-powe": "God of heaven, give me strength. Jesus Christ, give me the power of good. Our Lady, give me courage to win this fight. Without dying, without falling ill, without being greatly cast down. God can, God wills it - this battle I shall win.",
-    "terco-da-batalha.the-prayers.on-the-small-beads": "On the Small Beads",
-    "terco-da-batalha.the-prayers.cruz-sagrada-seja-a-minha-luz": "Cruz sagrada seja a minha luz.",
-    "terco-da-batalha.the-prayers.holy-cross-be-my-light": "Holy Cross, be my light.",
-    "terco-da-batalha.the-prayers.the-closing-prayed-three-times": "The Closing, Prayed Three Times",
-    "terco-da-batalha.the-prayers.eu-hei-de-vencer-esta-batalha-em-nome-do-pai-em-nome-do-filh": "Eu hei de vencer esta batalha em nome do Pai, em nome do Filho e em nome do Espírito Santo. Amém.",
-    "terco-da-batalha.the-prayers.i-shall-win-this-battle-in-the-name-of-the-father-in-the-nam": "I shall win this battle in the name of the Father, in the name of the Son, and in the name of the Holy Spirit. Amen.",
-    "terco-da-batalha.the-prayers.the-ending": "The Ending",
-    "terco-da-batalha.the-prayers.the-devotion-ends-with-the-salve-rainha-the-hail-holy-queen": "The devotion ends with the Salve Rainha - the Hail Holy Queen, the traditional closing prayer of the Rosary. Pray it in its standard form; you will find it in our",
-    "terco-da-batalha.the-prayers.saint-charbel-prayers": "Saint Charbel prayers",
-    "terco-da-batalha.the-prayers.and-any-rosary-booklet": "and any Rosary booklet.",
-    "terco-da-batalha.where-it-comes-from.where-it-comes-from": "Where It Comes From",
-    "terco-da-batalha.where-it-comes-from.the-ter-o-da-batalha-was-shared-by": "The Terço da Batalha was shared by",
-    "terco-da-batalha.where-it-comes-from.adrines-k-lln-cat-lica-adrineskolln-on-instagram": "Adrines Kölln, Católica (@adrineskolln) on Instagram",
-    "terco-da-batalha.where-it-comes-from.and-we-link-her-original-rather-than-re-uploading-it-brazil": ", and we link her original rather than re-uploading it. Brazil's Catholic devotion has a long tradition of \"battle rosaries\" and prayer campaigns; this is its newest popular form.",
-    "terco-da-batalha.keep-praying.keep-praying": "Keep Praying",
-    "terco-da-batalha.keep-praying.a-battle-prayer-is-strongest-inside-the-ordinary-life-of-pra": "A battle prayer is strongest inside the ordinary life of prayer. The Rosary is the Church's own school for it.",
-    "terco-da-batalha.keep-praying.introduction-to-the-rosary": "Introduction to the Rosary",
-    "terco-da-batalha.keep-praying.how-to-pray-the-rosary": "How to Pray the Rosary",
-    "terco-da-batalha.keep-praying.the-nine-day-novena": "The Nine-Day Novena",
-    "terco-da-batalha.sources.sources": "Sources",
-    "terco-da-batalha.sources.adrines-k-lln-cat-lica-adrineskolln-instagram-reel-the-origi": "Adrines Kölln, Católica (@adrineskolln), Instagram reel - the original share of this devotion",
-    "terco-da-batalha.footer.ter-o-da-batalha-honestly-labeled-author-please-pray-for-the": "Terço da Batalha, honestly labeled. Author: Please pray for the person who made this website."
+    "terco.source-exact.0": "Terço da Batalha (The Rosary of Battle) | Portuguese Text & How to Pray",
+    "terco.source-exact.1": "The Terço da Batalha, a modern popular Brazilian devotion prayed on a standard rosary - not the official Dominican Rosary. Portuguese text with labeled translations, step-by-step guide, source credit, and an honest label.",
+    "terco.source-exact.2": "Terco da Batalha (The Rosary of Battle) | Portuguese Text & How to Pray",
+    "terco.source-exact.3": "The Terco da Batalha, a modern popular Brazilian devotion prayed on a standard rosary. Portuguese text with labeled translations, step-by-step guide, source credit, and an honest label.",
+    "terco.source-exact.4": "Terco da Batalha (The Rosary of Battle) | Portuguese Text & How to Pray",
+    "terco.source-exact.5": "The Terco da Batalha, a modern popular Brazilian devotion prayed on a standard rosary. Portuguese text with labeled translations, step-by-step guide, source credit, and an honest label.",
+    "terco.source-exact.6": "Skip to main content",
+    "terco.source-exact.7": "✦",
+    "terco.source-exact.8": "Saint Charbel",
+    "terco.source-exact.9": "Primary",
+    "terco.source-exact.10": "Home",
+    "terco.source-exact.11": "Legacy",
+    "terco.source-exact.12": "Saint Charbel Encyclopedia",
+    "terco.source-exact.13": "Full History",
+    "terco.source-exact.14": "Miracles",
+    "terco.source-exact.15": "Miracles & Reports",
+    "terco.source-exact.16": "Eucharistic Miracles",
+    "terco.source-exact.17": "Letters",
+    "terco.source-exact.18": "Voice Testimony",
+    "terco.source-exact.19": "Saints",
+    "terco.source-exact.20": "Saints",
+    "terco.source-exact.21": "Children's Books",
+    "terco.source-exact.22": "Prayer",
+    "terco.source-exact.23": "Prayer Library",
+    "terco.source-exact.24": "Find a Prayer by Intention",
+    "terco.source-exact.25": "Prayer for the Sick",
+    "terco.source-exact.26": "Prayer for Healing",
+    "terco.source-exact.27": "Prayer for Anxiety",
+    "terco.source-exact.28": "Prayer for Depression",
+    "terco.source-exact.29": "Prayer for Students",
+    "terco.source-exact.30": "Prayer for Addiction",
+    "terco.source-exact.31": "Prayer for Family",
+    "terco.source-exact.32": "Prayer for Pregnancy",
+    "terco.source-exact.33": "Prayer for a Miracle",
+    "terco.source-exact.34": "Saint Charbel Prayers",
+    "terco.source-exact.35": "Saint Charbel Novena",
+    "terco.source-exact.36": "Feast Day",
+    "terco.source-exact.37": "Rosary Guide",
+    "terco.source-exact.38": "Rosary Minibook",
+    "terco.source-exact.39": "Mystery Meditation",
+    "terco.source-exact.40": "Become Like Him",
+    "terco.source-exact.41": "Travel",
+    "terco.source-exact.42": "Travel",
+    "terco.source-exact.43": "Visiting Annaya",
+    "terco.source-exact.44": "Annaya Online Tour",
+    "terco.source-exact.45": "Bekaa Kafra",
+    "terco.source-exact.46": "Our Lady of Lebanon at Harissa",
+    "terco.source-exact.47": "the Cedars of God",
+    "terco.source-exact.48": "Bkerke and the Maronite Patriarchate",
+    "terco.source-exact.49": "Qadisha Valley",
+    "terco.source-exact.50": "Qannoubine Monastery",
+    "terco.source-exact.51": "Qozhaya Monastery",
+    "terco.source-exact.52": "Saint Charbel's Lebanon",
+    "terco.source-exact.53": "The Hermitage",
+    "terco.source-exact.54": "Saint Charbel Trail",
+    "terco.source-exact.55": "News",
+    "terco.source-exact.56": "Media",
+    "terco.source-exact.57": "Music",
+    "terco.source-exact.58": "Video",
+    "terco.source-exact.59": "Gallery",
+    "terco.source-exact.60": "Modern Brazilian Devotion",
+    "terco.source-exact.61": "Terço da Batalha (The Rosary of Battle)",
+    "terco.source-exact.62": "A modern popular Brazilian devotion for the struggles people actually face - illness, temptation, fear, the long fight for a family or a livelihood. It is prayed on a standard rosary, in plain Portuguese words that ask God for strength and courage, and it ends with the Salve Rainha, the Hail Holy Queen.",
+    "terco.source-exact.63": "A rosary resting in open hands",
+    "terco.source-exact.64": "The Terço da Batalha is prayed on an ordinary rosary - large beads, small beads, and the cross.",
+    "terco.source-exact.65": "Watch the source reel",
+    "terco.source-exact.66": "Powerful Secret Prayers",
+    "terco.source-exact.67": "Full Prayer Library",
+    "terco.source-exact.68": "What This Devotion Is - and What It Is Not",
+    "terco.source-exact.69": "The Terço da Batalha is a modern popular devotion from Brazil, shared by",
+    "terco.source-exact.70": "Adrines Kölln, Católica (@adrineskolln)",
+    "terco.source-exact.71": ". It is not the official Dominican Rosary, and it is not an official liturgical text of the Church. Popular devotions like this one are the people's way of praying their struggles - legitimate and loved, but they carry no promise of guaranteed results. God remains free; we remain askers.",
+    "terco.source-exact.72": "The Portuguese text below is the source of truth for this page. Every translation is labeled as a translation, and the wording follows the version shared in the source - older variants of this devotion use different lines, and we do not mix them in.",
+    "terco.source-exact.73": "How to Pray It",
+    "terco.source-exact.74": "You need only an ordinary rosary and the intention you are carrying.",
+    "terco.source-exact.75": "Hold the struggle in mind. Invite your guardian angel to pray with you.",
+    "terco.source-exact.76": "Pray the Sign of the Cross:",
+    "terco.source-exact.77": "Pelo sinal da Santa Cruz, livrai-nos, Deus nosso Senhor, dos nossos inimigos. Em nome do Pai, do Filho e do Espírito Santo. Amém.",
+    "terco.source-exact.78": "Then pray the Creed, one Our Father, and three Hail Marys (standard texts).",
+    "terco.source-exact.79": "On the large beads, pray:",
+    "terco.source-exact.80": "\"Deus do céu, me dê forças...\"",
+    "terco.source-exact.81": "(God of heaven, give me strength...)",
+    "terco.source-exact.82": "On the small beads, pray:",
+    "terco.source-exact.83": "\"Eu hei de vencer. Jesus Cristo me ama e me resgata com Seu poder!\"",
+    "terco.source-exact.84": "(I shall win. Jesus Christ loves me and rescues me with His power.) on each of the ten small beads.",
+    "terco.source-exact.85": "Close with",
+    "terco.source-exact.86": "\"Eu hei de vencer esta batalha...\"",
+    "terco.source-exact.87": "(I shall win this battle...) three times, ending with the Salve Rainha (Hail Holy Queen).",
+    "terco.source-exact.88": "The Prayers",
+    "terco.source-exact.89": "The original Portuguese first, as it was shared, then a labeled translation.",
+    "terco.source-exact.90": "On the Large Beads",
+    "terco.source-exact.91": "Deus do céu, me dê forças. Jesus Cristo, me dê o poder do bem. Nossa Senhora, me dê coragem para esta luta eu vencer. Sem morrer, sem adoecer, sem muito me abater. Deus pode, Deus quer, esta batalha eu hei de vencer.",
+    "terco.source-exact.92": "Translation:",
+    "terco.source-exact.93": "God of heaven, give me strength. Jesus Christ, give me courage to win this fight, without dying, without going mad, without being too beaten down. God can, God wants. This battle I shall win.",
+    "terco.source-exact.94": "On the Small Beads",
+    "terco.source-exact.95": "Eu hei de vencer. Jesus Cristo me ama e me resgata com Seu poder!",
+    "terco.source-exact.96": "Translation:",
+    "terco.source-exact.97": "I shall win. Jesus Christ loves me and rescues me with His power.",
+    "terco.source-exact.98": "The Closing, Prayed Three Times",
+    "terco.source-exact.99": "A vitória é nossa pelo sangue de Jesus! Amém.",
+    "terco.source-exact.100": "Translation:",
+    "terco.source-exact.101": "Victory is ours by the blood of Jesus!",
+    "terco.source-exact.102": "Where It Comes From",
+    "terco.source-exact.103": "The Terço da Batalha was shared by",
+    "terco.source-exact.104": "Adrines Kölln, Católica (@adrineskolln) on Instagram",
+    "terco.source-exact.105": ", and we link her original rather than re-uploading it. This page identifies the shared version without claiming an established history for this particular form.",
+    "terco.source-exact.106": "Keep Praying",
+    "terco.source-exact.107": "A battle prayer is strongest inside the ordinary life of prayer. The Rosary is the Church's own school for it.",
+    "terco.source-exact.108": "Introduction to the Rosary",
+    "terco.source-exact.109": "How to Pray the Rosary",
+    "terco.source-exact.110": "The Nine-Day Novena",
+    "terco.source-exact.111": "Sources",
+    "terco.source-exact.112": "Adrines Kölln, Católica (@adrineskolln), Instagram reel - the original share of this devotion",
+    "terco.source-exact.113": "Terço da Batalha, honestly labeled. Author: Please pray for the person who made this website."
   }
 }

@@ -1,47 +1,47 @@
 {
   "version": 1,
   "master": "lebanese-mountain-prayers.html",
-  "masterSha256": "176470c2781d3c9f967a8ae1607016156bd93be19c47fbd1e6d3655d017613ac",
-  "sourceRevision": "50d333e6",
+  "masterSha256": "2d0310df9452a54a1f237721c6dfe1ff1903773d9f0d426e0dd478cab4fb6020",
+  "sourceRevision": "Reconstructed from original archived sources and exact approved corrections; fresh review required",
   "bindings": [
     {
-      "key": "lebanese-mountain-prayers.metadata.title-daily-prayers-from-the-lebanese-mountains-akoura-tanno",
+      "key": "lebanese-mountain-prayers.metadata.twitter-title-daily-prayers-from-the-lebanese-mountains-akou",
       "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
       "source": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
       "kind": "text",
       "nodeIndex": 0
     },
     {
-      "key": "lebanese-mountain-prayers.metadata.description-traditional-lebanese-popular-prayers-from-the-mo",
-      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(11)",
-      "source": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
-      "kind": "attribute",
-      "attribute": "content"
-    },
-    {
-      "key": "lebanese-mountain-prayers.metadata.og-title-daily-prayers-from-the-lebanese-mountains-akoura-ta",
-      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(15)",
-      "source": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
-      "kind": "attribute",
-      "attribute": "content"
-    },
-    {
-      "key": "lebanese-mountain-prayers.metadata.og-description-traditional-lebanese-popular-prayers-from-the",
-      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(16)",
+      "key": "lebanese-mountain-prayers.metadata.twitter-description-traditional-lebanese-popular-prayers-fro",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(3)",
       "source": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
       "kind": "attribute",
       "attribute": "content"
     },
     {
       "key": "lebanese-mountain-prayers.metadata.twitter-title-daily-prayers-from-the-lebanese-mountains-akou",
-      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(20)",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(7)",
       "source": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
       "kind": "attribute",
       "attribute": "content"
     },
     {
       "key": "lebanese-mountain-prayers.metadata.twitter-description-traditional-lebanese-popular-prayers-fro",
-      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(21)",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+      "source": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "lebanese-mountain-prayers.metadata.twitter-title-daily-prayers-from-the-lebanese-mountains-akou",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(12)",
+      "source": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "lebanese-mountain-prayers.metadata.twitter-description-traditional-lebanese-popular-prayers-fro",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
       "source": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
       "kind": "attribute",
       "attribute": "content"
@@ -243,7 +243,7 @@
       "nodeIndex": 0
     },
     {
-      "key": "lebanese-mountain-prayers.header.saint-charbel-prayers",
+      "key": "lebanese-mountain-prayers.keep-praying.saint-charbel-prayers",
       "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
       "source": "Saint Charbel Prayers",
       "kind": "text",
@@ -588,7 +588,7 @@
     {
       "key": "lebanese-mountain-prayers.the-confirmed-lines.my-lord-and-my-god-i-stand-in-awe-of-you-blessed-is-the-one",
       "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(2)",
-      "source": "My Lord and my God, I stand in awe of You. Blessed is the one who fears You; let the one who does not fear You be afraid.",
+      "source": "My Lord and my God, I stand in awe of You. The one who fears You was afraid; the one who does not fear You was afraid. (Literal wording; the intended dialectal meaning needs review.)",
       "kind": "text",
       "nodeIndex": 1
     },
@@ -679,7 +679,7 @@
     {
       "key": "lebanese-mountain-prayers.where-they-come-from.naming-the-villages-of-akoura-tannourine-and-bsharri-the-mou",
       "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "source": ", naming the villages of Akoura, Tannourine, and Bsharri. The mountains of northern Lebanon - the Qadisha Valley, the Cedars, the hermitages - are the cradle of Maronite prayer, and the home villages of Saint Charbel's own family and neighbors.",
+      "source": ", naming the villages of Akoura, Tannourine, and Bsharri. The mountains of northern Lebanon - the Qadisha Valley, the Cedars, the hermitages - are the cradle of Maronite prayer, and the mountains that raised Saint Charbel.",
       "kind": "text",
       "nodeIndex": 2
     },
@@ -741,10 +741,6 @@
     }
   ],
   "messages": {
-    "lebanese-mountain-prayers.metadata.title-daily-prayers-from-the-lebanese-mountains-akoura-tanno": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
-    "lebanese-mountain-prayers.metadata.description-traditional-lebanese-popular-prayers-from-the-mo": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
-    "lebanese-mountain-prayers.metadata.og-title-daily-prayers-from-the-lebanese-mountains-akoura-ta": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
-    "lebanese-mountain-prayers.metadata.og-description-traditional-lebanese-popular-prayers-from-the": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
     "lebanese-mountain-prayers.metadata.twitter-title-daily-prayers-from-the-lebanese-mountains-akou": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
     "lebanese-mountain-prayers.metadata.twitter-description-traditional-lebanese-popular-prayers-fro": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
     "lebanese-mountain-prayers.body.skip-to-main-content": "Skip to main content",
@@ -774,7 +770,7 @@
     "lebanese-mountain-prayers.header.prayer-for-family": "Prayer for Family",
     "lebanese-mountain-prayers.header.prayer-for-pregnancy": "Prayer for Pregnancy",
     "lebanese-mountain-prayers.header.prayer-for-a-miracle": "Prayer for a Miracle",
-    "lebanese-mountain-prayers.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "lebanese-mountain-prayers.keep-praying.saint-charbel-prayers": "Saint Charbel Prayers",
     "lebanese-mountain-prayers.header.saint-charbel-novena": "Saint Charbel Novena",
     "lebanese-mountain-prayers.header.feast-day": "Feast Day",
     "lebanese-mountain-prayers.header.rosary-guide": "Rosary Guide",
@@ -821,7 +817,7 @@
     "lebanese-mountain-prayers.the-confirmed-lines.translation": "Translation:",
     "lebanese-mountain-prayers.the-confirmed-lines.we-sign-ourselves-with-the-cross-our-hand-upon-our-face": "We sign ourselves with the cross, our hand upon our face.",
     "lebanese-mountain-prayers.the-confirmed-lines.text-2": "ربي وإلهي، أنا خافك. خاف اللي خافك، خاف اللي ما بيخافك.",
-    "lebanese-mountain-prayers.the-confirmed-lines.my-lord-and-my-god-i-stand-in-awe-of-you-blessed-is-the-one": "My Lord and my God, I stand in awe of You. Blessed is the one who fears You; let the one who does not fear You be afraid.",
+    "lebanese-mountain-prayers.the-confirmed-lines.my-lord-and-my-god-i-stand-in-awe-of-you-blessed-is-the-one": "My Lord and my God, I stand in awe of You. The one who fears You was afraid; the one who does not fear You was afraid. (Literal wording; the intended dialectal meaning needs review.)",
     "lebanese-mountain-prayers.the-confirmed-lines.text-3": "السماء والأرض مملوءة من مجدك العظيم. التسبيح لك، القوة لك، العز لك، المجد لك.",
     "lebanese-mountain-prayers.the-confirmed-lines.heaven-and-earth-are-filled-with-your-great-glory-praise-is": "Heaven and earth are filled with Your great glory. Praise is Yours, power is Yours, honor is Yours, glory is Yours.",
     "lebanese-mountain-prayers.the-confirmed-lines.text-4": "المي بمجراها، والحيات بوكراها، وجميع الملائكة والقديسين على كراسيها.",
@@ -831,11 +827,10 @@
     "lebanese-mountain-prayers.where-they-come-from.where-they-come-from": "Where They Come From",
     "lebanese-mountain-prayers.where-they-come-from.anthony-el-hachem-shared-these-prayers": "Anthony El Hachem shared these prayers",
     "lebanese-mountain-prayers.where-they-come-from.in-a-facebook-reel": "in a Facebook reel",
-    "lebanese-mountain-prayers.where-they-come-from.naming-the-villages-of-akoura-tannourine-and-bsharri-the-mou": ", naming the villages of Akoura, Tannourine, and Bsharri. The mountains of northern Lebanon - the Qadisha Valley, the Cedars, the hermitages - are the cradle of Maronite prayer, and the home villages of Saint Charbel's own family and neighbors.",
+    "lebanese-mountain-prayers.where-they-come-from.naming-the-villages-of-akoura-tannourine-and-bsharri-the-mou": ", naming the villages of Akoura, Tannourine, and Bsharri. The mountains of northern Lebanon - the Qadisha Valley, the Cedars, the hermitages - are the cradle of Maronite prayer, and the mountains that raised Saint Charbel.",
     "lebanese-mountain-prayers.keep-praying.keep-praying": "Keep Praying",
     "lebanese-mountain-prayers.keep-praying.these-mountains-gave-the-church-saint-charbel-walk-further-i": "These mountains gave the Church Saint Charbel. Walk further into their prayer.",
     "lebanese-mountain-prayers.keep-praying.the-qadisha-valley": "The Qadisha Valley",
-    "lebanese-mountain-prayers.keep-praying.saint-charbel-prayers": "Saint Charbel Prayers",
     "lebanese-mountain-prayers.keep-praying.the-nine-day-novena": "The Nine-Day Novena",
     "lebanese-mountain-prayers.sources.sources": "Sources",
     "lebanese-mountain-prayers.sources.anthony-el-hachem-facebook-reel-the-original-share-of-these": "Anthony El Hachem, Facebook reel - the original share of these prayers",
