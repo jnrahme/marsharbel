@@ -156,3 +156,5 @@
 152	7	0	python3 -m unittest discover -s scripts/qa -p test_quotes_attribution.py
 153	7	0	python3 scripts/build_nader_context.py --check
 154	7	0	python3 -m unittest discover -s scripts/qa -p test_nader_context.py
+155	7	0	python3 scripts/build_saint_day_archive.py --check
+156	7	0	python3 -m unittest discover -s scripts/qa -p test_saint_archive_history.py

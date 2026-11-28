@@ -44,7 +44,9 @@
     "build:search-index": "node scripts/build-search-index.mjs",
     "test:search": "node --test scripts/tests/search_core.test.mjs scripts/tests/search_index.test.mjs && node scripts/build-search-index.mjs --check",
     "qa:citation": "python3 scripts/qa/check_citation_amendment.py",
-    "test:hidden-store": "python3 -m unittest discover -s scripts/qa -p test_hidden_store.py && node --test scripts/tests/shop_link.mjs"
+    "test:hidden-store": "python3 -m unittest discover -s scripts/qa -p test_hidden_store.py && node --test scripts/tests/shop_link.mjs",
+    "build:daily-saint": "python3 scripts/build_daily_saint.py",
+    "check:daily-saint": "python3 scripts/build_daily_saint.py --check"
   },
   "keywords": [],
   "author": "",
