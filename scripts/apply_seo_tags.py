@@ -31,6 +31,10 @@ NOINDEX = {
 }
 
 DESCRIPTIONS = {
+    'powerful-secret-prayers.html': "A small library of loved devotional prayers - a modern Marian prayer, traditional Lebanese mountain prayers, and Brazil's Rosary of Battle - each with its text, its source, and an honest label. No guarantees, no secret formulas.",
+    'mary-who-goes-ahead-prayer.html': 'A modern devotional prayer asking Mary to walk ahead of you into what you cannot solve - every closed door, every fear - ending with the traditional Hail Mary. Full text, source credit, and an honest label.',
+    'lebanese-mountain-prayers.html': 'Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.',
+    'terco-da-batalha.html': 'The Terço da Batalha, a modern popular Brazilian devotion prayed on a standard rosary - not the official Dominican Rosary. Portuguese text with labeled translations, step-by-step guide, source credit, and an honest label.',
     "sergius-bacchus-story.html": "Saints Sergius and Bacchus storybook for ages 6-12: nine illustrated pages about two Roman officers, a friendship, a hard choice, and the city that took a saint's name, with a family reflection.",
     "augustine-story.html": "Saint Augustine storybook for ages 6-12: ten illustrated pages about a boy from North Africa who searched for years, found God, and became the bishop of Hippo, with a family reflection.",
     "marina-story.html": "Saint Marina storybook for ages 6-12: ten illustrated pages from the Lebanese tradition of a girl who followed her father to a monastery, was blamed unfairly, and kept her faith, with a family reflection.",
