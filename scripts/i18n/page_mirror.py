@@ -203,7 +203,20 @@ def render_page(root,registry,lang,family,route,catalog=None):
         # embedded Latin names, mottoes and license codes within Arabic prose.
         for text in list(soup.main.find_all(string=True)):
             if isinstance(text, Comment) or text.parent.name in ('script','style'): continue
-            isolated = re.sub(r'[A-Za-z][A-Za-z0-9]*(?:[ .:/\-][A-Za-z0-9]+)*', lambda m: '\u2068' + m[0] + '\u2069', str(text))
+            # Finite creator credits include accented Latin letters, punctuation
+            # and handles. Keep each complete credit in one LTR isolate rather
+            # than letting the legacy ASCII word matcher split it apart.
+            credits = {
+                'terco-da-batalha-master': ('Adrines Kölln, Católica (@adrineskolln)',),
+                'mary-who-goes-ahead-prayer-master': ('Catholic Prayer (@catholicprayerofc)',),
+                'lebanese-mountain-prayers-master': ('Anthony El Hachem',),
+            }.get(family, ())
+            credit = next((c for c in credits if c in str(text)), None)
+            if credit:
+                before, after = str(text).split(credit, 1)
+                isolated = before + '\u2066' + credit + '\u2069' + after
+            else:
+                isolated = re.sub(r'[A-Za-z][A-Za-z0-9]*(?:[ .:/\-][A-Za-z0-9]+)*', lambda m: '\u2068' + m[0] + '\u2069', str(text))
             if isolated != str(text): text.replace_with(isolated)
     rendered=str(soup);master_text=raw.decode('utf-8')
     if family in ('saint-charbel-prayers-master','saint-charbel-novena-master'):
