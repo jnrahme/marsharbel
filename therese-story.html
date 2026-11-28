@@ -4,22 +4,10 @@
 <head>
 <meta charset="utf-8"/>
 <!-- Google tag (gtag.js) -->
-<script>
-  (function () {
-    if (location.hostname !== 'marsharbel.com' && location.hostname !== 'www.marsharbel.com') return;
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJX1M0VFKP';
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-CJX1M0VFKP');
-  })();
-</script>
+<script defer src="/analytics-init.js"></script>
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="ar_AR" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Saint Therese Story for Kids | Catholic Storybook</title>
   <meta name="description" content="Ten illustrated pages about Saint Therese of Lisieux, her family, her little way of love, and caring for others. Read or listen together." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -86,7 +74,7 @@
   }
 }
   </script>
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -130,15 +118,33 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <link as="font" crossorigin="" href="./media/fonts/cormorant-garamond-latin-v1.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="./media/fonts/manrope-latin-v1.woff2" rel="preload" type="font/woff2"/>
 <link href="styles.css?v=20260922-1" rel="stylesheet"/>
 <link href="storybook.css" rel="stylesheet"/>
 <link href="storybook-joy.css" rel="stylesheet"/>
+<link href="storybook-stage.css" rel="stylesheet"/>
 <!-- hreflang:begin -->
 <link href="https://marsharbel.com/therese-story" hreflang="x-default" rel="alternate"/>
 <link href="https://marsharbel.com/therese-story" hreflang="en" rel="alternate"/>
 <!-- hreflang:end -->
+<link id="sc-language-css" rel="stylesheet" href="/same-page-switcher.css" />
 </head>
 <body class="is-story-page" data-story="therese">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -151,9 +157,9 @@
 <nav class="links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-group">
-        <a class="nav-parent" href="./stories" aria-haspopup="true" aria-expanded="false">Story<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./saint-charbel-encyclopedia" aria-haspopup="true" aria-expanded="false">Legacy<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
-        <a href="./stories">Saint Storybooks</a>
+        <a href="./saint-charbel-encyclopedia">Saint Charbel Encyclopedia</a>
         <a href="./history">Full History</a>
         </div></div>
         <div class="nav-group">
@@ -161,11 +167,15 @@
         <div class="nav-sub">
         <a href="./miracles/">Miracles & Reports</a>
         <a href="./miracles/eucharistic/">Eucharistic Miracles</a>
-        <a href="./news">Latest News</a>
         <a href="./testimonies">Letters</a>
         <a href="./voice-testimony">Voice Testimony</a>
         </div></div>
+        <div class="nav-group">
+        <a class="nav-parent" href="./saints" aria-haspopup="true" aria-expanded="false">Saints<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
         <a href="./saints">Saints</a>
+        <a href="./stories">Children's Books</a>
+        </div></div>
         <div class="nav-group">
         <a class="nav-parent" href="./prayer-library" aria-haspopup="true" aria-expanded="false">Prayer<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
@@ -189,8 +199,9 @@
         <a href="./become-like-charbel">Become Like Him</a>
         </div></div>
         <div class="nav-group">
-        <a class="nav-parent" href="./visit-annaya" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
+        <a class="nav-parent" href="./travel" aria-haspopup="true" aria-expanded="false">Travel<span class="nav-chev" aria-hidden="true"></span></a>
         <div class="nav-sub">
+        <a href="./travel">Travel</a>
         <a href="./visit-annaya">Visiting Annaya</a>
         <a href="./annaya-tour">Annaya Online Tour</a>
         <a href="./bekaa-kafra">Bekaa Kafra</a>
@@ -204,7 +215,14 @@
         <a href="./saint-charbel-hermitage">The Hermitage</a>
         <a href="./saint-charbel-trail">Saint Charbel Trail</a>
         </div></div>
+        <a href="./news">News</a>
+        <div class="nav-group">
+        <a class="nav-parent" href="./music" aria-haspopup="true" aria-expanded="false">Media<span class="nav-chev" aria-hidden="true"></span></a>
+        <div class="nav-sub">
+        <a href="./music">Music</a>
+        <a href="./videos">Video</a>
         <a href="./gallery">Gallery</a>
+        </div></div>
         </nav>
 <div aria-hidden="true" class="lang-switcher-slot"></div>
 </div>
@@ -275,6 +293,13 @@
 <h2 id="family-bible-reading">Read the Bible and pray together</h2>
 <div class="card story"><p>With a trusted adult, read <a href="https://bible.usccb.org/bible/john/15">John 15:12</a>. Jesus asks his followers to love one another as he has loved them. Try a small act of care at home, such as helping with a chore or listening patiently.</p></div>
 </section>
+<section class="section saint-bio reveal" id="about-the-saint" aria-labelledby="saint-bio-title">
+<h2 id="saint-bio-title">About Saint Therese of Lisieux</h2>
+<div class="saint-bio-grid">
+<dl class="saint-facts"><div><dt>Lived</dt><dd>1873-1897</dd></div><div><dt>Place</dt><dd>Alencon and Lisieux, France</dd></div><div><dt>Status</dt><dd>Canonized May 17, 1925, by Pope Pius XI; Doctor of the Church (1997)</dd></div><div><dt>Feast</dt><dd>October 1</dd></div></dl>
+<div class="saint-bio-text"><p>Therese Martin was born in Alencon, France on January 2, 1873. Her mother died when she was four, and the family moved to Lisieux. At 14, on a pilgrimage to Rome, she asked Pope Leo XIII for permission to enter the Carmelite convent at fifteen. She entered the Carmel of Lisieux on April 9, 1888.</p><p>In Carmel she wrote that love is at the center of everything, and she called her path the &quot;little way&quot; of trust and everyday love. She wrote her life story at the request of her superiors. She died of tuberculosis on September 30, 1897, at 24, and her last words were &quot;My God, I love you!&quot; She was canonized in 1925, and Pope John Paul II named her a Doctor of the Church on October 19, 1997.</p><aside class='saint-key' aria-labelledby='saint-key-therese-story'><h3 id='saint-key-therese-story'>Key teaching</h3><p>Therese taught the little way: trust in God and love in small, everyday things. She wrote that love is at the center of everything.</p></aside><p class='saint-bio-sources'>Sources: <a href='https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19101997_stherese_en.html' target='_blank' rel='noopener'>Holy See: The Life of Saint Therese of Lisieux</a>.</p></div>
+</div>
+</section>
 <section class="section reveal">
 <h2>About this story</h2>
 <article class="card story"><p>Illustrations are original imaginative composites, not historical footage or records of private conversations. Pages nine and ten show modern families reflecting on Therese, not scenes from her life. Ordinary roses are a motif, not a promised miraculous sign.</p><p>Children should tell a trusted adult when hurting or ill, rest and receive medical care. Prayer does not replace treatment or guarantee a cure. Grief need not be hurried. Children are not asked to imitate illness or harmful sacrifice.</p><h3>Sources</h3><p><a href="https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19101997_stherese_en.html">Holy See: The Life of Saint Therese of Lisieux</a></p><p><a href="https://www.vatican.va/content/francesco/en/apost_exhortations/documents/20231015-santateresa-delbambinogesu.html">Pope Francis: C'est la confiance</a></p><p><a href="https://bible.usccb.org/bible/john/15">John 15:12</a></p></article>
@@ -294,9 +319,14 @@
 <script defer="" src="app.js"></script>
 <script defer="" src="therese-story-data.js"></script>
 <script defer="" src="storybook.js"></script>
+<script defer="" src="storybook-stage.js"></script>
 <script defer="" src="/locale-routes.js"></script>
 <script defer="" src="translate.js?v=20260922-1"></script>
 <script defer="" src="global-audio-player.js"></script>
 <script defer="" src="./nav.js?v=20260922-1"></script>
+<script defer src="/same-page-manifest.js"></script>
+<script defer src="/same-page-copy.js"></script>
+<script defer src="/same-page-resolver.js"></script>
+<script defer src="/same-page-switcher.js"></script>
 </body>
 </html>

@@ -33,14 +33,55 @@ class SecurityHeaderTests(unittest.TestCase):
         self.assertNotIn("'unsafe-inline'", report.split('script-src ')[1].split(';')[0])
         self.assertNotIn('YOUR_PROJECT', report)
 
-    def test_hsts_no_premature_subdomain_commitment(self):
-        self.assertEqual(self.header('Strict-Transport-Security'), 'max-age=86400')
+    def test_hsts_one_year_without_subdomain_commitment(self):
+        self.assertEqual(self.header('Strict-Transport-Security'), 'max-age=31536000')
         self.assertIn('"expr=%{HTTPS} == \'on\'"', self.config)
 
     def test_private_pages(self):
-        self.assertIn('(?:account|submit-testimony|testimony-review)', self.config)
+        self.assertIn('(?:account|submit-testimony|testimony-review|feedback|feedback-review|daily-prayer|daily-prayer-admin|daily-prayer-result)', self.config)
         self.assertIn('Header always set Cache-Control "no-store, max-age=0"', self.config)
         self.assertIn('Header always set X-Robots-Tag "noindex, nofollow, noarchive"', self.config)
+
+    def files_block(self, name):
+        match = re.search(r'<Files "' + re.escape(name) + r'">(.*?)</Files>', self.config, re.S)
+        self.assertIsNotNone(match, name)
+        return match.group(1)
+
+    def test_moderation_page_headers_pinned(self):
+        # Union-merge lesson (2026-10-08): these directives are security-relevant and must
+        # never be silently loosened by a merge; pin them exactly.
+        for page in ('testimony-review.html', 'feedback-review.html', 'daily-prayer-admin.html'):
+            block = self.files_block(page)
+            self.assertIn('Header always set X-Robots-Tag "noindex, nofollow, noarchive"', block, page)
+            self.assertIn('Header always set Referrer-Policy "no-referrer"', block, page)
+        result = self.files_block('daily-prayer-result.html')
+        self.assertIn('Header always set X-Robots-Tag "noindex, follow"', result)
+        self.assertIn('Header always set Referrer-Policy "no-referrer"', result)
+
+    def test_prayer_public_page_has_no_admin_entry_link(self):
+        from bs4 import BeautifulSoup
+        for name in ('daily-prayer.html', 'src/pages/daily-prayer.html'):
+            soup = BeautifulSoup((ROOT / name).read_text(), 'html.parser')
+            self.assertFalse(any('daily-prayer-admin' in a.get('href', '')
+                                 for a in soup.select('a[href]')), name)
+
+    def test_prayer_admin_reads_require_server_moderator_guard(self):
+        files = ('202610080001_daily_prayer_subscription.sql',
+                 '202610080002_prayer_admin.sql')
+        sql = '\n'.join((ROOT / 'supabase/migrations' / name).read_text() for name in files)
+        reads = ('prayer_subscriber_stats', 'prayer_subscriber_list',
+                 'prayer_admin_controls', 'prayer_admin_issues',
+                 'prayer_admin_send_log', 'prayer_admin_audit_list')
+        for name in reads:
+            block = re.search(r'create or replace function public\.' + name +
+                              r'\([^$]*\$\$(.*?)\$\$;', sql, re.S)
+            self.assertIsNotNone(block, name)
+            self.assertIn('perform public.testimony_require_moderator();', block[1], name)
+            self.assertLess(block[1].index('testimony_require_moderator'),
+                            block[1].find('select'), name)
+        guard = (ROOT / 'supabase/migrations/202609220001_protected_testimonies.sql').read_text()
+        self.assertIn("auth.jwt()->'app_metadata'->>'role','')='moderator'", guard)
+        self.assertIn("auth.jwt()->>'aal','')='aal2'", guard)
 
     def test_supabase_cdn_integrity(self):
         for filename in ('account.html', 'submit-testimony.html', 'testimonies.html', 'testimony-review.html'):

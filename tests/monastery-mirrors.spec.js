@@ -21,7 +21,7 @@ for (const name of Object.keys(catalogs)) {
       const sibling = name === 'qannoubine' ? 'qozhaya' : 'qannoubine';
       const localizedPrefix = code === 'ar' ? '/ar' : '';
       for (const destination of [`${localizedPrefix}/qadisha-valley`, `${localizedPrefix}/${sibling}-monastery`]) {
-        await expect(page.locator(`header .nav-sub a[href="${destination}"]`)).toHaveCount(1);
+        await expect(page.locator(`header .nav-sub a[href="${code==='en'?'.'+destination:destination}"]`)).toHaveCount(1);
       }
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://marsharbel.com${route}`);
       for (const language of ['en', 'ar', 'x-default']) {
@@ -49,12 +49,30 @@ for (const name of Object.keys(catalogs)) {
       expect(errors).toEqual([]);
     });
   }
-  test(`${slug} switches between English and Arabic while preserving route`, async ({page}) => {
-    await page.goto(`/${slug}?lang=en`);
-    await page.locator('#sc-language-select').selectOption('ar');
-    await expect(page).toHaveURL(new RegExp(`/ar/${slug}$`));
-    await expect(page.locator('h1')).toHaveText(catalogs[name]['hero.heading1']);
-    await page.locator('#sc-language-select').selectOption('en');
-    await expect(page).toHaveURL(new RegExp(`/${slug}$`));
+  test(`${slug} offers English source and refuses unverified non-family switches`, async ({page}) => {
+    const refused=['fr','es','pt','it','pl','th','zh-Hans','hi'];
+    await page.goto(`/${slug}`);
+    await expect(page.locator('#sc-language-select option[value="ar"]')).toBeEnabled();
+    for(const lang of refused) await expect(page.locator(`#sc-language-select option[value="${lang}"]`)).toBeDisabled();
+    for(const lang of refused) expect(await page.evaluate(l=>SC_LANGUAGE_SWITCH.request(l),lang)).toBe(false);
+    expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('ar'))).toBe(true);
+    await expect(page).toHaveURL(new RegExp('/ar/'+slug+'$'));
+    await expect(page.locator('html')).toHaveAttribute('lang','ar');
+    await page.goto(`/ar/${slug}`);
+    await expect(page.locator('#sc-language-select option[value="en"]')).toBeEnabled();
+    for(const lang of ['de','ru']) await expect(page.locator(`#sc-language-select option[value="${lang}"]`)).toBeEnabled();
+    for(const lang of refused) await expect(page.locator(`#sc-language-select option[value="${lang}"]`)).toBeDisabled();
+    for(const lang of refused) expect(await page.evaluate(l=>SC_LANGUAGE_SWITCH.request(l),lang)).toBe(false);
+    expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('de'))).toBe(true);
+    await expect(page).toHaveURL(new RegExp('/de/'+slug+'$'));
+    await expect(page.locator('html')).toHaveAttribute('lang','de');
+    await page.goto(`/ar/${slug}`);
+    expect(await page.evaluate(()=>SC_LANGUAGE_SWITCH.request('ru'))).toBe(true);
+    await expect(page).toHaveURL(new RegExp('/ru/'+slug+'$'));
+    await expect(page.locator('html')).toHaveAttribute('lang','ru');
+    await page.goto(`/ar/${slug}`);
+    await page.selectOption('#sc-language-select','en');
+    await expect(page).toHaveURL(new RegExp('/'+slug+'$'));
+    await expect(page.locator('html')).toHaveAttribute('lang','en');
   });
 }

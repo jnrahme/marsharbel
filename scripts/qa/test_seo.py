@@ -29,6 +29,76 @@ class SeoRegressionTests(unittest.TestCase):
             if not target.exists() and path.name != ".git":
                 target.symlink_to(path, target_is_directory=path.is_dir())
 
+    def test_secret_prayer_sitemap_registration_is_scoped_and_idempotent(self):
+        from unittest.mock import patch
+        spec = importlib.util.spec_from_file_location('secret_sitemap', ROOT / 'scripts/register-secret-prayer-sitemap.py')
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        original = (self.root / 'sitemap.xml').read_text()
+        for slug in ('powerful-secret-prayers', 'mary-who-goes-ahead-prayer', 'lebanese-mountain-prayers', 'terco-da-batalha'):
+            original = re.sub(r'\s*<url>\s*<loc>https://marsharbel.com/' + slug + r'</loc>.*?</url>', '', original, flags=re.S)
+        (self.root / 'sitemap.xml').write_text(original)
+        with patch.object(module, 'last_changed', return_value='2026-11-27'):
+            first = module.outputs(self.root)
+            self.assertEqual(first.count('<url>'), original.count('<url>') + 4)
+            for slug in ('powerful-secret-prayers', 'mary-who-goes-ahead-prayer', 'lebanese-mountain-prayers', 'terco-da-batalha'):
+                self.assertEqual(first.count('<loc>https://marsharbel.com/' + slug + '</loc>'), 1)
+            self.assertNotIn('<loc>https://marsharbel.com/feedback-review</loc>', first)
+            (self.root / 'sitemap.xml').write_text(first)
+            self.assertEqual(module.outputs(self.root), first)
+
+    def test_current_vatican_charbel_citation_links(self):
+        old_slug = '2303-july-24-saint-charbel-makhlouf.html'
+        current = ('https://vaticanstate.va/en/component/content/article/'
+                   'july-24-saint-charbel-makhlouf.html?Itemid=216&catid=51')
+        from bs4 import BeautifulSoup
+        changed = []
+        for path in public_html_files(ROOT):
+            soup = BeautifulSoup(path.read_text(), 'html.parser')
+            hrefs = [a.get('href', '') for a in soup.select('a[href]')]
+            self.assertFalse(any(old_slug in href for href in hrefs), str(path))
+            if current in hrefs:
+                changed.append(path)
+        self.assertGreaterEqual(len(changed), 14)
+
+    def test_misplaced_rosary_aliases_redirect_before_html_cleanup(self):
+        config = (ROOT / '.htaccess').read_text()
+        rule = next(line for line in config.splitlines()
+                    if line.startswith('RewriteRule ^(?:mysteries|miracles'))
+        _, pattern, target, flags = rule.split()
+        self.assertEqual(target, '/rosary-visual-guide')
+        self.assertEqual(flags, '[R=301,L]')
+        self.assertLess(config.index(rule), config.index('# Redirect direct ".html"'))
+        for folder in ('mysteries', 'miracles', 'miracles/eucharistic'):
+            for suffix in ('', '/', '.html', '.html/'):
+                with self.subTest(folder=folder, suffix=suffix):
+                    self.assertIsNotNone(re.fullmatch(pattern, folder + '/rosary-visual-guide' + suffix))
+        for path in ('rosary-visual-guide', 'miracles/other', 'miracles/eucharistic/lanciano',
+                     'unknown/rosary-visual-guide', 'miracles/rosary-visual-guide-extra'):
+            self.assertIsNone(re.fullmatch(pattern, path), path)
+        # No query replacement: Apache preserves the incoming lang parameter.
+        self.assertNotIn('?', target)
+        self.assertNotIn('QSD', flags)
+        self.assertTrue((ROOT / 'rosary-visual-guide.html').is_file())
+
+    def test_bare_prayers_alias_redirects_to_full_prayer_collection(self):
+        config = (ROOT / '.htaccess').read_text()
+        rule = next(line for line in config.splitlines()
+                    if line.startswith('RewriteRule ^prayers(?:'))
+        _, pattern, target, flags = rule.split()
+        self.assertEqual(target, '/saint-charbel-prayers')
+        self.assertEqual(flags, '[R=301,L]')
+        self.assertLess(config.index(rule), config.index('# Redirect direct ".html"'))
+        for path in ('prayers', 'prayers/', 'prayers.html', 'prayers.html/'):
+            self.assertIsNotNone(re.fullmatch(pattern, path), path)
+        for path in ('en/prayers', 'prayers-extra', 'ar/prayers', 'saint-charbel-prayers'):
+            self.assertIsNone(re.fullmatch(pattern, path), path)
+        self.assertTrue((ROOT / 'saint-charbel-prayers.html').is_file())
+        self.assertTrue((ROOT / 'en/prayers.html').is_file())
+        self.assertNotIn('?', target)
+        self.assertNotIn('QSD', flags)
+        self.assertFalse((ROOT / 'prayers.html').exists())
+
     def test_generated_faq_survives_a_second_generator_pass(self):
         path = self.root / "story.html"
         original_root = generator.ROOT

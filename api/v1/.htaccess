@@ -1,0 +1,28 @@
+# Books content API: read-only static JSON for the website and mobile apps.
+# Generated into api/v1/.htaccess by scripts/books/build-api.mjs. Scoped to this
+# directory only; the site root .htaccess is untouched.
+<IfModule mod_headers.c>
+  # Public, read-only: any origin may GET. No credentials are accepted here.
+  # When a subscriber tier is added, gated paths move behind an authenticated
+  # resolver and this wildcard is narrowed for them only.
+  Header always set Access-Control-Allow-Origin "*"
+  Header always set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+  Header always set Access-Control-Max-Age "86400"
+  Header always set X-Content-Type-Options "nosniff"
+  # The manifest is the one file clients poll: revalidate every time (ETag makes it a 304).
+  <FilesMatch "^manifest\.json$">
+    Header set Cache-Control "public, no-cache"
+  </FilesMatch>
+  # Everything else is addressed by hash in the manifest; keep it short-lived and revalidated.
+  <FilesMatch "^(?!manifest\.json$).*\.json$">
+    Header set Cache-Control "public, max-age=300, must-revalidate"
+  </FilesMatch>
+</IfModule>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_METHOD} OPTIONS
+  RewriteRule ^ - [R=204,L]
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive Off
+</IfModule>

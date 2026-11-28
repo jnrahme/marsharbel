@@ -1,0 +1,74 @@
+name: Post-merge regeneration
+
+# Squash merges can leave committed generated files stale: a PR builds them
+# against its own branch history, then lands as one new commit on stage.
+# After every stage push, regenerate the deterministic derived files and, if
+# they drifted, open one reusable auto-merge PR with the corrected bytes.
+#
+# Termination: each generator is a pure function of committed content, so the
+# run after a regen merge finds no drift and opens nothing.
+
+on:
+  push:
+    branches:
+      - stage
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: post-merge-regen
+  cancel-in-progress: false
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout stage with full history
+        uses: actions/checkout@v4
+        with:
+          ref: stage
+          fetch-depth: 0
+
+      - name: Install Python dependencies (pip)
+        # build_feeds.py imports bs4 (scripts/qa/requirements.txt); the QA jobs
+        # install the same file, so versions stay pinned identically.
+        run: python3 -m pip install -r scripts/qa/requirements.txt
+
+      - name: Regenerate derived files
+        run: |
+          python3 scripts/sitemap_lastmod.py
+          python3 scripts/build_feeds.py
+          python3 scripts/build-media-sitemaps.py
+
+      - name: Publish drift as an auto-merge PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- sitemap.xml feed.xml sitemap-images.xml sitemap-video.xml; then
+            echo "Generated files already current; nothing to do."
+            exit 0
+          fi
+
+          BRANCH="bot/post-merge-regen"
+          git config user.name "marsharbel-bot"
+          git config user.email "bot@marsharbel.com"
+          git checkout -B "$BRANCH"
+          git add sitemap.xml feed.xml sitemap-images.xml sitemap-video.xml
+          git commit -m "Regenerate derived files after stage push ${GITHUB_SHA:0:7}"
+          git push --force origin "$BRANCH"
+
+          OPEN=$(gh pr list --base stage --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$OPEN" ]; then
+            echo "Regen PR #$OPEN already open; branch updated."
+          else
+            gh pr create \
+              --base stage \
+              --head "$BRANCH" \
+              --title "Regenerate derived files after merge" \
+              --body "Automated post-merge regeneration of sitemap.xml, feed.xml and media sitemaps. One reusable PR; its branch is force-updated on each drift."
+          fi
+
+          gh pr merge --auto --squash "$BRANCH" || echo "Auto-merge unavailable; leaving PR open for review."

@@ -1,0 +1,850 @@
+{
+  "version": 1,
+  "master": "lebanese-mountain-prayers.html",
+  "masterSha256": "2dbf62ce5d97e00997eea410b3f38327bc2dcf50c649037447acb8060b3482ee",
+  "sourceRevision": "Reconstructed from original archived sources and exact approved corrections; fresh review required",
+  "bindings": [
+    {
+      "key": "lebanese-mountain-prayers.metadata.title-daily-prayers-from-the-lebanese-mountains-akoura-tanno",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "source": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.metadata.description-traditional-lebanese-popular-prayers-from-the-mo",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(3)",
+      "source": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "lebanese-mountain-prayers.metadata.og-title-daily-prayers-from-the-lebanese-mountains-akoura-ta",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(7)",
+      "source": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "lebanese-mountain-prayers.metadata.og-description-traditional-lebanese-popular-prayers-from-the",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(8)",
+      "source": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "lebanese-mountain-prayers.metadata.twitter-title-daily-prayers-from-the-lebanese-mountains-akou",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(12)",
+      "source": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "lebanese-mountain-prayers.metadata.twitter-description-traditional-lebanese-popular-prayers-fro",
+      "selector": "html:nth-of-type(1) > head:nth-of-type(1) > meta:nth-of-type(13)",
+      "source": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
+      "kind": "attribute",
+      "attribute": "content"
+    },
+    {
+      "key": "lebanese-mountain-prayers.body.skip-to-main-content",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Skip to main content",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.text",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "✦",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.saint-charbel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(2)",
+      "source": "Saint Charbel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.accessibility.primary",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1)",
+      "source": "Primary",
+      "kind": "attribute",
+      "attribute": "aria-label"
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.home",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Home",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.legacy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Legacy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.saint-charbel-encyclopedia",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saint Charbel Encyclopedia",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.full-history",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Full History",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+      "source": "Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.miracles-reports",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Miracles & Reports",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.eucharistic-miracles",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Eucharistic Miracles",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.letters",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Letters",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.voice-testimony",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Voice Testimony",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.saints",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.saints-occurrence-2",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Saints",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.children-s-books",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Children's Books",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.prayer",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > a:nth-of-type(1)",
+      "source": "Prayer",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.prayer-library",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.find-a-prayer-by-intention",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Find a Prayer by Intention",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.prayer-for-the-sick",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Prayer for the Sick",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.prayer-for-healing",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Prayer for Healing",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.prayer-for-anxiety",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Prayer for Anxiety",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.prayer-for-depression",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "Prayer for Depression",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.prayer-for-students",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Prayer for Students",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.prayer-for-addiction",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Prayer for Addiction",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.prayer-for-family",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Prayer for Family",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.prayer-for-pregnancy",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Prayer for Pregnancy",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.prayer-for-a-miracle",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Prayer for a Miracle",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.saint-charbel-prayers",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.saint-charbel-novena",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.feast-day",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(14)",
+      "source": "Feast Day",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.rosary-guide",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(15)",
+      "source": "Rosary Guide",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.rosary-minibook",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(16)",
+      "source": "Rosary Minibook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.mystery-meditation",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(17)",
+      "source": "Mystery Meditation",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.become-like-him",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > a:nth-of-type(18)",
+      "source": "Become Like Him",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.travel",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.travel-occurrence-2",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Travel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.visiting-annaya",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Visiting Annaya",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.annaya-online-tour",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Annaya Online Tour",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.bekaa-kafra",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "source": "Bekaa Kafra",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.our-lady-of-lebanon-at-harissa",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "source": "Our Lady of Lebanon at Harissa",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.the-cedars-of-god",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(6)",
+      "source": "the Cedars of God",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.bkerke-and-the-maronite-patriarchate",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(7)",
+      "source": "Bkerke and the Maronite Patriarchate",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.qadisha-valley",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(8)",
+      "source": "Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.qannoubine-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(9)",
+      "source": "Qannoubine Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.qozhaya-monastery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(10)",
+      "source": "Qozhaya Monastery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.saint-charbel-s-lebanon",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(11)",
+      "source": "Saint Charbel's Lebanon",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.the-hermitage",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(12)",
+      "source": "The Hermitage",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.saint-charbel-trail",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > a:nth-of-type(13)",
+      "source": "Saint Charbel Trail",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.news",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "News",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.media",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > a:nth-of-type(1)",
+      "source": "Media",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.music",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Music",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.video",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Video",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.header.gallery",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Gallery",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.body.traditional-lebanese-devotion",
+      "selector": "#main-content > section:nth-of-type(1) > span:nth-of-type(1)",
+      "source": "Traditional Lebanese Devotion",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.daily-prayers-from-the-l.daily-prayers-from-the-lebanese-mountains",
+      "selector": "#main-content > section:nth-of-type(1) > h1:nth-of-type(1)",
+      "source": "Daily Prayers from the Lebanese Mountains",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.daily-prayers-from-the-l.from-the-mountain-villages-of-akoura-tannourine-and-bsharri",
+      "selector": "#main-content > section:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "From the mountain villages of Akoura, Tannourine, and Bsharri - the Lebanon that raised Saint Charbel - come popular prayers that families have said for generations: at dawn, before work, over the house and the fields. They are the people's prayer, in the people's Arabic.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.accessibility.the-qadisha-valley-in-the-mountains-of-northern-lebanon-home",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > img:nth-of-type(1)",
+      "source": "The Qadisha Valley in the mountains of northern Lebanon, home of hermits and monasteries",
+      "kind": "attribute",
+      "attribute": "alt"
+    },
+    {
+      "key": "lebanese-mountain-prayers.daily-prayers-from-the-l.the-qadisha-valley-in-the-same-northern-mountains-as-akoura",
+      "selector": "#main-content > section:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+      "source": "The Qadisha Valley, in the same northern mountains as Akoura, Tannourine, and Bsharri - the landscape these prayers come from.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.daily-prayers-from-the-l.watch-the-source-reel",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Watch the source reel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.daily-prayers-from-the-l.powerful-secret-prayers",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Powerful Secret Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.daily-prayers-from-the-l.full-prayer-library",
+      "selector": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "Full Prayer Library",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.what-these-prayers-are-a.what-these-prayers-are-and-what-they-are-not",
+      "selector": "#main-content > section:nth-of-type(2) > h2:nth-of-type(1)",
+      "source": "What These Prayers Are - and What They Are Not",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.what-these-prayers-are-a.these-are-traditional-lebanese-popular-prayers-oral-devotion",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "These are traditional Lebanese popular prayers - oral devotion passed down in mountain families, not official liturgical texts of the Church. They were shared by",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.what-these-prayers-are-a.anthony-el-hachem-on-facebook",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Anthony El Hachem on Facebook",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.what-these-prayers-are-a.and-we-link-his-original-rather-than-re-uploading-it",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", and we link his original rather than re-uploading it.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "lebanese-mountain-prayers.what-these-prayers-are-a.like-every-popular-devotion-they-are-a-way-people-ask-with-t",
+      "selector": "#main-content > section:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "Like every popular devotion, they are a way people ask - with trust, in their own dialect. They carry no promise of guaranteed results, and they sit alongside the Church's prayer, never in its place.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.an-excerpt-honestly-mark.an-excerpt-honestly-marked",
+      "selector": "#main-content > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "source": "An Excerpt, Honestly Marked",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.an-excerpt-honestly-mark.excerpt-full-text-coming",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "source": "Excerpt - full text coming.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.an-excerpt-honestly-mark.only-the-confirmed-lines-are-published-below-a-few-lines-of",
+      "selector": "#main-content > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Only the confirmed lines are published below. A few lines of the source recording are still being transcribed and checked, and we do not guess at missing words. When the full text is verified, this page will be completed and this note removed.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.the-confirmed-lines",
+      "selector": "#main-content > section:nth-of-type(4) > h2:nth-of-type(1)",
+      "source": "The Confirmed Lines",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.the-original-mountain-arabic-first-then-a-labeled-translatio",
+      "selector": "#main-content > section:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "The original mountain Arabic first, then a labeled translation. The translations are working translations of a living dialect, offered so every reader can follow the prayer's meaning.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.text",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "منصلّب إيدنا على وجهنا",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.translation",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "Translation:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.we-sign-ourselves-with-the-cross-our-hand-upon-our-face",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(1) > p:nth-of-type(2)",
+      "source": "We sign ourselves with the cross, our hand upon our face.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.text-2",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(1)",
+      "source": "ربي وإلهي، أنا خافك. خاف اللي خافك، خاف اللي ما بيخافك.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.translation-occurrence-2",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "Translation:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.my-lord-and-my-god-i-stand-in-awe-of-you-blessed-is-the-one",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(2) > p:nth-of-type(2)",
+      "source": "My Lord and my God, I stand in awe of You. The one who fears You was afraid; the one who does not fear You was afraid. (Literal wording; the intended dialectal meaning needs review.)",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.text-3",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(1)",
+      "source": "السماء والأرض مملوءة من مجدك العظيم. التسبيح لك، القوة لك، العز لك، المجد لك.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.translation-occurrence-3",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "Translation:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.heaven-and-earth-are-filled-with-your-great-glory-praise-is",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(3) > p:nth-of-type(2)",
+      "source": "Heaven and earth are filled with Your great glory. Praise is Yours, power is Yours, honor is Yours, glory is Yours.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.text-4",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(1)",
+      "source": "المي بمجراها، والحيات بوكراها، وجميع الملائكة والقديسين على كراسيها.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.translation-occurrence-4",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "Translation:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.the-water-runs-in-its-course-the-serpents-rest-in-their-dens",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(4) > p:nth-of-type(2)",
+      "source": "The water runs in its course, the serpents rest in their dens, and all the angels and saints are at their thrones.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.text-5",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(1)",
+      "source": "قومي يا نفسي، يا خاطية، يا شقيّة، يا تايهة، يا رديّة، يا كسلانة، سبّحي ربّك ومجّديه.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.translation-occurrence-5",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(2) > em:nth-of-type(1)",
+      "source": "Translation:",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.the-confirmed-lines.rise-o-my-soul-sinful-wretched-lost-straying-lazy-soul-prais",
+      "selector": "#main-content > section:nth-of-type(4) > div:nth-of-type(1) > article:nth-of-type(5) > p:nth-of-type(2)",
+      "source": "Rise, O my soul - sinful, wretched, lost, straying, lazy soul - praise your Lord and glorify Him.",
+      "kind": "text",
+      "nodeIndex": 1
+    },
+    {
+      "key": "lebanese-mountain-prayers.where-they-come-from.where-they-come-from",
+      "selector": "#main-content > section:nth-of-type(5) > h2:nth-of-type(1)",
+      "source": "Where They Come From",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.where-they-come-from.anthony-el-hachem-shared-these-prayers",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": "Anthony El Hachem shared these prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.where-they-come-from.in-a-facebook-reel",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "in a Facebook reel",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.where-they-come-from.naming-the-villages-of-akoura-tannourine-and-bsharri-the-mou",
+      "selector": "#main-content > section:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "source": ", naming the villages of Akoura, Tannourine, and Bsharri. The mountains of northern Lebanon - the Qadisha Valley, the Cedars, the hermitages - are the cradle of Maronite prayer, and the mountains that raised Saint Charbel.",
+      "kind": "text",
+      "nodeIndex": 2
+    },
+    {
+      "key": "lebanese-mountain-prayers.keep-praying.keep-praying",
+      "selector": "#main-content > section:nth-of-type(6) > h2:nth-of-type(1)",
+      "source": "Keep Praying",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.keep-praying.these-mountains-gave-the-church-saint-charbel-walk-further-i",
+      "selector": "#main-content > section:nth-of-type(6) > p:nth-of-type(1)",
+      "source": "These mountains gave the Church Saint Charbel. Walk further into their prayer.",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.keep-praying.the-qadisha-valley",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "The Qadisha Valley",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.keep-praying.saint-charbel-prayers",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "source": "Saint Charbel Prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.keep-praying.the-nine-day-novena",
+      "selector": "#main-content > section:nth-of-type(6) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "source": "The Nine-Day Novena",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.sources.sources",
+      "selector": "#main-content > section:nth-of-type(7) > h2:nth-of-type(1)",
+      "source": "Sources",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.sources.anthony-el-hachem-facebook-reel-the-original-share-of-these",
+      "selector": "#main-content > section:nth-of-type(7) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "source": "Anthony El Hachem, Facebook reel - the original share of these prayers",
+      "kind": "text",
+      "nodeIndex": 0
+    },
+    {
+      "key": "lebanese-mountain-prayers.footer.lebanese-mountain-prayers-excerpt-honestly-marked-author-ple",
+      "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1)",
+      "source": "Lebanese mountain prayers, excerpt honestly marked. Author: Please pray for the person who made this website.",
+      "kind": "text",
+      "nodeIndex": 0
+    }
+  ],
+  "messages": {
+    "lebanese-mountain-prayers.metadata.title-daily-prayers-from-the-lebanese-mountains-akoura-tanno": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
+    "lebanese-mountain-prayers.metadata.description-traditional-lebanese-popular-prayers-from-the-mo": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
+    "lebanese-mountain-prayers.metadata.og-title-daily-prayers-from-the-lebanese-mountains-akoura-ta": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
+    "lebanese-mountain-prayers.metadata.og-description-traditional-lebanese-popular-prayers-from-the": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
+    "lebanese-mountain-prayers.metadata.twitter-title-daily-prayers-from-the-lebanese-mountains-akou": "Daily Prayers from the Lebanese Mountains (Akoura, Tannourine, Bsharri) | Excerpt",
+    "lebanese-mountain-prayers.metadata.twitter-description-traditional-lebanese-popular-prayers-fro": "Traditional Lebanese popular prayers from the mountain villages of Akoura, Tannourine, and Bsharri - confirmed lines in the original Arabic with labeled translations. Excerpt; full text coming.",
+    "lebanese-mountain-prayers.body.skip-to-main-content": "Skip to main content",
+    "lebanese-mountain-prayers.header.text": "✦",
+    "lebanese-mountain-prayers.header.saint-charbel": "Saint Charbel",
+    "lebanese-mountain-prayers.accessibility.primary": "Primary",
+    "lebanese-mountain-prayers.header.home": "Home",
+    "lebanese-mountain-prayers.header.legacy": "Legacy",
+    "lebanese-mountain-prayers.header.saint-charbel-encyclopedia": "Saint Charbel Encyclopedia",
+    "lebanese-mountain-prayers.header.full-history": "Full History",
+    "lebanese-mountain-prayers.header.miracles": "Miracles",
+    "lebanese-mountain-prayers.header.miracles-reports": "Miracles & Reports",
+    "lebanese-mountain-prayers.header.eucharistic-miracles": "Eucharistic Miracles",
+    "lebanese-mountain-prayers.header.letters": "Letters",
+    "lebanese-mountain-prayers.header.voice-testimony": "Voice Testimony",
+    "lebanese-mountain-prayers.header.saints": "Saints",
+    "lebanese-mountain-prayers.header.children-s-books": "Children's Books",
+    "lebanese-mountain-prayers.header.prayer": "Prayer",
+    "lebanese-mountain-prayers.header.prayer-library": "Prayer Library",
+    "lebanese-mountain-prayers.header.find-a-prayer-by-intention": "Find a Prayer by Intention",
+    "lebanese-mountain-prayers.header.prayer-for-the-sick": "Prayer for the Sick",
+    "lebanese-mountain-prayers.header.prayer-for-healing": "Prayer for Healing",
+    "lebanese-mountain-prayers.header.prayer-for-anxiety": "Prayer for Anxiety",
+    "lebanese-mountain-prayers.header.prayer-for-depression": "Prayer for Depression",
+    "lebanese-mountain-prayers.header.prayer-for-students": "Prayer for Students",
+    "lebanese-mountain-prayers.header.prayer-for-addiction": "Prayer for Addiction",
+    "lebanese-mountain-prayers.header.prayer-for-family": "Prayer for Family",
+    "lebanese-mountain-prayers.header.prayer-for-pregnancy": "Prayer for Pregnancy",
+    "lebanese-mountain-prayers.header.prayer-for-a-miracle": "Prayer for a Miracle",
+    "lebanese-mountain-prayers.header.saint-charbel-prayers": "Saint Charbel Prayers",
+    "lebanese-mountain-prayers.header.saint-charbel-novena": "Saint Charbel Novena",
+    "lebanese-mountain-prayers.header.feast-day": "Feast Day",
+    "lebanese-mountain-prayers.header.rosary-guide": "Rosary Guide",
+    "lebanese-mountain-prayers.header.rosary-minibook": "Rosary Minibook",
+    "lebanese-mountain-prayers.header.mystery-meditation": "Mystery Meditation",
+    "lebanese-mountain-prayers.header.become-like-him": "Become Like Him",
+    "lebanese-mountain-prayers.header.travel": "Travel",
+    "lebanese-mountain-prayers.header.visiting-annaya": "Visiting Annaya",
+    "lebanese-mountain-prayers.header.annaya-online-tour": "Annaya Online Tour",
+    "lebanese-mountain-prayers.header.bekaa-kafra": "Bekaa Kafra",
+    "lebanese-mountain-prayers.header.our-lady-of-lebanon-at-harissa": "Our Lady of Lebanon at Harissa",
+    "lebanese-mountain-prayers.header.the-cedars-of-god": "the Cedars of God",
+    "lebanese-mountain-prayers.header.bkerke-and-the-maronite-patriarchate": "Bkerke and the Maronite Patriarchate",
+    "lebanese-mountain-prayers.header.qadisha-valley": "Qadisha Valley",
+    "lebanese-mountain-prayers.header.qannoubine-monastery": "Qannoubine Monastery",
+    "lebanese-mountain-prayers.header.qozhaya-monastery": "Qozhaya Monastery",
+    "lebanese-mountain-prayers.header.saint-charbel-s-lebanon": "Saint Charbel's Lebanon",
+    "lebanese-mountain-prayers.header.the-hermitage": "The Hermitage",
+    "lebanese-mountain-prayers.header.saint-charbel-trail": "Saint Charbel Trail",
+    "lebanese-mountain-prayers.header.news": "News",
+    "lebanese-mountain-prayers.header.media": "Media",
+    "lebanese-mountain-prayers.header.music": "Music",
+    "lebanese-mountain-prayers.header.video": "Video",
+    "lebanese-mountain-prayers.header.gallery": "Gallery",
+    "lebanese-mountain-prayers.body.traditional-lebanese-devotion": "Traditional Lebanese Devotion",
+    "lebanese-mountain-prayers.daily-prayers-from-the-l.daily-prayers-from-the-lebanese-mountains": "Daily Prayers from the Lebanese Mountains",
+    "lebanese-mountain-prayers.daily-prayers-from-the-l.from-the-mountain-villages-of-akoura-tannourine-and-bsharri": "From the mountain villages of Akoura, Tannourine, and Bsharri - the Lebanon that raised Saint Charbel - come popular prayers that families have said for generations: at dawn, before work, over the house and the fields. They are the people's prayer, in the people's Arabic.",
+    "lebanese-mountain-prayers.accessibility.the-qadisha-valley-in-the-mountains-of-northern-lebanon-home": "The Qadisha Valley in the mountains of northern Lebanon, home of hermits and monasteries",
+    "lebanese-mountain-prayers.daily-prayers-from-the-l.the-qadisha-valley-in-the-same-northern-mountains-as-akoura": "The Qadisha Valley, in the same northern mountains as Akoura, Tannourine, and Bsharri - the landscape these prayers come from.",
+    "lebanese-mountain-prayers.daily-prayers-from-the-l.watch-the-source-reel": "Watch the source reel",
+    "lebanese-mountain-prayers.daily-prayers-from-the-l.powerful-secret-prayers": "Powerful Secret Prayers",
+    "lebanese-mountain-prayers.daily-prayers-from-the-l.full-prayer-library": "Full Prayer Library",
+    "lebanese-mountain-prayers.what-these-prayers-are-a.what-these-prayers-are-and-what-they-are-not": "What These Prayers Are - and What They Are Not",
+    "lebanese-mountain-prayers.what-these-prayers-are-a.these-are-traditional-lebanese-popular-prayers-oral-devotion": "These are traditional Lebanese popular prayers - oral devotion passed down in mountain families, not official liturgical texts of the Church. They were shared by",
+    "lebanese-mountain-prayers.what-these-prayers-are-a.anthony-el-hachem-on-facebook": "Anthony El Hachem on Facebook",
+    "lebanese-mountain-prayers.what-these-prayers-are-a.and-we-link-his-original-rather-than-re-uploading-it": ", and we link his original rather than re-uploading it.",
+    "lebanese-mountain-prayers.what-these-prayers-are-a.like-every-popular-devotion-they-are-a-way-people-ask-with-t": "Like every popular devotion, they are a way people ask - with trust, in their own dialect. They carry no promise of guaranteed results, and they sit alongside the Church's prayer, never in its place.",
+    "lebanese-mountain-prayers.an-excerpt-honestly-mark.an-excerpt-honestly-marked": "An Excerpt, Honestly Marked",
+    "lebanese-mountain-prayers.an-excerpt-honestly-mark.excerpt-full-text-coming": "Excerpt - full text coming.",
+    "lebanese-mountain-prayers.an-excerpt-honestly-mark.only-the-confirmed-lines-are-published-below-a-few-lines-of": "Only the confirmed lines are published below. A few lines of the source recording are still being transcribed and checked, and we do not guess at missing words. When the full text is verified, this page will be completed and this note removed.",
+    "lebanese-mountain-prayers.the-confirmed-lines.the-confirmed-lines": "The Confirmed Lines",
+    "lebanese-mountain-prayers.the-confirmed-lines.the-original-mountain-arabic-first-then-a-labeled-translatio": "The original mountain Arabic first, then a labeled translation. The translations are working translations of a living dialect, offered so every reader can follow the prayer's meaning.",
+    "lebanese-mountain-prayers.the-confirmed-lines.text": "منصلّب إيدنا على وجهنا",
+    "lebanese-mountain-prayers.the-confirmed-lines.translation": "Translation:",
+    "lebanese-mountain-prayers.the-confirmed-lines.we-sign-ourselves-with-the-cross-our-hand-upon-our-face": "We sign ourselves with the cross, our hand upon our face.",
+    "lebanese-mountain-prayers.the-confirmed-lines.text-2": "ربي وإلهي، أنا خافك. خاف اللي خافك، خاف اللي ما بيخافك.",
+    "lebanese-mountain-prayers.the-confirmed-lines.my-lord-and-my-god-i-stand-in-awe-of-you-blessed-is-the-one": "My Lord and my God, I stand in awe of You. The one who fears You was afraid; the one who does not fear You was afraid. (Literal wording; the intended dialectal meaning needs review.)",
+    "lebanese-mountain-prayers.the-confirmed-lines.text-3": "السماء والأرض مملوءة من مجدك العظيم. التسبيح لك، القوة لك، العز لك، المجد لك.",
+    "lebanese-mountain-prayers.the-confirmed-lines.heaven-and-earth-are-filled-with-your-great-glory-praise-is": "Heaven and earth are filled with Your great glory. Praise is Yours, power is Yours, honor is Yours, glory is Yours.",
+    "lebanese-mountain-prayers.the-confirmed-lines.text-4": "المي بمجراها، والحيات بوكراها، وجميع الملائكة والقديسين على كراسيها.",
+    "lebanese-mountain-prayers.the-confirmed-lines.the-water-runs-in-its-course-the-serpents-rest-in-their-dens": "The water runs in its course, the serpents rest in their dens, and all the angels and saints are at their thrones.",
+    "lebanese-mountain-prayers.the-confirmed-lines.text-5": "قومي يا نفسي، يا خاطية، يا شقيّة، يا تايهة، يا رديّة، يا كسلانة، سبّحي ربّك ومجّديه.",
+    "lebanese-mountain-prayers.the-confirmed-lines.rise-o-my-soul-sinful-wretched-lost-straying-lazy-soul-prais": "Rise, O my soul - sinful, wretched, lost, straying, lazy soul - praise your Lord and glorify Him.",
+    "lebanese-mountain-prayers.where-they-come-from.where-they-come-from": "Where They Come From",
+    "lebanese-mountain-prayers.where-they-come-from.anthony-el-hachem-shared-these-prayers": "Anthony El Hachem shared these prayers",
+    "lebanese-mountain-prayers.where-they-come-from.in-a-facebook-reel": "in a Facebook reel",
+    "lebanese-mountain-prayers.where-they-come-from.naming-the-villages-of-akoura-tannourine-and-bsharri-the-mou": ", naming the villages of Akoura, Tannourine, and Bsharri. The mountains of northern Lebanon - the Qadisha Valley, the Cedars, the hermitages - are the cradle of Maronite prayer, and the mountains that raised Saint Charbel.",
+    "lebanese-mountain-prayers.keep-praying.keep-praying": "Keep Praying",
+    "lebanese-mountain-prayers.keep-praying.these-mountains-gave-the-church-saint-charbel-walk-further-i": "These mountains gave the Church Saint Charbel. Walk further into their prayer.",
+    "lebanese-mountain-prayers.keep-praying.the-qadisha-valley": "The Qadisha Valley",
+    "lebanese-mountain-prayers.keep-praying.saint-charbel-prayers": "Saint Charbel Prayers",
+    "lebanese-mountain-prayers.keep-praying.the-nine-day-novena": "The Nine-Day Novena",
+    "lebanese-mountain-prayers.sources.sources": "Sources",
+    "lebanese-mountain-prayers.sources.anthony-el-hachem-facebook-reel-the-original-share-of-these": "Anthony El Hachem, Facebook reel - the original share of these prayers",
+    "lebanese-mountain-prayers.footer.lebanese-mountain-prayers-excerpt-honestly-marked-author-ple": "Lebanese mountain prayers, excerpt honestly marked. Author: Please pray for the person who made this website.",
+    "lebanese-mountain-prayers.header.saints-occurrence-2": "Saints",
+    "lebanese-mountain-prayers.header.travel-occurrence-2": "Travel",
+    "lebanese-mountain-prayers.the-confirmed-lines.translation-occurrence-2": "Translation:",
+    "lebanese-mountain-prayers.the-confirmed-lines.translation-occurrence-3": "Translation:",
+    "lebanese-mountain-prayers.the-confirmed-lines.translation-occurrence-4": "Translation:",
+    "lebanese-mountain-prayers.the-confirmed-lines.translation-occurrence-5": "Translation:"
+  }
+}

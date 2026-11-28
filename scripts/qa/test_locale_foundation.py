@@ -17,38 +17,42 @@ class FoundationTests(unittest.TestCase):
     def setUp(self):
         self.registry = copy.deepcopy(read_json(ROOT/'locales/registry.json'))
 
-    def test_alias_identity_without_publication(self):
+    def test_alias_identity_without_home_publication(self):
         self.assertNotIn('zh-cn', selector_aliases(self.registry))
-        cfg = copy.deepcopy(self.registry['locales']['de'])
-        cfg.update(home='/zh-Hans/', nativeName='简体中文', slugs={}, ogLocale='zh_CN', selectorAliases=['zh-cn'])
-        self.registry['locales']['zh-Hans'] = cfg
-        self.registry['ogLocaleOrder'].append('zh-Hans')
-        validate_registry(self.registry)
-        self.assertEqual(selector_aliases(self.registry)['zh-cn'], 'zh-Hans')
         self.assertEqual(selector_aliases(self.registry)['zh-hans'], 'zh-Hans')
+        self.assertEqual(self.registry['locales']['zh-Hans']['home'],'/zh-Hans/')
         self.assertNotIn('zh-Hans', topic_locales(self.registry, 'prayers'))
         self.assertNotIn('zh-Hans', published_locales(self.registry, 'eucharistic'))
         self.assertEqual(og_locales(self.registry)['zh-Hans'], 'zh_CN')
 
-    def test_incomplete_locale_does_not_force_or_advertise_clusters(self):
-        registry, catalogs = load_catalog(ROOT)
-        registry = copy.deepcopy(registry)
-        cfg = copy.deepcopy(registry['locales']['de'])
-        cfg.update(home='/zh-Hans/', nativeName='简体中文', slugs={}, ogLocale='zh_CN', selectorAliases=['zh-cn'])
-        registry['locales']['zh-Hans'] = cfg
-        registry['ogLocaleOrder'].append('zh-Hans')
-        catalogs = {**catalogs, 'zh-Hans': {'common': catalogs['en']['common'], 'pages': {}}}
-        spec = importlib.util.spec_from_file_location('foundation_builder', ROOT/'scripts/build-international.py')
-        builder = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(builder)
-        with patch.object(builder, 'load_catalog', return_value=(registry, catalogs)):
-            outputs = builder.outputs(ROOT)
-        self.assertIn(ROOT/'zh-Hans/index.html', outputs)
-        self.assertFalse(any('zh-Hans/miracles/eucharistic' in str(path) for path in outputs))
-        self.assertNotIn('/zh-Hans/miracles/eucharistic', outputs[ROOT/'sitemap.xml'])
-        self.assertIn('"zh-cn":"zh-Hans"', outputs[ROOT/'locale-routes.js'])
-        # A generic homepage can be built only by explicit registry admission;
-        # the production registry does NOT contain this synthetic locale.
+    def test_explicit_chinese_home_preserves_bounded_publication(self):
+        from i18n.catalog import published_home_locales, home_url
+        self.assertIn('zh-Hans', published_home_locales(self.registry))
+        self.assertEqual(home_url(self.registry, 'zh-Hans'), '/zh-Hans/')
+        home = BeautifulSoup((ROOT/'zh-Hans/index.html').read_text(), 'html.parser')
+        self.assertEqual(home.html['lang'], 'zh-Hans')
+        self.assertEqual(home.select_one('link[rel=canonical]')['href'], 'https://marsharbel.com/zh-Hans/')
+        self.assertNotIn('/zh-Hans/miracles/eucharistic', (ROOT/'sitemap.xml').read_text())
+        self.assertNotIn('/zh-Hans/travel.html [END]', (ROOT/'.htaccess').read_text())
+        page = BeautifulSoup((ROOT/'zh-Hans/travel.html').read_text(), 'html.parser')
+        self.assertEqual(page.select_one('link[rel=canonical]')['href'], 'https://marsharbel.com/zh-Hans/travel')
+        self.assertNotIn('noindex', page.select_one('meta[name=robots]')['content'])
+        prayers = home.select_one('nav.home-hero-quick a[href="/prayer-library"]')
+        self.assertIn('（英语）', prayers.get_text())
+        self.assertEqual(prayers.get('hreflang'), 'en')
+        saint = home.select_one('nav.home-hero-quick a[href="/zh-Hans/saint-of-the-day"]')
+        self.assertNotIn('英语', saint.get_text())
+        self.assertIsNone(saint.get('hreflang'))
+
+    def test_missing_runtime_catalog_fails_closed(self):
+        import shutil, tempfile
+        from i18n.catalog import load_catalog as real_load_catalog
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_root = Path(tmp)
+            shutil.copytree(ROOT / 'locales', tmp_root / 'locales')
+            (tmp_root / 'locales/pl/runtime.json').unlink()
+            with self.assertRaisesRegex(ValueError, 'pl: missing runtime catalog'):
+                real_load_catalog(tmp_root)
 
     def test_duplicate_alias_rejected(self):
         self.registry['locales']['de']['selectorAliases'] = ['EN']
@@ -73,7 +77,7 @@ class FoundationTests(unittest.TestCase):
 
     def test_topics_cannot_silently_expand(self):
         del self.registry['topics']['biography']['locales']
-        with self.assertRaisesRegex(ValueError, 'explicit publication'):
+        with self.assertRaisesRegex(ValueError, 'explicit publication|topic capability differs from publication'):
             validate_registry(self.registry)
 
     def test_partial_eucharistic_not_advertised(self):

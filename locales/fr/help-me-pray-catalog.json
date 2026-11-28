@@ -1,0 +1,276 @@
+{
+ "schema": 2,
+ "locale": "fr",
+ "direction": "ltr",
+ "publicationContract": {
+  "missingLocaleOrKey": "fail-build",
+  "englishFallback": false,
+  "pendingPrayerTextInBrowserData": false,
+  "privateReviewNoticeInBrowserData": false
+ },
+ "page": {
+  "title": "Aidez-moi à prier",
+  "intro": "Choisissez ce que vous portez aujourd'hui. Trouvez un petit pas vers la prière, avec des sources et des limites claires.",
+  "needsHeading": "Qu'est-ce qui vous amène ici ?",
+  "boundaryHeading": "La prière et l'aide dont vous avez besoin",
+  "boundaryCopy": "Ce guide propose des conseils de dévotion, pas un sacrement, un diagnostic ou une promesse de guérison. Pour la confession ou un accompagnement spirituel personnel, parlez à un prêtre. Poursuivez les soins médicaux et, en cas de crise, cherchez une aide locale urgente.",
+  "privacyCopy": "Vous n'avez pas besoin de saisir votre nom, votre intention de prière ou des données personnelles pour utiliser ce guide.",
+  "pendingNotice": "Les cartes marquées En cours de relecture ne sont pas prêtes à être utilisées. Leur texte de prière et l'action Commencer sont indisponibles."
+ },
+ "needs": {
+  "restart": "Commencer ou reprendre la prière",
+  "family": "Famille",
+  "illness": "Maladie",
+  "gratitude": "Gratitude",
+  "discouragement": "Découragement dans la prière",
+  "maronite": "Comprendre la prière maronite"
+ },
+ "ui": {
+  "inReview": "En cours de relecture",
+  "practicalAnswer": "Un petit pas",
+  "why": "Pourquoi cela peut aider",
+  "source": "Source",
+  "practiceType": "Pratique",
+  "boundary": "À garder à l'esprit",
+  "backToNeeds": "Retour aux besoins",
+  "noResults": "Aucune carte ne correspond à ce choix.",
+  "notReady": "Cette carte attend une relecture. Le texte de prière et l'action Commencer sont indisponibles.",
+  "begin": "Commencer",
+  "close": "Fermer",
+  "readMore": "Lire la source"
+ },
+ "cards": {
+  "illness-01": {
+   "need": "illness",
+   "copy": {
+    "question": "Je prie pour une personne malade. Par où commencer ?",
+    "practicalAnswer": "Présentez cette personne à Dieu et demandez force, paix et guérison.\nPriez lentement la Prière pour les malades, en complément des soins dont elle a besoin.\nLa prière ne garantit aucun résultat.",
+    "why": "PARAPHRASE (explication éditoriale) : La prière chrétienne nous appelle à rester avec Dieu dans la difficulté ; elle ne permet pas de contrôler le résultat. CEC 2734.",
+    "source.publisher": "Saint-Siège / Catéchisme de l'Église catholique",
+    "source.section": "CEC 2734",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin. La prière ne remplace pas les soins médicaux.",
+    "prayerTarget.heading": "Prière pour les malades",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "illness-02": {
+   "need": "illness",
+   "copy": {
+    "question": "Prier par l'intercession de saint Charbel garantit-il la guérison ?",
+    "practicalAnswer": "Non. Demandez l'intercession de saint Charbel et confiez la personne à Dieu sans promettre une guérison.\nLa prière ne garantit aucun résultat.\nEn cas de maladie grave, demandez à un prêtre des renseignements sur l'Onction des malades et poursuivez les soins médicaux.",
+    "why": "PARAPHRASE : Le CEC 1532 évoque le rétablissement de la santé par l'Onction des malades seulement si cela sert le salut de la personne. Ce guide propose une dévotion privée, pas ce sacrement, et ne promet pas la guérison.",
+    "source.publisher": "Saint-Siège / Catéchisme de l'Église catholique",
+    "source.section": "CEC 1532, effets de l'Onction des malades",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin. Ce guide ne pose aucun diagnostic et n'administre aucun sacrement.",
+    "prayerTarget.heading": "Prière pour les malades",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/in_brief.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-01": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "Je n'ai pas prié depuis longtemps. Comment reprendre ?",
+    "practicalAnswer": "Commencez par un Notre Père, lentement, sans chercher à rattraper chaque jour manqué.\nChoisissez un court moment régulier pour revenir demain ; présentez à Dieu vos préoccupations réelles.",
+    "why": "PARAPHRASE (explication éditoriale) : Des moments fixes aident la prière à faire partie de la vie. Ce petit premier pas est un conseil pratique, pas une règle prescrite par l'Église. CEC 2697.",
+    "source.publisher": "Saint-Siège / Catéchisme de l'Église catholique",
+    "source.section": "CEC 2697",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin. Pour la confession ou un accompagnement spirituel personnel, adressez-vous à un prêtre.",
+    "prayerTarget.heading": "Notre Père",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-01": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "Ma prière semble sans réponse. Dieu m'a-t-il ignoré ?",
+    "practicalAnswer": "Dites honnêtement à Dieu que l'attente est difficile ; vous n'avez pas à cacher votre déception.\nContinuez à lui présenter votre besoin sans faire du résultat demandé un test de son amour.\nCe guide ne peut expliquer pourquoi une perte ou un retard particulier est survenu.",
+    "why": "PARAPHRASE (explication éditoriale) : Le Catéchisme présente la demande sans réponse comme une véritable difficulté, pas comme une raison de faire honte à la personne qui prie. CEC 2734-2741, notamment 2739.",
+    "source.publisher": "Saint-Siège / Catéchisme de l'Église catholique",
+    "source.section": "CEC 2739, dans CEC 2734-2741",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin. Ce guide ne propose aucune prophétie, aucune explication des desseins cachés de Dieu et aucune promesse de résultat.",
+    "prayerTarget.heading": "Prière générale d'intercession",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-02": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "Dois-je cesser de prier si rien ne change ?",
+    "practicalAnswer": "Essayez une courte prière à laquelle vous pouvez revenir, même dans le découragement.\nDemandez de l'aide pour rester proche du Christ et parlez de votre difficulté à un prêtre si vous avez besoin d'un accompagnement personnel.",
+    "why": "PARAPHRASE (explication éditoriale) : La persévérance commence par la grâce et notre réponse ; la difficulté ne prouve pas que votre prière a échoué. CEC 2725, à lire avec 2734-2741.",
+    "source.publisher": "Saint-Siège / Catéchisme de l'Église catholique",
+    "source.section": "CEC 2725",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin. La prière ne remplace pas les soins dans une crise de santé mentale.",
+    "prayerTarget.heading": "Dans la souffrance",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-01": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "Comment les maronites prient-ils chaque jour ?",
+    "practicalAnswer": "Vous pouvez commencer un rythme quotidien par un Notre Père le matin ou le soir.\nPour l'Office divin maronite, demandez à votre paroisse quel Ordo éparchial s'applique.\nLa prière de dévotion proposée ici est un point de départ, pas un remplacement de l'Office.",
+    "why": "PARAPHRASE : L'Éparchie Saint-Maron de Brooklyn publie l'Ordo de l'Office divin pour 2025-2026. Le livre joint précise son usage dans l'Éparchie Notre-Dame du Liban de Los Angeles selon le rite syriaque maronite. Demandez à votre paroisse comment utiliser l'Office ; ce guide ne choisit pas les textes du jour.",
+    "source.publisher": "Éparchie Saint-Maron de Brooklyn",
+    "source.section": "Cir. 25.117, Ordo de l'Office 2025-2026 ; pages 1-2 de l'Ordo joint",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin. Il ne s'agit pas de l'Office du jour. L'Ordo 2025-2026 est une ressource datée, pas une édition la plus récente vérifiée. Demandez à votre paroisse quel Ordo éparchial s'applique.",
+    "prayerTarget.heading": "Notre Père",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [
+    "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+    "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her"
+   ],
+   "beginEnabled": false
+  },
+  "family-01": {
+   "need": "family",
+   "copy": {
+    "question": "Comment notre famille peut-elle commencer à prier ensemble ?",
+    "practicalAnswer": "Choisissez un moment calme et invitez votre famille à une courte prière commune.\nCommencez par la Prière pour les familles ; laissez chacun nommer un besoin, sans pression.",
+    "why": "PARAPHRASE (explication éditoriale) : La famille peut être un lieu où la prière s'apprend patiemment. Une courte prière commune est un point de départ pratique, pas une forme obligatoire. CEC 2685.",
+    "source.publisher": "Saint-Siège / Catéchisme de l'Église catholique",
+    "source.section": "CEC 2685",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin.",
+    "prayerTarget.heading": "Prière pour les familles",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "family-02": {
+   "need": "family",
+   "copy": {
+    "question": "Puis-je prier pour ma famille si elle ne prie pas avec moi ?",
+    "practicalAnswer": "Oui. Présentez votre famille à Dieu même si vous priez seul.\nDemandez l'intercession de saint Charbel et laissez votre prière soutenir des gestes patients et aimants plutôt qu'une pression sur les autres.",
+    "why": "PARAPHRASE (explication éditoriale) : L'Église enseigne que nous pouvons demander l'intercession des saints pour nous-mêmes et pour autrui. Cela ne promet aucune issue familiale particulière. CEC 2683.",
+    "source.publisher": "Saint-Siège / Catéchisme de l'Église catholique",
+    "source.section": "CEC 2683",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin. La prière ne vous oblige pas à rester dans une situation dangereuse et n'excuse pas le mal fait.",
+    "prayerTarget.heading": "Prière pour les familles",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "gratitude-01": {
+   "need": "gratitude",
+   "copy": {
+    "question": "Comment remercier Dieu pour quelque chose de bon ?",
+    "practicalAnswer": "Nommez le don reçu et remerciez Dieu avec vos propres mots.\nPuis priez lentement le Gloire au Père, en laissant votre gratitude devenir louange.",
+    "why": "PARAPHRASE (explication éditoriale) : L'action de grâce peut faire entrer les événements quotidiens dans la prière. CEC 2638.",
+    "source.publisher": "Saint-Siège / Catéchisme de l'Église catholique",
+    "source.section": "CEC 2638",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin.",
+    "prayerTarget.heading": "Gloire au Père",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_one/article_3/iv_prayer_of_thanksgiving.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-02": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "Et si je ne sais pas quoi dire ?",
+    "practicalAnswer": "Vous pouvez commencer par le Notre Père plutôt que chercher des mots impressionnants.\nLisez-le lentement ; faites une pause quand une demande exprime ce que vous portez.",
+    "why": "PARAPHRASE : Jésus décourage une prière fondée sur l'accumulation de paroles et enseigne que le Père connaît déjà nos besoins. Matthieu 6:7-8.",
+    "source.publisher": "Conférence des évêques catholiques des États-Unis (NABRE)",
+    "source.section": "Matthieu 6:7-8 (NABRE consultée ; paraphrase originale uniquement)",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin.",
+    "prayerTarget.heading": "Notre Père",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/matthew/6",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-02": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "Une prière à saint Charbel est-elle la même chose que la Divine Liturgie ?",
+    "practicalAnswer": "Explication éditoriale : ce guide propose les prières du site à saint Charbel pour la dévotion privée, pas comme des textes liturgiques maronites approuvés.\nLa Divine Liturgie est le culte eucharistique de l'Église ; priez maintenant le Gloire au Père et utilisez le guide de l'éparchie pour découvrir le culte avec votre paroisse.",
+    "why": "PARAPHRASE : L'éparchie décrit la prière eucharistique comme adressée au Père, au Fils et au Saint-Esprit. Cela étaye la présentation de la Divine Liturgie, pas le statut des prières de ce site. L'étiquette de dévotion est une classification éditoriale de ce guide, pas une certification éparchiale. Guide de la Divine Liturgie maronite, Service de l'Eucharistie - L'Anaphore.",
+    "source.publisher": "Éparchie Saint-Maron de Brooklyn",
+    "source.section": "Guide de la Divine Liturgie maronite, Service de l'Eucharistie - L'Anaphore",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin. Les questions sur la confession ou la participation aux sacrements doivent être adressées à un prêtre.",
+    "prayerTarget.heading": "Gloire au Père",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://www.stmaron.org/liturgy-guide",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false,
+   "sourceAuthor": "Chorbishop Seely Beggiani"
+  },
+  "gratitude-02": {
+   "need": "gratitude",
+   "copy": {
+    "question": "Puis-je rendre grâce quand la vie est difficile ?",
+    "practicalAnswer": "Oui, mais vous n'avez pas à faire semblant que la douleur est bonne ni à la cacher à Dieu.\nNommez un don que vous pouvez sincèrement accueillir aujourd'hui, puis présentez-lui aussi votre souffrance.",
+    "why": "PARAPHRASE : Paul invite les croyants à remercier Dieu en toute situation dans leur vie en Christ. Ce conseil ne demande à personne de louer le mal subi. 1 Thessaloniciens 5:18.",
+    "source.publisher": "Conférence des évêques catholiques des États-Unis (NABRE)",
+    "source.section": "1 Thessaloniciens 5:18 (NABRE consultée ; paraphrase originale uniquement)",
+    "source.label": "PARAPHRASE",
+    "practiceType": "Prière de dévotion",
+    "boundaryNote": "Pour la confession, un besoin médical ou une crise, parlez à un prêtre ou à un médecin. La gratitude ne signifie pas accepter les abus, refuser un traitement ou éviter de demander de l'aide.",
+    "prayerTarget.heading": "Gloire au Père",
+    "prayerTarget.type": "Prière de dévotion"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/1thessalonians/5",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  }
+ }
+}

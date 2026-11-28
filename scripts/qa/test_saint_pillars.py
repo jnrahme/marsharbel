@@ -20,3 +20,5 @@ class PillarTests(unittest.TestCase):
   for file in('massabki-brothers.html','abouna-yaacoub.html'):
    self.assertNotIn(file,baseline)
    self.assertEqual(dict(extract_html((ROOT/file).read_text())),catalog[file])
+
+if __name__=='__main__':unittest.main()

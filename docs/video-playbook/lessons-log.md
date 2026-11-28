@@ -1,0 +1,29 @@
+# Marsharbel Video Lessons Log
+
+One entry after EVERY released video (YouTube long-form, Shorts, IG Reels, Facebook). Newest entry at the top. Companion playbook: `viral-video-playbook.md` in the same folder.
+
+## Rules
+
+- Numbers from YouTube Studio / Meta insights only, no vibes.
+- Fill every field you can get; write "n/a" where the platform does not expose it.
+- If a result contradicts a playbook rule and the pattern repeats across releases, flag the entry with RULE-CONTRADICTION so the playbook gets revised.
+- Compare views against the channel's own median at the time, not against other channels.
+
+## Entry template (copy this)
+
+```
+### YYYY-MM-DD - <video title> - <platform(s)>
+- Hook (spoken first line): ...
+- On-screen hook text: ...
+- First frame: ...
+- Length / cuts per min: ...
+- Ending used: ...
+- 24-48h numbers: views vs channel median ...; CTR (home/suggested) ...%; viewed-vs-swiped or intro % ...; retention dips at ...; traffic sources ...
+- 7-day numbers: ...
+- What we think worked / flopped and why: ...
+- Change to try next time: ...
+```
+
+## Entries
+
+(no releases logged yet - first entry goes above this line, newest on top)

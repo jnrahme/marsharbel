@@ -1,0 +1,750 @@
+[
+  {
+    "route": "/hi/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/hi/home-copy.json",
+    "keys": [
+      "home.section.pray-along-on-youtube"
+    ],
+    "value": "YouTube पर प्रार्थना करें",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native hi)",
+    "scope": "Home promo link to the daily-rosary YouTube section (#772). ru label carries the inline English-target qualifier per the established ru convention; hi/th homes mark the English target via the launch-availability qualifier.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/th/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/th/home-copy.json",
+    "keys": [
+      "home.section.pray-along-on-youtube"
+    ],
+    "value": "อธิษฐานบน YouTube",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native th)",
+    "scope": "Home promo link to the daily-rosary YouTube section (#772). ru label carries the inline English-target qualifier per the established ru convention; hi/th homes mark the English target via the launch-availability qualifier.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ru/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ru/home-copy.json",
+    "keys": [
+      "home.section.pray-along-on-youtube"
+    ],
+    "value": "Молиться на YouTube (на английском)",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ru)",
+    "scope": "Home promo link to the daily-rosary YouTube section (#772). ru label carries the inline English-target qualifier per the established ru convention; hi/th homes mark the English target via the launch-availability qualifier.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ar/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ar/home-copy.json",
+    "keys": [
+      "home.section.pray-along-on-youtube"
+    ],
+    "value": "صلّوا معنا على يوتيوب (بالإنجليزية)",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ar)",
+    "scope": "Home promo link to the daily-rosary YouTube section (#772). ar carries the inline English-target qualifier (بالإنجليزية) per the ru convention; target stays the English /rosary-visual-guide#pray-along (no pray-along section on the authored ar rosary page per scrum ruling).",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ar/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ar/home-copy.json",
+    "keys": [
+      "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl"
+    ],
+    "value": "الكرسي الرسولي: العملية نجحت دون مضاعفات، والبابا لاوُن عاد إلى غرفته. صورة سياقية: مستشفى جيميلي، روما. الصورة: Blackcat، ويكيميديا كومنز، CC BY-SA 3.0؛ تغيير الحجم وتحويل إلى WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ar)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ar/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ar/home-copy.json",
+    "keys": [
+      "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos"
+    ],
+    "value": "الكاردينال بالداسارّي رينا ترأس صلاة المسبحة المسائية في كنيسة المستشفى الصغيرة بينما صلّى الكاثوليك من أجل البابا. صورة سياقية: كنيسة القلب الأقدس في جيميلي، وليست صورة المسبحة نفسها. الصورة: Pufui PcPifpef، ويكيميديا كومنز، CC BY-SA 4.0؛ تغيير الحجم وتحويل إلى WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ar)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ar/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ar/home-copy.json",
+    "keys": [
+      "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt"
+    ],
+    "value": "مستشفى جيميلي في روما من ساحته الأمامية",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ar)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ar/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ar/home-copy.json",
+    "keys": [
+      "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital"
+    ],
+    "value": "داخل كنيسة القلب الأقدس في مستشفى جيميلي في روما، بالنظر نحو المذبح",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ar)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/de/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/de/home-copy.json",
+    "keys": [
+      "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl"
+    ],
+    "value": "Der Heilige Stuhl teilt mit, die Operation sei erfolgreich und ohne Komplikationen verlaufen, und Papst Leo sei in sein Zimmer zurückgekehrt. Kontextfoto: Gemelli-Krankenhaus, Rom. Foto: Blackcat, Wikimedia Commons, CC BY-SA 3.0; in WebP verkleinert.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native de)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/de/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/de/home-copy.json",
+    "keys": [
+      "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos"
+    ],
+    "value": "Kardinal Baldassarre Reina leitete den abendlichen Rosenkranz in der Krankenhauskapelle, während Katholiken für den Papst beteten. Kontextfoto: die Herz-Jesu-Kirche am Gemelli, nicht der Rosenkranz selbst. Foto: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; in WebP verkleinert.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native de)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/de/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/de/home-copy.json",
+    "keys": [
+      "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt"
+    ],
+    "value": "Das Gemelli-Krankenhaus in Rom, vom Vorplatz aus gesehen",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native de)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/de/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/de/home-copy.json",
+    "keys": [
+      "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital"
+    ],
+    "value": "Innenraum der Herz-Jesu-Kirche am Gemelli-Krankenhaus in Rom mit Blick zum Altar",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native de)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/es/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/es/home-copy.json",
+    "keys": [
+      "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl"
+    ],
+    "value": "La Santa Sede informa de que la operación fue un éxito, sin complicaciones, y de que el papa León ha vuelto a su habitación. Foto de contexto: Hospital Gemelli, Roma. Foto: Blackcat, Wikimedia Commons, CC BY-SA 3.0; redimensionada a WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native es)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/es/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/es/home-copy.json",
+    "keys": [
+      "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos"
+    ],
+    "value": "El cardenal Baldassarre Reina presidió el rosario de la tarde en la capilla del hospital mientras los católicos rezaban por el papa. Foto de contexto: la iglesia del Sagrado Corazón en el Gemelli, no el rosario en sí. Foto: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; redimensionada a WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native es)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/es/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/es/home-copy.json",
+    "keys": [
+      "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt"
+    ],
+    "value": "El Hospital Gemelli de Roma visto desde su explanada",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native es)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/es/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/es/home-copy.json",
+    "keys": [
+      "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital"
+    ],
+    "value": "Interior de la iglesia del Sagrado Corazón del Hospital Gemelli de Roma, mirando hacia el altar",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native es)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/fr/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/fr/home-copy.json",
+    "keys": [
+      "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl"
+    ],
+    "value": "Le Saint-Siège indique que l'opération s'est déroulée avec succès, sans complications, et que le pape Léon a regagné sa chambre. Photo d'illustration : hôpital Gemelli, Rome. Photo : Blackcat, Wikimedia Commons, CC BY-SA 3.0 ; redimensionnée en WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native fr)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/fr/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/fr/home-copy.json",
+    "keys": [
+      "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos"
+    ],
+    "value": "Le cardinal Baldassarre Reina a présidé le chapelet du soir dans la chapelle de l'hôpital tandis que les catholiques priaient pour le pape. Photo d'illustration : l'église du Sacré-Cœur à Gemelli, et non le chapelet lui-même. Photo : Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0 ; redimensionnée en WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native fr)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/fr/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/fr/home-copy.json",
+    "keys": [
+      "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt"
+    ],
+    "value": "L'hôpital Gemelli à Rome, vu depuis son parvis",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native fr)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/fr/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/fr/home-copy.json",
+    "keys": [
+      "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital"
+    ],
+    "value": "Intérieur de l'église du Sacré-Cœur de l'hôpital Gemelli à Rome, vue vers l'autel",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native fr)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/hi/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/hi/home-copy.json",
+    "keys": [
+      "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl"
+    ],
+    "value": "होली सी का कहना है कि ऑपरेशन बिना किसी जटिलता के सफल रहा और पोप लियो अपने कमरे में लौट आए हैं। संदर्भ चित्र: जेमेली अस्पताल, रोम। फ़ोटो: Blackcat, विकिमीडिया कॉमन्स, CC BY-SA 3.0; WebP में आकार बदला गया।",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native hi)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/hi/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/hi/home-copy.json",
+    "keys": [
+      "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos"
+    ],
+    "value": "कार्डिनल बाल्डास्सारे रेइना ने अस्पताल के प्रार्थनालय में संध्या रोज़री की अगुवाई की, जबकि कैथोलिक पोप के लिए प्रार्थना कर रहे थे। संदर्भ चित्र: जेमेली का पवित्र हृदय गिरजाघर, रोज़री का दृश्य नहीं। फ़ोटो: Pufui PcPifpef, विकिमीडिया कॉमन्स, CC BY-SA 4.0; WebP में आकार बदला गया।",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native hi)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/hi/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/hi/home-copy.json",
+    "keys": [
+      "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt"
+    ],
+    "value": "रोम का जेमेली अस्पताल, अपने अग्रांगण से देखा गया",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native hi)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/hi/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/hi/home-copy.json",
+    "keys": [
+      "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital"
+    ],
+    "value": "रोम के जेमेली अस्पताल में पवित्र हृदय गिरजाघर का अंदरूनी भाग, वेदी की ओर दृश्य",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native hi)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/it/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/it/home-copy.json",
+    "keys": [
+      "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl"
+    ],
+    "value": "La Santa Sede riferisce che l'intervento è riuscito, senza complicazioni, e che Papa Leone è tornato nella sua stanza. Foto di contesto: Policlinico Gemelli, Roma. Foto: Blackcat, Wikimedia Commons, CC BY-SA 3.0; ridimensionata in WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native it)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/it/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/it/home-copy.json",
+    "keys": [
+      "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos"
+    ],
+    "value": "Il cardinale Baldassarre Reina ha guidato il Rosario serale nella cappella dell'ospedale mentre i cattolici pregavano per il Papa. Foto di contesto: la chiesa del Sacro Cuore al Gemelli, non il Rosario stesso. Foto: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; ridimensionata in WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native it)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/it/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/it/home-copy.json",
+    "keys": [
+      "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt"
+    ],
+    "value": "Il Policlinico Gemelli di Roma visto dal piazzale",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native it)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/it/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/it/home-copy.json",
+    "keys": [
+      "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital"
+    ],
+    "value": "Interno della chiesa del Sacro Cuore al Policlinico Gemelli di Roma, verso l'altare",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native it)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/pl/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/pl/home-copy.json",
+    "keys": [
+      "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl"
+    ],
+    "value": "Stolica Apostolska informuje, że operacja zakończyła się powodzeniem, bez powikłań, a papież Leon wrócił do swojego pokoju. Zdjęcie poglądowe: szpital Gemelli, Rzym. Zdjęcie: Blackcat, Wikimedia Commons, CC BY-SA 3.0; zmniejszone do WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native pl)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/pl/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/pl/home-copy.json",
+    "keys": [
+      "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos"
+    ],
+    "value": "Kardynał Baldassarre Reina przewodniczył wieczornemu różańcowi w kaplicy szpitala, gdy katolicy modlili się za papieża. Zdjęcie poglądowe: kościół Najświętszego Serca w Gemelli, nie sam różaniec. Zdjęcie: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; zmniejszone do WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native pl)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/pl/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/pl/home-copy.json",
+    "keys": [
+      "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt"
+    ],
+    "value": "Szpital Gemelli w Rzymie widziany z dziedzińca",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native pl)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/pl/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/pl/home-copy.json",
+    "keys": [
+      "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital"
+    ],
+    "value": "Wnętrze kościoła Najświętszego Serca w szpitalu Gemelli w Rzymie, widok w stronę ołtarza",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native pl)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/pt/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/pt/home-copy.json",
+    "keys": [
+      "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl"
+    ],
+    "value": "A Santa Sé informa que a operação foi bem-sucedida, sem complicações, e que o Papa Leão voltou ao seu quarto. Foto de contexto: Hospital Gemelli, Roma. Foto: Blackcat, Wikimedia Commons, CC BY-SA 3.0; redimensionada para WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native pt)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/pt/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/pt/home-copy.json",
+    "keys": [
+      "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos"
+    ],
+    "value": "O cardeal Baldassarre Reina presidiu o terço da noite na capela do hospital enquanto os católicos rezavam pelo Papa. Foto de contexto: a igreja do Sagrado Coração no Gemelli, não o próprio terço. Foto: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; redimensionada para WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native pt)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/pt/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/pt/home-copy.json",
+    "keys": [
+      "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt"
+    ],
+    "value": "O Hospital Gemelli, em Roma, visto do seu largo",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native pt)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/pt/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/pt/home-copy.json",
+    "keys": [
+      "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital"
+    ],
+    "value": "Interior da igreja do Sagrado Coração no Hospital Gemelli, em Roma, olhando para o altar",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native pt)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ru/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ru/home-copy.json",
+    "keys": [
+      "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl"
+    ],
+    "value": "Святой Престол сообщает, что операция прошла успешно, без осложнений, и папа Лев вернулся в свою палату. Иллюстративное фото: больница Джемелли, Рим. Фото: Blackcat, Wikimedia Commons, CC BY-SA 3.0; уменьшено до WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ru)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ru/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ru/home-copy.json",
+    "keys": [
+      "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos"
+    ],
+    "value": "Кардинал Бальдассарре Рейна возглавил вечерний розарий в больничной часовне, пока католики молились за папу. Иллюстративное фото: церковь Святейшего Сердца в Джемелли, а не сам розарий. Фото: Pufui PcPifpef, Wikimedia Commons, CC BY-SA 4.0; уменьшено до WebP.",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ru)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ru/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ru/home-copy.json",
+    "keys": [
+      "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt"
+    ],
+    "value": "Больница Джемелли в Риме, вид с площади",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ru)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/ru/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/ru/home-copy.json",
+    "keys": [
+      "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital"
+    ],
+    "value": "Интерьер церкви Святейшего Сердца в больнице Джемелли в Риме, вид на алтарь",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native ru)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/th/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/th/home-copy.json",
+    "keys": [
+      "home.latest-news.the-holy-see-says-the-operation-was-successful-with-no-compl"
+    ],
+    "value": "สันตะสำนักแจ้งว่าการผ่าตัดสำเร็จลุล่วงโดยไม่มีภาวะแทรกซ้อน และสมเด็จพระสันตะปาปาเลโอกลับถึงห้องพักแล้ว ภาพประกอบบริบท: โรงพยาบาลเจเมลลี กรุงโรม ภาพ: Blackcat, วิกิมีเดียคอมมอนส์, CC BY-SA 3.0; ปรับขนาดเป็น WebP",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native th)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/th/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/th/home-copy.json",
+    "keys": [
+      "home.latest-news.cardinal-baldassarre-reina-led-the-evening-rosary-in-the-hos"
+    ],
+    "value": "พระคาร์ดินัลบัลดาสซาร์เร เรอีนา เป็นประธานสวดสายประคำภาคค่ำในโบสถ์น้อยของโรงพยาบาล ขณะที่ชาวคาทอลิกอธิษฐานเพื่อสมเด็จพระสันตะปาปา ภาพประกอบบริบท: โบสถ์พระหฤทัยที่เจเมลลี ไม่ใช่ภาพการสวดสายประคำ ภาพ: Pufui PcPifpef, วิกิมีเดียคอมมอนส์, CC BY-SA 4.0; ปรับขนาดเป็น WebP",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native th)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/th/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/th/home-copy.json",
+    "keys": [
+      "home.accessibility.gemelli-hospital-in-rome-seen-from-its-forecourt"
+    ],
+    "value": "โรงพยาบาลเจเมลลีในกรุงโรม มองจากลานด้านหน้า",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native th)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  },
+  {
+    "route": "/th/",
+    "status": "agent-translated-native-not-certified",
+    "family": "home",
+    "copyFile": "locales/th/home-copy.json",
+    "keys": [
+      "home.accessibility.interior-of-the-sacro-cuore-church-at-gemelli-hospital"
+    ],
+    "value": "ภายในโบสถ์พระหฤทัยที่โรงพยาบาลเจเมลลีในกรุงโรม มองไปทางพระแท่น",
+    "nativeReviewRequired": true,
+    "reviewer": "pending (native th)",
+    "scope": "Home news-row thumbnails for the two 2026-10-13 Gemelli items (pope-surgery follow-up, patch 2b incl. news-desk master): per-row alt text and credit/caption keys, agent-translated by the visual lane; CC context photos (Blackcat CC BY-SA 3.0, Pufui PcPifpef CC BY-SA 4.0), honest 'Context photo' captions.",
+    "sourceUrls": [
+      "https://marsharbel.com/"
+    ],
+    "checkedAt": "2026-10-13"
+  }
+]

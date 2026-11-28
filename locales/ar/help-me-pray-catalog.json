@@ -1,0 +1,276 @@
+{
+ "schema": 2,
+ "locale": "ar",
+ "direction": "rtl",
+ "publicationContract": {
+  "missingLocaleOrKey": "fail-build",
+  "englishFallback": false,
+  "pendingPrayerTextInBrowserData": false,
+  "privateReviewNoticeInBrowserData": false
+ },
+ "page": {
+  "title": "ساعدني على الصلاة",
+  "intro": "اختر ما تحمله اليوم. اعثر على خطوة صغيرة نحو الصلاة، مع مصادر وحدود واضحة.",
+  "needsHeading": "ما الذي أتى بك إلى هنا؟",
+  "boundaryHeading": "الصلاة والمساعدة التي تحتاج إليها",
+  "boundaryCopy": "يقدّم هذا الدليل إرشادًا تقويًّا، لا سرًّا كنسيًّا أو تشخيصًا أو وعدًا بالشفاء. من أجل الاعتراف أو الإرشاد الروحي الشخصي، تحدّث إلى كاهن. استمرّ في الرعاية الطبية، واطلب مساعدة محلية عاجلة في الأزمات.",
+  "privacyCopy": "لا تحتاج إلى إدخال اسمك أو نيّة صلاتك أو بياناتك الشخصية لاستخدام هذا الدليل.",
+  "pendingNotice": "البطاقات الموسومة بقيد المراجعة ليست جاهزة للاستخدام. نصّ صلاتها وإجراء البدء غير متاحين."
+ },
+ "needs": {
+  "restart": "بدء الصلاة أو العودة إليها",
+  "family": "العائلة",
+  "illness": "المرض",
+  "gratitude": "الشكر",
+  "discouragement": "الإحباط في الصلاة",
+  "maronite": "فهم الصلاة المارونية"
+ },
+ "ui": {
+  "inReview": "قيد المراجعة",
+  "practicalAnswer": "خطوة صغيرة",
+  "why": "لماذا قد يساعدك هذا",
+  "source": "المصدر",
+  "practiceType": "الممارسة",
+  "boundary": "تذكّر",
+  "backToNeeds": "العودة إلى الحاجات",
+  "noResults": "لا توجد بطاقات تطابق هذا الاختيار.",
+  "notReady": "هذه البطاقة تنتظر المراجعة. نصّ الصلاة والبدء غير متاحين.",
+  "begin": "ابدأ",
+  "close": "إغلاق",
+  "readMore": "اقرأ المصدر"
+ },
+ "cards": {
+  "illness-01": {
+   "need": "illness",
+   "copy": {
+    "question": "أصلّي من أجل شخص مريض. من أين أبدأ؟",
+    "practicalAnswer": "قدّم هذا الشخص أمام الله واطلب له القوّة والسلام والشفاء.\nصلّ صلاة من أجل المرضى بتمهّل، إلى جانب الرعاية التي يحتاج إليها.\nالصلاة لا تضمن نتيجة معيّنة.",
+    "why": "شرح تحريري بصياغة غير حرفية: تدعونا الصلاة المسيحية إلى الثبات مع الله في الصعوبات؛ وليست وسيلة للتحكّم في النتيجة. التعليم المسيحي للكنيسة الكاثوليكية، 2734.",
+    "source.publisher": "الكرسي الرسولي / التعليم المسيحي للكنيسة الكاثوليكية",
+    "source.section": "التعليم المسيحي للكنيسة الكاثوليكية 2734",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب. الصلاة لا تحلّ محلّ الرعاية الطبية.",
+    "prayerTarget.heading": "صلاة من أجل المرضى",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "illness-02": {
+   "need": "illness",
+   "copy": {
+    "question": "هل تضمن الصلاة بشفاعة مار شربل الشفاء؟",
+    "practicalAnswer": "لا. اطلب من مار شربل أن يشفع، وسلّم الشخص إلى الله من دون أن تعده بالشفاء.\nالصلاة لا تضمن نتيجة معيّنة.\nفي المرض الخطير، اسأل كاهنًا عن مسحة المرضى واستمرّ في الرعاية الطبية.",
+    "why": "صياغة غير حرفية: يصف التعليم المسيحي للكنيسة الكاثوليكية في الفقرة 1532 استعادة الصحّة من خلال مسحة المرضى حين تكون لخلاص الشخص. يقدّم هذا الدليل ممارسة تقوية شخصية، لا هذا السرّ، ولا يعد بالشفاء.",
+    "source.publisher": "الكرسي الرسولي / التعليم المسيحي للكنيسة الكاثوليكية",
+    "source.section": "التعليم المسيحي للكنيسة الكاثوليكية 1532, آثار مسحة المرضى",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب. هذا الدليل لا يشخّص المرض ولا يمنح سرًّا كنسيًّا.",
+    "prayerTarget.heading": "صلاة من أجل المرضى",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/in_brief.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-01": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "لم أصلّ منذ مدّة. كيف أعود؟",
+    "practicalAnswer": "ابدأ بصلاة الأبانا مرّة واحدة وبتمهّل، من دون محاولة تعويض كلّ يوم فاتك.\nاختر وقتًا قصيرًا ومنتظمًا لتعود غدًا؛ وقدّم همومك الحقيقية إلى الله.",
+    "why": "شرح تحريري بصياغة غير حرفية: تساعد الأوقات المحدّدة على أن تصبح الصلاة جزءًا من الحياة. والخطوة الأولى الصغيرة إرشاد عملي، وليست قاعدة تفرضها الكنيسة. التعليم المسيحي للكنيسة الكاثوليكية، 2697.",
+    "source.publisher": "الكرسي الرسولي / التعليم المسيحي للكنيسة الكاثوليكية",
+    "source.section": "التعليم المسيحي للكنيسة الكاثوليكية 2697",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب. إذا رغبت في الاعتراف أو في إرشاد روحي شخصي، تحدّث إلى كاهن.",
+    "prayerTarget.heading": "الأبانا",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-01": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "تبدو صلاتي بلا جواب. هل تجاهلني الله؟",
+    "practicalAnswer": "قل لله بصدق إنّ الانتظار صعب؛ لا تحتاج إلى إخفاء خيبة أملك.\nواصل تقديم حاجتك إليه، من دون أن تجعل النتيجة التي تطلبها اختبارًا لمحبّته.\nلا يستطيع هذا الدليل تفسير سبب خسارة معيّنة أو تأخّر معيّن.",
+    "why": "شرح تحريري بصياغة غير حرفية: يذكر التعليم المسيحي الطلب الذي يبدو بلا استجابة بوصفه صعوبة حقيقية، لا سببًا لإشعار المصلّي بالخجل. التعليم المسيحي للكنيسة الكاثوليكية، 2734-2741، ولا سيّما 2739.",
+    "source.publisher": "الكرسي الرسولي / التعليم المسيحي للكنيسة الكاثوليكية",
+    "source.section": "التعليم المسيحي للكنيسة الكاثوليكية 2739, ضمن التعليم المسيحي للكنيسة الكاثوليكية 2734-2741",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب. لا يقدّم هذا الدليل نبوءة أو تفسيرًا لمقاصد الله الخفيّة أو وعدًا بنتيجة.",
+    "prayerTarget.heading": "صلاة شفاعة عامة",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iii_filial_trust.index.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "discouragement-02": {
+   "need": "discouragement in prayer",
+   "copy": {
+    "question": "هل أتوقّف عن الصلاة إن لم يتغيّر شيء؟",
+    "practicalAnswer": "جرّب صلاة قصيرة يمكنك العودة إليها، حتّى حين تشعر بالإحباط.\nاطلب العون لتبقى قريبًا من المسيح، واعرض ما تعانيه على كاهن إن احتجت إلى إرشاد شخصي.",
+    "why": "شرح تحريري بصياغة غير حرفية: تبدأ المثابرة بالنعمة وباستجابة منّا؛ وليست الصعوبة دليلًا على أنّ صلاتك فشلت. التعليم المسيحي للكنيسة الكاثوليكية، 2725، مع قراءة 2734-2741.",
+    "source.publisher": "الكرسي الرسولي / التعليم المسيحي للكنيسة الكاثوليكية",
+    "source.section": "التعليم المسيحي للكنيسة الكاثوليكية 2725",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب. الصلاة لا تحلّ محلّ الرعاية في أزمة تتعلّق بالصحّة النفسية.",
+    "prayerTarget.heading": "في المعاناة",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-01": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "كيف يصلّي الموارنة يوميًّا؟",
+    "practicalAnswer": "يمكنك أن تبدأ إيقاعًا يوميًّا بصلاة الأبانا صباحًا أو مساءً.\nبالنسبة إلى الفرض الإلهي الماروني، اسأل رعيّتك عن الأوردو الخاص بالأبرشية الذي ينبغي استخدامه.\nالصلاة التقوية المقدّمة هنا نقطة بداية، وليست بديلًا عن الفرض.",
+    "why": "صياغة غير حرفية: تنشر أبرشية مار مارون في بروكلين أوردو الفرض الإلهي لعام 2025-2026. ويحدّد الكتاب المرفق استخدامه في أبرشية سيّدة لبنان في لوس أنجلوس بحسب الطقس السرياني الماروني. اسأل رعيّتك كيف تستخدم الفرض؛ فهذا الدليل لا يختار نصوص اليوم.",
+    "source.publisher": "أبرشية مار مارون في بروكلين",
+    "source.section": "التعميم 25.117، أوردو الفرض 2025-2026؛ الصفحتان 1-2 من الأوردو المرفق",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب. هذا ليس فرض اليوم. أوردو 2025-2026 مرجع مؤرّخ، وليس أحدث إصدار جرى التحقّق منه. اسأل رعيّتك عن الأوردو الخاص بالأبرشية الذي ينطبق عليك.",
+    "prayerTarget.heading": "الأبانا",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [
+    "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three.html",
+    "https://www.stmaron.org/press-releases/office-ordo-2024-2025-28her"
+   ],
+   "beginEnabled": false
+  },
+  "family-01": {
+   "need": "family",
+   "copy": {
+    "question": "كيف تبدأ عائلتنا بالصلاة معًا؟",
+    "practicalAnswer": "اختر لحظة هادئة وادعُ عائلتك إلى صلاة قصيرة معًا.\nابدأ بصلاة من أجل العائلات؛ واترك لكلّ شخص مجالًا لذكر حاجة، من دون ضغط.",
+    "why": "شرح تحريري بصياغة غير حرفية: يمكن أن تكون العائلة مكانًا نتعلّم فيه الصلاة بصبر. والصلاة القصيرة المشتركة بداية عملية، وليست صيغة مفروضة. التعليم المسيحي للكنيسة الكاثوليكية، 2685.",
+    "source.publisher": "الكرسي الرسولي / التعليم المسيحي للكنيسة الكاثوليكية",
+    "source.section": "التعليم المسيحي للكنيسة الكاثوليكية 2685",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب.",
+    "prayerTarget.heading": "صلاة من أجل العائلات",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "family-02": {
+   "need": "family",
+   "copy": {
+    "question": "هل يمكنني أن أصلّي من أجل عائلتي إن لم تصلّ معي؟",
+    "practicalAnswer": "نعم. قدّم عائلتك إلى الله حتّى إن كنت تصلّي وحدك.\nاطلب شفاعة مار شربل، واجعل صلاتك تسند رعاية صبورة ومحبّة، بدلًا من الضغط على الآخرين.",
+    "why": "شرح تحريري بصياغة غير حرفية: تعلّم الكنيسة أنّه يمكن طلب شفاعة القدّيسين من أجل أنفسنا ومن أجل الآخرين. وهذا لا يعد بنتيجة عائلية معيّنة. التعليم المسيحي للكنيسة الكاثوليكية، 2683.",
+    "source.publisher": "الكرسي الرسولي / التعليم المسيحي للكنيسة الكاثوليكية",
+    "source.section": "التعليم المسيحي للكنيسة الكاثوليكية 2683",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب. الصلاة لا تلزمك بالبقاء في وضع غير آمن، ولا تبرّر الأذى.",
+    "prayerTarget.heading": "صلاة من أجل العائلات",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_3.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "gratitude-01": {
+   "need": "gratitude",
+   "copy": {
+    "question": "كيف أشكر الله على أمر جيّد؟",
+    "practicalAnswer": "اذكر العطيّة التي نلتها واشكر الله عليها بكلماتك.\nثمّ صلّ المجد بتمهّل، ودع شكرك يصبح تسبيحًا.",
+    "why": "شرح تحريري بصياغة غير حرفية: يمكن للشكر أن يدخل أحداث الحياة اليومية في الصلاة. التعليم المسيحي للكنيسة الكاثوليكية، 2638.",
+    "source.publisher": "الكرسي الرسولي / التعليم المسيحي للكنيسة الكاثوليكية",
+    "source.section": "التعليم المسيحي للكنيسة الكاثوليكية 2638",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب.",
+    "prayerTarget.heading": "المجد",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_one/article_3/iv_prayer_of_thanksgiving.html",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "restart-02": {
+   "need": "beginning/restarting prayer",
+   "copy": {
+    "question": "ماذا لو لم أعرف ماذا أقول؟",
+    "practicalAnswer": "يمكنك البدء بصلاة الأبانا بدلًا من البحث عن كلمات مبهرة.\nاقرأها بتمهّل؛ وتوقّف حين يعبّر أحد طلباتها عمّا تحمله في قلبك.",
+    "why": "صياغة غير حرفية: ينهى يسوع عن الصلاة القائمة على تكديس الكلمات، ويعلّم أنّ الآب يعرف حاجاتنا مسبقًا. متّى 6:7-8.",
+    "source.publisher": "مؤتمر الأساقفة الكاثوليك في الولايات المتحدة (NABRE)",
+    "source.section": "متّى 6:7-8 (رُوجعت ترجمة NABRE؛ صياغة أصلية غير حرفية فقط)",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب.",
+    "prayerTarget.heading": "الأبانا",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/matthew/6",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  },
+  "maronite-02": {
+   "need": "understanding Maronite practice",
+   "copy": {
+    "question": "هل الصلاة إلى مار شربل هي نفسها القدّاس الإلهي؟",
+    "practicalAnswer": "شرح تحريري: يقدّم هذا الدليل صلوات الموقع إلى مار شربل لممارسة تقوية شخصية، لا كنصوص ليتورجية مارونية معتمدة.\nالقدّاس الإلهي هو عبادة الكنيسة الإفخارستية؛ صلّ المجد الآن، واستخدم دليل الأبرشية لتتعلّم عن العبادة مع رعيّتك.",
+    "why": "صياغة غير حرفية: تصف الأبرشية الصلاة الإفخارستية بأنّها موجّهة إلى الآب والابن والروح القدس. وهذا يسند شرح القدّاس الإلهي، لا صفة نصوص الصلاة في هذا الموقع. ووصفها بالتقوية تصنيف تحريري في هذا الدليل، لا اعتماد من الأبرشية. دليل إلى القدّاس الإلهي الماروني، خدمة الإفخارستيا - الأنافورا.",
+    "source.publisher": "أبرشية مار مارون في بروكلين",
+    "source.section": "دليل إلى القدّاس الإلهي الماروني، خدمة الإفخارستيا - الأنافورا",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب. أسئلة الاعتراف أو المشاركة في الأسرار ينبغي طرحها على كاهن.",
+    "prayerTarget.heading": "المجد",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://www.stmaron.org/liturgy-guide",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false,
+   "sourceAuthor": "Chorbishop Seely Beggiani"
+  },
+  "gratitude-02": {
+   "need": "gratitude",
+   "copy": {
+    "question": "هل يمكنني أن أشكر حين تكون الحياة صعبة؟",
+    "practicalAnswer": "نعم، لكنّك لا تحتاج إلى التظاهر بأنّ الألم أمر جيّد أو إلى إخفائه عن الله.\nاذكر عطيّة واحدة يمكنك تقبّلها بصدق اليوم، ثمّ قدّم إليه معاناتك أيضًا.",
+    "why": "صياغة غير حرفية: يدعو بولس المؤمنين إلى شكر الله في كلّ حال بوصفه جزءًا من الحياة في المسيح. وهذا الإرشاد لا يطلب من أحد تسبيح الأذى. 1 تسالونيكي 5:18.",
+    "source.publisher": "مؤتمر الأساقفة الكاثوليك في الولايات المتحدة (NABRE)",
+    "source.section": "1 تسالونيكي 5:18 (رُوجعت ترجمة NABRE؛ صياغة أصلية غير حرفية فقط)",
+    "source.label": "صياغة غير حرفية",
+    "practiceType": "صلاة تقوية",
+    "boundaryNote": "من أجل الاعتراف أو الحاجة الطبية أو الأزمات، تحدّث إلى كاهن أو طبيب. الشكر لا يعني قبول الإساءة أو رفض العلاج أو تجنّب طلب المساعدة.",
+    "prayerTarget.heading": "المجد",
+    "prayerTarget.type": "صلاة تقوية"
+   },
+   "sourceURL": "https://bible.usccb.org/bible/1thessalonians/5",
+   "prayerTargetURL": "https://marsharbel.com/saint-charbel-prayers",
+   "additionalSourceURLs": [],
+   "beginEnabled": false
+  }
+ }
+}

@@ -1,0 +1,978 @@
+{
+  "version": 1,
+  "gateStatus": "pending-live-click",
+  "sourceRevision": "0990963579de1670f3a084a2137fab68cae43615",
+  "review": {
+    "reviewer": "owner-delegated authorization (Instinct main), no independent byte review",
+    "scope": "rosary-books-technical-pairing-only",
+    "nativeReviewStatus": "not-certified",
+    "editorialReviewStatus": "not-certified",
+    "technicalReviewStatus": "pending-live-click",
+    "evidenceRef": "PR 909 CI: https://github.com/jnrahme/marsharbel/actions/runs/42943678331 and https://github.com/jnrahme/marsharbel/actions/runs/42943678372; deploy: https://github.com/jnrahme/marsharbel/actions/runs/42946190786. Scrum reported live 207/207 byte-match and 160-page 390px render checks, with EN+AR Ascension screenshots inspected. Corrected PR CI: pending, no corrected PR run exists in this candidate packet.",
+    "limits": "Technical pairing correctness and interaction parity only. No native linguistic or editorial review is claimed. Existing faith holds are unchanged.",
+    "liveSwitcherClickGate": "pending Scrum verification on the deployed correction"
+  },
+  "books": {
+    "joyful-annunciation": {
+      "variants": {
+        "en": {
+          "bodySha256": "c31df63d9c4b89abc7a6286a0725adbb0129088c22a56e9c5a598c6f5f37e736",
+          "catalogSha256": "da00300a3d317b6cee5e161a70a7703ca331f671097ff43f2379af9795025773"
+        },
+        "ar": {
+          "bodySha256": "2df1664c242a749d5fd13b9dcc5ae3c03d0d680814f73f6d3dc65277633829de",
+          "catalogSha256": "a9984be569361a3a3a80601ebd34c1decc8bd99ebdc13bab441ff3b87c53232c"
+        },
+        "de": {
+          "bodySha256": "d8da5bd0f264f5e6786c8e2e3f4f4fa00c0cb7912695a5f273b15b9d68dccda9",
+          "catalogSha256": "6319493d2115a021f22357807c16667dc6e794b6d05ebe3480ec9ba706b83df8"
+        },
+        "es": {
+          "bodySha256": "1e043f1585efb86b520943672e0af95d48c0093c01a99b70d8419d11864bca63",
+          "catalogSha256": "087eabdc7bcf9e0312322ab671631cde1f22931f9db4b90c61bf58930bf2f011"
+        },
+        "fr": {
+          "bodySha256": "bd541ac60d0b96d55b42d5ac092b3dc2346711e9a8ef3d51f9a8f98183c7e3c7",
+          "catalogSha256": "f5dc39511597fafc245e912e4dc032c06aee3663b07c948bfe6ed7e4e8336b90"
+        },
+        "it": {
+          "bodySha256": "6c318f838b44a8c9512a68d0a568d10c2a6e02cca82cdee711066f7ba1287b28",
+          "catalogSha256": "65e8dbf0310a26c103dd126b3fba13aab1f9c58cc643630465e68a6dfc91eaea"
+        },
+        "pl": {
+          "bodySha256": "b1f15443d8197fe4328ba529f599b35da96f73320128a3bad3dee852d4268319",
+          "catalogSha256": "c2d2b193ba3ee05a6bca872b303216cbc910f40b732a4ec38b82f7dda2d0a7b6"
+        },
+        "pt": {
+          "bodySha256": "e1486ff703bbe409afc759dfa7814e1b76884ae2fbe5100d6126ad8a6003c7ea",
+          "catalogSha256": "c5837dee67ffb96e5bd00cdc521ebac9b936980644aa7b3af888da616fb550f4"
+        }
+      },
+      "artifacts": {
+        "content/books/joyful-annunciation/en.json": "311c589e7aa6b45f5ca399b09293d092fcabff5dea7c0c66d031d47b4279b603",
+        "content/books/joyful-annunciation/ar.json": "e2765f2ce389028b3b594b4329830665379126be7aee58480838eecbcb2ec540",
+        "content/books/joyful-annunciation/de.json": "b6dc3d4fd1cb60d20b3f908254558880f96e1ca094becb7bb40e927fe529fcdb",
+        "content/books/joyful-annunciation/es.json": "0b4736bb57404f056577b43809700dbcd28e536db5bda7902e43e2dc94747dcd",
+        "content/books/joyful-annunciation/fr.json": "81eeb5034f43f4bcd4ea183528639b68f3691810316ff6dd5394f6520da72fc9",
+        "content/books/joyful-annunciation/it.json": "2d8ef6e6348b74b531753cd3aff7c15eed308ba11c14b34c95cde7b8e359802f",
+        "content/books/joyful-annunciation/pl.json": "5aaac5653b74f63104e2aeb344442029cb222439bf923416f80f70babef314d9",
+        "content/books/joyful-annunciation/pt.json": "eb8bbe811df86485c40d8c3534ffee354e1b174de6905214f50a7c97114d4005",
+        "content/books/joyful-annunciation/book.json": "ce9c087d37be628fbd3049b23fb6bc647f4d3e2861007f47706ab85bb5e6c1fb",
+        "joyful-annunciation-story-i18n-data.js": "0cec95e1786502b3cb2e1ff856b623ed20e4b8c03e761622fdcb86fbec5fb15c"
+      }
+    },
+    "joyful-visitation": {
+      "variants": {
+        "en": {
+          "bodySha256": "64370b9256d9d85ba3b7c853452f5ff86da3a2c64c86ab4b6846d8fbda51a7a0",
+          "catalogSha256": "08b8ecd4c5097881ac48e5e4c7735aa263c72a879e4d678124983749dd279ba4"
+        },
+        "ar": {
+          "bodySha256": "ab3b3cde45afe0432aa689214bdcb572d42dae71501079d98b666773f795f031",
+          "catalogSha256": "f992373fa22e739c3c1fe0a1fe27072b1017e149917fa3801dba1fa372fa820f"
+        },
+        "de": {
+          "bodySha256": "49302cc4b5ad47114ba05f217a4c42955bd8f3ffb6d43dae0bb4d9e36f19a90b",
+          "catalogSha256": "3f7b91a364ca682b14d0281caaf70c23f982c01c0fdb8f3112aed17c4d40c08d"
+        },
+        "es": {
+          "bodySha256": "9699dc7b5c8196280916022c4b379c093df9106ffe021cda119f3a193ccb36f8",
+          "catalogSha256": "6b95b69e5d44d456338dbbb71f4fc98cd10c39222154abb880d348715f5bb23c"
+        },
+        "fr": {
+          "bodySha256": "fc2cecc63520709c348f2af32a7b07657f57114949668ce9c94665f4fa8d1ce4",
+          "catalogSha256": "a872365b096cc8e1ec1fbb2a424c4b37ff61e2688963f179c64835e27b00a002"
+        },
+        "it": {
+          "bodySha256": "42eda23e57c00f28dd22b8c4a2a1e5ec8f8a7e995a5f3e3bee69a64644928642",
+          "catalogSha256": "2ba60ad9f1fce358939156ae2de4ac60b7a0e7101f4ce1cab9675113f71fd46a"
+        },
+        "pl": {
+          "bodySha256": "0665a6a28e53295697fa33d782f7fa2c577e81e6cf2726a04fd3fc32c14f4558",
+          "catalogSha256": "355c9ec9acbfefbcf26db62f35ab93c224ad69fbfa7a849efd63c56a1ac559f0"
+        },
+        "pt": {
+          "bodySha256": "7e6362f09eb4e611dff1e56811edfcfa259b0cc628456d200116c08dc2d1d1b4",
+          "catalogSha256": "b82cb4bde278ef57f45611df1670a758c3301ab4c3eacef2572eb5deb72ced5f"
+        }
+      },
+      "artifacts": {
+        "content/books/joyful-visitation/en.json": "2fdd77b3fb919606c3771306532284f5140a327d8feca324595458b278a0638b",
+        "content/books/joyful-visitation/ar.json": "73602e57f4852e1889b4ffc660a73fd0006d63d604594f0435042721596570f2",
+        "content/books/joyful-visitation/de.json": "6b3c6841353538f14bf59ab93ef9133bee2b326a0eb459e66755e496c39365d7",
+        "content/books/joyful-visitation/es.json": "41d287afe22ad1cc706db08ccd23cf202fefb06da9de7c812aa5186d4b787ab3",
+        "content/books/joyful-visitation/fr.json": "4681830034a54e34b3c9fe54cb7ee0e4c2af80bf1ff688ea0b9ea8846deac458",
+        "content/books/joyful-visitation/it.json": "0fd037fc476676d69b0a5c511dba21c571142c138ea734bd0bdd9ae2ebf676c7",
+        "content/books/joyful-visitation/pl.json": "a9d6e6f4a2a404d1de2b62882be24fc85be630fd4f5385a5d90c31ed6036c457",
+        "content/books/joyful-visitation/pt.json": "dc68c0efef82d74a5c8e8f80118d31171100af0676e1a1553790164133242ce1",
+        "content/books/joyful-visitation/book.json": "43e587baf5082a8b275cf1c62fca548cafc74bf31eb07bf16b780113d4d025b1",
+        "joyful-visitation-story-i18n-data.js": "4b7f8aa379f24fcca74f40eea1370ffa7c83b92bfef7d1c9d64887b702c5397f"
+      }
+    },
+    "joyful-nativity": {
+      "variants": {
+        "en": {
+          "bodySha256": "af91dc85938fd15694336bbeddeb6244cb4dfb9ab2423162fece9ee068bb973c",
+          "catalogSha256": "2834dcbbcd91a441440ccfb8adc8618a63742306e2fc324902516c99092ced40"
+        },
+        "ar": {
+          "bodySha256": "a864daea6091908c0e2bd4eb5b102413536a89ba5dae41be487315a64921eb35",
+          "catalogSha256": "decb1ab72c0467dff96db786b3ae76a146f73d92b5f4c510834fb31405a0bd4a"
+        },
+        "de": {
+          "bodySha256": "b4a6c94522cffc455f6e3da10b69b0e87a1a26fa2848ec7b6b33d09f169c7014",
+          "catalogSha256": "a7fe40a87ec38af5536b321a2e5eb15e0f2760c098d013f0e817ca2e153dc79b"
+        },
+        "es": {
+          "bodySha256": "98430a1df99a1066d073ca5c7f1e5e72b4d1e05c6539358e5dba202133725e6e",
+          "catalogSha256": "6f07986a29f6ff719a28652e9477969c40f49b39b1d4b45b120bdab84b0f2005"
+        },
+        "fr": {
+          "bodySha256": "de6a88c85e2d4c1ac2b11b69a36466505685ddda569e9db674b70eef7fe06741",
+          "catalogSha256": "a079da358a6ac9f8b5273fa4a2657191e6a39cc1b5da4014637bd1b8c1d56d5d"
+        },
+        "it": {
+          "bodySha256": "8c05d017f247b7ddb9d480bdf140b8e7216a18afc7b3fa2aca7cf3f74b173bb6",
+          "catalogSha256": "1a4ddf25e4c507e747e51c924a44ed76586118573d2302b82a084f4cd7e8e906"
+        },
+        "pl": {
+          "bodySha256": "fecb77adfe1e967096d5f391aa84dacdb165b18f02dcd14e41a0762ca90bfd33",
+          "catalogSha256": "47b571d932f6b4cbf542c2bf60cdf8f15da5d8d320098253992ed5ada75cea04"
+        },
+        "pt": {
+          "bodySha256": "e3357367f2ecd9f34856cbf29c0913bd021dc22f1007e5e40b22d0d2c06fd704",
+          "catalogSha256": "b6c7f8c5deaf25b6465a44ddfcd0640cab0de940812ab3c196aaccdd342e5ab0"
+        }
+      },
+      "artifacts": {
+        "content/books/joyful-nativity/en.json": "fa786bef6a67e42418e91785d95b07f03806df500da7c6418eb0c0050820e5b0",
+        "content/books/joyful-nativity/ar.json": "3ab8e0eaafd721c46348051f0374159b3362bb65a2ab92a71da2a08e2ad9ff57",
+        "content/books/joyful-nativity/de.json": "2c1f38f5efcdbc632ce09367f79ec265df774a10f2299a4ac9d7b0b0be11e489",
+        "content/books/joyful-nativity/es.json": "40c1d8f61e594c446b4fce35e6e421df77518da26796ebcad797d64fe0ced261",
+        "content/books/joyful-nativity/fr.json": "dbe1827b5377776f1fa187bef4663c7a83e0ec83edd4b2df7abbc08f771124ef",
+        "content/books/joyful-nativity/it.json": "5da2f9306ffbc3dc8ad712fbe9c44ff13b8f4c13ff28ef26b991bacee1444210",
+        "content/books/joyful-nativity/pl.json": "27a72c1109c44d65fc6b5b129902299cd8f766678d7c62df7a09afeebefaf4f9",
+        "content/books/joyful-nativity/pt.json": "a4413fd43f78fb6187d716f67dc946adf01af78581c770965b79b0aed2a25213",
+        "content/books/joyful-nativity/book.json": "0342c59a191e592d1f9fd1aaf6a21d26a6d88eccb90d5a7676b08e7d29c119af",
+        "joyful-nativity-story-i18n-data.js": "663f06eaea6657ffb7bfa502bfab6a6c3c47e4a0b331597a340a36b70e667fee"
+      }
+    },
+    "joyful-presentation": {
+      "variants": {
+        "en": {
+          "bodySha256": "1e9211215ee5edd23480ffa4d2adb404baf4528a92f19b888eef7133f8659b87",
+          "catalogSha256": "7626dc97619e05d8f57a3d6e0caf22dd8897a594f29f3748cc9c2ef9cde149a9"
+        },
+        "ar": {
+          "bodySha256": "b0123a0e75b54dfd95a185c497361881ac5031235472c8c4cbd073aab81198b2",
+          "catalogSha256": "df0655a0a2fc5fe0b15668db51aeb9e86efeacbf04e0f41c2c3a60da92fc3327"
+        },
+        "de": {
+          "bodySha256": "78955e05d102fd21ac55f2ca33884c9515738192dfcf0487b624c1b55d6cd18b",
+          "catalogSha256": "b3a4491f2ea6f06890225ac6bdbbc61355e13bc2f9459f3228ebb34df7293f67"
+        },
+        "es": {
+          "bodySha256": "f3233325d98f5f9526aa6318820138a3b1b9445acc55a07100b3c5a9b93cb96e",
+          "catalogSha256": "9163ab5ebb243d2d91326805afb4589f9d54287f6b21e6398ff4951c89463cdc"
+        },
+        "fr": {
+          "bodySha256": "a30f164b96533af94c98e1a4b49d8d431695467721f5f47600b612ae63f3ae89",
+          "catalogSha256": "3c68f69ed4006b359c9214c250d36810597a38acb10c871b9c4048b69114f557"
+        },
+        "it": {
+          "bodySha256": "91f01ec2fbdc557d151892597e655df8c0abe6831b98a907d027b2ca954c8d50",
+          "catalogSha256": "21957c55eda09009ab4c840244f4719e705d394ecbc9e99967e53bdcf65827f9"
+        },
+        "pl": {
+          "bodySha256": "33d57872619ec8887282f5ef2ab39c8ff101a51fa025b053021ba5748935f6a2",
+          "catalogSha256": "6ee28b8e43a953c3c0c3ecb1bd10de85af54ab4b65712d31b9e44dd7b89d238e"
+        },
+        "pt": {
+          "bodySha256": "d8fa9817f33a9018bac0edd6b860f3629c6f71209d0ac7e9521b526bbca42861",
+          "catalogSha256": "2a97e86ad8bb72c5d1f5540a12791d43d427340a90c7d86efe3094165dd09534"
+        }
+      },
+      "artifacts": {
+        "content/books/joyful-presentation/en.json": "5136b900e8d184cfea3ecf3fbd275174e7c380ec329ae7e8a857f884211aa978",
+        "content/books/joyful-presentation/ar.json": "6e166e6a0209459ff58f5dfa10be9d2c3d81b787668dcf57222af2935856b45c",
+        "content/books/joyful-presentation/de.json": "779401f00293a94eb294a055d4840cb1910b2c8f75d69045ea90ae314854584d",
+        "content/books/joyful-presentation/es.json": "d3850a9180cc9f92a43d0ff944b856cfe406ac6a32e677d3f4d52bd43050115d",
+        "content/books/joyful-presentation/fr.json": "a0f7fe15dc0c8b97f44d3475498eed370f4ebe2c30bf4092860c81d68f6c7516",
+        "content/books/joyful-presentation/it.json": "4f879b80c22d190d155ff54a0556fd404d456d0ab8cdbab00efdde3b02211eea",
+        "content/books/joyful-presentation/pl.json": "473e10226e1caf372bd5c8bb6e4f067c8f44684576faa0efe32935097305e8b1",
+        "content/books/joyful-presentation/pt.json": "90bf7d368fa778b3e1badf3c7413d5351eecfca2a25adb27b20d6d297bc2c55e",
+        "content/books/joyful-presentation/book.json": "8bbd6788bbf6c7f5a3d964ca108208173038d154e1dc03e470b2235bc8ce0ff9",
+        "joyful-presentation-story-i18n-data.js": "fa86d2dd9e607e18ae1063f7d25c31c68bf6a71cc2d1271035ec43cc55dacbb3"
+      }
+    },
+    "joyful-finding-temple": {
+      "variants": {
+        "en": {
+          "bodySha256": "21f840b9e5b06a2e4cdd2f50a1c62a2e516b5484a69c13b0e4aeadd10967d3f9",
+          "catalogSha256": "22014a628a091038d816be04d24837da3c032e53297a251afc2df2e97b60c0ee"
+        },
+        "ar": {
+          "bodySha256": "c08250011c9c5d66d259242ccb93af0db992518917b1a10cd9138c58129f79f1",
+          "catalogSha256": "0160b608ed42655db59db8e95433d0b065eb1efe510650f89853dca169567972"
+        },
+        "de": {
+          "bodySha256": "fda7121dc0e76b81a3d0a3e763b4d01e6cc68c8ff8013fe9aa33dd70a2fc01b7",
+          "catalogSha256": "32a4175d23435982d88532f4c2639c007e3fd271d879612444c558f3a96adf0a"
+        },
+        "es": {
+          "bodySha256": "6b913a177051f05f77862aaf6033fde59931c06ce38b77da65ffb5f4288c1598",
+          "catalogSha256": "4fb96e1df8d7f10606e63d48b7f567ce583bdf39e52da41c05101f1ea31b2c0e"
+        },
+        "fr": {
+          "bodySha256": "13dfbd54c3c8b4e3bd5d411d4f43978769e17331e76c5c0955a0bd4b6e2090d6",
+          "catalogSha256": "621dd5f2b62d2e199a78fc36141a1bd695019aa113ae96c8dc74e8737fb627f6"
+        },
+        "it": {
+          "bodySha256": "ce17997066ec7dc4cb8653797370b61f2201a9ac0cb998bc93535cd1251271b6",
+          "catalogSha256": "657f2b74dfe303ae1628f04f7103f64934b0928fa83df91998f7a4cde0da3186"
+        },
+        "pl": {
+          "bodySha256": "f0ae273c9749c7edf662a84c504dd7772f0e298b49e04b3583f90e3ce9d31537",
+          "catalogSha256": "d866416efe63e85692f2b6902be8758d6760b8ee159f2cc8e21d1f2835c0e03b"
+        },
+        "pt": {
+          "bodySha256": "ae896fdb869a2fe4cc2ec5fa535a60860569ae54126877bcde2ff48354ed68ed",
+          "catalogSha256": "9bac09dcdd931a6148f487e59db212f7ff093a62d4ff143e0f02c00f862c8562"
+        }
+      },
+      "artifacts": {
+        "content/books/joyful-finding-temple/en.json": "6e927464b43aea0c4ff69a82a3db3a7a4d774d5b3b4f91023f3e35817505e8a0",
+        "content/books/joyful-finding-temple/ar.json": "32bf263640a62cc6c21a033b814fac7e658f55dce8c52948e1966b1fda345cc9",
+        "content/books/joyful-finding-temple/de.json": "6d7b77681386c9588bafe1d66372999224fb06cf090c137051a70ce9d43c48d9",
+        "content/books/joyful-finding-temple/es.json": "95aca48f3d0051a81936bd925363823e64db2ccfdeb2993506fb4158e88c2b9f",
+        "content/books/joyful-finding-temple/fr.json": "b9c340c0ea48e7e3ba8a8d68dfe151fa06cbe1d8d12aefc38182c4cfd8611aa6",
+        "content/books/joyful-finding-temple/it.json": "0c71b0822598703ee2df43ddf60288e340cd558a1917e90a9c2c8b1d5632af1c",
+        "content/books/joyful-finding-temple/pl.json": "8bb717db89a5c4531be137aaa35ae78772b2d2d2b1cd9b8066f9feaab8ba33fd",
+        "content/books/joyful-finding-temple/pt.json": "9c6eda27c6f4ecc857cbe273d2321952fb96ea97c52a72c2b27f381032542dc1",
+        "content/books/joyful-finding-temple/book.json": "b495e285e6702a204b54088b39ae4750ff8c38c9dde30bf48118c7c57f822ef1",
+        "joyful-finding-temple-story-i18n-data.js": "ed1d4c4570dda03db69ebc95f0aa3442c6cb896b889d2dcfa9d24a87147ed059"
+      }
+    },
+    "luminous-baptism": {
+      "variants": {
+        "en": {
+          "bodySha256": "5ce78850334340db78fbcab7f6ef2e10120d6f40612aedc349c924895bd43b65",
+          "catalogSha256": "be75ec0c0f4d2fafba906c8d8f78f80f23cb111bf1d02c2cf04849bf9cd4ab9b"
+        },
+        "ar": {
+          "bodySha256": "20835118057a84fe2f4cd5229358f362f2d0ede42326c00e6216b5770e2b63cd",
+          "catalogSha256": "17fa9e8872d428d83bd86a5daf637d67616e5783a45e5abcd0111058abb9ab4d"
+        },
+        "de": {
+          "bodySha256": "72c119967d83225512faebb72ab1fcb5a1384e0d91c3fb611e5b2bc373393c37",
+          "catalogSha256": "0f0bbb8af8566d2f43e826ab26aed76b83cf60cd6a7fe4ecc23822bf0018ad4f"
+        },
+        "es": {
+          "bodySha256": "a4a1efd5be0d9748c5988cf221108846002994c16c9b21a55b12a1ebe9ed8f7e",
+          "catalogSha256": "496852bb10e27f688885d2db0236e27fdd3e62494f98f691041c11981480cac9"
+        },
+        "fr": {
+          "bodySha256": "111a2f05417e77cc8bc3cb5d7be74416c27289fdaf5935956b8abfa2c5eab360",
+          "catalogSha256": "c054348ca2de2f01bf2b25095046a0a14c1fba4f4f61d17870eb52015f805829"
+        },
+        "it": {
+          "bodySha256": "81e44a7adda5eb411cd05a4c42b439554065663541411a77b429fe239b60405f",
+          "catalogSha256": "f0aa32fc7bc54776edb2f36f711c27ec84f1cd9eefc340b7cf5e253df2ef3b66"
+        },
+        "pl": {
+          "bodySha256": "e7d576dcbcc2f86634c78738de7f9019a6ac8e4c93ba3b145df47da61882652f",
+          "catalogSha256": "692371784f83fb692cb01126cf7b03a4cbc423e71e85b038076dc1b318d8a9ab"
+        },
+        "pt": {
+          "bodySha256": "bb6132da1b44e154d82004aa872663833040e5f027c8a00314a03419c0a85a25",
+          "catalogSha256": "5f5f8efc0f9f6d02b27e7dfd509b4d500bfd5da48e8444bc9f4d07548bf00e3c"
+        }
+      },
+      "artifacts": {
+        "content/books/luminous-baptism/en.json": "20bcc669dadf1d114720d5487793208d08329b3a004a2084bf919d08beeda2b6",
+        "content/books/luminous-baptism/ar.json": "a5cfd6f743bc8d850da0b24453c8efe051fb0ee4046db37b5b4843277432f974",
+        "content/books/luminous-baptism/de.json": "196e72b0847cd4a1f29def963d8ad22f6692850cfecd2e2fb5fe135e0ac5ea0c",
+        "content/books/luminous-baptism/es.json": "ebae2b162ddc8d9b75f011f072bee71526121e269c291e067f51c4d78ce93cd1",
+        "content/books/luminous-baptism/fr.json": "30c28f5a68848965fdf5783b3e72f238ef436deec29714ef4725bf5c0ec13273",
+        "content/books/luminous-baptism/it.json": "3b6e1b7dfd4217a8ac6dfabde4a0bcf67029078b09e929f3e251c323a0e825e4",
+        "content/books/luminous-baptism/pl.json": "237270a30e7e22a1d97f7dcf61947b4be9a1c06ac8ed2cb8bee8bafd8bd9a224",
+        "content/books/luminous-baptism/pt.json": "894c426c6711cf49ecdd4b339703d4ae9d212a85a5b6c0f88e3f62520e506bc9",
+        "content/books/luminous-baptism/book.json": "61b173570367db85f0c35feb276377f461ac24dc40ef6213da0460cbcf0c659a",
+        "luminous-baptism-story-i18n-data.js": "b581e2e67695a65ef0c1e9850b046f1772b2e55919489432cd4ec55aa5b81bc7"
+      }
+    },
+    "luminous-cana": {
+      "variants": {
+        "en": {
+          "bodySha256": "eb3b4c9c9ad5b87898be6d46327321ed882964bc11546d09607ad377d63368dd",
+          "catalogSha256": "129dbc4ccd1733d5f84b1bc9ee340bb0adca4a60b38dd6d30da25af6a6ce1a3e"
+        },
+        "ar": {
+          "bodySha256": "5af25e8af5cfc6206dd934cbd39b173b15bace9f1f2303662a95168f3a77673e",
+          "catalogSha256": "2bc15c28b14c4e37dcc06f905a9c6cff27bbf5c6e84a350d6301c0ebf073aee5"
+        },
+        "de": {
+          "bodySha256": "3bba7e59db3ad5cf5ca8ffbcd9cea023a7615716933dc62e22de65ee336b7a17",
+          "catalogSha256": "d7fd504d100b02e851d7c7dac3b365d16c04f76841c1a744d7877108d3325edb"
+        },
+        "es": {
+          "bodySha256": "967ad25925318f717e12192f98f0ef0a2908bdb203cce6201efb7ddf3cb4165a",
+          "catalogSha256": "3c0dc2185e0cf451aec2a6408c1703ea80fdf3223a579c8e7b2cd72e5dfd979c"
+        },
+        "fr": {
+          "bodySha256": "0219ed39eb966c346228d6774e03ec9b9219322a0b6ea380fe78c0f69fdbbc2f",
+          "catalogSha256": "4a30e832d2dd3803548f525e923ff8bc97d5bf03f5d677c859ff8c99da21a6fa"
+        },
+        "it": {
+          "bodySha256": "56479de260156431185e80aa555d9426106848fda59badcbac3815695de5d53d",
+          "catalogSha256": "721ab2e2546de49f24a32ac9f557f2284f41e594525f589c578ac8d706e1a15f"
+        },
+        "pl": {
+          "bodySha256": "075f3e153dd30d3f27d043c3857538756998ff2537fbe9eefa59a6bb3d86cc22",
+          "catalogSha256": "89844e8901c919fc6d423d8d1d5641b181654acf959d2f2d72ce9d7870b9881f"
+        },
+        "pt": {
+          "bodySha256": "1986e0b5e76dec9f6e30c49540105d5bc62e3875f29a8e58bfdbeb03151d2502",
+          "catalogSha256": "400ac7c35049c4e0700d43ceb295ab79b1140f85cbe44a65c526a905e19ed700"
+        }
+      },
+      "artifacts": {
+        "content/books/luminous-cana/en.json": "948082b0f4d03347b2c9eea5b8ab0527673fd33f5678cb8d717ca42ec5cbf9d8",
+        "content/books/luminous-cana/ar.json": "728c21a983cac486fbbdd97418b838660747a82194e2b328e3ef1e0a8f6d5b9a",
+        "content/books/luminous-cana/de.json": "01e8c73dbe61ae4fc355e14ed5a079befe8c8883c925406ff838ba97001eec8b",
+        "content/books/luminous-cana/es.json": "ed9f0bd35a0dd0ce73ceb320d6e577a1c6108f6c782e2f9dc55d357d7107f9d7",
+        "content/books/luminous-cana/fr.json": "15cdb3b30eb069e0e00a21927d0eba4f5edb578e754fe2d7bc5a31719e06060c",
+        "content/books/luminous-cana/it.json": "de633e06ef36847d4a14b3e51a7701388c08149996914d3c2ccba3f4edb92a66",
+        "content/books/luminous-cana/pl.json": "d6211308f66b06c1e8505aedde53d3dcf1e2d0d0d4a3b3a0fe8798d30e553e4a",
+        "content/books/luminous-cana/pt.json": "2b1672f4611885bfa871f634b635bec657253b08e37e2cec736c3d545b4029ee",
+        "content/books/luminous-cana/book.json": "1008ee06330f44c4ca3c0592bd823d550bead5ba49a68b23d76874b01ddc266f",
+        "luminous-cana-story-i18n-data.js": "4175663aa83fed73ad0a412b9134a30b15d70d5b0459af64fdb5b237b6f1398b"
+      }
+    },
+    "luminous-proclamation": {
+      "variants": {
+        "en": {
+          "bodySha256": "b31e69fd248379d4c511f9a838562e6f88e2373713a97e8fb86c5e183333519b",
+          "catalogSha256": "6b3a0cdd55f6ba824816314439d98e63767349c4d7ada39b258f41d33037bc29"
+        },
+        "ar": {
+          "bodySha256": "add350ca3c0d6eabeaa3cda646394fc2d6a28c20257dbc3ed355c856f0176bfc",
+          "catalogSha256": "bf467a690a562d573022b36f010d4b07da4e754560f40d4b9474d86ce8159cbd"
+        },
+        "de": {
+          "bodySha256": "37dd0b27cabadde71a8623a4492f2b2538650e10d72b32234a511ab02eadae3c",
+          "catalogSha256": "37dce20d53d0a9c22134964597bbc657e515b85d9a7367b90e77967a0eb5d751"
+        },
+        "es": {
+          "bodySha256": "69a0151206857bedd9138b6253eedf93cbe7c0e06e32dc758c876951d29ffcda",
+          "catalogSha256": "4cd0284642584fa16c378f6987f61ea7660cda59e89fb54a5cfe57e11ff0e202"
+        },
+        "fr": {
+          "bodySha256": "713f219a486406d50532c8da8975fb07c52187563302ebe722b64b1ca9bc3cbb",
+          "catalogSha256": "630054f385094d3d3ed5fe8971c68c657e1aae13cc65e94e2e6efe189e51e6f6"
+        },
+        "it": {
+          "bodySha256": "b2e93b5435c44c8e6342e31fc8dabb4819f2a3a77a503898a690dc0061b3a12f",
+          "catalogSha256": "26f5207d535a2698aa157facdaeabc79f225f8b9f8564f3be641338288498beb"
+        },
+        "pl": {
+          "bodySha256": "2c943cca0b645d8517ee2c38b7b384b1158efd00a4e664d25acd72a13f1b0c5b",
+          "catalogSha256": "7fd6b0bcf109957313f3b916c12f1cebde5dd77cd9b9c2e03c8f67800c79977f"
+        },
+        "pt": {
+          "bodySha256": "8f834875524314d71a2a8bf6cb2d998f411fafc8d5dab0f2663cdfffa3b554e4",
+          "catalogSha256": "65e7942b906ea2a1392da3fb06cfeec2658b70917b7545c1b79cdef78e541866"
+        }
+      },
+      "artifacts": {
+        "content/books/luminous-proclamation/en.json": "cf740fb2a8fbd2abfba75dff3eb05f66d6e6e3285b35ea5b95f7c4b9f952bc12",
+        "content/books/luminous-proclamation/ar.json": "87a6155733dd9cd94b988d5d79c82313ed6aa71ac6709b7bfc1ff0e632019869",
+        "content/books/luminous-proclamation/de.json": "4dea81f71d817ff4d094b075e5700a97f4cb0c63db7b488623adbe7ea9f07382",
+        "content/books/luminous-proclamation/es.json": "53aad127dfd071c70668a6e9a7a069e83df0cd81ebe8cf4104c4dc359c2653aa",
+        "content/books/luminous-proclamation/fr.json": "66e1fee61c2d082c3345a654542aec1f62f4c1c49338d00d0183f3601435979f",
+        "content/books/luminous-proclamation/it.json": "668b1f66775389a711ea7b9dd82be2bd5eb96965f42ccb542fc76f45f09f944b",
+        "content/books/luminous-proclamation/pl.json": "5a0fdf1d618a65eeb04b424b3436f2923efce40606a4f7878b1737dfd34fde87",
+        "content/books/luminous-proclamation/pt.json": "1da71c441d218b7deb174951d3f9c1f12b7d28b2d966be58554d210734bbb827",
+        "content/books/luminous-proclamation/book.json": "547fc8153eabf3a7b802bc4746e2ae96c73394e2724629f5545784d66626673a",
+        "luminous-proclamation-story-i18n-data.js": "a52d7a3a92806320f8f72ecfab7ac0c2b979ef1f2d93bb00e8d97042ea4ac565"
+      }
+    },
+    "luminous-transfiguration": {
+      "variants": {
+        "en": {
+          "bodySha256": "9443c323a062c74e509d6f36668b3005ec24dc2c539d8b30a54a6427ceacafce",
+          "catalogSha256": "a4d07e834ff1be385a931870f70945c08880fc47bac10300e3d8a18f3de88ccc"
+        },
+        "ar": {
+          "bodySha256": "87501f2c436f5bc5d0529861af284e285da9dc6d607aa7094db1705969152fd1",
+          "catalogSha256": "c202893d397538439e6e3cda09e4e8a0db61605877e252235c6fdad6b04889fb"
+        },
+        "de": {
+          "bodySha256": "1138f1316142f491e15231572eb790f4dced36ea077e0ed42edb95d27bb44405",
+          "catalogSha256": "7009301251c833417a38ad6110216974f4142bd2a79e424b1b1b02da0f2f49ec"
+        },
+        "es": {
+          "bodySha256": "8035414c9601cefcd06af87aa47d7eb84383c0134681975f5d2dd87302cfa57b",
+          "catalogSha256": "8588090a30b3ed3801d999088b8298c5098742438d943eceb9f050125c16240f"
+        },
+        "fr": {
+          "bodySha256": "242cc58bacd5f73e1744d36f753153c8addde2d3e4692512da9f6550f5112e15",
+          "catalogSha256": "a1d102ed008e31d6eef0e6aab9e83ec3c0036f76e79d10a2b0b17a026ff7496b"
+        },
+        "it": {
+          "bodySha256": "1ed1a310664cbd2a4fa31bf07a061970d54cc9109bc5cdbce0f8b48d05d2386b",
+          "catalogSha256": "2c2632ca60b2b5c64c55ccacb2cfc570da36941be79de91674c9ba6f5e31b6f5"
+        },
+        "pl": {
+          "bodySha256": "bac07893522e5fb2c1c0b1ae43dc7c44c99ad4d8bd53f24a842a5a58c71cf52c",
+          "catalogSha256": "03ec71b0cd7f5b67f37624aadd43e1568eceee14c4998cbf018b5748120fa72a"
+        },
+        "pt": {
+          "bodySha256": "23824c7d775f5288bf7849331e02eeace9a4340bb24c16c269cd6b11b1214d6a",
+          "catalogSha256": "b69231745aa07823e53e0f2696f26bd88e41952e07f5d3d044ae6a30f0219cd1"
+        }
+      },
+      "artifacts": {
+        "content/books/luminous-transfiguration/en.json": "d39ae28a3e56373a4fa8621695a3fed4107b216f98a9841710db72f141dd38b9",
+        "content/books/luminous-transfiguration/ar.json": "3dc6ddf81caf7f1835857e6b47c8083365ab41c968d24430ac2bcb4e8d82b338",
+        "content/books/luminous-transfiguration/de.json": "74f8318b5d33f0b5937df2a40149edb414477ee1291eee1c53372c46a7c7b0d3",
+        "content/books/luminous-transfiguration/es.json": "feb6cb3b5810bbb22d5ca79a3f06c11270f6752115e0dab4f6c1dd8a72329da0",
+        "content/books/luminous-transfiguration/fr.json": "7a26a340db0d8e9ef0e25ac3f8304b21229fd5f0f7ae858e988e6c1980350eed",
+        "content/books/luminous-transfiguration/it.json": "0a2d407ffbab5c3a508063d02a5544be025be5295bbd115b35f75d80e16dd67c",
+        "content/books/luminous-transfiguration/pl.json": "49e1740b5fed066425bdf996b549386036f815a871c56377ce4e77f1412aee36",
+        "content/books/luminous-transfiguration/pt.json": "b55d1f44ff082851196e233393a38ff15e66e60150b1f4c9499a776555ad0b23",
+        "content/books/luminous-transfiguration/book.json": "c3410f691101a27edb23929afdebdd46ad396bf617fa32ebdf715d4443c20e09",
+        "luminous-transfiguration-story-i18n-data.js": "258aba9a7be875144309e6f6aad89450722418f07da5e5256155cf8dc86ce633"
+      }
+    },
+    "luminous-eucharist": {
+      "variants": {
+        "en": {
+          "bodySha256": "00a16d8c7ab458fe303a9bc3e078544e40904d8df22114eb7d2ce85612d5f0c4",
+          "catalogSha256": "75d291bed6c56082d22d0fa88fb791792e86ec7a1b35cdde76f330519437fbf7"
+        },
+        "ar": {
+          "bodySha256": "524f62cbc6e35210c2cd8a5ad70c9d24e5dbb0c552e455dc4c3eb75d16f7930e",
+          "catalogSha256": "e9c5d9f639a8c5081b0fcdc1af37b4e489a25b55a74a99c15d18c514a78588dd"
+        },
+        "de": {
+          "bodySha256": "edc667857cd008e2f9eb45a2412cb5099c31df29918ab36931bb2be124b3ebef",
+          "catalogSha256": "9d7a338fad568f39b1168e3a84534546be6de6478974c4a516fde7121daec7f3"
+        },
+        "es": {
+          "bodySha256": "248e96a753db10ddf37772e4ff1f0669350d94d13441e91d598891e23882232a",
+          "catalogSha256": "8db67fa6debb4a7f0304d4e3406d71b13eddcd8179a3098222d177496e905607"
+        },
+        "fr": {
+          "bodySha256": "c5359f32c743db0a511e492d9adb5f9aab7f6e49244bb2d0abddddd70b0d33b5",
+          "catalogSha256": "880375dd62877ef40fe3a76392385a7d377700792c32c417465be12a3d926fe2"
+        },
+        "it": {
+          "bodySha256": "1977adc0177f2710e406f0fce71484a05c7e7d42292dda2629f82d39866baa8c",
+          "catalogSha256": "1331f83f0857028949f84fd1c75bbde66822fa6d40c7872cdcb28caaf4789408"
+        },
+        "pl": {
+          "bodySha256": "6e89841461830aaf577f22950e4045a4059a86aebe44d7a689b1c7f1d187bfe6",
+          "catalogSha256": "2fc84fb2322c51317aaecfe98591abd690cfe1098c5485534a2df8cdc38ebeed"
+        },
+        "pt": {
+          "bodySha256": "76a1596d24b4bb0851d4de6745c8e43b1db50a9c3d33eeb53361fb49c2d7df12",
+          "catalogSha256": "6e15c4e3830604c6ffc14286bb3f587cb428dc5fb692a89ac626389ab5a15a8d"
+        }
+      },
+      "artifacts": {
+        "content/books/luminous-eucharist/en.json": "d090600526c3ba097e6dbed57490238fa408c250800507964f62ca3f4d6587a2",
+        "content/books/luminous-eucharist/ar.json": "bbefea866732e815f66e8fbcaf14f87af56b2b419d6da4cc73645e468a251967",
+        "content/books/luminous-eucharist/de.json": "c31d4820fe0f5a531f9ccb5b8cb396456be35ff537a595fd67b68447ac6e8ecf",
+        "content/books/luminous-eucharist/es.json": "3084544b1c4055bfcda8d7278cf7c9e3ffea1e62eafeb30d9a8667519fd08da3",
+        "content/books/luminous-eucharist/fr.json": "f28fc473d350a2986222e6629aaf6975c0343e6ef8e4704441e2cdc160a7ca51",
+        "content/books/luminous-eucharist/it.json": "4d5b1a7ef0cbe869fd4085d6f8d576d230906a6de49d286076e3f1705458d8a7",
+        "content/books/luminous-eucharist/pl.json": "12ba0b34507fab80d2775a9e9f98b33515bf890a14939449c53a7693cf39a60d",
+        "content/books/luminous-eucharist/pt.json": "efb10e6650f9e42f71601f3b9389c9d23b59a1703f5a5869f64b6eb26458e3d5",
+        "content/books/luminous-eucharist/book.json": "bac455ba4cd2ad7eb64a2bc4855169e051c7ff6e5cd39c0056caf3e5487cc447",
+        "luminous-eucharist-story-i18n-data.js": "05dd1b7df71cb2695f41077e974f72c72b0c250b642a28d720b5beeadd1d883b"
+      }
+    },
+    "sorrowful-agony-garden": {
+      "variants": {
+        "en": {
+          "bodySha256": "c958fc610cb84568b44c7d7f3a0fe48b4095503380bbcfc7e989b09c03d76171",
+          "catalogSha256": "64f52f30228a212ed5e5693c66bf020ae3f1ee7d6373a7a4deefafad54722385"
+        },
+        "ar": {
+          "bodySha256": "5ded27ef974b8c282077e313bb16fcc4105b000df00e8347d84d3b1c42436b21",
+          "catalogSha256": "068a72aca6a52b1c654cdee612b6e1d7f0526b7c65e671a2b74ce1404bc820a0"
+        },
+        "de": {
+          "bodySha256": "213d96886c009a3e9f3b3826a5dae958fa08514942ae799247609f7e90d0996e",
+          "catalogSha256": "fbccaef3a7462018f511aa22c7b4a496691a5c00395f2c1a7ade27f13b7ad1ea"
+        },
+        "es": {
+          "bodySha256": "2d388a3aef8bad5b0199ffc4879cad40dd211b32b9755584974528be13292cd9",
+          "catalogSha256": "6c336d209e6197c77c152a942feab815330a37618f96baa25545ba8dea52c23b"
+        },
+        "fr": {
+          "bodySha256": "f2e840fb82bd982174e4779d95160170bddf7837109a3f4617d344c5d58eea09",
+          "catalogSha256": "cf6d956523b48083b7f7ae1d355149de26bc0518af716ae9634ecee7778b995d"
+        },
+        "it": {
+          "bodySha256": "f137e8a0aef594c634aa48b65d48c6a1839b9d5ce3da7ec13cf50463c6a1d0ef",
+          "catalogSha256": "2fa924e3dffcdc8b8db99bac70a0017e1112f397564c62905c35cdd608376dc1"
+        },
+        "pl": {
+          "bodySha256": "86f612b9bcd6d57bfdb68ff339a2738d74a83efc98de6a1bab469402efd6666b",
+          "catalogSha256": "0514faf6ed09e06f2e40f52f39a6e3041cd53802aaafd76275c5fd6dd3a7aee9"
+        },
+        "pt": {
+          "bodySha256": "9848404e779c6bd46cb6767ad0ad0e50f766e5c81e38718594d40704cb6ed620",
+          "catalogSha256": "05afda7ff313f3071ebe3399861438f7b49110173102f36aef7983bc0510978e"
+        }
+      },
+      "artifacts": {
+        "content/books/sorrowful-agony-garden/en.json": "8e52b8852a11275993360ec6cdd87037e624c092f6c4ac4fb104992e6b36d502",
+        "content/books/sorrowful-agony-garden/ar.json": "cc145b816ae31638b9159cd7edbc6a06baf3967bfd275208ebcdcc3b71bb4f7f",
+        "content/books/sorrowful-agony-garden/de.json": "539e6b08b662f11e6c96c26e81ee1d3570eda16fea9317feeafa7114a0204a06",
+        "content/books/sorrowful-agony-garden/es.json": "fbee38fc209fcb060ac1ba20060db07f31dc3e2e4b9e2479ced8a2d7961080b5",
+        "content/books/sorrowful-agony-garden/fr.json": "0805a028bd9ddcd79fe3fdcf8458dbc8655ec3416ad6f787c275747278351ade",
+        "content/books/sorrowful-agony-garden/it.json": "09b66250d6c6485d7771c5bc5352c82f70c89fd1fa02467a60d72bf669480fa1",
+        "content/books/sorrowful-agony-garden/pl.json": "04c6dd471d359673c1118d7a95ddfe66e9fe3cfe094ac6067212b92d53a86540",
+        "content/books/sorrowful-agony-garden/pt.json": "803a932d922220297a3de870acdd85d560e300fd25d0cd458c24e9680b9391e5",
+        "content/books/sorrowful-agony-garden/book.json": "7a8d9b5578cc27b5ff0e7fa1ef531f4c29ab6f5f1d841e749e59466ca9e0c18e",
+        "sorrowful-agony-garden-story-i18n-data.js": "baacc93cfccf928921c6f4194d29522b6bd7c1b604e2eb88e9e8ba53da9918cd"
+      }
+    },
+    "sorrowful-scourging": {
+      "variants": {
+        "en": {
+          "bodySha256": "014386f9c94ddd9603c0930130cc6ed4a9ee04d1381d4ddfe7cc217d66da25d1",
+          "catalogSha256": "53811cd766576ebac869534071d46748a33cc8c2706b2e5cb1ca3a7f032b46cf"
+        },
+        "ar": {
+          "bodySha256": "005c625c5fbd5079ad9b528b4258890217a7a3fd19b7f446bad7056806f2d611",
+          "catalogSha256": "19c3bc2685a2201cbfe9dade7586df5907f7733dc95298074c1bc47c6ff683e7"
+        },
+        "de": {
+          "bodySha256": "8b3d016a9bd2e982f19586e386b9a6a207d9f248369fc91d6038e6646e78ac62",
+          "catalogSha256": "31ccfed29433f84e7cb7e6d7d0092193fb09dbd22092b040cc8b238729724b95"
+        },
+        "es": {
+          "bodySha256": "ba079a9951216cfdb58ef32aac58f7c12e461a07bceba3d32b7e89362301f61c",
+          "catalogSha256": "4ee7393a562808ec5c8064dccb88bbe07ed953fa069a212cfcccb900bcb6aaed"
+        },
+        "fr": {
+          "bodySha256": "908872369bc4e0943fa295d25e2b7e7ff2e449cb958f37fa56552792f56a62d2",
+          "catalogSha256": "3b46ff9ebc26331c7886cc8a67aa1591a39a69da43152ea85783af1c444cae0b"
+        },
+        "it": {
+          "bodySha256": "03f4419347a1e89fd126647a3911303c8ecd6618628837be0fcd68985634c626",
+          "catalogSha256": "70a539b3a36eaa68c92b94cc8ead4a9792333b92011317d30a3063ad801dc1f1"
+        },
+        "pl": {
+          "bodySha256": "f2f53670dec413f2abb37407bdf0b6c13d027b063ef1bef8d8cce0dd38b8b33b",
+          "catalogSha256": "e1d23ccca5d841bf84bed97303d35601d479e37cd7872ac5a3e0037be994605e"
+        },
+        "pt": {
+          "bodySha256": "f36a0fa76dc8b4002808f3bdfddb203a1d59ef7636c599127af4591ff25d496b",
+          "catalogSha256": "5fea34f9008dc56c201e93aea0e16535a73630e6b26096862e1779b302059aa0"
+        }
+      },
+      "artifacts": {
+        "content/books/sorrowful-scourging/en.json": "937f62110560134aa05a836aa5d7ccc490f30630fb0a63b174148439db021e14",
+        "content/books/sorrowful-scourging/ar.json": "e9646b092f2d5d765b0ec466beef3555276f49236ff6232240dbbe0707990649",
+        "content/books/sorrowful-scourging/de.json": "a2feb9178cc3aaf1303be973f75214595611464a417d34f3814d42024bcc0c9d",
+        "content/books/sorrowful-scourging/es.json": "6387156b5519aeaf4442b27486c401820b54d18c60c66a393853488384351ab4",
+        "content/books/sorrowful-scourging/fr.json": "d5ac051092a8f4957387cc002104fe96fa921e2b0f6fa91dffd150e2de05a5df",
+        "content/books/sorrowful-scourging/it.json": "45c4a52637344f414f451af428af6bcedef0d9fe9f3e1343cc2e5c8044bdd7c2",
+        "content/books/sorrowful-scourging/pl.json": "67f73d713dd9687a883d2ea9818a25847737d5d7ea88be5cbda656573c59ff32",
+        "content/books/sorrowful-scourging/pt.json": "7376be99fd92140f0936db4de5d21aa2ae85e6a964ee2b4a28b546cfffcc989c",
+        "content/books/sorrowful-scourging/book.json": "4a3f58ed076514599c1092c51b95ec14920881fd399530e17ad43fb06093d87f",
+        "sorrowful-scourging-story-i18n-data.js": "737591bb6183aaf428aba9dbe99a942fd30061cafb409c6a61fa3d7b88788b2b"
+      }
+    },
+    "sorrowful-crowning-thorns": {
+      "variants": {
+        "en": {
+          "bodySha256": "b6999a403d51d3a9b48b1e0372d0cbcab49f40af6809dc486aec74c8647a9a64",
+          "catalogSha256": "6fbcebfe0e7e5febccd5aeb8cb906d231268d161f7ec27646c4cbc28aecddbbf"
+        },
+        "ar": {
+          "bodySha256": "e88703800950a53bf5ce4cd15411f949bc313906b17b22716bee9527951057c4",
+          "catalogSha256": "8e656cae55487928bbc059bb63b826eff93208004dbb7cb5eda5c8ff2a1eb280"
+        },
+        "de": {
+          "bodySha256": "77ce60a529947fdf1dce7556869b8f2e669994f8bed53bccaac716a2accd8d31",
+          "catalogSha256": "045e58749e25aa0c6bff195a45b8611c7ac2ab01b8dcd409c63fd046b60486f6"
+        },
+        "es": {
+          "bodySha256": "0bede66cb2ee1fe230571c9da8e05da763a166b0b07285c1def178126c0c52e3",
+          "catalogSha256": "f86ef27556c62acee1e1666804a8e19679e03baffdbd3e9cf8551f06dc5f966c"
+        },
+        "fr": {
+          "bodySha256": "122c050c85f50e4a19a15be3e45635803d09b35c67ecb51af8556d17e7e38312",
+          "catalogSha256": "613e329d4a2b717dad28ddc601b373c540d03ca7d0fbec1599676dbd028ab823"
+        },
+        "it": {
+          "bodySha256": "da4565b6acd05b67ded46bc376b4d1969e626f70362492db881a410039597520",
+          "catalogSha256": "9f00d6a1a7c480bf257ef8097a952b3792cbb049785f72fcdaefcb630b8b6864"
+        },
+        "pl": {
+          "bodySha256": "d367935ddf1d7962790ce7b1e0760d37e84a886e71eb712c80222d9eee4fc9be",
+          "catalogSha256": "9a0942918865dd13ccb0496546821bbf0bbc3af48d45e7f910af9f5b11d7b957"
+        },
+        "pt": {
+          "bodySha256": "5e47f633b87e97b6baec887eadab70ee472ba1644491f07602390db7dc8578df",
+          "catalogSha256": "55ffad78cecfb974816a256a202d30ad90196a22cdf1a893e5a81bbeb0094ce6"
+        }
+      },
+      "artifacts": {
+        "content/books/sorrowful-crowning-thorns/en.json": "9250f6745589d166d550b7a4fd0fc442040c38f38245c5cd971f7a86a8247114",
+        "content/books/sorrowful-crowning-thorns/ar.json": "bc57644c7986e0fc30fdeb46a302fbbc0eb36f3395673c69fb300df1027301b9",
+        "content/books/sorrowful-crowning-thorns/de.json": "33214d24e71e59a59e10b883204aa9353b3e16ec09b53e2ec2b9d1654eb0e940",
+        "content/books/sorrowful-crowning-thorns/es.json": "8f8c00897a05ff03b167586d60fac7fdde42b988dd8a56fa4e12d08f702d914f",
+        "content/books/sorrowful-crowning-thorns/fr.json": "fb5b56bfe4fb30517e6376ef16ff06e0d01d0a3cca307feafa81c503632b7f64",
+        "content/books/sorrowful-crowning-thorns/it.json": "906c0e00fecaab7c6ee925a84c14ccdea2f943a0b32c3afc6dd8ad4938158264",
+        "content/books/sorrowful-crowning-thorns/pl.json": "b49570cab0919e5e0002928e06742b49c0910fe942f2b383b7e7ffbb76618772",
+        "content/books/sorrowful-crowning-thorns/pt.json": "418ec43d7a56c1428dc4b4288a09fb7ccf44b5448012ce0c97865bcda861824f",
+        "content/books/sorrowful-crowning-thorns/book.json": "85083ed0f735ef51b32810ac758d84f26a1beaf7be8e1c4a427fd378de79487e",
+        "sorrowful-crowning-thorns-story-i18n-data.js": "298574b63b6bcb812ae52a75c23bd02bce25fa28dd41a99a512051acaac64ba7"
+      }
+    },
+    "sorrowful-carrying-cross": {
+      "variants": {
+        "en": {
+          "bodySha256": "35c6ad487387fe246022da618901ca9fa4bdd1339b9359e6205d4eb1a2261183",
+          "catalogSha256": "d83a2646806bc543a3623844788171ca4612840ca4a81a9db9a19d8235b30152"
+        },
+        "ar": {
+          "bodySha256": "d02a7c277ac31a85e5c9e45d25cf7e101c8100219e6b7c8adb1355654f155628",
+          "catalogSha256": "53da682d9451b824a4d442b30b3b249aaae9d10f992be89a3d661401f20c5930"
+        },
+        "de": {
+          "bodySha256": "82d26d7733360268f5ff066e335c1042688fe3f81b3431619c8eedf5ab64ecdb",
+          "catalogSha256": "798df1b4d58615235fdc962569b8954fad708871bad95ef2e14caaace2d6e2af"
+        },
+        "es": {
+          "bodySha256": "0f6c9c2b723fdab4e0f46070745a849d4c66c0db3a5940221d271561925df495",
+          "catalogSha256": "643dffe626add8fe312b4c4309b09316602b0514c882e41a174fc5300bb55c0e"
+        },
+        "fr": {
+          "bodySha256": "25f32589c30cde333968d75808e0e54ee7c5d0a5d73c6f595c243e84a33935c6",
+          "catalogSha256": "8c5b3e6c008a6b32a227c261347e274fd9d2a428c703f6ecfa6715da49a9aefa"
+        },
+        "it": {
+          "bodySha256": "7f0e9caacf86e1cd2c4bbe831c593412fe116e2a055a5dcf6d9920334cb408e2",
+          "catalogSha256": "e7a8cb4f4fd3154a1702b8b870e500555f7d48ef96f69044dd40c0db069237b4"
+        },
+        "pl": {
+          "bodySha256": "6fcab6f20ff54d40142037e9f9c9fecb6eb7a0f86d1e7e2064faa1711f0e1742",
+          "catalogSha256": "a3263682b22a0aad77bc2d5fc995bc79b61e05f0b742bd2c09a4d97802ad2661"
+        },
+        "pt": {
+          "bodySha256": "29cf2139ebe38d641c1806a4a24c93da51ee0968732ca84f74cbb289d45e1fe2",
+          "catalogSha256": "12b59f3290e52cf95e10363b88e770aa02c24d5eee4eebb46e218ea374d7bdfc"
+        }
+      },
+      "artifacts": {
+        "content/books/sorrowful-carrying-cross/en.json": "1e29a652caabf96ccdaad11d52498054e6319696a6ed186a1e905c7721c29acd",
+        "content/books/sorrowful-carrying-cross/ar.json": "954b0d897d124b11a12141b34a61f70da802d3007d5c2f724f2aef4a23878d29",
+        "content/books/sorrowful-carrying-cross/de.json": "8b682fef0dcea76a65c628dd37a6892127ae8e9c96e3f303adfa407341e0b8da",
+        "content/books/sorrowful-carrying-cross/es.json": "cc74fd3d76b37b31613574bf37a50b2cb56c09e4680b31e7673769fe37b0baa2",
+        "content/books/sorrowful-carrying-cross/fr.json": "44ee34059024e6047af7aacb18e7d7484d56a9881aafd8a13c9d23cb05a067da",
+        "content/books/sorrowful-carrying-cross/it.json": "dbe36853164aadebd020ecb40d6dde594fc8efb2de1b298c8b351bd0992c5276",
+        "content/books/sorrowful-carrying-cross/pl.json": "465f566fc409859741299644168f47df0d8e4e699d1b7ea8f912abfb7ba3d52d",
+        "content/books/sorrowful-carrying-cross/pt.json": "e33327d92bd44fcc5335eccc41607e037b5830f1c50947f383d35a7a2efd1a74",
+        "content/books/sorrowful-carrying-cross/book.json": "0b9c63a23d8ef679d48b7b2afae1ed2da4e507da7b4dd85a6e088b15f42aa1e6",
+        "sorrowful-carrying-cross-story-i18n-data.js": "66db8b83ce139d65b4e3415fbbad85a3f105b69332ac4ddd1b6995a76c1b623a"
+      }
+    },
+    "sorrowful-crucifixion": {
+      "variants": {
+        "en": {
+          "bodySha256": "6bc74b85cbea2944fb877a91794ee5902fcc2970b0767730f2324ad321e878e9",
+          "catalogSha256": "8441220d45362f2734e1fa281e67309065a7e1a5bfdbccb0758b5a02394ce3fc"
+        },
+        "ar": {
+          "bodySha256": "96a47068c200085e2b753753cfd9dcb777c23d27c57b43776827a2cd1cc7622b",
+          "catalogSha256": "b543c401c9d7f3f3aaf3f1957388a53bf1654e8f7a407ae68997d178cc3435de"
+        },
+        "de": {
+          "bodySha256": "1ef390758c1997bf3bc01dfa5cceee03326a3fd8a6f67bf12b005510a4e677b8",
+          "catalogSha256": "f3bb43f0f9c206672b129722401fd9505f173dda640e3ab5f98fba3fd6ada8a6"
+        },
+        "es": {
+          "bodySha256": "ac48f9123f65f9f49b9abf486836cf0089a1a3ee089830d027a4cef8effb3b25",
+          "catalogSha256": "6edea458137bc193119c14036aee01c454125fcb0966081af7985b0e9b6e360c"
+        },
+        "fr": {
+          "bodySha256": "069a578465b9c37709b487d1b739e45adbaa4354d68379151742110d2b3566ce",
+          "catalogSha256": "2e5139d8b876de4df1effc76e11f86a95ba7317ebb9e5ddcaba68b58dc1c614b"
+        },
+        "it": {
+          "bodySha256": "1cd219ec508d93b1d6780c93ef001ca6791f86b26857eee8ab3ae4639646dc09",
+          "catalogSha256": "a0c6433d540798e0207bf4d5b03bc952cdbe530cd0bdab5c611f2147b2e80ba8"
+        },
+        "pl": {
+          "bodySha256": "071e388c298d079d6c2f3efe8ef531a388b2613a45f4fa194b38421491751754",
+          "catalogSha256": "ece7839d5ff53201310e87e0a53328ff9c1dc42aaef69ec745010207c4f406be"
+        },
+        "pt": {
+          "bodySha256": "4137e387639c9d0f924b28e99d992ff5b1554807622038c6987b840192d0e211",
+          "catalogSha256": "32f9e6b4c708039343348c48171ff63e4eb9a8dae1ef6d65d51d96a9082bf188"
+        }
+      },
+      "artifacts": {
+        "content/books/sorrowful-crucifixion/en.json": "b34a80bcbcafe78bcd3e14ea4b0252fdeace10e3438ff3e809bd813394b55db0",
+        "content/books/sorrowful-crucifixion/ar.json": "9fd00a4ccb617dd7f87dcb13ac6678ff4e10cadba2212404b3d43598e477ce2e",
+        "content/books/sorrowful-crucifixion/de.json": "71ee4de694fce0b799e88eb0549e843fc0479c78ab5aa577f2932caba2519ee7",
+        "content/books/sorrowful-crucifixion/es.json": "dbaabcc3624ba1a877da33b2194b3b8140556d751667438b862e2212f2d6821e",
+        "content/books/sorrowful-crucifixion/fr.json": "dac5a470b6ef498997ad27f155040e8bcb51afa2333e875ae798d89b29bc9b6c",
+        "content/books/sorrowful-crucifixion/it.json": "605f3e9e809c9ab6cb1a70453cf77d3ef1692987c08f16f6a841086e8ec130d3",
+        "content/books/sorrowful-crucifixion/pl.json": "f63ca5f5f7556862f59c17141ba61ad54a8c20397289ab511dfaf4bd300a546e",
+        "content/books/sorrowful-crucifixion/pt.json": "a8cabb37138f223a537fdaeda403569a669b85ebf174252f8d6e89c377d3cc72",
+        "content/books/sorrowful-crucifixion/book.json": "2f8fa43659cf2aae9aacd82f1a93ffac93a48b3a66130dafbb8abc901c50c570",
+        "sorrowful-crucifixion-story-i18n-data.js": "1ab448e79a7cb6e97d21662e2c8ab56311f36bd7e34089a2083b3ad209c04cc7"
+      }
+    },
+    "glorious-resurrection": {
+      "variants": {
+        "en": {
+          "bodySha256": "88e3035a4d28093815046f57f12c0ce4f0daf58a07e46cd988eb2dc749e31e00",
+          "catalogSha256": "02b28f0da2afc6ee6c39768b4be0c6b78fb13dbf8d8a3197c39a8ee07327a0d9"
+        },
+        "ar": {
+          "bodySha256": "e0c645c9b0b85b0f8e2ed2edeb7da5d47781bfbad6aad62232098e1776490d4e",
+          "catalogSha256": "41313b57427b46254a700e63bbbfb9e9bed99b0c67e3fdae555a605dc15c78a9"
+        },
+        "de": {
+          "bodySha256": "b09abcdd24949646532185af2c94a00e83c8d1f093cbc24ee3dcefa95a21d949",
+          "catalogSha256": "6dc30fb2247f435d71861ee2a7bb8158f7bb70fe401ded584433cae047b39349"
+        },
+        "es": {
+          "bodySha256": "7615c32294b022a316bf74e733ef3f515781ad572f3d7c444d601c813852ff22",
+          "catalogSha256": "3a2908f08ae932db6a11fcf954ab819afa9fda32167350233fe45be72b0d551d"
+        },
+        "fr": {
+          "bodySha256": "3799191ee46ac2862c660de1c67ae8903ac5da7b8d673466a571f97c6e2d9eeb",
+          "catalogSha256": "f3b64580b30d21e60e3574ebf8460bc3ca7e78520fee22e58bbf4a782927bbd8"
+        },
+        "it": {
+          "bodySha256": "8ed6350bce6e685c79d1f947521e4e43d1299d6f280975519e73c2c29687dec8",
+          "catalogSha256": "f957e01fb458854342f18ac08adf003c42418ee25a6ee722515ee53fdf87d83a"
+        },
+        "pl": {
+          "bodySha256": "aac5047409b20dba6855e9b7c4109254c9f402e0e1c9c7ef5cb205525f12d40a",
+          "catalogSha256": "074b5cdf8d08c26fc5070e52e8e22090d5990d5f9ac1d1d7e1dba738f0e7b4ae"
+        },
+        "pt": {
+          "bodySha256": "883a780ea90f7528b5aa5e06d6ba5227268544f25b1f3ea444fe93865edcb89a",
+          "catalogSha256": "cbf2d6beae89d41f0dfd0125aff752f07dbb6a5ccb47e93ccf83e6eef4b65c2c"
+        }
+      },
+      "artifacts": {
+        "content/books/glorious-resurrection/en.json": "b5a3dfba35d5f4c175f9115054b0ad392e53c79321d3d11b43ea38c73258da59",
+        "content/books/glorious-resurrection/ar.json": "ca8bbff1ace321fabd045fa68ffb31ef7549f9a0a919b2a7b91504751c2c19df",
+        "content/books/glorious-resurrection/de.json": "298f33202c4e1faf4f652e82d97a38d23f2cf6d074bd210846be47159069a8e7",
+        "content/books/glorious-resurrection/es.json": "9084c4bd15b40e8878f56e06438effd9a23a5d80b036a2eebd24b971fb786b7d",
+        "content/books/glorious-resurrection/fr.json": "549a46a41642caeeb067c2a7150e4a30219aebd774bf53b5f4756d08d91585a9",
+        "content/books/glorious-resurrection/it.json": "b077f77d73deb2a76e59659b268381ae4cd688d4351d4477dc40ee711758d5cb",
+        "content/books/glorious-resurrection/pl.json": "891c31d2d246c67b0781bf576b2f3aaf1ebf6d2a3a500d5911815058eaf80ca9",
+        "content/books/glorious-resurrection/pt.json": "ba2e45e419524dd54e52cc91f911175e5f11b09511d0800e1c791bc9d58d4af6",
+        "content/books/glorious-resurrection/book.json": "6ee0af8e08829cbe1a7ad5f5dd21cf4a4d18d0ec599ccb138c66e73c17494ee5",
+        "glorious-resurrection-story-i18n-data.js": "dde7052370dc0b3f9a6e7716a7759738670058e024348ad9707224ec19a6052a"
+      }
+    },
+    "glorious-ascension": {
+      "variants": {
+        "en": {
+          "bodySha256": "3efd796cc946b377879ab6de7dbfaecda6e1b9dcf7f223c92f908220c9470f01",
+          "catalogSha256": "d07d2c88af7a1352cc36fae4effbf6d92edcb86954c03836323ae96b2b9c47af"
+        },
+        "ar": {
+          "bodySha256": "1be3876b2f0d959eeacda0dc90062a2b002ed4d697437e07fe0e6284f62a2426",
+          "catalogSha256": "f470f0acb1b928ccbce07934f013351e0542036120d46ceeb358fa933bb514ca"
+        },
+        "de": {
+          "bodySha256": "86dac9cca06ac135ad2ed95b14371a550dedc6c21e94c88693eabfaafc712bb5",
+          "catalogSha256": "a90f72753f23bcba266ceb5b324be53f2b295c72e7d2e28346e956a5cd7b099e"
+        },
+        "es": {
+          "bodySha256": "235639f5e97957e1201b3644d05ce93d4d3b047e9bd587997ca0b34110aab1ea",
+          "catalogSha256": "f84315b0bbc89a578e766a9ba1b84379ce7975b7bcc5c20e3a74167c3a1e7f92"
+        },
+        "fr": {
+          "bodySha256": "a6b04619b54ada93963a349648f9862dbd083fb1ef856d028517b89b3e8681f2",
+          "catalogSha256": "733e6e147addb5b418d3a288da753fd31a678d7b8dd9b5295cf3fc7928962aef"
+        },
+        "it": {
+          "bodySha256": "6b9d6e2ca436d51fde3219965bc4fc328758ad4c67b18f3800a09e444add31dd",
+          "catalogSha256": "2b322d5a52879e5da4cc3473b7e4fad06fbbee6a71c4ddf0faaeced3c5ac957b"
+        },
+        "pl": {
+          "bodySha256": "e6ac759a73f0db47450cfa6f8b1508126c37c420d76364b9996367efb8ad3353",
+          "catalogSha256": "5c9bc6ff6f5a87bafba0c7e8a02f6d1882e29a5f3bc6dae8e40b0b2451e3f19a"
+        },
+        "pt": {
+          "bodySha256": "4bcd7c0eb06f4d90d81b05546ea1eac7c7934343f9daf148dcba208f1940fba0",
+          "catalogSha256": "daf91e9bdb75010cee4da622375a9fa71d54f0d0291d6e2a220c7ba252eff8ee"
+        }
+      },
+      "artifacts": {
+        "content/books/glorious-ascension/en.json": "f38e06a7d23dec57325e237de4accb5505b411d5fbb5f9bdeac990584ba7d757",
+        "content/books/glorious-ascension/ar.json": "a291a4abb290d63a53614186e7b2851f5a1002d7f22b6926dc3a6b85b5cf3777",
+        "content/books/glorious-ascension/de.json": "c104063473c9eb004f0f5590de2c8984f18e8e72dc88ec037f154ccba007753d",
+        "content/books/glorious-ascension/es.json": "3e63577dd36b981173c7416d2ac8faab3f30fb5b15694f5e8ed0edbb10c7d3e4",
+        "content/books/glorious-ascension/fr.json": "fcdfd753ccc442624f9a4e330642472936ce09fd5e45e968f7bedc8e4724435e",
+        "content/books/glorious-ascension/it.json": "cc2f917dd4e0d72de4b2ee1adce6789c69ede2b2d2e9c41930dcce6817b04ba6",
+        "content/books/glorious-ascension/pl.json": "2dd583e3aec506fa4cf3e889849bbf8e8d6bf27e2120faeac06e91801a830cda",
+        "content/books/glorious-ascension/pt.json": "0e674dfd305d92f4c03a81088a3a4b9f35d857f25e86f2e2b178367dd7cf1491",
+        "content/books/glorious-ascension/book.json": "084e4c57457c4902e8515611f941ed23f1dce20362ef3cc409814e4fa96a08f4",
+        "glorious-ascension-story-i18n-data.js": "1a87793c84d0bd3922b01d090752a0159753ab4329e257141611a2707677796c"
+      }
+    },
+    "glorious-pentecost": {
+      "variants": {
+        "en": {
+          "bodySha256": "cc84ae0d263ad0f7f4d3338175be34bc4c0d7a350e4eb9e1aeee19172e5bed4d",
+          "catalogSha256": "33eb49d923a3f0eabab4b39e98d3b819ac6da7c6d17fb1ca238e5f0c4644f1f3"
+        },
+        "ar": {
+          "bodySha256": "2e275151e39ec9ff571e688eab3e44f008665b619c9e1c40b656ebf71700c389",
+          "catalogSha256": "e4579f91dc337dd979aa6bf532ba455e4aa1d7763e92f82d979284d948dedef5"
+        },
+        "de": {
+          "bodySha256": "8f517c0d50476e6a36b82213b861b5bf44851b1990fffbb1c722ffa5de63ef88",
+          "catalogSha256": "a309bd197b456e030b612be616ad4bbdbd107d34b3b06144920ee54f9c6ccee8"
+        },
+        "es": {
+          "bodySha256": "397bd1f62ae7e37f2bd8df2e1992321931c275f5faabd5033bbd9684a8f43978",
+          "catalogSha256": "0569a3f9950308b9f6f5a83ebeb5b11fd214a7777fe4e84c16a88b5f3dec1e32"
+        },
+        "fr": {
+          "bodySha256": "46094b028a7dd82e3ec6a414967304bfce72e07c3175a6a8f501b80171613217",
+          "catalogSha256": "219bf15a02680b2b53feba0d78d1e52781a030588b8fa805e8e7e198b6462a34"
+        },
+        "it": {
+          "bodySha256": "d3747eacb30eb2d5d2c710f4a7b894587fecee3029a0094440fae5babc498712",
+          "catalogSha256": "9bf7201a67d786fce4dc8b170f1b0d7116b6f3f82fb9f21b0e1877775b2491b4"
+        },
+        "pl": {
+          "bodySha256": "5a49b862e45cb45d45bc82e46737986efea3f522e5a337e1270f198e0697e37a",
+          "catalogSha256": "5204d400aae6d3436261faf71e491f1b23f09d71d85b1a620bbc61dd87162609"
+        },
+        "pt": {
+          "bodySha256": "ee3044c01567f1f0b5ce93dad21eda7056532265b6783f2ce7506b14eb3ff562",
+          "catalogSha256": "2baf864dfc645371b657d5a089ef88e08da4b6cf4f9e7cf01788bed20794d0f1"
+        }
+      },
+      "artifacts": {
+        "content/books/glorious-pentecost/en.json": "52405ecf846b2e352007e07e73b7e5c0326518c48906c85bf9a4f32973b776c9",
+        "content/books/glorious-pentecost/ar.json": "087589e66d314cf3e43814178695929523a2ba81b2f52632d7cb4b2714811b43",
+        "content/books/glorious-pentecost/de.json": "aa0b3a4d8f50640082c4976816ea9df0561afa7d45856462108e85099a8b83d8",
+        "content/books/glorious-pentecost/es.json": "1d8113d9ea67cb3369804e20d1c08145789bd23f361d0ca5af26b39813f6ed4c",
+        "content/books/glorious-pentecost/fr.json": "6c0bf94077c6831ea0c3faff6119ebed693d23ae5e4345c5df6ef9085d0bd96b",
+        "content/books/glorious-pentecost/it.json": "9803fcafa3812ad986a46a4797c4b6ea8c728d3c9428c701d8535fc3c9b44f3a",
+        "content/books/glorious-pentecost/pl.json": "bfd7d3ab249e005c7dd63bf5a9ab09ff3acde6369bafc78be76326321bfe0125",
+        "content/books/glorious-pentecost/pt.json": "13cbf9d649d2fa990d8aed909793db4c1b744816431a3594070358c68dc5f96e",
+        "content/books/glorious-pentecost/book.json": "6b0a09ba33d3614687fcc6e103f6421717aa2d7bed1e815f5225620153ce9282",
+        "glorious-pentecost-story-i18n-data.js": "5fe4c972465d53bcef54700a6146a5a0aa7e902c9b7ae979f2504d0755eadd9d"
+      }
+    },
+    "glorious-assumption": {
+      "variants": {
+        "en": {
+          "bodySha256": "5d391611e6a4241f5576bfff91df3b2bec3ed220987cce3625fffee050917b75",
+          "catalogSha256": "2148f358ad78929402e20d232e90451abf9f749957170902e5841bdcce0e17b9"
+        },
+        "ar": {
+          "bodySha256": "38c3e78bae4dd81f81230fbaaf2e8f13c272a8d74f9992a3d440c67dc5527aad",
+          "catalogSha256": "fbb5764592ed0faec837bd463afbd07251bbc1ad72e0fefc91a9e2f868c00b8b"
+        },
+        "de": {
+          "bodySha256": "17a12c044fa0cf267f177ae70d52e7c9230e04c0f4d0f15c5dfac6c6df4179c1",
+          "catalogSha256": "3d49a97f4517f8059ab72d3f9e85cd4b2f5a355d8d465cdea84efee95ae7fcb8"
+        },
+        "es": {
+          "bodySha256": "40b5dc73ea09cb7e0868979893d9c503d702216af09b250d5ac2237f5675db95",
+          "catalogSha256": "aafaa2a5f3d61c61785ef6ead1f3c1513f9f4965638c1be623a0fce677b3247b"
+        },
+        "fr": {
+          "bodySha256": "227ada73a857036db910d29cc0e5d665b70c3319a01ccb6b694600edb8c76165",
+          "catalogSha256": "110bacc22dce8a088677ece089ea8319e9fb4e4515a88ca2ac8d95063d11a4c5"
+        },
+        "it": {
+          "bodySha256": "6eddf0f519e0af1cbd8365b5226085971503c102baba7833b1854579831e2e28",
+          "catalogSha256": "77c3db862af8015d743cdc0776d3e21c8db8785d6b11b18c54bc70f627fed77b"
+        },
+        "pl": {
+          "bodySha256": "291616124e0af970201adbf32000e606cf3835006cee77bce8005c6485975d9d",
+          "catalogSha256": "4daa99b00020667d08bdc647895c3fa1199b8b3862c46ed7e376d819bbbe7af3"
+        },
+        "pt": {
+          "bodySha256": "5c0cd51d33bed99fb3053d65800c1a3408bd1153576ce1c4e2506e61434f18b0",
+          "catalogSha256": "a152d1b20b4f264abd338783fb5bc7e1e5d859b46d2a25ee8dd92c6adfcf77d9"
+        }
+      },
+      "artifacts": {
+        "content/books/glorious-assumption/en.json": "0765c72b6bd692b6fbef10e43294d6f56b2a191bc45d842c27215e6d2b631774",
+        "content/books/glorious-assumption/ar.json": "a31e7d1813b28c0c21722505ffb36a4e976716ec00a34b30aff2ef3e1c68b453",
+        "content/books/glorious-assumption/de.json": "463100b723228a1634dfcd021c86ebbd09152cdc433ee85be1dd9e10734ab394",
+        "content/books/glorious-assumption/es.json": "da25be2307b45406900ec5af9b8b2be9d64e2aa3714b776c6ee1557b98518e28",
+        "content/books/glorious-assumption/fr.json": "da9cc3bdea8f5023de4f30aa175a4c8f036d677174b880f451cb31ecfc083507",
+        "content/books/glorious-assumption/it.json": "0f0f5f2f265ec53687cedee1fd1f8ded7b7afbc107280e639d8a09e4e5ac9c8a",
+        "content/books/glorious-assumption/pl.json": "11bf36702e2613f5a5463832e19c88ce4820cad1b78bef99599af862161c3fa4",
+        "content/books/glorious-assumption/pt.json": "045f4534570e5853e0865a36a64876c5f6f31cb3d1e6b17db8646827efd1123b",
+        "content/books/glorious-assumption/book.json": "ca3ea58946985c11966f7da0d53b370f31805746c236f234133f832d0c906ba0",
+        "glorious-assumption-story-i18n-data.js": "f30aa3c663c02a1bc64fa89121de4bc151ee3c2e48ce0b386aa40ea97f5cd373"
+      }
+    },
+    "glorious-coronation": {
+      "variants": {
+        "en": {
+          "bodySha256": "c5240319372d5fb2c5df297413fc56d39a2ec154c2ca3e8b6b830ec12e5ba489",
+          "catalogSha256": "e1bd591f2f8675fd93808b847634744a083d3785f84e0f6223bea0aec6908711"
+        },
+        "ar": {
+          "bodySha256": "b621b95498630cdab9ba6432ab87685b6929a403389b06f9b5f7bed7bad32604",
+          "catalogSha256": "ad8a1eab4ddbfd1e2f08ce16866e645cf28d4ef99166bf93b23360cb33ce3b02"
+        },
+        "de": {
+          "bodySha256": "47ea458102d4ebed3a8043440c4454b2bdb0ded6a7f0abf39e04f8c1d545ccc1",
+          "catalogSha256": "9c9bae6a8269fd706e3a16988273267fb78b1c1d6609b326a020873df8f71332"
+        },
+        "es": {
+          "bodySha256": "905ebaab686dbe77965b08b8502e5b9a6161738795f6f68a32a0bdc3d339afaa",
+          "catalogSha256": "118a85c621b90c52ff03b2f75533f3de69d1750c2c91c7a17a730e1f009185de"
+        },
+        "fr": {
+          "bodySha256": "c9183e495ab9dc48502d287292b0ccc9121a9da09b16d58dcebcf0c2a49feeb3",
+          "catalogSha256": "a1c2f6f7664858d83fe201d33d92a3d0d84492fd467f35ffe9df1aacb2afdbab"
+        },
+        "it": {
+          "bodySha256": "ad0a6f7a3a2e33f567f1fb39da1dff3f29b124490c7278c6a442bd457f075613",
+          "catalogSha256": "00faae38b055c35629ff69e494f096935701431f70ba2a746020cae9f5765aab"
+        },
+        "pl": {
+          "bodySha256": "34359cd070320264dd2d8b89baad485ea8c1f5be2dcb2a2b57fb4275f35c0dba",
+          "catalogSha256": "d73d7e28b6df09212dda917943b2c06822a0eb6d175867503882c86302c6d7e7"
+        },
+        "pt": {
+          "bodySha256": "4084a421416574ef6fd1320f7e67845f1e41311db4799c6fe49c619a8505cacd",
+          "catalogSha256": "f8c81d965561183df206a0e2e1141c1cb43f677890d141328362a4d4673525e5"
+        }
+      },
+      "artifacts": {
+        "content/books/glorious-coronation/en.json": "6b95fa68517356aa8fe3b7304dbc8c698613dda1d1a513cc28c91f1a8e666701",
+        "content/books/glorious-coronation/ar.json": "568643b3b5d72576bd3da38b665756835713c2c2f2a86a68f91321e215faa56b",
+        "content/books/glorious-coronation/de.json": "5cced6ca56775400aef7e4ccf787d6570eae9fd27643f86246399244bbc013f2",
+        "content/books/glorious-coronation/es.json": "2c88bd3f898de0f7238605eb7efef31fbb59b73d4a5d6ccb306eebd046350dd8",
+        "content/books/glorious-coronation/fr.json": "8ffc6749ceb7e0324f862a18c2daaa8d4501f43e8b725889e44a2aae0108ea4b",
+        "content/books/glorious-coronation/it.json": "a5bbef31bf6ae5d5b240f0e955281ec1780da16f6aeedf72eb13fb973a811be0",
+        "content/books/glorious-coronation/pl.json": "d32cb3945375ba0c41c171a2dc4a938f269e1375ceee8f78f3e19d4508a16be3",
+        "content/books/glorious-coronation/pt.json": "dff2c10eea05a7b9b6a4c642a9180c9baf8a682e4c6511709bf5c8bf6f11427f",
+        "content/books/glorious-coronation/book.json": "a3660d77daf4b7b996462a2a363b137ad3bc76b04791d1ed0b4124fe491b8c6c",
+        "glorious-coronation-story-i18n-data.js": "0ec68ce9a394f9da88568536190d9887779d6406197ebb32b6bcf471fc80b616"
+      }
+    }
+  },
+  "activationStatus": "activated-pending-live-click"
+}

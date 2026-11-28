@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "template": "story-page",
+  "slug": "glorious-ascension",
+  "storyId": "glorious-ascension",
+  "seoTitle": "Second Glorious Mystery: The Ascension | Rosary Book",
+  "seoDescription": "A read-aloud decade book for children on the Second Glorious Mystery, the Ascension: the story, the Gospel, the decade prayers, and a reflection.",
+  "firstImage": "media/mysteries/g2.webp",
+  "firstScene": "legacy",
+  "ageMin": 6,
+  "ageMax": 12,
+  "h1": "The Ascension: Second Glorious Mystery",
+  "intro": "A little read-aloud book for one decade of the Rosary: The Ascension.",
+  "shortAnswer": "This book walks children through the Second Glorious Mystery, the Ascension: a short story, the Gospel passage, the Our Father, ten Hail Marys and the Glory Be, and a reflection on hope and heavenly desire.",
+  "summaryHtml": null,
+  "familyReadingHtml": null,
+  "aboutHtml": "<p>Painting: Rembrandt, Ascension (Alte Pinakothek). Public domain, via Wikimedia Commons. <a href=\"https://commons.wikimedia.org/wiki/File:Rembrandt_The_Ascension_1636_Oil_on_canvas_Alte_Pinakothek_Munich_Germany.jpg\">Image source (Wikimedia Commons)</a>.</p><p>The Gospel passage is quoted word for word from the Douay-Rheims Bible, 1899 American Edition, which is in the public domain; verse numbers are omitted for reading aloud, and \u2026 marks skipped verses. The Our Father, Hail Mary, Glory Be and Fatima prayers follow the standard formulas used across this site. This mystery is traditionally prayed on Wednesday / Sunday.</p>",
+  "faq": [
+    {
+      "q": "What is the Second Glorious Mystery?",
+      "a": "The Ascension. Forty days after he rose, Jesus blessed his friends and was raised up to heaven, where a cloud received him from their sight. This mystery is traditionally prayed on Wednesday / Sunday, and its fruit is hope and heavenly desire."
+    },
+    {
+      "q": "How do you pray this decade with children?",
+      "a": "Read one page at a time. On the decade page, pray the Our Father once, the Hail Mary ten times (one for each bead), then the Glory Be and the Fatima prayer."
+    }
+  ],
+  "related": [
+    {
+      "href": "./glorious-resurrection",
+      "label": "The Resurrection"
+    },
+    {
+      "href": "./glorious-pentecost",
+      "label": "The Descent of the Holy Spirit"
+    },
+    {
+      "href": "./stories",
+      "label": "All storybooks"
+    }
+  ],
+  "productionNote": "Read aloud in the browser with your device voice; studio narration is not available yet. The painting is a public-domain work credited below.",
+  "footerCredit": "A Rosary decade book for children.",
+  "ogLocales": [
+    "en_US"
+  ],
+  "dataFile": "glorious-ascension-story-data.js",
+  "specificDisclosure": true,
+  "dataFileExtra": [
+    "glorious-ascension-story-i18n-data.js"
+  ],
+  "storyJs": "storybook-rosary.js",
+  "stageJs": "storybook-rosary-stage.js",
+  "extraCss": [
+    "storybook-rosary.css"
+  ]
+}
