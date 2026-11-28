@@ -27,6 +27,7 @@ def secret_prayer_manifest(root,texts,manifest):
             if not soup.main or soup.html.get('lang')!=code or soup.select_one('link[rel=canonical]')['href']!='https://marsharbel.com'+route:
                 raise ValueError('Secret prayer page identity mismatch')
             if digest(text)!=v['bodySha256']:raise ValueError('Secret prayer body drift: '+route)
+            if v.get('catalog')!=f'locales/{code}/{slug}-master-copy.json' or v.get('bindings')!=f'locales/en/{slug}-master-bindings.json':raise ValueError('Secret prayer binding identity mismatch')
             for field in ('catalog','bindings'):
                 if hashlib.sha256((root/v[field]).read_bytes()).hexdigest()!=v[field+'Sha256']:raise ValueError('Secret prayer '+field+' drift: '+route)
             paths.add(route)

@@ -26,6 +26,13 @@ class SecretPairing(unittest.TestCase):
  def test_existing_reviewed_family_not_replaced(self):
   manifest={'pages':{'existing':{'variants':{'en':{'path':'/powerful-secret-prayers','status':'verified'}}}}}
   with self.assertRaises(ValueError):secret_prayer_manifest(ROOT,{},manifest)
+ def test_mb16_control_inverse_is_finite(self):
+  from i18n.secret_prayers_registry_continuation import control_preimage,CONTROL_ORIGINAL_SHA256
+  import hashlib
+  raw=(ROOT/'scripts/i18n/same_page_injection.py').read_bytes()
+  self.assertEqual(hashlib.sha256(control_preimage(ROOT,raw)).hexdigest(),CONTROL_ORIGINAL_SHA256)
+  for bad in (raw+b' ',raw.replace(b'    out={}',b'    out=dict()')):
+   with self.assertRaises(ValueError):control_preimage(ROOT,bad)
  def test_body_drift_rejected(self):
   file=ROOT/'powerful-secret-prayers.html'
   with self.assertRaises(ValueError):secret_prayer_manifest(ROOT,{file:file.read_text().replace('</main>','X</main>')},{'pages':{}})
